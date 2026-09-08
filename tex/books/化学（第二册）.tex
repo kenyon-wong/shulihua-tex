@@ -1430,7 +1430,23 @@ HCl 的分子。关于这个问题，在学习到第四章``电离学说''时将
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={溴、溴化氢和溴化物之间的转化关系}]{assets/chemistry-2/fig-p0041-01.png}}
+\fitfig{%
+% fig-alt: 溴、溴化氢和溴化物转化。左Br₂，上HBr，右ZnBr₂，下HBr。箭头（1）Br₂→上HBr，（2）上HBr→ZnBr₂，（3）ZnBr₂→下HBr，（4）下HBr→Br₂
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \node (br) at (-2.15,0) {$\mathrm{Br}_{2}$};
+  \node (ht) at (0,1.12) {$\mathrm{HBr}$};
+  \node (zn) at (2.30,0) {$\mathrm{ZnBr}_{2}$};
+  \node (hb) at (0,-1.12) {$\mathrm{HBr}$};
+  \draw[line width=0.6pt,->] (br.north east) -- (ht.south west)
+    node[midway,above left,inner sep=1pt] {（1）};
+  \draw[line width=0.6pt,->] (ht.south east) -- (zn.north west)
+    node[midway,above right,inner sep=1pt] {（2）};
+  \draw[line width=0.6pt,->] (zn.south west) -- (hb.north east)
+    node[midway,below right,inner sep=1pt] {（3）};
+  \draw[line width=0.6pt,->] (hb.north west) -- (br.south east)
+    node[midway,below left,inner sep=1pt] {（4）};
+\end{tikzpicture}%
+}
 \caption{溴、溴化氢和溴化物之间的转化关系}
 \end{figure}
 
@@ -1760,8 +1776,33 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={氯气、氯化钠和氯化钾之间的转化关系}]{assets/chemistry-2/fig-p0049-01.png}}
-\caption{氯气、氯化钠和氯化钾之间的转化关系}
+\fitfig{%
+% fig-alt: 氯气、氯化钠和氯化氢转化。顶Cl₂，左下NaCl，右下HCl。1由NaCl向上至Cl₂，2由Cl₂向下至NaCl；3由Cl₂向下至HCl，4由HCl向上至Cl₂；5由NaCl向右至HCl，6由HCl向左至NaCl
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \node (cl) at (0,1.62) {$\mathrm{Cl}_{2}$};
+  \node (na) at (-2.25,-1.22) {$\mathrm{NaCl}$};
+  \node (hx) at (2.25,-1.22) {$\mathrm{HCl}$};
+  \path (na.north) ++(0.16,0.10) coordinate (naIn);
+  \path (cl.south) ++(-0.16,-0.08) coordinate (clInL);
+  \path (cl.south) ++(-0.38,-0.04) coordinate (clOutL);
+  \path (na.north) ++(-0.10,0.14) coordinate (naOut);
+  \draw[line width=0.55pt,->] (naIn) -- (clInL) node[midway,right,inner sep=1pt] {$1$};
+  \draw[line width=0.55pt,->] (clOutL) -- (naOut) node[midway,left,inner sep=1pt] {$2$};
+  \path (cl.south) ++(0.16,-0.08) coordinate (clInR);
+  \path (hx.north) ++(-0.16,0.10) coordinate (hxIn);
+  \path (hx.north) ++(0.10,0.14) coordinate (hxOut);
+  \path (cl.south) ++(0.38,-0.04) coordinate (clOutR);
+  \draw[line width=0.55pt,->] (clInR) -- (hxIn) node[midway,left,inner sep=1pt] {$3$};
+  \draw[line width=0.55pt,->] (hxOut) -- (clOutR) node[midway,right,inner sep=1pt] {$4$};
+  \path (na.east) ++(0.06,0.10) coordinate (naR);
+  \path (hx.west) ++(-0.06,0.10) coordinate (hxL);
+  \path (hx.west) ++(-0.06,-0.10) coordinate (hxLb);
+  \path (na.east) ++(0.06,-0.10) coordinate (naRb);
+  \draw[line width=0.55pt,->] (naR) -- (hxL) node[midway,above,inner sep=1pt] {$5$};
+  \draw[line width=0.55pt,->] (hxLb) -- (naRb) node[midway,below,inner sep=1pt] {$6$};
+\end{tikzpicture}%
+}
+\caption{氯气、氯化钠和氯化氢之间的转化关系}
 \end{figure}
 
 \begin{enumerate}
@@ -3190,25 +3231,88 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={硫化氢、硫和硫化亚铁之间的转化关系（1）}]{assets/chemistry-2/fig-p0084-01.png}}
+\fitfig{%
+% fig-alt: （1）H₂S、S、FeS转化。1由H₂S向右至S，2由S向左至H₂S；3由S向下至FeS，4由H₂S向下至FeS
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \node[anchor=east] at (-2.15,0.72) {（1）};
+  \node (hs) at (-0.95,0.78) {$\mathrm{H}_{2}\mathrm{S}$};
+  \node (s) at (1.15,0.78) {$\mathrm{S}$};
+  \node (fes) at (0.10,-0.78) {$\mathrm{FeS}$};
+  \path (hs.east) ++(0.02,0.12) coordinate (hsU);
+  \path (s.west) ++(-0.02,0.12) coordinate (sU);
+  \path (s.west) ++(-0.02,-0.12) coordinate (sD);
+  \path (hs.east) ++(0.02,-0.12) coordinate (hsD);
+  \draw[line width=0.6pt,->] (hsU) -- (sU) node[midway,above,inner sep=1pt] {$1$};
+  \draw[line width=0.6pt,->] (sD) -- (hsD) node[midway,below,inner sep=1pt] {$2$};
+  \draw[line width=0.6pt,->] (s.south) -- (fes.north east)
+    node[midway,right,inner sep=1pt] {$3$};
+  \draw[line width=0.6pt,->] (hs.south) -- (fes.north west)
+    node[midway,left,inner sep=1pt] {$4$};
+\end{tikzpicture}%
+}
 \caption{硫化氢、硫和硫化亚铁之间的转化关系（1）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={铁、硫化亚铁和硫酸亚铁之间的转化关系（2）}]{assets/chemistry-2/fig-p0084-02.png}}
+\fitfig{%
+% fig-alt: （2）Fe、FeS、FeSO₄转化。1由Fe向右至FeS；2由FeS向下至FeSO₄，3由Fe向下至FeSO₄
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \node[anchor=east] at (-2.15,0.55) {（2）};
+  \node (fe) at (-1.05,0.72) {$\mathrm{Fe}$};
+  \node (fes) at (1.20,0.72) {$\mathrm{FeS}$};
+  \node (feso) at (0.15,-0.78) {$\mathrm{FeSO}_{4}$};
+  \draw[line width=0.6pt,->] (fe.east) -- (fes.west)
+    node[midway,above,inner sep=1pt] {$1$};
+  \draw[line width=0.6pt,->] (fes.south) -- (feso.north east)
+    node[midway,right,inner sep=1pt] {$2$};
+  \draw[line width=0.6pt,->] (fe.south) -- (feso.north west)
+    node[midway,left,inner sep=1pt] {$3$};
+\end{tikzpicture}%
+}
 \caption{铁、硫化亚铁和硫酸亚铁之间的转化关系（2）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={二氧化硫、亚硫酸和硫酸之间的转化关系（3）}]{assets/chemistry-2/fig-p0084-03.png}}
+\fitfig{%
+% fig-alt: （3）SO₂、H₂SO₃、H₂SO₄转化。1由SO₂向右至H₂SO₃；2由H₂SO₃向下至H₂SO₄，3由H₂SO₄向上至SO₂
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \node[anchor=east] at (-2.45,0.72) {（3）};
+  \node (so) at (-1.05,0.78) {$\mathrm{SO}_{2}$};
+  \node (hso) at (1.25,0.78) {$\mathrm{H}_{2}\mathrm{SO}_{3}$};
+  \node (hso4) at (0.15,-0.78) {$\mathrm{H}_{2}\mathrm{SO}_{4}$};
+  \draw[line width=0.6pt,->] (so.east) -- (hso.west)
+    node[midway,above,inner sep=1pt] {$1$};
+  \draw[line width=0.6pt,->] (hso.south) -- (hso4.north east)
+    node[midway,right,inner sep=1pt] {$2$};
+  \draw[line width=0.6pt,->] (hso4.north west) -- (so.south)
+    node[midway,left,inner sep=1pt] {$3$};
+\end{tikzpicture}%
+}
 \caption{二氧化硫、亚硫酸和硫酸之间的转化关系（3）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={盐酸、碳酸和硫酸之间的转化关系（4）}]{assets/chemistry-2/fig-p0084-04.png}}
+\fitfig{%
+% fig-alt: （4）H₂SO₄、HCl、H₂CO₃、CO₂转化。1由H₂SO₄向上至HCl，2由HCl向右至H₂CO₃，3由H₂CO₃向下至CO₂，4由H₂SO₄向下至CO₂
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \node[anchor=east] at (-2.35,0.15) {（4）};
+  \node (sa) at (-1.35,0) {$\mathrm{H}_{2}\mathrm{SO}_{4}$};
+  \node (hcl) at (0.15,1.05) {$\mathrm{HCl}$};
+  \node (hco) at (2.15,0) {$\mathrm{H}_{2}\mathrm{CO}_{3}$};
+  \node (co) at (0.15,-1.05) {$\mathrm{CO}_{2}$};
+  \draw[line width=0.6pt,->] (sa.north east) -- (hcl.south west)
+    node[midway,above left,inner sep=1pt] {$1$};
+  \draw[line width=0.6pt,->] (hcl.south east) -- (hco.north west)
+    node[midway,above right,inner sep=1pt] {$2$};
+  \draw[line width=0.6pt,->] (hco.south west) -- (co.north east)
+    node[midway,below right,inner sep=1pt] {$3$};
+  \draw[line width=0.6pt,->] (sa.south east) -- (co.north west)
+    node[midway,below left,inner sep=1pt] {$4$};
+\end{tikzpicture}%
+}
 \caption{盐酸、碳酸和硫酸之间的转化关系（4）}
 \end{figure}
 
