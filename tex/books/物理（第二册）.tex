@@ -2208,7 +2208,43 @@ x_2=A_2\cos(\omega t+\varphi_2)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1.19 利用旋转矢量合成法作出在一直线上两个频率相同的简谐振动的合振动图线}]{assets/physics-2/fig-p0037-01.png}}
+\fitfig{%
+% fig-alt: 图1.19 旋转矢量合成：参考圆八等分，OM_1 在左上、OM_2 在左下，合矢量 OM 指向圆周左下，(b) 实线合振动与两条虚线分振动
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\cx{1.32}
+  \draw[line width=0.72pt] (\cx,0) circle[radius=1.18];
+  \draw[line width=0.48pt] (\cx,0) circle[radius=1.05];
+  \foreach \a in {0,45,90,135} {
+    \draw[line width=0.4pt] ({\cx+1.18*cos(\a)},{1.18*sin(\a)}) -- ({\cx+1.18*cos(\a+180)},{1.18*sin(\a+180)});
+  }
+  \coordinate (O) at (\cx,0);
+  \coordinate (M1) at ({\cx-0.28},0.46);
+  \coordinate (M2) at ({\cx-0.42},-0.56);
+  \coordinate (P) at ({\cx-0.70},-0.10);
+  \coordinate (M) at ({\cx-1.16},-0.16);
+  \draw[dashed,line width=0.48pt] (M1) -- (P);
+  \draw[dashed,line width=0.48pt] (M2) -- (P);
+  \draw[->,line width=0.5pt] (O) -- (M1);
+  \draw[->,line width=0.5pt] (O) -- (M2);
+  \draw[->,line width=0.95pt] (O) -- (M);
+  \node[anchor=east] at ({\cx-1.28},-0.08) {$M$};
+  \node[anchor=west] at ({\cx+0.14},-0.16) {$O$};
+  \node[anchor=north] at (\cx,-1.40) {$(a)$};
+  \def\ox{3.85}
+  \def\gw{0.66}
+  \draw[->,line width=0.7pt] (\ox,-1.48) -- (\ox,1.58);
+  \node[anchor=south] at (\ox,1.56) {$s$};
+  \draw[->,line width=0.7pt] ({\ox-0.12},0) -- ({\ox+6*\gw+0.85},0);
+  \node[anchor=west] at ({\ox+6*\gw+0.86},0.02) {$t$};
+  \foreach \k in {0,...,6} {
+    \draw[line width=0.4pt] ({\ox+0.40+\k*\gw},-1.28) -- ({\ox+0.40+\k*\gw},1.28);
+  }
+  \draw[dashed,line width=0.55pt] plot[domain=0:6.15,samples=90,smooth] ({\ox+0.04+\x*\gw},{0.74*cos(56*\x+22)});
+  \draw[dashed,line width=0.55pt] plot[domain=0:6.15,samples=90,smooth] ({\ox+0.04+\x*\gw},{0.46*cos(56*\x+128)});
+  \draw[line width=0.9pt] plot[domain=0:6.05,samples=100,smooth] ({\ox+0.04+\x*\gw},{-1.05*sin(48*\x+14)});
+  \node[anchor=north] at ({\ox+3.1*\gw},-1.48) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{图 1.19
 利用旋转矢量合成法作出在一直线上两个频率相同的简谐振动的合振动图线}
 \end{figure}
@@ -3042,7 +3078,30 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/physics-2/fig-p0052-01.png}}
+\fitfig{%
+% fig-alt: 第17题 滑块两端连弹簧 K_1、K_2，两端固定于墙，水平地面
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0,0) -- (0,1.05);
+  \foreach \y in {0.10,0.32,0.54,0.76} {
+    \draw[line width=0.4pt] (0,\y) -- (-0.20,{\y+0.14});
+  }
+  \draw[line width=0.7pt] (5.15,0) -- (5.15,1.05);
+  \foreach \y in {0.10,0.32,0.54,0.76} {
+    \draw[line width=0.4pt] (5.15,\y) -- (5.35,{\y+0.14});
+  }
+  \draw[line width=0.7pt] (0,0) -- (5.15,0);
+  \foreach \x in {0.18,0.42,0.66,0.90,1.14,1.38,1.62,1.86,2.14,2.38,2.62,2.86,3.10,3.34,3.58,3.82,4.06,4.30,4.54,4.78,5.02} {
+    \draw[line width=0.38pt] (\x,0) -- ({\x-0.16},-0.18);
+  }
+  \draw[line width=0.62pt,line join=round] (0.100,0.520) -- (0.220,0.630) -- (0.460,0.410) -- (0.700,0.630) -- (0.940,0.410) -- (1.180,0.630) -- (1.420,0.410) -- (1.660,0.630) -- (1.780,0.520);
+  \draw[line width=0.55pt] (1.78,0.52) -- (1.86,0.52);
+  \draw[line width=0.75pt] (1.86,0.12) rectangle (2.66,0.92);
+  \draw[line width=0.55pt] (2.66,0.52) -- (2.74,0.52);
+  \draw[line width=0.62pt,line join=round] (2.740,0.520) -- (2.884,0.630) -- (3.173,0.410) -- (3.462,0.630) -- (3.751,0.410) -- (4.039,0.630) -- (4.328,0.410) -- (4.617,0.630) -- (4.906,0.410) -- (5.050,0.520);
+  \node[anchor=south] at (0.95,0.82) {$K_1$};
+  \node[anchor=south] at (3.90,0.82) {$K_2$};
+\end{tikzpicture}%
+}
 \caption{(第17题)}
 \end{figure}
 
@@ -3062,7 +3121,25 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/physics-2/fig-p0052-02.png}}
+\fitfig{%
+% fig-alt: 第18题 子弹以速度 v 射入振子 M，弹簧右端固定，水平地面
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0.05,0.58) -- (0.72,0.58);
+  \node[anchor=south] at (0.38,0.62) {$v$};
+  \draw[line width=0.75pt] (0.82,0.08) rectangle (2.05,1.08);
+  \node at (1.43,0.58) {$M$};
+  \draw[line width=0.55pt] (2.05,0.58) -- (2.16,0.58);
+  \draw[line width=0.62pt,line join=round] (2.160,0.580) -- (2.308,0.700) -- (2.603,0.460) -- (2.899,0.700) -- (3.194,0.460) -- (3.490,0.700) -- (3.786,0.460) -- (4.081,0.700) -- (4.377,0.460) -- (4.672,0.700) -- (4.820,0.580);
+  \draw[line width=0.7pt] (4.95,0) -- (4.95,1.18);
+  \foreach \y in {0.10,0.32,0.54,0.76,0.98} {
+    \draw[line width=0.4pt] (4.95,\y) -- (5.16,{\y+0.14});
+  }
+  \draw[line width=0.7pt] (0.55,0) -- (4.95,0);
+  \foreach \x in {0.70,0.94,1.18,1.42,1.66,1.90,2.14,2.38,2.62,2.86,3.10,3.34,3.58,3.82,4.06,4.30,4.54,4.78} {
+    \draw[line width=0.38pt] (\x,0) -- ({\x-0.16},-0.18);
+  }
+\end{tikzpicture}%
+}
 \caption{(第18题)}
 \end{figure}
 
@@ -3092,7 +3169,29 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.2 橡皮绳上面的后回的波形}]{assets/physics-2/fig-p0054-01.png}}
+\fitfig{%
+% fig-alt: 图2.2 左端固定的橡皮绳，先凹后凸的波形接到右手，直段上有向右小箭头
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.75pt] (0,-0.08) -- (0,0.88);
+  \foreach \y in {0.02,0.20,0.38,0.56,0.74} {
+    \draw[line width=0.4pt] (0,\y) -- (-0.18,{\y+0.12});
+  }
+  \draw[line width=0.75pt] (0,0.36) -- (2.95,0.36);
+  \draw[line width=0.75pt] (2.95,0.36) .. controls (3.45,0.32) and (3.70,-0.08) .. (4.25,-0.32);
+  \draw[line width=0.75pt] (4.25,-0.32) .. controls (4.85,-0.55) and (5.15,-0.05) .. (5.55,0.28);
+  \draw[line width=0.75pt] (5.55,0.28) .. controls (5.95,0.58) and (6.45,0.60) .. (6.95,0.42);
+  \draw[line width=0.75pt] (6.95,0.42) .. controls (7.30,0.30) and (7.48,0.24) .. (7.68,0.22);
+  \draw[->,line width=0.55pt] (1.45,0.18) -- (2.10,0.18);
+  \draw[line width=0.7pt] (7.62,0.22) -- (7.78,0.58) -- (8.22,0.72) -- (8.78,0.58) -- (8.95,0.28) -- (8.78,-0.02) -- (8.28,-0.10) -- (7.85,0.02) -- cycle;
+  \draw[line width=0.5pt] (8.10,0.66) -- (8.22,0.32);
+  \draw[line width=0.5pt] (8.42,0.68) -- (8.52,0.28);
+  \draw[line width=0.5pt] (8.68,0.58) -- (8.62,0.26);
+  \draw[line width=0.55pt] (7.95,0.30) .. controls (7.78,0.48) and (8.10,0.55) .. (8.32,0.46);
+  \draw[line width=0.55pt] (8.82,0.50) -- (9.42,0.64);
+  \draw[line width=0.55pt] (8.84,0.08) -- (9.45,0.22);
+  \draw[line width=0.5pt] (9.28,0.58) -- (9.32,0.26);
+\end{tikzpicture}%
+}
 \caption{图 2.2 橡皮绳上面的后回的波形}
 \end{figure}
 
@@ -3111,7 +3210,52 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.3 质点之间就好比有弹簧连接着一样}]{assets/physics-2/fig-p0054-02.png}}
+\fitfig{%
+% fig-alt: 图2.3 质点间好比弹簧相连：上排斜向平衡虚线，一质点偏离；下排水平，一质点下移
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \draw[dashed,line width=0.55pt] (-0.15,0) -- (5.20,0);
+  \coordinate (A) at (0.00,1.36);
+  \coordinate (B) at (0.62,1.32);
+  \coordinate (C) at (1.22,1.18);
+  \coordinate (D) at (1.86,0.88);
+  \coordinate (E) at (2.48,0.46);
+  \coordinate (F) at (3.12,0.22);
+  \coordinate (G) at (3.78,0.08);
+  \coordinate (H) at (4.42,0.02);
+  \coordinate (I) at (5.02,0.00);
+  \draw[line width=0.55pt,line join=round] (0.000,1.360) -- (0.067,1.441) -- (0.181,1.263) -- (0.315,1.425) -- (0.429,1.247) -- (0.563,1.409) -- (0.620,1.320);
+  \draw[line width=0.55pt,line join=round] (0.620,1.320) -- (0.699,1.389) -- (0.781,1.195) -- (0.939,1.333) -- (1.021,1.139) -- (1.179,1.277) -- (1.220,1.180);
+  \draw[line width=0.55pt,line join=round] (1.220,1.180) -- (1.320,1.227) -- (1.376,1.013) -- (1.576,1.107) -- (1.632,0.893) -- (1.832,0.987) -- (1.860,0.880);
+  \draw[line width=0.55pt,line join=round] (1.860,0.880) -- (1.970,0.908) -- (1.998,0.684) -- (2.218,0.740) -- (2.246,0.516) -- (2.466,0.572) -- (2.480,0.460);
+  \draw[line width=0.55pt,line join=round] (2.480,0.460) -- (2.574,0.516) -- (2.642,0.308) -- (2.830,0.420) -- (2.898,0.212) -- (3.086,0.324) -- (3.120,0.220);
+  \draw[line width=0.55pt,line join=round] (3.120,0.220) -- (3.204,0.289) -- (3.300,0.095) -- (3.468,0.233) -- (3.564,0.039) -- (3.732,0.177) -- (3.780,0.080);
+  \draw[line width=0.55pt,line join=round] (3.780,0.080) -- (3.852,0.159) -- (3.964,-0.023) -- (4.108,0.135) -- (4.220,-0.047) -- (4.364,0.111) -- (4.420,0.020);
+  \draw[line width=0.55pt,line join=round] (4.420,0.020) -- (4.483,0.103) -- (4.597,-0.071) -- (4.723,0.095) -- (4.837,-0.079) -- (4.963,0.087) -- (5.020,0.000);
+  \foreach \p in {A,B,C,D,E,F,G,H,I} {
+    \fill[white] (\p) circle[radius=0.09];
+    \draw[line width=0.65pt] (\p) circle[radius=0.09];
+  }
+  \coordinate (P1) at (0.00,-1.42);
+  \coordinate (P2) at (0.70,-1.42);
+  \coordinate (P3) at (1.40,-1.42);
+  \coordinate (P4) at (2.10,-1.42);
+  \coordinate (Q) at (2.78,-1.68);
+  \coordinate (P5) at (3.46,-1.42);
+  \coordinate (P6) at (4.18,-1.42);
+  \coordinate (P7) at (4.88,-1.42);
+  \draw[line width=0.55pt,line join=round] (0.000,-1.420) -- (0.070,-1.335) -- (0.210,-1.505) -- (0.350,-1.335) -- (0.490,-1.505) -- (0.630,-1.335) -- (0.700,-1.420);
+  \draw[line width=0.55pt,line join=round] (0.700,-1.420) -- (0.770,-1.335) -- (0.910,-1.505) -- (1.050,-1.335) -- (1.190,-1.505) -- (1.330,-1.335) -- (1.400,-1.420);
+  \draw[line width=0.55pt,line join=round] (1.400,-1.420) -- (1.470,-1.335) -- (1.610,-1.505) -- (1.750,-1.335) -- (1.890,-1.505) -- (2.030,-1.335) -- (2.100,-1.420);
+  \draw[line width=0.55pt,line join=round] (2.100,-1.420) -- (2.198,-1.367) -- (2.274,-1.577) -- (2.470,-1.471) -- (2.546,-1.681) -- (2.742,-1.575) -- (2.780,-1.680);
+  \draw[line width=0.55pt,line join=round] (2.780,-1.680) -- (2.818,-1.575) -- (3.014,-1.681) -- (3.090,-1.471) -- (3.286,-1.577) -- (3.362,-1.367) -- (3.460,-1.420);
+  \draw[line width=0.55pt,line join=round] (3.460,-1.420) -- (3.532,-1.335) -- (3.676,-1.505) -- (3.820,-1.335) -- (3.964,-1.505) -- (4.108,-1.335) -- (4.180,-1.420);
+  \draw[line width=0.55pt,line join=round] (4.180,-1.420) -- (4.250,-1.335) -- (4.390,-1.505) -- (4.530,-1.335) -- (4.670,-1.505) -- (4.810,-1.335) -- (4.880,-1.420);
+  \foreach \p in {P1,P2,P3,P4,Q,P5,P6,P7} {
+    \fill[white] (\p) circle[radius=0.09];
+    \draw[line width=0.65pt] (\p) circle[radius=0.09];
+  }
+\end{tikzpicture}%
+}
 \caption{图2.3 质点之间就好比有弹簧连接着一样}
 \end{figure}
 
@@ -3139,7 +3283,381 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.4 增波时形成和传播}]{assets/physics-2/fig-p0056-01.png}}
+\fitfig{%
+% fig-alt: 图2.4 横波形成和传播：16 个质点在 t=0 至 5T/4 的位置与运动箭头
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=0.4pt,font=\scriptsize}]
+  \def\u{0.445}
+  \def\rr{0.155}
+  \begin{scope}[yshift=0.0cm]
+    \node[anchor=east,font=\footnotesize] at (-0.18,0) {$(a)\ t=0$};
+    \draw[line width=0.5pt] (0,0) -- ({15*\u},0);
+    \fill[white] ({0*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({0*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({0*\u},0.000) {1};
+    \draw[->,line width=0.48pt] ({0*\u},{0.000+\rr}) -- ({0*\u},{0.000+\rr+0.26});
+    \fill[white] ({1*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({1*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({1*\u},0.000) {2};
+    \fill[white] ({2*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({2*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({2*\u},0.000) {3};
+    \fill[white] ({3*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({3*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({3*\u},0.000) {4};
+    \fill[white] ({4*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({4*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({4*\u},0.000) {5};
+    \fill[white] ({5*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({5*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({5*\u},0.000) {6};
+    \fill[white] ({6*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({6*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({6*\u},0.000) {7};
+    \fill[white] ({7*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({7*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({7*\u},0.000) {8};
+    \fill[white] ({8*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({8*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({8*\u},0.000) {9};
+    \fill[white] ({9*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({9*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({9*\u},0.000) {10};
+    \fill[white] ({10*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({10*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({10*\u},0.000) {11};
+    \fill[white] ({11*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({11*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({11*\u},0.000) {12};
+    \fill[white] ({12*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({12*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({12*\u},0.000) {13};
+    \fill[white] ({13*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({13*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({13*\u},0.000) {14};
+    \fill[white] ({14*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({14*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({14*\u},0.000) {15};
+    \fill[white] ({15*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({15*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({15*\u},0.000) {16};
+  \end{scope}
+  \begin{scope}[yshift=-1.32cm]
+    \node[anchor=east,font=\footnotesize] at (-0.18,0) {$(b)\ t=\frac{1}{4}T$};
+    \draw[dashed,line width=0.48pt] ({3*\u},0) -- ({15*\u+0.22},0);
+    \draw[line width=0.55pt] ({0*\u},0.480) -- ({1*\u},0.416) -- ({2*\u},0.240) -- ({3*\u},0.000);
+    \fill[white] ({0*\u},0.480) circle[radius=\rr];
+    \draw[line width=0.55pt] ({0*\u},0.480) circle[radius=\rr];
+    \node[font=\tiny] at ({0*\u},0.480) {1};
+    \draw[->,line width=0.48pt] ({0*\u},{0.480-\rr}) -- ({0*\u},{0.480-\rr-0.26});
+    \fill[white] ({1*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({1*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({1*\u},0.416) {2};
+    \draw[->,line width=0.48pt] ({1*\u},{0.416+\rr}) -- ({1*\u},{0.416+\rr+0.26});
+    \fill[white] ({2*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({2*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({2*\u},0.240) {3};
+    \draw[->,line width=0.48pt] ({2*\u},{0.240+\rr}) -- ({2*\u},{0.240+\rr+0.26});
+    \fill[white] ({3*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({3*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({3*\u},0.000) {4};
+    \draw[->,line width=0.48pt] ({3*\u},{0.000+\rr}) -- ({3*\u},{0.000+\rr+0.26});
+    \fill[white] ({4*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({4*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({4*\u},0.000) {5};
+    \fill[white] ({5*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({5*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({5*\u},0.000) {6};
+    \fill[white] ({6*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({6*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({6*\u},0.000) {7};
+    \fill[white] ({7*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({7*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({7*\u},0.000) {8};
+    \fill[white] ({8*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({8*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({8*\u},0.000) {9};
+    \fill[white] ({9*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({9*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({9*\u},0.000) {10};
+    \fill[white] ({10*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({10*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({10*\u},0.000) {11};
+    \fill[white] ({11*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({11*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({11*\u},0.000) {12};
+    \fill[white] ({12*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({12*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({12*\u},0.000) {13};
+    \fill[white] ({13*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({13*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({13*\u},0.000) {14};
+    \fill[white] ({14*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({14*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({14*\u},0.000) {15};
+    \fill[white] ({15*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({15*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({15*\u},0.000) {16};
+  \end{scope}
+  \begin{scope}[yshift=-2.64cm]
+    \node[anchor=east,font=\footnotesize] at (-0.18,0) {$(c)\ t=\frac{1}{2}T$};
+    \draw[dashed,line width=0.48pt] ({6*\u},0) -- ({15*\u+0.22},0);
+    \draw[line width=0.55pt] ({0*\u},0.000) -- ({1*\u},0.240) -- ({2*\u},0.416) -- ({3*\u},0.480) -- ({4*\u},0.416) -- ({5*\u},0.240) -- ({6*\u},0.000);
+    \fill[white] ({0*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({0*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({0*\u},0.000) {1};
+    \draw[->,line width=0.48pt] ({0*\u},{0.000-\rr}) -- ({0*\u},{0.000-\rr-0.26});
+    \fill[white] ({1*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({1*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({1*\u},0.240) {2};
+    \draw[->,line width=0.48pt] ({1*\u},{0.240-\rr}) -- ({1*\u},{0.240-\rr-0.26});
+    \fill[white] ({2*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({2*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({2*\u},0.416) {3};
+    \draw[->,line width=0.48pt] ({2*\u},{0.416-\rr}) -- ({2*\u},{0.416-\rr-0.26});
+    \fill[white] ({3*\u},0.480) circle[radius=\rr];
+    \draw[line width=0.55pt] ({3*\u},0.480) circle[radius=\rr];
+    \node[font=\tiny] at ({3*\u},0.480) {4};
+    \draw[->,line width=0.48pt] ({3*\u},{0.480-\rr}) -- ({3*\u},{0.480-\rr-0.26});
+    \fill[white] ({4*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({4*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({4*\u},0.416) {5};
+    \draw[->,line width=0.48pt] ({4*\u},{0.416+\rr}) -- ({4*\u},{0.416+\rr+0.26});
+    \fill[white] ({5*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({5*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({5*\u},0.240) {6};
+    \draw[->,line width=0.48pt] ({5*\u},{0.240+\rr}) -- ({5*\u},{0.240+\rr+0.26});
+    \fill[white] ({6*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({6*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({6*\u},0.000) {7};
+    \draw[->,line width=0.48pt] ({6*\u},{0.000+\rr}) -- ({6*\u},{0.000+\rr+0.26});
+    \fill[white] ({7*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({7*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({7*\u},0.000) {8};
+    \fill[white] ({8*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({8*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({8*\u},0.000) {9};
+    \fill[white] ({9*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({9*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({9*\u},0.000) {10};
+    \fill[white] ({10*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({10*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({10*\u},0.000) {11};
+    \fill[white] ({11*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({11*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({11*\u},0.000) {12};
+    \fill[white] ({12*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({12*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({12*\u},0.000) {13};
+    \fill[white] ({13*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({13*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({13*\u},0.000) {14};
+    \fill[white] ({14*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({14*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({14*\u},0.000) {15};
+    \fill[white] ({15*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({15*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({15*\u},0.000) {16};
+  \end{scope}
+  \begin{scope}[yshift=-3.96cm]
+    \node[anchor=east,font=\footnotesize] at (-0.18,0) {$(d)\ t=\frac{3}{4}T$};
+    \draw[dashed,line width=0.48pt] ({9*\u},0) -- ({15*\u+0.22},0);
+    \draw[line width=0.55pt] ({0*\u},-0.480) -- ({1*\u},-0.416) -- ({2*\u},-0.240) -- ({3*\u},0.000) -- ({4*\u},0.240) -- ({5*\u},0.416) -- ({6*\u},0.480) -- ({7*\u},0.416) -- ({8*\u},0.240) -- ({9*\u},0.000);
+    \fill[white] ({0*\u},-0.480) circle[radius=\rr];
+    \draw[line width=0.55pt] ({0*\u},-0.480) circle[radius=\rr];
+    \node[font=\tiny] at ({0*\u},-0.480) {1};
+    \draw[->,line width=0.48pt] ({0*\u},{-0.480+\rr}) -- ({0*\u},{-0.480+\rr+0.26});
+    \fill[white] ({1*\u},-0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({1*\u},-0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({1*\u},-0.416) {2};
+    \draw[->,line width=0.48pt] ({1*\u},{-0.416-\rr}) -- ({1*\u},{-0.416-\rr-0.26});
+    \fill[white] ({2*\u},-0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({2*\u},-0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({2*\u},-0.240) {3};
+    \draw[->,line width=0.48pt] ({2*\u},{-0.240-\rr}) -- ({2*\u},{-0.240-\rr-0.26});
+    \fill[white] ({3*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({3*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({3*\u},0.000) {4};
+    \draw[->,line width=0.48pt] ({3*\u},{0.000-\rr}) -- ({3*\u},{0.000-\rr-0.26});
+    \fill[white] ({4*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({4*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({4*\u},0.240) {5};
+    \draw[->,line width=0.48pt] ({4*\u},{0.240-\rr}) -- ({4*\u},{0.240-\rr-0.26});
+    \fill[white] ({5*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({5*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({5*\u},0.416) {6};
+    \draw[->,line width=0.48pt] ({5*\u},{0.416-\rr}) -- ({5*\u},{0.416-\rr-0.26});
+    \fill[white] ({6*\u},0.480) circle[radius=\rr];
+    \draw[line width=0.55pt] ({6*\u},0.480) circle[radius=\rr];
+    \node[font=\tiny] at ({6*\u},0.480) {7};
+    \draw[->,line width=0.48pt] ({6*\u},{0.480-\rr}) -- ({6*\u},{0.480-\rr-0.26});
+    \fill[white] ({7*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({7*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({7*\u},0.416) {8};
+    \draw[->,line width=0.48pt] ({7*\u},{0.416+\rr}) -- ({7*\u},{0.416+\rr+0.26});
+    \fill[white] ({8*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({8*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({8*\u},0.240) {9};
+    \draw[->,line width=0.48pt] ({8*\u},{0.240+\rr}) -- ({8*\u},{0.240+\rr+0.26});
+    \fill[white] ({9*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({9*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({9*\u},0.000) {10};
+    \draw[->,line width=0.48pt] ({9*\u},{0.000+\rr}) -- ({9*\u},{0.000+\rr+0.26});
+    \fill[white] ({10*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({10*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({10*\u},0.000) {11};
+    \fill[white] ({11*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({11*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({11*\u},0.000) {12};
+    \fill[white] ({12*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({12*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({12*\u},0.000) {13};
+    \fill[white] ({13*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({13*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({13*\u},0.000) {14};
+    \fill[white] ({14*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({14*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({14*\u},0.000) {15};
+    \fill[white] ({15*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({15*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({15*\u},0.000) {16};
+  \end{scope}
+  \begin{scope}[yshift=-5.28cm]
+    \node[anchor=east,font=\footnotesize] at (-0.18,0) {$(e)\ t=T$};
+    \draw[dashed,line width=0.48pt] ({12*\u},0) -- ({15*\u+0.22},0);
+    \draw[line width=0.55pt] ({0*\u},-0.000) -- ({1*\u},-0.240) -- ({2*\u},-0.416) -- ({3*\u},-0.480) -- ({4*\u},-0.416) -- ({5*\u},-0.240) -- ({6*\u},0.000) -- ({7*\u},0.240) -- ({8*\u},0.416) -- ({9*\u},0.480) -- ({10*\u},0.416) -- ({11*\u},0.240) -- ({12*\u},0.000);
+    \fill[white] ({0*\u},-0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({0*\u},-0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({0*\u},-0.000) {1};
+    \draw[->,line width=0.48pt] ({0*\u},{-0.000+\rr}) -- ({0*\u},{-0.000+\rr+0.26});
+    \fill[white] ({1*\u},-0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({1*\u},-0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({1*\u},-0.240) {2};
+    \draw[->,line width=0.48pt] ({1*\u},{-0.240+\rr}) -- ({1*\u},{-0.240+\rr+0.26});
+    \fill[white] ({2*\u},-0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({2*\u},-0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({2*\u},-0.416) {3};
+    \draw[->,line width=0.48pt] ({2*\u},{-0.416+\rr}) -- ({2*\u},{-0.416+\rr+0.26});
+    \fill[white] ({3*\u},-0.480) circle[radius=\rr];
+    \draw[line width=0.55pt] ({3*\u},-0.480) circle[radius=\rr];
+    \node[font=\tiny] at ({3*\u},-0.480) {4};
+    \draw[->,line width=0.48pt] ({3*\u},{-0.480+\rr}) -- ({3*\u},{-0.480+\rr+0.26});
+    \fill[white] ({4*\u},-0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({4*\u},-0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({4*\u},-0.416) {5};
+    \draw[->,line width=0.48pt] ({4*\u},{-0.416-\rr}) -- ({4*\u},{-0.416-\rr-0.26});
+    \fill[white] ({5*\u},-0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({5*\u},-0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({5*\u},-0.240) {6};
+    \draw[->,line width=0.48pt] ({5*\u},{-0.240-\rr}) -- ({5*\u},{-0.240-\rr-0.26});
+    \fill[white] ({6*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({6*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({6*\u},0.000) {7};
+    \draw[->,line width=0.48pt] ({6*\u},{0.000-\rr}) -- ({6*\u},{0.000-\rr-0.26});
+    \fill[white] ({7*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({7*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({7*\u},0.240) {8};
+    \draw[->,line width=0.48pt] ({7*\u},{0.240-\rr}) -- ({7*\u},{0.240-\rr-0.26});
+    \fill[white] ({8*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({8*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({8*\u},0.416) {9};
+    \draw[->,line width=0.48pt] ({8*\u},{0.416-\rr}) -- ({8*\u},{0.416-\rr-0.26});
+    \fill[white] ({9*\u},0.480) circle[radius=\rr];
+    \draw[line width=0.55pt] ({9*\u},0.480) circle[radius=\rr];
+    \node[font=\tiny] at ({9*\u},0.480) {10};
+    \draw[->,line width=0.48pt] ({9*\u},{0.480-\rr}) -- ({9*\u},{0.480-\rr-0.26});
+    \fill[white] ({10*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({10*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({10*\u},0.416) {11};
+    \draw[->,line width=0.48pt] ({10*\u},{0.416+\rr}) -- ({10*\u},{0.416+\rr+0.26});
+    \fill[white] ({11*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({11*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({11*\u},0.240) {12};
+    \draw[->,line width=0.48pt] ({11*\u},{0.240+\rr}) -- ({11*\u},{0.240+\rr+0.26});
+    \fill[white] ({12*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({12*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({12*\u},0.000) {13};
+    \draw[->,line width=0.48pt] ({12*\u},{0.000+\rr}) -- ({12*\u},{0.000+\rr+0.26});
+    \fill[white] ({13*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({13*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({13*\u},0.000) {14};
+    \fill[white] ({14*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({14*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({14*\u},0.000) {15};
+    \fill[white] ({15*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({15*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({15*\u},0.000) {16};
+  \end{scope}
+  \begin{scope}[yshift=-6.6000000000000005cm]
+    \node[anchor=east,font=\footnotesize] at (-0.18,0) {$(f)\ t=\frac{5}{4}T$};
+    \draw[dashed,line width=0.48pt] ({15*\u},0) -- ({15*\u+0.22},0);
+    \draw[line width=0.55pt] ({0*\u},0.480) -- ({1*\u},0.416) -- ({2*\u},0.240) -- ({3*\u},-0.000) -- ({4*\u},-0.240) -- ({5*\u},-0.416) -- ({6*\u},-0.480) -- ({7*\u},-0.416) -- ({8*\u},-0.240) -- ({9*\u},0.000) -- ({10*\u},0.240) -- ({11*\u},0.416) -- ({12*\u},0.480) -- ({13*\u},0.416) -- ({14*\u},0.240) -- ({15*\u},0.000);
+    \fill[white] ({0*\u},0.480) circle[radius=\rr];
+    \draw[line width=0.55pt] ({0*\u},0.480) circle[radius=\rr];
+    \node[font=\tiny] at ({0*\u},0.480) {1};
+    \draw[->,line width=0.48pt] ({0*\u},{0.480-\rr}) -- ({0*\u},{0.480-\rr-0.26});
+    \fill[white] ({1*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({1*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({1*\u},0.416) {2};
+    \draw[->,line width=0.48pt] ({1*\u},{0.416+\rr}) -- ({1*\u},{0.416+\rr+0.26});
+    \fill[white] ({2*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({2*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({2*\u},0.240) {3};
+    \draw[->,line width=0.48pt] ({2*\u},{0.240+\rr}) -- ({2*\u},{0.240+\rr+0.26});
+    \fill[white] ({3*\u},-0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({3*\u},-0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({3*\u},-0.000) {4};
+    \draw[->,line width=0.48pt] ({3*\u},{-0.000+\rr}) -- ({3*\u},{-0.000+\rr+0.26});
+    \fill[white] ({4*\u},-0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({4*\u},-0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({4*\u},-0.240) {5};
+    \draw[->,line width=0.48pt] ({4*\u},{-0.240+\rr}) -- ({4*\u},{-0.240+\rr+0.26});
+    \fill[white] ({5*\u},-0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({5*\u},-0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({5*\u},-0.416) {6};
+    \draw[->,line width=0.48pt] ({5*\u},{-0.416+\rr}) -- ({5*\u},{-0.416+\rr+0.26});
+    \fill[white] ({6*\u},-0.480) circle[radius=\rr];
+    \draw[line width=0.55pt] ({6*\u},-0.480) circle[radius=\rr];
+    \node[font=\tiny] at ({6*\u},-0.480) {7};
+    \draw[->,line width=0.48pt] ({6*\u},{-0.480+\rr}) -- ({6*\u},{-0.480+\rr+0.26});
+    \fill[white] ({7*\u},-0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({7*\u},-0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({7*\u},-0.416) {8};
+    \draw[->,line width=0.48pt] ({7*\u},{-0.416-\rr}) -- ({7*\u},{-0.416-\rr-0.26});
+    \fill[white] ({8*\u},-0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({8*\u},-0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({8*\u},-0.240) {9};
+    \draw[->,line width=0.48pt] ({8*\u},{-0.240-\rr}) -- ({8*\u},{-0.240-\rr-0.26});
+    \fill[white] ({9*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({9*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({9*\u},0.000) {10};
+    \draw[->,line width=0.48pt] ({9*\u},{0.000-\rr}) -- ({9*\u},{0.000-\rr-0.26});
+    \fill[white] ({10*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({10*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({10*\u},0.240) {11};
+    \draw[->,line width=0.48pt] ({10*\u},{0.240-\rr}) -- ({10*\u},{0.240-\rr-0.26});
+    \fill[white] ({11*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({11*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({11*\u},0.416) {12};
+    \draw[->,line width=0.48pt] ({11*\u},{0.416-\rr}) -- ({11*\u},{0.416-\rr-0.26});
+    \fill[white] ({12*\u},0.480) circle[radius=\rr];
+    \draw[line width=0.55pt] ({12*\u},0.480) circle[radius=\rr];
+    \node[font=\tiny] at ({12*\u},0.480) {13};
+    \draw[->,line width=0.48pt] ({12*\u},{0.480-\rr}) -- ({12*\u},{0.480-\rr-0.26});
+    \fill[white] ({13*\u},0.416) circle[radius=\rr];
+    \draw[line width=0.55pt] ({13*\u},0.416) circle[radius=\rr];
+    \node[font=\tiny] at ({13*\u},0.416) {14};
+    \draw[->,line width=0.48pt] ({13*\u},{0.416+\rr}) -- ({13*\u},{0.416+\rr+0.26});
+    \fill[white] ({14*\u},0.240) circle[radius=\rr];
+    \draw[line width=0.55pt] ({14*\u},0.240) circle[radius=\rr];
+    \node[font=\tiny] at ({14*\u},0.240) {15};
+    \draw[->,line width=0.48pt] ({14*\u},{0.240+\rr}) -- ({14*\u},{0.240+\rr+0.26});
+    \fill[white] ({15*\u},0.000) circle[radius=\rr];
+    \draw[line width=0.55pt] ({15*\u},0.000) circle[radius=\rr];
+    \node[font=\tiny] at ({15*\u},0.000) {16};
+    \draw[->,line width=0.48pt] ({15*\u},{0.000+\rr}) -- ({15*\u},{0.000+\rr+0.26});
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图2.4 增波时形成和传播}
 \end{figure}
 
@@ -3267,7 +3785,52 @@ O
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.6 标出当时质点的运动趋势}]{assets/physics-2/fig-p0060-01.png}}
+\fitfig{%
+% fig-alt: 图2.6 t=3T/2 与 t=7T/4 波形，标出质点 1--4 及运动趋势；波向右
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.72}
+  \def\u{0.42}
+  \draw[->,line width=0.65pt] (5.55,1.28) -- (6.55,1.28);
+  \node[anchor=south] at (6.05,1.30) {$v$};
+  \node[anchor=east,font=\footnotesize] at (-0.55,0.22) {$t=\frac{3}{2}T$};
+  \draw[line width=0.7pt] (-0.28,0) -- ({16.2*\u},0);
+  \draw[line width=0.55pt] (0,-0.08) -- (0,0.10);
+  \draw[line width=0.85pt] plot[domain=0:15.55,samples=120,smooth] ({\x*\u},{\A*sin(30*\x)});
+  \node[anchor=south,font=\scriptsize] at (0.06,0.10) {$1$};
+  \draw[->,line width=0.48pt] (0.10,-0.06) -- (0.10,-0.30);
+  \node[anchor=south,font=\scriptsize] at ({1.05*\u},{\A*sin(31.5)+0.06}) {$2$};
+  \node[anchor=south,font=\scriptsize] at ({2.05*\u},{\A*sin(61.5)+0.06}) {$3$};
+  \node[anchor=south,font=\scriptsize] at ({3*\u},{\A+0.08}) {$4$};
+  \foreach \p in {0.35,1.05,2.05,3} {
+    \draw[->,line width=0.48pt] ({\p*\u},{\A*sin(30*\p)-0.05}) -- ({\p*\u},{\A*sin(30*\p)-0.28});
+  }
+  \foreach \p in {4.2,5.3,6.5,7.7,9} {
+    \draw[->,line width=0.48pt] ({\p*\u},{\A*sin(30*\p)+0.05}) -- ({\p*\u},{\A*sin(30*\p)+0.28});
+  }
+  \foreach \p in {10.2,11.3,12.4,13.6,14.7,15.3} {
+    \draw[->,line width=0.48pt] ({\p*\u},{\A*sin(30*\p)-0.05}) -- ({\p*\u},{\A*sin(30*\p)-0.28});
+  }
+  \begin{scope}[yshift=-2.15cm]
+    \node[anchor=east,font=\footnotesize] at (-0.55,0.22) {$t=\frac{7}{4}T$};
+    \draw[line width=0.7pt] (-0.28,0) -- ({16.2*\u},0);
+    \draw[line width=0.85pt] plot[domain=0:15.35,samples=120,smooth] ({\x*\u},{-\A*cos(30*\x)});
+    \node[anchor=north,font=\scriptsize] at (0,{-\A-0.06}) {$1$};
+    \node[anchor=south,font=\scriptsize] at ({1.05*\u},{-\A*cos(31.5)+0.08}) {$2$};
+    \node[anchor=south,font=\scriptsize] at ({2.05*\u},{-\A*cos(61.5)+0.08}) {$3$};
+    \node[anchor=south,font=\scriptsize] at ({3*\u},0.10) {$4$};
+    \draw[->,line width=0.48pt] (0.08,{-\A+0.16}) -- (0.08,{-\A+0.40});
+    \foreach \p in {1.05,2.05,3,4.2,5.2,6} {
+      \draw[->,line width=0.48pt] ({\p*\u},{-\A*cos(30*\p)-0.05}) -- ({\p*\u},{-\A*cos(30*\p)-0.28});
+    }
+    \foreach \p in {7.2,8.3,9.3,10.4,11.3,12} {
+      \draw[->,line width=0.48pt] ({\p*\u},{-\A*cos(30*\p)+0.05}) -- ({\p*\u},{-\A*cos(30*\p)+0.28});
+    }
+    \foreach \p in {13.2,14.3,15.1} {
+      \draw[->,line width=0.48pt] ({\p*\u},{-\A*cos(30*\p)-0.05}) -- ({\p*\u},{-\A*cos(30*\p)-0.28});
+    }
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 2.6 标出当时质点的运动趋势}
 \end{figure}
 
