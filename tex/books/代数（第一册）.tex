@@ -2851,7 +2851,40 @@ a - (b + c) = a - b - c. \tag {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-18}]{assets/algebra-1/fig-p0048-02.png}}
+% fig-alt: 数轴向东，中午甲车站在左，午前1、2、3小时依次在东侧40、80、120公里，上方三段箭头向左
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
+  \node[anchor=east] at (-0.06,0) {西};
+  \draw[line width=0.95pt, ->] (0,0) -- (10.65,0);
+  \node[anchor=west] at (10.72,0) {东};
+  \coordinate (A) at (1.35,0);
+  \coordinate (B) at (3.95,0);
+  \coordinate (C) at (6.55,0);
+  \coordinate (D) at (9.15,0);
+  \fill (A) circle (1.2pt);
+  \fill (B) circle (1.15pt);
+  \fill (C) circle (1.15pt);
+  \fill (D) circle (1.2pt);
+  \node[below=1.5pt] at (A) {甲车站};
+  \node[below=1.5pt] at (B) {$+40$};
+  \node[below=1.5pt] at (C) {$+80$};
+  \node[below=1.5pt] at (D) {$+120$公里};
+  \foreach \p in {A,B,C,D} {
+    \draw[line width=0.5pt] (\p) -- (\p |- 0,0.62);
+  }
+  \draw[line width=0.55pt] (1.35,0.48) -- (1.35,0.76);
+  \draw[line width=0.6pt, latex-] (1.44,0.62) -- (3.95,0.62);
+  \draw[line width=0.55pt] (3.95,0.48) -- (3.95,0.76);
+  \draw[line width=0.6pt, latex-] (4.04,0.62) -- (6.55,0.62);
+  \draw[line width=0.55pt] (6.55,0.48) -- (6.55,0.76);
+  \draw[line width=0.6pt, latex-] (6.64,0.62) -- (9.15,0.62);
+  \draw[line width=0.55pt] (9.15,0.48) -- (9.15,0.76);
+  \node[above=2pt, font=\scriptsize] at (A |- 0,0.72) {中午};
+  \node[above=2pt, font=\scriptsize] at (B |- 0,0.72) {午前1小时};
+  \node[above=2pt, font=\scriptsize] at (C |- 0,0.72) {午前2小时};
+  \node[above=2pt, font=\scriptsize] at (D |- 0,0.72) {午前3小时};
+\end{tikzpicture}%
+}
 \caption{图1-18}
 \end{figure}
 
@@ -3573,7 +3606,20 @@ a (b + c) = a b + a c.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-19}]{assets/algebra-1/fig-p0061-01.png}}
+% fig-alt: 边长8米的正方形，底边与右边各有双向箭头尺寸线
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
+  \draw[line width=0.9pt] (0,0) rectangle (2.4,2.4);
+  \draw[line width=0.45pt] (0,-0.08) -- (0,-0.38);
+  \draw[line width=0.45pt] (2.4,-0.08) -- (2.4,-0.38);
+  \draw[line width=0.55pt, latex-latex] (0,-0.26) -- (2.4,-0.26);
+  \node[below=1pt] at (1.2,-0.26) {$8$米};
+  \draw[line width=0.45pt] (2.48,0) -- (2.78,0);
+  \draw[line width=0.45pt] (2.48,2.4) -- (2.78,2.4);
+  \draw[line width=0.55pt, latex-latex] (2.64,0) -- (2.64,2.4);
+  \node[rotate=90, anchor=center] at (2.96,1.2) {$8$米};
+\end{tikzpicture}%
+}
 \caption{图1-19}
 \end{figure}
 
@@ -3585,7 +3631,37 @@ a (b + c) = a b + a c.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-20}]{assets/algebra-1/fig-p0061-02.png}}
+% fig-alt: 棱长8米的正方体，见前面、上面和右侧，隐去的三条棱为虚线，前底、右高和右下斜棱标8米
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
+  \coordinate (A) at (0,0);        % 前下左
+  \coordinate (B) at (2.2,0);      % 前下右
+  \coordinate (C) at (2.2,2.2);    % 前上右
+  \coordinate (D) at (0,2.2);      % 前上左
+  \coordinate (E) at (0.78,0.52);  % 后下左
+  \coordinate (F) at (3.00,0.52);  % 后下右
+  \coordinate (G) at (3.00,2.72);  % 后上右
+  \coordinate (H) at (0.78,2.72);  % 后上左
+  \draw[dashed, line width=0.55pt] (A) -- (E);
+  \draw[dashed, line width=0.55pt] (E) -- (F);
+  \draw[dashed, line width=0.55pt] (E) -- (H);
+  \draw[line width=0.9pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.9pt] (D) -- (H) -- (G) -- (C);
+  \draw[line width=0.9pt] (B) -- (F) -- (G);
+  \draw[line width=0.45pt] (0,-0.08) -- (0,-0.42);
+  \draw[line width=0.45pt] (2.2,-0.08) -- (2.2,-0.42);
+  \draw[line width=0.55pt, latex-latex] (0,-0.28) -- (2.2,-0.28);
+  \node[below=1pt] at (1.1,-0.28) {$8$米};
+  \draw[line width=0.45pt] (3.08,0.52) -- (3.40,0.52);
+  \draw[line width=0.45pt] (3.08,2.72) -- (3.40,2.72);
+  \draw[line width=0.55pt, latex-latex] (3.26,0.52) -- (3.26,2.72);
+  \node[rotate=90, anchor=center] at (3.56,1.62) {$8$米};
+  \draw[line width=0.45pt] (2.28,-0.10) -- (2.44,-0.28);
+  \draw[line width=0.45pt] (3.08,0.42) -- (3.24,0.24);
+  \draw[line width=0.55pt, latex-latex] (2.40,-0.22) -- (3.20,0.30);
+  \node[rotate=33.7, anchor=center, inner sep=1pt] at (3.02,-0.32) {$8$米};
+\end{tikzpicture}%
+}
 \caption{图1-20}
 \end{figure}
 
@@ -4780,7 +4856,18 @@ S = a \times a = a ^{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/algebra-1/fig-p0078-01.png}}
+% fig-alt: 三角形，底边偏左处标底b，顶点向底作垂直高并在右侧标高h
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
+  \coordinate (L) at (0,0);
+  \coordinate (R) at (4.6,0);
+  \coordinate (P) at (1.55,2.15);
+  \draw[line width=0.9pt] (L) -- (R) -- (P) -- cycle;
+  \draw[line width=0.7pt] (P) -- (1.55,0);
+  \node[anchor=west] at (1.66,1.05) {高$h$};
+  \node[below=2pt] at (2.3,0) {底$b$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -4792,7 +4879,19 @@ S = a \times a = a ^{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/algebra-1/fig-p0078-02.png}}
+% fig-alt: 平行四边形，底边偏左处标底b，内部垂直高右侧标高h
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.35,0);
+  \coordinate (C) at (5.45,1.72);
+  \coordinate (D) at (1.10,1.72);
+  \draw[line width=0.9pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (1.78,1.72) -- (1.78,0);
+  \node[anchor=west] at (1.88,0.86) {高$h$};
+  \node[below=2pt] at (2.18,0) {底$b$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -4817,7 +4916,15 @@ S = a \times a = a ^{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/algebra-1/fig-p0079-01.png}}
+% fig-alt: 圆，圆心黑点向右画半径，半径上方标半径r
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
+  \draw[line width=0.9pt] (0,0) circle (1.55);
+  \draw[line width=0.7pt] (0,0) -- (1.55,0);
+  \fill (0,0) circle (1.7pt);
+  \node[above=3.5pt, inner sep=1.5pt] at (0.78,0) {半径$r$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -5322,7 +5429,26 @@ a
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/algebra-1/fig-p0086-01.png}}
+% fig-alt: 第9题 梯形，下底a、上底b，中高为虚线双箭头标h
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.75,0);
+  \coordinate (C) at (3.28,1.68);
+  \coordinate (D) at (1.72,1.68);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.45pt] (1.72,1.68) -- (1.72,2.08);
+  \draw[line width=0.45pt] (3.28,1.68) -- (3.28,2.08);
+  \draw[line width=0.52pt, latex-latex] (1.80,1.96) -- (3.20,1.96);
+  \node[above=0.5pt] at (2.50,1.96) {$b$};
+  \draw[dashed, line width=0.52pt, latex-latex] (2.50,1.58) -- (2.50,0.10);
+  \node[right=2pt] at (2.50,0.84) {$h$};
+  \draw[line width=0.45pt] (0,0) -- (0,-0.42);
+  \draw[line width=0.45pt] (4.75,0) -- (4.75,-0.42);
+  \draw[line width=0.52pt, latex-latex] (0.08,-0.28) -- (4.67,-0.28);
+  \node[below=0.5pt] at (2.375,-0.28) {$a$};
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -5334,7 +5460,36 @@ a
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/algebra-1/fig-p0086-02.png}}
+% fig-alt: 第10题 长方体，底边a、向后棱b、右侧高c，看不见的三条棱用虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.35,0);
+  \coordinate (C) at (3.35,2.05);
+  \coordinate (D) at (0,2.05);
+  \coordinate (Ab) at (0.86,0.50);
+  \coordinate (Bb) at (4.21,0.50);
+  \coordinate (Cb) at (4.21,2.55);
+  \coordinate (Db) at (0.86,2.55);
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (D) -- (Db) -- (Cb) -- (C);
+  \draw[line width=0.7pt] (B) -- (Bb) -- (Cb);
+  \draw[dashed, line width=0.55pt] (A) -- (Ab) -- (Bb);
+  \draw[dashed, line width=0.55pt] (Ab) -- (Db);
+  \draw[line width=0.45pt] (0,0) -- (0,-0.50);
+  \draw[line width=0.45pt] (3.35,0) -- (3.35,-0.50);
+  \draw[line width=0.52pt, latex-latex] (0.08,-0.34) -- (3.27,-0.34);
+  \node[below=0.5pt] at (1.675,-0.34) {$a$};
+  \draw[line width=0.45pt] (3.43,-0.05) -- (3.57,-0.26);
+  \draw[line width=0.45pt] (4.29,0.45) -- (4.43,0.24);
+  \draw[line width=0.52pt, latex-latex] (3.51,-0.16) -- (4.21,0.28);
+  \node[rotate=30.2, anchor=north, inner sep=0.4pt] at (3.95,-0.10) {$b$};
+  \draw[line width=0.45pt] (4.52,0) -- (4.82,0);
+  \draw[line width=0.45pt] (4.52,2.05) -- (4.82,2.05);
+  \draw[line width=0.52pt, latex-latex] (4.66,0.08) -- (4.66,1.97);
+  \node[right=1pt] at (4.66,1.025) {$c$};
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
