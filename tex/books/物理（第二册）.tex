@@ -3352,7 +3352,21 @@ O
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0064-01.png}}
+\fitfig{%
+% fig-alt: （第4题）横波波形：自原点向上，过一峰一谷至第二波峰，传播方向向右
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.82}
+  \def\u{2.15}
+  \draw[->,line width=0.7pt] (0,-1.15) -- (0,1.55);
+  \node[left=2pt] at (-0.02,1.48) {$y$};
+  \draw[->,line width=0.7pt] (-0.12,0) -- ({1.55*\u},0);
+  \node[below right=1pt] at ({1.48*\u},0) {$r$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \draw[line width=0.85pt] plot[domain=0:1.28,samples=140,smooth] ({\x*\u},{\A*sin(360*\x)});
+  \draw[->,line width=0.55pt] (0.42,1.24) -- (1.08,1.24);
+  \node[above=1pt] at (0.75,1.24) {$v$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -3371,7 +3385,22 @@ O
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0065-01.png}}
+\fitfig{%
+% fig-alt: （第6题）横波向右：P1 在左升段，P2 在峰后平衡位置，P3 在波谷，P4 在次峰下降段，P5 在其后平衡位置
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.72}
+  \def\u{2.05}
+  \draw[line width=0.7pt] (-0.08,0) -- ({1.62*\u},0);
+  \draw[line width=0.85pt] plot[domain=0.02:1.50,samples=150,smooth] ({\x*\u},{\A*sin(360*\x)});
+  \node[left=4pt] at ({0.02*\u},{\A*0.35}) {$P_{1}$};
+  \node[anchor=north] at ({0.46*\u},-0.08) {$P_{2}$};
+  \node[below=3pt] at ({0.80*\u},{-\A}) {$P_{3}$};
+  \node[right=4pt] at ({1.40*\u},{\A*0.55}) {$P_{4}$};
+  \node[anchor=north] at ({1.62*\u},-0.10) {$P_{5}$};
+  \draw[->,line width=0.55pt] ({0.95*\u},1.02) -- ({1.28*\u},1.02);
+  \node[above=1pt] at ({1.12*\u},1.02) {$v$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -3396,7 +3425,27 @@ O
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.10 波长}]{assets/physics-2/fig-p0066-01.png}}
+\fitfig{%
+% fig-alt: 图2.10 波长：余弦自纵轴波峰起，上标相邻波峰间 λ，下标相邻波谷间 λ
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.78}
+  \def\u{1.85}
+  \draw[->,line width=0.7pt] (0,-1.18) -- (0,1.62);
+  \node[left=2pt] at (-0.02,1.54) {$y$};
+  \draw[->,line width=0.7pt] (-0.12,0) -- ({2.32*\u},0);
+  \node[below right=1pt] at ({2.20*\u},0) {$r$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \draw[line width=0.85pt] plot[domain=0:2.00,samples=180,smooth] ({\x*\u},{\A*cos(360*\x)});
+  \draw[line width=0.45pt] (0.12,{\A+0.10}) -- (0.12,{\A+0.30});
+  \draw[line width=0.45pt] ({\u},{\A+0.10}) -- ({\u},{\A+0.30});
+  \draw[<->,line width=0.55pt] (0.16,{\A+0.30}) -- ({\u-0.08},{\A+0.30});
+  \node[above=1pt] at ({0.55*\u},{\A+0.30}) {$\lambda$};
+  \draw[line width=0.45pt] ({0.5*\u},{-\A-0.16}) -- ({0.5*\u},{-\A-0.32});
+  \draw[line width=0.45pt] ({1.5*\u},{-\A-0.16}) -- ({1.5*\u},{-\A-0.32});
+  \draw[<->,line width=0.55pt] ({0.5*\u+0.08},{-\A-0.32}) -- ({1.5*\u-0.08},{-\A-0.32});
+  \node[below=1pt] at (\u,{-\A-0.32}) {$\lambda$};
+\end{tikzpicture}%
+}
 \caption{图2.10 波长}
 \end{figure}
 
@@ -3440,7 +3489,29 @@ v 表示，波速的国际单位是米/秒。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.11 时刻 t 和时刻 t + dt 的波形图线}]{assets/physics-2/fig-p0067-01.png}}
+\fitfig{%
+% fig-alt: 图2.11 实线为时刻 t（自原点向下），虚线为时刻 t+Δt、右移四分之一波长；右上标 Δx=vΔt
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.68}
+  \def\u{1.78}
+  \def\d{0.25}
+  \draw[->,line width=0.7pt] (0,-0.98) -- (0,1.70);
+  \node[left=2pt] at (-0.02,1.62) {$y$};
+  \draw[->,line width=0.7pt] (-0.12,0) -- ({2.55*\u},0);
+  \node[below right=1pt] at ({2.44*\u},0) {$r$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \draw[line width=0.9pt] plot[domain=0:2.25,samples=200,smooth] ({\x*\u},{-\A*sin(360*\x)});
+  \draw[dashed,line width=0.55pt] plot[domain=0:2.25,samples=200,smooth] ({\x*\u},{-\A*sin(360*(\x-\d))});
+  \draw[->,line width=0.55pt] ({1.22*\u},1.38) -- ({1.52*\u},1.38);
+  \node[above=1pt] at ({1.37*\u},1.38) {$v$};
+  \draw[line width=0.4pt] ({2.00*\u},0.92) -- ({2.00*\u},1.14);
+  \draw[line width=0.4pt] ({2.25*\u},0.92) -- ({2.25*\u},1.14);
+  \draw[<->,line width=0.5pt] ({2.00*\u+0.05},1.06) -- ({2.25*\u-0.05},1.06);
+  \node[above=2pt,font=\scriptsize] at ({2.125*\u},1.06) {$\Delta x=v\Delta t$};
+  \node[anchor=north,font=\scriptsize] at ({0.62*\u},{-1.05}) {时刻 $t$ 的波形};
+  \node[anchor=north,font=\scriptsize] at ({1.85*\u},{-1.05}) {时刻 $t+\Delta t$ 的波形};
+\end{tikzpicture}%
+}
 \caption{图2.11 时刻 \(t\) 和时刻 \(t + dt\) 的波形图线}
 \end{figure}
 
@@ -3509,7 +3580,26 @@ O 为\(r_{1}\)的媒质质点 P 的振动图线。通过比较这两个图象可
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 一列简谐波在 t = t\_\{1\} 时的波形图线}]{assets/physics-2/fig-p0069-01.png}}
+\fitfig{%
+% fig-alt: 图2.12(a) 简谐波波形：纵轴处为波谷，λ 标在第一、二波峰之间，P 在第三波峰、虚线至 r1
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.72}
+  \def\u{1.55}
+  \draw[->,line width=0.7pt] (0,-1.18) -- (0,1.62);
+  \node[left=2pt] at (-0.02,1.54) {$y$};
+  \draw[->,line width=0.7pt] (-0.12,0) -- ({3.15*\u},0);
+  \node[below right=1pt] at ({3.05*\u},0) {$r$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \draw[line width=0.85pt] plot[domain=0:2.90,samples=220,smooth] ({\x*\u},{-\A*cos(360*\x)});
+  \draw[line width=0.4pt] ({0.5*\u},{\A+0.12}) -- ({0.5*\u},{\A+0.30});
+  \draw[line width=0.4pt] ({1.5*\u},{\A+0.12}) -- ({1.5*\u},{\A+0.30});
+  \draw[<->,line width=0.5pt] ({0.5*\u+0.08},{\A+0.30}) -- ({1.5*\u-0.08},{\A+0.30});
+  \node[above=1pt] at (\u,{\A+0.30}) {$\lambda$};
+  \draw[dashed,line width=0.45pt] ({2.5*\u},{\A+0.02}) -- ({2.5*\u},-0.02);
+  \node[above=3pt] at ({2.5*\u},\A) {$P$};
+  \node[below=6pt] at ({2.50*\u},0) {$r_{1}$};
+\end{tikzpicture}%
+}
 \caption{(a) 一列简谐波在 \(t = t_{1}\) 时的波形图线}
 \end{figure}
 
@@ -3519,7 +3609,25 @@ O 为\(r_{1}\)的媒质质点 P 的振动图线。通过比较这两个图象可
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) 距波源 r=r\_\{1\} 的质点 P 的振动图线}]{assets/physics-2/fig-p0069-02.png}}
+\fitfig{%
+% fig-alt: 图2.12 质点 P 的振动图线：自原点向上的正弦，T 标在相邻波峰之间，t1 在第二波峰、位移与波形上 P 同为正向最大
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.72}
+  \def\u{1.55}
+  \draw[->,line width=0.7pt] (0,-1.15) -- (0,1.62);
+  \node[left=2pt] at (-0.02,1.54) {$y$};
+  \draw[->,line width=0.7pt] (-0.12,0) -- ({2.85*\u},0);
+  \node[below right=1pt] at ({2.74*\u},0) {$t$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \draw[line width=0.85pt] plot[domain=0:2.55,samples=200,smooth] ({\x*\u},{\A*sin(360*\x)});
+  \draw[line width=0.4pt] ({0.25*\u},{\A+0.12}) -- ({0.25*\u},{\A+0.30});
+  \draw[line width=0.4pt] ({1.25*\u},{\A+0.12}) -- ({1.25*\u},{\A+0.30});
+  \draw[<->,line width=0.5pt] ({0.25*\u+0.08},{\A+0.30}) -- ({1.25*\u-0.08},{\A+0.30});
+  \node[above=1pt] at ({0.75*\u},{\A+0.30}) {$T$};
+  \draw[dashed,line width=0.45pt] ({1.25*\u},{\A+0.02}) -- ({1.25*\u},-0.02);
+  \node[below=5pt] at ({1.25*\u},0) {$t_{1}$};
+\end{tikzpicture}%
+}
 \caption{(1) 距波源 \(r=r_{1}\) 的质点 P 的振动图线}
 \end{figure}
 
