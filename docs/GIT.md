@@ -32,6 +32,17 @@ git lfs pull
 
 `raw/*.pdf` 走 LFS 上传。没有 `git lfs install` 时，push 可能把指针当普通文本推上去，克隆端会拿到几十字节的 pointer 而不是 PDF。
 
+`origin` 保持 SSH：`git@github.com:kenyon-wong/shulihua-tex.git`。不要改成 HTTPS 再 push，LFS 仍会走 `lfs.github.com`，还可能弹出用户名密码。
+
+本仓库本地已关闭 LFS file locking 校验，并把并发降到 3、加长 TLS/拨号超时。全局 `~/.gitconfig` 里 `lfs.tlstimeout 3`、`lfs.transfer.maxretries 1` 是给内网 git 用的，对着 GitHub 会握手超时。
+
+若上传到 16/17 后报 S3 `EOF` 或 `TLS handshake timeout`，已经成功的对象会留在远端，直接重试即可：
+
+```bash
+git lfs push origin master
+git push -u origin master
+```
+
 ## 远程与分支（独立维护 TeX，不向上游推送）
 
 | 远程 | URL | 用途 |
