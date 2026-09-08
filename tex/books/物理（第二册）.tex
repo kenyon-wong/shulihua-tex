@@ -4720,7 +4720,26 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.9 声强与离开声源的距离的平方成反比}]{assets/physics-2/fig-p0094-01.png}}
+\fitfig{%
+% fig-alt: 图3.6 声强与距离平方成反比：同心球面，左方扇形球壳内端有斜线，半径标 r_1、r_2，中心 O
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0,0) circle[radius=1.08];
+  \draw[line width=0.7pt] (0,0) circle[radius=2.18];
+  \fill (0,0) circle[radius=0.95pt];
+  \node[anchor=north west] at (0.06,-0.03) {$O$};
+  % 左上方扇形：两半径、内端斜线、外端四边形
+  \draw[line width=0.6pt] (0,0) -- (150:2.18);
+  \draw[line width=0.6pt] (0,0) -- (205:2.18);
+  \draw[line width=0.55pt] (150:1.08) -- (162:1.32) -- (193:1.28) -- (205:1.08);
+  \draw[line width=0.4pt] (150:1.08) -- (193:1.28);
+  \draw[line width=0.4pt] (154:1.12) -- (191:1.24);
+  \draw[line width=0.4pt] (158:1.16) -- (189:1.20);
+  \draw[line width=0.4pt] (162:1.32) -- (201:1.14);
+  \draw[line width=0.55pt] (150:2.18) -- (138:2.42) -- (178:2.55) -- (205:2.18);
+  \node[anchor=south] at (146:0.62) {$r_1$};
+  \node[anchor=south west] at (142:1.52) {$r_2$};
+\end{tikzpicture}%
+}
 \caption{图3.9 声强与离开声源的距离的平方成反比}
 \end{figure}
 
@@ -5002,7 +5021,20 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 正常情况}]{assets/physics-2/fig-p0104-02.png}}
+\fitfig{%
+% fig-alt: 图3.12(a) 示波器：正常时只有发射脉冲 f 与底面回波 g
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.75pt] (0.35,0.15) -- (3.15,0.15)
+    arc[start angle=-90,end angle=90,radius=0.62]
+    -- (0.35,1.39)
+    arc[start angle=90,end angle=270,radius=0.62] -- cycle;
+  \draw[line width=0.7pt] (0.22,0.48) -- (0.48,0.48) -- (0.48,1.18)
+    -- (0.66,1.18) -- (0.66,0.48) -- (2.55,0.48)
+    -- (2.55,1.14) -- (2.74,1.14) -- (2.74,0.48) -- (3.05,0.48);
+  \node[anchor=south east] at (0.46,1.16) {$f$};
+  \node[anchor=south west] at (2.72,1.12) {$g$};
+\end{tikzpicture}%
+}
 \caption{(a) 正常情况}
 \end{figure}
 
@@ -5018,7 +5050,22 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 探刮到缺陷时的情况}]{assets/physics-2/fig-p0104-04.png}}
+\fitfig{%
+% fig-alt: 图3.12(b) 示波器：f 与 g 之间多一小脉冲 q，q 标在基线下方
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.75pt] (0.35,0.15) -- (3.15,0.15)
+    arc[start angle=-90,end angle=90,radius=0.62]
+    -- (0.35,1.39)
+    arc[start angle=90,end angle=270,radius=0.62] -- cycle;
+  \draw[line width=0.7pt] (0.22,0.48) -- (0.48,0.48) -- (0.48,1.18)
+    -- (0.66,1.18) -- (0.66,0.48)
+    -- (1.48,0.48) -- (1.48,0.78) -- (1.64,0.78) -- (1.64,0.48)
+    -- (2.55,0.48) -- (2.55,1.14) -- (2.74,1.14) -- (2.74,0.48) -- (3.05,0.48);
+  \node[anchor=south east] at (0.46,1.16) {$f$};
+  \node[anchor=north] at (1.56,0.46) {$q$};
+  \node[anchor=south west] at (2.72,1.12) {$g$};
+\end{tikzpicture}%
+}
 \caption{(b) 探刮到缺陷时的情况}
 \end{figure}
 
@@ -5142,7 +5189,26 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-2/fig-p0108-01.png}}
+\fitfig{%
+% fig-alt: 第2题 简谐振动图线：自原点向上的正弦，周期约 10 秒，虚线标 0.05 米
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.92}
+  \def\u{0.38}
+  \draw[->,line width=0.7pt] (0,-1.35) -- (0,1.55);
+  \draw[->,line width=0.7pt] (0,0) -- (6.35,0);
+  \node[anchor=south] at (0,1.52) {$S$（米）};
+  \node[anchor=west] at (6.32,0.08) {$t$（秒）};
+  \node[anchor=east] at (-0.06,0) {$0$};
+  \node[anchor=east] at (-0.08,0.92) {$0.05$};
+  \draw[dashed,line width=0.45pt] (-0.02,0.92) -- (0.95,0.92);
+  \foreach \k in {2,4,6,8,10,12,14} {
+    \draw[line width=0.4pt] ({\k*\u},0.05) -- ({\k*\u},-0.05);
+    \node[anchor=north] at ({\k*\u},-0.06) {\k};
+  }
+  \draw[line width=0.8pt] plot[domain=0:15.15,samples=96,smooth] ({\x*\u},{\A*sin(36*\x)});
+  \node[anchor=north] at (2.85,-1.15) {（第2图）};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -5167,13 +5233,47 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第109页）}]{assets/physics-2/fig-p0109-01.png}}
+\fitfig{%
+% fig-alt: 第3题(a) 振动图线：自纵轴正向最大出发的余弦，零点在 1、3、5、7 秒
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.95}
+  \def\u{0.52}
+  \draw[->,line width=0.7pt] (0,-1.45) -- (0,1.55);
+  \draw[->,line width=0.7pt] (0,0) -- (4.05,0);
+  \node[anchor=south] at (0,1.52) {$S$（米）};
+  \node[anchor=west] at (4.02,0.08) {$t$（秒）};
+  \node[anchor=east] at (-0.06,0) {$0$};
+  \foreach \k in {1,2,3,4,5,6,7} {
+    \draw[line width=0.4pt] ({\k*\u},0.05) -- ({\k*\u},-0.05);
+    \node[anchor=north] at ({\k*\u},-0.06) {\k};
+  }
+  \draw[line width=0.8pt] plot[domain=0:7,samples=88,smooth] ({\x*\u},{\A*cos(90*\x)});
+  \node[anchor=north] at (1.85,-1.22) {$(a)$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第109页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0109-02.png}}
+\fitfig{%
+% fig-alt: 第3题(b) 振动图线：自原点向下的负正弦，波谷在 1、5 秒，波峰在 3、7 秒
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.95}
+  \def\u{0.52}
+  \draw[->,line width=0.7pt] (0,-1.45) -- (0,1.55);
+  \draw[->,line width=0.7pt] (0,0) -- (4.05,0);
+  \node[anchor=south] at (0,1.52) {$S$（米）};
+  \node[anchor=west] at (4.02,0.08) {$t$（秒）};
+  \node[anchor=east] at (-0.06,0) {$0$};
+  \foreach \k in {1,2,3,4,5,6,7} {
+    \draw[line width=0.4pt] ({\k*\u},0.05) -- ({\k*\u},-0.05);
+    \node[anchor=north] at ({\k*\u},-0.06) {\k};
+  }
+  \draw[line width=0.8pt] plot[domain=0:7,samples=88,smooth] ({\x*\u},{-\A*sin(90*\x)});
+  \node[anchor=north] at (1.85,-1.22) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
