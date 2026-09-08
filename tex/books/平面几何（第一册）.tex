@@ -10528,7 +10528,33 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-49}]{assets/plane-geometry-1/fig-p0114-01.png}}
+\fitfig{%
+% fig-alt: 图2-49 扫描：平行四边形ABCD，A左下B右下C右上D左上，对角线DB；D处上角弧旁标1、下角弧下标3，B处下角弧左标2、上角弧上标4；无等号杠、无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.14,0.24);
+  \coordinate (B) at (3.36,0.24);
+  \coordinate (C) at (4.12,1.82);
+  \coordinate (D) at (0.90,1.82);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (D) -- (B);
+  \begin{scope}[shift={(D)}]
+    \draw[line width=0.5pt] (-33:0.24) arc[start angle=-33, end angle=0, radius=0.24];
+    \draw[line width=0.5pt] (-116:0.24) arc[start angle=-116, end angle=-33, radius=0.24];
+    \node[anchor=west, inner sep=0.5pt] at (-12:0.42) {$1$};
+    \node[anchor=north, inner sep=0.5pt] at (-78:0.46) {$3$};
+  \end{scope}
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (147:0.24) arc[start angle=147, end angle=180, radius=0.24];
+    \draw[line width=0.5pt] (64:0.24) arc[start angle=64, end angle=147, radius=0.24];
+    \node[anchor=east, inner sep=0.5pt] at (162:0.48) {$2$};
+    \node[anchor=south, inner sep=0.5pt] at (100:0.62) {$4$};
+  \end{scope}
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1pt] at (3.32,0.18) {$B$};
+  \node[anchor=west, inner sep=1pt] at (4.16,1.86) {$C$};
+  \node[anchor=south, inner sep=1pt] at (0.78,1.90) {$D$};
+\end{tikzpicture}%
+}
 \caption{图2-49}
 \end{figure}
 
@@ -10569,7 +10595,24 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-1/fig-p0114-02.png}}
+\fitfig{%
+% fig-alt: 第1题 扫描：C在上A左下B右下，AB为底，CD竖直向下至D，再连DA、DB；1在CD左侧、2在CD右侧，D标在交点下方；无独立角弧、无等号杠、无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (C) at (1.58,2.92);
+  \coordinate (A) at (0.16,0.22);
+  \coordinate (B) at (2.96,0.22);
+  \coordinate (D) at (1.58,1.08);
+  \draw[line width=0.75pt] (A) -- (C) -- (B) -- cycle;
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (A) -- (D) -- (B);
+  \node[anchor=east, inner sep=0.6pt] at (1.46,1.28) {$1$};
+  \node[anchor=west, inner sep=0.6pt] at (1.70,1.28) {$2$};
+  \node[anchor=south, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east, inner sep=1pt] at (0.12,0.16) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (3.00,0.16) {$B$};
+  \node[anchor=north, inner sep=0.5pt] at (1.58,0.88) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -10577,7 +10620,33 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-1/fig-p0115-01.png}}
+\fitfig{%
+% fig-alt: 第2题 扫描：平行四边形ABCD，A左下B右下C右上D左上，对角线DB；D处下侧标2、上角标3，B处下侧标1、上侧标4，各有小角弧；无等号杠、无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.14,0.24);
+  \coordinate (B) at (3.36,0.24);
+  \coordinate (C) at (4.12,1.82);
+  \coordinate (D) at (0.90,1.82);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (D) -- (B);
+  \begin{scope}[shift={(D)}]
+    \draw[line width=0.5pt] (-33:0.22) arc[start angle=-33, end angle=0, radius=0.22];
+    \draw[line width=0.5pt] (-116:0.22) arc[start angle=-116, end angle=-33, radius=0.22];
+    \node[anchor=south west, inner sep=0.4pt] at (-10:0.40) {$3$};
+    \node[anchor=north, inner sep=0.4pt] at (-78:0.48) {$2$};
+  \end{scope}
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (147:0.22) arc[start angle=147, end angle=180, radius=0.22];
+    \draw[line width=0.5pt] (64:0.22) arc[start angle=64, end angle=147, radius=0.22];
+    \node[anchor=east, inner sep=0.4pt] at (164:0.46) {$1$};
+    \node[anchor=south, inner sep=0.4pt] at (102:0.58) {$4$};
+  \end{scope}
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1pt] at (3.32,0.18) {$B$};
+  \node[anchor=west, inner sep=1pt] at (4.16,1.86) {$C$};
+  \node[anchor=south, inner sep=1pt] at (0.78,1.90) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -10585,7 +10654,25 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-1/fig-p0115-02.png}}
+\fitfig{%
+% fig-alt: 第3题 扫描：B左上C右上A左下D右下，BC水平，BA、BD、CA、CD，BD与CA交叉；BC中点上沿有一小折峰，AB、DC无等号杠；B、C无角弧、无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.16,1.78);
+  \coordinate (C) at (3.68,1.78);
+  \coordinate (A) at (1.08,0.20);
+  \coordinate (D) at (2.78,0.20);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (B) -- (A);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (C) -- (A);
+  \draw[line width=0.55pt] (1.80,1.80) -- (1.92,1.94) -- (2.06,1.80);
+  \node[anchor=east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1pt] at (3.72,1.84) {$C$};
+  \node[anchor=north, inner sep=1pt] at (1.02,0.12) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (2.84,0.14) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -10605,7 +10692,27 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-1/fig-p0115-03.png}}
+\fitfig{%
+% fig-alt: 第4题 扫描：A左、B右上、C右下，A—E—B与A—D—C均为直线，EC与DB交叉；1在E下方靠左，2在D上方靠右；E标在线上侧，D标在线下侧；无独立角弧、无等号杠、无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.16,1.72);
+  \coordinate (B) at (3.72,2.98);
+  \coordinate (C) at (3.08,0.18);
+  \coordinate (E) at (1.52,2.20);
+  \coordinate (D) at (1.18,1.18);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (E) -- (C);
+  \draw[line width=0.75pt] (D) -- (B);
+  \node[anchor=north, inner sep=0.4pt] at (1.46,2.06) {$1$};
+  \node[anchor=south, inner sep=0.4pt] at (1.32,1.30) {$2$};
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1pt] at (3.68,3.04) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (3.12,0.10) {$C$};
+  \node[anchor=south, inner sep=1pt] at (1.38,2.28) {$E$};
+  \node[anchor=north, inner sep=1pt] at (1.04,1.06) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -10613,7 +10720,27 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-1/fig-p0115-04.png}}
+\fitfig{%
+% fig-alt: 第5题 扫描：B左上A左下，AB近竖直，AC水平交对角线于C，直线B—D—C—F斜下至F，DE水平、EF斜下至F；无角弧、无等号杠、无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.22,1.32);
+  \coordinate (B) at (0.34,3.52);
+  \coordinate (C) at (1.61,1.32);
+  \coordinate (D) at (0.91,2.54);
+  \coordinate (E) at (2.46,2.54);
+  \coordinate (F) at (2.28,0.16);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (F);
+  \draw[line width=0.75pt] (D) -- (E) -- (F);
+  \node[anchor=east, inner sep=1pt] at (0.26,3.56) {$B$};
+  \node[anchor=east, inner sep=1pt] at (0.16,1.26) {$A$};
+  \node[anchor=north, inner sep=0.6pt] at (1.50,1.24) {$C$};
+  \node[anchor=south east, inner sep=1pt] at (0.70,2.72) {$D$};
+  \node[anchor=south east, inner sep=0.6pt] at (2.40,2.62) {$E$};
+  \node[anchor=north west, inner sep=1pt] at (2.32,0.10) {$F$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -10631,7 +10758,29 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-1/fig-p0115-05.png}}
+\fitfig{%
+% fig-alt: 第6题 扫描：平行四边形ABCD，A左下B右下C右上D左上，对角线DB；仅D处AD与DB间小角弧下标1，B处DB与BC间小角弧上标2；无等号杠、无直角记号、无虚线，∠ABC与∠CDA未画弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.14,0.24);
+  \coordinate (B) at (3.36,0.24);
+  \coordinate (C) at (4.12,1.82);
+  \coordinate (D) at (0.90,1.82);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (D) -- (B);
+  \begin{scope}[shift={(D)}]
+    \draw[line width=0.5pt] (-116:0.22) arc[start angle=-116, end angle=-33, radius=0.22];
+    \node[anchor=north, inner sep=0.4pt] at (-76:0.44) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (64:0.22) arc[start angle=64, end angle=147, radius=0.22];
+    \node[anchor=south, inner sep=0.4pt] at (108:0.42) {$2$};
+  \end{scope}
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1pt] at (3.32,0.18) {$B$};
+  \node[anchor=west, inner sep=1pt] at (4.16,1.86) {$C$};
+  \node[anchor=south, inner sep=1pt] at (0.78,1.90) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -10639,7 +10788,28 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-1/fig-p0115-06.png}}
+\fitfig{%
+% fig-alt: 第7题 扫描：A左下B右下，D左上C右上，AB为底，AD、AC、DB、CB，AC与DB交叉；1在A处AB与AC之间，4在AD与AC之间，2在B处AB与DB之间，3在DB与CB之间；无独立角弧、无等号杠、无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.16,0.26);
+  \coordinate (B) at (3.58,0.26);
+  \coordinate (D) at (0.82,1.88);
+  \coordinate (C) at (2.78,1.70);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (D) -- (B);
+  \draw[line width=0.75pt] (C) -- (B);
+  \node[anchor=north, inner sep=0.4pt] at (0.52,0.40) {$1$};
+  \node[anchor=center, inner sep=0.5pt] at (0.58,0.78) {$4$};
+  \node[anchor=south east, inner sep=0.4pt] at (3.10,0.48) {$2$};
+  \node[anchor=south east, inner sep=0.4pt] at (3.10,0.86) {$3$};
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1pt] at (C) {$C$};
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
