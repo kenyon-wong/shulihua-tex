@@ -8217,7 +8217,32 @@ H，就是说夹钝角的边上的高要作到它的延长线上，因此钝角�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-18}]{assets/plane-geometry-1/fig-p0088-02.png}}
+\fitfig{%
+% fig-alt: 图2·18 扫描：折痕为竖直虚线，顶端箭头向上，穿过并略过底边；A与A'、C与C'、B与B'各以水平虚线相连；△ABC与△A'B'C'各边实线；折、痕分列折痕两侧；无角弧、无直角记号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.38,1.68);
+  \coordinate (B) at (0.12,0.18);
+  \coordinate (C) at (1.08,0.82);
+  \coordinate (Ap) at (4.22,1.68);
+  \coordinate (Bp) at (4.48,0.18);
+  \coordinate (Cp) at (3.52,0.82);
+  \draw[dashed, line width=0.55pt] (2.30,2.04) -- (2.30,-0.14);
+  \draw[line width=0.8pt, -latex] (2.30,2.04) -- (2.30,2.26);
+  \draw[dashed, line width=0.6pt] (A) -- (Ap);
+  \draw[dashed, line width=0.6pt] (C) -- (Cp);
+  \draw[dashed, line width=0.6pt] (B) -- (Bp);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- cycle;
+  \node[anchor=south east, inner sep=1pt] at (2.18,1.90) {折};
+  \node[anchor=south west, inner sep=1pt] at (2.42,1.90) {痕};
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1pt] at (Ap) {$A'$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1pt] at (Bp) {$B'$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east, inner sep=1pt] at (Cp) {$C'$};
+\end{tikzpicture}%
+}
 \caption{图2-18}
 \end{figure}
 
@@ -8236,7 +8261,54 @@ H，就是说夹钝角的边上的高要作到它的延长线上，因此钝角�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·19}]{assets/plane-geometry-1/fig-p0089-02.png}}
+\fitfig{%
+% fig-alt: 图2·19 扫描：上为钢架，两端下垂实心支脚，腹杆成列小三角形，正中竖直虚线顶端箭头向上；下为折扇，肋自同一虚线放射；正文另举蝴蝶、枫叶、天安门，本编号图只有钢架与扇面；无直角记号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A0) at (3.15,4.08);
+  \coordinate (FL) at (0.12,2.52);
+  \coordinate (FR) at (6.18,2.52);
+  \coordinate (P1) at (0.787,2.863);
+  \coordinate (P2) at (1.514,3.238);
+  \coordinate (P3) at (2.241,3.612);
+  \coordinate (Q0) at (0.72,2.62);
+  \coordinate (Q1) at (1.58,2.62);
+  \coordinate (Q2) at (2.35,2.62);
+  \coordinate (M) at (3.15,2.62);
+  \coordinate (R3) at (4.059,3.612);
+  \coordinate (R2) at (4.786,3.238);
+  \coordinate (R1) at (5.513,2.863);
+  \coordinate (S2) at (3.95,2.62);
+  \coordinate (S1) at (4.72,2.62);
+  \coordinate (S0) at (5.58,2.62);
+  \draw[line width=0.75pt] (FL) -- (A0) -- (FR);
+  \draw[line width=0.7pt] (Q0) -- (S0);
+  \draw[line width=0.6pt] (FL) -- (Q0);
+  \draw[line width=0.6pt] (FR) -- (S0);
+  \draw[line width=0.6pt] (P1) -- (Q0);
+  \draw[line width=0.6pt] (P1) -- (Q1);
+  \draw[line width=0.6pt] (P2) -- (Q1);
+  \draw[line width=0.6pt] (P2) -- (Q2);
+  \draw[line width=0.6pt] (P3) -- (Q2);
+  \draw[line width=0.6pt] (P3) -- (M);
+  \draw[line width=0.6pt] (R3) -- (M);
+  \draw[line width=0.6pt] (R3) -- (S2);
+  \draw[line width=0.6pt] (R2) -- (S2);
+  \draw[line width=0.6pt] (R2) -- (S1);
+  \draw[line width=0.6pt] (R1) -- (S1);
+  \draw[line width=0.6pt] (R1) -- (S0);
+  \fill (0.04,2.56) -- (0.20,2.30) -- (0.38,2.54) -- cycle;
+  \fill (6.26,2.56) -- (6.10,2.30) -- (5.92,2.54) -- cycle;
+  \begin{scope}[shift={(3.15,-0.18)}]
+    \draw[line width=0.7pt] (14:0.52) arc[start angle=14, end angle=166, radius=0.52];
+    \draw[line width=0.75pt] (14:2.08) arc[start angle=14, end angle=166, radius=2.08];
+    \foreach \k in {14,26,38,50,62,74,106,118,130,142,154,166} {%
+      \draw[line width=0.55pt] (\k:0.52) -- (\k:2.08);
+    }
+  \end{scope}
+  \draw[dashed, line width=0.55pt] (3.15,0.12) -- (3.15,4.22);
+  \draw[line width=0.85pt, -latex] (3.15,4.22) -- (3.15,4.48);
+\end{tikzpicture}%
+}
 \caption{图2·19}
 \end{figure}
 
@@ -8273,7 +8345,27 @@ H，就是说夹钝角的边上的高要作到它的延长线上，因此钝角�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·20}]{assets/plane-geometry-1/fig-p0090-01.png}}
+\fitfig{%
+% fig-alt: 图2·20 扫描：等腰△ABC，A在上、B左、C右，D为底边垂足；虚线折痕过A、D，顶端箭头向上并略过底边；AB、AC中部各一短斜杠，BD、DC靠近D处各一短竖杠；D左侧直角记号；无角弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.55,2.32);
+  \coordinate (B) at (0.10,0.30);
+  \coordinate (C) at (3.00,0.30);
+  \coordinate (D) at (1.55,0.30);
+  \draw[dashed, line width=0.55pt] (1.55,0.02) -- (1.55,2.46);
+  \draw[line width=0.7pt, -latex] (1.55,2.46) -- (1.55,2.66);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.55pt] (0.74,1.37) -- (0.91,1.25);
+  \draw[line width=0.55pt] (2.19,1.25) -- (2.36,1.37);
+  \draw[line width=0.55pt] (1.12,0.22) -- (1.12,0.40);
+  \draw[line width=0.55pt] (1.98,0.22) -- (1.98,0.40);
+  \draw[line width=0.5pt] (1.41,0.30) -- (1.41,0.44) -- (1.55,0.44);
+  \node[anchor=west, inner sep=1pt] at (1.66,2.22) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east, inner sep=1pt] at (1.48,0.22) {$D$};
+\end{tikzpicture}%
+}
 \caption{图2·20}
 \end{figure}
 
@@ -8322,7 +8414,26 @@ BC，又\(AB = AC, A^{\prime}B = A^{\prime}C\)，那末直线\(AA^{\prime}\)就�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·21}]{assets/plane-geometry-1/fig-p0091-02.png}}
+\fitfig{%
+% fig-alt: 图2·21 扫描：A在上，A'在轴上、在A与底边之间，B左C右，A'B、A'C实线；竖直虚线过A、A'、M，顶端箭头向上并略过底边；M在底边中点上方偏右；无角弧、无直角记号、无等号杠
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.70,2.52);
+  \coordinate (Ap) at (1.70,1.38);
+  \coordinate (B) at (0.10,0.28);
+  \coordinate (C) at (3.30,0.28);
+  \coordinate (M) at (1.70,0.28);
+  \draw[dashed, line width=0.55pt] (1.70,-0.10) -- (1.70,2.68);
+  \draw[line width=0.7pt, -latex] (1.70,2.68) -- (1.70,2.88);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (Ap) -- (B);
+  \draw[line width=0.75pt] (Ap) -- (C);
+  \node[anchor=west, inner sep=1pt] at (1.82,2.40) {$A$};
+  \node[anchor=west, inner sep=1pt] at (1.82,1.40) {$A'$};
+  \node[anchor=east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1pt] at (1.78,0.34) {$M$};
+\end{tikzpicture}%
+}
 \caption{图2·21}
 \end{figure}
 
@@ -8352,7 +8463,21 @@ BC，又\(AB = AC, A^{\prime}B = A^{\prime}C\)，那末直线\(AA^{\prime}\)就�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-22}]{assets/plane-geometry-1/fig-p0091-03.png}}
+\fitfig{%
+% fig-alt: 图2-22 扫描：△ABC，A在上、B左下、C右下；AB、BC、CA中点各一短等号杠；无角弧、无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.55,2.02);
+  \coordinate (B) at (0.12,0.22);
+  \coordinate (C) at (2.98,0.22);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.55pt] (0.76,1.18) -- (0.91,1.06);
+  \draw[line width=0.55pt] (2.19,1.06) -- (2.34,1.18);
+  \draw[line width=0.55pt] (1.48,0.15) -- (1.62,0.29);
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+\end{tikzpicture}%
+}
 \caption{图2-22}
 \end{figure}
 
@@ -8393,7 +8518,33 @@ BC，又\(AB = AC, A^{\prime}B = A^{\prime}C\)，那末直线\(AA^{\prime}\)就�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·23}]{assets/plane-geometry-1/fig-p0092-01.png}}
+\fitfig{%
+% fig-alt: 图2·23 扫描：B、A、D共线，D在右上；AE自A水平向右，E端箭头；△ABC底边水平，AB与AC各一短等号杠；角1为DA与AE间单弧，角2为AE与AC间单弧；无直角记号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.12,0.18);
+  \coordinate (A) at (1.48,1.18);
+  \coordinate (D) at (3.139,2.40);
+  \coordinate (C) at (3.42,0.18);
+  \coordinate (E) at (3.72,1.18);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt, -latex] (A) -- (E);
+  \draw[line width=0.55pt] (0.70,0.58) -- (0.84,0.72);
+  \draw[line width=0.55pt] (2.32,0.78) -- (2.46,0.92);
+  \begin{scope}[shift={(A)}]
+    \draw[line width=0.5pt] (0:0.26) arc[start angle=0, end angle=37, radius=0.26];
+    \node[anchor=south, inner sep=0.5pt] at (20:0.46) {$1$};
+    \draw[line width=0.5pt] (-28:0.26) arc[start angle=-28, end angle=0, radius=0.26];
+    \node[anchor=north, inner sep=0.5pt] at (-16:0.48) {$2$};
+  \end{scope}
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1pt] at (E) {$E$};
+\end{tikzpicture}%
+}
 \caption{图2·23}
 \end{figure}
 
@@ -8431,7 +8582,21 @@ E，\(\angle AEB = 99^{\circ}\)。 求顶角 A 的度数。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-24}]{assets/plane-geometry-1/fig-p0093-01.png}}
+\fitfig{%
+% fig-alt: 图2-24 扫描：△ABC，A在上、B左下、C右下，E在AC中部偏上，BE连B与E，E标在AC右侧；无角弧、无等号杠、无直角记号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.52,2.12);
+  \coordinate (B) at (0.12,0.22);
+  \coordinate (C) at (2.92,0.22);
+  \coordinate (E) at (2.192,1.208);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (B) -- (E);
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=west, inner sep=1pt] at (2.30,1.24) {$E$};
+\end{tikzpicture}%
+}
 \caption{图2-24}
 \end{figure}
 
@@ -8475,7 +8640,27 @@ BO=OC，要证明 PC\textgreater PB，只要证明\(PO+OB>PB\)就可以了。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-25}]{assets/plane-geometry-1/fig-p0093-02.png}}
+\fitfig{%
+% fig-alt: 图2-25 扫描：△ABC，A在上，AH实线竖直落在BC上的H，P在左半内部，PC过轴上点O至C，BO自B连O；H标在底边下方；无直角记号、无等号杠、无角弧、无虚线。正文写AH⊥BC，扫描无直角记号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.70,2.22);
+  \coordinate (B) at (0.12,0.22);
+  \coordinate (C) at (3.28,0.22);
+  \coordinate (H) at (1.70,0.22);
+  \coordinate (P) at (1.02,1.05);
+  \coordinate (O) at (1.70,0.80);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (H);
+  \draw[line width=0.7pt] (P) -- (C);
+  \draw[line width=0.7pt] (B) -- (O);
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1pt] at (H) {$H$};
+  \node[anchor=east, inner sep=1pt] at (P) {$P$};
+  \node[anchor=west, inner sep=1pt] at (1.80,0.84) {$O$};
+\end{tikzpicture}%
+}
 \caption{图2-25}
 \end{figure}
 
