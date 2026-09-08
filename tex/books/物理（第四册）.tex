@@ -14444,7 +14444,72 @@ D₂O）或石墨作为中子的减速剂，让在铀 235
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0306-01.png}}
+\fitfig{%
+% fig-alt: 原子弹纵剖面：左铀或钚、中空段、引爆装置打叉；下为两块合拢成整球再起蘑菇云
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (1.28,9.55) arc (90:270:0.78) -- (4.15,7.99) -- (4.15,9.55) -- cycle;
+  \draw[line width=0.55pt] (4.15,8.22) -- (4.48,8.22) -- (4.48,9.32) -- (4.15,9.32);
+  \draw[line width=0.7pt] (4.48,7.72) rectangle (5.62,9.78);
+  \draw[line width=0.45pt] (5.18,7.72) -- (5.18,9.78);
+  \draw[line width=0.45pt] (4.48,8.75) -- (5.62,8.75);
+  \begin{scope}
+    \clip (1.28,9.55) arc (90:270:0.78) -- (2.22,7.99) -- (2.22,9.55) -- cycle;
+    \foreach \k in {0,1,...,14} {
+      \draw[line width=0.28pt] ({0.55+0.16*\k},7.85) -- ({1.55+0.16*\k},9.70);
+    }
+  \end{scope}
+  \draw[line width=0.45pt] (2.22,7.99) -- (2.22,9.55);
+  \draw[line width=0.45pt] (2.78,7.99) -- (2.78,9.55);
+  \begin{scope}
+    \clip (2.78,7.99) rectangle (3.38,9.55);
+    \foreach \k in {0,1,...,8} {
+      \draw[line width=0.28pt] ({2.40+0.16*\k},7.85) -- ({3.40+0.16*\k},9.70);
+    }
+  \end{scope}
+  \draw[line width=0.45pt] (2.78,9.15) arc (90:270:0.36);
+  \draw[line width=0.45pt] (3.38,7.99) -- (3.38,9.55);
+  \foreach \i in {0,1} {
+    \foreach \j in {0,1,2} {
+      \draw[line width=0.4pt] ({3.48+0.20*\j},{8.18+0.62*\i}) -- ({3.62+0.20*\j},{8.40+0.62*\i});
+      \draw[line width=0.4pt] ({3.62+0.20*\j},{8.18+0.62*\i}) -- ({3.48+0.20*\j},{8.40+0.62*\i});
+    }
+  }
+  \begin{scope}
+    \clip (3.98,7.99) rectangle (4.15,9.55);
+    \foreach \k in {0,1,...,6} {
+      \draw[line width=0.28pt] (3.92,7.90) -- (4.22,9.65);
+      \draw[line width=0.28pt] ({3.92+0.08*\k},7.90) -- ({3.92+0.08*\k},9.65);
+    }
+  \end{scope}
+  \draw[line width=0.4pt] (1.70,9.55) -- (1.70,10.15) -- (1.05,10.55);
+  \draw[line width=0.4pt] (3.05,9.55) -- (3.05,10.15) -- (1.05,10.55);
+  \node[anchor=south] at (1.05,10.58) {铀或钚};
+  \draw[line width=0.4pt] (3.72,9.20) -- (4.35,10.05) -- (4.95,10.05);
+  \node[anchor=west] at (4.98,10.05) {引爆装置};
+  \fill[black] (2.05,6.95) arc (90:270:0.82) -- cycle;
+  \draw[white,line width=1.1pt] (2.05,6.55) -- (1.88,6.35) -- (2.08,6.15) -- (1.88,5.95) -- (2.08,5.75) -- (1.92,5.52);
+  \fill[black] (3.55,5.31) arc (-90:90:0.82) -- cycle;
+  \draw[white,line width=1.1pt] (3.55,5.52) -- (3.72,5.75) -- (3.52,5.95) -- (3.72,6.15) -- (3.52,6.35) -- (3.68,6.55);
+  \draw[line width=0.7pt,->] (2.18,6.13) -- (2.62,6.13);
+  \draw[line width=0.7pt,->] (3.42,6.13) -- (2.98,6.13);
+  \draw[line width=0.45pt,->] (2.05,5.05) -- (2.35,4.35);
+  \draw[line width=0.45pt,->] (3.55,5.05) -- (3.25,4.35);
+  \fill[black] (2.80,3.15) circle (0.92);
+  \draw[white,line width=1.15pt] (2.15,3.15) -- (2.38,3.38) -- (2.58,2.95) -- (2.80,3.38) -- (3.02,2.95) -- (3.22,3.38) -- (3.45,3.15);
+  \draw[line width=0.45pt,->] (1.72,3.55) -- (2.05,3.28);
+  \draw[line width=0.45pt,->] (3.88,3.55) -- (3.55,3.28);
+  \draw[line width=0.5pt] (2.80,2.23) -- (2.80,1.72);
+  \draw[line width=0.55pt] (2.15,1.62)
+    .. controls (1.85,1.95) and (2.15,2.22) .. (2.48,2.00)
+    .. controls (2.72,2.28) and (3.05,2.15) .. (3.18,1.88)
+    .. controls (3.62,2.08) and (3.72,1.62) .. (3.28,1.38)
+    .. controls (2.85,1.12) and (2.45,1.28) .. (2.15,1.62);
+  \draw[line width=0.45pt] (2.55,1.48) .. controls (2.48,1.05) and (2.62,0.72) .. (2.70,0.38);
+  \draw[line width=0.45pt] (2.95,1.42) .. controls (3.02,1.02) and (2.92,0.70) .. (2.88,0.35);
+  \draw[line width=0.45pt] (2.28,0.48) .. controls (2.05,0.62) and (2.15,0.88) .. (2.42,0.78);
+  \draw[line width=0.45pt] (3.22,0.42) .. controls (3.48,0.58) and (3.38,0.85) .. (3.05,0.72);
+\end{tikzpicture}%
+}
 \caption{（a）}
 \end{figure}
 
@@ -14568,13 +14633,94 @@ D
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0310-01.png}}
+\fitfig{%
+% fig-alt: 石墨堆外水泥层，内为燃料棒；右接换热器、汽轮机与两只泵
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[black!20] (0.15,0.55) rectangle (4.55,6.15);
+  \fill[white] (0.78,1.12) rectangle (3.98,5.58);
+  \draw[line width=0.7pt] (0.15,0.55) rectangle (4.55,6.15);
+  \draw[line width=0.45pt] (0.78,1.12) rectangle (3.98,5.58);
+  \draw[line width=0.6pt] (1.35,2.05) -- (1.35,4.85) -- (3.45,4.85) -- (3.45,2.55)
+    .. controls (3.45,1.72) and (2.55,1.72) .. (2.15,2.15) -- (1.35,2.05);
+  \draw[line width=0.45pt] (1.55,2.15) -- (1.55,4.65);
+  \draw[line width=0.45pt] (3.25,2.55) -- (3.25,4.65);
+  \foreach \k in {0,1,...,5} {
+    \fill[black] ({1.82+0.22*\k},2.55) rectangle ({1.96+0.22*\k},4.55);
+  }
+  \draw[line width=0.5pt] (3.45,4.55) -- (5.15,4.55) -- (5.15,5.05);
+  \draw[line width=0.45pt,->] (4.55,4.55) -- (5.05,4.55);
+  \draw[line width=0.5pt] (5.35,5.15)
+    sin (5.62,4.92) cos (5.89,4.69)
+    sin (5.62,4.46) cos (5.89,4.23)
+    sin (5.62,3.77) cos (5.89,3.54)
+    sin (5.62,3.31) cos (5.89,3.08)
+    sin (5.62,2.85) cos (5.89,2.62) -- (5.55,2.35);
+  \draw[line width=0.5pt] (5.15,5.05) -- (5.35,5.15);
+  \node[anchor=south] at (6.15,5.22) {换热器};
+  \draw[line width=0.45pt] (6.05,5.18) -- (5.70,4.85);
+  \draw[line width=0.5pt] (5.55,2.35) -- (5.55,1.35);
+  \draw[fill=white,line width=0.55pt] (5.55,1.05) circle (0.28);
+  \draw[line width=0.4pt] (5.38,1.05) -- (5.72,1.05);
+  \draw[line width=0.4pt] (5.55,0.88) -- (5.55,1.22);
+  \draw[line width=0.5pt] (5.27,1.05) -- (2.40,1.05) -- (2.40,2.12);
+  \draw[line width=0.45pt,->] (3.40,1.05) -- (2.90,1.05);
+  \draw[line width=0.5pt] (5.89,3.85) -- (6.85,3.85) -- (7.15,4.15) -- (8.15,4.15) -- (8.45,3.55) -- (8.45,2.55);
+  \draw[line width=0.45pt] (7.35,4.15) -- (7.35,4.48) -- (8.05,4.48) -- (8.05,4.15);
+  \draw[line width=0.45pt,->] (6.35,3.85) -- (6.75,3.85);
+  \draw[fill=white,line width=0.55pt] (8.45,2.22) circle (0.28);
+  \draw[line width=0.4pt] (8.28,2.22) -- (8.62,2.22);
+  \draw[line width=0.4pt] (8.45,2.05) -- (8.45,2.39);
+  \draw[line width=0.5pt] (8.45,1.94) -- (8.45,1.45);
+  \draw[line width=0.5pt] (8.73,2.22) -- (9.25,2.22);
+  \draw[line width=0.45pt,->] (8.95,2.22) -- (9.22,2.22);
+  \draw[line width=0.5pt] (7.55,3.05) -- (7.55,2.15) -- (6.55,2.15) -- (6.55,3.20);
+  \draw[line width=0.45pt,->] (7.15,2.15) -- (6.75,2.15);
+\end{tikzpicture}%
+}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0310-02.png}}
+\fitfig{%
+% fig-alt: 石墨堆剖视，左插铀棒，上插镉棒，右为水泥防护层
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[black!12] (3.55,0.85) -- (6.35,1.55) -- (6.35,5.15) -- (3.55,4.45) -- cycle;
+  \fill[black!6] (1.15,0.85) -- (3.55,0.85) -- (3.55,4.45) -- (1.15,4.45) -- cycle;
+  \draw[line width=0.7pt] (0.85,1.05) -- (3.55,0.85) -- (6.35,1.55) -- (6.35,5.15) -- (3.55,4.45) -- (0.85,3.85) -- cycle;
+  \draw[line width=0.55pt] (3.55,0.85) -- (3.55,4.45);
+  \draw[line width=0.55pt] (1.15,4.45) -- (3.85,5.15) -- (6.05,4.55);
+  \draw[line width=0.45pt] (3.55,4.45) -- (3.85,5.15);
+  \foreach \k in {1,2,3} {
+    \draw[line width=0.4pt] ({0.85+0.67*\k},3.85) -- ({0.85+0.67*\k},4.45);
+    \draw[line width=0.4pt] ({1.15+0.90*\k},4.45) -- ({1.15+0.90*\k},5.15);
+  }
+  \foreach \k in {1,2,3} {
+    \draw[line width=0.4pt] (1.15,{4.45-0.90*\k}) -- (3.55,{4.45-0.90*\k});
+    \draw[line width=0.4pt] (3.55,{4.45-0.90*\k}) -- (6.35,{5.15-0.90*\k});
+  }
+  \foreach \i in {0,1,2,3} {
+    \foreach \j in {0,1,2} {
+      \draw[line width=0.4pt] ({1.20+0.58*\i},{3.55-0.88*\j}) circle (0.16);
+    }
+  }
+  \draw[line width=0.55pt] (0.15,3.55) -- (1.20,3.55);
+  \draw[line width=0.55pt] (0.15,2.67) -- (1.20,2.67);
+  \draw[line width=0.55pt] (0.15,1.79) -- (1.20,1.79);
+  \draw[line width=0.7pt] (1.85,5.15) -- (1.85,6.35);
+  \draw[line width=0.7pt] (2.55,5.15) -- (2.55,6.55);
+  \draw[line width=0.7pt] (3.25,5.15) -- (3.25,6.15);
+  \draw[line width=0.7pt] (3.95,4.85) -- (3.95,6.45);
+  \node[anchor=south] at (3.15,6.62) {镉棒};
+  \draw[line width=0.4pt] (3.15,6.58) -- (2.55,6.48);
+  \draw[line width=0.4pt] (3.05,6.58) -- (3.95,6.38);
+  \node[anchor=east] at (0.08,3.55) {铀棒};
+  \node[anchor=north west] at (0.85,0.78) {水泥防护层};
+  \draw[line width=0.4pt] (2.15,0.78) -- (2.40,1.05);
+  \node[anchor=west,font=\small] at (6.42,2.35) {石墨};
+  \draw[line width=0.4pt] (6.40,2.35) -- (5.05,2.55);
+\end{tikzpicture}%
+}
 \caption{（b）}
 \end{figure}
 
@@ -14786,7 +14932,51 @@ E _ {2} = 2.82 \times 10 ^ {- 12} \times 1.2 \times 10 ^ {23} \text{焦} = 3.38 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11.8 氢弹构造示意图}]{assets/physics-4/fig-p0317-01.png}}
+\fitfig{%
+% fig-alt: 氢弹外壳内为氘氚，中部横置铀或钚块，外包引爆炸药，顶为信管帽
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[black!10] (2.55,0.28)
+    .. controls (1.15,1.35) and (0.78,2.75) .. (0.95,3.95)
+    .. controls (1.08,4.72) and (1.62,5.12) .. (1.82,5.42)
+    -- (1.82,5.68) -- (3.28,5.68) -- (3.28,5.42)
+    .. controls (3.48,5.12) and (4.02,4.72) .. (4.15,3.95)
+    .. controls (4.32,2.75) and (3.95,1.35) .. (2.55,0.28) -- cycle;
+  \begin{scope}
+    \clip (2.55,0.28)
+      .. controls (1.15,1.35) and (0.78,2.75) .. (0.95,3.95)
+      .. controls (1.08,4.72) and (1.62,5.12) .. (1.82,5.42)
+      -- (1.82,5.68) -- (3.28,5.68) -- (3.28,5.42)
+      .. controls (3.48,5.12) and (4.02,4.72) .. (4.15,3.95)
+      .. controls (4.32,2.75) and (3.95,1.35) .. (2.55,0.28) -- cycle;
+    \foreach \i in {0,1,...,14} {
+      \foreach \j in {0,1,...,20} {
+        \fill ({0.95+0.22*\i},{0.55+0.24*\j}) circle (0.026);
+      }
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (2.55,0.28)
+    .. controls (1.15,1.35) and (0.78,2.75) .. (0.95,3.95)
+    .. controls (1.08,4.72) and (1.62,5.12) .. (1.82,5.42)
+    -- (1.82,5.68) -- (3.28,5.68) -- (3.28,5.42)
+    .. controls (3.48,5.12) and (4.02,4.72) .. (4.15,3.95)
+    .. controls (4.32,2.75) and (3.95,1.35) .. (2.55,0.28) -- cycle;
+  \draw[fill=black!16,line width=0.55pt] (1.62,5.68) rectangle (3.48,6.48);
+  \draw[fill=black!8,line width=0.55pt] (2.55,6.48) ellipse (0.93 and 0.26);
+  \draw[line width=0.4pt] (2.05,5.68) -- (2.05,6.48);
+  \draw[line width=0.4pt] (3.05,5.68) -- (3.05,6.48);
+  \fill[white] (2.35,3.95) ellipse (0.98 and 0.55);
+  \draw[line width=0.6pt] (2.35,3.95) ellipse (0.98 and 0.55);
+  \fill[black!55] (1.62,3.70) rectangle (2.08,4.20);
+  \fill[white] (2.08,3.70) rectangle (2.62,4.20);
+  \fill[black!55] (2.62,3.70) rectangle (3.08,4.20);
+  \draw[line width=0.45pt] (1.62,3.70) rectangle (3.08,4.20);
+  \draw[line width=0.4pt] (2.85,4.20) -- (4.35,4.72);
+  \node[anchor=west,font=\small] at (4.38,4.72) {铀或钚块};
+  \draw[line width=0.4pt] (3.05,3.70) -- (4.35,3.38);
+  \node[anchor=west,font=\small] at (4.38,3.38) {引爆炸药};
+  \node[fill=white,inner sep=1pt,font=\small] at (1.72,2.05) {${}_{1}\mathrm{H}^{2}$，${}_{1}\mathrm{H}^{3}$};
+\end{tikzpicture}%
+}
 \caption{图 11.8 氢弹构造示意图}
 \end{figure}
 
@@ -14881,7 +15071,37 @@ u和99.9076 u。）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11.10 托卡马克装置主要部分的原理示意图}]{assets/physics-4/fig-p0322-01.png}}
+\fitfig{%
+% fig-alt: 铁芯左侧初级线圈，右腿穿过等离子体环；环上仅标注1、2、3
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[fill=black!6,line width=0.7pt] (0.30,0.40) rectangle (3.05,4.15);
+  \fill[white] (1.00,1.05) rectangle (2.30,3.50);
+  \draw[line width=0.55pt] (1.00,1.05) rectangle (2.30,3.50);
+  \foreach \k in {0,1,...,7} {
+    \draw[line width=0.4pt] (0.08,{1.22+0.22*\k}) -- (1.22,{1.22+0.22*\k});
+  }
+  \draw[line width=0.5pt] (0.08,2.54) -- (-0.42,2.54);
+  \draw[line width=0.5pt] (0.08,1.88) -- (-0.42,1.88);
+  \fill[white] (4.55,2.25) ellipse (2.05 and 1.32);
+  \draw[line width=0.7pt] (2.30,0.40) -- (3.05,0.40) -- (3.05,1.15);
+  \draw[line width=0.7pt] (2.30,4.15) -- (3.05,4.15) -- (3.05,3.35);
+  \draw[line width=0.7pt] (2.30,1.55) rectangle (3.05,2.95);
+  \foreach \k in {0,12,...,348} {
+    \draw[line width=0.30pt] ({4.55+1.52*cos(\k)},{2.25+0.90*sin(\k)}) -- ({4.55+1.78*cos(\k)},{2.25+1.06*sin(\k)});
+  }
+  \draw[line width=0.5pt] (4.55,2.25) ellipse (1.65 and 0.98);
+  \fill[black!25] (4.55,2.25) ellipse (1.08 and 0.62);
+  \draw[line width=0.5pt] (4.55,2.25) ellipse (1.08 and 0.62);
+  \fill[white] (4.55,2.25) ellipse (0.42 and 0.28);
+  \draw[line width=0.55pt] (4.55,2.25) ellipse (2.05 and 1.32);
+  \node[font=\small] at (5.95,3.68) {1};
+  \draw[line width=0.35pt] (5.78,3.55) -- (5.45,3.28);
+  \node[font=\small] at (6.62,1.48) {2};
+  \draw[line width=0.35pt] (6.45,1.58) -- (5.95,1.88);
+  \node[font=\small] at (4.55,0.62) {3};
+  \draw[line width=0.35pt] (4.55,0.78) -- (4.55,1.05);
+\end{tikzpicture}%
+}
 \caption{图 11.10 托卡马克装置主要部分的原理示意图}
 \end{figure}
 
@@ -14897,7 +15117,43 @@ u和99.9076 u。）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11.11 托卡马克型热核聚变反应堆结构简图}]{assets/physics-4/fig-p0322-02.png}}
+\fitfig{%
+% fig-alt: 环形反应堆同心圆标锂与1至4，钾蒸汽涡轮、蒸汽发生器、蒸汽涡轮，液钾回、水、废热
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.6pt] (1.65,1.70) circle (1.38);
+  \draw[line width=0.5pt] (1.65,1.70) circle (1.05);
+  \draw[line width=0.5pt] (1.65,1.70) circle (0.72);
+  \draw[line width=0.5pt] (1.65,1.70) circle (0.42);
+  \node[font=\scriptsize] at (1.65,1.70) {锂};
+  \node[font=\scriptsize] at (1.28,1.88) {1};
+  \node[font=\scriptsize] at (1.05,1.95) {2};
+  \node[font=\scriptsize] at (0.78,1.95) {3};
+  \node[font=\scriptsize] at (0.48,1.88) {4};
+  \node[anchor=south,font=\small] at (1.65,3.15) {环形反应堆};
+  \draw[line width=0.5pt] (2.95,2.05) -- (3.28,2.05);
+  \draw[line width=0.5pt,->] (3.28,2.05) -- (3.72,2.05);
+  \draw[line width=0.55pt] (3.72,1.45) rectangle (5.05,2.65);
+  \node[align=center,font=\small] at (4.38,2.05) {钾蒸汽\\涡轮};
+  \node[anchor=south,font=\scriptsize] at (4.38,2.72) {电输出};
+  \draw[line width=0.4pt] (4.38,2.65) -- (4.38,2.70);
+  \draw[line width=0.5pt,->] (5.05,2.05) -- (5.55,2.05);
+  \draw[line width=0.55pt] (5.55,1.45) rectangle (6.95,2.65);
+  \node[align=center,font=\small] at (6.25,2.05) {蒸汽\\发生器};
+  \draw[line width=0.5pt,->] (6.95,2.05) -- (7.45,2.05);
+  \draw[line width=0.55pt] (7.45,1.45) rectangle (8.78,2.65);
+  \node[align=center,font=\small] at (8.11,2.05) {蒸汽\\涡轮};
+  \node[anchor=south,font=\scriptsize] at (8.11,2.72) {电输出};
+  \draw[line width=0.4pt] (8.11,2.65) -- (8.11,2.70);
+  \draw[line width=0.5pt,->] (8.78,2.05) -- (9.55,2.05);
+  \node[anchor=west,font=\small] at (9.58,2.05) {废热};
+  \draw[line width=0.5pt] (4.38,1.45) -- (4.38,0.62) -- (2.55,0.62);
+  \draw[line width=0.45pt,->] (2.85,0.62) -- (2.55,0.62);
+  \draw[line width=0.45pt] (2.55,0.62) -- (2.40,1.15);
+  \node[anchor=north,font=\scriptsize] at (3.35,0.58) {液钾};
+  \draw[line width=0.5pt] (6.25,1.45) -- (6.25,0.95) -- (8.11,0.95) -- (8.11,1.45);
+  \node[anchor=north,font=\scriptsize] at (7.18,0.90) {水};
+\end{tikzpicture}%
+}
 \caption{图 11.11 托卡马克型热核聚变反应堆结构简图}
 \end{figure}
 
@@ -14909,7 +15165,52 @@ u和99.9076 u。）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11.12 激光打靶型热核聚变 反应堆原理示意图}]{assets/physics-4/fig-p0323-01.png}}
+\fitfig{%
+% fig-alt: 激光打靶堆：1入口、2空腔、若干3激光口、4锂入口、5锂蒸气出口；扫描另有指向右方的6
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[black!16] (4.15,4.55) circle (1.72);
+  \fill[white] (4.15,4.55) circle (0.70);
+  \foreach \k in {0,12,...,348} {
+    \draw[line width=0.22pt] ({4.15+0.74*cos(\k)},{4.55+0.74*sin(\k)}) -- ({4.15+1.68*cos(\k)},{4.55+1.72*sin(\k)});
+  }
+  \draw[line width=0.7pt] (4.15,4.55) circle (1.72);
+  \draw[line width=0.6pt] (4.15,4.55) circle (0.70);
+  \node[font=\small] at (4.15,4.78) {2};
+  \draw[line width=0.55pt] (3.92,6.55) rectangle (4.38,7.15);
+  \node[font=\small] at (4.15,6.85) {1};
+  \draw[line width=0.5pt] (3.98,6.55) -- (3.98,6.15) -- (4.32,6.15) -- (4.32,6.55);
+  \draw[line width=0.45pt] (4.05,6.15) -- (4.05,5.22);
+  \draw[line width=0.45pt] (4.25,6.15) -- (4.25,5.22);
+  \draw[line width=0.5pt] (2.55,5.85) -- (3.00,6.20) -- (3.45,5.85) -- (3.00,5.50) -- cycle;
+  \node[font=\small] at (3.00,5.85) {3};
+  \draw[line width=0.4pt] (3.28,5.72) -- (3.62,5.15);
+  \draw[line width=0.5pt] (5.30,6.20) -- (5.75,5.85) -- (5.30,5.50) -- (4.85,5.85) -- cycle;
+  \node[font=\small] at (5.30,5.85) {3};
+  \draw[line width=0.4pt] (5.02,5.72) -- (4.68,5.15);
+  \draw[line width=0.5pt] (1.55,4.90) -- (2.00,4.55) -- (1.55,4.20) -- (1.10,4.55) -- cycle;
+  \node[font=\small] at (1.55,4.55) {3};
+  \draw[line width=0.4pt] (2.00,4.55) -- (2.48,4.55);
+  \draw[line width=0.5pt] (2.15,3.15) -- (2.60,2.80) -- (2.15,2.45) -- (1.70,2.80) -- cycle;
+  \node[font=\small] at (2.15,2.80) {3};
+  \draw[line width=0.4pt] (2.42,3.02) -- (2.95,3.45);
+  \draw[line width=0.5pt] (6.15,3.15) -- (6.60,2.80) -- (6.15,2.45) -- (5.70,2.80) -- cycle;
+  \node[font=\small] at (6.15,2.80) {3};
+  \draw[line width=0.4pt] (5.88,3.02) -- (5.35,3.45);
+  \draw[line width=0.5pt,->] (5.87,4.55) -- (7.35,4.55);
+  \node[font=\small,anchor=west] at (7.40,4.55) {6};
+  \draw[line width=0.45pt,->] (3.05,3.35) -- (3.45,3.72);
+  \node[font=\scriptsize] at (2.92,3.22) {4};
+  \draw[line width=0.45pt,->] (5.25,3.35) -- (4.85,3.72);
+  \node[font=\scriptsize] at (5.38,3.22) {4};
+  \draw[line width=0.55pt] (4.15,2.83) -- (4.15,2.15)
+    .. controls (3.55,2.05) and (3.45,1.35) .. (3.72,0.95)
+    .. controls (3.95,0.55) and (4.35,0.55) .. (4.58,0.95)
+    .. controls (4.85,1.35) and (4.75,2.05) .. (4.15,2.15);
+  \draw[line width=0.45pt,->] (3.92,0.72) -- (3.92,0.28);
+  \draw[line width=0.45pt,->] (4.38,0.72) -- (4.38,0.28);
+  \node[font=\small] at (4.15,0.08) {5};
+\end{tikzpicture}%
+}
 \caption{图 11.12 激光打靶型热核聚变 反应堆原理示意图}
 \end{figure}
 
@@ -15117,7 +15418,35 @@ E = m c ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 12.1 核反应堆多余的中子产生放射性同位素}]{assets/physics-4/fig-p0329-01.png}}
+\fitfig{%
+% fig-alt: 混凝土防护墙外为原子堆，石墨块中送入普通元素、取出放射性同位素
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[black!8] (0.35,0.55) -- (2.55,0.55) -- (2.55,4.85) -- (0.35,4.85) -- cycle;
+  \fill[black!4] (2.55,0.55) -- (6.85,1.55) -- (6.85,5.85) -- (2.55,4.85) -- cycle;
+  \draw[line width=0.7pt] (0.35,0.55) -- (2.55,0.55) -- (6.85,1.55) -- (6.85,5.85) -- (2.55,4.85) -- (0.35,4.85) -- cycle;
+  \draw[line width=0.55pt] (2.55,0.55) -- (2.55,4.85);
+  \foreach \i in {0,1,2} {
+    \foreach \j in {0,1,2,3} {
+      \draw[line width=0.4pt] ({0.72+0.58*\i},{1.15+0.85*\j}) circle (0.18);
+    }
+  }
+  \draw[line width=0.55pt] (4.55,3.15) -- (6.15,3.55) -- (6.15,4.35) -- (4.55,3.95) -- cycle;
+  \draw[line width=0.45pt] (6.15,3.55) -- (6.55,3.72) -- (6.55,4.52) -- (6.15,4.35);
+  \draw[line width=0.45pt] (4.55,3.95) -- (4.95,4.12) -- (6.55,4.52) -- (6.15,4.35);
+  \foreach \k in {0,1,2} {
+    \draw[line width=0.4pt] ({4.85+0.40*\k},3.42) circle (0.10);
+  }
+  \draw[dashed,line width=0.4pt,->] (6.95,5.15) -- (6.35,4.45);
+  \draw[dashed,line width=0.4pt,->] (7.15,4.85) -- (6.55,4.35);
+  \node[anchor=south,font=\small] at (6.55,5.22) {加入的普通元素};
+  \node[anchor=west,font=\small] at (6.62,3.85) {石墨块};
+  \draw[line width=0.45pt] (4.95,3.15) -- (4.85,2.55) -- (4.55,2.15);
+  \draw[line width=0.5pt] (4.35,2.05) rectangle (5.05,2.45);
+  \node[anchor=north,font=\small] at (5.35,1.95) {取出的放射性同位素};
+  \node[anchor=south,font=\small] at (4.55,5.95) {原子堆};
+  \node[anchor=north,font=\small] at (1.15,0.42) {混凝土防护墙};
+\end{tikzpicture}%
+}
 \caption{图 12.1 核反应堆多余的中子产生放射性同位素}
 \end{figure}
 
