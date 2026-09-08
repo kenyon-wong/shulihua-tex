@@ -466,7 +466,29 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-5}]{assets/solid-geometry/fig-p0008-01.png}}
+\fitfig{%
+% fig-alt: 左为水平正方形ABCD，A左下、B右下、C右上、D左上；右为平面P内的平行四边形A1B1C1D1，横边水平、纵边成45度且减半
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (1.42,1.42);
+  \node[below left=1pt] at (0,0) {$A$};
+  \node[below right=1pt] at (1.42,0) {$B$};
+  \node[above right=1pt] at (1.42,1.42) {$C$};
+  \node[above left=1pt] at (0,1.42) {$D$};
+  \begin{scope}[xshift=2.35cm]
+    \draw[line width=0.7pt] (0,0) -- (3.25,0) -- (4.25,1.05) -- (1.00,1.05) -- cycle;
+    \node[above right=-1pt] at (4.25,1.05) {$P$};
+    \coordinate (A1) at (0.78,0.22);
+    \coordinate (B1) at (2.18,0.22);
+    \coordinate (D1) at (1.26,0.70);
+    \coordinate (C1) at (2.66,0.70);
+    \draw[line width=0.7pt] (A1) -- (B1) -- (C1) -- (D1) -- cycle;
+    \node[left=2pt] at (A1) {$A_{1}$};
+    \node[below=2pt] at (B1) {$B_{1}$};
+    \node[right=1pt] at (C1) {$C_{1}$};
+    \node[above=1pt] at (D1) {$D_{1}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-5}
 \end{figure}
 
@@ -474,7 +496,36 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-6}]{assets/solid-geometry/fig-p0008-02.png}}
+\fitfig{%
+% fig-alt: 左为三角形ABC，底边AB上高CD竖直；右为平面P内A1B1水平，D1在A1B1上，C1D1为45度且长为其一半
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (1.70,0);
+  \coordinate (D) at (0.68,0);
+  \coordinate (C) at (0.68,1.48);
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.7pt] (C) -- (D);
+  \node[left=1pt] at (A) {$A$};
+  \node[right=1pt] at (B) {$B$};
+  \node[above=1pt] at (C) {$C$};
+  \node[below=1pt] at (D) {$D$};
+  \begin{scope}[xshift=2.85cm]
+    \draw[line width=0.7pt] (0,0) -- (3.20,0) -- (4.22,1.02) -- (1.02,1.02) -- cycle;
+    \node[above right=-1pt] at (4.22,1.02) {$P$};
+    \coordinate (A1) at (0.58,0.24);
+    \coordinate (B1) at (2.38,0.24);
+    \coordinate (D1) at (1.26,0.24);
+    \coordinate (C1) at (1.78,0.76);
+    \draw[line width=0.7pt] (A1) -- (B1);
+    \draw[line width=0.7pt] (D1) -- (C1);
+    \draw[line width=0.7pt] (A1) -- (C1) -- (B1);
+    \node[left=1pt] at (A1) {$A_{1}$};
+    \node[right=1pt] at (B1) {$B_{1}$};
+    \node[above=1pt] at (C1) {$C_{1}$};
+    \node[below=1pt] at (D1) {$D_{1}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-6}
 \end{figure}
 
@@ -503,7 +554,61 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-7}]{assets/solid-geometry/fig-p0008-03.png}}
+\fitfig{%
+% fig-alt: 左为四边形ABCD，过A的水平线MN，DE、CF、BK垂直于MN；右为平面P内同一作法，垂线改画成45度且长减半
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (M) at (0,0);
+  \coordinate (N) at (5.15,0);
+  \coordinate (A) at (0.48,0);
+  \coordinate (E) at (1.42,0);
+  \coordinate (F) at (3.05,0);
+  \coordinate (K) at (4.22,0);
+  \coordinate (D) at (1.42,1.05);
+  \coordinate (C) at (3.05,1.28);
+  \coordinate (B) at (4.22,-1.18);
+  \draw[line width=0.7pt] (M) -- (N);
+  \draw[line width=0.7pt] (D) -- (E);
+  \draw[line width=0.7pt] (C) -- (F);
+  \draw[line width=0.7pt] (B) -- (K);
+  \draw[line width=0.7pt] (A) -- (D) -- (C) -- (B) -- cycle;
+  \node[left=1pt] at (M) {$M$};
+  \node[right=2pt] at (N) {$N$};
+  \node[below left=1pt] at (A) {$A$};
+  \node[below=2pt] at (E) {$E$};
+  \node[below=2pt] at (F) {$F$};
+  \node[above=1pt] at (K) {$K$};
+  \node[above left=0pt] at (D) {$D$};
+  \node[above=1pt] at (C) {$C$};
+  \node[below=1pt] at (B) {$B$};
+  \begin{scope}[xshift=7.45cm]
+    \draw[line width=0.7pt] (0,0) -- (5.05,0) -- (6.15,1.20) -- (1.10,1.20) -- cycle;
+    \node[above right=-1pt] at (6.15,1.20) {$P$};
+    \coordinate (M1) at (0.32,0.50);
+    \coordinate (N1) at (4.62,0.50);
+    \coordinate (A1) at (0.70,0.50);
+    \coordinate (E1) at (1.48,0.50);
+    \coordinate (F1) at (2.88,0.50);
+    \coordinate (K1) at (3.88,0.50);
+    \coordinate (D1) at (1.85,0.87);
+    \coordinate (C1) at (3.33,0.95);
+    \coordinate (B1) at (3.46,0.12);
+    \draw[line width=0.7pt] (M1) -- (N1);
+    \draw[line width=0.7pt] (E1) -- (D1);
+    \draw[line width=0.7pt] (F1) -- (C1);
+    \draw[line width=0.7pt] (K1) -- (B1);
+    \draw[line width=0.7pt] (A1) -- (D1) -- (C1) -- (B1) -- cycle;
+    \node[left=1pt] at (M1) {$M_{1}$};
+    \node[right=1pt] at (N1) {$N_{1}$};
+    \node[below left=0pt] at (A1) {$A_{1}$};
+    \node[below=2pt] at (E1) {$E_{1}$};
+    \node[below=2pt] at (F1) {$F_{1}$};
+    \node[above=2pt] at (K1) {$K_{1}$};
+    \node[above left=0pt] at (D1) {$D_{1}$};
+    \node[above right=0pt] at (C1) {$C_{1}$};
+    \node[below=1pt] at (B1) {$B_{1}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-7}
 \end{figure}
 
@@ -669,7 +774,23 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0012-01.png}}
+\fitfig{%
+% fig-alt: 平面M与平面N相交于竖直线AB，均为实线：M向右后倾斜，N为右侧直立矩形，无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,3.15);
+  \coordinate (B) at (0,0);
+  \coordinate (P) at (1.28,3.72);
+  \coordinate (Q) at (1.28,0.48);
+  \coordinate (R) at (2.08,3.15);
+  \coordinate (S) at (2.08,0);
+  \draw[line width=0.7pt] (A) -- (B) -- (S) -- (R) -- cycle;
+  \draw[line width=0.7pt] (A) -- (P) -- (Q) -- (B);
+  \node[left=1pt] at (A) {$A$};
+  \node[left=1pt] at (B) {$B$};
+  \node at (0.62,0.95) {$M$};
+  \node at (1.62,0.62) {$N$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -733,7 +854,18 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-11}]{assets/solid-geometry/fig-p0013-01.png}}
+\fitfig{%
+% fig-alt: 水平平行四边形平面，右上角标M；内有水平直线a，其上两点B、C，线外上方一点A
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (3.35,0) -- (4.30,0.98) -- (0.95,0.98) -- cycle;
+  \node[above right=-1pt] at (4.30,0.98) {$M$};
+  \draw[line width=0.8pt] (0.70,0.30) -- (2.85,0.30);
+  \node[left=1pt] at (0.70,0.30) {$a$};
+  \node[above=1pt] at (1.22,0.68) {$A$};
+  \node[below=2pt] at (1.62,0.30) {$B$};
+  \node[below=2pt] at (2.42,0.30) {$C$};
+\end{tikzpicture}%
+}
 \caption{图1-11}
 \end{figure}
 
@@ -767,7 +899,20 @@ B 可
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-12}]{assets/solid-geometry/fig-p0014-01.png}}
+\fitfig{%
+% fig-alt: 平面P内两直线相交于O：a由左上向右下，b由左下向右上，B在b上且在O的右侧
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (3.45,0) -- (4.42,1.02) -- (0.97,1.02) -- cycle;
+  \node[above right=-1pt] at (4.42,1.02) {$P$};
+  \coordinate (O) at (1.58,0.46);
+  \draw[line width=0.8pt] (0.68,0.76) -- (2.62,0.18);
+  \draw[line width=0.8pt] (0.62,0.22) -- (2.78,0.82);
+  \node[above left=0pt] at (0.74,0.74) {$a$};
+  \node[below left=0pt] at (0.70,0.26) {$b$};
+  \node[above left=1pt] at (O) {$O$};
+  \node[above=1pt] at (2.38,0.70) {$B$};
+\end{tikzpicture}%
+}
 \caption{图1-12}
 \end{figure}
 
