@@ -4720,7 +4720,20 @@ x 要同时满足两个条件：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.18}]{assets/algebra-2/fig-p0086-01.png}}
+\fitfig{%
+% fig-alt: 数轴标$-2$至$10$，右端箭头后标$x$。$4$、$8$处黑点。上方左射线自$4$向左并有箭头，右射线自$8$向右并有箭头。
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=0.66cm]
+  \draw[line width=0.6pt,->] (-2.55,0) -- (10.75,0) node[right=1pt] {$x$};
+  \foreach \n in {-2,-1,0,1,2,3,4,5,6,7,8,9,10}
+    \draw[line width=0.5pt] (\n,0.08) -- (\n,-0.08) node[below=1.5pt] {$\n$};
+  \draw[line width=0.55pt,fill=black] (4,0) circle (1.7pt);
+  \draw[line width=0.55pt,fill=black] (8,0) circle (1.7pt);
+  \draw[line width=0.7pt] (4,0.11) -- (4,0.42);
+  \draw[line width=0.7pt,<-] (-2.70,0.42) -- (4,0.42);
+  \draw[line width=0.7pt] (8,0.11) -- (8,0.42);
+  \draw[line width=0.7pt,->] (8,0.42) -- (10.55,0.42);
+\end{tikzpicture}%
+}
 \caption{图2.18}
 \end{figure}
 
