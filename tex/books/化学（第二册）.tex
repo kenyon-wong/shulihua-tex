@@ -3450,7 +3450,51 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·1 镭的射线，在通电的极板间发生偏转的示意图}]{assets/chemistry-2/fig-p0087-01.png}}
+\fitfig{%
+% fig-alt: 铅盒小孔射出镭的射线，在左负极板与右正极板间分成三束：α向负极偏转，γ直线向上不偏转（顶端作波线并标γ射线），β向正极偏转
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % 负极板
+  \draw[line width=0.65pt] (-2.72,0.15) -- (-2.72,2.95) -- (-2.18,2.95) -- (-2.18,0.15) -- cycle;
+  \draw[line width=0.55pt] (-2.18,0.15) -- (-2.00,0.34) -- (-2.00,3.14) -- (-2.18,2.95);
+  \draw[line width=0.55pt] (-2.72,2.95) -- (-2.54,3.14) -- (-2.00,3.14);
+  \node at (-2.42,3.38) {$-$};
+  \draw[line width=0.55pt] plot[domain=0:0.95,samples=28,smooth] ({-2.58+0.11*sin(560*\x)},{3.14+\x});
+  % 正极板
+  \draw[line width=0.65pt] (1.92,0.15) -- (1.92,2.95) -- (2.46,2.95) -- (2.46,0.15) -- cycle;
+  \draw[line width=0.55pt] (2.46,0.15) -- (2.64,0.34) -- (2.64,3.14) -- (2.46,2.95);
+  \draw[line width=0.55pt] (1.92,2.95) -- (2.10,3.14) -- (2.64,3.14);
+  \node at (2.22,3.38) {$+$};
+  \draw[line width=0.55pt] plot[domain=0:0.95,samples=28,smooth] ({2.12+0.11*sin(560*\x)},{3.14+\x});
+  % 铅盒
+  \begin{scope}
+    \clip (-0.32,-0.58) rectangle (0.32,0.02);
+    \foreach \i in {0,1,2,3,4,5,6} {
+      \foreach \j in {0,1,2,3,4,5} {
+        \fill (-0.28+0.095*\i,-0.54+0.095*\j) circle[radius=0.012];
+      }
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (-0.32,-0.58) rectangle (0.32,0.04);
+  \draw[line width=0.55pt] (-0.07,0.04) -- (-0.07,0.16) -- (0.07,0.16) -- (0.07,0.04);
+  % γ：不偏转，直线束上接波线
+  \draw[line width=0.55pt] (-0.07,0.16) -- (-0.07,2.95);
+  \draw[line width=0.55pt] (0,0.16) -- (0,2.95);
+  \draw[line width=0.55pt] (0.07,0.16) -- (0.07,2.95);
+  \node[anchor=west] at (0.12,2.05) {$\gamma$};
+  \draw[line width=0.6pt] plot[domain=0:1.20,samples=40,smooth] ({0.14*sin(420*\x)},{2.95+\x});
+  \node[anchor=west] at (0.22,3.85) {$\gamma$ 射线};
+  % α：向负极板偏转，箭头指向偏转方向
+  \draw[line width=0.6pt,->] (0.04,0.22) to[out=118,in=155] (-1.68,1.72);
+  \draw[line width=0.6pt,->] (0.00,0.22) to[out=128,in=150] (-1.86,2.18);
+  \draw[line width=0.6pt,->] (-0.03,0.22) to[out=136,in=148] (-2.00,2.58);
+  \node at (-1.42,1.18) {$\alpha$};
+  % β：向正极板偏转，箭头指向偏转方向
+  \draw[line width=0.6pt,->] (0.06,0.22) to[out=62,in=25] (1.52,1.72);
+  \draw[line width=0.6pt,->] (0.08,0.22) to[out=52,in=30] (1.68,2.18);
+  \draw[line width=0.6pt,->] (0.10,0.22) to[out=46,in=32] (1.80,2.58);
+  \node at (1.22,1.18) {$\beta$};
+\end{tikzpicture}%
+}
 \caption{图 3·1 镭的射线，在通电的极板间发生偏转的示意图}
 \end{figure}
 
@@ -3478,7 +3522,26 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·2 镭原子的蜕变示意图}]{assets/chemistry-2/fig-p0088-01.png}}
+\fitfig{%
+% fig-alt: 镭226大圆射出两条带点迹的箭头：上至氦4小圆，下至氡222中圆
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-1.65,0) circle[radius=0.98];
+  \node[align=center] at (-1.65,0.08) {镭\\[1pt]226};
+  \draw[line width=0.7pt] (1.55,1.28) circle[radius=0.42];
+  \node[align=center] at (1.55,1.28) {氦\\[0.5pt]4};
+  \draw[line width=0.7pt] (1.85,-1.18) circle[radius=0.64];
+  \node[align=center] at (1.85,-1.18) {氡\\[0.5pt]222};
+  \draw[line width=0.65pt,->] (-0.72,0.48) -- (1.16,1.12);
+  \draw[line width=0.65pt,->] (-0.78,-0.48) -- (1.26,-0.95);
+  % 点迹仅沿已有两条蜕变箭头，不另加微粒
+  \foreach \x/\y in {0.28/0.74, 0.40/0.70, 0.46/0.80, 0.55/0.76, 0.58/0.86, 0.66/0.80, 0.70/0.90, 0.76/0.84, 0.82/0.94, 0.48/0.84, 0.36/0.82, 0.62/0.92} {
+    \fill (\x,\y) circle[radius=0.028];
+  }
+  \foreach \x/\y in {0.22/-0.58, 0.34/-0.64, 0.40/-0.54, 0.48/-0.68, 0.52/-0.58, 0.60/-0.72, 0.64/-0.62, 0.72/-0.76, 0.78/-0.66, 0.44/-0.74, 0.56/-0.80, 0.68/-0.84} {
+    \fill (\x,\y) circle[radius=0.028];
+  }
+\end{tikzpicture}%
+}
 \caption{图3·2 镭原子的蜕变示意图}
 \end{figure}
 
@@ -3508,7 +3571,21 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·3 α 微粒穿过金属薄片时和原子核相遇的示意图}]{assets/chemistry-2/fig-p0089-01.png}}
+\fitfig{%
+% fig-alt: 五条α微粒自左向右：上方两条几乎直行，近原子核处一条上偏、两条下偏；原子核为含++的小圆
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.6pt,->] (-2.35,1.08) -- (2.55,1.08);
+  \draw[line width=0.6pt,->] (-2.35,0.55) -- (2.55,0.55);
+  \draw[line width=0.6pt,->] (-2.35,0.05) .. controls (0.15,0.02) and (0.85,0.22) .. (2.15,0.92);
+  \draw[line width=0.6pt,->] (-2.35,-0.48) .. controls (0.05,-0.46) and (0.75,-0.70) .. (2.05,-1.18);
+  \draw[line width=0.6pt,->] (-2.35,-1.00) .. controls (-0.15,-1.04) and (0.40,-1.35) .. (1.45,-1.72);
+  \draw[line width=0.7pt] (1.28,-0.12) circle[radius=0.30];
+  \draw[line width=0.55pt] (1.08,-0.12) -- (1.22,-0.12);
+  \draw[line width=0.55pt] (1.15,-0.19) -- (1.15,-0.05);
+  \draw[line width=0.55pt] (1.34,-0.12) -- (1.48,-0.12);
+  \draw[line width=0.55pt] (1.41,-0.19) -- (1.41,-0.05);
+\end{tikzpicture}%
+}
 \caption{图 3·3 α 微粒穿过金属薄片时和原子核相遇的示意图}
 \end{figure}
 
@@ -3516,7 +3593,21 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·4 氢原子结构示意图}]{assets/chemistry-2/fig-p0089-02.png}}
+\fitfig{%
+% fig-alt: 虚线圆轨道；中心核为带正号小圆，旁标核；轨道右下方电子为带负号小圆，旁标电子
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt,dash pattern=on 2.4pt off 1.7pt] (0,0) circle[radius=1.38];
+  \fill[white] (0,0) circle[radius=0.24];
+  \draw[line width=0.65pt] (0,0) circle[radius=0.24];
+  \draw[line width=0.55pt] (-0.12,0) -- (0.12,0);
+  \draw[line width=0.55pt] (0,-0.12) -- (0,0.12);
+  \node[anchor=south] at (0,0.28) {核};
+  \fill[white] (1.05,-0.90) circle[radius=0.17];
+  \draw[line width=0.65pt] (1.05,-0.90) circle[radius=0.17];
+  \draw[line width=0.55pt] (0.93,-0.90) -- (1.17,-0.90);
+  \node[anchor=west] at (1.26,-0.90) {电子};
+\end{tikzpicture}%
+}
 \caption{图 3·4 氢原子结构示意图}
 \end{figure}
 
@@ -3608,7 +3699,19 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={○ 电子}]{assets/chemistry-2/fig-p0092-01.png}}
+\fitfig{%
+% fig-alt: 普通氢_{1}H^{1}：虚线圆轨道，右上一个空心电子，中心一个带正号质子
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.8pt] (0,0) circle[radius=1.12];
+  \fill[white] (0.72,0.86) circle[radius=0.09];
+  \draw[line width=0.6pt] (0.72,0.86) circle[radius=0.09];
+  \fill[white] (0,0) circle[radius=0.18];
+  \draw[line width=0.6pt] (0,0) circle[radius=0.18];
+  \draw[line width=0.5pt] (-0.09,0) -- (0.09,0);
+  \draw[line width=0.5pt] (0,-0.09) -- (0,0.09);
+  \node[anchor=north] at (0,-1.20) {$_{1}\mathrm{H}^{1}$};
+\end{tikzpicture}%
+}
 \caption{○ 电子}
 \end{figure}
 
@@ -3616,7 +3719,23 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={④ 质子}]{assets/chemistry-2/fig-p0092-02.png}}
+\fitfig{%
+% fig-alt: 重氢_{1}H^{2}：虚线圆轨道，右上一个空心电子；核内左为带正号质子、右为点状中子，各一，不另加微粒
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.8pt] (0,0) circle[radius=1.12];
+  \fill[white] (0.62,0.93) circle[radius=0.09];
+  \draw[line width=0.6pt] (0.62,0.93) circle[radius=0.09];
+  % 质子
+  \fill[white] (-0.15,0) circle[radius=0.16];
+  \draw[line width=0.6pt] (-0.15,0) circle[radius=0.16];
+  \draw[line width=0.5pt] (-0.24,0) -- (-0.06,0);
+  \draw[line width=0.5pt] (-0.15,-0.09) -- (-0.15,0.09);
+  % 中子：点状圆，仅一颗
+  \fill[black!50] (0.16,0) circle[radius=0.16];
+  \draw[line width=0.6pt] (0.16,0) circle[radius=0.16];
+  \node[anchor=north] at (0,-1.20) {$_{1}\mathrm{H}^{2}$};
+\end{tikzpicture}%
+}
 \caption{④ 质子}
 \end{figure}
 
