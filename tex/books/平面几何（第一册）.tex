@@ -1921,7 +1921,48 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-35}]{assets/plane-geometry-1/fig-p0027-01.png}}
+\fitfig{%
+% fig-alt: 左为角ABC，顶点B，BA水平向右，BC斜向右上，角内有小弧；中为角DEF，顶点E，ED水平向右，EF斜向右上，角内用斜线阴影；右为两者迭合，顶点B下标(E)，水平端A下标(D)，内射线至F且角内斜线阴影，外射线至C
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.15,0);
+  \draw[line width=0.7pt] (0,0) -- (38:1.95);
+  \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=38, radius=0.40];
+  \node[below left=0pt] at (0,0) {$B$};
+  \node[above=1pt] at (2.15,0) {$A$};
+  \node[above=1pt] at (38:1.95) {$C$};
+  \begin{scope}[shift={(2.85,0)}]
+    \begin{scope}
+      \clip (0,0) -- (34:1.55) -- (1.85,0) -- cycle;
+      \foreach \s in {0.08,0.24,...,2.35}
+        \draw[line width=0.35pt] (\s,1.25) -- ++(0.72,-1.35);
+    \end{scope}
+    \draw[line width=0.7pt] (0,0) -- (1.85,0);
+    \draw[line width=0.7pt] (0,0) -- (34:1.55);
+    \draw[line width=0.7pt] (34:1.55) -- (1.85,0);
+    \node[below=1pt] at (0,0) {$E$};
+    \node[above=1pt] at (1.85,0) {$D$};
+    \node[above=1pt] at (34:1.55) {$F$};
+  \end{scope}
+  \begin{scope}[shift={(5.45,0)}]
+    \begin{scope}
+      \clip (0,0) -- (32:1.55) -- (1.62,0) -- cycle;
+      \foreach \s in {0.08,0.24,...,2.20}
+        \draw[line width=0.35pt] (\s,1.25) -- ++(0.72,-1.35);
+    \end{scope}
+    \draw[line width=0.7pt] (0,0) -- (2.20,0);
+    \draw[line width=0.7pt] (0,0) -- (32:1.55);
+    \draw[line width=0.7pt] (32:1.55) -- (1.62,0);
+    \draw[line width=0.7pt] (0,0) -- (50:2.05);
+    \draw[line width=0.6pt] (0.38,0) arc[start angle=0, end angle=50, radius=0.38];
+    \node[above=1pt] at (0.02,0.02) {$B$};
+    \node[below=1pt] at (0.02,-0.02) {$(E)$};
+    \node[above=1pt] at (2.20,0) {$A$};
+    \node[below=1pt] at (2.20,0) {$(D)$};
+    \node[above=1pt] at (32:1.55) {$F$};
+    \node[above=1pt] at (50:2.05) {$C$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-35}
 \end{figure}
 
@@ -1990,13 +2031,52 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第29页）}]{assets/plane-geometry-1/fig-p0029-01.png}}
+\fitfig{%
+% fig-alt: 左为角1，顶点在左、下边水平向右、上边斜向右上；右上为较平的角2，右下为角3
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (1.55,0);
+  \draw[line width=0.7pt] (0,0) -- (28:1.40);
+  \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=28, radius=0.40];
+  \node[above=1pt] at (14:0.56) {$1$};
+  \begin{scope}[shift={(2.05,0.78)}]
+    \draw[line width=0.7pt] (0,0) -- (1.40,0);
+    \draw[line width=0.7pt] (0,0) -- (12:1.28);
+    \draw[line width=0.6pt] (0.38,0) arc[start angle=0, end angle=12, radius=0.38];
+    \node[above=1pt] at (8:0.58) {$2$};
+  \end{scope}
+  \begin{scope}[shift={(2.05,-0.08)}]
+    \draw[line width=0.7pt] (0,0) -- (1.48,0);
+    \draw[line width=0.7pt] (0,0) -- (32:1.32);
+    \draw[line width=0.6pt] (0.38,0) arc[start angle=0, end angle=32, radius=0.38];
+    \node[above=1pt] at (16:0.54) {$3$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第29页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·40}]{assets/plane-geometry-1/fig-p0029-02.png}}
+\fitfig{%
+% fig-alt: 顶点B引出四条实线射线，BA水平向右，BD、BE依次升高，BC最陡；BA与BD间标1，BD与BE间标2，BE与BC间标3
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.50,0);
+  \draw[line width=0.7pt] (0,0) -- (22:2.20);
+  \draw[line width=0.7pt] (0,0) -- (42:2.10);
+  \draw[line width=0.7pt] (0,0) -- (68:1.95);
+  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=22, radius=0.42];
+  \draw[line width=0.6pt] (22:0.58) arc[start angle=22, end angle=42, radius=0.58];
+  \draw[line width=0.6pt] (42:0.74) arc[start angle=42, end angle=68, radius=0.74];
+  \node[above=1pt] at (11:0.58) {$1$};
+  \node[above=1pt] at (32:0.74) {$2$};
+  \node[above left=1pt] at (55:0.90) {$3$};
+  \node[below left=0pt] at (0,0) {$B$};
+  \node[above=1pt] at (2.50,0) {$A$};
+  \node[above=1pt] at (22:2.20) {$D$};
+  \node[above=1pt] at (42:2.10) {$E$};
+  \node[above=1pt] at (68:1.95) {$C$};
+\end{tikzpicture}%
+}
 \caption{图 1·40}
 \end{figure}
 
@@ -2010,19 +2090,61 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第29页）}]{assets/plane-geometry-1/fig-p0029-03.png}}
+\fitfig{%
+% fig-alt: 上为较大的角，顶点在左、下边水平向右、上边斜向右上，角内标4；下为较小的角，同样画法，角内标5
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,1.25) -- (1.85,1.25);
+  \draw[line width=0.7pt] (0,1.25) -- ++(34:1.65);
+  \draw[line width=0.6pt] (0.42,1.25) arc[start angle=0, end angle=34, radius=0.42];
+  \node[above=1pt] at (0.46,1.42) {$4$};
+  \draw[line width=0.7pt] (0,0) -- (1.70,0);
+  \draw[line width=0.7pt] (0,0) -- (20:1.50);
+  \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=20, radius=0.40];
+  \node[above=1pt] at (10:0.56) {$5$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第29页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第29页）}]{assets/plane-geometry-1/fig-p0029-04.png}}
+\fitfig{%
+% fig-alt: 顶点O引出三条实线射线，OE水平向右，OF斜向右上，OG更陡；OE与OF间标5，OF与OG间标4
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.35,0);
+  \draw[line width=0.7pt] (0,0) -- (22:2.15);
+  \draw[line width=0.7pt] (0,0) -- (52:1.95);
+  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=22, radius=0.42];
+  \draw[line width=0.6pt] (22:0.58) arc[start angle=22, end angle=52, radius=0.58];
+  \node[above=1pt] at (11:0.58) {$5$};
+  \node[above=1pt] at (36:0.74) {$4$};
+  \node[below left=0pt] at (0,0) {$O$};
+  \node[above=1pt] at (2.35,0) {$E$};
+  \node[above=1pt] at (22:2.15) {$F$};
+  \node[above=1pt] at (52:1.95) {$G$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第29页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·41}]{assets/plane-geometry-1/fig-p0029-05.png}}
+\fitfig{%
+% fig-alt: 顶点O引出三条实线射线，OG水平向右，OE斜向右上，OF更陡；OG与OE间标5，OE与OF间标4
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.40,0);
+  \draw[line width=0.7pt] (0,0) -- (24:2.15);
+  \draw[line width=0.7pt] (0,0) -- (50:2.05);
+  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=24, radius=0.42];
+  \draw[line width=0.6pt] (24:0.58) arc[start angle=24, end angle=50, radius=0.58];
+  \node[above=1pt] at (12:0.58) {$5$};
+  \node[above=1pt] at (37:0.74) {$4$};
+  \node[below left=0pt] at (0,0) {$O$};
+  \node[above=1pt] at (2.40,0) {$G$};
+  \node[above=1pt] at (24:2.15) {$E$};
+  \node[above=1pt] at (50:2.05) {$F$};
+\end{tikzpicture}%
+}
 \caption{图 1·41}
 \end{figure}
 
@@ -2043,7 +2165,32 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-42}]{assets/plane-geometry-1/fig-p0030-01.png}}
+\fitfig{%
+% fig-alt: 左为已知角α，顶点在左、下边水平、上边略向上；右顶点O引出四条实线射线，OP水平向右，OR、OS依次升高，OQ最陡，三个相邻角内均标α
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (1.70,0);
+  \draw[line width=0.7pt] (0,0) -- (16:1.55);
+  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=16, radius=0.42];
+  \node[above=1pt] at (8:0.58) {$\alpha$};
+  \begin{scope}[shift={(2.55,0)}]
+    \draw[line width=0.7pt] (0,0) -- (2.45,0);
+    \draw[line width=0.7pt] (0,0) -- (16:2.20);
+    \draw[line width=0.7pt] (0,0) -- (32:2.10);
+    \draw[line width=0.7pt] (0,0) -- (52:1.95);
+    \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=16, radius=0.40];
+    \draw[line width=0.6pt] (16:0.56) arc[start angle=16, end angle=32, radius=0.56];
+    \draw[line width=0.6pt] (32:0.72) arc[start angle=32, end angle=52, radius=0.72];
+    \node[above=0pt] at (8:0.56) {$\alpha$};
+    \node[above=0pt] at (24:0.72) {$\alpha$};
+    \node[above=0pt] at (42:0.88) {$\alpha$};
+    \node[below left=0pt] at (0,0) {$O$};
+    \node[above=1pt] at (2.45,0) {$P$};
+    \node[above=1pt] at (16:2.20) {$R$};
+    \node[above=1pt] at (32:2.10) {$S$};
+    \node[above=1pt] at (52:1.95) {$Q$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-42}
 \end{figure}
 
@@ -2053,7 +2200,20 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-43}]{assets/plane-geometry-1/fig-p0030-02.png}}
+\fitfig{%
+% fig-alt: 顶点O引出四条实线射线，OA水平向右，OE、OF依次升高，OB最陡，无角码
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.45,0);
+  \draw[line width=0.7pt] (0,0) -- (24:2.15);
+  \draw[line width=0.7pt] (0,0) -- (46:2.05);
+  \draw[line width=0.7pt] (0,0) -- (68:1.95);
+  \node[below left=0pt] at (0,0) {$O$};
+  \node[above=1pt] at (2.45,0) {$A$};
+  \node[above=1pt] at (24:2.15) {$E$};
+  \node[above=1pt] at (46:2.05) {$F$};
+  \node[above=1pt] at (68:1.95) {$B$};
+\end{tikzpicture}%
+}
 \caption{图1-43}
 \end{figure}
 
@@ -2061,7 +2221,19 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-44}]{assets/plane-geometry-1/fig-p0030-03.png}}
+\fitfig{%
+% fig-alt: 顶点O引出三条实线射线，OA水平向右，OC斜向右上，OB更陡；OA与OC间有小弧
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.40,0);
+  \draw[line width=0.7pt] (0,0) -- (28:2.10);
+  \draw[line width=0.7pt] (0,0) -- (52:1.95);
+  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=28, radius=0.42];
+  \node[below left=0pt] at (0,0) {$O$};
+  \node[above=1pt] at (2.40,0) {$A$};
+  \node[above=1pt] at (28:2.10) {$C$};
+  \node[above=1pt] at (52:1.95) {$B$};
+\end{tikzpicture}%
+}
 \caption{图1-44}
 \end{figure}
 
@@ -2080,7 +2252,21 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·45}]{assets/plane-geometry-1/fig-p0031-01.png}}
+\fitfig{%
+% fig-alt: 矩形纸片，底边左下标B、中下标O、右下标A，顶边中点上方标C；自顶边中点到O为虚线折痕，O两侧各有直角记号并标d
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) rectangle (3.15,1.45);
+  \draw[dashed, line width=0.6pt] (1.575,1.45) -- (1.575,0);
+  \draw[line width=0.6pt] (1.415,0) -- (1.415,0.16) -- (1.575,0.16);
+  \draw[line width=0.6pt] (1.735,0) -- (1.735,0.16) -- (1.575,0.16);
+  \node[above=1pt] at (1.575,1.45) {$C$};
+  \node[below=1pt] at (0,0) {$B$};
+  \node[below=1pt] at (1.575,0) {$O$};
+  \node[below=1pt] at (3.15,0) {$A$};
+  \node[above=1pt] at (1.22,0.02) {$d$};
+  \node[above=1pt] at (1.93,0.02) {$d$};
+\end{tikzpicture}%
+}
 \caption{图 1·45}
 \end{figure}
 
@@ -2105,7 +2291,35 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-48}]{assets/plane-geometry-1/fig-p0031-02.png}}
+\fitfig{%
+% fig-alt: 自左四个角：A为顶角向下的锐角，角内有小弧；B为顶点在左的锐角，一边水平向右、一边斜向右上，角内有小弧；C为顶角向下的钝角，角内靠顶点有弧；D为顶点在右的钝角，两边向左，弧在顶点右侧
+\begin{tikzpicture}[line cap=round]
+  \begin{scope}[shift={(0,1.55)}]
+    \draw[line width=0.7pt] (0,0) -- (250:1.70);
+    \draw[line width=0.7pt] (0,0) -- (290:1.70);
+    \draw[line width=0.6pt] (250:0.28) arc[start angle=250, end angle=290, radius=0.28];
+    \node[above=1pt] at (0,0) {$A$};
+  \end{scope}
+  \begin{scope}[shift={(1.55,0.15)}]
+    \draw[line width=0.7pt] (0,0) -- (1.85,0);
+    \draw[line width=0.7pt] (0,0) -- (28:1.70);
+    \draw[line width=0.6pt] (0.36,0) arc[start angle=0, end angle=28, radius=0.36];
+    \node[below left=0pt] at (0,0) {$B$};
+  \end{scope}
+  \begin{scope}[shift={(4.55,1.35)}]
+    \draw[line width=0.7pt] (0,0) -- (215:1.55);
+    \draw[line width=0.7pt] (0,0) -- (325:1.55);
+    \draw[line width=0.6pt] (215:0.32) arc[start angle=215, end angle=325, radius=0.32];
+    \node[above=1pt] at (0,0) {$C$};
+  \end{scope}
+  \begin{scope}[shift={(6.85,0.85)}]
+    \draw[line width=0.7pt] (0,0) -- (125:1.55);
+    \draw[line width=0.7pt] (0,0) -- (235:1.55);
+    \draw[line width=0.6pt] (50:0.32) arc[start angle=50, end angle=-50, radius=0.32];
+    \node[right=1pt] at (0.36,0) {$D$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-48}
 \end{figure}
 
