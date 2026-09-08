@@ -4000,7 +4000,52 @@ R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第71页图示}]{assets/chemistry-4/fig-p0071-g01.png}}
+\fitfig{%
+% fig-alt: 苯加三分子氯在紫外线下生成六氯环己烷：左为顶点左右的苯环加3Cl2，右侧六元环每个碳连一个氢和一个氯，下方为分子式
+% redraw: fig-p0071-g01 苯加氯生成六六六
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \begin{scope}[shift={(0.15,0)}]
+    \draw[bond] (0.24,0.416) -- (0.48,0) -- (0.24,-0.416) -- (-0.24,-0.416) -- (-0.48,0) -- (-0.24,0.416) -- cycle;
+    \draw[bond] (-0.18,0.25) -- (0.18,0.25);
+    \draw[bond] (-0.34,-0.06) -- (-0.20,-0.28);
+    \draw[bond] (0.20,-0.28) -- (0.34,-0.06);
+  \end{scope}
+  \node[atom] at (1.72,0) {$+3$Cl$_2$};
+  \node[lab] at (3.15,0.34) {紫外线};
+  \draw[line width=0.55pt] (2.48,0.06) -- (3.82,0.06);
+  \begin{scope}[xshift=6.15cm]
+    \node[atom] (cT) at (0,0.96) {C};
+    \node[atom] (cUR) at (0.84,0.49) {C};
+    \node[atom] (cLR) at (0.84,-0.49) {C};
+    \node[atom] (cB) at (0,-0.96) {C};
+    \node[atom] (cLL) at (-0.84,-0.49) {C};
+    \node[atom] (cUL) at (-0.84,0.49) {C};
+    \node[atom] (hT) at (-0.50,1.58) {H};
+    \node[atom] (clT) at (0.56,1.58) {Cl};
+    \node[atom] (hUR) at (1.50,1.12) {H};
+    \node[atom] (clUR) at (1.76,0.28) {Cl};
+    \node[atom] (hLR) at (1.76,-0.22) {H};
+    \node[atom] (clLR) at (1.50,-1.12) {Cl};
+    \node[atom] (clB) at (-0.56,-1.58) {Cl};
+    \node[atom] (hB) at (0.56,-1.58) {H};
+    \node[atom] (clLL) at (-1.76,-0.22) {Cl};
+    \node[atom] (hLL) at (-1.50,-1.12) {H};
+    \node[atom] (clUL) at (-1.50,1.12) {Cl};
+    \node[atom] (hUL) at (-1.76,0.28) {H};
+    \draw[bond] (cT) -- (cUR) -- (cLR) -- (cB) -- (cLL) -- (cUL) -- cycle;
+    \draw[bond] (hT) -- (cT) -- (clT);
+    \draw[bond] (hUR) -- (cUR) -- (clUR);
+    \draw[bond] (hLR) -- (cLR) -- (clLR);
+    \draw[bond] (clB) -- (cB) -- (hB);
+    \draw[bond] (clLL) -- (cLL) -- (hLL);
+    \draw[bond] (clUL) -- (cUL) -- (hUL);
+    \node[lab] at (0,-2.28) {$\left(\mathrm{C}_{6}\mathrm{H}_{6}+3\mathrm{Cl}_{2}=\mathrm{C}_{6}\mathrm{H}_{6}\mathrm{Cl}_{6}\right)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{原PDF第71页图示}
 \end{figure}
 
@@ -4019,7 +4064,57 @@ R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第72页图示}]{assets/chemistry-4/fig-p0072-g01.png}}
+\fitfig{%
+% fig-alt: 滴滴涕：两个对位氯苯环连在带氢和三氯甲基的碳上；右侧简式为两个ClC6H4连到CH—CCl3
+% redraw: fig-p0072-g01 滴滴涕结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (clA) at (0,0) {Cl};
+  \begin{scope}[shift={(1.22,0)}]
+    \draw[bond] (0.20,0.346) -- (0.40,0) -- (0.20,-0.346) -- (-0.20,-0.346) -- (-0.40,0) -- (-0.20,0.346) -- cycle;
+    \draw[bond] (-0.15,0.21) -- (0.15,0.21);
+    \draw[bond] (-0.28,-0.05) -- (-0.16,-0.23);
+    \draw[bond] (0.16,-0.23) -- (0.28,-0.05);
+    \coordinate (r1L) at (180:0.40);
+    \coordinate (r1R) at (0:0.40);
+  \end{scope}
+  \node[atom] (c0) at (2.22,0) {C};
+  \node[atom] (h0) at (2.22,0.58) {H};
+  \begin{scope}[shift={(3.22,0)}]
+    \draw[bond] (0.20,0.346) -- (0.40,0) -- (0.20,-0.346) -- (-0.20,-0.346) -- (-0.40,0) -- (-0.20,0.346) -- cycle;
+    \draw[bond] (-0.15,0.21) -- (0.15,0.21);
+    \draw[bond] (-0.28,-0.05) -- (-0.16,-0.23);
+    \draw[bond] (0.16,-0.23) -- (0.28,-0.05);
+    \coordinate (r2L) at (180:0.40);
+    \coordinate (r2R) at (0:0.40);
+  \end{scope}
+  \node[atom] (clB) at (4.28,0) {Cl};
+  \node[atom] (c3) at (2.22,-0.70) {C};
+  \node[atom] (cl3l) at (1.48,-0.70) {Cl};
+  \node[atom] (cl3r) at (2.96,-0.70) {Cl};
+  \node[atom] (cl3d) at (2.22,-1.28) {Cl};
+  \draw[bond] (clA) -- (r1L);
+  \draw[bond] (r1R) -- (c0);
+  \draw[bond] (h0) -- (c0);
+  \draw[bond] (c0) -- (r2L);
+  \draw[bond] (r2R) -- (clB);
+  \draw[bond] (c0) -- (c3);
+  \draw[bond] (cl3l) -- (c3) -- (cl3r);
+  \draw[bond] (c3) -- (cl3d);
+  \node[lab] at (5.05,0.02) {或};
+  \node[atom] (g1) at (6.05,0.42) {ClC$_6$H$_4$};
+  \node[atom] (g2) at (6.05,-0.42) {ClC$_6$H$_4$};
+  \node[atom] (ch) at (7.55,0) {CH};
+  \node[atom] (cx) at (8.45,0) {CCl$_3$};
+  \coordinate (j) at (7.12,0);
+  \draw[bond] (g1.east) -- (j);
+  \draw[bond] (g2.east) -- (j);
+  \draw[bond] (j) -- (ch);
+  \draw[bond] (ch) -- (cx);
+\end{tikzpicture}%
+}
 \caption{原PDF第72页图示}
 \end{figure}
 
@@ -4086,7 +4181,44 @@ R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第73页图示}]{assets/chemistry-4/fig-p0073-g01.png}}
+\fitfig{%
+% fig-alt: 乙醇两种可能结构式：（1）H—C—C—O—H，碳上其余氢在上下；（2）甲醚式H—C—O—C—H
+% redraw: fig-p0073-g01 乙醇两种可能结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (aHu1) at (0,0.70) {H};
+  \node[atom] (aHu2) at (1.05,0.70) {H};
+  \node[atom] (aHl) at (-0.62,0) {H};
+  \node[atom] (aC1) at (0,0) {C};
+  \node[atom] (aC2) at (1.05,0) {C};
+  \node[atom] (aO) at (1.82,0) {O};
+  \node[atom] (aH) at (2.48,0) {H};
+  \node[atom] (aHd1) at (0,-0.70) {H};
+  \node[atom] (aHd2) at (1.05,-0.70) {H};
+  \draw[bond] (aHu1) -- (aC1) -- (aHd1);
+  \draw[bond] (aHu2) -- (aC2) -- (aHd2);
+  \draw[bond] (aHl) -- (aC1) -- (aC2) -- (aO) -- (aH);
+  \node[lab] at (0.70,-1.28) {（1）};
+  \node[lab] at (3.35,0) {或};
+  \begin{scope}[xshift=4.35cm]
+    \node[atom] (bHu1) at (0,0.70) {H};
+    \node[atom] (bHu2) at (1.90,0.70) {H};
+    \node[atom] (bHl) at (-0.62,0) {H};
+    \node[atom] (bC1) at (0,0) {C};
+    \node[atom] (bO) at (0.85,0) {O};
+    \node[atom] (bC2) at (1.90,0) {C};
+    \node[atom] (bHr) at (2.52,0) {H};
+    \node[atom] (bHd1) at (0,-0.70) {H};
+    \node[atom] (bHd2) at (1.90,-0.70) {H};
+    \draw[bond] (bHu1) -- (bC1) -- (bHd1);
+    \draw[bond] (bHu2) -- (bC2) -- (bHd2);
+    \draw[bond] (bHl) -- (bC1) -- (bO) -- (bC2) -- (bHr);
+    \node[lab] at (0.95,-1.28) {（2）};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{原PDF第73页图示}
 \end{figure}
 
@@ -4264,7 +4396,40 @@ x=\frac{46\times280}{1.15}=11200\text{毫升}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第77页图示}]{assets/chemistry-4/fig-p0077-g02.png}}
+\fitfig{%
+% fig-alt: 乙醇分子内脱水：虚线框住下方将脱去的H与OH，浓硫酸、160～180℃生成CH2=CH2与水，下行简式
+% redraw: fig-p0077-g02 乙醇分子内脱水成乙烯
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.6pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (h1u) at (0,0.72) {H};
+  \node[atom] (h2u) at (1.05,0.72) {H};
+  \node[atom] (hL) at (-0.62,0) {H};
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom] (c2) at (1.05,0) {C};
+  \node[atom] (hR) at (1.70,0) {H};
+  \node[atom] (h1d) at (0,-1.08) {H};
+  \node[grp] (oh) at (1.05,-1.08) {OH};
+  \draw[bond] (h1u) -- (c1) -- (h1d);
+  \draw[bond] (h2u) -- (c2);
+  \draw[bond] (hL) -- (c1) -- (c2) -- (hR);
+  \draw[bond] (c2) -- (oh);
+  \draw[dashed, line width=0.5pt] (-0.34,-0.72) rectangle (1.55,-1.46);
+  \node[lab] at (3.55,0.36) {浓\,H$_2$SO$_4$};
+  \draw[line width=0.55pt] (2.40,0.06) -- (4.70,0.06);
+  \node[lab] at (3.55,-0.26) {160$\sim$180$^\circ$C};
+  \node[atom] at (5.85,0.06) {CH$_2$=CH$_2$};
+  \node[atom] at (7.15,0.06) {$+$};
+  \node[atom] at (7.72,0.06) {H$_2$O};
+  \node[atom, anchor=east] at (2.70,-2.35) {（CH$_3$—CH$_2$—OH};
+  \node[lab] at (3.75,-2.05) {浓\,H$_2$SO$_4$};
+  \draw[line width=0.5pt] (2.90,-2.35) -- (4.60,-2.35);
+  \node[lab] at (3.75,-2.67) {160$\sim$180$^\circ$C};
+  \node[atom, anchor=west] at (4.80,-2.35) {CH$_2$=CH$_2$ $+$ H$_2$O）};
+\end{tikzpicture}%
+}
 \caption{原PDF第77页图示}
 \end{figure}
 
@@ -4276,7 +4441,40 @@ x=\frac{46\times280}{1.15}=11200\text{毫升}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第77页图示}]{assets/chemistry-4/fig-p0077-g03.png}}
+\fitfig{%
+% fig-alt: 两分子乙醇分子间脱水：左为C—O—H，右为HO—C，虚线框住中间将脱去的H与HO
+% redraw: fig-p0077-g03 乙醇分子间脱水成醚
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.6pt},
+    bond/.style={line width=0.62pt}]
+  \node[atom] (h1u) at (0,0.70) {H};
+  \node[atom] (h2u) at (1.05,0.70) {H};
+  \node[atom] (hL) at (-0.62,0) {H};
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom] (c2) at (1.05,0) {C};
+  \node[atom] (o1) at (1.72,0) {O};
+  \node[atom] (h1d) at (0,-0.70) {H};
+  \node[atom] (h2d) at (1.05,-0.70) {H};
+  \node[atom] (hx) at (2.38,0) {H};
+  \draw[bond] (h1u) -- (c1) -- (h1d);
+  \draw[bond] (h2u) -- (c2) -- (h2d);
+  \draw[bond] (hL) -- (c1) -- (c2) -- (o1) -- (hx);
+  \node[atom] (plus) at (3.05,0) {$+$};
+  \node[grp] (ho) at (3.68,0) {HO};
+  \node[atom] (c3) at (4.48,0) {C};
+  \node[atom] (c4) at (5.53,0) {C};
+  \node[atom] (h3u) at (4.48,0.70) {H};
+  \node[atom] (h3d) at (4.48,-0.70) {H};
+  \node[atom] (h4u) at (5.53,0.70) {H};
+  \node[atom] (h4d) at (5.53,-0.70) {H};
+  \node[atom] (hR) at (6.15,0) {H};
+  \draw[bond] (ho) -- (c3) -- (c4) -- (hR);
+  \draw[bond] (h3u) -- (c3) -- (h3d);
+  \draw[bond] (h4u) -- (c4) -- (h4d);
+  \draw[dashed, line width=0.5pt] (2.08,-0.34) rectangle (4.08,0.34);
+\end{tikzpicture}%
+}
 \caption{原PDF第77页图示}
 \end{figure}
 
@@ -4652,7 +4850,30 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（结构式）}]{assets/chemistry-4/fig-p0086-g01.png}}
+\fitfig{%
+% fig-alt: 丙三醇结构式：三个碳成链，两端各有一个氢，每个碳上方一个氢、下方一个羟基
+% redraw: fig-p0086-g01 丙三醇结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.6pt},
+    bond/.style={line width=0.62pt}]
+  \node[atom] (h1u) at (0,0.72) {H};
+  \node[atom] (h2u) at (1.22,0.72) {H};
+  \node[atom] (h3u) at (2.44,0.72) {H};
+  \node[atom] (hL) at (-0.62,0) {H};
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom] (c2) at (1.22,0) {C};
+  \node[atom] (c3) at (2.44,0) {C};
+  \node[atom] (hR) at (3.06,0) {H};
+  \node[grp] (o1) at (0,-0.78) {OH};
+  \node[grp] (o2) at (1.22,-0.78) {OH};
+  \node[grp] (o3) at (2.44,-0.78) {OH};
+  \draw[bond] (h1u) -- (c1) -- (o1);
+  \draw[bond] (h2u) -- (c2) -- (o2);
+  \draw[bond] (h3u) -- (c3) -- (o3);
+  \draw[bond] (hL) -- (c1) -- (c2) -- (c3) -- (hR);
+\end{tikzpicture}%
+}
 \caption{（结构式）}
 \end{figure}
 
