@@ -4556,27 +4556,69 @@ EF \parallel GH.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第1题 平行线AB、CD，左为竖直截线，右为斜截线；角1至4在上斜交点，角5至8在下斜交点，角9在AB与竖线交点右下，角10在CD与竖线交点右上
-\begin{tikzpicture}[line cap=round, >=latex]
-  \draw[line width=0.75pt] (-1.85,0.72) -- (1.92,0.72);
-  \draw[line width=0.75pt] (-1.82,-0.68) -- (1.98,-0.68);
-  \draw[line width=0.7pt] (-0.62,1.38) -- (-0.62,-1.28);
-  \draw[line width=0.7pt] (0.28,1.42) -- (1.22,-1.32);
-  \node[left=1pt] at (-1.85,0.72) {$A$};
-  \node[right=1pt] at (1.92,0.72) {$B$};
-  \node[left=1pt] at (-1.82,-0.68) {$C$};
-  \node[right=1pt] at (1.98,-0.68) {$D$};
-  \node[inner sep=1pt] at (0.06,1.02) {$2$};
-  \node[inner sep=1pt] at (0.88,1.00) {$1$};
-  \node[inner sep=1pt] at (0.18,0.46) {$3$};
-  \node[inner sep=1pt] at (0.92,0.46) {$4$};
-  \node[inner sep=1pt] at (0.52,-0.42) {$6$};
-  \node[inner sep=1pt] at (1.30,-0.42) {$5$};
-  \node[inner sep=1pt] at (0.58,-0.98) {$7$};
-  \node[inner sep=1pt] at (1.46,-0.96) {$8$};
-  \node[inner sep=1pt] at (-0.38,0.48) {$9$};
-  \node[inner sep=1pt] at (-0.28,-0.42) {$10$};
+% fig-alt: 第1题 平行线AB、CD，顶点在AB上的两截线向下张开；角1、2、3在上顶点下侧，CD上左交点角8、9、4、5，右交点角10、11、6、7
+\begin{tikzpicture}[line cap=round]
+  \coordinate (A) at (-0.15,1.35);
+  \coordinate (B) at (4.70,1.35);
+  \coordinate (C) at (-0.15,0);
+  \coordinate (D) at (4.70,0);
+  \coordinate (V) at (2.30,1.35);
+  \coordinate (L) at (1.00,0);
+  \coordinate (R) at (3.60,0);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.7pt] (V) -- (0.52,-0.50);
+  \draw[line width=0.7pt] (V) -- (4.08,-0.50);
+  \node[left=1pt] at (A) {$A$};
+  \node[right=1pt] at (B) {$B$};
+  \node[left=1pt] at (C) {$C$};
+  \node[right=1pt] at (D) {$D$};
+  \begin{scope}[shift={(V)}]
+    \draw[line width=0.45pt] (188:0.20) arc[start angle=188, end angle=218, radius=0.20];
+    \node[inner sep=0.5pt] at (200:0.50) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(V)}]
+    \draw[line width=0.45pt] (250:0.22) arc[start angle=250, end angle=290, radius=0.22];
+    \node[inner sep=0.5pt] at (270:0.58) {$2$};
+  \end{scope}
+  \begin{scope}[shift={(V)}]
+    \draw[line width=0.45pt] (322:0.20) arc[start angle=322, end angle=350, radius=0.20];
+    \node[inner sep=0.5pt] at (340:0.50) {$3$};
+  \end{scope}
+  \begin{scope}[shift={(L)}]
+    \draw[line width=0.45pt] (110:0.16) arc[start angle=110, end angle=160, radius=0.16];
+    \node[inner sep=0.4pt] at (145:0.40) {$8$};
+  \end{scope}
+  \begin{scope}[shift={(L)}]
+    \draw[line width=0.45pt] (6:0.16) arc[start angle=6, end angle=38, radius=0.16];
+    \node[inner sep=0.4pt] at (20:0.40) {$9$};
+  \end{scope}
+  \begin{scope}[shift={(L)}]
+    \draw[line width=0.45pt] (190:0.16) arc[start angle=190, end angle=220, radius=0.16];
+    \node[inner sep=0.4pt] at (210:0.40) {$4$};
+  \end{scope}
+  \begin{scope}[shift={(L)}]
+    \draw[line width=0.45pt] (318:0.16) arc[start angle=318, end angle=350, radius=0.16];
+    \node[inner sep=0.4pt] at (336:0.40) {$5$};
+  \end{scope}
+  \begin{scope}[shift={(R)}]
+    \draw[line width=0.45pt] (145:0.16) arc[start angle=145, end angle=172, radius=0.16];
+    \node[inner sep=0.4pt] at (158:0.40) {$10$};
+  \end{scope}
+  \begin{scope}[shift={(R)}]
+    \draw[line width=0.45pt] (6:0.16) arc[start angle=6, end angle=36, radius=0.16];
+    \node[inner sep=0.4pt] at (16:0.42) {$11$};
+  \end{scope}
+  \begin{scope}[shift={(R)}]
+    \draw[line width=0.45pt] (192:0.16) arc[start angle=192, end angle=220, radius=0.16];
+    \node[inner sep=0.4pt] at (214:0.40) {$6$};
+  \end{scope}
+  \begin{scope}[shift={(R)}]
+    \draw[line width=0.45pt] (-40:0.16) arc[start angle=-40, end angle=-8, radius=0.16];
+    \node[inner sep=0.4pt] at (-22:0.40) {$7$};
+  \end{scope}
 \end{tikzpicture}%
+}%
 }
 \caption{(第1题)}
 \end{figure}
@@ -4595,26 +4637,28 @@ EF \parallel GH.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第2题 折线ABCD，AB上倾、BC水平、CD上倾；∠ABC与∠BCD均标120°
+% fig-alt: 第2题 四边形ABCD，对角线AC；角1在A处AB与AC之间，角2在C处AC与DC之间
 \begin{tikzpicture}[line cap=round, line join=round]
-  \coordinate (A) at (0,0);
-  \coordinate (B) at (0.95,1.08);
-  \coordinate (C) at (3.40,1.08);
-  \coordinate (D) at (4.28,2.62);
-  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D);
+  \coordinate (A) at (0.08,0);
+  \coordinate (B) at (2.55,0.12);
+  \coordinate (C) at (3.05,1.62);
+  \coordinate (D) at (0.78,1.55);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (A) -- (C);
   \node[below left=1pt] at (A) {$A$};
-  \node[above=1pt] at (B) {$B$};
-  \node[below=2pt] at (C) {$C$};
-  \node[above right=1pt] at (D) {$D$};
-  \begin{scope}[shift={(B)}]
-    \draw[line width=0.55pt] (229:0.40) arc[start angle=229, end angle=360, radius=0.40];
-    \node[inner sep=1pt] at (292:0.70) {$120^{\circ}$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[above right=1pt] at (C) {$C$};
+  \node[above left=1pt] at (D) {$D$};
+  \begin{scope}[shift={(A)}]
+    \draw[line width=0.5pt] (2:0.28) arc[start angle=2, end angle=29, radius=0.28];
+    \node[inner sep=1pt] at (16:0.48) {$1$};
   \end{scope}
   \begin{scope}[shift={(C)}]
-    \draw[line width=0.55pt] (60:0.40) arc[start angle=60, end angle=180, radius=0.40];
-    \node[inner sep=1pt] at (120:0.72) {$120^{\circ}$};
+    \draw[line width=0.5pt] (176:0.28) arc[start angle=181, end angle=209, radius=0.28];
+    \node[inner sep=1pt] at (195:0.48) {$2$};
   \end{scope}
 \end{tikzpicture}%
+}%
 }
 \caption{(第2题)}
 \end{figure}
@@ -4624,36 +4668,32 @@ EF \parallel GH.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第3题 上水平NC、下水平BM，斜线ND、NM、MA；角1在NC上侧，角2在NC下侧，角3在BM上侧，角4在BM下侧
+% fig-alt: 第3题 上水平CD、下水平AB，折线DEB，过E的虚线EF∥AB；角弧在D与B
 \begin{tikzpicture}[line cap=round, line join=round]
-  \coordinate (N) at (0,1.78);
-  \coordinate (C) at (1.78,1.78);
-  \coordinate (D) at (1.32,2.48);
-  \coordinate (M) at (1.62,0.32);
-  \coordinate (B) at (0.00,0.32);
-  \coordinate (A) at (0.18,-0.62);
-  \draw[line width=0.75pt] (D) -- (N) -- (C);
-  \draw[line width=0.75pt] (N) -- (M);
-  \draw[line width=0.75pt] (A) -- (M) -- (B);
-  \node[left=1pt] at (N) {$N$};
-  \node[right=1pt] at (C) {$C$};
+  \coordinate (C) at (0,1.35);
+  \coordinate (D) at (2.40,1.35);
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.60,0);
+  \coordinate (E) at (0.82,0.66);
+  \coordinate (F) at (2.55,0.66);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.7pt] (D) -- (E) -- (B);
+  \draw[dashed, line width=0.65pt] (E) -- (F);
+  \node[left=1pt] at (C) {$C$};
   \node[above right=1pt] at (D) {$D$};
-  \node[left=1pt] at (B) {$B$};
-  \node[right=1pt] at (M) {$M$};
-  \node[below left=1pt] at (A) {$A$};
-  \begin{scope}[shift={(N)}]
-    \draw[line width=0.5pt] (0:0.28) arc[start angle=0, end angle=28, radius=0.28];
-    \node[inner sep=0.5pt] at (20:0.62) {$1$};
-    \draw[line width=0.5pt] (-42:0.30) arc[start angle=-42, end angle=0, radius=0.30];
-    \node[inner sep=0.5pt] at (-28:0.68) {$2$};
+  \node[left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[left=1pt] at (E) {$E$};
+  \node[right=1pt] at (F) {$F$};
+  \begin{scope}[shift={(D)}]
+    \draw[line width=0.5pt] (180:0.26) arc[start angle=180, end angle=204, radius=0.26];
   \end{scope}
-  \begin{scope}[shift={(M)}]
-    \draw[line width=0.5pt] (138:0.28) arc[start angle=138, end angle=180, radius=0.28];
-    \node[inner sep=0.5pt] at (156:0.62) {$3$};
-    \draw[line width=0.5pt] (180:0.32) arc[start angle=180, end angle=213, radius=0.32];
-    \node[inner sep=0.5pt] at (206:0.66) {$4$};
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (158:0.28) arc[start angle=158, end angle=180, radius=0.28];
   \end{scope}
 \end{tikzpicture}%
+}%
 }
 \caption{(第3题)}
 \end{figure}
@@ -4679,28 +4719,31 @@ EF \parallel GH.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第4题 三水平直线a、b、c被上倾截线所截；角1、2、3均在各直线上侧、截线右侧
-\begin{tikzpicture}[line cap=round]
-  \draw[line width=0.75pt] (0,1.58) -- (3.20,1.58);
-  \draw[line width=0.75pt] (0,0.79) -- (3.20,0.79);
-  \draw[line width=0.75pt] (0,0) -- (3.20,0);
-  \draw[line width=0.7pt] (0.78,-0.48) -- (2.42,2.12);
-  \node[left=1pt] at (0,1.58) {$a$};
-  \node[left=1pt] at (0,0.79) {$b$};
-  \node[left=1pt] at (0,0) {$c$};
-  \begin{scope}[shift={(2.08,1.58)}]
-    \draw[line width=0.5pt] (0:0.28) arc[start angle=0, end angle=59, radius=0.28];
-    \node[inner sep=1pt] at (32:0.48) {$1$};
-  \end{scope}
-  \begin{scope}[shift={(1.58,0.79)}]
-    \draw[line width=0.5pt] (0:0.28) arc[start angle=0, end angle=59, radius=0.28];
-    \node[inner sep=1pt] at (32:0.48) {$2$};
-  \end{scope}
-  \begin{scope}[shift={(1.08,0)}]
-    \draw[line width=0.5pt] (0:0.28) arc[start angle=0, end angle=59, radius=0.28];
-    \node[inner sep=1pt] at (32:0.48) {$3$};
-  \end{scope}
+% fig-alt: 第4题 长方形ABCD，E在AB、F在AD，折角A至A'，EP⊥EF，直角记号在A
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.40,0);
+  \coordinate (C) at (3.40,2.05);
+  \coordinate (D) at (0,2.05);
+  \coordinate (E) at (1.55,0);
+  \coordinate (F) at (0,0.95);
+  \coordinate (Ap) at (0.84,1.38);
+  \coordinate (P) at (2.15,0.98);
+  \draw[line width=0.8pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (F) -- (E);
+  \draw[line width=0.7pt] (F) -- (Ap) -- (E);
+  \draw[line width=0.7pt] (E) -- (P);
+  \draw[line width=0.55pt] (0.15,0) -- (0.15,0.15) -- (0,0.15);
+  \node[below left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[above right=1pt] at (C) {$C$};
+  \node[above left=1pt] at (D) {$D$};
+  \node[below=1pt] at (E) {$E$};
+  \node[left=1pt] at (F) {$F$};
+  \node[above=1pt] at (Ap) {$A'$};
+  \node[above right=2pt] at (P) {$P$};
 \end{tikzpicture}%
+}%
 }
 \caption{(第4题)}
 \end{figure}
@@ -4722,7 +4765,7 @@ EF \parallel GH.
   \draw[line width=0.75pt] (O) -- (C);
   \node[left=1pt] at (A) {$A$};
   \node[right=1pt] at (B) {$B$};
-  \node[above=1pt] at (C) {$C$};
+  \node[left=1pt] at (C) {$C$};
   \node[below left=1pt] at (O) {$O$};
   \node[right=1pt] at (D) {$D$};
   \begin{scope}[shift={(1.60,1.22)}]
@@ -5011,7 +5054,39 @@ OP），并且把补助线画成虚线，以便于区别。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·84}]{assets/plane-geometry-1/fig-p0060-01.png}}
+\fitfig{%
+% fig-alt: 图1·84 上水平AB、下水平CD，截线EF上倾；角1在AB上侧截线右侧，角3在AB下侧截线左侧，角2在CD上侧截线右侧
+\begin{tikzpicture}[line cap=round]
+  \coordinate (A) at (-1.92,0.88);
+  \coordinate (B) at (1.92,0.88);
+  \coordinate (C) at (-1.92,-0.55);
+  \coordinate (D) at (1.92,-0.55);
+  \coordinate (E) at (0.58,1.55);
+  \coordinate (F) at (-0.55,-1.42);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.7pt] (F) -- (E);
+  \node[left=1pt] at (A) {$A$};
+  \node[right=1pt] at (B) {$B$};
+  \node[left=1pt] at (C) {$C$};
+  \node[right=1pt] at (D) {$D$};
+  \node[above=1pt] at (E) {$E$};
+  \node[below=1pt] at (F) {$F$};
+  \begin{scope}[shift={(0.325,0.88)}]
+    \draw[line width=0.5pt] (0:0.26) arc[start angle=0, end angle=69, radius=0.26];
+    \node[inner sep=1pt] at (42:0.44) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(0.325,0.88)}]
+    \draw[line width=0.5pt] (185:0.24) arc[start angle=185, end angle=230, radius=0.24];
+    \node[inner sep=1pt] at (198:0.46) {$3$};
+  \end{scope}
+  \begin{scope}[shift={(-0.219,-0.55)}]
+    \draw[line width=0.5pt] (0:0.26) arc[start angle=0, end angle=69, radius=0.26];
+    \node[inner sep=1pt] at (40:0.44) {$2$};
+  \end{scope}
+\end{tikzpicture}%
+}%
+}
 \caption{图1·84}
 \end{figure}
 
@@ -5037,7 +5112,39 @@ OP），并且把补助线画成虚线，以便于区别。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·85}]{assets/plane-geometry-1/fig-p0061-01.png}}
+\fitfig{%
+% fig-alt: 图1·85 上水平AB、下水平CD，截线EF下倾；角1在AB上侧截线右侧，角4在AB下侧同侧邻补，角2在CD上侧截线右侧
+\begin{tikzpicture}[line cap=round]
+  \coordinate (A) at (-1.95,0.82);
+  \coordinate (B) at (1.95,0.82);
+  \coordinate (C) at (-1.95,-0.58);
+  \coordinate (D) at (1.95,-0.58);
+  \coordinate (E) at (-0.28,1.55);
+  \coordinate (F) at (0.62,-1.45);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.7pt] (E) -- (F);
+  \node[left=1pt] at (A) {$A$};
+  \node[right=1pt] at (B) {$B$};
+  \node[left=1pt] at (C) {$C$};
+  \node[right=1pt] at (D) {$D$};
+  \node[above=1pt] at (E) {$E$};
+  \node[below=1pt] at (F) {$F$};
+  \begin{scope}[shift={(-0.061,0.82)}]
+    \draw[line width=0.5pt] (0:0.24) arc[start angle=0, end angle=107, radius=0.24];
+    \node[inner sep=1pt] at (78:0.44) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(-0.061,0.82)}]
+    \draw[line width=0.5pt] (-73:0.24) arc[start angle=-73, end angle=0, radius=0.24];
+    \node[inner sep=1pt] at (-42:0.48) {$4$};
+  \end{scope}
+  \begin{scope}[shift={(0.359,-0.58)}]
+    \draw[line width=0.5pt] (0:0.24) arc[start angle=0, end angle=107, radius=0.24];
+    \node[inner sep=1pt] at (62:0.46) {$2$};
+  \end{scope}
+\end{tikzpicture}%
+}%
+}
 \caption{图1·85}
 \end{figure}
 
@@ -5065,7 +5172,36 @@ OP），并且把补助线画成虚线，以便于区别。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-88}]{assets/plane-geometry-1/fig-p0061-02.png}}
+\fitfig{%
+% fig-alt: 图1·86 三水平直线AB、CD、EF，虚线补助线PQ上倾；角1、2、3均在各直线上侧、截线右侧
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.75pt] (-1.88,1.15) -- (1.88,1.15);
+  \draw[line width=0.75pt] (-1.88,0.15) -- (1.88,0.15);
+  \draw[line width=0.75pt] (-1.88,-0.85) -- (1.88,-0.85);
+  \draw[dashed, line width=0.65pt] (-0.62,-1.55) -- (0.48,1.72);
+  \node[left=1pt] at (-1.88,1.15) {$A$};
+  \node[right=1pt] at (1.88,1.15) {$B$};
+  \node[left=1pt] at (-1.88,0.15) {$C$};
+  \node[right=1pt] at (1.88,0.15) {$D$};
+  \node[left=1pt] at (-1.88,-0.85) {$E$};
+  \node[right=1pt] at (1.88,-0.85) {$F$};
+  \node[above=1pt] at (0.48,1.72) {$P$};
+  \node[below=1pt] at (-0.62,-1.55) {$Q$};
+  \begin{scope}[shift={(0.288,1.15)}]
+    \draw[line width=0.5pt] (0:0.24) arc[start angle=0, end angle=71, radius=0.24];
+    \node[inner sep=1pt] at (32:0.46) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(-0.048,0.15)}]
+    \draw[line width=0.5pt] (0:0.24) arc[start angle=0, end angle=71, radius=0.24];
+    \node[inner sep=1pt] at (32:0.46) {$2$};
+  \end{scope}
+  \begin{scope}[shift={(-0.384,-0.85)}]
+    \draw[line width=0.5pt] (0:0.24) arc[start angle=0, end angle=71, radius=0.24];
+    \node[inner sep=1pt] at (32:0.46) {$3$};
+  \end{scope}
+\end{tikzpicture}%
+}%
+}
 \caption{图1-88}
 \end{figure}
 
@@ -5118,7 +5254,26 @@ l _{1} \parallel l _{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1-88}]{assets/plane-geometry-1/fig-p0062-01.png}}
+\fitfig{%
+% fig-alt: 图1·88 水平l3与两条竖直线l1、l2相交；角2在l3上侧、l1左侧，角1在l3上侧、l2左侧
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.8pt] (-1.62,0) -- (1.92,0);
+  \draw[line width=0.8pt] (-0.38,-1.18) -- (-0.38,1.28);
+  \draw[line width=0.8pt] (1.18,-1.18) -- (1.18,1.28);
+  \node[left=1pt] at (-1.62,0) {$l_{3}$};
+  \node[below=1pt] at (-0.38,-1.18) {$l_{1}$};
+  \node[below=1pt] at (1.18,-1.18) {$l_{2}$};
+  \begin{scope}[shift={(-0.38,0)}]
+    \draw[line width=0.5pt] (90:0.26) arc[start angle=90, end angle=180, radius=0.26];
+    \node[inner sep=1pt] at (135:0.44) {$2$};
+  \end{scope}
+  \begin{scope}[shift={(1.18,0)}]
+    \draw[line width=0.5pt] (90:0.26) arc[start angle=90, end angle=180, radius=0.26];
+    \node[inner sep=1pt] at (135:0.44) {$1$};
+  \end{scope}
+\end{tikzpicture}%
+}%
+}
 \caption{图 1-88}
 \end{figure}
 
@@ -5156,7 +5311,31 @@ l _{1} \parallel l _{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·89}]{assets/plane-geometry-1/fig-p0063-01.png}}
+\fitfig{%
+% fig-alt: 图1·89 水平OA与斜线OB交于O，CD⊥OA，EF⊥OB；直角记号在D与EF、OB交点
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (3.70,0);
+  \coordinate (B) at (2.05,1.19);
+  \coordinate (D) at (3.20,0);
+  \coordinate (C) at (3.20,1.05);
+  \draw[line width=0.75pt] (-1.05,0) -- (A);
+  \draw[line width=0.75pt] (-0.68,-0.40) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.7pt] (1.26,1.37) -- (1.78,0.47);
+  \draw[line width=0.55pt] (3.06,0) -- (3.06,0.14) -- (3.20,0.14);
+  \begin{scope}[shift={(1.54,0.89)}, rotate=30]
+    \draw[line width=0.55pt] (0.12,0) -- (0.12,-0.12) -- (0,-0.12);
+  \end{scope}
+  \node[above left=1pt] at (O) {$O$};
+  \node[below right=1pt] at (A) {$A$};
+  \node[above=1pt] at (B) {$B$};
+  \node[below left=1pt] at (D) {$D$};
+  \node[left=1pt] at (C) {$C$};
+  \node[above left=1pt] at (1.26,1.37) {$F$};
+  \node[right=1pt] at (1.78,0.47) {$E$};
+\end{tikzpicture}%
+}
 \caption{图 1·89}
 \end{figure}
 
@@ -5184,7 +5363,34 @@ l _{1} \parallel l _{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·90}]{assets/plane-geometry-1/fig-p0063-02.png}}
+\fitfig{%
+% fig-alt: 图1·90 梯形ABCD，AB∥DC，对角线DB；角1在D处DB左侧，角2在D处DB右侧，角3在B处AB上侧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.05,0);
+  \coordinate (B) at (3.20,0);
+  \coordinate (C) at (2.55,1.62);
+  \coordinate (D) at (0.70,1.62);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (D) -- (B);
+  \node[below left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[above right=1pt] at (C) {$C$};
+  \node[above left=1pt] at (D) {$D$};
+  \begin{scope}[shift={(D)}]
+    \draw[line width=0.5pt] (248:0.28) arc[start angle=248, end angle=327, radius=0.28];
+    \node[inner sep=1pt] at (275:0.50) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(D)}]
+    \draw[line width=0.5pt] (-33:0.28) arc[start angle=-33, end angle=0, radius=0.28];
+    \node[inner sep=1pt] at (-10:0.50) {$2$};
+  \end{scope}
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (147:0.28) arc[start angle=147, end angle=180, radius=0.28];
+    \node[inner sep=1pt] at (170:0.44) {$3$};
+  \end{scope}
+\end{tikzpicture}%
+}%
+}
 \caption{图 1·90}
 \end{figure}
 
@@ -5208,7 +5414,38 @@ l _{1} \parallel l _{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-91}]{assets/plane-geometry-1/fig-p0063-03.png}}
+\fitfig{%
+% fig-alt: 图1·91 上水平l1、下水平l2，左截线近竖直、右截线下倾；角3在l1下侧左截线左侧，角1在l1上侧右截线右侧，角4在l2上侧左截线右侧，角5在l2上侧右截线左侧，角2在l2下侧右截线右侧
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.75pt] (-0.22,0.72) -- (3.15,0.72);
+  \draw[line width=0.75pt] (-0.22,-0.72) -- (3.15,-0.72);
+  \draw[line width=0.7pt] (-0.35,-1.35) -- (0.55,1.45);
+  \draw[line width=0.7pt] (1.55,1.50) -- (2.55,-1.40);
+  \node[left=1pt] at (-0.22,0.72) {$l_{1}$};
+  \node[left=1pt] at (-0.22,-0.72) {$l_{2}$};
+  \begin{scope}[shift={(0.315,0.72)}]
+    \draw[line width=0.5pt] (180:0.22) arc[start angle=180, end angle=252, radius=0.22];
+    \node[inner sep=1pt] at (216:0.40) {$3$};
+  \end{scope}
+  \begin{scope}[shift={(-0.148,-0.72)}]
+    \draw[line width=0.5pt] (0:0.22) arc[start angle=0, end angle=72, radius=0.22];
+    \node[inner sep=1pt] at (36:0.40) {$4$};
+  \end{scope}
+  \begin{scope}[shift={(1.819,0.72)}]
+    \draw[line width=0.5pt] (0:0.22) arc[start angle=0, end angle=40, radius=0.22];
+    \node[inner sep=1pt] at (18:0.46) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(2.316,-0.72)}]
+    \draw[line width=0.5pt] (109:0.22) arc[start angle=109, end angle=180, radius=0.22];
+    \node[inner sep=1pt] at (150:0.44) {$5$};
+  \end{scope}
+  \begin{scope}[shift={(2.316,-0.72)}]
+    \draw[line width=0.5pt] (-71:0.22) arc[start angle=-71, end angle=0, radius=0.22];
+    \node[inner sep=1pt] at (-32:0.46) {$2$};
+  \end{scope}
+\end{tikzpicture}%
+}%
+}
 \caption{图1-91}
 \end{figure}
 
@@ -5231,7 +5468,70 @@ l _{1} \parallel l _{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-1/fig-p0064-01.png}}
+\fitfig{%
+% fig-alt: 第1题 平行线AB、CD，顶点在AB上的两截线向下张开；角1、2、3在上顶点下侧，CD上左交点角8、9、4、5，右交点角10、11、6、7
+\begin{tikzpicture}[line cap=round]
+  \coordinate (A) at (-0.15,1.28);
+  \coordinate (B) at (4.55,1.28);
+  \coordinate (C) at (-0.15,0);
+  \coordinate (D) at (4.55,0);
+  \coordinate (V) at (2.25,1.28);
+  \coordinate (L) at (1.05,0);
+  \coordinate (R) at (3.45,0);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.7pt] (V) -- (0.63,-0.45);
+  \draw[line width=0.7pt] (V) -- (3.87,-0.45);
+  \node[left=1pt] at (A) {$A$};
+  \node[right=1pt] at (B) {$B$};
+  \node[left=1pt] at (C) {$C$};
+  \node[right=1pt] at (D) {$D$};
+  \begin{scope}[shift={(V)}]
+    \draw[line width=0.45pt] (180:0.20) arc[start angle=180, end angle=227, radius=0.20];
+    \node[inner sep=0.6pt] at (204:0.38) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(V)}]
+    \draw[line width=0.45pt] (227:0.22) arc[start angle=227, end angle=313, radius=0.22];
+    \node[inner sep=0.6pt] at (270:0.40) {$2$};
+  \end{scope}
+  \begin{scope}[shift={(V)}]
+    \draw[line width=0.45pt] (313:0.20) arc[start angle=313, end angle=360, radius=0.20];
+    \node[inner sep=0.6pt] at (336:0.38) {$3$};
+  \end{scope}
+  \begin{scope}[shift={(L)}]
+    \draw[line width=0.45pt] (47:0.18) arc[start angle=47, end angle=180, radius=0.18];
+    \node[inner sep=0.5pt] at (132:0.34) {$8$};
+  \end{scope}
+  \begin{scope}[shift={(L)}]
+    \draw[line width=0.45pt] (0:0.18) arc[start angle=0, end angle=47, radius=0.18];
+    \node[inner sep=0.5pt] at (24:0.34) {$9$};
+  \end{scope}
+  \begin{scope}[shift={(L)}]
+    \draw[line width=0.45pt] (180:0.18) arc[start angle=180, end angle=227, radius=0.18];
+    \node[inner sep=0.5pt] at (204:0.34) {$4$};
+  \end{scope}
+  \begin{scope}[shift={(L)}]
+    \draw[line width=0.45pt] (313:0.18) arc[start angle=313, end angle=360, radius=0.18];
+    \node[inner sep=0.5pt] at (328:0.34) {$5$};
+  \end{scope}
+  \begin{scope}[shift={(R)}]
+    \draw[line width=0.45pt] (133:0.18) arc[start angle=133, end angle=180, radius=0.18];
+    \node[inner sep=0.5pt] at (156:0.34) {$10$};
+  \end{scope}
+  \begin{scope}[shift={(R)}]
+    \draw[line width=0.45pt] (0:0.18) arc[start angle=0, end angle=47, radius=0.18];
+    \node[inner sep=0.5pt] at (22:0.34) {$11$};
+  \end{scope}
+  \begin{scope}[shift={(R)}]
+    \draw[line width=0.45pt] (180:0.18) arc[start angle=180, end angle=227, radius=0.18];
+    \node[inner sep=0.5pt] at (206:0.34) {$6$};
+  \end{scope}
+  \begin{scope}[shift={(R)}]
+    \draw[line width=0.45pt] (-47:0.18) arc[start angle=-47, end angle=0, radius=0.18];
+    \node[inner sep=0.5pt] at (-24:0.34) {$7$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -5239,7 +5539,29 @@ l _{1} \parallel l _{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-1/fig-p0064-02.png}}
+\fitfig{%
+% fig-alt: 第2题 四边形ABCD，对角线AC；角1在A处AB与AC之间，角2在C处AC与DC之间
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.08,0);
+  \coordinate (B) at (2.55,0.12);
+  \coordinate (C) at (3.05,1.62);
+  \coordinate (D) at (0.78,1.55);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (A) -- (C);
+  \node[below left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[above right=1pt] at (C) {$C$};
+  \node[above left=1pt] at (D) {$D$};
+  \begin{scope}[shift={(A)}]
+    \draw[line width=0.5pt] (2:0.28) arc[start angle=2, end angle=29, radius=0.28];
+    \node[inner sep=1pt] at (16:0.48) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(C)}]
+    \draw[line width=0.5pt] (176:0.28) arc[start angle=181, end angle=209, radius=0.28];
+    \node[inner sep=1pt] at (195:0.48) {$2$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -5267,7 +5589,33 @@ l _{1} \parallel l _{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-1/fig-p0064-03.png}}
+\fitfig{%
+% fig-alt: 第3题 上水平CD、下水平AB，折线DEB，过E的虚线EF∥AB；角弧在D与B
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (C) at (0,1.35);
+  \coordinate (D) at (2.40,1.35);
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.60,0);
+  \coordinate (E) at (0.82,0.66);
+  \coordinate (F) at (2.55,0.66);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.7pt] (D) -- (E) -- (B);
+  \draw[dashed, line width=0.65pt] (E) -- (F);
+  \node[left=1pt] at (C) {$C$};
+  \node[above right=1pt] at (D) {$D$};
+  \node[left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[left=1pt] at (E) {$E$};
+  \node[right=1pt] at (F) {$F$};
+  \begin{scope}[shift={(D)}]
+    \draw[line width=0.5pt] (180:0.26) arc[start angle=180, end angle=204, radius=0.26];
+  \end{scope}
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (158:0.28) arc[start angle=158, end angle=180, radius=0.28];
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -5275,7 +5623,32 @@ l _{1} \parallel l _{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-1/fig-p0064-04.png}}
+\fitfig{%
+% fig-alt: 第4题 长方形ABCD，E在AB、F在AD，折角A至A'，EP⊥EF，直角记号在A
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.40,0);
+  \coordinate (C) at (3.40,2.05);
+  \coordinate (D) at (0,2.05);
+  \coordinate (E) at (1.55,0);
+  \coordinate (F) at (0,0.95);
+  \coordinate (Ap) at (0.84,1.38);
+  \coordinate (P) at (2.15,0.98);
+  \draw[line width=0.8pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (F) -- (E);
+  \draw[line width=0.7pt] (F) -- (Ap) -- (E);
+  \draw[line width=0.7pt] (E) -- (P);
+  \draw[line width=0.55pt] (0.15,0) -- (0.15,0.15) -- (0,0.15);
+  \node[below left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[above right=1pt] at (C) {$C$};
+  \node[above left=1pt] at (D) {$D$};
+  \node[below=1pt] at (E) {$E$};
+  \node[left=1pt] at (F) {$F$};
+  \node[above=1pt] at (Ap) {$A'$};
+  \node[above right=1pt] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
