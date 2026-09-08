@@ -3648,7 +3648,34 @@ O 为\(r_{1}\)的媒质质点 P 的振动图线。通过比较这两个图象可
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) t=6 秒时的波形图线}]{assets/physics-2/fig-p0070-01.png}}
+\fitfig{%
+% fig-alt: 图2.13(a) t=6秒波形：自原点向上的正弦，λ=120厘米标在第二、三波峰之间，Q在第一波峰，P在r=45厘米下降段
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.78}
+  \def\k{0.0152}
+  \draw[->,line width=0.7pt] (0,-1.18) -- (0,1.72);
+  \node[anchor=south west] at (0.08,1.48) {$y$（厘米）};
+  \draw[->,line width=0.7pt] (-0.12,0) -- ({360*\k+0.85},0);
+  \node[anchor=west] at ({360*\k+0.72},-0.06) {$r$（厘米）};
+  \node[left=3pt] at (0,0.02) {$0$};
+  \node[left=2pt] at (0,\A) {$+60$};
+  \node[left=2pt] at (0,-\A) {$-60$};
+  \draw[line width=0.4pt] (-0.08,\A) -- (0.08,\A);
+  \draw[line width=0.4pt] (-0.08,-\A) -- (0.08,-\A);
+  \draw[line width=0.85pt] plot[domain=0:348,samples=260] ({\x*\k},{\A*sin(3*\x)});
+  \foreach \rv/\lab in {30/30,90/90,150/150,210/210,270/270,330/330}{
+    \draw[line width=0.35pt] ({\rv*\k},-0.06) -- ({\rv*\k},0.06);
+    \node[below=2pt,font=\scriptsize] at ({\rv*\k},0) {$\lab$};
+  }
+  \node[above=2pt] at ({30*\k},\A) {$Q$};
+  \draw[dashed,line width=0.45pt] ({45*\k},{0.707*\A}) -- ({45*\k},0);
+  \node[anchor=south west] at ({45*\k+0.04},{0.78*\A}) {$P$};
+  \draw[line width=0.4pt] ({150*\k},{\A+0.10}) -- ({150*\k},{\A+0.28});
+  \draw[line width=0.4pt] ({270*\k},{\A+0.10}) -- ({270*\k},{\A+0.28});
+  \draw[<->,line width=0.5pt] ({150*\k+0.08},{\A+0.28}) -- ({270*\k-0.08},{\A+0.28});
+  \node[above=1pt] at ({210*\k},{\A+0.28}) {$\lambda$};
+\end{tikzpicture}%
+}
 \caption{(a) t=6 秒时的波形图线}
 \end{figure}
 
@@ -3658,7 +3685,33 @@ O 为\(r_{1}\)的媒质质点 P 的振动图线。通过比较这两个图象可
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 距波源 r=45 厘米的质点 P 的振动图线}]{assets/physics-2/fig-p0070-02.png}}
+\fitfig{%
+% fig-alt: 图2.13(b) 质点P振动图线：y=60\cos(\pi t/2+3\pi/4)，T标在相邻波谷t=0.5与4.5之间，P在t=6秒上升段
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.78}
+  \def\k{0.46}
+  \draw[->,line width=0.7pt] (0,-1.02) -- (0,1.72);
+  \node[anchor=south west] at (0.08,1.48) {$y$（厘米）};
+  \draw[->,line width=0.7pt] (-0.12,0) -- ({11*\k+0.85},0);
+  \node[anchor=west] at ({11*\k+0.72},-0.06) {$t$（秒）};
+  \node[left=2pt] at (0,0) {$0$};
+  \node[left=2pt] at (0,\A) {$+60$};
+  \node[left=2pt] at (0,-\A) {$-60$};
+  \draw[line width=0.4pt] (-0.08,\A) -- (0.08,\A);
+  \draw[line width=0.4pt] (-0.08,-\A) -- (0.08,-\A);
+  \draw[line width=0.85pt] plot[domain=0:11,samples=240] ({\x*\k},{\A*cos(90*\x+135)});
+  \foreach \t in {1,2,3,4,5,6,7,8,9,10,11}{
+    \draw[line width=0.35pt] ({\t*\k},-0.06) -- ({\t*\k},0.06);
+    \node[below=1pt,font=\scriptsize] at ({\t*\k},0) {$\t$};
+  }
+  \draw[line width=0.4pt] ({0.5*\k},{-1.16}) -- ({0.5*\k},{-1.32});
+  \draw[line width=0.4pt] ({4.5*\k},{-1.16}) -- ({4.5*\k},{-1.32});
+  \draw[<->,line width=0.5pt] ({0.5*\k+0.10},{-1.26}) -- ({4.5*\k-0.08},{-1.26});
+  \node[below=1pt] at ({2.5*\k},{-1.26}) {$T$};
+  \draw[dashed,line width=0.45pt] ({6*\k},{0.707*\A}) -- ({6*\k},0);
+  \node[above=1pt] at ({6*\k},{0.707*\A}) {$P$};
+\end{tikzpicture}%
+}
 \caption{(b) 距波源 r=45 厘米的质点 P 的振动图线}
 \end{figure}
 
@@ -3715,7 +3768,27 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0071-02.png}}
+\fitfig{%
+% fig-alt: 第4题波形：自原点向上的正弦，波长16厘米，振幅4厘米，零点在0、8、16、24、32
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.72}
+  \def\k{0.168}
+  \draw[->,line width=0.7pt] (0,-1.12) -- (0,1.55);
+  \node[anchor=south west] at (0.08,1.32) {$y$（厘米）};
+  \draw[->,line width=0.7pt] (-0.12,0) -- ({32*\k+0.95},0);
+  \node[anchor=west] at ({32*\k+0.78},-0.08) {$r$（厘米）};
+  \node[left=2pt] at (0,0) {$0$};
+  \node[left=2pt] at (0,\A) {$4$};
+  \node[left=2pt] at (0,-\A) {$-4$};
+  \draw[line width=0.4pt] (-0.08,\A) -- (0.08,\A);
+  \draw[line width=0.4pt] (-0.08,-\A) -- (0.08,-\A);
+  \draw[line width=0.85pt] plot[domain=0:32,samples=180,smooth] ({\x*\k},{\A*sin(22.5*\x)});
+  \foreach \rv in {4,8,12,16,20,24,28,32}{
+    \draw[line width=0.35pt] ({\rv*\k},-0.06) -- ({\rv*\k},0.06);
+    \node[below=2pt,font=\scriptsize] at ({\rv*\k},0) {$\rv$};
+  }
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -3734,7 +3807,28 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0071-03.png}}
+\fitfig{%
+% fig-alt: 第5题：虚线为时刻t，自原点波谷起、波长2米；实线为\Delta t后、相位超前四分之一波长，振幅均为0.5米
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.68}
+  \def\k{1.95}
+  \draw[->,line width=0.7pt] (0,-1.12) -- (0,1.52);
+  \node[anchor=south west] at (0.08,1.28) {$y$（米）};
+  \draw[->,line width=0.7pt] (-0.12,0) -- ({3*\k+0.95},0);
+  \node[anchor=west] at ({3*\k+0.78},-0.08) {$r$（米）};
+  \node[left=2pt] at (0,0) {$0$};
+  \node[left=2pt] at (0,\A) {$0.5$};
+  \node[left=2pt] at (0,-\A) {$-0.5$};
+  \draw[line width=0.4pt] (-0.08,\A) -- (0.08,\A);
+  \draw[line width=0.4pt] (-0.08,-\A) -- (0.08,-\A);
+  \draw[dashed,line width=0.7pt] plot[domain=0:3,samples=160,smooth] ({\x*\k},{-\A*cos(180*\x)});
+  \draw[line width=0.85pt] plot[domain=0:3,samples=160,smooth] ({\x*\k},{\A*sin(180*\x)});
+  \foreach \rv in {0.5,1,1.5,2,2.5,3}{
+    \draw[line width=0.35pt] ({\rv*\k},-0.06) -- ({\rv*\k},0.06);
+    \node[below=2pt,font=\scriptsize] at ({\rv*\k},0) {$\rv$};
+  }
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -3772,7 +3866,47 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.14 两个空间一直线上相向传播的脉冲波在相遇前后的情况}]{assets/physics-2/fig-p0072-01.png}}
+\fitfig{%
+% fig-alt: 图2.14 相向脉冲：左为尖脉冲右行，右为半圆脉冲左行；相遇时虚线为分波、实线为位移代数和；穿过后各保持原形继续前进
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\th{0.56}
+  \def\rr{0.46}
+  \def\gap{-1.42}
+  % row 1
+  \draw[line width=0.7pt] (0.15,0) -- (6.55,0);
+  \draw[line width=0.85pt] (0.55,0) -- (1.35,\th) -- (1.83,0);
+  \draw[line width=0.85pt] (4.55,0) arc[start angle=180,end angle=0,radius=\rr];
+  \draw[->,line width=0.5pt] (1.05,0.74) -- (1.55,0.74);
+  \draw[->,line width=0.5pt] (5.15,0.64) -- (4.65,0.64);
+  % row 2
+  \begin{scope}[yshift=\gap cm]
+    \draw[line width=0.7pt] (0.15,0) -- (6.55,0);
+    \draw[line width=0.85pt] (1.70,0) -- (2.50,\th) -- (2.98,0);
+    \draw[line width=0.85pt] (3.35,0) arc[start angle=180,end angle=0,radius=\rr];
+  \end{scope}
+  % row 3: just overlapping, dashed components
+  \begin{scope}[yshift=-2.84cm]
+    \draw[line width=0.7pt] (0.15,0) -- (6.55,0);
+    \draw[dashed,line width=0.55pt] (2.25,0) -- (3.05,\th) -- (3.53,0);
+    \draw[dashed,line width=0.55pt] (2.95,0) arc[start angle=180,end angle=0,radius=\rr];
+  \end{scope}
+  % row 4: dashed components plus solid sum
+  \begin{scope}[yshift=-4.26cm]
+    \draw[line width=0.7pt] (0.15,0) -- (6.55,0);
+    \draw[line width=0.9pt] plot[domain=2.40:3.68,samples=80,smooth] ({\x},{ifthenelse(\x<3.20,\th*(\x-2.40)/0.80,\th*(3.68-\x)/0.48)+sqrt(max(0,\rr*\rr-(\x-3.16)*(\x-3.16)))});
+    \draw[dashed,line width=0.5pt] (2.40,0) -- (3.20,\th) -- (3.68,0);
+    \draw[dashed,line width=0.5pt] (2.70,0) arc[start angle=180,end angle=0,radius=\rr];
+  \end{scope}
+  % row 5: passed through
+  \begin{scope}[yshift=-5.68cm]
+    \draw[line width=0.7pt] (0.15,0) -- (6.55,0);
+    \draw[line width=0.85pt] (1.70,0) arc[start angle=180,end angle=0,radius=\rr];
+    \draw[line width=0.85pt] (4.05,0) -- (4.85,\th) -- (5.33,0);
+    \draw[->,line width=0.5pt] (2.30,0.64) -- (1.80,0.64);
+    \draw[->,line width=0.5pt] (4.55,0.74) -- (5.05,0.74);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 2.14 两个空间一直线上相向传播的脉冲波在相遇前后的情况}
 \end{figure}
 
@@ -4132,7 +4266,20 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 缝宽 d 小于波长 \textbackslash lambda}]{assets/physics-2/fig-p0084-04.png}}
+\fitfig{%
+% fig-alt: 图2.26(b) 缝宽d小于波长：缝AB处的平面波向下，缝后为同心半圆波前
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.8pt] (0,0) -- (4.4,0);
+  \node[left=2pt] at (0,0) {$A$};
+  \node[right=2pt] at (4.4,0) {$B$};
+  \foreach \x in {0.70,1.40,2.20,3.00,3.70}{
+    \draw[->,line width=0.5pt] (\x,0.78) -- (\x,0.12);
+  }
+  \foreach \rad in {0.55,0.98,1.40,1.82}{
+    \draw[line width=0.7pt] ({2.2-\rad},0) arc[start angle=180,end angle=360,radius=\rad];
+  }
+\end{tikzpicture}%
+}
 \caption{(b) 缝宽 d 小于波长 \(\lambda\)}
 \end{figure}
 
