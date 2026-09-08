@@ -873,7 +873,59 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1.14 量度形状不规则,固体的体积}]{assets/physics-1/fig-p0015-02.png}}
+% fig-alt: 两支量筒。左筒水面在70与80之间，不规则固体靠近液面上方；右筒水面在80、固体沉在底部。两液面之间用横线相连，标固体体积
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 左量筒：水面略低于80，固体靠近液面
+  \draw[line width=0.7pt] (0.18,0.28) -- (0.18,6.15);
+  \draw[line width=0.7pt] (1.62,0.28) -- (1.62,6.15);
+  \draw[line width=0.7pt] (0.18,6.15) -- (1.62,6.15);
+  \draw[line width=0.7pt] (0.18,0.28) arc[start angle=180,end angle=360,x radius=0.72,y radius=0.15];
+  \draw[line width=0.5pt] (0.18,0.28) arc[start angle=180,end angle=0,x radius=0.72,y radius=0.09];
+  \draw[line width=0.7pt] (-0.06,0.04) rectangle (1.86,0.18);
+  \foreach \n/\k in {10/0,20/1,30/2,40/3,50/4,60/5,70/6,80/7,90/8,100/9} {
+    \draw[line width=0.4pt] (1.62,{0.62+\k*0.52}) -- (1.28,{0.62+\k*0.52});
+    \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (1.24,{0.62+\k*0.52}) {\n};
+  }
+  % 水面约在70与80之间，固体浸在液面附近
+  \draw[line width=0.65pt] (0.18,3.95) arc[start angle=180,end angle=360,x radius=0.72,y radius=0.12];
+  \draw[line width=0.4pt] (0.18,3.95) arc[start angle=180,end angle=0,x radius=0.72,y radius=0.07];
+  \fill (0.42,4.05)
+    .. controls (0.34,4.42) and (0.48,4.88) .. (0.82,5.05)
+    .. controls (1.18,5.14) and (1.36,4.72) .. (1.26,4.38)
+    .. controls (1.20,4.05) and (0.98,3.82) .. (0.70,3.88)
+    .. controls (0.50,3.84) and (0.44,3.90) .. (0.42,4.05) -- cycle;
+  % 右量筒：水面在80，固体沉底，右上有倾出口
+  \begin{scope}[shift={(3.15,0)}]
+    \draw[line width=0.7pt] (0.18,0.28) -- (0.18,6.15);
+    \draw[line width=0.7pt] (1.62,0.28) -- (1.62,6.02);
+    \draw[line width=0.7pt] (0.18,6.15) -- (1.38,6.15);
+    \draw[line width=0.7pt] (1.62,6.02) .. controls (1.78,6.10) and (1.92,6.22) .. (2.02,6.38);
+    \draw[line width=0.7pt] (1.38,6.15) .. controls (1.58,6.24) and (1.78,6.28) .. (2.02,6.38);
+    \draw[line width=0.7pt] (0.18,0.28) arc[start angle=180,end angle=360,x radius=0.72,y radius=0.15];
+    \draw[line width=0.5pt] (0.18,0.28) arc[start angle=180,end angle=0,x radius=0.72,y radius=0.09];
+    \draw[line width=0.7pt] (-0.06,0.04) rectangle (1.86,0.18);
+    \foreach \n/\k in {10/0,20/1,30/2,40/3,50/4,60/5,70/6,80/7,90/8,100/9} {
+      \draw[line width=0.4pt] (1.62,{0.62+\k*0.52}) -- (1.28,{0.62+\k*0.52});
+      \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (1.24,{0.62+\k*0.52}) {\n};
+    }
+    % 水面在80，略有弯月
+    \draw[line width=0.7pt] (0.18,4.26) arc[start angle=180,end angle=360,x radius=0.72,y radius=0.13];
+    \draw[line width=0.45pt] (0.18,4.26) arc[start angle=180,end angle=0,x radius=0.72,y radius=0.08];
+    \fill (0.48,1.55)
+      .. controls (0.40,1.88) and (0.55,2.22) .. (0.86,2.28)
+      .. controls (1.18,2.32) and (1.34,2.02) .. (1.26,1.70)
+      .. controls (1.20,1.42) and (0.96,1.28) .. (0.74,1.32)
+      .. controls (0.56,1.32) and (0.50,1.40) .. (0.48,1.55) -- cycle;
+  \end{scope}
+  % 左液面引到右筒，差值标固体体积
+  \draw[line width=0.55pt] (1.62,3.95) -- (3.33,3.95);
+  \draw[line width=0.55pt] (2.42,3.95) -- (2.42,4.26);
+  \draw[line width=0.45pt] (2.28,3.95) -- (2.56,3.95);
+  \draw[line width=0.45pt] (2.28,4.26) -- (2.56,4.26);
+  \node[font=\scriptsize,inner sep=1pt] at (2.48,4.55) {固体体积};
+\end{tikzpicture}%
+}
 \caption{图 1.14 量度形状不规则,固体的体积}
 \end{figure}
 
@@ -906,7 +958,43 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)简易小量筒的制作}]{assets/physics-1/fig-p0016-01.png}}
+% fig-alt: 铅笔尖朝上、左侧向上箭头；下方橡皮泥块顶面有圆柱凹坑；右为圆底玻璃管，刻度1、2、3及中间短刻线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 向上箭头（铅笔在橡皮泥上方，不插入）
+  \draw[line width=0.7pt,->] (0.22,1.35) -- (0.22,2.55);
+  % 铅笔（尖朝上，杆身较长）
+  \begin{scope}
+    \clip (0.62,1.28) rectangle (1.22,2.55);
+    \foreach \s in {0.52,0.68,0.84,1.00}
+      \draw[line width=0.32pt] (\s,1.20) -- (\s+0.18,2.70);
+  \end{scope}
+  \draw[line width=0.7pt] (0.62,1.32) -- (0.62,2.48) -- (0.92,3.02) -- (1.22,2.48) -- (1.22,1.32) -- cycle;
+  \draw[line width=0.5pt] (0.62,2.48) -- (1.22,2.48);
+  % 橡皮泥块
+  \draw[line width=0.7pt] (0.05,0.15) -- (1.55,0.15) -- (1.55,0.78) -- (0.05,0.78) -- cycle;
+  \draw[line width=0.7pt] (1.55,0.15) -- (2.05,0.42) -- (2.05,1.05) -- (1.55,0.78);
+  \draw[line width=0.7pt] (0.05,0.78) -- (0.55,1.05) -- (2.05,1.05) -- (1.55,0.78);
+  % 凹坑
+  \draw[line width=0.6pt] (0.95,0.88) ellipse (0.22 and 0.10);
+  \draw[line width=0.5pt] (0.73,0.88) arc[start angle=180,end angle=360,x radius=0.22,y radius=0.08];
+  \draw[line width=0.45pt] (0.88,0.82) ellipse (0.08 and 0.035);
+  % 简易量筒：圆底管，刻度1、2、3
+  \draw[line width=0.7pt] (3.05,0.55) -- (3.05,3.15);
+  \draw[line width=0.7pt] (4.15,0.55) -- (4.15,3.15);
+  \draw[line width=0.7pt] (3.05,0.55) arc[start angle=180,end angle=360,x radius=0.55,y radius=0.28];
+  % 主刻度 1、2、3，其间短刻线，并略伸出上下
+  \foreach \y in {1.05,1.28,1.74,1.97,2.43,2.66} {
+    \draw[line width=0.35pt] (4.15,\y) -- (3.95,\y);
+  }
+  \draw[line width=0.5pt] (4.15,1.51) -- (3.78,1.51);
+  \draw[line width=0.5pt] (4.15,2.20) -- (3.78,2.20);
+  \draw[line width=0.5pt] (4.15,2.89) -- (3.78,2.89);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (4.22,1.51) {1};
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (4.22,2.20) {2};
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (4.22,2.89) {3};
+\end{tikzpicture}%
+}
 \caption{(第6题)简易小量筒的制作}
 \end{figure}
 
@@ -1170,7 +1258,38 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-1/fig-p0023-02.png}}
+% fig-alt: 两端残缺的刻度尺，标9与10；铅笔尖向右，尖端对着游标0；硬纸游标刻0、5、10，向下箭头指在主尺10处
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 刻度尺，两端残缺
+  \draw[line width=0.7pt] (0.15,0.55) -- (6.35,0.55) -- (6.35,1.55) -- (0.15,1.55) -- cycle;
+  \draw[line width=0.55pt] (0.00,0.62) -- (0.22,0.48) -- (0.08,0.72) -- (0.18,0.88) -- (0.05,1.05) -- (0.20,1.22) -- (0.08,1.42) -- (0.15,1.55);
+  \draw[line width=0.55pt] (6.50,0.62) -- (6.28,0.48) -- (6.42,0.72) -- (6.32,0.88) -- (6.45,1.05) -- (6.30,1.22) -- (6.42,1.42) -- (6.35,1.55);
+  % 毫米刻线，9与10
+  \foreach \n in {0,...,48}
+    \draw[line width=0.28pt] ({0.55+\n*0.118},1.55) -- ++(0,-0.16);
+  \foreach \n in {0,...,9}
+    \draw[line width=0.4pt] ({0.55+\n*0.59},1.55) -- ++(0,-0.26);
+  \draw[line width=0.55pt] (2.32,1.55) -- (2.32,1.18);
+  \draw[line width=0.55pt] (4.68,1.55) -- (4.68,1.18);
+  \node[font=\scriptsize,inner sep=0pt] at (2.32,0.82) {9};
+  \node[font=\scriptsize,inner sep=0pt] at (4.68,0.82) {10};
+  % 铅笔，尖端在游标0左侧、对着0刻线
+  \draw[line width=0.6pt] (0.35,1.72) -- (2.95,1.72) -- (3.55,1.88) -- (3.55,2.05) -- (2.95,2.22) -- (0.35,2.22) -- cycle;
+  \draw[line width=0.4pt] (0.55,1.86) -- (2.85,1.86);
+  \draw[line width=0.4pt] (0.55,2.08) -- (2.85,2.08);
+  \fill (3.55,1.88) -- (3.92,1.96) -- (3.55,2.05) -- cycle;
+  % 硬纸游标：10小格共0.9厘米，0对齐笔尖处刻线
+  \draw[line width=0.7pt] (3.92,1.55) rectangle (5.55,2.72);
+  \foreach \n in {0,...,10}
+    \draw[line width=0.4pt] ({3.92+\n*0.145},1.55) -- ++(0,0.28);
+  \node[font=\scriptsize,inner sep=0pt] at (3.92,2.42) {0};
+  \node[font=\scriptsize,inner sep=0pt] at (4.645,2.42) {5};
+  \node[font=\scriptsize,inner sep=0pt] at (5.37,2.42) {10};
+  % 主尺10处向下箭头，标出重合刻线
+  \draw[line width=0.55pt,->] (4.68,2.58) -- (4.68,1.62);
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -2559,7 +2678,47 @@ S = (20 \times 1.2 + 10 \times 1.2) \times 2 \text{米} ^ {2} = 72 \text{米} ^ 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·15 连通器黑水面相平的说明}]{assets/physics-1/fig-p0065-02.png}}
+% fig-alt: U形管两侧液面相平，液体斜线填充；左高h1、右高h2，箭头下至管底外侧B；管内底部小点为A，中线为虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 外轮廓
+  \draw[line width=0.7pt] (1.15,3.55) -- (1.15,1.05)
+    arc[start angle=180,end angle=360,x radius=1.05,y radius=0.85]
+    -- (3.25,3.55);
+  \draw[line width=0.7pt] (1.55,3.55) -- (1.55,1.05)
+    arc[start angle=180,end angle=360,x radius=0.65,y radius=0.52]
+    -- (2.85,3.55);
+  % 液体
+  \begin{scope}
+    \clip (1.15,2.55) -- (1.15,1.05)
+      arc[start angle=180,end angle=360,x radius=1.05,y radius=0.85]
+      -- (3.25,2.55) -- (2.85,2.55) -- (2.85,1.05)
+      arc[start angle=360,end angle=180,x radius=0.65,y radius=0.52]
+      -- (1.55,2.55) -- cycle;
+    \foreach \s in {-1.2,-0.95,...,3.8}
+      \draw[line width=0.28pt] (\s,0.05) -- (\s+1.35,3.15);
+  \end{scope}
+  \draw[line width=0.55pt] (1.15,2.55) -- (1.55,2.55);
+  \draw[line width=0.55pt] (2.85,2.55) -- (3.25,2.55);
+  % 中线
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.1pt] (2.20,3.55) -- (2.20,0.22);
+  % A、B
+  \fill (2.20,0.78) circle (0.07);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (2.30,0.78) {$A$};
+  \node[font=\scriptsize,inner sep=0.4pt] at (2.20,-0.08) {$B$};
+  % h1、h2 自液面至B所在高度
+  \draw[line width=0.5pt] (0.55,2.55) -- (0.55,0.20);
+  \draw[line width=0.45pt] (0.42,2.55) -- (0.68,2.55);
+  \draw[line width=0.45pt] (0.42,0.20) -- (0.68,0.20);
+  \draw[line width=0.45pt] (1.15,2.55) -- (0.55,2.55);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=east] at (0.48,1.38) {$h_1$};
+  \draw[line width=0.5pt] (3.85,2.55) -- (3.85,0.20);
+  \draw[line width=0.45pt] (3.72,2.55) -- (3.88,2.55);
+  \draw[line width=0.45pt] (3.72,0.20) -- (3.88,0.20);
+  \draw[line width=0.45pt] (3.25,2.55) -- (3.85,2.55);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (3.92,1.38) {$h_2$};
+\end{tikzpicture}%
+}
 \caption{图 3·15 连通器黑水面相平的说明}
 \end{figure}
 
@@ -2623,7 +2782,51 @@ U 形管中盛有一些酒精，在管的一端倒入一定量的
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-18 求正精比重}]{assets/physics-1/fig-p0067-03.png}}
+% fig-alt: U形管底部为水银斜线，左管水银面较高，旁标0.4厘米与竖写水银；管内6.4厘米自酒精面量到左水银面；右管酒精柱高6.8厘米，竖写酒精
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (1.05,3.85) -- (1.05,1.15)
+    arc[start angle=180,end angle=360,x radius=1.15,y radius=0.78]
+    -- (3.35,3.85);
+  \draw[line width=0.7pt] (1.48,3.85) -- (1.48,1.15)
+    arc[start angle=180,end angle=360,x radius=0.72,y radius=0.48]
+    -- (2.92,3.85);
+  % 水银：左面高于右面
+  \begin{scope}
+    \clip (1.05,1.55) -- (1.05,1.15)
+      arc[start angle=180,end angle=360,x radius=1.15,y radius=0.78]
+      -- (3.35,1.22) -- (2.92,1.22) -- (2.92,1.15)
+      arc[start angle=360,end angle=180,x radius=0.72,y radius=0.48]
+      -- (1.48,1.55) -- cycle;
+    \foreach \s in {-1.0,-0.78,...,4.2}
+      \draw[line width=0.28pt] (\s,0.15) -- (\s+1.15,2.55);
+  \end{scope}
+  \draw[line width=0.55pt] (1.05,1.55) -- (1.48,1.55);
+  \draw[line width=0.55pt] (2.92,1.22) -- (3.35,1.22);
+  % 酒精面
+  \draw[line width=0.55pt] (2.92,3.55) -- (3.35,3.55);
+  % 0.4厘米：左水银高出右水银的一段
+  \draw[line width=0.5pt] (0.42,1.55) -- (0.42,1.22);
+  \draw[line width=0.4pt] (0.30,1.55) -- (0.54,1.55);
+  \draw[line width=0.4pt] (0.30,1.22) -- (0.54,1.22);
+  \draw[line width=0.4pt] (1.05,1.55) -- (0.42,1.55);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (0.28,1.72) {0.4厘米};
+  \node[font=\scriptsize,inner sep=0.4pt,rotate=90] at (0.72,1.15) {水银};
+  % 6.4厘米：酒精面到另一管水银面（不横贯左管空腔）
+  \draw[line width=0.4pt] (2.92,3.55) -- (2.55,3.55);
+  \draw[line width=0.4pt] (1.48,1.55) -- (2.35,1.55);
+  \draw[<->,line width=0.5pt] (2.22,3.55) -- (2.22,1.55);
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (2.05,2.55) {6.4厘米};
+  % 6.8厘米：酒精柱高
+  \draw[line width=0.5pt] (3.72,3.55) -- (3.72,1.22);
+  \draw[line width=0.4pt] (3.58,3.55) -- (3.86,3.55);
+  \draw[line width=0.4pt] (3.58,1.22) -- (3.86,1.22);
+  \draw[line width=0.4pt] (3.35,3.55) -- (3.72,3.55);
+  \draw[line width=0.4pt] (3.35,1.22) -- (3.72,1.22);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (3.90,2.38) {6.8厘米};
+  \node[font=\scriptsize,inner sep=0.4pt,rotate=90] at (3.12,2.45) {酒精};
+\end{tikzpicture}%
+}
 \caption{图3-18 求正精比重}
 \end{figure}
 
@@ -2650,7 +2853,40 @@ U 形管中盛有一些酒精，在管的一端倒入一定量的
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·19 水管中汽油的高度}]{assets/physics-1/fig-p0067-04.png}}
+% fig-alt: U形管底为水银斜线，左管水银面较高，旁标3；右管自水银面至管口为汽油，标24+x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (1.15,3.95) -- (1.15,1.20)
+    arc[start angle=180,end angle=360,x radius=1.20,y radius=0.82]
+    -- (3.55,3.95);
+  \draw[line width=0.7pt] (1.52,3.95) -- (1.52,1.20)
+    arc[start angle=180,end angle=360,x radius=0.83,y radius=0.52]
+    -- (3.18,3.95);
+  % 水银：左高右低
+  \begin{scope}
+    \clip (1.15,1.85) -- (1.15,1.20)
+      arc[start angle=180,end angle=360,x radius=1.20,y radius=0.82]
+      -- (3.55,1.28) -- (3.18,1.28) -- (3.18,1.20)
+      arc[start angle=360,end angle=180,x radius=0.83,y radius=0.52]
+      -- (1.52,1.85) -- cycle;
+    \foreach \s in {-1.0,-0.78,...,4.4}
+      \draw[line width=0.28pt] (\s,0.18) -- (\s+1.2,2.65);
+  \end{scope}
+  \draw[line width=0.55pt] (1.15,1.85) -- (1.52,1.85);
+  \draw[line width=0.55pt] (3.18,1.28) -- (3.55,1.28);
+  % 左：3
+  \draw[line width=0.5pt,->] (0.55,1.85) -- (0.55,1.42);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (0.48,1.70) {3};
+  % 右：汽油柱 24+x，至管口
+  \draw[line width=0.55pt] (3.18,3.78) -- (3.55,3.78);
+  \draw[line width=0.5pt] (3.95,3.78) -- (3.95,1.28);
+  \draw[line width=0.4pt] (3.82,3.78) -- (4.08,3.78);
+  \draw[line width=0.4pt] (3.82,1.28) -- (4.08,1.28);
+  \draw[line width=0.4pt] (3.55,3.78) -- (3.95,3.78);
+  \draw[line width=0.4pt] (3.55,1.28) -- (3.95,1.28);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (4.12,2.52) {$24+x$};
+\end{tikzpicture}%
+}
 \caption{图 3·19 水管中汽油的高度}
 \end{figure}
 
