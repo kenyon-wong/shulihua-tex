@@ -6230,7 +6230,56 @@ I = \frac{Q}{t}, \tag{2.1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.4}]{assets/physics-3/fig-p0108-01.png}}
+\fitfig{%
+% fig-alt: 图2.4印刷页105。左球A、右球B，斜线阴影；U1在左上、U2在右上。上弧I箭头向右（指向B），⊖箭头向左。下弧左I向下指向电源、右I向上指向B，电子箭头相反。盒内斜线，下标电源；环内U1>U2。球上无电荷正负号
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \begin{scope}
+    \clip (0,0) circle (0.46);
+    \foreach \k in {-5,-4,...,5} {
+      \draw[line width=0.28pt] (-0.85+0.14*\k,-0.62) -- (-0.15+0.14*\k,0.62);
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (0,0) circle (0.46);
+  \node[inner sep=0pt] at (0,0) {$A$};
+  \node[anchor=south east,inner sep=1pt] at (-0.08,0.50) {$U_1$};
+  \begin{scope}
+    \clip (3.35,0) circle (0.46);
+    \foreach \k in {-5,-4,...,5} {
+      \draw[line width=0.28pt] (2.50+0.14*\k,-0.62) -- (3.20+0.14*\k,0.62);
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (3.35,0) circle (0.46);
+  \node[inner sep=0pt] at (3.35,0) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (3.43,0.50) {$U_2$};
+  \draw[line width=0.7pt] (0.40,0.28) arc (168:12:1.72);
+  \draw[line width=0.55pt,->] (1.28,1.62) -- (2.05,1.62);
+  \node[anchor=south,inner sep=1pt] at (1.66,1.64) {$I$};
+  \draw[line width=0.45pt] (2.05,1.22) circle (0.09);
+  \node[inner sep=0pt] at (2.05,1.22) {\scriptsize $-$};
+  \draw[line width=0.45pt,->] (2.28,1.22) -- (1.72,1.22);
+  \draw[line width=0.7pt] (-0.22,-0.42) .. controls (-0.55,-1.15) and (-0.15,-1.85) .. (0.85,-1.95);
+  \draw[line width=0.7pt] (2.50,-1.95) -- (3.55,-1.15) .. controls (3.85,-0.72) and (3.78,-0.28) .. (3.58,-0.42);
+  \draw[line width=0.55pt,->] (-0.38,-0.85) -- (-0.28,-1.28);
+  \node[anchor=east,inner sep=1pt] at (-0.48,-1.02) {$I$};
+  \draw[line width=0.45pt] (-0.72,-1.05) circle (0.09);
+  \node[inner sep=0pt] at (-0.72,-1.05) {\scriptsize $-$};
+  \draw[line width=0.45pt,->] (-0.62,-1.22) -- (-0.42,-1.55);
+  \draw[line width=0.55pt,->] (3.48,-1.05) -- (3.62,-0.62);
+  \node[anchor=west,inner sep=1pt] at (3.72,-0.88) {$I$};
+  \draw[line width=0.45pt] (2.95,-1.55) circle (0.09);
+  \node[inner sep=0pt] at (2.95,-1.55) {\scriptsize $-$};
+  \draw[line width=0.45pt,->] (3.12,-1.42) -- (3.38,-1.72);
+  \begin{scope}
+    \clip (1.15,-2.18) rectangle (2.20,-1.72);
+    \foreach \k in {0,1,...,8} {
+      \draw[line width=0.28pt] (0.95+0.12*\k,-2.28) -- (1.35+0.12*\k,-1.62);
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (1.15,-2.18) rectangle (2.20,-1.72);
+  \node[anchor=north,inner sep=1.2pt] at (1.68,-2.22) {电源};
+  \node[inner sep=1pt] at (1.68,-1.05) {$U_1>U_2$};
+\end{tikzpicture}%
+}
 \caption{图2.4}
 \end{figure}
 
@@ -6252,7 +6301,61 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.5 几种电路元件的序号}]{assets/physics-3/fig-p0109-01.png}}
+\fitfig{%
+% fig-alt: 图2.5元件符号印刷页106。左上十字无结点，右为竖线穿两条横线且两交点有黑点。左列电铃、电池（长线、短线）及细长线表示正极；右列电动机圆内M、电池组及短电线表示负极。底行电灯（圆内叉）、电键一刀抬起留缺口、一刀较平。题注未改
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.15,7.55) -- (1.85,7.55);
+  \draw[line width=0.7pt] (1.00,8.25) -- (1.00,6.85);
+  \node[anchor=north,inner sep=1pt,align=center,text width=3.1cm] at (1.00,6.55) {交叉不相连结的导线};
+  \draw[line width=0.7pt] (5.55,8.35) -- (5.55,6.95);
+  \draw[line width=0.7pt] (4.70,7.85) -- (6.40,7.85);
+  \draw[line width=0.7pt] (4.70,7.05) -- (6.40,7.05);
+  \fill (5.55,7.85) circle (1.5pt);
+  \fill (5.55,7.05) circle (1.5pt);
+  \node[anchor=north,inner sep=1pt,align=center,text width=3.2cm] at (5.55,6.78) {交叉相连结的导线};
+  \draw[line width=0.7pt] (0.15,5.35) -- (0.70,5.35);
+  \draw[line width=0.7pt] (0.70,5.35) -- (0.70,5.05);
+  \draw[line width=0.7pt] (1.30,5.05) -- (1.30,5.35) -- (1.85,5.35);
+  \draw[line width=0.7pt] (0.55,5.05) arc (180:360:0.45);
+  \node[anchor=north,inner sep=1pt] at (1.00,4.52) {电铃};
+  \draw[line width=0.7pt] (0.15,3.85) -- (0.72,3.85);
+  \draw[line width=0.7pt] (1.28,3.85) -- (1.85,3.85);
+  \draw[line width=0.85pt] (0.78,3.62) -- (0.78,4.08);
+  \draw[line width=0.95pt] (1.18,3.70) -- (1.18,4.00);
+  \node[anchor=north,inner sep=1pt] at (1.00,3.55) {电池};
+  \node[anchor=north,inner sep=1pt,align=center,text width=3.1cm] at (1.00,3.12) {细长线表示正极};
+  \draw[line width=0.7pt] (4.70,5.35) -- (5.15,5.35);
+  \draw[line width=0.7pt] (5.95,5.35) -- (6.40,5.35);
+  \draw[line width=0.7pt] (5.55,5.35) circle (0.28);
+  \node[inner sep=0pt] at (5.55,5.35) {$M$};
+  \node[anchor=north,inner sep=1pt] at (5.55,4.95) {电动机};
+  \draw[line width=0.7pt] (4.55,3.85) -- (4.92,3.85);
+  \draw[line width=0.7pt] (5.62,3.85) -- (6.55,3.85);
+  \draw[line width=0.85pt] (4.98,3.62) -- (4.98,4.08);
+  \draw[line width=0.95pt] (5.16,3.70) -- (5.16,4.00);
+  \draw[line width=0.85pt] (5.36,3.62) -- (5.36,4.08);
+  \draw[line width=0.95pt] (5.54,3.70) -- (5.54,4.00);
+  \node[anchor=north,inner sep=1pt] at (5.55,3.55) {电池组};
+  \node[anchor=north,inner sep=1pt,align=center,text width=3.1cm] at (5.55,3.12) {短电线表示负极};
+  \draw[line width=0.7pt] (0.05,1.55) -- (0.55,1.55);
+  \draw[line width=0.7pt] (1.45,1.55) -- (1.95,1.55);
+  \draw[line width=0.7pt] (1.00,1.55) circle (0.28);
+  \draw[line width=0.55pt] (0.82,1.37) -- (1.18,1.73);
+  \draw[line width=0.55pt] (0.82,1.73) -- (1.18,1.37);
+  \node[anchor=north,inner sep=1pt] at (1.00,1.15) {电灯};
+  \draw[line width=0.7pt] (2.35,1.55) -- (2.72,1.55);
+  \fill (2.78,1.55) circle (1.3pt);
+  \draw[line width=0.7pt] (2.78,1.55) -- (3.22,1.88);
+  \fill (3.42,1.55) circle (1.3pt);
+  \draw[line width=0.7pt] (3.48,1.55) -- (3.85,1.55);
+  \draw[line width=0.7pt] (4.15,1.55) -- (4.48,1.55);
+  \fill (4.54,1.55) circle (1.3pt);
+  \draw[line width=0.7pt] (4.54,1.55) -- (4.98,1.66);
+  \fill (5.08,1.55) circle (1.3pt);
+  \draw[line width=0.7pt] (5.14,1.55) -- (5.55,1.55);
+  \node[anchor=north,inner sep=1pt] at (3.85,1.05) {电键(开关)};
+\end{tikzpicture}%
+}
 \caption{图 2.5 几种电路元件的序号}
 \end{figure}
 
@@ -6276,7 +6379,36 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.5 两块串}]{assets/physics-3/fig-p0110-02.png}}
+\fitfig{%
+% fig-alt: 图2.6线稿印刷页107，题注仍为图2.5两块串。L2在左、L1在右。灯间箭头向左；左竖线箭头向下，右竖线箭头向上。底边两节电池左为长线，右短线，无+/-。K为闭合闸刀。与长线在左、左矢向下不完全一致，仍按扫描
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.15,0.15) -- (0.15,2.15) -- (0.52,2.15);
+  \draw[line width=0.7pt] (1.08,2.15) -- (2.52,2.15);
+  \draw[line width=0.55pt,->] (1.95,2.22) -- (1.35,2.22);
+  \draw[line width=0.7pt] (3.08,2.15) -- (3.85,2.15) -- (3.85,0.15) -- (2.58,0.15);
+  \draw[line width=0.7pt] (0.80,2.15) circle (0.28);
+  \draw[line width=0.55pt] (0.62,1.97) -- (0.98,2.33);
+  \draw[line width=0.55pt] (0.62,2.33) -- (0.98,1.97);
+  \node[anchor=south,inner sep=1pt] at (0.80,2.48) {$L_2$};
+  \draw[line width=0.7pt] (2.80,2.15) circle (0.28);
+  \draw[line width=0.55pt] (2.62,1.97) -- (2.98,2.33);
+  \draw[line width=0.55pt] (2.62,2.33) -- (2.98,1.97);
+  \node[anchor=south,inner sep=1pt] at (2.80,2.48) {$L_1$};
+  \draw[line width=0.55pt,->] (0.15,1.20) -- (0.15,0.70);
+  \draw[line width=0.55pt,->] (3.85,0.80) -- (3.85,1.35);
+  \draw[line width=0.7pt] (0.15,0.15) -- (0.42,0.15);
+  \draw[line width=0.9pt] (0.48,-0.08) -- (0.48,0.38);
+  \draw[line width=1.05pt] (0.66,0.04) -- (0.66,0.26);
+  \draw[line width=0.9pt] (0.84,-0.08) -- (0.84,0.38);
+  \draw[line width=1.05pt] (1.02,0.04) -- (1.02,0.26);
+  \draw[line width=0.7pt] (1.08,0.15) -- (1.88,0.15);
+  \fill (1.92,0.15) circle (1.3pt);
+  \draw[line width=0.7pt] (1.92,0.15) -- (2.36,0.26);
+  \fill (2.46,0.15) circle (1.3pt);
+  \draw[line width=0.7pt] (2.52,0.15) -- (2.58,0.15);
+  \node[anchor=south,inner sep=1pt] at (2.18,0.32) {$K$};
+\end{tikzpicture}%
+}
 \caption{图2.5 两块串}
 \end{figure}
 
@@ -6300,7 +6432,55 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.7 两灯并联}]{assets/physics-3/fig-p0110-04.png}}
+\fitfig{%
+% fig-alt: 图2.7线稿印刷页107。上支L2、向右箭头、K2闭合到A；下支K1闭合、向右箭头、L1。左结点B，左竖线箭头向上。底边三节电池左长线，无+/-；底线箭头向右。右竖线扫描连续，K标在线旁，未画成断路
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.22,0.15) -- (0.22,2.45);
+  \fill (0.55,2.45) circle (1.5pt);
+  \draw[line width=0.7pt] (0.22,2.45) -- (0.55,2.45);
+  \node[anchor=east,inner sep=1.2pt] at (0.08,2.45) {$B$};
+  \fill (0.55,1.50) circle (1.4pt);
+  \draw[line width=0.7pt] (0.22,1.50) -- (0.55,1.50);
+  \draw[line width=0.7pt] (0.55,2.45) -- (1.02,2.45);
+  \draw[line width=0.7pt] (1.58,2.45) -- (1.88,2.45);
+  \draw[line width=0.55pt,->] (1.72,2.55) -- (2.08,2.55);
+  \fill (2.15,2.45) circle (1.25pt);
+  \draw[line width=0.7pt] (2.15,2.45) -- (2.55,2.56);
+  \fill (2.64,2.45) circle (1.25pt);
+  \draw[line width=0.7pt] (2.70,2.45) -- (3.45,2.45);
+  \fill (3.55,2.45) circle (1.5pt);
+  \node[anchor=south west,inner sep=1pt] at (3.62,2.52) {$A$};
+  \node[anchor=south,inner sep=1pt] at (2.38,2.62) {$K_2$};
+  \draw[line width=0.7pt] (1.30,2.45) circle (0.28);
+  \draw[line width=0.55pt] (1.12,2.27) -- (1.48,2.63);
+  \draw[line width=0.55pt] (1.12,2.63) -- (1.48,2.27);
+  \node[anchor=south,inner sep=1pt] at (1.30,2.78) {$L_2$};
+  \draw[line width=0.7pt] (0.55,1.50) -- (0.92,1.50);
+  \fill (0.98,1.50) circle (1.25pt);
+  \draw[line width=0.7pt] (0.98,1.50) -- (1.38,1.61);
+  \fill (1.46,1.50) circle (1.25pt);
+  \draw[line width=0.7pt] (1.52,1.50) -- (1.95,1.50);
+  \draw[line width=0.55pt,->] (1.78,1.60) -- (2.18,1.60);
+  \draw[line width=0.7pt] (2.10,1.50) -- (2.42,1.50);
+  \draw[line width=0.7pt] (2.98,1.50) -- (3.55,1.50) -- (3.55,2.45);
+  \node[anchor=north,inner sep=1pt] at (1.22,1.32) {$K_1$};
+  \draw[line width=0.7pt] (2.70,1.50) circle (0.28);
+  \draw[line width=0.55pt] (2.52,1.32) -- (2.88,1.68);
+  \draw[line width=0.55pt] (2.52,1.68) -- (2.88,1.32);
+  \node[anchor=north,inner sep=1pt] at (2.70,1.18) {$L_1$};
+  \draw[line width=0.55pt,->] (0.22,1.05) -- (0.22,1.55);
+  \draw[line width=0.7pt] (3.55,2.45) -- (4.20,2.45) -- (4.20,0.15) -- (1.55,0.15);
+  \node[anchor=west,inner sep=1pt] at (4.32,1.55) {$K$};
+  \draw[line width=0.7pt] (0.22,0.15) -- (0.42,0.15);
+  \draw[line width=0.9pt] (0.48,-0.08) -- (0.48,0.38);
+  \draw[line width=1.05pt] (0.66,0.04) -- (0.66,0.26);
+  \draw[line width=0.9pt] (0.84,-0.08) -- (0.84,0.38);
+  \draw[line width=1.05pt] (1.02,0.04) -- (1.02,0.26);
+  \draw[line width=0.9pt] (1.20,-0.08) -- (1.20,0.38);
+  \draw[line width=1.05pt] (1.38,0.04) -- (1.38,0.26);
+  \draw[line width=0.55pt,->] (1.85,0.22) -- (2.35,0.22);
+\end{tikzpicture}%
+}
 \caption{图2.7 两灯并联}
 \end{figure}
 
@@ -6344,7 +6524,117 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.9 安培表的连接法}]{assets/physics-3/fig-p0112-01.png}}
+\fitfig{%
+% fig-alt: 图2.9印刷页109。三幅均电池在上，+在左、−在右，三节长线左短线右。扫描电流表圆内为A。(a)安培表与L1串联在上支，L2在下支，安培表上标+左−右。(b)L1在上支，安培表与L2串联在下支。(c)安培表在干路左竖线上，+左−右，其后L1、L2并联。灯旁字母按正文及扫描作L，不作I。不另加电流箭头
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \begin{scope}
+    \draw[line width=0.7pt] (0.15,0.45) -- (0.15,2.75) -- (0.85,2.75);
+    \draw[line width=0.9pt] (0.92,2.50) -- (0.92,3.00);
+    \draw[line width=1.05pt] (1.08,2.58) -- (1.08,2.92);
+    \draw[line width=0.9pt] (1.24,2.50) -- (1.24,3.00);
+    \draw[line width=1.05pt] (1.40,2.58) -- (1.40,2.92);
+    \draw[line width=0.9pt] (1.56,2.50) -- (1.56,3.00);
+    \draw[line width=1.05pt] (1.72,2.58) -- (1.72,2.92);
+    \draw[line width=0.7pt] (1.78,2.75) -- (3.15,2.75) -- (3.15,0.45) -- (0.15,0.45);
+    \node[anchor=north east,inner sep=0.6pt] at (0.86,2.68) {$+$};
+    \node[anchor=north west,inner sep=0.6pt] at (1.84,2.68) {$-$};
+    \draw[line width=0.7pt] (0.15,1.35) -- (0.95,1.35);
+    \fill (1.05,1.35) circle (1.45pt);
+    \draw[line width=0.7pt] (1.05,1.35) -- (1.05,1.85) -- (1.18,1.85);
+    \draw[line width=0.7pt] (1.05,1.35) -- (1.05,0.85) -- (1.55,0.85);
+    \draw[line width=0.7pt] (1.28,1.85) circle (0.22);
+    \node[inner sep=0pt] at (1.28,1.85) {$A$};
+    \node[anchor=east,inner sep=0.8pt] at (1.02,1.98) {$+$};
+    \node[anchor=west,inner sep=0.8pt] at (1.54,1.85) {$-$};
+    \node[anchor=south,inner sep=1pt] at (1.05,2.28) {安培表};
+    \draw[line width=0.7pt] (1.58,1.85) -- (1.78,1.85);
+    \draw[line width=0.7pt] (2.00,1.85) circle (0.22);
+    \draw[line width=0.5pt] (1.86,1.67) -- (2.14,2.03);
+    \draw[line width=0.5pt] (1.86,2.03) -- (2.14,1.67);
+    \node[anchor=south west,inner sep=1pt] at (2.08,2.05) {$L_1$};
+    \draw[line width=0.7pt] (2.22,1.85) -- (2.75,1.85);
+    \fill (2.85,1.85) circle (1.45pt);
+    \draw[line width=0.7pt] (2.85,1.85) -- (3.15,1.85);
+    \draw[line width=0.7pt] (2.85,1.85) -- (2.85,0.85) -- (2.05,0.85);
+    \draw[line width=0.7pt] (1.82,0.85) circle (0.22);
+    \draw[line width=0.5pt] (1.68,0.67) -- (1.96,1.03);
+    \draw[line width=0.5pt] (1.68,1.03) -- (1.96,0.67);
+    \node[anchor=north,inner sep=1pt] at (1.82,0.58) {$L_2$};
+    \node[anchor=north,inner sep=1pt] at (1.65,-0.05) {$(a)$};
+  \end{scope}
+  \begin{scope}[xshift=4.15cm]
+    \draw[line width=0.7pt] (0.15,2.75) -- (0.15,0.55) -- (0.85,0.55);
+    \draw[line width=0.7pt] (0.15,2.75) -- (0.85,2.75);
+    \draw[line width=0.9pt] (0.92,2.50) -- (0.92,3.00);
+    \draw[line width=1.05pt] (1.08,2.58) -- (1.08,2.92);
+    \draw[line width=0.9pt] (1.24,2.50) -- (1.24,3.00);
+    \draw[line width=1.05pt] (1.40,2.58) -- (1.40,2.92);
+    \draw[line width=0.9pt] (1.56,2.50) -- (1.56,3.00);
+    \draw[line width=1.05pt] (1.72,2.58) -- (1.72,2.92);
+    \draw[line width=0.7pt] (1.78,2.75) -- (3.15,2.75) -- (3.15,0.55) -- (2.55,0.55);
+    \node[anchor=north east,inner sep=0.6pt] at (0.86,2.68) {$+$};
+    \node[anchor=north west,inner sep=0.6pt] at (1.84,2.68) {$-$};
+    \fill (1.05,1.55) circle (1.45pt);
+    \draw[line width=0.7pt] (0.85,0.55) -- (1.05,0.55) -- (1.05,1.55);
+    \draw[line width=0.7pt] (1.05,1.55) -- (1.55,1.55);
+    \draw[line width=0.7pt] (2.05,1.55) circle (0.22);
+    \draw[line width=0.5pt] (1.91,1.37) -- (2.19,1.73);
+    \draw[line width=0.5pt] (1.91,1.73) -- (2.19,1.37);
+    \node[anchor=south,inner sep=1pt] at (2.05,1.80) {$L_1$};
+    \draw[line width=0.7pt] (2.27,1.55) -- (2.65,1.55);
+    \fill (2.75,1.55) circle (1.45pt);
+    \draw[line width=0.7pt] (2.75,1.55) -- (3.15,1.55);
+    \draw[line width=0.7pt] (1.05,1.55) -- (1.05,0.85) -- (1.22,0.85);
+    \draw[line width=0.7pt] (1.32,0.85) circle (0.22);
+    \node[inner sep=0pt] at (1.32,0.85) {$A$};
+    \node[anchor=east,inner sep=0.6pt] at (1.06,0.85) {$+$};
+    \node[anchor=west,inner sep=0.6pt] at (1.58,0.85) {$-$};
+    \node[anchor=north,inner sep=1pt] at (1.32,0.52) {安培表};
+    \draw[line width=0.7pt] (1.58,0.85) -- (1.78,0.85);
+    \draw[line width=0.7pt] (2.00,0.85) circle (0.22);
+    \draw[line width=0.5pt] (1.86,0.67) -- (2.14,1.03);
+    \draw[line width=0.5pt] (1.86,1.03) -- (2.14,0.67);
+    \node[anchor=south,inner sep=1pt] at (2.00,1.10) {$L_2$};
+    \draw[line width=0.7pt] (2.22,0.85) -- (2.75,0.85) -- (2.75,1.55);
+    \node[anchor=north,inner sep=1pt] at (1.65,-0.05) {$(b)$};
+  \end{scope}
+  \begin{scope}[xshift=8.30cm]
+    \draw[line width=0.7pt] (0.15,2.75) -- (0.85,2.75);
+    \draw[line width=0.9pt] (0.92,2.50) -- (0.92,3.00);
+    \draw[line width=1.05pt] (1.08,2.58) -- (1.08,2.92);
+    \draw[line width=0.9pt] (1.24,2.50) -- (1.24,3.00);
+    \draw[line width=1.05pt] (1.40,2.58) -- (1.40,2.92);
+    \draw[line width=0.9pt] (1.56,2.50) -- (1.56,3.00);
+    \draw[line width=1.05pt] (1.72,2.58) -- (1.72,2.92);
+    \draw[line width=0.7pt] (1.78,2.75) -- (3.25,2.75) -- (3.25,0.70) -- (2.75,0.70);
+    \node[anchor=north east,inner sep=0.6pt] at (0.86,2.68) {$+$};
+    \node[anchor=north west,inner sep=0.6pt] at (1.84,2.68) {$-$};
+    \draw[line width=0.7pt] (0.15,2.75) -- (0.15,1.55) -- (0.20,1.55);
+    \draw[line width=0.7pt] (0.42,1.55) circle (0.22);
+    \node[inner sep=0pt] at (0.42,1.55) {$A$};
+    \node[anchor=south east,inner sep=0.6pt] at (0.14,1.62) {$+$};
+    \node[anchor=west,inner sep=0.6pt] at (0.68,1.55) {$-$};
+    \node[anchor=north,inner sep=1pt] at (0.42,1.18) {安培表};
+    \draw[line width=0.7pt] (0.64,1.55) -- (1.15,1.55);
+    \draw[line width=0.7pt] (2.75,1.55) -- (3.25,1.55);
+    \fill (1.22,1.55) circle (1.45pt);
+    \draw[line width=0.7pt] (1.22,1.55) -- (1.55,1.55);
+    \draw[line width=0.7pt] (2.05,1.55) circle (0.22);
+    \draw[line width=0.5pt] (1.91,1.37) -- (2.19,1.73);
+    \draw[line width=0.5pt] (1.91,1.73) -- (2.19,1.37);
+    \node[anchor=south,inner sep=1pt] at (2.05,1.80) {$L_1$};
+    \draw[line width=0.7pt] (2.27,1.55) -- (2.65,1.55);
+    \fill (2.75,1.55) circle (1.45pt);
+    \draw[line width=0.7pt] (1.22,1.55) -- (1.22,0.85) -- (1.55,0.85);
+    \draw[line width=0.7pt] (2.05,0.85) circle (0.22);
+    \draw[line width=0.5pt] (1.91,0.67) -- (2.19,1.03);
+    \draw[line width=0.5pt] (1.91,1.03) -- (2.19,0.67);
+    \node[anchor=south,inner sep=1pt] at (2.05,1.10) {$L_2$};
+    \draw[line width=0.7pt] (2.27,0.85) -- (2.75,0.85) -- (2.75,1.55);
+    \node[anchor=north,inner sep=1pt] at (1.70,-0.05) {$(c)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 2.9 安培表的连接法}
 \end{figure}
 
@@ -6382,7 +6672,43 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0112-06.png}}
+\fitfig{%
+% fig-alt: 图2.11(a)印刷页109线稿。电池在上，+在左、−在右。L1在左、L2在右串联。伏特表只并联在L1两端，圆内V，+在左、−在右，下标伏特表。结点为黑点。不另加灯上极性
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.20,2.55) -- (1.15,2.55);
+  \draw[line width=0.9pt] (1.22,2.30) -- (1.22,2.80);
+  \draw[line width=1.05pt] (1.38,2.38) -- (1.38,2.72);
+  \draw[line width=0.9pt] (1.54,2.30) -- (1.54,2.80);
+  \draw[line width=1.05pt] (1.70,2.38) -- (1.70,2.72);
+  \draw[line width=0.9pt] (1.86,2.30) -- (1.86,2.80);
+  \draw[line width=1.05pt] (2.02,2.38) -- (2.02,2.72);
+  \draw[line width=0.7pt] (2.08,2.55) -- (3.85,2.55) -- (3.85,1.25) -- (2.95,1.25);
+  \node[anchor=north,inner sep=0.8pt] at (1.05,2.42) {$+$};
+  \node[anchor=north,inner sep=0.8pt] at (2.22,2.42) {$-$};
+  \draw[line width=0.7pt] (0.20,2.55) -- (0.20,1.25) -- (0.55,1.25);
+  \fill (0.62,1.25) circle (1.45pt);
+  \draw[line width=0.7pt] (0.62,1.25) -- (0.88,1.25);
+  \draw[line width=0.7pt] (1.10,1.25) circle (0.22);
+  \draw[line width=0.5pt] (0.96,1.07) -- (1.24,1.43);
+  \draw[line width=0.5pt] (0.96,1.43) -- (1.24,1.07);
+  \node[anchor=south,inner sep=1pt] at (1.10,1.50) {$L_1$};
+  \draw[line width=0.7pt] (1.32,1.25) -- (1.55,1.25);
+  \fill (1.62,1.25) circle (1.45pt);
+  \draw[line width=0.7pt] (1.62,1.25) -- (2.15,1.25);
+  \draw[line width=0.7pt] (2.40,1.25) circle (0.22);
+  \draw[line width=0.5pt] (2.26,1.07) -- (2.54,1.43);
+  \draw[line width=0.5pt] (2.26,1.43) -- (2.54,1.07);
+  \node[anchor=south,inner sep=1pt] at (2.40,1.50) {$L_2$};
+  \draw[line width=0.7pt] (2.62,1.25) -- (2.95,1.25);
+  \draw[line width=0.7pt] (0.62,1.25) -- (0.62,0.55) -- (0.78,0.55);
+  \draw[line width=0.7pt] (1.62,1.25) -- (1.62,0.55) -- (1.22,0.55);
+  \draw[line width=0.7pt] (1.00,0.55) circle (0.22);
+  \node[inner sep=0pt] at (1.00,0.55) {$V$};
+  \node[anchor=east,inner sep=0.8pt] at (0.74,0.55) {$+$};
+  \node[anchor=north west,inner sep=0.6pt] at (1.20,0.36) {$-$};
+  \node[anchor=north,inner sep=1pt] at (1.00,0.22) {伏特表};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
