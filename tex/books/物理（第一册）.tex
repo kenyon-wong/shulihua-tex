@@ -12169,7 +12169,19 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-1/fig-p0241-01.png}}
+% fig-alt: 第5题：平板P上叠放M，M上放m。右侧双箭a。扫描与正文一致。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[fill=white,line width=0.6pt] (0.82,0.62) rectangle (4.28,0.96);
+  \node[anchor=east] at (0.68,0.80) {$P$};
+  \draw[fill=white,line width=0.6pt] (1.78,0.96) rectangle (3.32,2.38);
+  \node[anchor=west] at (3.40,1.68) {$M$};
+  \draw[fill=white,line width=0.6pt] (2.18,2.38) rectangle (2.90,3.08);
+  \node[anchor=west] at (2.98,2.74) {$m$};
+  \draw[line width=0.7pt,<->] (4.62,0.22) -- (4.62,1.88);
+  \node[anchor=west] at (4.76,1.05) {$a$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -12177,7 +12189,58 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={:第6题)}]{assets/physics-1/fig-p0241-02.png}}
+% fig-alt: 第6题：弹簧秤吊铝块m3浸在杯中。杯m1，水m2，杯在台秤上。扫描标m1、m2、m3。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt] (1.15,7.55) -- (4.55,7.55);
+  \begin{scope}
+    \clip (1.15,7.55) rectangle (4.55,7.88);
+    \foreach \s in {0.95,1.18,...,4.60}
+      \draw[line width=0.24pt] (\s,7.55) -- (\s+0.22,7.88);
+  \end{scope}
+  \draw[line width=0.55pt] (2.35,7.55) -- (2.35,7.05);
+  \draw[line width=0.55pt] (2.35,7.05) -- (2.18,6.90) -- (2.52,6.74) -- (2.18,6.58) -- (2.52,6.42) -- (2.18,6.26) -- (2.52,6.10) -- (2.35,5.94);
+  \draw[line width=0.5pt] (3.28,5.95) -- (3.28,7.15);
+  \foreach \s in {6.05,6.22,...,7.08}
+    \draw[line width=0.35pt] (3.28,\s) -- (3.42,\s);
+  \draw[line width=0.45pt] (3.12,6.55) -- (3.12,7.15) -- (3.58,7.15) -- (3.58,6.05) -- (3.12,6.05);
+  \draw[line width=0.65pt,->] (2.52,6.28) -- (3.22,6.28);
+  \draw[line width=0.55pt] (2.35,5.94) -- (2.35,4.62);
+  \draw[line width=0.6pt] (1.05,4.55) .. controls (0.88,4.15) and (0.95,3.55) .. (1.12,2.72) -- (3.72,2.72) .. controls (3.90,3.55) and (3.96,4.15) .. (3.78,4.55);
+  \draw[line width=0.55pt] (1.05,4.55) .. controls (0.72,4.72) and (0.68,4.42) .. (1.02,4.28);
+  \draw[line width=0.55pt] (3.78,4.55) .. controls (4.12,4.72) and (4.16,4.42) .. (3.82,4.28);
+  \draw[line width=0.4pt] (1.28,4.28) -- (3.55,4.28);
+  \begin{scope}
+    \clip (1.22,2.82) rectangle (3.62,4.22);
+    \foreach \sy in {2.98,3.22,3.46,3.70,3.94}
+      \foreach \sx in {1.38,1.72,2.06,2.40,2.74,3.08,3.36}
+        \draw[line width=0.22pt] (\sx,\sy) -- (\sx+0.16,\sy);
+  \end{scope}
+  \node[anchor=west,fill=white,inner sep=0.6pt] at (1.32,3.55) {$m_{2}$};
+  \draw[fill=white,line width=0.6pt] (1.78,3.42) rectangle (2.92,4.18);
+  \node[anchor=center] at (2.35,3.80) {$m_{3}$};
+  \node[anchor=west] at (3.92,3.55) {$m_{1}$};
+  \draw[line width=0.6pt] (0.72,2.58) .. controls (0.55,2.42) and (0.62,2.28) .. (0.95,2.38) -- (3.95,2.38) .. controls (4.28,2.28) and (4.35,2.42) .. (4.15,2.58);
+  \draw[line width=0.55pt] (1.85,2.38) -- (1.85,1.92);
+  \draw[line width=0.55pt] (3.05,2.38) -- (3.05,1.92);
+  \draw[line width=0.6pt] (1.35,1.15) rectangle (3.55,1.92);
+  \draw[line width=0.6pt] (2.45,1.05) circle[radius=0.78];
+  \begin{scope}[shift={(2.45,1.05)}]
+    \foreach \a in {0,30,...,330}
+      \draw[line width=0.28pt] (\a:0.62) -- (\a:0.74);
+    \draw[line width=0.55pt] (0,0) -- (52:0.58);
+    \fill (0,0) circle[radius=0.035];
+  \end{scope}
+  \draw[line width=0.6pt] (1.55,0.28) -- (1.42,0.12) -- (3.48,0.12) -- (3.35,0.28);
+  \draw[line width=0.55pt] (1.05,0.12) -- (3.85,0.12);
+  \draw[line width=0.6pt] (0.55,0.00) -- (4.35,0.00);
+  \begin{scope}
+    \clip (0.55,-0.28) rectangle (4.35,0.00);
+    \foreach \s in {0.35,0.58,...,4.40}
+      \draw[line width=0.24pt] (\s,0.00) -- (\s+0.22,-0.28);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{:第6题)}
 \end{figure}
 
@@ -12206,7 +12269,32 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-1/fig-p0242-01.png}}
+% fig-alt: 第8题：定滑轮，左绳系升降机M顶，右绳沿窗外下垂。人m伸臂拉窗外的绳。扫描只标M、m，未标T。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt] (1.05,6.55) -- (3.65,6.55);
+  \begin{scope}
+    \clip (1.05,6.55) rectangle (3.65,6.82);
+    \foreach \s in {0.85,1.08,...,3.70}
+      \draw[line width=0.24pt] (\s,6.55) -- (\s+0.20,6.82);
+  \end{scope}
+  \draw[line width=0.55pt] (2.20,6.55) -- (2.20,5.95);
+  \draw[line width=0.55pt] (1.48,4.95) -- (1.48,3.15);
+  \draw[line width=0.55pt] (2.92,4.95) -- (2.92,0.12);
+  \draw[fill=white,line width=0.6pt] (2.20,4.95) circle[radius=0.72];
+  \fill (2.20,4.95) circle[radius=0.04];
+  \draw[line width=0.6pt] (0.42,2.15) -- (1.15,3.15) -- (1.82,3.15) -- (2.48,2.15) -- cycle;
+  \draw[line width=0.6pt] (0.42,0.22) -- (0.42,2.15) -- (2.48,2.15);
+  \draw[line width=0.6pt] (2.48,2.15) -- (2.48,1.22);
+  \draw[line width=0.6pt] (2.48,0.82) -- (2.48,0.22) -- (0.42,0.22);
+  \node[anchor=east] at (0.28,1.15) {$M$};
+  \draw[line width=0.55pt] (1.72,1.05) circle[radius=0.12];
+  \draw[line width=0.5pt] (1.72,0.93) -- (1.72,0.42);
+  \draw[line width=0.5pt] (1.55,0.22) -- (1.72,0.42) -- (1.90,0.22);
+  \draw[line width=0.5pt] (1.78,0.78) -- (2.92,1.02);
+  \node[anchor=east] at (1.55,0.72) {$m$};
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -12232,7 +12320,49 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-1}]{assets/physics-1/fig-p0244-01.png}}
+% fig-alt: 图9-1：三块刚体。左F1右上、F2向下共点；中F1右上、F2向左、F3右下；右F4、F3、F1、F2作用线交于一点，虚线相连。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \begin{scope}
+    \draw[line width=0.6pt] plot[smooth cycle,tension=0.9] coordinates {(0.35,1.55) (0.62,2.15) (1.25,2.38) (1.95,2.05) (2.15,1.35) (1.72,0.62) (0.95,0.48) (0.32,1.00)};
+    \fill (1.15,1.42) circle[radius=0.035];
+    \draw[line width=0.7pt,->] (1.15,1.42) -- (2.05,2.62);
+    \node[anchor=south west] at (2.08,2.62) {$F_{1}$};
+    \draw[line width=0.7pt,->] (1.15,1.42) -- (1.15,0.12);
+    \node[anchor=north] at (1.15,0.08) {$F_{2}$};
+  \end{scope}
+  \begin{scope}[xshift=3.55cm]
+    \draw[line width=0.6pt] plot[smooth cycle,tension=0.9] coordinates {(0.28,1.45) (0.55,2.12) (1.35,2.32) (2.05,1.85) (2.05,1.05) (1.55,0.48) (0.72,0.55) (0.22,1.00)};
+    \fill (1.28,1.42) circle[radius=0.035];
+    \draw[line width=0.7pt,->] (1.28,1.42) -- (1.95,2.72);
+    \node[anchor=south] at (1.95,2.76) {$F_{1}$};
+    \draw[line width=0.7pt,->] (1.28,1.42) -- (0.08,1.42);
+    \node[anchor=east] at (0.04,1.42) {$F_{2}$};
+    \draw[line width=0.7pt,->] (1.28,1.42) -- (2.15,0.22);
+    \node[anchor=north west] at (2.12,0.18) {$F_{3}$};
+    \draw[line width=0.45pt] (1.62,0.92) rectangle (1.76,1.06);
+    \draw[line width=0.55pt,->] (0.85,0.12) -- (1.35,0.02);
+  \end{scope}
+  \begin{scope}[xshift=7.15cm]
+    \draw[line width=0.6pt] plot[smooth cycle,tension=0.9] coordinates {(0.42,1.55) (0.72,2.22) (1.55,2.28) (2.15,1.72) (2.05,0.95) (1.35,0.42) (0.62,0.72) (0.28,1.15)};
+    \draw[line width=0.45pt,dash pattern=on 1.1pt off 0.8pt] (0.55,1.85) -- (2.35,0.35);
+    \draw[line width=0.45pt,dash pattern=on 1.1pt off 0.8pt] (0.35,1.38) -- (2.55,1.52);
+    \draw[line width=0.45pt,dash pattern=on 1.1pt off 0.8pt] (1.35,2.05) -- (1.72,2.85);
+    \fill (1.48,1.48) circle[radius=0.035];
+    \draw[fill=white,line width=0.45pt] (0.62,1.82) circle[radius=0.045];
+    \draw[fill=white,line width=0.45pt] (1.38,2.02) circle[radius=0.045];
+    \draw[fill=white,line width=0.45pt] (1.95,1.50) circle[radius=0.045];
+    \draw[line width=0.7pt,->] (1.38,2.02) -- (2.05,2.95);
+    \node[anchor=south] at (2.08,2.98) {$F_{4}$};
+    \draw[line width=0.7pt,->] (1.48,1.48) -- (2.72,1.55);
+    \node[anchor=west] at (2.76,1.55) {$F_{3}$};
+    \draw[line width=0.7pt,->] (1.48,1.48) -- (0.12,1.32);
+    \node[anchor=east] at (0.06,1.28) {$F_{1}$};
+    \draw[line width=0.7pt,->] (1.48,1.48) -- (2.42,0.22);
+    \node[anchor=north west] at (2.38,0.16) {$F_{2}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图9-1}
 \end{figure}
 
@@ -12260,7 +12390,62 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.2}]{assets/physics-1/fig-p0245-01.png}}
+% fig-alt: 图9·2：左电灯，T向上、G向下；中衣钩与衣服，F向上、G向下；右单足立人，G向下、N向上。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \begin{scope}
+    \draw[line width=0.6pt] (0.15,3.55) rectangle (2.15,3.88);
+    \begin{scope}
+      \clip (0.15,3.55) rectangle (2.15,3.88);
+      \foreach \s in {-0.05,0.18,...,2.20}
+        \draw[line width=0.22pt] (\s,3.88) -- (\s+0.24,3.55);
+    \end{scope}
+    \draw[line width=0.55pt] (1.15,3.55) -- (1.15,1.05);
+    \draw[line width=0.7pt,->] (1.15,2.35) -- (1.15,2.85);
+    \node[anchor=west] at (1.24,2.62) {$T$};
+    \draw[line width=0.6pt] (1.15,1.05) -- (1.02,0.88) -- (0.42,0.42) -- (1.88,0.42) -- (1.28,0.88) -- cycle;
+    \draw[line width=0.5pt] (0.72,0.42) arc[start angle=180,end angle=360,radius=0.43];
+    \draw[line width=0.7pt,->] (1.15,0.18) -- (1.15,-0.38);
+    \node[anchor=north] at (1.15,-0.42) {$G$};
+  \end{scope}
+  \begin{scope}[xshift=3.05cm]
+    \draw[line width=0.6pt] (0.35,3.55) rectangle (2.05,3.88);
+    \begin{scope}
+      \clip (0.35,3.55) rectangle (2.05,3.88);
+      \foreach \s in {0.15,0.38,...,2.10}
+        \draw[line width=0.22pt] (\s,3.88) -- (\s+0.24,3.55);
+    \end{scope}
+    \node[anchor=south west] at (2.08,3.62) {衣钩};
+    \draw[line width=0.7pt,->] (1.20,3.88) -- (1.20,4.42);
+    \node[anchor=west] at (1.30,4.28) {$F$};
+    \draw[line width=0.55pt] (1.20,3.55) .. controls (0.85,3.25) and (0.72,2.95) .. (0.78,2.55);
+    \draw[line width=0.55pt] (1.20,3.55) .. controls (1.55,3.25) and (1.68,2.95) .. (1.62,2.55);
+    \draw[line width=0.55pt] (0.55,2.62) .. controls (0.35,2.15) and (0.48,1.85) .. (0.72,1.72);
+    \draw[line width=0.55pt] (1.85,2.62) .. controls (2.05,2.15) and (1.92,1.85) .. (1.68,1.72);
+    \draw[line width=0.55pt] (0.72,2.48) -- (0.62,0.85) .. controls (0.58,0.45) and (0.95,0.35) .. (1.20,0.48);
+    \draw[line width=0.55pt] (1.68,2.48) -- (1.78,0.85) .. controls (1.82,0.42) and (1.45,0.28) .. (1.20,0.48);
+    \node[anchor=west] at (1.92,1.85) {衣服};
+    \draw[line width=0.7pt,->] (1.20,0.95) -- (1.20,-0.22);
+    \node[anchor=north] at (1.20,-0.26) {$G$};
+  \end{scope}
+  \begin{scope}[xshift=6.15cm]
+    \draw[line width=0.55pt] (1.35,3.55) circle[radius=0.28];
+    \draw[line width=0.45pt] (1.15,3.68) arc[start angle=140,end angle=40,radius=0.22];
+    \draw[line width=0.55pt] (1.18,3.27) -- (0.72,2.55) -- (0.62,1.55);
+    \draw[line width=0.55pt] (1.52,3.27) -- (1.98,2.55) -- (2.05,1.55);
+    \draw[line width=0.55pt] (0.72,2.55) -- (1.98,2.55);
+    \draw[line width=0.55pt] (0.78,1.62) -- (1.92,1.62);
+    \draw[line width=0.55pt] (1.35,1.62) -- (0.85,0.72) -- (0.55,0.28);
+    \draw[line width=0.55pt] (1.35,1.62) -- (1.55,0.95) -- (1.48,0.28);
+    \draw[line width=0.45pt] (1.38,0.28) -- (1.62,0.18) -- (1.55,0.32);
+    \draw[line width=0.6pt] (0.25,0.12) -- (2.55,0.12);
+    \draw[line width=0.7pt,->] (1.35,2.15) -- (1.35,1.15);
+    \node[anchor=west] at (1.42,1.65) {$G$};
+    \draw[line width=0.7pt,->] (1.48,0.18) -- (1.48,0.72);
+    \node[anchor=west] at (1.56,0.48) {$N$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图9.2}
 \end{figure}
 
@@ -12293,7 +12478,79 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-3}]{assets/physics-1/fig-p0246-01.png}}
+% fig-alt: 图9-3：左墙边皮球，绳T指向球，N向右，G向下，中心O；中电灯T1、T2交于A，G向下；右梯子，N水平向右，A在虚线上，F沿梯向上，G向下。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \begin{scope}
+    \draw[line width=0.6pt] (0.12,0.15) -- (0.12,4.15);
+    \draw[line width=0.55pt] (0.48,0.15) -- (0.48,4.15);
+    \begin{scope}
+      \clip (0.12,0.15) rectangle (0.48,4.15);
+      \foreach \s in {0.10,0.28,...,4.20}
+        \draw[line width=0.22pt] (0.18,\s) -- (0.42,\s);
+    \end{scope}
+    \draw[line width=0.55pt] (0.48,3.55) -- (1.35,1.85);
+    \draw[line width=0.7pt,->] (0.72,3.05) -- (1.12,2.22);
+    \node[anchor=east] at (0.78,2.72) {$T$};
+    \draw[fill=gray!18,line width=0.6pt] (1.35,1.15) circle[radius=0.62];
+    \draw[line width=0.35pt] (0.78,1.15) -- (1.97,1.15);
+    \draw[line width=0.35pt] (1.35,0.55) -- (1.35,1.77);
+    \fill (1.35,1.15) circle[radius=0.04];
+    \node[anchor=north west] at (1.38,1.12) {$O$};
+    \draw[line width=0.7pt,->] (1.35,1.15) -- (2.28,1.15);
+    \node[anchor=west] at (2.34,1.15) {$N$};
+    \draw[line width=0.7pt,->] (1.35,0.53) -- (1.35,-0.22);
+    \node[anchor=north] at (1.35,-0.26) {$G$};
+  \end{scope}
+  \begin{scope}[xshift=3.55cm]
+    \draw[line width=0.6pt] (0.15,3.72) rectangle (2.55,4.05);
+    \begin{scope}
+      \clip (0.15,3.72) rectangle (2.55,4.05);
+      \foreach \s in {-0.05,0.18,...,2.60}
+        \draw[line width=0.22pt] (\s,4.05) -- (\s+0.24,3.72);
+    \end{scope}
+    \draw[line width=0.55pt] (0.35,3.72) -- (1.15,2.15);
+    \draw[line width=0.7pt,->] (0.55,3.35) -- (0.88,2.55);
+    \node[anchor=east] at (0.62,2.95) {$T_{1}$};
+    \fill (1.15,2.15) circle[radius=0.035];
+    \node[anchor=east] at (1.05,2.15) {$A$};
+    \draw[line width=0.55pt] (1.15,2.15) -- (2.85,3.35);
+    \draw[line width=0.45pt,dash pattern=on 1.15pt off 0.85pt] (2.85,3.35) -- (3.35,3.72);
+    \draw[line width=0.7pt,->] (1.55,2.42) -- (2.15,2.88);
+    \node[anchor=south] at (2.05,2.78) {$T_{2}$};
+    \draw[line width=0.55pt] (1.15,2.15) -- (1.15,1.05);
+    \draw[line width=0.6pt] (1.15,1.05) -- (1.02,0.88) -- (0.48,0.42) -- (1.82,0.42) -- (1.28,0.88) -- cycle;
+    \draw[line width=0.5pt] (0.78,0.42) arc[start angle=180,end angle=360,radius=0.37];
+    \draw[line width=0.7pt,->] (1.15,0.15) -- (1.15,-0.32);
+    \node[anchor=north] at (1.15,-0.36) {$G$};
+  \end{scope}
+  \begin{scope}[xshift=7.55cm]
+    \draw[line width=0.6pt] (0.18,0.12) -- (0.18,3.95);
+    \draw[line width=0.55pt] (0.55,0.12) -- (0.55,3.95);
+    \begin{scope}
+      \clip (0.18,0.12) rectangle (0.55,3.95);
+      \foreach \s in {0.08,0.26,...,4.00}
+        \draw[line width=0.22pt] (0.24,\s) -- (0.48,\s);
+    \end{scope}
+    \draw[line width=0.6pt] (0.12,0.12) -- (3.35,0.12);
+    \draw[line width=0.7pt] (0.55,2.85) -- (2.15,0.22);
+    \draw[line width=0.7pt] (0.88,3.05) -- (2.48,0.42);
+    \draw[line width=0.45pt] (0.87,2.32) -- (1.20,2.52);
+    \draw[line width=0.45pt] (1.19,1.80) -- (1.52,2.00);
+    \draw[line width=0.45pt] (1.51,1.27) -- (1.84,1.47);
+    \draw[line width=0.45pt] (1.83,0.75) -- (2.16,0.95);
+    \draw[line width=0.45pt,dash pattern=on 1.15pt off 0.8pt] (0.48,3.15) -- (2.85,3.15);
+    \draw[line width=0.7pt,->] (0.72,3.15) -- (1.85,3.15);
+    \node[anchor=south] at (1.55,3.20) {$N$};
+    \node[anchor=south] at (2.35,3.20) {$A$};
+    \draw[line width=0.45pt,dash pattern=on 1.1pt off 0.8pt] (1.55,1.55) -- (2.15,2.55) -- (2.35,3.15);
+    \draw[line width=0.7pt,->] (1.95,0.85) -- (1.35,1.85);
+    \node[anchor=west] at (2.05,1.25) {$F$};
+    \draw[line width=0.7pt,->] (1.55,1.55) -- (1.55,0.28);
+    \node[anchor=north] at (1.55,0.22) {$G$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图9-3}
 \end{figure}
 
@@ -12308,7 +12565,25 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-4}]{assets/physics-1/fig-p0247-01.png}}
+% fig-alt: 图9-4：F1右上、F2向下，虚线平行四边形对角线为R指向右；F3沿R反向向左。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (O) at (3.15,1.55);
+  \coordinate (P) at (6.55,2.95);
+  \coordinate (Q) at (3.15,0.15);
+  \coordinate (R) at (6.55,1.55);
+  \draw[line width=0.45pt,dash pattern=on 1.2pt off 0.85pt] (P) -- (R);
+  \draw[line width=0.45pt,dash pattern=on 1.2pt off 0.85pt] (Q) -- (R);
+  \draw[line width=0.45pt,dash pattern=on 1.2pt off 0.85pt,->] (O) -- (R);
+  \draw[line width=0.9pt,->] (O) -- (P);
+  \node[anchor=south west] at (6.52,2.98) {$F_{1}$};
+  \draw[line width=0.9pt,->] (O) -- (Q);
+  \node[anchor=north] at (3.15,0.08) {$F_{2}$};
+  \draw[line width=0.9pt,->] (O) -- (0.35,1.55);
+  \node[anchor=east] at (0.28,1.55) {$F_{3}$};
+  \node[anchor=west] at (6.68,1.55) {$R$};
+\end{tikzpicture}%
+}
 \caption{图9-4}
 \end{figure}
 
@@ -12382,7 +12657,23 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-6}]{assets/physics-1/fig-p0248-05.png}}
+% fig-alt: 图9-6：扫描只含封闭四边形。F1底边向右，F2右侧向上，F3上左侧向左下，F4接下侧向左下，首尾相接。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (T) at (2.55,2.95);
+  \coordinate (L) at (0.28,1.52);
+  \coordinate (B) at (0.92,0.42);
+  \coordinate (E) at (4.05,0.32);
+  \draw[line width=0.75pt,->] (B) -- (E);
+  \node[anchor=north] at (2.48,0.22) {$F_{1}$};
+  \draw[line width=0.75pt,->] (E) -- (T);
+  \node[anchor=west] at (3.72,1.72) {$F_{2}$};
+  \draw[line width=0.75pt,->] (T) -- (L);
+  \node[anchor=east] at (1.15,2.42) {$F_{3}$};
+  \draw[line width=0.75pt,->] (L) -- (B);
+  \node[anchor=east] at (0.42,0.92) {$F_{4}$};
+\end{tikzpicture}%
+}
 \caption{图9-6}
 \end{figure}
 
