@@ -6335,7 +6335,36 @@ R---C---R'，R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第107页图示}]{assets/chemistry-4/fig-p0107-g01.png}}
+\fitfig{%
+% fig-alt: 乙酸分子单位：CH3—C—O—H，羰基氧在羧基碳正下方；烃基、羰基、羟基各有短括弧，羧基为下方长括弧，氢原子标在右端H之上
+% redraw: fig-p0107-g01 乙酸分子结构分成烃基、羰基、羟基、羧基
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (me) at (0,0) {CH$_3$};
+  \node[atom] (c) at (1.18,0) {C};
+  \node[atom] (o) at (1.98,0) {O};
+  \node[atom] (h) at (2.64,0) {H};
+  \node[atom] (od) at (1.18,-0.82) {O};
+  \draw[bond] (me) -- (c) -- (o) -- (h);
+  \draw[dbond] (c) -- (od);
+  \node[lab, anchor=south] at (2.78,0.40) {氢原子};
+  \draw[line width=0.48pt] (-0.46,-0.30) .. controls (0,-0.48) and (0,-0.48) .. (0,-0.50)
+    .. controls (0,-0.48) and (0.46,-0.48) .. (0.46,-0.30);
+  \node[lab] at (0,-0.72) {烃基};
+  \draw[line width=0.48pt] (1.68,-0.30) .. controls (2.16,-0.48) and (2.16,-0.48) .. (2.16,-0.50)
+    .. controls (2.16,-0.48) and (2.64,-0.48) .. (2.64,-0.30);
+  \node[lab] at (2.16,-0.72) {羟基};
+  \draw[line width=0.48pt] (0.82,-1.10) .. controls (1.18,-1.28) and (1.18,-1.28) .. (1.18,-1.30)
+    .. controls (1.18,-1.28) and (1.54,-1.28) .. (1.54,-1.10);
+  \node[lab] at (1.18,-1.52) {羰基};
+  \draw[line width=0.48pt] (0.72,-1.78) .. controls (1.55,-2.02) and (1.55,-2.02) .. (1.68,-2.10)
+    .. controls (1.81,-2.02) and (2.64,-2.02) .. (2.64,-1.78);
+  \node[lab] at (1.68,-2.36) {羧基};
+\end{tikzpicture}%
+}
 \caption{原PDF第107页图示}
 \end{figure}
 
@@ -6375,7 +6404,46 @@ R---C---R'，R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第108页图示}]{assets/chemistry-4/fig-p0108-g01.png}}
+\fitfig{%
+% fig-alt: 氧化钙与乙酸：CaO+2CH3—C（双键右上O、右连OH）=上下两分子乙酸根以单键氧连Ca，再写+H2O；下方标乙酸钙
+% redraw: fig-p0108-g01 乙酸与氧化钙生成乙酸钙
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (cao) at (0,0) {CaO};
+  \node[atom] at (0.82,0) {$+$};
+  \node[grp] (me) at (1.95,0) {2CH$_3$};
+  \node[atom] (c) at (2.95,0) {C};
+  \node[atom] (co) at (3.55,0.52) {O};
+  \node[grp] (oh) at (3.78,0) {OH};
+  \draw[bond] (me.east) -- (c.west);
+  \draw[dbond] (c) -- (co);
+  \draw[bond] (c.east) -- (oh.west);
+  \node[atom] at (4.55,0) {$=$};
+  \node[grp] (tme) at (5.85,0.92) {CH$_3$};
+  \node[atom] (tc) at (6.78,0.92) {C};
+  \node[atom] (tco) at (7.38,1.46) {O};
+  \node[atom] (to) at (7.42,0.42) {O};
+  \draw[bond] (tme.east) -- (tc.west);
+  \draw[dbond] (tc) -- (tco);
+  \draw[bond] (tc) -- (to);
+  \node[grp] (bme) at (5.85,-0.92) {CH$_3$};
+  \node[atom] (bc) at (6.78,-0.92) {C};
+  \node[atom] (bco) at (7.38,-1.46) {O};
+  \node[atom] (bo) at (7.42,-0.42) {O};
+  \draw[bond] (bme.east) -- (bc.west);
+  \draw[dbond] (bc) -- (bco);
+  \draw[bond] (bc) -- (bo);
+  \node[atom] (ca) at (8.35,0) {Ca};
+  \draw[bond] (to) -- (ca);
+  \draw[bond] (bo) -- (ca);
+  \node[atom, anchor=west] at (8.62,0) {$+$\,H$_2$O};
+  \node[lab] at (7.15,-2.08) {乙酸钙};
+\end{tikzpicture}%
+}
 \caption{原PDF第108页图示}
 \end{figure}
 
@@ -6383,7 +6451,36 @@ R---C---R'，R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第108页图示}]{assets/chemistry-4/fig-p0108-g02.png}}
+\fitfig{%
+% fig-alt: 氢氧化钠与乙酸中和：NaOH+CH3—C（双键右上O、右连OH）=CH3—C（双键右上O、右连ONa）+H2O；产物下标乙酸钠
+% redraw: fig-p0108-g02 乙酸与氢氧化钠生成乙酸钠
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (na) at (0,0) {NaOH};
+  \node[atom] at (0.95,0) {$+$};
+  \node[grp] (me) at (1.85,0) {CH$_3$};
+  \node[atom] (c) at (2.72,0) {C};
+  \node[atom] (co) at (3.32,0.52) {O};
+  \node[grp] (oh) at (3.55,0) {OH};
+  \draw[bond] (me.east) -- (c.west);
+  \draw[dbond] (c) -- (co);
+  \draw[bond] (c.east) -- (oh.west);
+  \node[atom] at (4.32,0) {$=$};
+  \node[grp] (pme) at (5.22,0) {CH$_3$};
+  \node[atom] (pc) at (6.08,0) {C};
+  \node[atom] (pco) at (6.68,0.52) {O};
+  \node[grp] (ona) at (7.05,0) {ONa};
+  \draw[bond] (pme.east) -- (pc.west);
+  \draw[dbond] (pc) -- (pco);
+  \draw[bond] (pc.east) -- (ona.west);
+  \node[atom, anchor=west] at (7.55,0) {$+$\,H$_2$O};
+  \node[lab] at (6.15,-0.78) {乙酸钠};
+\end{tikzpicture}%
+}
 \caption{原PDF第108页图示}
 \end{figure}
 
@@ -6724,7 +6821,46 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第115页图示}]{assets/chemistry-4/fig-p0115-g01.png}}
+\fitfig{%
+% fig-alt: 乙酸与异戊醇酯化：左为CH3—C双键右上O、右连OH，虚线框住该OH与醇的H；醇链为O—CH2CH2CH(CH3)2；箭上(H2SO4)，产物为乙酸异戊酯+H2O
+% redraw: fig-p0115-g01 乙酸与异戊醇生成乙酸异戊酯
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[grp] (me) at (0,0) {CH$_3$};
+  \node[atom] (c) at (1.05,0) {C};
+  \node[atom] (co) at (1.62,0.52) {O};
+  \node[atom] (oh) at (1.95,0) {OH};
+  \draw[bond] (me.east) -- (c.west);
+  \draw[dbond] (c) -- (co);
+  \draw[bond] (c.east) -- (oh.west);
+  \node[atom] (pl) at (2.78,0) {$+$};
+  \node[atom] (ah) at (3.32,0) {H};
+  \node[atom] (ao) at (3.95,0) {O};
+  \node[grp, anchor=west] (ch) at (4.28,0) {CH$_2$CH$_2$CH(CH$_3$)$_2$};
+  \draw[bond] (ah) -- (ao);
+  \draw[bond] (ao.east) -- (ch.west);
+  \draw[dashed, line width=0.5pt] (1.68,-0.36) rectangle (3.55,0.32);
+  \node[lab] at (1.05,-0.78) {乙酸};
+  \node[lab] at (5.55,-0.78) {异戊醇};
+  \node[lab] at (1.15,-1.55) {(H$_2$SO$_4$)};
+  \draw[->, line width=0.55pt] (0.15,-1.88) -- (2.10,-1.88);
+  \node[grp] (pme) at (2.85,-1.88) {CH$_3$};
+  \node[atom] (pc) at (3.90,-1.88) {C};
+  \node[atom] (pco) at (4.48,-1.36) {O};
+  \node[atom] (po) at (4.72,-1.88) {O};
+  \node[grp, anchor=west] (pch) at (5.05,-1.88) {CH$_2$CH$_2$CH(CH$_3$)$_2$};
+  \draw[bond] (pme.east) -- (pc.west);
+  \draw[dbond] (pc) -- (pco);
+  \draw[bond] (pc.east) -- (po.west);
+  \draw[bond] (po.east) -- (pch.west);
+  \node[atom, anchor=west] at (8.85,-1.88) {$+$\,H$_2$O};
+  \node[lab] at (5.15,-2.52) {乙酸异戊酯};
+\end{tikzpicture}%
+}
 \caption{原PDF第115页图示}
 \end{figure}
 
@@ -6760,7 +6896,43 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第116页图示}]{assets/chemistry-4/fig-p0116-g01.png}}
+\fitfig{%
+% fig-alt: 酯水解通式：R—C双键右上O、右连OR'，虚线框住OR'与水的H；水写作H·OH；箭上（催化剂），生成酸与R'—OH；下标酯、水、酸、醇
+% redraw: fig-p0116-g01 酯在催化剂下水解成酸和醇
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (r) at (0,0) {R};
+  \node[atom] (c) at (0.78,0) {C};
+  \node[atom] (co) at (1.36,0.52) {O};
+  \node[grp] (or) at (1.78,0) {OR$'$};
+  \draw[bond] (r) -- (c);
+  \draw[dbond] (c) -- (co);
+  \draw[bond] (c.east) -- (or.west);
+  \node[atom] (pl) at (2.62,0) {$+$};
+  \node[atom] (hw) at (3.15,0) {H};
+  \node[atom, anchor=west] (ow) at (3.58,0) {$\cdot$OH};
+  \draw[dashed, line width=0.5pt] (1.52,-0.36) rectangle (3.40,0.32);
+  \node[lab] at (0.85,-0.78) {酯};
+  \node[lab] at (3.55,-0.78) {水};
+  \node[lab] at (4.85,0.40) {（催化剂）};
+  \draw[->, line width=0.55pt] (4.15,0.02) -- (5.55,0.02);
+  \node[atom] (pr) at (6.15,0) {R};
+  \node[atom] (pc) at (6.92,0) {C};
+  \node[atom] (pco) at (7.50,0.52) {O};
+  \node[grp] (poh) at (8.05,0) {OH};
+  \draw[bond] (pr) -- (pc);
+  \draw[dbond] (pc) -- (pco);
+  \draw[bond] (pc.east) -- (poh.west);
+  \node[atom] at (8.78,0) {$+$};
+  \node[grp] (alk) at (9.55,0) {R$'$--OH};
+  \node[lab] at (6.95,-0.78) {酸};
+  \node[lab] at (9.55,-0.78) {醇};
+\end{tikzpicture}%
+}
 \caption{原PDF第116页图示}
 \end{figure}
 
@@ -6838,7 +7010,111 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={硬脂酸甘油酯；软脂酸甘油酯}]{assets/chemistry-4/fig-p0118-g01.png}}
+\fitfig{%
+% fig-alt: 三种甘油酯简式：左硬脂酸甘油酯三条C17H35—C（双键右上O）—O—接CH2/CH/CH2，右软脂酸甘油酯为C15H31，下油酸甘油酯为C17H33；甘油碳间竖键
+% redraw: fig-p0118-g01 硬脂酸、软脂酸、油酸甘油酯
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[grp, anchor=east] (sa) at (1.72,1.05) {C$_{17}$H$_{35}$};
+  \node[atom] (sc) at (2.12,1.05) {C};
+  \node[atom] (so) at (2.72,1.55) {O};
+  \node[atom] (se) at (2.78,1.05) {O};
+  \node[grp] (sg) at (3.58,1.05) {CH$_2$};
+  \draw[bond] (sa.east) -- (sc.west);
+  \draw[dbond] (sc) -- (so);
+  \draw[bond] (sc.east) -- (se.west);
+  \draw[bond] (se.east) -- (sg.west);
+  \node[grp, anchor=east] (sb) at (1.72,0) {C$_{17}$H$_{35}$};
+  \node[atom] (sd) at (2.12,0) {C};
+  \node[atom] (sp) at (2.72,0.50) {O};
+  \node[atom] (sf) at (2.78,0) {O};
+  \node[grp] (sh) at (3.58,0) {CH};
+  \draw[bond] (sb.east) -- (sd.west);
+  \draw[dbond] (sd) -- (sp);
+  \draw[bond] (sd.east) -- (sf.west);
+  \draw[bond] (sf.east) -- (sh.west);
+  \node[grp, anchor=east] (si) at (1.72,-1.05) {C$_{17}$H$_{35}$};
+  \node[atom] (sj) at (2.12,-1.05) {C};
+  \node[atom] (sk) at (2.72,-0.55) {O};
+  \node[atom] (sm) at (2.78,-1.05) {O};
+  \node[grp] (sn) at (3.58,-1.05) {CH$_2$};
+  \draw[bond] (si.east) -- (sj.west);
+  \draw[dbond] (sj) -- (sk);
+  \draw[bond] (sj.east) -- (sm.west);
+  \draw[bond] (sm.east) -- (sn.west);
+  \draw[bond] (sg.south) -- (sh.north);
+  \draw[bond] (sh.south) -- (sn.north);
+  \node[lab] at (2.55,-1.72) {硬脂酸甘油酯};
+  \begin{scope}[xshift=5.35cm]
+  \node[grp, anchor=east] (pa) at (1.72,1.05) {C$_{15}$H$_{31}$};
+  \node[atom] (pc) at (2.12,1.05) {C};
+  \node[atom] (po) at (2.72,1.55) {O};
+  \node[atom] (pe) at (2.78,1.05) {O};
+  \node[grp] (pg) at (3.58,1.05) {CH$_2$};
+  \draw[bond] (pa.east) -- (pc.west);
+  \draw[dbond] (pc) -- (po);
+  \draw[bond] (pc.east) -- (pe.west);
+  \draw[bond] (pe.east) -- (pg.west);
+  \node[grp, anchor=east] (pb) at (1.72,0) {C$_{15}$H$_{31}$};
+  \node[atom] (pd) at (2.12,0) {C};
+  \node[atom] (pp) at (2.72,0.50) {O};
+  \node[atom] (pf) at (2.78,0) {O};
+  \node[grp] (ph) at (3.58,0) {CH};
+  \draw[bond] (pb.east) -- (pd.west);
+  \draw[dbond] (pd) -- (pp);
+  \draw[bond] (pd.east) -- (pf.west);
+  \draw[bond] (pf.east) -- (ph.west);
+  \node[grp, anchor=east] (pi) at (1.72,-1.05) {C$_{15}$H$_{31}$};
+  \node[atom] (pj) at (2.12,-1.05) {C};
+  \node[atom] (pk) at (2.72,-0.55) {O};
+  \node[atom] (pm) at (2.78,-1.05) {O};
+  \node[grp] (pn) at (3.58,-1.05) {CH$_2$};
+  \draw[bond] (pi.east) -- (pj.west);
+  \draw[dbond] (pj) -- (pk);
+  \draw[bond] (pj.east) -- (pm.west);
+  \draw[bond] (pm.east) -- (pn.west);
+  \draw[bond] (pg.south) -- (ph.north);
+  \draw[bond] (ph.south) -- (pn.north);
+  \node[lab] at (2.55,-1.72) {软脂酸甘油酯};
+  \end{scope}
+  \begin{scope}[xshift=2.68cm, yshift=-4.05cm]
+  \node[grp, anchor=east] (oa) at (1.72,1.05) {C$_{17}$H$_{33}$};
+  \node[atom] (oc) at (2.12,1.05) {C};
+  \node[atom] (oo) at (2.72,1.55) {O};
+  \node[atom] (oe) at (2.78,1.05) {O};
+  \node[grp] (og) at (3.58,1.05) {CH$_2$};
+  \draw[bond] (oa.east) -- (oc.west);
+  \draw[dbond] (oc) -- (oo);
+  \draw[bond] (oc.east) -- (oe.west);
+  \draw[bond] (oe.east) -- (og.west);
+  \node[grp, anchor=east] (ob) at (1.72,0) {C$_{17}$H$_{33}$};
+  \node[atom] (od) at (2.12,0) {C};
+  \node[atom] (op) at (2.72,0.50) {O};
+  \node[atom] (of) at (2.78,0) {O};
+  \node[grp] (oh) at (3.58,0) {CH};
+  \draw[bond] (ob.east) -- (od.west);
+  \draw[dbond] (od) -- (op);
+  \draw[bond] (od.east) -- (of.west);
+  \draw[bond] (of.east) -- (oh.west);
+  \node[grp, anchor=east] (oi) at (1.72,-1.05) {C$_{17}$H$_{33}$};
+  \node[atom] (oj) at (2.12,-1.05) {C};
+  \node[atom] (ok) at (2.72,-0.55) {O};
+  \node[atom] (om) at (2.78,-1.05) {O};
+  \node[grp] (on) at (3.58,-1.05) {CH$_2$};
+  \draw[bond] (oi.east) -- (oj.west);
+  \draw[dbond] (oj) -- (ok);
+  \draw[bond] (oj.east) -- (om.west);
+  \draw[bond] (om.east) -- (on.west);
+  \draw[bond] (og.south) -- (oh.north);
+  \draw[bond] (oh.south) -- (on.north);
+  \node[lab] at (2.55,-1.72) {油酸甘油酯};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{硬脂酸甘油酯；软脂酸甘油酯}
 \end{figure}
 
@@ -6846,7 +7122,52 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（高级脂肪酸的酰基）（丙三醇的烃基）}]{assets/chemistry-4/fig-p0119-g01.png}}
+\fitfig{%
+% fig-alt: 油脂通式：R'、R''、R'''各连C（双键右上O）—O—接CH2/CH/CH2；下左括弧标（高级脂肪酸的酰基），右括弧标（丙三醇的烃基）
+% redraw: fig-p0119-g01 油脂通式与酰基、甘油烃基
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[grp, anchor=east] (a1) at (1.15,1.05) {R$'$};
+  \node[atom] (c1) at (1.55,1.05) {C};
+  \node[atom] (o1) at (2.15,1.55) {O};
+  \node[atom] (e1) at (2.22,1.05) {O};
+  \node[grp] (g1) at (3.05,1.05) {CH$_2$};
+  \draw[bond] (a1.east) -- (c1.west);
+  \draw[dbond] (c1) -- (o1);
+  \draw[bond] (c1.east) -- (e1.west);
+  \draw[bond] (e1.east) -- (g1.west);
+  \node[grp, anchor=east] (a2) at (1.15,0) {R$''$};
+  \node[atom] (c2) at (1.55,0) {C};
+  \node[atom] (o2) at (2.15,0.50) {O};
+  \node[atom] (e2) at (2.22,0) {O};
+  \node[grp] (g2) at (3.05,0) {CH};
+  \draw[bond] (a2.east) -- (c2.west);
+  \draw[dbond] (c2) -- (o2);
+  \draw[bond] (c2.east) -- (e2.west);
+  \draw[bond] (e2.east) -- (g2.west);
+  \node[grp, anchor=east] (a3) at (1.15,-1.05) {R$'''$};
+  \node[atom] (c3) at (1.55,-1.05) {C};
+  \node[atom] (o3) at (2.15,-0.55) {O};
+  \node[atom] (e3) at (2.22,-1.05) {O};
+  \node[grp] (g3) at (3.05,-1.05) {CH$_2$};
+  \draw[bond] (a3.east) -- (c3.west);
+  \draw[dbond] (c3) -- (o3);
+  \draw[bond] (c3.east) -- (e3.west);
+  \draw[bond] (e3.east) -- (g3.west);
+  \draw[bond] (g1.south) -- (g2.north);
+  \draw[bond] (g2.south) -- (g3.north);
+  \draw[line width=0.48pt] (0.05,-1.58) .. controls (0.85,-1.82) and (0.85,-1.82) .. (1.05,-1.90)
+    .. controls (1.25,-1.82) and (1.95,-1.82) .. (1.95,-1.58);
+  \draw[line width=0.48pt] (2.08,-1.58) .. controls (2.60,-1.82) and (2.60,-1.82) .. (2.78,-1.90)
+    .. controls (2.96,-1.82) and (3.52,-1.82) .. (3.52,-1.58);
+  \node[lab, anchor=north east] at (1.92,-2.02) {\scriptsize （高级脂肪酸的酰基）};
+  \node[lab, anchor=north west] at (2.12,-2.02) {\scriptsize （丙三醇的烃基）};
+\end{tikzpicture}%
+}
 \caption{（高级脂肪酸的酰基）（丙三醇的烃基）}
 \end{figure}
 
@@ -6883,7 +7204,86 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第120页图示}]{assets/chemistry-4/fig-p0120-g01.png}}
+\fitfig{%
+% fig-alt: 油脂酸性水解：左为R'/R''/R'''甘油酯，虚线框住三条酯氧与右侧三分子HOH；箭上(H2SO4)，右为三条脂肪酸与竖式CH2OH—CHOH—CH2OH
+% redraw: fig-p0120-g01 油脂酸性水解生成脂肪酸和甘油
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[grp, anchor=east] (a1) at (1.15,1.05) {R$'$};
+  \node[atom] (c1) at (1.55,1.05) {C};
+  \node[atom] (o1) at (1.82,1.58) {O};
+  \node[atom] (e1) at (2.20,1.05) {O};
+  \node[grp] (g1) at (2.98,1.05) {CH$_2$};
+  \draw[bond] (a1.east) -- (c1.west);
+  \draw[dbond] (c1) -- (o1);
+  \draw[bond] (c1.east) -- (e1.west);
+  \draw[bond] (e1.east) -- (g1.west);
+  \node[grp, anchor=east] (a2) at (1.15,0) {R$''$};
+  \node[atom] (c2) at (1.55,0) {C};
+  \node[atom] (o2) at (1.82,0.52) {O};
+  \node[atom] (e2) at (2.20,0) {O};
+  \node[grp] (g2) at (2.98,0) {CH};
+  \draw[bond] (a2.east) -- (c2.west);
+  \draw[dbond] (c2) -- (o2);
+  \draw[bond] (c2.east) -- (e2.west);
+  \draw[bond] (e2.east) -- (g2.west);
+  \node[grp, anchor=east] (a3) at (1.15,-1.05) {R$'''$};
+  \node[atom] (c3) at (1.55,-1.05) {C};
+  \node[atom] (o3) at (1.82,-0.58) {O};
+  \node[atom] (e3) at (2.20,-1.05) {O};
+  \node[grp] (g3) at (2.98,-1.05) {CH$_2$};
+  \draw[bond] (a3.east) -- (c3.west);
+  \draw[dbond] (c3) -- (o3);
+  \draw[bond] (c3.east) -- (e3.west);
+  \draw[bond] (e3.east) -- (g3.west);
+  \draw[bond] (g1.south) -- (g2.north);
+  \draw[bond] (g2.south) -- (g3.north);
+  \node[atom] at (3.85,0) {$+$};
+  \node[grp] (w1) at (4.62,1.05) {HOH};
+  \node[grp] (w2) at (4.62,0) {HOH};
+  \node[grp] (w3) at (4.62,-1.05) {HOH};
+  \draw[dashed, line width=0.5pt] (2.02,-1.42) rectangle (5.08,1.40);
+  \node[lab] at (6.15,0.38) {(H$_2$SO$_4$)};
+  \draw[->, line width=0.55pt] (5.30,0) -- (7.00,0);
+  \node[grp, anchor=east] (b1) at (8.05,1.05) {R$'$};
+  \node[atom] (d1) at (8.45,1.05) {C};
+  \node[atom] (q1) at (9.02,1.55) {O};
+  \node[grp] (h1) at (9.28,1.05) {OH};
+  \draw[bond] (b1.east) -- (d1.west);
+  \draw[dbond] (d1) -- (q1);
+  \draw[bond] (d1.east) -- (h1.west);
+  \node[grp, anchor=east] (b2) at (8.05,0) {R$''$};
+  \node[atom] (d2) at (8.45,0) {C};
+  \node[atom] (q2) at (9.02,0.50) {O};
+  \node[grp] (h2) at (9.28,0) {OH};
+  \draw[bond] (b2.east) -- (d2.west);
+  \draw[dbond] (d2) -- (q2);
+  \draw[bond] (d2.east) -- (h2.west);
+  \node[grp, anchor=east] (b3) at (8.05,-1.05) {R$'''$};
+  \node[atom] (d3) at (8.45,-1.05) {C};
+  \node[atom] (q3) at (9.02,-0.55) {O};
+  \node[grp] (h3) at (9.28,-1.05) {OH};
+  \draw[bond] (b3.east) -- (d3.west);
+  \draw[dbond] (d3) -- (q3);
+  \draw[bond] (d3.east) -- (h3.west);
+  \node[atom] at (10.05,0) {$+$};
+  \node[grp] (v1) at (10.85,1.05) {CH$_2$};
+  \node[grp] (u1) at (11.78,1.05) {OH};
+  \node[grp] (v2) at (10.85,0) {CH};
+  \node[grp] (u2) at (11.78,0) {OH};
+  \node[grp] (v3) at (10.85,-1.05) {CH$_2$};
+  \node[grp] (u3) at (11.78,-1.05) {OH};
+  \draw[bond] (v1.east) -- (u1.west);
+  \draw[bond] (v2.east) -- (u2.west);
+  \draw[bond] (v3.east) -- (u3.west);
+  \draw[bond] (v1.south) -- (v2.north);
+  \draw[bond] (v2.south) -- (v3.north);
+\end{tikzpicture}%
+}
 \caption{原PDF第120页图示}
 \end{figure}
 
