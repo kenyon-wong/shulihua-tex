@@ -5631,7 +5631,29 @@ x=\frac{5400}{136}\approx39.7\text{（克）}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4-2 直角坐标系的四个象限}]{assets/chemistry-1/fig-p0175-01.png}}
+\fitfig{%
+% fig-alt: 直角坐标系横纵轴交于原点O，虚线方框标出第一象限中横坐标a、纵坐标b，并标出四个象限
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\small, inner sep=1pt}]
+  \draw[->, line width=0.7pt] (-2.15,0) -- (3.45,0) node[right=2pt] {$X$};
+  \draw[->, line width=0.7pt] (0,-2.05) -- (0,3.25) node[above=2pt] {$Y$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \foreach \x in {-1.6,-1.2,-0.8,-0.4,0.45,0.90,1.35,1.80,2.25,2.70}
+    \draw[line width=0.4pt] (\x,-0.055) -- (\x,0.055);
+  \foreach \y in {-1.6,-1.2,-0.8,-0.4,0.45,0.90,1.35,1.80,2.25,2.70}
+    \draw[line width=0.4pt] (-0.055,\y) -- (0.055,\y);
+  \draw[dashed, line width=0.6pt] (0.55,0.55) rectangle (2.45,2.35);
+  \draw[decorate, decoration={brace, amplitude=3.5pt}, line width=0.55pt]
+    (0.55,2.58) -- (2.45,2.58);
+  \node[above=5pt] at (1.50,2.58) {横坐标$=a$};
+  \draw[decorate, decoration={brace, amplitude=3.5pt}, line width=0.55pt]
+    (2.78,2.35) -- (2.78,0.55);
+  \node[right=7pt] at (2.82,1.45) {纵坐标$=b$};
+  \node at (1.50,1.45) {I};
+  \node at (-1.15,1.20) {II};
+  \node at (-1.15,-1.05) {III};
+  \node at (1.20,-1.05) {IV};
+\end{tikzpicture}%
+}
 \caption{图 4-2 直角坐标系的四个象限}
 \end{figure}
 
@@ -5657,7 +5679,34 @@ x=\frac{5400}{136}\approx39.7\text{（克）}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4-4 石膏和消石灰的溶解度曲线}]{assets/chemistry-1/fig-p0176-01.png}}
+\fitfig{%
+% fig-alt: 石膏与消石灰的溶解度曲线，横轴为温度，纵轴为溶解度
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\small, inner sep=1pt}]
+  \begin{scope}[x=0.048cm, y=22cm]
+    \foreach \t in {0,20,40,60,80,100}
+      \draw[gray!60, line width=0.3pt] (\t,0.05) -- (\t,0.23);
+    \foreach \s/\lab in {0.05/0.05,0.07/0.07,0.09/0.09,0.11/0.11,0.13/0.13,0.15/0.15,0.17/0.17,0.19/0.19,0.21/0.21,0.23/0.23}
+      \draw[gray!60, line width=0.3pt] (0,\s) -- (100,\s);
+    \draw[line width=0.7pt] (0,0.05) rectangle (100,0.23);
+    \foreach \t in {0,20,40,60,80,100}
+      \node[below=2pt, inner sep=0pt] at (\t,0.05) {\t};
+    \foreach \s/\lab in {0.05/0.05,0.07/0.07,0.09/0.09,0.11/0.11,0.13/0.13,0.15/0.15,0.17/0.17,0.19/0.19,0.21/0.21,0.23/0.23}
+      \node[left=2pt, inner sep=0pt] at (0,\s) {\lab};
+    % 消石灰：表4·2至80℃，并按原图延至100℃
+    \draw[line width=0.85pt] plot[smooth, tension=0.45] coordinates {
+      (0,0.185) (10,0.176) (20,0.160) (40,0.141)
+      (50,0.128) (60,0.116) (70,0.106) (80,0.094) (100,0.088)};
+    \node[fill=white, inner sep=1pt] at (48,0.155) {消石灰};
+    % 石膏：表中已有点，缺口与100℃末端按原图曲线补出
+    \draw[line width=0.85pt] plot[smooth, tension=0.5] coordinates {
+      (0,0.176) (10,0.193) (20,0.202) (30,0.209) (40,0.214)
+      (50,0.210) (60,0.205) (70,0.197) (80,0.172) (90,0.145) (100,0.122)};
+    \node[fill=white, inner sep=1pt] at (66,0.192) {石膏};
+  \end{scope}
+  \node[below=14pt] at (2.40,1.10) {温度（℃）};
+  \node[rotate=90, anchor=south] at (-1.15,3.08) {溶解度（克）};
+\end{tikzpicture}%
+}
 \caption{图 4-4 石膏和消石灰的溶解度曲线}
 \end{figure}
 
@@ -5672,7 +5721,34 @@ x=\frac{5400}{136}\approx39.7\text{（克）}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4-5 硝酸钾的溶解度曲线}]{assets/chemistry-1/fig-p0176-02.png}}
+\fitfig{%
+% fig-alt: 硝酸钾溶解度曲线，自40℃、60℃作虚线交曲线后读数，a、b标出40℃时的读法
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\small, inner sep=1pt}]
+  \begin{scope}[x=0.052cm, y=0.021cm]
+    \draw[->, line width=0.7pt] (0,0) -- (108,0);
+    \draw[->, line width=0.7pt] (0,0) -- (0,268);
+    \foreach \t in {0,20,40,60,80,100} {
+      \draw[line width=0.45pt] (\t,0) -- (\t,6);
+      \node[below=2pt, inner sep=0pt] at (\t,0) {\t};
+    }
+    \foreach \s/\lab in {0/0,25/25,50/50,75/75,100/100,125/125,150/150,175/175,200/200,225/225,250/250} {
+      \draw[line width=0.45pt] (0,\s) -- (-5,\s);
+      \node[left=2pt, inner sep=0pt] at (0,\s) {\lab};
+    }
+    \draw[line width=0.9pt] plot[smooth, tension=0.28] coordinates {
+      (0,13.3) (10,20.9) (20,31.6) (30,45.8) (40,63.9)
+      (50,85.8) (60,110) (70,128) (80,169) (90,204) (100,245)};
+    \draw[dashed, line width=0.6pt] (40,0) -- (40,63.9);
+    \draw[dashed, line width=0.6pt] (40,63.9) -- (0,63.9);
+    \node[above right=0pt, inner sep=1pt] at (40,63.9) {$a$};
+    \node[left=1pt] at (0,63.9) {$b$};
+    \draw[dashed, line width=0.6pt] (60,0) -- (60,110);
+    \draw[dashed, line width=0.6pt] (60,110) -- (0,110);
+  \end{scope}
+  \node[below=16pt] at (2.60,0) {温度（℃）};
+  \node[rotate=90, anchor=south] at (-1.15,2.55) {溶解度（克）};
+\end{tikzpicture}%
+}
 \caption{图 4-5 硝酸钾的溶解度曲线}
 \end{figure}
 
@@ -8194,7 +8270,21 @@ KOH 称为氢氧化钾
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第239页）}]{assets/chemistry-1/fig-p0239-01.png}}
+\fitfig{%
+% fig-alt: 钙及其化合物转化：钙经1、3分别到氧化钙和氢氧化钙，氧化钙经5到氢氧化钙，再经2、4到氯化钙和硝酸钙
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\small, inner sep=1.5pt}]
+  \node (Ca) at (3.15,2.45) {$\mathrm{Ca}$};
+  \node (CaO) at (1.05,1.15) {$\mathrm{CaO}$};
+  \node (CaOH) at (5.25,1.15) {$\mathrm{Ca(OH)}_{2}$};
+  \node (CaCl) at (0.05,0) {$\mathrm{CaCl}_{2}$};
+  \node (CaN) at (6.45,0) {$\mathrm{Ca(NO}_{3}\mathrm{)}_{2}$};
+  \draw[->, line width=0.7pt] (Ca.south) ++(-0.12,-0.02) -- (CaO.north) node[pos=0.42, above left=0pt] {1};
+  \draw[->, line width=0.7pt] (Ca.south) ++(0.12,-0.02) -- (CaOH.north) node[pos=0.42, above right=0pt] {3};
+  \draw[->, line width=0.7pt] (CaO.east) -- (CaOH.west) node[midway, above=1pt] {5};
+  \draw[->, line width=0.7pt] (CaO.south) ++(-0.08,-0.02) -- (CaCl.north) node[pos=0.55, left=1pt] {2};
+  \draw[->, line width=0.7pt] (CaOH.south) ++(0.10,-0.02) -- (CaN.north) node[pos=0.55, right=1pt] {4};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第239页）}
 \end{figure}
 
@@ -9125,7 +9215,60 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第263页）}]{assets/chemistry-1/fig-p0263-01.png}}
+\fitfig{%
+% fig-alt: 物质分类：物质分为纯净物质和混和物；纯净物质再分为单质与化合物，并展开氧化物、碱、酸、盐
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\footnotesize, inner sep=1pt, anchor=west}]
+  % 单质的三类
+  \node (m) at (5.15,6.55) {金属};
+  \node at (5.15,5.95) {非金属};
+  \node at (5.15,5.35) {惰性气体};
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror}, line width=0.5pt]
+    (4.95,6.75) -- (4.95,5.15);
+  \node[anchor=east] at (4.85,5.95) {单质};
+  % 成盐氧化物的三类
+  \node at (9.55,4.55) {碱性氧化物};
+  \node at (9.55,3.90) {酸性氧化物（酸酐）};
+  \node at (9.55,3.25) {两性氧化物};
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror}, line width=0.5pt]
+    (9.35,4.75) -- (9.35,3.05);
+  \node[anchor=east] at (9.25,4.00) {成盐氧化物};
+  \node at (7.35,2.55) {不成盐氧化物};
+  % 氧化物
+  \draw[decorate, decoration={brace, amplitude=3.5pt, mirror}, line width=0.5pt]
+    (7.15,4.75) -- (7.15,2.35);
+  \node[anchor=east] at (7.05,3.65) {氧化物};
+  % 碱、酸、盐
+  \node at (7.35,1.70) {可溶性碱};
+  \node at (7.35,1.05) {不溶性碱};
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror}, line width=0.5pt]
+    (7.15,1.90) -- (7.15,0.85);
+  \node[anchor=east] at (7.05,1.38) {碱};
+  \node at (7.35,0.20) {含氧酸};
+  \node at (7.35,-0.45) {无氧酸};
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror}, line width=0.5pt]
+    (7.15,0.40) -- (7.15,-0.65);
+  \node[anchor=east] at (7.05,-0.12) {酸};
+  \node at (7.35,-1.30) {正盐};
+  \node at (7.35,-1.95) {酸式盐};
+  \node at (7.35,-2.60) {碱式盐};
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror}, line width=0.5pt]
+    (7.15,-1.10) -- (7.15,-2.80);
+  \node[anchor=east] at (7.05,-1.95) {盐};
+  % 化合物（统摄氧化物、碱、酸、盐）
+  \draw[decorate, decoration={brace, amplitude=4pt, mirror}, line width=0.5pt]
+    (4.95,4.75) -- (4.95,-2.80);
+  \node[anchor=east] at (4.85,1.00) {化合物};
+  % 纯净物质（统摄单质、化合物）
+  \draw[decorate, decoration={brace, amplitude=4pt, mirror}, line width=0.5pt]
+    (2.55,6.75) -- (2.55,-2.80);
+  \node[anchor=east] at (2.45,2.00) {纯净物质};
+  % 物质（纯净物质与混和物）
+  \node[anchor=west] at (1.55,-3.35) {混和物};
+  \draw[decorate, decoration={brace, amplitude=4pt, mirror}, line width=0.5pt]
+    (1.35,6.75) -- (1.35,-3.55);
+  \node[anchor=east] at (1.25,1.60) {物质};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第263页）}
 \end{figure}
 
