@@ -4,6 +4,8 @@
 
 Markdown 正文最初来自 [tradecatlabs/shulihuazixuecongshu](https://github.com/tradecatlabs/shulihuazixuecongshu)。本仓库独立维护 TeX 与 PDF，不是该仓库的 fork，也不发布 EPUB。
 
+> **尚未严格校对。** 当前 TeX 正文和由它生成的 PDF 仍可能含有转写、公式和版式错误。阅读、引用或教学时，建议优先使用 [`raw/`](raw/) 目录中的原始扫描 PDF。
+
 ## 收录书目
 
 - 代数（第一至第四册）
@@ -25,7 +27,7 @@ Markdown 正文最初来自 [tradecatlabs/shulihuazixuecongshu](https://github.c
 ├── books/               # Markdown 对照稿（追踪上游）与插图
 │   ├── *.md
 │   └── assets/          # 4,875 个正文图片资源
-├── raw/                 # 17 册原始扫描 PDF（Git LFS）、导入哈希和资料说明
+├── raw/                 # 17 册原始扫描 PDF（优先阅读；Git LFS）、导入哈希和资料说明
 ├── catalog.json         # 书目、合订分组、语言和稳定 UUID
 ├── scripts/             # 源文件与隐私审计
 ├── docs/                # 来源、维护与已知问题说明
