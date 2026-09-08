@@ -15913,7 +15913,25 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0335-01.png}}
+\fitfig{%
+% fig-alt: 第6题 p-V。1 沿下水平线到 2，竖直线到 3，等温线降到 4。上、下水平虚线；轴标 p(大气压)、V(升)，原点 0
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,3.25);
+  \draw[->,line width=0.85pt] (0,0) -- (5.35,0);
+  \node[anchor=south west,font=\footnotesize] at (0.10,3.28) {$p$(大气压)};
+  \node[anchor=north west,font=\footnotesize] at (5.42,-0.02) {$V$(升)};
+  \node[anchor=north east,font=\footnotesize] at (-0.06,-0.04) {$0$};
+  \draw[dashed,line width=0.55pt] (0,2.52) -- (3.85,2.52);
+  \draw[line width=0.7pt] (0.15,0.98) -- (2.70,0.98);
+  \draw[dashed,line width=0.55pt] (2.70,0.98) -- (4.72,0.98);
+  \draw[line width=0.95pt] (2.70,0.98) -- (2.70,2.52);
+  \draw[line width=0.9pt] plot[smooth] coordinates {(2.70,2.52) (3.05,2.12) (3.42,1.68) (3.82,1.32) (4.22,1.12) (4.72,0.98)};
+  \node[anchor=north,font=\footnotesize] at (1.42,0.90) {$1$};
+  \node[anchor=north east,font=\footnotesize] at (2.62,0.90) {$2$};
+  \node[anchor=south,font=\footnotesize] at (2.70,2.58) {$3$};
+  \node[anchor=west,font=\footnotesize] at (4.80,0.98) {$4$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -15966,7 +15984,28 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.15 热机的热流示意图}]{assets/physics-2/fig-p0337-01.png}}
+\fitfig{%
+% fig-alt: 图9.15 热机热流。上框 T_1 热源，下框 T_2 冷源；Q_1 向下入圆，Q_2 向下入冷源；圆内竖线，右三横线中箭 W=Q_1-Q_2
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.8pt,fill=black!14] (0.15,3.35) rectangle (3.35,4.55);
+  \node[anchor=center,font=\footnotesize] at (1.75,4.12) {$T_1$};
+  \node[anchor=center,font=\footnotesize] at (1.75,3.68) {热源};
+  \draw[line width=0.8pt,fill=black!14] (0.15,0.15) rectangle (3.35,1.35);
+  \node[anchor=center,font=\footnotesize] at (1.75,0.92) {$T_2$};
+  \node[anchor=center,font=\footnotesize] at (1.75,0.48) {冷源};
+  \draw[line width=0.55pt] (0.32,3.35) -- (0.32,1.35);
+  \draw[line width=0.85pt] (1.75,2.35) circle[radius=0.62];
+  \draw[line width=0.7pt] (1.75,2.93) -- (1.75,1.92);
+  \draw[->,line width=0.75pt] (1.75,3.35) -- (1.75,3.02);
+  \node[anchor=west,font=\footnotesize] at (1.86,3.16) {$Q_1$};
+  \draw[->,line width=0.75pt] (1.75,1.70) -- (1.75,1.35);
+  \node[anchor=west,font=\footnotesize] at (0.46,1.58) {$Q_2$};
+  \draw[line width=0.7pt] (2.37,2.50) -- (3.55,2.50);
+  \draw[->,line width=0.75pt] (2.37,2.35) -- (3.82,2.35);
+  \draw[line width=0.7pt] (2.37,2.20) -- (3.55,2.20);
+  \node[anchor=north west,font=\footnotesize] at (2.42,2.12) {$W=Q_1-Q_2$};
+\end{tikzpicture}%
+}
 \caption{图9.15 热机的热流示意图}
 \end{figure}
 
@@ -16060,7 +16099,38 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.16 热机总的热流示意图}]{assets/physics-2/fig-p0339-01.png}}
+\fitfig{%
+% fig-alt: 图9.16 热机总热流。左总高 Q，燃烧支路 Q-Q_1 至燃烧损耗；Q_1 再分，Q_2 至工作部分损耗，Q_1-Q_2 右行；输出厚度 Q'，下弯机械损耗，右端大箭
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.9pt] (0.18,3.18) -- (8.05,3.18);
+  \draw[line width=0.9pt] (8.05,3.18) -- (8.78,2.78) -- (8.05,2.38);
+  \draw[<->,line width=0.55pt] (0.58,0.48) -- (0.58,3.10);
+  \node[anchor=east,font=\footnotesize] at (0.50,1.78) {$Q$};
+  \draw[line width=0.9pt] (0.18,0.48) -- (1.62,0.48);
+  \draw[line width=0.85pt] (1.62,0.48) .. controls (1.95,0.48) and (2.08,0.12) .. (2.42,0.02);
+  \draw[->,line width=0.75pt] (2.22,0.08) -- (2.62,-0.04);
+  \node[anchor=north west,font=\footnotesize] at (2.68,-0.02) {燃烧损耗};
+  \draw[->,line width=0.45pt] (1.48,0.88) -- (1.48,0.62);
+  \node[anchor=south,font=\footnotesize] at (1.48,0.92) {$Q-Q_1$};
+  \draw[line width=0.9pt] (1.62,1.38) -- (3.28,1.38);
+  \draw[<->,line width=0.55pt] (2.02,1.46) -- (2.02,3.10);
+  \node[anchor=east,font=\footnotesize] at (1.94,2.28) {$Q_1$};
+  \draw[<->,line width=0.55pt] (2.92,1.46) -- (2.92,2.42);
+  \node[anchor=east,font=\footnotesize] at (2.84,1.94) {$Q_2$};
+  \draw[line width=0.85pt] (3.28,1.38) .. controls (3.68,1.38) and (3.88,0.72) .. (4.28,0.38);
+  \draw[->,line width=0.75pt] (4.08,0.52) -- (4.48,0.28);
+  \node[anchor=west,font=\footnotesize] at (4.56,0.32) {工作部分损耗};
+  \draw[line width=0.9pt] (3.28,2.48) -- (8.05,2.38);
+  \draw[->,line width=0.45pt] (3.62,3.10) -- (3.62,2.68);
+  \draw[->,line width=0.45pt] (3.62,2.56) -- (3.62,2.92);
+  \node[anchor=south,font=\footnotesize] at (4.12,2.78) {$Q_1-Q_2$};
+  \draw[line width=0.85pt] (6.15,2.42) .. controls (6.38,2.18) and (6.42,1.82) .. (6.72,1.52);
+  \draw[->,line width=0.75pt] (6.55,1.68) -- (6.98,1.38);
+  \node[anchor=west,font=\footnotesize] at (7.06,1.40) {机械损耗};
+  \draw[<->,line width=0.55pt] (6.95,2.44) -- (6.95,3.10);
+  \node[anchor=west,font=\footnotesize] at (7.04,2.72) {$Q'$};
+\end{tikzpicture}%
+}
 \caption{图9.16 热机总的热流示意图}
 \end{figure}
 
@@ -16496,7 +16566,30 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.27 奥托内燃机循环过程的 p - V 图}]{assets/physics-2/fig-p0355-01.png}}
+\fitfig{%
+% fig-alt: 图9.27 奥托循环 p-V。A 右箭到 B；C 上箭到 D；D 沿上曲线到 E；C 沿下曲线向右下到 B；E 竖直到 B。轴标 P、V，原点 O
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,3.55);
+  \draw[->,line width=0.85pt] (0,0) -- (5.05,0);
+  \node[anchor=south west,font=\footnotesize] at (0.10,3.52) {$P$};
+  \node[anchor=west,font=\footnotesize] at (5.12,-0.02) {$V$};
+  \node[anchor=north east,font=\footnotesize] at (-0.06,-0.04) {$O$};
+  \draw[line width=0.9pt] (1.15,0.70) -- (3.62,0.70);
+  \draw[->,line width=0.7pt] (2.05,0.70) -- (2.55,0.70);
+  \draw[line width=0.9pt] (1.15,1.62) -- (1.15,3.02);
+  \draw[->,line width=0.7pt] (1.15,2.05) -- (1.15,2.48);
+  \draw[line width=0.9pt] (3.62,1.28) -- (3.62,0.70);
+  \draw[line width=0.9pt] plot[smooth] coordinates {(1.15,3.02) (1.55,2.35) (2.05,1.82) (2.55,1.55) (3.15,1.36) (3.62,1.28)};
+  \draw[->,line width=0.7pt] (2.05,1.82) -- (2.38,1.62);
+  \draw[line width=0.9pt] plot[smooth] coordinates {(1.15,1.62) (1.55,1.32) (2.05,1.08) (2.55,0.90) (3.10,0.76) (3.62,0.70)};
+  \draw[->,line width=0.7pt] (2.15,1.05) -- (2.45,0.92);
+  \node[anchor=south east,font=\footnotesize] at (1.10,0.76) {$A$};
+  \node[anchor=north west,font=\footnotesize] at (3.70,0.64) {$B$};
+  \node[anchor=east,font=\footnotesize] at (1.06,1.62) {$C$};
+  \node[anchor=east,font=\footnotesize] at (1.06,3.02) {$D$};
+  \node[anchor=west,font=\footnotesize] at (3.72,1.32) {$E$};
+\end{tikzpicture}%
+}
 \caption{图9.27 奥托内燃机循环过程的 \(p - V\) 图}
 \end{figure}
 
@@ -16608,7 +16701,30 @@ C→D 由于将柴油喷入汽缸的过程并不是一瞬间完成的， 一面�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.32 狄塞耳内燃机循环过程的 p - V 图}]{assets/physics-2/fig-p0359-01.png}}
+\fitfig{%
+% fig-alt: 图9.32 狄塞耳循环 p-V。A 右箭到 B；C 到 D 横线上箭向左；C 沿曲线向右下到 B；D 沿曲线向右下到 E；E 竖直到 B。轴标 P、V，原点 O
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,3.45);
+  \draw[->,line width=0.85pt] (0,0) -- (4.85,0);
+  \node[anchor=south west,font=\footnotesize] at (0.10,3.42) {$P$};
+  \node[anchor=west,font=\footnotesize] at (4.92,-0.02) {$V$};
+  \node[anchor=north east,font=\footnotesize] at (-0.06,-0.04) {$O$};
+  \draw[line width=0.9pt] (1.05,0.68) -- (3.42,0.68);
+  \draw[->,line width=0.7pt] (1.95,0.68) -- (2.48,0.68);
+  \draw[line width=0.9pt] (1.18,2.48) -- (2.28,2.48);
+  \draw[->,line width=0.7pt] (1.92,2.48) -- (1.52,2.48);
+  \draw[line width=0.9pt] (3.42,1.02) -- (3.42,0.68);
+  \draw[line width=0.9pt] plot[smooth] coordinates {(1.18,2.48) (1.55,1.82) (2.00,1.32) (2.50,0.95) (3.00,0.78) (3.42,0.68)};
+  \draw[->,line width=0.7pt] (2.05,1.28) -- (2.38,1.08);
+  \draw[line width=0.9pt] plot[smooth] coordinates {(2.28,2.48) (2.55,2.02) (2.82,1.62) (3.08,1.32) (3.28,1.12) (3.42,1.02)};
+  \draw[->,line width=0.7pt] (2.78,1.68) -- (3.02,1.42);
+  \node[anchor=south,font=\footnotesize] at (1.05,0.76) {$A$};
+  \node[anchor=north west,font=\footnotesize] at (3.50,0.58) {$B$};
+  \node[anchor=south east,font=\footnotesize] at (1.14,2.52) {$C$};
+  \node[anchor=south west,font=\footnotesize] at (2.32,2.52) {$D$};
+  \node[anchor=west,font=\footnotesize] at (3.52,1.18) {$E$};
+\end{tikzpicture}%
+}
 \caption{图9.32 狄塞耳内燃机循环过程的 \(p - V\) 图}
 \end{figure}
 
@@ -17420,7 +17536,34 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第378页）}]{assets/physics-2/fig-p0378-01.png}}
+\fitfig{%
+% fig-alt: 第15题 (a) 波形。y(米)、r(米)；0 起正弦两周到 16，峰 ±0.3。Q 在 6 的波谷，P 在 12。上方 v 向右。图下 (a)
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,1.55);
+  \draw[->,line width=0.85pt] (0,0) -- (5.85,0);
+  \node[anchor=south west,font=\footnotesize] at (0.10,1.52) {$y$(米)};
+  \node[anchor=west,font=\footnotesize] at (5.92,-0.02) {$r$(米)};
+  \node[anchor=south west,font=\footnotesize] at (0.06,0.04) {$0$};
+  \draw[dashed,line width=0.5pt] (0,1.08) -- (0.78,1.08);
+  \draw[dashed,line width=0.5pt] (0,-1.08) -- (2.10,-1.08);
+  \node[anchor=east,font=\footnotesize] at (-0.06,1.08) {$+0.3$};
+  \node[anchor=east,font=\footnotesize] at (-0.06,-1.08) {$-0.3$};
+  \draw[line width=0.85pt] plot[smooth] coordinates {(0.000,0.000) (0.068,0.169) (0.136,0.334) (0.204,0.490) (0.272,0.635) (0.340,0.764) (0.408,0.874) (0.476,0.962) (0.544,1.027) (0.612,1.067) (0.680,1.080) (0.748,1.067) (0.816,1.027) (0.884,0.962) (0.952,0.874) (1.020,0.764) (1.088,0.635) (1.156,0.490) (1.224,0.334) (1.292,0.169) (1.360,0.000) (1.428,-0.169) (1.496,-0.334) (1.564,-0.490) (1.632,-0.635) (1.700,-0.764) (1.768,-0.874) (1.836,-0.962) (1.904,-1.027) (1.972,-1.067) (2.040,-1.080) (2.108,-1.067) (2.176,-1.027) (2.244,-0.962) (2.312,-0.874) (2.380,-0.764) (2.448,-0.635) (2.516,-0.490) (2.584,-0.334) (2.652,-0.169) (2.720,-0.000) (2.788,0.169) (2.856,0.334) (2.924,0.490) (2.992,0.635) (3.060,0.764) (3.128,0.874) (3.196,0.962) (3.264,1.027) (3.332,1.067) (3.400,1.080) (3.468,1.067) (3.536,1.027) (3.604,0.962) (3.672,0.874) (3.740,0.764) (3.808,0.635) (3.876,0.490) (3.944,0.334) (4.012,0.169) (4.080,0.000) (4.148,-0.169) (4.216,-0.334) (4.284,-0.490) (4.352,-0.635) (4.420,-0.764) (4.488,-0.874) (4.556,-0.962) (4.624,-1.027) (4.692,-1.067) (4.760,-1.080) (4.828,-1.067) (4.896,-1.027) (4.964,-0.962) (5.032,-0.874) (5.100,-0.764) (5.168,-0.635) (5.236,-0.490) (5.304,-0.334) (5.372,-0.169) (5.440,-0.000)};
+  \node[anchor=north,font=\scriptsize] at (0.68,-0.06) {$2$};
+  \node[anchor=north,font=\scriptsize] at (1.36,-0.06) {$4$};
+  \node[anchor=north,font=\scriptsize] at (2.04,-0.06) {$6$};
+  \node[anchor=north,font=\scriptsize] at (2.72,-0.06) {$8$};
+  \node[anchor=north,font=\scriptsize] at (3.40,-0.06) {$10$};
+  \node[anchor=north,font=\scriptsize] at (4.08,-0.06) {$12$};
+  \node[anchor=north,font=\scriptsize] at (4.76,-0.06) {$14$};
+  \node[anchor=north,font=\scriptsize] at (5.44,-0.06) {$16$};
+  \node[anchor=south,font=\footnotesize] at (4.08,0.08) {$P$};
+  \node[anchor=north,font=\footnotesize] at (2.04,-1.16) {$Q$};
+  \draw[->,line width=0.7pt] (3.55,1.38) -- (4.15,1.38);
+  \node[anchor=south,font=\footnotesize] at (3.85,1.40) {$v$};
+  \node[anchor=north,font=\footnotesize] at (3.40,-0.92) {$(a)$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第378页）}
 \end{figure}
 
@@ -17686,7 +17829,26 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第55题)}]{assets/physics-2/fig-p0382-01.png}}
+\fitfig{%
+% fig-alt: 第55题 V-T。细线自 O 到 1；1 上箭到 2，2 右箭到 3，3 沿斜线箭回 1。轴标 V、T，原点 O
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,3.15);
+  \draw[->,line width=0.85pt] (0,0) -- (4.85,0);
+  \node[anchor=south west,font=\footnotesize] at (0.10,3.12) {$V$};
+  \node[anchor=west,font=\footnotesize] at (4.92,-0.02) {$T$};
+  \node[anchor=north east,font=\footnotesize] at (-0.06,-0.04) {$O$};
+  \draw[line width=0.45pt] (0,0) -- (1.55,0.88);
+  \draw[line width=0.95pt] (1.55,0.88) -- (1.55,2.28);
+  \draw[->,line width=0.7pt] (1.55,1.38) -- (1.55,1.82);
+  \draw[line width=0.95pt] (1.55,2.28) -- (3.85,2.28);
+  \draw[->,line width=0.7pt] (2.40,2.28) -- (2.95,2.28);
+  \draw[line width=0.95pt] (3.85,2.28) -- (1.55,0.88);
+  \draw[->,line width=0.7pt] (2.95,1.72) -- (2.52,1.42);
+  \node[anchor=south east,font=\footnotesize] at (1.48,2.32) {$2$};
+  \node[anchor=west,font=\footnotesize] at (3.94,2.28) {$3$};
+  \node[anchor=north west,font=\footnotesize] at (1.62,0.78) {$1$};
+\end{tikzpicture}%
+}
 \caption{(第55题)}
 \end{figure}
 
@@ -18211,7 +18373,26 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第55题)}]{assets/physics-2/fig-p0392-01.png}}
+\fitfig{%
+% fig-alt: 第55题答案 p-V。1 横线右箭到 3，3 下箭到 2，1 沿曲线向右下到 2。纵轴 p 向上，横轴 V 右端箭向左，原点 0
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,3.15);
+  \draw[line width=0.85pt] (0,0) -- (3.55,0);
+  \draw[->,line width=0.75pt] (4.22,0) -- (3.62,0);
+  \node[anchor=south west,font=\footnotesize] at (0.10,3.12) {$p$};
+  \node[anchor=west,font=\footnotesize] at (4.30,-0.02) {$V$};
+  \node[anchor=north east,font=\footnotesize] at (-0.06,-0.04) {$0$};
+  \draw[line width=0.95pt] (1.20,2.32) -- (3.15,2.32);
+  \draw[->,line width=0.7pt] (1.90,2.32) -- (2.40,2.32);
+  \draw[line width=0.95pt] (3.15,2.32) -- (3.15,0.82);
+  \draw[->,line width=0.7pt] (3.15,1.75) -- (3.15,1.32);
+  \draw[line width=0.9pt] plot[smooth] coordinates {(1.20,2.32) (1.48,1.88) (1.85,1.45) (2.28,1.12) (2.72,0.92) (3.15,0.82)};
+  \draw[->,line width=0.7pt] (1.95,1.42) -- (2.22,1.18);
+  \node[anchor=east,font=\footnotesize] at (1.10,2.32) {$1$};
+  \node[anchor=west,font=\footnotesize] at (3.24,2.32) {$3$};
+  \node[anchor=north west,font=\footnotesize] at (3.18,0.74) {$2$};
+\end{tikzpicture}%
+}
 \caption{(第55题)}
 \end{figure}
 
