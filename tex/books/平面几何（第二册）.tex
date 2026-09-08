@@ -286,7 +286,44 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-2}]{assets/plane-geometry-2/fig-p0005-01.png}}
+\fitfig{%
+% fig-alt: （1）分割规两脚张开，针尖落在线段两端，下方标u；（2）分割规左脚在A、右脚在A_{1}，沿直线向右用虚线弧顺次截取A_{2}、A_{3}、A_{4}，弧上有箭头，近末端有向上短竖线，实线止于B
+\begin{tikzpicture}[line cap=round,line join=round]
+  % （1）
+  \draw[line width=0.75pt] (0.16,0.05) -- (0.62,1.62) -- (1.28,0.05);
+  \draw[line width=0.55pt] (0.54,1.62) -- (0.54,1.82) -- (0.70,1.82) -- (0.70,1.62);
+  \draw[line width=0.55pt] (0.56,1.82) -- (0.56,1.96) arc[start angle=180,end angle=0,radius=0.06] -- (0.68,1.82);
+  \draw[line width=0.7pt] (0.08,0) -- (1.36,0);
+  \draw[line width=0.6pt] (0.08,-0.08) -- (0.08,0.08);
+  \draw[line width=0.6pt] (1.36,-0.08) -- (1.36,0.08);
+  \node[below=2pt] at (0.72,0) {$u$};
+  \node[below=16pt] at (0.72,0) {（1）};
+  % （2）
+  \begin{scope}[xshift=2.15cm]
+    \draw[line width=0.7pt] (0,0) -- (6.15,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \foreach \x in {0.82,1.64,2.46,3.28}
+      \draw[line width=0.55pt] (\x,-0.07) -- (\x,0.07);
+    \draw[line width=0.6pt] (4.10,0) -- (4.10,0.22);
+    \draw[line width=0.6pt] (5.95,-0.09) -- (5.95,0.09);
+    \draw[dashed,->,line width=0.6pt] (0,0) arc[start angle=180,end angle=360,radius=0.41];
+    \draw[dashed,->,line width=0.6pt] (0.82,0) arc[start angle=180,end angle=0,radius=0.41];
+    \draw[dashed,->,line width=0.6pt] (1.64,0) arc[start angle=180,end angle=360,radius=0.41];
+    \draw[dashed,->,line width=0.6pt] (2.46,0) arc[start angle=180,end angle=0,radius=0.41];
+    \draw[dashed,->,line width=0.6pt] (3.28,0) arc[start angle=180,end angle=340,radius=0.41];
+    \draw[line width=0.75pt] (0.04,0.04) -- (0.38,1.58) -- (0.86,0.04);
+    \draw[line width=0.55pt] (0.30,1.58) -- (0.30,1.78) -- (0.46,1.78) -- (0.46,1.58);
+    \draw[line width=0.55pt] (0.32,1.78) -- (0.32,1.92) arc[start angle=180,end angle=0,radius=0.06] -- (0.44,1.78);
+    \node[below=2pt] at (0,0) {$A$};
+    \node[below=2pt] at (0.82,0) {$A_1$};
+    \node[below=2pt] at (1.64,0) {$A_2$};
+    \node[below=2pt] at (2.46,0) {$A_3$};
+    \node[below=2pt] at (3.28,0) {$A_4$};
+    \node[below=2pt] at (5.95,0) {$B$};
+    \node[below=16pt] at (2.7,0) {（2）};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-2}
 \end{figure}
 
@@ -311,7 +348,22 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0006-01.png}}
+\fitfig{%
+% fig-alt: 上方线段u，下方线段AB被三等分，分点依次为A、A_{1}、A_{2}、B，各点有短竖线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0.95) -- (1.7,0.95);
+  \draw[line width=0.6pt] (0,0.86) -- (0,1.04);
+  \draw[line width=0.6pt] (1.7,0.86) -- (1.7,1.04);
+  \node[above=1pt] at (0.85,0.95) {$u$};
+  \draw[line width=0.7pt] (0,0) -- (5.1,0);
+  \foreach \x in {0,1.7,3.4,5.1}
+    \draw[line width=0.6pt] (\x,-0.10) -- (\x,0.10);
+  \node[below=2pt] at (0,0) {$A$};
+  \node[below=2pt] at (1.7,0) {$A_1$};
+  \node[below=2pt] at (3.4,0) {$A_2$};
+  \node[below=2pt] at (5.1,0) {$B$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -321,7 +373,25 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0006-02.png}}
+\fitfig{%
+% fig-alt: 上方左为线段u，下方AB上有等分点A、A_{1}、A_{2}、A_{3}，A_{3}到B为较短剩余段，上方双箭头标r_{1}
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,1.05) -- (1.65,1.05);
+  \draw[line width=0.6pt] (0,0.96) -- (0,1.14);
+  \draw[line width=0.6pt] (1.65,0.96) -- (1.65,1.14);
+  \node[above=1pt] at (0.82,1.05) {$u$};
+  \draw[line width=0.7pt] (0,0) -- (6.15,0);
+  \foreach \x in {0,1.65,3.3,4.95,6.15}
+    \draw[line width=0.6pt] (\x,-0.10) -- (\x,0.10);
+  \draw[<->,line width=0.55pt] (4.95,0.32) -- (6.15,0.32);
+  \node[above=1pt] at (5.55,0.32) {$r_1$};
+  \node[below=2pt] at (0,0) {$A$};
+  \node[below=2pt] at (1.65,0) {$A_1$};
+  \node[below=2pt] at (3.3,0) {$A_2$};
+  \node[below=2pt] at (4.95,0) {$A_3$};
+  \node[below=2pt] at (6.15,0) {$B$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -355,7 +425,28 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0007-01.png}}
+\fitfig{%
+% fig-alt: 上方左标1/10 u，其下短刻度接线段u；下方AB有A、A_{1}、A_{2}、A_{3}，A_{3}至B恰被七等分
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,1.15) -- (1.8,1.15);
+  \draw[line width=0.6pt] (0,1.05) -- (0,1.25);
+  \draw[line width=0.6pt] (1.8,1.05) -- (1.8,1.25);
+  \draw[line width=0.5pt] (0.18,1.08) -- (0.18,1.22);
+  \draw[line width=0.5pt] (0.36,1.08) -- (0.36,1.22);
+  \node[above=1pt] at (0.28,1.15) {$\frac{1}{10}u$};
+  \node[above=1pt] at (0.95,1.15) {$u$};
+  \draw[line width=0.7pt] (0,0) -- (6.48,0);
+  \foreach \x in {0,1.8,3.6,5.4,6.48}
+    \draw[line width=0.6pt] (\x,-0.10) -- (\x,0.10);
+  \foreach \k in {1,2,3,4,5,6}
+    \draw[line width=0.5pt] (5.4+0.154*\k,-0.07) -- (5.4+0.154*\k,0.07);
+  \node[below=2pt] at (0,0) {$A$};
+  \node[below=2pt] at (1.8,0) {$A_1$};
+  \node[below=2pt] at (3.6,0) {$A_2$};
+  \node[below=2pt] at (5.4,0) {$A_3$};
+  \node[below=2pt] at (6.48,0) {$B$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -365,7 +456,30 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0007-02.png}}
+\fitfig{%
+% fig-alt: 上方左标1/10 u并接线段u；下方A、A_{1}、A_{2}、A_{3}后有七个小分点，末段较短剩余上方标r_{2}，右端为B
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,1.15) -- (1.8,1.15);
+  \draw[line width=0.6pt] (0,1.05) -- (0,1.25);
+  \draw[line width=0.6pt] (1.8,1.05) -- (1.8,1.25);
+  \draw[line width=0.5pt] (0.18,1.08) -- (0.18,1.22);
+  \draw[line width=0.5pt] (0.36,1.08) -- (0.36,1.22);
+  \node[above=1pt] at (0.28,1.15) {$\frac{1}{10}u$};
+  \node[above=1pt] at (0.95,1.15) {$u$};
+  \draw[line width=0.7pt] (0,0) -- (6.62,0);
+  \foreach \x in {0,1.8,3.6,5.4}
+    \draw[line width=0.6pt] (\x,-0.10) -- (\x,0.10);
+  \foreach \k in {1,2,3,4,5,6,7}
+    \draw[line width=0.5pt] (5.4+0.148*\k,-0.07) -- (5.4+0.148*\k,0.07);
+  \draw[line width=0.6pt] (6.62,-0.10) -- (6.62,0.10);
+  \node[above=2pt] at (6.53,0.08) {$r_2$};
+  \node[below=2pt] at (0,0) {$A$};
+  \node[below=2pt] at (1.8,0) {$A_1$};
+  \node[below=2pt] at (3.6,0) {$A_2$};
+  \node[below=2pt] at (5.4,0) {$A_3$};
+  \node[below=2pt] at (6.62,0) {$B$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -409,7 +523,29 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-5}]{assets/plane-geometry-2/fig-p0008-01.png}}
+\fitfig{%
+% fig-alt: 上为线段AB，等分点A_{1}、A_{2}、A_{3}，A_{3}到B为短剩余；下为线段CD，近C处有小刻度并标1/10 CD，另有两处长刻度把CD分成三等分
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,1.35) -- (2.55,1.35);
+  \foreach \x in {0,0.72,1.44,2.16,2.55}
+    \draw[line width=0.6pt] (\x,1.25) -- (\x,1.45);
+  \node[above=1pt] at (0,1.35) {$A$};
+  \node[above=1pt] at (2.55,1.35) {$B$};
+  \node[below=1pt] at (0.72,1.35) {$A_1$};
+  \node[below=1pt] at (1.44,1.35) {$A_2$};
+  \node[below=1pt] at (2.16,1.35) {$A_3$};
+  \draw[line width=0.7pt] (0,0) -- (7.65,0);
+  \draw[line width=0.6pt] (0,-0.10) -- (0,0.10);
+  \draw[line width=0.6pt] (7.65,-0.10) -- (7.65,0.10);
+  \draw[line width=0.55pt] (2.55,-0.10) -- (2.55,0.10);
+  \draw[line width=0.55pt] (5.10,-0.10) -- (5.10,0.10);
+  \foreach \x in {0.25,0.50,0.75}
+    \draw[line width=0.45pt] (\x,-0.06) -- (\x,0.06);
+  \node[below=1pt] at (0,0) {$C$};
+  \node[below=12pt] at (0.55,0) {$\frac{1}{10}CD$};
+  \node[below=1pt] at (7.65,0) {$D$};
+\end{tikzpicture}%
+}
 \caption{图1-5}
 \end{figure}
 
@@ -468,7 +604,26 @@ CD 作长度单位去度量 AB 时， 第一回就得用 \(\frac{1}{10}\) CD 去
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-8}]{assets/plane-geometry-2/fig-p0010-01.png}}
+\fitfig{%
+% fig-alt: 三条左端对齐的线段：最上短单位线段两端标B、F；中为AA'，六等分；下为BB'，十一等分，等分点均为短竖线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0.35,1.35) -- (1.05,1.35);
+  \draw[line width=0.6pt] (0.35,1.26) -- (0.35,1.44);
+  \draw[line width=0.6pt] (1.05,1.26) -- (1.05,1.44);
+  \node[left=1pt] at (0.35,1.35) {$B$};
+  \node[right=1pt] at (1.05,1.35) {$F$};
+  \draw[line width=0.7pt] (0.35,0.68) -- (4.55,0.68);
+  \foreach \k in {0,1,2,3,4,5,6}
+    \draw[line width=0.55pt] (0.35+0.70*\k,0.60) -- (0.35+0.70*\k,0.76);
+  \node[left=1pt] at (0.35,0.68) {$A$};
+  \node[right=1pt] at (4.55,0.68) {$A'$};
+  \draw[line width=0.7pt] (0.35,0) -- (8.05,0);
+  \foreach \k in {0,...,11}
+    \draw[line width=0.55pt] (0.35+0.70*\k,-0.08) -- (0.35+0.70*\k,0.08);
+  \node[left=1pt] at (0.35,0) {$B$};
+  \node[right=1pt] at (8.05,0) {$B'$};
+\end{tikzpicture}%
+}
 \caption{图1-8}
 \end{figure}
 
@@ -575,7 +730,27 @@ CD 作长度单位去度量 AB 时， 第一回就得用 \(\frac{1}{10}\) CD 去
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-7}]{assets/plane-geometry-2/fig-p0012-01.png}}
+\fitfig{%
+% fig-alt: 四条左端对齐线段，左侧分别标a、b、c、d；a为四等分、b为七等分且单位相同，c为四等分、d为七等分且单位较大
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0.28,2.15) -- (2.28,2.15);
+  \foreach \k in {0,1,2,3,4}
+    \draw[line width=0.55pt] (0.28+0.50*\k,2.07) -- (0.28+0.50*\k,2.23);
+  \node[left=1pt] at (0.28,2.15) {$a$};
+  \draw[line width=0.7pt] (0.28,1.45) -- (3.78,1.45);
+  \foreach \k in {0,...,7}
+    \draw[line width=0.55pt] (0.28+0.50*\k,1.37) -- (0.28+0.50*\k,1.53);
+  \node[left=1pt] at (0.28,1.45) {$b$};
+  \draw[line width=0.7pt] (0.28,0.72) -- (2.92,0.72);
+  \foreach \k in {0,1,2,3,4}
+    \draw[line width=0.55pt] (0.28+0.66*\k,0.64) -- (0.28+0.66*\k,0.80);
+  \node[left=1pt] at (0.28,0.72) {$c$};
+  \draw[line width=0.7pt] (0.28,0) -- (4.90,0);
+  \foreach \k in {0,...,7}
+    \draw[line width=0.55pt] (0.28+0.66*\k,-0.08) -- (0.28+0.66*\k,0.08);
+  \node[left=1pt] at (0.28,0) {$d$};
+\end{tikzpicture}%
+}
 \caption{图1-7}
 \end{figure}
 
