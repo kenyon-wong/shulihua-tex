@@ -9803,7 +9803,90 @@ N & 1\% & 0.5\% \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第167页图示}]{assets/chemistry-4/fig-p0167-g01.png}}
+\fitfig{%
+% fig-alt: 氨基丙酸缩合：左虚线框H，中虚线框OH+H，右虚线框OH；等号后为…—N—C—C—N—C—C—…+(n)H2O。氨基氢在N上方，甲基在碳上方，氢在碳下方，羰基氧为双键在上
+% redraw: fig-p0167-g01 氨基丙酸缩合
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (hL) at (0.00,0) {H};
+  \node[atom] (n1) at (0.82,0) {N};
+  \node[atom] (n1h) at (0.82,0.78) {H};
+  \node[atom] (a1) at (1.68,0) {C};
+  \node[atom] (a1m) at (1.68,0.78) {CH$_3$};
+  \node[atom] (a1h) at (1.68,-0.78) {H};
+  \node[atom] (c1) at (2.48,0) {C};
+  \node[atom] (c1o) at (2.48,0.72) {O};
+  \node[atom] (oh1) at (3.28,0) {OH};
+  \node[atom] (p1) at (3.88,0) {$+$};
+  \node[atom] (hM) at (4.42,0) {H};
+  \node[atom] (n2) at (5.22,0) {N};
+  \node[atom] (n2h) at (5.22,0.78) {H};
+  \node[atom] (a2) at (6.08,0) {C};
+  \node[atom] (a2m) at (6.08,0.78) {CH$_3$};
+  \node[atom] (a2h) at (6.08,-0.78) {H};
+  \node[atom] (c2) at (6.88,0) {C};
+  \node[atom] (c2o) at (6.88,0.72) {O};
+  \node[atom] (oh2) at (7.68,0) {OH};
+  \node[atom] (p2) at (8.38,0) {$+$};
+  \node[atom] (dots) at (8.95,0) {$\cdots$};
+  \draw[bond] (hL) -- (n1);
+  \draw[bond] (n1h) -- (n1);
+  \draw[bond] (n1) -- (a1);
+  \draw[bond] (a1m) -- (a1);
+  \draw[bond] (a1h) -- (a1);
+  \draw[bond] (a1) -- (c1);
+  \draw[dbond] (c1) -- (c1o);
+  \draw[bond] (c1) -- (oh1);
+  \draw[bond] (hM) -- (n2);
+  \draw[bond] (n2h) -- (n2);
+  \draw[bond] (n2) -- (a2);
+  \draw[bond] (a2m) -- (a2);
+  \draw[bond] (a2h) -- (a2);
+  \draw[bond] (a2) -- (c2);
+  \draw[dbond] (c2) -- (c2o);
+  \draw[bond] (c2) -- (oh2);
+  \draw[dashed, line width=0.5pt] (-0.32,-0.32) rectangle (0.32,0.32);
+  \draw[dashed, line width=0.5pt] (2.92,-0.36) rectangle (4.74,0.36);
+  \draw[dashed, line width=0.5pt] (7.32,-0.32) rectangle (8.04,0.32);
+  \node[atom] (eq) at (0.35,-2.42) {$=$};
+  \node[atom] (d0) at (1.05,-2.42) {$\cdots$};
+  \node[atom] (pn1) at (1.92,-2.42) {N};
+  \node[atom] (pn1h) at (1.92,-1.64) {H};
+  \node[atom] (pa1) at (2.78,-2.42) {C};
+  \node[atom] (pa1m) at (2.78,-1.64) {CH$_3$};
+  \node[atom] (pa1h) at (2.78,-3.20) {H};
+  \node[atom] (pc1) at (3.58,-2.42) {C};
+  \node[atom] (pc1o) at (3.58,-1.70) {O};
+  \node[atom] (pn2) at (4.44,-2.42) {N};
+  \node[atom] (pn2h) at (4.44,-1.64) {H};
+  \node[atom] (pa2) at (5.30,-2.42) {C};
+  \node[atom] (pa2m) at (5.30,-1.64) {CH$_3$};
+  \node[atom] (pa2h) at (5.30,-3.20) {H};
+  \node[atom] (pc2) at (6.10,-2.42) {C};
+  \node[atom] (pc2o) at (6.10,-1.70) {O};
+  \node[atom] (d1) at (6.88,-2.42) {$\cdots$};
+  \node[atom] (pw) at (8.55,-2.42) {$(n)$H$_2$O};
+  \draw[bond] (d0) -- (pn1);
+  \draw[bond] (pn1h) -- (pn1);
+  \draw[bond] (pn1) -- (pa1);
+  \draw[bond] (pa1m) -- (pa1);
+  \draw[bond] (pa1h) -- (pa1);
+  \draw[bond] (pa1) -- (pc1);
+  \draw[dbond] (pc1) -- (pc1o);
+  \draw[bond] (pc1) -- (pn2);
+  \draw[bond] (pn2h) -- (pn2);
+  \draw[bond] (pn2) -- (pa2);
+  \draw[bond] (pa2m) -- (pa2);
+  \draw[bond] (pa2h) -- (pa2);
+  \draw[bond] (pa2) -- (pc2);
+  \draw[dbond] (pc2) -- (pc2o);
+  \draw[bond] (pc2) -- (d1);
+  \node[atom] at (7.58,-2.42) {$+$};
+\end{tikzpicture}%
+}
 \caption{原PDF第167页图示}
 \end{figure}
 
@@ -9811,7 +9894,61 @@ N & 1\% & 0.5\% \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第167页图示}]{assets/chemistry-4/fig-p0167-g02.png}}
+\fitfig{%
+% fig-alt: 不同氨基酸缩合链：…—N—C—C—N—C—C—N—C—C—…。各N上方为H，α碳上方为R1、R2、R3，下方为H，羰基氧为双键在上
+% redraw: fig-p0167-g02 不同氨基酸缩合链
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (d0) at (0.00,0) {$\cdots$};
+  \node[atom] (n1) at (0.88,0) {N};
+  \node[atom] (n1h) at (0.88,0.76) {H};
+  \node[atom] (a1) at (1.74,0) {C};
+  \node[atom] (a1r) at (1.74,0.76) {R$_1$};
+  \node[atom] (a1h) at (1.74,-0.76) {H};
+  \node[atom] (c1) at (2.54,0) {C};
+  \node[atom] (c1o) at (2.54,0.70) {O};
+  \node[atom] (n2) at (3.40,0) {N};
+  \node[atom] (n2h) at (3.40,0.76) {H};
+  \node[atom] (a2) at (4.26,0) {C};
+  \node[atom] (a2r) at (4.26,0.76) {R$_2$};
+  \node[atom] (a2h) at (4.26,-0.76) {H};
+  \node[atom] (c2) at (5.14,0) {C};
+  \node[atom] (c2o) at (5.14,0.70) {O};
+  \node[atom] (n3) at (6.00,0) {N};
+  \node[atom] (n3h) at (6.00,0.76) {H};
+  \node[atom] (a3) at (6.86,0) {C};
+  \node[atom] (a3r) at (6.86,0.76) {R$_3$};
+  \node[atom] (a3h) at (6.86,-0.76) {H};
+  \node[atom] (c3) at (7.66,0) {C};
+  \node[atom] (c3o) at (7.66,0.70) {O};
+  \node[atom] (d1) at (8.48,0) {$\cdots$};
+  \draw[bond] (d0) -- (n1);
+  \draw[bond] (n1h) -- (n1);
+  \draw[bond] (n1) -- (a1);
+  \draw[bond] (a1r) -- (a1);
+  \draw[bond] (a1h) -- (a1);
+  \draw[bond] (a1) -- (c1);
+  \draw[dbond] (c1) -- (c1o);
+  \draw[bond] (c1) -- (n2);
+  \draw[bond] (n2h) -- (n2);
+  \draw[bond] (n2) -- (a2);
+  \draw[bond] (a2r) -- (a2);
+  \draw[bond] (a2h) -- (a2);
+  \draw[bond] (a2) -- (c2);
+  \draw[dbond] (c2) -- (c2o);
+  \draw[bond] (c2) -- (n3);
+  \draw[bond] (n3h) -- (n3);
+  \draw[bond] (n3) -- (a3);
+  \draw[bond] (a3r) -- (a3);
+  \draw[bond] (a3h) -- (a3);
+  \draw[bond] (a3) -- (c3);
+  \draw[dbond] (c3) -- (c3o);
+  \draw[bond] (c3) -- (d1);
+\end{tikzpicture}%
+}
 \caption{原PDF第167页图示}
 \end{figure}
 
@@ -10159,7 +10296,25 @@ x\,\mathrm{CH}_{2}=\mathrm{CHCl}\xrightarrow{\text{聚合}}[-\mathrm{CH}_{2}-\ma
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第177页图示}]{assets/chemistry-4/fig-p0177-g01.png}}
+\fitfig{%
+% fig-alt: 聚氯乙烯链节：“—CH2—CH—”，氯在后一碳的下方
+% redraw: fig-p0177-g01 聚氯乙烯链节
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom, anchor=east] (q1) at (0.05,0) {“};
+  \node[atom] (ch2) at (0.78,0) {CH$_2$};
+  \node[atom] (ch) at (1.78,0) {CH};
+  \node[atom, anchor=west] (q2) at (2.55,0) {”};
+  \node[atom] (cl) at (1.78,-0.82) {Cl};
+  \draw[bond] (0.18,0) -- (ch2);
+  \draw[bond] (ch2) -- (ch);
+  \draw[bond] (ch) -- (2.42,0);
+  \draw[bond] (ch) -- (cl);
+\end{tikzpicture}%
+}
 \caption{原PDF第177页图示}
 \end{figure}
 
@@ -10344,7 +10499,41 @@ n\,\mathrm{CH}_{2}=\mathrm{CH}-\mathrm{CCl}=\mathrm{CH}_{2}\xrightarrow{\text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第186页图示}]{assets/chemistry-4/fig-p0186-g01.png}}
+\fitfig{%
+% fig-alt: 己内酰胺聚合：n NH—(CH2)5—C，羰基氧在上，环用下划线表示；箭上聚合；产物[—N—(CH2)5—C—]n，N上方为H，羰基氧为双键在上
+% redraw: fig-p0186-g01 己内酰胺聚合
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (nn) at (0.00,0) {$n$};
+  \node[atom] (nh) at (0.78,0) {NH};
+  \node[atom] (m5) at (2.15,0) {(CH$_2$)$_5$};
+  \node[atom] (cc) at (3.55,0) {C};
+  \node[atom] (co) at (3.55,0.74) {O};
+  \draw[bond] (nh) -- (m5);
+  \draw[bond] (m5) -- (cc);
+  \draw[dbond] (cc) -- (co);
+  \draw[bond] (3.55,-0.22) -- (3.55,-0.62) -- (0.42,-0.62) -- (0.42,-0.46);
+  \draw[->, line width=0.6pt] (4.15,0.06) -- (5.05,0.06);
+  \node[lab] at (4.60,0.42) {聚合};
+  \draw[line width=0.6pt] (5.42,0.95) -- (5.28,0.95) -- (5.28,-0.32) -- (5.42,-0.32);
+  \node[atom] (pn) at (6.05,0) {N};
+  \node[atom] (pnh) at (6.05,0.74) {H};
+  \node[atom] (pm) at (7.45,0) {(CH$_2$)$_5$};
+  \node[atom] (pc) at (8.85,0) {C};
+  \node[atom] (po) at (8.85,0.74) {O};
+  \draw[bond] (5.48,0) -- (pn);
+  \draw[bond] (pnh) -- (pn);
+  \draw[bond] (pn) -- (pm);
+  \draw[bond] (pm) -- (pc);
+  \draw[dbond] (pc) -- (po);
+  \draw[bond] (pc) -- (9.28,0);
+  \draw[line width=0.6pt] (9.38,0.95) -- (9.52,0.95) -- (9.52,-0.32) -- (9.38,-0.32);
+  \node[atom, anchor=north west] at (9.56,-0.18) {$_n$};
+\end{tikzpicture}%
+}
 \caption{原PDF第186页图示}
 \end{figure}
 
@@ -10364,7 +10553,76 @@ n\,\mathrm{CH}_{2}=\mathrm{CH}-\mathrm{CCl}=\mathrm{CH}_{2}\xrightarrow{\text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第187页图示}]{assets/chemistry-4/fig-p0187-g01.png}}
+\fitfig{%
+% fig-alt: 耐纶：n[H]—N—(CH2)6—N—[H+n HO]—C—(CH2)4—C—[OH]，N上方为H，羰基氧在上；下为划线聚合，产物[—N—(CH2)6—N—C—(CH2)4—C—]n+2n H2O
+% redraw: fig-p0187-g01 己二胺与己二酸聚合
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (nn) at (0.00,0) {$n$};
+  \node[atom] (hL) at (0.62,0) {H};
+  \node[atom] (n1) at (1.42,0) {N};
+  \node[atom] (n1h) at (1.42,0.74) {H};
+  \node[atom] (m6) at (2.72,0) {(CH$_2$)$_6$};
+  \node[atom] (n2) at (4.05,0) {N};
+  \node[atom] (n2h) at (4.05,0.74) {H};
+  \node[atom] (hM) at (4.78,0) {H};
+  \node[atom] (pm) at (5.28,0) {$+$};
+  \node[atom] (na) at (5.78,0) {$n$};
+  \node[atom] (ho) at (6.42,0) {HO};
+  \node[atom] (c1) at (7.32,0) {C};
+  \node[atom] (c1o) at (7.32,0.74) {O};
+  \node[atom] (m4) at (8.55,0) {(CH$_2$)$_4$};
+  \node[atom] (c2) at (9.72,0) {C};
+  \node[atom] (c2o) at (9.72,0.74) {O};
+  \node[atom] (oh) at (10.55,0) {OH};
+  \draw[bond] (hL) -- (n1);
+  \draw[bond] (n1h) -- (n1);
+  \draw[bond] (n1) -- (m6);
+  \draw[bond] (m6) -- (n2);
+  \draw[bond] (n2h) -- (n2);
+  \draw[bond] (n2) -- (hM);
+  \draw[bond] (ho) -- (c1);
+  \draw[dbond] (c1) -- (c1o);
+  \draw[bond] (c1) -- (m4);
+  \draw[bond] (m4) -- (c2);
+  \draw[dbond] (c2) -- (c2o);
+  \draw[bond] (c2) -- (oh);
+  \draw[dashed, line width=0.5pt] (0.32,-0.32) rectangle (0.92,0.32);
+  \draw[dashed, line width=0.5pt] (4.48,-0.36) rectangle (6.78,0.36);
+  \draw[dashed, line width=0.5pt] (10.18,-0.32) rectangle (10.92,0.32);
+  \node[lab] (poly) at (0.55,-1.85) {聚合};
+  \draw[line width=0.55pt] (0.12,-2.08) -- (0.98,-2.08);
+  \draw[line width=0.6pt] (1.48,-0.95) -- (1.34,-0.95) -- (1.34,-2.28) -- (1.48,-2.28);
+  \node[atom] (pn1) at (2.05,-1.62) {N};
+  \node[atom] (pn1h) at (2.05,-0.88) {H};
+  \node[atom] (pm6) at (3.35,-1.62) {(CH$_2$)$_6$};
+  \node[atom] (pn2) at (4.68,-1.62) {N};
+  \node[atom] (pn2h) at (4.68,-0.88) {H};
+  \node[atom] (pc1) at (5.52,-1.62) {C};
+  \node[atom] (pc1o) at (5.52,-0.88) {O};
+  \node[atom] (pm4) at (6.75,-1.62) {(CH$_2$)$_4$};
+  \node[atom] (pc2) at (7.92,-1.62) {C};
+  \node[atom] (pc2o) at (7.92,-0.88) {O};
+  \draw[bond] (1.52,-1.62) -- (pn1);
+  \draw[bond] (pn1h) -- (pn1);
+  \draw[bond] (pn1) -- (pm6);
+  \draw[bond] (pm6) -- (pn2);
+  \draw[bond] (pn2h) -- (pn2);
+  \draw[bond] (pn2) -- (pc1);
+  \draw[dbond] (pc1) -- (pc1o);
+  \draw[bond] (pc1) -- (pm4);
+  \draw[bond] (pm4) -- (pc2);
+  \draw[dbond] (pc2) -- (pc2o);
+  \draw[bond] (pc2) -- (8.38,-1.62);
+  \draw[line width=0.6pt] (8.48,-0.95) -- (8.62,-0.95) -- (8.62,-2.28) -- (8.48,-2.28);
+  \node[atom, anchor=north west] at (8.66,-1.82) {$_n$};
+  \node[atom] at (9.25,-1.62) {$+$};
+  \node[atom, anchor=west] at (9.55,-1.62) {2$n$\,H$_2$O};
+\end{tikzpicture}%
+}
 \caption{原PDF第187页图示}
 \end{figure}
 
@@ -10374,13 +10632,125 @@ n\,\mathrm{CH}_{2}=\mathrm{CH}-\mathrm{CCl}=\mathrm{CH}_{2}\xrightarrow{\text{�
 \(\mathrm{-NH-CO-}\)
 联结着不同长度的碳链如``---（CH₂）₄---''和``---（CH₂）₅---''等而成。所以这一类合成纤维实际上跟天然的动物纤维具有类似的结构。
 
-合成纤维还有很多品种，象聚氯乙烯、聚丙烯腈（俗称奥纶或人造羊毛）以及新型产品特丽纶\footnote{\fitfig{\includegraphics[keepaspectratio,alt={特丽纶结构式}]{assets/chemistry-4/fig-p0188-g01.png}}
+合成纤维还有很多品种，象聚氯乙烯、聚丙烯腈（俗称奥纶或人造羊毛）以及新型产品特丽纶\footnote{\fitfig{%
+% fig-alt: 特丽纶脚注：对苯二甲酸为凯库勒环上下接COOH，乙二醇为竖写CH2—OH；缩聚式n[H]O—CH2—CH2—O[H+n HO]OC—C6H4—CO[OH]=[—O—CH2—CH2—O—CO—C6H4—CO—]n+2n H2O。末框右侧开口
+% redraw: fig-p0188-g01 特丽纶缩聚
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \draw[line width=0.45pt] (0.16,0) circle (0.15);
+  \node[lab] at (0.16,0) {\scriptsize 1};
+  \node[atom, anchor=west] (tx1) at (0.42,0) {特丽纶是对苯二甲酸};
+  \begin{scope}[xshift=5.20cm]
+    \coordinate (t) at (0,0.46);
+    \coordinate (ur) at (0.40,0.23);
+    \coordinate (lr) at (0.40,-0.23);
+    \coordinate (b) at (0,-0.46);
+    \coordinate (ll) at (-0.40,-0.23);
+    \coordinate (ul) at (-0.40,0.23);
+    \draw[dbond] (ul) -- (t);
+    \draw[bond] (t) -- (ur);
+    \draw[dbond] (ur) -- (lr);
+    \draw[bond] (lr) -- (b);
+    \draw[dbond] (b) -- (ll);
+    \draw[bond] (ll) -- (ul);
+    \node[atom] (ct) at (0,1.05) {COOH};
+    \node[atom] (cb) at (0,-1.05) {COOH};
+    \draw[bond] (ct) -- (t);
+    \draw[bond] (b) -- (cb);
+    \draw[line width=0.55pt] (-0.78,1.18) .. controls (-1.05,0.35) and (-1.05,-0.35) .. (-0.78,-1.18);
+    \draw[line width=0.55pt] (0.78,1.18) .. controls (1.05,0.35) and (1.05,-0.35) .. (0.78,-1.18);
+  \end{scope}
+  \node[atom, anchor=west] (tx2) at (6.62,0) {和乙二醇};
+  \begin{scope}[xshift=8.95cm]
+    \node[atom] (g1) at (0,0.42) {CH$_2$};
+    \node[atom] (o1) at (0.78,0.42) {OH};
+    \node[atom] (g2) at (0,-0.42) {CH$_2$};
+    \node[atom] (o2) at (0.78,-0.42) {OH};
+    \draw[bond] (g1) -- (o1);
+    \draw[bond] (g2) -- (o2);
+    \draw[bond] (g1) -- (g2);
+    \draw[line width=0.55pt] (-0.48,0.78) .. controls (-0.68,0.15) and (-0.68,-0.15) .. (-0.48,-0.78);
+    \draw[line width=0.55pt] (1.12,0.78) .. controls (1.32,0.15) and (1.32,-0.15) .. (1.12,-0.78);
+  \end{scope}
+  \node[atom, anchor=west] at (10.45,0) {的缩聚产物：};
+  \node[atom] (rn) at (0.10,-2.55) {$n$};
+  \node[atom] (rh) at (0.78,-2.55) {H};
+  \node[atom] (ro1) at (1.52,-2.55) {O};
+  \node[atom] (c2a) at (2.38,-2.55) {CH$_2$};
+  \node[atom] (c2b) at (3.28,-2.55) {CH$_2$};
+  \node[atom] (ro2) at (4.08,-2.55) {O};
+  \node[atom] (rhm) at (4.86,-2.55) {H};
+  \node[atom] (rp) at (5.40,-2.55) {$+$};
+  \node[atom] (rna) at (5.96,-2.55) {$n$};
+  \node[atom] (rho) at (6.72,-2.55) {HO};
+  \node[atom] (roc) at (7.78,-2.55) {OC};
+  \node[atom] (rph) at (8.98,-2.55) {C$_6$H$_4$};
+  \node[atom] (rco) at (10.12,-2.55) {CO};
+  \node[atom] (roh) at (11.00,-2.55) {OH};
+  \draw[bond] (rh) -- (ro1);
+  \draw[bond] (ro1) -- (c2a);
+  \draw[bond] (c2a) -- (c2b);
+  \draw[bond] (c2b) -- (ro2);
+  \draw[bond] (ro2) -- (rhm);
+  \draw[bond] (rho) -- (roc);
+  \draw[bond] (roc) -- (rph);
+  \draw[bond] (rph) -- (rco);
+  \draw[bond] (rco) -- (roh);
+  \draw[dashed, line width=0.5pt] (0.50,-2.87) rectangle (1.06,-2.23);
+  \draw[dashed, line width=0.5pt] (4.54,-2.91) rectangle (7.12,-2.19);
+  \draw[dashed, line width=0.5pt] (10.64,-2.87) -- (11.38,-2.87);
+  \draw[dashed, line width=0.5pt] (10.64,-2.87) -- (10.64,-2.23) -- (11.38,-2.23);
+  \node[atom] (eq) at (0.85,-3.55) {$=$};
+  \draw[line width=0.6pt] (1.62,-3.22) -- (1.48,-3.22) -- (1.48,-3.88) -- (1.62,-3.88);
+  \node[atom] (po) at (2.12,-3.55) {O};
+  \node[atom] (p2a) at (2.95,-3.55) {CH$_2$};
+  \node[atom] (p2b) at (3.88,-3.55) {CH$_2$};
+  \node[atom] (po2) at (4.70,-3.55) {O};
+  \node[atom] (pco) at (5.58,-3.55) {CO};
+  \node[atom] (pph) at (6.82,-3.55) {C$_6$H$_4$};
+  \node[atom] (pco2) at (8.02,-3.55) {CO};
+  \draw[bond] (1.68,-3.55) -- (po);
+  \draw[bond] (po) -- (p2a);
+  \draw[bond] (p2a) -- (p2b);
+  \draw[bond] (p2b) -- (po2);
+  \draw[bond] (po2) -- (pco);
+  \draw[bond] (pco) -- (pph);
+  \draw[bond] (pph) -- (pco2);
+  \draw[bond] (pco2) -- (8.55,-3.55);
+  \draw[line width=0.6pt] (8.66,-3.22) -- (8.80,-3.22) -- (8.80,-3.88) -- (8.66,-3.88);
+  \node[atom, anchor=north west] at (8.84,-3.68) {$_n$};
+  \node[atom] at (9.32,-3.55) {$+$};
+  \node[atom, anchor=west] at (9.62,-3.55) {2$n$\,H$_2$O.};
+\end{tikzpicture}%
+}
   每一个乙二醇和二个对苯二甲酸结合，同样每一个对苯二甲酸和二个乙二醇结合形成高分子聚合物，所以从结构来看它应当属于酯类。}
 等。它们各具特性和用途，不过它们的原料还是乙炔和煤焦油产物。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第187页图示}]{assets/chemistry-4/fig-p0187-g02.png}}
+\fitfig{%
+% fig-alt: 聚丙烯腈链节：大括号内—CH2—CH—，CN在后一碳下方，右下标n
+% redraw: fig-p0187-g02 聚丙烯腈链节
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \draw[line width=0.6pt] (0.12,0.42) .. controls (-0.16,0.05) and (-0.16,-0.55) .. (0.12,-0.92);
+  \node[atom] (ch2) at (0.95,0) {CH$_2$};
+  \node[atom] (ch) at (2.05,0) {CH};
+  \node[atom] (cn) at (2.05,-0.78) {CN};
+  \draw[bond] (0.38,0) -- (ch2);
+  \draw[bond] (ch2) -- (ch);
+  \draw[bond] (ch) -- (2.72,0);
+  \draw[bond] (ch) -- (cn);
+  \draw[line width=0.6pt] (2.98,0.42) .. controls (3.26,0.05) and (3.26,-0.55) .. (2.98,-0.92);
+  \node[atom, anchor=north west] at (3.18,-0.52) {$_n$};
+\end{tikzpicture}%
+}
 \caption{原PDF第187页图示}
 \end{figure}
 
@@ -10800,7 +11170,46 @@ NH2
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原书脚注中的乙醇制丁二烯结构反应式}]{assets/chemistry-4/fig-p0184-g02.png}}
+\fitfig{%
+% fig-alt: 乙醇制丁二烯的反应物：两分子乙醇，上方H与OH各有虚线框，两分子之间虚线框H+H。无产物、无箭
+% redraw: fig-p0184-g02 乙醇制丁二烯反应物
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (h0) at (0.00,0) {H};
+  \node[atom] (c1) at (0.82,0) {C};
+  \node[atom] (c2) at (1.64,0) {C};
+  \node[atom] (h1u) at (0.82,0.82) {H};
+  \node[atom] (oh1) at (1.64,0.82) {OH};
+  \node[atom] (h1d) at (0.82,-0.78) {H};
+  \node[atom] (h2d) at (1.64,-0.78) {H};
+  \node[atom] (hm1) at (2.42,0) {H};
+  \node[atom] (pm) at (2.98,0) {$+$};
+  \node[atom] (hm2) at (3.54,0) {H};
+  \node[atom] (c3) at (4.32,0) {C};
+  \node[atom] (c4) at (5.14,0) {C};
+  \node[atom] (h4) at (5.96,0) {H};
+  \node[atom] (h3u) at (4.32,0.82) {H};
+  \node[atom] (oh2) at (5.14,0.82) {OH};
+  \node[atom] (h3d) at (4.32,-0.78) {H};
+  \node[atom] (h4d) at (5.14,-0.78) {H};
+  \draw[bond] (h0) -- (c1) -- (c2) -- (hm1);
+  \draw[bond] (c1) -- (h1u);
+  \draw[bond] (c2) -- (oh1);
+  \draw[bond] (c1) -- (h1d);
+  \draw[bond] (c2) -- (h2d);
+  \draw[bond] (hm2) -- (c3) -- (c4) -- (h4);
+  \draw[bond] (c3) -- (h3u);
+  \draw[bond] (c4) -- (oh2);
+  \draw[bond] (c3) -- (h3d);
+  \draw[bond] (c4) -- (h4d);
+  \draw[dashed, line width=0.5pt] (0.46,0.55) rectangle (2.04,1.22);
+  \draw[dashed, line width=0.5pt] (2.12,-0.34) rectangle (3.84,0.34);
+  \draw[dashed, line width=0.5pt] (3.96,0.55) rectangle (5.54,1.22);
+\end{tikzpicture}%
+}
 \caption{原书脚注中的乙醇制丁二烯结构反应式}
 \end{figure}
 
