@@ -2735,7 +2735,51 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（结构式）；（结构简式）}]{assets/chemistry-4/fig-p0046-g02.png}}
+\fitfig{%
+% fig-alt: 苯的结构式（凯库勒式，双键在左上、右侧和下左）与两种结构简式：带圆的六边形、空六边形
+% redraw: fig-p0046-g02 苯的结构式与结构简式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (tC) at (0,1.02) {C};
+  \node[atom] (tH) at (0,1.58) {H};
+  \node[atom] (ulC) at (-0.78,0.50) {C};
+  \node[atom] (ulH) at (-1.36,0.50) {H};
+  \node[atom] (llC) at (-0.78,-0.50) {C};
+  \node[atom] (llH) at (-1.36,-0.50) {H};
+  \node[atom] (bC) at (0,-1.02) {C};
+  \node[atom] (bH) at (0,-1.58) {H};
+  \node[atom] (urC) at (0.78,0.50) {C};
+  \node[atom] (urH) at (1.36,0.50) {H};
+  \node[atom] (lrC) at (0.78,-0.50) {C};
+  \node[atom] (lrH) at (1.36,-0.50) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (urH) -- (urC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \node[lab] at (0,-2.05) {（结构式）};
+  \node at (2.55,0) {或};
+  \begin{scope}[xshift=3.85cm]
+    \draw[bond] (90:0.62) -- (30:0.62) -- (-30:0.62) -- (-90:0.62) -- (-150:0.62) -- (150:0.62) -- cycle;
+    \draw[bond] (0,0) circle (0.30);
+  \end{scope}
+  \node at (5.15,0) {或};
+  \begin{scope}[xshift=6.20cm]
+    \draw[bond] (90:0.62) -- (30:0.62) -- (-30:0.62) -- (-90:0.62) -- (-150:0.62) -- (150:0.62) -- cycle;
+  \end{scope}
+  \node[lab] at (5.02,-2.05) {（结构简式）};
+\end{tikzpicture}%
+}
 \caption{（结构式）；（结构简式）}
 \end{figure}
 
@@ -2769,7 +2813,98 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第48页图示}]{assets/chemistry-4/fig-p0048-g01.png}}
+\fitfig{%
+% fig-alt: 苯与液溴在铁催化下取代生成溴苯和溴化氢；虚线框标出被取代的氢与溴；下行结构简式及分子式
+% redraw: fig-p0048-g01 苯跟溴的取代反应方程式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (tC) at (0,1.00) {C};
+  \node[atom] (tH) at (0,1.54) {H};
+  \node[atom] (ulC) at (-0.76,0.48) {C};
+  \node[atom] (ulH) at (-1.32,0.48) {H};
+  \node[atom] (llC) at (-0.76,-0.48) {C};
+  \node[atom] (llH) at (-1.32,-0.48) {H};
+  \node[atom] (bC) at (0,-1.00) {C};
+  \node[atom] (bH) at (0,-1.54) {H};
+  \node[atom] (urC) at (0.76,0.48) {C};
+  \node[atom] (urH) at (1.78,0.48) {H};
+  \node[atom] (lrC) at (0.76,-0.48) {C};
+  \node[atom] (lrH) at (1.36,-0.48) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (urH) -- (urC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \draw[dashed, line width=0.5pt] (1.50,0.14) rectangle (2.98,0.86);
+  \node[atom] (br1) at (2.52,0.48) {Br};
+  \node[atom] (br2) at (2.52,-0.48) {Br};
+  \node[atom] at (2.95,-1.05) {$+$};
+  \draw[bond] (br1) -- (br2);
+  \draw[line width=0.55pt] (3.28,0.08) -- (4.08,0.08);
+  \draw[line width=0.55pt] (3.28,-0.04) -- (4.08,-0.04);
+  \node[lab] at (3.68,0.38) {Fe};
+  \begin{scope}[xshift=5.70cm]
+    \node[atom] (pT) at (0,1.00) {C};
+    \node[atom] (pTH) at (0,1.54) {H};
+    \node[atom] (pUL) at (-0.76,0.48) {C};
+    \node[atom] (pULH) at (-1.32,0.48) {H};
+    \node[atom] (pLL) at (-0.76,-0.48) {C};
+    \node[atom] (pLLH) at (-1.32,-0.48) {H};
+    \node[atom] (pB) at (0,-1.00) {C};
+    \node[atom] (pBH) at (0,-1.54) {H};
+    \node[atom] (pUR) at (0.76,0.48) {C};
+    \node[atom] (pURX) at (1.40,0.48) {Br};
+    \node[atom] (pLR) at (0.76,-0.48) {C};
+    \node[atom] (pLRH) at (1.34,-0.48) {H};
+    \draw[bond] (pTH) -- (pT);
+    \draw[bond] (pULH) -- (pUL);
+    \draw[bond] (pLLH) -- (pLL);
+    \draw[bond] (pBH) -- (pB);
+    \draw[bond] (pURX) -- (pUR);
+    \draw[bond] (pLRH) -- (pLR);
+    \draw[dbond] (pUL) -- (pT);
+    \draw[dbond] (pUR) -- (pLR);
+    \draw[dbond] (pLL) -- (pB);
+    \draw[bond] (pT) -- (pUR);
+    \draw[bond] (pUL) -- (pLL);
+    \draw[bond] (pLR) -- (pB);
+    \node[lab] at (0.10,-2.02) {溴苯};
+  \end{scope}
+  \node[atom] at (7.70,0) {$+$};
+  \node[atom] at (8.35,0) {HBr};
+  \node[lab] at (0.55,-3.35) {或};
+  \node at (1.05,-3.35) {\scalebox{1.15}[1.65]{$($}};
+  \begin{scope}[xshift=1.85cm, yshift=-3.35cm]
+    \draw[bond] (90:0.48) -- (30:0.48) -- (-30:0.48) -- (-90:0.48) -- (-150:0.48) -- (150:0.48) -- cycle;
+    \draw[bond] (0,0) circle (0.24);
+  \end{scope}
+  \node[atom] at (2.70,-3.35) {$+$};
+  \node[atom] at (3.25,-3.35) {Br$_2$};
+  \draw[line width=0.55pt] (3.75,-3.27) -- (4.45,-3.27);
+  \draw[line width=0.55pt] (3.75,-3.39) -- (4.45,-3.39);
+  \node[lab] at (4.10,-3.05) {Fe};
+  \begin{scope}[xshift=5.15cm, yshift=-3.35cm]
+    \draw[bond] (90:0.48) -- (30:0.48) -- (-30:0.48) -- (-90:0.48) -- (-150:0.48) -- (150:0.48) -- cycle;
+    \draw[bond] (0,0) circle (0.24);
+    \draw[bond] (30:0.48) -- (30:0.82);
+    \node[atom] at (30:1.12) {Br};
+  \end{scope}
+  \node[atom] at (6.35,-3.35) {$+$};
+  \node[atom] at (6.95,-3.35) {HBr};
+  \node at (7.55,-3.35) {\scalebox{1.15}[1.65]{$)$}};
+  \node[lab] at (3.55,-4.55) {$\left(\mathrm{C}_{6}\mathrm{H}_{6}+\mathrm{Br}_{2}\stackrel{\mathrm{Fe}}{=}\mathrm{C}_{6}\mathrm{H}_{5}\mathrm{Br}+\mathrm{HBr}\right)$};
+\end{tikzpicture}%
+}
 \caption{原PDF第48页图示}
 \end{figure}
 
@@ -2791,7 +2926,71 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第49页图示}]{assets/chemistry-4/fig-p0049-g01.png}}
+\fitfig{%
+% fig-alt: 苯加三分子氢在镍催化下生成环己烷；环己烷为全单键六元环，每个碳连两个氢
+% redraw: fig-p0049-g01 苯加氢生成环己烷
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.3pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (tC) at (0,0.92) {C};
+  \node[atom] (tH) at (0,1.42) {H};
+  \node[atom] (ulC) at (-0.70,0.46) {C};
+  \node[atom] (ulH) at (-1.24,0.46) {H};
+  \node[atom] (llC) at (-0.70,-0.46) {C};
+  \node[atom] (llH) at (-1.24,-0.46) {H};
+  \node[atom] (bC) at (0,-0.92) {C};
+  \node[atom] (bH) at (0,-1.42) {H};
+  \node[atom] (urC) at (0.70,0.46) {C};
+  \node[atom] (urH) at (1.24,0.46) {H};
+  \node[atom] (lrC) at (0.70,-0.46) {C};
+  \node[atom] (lrH) at (1.24,-0.46) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (urH) -- (urC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \node[atom] at (2.15,0) {$+3$H$_2$};
+  \draw[line width=0.55pt] (3.05,0.06) -- (3.85,0.06);
+  \node[lab] at (3.45,0.30) {Ni};
+  \begin{scope}[xshift=6.05cm]
+    \node[atom] (cT) at (0,0.95) {C};
+    \node[atom] (cUR) at (0.82,0.48) {C};
+    \node[atom] (cLR) at (0.82,-0.48) {C};
+    \node[atom] (cB) at (0,-0.95) {C};
+    \node[atom] (cLL) at (-0.82,-0.48) {C};
+    \node[atom] (cUL) at (-0.82,0.48) {C};
+    \node[atom] (hT1) at (-0.52,1.78) {H};
+    \node[atom] (hT2) at (0.52,1.78) {H};
+    \node[atom] (hUR1) at (1.48,1.22) {H};
+    \node[atom] (hUR2) at (1.78,0.42) {H};
+    \node[atom] (hLR1) at (1.78,-0.38) {H};
+    \node[atom] (hLR2) at (1.48,-1.18) {H};
+    \node[atom] (hB1) at (-0.52,-1.78) {H};
+    \node[atom] (hB2) at (0.52,-1.78) {H};
+    \node[atom] (hLL1) at (-1.48,-1.18) {H};
+    \node[atom] (hLL2) at (-1.78,-0.38) {H};
+    \node[atom] (hUL1) at (-1.78,0.42) {H};
+    \node[atom] (hUL2) at (-1.48,1.22) {H};
+    \draw[bond] (cT) -- (cUR) -- (cLR) -- (cB) -- (cLL) -- (cUL) -- cycle;
+    \draw[bond] (hT1) -- (cT) -- (hT2);
+    \draw[bond] (hUR1) -- (cUR) -- (hUR2);
+    \draw[bond] (hLR1) -- (cLR) -- (hLR2);
+    \draw[bond] (hB1) -- (cB) -- (hB2);
+    \draw[bond] (hLL1) -- (cLL) -- (hLL2);
+    \draw[bond] (hUL1) -- (cUL) -- (hUL2);
+    \node[lab] at (0,-2.32) {环己烷};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{原PDF第49页图示}
 \end{figure}
 
@@ -3402,7 +3601,85 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={复习题一第7题结构式}]{assets/chemistry-4/manual-p0066-review-q7.png}}
+\fitfig{%
+% fig-alt: 复习题一第7题六个结构式：（1）两个碳分别连两个甲基以及氢与甲基；（2）苯环带正丙基；（3）1-丁烯简式；（4）C6H5—C3H7；（5）新戊烷；（6）1-丁烯的展开式
+% redraw: manual-p0066-review-q7 复习题一第7题结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.6pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    num/.style={inner sep=1pt, anchor=east}]
+  \node[anchor=west] at (0,1.15) {7. 写出下列各物质的名称. 哪些式子是重复的?};
+  \node[num] at (0.55,0) {（1）};
+  \node[grp] (a1) at (1.20,0.58) {CH$_3$};
+  \node[atom] (aC) at (2.05,0) {C};
+  \node[grp] (a2) at (1.20,-0.58) {CH$_3$};
+  \node[atom] (aD) at (3.15,0) {C};
+  \node[atom] (aH) at (3.15,0.62) {H};
+  \node[grp] (a3) at (4.05,-0.58) {CH$_3$};
+  \draw[bond] (a1.south east) -- (aC.north west);
+  \draw[bond] (a2.north east) -- (aC.south west);
+  \draw[bond] (aC) -- (aD);
+  \draw[bond] (aD.north) -- (aH.south);
+  \draw[bond] (aD.south east) -- (a3.north west);
+  \begin{scope}[xshift=6.15cm]
+    \node[num] at (0.55,0) {（2）};
+    \draw[bond] (0:0.52) -- (60:0.52) -- (120:0.52) -- (180:0.52) -- (240:0.52) -- (300:0.52) -- cycle;
+    \draw[bond] (0,0) circle (0.26);
+    \node[grp] (b1) at (1.35,0) {CH$_2$};
+    \node[grp] (b2) at (2.35,0) {CH$_2$};
+    \node[grp] (b3) at (3.40,0) {CH$_3$};
+    \draw[bond] (0.52,0) -- (b1);
+    \draw[bond] (b1) -- (b2) -- (b3);
+  \end{scope}
+  \begin{scope}[yshift=-1.85cm]
+    \node[num] at (0.55,0) {（3）};
+    \node[grp] (c1) at (1.15,0) {CH$_3$};
+    \node[grp] (c2) at (2.20,0) {CH$_2$};
+    \node[grp] (c3) at (3.20,0) {CH};
+    \node[grp] (c4) at (4.15,0) {CH$_2$};
+    \draw[bond] (c1) -- (c2) -- (c3);
+    \draw[dbond] (c3) -- (c4);
+  \end{scope}
+  \begin{scope}[xshift=6.15cm, yshift=-1.85cm]
+    \node[num] at (0.55,0) {（4）};
+    \node[grp, anchor=west] at (0.75,0) {C$_6$H$_5$—C$_3$H$_7$};
+  \end{scope}
+  \begin{scope}[yshift=-4.15cm]
+    \node[num] at (0.55,0) {（5）};
+    \node[grp] (e1) at (2.20,0.78) {CH$_3$};
+    \node[atom] (eC) at (2.20,0) {C};
+    \node[grp] (e2) at (1.15,0) {CH$_3$};
+    \node[grp] (e3) at (3.30,0) {CH$_3$};
+    \node[grp] (e4) at (2.20,-0.78) {CH$_3$};
+    \draw[bond] (e1.south) -- (eC.north);
+    \draw[bond] (e2) -- (eC) -- (e3);
+    \draw[bond] (eC.south) -- (e4.north);
+  \end{scope}
+  \begin{scope}[xshift=6.15cm, yshift=-4.05cm]
+    \node[num] at (0.55,0) {（6）};
+    \node[atom] (f1) at (1.15,0) {C};
+    \node[atom] (f2) at (2.00,0) {C};
+    \node[atom] (f3) at (2.85,0) {C};
+    \node[atom] (f4) at (3.70,0) {C};
+    \node[atom] (f1u) at (1.02,0.72) {H};
+    \node[atom] (f1d) at (1.15,-0.62) {H};
+    \node[atom] (f2u) at (2.12,0.72) {H};
+    \node[atom] (f3u) at (2.85,0.58) {H};
+    \node[atom] (f3d) at (2.85,-0.58) {H};
+    \node[atom] (f4u) at (3.70,0.58) {H};
+    \node[atom] (f4d) at (3.70,-0.58) {H};
+    \node[atom] (f4r) at (4.28,0) {H};
+    \draw[bond] (f1u) -- (f1) -- (f1d);
+    \draw[dbond] (f1) -- (f2);
+    \draw[bond] (f2u) -- (f2);
+    \draw[bond] (f2) -- (f3) -- (f4) -- (f4r);
+    \draw[bond] (f3u) -- (f3) -- (f3d);
+    \draw[bond] (f4u) -- (f4) -- (f4d);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{复习题一第7题结构式}
 \end{figure}
 
@@ -3498,7 +3775,52 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原书脚注中的萘分子结构}]{assets/chemistry-4/fig-p0054-g01.png}}
+\fitfig{%
+% fig-alt: 萘分子结构：两个苯环稠合，共用键为双键，外围五个双键与八个氢
+% redraw: fig-p0054-g01 萘分子结构
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt}]
+  \node[atom] (lt) at (0,0.82) {C};
+  \node[atom] (lth) at (0,1.40) {H};
+  \node[atom] (lul) at (-0.70,0.40) {C};
+  \node[atom] (lulh) at (-1.30,0.40) {H};
+  \node[atom] (lll) at (-0.70,-0.40) {C};
+  \node[atom] (lllh) at (-1.30,-0.40) {H};
+  \node[atom] (lb) at (0,-0.82) {C};
+  \node[atom] (lbh) at (0,-1.40) {H};
+  \node[atom] (su) at (0.70,0.40) {C};
+  \node[atom] (sl) at (0.70,-0.40) {C};
+  \node[atom] (rt) at (1.40,0.82) {C};
+  \node[atom] (rth) at (1.40,1.40) {H};
+  \node[atom] (rur) at (2.10,0.40) {C};
+  \node[atom] (rurh) at (2.70,0.40) {H};
+  \node[atom] (rlr) at (2.10,-0.40) {C};
+  \node[atom] (rlrh) at (2.70,-0.40) {H};
+  \node[atom] (rb) at (1.40,-0.82) {C};
+  \node[atom] (rbh) at (1.40,-1.40) {H};
+  \draw[bond] (lth) -- (lt);
+  \draw[bond] (lulh) -- (lul);
+  \draw[bond] (lllh) -- (lll);
+  \draw[bond] (lbh) -- (lb);
+  \draw[bond] (rth) -- (rt);
+  \draw[bond] (rurh) -- (rur);
+  \draw[bond] (rlrh) -- (rlr);
+  \draw[bond] (rbh) -- (rb);
+  \draw[dbond] (lul) -- (lt);
+  \draw[dbond] (lll) -- (lb);
+  \draw[dbond] (su) -- (sl);
+  \draw[dbond] (rur) -- (rt);
+  \draw[dbond] (rlr) -- (rb);
+  \draw[bond] (lt) -- (su);
+  \draw[bond] (lul) -- (lll);
+  \draw[bond] (lb) -- (sl);
+  \draw[bond] (su) -- (rt);
+  \draw[bond] (sl) -- (rb);
+  \draw[bond] (rur) -- (rlr);
+\end{tikzpicture}%
+}
 \caption{原书脚注中的萘分子结构}
 \end{figure}
 
@@ -3591,7 +3913,54 @@ R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={氯苯}]{assets/chemistry-4/fig-p0070-g01.png}}
+\fitfig{%
+% fig-alt: 氯异丁烷（叔碳连三个甲基和一个氯）与氯苯（氯在苯环右上碳）
+% redraw: fig-p0070-g01 氯异丁烷与氯苯
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.7pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[grp] (m1) at (0,0.78) {CH$_3$};
+  \node[atom] (c0) at (0,0) {C};
+  \node[grp] (m2) at (-1.05,0) {CH$_3$};
+  \node[atom] (cl) at (0.78,0) {Cl};
+  \node[grp] (m3) at (0,-0.78) {CH$_3$};
+  \draw[bond] (m1.south) -- (c0.north);
+  \draw[bond] (m2) -- (c0);
+  \draw[bond] (c0) -- (cl);
+  \draw[bond] (c0.south) -- (m3.north);
+  \node[lab] at (0,-1.48) {氯异丁烷};
+  \begin{scope}[xshift=4.15cm]
+    \node[atom] (tC) at (0,1.02) {C};
+    \node[atom] (tH) at (0,1.58) {H};
+    \node[atom] (ulC) at (-0.78,0.50) {C};
+    \node[atom] (ulH) at (-1.36,0.50) {H};
+    \node[atom] (llC) at (-0.78,-0.50) {C};
+    \node[atom] (llH) at (-1.36,-0.50) {H};
+    \node[atom] (bC) at (0,-1.02) {C};
+    \node[atom] (bH) at (0,-1.58) {H};
+    \node[atom] (urC) at (0.78,0.50) {C};
+    \node[atom] (urX) at (1.64,0.50) {Cl};
+    \node[atom] (lrC) at (0.78,-0.50) {C};
+    \node[atom] (lrH) at (1.36,-0.50) {H};
+    \draw[bond] (tH) -- (tC);
+    \draw[bond] (ulH) -- (ulC);
+    \draw[bond] (llH) -- (llC);
+    \draw[bond] (bH) -- (bC);
+    \draw[bond] (urX) -- (urC);
+    \draw[bond] (lrH) -- (lrC);
+    \draw[dbond] (ulC) -- (tC);
+    \draw[dbond] (urC) -- (lrC);
+    \draw[dbond] (llC) -- (bC);
+    \draw[bond] (tC) -- (urC);
+    \draw[bond] (ulC) -- (llC);
+    \draw[bond] (lrC) -- (bC);
+    \node[lab] at (0.15,-2.05) {氯苯};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{氯苯}
 \end{figure}
 
