@@ -7234,7 +7234,33 @@ C F = \sqrt {B C ^ {2} + B F ^ {2}} = \sqrt {13}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·85}]{assets/solid-geometry/fig-p0072-01.png}}
+\fitfig{%
+% fig-alt: 图1·85：二面角，棱AB实线。上A下B，左下N，右下M。P在棱上。C在右半平面，D在左半平面，∠CPD有小弧。正文写PO、PD，扫描为C、D，无O
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.52,2.68);
+  \coordinate (P) at (1.55,1.52);
+  \coordinate (B) at (1.55,0.46);
+  \coordinate (Lt) at (0.28,1.98);
+  \coordinate (Rt) at (2.78,1.98);
+  \coordinate (Lb) at (0.16,0.10);
+  \coordinate (Rb) at (2.90,0.08);
+  \coordinate (C) at (2.38,1.72);
+  \coordinate (D) at (0.68,0.98);
+  \draw[line width=0.8pt] (Lt) -- (A) -- (Rt);
+  \draw[line width=0.8pt] (Lt) -- (Lb) -- (B) -- (Rb) -- (Rt);
+  \draw[line width=0.8pt] (A) -- (B);
+  \draw[line width=0.8pt] (P) -- (C);
+  \draw[line width=0.95pt] (P) -- (D);
+  \draw[line width=0.55pt] (1.78,1.48) .. controls (1.64,1.36) and (1.46,1.38) .. (1.36,1.28);
+  \node[anchor=south,inner sep=0.15pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.12pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=0.08pt] at (1.62,1.62) {$P$};
+  \node[anchor=west,inner sep=0.1pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.1pt] at (D) {$D$};
+  \node[anchor=north east,inner sep=0.15pt] at (Lb) {$N$};
+  \node[anchor=north west,inner sep=0.15pt] at (Rb) {$M$};
+\end{tikzpicture}%
+}
 \caption{图 1·85}
 \end{figure}
 
@@ -7276,7 +7302,41 @@ C F = \sqrt {B C ^ {2} + B F ^ {2}} = \sqrt {13}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·86}]{assets/solid-geometry/fig-p0073-01.png}}
+\fitfig{%
+% fig-alt: 图1·86：斜坡楔体。M在坡面上。前底A到D，AB上坡45°，BD落到D。B到C虚垂线。坡后棱与地面后棱虚线。D处30°，右端三角面另标30°。正文有平面N，扫描N不明显，只标M
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Sbl) at (0.55,1.72);
+  \coordinate (Sbr) at (3.15,1.78);
+  \coordinate (Sfr) at (2.72,0.40);
+  \coordinate (Sfl) at (0.16,0.32);
+  \coordinate (Gbr) at (3.32,0.82);
+  \coordinate (Gbl) at (0.58,0.78);
+  \coordinate (A) at (0.46,0.33);
+  \coordinate (D) at (1.22,0.33);
+  \coordinate (B) at (1.72,1.42);
+  \coordinate (C) at (1.88,0.76);
+  \draw[line width=0.8pt] (Sbl) -- (Sbr) -- (Sfr);
+  \draw[line width=0.85pt] (Sfl) -- (Sfr);
+  \draw[line width=0.8pt] (Sfl) -- (Sbl);
+  \draw[line width=0.8pt] (Sbr) -- (Gbr) -- (Sfr);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Sbl) -- (Gbl) -- (Gbr);
+  \draw[line width=0.95pt] (A) -- (B);
+  \draw[line width=0.9pt] (B) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (C);
+  \draw[line width=0.7pt] (C) -- (D);
+  \draw[line width=0.5pt] (0.68,0.36) arc[start angle=6, end angle=48, radius=0.24];
+  \draw[line width=0.5pt] (1.36,0.46) arc[start angle=32, end angle=82, radius=0.15];
+  \draw[line width=0.5pt] (2.86,0.48) arc[start angle=16, end angle=58, radius=0.16];
+  \node[anchor=south,inner sep=0.1pt] at (0.82,1.58) {$M$};
+  \node[anchor=north,inner sep=0.1pt] at (0.42,0.18) {$A$};
+  \node[anchor=north,inner sep=0.1pt] at (1.18,0.18) {$D$};
+  \node[anchor=south,inner sep=0.08pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.08pt] at (2.12,0.82) {$C$};
+  \node[anchor=south west,inner sep=0.05pt] at (0.58,0.58) {$45^{\circ}$};
+  \node[anchor=west,inner sep=0.05pt] at (1.55,0.78) {$30^{\circ}$};
+  \node[anchor=west,inner sep=0.08pt] at (3.05,0.32) {$30^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{图 1·86}
 \end{figure}
 
@@ -7316,7 +7376,35 @@ M，使它与这直角三角形所在平面成 \(30^{\circ}\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-87}]{assets/solid-geometry/fig-p0073-02.png}}
+\fitfig{%
+% fig-alt: 图1-87：平面M上直角三角形，斜边AB。C在平面上方，E在AB上，CE实线。D为垂足，CD实线，ED相连。E处标30°。直角在C
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Pl) at (0.10,0.42);
+  \coordinate (Pr) at (2.78,0.32);
+  \coordinate (Pbr) at (3.42,0.95);
+  \coordinate (Pbl) at (0.74,1.08);
+  \coordinate (A) at (0.42,0.58);
+  \coordinate (B) at (2.18,0.54);
+  \coordinate (E) at (1.48,0.56);
+  \coordinate (C) at (1.78,1.52);
+  \coordinate (D) at (1.70,1.02);
+  \draw[line width=0.75pt] (Pl) -- (Pr) -- (Pbr) -- (Pbl) -- cycle;
+  \draw[line width=1.05pt] (A) -- (B);
+  \draw[line width=0.8pt] (A) -- (C) -- (B);
+  \draw[line width=0.85pt] (C) -- (E);
+  \draw[line width=0.8pt] (C) -- (D);
+  \draw[line width=0.75pt] (E) -- (D);
+  \draw[line width=0.5pt] (1.68,1.32) -- (1.60,1.26) -- (1.70,1.20);
+  \draw[line width=0.55pt] (1.58,0.70) arc[start angle=62, end angle=118, radius=0.15];
+  \node[anchor=north east,inner sep=0.1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.1pt] at (B) {$B$};
+  \node[anchor=south,inner sep=0.1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=0.08pt] at (1.42,0.48) {$E$};
+  \node[anchor=east,inner sep=0.08pt] at (1.52,1.12) {$D$};
+  \node[anchor=west,inner sep=0.06pt] at (1.78,0.82) {$30^{\circ}$};
+  \node[anchor=south west,inner sep=0.15pt] at (Pbr) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-87}
 \end{figure}
 
@@ -7375,7 +7463,43 @@ M、N 内作 \(OC \perp AB\)、 \(OD \perp AB\)，则 \(\angle COD\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-88}]{assets/solid-geometry/fig-p0074-01.png}}
+\fitfig{%
+% fig-alt: 图1-88：对棱二面角。棱AB实线，中点O。左上M、左下N，右上Q、右中P。C-O-E、D-O-F为两平面角的对顶角两边。全部可见边实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.55,2.78);
+  \coordinate (O) at (1.55,1.42);
+  \coordinate (B) at (1.55,0.22);
+  \coordinate (Mtl) at (0.28,2.42);
+  \coordinate (Mml) at (0.18,1.48);
+  \coordinate (Nbl) at (0.22,0.12);
+  \coordinate (Qtr) at (2.78,2.48);
+  \coordinate (Pmr) at (2.92,1.38);
+  \coordinate (Rbr) at (2.68,0.18);
+  \coordinate (C) at (0.62,1.82);
+  \coordinate (E) at (2.48,1.02);
+  \coordinate (Dpt) at (0.52,0.88);
+  \coordinate (F) at (2.58,1.96);
+  \draw[line width=0.8pt] (Mtl) -- (A) -- (Qtr);
+  \draw[line width=0.8pt] (Mtl) -- (Mml) -- (Nbl) -- (B);
+  \draw[line width=0.8pt] (Qtr) -- (Pmr) -- (Rbr) -- (B);
+  \draw[line width=0.8pt] (Mml) -- (O);
+  \draw[line width=0.8pt] (Pmr) -- (O);
+  \draw[line width=0.85pt] (A) -- (B);
+  \draw[line width=0.8pt] (C) -- (O) -- (E);
+  \draw[line width=0.8pt] (Dpt) -- (O) -- (F);
+  \node[anchor=south,inner sep=0.12pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=0.06pt] at (1.60,1.46) {$O$};
+  \node[anchor=east,inner sep=0.12pt] at (Mtl) {$M$};
+  \node[anchor=east,inner sep=0.12pt] at (Nbl) {$N$};
+  \node[anchor=west,inner sep=0.12pt] at (Qtr) {$Q$};
+  \node[anchor=west,inner sep=0.1pt] at (Pmr) {$P$};
+  \node[anchor=east,inner sep=0.08pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.08pt] at (Dpt) {$D$};
+  \node[anchor=west,inner sep=0.08pt] at (E) {$E$};
+  \node[anchor=west,inner sep=0.08pt] at (F) {$F$};
+\end{tikzpicture}%
+}
 \caption{图1-88}
 \end{figure}
 
@@ -7434,7 +7558,38 @@ M、N 内作 \(OC \perp AB\)、 \(OD \perp AB\)，则 \(\angle COD\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/solid-geometry/fig-p0075-01.png}}
+\fitfig{%
+% fig-alt: (第5题)：二面角棱P上、Q下，左M右N，棱实线。A在棱上，C在左，E在C下，B在棱上低于A，D在右。AC、CE、EB、BD、CD、DE实线。扫描无120°
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (P) at (1.48,2.55);
+  \coordinate (A) at (1.48,1.72);
+  \coordinate (Bpt) at (1.48,1.05);
+  \coordinate (Q) at (1.48,0.38);
+  \coordinate (Lt) at (0.32,1.92);
+  \coordinate (Rt) at (2.62,1.92);
+  \coordinate (Lb) at (0.18,0.08);
+  \coordinate (Rb) at (2.78,0.06);
+  \coordinate (C) at (0.78,1.42);
+  \coordinate (E) at (0.78,1.05);
+  \coordinate (D) at (2.12,1.02);
+  \draw[line width=0.8pt] (Lt) -- (P) -- (Rt);
+  \draw[line width=0.8pt] (Lt) -- (Lb) -- (Q) -- (Rb) -- (Rt);
+  \draw[line width=0.8pt] (P) -- (Q);
+  \draw[line width=0.8pt] (A) -- (C) -- (E) -- (Bpt);
+  \draw[line width=0.85pt] (Bpt) -- (D);
+  \draw[line width=0.85pt] (C) -- (D);
+  \draw[line width=0.75pt] (D) -- (E);
+  \node[anchor=south,inner sep=0.12pt] at (P) {$P$};
+  \node[anchor=north,inner sep=0.1pt] at (Q) {$Q$};
+  \node[anchor=east,inner sep=0.12pt] at (Lt) {$M$};
+  \node[anchor=west,inner sep=0.12pt] at (Rt) {$N$};
+  \node[anchor=west,inner sep=0.08pt] at (1.56,1.78) {$A$};
+  \node[anchor=east,inner sep=0.08pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.08pt] at (E) {$E$};
+  \node[anchor=south east,inner sep=0.06pt] at (Bpt) {$B$};
+  \node[anchor=west,inner sep=0.1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -7442,7 +7597,28 @@ M、N 内作 \(OC \perp AB\)、 \(OD \perp AB\)，则 \(\angle COD\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/solid-geometry/fig-p0075-02.png}}
+\fitfig{%
+% fig-alt: (第6题)：A左、C右、D上、B下。AD、DC、CB、BA实线，DB实线。AC虚线。M在AB中点。CM、DM实线，M处标60°。提示写∠CMD=60°，扫描有60°
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.12,1.28);
+  \coordinate (B) at (1.42,0.08);
+  \coordinate (C) at (2.78,1.22);
+  \coordinate (D) at (1.68,2.12);
+  \coordinate (M) at (0.77,0.68);
+  \draw[line width=0.8pt] (A) -- (D) -- (C) -- (B) -- cycle;
+  \draw[line width=0.85pt] (D) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.8pt] (C) -- (M);
+  \draw[line width=0.8pt] (D) -- (M);
+  \draw[line width=0.55pt] (0.96,0.82) arc[start angle=55, end angle=118, radius=0.16];
+  \node[anchor=east,inner sep=0.12pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.1pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.12pt] at (C) {$C$};
+  \node[anchor=south,inner sep=0.12pt] at (D) {$D$};
+  \node[anchor=north east,inner sep=0.06pt] at (M) {$M$};
+  \node[anchor=west,inner sep=0.06pt] at (1.05,0.78) {$60^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -7473,7 +7649,40 @@ M、N 内作 \(OC \perp AB\)、 \(OD \perp AB\)，则 \(\angle COD\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/solid-geometry/fig-p0076-01.png}}
+\fitfig{%
+% fig-alt: (第7题)：棱AB，左面N、右面M。C在棱上，CQ在左面、CP在右面，均实线。D在棱上低于C。E在CP上，F在CQ上。DE、DF实线。扫描可见边皆实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.55,1.38);
+  \coordinate (B) at (0.72,0.16);
+  \coordinate (C) at (1.18,0.82);
+  \coordinate (Dpt) at (0.92,0.42);
+  \coordinate (Nl) at (0.06,0.68);
+  \coordinate (Ntl) at (0.58,1.52);
+  \coordinate (Q) at (0.48,1.18);
+  \coordinate (F) at (0.78,1.02);
+  \coordinate (Mbr) at (3.52,0.46);
+  \coordinate (Mtr) at (3.12,1.12);
+  \coordinate (P) at (2.82,0.92);
+  \coordinate (E) at (2.05,0.86);
+  \draw[line width=0.75pt] (Nl) -- (Ntl) -- (A) -- (B) -- cycle;
+  \draw[line width=0.75pt] (A) -- (Mtr) -- (Mbr) -- (B);
+  \draw[line width=0.9pt] (A) -- (B);
+  \draw[line width=0.8pt] (C) -- (Q);
+  \draw[line width=0.95pt] (C) -- (P);
+  \draw[line width=0.8pt] (Dpt) -- (E);
+  \draw[line width=0.8pt] (Dpt) -- (F);
+  \node[anchor=south,inner sep=0.1pt] at (A) {$A$};
+  \node[anchor=south east,inner sep=0.1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=0.06pt] at (1.22,0.88) {$C$};
+  \node[anchor=north,inner sep=0.06pt] at (0.88,0.34) {$D$};
+  \node[anchor=east,inner sep=0.12pt] at (Nl) {$N$};
+  \node[anchor=south east,inner sep=0.08pt] at (Q) {$Q$};
+  \node[anchor=east,inner sep=0.06pt] at (F) {$F$};
+  \node[anchor=south,inner sep=0.08pt] at (E) {$E$};
+  \node[anchor=south,inner sep=0.08pt] at (P) {$P$};
+  \node[anchor=west,inner sep=0.15pt] at (Mbr) {$M$};
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -7494,7 +7703,37 @@ M、N 内作 \(OC \perp AB\)、 \(OD \perp AB\)，则 \(\angle COD\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/solid-geometry/fig-p0076-02.png}}
+\fitfig{%
+% fig-alt: (第8题)：屋面与水平面。M在屋面左前，MK最短斜线到后棱K，MN与MK成25°。右端坡度20°。屋面上有虚线，φ标在MN与水平面交角处。后右A，右前B。问题写MN、MK、20°、25°、φ
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (M) at (0.28,0.32);
+  \coordinate (K) at (1.05,1.28);
+  \coordinate (N) at (1.78,1.08);
+  \coordinate (Abl) at (0.62,1.42);
+  \coordinate (Abr) at (2.62,1.52);
+  \coordinate (Afr) at (2.35,0.48);
+  \coordinate (Hbr) at (2.92,1.02);
+  \coordinate (Hfr) at (3.28,0.18);
+  \draw[line width=0.75pt] (M) -- (Abl) -- (Abr) -- (Afr) -- cycle;
+  \draw[line width=0.75pt] (Afr) -- (Hfr);
+  \draw[line width=0.75pt] (Abr) -- (Hbr) -- (Hfr);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (0.88,1.12) -- (2.28,1.18);
+  \draw[line width=0.9pt] (M) -- (K);
+  \draw[line width=0.85pt] (M) -- (N);
+  \draw[line width=0.7pt] (N) -- (1.92,0.55);
+  \draw[line width=0.5pt] (0.50,0.48) arc[start angle=42, end angle=74, radius=0.26];
+  \draw[line width=0.5pt] (2.50,0.55) arc[start angle=14, end angle=56, radius=0.16];
+  \draw[line width=0.5pt] (1.82,0.68) arc[start angle=-15, end angle=38, radius=0.13];
+  \node[anchor=north east,inner sep=0.1pt] at (M) {$M$};
+  \node[anchor=south,inner sep=0.08pt] at (K) {$K$};
+  \node[anchor=south west,inner sep=0.08pt] at (N) {$N$};
+  \node[anchor=south,inner sep=0.1pt] at (Abr) {$A$};
+  \node[anchor=north west,inner sep=0.1pt] at (Hfr) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (0.62,0.72) {$25^{\circ}$};
+  \node[anchor=west,inner sep=0.06pt] at (2.58,0.42) {$20^{\circ}$};
+  \node[anchor=east,inner sep=0.06pt] at (1.78,0.62) {$\phi$};
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
