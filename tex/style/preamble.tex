@@ -12,6 +12,7 @@
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
+\usepackage{tikz}
 \usepackage{longtable,booktabs,array,calc}
 \IfFileExists{multirow.sty}{\usepackage{multirow}}{}
 \IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
@@ -38,6 +39,10 @@
 
 \setcounter{secnumdepth}{-\maxdimen}
 \setlength{\emergencystretch}{3em}
+% 插图检索：XeLaTeX 由 Makefile 在仓库根目录运行。扫描 PNG 仍用 {assets/...}，
+% 经 {books/} 解析到 books/assets/。矢量/重绘成品将放在 tex/figures/<asset_dir>/<stem>，
+% 正文改为 {figures/<asset_dir>/<stem>.pdf}；首张落地时再把下一行改为
+% \graphicspath{{books/}{tex/}}。见 docs/FIGURES.md。现尚无此类成品，先不改检索路径。
 \graphicspath{{books/}}
 
 \makeatletter
