@@ -12810,7 +12810,25 @@ A 点的横坐标\(x_{1} \approx -0.7\)，B 点的横坐标\(x_{2} \approx 2.7\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-26}]{assets/algebra-3/fig-p0196-02.png}}
+% fig-alt: y=x^2与直线y=2x+2，交于左上近y轴及右上方两点；x轴下标-0.7与2.7；2.7处有竖虚线；抛物线顶点在原点；y上箭头、x右箭头，原点O；刻度无数字
+\fitfig{%
+\begin{tikzpicture}[x=0.62cm,y=0.46cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-2.45,0) -- (3.35,0);
+  \draw[line width=0.95pt,->] (3.18,0) -- (3.95,0);
+  \node[anchor=west] at (3.98,0) {$x$};
+  \draw[line width=0.85pt] (0,-1.15) -- (0,7.55);
+  \draw[line width=0.95pt,->] (0,7.35) -- (0,8.25);
+  \node[anchor=south] at (0,8.28) {$y$};
+  \node[anchor=north west] at (0.10,-0.08) {$O$};
+  \foreach \k in {-2,-1,1,2,3}{\draw[line width=0.5pt] (\k,-0.08) -- (\k,0.08);}
+  \foreach \k in {1,2,3,4,5,6}{\draw[line width=0.5pt] (-0.07,\k) -- (0.07,\k);}
+  \draw[dashed,line width=0.65pt] (2.73,-0.38) -- (2.73,7.15);
+  \draw[line width=1.05pt] plot[domain=-2.15:2.95,samples=48] (\x,{\x*\x});
+  \draw[line width=1.05pt] (-1.62,-1.24) -- (2.95,7.90);
+  \node[anchor=north] at (-0.73,-0.12) {$-0.7$};
+  \node[anchor=north west] at (2.80,-0.08) {$2.7$};
+\end{tikzpicture}%
+}
 \caption{图4-26}
 \end{figure}
 
@@ -13476,7 +13494,33 @@ a x + b y + c > 0 \quad \text{或} \quad a x + b y + c < 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5-1}]{assets/algebra-3/fig-p0207-01.png}}
+% fig-alt: 左框A中国、美国、日本、英国、法国，右框B北京、上海、天津、纽约、华盛顿、东京、伦敦、巴黎；箭头中国→北京、美国→华盛顿、日本→东京、英国→伦敦、法国→巴黎
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0,0) rectangle (1.62,5.55);
+  \draw[line width=0.8pt] (2.95,0) rectangle (5.05,5.55);
+  \node[fill=white,inner sep=1.4pt] at (0.42,5.55) {$A$};
+  \node[fill=white,inner sep=1.4pt] at (3.38,5.55) {$B$};
+  \node at (0.81,4.92) {中国};
+  \node at (0.81,3.82) {美国};
+  \node at (0.81,2.72) {日本};
+  \node at (0.81,1.62) {英国};
+  \node at (0.81,0.52) {法国};
+  \node at (4.00,5.12) {北京};
+  \node at (4.00,4.48) {上海};
+  \node at (4.00,3.84) {天津};
+  \node at (4.00,3.20) {纽约};
+  \node at (4.00,2.52) {华盛顿};
+  \node at (4.00,1.88) {东京};
+  \node at (4.00,1.24) {伦敦};
+  \node at (4.00,0.56) {巴黎};
+  \draw[line width=0.7pt,->] (1.62,4.92) -- (2.95,5.12);
+  \draw[line width=0.7pt,->] (1.62,3.82) -- (2.95,2.52);
+  \draw[line width=0.7pt,->] (1.62,2.72) -- (2.95,1.88);
+  \draw[line width=0.7pt,->] (1.62,1.62) -- (2.95,1.24);
+  \draw[line width=0.7pt,->] (1.62,0.52) -- (2.95,0.56);
+\end{tikzpicture}%
+}
 \caption{图5-1}
 \end{figure}
 
@@ -13484,7 +13528,35 @@ a x + b y + c > 0 \quad \text{或} \quad a x + b y + c < 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5-2}]{assets/algebra-3/fig-p0207-02.png}}
+% fig-alt: 左框A中国、美国、日本、英国、法国，右框B北京、上海、天津、纽约、华盛顿、东京、伦敦、巴黎；中国射出三箭至北京、上海、天津，美国→纽约，日本→东京，英国→伦敦，法国→巴黎；华盛顿无入箭
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0,0) rectangle (1.62,5.55);
+  \draw[line width=0.8pt] (2.95,0) rectangle (5.05,5.55);
+  \node[fill=white,inner sep=1.4pt] at (0.42,5.55) {$A$};
+  \node[fill=white,inner sep=1.4pt] at (3.38,5.55) {$B$};
+  \node at (0.81,4.92) {中国};
+  \node at (0.81,3.82) {美国};
+  \node at (0.81,2.72) {日本};
+  \node at (0.81,1.62) {英国};
+  \node at (0.81,0.52) {法国};
+  \node at (4.00,5.12) {北京};
+  \node at (4.00,4.48) {上海};
+  \node at (4.00,3.84) {天津};
+  \node at (4.00,3.20) {纽约};
+  \node at (4.00,2.52) {华盛顿};
+  \node at (4.00,1.88) {东京};
+  \node at (4.00,1.24) {伦敦};
+  \node at (4.00,0.56) {巴黎};
+  \draw[line width=0.7pt,->] (1.62,5.00) -- (2.95,5.12);
+  \draw[line width=0.7pt,->] (1.62,4.92) -- (2.95,4.48);
+  \draw[line width=0.7pt,->] (1.62,4.84) -- (2.95,3.84);
+  \draw[line width=0.7pt,->] (1.62,3.82) -- (2.95,3.20);
+  \draw[line width=0.7pt,->] (1.62,2.72) -- (2.95,1.88);
+  \draw[line width=0.7pt,->] (1.62,1.62) -- (2.95,1.24);
+  \draw[line width=0.7pt,->] (1.62,0.52) -- (2.95,0.56);
+\end{tikzpicture}%
+}
 \caption{图5-2}
 \end{figure}
 
@@ -13524,7 +13596,33 @@ A 中的每一个元素，B 中都有唯一的元素和它对应，所以这是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.3}]{assets/algebra-3/fig-p0208-01.png}}
+% fig-alt: 上框-3至3标A，下框0、1、4、9标B；箭头向下，-3与3至9，-2与2至4，-1与1至1，0至0
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0,1.25) rectangle (6.35,1.92);
+  \draw[line width=0.8pt] (0,0) rectangle (6.35,0.62);
+  \node[anchor=west] at (6.42,1.58) {$A$};
+  \node[anchor=west] at (6.42,0.31) {$B$};
+  \node at (0.55,1.58) {$-3$};
+  \node at (1.40,1.58) {$-2$};
+  \node at (2.25,1.58) {$-1$};
+  \node at (3.10,1.58) {$0$};
+  \node at (3.95,1.58) {$1$};
+  \node at (4.80,1.58) {$2$};
+  \node at (5.65,1.58) {$3$};
+  \node at (0.85,0.31) {$0$};
+  \node at (2.35,0.31) {$1$};
+  \node at (4.05,0.31) {$4$};
+  \node at (5.45,0.31) {$9$};
+  \draw[line width=0.7pt,->] (0.55,1.25) -- (5.45,0.62);
+  \draw[line width=0.7pt,->] (1.40,1.25) -- (4.05,0.62);
+  \draw[line width=0.7pt,->] (2.25,1.25) -- (2.35,0.62);
+  \draw[line width=0.7pt,->] (3.10,1.25) -- (0.85,0.62);
+  \draw[line width=0.7pt,->] (3.95,1.25) -- (2.35,0.62);
+  \draw[line width=0.7pt,->] (4.80,1.25) -- (4.05,0.62);
+  \draw[line width=0.7pt,->] (5.65,1.25) -- (5.45,0.62);
+\end{tikzpicture}%
+}
 \caption{图5.3}
 \end{figure}
 
@@ -13532,7 +13630,33 @@ A 中的每一个元素，B 中都有唯一的元素和它对应，所以这是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.4}]{assets/algebra-3/fig-p0208-02.png}}
+% fig-alt: 上框较短，居下框右上方，内为0、1、4、9标A；下框-3至3标B；箭头向下，0至0，1至-1与1，4至-2与2，9至-3与3
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (2.55,1.28) rectangle (7.15,1.95);
+  \draw[line width=0.8pt] (0,0) rectangle (7.15,0.62);
+  \node[anchor=west] at (7.22,1.61) {$A$};
+  \node[anchor=west] at (7.22,0.31) {$B$};
+  \node at (3.15,1.61) {$0$};
+  \node at (4.25,1.61) {$1$};
+  \node at (5.35,1.61) {$4$};
+  \node at (6.45,1.61) {$9$};
+  \node at (0.55,0.31) {$-3$};
+  \node at (1.55,0.31) {$-2$};
+  \node at (2.55,0.31) {$-1$};
+  \node at (3.55,0.31) {$0$};
+  \node at (4.55,0.31) {$1$};
+  \node at (5.55,0.31) {$2$};
+  \node at (6.55,0.31) {$3$};
+  \draw[line width=0.7pt,->] (3.15,1.28) -- (3.55,0.62);
+  \draw[line width=0.7pt,->] (4.25,1.28) -- (2.55,0.62);
+  \draw[line width=0.7pt,->] (4.25,1.28) -- (4.55,0.62);
+  \draw[line width=0.7pt,->] (5.35,1.28) -- (1.55,0.62);
+  \draw[line width=0.7pt,->] (5.35,1.28) -- (5.55,0.62);
+  \draw[line width=0.7pt,->] (6.45,1.28) -- (0.55,0.62);
+  \draw[line width=0.7pt,->] (6.45,1.28) -- (6.55,0.62);
+\end{tikzpicture}%
+}
 \caption{图5.4}
 \end{figure}
 
@@ -13558,7 +13682,42 @@ A 的每一元素都有 B 中的唯一元素与它对应，所以这是从集合
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.5}]{assets/algebra-3/fig-p0209-01.png}}
+% fig-alt: 上框-3至3标A，下框-5至7标B；箭头-3→-5、-2→-3、-1→-1、0→1、1→3、2→5、3→7，均向下
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (1.72,1.22) rectangle (7.28,1.88);
+  \draw[line width=0.8pt] (0,0) rectangle (9.05,0.62);
+  \node[anchor=west] at (7.36,1.55) {$A$};
+  \node[anchor=west] at (9.12,0.31) {$B$};
+  \node at (2.15,1.55) {$-3$};
+  \node at (2.95,1.55) {$-2$};
+  \node at (3.75,1.55) {$-1$};
+  \node at (4.55,1.55) {$0$};
+  \node at (5.35,1.55) {$1$};
+  \node at (6.15,1.55) {$2$};
+  \node at (6.95,1.55) {$3$};
+  \node at (0.42,0.31) {$-5$};
+  \node at (1.10,0.31) {$-4$};
+  \node at (1.78,0.31) {$-3$};
+  \node at (2.46,0.31) {$-2$};
+  \node at (3.14,0.31) {$-1$};
+  \node at (3.82,0.31) {$0$};
+  \node at (4.50,0.31) {$1$};
+  \node at (5.18,0.31) {$2$};
+  \node at (5.86,0.31) {$3$};
+  \node at (6.54,0.31) {$4$};
+  \node at (7.22,0.31) {$5$};
+  \node at (7.90,0.31) {$6$};
+  \node at (8.58,0.31) {$7$};
+  \draw[line width=0.7pt,->] (2.15,1.22) -- (0.42,0.62);
+  \draw[line width=0.7pt,->] (2.95,1.22) -- (1.78,0.62);
+  \draw[line width=0.7pt,->] (3.75,1.22) -- (3.14,0.62);
+  \draw[line width=0.7pt,->] (4.55,1.22) -- (4.50,0.62);
+  \draw[line width=0.7pt,->] (5.35,1.22) -- (5.86,0.62);
+  \draw[line width=0.7pt,->] (6.15,1.22) -- (7.22,0.62);
+  \draw[line width=0.7pt,->] (6.95,1.22) -- (8.58,0.62);
+\end{tikzpicture}%
+}
 \caption{图5.5}
 \end{figure}
 
@@ -13577,7 +13736,24 @@ A 的每一元素都有 B 中的唯一元素和它对应，所以这是从集合
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5-6}]{assets/algebra-3/fig-p0209-02.png}}
+% fig-alt: 上框1、2、3标A，下框1、1/2、1/3标B；三支竖箭向下，1→1、2→1/2、3→1/3
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0,1.15) rectangle (2.85,1.72);
+  \draw[line width=0.8pt] (0,0) rectangle (2.85,0.72);
+  \node[anchor=west] at (2.92,1.43) {$A$};
+  \node[anchor=west] at (2.92,0.36) {$B$};
+  \node at (0.48,1.43) {$1$};
+  \node at (1.42,1.43) {$2$};
+  \node at (2.36,1.43) {$3$};
+  \node at (0.48,0.36) {$1$};
+  \node at (1.42,0.36) {$\frac{1}{2}$};
+  \node at (2.36,0.36) {$\frac{1}{3}$};
+  \draw[line width=0.7pt,->] (0.48,1.15) -- (0.48,0.72);
+  \draw[line width=0.7pt,->] (1.42,1.15) -- (1.42,0.72);
+  \draw[line width=0.7pt,->] (2.36,1.15) -- (2.36,0.72);
+\end{tikzpicture}%
+}
 \caption{图5-6}
 \end{figure}
 
@@ -13616,7 +13792,27 @@ g: y \rightarrow \frac{1}{2} y = x
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.7}]{assets/algebra-3/fig-p0210-02.png}}
+% fig-alt: 左椭圆下标B，内为2、4、6、8；右椭圆下标A，内为1、2、3、4；四支水平箭向右，2→1、4→2、6→3、8→4
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0,0) ellipse (1.08 and 2.05);
+  \draw[line width=0.8pt] (4.25,0) ellipse (1.08 and 2.05);
+  \node[anchor=west] at (-0.68,1.28) {$2$};
+  \node[anchor=west] at (-0.68,0.42) {$4$};
+  \node[anchor=west] at (-0.68,-0.44) {$6$};
+  \node[anchor=west] at (-0.68,-1.30) {$8$};
+  \draw[line width=0.7pt,->] (-0.32,1.28) -- (3.28,1.28);
+  \draw[line width=0.7pt,->] (-0.32,0.42) -- (3.28,0.42);
+  \draw[line width=0.7pt,->] (-0.22,-0.44) -- (3.28,-0.44);
+  \draw[line width=0.7pt,->] (-0.32,-1.30) -- (3.28,-1.30);
+  \node[anchor=west] at (3.48,1.28) {$1$};
+  \node[anchor=west] at (3.48,0.42) {$2$};
+  \node[anchor=west] at (3.48,-0.44) {$3$};
+  \node[anchor=west] at (3.48,-1.30) {$4$};
+  \node[anchor=north] at (-0.12,-2.12) {$B$};
+  \node[anchor=north] at (4.12,-2.12) {$A$};
+\end{tikzpicture}%
+}
 \caption{图5.7}
 \end{figure}
 
