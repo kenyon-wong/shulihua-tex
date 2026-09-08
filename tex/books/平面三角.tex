@@ -4326,7 +4326,19 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-4}]{assets/plane-trigonometry/fig-p0058-02.png}}
+\fitfig{%
+% fig-alt: 顺时针三圈螺线，始边OA水平向右，终边OB指向右下方，中心上方标O，OA与OB之间有小角弧，无度数
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.6pt, domain=-16:-1080, samples=280, smooth]
+    plot ({(0.20+0.00112*abs(\x))*cos(\x)}, {(0.20+0.00112*abs(\x))*sin(\x)});
+  \draw[line width=0.7pt] (0.06,0) -- (2.35,0);
+  \draw[line width=0.7pt] (0,0) -- (290:1.88);
+  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=-70, radius=0.42];
+  \node[above=3pt,inner sep=1pt] at (2.35,0) {$A$};
+  \node[below right=3pt,inner sep=1.2pt] at (290:2.02) {$B$};
+  \node[inner sep=1pt] at (-0.08,0.42) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-4}
 \end{figure}
 
@@ -4412,7 +4424,34 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-5}]{assets/plane-trigonometry/fig-p0059-01.png}}
+\fitfig{%
+% fig-alt: 坐标轴，x轴下标-4至5，y轴右侧标2、1、-1至-4，象限标I至IV；A在+4，B在-3，D在y轴-5，原点标0
+\begin{tikzpicture}[x=0.50cm,y=0.46cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-4.4,0) -- (5.15,0);
+  \draw[line width=0.7pt,-latex] (5.15,0) -- (5.9,0) node[right=2pt] {$x$};
+  \draw[line width=0.7pt] (0,-6.4) -- (0,2.15);
+  \draw[line width=0.7pt,-latex] (0,2.15) -- (0,2.85) node[above=2pt] {$y$};
+  \foreach \i in {-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw[line width=0.5pt] (\i,-0.10) -- (\i,0.10);
+  \foreach \i in {-4,-3,-2,-1,0,1,2,3,4,5}
+    \node[below=3pt,inner sep=0.8pt] at (\i,0) {\scriptsize $\i$};
+  \foreach \j in {1,2,-1,-2,-3,-4,-6}
+    \draw[line width=0.5pt] (-0.10,\j) -- (0.10,\j);
+  \draw[line width=0.5pt] (-0.10,-5) -- (0.10,-5);
+  \foreach \j in {1,2,-1,-2,-3,-4}
+    \node[right=3pt,inner sep=0.8pt] at (0,\j) {\scriptsize $\j$};
+  \fill (4,0) circle (1.15pt);
+  \fill (-3,0) circle (1.15pt);
+  \fill (0,-5) circle (1.15pt);
+  \node[anchor=south,inner sep=1pt] at (4,0.18) {$A$};
+  \node[anchor=south,inner sep=1pt] at (-3,0.16) {$B$};
+  \node[anchor=east,inner sep=1pt] at (-0.22,-5) {$D$};
+  \node at (2.55,1.15) {$\mathrm{I}$};
+  \node at (-1.85,1.72) {$\mathrm{II}$};
+  \node at (-2.35,-2.85) {$\mathrm{III}$};
+  \node at (2.55,-2.55) {$\mathrm{IV}$};
+\end{tikzpicture}%
+}
 \caption{图3-5}
 \end{figure}
 
@@ -4422,7 +4461,37 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-6}]{assets/plane-trigonometry/fig-p0059-02.png}}
+\fitfig{%
+% fig-alt: 坐标轴有单位刻度、无数字；P向两轴作虚线，垂足N、M；点A、B、C、D、E、F，原点标O
+\begin{tikzpicture}[x=0.46cm,y=0.46cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-4.7,0) -- (5.15,0);
+  \draw[line width=0.7pt,-latex] (5.15,0) -- (5.85,0) node[right=1pt] {$x$};
+  \draw[line width=0.7pt] (0,-4.35) -- (0,4.15);
+  \draw[line width=0.7pt,-latex] (0,4.15) -- (0,4.8) node[above=1pt] {$y$};
+  \foreach \i in {-4,-3,-2,-1,1,2,3,4,5}
+    \draw[line width=0.5pt] (\i,-0.09) -- (\i,0.09);
+  \foreach \j in {-4,-2,-1,1,2,4}
+    \draw[line width=0.5pt] (-0.09,\j) -- (0.09,\j);
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0,3) -- (2,3) -- (2,0);
+  \fill (2,3) circle (1.15pt);
+  \fill (3,2) circle (1.15pt);
+  \fill (-3,2) circle (1.15pt);
+  \fill (-4,-2) circle (1.15pt);
+  \fill (3,-2.5) circle (1.15pt);
+  \fill (4,0) circle (1.15pt);
+  \fill (0,-3) circle (1.15pt);
+  \node[right=4pt,inner sep=1pt] at (2,3) {$P$};
+  \node[right=4pt,inner sep=1pt] at (3,2) {$A$};
+  \node[right=4pt,inner sep=1pt] at (-3,2) {$B$};
+  \node[right=4pt,inner sep=1pt] at (-4,-2) {$C$};
+  \node[right=4pt,inner sep=1pt] at (3,-2.5) {$D$};
+  \node[anchor=south,inner sep=1pt] at (4,0.42) {$E$};
+  \node[anchor=east,inner sep=1pt] at (-0.70,-3) {$F$};
+  \node[anchor=south east,inner sep=1pt] at (-0.55,3.18) {$N$};
+  \node[anchor=north,inner sep=1pt] at (2.15,-0.38) {$M$};
+  \node[anchor=north east,inner sep=1pt] at (-0.32,-0.28) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-6}
 \end{figure}
 
@@ -4448,7 +4517,25 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-7}]{assets/plane-trigonometry/fig-p0060-01.png}}
+\fitfig{%
+% fig-alt: 原点O，正x轴与正y轴带箭头；M在正x轴，N在负y轴，虚线构成直角折线，交点P在第四象限，无数字
+\begin{tikzpicture}[x=0.52cm,y=0.50cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0,0) -- (4.05,0);
+  \draw[line width=0.7pt,-latex] (4.05,0) -- (4.8,0) node[right=1pt] {$x$};
+  \draw[line width=0.7pt] (0,-4.85) -- (0,0);
+  \draw[line width=0.7pt,-latex] (0,0) -- (0,0.95) node[above=1pt] {$y$};
+  \foreach \i in {1,2,3}
+    \draw[line width=0.5pt] (\i,-0.09) -- (\i,0.09);
+  \foreach \j in {-1,-2,-3,-4}
+    \draw[line width=0.5pt] (-0.09,\j) -- (0.09,\j);
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0,-3.5) -- (2.5,-3.5) -- (2.5,0);
+  \fill (2.5,-3.5) circle (1.15pt);
+  \node[anchor=north west,inner sep=1pt] at (2.64,-0.50) {$M$};
+  \node[anchor=east,inner sep=1pt] at (-0.48,-3.5) {$N$};
+  \node[anchor=west,inner sep=1pt] at (2.68,-3.5) {$P$};
+  \node[anchor=north east,inner sep=1pt] at (-0.28,-0.24) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-7}
 \end{figure}
 
@@ -4503,7 +4590,24 @@ IV & + & - \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-8}]{assets/plane-trigonometry/fig-p0061-01.png}}
+\fitfig{%
+% fig-alt: x轴与过O向上的y轴带箭头；M在O左侧，P在M正上方，MP为实线并有单位刻度，无数字
+\begin{tikzpicture}[x=0.50cm,y=0.46cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-3.45,0) -- (1.15,0);
+  \draw[line width=0.7pt,-latex] (1.15,0) -- (1.9,0) node[right=1pt] {$x$};
+  \draw[line width=0.7pt] (0,0) -- (0,1.55);
+  \draw[line width=0.7pt,-latex] (0,1.55) -- (0,2.35) node[above=2pt,inner sep=1pt] {$y$};
+  \draw[line width=0.7pt] (-3,0) -- (-3,4);
+  \foreach \i in {-2,-1}
+    \draw[line width=0.5pt] (\i,-0.09) -- (\i,0.09);
+  \foreach \k in {1,2,3}
+    \draw[line width=0.5pt] (-3.10,\k) -- (-2.90,\k);
+  \fill (-3,4) circle (1.15pt);
+  \node[anchor=east,inner sep=1pt] at (-3.22,4.05) {$P$};
+  \node[anchor=north east,inner sep=1pt] at (-3.22,-0.28) {$M$};
+  \node[anchor=north,inner sep=1pt] at (0.22,-0.36) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-8}
 \end{figure}
 
@@ -4513,7 +4617,24 @@ IV & + & - \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-9}]{assets/plane-trigonometry/fig-p0061-02.png}}
+\fitfig{%
+% fig-alt: x轴与过O向上的y轴带箭头；M在O左侧，P在M正下方，MP为实线并有单位刻度，无数字
+\begin{tikzpicture}[x=0.44cm,y=0.48cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-5.5,0) -- (1.15,0);
+  \draw[line width=0.7pt,-latex] (1.15,0) -- (1.85,0) node[right=1pt] {$x$};
+  \draw[line width=0.7pt] (0,0) -- (0,1.1);
+  \draw[line width=0.7pt,-latex] (0,1.1) -- (0,1.9) node[above=2pt,inner sep=1pt] {$y$};
+  \draw[line width=0.7pt] (-5,0) -- (-5,-3.5);
+  \foreach \i in {-4,-3,-2,-1,1}
+    \draw[line width=0.5pt] (\i,-0.09) -- (\i,0.09);
+  \foreach \k in {-1,-2,-3}
+    \draw[line width=0.5pt] (-5.10,\k) -- (-4.90,\k);
+  \fill (-5,-3.5) circle (1.15pt);
+  \node[anchor=south east,inner sep=1pt] at (-5.10,0.28) {$M$};
+  \node[anchor=east,inner sep=1pt] at (-5.28,-3.5) {$P$};
+  \node[anchor=north,inner sep=1pt] at (0.26,-0.36) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-9}
 \end{figure}
 
