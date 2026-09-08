@@ -9321,7 +9321,26 @@ A_{3} \left(\frac {B_{1} C_{2} - B_{2} C_{1}}{A_{1} B_{2} - A_{2} B_{1}}\right) 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.32}]{assets/analytic-geometry/fig-p0123-01.png}}
+\fitfig{%
+% fig-alt: 图3·32 三角形ABC，A(a,0)在原点左、B(b,0)在右、C(0,c)在正y轴；高AD、BE与y轴交于一点
+\begin{tikzpicture}[x=0.82cm,y=0.82cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-2.30,0) -- (2.80,0) -- (0,3.50) -- cycle;
+  \draw[line width=0.7pt] (-2.30,0) -- (0.81,2.49);
+  \draw[line width=0.7pt] (2.80,0) -- (-0.76,2.34);
+  \draw[line width=0.75pt,-latex] (-3.05,0) -- (3.55,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.42) -- (0,4.15) node[above=1pt] {$y$};
+  \fill (-2.30,0) circle (1.15pt);
+  \fill (2.80,0) circle (1.15pt);
+  \fill (0,3.50) circle (1.15pt);
+  \fill (0,1.84) circle (1.15pt);
+  \node[anchor=north] at (-2.15,-0.08) {$A(a,\,0)$};
+  \node[anchor=north west] at (0.12,-0.08) {$O$};
+  \node[anchor=north] at (2.85,-0.08) {$B(b,\,0)$};
+  \node[anchor=west] at (0.14,3.42) {$C(0,\,c)$};
+  \node[anchor=east] at (-0.92,2.42) {$E$};
+  \node[anchor=west] at (1.02,2.55) {$D$};
+\end{tikzpicture}%
+}
 \caption{图3.32}
 \end{figure}
 
@@ -9401,7 +9420,26 @@ y + 3 = k (x - 2), \text {\text{即}} k x - y - (2 k + 3) = 0.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/analytic-geometry/fig-p0124-01.png}}
+\fitfig{%
+% fig-alt: 第2题 直线x-2y+4=0与x+8y+22=0交于左下方，夹角φ，点(2,-3)；浅线左端箭头
+\begin{tikzpicture}[x=0.34cm,y=0.36cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (-7.60,-1.80) -- (5.40,4.60);
+  \draw[line width=0.8pt,latex-] (-9.55,-1.575) -- (4.60,-3.3125);
+  \fill (2,-3) circle (1.25pt);
+  \draw[line width=0.4pt] (-7.60,-1.80) ++(-7:0.78) arc (-7:26.6:0.78);
+  \draw[line width=0.75pt,latex-latex] (-8.6,0) -- (6.4,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-4.15) -- (0,5.05) node[above=1pt] {$y$};
+  \foreach \k in {-6,-4,-2,2,4}
+    \draw[line width=0.32pt] (\k,-0.12) -- (\k,0.12);
+  \foreach \k in {-3,-2,-1,1,2,3,4}
+    \draw[line width=0.32pt] (-0.12,\k) -- (0.12,\k);
+  \node[rotate=26.6,anchor=south] at (1.85,3.55) {$x-2y+4=0$};
+  \node[rotate=-7,anchor=north] at (-6.15,-2.05) {\scriptsize $x+8y+22=0$};
+  \node[anchor=south] at (-6.25,-1.48) {$\varphi$};
+  \node[anchor=north west] at (2.28,-3.15) {$(2,\,-3)$};
+  \node[anchor=north] at (0.15,-0.12) {$O$};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -9506,7 +9544,34 @@ x \cos \theta + y \sin \theta - 3 = 0.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-33}]{assets/analytic-geometry/fig-p0126-01.png}}
+\fitfig{%
+% fig-alt: 图3·33 圆心在原点，切线l1、l2、l3对应法线30°、45°、60°，切点有直角
+\begin{tikzpicture}[x=0.82cm,y=0.82cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0,0) circle (2.28);
+  \draw[line width=0.5pt] (0,0) -- (1.97,1.14);
+  \draw[line width=0.5pt] (0,0) -- (1.61,1.61);
+  \draw[line width=0.5pt] (0,0) -- (1.14,1.97);
+  \draw[line width=0.7pt] (0.62,3.48) -- (2.82,-0.33);
+  \draw[line width=0.7pt] (-0.54,3.77) -- (3.06,0.16);
+  \draw[line width=0.7pt] (-1.59,3.55) -- (3.18,0.80);
+  \draw[line width=0.32pt] (1.84,1.06) -- (1.92,0.92) -- (2.05,1.00);
+  \draw[line width=0.32pt] (1.50,1.50) -- (1.61,1.39) -- (1.73,1.50);
+  \draw[line width=0.32pt] (1.06,1.84) -- (1.20,1.76) -- (1.28,1.89);
+  \draw[line width=0.4pt] (0.50,0) arc (0:30:0.50);
+  \draw[line width=0.4pt] (0.68,0) arc (0:45:0.68);
+  \draw[line width=0.4pt] (0.86,0) arc (0:60:0.86);
+  \fill (0,0) circle (1.15pt);
+  \draw[line width=0.75pt,latex-latex] (-3.25,0) -- (3.85,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-2.85) -- (0,4.35) node[above=1pt] {$y$};
+  \node[anchor=west] at (1.05,2.85) {$l_{1}$};
+  \node[anchor=south] at (-1.05,3.85) {$l_{2}$};
+  \node[anchor=east] at (-1.85,3.42) {$l_{3}$};
+  \node[anchor=west] at (0.62,0.10) {\scriptsize $30^{\circ}$};
+  \node[anchor=south west] at (0.62,0.42) {\scriptsize $45^{\circ}$};
+  \node[anchor=south] at (0.48,0.92) {\scriptsize $60^{\circ}$};
+  \node[anchor=north west] at (0.08,-0.06) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-33}
 \end{figure}
 
@@ -9543,7 +9608,44 @@ l_{3}\text{：} \quad x \cos 60^{\circ} + y \sin 60^{\circ} - 3 = 0,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3-34}]{assets/analytic-geometry/fig-p0127-01.png}}
+\fitfig{%
+% fig-alt: 图3·34 直线束交于(0,3)，扫描标出正负斜率及y=3；正文举例的负斜率只是其中一部分
+\begin{tikzpicture}[x=0.50cm,y=0.46cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt] (-0.38,1.86) -- (0.68,5.04);
+  \draw[line width=0.55pt] (-0.60,1.79) -- (1.05,5.10);
+  \draw[line width=0.55pt] (-1.20,1.80) -- (1.91,4.91);
+  \draw[line width=0.55pt] (-2.15,1.93) -- (2.82,4.41);
+  \draw[line width=0.82pt] (-3.80,3.00) -- (4.20,3.00);
+  \draw[line width=0.55pt] (-1.97,3.98) -- (2.86,1.57);
+  \draw[line width=0.55pt] (-1.27,4.27) -- (1.91,1.09);
+  \draw[line width=0.55pt] (-0.38,4.14) -- (0.81,0.58);
+  \draw[line width=0.55pt] (-0.85,4.70) -- (0.63,1.75);
+  \draw[line width=0.55pt] (-2.33,4.55) -- (1.25,2.17);
+  \draw[line width=0.55pt] (-2.58,1.28) -- (1.12,3.75);
+  \draw[line width=0.4pt] (-0.14,2.16) -- (0.17,4.04);
+  \draw[line width=0.4pt] (-0.21,3.82) -- (0.28,1.88);
+  \fill (0,3) circle (1.6pt);
+  \draw[line width=0.75pt,latex-latex] (-5.35,0) -- (6.85,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-1.85) -- (0,6.55);
+  \node[anchor=south east] at (-0.08,6.45) {$y$};
+  \foreach \k in {-4,-2,2,4}
+    \draw[line width=0.28pt] (\k,-0.10) -- (\k,0.10);
+  \foreach \k in {-1,1,2,4,5}
+    \draw[line width=0.28pt] (-0.11,\k) -- (0.11,\k);
+  \node[rotate=71.6,anchor=west,inner sep=0.5pt] at (1.15,5.55) {\scriptsize $y=3x+3$};
+  \node[rotate=63.4,anchor=west,inner sep=0.5pt] at (1.85,5.15) {\scriptsize $y=2x+3$};
+  \node[rotate=45,anchor=west,inner sep=0.5pt] at (2.70,4.85) {\scriptsize $y=x+3$};
+  \node[rotate=26.6,anchor=west,inner sep=0.5pt] at (3.55,4.35) {\scriptsize $y=\frac{x}{2}+3$};
+  \node[anchor=west,inner sep=1pt] at (4.55,3.08) {\scriptsize $y=3$};
+  \node[rotate=-26.6,anchor=west,inner sep=0.5pt] at (3.85,1.55) {\scriptsize $y=-\frac{x}{2}+3$};
+  \node[rotate=-45,anchor=west,inner sep=0.5pt] at (2.55,0.35) {\scriptsize $y=-x+3$};
+  \node[rotate=-71.6,anchor=west,inner sep=0.5pt] at (1.25,-0.55) {\scriptsize $y=-3x+3$};
+  \node[rotate=-63.4,anchor=east,inner sep=0.5pt] at (-1.55,5.35) {\scriptsize $y=-2x+3$};
+  \node[rotate=-33.7,anchor=east,inner sep=0.5pt] at (-3.15,4.85) {\scriptsize $y=-\frac{2}{3}x+3$};
+  \node[rotate=33.7,anchor=east,inner sep=0.5pt] at (-3.45,1.05) {\scriptsize $y=\frac{2}{3}x+3$};
+  \node[anchor=north east] at (-0.08,-0.08) {$O$};
+\end{tikzpicture}%
+}
 \caption{图 3-34}
 \end{figure}
 
@@ -9562,7 +9664,44 @@ l_{3}\text{：} \quad x \cos 60^{\circ} + y \sin 60^{\circ} - 3 = 0,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·35}]{assets/analytic-geometry/fig-p0127-02.png}}
+\fitfig{%
+% fig-alt: 图3·35 平行线族斜率1/2，截距从-6到6，奇截距标在左、偶截距标在右
+\begin{tikzpicture}[x=0.40cm,y=0.36cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt] (-5.4,3.3) -- (5.6,8.8);
+  \draw[line width=0.55pt] (-5.4,2.3) -- (6.2,8.1);
+  \draw[line width=0.55pt] (-5.4,1.3) -- (7.0,7.5);
+  \draw[line width=0.55pt] (-5.4,0.3) -- (7.0,6.5);
+  \draw[line width=0.55pt] (-5.4,-0.7) -- (7.2,5.6);
+  \draw[line width=0.55pt] (-5.4,-1.7) -- (7.2,4.6);
+  \draw[line width=0.55pt] (-5.6,-2.8) -- (7.4,3.7);
+  \draw[line width=0.55pt] (-5.6,-3.8) -- (7.4,2.7);
+  \draw[line width=0.55pt] (-5.6,-4.8) -- (7.4,1.7);
+  \draw[line width=0.55pt] (-5.6,-5.8) -- (7.2,0.6);
+  \draw[line width=0.55pt] (-5.6,-6.8) -- (7.2,-0.4);
+  \draw[line width=0.55pt] (-5.4,-7.7) -- (6.6,-1.7);
+  \draw[line width=0.55pt] (-5.2,-8.6) -- (6.4,-2.8);
+  \foreach \k in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+    \fill (0,\k) circle (0.85pt);
+  \draw[line width=0.75pt,latex-latex] (-6.3,0) -- (8.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-7.45) -- (0,8.15) node[above=1pt] {$y$};
+  \foreach \k in {-4,-2,2,4,6}
+    \draw[line width=0.28pt] (\k,-0.14) -- (\k,0.14);
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (4.15,7.55) {\scriptsize $y=\frac{x}{2}+6$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (-4.35,4.15) {\scriptsize $y=\frac{x}{2}+5$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (4.35,5.55) {\scriptsize $y=\frac{x}{2}+4$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (-4.35,2.15) {\scriptsize $y=\frac{x}{2}+3$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (4.45,3.55) {\scriptsize $y=\frac{x}{2}+2$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (-4.35,0.15) {\scriptsize $y=\frac{x}{2}+1$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (4.55,1.55) {\scriptsize $y=\frac{x}{2}$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (-4.35,-1.85) {\scriptsize $y=\frac{x}{2}-1$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (4.55,-0.45) {\scriptsize $y=\frac{x}{2}-2$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (-4.35,-3.85) {\scriptsize $y=\frac{x}{2}-3$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (4.45,-2.45) {\scriptsize $y=\frac{x}{2}-4$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (-4.25,-5.85) {\scriptsize $y=\frac{x}{2}-5$};
+  \node[rotate=26.6,anchor=south,inner sep=0.8pt] at (4.35,-4.45) {\scriptsize $y=\frac{x}{2}-6$};
+  \node[anchor=north west] at (0.12,-0.10) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3·35}
 \end{figure}
 
@@ -9632,7 +9771,25 @@ a_{1} = - 4, a_{2} = 1.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-36}]{assets/analytic-geometry/fig-p0128-01.png}}
+\fitfig{%
+% fig-alt: 图3·36 两直线交于(-2,3)：3x-2y+12=0止于正y轴，x+y-1=0过x轴上的1
+\begin{tikzpicture}[x=0.62cm,y=0.48cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (-4.55,-0.83) -- (0,6);
+  \draw[line width=0.75pt] (-3.35,4.35) -- (2.35,-1.35);
+  \fill (-2,3) circle (1.35pt);
+  \draw[line width=0.75pt,latex-latex] (-5.15,0) -- (3.35,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-1.55) -- (0,6.55) node[above=1pt] {$y$};
+  \foreach \k in {-4,-3,-1,1,2}
+    \draw[line width=0.32pt] (\k,-0.12) -- (\k,0.12);
+  \foreach \k in {-1,1,2,3,4,5}
+    \draw[line width=0.32pt] (-0.12,\k) -- (0.12,\k);
+  \node[rotate=56,anchor=east,inner sep=1pt] at (-4.15,-0.35) {\scriptsize $3x-2y+12=0$};
+  \node[rotate=-45,anchor=west,inner sep=1pt] at (1.95,-1.15) {\scriptsize $x+y-1=0$};
+  \node[anchor=south] at (-2.35,3.35) {$(-2,\,3)$};
+  \node[anchor=north] at (1.25,-0.28) {$1$};
+  \node[anchor=north east] at (-0.12,-0.12) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-36}
 \end{figure}
 
@@ -9716,7 +9873,27 @@ C = \pm 24.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-37}]{assets/analytic-geometry/fig-p0130-01.png}}
+\fitfig{%
+% fig-alt: 图3·37 3x+4y-24=0与两正半轴围成三角形，平行斜线阴影；3x+4y-7=0穿过左下
+\begin{tikzpicture}[x=0.46cm,y=0.46cm,line cap=round,line join=round,>=latex]
+  \begin{scope}
+    \clip (0.03,0.03) -- (7.92,0.03) -- (0.03,5.94) -- cycle;
+    \foreach \b in {0.70,1.35,2.00,2.65,3.30,3.95,4.60,5.25}
+      \draw[line width=0.28pt] (0,\b) -- ({1.3333*\b},0);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.35,7.01) -- (9.55,-1.16);
+  \draw[line width=0.75pt] (-1.35,2.76) -- (4.55,-1.66);
+  \draw[line width=0.75pt,latex-latex] (-1.85,0) -- (10.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.85) -- (0,7.35) node[above=1pt] {$y$};
+  \draw[line width=0.35pt] (1,-0.12) -- (1,0.12);
+  \draw[line width=0.35pt] (-0.12,1) -- (0.12,1);
+  \node[rotate=-37,anchor=south,inner sep=1pt] at (4.05,3.35) {$3x+4y-24=0$};
+  \node[rotate=-37,anchor=west,inner sep=1pt] at (3.85,-1.25) {$3x+4y-7=0$};
+  \node[anchor=east] at (-0.12,1) {$1$};
+  \node[anchor=north] at (1,-0.14) {$1$};
+  \node[anchor=north east] at (-0.08,-0.06) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-37}
 \end{figure}
 
@@ -9829,7 +10006,27 @@ m (x + 2 y - 5) + n (3 x - y - 1) = 0. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-38}]{assets/analytic-geometry/fig-p0132-01.png}}
+\fitfig{%
+% fig-alt: 图3·38 过(1,2)的直线束，原点在交点左下方；扫描不标L1、L2
+\begin{tikzpicture}[x=0.82cm,y=0.78cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt] (-1.04,1.34) -- (3.04,2.66);
+  \draw[line width=0.55pt] (-0.65,0.62) -- (2.65,3.38);
+  \draw[line width=0.55pt] (-0.01,0.10) -- (2.01,3.90);
+  \draw[line width=0.85pt] (1.00,-0.55) -- (1.00,4.45);
+  \draw[line width=0.55pt] (1.81,0.01) -- (0.19,3.99);
+  \draw[line width=0.55pt] (2.60,0.56) -- (-0.60,3.44);
+  \draw[line width=0.55pt] (3.02,1.26) -- (-1.02,2.74);
+  \draw[line width=0.85pt] (3.55,2.00) -- (-1.45,2.00);
+  \draw[line width=0.55pt] (3.02,2.74) -- (-1.02,1.26);
+  \draw[line width=0.55pt] (2.44,3.60) -- (-0.44,0.40);
+  \draw[line width=0.55pt] (1.56,4.08) -- (0.44,-0.08);
+  \draw[line width=0.55pt] (-0.38,3.65) -- (2.38,0.35);
+  \fill (1,2) circle (1.7pt);
+  \draw[line width=0.75pt,latex-latex] (-1.65,0) -- (3.65,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-1.25) -- (0,4.55) node[above=1pt] {$y$};
+  \node[anchor=north east] at (-0.06,-0.06) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-38}
 \end{figure}
 
