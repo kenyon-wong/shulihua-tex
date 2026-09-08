@@ -16661,7 +16661,34 @@ y=\textbar cos x\textbar{} & 1 & 0.7 & 0 & 0.7 & 1 & 0.7 & 0 & 0.7 &
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-20}]{assets/plane-trigonometry/fig-p0227-01.png}}
+\fitfig{%
+% fig-alt: y=|cos x|从0到2π；九点实心点，峰值为1，零点在π/2与3π/2；y轴标1；轴下标O、π/2、π、3π/2、2π；无虚线
+\begin{tikzpicture}[x=0.86cm,y=0.82cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-0.18,0) -- (6.85,0);
+  \draw[line width=0.7pt,-latex] (6.85,0) -- (7.35,0) node[anchor=west,inner sep=1pt] {$x$};
+  \draw[line width=0.7pt] (0,0) -- (0,1.28);
+  \draw[line width=0.7pt,-latex] (0,1.28) -- (0,1.72) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.45pt] (-0.08,1) -- (0.08,1);
+  \foreach \k in {1,2,3,4}
+    \draw[line width=0.45pt] ({pi/2*\k},-0.07) -- ({pi/2*\k},0.07);
+  \draw[line width=0.75pt] plot[domain=0:6.2832,samples=161] (\x,{abs(cos(deg(\x)))});
+  \fill (0,1) circle[radius=1.35pt];
+  \fill ({pi/4},{0.7071}) circle[radius=1.35pt];
+  \fill ({pi/2},0) circle[radius=1.35pt];
+  \fill ({3*pi/4},{0.7071}) circle[radius=1.35pt];
+  \fill ({pi},1) circle[radius=1.35pt];
+  \fill ({5*pi/4},{0.7071}) circle[radius=1.35pt];
+  \fill ({3*pi/2},0) circle[radius=1.35pt];
+  \fill ({7*pi/4},{0.7071}) circle[radius=1.35pt];
+  \fill ({2*pi},1) circle[radius=1.35pt];
+  \node[anchor=north east,inner sep=1pt] at (-0.06,-0.06) {$O$};
+  \node[anchor=east,inner sep=1.5pt] at (-0.18,1) {$1$};
+  \node[anchor=north,inner sep=1pt] at ({pi/2},-0.10) {$\frac{\pi}{2}$};
+  \node[anchor=north,inner sep=1pt] at ({pi},-0.10) {$\pi$};
+  \node[anchor=north,inner sep=1pt] at ({3*pi/2},-0.10) {$\frac{3\pi}{2}$};
+  \node[anchor=north west,inner sep=1pt] at ({2*pi+0.06},-0.10) {$2\pi$};
+\end{tikzpicture}%
+}
 \caption{图7-20}
 \end{figure}
 
@@ -16713,7 +16740,28 @@ y & --- & -1 & 0 & 1 & --- \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·21}]{assets/plane-trigonometry/fig-p0227-02.png}}
+\fitfig{%
+% fig-alt: y=tg x在(-π/2,π/2)；左右虚线渐近线；三点实心点(-π/4,-1)、O、(π/4,1)，点到轴的竖线；-π/2在左渐近线左侧，π/2在右渐近线右侧；y轴向上箭头并伸到x轴下
+\begin{tikzpicture}[x=1.12cm,y=0.40cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-2.22,0) -- (2.18,0);
+  \draw[line width=0.7pt,-latex] (2.18,0) -- (2.68,0) node[anchor=west,inner sep=1pt] {$x$};
+  \draw[line width=0.7pt] (0,-5.15) -- (0,5.45);
+  \draw[line width=0.7pt,-latex] (0,5.45) -- (0,6.25) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.3pt] ({-pi/2},-5.85) -- ({-pi/2},5.85);
+  \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.3pt] ({pi/2},-5.85) -- ({pi/2},5.85);
+  \draw[line width=0.45pt] ({-pi/4},-1) -- ({-pi/4},0);
+  \draw[line width=0.45pt] ({pi/4},0) -- ({pi/4},1);
+  \draw[line width=0.75pt] plot[domain=-1.40:1.40,samples=72] (\x,{tan(deg(\x))});
+  \fill ({-pi/4},-1) circle[radius=1.35pt];
+  \fill (0,0) circle[radius=1.35pt];
+  \fill ({pi/4},1) circle[radius=1.35pt];
+  \node[anchor=north east,inner sep=0.6pt] at ({-pi/2-0.06},-0.18) {$-\frac{\pi}{2}$};
+  \node[anchor=north east,inner sep=0.6pt] at ({-pi/4-0.04},-0.22) {$-\frac{\pi}{4}$};
+  \node[anchor=north west,inner sep=1pt] at (0.12,-0.28) {$O$};
+  \node[anchor=north,inner sep=1pt] at ({pi/4},-0.22) {$\frac{\pi}{4}$};
+  \node[anchor=north west,inner sep=0.6pt] at ({pi/2+0.06},-0.18) {$\frac{\pi}{2}$};
+\end{tikzpicture}%
+}
 \caption{图7·21}
 \end{figure}
 
@@ -16723,7 +16771,28 @@ y & --- & -1 & 0 & 1 & --- \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·22}]{assets/plane-trigonometry/fig-p0227-03.png}}
+\fitfig{%
+% fig-alt: y=ctg x从0到π，递减；虚线渐近线在0与π；实线y轴在左渐近线左侧，O在该轴与x轴交点；三点(π/4,1)、(π/2,0)、(3π/4,-1)及到轴的竖线；π在右渐近线右侧
+\begin{tikzpicture}[x=1.02cm,y=0.40cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-0.92,0) -- (3.85,0);
+  \draw[line width=0.7pt,-latex] (3.85,0) -- (4.38,0) node[anchor=west,inner sep=1pt] {$x$};
+  \draw[line width=0.7pt] (-0.52,-5.05) -- (-0.52,5.45);
+  \draw[line width=0.7pt,-latex] (-0.52,5.45) -- (-0.52,6.20) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.3pt] (0,-5.75) -- (0,5.70);
+  \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.3pt] ({pi},-5.75) -- ({pi},5.70);
+  \draw[line width=0.45pt] ({pi/4},0) -- ({pi/4},1);
+  \draw[line width=0.45pt] ({3*pi/4},-1) -- ({3*pi/4},0);
+  \draw[line width=0.75pt] plot[domain=0.17:2.9716,samples=70] (\x,{cot(deg(\x))});
+  \fill ({pi/4},1) circle[radius=1.35pt];
+  \fill ({pi/2},0) circle[radius=1.35pt];
+  \fill ({3*pi/4},-1) circle[radius=1.35pt];
+  \node[anchor=north east,inner sep=1pt] at (-0.58,-0.06) {$O$};
+  \node[anchor=north,inner sep=1pt] at ({pi/4},-0.14) {$\frac{\pi}{4}$};
+  \node[anchor=north,inner sep=1pt] at ({pi/2},-0.14) {$\frac{\pi}{2}$};
+  \node[font=\scriptsize,anchor=north east,inner sep=1pt] at ({3*pi/4-0.20},-0.14) {$\frac{3\pi}{4}$};
+  \node[anchor=north west,inner sep=0.6pt] at ({pi+0.10},-0.16) {$\pi$};
+\end{tikzpicture}%
+}
 \caption{图7·22}
 \end{figure}
 
@@ -16786,7 +16855,31 @@ y & --- & -1 & 0 & 1 & --- \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·23}]{assets/plane-trigonometry/fig-p0228-01.png}}
+\fitfig{%
+% fig-alt: 圆O，P在第一象限，N为P在y轴上的射影（水平虚线）；P0略高于正x轴，φ为OP0与正x轴夹角，ωt为OP0到OP的角；半径A用圆下方尺寸线标出；无角箭头
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\RR{1.48}
+  \draw[line width=0.7pt] (0,0) circle[radius=\RR];
+  \draw[line width=0.7pt] (-1.86,0) -- (2.05,0);
+  \draw[line width=0.7pt,-latex] (2.05,0) -- (2.55,0) node[anchor=west,inner sep=1pt] {$x$};
+  \draw[line width=0.7pt] (0,-2.22) -- (0,1.78);
+  \draw[line width=0.7pt,-latex] (0,1.78) -- (0,2.22) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.55pt] (0,0) -- (14:\RR);
+  \draw[line width=0.55pt] (0,0) -- (62:\RR);
+  \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.2pt] (0,0 |- 62:\RR) -- (62:\RR);
+  \draw[line width=0.55pt] (\RR,0) -- (\RR,-2.12);
+  \draw[line width=0.55pt,<->] (0,-1.90) -- (\RR,-1.90);
+  \draw[line width=0.55pt] (0.32,0) arc[start angle=0, end angle=14, radius=0.32];
+  \draw[line width=0.55pt] (14:0.46) arc[start angle=14, end angle=62, radius=0.46];
+  \node[anchor=north,inner sep=1pt] at (0.12,-0.12) {$O$};
+  \node[anchor=east,inner sep=1pt] at (-0.08,0 |- 62:\RR) {$N$};
+  \node[anchor=south,inner sep=1pt] at (62:{\RR+0.05}) {$P$};
+  \node[anchor=south west,inner sep=1pt] at (14:{\RR+0.03}) {$P_{0}$};
+  \node[anchor=south,inner sep=0.4pt] at (7:0.48) {$\varphi$};
+  \node[anchor=south,inner sep=0.6pt] at (38:0.96) {$\omega t$};
+  \node[anchor=north,inner sep=1pt] at (0.74,-1.96) {$A$};
+\end{tikzpicture}%
+}
 \caption{图7·23}
 \end{figure}
 
@@ -16854,7 +16947,24 @@ y = A \sin (\omega t + \varphi)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·24}]{assets/plane-trigonometry/fig-p0229-01.png}}
+\fitfig{%
+% fig-alt: y=sin 2t在[0,2π]两周期，y=sin t一周期；两者从原点出发；轴下标O、π、2π；y=sin 2t标在第一谷底下方，y=sin t标在后一谷底下方；横轴字母t
+\begin{tikzpicture}[x=0.76cm,y=0.70cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-0.22,0) -- (6.85,0);
+  \draw[line width=0.7pt,-latex] (6.85,0) -- (7.40,0) node[anchor=west,inner sep=1pt] {$t$};
+  \draw[line width=0.7pt] (0,0) -- (0,1.22);
+  \draw[line width=0.7pt,-latex] (0,1.22) -- (0,1.68) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.45pt] ({pi},-0.07) -- ({pi},0.07);
+  \draw[line width=0.45pt] ({2*pi},-0.07) -- ({2*pi},0.07);
+  \draw[line width=0.75pt] plot[domain=0:6.2832,samples=145] (\x,{sin(deg(2*\x))});
+  \draw[line width=0.75pt] plot[domain=0:6.2832,samples=97] (\x,{sin(deg(\x))});
+  \node[anchor=north east,inner sep=1pt] at (-0.06,-0.06) {$O$};
+  \node[font=\scriptsize,anchor=north,inner sep=1pt] at ({pi},-0.48) {$\pi$};
+  \node[anchor=north west,inner sep=1pt] at ({2*pi+0.12},-0.42) {$2\pi$};
+  \node[anchor=north,inner sep=1pt] at (2.20,-1.52) {$y=\sin 2t$};
+  \node[anchor=north,inner sep=1pt] at (4.85,-1.52) {$y=\sin t$};
+\end{tikzpicture}%
+}
 \caption{图7·24}
 \end{figure}
 
@@ -16910,7 +17020,27 @@ y = A \sin (\omega t + \varphi)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·25}]{assets/plane-trigonometry/fig-p0230-01.png}}
+\fitfig{%
+% fig-alt: y=sin(t/2)从0到4π，y=sin t只画到2π；轴下标O、π、2π、3π、4π；y=sin(t/2)标在峰后上方并有短指引线，y=sin t标在谷底下方；横轴字母t
+\begin{tikzpicture}[x=0.50cm,y=0.52cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-0.28,0) -- (13.15,0);
+  \draw[line width=0.7pt,-latex] (13.15,0) -- (13.75,0) node[anchor=west,inner sep=1pt] {$t$};
+  \draw[line width=0.7pt] (0,0) -- (0,1.22);
+  \draw[line width=0.7pt,-latex] (0,1.22) -- (0,1.72) node[anchor=south,inner sep=1pt] {$y$};
+  \foreach \k in {1,2,3,4}
+    \draw[line width=0.45pt] ({pi*\k},-0.08) -- ({pi*\k},0.08);
+  \draw[line width=0.75pt] plot[domain=0:12.5664,samples=161] (\x,{sin(deg(0.5*\x))});
+  \draw[line width=0.75pt] plot[domain=0:6.2832,samples=97] (\x,{sin(deg(\x))});
+  \draw[line width=0.4pt] (3.70,1.02) -- (4.55,1.32);
+  \node[anchor=north east,inner sep=1pt] at (-0.06,-0.06) {$O$};
+  \node[anchor=north,inner sep=1pt] at ({pi},-0.10) {$\pi$};
+  \node[anchor=north,inner sep=1pt] at ({2*pi},-0.10) {$2\pi$};
+  \node[anchor=north,inner sep=1pt] at ({3*pi},-1.28) {$3\pi$};
+  \node[anchor=north west,inner sep=1pt] at ({4*pi+0.04},-0.10) {$4\pi$};
+  \node[anchor=west,inner sep=1pt] at (4.60,1.32) {$y=\sin\frac{1}{2}t$};
+  \node[anchor=north,inner sep=1pt] at (4.71,-1.38) {$y=\sin t$};
+\end{tikzpicture}%
+}
 \caption{图7·25}
 \end{figure}
 
@@ -16973,7 +17103,25 @@ t & \(\frac{\pi}{6}\) & \(\frac{5\pi}{12}\) & \(\frac{2\pi}{3}\) &
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·26}]{assets/plane-trigonometry/fig-p0231-01.png}}
+\fitfig{%
+% fig-alt: y=sin 2t画在[0,π]，y=sin(2t-π/3)从π/6画到7π/6；π在轴上方，π/2与O在轴下；y=sin 2t在左谷左下方并有指引线；横轴字母t
+\begin{tikzpicture}[x=0.98cm,y=0.78cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-0.22,0) -- (4.15,0);
+  \draw[line width=0.7pt,-latex] (4.15,0) -- (4.68,0) node[anchor=west,inner sep=1pt] {$t$};
+  \draw[line width=0.7pt] (0,0) -- (0,1.22);
+  \draw[line width=0.7pt,-latex] (0,1.22) -- (0,1.68) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.45pt] ({pi/2},-0.07) -- ({pi/2},0.07);
+  \draw[line width=0.45pt] ({pi},-0.07) -- ({pi},0.07);
+  \draw[line width=0.75pt] plot[domain=0:3.1416,samples=81] (\x,{sin(deg(2*\x))});
+  \draw[line width=0.75pt] plot[domain=0.5236:3.6652,samples=81] (\x,{sin(deg(2*\x)-60)});
+  \draw[line width=0.4pt] (1.62,-1.38) -- (2.18,-1.02);
+  \node[anchor=north east,inner sep=1pt] at (-0.06,-0.06) {$O$};
+  \node[anchor=north,inner sep=1pt] at ({pi/2},-0.08) {$\frac{\pi}{2}$};
+  \node[anchor=south,inner sep=1pt] at ({pi+0.10},0.14) {$\pi$};
+  \node[font=\scriptsize,anchor=south west,inner sep=1pt] at (0.95,1.12) {$y=\sin\left(2t-\frac{\pi}{3}\right)$};
+  \node[anchor=north east,inner sep=1pt] at (1.58,-1.34) {$y=\sin 2t$};
+\end{tikzpicture}%
+}
 \caption{图7·26}
 \end{figure}
 
@@ -17088,7 +17236,33 @@ t & \(-\frac{\pi}{3}\) & \(\frac{2\pi}{3}\) & \(\frac{5\pi}{3}\) &
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·28}]{assets/plane-trigonometry/fig-p0232-01.png}}
+\fitfig{%
+% fig-alt: y=2sin(t/2+π/6)与y=sin(t/2+π/6)从-π/3到11π/3；y轴标2、1、-1、-2；轴下标-π/3、O、5π/3、11π/3，其余为过轴短刻度；横轴字母t
+\begin{tikzpicture}[x=0.48cm,y=0.50cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-1.45,0) -- (12.05,0);
+  \draw[line width=0.7pt,-latex] (12.05,0) -- (12.62,0) node[anchor=west,inner sep=1pt] {$t$};
+  \draw[line width=0.7pt] (0,-2.35) -- (0,2.28);
+  \draw[line width=0.7pt,-latex] (0,2.28) -- (0,2.78) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.45pt] (-0.08,1) -- (0.08,1);
+  \draw[line width=0.45pt] (-0.08,2) -- (0.08,2);
+  \draw[line width=0.45pt] (-0.08,-1) -- (0.08,-1);
+  \draw[line width=0.45pt] (-0.08,-2) -- (0.08,-2);
+  \foreach \k in {-1,1,2,3,4,5,6,7,8,9,10,11}
+    \draw[line width=0.45pt] ({pi/3*\k},-0.08) -- ({pi/3*\k},0.08);
+  \draw[line width=0.75pt] plot[domain=-1.0472:11.5192,samples=145] (\x,{2*sin(deg(0.5*\x)+30)});
+  \draw[line width=0.75pt] plot[domain=-1.0472:11.5192,samples=145] (\x,{sin(deg(0.5*\x)+30)});
+  \node[anchor=east,inner sep=1.2pt] at (-0.16,2) {$2$};
+  \node[anchor=east,inner sep=1.2pt] at (-0.16,1) {$1$};
+  \node[anchor=east,inner sep=1.2pt] at (-0.16,-1) {$-1$};
+  \node[anchor=east,inner sep=1.2pt] at (-0.16,-2) {$-2$};
+  \node[anchor=north west,inner sep=1pt] at (0.08,-0.06) {$O$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.6pt] at ({-pi/3},-0.10) {$-\frac{\pi}{3}$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.6pt] at ({5*pi/3},-0.10) {$\frac{5\pi}{3}$};
+  \node[font=\scriptsize,anchor=north west,inner sep=0.6pt] at ({11*pi/3+0.04},-0.10) {$\frac{11\pi}{3}$};
+  \node[font=\scriptsize,anchor=south west,inner sep=1pt] at (2.55,2.05) {$y=2\sin\left(\frac{1}{2}t+\frac{\pi}{6}\right)$};
+  \node[font=\scriptsize,anchor=north west,inner sep=1pt] at (9.35,-0.78) {$y=\sin\left(\frac{1}{2}t+\frac{\pi}{6}\right)$};
+\end{tikzpicture}%
+}
 \caption{图7·28}
 \end{figure}
 
