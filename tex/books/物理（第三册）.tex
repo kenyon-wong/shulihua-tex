@@ -342,7 +342,16 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={② 质子 ● 电子}]{assets/physics-3/fig-p0007-01.png}}
+\fitfig{%
+% fig-alt: 氢原子结构示意：大圆为电子轨道，中央小圆内加号为质子，轨道正上方黑点为电子
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.9pt] (0,0) circle[radius=1.12];
+  \draw[line width=0.7pt] (0,0) circle[radius=0.22];
+  \draw[line width=0.7pt] (-0.11,0) -- (0.11,0);
+  \draw[line width=0.7pt] (0,-0.11) -- (0,0.11);
+  \fill (0,1.12) circle[radius=0.055];
+\end{tikzpicture}%
+}
 \caption{② 质子 ● 电子}
 \end{figure}
 
@@ -394,7 +403,34 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={③ 正离子 ● 自由电子}]{assets/physics-3/fig-p0010-01.png}}
+\fitfig{%
+% fig-alt: 金属导体模型：波状边界内三行五列正离子（圆内加号），间隙中为带短弯箭头的自由电子
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt, smooth cycle] plot coordinates {
+    (0.22,0.20) (0.08,0.62) (0.30,1.02) (0.10,1.46) (0.28,1.90)
+    (0.12,2.32) (0.26,2.78) (0.20,3.08)
+    (0.85,3.18) (1.90,3.08) (3.15,3.20) (4.40,3.10) (5.55,3.18) (6.18,3.06)
+    (6.36,2.68) (6.14,2.24) (6.38,1.80) (6.12,1.36) (6.34,0.92) (6.16,0.48) (6.22,0.18)
+    (5.40,0.08) (4.10,0.16) (2.70,0.08) (1.30,0.16) (0.45,0.10)
+  };
+  \foreach \x in {1.32,2.32,3.32,4.32,5.32} {
+    \foreach \y in {0.74,1.64,2.56} {
+      \draw[line width=0.7pt] (\x,\y) circle[radius=0.25];
+      \draw[line width=0.65pt] (\x-0.11,\y) -- (\x+0.11,\y);
+      \draw[line width=0.65pt] (\x,\y-0.11) -- (\x,\y+0.11);
+    }
+  }
+  % free electrons: filled dots with short motion arrows, placed in the gaps
+  \foreach \px/\py/\ang in {
+    0.98/2.16/200, 1.58/1.16/30, 2.62/1.18/150, 2.84/1.56/250,
+    3.55/2.18/20, 3.58/1.18/200, 3.95/2.42/110, 4.50/2.14/330,
+    4.82/2.82/40, 4.94/1.10/120, 4.82/0.72/300} {
+    \fill (\px,\py) circle[radius=0.046];
+    \draw[line width=0.55pt,->] ([shift={(\ang:0.10)}]\px,\py)
+      arc[start angle=\ang, delta angle=68, radius=0.15];
+  }
+\end{tikzpicture}%
+}
 \caption{③ 正离子 ● 自由电子}
 \end{figure}
 

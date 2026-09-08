@@ -723,7 +723,27 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第17页运算示意}]{assets/algebra-1/fig-p0017-01.png}}
+\usetikzlibrary{decorations.pathreplacing}
+% fig-alt: 有理数分类：正有理数含正整数（自然数）与正分数，零以点线接只有一个数0，负有理数含负整数与负分数；右括号把正整数、正分数与零括为非负有理数
+\fitfig{%
+\begin{tikzpicture}[line cap=round, every node/.style={inner sep=1.5pt, outer sep=1pt}]
+  \node[anchor=east] at (0,0.15) {有理数};
+  \draw[decorate,decoration={brace,amplitude=5pt}] (0.16,-1.7) -- (0.16,1.78);
+  \node[anchor=east] at (1.85,1.15) {正有理数};
+  \draw[decorate,decoration={brace,amplitude=4pt}] (2.02,0.68) -- (2.02,1.62);
+  \node[anchor=west] (a) at (2.32,1.62) {正整数（自然数）};
+  \node[anchor=west] at (2.32,0.68) {正分数};
+  \node[anchor=west] (z) at (0.55,0.15) {零};
+  \node[anchor=west] (o) at (2.55,0.15) {只有一个数$0$};
+  \draw[dotted, line width=0.7pt] ([xshift=3pt]z.east) -- ([xshift=-3pt]o.west);
+  \node[anchor=east] at (1.85,-0.95) {负有理数};
+  \draw[decorate,decoration={brace,amplitude=4pt}] (2.02,-1.7) -- (2.02,-0.42);
+  \node[anchor=west] at (2.32,-0.42) {负整数};
+  \node[anchor=west] at (2.32,-1.7) {负分数};
+  \draw[decorate,decoration={brace,amplitude=5pt}] (5.55,1.78) -- (5.55,0.02);
+  \node[anchor=west] at (5.85,0.9) {非负有理数};
+\end{tikzpicture}%
+}
 \caption{原PDF第17页运算示意}
 \end{figure}
 
@@ -744,7 +764,24 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第17页运算示意}]{assets/algebra-1/fig-p0017-02.png}}
+% fig-alt: 有理数分为整数与分数；整数含正整数（自然数）、零、负整数，其中正整数与零合称非负整数；分数含正分数与负分数
+\fitfig{%
+\begin{tikzpicture}[line cap=round, every node/.style={inner sep=1.5pt, outer sep=1pt}]
+  \node[anchor=east] at (0,0.05) {有理数};
+  \draw[decorate,decoration={brace,amplitude=5pt}] (0.16,-1.7) -- (0.16,1.7);
+  \node[anchor=east] at (1.55,0.85) {整数};
+  \draw[decorate,decoration={brace,amplitude=4pt}] (1.72,-0.05) -- (1.72,1.62);
+  \node[anchor=west] (p) at (2.05,1.62) {正整数（自然数）};
+  \node[anchor=west] at (2.05,0.78) {零};
+  \node[anchor=west] at (2.05,-0.05) {负整数};
+  \node[anchor=east] at (1.55,-0.95) {分数};
+  \draw[decorate,decoration={brace,amplitude=4pt}] (1.72,-1.7) -- (1.72,-0.42);
+  \node[anchor=west] at (2.05,-0.42) {正分数};
+  \node[anchor=west] at (2.05,-1.7) {负分数};
+  \draw[decorate,decoration={brace,amplitude=4.5pt}] (5.35,1.75) -- (5.35,0.68);
+  \node[anchor=west] at (5.62,1.2) {非负整数};
+\end{tikzpicture}%
+}
 \caption{原PDF第17页运算示意}
 \end{figure}
 
@@ -797,7 +834,19 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-3}]{assets/algebra-1/fig-p0018-01.png}}
+% fig-alt: 数轴，向右箭头为正方向，刻度从$-6$到$+6$，原点上方偏左有一单位长括号，在$+4$与$+5$之间标出$4\frac{1}{2}$
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
+  \draw[line width=0.95pt, ->] (-6.65,0) -- (6.85,0);
+  \foreach \n/\lab in {-6/$-6$,-5/$-5$,-4/$-4$,-3/$-3$,-2/$-2$,-1/$-1$,0/$0$,1/$+1$,2/$+2$,3/$+3$,4/$+4$,5/$+5$,6/$+6$}{
+    \draw[line width=0.55pt] (\n,0) -- (\n,0.16);
+    \node[below=1.5pt] at (\n,0) {\lab};
+  }
+  \draw[line width=0.55pt] (4.5,0) -- (4.5,-0.62);
+  \node[anchor=north, inner sep=0.5pt] at (4.5,-0.64) {$4\frac{1}{2}$};
+  \draw[line width=0.7pt] (-1,0.30) -- (-1,0.44) -- (0,0.44) -- (0,0.30);
+\end{tikzpicture}%
+}
 \caption{图1-3}
 \end{figure}
 
@@ -865,7 +914,17 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-4}]{assets/algebra-1/fig-p0020-01.png}}
+% fig-alt: 数轴，向右箭头为正方向，标出$-5$、$-2\frac{1}{2}$、$-1$、$0$、$+1$、$+2\frac{1}{2}$、$+5$，原点左旁有一单位长括号
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, x=0.92cm, every node/.style={inner sep=1pt}]
+  \draw[line width=0.95pt, ->] (-5.7,0) -- (5.85,0);
+  \foreach \n/\lab in {-5/$-5$,-2.5/$-2\frac{1}{2}$,-1/$-1$,0/$0$,1/$+1$,2.5/$+2\frac{1}{2}$,5/$+5$}{
+    \draw[line width=0.55pt] (\n,0) -- (\n,0.16);
+    \node[below=2pt] at (\n,0) {\lab};
+  }
+  \draw[line width=0.7pt] (-1,0.30) -- (-1,0.44) -- (0,0.44) -- (0,0.30);
+\end{tikzpicture}%
+}
 \caption{图1-4}
 \end{figure}
 
@@ -994,7 +1053,25 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-5}]{assets/algebra-1/fig-p0022-01.png}}
+% fig-alt: 公路示意，自左向右为丙、甲、乙三点，上方两段向右箭头各标30公里
+\fitfig{%
+\begin{tikzpicture}[line cap=round, >=latex, every node/.style={inner sep=1pt}]
+  \draw[line width=0.95pt] (0,0) -- (9.4,0);
+  \foreach \x in {1.35,4.7,8.05}{
+    \fill (\x,0) circle (1.25pt);
+  }
+  \node[below=3pt] at (1.35,0) {丙};
+  \node[below=3pt] at (4.7,0) {甲};
+  \node[below=3pt] at (8.05,0) {乙};
+  \draw[line width=0.6pt] (1.35,0.42) -- (1.35,0.78);
+  \draw[line width=0.6pt] (4.7,0.42) -- (4.7,0.78);
+  \draw[line width=0.6pt] (8.05,0.42) -- (8.05,0.78);
+  \draw[line width=0.6pt, -latex] (1.35,0.60) -- (4.62,0.60);
+  \node[above=1pt] at (3.02,0.60) {$30$公里};
+  \draw[line width=0.6pt, -latex] (4.7,0.60) -- (7.97,0.60);
+  \node[above=1pt] at (6.38,0.60) {$30$公里};
+\end{tikzpicture}%
+}
 \caption{图1-5}
 \end{figure}
 
@@ -1012,7 +1089,17 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-6}]{assets/algebra-1/fig-p0023-01.png}}
+% fig-alt: 数轴，向右箭头为正方向，只标$-3$、$0$、$+3$，原点左旁有一单位长括号
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, x=1.05cm, every node/.style={inner sep=1pt}]
+  \draw[line width=0.95pt, ->] (-4.15,0) -- (4.35,0);
+  \foreach \n/\lab in {-3/$-3$,0/$0$,3/$+3$}{
+    \draw[line width=0.55pt] (\n,0) -- (\n,0.16);
+    \node[below=2pt] at (\n,0) {\lab};
+  }
+  \draw[line width=0.7pt] (-1,0.30) -- (-1,0.44) -- (0,0.44) -- (0,0.30);
+\end{tikzpicture}%
+}
 \caption{图1-6}
 \end{figure}
 
@@ -1146,7 +1233,17 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-8}]{assets/algebra-1/fig-p0025-02.png}}
+% fig-alt: 数轴，向右箭头为正方向，刻度从$-7$到$+7$，原点左旁有一单位长括号
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, >=latex, x=0.68cm, every node/.style={inner sep=0.6pt}]
+  \draw[line width=0.95pt, ->] (-7.7,0) -- (7.95,0);
+  \foreach \n/\lab in {-7/$-7$,-6/$-6$,-5/$-5$,-4/$-4$,-3/$-3$,-2/$-2$,-1/$-1$,0/$0$,1/$+1$,2/$+2$,3/$+3$,4/$+4$,5/$+5$,6/$+6$,7/$+7$}{
+    \draw[line width=0.55pt] (\n,0) -- (\n,0.18);
+    \node[below=1.5pt] at (\n,0) {\lab};
+  }
+  \draw[line width=0.7pt] (-1,0.32) -- (-1,0.48) -- (0,0.48) -- (0,0.32);
+\end{tikzpicture}%
+}
 \caption{图1-8}
 \end{figure}
 
@@ -1336,7 +1433,30 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.9}]{assets/algebra-1/fig-p0028-01.png}}
+% fig-alt: 向东走的加法示意：西在左、东在右，甲与起为起点，上方两段向右箭头依次为4公里与3公里，下方向左箭头标明7公里
+\fitfig{%
+\begin{tikzpicture}[line cap=round, >=latex, every node/.style={inner sep=1pt}]
+  \node[anchor=east] at (-0.08,0) {西};
+  \draw[line width=0.95pt, ->] (0,0) -- (8.55,0);
+  \node[anchor=west] at (8.62,0) {东};
+  \fill (1.35,0) circle (1.3pt);
+  \fill (4.15,0) circle (1.15pt);
+  \fill (6.25,0) circle (1.3pt);
+  \node[anchor=south east] at (1.28,0.10) {甲};
+  \node[anchor=north] at (1.35,-0.10) {起};
+  \draw[line width=0.55pt] (1.35,0.10) -- (1.35,0.78);
+  \draw[line width=0.55pt] (4.15,0.10) -- (4.15,0.78);
+  \draw[line width=0.55pt] (6.25,0.10) -- (6.25,0.78);
+  \draw[line width=0.6pt, -latex] (1.35,0.62) -- (4.08,0.62);
+  \node[above=0.5pt] at (2.72,0.62) {$4$公里};
+  \draw[line width=0.6pt, -latex] (4.15,0.62) -- (6.18,0.62);
+  \node[above=0.5pt] at (5.16,0.62) {$3$公里};
+  \draw[line width=0.55pt] (1.35,-0.95) -- (1.35,-0.72);
+  \draw[line width=0.55pt] (6.25,-0.95) -- (6.25,-0.72);
+  \draw[line width=0.6pt, latex-] (1.42,-0.84) -- (6.25,-0.84);
+  \node[below=1pt] at (3.8,-0.84) {$7$公里};
+\end{tikzpicture}%
+}
 \caption{图1.9}
 \end{figure}
 
