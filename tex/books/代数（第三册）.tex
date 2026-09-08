@@ -21633,7 +21633,27 @@ x_{1} \approx 0.3, \quad x_{2} = 4.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-5}]{assets/algebra-3/fig-p0325-01.png}}
+% fig-alt: 实线u=4x过原点，实线u=2^x由左近轴升起；两交点，近原点一处与高处一处；刻度无数字，原点O；u上箭头，x右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.42cm,y=0.27cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-1.85,0) -- (4.55,0);
+  \draw[line width=0.9pt,->] (4.38,0) -- (5.15,0);
+  \node[anchor=west] at (5.22,0) {$x$};
+  \draw[line width=0.8pt] (0,-1.55) -- (0,16.15);
+  \draw[line width=0.9pt,->] (0,15.95) -- (0,16.85);
+  \node[anchor=south east] at (-0.12,16.95) {$u$};
+  \node[anchor=north west] at (0.12,-0.12) {$O$};
+  \foreach \k in {-1,1,2,3,4}{\draw[line width=0.45pt] (\k,-0.16) -- (\k,0.16);}
+  \foreach \k in {-1,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}{\draw[line width=0.45pt] (-0.10,\k) -- (0.10,\k);}
+  \begin{scope}
+    \clip (-1.75,-1.45) rectangle (4.65,16.35);
+    \draw[line width=1.05pt] (-0.55,-2.20) -- (4.15,16.60);
+    \draw[line width=1.05pt] plot[domain=-1.70:4.05,samples=80] (\x,{pow(2,\x)});
+  \end{scope}
+  \node[anchor=west] at (4.20,13.55) {$u=4x$};
+  \node[anchor=west] at (4.22,9.05) {$u=2^{x}$};
+\end{tikzpicture}%
+}
 \caption{图7-5}
 \end{figure}
 
@@ -21665,7 +21685,28 @@ u = \log_{2} x \quad \text{和} \quad u = 4 - \frac{1}{2} x
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.6}]{assets/algebra-3/fig-p0326-01.png}}
+% fig-alt: 实线u=log_2 x近纵轴自下升起后缓升；实线u=4-(1/2)x自左上降穿正轴后到右下；交点处虚垂线落到x轴；刻度无数字，原点O；u上箭头且轴下伸，x右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.52cm,y=0.48cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-0.85,0) -- (10.15,0);
+  \draw[line width=0.9pt,->] (9.95,0) -- (10.75,0);
+  \node[anchor=west] at (10.82,0) {$x$};
+  \draw[line width=0.8pt] (0,-2.15) -- (0,4.55);
+  \draw[line width=0.9pt,->] (0,4.38) -- (0,5.15);
+  \node[anchor=south] at (0.10,5.22) {$u$};
+  \node[anchor=north east] at (-0.10,-0.08) {$O$};
+  \foreach \k in {1,2,3,4,5,6,7,8,9,10}{\draw[line width=0.45pt] (\k,-0.10) -- (\k,0.10);}
+  \foreach \k in {-1,1,2,3,4}{\draw[line width=0.45pt] (-0.08,\k) -- (0.08,\k);}
+  \draw[dashed,line width=0.6pt] (4,0) -- (4,2);
+  \begin{scope}
+    \clip (-0.75,-2.05) rectangle (10.35,4.75);
+    \draw[line width=1.05pt] (-0.55,4.275) -- (10.40,-1.20);
+    \draw[line width=1.05pt] plot[domain=0.22:10.20,samples=72] (\x,{ln(\x)/ln(2)});
+  \end{scope}
+  \node[anchor=south west] at (6.55,2.95) {$u=\log_{2}x$};
+  \node[anchor=north west] at (8.35,-0.72) {$u=4-\dfrac{1}{2}x$};
+\end{tikzpicture}%
+}
 \caption{图7.6}
 \end{figure}
 
@@ -22415,7 +22456,29 @@ x^{2} - 2 x + \lg k^{2} = 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-1}]{assets/algebra-3/fig-p0337-01.png}}
+% fig-alt: 圆木端面左视：自上而下7排，根数3、4、5、6、7、8、9；圆木向右上斜出，顶排与右缘可见
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \j in {0,1,2}{
+    \pgfmathsetmacro{\xx}{0.99+0.33*\j}
+    \draw[line width=0.65pt] ({\xx},{1.855}) -- ({\xx+1.52},{2.405});
+    \draw[line width=0.65pt] ({\xx},{1.545}) -- ({\xx+1.52},{2.095});
+    \draw[line width=0.65pt] ({\xx+1.52},{2.405}) arc[start angle=90,end angle=-90,radius=0.155];
+  }
+  \foreach \i [evaluate=\i as \nc using int(3+\i),evaluate=\i as \yy using {1.70-0.28*\i},evaluate=\i as \xL using {0.165*(6-\i)}] in {1,...,6}{
+    \pgfmathsetmacro{\xx}{\xL+0.33*(\nc-1)}
+    \draw[line width=0.65pt] ({\xx},{\yy+0.155}) -- ({\xx+1.52},{\yy+0.705});
+    \draw[line width=0.65pt] ({\xx},{\yy-0.155}) -- ({\xx+1.52},{\yy+0.395});
+    \draw[line width=0.65pt] ({\xx+1.52},{\yy+0.705}) arc[start angle=90,end angle=-90,radius=0.155];
+  }
+  \foreach \i [evaluate=\i as \nc using int(3+\i),evaluate=\i as \yy using {1.70-0.28*\i},evaluate=\i as \xL using {0.165*(6-\i)}] in {0,...,6}{
+    \foreach \j in {1,...,\nc}{
+      \pgfmathsetmacro{\xx}{\xL+0.33*(\j-1)}
+      \draw[fill=white,line width=0.7pt] ({\xx},\yy) circle[radius=0.155];
+    }
+  }
+\end{tikzpicture}%
+}
 \caption{图8-1}
 \end{figure}
 
@@ -22660,7 +22723,29 @@ n_{1} = 8, \quad n_{2} = - 10 (\text{ 不 合 }).
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-2}]{assets/algebra-3/fig-p0341-01.png}}
+% fig-alt: 点(1,3)至(7,9)实心，虚折线相连，各自虚垂线落到n轴；纵标1至9，横标1至7；原点O；a_n上箭头，n右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.62cm,y=0.40cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-0.55,0) -- (7.55,0);
+  \draw[line width=0.9pt,->] (7.38,0) -- (8.15,0);
+  \node[anchor=west] at (8.22,0) {$n$};
+  \draw[line width=0.8pt] (0,-0.55) -- (0,9.25);
+  \draw[line width=0.9pt,->] (0,9.08) -- (0,9.85);
+  \node[anchor=south] at (-0.18,9.92) {$a_{n}$};
+  \node[anchor=north east] at (-0.08,-0.08) {$O$};
+  \foreach \k in {1,...,9}{
+    \draw[line width=0.45pt] (-0.08,\k) -- (0.08,\k);
+    \node[anchor=east] at (-0.14,\k) {$\k$};
+  }
+  \foreach \k in {1,...,7}{
+    \draw[line width=0.45pt] (\k,-0.08) -- (\k,0.08);
+    \node[anchor=north] at (\k,-0.12) {$\k$};
+    \draw[dashed,line width=0.6pt] (\k,0) -- (\k,{2+\k});
+  }
+  \draw[dashed,line width=0.75pt] (1,3) -- (2,4) -- (3,5) -- (4,6) -- (5,7) -- (6,8) -- (7,9);
+  \foreach \k in {1,...,7}{\fill ({\k},{2+\k}) circle[radius=1.7pt];}
+\end{tikzpicture}%
+}
 \caption{图8-2}
 \end{figure}
 
@@ -22682,7 +22767,39 @@ n_{1} = 8, \quad n_{2} = - 10 (\text{ 不 合 }).
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-3}]{assets/algebra-3/fig-p0342-01.png}}
+% fig-alt: (-1/2)^n前5项实心点，虚折线相连；n=1虚垂线；水平虚线y=±1/2；纵标1/2、1/4、-1/4、-1/2，横标1至5；原点O；a_n上箭头，n右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.82cm,y=3.15cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-0.55,0) -- (5.55,0);
+  \draw[line width=0.9pt,->] (5.38,0) -- (6.15,0);
+  \node[anchor=west] at (6.22,0) {$n$};
+  \draw[line width=0.8pt] (0,-0.72) -- (0,0.72);
+  \draw[line width=0.9pt,->] (0,0.64) -- (0,0.88);
+  \node[anchor=south] at (-0.22,0.90) {$a_{n}$};
+  \node[anchor=north west] at (0.16,-0.26) {$O$};
+  \draw[line width=0.45pt] (-0.07,0.5) -- (0.07,0.5);
+  \draw[line width=0.45pt] (-0.07,0.25) -- (0.07,0.25);
+  \draw[line width=0.45pt] (-0.07,-0.25) -- (0.07,-0.25);
+  \draw[line width=0.45pt] (-0.07,-0.5) -- (0.07,-0.5);
+  \node[anchor=east] at (-0.16,0.5) {$\frac{1}{2}$};
+  \node[anchor=east] at (-0.16,0.25) {$\frac{1}{4}$};
+  \node[anchor=east] at (-0.16,-0.25) {$-\frac{1}{4}$};
+  \node[anchor=east] at (-0.16,-0.5) {$-\frac{1}{2}$};
+  \draw[dashed,line width=0.6pt] (0,0.5) -- (5.35,0.5);
+  \draw[dashed,line width=0.6pt] (0,-0.5) -- (5.35,-0.5);
+  \foreach \k in {1,...,5}{
+    \draw[line width=0.45pt] (\k,-0.025) -- (\k,0.025);
+    \node[anchor=north] at (\k,-0.10) {$\k$};
+  }
+  \draw[dashed,line width=0.6pt] (1,0) -- (1,-0.5);
+  \draw[dashed,line width=0.75pt] (1,-0.5) -- (2,0.25) -- (3,-0.125) -- (4,0.0625) -- (5,-0.03125);
+  \fill (1,-0.5) circle[radius=1.7pt];
+  \fill (2,0.25) circle[radius=1.7pt];
+  \fill (3,-0.125) circle[radius=1.7pt];
+  \fill (4,0.0625) circle[radius=1.7pt];
+  \fill (5,-0.03125) circle[radius=1.7pt];
+\end{tikzpicture}%
+}
 \caption{图8-3}
 \end{figure}
 
@@ -22698,7 +22815,37 @@ n_{1} = 8, \quad n_{2} = - 10 (\text{ 不 合 }).
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-4}]{assets/algebra-3/fig-p0342-02.png}}
+% fig-alt: 点(1,1)至(7,1/7)实心，虚折线下降趋近n轴；过a_n=1的水平虚线向右；纵标1、1/2、1/4，横标1至7；原点O；a_n上箭头，n右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.68cm,y=2.05cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-0.55,0) -- (7.55,0);
+  \draw[line width=0.9pt,->] (7.38,0) -- (8.05,0);
+  \node[anchor=west] at (8.12,0) {$n$};
+  \draw[line width=0.8pt] (0,-0.16) -- (0,1.18);
+  \draw[line width=0.9pt,->] (0,1.08) -- (0,1.38);
+  \node[anchor=south] at (-0.14,1.42) {$a_{n}$};
+  \node[anchor=north east] at (-0.06,-0.03) {$O$};
+  \draw[line width=0.45pt] (-0.06,1) -- (0.06,1);
+  \draw[line width=0.45pt] (-0.06,0.5) -- (0.06,0.5);
+  \draw[line width=0.45pt] (-0.06,0.25) -- (0.06,0.25);
+  \node[anchor=east] at (-0.12,1) {$1$};
+  \node[anchor=east] at (-0.12,0.5) {$\dfrac{1}{2}$};
+  \node[anchor=east] at (-0.12,0.25) {$\dfrac{1}{4}$};
+  \draw[dashed,line width=0.6pt] (0,1) -- (7.15,1);
+  \foreach \k in {1,...,7}{
+    \draw[line width=0.45pt] (\k,-0.03) -- (\k,0.03);
+    \node[anchor=north] at (\k,-0.04) {$\k$};
+  }
+  \draw[dashed,line width=0.75pt] (1,1) -- (2,0.5) -- (3,0.3333) -- (4,0.25) -- (5,0.2) -- (6,0.1667) -- (7,0.1429);
+  \fill (1,1) circle[radius=1.7pt];
+  \fill (2,0.5) circle[radius=1.7pt];
+  \fill (3,0.3333) circle[radius=1.7pt];
+  \fill (4,0.25) circle[radius=1.7pt];
+  \fill (5,0.2) circle[radius=1.7pt];
+  \fill (6,0.1667) circle[radius=1.7pt];
+  \fill (7,0.1429) circle[radius=1.7pt];
+\end{tikzpicture}%
+}
 \caption{图8-4}
 \end{figure}
 
@@ -23133,7 +23280,29 @@ d - \frac{1}{2}, \quad a_{1} = 8.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-5}]{assets/algebra-3/fig-p0350-01.png}}
+% fig-alt: 圆木端面左视：自上而下6排，根数4、5、6、7、8、9；圆木向右上斜出，顶排与右缘可见
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \j in {0,1,2,3}{
+    \pgfmathsetmacro{\xx}{0.825+0.33*\j}
+    \draw[line width=0.65pt] ({\xx},{1.575}) -- ({\xx+1.68},{2.075});
+    \draw[line width=0.65pt] ({\xx},{1.265}) -- ({\xx+1.68},{1.765});
+    \draw[line width=0.65pt] ({\xx+1.68},{2.075}) arc[start angle=90,end angle=-90,radius=0.155];
+  }
+  \foreach \i [evaluate=\i as \nc using int(4+\i),evaluate=\i as \yy using {1.42-0.28*\i},evaluate=\i as \xL using {0.165*(5-\i)}] in {1,...,5}{
+    \pgfmathsetmacro{\xx}{\xL+0.33*(\nc-1)}
+    \draw[line width=0.65pt] ({\xx},{\yy+0.155}) -- ({\xx+1.68},{\yy+0.655});
+    \draw[line width=0.65pt] ({\xx},{\yy-0.155}) -- ({\xx+1.68},{\yy+0.345});
+    \draw[line width=0.65pt] ({\xx+1.68},{\yy+0.655}) arc[start angle=90,end angle=-90,radius=0.155];
+  }
+  \foreach \i [evaluate=\i as \nc using int(4+\i),evaluate=\i as \yy using {1.42-0.28*\i},evaluate=\i as \xL using {0.165*(5-\i)}] in {0,...,5}{
+    \foreach \j in {1,...,\nc}{
+      \pgfmathsetmacro{\xx}{\xL+0.33*(\j-1)}
+      \draw[fill=white,line width=0.7pt] ({\xx},\yy) circle[radius=0.155];
+    }
+  }
+\end{tikzpicture}%
+}
 \caption{图8-5}
 \end{figure}
 
@@ -24767,7 +24936,19 @@ f (k) = \frac{1}{2} (k^{2} + k + 2)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-7}]{assets/algebra-3/fig-p0378-01.png}}
+% fig-alt: 数条实直线相交；近水平虚线穿各实线，左上标A_1、右上标A_k，虚线右端箭头
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (-2.55,2.05) -- (1.95,-2.05);
+  \draw[line width=0.85pt] (-1.05,-2.55) -- (0.22,2.55);
+  \draw[line width=0.85pt] (0.52,2.48) -- (1.68,-2.42);
+  \draw[line width=0.85pt] (1.72,1.22) -- (0.05,-0.48);
+  \draw[line width=0.85pt] (-2.05,-1.72) -- (0.95,0.28);
+  \draw[dashed,line width=0.8pt,->] (-3.15,0) -- (3.35,0);
+  \node[anchor=south] at (-1.72,0.10) {$A_{1}$};
+  \node[anchor=south] at (2.42,0.12) {$A_{k}$};
+\end{tikzpicture}%
+}
 \caption{图8-7}
 \end{figure}
 
