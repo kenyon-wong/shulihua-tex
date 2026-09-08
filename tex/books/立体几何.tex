@@ -5374,7 +5374,25 @@ C D = \sqrt {a ^ {2} + 3 b ^ {2}}. \text{］}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-68}]{assets/solid-geometry/fig-p0058-02.png}}
+\fitfig{%
+% fig-alt: 图1-68两幅，全部实线。左（1）上下平行四边形对应边平行（都向左下斜），上标M、下标N；右（2）上面向右下斜、下面向左下斜，对应边不平行。扫描左图是(1)、右图是(2)，从扫描。题文同。fig-p0058-01为(1)裁片，此处按raw全图画(1)(2)
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}
+    \draw[line width=0.7pt] (0.42,2.48) -- (2.05,2.36) -- (1.62,1.92) -- (0.00,2.04) -- cycle;
+    \draw[line width=0.7pt] (0.42,1.22) -- (2.05,1.10) -- (1.62,0.66) -- (0.00,0.78) -- cycle;
+    \node[anchor=south east,inner sep=1pt] at (1.72,2.12) {$M$};
+    \node[anchor=south east,inner sep=1pt] at (1.72,0.86) {$N$};
+    \node[anchor=north,inner sep=1pt] at (1.02,0.52) {$(1)$};
+  \end{scope}
+  \begin{scope}[xshift=2.85cm]
+    \draw[line width=0.7pt] (0.00,2.48) -- (1.62,2.36) -- (2.05,1.92) -- (0.42,2.04) -- cycle;
+    \draw[line width=0.7pt] (0.42,1.22) -- (2.05,1.10) -- (1.62,0.66) -- (0.00,0.78) -- cycle;
+    \node[anchor=south east,inner sep=1pt] at (1.55,2.12) {$M$};
+    \node[anchor=south east,inner sep=1pt] at (1.72,0.86) {$N$};
+    \node[anchor=north,inner sep=1pt] at (1.02,0.52) {$(2)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-68}
 \end{figure}
 
@@ -5407,7 +5425,33 @@ C D = \sqrt {a ^ {2} + 3 b ^ {2}}. \text{］}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-69}]{assets/solid-geometry/fig-p0058-03.png}}
+\fitfig{%
+% fig-alt: 图1-69：平面M上、N下，相交于右侧AB，A在上、B在下。上平面a、b相交，下平面a1、b1相交。右侧边为实曲线收到A、B；上平面前边到A的一段为虚线。M在上左、N在下左。从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (4.05,1.72);
+  \coordinate (B) at (3.72,0.18);
+  \draw[line width=0.7pt] (0.18,1.38) -- (0.62,1.92) .. controls (1.85,1.88) and (2.85,1.78) .. (A);
+  \draw[line width=0.7pt] (0.18,1.38) -- (2.05,1.22);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (2.05,1.22) -- (A);
+  \draw[line width=0.7pt] (2.05,1.22) .. controls (2.55,1.38) and (3.25,1.62) .. (A);
+  \draw[line width=0.8pt] (A) -- (B);
+  \draw[line width=0.7pt] (0.18,0.42) -- (0.62,0.92) .. controls (1.7,1.05) and (2.55,0.95) .. (2.95,0.62);
+  \draw[line width=0.7pt] (2.95,0.62) -- (B);
+  \draw[line width=0.7pt] (0.18,0.42) -- (2.35,0.28) -- (B);
+  \draw[line width=0.75pt] (0.72,1.58) -- (1.42,1.78);
+  \draw[line width=0.75pt] (0.82,1.78) -- (1.38,1.48);
+  \draw[line width=0.75pt] (0.68,0.62) -- (1.38,0.82);
+  \draw[line width=0.75pt] (0.78,0.82) -- (1.32,0.52);
+  \node[anchor=east,inner sep=1pt] at (0.18,1.38) {$M$};
+  \node[anchor=east,inner sep=1pt] at (0.18,0.42) {$N$};
+  \node[anchor=south,inner sep=0.6pt] at (1.42,1.78) {$a$};
+  \node[anchor=north,inner sep=0.6pt] at (1.38,1.48) {$b$};
+  \node[anchor=south,inner sep=0.6pt] at (1.38,0.82) {$a_{1}$};
+  \node[anchor=north,inner sep=0.6pt] at (1.32,0.52) {$b_{1}$};
+  \node[anchor=west,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{图1-69}
 \end{figure}
 
@@ -5424,7 +5468,31 @@ M、N（图1·70） 的交线是 AB，在这两个平面内可以分别作交线
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-70}]{assets/solid-geometry/fig-p0059-01.png}}
+\fitfig{%
+% fig-alt: 图1-70：两相交平面，交线AB，A在左下、B在折线上方。直立面内a、b平行于AB，水平面内c、d平行于AB。M在直立面、N在水平面。全部实线，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.15,0.15);
+  \coordinate (B) at (1.55,1.55);
+  \coordinate (Vtop) at (1.95,2.55);
+  \coordinate (Vback) at (1.15,2.25);
+  \coordinate (Hfr) at (3.55,0.55);
+  \coordinate (Hbr) at (4.05,1.15);
+  \draw[line width=0.75pt] (A) -- (B) -- (Vtop) -- (Vback) -- cycle;
+  \draw[line width=0.7pt] (A) -- (B) -- (Hbr) -- (Hfr) -- cycle;
+  \draw[line width=0.85pt] (0.88,1.62) -- (1.22,2.02);
+  \draw[line width=0.85pt] (1.08,1.28) -- (1.42,1.68);
+  \draw[line width=0.85pt] (2.05,0.78) -- (2.55,1.12);
+  \draw[line width=0.85pt] (2.48,0.55) -- (2.98,0.88);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=east,inner sep=1pt] at (0.70,2.05) {$M$};
+  \node[anchor=south,inner sep=1pt] at (3.35,0.70) {$N$};
+  \node[anchor=south east,inner sep=0.5pt] at (0.92,1.85) {$a$};
+  \node[anchor=north west,inner sep=0.5pt] at (1.42,1.55) {$b$};
+  \node[anchor=south,inner sep=0.5pt] at (2.15,1.05) {$c$};
+  \node[anchor=north,inner sep=0.5pt] at (2.85,0.62) {$d$};
+\end{tikzpicture}%
+}
 \caption{图1-70}
 \end{figure}
 
@@ -5456,7 +5524,45 @@ a 和 b 是两条异面直线， 求证： 经过 a 而平行于 b 的平面 M�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-71}]{assets/solid-geometry/fig-p0059-02.png}}
+\fitfig{%
+% fig-alt: 图1-71：上平面M、下平面N。M内相交线a与b'，N内相交线a'与b。过a的平面Q交N于a'，过b的平面P交M于b'。P、Q的后侧棱为虚线，其余实线。扫描标M、N、a、b、a'、b'、P、Q，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.12,1.78);
+  \coordinate (Mfr) at (2.95,1.62);
+  \coordinate (Mbr) at (3.62,2.18);
+  \coordinate (Mbl) at (0.82,2.35);
+  \coordinate (Nfl) at (0.12,0.28);
+  \coordinate (Nfr) at (2.85,0.12);
+  \coordinate (Nbr) at (3.55,0.68);
+  \coordinate (Nbl) at (0.82,0.84);
+  \coordinate (aL) at (1.05,2.08);
+  \coordinate (aR) at (2.55,2.20);
+  \coordinate (bpL) at (1.45,2.22);
+  \coordinate (bpR) at (2.72,1.95);
+  \coordinate (apL) at (0.55,0.58);
+  \coordinate (apR) at (1.72,0.46);
+  \coordinate (bL) at (1.15,0.52);
+  \coordinate (bR) at (2.42,0.64);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.7pt] (Nfl) -- (Nfr) -- (Nbr) -- (Nbl) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (bpL) -- (bL);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (aL) -- (apL);
+  \draw[line width=0.75pt] (aL) -- (aR);
+  \draw[line width=0.75pt] (bpL) -- (bpR);
+  \draw[line width=0.75pt] (apL) -- (apR);
+  \draw[line width=0.75pt] (bL) -- (bR);
+  \draw[line width=0.65pt] (aR) -- (apR);
+  \draw[line width=0.65pt] (bpR) -- (bR);
+  \node[anchor=east,inner sep=1pt] at (Mfl) {$M$};
+  \node[anchor=east,inner sep=1pt] at (Nfl) {$N$};
+  \node[anchor=south,inner sep=0.5pt] at (2.35,2.18) {$a$};
+  \node[anchor=north west,inner sep=0.4pt] at (2.05,2.08) {$b'$};
+  \node[anchor=south east,inner sep=0.5pt] at (0.85,0.55) {$a'$};
+  \node[anchor=north,inner sep=0.5pt] at (1.95,0.50) {$b$};
+  \node[anchor=east,inner sep=0.8pt] at (0.48,1.15) {$Q$};
+  \node[anchor=west,inner sep=0.8pt] at (2.55,1.15) {$P$};
+\end{tikzpicture}%
+}
 \caption{图1-71}
 \end{figure}
 
@@ -5495,7 +5601,49 @@ a 和 b 是两条异面直线， 求证： 经过 a 而平行于 b 的平面 M�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-72}]{assets/solid-geometry/fig-p0060-01.png}}
+\fitfig{%
+% fig-alt: 图1-72：上平面N过点A，下平面M。N内a、b交于A；M内a'、b'相交且分别与a、b平行。平面P过A与a'，平面Q过A与b'。P、Q伸出两平面，后侧棱为虚线，其余实线。扫描N在上、M在下，从扫描；题文同
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Nfl) at (0.10,2.15);
+  \coordinate (Nfr) at (3.20,1.98);
+  \coordinate (Nbr) at (3.88,2.52);
+  \coordinate (Nbl) at (0.78,2.68);
+  \coordinate (Mfl) at (0.10,0.62);
+  \coordinate (Mfr) at (3.20,0.45);
+  \coordinate (Mbr) at (3.88,0.98);
+  \coordinate (Mbl) at (0.80,1.15);
+  \coordinate (A) at (1.95,2.28);
+  \coordinate (aL) at (1.25,2.18);
+  \coordinate (aR) at (2.72,2.38);
+  \coordinate (bL) at (1.48,2.42);
+  \coordinate (bR) at (2.58,2.08);
+  \coordinate (apL) at (0.95,0.92);
+  \coordinate (apR) at (2.42,1.10);
+  \coordinate (bpL) at (1.22,1.02);
+  \coordinate (bpR) at (2.28,0.68);
+  \draw[line width=0.7pt] (Nfl) -- (Nfr) -- (Nbr) -- (Nbl) -- cycle;
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (aL) -- (apL);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (bL) -- (bpL);
+  \draw[line width=0.8pt] (aL) -- (A) -- (aR);
+  \draw[line width=0.8pt] (bL) -- (A) -- (bR);
+  \draw[line width=0.8pt] (apL) -- (apR);
+  \draw[line width=0.8pt] (bpL) -- (bpR);
+  \draw[line width=0.65pt] (aR) -- (apR);
+  \draw[line width=0.65pt] (bR) -- (bpR);
+  \draw[line width=0.65pt] (1.55,2.55) -- (1.95,2.78) -- (2.42,2.52) -- (A);
+  \draw[line width=0.65pt] (1.05,0.48) -- (1.45,0.22) -- (1.95,0.38) -- (1.55,0.68);
+  \node[anchor=east,inner sep=1pt] at (Nfl) {$N$};
+  \node[anchor=east,inner sep=1pt] at (Mfl) {$M$};
+  \node[anchor=south,inner sep=0.7pt] at (A) {$A$};
+  \node[anchor=south east,inner sep=0.4pt] at (1.45,2.20) {$a$};
+  \node[anchor=north west,inner sep=0.4pt] at (2.35,2.12) {$b$};
+  \node[anchor=south,inner sep=0.4pt] at (1.55,1.02) {$a'$};
+  \node[anchor=north west,inner sep=0.4pt] at (1.85,0.78) {$b'$};
+  \node[anchor=north,inner sep=0.7pt] at (1.35,0.22) {$P$};
+  \node[anchor=south,inner sep=0.7pt] at (2.05,2.78) {$Q$};
+\end{tikzpicture}%
+}
 \caption{图1-72}
 \end{figure}
 
@@ -5531,7 +5679,45 @@ c、d、e. 因为直线 \(a \perp\) 平面 M，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·73}]{assets/solid-geometry/fig-p0061-01.png}}
+\fitfig{%
+% fig-alt: 图1·73：直线a同时垂直平面M、N。过a的平面P、Q交M于b、c，交N于d、e。M在中、N在下；P在左上、Q在右上。a在两平面之间的一段及P、Q被挡住的侧棱为虚线，其余实线。扫描标a、b、c、d、e、P、Q、M、N，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.12,1.95);
+  \coordinate (Mfr) at (3.28,1.78);
+  \coordinate (Mbr) at (3.95,2.28);
+  \coordinate (Mbl) at (0.82,2.48);
+  \coordinate (Nfl) at (0.12,0.58);
+  \coordinate (Nfr) at (3.28,0.42);
+  \coordinate (Nbr) at (3.95,0.92);
+  \coordinate (Nbl) at (0.82,1.08);
+  \coordinate (OM) at (1.95,2.08);
+  \coordinate (ON) at (1.95,0.75);
+  \coordinate (Atop) at (1.95,3.05);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.7pt] (Nfl) -- (Nfr) -- (Nbr) -- (Nbl) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (1.42,2.22) -- (1.42,0.88);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (2.48,2.15) -- (2.48,0.82);
+  \draw[line width=0.7pt,dash pattern=on 2.6pt off 1.6pt] (OM) -- (ON);
+  \draw[line width=0.7pt] (1.38,2.78) -- (Atop) -- (2.52,2.78);
+  \draw[line width=0.7pt] (1.38,2.78) -- (1.55,2.28) -- (OM) -- (2.35,2.22) -- (2.52,2.78);
+  \draw[line width=0.8pt] (Atop) -- (OM);
+  \draw[line width=0.75pt] (OM) -- (1.25,1.88);
+  \draw[line width=0.75pt] (OM) -- (2.62,1.95);
+  \draw[line width=0.7pt] (1.55,2.28) -- (1.35,1.12) -- (1.15,0.48) -- (ON);
+  \draw[line width=0.7pt] (2.35,2.22) -- (2.55,1.05) -- (2.72,0.42) -- (ON);
+  \draw[line width=0.75pt] (ON) -- (1.25,0.55);
+  \draw[line width=0.75pt] (ON) -- (2.62,0.62);
+  \node[anchor=south,inner sep=0.7pt] at (Atop) {$a$};
+  \node[anchor=south east,inner sep=0.6pt] at (1.38,2.78) {$P$};
+  \node[anchor=south west,inner sep=0.6pt] at (2.52,2.78) {$Q$};
+  \node[anchor=east,inner sep=1pt] at (Mfl) {$M$};
+  \node[anchor=east,inner sep=1pt] at (Nfl) {$N$};
+  \node[anchor=north east,inner sep=0.4pt] at (1.25,1.88) {$c$};
+  \node[anchor=north west,inner sep=0.4pt] at (2.62,1.95) {$b$};
+  \node[anchor=north east,inner sep=0.4pt] at (1.25,0.55) {$e$};
+  \node[anchor=north west,inner sep=0.4pt] at (2.62,0.62) {$d$};
+\end{tikzpicture}%
+}
 \caption{图 1·73}
 \end{figure}
 
@@ -5591,7 +5777,43 @@ c、d、e. 因为直线 \(a \perp\) 平面 M，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/solid-geometry/fig-p0062-01.png}}
+\fitfig{%
+% fig-alt: 第5题：上平面M内A，AC、AD成V形；平面间短线a平行于AC。下平面N内B，BE、BF成V形；其下斜线b平行于BF。全部实线。提示写BF，扫描下射线端点为F，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.10,2.55);
+  \coordinate (Mfr) at (2.55,2.42);
+  \coordinate (Mbr) at (3.15,2.92);
+  \coordinate (Mbl) at (0.70,3.05);
+  \coordinate (Nfl) at (0.10,1.05);
+  \coordinate (Nfr) at (2.55,0.92);
+  \coordinate (Nbr) at (3.15,1.42);
+  \coordinate (Nbl) at (0.70,1.55);
+  \coordinate (A) at (1.05,2.78);
+  \coordinate (C) at (2.35,2.88);
+  \coordinate (D) at (2.15,2.52);
+  \coordinate (B) at (1.05,1.28);
+  \coordinate (E) at (2.35,1.38);
+  \coordinate (F) at (2.15,1.02);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.7pt] (Nfl) -- (Nfr) -- (Nbr) -- (Nbl) -- cycle;
+  \draw[line width=0.8pt] (A) -- (C);
+  \draw[line width=0.8pt] (A) -- (D);
+  \draw[line width=0.8pt] (B) -- (E);
+  \draw[line width=0.8pt] (B) -- (F);
+  \draw[line width=0.75pt] (0.85,1.92) -- (2.05,1.98);
+  \draw[line width=0.75pt] (0.55,0.55) -- (2.15,0.12);
+  \node[anchor=east,inner sep=1pt] at (Mfl) {$M$};
+  \node[anchor=east,inner sep=1pt] at (Nfl) {$N$};
+  \node[anchor=south east,inner sep=0.5pt] at (A) {$A$};
+  \node[anchor=south,inner sep=0.5pt] at (C) {$C$};
+  \node[anchor=north,inner sep=0.5pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=0.5pt] at (B) {$B$};
+  \node[anchor=south,inner sep=0.5pt] at (E) {$E$};
+  \node[anchor=north,inner sep=0.5pt] at (F) {$F$};
+  \node[anchor=north,inner sep=0.5pt] at (1.45,1.92) {$a$};
+  \node[anchor=north,inner sep=0.5pt] at (1.35,0.28) {$b$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -5629,7 +5851,41 @@ c、d、e. 因为直线 \(a \perp\) 平面 M，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1-74}]{assets/solid-geometry/fig-p0062-02.png}}
+\fitfig{%
+% fig-alt: 图1-74：平面P与平行平面M、N相交，交线a、b互相平行。P为斜立平行四边形，上标P；M在上、N在下。P被挡住的后侧棱为虚线，其余实线。扫描不另标A、B，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Ptop) at (1.88,3.02);
+  \coordinate (Pfl) at (1.42,2.48);
+  \coordinate (Pfr) at (2.38,2.58);
+  \coordinate (Pbl) at (1.22,0.18);
+  \coordinate (Pbr) at (2.18,0.28);
+  \coordinate (Mfl) at (0.08,2.02);
+  \coordinate (Mfr) at (3.28,1.85);
+  \coordinate (Mbr) at (3.88,2.35);
+  \coordinate (Mbl) at (0.68,2.52);
+  \coordinate (Nfl) at (0.08,0.82);
+  \coordinate (Nfr) at (3.28,0.65);
+  \coordinate (Nbr) at (3.88,1.15);
+  \coordinate (Nbl) at (0.68,1.32);
+  \coordinate (aL) at (1.52,2.12);
+  \coordinate (aR) at (2.42,2.22);
+  \coordinate (bL) at (1.38,0.95);
+  \coordinate (bR) at (2.32,1.05);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (Pfr) -- (Pbr);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.7pt] (Nfl) -- (Nfr) -- (Nbr) -- (Nbl) -- cycle;
+  \draw[line width=0.7pt] (Pfl) -- (Ptop) -- (Pfr);
+  \draw[line width=0.7pt] (Pfl) -- (Pbl) -- (Pbr);
+  \draw[line width=0.8pt] (aL) -- (aR);
+  \draw[line width=0.8pt] (bL) -- (bR);
+  \draw[line width=0.65pt] (Pfl) -- (aL) -- (bL) -- (Pbl);
+  \node[anchor=south,inner sep=0.8pt] at (Ptop) {$P$};
+  \node[anchor=east,inner sep=1pt] at (Mfl) {$M$};
+  \node[anchor=east,inner sep=1pt] at (Nfl) {$N$};
+  \node[anchor=south,inner sep=0.6pt] at (1.95,2.16) {$a$};
+  \node[anchor=south,inner sep=0.6pt] at (1.85,1.00) {$b$};
+\end{tikzpicture}%
+}
 \caption{图 1-74}
 \end{figure}
 
