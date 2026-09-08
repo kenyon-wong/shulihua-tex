@@ -10573,7 +10573,49 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8.10}]{assets/physics-4/fig-p0214-01.png}}
+% fig-alt: 图8.10：铅盒放钋，α粒子束穿过薄金属箔；多数直线打到右荧光屏，少数大偏转打到左右荧光屏（星号）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.5pt] (0.15,1.55) rectangle (0.95,2.25);
+  \draw[line width=0.45pt] (0.15,2.25) -- (0.48,2.52) -- (1.28,2.52) -- (0.95,2.25);
+  \draw[line width=0.45pt] (0.95,2.25) -- (1.28,2.52) -- (1.28,1.82) -- (0.95,1.55);
+  \begin{scope}
+    \clip (0.15,1.55) rectangle (0.95,2.25);
+    \foreach \i in {0,1,...,8} {
+      \draw[line width=0.28pt] (0.05+\i*0.12,1.50) -- (0.45+\i*0.12,2.30);
+    }
+  \end{scope}
+  \node[anchor=south] at (0.55,2.55) {铅盒};
+  \node[anchor=north] at (0.55,1.48) {钋};
+  \fill (0.95,1.84) rectangle (4.48,1.98);
+  \node[anchor=south] at (2.15,2.05) {$\alpha$粒子束};
+  \draw[line width=0.5pt] (2.55,0.72) rectangle (4.35,3.15);
+  \node[anchor=north] at (3.45,0.66) {荧光屏};
+  \draw[line width=0.55pt] (4.48,1.62) -- (4.88,1.70) -- (5.02,2.22) -- (4.62,2.14) -- cycle;
+  \node[anchor=north] at (5.35,1.42) {薄金属箔};
+  \fill (5.02,1.84) rectangle (8.05,1.98);
+  \draw[line width=0.5pt] (7.15,0.28) -- (9.15,0.58) -- (8.85,3.35) -- (6.85,3.05) -- cycle;
+  \node[anchor=west] at (9.22,2.55) {荧光屏};
+  \draw[line width=0.35pt] (8.85,2.55) -- (9.15,2.55);
+  \node[anchor=south] at (5.55,3.55) {少数$\alpha$粒子产生较大偏转};
+  \draw[line width=0.32pt] (4.85,3.48) -- (4.95,2.20);
+  \draw[line width=0.32pt] (6.15,3.48) -- (6.55,2.85);
+  \draw[line width=0.35pt] (4.95,1.90) -- (3.35,2.72);
+  \draw[line width=0.35pt] (4.95,1.88) -- (3.15,1.05);
+  \draw[line width=0.35pt] (5.15,1.95) -- (7.55,2.85);
+  \draw[line width=0.35pt] (5.18,1.92) -- (8.05,2.45);
+  \draw[line width=0.35pt] (5.15,1.85) -- (7.85,0.95);
+  \draw[line width=0.35pt] (5.12,1.82) -- (8.35,1.15);
+  \node at (3.20,2.55) {$\ast$};
+  \node at (3.05,1.15) {$\ast$};
+  \node at (5.28,2.35) {$\ast$};
+  \node at (7.55,2.55) {$\ast$};
+  \node at (8.15,2.15) {$\ast$};
+  \node at (7.65,1.05) {$\ast$};
+  \node at (8.45,0.95) {$\ast$};
+  \node[anchor=north] at (7.15,-0.05) {多数$\alpha$粒子直线通过};
+\end{tikzpicture}%
+}
 \caption{图8.10}
 \end{figure}
 
@@ -10620,13 +10662,94 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0216-01.png}}
+% fig-alt: 图8.11（a）：三个斜线填充圆，无核点；左侧七个实心粒子穿过后仅小角度偏折
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}
+    \clip (2.35,4.85) circle (0.92);
+    \foreach \i in {-6,-5,...,6} {
+      \draw[line width=0.28pt] (1.15+\i*0.16,3.85) -- (2.05+\i*0.16,5.85);
+    }
+  \end{scope}
+  \draw[line width=0.55pt] (2.35,4.85) circle (0.92);
+  \begin{scope}
+    \clip (2.35,3.05) circle (0.92);
+    \foreach \i in {-6,-5,...,6} {
+      \draw[line width=0.28pt] (1.15+\i*0.16,2.05) -- (2.05+\i*0.16,4.05);
+    }
+  \end{scope}
+  \draw[line width=0.55pt] (2.35,3.05) circle (0.92);
+  \begin{scope}
+    \clip (2.35,1.25) circle (0.92);
+    \foreach \i in {-6,-5,...,6} {
+      \draw[line width=0.28pt] (1.15+\i*0.16,0.25) -- (2.05+\i*0.16,2.25);
+    }
+  \end{scope}
+  \draw[line width=0.55pt] (2.35,1.25) circle (0.92);
+  \fill (0.38,5.45) circle (0.075);
+  \draw[line width=0.4pt] (0.46,5.45) -- (1.55,5.45);
+  \draw[line width=0.4pt,->] (1.55,5.45) -- (2.95,5.62) -- (4.55,6.15);
+  \fill (0.38,4.95) circle (0.075);
+  \draw[line width=0.4pt] (0.46,4.95) -- (1.50,4.95);
+  \draw[line width=0.4pt,->] (1.50,4.95) -- (3.15,4.88) -- (4.55,4.72);
+  \fill (0.38,4.35) circle (0.075);
+  \draw[line width=0.4pt] (0.46,4.35) -- (1.55,4.35);
+  \draw[line width=0.4pt,->] (1.55,4.35) -- (3.05,4.22) -- (4.55,3.85);
+  \fill (0.38,3.45) circle (0.075);
+  \draw[line width=0.4pt] (0.46,3.45) -- (1.50,3.45);
+  \draw[line width=0.4pt,->] (1.50,3.45) -- (3.15,3.52) -- (4.55,3.62);
+  \fill (0.38,2.65) circle (0.075);
+  \draw[line width=0.4pt] (0.46,2.65) -- (1.50,2.65);
+  \draw[line width=0.4pt,->] (1.50,2.65) -- (3.20,2.62) -- (4.55,2.58);
+  \fill (0.38,1.55) circle (0.075);
+  \draw[line width=0.4pt] (0.46,1.55) -- (1.50,1.55);
+  \draw[line width=0.4pt,->] (1.50,1.55) -- (3.20,1.52) -- (4.55,1.48);
+  \fill (0.38,0.72) circle (0.075);
+  \draw[line width=0.4pt] (0.46,0.72) -- (1.55,0.72);
+  \draw[line width=0.4pt,->] (1.55,0.72) -- (3.05,1.05) -- (4.55,0.35);
+\end{tikzpicture}%
+}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（5）}]{assets/physics-4/fig-p0216-02.png}}
+% fig-alt: 图8.11（b）：扫描为虚线圆中心核点；近核大角上偏、反弹向左、大角下偏，其余小偏折；题注仍为（5）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.5pt,dashed] (2.35,5.15) circle (0.88);
+  \fill (2.35,5.15) circle (0.055);
+  \draw[line width=0.5pt,dashed] (2.35,3.35) circle (0.88);
+  \fill (2.35,3.35) circle (0.055);
+  \draw[line width=0.5pt,dashed] (2.35,1.55) circle (0.88);
+  \fill (2.35,1.55) circle (0.055);
+  \fill (0.42,5.55) circle (0.075);
+  \draw[line width=0.4pt] (0.50,5.55) -- (1.55,5.55);
+  \draw[line width=0.45pt,->] (1.55,5.55) .. controls (2.05,5.55) and (2.15,5.35) .. (2.55,5.85) -- (3.55,6.85);
+  \draw (0.42,4.85) circle (0.075);
+  \draw[line width=0.4pt] (0.50,4.85) -- (1.45,4.85);
+  \draw[line width=0.4pt,->] (1.45,4.85) -- (3.25,4.72) -- (4.65,4.62);
+  \draw (0.42,4.25) circle (0.075);
+  \draw[line width=0.4pt] (0.50,4.25) -- (1.50,4.25);
+  \draw[line width=0.4pt,->] (1.50,4.25) -- (3.25,4.18) -- (4.65,4.12);
+  \draw (0.42,3.55) circle (0.075);
+  \draw[line width=0.4pt] (0.50,3.55) -- (1.50,3.55);
+  \draw[line width=0.4pt,->] (1.50,3.55) -- (3.25,3.62) -- (4.65,3.72);
+  \fill (0.42,2.85) circle (0.075);
+  \draw[line width=0.4pt] (0.50,2.85) -- (1.50,2.85);
+  \draw[line width=0.4pt,->] (1.50,2.85) -- (3.25,2.78) -- (4.65,2.72);
+  \fill (0.42,2.15) circle (0.075);
+  \draw[line width=0.4pt] (0.50,2.15) -- (1.55,2.15);
+  \draw[line width=0.45pt] (1.55,2.15) .. controls (1.95,2.15) and (2.10,1.78) .. (1.85,1.78);
+  \draw[line width=0.45pt,->] (1.85,1.78) -- (0.95,1.78);
+  \fill (0.42,1.35) circle (0.075);
+  \draw[line width=0.4pt] (0.50,1.35) -- (1.55,1.35);
+  \draw[line width=0.45pt,->] (1.55,1.35) .. controls (2.05,1.35) and (2.20,1.22) .. (2.70,0.85) -- (3.55,0.22);
+  \draw (0.42,0.55) circle (0.075);
+  \draw[line width=0.4pt] (0.50,0.55) -- (1.50,0.55);
+  \draw[line width=0.4pt,->] (1.50,0.55) -- (3.25,0.52) -- (4.65,0.48);
+\end{tikzpicture}%
+}
 \caption{（5）}
 \end{figure}
 
@@ -10634,7 +10757,33 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8.12 散射角}]{assets/physics-4/fig-p0216-03.png}}
+% fig-alt: 图8.12：θ=0°直进、θ=180°折返；核旁标原子核、+Ze；散射角θ在出射渐近线与向前虚线之间
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node[anchor=east] at (1.55,4.85) {$\theta=0^{\circ}$};
+  \draw[line width=0.55pt] (1.65,4.85) -- (9.35,4.85);
+  \draw[line width=0.45pt] (0.35,3.55) .. controls (3.4,3.52) and (5.2,3.35) .. (6.4,3.55)
+    .. controls (7.3,3.72) and (8.2,4.05) .. (9.45,4.55);
+  \draw[line width=0.5pt] (0.35,2.85) .. controls (3.2,2.78) and (4.8,2.45) .. (5.7,2.55)
+    .. controls (6.5,2.68) and (7.4,3.25) .. (8.6,4.35);
+  \draw[line width=0.55pt] (0.35,2.15) .. controls (3.0,2.05) and (4.6,1.85) .. (5.35,1.72)
+    .. controls (5.85,1.62) and (6.15,1.85) .. (6.85,2.55)
+    .. controls (7.6,3.25) and (8.3,3.95) .. (9.15,4.85);
+  \draw[line width=0.4pt] (4.15,4.95) -- (5.85,1.35);
+  \draw[line width=0.4pt,dashed] (6.55,1.35) -- (9.25,1.35);
+  \draw[line width=0.45pt,->] (8.45,1.35) -- (9.25,1.35);
+  \draw[line width=0.45pt] (6.55,1.35) -- (7.85,2.75);
+  \draw[line width=0.4pt] (6.85,1.48) arc (12:52:0.62);
+  \node[anchor=west] at (7.15,1.85) {$\theta$};
+  \node[anchor=east] at (1.05,0.95) {$\theta=180^{\circ}$};
+  \draw[line width=0.5pt,->] (1.15,1.08) -- (5.15,1.08);
+  \draw[line width=0.5pt] (5.15,1.08) .. controls (5.95,1.08) and (6.05,0.68) .. (5.35,0.68);
+  \draw[line width=0.5pt,->] (5.05,0.68) -- (1.15,0.68);
+  \fill (6.55,0.95) circle (0.07);
+  \node[anchor=west] at (6.72,1.08) {原子核};
+  \node[anchor=north] at (6.55,0.72) {$+Ze$};
+\end{tikzpicture}%
+}
 \caption{图8.12 散射角}
 \end{figure}
 
@@ -10649,7 +10798,28 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8.13 \textbackslash alpha 粒子可能到达的离原子核中心的最短距离}]{assets/physics-4/fig-p0217-01.png}}
+% fig-alt: 图8.13：+2e粒子趋近点P，距核+Ze的最短距离标d
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=1.15pt] (0.15,1.55) -- (5.25,1.55);
+  \fill (3.15,1.55) circle (0.045);
+  \draw[line width=0.55pt] (5.35,1.55) circle (0.10);
+  \node[anchor=south] at (5.05,1.78) {$+2e$};
+  \node[anchor=west] at (5.52,1.48) {$P$};
+  \draw[line width=0.5pt] (5.35,1.40) -- (5.35,0.42);
+  \begin{scope}
+    \clip (7.35,1.55) circle (0.48);
+    \foreach \i in {-5,-4,...,5} {
+      \draw[line width=0.28pt] (6.75+\i*0.10,1.00) -- (7.20+\i*0.10,2.10);
+    }
+  \end{scope}
+  \draw[line width=0.55pt] (7.35,1.55) circle (0.48);
+  \node[fill=white,inner sep=1pt] at (7.35,1.55) {$+Ze$};
+  \draw[line width=0.5pt] (7.35,1.07) -- (7.35,0.42);
+  \draw[line width=0.45pt,<->] (5.35,0.58) -- (7.35,0.58);
+  \node[anchor=south] at (6.35,0.62) {$d$};
+\end{tikzpicture}%
+}
 \caption{图8.13 \(\alpha\) 粒子可能到达的离原子核中心的最短距离}
 \end{figure}
 
@@ -10701,7 +10871,43 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.14 氢原子光谱中的巴耳麦线系}]{assets/physics-4/fig-p0220-01.png}}
+% fig-alt: 图8.14：巴耳麦线系，n=3至∞；Hα红光6562.1、Hβ蓝光4860.74、Hγ紫光4340.1、Hδ紫外光4101.2，极限3645.81
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.6pt] (0.15,0.15) rectangle (11.55,1.85);
+  \draw[line width=0.7pt] (1.85,0.15) -- (1.85,1.85);
+  \draw[line width=0.7pt] (4.55,0.15) -- (4.55,1.85);
+  \draw[line width=0.7pt] (5.85,0.15) -- (5.85,1.85);
+  \draw[line width=0.7pt] (6.75,0.15) -- (6.75,1.85);
+  \draw[line width=0.55pt] (7.45,0.15) -- (7.45,1.85);
+  \draw[line width=0.55pt] (8.05,0.15) -- (8.05,1.85);
+  \foreach \x in {8.50,8.85,9.15,9.40,9.60,9.78,9.94,10.08,10.20,10.30,10.39,10.47} {
+    \draw[line width=0.4pt] (\x,0.15) -- (\x,1.85);
+  }
+  \fill (10.55,0.15) rectangle (11.55,1.85);
+  \node[anchor=south] at (1.85,1.90) {$n=3$};
+  \node[anchor=south] at (4.55,1.90) {$4$};
+  \node[anchor=south] at (5.85,1.90) {$5$};
+  \node[anchor=south] at (6.75,1.90) {$6$};
+  \node[anchor=south] at (7.45,1.90) {$7$};
+  \node[anchor=south] at (8.05,1.90) {$8$};
+  \node[anchor=south] at (11.05,1.90) {$\infty$};
+  \node at (1.00,1.00) {$H_{\alpha}$};
+  \node at (3.20,1.00) {$H_{\beta}$};
+  \node at (5.20,1.00) {$H_{\gamma}$};
+  \node at (6.30,1.00) {$H_{\delta}$};
+  \node[anchor=north,font=\small] at (1.00,0.08) {$\lambda=6562.1$(埃)};
+  \node[anchor=north] at (1.00,-0.42) {红光};
+  \node[anchor=north,font=\scriptsize] at (4.35,0.08) {$4860.74$};
+  \node[anchor=north] at (4.35,-0.38) {蓝光};
+  \node[anchor=north,font=\scriptsize] at (5.95,0.08) {$4340.1$};
+  \node[anchor=north] at (5.70,-0.38) {紫光};
+  \node[anchor=north,font=\scriptsize] at (7.35,0.08) {$4101.2$};
+  \node[anchor=north] at (7.55,-0.38) {紫外光};
+  \node[anchor=north,font=\small] at (10.85,0.08) {$3645.81$};
+  \node[anchor=north] at (10.85,-0.42) {（极限）};
+\end{tikzpicture}%
+}
 \caption{图 8.14 氢原子光谱中的巴耳麦线系}
 \end{figure}
 
@@ -10960,13 +11166,74 @@ E _ {1} = - 13.6 \text{电子伏特},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.15 氢原子能级图}]{assets/physics-4/fig-p0226-01.png}}
+% fig-alt: 图8.15：氢能级n=∞到n=1，电子伏特0、-0.544、-0.850、-1.51、-3.40、-13.60；赖曼至n=1，巴耳麦HαHβHγ至n=2，帕邢至n=3
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node[anchor=south east] at (8.55,7.95) {电子伏特};
+  \draw[line width=0.45pt] (1.85,7.72) -- (8.15,7.72);
+  \draw[line width=0.4pt] (2.35,7.58) -- (8.15,7.58);
+  \draw[line width=0.4pt] (2.55,7.48) -- (8.15,7.48);
+  \draw[line width=0.4pt] (2.70,7.40) -- (8.15,7.40);
+  \draw[line width=0.5pt] (1.55,7.22) -- (8.15,7.22);
+  \draw[line width=0.55pt] (1.55,6.55) -- (8.15,6.55);
+  \draw[line width=0.55pt] (1.55,5.55) -- (8.15,5.55);
+  \draw[line width=0.55pt] (1.55,3.85) -- (8.15,3.85);
+  \draw[line width=0.55pt] (1.55,0.35) -- (8.35,0.35);
+  \node[anchor=east] at (1.48,7.72) {$n=\infty$};
+  \node[anchor=east] at (1.48,7.22) {$n=5$};
+  \node[anchor=east] at (1.48,6.55) {$n=4$};
+  \node[anchor=east] at (1.48,5.55) {$n=3$};
+  \node[anchor=east] at (1.48,3.85) {$n=2$};
+  \node[anchor=east] at (1.48,0.35) {$n=1$};
+  \node[anchor=west] at (8.22,7.72) {$0$};
+  \node[anchor=west] at (8.22,7.22) {$-0.544$};
+  \node[anchor=west] at (8.22,6.55) {$-0.850$};
+  \node[anchor=west] at (8.22,5.55) {$-1.51$};
+  \node[anchor=west] at (8.22,3.85) {$-3.40$};
+  \node[anchor=west] at (8.42,0.35) {$-13.60$};
+  \draw[line width=0.85pt,->] (2.05,3.85) -- (2.05,0.35);
+  \draw[line width=0.85pt,->] (2.32,5.55) -- (2.32,0.35);
+  \draw[line width=0.85pt,->] (2.58,6.55) -- (2.58,0.35);
+  \draw[line width=0.85pt,->] (2.84,7.22) -- (2.84,0.35);
+  \node[anchor=north] at (2.55,0.28) {赖曼线系};
+  \draw[line width=0.8pt,->] (3.45,5.55) -- (3.45,3.85);
+  \node[anchor=east] at (3.38,4.70) {$H_{\alpha}$};
+  \draw[line width=0.8pt,->] (3.85,6.55) -- (3.85,3.85);
+  \node[anchor=east] at (3.78,6.10) {$H_{\beta}$};
+  \draw[line width=0.8pt,->] (4.22,7.22) -- (4.22,3.85);
+  \node[anchor=east] at (4.15,6.88) {$H_{\gamma}$};
+  \node[anchor=west] at (4.40,3.98) {巴耳麦线系};
+  \draw[line width=0.7pt,->] (5.05,6.55) -- (5.05,5.55);
+  \draw[line width=0.7pt,->] (5.38,7.22) -- (5.38,5.55);
+  \node[anchor=west] at (5.55,5.85) {帕邢线系};
+\end{tikzpicture}%
+}
 \caption{图 8.15 氢原子能级图}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8.16}]{assets/physics-4/fig-p0226-02.png}}
+% fig-alt: 图8.16：核靶心，内实线轨n=n1、虚线轨n=n2、外实线圆；内轨电子发出hν波，下标光子
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.55pt] (2.15,2.15) circle (0.22);
+  \fill (2.15,2.15) circle (0.07);
+  \draw[line width=0.55pt] (2.15,2.15) circle (0.78);
+  \node[anchor=north] at (2.15,1.28) {$n=n_{1}$};
+  \draw[line width=0.5pt,dashed] (2.15,2.15) circle (1.22);
+  \draw[line width=0.55pt] (2.15,2.15) circle (1.72);
+  \node[anchor=north] at (2.15,0.32) {$n=n_{2}$};
+  \fill (0.93,2.15) circle (0.06);
+  \fill (2.93,2.15) circle (0.07);
+  \draw[line width=0.5pt] (2.93,2.15) .. controls (3.35,1.72) and (3.55,1.78) .. (3.95,2.45)
+    .. controls (4.35,3.05) and (4.75,2.95) .. (5.15,2.05)
+    .. controls (5.55,1.25) and (6.05,1.40) .. (6.45,2.20)
+    .. controls (6.85,2.85) and (7.15,2.55) .. (7.65,2.10);
+  \node[anchor=south] at (5.55,2.55) {$h\nu$};
+  \draw[line width=1.15pt,->] (5.15,1.55) -- (6.35,1.55);
+  \node[anchor=north] at (5.75,1.45) {光子};
+\end{tikzpicture}%
+}
 \caption{图8.16}
 \end{figure}
 
