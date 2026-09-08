@@ -7841,7 +7841,23 @@ h = \frac {1}{2} g t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-1/fig-p0163-03.png}}
+% fig-alt: 第6题两幅s-t：左自原点上斜；右自纵轴中段上斜、水平、再下至t轴；t轴虚线，S轴实线并略穿原点
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.08cm,y=1.05cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.1pt,->] (-0.30,0) -- (1.78,0);
+  \draw[line width=0.6pt,->] (0,-0.22) -- (0,1.68);
+  \draw[line width=0.8pt] (0,0) -- (1.18,1.46);
+  \node[anchor=south] at (-0.02,1.72) {$S$};
+  \node[anchor=west] at (1.86,0.03) {$t$};
+  \begin{scope}[xshift=2.95cm]
+    \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.1pt,->] (-0.30,0) -- (2.05,0);
+    \draw[line width=0.6pt,->] (0,-0.22) -- (0,1.68);
+    \draw[line width=0.8pt] (0,0.46) -- (0.52,0.96) -- (1.22,0.96) -- (1.62,0);
+    \node[anchor=south] at (-0.02,1.72) {$S$};
+    \node[anchor=west] at (2.12,0.03) {$t$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -7859,7 +7875,27 @@ h = \frac {1}{2} g t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-1/fig-p0164-01.png}}
+% fig-alt: 第1题轨迹：O南至(0,-4)、东至(6,-4)、北至(6,4)、西至(-3,4)、再下至x轴；左缘约-3非-4；x轴虚线，负x标6、4、2无负号
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.40cm,y=0.40cm,every node/.style={font=\scriptsize,inner sep=0.4pt}]
+  \draw[line width=0.5pt,dash pattern=on 1.5pt off 1.15pt,->] (-6.7,0) -- (7.35,0);
+  \draw[line width=0.6pt,->] (0,-6.55) -- (0,6.7);
+  \foreach \n in {2,4,6} {
+    \draw[line width=0.35pt] (\n,0) -- (\n,-0.16);
+    \node[anchor=south] at (\n,0.10) {$\n$};
+    \draw[line width=0.35pt] (-\n,0) -- (-\n,-0.16);
+    \node[anchor=south] at (-\n,0.10) {$\n$};
+    \draw[line width=0.35pt] (0,\n) -- (-0.14,\n);
+    \node[anchor=east] at (-0.18,\n) {$\n$};
+    \draw[line width=0.35pt] (0,-\n) -- (-0.14,-\n);
+    \node[anchor=east] at (-0.18,-\n) {$-\n$};
+  }
+  \node[anchor=north east] at (-0.08,-0.08) {$0$};
+  \node[anchor=west] at (0.16,6.55) {$y$（千米）};
+  \node[anchor=north west] at (7.15,-0.08) {$x$（千米）};
+  \draw[line width=0.85pt] (0,0) -- (0,-4) -- (6,-4) -- (6,4) -- (-3,4) -- (-3,0);
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -8349,7 +8385,97 @@ f = 405 \text{公 斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6·9 同一直线上两个共点力的合成}]{assets/physics-1/fig-p0181-01.png}}
+% fig-alt: 图6·9：甲手拉B；乙同向F2、F1皆向右，丙R=F1+F2；b乙F1在左、F2向右且F2>F1，丙R=F2-F1；虚线对齐B与B'
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.5pt}]
+  \begin{scope}
+    \draw[line width=0.7pt] (0.08,0.08) -- (0.08,0.48);
+    \foreach \k in {0,1,2,3} {\draw[line width=0.4pt] (0.08,0.12+0.09*\k) -- (-0.06,0.20+0.09*\k);}
+    \draw[line width=0.7pt] (0.08,0.22) -- (2.05,0.22);
+    \node[anchor=south west] at (0.16,0.24) {$A$};
+    \node[anchor=north] at (0.55,0.18) {甲};
+    \node[anchor=south] at (2.05,0.26) {$B$};
+    \draw[line width=0.55pt] (2.18,0.55) .. controls (2.08,0.95) and (2.28,1.25) .. (2.48,1.48) .. controls (2.68,1.38) and (2.55,1.05) .. (2.28,0.42);
+    \draw[line width=0.5pt] (2.22,0.38) .. controls (2.42,0.62) and (2.52,0.78) .. (2.62,1.05);
+    \draw[line width=0.45pt] (2.34,0.30) -- (2.05,0.24);
+    \draw[line width=0.7pt] (0.08,-1.55) -- (0.08,-1.15);
+    \foreach \k in {0,1,2,3} {\draw[line width=0.4pt] (0.08,-1.51+0.09*\k) -- (-0.06,-1.43+0.09*\k);}
+    \draw[line width=0.7pt] (0.08,-1.41) -- (3.15,-1.41);
+    \node[anchor=south west] at (0.16,-1.39) {$A$};
+    \node[anchor=north] at (0.55,-1.45) {乙};
+    \node[anchor=south] at (2.92,-1.36) {$B'$};
+    \draw[line width=0.55pt] (3.15,-1.41) -- (4.17,-1.41);
+    \draw[line width=0.55pt] (3.42,-1.41) circle[radius=0.11];
+    \draw[line width=0.4pt] (3.31,-1.32) -- (3.31,-1.08) -- (3.53,-1.08) -- (3.53,-1.32);
+    \draw[line width=0.5pt] (3.42,-1.52) -- (3.42,-1.78);
+    \foreach \k in {0,1,2,3} {\draw[line width=0.45pt] (3.28,-1.78-0.16*\k) rectangle (3.56,-1.66-0.16*\k);}
+    \node[anchor=west] at (3.62,-2.15) {$F_{2}$};
+    \draw[line width=0.55pt] (4.28,-1.41) circle[radius=0.11];
+    \draw[line width=0.4pt] (4.17,-1.32) -- (4.17,-1.08) -- (4.39,-1.08) -- (4.39,-1.32);
+    \draw[line width=0.5pt] (4.28,-1.52) -- (4.28,-1.70);
+    \foreach \k in {0,1} {\draw[line width=0.45pt] (4.16,-1.70-0.16*\k) rectangle (4.40,-1.58-0.16*\k);}
+    \node[anchor=west] at (4.46,-1.95) {$F_{1}$};
+    \draw[line width=0.7pt] (0.08,-3.35) -- (0.08,-2.95);
+    \foreach \k in {0,1,2,3} {\draw[line width=0.4pt] (0.08,-3.31+0.09*\k) -- (-0.06,-3.23+0.09*\k);}
+    \draw[line width=0.7pt] (0.08,-3.21) -- (3.15,-3.21);
+    \node[anchor=south west] at (0.16,-3.19) {$A$};
+    \node[anchor=north] at (0.55,-3.25) {丙};
+    \node[anchor=south] at (2.90,-3.16) {$B'$};
+    \draw[line width=0.55pt] (3.15,-3.21) -- (3.31,-3.21);
+    \draw[line width=0.55pt] (3.42,-3.21) circle[radius=0.11];
+    \draw[line width=0.4pt] (3.31,-3.12) -- (3.31,-2.88) -- (3.53,-2.88) -- (3.53,-3.12);
+    \draw[line width=0.5pt] (3.42,-3.32) -- (3.42,-3.52);
+    \foreach \k in {0,1,2,3,4} {\draw[line width=0.45pt] (3.26,-3.52-0.15*\k) rectangle (3.58,-3.40-0.15*\k);}
+    \node[anchor=west] at (3.64,-4.05) {$R=F_{1}+F_{2}$};
+    \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (2.05,0.22) -- (2.05,-3.28);
+    \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (3.15,-1.28) -- (3.15,-3.28);
+    \node[anchor=north] at (1.55,-4.35) {$(a)$};
+  \end{scope}
+  \begin{scope}[xshift=6.15cm]
+    \draw[line width=0.7pt] (0.08,0.08) -- (0.08,0.48);
+    \foreach \k in {0,1,2,3} {\draw[line width=0.4pt] (0.08,0.12+0.09*\k) -- (-0.06,0.20+0.09*\k);}
+    \draw[line width=0.7pt] (0.08,0.22) -- (2.05,0.22);
+    \node[anchor=south west] at (0.16,0.24) {$A$};
+    \node[anchor=north] at (0.55,0.18) {甲};
+    \node[anchor=south] at (2.05,0.26) {$B$};
+    \draw[line width=0.55pt] (2.18,0.55) .. controls (2.08,0.95) and (2.28,1.25) .. (2.48,1.48) .. controls (2.68,1.38) and (2.55,1.05) .. (2.28,0.42);
+    \draw[line width=0.5pt] (2.22,0.38) .. controls (2.42,0.62) and (2.52,0.78) .. (2.62,1.05);
+    \draw[line width=0.45pt] (2.34,0.30) -- (2.05,0.24);
+    \draw[line width=0.7pt] (0.08,-1.55) -- (0.08,-1.15);
+    \foreach \k in {0,1,2,3} {\draw[line width=0.4pt] (0.08,-1.51+0.09*\k) -- (-0.06,-1.43+0.09*\k);}
+    \draw[line width=0.7pt] (0.08,-1.41) -- (2.85,-1.41);
+    \node[anchor=south west] at (0.16,-1.39) {$A$};
+    \node[anchor=north] at (0.55,-1.45) {乙};
+    \node[anchor=south] at (2.85,-1.37) {$B'$};
+    \draw[line width=0.55pt] (1.72,-1.28) circle[radius=0.11];
+    \draw[line width=0.4pt] (1.61,-1.19) -- (1.61,-0.95) -- (1.83,-0.95) -- (1.83,-1.19);
+    \draw[line width=0.5pt] (1.72,-1.39) -- (1.72,-1.62);
+    \foreach \k in {0,1} {\draw[line width=0.45pt] (1.58,-1.62-0.16*\k) rectangle (1.86,-1.50-0.16*\k);}
+    \node[anchor=west] at (1.90,-1.85) {$F_{1}$};
+    \draw[line width=0.55pt] (4.15,-1.41) circle[radius=0.11];
+    \draw[line width=0.4pt] (4.04,-1.32) -- (4.04,-1.08) -- (4.26,-1.08) -- (4.26,-1.32);
+    \draw[line width=0.5pt] (4.15,-1.52) -- (4.15,-1.78);
+    \foreach \k in {0,1,2,3} {\draw[line width=0.45pt] (4.01,-1.78-0.16*\k) rectangle (4.29,-1.66-0.16*\k);}
+    \node[anchor=west] at (4.34,-2.15) {$F_{2}$};
+    \draw[line width=0.55pt] (2.85,-1.41) -- (4.04,-1.41);
+    \draw[line width=0.7pt] (0.08,-3.35) -- (0.08,-2.95);
+    \foreach \k in {0,1,2,3} {\draw[line width=0.4pt] (0.08,-3.31+0.09*\k) -- (-0.06,-3.23+0.09*\k);}
+    \draw[line width=0.7pt] (0.08,-3.21) -- (2.85,-3.21);
+    \node[anchor=south west] at (0.16,-3.19) {$A$};
+    \node[anchor=north] at (0.55,-3.25) {丙};
+    \node[anchor=south] at (2.85,-3.17) {$B'$};
+    \draw[line width=0.55pt] (3.55,-3.21) circle[radius=0.11];
+    \draw[line width=0.4pt] (3.44,-3.12) -- (3.44,-2.88) -- (3.66,-2.88) -- (3.66,-3.12);
+    \draw[line width=0.5pt] (3.55,-3.32) -- (3.55,-3.52);
+    \foreach \k in {0,1,2} {\draw[line width=0.45pt] (3.41,-3.52-0.16*\k) rectangle (3.69,-3.40-0.16*\k);}
+    \node[anchor=west] at (3.74,-3.90) {$R=F_{2}-F_{1}$};
+    \draw[line width=0.55pt] (2.85,-3.21) -- (3.44,-3.21);
+    \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (2.05,0.22) -- (2.05,-3.28);
+    \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (2.85,-1.28) -- (2.85,-3.28);
+    \node[anchor=north] at (1.55,-4.35) {$(b)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图6·9 同一直线上两个共点力的合成}
 \end{figure}
 
@@ -8372,7 +8498,60 @@ f = 405 \text{公 斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6-10 互成角度两个共质力的合成}]{assets/physics-1/fig-p0182-01.png}}
+% fig-alt: 图6·10：上F1浅斜、F2较陡；中R水平；下自B作F1至C、F2至D、R至E，CE、DE虚线；虚线对齐原长B与B'
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.45pt}]
+  \draw[line width=0.45pt,dash pattern=on 1.6pt off 1.15pt] (1.78,0.18) -- (1.78,-4.55);
+  \draw[line width=0.45pt,dash pattern=on 1.6pt off 1.15pt] (3.05,0.18) -- (3.05,-4.55);
+  \draw[line width=0.7pt] (0.08,0.02) -- (0.08,0.42);
+  \foreach \k in {0,1,2,3} {\draw[line width=0.4pt] (0.08,0.06+0.09*\k) -- (-0.06,0.14+0.09*\k);}
+  \draw[line width=0.7pt] (0.08,0.18) -- (3.05,0.18);
+  \node[anchor=south west] at (0.16,0.20) {$A$};
+  \draw[fill=white,line width=0.55pt] (3.05,0.18) circle[radius=0.045];
+  \node[anchor=south] at (2.92,0.24) {$B'$};
+  \draw[line width=0.55pt] (3.05,0.18) -- (4.48,0.78);
+  \draw[line width=0.55pt] (4.58,0.88) circle[radius=0.11];
+  \draw[line width=0.4pt] (4.47,0.97) -- (4.47,1.16) -- (4.69,1.16) -- (4.69,0.97);
+  \draw[line width=0.5pt] (4.58,0.77) -- (4.58,0.52);
+  \foreach \k in {0,1} {\draw[line width=0.45pt] (4.44,0.36-0.15*\k) rectangle (4.72,0.48-0.15*\k);}
+  \node[anchor=west] at (4.76,0.55) {$F_{1}$};
+  \draw[line width=0.55pt] (3.05,0.18) -- (4.22,-0.48);
+  \draw[line width=0.55pt] (4.32,-0.58) circle[radius=0.11];
+  \draw[line width=0.4pt] (4.21,-0.49) -- (4.21,-0.32) -- (4.43,-0.32) -- (4.43,-0.49);
+  \draw[line width=0.5pt] (4.32,-0.69) -- (4.32,-0.92);
+  \foreach \k in {0,1,2} {\draw[line width=0.45pt] (4.18,-0.92-0.15*\k) rectangle (4.46,-0.80-0.15*\k);}
+  \node[anchor=west] at (4.50,-1.15) {$F_{2}$};
+  \draw[line width=0.7pt] (0.08,-2.02) -- (0.08,-1.62);
+  \foreach \k in {0,1,2,3} {\draw[line width=0.4pt] (0.08,-1.98+0.09*\k) -- (-0.06,-1.90+0.09*\k);}
+  \draw[line width=0.7pt] (0.08,-1.86) -- (3.05,-1.86);
+  \node[anchor=south west] at (0.16,-1.84) {$A$};
+  \draw[fill=white,line width=0.55pt] (3.05,-1.86) circle[radius=0.045];
+  \node[anchor=south] at (2.88,-1.78) {$B'$};
+  \draw[line width=0.55pt] (3.05,-1.86) -- (4.72,-1.86);
+  \draw[line width=0.55pt] (4.84,-1.86) circle[radius=0.11];
+  \draw[line width=0.4pt] (4.73,-1.77) -- (4.73,-1.56) -- (4.95,-1.56) -- (4.95,-1.77);
+  \draw[line width=0.5pt] (4.84,-1.97) -- (4.84,-2.22);
+  \foreach \k in {0,1,2,3} {\draw[line width=0.45pt] (4.70,-2.22-0.15*\k) rectangle (4.98,-2.10-0.15*\k);}
+  \node[anchor=west] at (5.02,-2.45) {$R$};
+  \draw[line width=0.7pt] (0.08,-4.22) -- (0.08,-3.82);
+  \foreach \k in {0,1,2,3} {\draw[line width=0.4pt] (0.08,-4.18+0.09*\k) -- (-0.06,-4.10+0.09*\k);}
+  \draw[line width=0.7pt] (0.08,-4.06) -- (3.05,-4.06);
+  \node[anchor=south west] at (0.16,-4.04) {$A$};
+  \draw[fill=white,line width=0.55pt] (3.05,-4.06) circle[radius=0.045];
+  \node[anchor=south] at (2.88,-3.98) {$B$};
+  \draw[line width=0.7pt,->] (3.05,-4.06) -- (3.92,-3.42);
+  \draw[line width=0.7pt,->] (3.05,-4.06) -- (3.92,-4.70);
+  \draw[line width=0.7pt,->] (3.05,-4.06) -- (4.79,-4.06);
+  \draw[line width=0.5pt,dash pattern=on 1.5pt off 1.1pt] (3.92,-3.42) -- (4.79,-4.06);
+  \draw[line width=0.5pt,dash pattern=on 1.5pt off 1.1pt] (3.92,-4.70) -- (4.79,-4.06);
+  \node[anchor=south east] at (3.55,-3.62) {$F_{1}$};
+  \node[anchor=north west] at (3.55,-4.48) {$F_{2}$};
+  \node[anchor=south] at (4.05,-4.02) {$R$};
+  \node[anchor=south west] at (3.94,-3.38) {$C$};
+  \node[anchor=north west] at (3.94,-4.72) {$D$};
+  \node[anchor=west] at (4.90,-4.04) {$E$};
+\end{tikzpicture}%
+}
 \caption{图6-10 互成角度两个共质力的合成}
 \end{figure}
 
@@ -8388,7 +8567,63 @@ f = 405 \text{公 斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6·11 两个共点力的大小不变，它们之间的夹角越大，合力越小}]{assets/physics-1/fig-p0183-01.png}}
+% fig-alt: 图6·11：(a)θ=0°两箭头同向，R在右端；(b)θ=180° F1向左、F2向右、R短向右；夹角增大则R变短；θ=90°矩形虚边
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \node[anchor=south] at (0.85,0.72) {$(a)$};
+  \draw[line width=0.7pt,->] (0.05,0.08) -- (1.55,0.08);
+  \draw[line width=0.7pt,->] (0.05,0.22) -- (1.28,0.22);
+  \node[anchor=south] at (0.85,0.26) {$F_{2}$};
+  \node[anchor=north] at (0.70,0.04) {$F_{1}$};
+  \node[anchor=south west] at (1.42,0.28) {$R$};
+  \node[anchor=north] at (0.85,-0.18) {夹角\,$\theta=0^{\circ}$};
+  \begin{scope}[xshift=2.55cm]
+    \draw[line width=0.65pt,->] (0,0) -- (1.55,0.08);
+    \draw[line width=0.65pt,->] (0,0) -- (1.05,0.42);
+    \draw[line width=0.5pt,dash pattern=on 1.3pt off 1.0pt] (1.55,0.08) -- (2.60,0.50);
+    \draw[line width=0.5pt,dash pattern=on 1.3pt off 1.0pt] (1.05,0.42) -- (2.60,0.50);
+    \draw[line width=0.7pt,->] (0,0) -- (2.60,0.50);
+    \node[anchor=south] at (0.55,0.32) {$F_{1}$};
+    \node[anchor=north] at (0.85,0.02) {$F_{2}$};
+    \node[anchor=south west] at (1.85,0.42) {$R$};
+    \node[anchor=north] at (1.15,-0.22) {$90^{\circ}>\theta>0^{\circ}$};
+  \end{scope}
+  \begin{scope}[xshift=5.55cm]
+    \draw[line width=0.65pt,->] (0,0) -- (0,0.95);
+    \draw[line width=0.65pt,->] (0,0) -- (1.15,0);
+    \draw[line width=0.5pt,dash pattern=on 1.3pt off 1.0pt] (0,0.95) -- (1.15,0.95);
+    \draw[line width=0.5pt,dash pattern=on 1.3pt off 1.0pt] (1.15,0) -- (1.15,0.95);
+    \draw[line width=0.75pt,->] (0,0) -- (1.15,0.95);
+    \node[anchor=east] at (-0.04,0.55) {$F_{1}$};
+    \node[anchor=north] at (0.62,-0.04) {$F_{2}$};
+    \node[anchor=south west] at (0.62,0.55) {$R$};
+    \node[anchor=north] at (0.58,-0.28) {$\theta=90^{\circ}$};
+  \end{scope}
+  \begin{scope}[xshift=7.55cm]
+    \draw[line width=0.65pt,->] (0.55,0.15) -- (-0.35,0.62);
+    \draw[line width=0.65pt,->] (0.55,0.15) -- (1.85,0.15);
+    \draw[line width=0.5pt,dash pattern=on 1.3pt off 1.0pt] (-0.35,0.62) -- (0.95,0.62);
+    \draw[line width=0.5pt,dash pattern=on 1.3pt off 1.0pt] (1.85,0.15) -- (0.95,0.62);
+    \draw[line width=0.75pt,->] (0.55,0.15) -- (0.95,0.62);
+    \draw[line width=0.4pt] (0.78,0.15) arc (0:148:0.23);
+    \node[anchor=south east] at (0.05,0.48) {$F_{1}$};
+    \node[anchor=north] at (1.35,0.10) {$F_{2}$};
+    \node[anchor=south] at (0.88,0.64) {$R$};
+    \node[anchor=north] at (0.75,-0.12) {$180^{\circ}>\theta>90^{\circ}$};
+  \end{scope}
+  \begin{scope}[xshift=10.15cm]
+    \node[anchor=south] at (0.85,0.62) {$(b)$};
+    \draw[line width=0.7pt,->] (0.72,0.18) -- (-0.15,0.18);
+    \draw[line width=0.7pt,->] (0.72,0.18) -- (1.85,0.18);
+    \draw[line width=0.65pt,->] (0.72,0.32) -- (1.18,0.32);
+    \draw[line width=0.4pt] (0.48,0.18) arc (180:0:0.24);
+    \node[anchor=north] at (0.18,-0.02) {$F_{1}$};
+    \node[anchor=north] at (1.48,-0.02) {$F_{2}$};
+    \node[anchor=south] at (1.02,0.36) {$R$};
+    \node[anchor=north] at (0.85,-0.32) {$\theta=180^{\circ}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 6·11 两个共点力的大小不变，它们之间的夹角越大，合力越小}
 \end{figure}
 
@@ -8407,7 +8642,44 @@ f = 405 \text{公 斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6-12 求四个共点力的合力}]{assets/physics-1/fig-p0183-03.png}}
+% fig-alt: 图6·12：F1上、F2右，矩形对角R12至b；F4左下、F3右下，R123至c，R至d；对边虚线。正文偶作F1,F3,F3，扫描为R123
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.4pt}]
+  \coordinate (O) at (0,0);
+  \coordinate (a) at (0,1.62);
+  \coordinate (p2) at (2.20,0);
+  \coordinate (b) at (2.20,1.62);
+  \coordinate (p4) at (-0.78,-0.72);
+  \coordinate (p3) at (1.05,-2.55);
+  \coordinate (c) at (3.25,-0.93);
+  \coordinate (d) at (2.47,-1.65);
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.05pt] (a) -- (b);
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.05pt] (p2) -- (b);
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.05pt] (b) -- (c);
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.05pt] (p3) -- (c);
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.05pt] (c) -- (d);
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.05pt] (p4) -- (d);
+  \draw[line width=0.75pt,->] (O) -- (a);
+  \draw[line width=0.75pt,->] (O) -- (p2);
+  \draw[line width=0.7pt,->] (O) -- (b);
+  \draw[line width=0.75pt,->] (O) -- (p4);
+  \draw[line width=0.75pt,->] (O) -- (p3);
+  \draw[line width=0.7pt,->] (O) -- (c);
+  \draw[line width=0.75pt,->] (O) -- (d);
+  \node[anchor=east] at (-0.10,0.02) {$O$};
+  \node[anchor=south east] at (-0.02,1.66) {$a$};
+  \node[anchor=south west] at (2.26,1.64) {$b$};
+  \node[anchor=west] at (3.32,-0.90) {$c$};
+  \node[anchor=north west] at (2.52,-1.72) {$d$};
+  \node[anchor=east] at (-0.08,0.95) {$F_{1}$};
+  \node[anchor=south] at (1.20,0.08) {$F_{2}$};
+  \node[anchor=east] at (-0.92,-0.55) {$F_{4}$};
+  \node[anchor=east] at (0.42,-1.95) {$F_{3}$};
+  \node[anchor=south east,rotate=36] at (1.05,1.05) {$R_{12}$};
+  \node[anchor=south,rotate=-16] at (1.95,-0.28) {$R_{123}$};
+  \node[anchor=north,rotate=-34] at (1.45,-0.95) {$R$};
+\end{tikzpicture}%
+}
 \caption{图6-12 求四个共点力的合力}
 \end{figure}
 
@@ -8415,7 +8687,41 @@ f = 405 \text{公 斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6·13 求两个共点力的合力}]{assets/physics-1/fig-p0183-04.png}}
+% fig-alt: 图6·13：AD=AE，夹角120°；平行四边形ADGE，EG虚线，DG实线；R=AG与F1成60°；AH=R'与R反向
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.4pt}]
+  \coordinate (A) at (0,0);
+  \coordinate (D) at (1.70,0);
+  \coordinate (B) at (2.25,0);
+  \coordinate (E) at (-0.85,1.47);
+  \coordinate (C) at (-1.18,2.04);
+  \coordinate (G) at (0.85,1.47);
+  \coordinate (H) at (-0.85,-1.47);
+  \draw[line width=0.55pt] (A) -- (C);
+  \draw[line width=0.7pt,->] (A) -- (E);
+  \draw[line width=0.7pt,->] (A) -- (D);
+  \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.15pt] (D) -- (B);
+  \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.15pt] (E) -- (G);
+  \draw[line width=0.6pt] (D) -- (G);
+  \draw[line width=0.8pt,->] (A) -- (G);
+  \draw[line width=0.8pt,->] (A) -- (H);
+  \draw[line width=0.4pt] (0.42,0) arc (0:120:0.42);
+  \draw[line width=0.4pt] (0.58,0) arc (0:60:0.58);
+  \node[anchor=east] at (-0.06,-0.02) {$A$};
+  \node[anchor=south west] at (-1.22,2.02) {$C$};
+  \node[anchor=east] at (-1.05,1.38) {$E$};
+  \node[anchor=east] at (-0.55,0.72) {$F_{2}$};
+  \node[anchor=south] at (0.78,1.52) {$G$};
+  \node[anchor=west] at (0.48,0.78) {$R$};
+  \node[anchor=south] at (0.85,0.28) {$60^{\circ}$};
+  \node[anchor=south east] at (-0.18,0.38) {$120^{\circ}$};
+  \node[anchor=north] at (0.95,-0.04) {$F_{1}$};
+  \node[anchor=north west] at (1.68,-0.02) {$D$};
+  \node[anchor=west] at (2.28,0.04) {$B$};
+  \node[anchor=east] at (-0.48,-0.78) {$R'$};
+  \node[anchor=north east] at (-0.82,-1.48) {$H$};
+\end{tikzpicture}%
+}
 \caption{图6·13 求两个共点力的合力}
 \end{figure}
 
@@ -8450,7 +8756,50 @@ f = 405 \text{公 斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-1/fig-p0184-01.png}}
+% fig-alt: 第1题六组力：箭头方向依扫描；(1)左、下；(2)上、下；(3)左、右；(4)上、下、右；(5)左、右上；(6)左，以及右旁a上斜、c下斜
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.4pt}]
+  \draw[line width=0.6pt] (0.55,1.55) circle[radius=0.32];
+  \draw[line width=0.55pt] (0.55,1.55) -- (0.55,1.05);
+  \draw[line width=0.7pt,->] (0.23,1.55) -- (-0.12,1.55);
+  \draw[line width=0.7pt,->] (0.55,1.23) -- (0.55,0.78);
+  \node[anchor=north] at (0.55,0.62) {$(1)$};
+  \draw[line width=0.6pt] (1.85,1.28) rectangle (2.42,1.85);
+  \draw[line width=0.55pt] (2.14,1.28) -- (2.14,1.85);
+  \draw[line width=0.7pt,->] (2.14,1.85) -- (2.14,2.22);
+  \draw[line width=0.7pt,->] (2.14,1.28) -- (2.14,0.92);
+  \node[anchor=north] at (2.14,0.78) {$(2)$};
+  \draw[line width=0.6pt] (3.15,1.32) rectangle (4.05,1.82);
+  \draw[line width=0.55pt] (3.15,1.57) -- (4.05,1.57);
+  \draw[line width=0.7pt,->] (3.15,1.57) -- (2.72,1.57);
+  \draw[line width=0.7pt,->] (4.05,1.57) -- (4.48,1.57);
+  \node[anchor=north] at (3.60,1.18) {$(3)$};
+  \draw[line width=0.6pt] (5.55,1.22) rectangle (6.75,1.78);
+  \draw[line width=0.55pt] (5.55,1.50) -- (5.95,1.50);
+  \draw[line width=0.7pt,->] (5.55,1.50) -- (5.12,1.50);
+  \coordinate (P) at (7.05,1.50);
+  \draw[line width=0.55pt] (6.75,1.50) -- (P);
+  \draw[line width=0.55pt,dash pattern=on 1.3pt off 1.0pt] (P) -- (7.55,1.50);
+  \draw[line width=0.7pt,->] (P) -- (7.48,1.98);
+  \draw[line width=0.7pt,->] (P) -- (7.48,1.02);
+  \node[anchor=south west] at (7.32,1.82) {$a$};
+  \node[anchor=north west] at (7.32,1.12) {$c$};
+  \draw[line width=0.35pt] (7.22,1.50) arc (0:32:0.18);
+  \draw[line width=0.35pt] (7.22,1.50) arc (0:-32:0.18);
+  \node[anchor=north] at (6.05,1.08) {$(6)$};
+  \draw[line width=0.6pt] (0.28,-1.05) rectangle (0.88,-0.45);
+  \draw[line width=0.55pt] (0.48,-1.05) -- (0.48,-0.45);
+  \draw[line width=0.7pt,->] (0.48,-0.45) -- (0.48,-0.08);
+  \draw[line width=0.7pt,->] (0.48,-1.05) -- (0.48,-1.42);
+  \draw[line width=0.55pt] (0.88,-0.75) -- (1.05,-0.75);
+  \draw[line width=0.7pt,->] (1.05,-0.75) -- (1.42,-0.75);
+  \node[anchor=north] at (0.58,-1.48) {$(4)$};
+  \draw[line width=0.6pt] (2.15,-1.10) rectangle (2.95,-0.52);
+  \draw[line width=0.7pt,->] (2.15,-0.81) -- (1.72,-0.81);
+  \draw[line width=0.7pt,->] (2.78,-0.52) -- (3.12,-0.12);
+  \node[anchor=north] at (2.55,-1.22) {$(5)$};
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
