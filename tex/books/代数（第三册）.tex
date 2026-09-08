@@ -12242,7 +12242,26 @@ y = - 2 c^{2} + 8 x - 5.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-19}]{assets/algebra-3/fig-p0186-02.png}}
+% fig-alt: y=x^2-x+2开口向上，顶点在虚线y=7/4上，对称轴x=1/2竖虚线，轴下标1/2；右上标y=x^2-x+2，虚线右端标y=7/4；y上箭头、x右箭头，原点O，刻度无数字
+\fitfig{%
+\begin{tikzpicture}[x=0.72cm,y=0.40cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-2.15,0) -- (2.85,0);
+  \draw[line width=0.95pt,->] (2.7,0) -- (3.45,0);
+  \node[anchor=west] at (3.48,0) {$x$};
+  \draw[line width=0.85pt] (0,-0.72) -- (0,6.15);
+  \draw[line width=0.95pt,->] (0,6.0) -- (0,6.85);
+  \node[anchor=south] at (0,6.88) {$y$};
+  \node[anchor=north east] at (-0.08,-0.08) {$O$};
+  \foreach \k in {-2,-1,1,2}{\draw[line width=0.5pt] (\k,-0.09) -- (\k,0.09);}
+  \foreach \k in {1,2,3,4,5}{\draw[line width=0.5pt] (-0.08,\k) -- (0.08,\k);}
+  \draw[dashed,line width=0.65pt] (0.5,-0.58) -- (0.5,4.85);
+  \draw[dashed,line width=0.65pt] (-1.72,1.75) -- (2.42,1.75);
+  \node[anchor=north] at (0.5,-0.16) {$\frac{1}{2}$};
+  \node[anchor=west] at (2.48,1.75) {$y=\frac{7}{4}$};
+  \draw[line width=1.05pt] plot[domain=-1.52:2.52,samples=44] (\x,{(\x-0.5)*(\x-0.5)+1.75});
+  \node[anchor=south west] at (0.95,4.55) {$y=x^{2}-x+2$};
+\end{tikzpicture}%
+}
 \caption{图4-19}
 \end{figure}
 
@@ -12250,7 +12269,26 @@ y = - 2 c^{2} + 8 x - 5.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-20}]{assets/algebra-3/fig-p0186-03.png}}
+% fig-alt: y=3-4x-2x^2开口向下，顶点在虚线y=5上，对称轴x=-1竖虚线并标x=-1；虚线右端标y=5，第四象限标函数式；y上箭头、x右箭头，原点O，刻度无数字
+\fitfig{%
+\begin{tikzpicture}[x=0.70cm,y=0.32cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-3.25,0) -- (1.55,0);
+  \draw[line width=0.95pt,->] (1.4,0) -- (2.15,0);
+  \node[anchor=west] at (2.18,0) {$x$};
+  \draw[line width=0.85pt] (0,-2.85) -- (0,5.55);
+  \draw[line width=0.95pt,->] (0,5.4) -- (0,6.2);
+  \node[anchor=south] at (0,6.23) {$y$};
+  \node[anchor=north west] at (0.08,-0.08) {$O$};
+  \foreach \k in {-3,-2,-1,1}{\draw[line width=0.5pt] (\k,-0.1) -- (\k,0.1);}
+  \foreach \k in {1,2,3,4}{\draw[line width=0.5pt] (-0.08,\k) -- (0.08,\k);}
+  \draw[dashed,line width=0.65pt] (-1,-1.55) -- (-1,6.05);
+  \draw[dashed,line width=0.65pt] (-2.55,5) -- (0.55,5);
+  \node[anchor=south east] at (-1.08,5.85) {$x=-1$};
+  \node[anchor=west] at (0.62,5) {$y=5$};
+  \draw[line width=1.05pt] plot[domain=-2.92:0.92,samples=44] (\x,{-2*(\x+1)*(\x+1)+5});
+  \node[anchor=north west] at (1.22,-2.25) {$y=3-4x-2x^{2}$};
+\end{tikzpicture}%
+}
 \caption{图4-20}
 \end{figure}
 
@@ -12396,7 +12434,28 @@ y = x (36 - 2 x) (\text{ 平 方 米 }).
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.21}]{assets/algebra-3/fig-p0190-01.png}}
+% fig-alt: 墙在左侧斜线，矩形ABCD靠墙，A左上、B右上、C右下、D左下，y在矩形内；AB下双箭头标x，BC右侧竖向尺寸标36-2x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.52,-0.18) -- (-0.52,4.48);
+  \foreach \k in {0,1,...,15}{
+    \draw[line width=0.4pt] (-0.48,{-0.02+\k*0.27}) -- (-0.06,{0.20+\k*0.27});
+  }
+  \node[anchor=east] at (-0.64,2.12) {墙};
+  \draw[line width=0.95pt] (0,0) rectangle (3.15,4.15);
+  \node[anchor=south east] at (-0.04,4.15) {$A$};
+  \node[anchor=south west] at (3.15,4.15) {$B$};
+  \node[anchor=north west] at (3.15,0) {$C$};
+  \node[anchor=north east] at (-0.04,0) {$D$};
+  \node at (1.57,2.05) {$y$};
+  \draw[<->,line width=0.7pt] (0.28,3.72) -- (2.87,3.72);
+  \node[anchor=south] at (1.57,3.76) {$x$};
+  \draw[line width=0.65pt] (3.48,0) -- (3.48,4.15);
+  \draw[line width=0.65pt] (3.34,0) -- (3.62,0);
+  \draw[line width=0.65pt] (3.34,4.15) -- (3.62,4.15);
+  \node[rotate=90,anchor=center] at (4.02,2.07) {$36-2x$};
+\end{tikzpicture}%
+}
 \caption{图4.21}
 \end{figure}
 
@@ -12404,7 +12463,22 @@ y = x (36 - 2 x) (\text{ 平 方 米 }).
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.22}]{assets/algebra-3/fig-p0190-02.png}}
+% fig-alt: 矩形上加半圆，A、D为直径两端，O1在直径中点下方，半径标x；B左下、C右下，底边上方双箭头标2x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.95pt] (0,0) rectangle (3.2,4.05);
+  \draw[line width=0.95pt] (0,4.05) arc[start angle=180,end angle=0,radius=1.6];
+  \draw[line width=0.7pt] (1.6,4.05) -- (2.52,5.36);
+  \node[anchor=south] at (2.28,5.28) {$x$};
+  \node[anchor=east] at (0,4.05) {$A$};
+  \node[anchor=west] at (3.2,4.05) {$D$};
+  \node[anchor=north] at (1.6,3.98) {$O_{1}$};
+  \node[anchor=north east] at (0,0) {$B$};
+  \node[anchor=north west] at (3.2,0) {$C$};
+  \draw[<->,line width=0.7pt] (0.28,0.38) -- (2.92,0.38);
+  \node[anchor=south] at (1.6,0.42) {$2x$};
+\end{tikzpicture}%
+}
 \caption{图4.22}
 \end{figure}
 
@@ -12449,7 +12523,26 @@ y = \frac{6 - \pi x - 2 x}{2} \cdot 2 x + \frac{1}{2} \pi x^{2},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-23}]{assets/algebra-3/fig-p0191-01.png}}
+% fig-alt: C、B、A在一条水平线上，D在C正下方，斜线连B、D；上方双箭头标145公里，左侧竖向尺寸标16t，BA下方向左箭头标40t
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.95pt] (0,0) -- (6.6,0);
+  \draw[line width=0.95pt] (0,0) -- (0,-1.85);
+  \draw[line width=0.95pt] (3.7,0) -- (0,-1.85);
+  \node[anchor=south] at (0,0.06) {$C$};
+  \node[anchor=south] at (3.7,0.06) {$B$};
+  \node[anchor=south] at (6.6,0.06) {$A$};
+  \node[anchor=north] at (0,-1.88) {$D$};
+  \draw[<->,line width=0.7pt] (0,0.72) -- (6.6,0.72);
+  \node[anchor=south] at (3.3,0.76) {145公里};
+  \draw[line width=0.65pt] (-0.42,0) -- (-0.42,-1.85);
+  \draw[line width=0.65pt] (-0.56,0) -- (-0.28,0);
+  \draw[line width=0.65pt] (-0.56,-1.85) -- (-0.28,-1.85);
+  \node[rotate=90,anchor=center] at (-0.82,-0.92) {$16t$};
+  \draw[->,line width=0.75pt] (6.35,-0.52) -- (3.95,-0.52);
+  \node[anchor=south] at (5.15,-0.50) {$40t$};
+\end{tikzpicture}%
+}
 \caption{图4-23}
 \end{figure}
 
@@ -12556,7 +12649,22 @@ y = a x^{2} + b x + c \quad (a \neq 0)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) \textbackslash frac\{4ac - b\^{}2\}\{4a\} \textgreater{} 0}]{assets/algebra-3/fig-p0194-01.png}}
+% fig-alt: 开口向上抛物线全在x轴上方，顶点略在y轴右侧；对称轴为竖虚线并略伸出x轴下方；y上箭头、x右箭头，原点O，刻度无数字
+\fitfig{%
+\begin{tikzpicture}[x=0.78cm,y=0.52cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-1.85,0) -- (2.15,0);
+  \draw[line width=0.95pt,->] (2.0,0) -- (2.75,0);
+  \node[anchor=west] at (2.78,0) {$x$};
+  \draw[line width=0.85pt] (0,-0.62) -- (0,3.15);
+  \draw[line width=0.95pt,->] (0,3.0) -- (0,3.7);
+  \node[anchor=south] at (0,3.73) {$y$};
+  \node[anchor=north] at (0.14,-0.08) {$O$};
+  \foreach \k in {-1,1,2}{\draw[line width=0.5pt] (\k,-0.08) -- (\k,0.08);}
+  \foreach \k in {1,2}{\draw[line width=0.5pt] (-0.07,\k) -- (0.07,\k);}
+  \draw[dashed,line width=0.65pt] (0.42,-0.48) -- (0.42,2.55);
+  \draw[line width=1.05pt] plot[domain=-1.15:2.02,samples=40] (\x,{0.72*(\x-0.42)*(\x-0.42)+0.78});
+\end{tikzpicture}%
+}
 \caption{(1) \(\frac{4ac - b^2}{4a} > 0\)}
 \end{figure}
 
@@ -12564,7 +12672,22 @@ y = a x^{2} + b x + c \quad (a \neq 0)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2) \textbackslash frac\{4ac - b\^{}2\}\{4a\} = 0}]{assets/algebra-3/fig-p0194-02.png}}
+% fig-alt: 开口向上抛物线在顶点与x轴相切，顶点略在原点右侧；对称轴为竖虚线并伸出x轴下方；y上箭头、x右箭头，原点O，刻度无数字
+\fitfig{%
+\begin{tikzpicture}[x=0.78cm,y=0.48cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-1.75,0) -- (2.05,0);
+  \draw[line width=0.95pt,->] (1.9,0) -- (2.65,0);
+  \node[anchor=west] at (2.68,0) {$x$};
+  \draw[line width=0.85pt] (0,-0.72) -- (0,3.35);
+  \draw[line width=0.95pt,->] (0,3.2) -- (0,3.9);
+  \node[anchor=south] at (0,3.93) {$y$};
+  \node[anchor=north west] at (0.08,-0.08) {$O$};
+  \foreach \k in {-1,1,2}{\draw[line width=0.5pt] (\k,-0.08) -- (\k,0.08);}
+  \foreach \k in {1,2,3}{\draw[line width=0.5pt] (-0.07,\k) -- (0.07,\k);}
+  \draw[dashed,line width=0.65pt] (0.36,-0.58) -- (0.36,2.75);
+  \draw[line width=1.05pt] plot[domain=-1.12:1.92,samples=40] (\x,{0.95*(\x-0.36)*(\x-0.36)});
+\end{tikzpicture}%
+}
 \caption{(2) \(\frac{4ac - b^2}{4a} = 0\)}
 \end{figure}
 
@@ -12572,7 +12695,28 @@ y = a x^{2} + b x + c \quad (a \neq 0)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3) \textbackslash frac\{4ac - b\^{}2\}\{4a\} \textless{} 0}]{assets/algebra-3/fig-p0194-03.png}}
+% fig-alt: 开口向上抛物线交x轴于A、B，A在y轴右侧近原点，顶点G在x轴下且略在y轴右侧，对称轴竖虚线，过G有横虚线；左支标D、右支标E；y上箭头、x右箭头，原点O
+\fitfig{%
+\begin{tikzpicture}[x=0.88cm,y=0.46cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-1.25,0) -- (2.25,0);
+  \draw[line width=0.95pt,->] (2.1,0) -- (2.9,0);
+  \node[anchor=west] at (2.93,0) {$x$};
+  \draw[line width=0.85pt] (0,-1.78) -- (0,2.95);
+  \draw[line width=0.95pt,->] (0,2.8) -- (0,3.5);
+  \node[anchor=south] at (0,3.53) {$y$};
+  \node[anchor=north east] at (-0.08,-0.08) {$O$};
+  \foreach \k in {-1,1,2}{\draw[line width=0.5pt] (\k,-0.08) -- (\k,0.08);}
+  \foreach \k in {1,2}{\draw[line width=0.5pt] (-0.07,\k) -- (0.07,\k);}
+  \draw[dashed,line width=0.65pt] (0.86,-1.62) -- (0.86,2.35);
+  \draw[dashed,line width=0.65pt] (-0.55,-1.12) -- (1.95,-1.12);
+  \draw[line width=1.05pt] plot[domain=-0.28:2.02,samples=44] (\x,{3.2*(\x-0.86)*(\x-0.86)-1.12});
+  \node[anchor=east] at (-0.22,1.95) {$D$};
+  \node[anchor=west] at (1.88,2.05) {$E$};
+  \node[anchor=north] at (0.36,-0.06) {$A$};
+  \node[anchor=south west] at (1.42,0.05) {$B$};
+  \node[anchor=north west] at (0.96,-1.18) {$G$};
+\end{tikzpicture}%
+}
 \caption{(3) \(\frac{4ac - b^2}{4a} < 0\)}
 \end{figure}
 
@@ -12640,7 +12784,25 @@ A 点的横坐标\(x_{1} \approx -0.7\)，B 点的横坐标\(x_{2} \approx 2.7\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-25}]{assets/algebra-3/fig-p0196-01.png}}
+% fig-alt: y=x^2-2x-2开口向上，交x轴于A（原点左侧）与B（右侧），顶点在x轴下，对称轴竖虚线，过顶点有横虚线；图上无-0.7、2.7数字；y上箭头、x右箭头，原点O
+\fitfig{%
+\begin{tikzpicture}[x=0.64cm,y=0.38cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-1.85,0) -- (3.35,0);
+  \draw[line width=0.95pt,->] (3.2,0) -- (3.95,0);
+  \node[anchor=west] at (3.98,0) {$x$};
+  \draw[line width=0.85pt] (0,-3.55) -- (0,3.15);
+  \draw[line width=0.95pt,->] (0,3.0) -- (0,3.7);
+  \node[anchor=south] at (0,3.73) {$y$};
+  \node[anchor=north] at (0.12,-0.08) {$O$};
+  \foreach \k in {-1,1,2,3}{\draw[line width=0.5pt] (\k,-0.09) -- (\k,0.09);}
+  \foreach \k in {1,2}{\draw[line width=0.5pt] (-0.08,\k) -- (0.08,\k);}
+  \draw[dashed,line width=0.65pt] (1,-3.42) -- (1,2.35);
+  \draw[dashed,line width=0.65pt] (-1.15,-3) -- (2.55,-3);
+  \draw[line width=1.05pt] plot[domain=-1.15:3.15,samples=48] (\x,{(\x-1)*(\x-1)-3});
+  \node[anchor=north east] at (-0.73,-0.04) {$A$};
+  \node[anchor=north west] at (2.73,0.02) {$B$};
+\end{tikzpicture}%
+}
 \caption{图4-25}
 \end{figure}
 
