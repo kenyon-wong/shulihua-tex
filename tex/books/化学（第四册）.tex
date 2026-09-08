@@ -1171,7 +1171,48 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第25页图示}]{assets/chemistry-4/fig-p0025-g01.png}}
+\fitfig{%
+% redraw: fig-p0025-g01 尿素与氰酸铵结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0pt},
+    bond/.style={line width=0.62pt}]
+  % 尿素
+  \node[atom] (uNl) at (0,0) {N};
+  \node[atom] (uC) at (0.92,0) {C};
+  \node[atom] (uNr) at (1.84,0) {N};
+  \node[atom] (uHl) at (-0.62,0) {H};
+  \node[atom] (uHlu) at (0,0.64) {H};
+  \node[atom] (uHru) at (1.84,0.64) {H};
+  \node[atom] (uHrd) at (1.84,-0.64) {H};
+  \node[atom] (uO) at (0.92,-0.82) {O};
+  \draw[bond] (uHl) -- (uNl) -- (uC) -- (uNr);
+  \draw[bond] (uHlu) -- (uNl);
+  \draw[bond] (uHru) -- (uNr) -- (uHrd);
+  \draw[bond] ([xshift=-1pt]uC.south) -- ([xshift=-1pt]uO.north);
+  \draw[bond] ([xshift=1pt]uC.south) -- ([xshift=1pt]uO.north);
+  \node at (0.92,-1.55) {尿素};
+  \draw[line width=0.55pt, -{latex}] (2.55,0.14) -- (3.42,0.14);
+  \draw[line width=0.55pt, {latex}-] (2.55,-0.14) -- (3.42,-0.14);
+  % 氰酸铵（原书写作 H4N—O—C≡N）
+  \begin{scope}[xshift=4.15cm]
+    \node[atom] (n1) at (0,0) {N};
+    \node[atom] (o1) at (0.88,0) {O};
+    \node[atom] (c1) at (1.76,0) {C};
+    \node[atom] (n2) at (2.55,0) {N};
+    \node[atom] (h1) at (-0.50,0.52) {H};
+    \node[atom] (h2) at (0.42,0.58) {H};
+    \node[atom] (h3) at (-0.50,-0.52) {H};
+    \node[atom] (h4) at (0.42,-0.58) {H};
+    \draw[bond] (h1) -- (n1) -- (h3);
+    \draw[bond] (h2) -- (n1) -- (h4);
+    \draw[bond] (n1) -- (o1) -- (c1);
+    \draw[bond] (c1) -- (n2);
+    \draw[bond] ([yshift=1.2pt]c1.east) -- ([yshift=1.2pt]n2.west);
+    \draw[bond] ([yshift=-1.2pt]c1.east) -- ([yshift=-1.2pt]n2.west);
+    \node at (1.15,-1.55) {氰酸铵};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{原PDF第25页图示}
 \end{figure}
 
@@ -1184,7 +1225,49 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第25页图示}]{assets/chemistry-4/fig-p0025-g02.png}}
+\fitfig{%
+% redraw: fig-p0025-g02 丁烷两种碳链
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0pt},
+    bond/.style={line width=0.62pt},
+    rank/.style={font=\scriptsize, inner sep=0.4pt}]
+  % (a) 直链 （一）（二）（二）（一）
+  \node[rank] at (0,0.48) {（一）};
+  \node[rank] at (1.05,0.48) {（二）};
+  \node[rank] at (2.10,0.48) {（二）};
+  \node[rank] at (3.15,0.48) {（一）};
+  \node[atom] (a0) at (0,0) {C};
+  \node[atom] (a1) at (1.05,0) {C};
+  \node[atom] (a2) at (2.10,0) {C};
+  \node[atom] (a3) at (3.15,0) {C};
+  \draw[bond] (-0.52,0) -- (a0) -- (a1) -- (a2) -- (a3) -- (3.67,0);
+  \draw[bond] (a0.south) -- ++(0,-0.48);
+  \draw[bond] (a1.south) -- ++(0,-0.48);
+  \draw[bond] (a2.south) -- ++(0,-0.48);
+  \draw[bond] (a3.south) -- ++(0,-0.48);
+  \node at (1.58,-1.25) {$(a)$};
+  \node at (4.15,0) {,};
+  % (b) 支链 （一）（三）（一），支链碳为（一）
+  \begin{scope}[xshift=4.75cm]
+    \node[rank] at (0,0.48) {（一）};
+    \node[rank] at (1.05,0.48) {（三）};
+    \node[rank] at (2.10,0.48) {（一）};
+    \node[atom] (b0) at (0,0) {C};
+    \node[atom] (b1) at (1.05,0) {C};
+    \node[atom] (b2) at (2.10,0) {C};
+    \node[atom] (b3) at (1.05,-1.05) {C};
+    \node[rank, anchor=east] at (0.55,-0.78) {（一）};
+    \draw[bond] (-0.52,0) -- (b0) -- (b1) -- (b2) -- (2.62,0);
+    \draw[bond] (b0.south) -- ++(0,-0.48);
+    \draw[bond] (b2.south) -- ++(0,-0.48);
+    \draw[bond] (b1.south) -- (b3.north);
+    \draw[bond] (b3.west) -- ++(-0.28,0);
+    \draw[bond] (b3.east) -- ++(0.38,0);
+    \draw[bond] (b3.south) -- ++(0,-0.42);
+    \node at (2.55,-1.72) {$(b)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{原PDF第25页图示}
 \end{figure}
 
@@ -1201,7 +1284,96 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·5}]{assets/chemistry-4/fig-p0026-g01.png}}
+\fitfig{%
+% redraw: fig-p0026-g01 图1·5 正丁烷与异丁烷
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0pt},
+    bond/.style={line width=0.62pt}]
+  \node[anchor=west] at (0,0.15) {正丁烷的结构};
+  \begin{scope}[xshift=3.35cm]
+    \node[atom] (c1) at (0,0) {C};
+    \node[atom] (c2) at (0.78,0) {C};
+    \node[atom] (c3) at (1.56,0) {C};
+    \node[atom] (c4) at (2.34,0) {C};
+    \node[atom] (hL) at (-0.55,0) {H};
+    \node[atom] (hR) at (2.89,0) {H};
+    \node[atom] at (0,0.55) {H};
+    \node[atom] at (0,-0.55) {H};
+    \node[atom] at (0.78,0.55) {H};
+    \node[atom] at (0.78,-0.55) {H};
+    \node[atom] at (1.56,0.55) {H};
+    \node[atom] at (1.56,-0.55) {H};
+    \node[atom] at (2.34,0.55) {H};
+    \node[atom] at (2.34,-0.55) {H};
+    \draw[bond] (hL) -- (c1) -- (c2) -- (c3) -- (c4) -- (hR);
+    \draw[bond] (0,0.40) -- (c1) -- (0,-0.40);
+    \draw[bond] (0.78,0.40) -- (c2) -- (0.78,-0.40);
+    \draw[bond] (1.56,0.40) -- (c3) -- (1.56,-0.40);
+    \draw[bond] (2.34,0.40) -- (c4) -- (2.34,-0.40);
+    \node at (1.17,-1.22) {CH$_3$---CH$_2$---CH$_2$---CH$_3$};
+  \end{scope}
+  \begin{scope}[xshift=8.35cm, yshift=0.05cm]
+    \coordinate (C1) at (0,0.38);
+    \coordinate (C2) at (0.58,-0.16);
+    \coordinate (C3) at (1.16,0.38);
+    \coordinate (C4) at (1.74,-0.16);
+    \coordinate (H1a) at (-0.34,0.55); \coordinate (H1b) at (-0.22,0.08); \coordinate (H1c) at (0.10,0.72);
+    \coordinate (H2a) at (0.38,-0.52); \coordinate (H2b) at (0.80,-0.44);
+    \coordinate (H3a) at (0.98,0.72); \coordinate (H3b) at (1.38,0.66);
+    \coordinate (H4a) at (1.60,-0.56); \coordinate (H4b) at (2.08,-0.26); \coordinate (H4c) at (2.00,0.10);
+    \draw[line width=0.75pt] (C1)--(C2)--(C3)--(C4);
+    \draw[line width=0.75pt] (C1)--(H1a) (C1)--(H1b) (C1)--(H1c);
+    \draw[line width=0.75pt] (C2)--(H2a) (C2)--(H2b);
+    \draw[line width=0.75pt] (C3)--(H3a) (C3)--(H3b);
+    \draw[line width=0.75pt] (C4)--(H4a) (C4)--(H4b) (C4)--(H4c);
+    \foreach \q in {H1a,H1b,H1c,H2a,H2b,H3a,H3b,H4a,H4b,H4c} \fill[black!40] (\q) circle (0.05);
+    \foreach \q in {C1,C2,C3,C4} \fill[black!72] (\q) circle (0.09);
+  \end{scope}
+  \node[anchor=west] at (0,-3.15) {异丁烷的结构};
+  \begin{scope}[xshift=3.35cm, yshift=-2.85cm]
+    \node[atom] (i1) at (0,0) {C};
+    \node[atom] (i2) at (0.82,0) {C};
+    \node[atom] (i3) at (1.64,0) {C};
+    \node[atom] (i4) at (0.82,-0.78) {C};
+    \node[atom] at (-0.55,0) {H};
+    \node[atom] at (2.19,0) {H};
+    \node[atom] at (0,0.55) {H};
+    \node[atom] at (0,-0.55) {H};
+    \node[atom] at (0.82,0.55) {H};
+    \node[atom] at (1.64,0.55) {H};
+    \node[atom] at (1.64,-0.55) {H};
+    \node[atom] at (0.26,-0.78) {H};
+    \node[atom] at (1.38,-0.78) {H};
+    \node[atom] at (0.82,-1.34) {H};
+    \draw[bond] (-0.40,0) -- (i1) -- (i2) -- (i3) -- (2.04,0);
+    \draw[bond] (0,0.40) -- (i1) -- (0,-0.40);
+    \draw[bond] (i2) -- (0.82,0.40);
+    \draw[bond] (1.64,0.40) -- (i3) -- (1.64,-0.40);
+    \draw[bond] (i2.south) -- (i4.north);
+    \draw[bond] (0.42,-0.78) -- (i4) -- (1.22,-0.78);
+    \draw[bond] (i4) -- (0.82,-1.18);
+    \node (itop) at (1.05,-2.05) {CH$_3$---CH---CH$_3$};
+    \node (ibot) at (1.05,-2.62) {CH$_3$};
+    \draw[bond] (itop.south) -- (ibot.north);
+  \end{scope}
+  \begin{scope}[xshift=8.55cm, yshift=-2.7cm]
+    \coordinate (M) at (0.45,0.12);
+    \coordinate (L) at (-0.22,0.28);
+    \coordinate (U) at (0.72,0.78);
+    \coordinate (R) at (1.12,-0.08);
+    \coordinate (Hm) at (0.32,-0.32);
+    \coordinate (L1) at (-0.55,0.52); \coordinate (L2) at (-0.52,-0.05); \coordinate (L3) at (-0.05,0.58);
+    \coordinate (U1) at (0.48,1.08); \coordinate (U2) at (1.02,0.95); \coordinate (U3) at (0.92,0.52);
+    \coordinate (R1) at (1.45,0.12); \coordinate (R2) at (1.32,-0.42); \coordinate (R3) at (0.92,-0.38);
+    \draw[line width=0.75pt] (M)--(L) (M)--(U) (M)--(R) (M)--(Hm);
+    \draw[line width=0.75pt] (L)--(L1) (L)--(L2) (L)--(L3);
+    \draw[line width=0.75pt] (U)--(U1) (U)--(U2) (U)--(U3);
+    \draw[line width=0.75pt] (R)--(R1) (R)--(R2) (R)--(R3);
+    \foreach \q in {Hm,L1,L2,L3,U1,U2,U3,R1,R2,R3} \fill[black!40] (\q) circle (0.05);
+    \foreach \q in {M,L,U,R} \fill[black!72] (\q) circle (0.09);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 1·5}
 \end{figure}
 
@@ -1214,7 +1386,186 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·6}]{assets/chemistry-4/fig-p0027-g01.png}}
+\fitfig{%
+% redraw: fig-p0027-g01 图1·6 戊烷三种异构体
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0pt},
+    bond/.style={line width=0.62pt},
+    rank/.style={font=\scriptsize, inner sep=0.2pt}]
+  \node[anchor=west] at (0,0.15) {正戊烷};
+  \begin{scope}[xshift=2.15cm]
+    \node[atom] (n1) at (0,0) {C};
+    \node[atom] (n2) at (0.70,0) {C};
+    \node[atom] (n3) at (1.40,0) {C};
+    \node[atom] (n4) at (2.10,0) {C};
+    \node[atom] (n5) at (2.80,0) {C};
+    \node[atom] at (-0.50,0) {H};
+    \node[atom] at (3.30,0) {H};
+    \node[atom] at (0,0.50) {H};
+    \node[atom] at (0,-0.50) {H};
+    \node[atom] at (0.70,0.50) {H};
+    \node[atom] at (0.70,-0.50) {H};
+    \node[atom] at (1.40,0.50) {H};
+    \node[atom] at (1.40,-0.50) {H};
+    \node[atom] at (2.10,0.50) {H};
+    \node[atom] at (2.10,-0.50) {H};
+    \node[atom] at (2.80,0.50) {H};
+    \node[atom] at (2.80,-0.50) {H};
+    \draw[bond] (-0.36,0) -- (n1) -- (n2) -- (n3) -- (n4) -- (n5) -- (3.16,0);
+    \draw[bond] (0,0.34) -- (n1) -- (0,-0.34);
+    \draw[bond] (0.70,0.34) -- (n2) -- (0.70,-0.34);
+    \draw[bond] (1.40,0.34) -- (n3) -- (1.40,-0.34);
+    \draw[bond] (2.10,0.34) -- (n4) -- (2.10,-0.34);
+    \draw[bond] (2.80,0.34) -- (n5) -- (2.80,-0.34);
+    \node at (1.40,-1.35) {$\stackrel{\text{（一）}}{\mathrm{CH}_3}-\stackrel{\text{（二）}}{\mathrm{CH}_2}-\stackrel{\text{（二）}}{\mathrm{CH}_2}-\stackrel{\text{（二）}}{\mathrm{CH}_2}-\stackrel{\text{（一）}}{\mathrm{CH}_3}$};
+  \end{scope}
+  \begin{scope}[xshift=8.15cm, yshift=0.05cm]
+    \coordinate (P1) at (0,0.34);
+    \coordinate (P2) at (0.48,-0.14);
+    \coordinate (P3) at (0.96,0.34);
+    \coordinate (P4) at (1.44,-0.14);
+    \coordinate (P5) at (1.92,0.34);
+    \coordinate (A1) at (-0.28,0.52); \coordinate (A2) at (-0.20,0.06); \coordinate (A3) at (0.10,0.66);
+    \coordinate (B1) at (0.30,-0.48); \coordinate (B2) at (0.68,-0.44);
+    \coordinate (D1) at (0.82,0.66); \coordinate (D2) at (1.14,0.62);
+    \coordinate (E1) at (1.26,-0.48); \coordinate (E2) at (1.64,-0.44);
+    \coordinate (F1) at (1.80,0.66); \coordinate (F2) at (2.20,0.20); \coordinate (F3) at (2.12,-0.02);
+    \draw[line width=0.7pt] (P1)--(P2)--(P3)--(P4)--(P5);
+    \draw[line width=0.7pt] (P1)--(A1) (P1)--(A2) (P1)--(A3);
+    \draw[line width=0.7pt] (P2)--(B1) (P2)--(B2);
+    \draw[line width=0.7pt] (P3)--(D1) (P3)--(D2);
+    \draw[line width=0.7pt] (P4)--(E1) (P4)--(E2);
+    \draw[line width=0.7pt] (P5)--(F1) (P5)--(F2) (P5)--(F3);
+    \foreach \q in {A1,A2,A3,B1,B2,D1,D2,E1,E2,F1,F2,F3} \fill[black!40] (\q) circle (0.045);
+    \foreach \q in {P1,P2,P3,P4,P5} \fill[black!72] (\q) circle (0.085);
+  \end{scope}
+  \node[anchor=west] at (0,-3.55) {异戊烷};
+  \begin{scope}[xshift=2.15cm, yshift=-3.25cm]
+    \node[atom] (s1) at (0,0) {C};
+    \node[atom] (s2) at (0.74,0) {C};
+    \node[atom] (s3) at (1.62,0) {C};
+    \node[atom] (s4) at (2.36,0) {C};
+    \node[atom] (s5) at (0.74,-0.74) {C};
+    \node[atom] at (-0.50,0) {H};
+    \node[atom] at (2.86,0) {H};
+    \node[atom] at (0,0.50) {H};
+    \node[atom] at (0,-0.50) {H};
+    \node[atom] at (0.74,0.50) {H};
+    \node[atom] at (1.62,0.50) {H};
+    \node[atom] at (1.62,-0.50) {H};
+    \node[atom] at (2.36,0.50) {H};
+    \node[atom] at (2.36,-0.50) {H};
+    \node[atom] at (0.20,-0.74) {H};
+    \node[atom] at (1.28,-0.74) {H};
+    \node[atom] at (0.74,-1.28) {H};
+    \draw[bond] (-0.36,0) -- (s1) -- (s2) -- (s3) -- (s4) -- (2.72,0);
+    \draw[bond] (0,0.34) -- (s1) -- (0,-0.34);
+    \draw[bond] (s2) -- (0.74,0.34);
+    \draw[bond] (1.62,0.34) -- (s3) -- (1.62,-0.34);
+    \draw[bond] (2.36,0.34) -- (s4) -- (2.36,-0.34);
+    \draw[bond] (s2.south) -- (s5.north);
+    \draw[bond] (0.36,-0.74) -- (s5) -- (1.12,-0.74);
+    \draw[bond] (s5) -- (0.74,-1.12);
+    \node (k1) at (0.15,-2.15) {$\stackrel{\text{（一）}}{\mathrm{CH}_3}$};
+    \node (k2) at (1.45,-2.15) {$\stackrel{\text{（二）}}{\mathrm{CH}_2}$};
+    \node (k3) at (2.55,-2.15) {$\stackrel{\text{（三）}}{\mathrm{CH}}$};
+    \node (k4) at (3.70,-2.15) {$\stackrel{\text{（一）}}{\mathrm{CH}_3}$};
+    \node[rank, anchor=east] at (2.28,-2.62) {（一）};
+    \node (k5) at (2.55,-2.95) {CH$_3$};
+    \draw[bond] (k1) -- (k2) -- (k3) -- (k4);
+    \draw[bond] (k3.south) -- (k5.north);
+  \end{scope}
+  \begin{scope}[xshift=8.15cm, yshift=-3.15cm]
+    \coordinate (Q1) at (0,0.22);
+    \coordinate (Q2) at (0.55,-0.10);
+    \coordinate (Q3) at (1.10,0.24);
+    \coordinate (Q4) at (1.64,-0.06);
+    \coordinate (Qb) at (0.38,-0.64);
+    \coordinate (G1) at (-0.28,0.42); \coordinate (G2) at (-0.18,-0.06); \coordinate (G3) at (0.12,0.56);
+    \coordinate (Hb) at (0.72,0.18);
+    \coordinate (I1) at (0.96,0.58); \coordinate (I2) at (1.26,-0.10);
+    \coordinate (J1) at (1.48,0.28); \coordinate (J2) at (1.96,0.10); \coordinate (J3) at (1.82,-0.38);
+    \coordinate (K1) at (0.08,-0.88); \coordinate (K2) at (0.68,-0.88); \coordinate (K3) at (0.28,-0.98);
+    \draw[line width=0.7pt] (Q1)--(Q2)--(Q3)--(Q4) (Q2)--(Qb);
+    \draw[line width=0.7pt] (Q1)--(G1) (Q1)--(G2) (Q1)--(G3);
+    \draw[line width=0.7pt] (Q2)--(Hb);
+    \draw[line width=0.7pt] (Q3)--(I1) (Q3)--(I2);
+    \draw[line width=0.7pt] (Q4)--(J1) (Q4)--(J2) (Q4)--(J3);
+    \draw[line width=0.7pt] (Qb)--(K1) (Qb)--(K2) (Qb)--(K3);
+    \foreach \q in {G1,G2,G3,Hb,I1,I2,J1,J2,J3,K1,K2,K3} \fill[black!40] (\q) circle (0.045);
+    \foreach \q in {Q1,Q2,Q3,Q4,Qb} \fill[black!72] (\q) circle (0.085);
+  \end{scope}
+  \node[anchor=west] at (0,-8.55) {新戊烷};
+  \begin{scope}[xshift=3.05cm, yshift=-8.55cm]
+    \node[atom] (q) at (0,0) {C};
+    \node[atom] (qu) at (0,0.72) {C};
+    \node[atom] (ql) at (-0.72,0) {C};
+    \node[atom] (qr) at (0.72,0) {C};
+    \node[atom] (qd) at (0,-0.72) {C};
+    \node[atom] at (0,1.26) {H};
+    \node[atom] at (-0.40,0.72) {H};
+    \node[atom] at (0.40,0.72) {H};
+    \node[atom] at (-1.26,0) {H};
+    \node[atom] at (-0.72,0.46) {H};
+    \node[atom] at (-0.72,-0.46) {H};
+    \node[atom] at (1.26,0) {H};
+    \node[atom] at (0.72,0.46) {H};
+    \node[atom] at (0.72,-0.46) {H};
+    \node[atom] at (-0.40,-0.72) {H};
+    \node[atom] at (0.40,-0.72) {H};
+    \node[atom] at (0,-1.26) {H};
+    \draw[bond] (q) -- (qu) -- (0,1.10);
+    \draw[bond] (-0.26,0.72) -- (qu) -- (0.26,0.72);
+    \draw[bond] (q) -- (ql) -- (-1.10,0);
+    \draw[bond] (ql) -- (-0.72,0.32);
+    \draw[bond] (ql) -- (-0.72,-0.32);
+    \draw[bond] (q) -- (qr) -- (1.10,0);
+    \draw[bond] (qr) -- (0.72,0.32);
+    \draw[bond] (qr) -- (0.72,-0.32);
+    \draw[bond] (q) -- (qd);
+    \draw[bond] (-0.26,-0.72) -- (qd) -- (0.26,-0.72);
+    \draw[bond] (qd) -- (0,-1.10);
+    \node (nu) at (0,-2.05) {$\stackrel{\text{（一）}}{\mathrm{CH}_3}$};
+    \node (nl) at (-1.35,-2.72) {$\stackrel{\text{（一）}}{\mathrm{CH}_3}$};
+    \node (nc) at (0,-2.72) {$\stackrel{\text{（四）}}{\mathrm{C}}$};
+    \node (nr) at (1.35,-2.72) {$\stackrel{\text{（一）}}{\mathrm{CH}_3}$};
+    \node[rank, anchor=east] at (-0.28,-3.15) {（一）};
+    \node (nd) at (0,-3.52) {CH$_3$};
+    \draw[bond] (nu.south) -- (nc.north);
+    \draw[bond] (nl) -- (nc) -- (nr);
+    \draw[bond] (nc.south) -- (nd.north);
+  \end{scope}
+  \begin{scope}[xshift=8.35cm, yshift=-8.65cm]
+    \coordinate (Z) at (0.10,0.05);
+    \coordinate (Zu) at (0.10,0.68);
+    \coordinate (Zl) at (-0.50,-0.18);
+    \coordinate (Zr) at (0.70,0.16);
+    \coordinate (Zd) at (0.16,-0.64);
+    \coordinate (Hu1) at (-0.12,0.92); \coordinate (Hu2) at (0.36,0.90); \coordinate (Hu3) at (0.10,1.02);
+    \coordinate (Hl1) at (-0.80,0.04); \coordinate (Hl2) at (-0.72,-0.42); \coordinate (Hl3) at (-0.38,-0.46);
+    \coordinate (Hr1) at (0.98,0.38); \coordinate (Hr2) at (0.96,-0.12); \coordinate (Hr3) at (0.55,0.44);
+    \coordinate (Hd1) at (-0.10,-0.88); \coordinate (Hd2) at (0.42,-0.86); \coordinate (Hd3) at (0.16,-0.98);
+    \draw[line width=0.7pt] (Z)--(Zu) (Z)--(Zl) (Z)--(Zr) (Z)--(Zd);
+    \draw[line width=0.7pt] (Zu)--(Hu1) (Zu)--(Hu2) (Zu)--(Hu3);
+    \draw[line width=0.7pt] (Zl)--(Hl1) (Zl)--(Hl2) (Zl)--(Hl3);
+    \draw[line width=0.7pt] (Zr)--(Hr1) (Zr)--(Hr2) (Zr)--(Hr3);
+    \draw[line width=0.7pt] (Zd)--(Hd1) (Zd)--(Hd2) (Zd)--(Hd3);
+    \foreach \q in {Hu1,Hu2,Hu3,Hl1,Hl2,Hl3,Hr1,Hr2,Hr3,Hd1,Hd2,Hd3} \fill[black!40] (\q) circle (0.045);
+    \foreach \q in {Z,Zu,Zl,Zr,Zd} \fill[black!72] (\q) circle (0.085);
+  \end{scope}
+  \node[anchor=north] at (4.4,-13.05) {%
+    \begin{tabular}{@{}lccc@{}}
+    \toprule
+     & 正戊烷 & 异戊烷 & 新戊烷 \\
+    \midrule
+    沸点($^\circ$C) & 36.1 & 27.9 & 9.5 \\
+    熔点($^\circ$C) & $-129.7$ & $-160.5$ & $-20$ \\
+    液态时的比重(克/毫升) & 0.626 & 0.621 & 0.613 \\
+    \bottomrule
+    \end{tabular}%
+  };
+\end{tikzpicture}%
+}
 \caption{图 1·6}
 \end{figure}
 
@@ -1228,7 +1579,79 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）；（b）；（c）；（d）}]{assets/chemistry-4/fig-p0028-g01.png}}
+\fitfig{%
+% redraw: fig-p0028-g01 异戊烷四种平面写法
+\begin{tikzpicture}[line cap=round, line join=round,
+    bond/.style={line width=0.62pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    rank/.style={font=\scriptsize, inner sep=0.2pt}]
+  % (a) 支链在第三个碳的下方
+  \begin{scope}
+    \node[grp] (a1) at (0,0) {CH$_3$};
+    \node[grp] (a2) at (1.25,0) {CH$_2$};
+    \node[grp] (a3) at (2.45,0) {CH};
+    \node[grp] (a4) at (3.55,0) {CH$_3$};
+    \node[grp] (a5) at (2.45,-0.95) {CH$_3$};
+    \node[rank] at (0,0.42) {（一）};
+    \node[rank] at (1.25,0.42) {（二）};
+    \node[rank] at (2.45,0.42) {（三）};
+    \node[rank] at (3.55,0.42) {（一）};
+    \node[rank] at (2.45,-0.58) {（一）};
+    \draw[bond] (a1) -- (a2) -- (a3) -- (a4);
+    \draw[bond] (a3.south) -- (a5.north);
+    \node at (1.75,-1.72) {$(a)$};
+  \end{scope}
+  % (b) 支链在第二个碳的下方
+  \begin{scope}[xshift=5.35cm]
+    \node[grp] (b1) at (0,0) {CH$_3$};
+    \node[grp] (b2) at (1.15,0) {CH};
+    \node[grp] (b3) at (2.35,0) {CH$_2$};
+    \node[grp] (b4) at (3.55,0) {CH$_3$};
+    \node[grp] (b5) at (1.15,-0.95) {CH$_3$};
+    \node[rank] at (0,0.42) {（一）};
+    \node[rank] at (1.15,0.42) {（三）};
+    \node[rank] at (2.35,0.42) {（二）};
+    \node[rank] at (3.55,0.42) {（一）};
+    \node[rank] at (1.15,-0.58) {（一）};
+    \draw[bond] (b1) -- (b2) -- (b3) -- (b4);
+    \draw[bond] (b2.south) -- (b5.north);
+    \node at (1.75,-1.72) {$(b)$};
+  \end{scope}
+  % (c) 支链在第三个碳的上方
+  \begin{scope}[yshift=-3.15cm]
+    \node[grp] (c1) at (0,0) {CH$_3$};
+    \node[grp] (c2) at (1.25,0) {CH$_2$};
+    \node[grp] (c3) at (2.45,0) {CH};
+    \node[grp] (c4) at (3.55,0) {CH$_3$};
+    \node[grp] (c5) at (2.45,0.95) {CH$_3$};
+    \node[rank] at (0,0.38) {（一）};
+    \node[rank] at (1.25,0.38) {（二）};
+    \node[rank] at (2.15,0.38) {（三）};
+    \node[rank] at (3.55,0.38) {（一）};
+    \node[rank] at (2.45,1.38) {（一）};
+    \draw[bond] (c1) -- (c2) -- (c3) -- (c4);
+    \draw[bond] (c3.north) -- (c5.south);
+    \node at (1.75,-0.78) {$(c)$};
+  \end{scope}
+  % (d) 右端为三级碳，甲基一支向上、一支向下
+  \begin{scope}[xshift=5.35cm, yshift=-3.15cm]
+    \node[grp] (d1) at (0,0) {CH$_3$};
+    \node[grp] (d2) at (1.25,0) {CH$_2$};
+    \node[grp] (d3) at (2.45,0) {CH};
+    \node[grp] (d4) at (2.45,0.95) {CH$_3$};
+    \node[grp] (d5) at (2.45,-0.95) {CH$_3$};
+    \node[rank] at (0,0.38) {（一）};
+    \node[rank] at (1.25,0.38) {（二）};
+    \node[rank] at (2.15,0.38) {（三）};
+    \node[rank] at (2.45,1.38) {（一）};
+    \node[rank] at (2.15,-0.52) {（一）};
+    \draw[bond] (d1) -- (d2) -- (d3);
+    \draw[bond] (d3.north) -- (d4.south);
+    \draw[bond] (d3.south) -- (d5.north);
+    \node at (1.15,-1.62) {$(d)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{（a）；（b）；（c）；（d）}
 \end{figure}
 
@@ -1281,7 +1704,63 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第30页图示}]{assets/chemistry-4/fig-p0030-g01.png}}
+\fitfig{%
+% redraw: fig-p0030-g01 二碘甲烷与铜生成乙烯
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0pt},
+    bond/.style={line width=0.62pt}]
+  \draw[dashed, line width=0.55pt] (1.12,-0.52) rectangle (2.12,0.52);
+  % 左：二碘甲烷
+  \node[atom] (cL) at (0,0) {C};
+  \node[atom] (hLu) at (-0.55,0.48) {H};
+  \node[atom] (hLd) at (-0.55,-0.48) {H};
+  \node[atom] (iLu) at (0.62,0.52) {I};
+  \node[atom] (iLd) at (0.62,-0.52) {I};
+  \draw[bond] (hLu) -- (cL) -- (hLd);
+  \draw[bond] (iLu) -- (cL) -- (iLd);
+  \node at (0.25,-1.22) {二碘甲烷};
+  \node at (1.85,0) {$+4$Cu$+$};
+  % 右：面对的二碘甲烷
+  \node[atom] (cR) at (3.15,0) {C};
+  \node[atom] (iRu) at (2.52,0.52) {I};
+  \node[atom] (iRd) at (2.52,-0.52) {I};
+  \node[atom] (hRu) at (3.70,0.48) {H};
+  \node[atom] (hRd) at (3.70,-0.48) {H};
+  \draw[bond] (iRu) -- (cR) -- (iRd);
+  \draw[bond] (hRu) -- (cR) -- (hRd);
+  \node at (3.15,-1.22) {二碘甲烷};
+  \node at (4.25,0) {$=$};
+  % 方括号中的两个亚甲基
+  \draw[bond] (4.58,0.78) -- (4.58,-0.72) -- (4.74,-0.72);
+  \draw[bond] (4.58,0.78) -- (4.74,0.78);
+  \node[atom] (m1) at (5.35,0) {C};
+  \node[atom] (m1u) at (4.95,0.46) {H};
+  \node[atom] (m1d) at (4.95,-0.46) {H};
+  \node[atom] (m2) at (6.15,0) {C};
+  \node[atom] (m2u) at (6.55,0.46) {H};
+  \node[atom] (m2d) at (6.55,-0.46) {H};
+  \draw[bond] (m1u) -- (m1) -- (m1d);
+  \draw[bond] (m2u) -- (m2) -- (m2d);
+  \draw[bond] (6.78,0.78) -- (6.94,0.78) -- (6.94,-0.72) -- (6.78,-0.72);
+  \node at (7.65,0) {$+4$CuI};
+  % 写明双键的乙烯
+  \node at (4.85,-2.05) {$=$};
+  \node[atom] (e1) at (5.55,-2.05) {C};
+  \node[atom] (e2) at (6.40,-2.05) {C};
+  \node[atom] (e1u) at (5.12,-1.58) {H};
+  \node[atom] (e1d) at (5.12,-2.52) {H};
+  \node[atom] (e2u) at (6.83,-1.58) {H};
+  \node[atom] (e2d) at (6.83,-2.52) {H};
+  \draw[bond] (e1u) -- (e1) -- (e1d);
+  \draw[bond] (e2u) -- (e2) -- (e2d);
+  \draw[bond] ([yshift=0.7pt]e1.east) -- ([yshift=0.7pt]e2.west);
+  \draw[bond] ([yshift=-0.7pt]e1.east) -- ([yshift=-0.7pt]e2.west);
+  \node at (8.05,-2.05) {$+4$CuI};
+  \node at (5.98,-3.08) {乙烯};
+  \node at (8.15,-3.05) {碘化亚铜};
+  \node at (4.35,-3.72) {$(2\mathrm{CH}_2\mathrm{I}_2+4\mathrm{Cu}=\mathrm{CH}_2{=}\mathrm{CH}_2+4\mathrm{CuI})$};
+\end{tikzpicture}%
+}
 \caption{原PDF第30页图示}
 \end{figure}
 
