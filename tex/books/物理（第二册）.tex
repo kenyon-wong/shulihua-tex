@@ -5292,7 +5292,28 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0109-03.png}}
+\fitfig{%
+% fig-alt: 第5题 波形图线：自纵轴 0.5 米起的余弦，波长 2 米；D、A、B、C 在轴下，E 在下降段
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{1.02}
+  \def\u{1.28}
+  \draw[->,line width=0.7pt] (0,-1.55) -- (0,1.55);
+  \draw[->,line width=0.7pt] (0,0) -- (5.05,0);
+  \node[anchor=south] at (0,1.52) {$y$（米）};
+  \node[anchor=west] at (5.02,0.10) {$x$（米）};
+  \node[anchor=east] at (-0.08,\A) {$0.5$};
+  \foreach \k in {0.5,1.0,1.5,2.0,2.5,3.0,3.5} {
+    \draw[line width=0.4pt] ({\k*\u},0.05) -- ({\k*\u},-0.05);
+    \node[anchor=north,font=\scriptsize] at ({\k*\u},-0.08) {\k};
+  }
+  \draw[line width=0.8pt] plot[domain=0:3.55,samples=90,smooth] ({\x*\u},{\A*cos(180*\x)});
+  \node[anchor=north] at (0.38,-0.36) {$D$};
+  \node[anchor=north] at (1.48,-0.36) {$A$};
+  \node[anchor=south west] at (2.78,0.62) {$E$};
+  \node[anchor=north] at (3.42,-0.36) {$B$};
+  \node[anchor=north] at (4.18,-0.36) {$C$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -5374,7 +5395,43 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0111-01.png}}
+\fitfig{%
+% fig-alt: 第3题 (a) 振动图线：自原点升起的正弦，周期 0.8 秒，振幅 20 厘米；(b) 0.6 秒后波形：源点在负最大，波长 40 厘米
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.92}
+  \def\ut{3.05}
+  \draw[->,line width=0.7pt] (0,-1.22) -- (0,1.48);
+  \draw[->,line width=0.7pt] (0,0) -- (4.65,0);
+  \node[anchor=south] at (0,1.45) {$S$（厘米）};
+  \node[anchor=west] at (4.62,0.10) {$t$（秒）};
+  \node[anchor=east] at (-0.06,0) {$0$};
+  \node[anchor=east] at (-0.08,\A) {$20$};
+  \draw[dashed,line width=0.4pt] (0,\A) -- (0.38,\A);
+  \foreach \k in {0.2,0.4,0.6,0.8,1.0,1.2,1.4} {
+    \draw[line width=0.4pt] ({\k*\ut},0.05) -- ({\k*\ut},-0.05);
+    \node[anchor=north,font=\scriptsize] at ({\k*\ut},-0.08) {\k};
+  }
+  \draw[line width=0.8pt] plot[domain=0:1.36,samples=90,smooth] ({\x*\ut},{\A*sin(450*\x)});
+  \node[anchor=north] at (2.10,-1.28) {$(a)$};
+  \begin{scope}[yshift=-3.85cm]
+    \def\B{0.92}
+    \def\v{0.062}
+    \draw[->,line width=0.7pt] (0,-1.28) -- (0,1.48);
+    \draw[->,line width=0.7pt] (0,0) -- (4.95,0);
+    \node[anchor=south] at (0,1.45) {$y$（厘米）};
+    \node[anchor=west] at (4.92,0.10) {$r$（厘米）};
+    \node[anchor=east] at (-0.06,0) {$0$};
+    \node[anchor=east] at (-0.08,\B) {$20$};
+    \draw[dashed,line width=0.45pt] (0,\B) -- ({20*\v},\B);
+    \foreach \k in {10,20,30,40,50,60,70} {
+      \draw[line width=0.4pt] ({\k*\v},0.05) -- ({\k*\v},-0.05);
+      \node[anchor=north,font=\scriptsize] at ({\k*\v},-0.08) {\k};
+    }
+    \draw[line width=0.8pt] plot[domain=0:73,samples=100,smooth] ({\x*\v},{-\B*cos(9*\x)});
+    \node[anchor=north] at (2.15,-1.22) {$(b)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -6758,7 +6815,36 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.17 水的密度随温度变化的图象}]{assets/physics-2/fig-p0146-01.png}}
+\fitfig{%
+% fig-alt: 图4.17 水的密度随温度变化：4℃达 1.0000，0℃略低，过 4℃后下降，至 14℃约 0.9993
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \def\w{0.38}
+  \def\h{3.60}
+  \draw[line width=0.55pt] (0,0) rectangle ({14*\w},\h);
+  \foreach \k in {1,3,5,7,9,11,13} {
+    \draw[line width=0.2pt,black!30] ({\k*\w},0) -- ({\k*\w},\h);
+  }
+  \foreach \k in {2,4,6,8,10,12} {
+    \draw[line width=0.35pt,black!55] ({\k*\w},0) -- ({\k*\w},\h);
+    \node[anchor=north] at ({\k*\w},-0.06) {\k};
+  }
+  \node[anchor=north] at (0,-0.06) {$0$};
+  \node[anchor=north] at ({14*\w},-0.06) {$14$};
+  \node[anchor=north west] at ({14*\w+0.16},-0.06) {$^{\circ}\mathrm{C}$};
+  \foreach \k/\lab in {0/0.990,1/0.992,2/0.994,3/0.996,4/0.998,5/1.0000} {
+    \draw[line width=0.35pt,black!55] (0,{\k*\h/5}) -- ({14*\w},{\k*\h/5});
+    \node[anchor=east] at (-0.08,{\k*\h/5}) {\lab};
+  }
+  \foreach \k in {1,3,5,7,9} {
+    \draw[line width=0.2pt,black!28] (0,{\k*\h/10}) -- ({14*\w},{\k*\h/10});
+  }
+  \draw[line width=0.9pt] plot[smooth,tension=0.65] coordinates {
+    (0,3.493) ({1*\w},3.514) ({2*\w},3.529) ({3*\w},3.536) ({4*\w},3.548)
+    ({5*\w},3.536) ({6*\w},3.529) ({7*\w},3.514) ({8*\w},3.497) ({9*\w},3.472)
+    ({10*\w},3.443) ({11*\w},3.411) ({12*\w},3.372) ({13*\w},3.330) ({14*\w},3.284)
+  };
+\end{tikzpicture}%
+}
 \caption{图 4.17 水的密度随温度变化的图象}
 \end{figure}
 
@@ -7366,7 +7452,33 @@ p-V
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.4}]{assets/physics-2/fig-p0165-01.png}}
+\fitfig{%
+% fig-alt: 图5.4 等温 p-V 图：三点 (79.0, 0.704)、(75.8, 0.735)、(72.6, 0.767)，压强随体积减小
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\ux{22}
+  \def\uy{0.30}
+  \draw[->,line width=0.7pt] (0,-0.12) -- (0,3.55);
+  \draw[->,line width=0.7pt] (0,0) -- (4.25,0);
+  \node[anchor=south] at (0,3.52) {$p$};
+  \node[anchor=west] at (0.22,3.48) {厘米水银柱高};
+  \node[anchor=north west] at (4.15,-0.02) {$V$（厘米$^{3}$）};
+  \foreach \k in {70,72,74,76,78,80} {
+    \draw[line width=0.4pt] (0.05,{(\k-70)*\uy}) -- (-0.05,{(\k-70)*\uy});
+    \node[anchor=east] at (-0.08,{(\k-70)*\uy}) {\k};
+  }
+  \foreach \k in {0.65,0.7,0.75,0.8} {
+    \draw[line width=0.4pt] ({(\k-0.65)*\ux},0.05) -- ({(\k-0.65)*\ux},-0.05);
+    \node[anchor=north] at ({(\k-0.65)*\ux},-0.08) {\k};
+  }
+  \draw[line width=0.8pt] plot[domain=0.696:0.775,samples=28,smooth] ({(\x-0.65)*\ux},{((55.65/\x)-70)*\uy});
+  \fill ({(0.704-0.65)*\ux},{(79.0-70)*\uy}) circle[radius=1.05pt];
+  \fill ({(0.735-0.65)*\ux},{(75.8-70)*\uy}) circle[radius=1.05pt];
+  \fill ({(0.767-0.65)*\ux},{(72.6-70)*\uy}) circle[radius=1.05pt];
+  \node[anchor=west,font=\scriptsize] at ({(0.704-0.65)*\ux+0.08},{(79.0-70)*\uy+0.08}) {$(79.0,\,0.704)$};
+  \node[anchor=west,font=\scriptsize] at ({(0.735-0.65)*\ux+0.08},{(75.8-70)*\uy+0.10}) {$(75.8,\,0.735)$};
+  \node[anchor=west,font=\scriptsize] at ({(0.767-0.65)*\ux+0.06},{(72.6-70)*\uy+0.04}) {$(72.6,\,0.767)$};
+\end{tikzpicture}%
+}
 \caption{图5.4}
 \end{figure}
 
@@ -7400,7 +7512,22 @@ p _ {1} V _ {1} = p _ {2} V _ {2} \tag {5.1b}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.5 等温线}]{assets/physics-2/fig-p0166-01.png}}
+\fitfig{%
+% fig-alt: 图5.5 等温线：三条反比曲线，越往上温度越高，$T_3>T_1$，$T_2$ 居中
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,2.95);
+  \draw[->,line width=0.7pt] (0,0) -- (3.95,0);
+  \node[anchor=south] at (0,2.92) {$p$};
+  \node[anchor=west] at (3.92,0.10) {$V$};
+  \node[anchor=north east] at (-0.04,-0.04) {$O$};
+  \draw[line width=0.8pt] plot[domain=0.50:2.65,samples=40,smooth] (\x,{0.66/\x});
+  \draw[line width=0.8pt] plot[domain=0.74:2.15,samples=40,smooth] (\x,{1.10/\x});
+  \draw[line width=0.8pt] plot[domain=1.02:1.92,samples=36,smooth] (\x,{1.62/\x});
+  \node[anchor=west] at (2.70,0.28) {$T_1$};
+  \node[anchor=south west] at (2.18,0.56) {$T_2$};
+  \node[anchor=south] at (1.42,1.58) {$T_3>T_1$};
+\end{tikzpicture}%
+}
 \caption{图5.5 等温线}
 \end{figure}
 
@@ -7600,7 +7727,46 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.8 按表 5.2 作出的 g-V 图}]{assets/physics-2/fig-p0169-01.png}}
+\fitfig{%
+% fig-alt: 图5.8 按表5.2的 p-V 图：空气柱长 6–25 厘米，压强从 3.02 降到 0.601 大气压
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\ux{0.175}
+  \def\uy{0.95}
+  \draw[->,line width=0.7pt] (0,-0.15) -- (0,3.85);
+  \draw[->,line width=0.7pt] (0,0) -- (5.15,0);
+  \node[anchor=south] at (0.15,3.82) {$p$（大气压）};
+  \node[anchor=north west] at (5.22,-0.16) {$V$（厘米空气柱长）};
+  \node[anchor=north east] at (-0.03,-0.04) {$0$};
+  \foreach \k in {1,2,3} {
+    \draw[line width=0.4pt] (0.05,{\k*\uy}) -- (-0.05,{\k*\uy});
+    \node[anchor=east] at (-0.08,{\k*\uy}) {\k};
+  }
+  \foreach \k in {5,10,15,20,25} {
+    \draw[line width=0.4pt] ({\k*\ux},0.05) -- ({\k*\ux},-0.05);
+    \node[anchor=north] at ({\k*\ux},-0.08) {\k};
+  }
+  \draw[line width=0.8pt] plot[smooth,tension=0.5] coordinates {
+    ({6*\ux},{3.02*\uy}) ({8*\ux},{1.84*\uy}) ({10*\ux},{1.50*\uy}) ({12*\ux},{1.25*\uy})
+    ({14*\ux},{1.07*\uy}) ({16*\ux},{0.938*\uy}) ({20*\ux},{0.752*\uy}) ({25*\ux},{0.601*\uy})
+  };
+  \fill ({6*\ux},{3.02*\uy}) circle[radius=1.05pt];
+  \fill ({8*\ux},{1.84*\uy}) circle[radius=1.05pt];
+  \fill ({10*\ux},{1.50*\uy}) circle[radius=1.05pt];
+  \fill ({12*\ux},{1.25*\uy}) circle[radius=1.05pt];
+  \fill ({14*\ux},{1.07*\uy}) circle[radius=1.05pt];
+  \fill ({16*\ux},{0.938*\uy}) circle[radius=1.05pt];
+  \fill ({20*\ux},{0.752*\uy}) circle[radius=1.05pt];
+  \fill ({25*\ux},{0.601*\uy}) circle[radius=1.05pt];
+  \node[anchor=south west,font=\scriptsize] at ({6*\ux+0.04},{3.02*\uy+0.08}) {$(6,\,3.02)$};
+  \node[anchor=south west,font=\scriptsize] at ({8*\ux+0.08},{1.84*\uy+0.16}) {$(8,\,1.84)$};
+  \node[anchor=east,font=\scriptsize] at ({10*\ux-0.08},{1.50*\uy+0.02}) {$(10,\,1.50)$};
+  \node[anchor=south west,font=\scriptsize] at ({12*\ux+0.08},{1.25*\uy+0.20}) {$(12,\,1.25)$};
+  \node[anchor=north east,font=\scriptsize] at ({14*\ux-0.08},{1.07*\uy-0.12}) {$(14,\,1.07)$};
+  \node[anchor=south west,font=\scriptsize] at ({16*\ux+0.06},{0.938*\uy+0.14}) {$(16,\,0.938)$};
+  \node[anchor=north east,font=\scriptsize] at ({20*\ux-0.04},{0.752*\uy-0.14}) {$(20,\,0.752)$};
+  \node[anchor=north,font=\scriptsize] at ({25*\ux+0.02},{0.601*\uy-0.12}) {$(25,\,0.601)$};
+\end{tikzpicture}%
+}
 \caption{图 5.8 按表 5.2 作出的 g-V 图}
 \end{figure}
 
