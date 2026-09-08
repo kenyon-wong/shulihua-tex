@@ -2807,7 +2807,18 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={P点在AB外}]{assets/plane-geometry-1/fig-p0037-01.png}}
+\fitfig{%
+% fig-alt: 直角三角板立在直线AB上，左缘竖直，斜边向右下，内有三角孔，P点在左缘上部，无箭头无直角记号
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (-1.55,0) -- (1.85,0);
+  \draw[line width=0.7pt] (0,0) -- (0,1.72) -- (1.22,0) -- cycle;
+  \draw[line width=0.6pt] (0.16,0.20) -- (0.16,1.18) -- (0.90,0.20) -- cycle;
+  \fill (-0.02,1.30) circle (1.15pt);
+  \node[left=1pt] at (-0.04,1.30) {$P$};
+  \node[left=1pt] at (-1.55,0) {$A$};
+  \node[right=1pt] at (1.85,0) {$B$};
+\end{tikzpicture}%
+}
 \caption{P点在AB外}
 \end{figure}
 
@@ -2815,7 +2826,22 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={R点在CD上}]{assets/plane-geometry-1/fig-p0037-02.png}}
+\fitfig{%
+% fig-alt: R在CD上；左下实线三角板，右上虚线三角板，竖线在R上方为虚线并有向上箭头，CD过三角板一段为虚线
+\begin{tikzpicture}[line cap=round, >=latex]
+  \draw[line width=0.7pt] (-2.20,0) -- (-1.30,0);
+  \draw[dashed, line width=0.7pt] (-1.30,0) -- (2.25,0);
+  \draw[line width=0.7pt] (0,0) -- (-1.28,0) -- (0,-1.28) -- cycle;
+  \draw[line width=0.6pt] (-0.18,-0.18) -- (-0.82,-0.18) -- (-0.18,-0.82) -- cycle;
+  \draw[dashed, line width=0.7pt] (0,0) -- (1.28,0);
+  \draw[dashed, line width=0.7pt] (1.28,0) -- (0,1.28);
+  \draw[dashed, line width=0.6pt] (0.18,0.18) -- (0.82,0.18) -- (0.18,0.82) -- cycle;
+  \draw[dashed, ->, line width=0.7pt] (0,0) -- (0,1.62);
+  \node[left=1pt] at (-2.20,0) {$C$};
+  \node[right=1pt] at (2.25,0) {$D$};
+  \node[below right=0pt] at (0.04,-0.02) {$R$};
+\end{tikzpicture}%
+}
 \caption{R点在CD上}
 \end{figure}
 
@@ -2834,13 +2860,46 @@ P。沿着直线 AB
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第37页）}]{assets/plane-geometry-1/fig-p0037-03.png}}
+\fitfig{%
+% fig-alt: 曲尺，左为带两椭圆孔的尺座，右为刻度1至5的水平尺身，下方标曲尺，无箭头无虚线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,-1.48) rectangle (0.78,0.42);
+  \draw[line width=0.6pt] (0.22,-0.18) ellipse (0.15 and 0.24);
+  \draw[line width=0.55pt] (0.22,-0.18) circle (0.045);
+  \draw[line width=0.6pt] (0.22,-0.92) ellipse (0.15 and 0.24);
+  \draw[line width=0.55pt] (0.22,-0.92) circle (0.045);
+  \draw[line width=0.7pt] (0.62,-1.48) -- (0.78,-1.62) -- (0.16,-1.62) -- (0,-1.48);
+  \draw[line width=0.7pt] (0.78,0.42) -- (3.72,0.42) -- (3.72,0.02) -- (0.78,0.02) -- cycle;
+  \foreach \x/\n in {1.05/1, 1.58/2, 2.11/3, 2.64/4, 3.17/5} {
+    \draw[line width=0.55pt] (\x,0.42) -- (\x,0.22);
+    \node[font=\scriptsize] at (\x,0.12) {\n};
+  }
+  \foreach \x in {1.22, 1.38, 1.75, 1.91, 2.28, 2.44, 2.81, 2.97, 3.34, 3.50} {
+    \draw[line width=0.45pt] (\x,0.42) -- (\x,0.32);
+  }
+  \node[below=1pt] at (1.28,-0.02) {曲尺};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第37页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-55}]{assets/plane-geometry-1/fig-p0037-04.png}}
+\fitfig{%
+% fig-alt: 长方形工件，左上沿顶边一把曲尺刻度向下，右下底边一把曲尺竖尺向上并有尺头伸出底边
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) rectangle (3.70,1.62);
+  \draw[line width=0.6pt] (0.06,1.62) -- (0.06,1.28) -- (0.26,1.28) -- (0.26,1.46) -- (1.28,1.46) -- (1.28,1.62);
+  \foreach \x in {0.42, 0.54, 0.66, 0.78, 0.90, 1.02, 1.14} {
+    \draw[line width=0.45pt] (\x,1.46) -- (\x,1.34);
+  }
+  \draw[line width=0.6pt] (2.42,-0.12) rectangle (2.68,0.10);
+  \draw[line width=0.6pt] (2.48,0) -- (2.48,1.05) -- (2.66,1.05) -- (2.66,0);
+  \foreach \y in {0.16, 0.28, 0.40, 0.52, 0.64, 0.76, 0.88} {
+    \draw[line width=0.45pt] (2.48,\y) -- (2.58,\y);
+  }
+\end{tikzpicture}%
+}
 \caption{图1-55}
 \end{figure}
 
@@ -2848,7 +2907,19 @@ P。沿着直线 AB
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1.56}]{assets/plane-geometry-1/fig-p0037-05.png}}
+\fitfig{%
+% fig-alt: 直线APB水平，PC竖直向上，PK略偏右，P在交点下方，无箭头无直角记号
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (-1.55,0) -- (1.60,0);
+  \draw[line width=0.85pt] (0,0) -- (0,1.62);
+  \draw[line width=0.7pt] (0,0) -- (82:1.68);
+  \node[left=1pt] at (-1.55,0) {$A$};
+  \node[right=1pt] at (1.60,0) {$B$};
+  \node[below=1pt] at (0,0) {$P$};
+  \node[above left=1pt] at (0,1.62) {$C$};
+  \node[above right=1pt] at (82:1.68) {$K$};
+\end{tikzpicture}%
+}
 \caption{图 1.56}
 \end{figure}
 
@@ -2856,7 +2927,22 @@ P。沿着直线 AB
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·57}]{assets/plane-geometry-1/fig-p0037-06.png}}
+\fitfig{%
+% fig-alt: 长方形纸，折痕AB，P与P'关于AB对称，PO为垂线，斜线P-E-P'在E处转折，左下标纸，无箭头
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) rectangle (3.45,2.15);
+  \draw[line width=0.7pt] (0,1.05) -- (3.45,1.05);
+  \draw[line width=0.7pt] (1.42,0.06) -- (1.42,2.08);
+  \draw[line width=0.7pt] (1.42,1.82) -- (1.98,1.05) -- (1.42,0.28);
+  \node[left=1pt] at (0,1.05) {$A$};
+  \node[right=1pt] at (3.45,1.05) {$B$};
+  \node[below left=0pt] at (1.40,1.05) {$O$};
+  \node[above left=0pt] at (1.42,1.82) {$P$};
+  \node[below left=0pt] at (1.42,0.28) {$P'$};
+  \node[above right=0pt] at (1.98,1.05) {$E$};
+  \node at (0.48,0.48) {纸};
+\end{tikzpicture}%
+}
 \caption{图 1·57}
 \end{figure}
 
@@ -2876,7 +2962,17 @@ AB。因为\(\angle PEP'\)小于一平角，它的一半\(\angle PEA\)就小于�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0038-01.png}}
+\fitfig{%
+% fig-alt: 两块三角板底边在同一直线上，内孔相对，中间垂线重合并伸出顶点，无箭头无虚线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (-1.55,0) -- (1.55,0);
+  \draw[line width=0.7pt] (-1.18,0) -- (0,1.48);
+  \draw[line width=0.7pt] (0,1.48) -- (1.18,0);
+  \draw[line width=0.7pt] (0,0) -- (0,1.78);
+  \draw[line width=0.6pt] (-0.78,0.16) -- (-0.16,0.16) -- (-0.16,0.96) -- cycle;
+  \draw[line width=0.6pt] (0.16,0.16) -- (0.78,0.16) -- (0.16,0.96) -- cycle;
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -2884,7 +2980,18 @@ AB。因为\(\angle PEP'\)小于一平角，它的一半\(\angle PEA\)就小于�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0038-02.png}}
+\fitfig{%
+% fig-alt: 两块三角板并排，右板左缘未接到顶点，顶点上方右侧另有一段不相重合的短横线，无箭头无虚线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (-1.55,0) -- (1.55,0);
+  \draw[line width=0.7pt] (-1.18,0) -- (0,1.48);
+  \draw[line width=0.7pt] (0,0) -- (0,1.78);
+  \draw[line width=0.7pt] (0,1.26) -- (1.18,0);
+  \draw[line width=0.7pt] (0.22,1.68) -- (0.58,1.68);
+  \draw[line width=0.6pt] (-0.78,0.16) -- (-0.16,0.16) -- (-0.16,0.96) -- cycle;
+  \draw[line width=0.6pt] (0.16,0.16) -- (0.78,0.16) -- (0.16,0.82) -- cycle;
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -2894,7 +3001,25 @@ AB。因为\(\angle PEP'\)小于一平角，它的一半\(\angle PEA\)就小于�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-59}]{assets/plane-geometry-1/fig-p0038-03.png}}
+\fitfig{%
+% fig-alt: 左有短横线，一人坐在水平直线上按住绳端，粗绳向右下，另一人跪着拉直绳子，无箭头无虚线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.6pt] (-0.62,0) -- (-0.28,0);
+  \draw[line width=0.7pt] (0,0) -- (1.85,0);
+  \draw[line width=0.7pt] (0.55,0.62) circle (0.15);
+  \draw[line width=0.6pt] (0.46,0.74) .. controls (0.50,0.84) and (0.66,0.84) .. (0.68,0.70);
+  \draw[line width=0.7pt] (0.48,0.48) .. controls (0.30,0.40) and (0.28,0.22) .. (0.42,0.08);
+  \draw[line width=0.7pt] (0.62,0.48) .. controls (0.78,0.36) and (0.76,0.16) .. (0.62,0.06);
+  \draw[line width=0.7pt] (0.42,0.08) -- (0.70,0.04);
+  \draw[line width=1.15pt] (0.66,0.02) -- (2.48,-1.05);
+  \draw[line width=0.7pt] (2.78,-0.82) circle (0.14);
+  \draw[line width=0.6pt] (2.70,-0.72) .. controls (2.74,-0.62) and (2.88,-0.62) .. (2.90,-0.74);
+  \draw[line width=0.7pt] (2.68,-0.96) .. controls (2.52,-1.05) and (2.48,-1.22) .. (2.55,-1.38);
+  \draw[line width=0.7pt] (2.88,-0.96) .. controls (3.02,-1.10) and (3.05,-1.28) .. (2.92,-1.40);
+  \draw[line width=0.7pt] (2.55,-1.38) .. controls (2.70,-1.48) and (2.95,-1.46) .. (3.02,-1.28);
+  \draw[line width=0.7pt] (2.66,-1.08) -- (2.48,-1.02);
+\end{tikzpicture}%
+}
 \caption{图1-59}
 \end{figure}
 
@@ -2958,7 +3083,20 @@ AB。因为\(\angle PEP'\)小于一平角，它的一半\(\angle PEA\)就小于�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-1/fig-p0039-01.png}}
+\fitfig{%
+% fig-alt: P1在斜线l1上方，l1两端都标l1；P2在水平线l2上方，l2标在左端，无箭头无垂线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0.15,0.05) -- (2.35,1.28);
+  \fill (0.55,1.05) circle (1.05pt);
+  \node[left=1pt] at (0.55,1.05) {$P_{1}$};
+  \node[below left=0pt] at (0.15,0.05) {$l_{1}$};
+  \node[above right=0pt] at (2.35,1.28) {$l_{1}$};
+  \draw[line width=0.7pt] (2.85,0.72) -- (4.70,0.72);
+  \node[left=1pt] at (2.85,0.72) {$l_{2}$};
+  \fill (3.55,0.98) circle (1.05pt);
+  \node[above=1pt] at (3.55,0.98) {$P_{2}$};
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
