@@ -5113,29 +5113,22 @@ Q_{2} = 2.2 \text{微库}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1.59 印刷页87。左汇流条接+、右汇流条接-；奇数金属片连左（含最上、最下），偶数片连右，片间斜线为电介质。OCR题注「荷守」与印刷「多片电容器并联」不符，题注未改
+% fig-alt: 图1.59 印刷页87。矩形叠片，板间斜线电介质；左引线较高标+，右引线低一板标-。OCR题注「荷守」与印刷「多片电容器并联」不符，题注未改
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
-  \draw[line width=1.15pt] (0,0) -- (0,2.52);
-  \draw[line width=1.15pt] (2.42,0.28) -- (2.42,2.24);
-  \draw[line width=0.7pt] (-0.72,1.42) -- (0,1.42);
-  \draw[line width=0.7pt] (2.42,1.42) -- (3.14,1.42);
-  \node[anchor=south,inner sep=1pt] at (-0.42,1.46) {$+$};
-  \node[anchor=south,inner sep=1pt] at (2.92,1.46) {$-$};
   \begin{scope}
-    \clip (0.16,0.16) rectangle (2.06,2.44);
-    \foreach \k in {0,1,...,18} {
-      \draw[line width=0.28pt] (-0.55+0.18*\k,2.70) -- (0.22+0.18*\k,-0.18);
+    \clip (0.05,0.05) rectangle (3.15,2.35);
+    \foreach \k in {0,1,...,22} {
+      \draw[line width=0.28pt] (-0.45+0.18*\k,2.58) -- (0.30+0.18*\k,-0.18);
     }
   \end{scope}
-  \draw[line width=0.85pt] (0,2.52) -- (2.12,2.52);
-  \draw[line width=0.85pt] (0,1.89) -- (2.12,1.89);
-  \draw[line width=0.85pt] (0,1.26) -- (2.12,1.26);
-  \draw[line width=0.85pt] (0,0.63) -- (2.12,0.63);
-  \draw[line width=0.85pt] (0,0) -- (2.12,0);
-  \draw[line width=0.85pt] (0.30,2.205) -- (2.42,2.205);
-  \draw[line width=0.85pt] (0.30,1.575) -- (2.42,1.575);
-  \draw[line width=0.85pt] (0.30,0.945) -- (2.42,0.945);
-  \draw[line width=0.85pt] (0.30,0.315) -- (2.42,0.315);
+  \draw[line width=0.75pt] (0,0) rectangle (3.20,2.40);
+  \foreach \y in {0.32,0.64,0.96,1.28,1.60,1.92,2.16} {
+    \draw[line width=0.8pt] (0,\y) -- (3.20,\y);
+  }
+  \draw[line width=0.7pt] (-0.78,1.60) -- (0,1.60);
+  \node[anchor=south,inner sep=0.6pt] at (-0.22,1.64) {$+$};
+  \draw[line width=0.7pt] (3.20,0.96) -- (4.02,0.96);
+  \node[anchor=south,inner sep=0.6pt] at (3.36,1.00) {$-$};
 \end{tikzpicture}%
 }
 \caption{图1.59 荷守电容器并联}
@@ -5189,14 +5182,14 @@ C = n C_{1} = n \varepsilon_{r} \varepsilon_{0} \frac{A}{d}
   \draw[line width=0.85pt] (2.55,1.37) -- (2.55,1.73);
   \draw[line width=0.85pt] (2.73,1.33) -- (2.73,1.77);
   \draw[line width=0.7pt] (2.73,1.55) -- (3.55,1.55);
-  \node[anchor=north,inner sep=1.5pt] at (2.64,1.18) {$C_3$};
+  \node[anchor=west,inner sep=1pt] at (2.86,1.55) {$C_3$};
   \draw[line width=0.7pt] (3.55,1.55) -- (4.55,1.55);
-  \draw[line width=0.7pt] (0,0) -- (1.88,0);
-  \draw[line width=0.7pt] (2.32,0) -- (4.55,0);
+  \draw[line width=0.7pt] (0,0) -- (1.62,0);
+  \node[anchor=east,inner sep=1pt] at (1.78,0) {$+$};
   \draw[line width=0.9pt] (1.88,-0.18) -- (1.88,0.18);
-  \draw[line width=0.9pt] (2.10,-0.10) -- (2.10,0.10);
-  \node[anchor=north,inner sep=1.2pt] at (1.70,-0.48) {$+$};
-  \node[anchor=north,inner sep=1.2pt] at (2.32,-0.48) {$-$};
+  \draw[line width=0.9pt] (2.08,-0.10) -- (2.08,0.10);
+  \node[anchor=west,inner sep=1pt] at (2.20,0) {$-$};
+  \draw[line width=0.7pt] (2.32,0) -- (4.55,0);
 \end{tikzpicture}%
 }
 \caption{图1.60}
@@ -5381,10 +5374,10 @@ U_{2} = U_{3} = (400 - 300) \text{伏} = 100 \text{伏}
   \fill (0,2.55) circle (1.25pt);
   \fill (0,0) circle (1.25pt);
   \draw[line width=0.7pt] (0,2.55) -- (0,0);
-  \node[anchor=east,inner sep=1.5pt] at (-0.55,2.55) {$a$};
-  \node[anchor=east,inner sep=1.5pt] at (-0.55,0) {$b$};
-  \draw[line width=0.55pt,->] (-0.42,2.28) -- (-0.42,0.28);
-  \node[anchor=east,inner sep=1.5pt] at (-0.48,1.28) {$U_{ab}$};
+  \node[anchor=south east,inner sep=1pt] at (-0.08,2.58) {$a$};
+  \node[anchor=north east,inner sep=1pt] at (-0.08, -0.04) {$b$};
+  \draw[line width=0.55pt,->] (-0.55,2.22) -- (-0.55,0.28);
+  \node[anchor=east,inner sep=1.5pt] at (-0.62,1.25) {$U_{ab}$};
   \draw[line width=0.7pt] (0,2.55) -- (3.55,2.55);
   \draw[line width=0.7pt] (0,0) -- (3.55,0);
   \draw[line width=0.7pt] (1.35,2.55) -- (1.35,2.05);
@@ -5707,27 +5700,37 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 印刷页96复习题一第4题。上板A、下板B，板间左侧竖书2毫米，P点旁标4毫米。A接右侧电池正极，B接地并接电池负极，电池旁标100V。板上不另加电荷正负号
+% fig-alt: 复习题一第4题印刷页96。上板A、下板B，左侧竖书2厘米（OCR曾作2毫米），P在A下4毫米；右端100V三节电池上正下负，B接线端接地。板上不另加电荷正负号
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
-  \draw[line width=1.8pt] (0.55,1.72) -- (2.55,1.72);
-  \draw[line width=1.8pt] (0.55,0.55) -- (2.55,0.55);
-  \node[anchor=west,inner sep=1.5pt] at (2.58,1.72) {$A$};
-  \node[anchor=west,inner sep=1.5pt] at (2.58,0.55) {$B$};
-  \node[anchor=center,rotate=90,inner sep=1pt] at (0.02,1.14) {2毫米};
-  \fill (0.92,1.42) circle (1.15pt);
-  \node[anchor=south,inner sep=1pt] at (0.92,1.48) {$P$};
-  \node[anchor=west,inner sep=1.2pt] at (1.05,1.22) {4毫米};
-  \draw[line width=0.7pt] (2.55,1.72) -- (4.35,1.72) -- (4.35,1.28);
-  \draw[line width=0.9pt] (4.14,1.28) -- (4.56,1.28);
-  \draw[line width=0.9pt] (4.22,1.10) -- (4.48,1.10);
-  \node[anchor=east,inner sep=1pt] at (4.02,1.28) {$+$};
-  \node[anchor=north,inner sep=1pt] at (4.35,0.96) {$-$};
-  \node[anchor=south,inner sep=1pt] at (4.35,1.78) {$100\mathrm{V}$};
-  \draw[line width=0.7pt] (1.55,0.55) -- (1.55,0.18) -- (4.15,0.18) -- (4.15,0.92);
-  \draw[line width=0.55pt] (1.55,0.18) -- (1.55,0.02);
-  \draw[line width=0.55pt] (1.38,0.02) -- (1.72,0.02);
-  \draw[line width=0.55pt] (1.44,-0.06) -- (1.66,-0.06);
-  \draw[line width=0.55pt] (1.50,-0.13) -- (1.60,-0.13);
+  \draw[line width=0.55pt] (0.22,0.48) -- (0.22,1.78);
+  \draw[line width=0.55pt] (0.12,1.78) -- (0.32,1.78);
+  \draw[line width=0.55pt] (0.12,0.48) -- (0.32,0.48);
+  \node[rotate=90,anchor=center,inner sep=1pt] at (-0.10,1.13) {2厘米};
+  \draw[line width=1.7pt] (0.55,1.78) -- (2.55,1.78);
+  \node[anchor=west,inner sep=1.5pt] at (2.60,1.78) {$A$};
+  \draw[line width=1.7pt] (0.55,0.48) -- (2.55,0.48);
+  \node[anchor=west,inner sep=1.5pt] at (2.60,0.48) {$B$};
+  \draw[line width=0.5pt] (1.28,1.78) -- (1.28,1.50);
+  \draw[line width=0.5pt] (1.20,1.50) -- (1.36,1.50);
+  \fill (1.28,1.46) circle (0.95pt);
+  \node[anchor=north,inner sep=0.8pt] at (1.28,1.42) {$P$};
+  \node[anchor=west,inner sep=1pt] at (1.42,1.64) {4毫米};
+  \draw[line width=0.7pt] (1.85,1.78) -- (1.85,2.18) -- (4.15,2.18) -- (4.15,1.62);
+  \node[anchor=west,inner sep=1pt] at (4.24,1.48) {$+$};
+  \draw[line width=0.85pt] (3.96,1.48) -- (4.34,1.48);
+  \draw[line width=0.85pt] (4.04,1.36) -- (4.26,1.36);
+  \draw[line width=0.85pt] (3.96,1.20) -- (4.34,1.20);
+  \draw[line width=0.85pt] (4.04,1.08) -- (4.26,1.08);
+  \draw[line width=0.85pt] (3.96,0.92) -- (4.34,0.92);
+  \draw[line width=0.85pt] (4.04,0.80) -- (4.26,0.80);
+  \node[anchor=east,inner sep=1.5pt] at (3.88,1.14) {$100\,\mathrm{V}$};
+  \draw[line width=0.7pt] (4.15,0.80) -- (4.15,0.12) -- (1.85,0.12);
+  \node[anchor=west,inner sep=1pt] at (4.24,0.22) {$-$};
+  \draw[line width=0.7pt] (1.85,0.48) -- (1.85,0.12);
+  \draw[line width=0.55pt] (1.85,0.12) -- (1.85,-0.02);
+  \draw[line width=0.55pt] (1.67,-0.02) -- (2.03,-0.02);
+  \draw[line width=0.55pt] (1.73,-0.10) -- (1.97,-0.10);
+  \draw[line width=0.55pt] (1.79,-0.18) -- (1.91,-0.18);
 \end{tikzpicture}%
 }
 \caption{(第4题)}
@@ -5743,7 +5746,35 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-3/fig-p0100-01.png}}
+\fitfig{%
+% fig-alt: 复习题一第5题印刷页97。支座O下等边丝线，A、B两球扫描均为圆内加号；电力线向右，标E=7.0×10^5伏/米。正文写B带负电，扫描两球皆正，题注未改
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.45,2.72) -- (3.95,2.72);
+  \foreach \x in {0.55,0.85,1.15,1.45,2.75,3.05,3.35,3.65} {
+    \draw[line width=0.45pt] (\x,2.72) -- (\x+0.16,2.90);
+  }
+  \node[anchor=south,inner sep=1pt] at (2.10,2.78) {$O$};
+  \draw[line width=0.6pt] (2.10,2.72) -- (0.78,1.06);
+  \draw[line width=0.6pt] (2.10,2.72) -- (3.42,1.06);
+  \draw[line width=0.6pt] (0.88,0.92) -- (3.32,0.92);
+  \draw[fill=white,line width=0.6pt] (0.72,0.92) circle (0.16);
+  \node[inner sep=0pt] at (0.72,0.92) {\scriptsize $+$};
+  \node[anchor=east,inner sep=1.2pt] at (0.52,0.92) {$A$};
+  \draw[fill=white,line width=0.6pt] (3.48,0.92) circle (0.16);
+  \node[inner sep=0pt] at (3.48,0.92) {\scriptsize $+$};
+  \node[anchor=west,inner sep=1.2pt] at (3.70,0.92) {$B$};
+  \draw[line width=0.55pt,->] (0.08,2.18) -- (0.36,2.18);
+  \draw[line width=0.45pt] (0.36,2.18) -- (3.05,2.18);
+  \node[anchor=west,inner sep=1.5pt] at (3.14,2.18) {$E=7.0\times10^{5}$ 伏/米};
+  \draw[line width=0.55pt,->] (0.08,1.55) -- (0.36,1.55);
+  \draw[line width=0.45pt] (0.36,1.55) -- (4.35,1.55);
+  \draw[line width=0.55pt,->] (0.08,0.92) -- (0.36,0.92);
+  \draw[line width=0.45pt] (0.36,0.92) -- (0.56,0.92);
+  \draw[line width=0.45pt] (3.64,0.92) -- (4.35,0.92);
+  \draw[line width=0.55pt,->] (0.08,0.42) -- (0.36,0.42);
+  \draw[line width=0.45pt] (0.36,0.42) -- (4.35,0.42);
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -5751,7 +5782,31 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-3/fig-p0100-02.png}}
+\fitfig{%
+% fig-alt: 复习题一第6题印刷页97。等边三角形ABO，A顶标-q，B、O底角标+q；K、M、L为三边中点，G为重心。正文只写+q、+q、-q，顶点符号依扫描
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.6pt] (1.70,2.62) -- (0.40,0.36);
+  \draw[line width=0.6pt] (1.70,2.62) -- (3.00,0.36);
+  \draw[line width=0.6pt] (0.56,0.36) -- (2.84,0.36);
+  \draw[fill=white,line width=0.6pt] (1.70,2.62) circle (0.16);
+  \draw[fill=white,line width=0.6pt] (0.40,0.36) circle (0.16);
+  \draw[fill=white,line width=0.6pt] (3.00,0.36) circle (0.16);
+  \node[anchor=south east,inner sep=1pt] at (1.52,2.70) {$A$};
+  \node[anchor=south west,inner sep=1pt] at (1.88,2.70) {$-q$};
+  \node[anchor=east,inner sep=1.2pt] at (0.20,0.36) {$B$};
+  \node[anchor=north,inner sep=1pt] at (0.40,0.16) {$+q$};
+  \node[anchor=west,inner sep=1.2pt] at (3.20,0.36) {$O$};
+  \node[anchor=north,inner sep=1pt] at (3.00,0.16) {$+q$};
+  \fill (1.05,1.49) circle (1.15pt);
+  \node[anchor=east,inner sep=1.5pt] at (0.96,1.49) {$K$};
+  \fill (2.35,1.49) circle (1.15pt);
+  \node[anchor=west,inner sep=1.5pt] at (2.44,1.49) {$M$};
+  \fill (1.70,0.36) circle (1.15pt);
+  \node[anchor=north,inner sep=1.2pt] at (1.70,0.28) {$L$};
+  \fill (1.70,1.11) circle (1.15pt);
+  \node[anchor=south west,inner sep=1pt] at (1.76,1.14) {$G$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -5775,7 +5830,27 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-3/fig-p0100-03.png}}
+\fitfig{%
+% fig-alt: 复习题一第7题印刷页97。金属空盒斜线壁，盖上小孔，丝线悬圆内加号。盒下另有接地斜线，未与盒相连，未补联线
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \begin{scope}
+    \clip (0,0) rectangle (2.55,2.05);
+    \foreach \k in {-6,-5,...,10} {
+      \draw[line width=0.28pt] (-0.20+0.22*\k,2.30) -- (1.55+0.22*\k,-0.25);
+    }
+    \fill[white] (0.42,0.34) rectangle (2.13,1.48);
+    \fill[white] (1.02,1.48) rectangle (1.53,2.05);
+  \end{scope}
+  \draw[line width=0.7pt] (0,0) -- (2.55,0) -- (2.55,2.05) -- (1.53,2.05) -- (1.53,1.48) -- (2.13,1.48) -- (2.13,0.34) -- (0.42,0.34) -- (0.42,1.48) -- (1.02,1.48) -- (1.02,2.05) -- (0,2.05) -- cycle;
+  \draw[line width=0.55pt] (1.275,2.38) -- (1.275,1.08);
+  \draw[fill=white,line width=0.55pt] (1.275,0.92) circle (0.14);
+  \node[inner sep=0pt] at (1.275,0.92) {\scriptsize $+$};
+  \draw[line width=0.6pt] (-0.15,-0.55) -- (2.70,-0.55);
+  \foreach \x in {-0.05,0.22,0.49,0.76,1.03,1.30,1.57,1.84,2.11,2.38} {
+    \draw[line width=0.4pt] (\x,-0.55) -- (\x+0.16,-0.38);
+  }
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -5789,7 +5864,21 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/physics-3/fig-p0101-01.png}}
+\fitfig{%
+% fig-alt: 复习题一第9题印刷页98。上下板扫描中部皆为加号；电子自右上以60°入板间。正文写上板负、下板正，板上符号依扫描，未改成一负一下正
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.6pt] (0.15,1.92) rectangle (2.55,2.10);
+  \node[inner sep=0pt] at (1.35,2.01) {$+$};
+  \draw[line width=0.6pt] (0.08,0.18) rectangle (2.62,0.36);
+  \node[inner sep=0pt] at (1.35,0.27) {$+$};
+  \draw[fill=white,line width=0.55pt] (3.12,2.62) circle (0.13);
+  \node[inner sep=0pt] at (3.12,2.62) {$-$};
+  \draw[line width=0.6pt] (3.02,2.50) -- (2.55,2.02);
+  \draw[line width=0.65pt,->] (2.52,1.88) -- (1.98,0.96);
+  \draw[line width=0.45pt] (2.23,1.92) arc[start angle=180,end angle=240,radius=0.32];
+  \node[anchor=east,inner sep=1.2pt] at (2.08,1.62) {$60^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -5833,7 +5922,16 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/physics-3/fig-p0101-02.png}}
+\fitfig{%
+% fig-alt: 复习题一第13题印刷页98。两竖极板，下半浸煤油，板间及板外为水平虚线，板上无电荷正负号
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {0.22,0.46,0.70,0.94,1.18} {
+    \draw[line width=0.4pt,dashed] (0.05,\y) -- (2.05,\y);
+  }
+  \draw[line width=2.1pt] (0.78,0.12) -- (0.78,2.15);
+  \draw[line width=2.1pt] (1.18,0.12) -- (1.18,2.15);
+\end{tikzpicture}%
+}
 \caption{(第13题)}
 \end{figure}
 
@@ -5907,7 +6005,39 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/physics-3/fig-p0102-02.png}}
+\fitfig{%
+% fig-alt: 复习题一第16题印刷页99。C1左板有斜线电介质，C2在中支；K为断开的斜开关，刀口未接到右上导线。右为100V电池，上长下短，旁标+、−。电容器上无电荷正负号
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0,2.15) -- (0,1.28);
+  \draw[line width=0.7pt] (0,0.92) -- (0,0);
+  \draw[line width=0.7pt] (0,2.15) -- (3.25,2.15);
+  \draw[line width=0.7pt] (3.25,2.15) -- (4.08,2.58);
+  \node[anchor=south,inner sep=1pt] at (3.72,2.60) {$K$};
+  \draw[line width=0.7pt] (4.42,2.15) -- (5.15,2.15) -- (5.15,1.32);
+  \draw[line width=0.9pt] (4.92,1.20) -- (5.38,1.20);
+  \node[anchor=east,inner sep=1.2pt] at (4.84,1.20) {$+$};
+  \draw[line width=0.9pt] (5.00,1.02) -- (5.30,1.02);
+  \node[anchor=east,inner sep=1.5pt] at (4.68,0.98) {$-$};
+  \node[anchor=west,inner sep=1.5pt] at (5.46,1.10) {$100\mathrm{V}$};
+  \draw[line width=0.7pt] (5.15,0.90) -- (5.15,0) -- (0,0);
+  \draw[line width=0.85pt] (-0.16,1.18) -- (0.20,1.18);
+  \draw[line width=0.85pt] (-0.16,1.02) -- (0.20,1.02);
+  \begin{scope}
+    \clip (-0.34,0.98) rectangle (-0.04,1.22);
+    \foreach \k in {0,1,...,6} {
+      \draw[line width=0.32pt] (-0.52+0.08*\k,1.30) -- (-0.36+0.08*\k,0.90);
+    }
+  \end{scope}
+  \node[anchor=east,inner sep=1.5pt] at (-0.24,1.28) {$C_1$};
+  \fill (2.15,2.15) circle (1.4pt);
+  \fill (2.15,0) circle (1.4pt);
+  \draw[line width=0.7pt] (2.15,2.15) -- (2.15,1.28);
+  \draw[line width=0.7pt] (2.15,0.92) -- (2.15,0);
+  \draw[line width=0.85pt] (2.01,1.24) -- (2.01,0.94);
+  \draw[line width=0.85pt] (2.19,1.26) -- (2.19,0.92);
+  \node[anchor=south,inner sep=1pt] at (2.15,1.30) {$C_2$};
+\end{tikzpicture}%
+}
 \caption{(第16题)}
 \end{figure}
 
