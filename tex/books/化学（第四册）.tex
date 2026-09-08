@@ -1677,7 +1677,124 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={习题1·5第4题结构式}]{assets/chemistry-4/manual-p0029-exercise-1-5-q4.png}}
+\fitfig{%
+% fig-alt: 习题1·5第4题：七个式子，（1）（3）（4）（5）（7）为正丁烷的不同写法，（2）（6）为异丁烷
+% redraw: manual-p0029-exercise-1-5-q4 习题1·5第4题结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.6pt},
+    bond/.style={line width=0.62pt},
+    num/.style={inner sep=1pt, anchor=east}]
+  \node[anchor=west] at (0,1.35) {4. 下列七个式子代表几种物质：};
+  \node[num] at (0.55,0) {（1）};
+  \node[grp] (a1) at (1.20,0) {CH$_3$};
+  \node[grp] (a2) at (2.30,0) {CH$_2$};
+  \node[grp] (a3) at (3.40,0) {CH$_2$};
+  \node[grp] (a4) at (4.50,0) {CH$_3$};
+  \draw[bond] (a1) -- (a2) -- (a3) -- (a4);
+  \begin{scope}[xshift=6.35cm]
+    \node[num] at (0.65,0) {（2）};
+    \node[grp] (b1) at (1.20,0) {CH$_3$};
+    \node[grp] (b2) at (2.25,0) {CH};
+    \node[grp] (b3) at (3.30,0) {CH$_3$};
+    \node[grp] (b4) at (2.25,0.78) {CH$_3$};
+    \draw[bond] (b1) -- (b2) -- (b3);
+    \draw[bond] (b2.north) -- (b4.south);
+  \end{scope}
+  \begin{scope}[yshift=-2.15cm]
+    \node[num] at (0.55,0) {（3）};
+    \node[grp] (c1) at (1.20,0) {CH$_3$};
+    \node[grp] (c2) at (2.30,0) {CH$_2$};
+    \node[grp] (c3) at (2.30,-0.88) {CH$_2$};
+    \node[grp] (c4) at (2.30,-1.76) {CH$_3$};
+    \draw[bond] (c1) -- (c2);
+    \draw[bond] (c2.south) -- (c3.north);
+    \draw[bond] (c3.south) -- (c4.north);
+  \end{scope}
+  \begin{scope}[xshift=6.35cm, yshift=-2.15cm]
+    \node[num] at (0.65,0.10) {（4）};
+    \node[grp] (d1) at (1.25,0.10) {CH$_2$};
+    \node[grp] (d2) at (2.40,0.10) {CH$_2$};
+    \node[grp] (d3) at (1.25,-0.78) {CH$_3$};
+    \node[grp] (d4) at (2.40,-0.78) {CH$_3$};
+    \draw[bond] (d1) -- (d2);
+    \draw[bond] (d1.south) -- (d3.north);
+    \draw[bond] (d2.south) -- (d4.north);
+  \end{scope}
+  \begin{scope}[yshift=-6.15cm]
+    \node[num] at (0.55,-0.25) {（5）};
+    \node[atom] (e1) at (1.20,0.40) {C};
+    \node[atom] (e2) at (2.15,0.40) {C};
+    \node[atom] (e3) at (2.15,-0.85) {C};
+    \node[atom] (e4) at (3.10,-0.85) {C};
+    \node[atom] (e1u) at (1.20,1.02) {H};
+    \node[atom] (e1l) at (0.58,0.40) {H};
+    \node[atom] (e1d) at (1.20,-0.22) {H};
+    \node[atom] (e2u) at (2.15,1.02) {H};
+    \node[atom] (e2r) at (2.75,0.40) {H};
+    \node[atom] (e3l) at (1.52,-0.85) {H};
+    \node[atom] (e3d) at (2.15,-1.48) {H};
+    \node[atom] (e4u) at (3.10,-0.28) {H};
+    \node[atom] (e4r) at (3.72,-0.85) {H};
+    \node[atom] (e4d) at (3.10,-1.48) {H};
+    \draw[bond] (e1u) -- (e1) -- (e1d);
+    \draw[bond] (e1l) -- (e1) -- (e2) -- (e2r);
+    \draw[bond] (e2u) -- (e2);
+    \draw[bond] (e2) -- (e3);
+    \draw[bond] (e3l) -- (e3) -- (e4) -- (e4r);
+    \draw[bond] (e3) -- (e3d);
+    \draw[bond] (e4u) -- (e4);
+    \draw[bond] (e4) -- (e4d);
+  \end{scope}
+  \begin{scope}[xshift=6.35cm, yshift=-5.85cm]
+    \node[num] at (0.65,-0.10) {（6）};
+    \node[atom] (f0) at (1.55,0.90) {C};
+    \node[atom] (f1) at (1.55,0) {C};
+    \node[atom] (f2) at (1.55,-0.90) {C};
+    \node[atom] (f3) at (2.45,0) {C};
+    \node[atom] (f0u) at (1.55,1.50) {H};
+    \node[atom] (f0l) at (0.92,0.90) {H};
+    \node[atom] (f0r) at (2.15,0.90) {H};
+    \node[atom] (f1l) at (0.92,0) {H};
+    \node[atom] (f2l) at (0.92,-0.90) {H};
+    \node[atom] (f2r) at (2.15,-0.90) {H};
+    \node[atom] (f2d) at (1.55,-1.50) {H};
+    \node[atom] (f3r) at (3.08,0) {H};
+    \node[atom] (f3u) at (3.05,0.58) {H};
+    \node[atom] (f3d) at (3.05,-0.58) {H};
+    \draw[bond] (f0u) -- (f0) -- (f1) -- (f2) -- (f2d);
+    \draw[bond] (f0l) -- (f0) -- (f0r);
+    \draw[bond] (f1l) -- (f1) -- (f3) -- (f3r);
+    \draw[bond] (f2l) -- (f2) -- (f2r);
+    \draw[bond] (f3) -- (f3u);
+    \draw[bond] (f3) -- (f3d);
+  \end{scope}
+  \begin{scope}[yshift=-10.05cm]
+    \node[num] at (0.55,-0.05) {（7）};
+    \node[atom] (g0) at (1.55,0.90) {C};
+    \node[atom] (g1) at (1.55,0) {C};
+    \node[atom] (g2) at (1.55,-0.90) {C};
+    \node[atom] (g3) at (2.50,-0.90) {C};
+    \node[atom] (g0u) at (1.55,1.50) {H};
+    \node[atom] (g0l) at (0.92,0.90) {H};
+    \node[atom] (g0r) at (2.15,0.90) {H};
+    \node[atom] (g1l) at (0.92,0) {H};
+    \node[atom] (g1r) at (2.15,0) {H};
+    \node[atom] (g2l) at (0.92,-0.90) {H};
+    \node[atom] (g2d) at (1.55,-1.52) {H};
+    \node[atom] (g3u) at (3.05,-0.32) {H};
+    \node[atom] (g3r) at (3.12,-0.90) {H};
+    \node[atom] (g3d) at (2.50,-1.52) {H};
+    \draw[bond] (g0u) -- (g0) -- (g1) -- (g2);
+    \draw[bond] (g0l) -- (g0) -- (g0r);
+    \draw[bond] (g1l) -- (g1) -- (g1r);
+    \draw[bond] (g2l) -- (g2) -- (g3) -- (g3r);
+    \draw[bond] (g2) -- (g2d);
+    \draw[bond] (g3) -- (g3u);
+    \draw[bond] (g3) -- (g3d);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{习题1·5第4题结构式}
 \end{figure}
 
@@ -1775,7 +1892,62 @@ Cu，以及生成物碘化亚铜来看，显然，余下的应当是
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·7 乙烯的分子结构}]{assets/chemistry-4/fig-p0031-g01.png}}
+\fitfig{%
+% fig-alt: 图1·7 乙烯的分子结构：电子式 H:C::C:H 下方两个 H，平面结构式两端各两氢的 C=C，右侧球棍模型
+% redraw: fig-p0031-g01 图1·7 乙烯的分子结构
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0pt},
+    bond/.style={line width=0.62pt}]
+  \node[atom] (eH) at (0,0.18) {H};
+  \node[atom] (eC1) at (0.62,0.18) {C};
+  \node[atom] (eC2) at (1.48,0.18) {C};
+  \node[atom] (eHr) at (2.10,0.18) {H};
+  \node[atom] at (0.30,0.18) {:};
+  \node[atom] at (1.02,0.18) {::};
+  \node[atom] at (1.78,0.18) {:};
+  \node[atom] at (0.62,-0.22) {:};
+  \node[atom] at (1.48,-0.22) {:};
+  \node[atom] at (0.62,-0.55) {H};
+  \node[atom] at (1.48,-0.55) {H};
+  \node at (1.05,-1.18) {（电子式）};
+  \begin{scope}[xshift=3.70cm]
+    \node[atom] (cL) at (0,0.05) {C};
+    \node[atom] (cR) at (0.84,0.05) {C};
+    \node[atom] (h1) at (-0.55,0.52) {H};
+    \node[atom] (h2) at (-0.55,-0.42) {H};
+    \node[atom] (h3) at (1.39,0.52) {H};
+    \node[atom] (h4) at (1.39,-0.42) {H};
+    \draw[bond] (h1) -- (cL);
+    \draw[bond] (h2) -- (cL);
+    \draw[bond] (h3) -- (cR);
+    \draw[bond] (h4) -- (cR);
+    \draw[bond] ([yshift=0.75pt]cL.east) -- ([yshift=0.75pt]cR.west);
+    \draw[bond] ([yshift=-0.75pt]cL.east) -- ([yshift=-0.75pt]cR.west);
+    \node at (0.42,-1.12) {（结构式）};
+  \end{scope}
+  \begin{scope}[xshift=7.15cm]
+    \coordinate (m1) at (0,0.08);
+    \coordinate (m2) at (0.82,0.08);
+    \coordinate (g1) at (-0.50,0.36);
+    \coordinate (g2) at (-0.50,-0.26);
+    \coordinate (g3) at (1.32,0.36);
+    \coordinate (g4) at (1.32,-0.26);
+    \draw[line width=0.8pt] (m1) -- (g1);
+    \draw[line width=0.8pt] (m1) -- (g2);
+    \draw[line width=0.8pt] (m2) -- (g3);
+    \draw[line width=0.8pt] (m2) -- (g4);
+    \draw[line width=0.7pt] ([yshift=1.15pt]m1) -- ([yshift=1.15pt]m2);
+    \draw[line width=0.7pt] ([yshift=-1.15pt]m1) -- ([yshift=-1.15pt]m2);
+    \fill[black!38] (g1) circle (0.07);
+    \fill[black!38] (g2) circle (0.07);
+    \fill[black!38] (g3) circle (0.07);
+    \fill[black!38] (g4) circle (0.07);
+    \fill[black!68] (m1) circle (0.13);
+    \fill[black!68] (m2) circle (0.13);
+    \node at (0.41,-1.12) {（分子模型）};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 1·7 乙烯的分子结构}
 \end{figure}
 
@@ -1887,7 +2059,58 @@ Cu，以及生成物碘化亚铜来看，显然，余下的应当是
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第34页图示}]{assets/chemistry-4/fig-p0034-g01.png}}
+\fitfig{%
+% fig-alt: 酒精脱水成乙烯：虚线框住将脱去的 H 与 OH，条件为浓硫酸、160～180℃，生成乙烯与水
+% redraw: fig-p0034-g01 酒精脱水生成乙烯
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.3pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (h1u) at (0,0.78) {H};
+  \node[atom] (h2u) at (1.05,0.78) {H};
+  \node[atom] (hL) at (-0.62,0.08) {H};
+  \node[atom] (c1) at (0,0.08) {C};
+  \node[atom] (c2) at (1.05,0.08) {C};
+  \node[atom] (hR) at (1.67,0.08) {H};
+  \node[atom] (h1d) at (0,-1.05) {H};
+  \node[atom] (oh) at (1.05,-1.05) {OH};
+  \draw[bond] (h1u) -- (c1);
+  \draw[bond] (h2u) -- (c2);
+  \draw[bond] (hL) -- (c1) -- (c2) -- (hR);
+  \draw[bond] (c1) -- (h1d);
+  \draw[bond] (c2) -- (oh);
+  \draw[dashed, line width=0.5pt] (-0.32,-0.68) rectangle (1.48,-1.42);
+  \node[lab] at (0.52,-1.82) {酒精};
+  \node[lab] at (3.55,0.38) {浓\,H$_2$SO$_4$};
+  \draw[line width=0.55pt] (2.35,0.08) -- (4.75,0.08);
+  \node[lab] at (3.55,-0.28) {160$\sim$180$^\circ$C};
+  \begin{scope}[xshift=6.55cm]
+    \node[atom] (k1u) at (0,0.78) {H};
+    \node[atom] (k2u) at (0.95,0.78) {H};
+    \node[atom] (kL) at (-0.58,0.08) {H};
+    \node[atom] (d1) at (0,0.08) {C};
+    \node[atom] (d2) at (0.95,0.08) {C};
+    \node[atom] (kR) at (1.55,0.08) {H};
+    \draw[bond] (k1u) -- (d1);
+    \draw[bond] (k2u) -- (d2);
+    \draw[bond] (kL) -- (d1);
+    \draw[bond] (d2) -- (kR);
+    \draw[bond] ([yshift=0.75pt]d1.east) -- ([yshift=0.75pt]d2.west);
+    \draw[bond] ([yshift=-0.75pt]d1.east) -- ([yshift=-0.75pt]d2.west);
+    \node[atom] at (2.05,0.22) {$\uparrow$};
+    \node[atom] at (2.48,0.08) {$+$};
+    \node[atom] at (3.10,0.08) {H$_2$O};
+    \node[lab] at (0.48,-1.05) {乙烯};
+  \end{scope}
+  \node[atom, anchor=west] at (-0.7,-2.70) {（C$_2$H$_5$OH};
+  \node[lab] at (2.85,-2.40) {浓\,H$_2$SO$_4$};
+  \draw[line width=0.5pt] (2.05,-2.70) -- (3.65,-2.70);
+  \node[lab] at (2.85,-3.02) {160$\sim$180$^\circ$C};
+  \node[atom, anchor=west] at (3.90,-2.70) {CH$_2$=CH$_2\uparrow$};
+  \node[atom] at (6.35,-2.70) {$+$};
+  \node[atom, anchor=west] at (6.45,-2.70) {H$_2$O）};
+\end{tikzpicture}%
+}
 \caption{原PDF第34页图示}
 \end{figure}
 
@@ -2022,7 +2245,50 @@ Cu，以及生成物碘化亚铜来看，显然，余下的应当是
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·9 乙炔的分子结构}]{assets/chemistry-4/fig-p0037-g01.png}}
+\fitfig{%
+% fig-alt: 图1·9 乙炔的分子结构：电子式 H:C:::C:H，直线结构式 H—C≡C—H，右侧直线球棍模型
+% redraw: fig-p0037-g01 图1·9 乙炔的分子结构
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0pt},
+    bond/.style={line width=0.62pt}]
+  \node[atom] (eH) at (0,0.12) {H};
+  \node[atom] (eC1) at (0.52,0.12) {C};
+  \node[atom] (eC2) at (1.38,0.12) {C};
+  \node[atom] (eHr) at (1.90,0.12) {H};
+  \node[atom] at (0.25,0.12) {:};
+  \node[atom] at (0.92,0.12) {:::};
+  \node[atom] at (1.64,0.12) {:};
+  \node at (0.95,-0.85) {（电子式）};
+  \begin{scope}[xshift=3.55cm]
+    \node[atom] (hL) at (0,0.12) {H};
+    \node[atom] (cL) at (0.58,0.12) {C};
+    \node[atom] (cR) at (1.42,0.12) {C};
+    \node[atom] (hR) at (2.00,0.12) {H};
+    \draw[bond] (hL) -- (cL);
+    \draw[bond] (cR) -- (hR);
+    \draw[bond] ([yshift=1.35pt]cL.east) -- ([yshift=1.35pt]cR.west);
+    \draw[bond] (cL.east) -- (cR.west);
+    \draw[bond] ([yshift=-1.35pt]cL.east) -- ([yshift=-1.35pt]cR.west);
+    \node at (1.00,-0.85) {（结构式）};
+  \end{scope}
+  \begin{scope}[xshift=7.35cm]
+    \coordinate (h1) at (0,0.12);
+    \coordinate (c1) at (0.62,0.12);
+    \coordinate (c2) at (1.42,0.12);
+    \coordinate (h2) at (2.04,0.12);
+    \draw[line width=0.8pt] (h1) -- (c1);
+    \draw[line width=0.8pt] (c2) -- (h2);
+    \draw[line width=0.65pt] ([yshift=1.5pt]c1) -- ([yshift=1.5pt]c2);
+    \draw[line width=0.65pt] (c1) -- (c2);
+    \draw[line width=0.65pt] ([yshift=-1.5pt]c1) -- ([yshift=-1.5pt]c2);
+    \fill[black!38] (h1) circle (0.07);
+    \fill[black!38] (h2) circle (0.07);
+    \fill[black!68] (c1) circle (0.13);
+    \fill[black!68] (c2) circle (0.13);
+    \node at (1.02,-0.85) {（分子模型）};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 1·9 乙炔的分子结构}
 \end{figure}
 
@@ -2372,7 +2638,96 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第46页图示}]{assets/chemistry-4/fig-p0046-g01.png}}
+\fitfig{%
+% fig-alt: 三个乙炔分子在600℃、活性炭下聚成苯环；括弧内虚线为新生成的单键，下方为生成的苯
+% redraw: fig-p0046-g01 乙炔聚合成苯
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    jbond/.style={dashed, line width=0.55pt}]
+  \node[atom] (tC) at (0.05,1.15) {C};
+  \node[atom] (tH) at (0.05,1.68) {H};
+  \node[atom] (ulC) at (-0.82,0.48) {C};
+  \node[atom] (ulH) at (-1.36,0.48) {H};
+  \node[atom] (llC) at (-0.82,-0.48) {C};
+  \node[atom] (llH) at (-1.36,-0.48) {H};
+  \node[atom] (bC) at (0.05,-1.15) {C};
+  \node[atom] (bH) at (0.05,-1.68) {H};
+  \node[atom] (urC) at (0.95,0.48) {C};
+  \node[atom] (urH) at (1.48,0.48) {H};
+  \node[atom] (lrC) at (0.95,-0.48) {C};
+  \node[atom] (lrH) at (1.48,-0.48) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (urH) -- (urC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[dbond] (urC) -- (lrC);
+  \node at (2.85,0.28) {600$^\circ$C};
+  \draw[line width=0.55pt] (2.25,0) -- (3.45,0);
+  \node at (2.85,-0.32) {活性炭};
+  \begin{scope}[xshift=6.15cm]
+    \node[atom] (T) at (0,1.05) {C};
+    \node[atom] (TH) at (0,1.58) {H};
+    \node[atom] (UL) at (-0.78,0.52) {C};
+    \node[atom] (ULH) at (-1.32,0.52) {H};
+    \node[atom] (UR) at (0.78,0.52) {C};
+    \node[atom] (URH) at (1.32,0.52) {H};
+    \node[atom] (LL) at (-0.78,-0.52) {C};
+    \node[atom] (LLH) at (-1.32,-0.52) {H};
+    \node[atom] (LR) at (0.78,-0.52) {C};
+    \node[atom] (LRH) at (1.32,-0.52) {H};
+    \node[atom] (B) at (0,-1.05) {C};
+    \node[atom] (BH) at (0,-1.58) {H};
+    \draw[bond] (TH) -- (T);
+    \draw[bond] (ULH) -- (UL);
+    \draw[bond] (URH) -- (UR);
+    \draw[bond] (LLH) -- (LL);
+    \draw[bond] (LRH) -- (LR);
+    \draw[bond] (BH) -- (B);
+    \draw[dbond] (UL) -- (T);
+    \draw[dbond] (UR) -- (LR);
+    \draw[dbond] (LL) -- (B);
+    \draw[jbond] (T) -- (UR);
+    \draw[jbond] (UL) -- (LL);
+    \draw[jbond] (LR) -- (B);
+    \draw[line width=0.7pt] (-1.78,1.95) -- (-1.78,-1.95) -- (-1.60,-1.95);
+    \draw[line width=0.7pt] (-1.78,1.95) -- (-1.60,1.95);
+    \draw[line width=0.7pt] (1.78,1.95) -- (1.95,1.95) -- (1.95,-1.95) -- (1.78,-1.95);
+  \end{scope}
+  \node at (4.55,-4.35) {$=$};
+  \begin{scope}[xshift=6.15cm, yshift=-4.35cm]
+    \node[atom] (PT) at (0,1.05) {C};
+    \node[atom] (PTH) at (0,1.58) {H};
+    \node[atom] (PUL) at (-0.78,0.52) {C};
+    \node[atom] (PULH) at (-1.32,0.52) {H};
+    \node[atom] (PUR) at (0.78,0.52) {C};
+    \node[atom] (PURH) at (1.32,0.52) {H};
+    \node[atom] (PLL) at (-0.78,-0.52) {C};
+    \node[atom] (PLLH) at (-1.32,-0.52) {H};
+    \node[atom] (PLR) at (0.78,-0.52) {C};
+    \node[atom] (PLRH) at (1.32,-0.52) {H};
+    \node[atom] (PB) at (0,-1.05) {C};
+    \node[atom] (PBH) at (0,-1.58) {H};
+    \draw[bond] (PTH) -- (PT);
+    \draw[bond] (PULH) -- (PUL);
+    \draw[bond] (PURH) -- (PUR);
+    \draw[bond] (PLLH) -- (PLL);
+    \draw[bond] (PLRH) -- (PLR);
+    \draw[bond] (PBH) -- (PB);
+    \draw[dbond] (PUL) -- (PT);
+    \draw[dbond] (PUR) -- (PLR);
+    \draw[dbond] (PLL) -- (PB);
+    \draw[bond] (PT) -- (PUR);
+    \draw[bond] (PUL) -- (PLL);
+    \draw[bond] (PLR) -- (PB);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{原PDF第46页图示}
 \end{figure}
 
@@ -3097,7 +3452,47 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原书脚注中的乙烯加水生成乙醇的反应结构式}]{assets/chemistry-4/fig-p0033-g01.png}}
+\fitfig{%
+% fig-alt: 乙烯加水：CH2=CH2加硫酸成乙基硫酸，再加水生成硫酸和酒精
+% redraw: fig-p0033-g01 乙烯加水生成乙醇的反应结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1.2pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (a1) at (0,0.18) {CH$_2$=CH$_2$};
+  \node[atom] at (1.45,0.18) {$+$};
+  \node[atom] (a2) at (2.40,0.18) {H$_2$SO$_4$};
+  \node[atom] at (3.45,0.18) {$=$};
+  \node[atom] (s1) at (4.25,0.18) {SO$_2$};
+  \node[atom] (oh1) at (5.20,0.62) {OH};
+  \node[atom] (o1) at (5.25,-0.48) {O};
+  \node[atom] (et1) at (6.15,-0.48) {C$_2$H$_5$};
+  \draw[bond] (s1.east) -- (oh1.west);
+  \draw[bond] (s1.east) -- (o1.west);
+  \draw[bond] (o1) -- (et1);
+  \node[lab, anchor=west] at (7.05,0.18) {乙基硫酸};
+  \node[atom] (s2) at (0.10,-1.70) {SO$_2$};
+  \node[atom] (oh2) at (1.05,-1.22) {OH};
+  \node[atom] (o2) at (1.15,-2.28) {O};
+  \node[atom] (et2) at (2.05,-2.28) {C$_2$H$_5$};
+  \draw[bond] (s2.east) -- (oh2.west);
+  \draw[bond] (s2.east) -- (o2.west);
+  \draw[bond] (o2) -- (et2);
+  \node[atom] at (3.20,-1.70) {$+$};
+  \node[atom] (hoh) at (3.90,-1.70) {HOH};
+  \node[lab] at (3.90,-2.55) {（H$_2$O）};
+  \node[atom] at (4.70,-1.70) {$=$};
+  \node[atom] (s3) at (5.45,-1.70) {SO$_2$};
+  \node[atom] (oh3) at (6.30,-1.22) {OH};
+  \node[atom] (oh4) at (6.30,-2.28) {OH};
+  \draw[bond] (s3.east) -- (oh3.west);
+  \draw[bond] (s3.east) -- (oh4.west);
+  \node[lab] at (5.35,-3.15) {（H$_2$SO$_4$）};
+  \node[atom] at (7.45,-1.70) {$+$};
+  \node[atom] (alc) at (8.45,-1.70) {C$_2$H$_5$OH};
+  \node[lab] at (8.45,-2.55) {酒精};
+\end{tikzpicture}%
+}
 \caption{原书脚注中的乙烯加水生成乙醇的反应结构式}
 \end{figure}
 
