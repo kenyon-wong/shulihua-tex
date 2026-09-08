@@ -36,6 +36,7 @@ REQUIRED = {
     "Makefile",
     "README.md",
     "catalog.json",
+    "docs/GIT.md",
     "docs/KNOWN_ISSUES.md",
     "docs/MAINTENANCE.md",
     "docs/PRIVACY.md",
@@ -172,6 +173,9 @@ def main() -> int:
     }
     if len(raw_pdfs) != 17 or {path.name for path in raw_pdfs} != expected_raw_names:
         record(errors, "raw/ 中的17册 PDF 与 catalog.json 书目不一致")
+    attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8")
+    if "raw/*.pdf" not in attributes or "filter=lfs" not in attributes:
+        record(errors, ".gitattributes 未将 raw/*.pdf 纳入 Git LFS")
 
     collisions: dict[str, list[str]] = defaultdict(list)
     non_nfc: list[str] = []

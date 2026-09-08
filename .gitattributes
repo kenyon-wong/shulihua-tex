@@ -1,11 +1,28 @@
 * text=auto eol=lf
 
-*.png binary
-*.jpg binary
+# 文本
+*.md        text eol=lf
+*.tex       text eol=lf
+*.sty       text eol=lf
+*.cls       text eol=lf
+*.py        text eol=lf
+*.json      text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.rhai      text eol=lf
+*.txt       text eol=lf
+*.css       text eol=lf
+Makefile    text eol=lf
+.editorconfig text eol=lf
+
+# 位图（体积小、数量多，留在普通 Git 对象里）
+*.png  binary
+*.jpg  binary
 *.jpeg binary
-*.gif binary
+*.gif  binary
 *.webp binary
-*.bmp binary
-*.svg text eol=lf
-*.epub binary
-*.pdf binary
+*.bmp  binary
+*.svg  text eol=lf
+
+# 原始扫描 PDF 走 Git LFS（单文件数 MB～32MB，合计约 129MB）
+raw/*.pdf filter=lfs diff=lfs merge=lfs -text

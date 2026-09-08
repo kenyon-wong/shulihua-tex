@@ -16,13 +16,16 @@
 
 ## 原始 PDF
 
-`raw/*.pdf` 是校勘来源资料，不是规范正文。新增或替换时：
+`raw/*.pdf` 是校勘来源资料，不是规范正文，由 Git LFS 存储。新增或替换时：
 
 1. 先在仓库外备份，并确认书名与 `catalog.json` 一致；
 2. 保持导入原字节，不用办公软件另存；
-3. 更新 `raw/SHA256SUMS.txt`；
-4. 运行 `make pdf-audit`，确认 qpdf、附件、主动内容、元数据和隐私门禁17/17通过；
-5. 运行 `make repository privacy`，复核 GitHub 文件大小及公开候选范围。
+3. 确认本机已 `git lfs install`，再 `git add` 该 PDF（应生成 LFS 指针，而不是把整份 PDF 当普通 blob）；
+4. 更新 `raw/SHA256SUMS.txt`；
+5. 运行 `make pdf-audit`，确认 qpdf、附件、主动内容、元数据和隐私门禁17/17通过；
+6. 运行 `make repository privacy`，复核 GitHub 文件大小及公开候选范围。
+
+细则见 [`GIT.md`](GIT.md)。
 
 ## 元数据
 
