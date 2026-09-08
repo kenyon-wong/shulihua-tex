@@ -2398,7 +2398,28 @@ U_{a} = 50 \text{伏}, \quad U_{b} = - 50 \text{伏}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.23}]{assets/physics-3/fig-p0048-01.png}}
+\fitfig{%
+% fig-alt: 图1.23 非匀强电场电力线向右，不规则曲线从左下P连到右上Q
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt] (0.15,2.98) -- (4.45,3.58);
+  \draw[line width=0.55pt,->] (3.42,3.40) -- (4.02,3.50);
+  \draw[line width=0.55pt] (0.08,2.25) -- (4.50,2.60);
+  \draw[line width=0.55pt,->] (3.52,2.46) -- (4.05,2.53);
+  \draw[line width=0.55pt] (0.08,1.48) -- (4.52,1.62);
+  \draw[line width=0.55pt,->] (3.55,1.56) -- (4.08,1.59);
+  \draw[line width=0.55pt] (0.22,0.85) -- (4.35,0.52);
+  \draw[line width=0.55pt,->] (3.38,0.62) -- (3.92,0.56);
+  \draw[line width=0.55pt] (0.52,0.12) -- (4.35,-0.28);
+  \draw[line width=0.55pt,->] (3.38,-0.10) -- (3.92,-0.20);
+  \coordinate (P) at (0.88,0.36);
+  \coordinate (Q) at (3.82,2.92);
+  \draw[line width=0.75pt] (P) .. controls (0.78,1.05) and (0.68,1.58) .. (1.18,2.05) .. controls (1.88,2.42) and (2.50,1.70) .. (2.80,1.05) .. controls (3.05,0.58) and (3.50,0.98) .. (3.82,1.68) -- (Q);
+  \fill (P) circle[radius=0.042];
+  \fill (Q) circle[radius=0.042];
+  \node[left=3pt] at (P) {$P$};
+  \node[right=2pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
 \caption{图1.23}
 \end{figure}
 
@@ -2491,7 +2512,25 @@ U_{A} = k \frac{Q}{r_{A}}, \quad U_{B} = k \frac{Q}{r_{B}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.29}]{assets/physics-3/fig-p0050-01.png}}
+\fitfig{%
+% fig-alt: 图1.29 正点电荷+Q电力线向外，近处A标rA，远处水平线上B标rB
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \a in {30,60,90,120,150,180,210,240,270,300,330} {
+    \draw[line width=0.55pt] (\a:0.40) -- (\a:1.85);
+    \draw[line width=0.55pt,->] (\a:0.76) -- (\a:1.16);
+  }
+  \draw[line width=0.55pt] (0.40,0) -- (2.90,0);
+  \draw[line width=0.55pt,->] (0.72,0) -- (1.16,0);
+  \fill (30:1.42) circle[radius=0.04];
+  \fill (2.66,0) circle[radius=0.04];
+  \node[above=2pt] at (44:1.62) {$A$};
+  \node[above=3pt] at (2.66,0.06) {$B$};
+  \node at (1.12,0.22) {$r_A$};
+  \node at (1.85,-0.32) {$r_B$};
+  \draw[line width=0.8pt,fill=white] (0,0) circle[radius=0.30];
+  \node at (0,0) {$+Q$};
+\end{tikzpicture}%
+}
 \caption{图1.29}
 \end{figure}
 
@@ -2519,7 +2558,29 @@ U_{A B} = k Q \left(\frac{1}{r_{A}} - \frac{1}{r_{B}}\right) \tag{1.9}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.30}]{assets/physics-3/fig-p0051-01.png}}
+\fitfig{%
+% fig-alt: 图1.30 点A与三个无符号点电荷Q1、Q2、Q3连线，分别标r1、r2、r3
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \coordinate (A) at (2.05,2.42);
+  \coordinate (Qone) at (0.12,0.95);
+  \coordinate (Qtwo) at (1.40,0.00);
+  \coordinate (Qthree) at (3.62,1.22);
+  \draw[line width=0.7pt] (A) -- (Qone);
+  \draw[line width=0.7pt] (A) -- (Qtwo);
+  \draw[line width=0.7pt] (A) -- (Qthree);
+  \draw[line width=0.7pt,fill=white] (Qone) circle[radius=0.13];
+  \draw[line width=0.7pt,fill=white] (Qtwo) circle[radius=0.13];
+  \draw[line width=0.7pt,fill=white] (Qthree) circle[radius=0.13];
+  \fill (A) circle[radius=0.035];
+  \node[above=2pt] at (A) {$A$};
+  \node[left=2pt] at (Qone) {$Q_1$};
+  \node[below left=1pt] at (Qtwo) {$Q_2$};
+  \node[right=2pt] at (Qthree) {$Q_3$};
+  \node at (0.72,2.02) {$r_1$};
+  \node at (2.38,1.08) {$r_2$};
+  \node[above=2pt] at (2.92,2.08) {$r_3$};
+\end{tikzpicture}%
+}
 \caption{图1.30}
 \end{figure}
 
@@ -2573,7 +2634,22 @@ r = \sqrt{2^{2}+2^{2}} \text{厘米} = 2.8 \times 10^{- 2} \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.32 场强和电势差的关系}]{assets/physics-3/fig-p0052-01.png}}
+\fitfig{%
+% fig-alt: 图1.32 匀强电场向右；中线上空心点A、B，其间加粗并标d，B右侧标E
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {2.28,1.70,1.12,0.50,0.00} {
+    \draw[line width=0.6pt] (0.12,\y) -- (4.95,\y);
+    \draw[line width=0.6pt,->] (4.22,\y) -- (4.95,\y);
+  }
+  \draw[line width=1.15pt] (1.32,1.12) -- (2.82,1.12);
+  \draw[line width=0.7pt,fill=white] (1.26,1.12) circle[radius=0.075];
+  \draw[line width=0.7pt,fill=white] (2.82,1.12) circle[radius=0.075];
+  \node[above=2pt] at (1.26,1.18) {$A$};
+  \node[above=2pt] at (2.82,1.18) {$B$};
+  \node[above=4pt] at (3.68,1.12) {$E$};
+  \node at (2.04,1.00) {$d$};
+\end{tikzpicture}%
+}
 \caption{图1.32 场强和电势差的关系}
 \end{figure}
 
@@ -2686,7 +2762,37 @@ U_{AC}=U_{AB}+U_{BC}=(200+174)\text{伏}=374\text{伏}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.34 点电荷电场的等势面和电力线}]{assets/physics-3/fig-p0054-01.png}}
+\fitfig{%
+% fig-alt: 图1.34 正点电荷+Q向外电力线，间距外疏的同心虚线等势面，A在左上内圈、B在右上外圈，右方U1至U5
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \a in {30,60,90,120,150,180,210,240,270,300,330} {
+    \draw[line width=0.5pt] (\a:0.46) -- (\a:4.15);
+    \draw[line width=0.5pt,->] (\a:1.25) -- (\a:1.75);
+  }
+  \draw[line width=0.5pt] (0.46,0) -- (4.70,0);
+  \draw[line width=0.5pt,->] (4.22,0) -- (4.62,0);
+  \draw[line width=0.48pt,dashed] (0,0) circle[radius=1.15];
+  \draw[line width=0.48pt,dashed] (0,0) circle[radius=2.10];
+  \draw[line width=0.48pt,dashed] (0,0) circle[radius=3.05];
+  \draw[line width=0.48pt,dashed] (0,0) circle[radius=3.95];
+  \draw[line width=0.48pt,dashed] (0,0) circle[radius=4.55];
+  \fill (135:3.05) circle[radius=0.035];
+  \node at (135:2.55) {$A$};
+  \fill (38:3.95) circle[radius=0.035];
+  \node at (50:3.45) {$B$};
+  \node[above=6pt] at (1.22,0) {$U_1$};
+  \node[above=6pt] at (2.18,0) {$U_2$};
+  \node[above=6pt] at (3.12,0) {$U_3$};
+  \node[above=6pt] at (4.00,0) {$U_4$};
+  \node[above=3pt] at (4.72,0.06) {$U_5$};
+  \node[anchor=south east] at (-1.15,4.15) {电力线};
+  \draw[line width=0.45pt,->] (-0.85,3.95) .. controls (-1.70,3.25) and (-2.15,2.35) .. (148:3.45);
+  \node[anchor=south west] at (1.55,4.85) {等势面};
+  \draw[line width=0.45pt,->] (1.85,4.62) .. controls (1.45,4.45) and (1.25,4.50) .. (58:4.55);
+  \draw[line width=0.8pt,fill=white] (0,0) circle[radius=0.38];
+  \node at (0,0) {$+Q$};
+\end{tikzpicture}%
+}
 \caption{图1.34 点电荷电场的等势面和电力线}
 \end{figure}
 
@@ -2707,7 +2813,30 @@ U_{AC}=U_{AB}+U_{BC}=(200+174)\text{伏}=374\text{伏}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.35 匀强电场的等势面}]{assets/physics-3/fig-p0055-01.png}}
+\fitfig{%
+% fig-alt: 图1.35 匀强电场电力线向右，等距竖直虚线等势面，自左至右标U1、U6、U5、U4、U3、U2、U1
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {0.00,0.42,0.84,1.26,1.68,2.10,2.52} {
+    \draw[line width=0.55pt] (0.20,\y) -- (6.95,\y);
+    \draw[line width=0.55pt,->] (6.40,\y) -- (6.95,\y);
+  }
+  \foreach \x in {0.85,1.70,2.55,3.40,4.25,5.10,5.95} {
+    \draw[line width=0.48pt,dashed] (\x,2.52) -- (\x,0.00);
+  }
+  \node[above=5pt] at (0.85,2.52) {$U_1$};
+  \node[above=5pt] at (1.70,2.52) {$U_6$};
+  \node[above=5pt] at (2.55,2.52) {$U_5$};
+  \node[above=5pt] at (3.40,2.52) {$U_4$};
+  \node[above=5pt] at (4.25,2.52) {$U_3$};
+  \node[above=5pt] at (5.10,2.52) {$U_2$};
+  \node[above=5pt] at (5.95,2.52) {$U_1$};
+  \node[anchor=south east] at (0.05,3.48) {电力线};
+  \draw[line width=0.45pt,->] (0.00,3.25) .. controls (0.15,2.95) and (0.30,2.70) .. (0.42,2.55);
+  \node[anchor=south] at (2.12,3.48) {等势面};
+  \draw[line width=0.45pt] (2.12,3.22) -- (2.12,2.68);
+  \draw[line width=0.45pt,->] (2.12,2.68) .. controls (1.98,2.32) and (1.80,2.12) .. (1.70,2.05);
+\end{tikzpicture}%
+}
 \caption{图1.35 匀强电场的等势面}
 \end{figure}
 
