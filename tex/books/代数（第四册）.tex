@@ -6479,7 +6479,17 @@ P \left(A _ {1} \cdot A _ {2} \cdots A _ {n}\right) = P \left(A _ {1}\right) P \
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0106-06.png}}
+\fitfig{%
+% fig-alt: 外方为网点，圆与内矩形皆空白；圆在矩形上方，中间隔有网点
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[pattern=dots] (0,0) rectangle (2.08,2.02);
+  \fill[white] (0.20,0.18) rectangle (1.94,1.02);
+  \fill[white] (1.06,1.48) circle (0.38);
+  \draw[line width=0.75pt] (0,0) rectangle (2.08,2.02);
+  \draw[line width=0.8pt] (0.20,0.18) rectangle (1.94,1.02);
+  \draw[line width=0.85pt] (1.06,1.48) circle (0.38);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6554,7 +6564,37 @@ P \left(A _ {1} \cdot A _ {2} \cdots A _ {n}\right) = P \left(A _ {1}\right) P \
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0107-01.png}}
+\fitfig{%
+% fig-alt: 开关电路：K_{1}串接后分为L_{1}、L_{2}、L_{3}三路并联，再串接K_{2}
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.62,0);
+  \coordinate (B) at (4.72,0);
+  \draw[line width=0.7pt] (0,0) -- (0.48,0);
+  \draw[line width=0.7pt] (0.48,0) -- (0.86,0.22);
+  \draw[line width=0.7pt] (1.10,0) -- (A);
+  \node[above=0.4pt,inner sep=0.4pt] at (0.70,0.16) {$K_1$};
+  \draw[line width=0.7pt] (1.62,0.86) -- (1.62,-0.86);
+  \draw[line width=0.7pt] (4.72,0.86) -- (4.72,-0.86);
+  \draw[line width=0.7pt] (1.62,0.86) -- (2.62,0.86);
+  \draw[line width=0.7pt] (2.62,0.86) -- (3.00,1.08);
+  \draw[line width=0.7pt] (3.26,0.86) -- (4.72,0.86);
+  \node[above=0.3pt,inner sep=0.4pt] at (2.84,1.02) {$L_1$};
+  \draw[line width=0.7pt] (A) -- (2.62,0);
+  \draw[line width=0.7pt] (2.62,0) -- (3.00,0.22);
+  \draw[line width=0.7pt] (3.26,0) -- (B);
+  \node[above=0.3pt,inner sep=0.4pt] at (2.84,0.16) {$L_2$};
+  \draw[line width=0.7pt] (1.62,-0.86) -- (2.62,-0.86);
+  \draw[line width=0.7pt] (2.62,-0.86) -- (3.00,-0.64);
+  \draw[line width=0.7pt] (3.26,-0.86) -- (4.72,-0.86);
+  \node[above=0.3pt,inner sep=0.4pt] at (2.84,-0.70) {$L_3$};
+  \fill (A) circle (1.15pt);
+  \fill (B) circle (1.15pt);
+  \draw[line width=0.7pt] (B) -- (5.05,0);
+  \draw[line width=0.7pt] (5.05,0) -- (5.43,0.22);
+  \draw[line width=0.7pt] (5.67,0) -- (6.28,0);
+  \node[above=0.4pt,inner sep=0.4pt] at (5.28,0.16) {$K_2$};
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6670,7 +6710,25 @@ C = A _ {1} \cdot A _ {2} \dots \cdot A _ {10}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0108-01.png}}
+\fitfig{%
+% fig-alt: 电路I：三组上下并联的元件方框串联，组间以虚线表示省略
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (0.40,0);
+  \foreach \x in {0.40,1.52,3.28} {
+    \draw[line width=0.7pt] (\x,0.30) -- (\x,-0.30);
+    \draw[line width=0.7pt] (\x,0.30) -- (\x+0.10,0.30);
+    \draw[line width=0.7pt] (\x,-0.30) -- (\x+0.10,-0.30);
+    \draw[line width=0.7pt] (\x+0.10,0.14) rectangle (\x+0.44,0.46);
+    \draw[line width=0.7pt] (\x+0.10,-0.46) rectangle (\x+0.44,-0.14);
+    \draw[line width=0.7pt] (\x+0.44,0.30) -- (\x+0.62,0.30);
+    \draw[line width=0.7pt] (\x+0.44,-0.30) -- (\x+0.62,-0.30);
+    \draw[line width=0.7pt] (\x+0.62,0.30) -- (\x+0.62,-0.30);
+  }
+  \draw[line width=0.7pt] (1.02,0) -- (1.52,0);
+  \draw[dashed,line width=0.45pt] (2.14,0) -- (3.28,0);
+  \draw[line width=0.7pt] (3.90,0) -- (4.38,0);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6678,7 +6736,26 @@ C = A _ {1} \cdot A _ {2} \dots \cdot A _ {10}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0108-02.png}}
+\fitfig{%
+% fig-alt: 电路II：上下两路串联元件方框并联，每路中间以虚线表示省略
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (0.36,0);
+  \draw[line width=0.7pt] (0.36,0.32) -- (0.36,-0.32);
+  \draw[line width=0.7pt] (3.48,0.32) -- (3.48,-0.32);
+  \draw[line width=0.7pt] (3.48,0) -- (3.96,0);
+  \foreach \y in {0.32,-0.32} {
+    \draw[line width=0.7pt] (0.36,\y) -- (0.48,\y);
+    \draw[line width=0.7pt] (0.48,\y-0.16) rectangle (0.82,\y+0.16);
+    \draw[line width=0.7pt] (0.82,\y) -- (0.96,\y);
+    \draw[line width=0.7pt] (0.96,\y-0.16) rectangle (1.30,\y+0.16);
+    \draw[line width=0.7pt] (1.30,\y) -- (1.46,\y);
+    \draw[dashed,line width=0.45pt] (1.46,\y) -- (2.42,\y);
+    \draw[line width=0.7pt] (2.42,\y) -- (2.56,\y);
+    \draw[line width=0.7pt] (2.56,\y-0.16) rectangle (2.90,\y+0.16);
+    \draw[line width=0.7pt] (2.90,\y) -- (3.48,\y);
+  }
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6743,7 +6820,25 @@ A B C\text{，} \quad A + B + C\text{，} \quad A \subset B\text{，} \quad A = 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0109-01.png}}
+\fitfig{%
+% fig-alt: 开关电路：K串接后分为K_{1}、K_{2}两路并联
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (0.40,0);
+  \draw[line width=0.7pt] (0.40,-0.22) rectangle (0.98,0.22);
+  \node[inner sep=0.5pt] at (0.69,0) {$K$};
+  \draw[line width=0.7pt] (0.98,0) -- (1.28,0);
+  \draw[line width=0.7pt] (1.28,0.55) -- (1.28,-0.55);
+  \draw[line width=0.7pt] (1.28,0.55) -- (1.46,0.55);
+  \draw[line width=0.7pt] (1.46,0.33) rectangle (2.12,0.77);
+  \node[inner sep=0.5pt] at (1.79,0.55) {$K_1$};
+  \draw[line width=0.7pt] (2.12,0.55) -- (2.58,0.55) -- (2.58,0);
+  \draw[line width=0.7pt] (1.28,-0.55) -- (1.46,-0.55);
+  \draw[line width=0.7pt] (1.46,-0.77) rectangle (2.12,-0.33);
+  \node[inner sep=0.5pt] at (1.79,-0.55) {$K_2$};
+  \draw[line width=0.7pt] (2.12,-0.55) -- (2.58,-0.55) -- (2.58,0);
+  \draw[line width=0.7pt] (2.58,0) -- (3.20,0);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6780,7 +6875,28 @@ A B C\text{，} \quad A + B + C\text{，} \quad A \subset B\text{，} \quad A = 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0110-01.png}}
+\fitfig{%
+% fig-alt: 实数分类：有理数含正有理数（正整数（自然数）、正分数）、零、负有理数（负整数、负分数）；无理数含正无理数、负无理数
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1.2pt,outer sep=1pt}]
+  \node[anchor=east] at (0,0.80) {实数};
+  \draw[decorate,decoration={brace,amplitude=5pt}] (0.14,-0.95) -- (0.14,2.55);
+  \node[anchor=east] at (1.58,1.45) {有理数};
+  \node[anchor=east] at (1.58,-0.65) {无理数};
+  \draw[decorate,decoration={brace,amplitude=4.5pt}] (1.74,0.35) -- (1.74,2.55);
+  \draw[decorate,decoration={brace,amplitude=4.5pt}] (1.74,-0.95) -- (1.74,-0.35);
+  \node[anchor=east] at (3.08,2.30) {正有理数};
+  \node[anchor=west] at (1.92,1.45) {零};
+  \node[anchor=east] at (3.08,0.60) {负有理数};
+  \draw[decorate,decoration={brace,amplitude=4pt}] (3.24,2.05) -- (3.24,2.55);
+  \draw[decorate,decoration={brace,amplitude=4pt}] (3.24,0.35) -- (3.24,0.85);
+  \node[anchor=west] at (3.64,2.55) {正整数（自然数）};
+  \node[anchor=west] at (3.64,2.05) {正分数};
+  \node[anchor=west] at (3.64,0.85) {负整数};
+  \node[anchor=west] at (3.64,0.35) {负分数};
+  \node[anchor=west] at (1.92,-0.35) {正无理数};
+  \node[anchor=west] at (1.92,-0.95) {负无理数};
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
