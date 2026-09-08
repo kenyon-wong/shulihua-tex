@@ -5044,7 +5044,24 @@ R、R'、\ldots 代替）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={元素原子结构与周期律关系示意图}]{assets/chemistry-2/fig-p0124-01.png}}
+\fitfig{%
+% fig-alt: 周期表结构。外括弧标周期表，上为横的方面（7个周期，10个列），下为纵的方面。纵的方面括第I到第VII类各分二个族（主族含短周期元素，副族不含），第VIII类过渡元素共九个、化合价一般+2或+3，第零类惰性气体一般不参加反应、化合价为0
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1.1pt,font=\small\linespread{1}\selectfont}]
+  \node[anchor=west] (heng) at (0.78,0.15) {横的方面：7个周期，10个列。};
+  \node[anchor=west] (g17) at (2.35,-0.95) {第\,I\,到第\,VII\,类各分二个族};
+  \node[anchor=west] (zhu) at ([xshift=10mm]g17.east |- 0,-0.58) {主族—包含短周期元素的族。};
+  \node[anchor=west] (fu) at (zhu.west |- 0,-1.32) {副族—不包含短周期元素的族。};
+  \node[anchor=west] (viii) at (2.35,-1.92) {第\,VIII\,类（过渡元素）：};
+  \node[anchor=west] (val) at (viii.base east) {共九个元素，化合价一般是 $+2$ 价};
+  \node[anchor=west] (val2) at (val.west |- 0,-2.50) {或 $+3$ 价。};
+  \node[anchor=west] (zero) at (2.35,-3.22) {第零类（惰性气体）：一般不参加化学反应，化合价为 0。};
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=3.5pt,mirror}] ([yshift=2.5pt,xshift=-6pt]zhu.north west) -- ([yshift=-2pt,xshift=-6pt]fu.south west);
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=4pt,mirror}] ([yshift=5pt,xshift=-8pt]g17.north west) -- ([yshift=-3pt,xshift=-8pt]zero.south west);
+  \node[anchor=east,align=center,inner sep=0pt] at ([xshift=-16pt]g17.west |- 0,-2.05) {\setlength{\baselineskip}{0.95em}纵\\的\\方\\面};
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=4.5pt,mirror}] ([yshift=4pt,xshift=-8pt]heng.north west) -- ([yshift=-3pt,xshift=-8pt]heng.west |- zero.south);
+  \node[anchor=east,align=center,inner sep=0pt] at ([xshift=-16pt]heng.west |- 0,-1.50) {\setlength{\baselineskip}{0.95em}周\\期\\表};
+\end{tikzpicture}%
+}
 \caption{元素原子结构与周期律关系示意图}
 \end{figure}
 
