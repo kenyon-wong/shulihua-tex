@@ -806,7 +806,27 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/solid-geometry/fig-p0012-03.png}}
+\fitfig{%
+% fig-alt: （3）平面S与曲面R相交于直线EF：左竖边EF为实线，顶底为凸向下的曲线，右侧直立矩形S为实线，开口底边为虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (E) at (0,2.96);
+  \coordinate (F) at (0,0.38);
+  \coordinate (It) at (1.38,2.56);
+  \coordinate (Ib) at (1.38,0.14);
+  \coordinate (St) at (1.78,2.92);
+  \coordinate (Sb) at (1.78,0.38);
+  \draw[line width=0.7pt] (E) -- (St) -- (Sb) -- (1.38,0.38);
+  \draw[line width=0.7pt] (E) -- (F);
+  \draw[line width=0.7pt] (It) -- (Ib);
+  \draw[line width=0.7pt] (E) .. controls (0.42,2.78) and (0.88,2.42) .. (It);
+  \draw[line width=0.7pt] (F) .. controls (0.38,0.02) and (0.82,-0.04) .. (Ib);
+  \draw[line width=0.65pt,dash pattern=on 3.1pt off 1.7pt] (0.28,0.40) -- (1.22,0.40);
+  \node[left=1pt] at (E) {$E$};
+  \node[left=1pt] at (F) {$F$};
+  \node at (1.02,2.22) {$R$};
+  \node at (1.60,2.70) {$S$};
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -816,7 +836,45 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-10}]{assets/solid-geometry/fig-p0012-04.png}}
+\fitfig{%
+% fig-alt: 图1-10：平面M与直立平面H相交，斜线部分为H，交线OP为实线；H伸到M前方以下的部分为虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (BL) at (0.18,0.72);
+  \coordinate (BR) at (3.72,0.72);
+  \coordinate (TR) at (4.42,1.28);
+  \coordinate (TL) at (0.78,1.28);
+  \draw[line width=0.7pt] (BL) -- (BR) -- (TR) -- (TL) -- cycle;
+  \coordinate (Hl) at (1.52,0.72);
+  \coordinate (Hr) at (2.52,0.72);
+  \coordinate (Ht) at (1.52,2.18);
+  \coordinate (Htr) at (2.52,2.18);
+  \coordinate (Ho) at (1.52,1.28);
+  \coordinate (Hp) at (2.52,1.28);
+  \draw[line width=0.7pt] (Ht) -- (Htr) -- (Hr) -- (Hl) -- cycle;
+  \draw[line width=0.7pt] (1.28,1.28) -- (2.78,1.28);
+  \begin{scope}
+    \clip (1.54,1.30) rectangle (2.50,2.16);
+    \draw[line width=0.32pt] (1.18,2.24) -- (2.23,1.19);
+    \draw[line width=0.32pt] (1.30,2.24) -- (2.35,1.19);
+    \draw[line width=0.32pt] (1.42,2.24) -- (2.47,1.19);
+    \draw[line width=0.32pt] (1.54,2.24) -- (2.59,1.19);
+    \draw[line width=0.32pt] (1.66,2.24) -- (2.71,1.19);
+    \draw[line width=0.32pt] (1.78,2.24) -- (2.83,1.19);
+    \draw[line width=0.32pt] (1.90,2.24) -- (2.95,1.19);
+    \draw[line width=0.32pt] (2.02,2.24) -- (3.07,1.19);
+    \draw[line width=0.32pt] (2.14,2.24) -- (3.19,1.19);
+    \draw[line width=0.32pt] (2.26,2.24) -- (3.31,1.19);
+    \draw[line width=0.32pt] (2.38,2.24) -- (3.43,1.19);
+    \draw[line width=0.32pt] (2.50,2.24) -- (3.55,1.19);
+  \end{scope}
+  \draw[line width=0.7pt] (Ht) -- (Htr) -- (Hp) -- (Ho) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.8pt] (1.52,0.66) -- (1.52,0.08) -- (2.52,0.08) -- (2.52,0.66);
+  \node at (0.48,1.12) {$M$};
+  \node[above=1pt] at (1.28,1.28) {$O$};
+  \node[above=1pt] at (2.78,1.28) {$P$};
+  \node[fill=white,inner sep=0.7pt] at (2.02,1.74) {$H$};
+\end{tikzpicture}%
+}
 \caption{图1-10}
 \end{figure}
 
@@ -943,7 +1001,21 @@ B 可
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-13}]{assets/solid-geometry/fig-p0014-02.png}}
+\fitfig{%
+% fig-alt: 图1-13：平面M内两条平行直线a、b，a上一点D，b上一点C，各带小圆点，均为实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (3.28,0) -- (4.48,1.18) -- (1.20,1.18) -- cycle;
+  \node[above=1pt] at (0.28,0.06) {$M$};
+  \draw[line width=0.95pt] (1.32,0.82) -- (3.22,0.82);
+  \node[left=1pt] at (1.32,0.82) {$a$};
+  \draw[line width=0.6pt,fill=white] (2.22,0.82) circle (0.062);
+  \node[above=1pt] at (2.22,0.82) {$D$};
+  \draw[line width=0.95pt] (0.98,0.42) -- (2.72,0.42);
+  \node[left=1pt] at (0.98,0.42) {$b$};
+  \draw[line width=0.6pt,fill=white] (1.98,0.42) circle (0.062);
+  \node[above=1pt] at (1.98,0.42) {$C$};
+\end{tikzpicture}%
+}
 \caption{图1-13}
 \end{figure}
 
@@ -1002,7 +1074,26 @@ AB、OD、EF 是三条直线， 其中 \(AB \parallel CD\)， EF 与 AB和 \(CD\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-15}]{assets/solid-geometry/fig-p0016-01.png}}
+\fitfig{%
+% fig-alt: 图1-15：平面P内AB平行于CD，直线EF与AB、CD分别交于M、N，均为实线，交点为小圆点
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (3.22,0) -- (4.62,1.52) -- (1.40,1.52) -- cycle;
+  \node[above right=0pt] at (0.16,0.10) {$P$};
+  \draw[line width=0.95pt] (1.48,1.08) -- (3.42,1.08);
+  \node[left=1pt] at (1.48,1.08) {$A$};
+  \node[right=1pt] at (3.42,1.08) {$B$};
+  \draw[line width=0.95pt] (1.08,0.62) -- (2.98,0.62);
+  \node[left=1pt] at (1.08,0.62) {$C$};
+  \node[right=1pt] at (2.98,0.62) {$D$};
+  \draw[line width=0.95pt] (1.68,1.52) -- (2.78,0.06);
+  \node[above left=0pt] at (1.68,1.52) {$E$};
+  \node[below right=0pt] at (2.58,0.22) {$F$};
+  \draw[line width=0.6pt,fill=white] (2.02,1.08) circle (0.062);
+  \draw[line width=0.6pt,fill=white] (2.32,0.62) circle (0.062);
+  \node[above=1pt] at (2.02,1.08) {$M$};
+  \node[below=1pt] at (2.32,0.62) {$N$};
+\end{tikzpicture}%
+}
 \caption{图1-15}
 \end{figure}
 
@@ -1042,7 +1133,25 @@ AB、OD、EF 是三条直线， 其中 \(AB \parallel CD\)， EF 与 AB和 \(CD\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0017-02.png}}
+\fitfig{%
+% fig-alt: 图1-16（2）：平面M内直线a、b、c交于一点P，直线d向右穿过该点，均为实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (2.48,0) -- (3.52,0.98) -- (1.04,0.98) -- cycle;
+  \node[above left=0pt] at (3.38,0.90) {$M$};
+  \coordinate (P) at (1.58,0.50);
+  \draw[line width=0.95pt] (0.52,0.50) -- (2.78,0.50);
+  \draw[line width=0.7pt] (0.52,0.40) -- (0.52,0.60);
+  \draw[line width=0.95pt] (1.22,0.78) -- (P) -- (1.12,0.14);
+  \draw[line width=0.95pt] (1.98,0.80) -- (P) -- (2.08,0.12);
+  \draw[line width=0.7pt] (2.78,0.50) -- (2.64,0.58);
+  \draw[line width=0.7pt] (2.78,0.50) -- (2.64,0.42);
+  \node[left=1pt] at (0.52,0.50) {$a$};
+  \node[below=1pt] at (1.18,0.18) {$b$};
+  \node[below=1pt] at (2.02,0.16) {$c$};
+  \node[above=1pt] at (2.62,0.50) {$d$};
+  \node[above=1pt] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -1133,7 +1242,17 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-17}]{assets/solid-geometry/fig-p0019-02.png}}
+\fitfig{%
+% fig-alt: 图1-17右图：两条平行直线，上线标a、上有小圆点、点A在圆点上方，下线标b，均为实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=1.05pt] (0.42,0.78) -- (2.62,0.78);
+  \draw[line width=0.6pt,fill=white] (0.92,0.78) circle (0.065);
+  \node[above=1pt] at (0.92,0.78) {$A$};
+  \node[left=2pt] at (0.42,0.78) {$a$};
+  \draw[line width=1.05pt] (0.42,0.22) -- (2.62,0.22);
+  \node[left=2pt] at (0.42,0.22) {$b$};
+\end{tikzpicture}%
+}
 \caption{图1-17}
 \end{figure}
 
