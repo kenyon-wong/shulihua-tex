@@ -5282,7 +5282,36 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第90页图示}]{assets/chemistry-4/fig-p0090-g02.png}}
+\fitfig{%
+% fig-alt: 苯酚与钠：2个六元环右接OH，加2Na，生成2个六元环右接O—Na与H2；环内仅左、下右两条内线；下行简式，下方苯酚钠
+% redraw: fig-p0090-g02 苯酚与钠生成苯酚钠
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] at (-0.85,0) {2};
+  \draw[bond] (0.22,0.38) -- (0.44,0) -- (0.22,-0.38) -- (-0.22,-0.38) -- (-0.44,0) -- (-0.22,0.38) -- cycle;
+  \draw[bond] (-0.30,-0.05) -- (-0.17,-0.25);
+  \draw[bond] (0.17,-0.25) -- (0.30,-0.05);
+  \node[atom, anchor=west] (oh) at (0.92,0) {OH};
+  \draw[bond] (0.44,0) -- (oh.west);
+  \node[atom] at (2.15,0) {$+2$Na};
+  \node[atom] at (3.15,0) {$=$};
+  \node[atom] at (3.65,0) {2};
+  \begin{scope}[xshift=4.55cm]
+    \draw[bond] (0.22,0.38) -- (0.44,0) -- (0.22,-0.38) -- (-0.22,-0.38) -- (-0.44,0) -- (-0.22,0.38) -- cycle;
+    \draw[bond] (-0.30,-0.05) -- (-0.17,-0.25);
+    \draw[bond] (0.17,-0.25) -- (0.30,-0.05);
+    \node[atom] (o) at (1.12,0) {O};
+    \node[atom] (na) at (1.95,0) {Na};
+    \draw[bond] (0.44,0) -- (o) -- (na);
+  \end{scope}
+  \node[atom, anchor=west] at (7.55,0) {$+$\,H$_2\uparrow$};
+  \node[lab] at (3.55,-1.25) {$(2\mathrm{C}_{6}\mathrm{H}_{5}\mathrm{OH}+2\mathrm{Na}=2\mathrm{C}_{6}\mathrm{H}_{5}\mathrm{ONa}+\mathrm{H}_{2}\uparrow)$};
+  \node[lab] at (3.55,-1.85) {苯酚钠};
+\end{tikzpicture}%
+}
+
 \caption{原PDF第90页图示}
 \end{figure}
 
@@ -5332,7 +5361,86 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第92页图示}]{assets/chemistry-4/fig-p0092-g01.png}}
+\fitfig{%
+% fig-alt: 苯酚溴代：顶碳连OH，凯库勒双键在左上、右侧、下左；虚线框住左上、右上、对位的H与Br—Br，生成2,4,6-三溴苯酚与3HBr
+% redraw: fig-p0092-g01 三溴苯酚结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (tC) at (0,1.08) {C};
+  \node[atom] (tOH) at (0,1.78) {OH};
+  \node[atom] (ulC) at (-0.92,0.54) {C};
+  \node[atom] (llC) at (-0.92,-0.54) {C};
+  \node[atom] (llH) at (-1.62,-0.54) {H};
+  \node[atom] (bC) at (0,-1.08) {C};
+  \node[atom] (urC) at (0.92,0.54) {C};
+  \node[atom] (lrC) at (0.92,-0.54) {C};
+  \node[atom] (lrH) at (1.62,-0.54) {H};
+  \draw[bond] (tOH) -- (tC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \node[atom] (ulH) at (-2.15,0.54) {H};
+  \node[atom] (lp) at (-2.78,0.54) {$+$};
+  \node[atom] (lbr1) at (-3.62,0.54) {Br};
+  \node[atom] (lbr2) at (-4.55,0.54) {Br};
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (lbr1) -- (lbr2);
+  \draw[dashed, line width=0.5pt] (-4.95,0.18) rectangle (-1.78,0.92);
+  \node[atom] (urH) at (2.15,0.54) {H};
+  \node[atom] (rp) at (2.78,0.54) {$+$};
+  \node[atom] (rbr1) at (3.62,0.54) {Br};
+  \node[atom] (rbr2) at (4.55,0.54) {Br};
+  \draw[bond] (urH) -- (urC);
+  \draw[bond] (rbr1) -- (rbr2);
+  \draw[dashed, line width=0.5pt] (1.78,0.18) rectangle (4.95,0.92);
+  \node[atom] (bH) at (0,-1.78) {H};
+  \node[atom] (bp) at (0,-2.42) {$+$};
+  \node[atom] (bbr1) at (-0.48,-3.12) {Br};
+  \node[atom] (bbr2) at (0.48,-3.12) {Br};
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (bbr1) -- (bbr2);
+  \draw[dashed, line width=0.5pt] (-1.05,-3.52) rectangle (1.05,-1.42);
+  \node[atom] at (-3.55,-6.35) {$=$};
+  \begin{scope}[yshift=-6.35cm]
+    \node[atom] (tC) at (0,1.08) {C};
+    \node[atom] (tOH) at (0,1.78) {OH};
+    \node[atom] (ulC) at (-0.92,0.54) {C};
+    \node[atom] (ulBr) at (-1.72,0.54) {Br};
+    \node[atom] (llC) at (-0.92,-0.54) {C};
+    \node[atom] (llH) at (-1.62,-0.54) {H};
+    \node[atom] (bC) at (0,-1.08) {C};
+    \node[atom] (bBr) at (0,-1.82) {Br};
+    \node[atom] (urC) at (0.92,0.54) {C};
+    \node[atom] (urBr) at (1.72,0.54) {Br};
+    \node[atom] (lrC) at (0.92,-0.54) {C};
+    \node[atom] (lrH) at (1.62,-0.54) {H};
+    \draw[bond] (tOH) -- (tC);
+    \draw[bond] (ulBr) -- (ulC);
+    \draw[bond] (llH) -- (llC);
+    \draw[bond] (bBr) -- (bC);
+    \draw[bond] (urBr) -- (urC);
+    \draw[bond] (lrH) -- (lrC);
+    \draw[dbond] (ulC) -- (tC);
+    \draw[dbond] (urC) -- (lrC);
+    \draw[dbond] (llC) -- (bC);
+    \draw[bond] (tC) -- (urC);
+    \draw[bond] (ulC) -- (llC);
+    \draw[bond] (lrC) -- (bC);
+    \node[atom, anchor=west] at (2.35,0) {$+3$HBr};
+    \node[lab] at (0,-2.55) {三溴苯酚};
+    \node[lab] at (0,-3.15) {$[\mathrm{C}_{6}\mathrm{H}_{5}\mathrm{OH}+3\mathrm{Br}_{2}=\mathrm{C}_{6}\mathrm{H}_{2}(\mathrm{OH})\mathrm{Br}_{3}+3\mathrm{HBr}]$};
+  \end{scope}
+\end{tikzpicture}%
+}
+
 \caption{原PDF第92页图示}
 \end{figure}
 
@@ -5403,7 +5511,32 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第94页图示}]{assets/chemistry-4/fig-p0094-g01.png}}
+\fitfig{%
+% fig-alt: 芳香醇与酚对照：左为六元环右接CH2OH，下为C6H5—CH2OH；右为六元环右接OH，下为C6H5OH；环内仅左、下右两条内线
+% redraw: fig-p0094-g01 芳香醇与酚对照结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] at (-1.15,0.05) {（1）};
+  \draw[bond] (0.22,0.38) -- (0.44,0) -- (0.22,-0.38) -- (-0.22,-0.38) -- (-0.44,0) -- (-0.22,0.38) -- cycle;
+  \draw[bond] (-0.30,-0.05) -- (-0.17,-0.25);
+  \draw[bond] (0.17,-0.25) -- (0.30,-0.05);
+  \node[atom, anchor=west] (ch2) at (0.95,0) {CH$_2$OH};
+  \draw[bond] (0.44,0) -- (ch2.west);
+  \node[lab] at (0.55,-0.95) {$(\mathrm{C}_{6}\mathrm{H}_{5}{-}\mathrm{CH}_{2}\mathrm{OH})$};
+  \node[atom] at (4.15,0.05) {（2）};
+  \begin{scope}[xshift=5.15cm]
+    \draw[bond] (0.22,0.38) -- (0.44,0) -- (0.22,-0.38) -- (-0.22,-0.38) -- (-0.44,0) -- (-0.22,0.38) -- cycle;
+    \draw[bond] (-0.30,-0.05) -- (-0.17,-0.25);
+    \draw[bond] (0.17,-0.25) -- (0.30,-0.05);
+    \node[atom, anchor=west] (oh) at (0.92,0) {OH};
+    \draw[bond] (0.44,0) -- (oh.west);
+    \node[lab] at (0.35,-0.95) {$(\mathrm{C}_{6}\mathrm{H}_{5}\mathrm{OH})$};
+  \end{scope}
+\end{tikzpicture}%
+}
+
 \caption{原PDF第94页图示}
 \end{figure}
 
@@ -5480,7 +5613,27 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（结构式）；（简式）}]{assets/chemistry-4/fig-p0096-g01.png}}
+\fitfig{%
+% fig-alt: 甲醛结构式：H—C以双键连右上O、单键连右下H；简式为H·CHO
+% redraw: fig-p0096-g01 甲醛结构式与简式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (c) at (0,0) {C};
+  \node[atom] (hl) at (-0.78,0) {H};
+  \node[atom] (o) at (0.58,0.52) {O};
+  \node[atom] (hr) at (0.58,-0.52) {H};
+  \draw[bond] (hl) -- (c);
+  \draw[dbond] (c) -- (o);
+  \draw[bond] (c) -- (hr);
+  \node[lab] at (0,-1.15) {（结构式）};
+  \node[atom] at (2.55,0) {H$\cdot$CHO};
+  \node[lab] at (2.55,-1.15) {（简式）};
+\end{tikzpicture}%
+}
+
 \caption{（结构式）；（简式）}
 \end{figure}
 
@@ -5488,7 +5641,45 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={甲醇去氢生成甲醛的反应结构式}]{assets/chemistry-4/fig-p0096-g02.png}}
+\fitfig{%
+% fig-alt: 甲醇去氢：H—C—OH，虚线倒L框住碳上的H与羟基H，铜催化生成甲醛与氢气
+% redraw: fig-p0096-g02 甲醇去氢生成甲醛
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (c) at (0,0) {C};
+  \node[atom] (hl) at (-0.82,0) {H};
+  \node[atom] (hb) at (0,-0.78) {H};
+  \node[atom] (ht) at (0,0.92) {H};
+  \node[atom] (o) at (0.88,0) {O};
+  \node[atom] (hoh) at (1.72,0) {H};
+  \draw[bond] (hl) -- (c);
+  \draw[bond] (hb) -- (c);
+  \draw[bond] (ht) -- (c);
+  \draw[bond] (c) -- (o);
+  \draw[bond] (o) -- (hoh);
+  \draw[dashed, line width=0.5pt] (-0.30,0.52) -- (-0.30,1.30) -- (2.08,1.30) -- (2.08,-0.32) -- (1.32,-0.32) -- (1.32,0.52) -- cycle;
+  \node[atom] at (3.05,0.32) {Cu};
+  \draw[bond] (2.35,0.04) -- (3.75,0.04);
+  \draw[bond] (2.35,-0.10) -- (3.75,-0.10);
+  \node[atom] (c2) at (4.85,0) {C};
+  \node[atom] (h2) at (4.15,0) {H};
+  \node[atom] (o2) at (5.42,0.50) {O};
+  \node[atom] (hr2) at (5.42,-0.50) {H};
+  \draw[bond] (h2) -- (c2);
+  \draw[dbond] (c2) -- (o2);
+  \draw[bond] (c2) -- (hr2);
+  \node[atom] at (6.45,0.15) {$+$\,H$_2$};
+  \node[lab] (lhs) at (1.15,-1.85) {$(\mathrm{CH}_{3}\mathrm{OH}$};
+  \node[atom] at (2.85,-1.58) {Cu};
+  \draw[bond] (2.20,-1.82) -- (3.50,-1.82);
+  \draw[bond] (2.20,-1.94) -- (3.50,-1.94);
+  \node[lab, anchor=west] at (3.62,-1.85) {$\mathrm{H}{-}\mathrm{CHO}+\mathrm{H}_{2})$};
+\end{tikzpicture}%
+}
+
 \caption{甲醇去氢生成甲醛的反应结构式}
 \end{figure}
 
@@ -6841,7 +7032,66 @@ raw 不能唯一判定原版反应式，故未擅改。{]}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原书脚注中的乙醇去氢生成乙醛的结构式}]{assets/chemistry-4/fig-p0096-g03.png}}
+\fitfig{%
+% fig-alt: 乙醇去氢：左式虚线倒L框住邻羟基碳上的H与羟基H，生成乙醛与氢气；而不是把两个碳上的氢和羟基H一起框住，那样不能形成双键
+% redraw: fig-p0096-g03 乙醇去氢生成乙醛
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom] (c2) at (1.05,0) {C};
+  \node[atom] (h1l) at (-0.72,0) {H};
+  \node[atom] (h1u) at (0,0.72) {H};
+  \node[atom] (h1d) at (0,-0.72) {H};
+  \node[atom] (h2u) at (1.05,0.72) {H};
+  \node[atom] (h2d) at (1.05,-0.72) {H};
+  \node[atom] (o) at (1.88,0) {O};
+  \node[atom] (hoh) at (2.58,0) {H};
+  \draw[bond] (h1l) -- (c1);
+  \draw[bond] (h1u) -- (c1);
+  \draw[bond] (h1d) -- (c1);
+  \draw[bond] (c1) -- (c2);
+  \draw[bond] (h2u) -- (c2);
+  \draw[bond] (h2d) -- (c2);
+  \draw[bond] (c2) -- (o);
+  \draw[bond] (o) -- (hoh);
+  \draw[dashed, line width=0.5pt] (0.72,0.38) -- (0.72,1.12) -- (2.95,1.12) -- (2.95,-0.34) -- (2.20,-0.34) -- (2.20,0.38) -- cycle;
+  \draw[->, line width=0.6pt] (3.25,0) -- (4.05,0);
+  \node[atom] (ch3) at (4.85,0) {CH$_3$};
+  \node[atom] (cc) at (5.85,0) {C};
+  \node[atom] (oo) at (6.42,0.48) {O};
+  \node[atom] (hh) at (6.42,-0.48) {H};
+  \draw[bond] (ch3) -- (cc);
+  \draw[dbond] (cc) -- (oo);
+  \draw[bond] (cc) -- (hh);
+  \node[atom, anchor=west] at (7.45,0.12) {$+$\,H$_2$};
+  \node[atom] at (9.35,0) {而不是};
+  \begin{scope}[xshift=11.15cm]
+    \node[atom] (c1) at (0,0) {C};
+    \node[atom] (c2) at (1.05,0) {C};
+    \node[atom] (h1l) at (-0.72,0) {H};
+    \node[atom] (h1u) at (0,0.72) {H};
+    \node[atom] (h1d) at (0,-0.72) {H};
+    \node[atom] (h2u) at (1.05,0.72) {H};
+    \node[atom] (h2d) at (1.05,-0.72) {H};
+    \node[atom] (o) at (1.88,0) {O};
+    \node[atom] (hoh) at (2.58,0) {H};
+    \draw[bond] (h1l) -- (c1);
+    \draw[bond] (h1u) -- (c1);
+    \draw[bond] (h1d) -- (c1);
+    \draw[bond] (c1) -- (c2);
+    \draw[bond] (h2u) -- (c2);
+    \draw[bond] (h2d) -- (c2);
+    \draw[bond] (c2) -- (o);
+    \draw[bond] (o) -- (hoh);
+    \draw[dashed, line width=0.5pt] (-0.32,0.38) -- (-0.32,1.12) -- (2.95,1.12) -- (2.95,-0.34) -- (2.20,-0.34) -- (2.20,0.38) -- cycle;
+    \node[atom, anchor=west] at (3.15,0) {,};
+  \end{scope}
+\end{tikzpicture}%
+}
+
 \caption{原书脚注中的乙醇去氢生成乙醛的结构式}
 \end{figure}
 
