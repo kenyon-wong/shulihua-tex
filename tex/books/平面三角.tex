@@ -17463,7 +17463,37 @@ t & \(-\frac{\pi}{3}\) & \(\frac{2\pi}{3}\) & \(\frac{5\pi}{3}\) &
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-80}]{assets/plane-trigonometry/fig-p0235-05.png}}
+\fitfig{%
+% fig-alt: 图7-80（图7·30第四象限）：单位圆，B在上、A在右；S(x_2,y_2)在过B的水平切线上，左；终边过O交过A的竖直切线于T(x_1,y_1)；P(x,y)在第四象限圆上，M为P在x轴上的射影，MP竖直；轴箭头指右上；无角弧
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\RR{1.12}
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (0,\RR);
+  \coordinate (A) at (\RR,0);
+  \coordinate (S) at ({-\RR*cot(40)},\RR);
+  \coordinate (T) at (\RR,{-\RR*tan(40)});
+  \coordinate (P) at ({\RR*cos(40)},{-\RR*sin(40)});
+  \coordinate (M) at ({\RR*cos(40)},0);
+  \draw[line width=0.7pt] (O) circle[radius=\RR];
+  \draw[line width=0.7pt] (-1.55,0) -- (1.48,0);
+  \draw[line width=0.7pt,-latex] (1.48,0) -- (1.92,0);
+  \draw[line width=0.7pt] (0,-1.48) -- (0,1.28);
+  \draw[line width=0.7pt,-latex] (0,1.28) -- (0,1.68);
+  \draw[line width=0.7pt] (S) -- (B);
+  \draw[line width=0.7pt] (A) -- (T);
+  \draw[line width=0.7pt] (S) -- (T);
+  \draw[line width=0.7pt] (M) -- (P);
+  \node[anchor=south,inner sep=1pt] at (0,1.70) {$y$};
+  \node[anchor=west,inner sep=1pt] at (1.94,0) {$x$};
+  \node[anchor=south east,inner sep=1pt] at (-0.04,1.16) {$B$};
+  \node[anchor=south east,inner sep=1pt] at (S) {$S(x_{2}, y_{2})$};
+  \node[anchor=south,inner sep=1pt] at (1.28,0.08) {$A$};
+  \node[anchor=north,inner sep=1pt] at (0.04,-0.04) {$O$};
+  \node[anchor=south,inner sep=1pt] at (0.78,0.04) {$M$};
+  \node[anchor=west,inner sep=1pt] at (1.22,-0.58) {$P(x, y)$};
+  \node[anchor=north west,inner sep=1pt] at (1.18,-1.02) {$T(x_{1}, y_{1})$};
+\end{tikzpicture}%
+}
 \caption{图7-80}
 \end{figure}
 
@@ -23142,7 +23172,22 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第25题)}]{assets/plane-trigonometry/fig-p0311-01.png}}
+\fitfig{%
+% fig-alt: 第25题；圆O，过O的水平直线左右伸出；A在圆的右上，连OA、AP，P在直线右侧；O、A、P，无角度数字
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\RR{1.08}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (52:\RR);
+  \coordinate (P) at (2.78,0);
+  \draw[line width=0.7pt] (O) circle[radius=\RR];
+  \draw[line width=0.7pt] (-1.62,0) -- (3.12,0);
+  \draw[line width=0.7pt] (O) -- (A);
+  \draw[line width=0.7pt] (A) -- (P);
+  \node[anchor=south,inner sep=1pt] at (0.66,0.90) {$A$};
+  \node[anchor=north,inner sep=1pt] at (0.02,-0.06) {$O$};
+  \node[anchor=north,inner sep=1pt] at (2.78,-0.04) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第25题)}
 \end{figure}
 
@@ -23169,7 +23214,32 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第28题)}]{assets/plane-trigonometry/fig-p0311-02.png}}
+\fitfig{%
+% fig-alt: 第28题；地面A、B、C、D一线，P在D正上方，PD竖直；连PA、PB、PC；A处α、B处2α、C处3α；无直角记号
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.64,0);
+  \coordinate (C) at (3.84,0);
+  \coordinate (D) at (5.16,0);
+  \coordinate (P) at (5.16,2.52);
+  \draw[line width=0.7pt] (A) -- (D);
+  \draw[line width=0.7pt] (D) -- (P);
+  \draw[line width=0.7pt] (A) -- (P);
+  \draw[line width=0.7pt] (B) -- (P);
+  \draw[line width=0.7pt] (C) -- (P);
+  \draw[line width=0.5pt] (0.48,0) arc[start angle=0,end angle=26,radius=0.48];
+  \draw[line width=0.5pt] (2.64,0) ++(0:0.40) arc[start angle=0,end angle=45,radius=0.40];
+  \draw[line width=0.5pt] (3.84,0) ++(0:0.34) arc[start angle=0,end angle=62,radius=0.34];
+  \node[anchor=north,inner sep=1pt] at (0,-0.04) {$A$};
+  \node[anchor=north,inner sep=1pt] at (2.64,-0.04) {$B$};
+  \node[anchor=north,inner sep=1pt] at (3.84,-0.04) {$C$};
+  \node[anchor=north,inner sep=1pt] at (5.22,-0.04) {$D$};
+  \node[anchor=south,inner sep=1pt] at (5.08,2.54) {$P$};
+  \node[anchor=south west,inner sep=0.6pt] at (0.50,0.08) {$\alpha$};
+  \node[anchor=south west,inner sep=0.6pt] at (3.06,0.10) {$2\alpha$};
+  \node[anchor=south,inner sep=0.6pt] at (4.28,0.16) {$3\alpha$};
+\end{tikzpicture}%
+}
 \caption{(第28题)}
 \end{figure}
 
@@ -23343,7 +23413,26 @@ A D + B D = B C.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第44题)}]{assets/plane-trigonometry/fig-p0313-01.png}}
+\fitfig{%
+% fig-alt: 第44题；半圆O，直径向右延长至A，OA为直径的两倍；B在半圆右上，连OB、BA；C在A正上方，CA竖直，连BC；O、A、B、C，无角度数字
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\RR{1.22}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (2.44,0);
+  \coordinate (B) at ({1.22*cos(64.5)},{1.22*sin(64.5)});
+  \coordinate (C) at (2.44,2.21);
+  \draw[line width=0.7pt] (-1.22,0) -- (A);
+  \draw[line width=0.7pt] (180:1.22) arc[start angle=180,end angle=0,radius=1.22];
+  \draw[line width=0.7pt] (O) -- (B);
+  \draw[line width=0.7pt] (B) -- (A);
+  \draw[line width=0.7pt] (B) -- (C);
+  \draw[line width=0.7pt] (C) -- (A);
+  \node[anchor=north,inner sep=1pt] at (0.02,-0.05) {$O$};
+  \node[anchor=north,inner sep=1pt] at (2.44,-0.05) {$A$};
+  \node[anchor=south,inner sep=1pt] at (0.36,1.22) {$B$};
+  \node[anchor=west,inner sep=1pt] at (2.48,2.21) {$C$};
+\end{tikzpicture}%
+}
 \caption{(第44题)}
 \end{figure}
 
@@ -23433,7 +23522,33 @@ A D = \frac {2 r \cos \frac {B}{2} \cos \frac {C}{2}}{\sin \frac {A}{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第 52 题)}]{assets/plane-trigonometry/fig-p0314-01.png}}
+\fitfig{%
+% fig-alt: 第52题；球，竖直虚轴，赤道椭圆；D在轴左上方，β在轴右上方；A、B同纬度，弦AB；连OA、OB、OQ；赤道上R、Q；无第二β、无α
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0,0) circle[radius=1.58];
+  \draw[line width=0.55pt,dash pattern=on 1.5pt off 1.15pt] (0,1.58) -- (0,-1.58);
+  \draw[line width=0.65pt] (0,0) ellipse[x radius=1.58, y radius=0.30];
+  \draw[line width=0.6pt] (0,1.58) .. controls (0.22,1.22) and (0.46,0.58) .. (0.36,0.05);
+  \draw[line width=0.6pt] (0.36,0.05) .. controls (0.46,-0.42) and (0.24,-1.12) .. (0,-1.58);
+  \draw[line width=0.6pt] (0,1.58) .. controls (0.58,1.38) and (1.02,0.72) .. (1.16,0.10);
+  \draw[line width=0.6pt] (1.16,0.10) .. controls (1.02,-0.32) and (0.70,-0.92) .. (0.26,-1.40);
+  \draw[line width=0.5pt] (0.14,1.40) .. controls (0.26,1.34) and (0.36,1.28) .. (0.46,1.20);
+  \coordinate (A) at (0.50,0.74);
+  \coordinate (B) at (1.22,0.78);
+  \coordinate (Q) at (1.16,0.10);
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.7pt] (0,0) -- (A);
+  \draw[line width=0.7pt] (0,0) -- (B);
+  \draw[line width=0.65pt] (0,0) -- (Q);
+  \node[anchor=east,inner sep=1pt] at (-0.08,1.18) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (0.22,1.36) {$\beta$};
+  \node[anchor=south,inner sep=1pt] at (0.38,0.86) {$A$};
+  \node[anchor=south,inner sep=1pt] at (1.14,0.90) {$B$};
+  \node[anchor=east,inner sep=1pt] at (-0.06,0.02) {$O$};
+  \node[anchor=north,inner sep=1pt] at (0.40,-0.10) {$R$};
+  \node[anchor=north west,inner sep=1pt] at (1.18,0.02) {$Q$};
+\end{tikzpicture}%
+}
 \caption{(第 52 题)}
 \end{figure}
 
@@ -23470,7 +23585,39 @@ A D = \frac {2 r \cos \frac {B}{2} \cos \frac {C}{2}}{\sin \frac {A}{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第56题)}]{assets/plane-trigonometry/fig-p0314-02.png}}
+\fitfig{%
+% fig-alt: 第56题；轮心O离地面1 m，半径OA为1/2 m；x轴过O指向右，y轴过O指向上，P在第一象限，连OP；地面下有斜短线；标1 m、1/2 m
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\RR{1.05}
+  \coordinate (O) at (0,2.10);
+  \coordinate (A) at (\RR,2.10);
+  \coordinate (P) at ({1.05*cos(42)},{2.10+1.05*sin(42)});
+  \draw[line width=0.7pt] (O) circle[radius=\RR];
+  \draw[line width=0.7pt] (-2.22,2.10) -- (1.48,2.10);
+  \draw[line width=0.7pt,-latex] (1.48,2.10) -- (1.88,2.10);
+  \draw[line width=0.7pt] (0,1.05) -- (0,2.95);
+  \draw[line width=0.7pt,-latex] (0,2.95) -- (0,3.32);
+  \draw[line width=0.7pt] (O) -- (P);
+  \draw[line width=0.8pt] (-2.55,0) -- (2.15,0);
+  \foreach \x in {-2.40,-2.16,-1.92,-1.68,-1.44,-1.20,-0.96,-0.72,-0.48,-0.24,0.00,0.24,0.48,0.72,0.96,1.20,1.44,1.68,1.92} {
+    \draw[line width=0.4pt] (\x,0) -- ++(0.14,-0.22);
+  }
+  \draw[line width=0.5pt] (-2.28,2.10) -- (-2.28,0);
+  \draw[line width=0.5pt] (-2.42,2.10) -- (-2.14,2.10);
+  \draw[line width=0.5pt] (-2.42,0) -- (-2.14,0);
+  \draw[line width=0.5pt] (0,1.05) -- (0,0.58);
+  \draw[line width=0.5pt] (\RR,2.10) -- (\RR,0.58);
+  \draw[->,line width=0.45pt] (0.40,0.58) -- (0.06,0.58);
+  \draw[->,line width=0.45pt] (0.64,0.58) -- (0.98,0.58);
+  \node[anchor=south,inner sep=1pt] at (0,3.34) {$y$};
+  \node[anchor=west,inner sep=1pt] at (1.90,2.10) {$x$};
+  \node[anchor=north,inner sep=1pt] at (0.08,2.02) {$O$};
+  \node[anchor=north west,inner sep=1pt] at (1.08,2.04) {$A$};
+  \node[anchor=south,inner sep=1pt] at (0.86,2.88) {$P$};
+  \node[anchor=east,inner sep=1pt] at (-2.48,1.05) {$1\,\mathrm{m}$};
+  \node[anchor=north,inner sep=1pt] at (0.52,0.40) {$\frac{1}{2}\,\mathrm{m}$};
+\end{tikzpicture}%
+}
 \caption{(第56题)}
 \end{figure}
 
