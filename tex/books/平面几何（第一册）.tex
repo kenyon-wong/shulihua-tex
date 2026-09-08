@@ -734,7 +734,19 @@ AB 延长（图 1·5（1）），也可以经过点 A 把线段 AB 向 BA 方向
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0014-01.png}}
+\fitfig{%
+% fig-alt: 左为水平射线，左端有短竖线，其下方是不接触的斜射线，仅下端有短斜线；右为无端点的斜线，其下方是不接触的水平直线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0.78) -- (2.2,0.78);
+  \draw[line width=0.6pt] (0,0.69) -- (0,0.87);
+  \draw[line width=0.7pt] (0.08,-0.62) -- (1.15,0.38);
+  \draw[line width=0.6pt] (0.00,-0.70) -- (0.16,-0.54);
+  \begin{scope}[xshift=3.35cm]
+    \draw[line width=0.7pt] (0.05,-0.62) -- (2.25,-0.62);
+    \draw[line width=0.7pt] (2.22,0.78) -- (1.18,-0.28);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -779,7 +791,25 @@ PQ = RS \text{或者} RS = PQ.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-9}]{assets/plane-geometry-1/fig-p0015-01.png}}
+\fitfig{%
+% fig-alt: 左为两端有短竖线的线段，上方标P与Q；右为与之等长且重合的线段，左端上下标R与P，右端上下标S与Q
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.15,0);
+  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+  \draw[line width=0.6pt] (2.15,-0.09) -- (2.15,0.09);
+  \node[above=2pt] at (0,0) {$P$};
+  \node[above=2pt] at (2.15,0) {$Q$};
+  \begin{scope}[xshift=3.15cm]
+    \draw[line width=0.7pt] (0,0) -- (2.15,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \draw[line width=0.6pt] (2.15,-0.09) -- (2.15,0.09);
+    \node[above=2pt] at (0,0) {$R$};
+    \node[below=2pt] at (0,0) {$P$};
+    \node[above=2pt] at (2.15,0) {$S$};
+    \node[below=2pt] at (2.15,0) {$Q$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-9}
 \end{figure}
 
@@ -794,7 +824,26 @@ PQ < RS \text{或者} RS > PQ.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-10}]{assets/plane-geometry-1/fig-p0015-02.png}}
+\fitfig{%
+% fig-alt: 左为较短线段，两端有短竖线，上方标P与Q；右为较长线段，左端上下标R与P，右端上方标S，线段上一点下方标Q并有短竖线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (1.7,0);
+  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+  \draw[line width=0.6pt] (1.7,-0.09) -- (1.7,0.09);
+  \node[above=2pt] at (0,0) {$P$};
+  \node[above=2pt] at (1.7,0) {$Q$};
+  \begin{scope}[xshift=2.7cm]
+    \draw[line width=0.7pt] (0,0) -- (2.45,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \draw[line width=0.6pt] (1.7,-0.09) -- (1.7,0.09);
+    \draw[line width=0.6pt] (2.45,-0.09) -- (2.45,0.09);
+    \node[above=2pt] at (0,0) {$R$};
+    \node[below=2pt] at (0,0) {$P$};
+    \node[below=2pt] at (1.7,0) {$Q$};
+    \node[above=2pt] at (2.45,0) {$S$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-10}
 \end{figure}
 
@@ -809,7 +858,27 @@ PQ > RS \text{或者} RS < PQ.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-11}]{assets/plane-geometry-1/fig-p0015-03.png}}
+\fitfig{%
+% fig-alt: 左为较长线段，两端有短竖线，上方标P与Q；右为较短实线线段，向右用虚线延长，左端上下标R与P，实线右端上方标S，虚线端点下方标Q
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.55,0);
+  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+  \draw[line width=0.6pt] (2.55,-0.09) -- (2.55,0.09);
+  \node[above=2pt] at (0,0) {$P$};
+  \node[above=2pt] at (2.55,0) {$Q$};
+  \begin{scope}[xshift=3.45cm]
+    \draw[line width=0.7pt] (0,0) -- (1.65,0);
+    \draw[dashed, line width=0.7pt] (1.65,0) -- (2.55,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \draw[line width=0.6pt] (1.65,-0.09) -- (1.65,0.09);
+    \draw[line width=0.6pt] (2.55,-0.09) -- (2.55,0.09);
+    \node[above=2pt] at (0,0) {$R$};
+    \node[below=2pt] at (0,0) {$P$};
+    \node[above=2pt] at (1.65,0) {$S$};
+    \node[below=2pt] at (2.55,0) {$Q$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-11}
 \end{figure}
 
@@ -890,7 +959,35 @@ PQ = a + b + c\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-16}]{assets/plane-geometry-1/fig-p0017-01.png}}
+\fitfig{%
+% fig-alt: 左为三条上下排列的已知线段a、b、c，两端各有短竖线；右为线段PQ，用短竖线分成与a、b、c等长的三段
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,1.15) -- (1.45,1.15);
+  \draw[line width=0.6pt] (0,1.06) -- (0,1.24);
+  \draw[line width=0.6pt] (1.45,1.06) -- (1.45,1.24);
+  \node[above=2pt] at (0.72,1.15) {$a$};
+  \draw[line width=0.7pt] (0,0.58) -- (1.72,0.58);
+  \draw[line width=0.6pt] (0,0.49) -- (0,0.67);
+  \draw[line width=0.6pt] (1.72,0.49) -- (1.72,0.67);
+  \node[above=2pt] at (0.86,0.58) {$b$};
+  \draw[line width=0.7pt] (0,0) -- (1.16,0);
+  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+  \draw[line width=0.6pt] (1.16,-0.09) -- (1.16,0.09);
+  \node[above=2pt] at (0.58,0) {$c$};
+  \begin{scope}[xshift=2.55cm]
+    \draw[line width=0.7pt] (0,0.58) -- (4.33,0.58);
+    \draw[line width=0.6pt] (0,0.49) -- (0,0.67);
+    \draw[line width=0.6pt] (1.45,0.49) -- (1.45,0.67);
+    \draw[line width=0.6pt] (3.17,0.49) -- (3.17,0.67);
+    \draw[line width=0.6pt] (4.33,0.49) -- (4.33,0.67);
+    \node[above=2pt] at (0.72,0.58) {$a$};
+    \node[above=2pt] at (2.31,0.58) {$b$};
+    \node[above=2pt] at (3.75,0.58) {$c$};
+    \node[below=2pt] at (0,0.58) {$P$};
+    \node[below=2pt] at (4.33,0.58) {$Q$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-16}
 \end{figure}
 
@@ -909,7 +1006,47 @@ PQ = l - m\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-17}]{assets/plane-geometry-1/fig-p0017-02.png}}
+\fitfig{%
+% fig-alt: 左为已知线段l与较短的m，两端各有短竖线；中为从l右端截取m，余下标PQ；右为从l左端截取m，余下标QP
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0.72) -- (2.4,0.72);
+  \draw[line width=0.6pt] (0,0.63) -- (0,0.81);
+  \draw[line width=0.6pt] (2.4,0.63) -- (2.4,0.81);
+  \node[above=2pt] at (1.2,0.72) {$l$};
+  \draw[line width=0.7pt] (0,0) -- (1.55,0);
+  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+  \draw[line width=0.6pt] (1.55,-0.09) -- (1.55,0.09);
+  \node[above=2pt] at (0.78,0) {$m$};
+  \begin{scope}[xshift=3.15cm]
+    \draw[line width=0.7pt] (0,0.72) -- (2.4,0.72);
+    \draw[line width=0.6pt] (0,0.63) -- (0,0.81);
+    \draw[line width=0.6pt] (0.85,0.63) -- (0.85,0.81);
+    \draw[line width=0.6pt] (2.4,0.63) -- (2.4,0.81);
+    \node[above=2pt] at (1.2,0.72) {$l$};
+    \draw[line width=0.7pt] (0,0) -- (2.4,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \draw[line width=0.6pt] (0.85,-0.09) -- (0.85,0.09);
+    \draw[line width=0.6pt] (2.4,-0.09) -- (2.4,0.09);
+    \node[below=2pt] at (0,0) {$P$};
+    \node[below=2pt] at (0.85,0) {$Q$};
+    \node[below=8pt] at (1.62,0) {$m$};
+  \end{scope}
+  \begin{scope}[xshift=6.4cm]
+    \draw[line width=0.7pt] (0,0.72) -- (2.4,0.72);
+    \draw[line width=0.6pt] (0,0.63) -- (0,0.81);
+    \draw[line width=0.6pt] (1.55,0.63) -- (1.55,0.81);
+    \draw[line width=0.6pt] (2.4,0.63) -- (2.4,0.81);
+    \node[above=2pt] at (1.2,0.72) {$l$};
+    \draw[line width=0.7pt] (0,0) -- (2.4,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \draw[line width=0.6pt] (1.55,-0.09) -- (1.55,0.09);
+    \draw[line width=0.6pt] (2.4,-0.09) -- (2.4,0.09);
+    \node[below=8pt] at (0.78,0) {$m$};
+    \node[below=2pt] at (1.55,0) {$Q$};
+    \node[below=2pt] at (2.4,0) {$P$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-17}
 \end{figure}
 
@@ -936,7 +1073,27 @@ a，就应该使两个针尖间的距离在开始时就缩短 （图 1·19（1�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0018-02.png}}
+\fitfig{%
+% fig-alt: 水平线上自左标A、1、2、3、4、B、5，5在B右侧；分割规两脚落在4与5，B与5之间下方有双向箭头标a
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (-0.15,0) -- (4.18,0);
+  \foreach \x in {0,0.78,1.56,2.34,3.12,3.60,3.90}
+    \draw[line width=0.6pt] (\x,-0.09) -- (\x,0.09);
+  \node[above=2pt] at (0,0) {$A$};
+  \node[below=2pt] at (0.78,0) {$1$};
+  \node[below=2pt] at (1.56,0) {$2$};
+  \node[below=2pt] at (2.34,0) {$3$};
+  \node[below=2pt] at (3.12,0) {$4$};
+  \node[above=2pt] at (3.60,0) {$B$};
+  \node[below=2pt] at (3.90,0) {$5$};
+  \draw[line width=0.7pt] (3.12,0.08) -- (3.51,1.62) -- (3.90,0.08);
+  \draw[line width=0.6pt] (3.44,1.62) rectangle (3.58,1.76);
+  \draw[line width=0.5pt] (3.60,-0.22) -- (3.60,-0.50);
+  \draw[line width=0.5pt] (3.90,-0.28) -- (3.90,-0.50);
+  \draw[<->, line width=0.55pt] (3.60,-0.46) -- (3.90,-0.46);
+  \node[below=1pt] at (3.75,-0.46) {$a$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -944,7 +1101,27 @@ a，就应该使两个针尖间的距离在开始时就缩短 （图 1·19（1�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0018-03.png}}
+\fitfig{%
+% fig-alt: 水平线上自左标A、1、2、3、4、5、B，5在B左侧；分割规两脚落在4与5，5与B之间下方有双向箭头标a
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (-0.15,0) -- (4.52,0);
+  \foreach \x in {0,0.78,1.56,2.34,3.12,3.90,4.22}
+    \draw[line width=0.6pt] (\x,-0.09) -- (\x,0.09);
+  \node[above=2pt] at (0,0) {$A$};
+  \node[below=2pt] at (0.78,0) {$1$};
+  \node[below=2pt] at (1.56,0) {$2$};
+  \node[below=2pt] at (2.34,0) {$3$};
+  \node[below=2pt] at (3.12,0) {$4$};
+  \node[below=2pt] at (3.90,0) {$5$};
+  \node[above=2pt] at (4.22,0) {$B$};
+  \draw[line width=0.7pt] (3.12,0.08) -- (3.51,1.62) -- (3.90,0.08);
+  \draw[line width=0.6pt] (3.44,1.62) rectangle (3.58,1.76);
+  \draw[line width=0.5pt] (3.90,-0.28) -- (3.90,-0.50);
+  \draw[line width=0.5pt] (4.22,-0.22) -- (4.22,-0.50);
+  \draw[<->, line width=0.55pt] (3.90,-0.46) -- (4.22,-0.46);
+  \node[below=1pt] at (4.06,-0.46) {$a$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
