@@ -17569,7 +17569,27 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第 15 题)}]{assets/physics-2/fig-p0378-02.png}}
+\fitfig{%
+% fig-alt: 第15题 (b) 振动图线。y(米)、t(秒)；0 起余弦两周到 0.8，峰 ±0.3。−0.3 虚线至第一波谷。图下 (b)
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{1.05}
+  \def\k{6.15}
+  \draw[->,line width=0.7pt] (0,0) -- (0,1.55);
+  \draw[->,line width=0.85pt] (0,0) -- ({0.8*\k+0.55},0);
+  \node[anchor=south west,font=\footnotesize] at (0.10,1.52) {$y$(米)};
+  \node[anchor=west,font=\footnotesize] at ({0.8*\k+0.62},-0.02) {$t$(秒)};
+  \node[anchor=south west,font=\footnotesize] at (0.06,0.04) {$0$};
+  \draw[dashed,line width=0.5pt] (0,-\A) -- ({0.2*\k},-\A);
+  \node[anchor=east,font=\footnotesize] at (-0.06,\A) {$+0.3$};
+  \node[anchor=east,font=\footnotesize] at (-0.06,-\A) {$-0.3$};
+  \draw[line width=0.85pt] plot[domain=0:0.8,samples=160,smooth] ({\x*\k},{\A*cos(900*\x)});
+  \foreach \tv in {0.2,0.4,0.6,0.8}{
+    \draw[line width=0.35pt] ({\tv*\k},-0.06) -- ({\tv*\k},0.06);
+    \node[anchor=north,font=\scriptsize] at ({\tv*\k},-0.08) {$\tv$};
+  }
+  \node[anchor=north,font=\footnotesize] at ({0.40*\k},-1.48) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{(第 15 题)}
 \end{figure}
 
@@ -17908,7 +17928,36 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第60题)}]{assets/physics-2/fig-p0383-01.png}}
+\fitfig{%
+% fig-alt: 第60题 容器 M。活塞分 B、A 两室，左下阀门 K；右下接 U 型压强计，右管水银面较高，旁标 76厘米
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.8pt] (0,1.38) -- (0,3.08) -- (5.45,3.08) -- (5.45,1.38) -- (0,1.38);
+  \node[anchor=south,font=\footnotesize] at (2.45,3.12) {$M$};
+  \draw[line width=0.7pt] (3.18,1.38) rectangle (3.42,3.08);
+  \begin{scope}
+    \clip (3.20,1.40) rectangle (3.40,3.06);
+    \foreach \n in {0,1,...,11}{
+      \draw[line width=0.35pt] (3.12,{1.28+0.16*\n}) -- (3.48,{1.54+0.16*\n});
+    }
+  \end{scope}
+  \node[anchor=center,font=\footnotesize] at (1.55,2.22) {$B$};
+  \node[anchor=center,font=\footnotesize] at (4.35,2.22) {$A$};
+  \draw[line width=0.7pt] (0.18,1.38) -- (0.18,0.86);
+  \draw[line width=0.7pt] (0.02,0.86) -- (0.32,0.86);
+  \node[anchor=east,font=\footnotesize] at (-0.08,1.02) {$K$};
+  \draw[line width=0.75pt] (5.45,1.38) -- (5.95,1.38) -- (6.05,0.72);
+  \draw[line width=0.75pt] (6.05,0.72) .. controls (6.08,0.18) and (7.42,0.18) .. (7.42,0.78);
+  \draw[line width=0.75pt] (7.42,0.78) -- (7.42,4.28);
+  \draw[line width=0.75pt] (7.78,4.28) -- (7.78,0.78);
+  \draw[line width=0.75pt] (7.78,0.78) .. controls (7.78,0.48) and (6.42,0.48) .. (6.38,0.78);
+  \draw[line width=0.75pt] (6.38,0.78) -- (6.38,1.38);
+  \fill[black] (6.14,0.62) .. controls (6.16,0.32) and (7.32,0.32) .. (7.44,0.82) -- (7.44,2.48) -- (7.76,2.48) -- (7.76,0.82) .. controls (7.68,0.55) and (6.36,0.55) .. (6.32,0.70) -- cycle;
+  \draw[line width=0.55pt] (7.96,2.48) -- (8.22,2.48);
+  \draw[line width=0.55pt] (8.09,2.48) -- (8.09,0.55);
+  \draw[line width=0.55pt] (7.96,0.55) -- (8.22,0.55);
+  \node[anchor=center,rotate=90,font=\footnotesize] at (8.42,1.52) {$76$厘米};
+\end{tikzpicture}%
+}
 \caption{(第60题)}
 \end{figure}
 
@@ -17977,7 +18026,38 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0385-01.png}}
+\fitfig{%
+% fig-alt: 习题2.2第4题答案 (a)(b)(c)。向右传播：1/4 周期后为 −cos 起于负最大，1/2 后为 −sin，3/4 后为 +cos。轴标 y、0、r
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.70}
+  \def\u{2.42}
+  \draw[->,line width=0.7pt] (0,-1.12) -- (0,1.22);
+  \draw[->,line width=0.7pt] (-0.10,0) -- ({1.75*\u+0.62},0);
+  \node[anchor=south west,font=\footnotesize] at (0.08,1.18) {$y$};
+  \node[anchor=north east,font=\footnotesize] at (-0.04,-0.04) {$0$};
+  \node[anchor=west,font=\footnotesize] at ({1.75*\u+0.68},-0.02) {$r$};
+  \draw[line width=0.85pt] plot[domain=0:1.75,samples=160,smooth] ({\x*\u},{-\A*cos(360*\x)});
+  \node[anchor=north,font=\footnotesize] at ({0.85*\u},-1.05) {$(a)$};
+  \begin{scope}[yshift=-2.72cm]
+    \draw[->,line width=0.7pt] (0,-1.12) -- (0,1.22);
+    \draw[->,line width=0.7pt] (-0.10,0) -- ({1.75*\u+0.62},0);
+    \node[anchor=south west,font=\footnotesize] at (0.08,1.18) {$y$};
+    \node[anchor=north east,font=\footnotesize] at (-0.04,-0.04) {$0$};
+    \node[anchor=west,font=\footnotesize] at ({1.75*\u+0.68},-0.02) {$r$};
+    \draw[line width=0.85pt] plot[domain=0:1.75,samples=160,smooth] ({\x*\u},{-\A*sin(360*\x)});
+    \node[anchor=north,font=\footnotesize] at ({0.85*\u},-1.05) {$(b)$};
+  \end{scope}
+  \begin{scope}[yshift=-5.44cm]
+    \draw[->,line width=0.7pt] (0,-1.12) -- (0,1.22);
+    \draw[->,line width=0.7pt] (-0.10,0) -- ({1.75*\u+0.62},0);
+    \node[anchor=south west,font=\footnotesize] at (0.08,1.18) {$y$};
+    \node[anchor=north east,font=\footnotesize] at (-0.04,-0.04) {$0$};
+    \node[anchor=west,font=\footnotesize] at ({1.75*\u+0.68},-0.02) {$r$};
+    \draw[line width=0.85pt] plot[domain=0:1.75,samples=160,smooth] ({\x*\u},{\A*cos(360*\x)});
+    \node[anchor=north,font=\footnotesize] at ({0.85*\u},-1.05) {$(c)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -17989,7 +18069,27 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0385-02.png}}
+\fitfig{%
+% fig-alt: 习题2.3第4题答案。1/2 T 后波形：y=−4\sin(2\pi r/16)，0 至 32，峰 ±4。轴标 y、r，无单位
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.78}
+  \def\k{0.158}
+  \draw[->,line width=0.7pt] (0,-1.22) -- (0,1.48);
+  \draw[->,line width=0.7pt] (-0.10,0) -- ({32*\k+0.72},0);
+  \node[anchor=south west,font=\footnotesize] at (0.08,1.42) {$y$};
+  \node[anchor=east,font=\footnotesize] at (-0.08,\A) {$+4$};
+  \node[anchor=east,font=\footnotesize] at (-0.08,-\A) {$-4$};
+  \draw[line width=0.4pt] (-0.08,\A) -- (0.06,\A);
+  \draw[line width=0.4pt] (-0.08,-\A) -- (0.06,-\A);
+  \node[anchor=north east,font=\footnotesize] at (-0.04,-0.04) {$0$};
+  \node[anchor=west,font=\footnotesize] at ({32*\k+0.78},-0.02) {$r$};
+  \draw[line width=0.85pt] plot[domain=0:32,samples=180,smooth] ({\x*\k},{-\A*sin(22.5*\x)});
+  \foreach \rv in {4,8,12,16,20,24,28,32}{
+    \draw[line width=0.35pt] ({\rv*\k},-0.06) -- ({\rv*\k},0.06);
+    \node[anchor=north,font=\scriptsize] at ({\rv*\k},-0.08) {$\rv$};
+  }
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -18030,7 +18130,27 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-2/fig-p0386-01.png}}
+\fitfig{%
+% fig-alt: 复习题二第7题。2 秒后波形：0 起向下的正弦，峰 ±60，零点 0、60、120、180，180 处向上穿过轴。轴标 y、t
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.82}
+  \def\k{0.0262}
+  \draw[->,line width=0.7pt] (0,-1.22) -- (0,1.52);
+  \draw[->,line width=0.7pt] (-0.10,0) -- ({192*\k+0.55},0);
+  \node[anchor=south west,font=\footnotesize] at (0.08,1.46) {$y$};
+  \node[anchor=east,font=\footnotesize] at (-0.08,\A) {$+60$};
+  \node[anchor=east,font=\footnotesize] at (-0.08,-\A) {$-60$};
+  \draw[line width=0.4pt] (-0.08,\A) -- (0.06,\A);
+  \draw[line width=0.4pt] (-0.08,-\A) -- (0.06,-\A);
+  \node[anchor=north east,font=\footnotesize] at (-0.04,-0.04) {$0$};
+  \node[anchor=west,font=\footnotesize] at ({192*\k+0.62},-0.02) {$t$};
+  \draw[line width=0.85pt] plot[domain=0:186,samples=180,smooth] ({\x*\k},{-\A*sin(3*\x)});
+  \foreach \tv in {30,60,90,120,150,180}{
+    \draw[line width=0.35pt] ({\tv*\k},-0.06) -- ({\tv*\k},0.06);
+    \node[anchor=north,font=\scriptsize] at ({\tv*\k},-0.08) {$\tv$};
+  }
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -18080,7 +18200,25 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0387-01.png}}
+\fitfig{%
+% fig-alt: 单元检查第3题 (3) 0.2 秒后波形。y(厘米)、x(厘米)；0 起向下，波谷 10、波峰 30、70 处正最大 20。+20 虚线至第一波峰
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.88}
+  \def\k{0.064}
+  \draw[->,line width=0.7pt] (0,-1.22) -- (0,1.52);
+  \draw[->,line width=0.7pt] (0,0) -- ({70*\k+1.15},0);
+  \node[anchor=south,font=\footnotesize] at (0.22,1.48) {$y$(厘米)};
+  \node[anchor=west,font=\footnotesize] at ({70*\k+1.05},0.08) {$x$(厘米)};
+  \node[anchor=east,font=\footnotesize] at (-0.06,0) {$0$};
+  \node[anchor=east,font=\footnotesize] at (-0.08,\A) {$20$};
+  \draw[dashed,line width=0.45pt] (0,\A) -- ({30*\k},\A);
+  \draw[line width=0.85pt] plot[domain=0:70,samples=160,smooth] ({\x*\k},{-\A*sin(9*\x)});
+  \foreach \xv in {10,20,30,40,50,60,70}{
+    \draw[line width=0.35pt] ({\xv*\k},-0.05) -- ({\xv*\k},0.05);
+    \node[anchor=north,font=\scriptsize] at ({\xv*\k},-0.08) {$\xv$};
+  }
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
