@@ -39,7 +39,7 @@
 │   └── assets/          # 4,875 个正文图片资源
 ├── raw/                 # 17 册原始扫描 PDF、导入哈希和资料说明
 ├── catalog.json         # 书目、合订分组、语言和稳定 UUID
-├── scripts/             # 源文件审计、Markdown→TeX、PDF 构建
+├── scripts/             # 源文件与隐私审计
 ├── docs/                # 来源、维护与已知问题说明
 ├── reports/             # 动态审计报告（JSON 不纳入版本控制）
 └── dist/                # 构建出的 PDF（不纳入版本控制）

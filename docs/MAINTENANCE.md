@@ -10,7 +10,7 @@
 6. 运行 `make audit` 与 `make tex-audit`。
 7. 运行 `make pdf` 与 `make pdf-verify`。
 
-图片疑似为习题标题、练习标题、页眉或其他纯文字卡片时，不得直接删除；先执行 [`IMAGE_TEXT_CARD_WORKFLOW.md`](IMAGE_TEXT_CARD_WORKFLOW.md) 中的只读候选、长上下文、原PDF版面、隔离修改和构建门禁。
+图片疑似为习题标题、练习标题、页眉或其他纯文字卡片时，不得直接删除；先对照 `raw/` 原扫描相邻页和正文上下文再决定。
 
 中文繁简或异体修订不得整库盲转。必须先生成仓库外候选，保留公式、HTML、链接目标和图片引用；低频或上下文相关字形应对照原PDF。`make audit` 中的 `audit_chinese_variants.py` 用于阻止已确认繁体、日文新字形、旧异体和“反覆”回归。
 
