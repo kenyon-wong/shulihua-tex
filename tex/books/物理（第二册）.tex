@@ -307,7 +307,46 @@ B，然后放手（图 1.1（b））；弹簧振子就沿着水平桌面在平�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.1 弹簧振子的振动}]{assets/physics-2/fig-p0007-01.png}}
+\usetikzlibrary{decorations.pathmorphing}
+\fitfig{%
+% fig-alt: 图1.1 弹簧振子的振动：(a)(c)(e) 在平衡位置 O，(b)(f) 右端点 B，(d) 左端压缩位置 C
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \foreach \lab/\seglen/\xend/\pos [count=\i] in {%
+    a/2.55mm/2.62/O,%
+    b/3.45mm/3.95/B,%
+    c/2.55mm/2.62/O,%
+    d/1.55mm/1.55/C,%
+    e/2.55mm/2.62/O,%
+    f/3.45mm/3.95/B%
+  } {
+    \begin{scope}[yshift={-(\i-1)*1.78cm}]
+      \node[anchor=east] at (-0.38,0.58) {$({\lab})$};
+      % 墙
+      \draw[line width=0.7pt] (0,0) -- (0,1.22);
+      \foreach \y in {0.08,0.30,0.52,0.74,0.96} {
+        \draw[line width=0.4pt] (0,\y) -- (-0.22,{\y+0.16});
+      }
+      % 地面
+      \draw[line width=0.7pt] (0,0) -- (6.35,0);
+      \foreach \x in {0.16,0.42,...,6.16} {
+        \draw[line width=0.4pt] (\x,0) -- (\x-0.20,-0.22);
+      }
+      \fill (6.35,0) circle[radius=0.035];
+      % 弹簧
+      \draw[line width=0.62pt,decorate,decoration={zigzag,segment length=\seglen,amplitude=1.05mm,pre length=0.8mm,post length=0.6mm}]
+        (0.16,0.66) -- (\xend,0.66);
+      \draw[line width=0.62pt] (\xend,0.66) -- ({\xend+0.08},0.66);
+      % 物体
+      \draw[line width=0.75pt] ({\xend+0.08},0.06) rectangle ({\xend+1.32},1.08);
+      \node at ({\xend+0.70},0.57) {$M$};
+      % 位置记号
+      \draw[line width=0.5pt] ({\xend+0.08},0) -- ({\xend+0.08},-0.10);
+      \node[below=1pt] at ({\xend+0.08},-0.10) {$\pos$};
+    \end{scope}
+  }
+\end{tikzpicture}%
+}
+
 \caption{图1.1 弹簧振子的振动}
 \end{figure}
 
@@ -1107,7 +1146,52 @@ f = \frac {\omega}{2 \pi} = \frac {4 \pi}{2 \pi} \text{赫} = 2 \text{赫}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.10 振动图线的作法}]{assets/physics-2/fig-p0019-01.png}}
+\fitfig{%
+% fig-alt: 图1.10 振动图线的作法：参考圆八等分，投影得 a、b、d、e，时间轴以 1/16 秒为单位
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\R{1.22}
+  \def\cx{1.35}
+  \def\ox{3.55}
+  \def\ux{0.58}
+  \draw[line width=0.7pt] (\cx,0) circle[radius=\R];
+  \draw[line width=0.55pt] (\cx,-\R) -- (\cx,\R);
+  \draw[line width=0.55pt] ({\cx-\R},0) -- ({\cx+\R},0);
+  \draw[line width=0.55pt] ({\cx-\R*0.7071},{\R*0.7071}) -- ({\cx+\R*0.7071},{-\R*0.7071});
+  \draw[line width=0.55pt] ({\cx-\R*0.7071},{-\R*0.7071}) -- ({\cx+\R*0.7071},{\R*0.7071});
+  \draw[line width=0.55pt] ({\cx-0.38},{\R*0.7071}) -- ({\cx+0.28},{\R*0.7071});
+  \draw[line width=0.55pt] ({\cx-0.38},{-\R*0.7071}) -- ({\cx+0.28},{-\R*0.7071});
+  \node[above=1pt] at (\cx,\R) {$a$};
+  \node[below=1pt] at (\cx,-\R) {$e$};
+  \node[above right=1pt] at ({\cx+0.02},{\R*0.7071}) {$b$};
+  \node[below right=1pt] at ({\cx+0.02},{-\R*0.7071}) {$d$};
+  \node[below left=1pt] at ({\cx-0.02},{-0.02}) {$O$};
+  \node[below=6pt] at (\cx,-1.58) {$(a)$};
+  \draw[dashed,line width=0.45pt] (\cx,{\R}) -- ({\ox+12*\ux},\R);
+  \draw[dashed,line width=0.45pt] ({\cx+\R*0.7071},{\R*0.7071}) -- ({\ox+12*\ux},{\R*0.7071});
+  \draw[dashed,line width=0.45pt] ({\cx+\R},0) -- ({\ox+12*\ux},0);
+  \draw[dashed,line width=0.45pt] ({\cx+\R*0.7071},{-\R*0.7071}) -- ({\ox+12*\ux},{-\R*0.7071});
+  \draw[dashed,line width=0.45pt] (\cx,{-\R}) -- ({\ox+12*\ux},{-\R});
+  \foreach \k in {0,1,...,12} {
+    \draw[line width=0.4pt] ({\ox+\k*\ux},-\R) -- ({\ox+\k*\ux},\R);
+  }
+  \draw[line width=0.85pt,smooth,samples=79,domain=-1:12]
+    plot ({\ox+\x*\ux},{(\R)*cos(45*(\x+1))});
+  \draw[->,line width=0.75pt] ({\ox},-0.16) -- ({\ox},{\R+0.38});
+  \node[above=1pt] at ({\ox},{\R+0.38}) {$s$};
+  \draw[line width=0.55pt] ({\ox},0) -- ({\ox},-0.16);
+  \draw[->,line width=0.75pt] ({\ox-0.15},0) -- ({\ox+12*\ux+0.55},0);
+  \node[right=1pt] at ({\ox+12*\ux+0.55},0.08) {$t(1/16\text{秒})$};
+  \foreach \k in {0,1,...,12} {
+    \node[below=2pt,font=\scriptsize] at ({\ox+\k*\ux},0) {$\k$};
+  }
+  \node[above=1pt] at ({\ox-\ux},\R) {$a'$};
+  \node[anchor=south west] at ({\ox+0.28},{\R*0.42}) {$b'$};
+  \node[right=2pt] at ({\ox+2.05*\ux},{-\R*0.50}) {$d'$};
+  \node[below=1pt] at ({\ox+3.05*\ux},{-\R}) {$e'$};
+  \node[below=8pt] at ({\ox+6*\ux},-1.58) {$(b)$};
+\end{tikzpicture}%
+}
+
 \caption{图1.10 振动图线的作法}
 \end{figure}
 
@@ -1288,7 +1372,29 @@ v=-A\omega\sin(\omega t+\varphi)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第22页）}]{assets/physics-2/fig-p0022-01.png}}
+\fitfig{%
+% fig-alt: 图1.11 单摆：固定点、摆长 l、摆锤 m，以及左右两个极端位置
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0.35,0) -- (2.65,0);
+  \foreach \x in {0.48,0.70,0.92,1.14,1.36,1.50,1.72,1.94,2.16,2.38,2.52} {
+    \draw[line width=0.4pt] (\x,0) -- (\x-0.15,0.17);
+  }
+  \coordinate (P) at (1.50,0);
+  \coordinate (L) at (0.44,-4.99);
+  \coordinate (O) at (1.50,-5.10);
+  \coordinate (R) at (2.56,-4.99);
+  \draw[dashed,line width=0.55pt] (P) -- (L);
+  \draw[line width=0.7pt] (P) -- (O);
+  \draw[dashed,line width=0.55pt] (P) -- (R);
+  \draw[dashed,line width=0.55pt] (0.44,-4.99) arc[start angle=258,end angle=282,radius=5.10];
+  \draw[line width=0.7pt] (L) circle[radius=0.15];
+  \draw[line width=0.7pt] (O) circle[radius=0.15];
+  \draw[line width=0.7pt] (R) circle[radius=0.15];
+  \node[right=1pt] at (2.05,-2.45) {$l$};
+  \node[right=2pt] at (2.74,-4.99) {$m$};
+\end{tikzpicture}%
+}
+
 \caption{图示（原PDF第22页）}
 \end{figure}
 
@@ -1316,7 +1422,40 @@ F = G \sin \theta = m g \sin \theta
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.12 单摆的受力情况分析}]{assets/physics-2/fig-p0023-01.png}}
+\fitfig{%
+% fig-alt: 图1.12 单摆受力：平衡位置 O 处重力 G 与拉力 T 平衡，偏角 θ 时重力分解为切向回复力 F 与法向分力 F'
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1.1pt}]
+  \draw[line width=0.7pt] (0.55,5.55) -- (2.55,5.55);
+  \foreach \x in {0.70,0.92,1.14,1.36,1.50,1.72,1.94,2.16,2.38} {
+    \draw[line width=0.4pt] (\x,5.55) -- (\x-0.15,5.72);
+  }
+  \coordinate (P) at (1.20,5.55);
+  \coordinate (O) at (1.20,0.95);
+  \coordinate (B) at (2.55,1.55);
+  \draw[line width=0.7pt] (P) -- (O);
+  \draw[line width=0.7pt] (P) -- (B);
+  \draw[line width=0.55pt] (1.20,4.82) arc[start angle=270,end angle=292,radius=0.73];
+  \node[right=1pt] at (1.32,4.48) {$\theta$};
+  \node[left=2pt] at (1.20,3.20) {$l$};
+  \draw[line width=0.7pt] (O) circle[radius=0.16];
+  \node[left=2pt] at (1.04,0.95) {$O$};
+  \node[right=2pt] at (1.38,0.82) {$m$};
+  \draw[->,line width=0.7pt] (1.20,0.74) -- (1.20,-0.28);
+  \node[below=1pt] at (1.20,-0.28) {$G$};
+  \draw[->,line width=0.65pt] (1.20,1.48) -- (1.20,2.10);
+  \node[left=1pt] at (1.20,1.78) {$T$};
+  \draw[line width=0.7pt] (B) circle[radius=0.16];
+  \draw[->,line width=0.65pt] (2.18,2.70) -- (2.05,3.08);
+  \node[right=1pt] at (2.22,2.88) {$T$};
+  \draw[dashed,->,line width=0.55pt] (2.36,1.62) -- (1.48,1.18);
+  \node[above=1pt] at (2.08,1.55) {$F$};
+  \draw[->,line width=0.7pt] (2.62,1.36) -- (2.62,0.28);
+  \node[below=1pt] at (2.62,0.28) {$G$};
+  \draw[->,line width=0.7pt] (2.72,1.38) -- (3.00,0.52);
+  \node[right=1pt] at (3.02,0.48) {$F'$};
+\end{tikzpicture}%
+}
+
 \caption{图1.12 单摆的受力情况分析}
 \end{figure}
 
@@ -1587,7 +1726,32 @@ v 是单摆在这一点的速度。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.14 单摆在端点 B 的重力势能}]{assets/physics-2/fig-p0030-01.png}}
+\fitfig{%
+% fig-alt: 图1.14 单摆在端点 B：摆角 θ_A、摆长 l，虚线表示相对平衡位置 O 的高度
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1.1pt}]
+  \draw[line width=0.7pt] (0.20,5.35) -- (2.35,5.35);
+  \foreach \x in {0.34,0.56,0.78,0.98,1.20,1.42,1.64,1.86,2.08,2.22} {
+    \draw[line width=0.4pt] (\x,5.35) -- (\x-0.16,5.53);
+  }
+  \coordinate (P) at (0.85,5.35);
+  \coordinate (O) at (0.85,0.72);
+  \coordinate (B) at (2.72,1.78);
+  \draw[line width=0.7pt] (P) -- (O);
+  \draw[line width=0.7pt] (P) -- (B);
+  \draw[line width=0.55pt] (0.85,4.62) arc[start angle=270,end angle=296,radius=0.73];
+  \node[right=1pt] at (1.02,4.28) {$\theta_{A}$};
+  \node[right=2pt,rotate=-32] at (1.95,3.35) {$l$};
+  \draw[line width=0.75pt] (O) circle[radius=0.34];
+  \draw[line width=0.75pt] (B) circle[radius=0.34];
+  \node[below=1pt] at (0.85,0.34) {$O$};
+  \node[below=1pt] at (2.72,1.40) {$B$};
+  % 端点高度（虚线）与弦
+  \draw[dashed,line width=0.55pt] (0.85,1.78) -- (B);
+  \draw[line width=0.6pt] (O) -- (B);
+  \draw[line width=0.55pt] (1.02,1.78) -- (1.02,0.72);
+\end{tikzpicture}%
+}
+
 \caption{图1.14 单摆在端点 \(B\) 的重力势能}
 \end{figure}
 
@@ -1773,7 +1937,28 @@ E = \frac {1}{2} K A ^ {2} = \frac {1}{2} m \omega^ {2} A ^ {2} \tag {1.25}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.15 振动的合成}]{assets/physics-2/fig-p0034-01.png}}
+\fitfig{%
+% fig-alt: 图1.15 振动的合成：质点同时连在上下两根一端固定的螺旋弹簧上
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.20,4.90) -- (1.80,4.90);
+  \foreach \x in {0.34,0.54,0.74,0.94,1.14,1.34,1.54,1.70} {
+    \draw[line width=0.4pt] (\x,4.90) -- (\x-0.15,5.07);
+  }
+  \draw[line width=0.7pt] (0.20,0) -- (1.80,0);
+  \foreach \x in {0.34,0.54,0.74,0.94,1.14,1.34,1.54,1.70} {
+    \draw[line width=0.4pt] (\x,0) -- (\x-0.15,-0.17);
+  }
+  \draw[line width=0.65pt] (1.00,4.90) -- (1.00,4.62)
+    -- (0.78,4.46) -- (1.22,4.22) -- (0.78,3.98) -- (1.22,3.74)
+    -- (0.78,3.50) -- (1.22,3.26) -- (0.78,3.02) -- (1.22,2.78)
+    -- (1.00,2.62) -- (1.00,2.48);
+  \draw[line width=0.75pt] (0.42,1.38) rectangle (1.58,2.48);
+  \draw[line width=0.65pt] (1.00,1.38) -- (1.00,1.24)
+    -- (0.78,1.10) -- (1.22,0.90) -- (0.78,0.70) -- (1.22,0.50)
+    -- (0.78,0.30) -- (1.22,0.16) -- (1.00,0.08) -- (1.00,0);
+\end{tikzpicture}%
+}
+
 \caption{图1.15 振动的合成}
 \end{figure}
 
