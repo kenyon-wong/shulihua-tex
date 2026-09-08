@@ -203,7 +203,33 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·1 金属结构示意图}]{assets/chemistry-3/fig-p0006-01.png}}
+\fitfig{%
+% fig-alt: 5×5晶格：空心圆为金属原子，圆内加号为金属阳离子，间隙黑点为自由电子；右侧图例
+\begin{tikzpicture}[line cap=round,line join=round,x=0.78cm,y=0.78cm]
+  % 行自上而下、列自左而右；阳离子位与扫描点阵一致
+  \foreach \c/\r in {0/0,2/0, 1/1,2/1, 0/2,3/2,4/2, 1/3,3/3, 0/4,2/4}{
+    \draw (\c,-\r) circle[radius=0.20];
+    \draw (\c-0.09,-\r) -- (\c+0.09,-\r);
+    \draw (\c,-\r-0.09) -- (\c,-\r+0.09);
+  }
+  \foreach \c/\r in {1/0,3/0,4/0, 0/1,3/1,4/1, 1/2,2/2, 0/3,2/3,4/3, 1/4,3/4,4/4}{
+    \draw (\c,-\r) circle[radius=0.20];
+  }
+  \foreach \x/\y in {0.52/-0.50, 1.50/-0.50, 3.50/-0.50, 2.50/-1.50, 0.52/-2.50, 1.50/-2.50, 3.48/-2.50, 1.50/-3.50, 3.48/-3.50}{
+    \fill (\x,\y) circle[radius=0.055];
+  }
+  \begin{scope}[xshift=5.15cm,yshift=-1.55cm]
+    \draw (0,0.85) circle[radius=0.20];
+    \node[anchor=west] at (0.38,0.85) {金属原子};
+    \draw (0,0) circle[radius=0.20];
+    \draw (-0.09,0) -- (0.09,0);
+    \draw (0,-0.09) -- (0,0.09);
+    \node[anchor=west] at (0.38,0) {金属阳离子};
+    \fill (0,-0.85) circle[radius=0.055];
+    \node[anchor=west] at (0.38,-0.85) {自由电子};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 1·1 金属结构示意图}
 \end{figure}
 
@@ -257,7 +283,23 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·3 金属的比重}]{assets/chemistry-3/fig-p0009-01.png}}
+\fitfig{%
+% fig-alt: 纵轴比重（克/立方厘米）0–25，十五根竖线依次为 Pt Au Hg Pb Ag Cu Ni Fe Sn Zn Al Mg Ca Na K
+\begin{tikzpicture}[line cap=round,x=0.70cm,y=0.15cm]
+  \draw (0,0) -- (0,26.4);
+  \draw (0,0) -- (15.55,0);
+  \foreach \v in {0,5,10,15,20,25}{
+    \draw (-0.10,\v) -- (0,\v);
+    \node[anchor=east,inner sep=1.5pt,font=\small] at (-0.14,\v) {\v};
+  }
+  \node[anchor=south,rotate=90,inner sep=1pt] at (-1.35,12.5) {比重（克/立方厘米）};
+  \foreach \i/\lab/\val in {1/Pt/21.45, 2/Au/19.3, 3/Hg/13.6, 4/Pb/11.34, 5/Ag/10.5, 6/Cu/8.92, 7/Ni/8.9, 8/Fe/7.86, 9/Sn/7.3, 10/Zn/7.14, 11/Al/2.7, 12/Mg/1.74, 13/Ca/1.55, 14/Na/0.97, 15/K/0.86}{
+    \draw (\i,0) -- (\i,\val);
+    \node[anchor=south west,rotate=58,inner sep=0.4pt,font=\scriptsize] at (\i,\val) {\val};
+    \node[anchor=north,inner sep=1pt,font=\scriptsize] at (\i,0) {\lab};
+  }
+\end{tikzpicture}%
+}
 \caption{图1·3 金属的比重}
 \end{figure}
 
@@ -280,7 +322,22 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·5 金属的硬度和金刚石硬度的比较}]{assets/chemistry-3/fig-p0011-01.png}}
+\fitfig{%
+% fig-alt: 纵轴硬度0–10，横轴自左金刚石、Cr、W、Ni、Pt、Fe、Cu、Al、Ag、Zn、Au、Ca、Mg、Sn、Pb、K、Na
+\begin{tikzpicture}[line cap=round,x=0.72cm,y=0.36cm]
+  \draw (0,0) -- (0,10.7);
+  \draw (0,0) -- (17.45,0);
+  \foreach \v in {0,2,4,6,8,10}{
+    \draw (-0.10,\v) -- (0,\v);
+    \node[anchor=east,inner sep=1.5pt,font=\small] at (-0.14,\v) {\v};
+  }
+  \foreach \i/\lab/\val in {1/金刚石/10, 2/Cr/9, 3/W/7, 4/Ni/5, 5/Pt/4.3, 6/Fe/4, 7/Cu/3, 8/Al/2.9, 9/Ag/2.7, 10/Zn/2.5, 11/Au/2.5, 12/Ca/2.2, 13/Mg/2.2, 14/Sn/1.8, 15/Pb/1.5, 16/K/0.5, 17/Na/0.4}{
+    \draw (\i,0) -- (\i,\val);
+    \node[anchor=south,inner sep=0.4pt,font=\scriptsize] at (\i,\val) {\val};
+    \node[anchor=north,inner sep=0.6pt,font=\scriptsize] at (\i,0) {\lab};
+  }
+\end{tikzpicture}%
+}
 \caption{图 1·5 金属的硬度和金刚石硬度的比较}
 \end{figure}
 
@@ -1140,7 +1197,18 @@ ROH）。它们的氢氧化物都是强碱。所以碱金属所显示的金属�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={氧化钾}]{assets/chemistry-3/fig-p0040-01.png}}
+\fitfig{%
+% fig-alt: 4e括号箭头指向氧气，下式4K+O2=2K2O，产物下标氧化钾
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node[anchor=base west] (k) at (0,0) {$4\mathrm{K}$};
+  \node[anchor=base west] (o) at (k.base east) {${}+\mathrm{O}_{2}$};
+  \node[anchor=base west] (p) at (o.base east) {${}=2\mathrm{K}_{2}\mathrm{O}$};
+  \draw ([xshift=2pt]k.north west) -- ++(0,0.34) -| ([xshift=-2pt]o.north east);
+  \draw[->] ([xshift=-2pt]o.north east) -- ++(0,-0.16);
+  \node[anchor=south] at ([yshift=8pt]o.north) {$4e$};
+  \node[anchor=north] at (p.south) {氧化钾};
+\end{tikzpicture}%
+}
 \caption{氧化钾}
 \end{figure}
 
@@ -1164,7 +1232,31 @@ ROH）。它们的氢氧化物都是强碱。所以碱金属所显示的金属�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·1 钠跟水起反应}]{assets/chemistry-3/fig-p0040-04.png}}
+\fitfig{%
+% fig-alt: 倒置漏斗罩住盛水圆柱容器，水面小圆为钠小球，右标钠小球、水
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 反应容器
+  \draw (0,0) ellipse (1.12 and 0.20);
+  \draw (-1.12,0) -- (-1.12,2.05);
+  \draw (1.12,0) -- (1.12,2.05);
+  \draw (0,2.05) ellipse (1.12 and 0.20);
+  % 水面与钠小球
+  \draw (0,0.92) ellipse (1.02 and 0.15);
+  \draw (0.18,1.02) circle[radius=0.075];
+  % 倒置漏斗
+  \draw (0,2.28) ellipse (1.30 and 0.22);
+  \draw (-1.28,2.35) .. controls (-1.10,2.72) and (-0.42,3.02) .. (-0.26,3.18);
+  \draw (1.28,2.35) .. controls (1.10,2.72) and (0.42,3.02) .. (0.26,3.18);
+  \draw (-0.26,3.18) -- (-0.20,4.95);
+  \draw (0.26,3.18) -- (0.20,4.95);
+  \draw (0,4.95) ellipse (0.22 and 0.07);
+  % 标注（引线，无箭头）
+  \draw (0.25,1.02) -- (1.85,1.22);
+  \node[anchor=west] at (1.88,1.22) {钠小球};
+  \draw (0.55,0.92) -- (1.85,0.55);
+  \node[anchor=west] at (1.88,0.55) {水};
+\end{tikzpicture}%
+}
 \caption{图 2·1 钠跟水起反应}
 \end{figure}
 
