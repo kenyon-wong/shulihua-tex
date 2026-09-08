@@ -1585,7 +1585,26 @@ B F = 10 - 6 = 4 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-15}]{assets/plane-geometry-2/fig-p0024-01.png}}
+\fitfig{%
+% fig-alt: 三角形ABC，A在上、B左下、C右下；D在AB上、E在AC上，实线DE接近平行于BC；过D另有一条略高且略上倾的虚线DE'，E'在AC上紧挨E的上方
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (3.08,2.92);
+  \coordinate (B) at (0.12,0.12);
+  \coordinate (C) at (4.72,0.12);
+  \coordinate (D) at (1.833,1.74);
+  \coordinate (E) at (3.770,1.74);
+  \coordinate (Ep) at (3.638,1.968);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.95pt] (D) -- (E);
+  \draw[dashed,line width=0.6pt] (D) -- (Ep);
+  \node[above=1pt] at (A) {$A$};
+  \node[below left=1pt] at (B) {$B$};
+  \node[below right=1pt] at (C) {$C$};
+  \node[left=2pt] at (D) {$D$};
+  \node[right=2pt] at (E) {$E$};
+  \node[above right=0pt] at (Ep) {$E'$};
+\end{tikzpicture}%
+}
 \caption{图1-15}
 \end{figure}
 
@@ -1654,7 +1673,23 @@ B F = 10 - 6 = 4 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·16}]{assets/plane-geometry-2/fig-p0025-01.png}}
+\fitfig{%
+% fig-alt: 三角形ABC，A在右上，B左下，C右下，左边较长；D在AB上、E在AC上，DE平行于底边BC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (3.58,2.68);
+  \coordinate (B) at (0.12,0.12);
+  \coordinate (C) at (4.62,0.12);
+  \coordinate (D) at (2.013,1.52);
+  \coordinate (E) at (4.051,1.52);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.9pt] (D) -- (E);
+  \node[above=1pt] at (A) {$A$};
+  \node[below left=1pt] at (B) {$B$};
+  \node[below right=1pt] at (C) {$C$};
+  \node[left=2pt] at (D) {$D$};
+  \node[right=2pt] at (E) {$E$};
+\end{tikzpicture}%
+}
 \caption{图1·16}
 \end{figure}
 
@@ -1694,7 +1729,23 @@ A C ^ {\prime} = 3 A C.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-17}]{assets/plane-geometry-2/fig-p0026-01.png}}
+\fitfig{%
+% fig-alt: 大三角形AB'C'，A在上偏左，B'左下，C'右下；B、C分别在AB'、AC'上且各约为三分之一处，BC平行于底边B'C'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.52,2.58);
+  \coordinate (Bp) at (0.12,0.12);
+  \coordinate (Cp) at (4.88,0.12);
+  \coordinate (B) at (1.053,1.76);
+  \coordinate (C) at (2.64,1.76);
+  \draw[line width=0.75pt] (A) -- (Bp) -- (Cp) -- cycle;
+  \draw[line width=0.9pt] (B) -- (C);
+  \node[above=1pt] at (A) {$A$};
+  \node[left=2pt] at (B) {$B$};
+  \node[above=1pt] at (C) {$C$};
+  \node[below left=1pt] at (Bp) {$B'$};
+  \node[below right=1pt] at (Cp) {$C'$};
+\end{tikzpicture}%
+}
 \caption{图1-17}
 \end{figure}
 
@@ -1732,7 +1783,35 @@ A， C， E 和 B， F， D 分别是 \(\angle O\) 两边上的点，并且
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1-18}]{assets/plane-geometry-2/fig-p0026-02.png}}
+\fitfig{%
+% fig-alt: 角O，下边水平向右、上边斜向右上，两端有箭头；上边上依次为A、C、E，下边上依次为B、F、D；连结AB、BC、AF、CD、EF、ED
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0.10,0.42);
+  \coordinate (B) at (1.72,0.42);
+  \coordinate (F) at (2.95,0.42);
+  \coordinate (D) at (4.55,0.42);
+  \coordinate (A) at (1.096,0.995);
+  \coordinate (C) at (1.789,1.395);
+  \coordinate (E) at (2.741,1.945);
+  \draw[line width=0.75pt] (O) -- (D);
+  \draw[->,line width=0.75pt] (D) -- (5.15,0.42);
+  \draw[line width=0.75pt] (O) -- (A) -- (C) -- (E);
+  \draw[->,line width=0.75pt] (E) -- (3.564,2.420);
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.7pt] (B) -- (C);
+  \draw[line width=0.7pt] (A) -- (F);
+  \draw[line width=0.7pt] (C) -- (D);
+  \draw[line width=0.7pt] (E) -- (F);
+  \draw[line width=0.7pt] (E) -- (D);
+  \node[left=1pt] at (O) {$O$};
+  \node[above left=0pt] at (A) {$A$};
+  \node[above left=0pt] at (C) {$C$};
+  \node[above=1pt] at (E) {$E$};
+  \node[below=1pt] at (B) {$B$};
+  \node[below=1pt] at (F) {$F$};
+  \node[below=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{图 1-18}
 \end{figure}
 
@@ -1782,7 +1861,38 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-19}]{assets/plane-geometry-2/fig-p0027-01.png}}
+\fitfig{%
+% fig-alt: 三条水平平行线l_{1}、l_{2}、l_{3}；左直线a上截得A_{1}、A_{2}、A_{3}，右直线b上截得B_{1}、B_{2}、B_{3}；过A_{1}作平行于b的虚线，分别交l_{2}、l_{3}于B'_{2}、B'_{3}并略伸出l_{3}
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Aiii) at (1.12,0.45);
+  \coordinate (Aii) at (1.56,1.50);
+  \coordinate (Ai) at (2.00,2.55);
+  \coordinate (Biii) at (4.82,0.45);
+  \coordinate (Bii) at (4.48,1.50);
+  \coordinate (Bi) at (4.14,2.55);
+  \coordinate (Bp2) at (2.34,1.50);
+  \coordinate (Bp3) at (2.68,0.45);
+  \draw[line width=0.8pt] (0.22,2.55) -- (5.28,2.55);
+  \draw[line width=0.8pt] (0.22,1.50) -- (5.28,1.50);
+  \draw[line width=0.8pt] (0.22,0.45) -- (5.28,0.45);
+  \draw[line width=0.75pt] (0.94,0.02) -- (Aiii) -- (Aii) -- (Ai) -- (2.26,3.18);
+  \draw[line width=0.75pt] (3.94,3.18) -- (Bi) -- (Bii) -- (Biii) -- (4.96,0.02);
+  \draw[dashed,line width=0.65pt] (Ai) -- (Bp2) -- (Bp3) -- (2.82,0.02);
+  \node[left=2pt] at (0.22,2.55) {$l_1$};
+  \node[left=2pt] at (0.22,1.50) {$l_2$};
+  \node[left=2pt] at (0.22,0.45) {$l_3$};
+  \node[above=1pt] at (2.26,3.18) {$a$};
+  \node[above=1pt] at (3.94,3.18) {$b$};
+  \node[above left=0pt] at (Ai) {$A_1$};
+  \node[left=2pt] at (Aii) {$A_2$};
+  \node[above left=0pt] at (Aiii) {$A_3$};
+  \node[above right=0pt] at (Bi) {$B_1$};
+  \node[right=2pt] at (Bii) {$B_2$};
+  \node[below right=0pt] at (Biii) {$B_3$};
+  \node[above right=0pt] at (Bp2) {$B_2'$};
+  \node[above right=0pt] at (Bp3) {$B_3'$};
+\end{tikzpicture}%
+}
 \caption{图1-19}
 \end{figure}
 
@@ -1851,7 +1961,44 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0028-02.png}}
+\fitfig{%
+% fig-alt: 上图为角A，底边AB上有D，斜边AC上有E，实线DE，过E作平行于AB的虚线交BC于F，A处有角标记；下图为角A两边延长后与DE相交，D在A左、E在A的延长线下方，C在A的另一边上方并连结CB，A处有角标记
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 上图
+  \coordinate (A) at (2.70,4.70);
+  \coordinate (B) at (5.20,4.70);
+  \coordinate (C) at (4.52,6.03);
+  \coordinate (D) at (4.15,4.70);
+  \coordinate (E) at (3.574,5.338);
+  \coordinate (F) at (4.874,5.338);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.8pt] (D) -- (E);
+  \draw[dashed,line width=0.6pt] (E) -- (F);
+  \draw[line width=0.55pt] (A) ++(6:0.28) arc (6:36:0.28);
+  \node[left=1pt] at (A) {$A$};
+  \node[right=1pt] at (B) {$B$};
+  \node[above=1pt] at (C) {$C$};
+  \node[below=1pt] at (D) {$D$};
+  \node[left=1pt] at (E) {$E$};
+  \node[right=1pt] at (F) {$F$};
+  % 下图
+  \coordinate (D2) at (0.20,1.70);
+  \coordinate (A2) at (1.75,1.70);
+  \coordinate (B2) at (5.15,1.70);
+  \coordinate (C2) at (3.415,2.960);
+  \coordinate (E2) at (0.418,0.692);
+  \draw[line width=0.75pt] (D2) -- (B2);
+  \draw[line width=0.75pt] (E2) -- (C2);
+  \draw[line width=0.75pt] (D2) -- (E2);
+  \draw[line width=0.75pt] (C2) -- (B2);
+  \draw[line width=0.55pt] (A2) ++(6:0.30) arc (6:37:0.30);
+  \node[left=1pt] at (D2) {$D$};
+  \node[above=1pt] at (A2) {$A$};
+  \node[right=1pt] at (B2) {$B$};
+  \node[above=1pt] at (C2) {$C$};
+  \node[below=1pt] at (E2) {$E$};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -1875,7 +2022,31 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0029-01.png}}
+\fitfig{%
+% fig-alt: 四边形ABCD，A左下、B右下、C右上、D左上；对角线AC与BD交于G，E在AB上，GE近乎竖直，F在BC上，GF连向F，再连EF
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.22,0.18);
+  \coordinate (B) at (3.55,0.18);
+  \coordinate (C) at (3.02,2.18);
+  \coordinate (D) at (0.48,2.72);
+  \coordinate (G) at (2.007,1.457);
+  \coordinate (E) at (1.876,0.18);
+  \coordinate (F) at (3.274,1.184);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (A) -- (C);
+  \draw[line width=0.7pt] (D) -- (B);
+  \draw[line width=0.7pt] (G) -- (E);
+  \draw[line width=0.7pt] (G) -- (F);
+  \draw[line width=0.7pt] (E) -- (F);
+  \node[below left=0pt] at (A) {$A$};
+  \node[below right=0pt] at (B) {$B$};
+  \node[above right=0pt] at (C) {$C$};
+  \node[above=1pt] at (D) {$D$};
+  \node[below=1pt] at (E) {$E$};
+  \node[right=2pt] at (F) {$F$};
+  \node[right=2pt] at (G) {$G$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -1885,7 +2056,28 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0029-02.png}}
+\fitfig{%
+% fig-alt: 三条水平平行线被两条直线所截，左截线近乎竖直，上中下标A、B、C；右截线向右下倾斜，上中下标A'、B'、C'，各线略伸出交点
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.55,2.48);
+  \coordinate (B) at (1.50,1.42);
+  \coordinate (C) at (1.45,0.36);
+  \coordinate (Ap) at (3.95,2.48);
+  \coordinate (Bp) at (4.315,1.42);
+  \coordinate (Cp) at (4.68,0.36);
+  \draw[line width=0.8pt] (0.45,2.48) -- (5.15,2.48);
+  \draw[line width=0.8pt] (0.45,1.42) -- (5.15,1.42);
+  \draw[line width=0.8pt] (0.45,0.36) -- (5.15,0.36);
+  \draw[line width=0.75pt] (1.42,0.02) -- (C) -- (A) -- (1.58,2.95);
+  \draw[line width=0.75pt] (3.68,3.02) -- (Ap) -- (Cp) -- (4.95,0.02);
+  \node[left=2pt] at (A) {$A$};
+  \node[left=2pt] at (B) {$B$};
+  \node[left=2pt] at (C) {$C$};
+  \node[right=2pt] at (Ap) {$A'$};
+  \node[right=2pt] at (Bp) {$B'$};
+  \node[right=2pt] at (Cp) {$C'$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
