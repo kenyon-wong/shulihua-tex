@@ -2683,7 +2683,27 @@ x > 5, \tag {4}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-8}]{assets/algebra-3/fig-p0043-02.png}}
+% fig-alt: 数轴标1、3、5，三处均为空心点；自1、自3向上再向右的两条射线带右箭头，3与5间为无箭头括号短线，其间数轴加粗，右端标x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.2,0) -- (3.35,0);
+  \draw[line width=1.7pt] (3.35,0) -- (5.15,0);
+  \draw[line width=0.7pt] (5.15,0) -- (6.15,0);
+  \draw[line width=0.7pt,->] (5.55,0) -- (7.05,0);
+  \node[right=1pt] at (7.05,0) {$x$};
+  \draw[line width=0.8pt] (1.55,0.10) -- (1.55,1.05) -- (6.15,1.05);
+  \draw[line width=0.8pt,->] (5.55,1.05) -- (6.75,1.05);
+  \draw[line width=0.8pt] (3.35,0.10) -- (3.35,0.70) -- (6.15,0.70);
+  \draw[line width=0.8pt,->] (5.55,0.70) -- (6.75,0.70);
+  \draw[line width=0.8pt] (3.35,0.38) -- (5.15,0.38) -- (5.15,0.10);
+  \draw[fill=white,line width=0.7pt] (1.55,0) circle[radius=1.9pt];
+  \draw[fill=white,line width=0.7pt] (3.35,0) circle[radius=1.9pt];
+  \draw[fill=white,line width=0.7pt] (5.15,0) circle[radius=1.9pt];
+  \node[below=2pt] at (1.55,0) {$1$};
+  \node[below=2pt] at (3.35,0) {$3$};
+  \node[below=2pt] at (5.15,0) {$5$};
+\end{tikzpicture}%
+}
 \caption{图2-8}
 \end{figure}
 
@@ -2699,7 +2719,24 @@ x > 5, \tag {4}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-9}]{assets/algebra-3/fig-p0044-01.png}}
+% fig-alt: 数轴标1、3、5，1与5为空心点、3为实心点；自3向上再向左、自1向上再向左的两条射线带左箭头，自5向上再向右的射线带右箭头，右端标x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,0) -- (6.15,0);
+  \draw[line width=0.7pt,->] (5.55,0) -- (6.85,0);
+  \node[right=1pt] at (6.85,0) {$x$};
+  \draw[line width=0.8pt,<-] (0.25,1.02) -- (3.45,1.02) -- (3.45,0.10);
+  \draw[line width=0.8pt,<-] (0.25,0.58) -- (1.55,0.58) -- (1.55,0.10);
+  \draw[line width=0.8pt] (5.15,0.10) -- (5.15,0.48) -- (6.05,0.48);
+  \draw[line width=0.8pt,->] (5.45,0.48) -- (6.55,0.48);
+  \draw[fill=white,line width=0.7pt] (1.55,0) circle[radius=1.9pt];
+  \fill (3.45,0) circle[radius=2.05pt];
+  \draw[fill=white,line width=0.7pt] (5.15,0) circle[radius=1.9pt];
+  \node[below=2pt] at (1.55,0) {$1$};
+  \node[below=2pt] at (3.45,0) {$3$};
+  \node[below=2pt] at (5.15,0) {$5$};
+\end{tikzpicture}%
+}
 \caption{图2-9}
 \end{figure}
 
@@ -2848,7 +2885,29 @@ a < x < b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.10}]{assets/algebra-3/fig-p0047-01.png}}
+% fig-alt: 左为开区间数轴，a、b处空心点，右端标x；右为闭区间数轴，a、b处实心点，其间加粗，右端标x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,0) -- (4.55,0);
+  \draw[line width=0.7pt,->] (4.05,0) -- (5.15,0);
+  \node[right=1pt] at (5.15,0) {$x$};
+  \draw[fill=white,line width=0.7pt] (1.45,0) circle[radius=1.9pt];
+  \draw[fill=white,line width=0.7pt] (3.45,0) circle[radius=1.9pt];
+  \node[below=2pt] at (1.45,0) {$a$};
+  \node[below=2pt] at (3.45,0) {$b$};
+  \begin{scope}[xshift=6.35cm]
+    \draw[line width=0.7pt] (0.15,0) -- (1.45,0);
+    \draw[line width=1.7pt] (1.45,0) -- (3.45,0);
+    \draw[line width=0.7pt] (3.45,0) -- (4.55,0);
+    \draw[line width=0.7pt,->] (4.05,0) -- (5.15,0);
+    \node[right=1pt] at (5.15,0) {$x$};
+    \fill (1.45,0) circle[radius=2.05pt];
+    \fill (3.45,0) circle[radius=2.05pt];
+    \node[below=2pt] at (1.45,0) {$a$};
+    \node[below=2pt] at (3.45,0) {$b$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图2.10}
 \end{figure}
 
@@ -2873,7 +2932,20 @@ a < x \leqslant b \quad \text{或者} \quad a \leqslant x < b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.12}]{assets/algebra-3/fig-p0047-02.png}}
+% fig-alt: 数轴标a、b，a处空心点、b处实心点，a与b间数轴加粗，右端标x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,0) -- (1.55,0);
+  \draw[line width=1.7pt] (1.55,0) -- (3.75,0);
+  \draw[line width=0.7pt] (3.75,0) -- (4.85,0);
+  \draw[line width=0.7pt,->] (4.25,0) -- (5.45,0);
+  \node[right=1pt] at (5.45,0) {$x$};
+  \draw[fill=white,line width=0.7pt] (1.55,0) circle[radius=1.9pt];
+  \fill (3.75,0) circle[radius=2.05pt];
+  \node[below=2pt] at (1.55,0) {$a$};
+  \node[below=2pt] at (3.75,0) {$b$};
+\end{tikzpicture}%
+}
 \caption{图2.12}
 \end{figure}
 
@@ -2885,7 +2957,20 @@ a < x \leqslant b \quad \text{或者} \quad a \leqslant x < b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={数轴上的左闭右开区间（含 a，不含 b）}]{assets/algebra-3/fig-p0047-03.png}}
+% fig-alt: 数轴标a、b，a处实心点、b处空心点，a与b间数轴加粗，右端标x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,0) -- (1.55,0);
+  \draw[line width=1.7pt] (1.55,0) -- (3.75,0);
+  \draw[line width=0.7pt] (3.75,0) -- (4.85,0);
+  \draw[line width=0.7pt,->] (4.25,0) -- (5.45,0);
+  \node[right=1pt] at (5.45,0) {$x$};
+  \fill (1.55,0) circle[radius=2.05pt];
+  \draw[fill=white,line width=0.7pt] (3.75,0) circle[radius=1.9pt];
+  \node[below=2pt] at (1.55,0) {$a$};
+  \node[below=2pt] at (3.75,0) {$b$};
+\end{tikzpicture}%
+}
 \caption{数轴上的左闭右开区间（含 a，不含 b）}
 \end{figure}
 
@@ -2905,7 +2990,15 @@ a < x \leqslant b \quad \text{或者} \quad a \leqslant x < b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={表示全体实数的数轴}]{assets/algebra-3/fig-p0047-04.png}}
+% fig-alt: 数轴右端标x，中央短刻度标0，无线端圆点，右端有箭头
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=1.1pt] (0.15,0) -- (4.35,0);
+  \draw[line width=1.1pt,->] (3.85,0) -- (5.25,0);
+  \node[right=1pt] at (5.25,0) {$x$};
+  \draw[line width=0.7pt] (2.15,0.08) -- (2.15,-0.08) node[below=2pt] {$0$};
+\end{tikzpicture}%
+}
 \caption{表示全体实数的数轴}
 \end{figure}
 
