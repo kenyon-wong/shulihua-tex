@@ -1994,7 +1994,29 @@ x _ {2} = A _ {2} \cos (\omega t + \varphi_ {2})
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.16 在一直线上的频率相同的简谐振动的合成}]{assets/physics-2/fig-p0035-01.png}}
+\fitfig{%
+% fig-alt: 图1.16 同一直线上频率相同的简谐振动的合成：两个参考圆，分振动与较粗的合振动图线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\cx{1.12}
+  \def\Ro{1.02}
+  \def\Ri{0.56}
+  \draw[line width=0.65pt] (\cx,0) circle[radius=\Ro];
+  \draw[line width=0.65pt] (\cx,0) circle[radius=\Ri];
+  \draw[line width=0.5pt] ({\cx-\Ro-0.06},0) -- ({\cx+\Ro},0);
+  \draw[line width=0.5pt] (\cx,{-\Ro}) -- (\cx,{\Ro});
+  \draw[->,line width=0.7pt] (\cx,0) -- ({\cx+\Ro*cos(128)},{\Ro*sin(128)});
+  \draw[->,line width=0.7pt] (\cx,0) -- ({\cx+\Ri*cos(58)},{\Ri*sin(58)});
+  \def\ox{2.78}
+  \def\gw{0.60}
+  \foreach \k in {0,...,10} {
+    \draw[line width=0.42pt] ({\ox+\k*\gw},-1.18) -- ({\ox+\k*\gw},1.26);
+  }
+  \draw[line width=0.6pt] ({\ox-0.08},0) -- ({\ox+10*\gw+0.16},0);
+  \draw[line width=0.52pt] plot[domain=0:10,samples=85,smooth] ({\ox+\x*\gw},{0.90*cos(36*\x+38)});
+  \draw[line width=0.48pt] plot[domain=0:10,samples=85,smooth] ({\ox+\x*\gw},{0.48*cos(36*\x-32)});
+  \draw[line width=0.95pt] plot[domain=0:10,samples=101,smooth] ({\ox+\x*\gw},{0.90*cos(36*\x+38)+0.48*cos(36*\x-32)});
+\end{tikzpicture}%
+}
 \caption{图1.16 在一直线上的频率相同的简谐振动的合成}
 \end{figure}
 
@@ -2080,7 +2102,33 @@ A ^ {2} = A _ {1} ^ {2} + A _ {2} ^ {2} + 2 A _ {1} A _ {2} \cos (\varphi_ {2} -
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0036-01.png}}
+\fitfig{%
+% fig-alt: 图1.17 旋转矢量表示简谐振动：参考圆上的矢量 OM_1 与对应的振动图线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\cx{1.28}
+  \def\R{1.12}
+  \draw[line width=0.7pt] (\cx,0) circle[radius=\R];
+  \draw[line width=0.5pt] ({\cx-\R},0) -- ({\cx+\R},0);
+  \draw[line width=0.5pt] (\cx,0) -- (\cx,{-\R});
+  \draw[->,line width=0.75pt] (\cx,0) -- ({\cx+\R*cos(145)},{\R*sin(145)});
+  \draw[line width=0.45pt] ({\cx+0.02},0.34) arc[start angle=90,end angle=145,radius=0.34];
+  \node[left=2pt] at ({\cx+\R*cos(145)},{\R*sin(145)+0.02}) {$M_1$};
+  \node[above=3pt] at ({\cx-0.28},0.58) {$\varphi_1$};
+  \node at ({\cx+0.38},0.36) {$A_1$};
+  \node[below right=2pt] at (\cx,-0.04) {$O$};
+  \def\ox{3.55}
+  \def\gw{0.72}
+  \draw[->,line width=0.7pt] (\ox,-1.28) -- (\ox,1.52);
+  \node[above] at (\ox,1.50) {$s$};
+  \draw[->,line width=0.7pt] ({\ox-0.18},0) -- ({\ox+7*\gw+0.55},0);
+  \node[right] at ({\ox+7*\gw+0.55},0.02) {$t$};
+  \node[below left=1pt] at (\ox,0) {$O'$};
+  \foreach \k in {0,...,7} {
+    \draw[line width=0.42pt] ({\ox+0.42+\k*\gw},-1.15) -- ({\ox+0.42+\k*\gw},1.28);
+  }
+  \draw[line width=0.75pt] plot[domain=0:6.15,samples=80,smooth] ({\ox+0.48+\x*\gw},{-0.98*sin(42*\x+8)});
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -2115,7 +2163,36 @@ x_2=A_2\cos(\omega t+\varphi_2)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1.18 表示简谐振动 x\_\{2\}=}]{assets/physics-2/fig-p0036-02.png}}
+\fitfig{%
+% fig-alt: 图1.18 旋转矢量表示简谐振动 x_2：参考圆八等分，矢量 OM_2 在左下方，对应振动图线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\cx{1.38}
+  \def\R{1.18}
+  \draw[line width=0.7pt] (\cx,0) circle[radius=\R];
+  \foreach \a in {0,45,90,135} {
+    \draw[line width=0.48pt] ({\cx+\R*cos(\a)},{\R*sin(\a)}) -- ({\cx+\R*cos(\a+180)},{\R*sin(\a+180)});
+  }
+  \draw[->,line width=0.8pt] (\cx,0) -- ({\cx+\R*cos(228)},{\R*sin(228)});
+  \draw[line width=0.45pt] ({\cx-0.02},{-0.08}) arc[start angle=250,end angle=200,radius=0.38];
+  \node[left=3pt] at ({\cx+\R*cos(228)-0.04},{\R*sin(228)-0.10}) {$M_2$};
+  \node[left=2pt] at ({\cx-\R-0.02},-0.28) {$\varphi_2$};
+  \node at ({\cx+0.32},-0.48) {$A_2$};
+  \node[above right=1pt] at ({\cx+0.08},0.08) {$O$};
+  \node[below=8pt] at (\cx,-1.48) {$(a)$};
+  \def\ox{3.85}
+  \def\gw{0.68}
+  \draw[->,line width=0.7pt] (\ox,-1.42) -- (\ox,1.55);
+  \node[above] at (\ox,1.52) {$s$};
+  \draw[->,line width=0.7pt] ({\ox-0.16},0) -- ({\ox+7*\gw+0.52},0);
+  \node[right] at ({\ox+7*\gw+0.52},0.02) {$t$};
+  \node[below left=1pt] at (\ox,0) {$O'$};
+  \foreach \k in {0,...,7} {
+    \draw[line width=0.42pt] ({\ox+0.38+\k*\gw},-1.28) -- ({\ox+0.38+\k*\gw},1.32);
+  }
+  \draw[line width=0.75pt] plot[domain=0:6.25,samples=90,smooth] ({\ox+0.42+\x*\gw},{1.05*cos(52*\x+168)});
+  \node[below=8pt] at ({\ox+3.4*\gw},-1.48) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{图 1.18 表示简谐振动 \(x_{2}=\)}
 \end{figure}
 
@@ -2143,7 +2220,39 @@ x_2=A_2\cos(\omega t+\varphi_2)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.20}]{assets/physics-2/fig-p0037-02.png}}
+\fitfig{%
+% fig-alt: 图1.20 旋转矢量平行四边形：合矢量 OM 与分矢量 OM_1、OM_2，投影于铅直线得 N、N_1、N_2
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \coordinate (O) at (0,0);
+  \coordinate (M1) at (-0.96,1.16);
+  \coordinate (M2) at (-1.48,-1.28);
+  \coordinate (M) at (-2.44,-0.12);
+  \coordinate (N1) at (0,1.16);
+  \coordinate (N) at (0,-0.12);
+  \coordinate (N2) at (0,-1.28);
+  \draw[line width=0.75pt] (0,-1.72) -- (0,1.62);
+  \draw[dashed,line width=0.5pt] (M1) -- (M);
+  \draw[dashed,line width=0.5pt] (M2) -- (M);
+  \draw[dashed,line width=0.48pt] (M1) -- (N1);
+  \draw[dashed,line width=0.48pt] (M) -- (N);
+  \draw[dashed,line width=0.48pt] (M2) -- (N2);
+  \draw[->,line width=0.8pt] (O) -- (M1);
+  \draw[->,line width=0.8pt] (O) -- (M2);
+  \draw[->,line width=0.85pt] (O) -- (M);
+  \draw[line width=0.45pt] (-0.12,0.50) arc[start angle=90,end angle=126,radius=0.52];
+  \draw[line width=0.45pt] (-0.55,-0.22) arc[start angle=205,end angle=224,radius=0.28];
+  \node[above=3pt] at (M1) {$M_1$};
+  \node[below left=2pt] at (M2) {$M_2$};
+  \node[left=4pt] at (M) {$M$};
+  \node[right=4pt] at (N1) {$N_1$};
+  \node[right=8pt] at (0.06,-0.46) {$N$};
+  \node[right=4pt] at (N2) {$N_2$};
+  \node[right=4pt] at (0.12,0.22) {$O$};
+  \node[left=2pt] at (-0.78,0.46) {$\varphi_1$};
+  \node[left=1pt] at (-1.22,-0.62) {$\varphi_2$};
+  \node[above=3pt] at (-1.25,0.18) {$\varphi$};
+\end{tikzpicture}%
+}
 \caption{图1.20}
 \end{figure}
 
@@ -2181,7 +2290,38 @@ A = \sqrt {A _ {1} ^ {2} + A _ {2} ^ {2} + 2 A _ {1} A _ {2}} = A _ {1} + A _ {2
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.21 两个同相分振动的合成}]{assets/physics-2/fig-p0038-01.png}}
+\fitfig{%
+% fig-alt: 图1.21 两个同相分振动的合成：虚线为 y_1、y_2，实线为合振动 y，振幅 A=A_1+A_2
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\Aone{1.05}
+  \def\Atwo{0.62}
+  \def\A{1.67}
+  \def\u{1.85}
+  \draw[->,line width=0.7pt] (0,-1.92) -- (0,1.95);
+  \node[above left=0pt] at (0,1.90) {$y$};
+  \draw[->,line width=0.7pt] (-0.18,0) -- ({3.78*\u+1.35},0);
+  \node[below right=1pt] at ({3.78*\u+1.05},0) {$\omega t$};
+  \node[below left=2pt] at (0,0) {$O$};
+  \draw[dashed,line width=0.55pt] plot[domain=0:3.72,samples=140,smooth] ({\x*\u},{\Aone*cos(180*\x)});
+  \draw[dashed,line width=0.5pt] plot[domain=0:3.72,samples=140,smooth] ({\x*\u},{\Atwo*cos(180*\x)});
+  \draw[line width=0.9pt] plot[domain=0:3.72,samples=150,smooth] ({\x*\u},{\A*cos(180*\x)});
+  \draw[line width=0.45pt] (0.62,0) -- (0.62,\Atwo);
+  \draw[line width=0.45pt] (0.48,\Atwo) -- (0.80,\Atwo);
+  \node[above=1pt] at (0.64,\Atwo) {$A_2$};
+  \draw[line width=0.45pt] (1.35,0) -- (1.35,\Aone);
+  \draw[line width=0.45pt] (1.18,\Aone) -- (1.58,\Aone);
+  \node[right=3pt] at (1.62,0.55) {$A_1$};
+  \draw[line width=0.45pt] ({2*\u},{\A}) -- ({2.28*\u},{\A});
+  \draw[line width=0.45pt] ({2.28*\u},0.10) -- ({2.28*\u},{\A});
+  \node[above=1pt] at ({2.14*\u},{\A}) {$A$};
+  \node[below=10pt] at ({\u},-0.06) {$\pi$};
+  \node[below=10pt] at ({2*\u},-0.06) {$2\pi$};
+  \node[below=10pt] at ({3*\u},-0.06) {$3\pi$};
+  \node[anchor=west] at ({3.92*\u},{\A*cos(180*3.72)+0.28}) {$y$};
+  \node[anchor=west] at ({3.92*\u},{\Aone*cos(180*3.72)-0.04}) {$y_1$};
+  \node[anchor=west] at ({3.92*\u},{\Atwo*cos(180*3.72)-0.28}) {$y_2$};
+\end{tikzpicture}%
+}
 \caption{图1.21 两个同相分振动的合成}
 \end{figure}
 
@@ -2208,7 +2348,38 @@ A = \sqrt {A _ {1} ^ {2} + A _ {2} ^ {2} - 2 A _ {1} A _ {2}} = \left| A _ {1} -
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.22 两个反相的分振动的合成}]{assets/physics-2/fig-p0039-01.png}}
+\fitfig{%
+% fig-alt: 图1.22 两个反相分振动的合成：虚线 y_1 与 y_2 位相相反，实线合振幅 A=|A_1-A_2|
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\Aone{1.15}
+  \def\Atwo{0.72}
+  \def\A{0.43}
+  \def\u{1.78}
+  \draw[->,line width=0.7pt] (0,-1.48) -- (0,1.55);
+  \node[above left=0pt] at (0,1.48) {$y$};
+  \draw[->,line width=0.7pt] (-0.16,0) -- ({3.72*\u+1.35},0);
+  \node[below right=1pt] at ({3.72*\u+1.05},0) {$\omega t$};
+  \node[below left=2pt] at (0,0) {$O$};
+  \draw[dashed,line width=0.55pt] plot[domain=0:3.68,samples=140,smooth] ({\x*\u},{\Aone*cos(180*\x)});
+  \draw[dashed,line width=0.5pt] plot[domain=0:3.68,samples=140,smooth] ({\x*\u},{-\Atwo*cos(180*\x)});
+  \draw[line width=0.9pt] plot[domain=0:3.68,samples=150,smooth] ({\x*\u},{\A*cos(180*\x)});
+  \draw[line width=0.45pt] (0.32,0) -- (0.32,\Aone);
+  \draw[line width=0.45pt] (0.18,\Aone) -- (0.48,\Aone);
+  \node[right=2pt] at (0.50,0.70) {$A_1$};
+  \draw[line width=0.45pt] ({1.35*\u},0) -- ({1.35*\u},\Atwo);
+  \draw[line width=0.45pt] ({1.35*\u-0.12},\Atwo) -- ({1.35*\u+0.18},\Atwo);
+  \node[above=1pt] at ({1.35*\u},{\Atwo}) {$A_2$};
+  \draw[dashed,line width=0.4pt] ({2*\u},{\A}) -- ({2.62*\u},{\A});
+  \draw[line width=0.45pt] ({2.62*\u},0.08) -- ({2.62*\u},{\A});
+  \node[right=2pt] at ({2.62*\u},{0.28}) {$A$};
+  \node[below=10pt] at ({\u},-0.06) {$\pi$};
+  \node[below=10pt] at ({2*\u},-0.06) {$2\pi$};
+  \node[below=10pt] at ({3*\u},-0.06) {$3\pi$};
+  \node[anchor=west] at ({3.86*\u},{\Aone*cos(180*3.68)+0.12}) {$y_1$};
+  \node[anchor=west] at ({3.86*\u},{\A*cos(180*3.68)}) {$y$};
+  \node[anchor=west] at ({3.86*\u},{-\Atwo*cos(180*3.68)-0.18}) {$y_2$};
+\end{tikzpicture}%
+}
 \caption{图1.22 两个反相的分振动的合成}
 \end{figure}
 
