@@ -8179,7 +8179,35 @@ M = \frac {b (\text{光学仪器中物体的虚象所张的视角})}{a (\text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.1}]{assets/physics-4/fig-p0148-01.png}}
+% fig-alt: 图6.1杨氏双孔：太阳光平行入射孔屏单孔，再到双孔屏两孔，象屏中央一小段竖条示意干涉；三屏均为略有透视的方板
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node[anchor=south] at (0.48,2.08) {太阳光};
+  \foreach \k in {0,1,2,3,4,5,6} {\draw[line width=0.4pt] (0.05,{0.42+0.18*\k}) -- (1.18,{0.42+0.18*\k});}
+  \draw[line width=0.55pt] (1.08,0.18) -- (1.28,0.12) -- (1.28,1.78) -- (1.08,1.88) -- cycle;
+  \draw[line width=0.55pt] (1.28,0.12) -- (2.28,0.22) -- (2.28,1.68) -- (1.28,1.78) -- cycle;
+  \fill (1.72,0.95) circle (0.035);
+  \node[anchor=south] at (1.85,2.08) {孔屏};
+  \draw[line width=0.4pt] (1.72,0.95) -- (4.05,1.08);
+  \draw[line width=0.4pt] (1.72,0.95) -- (4.15,1.00);
+  \draw[line width=0.4pt] (1.72,0.95) -- (4.22,0.92);
+  \draw[line width=0.4pt] (1.72,0.95) -- (4.12,0.84);
+  \draw[line width=0.4pt] (1.72,0.95) -- (3.98,1.16);
+  \draw[line width=0.55pt] (4.02,0.22) -- (4.20,0.16) -- (4.20,1.72) -- (4.02,1.82) -- cycle;
+  \draw[line width=0.55pt] (4.20,0.16) -- (5.18,0.26) -- (5.18,1.62) -- (4.20,1.72) -- cycle;
+  \fill (4.58,1.02) circle (0.03);
+  \fill (4.78,0.96) circle (0.03);
+  \node[anchor=south] at (4.68,2.08) {双孔屏};
+  \draw[line width=0.4pt] (4.68,0.99) -- (7.15,1.02);
+  \draw[line width=0.4pt] (4.68,0.99) -- (7.22,0.96);
+  \draw[line width=0.4pt] (4.68,0.99) -- (7.28,0.90);
+  \draw[line width=0.4pt] (4.68,0.99) -- (7.12,1.08);
+  \draw[line width=0.55pt] (7.08,0.28) -- (7.24,0.22) -- (7.24,1.68) -- (7.08,1.76) -- cycle;
+  \draw[line width=0.55pt] (7.24,0.22) -- (8.22,0.32) -- (8.22,1.58) -- (7.24,1.68) -- cycle;
+  \foreach \k in {0,1,2,3,4,5,6,7} {\draw[line width=0.7pt] ({7.48+0.07*\k},0.78) -- ({7.48+0.07*\k},1.12);}
+  \node[anchor=south] at (7.85,2.08) {象屏};
+\end{tikzpicture}%
+}
 \caption{图6.1}
 \end{figure}
 
@@ -8349,7 +8377,29 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.3}]{assets/physics-4/fig-p0151-01.png}}
+% fig-alt: 图6.3平晶检面：左侧八条向下箭头；斜线标准板（平晶）叠在被检验的样品上，右端略张口示楔形空气膜；右侧圆视场约五条顶点向右的人字条纹
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \k in {0,1,2,3,4,5,6,7} {\draw[line width=0.45pt,->] ({0.22+0.38*\k},1.95) -- ({0.22+0.38*\k},1.18);}
+  \begin{scope}
+    \clip (0.15,0.72) rectangle (2.95,1.12);
+    \foreach \k in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14} {\draw[line width=0.25pt] ({-0.15+0.22*\k},0.55) -- ({0.35+0.22*\k},1.28);}
+  \end{scope}
+  \fill[white] (0.22,0.78) rectangle (2.88,1.06);
+  \draw[line width=0.55pt] (0.15,0.72) rectangle (2.95,1.12);
+  \node[anchor=center] at (1.55,0.92) {\small 标准板（平晶）};
+  \draw[line width=0.55pt] (-0.18,0.08) rectangle (3.22,0.68);
+  \node[anchor=center] at (1.52,0.38) {被检验的样品};
+  \draw[line width=0.4pt] (2.95,0.72) -- (3.12,0.64);
+  \draw[line width=0.55pt] (5.55,0.95) circle (1.38);
+  \begin{scope}
+    \clip (5.55,0.95) circle (1.36);
+    \foreach \k in {0,1,2,3,4} {
+      \draw[line width=1.05pt] ({4.48},{1.86-0.40*\k}) .. controls ({5.25},{1.80-0.40*\k}) and ({5.72},{1.70-0.40*\k}) .. ({6.08},{1.62-0.40*\k}) .. controls ({5.72},{1.54-0.40*\k}) and ({5.25},{1.44-0.40*\k}) .. ({4.48},{1.46-0.40*\k});
+    }
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图6.3}
 \end{figure}
 
@@ -8366,7 +8416,36 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0152-01.png}}
+% fig-alt: 图6.4（a）：点光源S，点光源竖写；带箭头光线射向小孔，上下被挡住，过孔后落到第二道厚屏，右缘另有一道被裁切的细屏
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.5pt] (0.22,0.22) circle (0.13);
+  \node[anchor=center] at (0.22,0.22) {$S$};
+  \foreach \a in {25,70,115,160,205,250,295,340} {\draw[line width=0.28pt] ({0.22+0.16*cos(\a)},{0.22+0.16*sin(\a)}) -- ({0.22+0.30*cos(\a)},{0.22+0.30*sin(\a)});}
+  \node[anchor=east] at (-0.16,0.48) {点};
+  \node[anchor=east] at (-0.16,0.20) {光};
+  \node[anchor=east] at (-0.16,-0.08) {源};
+  \draw[line width=2.4pt] (3.35,0.38) -- (3.35,1.55);
+  \draw[line width=2.4pt] (3.35,-1.15) -- (3.35,-0.18);
+  \draw[line width=2.4pt] (4.55,-1.55) -- (4.55,1.55);
+  \draw[line width=0.7pt] (5.15,-1.48) -- (5.15,1.48);
+  \draw[line width=0.45pt,->] (0.42,1.05) -- (1.85,1.22);
+  \draw[line width=0.45pt] (1.85,1.22) -- (3.28,1.38);
+  \draw[line width=0.45pt,->] (0.42,0.72) -- (1.75,0.82);
+  \draw[line width=0.45pt] (1.75,0.82) -- (3.28,0.92);
+  \draw[line width=0.45pt,->] (0.42,0.42) -- (1.70,0.38);
+  \draw[line width=0.45pt] (1.70,0.38) -- (3.32,0.28) -- (4.48,0.42);
+  \draw[line width=0.45pt,->] (0.42,0.22) -- (1.85,0.22);
+  \draw[line width=0.45pt] (1.85,0.22) -- (4.48,0.18);
+  \draw[line width=0.45pt,->] (0.42,0.02) -- (1.70,0.02);
+  \draw[line width=0.45pt] (1.70,0.02) -- (3.32,0.05) -- (4.48,-0.08);
+  \draw[line width=0.45pt,->] (0.42,-0.32) -- (1.75,-0.42);
+  \draw[line width=0.45pt] (1.75,-0.42) -- (3.28,-0.62);
+  \draw[line width=0.45pt,->] (0.42,-0.62) -- (1.85,-0.78);
+  \draw[line width=0.45pt] (1.85,-0.78) -- (3.28,-1.02);
+  \node[anchor=west] at (3.52,-0.42) {小孔};
+\end{tikzpicture}%
+}
 \caption{（a）}
 \end{figure}
 
@@ -8393,7 +8472,35 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0153-01.png}}
+% fig-alt: 图6.5（a）：线光源S，线光源竖写；带箭头光线射向狭缝，过缝后落到右侧厚屏；无第三道屏
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.5pt] (0.22,0.18) circle (0.13);
+  \node[anchor=center] at (0.22,0.18) {$S$};
+  \foreach \a in {25,70,115,160,205,250,295,340} {\draw[line width=0.28pt] ({0.22+0.16*cos(\a)},{0.18+0.16*sin(\a)}) -- ({0.22+0.30*cos(\a)},{0.18+0.30*sin(\a)});}
+  \node[anchor=east] at (-0.16,0.44) {线};
+  \node[anchor=east] at (-0.16,0.16) {光};
+  \node[anchor=east] at (-0.16,-0.12) {源};
+  \draw[line width=2.4pt] (3.15,0.42) -- (3.15,1.48);
+  \draw[line width=2.4pt] (3.15,-1.12) -- (3.15,-0.22);
+  \draw[line width=2.4pt] (4.35,-1.42) -- (4.35,1.48);
+  \draw[line width=0.45pt,->] (0.42,0.95) -- (1.75,1.08);
+  \draw[line width=0.45pt] (1.75,1.08) -- (3.08,1.22);
+  \draw[line width=0.45pt,->] (0.42,0.62) -- (1.70,0.68);
+  \draw[line width=0.45pt] (1.70,0.68) -- (3.08,0.78);
+  \draw[line width=0.45pt,->] (0.42,0.38) -- (1.65,0.34);
+  \draw[line width=0.45pt] (1.65,0.34) -- (3.12,0.22) -- (4.28,0.38);
+  \draw[line width=0.45pt,->] (0.42,0.18) -- (1.80,0.18);
+  \draw[line width=0.45pt] (1.80,0.18) -- (4.28,0.12);
+  \draw[line width=0.45pt,->] (0.42,-0.02) -- (1.65,0.00);
+  \draw[line width=0.45pt] (1.65,0.00) -- (3.12,0.02) -- (4.28,-0.12);
+  \draw[line width=0.45pt,->] (0.42,-0.28) -- (1.70,-0.38);
+  \draw[line width=0.45pt] (1.70,-0.38) -- (3.08,-0.55);
+  \draw[line width=0.45pt,->] (0.42,-0.55) -- (1.75,-0.68);
+  \draw[line width=0.45pt] (1.75,-0.68) -- (3.08,-0.88);
+  \node[anchor=west] at (3.32,-0.48) {狭缝};
+\end{tikzpicture}%
+}
 \caption{（a）}
 \end{figure}
 
@@ -8463,19 +8570,128 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（i）}]{assets/physics-4/fig-p0157-01.png}}
+% fig-alt: 图6.8第一幅，源文件题为（i）：灯、斜线纺锤示自然光；两偏振片斜线方向相同；片间与片后均为竖向正弦，实线到眼
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.5pt] (0.28,0.10) circle (0.15);
+  \draw[line width=0.32pt] (0.20,0.16) -- (0.36,0.04);
+  \draw[line width=0.32pt] (0.20,0.04) -- (0.36,0.16);
+  \draw[line width=0.45pt] (0.14,-0.06) -- (0.42,-0.06) -- (0.38,-0.20) -- (0.18,-0.20) -- cycle;
+  \draw[line width=0.4pt] (0.18,-0.20) -- (0.16,-0.28) -- (0.40,-0.28) -- (0.38,-0.20);
+  \draw[line width=0.4pt] (0.48,0) -- (1.05,0);
+  \begin{scope}
+    \clip (1.08,0) -- (1.48,0.30) -- (1.88,0) -- (1.48,-0.30) -- cycle;
+    \foreach \k in {0,1,2,3,4,5,6} {\draw[line width=0.25pt] ({0.95+0.14*\k},-0.4) -- ({1.15+0.14*\k},0.4);}
+  \end{scope}
+  \draw[line width=0.45pt] (1.08,0) -- (1.48,0.30) -- (1.88,0) -- (1.48,-0.30) -- cycle;
+  \draw[line width=0.4pt] (1.88,0) -- (2.05,0);
+  \begin{scope}
+    \clip (2.08,0) -- (2.48,0.32) -- (2.88,0) -- (2.48,-0.32) -- cycle;
+    \foreach \k in {0,1,2,3,4,5,6} {\draw[line width=0.25pt] ({1.95+0.14*\k},-0.45) -- ({2.15+0.14*\k},0.45);}
+  \end{scope}
+  \draw[line width=0.45pt] (2.08,0) -- (2.48,0.32) -- (2.88,0) -- (2.48,-0.32) -- cycle;
+  \draw[line width=0.4pt] (2.88,0) -- (3.02,0);
+  \begin{scope}
+    \clip (3.22,0) ellipse (0.16 and 0.52);
+    \foreach \k in {-5,-4,-3,-2,-1,0,1,2,3,4,5} {\draw[line width=0.25pt] ({3.05+0.09*\k},-0.62) -- ({3.22+0.09*\k},0.62);}
+  \end{scope}
+  \draw[line width=0.5pt] (3.22,0) ellipse (0.16 and 0.52);
+  \draw[line width=0.4pt] (3.10,0) ellipse (0.16 and 0.52);
+  \draw[line width=0.45pt] plot[domain=0:720,samples=56] ({3.48+1.55*\x/720},{0.30*sin(\x)});
+  \begin{scope}
+    \clip (5.28,0) ellipse (0.16 and 0.52);
+    \foreach \k in {-5,-4,-3,-2,-1,0,1,2,3,4,5} {\draw[line width=0.25pt] ({5.11+0.09*\k},-0.62) -- ({5.28+0.09*\k},0.62);}
+  \end{scope}
+  \draw[line width=0.5pt] (5.28,0) ellipse (0.16 and 0.52);
+  \draw[line width=0.4pt] (5.16,0) ellipse (0.16 and 0.52);
+  \draw[line width=0.45pt] plot[domain=0:540,samples=44] ({5.52+1.25*\x/540},{0.28*sin(\x)});
+  \draw[line width=0.4pt] (6.78,0) -- (7.55,0);
+  \draw[line width=0.5pt] (8.15,0.10) .. controls (7.98,0.24) and (7.72,0.18) .. (7.62,0.06) .. controls (7.74,-0.06) and (8.00,0.00) .. (8.15,0.10);
+  \fill (7.80,0.08) circle (0.032);
+\end{tikzpicture}%
+}
 \caption{（i）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0157-02.png}}
+% fig-alt: 图6.8（b）：星形光源、一串交叠圆示各向振动；两椅靠背均为竖缝；缝间与第二椅后为竖向波，上下箭头示振动方向，右为眼
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \a in {0,45,90,135,180,225,270,315} {\draw[line width=0.35pt] ({0.22+0.10*cos(\a)},{1.15+0.10*sin(\a)}) -- ({0.22+0.26*cos(\a)},{1.15+0.26*sin(\a)});}
+  \foreach \k in {0,1,2,3,4} {\draw[line width=0.4pt] ({0.62+0.26*\k},1.15) circle (0.16);}
+  \draw[line width=0.5pt] (2.05,0.05) -- (2.05,1.72);
+  \draw[line width=0.5pt] (2.78,0.05) -- (2.78,1.66);
+  \draw[line width=0.5pt] (2.05,1.72) -- (2.78,1.66);
+  \draw[line width=0.4pt] (2.24,0.42) -- (2.24,1.58);
+  \draw[line width=0.4pt] (2.42,0.42) -- (2.42,1.56);
+  \draw[line width=0.4pt] (2.60,0.42) -- (2.60,1.54);
+  \draw[line width=0.5pt] (2.12,0.52) -- (3.15,0.46) -- (3.05,0.32) -- (2.08,0.38) -- cycle;
+  \draw[line width=0.45pt] (2.95,0.32) -- (3.02,0.02);
+  \draw[line width=0.45pt] (2.18,0.38) -- (2.12,0.02);
+  \draw[line width=0.45pt] plot[domain=0:720,samples=56] ({2.82+2.15*\x/720},{1.15+0.28*sin(\x)});
+  \draw[line width=0.45pt,->] (4.05,1.62) -- (4.05,1.95);
+  \draw[line width=0.45pt,->] (4.05,0.68) -- (4.05,0.35);
+  \draw[line width=0.5pt] (5.15,0.05) -- (5.15,1.72);
+  \draw[line width=0.5pt] (5.88,0.05) -- (5.88,1.66);
+  \draw[line width=0.5pt] (5.15,1.72) -- (5.88,1.66);
+  \draw[line width=0.4pt] (5.34,0.42) -- (5.34,1.58);
+  \draw[line width=0.4pt] (5.52,0.42) -- (5.52,1.56);
+  \draw[line width=0.4pt] (5.70,0.42) -- (5.70,1.54);
+  \draw[line width=0.5pt] (5.22,0.52) -- (6.25,0.46) -- (6.15,0.32) -- (5.18,0.38) -- cycle;
+  \draw[line width=0.45pt] (6.05,0.32) -- (6.12,0.02);
+  \draw[line width=0.45pt] (5.28,0.38) -- (5.22,0.02);
+  \draw[line width=0.45pt] plot[domain=0:540,samples=44] ({5.92+1.55*\x/540},{1.15+0.26*sin(\x)});
+  \draw[line width=0.45pt,->] (7.05,1.62) -- (7.05,1.95);
+  \draw[line width=0.45pt,->] (7.35,0.68) -- (7.35,0.35);
+  \draw[line width=0.5pt] (8.05,1.22) .. controls (7.88,1.36) and (7.62,1.30) .. (7.52,1.18) .. controls (7.64,1.06) and (7.90,1.12) .. (8.05,1.22);
+  \fill (7.70,1.20) circle (0.032);
+\end{tikzpicture}%
+}
 \caption{（b）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0157-03.png}}
+% fig-alt: 图6.8（c）：灯与第一偏振片同（i）；第二片斜线改成近水平，与第一片交叉；片后无波，虚线到眼
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.5pt] (0.28,0.10) circle (0.15);
+  \draw[line width=0.32pt] (0.20,0.16) -- (0.36,0.04);
+  \draw[line width=0.32pt] (0.20,0.04) -- (0.36,0.16);
+  \draw[line width=0.45pt] (0.14,-0.06) -- (0.42,-0.06) -- (0.38,-0.20) -- (0.18,-0.20) -- cycle;
+  \draw[line width=0.4pt] (0.18,-0.20) -- (0.16,-0.28) -- (0.40,-0.28) -- (0.38,-0.20);
+  \draw[line width=0.4pt] (0.48,0) -- (1.05,0);
+  \begin{scope}
+    \clip (1.08,0) -- (1.48,0.30) -- (1.88,0) -- (1.48,-0.30) -- cycle;
+    \foreach \k in {0,1,2,3,4,5,6} {\draw[line width=0.25pt] ({0.95+0.14*\k},-0.4) -- ({1.15+0.14*\k},0.4);}
+  \end{scope}
+  \draw[line width=0.45pt] (1.08,0) -- (1.48,0.30) -- (1.88,0) -- (1.48,-0.30) -- cycle;
+  \draw[line width=0.4pt] (1.88,0) -- (2.05,0);
+  \begin{scope}
+    \clip (2.08,0) -- (2.48,0.32) -- (2.88,0) -- (2.48,-0.32) -- cycle;
+    \foreach \k in {0,1,2,3,4,5,6} {\draw[line width=0.25pt] ({1.95+0.14*\k},-0.45) -- ({2.15+0.14*\k},0.45);}
+  \end{scope}
+  \draw[line width=0.45pt] (2.08,0) -- (2.48,0.32) -- (2.88,0) -- (2.48,-0.32) -- cycle;
+  \draw[line width=0.4pt] (2.88,0) -- (3.02,0);
+  \begin{scope}
+    \clip (3.22,0) ellipse (0.16 and 0.52);
+    \foreach \k in {-5,-4,-3,-2,-1,0,1,2,3,4,5} {\draw[line width=0.25pt] ({3.05+0.09*\k},-0.62) -- ({3.22+0.09*\k},0.62);}
+  \end{scope}
+  \draw[line width=0.5pt] (3.22,0) ellipse (0.16 and 0.52);
+  \draw[line width=0.4pt] (3.10,0) ellipse (0.16 and 0.52);
+  \draw[line width=0.45pt] plot[domain=0:720,samples=56] ({3.48+1.55*\x/720},{0.30*sin(\x)});
+  \begin{scope}
+    \clip (5.28,0) ellipse (0.16 and 0.52);
+    \foreach \k in {-4,-3,-2,-1,0,1,2,3,4} {\draw[line width=0.25pt] (5.08,{0.44-0.11*\k}) -- (5.48,{0.44-0.11*\k});}
+  \end{scope}
+  \draw[line width=0.5pt] (5.28,0) ellipse (0.16 and 0.52);
+  \draw[line width=0.4pt] (5.16,0) ellipse (0.16 and 0.52);
+  \draw[line width=0.4pt,dashed] (5.50,0) -- (7.55,0);
+  \draw[line width=0.5pt] (8.15,0.10) .. controls (7.98,0.24) and (7.72,0.18) .. (7.62,0.06) .. controls (7.74,-0.06) and (8.00,0.00) .. (8.15,0.10);
+  \fill (7.80,0.08) circle (0.032);
+\end{tikzpicture}%
+}
 \caption{（c）}
 \end{figure}
 
@@ -8539,7 +8755,42 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.10 光的色散}]{assets/physics-4/fig-p0161-01.png}}
+% fig-alt: 图6.10色散：左屏狭缝、四支入射箭头、带状白光经立台上的三棱镜射到右屏；光谱左上标紫、右上标红，左端竖线较密
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.4pt] (0.15,0.42) -- (8.55,0.42);
+  \draw[line width=0.45pt,->] (0.02,2.05) -- (0.42,2.05);
+  \draw[line width=0.45pt,->] (0.02,2.22) -- (0.42,2.22);
+  \draw[line width=0.45pt,->] (0.02,2.39) -- (0.42,2.39);
+  \draw[line width=0.45pt,->] (0.02,2.56) -- (0.42,2.56);
+  \draw[line width=0.55pt] (0.48,0.22) -- (1.18,0.22) -- (1.08,0.42) -- (0.42,0.42) -- cycle;
+  \draw[line width=0.55pt] (0.55,0.42) -- (1.02,0.42) -- (1.02,3.55) -- (0.55,3.55) -- cycle;
+  \draw[line width=0.4pt] (0.48,0.36) -- (0.55,0.42) -- (0.55,3.55) -- (0.48,3.46) -- cycle;
+  \draw[line width=0.7pt] (1.02,2.08) -- (1.28,2.12) -- (1.28,2.52) -- (1.02,2.48) -- cycle;
+  \draw[line width=0.5pt] (1.28,2.52) -- (3.42,2.18);
+  \draw[line width=0.5pt] (1.28,2.12) -- (3.42,1.42);
+  \draw[line width=0.5pt] (3.48,2.22) -- (4.12,2.88) -- (4.78,2.18) -- cycle;
+  \draw[line width=0.5pt] (3.48,2.22) -- (3.48,1.22) -- (4.12,1.38) -- (4.12,2.88);
+  \draw[line width=0.5pt] (4.78,2.18) -- (4.78,1.18) -- (4.12,1.38);
+  \draw[line width=0.5pt] (3.32,1.12) -- (4.95,1.12) -- (4.82,0.90) -- (3.45,0.90) -- cycle;
+  \draw[line width=0.45pt] (4.12,0.90) -- (4.12,0.22);
+  \draw[line width=0.4pt] (4.02,0.48) -- (4.22,0.48) -- (4.22,0.40) -- (4.02,0.40) -- cycle;
+  \draw[line width=0.5pt] (4.12,0.16) ellipse (0.22 and 0.07);
+  \draw[line width=0.5pt] (4.78,2.05) -- (6.42,2.58);
+  \draw[line width=0.5pt] (4.78,1.28) -- (6.42,1.62);
+  \draw[line width=0.55pt] (6.28,0.22) -- (7.95,0.22) -- (7.82,0.42) -- (6.18,0.42) -- cycle;
+  \draw[line width=0.55pt] (6.35,0.42) -- (7.72,0.42) -- (7.72,3.48) -- (6.35,3.48) -- cycle;
+  \draw[line width=0.4pt] (6.22,0.36) -- (6.35,0.42) -- (6.35,3.48) -- (6.22,3.40) -- cycle;
+  \draw[line width=0.55pt] (6.48,1.68) -- (7.55,1.74) -- (7.55,2.52) -- (6.48,2.46) -- cycle;
+  \begin{scope}
+    \clip (6.48,1.68) -- (7.55,1.74) -- (7.55,2.52) -- (6.48,2.46) -- cycle;
+    \foreach \k in {0,1,2,3,4,5,6,7} {\draw[line width=0.28pt] ({6.52+0.08*\k},1.55) -- ({6.52+0.08*\k},2.62);}
+    \foreach \k in {0,1,2,3,4} {\draw[line width=0.22pt] ({7.15+0.08*\k},1.55) -- ({7.15+0.08*\k},2.62);}
+  \end{scope}
+  \node[anchor=south] at (6.55,2.52) {紫};
+  \node[anchor=south west] at (7.58,2.18) {红};
+\end{tikzpicture}%
+}
 \caption{图6.10 光的色散}
 \end{figure}
 
