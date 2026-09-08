@@ -8615,7 +8615,90 @@ n\mathrm{C}_{6}\mathrm{H}_{12}\mathrm{O}_{6}\xrightarrow{\text{酶}}(\mathrm{C}_
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第144页图示}]{assets/chemistry-4/fig-p0144-g01.png}}
+\fitfig{%
+% fig-alt: 淀粉制取和用途：麦粉水揉成面团，冲洗过筛得面筋（食用，制调味粉）与淀粉浆（去水）；下接淀粉经糊精、麦芽糖、葡萄糖至乙醇。大麦芽里的糖化酶指淀粉、糊精、麦芽糖；酒曲里的酶指葡萄糖、乙醇。用途分列其下；乙醇竖排参阅§2·5
+% redraw: fig-p0144-g01 淀粉的制取和用途流程
+\begin{tikzpicture}[line cap=round, line join=round,
+    every node/.style={inner sep=1.2pt},
+    arr/.style={->, line width=0.55pt},
+    ln/.style={line width=0.55pt},
+    lab/.style={inner sep=0.5pt, font=\small},
+    use/.style={align=center, font=\footnotesize, inner sep=0.3pt}]
+  \node[anchor=west] (flour) at (0,0.35) {麦粉};
+  \node[anchor=west] (dough) at (1.85,0.35) {面团};
+  \draw[arr] (flour.east) -- (dough.west);
+  \node[lab] at (1.22,0.72) {水揉};
+  \node[anchor=west] (gluten) at (4.35,0.95) {面筋——食用，制调味粉};
+  \node[anchor=west] (slurry) at (4.35,-0.25) {淀粉浆——去水};
+  \draw[arr] (dough.east) -- (gluten.west);
+  \draw[arr] (dough.east) -- (slurry.west);
+  \node[lab, align=center] at (3.35,0.78) {冲洗};
+  \node[lab, align=center] at (3.35,-0.02) {过筛};
+  \draw[ln] (slurry.east) -- (13.85,-0.25) -- (13.85,-1.05);
+  \draw[ln] (13.85,-1.05) -- (0.15,-1.05);
+  \draw[arr] (0.15,-1.05) -- (0.15,-2.45);
+  \node[lab] (enz1) at (3.15,-1.42) {大麦芽里的糖化酶};
+  \draw[ln] (0.42,-1.72) -- (6.15,-1.72);
+  \draw[arr] (0.42,-1.72) -- (0.42,-2.28);
+  \draw[arr] (3.05,-1.72) -- (3.05,-2.55);
+  \draw[arr] (6.15,-1.72) -- (6.15,-2.55);
+  \node[lab] (enz2) at (10.55,-1.42) {酒曲里的酶};
+  \draw[ln] (9.15,-1.72) -- (12.05,-1.72);
+  \draw[arr] (9.15,-1.72) -- (9.15,-2.55);
+  \draw[arr] (12.05,-1.72) -- (12.05,-2.55);
+  \node (st) at (0.42,-2.72) {淀粉};
+  \node (dex) at (3.05,-2.72) {糊精};
+  \node (mal) at (6.15,-2.72) {麦芽糖};
+  \node (glu) at (9.15,-2.72) {葡萄糖};
+  \node (eth) at (12.05,-2.72) {乙醇};
+  \draw[arr] (st.east) -- (dex.west);
+  \node[lab] at (1.72,-2.38) {水解};
+  \draw[arr] (dex.east) -- (mal.west);
+  \node[lab] at (4.58,-2.38) {水解};
+  \draw[arr] (mal.east) -- (glu.west);
+  \node[lab] at (7.62,-2.38) {水解};
+  \draw[arr] (glu.east) -- (eth.west);
+  \draw[ln] (st.south) -- ++(0,-0.32) coordinate (stb);
+  \draw[ln] (stb) -- ++(-0.72,0) coordinate (st1);
+  \draw[ln] (stb) -- ++(0.72,0) coordinate (st3);
+  \draw[ln] (st1) -- ++(0,-0.22);
+  \draw[ln] (stb) -- ++(0,-0.22);
+  \draw[ln] (st3) -- ++(0,-0.22);
+  \node[use, anchor=north] at (-0.30,-3.32) {制\\树\\脂\\和\\塑\\料};
+  \node[use, anchor=north] at (0.42,-3.32) {食\\用};
+  \node[use, anchor=north] at (1.14,-3.32) {浆\\料};
+  \draw[ln] (dex.south) -- ++(0,-0.32) coordinate (dxb);
+  \draw[ln] (dxb) -- ++(-0.42,0);
+  \draw[ln] (dxb) -- ++(0.55,0);
+  \draw[ln] (dxb) ++(-0.42,0) -- ++(0,-0.22);
+  \draw[ln] (dxb) ++(0.55,0) -- ++(0,-0.22);
+  \node[use, anchor=north] at (2.63,-3.32) {粘\\合\\剂};
+  \node[use, anchor=north] at (3.60,-3.32) {印\\染\\工\\业\\里\\的\\固\\着\\剂};
+  \draw[ln] (mal.south) -- ++(0,-0.32) coordinate (mlb);
+  \draw[ln] (mlb) -- ++(-0.72,0);
+  \draw[ln] (mlb) -- ++(0.72,0);
+  \draw[ln] (mlb) ++(-0.72,0) -- ++(0,-0.22);
+  \draw[ln] (mlb) -- ++(0,-0.22);
+  \draw[ln] (mlb) ++(0.72,0) -- ++(0,-0.22);
+  \node[use, anchor=north] at (5.43,-3.32) {糖\\果};
+  \node[use, anchor=north] at (6.15,-3.32) {医\\用\\糖\\浆};
+  \node[use, anchor=north] at (6.87,-3.32) {饴\\糖};
+  \draw[ln] (glu.south) -- ++(0,-0.32) coordinate (glb);
+  \draw[ln] (glb) -- ++(-1.15,0);
+  \draw[ln] (glb) -- ++(1.15,0);
+  \draw[ln] (glb) ++(-1.15,0) -- ++(0,-0.22);
+  \draw[ln] (glb) ++(-0.38,0) -- ++(0,-0.22);
+  \draw[ln] (glb) ++(0.38,0) -- ++(0,-0.22);
+  \draw[ln] (glb) ++(1.15,0) -- ++(0,-0.22);
+  \node[use, anchor=north] at (8.00,-3.32) {糖\\果};
+  \node[use, anchor=north] at (8.77,-3.32) {药\\剂};
+  \node[use, anchor=north] at (9.55,-3.32) {制\\银\\镜\\的\\还\\原\\剂};
+  \node[use, anchor=north] at (10.30,-3.32) {棉\\织\\物\\的\\印\\染\\浆\\料};
+  \draw[ln] (eth.south) -- ++(0,-0.28);
+  \node[use, anchor=north] at (12.05,-3.28) {参\\阅\\§2·5\\中\\乙\\醇\\的\\用\\途};
+\end{tikzpicture}%
+}
+
 \caption{原PDF第144页图示}
 \end{figure}
 
@@ -8709,7 +8792,34 @@ n\mathrm{C}_{6}\mathrm{H}_{12}\mathrm{O}_{6}\xrightarrow{\text{酶}}(\mathrm{C}_
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第148页图示}]{assets/chemistry-4/fig-p0148-g01.png}}
+\fitfig{%
+% fig-alt: 粘胶法人造丝流程：纤维素（木材或棉绒）经18%NaOH溶液得碱纤维，再经CS2得黄酸纤维酯；次行经6～7%碱溶液得粘性胶体溶液，抽丝机、酸溶液得粘液丝，再洗净、烘干、合股、绕丝得人造丝成品
+% redraw: fig-p0148-g01 粘胶法制人造丝生产流程
+\begin{tikzpicture}[line cap=round, line join=round,
+    every node/.style={inner sep=1.2pt},
+    lab/.style={inner sep=0.6pt, font=\small}]
+  \node[anchor=west] (cell) at (0,0.55) {纤维素};
+  \node[lab, anchor=north west] at (0,0.12) {（木材或棉绒）};
+  \node[anchor=west] (alk) at (4.35,0.55) {碱纤维};
+  \node[anchor=west] (xan) at (7.05,0.55) {黄酸纤维酯};
+  \draw[->, line width=0.55pt] (cell.east) -- (alk.west);
+  \node[lab] at (2.55,0.95) {18\%NaOH溶液};
+  \draw[->, line width=0.55pt] (alk.east) -- (xan.west);
+  \node[lab] at (5.85,0.95) {CS$_2$};
+  \node[anchor=west] (arr2) at (0,-1.55) {$\rightarrow$};
+  \node[anchor=west] (vis) at (0.62,-1.55) {粘性胶体溶液};
+  \node[lab] at (1.55,-1.05) {6～7\%碱溶液};
+  \node[anchor=west] (fil) at (4.85,-1.55) {粘液丝};
+  \draw[->, line width=0.55pt] (vis.east) -- (fil.west);
+  \node[lab] at (3.85,-1.18) {抽丝机};
+  \node[lab] at (3.85,-1.92) {酸溶液};
+  \node[anchor=west] (done) at (7.85,-1.55) {人造丝成品};
+  \draw[->, line width=0.55pt] (fil.east) -- (done.west);
+  \node[lab] at (6.55,-1.18) {洗净、烘干、};
+  \node[lab] at (6.55,-1.92) {合股、绕丝};
+\end{tikzpicture}%
+}
+
 \caption{原PDF第148页图示}
 \end{figure}
 
@@ -8908,7 +9018,77 @@ n\mathrm{C}_{6}\mathrm{H}_{12}\mathrm{O}_{6}\xrightarrow{\text{酶}}(\mathrm{C}_
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第152页图示}]{assets/chemistry-4/fig-p0152-g01.png}}
+\fitfig{%
+% fig-alt: 硝基苯凯库勒式（硝基在右上碳，双键左上、右侧、下左）与硝化甘油H2C/HC/H2C竖链各接O—NO2，及硝化纤维[C6H7O2分接三个O—NO2]n
+% redraw: fig-p0152-g01 硝基苯、硝化甘油、硝化纤维结构比较
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (tC) at (0,1.05) {C};
+  \node[atom] (tH) at (0,1.62) {H};
+  \node[atom] (ulC) at (-0.88,0.52) {C};
+  \node[atom] (ulH) at (-1.48,0.52) {H};
+  \node[atom] (llC) at (-0.88,-0.52) {C};
+  \node[atom] (llH) at (-1.48,-0.52) {H};
+  \node[atom] (bC) at (0,-1.05) {C};
+  \node[atom] (bH) at (0,-1.62) {H};
+  \node[atom] (urC) at (0.88,0.52) {C};
+  \node[atom] (no2) at (1.72,0.52) {NO$_2$};
+  \node[atom] (lrC) at (0.88,-0.52) {C};
+  \node[atom] (lrH) at (1.48,-0.52) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (no2) -- (urC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \node[lab] at (0.15,-2.15) {硝基苯};
+  \node[atom] (g1) at (3.55,0.85) {H$_2$C};
+  \node[atom] (g2) at (3.55,0) {HC};
+  \node[atom] (g3) at (3.55,-0.85) {H$_2$C};
+  \node[atom] (o1) at (4.45,0.85) {O};
+  \node[atom] (n1) at (5.25,0.85) {NO$_2$};
+  \node[atom] (o2) at (4.45,0) {O};
+  \node[atom] (n2) at (5.25,0) {NO$_2$};
+  \node[atom] (o3) at (4.45,-0.85) {O};
+  \node[atom] (n3) at (5.25,-0.85) {NO$_2$};
+  \draw[bond] (g1) -- (g2);
+  \draw[bond] (g2) -- (g3);
+  \draw[bond] (g1) -- (o1);
+  \draw[bond] (o1) -- (n1);
+  \draw[bond] (g2) -- (o2);
+  \draw[bond] (o2) -- (n2);
+  \draw[bond] (g3) -- (o3);
+  \draw[bond] (o3) -- (n3);
+  \node[lab] at (4.35,-1.85) {硝化甘油};
+  \node[atom] (core) at (7.55,0) {C$_6$H$_7$O$_2$};
+  \node[atom] (uO) at (9.15,0.78) {O};
+  \node[atom] (uN) at (9.95,0.78) {NO$_2$};
+  \node[atom] (mO) at (9.15,0) {O};
+  \node[atom] (mN) at (9.95,0) {NO$_2$};
+  \node[atom] (dO) at (9.15,-0.78) {O};
+  \node[atom] (dN) at (9.95,-0.78) {NO$_2$};
+  \draw[bond] (core.east) -- (uO.west);
+  \draw[bond] (core.east) -- (mO.west);
+  \draw[bond] (core.east) -- (dO.west);
+  \draw[bond] (uO) -- (uN);
+  \draw[bond] (mO) -- (mN);
+  \draw[bond] (dO) -- (dN);
+  \draw[line width=0.7pt] (6.55,1.15) -- (6.70,1.15) -- (6.70,-1.15) -- (6.55,-1.15);
+  \draw[line width=0.7pt] (10.45,1.15) -- (10.62,1.15) -- (10.62,-1.15) -- (10.45,-1.15);
+  \node[atom, anchor=west] at (10.68,-1.15) {$_n$};
+  \node[lab] at (8.95,-1.85) {硝化纤维};
+\end{tikzpicture}%
+}
+
 \caption{原PDF第152页图示}
 \end{figure}
 
@@ -8966,7 +9146,78 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第153页图示}]{assets/chemistry-4/fig-p0153-g01.png}}
+\fitfig{%
+% fig-alt: 苯的硝化：凯库勒苯右上氢与HO—NO2的HO各有虚线框，加号在其间；(H2SO4)在箭上，(50～60°C)在箭下；产物为右上硝基的硝基苯加H2O
+% redraw: fig-p0153-g01 苯与硝酸生成硝基苯
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (tC) at (0,1.02) {C};
+  \node[atom] (tH) at (0,1.58) {H};
+  \node[atom] (ulC) at (-0.86,0.50) {C};
+  \node[atom] (ulH) at (-1.46,0.50) {H};
+  \node[atom] (llC) at (-0.86,-0.50) {C};
+  \node[atom] (llH) at (-1.46,-0.50) {H};
+  \node[atom] (bC) at (0,-1.02) {C};
+  \node[atom] (bH) at (0,-1.58) {H};
+  \node[atom] (urC) at (0.86,0.50) {C};
+  \node[atom] (urH) at (1.55,0.50) {H};
+  \node[atom] (lrC) at (0.86,-0.50) {C};
+  \node[atom] (lrH) at (1.46,-0.50) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (urH) -- (urC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \node[atom] (plus) at (2.45,-0.08) {$+$};
+  \node[atom] (ho) at (3.45,-0.08) {HO};
+  \node[atom] (no) at (4.70,-0.08) {NO$_2$};
+  \draw[bond] (ho) -- (no);
+  \draw[dashed, line width=0.5pt] (1.32,-0.42) rectangle (3.95,0.82);
+  \draw[dashed, line width=0.5pt] (3.05,-0.40) rectangle (3.92,0.28);
+  \draw[->, line width=0.6pt] (5.25,0.08) -- (6.85,0.08);
+  \node[lab] at (6.05,0.46) {(H$_2$SO$_4$)};
+  \node[lab] at (6.05,-0.36) {(50～60$^{\circ}$C)};
+  \begin{scope}[xshift=8.85cm]
+    \node[atom] (pT) at (0,1.02) {C};
+    \node[atom] (pTH) at (0,1.58) {H};
+    \node[atom] (pUL) at (-0.86,0.50) {C};
+    \node[atom] (pULH) at (-1.46,0.50) {H};
+    \node[atom] (pLL) at (-0.86,-0.50) {C};
+    \node[atom] (pLLH) at (-1.46,-0.50) {H};
+    \node[atom] (pB) at (0,-1.02) {C};
+    \node[atom] (pBH) at (0,-1.58) {H};
+    \node[atom] (pUR) at (0.86,0.50) {C};
+    \node[atom] (pURN) at (1.72,0.50) {NO$_2$};
+    \node[atom] (pLR) at (0.86,-0.50) {C};
+    \node[atom] (pLRH) at (1.46,-0.50) {H};
+    \draw[bond] (pTH) -- (pT);
+    \draw[bond] (pULH) -- (pUL);
+    \draw[bond] (pLLH) -- (pLL);
+    \draw[bond] (pBH) -- (pB);
+    \draw[bond] (pURN) -- (pUR);
+    \draw[bond] (pLRH) -- (pLR);
+    \draw[dbond] (pUL) -- (pT);
+    \draw[dbond] (pUR) -- (pLR);
+    \draw[dbond] (pLL) -- (pB);
+    \draw[bond] (pT) -- (pUR);
+    \draw[bond] (pUL) -- (pLL);
+    \draw[bond] (pLR) -- (pB);
+  \end{scope}
+  \node[atom] at (11.35,0) {$+$};
+  \node[atom] at (12.05,0) {H$_2$O};
+\end{tikzpicture}%
+}
+
 \caption{原PDF第153页图示}
 \end{figure}
 
@@ -8983,7 +9234,88 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第154页图示}]{assets/chemistry-4/fig-p0154-g01.png}}
+\fitfig{%
+% fig-alt: 甲苯凯库勒式，甲基在上；左上虚线框OH+H接NO2，右上虚线框H+HO接NO2，下方虚线框H+HO再接NO2。下为(H2SO4)旁的三硝基甲苯（左上O2N、右上与下为NO2）+3H2O。底行为[C6H5CH3+3HNO3=(H2SO4)C6H2CH3(NO2)3+3H2O]
+% redraw: fig-p0154-g01 甲苯硝化生成三硝基甲苯
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (ch3) at (0,1.78) {CH$_3$};
+  \node[atom] (tC) at (0,1.05) {C};
+  \node[atom] (ulC) at (-0.88,0.52) {C};
+  \node[atom] (llC) at (-0.88,-0.52) {C};
+  \node[atom] (llH) at (-1.48,-0.52) {H};
+  \node[atom] (bC) at (0,-1.05) {C};
+  \node[atom] (urC) at (0.88,0.52) {C};
+  \node[atom] (lrC) at (0.88,-0.52) {C};
+  \node[atom] (lrH) at (1.42,-0.52) {H};
+  \draw[bond] (ch3) -- (tC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \node[lab, anchor=west] at (1.72,-0.52) {甲苯};
+  \node[atom] (lno) at (-4.55,0.52) {NO$_2$};
+  \node[atom] (loh) at (-3.35,0.52) {OH};
+  \node[atom] (lp) at (-2.72,0.52) {$+$};
+  \node[atom] (lh) at (-2.18,0.52) {H};
+  \draw[bond] (lno) -- (loh);
+  \draw[bond] (lh) -- (ulC);
+  \draw[dashed, line width=0.5pt] (-3.72,0.16) rectangle (-1.82,0.88);
+  \node[atom] (rh) at (2.15,0.52) {H};
+  \node[atom] (rp) at (2.72,0.52) {$+$};
+  \node[atom] (rho) at (3.38,0.52) {HO};
+  \node[atom] (rno) at (4.35,0.52) {NO$_2$};
+  \draw[bond] (urC) -- (rh);
+  \draw[bond] (rho) -- (rno);
+  \draw[dashed, line width=0.5pt] (1.82,0.16) rectangle (3.78,0.88);
+  \node[atom] (bh) at (0,-1.95) {H};
+  \node[atom] (bp) at (0,-2.52) {$+$};
+  \node[atom] (bho) at (0.22,-3.08) {HO};
+  \node[atom] (bno) at (1.55,-3.08) {NO$_2$};
+  \draw[bond] (bC) -- (bh);
+  \draw[bond] (bho.east) -- (bno.west);
+  \draw[dashed, line width=0.5pt] (-0.48,-1.62) rectangle (0.72,-3.42);
+  \node[lab] (cond) at (-3.55,-5.15) {(H$_2$SO$_4$)};
+  \draw[line width=0.6pt] (-4.55,-5.42) -- (-2.55,-5.42);
+  \begin{scope}[xshift=1.35cm, yshift=-5.85cm]
+    \node[atom] (qch) at (0,1.72) {CH$_3$};
+    \node[atom] (qT) at (0,1.02) {C};
+    \node[atom] (qUL) at (-0.88,0.50) {C};
+    \node[atom] (qULN) at (-1.85,0.50) {O$_2$N};
+    \node[atom] (qLL) at (-0.88,-0.50) {C};
+    \node[atom] (qLLH) at (-1.48,-0.50) {H};
+    \node[atom] (qB) at (0,-1.02) {C};
+    \node[atom] (qBN) at (0,-1.72) {NO$_2$};
+    \node[atom] (qUR) at (0.88,0.50) {C};
+    \node[atom] (qURN) at (1.72,0.50) {NO$_2$};
+    \node[atom] (qLR) at (0.88,-0.50) {C};
+    \node[atom] (qLRH) at (1.46,-0.50) {H};
+    \draw[bond] (qch) -- (qT);
+    \draw[bond] (qULN) -- (qUL);
+    \draw[bond] (qLLH) -- (qLL);
+    \draw[bond] (qBN) -- (qB);
+    \draw[bond] (qURN) -- (qUR);
+    \draw[bond] (qLRH) -- (qLR);
+    \draw[dbond] (qUL) -- (qT);
+    \draw[dbond] (qUR) -- (qLR);
+    \draw[dbond] (qLL) -- (qB);
+    \draw[bond] (qT) -- (qUR);
+    \draw[bond] (qUL) -- (qLL);
+    \draw[bond] (qLR) -- (qB);
+    \node[lab, anchor=west] at (1.55,-1.15) {三硝基甲苯};
+  \end{scope}
+  \node[atom] at (4.55,-5.85) {$+$3H$_2$O};
+  \node[lab] at (0.4,-8.35) {[C$_6$H$_5$CH$_3$+3HNO$_3\stackrel{\mathrm{(H_2SO_4)}}{=}$C$_6$H$_2$CH$_3$(NO$_2$)$_3$+3H$_2$O]};
+\end{tikzpicture}%
+}
+
 \caption{原PDF第154页图示}
 \end{figure}
 
@@ -9070,7 +9402,37 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={硝基苯；苯胺}]{assets/chemistry-4/fig-p0156-g01.png}}
+\fitfig{%
+% fig-alt: 结构简式：圆圈六元环右顶点接N，硝基苯为N对两个双键氧；苯胺为N对两个氢。下标硝基苯、苯胺
+% redraw: fig-p0156-g01 硝基苯与苯胺结构简式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \draw[bond] (0.58,0) -- (0.29,0.50) -- (-0.29,0.50) -- (-0.58,0) -- (-0.29,-0.50) -- (0.29,-0.50) -- cycle;
+  \draw[bond] (0,0) circle (0.28);
+  \node[atom] (n1) at (1.22,0) {N};
+  \node[atom] (oA) at (1.78,0.48) {O};
+  \node[atom] (oB) at (1.78,-0.48) {O};
+  \draw[bond] (0.58,0) -- (n1);
+  \draw[dbond] (n1) -- (oA);
+  \draw[dbond] (n1) -- (oB);
+  \node[lab] at (0.55,-1.15) {硝基苯};
+  \begin{scope}[xshift=4.15cm]
+    \draw[bond] (0.58,0) -- (0.29,0.50) -- (-0.29,0.50) -- (-0.58,0) -- (-0.29,-0.50) -- (0.29,-0.50) -- cycle;
+    \draw[bond] (0,0) circle (0.28);
+    \node[atom] (n2) at (1.22,0) {N};
+    \node[atom] (hA) at (1.78,0.46) {H};
+    \node[atom] (hB) at (1.78,-0.46) {H};
+    \draw[bond] (0.58,0) -- (n2);
+    \draw[bond] (n2) -- (hA);
+    \draw[bond] (n2) -- (hB);
+    \node[lab] at (0.45,-1.15) {苯胺};
+  \end{scope}
+\end{tikzpicture}%
+}
+
 \caption{硝基苯；苯胺}
 \end{figure}
 
@@ -9088,7 +9450,75 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第157页图示}]{assets/chemistry-4/fig-p0157-g01.png}}
+\fitfig{%
+% fig-alt: 硝基苯凯库勒式+6[H]等于苯胺凯库勒式（右上NH2）+2H2O；下标硝基苯、苯胺，底行(C6H5NO2+6[H]=C6H5NH2+2H2O)
+% redraw: fig-p0157-g01 硝基苯还原为苯胺
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (tC) at (0,1.02) {C};
+  \node[atom] (tH) at (0,1.58) {H};
+  \node[atom] (ulC) at (-0.86,0.50) {C};
+  \node[atom] (ulH) at (-1.46,0.50) {H};
+  \node[atom] (llC) at (-0.86,-0.50) {C};
+  \node[atom] (llH) at (-1.46,-0.50) {H};
+  \node[atom] (bC) at (0,-1.02) {C};
+  \node[atom] (bH) at (0,-1.62) {H};
+  \node[atom] (urC) at (0.86,0.50) {C};
+  \node[atom] (no2) at (1.72,0.50) {NO$_2$};
+  \node[atom] (lrC) at (0.86,-0.50) {C};
+  \node[atom] (lrH) at (1.46,-0.50) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (no2) -- (urC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \node[lab] at (0.15,-2.15) {硝基苯};
+  \node[atom] at (2.85,0) {$+$};
+  \node[atom] at (3.55,0) {6[H]};
+  \node[atom] at (4.35,0) {$=$};
+  \begin{scope}[xshift=5.85cm]
+    \node[atom] (pT) at (0,1.02) {C};
+    \node[atom] (pTH) at (0,1.58) {H};
+    \node[atom] (pUL) at (-0.86,0.50) {C};
+    \node[atom] (pULH) at (-1.46,0.50) {H};
+    \node[atom] (pLL) at (-0.86,-0.50) {C};
+    \node[atom] (pLLH) at (-1.46,-0.50) {H};
+    \node[atom] (pB) at (0,-1.02) {C};
+    \node[atom] (pBH) at (0,-1.62) {H};
+    \node[atom] (pUR) at (0.86,0.50) {C};
+    \node[atom] (pNH) at (1.78,0.50) {NH$_2$};
+    \node[atom] (pLR) at (0.86,-0.50) {C};
+    \node[atom] (pLRH) at (1.46,-0.50) {H};
+    \draw[bond] (pTH) -- (pT);
+    \draw[bond] (pULH) -- (pUL);
+    \draw[bond] (pLLH) -- (pLL);
+    \draw[bond] (pBH) -- (pB);
+    \draw[bond] (pNH) -- (pUR);
+    \draw[bond] (pLRH) -- (pLR);
+    \draw[dbond] (pUL) -- (pT);
+    \draw[dbond] (pUR) -- (pLR);
+    \draw[dbond] (pLL) -- (pB);
+    \draw[bond] (pT) -- (pUR);
+    \draw[bond] (pUL) -- (pLL);
+    \draw[bond] (pLR) -- (pB);
+    \node[lab] at (0.15,-2.15) {苯胺};
+  \end{scope}
+  \node[atom] at (8.25,0) {$+$};
+  \node[atom] at (8.95,0) {2H$_2$O};
+  \node[lab] at (4.15,-2.70) {(C$_6$H$_5$NO$_2$+6[H]=C$_6$H$_5$NH$_2$+2H$_2$O)};
+\end{tikzpicture}%
+}
+
 \caption{原PDF第157页图示}
 \end{figure}
 
@@ -9146,7 +9576,33 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第159页图示}]{assets/chemistry-4/fig-p0159-g01.png}}
+\fitfig{%
+% fig-alt: 碳酸为左双键氧、碳向右上右下各接OH；尿素同骨架，两羟基换为NH2。下标碳酸、尿素
+% redraw: fig-p0159-g01 碳酸与尿素结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (o1) at (0,0) {O};
+  \node[atom] (c1) at (0.72,0) {C};
+  \node[atom] (oh1) at (1.45,0.52) {OH};
+  \node[atom] (oh2) at (1.45,-0.52) {OH};
+  \draw[dbond] (o1) -- (c1);
+  \draw[bond] (c1) -- (oh1);
+  \draw[bond] (c1) -- (oh2);
+  \node[lab] at (0.85,-1.15) {碳酸};
+  \node[atom] (o2) at (3.35,0) {O};
+  \node[atom] (c2) at (4.07,0) {C};
+  \node[atom] (n1) at (4.90,0.52) {NH$_2$};
+  \node[atom] (n2) at (4.90,-0.52) {NH$_2$};
+  \draw[dbond] (o2) -- (c2);
+  \draw[bond] (c2) -- (n1);
+  \draw[bond] (c2) -- (n2);
+  \node[lab] at (4.15,-1.15) {尿素};
+\end{tikzpicture}%
+}
+
 \caption{原PDF第159页图示}
 \end{figure}
 
