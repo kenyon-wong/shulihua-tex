@@ -4717,7 +4717,35 @@ AB 垂直于平面 M 内的一切直线，因此 \(AB \perp DE\)。又知
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-61}]{assets/solid-geometry/fig-p0051-01.png}}
+\fitfig{%
+% fig-alt: 图1-61：平面M平行四边形，右端标M，后边虚线、其余实线；A在上，AB竖直，B处直角；C在左，BC为射影；DE过C与BC直角相交，C处直角；实线AC。扫描左端标E、D，题文作射影BC，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Pfl) at (0.15,0.48);
+  \coordinate (Pfr) at (2.72,0.34);
+  \coordinate (Pbr) at (3.28,0.88);
+  \coordinate (Pbl) at (0.72,1.05);
+  \coordinate (B) at (2.18,0.62);
+  \coordinate (A) at (2.12,1.92);
+  \coordinate (C) at (1.08,0.78);
+  \coordinate (D) at (0.48,0.52);
+  \coordinate (E) at (0.62,1.02);
+  \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr);
+  \draw[line width=0.65pt, dash pattern=on 2.5pt off 1.5pt] (Pbr) -- (Pbl);
+  \draw[line width=0.7pt] (Pbl) -- (Pfl);
+  \draw[line width=0.8pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (D) -- (C) -- (E);
+  \draw[line width=0.55pt] (2.18,0.80) -- (2.00,0.78) -- (2.02,0.64);
+  \draw[line width=0.55pt] (1.08,0.62) -- (1.24,0.66) -- (1.20,0.80);
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (E) {$E$};
+  \node[anchor=west,inner sep=1.5pt] at (Pbr) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-61}
 \end{figure}
 
@@ -4742,7 +4770,79 @@ AB 垂直于平面 M 内的一切直线，因此 \(AB \perp DE\)。又知
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·62}]{assets/solid-geometry/fig-p0051-02.png}}
+\fitfig{%
+% fig-alt: 图1·62三幅：均为平面平行四边形、A在上、AB竖直、右端标M，全部实线。左：DE过斜足C；中：DE交BC于C、B之间；右：DE交BC的延长线（越过C）。C处或交点处直角。题文说DE也可不过C，从扫描画三种位置
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}
+    \coordinate (Pfl) at (0.08,0.36);
+    \coordinate (Pfr) at (1.88,0.28);
+    \coordinate (Pbr) at (2.28,0.62);
+    \coordinate (Pbl) at (0.48,0.74);
+    \coordinate (B) at (1.52,0.48);
+    \coordinate (A) at (1.48,1.28);
+    \coordinate (C) at (0.72,0.58);
+    \coordinate (D) at (0.42,0.42);
+    \coordinate (E) at (0.52,0.74);
+    \draw[line width=0.65pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+    \draw[line width=0.75pt] (A) -- (B);
+    \draw[line width=0.7pt] (A) -- (C);
+    \draw[line width=0.7pt] (B) -- (C);
+    \draw[line width=0.7pt] (D) -- (C) -- (E);
+    \draw[line width=0.5pt] (0.72,0.46) -- (0.84,0.50) -- (0.80,0.60);
+    \node[anchor=south,inner sep=0.6pt] at (A) {$A$};
+    \node[anchor=north,inner sep=0.6pt] at (B) {$B$};
+    \node[anchor=south east,inner sep=0.6pt] at (C) {$C$};
+    \node[anchor=north,inner sep=0.6pt] at (D) {$D$};
+    \node[anchor=west,inner sep=1pt] at (Pbr) {$M$};
+  \end{scope}
+  \begin{scope}[xshift=2.55cm]
+    \coordinate (Pfl) at (0.08,0.36);
+    \coordinate (Pfr) at (1.88,0.28);
+    \coordinate (Pbr) at (2.28,0.62);
+    \coordinate (Pbl) at (0.48,0.74);
+    \coordinate (B) at (1.55,0.46);
+    \coordinate (A) at (1.50,1.28);
+    \coordinate (C) at (0.42,0.62);
+    \coordinate (H) at (1.02,0.52);
+    \coordinate (D) at (0.78,0.38);
+    \coordinate (E) at (0.92,0.70);
+    \draw[line width=0.65pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+    \draw[line width=0.75pt] (A) -- (B);
+    \draw[line width=0.7pt] (A) -- (C);
+    \draw[line width=0.7pt] (B) -- (C);
+    \draw[line width=0.7pt] (D) -- (H) -- (E);
+    \draw[line width=0.5pt] (1.02,0.40) -- (1.14,0.44) -- (1.10,0.54);
+    \node[anchor=south,inner sep=0.6pt] at (A) {$A$};
+    \node[anchor=north,inner sep=0.6pt] at (B) {$B$};
+    \node[anchor=west,inner sep=0.6pt] at (C) {$C$};
+    \node[anchor=north,inner sep=0.6pt] at (D) {$D$};
+    \node[anchor=west,inner sep=1pt] at (Pbr) {$M$};
+  \end{scope}
+  \begin{scope}[xshift=5.10cm]
+    \coordinate (Pfl) at (0.08,0.36);
+    \coordinate (Pfr) at (1.88,0.28);
+    \coordinate (Pbr) at (2.28,0.62);
+    \coordinate (Pbl) at (0.48,0.74);
+    \coordinate (B) at (1.55,0.46);
+    \coordinate (A) at (1.50,1.28);
+    \coordinate (C) at (0.78,0.56);
+    \coordinate (H) at (0.42,0.64);
+    \coordinate (D) at (0.28,0.42);
+    \coordinate (E) at (0.36,0.76);
+    \draw[line width=0.65pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+    \draw[line width=0.75pt] (A) -- (B);
+    \draw[line width=0.7pt] (A) -- (C);
+    \draw[line width=0.7pt] (B) -- (C) -- (H);
+    \draw[line width=0.7pt] (D) -- (H) -- (E);
+    \draw[line width=0.5pt] (0.42,0.52) -- (0.54,0.54) -- (0.50,0.66);
+    \node[anchor=south,inner sep=0.6pt] at (A) {$A$};
+    \node[anchor=north,inner sep=0.6pt] at (B) {$B$};
+    \node[anchor=south,inner sep=0.6pt] at (C) {$C$};
+    \node[anchor=north,inner sep=0.6pt] at (D) {$D$};
+    \node[anchor=west,inner sep=1pt] at (Pbr) {$M$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1·62}
 \end{figure}
 
@@ -4752,7 +4852,35 @@ AB 垂直于平面 M 内的一切直线，因此 \(AB \perp DE\)。又知
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-63}]{assets/solid-geometry/fig-p0052-01.png}}
+\fitfig{%
+% fig-alt: 图1-63：平面M平行四边形，右端标M；正方形ABCD，A在后左、B前左、C前右、D后右；VA竖直实线，VB、VC、VD实线；对角线AC虚线；B、D处直角。扫描只虚线AC，边为实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Pfl) at (0.12,0.42);
+  \coordinate (Pfr) at (2.85,0.26);
+  \coordinate (Pbr) at (3.42,0.82);
+  \coordinate (Pbl) at (0.72,1.00);
+  \coordinate (A) at (1.22,0.92);
+  \coordinate (B) at (0.52,0.55);
+  \coordinate (C) at (1.92,0.48);
+  \coordinate (D) at (2.42,0.92);
+  \coordinate (V) at (1.28,2.22);
+  \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.65pt, dash pattern=on 2.5pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.8pt] (V) -- (A);
+  \draw[line width=0.75pt] (V) -- (B);
+  \draw[line width=0.75pt] (V) -- (C);
+  \draw[line width=0.75pt] (V) -- (D);
+  \draw[line width=0.5pt] (0.66,0.62) -- (0.68,0.74) -- (0.56,0.70);
+  \draw[line width=0.5pt] (2.28,0.88) -- (2.22,0.76) -- (2.34,0.80);
+  \node[anchor=south,inner sep=1pt] at (V) {$V$};
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=west,inner sep=1.5pt] at (Pbr) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-63}
 \end{figure}
 
@@ -4778,7 +4906,33 @@ D E \perp A B\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-64}]{assets/solid-geometry/fig-p0052-02.png}}
+\fitfig{%
+% fig-alt: 图1-64：平面M平行四边形，左下标M；直角三角形ABC，A左、B右、C后，C处直角；D在C上方，DC竖直；E在AB上，CE⊥AB、E处直角，DE实线。全部实线，不画虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Pfl) at (0.12,0.48);
+  \coordinate (Pfr) at (2.88,0.32);
+  \coordinate (Pbr) at (3.42,0.86);
+  \coordinate (Pbl) at (0.70,1.05);
+  \coordinate (A) at (0.48,0.62);
+  \coordinate (B) at (2.42,0.52);
+  \coordinate (C) at (1.28,0.92);
+  \coordinate (D) at (1.32,2.18);
+  \coordinate (E) at (1.42,0.58);
+  \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.8pt] (D) -- (C);
+  \draw[line width=0.75pt] (C) -- (E);
+  \draw[line width=0.75pt] (D) -- (E);
+  \draw[line width=0.5pt] (1.22,0.78) -- (1.38,0.78) -- (1.32,0.90);
+  \draw[line width=0.5pt] (1.42,0.72) -- (1.30,0.68) -- (1.36,0.56);
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south east,inner sep=1pt] at (Pfl) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-64}
 \end{figure}
 
@@ -4827,7 +4981,44 @@ D E = \sqrt {D C ^ {2} + C E ^ {2}} = \sqrt {35^{2} + 24^{2}} \approx 42.4 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-55}]{assets/solid-geometry/fig-p0053-01.png}}
+\fitfig{%
+% fig-alt: 图1·65线稿（本图caption仍作图1-55，与fig-p0045-01不是同一幅）：平面M平行四边形，左端标M；角BAC，A在左前，B在右，C在后；P在上，PA斜线实线，AD为射影，O在AD上，PO竖直实线；OE⊥AB、OF⊥AC，连PE、PF。右上扫描旁的勾划不画。全部实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Pfl) at (0.10,0.55);
+  \coordinate (Pfr) at (2.92,0.36);
+  \coordinate (Pbr) at (3.48,0.88);
+  \coordinate (Pbl) at (0.68,1.12);
+  \coordinate (A) at (0.62,0.68);
+  \coordinate (B) at (2.35,0.52);
+  \coordinate (C) at (1.72,1.00);
+  \coordinate (O) at (1.48,0.74);
+  \coordinate (D) at (2.05,0.78);
+  \coordinate (P) at (1.52,2.28);
+  \coordinate (E) at (1.38,0.58);
+  \coordinate (F) at (1.18,0.84);
+  \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.8pt] (P) -- (O);
+  \draw[line width=0.75pt] (P) -- (A);
+  \draw[line width=0.7pt] (P) -- (E);
+  \draw[line width=0.7pt] (P) -- (F);
+  \draw[line width=0.7pt] (O) -- (E);
+  \draw[line width=0.7pt] (O) -- (F);
+  \draw[line width=0.5pt] (1.38,0.72) -- (1.26,0.66) -- (1.34,0.56);
+  \draw[line width=0.5pt] (1.18,0.70) -- (1.28,0.78) -- (1.16,0.86);
+  \node[anchor=south,inner sep=1pt] at (P) {$P$};
+  \node[anchor=east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=1pt] at (O) {$O$};
+  \node[anchor=north,inner sep=1pt] at (E) {$E$};
+  \node[anchor=east,inner sep=1pt] at (F) {$F$};
+  \node[anchor=east,inner sep=1.5pt] at (Pfl) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-55}
 \end{figure}
 
@@ -4927,7 +5118,35 @@ P E \perp A B\text{，} P F \perp A C.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-66}]{assets/solid-geometry/fig-p0054-01.png}}
+\fitfig{%
+% fig-alt: 图1-66：平面M平行四边形，左端标M；P在上，PO竖直实线，O处直角；A在左，PA斜线，AD射影止于垂足附近并标D；短线BC过A与AD直角相交，B在上、C在下。题文未写O，扫描垂足标O，从扫描。全部实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Pfl) at (0.12,0.52);
+  \coordinate (Pfr) at (2.88,0.34);
+  \coordinate (Pbr) at (3.42,0.88);
+  \coordinate (Pbl) at (0.70,1.08);
+  \coordinate (A) at (0.72,0.68);
+  \coordinate (B) at (0.58,0.92);
+  \coordinate (C) at (0.88,0.42);
+  \coordinate (D) at (1.72,0.76);
+  \coordinate (O) at (1.88,0.72);
+  \coordinate (P) at (1.86,2.15);
+  \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+  \draw[line width=0.8pt] (P) -- (O);
+  \draw[line width=0.75pt] (P) -- (A);
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (B) -- (A) -- (C);
+  \draw[line width=0.55pt] (1.88,0.90) -- (1.72,0.88) -- (1.74,0.74);
+  \draw[line width=0.5pt] (0.58,0.72) -- (0.72,0.76) -- (0.76,0.62);
+  \node[anchor=south,inner sep=1pt] at (P) {$P$};
+  \node[anchor=east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=1pt] at (O) {$O$};
+  \node[anchor=east,inner sep=1.5pt] at (Pfl) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-66}
 \end{figure}
 
