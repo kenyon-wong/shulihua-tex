@@ -4,7 +4,7 @@
 
 ```bash
 git lfs install
-git clone <url>
+git clone https://github.com/kenyon-wong/shulihua-tex.git
 # 若已经 clone 过但没装 LFS：
 git lfs install
 git lfs pull
@@ -36,31 +36,29 @@ git lfs pull
 
 | 远程 | URL | 用途 |
 |------|-----|------|
-| `origin` | `git@github.com:kenyon-wong/shulihuazixuecongshu.git` | 自己的 fork，**唯一允许 push 的地方** |
-| `upstream` | `https://github.com/tradecatlabs/shulihuazixuecongshu.git` | 原作者仓库，**只 fetch，禁止 push** |
+| `origin` | `https://github.com/kenyon-wong/shulihua-tex.git` | 独立仓库，**唯一允许 push 的地方** |
+| `upstream` | `https://github.com/tradecatlabs/shulihuazixuecongshu.git` | Markdown/EPUB 源仓库，**只 fetch，禁止 push** |
 
 | 分支 | 跟踪 | 用途 |
 |------|------|------|
-| `master` | `origin/master` | TeX 规范源、Makefile 出 PDF。独立维护，不向 `upstream` 发 PR |
-| `main` | `upstream/main` | 上游 Markdown/EPUB 的只读镜像，只允许快进 |
+| `master` | `origin/master` | TeX 规范源、Makefile 出 PDF |
 
-不要把 `main` 合并进 `master`。上游会带回 EPUB、Pandoc 和另一套目录约定，和本分支冲突。
+本仓库不保留 `main`。对照上游 Markdown 时直接用 `upstream/main`，不要在本地再建跟踪分支，也不要把 `upstream/main` 合并进 `master`。上游会带回 EPUB、Pandoc 和另一套目录约定，和本分支冲突。
+
+旧 fork `kenyon-wong/shulihuazixuecongshu` 仍在 GitHub 的 fork 网络里。GitHub **禁止向公开 fork 上传新的 LFS 对象**，不要再向那个地址 push。
 
 ### 日常拉上游 Markdown
 
 ```bash
 git fetch upstream
-git checkout main
-git merge --ff-only upstream/main
-git checkout master
-git diff main -- books/
+git diff upstream/main -- books/
 ```
 
 确认 diff 后，只把 Markdown（以及新增/改动的插图）接到 `master`，再手工改对应 `tex/books/*.tex`：
 
 ```bash
 git checkout master
-git checkout main -- books/
+git checkout upstream/main -- books/
 # 审阅 git diff --cached -- books/
 # 把内容改动写入 tex/books/<书名>.tex，不要用 Pandoc 整册重转
 git add books/ tex/books/
@@ -68,21 +66,4 @@ git commit
 git push origin master
 ```
 
-插图有增删时，同步更新 `tex/` 里的 `\includegraphics`。不要 `git merge main`。
-
-### 首次把本机推到自己的仓库
-
-GitHub **禁止向公开 fork 上传新的 LFS 对象**（会报 `can not upload new objects to public fork`）。`raw/*.pdf` 已走 LFS，因此不能把 `master` 推到「Fork」出来的仓库。
-
-可选其一：
-
-1. **推荐：** 在 GitHub 新建一个**独立仓库**（不要点 Fork），或在现有 fork 的 Settings 里脱离 fork 网络，再：
-
-```bash
-git lfs install
-git push -u origin master
-```
-
-2. 若必须保留 Fork 关系：不要用 LFS，把 `raw/*.pdf` 改回普通 Git 对象（单文件均小于 GitHub 100MB 限制）。独立维护 TeX 时不推荐这条。
-
-推上去之后，把 **kenyon-wong** 那个仓库的默认分支设为 `master`。不要改 `tradecatlabs/shulihuazixuecongshu` 的默认分支，也不要向它 `git push`。
+插图有增删时，同步更新 `tex/` 里的 `\includegraphics`。不要 `git merge upstream/main`。不要改 `tradecatlabs/shulihuazixuecongshu` 的默认分支，也不要向它 `git push`。

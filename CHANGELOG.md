@@ -2,6 +2,8 @@
 
 ## 2026-09-08
 
+- 独立仓库改为 `kenyon-wong/shulihua-tex`；不再本地跟踪 `main`，对照上游 Markdown 改用 `upstream/main`。
+- README 去掉上游交流群、赞助和 EPUB 发布说明，仅保留一行来源致谢。
 - `master` 分支改为以 `tex/books` 为规范正文、`tex/style` 为版式；PDF 由 GNU Make + XeLaTeX 构建，合订用 Ghostscript，不再使用 Pandoc 或 Python 构建脚本。
 - 清理迁转残留：去掉文字卡片工作流、来源说明、转换清单和一次性 workflow；`raw/` 扫描 PDF 保留作对照。
 - 明确 Git 规则：`raw/*.pdf` 走 Git LFS；PNG 与 TeX 仍用普通 Git 对象。

@@ -48,10 +48,10 @@
 
 从 `v2.0.0` 起执行以下固定策略：
 
-1. Release 只上传数学、物理学、化学三本学科合订本，不上传17本独立分册；
-2. 本分支合订产物为重建 PDF；EPUB 仍由 `main` 发布；
+1. Release 只上传数学、物理学、化学三本学科合订 PDF，不上传 17 本独立分册；
+2. 本仓库不构建、不发布 EPUB；
 3. 允许同时上传 `SHA256SUMS.txt`、发布清单等验证附件；
-4. 发布前必须通过确定性双构建、公共目录审计、Calibre 8.16.2 smoke、真实 fragment 定位、PDF 分册/合订校验和隐私审计；
+4. 发布前必须通过 `make audit`、`make tex-audit`、`make pdf-verify` 和 `make privacy`；
 5. 既有 Release 保留，不覆盖、不追溯删除。
 
 ## 生成物

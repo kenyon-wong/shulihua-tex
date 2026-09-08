@@ -1,20 +1,8 @@
-# 数理化自学丛书（电子书重建版）
+# 数理化自学丛书
 
-本仓库 `master` 分支以 TeX 为规范正文源，保存《数理化自学丛书》17 册的原始扫描 PDF、Markdown 对照稿、扫描插图资源和 XeLaTeX PDF 构建工具。EPUB 构建只在 `main` 分支维护。
+本仓库以 TeX 为规范正文源，用 XeLaTeX 重排《数理化自学丛书》17 册，并保留原始扫描 PDF、Markdown 对照稿和扫描插图。
 
-## 电子书处理交流群
-
-新建了一个电子书处理交流群，欢迎感兴趣的朋友加入，一起交流、学习和分享电子书及扫描版 PDF 的数字化处理经验：
-
-**Telegram：** https://t.me/dzscl
-
-群内会定期更新和发布扫描版 PDF 处理的数字工序、工具与相关镜像。也欢迎提供赞助 Token 或计算资源；赞助商名单会写入制作的作品，并在合适的位置进行介绍和推广。
-
-## 赞助
-
-本项目计算资源由 **交易猫实验室（TradeCat Labs）** 赞助。
-
-**CA：** https://dexscreener.com/bsc/0x8a99b8d53eff6bc331af529af74ad267f3167777
+Markdown 正文最初来自 [tradecatlabs/shulihuazixuecongshu](https://github.com/tradecatlabs/shulihuazixuecongshu)。本仓库独立维护 TeX 与 PDF，不是该仓库的 fork，也不发布 EPUB。
 
 ## 收录书目
 
@@ -26,7 +14,7 @@
 - 化学（第一至第四册）
 - 物理（第一至第四册）
 
-作者元数据统一为“数理化自学丛书编委会”，电子书语言统一为 `zh-CN`。
+作者元数据统一为“数理化自学丛书编委会”，语言统一为 `zh-CN`。
 
 ## 仓库结构
 
@@ -45,7 +33,7 @@
 └── dist/                # 构建出的 PDF（不纳入版本控制）
 ```
 
-规范正文在 `tex/books/`，版式在 `tex/style/`。`books/*.md` 仅用于对照 `main` 与上游，不经 Pandoc 转写。图片由 TeX 通过 `books/assets/` 引用。
+规范正文在 `tex/books/`，版式在 `tex/style/`。`books/*.md` 仅用于对照上游 Markdown，不经 Pandoc 转写。图片由 TeX 通过 `books/assets/` 引用。
 
 ## 构建
 
@@ -97,7 +85,7 @@ make dist/代数（第一册）.pdf
 
 ## Release 发布策略
 
-GitHub 默认分支仍是 `main`。`main` 继续发布合订 EPUB；本 `master` 分支只构建合订与分册 PDF，不构建 EPUB。
+默认分支为 `master`。GitHub Release 只发布数学、物理学、化学三本学科合订 PDF，不上传 17 本独立分册。本仓库不构建、不发布 EPUB。
 
 ## 发布前隐私审计
 
@@ -111,14 +99,14 @@ make pre-push
 ## 当前源资产状态
 
 - 原始扫描 PDF：17 册、5,927 页
-- 规范 Markdown：17 册
+- 规范 TeX：17 册
+- Markdown 对照稿：17 册
 - 图片资源：4,875 个
 - 图片引用：4,878 次
 - 缺失或孤立资源：0
-- 已验证 EPUB MathML：88,653 个
 - 空图片替代文本：0
 
-《立体几何》原扫描第 49、50、55、56 页仍为空白；Markdown 和 EPUB 已依据另一份扫描逐页核对恢复，`raw/` 原字节未改动。详见 [`docs/KNOWN_ISSUES.md`](docs/KNOWN_ISSUES.md)。
+《立体几何》原扫描第 49、50、55、56 页仍为空白；对照用 Markdown 已依据另一份扫描逐页核对恢复，`raw/` 原字节未改动。详见 [`docs/KNOWN_ISSUES.md`](docs/KNOWN_ISSUES.md)。
 
 ## 权利说明
 
