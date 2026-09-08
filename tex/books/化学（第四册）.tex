@@ -7875,7 +7875,48 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第133页图示}]{assets/chemistry-4/fig-p0133-g01.png}}
+\fitfig{%
+% fig-alt: 葡萄糖碳链骨架：六碳横链，左端短键；前五碳上下各一竖键，下接OH；右端醛基为双键右上O、下连H
+% redraw: fig-p0133-g01 醛基位于碳链末端的葡萄糖骨架
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom] (c2) at (1.05,0) {C};
+  \node[atom] (c3) at (2.10,0) {C};
+  \node[atom] (c4) at (3.15,0) {C};
+  \node[atom] (c5) at (4.20,0) {C};
+  \node[atom] (c6) at (5.25,0) {C};
+  \draw[bond] (-0.48,0) -- (c1.west);
+  \draw[bond] (c1.east) -- (c2.west);
+  \draw[bond] (c2.east) -- (c3.west);
+  \draw[bond] (c3.east) -- (c4.west);
+  \draw[bond] (c4.east) -- (c5.west);
+  \draw[bond] (c5.east) -- (c6.west);
+  \draw[bond] (c1.north) -- ++(0,0.46);
+  \draw[bond] (c2.north) -- ++(0,0.46);
+  \draw[bond] (c3.north) -- ++(0,0.46);
+  \draw[bond] (c4.north) -- ++(0,0.46);
+  \draw[bond] (c5.north) -- ++(0,0.46);
+  \node[atom] (o1) at (0,-0.78) {OH};
+  \node[atom] (o2) at (1.05,-0.78) {OH};
+  \node[atom] (o3) at (2.10,-0.78) {OH};
+  \node[atom] (o4) at (3.15,-0.78) {OH};
+  \node[atom] (o5) at (4.20,-0.78) {OH};
+  \node[atom] (h6) at (5.25,-0.72) {H};
+  \draw[bond] (c1.south) -- (o1.north);
+  \draw[bond] (c2.south) -- (o2.north);
+  \draw[bond] (c3.south) -- (o3.north);
+  \draw[bond] (c4.south) -- (o4.north);
+  \draw[bond] (c5.south) -- (o5.north);
+  \draw[bond] (c6.south) -- (h6.north);
+  \node[atom] (ox) at (5.82,0.55) {O};
+  \draw[dbond] (c6) -- (ox);
+\end{tikzpicture}%
+}
 \caption{原PDF第133页图示}
 \end{figure}
 
@@ -7885,7 +7926,56 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第133页图示}]{assets/chemistry-4/fig-p0133-g02.png}}
+\fitfig{%
+% fig-alt: 葡萄糖展开式：左H—五碳上各H、下各OH，右端醛碳双键右上O、下连H；羰基氧右上圈1为脚注号
+% redraw: fig-p0133-g02 补齐链上六个氢的葡萄糖结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (hl) at (-0.72,0) {H};
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom] (c2) at (1.05,0) {C};
+  \node[atom] (c3) at (2.10,0) {C};
+  \node[atom] (c4) at (3.15,0) {C};
+  \node[atom] (c5) at (4.20,0) {C};
+  \node[atom] (c6) at (5.25,0) {C};
+  \draw[bond] (hl) -- (c1);
+  \draw[bond] (c1.east) -- (c2.west);
+  \draw[bond] (c2.east) -- (c3.west);
+  \draw[bond] (c3.east) -- (c4.west);
+  \draw[bond] (c4.east) -- (c5.west);
+  \draw[bond] (c5.east) -- (c6.west);
+  \node[atom] (u1) at (0,0.70) {H};
+  \node[atom] (u2) at (1.05,0.70) {H};
+  \node[atom] (u3) at (2.10,0.70) {H};
+  \node[atom] (u4) at (3.15,0.70) {H};
+  \node[atom] (u5) at (4.20,0.70) {H};
+  \draw[bond] (c1.north) -- (u1.south);
+  \draw[bond] (c2.north) -- (u2.south);
+  \draw[bond] (c3.north) -- (u3.south);
+  \draw[bond] (c4.north) -- (u4.south);
+  \draw[bond] (c5.north) -- (u5.south);
+  \node[atom] (o1) at (0,-0.78) {OH};
+  \node[atom] (o2) at (1.05,-0.78) {OH};
+  \node[atom] (o3) at (2.10,-0.78) {OH};
+  \node[atom] (o4) at (3.15,-0.78) {OH};
+  \node[atom] (o5) at (4.20,-0.78) {OH};
+  \node[atom] (h6) at (5.25,-0.72) {H};
+  \draw[bond] (c1.south) -- (o1.north);
+  \draw[bond] (c2.south) -- (o2.north);
+  \draw[bond] (c3.south) -- (o3.north);
+  \draw[bond] (c4.south) -- (o4.north);
+  \draw[bond] (c5.south) -- (o5.north);
+  \draw[bond] (c6.south) -- (h6.north);
+  \node[atom] (ox) at (5.82,0.55) {O};
+  \draw[dbond] (c6) -- (ox);
+  \draw[line width=0.45pt] (6.42,0.78) circle (0.13);
+  \node[lab] at (6.42,0.78) {\scriptsize 1};
+\end{tikzpicture}%
+}
 \caption{原PDF第133页图示}
 \end{figure}
 
@@ -7893,7 +7983,54 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第133页图示}]{assets/chemistry-4/fig-p0133-g03.png}}
+\fitfig{%
+% fig-alt: 葡萄糖竖式：醛碳左上H、右上双键O；依次H—C—OH、HO—C—H、H—C—OH、H—C—OH、H—C—OH，最下为H
+% redraw: fig-p0133-g03 葡萄糖费歇尔投影式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom] (h1) at (-0.50,0.48) {H};
+  \node[atom] (o1) at (0.55,0.50) {O};
+  \draw[bond] (h1) -- (c1);
+  \draw[dbond] (c1) -- (o1);
+  \node[atom] (c2) at (0,-0.92) {C};
+  \node[atom, anchor=east] (h2) at (-0.36,-0.92) {H};
+  \node[atom, anchor=west] (oh2) at (0.36,-0.92) {OH};
+  \draw[bond] (c1.south) -- (c2.north);
+  \draw[bond] (h2.east) -- (c2.west);
+  \draw[bond] (c2.east) -- (oh2.west);
+  \node[atom] (c3) at (0,-1.84) {C};
+  \node[atom, anchor=east] (oh3) at (-0.36,-1.84) {HO};
+  \node[atom, anchor=west] (h3) at (0.36,-1.84) {H};
+  \draw[bond] (c2.south) -- (c3.north);
+  \draw[bond] (oh3.east) -- (c3.west);
+  \draw[bond] (c3.east) -- (h3.west);
+  \node[atom] (c4) at (0,-2.76) {C};
+  \node[atom, anchor=east] (h4) at (-0.36,-2.76) {H};
+  \node[atom, anchor=west] (oh4) at (0.36,-2.76) {OH};
+  \draw[bond] (c3.south) -- (c4.north);
+  \draw[bond] (h4.east) -- (c4.west);
+  \draw[bond] (c4.east) -- (oh4.west);
+  \node[atom] (c5) at (0,-3.68) {C};
+  \node[atom, anchor=east] (h5) at (-0.36,-3.68) {H};
+  \node[atom, anchor=west] (oh5) at (0.36,-3.68) {OH};
+  \draw[bond] (c4.south) -- (c5.north);
+  \draw[bond] (h5.east) -- (c5.west);
+  \draw[bond] (c5.east) -- (oh5.west);
+  \node[atom] (c6) at (0,-4.60) {C};
+  \node[atom, anchor=east] (h6) at (-0.36,-4.60) {H};
+  \node[atom, anchor=west] (oh6) at (0.36,-4.60) {OH};
+  \node[atom] (h6b) at (0,-5.28) {H};
+  \draw[bond] (c5.south) -- (c6.north);
+  \draw[bond] (h6.east) -- (c6.west);
+  \draw[bond] (c6.east) -- (oh6.west);
+  \draw[bond] (c6.south) -- (h6b.north);
+\end{tikzpicture}%
+}
 \caption{原PDF第133页图示}
 \end{figure}
 
@@ -7911,7 +8048,39 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第134页图示}]{assets/chemistry-4/fig-p0134-g01.png}}
+\fitfig{%
+% fig-alt: 葡萄糖被Ag2O氧化：左醛基为左上H、右上双键O，竖接(CHOH)4与CH2OH，下标葡萄糖；右为OH在上、右上双键O的葡萄糖酸，等号后+2Ag↓，下标葡萄糖酸
+% redraw: fig-p0134-g01 葡萄糖银镜反应生成葡萄糖酸
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (lc) at (0,0.95) {C};
+  \node[atom] (lh) at (-0.5,1.43) {H};
+  \node[atom] (lo) at (0.55,1.45) {O};
+  \draw[bond] (lh) -- (lc);
+  \draw[dbond] (lc) -- (lo);
+  \node[grp] (lm) at (0,0) {(CHOH)$_4$};
+  \node[grp] (lb) at (0,-0.82) {CH$_2$OH};
+  \draw[bond] (lc.south) -- (lm.north);
+  \draw[bond] (lm.south) -- (lb.north);
+  \node[lab] at (0,-1.42) {葡萄糖};
+  \node[atom, anchor=west] at (1.05,0) {$+$Ag$_2$O$=$};
+  \node[atom] (rc) at (3.70,0.95) {C};
+  \node[atom] (roh) at (3.70,1.78) {OH};
+  \node[atom] (ro) at (4.48,1.38) {O};
+  \draw[bond] (roh.south) -- (rc.north);
+  \draw[dbond] (rc) -- (ro);
+  \node[grp] (rm) at (3.70,0) {(CHOH)$_4$};
+  \node[grp] (rb) at (3.70,-0.82) {CH$_2$OH};
+  \draw[bond] (rc.south) -- (rm.north);
+  \draw[bond] (rm.south) -- (rb.north);
+  \node[atom, anchor=west] at (4.70,0) {$+$2Ag$\downarrow$};
+  \node[lab] at (3.70,-1.42) {葡萄糖酸};
+\end{tikzpicture}%
+}
 \caption{原PDF第134页图示}
 \end{figure}
 
@@ -7919,7 +8088,37 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第134页图示}]{assets/chemistry-4/fig-p0134-g02.png}}
+\fitfig{%
+% fig-alt: 葡萄糖被Cu(OH)2氧化：左醛基H在碳正上方、右上双键O，竖接(CHOH)4与CH2OH；右同样为OH在上的葡萄糖酸，等号为+2Cu(OH)2=，其后+Cu2O↓+2H2O；无下标名称
+% redraw: fig-p0134-g02 葡萄糖被氢氧化铜氧化
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (lc) at (0,0.95) {C};
+  \node[atom] (lh) at (0,1.70) {H};
+  \node[atom] (lo) at (0.72,1.36) {O};
+  \draw[bond] (lh.south) -- (lc.north);
+  \draw[dbond] (lc) -- (lo);
+  \node[grp] (lm) at (0,0) {(CHOH)$_4$};
+  \node[grp] (lb) at (0,-0.82) {CH$_2$OH};
+  \draw[bond] (lc.south) -- (lm.north);
+  \draw[bond] (lm.south) -- (lb.north);
+  \node[atom, anchor=west] at (1.05,0) {$+$2Cu(OH)$_2$=};
+  \node[atom] (rc) at (4.55,0.95) {C};
+  \node[atom] (roh) at (4.55,1.78) {OH};
+  \node[atom] (ro) at (5.32,1.38) {O};
+  \draw[bond] (roh.south) -- (rc.north);
+  \draw[dbond] (rc) -- (ro);
+  \node[grp] (rm) at (4.55,0) {(CHOH)$_4$};
+  \node[grp] (rb) at (4.55,-0.82) {CH$_2$OH};
+  \draw[bond] (rc.south) -- (rm.north);
+  \draw[bond] (rm.south) -- (rb.north);
+  \node[atom, anchor=west] at (5.55,0) {$+$Cu$_2$O$\downarrow$$+$2H$_2$O};
+\end{tikzpicture}%
+}
 \caption{原PDF第134页图示}
 \end{figure}
 
@@ -7966,7 +8165,45 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第135页图示}]{assets/chemistry-4/fig-p0135-g01.png}}
+\fitfig{%
+% fig-alt: 葡萄糖生产流程：淀粉+水+酸经加热至糖化(水解)，再中和、过滤、蒸发、脱色、过滤；次行续蒸发、结晶、分离(使结晶与糖蜜分开)、干燥、磨粉。(Ca(OH)2)下箭指中和，(活性炭)下箭指脱色
+% redraw: fig-p0135-g01 淀粉水解制葡萄糖生产流程
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[anchor=west] (a) at (0,0) {淀粉$+$水$+$酸};
+  \node[anchor=west] (ab) at (2.85,0) {$\rightarrow$};
+  \node[lab] at (2.85,0.42) {\scriptsize 加热};
+  \node[anchor=west] (b) at (3.40,0) {糖化(水解)};
+  \node[anchor=west] (bc) at (5.55,0) {$\rightarrow$};
+  \node[anchor=west] (c) at (6.10,0) {中和};
+  \node[anchor=west] (cd) at (7.15,0) {$\rightarrow$};
+  \node[anchor=west] (d) at (7.70,0) {过滤};
+  \node[anchor=west] (de) at (8.75,0) {$\rightarrow$};
+  \node[anchor=west] (e) at (9.30,0) {蒸发};
+  \node[anchor=west] (ef) at (10.35,0) {$\rightarrow$};
+  \node[anchor=west] (f) at (10.90,0) {脱色};
+  \node[anchor=west] (fg) at (11.95,0) {$\rightarrow$};
+  \node[anchor=west] (g) at (12.50,0) {过滤};
+  \node[lab] (cao) at (6.55,1.15) {(Ca(OH)$_2$)};
+  \node[lab] (ac) at (11.35,1.15) {(活性炭)};
+  \draw[->, line width=0.55pt] (cao.south) -- (c.north);
+  \draw[->, line width=0.55pt] (ac.south) -- (f.north);
+  \node[anchor=west] (arr) at (2.20,-0.95) {$\rightarrow$};
+  \node[anchor=west] (h) at (2.75,-0.95) {蒸发};
+  \node[anchor=west] (hi) at (3.80,-0.95) {$\rightarrow$};
+  \node[anchor=west] (i) at (4.35,-0.95) {结晶};
+  \node[anchor=west] (ij) at (5.40,-0.95) {$\rightarrow$};
+  \node[anchor=west] (j) at (5.95,-0.95) {分离(使结晶与糖蜜分开)};
+  \node[anchor=west] (jk) at (11.40,-0.95) {$\rightarrow$};
+  \node[anchor=west] (k) at (11.95,-0.95) {干燥};
+  \node[anchor=west] (km) at (13.00,-0.95) {$\rightarrow$};
+  \node[anchor=west] (m) at (13.55,-0.95) {磨粉};
+\end{tikzpicture}%
+}
 \caption{原PDF第135页图示}
 \end{figure}
 
@@ -7984,7 +8221,55 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第136页图示}]{assets/chemistry-4/fig-p0136-g01.png}}
+\fitfig{%
+% fig-alt: 果糖横式：H—C(上H、下OH)—三碳(上H、下OH)—羰基碳下双键O—右端CH2OH（上H、下OH、右H）；下括[CH2OH·(CHOH)3·CO·CH2OH]
+% redraw: fig-p0136-g01 果糖开链结构与简式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (hl) at (-0.72,0) {H};
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom] (c2) at (1.05,0) {C};
+  \node[atom] (c3) at (2.10,0) {C};
+  \node[atom] (c4) at (3.15,0) {C};
+  \node[atom] (c5) at (4.20,0) {C};
+  \node[atom] (c6) at (5.25,0) {C};
+  \node[atom] (hr) at (5.95,0) {H};
+  \draw[bond] (hl) -- (c1);
+  \draw[bond] (c1.east) -- (c2.west);
+  \draw[bond] (c2.east) -- (c3.west);
+  \draw[bond] (c3.east) -- (c4.west);
+  \draw[bond] (c4.east) -- (c5.west);
+  \draw[bond] (c5.east) -- (c6.west);
+  \draw[bond] (c6.east) -- (hr.west);
+  \node[atom] (u1) at (0,0.70) {H};
+  \node[atom] (u2) at (1.05,0.70) {H};
+  \node[atom] (u3) at (2.10,0.70) {H};
+  \node[atom] (u4) at (3.15,0.70) {H};
+  \node[atom] (u6) at (5.25,0.70) {H};
+  \draw[bond] (c1.north) -- (u1.south);
+  \draw[bond] (c2.north) -- (u2.south);
+  \draw[bond] (c3.north) -- (u3.south);
+  \draw[bond] (c4.north) -- (u4.south);
+  \draw[bond] (c6.north) -- (u6.south);
+  \node[atom] (o1) at (0,-0.78) {OH};
+  \node[atom] (o2) at (1.05,-0.78) {OH};
+  \node[atom] (o3) at (2.10,-0.78) {OH};
+  \node[atom] (o4) at (3.15,-0.78) {OH};
+  \node[atom] (o5) at (4.20,-0.78) {O};
+  \node[atom] (o6) at (5.25,-0.78) {OH};
+  \draw[bond] (c1.south) -- (o1.north);
+  \draw[bond] (c2.south) -- (o2.north);
+  \draw[bond] (c3.south) -- (o3.north);
+  \draw[bond] (c4.south) -- (o4.north);
+  \draw[dbond] (c5.south) -- (o5.north);
+  \draw[bond] (c6.south) -- (o6.north);
+  \node[lab] at (2.70,-1.55) {[CH$_2$OH$\cdot$(CHOH)$_3\cdot$CO$\cdot$CH$_2$OH]};
+\end{tikzpicture}%
+}
 \caption{原PDF第136页图示}
 \end{figure}
 
@@ -7992,7 +8277,54 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第136页图示}]{assets/chemistry-4/fig-p0136-g02.png}}
+\fitfig{%
+% fig-alt: 果糖竖式：上CH2OH写成上H、左H、右OH，其下C右双键O；再HO—C—H、H—C—OH、H—C—OH、H—C—OH，最下为H
+% redraw: fig-p0136-g02 果糖费歇尔投影式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (hu) at (0,0.68) {H};
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom, anchor=east] (h1) at (-0.36,0) {H};
+  \node[atom, anchor=west] (oh1) at (0.36,0) {OH};
+  \draw[bond] (hu.south) -- (c1.north);
+  \draw[bond] (h1.east) -- (c1.west);
+  \draw[bond] (c1.east) -- (oh1.west);
+  \node[atom] (c2) at (0,-0.92) {C};
+  \node[atom, anchor=west] (o2) at (0.55,-0.92) {O};
+  \draw[bond] (c1.south) -- (c2.north);
+  \draw[dbond] (c2.east) -- (o2.west);
+  \node[atom] (c3) at (0,-1.84) {C};
+  \node[atom, anchor=east] (oh3) at (-0.36,-1.84) {HO};
+  \node[atom, anchor=west] (h3) at (0.36,-1.84) {H};
+  \draw[bond] (c2.south) -- (c3.north);
+  \draw[bond] (oh3.east) -- (c3.west);
+  \draw[bond] (c3.east) -- (h3.west);
+  \node[atom] (c4) at (0,-2.76) {C};
+  \node[atom, anchor=east] (h4) at (-0.36,-2.76) {H};
+  \node[atom, anchor=west] (oh4) at (0.36,-2.76) {OH};
+  \draw[bond] (c3.south) -- (c4.north);
+  \draw[bond] (h4.east) -- (c4.west);
+  \draw[bond] (c4.east) -- (oh4.west);
+  \node[atom] (c5) at (0,-3.68) {C};
+  \node[atom, anchor=east] (h5) at (-0.36,-3.68) {H};
+  \node[atom, anchor=west] (oh5) at (0.36,-3.68) {OH};
+  \draw[bond] (c4.south) -- (c5.north);
+  \draw[bond] (h5.east) -- (c5.west);
+  \draw[bond] (c5.east) -- (oh5.west);
+  \node[atom] (c6) at (0,-4.60) {C};
+  \node[atom, anchor=east] (h6) at (-0.36,-4.60) {H};
+  \node[atom, anchor=west] (oh6) at (0.36,-4.60) {OH};
+  \node[atom] (h6b) at (0,-5.28) {H};
+  \draw[bond] (c5.south) -- (c6.north);
+  \draw[bond] (h6.east) -- (c6.west);
+  \draw[bond] (c6.east) -- (oh6.west);
+  \draw[bond] (c6.south) -- (h6b.north);
+\end{tikzpicture}%
+}
 \caption{原PDF第136页图示}
 \end{figure}
 
@@ -8002,7 +8334,59 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第137页图示}]{assets/chemistry-4/fig-p0137-g01.png}}
+\fitfig{%
+% fig-alt: 果糖氧化成两种羟基酸：上式酮糖竖式+(CHOH)3+2Ag2O=4Ag↓+，产物为CH2OH竖接COOH（羟基乙酸）与COOH竖接(CHOH)2、CH2OH（三羟基丁酸），下标果糖、羟基乙酸、三羟基丁酸；下式同构，试剂为4Cu(OH)2，产物后+2Cu2O↓+4H2O，无名称标
+% redraw: fig-p0137-g01 果糖被氧化银、氢氧化铜氧化的产物
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.5pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[grp] (ta) at (0,1.55) {CH$_2$OH};
+  \node[atom] (tc) at (0,0.77) {C};
+  \node[atom, anchor=west] (to) at (0.55,0.77) {O};
+  \node[grp] (tm) at (0,-0.07) {(CHOH)$_3$};
+  \node[grp] (tb) at (0,-0.87) {CH$_2$OH};
+  \draw[bond] (ta.south) -- (tc.north);
+  \draw[dbond] (tc.east) -- (to.west);
+  \draw[bond] (tc.south) -- (tm.north);
+  \draw[bond] (tm.south) -- (tb.north);
+  \node[lab] at (0,-1.55) {果糖};
+  \node[atom, anchor=west] (eq1) at (1.45,-0.07) {$+$2Ag$_2$O$=$4Ag$\downarrow$$+$};
+  \node[grp] (p1a) at (5.05,0.55) {CH$_2$OH};
+  \node[grp] (p1b) at (5.05,-0.55) {COOH};
+  \draw[bond] (p1a.south) -- (p1b.north);
+  \node[atom] at (6.15,0) {$+$};
+  \node[grp] (p2a) at (7.15,0.85) {COOH};
+  \node[grp] (p2b) at (7.15,0) {(CHOH)$_2$};
+  \node[grp] (p2c) at (7.15,-0.85) {CH$_2$OH};
+  \draw[bond] (p2a.south) -- (p2b.north);
+  \draw[bond] (p2b.south) -- (p2c.north);
+  \node[lab] at (5.05,-1.55) {羟基乙酸};
+  \node[lab] at (7.15,-1.55) {三羟基丁酸};
+  \node[grp] (ba) at (0,-2.85) {CH$_2$OH};
+  \node[atom] (bc) at (0,-3.63) {C};
+  \node[atom, anchor=west] (bo) at (0.55,-3.63) {O};
+  \node[grp] (bm) at (0,-4.47) {(CHOH)$_3$};
+  \node[grp] (bb) at (0,-5.27) {CH$_2$OH};
+  \draw[bond] (ba.south) -- (bc.north);
+  \draw[dbond] (bc.east) -- (bo.west);
+  \draw[bond] (bc.south) -- (bm.north);
+  \draw[bond] (bm.south) -- (bb.north);
+  \node[atom, anchor=west] (eq2) at (1.45,-4.47) {$+$4Cu(OH)$_2$=};
+  \node[grp] (q1a) at (4.55,-3.85) {CH$_2$OH};
+  \node[grp] (q1b) at (4.55,-4.95) {COOH};
+  \draw[bond] (q1a.south) -- (q1b.north);
+  \node[atom] at (5.65,-4.47) {$+$};
+  \node[grp] (q2a) at (6.65,-3.55) {COOH};
+  \node[grp] (q2b) at (6.65,-4.40) {(CHOH)$_2$};
+  \node[grp] (q2c) at (6.65,-5.25) {CH$_2$OH};
+  \draw[bond] (q2a.south) -- (q2b.north);
+  \draw[bond] (q2b.south) -- (q2c.north);
+  \node[atom, anchor=west] at (7.85,-4.47) {$+$2Cu$_2$O$\downarrow$$+$4H$_2$O};
+\end{tikzpicture}%
+}
 \caption{原PDF第137页图示}
 \end{figure}
 
