@@ -1244,7 +1244,66 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.6}]{assets/physics-4/fig-p0026-01.png}}
+% fig-alt: 平面镜立于M1M2上，O处钉针，法线ON，两侧大头针P1P2与P3P4，镜中象P1'至P4'，眼在E
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 平面镜正面、顶面、右侧
+  \draw[line width=0.7pt] (-1.70,0.16) -- (1.92,-0.16) -- (2.08,1.18) -- (-1.82,1.48) -- cycle;
+  \draw[line width=0.55pt] (-1.82,1.48) -- (-1.64,1.66) -- (2.28,1.34) -- (2.08,1.18);
+  \draw[line width=0.55pt] (1.92,-0.16) -- (2.14,-0.02) -- (2.28,1.34);
+  \begin{scope}
+    \clip (-1.68,0.18) -- (1.90,-0.14) -- (2.05,1.15) -- (-1.80,1.45) -- cycle;
+    \foreach \x in {-1.55,-1.28,-1.01,-0.74,-0.47,-0.20,0.07,0.34,0.61,0.88,1.15,1.42,1.69} {
+      \draw[line width=0.26pt] (\x,0.05) -- (\x,1.50);
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (-1.70,0.16) -- (1.92,-0.16) -- (2.08,1.18) -- (-1.82,1.48) -- cycle;
+  % 镜中大头针象
+  \draw[line width=0.55pt] (-1.22,0.58) -- (-1.22,0.84);
+  \node[above=0pt] at (-1.22,0.84) {$P_{1}^{\prime}$};
+  \draw[line width=0.55pt] (-0.58,0.40) -- (-0.58,0.64);
+  \node[above=0pt] at (-0.58,0.64) {$P_{2}^{\prime}$};
+  \draw[line width=0.55pt] (0.52,0.36) -- (0.52,0.60);
+  \node[above=0pt] at (0.52,0.60) {$P_{3}^{\prime}$};
+  \draw[line width=0.55pt] (1.16,0.56) -- (1.16,0.82);
+  \node[above=0pt] at (1.16,0.82) {$P_{4}^{\prime}$};
+  % 板面直线 M1M2
+  \draw[line width=0.65pt] (-2.85,0.28) -- (3.15,-0.32);
+  \node[left=1pt] at (-2.85,0.28) {$M_{1}$};
+  \node[right=1pt] at (3.15,-0.32) {$M_{2}$};
+  % 法线
+  \draw[line width=0.5pt,dashed] (84:0.22) -- (-96:1.78);
+  \node[below=1pt] at (-96:1.78) {$N$};
+  % 入射 P1P2O
+  \draw[line width=0.6pt] (-136:2.32) -- (0,0);
+  \draw[line width=0.55pt,->] (-136:1.42) -- (-136:0.78);
+  \draw[line width=0.55pt] (-136:2.15) ++(-46:0.12) -- ++(134:0.24);
+  \node[left=2pt] at (-136:2.15) {$P_{1}$};
+  \draw[line width=0.55pt] (-136:1.22) ++(-46:0.12) -- ++(134:0.24);
+  \node[left=2pt] at (-136:1.22) {$P_{2}$};
+  % 反射 OP3P4
+  \draw[line width=0.6pt] (0,0) -- (-56:2.62);
+  \draw[line width=0.55pt,->] (-56:0.88) -- (-56:1.52);
+  \draw[line width=0.55pt] (-56:0.82) ++(34:0.12) -- ++(214:0.24);
+  \node[right=2pt] at (-56:0.82) {$P_{3}$};
+  \draw[line width=0.55pt] (-56:1.78) ++(34:0.12) -- ++(214:0.24);
+  \node[right=2pt] at (-56:1.78) {$P_{4}$};
+  \draw[line width=0.45pt] (-96:0.52) arc (-96:-136:0.52);
+  \draw[line width=0.45pt] (-96:0.46) arc (-96:-56:0.46);
+  \node at (-116:0.78) {$a$};
+  \node at (-76:0.72) {$b$};
+  \node[above left=1pt] at (0.02,0.08) {$O$};
+  \draw[line width=0.7pt] (-0.04,-0.10) -- (0.04,0.14);
+  \node[below=1pt] at (-56:2.35) {$E$};
+  \begin{scope}[shift={(-48:2.85)}]
+    \draw[line width=0.55pt] (0.00,0.05) .. controls (0.14,0.16) and (0.32,0.10) .. (0.40,0.00)
+      .. controls (0.30,-0.12) and (0.12,-0.10) .. (0.00,0.05);
+    \fill (0.18,0.02) circle (0.04);
+    \draw[line width=0.4pt] (0.34,0.08) -- (0.46,0.16);
+    \draw[line width=0.4pt] (0.36,0.02) -- (0.48,0.04);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图2.6}
 \end{figure}
 
@@ -1307,7 +1366,42 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.11}]{assets/physics-4/fig-p0029-01.png}}
+% fig-alt: 镜面由M转到M'，法线由ON转到ON'，入射AO仍竖直，反射由OB转到OB'，角a、b与δ
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-2.55,0) -- (2.62,0);
+  \begin{scope}
+    \clip (-2.55,-0.40) rectangle (2.62,-0.02);
+    \foreach \x in {-2.45,-2.22,-1.99,-1.76,-1.53,-1.30,-1.07,-0.84,-0.61,-0.38,-0.15,0.08,0.31,0.54,0.77,1.00,1.23,1.46,1.69,1.92,2.15,2.38} {
+      \draw[line width=0.28pt] (\x,-0.02) -- (\x-0.26,-0.40);
+    }
+  \end{scope}
+  \node[left=2pt] at (-2.55,0.04) {$\mu$};
+  \node[right=2pt] at (2.62,0.02) {$M$};
+  \draw[line width=0.55pt] (168:1.95) -- (-12:1.72);
+  \draw[line width=0.55pt] (168:1.95) ++(-102:0.06) -- (-12:1.72) ++(-102:0.06);
+  \node[above=2pt] at (168:1.85) {$M'$};
+  \node[below=2pt] at (-12:1.72) {$\mu'$};
+  \draw[line width=0.45pt] (180:0.58) arc (180:168:0.58);
+  \node[above=1pt] at (174:0.78) {$\delta$};
+  \draw[line width=0.5pt,dashed] (87:2.48) -- (0,0);
+  \draw[line width=0.5pt,dashed] (74:2.22) -- (0,0);
+  \node[above=1pt] at (87:2.48) {$N$};
+  \node[above right=1pt] at (74:2.22) {$N'$};
+  \draw[line width=0.6pt] (90:2.15) -- (0,0);
+  \draw[line width=0.55pt,->] (90:1.55) -- (90:0.85);
+  \node[left=2pt] at (90:2.15) {$A$};
+  \node[right=2pt] at (0.18,1.78) {$B$};
+  \draw[line width=0.6pt] (0,0) -- (60:2.15);
+  \draw[line width=0.55pt,->] (60:0.78) -- (60:1.48);
+  \node[right=2pt] at (60:2.15) {$B'$};
+  \draw[line width=0.45pt] (90:0.62) arc (90:74:0.62);
+  \draw[line width=0.45pt] (74:0.92) arc (74:60:0.92);
+  \node at (82:0.88) {$a$};
+  \node at (67:1.16) {$b$};
+  \node[below=2pt] at (0,-0.02) {$O$};
+\end{tikzpicture}%
+}
 \caption{图2.11}
 \end{figure}
 
@@ -1334,7 +1428,32 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.12}]{assets/physics-4/fig-p0029-02.png}}
+% fig-alt: 入射AO与镜面成θ，法线虚线，反射OB竖直向下，α=b，入射光与反射光夹角90°
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.6pt] (-3.05,0) -- (0,0);
+  \draw[line width=0.55pt,->] (-1.85,0) -- (-1.15,0);
+  \draw[line width=0.5pt,dashed] (0,0) -- (1.05,0);
+  \node[left=2pt] at (-3.05,0.06) {$A$};
+  \draw[line width=0.75pt] (135:1.00) -- (-45:1.20);
+  \foreach \t in {0.18,0.36,0.54,0.72,0.90,1.08} {
+    \draw[line width=0.28pt] (135:1.00) ++(-45:\t) -- ++(48:0.26);
+  }
+  \node[above=1pt] at (0.08,0.12) {$O$};
+  \draw[line width=0.45pt] (180:0.62) arc (180:155:0.62);
+  \node at (174:0.98) {$\theta$};
+  \draw[line width=0.5pt,dashed] (0,0) -- (228:1.22);
+  \draw[line width=0.45pt] (180:0.70) arc (180:228:0.70);
+  \node at (204:0.96) {$\alpha$};
+  \draw[line width=0.6pt] (0,0) -- (0,-1.90);
+  \draw[line width=0.55pt,->] (0,-0.55) -- (0,-1.22);
+  \draw[line width=0.45pt] (228:0.98) arc (228:270:0.98);
+  \node at (250:1.18) {$b$};
+  \draw[line width=0.45pt] (0:0.62) arc (0:-90:0.62);
+  \node[right=2pt] at (0.48,-0.42) {$90^{\circ}$};
+  \node[below=2pt] at (0,-1.90) {$B$};
+\end{tikzpicture}%
+}
 \caption{图2.12}
 \end{figure}
 
@@ -1358,7 +1477,44 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.13}]{assets/physics-4/fig-p0030-01.png}}
+% fig-alt: 灯光经小平面镜反射到刻度，镜面转δ时反射光线转2δ；位置1、2
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.6pt] (128:2.58) circle (0.18);
+  \draw[line width=0.4pt] (128:2.58) ++(-0.06,0.05) .. controls ++(0.05,-0.06) and ++(0.04,0.04) .. ++(0.08,-0.02)
+    .. controls ++(0.02,-0.05) and ++(-0.04,-0.02) .. ++(0.02,-0.06);
+  \draw[line width=0.85pt] (128:2.02) ++(38:0.11) -- ++(218:0.22);
+  \draw[line width=0.6pt] (128:2.38) -- (0,0);
+  \draw[line width=0.5pt,dashed] (0,0) -- (92:1.35);
+  \draw[line width=0.5pt,dashed] (0,0) -- (78:1.42);
+  \node[above left=0pt] at (92:1.35) {$1$};
+  \node[above=1pt] at (78:1.42) {$2$};
+  \draw[line width=0.45pt] (92:0.72) arc (92:78:0.72);
+  \node[left=1pt] at (85:0.92) {$\delta$};
+  \draw[line width=0.6pt] (0,0) -- (52:2.32);
+  \draw[line width=0.6pt] (0,0) -- (24:2.42);
+  \node[above=1pt] at (52:2.22) {$1$};
+  \node[right=1pt] at (24:2.28) {$2$};
+  \draw[line width=0.45pt] (52:1.45) arc (52:24:1.45);
+  \node at (38:1.22) {$2\delta$};
+  \foreach \a in {18,30,36,42,48,52,58} {
+    \draw[line width=0.4pt] (\a:2.52) -- (\a:2.70);
+  }
+  \draw[line width=0.7pt] (176:1.05) -- (-4:1.72);
+  \draw[line width=0.7pt] (164:0.98) -- (-16:1.42);
+  \foreach \t in {0.10,0.30,0.50,0.70,0.90,1.10,1.30,1.50} {
+    \draw[line width=0.26pt] (176:1.05) ++(-4:\t) -- ++(-94:0.15);
+  }
+  \foreach \t in {0.10,0.30,0.50,0.70,0.90,1.10} {
+    \draw[line width=0.26pt] (164:0.98) ++(-16:\t) -- ++(-106:0.15);
+  }
+  \node[right=2pt] at (-4:1.72) {$1$};
+  \node[below right=1pt] at (-16:1.42) {$2$};
+  \draw[line width=0.45pt] (176:0.52) arc (176:164:0.52);
+  \node[left=1pt] at (170:0.70) {$\delta$};
+  \node[below=2pt] at (0,-0.02) {$O$};
+\end{tikzpicture}%
+}
 \caption{图2.13}
 \end{figure}
 
