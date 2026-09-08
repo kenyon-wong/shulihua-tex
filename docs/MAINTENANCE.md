@@ -7,8 +7,9 @@
 3. 新增或替换图片时提供真实描述性的替代文本。
 4. 不移动 `books/assets/`，除非同步更新所有 Markdown 引用。
 5. 运行 `make audit`。
-6. 运行 `make all`，确认 17 册全部通过。
-7. 运行 `make verify`，独立复核已有产物。
+6. 运行 `make all`，确认 17 册 EPUB 全部通过。
+7. 运行 `make verify`，独立复核已有 EPUB。
+8. 若改动可能影响 PDF 版面，再运行 `make pdf` 与 `make pdf-verify`。
 
 图片疑似为习题标题、练习标题、页眉或其他纯文字卡片时，不得直接删除；先执行 [`IMAGE_TEXT_CARD_WORKFLOW.md`](IMAGE_TEXT_CARD_WORKFLOW.md) 中的只读候选、长上下文、原PDF版面、隔离修改和构建门禁。
 
@@ -30,22 +31,31 @@
 
 ## 公式
 
-构建使用 MathML。不要对公式区域执行全角标点替换。修改公式后必须确认源数学片段数与 EPUB MathML 数一致。
+EPUB 构建使用 MathML，PDF 构建使用 XeLaTeX。不要对公式区域执行全角标点替换。修改公式后必须确认源数学片段数与 EPUB MathML 数一致，并抽检对应 PDF 页。
+
+## PDF
+
+规范正文仍是 `books/` 中的 Markdown，不要改写成 `.tex`。PDF 模板与封面位于 `tex/`。
+
+1. 分册由 `scripts/build_pdfs.py` 调用 Pandoc + XeLaTeX 生成；
+2. 合订本由已通过校验的分册 PDF 按 `catalog.json` 中 `collections` 装订，页码按册重起；
+3. 中文字体固定为 TeX Live / TinyTeX 自带的 Fandol，不要改用本机系统字体；
+4. 缺少宏包时运行 `make tex-deps`；合订装订需要 PyPDF2 3.x。
 
 ## Release 发布
 
 从 `v2.0.0` 起执行以下固定策略：
 
-1. Release 只上传数学、物理学、化学三本合订版 EPUB，不上传17本独立 EPUB；
-2. 17本独立 EPUB 仅作为合订输入与审计基线；
+1. Release 只上传数学、物理学、化学三本学科合订本，不上传17本独立分册；
+2. 合订产物包括 EPUB 与重建 PDF；17本独立 EPUB/PDF 仅作为合订输入与审计基线；
 3. 允许同时上传 `SHA256SUMS.txt`、发布清单等验证附件；
-4. 发布前必须通过确定性双构建、公共目录审计、Calibre 8.16.2 smoke、真实 fragment 定位和隐私审计；
+4. 发布前必须通过确定性双构建、公共目录审计、Calibre 8.16.2 smoke、真实 fragment 定位、PDF 分册/合订校验和隐私审计；
 5. 既有 Release 保留，不覆盖、不追溯删除。
 
 ## 生成物
 
-- `.build/`：Pandoc 中间文件
-- `dist/`：EPUB 输出
+- `.build/`：Pandoc 中间文件与 XeLaTeX 工作目录
+- `dist/`：EPUB 与 PDF 输出
 - `reports/*.json`：动态审计结果
 
 以上内容均由脚本重建，不纳入版本控制。

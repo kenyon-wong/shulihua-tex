@@ -1,0 +1,91 @@
+\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
+\usepackage[
+  b5paper,
+  hmargin=2.2cm,
+  top=1.6cm,
+  bottom=2.2cm,
+  headheight=22pt,
+  headsep=14pt,
+  footskip=16mm,
+  includehead
+]{geometry}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array,calc}
+\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
+\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
+\IfFileExists{fancyhdr.sty}{%
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
+  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyfoot[C]{\thepage}%
+    \renewcommand{\headrulewidth}{0pt}%
+  }
+}{\pagestyle{headings}}
+\IfFileExists{caption.sty}{\usepackage{caption}}{}
+\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
+\usepackage{float}
+\xeCJKsetup{CJKmath=true}
+\usepackage{hyperref}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
+
+\setcounter{secnumdepth}{-\maxdimen}
+\setlength{\emergencystretch}{3em}
+\graphicspath{{books/}}
+
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi
+}
+\def\fps@figure{htbp}
+\makeatother
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\hypersetup{
+  hidelinks,
+  pdflang={zh-CN},
+  pdftitle={$title$},
+  pdfauthor={$author$},
+  pdfcreator={XeLaTeX via pandoc}
+}
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$else$
+\author{}
+$endif$
+\date{}
+
+\begin{document}
+\frontmatter
+$if(title)$
+\maketitle
+$endif$
+$if(toc)$
+\renewcommand*\contentsname{$if(toc-title)$$toc-title$$else$目录$endif$}
+{
+\setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$2$endif$}
+\tableofcontents
+}
+$endif$
+\mainmatter
+$body$
+\end{document}

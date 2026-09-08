@@ -152,4 +152,4 @@ make pre-push
 - 构建、Calibre和隐私审计结果；
 - Release资产SHA-256。
 
-Release继续遵循“仅发布三本学科合订EPUB”的策略。
+Release继续遵循“仅发布三本学科合订本（EPUB 与重建 PDF）”的策略。

@@ -36,12 +36,13 @@
 │   ├── *.md             # 17 册规范正文源
 │   └── assets/          # 4,875 个正文图片资源
 ├── raw/                 # 17 册原始扫描 PDF、导入哈希和资料说明
-├── catalog.json         # 书目、顺序、语言和稳定 EPUB UUID
+├── catalog.json         # 书目、合订分组、语言和稳定 UUID
 ├── epub/                # EPUB 样式、Lua 过滤器及 Pandoc 本地化数据
-├── scripts/             # 源文件审计与 EPUB3 构建工具
+├── tex/                 # PDF 模板、合订封面与 TeX 宏包清单
+├── scripts/             # 源文件审计、EPUB3 与 PDF 构建工具
 ├── docs/                # 来源、维护与已知问题说明
 ├── reports/             # 动态审计报告（JSON 不纳入版本控制）
-└── dist/                # 构建出的 EPUB（不纳入版本控制）
+└── dist/                # 构建出的 EPUB 与 PDF（不纳入版本控制）
 ```
 
 Markdown 与 `books/assets/` 保持在同一源文件区，因此正文中的 `assets/...` 相对引用可直接解析；仓库根目录不放置单册电子书源文件。
@@ -55,6 +56,8 @@ Markdown 与 `books/assets/` 保持在同一源文件区，因此正文中的 `a
 - GNU Make（可选）
 
 原始 PDF 深度审计额外需要 PyPDF2 3.x、qpdf、Poppler（`pdfinfo`、`pdfdetach`、`pdfsig`、`pdftotext`）和 ExifTool。
+
+重建 PDF 额外需要 XeLaTeX（TeX Live 2024 或 TinyTeX，含 ctex/fandol）以及合订装订用的 PyPDF2 3.x。首次可运行 `make tex-deps` 补齐宏包。
 
 完整审计并构建：
 
@@ -80,29 +83,42 @@ make pdf-audit
 make epub
 ```
 
+构建 17 册分册 PDF 及三本学科合订 PDF：
+
+```bash
+make pdf
+```
+
 验证已有 EPUB：
 
 ```bash
 make verify
 ```
 
+验证已有重建 PDF：
+
+```bash
+make pdf-verify
+```
+
 构建单册：
 
 ```bash
 python3 scripts/build_epubs.py --book '代数（第一册）'
+python3 scripts/build_pdfs.py --book '代数（第一册）'
 ```
 
-输出位于 `dist/`，报告位于 `reports/`。构建器会检查 ZIP、XML、元数据、内部链接、图片替代文本、MathML 数量以及 EPUB3 nav/EPUB2 NCX 同步状态。同一源文件、同一 Pandoc 版本和同一 `SOURCE_DATE_EPOCH` 下，输出字节可复现。
+输出位于 `dist/`，报告位于 `reports/`。EPUB 构建器会检查 ZIP、XML、元数据、内部链接、图片替代文本、MathML 数量以及 EPUB3 nav/EPUB2 NCX 同步状态。同一源文件、同一 Pandoc 版本和同一 `SOURCE_DATE_EPOCH` 下，EPUB 输出字节可复现。PDF 使用 `ctexbook` + Fandol，同一 TeX Live 与同一 `SOURCE_DATE_EPOCH` 下内容稳定；跨 TeX 版本不保证字节级一致。
 
 ## Release 发布策略
 
-从 `v2.0.0` 起，GitHub Release 只发布以下三本学科合订版 EPUB，不再上传17本独立 EPUB：
+从 `v2.0.0` 起，GitHub Release 只发布学科合订本，不再上传17本独立分册。当前合订产物为 EPUB 与重建 PDF：
 
 - 数学（合订本）
 - 物理学（合订本）
 - 化学（合订本）
 
-17册 Markdown、原始 PDF、资源和单册构建能力继续保留在仓库中，作为合订本的可审计来源。既有 `v1.0.0`、`v1.1.0` Release 保留，不追溯删除。
+17册 Markdown、原始扫描 PDF、资源和单册 EPUB/PDF 构建能力继续保留在仓库中，作为合订本的可审计来源。既有 `v1.0.0`、`v1.1.0` Release 保留，不追溯删除。
 
 ## 发布前隐私审计
 
