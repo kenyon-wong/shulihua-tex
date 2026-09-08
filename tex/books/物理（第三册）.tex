@@ -1850,7 +1850,21 @@ k \frac{1.0 \times 10^{- 9}}{x^{2}} = k \frac{4.0 \times 10^{- 9}}{(x + 0.4)^{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0040-02.png}}
+\fitfig{%
+% fig-alt: 第3题(b) 五条向右的平行电力线；C在最上线，A在其正下方第四线，虚线相连，B在A右侧同一线上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {1.68,1.26,0.84,0.42,0.00} {
+    \draw[line width=0.65pt,->] (0,\y) -- (3.70,\y);
+  }
+  \draw[line width=0.55pt,dashed] (1.15,1.68) -- (1.15,0.42);
+  \fill (1.15,1.68) circle[radius=0.045];
+  \fill (1.15,0.42) circle[radius=0.045];
+  \fill (2.45,0.42) circle[radius=0.045];
+  \node[above=2pt] at (1.15,1.68) {$C$};
+  \node[below=2pt] at (1.15,0.42) {$A$};
+  \node[below=2pt] at (2.45,0.42) {$B$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -1893,7 +1907,53 @@ F = q E
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.24}]{assets/physics-3/fig-p0041-01.png}}
+\fitfig{%
+% fig-alt: 图1.24 上板正、下板负，电力线向下；P到M、L、N路径，PN斜线标θ，B在负板表面
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \begin{scope}
+    \clip (0.26,3.18) -- (5.48,3.18) arc[start angle=-90,end angle=90,radius=0.23] -- (0.26,3.64) arc[start angle=90,end angle=270,radius=0.23] -- cycle;
+    \foreach \x in {-0.3,-0.05,...,5.8} {
+      \draw[line width=0.35pt] (\x,3.78) -- (\x+0.52,3.05);
+    }
+  \end{scope}
+  \draw[line width=0.8pt] (0.26,3.18) -- (5.48,3.18) arc[start angle=-90,end angle=90,radius=0.23] -- (0.26,3.64) arc[start angle=90,end angle=270,radius=0.23] -- cycle;
+  \node[fill=white,inner sep=1.1pt] at (2.87,3.41) {$+$};
+  \begin{scope}
+    \clip (0.26,0.08) -- (5.48,0.08) arc[start angle=-90,end angle=90,radius=0.23] -- (0.26,0.54) arc[start angle=90,end angle=270,radius=0.23] -- cycle;
+    \foreach \x in {-0.3,-0.05,...,5.8} {
+      \draw[line width=0.35pt] (\x,0.68) -- (\x+0.52,-0.05);
+    }
+  \end{scope}
+  \draw[line width=0.8pt] (0.26,0.08) -- (5.48,0.08) arc[start angle=-90,end angle=90,radius=0.23] -- (0.26,0.54) arc[start angle=90,end angle=270,radius=0.23] -- cycle;
+  \node[fill=white,inner sep=1.1pt] at (2.87,0.31) {$-$};
+  \coordinate (P) at (1.52,2.48);
+  \coordinate (M) at (3.72,2.48);
+  \coordinate (L) at (1.52,1.08);
+  \coordinate (N) at (3.72,1.08);
+  \draw[line width=0.6pt,->] (0.62,3.12) -- (0.62,0.62);
+  \draw[line width=0.6pt] (1.52,3.12) -- (1.52,0.62);
+  \draw[line width=0.6pt] (2.62,3.12) -- (2.62,0.62);
+  \draw[line width=0.6pt,->] (2.62,1.00) -- (2.62,0.70);
+  \draw[line width=0.6pt] (3.72,3.12) -- (3.72,0.62);
+  \draw[line width=0.6pt,->] (3.72,0.98) -- (3.72,0.68);
+  \draw[line width=0.6pt,->] (4.82,3.12) -- (4.82,0.62);
+  \node[right=2pt] at (4.82,1.85) {$E$};
+  \draw[line width=0.75pt] (P) -- (L);
+  \draw[line width=0.75pt,->] (1.52,1.95) -- (1.52,1.58);
+  \draw[line width=0.75pt,->] (P) -- (M);
+  \draw[line width=0.75pt] (M) -- (N);
+  \draw[line width=0.75pt,->] (3.72,1.92) -- (3.72,1.42);
+  \draw[line width=0.55pt,dashed] (L) -- (N);
+  \draw[line width=0.75pt,->] (P) -- (N);
+  \draw[line width=0.5pt] (1.92,2.48) arc[start angle=0,end angle=-42,radius=0.40];
+  \node at (2.08,2.34) {$\theta$};
+  \node[above left=1pt] at (P) {$P$};
+  \node[above right=1pt] at (M) {$M$};
+  \node[left=3pt] at (1.52,1.78) {$L$};
+  \node[right=3pt] at (3.90,0.92) {$N$};
+  \node[left=3pt] at (1.22,0.76) {$B$};
+\end{tikzpicture}%
+}
 \caption{图1.24}
 \end{figure}
 
@@ -1947,7 +2007,44 @@ W = qE \cdot \overline{PN}\cos\theta + 0 = qE \cdot \overline{PL}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.25}]{assets/physics-3/fig-p0042-01.png}}
+\fitfig{%
+% fig-alt: 图1.25 匀强电场向下；A经AB或ACB到B，θ1、θ2、θ3，右侧竖直距离0.03米
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \x in {0.15,1.22,2.20,3.12} {
+    \draw[line width=0.6pt] (\x,3.05) -- (\x,0.15);
+  }
+  \draw[line width=0.6pt] (4.05,3.05) -- (4.05,0.62);
+  \draw[line width=0.6pt,->] (0.15,1.55) -- (0.15,0.95);
+  \draw[line width=0.6pt,->] (1.22,1.35) -- (1.22,0.85);
+  \draw[line width=0.6pt,->] (2.20,1.15) -- (2.20,0.70);
+  \draw[line width=0.6pt,->] (3.12,0.95) -- (3.12,0.50);
+  \draw[line width=0.6pt,->] (4.05,1.85) -- (4.05,1.25);
+  \node[left=2pt] at (0.15,1.70) {$E$};
+  \coordinate (A) at (1.22,2.72);
+  \coordinate (C) at (3.12,2.08);
+  \coordinate (B) at (4.05,0.58);
+  \draw[line width=0.5pt,dashed] (1.22,2.58) -- (1.22,1.55);
+  \draw[line width=0.5pt,dashed] (1.38,2.72) -- (4.62,2.72);
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.7pt] (A) -- (C) -- (B);
+  \draw[line width=0.7pt,->] (1.70,2.56) -- (2.12,2.42);
+  \draw[line width=0.5pt] (1.22,2.28) arc[start angle=-90,end angle=-42,radius=0.46];
+  \node at (1.55,2.22) {$\theta_1$};
+  \draw[line width=0.5pt] (1.78,2.72) arc[start angle=0,end angle=-18,radius=0.50];
+  \node at (1.92,2.66) {$\theta_2$};
+  \draw[line width=0.5pt] (3.12,1.66) arc[start angle=-90,end angle=-58,radius=0.42];
+  \node[right=1pt] at (3.30,1.52) {$\theta_3$};
+  \draw[line width=0.4pt] (4.28,0.58) -- (5.12,0.58);
+  \draw[line width=0.55pt,<->] (4.95,2.72) -- (4.95,0.58);
+  \node[right=2pt] at (4.97,1.65) {$0.03$米};
+  \fill (A) circle[radius=0.045];
+  \fill (C) circle[radius=0.045];
+  \fill (B) circle[radius=0.045];
+  \node[above=1pt] at (A) {$A$};
+  \node[right=2pt] at (3.20,2.02) {$C$};
+  \node[left=2pt] at (3.68,0.42) {$B$};
+\end{tikzpicture}%
+}
 \caption{图1.25}
 \end{figure}
 
@@ -2156,7 +2253,23 @@ W_{A B} = q U_{A B} \tag{1.7}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0047-01.png}}
+\fitfig{%
+% fig-alt: 图1.26(a) 正点电荷+Q电力线向外，右侧电力线上空心点A、B，A更近
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \a in {45,90,135,180,225,270,315} {
+    \draw[line width=0.65pt] (\a:0.34) -- (\a:1.52);
+    \draw[line width=0.65pt,->] (\a:0.58) -- (\a:1.05);
+  }
+  \draw[line width=0.65pt] (0.34,0) -- (2.55,0);
+  \draw[line width=0.65pt,->] (0.55,0) -- (1.05,0);
+  \draw[line width=0.7pt] (1.55,0) circle[radius=0.055];
+  \draw[line width=0.7pt] (2.05,0) circle[radius=0.055];
+  \node[below=1pt] at (1.55,-0.02) {$A$};
+  \node[below=1pt] at (2.05,-0.02) {$B$};
+  \draw[line width=0.8pt,fill=white] (0,0) circle[radius=0.28];
+  \node at (0,0) {$+Q$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -2164,7 +2277,23 @@ W_{A B} = q U_{A B} \tag{1.7}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0047-02.png}}
+\fitfig{%
+% fig-alt: 图1.26(b) 负点电荷-Q电力线向内，右侧电力线上空心点A、B，箭头指向电荷
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \a in {45,90,135,180,225,270,315} {
+    \draw[line width=0.65pt] (\a:0.34) -- (\a:1.52);
+    \draw[line width=0.65pt,->] (\a:1.18) -- (\a:0.62);
+  }
+  \draw[line width=0.65pt] (0.34,0) -- (2.55,0);
+  \draw[line width=0.65pt,->] (1.18,0) -- (0.62,0);
+  \draw[line width=0.7pt] (1.55,0) circle[radius=0.055];
+  \draw[line width=0.7pt] (2.05,0) circle[radius=0.055];
+  \node[below=1pt] at (1.55,-0.02) {$A$};
+  \node[below=1pt] at (2.05,-0.02) {$B$};
+  \draw[line width=0.8pt,fill=white] (0,0) circle[radius=0.28];
+  \node at (0,0) {$-Q$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -2188,7 +2317,30 @@ A、B两平行金属板相距5厘米。A带正电，B带负
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.27}]{assets/physics-3/fig-p0047-03.png}}
+\fitfig{%
+% fig-alt: 图1.27 左板A带正电、右板B带负电，电力线向右；a、x、b在同一电力线上，间距5厘米
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.8pt] (0.28,-1.35) -- (0.28,1.35) arc[start angle=0,end angle=180,radius=0.28] -- (-0.28,-1.35) arc[start angle=180,end angle=360,radius=0.28] -- cycle;
+  \draw[line width=0.8pt] (3.72,-1.35) -- (3.72,1.35) arc[start angle=0,end angle=180,radius=0.28] -- (3.16,-1.35) arc[start angle=180,end angle=360,radius=0.28] -- cycle;
+  \node[above=2pt] at (0,1.63) {$A$};
+  \node[above=2pt] at (3.44,1.63) {$B$};
+  \node at (-0.10,0) {$+$};
+  \node at (3.54,0) {$-$};
+  \foreach \y in {0.78,0.40,-0.55} {
+    \draw[line width=0.65pt,->] (0.32,\y) -- (3.12,\y);
+  }
+  \draw[line width=0.65pt] (0.32,0) -- (3.12,0);
+  \draw[line width=0.65pt,->] (0.72,0) -- (1.42,0);
+  \fill (0.42,0) circle[radius=0.045];
+  \fill (1.72,0) circle[radius=0.045];
+  \fill (3.02,0) circle[radius=0.045];
+  \node[above=1pt] at (0.42,0) {$a$};
+  \node[above=1pt] at (1.72,0) {$x$};
+  \node[above=1pt] at (3.02,0) {$b$};
+  \draw[line width=0.55pt,<->] (0.28,-1.85) -- (3.16,-1.85);
+  \node[above=1pt] at (1.72,-1.85) {$5$厘米};
+\end{tikzpicture}%
+}
 \caption{图1.27}
 \end{figure}
 
