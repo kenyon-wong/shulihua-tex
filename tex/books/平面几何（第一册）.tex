@@ -4226,7 +4226,25 @@ AB \parallel CD.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-74}]{assets/plane-geometry-1/fig-p0051-01.png}}
+\fitfig{%
+% fig-alt: 图1-74 上直线AB与下直线CD被截线EF所截，交点处标M与N，角1在AB上侧截线右侧，角3在AB下侧截线左侧，角5在CD上侧截线左侧
+\begin{tikzpicture}[line cap=round, >=latex]
+  \draw[line width=0.75pt] (-1.72,0.78) -- (1.88,0.78);
+  \draw[line width=0.75pt] (-1.68,-0.72) -- (1.92,-0.72);
+  \draw[line width=0.7pt] (-0.78,-1.58) -- (0.72,1.58);
+  \node[left=1pt] at (-1.72,0.78) {$A$};
+  \node[right=1pt] at (1.88,0.78) {$B$};
+  \node[above=2pt] at (0.72,1.58) {$E$};
+  \node[below=1pt] at (-0.78,-1.58) {$F$};
+  \node[left=1pt] at (-1.68,-0.72) {$C$};
+  \node[right=1pt] at (1.92,-0.72) {$D$};
+  \node[above=2pt] at (-0.12,0.78) {$M$};
+  \node[below=2pt] at (-0.62,-0.72) {$N$};
+  \node[inner sep=1pt] at (0.78,1.10) {$1$};
+  \node[inner sep=1pt] at (-0.32,0.46) {$3$};
+  \node[inner sep=1pt] at (-0.68,-0.46) {$5$};
+\end{tikzpicture}%
+}
 \caption{图1-74}
 \end{figure}
 
@@ -4260,7 +4278,36 @@ AB \parallel CD.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·75}]{assets/plane-geometry-1/fig-p0052-01.png}}
+\fitfig{%
+% fig-alt: 图1·75 左为等长线段a与b，a两端外伸叉形，b两端外指箭头；右为平行四边形，左半对角线标b，右半对角线标a
+\begin{tikzpicture}[line cap=round, >=latex]
+  \draw[line width=0.7pt] (0,0.72) -- (1.85,0.72);
+  \draw[line width=0.65pt] (0,0.72) -- (-0.22,0.90);
+  \draw[line width=0.65pt] (0,0.72) -- (-0.22,0.54);
+  \draw[line width=0.65pt] (1.85,0.72) -- (2.07,0.90);
+  \draw[line width=0.65pt] (1.85,0.72) -- (2.07,0.54);
+  \node[above=1pt] at (0.92,0.72) {$a$};
+  \draw[line width=0.7pt] (0,0) -- (1.85,0);
+  \draw[line width=0.65pt] (0.16,0.10) -- (0,0) -- (0.16,-0.10);
+  \draw[line width=0.65pt] (1.69,0.10) -- (1.85,0) -- (1.69,-0.10);
+  \node[above=1pt] at (0.92,0) {$b$};
+  \begin{scope}[shift={(2.85,-0.08)}]
+    \coordinate (BL) at (0,0);
+    \coordinate (TL) at (0.48,1.42);
+    \coordinate (M) at (1.12,0);
+    \coordinate (TJ) at (1.60,1.42);
+    \coordinate (TS) at (1.74,1.28);
+    \coordinate (TR) at (3.22,1.28);
+    \coordinate (BR) at (2.74,0);
+    \draw[line width=0.7pt] (BL) -- (TL) -- (TJ) -- (TS) -- (TR) -- (BR) -- cycle;
+    \draw[line width=0.7pt] (TJ) -- (M);
+    \draw[line width=0.7pt] (BL) -- (TJ);
+    \draw[line width=0.7pt] (TJ) -- (BR);
+    \node[left=2pt] at (0.62,0.78) {$b$};
+    \node[right=3pt] at (2.22,0.72) {$a$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1·75}
 \end{figure}
 
@@ -4316,7 +4363,26 @@ AB \parallel CD.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-76}]{assets/plane-geometry-1/fig-p0054-01.png}}
+\fitfig{%
+% fig-alt: 图1-76（4）网格直角三角形，左下A、底边B与C，左上E、左侧F，斜边上D，左区I、右区III，B处竖线
+\begin{tikzpicture}[line cap=round, x=0.32cm, y=0.32cm]
+  \begin{scope}
+    \clip (0,0) -- (0,5) -- (13,0) -- cycle;
+    \draw[line width=0.4pt, step=1] (0,0) grid (13,5);
+  \end{scope}
+  \draw[line width=0.85pt] (0,0) -- (0,5) -- (13,0) -- cycle;
+  \draw[line width=1.05pt] (5,0) -- (5,{5*8/13});
+  \node[above left=0pt] at (0,5) {$E$};
+  \node[left=1pt] at (0,4) {$F$};
+  \node[below left=0pt] at (0,0) {$A$};
+  \node[below=1pt] at (5,0) {$B$};
+  \node[right=1pt] at (13,0) {$C$};
+  \node[above=1pt] at (5.55,{5-5*5.55/13}) {$D$};
+  \node[fill=white, inner sep=1.2pt] at (2.45,2.05) {I};
+  \node[fill=white, inner sep=1.2pt] at (6.35,0.85) {III};
+  \node at (7.4,-2.25) {（4）};
+\end{tikzpicture}%
+}
 \caption{图1-76}
 \end{figure}
 
@@ -4372,7 +4438,25 @@ EF \parallel GH.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·77}]{assets/plane-geometry-1/fig-p0055-01.png}}
+\fitfig{%
+% fig-alt: 图1·77 上直线EF与下直线GH被截线PQ所截，交点标A与B，角3在EF下侧截线左侧，角4在EF下侧截线右侧，角5在GH上侧截线左侧
+\begin{tikzpicture}[line cap=round, >=latex]
+  \draw[line width=0.75pt] (-1.72,0.78) -- (1.88,0.78);
+  \draw[line width=0.75pt] (-1.68,-0.72) -- (1.92,-0.72);
+  \draw[line width=0.7pt] (-0.72,-1.58) -- (0.68,1.58);
+  \node[left=1pt] at (-1.72,0.78) {$E$};
+  \node[right=1pt] at (1.88,0.78) {$F$};
+  \node[above=2pt] at (0.68,1.58) {$P$};
+  \node[below=1pt] at (-0.72,-1.58) {$Q$};
+  \node[left=1pt] at (-1.68,-0.72) {$G$};
+  \node[right=1pt] at (1.92,-0.72) {$H$};
+  \node[above=2pt] at (-0.32,0.78) {$A$};
+  \node[below=2pt] at (-0.64,-0.72) {$B$};
+  \node[inner sep=1pt] at (-0.30,0.46) {$3$};
+  \node[inner sep=1pt] at (0.78,0.46) {$4$};
+  \node[inner sep=1pt] at (-0.68,-0.46) {$5$};
+\end{tikzpicture}%
+}
 \caption{图 1·77}
 \end{figure}
 
@@ -4380,7 +4464,18 @@ EF \parallel GH.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·78}]{assets/plane-geometry-1/fig-p0055-02.png}}
+\fitfig{%
+% fig-alt: 图1·78 斜放直尺上端有圆孔，直角三角板斜边靠尺，板上有三角形孔，沿另一边画出两条水平线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.7pt] (0.10,2.38) -- (0.38,2.58) -- (2.12,0.12) -- (1.84,-0.08) -- cycle;
+  \draw[line width=0.55pt] (0.42,2.22) circle (0.075);
+  \draw[line width=0.7pt] (0.69,2.14) -- (1.22,1.40) -- (2.85,1.40) -- cycle;
+  \draw[line width=0.55pt] (1.72,1.52) -- (1.96,1.70) -- (2.22,1.52) -- cycle;
+  \draw[line width=0.65pt] (0.82,2.24) -- (3.28,2.24);
+  \draw[line width=0.65pt] (0.82,2.24) -- (0.82,2.12);
+  \draw[line width=0.65pt] (2.85,1.40) -- (3.28,1.40);
+\end{tikzpicture}%
+}
 \caption{图 1·78}
 \end{figure}
 
@@ -4396,7 +4491,31 @@ EF \parallel GH.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·79}]{assets/plane-geometry-1/fig-p0055-03.png}}
+\fitfig{%
+% fig-alt: 图1·79 上为固定丁字尺，尺头有四孔，尺身右端有圆孔，旁标尺头与尺身；下为螺栓连接的丁字尺，同样标尺头与尺身
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.7pt] (0.05,1.58) -- (0.05,0.62) arc[start angle=180, end angle=360, radius=0.165] -- (0.38,1.58) arc[start angle=0, end angle=180, radius=0.165] -- cycle;
+  \draw[line width=0.7pt] (0.10,1.16) -- (3.62,1.16) -- (3.62,0.96) -- (0.10,0.96) -- cycle;
+  \draw[line width=0.55pt] (3.48,1.06) circle (0.045);
+  \foreach \x/\y in {0.16/1.11, 0.28/1.11, 0.16/1.01, 0.28/1.01} {
+    \fill (\x,\y) circle (0.026);
+  }
+  \draw[line width=0.5pt] (0.38,1.55) -- (0.62,1.78) -- (1.05,1.78);
+  \node[right=1pt] at (1.05,1.78) {尺头};
+  \draw[line width=0.5pt] (1.70,1.16) -- (1.92,1.72) -- (2.42,1.72);
+  \node[right=1pt] at (2.42,1.72) {尺身};
+  \begin{scope}[shift={(0,-2.05)}]
+    \draw[line width=0.7pt] (0.05,1.58) -- (0.05,0.62) arc[start angle=180, end angle=360, radius=0.165] -- (0.38,1.58) arc[start angle=0, end angle=180, radius=0.165] -- cycle;
+    \draw[line width=0.7pt] (0.48,1.16) -- (3.62,1.16) -- (3.62,0.96) -- (0.48,0.96) -- cycle;
+    \draw[line width=0.65pt] (0.42,1.06) circle (0.14);
+    \draw[line width=0.55pt] (3.48,1.06) circle (0.045);
+    \draw[line width=0.5pt] (0.38,1.55) -- (0.62,1.78) -- (1.05,1.78);
+    \node[right=1pt] at (1.05,1.78) {尺头};
+    \draw[line width=0.5pt] (1.70,1.16) -- (1.92,1.72) -- (2.42,1.72);
+    \node[right=1pt] at (2.42,1.72) {尺身};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1·79}
 \end{figure}
 
@@ -4436,7 +4555,29 @@ EF \parallel GH.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-1/fig-p0056-02.png}}
+\fitfig{%
+% fig-alt: 第1题 平行线AB、CD，左为竖直截线，右为斜截线；角1至4在上斜交点，角5至8在下斜交点，角9在AB与竖线交点右下，角10在CD与竖线交点右上
+\begin{tikzpicture}[line cap=round, >=latex]
+  \draw[line width=0.75pt] (-1.85,0.72) -- (1.92,0.72);
+  \draw[line width=0.75pt] (-1.82,-0.68) -- (1.98,-0.68);
+  \draw[line width=0.7pt] (-0.62,1.38) -- (-0.62,-1.28);
+  \draw[line width=0.7pt] (0.28,1.42) -- (1.22,-1.32);
+  \node[left=1pt] at (-1.85,0.72) {$A$};
+  \node[right=1pt] at (1.92,0.72) {$B$};
+  \node[left=1pt] at (-1.82,-0.68) {$C$};
+  \node[right=1pt] at (1.98,-0.68) {$D$};
+  \node[inner sep=1pt] at (0.06,1.02) {$2$};
+  \node[inner sep=1pt] at (0.88,1.00) {$1$};
+  \node[inner sep=1pt] at (0.18,0.46) {$3$};
+  \node[inner sep=1pt] at (0.92,0.46) {$4$};
+  \node[inner sep=1pt] at (0.52,-0.42) {$6$};
+  \node[inner sep=1pt] at (1.30,-0.42) {$5$};
+  \node[inner sep=1pt] at (0.58,-0.98) {$7$};
+  \node[inner sep=1pt] at (1.46,-0.96) {$8$};
+  \node[inner sep=1pt] at (-0.38,0.48) {$9$};
+  \node[inner sep=1pt] at (-0.28,-0.42) {$10$};
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
