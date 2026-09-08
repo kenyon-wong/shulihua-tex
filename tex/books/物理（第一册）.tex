@@ -7088,7 +7088,46 @@ s = s _ {1} + s _ {2} + s _ {3} = 9 \text{米} + 15 \text{米} + 4.5 \text{米} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5·10 甲、乙的速度图线}]{assets/physics-1/fig-p0147-01.png}}
+% fig-alt: 图5·10 甲水平于v=6、自纵轴伸至约3.7秒；乙自原点过(2,4)至M(3,6)略向外延，斜率2；t=2虚线至乙，t=3实线下降；乙下交叉线、甲乙间单斜线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.82cm,y=0.44cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \begin{scope}
+    \clip (0.03,0.03) -- (2.97,0.03) -- (2.97,5.97) -- cycle;
+    \foreach \i in {0,1,...,24} {
+      \draw[line width=0.26pt] (-0.15+0.30*\i,-0.15) -- ++(6.4,6.4);
+    }
+    \foreach \j in {0,1,...,24} {
+      \draw[line width=0.26pt] (-0.15+0.30*\j,6.20) -- ++(6.4,-6.4);
+    }
+  \end{scope}
+  \begin{scope}
+    \clip (0.03,5.97) -- (2.97,5.97) -- (0.03,0.03) -- cycle;
+    \foreach \k in {0,1,...,22} {
+      \draw[line width=0.26pt] (-0.20+0.32*\k,6.25) -- ++(6.5,-6.5);
+    }
+  \end{scope}
+  \draw[line width=0.6pt,->] (0,0) -- (4.70,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,7.45);
+  \foreach \n in {1,2,3,4} {
+    \draw[line width=0.4pt] (\n,0) -- (\n,-0.16);
+    \node[anchor=north] at (\n,-0.20) {$\n$};
+  }
+  \foreach \m in {1,2,3,4,5,6,7} {
+    \draw[line width=0.4pt] (0,\m) -- (-0.14,\m);
+    \node[anchor=east] at (-0.18,\m) {$\m$};
+  }
+  \node[anchor=north east] at (-0.08,-0.08) {$0$};
+  \draw[line width=0.45pt,dash pattern=on 1.6pt off 1.1pt] (2,0) -- (2,4);
+  \draw[line width=0.55pt] (3,0) -- (3,6);
+  \draw[line width=0.8pt] (0,6) -- (3.70,6);
+  \draw[line width=0.8pt] (0,0) -- (3.38,6.76);
+  \node[anchor=south east] at (2.78,6.16) {$M$};
+  \node[anchor=south] at (3.22,6.92) {乙};
+  \node[anchor=south] at (3.52,6.16) {甲};
+  \node[anchor=south west] at (0.10,7.50) {$v$（米/秒）};
+  \node[anchor=west] at (4.78,0.04) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图 5·10 甲、乙的速度图线}
 \end{figure}
 
@@ -7117,7 +7156,25 @@ s _ {\text{乙}} = \triangle O B M = \frac {1}{2} \times 3 \times 6 \text{米} =
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-1/fig-p0148-01.png}}
+% fig-alt: 第1题 v-t：四线同出于v0；乙水平，丙上斜斜率约+0.37，甲下斜斜率约-0.37，丁更陡约-0.90且止于t轴上方；t轴虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.92cm,y=0.68cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.5pt,dash pattern=on 1.5pt off 1.15pt,->] (-0.18,0) -- (4.15,0);
+  \draw[line width=0.6pt,->] (0,-0.12) -- (0,3.42);
+  \draw[line width=0.75pt] (0,2) -- (2.93,2);
+  \draw[line width=0.75pt] (0,2) -- (2.46,2.90);
+  \draw[line width=0.75pt] (0,2) -- (2.26,1.18);
+  \draw[line width=0.75pt] (0,2) -- (1.95,0.25);
+  \node[anchor=east] at (-0.10,2.00) {$v_{0}$};
+  \node[anchor=south] at (2.28,2.96) {丙};
+  \node[anchor=south west] at (2.96,2.06) {乙};
+  \node[anchor=west] at (2.32,1.10) {甲};
+  \node[anchor=west] at (2.02,0.28) {丁};
+  \node[anchor=north east] at (-0.06,-0.10) {$O$};
+  \node[anchor=south] at (-0.04,3.48) {$v$};
+  \node[anchor=west] at (4.22,0.04) {$t$};
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -7125,7 +7182,28 @@ s _ {\text{乙}} = \triangle O B M = \frac {1}{2} \times 3 \times 6 \text{米} =
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-1/fig-p0148-02.png}}
+% fig-alt: 第2题 v-t：A(0,1)升至B(4,2)，平至C(10,2)，降至D(12,1)与A同高；B、C、D下虚线，A、D间水平虚线；t标0、2、…、14
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.36cm,y=0.78cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt,->] (0,0) -- (15.4,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,2.55);
+  \foreach \i in {0,2,4,6,8,10,12,14} {
+    \draw[line width=0.4pt] (\i,0) -- (\i,-0.10);
+    \node[anchor=north] at (\i,-0.14) {$\i$};
+  }
+  \draw[line width=0.4pt,dash pattern=on 1.5pt off 1.1pt] (0,1) -- (12,1);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (4,0) -- (4,2);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (10,0) -- (10,2);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (12,0) -- (12,1);
+  \draw[line width=0.8pt] (0,1) -- (4,2) -- (10,2) -- (12,1);
+  \node[anchor=south] at (0.55,1.22) {$A$};
+  \node[anchor=south] at (3.85,2.08) {$B$};
+  \node[anchor=south] at (9.85,2.08) {$C$};
+  \node[anchor=west] at (12.12,1.02) {$D$};
+  \node[anchor=south west] at (0.10,2.58) {$v$};
+  \node[anchor=west] at (15.50,0.06) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -7441,7 +7519,40 @@ v-t 图线如下（图 5·15）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5-15 竖直上抛运动的 v-t 图}]{assets/physics-1/fig-p0157-01.png}}
+% fig-alt: 图5·15 竖直上抛v-t：直线A(0,20)、B(1,10)、C(2,0)、D(3,-10)、E(4,-20)、F(5,-30)，斜率-10；虚线至1、3、4、5及v=10、-10、-20、-30；t至6，v标每5
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.68cm,y=0.108cm,every node/.style={font=\scriptsize,inner sep=0.25pt}]
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.05pt] (0,10) -- (1,10);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.05pt] (1,10) -- (1,0);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.05pt] (0,-10) -- (3,-10);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.05pt] (3,0) -- (3,-10);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.05pt] (0,-20) -- (4,-20);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.05pt] (4,0) -- (4,-20);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.05pt] (0,-30) -- (5,-30);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.05pt] (5,0) -- (5,-30);
+  \draw[line width=0.6pt,->] (0,0) -- (6.85,0);
+  \draw[line width=0.6pt,->] (0,-32.2) -- (0,23.2);
+  \foreach \i in {1,2,3,4,5,6} {
+    \draw[line width=0.4pt] (\i,0) -- (\i,-1.15);
+    \node[anchor=north] at (\i,-1.35) {$\i$};
+  }
+  \foreach \j in {-30,-25,-20,-15,-10,-5,5,10,15,20} {
+    \draw[line width=0.4pt] (0,\j) -- (-0.16,\j);
+    \node[anchor=east] at (-0.22,\j) {$\j$};
+  }
+  \node[anchor=north east] at (-0.10,-0.6) {$0$};
+  \draw[line width=0.8pt] (0,20) -- (5,-30);
+  \fill (0,20) circle (1.05pt);
+  \node[anchor=south west] at (0.10,20.3) {$A$};
+  \node[anchor=south west] at (1.08,10.4) {$B$};
+  \node[anchor=south west] at (2.08,0.7) {$C$};
+  \node[anchor=north west] at (3.18,-10.55) {$D$};
+  \node[anchor=south east] at (3.78,-19.15) {$E$};
+  \node[anchor=north west] at (5.08,-30.25) {$F$};
+  \node[anchor=south west] at (0.12,23.4) {$v$（米/秒）};
+  \node[anchor=west] at (6.95,0.4) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图 5-15 竖直上抛运动的 v-t 图}
 \end{figure}
 
@@ -7681,7 +7792,16 @@ h = \frac {1}{2} g t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题}]{assets/physics-1/fig-p0163-01.png}}
+% fig-alt: 第5题错误v-t：自原点下斜，再水平，再上斜回到t轴；t轴虚线，v轴穿过原点并略向下
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.05cm,y=1.05cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.5pt,dash pattern=on 1.5pt off 1.15pt,->] (-0.45,0) -- (3.85,0);
+  \draw[line width=0.6pt,->] (0,-1.15) -- (0,1.55);
+  \draw[line width=0.8pt] (0,0) -- (1.20,-0.88) -- (2.30,-0.88) -- (3.12,0);
+  \node[anchor=south] at (-0.04,1.60) {$v$};
+  \node[anchor=west] at (3.92,0.04) {$t$};
+\end{tikzpicture}%
+}
 \caption{(第5题}
 \end{figure}
 
@@ -7697,7 +7817,25 @@ h = \frac {1}{2} g t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第163页）}]{assets/physics-1/fig-p0163-02.png}}
+% fig-alt: 第163页两幅v-t：左为纵轴出发的水平线段；右为水平后竖直虚线落到t轴，再沿t轴实线向右
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.00cm,y=1.00cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.1pt,->] (-0.28,0) -- (2.15,0);
+  \draw[line width=0.6pt,->] (0,-0.28) -- (0,1.45);
+  \draw[line width=0.8pt] (0,0.72) -- (1.62,0.72);
+  \node[anchor=south] at (-0.02,1.50) {$v$};
+  \node[anchor=west] at (2.22,0.04) {$t$};
+  \begin{scope}[xshift=3.15cm]
+    \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.1pt,->] (-0.28,0) -- (2.25,0);
+    \draw[line width=0.6pt,->] (0,-0.22) -- (0,1.45);
+    \draw[line width=0.8pt] (0,0.72) -- (1.18,0.72);
+    \draw[line width=0.7pt,dash pattern=on 1.7pt off 1.25pt] (1.18,0.72) -- (1.18,0);
+    \draw[line width=0.8pt] (1.18,0) -- (2.05,0);
+    \node[anchor=south] at (-0.02,1.50) {$v$};
+    \node[anchor=west] at (2.32,0.04) {$t$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第163页）}
 \end{figure}
 
