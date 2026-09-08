@@ -11775,7 +11775,25 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0243-02.png}}
+\fitfig{%
+% fig-alt: 图7.14(b) 玻璃片横线，熔化石蜡成圆、中心点；引线标石蜡、玻璃片。与(a)椭圆/云母片不同
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (1.55,0.15) rectangle (5.15,2.35);
+    \foreach \yy in {0.28,0.42,0.56,0.70,0.84,0.98,1.12,1.26,1.40,1.54,1.68,1.82,1.96,2.10,2.22} {
+      \draw[line width=0.32pt] (1.58,\yy) -- (5.12,\yy);
+    }
+  \end{scope}
+  \fill[white] (3.35,1.25) circle[radius=0.82];
+  \draw[line width=1.15pt] (1.55,0.15) rectangle (5.15,2.35);
+  \draw[line width=1.05pt] (3.35,1.25) circle[radius=0.82];
+  \fill (3.35,1.25) circle[radius=0.045];
+  \draw[line width=0.4pt] (1.28,1.98) -- (2.62,1.62);
+  \node[anchor=east,font=\small] at (1.22,2.04) {石蜡};
+  \draw[line width=0.4pt] (1.28,0.68) -- (1.88,0.78);
+  \node[anchor=east,font=\small] at (1.22,0.58) {玻璃片};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -11819,7 +11837,67 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0244-02.png}}
+\fitfig{%
+% fig-alt: 图7.15(b) 氯化钠立方点阵，前下左为密线 Cl，相间空心 Na；下旁图例 Cl、Na。扫描旁注(b)，tex 图注仍作(2)，图内不写字母
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \foreach \i in {0,1} {
+    \foreach \j in {0,1,2} {
+      \foreach \k in {0,1,2} {
+        \draw[line width=0.42pt] ({(\i)*1.05+(\k)*0.56},{(\j)*1.05+(\k)*0.36}) -- ({(\i+1)*1.05+(\k)*0.56},{(\j)*1.05+(\k)*0.36});
+      }
+    }
+  }
+  \foreach \i in {0,1,2} {
+    \foreach \j in {0,1} {
+      \foreach \k in {0,1,2} {
+        \draw[line width=0.42pt] ({(\i)*1.05+(\k)*0.56},{(\j)*1.05+(\k)*0.36}) -- ({(\i)*1.05+(\k)*0.56},{(\j+1)*1.05+(\k)*0.36});
+      }
+    }
+  }
+  \foreach \i in {0,1,2} {
+    \foreach \j in {0,1,2} {
+      \foreach \k in {0,1} {
+        \draw[line width=0.42pt] ({(\i)*1.05+(\k)*0.56},{(\j)*1.05+(\k)*0.36}) -- ({(\i)*1.05+(\k+1)*0.56},{(\j)*1.05+(\k+1)*0.36});
+      }
+    }
+  }
+  \foreach \k/\rad in {2/0.082,1/0.102,0/0.122} {
+    \foreach \i in {0,1,2} {
+      \foreach \j in {0,1,2} {
+        \pgfmathtruncatemacro{\ion}{mod(\i+\j+\k,2)}
+        \pgfmathsetmacro{\xx}{(\i)*1.05+(\k)*0.56}
+        \pgfmathsetmacro{\yy}{(\j)*1.05+(\k)*0.36}
+        \pgfmathsetmacro{\rr}{\rad}
+        \ifnum\i=0 \ifnum\j=0 \ifnum\k=0 \pgfmathsetmacro{\rr}{0.145}\fi\fi\fi
+        \ifnum\ion=0
+          \begin{scope}
+            \clip (\xx,\yy) circle[radius=\rr];
+            \fill[white] (\xx,\yy) circle[radius=\rr];
+            \foreach \n in {-4,-3,-2,-1,0,1,2,3,4} {
+              \draw[line width=0.28pt] ({\xx-0.20},{\yy+0.045*\n}) -- ({\xx+0.20},{\yy+0.045*\n+0.16});
+            }
+          \end{scope}
+          \draw[line width=0.55pt] (\xx,\yy) circle[radius=\rr];
+        \else
+          \fill[white] (\xx,\yy) circle[radius=\rr];
+          \draw[line width=0.55pt] (\xx,\yy) circle[radius=\rr];
+        \fi
+      }
+    }
+  }
+  \begin{scope}
+    \clip (0.08,-0.62) circle[radius=0.11];
+    \fill[white] (0.08,-0.62) circle[radius=0.11];
+    \foreach \n in {-3,-2,-1,0,1,2,3} {
+      \draw[line width=0.28pt] (-0.08,{-0.62+0.04*\n}) -- (0.24,{-0.62+0.04*\n+0.14});
+    }
+  \end{scope}
+  \draw[line width=0.55pt] (0.08,-0.62) circle[radius=0.11];
+  \node[anchor=west,font=\small] at (0.24,-0.62) {Cl};
+  \draw[line width=0.55pt] (1.15,-0.62) circle[radius=0.11];
+  \node[anchor=west,font=\small] at (1.32,-0.62) {Na};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -11837,7 +11915,26 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.16 在各个方向上晶体粒子排列的密度不同}]{assets/physics-2/fig-p0245-01.png}}
+\fitfig{%
+% fig-alt: 图7.16 方形点阵，左下原点涂黑；射线自原点穿结点，右上方一矢；底边水平止于末点；左列引线略超出顶圈
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.55pt] (0,0) -- (2.90,0);
+  \draw[line width=0.55pt] (0,0) -- (2.90,0.58);
+  \draw[line width=0.55pt,->] (0,0) -- (3.18,1.27);
+  \draw[line width=0.55pt] (0,0) -- (2.32,1.74);
+  \draw[line width=0.55pt] (0,0) -- (1.74,2.32);
+  \draw[line width=0.55pt] (0,0) -- (2.32,2.90);
+  \draw[line width=0.55pt] (0,0) -- (1.16,2.90);
+  \draw[line width=0.55pt] (0,0) -- (0,3.18);
+  \foreach \i in {0,1,2,3,4,5} {
+    \foreach \j in {0,1,2,3,4,5} {
+      \fill[white] ({0.58*\i},{0.58*\j}) circle[radius=0.068];
+      \draw[line width=0.55pt] ({0.58*\i},{0.58*\j}) circle[radius=0.068];
+    }
+  }
+  \fill (0,0) circle[radius=0.074];
+\end{tikzpicture}%
+}
 \caption{图 7.16 在各个方向上晶体粒子排列的密度不同}
 \end{figure}
 
@@ -11928,7 +12025,32 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.18 晶体内部各粒子间相互作用的简单模型}]{assets/physics-2/fig-p0248-01.png}}
+\fitfig{%
+% fig-alt: 图7.18 两行四粒子，弹簧相连；黑白相间，左上黑；略向右上斜置。无字母
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \foreach \i in {0,1,2} {
+    \foreach \j in {0,1} {
+      \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.32,segment length=1.55mm,amplitude=1.05mm,pre length=0.5mm,post length=0.5mm}]
+        ({1.62*\i+0.16+0.20*\j},{1.72*\j}) -- ({1.62*\i+1.46+0.20*\j},{1.72*\j});
+    }
+  }
+  \foreach \i in {0,1,2,3} {
+    \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.32,segment length=1.55mm,amplitude=1.05mm,pre length=0.5mm,post length=0.5mm}]
+      ({1.62*\i+0.16},{0.16}) -- ({1.62*\i+0.16+0.20},{1.56});
+  }
+  \foreach \i in {0,1,2,3} {
+    \foreach \j in {0,1} {
+      \pgfmathtruncatemacro{\ion}{mod(\i+\j,2)}
+      \ifnum\ion=1
+        \fill ({1.62*\i+0.20*\j},{1.72*\j}) circle[radius=0.125];
+      \else
+        \fill[white] ({1.62*\i+0.20*\j},{1.72*\j}) circle[radius=0.125];
+        \draw[line width=0.7pt] ({1.62*\i+0.20*\j},{1.72*\j}) circle[radius=0.125];
+      \fi
+    }
+  }
+\end{tikzpicture}%
+}
 \caption{图 7.18 晶体内部各粒子间相互作用的简单模型}
 \end{figure}
 
@@ -11949,7 +12071,51 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0249-01.png}}
+\fitfig{%
+% fig-alt: 图7.19(a) 左棒斜线，A 上、B 下；F 向上、F' 向下。右上未变形网格块，右下拉长颈缩，两端箭头向外
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (0.02,0.78) rectangle (0.52,3.22);
+    \foreach \k in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14} {
+      \draw[line width=0.32pt] (-0.15,{0.62+0.20*\k}) -- (0.70,{0.62+0.20*\k+0.55});
+    }
+  \end{scope}
+  \draw[line width=0.8pt] (0.02,0.78) rectangle (0.52,3.22);
+  \node[anchor=east,font=\small] at (-0.02,3.10) {$A$};
+  \node[anchor=east,font=\small] at (-0.02,0.90) {$B$};
+  \draw[line width=0.7pt,->] (0.36,3.26) -- (0.36,3.78);
+  \node[anchor=south west,font=\small] at (0.40,3.58) {$F$};
+  \draw[line width=0.7pt,->] (0.36,0.74) -- (0.36,0.22);
+  \node[anchor=north west,font=\small] at (0.40,0.34) {$F'$};
+  \draw[line width=0.75pt] (1.55,2.28) rectangle (4.75,3.28);
+  \foreach \xx in {0.53,1.06,1.59,2.12,2.65} {
+    \draw[line width=0.38pt] ({1.55+\xx},2.28) -- ({1.55+\xx},3.28);
+  }
+  \foreach \yy in {0.33,0.66} {
+    \draw[line width=0.38pt] (1.55,{2.28+\yy}) -- (4.75,{2.28+\yy});
+  }
+  \draw[line width=0.7pt] (1.55,3.28) -- (1.82,3.50) -- (5.02,3.50) -- (4.75,3.28);
+  \draw[line width=0.7pt] (4.75,2.28) -- (5.02,2.50) -- (5.02,3.50);
+  \draw[line width=0.95pt] (1.55,2.28) -- (1.55,3.28);
+  \draw[line width=0.95pt] (4.75,2.28) -- (4.75,3.28);
+  \begin{scope}
+    \clip (1.48,0.10) .. controls (2.6,0.30) and (3.8,0.30) .. (5.05,0.10)
+          -- (5.05,1.02) .. controls (3.8,0.82) and (2.6,0.82) .. (1.48,1.02) -- cycle;
+    \foreach \i in {1,2,3,4,5} {
+      \draw[line width=0.36pt] ({1.48+0.595*\i},0.00) -- ({1.48+0.595*\i},1.15);
+    }
+    \foreach \t in {0.34,0.67} {
+      \draw[line width=0.36pt] (1.48,{0.10+\t*0.92}) .. controls (2.6,{0.30+\t*0.52}) and (3.8,{0.30+\t*0.52}) .. (5.05,{0.10+\t*0.92});
+    }
+  \end{scope}
+  \draw[line width=0.75pt] (1.48,0.10) .. controls (2.6,0.30) and (3.8,0.30) .. (5.05,0.10);
+  \draw[line width=0.75pt] (1.48,1.02) .. controls (2.6,0.82) and (3.8,0.82) .. (5.05,1.02);
+  \draw[line width=0.95pt] (1.48,0.10) -- (1.48,1.02);
+  \draw[line width=0.95pt] (5.05,0.10) -- (5.05,1.02);
+  \draw[line width=0.7pt,->] (1.42,0.56) -- (1.02,0.56);
+  \draw[line width=0.7pt,->] (5.12,0.56) -- (5.52,0.56);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -11959,7 +12125,51 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0249-02.png}}
+\fitfig{%
+% fig-alt: 图7.19(b) 左棒斜线，A 上、B 下；F 向下、F' 向上。右上未变形块，右下压短鼓出，两端箭头向内
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (0.02,0.78) rectangle (0.52,3.22);
+    \foreach \k in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14} {
+      \draw[line width=0.32pt] (-0.15,{0.62+0.20*\k}) -- (0.70,{0.62+0.20*\k+0.55});
+    }
+  \end{scope}
+  \draw[line width=0.8pt] (0.02,0.78) rectangle (0.52,3.22);
+  \node[anchor=east,font=\small] at (-0.02,3.10) {$A$};
+  \node[anchor=east,font=\small] at (-0.02,0.90) {$B$};
+  \draw[line width=0.7pt,->] (0.36,3.78) -- (0.36,3.26);
+  \node[anchor=south west,font=\small] at (0.40,3.58) {$F$};
+  \draw[line width=0.7pt,->] (0.36,0.22) -- (0.36,0.74);
+  \node[anchor=north west,font=\small] at (0.40,0.28) {$F'$};
+  \draw[line width=0.75pt] (1.70,2.28) rectangle (4.90,3.28);
+  \foreach \xx in {0.53,1.06,1.59,2.12,2.65} {
+    \draw[line width=0.38pt] ({1.70+\xx},2.28) -- ({1.70+\xx},3.28);
+  }
+  \foreach \yy in {0.33,0.66} {
+    \draw[line width=0.38pt] (1.70,{2.28+\yy}) -- (4.90,{2.28+\yy});
+  }
+  \draw[line width=0.7pt] (1.70,3.28) -- (1.97,3.50) -- (5.17,3.50) -- (4.90,3.28);
+  \draw[line width=0.7pt] (4.90,2.28) -- (5.17,2.50) -- (5.17,3.50);
+  \draw[line width=0.95pt] (1.70,2.28) -- (1.70,3.28);
+  \draw[line width=0.95pt] (4.90,2.28) -- (4.90,3.28);
+  \begin{scope}
+    \clip (1.85,0.22) .. controls (2.55,0.02) and (3.35,0.02) .. (4.20,0.22)
+          -- (4.20,1.28) .. controls (3.35,1.48) and (2.55,1.48) .. (1.85,1.28) -- cycle;
+    \foreach \i in {1,2,3,4,5} {
+      \draw[line width=0.36pt] ({1.85+0.392*\i},0.00) -- ({1.85+0.392*\i},1.55);
+    }
+    \foreach \t in {0.34,0.67} {
+      \draw[line width=0.36pt] (1.85,{0.22+\t*1.06}) .. controls (2.55,{0.02+\t*1.46}) and (3.35,{0.02+\t*1.46}) .. (4.20,{0.22+\t*1.06});
+    }
+  \end{scope}
+  \draw[line width=0.75pt] (1.85,0.22) .. controls (2.55,0.02) and (3.35,0.02) .. (4.20,0.22);
+  \draw[line width=0.75pt] (1.85,1.28) .. controls (2.55,1.48) and (3.35,1.48) .. (4.20,1.28);
+  \draw[line width=0.95pt] (1.85,0.22) -- (1.85,1.28);
+  \draw[line width=0.95pt] (4.20,0.22) -- (4.20,1.28);
+  \draw[line width=0.7pt,->] (1.22,0.75) -- (1.78,0.75);
+  \draw[line width=0.7pt,->] (4.82,0.75) -- (4.28,0.75);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -11976,7 +12186,26 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 切变}]{assets/physics-2/fig-p0249-03.png}}
+\fitfig{%
+% fig-alt: 图7.20(a) 切变：左虚线为原位，实块右移，层面横线，底左箭头向左，右侧箭头向右
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[dashed,line width=0.45pt] (0.15,0.05) -- (0.15,1.78);
+  \draw[dashed,line width=0.45pt] (0.15,1.48) -- (1.95,1.48);
+  \draw[dashed,line width=0.45pt] (0.15,1.48) -- (0.42,1.70);
+  \draw[line width=0.75pt] (0.62,0.05) -- (3.15,0.05) -- (4.05,1.48) -- (1.52,1.48) -- cycle;
+  \draw[line width=0.7pt] (1.52,1.48) -- (1.88,1.74) -- (4.41,1.74) -- (4.05,1.48);
+  \draw[line width=0.7pt] (3.15,0.05) -- (3.48,0.31) -- (4.41,1.74);
+  \draw[line width=0.55pt] (4.05,1.48) -- (4.41,1.74);
+  \foreach \k in {1,2,3,4,5,6,7,8} {
+    \pgfmathsetmacro{\yy}{0.05+1.43*\k/9}
+    \pgfmathsetmacro{\xa}{0.62+(1.52-0.62)*\k/9}
+    \pgfmathsetmacro{\xb}{3.15+(4.05-3.15)*\k/9}
+    \draw[line width=0.38pt] ({\xa},{\yy}) -- ({\xb},{\yy});
+  }
+  \draw[line width=0.8pt,->] (0.58,0.05) -- (-0.18,0.05);
+  \draw[line width=0.7pt,->] (4.22,0.82) -- (4.78,0.82);
+\end{tikzpicture}%
+}
 \caption{(a) 切变}
 \end{figure}
 
@@ -11986,7 +12215,31 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 扭转变形}]{assets/physics-2/fig-p0249-04.png}}
+\fitfig{%
+% fig-alt: 图7.20(b) 圆筒立于方板上，格线成平行四边形，顶面中心短划，顶上弯箭。图注仍作扭转变形，不改
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0.15,0.55) -- (3.85,0.55) -- (4.45,1.02) -- (0.75,1.02) -- cycle;
+  \draw[line width=0.7pt] (0.15,0.55) -- (3.85,0.55) -- (3.85,0.36) -- (0.15,0.36) -- cycle;
+  \draw[line width=0.7pt] (3.85,0.55) -- (4.45,1.02) -- (4.45,0.83) -- (3.85,0.36);
+  \draw[line width=0.7pt] (1.28,1.08) arc[start angle=180,end angle=360,x radius=0.78,y radius=0.18];
+  \draw[line width=0.7pt] (1.28,1.08) -- (1.28,3.28);
+  \draw[line width=0.7pt] (2.84,1.08) -- (2.84,3.28);
+  \foreach \k in {1,2,3,4,5,6,7} {
+    \pgfmathsetmacro{\yy}{1.08+2.20*\k/8}
+    \draw[line width=0.35pt] (1.28,\yy) .. controls (1.72,{\yy-0.07}) and (2.40,{\yy-0.07}) .. (2.84,\yy);
+  }
+  \foreach \i in {1,2,3,4,5,6,7} {
+    \pgfmathsetmacro{\xb}{1.28+1.56*\i/8}
+    \pgfmathsetmacro{\xt}{\xb+0.07}
+    \draw[line width=0.35pt] (\xb,1.08) -- (\xt,3.28);
+  }
+  \draw[line width=0.7pt] (1.28,3.28) arc[start angle=180,end angle=360,x radius=0.78,y radius=0.18];
+  \draw[line width=0.7pt] (2.84,3.28) arc[start angle=0,end angle=180,x radius=0.78,y radius=0.18];
+  \draw[line width=0.45pt] (2.06,3.46) -- (2.06,3.58);
+  \draw[line width=0.45pt] (2.00,3.52) -- (2.12,3.52);
+  \draw[line width=0.6pt,->] (1.85,3.78) .. controls (2.06,3.98) and (2.28,3.98) .. (2.48,3.72);
+\end{tikzpicture}%
+}
 \caption{(b) 扭转变形}
 \end{figure}
 
@@ -12007,7 +12260,27 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0250-01.png}}
+\fitfig{%
+% fig-alt: 图7.21(a) 两端立柱、三角支座下有短斜划；梁中竖缝；虚线向下弯，中点向下箭头标 F
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.75pt] (0.35,1.55) rectangle (5.15,1.92);
+  \draw[line width=0.55pt] (2.75,1.55) -- (2.75,1.92);
+  \draw[line width=1.05pt] (0.48,1.92) -- (0.48,2.62);
+  \draw[line width=1.05pt] (5.02,1.92) -- (5.02,2.62);
+  \draw[line width=0.7pt] (0.62,1.55) -- (0.48,1.28) -- (0.82,1.28) -- cycle;
+  \draw[line width=0.7pt] (4.88,1.55) -- (4.74,1.28) -- (5.08,1.28) -- cycle;
+  \foreach \xx in {0.42,0.58,0.74} {
+    \draw[line width=0.4pt] (\xx,1.28) -- ({\xx-0.14},1.10);
+  }
+  \foreach \xx in {4.68,4.74,4.90} {
+    \draw[line width=0.4pt] (\xx,1.28) -- ({\xx-0.14},1.10);
+  }
+  \draw[dashed,line width=0.55pt] (0.55,1.48) .. controls (1.4,1.42) and (2.1,1.22) .. (2.75,1.18)
+        .. controls (3.4,1.22) and (4.1,1.42) .. (4.95,1.48);
+  \draw[line width=0.7pt,->] (2.75,1.50) -- (2.75,0.42);
+  \node[anchor=west,font=\small] at (2.82,0.48) {$F$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
