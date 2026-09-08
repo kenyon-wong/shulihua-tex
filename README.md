@@ -31,8 +31,8 @@ Markdown 正文最初来自 [tradecatlabs/shulihuazixuecongshu](https://github.c
 ├── catalog.json         # 书目、合订分组、语言和稳定 UUID
 ├── scripts/             # 源文件与隐私审计
 ├── docs/                # 来源、维护与已知问题说明
-├── reports/             # 动态审计报告（JSON 不纳入版本控制）
-└── dist/                # 构建出的 PDF（不纳入版本控制）
+├── reports/             # 本地审计 JSON（不入库，运行 make audit 后出现）
+└── dist/                # 构建出的 PDF（不入库）
 ```
 
 规范正文在 `tex/books/`，版式在 `tex/style/`。`books/*.md` 仅用于对照上游 Markdown，不经 Pandoc 转写。图片由 TeX 通过 `books/assets/` 引用。

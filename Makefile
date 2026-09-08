@@ -147,4 +147,4 @@ tex-deps:
 pre-push: audit tex-audit pdf-audit repository privacy pdf-verify
 
 clean:
-	rm -rf .build dist reports/*.json
+	rm -rf .build dist reports

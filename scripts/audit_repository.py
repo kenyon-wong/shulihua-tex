@@ -40,7 +40,6 @@ REQUIRED = {
     "docs/KNOWN_ISSUES.md",
     "docs/MAINTENANCE.md",
     "docs/PRIVACY.md",
-    "reports/.gitkeep",
     "scripts/audit_pdfs.py",
     "scripts/audit_privacy.py",
     "scripts/audit_repository.py",

@@ -58,6 +58,6 @@
 
 - `.build/`：XeLaTeX 工作目录
 - `dist/`：PDF 输出
-- `reports/*.json`：动态审计结果
+- `reports/`：动态审计 JSON
 
 以上内容均由脚本重建，不纳入版本控制。
