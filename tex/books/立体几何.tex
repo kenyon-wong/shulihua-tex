@@ -11267,7 +11267,31 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/solid-geometry/fig-p0105-01.png}}
+\fitfig{%
+% fig-alt: 第6题：V在上。A左、B下、C右，棱略过A、B、C。AB、BC、AC实线。VX虚线过AC交点向下。B到交点实线，再向右下至D并略过。扫描有V、A、B、C、X、D
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (1.68,3.08);
+  \coordinate (A) at (0.18,1.38);
+  \coordinate (B) at (0.92,0.32);
+  \coordinate (C) at (3.12,1.48);
+  \coordinate (J) at (1.70,1.41);
+  \coordinate (D) at (2.38,0.52);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.8pt] (A) -- (B) -- (C);
+  \draw[line width=0.8pt] (B) -- (J);
+  \draw[line width=0.8pt] (J) -- (D) -- (2.58,0.28);
+  \draw[line width=0.75pt] (-0.12,0.88) -- (A) -- (V);
+  \draw[line width=0.75pt] (V) -- (C) -- (3.38,1.08);
+  \draw[line width=1.05pt] (V) -- (B) -- (0.88,0.04);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (1.70,2.92) -- (1.70,0.42);
+  \node[anchor=south,inner sep=0.05pt] at (1.68,3.12) {$V$};
+  \node[anchor=east,inner sep=0.05pt] at (0.12,1.36) {$A$};
+  \node[anchor=north,inner sep=0.4pt] at (0.78,-0.02) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (3.18,1.48) {$C$};
+  \node[anchor=north east,inner sep=0.6pt] at (1.38,0.18) {$X$};
+  \node[anchor=west,inner sep=0.04pt] at (2.46,0.50) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -11365,7 +11389,39 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0107-01.png}}
+\fitfig{%
+% fig-alt: 图1·123（1）：左右两个同向三面角。左V，A左、B下、C右；右V1，A1左、B1下、C1右。远棱AC、A1C1虚线。AB、BC、A1B1、B1C1实线。竖棱略过B、B1。斜棱略过A、C、A1、C1。扫描有V、A、B、C、V1、A1、B1、C1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0.82,2.42);
+  \coordinate (A) at (0.08,0.62);
+  \coordinate (B) at (0.82,0.22);
+  \coordinate (C) at (1.58,0.88);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.8pt] (A) -- (B) -- (C);
+  \draw[line width=0.75pt] (-0.10,0.38) -- (A) -- (V);
+  \draw[line width=0.75pt] (V) -- (C) -- (1.74,0.68);
+  \draw[line width=1.05pt] (V) -- (B) -- (0.82,0.02);
+  \node[anchor=south,inner sep=0.05pt] at (0.82,2.46) {$V$};
+  \node[anchor=east,inner sep=0.04pt] at (0.02,0.62) {$A$};
+  \node[anchor=north,inner sep=0.04pt] at (0.82,0.16) {$B$};
+  \node[anchor=south west,inner sep=0.04pt] at (1.62,0.92) {$C$};
+  \begin{scope}[xshift=2.55cm]
+    \coordinate (V1) at (0.82,2.42);
+    \coordinate (A1) at (0.08,0.62);
+    \coordinate (B1) at (0.82,0.22);
+    \coordinate (C1) at (1.58,0.88);
+    \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (C1);
+    \draw[line width=0.8pt] (A1) -- (B1) -- (C1);
+    \draw[line width=0.75pt] (-0.10,0.38) -- (A1) -- (V1);
+    \draw[line width=0.75pt] (V1) -- (C1) -- (1.74,0.68);
+    \draw[line width=1.05pt] (V1) -- (B1) -- (0.82,0.02);
+    \node[anchor=south,inner sep=0.05pt] at (0.82,2.46) {$V_{1}$};
+    \node[anchor=south east,inner sep=0.04pt] at (0.02,0.68) {$A_{1}$};
+    \node[anchor=north,inner sep=0.04pt] at (0.88,0.16) {$B_{1}$};
+    \node[anchor=west,inner sep=0.04pt] at (1.64,0.88) {$C_{1}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -11373,7 +11429,39 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0107-02.png}}
+\fitfig{%
+% fig-alt: 图1·123（2）：左同（1），A左、B下、C右，AC虚线。右为相反顺序，C1左、B1下、A1右，C1A1虚线。竖棱略过B、B1。斜棱略过端点。扫描有V、A、B、C、V1、A1、B1、C1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0.82,2.42);
+  \coordinate (A) at (0.08,0.62);
+  \coordinate (B) at (0.82,0.22);
+  \coordinate (C) at (1.58,0.88);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.8pt] (A) -- (B) -- (C);
+  \draw[line width=0.75pt] (-0.10,0.38) -- (A) -- (V);
+  \draw[line width=0.75pt] (V) -- (C) -- (1.74,0.68);
+  \draw[line width=1.05pt] (V) -- (B) -- (0.82,0.02);
+  \node[anchor=south,inner sep=0.05pt] at (0.82,2.46) {$V$};
+  \node[anchor=east,inner sep=0.04pt] at (0.02,0.62) {$A$};
+  \node[anchor=north,inner sep=0.04pt] at (0.82,0.16) {$B$};
+  \node[anchor=south west,inner sep=0.04pt] at (1.62,0.92) {$C$};
+  \begin{scope}[xshift=2.62cm]
+    \coordinate (V1) at (0.82,2.42);
+    \coordinate (C1) at (0.08,0.62);
+    \coordinate (B1) at (0.82,0.22);
+    \coordinate (A1) at (1.58,0.88);
+    \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C1) -- (A1);
+    \draw[line width=0.8pt] (C1) -- (B1) -- (A1);
+    \draw[line width=0.75pt] (-0.10,0.38) -- (C1) -- (V1);
+    \draw[line width=0.75pt] (V1) -- (A1) -- (1.74,0.68);
+    \draw[line width=1.05pt] (V1) -- (B1) -- (0.82,0.02);
+    \node[anchor=south,inner sep=0.05pt] at (0.82,2.46) {$V_{1}$};
+    \node[anchor=south east,inner sep=0.04pt] at (0.02,0.68) {$C_{1}$};
+    \node[anchor=north,inner sep=0.04pt] at (0.88,0.16) {$B_{1}$};
+    \node[anchor=west,inner sep=0.04pt] at (1.64,0.88) {$A_{1}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -11402,7 +11490,39 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-124}]{assets/solid-geometry/fig-p0107-03.png}}
+\fitfig{%
+% fig-alt: 图1-124：两个同向三面角。左V，A左、B下、C右；右V1，A1左、B1下、C1右。远棱虚线。近底边实线。竖棱略过B、B1。斜棱略过端点。扫描有V、A、B、C、V1、A1、B1、C1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0.88,2.52);
+  \coordinate (A) at (0.10,0.64);
+  \coordinate (B) at (0.88,0.22);
+  \coordinate (C) at (1.68,0.92);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.8pt] (A) -- (B) -- (C);
+  \draw[line width=0.75pt] (-0.12,0.38) -- (A) -- (V);
+  \draw[line width=0.75pt] (V) -- (C) -- (1.86,0.70);
+  \draw[line width=1.05pt] (V) -- (B) -- (0.88,0.02);
+  \node[anchor=south,inner sep=0.05pt] at (0.88,2.56) {$V$};
+  \node[anchor=east,inner sep=0.04pt] at (0.04,0.64) {$A$};
+  \node[anchor=north,inner sep=0.04pt] at (0.88,0.16) {$B$};
+  \node[anchor=south west,inner sep=0.04pt] at (1.72,0.96) {$C$};
+  \begin{scope}[xshift=2.70cm]
+    \coordinate (V1) at (0.88,2.52);
+    \coordinate (A1) at (0.10,0.64);
+    \coordinate (B1) at (0.88,0.22);
+    \coordinate (C1) at (1.68,0.92);
+    \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (C1);
+    \draw[line width=0.8pt] (A1) -- (B1) -- (C1);
+    \draw[line width=0.75pt] (-0.12,0.38) -- (A1) -- (V1);
+    \draw[line width=0.75pt] (V1) -- (C1) -- (1.86,0.70);
+    \draw[line width=1.05pt] (V1) -- (B1) -- (0.88,0.02);
+    \node[anchor=south,inner sep=0.05pt] at (0.88,2.56) {$V_{1}$};
+    \node[anchor=south east,inner sep=0.04pt] at (0.04,0.70) {$A_{1}$};
+    \node[anchor=north,inner sep=0.04pt] at (0.94,0.16) {$B_{1}$};
+    \node[anchor=west,inner sep=0.04pt] at (1.74,0.92) {$C_{1}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-124}
 \end{figure}
 
@@ -11424,7 +11544,33 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-125}]{assets/solid-geometry/fig-p0108-02.png}}
+\fitfig{%
+% fig-alt: 图1-125（右图）：V1在上。A1左、B1下、C1右。A1C1虚线。AB、BC实线。D1在VA1上近A1，E1在A1B1上，F1在A1C1上。D1E1、D1F1、E1F1实线。竖棱略过B1，斜棱略过A1、C1。扫描有V1、A1、B1、C1、D1、E1、F1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V1) at (1.58,2.88);
+  \coordinate (A1) at (0.18,1.22);
+  \coordinate (B1) at (1.52,0.32);
+  \coordinate (C1) at (2.98,1.32);
+  \coordinate (D1) at (0.52,1.64);
+  \coordinate (E1) at (0.78,0.84);
+  \coordinate (F1) at (1.12,1.25);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (C1);
+  \draw[line width=0.8pt] (A1) -- (B1) -- (C1);
+  \draw[line width=0.8pt] (D1) -- (E1);
+  \draw[line width=0.8pt] (D1) -- (F1);
+  \draw[line width=0.8pt] (E1) -- (F1);
+  \draw[line width=0.75pt] (-0.08,0.92) -- (A1) -- (V1);
+  \draw[line width=0.75pt] (V1) -- (C1) -- (3.18,1.08);
+  \draw[line width=1.05pt] (V1) -- (B1) -- (1.52,0.04);
+  \node[anchor=south,inner sep=0.05pt] at (1.58,2.92) {$V_{1}$};
+  \node[anchor=east,inner sep=0.04pt] at (0.04,1.18) {$A_{1}$};
+  \node[anchor=north,inner sep=0.04pt] at (1.58,0.26) {$B_{1}$};
+  \node[anchor=west,inner sep=0.04pt] at (3.04,1.32) {$C_{1}$};
+  \node[anchor=south,inner sep=0.04pt] at (0.38,1.78) {$D_{1}$};
+  \node[anchor=north east,inner sep=0.04pt] at (0.58,0.62) {$E_{1}$};
+  \node[anchor=south west,inner sep=0.6pt] at (1.26,1.40) {$F_{1}$};
+\end{tikzpicture}%
+}
 \caption{图1-125}
 \end{figure}
 
@@ -11491,7 +11637,32 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·126}]{assets/solid-geometry/fig-p0109-01.png}}
+\fitfig{%
+% fig-alt: 图1·126：V在中。下A左、B下、C右；棱反向延长到上C1左、B1上、A1右。AC、A1C1虚线。竖线B1VB虚线并略过B1、B。斜棱实线并略过端点。近底边实线。扫描有V、A、B、C、A1、B1、C1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (1.55,2.02);
+  \coordinate (A) at (0.28,0.72);
+  \coordinate (B) at (1.55,0.12);
+  \coordinate (C) at (2.82,0.82);
+  \coordinate (A1) at (2.18,2.66);
+  \coordinate (B1) at (1.55,2.78);
+  \coordinate (C1) at (0.92,2.62);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C1) -- (A1);
+  \draw[line width=0.8pt] (A) -- (B) -- (C);
+  \draw[line width=0.8pt] (C1) -- (B1) -- (A1);
+  \draw[line width=0.75pt] (0.02,0.42) -- (A) -- (V) -- (A1) -- (2.38,2.86);
+  \draw[line width=0.75pt] (3.08,0.52) -- (C) -- (V) -- (C1) -- (0.72,2.82);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (1.55,3.08) -- (B1) -- (V) -- (B) -- (1.55,-0.08);
+  \node[anchor=south,inner sep=0.04pt] at (1.55,2.84) {$B_{1}$};
+  \node[anchor=east,inner sep=0.04pt] at (0.86,2.64) {$C_{1}$};
+  \node[anchor=west,inner sep=0.04pt] at (2.22,2.66) {$A_{1}$};
+  \node[anchor=north west,inner sep=0.04pt] at (1.62,1.96) {$V$};
+  \node[anchor=east,inner sep=0.04pt] at (0.22,0.72) {$A$};
+  \node[anchor=north,inner sep=0.04pt] at (1.55,0.04) {$B$};
+  \node[anchor=west,inner sep=0.04pt] at (2.88,0.82) {$C$};
+\end{tikzpicture}%
+}
 \caption{图 1·126}
 \end{figure}
 
@@ -11506,7 +11677,23 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0110-01.png}}
+\fitfig{%
+% fig-alt: 图1·127（1）：纸模型展开。缺口在左上。红色130°在上，白色100°在右下，黑色45°在左下。中心小圆。向右虚线。左下贴边窄条。扫描有红色、黑色、白色、45°、130°、100°
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (215:1.58) arc (215:490:1.58);
+  \draw[line width=0.75pt] (0,0) circle (0.24);
+  \draw[line width=0.75pt] (130:0.24) -- (130:1.58);
+  \draw[line width=0.75pt] (260:0.24) -- (260:1.58);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (0.24,0) -- (1.58,0);
+  \draw[line width=0.7pt] (-0.20,-0.18) -- (-1.02,-0.78) -- (-1.16,-0.58) -- (-0.34,-0.02) -- cycle;
+  \node[anchor=south,inner sep=0.6pt] at (0.42,0.72) {\footnotesize 红色};
+  \node[anchor=south,inner sep=0.4pt] at (0.58,0.32) {$130^{\circ}$};
+  \node[anchor=north,inner sep=0.4pt] at (0.78,-0.28) {$100^{\circ}$};
+  \node[anchor=north,inner sep=0.5pt] at (0.68,-0.68) {\footnotesize 白色};
+  \node[anchor=center,inner sep=0.4pt] at (-0.38,-0.92) {\scriptsize $45^{\circ}$};
+  \node[anchor=north,inner sep=0.4pt] at (-0.52,-1.16) {\scriptsize 黑色};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -11514,7 +11701,24 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0110-02.png}}
+\fitfig{%
+% fig-alt: 图1·127（2）：纸模型展开。与（1）同序。红色130°在上，白色100°在右下，黑色45°在左下。中心小圆。向右虚线。左下贴边窄条，内端有小箭头向下。扫描有红色、黑色、白色、45°、130°、100°
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (215:1.58) arc (215:490:1.58);
+  \draw[line width=0.75pt] (0,0) circle (0.24);
+  \draw[line width=0.75pt] (130:0.24) -- (130:1.58);
+  \draw[line width=0.75pt] (260:0.24) -- (260:1.58);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (0.24,0) -- (1.58,0);
+  \draw[line width=0.7pt] (-0.20,-0.18) -- (-1.02,-0.78) -- (-1.16,-0.58) -- (-0.34,-0.02) -- cycle;
+  \draw[line width=0.65pt,->] (-0.50,-0.34) -- (-0.50,-0.50);
+  \node[anchor=south,inner sep=0.6pt] at (0.42,0.72) {\footnotesize 红色};
+  \node[anchor=south,inner sep=0.4pt] at (0.58,0.32) {$130^{\circ}$};
+  \node[anchor=north,inner sep=0.4pt] at (0.78,-0.28) {$100^{\circ}$};
+  \node[anchor=north,inner sep=0.5pt] at (0.68,-0.68) {\footnotesize 白色};
+  \node[anchor=center,inner sep=0.4pt] at (-0.34,-0.96) {\scriptsize $45^{\circ}$};
+  \node[anchor=north,inner sep=0.4pt] at (-0.48,-1.20) {\scriptsize 黑色};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
