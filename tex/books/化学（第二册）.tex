@@ -274,7 +274,26 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={无机物及其化合物分类示意图}]{assets/chemistry-2/fig-p0009-01.png}}
+\fitfig{%
+% fig-alt: 无机物及其化合物分类示意图。非金属元素（氯）分两支：跟氢的化合物（氯化氢）→无氧酸（盐酸）→无氧酸盐（盐酸盐即氯化物）；跟氧的化合物（氧化二氯等）→含氧酸（次氯酸等）→含氧酸盐（次氯酸盐等）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node[align=center,inner sep=1.5pt] (root) at (0,0) {非金属元素\\[-0.5pt]（氯）};
+  \node[align=center,inner sep=1.5pt] (h1) at (3.45,1.18) {跟氢的化合物\\[-0.5pt]（氯化氢）};
+  \node[align=center,inner sep=1.5pt] (h2) at (6.75,1.18) {无氧酸\\[-0.5pt]（盐酸）};
+  \node[align=center,inner sep=1.5pt] (h3) at (10.35,1.18) {无氧酸盐\\[-0.5pt]（盐酸盐即氯化物）};
+  \node[align=center,inner sep=1.5pt] (o1) at (3.45,-1.18) {跟氧的化合物\\[-0.5pt]（氧化二氯等）};
+  \node[align=center,inner sep=1.5pt] (o2) at (6.75,-1.18) {含氧酸\\[-0.5pt]（次氯酸等）};
+  \node[align=center,inner sep=1.5pt] (o3) at (10.35,-1.18) {含氧酸盐\\[-0.5pt]（次氯酸盐等）};
+  \path (root.east) ++(0.22,0) coordinate (fork);
+  \draw[line width=0.6pt] (root.east) -- (fork);
+  \draw[line width=0.6pt] (fork) -- (h1.west);
+  \draw[line width=0.6pt] (fork) -- (o1.west);
+  \draw[line width=0.6pt,->] (h1.east) -- (h2.west);
+  \draw[line width=0.6pt,->] (h2.east) -- (h3.west);
+  \draw[line width=0.6pt,->] (o1.east) -- (o2.west);
+  \draw[line width=0.6pt,->] (o2.east) -- (o3.west);
+\end{tikzpicture}%
+}
 \caption{无机物及其化合物分类示意图}
 \end{figure}
 
@@ -381,7 +400,35 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/chemistry-2/fig-p0013-01.png}}
+\fitfig{%
+% fig-alt: 图1·4（a）两集气瓶口相对叠合，中间夹玻璃片。上瓶倒放标H₂，下瓶正放标Cl₂
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt,fill=white] (-1.22,0.06) -- (1.28,0.15) -- (1.06,-0.10) -- (-1.36,-0.13) -- cycle;
+  \begin{scope}[yshift=-0.18cm]
+    \draw[line width=0.7pt]
+      (-0.56,0.09) -- (-0.36,0.09) -- (-0.36,0.00)
+      -- (-0.44,-0.08) -- (-0.44,-0.22)
+      -- (-0.82,-0.40) -- (-0.82,-2.15)
+      arc[start angle=180,end angle=360,x radius=0.82,y radius=0.14]
+      -- (0.82,-0.40) -- (0.44,-0.22)
+      -- (0.44,-0.08) -- (0.36,0.00) -- (0.36,0.09) -- (0.56,0.09);
+    \draw[line width=0.45pt] (-0.36,0.00) -- (0.36,0.00);
+  \end{scope}
+  \node at (0,-1.48) {$\mathrm{Cl}_{2}$};
+  \begin{scope}[yscale=-1,yshift=-0.18cm]
+    \draw[line width=0.7pt]
+      (-0.56,0.09) -- (-0.36,0.09) -- (-0.36,0.00)
+      -- (-0.44,-0.08) -- (-0.44,-0.22)
+      -- (-0.82,-0.40) -- (-0.82,-2.15)
+      arc[start angle=180,end angle=360,x radius=0.82,y radius=0.14]
+      -- (0.82,-0.40) -- (0.44,-0.22)
+      -- (0.44,-0.08) -- (0.36,0.00) -- (0.36,0.09) -- (0.56,0.09);
+    \draw[line width=0.45pt] (-0.36,0.00) -- (0.36,0.00);
+  \end{scope}
+  \node at (0,1.48) {$\mathrm{H}_{2}$};
+  \node at (0,-2.88) {（a）};
+\end{tikzpicture}%
+}
 \caption{（a）}
 \end{figure}
 
@@ -389,7 +436,34 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/chemistry-2/fig-p0013-02.png}}
+\fitfig{%
+% fig-alt: 图1·4（b）抽去玻璃片后两集气瓶口相对叠合。上下瓶均标H₂+Cl₂
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}[yshift=-0.06cm]
+    \draw[line width=0.7pt]
+      (-0.56,0.09) -- (-0.36,0.09) -- (-0.36,0.00)
+      -- (-0.44,-0.08) -- (-0.44,-0.22)
+      -- (-0.82,-0.40) -- (-0.82,-2.15)
+      arc[start angle=180,end angle=360,x radius=0.82,y radius=0.14]
+      -- (0.82,-0.40) -- (0.44,-0.22)
+      -- (0.44,-0.08) -- (0.36,0.00) -- (0.36,0.09) -- (0.56,0.09);
+    \draw[line width=0.45pt] (-0.36,0.00) -- (0.36,0.00);
+  \end{scope}
+  \node at (0,-1.42) {$\mathrm{H}_{2}+\mathrm{Cl}_{2}$};
+  \begin{scope}[yscale=-1,yshift=-0.06cm]
+    \draw[line width=0.7pt]
+      (-0.56,0.09) -- (-0.36,0.09) -- (-0.36,0.00)
+      -- (-0.44,-0.08) -- (-0.44,-0.22)
+      -- (-0.82,-0.40) -- (-0.82,-2.15)
+      arc[start angle=180,end angle=360,x radius=0.82,y radius=0.14]
+      -- (0.82,-0.40) -- (0.44,-0.22)
+      -- (0.44,-0.08) -- (0.36,0.00) -- (0.36,0.09) -- (0.56,0.09);
+    \draw[line width=0.45pt] (-0.36,0.00) -- (0.36,0.00);
+  \end{scope}
+  \node at (0,1.42) {$\mathrm{H}_{2}+\mathrm{Cl}_{2}$};
+  \node at (0,-2.78) {（b）};
+\end{tikzpicture}%
+}
 \caption{（b）}
 \end{figure}
 

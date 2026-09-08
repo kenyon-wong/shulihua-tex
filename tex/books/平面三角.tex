@@ -352,7 +352,31 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.1}]{assets/plane-trigonometry/fig-p0006-01.png}}
+\fitfig{%
+% fig-alt: 锐角顶点A，射线AD斜向右上、AE水平向右；AD上依次有B、B'、B''，自各点向AE作垂线交于C、C'、C''
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (E) at (5.35,0);
+  \coordinate (D) at (4.45,2.62);
+  \coordinate (B) at (1.78,1.05);
+  \coordinate (Bp) at (2.76,1.62);
+  \coordinate (Bpp) at (3.74,2.20);
+  \draw[line width=0.7pt] (A) -- (E);
+  \draw[line width=0.7pt] (A) -- (D);
+  \draw[line width=0.7pt] (B) -- (1.78,0);
+  \draw[line width=0.7pt] (Bp) -- (2.76,0);
+  \draw[line width=0.7pt] (Bpp) -- (3.74,0);
+  \node[below left=1pt] at (A) {$A$};
+  \node[above=2pt] at (B) {$B$};
+  \node[above=2pt] at (Bp) {$B'$};
+  \node[above=2pt] at (Bpp) {$B''$};
+  \node[above right=0pt] at (D) {$D$};
+  \node[below=2pt] at (1.78,0) {$C$};
+  \node[below=2pt] at (2.76,0) {$C'$};
+  \node[below=2pt] at (3.74,0) {$C''$};
+  \node[below=1pt] at (E) {$E$};
+\end{tikzpicture}%
+}
 \caption{图1.1}
 \end{figure}
 
@@ -422,7 +446,21 @@ A''这个记号，就应当联想到它表示：在以∠A为锐角的直角三�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-2}]{assets/plane-trigonometry/fig-p0008-01.png}}
+\fitfig{%
+% fig-alt: 直角三角形ABC，直角在C；A在左、B在上、C在右下，斜边标c，底边标b，竖直边标a，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (3.15,0);
+  \coordinate (B) at (3.15,2.20);
+  \draw[line width=0.7pt] (A) -- (C) -- (B) -- cycle;
+  \node[below left=1pt] at (A) {$A$};
+  \node[above=1pt] at (B) {$B$};
+  \node[below right=1pt] at (C) {$C$};
+  \node[above left=1pt] at (1.42,1.22) {$c$};
+  \node[below=2pt] at (1.55,0) {$b$};
+  \node[right=2pt] at (3.15,1.10) {$a$};
+\end{tikzpicture}%
+}
 \caption{图1-2}
 \end{figure}
 
@@ -491,7 +529,23 @@ A''这个记号，就应当联想到它表示：在以∠A为锐角的直角三�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-3}]{assets/plane-trigonometry/fig-p0009-01.png}}
+\fitfig{%
+% fig-alt: 直角三角形ABC，直角在C；A处有弧并标35°，斜边标c，底边标b，竖直边标a，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (3.28,0);
+  \coordinate (B) at (3.28,2.30);
+  \draw[line width=0.7pt] (A) -- (C) -- (B) -- cycle;
+  \draw[line width=0.6pt] (0.58,0) arc[start angle=0, end angle=35, radius=0.58];
+  \node[above right=0pt] at (17:0.78) {$35^{\circ}$};
+  \node[below left=1pt] at (A) {$A$};
+  \node[above=1pt] at (B) {$B$};
+  \node[below right=1pt] at (C) {$C$};
+  \node[above left=1pt] at (1.48,1.28) {$c$};
+  \node[below=2pt] at (1.64,0) {$b$};
+  \node[right=2pt] at (3.28,1.15) {$a$};
+\end{tikzpicture}%
+}
 \caption{图1-3}
 \end{figure}
 
@@ -620,7 +674,23 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-4}]{assets/plane-trigonometry/fig-p0011-01.png}}
+\fitfig{%
+% fig-alt: 竖直边BC，过C的水平线CD；以B为圆心的弧交CD于A并略向下伸出，连结AB；D在左端，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (3.05,0);
+  \coordinate (B) at (3.05,4.00);
+  \coordinate (A) at (0.05,0);
+  \coordinate (D) at (-0.70,0);
+  \draw[line width=0.7pt] (D) -- (C);
+  \draw[line width=0.7pt] (C) -- (B);
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.6pt] (B) ++(205:5) arc[start angle=205, end angle=258, radius=5];
+  \node[above left=0pt] at (D) {$D$};
+  \node[below=2pt] at (A) {$A$};
+  \node[above=1pt] at (B) {$B$};
+  \node[below right=1pt] at (C) {$C$};
+\end{tikzpicture}%
+}
 \caption{图1-4}
 \end{figure}
 
@@ -647,7 +717,23 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·5}]{assets/plane-trigonometry/fig-p0012-01.png}}
+\fitfig{%
+% fig-alt: 水平边AC，过C向上的垂线CD伸出B外至D；以A为圆心的弧交CD于B并略过垂线，连结AB，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (3.16,0);
+  \coordinate (B) at (3.16,2.45);
+  \coordinate (D) at (3.16,3.45);
+  \draw[line width=0.7pt] (A) -- (C);
+  \draw[line width=0.7pt] (C) -- (D);
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.6pt] (18:4) arc[start angle=18, end angle=54, radius=4];
+  \node[below left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (C) {$C$};
+  \node[right=2pt] at (B) {$B$};
+  \node[above=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{图1·5}
 \end{figure}
 
@@ -657,7 +743,25 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.8}]{assets/plane-trigonometry/fig-p0012-02.png}}
+\fitfig{%
+% fig-alt: 直角三角形ABC，直角在C；CA三等分有两处短刻度，CB七等分有六处短刻度，底边一格下标l，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\unit{0.40}
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (1.20,0);
+  \coordinate (B) at (1.20,2.80);
+  \draw[line width=0.7pt] (A) -- (C) -- (B) -- cycle;
+  \foreach \k in {1,2}
+    \draw[line width=0.55pt] ({\k*\unit},0) -- ({\k*\unit},0.11);
+  \foreach \k in {1,2,3,4,5,6}
+    \draw[line width=0.55pt] (1.20,{7*\unit-\k*\unit}) -- (1.32,{7*\unit-\k*\unit});
+  \draw[<->, line width=0.45pt] (0.06,-0.26) -- (0.34,-0.26);
+  \node[below=1pt] at (0.20,-0.26) {$l$};
+  \node[below left=0pt] at (A) {$A$};
+  \node[above=1pt] at (B) {$B$};
+  \node[below right=1pt] at (C) {$C$};
+\end{tikzpicture}%
+}
 \caption{图1.8}
 \end{figure}
 
@@ -687,7 +791,25 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-7}]{assets/plane-trigonometry/fig-p0013-01.png}}
+\fitfig{%
+% fig-alt: 直角三角形ABC，直角在C；AC七等分有六处短刻度，CB五等分有四处短刻度，底边一格下标l，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\unit{0.40}
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (2.80,0);
+  \coordinate (B) at (2.80,2.00);
+  \draw[line width=0.7pt] (A) -- (C) -- (B) -- cycle;
+  \foreach \k in {1,2,3,4,5,6}
+    \draw[line width=0.55pt] ({\k*\unit},0) -- ({\k*\unit},0.11);
+  \foreach \k in {1,2,3,4}
+    \draw[line width=0.55pt] (2.80,{5*\unit-\k*\unit}) -- (2.92,{5*\unit-\k*\unit});
+  \draw[<->, line width=0.45pt] (0.06,-0.26) -- (0.34,-0.26);
+  \node[below=1pt] at (0.20,-0.26) {$l$};
+  \node[below left=0pt] at (A) {$A$};
+  \node[above=1pt] at (B) {$B$};
+  \node[below right=1pt] at (C) {$C$};
+\end{tikzpicture}%
+}
 \caption{图1-7}
 \end{figure}
 
@@ -751,7 +873,21 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-8}]{assets/plane-trigonometry/fig-p0014-01.png}}
+\fitfig{%
+% fig-alt: 直角三角形ABC，直角在C；A在左、B在上、C在右下，斜边标c，底边标b，竖直边标a，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (3.20,0);
+  \coordinate (B) at (3.20,2.15);
+  \draw[line width=0.7pt] (A) -- (C) -- (B) -- cycle;
+  \node[below left=1pt] at (A) {$A$};
+  \node[above=1pt] at (B) {$B$};
+  \node[below right=1pt] at (C) {$C$};
+  \node[above left=1pt] at (1.45,1.18) {$c$};
+  \node[below=2pt] at (1.58,0) {$b$};
+  \node[right=2pt] at (3.20,1.08) {$a$};
+\end{tikzpicture}%
+}
 \caption{图1-8}
 \end{figure}
 

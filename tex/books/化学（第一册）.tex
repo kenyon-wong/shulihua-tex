@@ -566,9 +566,42 @@
 
 1个水分子分解成2个氢原子和1个氧原子：
 
+\usetikzlibrary{patterns,decorations.pathreplacing}
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/chemistry-1/fig-p0021-01.png}}
+\fitfig{%
+% fig-alt: 一个水分子（外圈内两斜线氢原子、一空白氧原子）经分解箭头分成两个氢原子和一个氧原子
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\small, inner sep=1pt}]
+  % 水分子：斜线圆为氢原子，空白圆为氧原子
+  \draw[line width=0.7pt] (0,0.15) circle (0.72);
+  \node[circle, draw, line width=0.55pt, minimum size=4.4mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (-0.02,0.40) {};
+  \node[circle, draw, line width=0.55pt, minimum size=4.4mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (-0.24,-0.12) {};
+  \node[circle, draw, line width=0.55pt, minimum size=4.4mm, inner sep=0pt, fill=white]
+        at (0.26,-0.08) {};
+  \draw[decorate, decoration={brace, amplitude=3.5pt, mirror, raise=1pt}, line width=0.5pt]
+    (-0.78,-0.68) -- (0.78,-0.68);
+  \node[below=4pt] at (0,-0.72) {1个水分子};
+  % 分解
+  \draw[->, line width=0.7pt] (1.10,0.15) -- (2.20,0.15);
+  \node[above=1pt] at (1.65,0.15) {分解};
+  % 两个氢原子
+  \node[circle, draw, line width=0.55pt, minimum size=4.8mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (2.85,0.15) {};
+  \node at (3.38,0.15) {$+$};
+  \node[circle, draw, line width=0.55pt, minimum size=4.8mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (3.91,0.15) {};
+  \draw[decorate, decoration={brace, amplitude=3.5pt, mirror, raise=1pt}, line width=0.5pt]
+    (2.54,-0.22) -- (4.22,-0.22);
+  \node[below=4pt, anchor=north] at (3.38,-0.32) {2个氢原子};
+  % 一个氧原子
+  \node at (4.85,0.15) {$+$};
+  \node[circle, draw, line width=0.55pt, minimum size=4.8mm, inner sep=0pt, fill=white]
+        at (5.55,0.15) {};
+  \node[below=4pt, anchor=north] at (5.55,-0.32) {1个氧原子};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第21页）}
 \end{figure}
 
@@ -577,7 +610,96 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·3 水分子分裂成氢分子和氧分子的示意图}]{assets/chemistry-1/fig-p0021-02.png}}
+\fitfig{%
+% fig-alt: 两个水分子分解为四个氢原子和两个氧原子，再结合成两个氢分子和一个氧分子
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\small, inner sep=1pt}]
+  % 两个水分子
+  \begin{scope}[shift={(0.70,0.10)}]
+    \draw[line width=0.65pt] (0,0) circle (0.58);
+    \node[circle, draw, line width=0.5pt, minimum size=3.6mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (-0.02,0.20) {};
+    \node[circle, draw, line width=0.5pt, minimum size=3.6mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (-0.18,-0.16) {};
+    \node[circle, draw, line width=0.5pt, minimum size=3.6mm, inner sep=0pt, fill=white]
+          at (0.20,-0.12) {};
+  \end{scope}
+  \node at (1.58,0.10) {$+$};
+  \begin{scope}[shift={(2.46,0.10)}]
+    \draw[line width=0.65pt] (0,0) circle (0.58);
+    \node[circle, draw, line width=0.5pt, minimum size=3.6mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (-0.02,0.20) {};
+    \node[circle, draw, line width=0.5pt, minimum size=3.6mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (-0.18,-0.16) {};
+    \node[circle, draw, line width=0.5pt, minimum size=3.6mm, inner sep=0pt, fill=white]
+          at (0.20,-0.12) {};
+  \end{scope}
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror, raise=1pt}, line width=0.5pt]
+    (0.06,-0.58) -- (3.10,-0.58);
+  \node[below=3pt] at (1.58,-0.62) {2个水分子};
+  % 分解箭头
+  \draw[->, line width=0.7pt] (3.28,0.10) -- (4.28,0.10);
+  \node[above=1pt] at (3.78,0.10) {分解};
+  % 四个氢原子
+  \node[circle, draw, line width=0.5pt, minimum size=3.8mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (4.70,0.10) {};
+  \node at (5.12,0.10) {$+$};
+  \node[circle, draw, line width=0.5pt, minimum size=3.8mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (5.54,0.10) {};
+  \node at (5.96,0.10) {$+$};
+  \node[circle, draw, line width=0.5pt, minimum size=3.8mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (6.38,0.10) {};
+  \node at (6.80,0.10) {$+$};
+  \node[circle, draw, line width=0.5pt, minimum size=3.8mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (7.22,0.10) {};
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror, raise=1pt}, line width=0.5pt]
+    (4.46,-0.20) -- (7.46,-0.20);
+  \node[below=2pt] at (5.96,-0.24) {4个氢原子};
+  % 两个氧原子
+  \node at (7.72,0.10) {$+$};
+  \node[circle, draw, line width=0.5pt, minimum size=3.8mm, inner sep=0pt, fill=white]
+        at (8.16,0.10) {};
+  \node at (8.56,0.10) {$+$};
+  \node[circle, draw, line width=0.5pt, minimum size=3.8mm, inner sep=0pt, fill=white]
+        at (9.00,0.10) {};
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror, raise=1pt}, line width=0.5pt]
+    (7.92,-0.20) -- (9.24,-0.20);
+  \node[below=2pt] at (8.58,-0.24) {2个氧原子};
+  % 氢原子结合成氢分子
+  \draw[->, line width=0.6pt] (5.96,-0.78) -- (5.96,-1.28);
+  \node[right=1pt] at (5.96,-1.02) {结合};
+  \begin{scope}[shift={(5.28,-1.88)}]
+    \draw[line width=0.6pt] (0,0) circle (0.46);
+    \node[circle, draw, line width=0.5pt, minimum size=3.4mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (-0.13,0) {};
+    \node[circle, draw, line width=0.5pt, minimum size=3.4mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (0.13,0) {};
+  \end{scope}
+  \node at (5.96,-1.88) {$+$};
+  \begin{scope}[shift={(6.64,-1.88)}]
+    \draw[line width=0.6pt] (0,0) circle (0.46);
+    \node[circle, draw, line width=0.5pt, minimum size=3.4mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (-0.13,0) {};
+    \node[circle, draw, line width=0.5pt, minimum size=3.4mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (0.13,0) {};
+  \end{scope}
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror, raise=1pt}, line width=0.5pt]
+    (4.76,-2.42) -- (7.16,-2.42);
+  \node[below=3pt] at (5.96,-2.46) {2个氢分子};
+  % 氧原子结合成氧分子
+  \draw[->, line width=0.6pt] (8.58,-0.78) -- (8.58,-1.28);
+  \node[right=1pt] at (8.58,-1.02) {结合};
+  \begin{scope}[shift={(8.58,-1.88)}]
+    \draw[line width=0.6pt] (0,0) circle (0.46);
+    \fill[white] (-0.13,0) circle (0.17);
+    \draw[line width=0.5pt] (-0.13,0) circle (0.17);
+    \fill[white] (0.13,0) circle (0.17);
+    \draw[line width=0.5pt] (0.13,0) circle (0.17);
+  \end{scope}
+  \draw[decorate, decoration={brace, amplitude=3pt, mirror, raise=1pt}, line width=0.5pt]
+    (8.06,-2.42) -- (9.10,-2.42);
+  \node[below=3pt] at (8.58,-2.46) {1个氧分子};
+\end{tikzpicture}%
+}
 \caption{图 1·3 水分子分裂成氢分子和氧分子的示意图}
 \end{figure}
 
@@ -1852,7 +1974,36 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·10 氧气变成臭氧的示意图}]{assets/chemistry-1/fig-p0060-01.png}}
+\fitfig{%
+% fig-alt: 三个氧气分子（虚线圈内各两个斜线氧原子）经放电变成两个臭氧分子（虚线圈内各三个斜线氧原子）
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\small, inner sep=1pt}]
+  % 三个氧气分子
+  \foreach \y in {1.35, 0, -1.35} {
+    \draw[dashed, line width=0.6pt] (0,\y) circle (0.52);
+    \node[circle, draw, line width=0.5pt, minimum size=3.8mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (-0.14,\y) {};
+    \node[circle, draw, line width=0.5pt, minimum size=3.8mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (0.14,\y) {};
+  }
+  \node[below=3pt, align=center, text width=2.7cm] at (0,-1.98)
+    {3个氧气分子（每个分子里含有2个氧原子）};
+  % 放电
+  \draw[->, line width=0.7pt] (0.78,0) -- (1.95,0);
+  \node[above=1pt] at (1.36,0) {放电};
+  % 两个臭氧分子
+  \foreach \x in {2.85, 4.25} {
+    \draw[dashed, line width=0.6pt] (\x,0.05) circle (0.58);
+    \node[circle, draw, line width=0.5pt, minimum size=3.6mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (\x,0.24) {};
+    \node[circle, draw, line width=0.5pt, minimum size=3.6mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (\x-0.20,-0.12) {};
+    \node[circle, draw, line width=0.5pt, minimum size=3.6mm, inner sep=0pt,
+          pattern=north east lines, pattern color=black] at (\x+0.20,-0.12) {};
+  }
+  \node[below=4pt, align=center, text width=3.0cm] at (3.55,-0.58)
+    {2个臭氧分子（每个分子里含有3个氧原子）};
+\end{tikzpicture}%
+}
 \caption{图2·10 氧气变成臭氧的示意图}
 \end{figure}
 
@@ -1887,7 +2038,22 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第61页）}]{assets/chemistry-1/fig-p0061-01.png}}
+\fitfig{%
+% fig-alt: 方框内碳、氢，框下标蜡烛，与氧气经括号分成二氧化碳和水
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\small, inner sep=1.5pt}]
+  \draw[line width=0.75pt] (0,0.15) rectangle (1.20,1.55);
+  \node at (0.60,1.12) {碳};
+  \node at (0.60,0.55) {氢};
+  \node[below=2pt] at (0.60,0.15) {蜡烛};
+  \draw[decorate, decoration={brace, amplitude=5pt}, line width=0.6pt]
+    (1.38,1.48) -- (1.38,0.22);
+  \node[right=7pt] at (1.42,0.85) {氧气};
+  \draw[decorate, decoration={brace, amplitude=5pt, mirror}, line width=0.6pt]
+    (2.55,1.55) -- (2.55,0.12);
+  \node[right=8pt, anchor=west] at (2.62,1.18) {二氧化碳($\mathrm{CO}_{2}$)};
+  \node[right=8pt, anchor=west] at (2.62,0.48) {水($\mathrm{H}_{2}\mathrm{O}$)};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第61页）}
 \end{figure}
 
@@ -2531,7 +2697,45 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·15 锌和盐酸置换反应的示意图}]{assets/chemistry-1/fig-p0083-01.png}}
+\fitfig{%
+% fig-alt: 锌原子与硫酸分子（两个氢原子和硫酸根）置换成硫酸锌分子和氢分子
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={inner sep=0.5pt}]
+  % 锌原子
+  \node[circle, draw, line width=0.55pt, minimum size=8.4mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (0,0.15) {};
+  \node[fill=white, inner sep=0.6pt, font=\footnotesize] at (0,0.15) {$\mathrm{Zn}$};
+  \node[font=\small] at (0.82,0.15) {$+$};
+  % 硫酸分子
+  \draw[dashed, line width=0.65pt] (2.42,0.15) circle (1.05);
+  \node[circle, draw, line width=0.5pt, minimum size=6.4mm, inner sep=0pt, fill=white, font=\footnotesize]
+        at (1.88,0.50) {$\mathrm{H}$};
+  \node[circle, draw, line width=0.5pt, minimum size=6.4mm, inner sep=0pt, fill=white, font=\footnotesize]
+        at (1.88,-0.22) {$\mathrm{H}$};
+  \node[circle, draw, line width=0.55pt, minimum size=9.4mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (2.82,0.12) {};
+  \node[fill=white, inner sep=0.5pt, font=\footnotesize] at (2.82,0.12) {$\mathrm{SO}_{4}$};
+  \node[font=\small] at (3.72,0.15) {$=$};
+  % 硫酸锌分子
+  \draw[dashed, line width=0.65pt] (5.22,0.15) circle (0.98);
+  \node[circle, draw, line width=0.55pt, minimum size=7.2mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (4.84,0.15) {};
+  \node[fill=white, inner sep=0.5pt, font=\footnotesize] at (4.84,0.15) {$\mathrm{Zn}$};
+  \node[circle, draw, line width=0.55pt, minimum size=8.8mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (5.62,0.15) {};
+  \node[fill=white, inner sep=0.5pt, font=\footnotesize] at (5.62,0.15) {$\mathrm{SO}_{4}$};
+  \node[font=\small] at (6.48,0.15) {$+$};
+  % 氢分子
+  \draw[dashed, line width=0.65pt] (7.48,0.15) circle (0.66);
+  \node[circle, draw, line width=0.5pt, minimum size=5.6mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (7.28,0.15) {};
+  \node[fill=white, inner sep=0.3pt, font=\scriptsize] at (7.28,0.15) {$\mathrm{H}$};
+  \node[circle, draw, line width=0.5pt, minimum size=5.6mm, inner sep=0pt,
+        pattern=north east lines, pattern color=black] at (7.68,0.15) {};
+  \node[fill=white, inner sep=0.3pt, font=\scriptsize] at (7.68,0.15) {$\mathrm{H}$};
+  \node[font=\small] at (3.85,-1.35)
+    {$\mathrm{Zn}+\mathrm{H}_{2}\mathrm{SO}_{4}=\mathrm{ZnSO}_{4}+\mathrm{H}_{2}\uparrow$};
+\end{tikzpicture}%
+}
 \caption{图 2·15 锌和盐酸置换反应的示意图}
 \end{figure}
 
