@@ -5940,7 +5940,41 @@ P (A B) = P (A) P (B | A)\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0099-01.png}}
+\fitfig{%
+% fig-alt: 开关电路：①与②串联，再与③、④并联，然后串接电池与灯
+\begin{tikzpicture}[line cap=round,line join=round,sw/.style={circle,draw,line width=0.4pt,inner sep=0.15pt,minimum size=2.2mm,font=\scriptsize}]
+  \coordinate (Lj) at (0,2.42);
+  \coordinate (Rj) at (4.45,1.78);
+  \draw[line width=0.7pt] (0,0) -- (0,3.20) -- (0.50,3.20);
+  \draw[line width=0.7pt] (0.50,3.20) -- (1.00,3.52);
+  \draw[line width=0.7pt] (1.36,3.20) -- (2.15,3.20);
+  \draw[line width=0.7pt] (2.15,3.20) -- (2.65,3.52);
+  \draw[line width=0.7pt] (3.00,3.20) -- (4.45,3.20) -- (Rj);
+  \node[sw,anchor=south] at (0.84,3.60) {1};
+  \node[sw,anchor=south] at (2.48,3.60) {2};
+  \draw[line width=0.7pt] (Lj) -- (0.82,2.42) -- (0.82,2.08);
+  \fill (Lj) circle (1.15pt);
+  \draw[line width=0.7pt] (0.82,2.08) -- (1.18,2.08);
+  \draw[line width=0.7pt] (1.18,2.08) -- (1.58,2.40);
+  \draw[line width=0.7pt] (1.92,2.08) -- (2.62,2.08) -- (2.62,1.18);
+  \node[sw,anchor=south] at (1.46,2.48) {3};
+  \draw[line width=0.7pt] (0.82,2.08) -- (0.82,1.18) -- (1.18,1.18);
+  \draw[line width=0.7pt] (1.18,1.18) -- (1.58,1.50);
+  \draw[line width=0.7pt] (1.92,1.18) -- (2.62,1.18);
+  \node[sw,anchor=south] at (1.46,1.56) {4};
+  \draw[line width=0.7pt] (2.62,1.18) -- (2.62,1.78) -- (Rj);
+  \fill (Rj) circle (1.15pt);
+  \draw[line width=0.7pt] (0,0) -- (0.72,0);
+  \draw[line width=0.9pt] (0.72,-0.22) -- (0.72,0.22);
+  \draw[line width=1.3pt] (0.90,-0.12) -- (0.90,0.12);
+  \draw[line width=0.7pt] (0.94,0) -- (3.12,0);
+  \draw[line width=0.7pt] (3.42,0) circle (0.28);
+  \draw[line width=0.55pt] (3.22,-0.16) -- (3.62,0.16);
+  \draw[line width=0.55pt] (3.22,0.16) -- (3.62,-0.16);
+  \node[above=1pt,inner sep=0.4pt,font=\small] at (3.42,0.28) {灯};
+  \draw[line width=0.7pt] (3.70,0) -- (4.45,0) -- (Rj);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6356,9 +6390,17 @@ P \left(A _ {1} \cdot A _ {2} \cdots A _ {n}\right) = P \left(A _ {1}\right) P \
   表示射中靶上的方形区域，则下列图中网点部分各表示什么事件。
 \end{enumerate}
 
+\usetikzlibrary{patterns}
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0106-01.png}}
+\fitfig{%
+% fig-alt: 网点仅在圆内，矩形空白；圆叠于矩形顶边之上
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0,0) rectangle (1.78,0.72);
+  \fill[pattern=dots] (0.89,1.06) circle (0.40);
+  \draw[line width=0.85pt] (0.89,1.06) circle (0.40);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6366,7 +6408,18 @@ P \left(A _ {1} \cdot A _ {2} \cdots A _ {n}\right) = P \left(A _ {1}\right) P \
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0106-02.png}}
+\fitfig{%
+% fig-alt: 网点仅在矩形内，圆空白；圆叠于矩形顶边之上
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[pattern=dots] (0,0) rectangle (1.78,0.72);
+  \draw[line width=0.8pt] (0,0) rectangle (1.78,0.72);
+  \begin{scope}
+    \clip (-0.1,0.72) rectangle (2.0,1.60);
+    \fill[white] (0.89,1.06) circle (0.40);
+  \end{scope}
+  \draw[line width=0.85pt] (0.89,1.06) circle (0.40);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6374,7 +6427,17 @@ P \left(A _ {1} \cdot A _ {2} \cdots A _ {n}\right) = P \left(A _ {1}\right) P \
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0106-03.png}}
+\fitfig{%
+% fig-alt: 外方为网点，圆与内矩形空白并在顶边相叠
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[pattern=dots] (-0.18,-0.14) rectangle (1.94,1.78);
+  \fill[white] (0.18,0.08) rectangle (1.58,0.86);
+  \fill[white] (0.88,1.02) circle (0.42);
+  \draw[line width=0.75pt] (-0.18,-0.14) rectangle (1.94,1.78);
+  \draw[line width=0.8pt] (0.18,0.08) rectangle (1.58,0.86);
+  \draw[line width=0.85pt] (0.88,1.02) circle (0.42);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6382,7 +6445,17 @@ P \left(A _ {1} \cdot A _ {2} \cdots A _ {n}\right) = P \left(A _ {1}\right) P \
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0106-04.png}}
+\fitfig{%
+% fig-alt: 外方与圆为网点，矩形空白；圆叠于矩形顶边之上
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[pattern=dots] (-0.18,-0.16) rectangle (1.96,1.74);
+  \fill[white] (0.10,0.06) rectangle (1.68,0.74);
+  \fill[pattern=dots] (0.89,1.06) circle (0.38);
+  \draw[line width=0.75pt] (-0.18,-0.16) rectangle (1.96,1.74);
+  \draw[line width=0.8pt] (0.12,0.06) rectangle (1.66,0.72);
+  \draw[line width=0.9pt] (0.89,1.06) circle (0.38);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -6390,7 +6463,15 @@ P \left(A _ {1} \cdot A _ {2} \cdots A _ {n}\right) = P \left(A _ {1}\right) P \
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0106-05.png}}
+\fitfig{%
+% fig-alt: 圆与矩形皆为网点，圆叠于矩形顶边之上
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[pattern=dots] (0,0) rectangle (1.78,0.72);
+  \fill[pattern=dots] (0.89,1.06) circle (0.40);
+  \draw[line width=0.8pt] (0,0) rectangle (1.78,0.72);
+  \draw[line width=0.85pt] (0.89,1.06) circle (0.40);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
