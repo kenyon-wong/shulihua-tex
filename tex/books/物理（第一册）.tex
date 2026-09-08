@@ -2565,7 +2565,66 @@ p = 15 \text{厘米} \times 0.8 \text{克 / 厘米} ^ {3} = 12 \text{克 / 厘�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·10 压强的分布与容器的形状无关}]{assets/physics-1/fig-p0061-01.png}}
+% fig-alt: 四种形状容器坐在同一地面，液面同一虚线，中间虚线标深度，左侧h1、h2向上，A、B、C、D
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0.15,0) -- (11.55,0);
+  \begin{scope}
+    \clip (0.15,-0.30) rectangle (11.55,0);
+    \foreach \s in {-0.6,-0.38,...,12.0}
+      \draw[line width=0.28pt] (\s,-0.30) -- (\s+0.40,0.05);
+  \end{scope}
+  \draw[line width=0.42pt] (0.22,2.62) -- (0.58,2.62);
+  \draw[line width=0.42pt] (0.22,1.48) -- (0.52,1.48);
+  \draw[line width=0.42pt] (0.22,0) -- (0.52,0);
+  \draw[line width=0.5pt,->] (0.36,0) -- (0.36,2.62);
+  \draw[line width=0.48pt,->] (0.62,1.48) -- (0.62,2.62);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (0.18,2.08) {$h_1$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (0.18,0.78) {$h_2$};
+  \draw[line width=0.7pt] (1.78,3.48) .. controls (1.95,3.12) and (1.58,2.78) .. (1.88,2.15)
+    .. controls (2.05,1.78) and (1.55,1.62) .. (1.68,1.38) -- (1.18,0.14)
+    .. controls (1.32,0.03) and (3.28,0.03) .. (3.55,0.14) -- (2.42,1.38)
+    .. controls (2.08,1.62) and (2.35,1.95) .. (2.12,2.55)
+    .. controls (2.28,2.92) and (1.95,3.18) .. (2.18,3.48);
+  \draw[line width=0.7pt] (3.95,3.42) -- (3.82,0.36)
+    arc[start angle=180,end angle=270,radius=0.22] -- (5.52,0.14)
+    arc[start angle=270,end angle=360,radius=0.22] -- (5.92,3.42);
+  \draw[line width=0.7pt] (6.32,3.42) -- (6.32,0.36)
+    arc[start angle=180,end angle=270,radius=0.22] -- (7.48,0.14)
+    arc[start angle=270,end angle=360,radius=0.22] -- (7.70,3.42);
+  \draw[line width=0.7pt] (8.28,3.48) -- (7.95,0.62) -- (9.68,0.06) -- (10.48,3.58);
+  \begin{scope}
+    \clip (1.82,2.62) .. controls (1.95,2.15) and (2.05,1.78) .. (1.68,1.38) -- (1.18,0.14)
+      .. controls (1.32,0.03) and (3.28,0.03) .. (3.55,0.14) -- (2.42,1.38)
+      .. controls (2.20,1.70) and (2.18,2.20) .. (2.08,2.62) -- cycle;
+    \foreach \y in {2.42,2.16,1.90,1.64,1.38,1.12,0.86,0.60,0.34}
+      \draw[line width=0.28pt,dash pattern=on 2.0pt off 1.5pt] (1.05,\y) -- (3.65,\y);
+  \end{scope}
+  \begin{scope}
+    \clip (3.90,2.62) -- (3.84,0.36) arc[start angle=180,end angle=270,radius=0.20]
+      -- (5.52,0.16) arc[start angle=270,end angle=360,radius=0.20] -- (5.78,2.62) -- cycle;
+    \foreach \y in {2.42,2.16,1.90,1.64,1.38,1.12,0.86,0.60,0.34}
+      \draw[line width=0.28pt,dash pattern=on 2.0pt off 1.5pt] (3.70,\y) -- (5.95,\y);
+  \end{scope}
+  \begin{scope}
+    \clip (6.32,2.62) -- (6.32,0.36) arc[start angle=180,end angle=270,radius=0.22]
+      -- (7.48,0.14) arc[start angle=270,end angle=360,radius=0.22] -- (7.70,2.62) -- cycle;
+    \foreach \y in {2.42,2.16,1.90,1.64,1.38,1.12,0.86,0.60,0.34}
+      \draw[line width=0.28pt,dash pattern=on 2.0pt off 1.5pt] (6.15,\y) -- (7.80,\y);
+  \end{scope}
+  \begin{scope}
+    \clip (8.10,2.62) -- (7.95,0.62) -- (9.68,0.06) -- (10.05,2.62) -- cycle;
+    \foreach \y in {2.42,2.16,1.90,1.64,1.38,1.12,0.86,0.60,0.34}
+      \draw[line width=0.28pt,dash pattern=on 2.0pt off 1.5pt] (7.75,\y) -- (10.30,\y);
+  \end{scope}
+  \draw[line width=0.45pt,dash pattern=on 1.6pt off 1.2pt] (0.20,2.62) -- (11.20,2.62);
+  \draw[line width=0.45pt,dash pattern=on 1.6pt off 1.2pt] (0.70,1.48) -- (10.60,1.48);
+  \node[font=\scriptsize,inner sep=0.7pt,fill=white] at (2.02,1.42) {$A$};
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (4.55,2.02) {$B$};
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (6.90,2.02) {$C$};
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (9.20,2.08) {$D$};
+\end{tikzpicture}%
+}
 \caption{图 3·10 压强的分布与容器的形状无关}
 \end{figure}
 
@@ -2586,7 +2645,35 @@ p = 15 \text{厘米} \times 0.8 \text{克 / 厘米} ^ {3} = 12 \text{克 / 厘�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-11 比较容器底部的压力和压强}]{assets/physics-1/fig-p0062-01.png}}
+% fig-alt: 两容器底宽相同、水位相同；A上宽下窄，内有虚线矩形，B直壁，均标A、B
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.62,2.88) -- (0.82,3.06) -- (1.08,3.06) -- (1.62,0.38)
+    arc[start angle=180,end angle=270,radius=0.22] -- (3.22,0.16)
+    arc[start angle=270,end angle=360,radius=0.22] -- (3.78,3.06) -- (4.02,3.06) -- (4.22,2.88);
+  \draw[line width=0.7pt] (5.15,2.88) -- (5.35,3.06) -- (5.58,3.06) -- (5.58,0.38)
+    arc[start angle=180,end angle=270,radius=0.22] -- (7.18,0.16)
+    arc[start angle=270,end angle=360,radius=0.22] -- (7.40,3.06) -- (7.64,3.06) -- (7.84,2.88);
+  \begin{scope}
+    \clip (1.15,2.46) -- (1.70,0.40) arc[start angle=180,end angle=270,radius=0.16]
+      -- (3.20,0.24) arc[start angle=270,end angle=360,radius=0.16] -- (3.70,2.46) -- cycle;
+    \foreach \y in {2.26,2.06,1.86,1.66,1.46,1.26,1.06,0.86,0.66,0.46}
+      \draw[line width=0.26pt,dash pattern=on 2.1pt off 1.6pt] (1.20,\y) -- (3.75,\y);
+  \end{scope}
+  \begin{scope}
+    \clip (5.58,2.46) -- (5.58,0.38) arc[start angle=180,end angle=270,radius=0.22]
+      -- (7.18,0.16) arc[start angle=270,end angle=360,radius=0.22] -- (7.40,2.46) -- cycle;
+    \foreach \y in {2.26,2.06,1.86,1.66,1.46,1.26,1.06,0.86,0.66,0.46}
+      \draw[line width=0.26pt,dash pattern=on 2.1pt off 1.6pt] (5.45,\y) -- (7.50,\y);
+  \end{scope}
+  \draw[line width=0.55pt] (1.22,2.46) -- (3.68,2.46);
+  \draw[line width=0.55pt] (5.58,2.46) -- (7.40,2.46);
+  \draw[line width=0.5pt,dash pattern=on 1.5pt off 1.1pt] (1.78,2.46) -- (1.78,0.28);
+  \draw[line width=0.5pt,dash pattern=on 1.5pt off 1.1pt] (3.28,2.46) -- (3.28,0.28);
+  \node[font=\scriptsize,inner sep=0.4pt] at (2.42,-0.12) {$A$};
+  \node[font=\scriptsize,inner sep=0.4pt] at (6.49,-0.12) {$B$};
+\end{tikzpicture}%
+}
 \caption{图3-11 比较容器底部的压力和压强}
 \end{figure}
 
@@ -2872,7 +2959,32 @@ h _ {1} \gamma_ {1} = h _ {2} \gamma_ {2}, \quad \therefore \quad \gamma_ {2} = 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0067-01.png}}
+% fig-alt: U形管底部及两臂为斜线液体，左面较低，右面较高；虚线AB在左液面下方，左臂h1、右臂h2
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.85,3.55) -- (0.85,1.15)
+    .. controls (0.85,0.28) and (3.35,0.28) .. (3.35,1.15) -- (3.35,3.55);
+  \draw[line width=0.7pt] (1.32,3.55) -- (1.32,1.15)
+    .. controls (1.32,0.62) and (2.88,0.62) .. (2.88,1.15) -- (2.88,3.55);
+  \begin{scope}
+    \clip (0.85,2.08) -- (0.85,1.15)
+      .. controls (0.85,0.28) and (3.35,0.28) .. (3.35,1.15) -- (3.35,2.98)
+      -- (2.88,2.98) -- (2.88,1.15)
+      .. controls (2.88,0.62) and (1.32,0.62) .. (1.32,1.15) -- (1.32,2.08) -- cycle;
+    \foreach \s in {-1.2,-0.88,...,4.3}
+      \draw[line width=0.28pt] (\s,0.05) -- (\s+1.05,2.70);
+  \end{scope}
+  \draw[line width=0.55pt] (0.85,2.08) -- (1.32,2.08);
+  \draw[line width=0.55pt] (2.88,2.98) -- (3.35,2.98);
+  \draw[line width=0.48pt,dash pattern=on 1.5pt off 1.1pt] (0.12,1.58) -- (4.02,1.58);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (0.05,1.58) {$A$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (4.08,1.58) {$B$};
+  \draw[line width=0.48pt,<->] (1.55,1.58) -- (1.55,2.08);
+  \node[font=\scriptsize,inner sep=0.5pt,fill=white] at (1.82,1.84) {$h_1$};
+  \draw[line width=0.48pt,<->] (2.58,1.58) -- (2.58,2.98);
+  \node[font=\scriptsize,inner sep=0.5pt,fill=white] at (2.32,2.30) {$h_2$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -2880,7 +2992,44 @@ h _ {1} \gamma_ {1} = h _ {2} \gamma_ {2}, \quad \therefore \quad \gamma_ {2} = 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0067-02.png}}
+% fig-alt: U形管同(a)，底边薄片CD，AB两侧各有h3自虚线向下；左h1、右h2，下标(b)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.85,3.62) -- (0.85,1.18)
+    .. controls (0.85,0.30) and (3.35,0.30) .. (3.35,1.18) -- (3.35,3.62);
+  \draw[line width=0.7pt] (1.32,3.62) -- (1.32,1.18)
+    .. controls (1.32,0.64) and (2.88,0.64) .. (2.88,1.18) -- (2.88,3.62);
+  \begin{scope}
+    \clip (0.85,2.12) -- (0.85,1.18)
+      .. controls (0.85,0.30) and (3.35,0.30) .. (3.35,1.18) -- (3.35,3.05)
+      -- (2.88,3.05) -- (2.88,1.18)
+      .. controls (2.88,0.64) and (1.32,0.64) .. (1.32,1.18) -- (1.32,2.12) -- cycle;
+    \foreach \s in {-1.2,-0.88,...,4.3}
+      \draw[line width=0.28pt] (\s,0.05) -- (\s+1.05,2.80);
+  \end{scope}
+  \draw[line width=0.55pt] (0.85,2.12) -- (1.32,2.12);
+  \draw[line width=0.55pt] (2.88,3.05) -- (3.35,3.05);
+  \draw[line width=0.48pt,dash pattern=on 1.5pt off 1.1pt] (0.15,1.62) -- (4.08,1.62);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (0.08,1.62) {$A$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (4.15,1.62) {$B$};
+  \draw[line width=0.48pt,<->] (1.55,1.62) -- (1.55,2.12);
+  \node[font=\scriptsize,inner sep=0.5pt,fill=white] at (1.82,1.88) {$h_1$};
+  \draw[line width=0.48pt,<->] (2.58,1.62) -- (2.58,3.05);
+  \node[font=\scriptsize,inner sep=0.5pt,fill=white] at (2.32,2.35) {$h_2$};
+  \draw[line width=0.48pt,<->] (0.42,1.62) -- (0.42,0.48);
+  \draw[line width=0.38pt] (0.32,1.62) -- (0.54,1.62);
+  \draw[line width=0.38pt] (0.32,0.48) -- (0.54,0.48);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (0.34,1.05) {$h_3$};
+  \draw[line width=0.48pt,<->] (3.78,1.62) -- (3.78,0.48);
+  \draw[line width=0.38pt] (3.68,1.62) -- (3.90,1.62);
+  \draw[line width=0.38pt] (3.68,0.48) -- (3.90,0.48);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (3.88,1.05) {$h_3$};
+  \draw[line width=1.15pt] (1.92,0.48) -- (2.28,0.48);
+  \node[font=\scriptsize,inner sep=0.4pt,fill=white] at (2.10,0.72) {$C$};
+  \node[font=\scriptsize,inner sep=0.4pt] at (2.10,0.18) {$D$};
+  \node[font=\scriptsize,inner sep=0.4pt] at (2.10,-0.12) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -3231,7 +3380,43 @@ A 使它们恰好接触，然后再行读数。这种气压计叫做槽式水银
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·26 浮力的产生}]{assets/physics-1/fig-p0074-01.png}}
+% fig-alt: 圆柱盛液，浸没正方体标A、B、C、D，P向下、Q向上，两侧箭头指向立方体；虚线连到右侧同样受力的立方体
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0.55,3.55) ellipse[x radius=1.15,y radius=0.32];
+  \draw[line width=0.65pt] (0.55,0.55) ellipse[x radius=1.15,y radius=0.32];
+  \draw[line width=0.65pt] (-0.60,3.55) -- (-0.60,0.55);
+  \draw[line width=0.65pt] (1.70,3.55) -- (1.70,0.55);
+  \draw[line width=0.5pt] (0.55,2.55) ellipse[x radius=1.15,y radius=0.28];
+  \draw[line width=0.55pt] (-0.15,1.72) -- (0.55,1.72) -- (0.55,1.02) -- (-0.15,1.02) -- cycle;
+  \draw[line width=0.55pt] (-0.15,1.72) -- (0.12,1.95) -- (0.82,1.95) -- (0.55,1.72);
+  \draw[line width=0.55pt] (0.55,1.02) -- (0.82,1.25) -- (0.82,1.95);
+  \foreach \x in {-0.05,0.05,0.15,0.25,0.35,0.45}
+    \foreach \y in {1.15,1.28,1.41,1.54}
+      \fill (\x,\y) circle (0.012);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=east] at (-0.20,1.68) {$A$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (0.88,1.88) {$B$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=east] at (-0.20,1.08) {$C$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (0.78,1.12) {$D$};
+  \draw[line width=0.55pt,->] (0.20,2.28) -- (0.20,1.78);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (0.20,2.32) {$P$};
+  \draw[line width=0.55pt,->] (0.20,0.72) -- (0.20,1.00);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (0.20,0.66) {$Q$};
+  \draw[line width=0.5pt,->] (-0.42,1.37) -- (-0.18,1.37);
+  \draw[line width=0.5pt,->] (0.95,1.48) -- (0.70,1.48);
+  \draw[line width=0.55pt] (3.55,2.05) -- (4.25,2.05) -- (4.25,1.35) -- (3.55,1.35) -- cycle;
+  \draw[line width=0.55pt] (3.55,2.05) -- (3.82,2.28) -- (4.52,2.28) -- (4.25,2.05);
+  \draw[line width=0.55pt] (4.25,1.35) -- (4.52,1.58) -- (4.52,2.28);
+  \draw[line width=0.55pt,->] (3.90,2.58) -- (3.90,2.10);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (3.90,2.62) {$P$};
+  \draw[line width=0.55pt,->] (3.90,1.05) -- (3.90,1.32);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (3.90,0.98) {$Q$};
+  \draw[line width=0.5pt,->] (3.22,1.70) -- (3.52,1.70);
+  \draw[line width=0.5pt,->] (4.88,1.70) -- (4.55,1.70);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.1pt] (0.82,1.95) -- (3.55,2.05);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.1pt] (-0.15,1.02) -- (3.55,1.35);
+\end{tikzpicture}%
+}
 \caption{图3·26 浮力的产生}
 \end{figure}
 
@@ -3281,7 +3466,45 @@ A 使它们恰好接触，然后再行读数。这种气压计叫做槽式水银
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·28 物体的浮沉}]{assets/physics-1/fig-p0077-01.png}}
+% fig-alt: 液槽分三格：左最大浮力小于重量、物体下沉沉底；中最大浮力等于重量、物体悬浮；右浮力等于重量物体浮在液面，虚线框最大浮力大于重量物体上浮
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.28,4.85) .. controls (0.18,4.70) and (0.18,4.55) .. (0.22,4.40)
+    -- (0.22,0.58) arc[start angle=180,end angle=270,radius=0.26]
+    -- (11.28,0.32) arc[start angle=270,end angle=360,radius=0.26]
+    -- (11.52,4.40) .. controls (11.56,4.55) and (11.56,4.70) .. (11.46,4.85);
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.1pt] (3.92,0.42) -- (3.92,4.05);
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.1pt] (7.72,0.42) -- (7.72,4.05);
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.1pt] (0.78,3.42) rectangle (1.52,4.18);
+  \draw[line width=0.5pt,->] (1.05,4.95) -- (1.05,2.72);
+  \draw[line width=0.5pt,->] (1.28,3.42) -- (1.28,4.05);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (1.64,3.95) {最大浮力$<$重量};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (1.64,3.15) {物体下沉};
+  \draw[line width=0.55pt] (1.02,0.62) rectangle (1.68,1.28);
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.1pt] (4.28,3.48) rectangle (5.02,4.22);
+  \draw[line width=0.48pt,->] (4.50,4.55) -- (4.50,3.52);
+  \draw[line width=0.48pt,->] (4.78,3.48) -- (4.78,4.48);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (5.15,3.92) {最大浮力$=$重量};
+  \draw[line width=0.55pt] (4.38,2.12) rectangle (5.12,2.92);
+  \draw[line width=0.5pt,->] (4.58,3.28) -- (4.58,2.18);
+  \draw[line width=0.5pt,->] (4.90,2.12) -- (4.90,3.22);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (5.25,2.52) {物体悬浮};
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.1pt] (4.48,0.62) rectangle (5.22,1.28);
+  \draw[line width=0.55pt] (8.15,3.62) rectangle (8.92,4.48);
+  \draw[line width=0.5pt,->] (8.38,4.62) -- (8.38,3.72);
+  \draw[line width=0.5pt,->] (8.68,3.62) -- (8.68,4.55);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (9.05,4.52) {浮力$=$重量};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (9.05,3.78) {物体浮在液面};
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.1pt] (8.22,1.95) rectangle (8.98,2.78);
+  \draw[line width=0.5pt,->] (8.45,1.95) -- (8.45,3.42);
+  \draw[line width=0.5pt,->] (8.75,3.05) -- (8.75,2.05);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (9.12,2.55) {最大浮力$>$重量};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (9.12,2.18) {物体上浮};
+  \draw[line width=0.6pt] (0.22,4.05) -- (8.15,4.05);
+  \draw[line width=0.6pt] (8.92,4.05) -- (11.52,4.05);
+  \draw[line width=0.55pt] (8.15,4.05) -- (8.92,4.05);
+\end{tikzpicture}%
+}
 \caption{图3·28 物体的浮沉}
 \end{figure}
 
