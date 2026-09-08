@@ -10130,7 +10130,27 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2} \tag {6.2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.10 边长为 l 的立方体密闭容器}]{assets/physics-2/fig-p0218-01.png}}
+\fitfig{%
+% fig-alt: 图6.10 边长为 l 的斜二测立方体：左高、底边、右向深度各标 $l$；右面虚线尺寸箭头不收成实线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0,0) -- (1.55,0) -- (1.55,1.45) -- (0,1.45) -- cycle;
+  \draw[line width=0.7pt] (0,1.45) -- (0.62,1.92) -- (2.17,1.92) -- (1.55,1.45);
+  \draw[line width=0.7pt] (1.55,0) -- (2.17,0.47) -- (2.17,1.92);
+  \draw[line width=0.55pt] (-0.16,0) -- (0,0);
+  \draw[line width=0.55pt] (-0.16,1.45) -- (0,1.45);
+  \draw[->,line width=0.5pt] (-0.16,0.62) -- (-0.16,0.08);
+  \draw[->,line width=0.5pt] (-0.16,0.82) -- (-0.16,1.38);
+  \node[anchor=east] at (-0.22,0.72) {$l$};
+  \draw[line width=0.55pt] (0,-0.14) -- (0,0);
+  \draw[line width=0.55pt] (1.55,-0.14) -- (1.55,0);
+  \draw[->,line width=0.5pt] (0.66,-0.14) -- (0.08,-0.14);
+  \draw[->,line width=0.5pt] (0.88,-0.14) -- (1.48,-0.14);
+  \node[anchor=north] at (0.77,-0.16) {$l$};
+  \draw[dashed,line width=0.5pt] (1.72,0.78) -- (2.00,0.96);
+  \draw[->,line width=0.5pt] (2.00,0.96) -- (2.14,1.06);
+  \node[anchor=west] at (2.22,1.05) {$l$};
+\end{tikzpicture}%
+}
 \caption{图6.10 边长为 \(l\) 的立方体密闭容器}
 \end{figure}
 
@@ -10140,7 +10160,34 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2} \tag {6.2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.11 跟容器壁 A, B 发生碰撞的分子}]{assets/physics-2/fig-p0218-02.png}}
+\fitfig{%
+% fig-alt: 图6.11 左壁 $B$、右壁 $A$，外侧斜影线；三分子均标 $v$，下左、右上向右，中部向左；底边尺寸 $l$ 箭头向外
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.75pt] (0,0.15) -- (0,2.55);
+  \draw[line width=0.75pt] (3.15,0.15) -- (3.15,2.55);
+  \node[anchor=south] at (0,2.58) {$B$};
+  \node[anchor=south] at (3.15,2.58) {$A$};
+  \foreach \k in {0,1,2,3,4,5,6,7,8,9} {
+    \draw[line width=0.45pt] (-0.02,{0.28+0.22*\k}) -- (-0.16,{0.42+0.22*\k});
+    \draw[line width=0.45pt] (3.17,{0.28+0.22*\k}) -- (3.31,{0.42+0.22*\k});
+  }
+  \draw[line width=0.7pt] (0.95,0.72) circle[radius=0.13];
+  \draw[->,line width=0.7pt] (1.10,0.72) -- (1.62,0.72);
+  \node[anchor=south] at (1.34,0.76) {$v$};
+  \draw[line width=0.7pt] (2.05,1.38) circle[radius=0.13];
+  \draw[->,line width=0.7pt] (1.90,1.38) -- (1.42,1.38);
+  \node[anchor=south] at (1.66,1.42) {$v$};
+  \draw[line width=0.7pt] (2.48,1.92) circle[radius=0.13];
+  \draw[->,line width=0.7pt] (2.63,1.92) -- (3.02,1.92);
+  \node[anchor=south] at (2.72,1.96) {$v$};
+  \draw[line width=0.55pt] (0,0.15) -- (0,-0.02);
+  \draw[line width=0.55pt] (3.15,0.15) -- (3.15,-0.02);
+  \draw[line width=0.6pt] (0,-0.12) -- (3.15,-0.12);
+  \draw[->,line width=0.55pt] (1.42,-0.12) -- (0.12,-0.12);
+  \draw[->,line width=0.55pt] (1.72,-0.12) -- (3.02,-0.12);
+  \node[anchor=north] at (1.57,-0.16) {$l$};
+\end{tikzpicture}%
+}
 \caption{图6.11 跟容器壁 \(A, B\) 发生碰撞的分子}
 \end{figure}
 
@@ -10471,7 +10518,22 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-2/fig-p0226-01.png}}
+\fitfig{%
+% fig-alt: （1）闭口朝上、下端张开的竖直管，水银柱在中下部，左侧尺寸 3 厘米
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0.22,2.05) arc[start angle=180,end angle=0,radius=0.16];
+  \draw[line width=0.7pt] (0.22,2.05) -- (0.22,0.28);
+  \draw[line width=0.7pt] (0.54,2.05) -- (0.54,0.28);
+  \draw[line width=0.7pt] (0.22,0.28) -- (0.12,0.05);
+  \draw[line width=0.7pt] (0.54,0.28) -- (0.64,0.05);
+  \fill (0.22,0.62) rectangle (0.54,1.18);
+  \draw[line width=0.5pt] (0.22,0.62) -- (0.02,0.62);
+  \draw[line width=0.5pt] (0.22,1.18) -- (0.02,1.18);
+  \draw[->,line width=0.5pt] (-0.08,0.84) -- (-0.08,0.64);
+  \draw[->,line width=0.5pt] (-0.08,0.96) -- (-0.08,1.16);
+  \node[rotate=-90,anchor=center] at (-0.30,0.90) {3\,厘米};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -10481,7 +10543,24 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0226-02.png}}
+\fitfig{%
+% fig-alt: （2）与水平成 $45^{\circ}$ 的闭口在下、开口在上的管，中段水银柱标 6 厘米；$45^{\circ}$ 水平书写
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0.28,0.22) arc[start angle=225,end angle=45,radius=0.16];
+  \draw[line width=0.7pt] (0.17,0.33) -- (1.62,1.78);
+  \draw[line width=0.7pt] (0.39,0.11) -- (1.84,1.56);
+  \draw[line width=0.7pt] (1.62,1.78) -- (1.70,1.96);
+  \draw[line width=0.7pt] (1.84,1.56) -- (1.96,1.64);
+  \fill (0.72,0.78) -- (0.88,0.62) -- (1.28,1.02) -- (1.12,1.18) -- cycle;
+  \draw[line width=0.5pt] (0.62,0.88) -- (0.50,1.00);
+  \draw[line width=0.5pt] (1.18,1.44) -- (1.06,1.56);
+  \draw[->,line width=0.5pt] (0.78,1.10) -- (0.58,0.96);
+  \draw[->,line width=0.5pt] (0.90,1.28) -- (1.10,1.48);
+  \node[rotate=45,anchor=south] at (0.78,1.28) {6\,厘米};
+  \draw[line width=0.55pt] (0.10,0.08) -- (0.92,0.08);
+  \node[anchor=north] at (0.55,0.04) {$45^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -10491,7 +10570,22 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-2/fig-p0226-03.png}}
+\fitfig{%
+% fig-alt: （3）闭口朝下、上端张开的竖直管，中上部水银柱，左侧尺寸 5 厘米
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0.22,0.22) arc[start angle=180,end angle=360,radius=0.16];
+  \draw[line width=0.7pt] (0.22,0.22) -- (0.22,2.05);
+  \draw[line width=0.7pt] (0.54,0.22) -- (0.54,2.05);
+  \draw[line width=0.7pt] (0.22,2.05) -- (0.12,2.26);
+  \draw[line width=0.7pt] (0.54,2.05) -- (0.64,2.26);
+  \fill (0.22,1.05) rectangle (0.54,1.72);
+  \draw[line width=0.5pt] (0.22,1.05) -- (0.02,1.05);
+  \draw[line width=0.5pt] (0.22,1.72) -- (0.02,1.72);
+  \draw[->,line width=0.5pt] (-0.08,1.32) -- (-0.08,1.07);
+  \draw[->,line width=0.5pt] (-0.08,1.46) -- (-0.08,1.70);
+  \node[rotate=-90,anchor=center] at (-0.30,1.38) {5\,厘米};
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -10501,7 +10595,28 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(5)}]{assets/physics-2/fig-p0226-04.png}}
+\fitfig{%
+% fig-alt: （5）倒 U 管：左臂下端封闭、水银柱标 3 厘米；右臂下端张开、水银柱标 6 厘米
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0.22,1.52) -- (0.22,0.36) arc[start angle=180,end angle=360,radius=0.16] -- (0.54,1.52);
+  \draw[line width=0.7pt] (0.22,1.52) -- (0.22,1.70) arc[start angle=180,end angle=0,radius=0.71] -- (1.64,0.22);
+  \draw[line width=0.7pt] (0.54,1.52) -- (0.54,1.58) arc[start angle=180,end angle=0,radius=0.39] -- (1.32,0.22);
+  \draw[line width=0.7pt] (1.32,0.22) -- (1.22,0.02);
+  \draw[line width=0.7pt] (1.64,0.22) -- (1.74,0.02);
+  \fill (0.24,1.12) rectangle (0.52,1.52);
+  \fill (1.34,0.48) rectangle (1.62,1.52);
+  \draw[line width=0.5pt] (0.22,1.12) -- (0.04,1.12);
+  \draw[line width=0.5pt] (0.22,1.52) -- (0.04,1.52);
+  \draw[->,line width=0.5pt] (-0.06,1.28) -- (-0.06,1.14);
+  \draw[->,line width=0.5pt] (-0.06,1.36) -- (-0.06,1.50);
+  \node[rotate=-90,anchor=center] at (-0.28,1.32) {3\,厘米};
+  \draw[line width=0.5pt] (1.64,0.48) -- (1.82,0.48);
+  \draw[line width=0.5pt] (1.64,1.48) -- (1.82,1.48);
+  \draw[->,line width=0.5pt] (1.90,0.88) -- (1.90,0.52);
+  \draw[->,line width=0.5pt] (1.90,1.08) -- (1.90,1.44);
+  \node[rotate=-90,anchor=center] at (2.18,1.00) {6\,厘米};
+\end{tikzpicture}%
+}
 \caption{(5)}
 \end{figure}
 
@@ -10561,7 +10676,21 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0227-01.png}}
+\fitfig{%
+% fig-alt: （a）$p$-$V$ 图：矩形循环，1 左上、2 右上、3 右下、4 左下；原点 $O$
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,2.55);
+  \draw[->,line width=0.7pt] (0,0) -- (3.15,0);
+  \node[anchor=south] at (0,2.52) {$p$};
+  \node[anchor=west] at (3.12,0.05) {$V$};
+  \node[anchor=north east] at (-0.02,-0.02) {$O$};
+  \draw[line width=0.8pt] (0.95,1.15) -- (2.35,1.15) -- (2.35,1.72) -- (0.95,1.72) -- cycle;
+  \node[anchor=east] at (0.88,1.72) {$1$};
+  \node[anchor=west] at (2.42,1.72) {$2$};
+  \node[anchor=north west] at (2.38,1.10) {$3$};
+  \node[anchor=east] at (0.88,1.15) {$4$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -10571,7 +10700,20 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0227-02.png}}
+\fitfig{%
+% fig-alt: （b）$p$-$T$ 图：未标 1--4。陡射线为实线并构成左边；较缓射线为虚线，经过右下并连到右上，不改成实线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,2.55);
+  \draw[->,line width=0.7pt] (0,0) -- (3.35,0);
+  \node[anchor=south] at (0,2.52) {$p$};
+  \node[anchor=west] at (3.32,0.05) {$T$};
+  \node[anchor=north east] at (-0.02,-0.02) {$O$};
+  \draw[line width=0.75pt] (0,0) -- (1.28,2.22);
+  \draw[dashed,line width=0.65pt] (0,0) -- (2.42,1.72);
+  \draw[line width=0.8pt] (0.96,1.72) -- (2.42,1.72);
+  \draw[line width=0.8pt] (0.54,0.96) -- (1.35,0.96);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -10581,7 +10723,20 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0227-03.png}}
+\fitfig{%
+% fig-alt: （c）$V$-$T$ 图：未标 1--4。自原点两条虚线射线保持虚线，并构成左右斜边，不收成实线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,2.55);
+  \draw[->,line width=0.7pt] (0,0) -- (3.35,0);
+  \node[anchor=south] at (0,2.52) {$V$};
+  \node[anchor=west] at (3.32,0.05) {$T$};
+  \node[anchor=north east] at (-0.02,-0.02) {$O$};
+  \draw[dashed,line width=0.65pt] (0,0) -- (1.15,2.05);
+  \draw[dashed,line width=0.65pt] (0,0) -- (2.42,1.72);
+  \draw[line width=0.8pt] (0.96,1.72) -- (2.42,1.72);
+  \draw[line width=0.8pt] (0.54,0.96) -- (1.35,0.96);
+\end{tikzpicture}%
+}
 \caption{(c)}
 \end{figure}
 
