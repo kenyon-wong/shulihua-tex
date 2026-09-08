@@ -337,7 +337,16 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={经过 B、A 两点的直线}]{assets/analytic-geometry/fig-p0005-01.png}}
+\fitfig{%
+% fig-alt: 水平直线经过B、A两点，两点处各有向上短竖线，B、A标在下方
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.75pt] (0,0) -- (3.6,0);
+  \draw[line width=0.6pt] (0.75,0) -- (0.75,0.16);
+  \draw[line width=0.6pt] (2.70,0) -- (2.70,0.16);
+  \node[below=2pt] at (0.75,0) {$B$};
+  \node[below=2pt] at (2.70,0) {$A$};
+\end{tikzpicture}%
+}
 \caption{经过 B、A 两点的直线}
 \end{figure}
 
@@ -349,7 +358,19 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-2}]{assets/analytic-geometry/fig-p0006-01.png}}
+\fitfig{%
+% fig-alt: 有向直线，B、A为黑点且标在下方；B左侧线上有向右箭头，右端箭头后标l
+\begin{tikzpicture}[line cap=round,>=latex]
+  \draw[line width=0.75pt] (0,0) -- (3.55,0);
+  \draw[line width=0.9pt, -latex] (0.02,0) -- (0.48,0);
+  \draw[line width=0.75pt, -latex] (3.12,0) -- (3.55,0);
+  \fill (0.82,0) circle (1.15pt);
+  \fill (2.10,0) circle (1.15pt);
+  \node[below=2pt] at (0.82,0) {$B$};
+  \node[below=2pt] at (2.10,0) {$A$};
+  \node[right=1pt] at (3.55,0) {$l$};
+\end{tikzpicture}%
+}
 \caption{图1-2}
 \end{figure}
 
@@ -357,7 +378,14 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-3}]{assets/analytic-geometry/fig-p0006-02.png}}
+\fitfig{%
+% fig-alt: 斜向有向线段，起点B在左下、终点A在右上，箭头在A端
+\begin{tikzpicture}[line cap=round,>=latex]
+  \draw[line width=0.75pt, -latex] (0,0) -- (2.75,1.05);
+  \node[below left=1pt] at (0,0) {$B$};
+  \node[above=1pt] at (2.42,0.92) {$A$};
+\end{tikzpicture}%
+}
 \caption{图1-3}
 \end{figure}
 
@@ -365,7 +393,21 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-4}]{assets/analytic-geometry/fig-p0006-03.png}}
+\fitfig{%
+% fig-alt: 有向直线l，B、A处短竖线并标在下方，其间有单位刻度，线上方有向右小箭头，右端箭头后标l
+\begin{tikzpicture}[line cap=round,>=latex]
+  \draw[line width=0.75pt] (0,0) -- (4.35,0);
+  \draw[line width=0.75pt, -latex] (3.92,0) -- (4.35,0);
+  \draw[line width=0.6pt] (0.45,0) -- (0.45,0.14);
+  \foreach \x in {0.85,1.25,1.65,2.05,2.45}
+    \draw[line width=0.55pt] (\x,0) -- (\x,0.10);
+  \draw[line width=0.6pt] (2.85,0) -- (2.85,0.14);
+  \draw[line width=0.7pt, -latex] (1.70,0.36) -- (2.20,0.36);
+  \node[below=2pt] at (0.45,0) {$B$};
+  \node[below=2pt] at (2.85,0) {$A$};
+  \node[right=1pt] at (4.35,0) {$l$};
+\end{tikzpicture}%
+}
 \caption{图1-4}
 \end{figure}
 
@@ -431,7 +473,29 @@ BA = - AB,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-5}]{assets/analytic-geometry/fig-p0007-01.png}}
+\fitfig{%
+% fig-alt: 数轴，Q在左、其间三短刻、O为原点、1为单位、P在右；O与1上方标长度单位，右端箭头旁标x
+\begin{tikzpicture}[line cap=round,>=latex]
+  \draw[line width=0.75pt] (0,0) -- (5.15,0);
+  \draw[line width=0.75pt, -latex] (4.72,0) -- (5.15,0);
+  \draw[line width=0.6pt] (0.35,0) -- (0.35,0.13);
+  \draw[line width=0.55pt] (0.85,0) -- (0.85,0.10);
+  \draw[line width=0.55pt] (1.35,0) -- (1.35,0.10);
+  \draw[line width=0.55pt] (1.85,0) -- (1.85,0.10);
+  \draw[line width=0.6pt] (2.35,0) -- (2.35,0.13);
+  \draw[line width=0.6pt] (2.95,0) -- (2.95,0.13);
+  \draw[line width=0.6pt] (3.90,0) -- (3.90,0.13);
+  \node[below=2pt] at (0.35,0) {$Q$};
+  \node[below=2pt] at (2.35,0) {$O$};
+  \node[below=2pt] at (2.95,0) {$1$};
+  \node[below=2pt] at (3.90,0) {$P$};
+  \node[above=8pt] at (2.65,0) {长度单位};
+  \draw[line width=0.55pt] (2.22,0.78) -- (3.08,0.78);
+  \draw[line width=0.5pt] (2.22,0.74) -- (2.22,0.82);
+  \draw[line width=0.5pt] (3.08,0.74) -- (3.08,0.82);
+  \node[right=1pt] at (5.15,0) {$x$};
+\end{tikzpicture}%
+}
 \caption{图1-5}
 \end{figure}
 
@@ -456,7 +520,27 @@ AB = x_{2} - x_{1}. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/analytic-geometry/fig-p0008-01.png}}
+\fitfig{%
+% fig-alt: 数轴，O、A(x1)、B(x2)为黑点自左向右，其间有单位短刻度，左端有向右箭头，右端箭头旁标x
+\begin{tikzpicture}[line cap=round,>=latex]
+  \draw[line width=0.75pt] (0,0) -- (5.35,0);
+  \draw[line width=0.9pt, -latex] (0.02,0) -- (0.42,0);
+  \draw[line width=0.75pt, -latex] (4.92,0) -- (5.35,0);
+  \fill (0.72,0) circle (1.15pt);
+  \fill (1.88,0) circle (1.15pt);
+  \fill (3.80,0) circle (1.15pt);
+  \draw[line width=0.55pt] (1.10,0) -- (1.10,0.10);
+  \draw[line width=0.55pt] (1.48,0) -- (1.48,0.10);
+  \draw[line width=0.55pt] (2.26,0) -- (2.26,0.10);
+  \draw[line width=0.55pt] (2.64,0) -- (2.64,0.10);
+  \draw[line width=0.55pt] (3.02,0) -- (3.02,0.10);
+  \draw[line width=0.55pt] (4.18,0) -- (4.18,0.10);
+  \node[below=2pt] at (0.72,0) {$O$};
+  \node[below=2pt] at (1.88,0) {$A(x_{1})$};
+  \node[below=2pt] at (3.80,0) {$B(x_{2})$};
+  \node[right=1pt] at (5.35,0) {$x$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -464,7 +548,29 @@ AB = x_{2} - x_{1}. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(5)}]{assets/analytic-geometry/fig-p0008-02.png}}
+\fitfig{%
+% fig-alt: 六条数轴，左列上中下为OAB、ABO、AOB，右列为OBA、BAO、BOA，各轴右端箭头旁标x
+\begin{tikzpicture}[line cap=round,>=latex]
+  \foreach \row/\col/\la/\lb/\lc in {
+    0/0/O/A/B,
+    0/1/O/B/A,
+    1/0/A/B/O,
+    1/1/B/A/O,
+    2/0/A/O/B,
+    2/1/B/O/A} {
+    \begin{scope}[xshift=\col*2.95cm, yshift=-\row*1.05cm]
+      \draw[line width=0.7pt, -latex] (0,0) -- (2.15,0);
+      \fill (0.28,0) circle (1.05pt);
+      \fill (0.92,0) circle (1.05pt);
+      \fill (1.56,0) circle (1.05pt);
+      \node[below=1pt] at (0.28,0) {$\la$};
+      \node[below=1pt] at (0.92,0) {$\lb$};
+      \node[below=1pt] at (1.56,0) {$\lc$};
+      \node[right=0.5pt] at (2.15,0) {$x$};
+    \end{scope}
+  }
+\end{tikzpicture}%
+}
 \caption{(5)}
 \end{figure}
 
@@ -480,7 +586,20 @@ AB = x_{2} - x_{1}. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={数轴上 B 在原点左侧、A 在原点右侧的位置关系}]{assets/analytic-geometry/fig-p0008-03.png}}
+\fitfig{%
+% fig-alt: 数轴上B(x2)在原点左侧、O居中、A(x1)在原点右侧，三点处短竖线，右端箭头旁标x
+\begin{tikzpicture}[line cap=round,>=latex]
+  \draw[line width=0.75pt] (0,0) -- (4.55,0);
+  \draw[line width=0.75pt, -latex] (4.12,0) -- (4.55,0);
+  \draw[line width=0.6pt] (0.55,0) -- (0.55,0.14);
+  \draw[line width=0.6pt] (2.05,0) -- (2.05,0.14);
+  \draw[line width=0.6pt] (3.45,0) -- (3.45,0.14);
+  \node[below=2pt] at (0.55,0) {$B(x_{2})$};
+  \node[below=2pt] at (2.05,0) {$O$};
+  \node[below=2pt] at (3.45,0) {$A(x_{1})$};
+  \node[right=1pt] at (4.55,0) {$x$};
+\end{tikzpicture}%
+}
 \caption{数轴上 B 在原点左侧、A 在原点右侧的位置关系}
 \end{figure}
 
