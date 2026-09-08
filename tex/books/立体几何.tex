@@ -3830,7 +3830,45 @@ a \perp b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/solid-geometry/fig-p0042-01.png}}
+\fitfig{%
+% fig-alt: 第5题：左菱形平面M，上标M、左标A；下平行四边形平面N，左下标P、右端标N，B在N上；O在交线上方，OA、OB、AB实线，OAB交线一侧竖向影线。扫描未见单独的Q，题文作相交于PQ，从扫描只标P
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mtop) at (0.58,1.88);
+  \coordinate (A) at (0.06,1.22);
+  \coordinate (Mbot) at (0.58,0.52);
+  \coordinate (Mrt) at (1.22,1.28);
+  \coordinate (P) at (0.50,0.26);
+  \coordinate (Nfr) at (2.62,0.06);
+  \coordinate (Nr) at (3.12,0.62);
+  \coordinate (Nbl) at (1.28,0.90);
+  \coordinate (O) at (1.48,1.82);
+  \coordinate (B) at (1.88,0.72);
+  \coordinate (H) at (1.08,1.38);
+  \draw[line width=0.7pt] (Mtop) -- (A) -- (Mbot) -- (Mrt) -- cycle;
+  \draw[line width=0.7pt] (P) -- (Nfr) -- (Nr) -- (Nbl) -- cycle;
+  \draw[line width=0.7pt] (Mbot) -- (P);
+  \draw[line width=0.8pt] (A) -- (O);
+  \draw[line width=0.8pt] (O) -- (B);
+  \draw[line width=0.95pt] (H) -- (B);
+  \begin{scope}
+    \clip (H) -- (O) -- (B) -- cycle;
+    \draw[line width=0.32pt] (1.14,0.70) -- (1.14,1.80);
+    \draw[line width=0.32pt] (1.24,0.70) -- (1.24,1.80);
+    \draw[line width=0.32pt] (1.34,0.70) -- (1.34,1.85);
+    \draw[line width=0.32pt] (1.44,0.70) -- (1.44,1.85);
+    \draw[line width=0.32pt] (1.54,0.70) -- (1.54,1.80);
+    \draw[line width=0.32pt] (1.64,0.70) -- (1.64,1.70);
+    \draw[line width=0.32pt] (1.74,0.70) -- (1.74,1.55);
+  \end{scope}
+  \draw[line width=0.8pt] (H) -- (O) -- (B) -- cycle;
+  \node[anchor=south,inner sep=1pt] at (Mtop) {$M$};
+  \node[anchor=east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (O) {$O$};
+  \node[anchor=west,inner sep=1.5pt] at (Nr) {$N$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -3958,7 +3996,43 @@ a \perp b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·53}]{assets/solid-geometry/fig-p0043-01.png}}
+\fitfig{%
+% fig-alt: 图1·53：平面M为水平平行四边形，右端标M；A在平面上；直线l过A竖直，上端箭头标l，平面以上实线、以下虚线；AC、AD、AB、AB1实线，C在左上、D在左、B在右上、B1在平面上靠右且在B下方；后方直立矩形N顶边虚线、右上标N，右缘伸到平面下的一段为虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.12,0.42);
+  \coordinate (Mfr) at (2.72,0.32);
+  \coordinate (Mbr) at (3.18,0.98);
+  \coordinate (Mbl) at (0.58,1.08);
+  \coordinate (A) at (1.05,0.68);
+  \coordinate (lT) at (1.05,1.95);
+  \coordinate (lB) at (1.05,0.08);
+  \coordinate (C) at (0.42,1.12);
+  \coordinate (D) at (0.22,0.72);
+  \coordinate (B) at (2.05,1.18);
+  \coordinate (Bone) at (1.88,0.72);
+  \coordinate (Ntl) at (0.88,1.62);
+  \coordinate (Ntr) at (2.08,1.78);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.75pt,->] (A) -- (lT);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.6pt] (A) -- (lB);
+  \draw[line width=0.7pt] (A) -- (C);
+  \draw[line width=0.7pt] (A) -- (D);
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.7pt] (A) -- (Bone);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.6pt] (Ntl) -- (Ntr);
+  \draw[line width=0.7pt] (Ntr) -- (1.95,0.92);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.6pt] (1.95,0.92) -- (1.88,0.18);
+  \draw[line width=0.7pt] (Ntl) -- (0.98,0.78);
+  \node[anchor=south,inner sep=1pt] at (lT) {$l$};
+  \node[anchor=south west,inner sep=1pt] at (Ntr) {$N$};
+  \node[anchor=west,inner sep=1.5pt] at (Mfr) {$M$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=east,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1pt] at (Bone) {$B_{1}$};
+\end{tikzpicture}%
+}
 \caption{图 1·53}
 \end{figure}
 
@@ -3984,7 +4058,32 @@ a \perp b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0043-02.png}}
+\fitfig{%
+% fig-alt: 图1·54（1）：平面M水平平行四边形，左下标M；B、D在平面上，BD实线；AB、CD竖直实线，CD较长；E在CD上与A同高，AE、AC实线。同侧，全部实线，不画虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.12,0.18);
+  \coordinate (Mfr) at (2.55,0.06);
+  \coordinate (Mbr) at (3.05,0.58);
+  \coordinate (Mbl) at (0.62,0.68);
+  \coordinate (B) at (0.85,0.52);
+  \coordinate (D) at (1.95,0.42);
+  \coordinate (A) at (0.85,1.42);
+  \coordinate (E) at (1.95,1.42);
+  \coordinate (C) at (1.95,2.28);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (A) -- (E);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.8pt] (A) -- (C);
+  \node[anchor=east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north east,inner sep=1pt] at (Mfl) {$M$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -3992,7 +4091,34 @@ a \perp b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0043-03.png}}
+\fitfig{%
+% fig-alt: 图1·54（2）：平面M平行四边形，左端标M；B、D在平面上，BD实线；C在D上方，E在D下方，CDE共线竖直；A在平面下方，AB竖直，其中穿出平面近边到B的一段为虚线，其余实线；AE、AC实线。异侧
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.08,1.05);
+  \coordinate (Mfr) at (2.72,0.88);
+  \coordinate (Mbr) at (3.18,1.42);
+  \coordinate (Mbl) at (0.55,1.58);
+  \coordinate (B) at (0.95,1.38);
+  \coordinate (D) at (1.95,1.28);
+  \coordinate (A) at (0.95,0.22);
+  \coordinate (E) at (1.95,0.12);
+  \coordinate (C) at (1.95,2.15);
+  \coordinate (frontHit) at (0.95,1.08);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (C) -- (E);
+  \draw[line width=0.75pt] (A) -- (E);
+  \draw[line width=0.8pt] (A) -- (C);
+  \draw[line width=0.75pt] (A) -- (frontHit);
+  \draw[line width=0.65pt,dash pattern=on 2.4pt off 1.5pt] (frontHit) -- (B);
+  \node[anchor=east,inner sep=1.5pt] at (Mfl) {$M$};
+  \node[anchor=south east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (E) {$E$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -4097,7 +4223,36 @@ M 内的射影。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-55}]{assets/solid-geometry/fig-p0045-01.png}}
+\fitfig{%
+% fig-alt: 图1-55：平面平行四边形，左下角标K、右端标M；A在上，AB竖直实线，斜线AK、AC、AD、AE实线，射影BC、BD、BE实线。扫描标K，题文未提K；扫描未印证明中的F，不补F。全部实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (K) at (0.08,0.28);
+  \coordinate (Pfr) at (2.55,0.10);
+  \coordinate (Pbr) at (3.22,0.62);
+  \coordinate (Pbl) at (0.78,0.78);
+  \coordinate (A) at (1.62,1.88);
+  \coordinate (B) at (1.48,0.52);
+  \coordinate (C) at (0.88,0.42);
+  \coordinate (D) at (1.92,0.68);
+  \coordinate (E) at (2.42,0.28);
+  \draw[line width=0.7pt] (K) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+  \draw[line width=0.8pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (K);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (A) -- (E);
+  \draw[line width=0.7pt] (B) -- (C);
+  \draw[line width=0.7pt] (B) -- (D);
+  \draw[line width=0.7pt] (B) -- (E);
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1pt] at (E) {$E$};
+  \node[anchor=north east,inner sep=1pt] at (K) {$K$};
+  \node[anchor=west,inner sep=1.5pt] at (Pbr) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-55}
 \end{figure}
 
@@ -4155,7 +4310,35 @@ A、B、C三点的距离相等，求证点P到平面M的垂线足O是△ABC的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-55}]{assets/solid-geometry/fig-p0046-01.png}}
+\fitfig{%
+% fig-alt: 图1·56线稿（本图caption仍作图1-55，与fig-p0045-01不是同一幅）：平面M平行四边形，右端标M；P在上，O在平面内，PO竖直；实线PA、PB、PC与OA、OB、OC；A左、B右、C后。全部实线，不画虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Pfl) at (0.12,0.22);
+  \coordinate (Pfr) at (2.85,0.08);
+  \coordinate (Pbr) at (3.38,0.58);
+  \coordinate (Pbl) at (0.65,0.70);
+  \coordinate (A) at (0.55,0.42);
+  \coordinate (B) at (2.15,0.32);
+  \coordinate (C) at (1.85,0.78);
+  \coordinate (O) at (1.42,0.48);
+  \coordinate (P) at (1.42,1.72);
+  \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.8pt] (P) -- (O);
+  \draw[line width=0.75pt] (P) -- (A);
+  \draw[line width=0.75pt] (P) -- (B);
+  \draw[line width=0.75pt] (P) -- (C);
+  \draw[line width=0.7pt] (O) -- (A);
+  \draw[line width=0.7pt] (O) -- (B);
+  \draw[line width=0.7pt] (O) -- (C);
+  \node[anchor=south,inner sep=1pt] at (P) {$P$};
+  \node[anchor=north west,inner sep=1pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=west,inner sep=1.5pt] at (Pbr) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-55}
 \end{figure}
 
@@ -4195,7 +4378,34 @@ O A = O B = O C.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-57}]{assets/solid-geometry/fig-p0047-01.png}}
+\fitfig{%
+% fig-alt: 图1-57：平面P为水平平行四边形，左下标P；直立矩形左上标Q；粗线a上A在左、B在右，标a；AA1、BB1实线，A1B1虚线。扫描线标a、平面标Q，题文作直线α，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Pfl) at (0.10,0.16);
+  \coordinate (Pfr) at (2.85,0.04);
+  \coordinate (Pbr) at (3.32,0.55);
+  \coordinate (Pbl) at (0.58,0.66);
+  \coordinate (A1) at (0.78,0.52);
+  \coordinate (B1) at (2.02,0.44);
+  \coordinate (A) at (0.78,1.52);
+  \coordinate (B) at (2.02,1.52);
+  \coordinate (Ql) at (0.48,1.68);
+  \coordinate (Qr) at (2.28,1.68);
+  \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+  \draw[line width=0.7pt] (Ql) -- (Qr) -- (2.28,0.52) -- (0.48,0.60) -- cycle;
+  \draw[line width=1.1pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (A1);
+  \draw[line width=0.75pt] (B) -- (B1);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.6pt] (A1) -- (B1);
+  \node[anchor=south east,inner sep=1pt] at (Ql) {$Q$};
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (1.40,1.62) {$a$};
+  \node[anchor=north,inner sep=1pt] at (A1) {$A_{1}$};
+  \node[anchor=north,inner sep=1pt] at (B1) {$B_{1}$};
+  \node[anchor=north east,inner sep=1pt] at (Pfl) {$P$};
+\end{tikzpicture}%
+}
 \caption{图1-57}
 \end{figure}
 
@@ -4253,7 +4463,32 @@ O A = O B = O C.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·58}]{assets/solid-geometry/fig-p0048-01.png}}
+\fitfig{%
+% fig-alt: 图1·58：平面M平行四边形，右端标M；A在上，AB斜线实线、AC竖直实线，B在左、C在垂足；BD另向偏后，E在BD上，AE实线。扫描射影为BC、无O，题文作射影BO，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.08,0.22);
+  \coordinate (Mfr) at (2.72,0.08);
+  \coordinate (Mbr) at (3.28,0.62);
+  \coordinate (Mbl) at (0.62,0.78);
+  \coordinate (B) at (0.58,0.48);
+  \coordinate (C) at (1.62,0.42);
+  \coordinate (D) at (1.28,0.82);
+  \coordinate (E) at (0.96,0.66);
+  \coordinate (A) at (1.62,1.88);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.8pt] (A) -- (B);
+  \draw[line width=0.8pt] (A) -- (C);
+  \draw[line width=0.7pt] (B) -- (C);
+  \draw[line width=0.7pt] (B) -- (D);
+  \draw[line width=0.75pt] (A) -- (E);
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (E) {$E$};
+  \node[anchor=west,inner sep=1.5pt] at (Mbr) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1·58}
 \end{figure}
 
