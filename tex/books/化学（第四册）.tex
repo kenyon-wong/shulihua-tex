@@ -4895,7 +4895,33 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第87页图示}]{assets/chemistry-4/fig-p0087-g01.png}}
+\fitfig{%
+% fig-alt: 甘油与六钠：左为CH2OH—CHOH—CH2OH竖式，右为CH2—ONa竖式，生成3H2；下行简式，下方丙三醇钠
+% redraw: fig-p0087-g01 甘油与钠生成丙三醇钠
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.6pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[grp] (a1) at (0,0.92) {CH$_2$OH};
+  \node[grp] (a2) at (0,0) {CHOH};
+  \node[grp] (a3) at (0,-0.92) {CH$_2$OH};
+  \node[atom, anchor=east] at (-1.05,0) {2};
+  \draw[bond] (a1.south) -- (a2.north);
+  \draw[bond] (a2.south) -- (a3.north);
+  \node[atom] at (1.75,0) {$+6$Na};
+  \node[atom] at (2.65,0) {$=$};
+  \node[atom, anchor=east] at (3.35,0) {2};
+  \node[grp] (b1) at (4.55,0.92) {CH$_2$--ONa};
+  \node[grp] (b2) at (4.55,0) {CH--ONa};
+  \node[grp] (b3) at (4.55,-0.92) {CH$_2$--ONa};
+  \draw[bond] (b1.south) -- (b2.north);
+  \draw[bond] (b2.south) -- (b3.north);
+  \node[atom] at (6.25,0) {$+3$H$_2\uparrow$};
+  \node[lab] at (2.7,-1.95) {$[2\mathrm{C}_{3}\mathrm{H}_{5}(\mathrm{OH})_{3}+6\mathrm{Na}=2\mathrm{C}_{3}\mathrm{H}_{5}(\mathrm{ONa})_{3}+3\mathrm{H}_{2}\uparrow]$};
+  \node[lab] at (3.7,-2.55) {（丙三醇钠）};
+\end{tikzpicture}%
+}
 \caption{原PDF第87页图示}
 \end{figure}
 
@@ -4903,7 +4929,39 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={丙三醇铜（绛蓝色）}]{assets/chemistry-4/fig-p0087-g02.png}}
+\fitfig{%
+% fig-alt: 甘油与氢氧化铜：CH2O—CHO—CH2OH竖式，虚线框住将脱去的两个H与两个HO，螯合生成丙三醇铜与两分子水
+% redraw: fig-p0087-g02 丙三醇铜结构式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.6pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[grp] (a1) at (0,0.92) {CH$_2$O};
+  \node[grp] (a2) at (0,0) {CHO};
+  \node[grp] (a3) at (0,-0.92) {CH$_2$OH};
+  \draw[bond] (a1.south) -- (a2.north);
+  \draw[bond] (a2.south) -- (a3.north);
+  \node[atom] (h1) at (1.15,0.92) {H};
+  \node[atom] (ho1) at (2.05,0.92) {HO};
+  \node[atom] (h2) at (1.05,0) {H};
+  \node[atom] (plus) at (1.48,0) {$+$};
+  \node[atom] (ho2) at (2.05,0) {HO};
+  \draw[dashed, line width=0.5pt] (0.62,-0.42) rectangle (2.52,1.38);
+  \node[atom] at (3.05,0) {Cu};
+  \node[atom] at (3.62,0) {$=$};
+  \node[grp] (p1) at (4.85,0.92) {CH$_2$O};
+  \node[grp] (p2) at (4.85,0) {CHO};
+  \node[grp] (p3) at (4.85,-0.92) {CH$_2$OH};
+  \draw[bond] (p1.south) -- (p2.north);
+  \draw[bond] (p2.south) -- (p3.north);
+  \node[atom] (cu) at (6.15,0.46) {Cu};
+  \draw[bond] (p1.east) -- (5.55,0.78) -- (cu.160);
+  \draw[bond] (p2.east) -- (5.55,0.14) -- (cu.200);
+  \node[atom] at (7.35,0.46) {$+2$H$_2$O};
+  \node[lab] at (3.5,-1.75) {丙三醇铜（绛蓝色）};
+\end{tikzpicture}%
+}
 \caption{丙三醇铜（绛蓝色）}
 \end{figure}
 
@@ -4917,7 +4975,44 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第88页图示}]{assets/chemistry-4/fig-p0088-g01.png}}
+\fitfig{%
+% fig-alt: 甘油硝化：左为CH2—O竖式，虚线框住三个H与三分子HO—NO2，硫酸催化生成三硝酸酯与三分子水；下行简式
+% redraw: fig-p0088-g01 甘油硝化生成硝化甘油
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.6pt},
+    bond/.style={line width=0.62pt},
+    lab/.style={inner sep=1pt}]
+  \node[grp] (a1) at (0,1.00) {CH$_2$--O};
+  \node[grp] (a2) at (0,0) {CH--O};
+  \node[grp] (a3) at (0,-1.00) {CH$_2$--O};
+  \draw[bond] (a1.south) -- (a2.north);
+  \draw[bond] (a2.south) -- (a3.north);
+  \node[atom] (h1) at (1.20,1.00) {H};
+  \node[atom] (h2) at (1.20,0) {H};
+  \node[atom] (h3) at (1.20,-1.00) {H};
+  \node[atom] at (1.62,0) {$+$};
+  \node[grp] (n1) at (2.70,1.00) {HO--NO$_2$};
+  \node[grp] (n2) at (2.70,0) {HO--NO$_2$};
+  \node[grp] (n3) at (2.70,-1.00) {HO--NO$_2$};
+  \draw[dashed, line width=0.5pt] (0.78,-1.48) rectangle (3.55,1.48);
+  \node[lab] at (4.85,0.38) {H$_2$SO$_4$};
+  \draw[->, line width=0.55pt] (3.85,0) -- (5.85,0);
+  \node[grp] (p1) at (7.25,1.00) {CH$_2$--O--NO$_2$};
+  \node[grp] (p2) at (7.25,0) {CH--O--NO$_2$};
+  \node[grp] (p3) at (7.25,-1.00) {CH$_2$--O--NO$_2$};
+  \draw[bond] (p1.south) -- (p2.north);
+  \draw[bond] (p2.south) -- (p3.north);
+  \node[atom, anchor=west] at (8.70,0) {$+3$H$_2$O};
+  \node[lab] at (0,-2.15) {甘油};
+  \node[lab] at (2.15,-2.15) {硝酸};
+  \node[lab] at (7.25,-2.15) {硝化甘油};
+  \node[lab] at (3.15,-3.15) {$[\mathrm{C}_{3}\mathrm{H}_{5}(\mathrm{OH})_{3}+3\mathrm{HNO}_{3}$};
+  \node[lab] at (5.35,-2.82) {H$_2$SO$_4$};
+  \draw[->, line width=0.5pt] (4.55,-3.15) -- (6.15,-3.15);
+  \node[lab, anchor=west] at (6.25,-3.15) {$\mathrm{C}_{3}\mathrm{H}_{5}(\mathrm{ONO}_{2})_{3}+3\mathrm{H}_{2}\mathrm{O}]$};
+\end{tikzpicture}%
+}
 \caption{原PDF第88页图示}
 \end{figure}
 
@@ -4965,7 +5060,84 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第89页图示}]{assets/chemistry-4/fig-p0089-g01.png}}
+\fitfig{%
+% fig-alt: 侧链取代成芳香醇：乙苯环右上碳连CH2—CH2—(H)，箭头右侧同一位置换成(OH)；凯库勒双键在左上、右侧、下左
+% redraw: fig-p0089-g01 侧链羟基取代生成芳香醇
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    grp/.style={inner sep=1pt, outer sep=0.6pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (tC) at (0,1.00) {C};
+  \node[atom] (tH) at (0,1.54) {H};
+  \node[atom] (ulC) at (-0.74,0.48) {C};
+  \node[atom] (ulH) at (-1.30,0.48) {H};
+  \node[atom] (llC) at (-0.74,-0.48) {C};
+  \node[atom] (llH) at (-1.30,-0.48) {H};
+  \node[atom] (bC) at (0,-1.00) {C};
+  \node[atom] (bH) at (0,-1.54) {H};
+  \node[atom] (urC) at (0.74,0.48) {C};
+  \node[atom] (lrC) at (0.74,-0.48) {C};
+  \node[atom] (lrH) at (1.15,-1.08) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \node[atom] (c1) at (1.98,0.48) {C};
+  \node[atom] (h1u) at (1.98,1.16) {H};
+  \node[atom] (h1d) at (1.98,-0.20) {H};
+  \node[atom] (c2) at (2.92,0.48) {C};
+  \node[atom] (h2u) at (2.92,1.16) {H};
+  \node[atom] (h2d) at (2.92,-0.20) {H};
+  \node[atom] (xh) at (3.78,0.48) {(H)};
+  \draw[bond] (urC) -- (c1) -- (c2) -- (xh);
+  \draw[bond] (h1u) -- (c1) -- (h1d);
+  \draw[bond] (h2u) -- (c2) -- (h2d);
+  \draw[->, line width=0.6pt] (4.30,0) -- (5.25,0);
+  \begin{scope}[xshift=6.85cm]
+    \node[atom] (tC) at (0,1.00) {C};
+    \node[atom] (tH) at (0,1.54) {H};
+    \node[atom] (ulC) at (-0.74,0.48) {C};
+    \node[atom] (ulH) at (-1.30,0.48) {H};
+    \node[atom] (llC) at (-0.74,-0.48) {C};
+    \node[atom] (llH) at (-1.30,-0.48) {H};
+    \node[atom] (bC) at (0,-1.00) {C};
+    \node[atom] (bH) at (0,-1.54) {H};
+    \node[atom] (urC) at (0.74,0.48) {C};
+    \node[atom] (lrC) at (0.74,-0.48) {C};
+    \node[atom] (lrH) at (1.15,-1.08) {H};
+    \draw[bond] (tH) -- (tC);
+    \draw[bond] (ulH) -- (ulC);
+    \draw[bond] (llH) -- (llC);
+    \draw[bond] (bH) -- (bC);
+    \draw[bond] (lrH) -- (lrC);
+    \draw[dbond] (ulC) -- (tC);
+    \draw[dbond] (urC) -- (lrC);
+    \draw[dbond] (llC) -- (bC);
+    \draw[bond] (tC) -- (urC);
+    \draw[bond] (ulC) -- (llC);
+    \draw[bond] (lrC) -- (bC);
+    \node[atom] (c1) at (1.98,0.48) {C};
+    \node[atom] (h1u) at (1.98,1.16) {H};
+    \node[atom] (h1d) at (1.98,-0.20) {H};
+    \node[atom] (c2) at (2.92,0.48) {C};
+    \node[atom] (h2u) at (2.92,1.16) {H};
+    \node[atom] (h2d) at (2.92,-0.20) {H};
+    \node[atom] (xh) at (3.92,0.48) {(OH)};
+    \draw[bond] (urC) -- (c1) -- (c2) -- (xh);
+    \draw[bond] (h1u) -- (c1) -- (h1d);
+    \draw[bond] (h2u) -- (c2) -- (h2d);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{原PDF第89页图示}
 \end{figure}
 
@@ -4975,7 +5147,66 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第89页图示}]{assets/chemistry-4/fig-p0089-g02.png}}
+\fitfig{%
+% fig-alt: 苯环上氢被羟基取代成酚：左环顶碳连(H)，右环顶碳连(OH)；凯库勒双键在左上、右侧、下左
+% redraw: fig-p0089-g02 苯环羟基取代生成酚
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt}]
+  \node[atom] (tC) at (0,1.00) {C};
+  \node[atom] (tH) at (0,1.68) {(H)};
+  \node[atom] (ulC) at (-0.76,0.48) {C};
+  \node[atom] (ulH) at (-1.32,0.48) {H};
+  \node[atom] (llC) at (-0.76,-0.48) {C};
+  \node[atom] (llH) at (-1.32,-0.48) {H};
+  \node[atom] (bC) at (0,-1.00) {C};
+  \node[atom] (bH) at (0,-1.54) {H};
+  \node[atom] (urC) at (0.76,0.48) {C};
+  \node[atom] (urH) at (1.32,0.48) {H};
+  \node[atom] (lrC) at (0.76,-0.48) {C};
+  \node[atom] (lrH) at (1.32,-0.48) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (urH) -- (urC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \draw[->, line width=0.6pt] (2.05,0) -- (3.05,0);
+  \begin{scope}[xshift=4.55cm]
+    \node[atom] (tC) at (0,1.00) {C};
+    \node[atom] (tH) at (0,1.72) {(OH)};
+    \node[atom] (ulC) at (-0.76,0.48) {C};
+    \node[atom] (ulH) at (-1.32,0.48) {H};
+    \node[atom] (llC) at (-0.76,-0.48) {C};
+    \node[atom] (llH) at (-1.32,-0.48) {H};
+    \node[atom] (bC) at (0,-1.00) {C};
+    \node[atom] (bH) at (0,-1.54) {H};
+    \node[atom] (urC) at (0.76,0.48) {C};
+    \node[atom] (urH) at (1.32,0.48) {H};
+    \node[atom] (lrC) at (0.76,-0.48) {C};
+    \node[atom] (lrH) at (1.32,-0.48) {H};
+    \draw[bond] (tH) -- (tC);
+    \draw[bond] (ulH) -- (ulC);
+    \draw[bond] (llH) -- (llC);
+    \draw[bond] (bH) -- (bC);
+    \draw[bond] (urH) -- (urC);
+    \draw[bond] (lrH) -- (lrC);
+    \draw[dbond] (ulC) -- (tC);
+    \draw[dbond] (urC) -- (lrC);
+    \draw[dbond] (llC) -- (bC);
+    \draw[bond] (tC) -- (urC);
+    \draw[bond] (ulC) -- (llC);
+    \draw[bond] (lrC) -- (bC);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{原PDF第89页图示}
 \end{figure}
 
@@ -4989,7 +5220,51 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（结构式）}]{assets/chemistry-4/fig-p0090-g01.png}}
+\fitfig{%
+% fig-alt: 苯酚结构式：苯环右上碳连OH，凯库勒双键在左上、右侧、下左；简式为仅左、下右两条内线的六边形接OH，或C6H5OH
+% redraw: fig-p0090-g01 苯酚结构式与简式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (tC) at (0,1.02) {C};
+  \node[atom] (tH) at (0,1.58) {H};
+  \node[atom] (ulC) at (-0.78,0.50) {C};
+  \node[atom] (ulH) at (-1.36,0.50) {H};
+  \node[atom] (llC) at (-0.78,-0.50) {C};
+  \node[atom] (llH) at (-1.36,-0.50) {H};
+  \node[atom] (bC) at (0,-1.02) {C};
+  \node[atom] (bH) at (0,-1.58) {H};
+  \node[atom] (urC) at (0.78,0.50) {C};
+  \node[atom] (urOH) at (1.52,0.50) {OH};
+  \node[atom] (lrC) at (0.78,-0.50) {C};
+  \node[atom] (lrH) at (1.36,-0.50) {H};
+  \draw[bond] (tH) -- (tC);
+  \draw[bond] (ulH) -- (ulC);
+  \draw[bond] (llH) -- (llC);
+  \draw[bond] (bH) -- (bC);
+  \draw[bond] (urOH) -- (urC);
+  \draw[bond] (lrH) -- (lrC);
+  \draw[dbond] (ulC) -- (tC);
+  \draw[dbond] (urC) -- (lrC);
+  \draw[dbond] (llC) -- (bC);
+  \draw[bond] (tC) -- (urC);
+  \draw[bond] (ulC) -- (llC);
+  \draw[bond] (lrC) -- (bC);
+  \node[lab] at (0,-2.15) {（结构式）};
+  \begin{scope}[xshift=3.55cm]
+    \draw[bond] (0.22,0.38) -- (0.44,0) -- (0.22,-0.38) -- (-0.22,-0.38) -- (-0.44,0) -- (-0.22,0.38) -- cycle;
+    \draw[bond] (-0.30,-0.05) -- (-0.17,-0.25);
+    \draw[bond] (0.17,-0.25) -- (0.30,-0.05);
+    \node[atom] (oh) at (1.02,0.95) {OH};
+    \draw[bond] (0.22,0.38) -- (oh.south west);
+  \end{scope}
+  \node[atom] at (5.15,0.15) {或};
+  \node[atom] at (6.25,0.15) {C$_6$H$_5$OH};
+  \node[lab] at (4.70,-1.55) {（简式）};
+\end{tikzpicture}%
+}
 \caption{（结构式）}
 \end{figure}
 
