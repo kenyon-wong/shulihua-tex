@@ -6580,7 +6580,35 @@ y = 45.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-1/fig-p0072-04.png}}
+\fitfig{%
+% fig-alt: 第14题 扫描：A左B右上水平，C左D右下水平；折线BED，角1在B处AB与BE间、角2在D处ED与CD间，皆单弧；EP为过E的水平虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.12,1.72);
+  \coordinate (B) at (2.42,1.72);
+  \coordinate (E) at (1.08,0.78);
+  \coordinate (P) at (3.30,0.78);
+  \coordinate (C) at (0.12,0.14);
+  \coordinate (D) at (2.55,0.14);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (B) -- (E) -- (D);
+  \draw[dashed, line width=0.65pt] (E) -- (P);
+  \node[left=1pt] at (A) {$A$};
+  \node[above=2pt] at (B) {$B$};
+  \node[left=1pt] at (E) {$E$};
+  \node[right=1pt] at (P) {$P$};
+  \node[left=1pt] at (C) {$C$};
+  \node[below=1pt] at (D) {$D$};
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (180:0.30) arc[start angle=180, end angle=215, radius=0.30];
+    \node[inner sep=1pt] at (198:0.52) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(D)}]
+    \draw[line width=0.5pt] (154:0.30) arc[start angle=154, end angle=180, radius=0.30];
+    \node[inner sep=1pt] at (167:0.52) {$2$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第14题)}
 \end{figure}
 
@@ -6620,7 +6648,26 @@ EP，并使\(EP \parallel BA\)，然后再设法证得\(EP \parallel DC\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-1/fig-p0073-01.png}}
+\fitfig{%
+% fig-alt: 扫描题注为第16题（文件题注仍作第18题，未改题注）；E左，上折BA、下折DC，EP为过E的水平虚线，无角弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (E) at (0.16,0.78);
+  \coordinate (B) at (1.18,1.42);
+  \coordinate (A) at (3.22,1.42);
+  \coordinate (D) at (1.18,0.14);
+  \coordinate (C) at (3.22,0.14);
+  \coordinate (P) at (3.15,0.78);
+  \draw[line width=0.75pt] (E) -- (B) -- (A);
+  \draw[line width=0.75pt] (E) -- (D) -- (C);
+  \draw[dashed, line width=0.65pt] (E) -- (P);
+  \node[left=1pt] at (E) {$E$};
+  \node[above=1pt] at (B) {$B$};
+  \node[right=1pt] at (A) {$A$};
+  \node[below=1pt] at (D) {$D$};
+  \node[right=1pt] at (C) {$C$};
+  \node[right=1pt] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第18题)}
 \end{figure}
 
@@ -6628,7 +6675,39 @@ EP，并使\(EP \parallel BA\)，然后再设法证得\(EP \parallel DC\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-1/fig-p0073-02.png}}
+\fitfig{%
+% fig-alt: 第18题 扫描：上水平AB、下水平CD，EF自左下向右上截于M、R，GH自左上向右下截于N、S，无角弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.08,1.55);
+  \coordinate (B) at (3.22,1.55);
+  \coordinate (C) at (0.08,0.38);
+  \coordinate (D) at (3.22,0.38);
+  \coordinate (M) at (0.92,1.55);
+  \coordinate (E) at (1.20,2.25);
+  \coordinate (R) at (0.45,0.38);
+  \coordinate (F) at (0.25,-0.12);
+  \coordinate (N) at (2.18,1.55);
+  \coordinate (G) at (1.86,2.28);
+  \coordinate (S) at (2.69,0.38);
+  \coordinate (H) at (2.90,-0.10);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (E) -- (F);
+  \draw[line width=0.75pt] (G) -- (H);
+  \node[left=1pt] at (A) {$A$};
+  \node[right=1pt] at (B) {$B$};
+  \node[left=1pt] at (C) {$C$};
+  \node[right=1pt] at (D) {$D$};
+  \node[above=1pt] at (E) {$E$};
+  \node[below left=1pt] at (F) {$F$};
+  \node[above=1pt] at (G) {$G$};
+  \node[below right=1pt] at (H) {$H$};
+  \node[anchor=north] at (1.10,1.40) {$M$};
+  \node[anchor=north east] at (2.05,1.40) {$N$};
+  \node[anchor=north] at (0.68,0.28) {$R$};
+  \node[anchor=north] at (2.48,0.28) {$S$};
+\end{tikzpicture}%
+}
 \caption{(第18题)}
 \end{figure}
 
@@ -6658,7 +6737,22 @@ EP，并使\(EP \parallel BA\)，然后再设法证得\(EP \parallel DC\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-1/fig-p0073-05.png}}
+\fitfig{%
+% fig-alt: 第19题之（3） 扫描：基线上左小上半圆、中下半圆、右大上半圆，基线下两短竖痕，旁注(3)
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (L) at (0.28,0);
+  \coordinate (J1) at (0.84,0);
+  \coordinate (J2) at (1.68,0);
+  \coordinate (R) at (3.44,0);
+  \draw[line width=0.75pt] (L) -- (R);
+  \draw[line width=0.75pt] (0.28,0) arc[start angle=180, end angle=0, radius=0.28];
+  \draw[line width=0.75pt] (0.84,0) arc[start angle=180, end angle=360, radius=0.42];
+  \draw[line width=0.75pt] (1.68,0) arc[start angle=180, end angle=0, radius=0.88];
+  \draw[line width=0.9pt] (0.56,0) -- (0.56,-0.13);
+  \draw[line width=0.9pt] (2.56,0) -- (2.56,-0.13);
+  \node[anchor=east] at (0.18,0.62) {$(3)$};
+\end{tikzpicture}%
+}
 \caption{(第19题)}
 \end{figure}
 
@@ -6692,7 +6786,37 @@ EP，并使\(EP \parallel BA\)，然后再设法证得\(EP \parallel DC\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-1/fig-p0073-09.png}}
+\fitfig{%
+% fig-alt: 第20题之（4） 扫描：虚线正方形，四瓣实弧在中心相接并抵四边中点，旁注(4)
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[dashed, line width=0.7pt] (0,0) rectangle (2,2);
+  \node[anchor=east] at (-0.08,1.12) {$(4)$};
+  \begin{scope}[shift={(1.18,1.5)}]
+    \draw[line width=0.75pt] (250:0.53) arc[start angle=250, end angle=110, radius=0.53];
+  \end{scope}
+  \begin{scope}[shift={(0.82,1.5)}]
+    \draw[line width=0.75pt] (-70:0.53) arc[start angle=-70, end angle=70, radius=0.53];
+  \end{scope}
+  \begin{scope}[shift={(1.18,0.5)}]
+    \draw[line width=0.75pt] (110:0.53) arc[start angle=110, end angle=250, radius=0.53];
+  \end{scope}
+  \begin{scope}[shift={(0.82,0.5)}]
+    \draw[line width=0.75pt] (70:0.53) arc[start angle=70, end angle=-70, radius=0.53];
+  \end{scope}
+  \begin{scope}[shift={(0.5,0.82)}]
+    \draw[line width=0.75pt] (160:0.53) arc[start angle=160, end angle=20, radius=0.53];
+  \end{scope}
+  \begin{scope}[shift={(0.5,1.18)}]
+    \draw[line width=0.75pt] (-160:0.53) arc[start angle=-160, end angle=-20, radius=0.53];
+  \end{scope}
+  \begin{scope}[shift={(1.5,0.82)}]
+    \draw[line width=0.75pt] (20:0.53) arc[start angle=20, end angle=160, radius=0.53];
+  \end{scope}
+  \begin{scope}[shift={(1.5,1.18)}]
+    \draw[line width=0.75pt] (-160:0.53) arc[start angle=-160, end angle=-20, radius=0.53];
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第20题)}
 \end{figure}
 
@@ -6733,7 +6857,33 @@ EP，并使\(EP \parallel BA\)，然后再设法证得\(EP \parallel DC\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-1/fig-p0074-01.png}}
+\fitfig{%
+% fig-alt: 第7题 扫描：B'A虚、AP实水平；D'C虚、CD实共线斜向；EF过C虚线平行于AP；AC实，无角弧、无直角记号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (Bp) at (0.08,0.18);
+  \coordinate (A) at (1.58,0.18);
+  \coordinate (P) at (3.05,0.18);
+  \coordinate (E) at (0.08,1.58);
+  \coordinate (C) at (1.58,1.58);
+  \coordinate (F) at (3.18,1.58);
+  \coordinate (Dp) at (0.42,2.06);
+  \coordinate (D) at (3.15,0.93);
+  \draw[dashed, line width=0.65pt] (Bp) -- (A);
+  \draw[dashed, line width=0.65pt] (E) -- (F);
+  \draw[dashed, line width=0.65pt] (Dp) -- (C);
+  \draw[line width=0.75pt] (A) -- (P);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (A) -- (C);
+  \node[left=1pt] at (Bp) {$B'$};
+  \node[below=1pt] at (A) {$A$};
+  \node[right=1pt] at (P) {$P$};
+  \node[left=1pt] at (E) {$E$};
+  \node[above=1pt] at (C) {$C$};
+  \node[right=1pt] at (F) {$F$};
+  \node[above=1pt] at (Dp) {$D'$};
+  \node[right=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -6781,7 +6931,33 @@ EP，并使\(EP \parallel BA\)，然后再设法证得\(EP \parallel DC\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-1/fig-p0075-01.png}}
+\fitfig{%
+% fig-alt: 第5题 扫描：AB∥CD水平，C引出至B、至D、至E；角1在B处AB与CB间单弧，角2在C处CD与CE间单弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.12,1.62);
+  \coordinate (B) at (2.62,1.62);
+  \coordinate (C) at (0.18,0.58);
+  \coordinate (D) at (2.55,0.58);
+  \coordinate (E) at (2.28,0.08);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (C) -- (E);
+  \node[above left=1pt] at (A) {$A$};
+  \node[above=2pt] at (B) {$B$};
+  \node[left=2pt] at (C) {$C$};
+  \node[right=1pt] at (D) {$D$};
+  \node[below right=1pt] at (E) {$E$};
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (180:0.32) arc[start angle=180, end angle=203, radius=0.32];
+    \node[inner sep=1pt] at (192:0.56) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(C)}]
+    \draw[line width=0.5pt] (-14:0.32) arc[start angle=-14, end angle=0, radius=0.32];
+    \node[inner sep=1pt] at (-8:0.54) {$2$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -6789,7 +6965,20 @@ EP，并使\(EP \parallel BA\)，然后再设法证得\(EP \parallel DC\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-1/fig-p0075-02.png}}
+\fitfig{%
+% fig-alt: 第6题 扫描：平行四边形ABCD，A左下B右下C右上D左上，AD与BC斜向右上，无角弧、无直角记号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.16,0.16);
+  \coordinate (B) at (2.55,0.16);
+  \coordinate (D) at (0.78,1.42);
+  \coordinate (C) at (3.17,1.42);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \node[below left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[above right=1pt] at (C) {$C$};
+  \node[above left=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
