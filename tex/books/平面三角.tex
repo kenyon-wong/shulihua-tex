@@ -12489,7 +12489,20 @@ k \left(\frac {a}{k} \sin x + \frac {b}{k} \cos x\right)\text{，} \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5-3}]{assets/plane-trigonometry/fig-p0164-01.png}}
+\fitfig{%
+% fig-alt: 直角三角形，直角在右下且无直角记号；左下角弧标φ；底边标a，竖直边标b，斜边上方标√(a²+b²)；无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (L) at (0,0);
+  \coordinate (R) at (3.36,0);
+  \coordinate (T) at (3.36,2.06);
+  \draw[line width=0.7pt] (L) -- (R) -- (T) -- cycle;
+  \draw[line width=0.6pt] (0.42,0) arc[start angle=0,end angle=31.5,radius=0.42];
+  \node[anchor=west,inner sep=0.5pt] at (0.62,0.10) {$\varphi$};
+  \node[anchor=north,inner sep=1pt] at (1.68,0) {$a$};
+  \node[anchor=west,inner sep=1pt] at (3.42,1.03) {$b$};
+  \node[rotate=31.5,anchor=south,inner sep=1pt] at (1.62,1.22) {$\sqrt{a^{2}+b^{2}}$};
+\end{tikzpicture}%
+}
 \caption{图5-3}
 \end{figure}
 
@@ -13623,7 +13636,24 @@ s - a = 1.635\text{，} s - b = 1.275\text{，} s - c = 0.405.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0183-01.png}}
+\fitfig{%
+% fig-alt: 锐角三角形ABC，A左、B右、C上；自C向AB作虚线高CD；A处角弧；AC左侧标b，DB下方标c；无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.55,0);
+  \coordinate (C) at (1.52,2.18);
+  \coordinate (D) at (1.52,0);
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.6pt] (0.40,0) arc[start angle=0,end angle=55.1,radius=0.40];
+  \node[anchor=north east,inner sep=1pt] at (0,-0.02) {$A$};
+  \node[anchor=north,inner sep=1pt] at (1.52,0) {$D$};
+  \node[anchor=north west,inner sep=1pt] at (4.55,0) {$B$};
+  \node[anchor=south,inner sep=1pt] at (1.52,2.18) {$C$};
+  \node[anchor=east,inner sep=1pt] at (0.48,1.08) {$b$};
+  \node[anchor=north,inner sep=1pt] at (3.05,0) {$c$};
+\end{tikzpicture}%
+}
 \caption{(I)}
 \end{figure}
 
@@ -13633,7 +13663,27 @@ s - a = 1.635\text{，} s - b = 1.275\text{，} s - c = 0.405.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0183-02.png}}
+\fitfig{%
+% fig-alt: 钝角三角形ABC，C左上、A在底边、B右；D在A左侧的延长线上；CD、DA为虚线，CA、CB、AB为实线；A处钝角弧；CA上标b，AB下方标c
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (D) at (0,0);
+  \coordinate (A) at (1.58,0);
+  \coordinate (B) at (4.55,0);
+  \coordinate (C) at (0.06,1.82);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (A);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.7pt] (A) -- (C);
+  \draw[line width=0.7pt] (C) -- (B);
+  \draw[line width=0.6pt] (1.58,0) ++(0:0.42) arc[start angle=0,end angle=129.6,radius=0.42];
+  \node[anchor=north,inner sep=1pt] at (0,0) {$D$};
+  \node[anchor=north,inner sep=1pt] at (1.72,-0.02) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (4.55,0) {$B$};
+  \node[anchor=south,inner sep=1pt] at (0.06,1.82) {$C$};
+  \node[rotate=-50,anchor=west,inner sep=1pt] at (0.92,0.98) {$b$};
+  \node[anchor=north,inner sep=1pt] at (3.05,0) {$c$};
+\end{tikzpicture}%
+}
 \caption{(II)}
 \end{figure}
 
@@ -13643,7 +13693,21 @@ s - a = 1.635\text{，} s - b = 1.275\text{，} s - c = 0.405.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(III)}]{assets/plane-trigonometry/fig-p0183-03.png}}
+\fitfig{%
+% fig-alt: 直角三角形，直角在左下并有直角记号，顶点标A(D)；C在上、B在右；AC左侧标b，AB下方标c；斜边无字；无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.20,0);
+  \coordinate (C) at (0,1.98);
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.55pt] (0.16,0) -- (0.16,0.16) -- (0,0.16);
+  \node[anchor=north,inner sep=1pt] at (0.28,0) {$A(D)$};
+  \node[anchor=south,inner sep=1pt] at (0,1.98) {$C$};
+  \node[anchor=north west,inner sep=1pt] at (3.20,0) {$B$};
+  \node[anchor=east,inner sep=1pt] at (0,0.99) {$b$};
+  \node[anchor=north,inner sep=1pt] at (1.72,0) {$c$};
+\end{tikzpicture}%
+}
 \caption{(III)}
 \end{figure}
 
@@ -13825,7 +13889,22 @@ b ^ {2} \sin 2 C + c ^ {2} \sin 2 B = 2 b \sin A.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0186-01.png}}
+\fitfig{%
+% fig-alt: 四边形ABCD，A左上、B左下、C右下、D上；两组对角线AC、BD实线相交；无角弧、无虚线、无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.22,1.58);
+  \coordinate (B) at (0.42,0.08);
+  \coordinate (C) at (3.38,0.18);
+  \coordinate (D) at (1.52,2.52);
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (A) -- (C);
+  \draw[line width=0.7pt] (B) -- (D);
+  \node[anchor=east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -13903,7 +13982,34 @@ IF. 从平面几何学中知道， ID， IE 和 IF 分别垂直于 BC， CA 和 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6·2}]{assets/plane-trigonometry/fig-p0188-01.png}}
+\fitfig{%
+% fig-alt: 三角形ABC内切圆，切点D在BC、E在CA、F在AB，内心I；IA、IB、IC实线，ID、IE、IF虚线且分别垂直于三边；A处小角弧；无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (5.40,0);
+  \coordinate (A) at (1.95,2.45);
+  \coordinate (I) at (2.15,1.04);
+  \coordinate (D) at (2.15,0);
+  \coordinate (E) at (2.75,1.88);
+  \coordinate (F) at (1.34,1.68);
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.7pt] (I) -- (A);
+  \draw[line width=0.7pt] (I) -- (B);
+  \draw[line width=0.7pt] (I) -- (C);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.5pt] (I) -- (D);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.5pt] (I) -- (E);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.5pt] (I) -- (F);
+  \draw[line width=0.7pt] (I) circle[radius=1.04];
+  \draw[line width=0.6pt] (A) ++(-128.5:0.28) arc[start angle=-128.5,end angle=-35.4,radius=0.28];
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (E) {$E$};
+  \node[anchor=east,inner sep=1pt] at (F) {$F$};
+  \node[anchor=north west,inner sep=0.5pt] at (2.22,0.96) {$I$};
+\end{tikzpicture}%
+}
 \caption{图6·2}
 \end{figure}
 
@@ -14255,7 +14361,24 @@ R = \frac {a}{2 \sin A} = \frac {b}{2 \sin B} = \frac {c}{2 \sin C}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·1}]{assets/plane-trigonometry/fig-p0194-01.png}}
+\fitfig{%
+% fig-alt: 圆，圆心O；OA水平向右并略伸出圆周，OB为右上射线并伸出圆周；劣弧AB外侧标l；圆心角弧标n°；OA下方标R；无虚线、无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (1.58,0);
+  \coordinate (B) at (1.175,1.057);
+  \draw[line width=0.7pt] (O) circle[radius=1.58];
+  \draw[line width=0.7pt] (O) -- (2.08,0);
+  \draw[line width=0.7pt] (O) -- (1.55,1.395);
+  \draw[line width=0.6pt] (0.40,0) arc[start angle=0,end angle=42,radius=0.40];
+  \node[anchor=east,inner sep=1pt] at (-0.06,0.02) {$O$};
+  \node[anchor=north west,inner sep=1pt] at (1.62,-0.02) {$A$};
+  \node[anchor=south,inner sep=1pt] at (1.22,1.16) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (1.48,0.72) {$l$};
+  \node[anchor=north,inner sep=1pt] at (0.86,-0.02) {$R$};
+  \node[font=\scriptsize,anchor=west,inner sep=0.5pt] at (0.52,0.12) {$n^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{图7·1}
 \end{figure}
 
@@ -14280,7 +14403,24 @@ l = \frac {n}{360} \cdot 2 \pi R.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-2}]{assets/plane-trigonometry/fig-p0195-01.png}}
+\fitfig{%
+% fig-alt: 圆，圆心O；OA水平止于圆周并下标R，OB止于圆周；劣弧外侧标l=R；圆心角内横书1弧度；射线不伸出圆周；无虚线、无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (1.58,0);
+  \coordinate (B) at (0.975,1.245);
+  \draw[line width=0.7pt] (O) circle[radius=1.58];
+  \draw[line width=0.7pt] (O) -- (A);
+  \draw[line width=0.7pt] (O) -- (B);
+  \draw[line width=0.6pt] (0.38,0) arc[start angle=0,end angle=52,radius=0.38];
+  \node[anchor=east,inner sep=1pt] at (-0.06,0.02) {$O$};
+  \node[anchor=north west,inner sep=1pt] at (1.62,-0.02) {$A$};
+  \node[anchor=south,inner sep=1pt] at (1.02,1.30) {$B$};
+  \node[anchor=west,inner sep=1pt] at (1.68,0.82) {$l=R$};
+  \node[anchor=north,inner sep=1pt] at (0.78,-0.06) {$R$};
+  \node[anchor=west,inner sep=0.5pt] at (0.70,0.42) {$1$弧度};
+\end{tikzpicture}%
+}
 \caption{图7-2}
 \end{figure}
 
