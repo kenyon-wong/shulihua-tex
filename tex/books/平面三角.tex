@@ -20231,7 +20231,15 @@ x _ {2} = \pi - \arcsin a.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={sin x = 0}]{assets/plane-trigonometry/fig-p0274-01.png}}
+\fitfig{%
+% fig-alt: sin x=0；终边与x轴重合，正负x轴为粗线，右端箭头；y轴细线仅上端箭头
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.58pt] (0,-1.22) -- (0,1.12);
+  \draw[line width=0.58pt,-latex] (0,1.12) -- (0,1.62);
+  \draw[line width=1.35pt] (-1.58,0) -- (1.38,0);
+  \draw[line width=1.35pt,-latex] (1.38,0) -- (1.98,0);
+\end{tikzpicture}%
+}
 \caption{sin x = 0}
 \end{figure}
 
@@ -20245,7 +20253,16 @@ sin x = 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={sin x = 1}]{assets/plane-trigonometry/fig-p0274-02.png}}
+\fitfig{%
+% fig-alt: sin x=1；终边与正y轴重合，原点至上端箭头为粗线；x轴与负y轴为细线
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.58pt] (-1.55,0) -- (1.38,0);
+  \draw[line width=0.58pt,-latex] (1.38,0) -- (1.98,0);
+  \draw[line width=0.58pt] (0,-1.22) -- (0,0);
+  \draw[line width=1.35pt] (0,0) -- (0,1.18);
+  \draw[line width=1.35pt,-latex] (0,1.18) -- (0,1.68);
+\end{tikzpicture}%
+}
 \caption{sin x = 1}
 \end{figure}
 
@@ -20259,7 +20276,16 @@ sin x = 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={sin x = -1}]{assets/plane-trigonometry/fig-p0274-03.png}}
+\fitfig{%
+% fig-alt: sin x=-1；终边与负y轴重合，原点向下为粗线、下端平齐无箭头；正y轴细线带上端箭头
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.58pt] (-1.55,0) -- (1.38,0);
+  \draw[line width=0.58pt,-latex] (1.38,0) -- (1.98,0);
+  \draw[line width=0.58pt] (0,0) -- (0,1.12);
+  \draw[line width=0.58pt,-latex] (0,1.12) -- (0,1.62);
+  \draw[line width=1.35pt] (0,0) -- (0,-1.48);
+\end{tikzpicture}%
+}
 \caption{sin x = -1}
 \end{figure}
 
@@ -20331,7 +20357,22 @@ x = (2 n + 1) \pi - \arcsin \left(- \frac {2}{3}\right) = (2 n + 1) \pi + \arcsi
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0275-01.png}}
+\fitfig{%
+% fig-alt: 0<a<1；第一、四象限两射线约±33°；小弧标arccos a，下方小弧标-arccos a；图下印0<a<1
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.62pt] (-1.45,0) -- (2.05,0);
+  \draw[line width=0.62pt,-latex] (2.05,0) -- (2.62,0);
+  \draw[line width=0.62pt] (0,-1.38) -- (0,1.18);
+  \draw[line width=0.62pt,-latex] (0,1.18) -- (0,1.68);
+  \draw[line width=1.05pt] (0,0) -- (33:1.72);
+  \draw[line width=1.05pt] (0,0) -- (-33:1.82);
+  \draw[line width=0.58pt,-latex] (0:0.48) arc[start angle=0,end angle=33,radius=0.48];
+  \draw[line width=0.58pt,-latex] (0:0.72) arc[start angle=0,end angle=-33,radius=0.72];
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (1.00,0.16) {$\arccos a$};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (1.14,-0.14) {$-\arccos a$};
+  \node[anchor=north,inner sep=1pt] at (0.15,-1.62) {$0<a<1$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -20341,7 +20382,22 @@ x = (2 n + 1) \pi - \arcsin \left(- \frac {2}{3}\right) = (2 n + 1) \pi + \arcsi
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(11)}]{assets/plane-trigonometry/fig-p0275-02.png}}
+\fitfig{%
+% fig-alt: -1<a<0；第二、三象限两射线约±150°；逆时针大弧标arccos a，顺时针大弧标-arccos a；图下印-1<a<0
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.62pt] (-1.48,0) -- (1.85,0);
+  \draw[line width=0.62pt,-latex] (1.85,0) -- (2.42,0);
+  \draw[line width=0.62pt] (0,-1.68) -- (0,1.52);
+  \draw[line width=0.62pt,-latex] (0,1.52) -- (0,2.02);
+  \draw[line width=1.05pt] (0,0) -- (150:1.95);
+  \draw[line width=1.05pt] (0,0) -- (-150:1.98);
+  \draw[line width=0.58pt,-latex] (0:1.42) arc[start angle=0,end angle=150,radius=1.42];
+  \draw[line width=0.58pt,-latex] (0:1.42) arc[start angle=0,end angle=-150,radius=1.42];
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (0.40,0.30) {$\arccos a$};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (1.62,-0.86) {$-\arccos a$};
+  \node[anchor=north,inner sep=1pt] at (0.05,-1.90) {$-1<a<0$};
+\end{tikzpicture}%
+}
 \caption{(11)}
 \end{figure}
 
@@ -20395,7 +20451,16 @@ x = (2 n + 1) \pi - \arcsin \left(- \frac {2}{3}\right) = (2 n + 1) \pi + \arcsi
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-4}]{assets/plane-trigonometry/fig-p0276-03.png}}
+\fitfig{%
+% fig-alt: 图9·4右图，cos x=-1；终边与负x轴重合，向左粗线平齐无箭头；正x轴细线带右端箭头
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.58pt] (0,-1.28) -- (0,1.15);
+  \draw[line width=0.58pt,-latex] (0,1.15) -- (0,1.65);
+  \draw[line width=0.58pt] (0,0) -- (1.38,0);
+  \draw[line width=0.58pt,-latex] (1.38,0) -- (1.98,0);
+  \draw[line width=1.35pt] (0,0) -- (-1.62,0);
+\end{tikzpicture}%
+}
 \caption{图9-4}
 \end{figure}
 
@@ -20458,7 +20523,20 @@ x_2=\pi+\operatorname{arctg}a.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={a\textgreater0}]{assets/plane-trigonometry/fig-p0277-01.png}}
+\fitfig{%
+% fig-alt: a>0；过原点约32°的一条粗直线；同半径小弧标arctg a，大弧越过负x轴至第三象限射线标π+arctg a
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.62pt] (-1.85,0) -- (1.85,0);
+  \draw[line width=0.62pt,-latex] (1.85,0) -- (2.42,0);
+  \draw[line width=0.62pt] (0,-1.48) -- (0,1.22);
+  \draw[line width=0.62pt,-latex] (0,1.22) -- (0,1.72);
+  \draw[line width=1.05pt] (212:1.82) -- (32:1.88);
+  \draw[line width=0.58pt,-latex] (0:0.90) arc[start angle=0,end angle=212,radius=0.90];
+  \draw[line width=0.58pt,-latex] (0:0.90) arc[start angle=0,end angle=32,radius=0.90];
+  \node[font=\scriptsize,anchor=south east,inner sep=1pt] at (-0.18,1.16) {$\pi+\operatorname{arctg}a$};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (1.20,0.20) {$\operatorname{arctg}a$};
+\end{tikzpicture}%
+}
 \caption{a\textgreater0}
 \end{figure}
 
@@ -20472,7 +20550,20 @@ a\textgreater0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={a\textless0}]{assets/plane-trigonometry/fig-p0277-02.png}}
+\fitfig{%
+% fig-alt: a<0；过原点约-32°的一条粗直线；顺时针小弧标arctg a，逆时针大弧至第二象限射线标π+arctg a
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.62pt] (-1.72,0) -- (1.82,0);
+  \draw[line width=0.62pt,-latex] (1.82,0) -- (2.40,0);
+  \draw[line width=0.62pt] (0,-1.52) -- (0,1.22);
+  \draw[line width=0.62pt,-latex] (0,1.22) -- (0,1.72);
+  \draw[line width=1.05pt] (-32:1.88) -- (148:1.78);
+  \draw[line width=0.58pt,-latex] (0:0.90) arc[start angle=0,end angle=148,radius=0.90];
+  \draw[line width=0.58pt,-latex] (0:0.90) arc[start angle=0,end angle=-32,radius=0.90];
+  \node[font=\scriptsize,anchor=south west,inner sep=1pt] at (0.22,1.16) {$\pi+\operatorname{arctg}a$};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (1.22,-0.14) {$\operatorname{arctg}a$};
+\end{tikzpicture}%
+}
 \caption{a\textless0}
 \end{figure}
 
