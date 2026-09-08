@@ -10590,7 +10590,51 @@ s，那么，用相同的力在相同的时间内，可以把质量为 \(\frac{m
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-3}]{assets/physics-1/fig-p0218-02.png}}
+% fig-alt: 图8-3：左车木块横线、F''箭向右，下标向右运动；右车木块竖线、F'箭向左，下标向左运动。地为斜线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt] (0.05,0.48) -- (5.05,0.48);
+  \begin{scope}
+    \clip (0.05,0.16) rectangle (5.05,0.48);
+    \foreach \s in {-0.45,-0.14,...,5.2}
+      \draw[line width=0.28pt] (\s,0.48) -- (\s+0.28,0.16);
+  \end{scope}
+  \draw[line width=0.55pt] (0.42,0.70) -- (3.72,0.70);
+  \draw[line width=0.5pt] (0.95,0.64) circle[radius=0.16];
+  \draw[line width=0.5pt] (3.05,0.64) circle[radius=0.16];
+  \draw[line width=0.55pt] (0.55,0.70) rectangle (3.48,1.22);
+  \begin{scope}
+    \clip (0.58,0.72) rectangle (3.45,1.20);
+    \foreach \s in {0.82,0.94,1.06}
+      \draw[line width=0.26pt] (0.58,\s) -- (3.45,\s);
+  \end{scope}
+  \draw[line width=0.7pt,->] (3.48,1.02) -- (4.78,1.02);
+  \node[anchor=south] at (4.12,1.06) {$F''$};
+  \draw[line width=0.5pt,->] (1.45,0.02) -- (2.15,0.02);
+  \node[anchor=north] at (1.80,-0.08) {向右运动};
+  \begin{scope}[xshift=6.05cm]
+    \draw[line width=0.6pt] (0.05,0.48) -- (5.05,0.48);
+    \begin{scope}
+      \clip (0.05,0.16) rectangle (5.05,0.48);
+      \foreach \s in {-0.45,-0.14,...,5.2}
+        \draw[line width=0.28pt] (\s,0.48) -- (\s+0.28,0.16);
+    \end{scope}
+    \draw[line width=0.55pt] (1.15,0.70) -- (4.35,0.70);
+    \draw[line width=0.5pt] (1.65,0.64) circle[radius=0.16];
+    \draw[line width=0.5pt] (3.75,0.64) circle[radius=0.16];
+    \draw[line width=0.55pt] (1.35,0.70) rectangle (4.15,1.22);
+    \begin{scope}
+      \clip (1.38,0.72) rectangle (4.12,1.20);
+      \foreach \s in {1.52,1.72,1.92,2.12,2.32,2.52,2.72,2.92,3.12,3.32,3.52,3.72,3.92}
+        \draw[line width=0.26pt] (\s,0.72) -- (\s,1.20);
+    \end{scope}
+    \draw[line width=0.7pt,->] (1.35,1.02) -- (0.15,1.02);
+    \node[anchor=south] at (0.78,1.06) {$F'$};
+    \draw[line width=0.5pt,->] (3.05,0.02) -- (2.35,0.02);
+    \node[anchor=north] at (2.70,-0.08) {向左运动};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图8-3}
 \end{figure}
 
@@ -10607,7 +10651,37 @@ s，那么，用相同的力在相同的时间内，可以把质量为 \(\frac{m
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-4}]{assets/physics-1/fig-p0219-01.png}}
+% fig-alt: 图8-4：左小车，弹簧秤甲与乙钩连于O，右手拉乙。甲、乙、O标在秤上方。地斜线只在小车下
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt] (0.10,0.42) -- (2.85,0.42);
+  \begin{scope}
+    \clip (0.10,0.10) rectangle (2.85,0.42);
+    \foreach \s in {-0.3,0.02,...,2.9}
+      \draw[line width=0.28pt] (\s,0.42) -- (\s+0.26,0.12);
+  \end{scope}
+  \draw[line width=0.6pt] (0.28,0.78) rectangle (2.05,1.55);
+  \draw[line width=0.5pt] (0.62,0.62) circle[radius=0.18];
+  \draw[line width=0.5pt] (1.62,0.62) circle[radius=0.18];
+  \draw[line width=0.45pt] (2.05,1.16) .. controls (2.22,1.28) and (2.28,1.02) .. (2.42,1.16);
+  \draw[line width=0.55pt,rounded corners=0.16cm] (2.48,0.92) rectangle (3.85,1.38);
+  \draw[line width=0.35pt,dash pattern=on 1.1pt off 0.7pt] (2.68,1.15) -- (3.62,1.15);
+  \draw[fill,line width=0.4pt] (3.22,1.15) circle[radius=0.035];
+  \node[anchor=south] at (3.16,1.42) {甲};
+  \draw[line width=0.45pt] (3.85,1.16) .. controls (4.05,1.28) and (4.12,1.02) .. (4.28,1.16);
+  \draw[line width=0.45pt] (4.18,1.16) .. controls (4.32,1.26) and (4.38,1.06) .. (4.48,1.16);
+  \node[anchor=south] at (4.28,1.32) {$O$};
+  \draw[line width=0.55pt,rounded corners=0.16cm] (4.52,0.92) rectangle (5.88,1.38);
+  \draw[line width=0.35pt,dash pattern=on 1.1pt off 0.7pt] (4.72,1.15) -- (5.68,1.15);
+  \draw[fill,line width=0.4pt] (5.28,1.15) circle[radius=0.035];
+  \node[anchor=south] at (5.20,1.42) {乙};
+  \draw[line width=0.5pt] (5.88,1.16) -- (6.12,1.16);
+  \draw[line width=0.55pt] (6.08,1.42) .. controls (6.55,1.62) and (6.85,1.28) .. (6.72,0.98);
+  \draw[line width=0.5pt] (6.22,1.28) .. controls (6.48,1.18) and (6.62,1.08) .. (6.48,0.88);
+  \draw[line width=0.45pt] (6.18,1.05) .. controls (6.42,0.92) and (6.68,1.00) .. (6.55,1.16);
+  \draw[line width=0.4pt] (6.42,0.86) .. controls (6.62,0.72) and (6.92,0.82) .. (6.78,1.05);
+\end{tikzpicture}%
+}
 \caption{图8-4}
 \end{figure}
 
@@ -10626,7 +10700,36 @@ s，那么，用相同的力在相同的时间内，可以把质量为 \(\frac{m
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-5}]{assets/physics-1/fig-p0220-01.png}}
+% fig-alt: 图8-5：人向右推车。同一水平线上左箭F2向左、右箭F1向右。地为虚线。人为示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt] (0.05,0.18) -- (7.15,0.18);
+  \draw[line width=0.55pt] (1.15,2.55) circle[radius=0.28];
+  \draw[line width=0.45pt] (0.95,2.72) .. controls (1.15,2.92) and (1.42,2.88) .. (1.48,2.68);
+  \draw[line width=0.55pt] (1.22,2.28) -- (1.55,1.55) -- (1.85,0.72);
+  \draw[line width=0.55pt] (1.48,2.22) -- (2.35,1.62);
+  \draw[line width=0.5pt] (1.42,1.85) -- (2.55,1.48);
+  \draw[line width=0.55pt] (1.55,1.55) -- (0.72,0.28);
+  \draw[line width=0.5pt] (1.62,1.48) -- (1.95,0.28);
+  \draw[line width=0.45pt] (0.62,0.28) -- (0.88,0.18) -- (1.05,0.32);
+  \draw[line width=0.45pt] (1.82,0.28) -- (2.12,0.18) -- (2.22,0.32);
+  \draw[line width=0.65pt] (0.12,1.48) -- (6.55,1.48);
+  \draw[line width=0.7pt,->] (1.05,1.48) -- (0.12,1.48);
+  \node[anchor=south] at (0.42,1.54) {$F_{2}$};
+  \draw[line width=0.6pt] (2.72,0.42) -- (2.72,1.95) -- (5.35,1.95) -- (5.35,0.42) -- cycle;
+  \draw[line width=0.45pt] (2.88,1.72) -- (5.18,1.72);
+  \draw[line width=0.4pt] (3.05,1.55) -- (3.05,1.78);
+  \draw[line width=0.4pt] (3.28,1.48) -- (3.28,1.82);
+  \draw[line width=0.4pt] (4.55,1.52) -- (3.72,1.95);
+  \draw[line width=0.4pt] (4.85,1.48) -- (4.15,1.95);
+  \draw[line width=0.55pt] (3.35,0.42) circle[radius=0.28];
+  \draw[line width=0.55pt] (4.65,0.42) circle[radius=0.28];
+  \draw[line width=0.35pt] (3.35,0.42) circle[radius=0.10];
+  \draw[line width=0.35pt] (4.65,0.42) circle[radius=0.10];
+  \draw[line width=0.7pt,->] (5.55,1.48) -- (6.55,1.48);
+  \node[anchor=south] at (6.22,1.54) {$F_{1}$};
+\end{tikzpicture}%
+}
 \caption{图8-5}
 \end{figure}
 
@@ -10643,7 +10746,37 @@ s，那么，用相同的力在相同的时间内，可以把质量为 \(\frac{m
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8·6}]{assets/physics-1/fig-p0220-02.png}}
+% fig-alt: 图8·6：上为竖线砖块压斜线地面。中为隔离砖，F'向上、G向下，中有黑点。下为地面，F''向下
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.65pt] (0.85,2.55) rectangle (2.55,3.35);
+  \begin{scope}
+    \clip (0.88,2.57) rectangle (2.52,3.33);
+    \foreach \s in {1.00,1.14,1.28,1.42,1.56,1.70,1.84,1.98,2.12,2.26,2.40}
+      \draw[line width=0.26pt] (\s,2.57) -- (\s,3.33);
+  \end{scope}
+  \draw[line width=0.6pt] (0.35,2.55) -- (3.05,2.55);
+  \begin{scope}
+    \clip (0.35,2.22) rectangle (3.05,2.55);
+    \foreach \s in {-0.1,0.18,...,3.1}
+      \draw[line width=0.28pt] (\s,2.55) -- (\s+0.28,2.22);
+  \end{scope}
+  \draw[line width=0.6pt] (0.55,0.85) rectangle (2.85,1.85);
+  \draw[fill,line width=0.45pt] (1.70,1.35) circle[radius=0.045];
+  \draw[line width=0.7pt,->] (1.70,1.85) -- (1.70,2.18);
+  \node[anchor=west] at (1.78,2.08) {$F'$};
+  \draw[line width=0.7pt,->] (1.70,1.35) -- (1.70,0.28);
+  \node[anchor=west] at (1.78,0.42) {$G$};
+  \draw[line width=0.6pt] (0.15,-0.55) -- (3.25,-0.55);
+  \begin{scope}
+    \clip (0.15,-0.88) rectangle (3.25,-0.55);
+    \foreach \s in {-0.2,0.12,...,3.3}
+      \draw[line width=0.28pt] (\s,-0.55) -- (\s+0.28,-0.88);
+  \end{scope}
+  \draw[line width=0.7pt,->] (1.70,-0.55) -- (1.70,-1.28);
+  \node[anchor=west] at (1.78,-1.12) {$F''$};
+\end{tikzpicture}%
+}
 \caption{图8·6}
 \end{figure}
 
@@ -10675,7 +10808,42 @@ F _ {B} = m _ {B} a _ {B}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-7}]{assets/physics-1/fig-p0221-01.png}}
+% fig-alt: 图8-7：A、B立于小车上对拉。绳下FA箭向右、FB箭向左；A下箭向右，B下箭向左。人为示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt] (0.05,0.42) -- (8.55,0.42);
+  \draw[line width=0.55pt] (0.72,3.55) circle[radius=0.26];
+  \draw[line width=0.5pt] (0.58,3.42) -- (0.58,2.15) -- (0.95,2.15) -- (0.95,2.55);
+  \draw[line width=0.5pt] (0.95,3.15) -- (1.55,2.72);
+  \draw[line width=0.5pt] (0.70,2.15) -- (0.58,0.78);
+  \draw[line width=0.5pt] (0.88,2.15) -- (1.02,0.78);
+  \draw[line width=0.5pt] (0.35,0.62) -- (1.35,0.62);
+  \draw[line width=0.45pt] (0.55,0.55) circle[radius=0.10];
+  \draw[line width=0.45pt] (1.15,0.55) circle[radius=0.10];
+  \draw[line width=0.55pt] (7.15,3.55) circle[radius=0.26];
+  \draw[line width=0.5pt] (7.00,3.42) -- (7.00,2.15) -- (7.38,2.15) -- (7.38,2.55);
+  \draw[line width=0.5pt] (7.00,3.15) -- (6.40,2.72);
+  \draw[line width=0.5pt] (7.12,2.15) -- (6.95,0.78);
+  \draw[line width=0.5pt] (7.28,2.15) -- (7.42,0.78);
+  \draw[line width=0.5pt] (6.62,0.62) -- (7.62,0.62);
+  \draw[line width=0.45pt] (6.82,0.55) circle[radius=0.10];
+  \draw[line width=0.45pt] (7.42,0.55) circle[radius=0.10];
+  \draw[line width=0.6pt] (1.55,2.72) -- (6.40,2.72);
+  \draw[line width=0.35pt] (1.85,2.64) -- (6.10,2.64);
+  \foreach \s in {2.05,2.45,2.85,3.25,3.65,4.05,4.45,4.85,5.25,5.45,5.85}
+    \draw[line width=0.28pt] (\s,2.64) -- (\s+0.12,2.72);
+  \draw[line width=0.4pt] (1.48,2.72) .. controls (1.42,2.35) and (1.58,2.05) .. (1.38,1.72);
+  \draw[line width=0.4pt] (6.48,2.72) .. controls (6.55,2.35) and (6.38,2.05) .. (6.58,1.72);
+  \draw[line width=0.6pt,->] (2.15,2.28) -- (3.15,2.28);
+  \node[anchor=south] at (2.55,2.32) {$F_{A}$};
+  \draw[line width=0.6pt,->] (5.85,2.28) -- (4.85,2.28);
+  \node[anchor=south] at (5.35,2.32) {$F_{B}$};
+  \node[anchor=east] at (0.58,0.10) {$A$};
+  \draw[line width=0.5pt,->] (0.68,0.10) -- (1.22,0.10);
+  \node[anchor=west] at (7.38,0.10) {$B$};
+  \draw[line width=0.5pt,->] (7.28,0.10) -- (6.74,0.10);
+\end{tikzpicture}%
+}
 \caption{图8-7}
 \end{figure}
 
@@ -10727,7 +10895,28 @@ F _ {B} = m _ {B} a _ {B}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-8}]{assets/physics-1/fig-p0224-01.png}}
+% fig-alt: 图8-8：木板上乙块、其上偏后为甲块。甲标在顶面，乙标在前面。桌右下有桌腿
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt] (0.15,0.85) -- (5.15,0.85) -- (6.15,1.42) -- (1.15,1.42) -- cycle;
+  \draw[line width=0.55pt] (5.15,0.85) -- (5.15,0.22);
+  \draw[line width=0.55pt] (5.55,0.98) -- (5.55,0.28);
+  \draw[line width=0.55pt] (5.95,1.18) -- (5.95,0.38);
+  \draw[line width=0.6pt] (0.55,0.95) rectangle (3.55,2.15);
+  \draw[line width=0.55pt] (0.55,2.15) -- (1.25,2.58) -- (4.25,2.58) -- (3.55,2.15);
+  \draw[line width=0.55pt] (3.55,0.95) -- (4.25,1.38) -- (4.25,2.58);
+  \begin{scope}
+    \clip (0.58,0.98) rectangle (3.52,2.12);
+    \foreach \s in {0.78,1.02,1.26,1.50,1.74,1.98,2.22,2.46,2.70,2.94,3.18,3.42}
+      \draw[line width=0.22pt] (\s,0.98) -- (\s,2.12);
+  \end{scope}
+  \node[anchor=center] at (2.05,1.52) {乙};
+  \draw[line width=0.6pt] (0.95,2.28) rectangle (2.85,3.38);
+  \draw[line width=0.55pt] (0.95,3.38) -- (1.55,3.72) -- (3.45,3.72) -- (2.85,3.38);
+  \draw[line width=0.55pt] (2.85,2.28) -- (3.45,2.62) -- (3.45,3.72);
+  \node[anchor=south] at (2.05,3.48) {甲};
+\end{tikzpicture}%
+}
 \caption{图8-8}
 \end{figure}
 
@@ -10760,7 +10949,26 @@ F _ {B} = m _ {B} a _ {B}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-9}]{assets/physics-1/fig-p0225-02.png}}
+% fig-alt: 图8-9右图：乙块。N2自顶向上，N2'沿同轴向下，G2自底向下。左图甲为未改的图示碎片
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt] (0.55,1.15) rectangle (2.15,2.55);
+  \draw[line width=0.55pt] (0.55,2.55) -- (1.15,2.95) -- (2.75,2.95) -- (2.15,2.55);
+  \draw[line width=0.55pt] (2.15,1.15) -- (2.75,1.55) -- (2.75,2.95);
+  \begin{scope}
+    \clip (0.58,1.18) rectangle (2.12,2.52);
+    \foreach \s in {0.78,0.98,1.18,1.38,1.58,1.78,1.98}
+      \draw[line width=0.2pt] (\s,1.18) -- (\s,2.52);
+  \end{scope}
+  \node[anchor=east] at (1.22,1.82) {乙};
+  \draw[line width=0.7pt,->] (1.35,2.55) -- (1.35,3.35);
+  \node[anchor=west] at (1.42,3.18) {$N_{2}$};
+  \draw[line width=0.65pt,->] (1.35,2.55) -- (1.35,0.55);
+  \node[anchor=west] at (1.42,0.72) {$N_{2}'$};
+  \draw[line width=0.7pt,->] (1.35,0.42) -- (1.35,-0.28);
+  \node[anchor=west] at (1.42,-0.12) {$G_{2}$};
+\end{tikzpicture}%
+}
 \caption{图8-9}
 \end{figure}
 
@@ -10829,7 +11037,29 @@ N _ {2} = 59 \text{牛顿} - 10 \times 9.8 \text{牛顿} - 10 \times 2 \text{牛
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-10}]{assets/physics-1/fig-p0226-01.png}}
+% fig-alt: 图8-10：桌面上甲、乙两块，绳A相连，绳B向右至F箭。甲、乙标在块上方，A、B标在绳下
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt] (0.10,1.05) -- (6.35,1.05) -- (7.15,1.55) -- (0.90,1.55) -- cycle;
+  \draw[line width=0.5pt] (5.85,1.05) -- (5.85,0.22);
+  \draw[line width=0.5pt] (6.35,1.22) -- (6.35,0.32);
+  \draw[line width=0.6pt] (0.55,1.22) rectangle (1.55,2.15);
+  \draw[line width=0.5pt] (0.55,2.15) -- (0.92,2.42) -- (1.92,2.42) -- (1.55,2.15);
+  \draw[line width=0.5pt] (1.55,1.22) -- (1.92,1.49) -- (1.92,2.42);
+  \node[anchor=south] at (1.05,2.46) {甲};
+  \draw[line width=0.6pt] (2.35,1.22) rectangle (3.35,2.15);
+  \draw[line width=0.5pt] (2.35,2.15) -- (2.72,2.42) -- (3.72,2.42) -- (3.35,2.15);
+  \draw[line width=0.5pt] (3.35,1.22) -- (3.72,1.49) -- (3.72,2.42);
+  \node[anchor=south] at (2.85,2.46) {乙};
+  \draw[line width=0.55pt] (1.55,1.68) -- (2.35,1.68);
+  \node[anchor=north] at (1.95,1.62) {$A$};
+  \draw[line width=0.5pt] (3.35,1.68) .. controls (3.70,1.78) and (4.05,1.58) .. (4.45,1.68);
+  \draw[line width=0.5pt] (4.45,1.68) -- (5.15,1.68);
+  \node[anchor=north] at (4.15,1.58) {$B$};
+  \draw[line width=0.7pt,->] (5.15,1.68) -- (6.15,1.68);
+  \node[anchor=south] at (5.72,1.72) {$F$};
+\end{tikzpicture}%
+}
 \caption{图8-10}
 \end{figure}
 
