@@ -8488,7 +8488,22 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0100-01.png}}
+\fitfig{%
+% fig-alt: 第10题：左小圆O1、右大圆O2，水平实线自S过两圆心并略伸出大圆右缘；斜实线自S向下交小圆于A1、B1、大圆于A2、B2并略伸出B2。扫描只标S，不标S'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.20,1.78) -- (6.47,1.78);
+  \draw[line width=0.7pt] (0.20,1.78) -- (5.95,0.66);
+  \draw[line width=0.7pt] (2.05,1.78) circle[radius=0.70];
+  \draw[line width=0.7pt] (5.15,1.78) circle[radius=1.16];
+  \node[anchor=south east,inner sep=1pt] at (0.18,1.82) {$S$};
+  \node[anchor=south,inner sep=1pt] at (2.11,1.84) {$O_1$};
+  \node[anchor=south,inner sep=1pt] at (5.23,1.84) {$O_2$};
+  \node[anchor=north,inner sep=1pt] at (1.28,1.34) {$A_1$};
+  \node[anchor=north,inner sep=1pt] at (2.57,1.28) {$B_1$};
+  \node[anchor=north,inner sep=1pt] at (4.31,0.94) {$A_2$};
+  \node[anchor=north,inner sep=1pt] at (5.63,0.70) {$B_2$};
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -8524,7 +8539,26 @@ AC 上。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1.76}]{assets/plane-geometry-2/fig-p0101-01.png}}
+\fitfig{%
+% fig-alt: 图1.76：△ABC，BC上小正方形D'E'F'G'与大正方形DEFG皆实线，G'、G在AB，F'、F在射线BF'上，F在AC；虚线自B过F'至F并略伸出。直角不另作标记
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[dashed,line width=0.55pt] (0.20,0.28) -- (5.64,3.18);
+  \draw[line width=0.75pt] (0.20,0.28) -- (6.45,0.28) -- (4.55,5.25) -- cycle;
+  \draw[line width=0.75pt] (1.01,0.28) -- (1.93,0.28) -- (1.93,1.20) -- (1.01,1.20) -- cycle;
+  \draw[line width=0.75pt] (2.62,0.28) -- (5.39,0.28) -- (5.39,3.05) -- (2.62,3.05) -- cycle;
+  \node[anchor=south,inner sep=1pt] at (4.55,5.29) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (0.18,0.26) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (6.47,0.26) {$C$};
+  \node[anchor=east,inner sep=1pt] at (2.56,3.05) {$G$};
+  \node[anchor=south west,inner sep=1pt] at (5.43,3.11) {$F$};
+  \node[anchor=south,inner sep=1pt] at (1.01,1.26) {$G'$};
+  \node[anchor=south,inner sep=1pt] at (1.93,1.26) {$F'$};
+  \node[anchor=north,inner sep=1pt] at (1.01,0.26) {$D'$};
+  \node[anchor=north,inner sep=1pt] at (1.93,0.26) {$E'$};
+  \node[anchor=north,inner sep=1pt] at (2.62,0.26) {$D$};
+  \node[anchor=north,inner sep=1pt] at (5.39,0.26) {$E$};
+\end{tikzpicture}%
+}
 \caption{图 1.76}
 \end{figure}
 
@@ -8597,7 +8631,31 @@ AC 上。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.77}]{assets/plane-geometry-2/fig-p0102-04.png}}
+\fitfig{%
+% fig-alt: 图1.77：△ABC实线；以BC为边向上的虚线正方形顶G'、F'，竖边虚线落于B、C；内接正方形DEFG实线并作实对角线GE、FD；虚线G'G、F'F、A至底上D'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[dashed,line width=0.55pt] (0.25,6.15) -- (0.25,0.40);
+  \draw[dashed,line width=0.55pt] (6.00,6.15) -- (6.00,0.40);
+  \draw[dashed,line width=0.55pt] (0.25,6.15) -- (6.00,6.15);
+  \draw[dashed,line width=0.55pt] (0.25,6.15) -- (2.20,2.85);
+  \draw[dashed,line width=0.55pt] (6.00,6.15) -- (4.65,2.85);
+  \draw[dashed,line width=0.55pt] (3.65,4.67) -- (3.65,0.40);
+  \draw[line width=0.75pt] (3.65,4.67) -- (0.25,0.40) -- (6.00,0.40) -- cycle;
+  \draw[line width=0.75pt] (2.20,2.85) -- (4.65,2.85) -- (4.65,0.40) -- (2.20,0.40) -- cycle;
+  \draw[line width=0.75pt] (2.20,2.85) -- (4.65,0.40);
+  \draw[line width=0.75pt] (4.65,2.85) -- (2.20,0.40);
+  \node[anchor=east,inner sep=1pt] at (0.19,6.23) {$G'$};
+  \node[anchor=west,inner sep=1pt] at (6.06,6.23) {$F'$};
+  \node[anchor=south east,inner sep=1pt] at (3.61,4.73) {$A$};
+  \node[anchor=east,inner sep=1pt] at (2.14,2.87) {$G$};
+  \node[anchor=west,inner sep=1pt] at (4.71,2.87) {$F$};
+  \node[anchor=north east,inner sep=1pt] at (0.21,0.38) {$B$};
+  \node[anchor=north,inner sep=1pt] at (2.20,0.38) {$D$};
+  \node[anchor=north,inner sep=1pt] at (3.65,0.38) {$D'$};
+  \node[anchor=north,inner sep=1pt] at (4.65,0.38) {$E$};
+  \node[anchor=north west,inner sep=1pt] at (6.04,0.38) {$C$};
+\end{tikzpicture}%
+}
 \caption{图1.77}
 \end{figure}
 
@@ -8616,7 +8674,21 @@ AC 上。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-78}]{assets/plane-geometry-2/fig-p0103-01.png}}
+\fitfig{%
+% fig-alt: 图1-78：A在右上，B左下、C右下，△ABC实线；B'在AB、C'在AC，B'M'C'水平虚线；虚线自A过M'至M并略伸出底边。扫描标C'不标O'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[dashed,line width=0.55pt] (2.45,2.62) -- (5.02,2.62);
+  \draw[dashed,line width=0.55pt] (5.55,5.85) -- (2.12,-0.08);
+  \draw[line width=0.75pt] (0.30,0.38) -- (4.65,0.38) -- (5.55,5.85) -- cycle;
+  \node[anchor=south west,inner sep=1pt] at (5.59,5.87) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (0.28,0.36) {$B$};
+  \node[anchor=north,inner sep=1pt] at (4.65,0.34) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (2.41,2.66) {$B'$};
+  \node[anchor=west,inner sep=1pt] at (5.08,2.62) {$C'$};
+  \node[anchor=north,inner sep=1pt] at (3.73,2.57) {$M'$};
+  \node[anchor=north,inner sep=1pt] at (2.48,0.34) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-78}
 \end{figure}
 
@@ -8677,7 +8749,19 @@ MA = MN = NB。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-79}]{assets/plane-geometry-2/fig-p0104-01.png}}
+\fitfig{%
+% fig-alt: 图1-79：O为公共端点，射线OA、OB实线，M在OA、N在OB，MN实线。无虚线、无直角标记
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0.22,0.36) -- (3.30,2.68);
+  \draw[line width=0.75pt] (0.22,0.36) -- (4.35,0.36);
+  \draw[line width=0.75pt] (1.70,1.47) -- (2.78,0.36);
+  \node[anchor=east,inner sep=1pt] at (0.16,0.36) {$O$};
+  \node[anchor=south,inner sep=1pt] at (3.30,2.72) {$A$};
+  \node[anchor=west,inner sep=1pt] at (4.41,0.36) {$B$};
+  \node[anchor=south,inner sep=1pt] at (1.70,1.53) {$M$};
+  \node[anchor=north,inner sep=1pt] at (2.78,0.32) {$N$};
+\end{tikzpicture}%
+}
 \caption{图1-79}
 \end{figure}
 
@@ -8687,7 +8771,28 @@ MA = MN = NB。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-80}]{assets/plane-geometry-2/fig-p0104-02.png}}
+\fitfig{%
+% fig-alt: 图1-80：OA、OB、AB实线，M在OA、N在OB、MN实线；M'在OA靠近A，N'在AN上，M'N'实线；虚线AN至N、N'B'水平（∥OB）交AB于B'、CN'（∥AB）。扫描标公共顶点外的C
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[dashed,line width=0.55pt] (3.42,2.92) -- (2.73,0.32);
+  \draw[dashed,line width=0.55pt] (3.14,1.88) -- (3.98,1.88);
+  \draw[dashed,line width=0.55pt] (3.98,0.32) -- (3.14,1.88);
+  \draw[line width=0.75pt] (0.18,0.32) -- (3.42,2.92);
+  \draw[line width=0.75pt] (0.18,0.32) -- (4.82,0.32);
+  \draw[line width=0.75pt] (3.42,2.92) -- (4.82,0.32);
+  \draw[line width=0.75pt] (1.54,1.41) -- (2.73,0.32);
+  \draw[line width=0.75pt] (2.67,2.32) -- (3.14,1.88);
+  \node[anchor=east,inner sep=1pt] at (0.12,0.32) {$O$};
+  \node[anchor=south,inner sep=1pt] at (3.42,2.97) {$A$};
+  \node[anchor=west,inner sep=1pt] at (4.87,0.34) {$B$};
+  \node[anchor=south east,inner sep=1pt] at (1.52,1.45) {$M$};
+  \node[anchor=south,inner sep=1pt] at (2.67,2.38) {$M'$};
+  \node[anchor=north,inner sep=1pt] at (2.73,0.28) {$N$};
+  \node[anchor=north,inner sep=1pt] at (3.98,0.28) {$C$};
+  \node[anchor=east,inner sep=1pt] at (2.86,1.62) {$N'$};
+  \node[anchor=west,inner sep=1pt] at (4.04,1.90) {$B'$};
+\end{tikzpicture}%
+}
 \caption{图1-80}
 \end{figure}
 
@@ -8750,7 +8855,29 @@ MA = MN = NB。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-81}]{assets/plane-geometry-2/fig-p0105-01.png}}
+\fitfig{%
+% fig-alt: 图1-81：OA、OB、AB、MN实线；D在OA上介于M与A；N'在OB上介于N与B；M'在BM上，A'在AB上；虚线BM、N'M'、M'A'、D至M'，M'旁短虚弧。扫描另标D
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[dashed,line width=0.55pt] (4.70,0.32) -- (1.74,1.72);
+  \draw[dashed,line width=0.55pt] (3.36,0.32) -- (2.86,1.19);
+  \draw[dashed,line width=0.55pt] (2.86,1.19) -- (3.82,2.06);
+  \draw[dashed,line width=0.55pt] (2.36,2.28) -- (2.86,1.19);
+  \draw[dashed,line width=0.55pt] (2.86,1.19) ++(205:0.32) arc (205:285:0.32);
+  \draw[line width=0.75pt] (0.20,0.32) -- (3.28,3.12);
+  \draw[line width=0.75pt] (0.20,0.32) -- (4.70,0.32);
+  \draw[line width=0.75pt] (3.28,3.12) -- (4.70,0.32);
+  \draw[line width=0.75pt] (1.74,1.72) -- (2.54,0.32);
+  \node[anchor=east,inner sep=1pt] at (0.14,0.32) {$O$};
+  \node[anchor=south,inner sep=1pt] at (3.28,3.17) {$A$};
+  \node[anchor=west,inner sep=1pt] at (4.75,0.32) {$B$};
+  \node[anchor=south east,inner sep=1pt] at (1.72,1.76) {$M$};
+  \node[anchor=south east,inner sep=1pt] at (2.34,2.32) {$D$};
+  \node[anchor=north,inner sep=1pt] at (2.54,0.28) {$N$};
+  \node[anchor=north,inner sep=1pt] at (3.36,0.28) {$N'$};
+  \node[anchor=west,inner sep=1pt] at (3.18,0.70) {$M'$};
+  \node[anchor=west,inner sep=1pt] at (3.87,2.10) {$A'$};
+\end{tikzpicture}%
+}
 \caption{图1-81}
 \end{figure}
 
@@ -8795,7 +8922,23 @@ MA = MN = NB。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0106-03.png}}
+\fitfig{%
+% fig-alt: 第6题：圆O实线；虚线半径至圆周上点，旁标R；实线△顶在该点，底边左右略伸出两底角外，底角各一弧标α、β，两边略过底角；内一水平虚弦低于O，连两边
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[dashed,line width=0.55pt] (3.02,2.48) -- (3.73,4.24);
+  \draw[dashed,line width=0.55pt] (1.24,1.70) -- (4.90,1.70);
+  \draw[line width=0.7pt] (3.02,2.48) circle[radius=1.90];
+  \draw[line width=0.75pt] (3.73,4.24) -- (0.04,0.47);
+  \draw[line width=0.75pt] (3.73,4.24) -- (5.43,0.56);
+  \draw[line width=0.75pt] (-0.10,0.65) -- (5.64,0.81);
+  \draw[line width=0.55pt] (0.22,0.66) ++(1.57:0.38) arc (1.57:45.56:0.38);
+  \draw[line width=0.55pt] (5.32,0.80) ++(114.77:0.38) arc (114.77:181.57:0.38);
+  \node[anchor=south,inner sep=1pt] at (3.02,2.53) {$O$};
+  \node[anchor=east,inner sep=1pt] at (3.38,3.63) {$R$};
+  \node[anchor=west,inner sep=1pt] at (0.78,0.96) {$\alpha$};
+  \node[anchor=east,inner sep=1pt] at (4.68,1.16) {$\beta$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
