@@ -343,8 +343,8 @@ def build_one(
         if proc.returncode != 0:
             raise BuildError(f"{source.name}: Pandoc 失败：\n{proc.stderr}")
     latex_proc = run_xelatex(tex_path, work, epoch)
-    pdf_candidate = work / "book.pdf"
-    log_path = work / "book.log"
+    pdf_candidate = work / f"{tex_path.stem}.pdf"
+    log_path = work / f"{tex_path.stem}.log"
     log_text = log_path.read_text(encoding="utf-8", errors="replace") if log_path.is_file() else ""
     tex_errors = [line for line in log_text.splitlines() if line.startswith("! ")]
     if not pdf_candidate.is_file() or FATAL_LOG.search(log_text):

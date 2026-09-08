@@ -2,7 +2,9 @@
 
 ## 2026-09-08
 
-- 新增 XeLaTeX/ctex 分册 PDF 构建：17 册规范 Markdown 仍是唯一正文源，EPUB 构建链保持不变。
+- `master` 分支改为以 `tex/books` 为规范正文；`books/*.md` 保留作上游对照。
+- 本分支移除 EPUB 目录与 `scripts/build_epubs.py`；PDF 由 TeX 源构建。
+- 新增 XeLaTeX/ctex 分册与合订 PDF 构建。
 - 新增数学、物理学、化学三本合订 PDF：由已通过校验的分册 PDF 按原书顺序装订，页码按册重起。
 - `make pdf` / `make pdf-verify` / `make tex-deps` 写入 Makefile；GitHub Release 仍只发布合订本，17 册独立 PDF 仅本地构建。
 - 修正 PDF 页眉与正文重叠：页眉高度和 `headsep` 改由 geometry 计算，页眉使用单倍行距。

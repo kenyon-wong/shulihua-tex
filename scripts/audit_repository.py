@@ -40,15 +40,11 @@ REQUIRED = {
     "docs/MAINTENANCE.md",
     "docs/PRIVACY.md",
     "docs/PROVENANCE.md",
-    "epub/epub.css",
-    "epub/wrap_tables.lua",
-    "epub/pandoc-data/translations/zh-CN.yaml",
     "reports/.gitkeep",
     "scripts/audit_pdfs.py",
     "scripts/audit_privacy.py",
     "scripts/audit_repository.py",
     "scripts/audit_sources.py",
-    "scripts/build_epubs.py",
     "scripts/build_pdfs.py",
     "scripts/convert_md_to_tex.py",
     "scripts/audit_tex_sources.py",
@@ -267,7 +263,9 @@ def main() -> int:
         "scripts/audit_privacy.py",
         "scripts/audit_repository.py",
         "scripts/audit_sources.py",
-        "scripts/build_epubs.py",
+        "scripts/build_pdfs.py",
+        "scripts/convert_md_to_tex.py",
+        "scripts/audit_tex_sources.py",
     }
     unexpected_executable = sorted(set(executable_files) - allowed_executable)
     if unexpected_executable:

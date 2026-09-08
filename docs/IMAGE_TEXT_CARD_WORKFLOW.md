@@ -127,13 +127,13 @@ python3 scripts/audit_image_text_cards.py \
 ## 阶段七：构建门禁
 
 ```bash
-make epub
+make pdf
 make pre-push
 ```
 
 必须满足：
 
-- 17册源文件和EPUB全部通过；
+- 17册源文件和 PDF 全部通过；
 - 缺失资源、孤立资源均为0；
 - 图片资产与引用减少量符合决策表；
 - MathML、表格和脚注无意外变化；
@@ -152,4 +152,4 @@ make pre-push
 - 构建、Calibre和隐私审计结果；
 - Release资产SHA-256。
 
-Release继续遵循“仅发布三本学科合订本（EPUB 与重建 PDF）”的策略。
+本分支 Release 只涉及重建 PDF；合订 EPUB 仍由 `main` 发布。

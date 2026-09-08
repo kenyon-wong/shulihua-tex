@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit Git push candidates and generated EPUBs for local or secret information."""
+"""Audit Git push candidates and generated books for local or secret information."""
 from __future__ import annotations
 
 import argparse

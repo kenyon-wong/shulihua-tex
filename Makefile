@@ -1,8 +1,8 @@
 PYTHON ?= $(shell test -x "$(CURDIR)/.venv/bin/python" && echo "$(CURDIR)/.venv/bin/python" || echo python3)
 
-.PHONY: all audit pdf-audit repository privacy epub pdf pdf-tex pdf-verify tex-deps tex-audit md-to-tex verify pre-push clean
+.PHONY: all audit pdf-audit repository privacy pdf pdf-tex pdf-verify tex-deps tex-audit md-to-tex verify pre-push clean
 
-all: audit epub
+all: audit tex-audit
 
 audit:
 	$(PYTHON) scripts/audit_sources.py
@@ -17,11 +17,8 @@ repository:
 privacy:
 	$(PYTHON) scripts/audit_privacy.py
 
-epub:
-	$(PYTHON) scripts/build_epubs.py
-
 pdf:
-	$(PYTHON) scripts/build_pdfs.py
+	$(PYTHON) scripts/build_pdfs.py --from-tex
 
 pdf-tex:
 	$(PYTHON) scripts/build_pdfs.py --from-tex
@@ -42,9 +39,9 @@ tex-deps:
 	tlmgr install $$(grep -v '^[[:space:]]*#' tex/packages.txt | grep -v '^[[:space:]]*$$')
 
 verify:
-	$(PYTHON) scripts/build_epubs.py --verify-only
+	$(PYTHON) scripts/build_pdfs.py --verify-only
 
-pre-push: audit pdf-audit repository privacy verify
+pre-push: audit tex-audit pdf-audit repository privacy verify
 
 clean:
 	rm -rf .build dist reports/*.json

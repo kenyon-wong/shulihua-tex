@@ -7,9 +7,8 @@
 3. 新增或替换图片时提供真实描述性的替代文本。
 4. 不移动 `books/assets/`，除非同步更新所有 Markdown 引用。
 5. 运行 `make audit`。
-6. 运行 `make all`，确认 17 册 EPUB 全部通过。
-7. 运行 `make verify`，独立复核已有 EPUB。
-8. 若改动可能影响 PDF 版面，再运行 `make pdf` 与 `make pdf-verify`。
+6. 运行 `make audit` 与 `make tex-audit`。
+7. 运行 `make pdf` 与 `make pdf-verify`。
 
 图片疑似为习题标题、练习标题、页眉或其他纯文字卡片时，不得直接删除；先执行 [`IMAGE_TEXT_CARD_WORKFLOW.md`](IMAGE_TEXT_CARD_WORKFLOW.md) 中的只读候选、长上下文、原PDF版面、隔离修改和构建门禁。
 
@@ -31,7 +30,7 @@
 
 ## 公式
 
-EPUB 构建使用 MathML，PDF 构建使用 XeLaTeX。不要对公式区域执行全角标点替换。修改公式后必须确认源数学片段数与 EPUB MathML 数一致，并抽检对应 PDF 页。
+本分支 PDF 由 XeLaTeX 从 `tex/books` 构建。不要对公式区域执行全角标点替换。修改公式后抽检对应 PDF 页。Markdown 对照稿有上游更新时，先 `make md-to-tex` 再审阅 TeX，不要只改 Markdown。
 
 ## PDF
 
@@ -47,7 +46,7 @@ EPUB 构建使用 MathML，PDF 构建使用 XeLaTeX。不要对公式区域执�
 从 `v2.0.0` 起执行以下固定策略：
 
 1. Release 只上传数学、物理学、化学三本学科合订本，不上传17本独立分册；
-2. 合订产物包括 EPUB 与重建 PDF；17本独立 EPUB/PDF 仅作为合订输入与审计基线；
+2. 本分支合订产物为重建 PDF；EPUB 仍由 `main` 发布；
 3. 允许同时上传 `SHA256SUMS.txt`、发布清单等验证附件；
 4. 发布前必须通过确定性双构建、公共目录审计、Calibre 8.16.2 smoke、真实 fragment 定位、PDF 分册/合订校验和隐私审计；
 5. 既有 Release 保留，不覆盖、不追溯删除。
@@ -55,7 +54,7 @@ EPUB 构建使用 MathML，PDF 构建使用 XeLaTeX。不要对公式区域执�
 ## 生成物
 
 - `.build/`：Pandoc 中间文件与 XeLaTeX 工作目录
-- `dist/`：EPUB 与 PDF 输出
+- `dist/`：PDF 输出
 - `reports/*.json`：动态审计结果
 
 以上内容均由脚本重建，不纳入版本控制。

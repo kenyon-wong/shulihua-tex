@@ -227,15 +227,15 @@ if mode == "one" {
 
 phase("Prune");
 let prune_prompt = "";
-prune_prompt += "Verification passed. Prune Markdown and EPUB from branch master only. Do not touch main. Do not push.\n";
-prune_prompt += "Delete these paths if they exist: books/*.md matching '* - 数理化自学丛书编委会.md', epub/, scripts/build_epubs.py.\n";
-prune_prompt += "Keep: raw/, books/assets/, tex/, scripts/convert_md_to_tex.py, scripts/build_pdfs.py, scripts/audit_tex_sources.py, catalog.json, Makefile.\n";
+prune_prompt += "Verification passed. Remove EPUB build from branch master only. Keep Markdown. Do not touch main. Do not push.\n";
+prune_prompt += "Delete these paths if they exist: epub/, scripts/build_epubs.py.\n";
+prune_prompt += "Keep: books/*.md, raw/, books/assets/, tex/, scripts/convert_md_to_tex.py, scripts/build_pdfs.py, scripts/audit_tex_sources.py, catalog.json, Makefile.\n";
 prune_prompt += "Overwrite AGENTS.md with tex/BRANCH_AGENTS.md if not already identical.\n";
 prune_prompt += "Update Makefile so `pdf` runs `$(PYTHON) scripts/build_pdfs.py --from-tex` and `audit` runs tex-audit. Keep pdf-tex as an alias.\n";
 prune_prompt += "Update scripts/audit_repository.py REQUIRED: remove epub/epub.css, epub/wrap_tables.lua, epub/pandoc-data/translations/zh-CN.yaml, scripts/build_epubs.py if those files were deleted; add scripts/convert_md_to_tex.py and scripts/audit_tex_sources.py if missing.\n";
 prune_prompt += "Do not delete PNG files. Do not delete raw/.\n";
 prune_prompt += "Commit on master only, message: Remove Markdown and EPUB sources from the TeX-canonical master branch. Do not push.\n";
-prune_prompt += "Return deleted as repo-relative paths you actually removed. ok=true only if Markdown book files are gone from this branch and tex/books still has 17 files.";
+prune_prompt += "Return deleted as repo-relative paths you actually removed. ok=true only if EPUB builder is gone, Markdown books remain, and tex/books still has 17 files.";
 
 let prune = agent(prune_prompt, #{
     label: "prune-markdown-epub",

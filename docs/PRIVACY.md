@@ -13,7 +13,7 @@
 - 绝对路径符号链接
 - PNG 文本、EXIF、时间及其他隐私元数据块
 - `raw/` 中 PDF 的哈希、XMP/Info 元数据、附件、批注、表单、JavaScript与其他主动内容
-- `dist/` 中 EPUB 的全部文本型 ZIP 条目
+- `dist/` 中如仍有 EPUB，扫描其文本型 ZIP 条目；本分支默认只生成 PDF
 - 已有 Git 提交中的非 GitHub noreply 邮箱和历史补丁
 
 运行：
