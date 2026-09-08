@@ -11004,7 +11004,35 @@ R 两端的电压和电流表两端电压的和。用这个方法测出的电阻
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.48 欧姆表的构造原理}]{assets/physics-3/fig-p0171-01.png}}
+\fitfig{%
+% fig-alt: 图2.48。左端箭指左，右端箭指右。电池短线左、长线右，下标ε,r，无+、−。圆内针指右下，左+右−，上R_g下I_g。G右有右指箭。矩形R上标R，下滑箭指左，右接点后断划再右箭
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt,->] (0.72,1.55) -- (0.28,1.55);
+  \draw[line width=0.7pt] (0.72,1.55) -- (1.15,1.55);
+  \draw[line width=1.05pt] (1.28,1.38) -- (1.28,1.72);
+  \draw[line width=0.9pt] (1.42,1.22) -- (1.42,1.88);
+  \node[anchor=north,inner sep=1pt] at (1.48,1.16) {$\varepsilon,r$};
+  \draw[line width=0.7pt] (1.52,1.55) -- (2.05,1.55);
+  \node[anchor=south,inner sep=1pt] at (1.92,1.60) {$+$};
+  \draw[line width=0.7pt] (2.62,1.55) circle (0.32);
+  \draw[line width=0.55pt,->] (2.42,1.72) -- (2.84,1.38);
+  \node[anchor=north,inner sep=1pt] at (2.62,1.18) {$I_g$};
+  \node[anchor=south,inner sep=1pt] at (2.62,1.92) {$R_g$};
+  \node[anchor=south,inner sep=1pt] at (3.02,1.60) {$-$};
+  \draw[line width=0.7pt] (2.94,1.55) -- (3.18,1.55);
+  \draw[line width=0.55pt,->] (3.18,1.55) -- (3.52,1.55);
+  \draw[line width=0.7pt] (3.52,1.55) -- (3.72,1.55);
+  \draw[line width=0.7pt] (3.72,1.38) rectangle (4.78,1.72);
+  \node[anchor=south,inner sep=1pt] at (4.25,1.74) {$R$};
+  \draw[line width=0.7pt] (4.78,1.55) -- (5.08,1.55);
+  \fill (5.08,1.55) circle (1.2pt);
+  \draw[line width=0.7pt] (5.08,1.55) -- (5.08,1.22) -- (4.22,1.22);
+  \draw[line width=0.55pt,->] (4.22,1.22) -- (3.98,1.34);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (5.08,1.55) -- (5.72,1.55);
+  \draw[line width=0.7pt] (5.72,1.55) -- (6.05,1.55);
+  \draw[line width=0.55pt,->] (6.05,1.55) -- (6.48,1.55);
+\end{tikzpicture}%
+}
 \caption{图 2.48 欧姆表的构造原理}
 \end{figure}
 
@@ -11288,7 +11316,57 @@ I_{1}R_{1}=I_{3}R_{3};\quad I_{2}R_{2}=I_{4}R_{4}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.51 滑线式电桥}]{assets/physics-3/fig-p0174-01.png}}
+\fitfig{%
+% fig-alt: 图2.51。上R与R_x，中圆内G无针。滑线矩形内L_1箭指左、L_2箭指右，中下指箭标D。尺0至10，5处长刻。底两节电池长线皆左、短线皆右，上ε，无+、−。K刀掀起，左实心、右开口圆，断开。无电流箭
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.42,4.15) -- (1.15,4.15);
+  \fill (0.55,4.15) circle (1.3pt);
+  \node[anchor=east,inner sep=1pt] at (0.38,4.15) {$A$};
+  \draw[line width=0.7pt] (1.15,3.98) rectangle (2.05,4.32);
+  \node[anchor=south,inner sep=1pt] at (1.60,4.34) {$R$};
+  \draw[line width=0.7pt] (2.05,4.15) -- (4.05,4.15);
+  \fill (4.05,4.15) circle (1.3pt);
+  \node[anchor=south,inner sep=1pt] at (4.05,4.24) {$B$};
+  \draw[line width=0.7pt] (4.05,4.15) -- (5.15,4.15);
+  \draw[line width=0.7pt] (5.15,3.98) rectangle (6.05,4.32);
+  \node[anchor=south,inner sep=1pt] at (5.60,4.34) {$R_x$};
+  \draw[line width=0.7pt] (6.05,4.15) -- (7.55,4.15);
+  \fill (7.35,4.15) circle (1.3pt);
+  \node[anchor=west,inner sep=1pt] at (7.62,4.15) {$C$};
+  \draw[line width=0.7pt] (0.55,4.15) -- (0.55,0.32) -- (2.05,0.32);
+  \draw[line width=0.7pt] (7.55,4.15) -- (7.55,0.32) -- (5.55,0.32);
+  \draw[line width=0.7pt] (4.05,4.15) -- (4.05,3.72);
+  \draw[line width=0.7pt] (4.05,3.28) circle (0.22);
+  \node[inner sep=0pt] at (4.05,3.28) {$G$};
+  \draw[line width=0.7pt] (4.05,3.06) -- (4.05,2.33);
+  \draw[line width=0.7pt] (0.55,2.48) -- (7.55,2.48);
+  \draw[line width=0.7pt] (0.55,2.18) -- (7.55,2.18);
+  \draw[line width=0.55pt,->] (3.98,2.33) -- (0.78,2.33);
+  \node[anchor=south,inner sep=1pt] at (2.25,2.38) {$L_1$};
+  \draw[line width=0.55pt,->] (4.12,2.33) -- (7.32,2.33);
+  \node[anchor=south,inner sep=1pt] at (5.55,2.38) {$L_2$};
+  \draw[line width=0.55pt,->] (4.05,2.16) -- (4.05,1.58);
+  \node[anchor=west,inner sep=1pt] at (4.12,1.52) {$D$};
+  \draw[line width=0.6pt] (0.72,1.42) -- (7.38,1.42);
+  \foreach \n in {0,1,2,3,4,6,7,8,9,10} {
+    \draw[line width=0.55pt] ({0.72+\n*0.666},1.42) -- ({0.72+\n*0.666},1.52);
+    \node[anchor=north,inner sep=1pt] at ({0.72+\n*0.666},1.38) {$\n$};
+  }
+  \draw[line width=0.6pt] (4.05,1.42) -- (4.05,1.58);
+  \node[anchor=north,inner sep=1pt] at (4.05,1.38) {$5$};
+  \draw[line width=0.9pt] (2.18,0.08) -- (2.18,0.56);
+  \draw[line width=1.05pt] (2.32,0.16) -- (2.32,0.48);
+  \draw[line width=0.9pt] (2.46,0.08) -- (2.46,0.56);
+  \draw[line width=1.05pt] (2.60,0.16) -- (2.60,0.48);
+  \node[anchor=east,inner sep=1pt] at (2.08,0.32) {$\varepsilon$};
+  \draw[line width=0.7pt] (2.70,0.32) -- (4.35,0.32);
+  \fill (4.48,0.32) circle (1.15pt);
+  \draw[line width=0.7pt] (4.48,0.32) -- (4.88,0.55);
+  \draw[line width=0.7pt] (5.08,0.32) circle (1.5pt);
+  \node[anchor=south,inner sep=1pt] at (4.88,0.58) {$K$};
+  \draw[line width=0.7pt] (5.23,0.32) -- (5.55,0.32);
+\end{tikzpicture}%
+}
 \caption{图2.51 滑线式电桥}
 \end{figure}
 
@@ -11353,7 +11431,63 @@ I_{1}R_{1}=I_{3}R_{3};\quad I_{2}R_{2}=I_{4}R_{4}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.53 电势差计的校准测量}]{assets/physics-3/fig-p0175-02.png}}
+\fitfig{%
+% fig-alt: 图2.53。K_2刀搭上接点M，M、N皆实心，N空着。B_0短线左、长线右，下ε_0，上B_0。B_x长线左、短线右，下ε_x，上B_x。无+、−。右圆内G无针。D、O、X三箭皆指下。左I_2、I_1箭皆指上。底B_1两节皆长线左、短线右，下ε_1,r_1。K_1刀掀起，断开
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.38,5.05) -- (1.22,5.05);
+  \fill (1.35,5.05) circle (1.2pt);
+  \draw[line width=0.7pt] (1.35,5.05) -- (2.02,5.55);
+  \fill (2.02,5.55) circle (1.2pt);
+  \node[anchor=south,inner sep=1pt] at (1.78,5.58) {$M$};
+  \node[anchor=east,inner sep=1pt] at (1.18,5.18) {$K_2$};
+  \fill (2.02,4.55) circle (1.2pt);
+  \node[anchor=east,inner sep=1pt] at (1.92,4.48) {$N$};
+  \draw[line width=0.7pt] (2.02,5.55) -- (2.02,5.82) -- (2.85,5.82);
+  \draw[line width=1.05pt] (2.98,5.66) -- (2.98,5.98);
+  \draw[line width=0.9pt] (3.12,5.54) -- (3.12,6.10);
+  \node[anchor=south,inner sep=1pt] at (3.22,6.14) {$B_0$};
+  \node[anchor=north,inner sep=1pt] at (3.20,5.50) {$\varepsilon_0$};
+  \draw[line width=0.7pt] (3.22,5.82) -- (4.55,5.82) -- (4.55,4.28);
+  \draw[line width=0.7pt] (2.02,4.55) -- (2.02,4.28) -- (2.85,4.28);
+  \draw[line width=0.9pt] (2.98,4.00) -- (2.98,4.56);
+  \draw[line width=1.05pt] (3.12,4.12) -- (3.12,4.44);
+  \node[anchor=south,inner sep=1pt] at (3.28,4.58) {$B_x$};
+  \node[anchor=north,inner sep=1pt] at (3.20,3.96) {$\varepsilon_x$};
+  \draw[line width=0.7pt] (3.22,4.28) -- (4.55,4.28);
+  \draw[line width=0.7pt] (4.55,4.28) -- (5.05,4.28) -- (5.05,3.35) -- (5.38,3.35);
+  \draw[line width=0.7pt] (5.82,3.35) circle (0.22);
+  \node[inner sep=0pt] at (5.82,3.35) {$G$};
+  \draw[line width=0.7pt] (6.04,3.35) -- (6.28,3.35);
+  \fill (6.28,3.35) circle (1.15pt);
+  \draw[line width=0.55pt,->] (6.28,3.22) to[out=-75,in=95] (6.55,2.16);
+  \draw[line width=0.55pt,->] (6.28,3.22) -- (7.12,2.16);
+  \draw[line width=0.55pt,->] (6.28,3.22) to[out=-105,in=85] (7.72,2.16);
+  \draw[line width=0.7pt] (0.38,5.05) -- (0.38,0.72) -- (2.05,0.72);
+  \node[anchor=east,inner sep=1pt] at (0.28,2.15) {$A$};
+  \draw[line width=0.7pt] (0.38,2.15) -- (8.55,2.15);
+  \node[anchor=west,inner sep=1pt] at (8.62,2.15) {$C$};
+  \draw[line width=0.7pt] (8.55,2.15) -- (8.55,0.72) -- (6.15,0.72);
+  \draw[line width=0.55pt,->] (0.38,3.55) -- (0.38,4.15);
+  \node[anchor=west,inner sep=1pt] at (0.48,3.72) {$I_2$};
+  \draw[line width=0.55pt,->] (0.38,1.15) -- (0.38,1.75);
+  \node[anchor=west,inner sep=1pt] at (0.48,1.32) {$I_1$};
+  \node[anchor=north,inner sep=1pt] at (6.62,2.04) {$D$};
+  \node[anchor=north,inner sep=1pt] at (7.18,2.04) {$O$};
+  \node[anchor=north,inner sep=1pt] at (7.78,2.04) {$X$};
+  \draw[line width=0.9pt] (2.18,0.44) -- (2.18,1.00);
+  \draw[line width=1.05pt] (2.32,0.54) -- (2.32,0.90);
+  \draw[line width=0.9pt] (2.46,0.44) -- (2.46,1.00);
+  \draw[line width=1.05pt] (2.60,0.54) -- (2.60,0.90);
+  \node[anchor=south,inner sep=1pt] at (2.78,0.96) {$B_1$};
+  \node[anchor=north,inner sep=1pt] at (2.48,0.38) {$\varepsilon_1,r_1$};
+  \draw[line width=0.7pt] (2.70,0.72) -- (4.55,0.72);
+  \fill (4.70,0.72) circle (1.15pt);
+  \draw[line width=0.7pt] (4.70,0.72) -- (5.12,0.96);
+  \draw[line width=0.7pt] (5.32,0.72) circle (1.5pt);
+  \node[anchor=south,inner sep=1pt] at (5.02,1.00) {$K_1$};
+  \draw[line width=0.7pt] (5.47,0.72) -- (6.15,0.72);
+\end{tikzpicture}%
+}
 \caption{图2.53 电势差计的校准测量}
 \end{figure}
 
@@ -11425,7 +11559,30 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-3/fig-p0177-01.png}}
+\fitfig{%
+% fig-alt: 第1题。左箭指左，圆内A无针。黑点A，矩形R，黑点B，右箭指右。下支圆内V无针。扫描无+、−，无表内针
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt,->] (0.62,2.15) -- (0.22,2.15);
+  \draw[line width=0.7pt] (0.62,2.15) -- (0.78,2.15);
+  \draw[line width=0.7pt] (1.18,2.15) circle (0.22);
+  \node[inner sep=0pt] at (1.18,2.15) {$A$};
+  \draw[line width=0.7pt] (1.40,2.15) -- (1.72,2.15);
+  \fill (1.72,2.15) circle (1.25pt);
+  \node[anchor=south,inner sep=1pt] at (1.82,2.20) {$A$};
+  \draw[line width=0.7pt] (1.72,2.15) -- (2.05,2.15);
+  \draw[line width=0.7pt] (2.05,1.98) rectangle (2.95,2.32);
+  \node[anchor=south,inner sep=1pt] at (2.50,2.34) {$R$};
+  \draw[line width=0.7pt] (2.95,2.15) -- (3.55,2.15);
+  \fill (3.55,2.15) circle (1.25pt);
+  \node[anchor=south,inner sep=1pt] at (3.55,2.24) {$B$};
+  \draw[line width=0.7pt] (3.55,2.15) -- (3.95,2.15);
+  \draw[line width=0.55pt,->] (3.95,2.15) -- (4.38,2.15);
+  \draw[line width=0.7pt] (1.72,2.15) -- (1.72,1.05) -- (2.12,1.05);
+  \draw[line width=0.7pt] (2.56,1.05) circle (0.22);
+  \node[inner sep=0pt] at (2.56,1.05) {$V$};
+  \draw[line width=0.7pt] (2.78,1.05) -- (3.55,1.05) -- (3.55,2.15);
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -11433,7 +11590,34 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-3/fig-p0177-02.png}}
+\fitfig{%
+% fig-alt: 第2题。左箭指左，黑点上标A，矩形R_1，黑点C，矩形R_2，黑点上标D，右箭指右、旁标B。下支圆内V无针，接于C、D。扫描无+、−
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt,->] (0.58,2.15) -- (0.18,2.15);
+  \draw[line width=0.7pt] (0.58,2.15) -- (0.82,2.15);
+  \fill (0.82,2.15) circle (1.25pt);
+  \node[anchor=south,inner sep=1pt] at (0.72,2.22) {$A$};
+  \draw[line width=0.7pt] (0.82,2.15) -- (1.12,2.15);
+  \draw[line width=0.7pt] (1.12,1.98) rectangle (2.05,2.32);
+  \node[anchor=south,inner sep=1pt] at (1.58,2.34) {$R_1$};
+  \draw[line width=0.7pt] (2.05,2.15) -- (2.48,2.15);
+  \fill (2.48,2.15) circle (1.25pt);
+  \node[anchor=south,inner sep=1pt] at (2.48,2.24) {$C$};
+  \draw[line width=0.7pt] (2.48,2.15) -- (2.82,2.15);
+  \draw[line width=0.7pt] (2.82,1.98) rectangle (3.75,2.32);
+  \node[anchor=south,inner sep=1pt] at (3.28,2.34) {$R_2$};
+  \draw[line width=0.7pt] (3.75,2.15) -- (4.15,2.15);
+  \fill (4.15,2.15) circle (1.25pt);
+  \node[anchor=south,inner sep=1pt] at (4.15,2.24) {$D$};
+  \draw[line width=0.7pt] (4.15,2.15) -- (4.55,2.15);
+  \draw[line width=0.55pt,->] (4.55,2.15) -- (4.98,2.15);
+  \node[anchor=south,inner sep=1pt] at (4.78,2.20) {$B$};
+  \draw[line width=0.7pt] (2.48,2.15) -- (2.48,1.05) -- (2.88,1.05);
+  \draw[line width=0.7pt] (3.32,1.05) circle (0.22);
+  \node[inner sep=0pt] at (3.32,1.05) {$V$};
+  \draw[line width=0.7pt] (3.54,1.05) -- (4.15,1.05) -- (4.15,2.15);
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -11452,7 +11636,36 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-3/fig-p0177-03.png}}
+\fitfig{%
+% fig-alt: 第3题。圆内G无针，上r_g。电池在上左，长线左、短线右，其左箭指左，无+、−。右竖矩形R，滑箭在右指左。表棒A、B斜下接矩形R_x，两端箭指外
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \node[anchor=south,inner sep=1pt] at (2.55,3.92) {$r_g$};
+  \draw[line width=0.7pt] (2.55,3.55) circle (0.26);
+  \node[inner sep=0pt] at (2.55,3.55) {$G$};
+  \draw[line width=0.7pt] (0.42,3.55) -- (0.58,3.55);
+  \draw[line width=0.55pt,->] (0.98,3.55) -- (0.58,3.55);
+  \draw[line width=0.9pt] (1.12,3.28) -- (1.12,3.82);
+  \draw[line width=1.05pt] (1.26,3.40) -- (1.26,3.70);
+  \draw[line width=0.7pt] (1.36,3.55) -- (2.29,3.55);
+  \draw[line width=0.7pt] (0.42,3.55) -- (0.42,1.85);
+  \draw[line width=0.7pt] (2.81,3.55) -- (3.05,3.55) -- (3.05,2.95);
+  \draw[line width=0.7pt] (2.88,1.85) rectangle (3.22,2.95);
+  \node[anchor=west,inner sep=1pt] at (3.28,2.40) {$R$};
+  \draw[line width=0.7pt] (3.05,1.85) -- (3.05,1.62) -- (3.38,1.62) -- (3.38,2.28);
+  \draw[line width=0.55pt,->] (3.38,2.28) -- (3.22,2.40);
+  \node[anchor=east,inner sep=1pt] at (0.62,1.55) {$A$};
+  \draw[line width=0.7pt] (0.48,1.85) -- (0.72,1.22);
+  \node[anchor=west,inner sep=1pt] at (2.55,1.55) {$B$};
+  \draw[line width=0.7pt] (3.05,1.62) -- (2.72,1.62) -- (2.48,1.22);
+  \draw[line width=0.55pt,->] (0.95,0.78) -- (0.58,0.78);
+  \draw[line width=0.7pt] (0.72,1.22) -- (0.95,0.78);
+  \draw[line width=0.7pt] (0.95,0.62) rectangle (2.15,0.94);
+  \node[anchor=north,inner sep=1pt] at (1.55,0.58) {$R_x$};
+  \draw[line width=0.7pt] (2.15,0.78) -- (2.38,0.78);
+  \draw[line width=0.55pt,->] (2.38,0.78) -- (2.72,0.78);
+  \draw[line width=0.7pt] (2.48,1.22) -- (2.15,0.78);
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -11460,7 +11673,34 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-3/fig-p0177-04.png}}
+\fitfig{%
+% fig-alt: 第4题。左圆内mA，左旁r_g，无针。右并R_1、R_2，下开口圆1、3。K刀搭1，不搭3。底单节电池长线左、短线右，无+、−，无电流箭
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.45,4.85) -- (0.45,3.72);
+  \node[anchor=east,inner sep=1pt] at (0.08,3.35) {$r_g$};
+  \draw[line width=0.7pt] (0.45,3.35) circle (0.30);
+  \node[inner sep=0pt] at (0.45,3.35) {mA};
+  \draw[line width=0.7pt] (0.45,3.05) -- (0.45,0.72) -- (1.55,0.72);
+  \draw[line width=0.9pt] (1.68,0.46) -- (1.68,0.98);
+  \draw[line width=1.05pt] (1.82,0.56) -- (1.82,0.88);
+  \draw[line width=0.7pt] (1.92,0.72) -- (3.15,0.72) -- (2.95,1.48);
+  \draw[line width=0.7pt] (0.45,4.85) -- (2.55,4.85) -- (2.55,3.85);
+  \draw[line width=0.7pt] (2.55,4.55) -- (3.15,4.55) -- (3.15,3.85);
+  \draw[line width=0.7pt] (2.38,2.55) rectangle (2.72,3.85);
+  \node[anchor=east,inner sep=1pt] at (2.32,3.20) {$R_1$};
+  \draw[line width=0.7pt] (2.98,2.55) rectangle (3.32,3.85);
+  \node[anchor=west,inner sep=1pt] at (3.38,3.20) {$R_2$};
+  \draw[line width=0.7pt] (2.55,2.55) -- (2.55,2.22);
+  \draw[line width=0.7pt] (2.55,2.08) circle (1.5pt);
+  \node[anchor=east,inner sep=1pt] at (2.38,2.02) {$1$};
+  \draw[line width=0.7pt] (3.15,2.55) -- (3.15,2.22);
+  \draw[line width=0.7pt] (3.15,2.08) circle (1.5pt);
+  \node[anchor=west,inner sep=1pt] at (3.32,2.02) {$3$};
+  \draw[line width=0.7pt] (2.95,1.48) circle (1.3pt);
+  \draw[line width=0.7pt] (2.95,1.48) -- (2.55,2.08);
+  \node[anchor=north,inner sep=1pt] at (3.22,1.38) {$K$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -11486,7 +11726,50 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-3/fig-p0178-01.png}}
+\fitfig{%
+% fig-alt: 第5题。(a)(b)顶电池皆长线左、短线右，无+、−，无电流箭。(a)圆内V只并在矩形R两端，圆内A在其外。(b)圆内V并在R与A串联组两端。下标(a)(b)
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.35,3.55) -- (1.35,3.55);
+  \draw[line width=0.9pt] (1.48,3.28) -- (1.48,3.82);
+  \draw[line width=1.05pt] (1.62,3.38) -- (1.62,3.72);
+  \draw[line width=0.7pt] (1.72,3.55) -- (3.55,3.55) -- (3.55,2.15) -- (2.95,2.15);
+  \draw[line width=0.7pt] (0.35,3.55) -- (0.35,2.15);
+  \fill (0.35,2.15) circle (1.25pt);
+  \draw[line width=0.7pt] (0.35,2.15) -- (0.62,2.15);
+  \draw[line width=0.7pt] (0.62,1.98) rectangle (1.52,2.32);
+  \node[anchor=south,inner sep=1pt] at (1.07,2.34) {$R$};
+  \draw[line width=0.7pt] (1.52,2.15) -- (1.82,2.15);
+  \fill (1.82,2.15) circle (1.25pt);
+  \draw[line width=0.7pt] (1.82,2.15) -- (2.12,2.15);
+  \draw[line width=0.7pt] (2.52,2.15) circle (0.22);
+  \node[inner sep=0pt] at (2.52,2.15) {$A$};
+  \draw[line width=0.7pt] (2.74,2.15) -- (2.95,2.15);
+  \draw[line width=0.7pt] (0.35,2.15) -- (0.35,1.05) -- (0.72,1.05);
+  \draw[line width=0.7pt] (1.16,1.05) circle (0.22);
+  \node[inner sep=0pt] at (1.16,1.05) {$V$};
+  \draw[line width=0.7pt] (1.38,1.05) -- (1.82,1.05) -- (1.82,2.15);
+  \node[anchor=north,inner sep=1pt] at (1.95,0.55) {$(a)$};
+  \draw[line width=0.7pt] (4.55,3.55) -- (5.55,3.55);
+  \draw[line width=0.9pt] (5.68,3.28) -- (5.68,3.82);
+  \draw[line width=1.05pt] (5.82,3.38) -- (5.82,3.72);
+  \draw[line width=0.7pt] (5.92,3.55) -- (7.85,3.55) -- (7.85,2.15);
+  \fill (7.55,2.15) circle (1.25pt);
+  \draw[line width=0.7pt] (4.55,3.55) -- (4.55,2.15);
+  \fill (4.55,2.15) circle (1.25pt);
+  \draw[line width=0.7pt] (4.55,2.15) -- (4.82,2.15);
+  \draw[line width=0.7pt] (4.82,1.98) rectangle (5.72,2.32);
+  \node[anchor=south,inner sep=1pt] at (5.27,2.34) {$R$};
+  \draw[line width=0.7pt] (5.72,2.15) -- (6.05,2.15);
+  \draw[line width=0.7pt] (6.45,2.15) circle (0.22);
+  \node[inner sep=0pt] at (6.45,2.15) {$A$};
+  \draw[line width=0.7pt] (6.67,2.15) -- (7.55,2.15);
+  \draw[line width=0.7pt] (4.55,2.15) -- (4.55,1.05) -- (5.35,1.05);
+  \draw[line width=0.7pt] (5.79,1.05) circle (0.22);
+  \node[inner sep=0pt] at (5.79,1.05) {$V$};
+  \draw[line width=0.7pt] (6.01,1.05) -- (7.55,1.05) -- (7.55,2.15);
+  \node[anchor=north,inner sep=1pt] at (6.20,0.55) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
