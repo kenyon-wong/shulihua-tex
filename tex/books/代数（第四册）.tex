@@ -1804,7 +1804,26 @@ C_{10}^2-(C_4^2-1)=45-(6-1)=40\text{（条）}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0029-01.png}}
+\fitfig{%
+% fig-alt: 直线l上A、B、C、D四点，A连到线外点E，F为线外孤立点
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=0.8pt}]
+  \draw[line width=0.7pt] (-0.30,0.22) -- (4.40,1.86);
+  \draw[line width=0.7pt] (0.16,0.39) -- (1.22,2.18);
+  \fill (0.16,0.39) circle (1.25pt);
+  \fill (1.20,0.77) circle (1.25pt);
+  \fill (2.36,1.19) circle (1.25pt);
+  \fill (3.36,1.55) circle (1.25pt);
+  \fill (1.22,2.18) circle (1.25pt);
+  \fill (3.22,0.02) circle (1.25pt);
+  \node[anchor=north] at (0.08,0.12) {$A$};
+  \node[anchor=north] at (1.10,0.42) {$B$};
+  \node[anchor=north] at (2.20,0.72) {$C$};
+  \node[anchor=north] at (3.28,1.02) {$D$};
+  \node[anchor=west] at (1.36,2.20) {$E$};
+  \node[anchor=west] at (3.36,0.02) {$F$};
+  \node[anchor=south west] at (4.28,1.82) {$l$};
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -4505,7 +4524,46 @@ A \subset B \quad \text {\text{或}} \quad B \supset A.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0076-01.png}}
+\fitfig{%
+% fig-alt: 开关电路：①与②串联，再与③、④并联，然后串接灯与电池
+\begin{tikzpicture}[line cap=round,line join=round,sw/.style={circle,draw,line width=0.4pt,inner sep=0.3pt,minimum size=2.5mm,font=\scriptsize}]
+  \coordinate (L2) at (1.05,2.05);
+  \coordinate (R) at (4.30,2.05);
+  % 左馈线与①②串联
+  \draw[line width=0.7pt] (0,0) -- (0,3.15) -- (1.20,3.15);
+  \draw[line width=0.7pt] (1.20,3.15) -- (1.66,3.50);
+  \draw[line width=0.7pt] (2.02,3.15) -- (2.62,3.15);
+  \draw[line width=0.7pt] (2.02,3.15) -- (2.48,3.50);
+  \draw[line width=0.7pt] (3.08,3.15) -- (4.30,3.15) -- (R);
+  \node[sw,anchor=south] at (1.55,3.38) {1};
+  \node[sw,anchor=south] at (2.32,3.38) {2};
+  % 折向③④
+  \draw[line width=0.7pt] (0,2.55) -- (0.62,2.55) -- (0.62,2.05) -- (L2);
+  \fill (0,2.55) circle (1.15pt);
+  % ③
+  \draw[line width=0.7pt] (L2) -- (1.95,2.05);
+  \draw[line width=0.7pt] (1.95,2.05) -- (2.40,2.40);
+  \draw[line width=0.7pt] (2.74,2.05) -- (R);
+  \node[sw,anchor=south] at (2.28,2.32) {3};
+  % ④
+  \draw[line width=0.7pt] (L2) -- (1.05,1.15) -- (1.95,1.15);
+  \draw[line width=0.7pt] (1.95,1.15) -- (2.40,1.50);
+  \draw[line width=0.7pt] (2.74,1.15) -- (3.75,1.15) -- (3.75,2.05) -- (R);
+  \node[sw,anchor=south] at (2.28,1.42) {4};
+  \fill (L2) circle (1.15pt);
+  \fill (R) circle (1.15pt);
+  % 电池、灯与回路
+  \draw[line width=0.7pt] (0,0) -- (0.78,0);
+  \draw[line width=0.9pt] (0.78,-0.24) -- (0.78,0.24);
+  \draw[line width=1.3pt] (0.96,-0.13) -- (0.96,0.13);
+  \draw[line width=0.7pt] (1.00,0) -- (2.28,0);
+  \draw[line width=0.7pt] (2.60,0) circle (0.32);
+  \draw[line width=0.55pt] (2.38,-0.20) -- (2.82,0.20);
+  \draw[line width=0.55pt] (2.38,0.20) -- (2.82,-0.20);
+  \node[above=1pt] at (2.60,0.32) {灯};
+  \draw[line width=0.7pt] (2.92,0) -- (4.90,0) -- (4.90,2.05) -- (R);
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -4746,7 +4804,14 @@ B： ``掷一颗骰子至少出现四点''。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0080-01.png}}
+\fitfig{%
+% fig-alt: 必然事件：全阴影方框，中标U
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[black!38] (0,0) rectangle (2.05,2.05);
+  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+  \node[fill=white,inner sep=1.6pt] at (1.025,1.025) {$U$};
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -4754,7 +4819,13 @@ B： ``掷一颗骰子至少出现四点''。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0080-02.png}}
+\fitfig{%
+% fig-alt: 不可能事件：空方框，中标V
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+  \node at (1.025,1.025) {$V$};
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -4762,7 +4833,15 @@ B： ``掷一颗骰子至少出现四点''。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0080-03.png}}
+\fitfig{%
+% fig-alt: 事件A：方框内阴影圆，中标A
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+  \fill[black!38] (1.025,1.08) circle (0.62);
+  \draw[line width=0.8pt] (1.025,1.08) circle (0.62);
+  \node[fill=white,inner sep=1.4pt] at (1.025,1.08) {$A$};
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -4770,7 +4849,16 @@ B： ``掷一颗骰子至少出现四点''。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0080-04.png}}
+\fitfig{%
+% fig-alt: 对立事件：方框内圆外阴影，右下标A上横线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[black!38] (0,0) rectangle (2.05,2.05);
+  \fill[white] (1.00,1.12) circle (0.62);
+  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+  \draw[line width=0.8pt] (1.00,1.12) circle (0.62);
+  \node[fill=white,inner sep=1.1pt] at (1.62,0.38) {$\overline{A}$};
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -4778,7 +4866,17 @@ B： ``掷一颗骰子至少出现四点''。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0080-05.png}}
+\fitfig{%
+% fig-alt: 和事件：两相交圆全阴影，交处标A+B
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0,0) rectangle (2.15,2.05);
+  \fill[black!38] (0.78,1.05) circle (0.52);
+  \fill[black!38] (1.38,1.05) circle (0.52);
+  \draw[line width=0.8pt] (0.78,1.05) circle (0.52);
+  \draw[line width=0.8pt] (1.38,1.05) circle (0.52);
+  \node[fill=white,inner sep=1.1pt] at (1.08,1.05) {$A+B$};
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 
@@ -4786,7 +4884,19 @@ B： ``掷一颗骰子至少出现四点''。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原始 OCR 在此记录图像块}]{assets/algebra-4/fig-p0080-06.png}}
+\fitfig{%
+% fig-alt: 积事件：两相交圆仅交区阴影，中标AB
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0,0) rectangle (2.15,2.05);
+  \begin{scope}
+    \clip (0.78,1.05) circle (0.52);
+    \fill[black!38] (1.38,1.05) circle (0.52);
+  \end{scope}
+  \draw[line width=0.8pt] (0.78,1.05) circle (0.52);
+  \draw[line width=0.8pt] (1.38,1.05) circle (0.52);
+  \node[fill=white,inner sep=1.1pt] at (1.08,1.05) {$AB$};
+\end{tikzpicture}%
+}
 \caption{原始 OCR 在此记录图像块}
 \end{figure}
 

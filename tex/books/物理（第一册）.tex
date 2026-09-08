@@ -687,7 +687,30 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·9 面积的单位}]{assets/physics-1/fig-p0012-01.png}}
+% fig-alt: 图1·9 面积的单位
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.42cm,y=0.42cm]
+  \draw[line width=0.7pt] (0,0) rectangle (10,10);
+  \foreach \i in {1,...,9}
+    \draw[line width=0.35pt] (\i,0) -- (\i,10);
+  \foreach \i in {1,...,9}
+    \draw[line width=0.35pt] (0,\i) -- (10,\i);
+  \fill (9,0) rectangle (10,1);
+  \draw[line width=0.45pt] (2.15,5) -- (3.55,5);
+  \draw[line width=0.45pt] (6.45,5) -- (7.85,5);
+  \node[font=\scriptsize,fill=white,inner sep=1.2pt] at (5,5) {1厘米$^{2}$};
+  \draw[<->,line width=0.6pt] (0,-0.55) -- (10,-0.55);
+  \node[font=\scriptsize,inner sep=1pt] at (5,-0.28) {1厘米};
+  \node[font=\scriptsize,inner sep=1pt] at (5,-1.15) {1厘米$^{2}$=100毫米$^{2}$};
+  \draw[->,line width=0.6pt] (10.05,0.55) -- (11.15,1.55);
+  \fill (11.35,1.15) rectangle (12.45,2.25);
+  \node[font=\scriptsize,inner sep=1pt,anchor=south] at (11.9,2.32) {1毫米$^{2}$};
+  \draw[<->,line width=0.55pt] (11.35,0.72) -- (12.45,0.72);
+  \node[font=\scriptsize,inner sep=1pt,anchor=north] at (11.9,0.62) {1毫米};
+  \draw[<->,line width=0.55pt] (12.82,1.15) -- (12.82,2.25);
+  \node[font=\scriptsize,inner sep=1pt,anchor=west] at (12.92,1.70) {1毫米};
+\end{tikzpicture}%
+}
 \caption{图1·9 面积的单位}
 \end{figure}
 
@@ -711,7 +734,46 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={``×''完整一小格 ``√''大于半小格}]{assets/physics-1/fig-p0013-01.png}}
+% fig-alt: ``×''完整一小格 ``√''大于半小格
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.78cm,y=0.78cm]
+  \newcommand{\celltick}[2]{%
+    \draw[line width=0.55pt] (#1+0.28,#2+0.30) -- (#1+0.42,#2+0.16) -- (#1+0.74,#2+0.62);
+  }
+  \newcommand{\cellcross}[2]{%
+    \draw[line width=0.55pt] (#1+0.30,#2+0.22) -- (#1+0.70,#2+0.62);
+    \draw[line width=0.55pt] (#1+0.30,#2+0.62) -- (#1+0.70,#2+0.22);
+  }
+  \draw[line width=0.75pt] (0,0) rectangle (7,4);
+  \foreach \i in {1,...,6}
+    \draw[line width=0.4pt] (\i,0) -- (\i,4);
+  \foreach \i in {1,2,3}
+    \draw[line width=0.4pt] (0,\i) -- (7,\i);
+  % 叶柄
+  \draw[line width=0.7pt] (0.32,3.52) -- (0.10,4.18);
+  \draw[line width=0.7pt] (0.32,3.52) -- (0.22,3.92);
+  % 树叶轮廓：右指，茎在左上
+  \draw[line width=0.8pt]
+    (0.04,2.18)
+    .. controls (0.18,2.85) and (0.28,3.35) .. (0.55,3.62)
+    .. controls (1.05,3.95) and (1.70,4.02) .. (2.35,3.82)
+    .. controls (3.05,3.58) and (3.55,3.15) .. (4.15,2.78)
+    .. controls (5.05,2.28) and (5.85,2.05) .. (6.55,1.72)
+    .. controls (6.95,1.52) and (7.15,1.48) .. (7.28,1.42)
+    .. controls (6.55,1.28) and (5.85,1.05) .. (5.05,0.72)
+    .. controls (4.15,0.32) and (3.25,0.06) .. (2.35,0.10)
+    .. controls (1.45,0.16) and (0.70,0.55) .. (0.28,1.05)
+    .. controls (0.02,1.55) and (0.00,1.85) .. (0.04,2.18);
+  % √ 大于半小格
+  \celltick{1}{3} \celltick{2}{3}
+  \celltick{0}{2} \celltick{4}{2}
+  \celltick{0}{1} \celltick{5}{1}
+  \celltick{1}{0} \celltick{2}{0} \celltick{3}{0} \celltick{4}{0}
+  % × 完整一小格
+  \cellcross{1}{2} \cellcross{2}{2} \cellcross{3}{2}
+  \cellcross{1}{1} \cellcross{2}{1} \cellcross{3}{1} \cellcross{4}{1}
+\end{tikzpicture}%
+}
 \caption{``×''完整一小格 ``√''大于半小格}
 \end{figure}
 
@@ -778,7 +840,32 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1-13 眼睛要跟液面相平}]{assets/physics-1/fig-p0015-01.png}}
+% fig-alt: 图 1-13 眼睛要跟液面相平
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 量筒
+  \draw[line width=0.7pt] (0.15,0.22) -- (0.15,5.85);
+  \draw[line width=0.7pt] (1.45,0.22) -- (1.45,5.85);
+  \draw[line width=0.7pt] (0.15,5.85) -- (1.45,5.85);
+  \draw[line width=0.7pt] (0.15,0.22) arc[start angle=180,end angle=360,x radius=0.65,y radius=0.16];
+  \draw[line width=0.55pt] (0.15,0.22) arc[start angle=180,end angle=0,x radius=0.65,y radius=0.10];
+  \draw[line width=0.7pt] (-0.08,0.02) rectangle (1.68,0.16);
+  % 刻度 10--100，液面在 80 稍下
+  \foreach \n/\y in {10/0.55,20/1.08,30/1.61,40/2.14,50/2.67,60/3.20,70/3.73,80/4.26,90/4.79,100/5.32} {
+    \draw[line width=0.45pt] (1.45,\y) -- (1.12,\y);
+    \node[font=\scriptsize,inner sep=0.5pt,anchor=east] at (1.08,\y) {\n};
+  }
+  \draw[line width=0.7pt] (0.15,4.12) -- (1.45,4.12);
+  \fill (0.15,4.12) rectangle (0.32,4.24);
+  % 视线与液面相平
+  \draw[line width=0.55pt,dash pattern=on 1.5pt off 1.2pt] (1.45,4.12) -- (2.48,4.12);
+  % 眼睛侧视，尖端朝向液面
+  \fill (2.48,4.12)
+    .. controls (2.62,4.30) and (3.02,4.28) .. (3.22,4.14)
+    .. controls (3.02,4.00) and (2.62,3.98) .. (2.48,4.12) -- cycle;
+  \draw[white,line width=0.45pt] (2.68,4.14) -- (3.02,4.16);
+\end{tikzpicture}%
+}
 \caption{图 1-13 眼睛要跟液面相平}
 \end{figure}
 
