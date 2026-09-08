@@ -6413,7 +6413,19 @@ k = \frac {y_{1} - y_{2}}{x_{1} - x_{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.8}]{assets/analytic-geometry/fig-p0086-01.png}}
+\fitfig{%
+% fig-alt: 直线过第一象限P1(x1,y1)与上方P2(x2,y2)并伸入第三象限，线端无箭头，原点标O
+\begin{tikzpicture}[x=0.82cm,y=0.82cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-1.05,-0.78) -- (2.28,2.18);
+  \draw[line width=0.75pt,latex-latex] (-1.45,0) -- (3.05,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-1.05) -- (0,2.65) node[above=1pt] {$y$};
+  \fill (0.62,0.70) circle (1.15pt);
+  \fill (1.48,1.47) circle (1.15pt);
+  \node[anchor=west] at (1.62,1.40) {$P_{2}(x_{2},y_{2})$};
+  \node[anchor=west] at (0.76,0.56) {$P_{1}(x_{1},y_{1})$};
+  \node[anchor=north east] at (-0.06,-0.04) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3.8}
 \end{figure}
 
@@ -6457,7 +6469,25 @@ y = y_{1}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-10}]{assets/analytic-geometry/fig-p0086-02.png}}
+\fitfig{%
+% fig-alt: 三角形ABC，A(3,0)、B(-2,5)、C(-4,-6)，轴上只标单位1与原点O
+\begin{tikzpicture}[x=0.40cm,y=0.34cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (3,0) -- (-2,5) -- (-4,-6) -- cycle;
+  \draw[line width=0.75pt,latex-latex] (-5.15,0) -- (4.35,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-7.15) -- (0,7.15) node[above=1pt] {$y$};
+  \draw[line width=0.4pt] (1,-0.16) -- (1,0.16);
+  \draw[line width=0.4pt] (-0.16,1) -- (0.16,1);
+  \fill (3,0) circle (1.25pt);
+  \fill (-2,5) circle (1.25pt);
+  \fill (-4,-6) circle (1.25pt);
+  \node[anchor=south east] at (-2.12,5.22) {$B(-2,5)$};
+  \node[anchor=south west] at (3.12,0.18) {$A(3,0)$};
+  \node[anchor=north east] at (-4.08,-6.10) {$C(-4,-6)$};
+  \node[anchor=north] at (1,-0.18) {\footnotesize $1$};
+  \node[anchor=east] at (-0.28,1) {\footnotesize $1$};
+  \node[anchor=north east] at (-0.08,-0.08) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-10}
 \end{figure}
 
@@ -6497,7 +6527,37 @@ BCFG，连结 AG、BE，分别交 \(BC, AC\) 于 \(P, Q\)， 求证
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.11}]{assets/analytic-geometry/fig-p0087-01.png}}
+\fitfig{%
+% fig-alt: 直角在原点C的三角形ABC，向外正方形ACDE与BCFG，AG交BC于P，BE交AC于Q
+\begin{tikzpicture}[x=0.78cm,y=0.78cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-1.70,0) -- (0,0) -- (0,-1.70) -- (-1.70,-1.70) -- cycle;
+  \draw[line width=0.7pt] (0,2.05) -- (0,0) -- (2.05,0) -- (2.05,2.05) -- cycle;
+  \draw[line width=0.7pt] (-1.70,0) -- (0,2.05);
+  \draw[line width=0.7pt] (-1.70,0) -- (2.05,2.05);
+  \draw[line width=0.7pt] (0,2.05) -- (-1.70,-1.70);
+  \draw[line width=0.75pt,latex-latex] (-2.55,0) -- (3.25,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-2.25) -- (0,3.45) node[above=1pt] {$y$};
+  \fill (-1.70,0) circle (1.15pt);
+  \fill (0,2.05) circle (1.15pt);
+  \fill (0,0) circle (1.15pt);
+  \fill (0,-1.70) circle (1.15pt);
+  \fill (-1.70,-1.70) circle (1.15pt);
+  \fill (2.05,0) circle (1.15pt);
+  \fill (2.05,2.05) circle (1.15pt);
+  \fill (0,0.93) circle (1.15pt);
+  \fill (-0.93,0) circle (1.15pt);
+  \node[anchor=east] at (-1.84,0.08) {$A(-a,0)$};
+  \node[anchor=south east] at (-0.10,2.16) {$B(0,b)$};
+  \node[anchor=south west] at (2.12,2.14) {$G(b,b)$};
+  \node[anchor=east] at (-1.84,-1.70) {$E(-a,-a)$};
+  \node[anchor=west] at (0.14,-1.78) {$D$};
+  \node[anchor=north] at (2.05,-0.18) {$F$};
+  \node[anchor=south east] at (-0.10,1.02) {$P$};
+  \node[anchor=south] at (-0.72,0.28) {$Q$};
+  \node[anchor=south west] at (0.10,0.08) {$O$};
+  \node[anchor=north west] at (0.14,-0.14) {$C$};
+\end{tikzpicture}%
+}
 \caption{图3.11}
 \end{figure}
 
@@ -6588,7 +6648,21 @@ b x - (a + b) y + a b = 0. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-12}]{assets/analytic-geometry/fig-p0089-01.png}}
+\fitfig{%
+% fig-alt: 直线过B(0,b)与A(a,0)并向两端略伸，线端无箭头，y轴标单位1，原点标O
+\begin{tikzpicture}[x=0.86cm,y=0.82cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-0.40,2.02) -- (2.60,-0.36);
+  \draw[line width=0.75pt,latex-latex] (-1.15,0) -- (3.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.85) -- (0,2.55) node[above=1pt] {$y$};
+  \draw[line width=0.4pt] (-0.08,1) -- (0.08,1);
+  \fill (0,1.70) circle (1.15pt);
+  \fill (2.15,0) circle (1.15pt);
+  \node[anchor=west] at (0.12,1.70) {$B(0,b)$};
+  \node[anchor=north] at (2.15,-0.10) {$A(a,0)$};
+  \node[anchor=east] at (-0.12,1) {\footnotesize $1$};
+  \node[anchor=north east] at (-0.06,-0.04) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-12}
 \end{figure}
 
@@ -6617,7 +6691,23 @@ b x - (a + b) y + a b = 0. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-13}]{assets/analytic-geometry/fig-p0089-02.png}}
+\fitfig{%
+% fig-alt: 对角线在坐标轴上的正方形，顶点A(√2,0)、B(0,√2)、C(-√2,0)、D(0,-√2)，原点标O
+\begin{tikzpicture}[x=0.92cm,y=0.92cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (1.55,0) -- (0,1.55) -- (-1.55,0) -- (0,-1.55) -- cycle;
+  \draw[line width=0.75pt,latex-latex] (-2.55,0) -- (2.85,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-2.05) -- (0,2.45) node[above=1pt] {$y$};
+  \fill (1.55,0) circle (1.15pt);
+  \fill (0,1.55) circle (1.15pt);
+  \fill (-1.55,0) circle (1.15pt);
+  \fill (0,-1.55) circle (1.15pt);
+  \node[anchor=south west] at (1.62,0.10) {$A(\sqrt{2},0)$};
+  \node[anchor=south west] at (0.10,1.60) {$B(0,\sqrt{2})$};
+  \node[anchor=south east] at (-1.64,0.10) {$C(-\sqrt{2},0)$};
+  \node[anchor=north west] at (0.10,-1.62) {$D(0,-\sqrt{2})$};
+  \node[anchor=north west] at (0.18,-0.22) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-13}
 \end{figure}
 
@@ -6935,7 +7025,23 @@ y = \frac {2}{3} x + \frac {4}{3}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-14}]{assets/analytic-geometry/fig-p0095-01.png}}
+\fitfig{%
+% fig-alt: 直线过(-2,0)与(0,3)并向两端略伸，线端无箭头；轴上标单位1，原点标0
+\begin{tikzpicture}[x=0.52cm,y=0.42cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-2.80,-1.20) -- (1.10,4.65);
+  \draw[line width=0.75pt,-latex] (-3.25,0) -- (2.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-1.65) -- (0,5.15) node[above=1pt] {$y$};
+  \draw[line width=0.4pt] (1,-0.12) -- (1,0.12);
+  \draw[line width=0.4pt] (-0.10,1) -- (0.10,1);
+  \fill (-2,0) circle (1.2pt);
+  \fill (0,3) circle (1.2pt);
+  \node[anchor=east] at (-2.12,0.12) {$(-2,0)$};
+  \node[anchor=west] at (0.14,3) {$(0,3)$};
+  \node[anchor=north] at (1,-0.10) {\footnotesize $1$};
+  \node[anchor=east] at (-0.22,1) {\footnotesize $1$};
+  \node[anchor=north west] at (0.10,-0.10) {\footnotesize $0$};
+\end{tikzpicture}%
+}
 \caption{图3-14}
 \end{figure}
 
@@ -7073,7 +7179,26 @@ y = \frac {2}{3} x + \frac {4}{3}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/analytic-geometry/fig-p0097-01.png}}
+\fitfig{%
+% fig-alt: 直线l交正x轴与正y轴，法线OQ过垂足N，θ为法线辐角，α标在正x截距处，y轴标1
+\begin{tikzpicture}[x=0.86cm,y=0.86cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-0.28,1.75) -- (2.55,-0.25);
+  \draw[line width=0.7pt] (0,0) -- (1.09,1.54);
+  \draw[line width=0.75pt,latex-latex] (-0.85,0) -- (3.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.62) -- (0,2.35) node[above=1pt] {$y$};
+  \draw[line width=0.4pt] (-0.07,1) -- (0.07,1);
+  \draw[line width=0.5pt] (0.50,0) arc (0:55:0.50);
+  \draw[line width=0.5pt] (1.89,0.26) arc (140:180:0.40);
+  \fill (0.73,1.04) circle (1.15pt);
+  \node[anchor=south] at (1.12,1.60) {$Q$};
+  \node[anchor=west] at (0.82,1.12) {$N$};
+  \node[anchor=south west] at (0.42,0.22) {$\theta$};
+  \node[anchor=south] at (1.58,0.12) {$\alpha$};
+  \node[anchor=north west] at (2.32,-0.16) {$l$};
+  \node[anchor=north east] at (-0.06,-0.04) {$O$};
+  \node[anchor=east] at (-0.10,1) {\footnotesize $1$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -7081,7 +7206,26 @@ y = \frac {2}{3} x + \frac {4}{3}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/analytic-geometry/fig-p0097-02.png}}
+\fitfig{%
+% fig-alt: 直线l自第三象限升入第一象限，法线OQ在第二象限过N，θ为法线辐角，α标在负x截距下方
+\begin{tikzpicture}[x=0.86cm,y=0.86cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-2.55,-0.41) -- (1.05,1.86);
+  \draw[line width=0.7pt] (0,0) -- (-0.84,1.33);
+  \draw[line width=0.75pt,latex-latex] (-3.05,0) -- (1.85,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.72) -- (0,2.25) node[above=1pt] {$y$};
+  \draw[line width=0.4pt] (-0.07,1) -- (0.07,1);
+  \draw[line width=0.5pt] (0.52,0) arc (0:122:0.52);
+  \draw[line width=0.55pt] (-2.40,-0.10) arc (192:228:0.52);
+  \fill (-0.54,0.86) circle (1.15pt);
+  \node[anchor=south] at (-0.86,1.42) {$Q$};
+  \node[anchor=south east] at (-0.66,0.98) {$N$};
+  \node[anchor=south west] at (0.28,0.28) {$\theta$};
+  \node[anchor=north] at (-2.28,-0.34) {$\alpha$};
+  \node[anchor=south west] at (0.70,1.62) {$l$};
+  \node[anchor=north west] at (0.08,-0.06) {$O$};
+  \node[anchor=east] at (-0.10,1) {\footnotesize $1$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
