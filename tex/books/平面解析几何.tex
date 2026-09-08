@@ -1439,7 +1439,24 @@ d = \sqrt {x^{2} + y^{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·15}]{assets/analytic-geometry/fig-p0017-01.png}}
+\fitfig{%
+% fig-alt: 第一象限矩形ABCO，顶点O、A(a,0)、B(a,b)、C(0,b)，两条对角线交叉
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,-latex] (-0.55,0) -- (3.35,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.52) -- (0,2.95) node[above=1pt] {$y$};
+  \draw[line width=0.7pt] (0,1.72) -- (2.45,1.72) -- (2.45,0);
+  \draw[line width=0.7pt] (0,0) -- (2.45,1.72);
+  \draw[line width=0.7pt] (2.45,0) -- (0,1.72);
+  \fill (0,0) circle (1.15pt);
+  \fill (2.45,0) circle (1.15pt);
+  \fill (2.45,1.72) circle (1.15pt);
+  \fill (0,1.72) circle (1.15pt);
+  \node[below left=1pt] at (0,0) {$O$};
+  \node[below=2pt] at (2.45,0) {$A(a,0)$};
+  \node[above right=1pt] at (2.45,1.72) {$B(a,b)$};
+  \node[above=2pt] at (0.78,1.78) {$C(0,b)$};
+\end{tikzpicture}%
+}
 \caption{图1·15}
 \end{figure}
 
@@ -1496,7 +1513,22 @@ d = \sqrt {x^{2} + y^{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/analytic-geometry/fig-p0018-01.png}}
+\fitfig{%
+% fig-alt: 上升直线l1与下降直线l2分别交x轴，交点处标倾角α1、α2，原点O
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,latex-latex] (-2.95,0) -- (3.25,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-1.60) -- (0,2.55) node[above=1pt] {$y$};
+  \draw[line width=0.7pt] (-2.70,-1.18) -- (0.71,2.12);
+  \draw[line width=0.7pt] (0.99,1.81) -- (2.32,-1.48);
+  \node[right=1pt] at (0.71,2.05) {$l_{1}$};
+  \node[left=2pt] at (1.12,1.48) {$l_{2}$};
+  \draw[line width=0.55pt] (-1.08,0) arc (0:44:0.40);
+  \node at (-0.87,0.20) {$\alpha_{1}$};
+  \draw[line width=0.55pt] (1.56,0.39) arc (112:180:0.42);
+  \node at (1.21,0.35) {$\alpha_{2}$};
+  \node[below=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -1504,7 +1536,19 @@ d = \sqrt {x^{2} + y^{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·16}]{assets/analytic-geometry/fig-p0018-02.png}}
+\fitfig{%
+% fig-alt: 水平直线l平行于x轴，y轴在两线之间为虚线，其间标α=0，下方标(b)
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,latex-latex] (-2.35,0) -- (2.45,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-0.82) -- (0,0);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.5pt] (0,0) -- (0,1.12);
+  \draw[line width=0.75pt,-latex] (0,1.12) -- (0,2.05) node[above=1pt] {$y$};
+  \draw[line width=0.7pt,latex-] (-2.15,1.12) -- (1.95,1.12) node[right=1pt] {$l$};
+  \node[right=3pt] at (0,0.56) {$\alpha=0$};
+  \node[below=1pt] at (0,0) {$O$};
+  \node at (0,-1.28) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{图1·16}
 \end{figure}
 
@@ -1550,15 +1594,66 @@ k = \operatorname{tg} \alpha = \frac {\left| QP_{2} \right|}{\left| P_{1} Q \rig
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/analytic-geometry/fig-p0019-01.png}}
+\fitfig{%
+% fig-alt: 上升直线上P1、P2向两轴作虚线，Q为交点，x轴交点与P1处标α，下方标(a)
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,latex-latex] (-1.85,0) -- (3.35,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.55) -- (0,3.45) node[above=1pt] {$y$};
+  \draw[line width=0.6pt,dash pattern=on 2.4pt off 1.6pt] (0,2.88) -- (2.35,2.88);
+  \draw[line width=0.6pt,dash pattern=on 2.4pt off 1.6pt] (0,1.71) -- (2.35,1.71);
+  \draw[line width=0.6pt,dash pattern=on 2.4pt off 1.6pt] (1.05,1.71) -- (1.05,0);
+  \draw[line width=0.6pt,dash pattern=on 2.4pt off 1.6pt] (2.35,2.88) -- (2.35,0);
+  \draw[line width=0.7pt] (-1.55,-0.63) -- (2.72,3.20);
+  \fill (1.05,1.71) circle (1.15pt);
+  \fill (2.35,2.88) circle (1.15pt);
+  \draw[line width=0.55pt] (-0.48,0) arc (0:42:0.38);
+  \node at (-0.22,0.28) {$\alpha$};
+  \draw[line width=0.55pt] (1.42,1.71) arc (0:42:0.36);
+  \node at (1.58,1.98) {$\alpha$};
+  \node[left=2pt] at (0,2.88) {$N_{2}$};
+  \node[left=2pt] at (0,1.71) {$N_{1}$};
+  \node at (0.38,2.10) {$P_{1}$};
+  \node[above right=0pt] at (2.35,2.88) {$P_{2}$};
+  \node[right=1pt] at (2.35,1.71) {$Q$};
+  \node[below=1pt] at (1.05,0) {$M_{1}$};
+  \node[below=1pt] at (2.35,0) {$M_{2}$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \node at (0.7,-0.85) {$(a)$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
 \emph{（a）}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/analytic-geometry/fig-p0019-02.png}}
+\begin{figure}\fitfig{%
+% fig-alt: 下降直线上P2在左上、P1在右下，虚线交于Q，P1处标π-α与α，x轴交点标α，下方标(b)
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,latex-latex] (-2.55,0) -- (4.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.52) -- (0,3.55) node[above=1pt] {$y$};
+  \draw[line width=0.6pt,dash pattern=on 2.4pt off 1.6pt] (-1.40,2.95) -- (0,2.95);
+  \draw[line width=0.6pt,dash pattern=on 2.4pt off 1.6pt,-latex] (-1.40,1.22) -- (2.05,1.22);
+  \draw[line width=0.6pt,dash pattern=on 2.4pt off 1.6pt] (-1.40,2.95) -- (-1.40,0);
+  \draw[line width=0.6pt,dash pattern=on 2.4pt off 1.6pt] (1.45,1.22) -- (1.45,0);
+  \draw[line width=0.7pt] (-1.85,3.22) -- (3.70,-0.15);
+  \fill (-1.40,2.95) circle (1.15pt);
+  \fill (1.45,1.22) circle (1.15pt);
+  \draw[line width=0.55pt] (1.16,1.43) arc (145:180:0.34);
+  \node at (0.55,1.55) {$\pi-\alpha$};
+  \node[above=3pt] at (1.78,1.22) {$\alpha$};
+  \draw[line width=0.55pt] (3.08,0.24) arc (145:180:0.42);
+  \node[above=1pt] at (2.95,0.42) {$\alpha$};
+  \node[left=2pt] at (-1.40,2.95) {$P_{2}$};
+  \node[right=2pt] at (0,2.95) {$N_{2}$};
+  \node[left=2pt] at (-1.40,1.22) {$Q$};
+  \node[below right=0pt] at (0.05,1.22) {$N_{1}$};
+  \node[below=2pt] at (1.12,1.22) {$P_{1}$};
+  \node[below=1pt] at (-1.40,0) {$M_{2}$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \node[below=1pt] at (1.78,0) {$M_{1}$};
+  \node at (0.15,-0.92) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -1643,7 +1738,22 @@ k = \frac {- 6 - 3}{2 \sqrt {3} + \sqrt {3}} = \frac {- 9}{3 \sqrt {3}} = - \fra
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-18}]{assets/analytic-geometry/fig-p0020-01.png}}
+\fitfig{%
+% fig-alt: 两条平行上升直线，左线l2交负x轴标α2，右线l1交正x轴标α1，原点O
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,latex-latex] (-3.05,0) -- (3.35,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-2.05) -- (0,2.70) node[above=1pt] {$y$};
+  \draw[line width=0.7pt] (-2.84,-1.12) -- (1.14,2.22);
+  \draw[line width=0.7pt] (-0.47,-1.61) -- (2.91,1.22);
+  \node[right=1pt] at (1.08,2.10) {$l_{2}$};
+  \node[above right=-1pt] at (2.78,1.18) {$l_{1}$};
+  \draw[line width=0.55pt] (-1.08,0) arc (0:40:0.42);
+  \node at (-0.84,0.18) {$\alpha_{2}$};
+  \draw[line width=0.55pt] (1.85,0) arc (0:40:0.40);
+  \node at (2.06,0.18) {$\alpha_{1}$};
+  \node[below=1pt] at (0.08,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{图1-18}
 \end{figure}
 
@@ -1683,7 +1793,27 @@ k = \frac {- 6 - 3}{2 \sqrt {3} + \sqrt {3}} = \frac {- 9}{3 \sqrt {3}} = - \fra
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-19}]{assets/analytic-geometry/fig-p0021-01.png}}
+\fitfig{%
+% fig-alt: 平行四边形ABCD，A(-6,-4)、B(0,-2)、C(8,6)、D(2,4)，轴上有单位短刻
+\begin{tikzpicture}[x=0.36cm,y=0.36cm,line cap=round,line join=round,>=latex]
+  \foreach \i in {-7,-6,...,-1,1,2,...,9}
+    \draw[line width=0.4pt] (\i,-0.16) -- (\i,0.16);
+  \foreach \j in {-5,-4,...,-1,1,2,...,7}
+    \draw[line width=0.4pt] (-0.16,\j) -- (0.16,\j);
+  \draw[line width=0.75pt,-latex] (-8.2,0) -- (10.2,0) node[right=2pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-5.6) -- (0,8.1) node[above=1pt] {$y$};
+  \draw[line width=0.7pt] (-6,-4) -- (0,-2) -- (8,6) -- (2,4) -- cycle;
+  \fill (-6,-4) circle (1.15pt);
+  \fill (0,-2) circle (1.15pt);
+  \fill (8,6) circle (1.15pt);
+  \fill (2,4) circle (1.15pt);
+  \node[below left=0pt] at (-6.05,-4.05) {$A(-6,-4)$};
+  \node[right=5pt] at (0.12,-2.55) {$B(0,-2)$};
+  \node[above=2pt] at (3.15,4.05) {$D(2,4)$};
+  \node[above right=1pt] at (8,6) {$C(8,6)$};
+  \node[below left=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{图1-19}
 \end{figure}
 
@@ -1736,7 +1866,22 @@ k = \frac {- 6 - 3}{2 \sqrt {3} + \sqrt {3}} = \frac {- 9}{3 \sqrt {3}} = - \fra
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-20}]{assets/analytic-geometry/fig-p0022-01.png}}
+\fitfig{%
+% fig-alt: 两互相垂直直线，l1上升交负x轴标α1，l2下降交正x轴标α2，交于第一象限
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,latex-latex] (-2.85,0) -- (3.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-1.30) -- (0,2.75) node[above=1pt] {$y$};
+  \draw[line width=0.7pt] (-2.44,-0.95) -- (1.46,2.09);
+  \draw[line width=0.7pt] (-0.31,2.29) -- (2.25,-0.99);
+  \node[right=1pt] at (1.40,1.98) {$l_{1}$};
+  \node[left=1pt] at (-0.31,2.18) {$l_{2}$};
+  \draw[line width=0.55pt] (-0.82,0) arc (0:38:0.40);
+  \node at (-0.62,0.16) {$\alpha_{1}$};
+  \draw[line width=0.55pt] (1.25,0.30) arc (128:180:0.38);
+  \node at (0.98,0.25) {$\alpha_{2}$};
+  \node[below=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{图1-20}
 \end{figure}
 
