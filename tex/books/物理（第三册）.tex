@@ -11784,7 +11784,58 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-3/fig-p0178-02.png}}
+\fitfig{%
+% fig-alt: 第6题。三角滑线电桥。A左B上C右。左斜矩形R，右斜矩形R_x。圆内G无针。G下导线至D，箭指下，D标在滑线之下。K左开口圆，刀斜下划虚线，未搭右开口圆，断开。两节电池皆长线左、短线右，上ε,r，无+、−。右矩形R'。下米尺L无数字。无回路电流箭
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \fill (0.42,3.05) circle (1.25pt);
+  \node[anchor=east,inner sep=1pt] at (0.28,3.05) {$A$};
+  \fill (3.35,5.05) circle (1.25pt);
+  \node[anchor=south,inner sep=1pt] at (3.35,5.14) {$B$};
+  \fill (6.28,3.05) circle (1.25pt);
+  \node[anchor=west,inner sep=1pt] at (6.42,3.05) {$C$};
+  \draw[line width=0.7pt] (0.42,3.05) -- (1.60,3.86);
+  \begin{scope}[shift={(1.885,4.05)},rotate=34.3]
+    \draw[line width=0.7pt] (-0.34,-0.13) rectangle (0.34,0.13);
+  \end{scope}
+  \node[anchor=south,inner sep=1pt] at (1.42,4.22) {$R$};
+  \draw[line width=0.7pt] (2.17,4.24) -- (3.35,5.05);
+  \draw[line width=0.7pt] (3.35,5.05) -- (4.53,4.24);
+  \begin{scope}[shift={(4.815,4.05)},rotate=-34.3]
+    \draw[line width=0.7pt] (-0.34,-0.13) rectangle (0.34,0.13);
+  \end{scope}
+  \node[anchor=south,inner sep=1pt] at (5.28,4.22) {$R_x$};
+  \draw[line width=0.7pt] (5.10,3.86) -- (6.28,3.05);
+  \draw[line width=0.7pt] (0.42,3.05) -- (6.28,3.05);
+  \draw[line width=0.7pt] (3.35,5.05) -- (3.35,4.32);
+  \draw[line width=0.7pt] (3.35,4.05) circle (0.26);
+  \node[inner sep=0pt] at (3.35,4.05) {$G$};
+  \draw[line width=0.7pt] (3.35,3.79) -- (3.18,3.52) -- (3.35,3.28);
+  \draw[line width=0.55pt,->] (3.35,3.28) -- (3.35,3.08);
+  \node[anchor=north,inner sep=1pt] at (3.52,2.96) {$D$};
+  \draw[line width=0.7pt] (0.42,3.05) -- (0.42,1.72) -- (1.18,1.72);
+  \draw[line width=0.7pt] (1.22,1.96) circle (1.4pt);
+  \draw[line width=0.7pt] (1.22,1.72) -- (1.22,1.90);
+  \draw[line width=0.6pt,dash pattern=on 1.5pt off 1.1pt] (1.28,1.90) -- (1.62,1.74);
+  \draw[line width=0.7pt] (1.78,1.72) circle (1.4pt);
+  \node[anchor=south,inner sep=1pt] at (1.42,2.02) {$K$};
+  \draw[line width=0.7pt] (1.92,1.72) -- (2.35,1.72);
+  \draw[line width=0.9pt] (2.48,1.46) -- (2.48,1.98);
+  \draw[line width=1.05pt] (2.62,1.56) -- (2.62,1.88);
+  \draw[line width=0.9pt] (2.76,1.46) -- (2.76,1.98);
+  \draw[line width=1.05pt] (2.90,1.56) -- (2.90,1.88);
+  \node[anchor=south,inner sep=1pt] at (2.76,2.02) {$\varepsilon,r$};
+  \draw[line width=0.7pt] (3.00,1.72) -- (3.55,1.72);
+  \draw[line width=0.7pt] (3.55,1.55) rectangle (4.55,1.89);
+  \node[anchor=south,inner sep=1pt] at (4.05,1.91) {$R'$};
+  \draw[line width=0.7pt] (4.55,1.72) -- (6.28,1.72) -- (6.28,3.05);
+  \draw[line width=0.6pt] (0.55,0.72) -- (6.15,0.72);
+  \draw[line width=0.8pt] (0.55,0.48) -- (6.15,0.48);
+  \foreach \n in {0,1,2,3,4,5,6,7,8,9} {
+    \draw[line width=0.5pt] ({0.72+\n*0.58},0.72) -- ({0.72+\n*0.58},0.84);
+  }
+  \node[anchor=west,inner sep=1pt] at (6.22,0.60) {$L$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -12330,7 +12381,26 @@ I_{\text{总}} = \frac{\varepsilon}{R + \frac{r}{n}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.60 含有反电动势的电路}]{assets/physics-3/fig-p0192-01.png}}
+\fitfig{%
+% fig-alt: 图2.60。矩形回路。左节长线左、短线右，上ε_1下r_1。右节短线左、长线右，上ε_2下r_2。反接。底矩形R，下标R。扫描无I箭、无+、−
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.35,2.55) -- (1.55,2.55);
+  \draw[line width=0.9pt] (1.68,2.28) -- (1.68,2.82);
+  \draw[line width=1.05pt] (1.82,2.38) -- (1.82,2.72);
+  \node[anchor=south,inner sep=1pt] at (1.82,2.86) {$\varepsilon_1$};
+  \node[anchor=north,inner sep=1pt] at (1.82,2.24) {$r_1$};
+  \draw[line width=0.7pt] (1.92,2.55) -- (3.55,2.55);
+  \draw[line width=1.05pt] (3.68,2.38) -- (3.68,2.72);
+  \draw[line width=0.9pt] (3.82,2.28) -- (3.82,2.82);
+  \node[anchor=south,inner sep=1pt] at (3.82,2.86) {$\varepsilon_2$};
+  \node[anchor=north,inner sep=1pt] at (3.82,2.24) {$r_2$};
+  \draw[line width=0.7pt] (3.92,2.55) -- (5.85,2.55) -- (5.85,0.45) -- (3.55,0.45);
+  \draw[line width=0.7pt] (0.35,2.55) -- (0.35,0.45) -- (2.05,0.45);
+  \draw[line width=0.7pt] (2.05,0.28) rectangle (3.05,0.62);
+  \node[anchor=north,inner sep=1pt] at (2.55,0.24) {$R$};
+  \draw[line width=0.7pt] (3.05,0.45) -- (3.55,0.45);
+\end{tikzpicture}%
+}
 \caption{图 2.60 含有反电动势的电路}
 \end{figure}
 
@@ -12359,7 +12429,28 @@ P_{\text{最大}} = \frac{\varepsilon^{2}}{4 R} = \frac{\varepsilon^{2}}{4 r}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.61}]{assets/physics-3/fig-p0193-01.png}}
+\fitfig{%
+% fig-alt: 图2.61。外接伏安。左箭指左，圆内A无针。V只并在矩形R两端。右箭指右。扫描无+、−、无表针
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt,->] (0.85,1.15) -- (0.42,1.15);
+  \draw[line width=0.7pt] (0.85,1.15) -- (1.18,1.15);
+  \draw[line width=0.7pt] (1.52,1.15) circle (0.28);
+  \node[inner sep=0pt] at (1.52,1.15) {$A$};
+  \draw[line width=0.7pt] (1.80,1.15) -- (2.35,1.15);
+  \fill (2.35,1.15) circle (1.2pt);
+  \draw[line width=0.7pt] (2.35,1.15) -- (2.35,2.05) -- (2.72,2.05);
+  \draw[line width=0.7pt] (3.16,2.05) circle (0.26);
+  \node[inner sep=0pt] at (3.16,2.05) {$V$};
+  \draw[line width=0.7pt] (3.42,2.05) -- (4.55,2.05) -- (4.55,1.15);
+  \fill (4.55,1.15) circle (1.2pt);
+  \draw[line width=0.7pt] (2.35,1.15) -- (2.62,1.15);
+  \draw[line width=0.7pt] (2.62,0.98) rectangle (3.72,1.32);
+  \node[anchor=north,inner sep=1pt] at (3.17,0.94) {$R$};
+  \draw[line width=0.7pt] (3.72,1.15) -- (4.55,1.15);
+  \draw[line width=0.7pt] (4.55,1.15) -- (4.92,1.15);
+  \draw[line width=0.55pt,->] (4.92,1.15) -- (5.35,1.15);
+\end{tikzpicture}%
+}
 \caption{图2.61}
 \end{figure}
 
@@ -12367,7 +12458,28 @@ P_{\text{最大}} = \frac{\varepsilon^{2}}{4 R} = \frac{\varepsilon^{2}}{4 r}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.62}]{assets/physics-3/fig-p0193-02.png}}
+\fitfig{%
+% fig-alt: 图2.62。内接伏安。左箭指左，圆内V并在A与矩形R串联组两端。圆内A无针。右箭指右。扫描无+、−、无表针
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt,->] (0.78,1.15) -- (0.35,1.15);
+  \draw[line width=0.7pt] (0.78,1.15) -- (1.15,1.15);
+  \fill (1.15,1.15) circle (1.2pt);
+  \draw[line width=0.7pt] (1.15,1.15) -- (1.15,2.15) -- (2.15,2.15);
+  \draw[line width=0.7pt] (2.59,2.15) circle (0.26);
+  \node[inner sep=0pt] at (2.59,2.15) {$V$};
+  \draw[line width=0.7pt] (2.85,2.15) -- (4.85,2.15) -- (4.85,1.15);
+  \fill (4.85,1.15) circle (1.2pt);
+  \draw[line width=0.7pt] (1.15,1.15) -- (1.42,1.15);
+  \draw[line width=0.7pt] (1.76,1.15) circle (0.28);
+  \node[inner sep=0pt] at (1.76,1.15) {$A$};
+  \draw[line width=0.7pt] (2.04,1.15) -- (2.42,1.15);
+  \draw[line width=0.7pt] (2.42,0.98) rectangle (3.52,1.32);
+  \node[anchor=north,inner sep=1pt] at (2.97,0.94) {$R$};
+  \draw[line width=0.7pt] (3.52,1.15) -- (4.85,1.15);
+  \draw[line width=0.7pt] (4.85,1.15) -- (5.22,1.15);
+  \draw[line width=0.55pt,->] (5.22,1.15) -- (5.65,1.15);
+\end{tikzpicture}%
+}
 \caption{图2.62}
 \end{figure}
 
@@ -12425,7 +12537,30 @@ K = \frac{1}{F} \frac{A}{n}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-3/fig-p0194-01.png}}
+\fitfig{%
+% fig-alt: 第1题。上节长线左、短线右，上ε_2下r_2。中支两黑点，矩形R，上标R。下节长线左、短线右，上ε_1下r_1。扫描无+、−、无电流箭
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.42,3.35) -- (1.55,3.35);
+  \draw[line width=0.9pt] (1.68,3.08) -- (1.68,3.62);
+  \draw[line width=1.05pt] (1.82,3.18) -- (1.82,3.52);
+  \node[anchor=south,inner sep=1pt] at (1.95,3.66) {$\varepsilon_2$};
+  \node[anchor=north,inner sep=1pt] at (1.95,3.04) {$r_2$};
+  \draw[line width=0.7pt] (1.92,3.35) -- (3.35,3.35) -- (3.35,0.45);
+  \draw[line width=0.7pt] (0.42,0.45) -- (0.42,3.35);
+  \fill (0.42,1.90) circle (1.25pt);
+  \fill (3.35,1.90) circle (1.25pt);
+  \draw[line width=0.7pt] (0.42,1.90) -- (1.15,1.90);
+  \draw[line width=0.7pt] (1.15,1.73) rectangle (2.35,2.07);
+  \node[anchor=south,inner sep=1pt] at (1.75,2.09) {$R$};
+  \draw[line width=0.7pt] (2.35,1.90) -- (3.35,1.90);
+  \draw[line width=0.7pt] (0.42,0.45) -- (1.55,0.45);
+  \draw[line width=0.9pt] (1.68,0.18) -- (1.68,0.72);
+  \draw[line width=1.05pt] (1.82,0.28) -- (1.82,0.62);
+  \node[anchor=south,inner sep=1pt] at (1.95,0.76) {$\varepsilon_1$};
+  \node[anchor=north,inner sep=1pt] at (1.95,0.14) {$r_1$};
+  \draw[line width=0.7pt] (1.92,0.45) -- (3.35,0.45);
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -12433,7 +12568,31 @@ K = \frac{1}{F} \frac{A}{n}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-3/fig-p0194-02.png}}
+\fitfig{%
+% fig-alt: 第2题。上矩形R_1。左竖节短粗线在上、长线在下，左r_1右ε_1。右竖节长线在上、短粗线在下，左r_2右ε_2。底矩形R_2。扫描无+、−、无电流箭
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.45,3.35) -- (1.55,3.35);
+  \draw[line width=0.7pt] (1.55,3.18) rectangle (2.85,3.52);
+  \node[anchor=south,inner sep=1pt] at (2.20,3.54) {$R_1$};
+  \draw[line width=0.7pt] (2.85,3.35) -- (4.55,3.35);
+  \draw[line width=0.7pt] (0.45,3.35) -- (0.45,2.22);
+  \draw[line width=1.05pt] (0.22,2.08) -- (0.68,2.08);
+  \draw[line width=0.9pt] (0.08,1.92) -- (0.82,1.92);
+  \node[anchor=east,inner sep=1pt] at (0.02,2.00) {$r_1$};
+  \node[anchor=west,inner sep=1pt] at (0.88,2.00) {$\varepsilon_1$};
+  \draw[line width=0.7pt] (0.45,1.82) -- (0.45,0.45);
+  \draw[line width=0.7pt] (4.55,3.35) -- (4.55,2.22);
+  \draw[line width=0.9pt] (4.18,2.08) -- (4.92,2.08);
+  \draw[line width=1.05pt] (4.32,1.92) -- (4.78,1.92);
+  \node[anchor=east,inner sep=1pt] at (4.12,2.00) {$r_2$};
+  \node[anchor=west,inner sep=1pt] at (4.98,2.00) {$\varepsilon_2$};
+  \draw[line width=0.7pt] (4.55,1.82) -- (4.55,0.45);
+  \draw[line width=0.7pt] (0.45,0.45) -- (1.55,0.45);
+  \draw[line width=0.7pt] (1.55,0.28) rectangle (2.85,0.62);
+  \node[anchor=north,inner sep=1pt] at (2.20,0.24) {$R_2$};
+  \draw[line width=0.7pt] (2.85,0.45) -- (4.55,0.45);
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -12458,7 +12617,38 @@ K = \frac{1}{F} \frac{A}{n}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-3/fig-p0195-01.png}}
+\fitfig{%
+% fig-alt: 第3题。上黑点B、矩形R、黑点C。左黑点A。底两节皆长线左、短线右，上ε下r。右黑点D，下接地三横。扫描无电流箭、无+、−
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.42,3.15) -- (0.72,3.15);
+  \draw[line width=0.7pt] (3.85,3.15) -- (3.85,0.15);
+  \fill (0.72,3.15) circle (1.25pt);
+  \node[anchor=south,inner sep=1pt] at (0.72,3.24) {$B$};
+  \draw[line width=0.7pt] (0.72,3.15) -- (1.05,3.15);
+  \draw[line width=0.7pt] (1.05,2.98) rectangle (2.35,3.32);
+  \node[anchor=south,inner sep=1pt] at (1.70,3.34) {$R$};
+  \draw[line width=0.7pt] (2.35,3.15) -- (2.85,3.15);
+  \fill (2.85,3.15) circle (1.25pt);
+  \node[anchor=south,inner sep=1pt] at (2.85,3.24) {$C$};
+  \draw[line width=0.7pt] (2.85,3.15) -- (3.85,3.15);
+  \draw[line width=0.7pt] (0.42,3.15) -- (0.42,1.15) -- (1.35,1.15);
+  \fill (0.72,1.15) circle (1.25pt);
+  \node[anchor=south,inner sep=1pt] at (0.55,1.28) {$A$};
+  \draw[line width=0.9pt] (1.48,0.88) -- (1.48,1.42);
+  \draw[line width=1.05pt] (1.62,0.98) -- (1.62,1.32);
+  \draw[line width=0.9pt] (1.76,0.88) -- (1.76,1.42);
+  \draw[line width=1.05pt] (1.90,0.98) -- (1.90,1.32);
+  \node[anchor=south,inner sep=1pt] at (1.76,1.46) {$\varepsilon$};
+  \node[anchor=north,inner sep=1pt] at (1.76,0.84) {$r$};
+  \draw[line width=0.7pt] (2.00,1.15) -- (3.85,1.15);
+  \fill (3.85,1.15) circle (1.25pt);
+  \node[anchor=west,inner sep=1pt] at (3.96,1.15) {$D$};
+  \draw[line width=0.7pt] (3.85,1.15) -- (3.85,0.15);
+  \draw[line width=0.7pt] (3.48,0.15) -- (4.22,0.15);
+  \draw[line width=0.7pt] (3.60,0.02) -- (4.10,0.02);
+  \draw[line width=0.7pt] (3.72,-0.11) -- (3.98,-0.11);
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -12466,7 +12656,44 @@ K = \frac{1}{F} \frac{A}{n}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-3/fig-p0195-02.png}}
+\fitfig{%
+% fig-alt: 第4题。顶圆内V无针。中矩形R_1，下滑臂接下左矩形R_2。中框内汉字电源，通左右轨。底K刀掀起，左实心右开口圆，断开，右矩形R_3。扫描无电流箭、无+、−
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0.42,5.55) -- (1.55,5.55);
+  \draw[line width=0.7pt] (1.97,5.55) circle (0.26);
+  \node[inner sep=0pt] at (1.97,5.55) {$V$};
+  \draw[line width=0.7pt] (2.23,5.55) -- (4.15,5.55);
+  \fill (0.42,5.55) circle (1.2pt);
+  \fill (4.15,5.55) circle (1.2pt);
+  \draw[line width=0.7pt] (0.42,5.55) -- (0.42,0.55) -- (1.22,0.55);
+  \draw[line width=0.7pt] (4.15,5.55) -- (4.15,0.55) -- (3.35,0.55);
+  \fill (0.42,4.15) circle (1.2pt);
+  \fill (4.15,4.15) circle (1.2pt);
+  \draw[line width=0.7pt] (0.42,4.15) -- (1.15,4.15);
+  \draw[line width=0.7pt] (1.15,3.96) rectangle (3.15,4.34);
+  \node[anchor=south,inner sep=1pt] at (2.15,4.38) {$R_1$};
+  \draw[line width=0.7pt] (3.15,4.15) -- (4.15,4.15);
+  \draw[line width=0.7pt] (2.15,3.96) -- (2.15,3.15) -- (1.82,3.15);
+  \fill (0.42,3.15) circle (1.2pt);
+  \node[anchor=south,inner sep=1pt] at (1.15,3.36) {$R_2$};
+  \draw[line width=0.7pt] (0.42,3.15) -- (0.72,3.15);
+  \draw[line width=0.7pt] (0.72,2.98) rectangle (1.82,3.32);
+  \fill (0.42,2.05) circle (1.2pt);
+  \fill (4.15,2.05) circle (1.2pt);
+  \draw[line width=0.7pt] (0.42,2.05) -- (1.35,2.05);
+  \draw[line width=0.7pt] (1.35,1.78) rectangle (2.85,2.32);
+  \node[inner sep=0pt] at (2.10,2.05) {电源};
+  \draw[line width=0.7pt] (2.85,2.05) -- (4.15,2.05);
+  \fill (1.22,0.55) circle (1.2pt);
+  \draw[line width=0.7pt] (1.22,0.55) -- (1.58,0.82);
+  \draw[line width=0.7pt] (1.78,0.55) circle (1.45pt);
+  \node[anchor=south,inner sep=1pt] at (1.35,0.88) {$K$};
+  \draw[line width=0.7pt] (1.92,0.55) -- (2.15,0.55);
+  \draw[line width=0.7pt] (2.15,0.38) rectangle (3.25,0.72);
+  \node[anchor=south,inner sep=1pt] at (2.70,0.74) {$R_3$};
+  \draw[line width=0.7pt] (3.25,0.55) -- (3.35,0.55);
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
