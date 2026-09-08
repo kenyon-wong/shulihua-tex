@@ -5536,7 +5536,17 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（第5题）}]{assets/physics-4/fig-p0093-01.png}}
+% fig-alt: （第5题）已知发光点A及其象A'和主光轴：A'在轴上方偏左且较高，A在轴上方偏右较低，未画透镜与光线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=1.05pt] (-3.25,0) -- (3.25,0);
+  \fill (-1.58,0.52) circle (0.034);
+  \fill (1.62,0.24) circle (0.034);
+  \node[anchor=south] at (-1.58,0.58) {$A'$};
+  \node[anchor=south] at (1.62,0.30) {$A$};
+\end{tikzpicture}%
+}
+
 \caption{（第5题）}
 \end{figure}
 
@@ -5554,7 +5564,52 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.31}]{assets/physics-4/fig-p0094-01.png}}
+% fig-alt: 图4.31凸透镜成实象：AB在左，倒立缩小实象A'B'在右；两焦点均标F；斜线为相似三角形，光线无箭头
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.45pt] (-2.85,0) -- (2.55,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,1.22);
+  \draw[line width=0.6pt,->] (0,0) -- (0,-1.22);
+  \draw[line width=0.55pt] (-2.40,0) -- (-2.40,1.05);
+  \draw[line width=0.55pt] (1.71,0) -- (1.71,-0.75);
+  \draw[line width=0.5pt] (-2.40,1.05) -- (0,1.05);
+  \draw[line width=0.5pt] (0,1.05) -- (1.98,-1.03);
+  \draw[line width=0.5pt] (-2.40,1.05) -- (1.71,-0.75);
+  \begin{scope}
+    \clip (-2.40,0) -- (-2.40,1.05) -- (0,0) -- cycle;
+    \foreach \k in {0,1,2,3,4,5,6,7} {\draw[line width=0.28pt] (-2.55,0.02+0.16*\k) -- (-1.05,-0.48+0.16*\k);}
+  \end{scope}
+  \begin{scope}
+    \clip (0,0) -- (1.71,0) -- (1.71,-0.75) -- cycle;
+    \foreach \k in {0,1,2,3,4,5} {\draw[line width=0.28pt] (0.05,-0.04-0.14*\k) -- (1.85,0.55-0.14*\k);}
+  \end{scope}
+  \draw[line width=0.55pt] (-2.40,0) -- (-2.40,1.05);
+  \draw[line width=0.55pt] (1.71,0) -- (1.71,-0.75);
+  \fill (-2.40,1.05) circle (0.028);
+  \fill (0,1.05) circle (0.028);
+  \fill (-1.00,0) circle (0.028);
+  \fill (0,0) circle (0.028);
+  \fill (1.00,0) circle (0.028);
+  \fill (1.71,-0.75) circle (0.028);
+  \draw[line width=0.4pt] (-2.40,-0.22) -- (-2.40,-0.46);
+  \draw[line width=0.4pt] (0,-0.22) -- (0,-0.46);
+  \draw[line width=0.4pt,<->] (-2.32,-0.38) -- (-0.10,-0.38);
+  \draw[line width=0.4pt] (0,-0.62) -- (0,-0.86);
+  \draw[line width=0.4pt] (1.71,-0.78) -- (1.71,-1.02);
+  \draw[line width=0.4pt,<->] (0.10,-0.94) -- (1.61,-0.94);
+  \node[anchor=south east] at (-2.44,1.07) {$A$};
+  \node[anchor=east] at (-2.46,0.02) {$B$};
+  \node[anchor=south west] at (0.06,1.07) {$D$};
+  \node[anchor=north] at (-1.00,-0.04) {$F$};
+  \node[anchor=north] at (0.04,-0.06) {$O$};
+  \node[anchor=south] at (0.98,0.12) {$F$};
+  \node[anchor=south west] at (1.78,0.04) {$B'$};
+  \node[anchor=north west] at (1.74,-0.76) {$A'$};
+  \node[anchor=north] at (-1.20,-0.40) {$u$};
+  \node[anchor=north] at (0.86,-0.96) {$v$};
+\end{tikzpicture}%
+}
+
 \caption{图4.31}
 \end{figure}
 
@@ -5562,13 +5617,99 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.32}]{assets/physics-4/fig-p0094-02.png}}
+% fig-alt: 图4.32凸透镜成虚象：物在焦点以内，A'B'在物方焦点左侧正立放大；反向延长为虚线，折射光线实线向右
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.45pt] (-3.55,0) -- (2.55,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,1.05);
+  \draw[line width=0.6pt,->] (0,0) -- (0,-1.05);
+  \draw[line width=0.55pt] (-3.20,0) -- (-3.20,1.52);
+  \draw[line width=0.55pt] (-1.15,0) -- (-1.15,0.55);
+  \draw[line width=0.4pt,dashed] (-3.20,1.52) -- (0,0);
+  \draw[line width=0.4pt,dashed] (-3.20,1.52) -- (0,0.55);
+  \draw[line width=0.5pt] (-1.15,0.55) -- (0,0.55);
+  \draw[line width=0.5pt] (0,0.55) -- (2.45,-0.20);
+  \draw[line width=0.5pt] (0,0) -- (2.15,-1.05);
+  \begin{scope}
+    \clip (-3.20,0) -- (-3.20,1.52) -- (0,0) -- cycle;
+    \foreach \k in {0,1,2,3,4,5,6,7,8,9} {\draw[line width=0.28pt] (-3.40,0.02+0.17*\k) -- (-1.55,-0.62+0.17*\k);}
+  \end{scope}
+  \draw[line width=0.55pt] (-3.20,0) -- (-3.20,1.52);
+  \draw[line width=0.55pt] (-1.15,0) -- (-1.15,0.55);
+  \draw[line width=0.5pt] (-1.15,0.55) -- (0,0);
+  \draw[line width=0.4pt] (-1.15,-0.16) -- (-1.15,-0.40);
+  \draw[line width=0.4pt] (0,-0.16) -- (0,-0.40);
+  \draw[line width=0.4pt,<->] (-1.05,-0.32) -- (-0.12,-0.32);
+  \draw[line width=0.4pt] (-3.20,-0.52) -- (-3.20,-0.76);
+  \draw[line width=0.4pt] (0,-0.52) -- (0,-0.76);
+  \draw[line width=0.4pt,<->] (-3.10,-0.66) -- (-0.10,-0.66);
+  \fill (-3.20,1.52) circle (0.028);
+  \fill (-1.80,0) circle (0.028);
+  \fill (-1.15,0.55) circle (0.028);
+  \fill (0,0) circle (0.028);
+  \fill (0,0.55) circle (0.028);
+  \fill (1.80,0) circle (0.028);
+  \node[anchor=south east] at (-3.16,1.54) {$A'$};
+  \node[anchor=north east] at (-3.26,-0.02) {$B'$};
+  \node[anchor=north] at (-1.80,-0.12) {$F$};
+  \node[anchor=south west] at (-1.10,0.57) {$A$};
+  \node[anchor=south west] at (-1.06,0.06) {$B$};
+  \node[anchor=south west] at (0.06,0.57) {$D$};
+  \node[anchor=north] at (0.02,-0.04) {$O$};
+  \node[anchor=south west] at (1.84,0.04) {$F$};
+  \node[anchor=north] at (-1.60,-0.68) {$v$};
+  \node[anchor=north] at (-0.58,-0.34) {$u$};
+\end{tikzpicture}%
+}
+
 \caption{图4.32}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.33}]{assets/physics-4/fig-p0094-03.png}}
+% fig-alt: 图4.33凹透镜成虚象：矢端朝内；物方焦点标F（不作F'）；虚线为发散折射光的反向延长，交于正立缩小的A'B'
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.45pt] (-3.05,0) -- (2.15,0);
+  \draw[line width=0.45pt,->] (1.55,0) -- (2.15,0);
+  \draw[line width=0.6pt] (0,-1.22) -- (0,1.22);
+  \draw[line width=0.6pt] (-0.13,1.38) -- (0,1.22) -- (0.13,1.38);
+  \draw[line width=0.6pt] (-0.13,-1.38) -- (0,-1.22) -- (0.13,-1.38);
+  \draw[line width=0.55pt] (-2.55,0) -- (-2.55,1.15);
+  \draw[line width=0.55pt] (-1.18,0) -- (-1.18,0.53);
+  \draw[line width=0.5pt] (-2.55,1.15) -- (0,1.15);
+  \draw[line width=0.5pt] (0,1.15) -- (1.85,2.12);
+  \draw[line width=0.5pt] (-2.55,1.15) -- (1.75,-0.79);
+  \draw[line width=0.4pt,dashed] (-2.20,0) -- (0,1.15);
+  \begin{scope}
+    \clip (-2.55,0) -- (-2.55,1.15) -- (0,0) -- cycle;
+    \foreach \k in {0,1,2,3,4,5,6,7} {\draw[line width=0.28pt] (-2.70,0.02+0.16*\k) -- (-1.20,-0.48+0.16*\k);}
+  \end{scope}
+  \draw[line width=0.55pt] (-2.55,0) -- (-2.55,1.15);
+  \draw[line width=0.55pt] (-1.18,0) -- (-1.18,0.53);
+  \draw[line width=0.4pt] (-1.18,-0.16) -- (-1.18,-0.40);
+  \draw[line width=0.4pt] (0,-0.16) -- (0,-0.40);
+  \draw[line width=0.4pt,<->] (-1.08,-0.32) -- (-0.12,-0.32);
+  \draw[line width=0.4pt] (-2.55,-0.52) -- (-2.55,-0.76);
+  \draw[line width=0.4pt] (0,-0.52) -- (0,-0.76);
+  \draw[line width=0.4pt,<->] (-2.45,-0.66) -- (-0.10,-0.66);
+  \fill (-2.55,1.15) circle (0.028);
+  \fill (-2.20,0) circle (0.028);
+  \fill (-1.18,0.53) circle (0.028);
+  \fill (0,0) circle (0.028);
+  \fill (0,1.15) circle (0.028);
+  \node[anchor=south east] at (-2.58,1.17) {$A$};
+  \node[anchor=north east] at (-2.62,-0.02) {$B$};
+  \node[anchor=south] at (-2.20,0.10) {$F$};
+  \node[anchor=south west] at (-1.14,0.55) {$A'$};
+  \node[anchor=north west] at (-1.10,-0.02) {$B'$};
+  \node[anchor=south west] at (0.06,1.17) {$D$};
+  \node[anchor=north] at (0.02,-0.06) {$O$};
+  \node[anchor=north] at (-1.28,-0.68) {$u$};
+  \node[anchor=north] at (-0.59,-0.34) {$v$};
+\end{tikzpicture}%
+}
+
 \caption{图4.33}
 \end{figure}
 
@@ -6084,7 +6225,80 @@ f = \frac {L ^ {2} - d ^ {2}}{4 L}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.35}]{assets/physics-4/fig-p0106-01.png}}
+% fig-alt: 图4.35半截凸透镜仍成完整倒立实象：上为整镜光束，下为上半截透镜，斜线表示通过透镜的光束，箭头指向象
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}[yshift=2.55cm]
+    \draw[line width=0.45pt] (-2.55,0) -- (2.70,0);
+    \draw[line width=0.55pt] (-2.15,0.72) -- (-2.15,-0.72);
+    \draw[line width=0.45pt,->] (-2.15,0.38) -- (-2.15,0.70);
+    \draw[line width=0.55pt] (2.15,0.62) -- (2.15,-0.62);
+    \draw[line width=0.45pt,->] (2.15,0.05) -- (2.15,-0.28);
+    \draw[line width=0.5pt] (0,0) ellipse (0.14 and 0.88);
+    \draw[line width=0.4pt] (0,-0.88) -- (0,0.88);
+    \draw[line width=0.45pt] (-2.15,-0.72) -- (-0.10,0.86);
+    \draw[line width=0.45pt] (-2.15,-0.72) -- (-0.08,-0.86);
+    \draw[line width=0.45pt] (0.10,0.86) -- (2.15,0.62);
+    \draw[line width=0.45pt] (0.08,-0.86) -- (2.15,0.62);
+    \draw[line width=0.45pt,->] (-1.55,-0.22) -- (-1.20,-0.05);
+    \draw[line width=0.45pt,->] (-1.50,-0.76) -- (-1.15,-0.80);
+    \draw[line width=0.45pt,->] (0.85,0.78) -- (1.20,0.74);
+    \draw[line width=0.45pt,->] (0.90,-0.40) -- (1.25,-0.08);
+    \begin{scope}
+      \clip (-2.15,-0.72) -- (-0.10,0.86) -- (-0.08,-0.86) -- cycle;
+      \foreach \k in {0,1,2,3,4,5,6,7} {\draw[line width=0.25pt] (-2.30,-0.85+0.24*\k) -- (-0.70,-0.20+0.24*\k);}
+    \end{scope}
+    \begin{scope}
+      \clip (0.10,0.86) -- (0.08,-0.86) -- (2.15,0.62) -- cycle;
+      \foreach \k in {0,1,2,3,4,5,6,7} {\draw[line width=0.25pt] (0.05,-0.95+0.26*\k) -- (1.55,-0.28+0.26*\k);}
+    \end{scope}
+    \draw[line width=0.5pt] (-2.15,-0.72) -- (-0.10,0.86);
+    \draw[line width=0.5pt] (-2.15,-0.72) -- (-0.08,-0.86);
+    \draw[line width=0.5pt] (0.10,0.86) -- (2.15,0.62);
+    \draw[line width=0.5pt] (0.08,-0.86) -- (2.15,0.62);
+    \fill (0,0) circle (0.028);
+    \node[anchor=south] at (-2.15,0.76) {$A$};
+    \node[anchor=north west] at (-2.10,-0.74) {$B$};
+    \node[anchor=north] at (0.02,-0.06) {$O$};
+    \node[anchor=south] at (2.15,0.66) {$B'$};
+    \node[anchor=north east] at (2.10,-0.64) {$A'$};
+  \end{scope}
+  \begin{scope}[yshift=0cm]
+    \draw[line width=0.45pt] (-2.55,0) -- (2.70,0);
+    \draw[line width=0.55pt] (-2.15,0.72) -- (-2.15,-0.72);
+    \draw[line width=0.45pt,->] (-2.15,0.38) -- (-2.15,0.70);
+    \draw[line width=0.55pt] (2.15,0.62) -- (2.15,-0.62);
+    \draw[line width=0.45pt,->] (2.15,0.05) -- (2.15,-0.28);
+    \draw[line width=0.55pt] (0,0) .. controls (0.20,0.22) and (0.10,0.72) .. (0,0.92)
+      .. controls (-0.12,0.70) and (-0.22,0.22) .. (0,0) -- cycle;
+    \draw[line width=0.45pt] (0.10,0) -- (0.10,0.88);
+    \draw[line width=0.45pt] (-2.15,-0.72) -- (0,0.90);
+    \draw[line width=0.45pt] (-2.15,-0.72) -- (0,0) -- (2.15,0.62);
+    \draw[line width=0.45pt] (0.08,0.88) -- (2.15,0.62);
+    \draw[line width=0.45pt,->] (-1.45,-0.18) -- (-1.10,0.02);
+    \draw[line width=0.45pt,->] (-1.40,-0.48) -- (-1.05,-0.42);
+    \draw[line width=0.45pt,->] (0.85,0.78) -- (1.20,0.72);
+    \begin{scope}
+      \clip (-2.15,-0.72) -- (0,0.90) -- (0,0) -- cycle;
+      \foreach \k in {0,1,2,3,4,5,6} {\draw[line width=0.25pt] (-2.25,-0.80+0.24*\k) -- (-0.55,-0.15+0.24*\k);}
+    \end{scope}
+    \begin{scope}
+      \clip (0,0.90) -- (0,0) -- (2.15,0.62) -- cycle;
+      \foreach \k in {0,1,2,3,4,5} {\draw[line width=0.25pt] (0.05,0.02+0.16*\k) -- (1.55,0.18+0.16*\k);}
+    \end{scope}
+    \draw[line width=0.5pt] (-2.15,-0.72) -- (0,0.90);
+    \draw[line width=0.5pt] (-2.15,-0.72) -- (2.15,0.62);
+    \draw[line width=0.5pt] (0.08,0.88) -- (2.15,0.62);
+    \fill (0,0) circle (0.028);
+    \node[anchor=south] at (-2.15,0.76) {$A$};
+    \node[anchor=north west] at (-2.10,-0.74) {$B$};
+    \node[anchor=north] at (0.02,-0.05) {$O$};
+    \node[anchor=south] at (2.15,0.66) {$B'$};
+    \node[anchor=north east] at (2.10,-0.64) {$A'$};
+  \end{scope}
+\end{tikzpicture}%
+}
+
 \caption{图4.35}
 \end{figure}
 
@@ -6118,7 +6332,50 @@ v _ {2} = \frac {f _ {2} u _ {2}}{u _ {2} - f _ {2}} = \frac {8 \times 12}{12 - 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.36}]{assets/physics-4/fig-p0107-01.png}}
+% fig-alt: 图4.36两凸透镜共轴：物在O1前，倒立实象A'B'在两镜之间；再经O2成正立实象A''B'。光线无附加箭头，两焦点均标F1、F2
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.05cm,y=1cm]
+  \draw[line width=0.45pt] (-4.85,0) -- (6.95,0);
+  \draw[line width=0.45pt,->] (-4.85,0) -- (-4.55,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,1.05);
+  \draw[line width=0.6pt,->] (0,0) -- (0,-1.05);
+  \draw[line width=0.6pt,->] (3.96,0) -- (3.96,1.05);
+  \draw[line width=0.6pt,->] (3.96,0) -- (3.96,-1.05);
+  \draw[line width=0.55pt] (-4.40,0) -- (-4.40,0.85);
+  \draw[line width=0.45pt,->] (-4.40,0.42) -- (-4.40,0.82);
+  \draw[line width=0.55pt] (2.64,0) -- (2.64,-0.51);
+  \draw[line width=0.45pt,->] (2.64,-0.08) -- (2.64,-0.38);
+  \draw[line width=0.55pt] (6.60,0) -- (6.60,1.02);
+  \draw[line width=0.45pt,->] (6.60,0.48) -- (6.60,0.98);
+  \draw[line width=0.5pt] (-4.40,0.85) -- (0,0.85);
+  \draw[line width=0.5pt] (0,0.85) -- (2.64,-0.51);
+  \draw[line width=0.5pt] (-4.40,0.85) -- (2.64,-0.51);
+  \draw[line width=0.5pt] (2.64,-0.51) -- (3.96,-0.51);
+  \draw[line width=0.5pt] (3.96,-0.51) -- (6.60,1.02);
+  \draw[line width=0.5pt] (2.64,-0.51) -- (6.60,1.02);
+  \fill (-1.65,0) circle (0.026);
+  \fill (0,0) circle (0.026);
+  \fill (1.65,0) circle (0.026);
+  \fill (3.08,0) circle (0.026);
+  \fill (3.96,0) circle (0.026);
+  \fill (4.84,0) circle (0.026);
+  \fill (2.64,-0.51) circle (0.026);
+  \fill (6.60,1.02) circle (0.026);
+  \node[anchor=south] at (-4.40,0.88) {$A$};
+  \node[anchor=north] at (-4.40,-0.04) {$B$};
+  \node[anchor=north] at (-1.65,-0.05) {$F_{1}$};
+  \node[anchor=north] at (0.02,-0.06) {$O_{1}$};
+  \node[anchor=south] at (1.62,0.05) {$F_{1}$};
+  \node[anchor=south] at (2.52,0.06) {$B'$};
+  \node[anchor=north west] at (2.66,-0.52) {$A'$};
+  \node[anchor=south] at (3.08,0.05) {$F_{2}$};
+  \node[anchor=north] at (3.96,-0.06) {$O_{2}$};
+  \node[anchor=north west] at (4.86,-0.04) {$F_{2}$};
+  \node[anchor=south west] at (6.62,1.04) {$A''$};
+  \node[anchor=north] at (6.60,-0.04) {$B''$};
+\end{tikzpicture}%
+}
+
 \caption{图4.36}
 \end{figure}
 
@@ -6146,7 +6403,51 @@ f），已知 u = 15 厘米，f = 10 厘米，根据成象公式可以算出象�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.37}]{assets/physics-4/fig-p0108-01.png}}
+% fig-alt: 图4.37点光源S、平面镜M与凸透镜：实象S1在透镜另一侧；S'为镜中虚象，虚线只画在镜后；反射后再成实象S2
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.45pt] (-2.15,0) -- (6.55,0);
+  \draw[line width=0.7pt] (0,0.02) -- (0,1.08);
+  \foreach \k in {0,1,2,3,4,5,6} {\draw[line width=0.32pt] (-0.12,0.10+0.13*\k) -- (0,0.10+0.13*\k);}
+  \draw[line width=0.6pt,->] (3.00,0) -- (3.00,1.15);
+  \draw[line width=0.6pt,->] (3.00,0) -- (3.00,-1.15);
+  \draw[line width=0.4pt,dashed] (-1.50,0.62) -- (0,0.62);
+  \draw[line width=0.4pt,dashed] (-1.50,0.62) -- (0,0.38);
+  \draw[line width=0.5pt] (0,0.62) -- (3.00,0.62);
+  \draw[line width=0.5pt] (3.00,0.62) -- (6.00,-1.24);
+  \draw[line width=0.5pt] (1.50,0.62) -- (3.00,0) -- (6.00,-1.24);
+  \draw[line width=0.45pt,->] (0.35,0.62) -- (0.75,0.62);
+  \draw[line width=0.45pt,->] (1.85,0.62) -- (2.25,0.62);
+  \draw[line width=0.45pt,->] (3.55,0.28) -- (3.95,0.03);
+  \draw[line width=0.45pt,->] (2.05,0.45) -- (2.40,0.33);
+  \draw[line width=0.45pt,->] (4.55,-0.78) -- (4.95,-0.95);
+  \draw[line width=0.5pt] (1.50,0.62) -- (0,0.34);
+  \draw[line width=0.5pt] (1.50,0.62) -- (0,0.16);
+  \draw[line width=0.45pt,->] (1.05,0.53) -- (0.70,0.46);
+  \draw[line width=0.45pt,->] (1.00,0.48) -- (0.65,0.36);
+  \draw[line width=0.5pt] (0,0.41) -- (3.00,0) -- (4.29,-0.18);
+  \draw[line width=0.5pt] (4.29,-0.18) -- (5.55,-0.18);
+  \draw[line width=0.45pt,->] (0.85,0.29) -- (1.25,0.23);
+  \draw[line width=0.45pt,->] (3.45,-0.04) -- (3.85,-0.10);
+  \draw[line width=0.45pt,->] (5.15,-0.18) -- (5.45,-0.18);
+  \fill (-1.50,0.62) circle (0.03);
+  \fill (1.50,0.62) circle (0.03);
+  \fill (2.00,0) circle (0.028);
+  \fill (3.00,0) circle (0.028);
+  \fill (4.00,0) circle (0.028);
+  \fill (4.29,-0.18) circle (0.03);
+  \fill (6.00,-1.24) circle (0.03);
+  \node[anchor=south] at (-1.50,0.66) {$S'$};
+  \node[anchor=north] at (0.00,-0.04) {$M$};
+  \node[anchor=south] at (1.50,0.66) {$S$};
+  \node[anchor=north west] at (2.02,-0.04) {$F$};
+  \node[anchor=north] at (3.02,-0.06) {$O$};
+  \node[anchor=south] at (4.00,0.05) {$F$};
+  \node[anchor=north west] at (4.32,-0.22) {$S_{2}$};
+  \node[anchor=north west] at (6.04,-1.22) {$S_{1}$};
+\end{tikzpicture}%
+}
+
 \caption{图4.37}
 \end{figure}
 
@@ -6193,7 +6494,72 @@ f），已知 u = 15 厘米，f = 10 厘米，根据成象公式可以算出象�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.38}]{assets/physics-4/fig-p0109-01.png}}
+% fig-alt: 图4.38凸透镜成象归纳：物1在无穷远，2在2F，3在F与2F之间，4在F，5在焦点以内；1'2'3'为倒立实象，5'为虚象虚线，4对应+∞
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.45pt] (-5.15,0) -- (5.15,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,1.15);
+  \draw[line width=0.6pt,->] (0,0) -- (0,-1.15);
+  \draw[line width=0.5pt] (-4.85,0) -- (-4.85,0.92);
+  \draw[line width=0.45pt,->] (-4.85,0.48) -- (-4.85,0.88);
+  \draw[line width=0.5pt] (-2.30,0) -- (-2.30,0.62);
+  \draw[line width=0.45pt,->] (-2.30,0.30) -- (-2.30,0.58);
+  \draw[line width=0.5pt] (-1.72,0) -- (-1.72,0.46);
+  \draw[line width=0.45pt,->] (-1.72,0.20) -- (-1.72,0.42);
+  \draw[line width=0.5pt] (-1.15,0) -- (-1.15,0.36);
+  \draw[line width=0.45pt,->] (-1.15,0.14) -- (-1.15,0.32);
+  \draw[line width=0.5pt] (-0.67,0) -- (-0.67,0.50);
+  \draw[line width=0.45pt,->] (-0.67,0.22) -- (-0.67,0.46);
+  \draw[line width=0.45pt] (-4.85,0.92) -- (0,0.92);
+  \draw[line width=0.45pt] (0,0.92) -- (1.15,0) -- (2.95,-1.40);
+  \draw[line width=0.45pt] (-4.85,0.92) -- (1.15,-0.22);
+  \draw[line width=0.45pt] (-2.30,0.62) -- (2.30,-0.62);
+  \draw[line width=0.45pt] (-1.72,0.46) -- (3.47,-0.93);
+  \draw[line width=0.45pt] (-1.15,0.36) -- (4.55,-1.42);
+  \draw[line width=0.45pt] (-0.67,0.50) -- (2.35,-1.75);
+  \draw[line width=0.5pt] (1.15,0) -- (1.15,-0.22);
+  \draw[line width=0.45pt,->] (1.15,-0.02) -- (1.15,-0.16);
+  \draw[line width=0.5pt] (2.30,0) -- (2.30,-0.62);
+  \draw[line width=0.45pt,->] (2.30,-0.08) -- (2.30,-0.40);
+  \draw[line width=0.5pt] (3.47,0) -- (3.47,-0.93);
+  \draw[line width=0.45pt,->] (3.47,-0.12) -- (3.47,-0.52);
+  \draw[line width=0.4pt,dashed] (-1.59,1.19) -- (-1.59,0);
+  \draw[line width=0.4pt,dashed] (-1.59,1.19) -- (0,0);
+  \draw[line width=0.4pt,dashed] (-1.59,1.19) -- (0,0.50);
+  \draw[line width=0.45pt,->] (-3.55,0.92) -- (-3.05,0.92);
+  \draw[line width=0.45pt,->] (-3.20,0.61) -- (-2.70,0.41);
+  \draw[line width=0.45pt,->] (-1.15,0.31) -- (-0.75,0.21);
+  \draw[line width=0.45pt,->] (1.55,-0.16) -- (1.95,-0.30);
+  \draw[line width=0.45pt,->] (1.45,-0.46) -- (1.90,-0.62);
+  \draw[line width=0.45pt,->] (2.15,-0.58) -- (2.60,-0.76);
+  \draw[line width=0.45pt,->] (2.55,-0.80) -- (3.05,-1.02);
+  \draw[line width=0.45pt] (-5.05,0.04) .. controls (-5.28,0.18) and (-5.28,0.78) .. (-4.98,0.96);
+  \node[anchor=east] at (-5.12,0.50) {$-\infty$};
+  \draw[line width=0.45pt] (4.55,-1.05) .. controls (4.78,-1.18) and (4.78,-1.55) .. (4.50,-1.68);
+  \node[anchor=west] at (4.62,-1.38) {$+\infty$};
+  \fill (-2.30,0) circle (0.026);
+  \fill (-1.15,0) circle (0.026);
+  \fill (0,0) circle (0.026);
+  \fill (1.15,0) circle (0.026);
+  \fill (2.30,0) circle (0.026);
+  \fill (-1.59,1.19) circle (0.028);
+  \node[anchor=south] at (-4.85,0.96) {$1$};
+  \node[anchor=south] at (-2.30,0.66) {$2$};
+  \node[anchor=south] at (-1.72,0.50) {$3$};
+  \node[anchor=south] at (-1.15,0.40) {$4$};
+  \node[anchor=south west] at (-0.62,0.52) {$5$};
+  \node[anchor=south] at (-1.59,1.22) {$5'$};
+  \node[anchor=north] at (-2.30,-0.04) {$2F$};
+  \node[anchor=north] at (-1.15,-0.04) {$F$};
+  \node[anchor=south west] at (0.06,0.05) {$O$};
+  \node[anchor=south] at (1.15,0.05) {$F$};
+  \node[anchor=south] at (2.30,0.05) {$2F$};
+  \node[anchor=west] at (1.18,-0.20) {$1'$};
+  \node[anchor=west] at (2.34,-0.58) {$2'$};
+  \node[anchor=west] at (3.50,-0.90) {$3'$};
+\end{tikzpicture}%
+}
+
 \caption{图4.38}
 \end{figure}
 
