@@ -5133,7 +5133,22 @@ x - y = 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·12}]{assets/analytic-geometry/fig-p0070-01.png}}
+\fitfig{%
+% fig-alt: 过原点两直线x+y=0与x-y=0，四端箭头向外，轴上有单位短刻，原点标O
+\begin{tikzpicture}[x=0.48cm,y=0.48cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,latex-latex] (-2.35,2.35) -- (2.35,-2.35);
+  \draw[line width=0.7pt,latex-latex] (-2.35,-2.35) -- (2.55,2.55);
+  \draw[line width=0.75pt,-latex] (-2.75,0) -- (3.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-2.75) -- (0,3.05) node[above=1pt] {$y$};
+  \foreach \x in {-2,-1,1,2}
+    \draw[line width=0.4pt] (\x,-0.08) -- (\x,0.08);
+  \foreach \y in {-2,-1,1,2}
+    \draw[line width=0.4pt] (-0.08,\y) -- (0.08,\y);
+  \node[rotate=-42,anchor=south] at (-1.55,1.78) {\footnotesize $x+y=0$};
+  \node[rotate=34,anchor=south west] at (1.55,1.48) {\scriptsize $x-y=0$};
+  \node[below left=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{图2·12}
 \end{figure}
 
@@ -5141,7 +5156,22 @@ x - y = 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·13}]{assets/analytic-geometry/fig-p0070-02.png}}
+\fitfig{%
+% fig-alt: 原点圆半径5，直线x-y=0两端箭头穿圆，圈下标x^2+y^2-25=0，原点标O，轴上有单位短刻
+\begin{tikzpicture}[x=0.32cm,y=0.32cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,latex-latex] (-5.85,-5.85) -- (6.85,6.85);
+  \draw[line width=0.7pt] (0,0) circle (5);
+  \draw[line width=0.75pt,-latex] (-6.35,0) -- (6.85,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-6.35) -- (0,6.55) node[above=1pt] {$y$};
+  \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+    \draw[line width=0.4pt] (\x,-0.12) -- (\x,0.12);
+  \foreach \y in {-5,-4,-3,-2,-1,1,2,3,4,5}
+    \draw[line width=0.4pt] (-0.12,\y) -- (0.12,\y);
+  \node[rotate=42,anchor=south] at (4.25,4.05) {\footnotesize $x-y=0$};
+  \node[anchor=north west] at (0.55,-5.28) {\footnotesize $x^{2}+y^{2}-25=0$};
+  \node[below left=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{图2·13}
 \end{figure}
 
@@ -5221,7 +5251,22 @@ F_{1} (x_{1}, y_{1}) = 0,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-14}]{assets/analytic-geometry/fig-p0071-01.png}}
+\fitfig{%
+% fig-alt: 第一象限两曲线交于黑点P1(x1,y1)，C2在交点左上、C1在交点右上，x轴两端箭头，原点标O
+\begin{tikzpicture}[x=0.62cm,y=0.62cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] plot[smooth,tension=0.85] coordinates {(0.22,0.70) (1.05,1.28) (2.08,2.08) (3.48,3.78)};
+  \draw[line width=0.7pt] plot[smooth,tension=0.7] coordinates {(1.42,3.98) (1.78,3.00) (2.08,2.08) (2.62,1.18) (3.12,0.42)};
+  \draw[line width=0.75pt,latex-latex] (-1.15,0) -- (4.15,0);
+  \draw[line width=0.75pt,-latex] (0,-0.32) -- (0,4.65) node[above=1pt] {$y$};
+  \fill (0.22,0.70) circle (1.05pt);
+  \fill (1.96,2.00) rectangle (2.18,2.18);
+  \node[anchor=south] at (1.48,4.02) {$C_{2}$};
+  \node[anchor=south] at (2.95,3.48) {$C_{1}$};
+  \node[anchor=west] at (2.48,1.92) {$P_{1}(x_{1},y_{1})$};
+  \node[below=2pt] at (0,0) {$O$};
+  \node[anchor=west] at (4.22,0) {$x$};
+\end{tikzpicture}%
+}
 \caption{图2-14}
 \end{figure}
 
@@ -5304,7 +5349,45 @@ x^{2} = 16, \quad \therefore x = \pm 4.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-15}]{assets/analytic-geometry/fig-p0073-01.png}}
+\fitfig{%
+% fig-alt: 椭圆与左右双曲线交于A(4,3)、B(4,-3)、C(-4,3)、D(-4,-3)，双曲线外端箭头，无虚线渐近线，原点标O，轴上单位标±1
+\begin{tikzpicture}[x=0.40cm,y=0.40cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] plot[domain=0:360,samples=90] ({sqrt(52)*cos(\x)},{sqrt(13)*sin(\x)});
+  \draw[line width=0.7pt] plot[domain=2.68:4.95,samples=28] ({\x},{sqrt(\x*\x-7)});
+  \draw[line width=0.7pt] plot[domain=2.68:4.95,samples=28] ({\x},{-sqrt(\x*\x-7)});
+  \draw[line width=0.7pt] plot[domain=-4.95:-2.68,samples=28] ({\x},{sqrt(\x*\x-7)});
+  \draw[line width=0.7pt] plot[domain=-4.95:-2.68,samples=28] ({\x},{-sqrt(\x*\x-7)});
+  \draw[-latex,line width=0.55pt] (4.55,{sqrt(4.55*4.55-7)}) -- (5.15,{sqrt(5.15*5.15-7)});
+  \draw[-latex,line width=0.55pt] (4.55,{-sqrt(4.55*4.55-7)}) -- (5.15,{-sqrt(5.15*5.15-7)});
+  \draw[-latex,line width=0.55pt] (-4.55,{sqrt(4.55*4.55-7)}) -- (-5.15,{sqrt(5.15*5.15-7)});
+  \draw[-latex,line width=0.55pt] (-4.55,{-sqrt(4.55*4.55-7)}) -- (-5.15,{-sqrt(5.15*5.15-7)});
+  \draw[line width=0.75pt,-latex] (-8.15,0) -- (8.35,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-5.15) -- (0,5.35) node[above=1pt] {$y$};
+  \fill (4,3) circle (1.15pt);
+  \fill (4,-3) circle (1.15pt);
+  \fill (-4,3) circle (1.15pt);
+  \fill (-4,-3) circle (1.15pt);
+  \fill ({sqrt(52)},0) circle (1.05pt);
+  \fill ({-sqrt(52)},0) circle (1.05pt);
+  \fill (0,{sqrt(13)}) circle (1.05pt);
+  \fill (0,{-sqrt(13)}) circle (1.05pt);
+  \fill ({sqrt(7)},0) circle (1.05pt);
+  \fill ({-sqrt(7)},0) circle (1.05pt);
+  \foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+    \draw[line width=0.4pt] (\x,-0.08) -- (\x,0.08);
+  \foreach \y in {-3,-2,-1,1,2,3}
+    \draw[line width=0.4pt] (-0.08,\y) -- (0.08,\y);
+  \node[anchor=south west] at (4.15,3.10) {$A(4,3)$};
+  \node[anchor=north west] at (4.15,-3.10) {$B(4,-3)$};
+  \node[anchor=south east] at (-4.15,3.10) {$C(-4,3)$};
+  \node[anchor=north east] at (-4.15,-3.10) {$D(-4,-3)$};
+  \node[below=5pt] at (-1.15,0) {\footnotesize $-1$};
+  \node[below=5pt] at (1.2,0) {\footnotesize $1$};
+  \node[anchor=west] at (0.28,1.15) {\footnotesize $1$};
+  \node[anchor=west] at (0.32,-1.35) {\footnotesize $-1$};
+  \node[anchor=east] at (-0.28,0.12) {$O$};
+\end{tikzpicture}%
+}
 \caption{图2-15}
 \end{figure}
 
@@ -5353,7 +5436,37 @@ x = 1 \pm \sqrt {k - 1}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-16}]{assets/analytic-geometry/fig-p0074-01.png}}
+\fitfig{%
+% fig-alt: 抛物线y=x^2-x+2与三平行直线y=x+2、y=x+1、y=x，直线两端箭头；标(2,4)、(1,2)，轴上标-2至3与1至6，原点标0
+\begin{tikzpicture}[x=0.54cm,y=0.46cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] plot[domain=-1.58:2.52,samples=40] ({\x},{\x*\x-\x+2});
+  \draw[line width=0.65pt,latex-latex] (-2.48,-0.48) -- (2.78,4.78);
+  \draw[line width=0.65pt,latex-latex] (-1.78,-0.78) -- (3.28,4.28);
+  \draw[line width=0.65pt,latex-latex] (-2.08,-2.08) -- (3.55,3.55);
+  \draw[line width=0.75pt,-latex] (-3.05,0) -- (4.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-2.35) -- (0,6.85) node[above=1pt] {$y$};
+  \foreach \x in {-2,-1,1,2,3}
+    \draw[line width=0.4pt] (\x,-0.08) -- (\x,0.08);
+  \foreach \y in {1,2,3,4,5,6}
+    \draw[line width=0.4pt] (-0.08,\y) -- (0.08,\y);
+  \fill (2,4) circle (1.15pt);
+  \fill (1,2) circle (1.15pt);
+  \node[anchor=south] at (1.55,4.72) {$(2,4)$};
+  \node[anchor=west] at (1.78,2.28) {$(1,2)$};
+  \node[below=5pt] at (-2,0) {\footnotesize $-2$};
+  \node[below=5pt] at (-1,0) {\footnotesize $-1$};
+  \node[below=5pt] at (0,0) {\footnotesize $0$};
+  \node[below=5pt] at (1,0) {\footnotesize $1$};
+  \node[below=5pt] at (2,0) {\footnotesize $2$};
+  \node[below=5pt] at (3,0) {\footnotesize $3$};
+  \node[left=2pt] at (0,1) {\footnotesize $1$};
+  \node[left=2pt] at (0,2) {\footnotesize $2$};
+  \node[left=2pt] at (0,3) {\footnotesize $3$};
+  \node[left=2pt] at (0,4) {\footnotesize $4$};
+  \node[left=2pt] at (0,5) {\footnotesize $5$};
+  \node[left=2pt] at (0,6) {\footnotesize $6$};
+\end{tikzpicture}%
+}
 \caption{图2-16}
 \end{figure}
 
@@ -5361,7 +5474,41 @@ x = 1 \pm \sqrt {k - 1}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-17}]{assets/analytic-geometry/fig-p0074-02.png}}
+\fitfig{%
+% fig-alt: 圆x^2+y^2=5与两切线y=2x±5，切点(-2,1)、(2,-1)，直线两端箭头；轴上标-3至3与-5至5，原点标0
+\begin{tikzpicture}[x=0.46cm,y=0.42cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0,0) circle ({sqrt(5)});
+  \draw[line width=0.65pt,latex-latex] (-3.25,-1.5) -- (0.85,6.7);
+  \draw[line width=0.65pt,latex-latex] (-0.45,-5.9) -- (3.55,2.1);
+  \draw[line width=0.75pt,-latex] (-3.85,0) -- (4.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-6.35) -- (0,6.15) node[above=1pt] {$y$};
+  \foreach \x in {-3,-2,-1,1,2,3}
+    \draw[line width=0.4pt] (\x,-0.08) -- (\x,0.08);
+  \foreach \y in {-5,-4,-3,-2,-1,1,2,3,4,5}
+    \draw[line width=0.4pt] (-0.08,\y) -- (0.08,\y);
+  \fill (-2,1) circle (1.15pt);
+  \fill (2,-1) circle (1.15pt);
+  \node[anchor=east] at (-2.55,1.22) {$(-2,1)$};
+  \node[anchor=north west] at (2.7,-1.45) {$(2,-1)$};
+  \node[below=6pt] at (-3,0) {\footnotesize $-3$};
+  \node[below=6pt] at (-2,0) {\footnotesize $-2$};
+  \node[below=6pt] at (-1,0) {\footnotesize $-1$};
+  \node[below=6pt] at (0,0) {\footnotesize $0$};
+  \node[below=6pt] at (1,0) {\footnotesize $1$};
+  \node[below=6pt] at (2,0) {\footnotesize $2$};
+  \node[below=6pt] at (3,0) {\footnotesize $3$};
+  \node[left=3pt] at (0,5) {\footnotesize $5$};
+  \node[left=3pt] at (0,4) {\footnotesize $4$};
+  \node[left=3pt] at (0,3) {\footnotesize $3$};
+  \node[left=3pt] at (0,2) {\footnotesize $2$};
+  \node[left=3pt] at (0,1) {\footnotesize $1$};
+  \node[left=3pt] at (0,-1) {\footnotesize $-1$};
+  \node[left=3pt] at (0,-2) {\footnotesize $-2$};
+  \node[left=3pt] at (0,-3) {\footnotesize $-3$};
+  \node[left=3pt] at (0,-4) {\footnotesize $-4$};
+  \node[left=3pt] at (0,-5) {\footnotesize $-5$};
+\end{tikzpicture}%
+}
 \caption{图2-17}
 \end{figure}
 
@@ -5425,7 +5572,29 @@ k = \pm 5.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-18}]{assets/analytic-geometry/fig-p0075-01.png}}
+\fitfig{%
+% fig-alt: 曲线y=x^3与直线y=10x+20在第一象限交于一处，实线无箭头；x轴标-4、0、4、8，y轴右侧标±20、±40、±60
+\begin{tikzpicture}[x=0.26cm,y=0.046cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] plot[domain=-7.4:4.7,samples=2] ({\x},{10*\x+20});
+  \draw[line width=0.7pt] plot[domain=-3.92:4.12,samples=50] ({\x},{\x*\x*\x});
+  \draw[line width=0.75pt,-latex] (-6.4,0) -- (9.4,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-68) -- (0,76) node[above=1pt] {$y$};
+  \foreach \x in {-4,4,8}
+    \draw[line width=0.4pt] (\x,-1.5) -- (\x,1.5);
+  \foreach \y in {-60,-40,-20,20,40,60}
+    \draw[line width=0.4pt] (-0.28,\y) -- (0.28,\y);
+  \node[below=2pt] at (-4,0) {$-4$};
+  \node[below=3pt] at (0.2,0) {$0$};
+  \node[below=2pt] at (4,0) {$4$};
+  \node[below=2pt] at (8,0) {$8$};
+  \node[anchor=west] at (0.45,60) {$60$};
+  \node[anchor=west] at (0.45,40) {$40$};
+  \node[anchor=west] at (0.45,20) {$20$};
+  \node[anchor=west] at (0.45,-20) {$-20$};
+  \node[anchor=west] at (0.45,-40) {$-40$};
+  \node[anchor=west] at (0.45,-60) {$-60$};
+\end{tikzpicture}%
+}
 \caption{图2-18}
 \end{figure}
 
