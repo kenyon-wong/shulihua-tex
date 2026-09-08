@@ -15526,7 +15526,35 @@ y=\frac{x+2}{3}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5-20}]{assets/algebra-3/fig-p0238-02.png}}
+% fig-alt: 实线y=x^3与y=立方根x关于虚线y=x对称，交于(-1,-1)、(0,0)、(1,1)；轴上只标1与-1，原点O；y上箭头，x右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.90cm,y=0.80cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-2.15,0) -- (2.55,0);
+  \draw[line width=0.9pt,->] (2.38,0) -- (3.08,0);
+  \node[anchor=west] at (3.15,0) {$x$};
+  \draw[line width=0.8pt] (0,-2.55) -- (0,2.55);
+  \draw[line width=0.9pt,->] (0,2.38) -- (0,3.08);
+  \node[anchor=south] at (0,3.15) {$y$};
+  \node[anchor=north west] at (0.12,-0.08) {$O$};
+  \draw[line width=0.5pt] (-1,-0.07) -- (-1,0.07);
+  \draw[line width=0.5pt] (1,-0.07) -- (1,0.07);
+  \draw[line width=0.5pt] (-0.07,-1) -- (0.07,-1);
+  \draw[line width=0.5pt] (-0.07,1) -- (0.07,1);
+  \node[anchor=north west] at (-1.28,-0.20) {$-1$};
+  \node[anchor=north] at (1.08,-0.14) {$1$};
+  \node[anchor=east] at (-0.12,1) {$1$};
+  \node[anchor=east] at (-0.12,-1) {$-1$};
+  \draw[dashed,line width=0.65pt] (-1.85,-1.85) -- (1.78,1.78);
+  \begin{scope}
+    \clip (-2.05,-2.45) rectangle (2.35,2.55);
+    \draw[line width=1.05pt] plot[domain=-1.32:1.28,samples=64] (\x,{\x*\x*\x});
+    \draw[line width=1.05pt] plot[domain=-1.95:1.85,samples=72] (\x,{sign(\x)*pow(abs(\x),0.3333)});
+  \end{scope}
+  \node[anchor=south] at (0.22,2.12) {$y=x^{3}$};
+  \node[anchor=south west] at (1.55,1.88) {$y=x$};
+  \node[anchor=west] at (1.78,1.14) {$y=\sqrt[3]{x}$};
+\end{tikzpicture}%
+}
 \caption{图5-20}
 \end{figure}
 
@@ -15558,7 +15586,41 @@ y = \sqrt[3]{x}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5·21}]{assets/algebra-3/fig-p0239-01.png}}
+% fig-alt: 第一象限M在y=f(x)上，M'为其关于y=x的对称点，在y=f^{-1}(x)上；N、N'为到轴的垂足；OM、OM'、MM'；第三象限有同样的无标号构图；y上箭头，x右箭头，原点O
+\fitfig{%
+\begin{tikzpicture}[x=1.02cm,y=1.02cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-3.15,0) -- (3.55,0);
+  \draw[line width=0.9pt,->] (3.38,0) -- (4.05,0);
+  \node[anchor=west] at (4.12,0) {$x$};
+  \draw[line width=0.8pt] (0,-3.25) -- (0,3.45);
+  \draw[line width=0.9pt,->] (0,3.28) -- (0,4.02);
+  \node[anchor=south] at (0,4.08) {$y$};
+  \node[anchor=north west] at (0.10,-0.06) {$O$};
+  \draw[line width=0.7pt] (-2.35,-2.35) -- (3.25,3.25);
+  \node[anchor=south west] at (2.55,2.42) {$y=x$};
+  \draw[line width=0.75pt] (0,2.55) -- (1.05,2.55);
+  \draw[line width=0.75pt] (2.55,1.05) -- (2.55,0);
+  \draw[line width=0.75pt] (0,0) -- (1.05,2.55);
+  \draw[line width=0.75pt] (0,0) -- (2.55,1.05);
+  \draw[line width=0.75pt] (1.05,2.55) -- (2.55,1.05);
+  \draw[line width=0.55pt] (1.86,1.88) -- (1.96,1.78) -- (1.86,1.68);
+  \draw[line width=0.75pt] (0,-2.55) -- (-1.05,-2.55);
+  \draw[line width=0.75pt] (-2.55,-1.05) -- (-2.55,0);
+  \draw[line width=0.75pt] (0,0) -- (-1.05,-2.55);
+  \draw[line width=0.75pt] (0,0) -- (-2.55,-1.05);
+  \draw[line width=0.75pt] (-1.05,-2.55) -- (-2.55,-1.05);
+  \draw[line width=1.05pt] plot[smooth,tension=0.85] coordinates {(-1.16,-2.62) (-0.58,-1.22) (0,0) (0.52,1.18) (1.05,2.55)};
+  \draw[line width=1.05pt] (1.05,2.55) -- (1.05,3.18);
+  \draw[line width=1.05pt] plot[smooth,tension=0.85] coordinates {(-2.62,-1.16) (-1.22,-0.58) (0,0) (1.18,0.52) (2.55,1.05)};
+  \draw[line width=1.05pt] (2.55,1.05) -- (3.28,1.05);
+  \node[anchor=east] at (-0.10,2.55) {$N$};
+  \node[anchor=west] at (1.14,2.48) {$M$};
+  \node[anchor=south] at (2.48,1.12) {$M'$};
+  \node[anchor=north] at (2.55,-0.08) {$N'$};
+  \node[anchor=south west] at (1.12,3.08) {$y=f(x)$};
+  \node[anchor=west] at (3.28,1.05) {$y=f^{-1}(x)$};
+\end{tikzpicture}%
+}
 \caption{图 5·21}
 \end{figure}
 
@@ -15722,7 +15784,24 @@ y = \sqrt{25 - x^{2}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5-22}]{assets/algebra-3/fig-p0242-01.png}}
+% fig-alt: 圆x^2+y^2=25，上半为y=根号(25-x^2)，下半为y=-根号(25-x^2)；刻度无数字，原点O；y上箭头，x左右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.42cm,y=0.42cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-6.35,0) -- (6.15,0);
+  \draw[line width=0.9pt,->] (-6.15,0) -- (-7.15,0);
+  \draw[line width=0.9pt,->] (5.95,0) -- (7.05,0);
+  \node[anchor=west] at (7.15,0) {$x$};
+  \draw[line width=0.8pt] (0,-6.35) -- (0,6.05);
+  \draw[line width=0.9pt,->] (0,5.85) -- (0,6.75);
+  \node[anchor=south] at (0,6.82) {$y$};
+  \node[anchor=north] at (0.32,-0.16) {$O$};
+  \foreach \k in {-4,-3,-2,-1,1,2,3,4}{\draw[line width=0.45pt] (\k,-0.12) -- (\k,0.12);}
+  \foreach \k in {-4,-3,-2,-1,1,2,3,4}{\draw[line width=0.45pt] (-0.12,\k) -- (0.12,\k);}
+  \draw[line width=1.05pt] (0,0) circle[radius=5];
+  \node[anchor=south west] at (3.55,3.55) {$y=\sqrt{25-x^{2}}$};
+  \node[anchor=north west] at (3.45,-3.35) {$y=-\sqrt{25-x^{2}}$};
+\end{tikzpicture}%
+}
 \caption{图5-22}
 \end{figure}
 
@@ -16593,7 +16672,28 @@ a^{b} = N \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a \textgreater{} 0, a \textbackslash neq 1; N \textgreater{} 0)}]{assets/algebra-3/fig-p0257-01.png}}
+% fig-alt: a^b=N与log_a N=b双箭号互化；实线连接指数与对数，虚线连接幂与真数、底数；下方条件(a>0,a≠1;N>0)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0,0) rectangle (2.85,1.18);
+  \node at (1.42,0.59) {$a^{b}=N$};
+  \draw[line width=0.85pt] (5.35,0) rectangle (8.55,1.18);
+  \node at (6.95,0.59) {$\log_{a}N=b$};
+  \draw[line width=0.8pt,<->] (3.12,0.59) -- (5.05,0.59);
+  \draw[line width=0.45pt] (4.05,2.55) -- (4.05,0.92);
+  \draw[line width=0.6pt] (1.72,1.18) -- (1.72,2.28) -- (3.55,2.28);
+  \node[anchor=south] at (2.35,2.32) {指数};
+  \draw[line width=0.6pt] (7.55,1.18) -- (7.55,2.28) -- (4.55,2.28);
+  \node[anchor=south] at (5.85,2.32) {对数};
+  \draw[dashed,line width=0.55pt] (0.62,1.18) -- (0.62,1.58) -- (2.95,1.58);
+  \node[anchor=south] at (1.72,1.62) {幂};
+  \draw[dashed,line width=0.55pt] (6.15,1.18) -- (6.15,1.58) -- (3.85,1.58);
+  \node[anchor=south] at (5.05,1.62) {真数};
+  \draw[dashed,line width=0.55pt] (0.72,0) -- (0.72,-0.62) -- (6.55,-0.62) -- (6.55,0);
+  \node[anchor=south] at (3.70,-0.58) {底数};
+  \node[anchor=north] at (4.20,-1.05) {$(a>0,\ a\neq 1;\ N>0)$};
+\end{tikzpicture}%
+}
 \caption{\((a > 0, a \neq 1; N > 0)\)}
 \end{figure}
 
@@ -19672,7 +19772,31 @@ y = 10^{- \frac{3}{4}} = \frac{1}{10^{\frac{3}{4}}} = \frac{10^{\frac{3}{4}}}{10
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-1}]{assets/algebra-3/fig-p0299-01.png}}
+% fig-alt: 三指数曲线同过(0,1)：左降y=(1/2)^x，中陡y=10^x，右升y=2^x；虚线y=1右端标注；刻度无数字，原点O；y上箭头，x右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.70cm,y=0.40cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-2.85,0) -- (3.25,0);
+  \draw[line width=0.9pt,->] (3.08,0) -- (3.78,0);
+  \node[anchor=west] at (3.85,0) {$x$};
+  \draw[line width=0.8pt] (0,-0.55) -- (0,7.35);
+  \draw[line width=0.9pt,->] (0,7.18) -- (0,7.95);
+  \node[anchor=south] at (0,8.02) {$y$};
+  \node[anchor=north] at (0.18,-0.12) {$O$};
+  \foreach \k in {-2,-1,1,2}{\draw[line width=0.45pt] (\k,-0.10) -- (\k,0.10);}
+  \foreach \k in {2,3,4,5,6}{\draw[line width=0.45pt] (-0.08,\k) -- (0.08,\k);}
+  \draw[dashed,line width=0.6pt] (-2.65,1) -- (2.72,1);
+  \node[anchor=west] at (2.80,1) {$y=1$};
+  \begin{scope}
+    \clip (-2.75,-0.15) rectangle (3.15,7.55);
+    \draw[line width=1.05pt] plot[domain=-2.35:2.05,samples=72] (\x,{pow(2,\x)});
+    \draw[line width=1.05pt] plot[domain=-2.35:2.15,samples=72] (\x,{pow(0.5,\x)});
+    \draw[line width=1.05pt] plot[domain=-1.05:0.86,samples=60] (\x,{pow(10,\x)});
+  \end{scope}
+  \node[anchor=east] at (-2.05,5.15) {$y=\left(\dfrac{1}{2}\right)^{x}$};
+  \node[anchor=south east] at (0.15,6.55) {$y=10^{x}$};
+  \node[anchor=west] at (1.62,4.15) {$y=2^{x}$};
+\end{tikzpicture}%
+}
 \caption{图7-1}
 \end{figure}
 
@@ -20325,7 +20449,28 @@ y = \log_{9} x, y = \log_{\frac{1}{2}} x, y = \log_{10} x
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-2}]{assets/algebra-3/fig-p0310-01.png}}
+% fig-alt: 实线y=2^x与y=log_2 x关于虚线y=x对称，虚线无标注；刻度无数字，原点O；y上箭头，x右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.52cm,y=0.46cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-2.55,0) -- (5.55,0);
+  \draw[line width=0.9pt,->] (5.38,0) -- (6.12,0);
+  \node[anchor=west] at (6.20,0) {$x$};
+  \draw[line width=0.8pt] (0,-2.65) -- (0,5.45);
+  \draw[line width=0.9pt,->] (0,5.28) -- (0,6.02);
+  \node[anchor=south] at (0,6.08) {$y$};
+  \node[anchor=north east] at (-0.10,-0.08) {$O$};
+  \foreach \k in {-2,-1,1,2,3,4,5}{\draw[line width=0.45pt] (\k,-0.09) -- (\k,0.09);}
+  \foreach \k in {-2,-1,1,2,3,4,5}{\draw[line width=0.45pt] (-0.08,\k) -- (0.08,\k);}
+  \draw[dashed,line width=0.65pt] (-2.15,-2.15) -- (4.55,4.55);
+  \begin{scope}
+    \clip (-2.45,-2.55) rectangle (5.45,5.55);
+    \draw[line width=1.05pt] plot[domain=-2.30:2.28,samples=72] (\x,{pow(2,\x)});
+    \draw[line width=1.05pt] plot[domain=0.10:5.15,samples=72] (\x,{ln(\x)/ln(2)});
+  \end{scope}
+  \node[anchor=south west] at (1.35,4.35) {$y=2^{x}$};
+  \node[anchor=west] at (4.15,2.05) {$y=\log_{2}x$};
+\end{tikzpicture}%
+}
 \caption{图7-2}
 \end{figure}
 
@@ -20338,7 +20483,30 @@ y = \log_{9} x, y = \log_{\frac{1}{2}} x, y = \log_{10} x
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-3}]{assets/algebra-3/fig-p0310-02.png}}
+% fig-alt: 三对数曲线同过(1,0)：上升y=log_2 x、较平y=log_10 x、下降y=log_{1/2} x；y轴右侧短虚线为渐近线；刻度无数字，原点O；y上箭头，x右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.50cm,y=0.40cm,line cap=round,line join=round]
+  \draw[line width=0.8pt] (-0.75,0) -- (6.35,0);
+  \draw[line width=0.9pt,->] (6.18,0) -- (6.95,0);
+  \node[anchor=west] at (7.02,0) {$x$};
+  \draw[line width=0.8pt] (0,-3.45) -- (0,3.45);
+  \draw[line width=0.9pt,->] (0,3.28) -- (0,4.02);
+  \node[anchor=south] at (0,4.08) {$y$};
+  \node[anchor=north east] at (-0.10,-0.08) {$O$};
+  \foreach \k in {1,2,3,4,5,6}{\draw[line width=0.45pt] (\k,-0.09) -- (\k,0.09);}
+  \foreach \k in {-3,-2,-1,1,2,3}{\draw[line width=0.45pt] (-0.08,\k) -- (0.08,\k);}
+  \draw[dashed,line width=0.6pt] (0.14,-3.15) -- (0.14,3.25);
+  \begin{scope}
+    \clip (0.08,-3.35) rectangle (6.25,3.35);
+    \draw[line width=1.05pt] plot[domain=0.16:6.05,samples=72] (\x,{ln(\x)/ln(2)});
+    \draw[line width=1.05pt] plot[domain=0.16:6.05,samples=72] (\x,{ln(\x)/ln(10)});
+    \draw[line width=1.05pt] plot[domain=0.16:6.05,samples=72] (\x,{-ln(\x)/ln(2)});
+  \end{scope}
+  \node[anchor=south west] at (4.15,2.28) {$y=\log_{2}x$};
+  \node[anchor=south west] at (4.45,0.78) {$y=\log_{10}x$};
+  \node[anchor=north west] at (4.35,-2.15) {$y=\log_{\frac{1}{2}}x$};
+\end{tikzpicture}%
+}
 \caption{图7-3}
 \end{figure}
 
@@ -21127,7 +21295,28 @@ x = a^{b},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-4}]{assets/algebra-3/fig-p0320-01.png}}
+% fig-alt: 数轴空心点标(1-√13)/2、-1/2、(1+√13)/2；上线为两不等式的解射线，右侧重叠处另有平行射线，数轴上自(1+√13)/2起粗线向右，右端标x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt,<-] (0.20,0) -- (8.35,0);
+  \draw[line width=0.9pt,->] (7.55,0) -- (8.35,0);
+  \node[anchor=west] at (8.42,0) {$x$};
+  \draw[line width=0.75pt,<-] (0.35,0.78) -- (1.05,0.78);
+  \draw[line width=0.75pt] (1.05,0.78) -- (1.85,0.78) -- (1.85,0.08);
+  \draw[line width=0.75pt] (2.85,0.08) -- (2.85,0.78) -- (6.15,0.78) -- (6.15,0.08);
+  \draw[line width=0.75pt] (6.15,0.78) -- (7.55,0.78);
+  \draw[line width=0.75pt,->] (7.15,0.78) -- (8.15,0.78);
+  \draw[line width=0.75pt] (6.15,0.40) -- (7.55,0.40);
+  \draw[line width=0.75pt,->] (7.15,0.40) -- (8.15,0.40);
+  \draw[line width=2.15pt] (6.15,0) -- (7.55,0);
+  \draw[fill=white,line width=0.7pt] (1.85,0) circle[radius=1.8pt];
+  \draw[fill=white,line width=0.7pt] (2.85,0) circle[radius=1.8pt];
+  \draw[fill=white,line width=0.7pt] (6.15,0) circle[radius=1.8pt];
+  \node[anchor=north] at (1.70,-0.16) {$\frac{1-\sqrt{13}}{2}$};
+  \node[anchor=north] at (3.20,-0.16) {$-\frac{1}{2}$};
+  \node[anchor=north] at (6.25,-0.16) {$\frac{1+\sqrt{13}}{2}$};
+\end{tikzpicture}%
+}
 \caption{图7-4}
 \end{figure}
 
