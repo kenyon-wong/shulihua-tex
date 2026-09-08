@@ -2441,7 +2441,22 @@ x=25\cos(3\pi t+2.21)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.23 频率成倍数的两个简谐振动的合成}]{assets/physics-2/fig-p0040-01.png}}
+\fitfig{%
+% fig-alt: 图1.23 频率成倍数的两个简谐振动的合成：虚线为基频与三倍频正弦，实线为两者之和
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\Aone{1.04}
+  \def\Atwo{0.26}
+  \def\u{1.62}
+  \draw[->,line width=0.7pt] (0,-1.48) -- (0,1.58);
+  \node[above left=0pt] at (0,1.52) {$x$};
+  \draw[->,line width=0.7pt] (-0.16,0) -- ({3*\u+1.05},0);
+  \node[below right=1pt] at ({3*\u+0.82},0) {$t$};
+  \node[below left=2pt] at (0,0) {$O$};
+  \draw[dashed,line width=0.5pt] plot[domain=0:3,samples=161,smooth] ({\x*\u},{\Aone*sin(180*\x)});
+  \draw[dashed,line width=0.48pt] plot[domain=0:3,samples=201,smooth] ({\x*\u},{\Atwo*sin(540*\x)});
+  \draw[line width=0.95pt] plot[domain=0:3,samples=201,smooth] ({\x*\u},{\Aone*sin(180*\x)+\Atwo*sin(540*\x)});
+\end{tikzpicture}%
+}
 \caption{图1.23 频率成倍数的两个简谐振动的合成}
 \end{figure}
 
@@ -2474,7 +2489,26 @@ x=25\cos(3\pi t+2.21)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.24 阻尼振动图线}]{assets/physics-2/fig-p0041-01.png}}
+\fitfig{%
+% fig-alt: 图1.24 阻尼振动图线：振幅按指数衰减的余弦，虚线为包络，两处标出周期 T
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{1.42}
+  \def\b{0.20}
+  \def\u{0.76}
+  \draw[->,line width=0.7pt] (0,-1.78) -- (0,2.02);
+  \node[left=2pt] at (-0.10,1.92) {$y$};
+  \draw[->,line width=0.7pt] (-0.14,0) -- ({8.05*\u},0);
+  \node[below right=1pt] at ({7.85*\u},0) {$t$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \draw[dashed,line width=0.45pt] plot[domain=0:7.55,samples=90] ({\x*\u},{\A*exp(-\b*\x)});
+  \draw[dashed,line width=0.45pt] plot[domain=0:7.55,samples=90] ({\x*\u},{-\A*exp(-\b*\x)});
+  \draw[line width=0.85pt] plot[domain=0:7.55,samples=320] ({\x*\u},{\A*exp(-\b*\x)*cos(360*\x)});
+  \draw[line width=0.45pt] (0.36,1.50) -- (0.36,1.62) -- ({\u-0.04},1.62) -- ({\u-0.04},1.50);
+  \node[above=1pt] at ({0.5*\u+0.12},1.62) {$T$};
+  \draw[line width=0.45pt] ({4*\u+0.08},0.96) -- ({4*\u+0.08},1.08) -- ({5*\u-0.08},1.08) -- ({5*\u-0.08},0.96);
+  \node[above=1pt] at ({4.5*\u},1.08) {$T$};
+\end{tikzpicture}%
+}
 \caption{图1.24 阻尼振动图线}
 \end{figure}
 
@@ -2549,7 +2583,26 @@ A 不等，表明策动力的变化频率与受迫振动系统的频率有很大
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.27 共振曲线}]{assets/physics-2/fig-p0045-01.png}}
+\fitfig{%
+% fig-alt: 图1.27 共振曲线：阻尼为零时在 f_0 处趋于无穷，阻尼较小与较大的峰值依次降低并左移
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\f0{1.78}
+  \draw[->,line width=0.7pt] (0,0) -- (0,2.12);
+  \node[above left=0pt] at (0,2.06) {$A$};
+  \draw[->,line width=0.7pt] (-0.12,0) -- (4.85,0);
+  \node[below right=1pt] at (4.62,0) {$f_{\text{驱}}$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \draw[dashed,line width=0.5pt] (\f0,0) -- (\f0,2.42);
+  \node[below=3pt] at (\f0,-0.02) {$f_0$};
+  \draw[line width=0.8pt] plot[domain=0:1.54,samples=72] (\x,{0.68/abs(1-(\x/\f0)*(\x/\f0))});
+  \draw[line width=0.8pt] plot[domain=2.00:4.55,samples=84] (\x,{0.68/abs(1-(\x/\f0)*(\x/\f0))});
+  \draw[line width=0.75pt] plot[domain=0:4.55,samples=130] (\x,{0.50/sqrt((1-(\x/\f0)*(\x/\f0))^2+(2*0.15*\x/\f0)^2)});
+  \draw[line width=0.75pt] plot[domain=0:4.55,samples=130] (\x,{0.32/sqrt((1-(\x/\f0)*(\x/\f0))^2+(2*0.28*\x/\f0)^2)});
+  \node[anchor=west] at (2.36,1.58) {阻尼$=0$};
+  \node[anchor=west] at (2.62,0.98) {阻尼较小};
+  \node[anchor=west] at (3.38,0.62) {阻尼较大};
+\end{tikzpicture}%
+}
 \caption{图1.27 共振曲线}
 \end{figure}
 
@@ -3152,7 +3205,49 @@ O
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.5 t = \textbackslash frac\{3\}\{2\} T 和 t = \textbackslash frac\{7\}\{4\} T 时的波形图线}]{assets/physics-2/fig-p0059-01.png}}
+\fitfig{%
+% fig-alt: 图2.5 波形图线：(a) t=3T/2 实线较虚线（t=5T/4）右移四分之一波长；(b) t=7T/4 实线再反相
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \def\A{0.78}
+  \def\u{0.42}
+  \def\ox{2.15}
+  \draw[->,line width=0.65pt] (\ox,-1.08) -- (\ox,1.90);
+  \node[left=2pt] at (\ox,1.84) {$y$};
+  \draw[->,line width=0.65pt] ({\ox-0.12},0) -- ({\ox+16*\u+0.42},0);
+  \node[anchor=east] at ({\ox-0.28},0.48) {$(a)$};
+  \node[anchor=east] at ({\ox-0.28},-0.22) {$t=\frac{3}{2}T$};
+  \foreach \k in {0,1,...,16} {
+    \node[font=\scriptsize] at ({\ox+\k*\u},{\A+0.64}) {\k};
+  }
+  \draw[dashed,line width=0.5pt] plot[domain=0:16,samples=129,smooth] ({\ox+\x*\u},{\A*cos(30*(\x-1))});
+  \draw[line width=0.85pt] plot[domain=0:16,samples=129,smooth] ({\ox+\x*\u},{\A*sin(30*(\x-1))});
+  \foreach \k in {1,2,...,15} {
+    \fill ({\ox+\k*\u},{\A*sin(30*(\k-1))}) circle[radius=0.9pt];
+  }
+  \draw[fill=white] ({\ox+16*\u},{\A*sin(450)}) circle[radius=1.35pt];
+  \node[anchor=south] at ({\ox+0.55*\u},0.22) {$1'$};
+  \node[anchor=south] at ({\ox+3.25*\u},{\A+0.08}) {$4'$};
+  \node[anchor=south west] at ({\ox+7*\u+0.22},0.16) {$7'$};
+  \begin{scope}[yshift=-2.85cm]
+    \draw[->,line width=0.65pt] (\ox,-1.08) -- (\ox,1.90);
+    \node[left=2pt] at (\ox,1.84) {$y$};
+    \draw[->,line width=0.65pt] ({\ox-0.12},0) -- ({\ox+16*\u+0.42},0);
+    \node[anchor=east] at ({\ox-0.28},0.48) {$(b)$};
+    \node[anchor=east] at ({\ox-0.28},-0.22) {$t=\frac{7}{4}T$};
+    \foreach \k in {0,1,...,16} {
+      \node[font=\scriptsize] at ({\ox+\k*\u},{\A+0.64}) {\k};
+    }
+    \draw[dashed,line width=0.5pt] plot[domain=0:16,samples=129,smooth] ({\ox+\x*\u},{\A*cos(30*(\x-1))});
+    \draw[line width=0.85pt] plot[domain=0:16,samples=129,smooth] ({\ox+\x*\u},{-\A*cos(30*(\x-1))});
+    \foreach \k in {1,2,...,16} {
+      \fill ({\ox+\k*\u},{-\A*cos(30*(\k-1))}) circle[radius=0.9pt];
+    }
+    \node[below=4pt] at ({\ox+\u},{-\A}) {$1'$};
+    \node[above=8pt] at ({\ox+4*\u},0) {$4'$};
+    \node[anchor=west] at ({\ox+7*\u+0.18},{\A-0.22}) {$7'$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图2.5 \(t = \frac{3}{2} T\) 和 \(t = \frac{7}{4} T\)
 时的波形图线}
 \end{figure}
