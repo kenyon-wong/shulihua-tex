@@ -748,7 +748,20 @@ N \subset J \subset Q \subset R.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·1}]{assets/algebra-3/fig-p0014-01.png}}
+% fig-alt: 大圆B内含较小的圆A，小圆内画斜线，圆底缺口处标B，表示A包含于B
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (255:1.58) arc (255:-70:1.58);
+  \begin{scope}
+    \clip (0,0.18) circle[radius=0.62];
+    \foreach \i in {-9,-8,...,9}
+      \draw[line width=0.28pt] (-1.1,\i*0.11-0.5) -- (1.1,\i*0.11+0.5);
+  \end{scope}
+  \draw[line width=0.8pt] (0,0.18) circle[radius=0.62];
+  \node at (0,-0.22) {$A$};
+  \node at (0.05,-1.58) {$B$};
+\end{tikzpicture}%
+}
 \caption{图1·1}
 \end{figure}
 
@@ -876,7 +889,23 @@ A \cap B = \{x | x \in A \text{且} x \in B \}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-2}]{assets/algebra-3/fig-p0016-01.png}}
+% fig-alt: 矩形框内两圆相交，左圆标A，右圆标B，相交处画斜线并标A∩B
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (6.15,4.15);
+  \begin{scope}
+    \clip (2.05,2.05) circle[radius=1.05];
+    \clip (3.55,2.05) circle[radius=1.28];
+    \foreach \i in {-12,-11,...,12}
+      \draw[line width=0.28pt] (1.4,\i*0.12+2.7) -- (4.6,\i*0.12+0.6);
+  \end{scope}
+  \draw[line width=0.8pt] (2.05,2.05) circle[radius=1.05];
+  \draw[line width=0.8pt] (3.55,2.05) circle[radius=1.28];
+  \node at (1.55,2.05) {$A$};
+  \node at (4.35,2.05) {$B$};
+  \node[fill=white,inner sep=0.6pt] at (2.72,2.05) {$A\cap B$};
+\end{tikzpicture}%
+}
 \caption{图1-2}
 \end{figure}
 
@@ -904,7 +933,25 @@ Q 点）来表示。\(A \cap B\)是由一切比 -2 大同时又比 3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.3}]{assets/algebra-3/fig-p0016-02.png}}
+% fig-alt: 数轴标-4至5，-2与3处为空心点并标P、Q；上方一条向左的射线止于Q，一条向右的射线起于P，两线夹出不含端点的区间PQ
+\fitfig{%
+\begin{tikzpicture}[x=0.48cm,line cap=round,line join=round]
+  \draw[<->] (-5.2,0) -- (6.2,0);
+  \foreach \n in {-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw (\n,0.08) -- (\n,-0.08) node[below=2pt] {$\n$};
+  % 射线 B：自 Q 向左，不含 Q
+  \draw[<-] (-5.1,1.05) -- (3,1.05);
+  \draw (3,1.05) -- (3,0);
+  % 射线 A：自 P 向右，不含 P；与左射线夹出区间 PQ
+  \draw (-2,0) -- (-2,0.52);
+  \draw (-2,0.52) -- (6.05,0.52);
+  \draw[->] (5.2,0.52) -- (6.25,0.52);
+  \draw[fill=white,line width=0.65pt] (-2,0) circle[radius=1.8pt];
+  \draw[fill=white,line width=0.65pt] (3,0) circle[radius=1.8pt];
+  \node[anchor=south east] at (-2.08,0.54) {$P$};
+  \node[anchor=south west] at (3.08,0.54) {$Q$};
+\end{tikzpicture}%
+}
 \caption{图1.3}
 \end{figure}
 
@@ -984,7 +1031,23 @@ A \cup A = A, A \cup \emptyset = A.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.5}]{assets/algebra-3/fig-p0018-01.png}}
+% fig-alt: 数轴标-2、0、2；-2与2处为实心三角，左射线上方标x≤-2，右射线上方标x≥2，右端有箭头
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw (-1.65,0) -- (5.55,0);
+  \draw[->] (4.95,0) -- (5.85,0);
+  \draw (0,0.08) -- (0,-0.08) node[below=2pt] {$-2$};
+  \draw (2.2,0.08) -- (2.2,-0.08) node[below=2pt] {$0$};
+  \draw (4.4,0.08) -- (4.4,-0.08) node[below=2pt] {$2$};
+  \fill (-0.09,0.02) -- (0.09,0.02) -- (0,0.16) -- cycle;
+  \fill (4.31,0.02) -- (4.49,0.02) -- (4.4,0.16) -- cycle;
+  \draw (-1.5,0.98) -- (0,0.98) -- (0,0.18);
+  \node at (-0.78,0.50) {$x\leqslant -2$};
+  \draw (4.4,0.18) -- (4.4,0.98) -- (5.5,0.98);
+  \draw[->] (5.05,0.98) -- (5.9,0.98);
+  \node at (4.95,0.50) {$x\geqslant 2$};
+\end{tikzpicture}%
+}
 \caption{图1.5}
 \end{figure}
 
@@ -1308,7 +1371,28 @@ I = A, \text{则} \overline {{A}} = \emptyset.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-01.png}}
+% fig-alt: 交运算表格，表头为∩、空集、A、B，行标为空集、A、B，已填A∩B与B∩A，其余空格待填
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw (0,0.52) -- (0,-1.92);
+  \draw (0.78,0.52) -- (0.78,-1.92);
+  \draw (1.72,0.52) -- (1.72,-1.92);
+  \draw (2.78,0.52) -- (2.78,-1.92);
+  \draw (4.12,0.52) -- (4.12,-1.92);
+  \draw (0,0) -- (4.12,0);
+  \draw (0,-0.64) -- (4.12,-0.64);
+  \draw (0,-1.28) -- (4.12,-1.28);
+  \node at (0.39,0.26) {$\cap$};
+  \node at (1.25,0.26) {$\emptyset$};
+  \node at (2.25,0.26) {$A$};
+  \node at (3.45,0.26) {$B$};
+  \node at (0.39,-0.32) {$\emptyset$};
+  \node at (0.39,-0.96) {$A$};
+  \node at (0.39,-1.60) {$B$};
+  \node at (3.45,-0.96) {$A\cap B$};
+  \node at (2.25,-1.60) {$B\cap A$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第23页）}
 \end{figure}
 
@@ -1316,7 +1400,28 @@ I = A, \text{则} \overline {{A}} = \emptyset.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-02.png}}
+% fig-alt: 并运算表格，表头为∪、空集、A、B，行标为空集、A、B，已填A∪B与B∪A，其余空格待填
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw (0,0.52) -- (0,-1.92);
+  \draw (0.78,0.52) -- (0.78,-1.92);
+  \draw (1.72,0.52) -- (1.72,-1.92);
+  \draw (2.78,0.52) -- (2.78,-1.92);
+  \draw (4.12,0.52) -- (4.12,-1.92);
+  \draw (0,0) -- (4.12,0);
+  \draw (0,-0.64) -- (4.12,-0.64);
+  \draw (0,-1.28) -- (4.12,-1.28);
+  \node at (0.39,0.26) {$\cup$};
+  \node at (1.25,0.26) {$\emptyset$};
+  \node at (2.25,0.26) {$A$};
+  \node at (3.45,0.26) {$B$};
+  \node at (0.39,-0.32) {$\emptyset$};
+  \node at (0.39,-0.96) {$A$};
+  \node at (0.39,-1.60) {$B$};
+  \node at (3.45,-0.96) {$A\cup B$};
+  \node at (2.25,-1.60) {$B\cup A$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第23页）}
 \end{figure}
 
@@ -1332,7 +1437,26 @@ I = A, \text{则} \overline {{A}} = \emptyset.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-03.png}}
+% fig-alt: 交运算表格，表头为∩、空集、A、A的补集，行标为空集、A、A的补集，各格均为空
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw (0,0.52) -- (0,-1.92);
+  \draw (0.78,0.52) -- (0.78,-1.92);
+  \draw (1.72,0.52) -- (1.72,-1.92);
+  \draw (2.78,0.52) -- (2.78,-1.92);
+  \draw (3.95,0.52) -- (3.95,-1.92);
+  \draw (0,0) -- (3.95,0);
+  \draw (0,-0.64) -- (3.95,-0.64);
+  \draw (0,-1.28) -- (3.95,-1.28);
+  \node at (0.39,0.26) {$\cap$};
+  \node at (1.25,0.26) {$\emptyset$};
+  \node at (2.25,0.26) {$A$};
+  \node at (3.36,0.26) {$\overline{A}$};
+  \node at (0.39,-0.32) {$\emptyset$};
+  \node at (0.39,-0.96) {$A$};
+  \node at (0.39,-1.60) {$\overline{A}$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第23页）}
 \end{figure}
 
@@ -1340,7 +1464,26 @@ I = A, \text{则} \overline {{A}} = \emptyset.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-04.png}}
+% fig-alt: 并运算表格，表头为∪、空集、A、A的补集，行标为空集、A、A的补集，各格均为空
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw (0,0.52) -- (0,-1.92);
+  \draw (0.78,0.52) -- (0.78,-1.92);
+  \draw (1.72,0.52) -- (1.72,-1.92);
+  \draw (2.78,0.52) -- (2.78,-1.92);
+  \draw (3.95,0.52) -- (3.95,-1.92);
+  \draw (0,0) -- (3.95,0);
+  \draw (0,-0.64) -- (3.95,-0.64);
+  \draw (0,-1.28) -- (3.95,-1.28);
+  \node at (0.39,0.26) {$\cup$};
+  \node at (1.25,0.26) {$\emptyset$};
+  \node at (2.25,0.26) {$A$};
+  \node at (3.36,0.26) {$\overline{A}$};
+  \node at (0.39,-0.32) {$\emptyset$};
+  \node at (0.39,-0.96) {$A$};
+  \node at (0.39,-1.60) {$\overline{A}$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第23页）}
 \end{figure}
 
