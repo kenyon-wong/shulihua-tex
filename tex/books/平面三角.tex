@@ -8428,7 +8428,25 @@ a = \frac {b \sin A}{\sin B} = \frac {4 \sin 105 ^{\circ}}{\sin 60 ^{\circ}}\tex
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-3}]{assets/plane-trigonometry/fig-p0107-01.png}}
+\fitfig{%
+% fig-alt: 斜三角形ABC，A在左、C在右上尖端、B在C左下方的底边上；∠A标11°48'，∠C标34°30'，AC上标b=13.02，AB下标c，BC右侧标a，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.15,0);
+  \coordinate (C) at (5.10,1.90);
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.6pt] (0.32,0) arc[start angle=0, end angle=20.4, radius=0.32];
+  \draw[line width=0.6pt] ([shift={(200.4:0.28)}]C) arc[start angle=200.4, end angle=243.4, radius=0.28];
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (5.16,1.96) {$C$};
+  \node[anchor=south,inner sep=1pt] at (1.70,1.05) {$b=13.02$};
+  \node[anchor=north,inner sep=1pt] at (2.05,-0.02) {$c$};
+  \node[anchor=west,inner sep=1pt] at (4.78,0.72) {$a$};
+  \node[font=\scriptsize,anchor=south west,inner sep=0.6pt] at (0.58,0.03) {$11^{\circ}48'$};
+  \node[font=\scriptsize,anchor=center,inner sep=0.6pt] at (3.35,0.48) {$34^{\circ}30'$};
+\end{tikzpicture}%
+}
 \caption{图4-3}
 \end{figure}
 
@@ -8471,7 +8489,28 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-4}]{assets/plane-trigonometry/fig-p0108-01.png}}
+\fitfig{%
+% fig-alt: 三角形ABC，A在左、C在右、B在上偏左；∠A标74°，∠C标44°，三角形内有横列水波，无边长数字、无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (4.20,0);
+  \coordinate (B) at (0.87,3.02);
+  \begin{scope}
+    \clip (A) -- (B) -- (C) -- cycle;
+    \foreach \y in {1.00,1.34,1.68,2.02,2.36} {
+      \draw[line width=0.45pt] (0.05,\y) sin (0.45,\y+0.05) cos (0.85,\y) sin (1.25,\y+0.05) cos (1.65,\y) sin (2.05,\y+0.05) cos (2.45,\y) sin (2.85,\y+0.05) cos (3.25,\y) sin (3.65,\y+0.05) cos (4.05,\y);
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=74, radius=0.40];
+  \draw[line width=0.6pt] (C) ++(180:0.42) arc[start angle=180, end angle=136, radius=0.42];
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[font=\scriptsize,anchor=south west,inner sep=0.4pt] at (0.52,0.16) {$74^{\circ}$};
+  \node[font=\scriptsize,anchor=south east,inner sep=0.4pt] at (3.68,0.16) {$44^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{图4-4}
 \end{figure}
 
@@ -8550,7 +8589,38 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-trigonometry/fig-p0109-01.png}}
+\fitfig{%
+% fig-alt: 地面左测角器C、下标L，中测角器A、下标M，右烟囱顶标H、基座下标B；视线CH、AH，地面下有斜向短线，无角度数字、无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Cs) at (0.55,0.16);
+  \coordinate (As) at (2.20,0.16);
+  \coordinate (Ht) at (4.48,3.10);
+  \draw[line width=0.8pt] (-0.20,0) -- (5.20,0);
+  \foreach \x in {0.00,0.72,0.96,1.20,1.44,1.68,2.55,2.78,3.02,3.26,3.50,3.74,3.98,5.00} {
+    \draw[line width=0.45pt] (\x,0) -- ++(0.16,-0.28);
+  }
+  \draw[line width=0.6pt] (0.42,0) -- (0.66,0);
+  \draw[line width=0.6pt] (0.54,0) -- (0.54,0.12);
+  \draw[line width=0.6pt] (0.46,0.12) -- (0.64,0.16) -- (0.60,0.08);
+  \draw[line width=0.6pt] (2.08,0) -- (2.32,0);
+  \draw[line width=0.6pt] (2.20,0) -- (2.20,0.12);
+  \draw[line width=0.6pt] (2.12,0.12) -- (2.30,0.16) -- (2.26,0.08);
+  \draw[line width=0.7pt] (4.38,0) rectangle (4.90,3.08);
+  \foreach \y in {0.32,0.64,0.96,1.28,1.60,1.92,2.24,2.56,2.84} {
+    \draw[line width=0.4pt] (4.38,\y) -- (4.90,\y);
+  }
+  \draw[line width=0.4pt] (4.64,0) -- (4.64,3.08);
+  \draw[line width=0.7pt] (Cs) -- (Ht);
+  \draw[line width=0.7pt] (As) -- (Ht);
+  \node[anchor=south east,inner sep=1pt] at (0.22,0.28) {$C$};
+  \node[anchor=north,inner sep=1pt] at (0.36,-0.10) {$L$};
+  \node[anchor=south east,inner sep=1pt] at (1.88,0.28) {$A$};
+  \node[anchor=north,inner sep=1pt] at (2.00,-0.10) {$M$};
+  \node[anchor=south,inner sep=1pt] at (4.78,3.14) {$H$};
+  \node[anchor=north,inner sep=1pt] at (4.64,-0.50) {$B$};
+  \path (-0.20,-0.62) -- (5.20,-0.62);
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -8560,7 +8630,28 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-trigonometry/fig-p0109-02.png}}
+\fitfig{%
+% fig-alt: 塔ABD竖直，C在左下、D在右下、A在顶、B在垂线上；CA、CB，自CD起外弧70°至CA、内弧40°至CB，AB右侧标50m，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (0,0);
+  \coordinate (D) at (1.72,0);
+  \coordinate (B) at (1.72,1.44);
+  \coordinate (A) at (1.72,4.85);
+  \draw[line width=0.7pt] (C) -- (D);
+  \draw[line width=0.7pt] (A) -- (D);
+  \draw[line width=0.7pt] (C) -- (A);
+  \draw[line width=0.7pt] (C) -- (B);
+  \draw[line width=0.6pt] (0.26,0) arc[start angle=0, end angle=40, radius=0.26];
+  \draw[line width=0.6pt] (0.52,0) arc[start angle=0, end angle=70, radius=0.52];
+  \node[anchor=north east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=west,inner sep=1pt] at (B) {$B$};
+  \node[font=\scriptsize,anchor=south west,inner sep=0.5pt] at (0.42,0.10) {$40^{\circ}$};
+  \node[font=\scriptsize,anchor=south,inner sep=0.6pt] at (0.70,0.98) {$70^{\circ}$};
+  \node[anchor=west,inner sep=1pt] at (1.80,3.15) {$50\,\mathrm{m}$};
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -8598,7 +8689,25 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0110-01.png}}
+\fitfig{%
+% fig-alt: 钝角在A，C在左上，水平线AP过A向右，以C为圆心的弧交AP于B并上下伸出，连结CB；AC左侧标b，CB上标a>b，无度数、无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (-0.95,2.45);
+  \coordinate (B) at (2.15,0);
+  \coordinate (P) at (2.90,0);
+  \draw[line width=0.7pt] (-0.32,0) -- (P);
+  \draw[line width=0.7pt] (A) -- (C) -- (B);
+  \draw[line width=0.55pt] ([shift={(-70:3.95)}]C) arc[start angle=-70, end angle=-8, radius=3.95];
+  \draw[line width=0.6pt] (0.32,0) arc[start angle=0, end angle=111, radius=0.32];
+  \node[anchor=north,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (2.02,-0.02) {$B$};
+  \node[anchor=north,inner sep=1pt] at (P) {$P$};
+  \node[anchor=south east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=east,inner sep=1pt] at (-0.62,1.15) {$b$};
+  \node[rotate=-38,anchor=south,inner sep=1pt] at (0.72,1.38) {$a>b$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -8608,7 +8717,21 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0110-02.png}}
+\fitfig{%
+% fig-alt: 钝角在A，C在左上，水平线向左右伸出A，以C为圆心的弧过A向右上弯出；AC左侧标b，弧内侧标a=b，无B、P字母，无度数、无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (-0.85,2.35);
+  \draw[line width=0.7pt] (-0.70,0) -- (2.45,0);
+  \draw[line width=0.7pt] (A) -- (C);
+  \draw[line width=0.55pt] ([shift={(-70:2.50)}]C) arc[start angle=-70, end angle=-8, radius=2.50];
+  \draw[line width=0.6pt] (0.30,0) arc[start angle=0, end angle=110, radius=0.30];
+  \node[anchor=north,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=east,inner sep=1pt] at (-0.58,1.05) {$b$};
+  \node[rotate=-32,anchor=south,inner sep=1pt] at (0.85,1.55) {$a=b$};
+\end{tikzpicture}%
+}
 \caption{(II)}
 \end{figure}
 
