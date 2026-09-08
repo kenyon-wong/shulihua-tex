@@ -11279,7 +11279,32 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0237-01.png}}
+\fitfig{%
+% fig-alt: 图7.8(a) 左壁玻璃斜线；水面沿壁上爬成凹弯月面后转水平；玻璃、弯月面引线，水在液内
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (0.00,0.08) rectangle (0.72,3.32);
+    \foreach \k in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21} {
+      \draw[line width=0.30pt] (-0.08,{0.05+0.17*\k}) -- ++(0.95,-0.95);
+    }
+  \end{scope}
+  \draw[line width=0.75pt] (0.02,3.28) -- (0.02,0.08) -- (0.70,0.08) -- (0.70,3.28);
+  \draw[line width=0.8pt] (0.70,2.32) .. controls (0.86,2.26) and (1.02,1.96) .. (1.28,1.70) -- (3.20,1.70);
+  \begin{scope}
+    \clip (0.76,0.20) rectangle (3.22,1.64);
+    \foreach \yy in {0.32,0.52,0.72,0.92,1.12,1.32,1.50} {
+      \foreach \xx in {0.82,1.22,1.62,2.02,2.42,2.78} {
+        \draw[line width=0.32pt] (\xx,\yy) -- ++(0.18,0);
+      }
+    }
+  \end{scope}
+  \draw[line width=0.4pt] (1.05,2.92) -- (0.48,3.22);
+  \node[anchor=south,font=\small] at (1.28,2.88) {玻璃};
+  \draw[line width=0.4pt] (1.55,2.18) -- (1.02,1.88);
+  \node[anchor=south west,font=\small] at (1.52,2.16) {弯月面};
+  \node[anchor=north,font=\small] at (1.95,0.22) {水};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -11289,7 +11314,25 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0237-02.png}}
+\fitfig{%
+% fig-alt: 图7.8(b) 左壁玻璃斜线；水银贴壁处下弯成凸弯月面，体内涂黑，底缘三滴状；玻璃、弯月面引线，水银在下
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (0.00,0.08) rectangle (0.72,3.26);
+    \foreach \k in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20} {
+      \draw[line width=0.30pt] (-0.08,{0.05+0.17*\k}) -- ++(0.95,-0.95);
+    }
+  \end{scope}
+  \draw[line width=0.75pt] (0.02,3.22) -- (0.02,0.08) -- (0.70,0.08) -- (0.70,3.22);
+  \fill (0.70,1.72) .. controls (0.90,2.00) and (1.16,2.18) .. (1.46,2.18) -- (3.12,2.18) -- (3.12,1.42) -- (2.78,1.42) .. controls (2.62,1.08) and (2.28,1.08) .. (2.12,1.42) -- (1.78,1.42) .. controls (1.64,1.02) and (1.30,1.06) .. (1.16,1.42) -- (0.92,1.42) .. controls (0.80,1.06) and (0.70,1.12) .. (0.70,1.38) -- cycle;
+  \draw[line width=0.65pt] (0.70,1.72) .. controls (0.90,2.00) and (1.16,2.18) .. (1.46,2.18) -- (3.12,2.18);
+  \draw[line width=0.4pt] (1.02,2.88) -- (0.50,3.16);
+  \node[anchor=south,font=\small] at (1.22,2.84) {玻璃};
+  \draw[line width=0.4pt] (1.48,2.05) -- (0.92,1.86);
+  \node[anchor=south west,font=\small] at (1.46,2.04) {弯月面};
+  \node[anchor=north,font=\small] at (1.85,0.42) {水银};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -11319,7 +11362,42 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(π)}]{assets/physics-2/fig-p0238-01.png}}
+\fitfig{%
+% fig-alt: 图7.9 左连通器装水：细管水面高于容器，虚线齐容器水面，A 在液上，B 在虚线上，C 在细管水面，h 为升高量；管旁字母 a。图注仍作 (π)，不改
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0.18,2.72) -- (1.92,2.72) -- (1.92,1.62) .. controls (1.92,1.18) and (1.48,0.82) .. (1.18,0.48) -- (1.18,0.08);
+  \draw[line width=0.7pt] (0.18,2.72) -- (0.18,1.62) .. controls (0.18,1.18) and (0.58,0.82) .. (0.92,0.48) -- (0.92,0.08);
+  \draw[line width=0.55pt] (1.05,0.02) circle[radius=0.20];
+  \draw[line width=0.65pt] (0.88,-0.08) .. controls (0.62,-0.48) and (0.78,-0.92) .. (1.35,-1.12) .. controls (2.05,-1.32) and (2.70,-1.05) .. (3.02,-0.48) -- (3.10,0.18);
+  \draw[line width=0.65pt] (1.22,0.02) .. controls (1.08,-0.28) and (1.18,-0.62) .. (1.62,-0.82) .. controls (2.15,-0.98) and (2.55,-0.82) .. (2.88,-0.32) -- (3.10,0.28);
+  \draw[line width=0.65pt] (3.10,0.15) -- (3.10,2.82);
+  \draw[line width=0.65pt] (3.30,0.22) -- (3.30,2.82);
+  \begin{scope}
+    \clip (0.24,0.22) rectangle (1.86,1.78);
+    \foreach \yy in {0.38,0.58,0.78,0.98,1.18,1.38,1.56} {
+      \foreach \xx in {0.36,0.72,1.08,1.42} {
+        \draw[line width=0.28pt] (\xx,\yy) -- ++(0.16,0);
+      }
+    }
+  \end{scope}
+  \draw[dashed,line width=0.45pt] (0.26,1.84) -- (3.42,1.84);
+  \draw[line width=0.55pt] (3.12,2.48) .. controls (3.16,2.40) and (3.22,2.38) .. (3.28,2.46);
+  \begin{scope}
+    \clip (3.14,0.35) rectangle (3.26,2.46);
+    \foreach \yy in {0.48,0.72,0.96,1.20,1.44,1.68,1.96,2.18} {
+      \draw[line width=0.28pt] (3.14,\yy) -- (3.26,\yy);
+    }
+  \end{scope}
+  \node[anchor=south] at (0.95,2.08) {$A$};
+  \node[anchor=south] at (2.42,1.88) {$B$};
+  \node[anchor=west] at (3.36,2.46) {$C$};
+  \draw[line width=0.45pt] (3.62,1.84) -- (3.62,2.50);
+  \draw[line width=0.45pt] (3.54,1.84) -- (3.70,1.84);
+  \draw[line width=0.45pt] (3.54,2.50) -- (3.70,2.50);
+  \node[anchor=west] at (3.74,2.14) {$h$};
+  \node[anchor=east] at (0.62,-0.72) {$a$};
+\end{tikzpicture}%
+}
 \caption{(π)}
 \end{figure}
 
@@ -11329,7 +11407,28 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-2/fig-p0238-02.png}}
+\fitfig{%
+% fig-alt: 图7.9 右连通器装水银：管内水银面低于容器，B 处实线齐容器液面并延到细管，C 标低下的细管液面；A 在液上，管旁字母 b。图注仍作 (1)，不改
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \fill (0.22,1.80) -- (1.88,1.80) .. controls (1.88,1.16) and (1.48,0.82) .. (1.16,0.46) -- (1.16,0.12) -- (0.94,0.12) -- (0.94,0.46) .. controls (0.62,0.82) and (0.22,1.16) .. (0.22,1.80) -- cycle;
+  \fill (1.05,0.02) circle[radius=0.16];
+  \fill (0.98,0.00) .. controls (0.78,-0.38) and (0.92,-0.78) .. (1.42,-0.98) .. controls (2.05,-1.16) and (2.62,-0.96) .. (2.92,-0.46) -- (3.08,0.20) -- (3.22,0.62) -- (3.22,0.18) -- (3.06,0.08) .. controls (2.82,-0.42) and (2.55,-0.72) .. (2.12,-0.82) .. controls (1.62,-0.78) and (1.22,-0.52) .. (1.18,0.02) -- cycle;
+  \draw[line width=0.7pt] (0.18,2.68) -- (1.92,2.68) -- (1.92,1.58) .. controls (1.92,1.12) and (1.52,0.78) .. (1.20,0.42) -- (1.20,0.10);
+  \draw[line width=0.7pt] (0.18,2.68) -- (0.18,1.58) .. controls (0.18,1.12) and (0.58,0.78) .. (0.90,0.42) -- (0.90,0.10);
+  \draw[line width=0.55pt] (1.05,0.02) circle[radius=0.20];
+  \draw[line width=0.65pt] (0.88,-0.08) .. controls (0.62,-0.48) and (0.78,-0.92) .. (1.35,-1.12) .. controls (2.05,-1.32) and (2.70,-1.05) .. (3.02,-0.48) -- (3.10,0.18);
+  \draw[line width=0.65pt] (1.22,0.02) .. controls (1.08,-0.28) and (1.18,-0.62) .. (1.62,-0.82) .. controls (2.15,-0.98) and (2.55,-0.82) .. (2.88,-0.32) -- (3.10,0.28);
+  \draw[line width=0.65pt] (3.10,0.15) -- (3.10,2.78);
+  \draw[line width=0.65pt] (3.30,0.22) -- (3.30,2.78);
+  \fill (3.14,0.22) rectangle (3.26,0.64);
+  \draw[line width=0.55pt] (3.12,0.64) .. controls (3.16,0.72) and (3.24,0.72) .. (3.28,0.64);
+  \draw[line width=0.5pt] (1.88,1.80) -- (3.42,1.80);
+  \node[anchor=south] at (0.95,2.02) {$A$};
+  \node[anchor=south] at (2.42,1.84) {$B$};
+  \node[anchor=west] at (3.38,0.58) {$C$};
+  \node[anchor=east] at (0.55,-0.76) {$b$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -11343,7 +11442,55 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0238-03.png}}
+\fitfig{%
+% fig-alt: 图7.10(a) 水槽中三支由粗到细的毛细管，凹弯月面，管内水面依次升高；右旁注水
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \draw[line width=0.8pt] (0.12,1.55) -- (0.12,0.10) -- (5.55,0.10) -- (5.55,1.55);
+  \draw[line width=0.7pt] (0.12,1.22) .. controls (0.28,1.32) and (0.42,1.18) .. (0.55,1.12) -- (0.88,1.12);
+  \draw[line width=0.55pt] (1.78,1.12) -- (2.28,1.12);
+  \draw[line width=0.55pt] (3.05,1.12) -- (3.55,1.12);
+  \draw[line width=0.55pt] (4.12,1.12) -- (5.22,1.12) .. controls (5.38,1.16) and (5.48,1.28) .. (5.55,1.38);
+  \draw[line width=0.65pt] (0.88,0.22) -- (0.88,3.15) -- (1.78,3.15) -- (1.78,0.22);
+  \draw[line width=0.55pt] (1.02,0.22) -- (1.02,3.05) -- (1.64,3.05) -- (1.64,0.22);
+  \draw[line width=0.65pt] (2.28,0.22) -- (2.28,3.15) -- (3.05,3.15) -- (3.05,0.22);
+  \draw[line width=0.55pt] (2.40,0.22) -- (2.40,3.05) -- (2.93,3.05) -- (2.93,0.22);
+  \draw[line width=0.65pt] (3.55,0.22) -- (3.55,3.15) -- (4.12,3.15) -- (4.12,0.22);
+  \draw[line width=0.55pt] (3.66,0.22) -- (3.66,3.05) -- (4.01,3.05) -- (4.01,0.22);
+  \draw[line width=0.6pt] (1.02,1.38) .. controls (1.12,1.28) and (1.28,1.26) .. (1.33,1.22) .. controls (1.40,1.26) and (1.54,1.28) .. (1.64,1.38);
+  \draw[line width=0.6pt] (2.40,2.05) .. controls (2.50,1.94) and (2.64,1.92) .. (2.66,1.88) .. controls (2.70,1.92) and (2.84,1.94) .. (2.93,2.05);
+  \draw[line width=0.6pt] (3.66,2.62) .. controls (3.74,2.54) and (3.84,2.52) .. (3.84,2.48) .. controls (3.86,2.52) and (3.94,2.54) .. (4.01,2.62);
+  \begin{scope}
+    \clip (0.18,0.16) rectangle (5.48,1.10);
+    \foreach \yy in {0.28,0.48,0.68,0.88,1.04} {
+      \foreach \xx in {0.28,0.62,1.90,2.55,3.20,4.25,4.70,5.10} {
+        \draw[line width=0.28pt] (\xx,\yy) -- ++(0.16,0);
+      }
+    }
+  \end{scope}
+  \begin{scope}
+    \clip (1.06,0.28) rectangle (1.60,1.22);
+    \foreach \yy in {0.36,0.56,0.76,0.96,1.12} {
+      \draw[line width=0.26pt] (1.12,\yy) -- ++(0.14,0);
+      \draw[line width=0.26pt] (1.34,\yy) -- ++(0.14,0);
+    }
+  \end{scope}
+  \begin{scope}
+    \clip (2.44,0.28) rectangle (2.89,1.88);
+    \foreach \yy in {0.36,0.56,0.76,0.96,1.16,1.36,1.56,1.72} {
+      \draw[line width=0.26pt] (2.48,\yy) -- ++(0.14,0);
+      \draw[line width=0.26pt] (2.68,\yy) -- ++(0.12,0);
+    }
+  \end{scope}
+  \begin{scope}
+    \clip (3.70,0.28) rectangle (3.97,2.48);
+    \foreach \yy in {0.36,0.58,0.80,1.02,1.24,1.46,1.68,1.90,2.12,2.30} {
+      \draw[line width=0.24pt] (3.74,\yy) -- ++(0.14,0);
+    }
+  \end{scope}
+  \draw[line width=0.4pt] (5.48,1.18) -- (5.78,1.38);
+  \node[anchor=west,font=\small] at (5.76,1.36) {水};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -11353,7 +11500,27 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0238-04.png}}
+\fitfig{%
+% fig-alt: 图7.10(b) 水银槽中三支由粗到细的毛细管，液面涂黑；扫描上最粗管中水银最低，最细管低下最少。正文称内径越小越显著，图按扫描。右旁注水银
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \fill (0.16,0.14) rectangle (5.58,1.48);
+  \fill[white] (1.02,0.92) rectangle (1.64,3.22);
+  \fill[white] (2.40,1.26) rectangle (2.93,3.22);
+  \fill[white] (3.66,1.40) rectangle (4.01,3.22);
+  \draw[line width=0.8pt] (0.12,1.72) -- (0.12,0.10) -- (5.62,0.10) -- (5.62,1.72);
+  \draw[line width=0.65pt] (0.88,0.18) -- (0.88,3.15) -- (1.78,3.15) -- (1.78,0.18);
+  \draw[line width=0.55pt] (1.02,0.18) -- (1.02,3.05) -- (1.64,3.05) -- (1.64,0.18);
+  \draw[line width=0.65pt] (2.28,0.18) -- (2.28,3.15) -- (3.05,3.15) -- (3.05,0.18);
+  \draw[line width=0.55pt] (2.40,0.18) -- (2.40,3.05) -- (2.93,3.05) -- (2.93,0.18);
+  \draw[line width=0.65pt] (3.55,0.18) -- (3.55,3.15) -- (4.12,3.15) -- (4.12,0.18);
+  \draw[line width=0.55pt] (3.66,0.18) -- (3.66,3.05) -- (4.01,3.05) -- (4.01,0.18);
+  \draw[line width=0.55pt] (1.02,0.92) .. controls (1.16,1.02) and (1.32,1.04) .. (1.48,1.00) .. controls (1.54,0.98) and (1.60,0.94) .. (1.64,0.92);
+  \draw[line width=0.55pt] (2.40,1.26) .. controls (2.52,1.34) and (2.66,1.36) .. (2.78,1.32) .. controls (2.84,1.30) and (2.90,1.28) .. (2.93,1.26);
+  \draw[line width=0.55pt] (3.66,1.40) .. controls (3.74,1.46) and (3.84,1.46) .. (3.92,1.42) .. controls (3.96,1.41) and (4.00,1.40) .. (4.01,1.40);
+  \draw[line width=0.4pt] (5.52,1.42) -- (5.82,1.62);
+  \node[anchor=west,font=\small] at (5.80,1.58) {水银};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -11367,7 +11534,56 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.11 在毛细现象中浸润液体柱上升的最大高度的推导}]{assets/physics-2/fig-p0238-05.png}}
+\fitfig{%
+% fig-alt: 图7.11 毛细管壁斜线，凹弯月面半球，管内标 r（正文作球半径 R）；h 自弯月面最低点量到管外水平液面，端点短横，无箭头
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (1.52,0.38) rectangle (2.08,3.28);
+    \foreach \k in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19} {
+      \draw[line width=0.30pt] (1.42,{0.28+0.17*\k}) -- ++(0.72,-0.72);
+    }
+  \end{scope}
+  \begin{scope}
+    \clip (2.92,0.38) rectangle (3.48,3.28);
+    \foreach \k in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19} {
+      \draw[line width=0.30pt] (2.82,{0.28+0.17*\k}) -- ++(0.72,-0.72);
+    }
+  \end{scope}
+  \draw[line width=0.75pt] (1.55,0.42) -- (1.55,3.22) -- (2.05,3.22) -- (2.05,1.72);
+  \draw[line width=0.75pt] (3.45,0.42) -- (3.45,3.22) -- (2.95,3.22) -- (2.95,1.72);
+  \draw[line width=0.7pt] (2.05,1.72) arc[start angle=180,end angle=360,radius=0.45];
+  \node[anchor=south] at (2.50,1.95) {$r$};
+  \begin{scope}
+    \clip (2.08,0.48) rectangle (2.92,1.28);
+    \foreach \yy in {0.58,0.76,0.94,1.12} {
+      \draw[line width=0.26pt] (2.14,\yy) -- ++(0.16,0);
+      \draw[line width=0.26pt] (2.42,\yy) -- ++(0.16,0);
+      \draw[line width=0.26pt] (2.66,\yy) -- ++(0.16,0);
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (0.15,0.72) -- (1.28,0.72) .. controls (1.48,0.78) and (1.42,1.15) .. (1.55,1.38);
+  \draw[line width=0.7pt] (3.45,1.38) .. controls (3.58,1.15) and (3.52,0.78) .. (3.72,0.72) -- (5.35,0.72);
+  \draw[line width=0.55pt] (2.50,1.27) -- (4.32,1.27);
+  \draw[line width=0.55pt] (4.32,1.19) -- (4.32,1.35);
+  \draw[line width=0.55pt] (4.18,1.27) -- (4.18,0.72);
+  \draw[line width=0.55pt] (4.10,0.72) -- (4.26,0.72);
+  \node[anchor=west] at (4.24,0.98) {$h$};
+  \begin{scope}
+    \clip (0.12,0.16) rectangle (5.40,0.68);
+    \foreach \yy in {0.22,0.38,0.54} {
+      \foreach \xx in {0.22,0.62,1.02,1.42,3.55,3.95,4.35,4.75,5.05} {
+        \draw[line width=0.28pt] (\xx,\yy) -- ++(0.18,0);
+      }
+    }
+  \end{scope}
+  \begin{scope}
+    \clip (0.12,0.16) rectangle (1.50,0.68);
+    \foreach \yy in {0.28,0.48} {
+      \draw[line width=0.28pt] (0.28,\yy) -- ++(0.16,0);
+    }
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 7.11 在毛细现象中浸润液体柱上升的最大高度的推导}
 \end{figure}
 
@@ -11531,7 +11747,25 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0243-01.png}}
+\fitfig{%
+% fig-alt: 图7.14(a) 云母片横线，熔化石蜡成横椭圆、中心点；引线标石蜡、云母片。非照片、非点阵，按标注简图
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (1.55,0.15) rectangle (5.15,2.35);
+    \foreach \yy in {0.28,0.42,0.56,0.70,0.84,0.98,1.12,1.26,1.40,1.54,1.68,1.82,1.96,2.10,2.22} {
+      \draw[line width=0.32pt] (1.58,\yy) -- (5.12,\yy);
+    }
+  \end{scope}
+  \fill[white] (3.35,1.25) ellipse (1.28 and 0.78);
+  \draw[line width=1.15pt] (1.55,0.15) rectangle (5.15,2.35);
+  \draw[line width=1.05pt] (3.35,1.25) ellipse (1.28 and 0.78);
+  \fill (3.35,1.25) circle[radius=0.045];
+  \draw[line width=0.4pt] (1.28,1.92) -- (1.95,1.72);
+  \node[anchor=east,font=\small] at (1.22,1.98) {石蜡};
+  \draw[line width=0.4pt] (1.28,0.72) -- (1.92,0.88);
+  \node[anchor=east,font=\small] at (1.22,0.62) {云母片};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
