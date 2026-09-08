@@ -1135,7 +1135,34 @@ a，就应该使两个针尖间的距离在开始时就缩短 （图 1·19（1�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-20}]{assets/plane-geometry-1/fig-p0019-01.png}}
+\fitfig{%
+% fig-alt: 左为两端有短竖线的已知线段，上方标a；右为射线，下方自左标A、B、C、D、E、F，各段上方标a，F后实线续出并在下方标M，再以虚线箭头向右
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (0.92,0);
+  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+  \draw[line width=0.6pt] (0.92,-0.09) -- (0.92,0.09);
+  \node[above=1pt] at (0.46,0) {$a$};
+  \begin{scope}[xshift=1.55cm]
+    \draw[line width=0.7pt] (0,0) -- (4.35,0);
+    \draw[dashed, line width=0.7pt] (4.35,0) -- (4.72,0);
+    \draw[->, line width=0.7pt] (4.72,0) -- (5.02,0);
+    \foreach \x in {0,0.72,1.44,2.16,2.88,3.60}
+      \draw[line width=0.6pt] (\x,-0.09) -- (\x,0.09);
+    \node[below=2pt] at (0,0) {$A$};
+    \node[below=2pt] at (0.72,0) {$B$};
+    \node[below=2pt] at (1.44,0) {$C$};
+    \node[below=2pt] at (2.16,0) {$D$};
+    \node[below=2pt] at (2.88,0) {$E$};
+    \node[below=2pt] at (3.60,0) {$F$};
+    \node[below=2pt] at (4.22,0) {$M$};
+    \node[above=1pt] at (0.36,0) {$a$};
+    \node[above=1pt] at (1.08,0) {$a$};
+    \node[above=1pt] at (1.80,0) {$a$};
+    \node[above=1pt] at (2.52,0) {$a$};
+    \node[above=1pt] at (3.24,0) {$a$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-20}
 \end{figure}
 
@@ -1172,7 +1199,62 @@ AM 和 BN。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-21}]{assets/plane-geometry-1/fig-p0019-02.png}}
+\fitfig{%
+% fig-alt: 左为已知线段a、b的尺寸线；右上为射线AM，上方分段标a与2b，下方尺寸线标x；右下为射线BN，上方尺寸线标3a，E在截点上方，下方分段标y与2b
+\begin{tikzpicture}[line cap=round]
+  % known a, b
+  \draw[line width=0.45pt] (0,0.84) -- (0,0.60);
+  \draw[line width=0.45pt] (1.62,0.84) -- (1.62,0.60);
+  \draw[<->, line width=0.5pt] (0,0.72) -- (1.62,0.72);
+  \node[above=1pt] at (0.81,0.72) {$a$};
+  \draw[line width=0.45pt] (0,-0.66) -- (0,-0.90);
+  \draw[line width=0.45pt] (1.22,-0.66) -- (1.22,-0.90);
+  \draw[<->, line width=0.5pt] (0,-0.78) -- (1.22,-0.78);
+  \node[above=1pt] at (0.61,-0.78) {$b$};
+  \begin{scope}[xshift=2.25cm]
+    % x = a + 2b on ray AM
+    \draw[line width=0.45pt] (0,0.96) -- (0,0.58);
+    \draw[line width=0.45pt] (0.90,0.96) -- (0.90,0.58);
+    \draw[line width=0.45pt] (2.70,0.96) -- (2.70,0.58);
+    \draw[<->, line width=0.5pt] (0,0.72) -- (0.90,0.72);
+    \draw[<->, line width=0.5pt] (0.90,0.72) -- (2.70,0.72);
+    \node[above=1pt] at (0.45,0.72) {$a$};
+    \node[above=1pt] at (1.80,0.72) {$2b$};
+    \draw[line width=0.7pt] (0,0) -- (3.45,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \draw[dashed, line width=0.7pt] (3.45,0) -- (3.85,0);
+    \draw[->, line width=0.7pt] (3.85,0) -- (4.15,0);
+    \node[below=1pt] at (0,0) {$A$};
+    \node[above=1pt] at (4.15,0) {$M$};
+    \draw[line width=0.45pt] (0,-0.62) -- (0,-0.92);
+    \draw[line width=0.45pt] (2.70,-0.62) -- (2.70,-0.92);
+    \draw[<->, line width=0.5pt] (0,-0.78) -- (2.70,-0.78);
+    \node[below=1pt] at (1.35,-0.78) {$x$};
+    % y = 3a - 2b on ray BN
+    \begin{scope}[yshift=-2.55cm]
+      \draw[line width=0.45pt] (0,0.96) -- (0,0.58);
+      \draw[line width=0.45pt] (2.70,0.96) -- (2.70,0.58);
+      \draw[<->, line width=0.5pt] (0,0.72) -- (2.70,0.72);
+      \node[above=1pt] at (1.35,0.72) {$3a$};
+      \draw[line width=0.7pt] (0,0) -- (3.35,0);
+      \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+      \draw[line width=0.6pt] (2.70,-0.09) -- (2.70,0.09);
+      \draw[dashed, line width=0.7pt] (3.35,0) -- (3.70,0);
+      \draw[->, line width=0.7pt] (3.70,0) -- (4.00,0);
+      \node[below=1pt] at (0,0) {$B$};
+      \node[above=1pt] at (2.70,0) {$E$};
+      \node[above=1pt] at (4.00,0) {$N$};
+      \draw[line width=0.45pt] (0,-0.62) -- (0,-0.92);
+      \draw[line width=0.45pt] (1.15,-0.62) -- (1.15,-0.92);
+      \draw[line width=0.45pt] (2.70,-0.62) -- (2.70,-0.92);
+      \draw[<->, line width=0.5pt] (0,-0.78) -- (1.15,-0.78);
+      \draw[<->, line width=0.5pt] (1.15,-0.78) -- (2.70,-0.78);
+      \node[below=1pt] at (0.58,-0.78) {$y$};
+      \node[below=1pt] at (1.92,-0.78) {$2b$};
+    \end{scope}
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-21}
 \end{figure}
 
@@ -1206,13 +1288,48 @@ CD = 2.5 \mathrm{mm} \times 10 = 25 \mathrm{mm} = 2.5 \mathrm{cm}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第20页）}]{assets/plane-geometry-1/fig-p0020-01.png}}
+\fitfig{%
+% fig-alt: 上为线段AB，两端有短竖线，上方标5.4cm；下为左端对齐的较短线段CD，两端有短竖线，上方标2.5cm
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,1.25) -- (3.78,1.25);
+  \draw[line width=0.6pt] (0,1.16) -- (0,1.34);
+  \draw[line width=0.6pt] (3.78,1.16) -- (3.78,1.34);
+  \node[above=2pt] at (1.89,1.25) {$5.4\,\mathrm{cm}$};
+  \node[below=1pt] at (0,1.25) {$A$};
+  \node[below=1pt] at (3.78,1.25) {$B$};
+  \draw[line width=0.7pt] (0,0) -- (1.75,0);
+  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+  \draw[line width=0.6pt] (1.75,-0.09) -- (1.75,0.09);
+  \node[above=2pt] at (0.88,0) {$2.5\,\mathrm{cm}$};
+  \node[below=2pt] at (0,0) {$C$};
+  \node[below=2pt] at (1.75,0) {$D$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第20页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-22}]{assets/plane-geometry-1/fig-p0020-02.png}}
+\fitfig{%
+% fig-alt: 上为尺寸线标5.4cm；中为两端有短竖线的线段，分点在中点右侧；下为尺寸线，左段标2.5cm、右段标2.9cm，分点与中线对齐
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.45pt] (0,1.28) -- (0,1.02);
+  \draw[line width=0.45pt] (3.78,1.28) -- (3.78,1.02);
+  \draw[<->, line width=0.5pt] (0,1.15) -- (3.78,1.15);
+  \node[above=1pt] at (1.89,1.15) {$5.4\,\mathrm{cm}$};
+  \draw[line width=0.7pt] (0,0.55) -- (3.78,0.55);
+  \draw[line width=0.6pt] (0,0.46) -- (0,0.64);
+  \draw[line width=0.6pt] (2.34,0.46) -- (2.34,0.64);
+  \draw[line width=0.6pt] (3.78,0.46) -- (3.78,0.64);
+  \draw[line width=0.45pt] (0,0.28) -- (0,0.02);
+  \draw[line width=0.45pt] (2.34,0.28) -- (2.34,0.02);
+  \draw[line width=0.45pt] (3.78,0.28) -- (3.78,0.02);
+  \draw[<->, line width=0.5pt] (0,0.12) -- (2.34,0.12);
+  \draw[<->, line width=0.5pt] (2.34,0.12) -- (3.78,0.12);
+  \node[below=1pt] at (1.17,0.12) {$2.5\,\mathrm{cm}$};
+  \node[below=1pt] at (3.06,0.12) {$2.9\,\mathrm{cm}$};
+\end{tikzpicture}%
+}
 \caption{图1-22}
 \end{figure}
 
@@ -1235,7 +1352,18 @@ CD = 2.5 \mathrm{mm} \times 10 = 25 \mathrm{mm} = 2.5 \mathrm{cm}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={线段 AD 上依次标有 A、B、C、D 四点（第4题）}]{assets/plane-geometry-1/fig-p0020-03.png}}
+\fitfig{%
+% fig-alt: 线段AD，上方自左标A、B、C、D，四点均有短竖线，CD短于AB与BC
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (5.30,0);
+  \foreach \x in {0,2.02,4.32,5.30}
+    \draw[line width=0.6pt] (\x,-0.09) -- (\x,0.09);
+  \node[above=2pt] at (0,0) {$A$};
+  \node[above=2pt] at (2.02,0) {$B$};
+  \node[above=2pt] at (4.32,0) {$C$};
+  \node[above=2pt] at (5.30,0) {$D$};
+\end{tikzpicture}%
+}
 \caption{线段 AD 上依次标有 A、B、C、D 四点（第4题）}
 \end{figure}
 
@@ -1279,7 +1407,17 @@ CD = 2.5 \mathrm{mm} \times 10 = 25 \mathrm{mm} = 2.5 \mathrm{cm}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={线段 AB 及其中点 M（第6题）}]{assets/plane-geometry-1/fig-p0021-01.png}}
+\fitfig{%
+% fig-alt: 线段AB，上方标A、M、B，M为中点，三点均有短竖线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (3.60,0);
+  \foreach \x in {0,1.80,3.60}
+    \draw[line width=0.6pt] (\x,-0.09) -- (\x,0.09);
+  \node[above=2pt] at (0,0) {$A$};
+  \node[above=2pt] at (1.80,0) {$M$};
+  \node[above=2pt] at (3.60,0) {$B$};
+\end{tikzpicture}%
+}
 \caption{线段 AB 及其中点 M（第6题）}
 \end{figure}
 
@@ -1304,7 +1442,18 @@ CD = 2.5 \mathrm{mm} \times 10 = 25 \mathrm{mm} = 2.5 \mathrm{cm}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={同一直线上的 A、C、B、D 四点（第10题）}]{assets/plane-geometry-1/fig-p0021-02.png}}
+\fitfig{%
+% fig-alt: 同一直线上自左标A、C、B、D，四点均有短竖线，AC与BD较短且近乎相等
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (4.80,0);
+  \foreach \x in {0,1.18,3.58,4.80}
+    \draw[line width=0.6pt] (\x,-0.09) -- (\x,0.09);
+  \node[above=2pt] at (0,0) {$A$};
+  \node[above=2pt] at (1.18,0) {$C$};
+  \node[above=2pt] at (3.58,0) {$B$};
+  \node[above=2pt] at (4.80,0) {$D$};
+\end{tikzpicture}%
+}
 \caption{同一直线上的 A、C、B、D 四点（第10题）}
 \end{figure}
 
@@ -1317,7 +1466,20 @@ CD = 2.5 \mathrm{mm} \times 10 = 25 \mathrm{mm} = 2.5 \mathrm{cm}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-1/fig-p0021-03.png}}
+\fitfig{%
+% fig-alt: 线段AC，上方标M、O、N，下方标A、B、C；M为AB中点，N为BC中点，O为AC中点，各点均有短竖线
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (6.90,0);
+  \foreach \x in {0,1.90,3.45,3.80,5.35,6.90}
+    \draw[line width=0.6pt] (\x,-0.09) -- (\x,0.09);
+  \node[below=2pt] at (0,0) {$A$};
+  \node[above=2pt] at (1.90,0) {$M$};
+  \node[above=2pt] at (3.45,0) {$O$};
+  \node[below=2pt] at (3.80,0) {$B$};
+  \node[above=2pt] at (5.35,0) {$N$};
+  \node[below=2pt] at (6.90,0) {$C$};
+\end{tikzpicture}%
+}
 \caption{(第11题)}
 \end{figure}
 
