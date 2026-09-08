@@ -415,7 +415,22 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={直尺}]{assets/physics-1/fig-p0009-01.png}}
+% fig-alt: 一把直尺，上沿从0到5厘米，左端标0 cm，数字1至5，毫米短刻线、半厘米中刻线、厘米长刻线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0,0) rectangle (6.15,0.98);
+  \foreach \n in {0,1,...,5}
+    \draw[line width=0.5pt] (0.42+\n*1.08,0.98) -- ++(0,-0.30);
+  \foreach \n in {0,1,...,4}
+    \draw[line width=0.4pt] (0.42+\n*1.08+0.54,0.98) -- ++(0,-0.20);
+  \foreach \n in {0,1,...,4}
+    \foreach \k in {1,2,3,4,6,7,8,9}
+      \draw[line width=0.35pt] ({0.42+\n*1.08+\k*0.108},0.98) -- ++(0,-0.12);
+  \node[font=\scriptsize,inner sep=0pt,anchor=west] at (0.50,0.28) {0\,cm};
+  \foreach \n in {1,...,5}
+    \node[font=\scriptsize,inner sep=0pt] at (0.42+\n*1.08,0.52) {\n};
+\end{tikzpicture}%
+}
 \caption{直尺}
 \end{figure}
 
@@ -431,7 +446,35 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·4 用直尺量物体的长度}]{assets/physics-1/fig-p0009-03.png}}
+% fig-alt: 长方体放在刻度尺上，左端对齐10厘米，右端对齐13.9厘米，尺面标10至15，下方为垫台
+\fitfig{%
+\begin{tikzpicture}[x=0.62cm,line cap=round,line join=round]
+  % 垫台紧贴尺下，右端见侧面
+  \draw[line width=0.65pt] (9.32,-0.02) -- (15.82,-0.02) -- (15.82,-0.58) -- (9.32,-0.58) -- cycle;
+  \draw[line width=0.65pt] (15.82,-0.02) -- (16.22,-0.20) -- (16.22,-0.70) -- (15.82,-0.58);
+  \draw[line width=0.5pt] (14.15,-0.58) -- (14.15,-0.86);
+  \draw[line width=0.5pt] (14.42,-0.58) -- (14.42,-0.86);
+  % 直尺：左端对齐10，右端读到13.9
+  \fill[white] (9.48,0.00) rectangle (15.78,0.50);
+  \draw[line width=0.7pt] (9.48,0.00) rectangle (15.78,0.50);
+  \foreach \n in {10,...,15}
+    \draw[line width=0.5pt] (\n,0.50) -- ++(0,-0.22);
+  \foreach \n in {10,...,14}
+    \draw[line width=0.4pt] (\n+0.5,0.50) -- ++(0,-0.14);
+  \foreach \n in {10,...,14}
+    \foreach \k in {1,2,3,4,6,7,8,9}
+      \draw[line width=0.32pt] ({\n+\k/10},0.50) -- ++(0,-0.09);
+  \foreach \n in {10,...,15}
+    \node[font=\scriptsize,inner sep=0pt] at (\n,0.18) {\n};
+  % 左、右对齐线
+  \draw[line width=0.6pt] (9.12,0.98) -- (10.00,0.98);
+  \draw[line width=0.6pt] (13.90,0.98) -- (14.78,0.98);
+  % 被测长方体
+  \draw[line width=0.7pt] (10.00,0.50) rectangle (13.90,1.62);
+  \draw[line width=0.7pt] (10.00,1.62) -- (10.38,1.86) -- (14.28,1.86) -- (13.90,1.62);
+  \draw[line width=0.7pt] (13.90,0.50) -- (14.28,0.74) -- (14.28,1.86);
+\end{tikzpicture}%
+}
 \caption{图1·4 用直尺量物体的长度}
 \end{figure}
 
@@ -444,7 +487,29 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-5 尺放斜了}]{assets/physics-1/fig-p0009-04.png}}
+% fig-alt: 长方体前斜放一把直尺，尺从左下向右上倾斜，刻度0至5，未与物体端面平行
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 长方体，下部由斜尺遮住
+  \draw[line width=0.7pt] (1.72,0.95) -- (1.72,1.88) -- (4.42,1.88) -- (4.42,1.08);
+  \draw[line width=0.7pt] (1.72,1.88) -- (2.18,2.12) -- (4.88,2.12) -- (4.42,1.88);
+  \draw[line width=0.7pt] (4.42,1.88) -- (4.88,2.12) -- (4.88,1.28);
+  % 斜放的直尺（白底盖住物体下缘）
+  \begin{scope}[rotate around={12:(0.35,0.18)}]
+    \fill[white] (0,0) rectangle (6.05,0.78);
+    \draw[line width=0.75pt] (0,0) rectangle (6.05,0.78);
+    \foreach \n in {0,1,...,5}
+      \draw[line width=0.45pt] (0.38+\n*1.05,0.78) -- ++(0,-0.24);
+    \foreach \n in {0,1,...,4}
+      \draw[line width=0.38pt] (0.38+\n*1.05+0.525,0.78) -- ++(0,-0.16);
+    \foreach \n in {0,1,...,4}
+      \foreach \k in {1,2,3,4,6,7,8,9}
+        \draw[line width=0.3pt] ({0.38+\n*1.05+\k*0.105},0.78) -- ++(0,-0.10);
+    \foreach \n in {0,...,5}
+      \node[font=\scriptsize,inner sep=0pt] at (0.38+\n*1.05,0.34) {\n};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-5 尺放斜了}
 \end{figure}
 
@@ -454,7 +519,41 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={眼睛的位置放得正确}]{assets/physics-1/fig-p0010-01.png}}
+% fig-alt: 眼睛正在被测长方体左端正上方，虚线视线竖直下落，与左棱重合，对准直尺读数
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 直尺 0--3
+  \draw[line width=0.75pt] (0,0) rectangle (3.55,0.78);
+  \foreach \n in {0,1,2,3}
+    \draw[line width=0.45pt] (0.32+\n*0.95,0.78) -- ++(0,-0.24);
+  \foreach \n in {0,1,2}
+    \draw[line width=0.38pt] (0.32+\n*0.95+0.475,0.78) -- ++(0,-0.16);
+  \foreach \n in {0,1,2}
+    \foreach \k in {1,2,3,4,6,7,8,9}
+      \draw[line width=0.3pt] ({0.32+\n*0.95+\k*0.095},0.78) -- ++(0,-0.10);
+  \foreach \n in {0,1,2,3}
+    \node[font=\scriptsize,inner sep=0pt] at (0.32+\n*0.95,0.32) {\n};
+  % 左棱在零刻度稍后，视线与左棱重合
+  \def\Lx{0.55}
+  % 长方体
+  \begin{scope}
+    \clip (\Lx,0.78) rectangle (2.28,1.95);
+    \foreach \s in {-0.2,0.11,...,2.6}
+      \draw[line width=0.28pt] (\s,0.70) -- ++(1.15,1.35);
+  \end{scope}
+  \draw[line width=0.7pt] (\Lx,0.78) rectangle (2.28,1.95);
+  \draw[line width=0.7pt] (\Lx,1.95) -- (0.99,2.19) -- (2.72,2.19) -- (2.28,1.95);
+  \draw[line width=0.7pt] (2.28,0.78) -- (2.72,1.02) -- (2.72,2.19) -- (2.28,1.95);
+  \draw[line width=0.28pt] (2.40,0.92) -- (2.58,1.18);
+  \draw[line width=0.28pt] (2.36,1.15) -- (2.62,1.55);
+  \draw[line width=0.28pt] (2.34,1.42) -- (2.64,1.88);
+  % 眼睛与竖直视线
+  \draw[line width=0.55pt] (\Lx-0.14,2.55) .. controls (\Lx-0.28,2.72) and (\Lx-0.26,2.98) .. (\Lx-0.12,3.12);
+  \fill (\Lx,2.48) .. controls (\Lx+0.12,2.66) and (\Lx+0.10,2.92) .. (\Lx,3.06)
+        .. controls (\Lx-0.10,2.90) and (\Lx-0.12,2.64) .. (\Lx,2.48) -- cycle;
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.3pt] (\Lx,2.48) -- (\Lx,1.95);
+\end{tikzpicture}%
+}
 \caption{眼睛的位置放得正确}
 \end{figure}
 
@@ -462,7 +561,42 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={眼睛的位置放得不时}]{assets/physics-1/fig-p0010-02.png}}
+% fig-alt: 眼睛偏在左上方，虚线视线斜落到直尺上物体左端的左侧，未与左棱重合
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 直尺 0--3
+  \draw[line width=0.75pt] (0,0) rectangle (3.55,0.78);
+  \foreach \n in {0,1,2,3}
+    \draw[line width=0.45pt] (0.32+\n*0.95,0.78) -- ++(0,-0.24);
+  \foreach \n in {0,1,2}
+    \draw[line width=0.38pt] (0.32+\n*0.95+0.475,0.78) -- ++(0,-0.16);
+  \foreach \n in {0,1,2}
+    \foreach \k in {1,2,3,4,6,7,8,9}
+      \draw[line width=0.3pt] ({0.32+\n*0.95+\k*0.095},0.78) -- ++(0,-0.10);
+  \foreach \n in {0,1,2,3}
+    \node[font=\scriptsize,inner sep=0pt] at (0.32+\n*0.95,0.32) {\n};
+  \def\Lx{0.55}
+  % 长方体
+  \begin{scope}
+    \clip (\Lx,0.78) rectangle (2.28,1.95);
+    \foreach \s in {-0.2,0.11,...,2.6}
+      \draw[line width=0.28pt] (\s,0.70) -- ++(1.15,1.35);
+  \end{scope}
+  \draw[line width=0.7pt] (\Lx,0.78) rectangle (2.28,1.95);
+  \draw[line width=0.7pt] (\Lx,1.95) -- (0.99,2.19) -- (2.72,2.19) -- (2.28,1.95);
+  \draw[line width=0.7pt] (2.28,0.78) -- (2.72,1.02) -- (2.72,2.19) -- (2.28,1.95);
+  \draw[line width=0.28pt] (2.40,0.92) -- (2.58,1.18);
+  \draw[line width=0.28pt] (2.36,1.15) -- (2.62,1.55);
+  \draw[line width=0.28pt] (2.34,1.42) -- (2.64,1.88);
+  % 眼睛偏左，视线斜落到左棱左侧的尺面（不与左棱重合）
+  \begin{scope}[shift={(0.20,2.95)},rotate=28]
+    \draw[line width=0.55pt] (-0.14,-0.28) .. controls (-0.28,-0.10) and (-0.26,0.16) .. (-0.12,0.30);
+    \fill (0,-0.34) .. controls (0.12,-0.16) and (0.10,0.10) .. (0,0.24)
+          .. controls (-0.10,0.08) and (-0.12,-0.18) .. (0,-0.34) -- cycle;
+  \end{scope}
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.3pt] (0.36,2.52) -- (0.06,0.78);
+\end{tikzpicture}%
+}
 \caption{眼睛的位置放得不时}
 \end{figure}
 
