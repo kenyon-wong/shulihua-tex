@@ -70,12 +70,19 @@ git push origin master
 
 插图有增删时，同步更新 `tex/` 里的 `\includegraphics`。不要 `git merge main`。
 
-### 首次把本机推到 fork
+### 首次把本机推到自己的仓库
+
+GitHub **禁止向公开 fork 上传新的 LFS 对象**（会报 `can not upload new objects to public fork`）。`raw/*.pdf` 已走 LFS，因此不能把 `master` 推到「Fork」出来的仓库。
+
+可选其一：
+
+1. **推荐：** 在 GitHub 新建一个**独立仓库**（不要点 Fork），或在现有 fork 的 Settings 里脱离 fork 网络，再：
 
 ```bash
 git lfs install
 git push -u origin master
-git push origin main          # 可选：在 fork 上留一份上游镜像
 ```
 
-在 GitHub 上把 **kenyon-wong/shulihuazixuecongshu** 的默认分支设为 `master`。不要改 `tradecatlabs/shulihuazixuecongshu` 的默认分支，也不要向它 push。
+2. 若必须保留 Fork 关系：不要用 LFS，把 `raw/*.pdf` 改回普通 Git 对象（单文件均小于 GitHub 100MB 限制）。独立维护 TeX 时不推荐这条。
+
+推上去之后，把 **kenyon-wong** 那个仓库的默认分支设为 `master`。不要改 `tradecatlabs/shulihuazixuecongshu` 的默认分支，也不要向它 `git push`。
