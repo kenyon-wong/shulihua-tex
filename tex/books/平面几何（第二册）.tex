@@ -3421,7 +3421,7 @@ A、B 两点的距离成 m：n 的点的轨迹是以线段 \(xx'\) 为直径的�
   \node[below=1pt] at (X) {$x$};
   \node[below=1pt] at (B) {$B$};
   \node[below right=1pt] at (Xp) {$x'$};
-  \node[above left=0pt] at (P) {$P$};
+  \node[above=1pt] at (P) {$P$};
   \node[above right=0pt] at (C) {$C$};
   \node at (1.90,0.96) {$1$};
   \node at (2.40,0.94) {$1'$};
@@ -3934,7 +3934,23 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-34}]{assets/plane-geometry-2/fig-p0048-03.png}}
+\fitfig{%
+% fig-alt: 图1-34：三个相似的不规则五边形，自左至右标I、II、III，依次增大
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}[scale=0.62]
+    \draw[line width=0.75pt] (0,0) -- (0,1.05) -- (1.28,2.05) -- (1.95,1.05) -- (1.48,0) -- cycle;
+    \node at (0.78,0.78) {$I$};
+  \end{scope}
+  \begin{scope}[shift={(1.58,0)},scale=0.88]
+    \draw[line width=0.75pt] (0,0) -- (0,1.05) -- (1.28,2.05) -- (1.95,1.05) -- (1.48,0) -- cycle;
+    \node at (0.78,0.78) {$II$};
+  \end{scope}
+  \begin{scope}[shift={(3.65,0)},scale=1.16]
+    \draw[line width=0.75pt] (0,0) -- (0,1.05) -- (1.28,2.05) -- (1.95,1.05) -- (1.48,0) -- cycle;
+    \node at (0.78,0.78) {$III$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-34}
 \end{figure}
 
@@ -3962,7 +3978,38 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-35}]{assets/plane-geometry-2/fig-p0048-06.png}}
+\fitfig{%
+% fig-alt: 图1-35：左正方形ABCD，中矩形A'B'C'D'，右菱形A''B''C''D''，A''左、B''下、C''右、D''上
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.12,0.28);
+  \coordinate (B) at (1.46,0.28);
+  \coordinate (C) at (1.46,1.62);
+  \coordinate (D) at (0.12,1.62);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \node[below left=0pt] at (A) {$A$};
+  \node[below=1pt] at (B) {$B$};
+  \node[above=1pt] at (C) {$C$};
+  \node[above left=0pt] at (D) {$D$};
+  \coordinate (Ap) at (2.35,0.28);
+  \coordinate (Bp) at (4.38,0.28);
+  \coordinate (Cp) at (4.38,1.62);
+  \coordinate (Dp) at (2.35,1.62);
+  \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
+  \node[below left=0pt] at (Ap) {$A'$};
+  \node[below=1pt] at (Bp) {$B'$};
+  \node[above=1pt] at (Cp) {$C'$};
+  \node[above left=0pt] at (Dp) {$D'$};
+  \coordinate (App) at (5.35,0.95);
+  \coordinate (Bpp) at (6.65,0.22);
+  \coordinate (Cpp) at (7.95,0.95);
+  \coordinate (Dpp) at (6.65,1.68);
+  \draw[line width=0.75pt] (App) -- (Bpp) -- (Cpp) -- (Dpp) -- cycle;
+  \node[left=2pt] at (App) {$A''$};
+  \node[below=1pt] at (Bpp) {$B''$};
+  \node[right=1pt] at (Cpp) {$C''$};
+  \node[above=1pt] at (Dpp) {$D''$};
+\end{tikzpicture}%
+}
 \caption{图1-35}
 \end{figure}
 
@@ -3992,7 +4039,33 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-36}]{assets/plane-geometry-2/fig-p0049-02.png}}
+\fitfig{%
+% fig-alt: 图1-36：两个锐角为60°的菱形，左ABCD、右A'B'C'D'，底边水平，A、A'处标60°
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.28,0.28);
+  \coordinate (B) at (2.18,0.28);
+  \coordinate (D) at (1.23,1.926);
+  \coordinate (C) at (3.13,1.926);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.5pt] (A) ++(0:0.32) arc (0:60:0.32);
+  \node[below left=0pt] at (A) {$A$};
+  \node[below right=0pt] at (B) {$B$};
+  \node[above right=0pt] at (C) {$C$};
+  \node[above left=0pt] at (D) {$D$};
+  \node at (0.86,0.62) {$60^{\circ}$};
+  \coordinate (Ap) at (4.05,0.28);
+  \coordinate (Bp) at (5.75,0.28);
+  \coordinate (Dp) at (4.90,1.754);
+  \coordinate (Cp) at (6.60,1.754);
+  \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
+  \draw[line width=0.5pt] (Ap) ++(0:0.30) arc (0:60:0.30);
+  \node[below left=0pt] at (Ap) {$A'$};
+  \node[below right=0pt] at (Bp) {$B'$};
+  \node[above right=0pt] at (Cp) {$C'$};
+  \node[above left=0pt] at (Dp) {$D'$};
+  \node at (4.58,0.60) {$60^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{图1-36}
 \end{figure}
 
@@ -4033,7 +4106,31 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图37}]{assets/plane-geometry-2/fig-p0049-03.png}}
+\fitfig{%
+% fig-alt: 图37：矩形ABCD，F在DC、E在AB，EF竖直；左侧高标b，左下AE处标a，底边AB下标a
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.78,0.36);
+  \coordinate (E) at (2.38,0.36);
+  \coordinate (B) at (3.98,0.36);
+  \coordinate (C) at (3.98,2.22);
+  \coordinate (F) at (2.38,2.22);
+  \coordinate (D) at (0.78,2.22);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (E) -- (F);
+  \draw[<->,line width=0.5pt] (0.22,0.36) -- (0.22,2.22);
+  \node[left=1pt] at (0.22,1.29) {$b$};
+  \draw[<->,line width=0.5pt] (0.92,0.78) -- (2.08,0.78);
+  \node[above=0pt] at (1.50,0.78) {$a$};
+  \draw[<->,line width=0.5pt] (0.78,-0.02) -- (3.98,-0.02);
+  \node[below=0pt] at (2.38,-0.02) {$a$};
+  \node[left=1pt] at (A) {$A$};
+  \node at (2.58,0.56) {$E$};
+  \node[right=1pt] at (B) {$B$};
+  \node[above left=0pt] at (D) {$D$};
+  \node[above=1pt] at (F) {$F$};
+  \node[above right=0pt] at (C) {$C$};
+\end{tikzpicture}%
+}
 \caption{图37}
 \end{figure}
 
@@ -4069,7 +4166,39 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-38}]{assets/plane-geometry-2/fig-p0050-02.png}}
+\fitfig{%
+% fig-alt: 图1-38：两个相似梯形，左ABCD中位线EF，右A'B'C'D'中位线E'F'，下底较长
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.18,0.22);
+  \coordinate (B) at (2.62,0.22);
+  \coordinate (C) at (2.02,1.62);
+  \coordinate (D) at (0.78,1.62);
+  \coordinate (E) at (0.48,0.92);
+  \coordinate (F) at (2.32,0.92);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (E) -- (F);
+  \node[below left=0pt] at (A) {$A$};
+  \node[below=1pt] at (B) {$B$};
+  \node[above right=0pt] at (C) {$C$};
+  \node[above left=0pt] at (D) {$D$};
+  \node[left=1pt] at (E) {$E$};
+  \node[right=1pt] at (F) {$F$};
+  \coordinate (Ap) at (3.85,0.16);
+  \coordinate (Bp) at (6.65,0.16);
+  \coordinate (Cp) at (5.96,1.78);
+  \coordinate (Dp) at (4.54,1.78);
+  \coordinate (Ep) at (4.20,0.97);
+  \coordinate (Fp) at (6.30,0.97);
+  \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
+  \draw[line width=0.75pt] (Ep) -- (Fp);
+  \node[below left=0pt] at (Ap) {$A'$};
+  \node[below right=0pt] at (Bp) {$B'$};
+  \node[above right=0pt] at (Cp) {$C'$};
+  \node[above left=0pt] at (Dp) {$D'$};
+  \node[left=1pt] at (Ep) {$E'$};
+  \node[right=1pt] at (Fp) {$F'$};
+\end{tikzpicture}%
+}
 \caption{图1-38}
 \end{figure}
 
@@ -4178,7 +4307,33 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0052-01.png}}
+\fitfig{%
+% fig-alt: 第9题：平行四边形ABCD，A左上、B左下、C右下、D右上；对角线BD，P在BD上；EF平行于AD，GH平行于AB
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.55,2.12);
+  \coordinate (B) at (0.16,0.22);
+  \coordinate (C) at (3.58,0.22);
+  \coordinate (D) at (3.97,2.12);
+  \coordinate (P) at (1.82,1.05);
+  \coordinate (E) at (0.33,1.05);
+  \coordinate (F) at (3.75,1.05);
+  \coordinate (G) at (2.04,2.12);
+  \coordinate (H) at (1.65,0.22);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (E) -- (F);
+  \draw[line width=0.75pt] (G) -- (H);
+  \node[above left=0pt] at (A) {$A$};
+  \node[below left=0pt] at (B) {$B$};
+  \node[below right=0pt] at (C) {$C$};
+  \node[above right=0pt] at (D) {$D$};
+  \node[left=1pt] at (E) {$E$};
+  \node[right=1pt] at (F) {$F$};
+  \node[above=1pt] at (G) {$G$};
+  \node[below=1pt] at (H) {$H$};
+  \node[above left=0pt] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -4208,7 +4363,26 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-39}]{assets/plane-geometry-2/fig-p0053-01.png}}
+\fitfig{%
+% fig-alt: 图1-39：三角形ABC，A上、B左、C右；B'在AB、C'在AC，B'C'平行于BC，B'D平行于AC交BC于D
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (2.22,2.52);
+  \coordinate (B) at (0.12,0.20);
+  \coordinate (C) at (4.62,0.20);
+  \coordinate (Bp) at (1.07,1.24);
+  \coordinate (Cp) at (3.54,1.24);
+  \coordinate (D) at (2.15,0.20);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (Bp) -- (Cp);
+  \draw[line width=0.75pt] (Bp) -- (D);
+  \node[above=1pt] at (A) {$A$};
+  \node[below left=0pt] at (B) {$B$};
+  \node[below right=0pt] at (C) {$C$};
+  \node[left=1pt] at (Bp) {$B'$};
+  \node[right=1pt] at (Cp) {$C'$};
+  \node[below=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{图1-39}
 \end{figure}
 
