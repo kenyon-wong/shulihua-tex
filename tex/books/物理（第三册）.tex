@@ -1418,7 +1418,19 @@ E = k \frac{Q}{r^{2}} = 9.0 \times 10^{9} \frac{10^{- 4}}{(0.5)^{2}} \text{牛/�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.18}]{assets/physics-3/fig-p0033-01.png}}
+\fitfig{%
+% fig-alt: 图1.18 正点电荷10^{-4}库，向右虚线0.5米到场点，E水平向右
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.8pt,fill=white] (0,0) circle[radius=0.22];
+  \node at (0,0) {$+$};
+  \node[below=4pt] at (0,-0.22) {$10^{-4}$库};
+  \draw[line width=0.65pt,dashed] (0.26,0) -- (2.28,0);
+  \node[above=2pt] at (1.27,0) {$0.5$ 米};
+  \fill (2.36,0) circle[radius=0.05];
+  \draw[line width=0.8pt,->] (2.50,0) -- (3.55,0);
+  \node[above=1pt] at (3.10,0) {$E$};
+\end{tikzpicture}%
+}
 \caption{图1.18}
 \end{figure}
 
@@ -1447,7 +1459,44 @@ E = k \frac{Q}{r^{2}} = 9.0 \times 10^{9} \frac{10^{- 4}}{(0.5)^{2}} \text{牛/�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.19}]{assets/physics-3/fig-p0034-01.png}}
+\fitfig{%
+% fig-alt: 图1.19 直角三角形A、B、C，A点Qa、B点Qb，N点合场强为零；C点Ea沿b外延，Eb竖直向下，合场强E略偏右
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \coordinate (N) at (0,0);
+  \coordinate (A) at (2.15,0);
+  \coordinate (B) at (4.70,0);
+  \coordinate (C) at (4.70,1.90);
+  \draw[line width=0.7pt] (N) -- (B) -- (C) -- (A);
+  \draw[line width=0.75pt,fill=white] (N) circle[radius=0.055];
+  \node[below=2pt] at (N) {$N$};
+  \node[below=2pt] at (A) {$A$};
+  \node[below=13pt] at (A) {$Q_a$};
+  \node[below=2pt] at (B) {$B$};
+  \node[below=13pt] at (B) {$Q_b$};
+  \node[above left=1pt] at (4.58,2.00) {$C$};
+  \node[below=2pt] at (3.42,0) {$c$};
+  \node[left=2pt] at (4.70,0.98) {$a$};
+  \node[above left=1pt] at (3.22,1.12) {$b$};
+  \draw[line width=0.5pt,<->] (0,0.42) -- (2.15,0.42);
+  \node[above=1pt] at (1.07,0.42) {$x$};
+  \draw[line width=0.7pt,->] (-0.12,0) -- (-0.95,0);
+  \node[left=1pt] at (-0.95,0) {$E'_a$};
+  \draw[line width=0.7pt,->] (0.70,0) -- (1.40,0);
+  \node[below=2pt] at (1.05,0) {$E'_b$};
+  % Ea along AC extended; dashed parallelogram; E down-right; Eb down on a
+  \draw[line width=0.7pt,->] (C) -- (5.32,2.36);
+  \node[above right=0pt] at (5.32,2.36) {$E_a$};
+  \draw[line width=0.55pt,dashed] (C) -- (4.70,2.46);
+  \draw[line width=0.55pt,dashed] (5.32,2.36) -- (5.18,0.98);
+  \draw[line width=0.55pt,dashed] (4.70,2.46) -- (5.32,2.36);
+  \draw[line width=0.75pt,->] (C) -- (5.18,0.98);
+  \node[right=2pt] at (5.22,1.35) {$E$};
+  \draw[line width=0.55pt] (4.70,1.50) arc[start angle=-90, end angle=-65, radius=0.40];
+  \node at (4.98,1.55) {$\theta$};
+  \draw[line width=0.7pt,->] (4.88,0.72) -- (4.88,0.28);
+  \node[right=1pt] at (4.88,0.50) {$E_b$};
+\end{tikzpicture}%
+}
 \caption{图1.19}
 \end{figure}
 
@@ -1569,7 +1618,19 @@ k \frac{1.0 \times 10^{- 9}}{x^{2}} = k \frac{4.0 \times 10^{- 9}}{(x + 0.4)^{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1.20 正点电荷的电力线}]{assets/physics-3/fig-p0036-01.png}}
+\fitfig{%
+% fig-alt: 图1.20 正点电荷电力线：从正电荷向外辐射的直线，箭头向外，右上方标P
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \a in {0,45,90,135,180,225,270,315} {
+    \draw[line width=0.65pt] (\a:0.28) -- (\a:1.62);
+    \draw[line width=0.65pt,->] (\a:0.58) -- (\a:1.02);
+  }
+  \draw[line width=0.8pt,fill=white] (0,0) circle[radius=0.22];
+  \node at (0,0) {$+$};
+  \fill (1.18,0.62) circle[radius=0.04];
+  \node[right=1pt] at (1.18,0.62) {$P$};
+\end{tikzpicture}%
+}
 \caption{图 1.20 正点电荷的电力线}
 \end{figure}
 
@@ -1589,7 +1650,17 @@ k \frac{1.0 \times 10^{- 9}}{x^{2}} = k \frac{4.0 \times 10^{- 9}}{(x + 0.4)^{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.21 负点电荷的电力线}]{assets/physics-3/fig-p0037-01.png}}
+\fitfig{%
+% fig-alt: 图1.21 负点电荷电力线：直线指向负电荷，箭头向内终止于负电荷
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \a in {0,45,90,135,180,225,270,315} {
+    \draw[line width=0.65pt] (\a:0.28) -- (\a:1.62);
+    \draw[line width=0.65pt,->] (\a:1.12) -- (\a:0.62);
+  }
+  \draw[line width=0.8pt,fill=white] (0,0) circle[radius=0.22];
+  \node at (0,0) {$-$};
+\end{tikzpicture}%
+}
 \caption{图1.21 负点电荷的电力线}
 \end{figure}
 
@@ -1603,7 +1674,96 @@ k \frac{1.0 \times 10^{- 9}}{x^{2}} = k \frac{4.0 \times 10^{- 9}}{(x + 0.4)^{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图122 (a) 等量异种点电荷的电力线分布；}]{assets/physics-3/fig-p0038-01.png}}
+\fitfig{%
+% fig-alt: 图1.22 (a) 等量异种点电荷电力线，正电荷发出、负电荷终止，A点切线AB；(b) 等量同种正点电荷电力线相斥
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % (a) opposite charges
+  \begin{scope}[yshift=0.15cm]
+    \coordinate (P) at (0,0);
+    \coordinate (Q) at (3.35,0);
+    % outer rays from +
+    \foreach \a in {145,165,180,200,220} {
+      \draw[line width=0.55pt] (\a:0.26) -- (\a:1.15);
+      \draw[line width=0.55pt,->] (\a:0.48) -- (\a:0.82);
+    }
+    % rays into -
+    \begin{scope}[shift={(3.35,0)}]
+      \foreach \a in {-35,-18,0,18,35} {
+        \draw[line width=0.55pt] (\a:0.26) -- (\a:1.15);
+        \draw[line width=0.55pt,->] (\a:0.92) -- (\a:0.52);
+      }
+    \end{scope}
+    % connecting field lines, arrows toward the negative charge
+    \draw[line width=0.55pt] (0.26,0.08) .. controls (1.05,0.22) and (2.30,0.22) .. (3.09,0.08);
+    \draw[line width=0.55pt,->] (1.45,0.20) -- (1.85,0.20);
+    \draw[line width=0.55pt] (0.26,-0.08) .. controls (1.05,-0.22) and (2.30,-0.22) .. (3.09,-0.08);
+    \draw[line width=0.55pt,->] (1.45,-0.20) -- (1.85,-0.20);
+    \draw[line width=0.55pt] (0.20,0.16) .. controls (0.85,0.62) and (2.50,0.62) .. (3.15,0.16);
+    \draw[line width=0.55pt,->] (1.40,0.58) -- (1.90,0.58);
+    \draw[line width=0.55pt] (0.20,-0.16) .. controls (0.85,-0.62) and (2.50,-0.62) .. (3.15,-0.16);
+    \draw[line width=0.55pt,->] (1.40,-0.58) -- (1.90,-0.58);
+    \draw[line width=0.55pt] (0.16,0.20) .. controls (0.55,1.05) and (2.80,1.05) .. (3.19,0.20);
+    \draw[line width=0.55pt,->] (1.55,1.00) -- (2.05,0.98);
+    \draw[line width=0.55pt] (0.16,-0.20) .. controls (0.55,-1.05) and (2.80,-1.05) .. (3.19,-0.20);
+    \draw[line width=0.55pt,->] (1.55,-1.00) -- (2.05,-0.98);
+    \draw[line width=0.55pt] (0.12,0.22) .. controls (-0.15,1.85) and (3.50,1.85) .. (3.23,0.22);
+    \draw[line width=0.55pt,->] (2.55,1.55) -- (2.95,1.28);
+    \draw[line width=0.55pt] (0.12,-0.22) .. controls (-0.15,-1.85) and (3.50,-1.85) .. (3.23,-0.22);
+    \draw[line width=0.55pt,->] (2.55,-1.55) -- (2.95,-1.28);
+    % outer curve through A, and tangent AB
+    \draw[line width=0.55pt] (0.08,-0.24) .. controls (0.40,-2.70) and (2.70,-2.70) .. (3.22,-0.28);
+    \coordinate (A) at (1.68,-2.02);
+    \fill (A) circle[radius=0.035];
+    \node[below left=1pt] at (A) {$A$};
+    \draw[line width=0.7pt,->] (A) -- (2.42,-1.78);
+    \node[right=1pt] at (2.42,-1.72) {$B$};
+    \draw[line width=0.5pt] (1.68,-2.02) -- (1.90,-1.86) -- (2.12,-2.02) -- (1.90,-2.18) -- cycle;
+    \draw[line width=0.8pt,fill=white] (P) circle[radius=0.20];
+    \node at (P) {$+$};
+    \draw[line width=0.8pt,fill=white] (Q) circle[radius=0.20];
+    \node at (Q) {$-$};
+    \node at (1.67,-2.95) {$(a)$};
+  \end{scope}
+  % (b) like charges
+  \begin{scope}[yshift=-5.55cm]
+    \coordinate (L) at (0.35,0);
+    \coordinate (R) at (3.00,0);
+    \begin{scope}[shift={(0.35,0)}]
+      \foreach \a/\len in {100/1.20, 120/1.28, 140/1.22, 160/1.12, 180/1.05, 200/1.12, 220/1.22, 240/1.28, 260/1.20} {
+        \draw[line width=0.5pt] (\a:0.24) -- (\a:\len);
+        \draw[line width=0.5pt,->] (\a:0.42) -- (\a:0.72);
+      }
+      \draw[line width=0.5pt] (55:0.24) .. controls (0.70,0.85) and (0.50,1.25) .. (0.20,1.48);
+      \draw[line width=0.5pt,->] (0.57,0.78) -- (0.43,1.05);
+      \draw[line width=0.5pt] (35:0.24) .. controls (0.80,0.55) and (0.70,1.05) .. (0.43,1.42);
+      \draw[line width=0.5pt,->] (0.73,0.52) -- (0.60,0.78);
+      \draw[line width=0.5pt] (-55:0.24) .. controls (0.70,-0.85) and (0.50,-1.25) .. (0.20,-1.48);
+      \draw[line width=0.5pt,->] (0.57,-0.78) -- (0.43,-1.05);
+      \draw[line width=0.5pt] (-35:0.24) .. controls (0.80,-0.55) and (0.70,-1.05) .. (0.43,-1.42);
+      \draw[line width=0.5pt,->] (0.73,-0.52) -- (0.60,-0.78);
+    \end{scope}
+    \begin{scope}[shift={(3.00,0)}]
+      \foreach \a/\len in {80/1.20, 60/1.28, 40/1.22, 20/1.12, 0/1.05, -20/1.12, -40/1.22, -60/1.28, -80/1.20} {
+        \draw[line width=0.5pt] (\a:0.24) -- (\a:\len);
+        \draw[line width=0.5pt,->] (\a:0.42) -- (\a:0.72);
+      }
+      \draw[line width=0.5pt] (125:0.24) .. controls (-0.70,0.85) and (-0.50,1.25) .. (-0.20,1.48);
+      \draw[line width=0.5pt,->] (-0.58,0.78) -- (-0.44,1.05);
+      \draw[line width=0.5pt] (145:0.24) .. controls (-0.80,0.55) and (-0.70,1.05) .. (-0.43,1.42);
+      \draw[line width=0.5pt,->] (-0.72,0.52) -- (-0.60,0.78);
+      \draw[line width=0.5pt] (-125:0.24) .. controls (-0.70,-0.85) and (-0.50,-1.25) .. (-0.20,-1.48);
+      \draw[line width=0.5pt,->] (-0.58,-0.78) -- (-0.44,-1.05);
+      \draw[line width=0.5pt] (-145:0.24) .. controls (-0.80,-0.55) and (-0.70,-1.05) .. (-0.43,-1.42);
+      \draw[line width=0.5pt,->] (-0.72,-0.52) -- (-0.60,-0.78);
+    \end{scope}
+    \draw[line width=0.8pt,fill=white] (L) circle[radius=0.20];
+    \node at (L) {$+$};
+    \draw[line width=0.8pt,fill=white] (R) circle[radius=0.20];
+    \node at (R) {$+$};
+    \node at (1.67,-1.85) {$(b)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图122 (a) 等量异种点电荷的电力线分布；}
 \end{figure}
 
@@ -1658,7 +1818,31 @@ k \frac{1.0 \times 10^{- 9}}{x^{2}} = k \frac{4.0 \times 10^{- 9}}{(x + 0.4)^{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-3/fig-p0040-01.png}}
+\fitfig{%
+% fig-alt: 第3题(a) 向右发散的电力线，左密右疏；C、A在左段上下两线，虚线相连，B在右下方电力线上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.65pt] (0.05,0.55) -- (4.20,1.35);
+  \draw[line width=0.65pt,->] (0.35,0.63) -- (0.95,0.73);
+  \draw[line width=0.65pt] (0.18,0.28) -- (4.20,0.70);
+  \draw[line width=0.65pt,->] (0.42,0.34) -- (1.00,0.41);
+  \draw[line width=0.65pt] (0.28,0.02) -- (4.20,0.10);
+  \draw[line width=0.65pt,->] (0.48,0.03) -- (1.05,0.05);
+  \draw[line width=0.65pt] (0.18,-0.24) -- (4.20,-0.52);
+  \draw[line width=0.65pt,->] (0.42,-0.29) -- (1.00,-0.32);
+  \draw[line width=0.65pt] (0.05,-0.50) -- (4.20,-1.15);
+  \draw[line width=0.65pt,->] (0.35,-0.57) -- (0.95,-0.66);
+  \coordinate (C) at (1.45,0.42);
+  \coordinate (A) at (1.40,0.05);
+  \coordinate (B) at (3.45,-0.42);
+  \draw[line width=0.55pt,dashed] (C) .. controls (1.05,0.22) .. (A);
+  \fill (C) circle[radius=0.045];
+  \fill (A) circle[radius=0.045];
+  \fill (B) circle[radius=0.045];
+  \node[above=2pt] at (C) {$C$};
+  \node[below left=2pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{(4)}
 \end{figure}
 
