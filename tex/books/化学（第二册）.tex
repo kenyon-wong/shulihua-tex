@@ -8521,13 +8521,86 @@ CO、CO₂、H₂S、水蒸气等杂质， 必须把它们清除掉，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={氮及其化合物相互转化关系}]{assets/chemistry-2/fig-p0211-01.png}}
+\fitfig{%
+% fig-alt: 氮及其化合物相互转化。左NH4+与NH3：右箭OH-，左箭H+。NH3上至N2标O2，下至NH3标H2；NH3下至NH4OH标H2O，上至NH3标加热。NH3斜上至NO标O2，下标(Pt)。顶N2右箭O2至NO，NO右箭O2至NO2。HNO3斜上至NO标金属与(稀酸)。NO2下至HNO3标H2O，上至NO2旁标金属或非金属与(浓酸)。HNO3右箭金属，金属氧化物盐类与OH-至NO3-，左箭H2SO4返回
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,every node/.style={inner sep=1.1pt,font=\small}]
+  \node[anchor=east] (labn) at (0,0.18) {氮：};
+  \node (nh4) at (1.20,0.18) {$\mathrm{NH}_{4}^{+}$};
+  \node (nh3) at (3.45,0.18) {$\mathrm{NH}_{3}$};
+  \node (nh4oh) at (3.45,-1.48) {$\mathrm{NH}_{4}\mathrm{OH}$};
+  \node (n2) at (4.95,2.15) {$\mathrm{N}_{2}$};
+  \node (no) at (7.55,2.15) {$\mathrm{NO}$};
+  \node (no2) at (10.85,2.15) {$\mathrm{NO}_{2}$};
+  \node (hno3) at (9.55,-0.72) {$\mathrm{HNO}_{3}$};
+  \node (no3) at (14.70,-0.72) {$\mathrm{NO}_{3}^{-}$};
+  \draw[line width=0.55pt,->] ([yshift=3.2pt]nh4.east) -- ([yshift=3.2pt]nh3.west)
+    node[midway,above,inner sep=1pt] {$\mathrm{OH}^{-}$};
+  \draw[line width=0.55pt,->] ([yshift=-3.2pt]nh3.west) -- ([yshift=-3.2pt]nh4.east)
+    node[midway,below,inner sep=1pt] {$\mathrm{H}^{+}$};
+  \draw[line width=0.55pt,->] ([xshift=-3.6pt]n2.south) -- ([xshift=-3.6pt]nh3.north)
+    node[midway,left,inner sep=1pt] {$\mathrm{H}_{2}$};
+  \draw[line width=0.55pt,->] ([xshift=3.6pt]nh3.north) -- ([xshift=3.6pt]n2.south)
+    node[midway,right,inner sep=1pt] {$\mathrm{O}_{2}$};
+  \draw[line width=0.55pt,->] ([xshift=-3.6pt]nh3.south) -- ([xshift=-3.6pt]nh4oh.north)
+    node[midway,left,inner sep=1pt] {$\mathrm{H}_{2}\mathrm{O}$};
+  \draw[line width=0.55pt,->] ([xshift=3.6pt]nh4oh.north) -- ([xshift=3.6pt]nh3.south)
+    node[midway,right,inner sep=1pt] {加热};
+  \draw[line width=0.55pt,->] (n2.east) -- (no.west)
+    node[midway,above,inner sep=1pt] {$\mathrm{O}_{2}$};
+  \draw[line width=0.55pt,->] (no.east) -- (no2.west)
+    node[midway,above,inner sep=1pt] {$\mathrm{O}_{2}$};
+  \draw[line width=0.55pt,->] (nh3.north east) -- (no.south west)
+    node[midway,above,inner sep=1pt] {$\mathrm{O}_{2}$}
+    node[midway,below,inner sep=1pt] {(Pt)};
+  \draw[line width=0.55pt,->] (hno3.north west) -- (no.south);
+  \node[anchor=east,inner sep=1pt] at (7.95,1.05) {金属};
+  \node[anchor=east,inner sep=1pt] at (8.05,0.28) {(稀酸)};
+  \node[align=center,inner sep=0.3pt,font=\scriptsize] (feijin) at (9.28,0.62) {\setlength{\baselineskip}{0.76em}金\\属\\或\\非\\金\\属};
+  \node[align=center,inner sep=0.3pt,font=\scriptsize] (nong) at (9.78,0.68) {\setlength{\baselineskip}{0.76em}(\\浓\\酸)};
+  \draw[line width=0.55pt,->] (10.05,-0.22) -- (10.52,1.78);
+  \draw[line width=0.55pt,->] (11.08,1.78) -- (10.72,-0.32);
+  \node[anchor=west,inner sep=1pt] at (11.22,0.78) {$\mathrm{H}_{2}\mathrm{O}$};
+  \node[align=center,anchor=south,inner sep=1pt] at (13.05,-0.28) {金属，金属\\氧化物盐类\\[-1pt]$\mathrm{OH}^{-}$};
+  \draw[line width=0.55pt,->] ([yshift=3.2pt]hno3.east) -- ([yshift=3.2pt]no3.west);
+  \draw[line width=0.55pt,->] ([yshift=-3.6pt]no3.west) -- ([yshift=-3.6pt]hno3.east)
+    node[midway,below,inner sep=1pt] {$\mathrm{H}_{2}\mathrm{SO}_{4}$};
+\end{tikzpicture}%
+}
 \caption{氮及其化合物相互转化关系}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={磷及其化合物相互转化关系}]{assets/chemistry-2/fig-p0211-02.png}}
+\fitfig{%
+% fig-alt: 磷及其化合物相互转化。P右箭O2至P2O5；上支热水至H3PO4，下支冷水至HPO3。上Ca3(PO4)2右箭2H2SO4至Ca(H2PO4)2+2CaSO4，左箭Ca(OH)2返回；Ca3(PO4)2下箭3H2SO4至H3PO4。H3PO4右箭金属，OH-至H2PO4-、HPO4--、PO4---，左箭H2SO4返回
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,every node/.style={inner sep=1.1pt,font=\small}]
+  \node[anchor=east] (labp) at (0,0.05) {磷：};
+  \node (p) at (0.85,0.05) {$\mathrm{P}$};
+  \node (p2o5) at (2.85,0.05) {$\mathrm{P}_{2}\mathrm{O}_{5}$};
+  \node (h3po4) at (6.15,0.72) {$\mathrm{H}_{3}\mathrm{PO}_{4}$};
+  \node (hpo3) at (5.55,-1.05) {$\mathrm{HPO}_{3}$};
+  \node (ca3) at (5.55,2.28) {$\mathrm{Ca}_{3}(\mathrm{PO}_{4})_{2}$};
+  \node[anchor=west] (prod) at (8.15,2.28) {$\mathrm{Ca}(\mathrm{H}_{2}\mathrm{PO}_{4})_{2}+2\mathrm{CaSO}_{4}$};
+  \node[anchor=west,align=left] (ions) at (9.35,0.72) {$\mathrm{H}_{2}\mathrm{PO}_{4}^{-}$\\$\mathrm{HPO}_{4}^{--}$\\$\mathrm{PO}_{4}^{---}$};
+  \draw[line width=0.55pt,->] (p.east) -- (p2o5.west)
+    node[midway,above,inner sep=1pt] {$\mathrm{O}_{2}$};
+  \draw[line width=0.55pt] (p2o5.east) -- ++(0.32,0) coordinate (fork);
+  \draw[line width=0.55pt,->] (fork) -- (h3po4.west)
+    node[midway,above,inner sep=1pt] {热水};
+  \draw[line width=0.55pt,->] (fork) -- (hpo3.west)
+    node[midway,above,inner sep=1pt] {冷水};
+  \draw[line width=0.55pt,->] ([yshift=3.4pt]ca3.east) -- ([yshift=3.4pt]prod.west)
+    node[midway,above,inner sep=1pt] {$2\mathrm{H}_{2}\mathrm{SO}_{4}$};
+  \draw[line width=0.55pt,->] ([yshift=-3.4pt]prod.west) -- ([yshift=-3.4pt]ca3.east)
+    node[midway,below,inner sep=1pt] {$\mathrm{Ca}(\mathrm{OH})_{2}$};
+  \draw[line width=0.55pt,->] ([xshift=-6pt]ca3.south) -- (h3po4.north)
+    node[midway,left,inner sep=1pt] {$3\mathrm{H}_{2}\mathrm{SO}_{4}$};
+  \draw[line width=0.55pt,->] ([yshift=3.6pt]h3po4.east) -- ([yshift=3.6pt]ions.west)
+    node[midway,above,inner sep=1pt] {金属，$\mathrm{OH}^{-}$};
+  \draw[line width=0.55pt,->] ([yshift=-3.6pt]ions.west) -- ([yshift=-3.6pt]h3po4.east)
+    node[midway,below,inner sep=1pt] {$\mathrm{H}_{2}\mathrm{SO}_{4}$};
+\end{tikzpicture}%
+}
 \caption{磷及其化合物相互转化关系}
 \end{figure}
 
@@ -9272,7 +9345,33 @@ PbO（氧化铅）代替
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={陶瓷制造流程}]{assets/chemistry-2/fig-p0232-01.png}}
+\fitfig{%
+% fig-alt: 陶瓷制造流程。左括粘土、+、水，右箭可塑性泥、造型、阴干至煅烧；上釉折箭向下接入煅烧前。次行冷却后右括陶器、瓷器、砖瓦(不上釉)
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,every node/.style={inner sep=1.2pt,font=\small}]
+  \node[anchor=east] (tu) at (0,0.48) {粘土};
+  \node[anchor=east] (jia) at (0,0) {$+$};
+  \node[anchor=east] (shui) at (0,-0.48) {水};
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=3.5pt}] ([xshift=3pt,yshift=2pt]tu.north east) -- ([xshift=3pt,yshift=-2pt]shui.south east);
+  \node (ni) at (2.05,0) {可塑性泥};
+  \node (zao) at (4.05,0) {造型};
+  \node (yin) at (5.85,0) {阴干};
+  \node (duan) at (8.05,0) {煅烧};
+  \node (you) at (7.15,0.92) {上釉};
+  \draw[line width=0.55pt,->] ([xshift=8pt]jia.east) -- (ni.west);
+  \draw[line width=0.55pt,->] (ni.east) -- (zao.west);
+  \draw[line width=0.55pt,->] (zao.east) -- (yin.west);
+  \draw[line width=0.55pt,->] (yin.east) -- (duan.west);
+  \draw[line width=0.55pt] (you.east) -- ++(0.42,0) coordinate (youk);
+  \draw[line width=0.55pt,->] (youk) -- (youk |- yin.east);
+  \node[anchor=west] (tao) at (3.55,-1.55) {陶器};
+  \node[anchor=west] (ci) at (3.55,-2.12) {瓷器};
+  \node[anchor=west] (zhuan) at (3.55,-2.69) {砖瓦(不上釉)};
+  \node (leng) at (1.55,-2.12) {冷却};
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=3.5pt,mirror}] ([xshift=-4pt,yshift=2pt]tao.north west) -- ([xshift=-4pt,yshift=-2pt]zhuan.south west);
+  \draw[line width=0.55pt,->] (0.55,-2.12) -- (leng.west);
+  \draw[line width=0.55pt,->] (leng.east) -- ++(0.55,0);
+\end{tikzpicture}%
+}
 \caption{陶瓷制造流程}
 \end{figure}
 
@@ -9284,7 +9383,31 @@ PbO（氧化铅）代替
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={水泥制造流程}]{assets/chemistry-2/fig-p0232-02.png}}
+\fitfig{%
+% fig-alt: 水泥制造流程。左括粘土、+、石灰石，右箭按适当比混和、磨细。次行在回转窑煅烧、冷却、研细至水泥；加石膏折箭向下接入冷却与研细之间
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,every node/.style={inner sep=1.2pt,font=\small}]
+  \node[anchor=east] (tu) at (0,0.48) {粘\ 土};
+  \node[anchor=east] (jia) at (0,0) {$+$};
+  \node[anchor=east] (shi) at (0,-0.48) {石灰石};
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=3.5pt}] ([xshift=3pt,yshift=2pt]tu.north east) -- ([xshift=3pt,yshift=-2pt]shi.south east);
+  \node (hun) at (2.55,0) {按适当比混和};
+  \node (mo) at (5.15,0) {磨细};
+  \draw[line width=0.55pt,->] ([xshift=8pt]jia.east) -- (hun.west);
+  \draw[line width=0.55pt,->] (hun.east) -- (mo.west);
+  \draw[line width=0.55pt,->] (mo.east) -- ++(0.55,0);
+  \node (yao) at (1.85,-1.45) {在回转窑煅烧};
+  \node (leng) at (4.35,-1.45) {冷却};
+  \node (yan) at (6.15,-1.45) {研细};
+  \node (shui) at (7.85,-1.45) {水泥};
+  \node (gao) at (5.15,-0.55) {加石膏};
+  \draw[line width=0.55pt,->] (0.35,-1.45) -- (yao.west);
+  \draw[line width=0.55pt,->] (yao.east) -- (leng.west);
+  \draw[line width=0.55pt,->] (leng.east) -- (yan.west);
+  \draw[line width=0.55pt,->] (yan.east) -- (shui.west);
+  \draw[line width=0.55pt] (gao.east) -- ++(0.38,0) coordinate (gaok);
+  \draw[line width=0.55pt,->] (gaok) -- (gaok |- leng.east);
+\end{tikzpicture}%
+}
 \caption{水泥制造流程}
 \end{figure}
 
@@ -9292,7 +9415,28 @@ PbO（氧化铅）代替
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={玻璃制造流程}]{assets/chemistry-2/fig-p0232-03.png}}
+\fitfig{%
+% fig-alt: 玻璃制造流程。SiO2加左括三行：Na2CO3+CaCO3、K2CO3+CaCO3、K2CO3+PbO，右箭熔融、造型、冷却，右括钠玻璃、钾玻璃、铅玻璃
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,every node/.style={inner sep=1.1pt,font=\small}]
+  \node (sio) at (0,0) {$\mathrm{SiO}_{2}+$};
+  \node[anchor=west] (r1) at (1.15,0.62) {$\mathrm{Na}_{2}\mathrm{CO}_{3}+\mathrm{CaCO}_{3}$};
+  \node[anchor=west] (r2) at (1.15,0) {$\mathrm{K}_{2}\mathrm{CO}_{3}+\mathrm{CaCO}_{3}$};
+  \node[anchor=west] (r3) at (1.15,-0.62) {$\mathrm{K}_{2}\mathrm{CO}_{3}+\mathrm{PbO}$};
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=4pt,mirror}] ([xshift=-5pt,yshift=2pt]r1.north west) -- ([xshift=-5pt,yshift=-2pt]r3.south west);
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=4pt}] ([xshift=4pt,yshift=2pt]r1.north east) -- ([xshift=4pt,yshift=-2pt]r3.south east);
+  \node (rong) at (6.55,0) {熔融};
+  \node (zao) at (8.15,0) {造型};
+  \node (leng) at (9.75,0) {冷却};
+  \node[anchor=west] (na) at (12.05,0.62) {钠玻璃};
+  \node[anchor=west] (k) at (12.05,0) {钾玻璃};
+  \node[anchor=west] (pb) at (12.05,-0.62) {铅玻璃};
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=4pt,mirror}] ([xshift=-4pt,yshift=2pt]na.north west) -- ([xshift=-4pt,yshift=-2pt]pb.south west);
+  \draw[line width=0.55pt,->] ([xshift=10pt]r2.east) -- (rong.west);
+  \draw[line width=0.55pt,->] (rong.east) -- (zao.west);
+  \draw[line width=0.55pt,->] (zao.east) -- (leng.west);
+  \draw[line width=0.55pt,->] (leng.east) -- ++(0.62,0);
+\end{tikzpicture}%
+}
 \caption{玻璃制造流程}
 \end{figure}
 
