@@ -51,12 +51,11 @@
 
 依赖：
 
-- Python 3.10+
-- GNU Make（可选）
+- GNU Make
+- XeLaTeX / CTeX（TeX Live 或 TinyTeX，含 fandol）
+- Ghostscript（`gs`，用于合订本）
 
-原始 PDF 深度审计额外需要 PyPDF2 3.x、qpdf、Poppler（`pdfinfo`、`pdfdetach`、`pdfsig`、`pdftotext`）和 ExifTool。
-
-重建 PDF 额外需要 XeLaTeX（TeX Live 2024 或 TinyTeX，含 ctex/fandol）以及合订装订用的 PyPDF2 3.x。首次可运行 `make tex-deps` 补齐宏包。
+源文件与隐私审计仍用 Python 3.10+。原始 PDF 深度审计额外需要 PyPDF2 3.x。首次可运行 `make tex-deps` 补齐宏包。
 
 完整审计并构建：
 
@@ -91,10 +90,10 @@ make pdf-verify
 构建单册：
 
 ```bash
-python3 scripts/build_pdfs.py --book '代数（第一册）'
+make dist/代数（第一册）.pdf
 ```
 
-输出位于 `dist/`，报告位于 `reports/`。PDF 使用 `ctexbook` + Fandol，同一 TeX Live 与同一 `SOURCE_DATE_EPOCH` 下内容稳定；跨 TeX 版本不保证字节级一致。
+输出位于 `dist/`。PDF 使用 `ctexbook` + Fandol。合订本由 Ghostscript 按分册装订。
 
 ## Release 发布策略
 

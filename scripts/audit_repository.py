@@ -45,7 +45,6 @@ REQUIRED = {
     "scripts/audit_privacy.py",
     "scripts/audit_repository.py",
     "scripts/audit_sources.py",
-    "scripts/build_pdfs.py",
     "scripts/audit_tex_sources.py",
     "tex/cover.tex",
     "tex/BRANCH_AGENTS.md",
@@ -263,7 +262,6 @@ def main() -> int:
         "scripts/audit_privacy.py",
         "scripts/audit_repository.py",
         "scripts/audit_sources.py",
-        "scripts/build_pdfs.py",
         "scripts/audit_tex_sources.py",
     }
     unexpected_executable = sorted(set(executable_files) - allowed_executable)

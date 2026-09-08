@@ -9,6 +9,6 @@
 - 不凭空补写原扫描缺失内容；证据不足时保留透明校注。
 - 公式内容不得经过会破坏 LaTeX 的全角标点替换。
 - 批量修改前先在仓库外建立备份；不得执行破坏 `main` 工作区或 Git 历史的操作。
-- 提交前运行 `make audit` 和 `make tex-audit`；构建 PDF 用 `make pdf`（从 TeX 源）。
+- 提交前运行 `make audit` 和 `make tex-audit`；构建 PDF 用 `make pdf`（GNU Make + XeLaTeX，不经 Python/Pandoc）。单册：`make dist/代数（第一册）.pdf`。
 - `dist/`、`.build/` 和动态 JSON 报告属于生成物，不纳入版本控制。
 - 本分支不维护 EPUB，不保留 `epub/` 与 `scripts/build_epubs.py`。
