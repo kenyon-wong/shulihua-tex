@@ -6662,7 +6662,29 @@ NaCl） 可以作为这一类盐的代表。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={物质的分子结构与导电性分类示意图}]{assets/chemistry-2/fig-p0164-02.png}}
+\fitfig{%
+% fig-alt: 物质的分子结构与导电性分类。左标物质（根据物质的分子结构分类），括离子化合物（电价化合物）与共价化合物（原子化合物）。离子化合物以点线接入电解质。共价化合物再括极性化合物与非极性化合物；极性化合物再括强极性化合物…与弱极性化合物…。强极性化合物…与离子化合物同入电解质，弱极性化合物…与非极性化合物同入非电解质。右括电解质与非电解质，标物质（根据物质的导电性分类）
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1.1pt,font=\small\linespread{1}\selectfont}]
+  \node[anchor=east,align=center,inner sep=0.8pt] (leftlab) at (0,-0.10) {\setlength{\baselineskip}{0.92em}物\ 质\\（根据物质\\的分子结\\构分类）};
+  \node[anchor=west,align=center] (ion) at (0.72,1.12) {离子化合物\\[-1pt]（电价化合物）};
+  \node[anchor=west,align=center] (cov) at (0.72,-0.62) {共价化合物\\[-1pt]（原子化合物）};
+  \node[anchor=west] (pol) at (3.42,-0.02) {极性化合物};
+  \node[anchor=west] (strong) at (5.55,0.38) {强极性化合物…};
+  \node[anchor=west] (weak) at (5.55,-0.42) {弱极性化合物…};
+  \node[anchor=west] (non) at (3.42,-1.22) {非极性化合物};
+  \node[anchor=west] (el) at (9.05,0.75) {电解质};
+  \node[anchor=west] (nel) at (9.05,-0.81) {非电解质};
+  \node[anchor=west,align=center,inner sep=0.8pt] (rightlab) at ([xshift=14pt]nel.east |- 0,-0.10) {\setlength{\baselineskip}{0.92em}物\ 质\\（根据物质\\的导电性\\分类）};
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=4pt,mirror}] ([yshift=2.5pt,xshift=-5pt]ion.north west) -- ([yshift=-2pt,xshift=-5pt]cov.south west);
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=3.5pt,mirror}] ([yshift=2pt,xshift=-5pt]pol.north west) -- ([yshift=-2pt,xshift=-5pt]non.south west);
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=3.2pt,mirror}] ([yshift=2pt,xshift=-4pt]strong.north west) -- ([yshift=-2pt,xshift=-4pt]weak.south west);
+  \draw[line width=0.5pt,dotted] (ion.east) -- (8.72,0 |- ion.east);
+  \draw[line width=0.5pt,dotted] (non.east) -- (8.72,0 |- non.east);
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=4pt}] (8.78,1.38) -- (8.78,0.12);
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=4pt}] (8.78,-0.18) -- (8.78,-1.48);
+  \draw[line width=0.55pt,decorate,decoration={brace,amplitude=4.5pt}] ([xshift=6pt,yshift=3pt]nel.east |- el.north) -- ([xshift=6pt,yshift=-2pt]nel.south east);
+\end{tikzpicture}%
+}
 \caption{物质的分子结构与导电性分类示意图}
 \end{figure}
 
@@ -6700,7 +6722,27 @@ NaCl） 可以作为这一类盐的代表。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={电解质在电解池中的离子放电示意图}]{assets/chemistry-2/fig-p0165-01.png}}
+\fitfig{%
+% fig-alt: 离子和原子相互转变。上：原子右箭失去电子至阳离子，左箭结合电子返回；右括旁注阳离子所带正电荷数也就是阳离子的正价数，等于相应原子失去的电子数。下：原子右箭结合电子至阴离子，左箭失去电子返回；右括旁注阴离子所带负电荷数也就是阴离子的负价数，等于相应原子结合的电子数
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1.1pt,font=\small\linespread{1}\selectfont}]
+  \node[anchor=east] (a1) at (0,0.88) {原子};
+  \node[anchor=west] (c1) at (3.15,0.88) {阳离子};
+  \draw[line width=0.55pt,->] (0.22,1.06) -- (2.95,1.06);
+  \node[anchor=south,inner sep=0.7pt] at (1.58,1.08) {失去电子};
+  \draw[line width=0.55pt,->] (2.95,0.70) -- (0.22,0.70);
+  \node[anchor=north,inner sep=0.7pt] at (1.58,0.68) {结合电子};
+  \node[anchor=west,align=left] (n1) at (4.55,0.88) {阳离子所带正电荷数，也就是阳离子的正\\[-1pt]价数，等于相应原子失去的电子数};
+  \node[anchor=west,inner sep=0pt] at ([xshift=1.5pt]n1.east) {\scalebox{0.9}[3.1]{)}};
+  \node[anchor=east] (a2) at (0,-0.92) {原子};
+  \node[anchor=west] (c2) at (3.15,-0.92) {阴离子};
+  \draw[line width=0.55pt,->] (0.22,-0.74) -- (2.95,-0.74);
+  \node[anchor=south,inner sep=0.7pt] at (1.58,-0.72) {结合电子};
+  \draw[line width=0.55pt,->] (2.95,-1.10) -- (0.22,-1.10);
+  \node[anchor=north,inner sep=0.7pt] at (1.58,-1.12) {失去电子};
+  \node[anchor=west,align=left] (n2) at (4.55,-0.92) {阴离子所带负电荷数，也就是阴离子的负\\[-1pt]价数，等于相应原子结合的电子数};
+  \node[anchor=west,inner sep=0pt] at ([xshift=1.5pt]n2.east) {\scalebox{0.9}[3.1]{)}};
+\end{tikzpicture}%
+}
 \caption{电解质在电解池中的离子放电示意图}
 \end{figure}
 
