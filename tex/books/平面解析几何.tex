@@ -1917,7 +1917,26 @@ k = \frac {- 6 - 3}{2 \sqrt {3} + \sqrt {3}} = \frac {- 9}{3 \sqrt {3}} = - \fra
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-21}]{assets/analytic-geometry/fig-p0023-01.png}}
+\fitfig{%
+% fig-alt: 第一象限正方形，顶点D与原点O重合，C(0,a)、B(a,a)、A(a,0)，两条对角线；底边所在x轴为虚线
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,-latex] (0,-0.32) -- (0,2.92) node[above=1pt] {$y$};
+  \draw[line width=0.6pt,dash pattern=on 2.4pt off 1.6pt] (-0.48,0) -- (2.62,0);
+  \draw[line width=0.75pt,-latex] (2.48,0) -- (3.18,0) node[right=1pt] {$x$};
+  \draw[line width=0.7pt] (0,2.15) -- (2.15,2.15) -- (2.15,0);
+  \draw[line width=0.7pt] (0,0) -- (2.15,2.15);
+  \draw[line width=0.7pt] (2.15,0) -- (0,2.15);
+  \fill (0,0) circle (1.15pt);
+  \fill (2.15,0) circle (1.15pt);
+  \fill (2.15,2.15) circle (1.15pt);
+  \fill (0,2.15) circle (1.15pt);
+  \node[below left=1pt] at (0,0) {$O$};
+  \node[anchor=south west] at (0.36,0.04) {$D$};
+  \node[anchor=south west] at (0.18,2.24) {$C(0,a)$};
+  \node[right=2pt] at (2.15,2.15) {$B(a,a)$};
+  \node[below=2pt] at (2.15,0) {$A(a,0)$};
+\end{tikzpicture}%
+}
 \caption{图1-21}
 \end{figure}
 
@@ -2046,7 +2065,36 @@ k = \frac {- 6 - 3}{2 \sqrt {3} + \sqrt {3}} = \frac {- 9}{3 \sqrt {3}} = - \fra
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-22}]{assets/analytic-geometry/fig-p0025-01.png}}
+\fitfig{%
+% fig-alt: 三条有向直线，左为内分P1、P、P2，中为外分P1、P2、P，右为外分P、P1、P2
+\begin{tikzpicture}[line cap=round,>=latex]
+  \draw[line width=0.75pt,latex-latex] (0,0) -- (3.35,0);
+  \fill (0.42,0) circle (1.15pt);
+  \fill (1.22,0) circle (1.15pt);
+  \fill (2.55,0) circle (1.15pt);
+  \node[below=2pt] at (0.42,0) {$P_{1}$};
+  \node[below=2pt] at (1.22,0) {$P$};
+  \node[below=2pt] at (2.55,0) {$P_{2}$};
+  \begin{scope}[xshift=4.15cm]
+    \draw[line width=0.75pt,latex-latex] (0,0) -- (2.85,0);
+    \fill (0.28,0) circle (1.15pt);
+    \fill (0.78,0) circle (1.15pt);
+    \fill (2.22,0) circle (1.15pt);
+    \node[below=2pt] at (0.18,0) {$P_{1}$};
+    \node[below=2pt] at (0.90,0) {$P_{2}$};
+    \node[below=2pt] at (2.22,0) {$P$};
+  \end{scope}
+  \begin{scope}[xshift=7.70cm]
+    \draw[line width=0.75pt,latex-latex] (0,0) -- (2.70,0);
+    \fill (0.26,0) circle (1.15pt);
+    \fill (0.74,0) circle (1.15pt);
+    \fill (2.08,0) circle (1.15pt);
+    \node[below=2pt] at (0.14,0) {$P$};
+    \node[below=2pt] at (0.86,0) {$P_{1}$};
+    \node[below=2pt] at (2.08,0) {$P_{2}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-22}
 \end{figure}
 
@@ -2082,7 +2130,20 @@ C 内分（或外分）AB 所成两线段的比是 \(\lambda=\frac{AC}{CB}\)，A
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={点 C 在 AB 延长线上的外分示意图}]{assets/analytic-geometry/fig-p0026-01.png}}
+\fitfig{%
+% fig-alt: 有向直线上A、B、C三点，C在AB延长线上，AB间三短刻把AB分成四等分，两端箭头
+\begin{tikzpicture}[line cap=round,>=latex]
+  \draw[line width=0.75pt,latex-latex] (0,0) -- (4.85,0);
+  \foreach \x in {1.15,1.80,2.45}
+    \draw[line width=0.55pt] (\x,0) -- (\x,0.16);
+  \fill (0.50,0) circle (1.15pt);
+  \fill (3.10,0) circle (1.15pt);
+  \fill (3.75,0) circle (1.15pt);
+  \node[below=2pt] at (0.50,0) {$A$};
+  \node[below=2pt] at (3.10,0) {$B$};
+  \node[below=2pt] at (3.75,0) {$C$};
+\end{tikzpicture}%
+}
 \caption{点 C 在 AB 延长线上的外分示意图}
 \end{figure}
 
@@ -2100,7 +2161,30 @@ C 内分（或外分）AB 所成两线段的比是 \(\lambda=\frac{AC}{CB}\)，A
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/analytic-geometry/fig-p0026-02.png}}
+\fitfig{%
+% fig-alt: 内分点P在P1P2之间，三点向两轴作虚线，垂足M1、M、M2与N1、N、N2
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,-latex] (-0.55,0) -- (5.05,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.42) -- (0,4.55) node[above=1pt] {$y$};
+  \draw[line width=0.55pt,dash pattern=on 2.4pt off 1.6pt] (0,1.00) -- (1.15,1.00) -- (1.15,0);
+  \draw[line width=0.55pt,dash pattern=on 2.4pt off 1.6pt] (0,1.85) -- (2.00,1.85) -- (2.00,0);
+  \draw[line width=0.55pt,dash pattern=on 2.4pt off 1.6pt] (0,4.00) -- (4.15,4.00) -- (4.15,0);
+  \draw[line width=0.7pt] (1.15,1.00) -- (4.15,4.00);
+  \fill (1.15,1.00) circle (1.15pt);
+  \fill (2.00,1.85) circle (1.15pt);
+  \fill (4.15,4.00) circle (1.15pt);
+  \node[left=2pt] at (0,1.00) {$N_{1}$};
+  \node[left=2pt] at (0,1.85) {$N$};
+  \node[left=2pt] at (0,4.00) {$N_{2}$};
+  \node[below=2pt] at (1.15,0) {$M_{1}$};
+  \node[below=2pt] at (2.00,0) {$M$};
+  \node[below=2pt] at (4.15,0) {$M_{2}$};
+  \node[anchor=north west] at (1.28,0.86) {$P_{1}(x_{1},y_{1})$};
+  \node[anchor=south west] at (2.08,1.98) {$P(x,y)$};
+  \node[above right=1pt] at (4.15,4.00) {$P_{2}(x_{2},y_{2})$};
+  \node[below left=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -2108,7 +2192,27 @@ C 内分（或外分）AB 所成两线段的比是 \(\lambda=\frac{AC}{CB}\)，A
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/analytic-geometry/fig-p0026-03.png}}
+\fitfig{%
+% fig-alt: 外分点P在P2外侧，P1、P2、P向x轴作虚线，垂足M1、M2、M，M紧靠M2右侧
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,-latex] (-0.55,0) -- (4.05,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.42) -- (0,3.55) node[above=1pt] {$y$};
+  \draw[line width=0.55pt,dash pattern=on 2.4pt off 1.6pt] (1.20,0.90) -- (1.20,0);
+  \draw[line width=0.55pt,dash pattern=on 2.4pt off 1.6pt] (2.50,2.05) -- (2.50,0);
+  \draw[line width=0.55pt,dash pattern=on 2.4pt off 1.6pt] (3.20,2.669) -- (3.20,0);
+  \draw[line width=0.7pt] (1.20,0.90) -- (3.20,2.669);
+  \fill (1.20,0.90) circle (1.15pt);
+  \fill (2.50,2.05) circle (1.15pt);
+  \fill (3.20,2.669) circle (1.15pt);
+  \node[below right=1pt] at (1.20,0.90) {$P_{1}$};
+  \node[anchor=north east] at (2.38,1.90) {$P_{2}$};
+  \node[right=2pt] at (3.20,2.669) {$P(x,y)$};
+  \node[below=2pt] at (1.20,0) {$M_{1}$};
+  \node[below left=1pt] at (2.50,0) {$M_{2}$};
+  \node[below right=1pt] at (3.20,0) {$M$};
+  \node[below left=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -2191,7 +2295,27 @@ y = \frac {y_{1} + \lambda y_{2}}{1 + \lambda}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-25}]{assets/analytic-geometry/fig-p0028-01.png}}
+\fitfig{%
+% fig-alt: 直线过Q(x,y)、P1(-2,-2)、P(-1,0)、P2(2,6)，两轴有单位短刻，P在负x轴上
+\begin{tikzpicture}[x=0.36cm,y=0.28cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-6.28,-10.56) -- (2.22,6.44);
+  \foreach \i in {-7,-6,-5,-4,-3,-2,-1,1,2,3}
+    \draw[line width=0.45pt] (\i,-0.16) -- (\i,0.16);
+  \foreach \j in {-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7}
+    \draw[line width=0.45pt] (-0.12,\j) -- (0.12,\j);
+  \draw[line width=0.75pt,-latex] (-7.6,0) -- (3.45,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-11.5) -- (0,7.55) node[above=1pt] {$y$};
+  \fill (-6,-10) circle (1.15pt);
+  \fill (-2,-2) circle (1.15pt);
+  \fill (-1,0) circle (1.15pt);
+  \fill (2,6) circle (1.15pt);
+  \node[below left=1pt] at (-6,-10) {$Q(x,y)$};
+  \node[below right=1pt] at (-2,-2) {$P_{1}(-2,-2)$};
+  \node[anchor=south east] at (-0.22,0.28) {$P(-1,0)$};
+  \node[above right=1pt] at (2,6) {$P_{2}(2,6)$};
+  \node[below=2pt] at (0.15,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{图1-25}
 \end{figure}
 
@@ -2234,7 +2358,24 @@ y = \frac {y_{1} + \lambda y_{2}}{1 + \lambda}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-26}]{assets/analytic-geometry/fig-p0029-01.png}}
+\fitfig{%
+% fig-alt: 三角形ABC，A(4,0)、B(7,4)、C(-1,12)，角平分线AD交BC于D(x,y)
+\begin{tikzpicture}[x=0.38cm,y=0.32cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,-latex] (-2.15,0) -- (8.35,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-0.55) -- (0,13.15) node[above=1pt] {$y$};
+  \draw[line width=0.7pt] (4,0) -- (7,4) -- (-1,12) -- cycle;
+  \draw[line width=0.7pt] (4,0) -- (4.7778,6.2222);
+  \fill (4,0) circle (1.15pt);
+  \fill (7,4) circle (1.15pt);
+  \fill (-1,12) circle (1.15pt);
+  \fill (4.7778,6.2222) circle (1.15pt);
+  \node[below=2pt] at (4,0) {$A(4,0)$};
+  \node[right=2pt] at (7,4) {$B(7,4)$};
+  \node[left=2pt] at (-1,12) {$C(-1,12)$};
+  \node[above right=2pt] at (4.7778,6.2222) {$D(x,y)$};
+  \node[below left=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{图1-26}
 \end{figure}
 
@@ -2285,7 +2426,27 @@ y = \frac {4 + 12 \times \frac {5}{13}}{1 + \frac {5}{13}} = \frac {56}{9},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.27}]{assets/analytic-geometry/fig-p0030-01.png}}
+\fitfig{%
+% fig-alt: 三角形ABC，顶点A(x1,y1)、B(x2,y2)、C(x3,y3)，三边中点为(1/2,5/2)、(5/2,3/2)、(0,6)
+\begin{tikzpicture}[x=0.42cm,y=0.36cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,-latex] (-3.15,0) -- (4.55,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-3.15) -- (0,8.15) node[above=1pt] {$y$};
+  \draw[line width=0.7pt] (-2,7) -- (3,-2) -- (2,5) -- cycle;
+  \fill (-2,7) circle (1.15pt);
+  \fill (3,-2) circle (1.15pt);
+  \fill (2,5) circle (1.15pt);
+  \fill (0.5,2.5) circle (1.15pt);
+  \fill (2.5,1.5) circle (1.15pt);
+  \fill (0,6) circle (1.15pt);
+  \node[left=2pt] at (-2,7) {$A(x_{1},y_{1})$};
+  \node[below=2pt] at (3,-2) {$B(x_{2},y_{2})$};
+  \node[right=2pt] at (2,5) {$C(x_{3},y_{3})$};
+  \node[left=1pt] at (0.35,2.5) {$\bigl(\frac{1}{2},\frac{5}{2}\bigr)$};
+  \node[right=2pt] at (2.5,1.5) {$\bigl(\frac{5}{2},\frac{3}{2}\bigr)$};
+  \node[above right=1pt] at (0.05,6.12) {$(0,6)$};
+  \node[below left=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{图1.27}
 \end{figure}
 
