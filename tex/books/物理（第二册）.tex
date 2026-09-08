@@ -346,7 +346,37 @@ O，或者说，弹力起着回复力的作用。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.2 弹力与位移的关系}]{assets/physics-2/fig-p0008-01.png}}
+\usetikzlibrary{arrows.meta,calc}
+\fitfig{%
+% fig-alt: 图1.2 弹力与位移的关系
+\begin{tikzpicture}[line cap=round,line join=round,>={Stealth[length=2.1mm]},every node/.style={inner sep=1.2pt}]
+  % 墙
+  \draw[line width=0.7pt] (0,0) -- (0,1.42);
+  \foreach \y in {0.10,0.32,0.54,0.76,0.98,1.20} {
+    \draw[line width=0.45pt] (0,\y) -- (-0.26,{\y+0.20});
+  }
+  % 地面
+  \draw[line width=0.7pt] (0,0) -- (6.55,0);
+  \foreach \x in {0.18,0.48,...,6.38} {
+    \draw[line width=0.45pt] (\x,0) -- (\x-0.26,-0.28);
+  }
+  % 弹簧（锯齿），右端留出弹力箭头
+  \draw[line width=0.7pt] (0,0.78) -- (0.32,0.78)
+    -- (0.50,1.02) -- (0.74,0.54) -- (0.98,1.02) -- (1.22,0.54)
+    -- (1.46,1.02) -- (1.70,0.54) -- (1.94,1.02) -- (2.18,0.54)
+    -- (2.42,1.02) -- (2.66,0.78) -- (2.88,0.78);
+  % 物体
+  \draw[line width=0.75pt] (3.72,0.08) rectangle (5.22,1.48);
+  % 弹力 F，指向平衡位置（向左）
+  \draw[->,line width=0.8pt] (3.68,0.78) -- (3.02,0.78);
+  \node[above=1pt] at (3.35,0.80) {$F$};
+  % 平衡位置 O 与位移 x
+  \draw[line width=0.55pt] (3.72,0) -- (3.72,-0.16);
+  \node[below=2pt] at (3.72,-0.14) {$O$};
+  \draw[->,line width=0.7pt] (3.86,-0.46) -- (5.05,-0.46);
+  \node[below=1pt] at (4.45,-0.48) {$x$};
+\end{tikzpicture}%
+}
 \caption{图1.2 弹力与位移的关系}
 \end{figure}
 
@@ -390,7 +420,88 @@ a = - \frac {K}{m} x \tag {1.3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0010-01.png}}
+\fitfig{%
+% fig-alt: (a)
+\begin{tikzpicture}[line cap=round,line join=round,>={Stealth[length=1.8mm]},every node/.style={inner sep=1pt}]
+  % ---------- (a) 平衡位置 ----------
+  \begin{scope}
+    % 天花板
+    \draw[line width=0.65pt] (0.15,5.15) -- (1.55,5.15);
+    \draw[line width=0.65pt] (2.35,5.15) -- (4.05,5.15);
+    \foreach \x in {0.28,0.52,0.76,1.00,1.24,1.42} {
+      \draw[line width=0.4pt] (\x,5.15) -- (\x-0.16,5.34);
+    }
+    \foreach \x in {2.50,2.76,3.02,3.28,3.54,3.80,3.96} {
+      \draw[line width=0.4pt] (\x,5.15) -- (\x-0.16,5.34);
+    }
+    % 原长 l_0
+    \draw[<->,line width=0.55pt] (0.28,5.00) -- (0.28,3.28);
+    \node[left=1pt] at (0.28,4.14) {$l_{0}$};
+    % 未伸长弹簧与虚线方框
+    \draw[line width=0.6pt] (0.78,5.05) -- (0.78,4.55)
+      -- (0.64,4.38) -- (0.92,4.08) -- (0.64,3.78) -- (0.92,3.48) -- (0.78,3.28) -- (0.78,3.12);
+    \draw[line width=0.5pt] (0.78,3.12) -- (1.05,2.92);
+    \draw[dashed,line width=0.55pt] (1.02,1.95) rectangle (1.78,3.05);
+    % 平衡长度 l
+    \draw[<->,line width=0.55pt] (2.28,5.00) -- (2.28,1.22);
+    \node[right=1pt] at (2.28,3.15) {$l$};
+    % 拉伸弹簧
+    \draw[line width=0.6pt] (3.05,5.05) -- (3.05,4.55)
+      -- (2.88,4.32) -- (3.22,3.98) -- (2.88,3.64)
+      -- (3.22,3.30) -- (2.88,2.96) -- (3.22,2.62)
+      -- (2.88,2.28) -- (3.22,1.94) -- (2.88,1.60)
+      -- (3.05,1.38) -- (3.05,1.22);
+    % 振子
+    \begin{scope}
+      \clip (2.78,0.18) rectangle (3.62,1.22);
+      \foreach \i in {-1,0,...,5} {
+        \draw[line width=0.4pt] ({2.62+0.22*\i},0.10) -- ({3.20+0.22*\i},1.32);
+      }
+    \end{scope}
+    \draw[line width=0.7pt] (2.78,0.18) rectangle (3.62,1.22);
+    \draw[->,line width=0.7pt] (3.42,1.22) -- (3.42,1.78);
+    \node[left=0pt] at (3.40,1.52) {$F_{0}$};
+    \draw[->,line width=0.75pt] (3.20,0.18) -- (3.20,-0.48);
+    \node[right=1pt] at (3.22,-0.22) {$G$};
+    \node[below=2pt] at (2.15,-0.52) {$(a)$};
+  \end{scope}
+  % ---------- (b) 向上位移 y ----------
+  \begin{scope}[xshift=5.15cm]
+    \draw[line width=0.65pt] (1.35,5.15) -- (3.15,5.15);
+    \foreach \x in {1.50,1.76,2.02,2.28,2.54,2.80,3.02} {
+      \draw[line width=0.4pt] (\x,5.15) -- (\x-0.16,5.34);
+    }
+    % 尺寸线：l_0 、 l-l_0-y 、 y ，下端虚线至平衡位置
+    \draw[line width=0.55pt] (0.55,5.00) -- (0.55,1.22);
+    \draw[line width=0.5pt] (0.42,5.00) -- (0.68,5.00);
+    \draw[line width=0.5pt] (0.42,3.85) -- (0.68,3.85);
+    \draw[line width=0.5pt] (0.42,2.35) -- (0.68,2.35);
+    \draw[line width=0.5pt] (0.42,1.55) -- (0.68,1.55);
+    \node[left=1pt] at (0.48,4.42) {$l_{0}$};
+    \node[left=1pt] at (0.48,3.08) {$l-l_{0}-y$};
+    \node[left=1pt] at (0.48,1.95) {$y$};
+    \draw[dashed,line width=0.5pt] (0.55,1.55) -- (0.55,1.22);
+    \draw[dashed,line width=0.45pt] (1.85,1.22) -- (2.85,1.22);
+    % 弹簧（比平衡时短 y）
+    \draw[line width=0.6pt] (2.15,5.05) -- (2.15,4.55)
+      -- (1.98,4.28) -- (2.32,3.94) -- (1.98,3.60)
+      -- (2.32,3.26) -- (1.98,2.92) -- (2.32,2.58)
+      -- (1.98,2.28) -- (2.15,2.08);
+    \begin{scope}
+      \clip (1.88,1.08) rectangle (2.72,2.08);
+      \foreach \i in {-1,0,...,5} {
+        \draw[line width=0.4pt] ({1.72+0.22*\i},1.00) -- ({2.30+0.22*\i},2.18);
+      }
+    \end{scope}
+    \draw[line width=0.7pt] (1.88,1.08) rectangle (2.72,2.08);
+    \draw[->,line width=0.7pt] (2.52,2.08) -- (2.52,2.62);
+    \node[right=1pt] at (2.54,2.38) {$F$};
+    \draw[->,line width=0.75pt] (2.30,1.08) -- (2.30,0.42);
+    \node[right=1pt] at (2.32,0.68) {$G$};
+    \node[below=10pt] at (1.7,0.35) {$(b)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -460,7 +571,34 @@ F = K (l - l _ {0} - y)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1.4 演示圆周运动与振动的关系的实验装置示意图}]{assets/physics-2/fig-p0012-01.png}}
+\fitfig{%
+% fig-alt: 图 1.4 演示圆周运动与振动的关系的实验装置示意图
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  % 墙壁（屏），在唱机后方，不与箱体相交
+  \draw[line width=0.75pt] (0.25,2.55) rectangle (4.35,4.45);
+  % 唱机箱体
+  \draw[line width=0.7pt] (0.45,1.85) -- (3.35,1.85) -- (4.15,1.38) -- (1.25,1.38) -- cycle;
+  \draw[line width=0.7pt] (0.45,1.85) -- (0.45,0.55) -- (3.35,0.55) -- (3.35,1.85);
+  \draw[line width=0.7pt] (3.35,0.55) -- (4.15,1.02) -- (4.15,1.38);
+  % 转盘
+  \draw[line width=0.7pt] (1.85,1.92) ellipse (0.88 and 0.32);
+  \draw[line width=0.5pt] (1.85,1.92) ellipse (0.58 and 0.20);
+  \draw[line width=0.5pt] (1.85,1.92) ellipse (0.30 and 0.10);
+  \fill (1.85,1.92) circle (0.04);
+  % 边缘短棒
+  \draw[line width=0.75pt] (1.22,2.05) -- (1.22,2.42);
+  \fill (1.22,2.42) circle (0.04);
+  % 唱臂
+  \draw[line width=0.6pt] (2.70,1.78) .. controls (3.05,1.48) and (3.32,1.58) .. (3.48,1.88);
+  \draw[line width=0.5pt] (3.45,1.86) circle (0.06);
+  % 前面旋钮
+  \draw[line width=0.5pt] (2.48,1.28) rectangle (2.76,1.42);
+  % 水平光线：短棒端点投到墙上
+  \draw[dashed,line width=0.55pt] (1.22,2.42) -- (0.70,2.55);
+  \draw[dashed,line width=0.55pt] (1.22,2.42) -- (2.15,2.55);
+  \draw[dashed,line width=0.55pt] (1.22,2.42) -- (3.55,2.55);
+\end{tikzpicture}%
+}
 \caption{图 1.4 演示圆周运动与振动的关系的实验装置示意图}
 \end{figure}
 
@@ -470,7 +608,61 @@ F = K (l - l _ {0} - y)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.5 匀速圆周运动的投影是简谐振动的证明}]{assets/physics-2/fig-p0012-02.png}}
+\fitfig{%
+% fig-alt: 图1.5 匀速圆周运动的投影是简谐振动的证明
+\begin{tikzpicture}[line cap=round,line join=round,>={Stealth[length=1.9mm]},every node/.style={inner sep=1pt}]
+  \def\R{1.72}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (-\R,0);
+  \coordinate (B) at (\R,0);
+  \coordinate (M) at (54:\R);
+  \coordinate (F) at ({1.72*cos(54)},0); % M 在直径上的垂足
+  % 墙面直线 XX'
+  \draw[line width=0.7pt] (-2.55,2.45) -- (2.75,2.45);
+  \node[above] at (-2.28,2.45) {$X'$};
+  \node[above] at (-1.72,2.45) {$C'$};
+  \node[above] at (0,2.45) {$O'$};
+  \node[above] at ({1.72*cos(54)},2.45) {$P$};
+  \node[above] at (1.72,2.45) {$B'$};
+  \node[above] at (2.48,2.45) {$X$};
+  \draw[->,line width=0.6pt] (0.18,3.05) -- ({1.72*cos(54)-0.10},3.05);
+  \node[above=0pt] at ({0.90*cos(54)},3.05) {$x_{P}$};
+  \fill (-\R,2.45) circle (0.045);
+  \fill (0,2.45) circle (0.04);
+  \fill ({1.72*cos(54)},2.45) circle (0.05);
+  \fill (\R,2.45) circle (0.05);
+  % 投影虚线
+  \draw[dashed,line width=0.5pt] (C) -- (-\R,2.45);
+  \draw[dashed,line width=0.5pt] (O) -- (0,2.45);
+  \draw[dashed,line width=0.5pt] (M) -- ({1.72*cos(54)},2.45);
+  \draw[dashed,line width=0.5pt] (B) -- (\R,2.45);
+  % 参考圆与直径
+  \draw[line width=0.75pt] (O) circle[radius=\R];
+  \draw[line width=0.65pt] (C) -- (B);
+  \node[left] at (C) {$C$};
+  \node[below left=0pt] at (O) {$O$};
+  \node[right] at (B) {$B$};
+  % 半径 A（另画一条半径表示大小）
+  \draw[->,line width=0.6pt] (O) -- (128:1.55);
+  \node[above left] at (128:0.95) {$A$};
+  % 位置半径 OM
+  \draw[line width=1.05pt] (O) -- (M);
+  \fill (M) circle (0.05);
+  \node[above right=0pt] at (M) {$M$};
+  \draw[line width=0.6pt] (0.48,0) arc[start angle=0,end angle=54,radius=0.48];
+  \node at (27:0.68) {$\theta$};
+  % 垂足与位移 x_P
+  \draw[line width=0.6pt] (M) -- (F);
+  \fill (F) circle (0.045);
+  \draw[line width=0.9pt] (0.08,-0.16) -- ({1.72*cos(54)-0.06},-0.16);
+  \draw[line width=0.55pt] (0.08,-0.08) -- (0.08,-0.24);
+  \draw[line width=0.55pt] ({1.72*cos(54)-0.06},-0.08) -- ({1.72*cos(54)-0.06},-0.24);
+  \node[below] at ({0.86*cos(54)},-0.16) {$x_{P}$};
+  % 角速度（逆时针，自 B 转向 M）
+  \draw[->,line width=0.65pt] (8:2.28) arc[start angle=8,end angle=42,radius=2.28];
+  \node[right=2pt] at (24:2.40) {$\omega$};
+\end{tikzpicture}%
+}
 \caption{图1.5 匀速圆周运动的投影是简谐振动的证明}
 \end{figure}
 
@@ -504,7 +696,36 @@ x _ {M} = O M
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.6 宽距振动方程的推导}]{assets/physics-2/fig-p0013-01.png}}
+\fitfig{%
+% fig-alt: 图1.6 宽距振动方程的推导
+\begin{tikzpicture}[line cap=round,line join=round,>={Stealth[length=1.9mm]},every node/.style={inner sep=1pt}]
+  \def\R{1.78}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (-\R,0);
+  \coordinate (B) at (\R,0);
+  \coordinate (M) at (62:\R);
+  \coordinate (P) at ({1.78*cos(62)},0);
+  \draw[line width=0.75pt] (O) circle[radius=\R];
+  \draw[line width=0.65pt] (C) -- (B);
+  \node[left] at (C) {$C$};
+  \node[below left=0pt] at (O) {$O$};
+  \node[right] at (B) {$B$};
+  \draw[line width=0.7pt] (O) -- (M);
+  \node[above left=0pt] at (62:1.05) {$A$};
+  \fill (M) circle (0.05);
+  \node[above right=1pt] at (M) {$M$};
+  \draw[line width=0.55pt] (0.46,0) arc[start angle=0,end angle=62,radius=0.46];
+  \node at (32:0.70) {$\theta$};
+  \draw[line width=0.6pt] (M) -- (P);
+  \fill (P) circle (0.045);
+  \node[below right=1pt] at (P) {$P$};
+  % 加速度投影，指向 XX' 负方向（画在直径下方）
+  \draw[->,line width=1.0pt] ({1.78*cos(62)-0.06},-0.22) -- (0.28,-0.22);
+  \node[below=1pt] at ({0.62*cos(62)},-0.24) {$a_{P}$};
+  \draw[->,line width=0.65pt] (12:2.22) arc[start angle=8,end angle=48,radius=2.22];
+  \node[right=2pt] at (26:2.38) {$\omega$};
+\end{tikzpicture}%
+}
 \caption{图1.6 宽距振动方程的推导}
 \end{figure}
 
@@ -556,7 +777,47 @@ x = A \cos \omega t \tag {1.5}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.7 简谐振动方程的一般形式}]{assets/physics-2/fig-p0014-01.png}}
+\fitfig{%
+% fig-alt: 图1.7 简谐振动方程的一般形式
+\begin{tikzpicture}[line cap=round,line join=round,>={Stealth[length=1.9mm]},every node/.style={inner sep=1pt}]
+  \def\R{1.78}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (-\R,0);
+  \coordinate (B) at (\R,0);
+  \coordinate (M) at (74:\R);
+  \coordinate (Dp) at (24:\R); % D'
+  \coordinate (P) at ({1.78*cos(74)},0);
+  \coordinate (D) at ({1.78*cos(24)},0);
+  \draw[line width=0.75pt] (O) circle[radius=\R];
+  \draw[line width=0.65pt] (C) -- (B);
+  \node[left] at (C) {$C$};
+  \node[below=1pt] at (O) {$O$};
+  \node[right] at (B) {$B$};
+  % 半径 A
+  \draw[->,line width=0.6pt] (O) -- (132:1.58);
+  \node[left] at (132:0.95) {$A$};
+  % 参考点半径与初位置
+  \draw[line width=0.7pt] (O) -- (M);
+  \draw[line width=0.6pt] (O) -- (Dp);
+  \fill (M) circle (0.05);
+  \node[above right=0pt] at (M) {$M$};
+  \fill (Dp) circle (0.04);
+  \node[right] at (Dp) {$D'$};
+  \draw[line width=0.55pt] (M) -- (P);
+  \fill (P) circle (0.045);
+  \node[below=4pt] at (P) {$P$};
+  \fill (D) circle (0.04);
+  \node[below=5pt] at ($(D)+(-0.12,0)$) {$D$};
+  % \varphi 、 \omega t 、 \theta
+  \draw[line width=0.5pt] (0.42,0) arc[start angle=0,end angle=24,radius=0.42];
+  \node[above=1pt] at (13:0.72) {$\varphi$};
+  \draw[line width=0.55pt] (0.78,0) arc[start angle=24,end angle=70,radius=0.78];
+  \node at (46:0.98) {$\omega t$};
+  \node[above left=0pt] at (74:1.18) {$\theta$};
+  \draw[->,line width=0.65pt] (82:2.18) arc[start angle=82,end angle=118,radius=2.18];
+  \node[right] at (100:2.32) {$\omega$};
+\end{tikzpicture}%
+}
 \caption{图1.7 简谐振动方程的一般形式}
 \end{figure}
 
@@ -579,7 +840,54 @@ x = A \cos (\omega t + \varphi) \tag {1.6}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.8 远示振动图线的装置}]{assets/physics-2/fig-p0014-02.png}}
+\fitfig{%
+% fig-alt: 图1.8 远示振动图线的装置
+\begin{tikzpicture}[line cap=round,line join=round,>={Stealth[length=1.8mm]},every node/.style={inner sep=1pt}]
+  % 左卷筒
+  \draw[line width=0.7pt] (0.20,0.62) ellipse (0.52 and 0.20);
+  \draw[line width=0.7pt] (-0.32,0.62) -- (-0.32,1.82);
+  \draw[line width=0.7pt] (0.72,0.62) -- (0.72,1.82);
+  \draw[line width=0.75pt] (0.20,1.82) ellipse (0.52 and 0.20);
+  \draw[line width=0.5pt] (0.20,1.82) ellipse (0.15 and 0.06);
+  % 右卷筒
+  \begin{scope}[xshift=5.35cm]
+    \draw[line width=0.7pt] (0.10,0.78) ellipse (0.46 and 0.17);
+    \draw[line width=0.7pt] (-0.36,0.78) -- (-0.36,1.95);
+    \draw[line width=0.7pt] (0.56,0.78) -- (0.56,1.95);
+    \draw[line width=0.75pt] (0.10,1.95) ellipse (0.46 and 0.17);
+    \draw[line width=0.5pt] (0.10,1.95) ellipse (0.13 and 0.055);
+  \end{scope}
+  % 记录纸
+  \draw[line width=0.6pt] (0.72,1.55) -- (5.00,1.98);
+  \draw[line width=0.6pt] (0.72,0.78) -- (5.00,1.12);
+  \draw[line width=0.45pt] (0.90,1.18) -- (4.55,1.52);
+  % 纸上余弦痕迹
+  \draw[line width=0.7pt] plot[domain=0.95:4.35,samples=64,smooth]
+    (\x, {1.34+0.08*(\x-0.95) + 0.36*sin(210*(\x-0.95))});
+  % 周期 T
+  \draw[<->,line width=0.55pt] (1.28,0.72) -- (2.42,0.80);
+  \node[below=1pt] at (1.85,0.70) {$T$};
+  % 支架与转向
+  \draw[line width=0.6pt] (0.20,0.42) ellipse (0.68 and 0.09);
+  \draw[line width=0.6pt] (0.20,0.42) -- (0.20,-0.05);
+  \draw[->,line width=0.5pt] (-0.28,-0.12) arc[start angle=210,end angle=330,radius=0.42];
+  \begin{scope}[xshift=5.35cm]
+    \draw[line width=0.6pt] (0.10,0.58) ellipse (0.58 and 0.08);
+    \draw[line width=0.6pt] (0.10,0.58) -- (0.10,0.12);
+    \draw[->,line width=0.5pt] (0.42,0.08) arc[start angle=20,end angle=150,radius=0.36];
+  \end{scope}
+  % 竖直弹簧振子：笔尖落在纸条上
+  \draw[line width=0.6pt] (4.15,3.45) -- (4.95,3.45);
+  \foreach \x in {4.28,4.48,4.68,4.82} {
+    \draw[line width=0.4pt] (\x,3.45) -- (\x-0.12,3.62);
+  }
+  \draw[line width=0.6pt] (4.55,3.38) -- (4.55,3.12)
+    -- (4.40,2.94) -- (4.70,2.72) -- (4.40,2.50) -- (4.70,2.28)
+    -- (4.40,2.06) -- (4.55,1.88);
+  \fill (4.55,1.72) circle (0.14);
+  \draw[line width=0.5pt] (4.55,1.58) -- (4.55,1.48);
+\end{tikzpicture}%
+}
 \caption{图1.8 远示振动图线的装置}
 \end{figure}
 
@@ -593,7 +901,26 @@ T 就是简谐振动的周期。在简谐振动的 s-t
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.9 典型的简谐振动图线}]{assets/physics-2/fig-p0015-01.png}}
+\fitfig{%
+% fig-alt: 图1.9 典型的简谐振动图线
+\begin{tikzpicture}[line cap=round,line join=round,>={Stealth[length=2mm]},every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,-1.62) -- (0,1.72);
+  \draw[->,line width=0.7pt] (0,0) -- (6.35,0);
+  \node[above] at (0,1.68) {$S$};
+  \node[right] at (6.35,0) {$t$};
+  \node[below left] at (0,0) {$O$};
+  \node[left] at (0,1.05) {$+A$};
+  \node[left] at (0,-1.05) {$-A$};
+  \draw[dashed,line width=0.5pt] (0,1.05) -- (5.85,1.05);
+  \draw[dashed,line width=0.5pt] (0,-1.05) -- (5.85,-1.05);
+  % 余弦图线：从 +A 出发，相邻峰值间隔为一个周期
+  \draw[line width=0.8pt] plot[domain=0:4.42,samples=110,smooth] (\x,{1.05*cos(180*\x)});
+  \draw[<->,line width=0.6pt] (0.02,1.28) -- (2.00,1.28);
+  \node[above] at (1.00,1.28) {$T$};
+  \draw[<->,line width=0.6pt] (1.00,-1.28) -- (3.00,-1.28);
+  \node[below] at (2.00,-1.28) {$T$};
+\end{tikzpicture}%
+}
 \caption{图1.9 典型的简谐振动图线}
 \end{figure}
 
