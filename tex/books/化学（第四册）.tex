@@ -5708,7 +5708,58 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第97页图示}]{assets/chemistry-4/fig-p0097-g01.png}}
+\fitfig{%
+% fig-alt: 甲醛加氢：H—C双键连右上O、单键连右下H，加H2，镍上双线后括号内示H加成，等号后为甲醇；下行简式
+% redraw: fig-p0097-g01 甲醛加氢生成甲醇
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (c) at (0,0) {C};
+  \node[atom] (hl) at (-0.78,0) {H};
+  \node[atom] (o) at (0.58,0.52) {O};
+  \node[atom] (hr) at (0.58,-0.52) {H};
+  \draw[bond] (hl) -- (c);
+  \draw[dbond] (c) -- (o);
+  \draw[bond] (c) -- (hr);
+  \node[atom] at (1.55,0) {$+$\,H$_2$};
+  \draw[bond] (2.25,0.06) -- (3.05,0.06);
+  \draw[bond] (2.25,-0.08) -- (3.05,-0.08);
+  \node[atom] at (2.65,0.36) {Ni};
+  \node at (3.35,0.05) {\scalebox{1.05}[2.85]{$[$}};
+  \node[atom] (mc) at (4.25,0) {C};
+  \node[atom] (mhl) at (3.55,0) {H};
+  \node[atom] (mhb) at (4.25,-0.78) {H};
+  \node[atom] (mo) at (5.15,0) {O};
+  \draw[bond] (mhl) -- (mc);
+  \draw[bond] (mhb) -- (mc);
+  \draw[bond] (mc) -- (mo);
+  \draw[dashed, line width=0.5pt] (4.25,0.18) -- (4.25,1.05);
+  \node[atom] (mht) at (6.35,1.05) {H};
+  \draw[dashed, line width=0.5pt, ->] (mht.west) -- (4.32,1.05);
+  \node[atom] (mhr) at (6.35,-0.82) {H};
+  \draw[dashed, line width=0.5pt, ->] (mhr.west) -- (5.72,-0.82) -- (5.72,0.02);
+  \node at (7.05,0.05) {\scalebox{1.05}[2.85]{$]$}};
+  \node[atom] at (7.58,0) {$=$};
+  \node[atom] (pc) at (8.55,0) {C};
+  \node[atom] (phl) at (7.90,0) {H};
+  \node[atom] (pht) at (8.55,0.78) {H};
+  \node[atom] (phb) at (8.55,-0.78) {H};
+  \node[atom] (po) at (9.38,0) {O};
+  \node[atom] (phoh) at (10.12,0) {H};
+  \draw[bond] (phl) -- (pc);
+  \draw[bond] (pht) -- (pc);
+  \draw[bond] (phb) -- (pc);
+  \draw[bond] (pc) -- (po);
+  \draw[bond] (po) -- (phoh);
+  \node[lab] at (3.15,-1.85) {$(\mathrm{HCHO}+\mathrm{H}_{2}$};
+  \draw[bond] (4.55,-1.78) -- (5.35,-1.78);
+  \draw[bond] (4.55,-1.90) -- (5.35,-1.90);
+  \node[atom] at (4.95,-1.52) {Ni};
+  \node[lab, anchor=west] at (5.45,-1.85) {$\mathrm{CH}_{3}\mathrm{OH})$};
+\end{tikzpicture}%
+}
 \caption{原PDF第97页图示}
 \end{figure}
 
@@ -5725,7 +5776,35 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第98页图示}]{assets/chemistry-4/fig-p0098-g01.png}}
+\fitfig{%
+% fig-alt: 甲醛氧化：H—C双键连右上O、单键连右下H，箭上(O)，生成甲酸（羰基连OH），下方标甲酸
+% redraw: fig-p0098-g01 甲醛氧化成甲酸
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (c) at (0,0) {C};
+  \node[atom] (hl) at (-0.78,0) {H};
+  \node[atom] (o) at (0.58,0.52) {O};
+  \node[atom] (hr) at (0.58,-0.52) {H};
+  \draw[bond] (hl) -- (c);
+  \draw[dbond] (c) -- (o);
+  \draw[bond] (c) -- (hr);
+  \draw[->, line width=0.6pt] (1.45,0) -- (2.35,0);
+  \node[atom] at (1.90,0.38) {(O)};
+  \node[atom] (c2) at (3.35,0) {C};
+  \node[atom] (h2) at (2.57,0) {H};
+  \node[atom] (o2) at (3.93,0.52) {O};
+  \node[atom] (oh) at (3.93,-0.52) {O};
+  \node[atom] (hoh) at (4.68,-0.52) {H};
+  \draw[bond] (h2) -- (c2);
+  \draw[dbond] (c2) -- (o2);
+  \draw[bond] (c2) -- (oh);
+  \draw[bond] (oh) -- (hoh);
+  \node[lab] at (3.85,-1.35) {甲酸};
+\end{tikzpicture}%
+}
 \caption{原PDF第98页图示}
 \end{figure}
 
@@ -5806,13 +5885,152 @@ n \mathrm{HCHO} = (\mathrm{HCHO}) _ {n}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第99页图示}]{assets/chemistry-4/fig-p0099-g01.png}}
+\fitfig{%
+% fig-alt: 苯酚甲醛缩合：顶碳OH，凯库勒双键在左上、右侧、下左；邻位接虚线框H+O+H，框下CH2；末框为H+……
+% redraw: fig-p0099-g01 苯酚与甲醛缩合
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \begin{scope}[xshift=0cm]
+    \coordinate (t) at (0,0.78);
+    \coordinate (ul) at (-0.66,0.39);
+    \coordinate (ur) at (0.66,0.39);
+    \coordinate (ll) at (-0.66,-0.39);
+    \coordinate (lr) at (0.66,-0.39);
+    \coordinate (b) at (0,-0.78);
+    \draw[bond] (t) -- (ur);
+    \draw[bond] (lr) -- (b);
+    \draw[bond] (ul) -- (ll);
+    \draw[dbond] (ul) -- (t);
+    \draw[dbond] (ur) -- (lr);
+    \draw[dbond] (ll) -- (b);
+    \node[atom] (oh) at (0,1.28) {OH};
+    \draw[bond] (t) -- (oh.south);
+  \end{scope}
+  \draw[bond] (0.66,0.39) -- (0.98,0.39);
+  \node[atom, anchor=west] at (1.22,0.39) {H\,$+$\,O\,$+$\,H};
+  \draw[dashed, line width=0.5pt] (1.02,-0.04) rectangle (2.98,0.82);
+  \draw[bond] (1.90,-0.04) -- (1.90,-0.30);
+  \node[atom] at (1.90,-0.56) {CH$_2$};
+  \draw[bond] (2.98,0.39) -- (3.10,0.39);
+  \begin{scope}[xshift=3.76cm]
+    \coordinate (t) at (0,0.78);
+    \coordinate (ul) at (-0.66,0.39);
+    \coordinate (ur) at (0.66,0.39);
+    \coordinate (ll) at (-0.66,-0.39);
+    \coordinate (lr) at (0.66,-0.39);
+    \coordinate (b) at (0,-0.78);
+    \draw[bond] (t) -- (ur);
+    \draw[bond] (lr) -- (b);
+    \draw[bond] (ul) -- (ll);
+    \draw[dbond] (ul) -- (t);
+    \draw[dbond] (ur) -- (lr);
+    \draw[dbond] (ll) -- (b);
+    \node[atom] (oh) at (0,1.28) {OH};
+    \draw[bond] (t) -- (oh.south);
+  \end{scope}
+  \draw[bond] (4.42,0.39) -- (4.74,0.39);
+  \node[atom, anchor=west] at (4.98,0.39) {H\,$+$\,O\,$+$\,H};
+  \draw[dashed, line width=0.5pt] (4.78,-0.04) rectangle (6.74,0.82);
+  \draw[bond] (5.66,-0.04) -- (5.66,-0.30);
+  \node[atom] at (5.66,-0.56) {CH$_2$};
+  \draw[bond] (6.74,0.39) -- (6.86,0.39);
+  \begin{scope}[xshift=7.52cm]
+    \coordinate (t) at (0,0.78);
+    \coordinate (ul) at (-0.66,0.39);
+    \coordinate (ur) at (0.66,0.39);
+    \coordinate (ll) at (-0.66,-0.39);
+    \coordinate (lr) at (0.66,-0.39);
+    \coordinate (b) at (0,-0.78);
+    \draw[bond] (t) -- (ur);
+    \draw[bond] (lr) -- (b);
+    \draw[bond] (ul) -- (ll);
+    \draw[dbond] (ul) -- (t);
+    \draw[dbond] (ur) -- (lr);
+    \draw[dbond] (ll) -- (b);
+    \node[atom] (oh) at (0,1.28) {OH};
+    \draw[bond] (t) -- (oh.south);
+  \end{scope}
+  \draw[bond] (8.18,0.39) -- (8.54,0.39);
+  \node[atom, anchor=west] at (8.76,0.39) {H\,$+$\,……};
+  \draw[dashed, line width=0.5pt] (8.58,-0.04) rectangle (10.62,0.82);
+\end{tikzpicture}%
+}
 \caption{原PDF第99页图示}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第100页图示}]{assets/chemistry-4/fig-p0100-g01.png}}
+\fitfig{%
+% fig-alt: 酚醛缩聚续式：碱上右箭，三环顶碳OH、凯库勒双键在左上、右侧、下左，邻位以CH2相连，右端……+nH2O
+% redraw: fig-p0100-g01 酚醛缩聚续式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \draw[->, line width=0.6pt] (-1.70,0.39) -- (-0.95,0.39);
+  \node[atom] at (-1.32,0.82) {碱};
+  \begin{scope}[xshift=0cm]
+    \coordinate (t) at (0,0.78);
+    \coordinate (ul) at (-0.66,0.39);
+    \coordinate (ur) at (0.66,0.39);
+    \coordinate (ll) at (-0.66,-0.39);
+    \coordinate (lr) at (0.66,-0.39);
+    \coordinate (b) at (0,-0.78);
+    \draw[bond] (t) -- (ur);
+    \draw[bond] (lr) -- (b);
+    \draw[bond] (ul) -- (ll);
+    \draw[dbond] (ul) -- (t);
+    \draw[dbond] (ur) -- (lr);
+    \draw[dbond] (ll) -- (b);
+    \node[atom] (oh) at (0,1.28) {OH};
+    \draw[bond] (t) -- (oh.south);
+  \end{scope}
+  \draw[bond] (0.66,0.39) -- (0.98,0.39);
+  \node[atom, fill=white, inner sep=1.5pt] (ch1) at (1.52,0.39) {CH$_2$};
+  \draw[bond] (ch1.east) -- (2.22,0.39);
+  \begin{scope}[xshift=2.88cm]
+    \coordinate (t) at (0,0.78);
+    \coordinate (ul) at (-0.66,0.39);
+    \coordinate (ur) at (0.66,0.39);
+    \coordinate (ll) at (-0.66,-0.39);
+    \coordinate (lr) at (0.66,-0.39);
+    \coordinate (b) at (0,-0.78);
+    \draw[bond] (t) -- (ur);
+    \draw[bond] (lr) -- (b);
+    \draw[bond] (ul) -- (ll);
+    \draw[dbond] (ul) -- (t);
+    \draw[dbond] (ur) -- (lr);
+    \draw[dbond] (ll) -- (b);
+    \node[atom] (oh) at (0,1.28) {OH};
+    \draw[bond] (t) -- (oh.south);
+  \end{scope}
+  \draw[bond] (3.54,0.39) -- (3.86,0.39);
+  \node[atom, fill=white, inner sep=1.5pt] (ch2) at (4.40,0.39) {CH$_2$};
+  \draw[bond] (ch2.east) -- (5.10,0.39);
+  \begin{scope}[xshift=5.76cm]
+    \coordinate (t) at (0,0.78);
+    \coordinate (ul) at (-0.66,0.39);
+    \coordinate (ur) at (0.66,0.39);
+    \coordinate (ll) at (-0.66,-0.39);
+    \coordinate (lr) at (0.66,-0.39);
+    \coordinate (b) at (0,-0.78);
+    \draw[bond] (t) -- (ur);
+    \draw[bond] (lr) -- (b);
+    \draw[bond] (ul) -- (ll);
+    \draw[dbond] (ul) -- (t);
+    \draw[dbond] (ur) -- (lr);
+    \draw[dbond] (ll) -- (b);
+    \node[atom] (oh) at (0,1.28) {OH};
+    \draw[bond] (t) -- (oh.south);
+  \end{scope}
+  \draw[bond] (6.42,0.39) -- (6.78,0.39);
+  \node[atom, anchor=west] at (6.92,0.39) {……\,$+\,n\mathrm{H}_{2}\mathrm{O}$};
+\end{tikzpicture}%
+}
 \caption{原PDF第100页图示}
 \end{figure}
 
@@ -5849,7 +6067,42 @@ n \mathrm{HCHO} = (\mathrm{HCHO}) _ {n}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第101页图示}]{assets/chemistry-4/fig-p0101-g01.png}}
+\fitfig{%
+% fig-alt: 甲醇与氧化铜：倒L虚线框住碳上H与羟基H，并延至CuO的O；等号后为甲醛、铜与水；下行简式
+% redraw: fig-p0101-g01 甲醇被氧化铜氧化成甲醛
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (c) at (0,0) {C};
+  \node[atom] (hl) at (-0.82,0) {H};
+  \node[atom] (hb) at (0,-0.78) {H};
+  \node[atom] (ht) at (0,0.90) {H};
+  \node[atom] (o) at (0.88,0) {O};
+  \node[atom] (hoh) at (1.68,0) {H};
+  \draw[bond] (hl) -- (c);
+  \draw[bond] (hb) -- (c);
+  \draw[bond] (ht) -- (c);
+  \draw[bond] (c) -- (o);
+  \draw[bond] (o) -- (hoh);
+  \node[atom] at (2.42,0) {$+$};
+  \node[atom] (cu) at (3.12,0) {Cu};
+  \node[atom] (ocu) at (3.92,0) {O};
+  \draw[bond] (cu) -- (ocu);
+  \draw[dashed, line width=0.5pt] (-0.32,0.52) -- (-0.32,1.28) -- (4.32,1.28) -- (4.32,-0.38) -- (3.58,-0.38) -- (3.58,0.62) -- (2.12,0.62) -- (2.12,-0.34) -- (1.26,-0.34) -- (1.26,0.52) -- cycle;
+  \node[atom] at (5.22,0) {$=$};
+  \node[atom] (c2) at (6.35,0) {C};
+  \node[atom] (h2) at (5.58,0) {H};
+  \node[atom] (o2) at (6.92,0.50) {O};
+  \node[atom] (hr2) at (6.92,-0.50) {H};
+  \draw[bond] (h2) -- (c2);
+  \draw[dbond] (c2) -- (o2);
+  \draw[bond] (c2) -- (hr2);
+  \node[atom, anchor=west] at (7.58,0.12) {$+$\,Cu\,$+$\,H$_2$O};
+  \node[lab] at (3.35,-1.85) {$(\mathrm{CH}_{3}\mathrm{OH}+\mathrm{CuO}=\mathrm{HCHO}+\mathrm{Cu}+\mathrm{H}_{2}\mathrm{O})$};
+\end{tikzpicture}%
+}
 \caption{原PDF第101页图示}
 \end{figure}
 
@@ -6041,7 +6294,34 @@ R---C---R'，R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（结构式）；（简式）}]{assets/chemistry-4/fig-p0106-g01.png}}
+\fitfig{%
+% fig-alt: 乙酸结构式：甲基碳连三H，羧基碳双键连上O、单键连右O—H；简式CH3COOH，右下角圈1为脚注号
+% redraw: fig-p0106-g01 乙酸结构式与简式
+\begin{tikzpicture}[line cap=round, line join=round,
+    atom/.style={inner sep=1pt, outer sep=0.4pt},
+    bond/.style={line width=0.62pt},
+    dbond/.style={double distance=1.15pt, line width=0.46pt},
+    lab/.style={inner sep=1pt}]
+  \node[atom] (c1) at (0,0) {C};
+  \node[atom] (h1l) at (-0.78,0) {H};
+  \node[atom] (h1u) at (0,0.78) {H};
+  \node[atom] (h1d) at (0,-0.78) {H};
+  \node[atom] (c2) at (0.98,0) {C};
+  \node[atom] (o2) at (0.98,0.72) {O};
+  \node[atom] (o3) at (1.82,0) {O};
+  \node[atom] (h3) at (2.55,0) {H};
+  \draw[bond] (h1l) -- (c1);
+  \draw[bond] (h1u) -- (c1);
+  \draw[bond] (h1d) -- (c1);
+  \draw[bond] (c1) -- (c2);
+  \draw[dbond] (c2) -- (o2);
+  \draw[bond] (c2) -- (o3);
+  \draw[bond] (o3) -- (h3);
+  \node[atom, anchor=west] (cf) at (3.70,0) {CH$_3$COOH};
+  \draw[line width=0.45pt] (6.15,0.28) circle (0.14);
+  \node[lab] at (6.15,0.28) {\scriptsize 1};
+\end{tikzpicture}%
+}
 \caption{（结构式）；（简式）}
 \end{figure}
 
