@@ -31,3 +31,51 @@ git lfs pull
 ## 推送
 
 `raw/*.pdf` 走 LFS 上传。没有 `git lfs install` 时，push 可能把指针当普通文本推上去，克隆端会拿到几十字节的 pointer 而不是 PDF。
+
+## 远程与分支（独立维护 TeX，不向上游推送）
+
+| 远程 | URL | 用途 |
+|------|-----|------|
+| `origin` | `git@github.com:kenyon-wong/shulihuazixuecongshu.git` | 自己的 fork，**唯一允许 push 的地方** |
+| `upstream` | `https://github.com/tradecatlabs/shulihuazixuecongshu.git` | 原作者仓库，**只 fetch，禁止 push** |
+
+| 分支 | 跟踪 | 用途 |
+|------|------|------|
+| `master` | `origin/master` | TeX 规范源、Makefile 出 PDF。独立维护，不向 `upstream` 发 PR |
+| `main` | `upstream/main` | 上游 Markdown/EPUB 的只读镜像，只允许快进 |
+
+不要把 `main` 合并进 `master`。上游会带回 EPUB、Pandoc 和另一套目录约定，和本分支冲突。
+
+### 日常拉上游 Markdown
+
+```bash
+git fetch upstream
+git checkout main
+git merge --ff-only upstream/main
+git checkout master
+git diff main -- books/
+```
+
+确认 diff 后，只把 Markdown（以及新增/改动的插图）接到 `master`，再手工改对应 `tex/books/*.tex`：
+
+```bash
+git checkout master
+git checkout main -- books/
+# 审阅 git diff --cached -- books/
+# 把内容改动写入 tex/books/<书名>.tex，不要用 Pandoc 整册重转
+git add books/ tex/books/
+git commit
+git push origin master
+```
+
+插图有增删时，同步更新 `tex/` 里的 `\includegraphics`。不要 `git merge main`。
+
+### 首次把本机推到 fork
+
+```bash
+git lfs install
+git push -u origin master
+git push origin main          # 可选：在 fork 上留一份上游镜像
+```
+
+在 GitHub 上把 **kenyon-wong/shulihuazixuecongshu** 的默认分支设为 `master`。不要改 `tradecatlabs/shulihuazixuecongshu` 的默认分支，也不要向它 push。

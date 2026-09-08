@@ -1,6 +1,6 @@
 # 仓库维护约定（TeX 规范源分支）
 
-本分支名固定为 `master`。GitHub 默认分支仍是 `main`；不要把 `master` 设为默认分支，不要 force-push `main`。
+本分支名固定为 `master`，推送到 fork `origin`（`kenyon-wong/shulihuazixuecongshu`）。`upstream` 是原作者仓库，只允许 `git fetch`，禁止 push、发 PR、改其默认分支。本地 `main` 只快进跟踪 `upstream/main`，用来 diff `books/`；不要把 `main` 合并进 `master`。详见 `docs/GIT.md`。
 
 - 规范正文源是 `tex/books/` 下与 `catalog.json` 17 册题名对应的内容 `.tex`（不含 `\documentclass`）。版式只放在 `tex/style/`。`books/*.md` 保留作上游对照，不以 Markdown 出书，也不用 Pandoc 转 TeX。
 - `raw/` 只保存 17 册原始扫描 PDF 及 `SHA256SUMS.txt`，保持导入原字节，不改写。`raw/*.pdf` 必须走 Git LFS（见 `docs/GIT.md`）；不要把 PNG 或 `.tex` 配进 LFS。
