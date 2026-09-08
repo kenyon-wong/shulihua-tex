@@ -1959,7 +1959,42 @@ n _ {21} = \frac {n _ {2}}{n _ {1}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.20}]{assets/physics-4/fig-p0037-01.png}}
+% fig-alt: 平行光从媒质1斜射入媒质2，波面由A'A变为B'B，入射角α大于折射角r，并标v1、v2与n1小于n2、v1大于v2
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0.48,0) -- (5.48,0);
+  \draw[line width=0.55pt] (0.55,0) rectangle (5.22,-1.92);
+  \begin{scope}
+    \clip (0.56,-0.02) rectangle (5.21,-1.91);
+    \foreach \y in {-0.16,-0.32,-0.48,-0.64,-0.80,-0.96,-1.12,-1.28,-1.44,-1.60,-1.76} {
+      \draw[line width=0.28pt] (0.55,\y) -- (5.22,\y);
+    }
+  \end{scope}
+  \draw[line width=0.5pt,dashed] (1.70,2.12) -- (1.70,-0.78);
+  \draw[line width=0.62pt] (2.85,1.71) -- (1.70,0);
+  \draw[line width=0.55pt,->] (2.76,1.57) -- (2.59,1.32);
+  \draw[line width=0.62pt] (1.70,0) -- (1.24,-1.51);
+  \draw[line width=0.62pt] (5.78,2.04) -- (4.40,0);
+  \draw[line width=0.55pt,->] (5.64,1.83) -- (5.42,1.52);
+  \draw[line width=0.62pt] (4.40,0) -- (3.99,-1.35);
+  \draw[line width=0.55pt] (2.54,1.25) -- (4.40,0);
+  \draw[line width=0.55pt] (1.70,0) -- (4.17,-0.76);
+  \draw[line width=0.45pt] (1.70,0.50) arc (90:56:0.50);
+  \draw[line width=0.45pt] (1.70,-0.42) arc (-90:-107:0.42);
+  \node[above left=1pt] at (2.48,1.28) {$A'$};
+  \node[above right=0pt] at (4.42,0.04) {$A$};
+  \node[below right=1pt] at (4.16,-0.68) {$B$};
+  \node[above left=1pt] at (1.48,0.16) {$B'$};
+  \node at (2.08,0.66) {$\alpha$};
+  \node at (1.42,-0.64) {$r$};
+  \node[left=1pt] at (0.50,0.18) {$1$};
+  \node[anchor=west] at (0.68,-0.26) {$2$};
+  \node[right=1pt] at (5.32,0.16) {$v_1$};
+  \node[right=1pt] at (5.32,-0.28) {$v_2$};
+  \node[below=1pt] at (1.35,-1.92) {$n_1<n_2$};
+  \node[below=1pt] at (4.20,-1.92) {$v_1>v_2$};
+\end{tikzpicture}%
+}
 \caption{图2.20}
 \end{figure}
 
@@ -2074,19 +2109,67 @@ n _ {\mathrm{甲}} = \frac {\sin a}{\sin r} = \frac {\sin 45 ^ {\circ}}{\sin 30 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0041-01.png}}
+% fig-alt: 空气射入甲媒质，入射角45°，折射角30°
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (1.62,0);
+  \draw[line width=0.7pt] (0.42,0) -- (3.28,0);
+  \draw[line width=0.5pt,dashed] (1.62,1.62) -- (1.62,-1.70);
+  \draw[line width=0.62pt] (0.45,1.17) -- (O);
+  \draw[line width=0.55pt,->] (0.81,0.81) -- (1.09,0.53);
+  \draw[line width=0.62pt] (O) -- (2.40,-1.34);
+  \draw[line width=0.45pt] (1.62,0.52) arc (90:135:0.52);
+  \draw[line width=0.45pt] (1.62,-0.48) arc (-90:-60:0.48);
+  \node at (1.10,0.70) {$45^{\circ}$};
+  \node at (1.86,-0.64) {$30^{\circ}$};
+  \node[left=1pt] at (0.38,0.28) {空气};
+  \node[left=1pt] at (0.38,-0.32) {甲};
+\end{tikzpicture}%
+}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（b）。}]{assets/physics-4/fig-p0041-02.png}}
+% fig-alt: 空气射入乙媒质，入射角45°，折射角18°
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (1.62,0);
+  \draw[line width=0.7pt] (0.42,0) -- (3.28,0);
+  \draw[line width=0.5pt,dashed] (1.62,1.62) -- (1.62,-1.70);
+  \draw[line width=0.62pt] (0.45,1.17) -- (O);
+  \draw[line width=0.55pt,->] (0.81,0.81) -- (1.09,0.53);
+  \draw[line width=0.62pt] (O) -- (2.10,-1.47);
+  \draw[line width=0.45pt] (1.62,0.52) arc (90:135:0.52);
+  \draw[line width=0.45pt] (1.62,-0.46) arc (-90:-72:0.46);
+  \node at (1.10,0.70) {$45^{\circ}$};
+  \node at (1.78,-0.62) {$18^{\circ}$};
+  \node[left=1pt] at (0.38,0.28) {空气};
+  \node[left=1pt] at (0.38,-0.32) {乙};
+\end{tikzpicture}%
+}
 \caption{（b）。}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0041-03.png}}
+% fig-alt: 甲媒质射入乙媒质，入射角45°，折射角标r
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (1.62,0);
+  \draw[line width=0.7pt] (0.42,0) -- (3.28,0);
+  \draw[line width=0.5pt,dashed] (1.62,1.62) -- (1.62,-1.70);
+  \draw[line width=0.62pt] (0.45,1.17) -- (O);
+  \draw[line width=0.55pt,->] (0.81,0.81) -- (1.09,0.53);
+  \draw[line width=0.62pt] (O) -- (2.30,-1.39);
+  \draw[line width=0.45pt] (1.62,0.52) arc (90:135:0.52);
+  \draw[line width=0.45pt] (1.62,-0.48) arc (-90:-64:0.48);
+  \node at (1.10,0.70) {$45^{\circ}$};
+  \node at (1.82,-0.64) {$r$};
+  \node[left=1pt] at (0.38,0.28) {甲};
+  \node[left=1pt] at (0.38,-0.32) {乙};
+\end{tikzpicture}%
+}
 \caption{（c）}
 \end{figure}
 
