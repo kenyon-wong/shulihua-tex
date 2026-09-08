@@ -5902,7 +5902,36 @@ s = \bar {v} t \tag{5.2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5-1}]{assets/physics-1/fig-p0124-01.png}}
+% fig-alt: 图5-1 光滑斜槽：地面短斜线，右端立柱支起斜面；球自高向低为A、B、C、C''、C'、D，近下端E，箭头沿槽向下
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1cm,y=1cm,every node/.style={font=\scriptsize,inner sep=0.5pt}]
+  \draw[line width=0.7pt] (0.10,0) -- (7.55,0);
+  \foreach \i in {0,1,...,27} {
+    \draw[line width=0.32pt] (0.22+0.26*\i,0) -- ++(-0.10,-0.16);
+  }
+  \draw[line width=0.75pt] (0.72,0.06) -- (6.92,3.70);
+  \draw[line width=0.75pt] (0.66,0.16) -- (6.86,3.80);
+  \draw[line width=0.75pt] (0.72,0.06) -- (0.66,0.16);
+  \draw[line width=0.75pt] (6.92,3.70) -- (6.86,3.80);
+  \draw[line width=0.65pt] (6.46,0) -- (6.46,3.42);
+  \draw[line width=0.65pt] (6.62,0) -- (6.62,3.52);
+  \draw[line width=0.6pt] (6.54,3.78) circle (0.145);
+  \draw[line width=0.6pt] (5.92,3.42) circle (0.145);
+  \draw[line width=0.6pt] (5.24,3.02) circle (0.145);
+  \draw[line width=0.6pt] (4.74,2.73) circle (0.145);
+  \draw[line width=0.6pt] (4.24,2.44) circle (0.145);
+  \draw[line width=0.6pt] (3.69,2.11) circle (0.145);
+  \draw[line width=0.6pt] (1.28,0.42) circle (0.145);
+  \node[anchor=south] at (6.40,3.96) {$A$};
+  \node[anchor=south] at (5.78,3.60) {$B$};
+  \node[anchor=south] at (5.09,3.20) {$C$};
+  \node[anchor=south] at (4.60,2.91) {$C''$};
+  \node[anchor=south] at (4.10,2.62) {$C'$};
+  \node[anchor=south] at (3.54,2.29) {$D$};
+  \node[anchor=south] at (1.28,0.60) {$E$};
+  \draw[line width=0.7pt,->] (6.20,4.18) -- (4.20,3.12);
+\end{tikzpicture}%
+}
 \caption{图5-1}
 \end{figure}
 
@@ -6012,7 +6041,51 @@ a = \frac {v - v _ {0}}{t} \tag{5.3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.2 匀加速和匀减速直线运动加速度的方向示意图}]{assets/physics-1/fig-p0129-01.png}}
+% fig-alt: 图5.2 匀加速：v0、a、v均向右，下方v0向左、v-v0向右、合矢v向右；匀减速：a向左，v短于v0，下方v0向右、v较短向右、v-v0向左
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1cm,y=1cm,every node/.style={font=\scriptsize,inner sep=0.6pt}]
+  \node[anchor=east,align=center] at (1.55,2.62) {匀加速\\直线运动};
+  \draw[line width=0.7pt,->] (1.72,2.55) -- (8.55,2.55);
+  \node[anchor=south] at (1.95,2.62) {$A$};
+  \draw[line width=0.7pt,->] (2.15,2.55) -- (3.05,2.55);
+  \node[anchor=south] at (2.58,2.60) {$v_{0}$};
+  \draw[line width=0.7pt,->] (3.55,2.82) -- (4.75,2.82);
+  \node[anchor=south] at (4.15,2.86) {$a$};
+  \node[anchor=south] at (5.05,2.62) {$B$};
+  \draw[line width=0.7pt,->] (5.25,2.55) -- (6.55,2.55);
+  \node[anchor=south] at (5.90,2.60) {$v$};
+  \node[anchor=west,align=center] at (8.65,2.55) {运动方向\\（正方向）};
+  \draw[line width=0.45pt] (3.55,1.78) -- (3.55,1.98);
+  \draw[line width=0.45pt] (4.45,1.78) -- (4.45,1.98);
+  \draw[line width=0.45pt] (5.55,1.78) -- (5.55,1.98);
+  \draw[line width=0.65pt,->] (4.40,1.88) -- (3.62,1.88);
+  \draw[line width=0.65pt,->] (4.52,1.88) -- (5.48,1.88);
+  \node[anchor=south] at (3.98,1.90) {$v_{0}$};
+  \node[anchor=south] at (5.00,1.90) {$v-v_{0}$};
+  \draw[line width=0.65pt,->] (3.55,1.58) -- (5.55,1.58);
+  \node[anchor=north] at (4.55,1.52) {$v$};
+  \node[anchor=east,align=center] at (1.55,0.55) {匀减速\\直线运动};
+  \draw[line width=0.7pt,->] (1.72,0.48) -- (8.55,0.48);
+  \node[anchor=south] at (2.05,0.55) {$A$};
+  \draw[line width=0.7pt,->] (2.25,0.48) -- (3.55,0.48);
+  \node[anchor=south] at (2.90,0.53) {$v_{0}$};
+  \draw[line width=0.7pt,->] (4.35,0.75) -- (3.35,0.75);
+  \node[anchor=south] at (3.85,0.79) {$a$};
+  \node[anchor=south] at (4.85,0.55) {$B$};
+  \draw[line width=0.7pt,->] (5.05,0.48) -- (5.85,0.48);
+  \node[anchor=south] at (5.45,0.53) {$v$};
+  \node[anchor=west,align=center] at (8.65,0.48) {运动方向\\（正方向）};
+  \draw[line width=0.45pt] (3.45,0.02) -- (3.45,-0.18);
+  \draw[line width=0.45pt] (5.35,0.02) -- (5.35,-0.18);
+  \draw[line width=0.45pt] (4.55,0.02) -- (4.55,-0.18);
+  \draw[line width=0.65pt,->] (3.52,-0.08) -- (5.28,-0.08);
+  \node[anchor=south] at (4.40,-0.06) {$v_{0}$};
+  \draw[line width=0.65pt,->] (3.52,-0.32) -- (4.48,-0.32);
+  \node[anchor=north] at (4.00,-0.36) {$v$};
+  \draw[line width=0.65pt,->] (5.28,-0.56) -- (4.48,-0.56);
+  \node[anchor=north] at (4.88,-0.60) {$v-v_{0}$};
+\end{tikzpicture}%
+}
 \caption{图 5.2 匀加速和匀减速直线运动加速度的方向示意图}
 \end{figure}
 
@@ -6600,7 +6673,37 @@ v（米/秒） & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5·4 初速度为零的匀加速直线运动的速度图线}]{assets/physics-1/fig-p0142-01.png}}
+% fig-alt: 图5·4 初速度为零：v轴0至8、t轴0至6，过原点直线，A(1,2)、B(2,4)、C(3,6)、D(4,8)，各有水平与竖直虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.52cm,y=0.38cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt,->] (0,0) -- (7.15,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,9.15);
+  \foreach \i in {1,2,3,4,5,6} {
+    \draw[line width=0.4pt] (\i,0) -- (\i,-0.16);
+    \node[anchor=north] at (\i,-0.20) {$\i$};
+  }
+  \foreach \j in {1,2,3,4,5,6,7,8} {
+    \draw[line width=0.4pt] (0,\j) -- (-0.14,\j);
+    \node[anchor=east] at (-0.18,\j) {$\j$};
+  }
+  \node[anchor=north east] at (-0.08,-0.08) {$0$};
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (0,2) -- (1,2);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (1,0) -- (1,2);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (0,4) -- (2,4);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (2,0) -- (2,4);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (0,6) -- (3,6);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (3,0) -- (3,6);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (0,8) -- (4,8);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (4,0) -- (4,8);
+  \draw[line width=0.75pt] (0,0) -- (4.35,8.70);
+  \node[anchor=south west] at (1.08,2.12) {$A$};
+  \node[anchor=south west] at (2.08,4.12) {$B$};
+  \node[anchor=south east] at (2.78,6.18) {$C$};
+  \node[anchor=south east] at (3.78,8.22) {$D$};
+  \node[anchor=south] at (-0.22,9.20) {$v$（米/秒）};
+  \node[anchor=west] at (7.22,0.02) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图5·4 初速度为零的匀加速直线运动的速度图线}
 \end{figure}
 
@@ -6608,7 +6711,43 @@ v（米/秒） & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5·5 初速度不等于零的匀加速直线运动的速度图线}]{assets/physics-1/fig-p0142-02.png}}
+% fig-alt: 图5·5 初速度不等于零：v轴0至8、t轴0至6，直线自A(0,2)过B(1,3)、C(2,4)、D(3,5)、E(4,6)略向外延，虚线连轴
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.52cm,y=0.38cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt,->] (0,0) -- (7.15,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,9.15);
+  \foreach \i in {1,2,3,4,5,6} {
+    \draw[line width=0.4pt] (\i,0) -- (\i,-0.16);
+    \node[anchor=north] at (\i,-0.20) {$\i$};
+  }
+  \foreach \j in {1,2,3,4,5,6,7,8} {
+    \draw[line width=0.4pt] (0,\j) -- (-0.14,\j);
+    \node[anchor=east] at (-0.18,\j) {$\j$};
+  }
+  \node[anchor=north east] at (-0.08,-0.08) {$0$};
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (0,3) -- (1,3);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (1,0) -- (1,3);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (0,4) -- (2,4);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (2,0) -- (2,4);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (0,5) -- (3,5);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (3,0) -- (3,5);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (0,6) -- (4,6);
+  \draw[line width=0.45pt,dash pattern=on 2.1pt off 1.4pt] (4,0) -- (4,6);
+  \draw[line width=0.75pt] (0,2) -- (4.70,6.70);
+  \fill (0,2) circle[radius=0.85pt];
+  \fill (1,3) circle[radius=0.85pt];
+  \fill (2,4) circle[radius=0.85pt];
+  \fill (3,5) circle[radius=0.85pt];
+  \fill (4,6) circle[radius=0.85pt];
+  \node[anchor=south,fill=white,inner sep=0.8pt] at (0.38,2.78) {$A$};
+  \node[anchor=north,fill=white,inner sep=0.6pt] at (1.18,2.70) {$B$};
+  \node[anchor=south,fill=white,inner sep=0.6pt] at (1.78,4.22) {$C$};
+  \node[anchor=south,fill=white,inner sep=0.6pt] at (2.72,5.28) {$D$};
+  \node[anchor=south west,fill=white,inner sep=0.6pt] at (4.12,6.18) {$E$};
+  \node[anchor=south] at (-0.22,9.20) {$v$（米/秒）};
+  \node[anchor=west] at (7.22,0.02) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图5·5 初速度不等于零的匀加速直线运动的速度图线}
 \end{figure}
 
@@ -6679,7 +6818,30 @@ v（米/秒） & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5·6 利用速度图线求所通过的路程(初速度等于零)}]{assets/physics-1/fig-p0143-01.png}}
+% fig-alt: 图5·6 过原点斜线v=at，直角三角形斜线，底t、右竖边v，面积S=1/2 at^2
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1cm,y=1cm,every node/.style={font=\scriptsize,inner sep=0.4pt}]
+  \draw[line width=0.6pt,->] (0,0) -- (4.55,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,4.85);
+  \begin{scope}
+    \clip (0.03,0.03) -- (3.46,0.03) -- (3.46,4.10) -- cycle;
+    \foreach \i in {-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12} {
+      \draw[line width=0.28pt] (-0.4+0.24*\i,0) -- ++(2.15,2.15);
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (3.48,0) -- (3.48,4.12);
+  \draw[line width=0.75pt] (0,0) -- (3.85,4.53);
+  \draw[line width=0.55pt,<->] (3.72,0.06) -- (3.72,4.06);
+  \node[anchor=west] at (3.82,2.06) {$v$};
+  \draw[line width=0.55pt,<->] (0.08,-0.38) -- (3.40,-0.38);
+  \node[anchor=north] at (1.74,-0.44) {$t$};
+  \node[anchor=south,rotate=49.5] at (1.28,2.22) {$v=at$};
+  \node[anchor=center,rotate=49.5] at (2.42,1.22) {$S=\frac{1}{2}at^{2}$};
+  \node[anchor=north east] at (-0.04,-0.04) {$0$};
+  \node[anchor=south] at (-0.08,4.90) {$v$};
+  \node[anchor=west] at (4.62,0.02) {$t$};
+\end{tikzpicture}%
+}
 \caption{图 5·6 利用速度图线求所通过的路程(初速度等于零)}
 \end{figure}
 
@@ -6687,7 +6849,40 @@ v（米/秒） & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5·7 利用速度图线求所通过的路程(初速度不等于零)}]{assets/physics-1/fig-p0143-02.png}}
+% fig-alt: 图5·7 不过原点：横虚线分出矩形S1=v0 t与上三角形S2=1/2 at^2，斜线标v=v0+at，右竖下段v0、上段at
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1cm,y=1cm,every node/.style={font=\scriptsize,inner sep=0.4pt}]
+  \draw[line width=0.6pt,->] (0,0) -- (5.15,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,4.55);
+  \begin{scope}
+    \clip (0.03,0.03) -- (3.62,0.03) -- (3.62,2.28) -- (0.03,2.28) -- cycle;
+    \foreach \i in {-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13} {
+      \draw[line width=0.28pt] (-0.4+0.24*\i,0) -- ++(1.70,1.70);
+    }
+  \end{scope}
+  \begin{scope}
+    \clip (0.04,2.32) -- (3.60,2.32) -- (3.60,3.62) -- cycle;
+    \foreach \i in {-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12} {
+      \draw[line width=0.28pt] (-0.4+0.24*\i,1.6) -- ++(1.70,1.70);
+    }
+  \end{scope}
+  \draw[line width=0.45pt,dash pattern=on 2.0pt off 1.3pt] (0,2.30) -- (3.62,2.30);
+  \draw[line width=0.7pt] (3.62,0) -- (3.62,3.65);
+  \draw[line width=0.75pt] (0,2.30) -- (4.05,3.82);
+  \draw[line width=0.55pt,<->] (4.18,0.06) -- (4.18,2.24);
+  \node[anchor=west] at (4.26,1.15) {$v_{0}$};
+  \draw[line width=0.55pt,<->] (4.18,2.36) -- (4.18,3.52);
+  \node[anchor=west] at (4.26,2.94) {$at$};
+  \draw[line width=0.55pt,<->] (0.10,-0.38) -- (3.52,-0.38);
+  \node[anchor=north] at (1.80,-0.44) {$t$};
+  \node[anchor=south,rotate=20.5] at (1.45,3.28) {$v=v_{0}+at$};
+  \node[anchor=center,rotate=20.5] at (2.55,2.58) {$S_{2}=\frac{1}{2}at^{2}$};
+  \node[anchor=center] at (1.70,1.15) {$S_{1}=v_{0}t$};
+  \node[anchor=north east] at (-0.04,-0.04) {$0$};
+  \node[anchor=south] at (-0.08,4.60) {$v$};
+  \node[anchor=west] at (5.22,0.02) {$t$};
+\end{tikzpicture}%
+}
 \caption{图 5·7 利用速度图线求所通过的路程(初速度不等于零)}
 \end{figure}
 
@@ -6731,7 +6926,28 @@ v（米/秒） & 10 & 9 & 8 & 7 & 6 & 5 & 4 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5·8 匀减速直线运动的速度图线}]{assets/physics-1/fig-p0145-01.png}}
+% fig-alt: 图5·8 匀减速：v轴0至11、t轴0至6，直线过(0,10)、(1,9)、…、(6,4)，斜率-1，点为空心圆
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.50cm,y=0.34cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt,->] (0,0) -- (7.55,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,11.35);
+  \foreach \i in {1,2,3,4,5,6} {
+    \draw[line width=0.4pt] (\i,0) -- (\i,-0.16);
+    \node[anchor=north] at (\i,-0.20) {$\i$};
+  }
+  \foreach \j in {1,2,3,4,5,6,7,8,9,10,11} {
+    \draw[line width=0.4pt] (0,\j) -- (-0.14,\j);
+    \node[anchor=east] at (-0.18,\j) {$\j$};
+  }
+  \node[anchor=north east] at (-0.08,-0.08) {$0$};
+  \draw[line width=0.75pt] (0,10) -- (6,4);
+  \foreach \k in {0,1,2,3,4,5,6} {
+    \draw[line width=0.55pt,fill=white] (\k,10-\k) circle (1.15pt);
+  }
+  \node[anchor=south] at (-0.28,11.40) {$v$（米/秒）};
+  \node[anchor=west] at (7.64,0.02) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图5·8 匀减速直线运动的速度图线}
 \end{figure}
 
@@ -6739,7 +6955,46 @@ v（米/秒） & 10 & 9 & 8 & 7 & 6 & 5 & 4 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5·9 升降机运动的速度图线}]{assets/physics-1/fig-p0145-02.png}}
+% fig-alt: 图5·9 升降机：0到6秒由0升至3，6至11秒保持3，11至14秒降至0；虚线标A/B(1秒,0.5)、C/D(2秒,1)、E/F(6秒)、E'/F'(7秒)、G/H(11秒)、I/J(12秒,2)、K(14秒)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.34cm,y=0.70cm,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt,->] (0,0) -- (15.2,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,4.55);
+  \foreach \i in {0,2,4,6,8,10,12,14} {
+    \draw[line width=0.4pt] (\i,0) -- (\i,-0.12);
+    \node[anchor=north] at (\i,-0.16) {$\i$};
+  }
+  \foreach \j in {1,2,3,4} {
+    \draw[line width=0.4pt] (0,\j) -- (-0.14,\j);
+    \node[anchor=east] at (-0.18,\j) {$\j$};
+  }
+  \draw[line width=0.4pt,dash pattern=on 1.8pt off 1.2pt] (0,1) -- (2,1);
+  \draw[line width=0.4pt,dash pattern=on 1.8pt off 1.2pt] (0,2) -- (12,2);
+  \draw[line width=0.4pt,dash pattern=on 1.8pt off 1.2pt] (0,3) -- (6,3);
+  \draw[line width=0.4pt,dash pattern=on 1.8pt off 1.2pt] (1,0.5) -- (1,0);
+  \draw[line width=0.4pt,dash pattern=on 1.8pt off 1.2pt] (2,1) -- (2,0);
+  \draw[line width=0.4pt,dash pattern=on 1.8pt off 1.2pt] (6,3) -- (6,0);
+  \draw[line width=0.4pt,dash pattern=on 1.8pt off 1.2pt] (7,3) -- (7,0);
+  \draw[line width=0.4pt,dash pattern=on 1.8pt off 1.2pt] (11,3) -- (11,0);
+  \draw[line width=0.4pt,dash pattern=on 1.8pt off 1.2pt] (12,2) -- (12,0);
+  \draw[line width=0.8pt] (0,0) -- (6,3) -- (11,3) -- (14,0);
+  \node[anchor=south] at (1,0.06) {$A$};
+  \node[anchor=south west] at (1.08,0.54) {$B$};
+  \node[anchor=south] at (2,0.06) {$C$};
+  \node[anchor=south west] at (2.08,1.06) {$D$};
+  \node[anchor=south] at (6,0.06) {$E$};
+  \node[anchor=south east] at (5.88,3.08) {$F$};
+  \node[anchor=south] at (7,0.06) {$E'$};
+  \node[anchor=south] at (7,3.08) {$F'$};
+  \node[anchor=south] at (11,0.06) {$G$};
+  \node[anchor=south east] at (10.88,3.08) {$H$};
+  \node[anchor=south] at (12,0.06) {$I$};
+  \node[anchor=west] at (12.10,2.06) {$J$};
+  \node[anchor=south west] at (14.08,0.06) {$K$};
+  \node[anchor=south west] at (0.12,4.58) {$v$（米/秒）};
+  \node[anchor=west] at (15.28,0.02) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图5·9 升降机运动的速度图线}
 \end{figure}
 
