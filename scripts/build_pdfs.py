@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build PDF files from the 17 canonical Markdown sources via XeLaTeX."""
+"""Build PDF files from canonical TeX sources with XeLaTeX / CTeX."""
 from __future__ import annotations
 
 import argparse
@@ -16,7 +16,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "catalog.json"
-TEMPLATE = ROOT / "tex" / "template.tex"
+STYLE_PREAMBLE = ROOT / "tex" / "style" / "preamble.tex"
+STYLE_DRIVER = ROOT / "tex" / "style" / "driver.tex"
 COVER_TEMPLATE = ROOT / "tex" / "cover.tex"
 BUILD_DIR = ROOT / ".build" / "pdf"
 DEFAULT_OUTPUT = ROOT / "dist"
@@ -24,16 +25,6 @@ REPORT = ROOT / "reports" / "pdf-build.json"
 
 AUTHOR = "数理化自学丛书编委会"
 LANGUAGE = "zh-CN"
-HTML_COMMENT = re.compile(r"<!--.*?-->", re.S)
-HTML_TABLE = re.compile(r"<table\b.*?</table>", re.S | re.I)
-MATH_SPAN = re.compile(
-    r"\$\$(.*?)\$\$|\\\[(.*?)\\\]|\\\((.*?)\\\)|(?<!\\)\$(?!\$)(.*?)(?<!\\)\$",
-    re.S,
-)
-H1_RE = re.compile(r"^#\s+(.+?)\s*$", re.M)
-HEADING_LINE = re.compile(r"^(#{2,6})(\s+\S)", re.M)
-TEXT_CMD = re.compile(r"\\(?:text|mbox|textrm|mathrm|textbf|textit|textsf)\{[^{}]*\}")
-CJK_RUN = re.compile(r"[\u4e00-\u9fff\u3000-\u303f\uff00-\uffef]+")
 FATAL_LOG = re.compile(
     r"^! (?:Emergency stop|Fatal [Ee]rror|Unable to load picture|"
     r"I can't find file|LaTeX Error: File `)",
@@ -73,80 +64,6 @@ def load_catalog() -> dict:
     if len(payload.get("collections", [])) != 3:
         raise BuildError("catalog.json 必须登记 3 个合订本")
     return payload
-
-
-def convert_html_tables(text: str) -> str:
-    def replace(match: re.Match[str]) -> str:
-        proc = subprocess.run(
-            [
-                "pandoc",
-                "-f",
-                "html",
-                "-t",
-                "markdown+tex_math_dollars+tex_math_single_backslash",
-                "--wrap=none",
-            ],
-            input=match.group(0),
-            text=True,
-            capture_output=True,
-            check=False,
-        )
-        if proc.returncode != 0 or not proc.stdout.strip():
-            raise BuildError(f"HTML 表格转换失败：{proc.stderr.strip() or '无输出'}")
-        return "\n\n" + proc.stdout.strip() + "\n\n"
-
-    return HTML_TABLE.sub(replace, text)
-
-
-def wrap_cjk_in_math_body(body: str) -> str:
-    placeholders: list[str] = []
-
-    def hold(match: re.Match[str]) -> str:
-        placeholders.append(match.group(0))
-        return f"@@H{len(placeholders) - 1}@@"
-
-    held = TEXT_CMD.sub(hold, body)
-    wrapped = CJK_RUN.sub(lambda match: r"\text{" + match.group(0) + "}", held)
-    for index, original in enumerate(placeholders):
-        wrapped = wrapped.replace(f"@@H{index}@@", original)
-    return wrapped
-
-
-def wrap_cjk_in_math(text: str) -> str:
-    def replace(match: re.Match[str]) -> str:
-        if match.group(1) is not None:
-            return "$$" + wrap_cjk_in_math_body(match.group(1)) + "$$"
-        if match.group(2) is not None:
-            return r"\[" + wrap_cjk_in_math_body(match.group(2)) + r"\]"
-        if match.group(3) is not None:
-            return r"\(" + wrap_cjk_in_math_body(match.group(3)) + r"\)"
-        return "$" + wrap_cjk_in_math_body(match.group(4)) + "$"
-
-    return MATH_SPAN.sub(replace, text)
-
-
-def demote_headings(text: str, title: str) -> str:
-    match = H1_RE.search(text)
-    if match and match.group(1).strip() == title:
-        text = text[: match.start()] + text[match.end() :].lstrip("\n")
-    return HEADING_LINE.sub(lambda item: "#" * (len(item.group(1)) - 1) + item.group(2), text)
-
-
-def prepare_source(source: Path, destination: Path, title: str) -> tuple[int, int, str]:
-    text = source.read_text(encoding="utf-8")
-    comments = HTML_COMMENT.findall(text)
-    visible = HTML_COMMENT.sub("", text)
-    visible = convert_html_tables(visible)
-    visible = wrap_cjk_in_math(visible)
-    visible = demote_headings(visible, title)
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(visible, encoding="utf-8")
-    return len(comments), len(MATH_SPAN.findall(visible)), sha256(source)
-
-
-def pandoc_version() -> str:
-    proc = subprocess.run(["pandoc", "--version"], text=True, capture_output=True, check=True)
-    return proc.stdout.splitlines()[0]
 
 
 def xelatex_version() -> str | None:
@@ -285,72 +202,35 @@ def tex_source_path(book: dict) -> Path:
     return ROOT / "tex" / "books" / f"{book['title']}.tex"
 
 
-def pandoc_markdown_to_tex(clean: Path, tex_path: Path, book: dict) -> subprocess.CompletedProcess[str]:
-    source = ROOT / book["file"]
-    command = [
-        "pandoc",
-        str(clean),
-        f"--template={TEMPLATE}",
-        "--from=markdown+tex_math_dollars+tex_math_single_backslash",
-        "--to=latex",
-        "--standalone",
-        "--toc",
-        "--toc-depth=2",
-        "--top-level-division=chapter",
-        "--syntax-highlighting=none",
-        f"--resource-path={source.parent}",
-        "--metadata",
-        f"title={book['title']}",
-        "--metadata",
-        f"author={AUTHOR}",
-        "--metadata",
-        f"lang={LANGUAGE}",
-        "-V",
-        "toc-title=目录",
-        "-V",
-        "toc-depth=2",
-        "--output",
-        str(tex_path),
-    ]
-    return subprocess.run(command, cwd=ROOT, text=True, capture_output=True)
+def write_driver(book: dict, destination: Path) -> None:
+    content = tex_source_path(book)
+    if not content.is_file():
+        raise BuildError(f"TeX 正文不存在：{content}")
+    text = STYLE_DRIVER.read_text(encoding="utf-8")
+    text = text.replace("BOOKTITLE", book["title"])
+    text = text.replace("BOOKAUTHOR", AUTHOR)
+    text = text.replace("BOOKCONTENT", content.relative_to(ROOT).as_posix())
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(text, encoding="utf-8")
 
 
-def build_one(
-    book: dict, output_dir: Path, epoch: int, *, from_tex: bool = False
-) -> tuple[str, dict[str, object]]:
-    source = ROOT / book["file"]
+def build_one(book: dict, output_dir: Path, epoch: int) -> tuple[str, dict[str, object]]:
     work = BUILD_DIR / "volumes" / Path(book["file"]).stem
     if work.exists():
         shutil.rmtree(work)
     work.mkdir(parents=True, exist_ok=True)
-    comments = 0
-    source_math = 0
-    source_sha = ""
-    proc_stderr = ""
-    if from_tex:
-        tex_path = tex_source_path(book)
-        if not tex_path.is_file():
-            raise BuildError(f"TeX 源不存在：{tex_path}")
-        source_sha = sha256(tex_path)
-    else:
-        if not source.is_file():
-            raise BuildError(f"源文件不存在：{source}")
-        clean = work / "source.md"
-        comments, source_math, source_sha = prepare_source(source, clean, book["title"])
-        tex_path = work / "book.tex"
-        proc = pandoc_markdown_to_tex(clean, tex_path, book)
-        proc_stderr = proc.stderr
-        if proc.returncode != 0:
-            raise BuildError(f"{source.name}: Pandoc 失败：\n{proc.stderr}")
-    latex_proc = run_xelatex(tex_path, work, epoch)
-    pdf_candidate = work / f"{tex_path.stem}.pdf"
-    log_path = work / f"{tex_path.stem}.log"
+    driver = work / "book.tex"
+    write_driver(book, driver)
+    source_sha = sha256(tex_source_path(book))
+    latex_proc = run_xelatex(driver, work, epoch)
+    pdf_candidate = work / "book.pdf"
+    log_path = work / "book.log"
     log_text = log_path.read_text(encoding="utf-8", errors="replace") if log_path.is_file() else ""
     tex_errors = [line for line in log_text.splitlines() if line.startswith("! ")]
     if not pdf_candidate.is_file() or FATAL_LOG.search(log_text):
         log_tail = "\n".join(log_text.splitlines()[-40:])
         raise BuildError(
-            f"{source.name}: XeLaTeX 失败：\n{latex_proc.stderr[-2000:]}\n{log_tail}"
+            f"{book['title']}: XeLaTeX 失败：\n{latex_proc.stderr[-2000:]}\n{log_tail}"
         )
     output = output_dir / volume_pdf_name(book)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -358,12 +238,9 @@ def build_one(
     validation = validate_pdf(output, book["title"])
     row: dict[str, object] = {
         "kind": "volume",
-        "source": tex_source_path(book).as_posix() if from_tex else source.name,
+        "source": tex_source_path(book).relative_to(ROOT).as_posix(),
         "source_sha256": source_sha,
-        "source_comments_stripped": comments,
-        "source_math_spans": source_math,
         "output": output.relative_to(ROOT).as_posix() if output.is_relative_to(ROOT) else str(output),
-        "pandoc_warnings": [line for line in proc_stderr.splitlines() if line.strip()],
         "xelatex_errors": tex_errors,
         "validation": validation,
     }
@@ -414,7 +291,7 @@ def build_collection(
             "/Title": collection["title"],
             "/Author": AUTHOR,
             "/Lang": LANGUAGE,
-            "/Producer": "XeLaTeX via pandoc",
+            "/Producer": "XeLaTeX",
         }
     )
     chinese_name, ascii_name = collection_pdf_names(collection)
@@ -490,17 +367,14 @@ def main() -> int:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--verify-only", action="store_true", help="只验证已有 PDF，不重新构建")
     parser.add_argument("--skip-collections", action="store_true", help="只构建或校验 17 册分册")
-    parser.add_argument("--from-tex", action="store_true", help="从 tex/books 中的规范 TeX 源构建，而不是 Markdown")
+    parser.add_argument("--from-tex", action="store_true", help="已废弃：本分支始终从 TeX 源构建")
     args = parser.parse_args()
 
-    if shutil.which("pandoc") is None and not args.verify_only:
-        print("ERROR: 未找到 pandoc", file=sys.stderr)
-        return 2
     if shutil.which("xelatex") is None and not args.verify_only:
         print("ERROR: 未找到 xelatex；请安装 TeX Live / TinyTeX 后运行 make tex-deps", file=sys.stderr)
         return 2
-    if not TEMPLATE.is_file():
-        print(f"ERROR: 缺少模板 {TEMPLATE}", file=sys.stderr)
+    if not STYLE_PREAMBLE.is_file() or not STYLE_DRIVER.is_file():
+        print("ERROR: 缺少 tex/style/preamble.tex 或 tex/style/driver.tex", file=sys.stderr)
         return 2
 
     catalog = load_catalog()
@@ -535,10 +409,7 @@ def main() -> int:
     else:
         BUILD_DIR.mkdir(parents=True, exist_ok=True)
         with ThreadPoolExecutor(max_workers=max(1, args.jobs)) as executor:
-            futures = {
-                executor.submit(build_one, book, output_dir, epoch, from_tex=args.from_tex): book
-                for book in selected_books
-            }
+            futures = {executor.submit(build_one, book, output_dir, epoch): book for book in selected_books}
             for future in as_completed(futures):
                 book = futures[future]
                 try:
@@ -581,10 +452,9 @@ def main() -> int:
     payload = {
         "schema_version": 1,
         "status": "PASS" if ordered_rows and passed == len(ordered_rows) else "FAIL",
-        "mode": "verify-only" if args.verify_only else ("build-tex" if args.from_tex else "build"),
+        "mode": "verify-only" if args.verify_only else "build",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source_date_epoch": epoch,
-        "pandoc": pandoc_version() if shutil.which("pandoc") else None,
         "xelatex": xelatex_version(),
         "summary": {
             "targets": len(ordered_rows),

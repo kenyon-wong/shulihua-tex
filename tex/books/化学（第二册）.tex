@@ -1,82 +1,3 @@
-\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
-\usepackage[
-  b5paper,
-  hmargin=2.2cm,
-  top=1.6cm,
-  bottom=2.2cm,
-  headheight=22pt,
-  headsep=14pt,
-  footskip=16mm,
-  includehead
-]{geometry}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
-\usepackage{float}
-\xeCJKsetup{CJKmath=true}
-\usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
-
-\setcounter{secnumdepth}{-\maxdimen}
-\setlength{\emergencystretch}{3em}
-\graphicspath{{books/}}
-
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi
-}
-\def\fps@figure{htbp}
-\makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\hypersetup{
-  hidelinks,
-  pdflang={zh-CN},
-  pdftitle={化学（第二册）},
-  pdfauthor={数理化自学丛书编委会},
-  pdfcreator={XeLaTeX via pandoc}
-}
-
-\title{化学（第二册）}
-\author{数理化自学丛书编委会}
-\date{}
-
-\begin{document}
-\frontmatter
-\maketitle
-\renewcommand*\contentsname{目录}
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\mainmatter
 \textbf{丛书：} 数理化自学丛书\\
 \textbf{编者：} 数理化自学丛书编委会\\
 \textbf{编写：} 化学编写小组\\
@@ -353,7 +274,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={无机物及其化合物分类示意图}]{assets/chemistry-2/fig-p0009-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={无机物及其化合物分类示意图}]{assets/chemistry-2/fig-p0009-01.png}}
 \caption{无机物及其化合物分类示意图}
 \end{figure}
 
@@ -408,7 +329,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·1 钠在氯气里燃烧}]{assets/chemistry-2/fig-p0011-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·1 钠在氯气里燃烧}]{assets/chemistry-2/fig-p0011-01.png}}
 \caption{图1·1 钠在氯气里燃烧}
 \end{figure}
 
@@ -433,7 +354,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·2 一束细铜丝在氯气里燃烧}]{assets/chemistry-2/fig-p0012-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·2 一束细铜丝在氯气里燃烧}]{assets/chemistry-2/fig-p0012-01.png}}
 \caption{图1·2 一束细铜丝在氯气里燃烧}
 \end{figure}
 
@@ -441,7 +362,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·3 铁丝绒在氯气里燃烧}]{assets/chemistry-2/fig-p0012-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·3 铁丝绒在氯气里燃烧}]{assets/chemistry-2/fig-p0012-02.png}}
 \caption{图1·3 铁丝绒在氯气里燃烧}
 \end{figure}
 
@@ -460,7 +381,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/chemistry-2/fig-p0013-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/chemistry-2/fig-p0013-01.png}}
 \caption{（a）}
 \end{figure}
 
@@ -468,7 +389,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/chemistry-2/fig-p0013-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/chemistry-2/fig-p0013-02.png}}
 \caption{（b）}
 \end{figure}
 
@@ -476,7 +397,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（c）}]{assets/chemistry-2/fig-p0013-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/chemistry-2/fig-p0013-03.png}}
 \caption{（c）}
 \end{figure}
 
@@ -490,7 +411,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·5 氢气在氯气里燃烧}]{assets/chemistry-2/fig-p0013-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·5 氢气在氯气里燃烧}]{assets/chemistry-2/fig-p0013-04.png}}
 \caption{图 1·5 氢气在氯气里燃烧}
 \end{figure}
 
@@ -501,7 +422,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·6 氯气跟松节油反应}]{assets/chemistry-2/fig-p0014-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·6 氯气跟松节油反应}]{assets/chemistry-2/fig-p0014-01.png}}
 \caption{图1·6 氯气跟松节油反应}
 \end{figure}
 
@@ -539,7 +460,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·7 氯水受光的作用分解放出氧气}]{assets/chemistry-2/fig-p0015-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·7 氯水受光的作用分解放出氧气}]{assets/chemistry-2/fig-p0015-01.png}}
 \caption{图 1·7 氯水受光的作用分解放出氧气}
 \end{figure}
 
@@ -699,7 +620,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·8 实验室制取氯气的装置}]{assets/chemistry-2/fig-p0019-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·8 实验室制取氯气的装置}]{assets/chemistry-2/fig-p0019-01.png}}
 \caption{图1·8 实验室制取氯气的装置}
 \end{figure}
 
@@ -767,7 +688,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·9 氯化氢溶解于水的喷泉实验}]{assets/chemistry-2/fig-p0021-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·9 氯化氢溶解于水的喷泉实验}]{assets/chemistry-2/fig-p0021-01.png}}
 \caption{图1·9 氯化氢溶解于水的喷泉实验}
 \end{figure}
 
@@ -819,13 +740,13 @@ HCl 的分子。关于这个问题，在学习到第四章``电离学说''时将
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={实验室制取氯化氢和盐酸的装置（a）}]{assets/chemistry-2/fig-p0023-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={实验室制取氯化氢和盐酸的装置（a）}]{assets/chemistry-2/fig-p0023-01.png}}
 \caption{实验室制取氯化氢和盐酸的装置（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·10 实验室制取氯化氢和盐酸的装置}]{assets/chemistry-2/fig-p0023-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·10 实验室制取氯化氢和盐酸的装置}]{assets/chemistry-2/fig-p0023-02.png}}
 \caption{图 1·10 实验室制取氯化氢和盐酸的装置}
 \end{figure}
 
@@ -1053,7 +974,7 @@ HCl 的分子。关于这个问题，在学习到第四章``电离学说''时将
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·11 合成法制盐酸的生产流程简图}]{assets/chemistry-2/fig-p0031-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·11 合成法制盐酸的生产流程简图}]{assets/chemistry-2/fig-p0031-01.png}}
 \caption{图 1·11 合成法制盐酸的生产流程简图}
 \end{figure}
 
@@ -1266,7 +1187,7 @@ HCl 的分子。关于这个问题，在学习到第四章``电离学说''时将
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·12 氟化氢腐蚀玻璃}]{assets/chemistry-2/fig-p0037-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·12 氟化氢腐蚀玻璃}]{assets/chemistry-2/fig-p0037-01.png}}
 \caption{图 1·12 氟化氢腐蚀玻璃}
 \end{figure}
 
@@ -1314,7 +1235,7 @@ HCl 的分子。关于这个问题，在学习到第四章``电离学说''时将
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·13 把液溴保存在水里}]{assets/chemistry-2/fig-p0038-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·13 把液溴保存在水里}]{assets/chemistry-2/fig-p0038-01.png}}
 \caption{图 1·13 把液溴保存在水里}
 \end{figure}
 
@@ -1335,7 +1256,7 @@ HCl 的分子。关于这个问题，在学习到第四章``电离学说''时将
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a） 未振荡前}]{assets/chemistry-2/fig-p0039-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a） 未振荡前}]{assets/chemistry-2/fig-p0039-01.png}}
 \caption{（a） 未振荡前}
 \end{figure}
 
@@ -1343,7 +1264,7 @@ HCl 的分子。关于这个问题，在学习到第四章``电离学说''时将
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b） 经振荡后，溴水中大部分溴转到汽油层里}]{assets/chemistry-2/fig-p0039-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b） 经振荡后，溴水中大部分溴转到汽油层里}]{assets/chemistry-2/fig-p0039-02.png}}
 \caption{（b） 经振荡后，溴水中大部分溴转到汽油层里}
 \end{figure}
 
@@ -1435,7 +1356,7 @@ HCl 的分子。关于这个问题，在学习到第四章``电离学说''时将
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={溴、溴化氢和溴化物之间的转化关系}]{assets/chemistry-2/fig-p0041-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={溴、溴化氢和溴化物之间的转化关系}]{assets/chemistry-2/fig-p0041-01.png}}
 \caption{溴、溴化氢和溴化物之间的转化关系}
 \end{figure}
 
@@ -1465,7 +1386,7 @@ HCl 的分子。关于这个问题，在学习到第四章``电离学说''时将
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·15 利用碘的升华作用精制碘}]{assets/chemistry-2/fig-p0042-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·15 利用碘的升华作用精制碘}]{assets/chemistry-2/fig-p0042-01.png}}
 \caption{图 1·15 利用碘的升华作用精制碘}
 \end{figure}
 
@@ -1765,7 +1686,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={氯气、氯化钠和氯化钾之间的转化关系}]{assets/chemistry-2/fig-p0049-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={氯气、氯化钠和氯化钾之间的转化关系}]{assets/chemistry-2/fig-p0049-01.png}}
 \caption{氯气、氯化钠和氯化钾之间的转化关系}
 \end{figure}
 
@@ -1842,7 +1763,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·1 硫的八面体结晶}]{assets/chemistry-2/fig-p0050-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·1 硫的八面体结晶}]{assets/chemistry-2/fig-p0050-01.png}}
 \caption{图2·1 硫的八面体结晶}
 \end{figure}
 
@@ -1850,7 +1771,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·2 观察硫的晶体}]{assets/chemistry-2/fig-p0050-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·2 观察硫的晶体}]{assets/chemistry-2/fig-p0050-02.png}}
 \caption{图2·2 观察硫的晶体}
 \end{figure}
 
@@ -1885,7 +1806,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·3 硫的蒸气跟氢气化合成硫化氢气体}]{assets/chemistry-2/fig-p0052-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·3 硫的蒸气跟氢气化合成硫化氢气体}]{assets/chemistry-2/fig-p0052-01.png}}
 \caption{图 2·3 硫的蒸气跟氢气化合成硫化氢气体}
 \end{figure}
 
@@ -1961,7 +1882,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·4 地下采硫的装置}]{assets/chemistry-2/fig-p0053-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·4 地下采硫的装置}]{assets/chemistry-2/fig-p0053-01.png}}
 \caption{图 2·4 地下采硫的装置}
 \end{figure}
 
@@ -2087,7 +2008,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·5 硫化氢不完全燃烧时产生硫}]{assets/chemistry-2/fig-p0057-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·5 硫化氢不完全燃烧时产生硫}]{assets/chemistry-2/fig-p0057-01.png}}
 \caption{图 2·5 硫化氢不完全燃烧时产生硫}
 \end{figure}
 
@@ -2103,7 +2024,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·6 用启普发生器制取硫化氢气体}]{assets/chemistry-2/fig-p0057-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·6 用启普发生器制取硫化氢气体}]{assets/chemistry-2/fig-p0057-02.png}}
 \caption{图2·6 用启普发生器制取硫化氢气体}
 \end{figure}
 
@@ -2323,7 +2244,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·7 用二氧化硫漂白有色的花}]{assets/chemistry-2/fig-p0062-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·7 用二氧化硫漂白有色的花}]{assets/chemistry-2/fig-p0062-01.png}}
 \caption{图 2·7 用二氧化硫漂白有色的花}
 \end{figure}
 
@@ -2413,7 +2334,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·8 实验室制二氧化硫的装置}]{assets/chemistry-2/fig-p0064-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·8 实验室制二氧化硫的装置}]{assets/chemistry-2/fig-p0064-01.png}}
 \caption{图 2·8 实验室制二氧化硫的装置}
 \end{figure}
 
@@ -2558,7 +2479,7 @@ NaI不仅这四种元素的单质有很大相似性，它们化合物的性质�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·9 实验室制取三氧化硫的装置}]{assets/chemistry-2/fig-p0067-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·9 实验室制取三氧化硫的装置}]{assets/chemistry-2/fig-p0067-01.png}}
 \caption{图 2·9 实验室制取三氧化硫的装置}
 \end{figure}
 
@@ -2725,7 +2646,7 @@ Zn）跟稀硫酸发生的置换反应相比较，就可看出它们之间存在
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·10 两种不同形式的洗气瓶}]{assets/chemistry-2/fig-p0071-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·10 两种不同形式的洗气瓶}]{assets/chemistry-2/fig-p0071-01.png}}
 \caption{图 2·10 两种不同形式的洗气瓶}
 \end{figure}
 
@@ -2735,7 +2656,7 @@ Zn）跟稀硫酸发生的置换反应相比较，就可看出它们之间存在
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a） 干燥器外形}]{assets/chemistry-2/fig-p0071-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a） 干燥器外形}]{assets/chemistry-2/fig-p0071-02.png}}
 \caption{（a） 干燥器外形}
 \end{figure}
 
@@ -2743,7 +2664,7 @@ Zn）跟稀硫酸发生的置换反应相比较，就可看出它们之间存在
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b） 瓷制的隔板}]{assets/chemistry-2/fig-p0071-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b） 瓷制的隔板}]{assets/chemistry-2/fig-p0071-03.png}}
 \caption{（b） 瓷制的隔板}
 \end{figure}
 
@@ -2768,7 +2689,7 @@ Zn）跟稀硫酸发生的置换反应相比较，就可看出它们之间存在
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·12 用硫酸使纸焦化}]{assets/chemistry-2/fig-p0072-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·12 用硫酸使纸焦化}]{assets/chemistry-2/fig-p0072-01.png}}
 \caption{图 2·12 用硫酸使纸焦化}
 \end{figure}
 
@@ -2937,7 +2858,7 @@ Zn）跟稀硫酸发生的置换反应相比较，就可看出它们之间存在
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·13 黄铁矿燃烧炉结构简图}]{assets/chemistry-2/fig-p0077-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·13 黄铁矿燃烧炉结构简图}]{assets/chemistry-2/fig-p0077-01.png}}
 \caption{图 2·13 黄铁矿燃烧炉结构简图}
 \end{figure}
 
@@ -2959,7 +2880,7 @@ Zn）跟稀硫酸发生的置换反应相比较，就可看出它们之间存在
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·14 接触法制造硫酸的生产流程简图}]{assets/chemistry-2/fig-p0078-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·14 接触法制造硫酸的生产流程简图}]{assets/chemistry-2/fig-p0078-01.png}}
 \caption{图 2·14 接触法制造硫酸的生产流程简图}
 \end{figure}
 
@@ -2970,7 +2891,7 @@ Zn）跟稀硫酸发生的置换反应相比较，就可看出它们之间存在
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·15 接触室简图}]{assets/chemistry-2/fig-p0078-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·15 接触室简图}]{assets/chemistry-2/fig-p0078-02.png}}
 \caption{图 2·15 接触室简图}
 \end{figure}
 
@@ -2990,7 +2911,7 @@ Zn）跟稀硫酸发生的置换反应相比较，就可看出它们之间存在
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·16 热交换器的热交换原理}]{assets/chemistry-2/fig-p0079-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·16 热交换器的热交换原理}]{assets/chemistry-2/fig-p0079-01.png}}
 \caption{图 2·16 热交换器的热交换原理}
 \end{figure}
 
@@ -3195,25 +3116,25 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={硫化氢、硫和硫化亚铁之间的转化关系（1）}]{assets/chemistry-2/fig-p0084-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={硫化氢、硫和硫化亚铁之间的转化关系（1）}]{assets/chemistry-2/fig-p0084-01.png}}
 \caption{硫化氢、硫和硫化亚铁之间的转化关系（1）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={铁、硫化亚铁和硫酸亚铁之间的转化关系（2）}]{assets/chemistry-2/fig-p0084-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={铁、硫化亚铁和硫酸亚铁之间的转化关系（2）}]{assets/chemistry-2/fig-p0084-02.png}}
 \caption{铁、硫化亚铁和硫酸亚铁之间的转化关系（2）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={二氧化硫、亚硫酸和硫酸之间的转化关系（3）}]{assets/chemistry-2/fig-p0084-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={二氧化硫、亚硫酸和硫酸之间的转化关系（3）}]{assets/chemistry-2/fig-p0084-03.png}}
 \caption{二氧化硫、亚硫酸和硫酸之间的转化关系（3）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={盐酸、碳酸和硫酸之间的转化关系（4）}]{assets/chemistry-2/fig-p0084-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={盐酸、碳酸和硫酸之间的转化关系（4）}]{assets/chemistry-2/fig-p0084-04.png}}
 \caption{盐酸、碳酸和硫酸之间的转化关系（4）}
 \end{figure}
 
@@ -3351,7 +3272,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·1 镭的射线，在通电的极板间发生偏转的示意图}]{assets/chemistry-2/fig-p0087-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·1 镭的射线，在通电的极板间发生偏转的示意图}]{assets/chemistry-2/fig-p0087-01.png}}
 \caption{图 3·1 镭的射线，在通电的极板间发生偏转的示意图}
 \end{figure}
 
@@ -3379,7 +3300,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·2 镭原子的蜕变示意图}]{assets/chemistry-2/fig-p0088-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·2 镭原子的蜕变示意图}]{assets/chemistry-2/fig-p0088-01.png}}
 \caption{图3·2 镭原子的蜕变示意图}
 \end{figure}
 
@@ -3409,7 +3330,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·3 α 微粒穿过金属薄片时和原子核相遇的示意图}]{assets/chemistry-2/fig-p0089-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·3 α 微粒穿过金属薄片时和原子核相遇的示意图}]{assets/chemistry-2/fig-p0089-01.png}}
 \caption{图 3·3 α 微粒穿过金属薄片时和原子核相遇的示意图}
 \end{figure}
 
@@ -3417,7 +3338,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·4 氢原子结构示意图}]{assets/chemistry-2/fig-p0089-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·4 氢原子结构示意图}]{assets/chemistry-2/fig-p0089-02.png}}
 \caption{图 3·4 氢原子结构示意图}
 \end{figure}
 
@@ -3509,7 +3430,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={○ 电子}]{assets/chemistry-2/fig-p0092-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={○ 电子}]{assets/chemistry-2/fig-p0092-01.png}}
 \caption{○ 电子}
 \end{figure}
 
@@ -3517,7 +3438,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={④ 质子}]{assets/chemistry-2/fig-p0092-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={④ 质子}]{assets/chemistry-2/fig-p0092-02.png}}
 \caption{④ 质子}
 \end{figure}
 
@@ -3525,7 +3446,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={中字}]{assets/chemistry-2/fig-p0092-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={中字}]{assets/chemistry-2/fig-p0092-03.png}}
 \caption{中字}
 \end{figure}
 
@@ -3602,7 +3523,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={H}]{assets/chemistry-2/fig-p0095-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={H}]{assets/chemistry-2/fig-p0095-01.png}}
 \caption{H}
 \end{figure}
 
@@ -3610,7 +3531,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={He}]{assets/chemistry-2/fig-p0095-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={He}]{assets/chemistry-2/fig-p0095-02.png}}
 \caption{He}
 \end{figure}
 
@@ -3618,7 +3539,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（c）}]{assets/chemistry-2/fig-p0095-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/chemistry-2/fig-p0095-03.png}}
 \caption{（c）}
 \end{figure}
 
@@ -3626,7 +3547,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={Na}]{assets/chemistry-2/fig-p0095-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={Na}]{assets/chemistry-2/fig-p0095-04.png}}
 \caption{Na}
 \end{figure}
 
@@ -3657,7 +3578,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·8 从氢到钾元素原子结构示意图}]{assets/chemistry-2/fig-p0096-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·8 从氢到钾元素原子结构示意图}]{assets/chemistry-2/fig-p0096-01.png}}
 \caption{图 3·8 从氢到钾元素原子结构示意图}
 \end{figure}
 
@@ -3680,7 +3601,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·9 惰性气体的原子结构示意图}]{assets/chemistry-2/fig-p0097-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·9 惰性气体的原子结构示意图}]{assets/chemistry-2/fig-p0097-01.png}}
 \caption{图 3·9 惰性气体的原子结构示意图}
 \end{figure}
 
@@ -3746,7 +3667,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·10 氯化钠分子形成示意图}]{assets/chemistry-2/fig-p0099-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·10 氯化钠分子形成示意图}]{assets/chemistry-2/fig-p0099-01.png}}
 \caption{图3·10 氯化钠分子形成示意图}
 \end{figure}
 
@@ -3758,7 +3679,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={钠与氯气反应时的电子转移}]{assets/chemistry-2/fig-p0100-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={钠与氯气反应时的电子转移}]{assets/chemistry-2/fig-p0100-01.png}}
 \caption{钠与氯气反应时的电子转移}
 \end{figure}
 
@@ -3824,7 +3745,7 @@ H\_2TeO\_4 \textbackslash) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={化学键分类示意图}]{assets/chemistry-2/fig-p0103-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={化学键分类示意图}]{assets/chemistry-2/fig-p0103-01.png}}
 \caption{化学键分类示意图}
 \end{figure}
 
@@ -3861,7 +3782,7 @@ H & 共用电子对偏向氯原子的一边，（极性键） & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={氯化钠中的离子键和共价键示意图}]{assets/chemistry-2/fig-p0104-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={氯化钠中的离子键和共价键示意图}]{assets/chemistry-2/fig-p0104-01.png}}
 \caption{氯化钠中的离子键和共价键示意图}
 \end{figure}
 
@@ -3874,7 +3795,7 @@ H & 共用电子对偏向氯原子的一边，（极性键） & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={氯化钠形成过程的电子层结构示意图}]{assets/chemistry-2/fig-p0104-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={氯化钠形成过程的电子层结构示意图}]{assets/chemistry-2/fig-p0104-02.png}}
 \caption{氯化钠形成过程的电子层结构示意图}
 \end{figure}
 
@@ -4290,7 +4211,7 @@ NaH 或 CaH₂
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={元素周期表中氯元素方格的含义}]{assets/chemistry-2/fig-p0116-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={元素周期表中氯元素方格的含义}]{assets/chemistry-2/fig-p0116-01.png}}
 \caption{元素周期表中氯元素方格的含义}
 \end{figure}
 
@@ -4407,7 +4328,7 @@ NaH 或 CaH₂
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={氯原子的电子层结构}]{assets/chemistry-2/fig-p0120-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={氯原子的电子层结构}]{assets/chemistry-2/fig-p0120-01.png}}
 \caption{氯原子的电子层结构}
 \end{figure}
 
@@ -4581,7 +4502,7 @@ R、R'、\ldots 代替）
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={元素原子结构与周期律关系示意图}]{assets/chemistry-2/fig-p0124-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={元素原子结构与周期律关系示意图}]{assets/chemistry-2/fig-p0124-01.png}}
 \caption{元素原子结构与周期律关系示意图}
 \end{figure}
 
@@ -4732,7 +4653,7 @@ R、R'、\ldots 代替）
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4·1 试验物质导电性的装置}]{assets/chemistry-2/fig-p0127-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4·1 试验物质导电性的装置}]{assets/chemistry-2/fig-p0127-01.png}}
 \caption{图 4·1 试验物质导电性的装置}
 \end{figure}
 
@@ -5288,7 +5209,7 @@ R、R'、\ldots 代替）
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4·2 在相同时间里，锌粒从盐酸里置换出的氢气比从醋酸里置换出的多}]{assets/chemistry-2/fig-p0142-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4·2 在相同时间里，锌粒从盐酸里置换出的氢气比从醋酸里置换出的多}]{assets/chemistry-2/fig-p0142-01.png}}
 \caption{图 4·2
 在相同时间里，锌粒从盐酸里置换出的氢气比从醋酸里置换出的多}
 \end{figure}
@@ -5965,7 +5886,7 @@ NaCl） 可以作为这一类盐的代表。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a） 没有通入电流时}]{assets/chemistry-2/fig-p0159-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a） 没有通入电流时}]{assets/chemistry-2/fig-p0159-01.png}}
 \caption{（a） 没有通入电流时}
 \end{figure}
 
@@ -6026,7 +5947,7 @@ NaCl） 可以作为这一类盐的代表。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4·4 电解氯化铜溶液的实验}]{assets/chemistry-2/fig-p0161-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4·4 电解氯化铜溶液的实验}]{assets/chemistry-2/fig-p0161-01.png}}
 \caption{图 4·4 电解氯化铜溶液的实验}
 \end{figure}
 
@@ -6086,7 +6007,7 @@ NaCl） 可以作为这一类盐的代表。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4·5 在铜匙上镀银}]{assets/chemistry-2/fig-p0163-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4·5 在铜匙上镀银}]{assets/chemistry-2/fig-p0163-01.png}}
 \caption{图4·5 在铜匙上镀银}
 \end{figure}
 
@@ -6182,7 +6103,7 @@ NaCl） 可以作为这一类盐的代表。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={物质的分子结构与导电性分类示意图}]{assets/chemistry-2/fig-p0164-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={物质的分子结构与导电性分类示意图}]{assets/chemistry-2/fig-p0164-02.png}}
 \caption{物质的分子结构与导电性分类示意图}
 \end{figure}
 
@@ -6220,7 +6141,7 @@ NaCl） 可以作为这一类盐的代表。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={电解质在电解池中的离子放电示意图}]{assets/chemistry-2/fig-p0165-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={电解质在电解池中的离子放电示意图}]{assets/chemistry-2/fig-p0165-01.png}}
 \caption{电解质在电解池中的离子放电示意图}
 \end{figure}
 
@@ -6346,7 +6267,7 @@ H\^{}\{+\} \textbackslash)离子一种）的一类电解质 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-6}]{assets/chemistry-2/fig-p0167-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-6}]{assets/chemistry-2/fig-p0167-01.png}}
 \caption{图4-6}
 \end{figure}
 
@@ -6607,7 +6528,7 @@ H\^{}\{+\} \textbackslash)离子一种）的一类电解质 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·1 由氨水制取氨气}]{assets/chemistry-2/fig-p0173-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·1 由氨水制取氨气}]{assets/chemistry-2/fig-p0173-01.png}}
 \caption{图 5·1 由氨水制取氨气}
 \end{figure}
 
@@ -6680,7 +6601,7 @@ H\^{}\{+\} \textbackslash)离子一种）的一类电解质 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·2 氨跟氯化氢反应}]{assets/chemistry-2/fig-p0175-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·2 氨跟氯化氢反应}]{assets/chemistry-2/fig-p0175-01.png}}
 \caption{图 5·2 氨跟氯化氢反应}
 \end{figure}
 
@@ -6729,7 +6650,7 @@ H\^{}\{+\} \textbackslash)离子一种）的一类电解质 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·3 实验室制氨的装置}]{assets/chemistry-2/fig-p0176-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·3 实验室制氨的装置}]{assets/chemistry-2/fig-p0176-01.png}}
 \caption{图 5·3 实验室制氨的装置}
 \end{figure}
 
@@ -6831,7 +6752,7 @@ H\^{}\{+\} \textbackslash)离子一种）的一类电解质 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·4 氯化铵的分解和合成}]{assets/chemistry-2/fig-p0178-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·4 氯化铵的分解和合成}]{assets/chemistry-2/fig-p0178-01.png}}
 \caption{图 5·4 氯化铵的分解和合成}
 \end{figure}
 
@@ -7089,7 +7010,7 @@ H\^{}\{+\} \textbackslash)离子一种）的一类电解质 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·5 合成法制氨的生产流程简图}]{assets/chemistry-2/fig-p0186-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·5 合成法制氨的生产流程简图}]{assets/chemistry-2/fig-p0186-01.png}}
 \caption{图 5·5 合成法制氨的生产流程简图}
 \end{figure}
 
@@ -7116,7 +7037,7 @@ CO、CO₂、H₂S、水蒸气等杂质， 必须把它们清除掉，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·6 氨的合成塔}]{assets/chemistry-2/fig-p0187-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·6 氨的合成塔}]{assets/chemistry-2/fig-p0187-01.png}}
 \caption{图5·6 氨的合成塔}
 \end{figure}
 
@@ -7203,7 +7124,7 @@ CO、CO₂、H₂S、水蒸气等杂质， 必须把它们清除掉，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·7 炭在浓硝酸里燃烧}]{assets/chemistry-2/fig-p0190-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·7 炭在浓硝酸里燃烧}]{assets/chemistry-2/fig-p0190-01.png}}
 \caption{图 5·7 炭在浓硝酸里燃烧}
 \end{figure}
 
@@ -7280,7 +7201,7 @@ CO、CO₂、H₂S、水蒸气等杂质， 必须把它们清除掉，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·8 实验室制硝酸的装置}]{assets/chemistry-2/fig-p0192-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·8 实验室制硝酸的装置}]{assets/chemistry-2/fig-p0192-01.png}}
 \caption{图 5·8 实验室制硝酸的装置}
 \end{figure}
 
@@ -7429,7 +7350,7 @@ CO、CO₂、H₂S、水蒸气等杂质， 必须把它们清除掉，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·9 合成法制硝酸的生产流程简图}]{assets/chemistry-2/fig-p0196-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·9 合成法制硝酸的生产流程简图}]{assets/chemistry-2/fig-p0196-01.png}}
 \caption{图 5·9 合成法制硝酸的生产流程简图}
 \end{figure}
 
@@ -7451,7 +7372,7 @@ CO、CO₂、H₂S、水蒸气等杂质， 必须把它们清除掉，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·10 氨的接触氧化器}]{assets/chemistry-2/fig-p0197-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·10 氨的接触氧化器}]{assets/chemistry-2/fig-p0197-01.png}}
 \caption{图 5·10 氨的接触氧化器}
 \end{figure}
 
@@ -7999,13 +7920,13 @@ CO、CO₂、H₂S、水蒸气等杂质， 必须把它们清除掉，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={氮及其化合物相互转化关系}]{assets/chemistry-2/fig-p0211-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={氮及其化合物相互转化关系}]{assets/chemistry-2/fig-p0211-01.png}}
 \caption{氮及其化合物相互转化关系}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={磷及其化合物相互转化关系}]{assets/chemistry-2/fig-p0211-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={磷及其化合物相互转化关系}]{assets/chemistry-2/fig-p0211-02.png}}
 \caption{磷及其化合物相互转化关系}
 \end{figure}
 
@@ -8459,7 +8380,7 @@ PbO（氧化铅）代替
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 6·1 水泥回转窑示意图}]{assets/chemistry-2/fig-p0223-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 6·1 水泥回转窑示意图}]{assets/chemistry-2/fig-p0223-01.png}}
 \caption{图 6·1 水泥回转窑示意图}
 \end{figure}
 
@@ -8633,7 +8554,7 @@ PbO（氧化铅）代替
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6·2 光线通过溶液（a）和胶体溶液（b）}]{assets/chemistry-2/fig-p0229-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6·2 光线通过溶液（a）和胶体溶液（b）}]{assets/chemistry-2/fig-p0229-01.png}}
 \caption{图6·2 光线通过溶液（a）和胶体溶液（b）}
 \end{figure}
 
@@ -8750,7 +8671,7 @@ PbO（氧化铅）代替
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={陶瓷制造流程}]{assets/chemistry-2/fig-p0232-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={陶瓷制造流程}]{assets/chemistry-2/fig-p0232-01.png}}
 \caption{陶瓷制造流程}
 \end{figure}
 
@@ -8762,7 +8683,7 @@ PbO（氧化铅）代替
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={水泥制造流程}]{assets/chemistry-2/fig-p0232-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={水泥制造流程}]{assets/chemistry-2/fig-p0232-02.png}}
 \caption{水泥制造流程}
 \end{figure}
 
@@ -8770,7 +8691,7 @@ PbO（氧化铅）代替
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={玻璃制造流程}]{assets/chemistry-2/fig-p0232-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={玻璃制造流程}]{assets/chemistry-2/fig-p0232-03.png}}
 \caption{玻璃制造流程}
 \end{figure}
 
@@ -9293,7 +9214,7 @@ K+ & & & & & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附1 氯气的制取}]{assets/chemistry-2/fig-p0240-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附1 氯气的制取}]{assets/chemistry-2/fig-p0240-01.png}}
 \caption{图附1 氯气的制取}
 \end{figure}
 
@@ -9411,7 +9332,7 @@ III 图附 36）。装配好后，检查一下这个发生器是否漏气。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附 2 氯化氢气体的制取}]{assets/chemistry-2/fig-p0242-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附 2 氯化氢气体的制取}]{assets/chemistry-2/fig-p0242-01.png}}
 \caption{图附 2 氯化氢气体的制取}
 \end{figure}
 
@@ -9653,7 +9574,7 @@ H\_2SO\_4 \textbackslash)逐渐注入5体积水稀释而得） & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附 3 简单的导电性试验器}]{assets/chemistry-2/fig-p0246-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附 3 简单的导电性试验器}]{assets/chemistry-2/fig-p0246-01.png}}
 \caption{图附 3 简单的导电性试验器}
 \end{figure}
 
@@ -10124,4 +10045,3 @@ H\_2SO\_4 \textbackslash)逐渐注入5体积水稀释而得） & \\
 \item
   98\%。
 \end{enumerate}
-\end{document}

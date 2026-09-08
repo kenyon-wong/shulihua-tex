@@ -30,13 +30,13 @@
 
 ## 公式
 
-本分支 PDF 由 XeLaTeX 从 `tex/books` 构建。不要对公式区域执行全角标点替换。修改公式后抽检对应 PDF 页。Markdown 对照稿有上游更新时，先 `make md-to-tex` 再审阅 TeX，不要只改 Markdown。
+本分支 PDF 由 XeLaTeX/CTeX（TinyTeX）从 `tex/style` + `tex/books` 构建，不经过 Pandoc。不要对公式区域执行全角标点替换。修改公式后抽检对应 PDF 页。Markdown 只作对照，上游更新应手工或按章并入 TeX 正文。
 
 ## PDF
 
 规范正文仍是 `books/` 中的 Markdown，不要改写成 `.tex`。PDF 模板与封面位于 `tex/`。
 
-1. 分册由 `scripts/build_pdfs.py` 调用 Pandoc + XeLaTeX 生成；
+1. 分册由 `scripts/build_pdfs.py` 用 XeLaTeX/CTeX 套 `tex/style` 后编译 `tex/books` 正文；不使用 Pandoc。
 2. 合订本由已通过校验的分册 PDF 按 `catalog.json` 中 `collections` 装订，页码按册重起；
 3. 中文字体固定为 TeX Live / TinyTeX 自带的 Fandol，不要改用本机系统字体；
 4. 缺少宏包时运行 `make tex-deps`；合订装订需要 PyPDF2 3.x。
@@ -53,7 +53,7 @@
 
 ## 生成物
 
-- `.build/`：Pandoc 中间文件与 XeLaTeX 工作目录
+- `.build/`：XeLaTeX 工作目录
 - `dist/`：PDF 输出
 - `reports/*.json`：动态审计结果
 

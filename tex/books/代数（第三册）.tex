@@ -1,82 +1,3 @@
-\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
-\usepackage[
-  b5paper,
-  hmargin=2.2cm,
-  top=1.6cm,
-  bottom=2.2cm,
-  headheight=22pt,
-  headsep=14pt,
-  footskip=16mm,
-  includehead
-]{geometry}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
-\usepackage{float}
-\xeCJKsetup{CJKmath=true}
-\usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
-
-\setcounter{secnumdepth}{-\maxdimen}
-\setlength{\emergencystretch}{3em}
-\graphicspath{{books/}}
-
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi
-}
-\def\fps@figure{htbp}
-\makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\hypersetup{
-  hidelinks,
-  pdflang={zh-CN},
-  pdftitle={代数（第三册）},
-  pdfauthor={数理化自学丛书编委会},
-  pdfcreator={XeLaTeX via pandoc}
-}
-
-\title{代数（第三册）}
-\author{数理化自学丛书编委会}
-\date{}
-
-\begin{document}
-\frontmatter
-\maketitle
-\renewcommand*\contentsname{目录}
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\mainmatter
 \textbf{丛书：} 数理化自学丛书\\
 \textbf{编者：} 数理化自学丛书编委会\\
 \textbf{出版社：} 上海科学技术出版社
@@ -827,7 +748,7 @@ N \subset J \subset Q \subset R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·1}]{assets/algebra-3/fig-p0014-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·1}]{assets/algebra-3/fig-p0014-01.png}}
 \caption{图1·1}
 \end{figure}
 
@@ -955,7 +876,7 @@ A \cap B = \{x | x \in A \text{且} x \in B \}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-2}]{assets/algebra-3/fig-p0016-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-2}]{assets/algebra-3/fig-p0016-01.png}}
 \caption{图1-2}
 \end{figure}
 
@@ -983,7 +904,7 @@ Q 点）来表示。\(A \cap B\)是由一切比 -2 大同时又比 3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.3}]{assets/algebra-3/fig-p0016-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.3}]{assets/algebra-3/fig-p0016-02.png}}
 \caption{图1.3}
 \end{figure}
 
@@ -1021,7 +942,7 @@ A \cup A = A, A \cup \emptyset = A.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-4}]{assets/algebra-3/fig-p0017-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-4}]{assets/algebra-3/fig-p0017-01.png}}
 \caption{图1-4}
 \end{figure}
 
@@ -1063,7 +984,7 @@ A \cup A = A, A \cup \emptyset = A.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.5}]{assets/algebra-3/fig-p0018-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.5}]{assets/algebra-3/fig-p0018-01.png}}
 \caption{图1.5}
 \end{figure}
 
@@ -1165,7 +1086,7 @@ C = \{(x, y) | x^{2} + 4 y^{2} = 5 \},
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-6}]{assets/algebra-3/fig-p0020-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-6}]{assets/algebra-3/fig-p0020-01.png}}
 \caption{图1-6}
 \end{figure}
 
@@ -1259,25 +1180,25 @@ A = \{1, 3, 5, 7, 9 \}, \quad B = \{3, 6, 9 \}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/algebra-3/fig-p0021-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/algebra-3/fig-p0021-01.png}}
 \caption{图示（原PDF第21页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/algebra-3/fig-p0021-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/algebra-3/fig-p0021-02.png}}
 \caption{图示（原PDF第21页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/algebra-3/fig-p0021-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/algebra-3/fig-p0021-03.png}}
 \caption{图示（原PDF第21页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/algebra-3/fig-p0021-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/algebra-3/fig-p0021-04.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -1387,7 +1308,7 @@ I = A, \text{则} \overline {{A}} = \emptyset.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-01.png}}
 \caption{图示（原PDF第23页）}
 \end{figure}
 
@@ -1395,7 +1316,7 @@ I = A, \text{则} \overline {{A}} = \emptyset.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-02.png}}
 \caption{图示（原PDF第23页）}
 \end{figure}
 
@@ -1411,7 +1332,7 @@ I = A, \text{则} \overline {{A}} = \emptyset.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-03.png}}
 \caption{图示（原PDF第23页）}
 \end{figure}
 
@@ -1419,7 +1340,7 @@ I = A, \text{则} \overline {{A}} = \emptyset.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第23页）}]{assets/algebra-3/fig-p0023-04.png}}
 \caption{图示（原PDF第23页）}
 \end{figure}
 
@@ -2050,7 +1971,7 @@ x \leqslant - 1 \quad \text{或} \quad x \geqslant 1
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/algebra-3/fig-p0035-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/algebra-3/fig-p0035-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -2058,7 +1979,7 @@ x \leqslant - 1 \quad \text{或} \quad x \geqslant 1
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/algebra-3/fig-p0035-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/algebra-3/fig-p0035-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -2192,7 +2113,7 @@ x^{2} + (2 k + 1) x + k^{2} + 1 = 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·2}]{assets/algebra-3/fig-p0038-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·2}]{assets/algebra-3/fig-p0038-01.png}}
 \caption{图2·2}
 \end{figure}
 
@@ -2223,7 +2144,7 @@ x^{2} + (2 k + 1) x + k^{2} + 1 = 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.3}]{assets/algebra-3/fig-p0039-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.3}]{assets/algebra-3/fig-p0039-01.png}}
 \caption{图2.3}
 \end{figure}
 
@@ -2262,7 +2183,7 @@ x > 5, \tag {4}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.4}]{assets/algebra-3/fig-p0039-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.4}]{assets/algebra-3/fig-p0039-02.png}}
 \caption{图2.4}
 \end{figure}
 
@@ -2293,7 +2214,7 @@ x > 5, \tag {4}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.5}]{assets/algebra-3/fig-p0040-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.5}]{assets/algebra-3/fig-p0040-01.png}}
 \caption{图2.5}
 \end{figure}
 
@@ -2322,7 +2243,7 @@ x > 5, \tag {4}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·6}]{assets/algebra-3/fig-p0041-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·6}]{assets/algebra-3/fig-p0041-01.png}}
 \caption{图2·6}
 \end{figure}
 
@@ -2414,7 +2335,7 @@ x > 5, \tag {4}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-7}]{assets/algebra-3/fig-p0043-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-7}]{assets/algebra-3/fig-p0043-01.png}}
 \caption{图2-7}
 \end{figure}
 
@@ -2434,7 +2355,7 @@ x > 5, \tag {4}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-8}]{assets/algebra-3/fig-p0043-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-8}]{assets/algebra-3/fig-p0043-02.png}}
 \caption{图2-8}
 \end{figure}
 
@@ -2450,7 +2371,7 @@ x > 5, \tag {4}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-9}]{assets/algebra-3/fig-p0044-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-9}]{assets/algebra-3/fig-p0044-01.png}}
 \caption{图2-9}
 \end{figure}
 
@@ -2599,7 +2520,7 @@ a < x < b
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.10}]{assets/algebra-3/fig-p0047-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.10}]{assets/algebra-3/fig-p0047-01.png}}
 \caption{图2.10}
 \end{figure}
 
@@ -2624,7 +2545,7 @@ a < x \leqslant b \quad \text{或者} \quad a \leqslant x < b
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.12}]{assets/algebra-3/fig-p0047-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.12}]{assets/algebra-3/fig-p0047-02.png}}
 \caption{图2.12}
 \end{figure}
 
@@ -2636,7 +2557,7 @@ a < x \leqslant b \quad \text{或者} \quad a \leqslant x < b
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={数轴上的左闭右开区间（含 a，不含 b）}]{assets/algebra-3/fig-p0047-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={数轴上的左闭右开区间（含 a，不含 b）}]{assets/algebra-3/fig-p0047-03.png}}
 \caption{数轴上的左闭右开区间（含 a，不含 b）}
 \end{figure}
 
@@ -2656,7 +2577,7 @@ a < x \leqslant b \quad \text{或者} \quad a \leqslant x < b
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={表示全体实数的数轴}]{assets/algebra-3/fig-p0047-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={表示全体实数的数轴}]{assets/algebra-3/fig-p0047-04.png}}
 \caption{表示全体实数的数轴}
 \end{figure}
 
@@ -2694,13 +2615,13 @@ a \leqslant x < + \infty
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/algebra-3/fig-p0048-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/algebra-3/fig-p0048-01.png}}
 \caption{图示（原PDF第48页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-15}]{assets/algebra-3/fig-p0048-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-15}]{assets/algebra-3/fig-p0048-02.png}}
 \caption{图2-15}
 \end{figure}
 
@@ -2895,7 +2816,7 @@ x^{2} - 7 x + 12 = (x - 3) (x - 4).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-16}]{assets/algebra-3/fig-p0051-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-16}]{assets/algebra-3/fig-p0051-01.png}}
 \caption{图2-16}
 \end{figure}
 
@@ -3370,7 +3291,7 @@ x^{2} + x + 1 = \left(x + \frac{1}{2}\right)^{2} - \frac{1}{4} + 1 = \left(x + \
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-17}]{assets/algebra-3/fig-p0059-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-17}]{assets/algebra-3/fig-p0059-01.png}}
 \caption{图2-17}
 \end{figure}
 
@@ -3396,7 +3317,7 @@ x^{2} + x + 1 = \left(x + \frac{1}{2}\right)^{2} - \frac{1}{4} + 1 = \left(x + \
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.18}]{assets/algebra-3/fig-p0059-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.18}]{assets/algebra-3/fig-p0059-02.png}}
 \caption{图2.18}
 \end{figure}
 
@@ -3454,7 +3375,7 @@ x^{2} + x + 1 = \left(x + \frac{1}{2}\right)^{2} - \frac{1}{4} + 1 = \left(x + \
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-19}]{assets/algebra-3/fig-p0060-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-19}]{assets/algebra-3/fig-p0060-02.png}}
 \caption{图2-19}
 \end{figure}
 
@@ -3470,7 +3391,7 @@ x^{2} + x + 1 = \left(x + \frac{1}{2}\right)^{2} - \frac{1}{4} + 1 = \left(x + \
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-20}]{assets/algebra-3/fig-p0061-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-20}]{assets/algebra-3/fig-p0061-01.png}}
 \caption{图2-20}
 \end{figure}
 
@@ -3493,7 +3414,7 @@ x^{2} + x + 1 = \left(x + \frac{1}{2}\right)^{2} - \frac{1}{4} + 1 = \left(x + \
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.21}]{assets/algebra-3/fig-p0061-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.21}]{assets/algebra-3/fig-p0061-02.png}}
 \caption{图2.21}
 \end{figure}
 
@@ -5089,7 +5010,7 @@ ax^2+bx+c=0 \quad (a \neq 0)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·22}]{assets/algebra-3/fig-p0089-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·22}]{assets/algebra-3/fig-p0089-01.png}}
 \caption{图2·22}
 \end{figure}
 
@@ -5222,7 +5143,7 @@ S = x y + \frac{\pi}{4}x^2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/algebra-3/fig-p0091-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/algebra-3/fig-p0091-01.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -5250,7 +5171,7 @@ S = x y + \frac{\pi}{4}x^2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.23}]{assets/algebra-3/fig-p0092-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.23}]{assets/algebra-3/fig-p0092-01.png}}
 \caption{图2.23}
 \end{figure}
 
@@ -5348,7 +5269,7 @@ x < - \frac{1}{2} \quad \text{或} \quad x > \frac{3}{4}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.24}]{assets/algebra-3/fig-p0094-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.24}]{assets/algebra-3/fig-p0094-01.png}}
 \caption{图2.24}
 \end{figure}
 
@@ -5387,7 +5308,7 @@ x < - \frac{1}{2} \quad \text{或} \quad x > \frac{3}{4}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·25}]{assets/algebra-3/fig-p0094-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·25}]{assets/algebra-3/fig-p0094-02.png}}
 \caption{图2·25}
 \end{figure}
 
@@ -6718,7 +6639,7 @@ s 也随着在正数集里有一个确定的值和它对应（图 3·2）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.1}]{assets/algebra-3/fig-p0115-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.1}]{assets/algebra-3/fig-p0115-01.png}}
 \caption{图3.1}
 \end{figure}
 
@@ -6730,7 +6651,7 @@ s 也随着在正数集里有一个确定的值和它对应（图 3·2）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-2}]{assets/algebra-3/fig-p0115-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-2}]{assets/algebra-3/fig-p0115-02.png}}
 \caption{图3-2}
 \end{figure}
 
@@ -7179,7 +7100,7 @@ y & ..。 & 4 & \(\frac{9}{4}\) & 1 & \(\frac{1}{4}\) & 0 &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·3}]{assets/algebra-3/fig-p0123-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·3}]{assets/algebra-3/fig-p0123-01.png}}
 \caption{图3·3}
 \end{figure}
 
@@ -7193,7 +7114,7 @@ y & ..。 & 4 & \(\frac{9}{4}\) & 1 & \(\frac{1}{4}\) & 0 &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-4}]{assets/algebra-3/fig-p0123-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-4}]{assets/algebra-3/fig-p0123-02.png}}
 \caption{图3-4}
 \end{figure}
 
@@ -7230,7 +7151,7 @@ G (0, 1.5), H \left(0, - \frac{4}{3}\right).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.5}]{assets/algebra-3/fig-p0124-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.5}]{assets/algebra-3/fig-p0124-01.png}}
 \caption{图3.5}
 \end{figure}
 
@@ -7245,7 +7166,7 @@ G (0, 1.5), H \left(0, - \frac{4}{3}\right).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·8}]{assets/algebra-3/fig-p0125-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·8}]{assets/algebra-3/fig-p0125-01.png}}
 \caption{图3·8}
 \end{figure}
 
@@ -7276,7 +7197,7 @@ G (0, 1.5), H \left(0, - \frac{4}{3}\right).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-7}]{assets/algebra-3/fig-p0126-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-7}]{assets/algebra-3/fig-p0126-01.png}}
 \caption{图3-7}
 \end{figure}
 
@@ -7365,7 +7286,7 @@ E (\pi, \sqrt{2}); F (\sqrt{3}, - 1); G (\sqrt{2}, 0); E (0, \pi).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第128页）}]{assets/algebra-3/fig-p0128-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第128页）}]{assets/algebra-3/fig-p0128-01.png}}
 \caption{图示（原PDF第128页）}
 \end{figure}
 
@@ -7504,7 +7425,7 @@ y = x^{2} \quad (1.000 \leqslant x \leqslant 9.999)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-8}]{assets/algebra-3/fig-p0131-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-8}]{assets/algebra-3/fig-p0131-01.png}}
 \caption{图3-8}
 \end{figure}
 
@@ -7540,7 +7461,7 @@ y = x^{2} \quad (1.000 \leqslant x \leqslant 9.999)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={§3·5 正比例函数}]{assets/algebra-3/fig-p0132-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={§3·5 正比例函数}]{assets/algebra-3/fig-p0132-01.png}}
 \caption{§3·5 正比例函数}
 \end{figure}
 
@@ -7560,7 +7481,7 @@ W = 7.8 V,
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第133页）}]{assets/algebra-3/fig-p0133-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第133页）}]{assets/algebra-3/fig-p0133-01.png}}
 \caption{图示（原PDF第133页）}
 \end{figure}
 
@@ -7598,7 +7519,7 @@ v = - 40 \text{ 公里 / 小时 }.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-9}]{assets/algebra-3/fig-p0134-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-9}]{assets/algebra-3/fig-p0134-01.png}}
 \caption{图3-9}
 \end{figure}
 
@@ -7773,7 +7694,7 @@ y & ..。 & 6 & 4 & 2 & 0 & -2 & -4 & -6 & ..。 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·10}]{assets/algebra-3/fig-p0136-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·10}]{assets/algebra-3/fig-p0136-01.png}}
 \caption{图3·10}
 \end{figure}
 
@@ -7787,7 +7708,7 @@ y & ..。 & 6 & 4 & 2 & 0 & -2 & -4 & -6 & ..。 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-11}]{assets/algebra-3/fig-p0136-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-11}]{assets/algebra-3/fig-p0136-02.png}}
 \caption{图3-11}
 \end{figure}
 
@@ -7810,7 +7731,7 @@ y & ..。 & 6 & 4 & 2 & 0 & -2 & -4 & -6 & ..。 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-12}]{assets/algebra-3/fig-p0137-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-12}]{assets/algebra-3/fig-p0137-01.png}}
 \caption{图3-12}
 \end{figure}
 
@@ -7860,7 +7781,7 @@ T V = k \cdot O T
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·13}]{assets/algebra-3/fig-p0138-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·13}]{assets/algebra-3/fig-p0138-01.png}}
 \caption{图3·13}
 \end{figure}
 
@@ -7888,13 +7809,13 @@ T P \cdot T V.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第139页）}]{assets/algebra-3/fig-p0139-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第139页）}]{assets/algebra-3/fig-p0139-01.png}}
 \caption{图示（原PDF第139页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-14}]{assets/algebra-3/fig-p0139-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-14}]{assets/algebra-3/fig-p0139-02.png}}
 \caption{图3-14}
 \end{figure}
 
@@ -7973,7 +7894,7 @@ s（公里） & & & & & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-15}]{assets/algebra-3/fig-p0140-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-15}]{assets/algebra-3/fig-p0140-01.png}}
 \caption{图3-15}
 \end{figure}
 
@@ -7994,7 +7915,7 @@ s（公里） & & & & & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-16}]{assets/algebra-3/fig-p0141-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-16}]{assets/algebra-3/fig-p0141-01.png}}
 \caption{图3-16}
 \end{figure}
 
@@ -8016,13 +7937,13 @@ s（公里） & & & & & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第142页）}]{assets/algebra-3/fig-p0142-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第142页）}]{assets/algebra-3/fig-p0142-01.png}}
 \caption{图示（原PDF第142页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-17}]{assets/algebra-3/fig-p0142-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-17}]{assets/algebra-3/fig-p0142-02.png}}
 \caption{图3-17}
 \end{figure}
 
@@ -8253,7 +8174,7 @@ y & ..。 & ..。 & -1.2 & -\ldots5 & -2 & -3 & -4 & 6 & 3 & 2 & 1.5 & 1.2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-18}]{assets/algebra-3/fig-p0146-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-18}]{assets/algebra-3/fig-p0146-01.png}}
 \caption{图3-18}
 \end{figure}
 
@@ -8268,7 +8189,7 @@ y & ..。 & ..。 & -1.2 & -\ldots5 & -2 & -3 & -4 & 6 & 3 & 2 & 1.5 & 1.2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·19}]{assets/algebra-3/fig-p0147-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·19}]{assets/algebra-3/fig-p0147-01.png}}
 \caption{图3·19}
 \end{figure}
 
@@ -8276,7 +8197,7 @@ y & ..。 & ..。 & -1.2 & -\ldots5 & -2 & -3 & -4 & 6 & 3 & 2 & 1.5 & 1.2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·20}]{assets/algebra-3/fig-p0147-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·20}]{assets/algebra-3/fig-p0147-02.png}}
 \caption{图3·20}
 \end{figure}
 
@@ -8855,7 +8776,7 @@ x & ..。 & -3 & -2 & -1 & 0 & 1 & 2 & 3 & ..。 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-1}]{assets/algebra-3/fig-p0156-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-1}]{assets/algebra-3/fig-p0156-01.png}}
 \caption{图4-1}
 \end{figure}
 
@@ -8883,13 +8804,13 @@ y = k x + b.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第157页）}]{assets/algebra-3/fig-p0157-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第157页）}]{assets/algebra-3/fig-p0157-01.png}}
 \caption{图示（原PDF第157页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.2}]{assets/algebra-3/fig-p0157-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.2}]{assets/algebra-3/fig-p0157-02.png}}
 \caption{图4.2}
 \end{figure}
 
@@ -8939,7 +8860,7 @@ y = k x + b.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.3}]{assets/algebra-3/fig-p0158-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.3}]{assets/algebra-3/fig-p0158-01.png}}
 \caption{图4.3}
 \end{figure}
 
@@ -9198,7 +9119,7 @@ y = \frac{1}{2} x + \frac{3}{2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-4}]{assets/algebra-3/fig-p0162-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-4}]{assets/algebra-3/fig-p0162-01.png}}
 \caption{图4-4}
 \end{figure}
 
@@ -9342,7 +9263,7 @@ x - 0 y - \frac{c}{a}. \tag {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-5}]{assets/algebra-3/fig-p0165-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-5}]{assets/algebra-3/fig-p0165-01.png}}
 \caption{图4-5}
 \end{figure}
 
@@ -9350,7 +9271,7 @@ x - 0 y - \frac{c}{a}. \tag {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-6}]{assets/algebra-3/fig-p0165-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-6}]{assets/algebra-3/fig-p0165-02.png}}
 \caption{图4-6}
 \end{figure}
 
@@ -9372,13 +9293,13 @@ x - 0 y - \frac{c}{a}. \tag {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第166页）}]{assets/algebra-3/fig-p0166-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第166页）}]{assets/algebra-3/fig-p0166-01.png}}
 \caption{图示（原PDF第166页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-7}]{assets/algebra-3/fig-p0166-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-7}]{assets/algebra-3/fig-p0166-02.png}}
 \caption{图4-7}
 \end{figure}
 
@@ -9464,7 +9385,7 @@ y & -1 & \(1\frac{1}{3}\) \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.8}]{assets/algebra-3/fig-p0167-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.8}]{assets/algebra-3/fig-p0167-01.png}}
 \caption{图4.8}
 \end{figure}
 
@@ -9694,7 +9615,7 @@ A = \pi r^{2}. \tag {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-9}]{assets/algebra-3/fig-p0171-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-9}]{assets/algebra-3/fig-p0171-01.png}}
 \caption{图4-9}
 \end{figure}
 
@@ -9757,7 +9678,7 @@ x & y \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-10}]{assets/algebra-3/fig-p0172-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-10}]{assets/algebra-3/fig-p0172-01.png}}
 \caption{图4-10}
 \end{figure}
 
@@ -9866,7 +9787,7 @@ y=\(\frac{1}{2}\)x2 & ..。 & 2 & \(\frac{9}{8}\) & \(\frac{1}{2}\) & 0 &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.11}]{assets/algebra-3/fig-p0174-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.11}]{assets/algebra-3/fig-p0174-01.png}}
 \caption{图4.11}
 \end{figure}
 
@@ -9932,7 +9853,7 @@ y=-x2 & ..。 & -4 & \(-\frac{9}{4}\) & -1 & 0 & -1 & \(-\frac{9}{4}\) &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-12}]{assets/algebra-3/fig-p0175-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-12}]{assets/algebra-3/fig-p0175-01.png}}
 \caption{图4-12}
 \end{figure}
 
@@ -10028,7 +9949,7 @@ y = a x^{2} \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.14}]{assets/algebra-3/fig-p0177-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.14}]{assets/algebra-3/fig-p0177-01.png}}
 \caption{图4.14}
 \end{figure}
 
@@ -10089,7 +10010,7 @@ y = \frac{1}{2} x^{2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.15}]{assets/algebra-3/fig-p0178-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.15}]{assets/algebra-3/fig-p0178-01.png}}
 \caption{图4.15}
 \end{figure}
 
@@ -10292,7 +10213,7 @@ y = x^{2} - x + 2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-18}]{assets/algebra-3/fig-p0181-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-18}]{assets/algebra-3/fig-p0181-01.png}}
 \caption{图4-18}
 \end{figure}
 
@@ -10384,7 +10305,7 @@ x & y \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-17}]{assets/algebra-3/fig-p0182-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-17}]{assets/algebra-3/fig-p0182-01.png}}
 \caption{图4-17}
 \end{figure}
 
@@ -10548,7 +10469,7 @@ y = - 2 x^{2} + 8 x - 5.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-18}]{assets/algebra-3/fig-p0185-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-18}]{assets/algebra-3/fig-p0185-01.png}}
 \caption{图4-18}
 \end{figure}
 
@@ -10631,7 +10552,7 @@ y = - 2 c^{2} + 8 x - 5.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第186页）}]{assets/algebra-3/fig-p0186-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第186页）}]{assets/algebra-3/fig-p0186-01.png}}
 \caption{图示（原PDF第186页）}
 \end{figure}
 
@@ -10652,7 +10573,7 @@ y = - 2 c^{2} + 8 x - 5.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-19}]{assets/algebra-3/fig-p0186-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-19}]{assets/algebra-3/fig-p0186-02.png}}
 \caption{图4-19}
 \end{figure}
 
@@ -10660,7 +10581,7 @@ y = - 2 c^{2} + 8 x - 5.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-20}]{assets/algebra-3/fig-p0186-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-20}]{assets/algebra-3/fig-p0186-03.png}}
 \caption{图4-20}
 \end{figure}
 
@@ -10806,7 +10727,7 @@ y = x (36 - 2 x) (\text{ 平 方 米 }).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.21}]{assets/algebra-3/fig-p0190-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.21}]{assets/algebra-3/fig-p0190-01.png}}
 \caption{图4.21}
 \end{figure}
 
@@ -10814,7 +10735,7 @@ y = x (36 - 2 x) (\text{ 平 方 米 }).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.22}]{assets/algebra-3/fig-p0190-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.22}]{assets/algebra-3/fig-p0190-02.png}}
 \caption{图4.22}
 \end{figure}
 
@@ -10859,7 +10780,7 @@ y = \frac{6 - \pi x - 2 x}{2} \cdot 2 x + \frac{1}{2} \pi x^{2},
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-23}]{assets/algebra-3/fig-p0191-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-23}]{assets/algebra-3/fig-p0191-01.png}}
 \caption{图4-23}
 \end{figure}
 
@@ -10914,7 +10835,7 @@ t = \frac{11600}{3712} = 3 \frac{1}{8}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第192页）}]{assets/algebra-3/fig-p0192-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第192页）}]{assets/algebra-3/fig-p0192-02.png}}
 \caption{图示（原PDF第192页）}
 \end{figure}
 
@@ -10929,7 +10850,7 @@ t = \frac{11600}{3712} = 3 \frac{1}{8}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第193页）}]{assets/algebra-3/fig-p0193-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第193页）}]{assets/algebra-3/fig-p0193-01.png}}
 \caption{图示（原PDF第193页）}
 \end{figure}
 
@@ -10966,7 +10887,7 @@ y = a x^{2} + b x + c \quad (a \neq 0)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1) \textbackslash frac\{4ac - b\^{}2\}\{4a\} \textgreater{} 0}]{assets/algebra-3/fig-p0194-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1) \textbackslash frac\{4ac - b\^{}2\}\{4a\} \textgreater{} 0}]{assets/algebra-3/fig-p0194-01.png}}
 \caption{(1) \(\frac{4ac - b^2}{4a} > 0\)}
 \end{figure}
 
@@ -10974,7 +10895,7 @@ y = a x^{2} + b x + c \quad (a \neq 0)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2) \textbackslash frac\{4ac - b\^{}2\}\{4a\} = 0}]{assets/algebra-3/fig-p0194-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2) \textbackslash frac\{4ac - b\^{}2\}\{4a\} = 0}]{assets/algebra-3/fig-p0194-02.png}}
 \caption{(2) \(\frac{4ac - b^2}{4a} = 0\)}
 \end{figure}
 
@@ -10982,7 +10903,7 @@ y = a x^{2} + b x + c \quad (a \neq 0)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3) \textbackslash frac\{4ac - b\^{}2\}\{4a\} \textless{} 0}]{assets/algebra-3/fig-p0194-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3) \textbackslash frac\{4ac - b\^{}2\}\{4a\} \textless{} 0}]{assets/algebra-3/fig-p0194-03.png}}
 \caption{(3) \(\frac{4ac - b^2}{4a} < 0\)}
 \end{figure}
 
@@ -11050,7 +10971,7 @@ A 点的横坐标\(x_{1} \approx -0.7\)，B 点的横坐标\(x_{2} \approx 2.7\)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-25}]{assets/algebra-3/fig-p0196-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-25}]{assets/algebra-3/fig-p0196-01.png}}
 \caption{图4-25}
 \end{figure}
 
@@ -11058,7 +10979,7 @@ A 点的横坐标\(x_{1} \approx -0.7\)，B 点的横坐标\(x_{2} \approx 2.7\)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-26}]{assets/algebra-3/fig-p0196-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-26}]{assets/algebra-3/fig-p0196-02.png}}
 \caption{图4-26}
 \end{figure}
 
@@ -11724,7 +11645,7 @@ a x + b y + c > 0 \quad \text{或} \quad a x + b y + c < 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-1}]{assets/algebra-3/fig-p0207-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-1}]{assets/algebra-3/fig-p0207-01.png}}
 \caption{图5-1}
 \end{figure}
 
@@ -11732,7 +11653,7 @@ a x + b y + c > 0 \quad \text{或} \quad a x + b y + c < 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-2}]{assets/algebra-3/fig-p0207-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-2}]{assets/algebra-3/fig-p0207-02.png}}
 \caption{图5-2}
 \end{figure}
 
@@ -11772,7 +11693,7 @@ A 中的每一个元素，B 中都有唯一的元素和它对应，所以这是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.3}]{assets/algebra-3/fig-p0208-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.3}]{assets/algebra-3/fig-p0208-01.png}}
 \caption{图5.3}
 \end{figure}
 
@@ -11780,7 +11701,7 @@ A 中的每一个元素，B 中都有唯一的元素和它对应，所以这是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.4}]{assets/algebra-3/fig-p0208-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.4}]{assets/algebra-3/fig-p0208-02.png}}
 \caption{图5.4}
 \end{figure}
 
@@ -11806,7 +11727,7 @@ A 的每一元素都有 B 中的唯一元素与它对应，所以这是从集合
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.5}]{assets/algebra-3/fig-p0209-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.5}]{assets/algebra-3/fig-p0209-01.png}}
 \caption{图5.5}
 \end{figure}
 
@@ -11825,7 +11746,7 @@ A 的每一元素都有 B 中的唯一元素和它对应，所以这是从集合
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-6}]{assets/algebra-3/fig-p0209-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-6}]{assets/algebra-3/fig-p0209-02.png}}
 \caption{图5-6}
 \end{figure}
 
@@ -11854,7 +11775,7 @@ f: x \rightarrow 2 x = y
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第210页）}]{assets/algebra-3/fig-p0210-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第210页）}]{assets/algebra-3/fig-p0210-01.png}}
 \caption{图示（原PDF第210页）}
 \end{figure}
 
@@ -11864,7 +11785,7 @@ g: y \rightarrow \frac{1}{2} y = x
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.7}]{assets/algebra-3/fig-p0210-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.7}]{assets/algebra-3/fig-p0210-02.png}}
 \caption{图5.7}
 \end{figure}
 
@@ -11942,7 +11863,7 @@ h^{- 1}: y \rightarrow \sqrt{y} = x (y \in \{y | y \geqslant 0 \}, x \in \{x | x
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/algebra-3/fig-p0212-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/algebra-3/fig-p0212-01.png}}
 \caption{(3)}
 \end{figure}
 
@@ -11952,7 +11873,7 @@ h^{- 1}: y \rightarrow \sqrt{y} = x (y \in \{y | y \geqslant 0 \}, x \in \{x | x
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/algebra-3/fig-p0212-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/algebra-3/fig-p0212-02.png}}
 \caption{(4)}
 \end{figure}
 
@@ -11960,13 +11881,13 @@ h^{- 1}: y \rightarrow \sqrt{y} = x (y \in \{y | y \geqslant 0 \}, x \in \{x | x
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第212页）}]{assets/algebra-3/fig-p0212-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第212页）}]{assets/algebra-3/fig-p0212-03.png}}
 \caption{图示（原PDF第212页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第212页）}]{assets/algebra-3/fig-p0212-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第212页）}]{assets/algebra-3/fig-p0212-04.png}}
 \caption{图示（原PDF第212页）}
 \end{figure}
 
@@ -12098,7 +12019,7 @@ y = f (x) = \left\{ \begin{array}{ll} 8, & x \in (0, 20 ], \\ 16, & x \in (20, 4
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-8}]{assets/algebra-3/fig-p0215-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-8}]{assets/algebra-3/fig-p0215-01.png}}
 \caption{图5-8}
 \end{figure}
 
@@ -12159,7 +12080,7 @@ y = 0.6 x,
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-9}]{assets/algebra-3/fig-p0216-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-9}]{assets/algebra-3/fig-p0216-01.png}}
 \caption{图5-9}
 \end{figure}
 
@@ -12210,7 +12131,7 @@ f (- x) = - f (x).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-10}]{assets/algebra-3/fig-p0217-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-10}]{assets/algebra-3/fig-p0217-01.png}}
 \caption{图5-10}
 \end{figure}
 
@@ -12313,7 +12234,7 @@ y = \sqrt{25 - x^{2}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-11}]{assets/algebra-3/fig-p0219-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-11}]{assets/algebra-3/fig-p0219-01.png}}
 \caption{图5-11}
 \end{figure}
 
@@ -12594,7 +12515,7 @@ y = x^{n} \quad (n \in N)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.12}]{assets/algebra-3/fig-p0224-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.12}]{assets/algebra-3/fig-p0224-01.png}}
 \caption{图5.12}
 \end{figure}
 
@@ -12696,13 +12617,13 @@ x_{2} + x_{1} > 0, x_{2} - x_{1} > 0, (x_{1} x_{2})^{2} > 0.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第226页）}]{assets/algebra-3/fig-p0226-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第226页）}]{assets/algebra-3/fig-p0226-01.png}}
 \caption{图示（原PDF第226页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·13}]{assets/algebra-3/fig-p0226-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·13}]{assets/algebra-3/fig-p0226-02.png}}
 \caption{图5·13}
 \end{figure}
 
@@ -12751,7 +12672,7 @@ y = \frac{2}{x - 2} + 3.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.14}]{assets/algebra-3/fig-p0227-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.14}]{assets/algebra-3/fig-p0227-01.png}}
 \caption{图5.14}
 \end{figure}
 
@@ -12861,7 +12782,7 @@ y & 0 & 1 & 1.4 & 2 & 3 & 4 & ..。 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·15}]{assets/algebra-3/fig-p0229-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·15}]{assets/algebra-3/fig-p0229-01.png}}
 \caption{图5·15}
 \end{figure}
 
@@ -12907,7 +12828,7 @@ y & 0 & 1 & 1.6 & 2 & 2.3 & 2.5 & ..。 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-16}]{assets/algebra-3/fig-p0230-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-16}]{assets/algebra-3/fig-p0230-01.png}}
 \caption{图5-16}
 \end{figure}
 
@@ -12954,13 +12875,13 @@ u = x^{2}, y = \sqrt[3]{u} = u^{\frac{1}{3}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第231页）}]{assets/algebra-3/fig-p0231-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第231页）}]{assets/algebra-3/fig-p0231-01.png}}
 \caption{图示（原PDF第231页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·17}]{assets/algebra-3/fig-p0231-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·17}]{assets/algebra-3/fig-p0231-02.png}}
 \caption{图5·17}
 \end{figure}
 
@@ -12979,7 +12900,7 @@ y = x^{\frac{1}{2}} \quad (\text{即} \quad y - \sqrt{x})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-18}]{assets/algebra-3/fig-p0232-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-18}]{assets/algebra-3/fig-p0232-01.png}}
 \caption{图5-18}
 \end{figure}
 
@@ -13237,7 +13158,7 @@ x = \frac{y + 3}{2 - y} (y \neq 2)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第237页）}]{assets/algebra-3/fig-p0237-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第237页）}]{assets/algebra-3/fig-p0237-01.png}}
 \caption{图示（原PDF第237页）}
 \end{figure}
 
@@ -13283,7 +13204,7 @@ y=\frac{x+2}{3}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-19}]{assets/algebra-3/fig-p0238-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-19}]{assets/algebra-3/fig-p0238-01.png}}
 \caption{图5-19}
 \end{figure}
 
@@ -13291,7 +13212,7 @@ y=\frac{x+2}{3}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-20}]{assets/algebra-3/fig-p0238-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-20}]{assets/algebra-3/fig-p0238-02.png}}
 \caption{图5-20}
 \end{figure}
 
@@ -13323,7 +13244,7 @@ y = \sqrt[3]{x}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·21}]{assets/algebra-3/fig-p0239-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·21}]{assets/algebra-3/fig-p0239-01.png}}
 \caption{图 5·21}
 \end{figure}
 
@@ -13487,7 +13408,7 @@ y = \sqrt{25 - x^{2}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-22}]{assets/algebra-3/fig-p0242-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-22}]{assets/algebra-3/fig-p0242-01.png}}
 \caption{图5-22}
 \end{figure}
 
@@ -14358,7 +14279,7 @@ a^{b} = N \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a \textgreater{} 0, a \textbackslash neq 1; N \textgreater{} 0)}]{assets/algebra-3/fig-p0257-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a \textgreater{} 0, a \textbackslash neq 1; N \textgreater{} 0)}]{assets/algebra-3/fig-p0257-01.png}}
 \caption{\((a > 0, a \neq 1; N > 0)\)}
 \end{figure}
 
@@ -17437,7 +17358,7 @@ y = 10^{- \frac{3}{4}} = \frac{1}{10^{\frac{3}{4}}} = \frac{10^{\frac{3}{4}}}{10
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-1}]{assets/algebra-3/fig-p0299-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-1}]{assets/algebra-3/fig-p0299-01.png}}
 \caption{图7-1}
 \end{figure}
 
@@ -18090,7 +18011,7 @@ y = \log_{9} x, y = \log_{\frac{1}{2}} x, y = \log_{10} x
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-2}]{assets/algebra-3/fig-p0310-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-2}]{assets/algebra-3/fig-p0310-01.png}}
 \caption{图7-2}
 \end{figure}
 
@@ -18103,7 +18024,7 @@ y = \log_{9} x, y = \log_{\frac{1}{2}} x, y = \log_{10} x
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-3}]{assets/algebra-3/fig-p0310-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-3}]{assets/algebra-3/fig-p0310-02.png}}
 \caption{图7-3}
 \end{figure}
 
@@ -18892,7 +18813,7 @@ x = a^{b},
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-4}]{assets/algebra-3/fig-p0320-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-4}]{assets/algebra-3/fig-p0320-01.png}}
 \caption{图7-4}
 \end{figure}
 
@@ -19209,7 +19130,7 @@ x_{1} \approx 0.3, \quad x_{2} = 4.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-5}]{assets/algebra-3/fig-p0325-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-5}]{assets/algebra-3/fig-p0325-01.png}}
 \caption{图7-5}
 \end{figure}
 
@@ -19241,7 +19162,7 @@ u = \log_{2} x \quad \text{和} \quad u = 4 - \frac{1}{2} x
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.6}]{assets/algebra-3/fig-p0326-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.6}]{assets/algebra-3/fig-p0326-01.png}}
 \caption{图7.6}
 \end{figure}
 
@@ -19645,7 +19566,7 @@ a^{x^{2} + 6} > a^{5 x} \quad (a > 0, a \neq 1)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第332页）}]{assets/algebra-3/fig-p0332-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第332页）}]{assets/algebra-3/fig-p0332-01.png}}
 \caption{图示（原PDF第332页）}
 \end{figure}
 
@@ -19991,7 +19912,7 @@ x^{2} - 2 x + \lg k^{2} = 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-1}]{assets/algebra-3/fig-p0337-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-1}]{assets/algebra-3/fig-p0337-01.png}}
 \caption{图8-1}
 \end{figure}
 
@@ -20236,7 +20157,7 @@ n_{1} = 8, \quad n_{2} = - 10 (\text{ 不 合 }).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-2}]{assets/algebra-3/fig-p0341-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-2}]{assets/algebra-3/fig-p0341-01.png}}
 \caption{图8-2}
 \end{figure}
 
@@ -20258,7 +20179,7 @@ n_{1} = 8, \quad n_{2} = - 10 (\text{ 不 合 }).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-3}]{assets/algebra-3/fig-p0342-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-3}]{assets/algebra-3/fig-p0342-01.png}}
 \caption{图8-3}
 \end{figure}
 
@@ -20274,7 +20195,7 @@ n_{1} = 8, \quad n_{2} = - 10 (\text{ 不 合 }).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-4}]{assets/algebra-3/fig-p0342-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-4}]{assets/algebra-3/fig-p0342-02.png}}
 \caption{图8-4}
 \end{figure}
 
@@ -20709,7 +20630,7 @@ d - \frac{1}{2}, \quad a_{1} = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-5}]{assets/algebra-3/fig-p0350-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-5}]{assets/algebra-3/fig-p0350-01.png}}
 \caption{图8-5}
 \end{figure}
 
@@ -20759,7 +20680,7 @@ s = 9 + 8 + 7 + 6 + 5 + 4,
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-6}]{assets/algebra-3/fig-p0351-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-6}]{assets/algebra-3/fig-p0351-01.png}}
 \caption{图8-6}
 \end{figure}
 
@@ -22343,7 +22264,7 @@ f (k) = \frac{1}{2} (k^{2} + k + 2)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-7}]{assets/algebra-3/fig-p0378-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-7}]{assets/algebra-3/fig-p0378-01.png}}
 \caption{图8-7}
 \end{figure}
 
@@ -23350,7 +23271,7 @@ a_{7} - a_{5} = a_{6} + a_{5} = 48,
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9-1}]{assets/algebra-3/fig-p0397-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9-1}]{assets/algebra-3/fig-p0397-01.png}}
 \caption{图9-1}
 \end{figure}
 
@@ -23425,7 +23346,7 @@ a_{7} - a_{5} = a_{6} + a_{5} = 48,
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9-2}]{assets/algebra-3/fig-p0399-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9-2}]{assets/algebra-3/fig-p0399-01.png}}
 \caption{图9-2}
 \end{figure}
 
@@ -23489,7 +23410,7 @@ a_{7} - a_{5} = a_{6} + a_{5} = 48,
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9-3}]{assets/algebra-3/fig-p0401-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9-3}]{assets/algebra-3/fig-p0401-01.png}}
 \caption{图9-3}
 \end{figure}
 
@@ -23552,7 +23473,7 @@ A，又常简单地记做
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.4}]{assets/algebra-3/fig-p0402-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.4}]{assets/algebra-3/fig-p0402-01.png}}
 \caption{图9.4}
 \end{figure}
 
@@ -23560,7 +23481,7 @@ A，又常简单地记做
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.5}]{assets/algebra-3/fig-p0402-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.5}]{assets/algebra-3/fig-p0402-02.png}}
 \caption{图9.5}
 \end{figure}
 
@@ -23584,7 +23505,7 @@ A，又常简单地记做
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.6}]{assets/algebra-3/fig-p0403-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.6}]{assets/algebra-3/fig-p0403-01.png}}
 \caption{图9.6}
 \end{figure}
 
@@ -23592,7 +23513,7 @@ A，又常简单地记做
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9-7}]{assets/algebra-3/fig-p0403-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9-7}]{assets/algebra-3/fig-p0403-02.png}}
 \caption{图9-7}
 \end{figure}
 
@@ -23949,7 +23870,7 @@ n > \frac{1002}{4} = 250 \frac{1}{2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9-8}]{assets/algebra-3/fig-p0410-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9-8}]{assets/algebra-3/fig-p0410-01.png}}
 \caption{图9-8}
 \end{figure}
 
@@ -24150,7 +24071,7 @@ s_{0} = 0.9 + 0.09 + 0.009 + 0.0009 + 0.00009 = 0.9999.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/algebra-3/fig-p0413-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/algebra-3/fig-p0413-01.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -24655,7 +24576,7 @@ S = 1 + 2 q + 3 q^{2} + \dots + n q^{n - 1} = \frac{1 - q^{n}}{(1 - q)^{2}} - \f
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/algebra-3/fig-p0421-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/algebra-3/fig-p0421-01.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -24663,7 +24584,7 @@ S = 1 + 2 q + 3 q^{2} + \dots + n q^{n - 1} = \frac{1 - q^{n}}{(1 - q)^{2}} - \f
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/algebra-3/fig-p0421-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/algebra-3/fig-p0421-02.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -25729,7 +25650,7 @@ f (c) = (1^{2} + k + 1 - 3) x^{2} - 2 (k + 2) x + 3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/algebra-3/fig-p0432-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/algebra-3/fig-p0432-01.png}}
 \caption{(第13题)}
 \end{figure}
 
@@ -25845,7 +25766,7 @@ A_{1} B_{1}, B_{1} A_{2}, A_{2} B_{2}, B_{2} A_{3}, A_{3} B_{3}, \dots;
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/algebra-3/fig-p0434-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/algebra-3/fig-p0434-01.png}}
 \caption{(第22题)}
 \end{figure}
 
@@ -27836,4 +27757,3 @@ x\textless2 & x\textgreater2 \\
   （1） 1210，（2） 8，32；9. （1） 约 421 米，（2） 7 次；10.
   （1）\(\frac{2}{3}\)，（2）\(\frac{1}{2}\)。
 \end{enumerate}
-\end{document}

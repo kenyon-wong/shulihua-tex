@@ -1,82 +1,3 @@
-\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
-\usepackage[
-  b5paper,
-  hmargin=2.2cm,
-  top=1.6cm,
-  bottom=2.2cm,
-  headheight=22pt,
-  headsep=14pt,
-  footskip=16mm,
-  includehead
-]{geometry}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
-\usepackage{float}
-\xeCJKsetup{CJKmath=true}
-\usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
-
-\setcounter{secnumdepth}{-\maxdimen}
-\setlength{\emergencystretch}{3em}
-\graphicspath{{books/}}
-
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi
-}
-\def\fps@figure{htbp}
-\makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\hypersetup{
-  hidelinks,
-  pdflang={zh-CN},
-  pdftitle={物理（第二册）},
-  pdfauthor={数理化自学丛书编委会},
-  pdfcreator={XeLaTeX via pandoc}
-}
-
-\title{物理（第二册）}
-\author{数理化自学丛书编委会}
-\date{}
-
-\begin{document}
-\frontmatter
-\maketitle
-\renewcommand*\contentsname{目录}
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\mainmatter
 \textbf{丛书：} 数理化自学丛书\\
 \textbf{编者：} 数理化自学丛书编委会\\
 \textbf{出版社：} 上海科学技术出版社
@@ -386,7 +307,7 @@ B，然后放手（图 1.1（b））；弹簧振子就沿着水平桌面在平�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.1 弹簧振子的振动}]{assets/physics-2/fig-p0007-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.1 弹簧振子的振动}]{assets/physics-2/fig-p0007-01.png}}
 \caption{图1.1 弹簧振子的振动}
 \end{figure}
 
@@ -425,7 +346,7 @@ O，或者说，弹力起着回复力的作用。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.2 弹力与位移的关系}]{assets/physics-2/fig-p0008-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.2 弹力与位移的关系}]{assets/physics-2/fig-p0008-01.png}}
 \caption{图1.2 弹力与位移的关系}
 \end{figure}
 
@@ -469,7 +390,7 @@ a = - \frac {K}{m} x \tag {1.3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0010-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0010-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -539,7 +460,7 @@ F = K (l - l _ {0} - y)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1.4 演示圆周运动与振动的关系的实验装置示意图}]{assets/physics-2/fig-p0012-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1.4 演示圆周运动与振动的关系的实验装置示意图}]{assets/physics-2/fig-p0012-01.png}}
 \caption{图 1.4 演示圆周运动与振动的关系的实验装置示意图}
 \end{figure}
 
@@ -549,7 +470,7 @@ F = K (l - l _ {0} - y)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.5 匀速圆周运动的投影是简谐振动的证明}]{assets/physics-2/fig-p0012-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.5 匀速圆周运动的投影是简谐振动的证明}]{assets/physics-2/fig-p0012-02.png}}
 \caption{图1.5 匀速圆周运动的投影是简谐振动的证明}
 \end{figure}
 
@@ -583,7 +504,7 @@ x _ {M} = O M
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.6 宽距振动方程的推导}]{assets/physics-2/fig-p0013-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.6 宽距振动方程的推导}]{assets/physics-2/fig-p0013-01.png}}
 \caption{图1.6 宽距振动方程的推导}
 \end{figure}
 
@@ -635,7 +556,7 @@ x = A \cos \omega t \tag {1.5}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.7 简谐振动方程的一般形式}]{assets/physics-2/fig-p0014-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.7 简谐振动方程的一般形式}]{assets/physics-2/fig-p0014-01.png}}
 \caption{图1.7 简谐振动方程的一般形式}
 \end{figure}
 
@@ -658,7 +579,7 @@ x = A \cos (\omega t + \varphi) \tag {1.6}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.8 远示振动图线的装置}]{assets/physics-2/fig-p0014-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.8 远示振动图线的装置}]{assets/physics-2/fig-p0014-02.png}}
 \caption{图1.8 远示振动图线的装置}
 \end{figure}
 
@@ -672,7 +593,7 @@ T 就是简谐振动的周期。在简谐振动的 s-t
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.9 典型的简谐振动图线}]{assets/physics-2/fig-p0015-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.9 典型的简谐振动图线}]{assets/physics-2/fig-p0015-01.png}}
 \caption{图1.9 典型的简谐振动图线}
 \end{figure}
 
@@ -859,7 +780,7 @@ f = \frac {\omega}{2 \pi} = \frac {4 \pi}{2 \pi} \text{赫} = 2 \text{赫}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.10 振动图线的作法}]{assets/physics-2/fig-p0019-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.10 振动图线的作法}]{assets/physics-2/fig-p0019-01.png}}
 \caption{图1.10 振动图线的作法}
 \end{figure}
 
@@ -1040,7 +961,7 @@ v=-A\omega\sin(\omega t+\varphi)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第22页）}]{assets/physics-2/fig-p0022-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第22页）}]{assets/physics-2/fig-p0022-01.png}}
 \caption{图示（原PDF第22页）}
 \end{figure}
 
@@ -1068,7 +989,7 @@ F = G \sin \theta = m g \sin \theta
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.12 单摆的受力情况分析}]{assets/physics-2/fig-p0023-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.12 单摆的受力情况分析}]{assets/physics-2/fig-p0023-01.png}}
 \caption{图1.12 单摆的受力情况分析}
 \end{figure}
 
@@ -1173,7 +1094,7 @@ x = A \cos \left(t \sqrt {\frac {g}{l}} + \varphi\right) \tag {1.21}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.13 实验装置}]{assets/physics-2/fig-p0025-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.13 实验装置}]{assets/physics-2/fig-p0025-01.png}}
 \caption{图1.13 实验装置}
 \end{figure}
 
@@ -1339,7 +1260,7 @@ v 是单摆在这一点的速度。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.14 单摆在端点 B 的重力势能}]{assets/physics-2/fig-p0030-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.14 单摆在端点 B 的重力势能}]{assets/physics-2/fig-p0030-01.png}}
 \caption{图1.14 单摆在端点 \(B\) 的重力势能}
 \end{figure}
 
@@ -1525,7 +1446,7 @@ E = \frac {1}{2} K A ^ {2} = \frac {1}{2} m \omega^ {2} A ^ {2} \tag {1.25}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.15 振动的合成}]{assets/physics-2/fig-p0034-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.15 振动的合成}]{assets/physics-2/fig-p0034-01.png}}
 \caption{图1.15 振动的合成}
 \end{figure}
 
@@ -1561,7 +1482,7 @@ x _ {2} = A _ {2} \cos (\omega t + \varphi_ {2})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.16 在一直线上的频率相同的简谐振动的合成}]{assets/physics-2/fig-p0035-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.16 在一直线上的频率相同的简谐振动的合成}]{assets/physics-2/fig-p0035-01.png}}
 \caption{图1.16 在一直线上的频率相同的简谐振动的合成}
 \end{figure}
 
@@ -1647,7 +1568,7 @@ A ^ {2} = A _ {1} ^ {2} + A _ {2} ^ {2} + 2 A _ {1} A _ {2} \cos (\varphi_ {2} -
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0036-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0036-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -1682,7 +1603,7 @@ x_2=A_2\cos(\omega t+\varphi_2)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1.18 表示简谐振动 x\_\{2\}=}]{assets/physics-2/fig-p0036-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1.18 表示简谐振动 x\_\{2\}=}]{assets/physics-2/fig-p0036-02.png}}
 \caption{图 1.18 表示简谐振动 \(x_{2}=\)}
 \end{figure}
 
@@ -1698,7 +1619,7 @@ x_2=A_2\cos(\omega t+\varphi_2)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1.19 利用旋转矢量合成法作出在一直线上两个频率相同的简谐振动的合振动图线}]{assets/physics-2/fig-p0037-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1.19 利用旋转矢量合成法作出在一直线上两个频率相同的简谐振动的合振动图线}]{assets/physics-2/fig-p0037-01.png}}
 \caption{图 1.19
 利用旋转矢量合成法作出在一直线上两个频率相同的简谐振动的合振动图线}
 \end{figure}
@@ -1710,7 +1631,7 @@ x_2=A_2\cos(\omega t+\varphi_2)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.20}]{assets/physics-2/fig-p0037-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.20}]{assets/physics-2/fig-p0037-02.png}}
 \caption{图1.20}
 \end{figure}
 
@@ -1748,7 +1669,7 @@ A = \sqrt {A _ {1} ^ {2} + A _ {2} ^ {2} + 2 A _ {1} A _ {2}} = A _ {1} + A _ {2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.21 两个同相分振动的合成}]{assets/physics-2/fig-p0038-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.21 两个同相分振动的合成}]{assets/physics-2/fig-p0038-01.png}}
 \caption{图1.21 两个同相分振动的合成}
 \end{figure}
 
@@ -1775,7 +1696,7 @@ A = \sqrt {A _ {1} ^ {2} + A _ {2} ^ {2} - 2 A _ {1} A _ {2}} = \left| A _ {1} -
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.22 两个反相的分振动的合成}]{assets/physics-2/fig-p0039-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.22 两个反相的分振动的合成}]{assets/physics-2/fig-p0039-01.png}}
 \caption{图1.22 两个反相的分振动的合成}
 \end{figure}
 
@@ -1837,7 +1758,7 @@ x=25\cos(3\pi t+2.21)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.23 频率成倍数的两个简谐振动的合成}]{assets/physics-2/fig-p0040-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.23 频率成倍数的两个简谐振动的合成}]{assets/physics-2/fig-p0040-01.png}}
 \caption{图1.23 频率成倍数的两个简谐振动的合成}
 \end{figure}
 
@@ -1870,7 +1791,7 @@ x=25\cos(3\pi t+2.21)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.24 阻尼振动图线}]{assets/physics-2/fig-p0041-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.24 阻尼振动图线}]{assets/physics-2/fig-p0041-01.png}}
 \caption{图1.24 阻尼振动图线}
 \end{figure}
 
@@ -1899,7 +1820,7 @@ x=25\cos(3\pi t+2.21)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.25 研究受迫振动的规律的装置}]{assets/physics-2/fig-p0043-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.25 研究受迫振动的规律的装置}]{assets/physics-2/fig-p0043-01.png}}
 \caption{图1.25 研究受迫振动的规律的装置}
 \end{figure}
 
@@ -1928,7 +1849,7 @@ B、摆 G 的振动比较显著，即具有较大的振幅，而摆 D、摆 E
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.26 共振现象的演示装置}]{assets/physics-2/fig-p0044-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.26 共振现象的演示装置}]{assets/physics-2/fig-p0044-01.png}}
 \caption{图1.26 共振现象的演示装置}
 \end{figure}
 
@@ -1945,7 +1866,7 @@ A 不等，表明策动力的变化频率与受迫振动系统的频率有很大
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.27 共振曲线}]{assets/physics-2/fig-p0045-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.27 共振曲线}]{assets/physics-2/fig-p0045-01.png}}
 \caption{图1.27 共振曲线}
 \end{figure}
 
@@ -2385,7 +2306,7 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/physics-2/fig-p0052-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/physics-2/fig-p0052-01.png}}
 \caption{(第17题)}
 \end{figure}
 
@@ -2405,7 +2326,7 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/physics-2/fig-p0052-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/physics-2/fig-p0052-02.png}}
 \caption{(第18题)}
 \end{figure}
 
@@ -2425,7 +2346,7 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.1}]{assets/physics-2/fig-p0053-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.1}]{assets/physics-2/fig-p0053-01.png}}
 \caption{图2.1}
 \end{figure}
 
@@ -2435,7 +2356,7 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2.2 橡皮绳上面的后回的波形}]{assets/physics-2/fig-p0054-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2.2 橡皮绳上面的后回的波形}]{assets/physics-2/fig-p0054-01.png}}
 \caption{图 2.2 橡皮绳上面的后回的波形}
 \end{figure}
 
@@ -2454,7 +2375,7 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.3 质点之间就好比有弹簧连接着一样}]{assets/physics-2/fig-p0054-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.3 质点之间就好比有弹簧连接着一样}]{assets/physics-2/fig-p0054-02.png}}
 \caption{图2.3 质点之间就好比有弹簧连接着一样}
 \end{figure}
 
@@ -2482,7 +2403,7 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.4 增波时形成和传播}]{assets/physics-2/fig-p0056-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.4 增波时形成和传播}]{assets/physics-2/fig-p0056-01.png}}
 \caption{图2.4 增波时形成和传播}
 \end{figure}
 
@@ -2548,7 +2469,7 @@ O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.5 t = \textbackslash frac\{3\}\{2\} T 和 t = \textbackslash frac\{7\}\{4\} T 时的波形图线}]{assets/physics-2/fig-p0059-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.5 t = \textbackslash frac\{3\}\{2\} T 和 t = \textbackslash frac\{7\}\{4\} T 时的波形图线}]{assets/physics-2/fig-p0059-01.png}}
 \caption{图2.5 \(t = \frac{3}{2} T\) 和 \(t = \frac{7}{4} T\)
 时的波形图线}
 \end{figure}
@@ -2568,7 +2489,7 @@ O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2.6 标出当时质点的运动趋势}]{assets/physics-2/fig-p0060-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2.6 标出当时质点的运动趋势}]{assets/physics-2/fig-p0060-01.png}}
 \caption{图 2.6 标出当时质点的运动趋势}
 \end{figure}
 
@@ -2586,7 +2507,7 @@ O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2.7 螺旋弹簧上的纵波}]{assets/physics-2/fig-p0061-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2.7 螺旋弹簧上的纵波}]{assets/physics-2/fig-p0061-01.png}}
 \caption{图 2.7 螺旋弹簧上的纵波}
 \end{figure}
 
@@ -2598,7 +2519,7 @@ O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.8 纵波的形成和传播}]{assets/physics-2/fig-p0061-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.8 纵波的形成和传播}]{assets/physics-2/fig-p0061-02.png}}
 \caption{图2.8 纵波的形成和传播}
 \end{figure}
 
@@ -2624,7 +2545,7 @@ O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.9 纵波的波形图线的作法}]{assets/physics-2/fig-p0063-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.9 纵波的波形图线的作法}]{assets/physics-2/fig-p0063-01.png}}
 \caption{图2.9 纵波的波形图线的作法}
 \end{figure}
 
@@ -2653,7 +2574,7 @@ O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0064-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0064-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -2672,7 +2593,7 @@ O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0065-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0065-01.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -2697,7 +2618,7 @@ O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.10 波长}]{assets/physics-2/fig-p0066-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.10 波长}]{assets/physics-2/fig-p0066-01.png}}
 \caption{图2.10 波长}
 \end{figure}
 
@@ -2741,7 +2662,7 @@ v 表示，波速的国际单位是米/秒。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.11 时刻 t 和时刻 t + dt 的波形图线}]{assets/physics-2/fig-p0067-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.11 时刻 t 和时刻 t + dt 的波形图线}]{assets/physics-2/fig-p0067-01.png}}
 \caption{图2.11 时刻 \(t\) 和时刻 \(t + dt\) 的波形图线}
 \end{figure}
 
@@ -2810,7 +2731,7 @@ O 为\(r_{1}\)的媒质质点 P 的振动图线。通过比较这两个图象可
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 一列简谐波在 t = t\_\{1\} 时的波形图线}]{assets/physics-2/fig-p0069-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 一列简谐波在 t = t\_\{1\} 时的波形图线}]{assets/physics-2/fig-p0069-01.png}}
 \caption{(a) 一列简谐波在 \(t = t_{1}\) 时的波形图线}
 \end{figure}
 
@@ -2820,7 +2741,7 @@ O 为\(r_{1}\)的媒质质点 P 的振动图线。通过比较这两个图象可
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1) 距波源 r=r\_\{1\} 的质点 P 的振动图线}]{assets/physics-2/fig-p0069-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1) 距波源 r=r\_\{1\} 的质点 P 的振动图线}]{assets/physics-2/fig-p0069-02.png}}
 \caption{(1) 距波源 \(r=r_{1}\) 的质点 P 的振动图线}
 \end{figure}
 
@@ -2841,7 +2762,7 @@ O 为\(r_{1}\)的媒质质点 P 的振动图线。通过比较这两个图象可
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) t=6 秒时的波形图线}]{assets/physics-2/fig-p0070-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) t=6 秒时的波形图线}]{assets/physics-2/fig-p0070-01.png}}
 \caption{(a) t=6 秒时的波形图线}
 \end{figure}
 
@@ -2851,7 +2772,7 @@ O 为\(r_{1}\)的媒质质点 P 的振动图线。通过比较这两个图象可
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 距波源 r=45 厘米的质点 P 的振动图线}]{assets/physics-2/fig-p0070-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 距波源 r=45 厘米的质点 P 的振动图线}]{assets/physics-2/fig-p0070-02.png}}
 \caption{(b) 距波源 r=45 厘米的质点 P 的振动图线}
 \end{figure}
 
@@ -2908,7 +2829,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0071-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0071-02.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -2927,7 +2848,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0071-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0071-03.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -2965,7 +2886,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2.14 两个空间一直线上相向传播的脉冲波在相遇前后的情况}]{assets/physics-2/fig-p0072-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2.14 两个空间一直线上相向传播的脉冲波在相遇前后的情况}]{assets/physics-2/fig-p0072-01.png}}
 \caption{图 2.14 两个空间一直线上相向传播的脉冲波在相遇前后的情况}
 \end{figure}
 
@@ -2984,7 +2905,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 球面波}]{assets/physics-2/fig-p0073-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 球面波}]{assets/physics-2/fig-p0073-01.png}}
 \caption{(a) 球面波}
 \end{figure}
 
@@ -2994,7 +2915,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 平面波}]{assets/physics-2/fig-p0073-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 平面波}]{assets/physics-2/fig-p0073-02.png}}
 \caption{(b) 平面波}
 \end{figure}
 
@@ -3023,7 +2944,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 发波水槽结构示意图}]{assets/physics-2/fig-p0074-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 发波水槽结构示意图}]{assets/physics-2/fig-p0074-01.png}}
 \caption{(a) 发波水槽结构示意图}
 \end{figure}
 
@@ -3033,7 +2954,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 一列圆环形的波纹}]{assets/physics-2/fig-p0074-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 一列圆环形的波纹}]{assets/physics-2/fig-p0074-02.png}}
 \caption{(b) 一列圆环形的波纹}
 \end{figure}
 
@@ -3050,7 +2971,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2.17 水面波的干涉现象}]{assets/physics-2/fig-p0075-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2.17 水面波的干涉现象}]{assets/physics-2/fig-p0075-01.png}}
 \caption{图 2.17 水面波的干涉现象}
 \end{figure}
 
@@ -3062,7 +2983,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.18 波形的干涉的形成}]{assets/physics-2/fig-p0076-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.18 波形的干涉的形成}]{assets/physics-2/fig-p0076-01.png}}
 \caption{图2.18 波形的干涉的形成}
 \end{figure}
 
@@ -3083,7 +3004,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 点 P 同时参与的两个分振动是同相的}]{assets/physics-2/fig-p0077-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 点 P 同时参与的两个分振动是同相的}]{assets/physics-2/fig-p0077-01.png}}
 \caption{(a) 点 P 同时参与的两个分振动是同相的}
 \end{figure}
 
@@ -3093,7 +3014,7 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 点 Q 同时参与的两个分振动是反相的}]{assets/physics-2/fig-p0077-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 点 Q 同时参与的两个分振动是反相的}]{assets/physics-2/fig-p0077-02.png}}
 \caption{(b) 点 Q 同时参与的两个分振动是反相的}
 \end{figure}
 
@@ -3152,7 +3073,7 @@ AB 到一定长度时，弦线 AB 上的波就会如图 2.20
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2.20 演示驻波的装置简图}]{assets/physics-2/fig-p0079-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2.20 演示驻波的装置简图}]{assets/physics-2/fig-p0079-01.png}}
 \caption{图 2.20 演示驻波的装置简图}
 \end{figure}
 
@@ -3200,7 +3121,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2.21 在井管和红管内的空气柱中形成的驻波}]{assets/physics-2/fig-p0080-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2.21 在井管和红管内的空气柱中形成的驻波}]{assets/physics-2/fig-p0080-01.png}}
 \caption{图 2.21 在井管和红管内的空气柱中形成的驻波}
 \end{figure}
 
@@ -3227,7 +3148,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 障碍物的长度比}]{assets/physics-2/fig-p0082-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 障碍物的长度比}]{assets/physics-2/fig-p0082-01.png}}
 \caption{(a) 障碍物的长度比}
 \end{figure}
 
@@ -3237,7 +3158,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 障碍物的长度与波长差不多}]{assets/physics-2/fig-p0082-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 障碍物的长度与波长差不多}]{assets/physics-2/fig-p0082-02.png}}
 \caption{(b) 障碍物的长度与波长差不多}
 \end{figure}
 
@@ -3251,7 +3172,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 狭缝长度(或缺口直径)}]{assets/physics-2/fig-p0082-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 狭缝长度(或缺口直径)}]{assets/physics-2/fig-p0082-03.png}}
 \caption{(a) 狭缝长度(或缺口直径)}
 \end{figure}
 
@@ -3261,7 +3182,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 狭缝长度(或缺口直径)}]{assets/physics-2/fig-p0082-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 狭缝长度(或缺口直径)}]{assets/physics-2/fig-p0082-04.png}}
 \caption{(b) 狭缝长度(或缺口直径)}
 \end{figure}
 
@@ -3295,7 +3216,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2.24 平面波的新}]{assets/physics-2/fig-p0084-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2.24 平面波的新}]{assets/physics-2/fig-p0084-01.png}}
 \caption{图 2.24 平面波的新}
 \end{figure}
 
@@ -3305,7 +3226,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2.25 球面波的新}]{assets/physics-2/fig-p0084-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2.25 球面波的新}]{assets/physics-2/fig-p0084-02.png}}
 \caption{图 2.25 球面波的新}
 \end{figure}
 
@@ -3315,7 +3236,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 缝宽 d 大于波长 \textbackslash lambda}]{assets/physics-2/fig-p0084-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 缝宽 d 大于波长 \textbackslash lambda}]{assets/physics-2/fig-p0084-03.png}}
 \caption{(a) 缝宽 d 大于波长 \(\lambda\)}
 \end{figure}
 
@@ -3325,7 +3246,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 缝宽 d 小于波长 \textbackslash lambda}]{assets/physics-2/fig-p0084-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 缝宽 d 小于波长 \textbackslash lambda}]{assets/physics-2/fig-p0084-04.png}}
 \caption{(b) 缝宽 d 小于波长 \(\lambda\)}
 \end{figure}
 
@@ -3351,7 +3272,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-2/fig-p0084-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-2/fig-p0084-05.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -3370,7 +3291,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0085-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0085-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -3400,7 +3321,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0085-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0085-02.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -3584,7 +3505,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.1 薄钢片的振动}]{assets/physics-2/fig-p0090-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.1 薄钢片的振动}]{assets/physics-2/fig-p0090-01.png}}
 \caption{图3.1 薄钢片的振动}
 \end{figure}
 
@@ -3594,7 +3515,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.2 音叉}]{assets/physics-2/fig-p0090-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.2 音叉}]{assets/physics-2/fig-p0090-02.png}}
 \caption{图3.2 音叉}
 \end{figure}
 
@@ -3613,7 +3534,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.3 声振动不能在真空中传播}]{assets/physics-2/fig-p0091-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.3 声振动不能在真空中传播}]{assets/physics-2/fig-p0091-01.png}}
 \caption{图3.3 声振动不能在真空中传播}
 \end{figure}
 
@@ -3631,7 +3552,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.4}]{assets/physics-2/fig-p0092-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.4}]{assets/physics-2/fig-p0092-01.png}}
 \caption{图3.4}
 \end{figure}
 
@@ -3648,7 +3569,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3.5 音调与频率的关系}]{assets/physics-2/fig-p0093-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3.5 音调与频率的关系}]{assets/physics-2/fig-p0093-01.png}}
 \caption{图 3.5 音调与频率的关系}
 \end{figure}
 
@@ -3675,7 +3596,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.9 声强与离开声源的距离的平方成反比}]{assets/physics-2/fig-p0094-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.9 声强与离开声源的距离的平方成反比}]{assets/physics-2/fig-p0094-01.png}}
 \caption{图3.9 声强与离开声源的距离的平方成反比}
 \end{figure}
 
@@ -3711,7 +3632,7 @@ I _ {1}\text{：} I _ {2} = r _ {2} ^ {2}\text{：} r _ {1} ^ {2} \tag {3.1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.7 人耳的听觉范围}]{assets/physics-2/fig-p0095-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.7 人耳的听觉范围}]{assets/physics-2/fig-p0095-01.png}}
 \caption{图3.7 人耳的听觉范围}
 \end{figure}
 
@@ -3775,7 +3696,7 @@ I _ {1}\text{：} I _ {2} = r _ {2} ^ {2}\text{：} r _ {1} ^ {2} \tag {3.1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3.8 小提琴所发出的声音的波形图}]{assets/physics-2/fig-p0098-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3.8 小提琴所发出的声音的波形图}]{assets/physics-2/fig-p0098-01.png}}
 \caption{图 3.8 小提琴所发出的声音的波形图}
 \end{figure}
 
@@ -3785,7 +3706,7 @@ I _ {1}\text{：} I _ {2} = r _ {2} ^ {2}\text{：} r _ {1} ^ {2} \tag {3.1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3.9 钢琴所发出的声音的波形图}]{assets/physics-2/fig-p0098-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3.9 钢琴所发出的声音的波形图}]{assets/physics-2/fig-p0098-02.png}}
 \caption{图 3.9 钢琴所发出的声音的波形图}
 \end{figure}
 
@@ -3818,7 +3739,7 @@ I _ {1}\text{：} I _ {2} = r _ {2} ^ {2}\text{：} r _ {1} ^ {2} \tag {3.1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0099-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0099-01.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -3871,7 +3792,7 @@ l = \frac {1}{4} \lambda = \frac {1}{4} \times 1.30 \text{米} = 0.325 \text{米
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3.10 有关共鸣的演示实验}]{assets/physics-2/fig-p0101-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3.10 有关共鸣的演示实验}]{assets/physics-2/fig-p0101-01.png}}
 \caption{图 3.10 有关共鸣的演示实验}
 \end{figure}
 
@@ -3884,7 +3805,7 @@ l = \frac {1}{4} \lambda = \frac {1}{4} \times 1.30 \text{米} = 0.325 \text{米
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0102-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0102-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -3951,13 +3872,13 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第104页）}]{assets/physics-2/fig-p0104-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第104页）}]{assets/physics-2/fig-p0104-01.png}}
 \caption{图示（原PDF第104页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 正常情况}]{assets/physics-2/fig-p0104-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 正常情况}]{assets/physics-2/fig-p0104-02.png}}
 \caption{(a) 正常情况}
 \end{figure}
 
@@ -3967,13 +3888,13 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第104页）}]{assets/physics-2/fig-p0104-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第104页）}]{assets/physics-2/fig-p0104-03.png}}
 \caption{图示（原PDF第104页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 探刮到缺陷时的情况}]{assets/physics-2/fig-p0104-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 探刮到缺陷时的情况}]{assets/physics-2/fig-p0104-04.png}}
 \caption{(b) 探刮到缺陷时的情况}
 \end{figure}
 
@@ -4097,7 +4018,7 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-2/fig-p0108-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-2/fig-p0108-01.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -4122,13 +4043,13 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第109页）}]{assets/physics-2/fig-p0109-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第109页）}]{assets/physics-2/fig-p0109-01.png}}
 \caption{图示（原PDF第109页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0109-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0109-02.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -4147,7 +4068,7 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0109-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0109-03.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -4229,7 +4150,7 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0111-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0111-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -4289,7 +4210,7 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.1 水银温度计}]{assets/physics-2/fig-p0114-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.1 水银温度计}]{assets/physics-2/fig-p0114-01.png}}
 \caption{图4.1 水银温度计}
 \end{figure}
 
@@ -4302,7 +4223,7 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0115-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0115-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -4312,7 +4233,7 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0115-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0115-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -4334,7 +4255,7 @@ P
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.3 医用体温表}]{assets/physics-2/fig-p0115-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.3 医用体温表}]{assets/physics-2/fig-p0115-03.png}}
 \caption{图 4.3 医用体温表}
 \end{figure}
 
@@ -4346,7 +4267,7 @@ P
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.4 电阻温度计的装置示意图}]{assets/physics-2/fig-p0116-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.4 电阻温度计的装置示意图}]{assets/physics-2/fig-p0116-01.png}}
 \caption{图 4.4 电阻温度计的装置示意图}
 \end{figure}
 
@@ -4371,13 +4292,13 @@ P
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第117页）}]{assets/physics-2/fig-p0117-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第117页）}]{assets/physics-2/fig-p0117-01.png}}
 \caption{图示（原PDF第117页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0117-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0117-02.png}}
 \caption{(c)}
 \end{figure}
 
@@ -4387,7 +4308,7 @@ P
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0117-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0117-03.png}}
 \caption{(c)}
 \end{figure}
 
@@ -4397,7 +4318,7 @@ P
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(d)}]{assets/physics-2/fig-p0117-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(d)}]{assets/physics-2/fig-p0117-04.png}}
 \caption{(d)}
 \end{figure}
 
@@ -4430,7 +4351,7 @@ P
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0118-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0118-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -4544,7 +4465,7 @@ C = \frac {Q}{t - t _ {0}} \tag {4.3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0121-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0121-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -4554,7 +4475,7 @@ C = \frac {Q}{t - t _ {0}} \tag {4.3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0121-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0121-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -4872,7 +4793,7 @@ A 内的液体，使它各处温度均匀。温度计用来观察杯 A
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.7 量热器的结构简图}]{assets/physics-2/fig-p0128-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.7 量热器的结构简图}]{assets/physics-2/fig-p0128-01.png}}
 \caption{图 4.7 量热器的结构简图}
 \end{figure}
 
@@ -4920,7 +4841,7 @@ t _ {0} = \frac {2608.65}{4.7} ^ {\circ} \mathrm{C} \approx 555 ^ {\circ} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.8 测定物质的比热的实验的仪器设备}]{assets/physics-2/fig-p0129-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.8 测定物质的比热的实验的仪器设备}]{assets/physics-2/fig-p0129-01.png}}
 \caption{图4.8 测定物质的比热的实验的仪器设备}
 \end{figure}
 
@@ -5100,7 +5021,7 @@ m = - \frac {0.11 \times 15 \times (60 - 950)}{0.45 \times (60 - 40)} \text{千�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/physics-2/fig-p0133-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/physics-2/fig-p0133-01.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -5121,7 +5042,7 @@ m = - \frac {0.11 \times 15 \times (60 - 950)}{0.45 \times (60 - 40)} \text{千�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.9 观察铁棒的热胀冷缩现象的装置}]{assets/physics-2/fig-p0134-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.9 观察铁棒的热胀冷缩现象的装置}]{assets/physics-2/fig-p0134-01.png}}
 \caption{图4.9 观察铁棒的热胀冷缩现象的装置}
 \end{figure}
 
@@ -5171,13 +5092,13 @@ l _ {t} - l _ {0} = \alpha t l _ {0} \tag {4.7}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第136页）}]{assets/physics-2/fig-p0136-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第136页）}]{assets/physics-2/fig-p0136-01.png}}
 \caption{图示（原PDF第136页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.10}]{assets/physics-2/fig-p0136-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.10}]{assets/physics-2/fig-p0136-02.png}}
 \caption{图4.10}
 \end{figure}
 
@@ -5189,7 +5110,7 @@ l _ {t} - l _ {0} = \alpha t l _ {0} \tag {4.7}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.11 金属温度计的内部结构简图}]{assets/physics-2/fig-p0136-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.11 金属温度计的内部结构简图}]{assets/physics-2/fig-p0136-03.png}}
 \caption{图4.11 金属温度计的内部结构简图}
 \end{figure}
 
@@ -5312,13 +5233,13 @@ L _ {0 \text{铁}} = \frac {L _ {42 \text{铁}}}{1 + 42 \alpha_ {\text{铁}}} = 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第139页）}]{assets/physics-2/fig-p0139-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第139页）}]{assets/physics-2/fig-p0139-01.png}}
 \caption{图示（原PDF第139页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.12 关于体胀系数的推导}]{assets/physics-2/fig-p0139-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.12 关于体胀系数的推导}]{assets/physics-2/fig-p0139-02.png}}
 \caption{图4.12 关于体胀系数的推导}
 \end{figure}
 
@@ -5405,7 +5326,7 @@ V _ {1200} = V _ {20} [ 1 + \beta (1200 - 20) ]
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0140-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0140-01.png}}
 \caption{(2)}
 \end{figure}
 
@@ -5415,7 +5336,7 @@ V _ {1200} = V _ {20} [ 1 + \beta (1200 - 20) ]
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(5)}]{assets/physics-2/fig-p0140-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(5)}]{assets/physics-2/fig-p0140-02.png}}
 \caption{(5)}
 \end{figure}
 
@@ -5460,7 +5381,7 @@ V_{100}=50[1+80\times0.000072]\ \text{米}^3\approx50.29\ \text{米}^3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.14 把钢筋桥架的一端架在桌子上}]{assets/physics-2/fig-p0142-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.14 把钢筋桥架的一端架在桌子上}]{assets/physics-2/fig-p0142-01.png}}
 \caption{图 4.14 把钢筋桥架的一端架在桌子上}
 \end{figure}
 
@@ -5547,7 +5468,7 @@ h=\frac{1-5\times0.001}{1+35\times0.001}\times1.60\ \text{米}\approx1.53\ \text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.15 测定液体体胀系数的仪器}]{assets/physics-2/fig-p0144-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.15 测定液体体胀系数的仪器}]{assets/physics-2/fig-p0144-01.png}}
 \caption{图4.15 测定液体体胀系数的仪器}
 \end{figure}
 
@@ -5596,7 +5517,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.16 冬天湖底水温的分布}]{assets/physics-2/fig-p0145-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.16 冬天湖底水温的分布}]{assets/physics-2/fig-p0145-01.png}}
 \caption{图 4.16 冬天湖底水温的分布}
 \end{figure}
 
@@ -5613,7 +5534,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.17 水的密度随温度变化的图象}]{assets/physics-2/fig-p0146-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.17 水的密度随温度变化的图象}]{assets/physics-2/fig-p0146-01.png}}
 \caption{图 4.17 水的密度随温度变化的图象}
 \end{figure}
 
@@ -5687,7 +5608,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.18 大功率晶体管的散热器}]{assets/physics-2/fig-p0149-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.18 大功率晶体管的散热器}]{assets/physics-2/fig-p0149-01.png}}
 \caption{图 4.18 大功率晶体管的散热器}
 \end{figure}
 
@@ -5705,7 +5626,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0150-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0150-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -5715,7 +5636,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0150-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0150-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -5733,7 +5654,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.20 滴水水的对流的装置}]{assets/physics-2/fig-p0151-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.20 滴水水的对流的装置}]{assets/physics-2/fig-p0151-01.png}}
 \caption{图 4.20 滴水水的对流的装置}
 \end{figure}
 
@@ -5747,7 +5668,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-2/fig-p0152-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-2/fig-p0152-01.png}}
 \caption{(4)}
 \end{figure}
 
@@ -5757,7 +5678,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-2/fig-p0152-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-2/fig-p0152-02.png}}
 \caption{(1)}
 \end{figure}
 
@@ -5771,7 +5692,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.22 维氏气冷球系统}]{assets/physics-2/fig-p0152-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.22 维氏气冷球系统}]{assets/physics-2/fig-p0152-03.png}}
 \caption{图 4.22 维氏气冷球系统}
 \end{figure}
 
@@ -5803,7 +5724,7 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4.23 大容量的变压器的散热问题}]{assets/physics-2/fig-p0154-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4.23 大容量的变压器的散热问题}]{assets/physics-2/fig-p0154-01.png}}
 \caption{图 4.23 大容量的变压器的散热问题}
 \end{figure}
 
@@ -6087,7 +6008,7 @@ Pa，1 帕的压强相当于每 1 米² 面积上受力 1 斗的压强，即 1 �
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.1}]{assets/physics-2/fig-p0162-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.1}]{assets/physics-2/fig-p0162-01.png}}
 \caption{图5.1}
 \end{figure}
 
@@ -6110,7 +6031,7 @@ p = p _ {0} - h (\mathrm{cmHg})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0163-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0163-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -6120,7 +6041,7 @@ p = p _ {0} - h (\mathrm{cmHg})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0163-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0163-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -6150,7 +6071,7 @@ d = 0.4 厘米，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0164-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0164-01.png}}
 \caption{(b)}
 \end{figure}
 
@@ -6221,7 +6142,7 @@ p-V
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.4}]{assets/physics-2/fig-p0165-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.4}]{assets/physics-2/fig-p0165-01.png}}
 \caption{图5.4}
 \end{figure}
 
@@ -6255,7 +6176,7 @@ p _ {1} V _ {1} = p _ {2} V _ {2} \tag {5.1b}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.5 等温线}]{assets/physics-2/fig-p0166-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.5 等温线}]{assets/physics-2/fig-p0166-01.png}}
 \caption{图5.5 等温线}
 \end{figure}
 
@@ -6265,7 +6186,7 @@ p _ {1} V _ {1} = p _ {2} V _ {2} \tag {5.1b}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.6}]{assets/physics-2/fig-p0166-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.6}]{assets/physics-2/fig-p0166-02.png}}
 \caption{图5.6}
 \end{figure}
 
@@ -6357,7 +6278,7 @@ p _ {4} = p _ {1} \frac {V _ {1}}{V _ {2}} = 1.5 \times 10 ^ {8} \times \frac {6
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.7}]{assets/physics-2/fig-p0168-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.7}]{assets/physics-2/fig-p0168-01.png}}
 \caption{图5.7}
 \end{figure}
 
@@ -6455,7 +6376,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5.8 按表 5.2 作出的 g-V 图}]{assets/physics-2/fig-p0169-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5.8 按表 5.2 作出的 g-V 图}]{assets/physics-2/fig-p0169-01.png}}
 \caption{图 5.8 按表 5.2 作出的 g-V 图}
 \end{figure}
 
@@ -6465,7 +6386,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第169页）}]{assets/physics-2/fig-p0169-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第169页）}]{assets/physics-2/fig-p0169-02.png}}
 \caption{图示（原PDF第169页）}
 \end{figure}
 
@@ -6485,7 +6406,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0170-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0170-01.png}}
 \caption{(2)}
 \end{figure}
 
@@ -6495,7 +6416,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-2/fig-p0170-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-2/fig-p0170-02.png}}
 \caption{(4)}
 \end{figure}
 
@@ -6505,7 +6426,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(5)}]{assets/physics-2/fig-p0170-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(5)}]{assets/physics-2/fig-p0170-03.png}}
 \caption{(5)}
 \end{figure}
 
@@ -6515,7 +6436,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(6)}]{assets/physics-2/fig-p0170-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(6)}]{assets/physics-2/fig-p0170-04.png}}
 \caption{(6)}
 \end{figure}
 
@@ -6525,7 +6446,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(7)}]{assets/physics-2/fig-p0170-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(7)}]{assets/physics-2/fig-p0170-05.png}}
 \caption{(7)}
 \end{figure}
 
@@ -6535,7 +6456,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(8)}]{assets/physics-2/fig-p0170-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(8)}]{assets/physics-2/fig-p0170-06.png}}
 \caption{(8)}
 \end{figure}
 
@@ -6545,7 +6466,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-2/fig-p0170-07.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-2/fig-p0170-07.png}}
 \caption{(3)}
 \end{figure}
 
@@ -6555,7 +6476,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(11)}]{assets/physics-2/fig-p0170-08.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(11)}]{assets/physics-2/fig-p0170-08.png}}
 \caption{(11)}
 \end{figure}
 
@@ -6565,13 +6486,13 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第170页）}]{assets/physics-2/fig-p0170-09.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第170页）}]{assets/physics-2/fig-p0170-09.png}}
 \caption{图示（原PDF第170页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(10)}]{assets/physics-2/fig-p0170-10.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(10)}]{assets/physics-2/fig-p0170-10.png}}
 \caption{(10)}
 \end{figure}
 
@@ -6581,7 +6502,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(9)}]{assets/physics-2/fig-p0170-11.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(9)}]{assets/physics-2/fig-p0170-11.png}}
 \caption{(9)}
 \end{figure}
 
@@ -6618,7 +6539,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0170-12.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0170-12.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -6628,7 +6549,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0170-13.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0170-13.png}}
 \caption{(a)}
 \end{figure}
 
@@ -6655,7 +6576,7 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-2/fig-p0171-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-2/fig-p0171-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -6703,13 +6624,13 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第173页）}]{assets/physics-2/fig-p0173-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第173页）}]{assets/physics-2/fig-p0173-01.png}}
 \caption{图示（原PDF第173页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.9}]{assets/physics-2/fig-p0173-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.9}]{assets/physics-2/fig-p0173-02.png}}
 \caption{图5.9}
 \end{figure}
 
@@ -6726,7 +6647,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.10}]{assets/physics-2/fig-p0174-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.10}]{assets/physics-2/fig-p0174-01.png}}
 \caption{图5.10}
 \end{figure}
 
@@ -6736,7 +6657,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.11}]{assets/physics-2/fig-p0174-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.11}]{assets/physics-2/fig-p0174-02.png}}
 \caption{图5.11}
 \end{figure}
 
@@ -6829,7 +6750,7 @@ V_{-20}=\frac{253}{473}V_{200}=\frac{253}{473}\cdot25\ \text{升}\approx13.4\ \t
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5.12 绝对零度, 气体的零体积点}]{assets/physics-2/fig-p0177-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5.12 绝对零度, 气体的零体积点}]{assets/physics-2/fig-p0177-01.png}}
 \caption{图 5.12 绝对零度, 气体的零体积点}
 \end{figure}
 
@@ -6931,7 +6852,7 @@ p-t 图。很明显，在 p-V 图上，等容线是一条与纵轴平行的铅�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0180-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0180-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -6941,7 +6862,7 @@ p-t 图。很明显，在 p-V 图上，等容线是一条与纵轴平行的铅�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0180-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0180-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -6955,7 +6876,7 @@ p-t 图。很明显，在 p-V 图上，等容线是一条与纵轴平行的铅�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.14}]{assets/physics-2/fig-p0181-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.14}]{assets/physics-2/fig-p0181-01.png}}
 \caption{图5.14}
 \end{figure}
 
@@ -6965,7 +6886,7 @@ p-t 图。很明显，在 p-V 图上，等容线是一条与纵轴平行的铅�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.15}]{assets/physics-2/fig-p0181-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.15}]{assets/physics-2/fig-p0181-02.png}}
 \caption{图5.15}
 \end{figure}
 
@@ -7059,7 +6980,7 @@ p _ {i} V _ {0} = p _ {0} V _ {s}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0183-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0183-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -7069,7 +6990,7 @@ p _ {i} V _ {0} = p _ {0} V _ {s}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0183-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0183-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -7079,7 +7000,7 @@ p _ {i} V _ {0} = p _ {0} V _ {s}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0183-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0183-03.png}}
 \caption{(c)}
 \end{figure}
 
@@ -7093,7 +7014,7 @@ p _ {i} V _ {0} = p _ {0} V _ {s}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.17}]{assets/physics-2/fig-p0183-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.17}]{assets/physics-2/fig-p0183-04.png}}
 \caption{图5.17}
 \end{figure}
 
@@ -7209,7 +7130,7 @@ t = T - 273 = (150 - 273) ^ {\circ} \mathrm{C} = - 123 ^ {\circ} \mathrm{C}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0186-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0186-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -7219,7 +7140,7 @@ t = T - 273 = (150 - 273) ^ {\circ} \mathrm{C} = - 123 ^ {\circ} \mathrm{C}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0186-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0186-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -7229,7 +7150,7 @@ t = T - 273 = (150 - 273) ^ {\circ} \mathrm{C} = - 123 ^ {\circ} \mathrm{C}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0186-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0186-03.png}}
 \caption{(c)}
 \end{figure}
 
@@ -7243,7 +7164,7 @@ t = T - 273 = (150 - 273) ^ {\circ} \mathrm{C} = - 123 ^ {\circ} \mathrm{C}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.19}]{assets/physics-2/fig-p0186-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.19}]{assets/physics-2/fig-p0186-04.png}}
 \caption{图5.19}
 \end{figure}
 
@@ -7625,7 +7546,7 @@ pV（大气压·升）} \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.20}]{assets/physics-2/fig-p0194-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.20}]{assets/physics-2/fig-p0194-01.png}}
 \caption{图5.20}
 \end{figure}
 
@@ -7666,7 +7587,7 @@ pV（大气压·升）} \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0195-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0195-01.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -7693,7 +7614,7 @@ pV（大气压·升）} \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/physics-2/fig-p0196-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/physics-2/fig-p0196-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -7884,7 +7805,7 @@ m=M-M^\prime=(6.5\times0.028-0.164)\ \text{千克}=0.018\ \text{千克}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-2/fig-p0200-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-2/fig-p0200-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -7894,7 +7815,7 @@ m=M-M^\prime=(6.5\times0.028-0.164)\ \text{千克}=0.018\ \text{千克}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-2/fig-p0200-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-2/fig-p0200-02.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -8068,7 +7989,7 @@ p V = \frac {M}{\mu} E I ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0203-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0203-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -8078,7 +7999,7 @@ p V = \frac {M}{\mu} E I ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0203-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0203-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -8088,7 +8009,7 @@ p V = \frac {M}{\mu} E I ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0203-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0203-03.png}}
 \caption{(c)}
 \end{figure}
 
@@ -8098,7 +8019,7 @@ p V = \frac {M}{\mu} E I ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-2/fig-p0203-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-2/fig-p0203-04.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -8285,7 +8206,7 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) (b)}]{assets/physics-2/fig-p0208-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) (b)}]{assets/physics-2/fig-p0208-01.png}}
 \caption{(a) (b)}
 \end{figure}
 
@@ -8316,7 +8237,7 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 6.2 两块铅圆柱体重新结合在一起}]{assets/physics-2/fig-p0210-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 6.2 两块铅圆柱体重新结合在一起}]{assets/physics-2/fig-p0210-01.png}}
 \caption{图 6.2 两块铅圆柱体重新结合在一起}
 \end{figure}
 
@@ -8326,7 +8247,7 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 6.3 液体层与液体层之间的引力}]{assets/physics-2/fig-p0210-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 6.3 液体层与液体层之间的引力}]{assets/physics-2/fig-p0210-02.png}}
 \caption{图 6.3 液体层与液体层之间的引力}
 \end{figure}
 
@@ -8343,7 +8264,7 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.4 分子力与分子距离的关系}]{assets/physics-2/fig-p0211-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.4 分子力与分子距离的关系}]{assets/physics-2/fig-p0211-01.png}}
 \caption{图6.4 分子力与分子距离的关系}
 \end{figure}
 
@@ -8388,7 +8309,7 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 6.5 观察布朗运动的装置示意图和在显微镜下看到的墨汁颗粒}]{assets/physics-2/fig-p0213-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 6.5 观察布朗运动的装置示意图和在显微镜下看到的墨汁颗粒}]{assets/physics-2/fig-p0213-01.png}}
 \caption{图 6.5 观察布朗运动的装置示意图和在显微镜下看到的墨汁颗粒}
 \end{figure}
 
@@ -8408,7 +8329,7 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.6 布朗运动示意图}]{assets/physics-2/fig-p0214-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.6 布朗运动示意图}]{assets/physics-2/fig-p0214-01.png}}
 \caption{图6.6 布朗运动示意图}
 \end{figure}
 
@@ -8447,7 +8368,7 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.7 伽耳顿板}]{assets/physics-2/fig-p0215-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.7 伽耳顿板}]{assets/physics-2/fig-p0215-01.png}}
 \caption{图6.7 伽耳顿板}
 \end{figure}
 
@@ -8461,7 +8382,7 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.8 在一定温度下，理想气体的分子速率分布曲线}]{assets/physics-2/fig-p0216-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.8 在一定温度下，理想气体的分子速率分布曲线}]{assets/physics-2/fig-p0216-01.png}}
 \caption{图6.8 在一定温度下，理想气体的分子速率分布曲线}
 \end{figure}
 
@@ -8483,7 +8404,7 @@ v _ {p} = \sqrt {\frac {2 R T}{\mu}} \tag {6.1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.9 不同温度下的分子速率分布曲线}]{assets/physics-2/fig-p0217-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.9 不同温度下的分子速率分布曲线}]{assets/physics-2/fig-p0217-01.png}}
 \caption{图6.9 不同温度下的分子速率分布曲线}
 \end{figure}
 
@@ -8519,7 +8440,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2} \tag {6.2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.10 边长为 l 的立方体密闭容器}]{assets/physics-2/fig-p0218-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.10 边长为 l 的立方体密闭容器}]{assets/physics-2/fig-p0218-01.png}}
 \caption{图6.10 边长为 \(l\) 的立方体密闭容器}
 \end{figure}
 
@@ -8529,7 +8450,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2} \tag {6.2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.11 跟容器壁 A, B 发生碰撞的分子}]{assets/physics-2/fig-p0218-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.11 跟容器壁 A, B 发生碰撞的分子}]{assets/physics-2/fig-p0218-02.png}}
 \caption{图6.11 跟容器壁 \(A, B\) 发生碰撞的分子}
 \end{figure}
 
@@ -8860,7 +8781,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-2/fig-p0226-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-2/fig-p0226-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -8870,7 +8791,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0226-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0226-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -8880,7 +8801,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-2/fig-p0226-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-2/fig-p0226-03.png}}
 \caption{(3)}
 \end{figure}
 
@@ -8890,7 +8811,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(5)}]{assets/physics-2/fig-p0226-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(5)}]{assets/physics-2/fig-p0226-04.png}}
 \caption{(5)}
 \end{figure}
 
@@ -8950,7 +8871,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0227-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0227-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -8960,7 +8881,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0227-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0227-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -8970,7 +8891,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0227-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0227-03.png}}
 \caption{(c)}
 \end{figure}
 
@@ -9005,7 +8926,7 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0228-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0228-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -9036,7 +8957,7 @@ A 上的重力 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0230-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0230-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -9046,7 +8967,7 @@ A 上的重力 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0230-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0230-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -9075,7 +8996,7 @@ A 上的重力 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.2 悬浮在水和酒精的混合液中的橄榄油滴呈球状}]{assets/physics-2/fig-p0230-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.2 悬浮在水和酒精的混合液中的橄榄油滴呈球状}]{assets/physics-2/fig-p0230-03.png}}
 \caption{图 7.2 悬浮在水和酒精的混合液中的橄榄油滴呈球状}
 \end{figure}
 
@@ -9095,7 +9016,7 @@ A 上的重力 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0231-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0231-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -9105,7 +9026,7 @@ A 上的重力 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0231-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0231-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -9135,7 +9056,7 @@ A 上的重力 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.4 液体的表面张力}]{assets/physics-2/fig-p0232-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.4 液体的表面张力}]{assets/physics-2/fig-p0232-01.png}}
 \caption{图7.4 液体的表面张力}
 \end{figure}
 
@@ -9154,7 +9075,7 @@ mg。又因为金属丝在上移时受到两边的液膜对它的拉力（图7.5
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-5 表面张力系数的测定}]{assets/physics-2/fig-p0232-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-5 表面张力系数的测定}]{assets/physics-2/fig-p0232-02.png}}
 \caption{图7-5 表面张力系数的测定}
 \end{figure}
 
@@ -9204,7 +9125,7 @@ F=mg+2f
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.8}]{assets/physics-2/fig-p0234-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.8}]{assets/physics-2/fig-p0234-01.png}}
 \caption{图7.8}
 \end{figure}
 
@@ -9229,7 +9150,7 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.7 液体表面层里的分子}]{assets/physics-2/fig-p0234-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.7 液体表面层里的分子}]{assets/physics-2/fig-p0234-02.png}}
 \caption{图7.7 液体表面层里的分子}
 \end{figure}
 
@@ -9262,7 +9183,7 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0235-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-2/fig-p0235-01.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -9299,7 +9220,7 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0237-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0237-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -9309,7 +9230,7 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0237-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0237-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -9339,7 +9260,7 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(π)}]{assets/physics-2/fig-p0238-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(π)}]{assets/physics-2/fig-p0238-01.png}}
 \caption{(π)}
 \end{figure}
 
@@ -9349,7 +9270,7 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-2/fig-p0238-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-2/fig-p0238-02.png}}
 \caption{(1)}
 \end{figure}
 
@@ -9363,7 +9284,7 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0238-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0238-03.png}}
 \caption{(a)}
 \end{figure}
 
@@ -9373,7 +9294,7 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0238-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0238-04.png}}
 \caption{(b)}
 \end{figure}
 
@@ -9387,7 +9308,7 @@ F = \sigma \cdot 2 l = 0.040 \times 2 \times 0.03 \text{牛}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.11 在毛细现象中浸润液体柱上升的最大高度的推导}]{assets/physics-2/fig-p0238-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.11 在毛细现象中浸润液体柱上升的最大高度的推导}]{assets/physics-2/fig-p0238-05.png}}
 \caption{图 7.11 在毛细现象中浸润液体柱上升的最大高度的推导}
 \end{figure}
 
@@ -9524,7 +9445,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.12 美丽的冰晶体}]{assets/physics-2/fig-p0242-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.12 美丽的冰晶体}]{assets/physics-2/fig-p0242-01.png}}
 \caption{图 7.12 美丽的冰晶体}
 \end{figure}
 
@@ -9536,7 +9457,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.13 食盐晶体的外形}]{assets/physics-2/fig-p0242-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.13 食盐晶体的外形}]{assets/physics-2/fig-p0242-02.png}}
 \caption{图 7.13 食盐晶体的外形}
 \end{figure}
 
@@ -9551,7 +9472,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0243-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0243-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -9561,7 +9482,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0243-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0243-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -9595,7 +9516,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0244-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0244-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -9605,7 +9526,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0244-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-2/fig-p0244-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -9623,7 +9544,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.16 在各个方向上晶体粒子排列的密度不同}]{assets/physics-2/fig-p0245-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.16 在各个方向上晶体粒子排列的密度不同}]{assets/physics-2/fig-p0245-01.png}}
 \caption{图 7.16 在各个方向上晶体粒子排列的密度不同}
 \end{figure}
 
@@ -9633,7 +9554,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 金刚石}]{assets/physics-2/fig-p0245-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 金刚石}]{assets/physics-2/fig-p0245-02.png}}
 \caption{(a) 金刚石}
 \end{figure}
 
@@ -9643,7 +9564,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 石墨}]{assets/physics-2/fig-p0245-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 石墨}]{assets/physics-2/fig-p0245-03.png}}
 \caption{(b) 石墨}
 \end{figure}
 
@@ -9714,7 +9635,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.18 晶体内部各粒子间相互作用的简单模型}]{assets/physics-2/fig-p0248-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.18 晶体内部各粒子间相互作用的简单模型}]{assets/physics-2/fig-p0248-01.png}}
 \caption{图 7.18 晶体内部各粒子间相互作用的简单模型}
 \end{figure}
 
@@ -9735,7 +9656,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0249-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0249-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -9745,7 +9666,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0249-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0249-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -9762,7 +9683,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 切变}]{assets/physics-2/fig-p0249-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 切变}]{assets/physics-2/fig-p0249-03.png}}
 \caption{(a) 切变}
 \end{figure}
 
@@ -9772,7 +9693,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 扭转变形}]{assets/physics-2/fig-p0249-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 扭转变形}]{assets/physics-2/fig-p0249-04.png}}
 \caption{(b) 扭转变形}
 \end{figure}
 
@@ -9793,7 +9714,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0250-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0250-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -9803,7 +9724,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0250-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0250-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -9819,13 +9740,13 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第250页）}]{assets/physics-2/fig-p0250-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第250页）}]{assets/physics-2/fig-p0250-03.png}}
 \caption{图示（原PDF第250页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.22 中立层}]{assets/physics-2/fig-p0250-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.22 中立层}]{assets/physics-2/fig-p0250-04.png}}
 \caption{图7.22 中立层}
 \end{figure}
 
@@ -9837,7 +9758,7 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.23 截面积为 A 和 B 的梁和棒，反抗弯曲的作用几乎相等}]{assets/physics-2/fig-p0250-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.23 截面积为 A 和 B 的梁和棒，反抗弯曲的作用几乎相等}]{assets/physics-2/fig-p0250-05.png}}
 \caption{图7.23 截面积为 \(A\) 和 \(B\)
 的梁和棒，反抗弯曲的作用几乎相等}
 \end{figure}
@@ -9857,7 +9778,7 @@ P
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.24 拉伸试件}]{assets/physics-2/fig-p0251-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.24 拉伸试件}]{assets/physics-2/fig-p0251-01.png}}
 \caption{图7.24 拉伸试件}
 \end{figure}
 
@@ -10199,7 +10120,7 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.1 萘(樟脑)的熔解的演示}]{assets/physics-2/fig-p0260-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.1 萘(樟脑)的熔解的演示}]{assets/physics-2/fig-p0260-01.png}}
 \caption{图8.1 萘(樟脑)的熔解的演示}
 \end{figure}
 
@@ -10217,7 +10138,7 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0260-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0260-02.png}}
 \caption{(a)}
 \end{figure}
 
@@ -10227,7 +10148,7 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0260-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0260-03.png}}
 \caption{(b)}
 \end{figure}
 
@@ -10241,7 +10162,7 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0261-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0261-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -10251,7 +10172,7 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0261-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0261-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -10601,7 +10522,7 @@ Q_3=C_3m_3(0-t_3)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0269-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0269-01.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -10685,7 +10606,7 @@ Q_3=C_3m_3(0-t_3)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.4 密闭容器里的饱和汽和液体达到了动态平衡}]{assets/physics-2/fig-p0272-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.4 密闭容器里的饱和汽和液体达到了动态平衡}]{assets/physics-2/fig-p0272-01.png}}
 \caption{图 8.4 密闭容器里的饱和汽和液体达到了动态平衡}
 \end{figure}
 
@@ -10695,7 +10616,7 @@ Q_3=C_3m_3(0-t_3)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.5 研究液体饱和汽压的实验装置示意图}]{assets/physics-2/fig-p0272-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.5 研究液体饱和汽压的实验装置示意图}]{assets/physics-2/fig-p0272-02.png}}
 \caption{图 8.5 研究液体饱和汽压的实验装置示意图}
 \end{figure}
 
@@ -10714,7 +10635,7 @@ Q_3=C_3m_3(0-t_3)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.6 在一定温度下，乙醚饱和汽的压强是跟体积无关的}]{assets/physics-2/fig-p0274-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.6 在一定温度下，乙醚饱和汽的压强是跟体积无关的}]{assets/physics-2/fig-p0274-01.png}}
 \caption{图 8.6 在一定温度下，乙醚饱和汽的压强是跟体积无关的}
 \end{figure}
 
@@ -10768,7 +10689,7 @@ t（°C） & p（emHg） & t（°C） & p'；cmHg） & t（°C） & p（cmHg） 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.7 水的饱和汽压跟温度的函数图象}]{assets/physics-2/fig-p0276-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.7 水的饱和汽压跟温度的函数图象}]{assets/physics-2/fig-p0276-01.png}}
 \caption{图 8.7 水的饱和汽压跟温度的函数图象}
 \end{figure}
 
@@ -10782,7 +10703,7 @@ t（°C） & p（emHg） & t（°C） & p'；cmHg） & t（°C） & p（cmHg） 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.8 不同物质的饱和汽压}]{assets/physics-2/fig-p0277-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.8 不同物质的饱和汽压}]{assets/physics-2/fig-p0277-01.png}}
 \caption{图8.8 不同物质的饱和汽压}
 \end{figure}
 
@@ -10836,7 +10757,7 @@ t（°C） & p（emHg） & t（°C） & p'；cmHg） & t（°C） & p（cmHg） 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0278-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0278-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -10869,7 +10790,7 @@ t（°C） & p（emHg） & t（°C） & p'；cmHg） & t（°C） & p（cmHg） 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0279-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0279-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -10879,7 +10800,7 @@ t（°C） & p（emHg） & t（°C） & p'；cmHg） & t（°C） & p（cmHg） 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0279-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0279-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -10928,7 +10849,7 @@ t（°C） & p（emHg） & t（°C） & p'；cmHg） & t（°C） & p（cmHg） 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.10 复沸腾现象}]{assets/physics-2/fig-p0280-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.10 复沸腾现象}]{assets/physics-2/fig-p0280-01.png}}
 \caption{图 8.10 复沸腾现象}
 \end{figure}
 
@@ -11041,7 +10962,7 @@ J/kg。此外汽化热的常用单位还有千卡/千克，即 kC/kg。表 8.6
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.11 测定水的汽化热的实验装置}]{assets/physics-2/fig-p0283-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.11 测定水的汽化热的实验装置}]{assets/physics-2/fig-p0283-01.png}}
 \caption{图 8.11 测定水的汽化热的实验装置}
 \end{figure}
 
@@ -11282,7 +11203,7 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.12 饱和水汽的 p - t 图}]{assets/physics-2/fig-p0288-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.12 饱和水汽的 p - t 图}]{assets/physics-2/fig-p0288-01.png}}
 \caption{图8.12 饱和水汽的 \(p - t\) 图}
 \end{figure}
 
@@ -11323,7 +11244,7 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.13 乙醚的临界状态实验装置}]{assets/physics-2/fig-p0290-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.13 乙醚的临界状态实验装置}]{assets/physics-2/fig-p0290-01.png}}
 \caption{图 8.13 乙醚的临界状态实验装置}
 \end{figure}
 
@@ -11335,37 +11256,37 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-02.png}}
 \caption{图示（原PDF第290页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-03.png}}
 \caption{图示（原PDF第290页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-04.png}}
 \caption{图示（原PDF第290页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-05.png}}
 \caption{图示（原PDF第290页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-06.png}}
 \caption{图示（原PDF第290页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.14 乙醚的临界状态}]{assets/physics-2/fig-p0290-07.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.14 乙醚的临界状态}]{assets/physics-2/fig-p0290-07.png}}
 \caption{图 8.14 乙醚的临界状态}
 \end{figure}
 
@@ -11421,7 +11342,7 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.15 致冷机(电冰箱)的原理示意图}]{assets/physics-2/fig-p0292-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.15 致冷机(电冰箱)的原理示意图}]{assets/physics-2/fig-p0292-01.png}}
 \caption{图 8.15 致冷机(电冰箱)的原理示意图}
 \end{figure}
 
@@ -11439,7 +11360,7 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.16 在空调装置中的热泵}]{assets/physics-2/fig-p0293-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.16 在空调装置中的热泵}]{assets/physics-2/fig-p0293-01.png}}
 \caption{图 8.16 在空调装置中的热泵}
 \end{figure}
 
@@ -11452,7 +11373,7 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.17 制造液态空气的林德机示意图}]{assets/physics-2/fig-p0294-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.17 制造液态空气的林德机示意图}]{assets/physics-2/fig-p0294-01.png}}
 \caption{图 8.17 制造液态空气的林德机示意图}
 \end{figure}
 
@@ -11475,7 +11396,7 @@ b 流入冷却管 c，由冷水或周围的冷空气加以冷却；但在离开 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.18 降低液态空气的温度}]{assets/physics-2/fig-p0295-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.18 降低液态空气的温度}]{assets/physics-2/fig-p0295-01.png}}
 \caption{图8.18 降低液态空气的温度}
 \end{figure}
 
@@ -11590,7 +11511,7 @@ B = \frac {8}{15.48} \times 100 \% \doteq 51.7 \%
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.19 最简单的露点温度计}]{assets/physics-2/fig-p0301-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.19 最简单的露点温度计}]{assets/physics-2/fig-p0301-01.png}}
 \caption{图8.19 最简单的露点温度计}
 \end{figure}
 
@@ -11645,7 +11566,7 @@ H = 2.84 \mathrm{mmHg} <   3.01 \mathrm{mmHg}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.20 毛发温度计}]{assets/physics-2/fig-p0302-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.20 毛发温度计}]{assets/physics-2/fig-p0302-01.png}}
 \caption{图 8.20 毛发温度计}
 \end{figure}
 
@@ -11857,7 +11778,7 @@ B=\frac{H}{p}\times100\%
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第308页）}]{assets/physics-2/fig-p0308-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第308页）}]{assets/physics-2/fig-p0308-01.png}}
 \caption{图示（原PDF第308页）}
 \end{figure}
 
@@ -11908,7 +11829,7 @@ B=\frac{H}{p}\times100\%
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/physics-2/fig-p0308-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/physics-2/fig-p0308-02.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -11933,7 +11854,7 @@ B=\frac{H}{p}\times100\%
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3.1 作功会产生热}]{assets/physics-2/fig-p0309-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3.1 作功会产生热}]{assets/physics-2/fig-p0309-01.png}}
 \caption{图 3.1 作功会产生热}
 \end{figure}
 
@@ -12054,7 +11975,7 @@ s = \frac {0.30}{90 \times 0.735} \times 4.18 \times 11000 \times 25 \times 15 \
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.2}]{assets/physics-2/fig-p0313-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.2}]{assets/physics-2/fig-p0313-01.png}}
 \caption{图9.2}
 \end{figure}
 
@@ -12169,7 +12090,7 @@ J = \frac {W}{Q} = \frac {m g \cdot n / 1000}{(c m + c _ {1} m _ {1} + c _ {2} m
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.3}]{assets/physics-2/fig-p0318-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.3}]{assets/physics-2/fig-p0318-01.png}}
 \caption{图9.3}
 \end{figure}
 
@@ -12255,7 +12176,7 @@ Q = - 16 \text{千   卡} = - 0.669 \times 10 ^ {5} \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.4}]{assets/physics-2/fig-p0322-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.4}]{assets/physics-2/fig-p0322-01.png}}
 \caption{图9.4}
 \end{figure}
 
@@ -12324,7 +12245,7 @@ W = \Delta E
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.5 气体的受热等压膨胀示意图}]{assets/physics-2/fig-p0324-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.5 气体的受热等压膨胀示意图}]{assets/physics-2/fig-p0324-01.png}}
 \caption{图 9.5 气体的受热等压膨胀示意图}
 \end{figure}
 
@@ -12334,7 +12255,7 @@ W = \Delta E
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.6 气体等压膨胀作功}]{assets/physics-2/fig-p0324-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.6 气体等压膨胀作功}]{assets/physics-2/fig-p0324-02.png}}
 \caption{图9.6 气体等压膨胀作功}
 \end{figure}
 
@@ -12374,7 +12295,7 @@ W = - p (V _ {2} - V _ {1}) = - p \Delta V \tag {9.7}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.7 p - V 图上功的计算}]{assets/physics-2/fig-p0325-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.7 p - V 图上功的计算}]{assets/physics-2/fig-p0325-01.png}}
 \caption{图9.7 \(p - V\) 图上功的计算}
 \end{figure}
 
@@ -12488,7 +12409,7 @@ Q = \frac {M}{\mu} C _ {p} \Delta T
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.8 气体的等容过程}]{assets/physics-2/fig-p0327-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.8 气体的等容过程}]{assets/physics-2/fig-p0327-01.png}}
 \caption{图9.8 气体的等容过程}
 \end{figure}
 
@@ -12498,7 +12419,7 @@ Q = \frac {M}{\mu} C _ {p} \Delta T
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.9 p-V上的等容线}]{assets/physics-2/fig-p0327-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.9 p-V上的等容线}]{assets/physics-2/fig-p0327-02.png}}
 \caption{图9.9 p-V上的等容线}
 \end{figure}
 
@@ -12577,7 +12498,7 @@ C _ {v} = 24.9 \text{焦 / 摩} \cdot \text{开} \approx 6 \text{卡 / 摩} \cdo
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.10 气体的等温膨胀过程示意图}]{assets/physics-2/fig-p0330-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.10 气体的等温膨胀过程示意图}]{assets/physics-2/fig-p0330-01.png}}
 \caption{图9.10 气体的等温膨胀过程示意图}
 \end{figure}
 
@@ -12587,7 +12508,7 @@ C _ {v} = 24.9 \text{焦 / 摩} \cdot \text{开} \approx 6 \text{卡 / 摩} \cdo
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.11 p - V 图上的等温线}]{assets/physics-2/fig-p0330-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.11 p - V 图上的等温线}]{assets/physics-2/fig-p0330-02.png}}
 \caption{图9.11 \(p - V\) 图上的等温线}
 \end{figure}
 
@@ -12625,7 +12546,7 @@ W = \Delta E \tag {9.14}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.12 p - V 图上的绝热线和等温线}]{assets/physics-2/fig-p0331-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.12 p - V 图上的绝热线和等温线}]{assets/physics-2/fig-p0331-01.png}}
 \caption{图9.12 \(p - V\) 图上的绝热线和等温线}
 \end{figure}
 
@@ -12648,7 +12569,7 @@ W = \Delta E \tag {9.14}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.13 循环过程}]{assets/physics-2/fig-p0332-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.13 循环过程}]{assets/physics-2/fig-p0332-01.png}}
 \caption{图9.13 循环过程}
 \end{figure}
 
@@ -12690,7 +12611,7 @@ W = W _ {1} - W _ {2} = \text{曲线} a c b d \text{所围成的面积}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.14}]{assets/physics-2/fig-p0333-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.14}]{assets/physics-2/fig-p0333-01.png}}
 \caption{图9.14}
 \end{figure}
 
@@ -12812,7 +12733,7 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0335-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0335-01.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -12865,7 +12786,7 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.15 热机的热流示意图}]{assets/physics-2/fig-p0337-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.15 热机的热流示意图}]{assets/physics-2/fig-p0337-01.png}}
 \caption{图9.15 热机的热流示意图}
 \end{figure}
 
@@ -12959,7 +12880,7 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.16 热机总的热流示意图}]{assets/physics-2/fig-p0339-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.16 热机总的热流示意图}]{assets/physics-2/fig-p0339-01.png}}
 \caption{图9.16 热机总的热流示意图}
 \end{figure}
 
@@ -12981,7 +12902,7 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.17 火管式锅炉示意图}]{assets/physics-2/fig-p0340-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.17 火管式锅炉示意图}]{assets/physics-2/fig-p0340-01.png}}
 \caption{图9.17 火管式锅炉示意图}
 \end{figure}
 
@@ -12993,7 +12914,7 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.10 大型水管式锅炉设备示意图}]{assets/physics-2/fig-p0341-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.10 大型水管式锅炉设备示意图}]{assets/physics-2/fig-p0341-01.png}}
 \caption{图 9.10 大型水管式锅炉设备示意图}
 \end{figure}
 
@@ -13018,7 +12939,7 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.19 单缸卧式蒸汽机的构造示意图}]{assets/physics-2/fig-p0343-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.19 单缸卧式蒸汽机的构造示意图}]{assets/physics-2/fig-p0343-01.png}}
 \caption{图 9.19 单缸卧式蒸汽机的构造示意图}
 \end{figure}
 
@@ -13030,7 +12951,7 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0344-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0344-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -13040,7 +12961,7 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-2/fig-p0344-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-2/fig-p0344-02.png}}
 \caption{(3)}
 \end{figure}
 
@@ -13064,7 +12985,7 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.21 将活塞的往复运动变成机轴、飞轮转动的装置}]{assets/physics-2/fig-p0345-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.21 将活塞的往复运动变成机轴、飞轮转动的装置}]{assets/physics-2/fig-p0345-01.png}}
 \caption{图9.21 将活塞的往复运动变成机轴、飞轮转动的装置}
 \end{figure}
 
@@ -13247,13 +13168,13 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第349页）}]{assets/physics-2/fig-p0349-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第349页）}]{assets/physics-2/fig-p0349-01.png}}
 \caption{图示（原PDF第349页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.22 单级蒸汽轮机的转子}]{assets/physics-2/fig-p0349-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.22 单级蒸汽轮机的转子}]{assets/physics-2/fig-p0349-02.png}}
 \caption{图 9.22 单级蒸汽轮机的转子}
 \end{figure}
 
@@ -13269,7 +13190,7 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.23 三级蒸汽轮机结构示意图}]{assets/physics-2/fig-p0350-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.23 三级蒸汽轮机结构示意图}]{assets/physics-2/fig-p0350-01.png}}
 \caption{图 9.23 三级蒸汽轮机结构示意图}
 \end{figure}
 
@@ -13281,7 +13202,7 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.24 多级蒸汽轮机示意图}]{assets/physics-2/fig-p0350-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.24 多级蒸汽轮机示意图}]{assets/physics-2/fig-p0350-02.png}}
 \caption{图 9.24 多级蒸汽轮机示意图}
 \end{figure}
 
@@ -13342,7 +13263,7 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.25 奥托内燃机主要结构和动作示意图}]{assets/physics-2/fig-p0352-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.25 奥托内燃机主要结构和动作示意图}]{assets/physics-2/fig-p0352-01.png}}
 \caption{图 9.25 奥托内燃机主要结构和动作示意图}
 \end{figure}
 
@@ -13369,7 +13290,7 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.20 单缸四冲程汽托内燃机剖面图}]{assets/physics-2/fig-p0354-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.20 单缸四冲程汽托内燃机剖面图}]{assets/physics-2/fig-p0354-01.png}}
 \caption{图 9.20 单缸四冲程汽托内燃机剖面图}
 \end{figure}
 
@@ -13395,7 +13316,7 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.27 奥托内燃机循环过程的 p - V 图}]{assets/physics-2/fig-p0355-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.27 奥托内燃机循环过程的 p - V 图}]{assets/physics-2/fig-p0355-01.png}}
 \caption{图9.27 奥托内燃机循环过程的 \(p - V\) 图}
 \end{figure}
 
@@ -13420,7 +13341,7 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={压缩比：10比1}]{assets/physics-2/fig-p0356-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={压缩比：10比1}]{assets/physics-2/fig-p0356-01.png}}
 \caption{压缩比：10比1}
 \end{figure}
 
@@ -13430,7 +13351,7 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.28 内燃机的压缩比与输出功率的关系}]{assets/physics-2/fig-p0356-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.28 内燃机的压缩比与输出功率的关系}]{assets/physics-2/fig-p0356-02.png}}
 \caption{图9.28 内燃机的压缩比与输出功率的关系}
 \end{figure}
 
@@ -13450,7 +13371,7 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.29 卧式单缸四冲程狄塞耳内燃机剖面图}]{assets/physics-2/fig-p0357-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.29 卧式单缸四冲程狄塞耳内燃机剖面图}]{assets/physics-2/fig-p0357-01.png}}
 \caption{图 9.29 卧式单缸四冲程狄塞耳内燃机剖面图}
 \end{figure}
 
@@ -13466,7 +13387,7 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.30 狄塞耳内燃机主要结构和动作示意图}]{assets/physics-2/fig-p0357-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.30 狄塞耳内燃机主要结构和动作示意图}]{assets/physics-2/fig-p0357-02.png}}
 \caption{图 9.30 狄塞耳内燃机主要结构和动作示意图}
 \end{figure}
 
@@ -13489,7 +13410,7 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.31 喷油嘴头部构造示意图}]{assets/physics-2/fig-p0358-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.31 喷油嘴头部构造示意图}]{assets/physics-2/fig-p0358-01.png}}
 \caption{图 9.31 喷油嘴头部构造示意图}
 \end{figure}
 
@@ -13507,7 +13428,7 @@ C→D 由于将柴油喷入汽缸的过程并不是一瞬间完成的， 一面�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.32 狄塞耳内燃机循环过程的 p - V 图}]{assets/physics-2/fig-p0359-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.32 狄塞耳内燃机循环过程的 p - V 图}]{assets/physics-2/fig-p0359-01.png}}
 \caption{图9.32 狄塞耳内燃机循环过程的 \(p - V\) 图}
 \end{figure}
 
@@ -13557,7 +13478,7 @@ C→D 由于将柴油喷入汽缸的过程并不是一瞬间完成的， 一面�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.33 燃气轮机的示意图}]{assets/physics-2/fig-p0361-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.33 燃气轮机的示意图}]{assets/physics-2/fig-p0361-01.png}}
 \caption{图 9.33 燃气轮机的示意图}
 \end{figure}
 
@@ -13647,7 +13568,7 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.34 八汽缸内燃发动机示意图}]{assets/physics-2/fig-p0363-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.34 八汽缸内燃发动机示意图}]{assets/physics-2/fig-p0363-01.png}}
 \caption{图 9.34 八汽缸内燃发动机示意图}
 \end{figure}
 
@@ -13698,7 +13619,7 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.35 冲压式空气喷气发动机结构示意图}]{assets/physics-2/fig-p0365-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.35 冲压式空气喷气发动机结构示意图}]{assets/physics-2/fig-p0365-01.png}}
 \caption{图 9.35 冲压式空气喷气发动机结构示意图}
 \end{figure}
 
@@ -13718,7 +13639,7 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.36 轮机式空气喷气发动机结构示意图}]{assets/physics-2/fig-p0365-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.36 轮机式空气喷气发动机结构示意图}]{assets/physics-2/fig-p0365-02.png}}
 \caption{图 9.36 轮机式空气喷气发动机结构示意图}
 \end{figure}
 
@@ -13742,7 +13663,7 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.37 轮机螺旋桨式吹气发动机的小息图}]{assets/physics-2/fig-p0366-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.37 轮机螺旋桨式吹气发动机的小息图}]{assets/physics-2/fig-p0366-01.png}}
 \caption{图 9.37 轮机螺旋桨式吹气发动机的小息图}
 \end{figure}
 
@@ -13763,7 +13684,7 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.38 用固体燃料的火箭结构示意图}]{assets/physics-2/fig-p0367-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.38 用固体燃料的火箭结构示意图}]{assets/physics-2/fig-p0367-01.png}}
 \caption{图 9.38 用固体燃料的火箭结构示意图}
 \end{figure}
 
@@ -13773,7 +13694,7 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.39 用液体燃料的火箭结构示意图}]{assets/physics-2/fig-p0368-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.39 用液体燃料的火箭结构示意图}]{assets/physics-2/fig-p0368-01.png}}
 \caption{图9.39 用液体燃料的火箭结构示意图}
 \end{figure}
 
@@ -14319,13 +14240,13 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第378页）}]{assets/physics-2/fig-p0378-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第378页）}]{assets/physics-2/fig-p0378-01.png}}
 \caption{图示（原PDF第378页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第 15 题)}]{assets/physics-2/fig-p0378-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第 15 题)}]{assets/physics-2/fig-p0378-02.png}}
 \caption{(第 15 题)}
 \end{figure}
 
@@ -14585,7 +14506,7 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第55题)}]{assets/physics-2/fig-p0382-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第55题)}]{assets/physics-2/fig-p0382-01.png}}
 \caption{(第55题)}
 \end{figure}
 
@@ -14645,7 +14566,7 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第60题)}]{assets/physics-2/fig-p0383-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第60题)}]{assets/physics-2/fig-p0383-01.png}}
 \caption{(第60题)}
 \end{figure}
 
@@ -14714,7 +14635,7 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0385-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0385-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -14726,7 +14647,7 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0385-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-2/fig-p0385-02.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -14767,7 +14688,7 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-2/fig-p0386-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-2/fig-p0386-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -14817,7 +14738,7 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0387-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0387-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -15110,7 +15031,7 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第55题)}]{assets/physics-2/fig-p0392-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第55题)}]{assets/physics-2/fig-p0392-01.png}}
 \caption{(第55题)}
 \end{figure}
 
@@ -15123,7 +15044,7 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={附录一：本书主要物理量、符号、SI制单位、其他常用单位及换算备注表}]{assets/physics-2/appendix-p0393-physical-quantities.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={附录一：本书主要物理量、符号、SI制单位、其他常用单位及换算备注表}]{assets/physics-2/appendix-p0393-physical-quantities.png}}
 \caption{附录一：本书主要物理量、符号、SI制单位、其他常用单位及换算备注表}
 \end{figure}
 
@@ -15148,4 +15069,3 @@ x _ {2} = 3 \cos \left(2 t + \frac {\pi}{3}\right) \text{米}
 \item
   玻耳兹曼常数\(K=1.38\times10^{-23}\)焦/开
 \end{itemize}
-\end{document}

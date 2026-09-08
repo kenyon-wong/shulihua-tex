@@ -46,12 +46,12 @@ REQUIRED = {
     "scripts/audit_repository.py",
     "scripts/audit_sources.py",
     "scripts/build_pdfs.py",
-    "scripts/convert_md_to_tex.py",
     "scripts/audit_tex_sources.py",
     "tex/cover.tex",
     "tex/BRANCH_AGENTS.md",
     "tex/packages.txt",
-    "tex/template.tex",
+    "tex/style/preamble.tex",
+    "tex/style/driver.tex",
     "raw/README.md",
     "raw/SHA256SUMS.txt",
 }
@@ -264,7 +264,6 @@ def main() -> int:
         "scripts/audit_repository.py",
         "scripts/audit_sources.py",
         "scripts/build_pdfs.py",
-        "scripts/convert_md_to_tex.py",
         "scripts/audit_tex_sources.py",
     }
     unexpected_executable = sorted(set(executable_files) - allowed_executable)

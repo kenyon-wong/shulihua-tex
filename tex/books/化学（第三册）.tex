@@ -1,82 +1,3 @@
-\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
-\usepackage[
-  b5paper,
-  hmargin=2.2cm,
-  top=1.6cm,
-  bottom=2.2cm,
-  headheight=22pt,
-  headsep=14pt,
-  footskip=16mm,
-  includehead
-]{geometry}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
-\usepackage{float}
-\xeCJKsetup{CJKmath=true}
-\usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
-
-\setcounter{secnumdepth}{-\maxdimen}
-\setlength{\emergencystretch}{3em}
-\graphicspath{{books/}}
-
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi
-}
-\def\fps@figure{htbp}
-\makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\hypersetup{
-  hidelinks,
-  pdflang={zh-CN},
-  pdftitle={化学（第三册）},
-  pdfauthor={数理化自学丛书编委会},
-  pdfcreator={XeLaTeX via pandoc}
-}
-
-\title{化学（第三册）}
-\author{数理化自学丛书编委会}
-\date{}
-
-\begin{document}
-\frontmatter
-\maketitle
-\renewcommand*\contentsname{目录}
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\mainmatter
 \textbf{丛书：} 数理化自学丛书\\
 \textbf{编者：} 数理化自学丛书编委会\\
 \textbf{编写：} 化学编写小组\\
@@ -282,7 +203,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·1 金属结构示意图}]{assets/chemistry-3/fig-p0006-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·1 金属结构示意图}]{assets/chemistry-3/fig-p0006-01.png}}
 \caption{图 1·1 金属结构示意图}
 \end{figure}
 
@@ -309,7 +230,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第8页图示}]{assets/chemistry-3/fig-p0008-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第8页图示}]{assets/chemistry-3/fig-p0008-01.png}}
 \caption{原PDF第8页图示}
 \end{figure}
 
@@ -336,7 +257,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·3 金属的比重}]{assets/chemistry-3/fig-p0009-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·3 金属的比重}]{assets/chemistry-3/fig-p0009-01.png}}
 \caption{图1·3 金属的比重}
 \end{figure}
 
@@ -347,7 +268,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·4 金属的熔点}]{assets/chemistry-3/fig-p0010-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·4 金属的熔点}]{assets/chemistry-3/fig-p0010-01.png}}
 \caption{图1·4 金属的熔点}
 \end{figure}
 
@@ -359,7 +280,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·5 金属的硬度和金刚石硬度的比较}]{assets/chemistry-3/fig-p0011-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·5 金属的硬度和金刚石硬度的比较}]{assets/chemistry-3/fig-p0011-01.png}}
 \caption{图 1·5 金属的硬度和金刚石硬度的比较}
 \end{figure}
 
@@ -741,7 +662,7 @@ K，Na，Ca，Mg，Al，Mn，Zn，Cr，Fe，Ni，Sn，Pb，（H），Cu，Hg，A
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·6}]{assets/chemistry-3/fig-p0025-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·6}]{assets/chemistry-3/fig-p0025-01.png}}
 \caption{图 1·6}
 \end{figure}
 
@@ -1219,7 +1140,7 @@ ROH）。它们的氢氧化物都是强碱。所以碱金属所显示的金属�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={氧化钾}]{assets/chemistry-3/fig-p0040-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={氧化钾}]{assets/chemistry-3/fig-p0040-01.png}}
 \caption{氧化钾}
 \end{figure}
 
@@ -1243,7 +1164,7 @@ ROH）。它们的氢氧化物都是强碱。所以碱金属所显示的金属�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·1 钠跟水起反应}]{assets/chemistry-3/fig-p0040-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·1 钠跟水起反应}]{assets/chemistry-3/fig-p0040-04.png}}
 \caption{图 2·1 钠跟水起反应}
 \end{figure}
 
@@ -1522,7 +1443,7 @@ ROH）。它们的氢氧化物都是强碱。所以碱金属所显示的金属�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·2 用焰色反应检验钠盐或钾盐}]{assets/chemistry-3/fig-p0047-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·2 用焰色反应检验钠盐或钾盐}]{assets/chemistry-3/fig-p0047-01.png}}
 \caption{图2·2 用焰色反应检验钠盐或钾盐}
 \end{figure}
 
@@ -1783,7 +1704,7 @@ IV
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·3}]{assets/chemistry-3/fig-p0052-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·3}]{assets/chemistry-3/fig-p0052-01.png}}
 \caption{图2·3}
 \end{figure}
 
@@ -1821,7 +1742,7 @@ IV
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·4 水平式隔膜电解槽示意图}]{assets/chemistry-3/fig-p0054-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·4 水平式隔膜电解槽示意图}]{assets/chemistry-3/fig-p0054-01.png}}
 \caption{图 2·4 水平式隔膜电解槽示意图}
 \end{figure}
 
@@ -1837,7 +1758,7 @@ IV
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·5 垂直式隔膜电解槽示意图}]{assets/chemistry-3/fig-p0054-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·5 垂直式隔膜电解槽示意图}]{assets/chemistry-3/fig-p0054-02.png}}
 \caption{图 2·5 垂直式隔膜电解槽示意图}
 \end{figure}
 
@@ -2037,7 +1958,7 @@ IV
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·6 用氨碱法制造纯碱的流程简图}]{assets/chemistry-3/fig-p0059-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·6 用氨碱法制造纯碱的流程简图}]{assets/chemistry-3/fig-p0059-01.png}}
 \caption{图 2·6 用氨碱法制造纯碱的流程简图}
 \end{figure}
 
@@ -2168,7 +2089,7 @@ IV
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第63页图示}]{assets/chemistry-3/fig-p0063-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第63页图示}]{assets/chemistry-3/fig-p0063-01.png}}
 \caption{原PDF第63页图示}
 \end{figure}
 
@@ -2367,7 +2288,7 @@ Be---Mg---Ca---Sr---Ba
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·1 镁带的燃烧}]{assets/chemistry-3/fig-p0068-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·1 镁带的燃烧}]{assets/chemistry-3/fig-p0068-01.png}}
 \caption{图 3·1 镁带的燃烧}
 \end{figure}
 
@@ -2375,7 +2296,7 @@ Be---Mg---Ca---Sr---Ba
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·2 镁在二氧化碳里燃烧}]{assets/chemistry-3/fig-p0068-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·2 镁在二氧化碳里燃烧}]{assets/chemistry-3/fig-p0068-02.png}}
 \caption{图 3·2 镁在二氧化碳里燃烧}
 \end{figure}
 
@@ -3245,7 +3166,7 @@ II 类主族）的一个元素是镁，后面（第 IV
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第87页图示}]{assets/chemistry-3/fig-p0087-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第87页图示}]{assets/chemistry-3/fig-p0087-02.png}}
 \caption{原PDF第87页图示}
 \end{figure}
 
@@ -3295,7 +3216,7 @@ II 类主族）的一个元素是镁，后面（第 IV
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4·2 用铝热剂焊接钢轨（剖面图）}]{assets/chemistry-3/fig-p0089-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4·2 用铝热剂焊接钢轨（剖面图）}]{assets/chemistry-3/fig-p0089-02.png}}
 \caption{图 4·2 用铝热剂焊接钢轨（剖面图）}
 \end{figure}
 
@@ -3715,7 +3636,7 @@ x=1 或 3）、冰晶石
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4·3 氧化铝的电解槽示意图}]{assets/chemistry-3/fig-p0099-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4·3 氧化铝的电解槽示意图}]{assets/chemistry-3/fig-p0099-01.png}}
 \caption{图 4·3 氧化铝的电解槽示意图}
 \end{figure}
 
@@ -3869,7 +3790,7 @@ x=1 或 3）、冰晶石
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第102页图示}]{assets/chemistry-3/fig-p0102-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第102页图示}]{assets/chemistry-3/fig-p0102-01.png}}
 \caption{原PDF第102页图示}
 \end{figure}
 
@@ -4307,7 +4228,7 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·1 炼铁高炉和炼铁时炉内的化学过程示意图}]{assets/chemistry-3/fig-p0114-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·1 炼铁高炉和炼铁时炉内的化学过程示意图}]{assets/chemistry-3/fig-p0114-01.png}}
 \caption{图 5·1 炼铁高炉和炼铁时炉内的化学过程示意图}
 \end{figure}
 
@@ -4325,7 +4246,7 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·2 炼铁车间图}]{assets/chemistry-3/fig-p0115-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·2 炼铁车间图}]{assets/chemistry-3/fig-p0115-01.png}}
 \caption{图 5·2 炼铁车间图}
 \end{figure}
 
@@ -4335,7 +4256,7 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 炉料进入小料斗}]{assets/chemistry-3/fig-p0115-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 炉料进入小料斗}]{assets/chemistry-3/fig-p0115-02.png}}
 \caption{(a) 炉料进入小料斗}
 \end{figure}
 
@@ -4343,7 +4264,7 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 炉料进入大料斗}]{assets/chemistry-3/fig-p0115-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 炉料进入大料斗}]{assets/chemistry-3/fig-p0115-03.png}}
 \caption{(b) 炉料进入大料斗}
 \end{figure}
 
@@ -4351,7 +4272,7 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(c) 炉料进入炉内}]{assets/chemistry-3/fig-p0115-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(c) 炉料进入炉内}]{assets/chemistry-3/fig-p0115-04.png}}
 \caption{(c) 炉料进入炉内}
 \end{figure}
 
@@ -4386,7 +4307,7 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第117页图示}]{assets/chemistry-3/fig-p0117-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第117页图示}]{assets/chemistry-3/fig-p0117-01.png}}
 \caption{原PDF第117页图示}
 \end{figure}
 
@@ -4512,19 +4433,19 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第121页图示}]{assets/chemistry-3/fig-p0121-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第121页图示}]{assets/chemistry-3/fig-p0121-01.png}}
 \caption{原PDF第121页图示}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第121页图示}]{assets/chemistry-3/fig-p0121-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第121页图示}]{assets/chemistry-3/fig-p0121-02.png}}
 \caption{原PDF第121页图示}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 纵剖面；(b) 截面}]{assets/chemistry-3/fig-p0121-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 纵剖面；(b) 截面}]{assets/chemistry-3/fig-p0121-03.png}}
 \caption{(a) 纵剖面；(b) 截面}
 \end{figure}
 
@@ -4546,7 +4467,7 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·6 平炉示意图}]{assets/chemistry-3/fig-p0122-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·6 平炉示意图}]{assets/chemistry-3/fig-p0122-01.png}}
 \caption{图5·6 平炉示意图}
 \end{figure}
 
@@ -4573,7 +4494,7 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·7 电弧炉剖面图}]{assets/chemistry-3/fig-p0124-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·7 电弧炉剖面图}]{assets/chemistry-3/fig-p0124-01.png}}
 \caption{图 5·7 电弧炉剖面图}
 \end{figure}
 
@@ -4885,7 +4806,7 @@ V _ {1} = \frac {273 \times 750 \times 1}{293 \times 760} = 0.9196 (\text {\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6·1 标准状况下,气体分子间平均距离示意图}]{assets/chemistry-3/fig-p0131-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6·1 标准状况下,气体分子间平均距离示意图}]{assets/chemistry-3/fig-p0131-01.png}}
 \caption{图6·1 标准状况下,气体分子间平均距离示意图}
 \end{figure}
 
@@ -4903,7 +4824,7 @@ V _ {1} = \frac {273 \times 750 \times 1}{293 \times 760} = 0.9196 (\text {\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/chemistry-3/fig-p0132-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/chemistry-3/fig-p0132-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -4911,7 +4832,7 @@ V _ {1} = \frac {273 \times 750 \times 1}{293 \times 760} = 0.9196 (\text {\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/chemistry-3/fig-p0132-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/chemistry-3/fig-p0132-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -6285,7 +6206,7 @@ V _ {2} = \frac {167 \times (273 + 15) \times 760}{273 \times 750} = 178.5 \text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第155页图示}]{assets/chemistry-3/fig-p0155-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第155页图示}]{assets/chemistry-3/fig-p0155-01.png}}
 \caption{原PDF第155页图示}
 \end{figure}
 
@@ -6293,7 +6214,7 @@ V _ {2} = \frac {167 \times (273 + 15) \times 760}{273 \times 750} = 178.5 \text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附2}]{assets/chemistry-3/fig-p0155-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附2}]{assets/chemistry-3/fig-p0155-02.png}}
 \caption{图附2}
 \end{figure}
 
@@ -6493,13 +6414,13 @@ V _ {2} = \frac {167 \times (273 + 15) \times 760}{273 \times 750} = 178.5 \text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附3（左）：带橡皮塞的试管内横放螺旋状铁丝}]{assets/chemistry-3/fig-p0159-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附3（左）：带橡皮塞的试管内横放螺旋状铁丝}]{assets/chemistry-3/fig-p0159-01.png}}
 \caption{图附3（左）：带橡皮塞的试管内横放螺旋状铁丝}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附3（右）：试管内竖直放置螺旋状铁丝}]{assets/chemistry-3/fig-p0159-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附3（右）：试管内竖直放置螺旋状铁丝}]{assets/chemistry-3/fig-p0159-02.png}}
 \caption{图附3（右）：试管内竖直放置螺旋状铁丝}
 \end{figure}
 
@@ -6507,7 +6428,7 @@ V _ {2} = \frac {167 \times (273 + 15) \times 760}{273 \times 750} = 178.5 \text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 4}]{assets/chemistry-3/fig-p0159-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 4}]{assets/chemistry-3/fig-p0159-03.png}}
 \caption{图 附 4}
 \end{figure}
 
@@ -6860,4 +6781,3 @@ I，3、4、5、6、7）？
 \item
   化学（第四册） 已出版
 \end{itemize}
-\end{document}

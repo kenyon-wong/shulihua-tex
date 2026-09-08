@@ -2,7 +2,8 @@
 
 ## 2026-09-08
 
-- `master` 分支改为以 `tex/books` 为规范正文；`books/*.md` 保留作上游对照。
+- `master` 分支改为以 `tex/books` 为规范正文、`tex/style` 为版式；构建只用 XeLaTeX/CTeX，不再使用 Pandoc。
+- `books/*.md` 保留作上游对照。
 - 本分支移除 EPUB 目录与 `scripts/build_epubs.py`；PDF 由 TeX 源构建。
 - 新增 XeLaTeX/ctex 分册与合订 PDF 构建。
 - 新增数学、物理学、化学三本合订 PDF：由已通过校验的分册 PDF 按原书顺序装订，页码按册重起。

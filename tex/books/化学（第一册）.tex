@@ -1,82 +1,3 @@
-\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
-\usepackage[
-  b5paper,
-  hmargin=2.2cm,
-  top=1.6cm,
-  bottom=2.2cm,
-  headheight=22pt,
-  headsep=14pt,
-  footskip=16mm,
-  includehead
-]{geometry}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
-\usepackage{float}
-\xeCJKsetup{CJKmath=true}
-\usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
-
-\setcounter{secnumdepth}{-\maxdimen}
-\setlength{\emergencystretch}{3em}
-\graphicspath{{books/}}
-
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi
-}
-\def\fps@figure{htbp}
-\makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\hypersetup{
-  hidelinks,
-  pdflang={zh-CN},
-  pdftitle={化学（第一册）},
-  pdfauthor={数理化自学丛书编委会},
-  pdfcreator={XeLaTeX via pandoc}
-}
-
-\title{化学（第一册）}
-\author{数理化自学丛书编委会}
-\date{}
-
-\begin{document}
-\frontmatter
-\maketitle
-\renewcommand*\contentsname{目录}
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\mainmatter
 \textbf{丛书：} 数理化自学丛书\\
 \textbf{编者：} 数理化自学丛书编委会\\
 \textbf{编写：} 化学编写小组\\
@@ -92,7 +13,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第1页）}]{assets/chemistry-1/fig-p0001-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第1页）}]{assets/chemistry-1/fig-p0001-01.png}}
 \caption{图示（原PDF第1页）}
 \end{figure}
 
@@ -500,7 +421,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1-1 用电子显微镜拍摄的蛋白的微粒}]{assets/chemistry-1/fig-p0015-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1-1 用电子显微镜拍摄的蛋白的微粒}]{assets/chemistry-1/fig-p0015-01.png}}
 \caption{图 1-1 用电子显微镜拍摄的蛋白的微粒}
 \end{figure}
 
@@ -596,7 +517,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·2 电流通过水时所引起的化学变化}]{assets/chemistry-1/fig-p0019-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·2 电流通过水时所引起的化学变化}]{assets/chemistry-1/fig-p0019-01.png}}
 \caption{图 1·2 电流通过水时所引起的化学变化}
 \end{figure}
 
@@ -647,7 +568,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/chemistry-1/fig-p0021-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/chemistry-1/fig-p0021-01.png}}
 \caption{图示（原PDF第21页）}
 \end{figure}
 
@@ -656,7 +577,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·3 水分子分裂成氢分子和氧分子的示意图}]{assets/chemistry-1/fig-p0021-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·3 水分子分裂成氢分子和氧分子的示意图}]{assets/chemistry-1/fig-p0021-02.png}}
 \caption{图 1·3 水分子分裂成氢分子和氧分子的示意图}
 \end{figure}
 
@@ -816,7 +737,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·4 地壳内所含各种元素的重盛百分数}]{assets/chemistry-1/fig-p0028-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·4 地壳内所含各种元素的重盛百分数}]{assets/chemistry-1/fig-p0028-01.png}}
 \caption{图 1·4 地壳内所含各种元素的重盛百分数}
 \end{figure}
 
@@ -1642,7 +1563,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2-1 磷在氧气里燃烧}]{assets/chemistry-1/fig-p0048-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2-1 磷在氧气里燃烧}]{assets/chemistry-1/fig-p0048-01.png}}
 \caption{图 2-1 磷在氧气里燃烧}
 \end{figure}
 
@@ -1650,7 +1571,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2-2 碳在氧气里燃烧}]{assets/chemistry-1/fig-p0048-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2-2 碳在氧气里燃烧}]{assets/chemistry-1/fig-p0048-02.png}}
 \caption{图 2-2 碳在氧气里燃烧}
 \end{figure}
 
@@ -1685,7 +1606,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2-3 铁丝在氧气里燃烧}]{assets/chemistry-1/fig-p0049-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2-3 铁丝在氧气里燃烧}]{assets/chemistry-1/fig-p0049-01.png}}
 \caption{图 2-3 铁丝在氧气里燃烧}
 \end{figure}
 
@@ -1768,7 +1689,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·4 氧炔吹管}]{assets/chemistry-1/fig-p0052-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·4 氧炔吹管}]{assets/chemistry-1/fig-p0052-01.png}}
 \caption{图 2·4 氧炔吹管}
 \end{figure}
 
@@ -1780,7 +1701,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2-5 利用氧炔吹管焊美金}]{assets/chemistry-1/fig-p0053-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2-5 利用氧炔吹管焊美金}]{assets/chemistry-1/fig-p0053-01.png}}
 \caption{图 2-5 利用氧炔吹管焊美金}
 \end{figure}
 
@@ -1788,7 +1709,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·6 利用氧炔吹管切割金属}]{assets/chemistry-1/fig-p0053-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·6 利用氧炔吹管切割金属}]{assets/chemistry-1/fig-p0053-02.png}}
 \caption{图 2·6 利用氧炔吹管切割金属}
 \end{figure}
 
@@ -1849,7 +1770,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·7 氯酸钾的分解}]{assets/chemistry-1/fig-p0056-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·7 氯酸钾的分解}]{assets/chemistry-1/fig-p0056-01.png}}
 \caption{图 2·7 氯酸钾的分解}
 \end{figure}
 
@@ -1870,7 +1791,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2-8 用排水集气法收集氧气}]{assets/chemistry-1/fig-p0057-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2-8 用排水集气法收集氧气}]{assets/chemistry-1/fig-p0057-01.png}}
 \caption{图 2-8 用排水集气法收集氧气}
 \end{figure}
 
@@ -1878,7 +1799,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图29 氧气钢筒}]{assets/chemistry-1/fig-p0058-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图29 氧气钢筒}]{assets/chemistry-1/fig-p0058-01.png}}
 \caption{图29 氧气钢筒}
 \end{figure}
 
@@ -1931,7 +1852,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·10 氧气变成臭氧的示意图}]{assets/chemistry-1/fig-p0060-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·10 氧气变成臭氧的示意图}]{assets/chemistry-1/fig-p0060-01.png}}
 \caption{图2·10 氧气变成臭氧的示意图}
 \end{figure}
 
@@ -1966,7 +1887,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第61页）}]{assets/chemistry-1/fig-p0061-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第61页）}]{assets/chemistry-1/fig-p0061-01.png}}
 \caption{图示（原PDF第61页）}
 \end{figure}
 
@@ -2011,7 +1932,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·11 酒精灯火焰熄灭的方法}]{assets/chemistry-1/fig-p0063-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·11 酒精灯火焰熄灭的方法}]{assets/chemistry-1/fig-p0063-01.png}}
 \caption{图2·11 酒精灯火焰熄灭的方法}
 \end{figure}
 
@@ -2069,7 +1990,7 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·12 物质不灭定律的简单实验}]{assets/chemistry-1/fig-p0066-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·12 物质不灭定律的简单实验}]{assets/chemistry-1/fig-p0066-01.png}}
 \caption{图 2·12 物质不灭定律的简单实验}
 \end{figure}
 
@@ -2489,7 +2410,7 @@ z = \frac {160 \times 142}{284} = 80 (\text{ 克 })\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·13 制取氢气的装置}]{assets/chemistry-1/fig-p0079-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·13 制取氢气的装置}]{assets/chemistry-1/fig-p0079-01.png}}
 \caption{图 2·13 制取氢气的装置}
 \end{figure}
 
@@ -2518,7 +2439,7 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a) 启普发生器}]{assets/chemistry-1/fig-p0080-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a) 启普发生器}]{assets/chemistry-1/fig-p0080-01.png}}
 \caption{(a) 启普发生器}
 \end{figure}
 
@@ -2526,7 +2447,7 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b) 启普发生器的两个组成部分}]{assets/chemistry-1/fig-p0080-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b) 启普发生器的两个组成部分}]{assets/chemistry-1/fig-p0080-02.png}}
 \caption{(b) 启普发生器的两个组成部分}
 \end{figure}
 
@@ -2534,7 +2455,7 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(c) 产生氢气的情形}]{assets/chemistry-1/fig-p0080-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(c) 产生氢气的情形}]{assets/chemistry-1/fig-p0080-03.png}}
 \caption{(c) 产生氢气的情形}
 \end{figure}
 
@@ -2542,7 +2463,7 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(d) 停止产生氢气的情形}]{assets/chemistry-1/fig-p0080-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(d) 停止产生氢气的情形}]{assets/chemistry-1/fig-p0080-04.png}}
 \caption{(d) 停止产生氢气的情形}
 \end{figure}
 
@@ -2610,7 +2531,7 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·15 锌和盐酸置换反应的示意图}]{assets/chemistry-1/fig-p0083-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·15 锌和盐酸置换反应的示意图}]{assets/chemistry-1/fig-p0083-01.png}}
 \caption{图 2·15 锌和盐酸置换反应的示意图}
 \end{figure}
 
@@ -2688,7 +2609,7 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2-16 氢气在空气燃烧}]{assets/chemistry-1/fig-p0084-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2-16 氢气在空气燃烧}]{assets/chemistry-1/fig-p0084-01.png}}
 \caption{图 2-16 氢气在空气燃烧}
 \end{figure}
 
@@ -2726,7 +2647,7 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·17 氢气还原氧化铜的实验}]{assets/chemistry-1/fig-p0086-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·17 氢气还原氧化铜的实验}]{assets/chemistry-1/fig-p0086-01.png}}
 \caption{图 2·17 氢气还原氧化铜的实验}
 \end{figure}
 
@@ -2854,7 +2775,7 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-18 电解水的简单装置}]{assets/chemistry-1/fig-p0091-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-18 电解水的简单装置}]{assets/chemistry-1/fig-p0091-01.png}}
 \caption{图2-18 电解水的简单装置}
 \end{figure}
 
@@ -3389,7 +3310,7 @@ AlO。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·1 经过琢磨的金刚石.}]{assets/chemistry-1/fig-p0105-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·1 经过琢磨的金刚石.}]{assets/chemistry-1/fig-p0105-01.png}}
 \caption{图 3·1 经过琢磨的金刚石.}
 \end{figure}
 
@@ -3546,7 +3467,7 @@ AlO。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-2 木材的干馏}]{assets/chemistry-1/fig-p0110-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-2 木材的干馏}]{assets/chemistry-1/fig-p0110-01.png}}
 \caption{图 3-2 木材的干馏}
 \end{figure}
 
@@ -3628,7 +3549,7 @@ AlO。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·3 用水炭还原氧化铜}]{assets/chemistry-1/fig-p0113-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·3 用水炭还原氧化铜}]{assets/chemistry-1/fig-p0113-01.png}}
 \caption{图 3·3 用水炭还原氧化铜}
 \end{figure}
 
@@ -3724,7 +3645,7 @@ Ca）在电炉里强热，能够直接化合生成碳化钙
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-4 干冰的生表}]{assets/chemistry-1/fig-p0116-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-4 干冰的生表}]{assets/chemistry-1/fig-p0116-01.png}}
 \caption{图3-4 干冰的生表}
 \end{figure}
 
@@ -3743,7 +3664,7 @@ Ca）在电炉里强热，能够直接化合生成碳化钙
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·5 碳倒 CO\_\{2\} 灭火的实验}]{assets/chemistry-1/fig-p0117-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·5 碳倒 CO\_\{2\} 灭火的实验}]{assets/chemistry-1/fig-p0117-01.png}}
 \caption{图 3·5 碳倒 \(CO_{2}\) 灭火的实验}
 \end{figure}
 
@@ -3799,7 +3720,7 @@ Ca）在电炉里强热，能够直接化合生成碳化钙
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-7 二氧化碳灭火器}]{assets/chemistry-1/fig-p0119-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-7 二氧化碳灭火器}]{assets/chemistry-1/fig-p0119-01.png}}
 \caption{图 3-7 二氧化碳灭火器}
 \end{figure}
 
@@ -3839,7 +3760,7 @@ Ca）在电炉里强热，能够直接化合生成碳化钙
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-8 实验室里制取二氧化碳}]{assets/chemistry-1/fig-p0121-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-8 实验室里制取二氧化碳}]{assets/chemistry-1/fig-p0121-01.png}}
 \caption{图 3-8 实验室里制取二氧化碳}
 \end{figure}
 
@@ -3934,7 +3855,7 @@ c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-9 一氧化碳的制取}]{assets/chemistry-1/fig-p0124-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-9 一氧化碳的制取}]{assets/chemistry-1/fig-p0124-01.png}}
 \caption{图 3-9 一氧化碳的制取}
 \end{figure}
 
@@ -3965,7 +3886,7 @@ c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·10 用一氧化碳还原氧化铁}]{assets/chemistry-1/fig-p0125-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·10 用一氧化碳还原氧化铁}]{assets/chemistry-1/fig-p0125-01.png}}
 \caption{图 3·10 用一氧化碳还原氧化铁}
 \end{figure}
 
@@ -4044,7 +3965,7 @@ c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-11 煤在煤炉里燃烧}]{assets/chemistry-1/fig-p0128-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-11 煤在煤炉里燃烧}]{assets/chemistry-1/fig-p0128-01.png}}
 \caption{图 3-11 煤在煤炉里燃烧}
 \end{figure}
 
@@ -4083,7 +4004,7 @@ c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·12 煤气发生炉的简单构造图}]{assets/chemistry-1/fig-p0129-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·12 煤气发生炉的简单构造图}]{assets/chemistry-1/fig-p0129-01.png}}
 \caption{图 3·12 煤气发生炉的简单构造图}
 \end{figure}
 
@@ -4140,7 +4061,7 @@ c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·13 煤成火焰的结构}]{assets/chemistry-1/fig-p0132-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·13 煤成火焰的结构}]{assets/chemistry-1/fig-p0132-01.png}}
 \caption{图 3·13 煤成火焰的结构}
 \end{figure}
 
@@ -4148,7 +4069,7 @@ c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-14 把火焰内部气态物质引入烧瓶}]{assets/chemistry-1/fig-p0132-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-14 把火焰内部气态物质引入烧瓶}]{assets/chemistry-1/fig-p0132-02.png}}
 \caption{图 3-14 把火焰内部气态物质引入烧瓶}
 \end{figure}
 
@@ -4174,7 +4095,7 @@ c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-15 证明焰心是由可燃性气体和组成}]{assets/chemistry-1/fig-p0133-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-15 证明焰心是由可燃性气体和组成}]{assets/chemistry-1/fig-p0133-01.png}}
 \caption{图 3-15 证明焰心是由可燃性气体和组成}
 \end{figure}
 
@@ -4202,13 +4123,13 @@ c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第134页）}]{assets/chemistry-1/fig-p0134-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第134页）}]{assets/chemistry-1/fig-p0134-01.png}}
 \caption{图示（原PDF第134页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={b}]{assets/chemistry-1/fig-p0134-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={b}]{assets/chemistry-1/fig-p0134-02.png}}
 \caption{b}
 \end{figure}
 
@@ -4627,7 +4548,7 @@ x=\frac{1\times279}{55.8}=5\text{（GA）}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·17 1克原子几种金属元素体积的比较}]{assets/chemistry-1/fig-p0145-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·17 1克原子几种金属元素体积的比较}]{assets/chemistry-1/fig-p0145-01.png}}
 \caption{图 3·17 1克原子几种金属元素体积的比较}
 \end{figure}
 
@@ -4635,7 +4556,7 @@ x=\frac{1\times279}{55.8}=5\text{（GA）}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·18 1 克分子几种不同物质体积的比较}]{assets/chemistry-1/fig-p0145-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·18 1 克分子几种不同物质体积的比较}]{assets/chemistry-1/fig-p0145-02.png}}
 \caption{图 3·18 1 克分子几种不同物质体积的比较}
 \end{figure}
 
@@ -4690,7 +4611,7 @@ x = \frac {1 \times 44}{1.96} = 22.4 (\text{升})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-19 一个克分子的氢气、氮气、二氧化碳在气体状况下都占有 22.4 升体积}]{assets/chemistry-1/fig-p0147-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-19 一个克分子的氢气、氮气、二氧化碳在气体状况下都占有 22.4 升体积}]{assets/chemistry-1/fig-p0147-01.png}}
 \caption{图 3-19 一个克分子的氢气、氮气、二氧化碳在气体状况下都占有 22.4
 升体积}
 \end{figure}
@@ -4704,7 +4625,7 @@ x = \frac {1 \times 44}{1.96} = 22.4 (\text{升})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-20 标准状况下 1 克分子气体所占体积 (22.4 升)------气体克分子体积 (GMVo)}]{assets/chemistry-1/fig-p0148-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-20 标准状况下 1 克分子气体所占体积 (22.4 升)------气体克分子体积 (GMVo)}]{assets/chemistry-1/fig-p0148-01.png}}
 \caption{图 3-20 标准状况下 1 克分子气体所占体积 (22.4
 升)------气体克分子体积 (GMVo)}
 \end{figure}
@@ -5049,7 +4970,7 @@ x = \frac {0.634 \times 22.4}{0.2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4-1 在显微镜下看到的牛奶里的油滴}]{assets/chemistry-1/fig-p0159-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4-1 在显微镜下看到的牛奶里的油滴}]{assets/chemistry-1/fig-p0159-01.png}}
 \caption{图 4-1 在显微镜下看到的牛奶里的油滴}
 \end{figure}
 
@@ -5506,7 +5427,7 @@ x=\frac{5400}{136}\approx39.7\text{（克）}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4-2 直角坐标系的四个象限}]{assets/chemistry-1/fig-p0175-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4-2 直角坐标系的四个象限}]{assets/chemistry-1/fig-p0175-01.png}}
 \caption{图 4-2 直角坐标系的四个象限}
 \end{figure}
 
@@ -5516,7 +5437,7 @@ x=\frac{5400}{136}\approx39.7\text{（克）}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4-3 一些固体物质的溶解度曲线}]{assets/chemistry-1/fig-p0175-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4-3 一些固体物质的溶解度曲线}]{assets/chemistry-1/fig-p0175-02.png}}
 \caption{图 4-3 一些固体物质的溶解度曲线}
 \end{figure}
 
@@ -5532,7 +5453,7 @@ x=\frac{5400}{136}\approx39.7\text{（克）}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4-4 石膏和消石灰的溶解度曲线}]{assets/chemistry-1/fig-p0176-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4-4 石膏和消石灰的溶解度曲线}]{assets/chemistry-1/fig-p0176-01.png}}
 \caption{图 4-4 石膏和消石灰的溶解度曲线}
 \end{figure}
 
@@ -5547,7 +5468,7 @@ x=\frac{5400}{136}\approx39.7\text{（克）}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4-5 硝酸钾的溶解度曲线}]{assets/chemistry-1/fig-p0176-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4-5 硝酸钾的溶解度曲线}]{assets/chemistry-1/fig-p0176-02.png}}
 \caption{图 4-5 硝酸钾的溶解度曲线}
 \end{figure}
 
@@ -5893,37 +5814,37 @@ x = \frac {340 \times 25}{170} = 50 (\text{ 克 })\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-01.png}}
 \caption{图示（原PDF第187页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-02.png}}
 \caption{图示（原PDF第187页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-03.png}}
 \caption{图示（原PDF第187页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-04.png}}
 \caption{图示（原PDF第187页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-05.png}}
 \caption{图示（原PDF第187页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4-6 总 体}]{assets/chemistry-1/fig-p0187-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4-6 总 体}]{assets/chemistry-1/fig-p0187-06.png}}
 \caption{图 4-6 总 体}
 \end{figure}
 
@@ -5936,7 +5857,7 @@ x = \frac {340 \times 25}{170} = 50 (\text{ 克 })\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4-7 加热硫酸铜晶体，有水蒸气放出}]{assets/chemistry-1/fig-p0187-07.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4-7 加热硫酸铜晶体，有水蒸气放出}]{assets/chemistry-1/fig-p0187-07.png}}
 \caption{图 4-7 加热硫酸铜晶体，有水蒸气放出}
 \end{figure}
 
@@ -6614,13 +6535,13 @@ x = \frac {1 \times 120}{2 \times 2} = 30 (\text{毫升})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第203页）}]{assets/chemistry-1/fig-p0203-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第203页）}]{assets/chemistry-1/fig-p0203-01.png}}
 \caption{图示（原PDF第203页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-8 量瓶}]{assets/chemistry-1/fig-p0203-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-8 量瓶}]{assets/chemistry-1/fig-p0203-02.png}}
 \caption{图4-8 量瓶}
 \end{figure}
 
@@ -7076,7 +6997,7 @@ CaO）是一种重要的建筑材料，氧化锌（ZnO）常用来制造白色�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5-1 生石灰和水作用}]{assets/chemistry-1/fig-p0216-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5-1 生石灰和水作用}]{assets/chemistry-1/fig-p0216-01.png}}
 \caption{图 5-1 生石灰和水作用}
 \end{figure}
 
@@ -8069,7 +7990,7 @@ KOH 称为氢氧化钾
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第239页）}]{assets/chemistry-1/fig-p0239-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第239页）}]{assets/chemistry-1/fig-p0239-01.png}}
 \caption{图示（原PDF第239页）}
 \end{figure}
 
@@ -8890,7 +8811,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={附表1 酸、碱和盐的溶解性}]{assets/chemistry-1/table-p0258-solubility.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={附表1 酸、碱和盐的溶解性}]{assets/chemistry-1/table-p0258-solubility.png}}
 \caption{附表1 酸、碱和盐的溶解性}
 \end{figure}
 
@@ -8898,13 +8819,13 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={附表2 物质的分类和命名法（上）}]{assets/chemistry-1/table-p0259-classification-1.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={附表2 物质的分类和命名法（上）}]{assets/chemistry-1/table-p0259-classification-1.png}}
 \caption{附表2 物质的分类和命名法（上）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={附表2 物质的分类和命名法（续）}]{assets/chemistry-1/table-p0260-classification-2.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={附表2 物质的分类和命名法（续）}]{assets/chemistry-1/table-p0260-classification-2.png}}
 \caption{附表2 物质的分类和命名法（续）}
 \end{figure}
 
@@ -8962,7 +8883,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第262页）}]{assets/chemistry-1/fig-p0262-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第262页）}]{assets/chemistry-1/fig-p0262-01.png}}
 \caption{图示（原PDF第262页）}
 \end{figure}
 
@@ -9000,7 +8921,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第263页）}]{assets/chemistry-1/fig-p0263-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第263页）}]{assets/chemistry-1/fig-p0263-01.png}}
 \caption{图示（原PDF第263页）}
 \end{figure}
 
@@ -9388,7 +9309,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1}]{assets/chemistry-1/fig-p0271-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1}]{assets/chemistry-1/fig-p0271-01.png}}
 \caption{图 1}
 \end{figure}
 
@@ -9398,7 +9319,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 2}]{assets/chemistry-1/fig-p0272-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 2}]{assets/chemistry-1/fig-p0272-01.png}}
 \caption{图 附 2}
 \end{figure}
 
@@ -9408,7 +9329,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 3}]{assets/chemistry-1/fig-p0272-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 3}]{assets/chemistry-1/fig-p0272-02.png}}
 \caption{图 附 3}
 \end{figure}
 
@@ -9418,7 +9339,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附4}]{assets/chemistry-1/fig-p0273-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附4}]{assets/chemistry-1/fig-p0273-01.png}}
 \caption{图附4}
 \end{figure}
 
@@ -9439,7 +9360,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 5}]{assets/chemistry-1/fig-p0274-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 5}]{assets/chemistry-1/fig-p0274-01.png}}
 \caption{图 附 5}
 \end{figure}
 
@@ -9447,7 +9368,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 6}]{assets/chemistry-1/fig-p0274-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 6}]{assets/chemistry-1/fig-p0274-02.png}}
 \caption{图 附 6}
 \end{figure}
 
@@ -9460,7 +9381,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1-7}]{assets/chemistry-1/fig-p0274-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1-7}]{assets/chemistry-1/fig-p0274-03.png}}
 \caption{图 1-7}
 \end{figure}
 
@@ -9482,7 +9403,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附8}]{assets/chemistry-1/fig-p0275-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附8}]{assets/chemistry-1/fig-p0275-01.png}}
 \caption{图 附8}
 \end{figure}
 
@@ -9498,7 +9419,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 9}]{assets/chemistry-1/fig-p0276-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 9}]{assets/chemistry-1/fig-p0276-01.png}}
 \caption{图 附 9}
 \end{figure}
 
@@ -9506,7 +9427,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 10}]{assets/chemistry-1/fig-p0276-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 10}]{assets/chemistry-1/fig-p0276-02.png}}
 \caption{图 附 10}
 \end{figure}
 
@@ -9514,13 +9435,13 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/chemistry-1/fig-p0276-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/chemistry-1/fig-p0276-03.png}}
 \caption{图示（原PDF第276页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 11}]{assets/chemistry-1/fig-p0276-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 11}]{assets/chemistry-1/fig-p0276-04.png}}
 \caption{图 附 11}
 \end{figure}
 
@@ -9536,7 +9457,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 12}]{assets/chemistry-1/fig-p0277-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 12}]{assets/chemistry-1/fig-p0277-01.png}}
 \caption{图 附 12}
 \end{figure}
 
@@ -9546,7 +9467,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1}]{assets/chemistry-1/fig-p0278-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1}]{assets/chemistry-1/fig-p0278-01.png}}
 \caption{图 1}
 \end{figure}
 
@@ -9554,7 +9475,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 14}]{assets/chemistry-1/fig-p0278-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 14}]{assets/chemistry-1/fig-p0278-02.png}}
 \caption{图 附 14}
 \end{figure}
 
@@ -9569,7 +9490,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 15}]{assets/chemistry-1/fig-p0279-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 15}]{assets/chemistry-1/fig-p0279-01.png}}
 \caption{图 附 15}
 \end{figure}
 
@@ -9577,7 +9498,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 16}]{assets/chemistry-1/fig-p0279-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 16}]{assets/chemistry-1/fig-p0279-02.png}}
 \caption{图 附 16}
 \end{figure}
 
@@ -9591,7 +9512,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附17}]{assets/chemistry-1/fig-p0280-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附17}]{assets/chemistry-1/fig-p0280-01.png}}
 \caption{图附17}
 \end{figure}
 
@@ -9616,7 +9537,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 18}]{assets/chemistry-1/fig-p0281-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 18}]{assets/chemistry-1/fig-p0281-01.png}}
 \caption{图 附 18}
 \end{figure}
 
@@ -9626,7 +9547,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 19}]{assets/chemistry-1/fig-p0281-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 19}]{assets/chemistry-1/fig-p0281-02.png}}
 \caption{图 附 19}
 \end{figure}
 
@@ -9637,7 +9558,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附20}]{assets/chemistry-1/fig-p0282-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附20}]{assets/chemistry-1/fig-p0282-01.png}}
 \caption{图附20}
 \end{figure}
 
@@ -9652,7 +9573,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附21}]{assets/chemistry-1/fig-p0282-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附21}]{assets/chemistry-1/fig-p0282-02.png}}
 \caption{图附21}
 \end{figure}
 
@@ -9660,7 +9581,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 22}]{assets/chemistry-1/fig-p0282-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 22}]{assets/chemistry-1/fig-p0282-03.png}}
 \caption{图 附 22}
 \end{figure}
 
@@ -9670,7 +9591,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/chemistry-1/fig-p0283-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/chemistry-1/fig-p0283-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -9678,7 +9599,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/chemistry-1/fig-p0283-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/chemistry-1/fig-p0283-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -9691,7 +9612,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 24}]{assets/chemistry-1/fig-p0283-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 24}]{assets/chemistry-1/fig-p0283-03.png}}
 \caption{图 附 24}
 \end{figure}
 
@@ -9702,7 +9623,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 25}]{assets/chemistry-1/fig-p0284-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 25}]{assets/chemistry-1/fig-p0284-01.png}}
 \caption{图 附 25}
 \end{figure}
 
@@ -9713,7 +9634,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 26}]{assets/chemistry-1/fig-p0284-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 26}]{assets/chemistry-1/fig-p0284-02.png}}
 \caption{图 附 26}
 \end{figure}
 
@@ -9729,13 +9650,13 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第285页）}]{assets/chemistry-1/fig-p0285-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第285页）}]{assets/chemistry-1/fig-p0285-01.png}}
 \caption{图示（原PDF第285页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 27}]{assets/chemistry-1/fig-p0285-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 27}]{assets/chemistry-1/fig-p0285-02.png}}
 \caption{图 附 27}
 \end{figure}
 
@@ -9745,7 +9666,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 28}]{assets/chemistry-1/fig-p0285-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 28}]{assets/chemistry-1/fig-p0285-03.png}}
 \caption{图 附 28}
 \end{figure}
 
@@ -9759,7 +9680,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 29}]{assets/chemistry-1/fig-p0286-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 29}]{assets/chemistry-1/fig-p0286-01.png}}
 \caption{图 附 29}
 \end{figure}
 
@@ -9781,7 +9702,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 30}]{assets/chemistry-1/fig-p0287-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 30}]{assets/chemistry-1/fig-p0287-01.png}}
 \caption{图 附 30}
 \end{figure}
 
@@ -9807,7 +9728,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 31}]{assets/chemistry-1/fig-p0288-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 31}]{assets/chemistry-1/fig-p0288-01.png}}
 \caption{图 附 31}
 \end{figure}
 
@@ -9998,7 +9919,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 32 制取氧气并用下方排气法收集氧气的装置}]{assets/chemistry-1/fig-p0292-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 32 制取氧气并用下方排气法收集氧气的装置}]{assets/chemistry-1/fig-p0292-01.png}}
 \caption{图 附 32 制取氧气并用下方排气法收集氧气的装置}
 \end{figure}
 
@@ -10107,13 +10028,13 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第294页）}]{assets/chemistry-1/fig-p0294-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第294页）}]{assets/chemistry-1/fig-p0294-01.png}}
 \caption{图示（原PDF第294页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 33 氢气发生装置}]{assets/chemistry-1/fig-p0294-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 33 氢气发生装置}]{assets/chemistry-1/fig-p0294-02.png}}
 \caption{图 附 33 氢气发生装置}
 \end{figure}
 
@@ -10132,7 +10053,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 35 氢气还原氧化铜}]{assets/chemistry-1/fig-p0295-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 35 氢气还原氧化铜}]{assets/chemistry-1/fig-p0295-01.png}}
 \caption{图 附 35 氢气还原氧化铜}
 \end{figure}
 
@@ -10231,7 +10152,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 36 二氧化碳气体发生器}]{assets/chemistry-1/fig-p0297-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 36 二氧化碳气体发生器}]{assets/chemistry-1/fig-p0297-01.png}}
 \caption{图 附 36 二氧化碳气体发生器}
 \end{figure}
 
@@ -10239,7 +10160,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 37 向石灰水中吹气}]{assets/chemistry-1/fig-p0297-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 37 向石灰水中吹气}]{assets/chemistry-1/fig-p0297-02.png}}
 \caption{图 附 37 向石灰水中吹气}
 \end{figure}
 
@@ -10581,7 +10502,7 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第302页）}]{assets/chemistry-1/fig-p0302-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第302页）}]{assets/chemistry-1/fig-p0302-01.png}}
 \caption{图示（原PDF第302页）}
 \end{figure}
 
@@ -10778,4 +10699,3 @@ Cu（OH）Cl\ldots\ldots 碱式氯化铜
 \item
   274.1克，266.6克； 20. 1.9克氧气，4.9克氯酸钾。
 \end{enumerate}
-\end{document}

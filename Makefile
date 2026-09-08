@@ -1,6 +1,6 @@
 PYTHON ?= $(shell test -x "$(CURDIR)/.venv/bin/python" && echo "$(CURDIR)/.venv/bin/python" || echo python3)
 
-.PHONY: all audit pdf-audit repository privacy pdf pdf-tex pdf-verify tex-deps tex-audit md-to-tex verify pre-push clean
+.PHONY: all audit pdf-audit repository privacy pdf pdf-tex pdf-verify tex-deps tex-audit verify pre-push clean
 
 all: audit tex-audit
 
@@ -18,16 +18,13 @@ privacy:
 	$(PYTHON) scripts/audit_privacy.py
 
 pdf:
-	$(PYTHON) scripts/build_pdfs.py --from-tex
+	$(PYTHON) scripts/build_pdfs.py
 
 pdf-tex:
-	$(PYTHON) scripts/build_pdfs.py --from-tex
+	$(PYTHON) scripts/build_pdfs.py
 
 pdf-verify:
 	$(PYTHON) scripts/build_pdfs.py --verify-only
-
-md-to-tex:
-	$(PYTHON) scripts/convert_md_to_tex.py
 
 tex-audit:
 	$(PYTHON) scripts/audit_tex_sources.py

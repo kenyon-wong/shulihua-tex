@@ -1,82 +1,3 @@
-\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
-\usepackage[
-  b5paper,
-  hmargin=2.2cm,
-  top=1.6cm,
-  bottom=2.2cm,
-  headheight=22pt,
-  headsep=14pt,
-  footskip=16mm,
-  includehead
-]{geometry}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
-\usepackage{float}
-\xeCJKsetup{CJKmath=true}
-\usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
-
-\setcounter{secnumdepth}{-\maxdimen}
-\setlength{\emergencystretch}{3em}
-\graphicspath{{books/}}
-
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi
-}
-\def\fps@figure{htbp}
-\makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\hypersetup{
-  hidelinks,
-  pdflang={zh-CN},
-  pdftitle={物理（第四册）},
-  pdfauthor={数理化自学丛书编委会},
-  pdfcreator={XeLaTeX via pandoc}
-}
-
-\title{物理（第四册）}
-\author{数理化自学丛书编委会}
-\date{}
-
-\begin{document}
-\frontmatter
-\maketitle
-\renewcommand*\contentsname{目录}
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\mainmatter
 \textbf{丛书：} 数理化自学丛书\\
 \textbf{编者：} 数理化自学丛书编委会\\
 \textbf{出版社：} 上海科学技术出版社
@@ -450,7 +371,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.1 光线}]{assets/physics-4/fig-p0008-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.1 光线}]{assets/physics-4/fig-p0008-01.png}}
 \caption{图1.1 光线}
 \end{figure}
 
@@ -458,7 +379,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.2}]{assets/physics-4/fig-p0008-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.2}]{assets/physics-4/fig-p0008-02.png}}
 \caption{图1.2}
 \end{figure}
 
@@ -476,7 +397,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.3}]{assets/physics-4/fig-p0009-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.3}]{assets/physics-4/fig-p0009-01.png}}
 \caption{图1.3}
 \end{figure}
 
@@ -494,7 +415,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.4}]{assets/physics-4/fig-p0010-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.4}]{assets/physics-4/fig-p0010-01.png}}
 \caption{图1.4}
 \end{figure}
 
@@ -509,13 +430,13 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.5}]{assets/physics-4/fig-p0011-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.5}]{assets/physics-4/fig-p0011-01.png}}
 \caption{图1.5}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.6}]{assets/physics-4/fig-p0011-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.6}]{assets/physics-4/fig-p0011-02.png}}
 \caption{图1.6}
 \end{figure}
 
@@ -525,13 +446,13 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.7}]{assets/physics-4/fig-p0011-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.7}]{assets/physics-4/fig-p0011-03.png}}
 \caption{图1.7}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.8}]{assets/physics-4/fig-p0012-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.8}]{assets/physics-4/fig-p0012-01.png}}
 \caption{图1.8}
 \end{figure}
 
@@ -549,7 +470,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第3题）}]{assets/physics-4/fig-p0012-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第3题）}]{assets/physics-4/fig-p0012-02.png}}
 \caption{（第3题）}
 \end{figure}
 
@@ -563,7 +484,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第4题）}]{assets/physics-4/fig-p0013-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第4题）}]{assets/physics-4/fig-p0013-01.png}}
 \caption{（第4题）}
 \end{figure}
 
@@ -597,7 +518,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.9}]{assets/physics-4/fig-p0015-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.9}]{assets/physics-4/fig-p0015-01.png}}
 \caption{图1.9}
 \end{figure}
 
@@ -608,7 +529,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.10}]{assets/physics-4/fig-p0016-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.10}]{assets/physics-4/fig-p0016-01.png}}
 \caption{图1.10}
 \end{figure}
 
@@ -621,7 +542,7 @@ B
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.11}]{assets/physics-4/fig-p0017-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.11}]{assets/physics-4/fig-p0017-01.png}}
 \caption{图1.11}
 \end{figure}
 
@@ -641,7 +562,7 @@ c = \frac {1.7266 \times 10 ^ {4}}{5.51 \times 10 ^ {- 5}} = 3.18 \times 10 ^ {8
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.12}]{assets/physics-4/fig-p0018-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.12}]{assets/physics-4/fig-p0018-01.png}}
 \caption{图1.12}
 \end{figure}
 
@@ -753,7 +674,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.1}]{assets/physics-4/fig-p0023-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.1}]{assets/physics-4/fig-p0023-01.png}}
 \caption{图2.1}
 \end{figure}
 
@@ -766,7 +687,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.2}]{assets/physics-4/fig-p0023-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.2}]{assets/physics-4/fig-p0023-03.png}}
 \caption{图2.2}
 \end{figure}
 
@@ -783,7 +704,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.3}]{assets/physics-4/fig-p0024-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.3}]{assets/physics-4/fig-p0024-01.png}}
 \caption{图2.3}
 \end{figure}
 
@@ -802,7 +723,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.4}]{assets/physics-4/fig-p0025-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.4}]{assets/physics-4/fig-p0025-01.png}}
 \caption{图2.4}
 \end{figure}
 
@@ -811,7 +732,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.5}]{assets/physics-4/fig-p0025-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.5}]{assets/physics-4/fig-p0025-02.png}}
 \caption{图2.5}
 \end{figure}
 
@@ -847,7 +768,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.6}]{assets/physics-4/fig-p0026-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.6}]{assets/physics-4/fig-p0026-01.png}}
 \caption{图2.6}
 \end{figure}
 
@@ -868,25 +789,25 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.7}]{assets/physics-4/fig-p0027-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.7}]{assets/physics-4/fig-p0027-01.png}}
 \caption{图2.7}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.8}]{assets/physics-4/fig-p0027-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.8}]{assets/physics-4/fig-p0027-02.png}}
 \caption{图2.8}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.9}]{assets/physics-4/fig-p0028-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.9}]{assets/physics-4/fig-p0028-01.png}}
 \caption{图2.9}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.10}]{assets/physics-4/fig-p0028-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.10}]{assets/physics-4/fig-p0028-02.png}}
 \caption{图2.10}
 \end{figure}
 
@@ -910,7 +831,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.11}]{assets/physics-4/fig-p0029-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.11}]{assets/physics-4/fig-p0029-01.png}}
 \caption{图2.11}
 \end{figure}
 
@@ -937,7 +858,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.12}]{assets/physics-4/fig-p0029-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.12}]{assets/physics-4/fig-p0029-02.png}}
 \caption{图2.12}
 \end{figure}
 
@@ -961,7 +882,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.13}]{assets/physics-4/fig-p0030-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.13}]{assets/physics-4/fig-p0030-01.png}}
 \caption{图2.13}
 \end{figure}
 
@@ -984,7 +905,7 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第3题）}]{assets/physics-4/fig-p0030-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第3题）}]{assets/physics-4/fig-p0030-03.png}}
 \caption{（第3题）}
 \end{figure}
 
@@ -1021,19 +942,19 @@ r 总是小于入射角 a 的，但是它们的比值 \(\alpha/r\) 不是常数�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.14}]{assets/physics-4/fig-p0031-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.14}]{assets/physics-4/fig-p0031-01.png}}
 \caption{图2.14}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.15}]{assets/physics-4/fig-p0032-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.15}]{assets/physics-4/fig-p0032-01.png}}
 \caption{图2.15}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.16}]{assets/physics-4/fig-p0032-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.16}]{assets/physics-4/fig-p0032-02.png}}
 \caption{图2.16}
 \end{figure}
 
@@ -1073,19 +994,19 @@ r 总是小于入射角 a 的，但是它们的比值 \(\alpha/r\) 不是常数�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.17}]{assets/physics-4/fig-p0033-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.17}]{assets/physics-4/fig-p0033-01.png}}
 \caption{图2.17}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.18}]{assets/physics-4/fig-p0034-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.18}]{assets/physics-4/fig-p0034-01.png}}
 \caption{图2.18}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.19}]{assets/physics-4/fig-p0034-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.19}]{assets/physics-4/fig-p0034-02.png}}
 \caption{图2.19}
 \end{figure}
 
@@ -1227,7 +1148,7 @@ n _ {21} = \frac {n _ {2}}{n _ {1}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.20}]{assets/physics-4/fig-p0037-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.20}]{assets/physics-4/fig-p0037-01.png}}
 \caption{图2.20}
 \end{figure}
 
@@ -1302,7 +1223,7 @@ n _ {21} = \frac {1}{n _ {12}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.21}]{assets/physics-4/fig-p0039-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.21}]{assets/physics-4/fig-p0039-01.png}}
 \caption{图2.21}
 \end{figure}
 
@@ -1311,13 +1232,13 @@ n _ {21} = \frac {1}{n _ {12}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.22}]{assets/physics-4/fig-p0040-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.22}]{assets/physics-4/fig-p0040-01.png}}
 \caption{图2.22}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.23}]{assets/physics-4/fig-p0040-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.23}]{assets/physics-4/fig-p0040-02.png}}
 \caption{图2.23}
 \end{figure}
 
@@ -1342,19 +1263,19 @@ n _ {\mathrm{甲}} = \frac {\sin a}{\sin r} = \frac {\sin 45 ^ {\circ}}{\sin 30 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0041-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0041-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）。}]{assets/physics-4/fig-p0041-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）。}]{assets/physics-4/fig-p0041-02.png}}
 \caption{（b）。}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0041-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0041-03.png}}
 \caption{（c）}
 \end{figure}
 
@@ -1396,7 +1317,7 @@ n _ {\mathrm{乙}} = \frac {\sin \alpha}{\sin r} = \frac {\sin 45 ^ {\circ}}{\si
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.25}]{assets/physics-4/fig-p0042-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.25}]{assets/physics-4/fig-p0042-01.png}}
 \caption{图2.25}
 \end{figure}
 
@@ -1470,7 +1391,7 @@ n _ {\mathrm{乙}} = \frac {\sin \alpha}{\sin r} = \frac {\sin 45 ^ {\circ}}{\si
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.26}]{assets/physics-4/fig-p0043-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.26}]{assets/physics-4/fig-p0043-01.png}}
 \caption{图2.26}
 \end{figure}
 
@@ -1498,7 +1419,7 @@ O 点射出的光线经水面 O 处反射到眼里，入射角 \(\angle CON\)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.27}]{assets/physics-4/fig-p0044-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.27}]{assets/physics-4/fig-p0044-01.png}}
 \caption{图2.27}
 \end{figure}
 
@@ -1551,13 +1472,13 @@ O 点射出的光线经水面 O 处反射到眼里，入射角 \(\angle CON\)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.28}]{assets/physics-4/fig-p0046-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.28}]{assets/physics-4/fig-p0046-01.png}}
 \caption{图2.28}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.29}]{assets/physics-4/fig-p0047-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.29}]{assets/physics-4/fig-p0047-01.png}}
 \caption{图2.29}
 \end{figure}
 
@@ -1679,7 +1600,7 @@ n _ {21} = \frac {n _ {2}}{n _ {1}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第3题）}]{assets/physics-4/fig-p0049-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第3题）}]{assets/physics-4/fig-p0049-01.png}}
 \caption{（第3题）}
 \end{figure}
 
@@ -1706,7 +1627,7 @@ BD，这一束光射入眼里，看上去就好象它们是从镜里 \(S'\)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.1 平面镜成象}]{assets/physics-4/fig-p0050-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.1 平面镜成象}]{assets/physics-4/fig-p0050-01.png}}
 \caption{图3.1 平面镜成象}
 \end{figure}
 
@@ -1726,7 +1647,7 @@ BD，这一束光射入眼里，看上去就好象它们是从镜里 \(S'\)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.2}]{assets/physics-4/fig-p0051-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.2}]{assets/physics-4/fig-p0051-01.png}}
 \caption{图3.2}
 \end{figure}
 
@@ -1736,7 +1657,7 @@ BD，这一束光射入眼里，看上去就好象它们是从镜里 \(S'\)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.3}]{assets/physics-4/fig-p0052-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.3}]{assets/physics-4/fig-p0052-01.png}}
 \caption{图3.3}
 \end{figure}
 
@@ -1762,13 +1683,13 @@ O（镜面的中心点）的直线叫做球面镜的主光轴，简称主轴。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.4}]{assets/physics-4/fig-p0053-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.4}]{assets/physics-4/fig-p0053-01.png}}
 \caption{图3.4}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.5}]{assets/physics-4/fig-p0053-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.5}]{assets/physics-4/fig-p0053-02.png}}
 \caption{图3.5}
 \end{figure}
 
@@ -1787,13 +1708,13 @@ f = \frac {R}{2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.6 实焦点}]{assets/physics-4/fig-p0054-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.6 实焦点}]{assets/physics-4/fig-p0054-01.png}}
 \caption{图3.6 实焦点}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.7 虚焦点}]{assets/physics-4/fig-p0054-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.7 虚焦点}]{assets/physics-4/fig-p0054-02.png}}
 \caption{图3.7 虚焦点}
 \end{figure}
 
@@ -1805,7 +1726,7 @@ f = \frac {R}{2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.8}]{assets/physics-4/fig-p0055-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.8}]{assets/physics-4/fig-p0055-01.png}}
 \caption{图3.8}
 \end{figure}
 
@@ -1825,13 +1746,13 @@ f = \frac {R}{2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.9}]{assets/physics-4/fig-p0056-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.9}]{assets/physics-4/fig-p0056-01.png}}
 \caption{图3.9}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.10 凹镜成象}]{assets/physics-4/fig-p0056-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.10 凹镜成象}]{assets/physics-4/fig-p0056-02.png}}
 \caption{图3.10 凹镜成象}
 \end{figure}
 
@@ -1858,7 +1779,7 @@ f = \frac {R}{2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.11}]{assets/physics-4/fig-p0058-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.11}]{assets/physics-4/fig-p0058-01.png}}
 \caption{图3.11}
 \end{figure}
 
@@ -1869,7 +1790,7 @@ f = \frac {R}{2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.12}]{assets/physics-4/fig-p0058-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.12}]{assets/physics-4/fig-p0058-02.png}}
 \caption{图3.12}
 \end{figure}
 
@@ -1897,7 +1818,7 @@ A，怎样知道象点的位置呢？我我们可以通过作光路图来求出�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.13}]{assets/physics-4/fig-p0059-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.13}]{assets/physics-4/fig-p0059-01.png}}
 \caption{图3.13}
 \end{figure}
 
@@ -1926,7 +1847,7 @@ A，怎样知道象点的位置呢？我我们可以通过作光路图来求出�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.14}]{assets/physics-4/fig-p0061-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.14}]{assets/physics-4/fig-p0061-01.png}}
 \caption{图3.14}
 \end{figure}
 
@@ -1941,13 +1862,13 @@ F；再选择特殊光线（2），即再从 A 点作另一条光线通过凹镜
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.15}]{assets/physics-4/fig-p0061-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.15}]{assets/physics-4/fig-p0061-02.png}}
 \caption{图3.15}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.16}]{assets/physics-4/fig-p0061-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.16}]{assets/physics-4/fig-p0061-03.png}}
 \caption{图3.16}
 \end{figure}
 
@@ -1962,7 +1883,7 @@ A点这一点的象就够了。根据凹镜成象的性质，物体直立在凹�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.17}]{assets/physics-4/fig-p0062-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.17}]{assets/physics-4/fig-p0062-01.png}}
 \caption{图3.17}
 \end{figure}
 
@@ -1971,7 +1892,7 @@ A点这一点的象就够了。根据凹镜成象的性质，物体直立在凹�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.18}]{assets/physics-4/fig-p0062-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.18}]{assets/physics-4/fig-p0062-02.png}}
 \caption{图3.18}
 \end{figure}
 
@@ -1985,7 +1906,7 @@ A点这一点的象就够了。根据凹镜成象的性质，物体直立在凹�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.19}]{assets/physics-4/fig-p0063-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.19}]{assets/physics-4/fig-p0063-01.png}}
 \caption{图3.19}
 \end{figure}
 
@@ -2014,7 +1935,7 @@ A点这一点的象就够了。根据凹镜成象的性质，物体直立在凹�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.20}]{assets/physics-4/fig-p0064-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.20}]{assets/physics-4/fig-p0064-01.png}}
 \caption{图3.20}
 \end{figure}
 
@@ -2108,7 +2029,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0066-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0066-01.png}}
 \caption{（a）}
 \end{figure}
 
@@ -2116,7 +2037,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0066-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0066-02.png}}
 \caption{（b）}
 \end{figure}
 
@@ -2124,7 +2045,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0066-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0066-03.png}}
 \caption{（c）}
 \end{figure}
 
@@ -2132,7 +2053,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（d）}]{assets/physics-4/fig-p0066-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（d）}]{assets/physics-4/fig-p0066-04.png}}
 \caption{（d）}
 \end{figure}
 
@@ -2140,7 +2061,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（e）}]{assets/physics-4/fig-p0067-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（e）}]{assets/physics-4/fig-p0067-01.png}}
 \caption{（e）}
 \end{figure}
 
@@ -2156,7 +2077,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0067-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0067-02.png}}
 \caption{（a）}
 \end{figure}
 
@@ -2164,7 +2085,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0067-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0067-03.png}}
 \caption{（b）}
 \end{figure}
 
@@ -2172,7 +2093,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0067-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0067-04.png}}
 \caption{（c）}
 \end{figure}
 
@@ -2180,7 +2101,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（d）}]{assets/physics-4/fig-p0068-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（d）}]{assets/physics-4/fig-p0068-01.png}}
 \caption{（d）}
 \end{figure}
 
@@ -2188,7 +2109,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（e）}]{assets/physics-4/fig-p0068-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（e）}]{assets/physics-4/fig-p0068-02.png}}
 \caption{（e）}
 \end{figure}
 
@@ -2205,7 +2126,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={第6题附图（f）；raw 中无独立图题}]{assets/physics-4/fig-p0068-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={第6题附图（f）；raw 中无独立图题}]{assets/physics-4/fig-p0068-03.png}}
 \caption{第6题附图（f）；raw 中无独立图题}
 \end{figure}
 
@@ -2235,13 +2156,13 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.21}]{assets/physics-4/fig-p0069-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.21}]{assets/physics-4/fig-p0069-01.png}}
 \caption{图3.21}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.22}]{assets/physics-4/fig-p0069-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.22}]{assets/physics-4/fig-p0069-02.png}}
 \caption{图3.22}
 \end{figure}
 
@@ -2256,7 +2177,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第1题）}]{assets/physics-4/fig-p0070-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第1题）}]{assets/physics-4/fig-p0070-01.png}}
 \caption{（第1题）}
 \end{figure}
 
@@ -2311,7 +2232,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.1}]{assets/physics-4/fig-p0072-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.1}]{assets/physics-4/fig-p0072-01.png}}
 \caption{图4.1}
 \end{figure}
 
@@ -2325,13 +2246,13 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.2}]{assets/physics-4/fig-p0072-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.2}]{assets/physics-4/fig-p0072-02.png}}
 \caption{图4.2}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.3}]{assets/physics-4/fig-p0072-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.3}]{assets/physics-4/fig-p0072-03.png}}
 \caption{图4.3}
 \end{figure}
 
@@ -2356,7 +2277,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.4}]{assets/physics-4/fig-p0073-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.4}]{assets/physics-4/fig-p0073-01.png}}
 \caption{图4.4}
 \end{figure}
 
@@ -2367,13 +2288,13 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.5}]{assets/physics-4/fig-p0074-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.5}]{assets/physics-4/fig-p0074-01.png}}
 \caption{图4.5}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.6}]{assets/physics-4/fig-p0074-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.6}]{assets/physics-4/fig-p0074-02.png}}
 \caption{图4.6}
 \end{figure}
 
@@ -2381,7 +2302,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-4/fig-p0074-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-4/fig-p0074-03.png}}
 \caption{图4.7}
 \end{figure}
 
@@ -2396,19 +2317,19 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.8}]{assets/physics-4/fig-p0075-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.8}]{assets/physics-4/fig-p0075-01.png}}
 \caption{图4.8}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.9}]{assets/physics-4/fig-p0075-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.9}]{assets/physics-4/fig-p0075-02.png}}
 \caption{图4.9}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.10}]{assets/physics-4/fig-p0075-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.10}]{assets/physics-4/fig-p0075-03.png}}
 \caption{图4.10}
 \end{figure}
 
@@ -2431,7 +2352,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.11}]{assets/physics-4/fig-p0076-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.11}]{assets/physics-4/fig-p0076-01.png}}
 \caption{图4.11}
 \end{figure}
 
@@ -2442,13 +2363,13 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.12}]{assets/physics-4/fig-p0077-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.12}]{assets/physics-4/fig-p0077-01.png}}
 \caption{图4.12}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.13}]{assets/physics-4/fig-p0077-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.13}]{assets/physics-4/fig-p0077-02.png}}
 \caption{图4.13}
 \end{figure}
 
@@ -2485,7 +2406,7 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.14}]{assets/physics-4/fig-p0079-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.14}]{assets/physics-4/fig-p0079-01.png}}
 \caption{图4.14}
 \end{figure}
 
@@ -2510,7 +2431,7 @@ D = \frac {1}{f}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第1题）}]{assets/physics-4/fig-p0080-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第1题）}]{assets/physics-4/fig-p0080-01.png}}
 \caption{（第1题）}
 \end{figure}
 
@@ -2524,7 +2445,7 @@ D = \frac {1}{f}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第2题）}]{assets/physics-4/fig-p0080-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第2题）}]{assets/physics-4/fig-p0080-02.png}}
 \caption{（第2题）}
 \end{figure}
 
@@ -2541,19 +2462,19 @@ D = \frac {1}{f}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第3题）}]{assets/physics-4/fig-p0081-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第3题）}]{assets/physics-4/fig-p0081-01.png}}
 \caption{（第3题）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0081-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0081-02.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第4题）}]{assets/physics-4/fig-p0081-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第4题）}]{assets/physics-4/fig-p0081-03.png}}
 \caption{（第4题）}
 \end{figure}
 
@@ -2587,7 +2508,7 @@ D = \frac {1}{f}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.15}]{assets/physics-4/fig-p0083-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.15}]{assets/physics-4/fig-p0083-01.png}}
 \caption{图4.15}
 \end{figure}
 
@@ -2620,13 +2541,13 @@ D = \frac {1}{f}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.16}]{assets/physics-4/fig-p0085-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.16}]{assets/physics-4/fig-p0085-01.png}}
 \caption{图4.16}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.17}]{assets/physics-4/fig-p0085-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.17}]{assets/physics-4/fig-p0085-02.png}}
 \caption{图4.17}
 \end{figure}
 
@@ -2671,7 +2592,7 @@ A 点是一个发光点，从 A
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.18}]{assets/physics-4/fig-p0087-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.18}]{assets/physics-4/fig-p0087-01.png}}
 \caption{图4.18}
 \end{figure}
 
@@ -2681,7 +2602,7 @@ O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.19}]{assets/physics-4/fig-p0087-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.19}]{assets/physics-4/fig-p0087-03.png}}
 \caption{图4.19}
 \end{figure}
 
@@ -2702,7 +2623,7 @@ A 点的实象。为什么呢？因为入射光 AB 是平行于副光轴的，�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.20}]{assets/physics-4/fig-p0088-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.20}]{assets/physics-4/fig-p0088-01.png}}
 \caption{图4.20}
 \end{figure}
 
@@ -2713,13 +2634,13 @@ A 点的实象。为什么呢？因为入射光 AB 是平行于副光轴的，�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.21}]{assets/physics-4/fig-p0088-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.21}]{assets/physics-4/fig-p0088-02.png}}
 \caption{图4.21}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.22}]{assets/physics-4/fig-p0088-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.22}]{assets/physics-4/fig-p0088-03.png}}
 \caption{图4.22}
 \end{figure}
 
@@ -2741,7 +2662,7 @@ A 点同侧的 \(A'\) 点，所以 \(A'\) 点就是 A 点的象（虚象）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.23}]{assets/physics-4/fig-p0089-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.23}]{assets/physics-4/fig-p0089-01.png}}
 \caption{图4.23}
 \end{figure}
 
@@ -2759,7 +2680,7 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.24}]{assets/physics-4/fig-p0090-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.24}]{assets/physics-4/fig-p0090-01.png}}
 \caption{图4.24}
 \end{figure}
 
@@ -2770,7 +2691,7 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.25}]{assets/physics-4/fig-p0090-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.25}]{assets/physics-4/fig-p0090-02.png}}
 \caption{图4.25}
 \end{figure}
 
@@ -2779,13 +2700,13 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.26}]{assets/physics-4/fig-p0090-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.26}]{assets/physics-4/fig-p0090-03.png}}
 \caption{图4.26}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.27}]{assets/physics-4/fig-p0090-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.27}]{assets/physics-4/fig-p0090-04.png}}
 \caption{图4.27}
 \end{figure}
 
@@ -2805,7 +2726,7 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.28}]{assets/physics-4/fig-p0091-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.28}]{assets/physics-4/fig-p0091-01.png}}
 \caption{图4.28}
 \end{figure}
 
@@ -2818,13 +2739,13 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.29}]{assets/physics-4/fig-p0092-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.29}]{assets/physics-4/fig-p0092-01.png}}
 \caption{图4.29}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.30}]{assets/physics-4/fig-p0092-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.30}]{assets/physics-4/fig-p0092-02.png}}
 \caption{图4.30}
 \end{figure}
 
@@ -2863,7 +2784,7 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第5题）}]{assets/physics-4/fig-p0093-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第5题）}]{assets/physics-4/fig-p0093-01.png}}
 \caption{（第5题）}
 \end{figure}
 
@@ -2881,7 +2802,7 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.31}]{assets/physics-4/fig-p0094-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.31}]{assets/physics-4/fig-p0094-01.png}}
 \caption{图4.31}
 \end{figure}
 
@@ -2889,13 +2810,13 @@ u \textgreater{} 2f 时，f \textless{} v \textless{} 2f。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.32}]{assets/physics-4/fig-p0094-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.32}]{assets/physics-4/fig-p0094-02.png}}
 \caption{图4.32}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.33}]{assets/physics-4/fig-p0094-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.33}]{assets/physics-4/fig-p0094-03.png}}
 \caption{图4.33}
 \end{figure}
 
@@ -3391,19 +3312,19 @@ f = \frac {L ^ {2} - d ^ {2}}{4 L}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0105-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0105-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0105-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0105-02.png}}
 \caption{（b）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0105-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0105-03.png}}
 \caption{（c）}
 \end{figure}
 
@@ -3411,7 +3332,7 @@ f = \frac {L ^ {2} - d ^ {2}}{4 L}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.35}]{assets/physics-4/fig-p0106-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.35}]{assets/physics-4/fig-p0106-01.png}}
 \caption{图4.35}
 \end{figure}
 
@@ -3445,7 +3366,7 @@ v _ {2} = \frac {f _ {2} u _ {2}}{u _ {2} - f _ {2}} = \frac {8 \times 12}{12 - 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.36}]{assets/physics-4/fig-p0107-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.36}]{assets/physics-4/fig-p0107-01.png}}
 \caption{图4.36}
 \end{figure}
 
@@ -3473,7 +3394,7 @@ f），已知 u = 15 厘米，f = 10 厘米，根据成象公式可以算出象�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.37}]{assets/physics-4/fig-p0108-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.37}]{assets/physics-4/fig-p0108-01.png}}
 \caption{图4.37}
 \end{figure}
 
@@ -3520,13 +3441,13 @@ f），已知 u = 15 厘米，f = 10 厘米，根据成象公式可以算出象�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.38}]{assets/physics-4/fig-p0109-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.38}]{assets/physics-4/fig-p0109-01.png}}
 \caption{图4.38}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.39}]{assets/physics-4/fig-p0109-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.39}]{assets/physics-4/fig-p0109-02.png}}
 \caption{图4.39}
 \end{figure}
 
@@ -3647,13 +3568,13 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={球面镜}]{assets/physics-4/fig-p0113-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={球面镜}]{assets/physics-4/fig-p0113-01.png}}
 \caption{球面镜}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={抛物镜面}]{assets/physics-4/fig-p0113-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={抛物镜面}]{assets/physics-4/fig-p0113-02.png}}
 \caption{抛物镜面}
 \end{figure}
 
@@ -3663,7 +3584,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.2}]{assets/physics-4/fig-p0113-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.2}]{assets/physics-4/fig-p0113-03.png}}
 \caption{图5.2}
 \end{figure}
 
@@ -3684,7 +3605,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.3 照相机}]{assets/physics-4/fig-p0114-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.3 照相机}]{assets/physics-4/fig-p0114-01.png}}
 \caption{图5.3 照相机}
 \end{figure}
 
@@ -3695,7 +3616,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.4 镜头}]{assets/physics-4/fig-p0115-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.4 镜头}]{assets/physics-4/fig-p0115-01.png}}
 \caption{图5.4 镜头}
 \end{figure}
 
@@ -3705,7 +3626,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.5}]{assets/physics-4/fig-p0115-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.5}]{assets/physics-4/fig-p0115-02.png}}
 \caption{图5.5}
 \end{figure}
 
@@ -3714,7 +3635,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.6 快门开启过程}]{assets/physics-4/fig-p0115-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.6 快门开启过程}]{assets/physics-4/fig-p0115-03.png}}
 \caption{图5.6 快门开启过程}
 \end{figure}
 
@@ -3725,13 +3646,13 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.7}]{assets/physics-4/fig-p0116-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.7}]{assets/physics-4/fig-p0116-01.png}}
 \caption{图5.7}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.8 放大机}]{assets/physics-4/fig-p0116-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.8 放大机}]{assets/physics-4/fig-p0116-02.png}}
 \caption{图5.8 放大机}
 \end{figure}
 
@@ -3748,7 +3669,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.9}]{assets/physics-4/fig-p0117-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.9}]{assets/physics-4/fig-p0117-01.png}}
 \caption{图5.9}
 \end{figure}
 
@@ -3762,7 +3683,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.10}]{assets/physics-4/fig-p0118-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.10}]{assets/physics-4/fig-p0118-01.png}}
 \caption{图5.10}
 \end{figure}
 
@@ -3772,7 +3693,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5.11}]{assets/physics-4/fig-p0119-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5.11}]{assets/physics-4/fig-p0119-01.png}}
 \caption{图 5.11}
 \end{figure}
 
@@ -3782,7 +3703,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5.12}]{assets/physics-4/fig-p0120-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5.12}]{assets/physics-4/fig-p0120-01.png}}
 \caption{图 5.12}
 \end{figure}
 
@@ -3792,7 +3713,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.13}]{assets/physics-4/fig-p0121-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.13}]{assets/physics-4/fig-p0121-01.png}}
 \caption{图5.13}
 \end{figure}
 
@@ -3809,7 +3730,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.14}]{assets/physics-4/fig-p0122-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.14}]{assets/physics-4/fig-p0122-01.png}}
 \caption{图5.14}
 \end{figure}
 
@@ -3832,13 +3753,13 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0124-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0124-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.15}]{assets/physics-4/fig-p0124-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.15}]{assets/physics-4/fig-p0124-02.png}}
 \caption{图5.15}
 \end{figure}
 
@@ -3888,7 +3809,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.16 近视眼}]{assets/physics-4/fig-p0126-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.16 近视眼}]{assets/physics-4/fig-p0126-01.png}}
 \caption{图5.16 近视眼}
 \end{figure}
 
@@ -3917,7 +3838,7 @@ m = \frac {v (\text{象 距})}{u (\text{物 距})}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.17 远视眼}]{assets/physics-4/fig-p0127-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.17 远视眼}]{assets/physics-4/fig-p0127-01.png}}
 \caption{图5.17 远视眼}
 \end{figure}
 
@@ -3941,7 +3862,7 @@ b（如图中位置②），比在位置①时的视角增大了，可以看得�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.18 放大镜}]{assets/physics-4/fig-p0128-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.18 放大镜}]{assets/physics-4/fig-p0128-01.png}}
 \caption{图5.18 放大镜}
 \end{figure}
 
@@ -4009,13 +3930,13 @@ AB（被观测的标本）放在靠近物镜 \(O_{1}\) 的下方，因物镜的�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.19 显微镜}]{assets/physics-4/fig-p0130-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.19 显微镜}]{assets/physics-4/fig-p0130-01.png}}
 \caption{图5.19 显微镜}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5.20 显微镜光路图}]{assets/physics-4/fig-p0131-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5.20 显微镜光路图}]{assets/physics-4/fig-p0131-01.png}}
 \caption{图 5.20 显微镜光路图}
 \end{figure}
 
@@ -4097,7 +4018,7 @@ M = \frac {d}{f _ {2}} \times \frac {A _ {1} B _ {1}}{A B}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5.21 电子显微镜}]{assets/physics-4/fig-p0133-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5.21 电子显微镜}]{assets/physics-4/fig-p0133-01.png}}
 \caption{图 5.21 电子显微镜}
 \end{figure}
 
@@ -4113,7 +4034,7 @@ M = \frac {d}{f _ {2}} \times \frac {A _ {1} B _ {1}}{A B}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5.22 电子显微镜下的病毒}]{assets/physics-4/fig-p0133-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5.22 电子显微镜下的病毒}]{assets/physics-4/fig-p0133-02.png}}
 \caption{图 5.22 电子显微镜下的病毒}
 \end{figure}
 
@@ -4128,7 +4049,7 @@ M = \frac {d}{f _ {2}} \times \frac {A _ {1} B _ {1}}{A B}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.23 开普勒望远镜}]{assets/physics-4/fig-p0135-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.23 开普勒望远镜}]{assets/physics-4/fig-p0135-01.png}}
 \caption{图5.23 开普勒望远镜}
 \end{figure}
 
@@ -4153,7 +4074,7 @@ a，经过望远镜放大以后的视角为 b，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.24}]{assets/physics-4/fig-p0136-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.24}]{assets/physics-4/fig-p0136-01.png}}
 \caption{图5.24}
 \end{figure}
 
@@ -4183,7 +4104,7 @@ M = \frac {f _ {1}}{f _ {2}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.25}]{assets/physics-4/fig-p0136-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.25}]{assets/physics-4/fig-p0136-02.png}}
 \caption{图5.25}
 \end{figure}
 
@@ -4197,7 +4118,7 @@ M = \frac {f _ {1}}{f _ {2}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.26 伽利略望远镜}]{assets/physics-4/fig-p0137-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.26 伽利略望远镜}]{assets/physics-4/fig-p0137-01.png}}
 \caption{图5.26 伽利略望远镜}
 \end{figure}
 
@@ -4213,7 +4134,7 @@ M = \frac {f _ {1}}{f _ {2}}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.27}]{assets/physics-4/fig-p0138-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.27}]{assets/physics-4/fig-p0138-01.png}}
 \caption{图5.27}
 \end{figure}
 
@@ -4229,7 +4150,7 @@ M = \frac {b}{a} = \frac {\frac {A _ {1} B _ {1}}{f _ {2}}}{\frac {A _ {1} B _ {
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.28}]{assets/physics-4/fig-p0138-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.28}]{assets/physics-4/fig-p0138-02.png}}
 \caption{图5.28}
 \end{figure}
 
@@ -4242,13 +4163,13 @@ M = \frac {b}{a} = \frac {\frac {A _ {1} B _ {1}}{f _ {2}}}{\frac {A _ {1} B _ {
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5.29}]{assets/physics-4/fig-p0139-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5.29}]{assets/physics-4/fig-p0139-01.png}}
 \caption{图5.29}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5.30 卡塞格伦式反射望远镜}]{assets/physics-4/fig-p0139-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5.30 卡塞格伦式反射望远镜}]{assets/physics-4/fig-p0139-02.png}}
 \caption{图 5.30 卡塞格伦式反射望远镜}
 \end{figure}
 
@@ -4259,7 +4180,7 @@ M = \frac {b}{a} = \frac {\frac {A _ {1} B _ {1}}{f _ {2}}}{\frac {A _ {1} B _ {
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5.31 反射望远镜}]{assets/physics-4/fig-p0140-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5.31 反射望远镜}]{assets/physics-4/fig-p0140-01.png}}
 \caption{图 5.31 反射望远镜}
 \end{figure}
 
@@ -4493,7 +4414,7 @@ M = \frac {b (\text{光学仪器中物体的虚象所张的视角})}{a (\text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.1}]{assets/physics-4/fig-p0148-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.1}]{assets/physics-4/fig-p0148-01.png}}
 \caption{图6.1}
 \end{figure}
 
@@ -4507,7 +4428,7 @@ l，实际上 l 是远大于 d 的，图中双缝间的距离 d 是有意画得�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.2 双缝干涉}]{assets/physics-4/fig-p0148-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.2 双缝干涉}]{assets/physics-4/fig-p0148-02.png}}
 \caption{图6.2 双缝干涉}
 \end{figure}
 
@@ -4616,7 +4537,7 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.3}]{assets/physics-4/fig-p0151-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.3}]{assets/physics-4/fig-p0151-01.png}}
 \caption{图6.3}
 \end{figure}
 
@@ -4633,19 +4554,19 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0152-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0152-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0152-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0152-02.png}}
 \caption{（b）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0152-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0152-03.png}}
 \caption{（c）}
 \end{figure}
 
@@ -4660,19 +4581,19 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0153-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0153-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0153-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0153-02.png}}
 \caption{（b）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0153-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0153-03.png}}
 \caption{（c）}
 \end{figure}
 
@@ -4698,7 +4619,7 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.6}]{assets/physics-4/fig-p0154-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.6}]{assets/physics-4/fig-p0154-01.png}}
 \caption{图6.6}
 \end{figure}
 
@@ -4712,7 +4633,7 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.7 横波的偏振}]{assets/physics-4/fig-p0155-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.7 横波的偏振}]{assets/physics-4/fig-p0155-01.png}}
 \caption{图6.7 横波的偏振}
 \end{figure}
 
@@ -4730,25 +4651,25 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（i）}]{assets/physics-4/fig-p0157-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（i）}]{assets/physics-4/fig-p0157-01.png}}
 \caption{（i）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0157-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0157-02.png}}
 \caption{（b）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0157-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0157-03.png}}
 \caption{（c）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（d）}]{assets/physics-4/fig-p0157-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（d）}]{assets/physics-4/fig-p0157-04.png}}
 \caption{（d）}
 \end{figure}
 
@@ -4772,7 +4693,7 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.9}]{assets/physics-4/fig-p0159-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.9}]{assets/physics-4/fig-p0159-01.png}}
 \caption{图6.9}
 \end{figure}
 
@@ -4806,7 +4727,7 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.10 光的色散}]{assets/physics-4/fig-p0161-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.10 光的色散}]{assets/physics-4/fig-p0161-01.png}}
 \caption{图6.10 光的色散}
 \end{figure}
 
@@ -4814,7 +4735,7 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.11}]{assets/physics-4/fig-p0162-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.11}]{assets/physics-4/fig-p0162-01.png}}
 \caption{图6.11}
 \end{figure}
 
@@ -4872,7 +4793,7 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.12}]{assets/physics-4/fig-p0164-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.12}]{assets/physics-4/fig-p0164-01.png}}
 \caption{图6.12}
 \end{figure}
 
@@ -4931,13 +4852,13 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.13 分光镜}]{assets/physics-4/fig-p0166-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.13 分光镜}]{assets/physics-4/fig-p0166-01.png}}
 \caption{图6.13 分光镜}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.14}]{assets/physics-4/fig-p0166-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.14}]{assets/physics-4/fig-p0166-02.png}}
 \caption{图6.14}
 \end{figure}
 
@@ -4945,7 +4866,7 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.15}]{assets/physics-4/fig-p0166-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.15}]{assets/physics-4/fig-p0166-03.png}}
 \caption{图6.15}
 \end{figure}
 
@@ -4953,7 +4874,7 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 6.16 用分光镜观察气体放电管产生的明线光谱}]{assets/physics-4/fig-p0167-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 6.16 用分光镜观察气体放电管产生的明线光谱}]{assets/physics-4/fig-p0167-01.png}}
 \caption{图 6.16 用分光镜观察气体放电管产生的明线光谱}
 \end{figure}
 
@@ -5037,7 +4958,7 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 6.17 伦琴射线管}]{assets/physics-4/fig-p0171-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 6.17 伦琴射线管}]{assets/physics-4/fig-p0171-01.png}}
 \caption{图 6.17 伦琴射线管}
 \end{figure}
 
@@ -5053,7 +4974,7 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6.18}]{assets/physics-4/fig-p0172-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6.18}]{assets/physics-4/fig-p0172-01.png}}
 \caption{图6.18}
 \end{figure}
 
@@ -5196,13 +5117,13 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.1 光电效应}]{assets/physics-4/fig-p0178-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.1 光电效应}]{assets/physics-4/fig-p0178-01.png}}
 \caption{图 7.1 光电效应}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.2}]{assets/physics-4/fig-p0178-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.2}]{assets/physics-4/fig-p0178-02.png}}
 \caption{图7.2}
 \end{figure}
 
@@ -5225,7 +5146,7 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.3}]{assets/physics-4/fig-p0178-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.3}]{assets/physics-4/fig-p0178-03.png}}
 \caption{图 7.3}
 \end{figure}
 
@@ -5242,7 +5163,7 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.4}]{assets/physics-4/fig-p0179-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.4}]{assets/physics-4/fig-p0179-01.png}}
 \caption{图7.4}
 \end{figure}
 
@@ -5409,13 +5330,13 @@ E _ {1} = h \nu_ {1} = 6.62 \times 10 ^ {- 27} \times 3 \times 10 ^ {18} \text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.5 光电管}]{assets/physics-4/fig-p0185-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.5 光电管}]{assets/physics-4/fig-p0185-01.png}}
 \caption{图7.5 光电管}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.6}]{assets/physics-4/fig-p0185-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.6}]{assets/physics-4/fig-p0185-02.png}}
 \caption{图7.6}
 \end{figure}
 
@@ -5427,13 +5348,13 @@ E _ {1} = h \nu_ {1} = 6.62 \times 10 ^ {- 27} \times 3 \times 10 ^ {18} \text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.7 影片录音原理示意图}]{assets/physics-4/fig-p0186-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.7 影片录音原理示意图}]{assets/physics-4/fig-p0186-01.png}}
 \caption{图 7.7 影片录音原理示意图}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.8 影片声音的重放过程示意图}]{assets/physics-4/fig-p0186-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.8 影片声音的重放过程示意图}]{assets/physics-4/fig-p0186-02.png}}
 \caption{图 7.8 影片声音的重放过程示意图}
 \end{figure}
 
@@ -5461,13 +5382,13 @@ A 发出的是光量子，而不是连续的对称的波。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.9}]{assets/physics-4/fig-p0187-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.9}]{assets/physics-4/fig-p0187-01.png}}
 \caption{图7.9}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.10}]{assets/physics-4/fig-p0188-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.10}]{assets/physics-4/fig-p0188-01.png}}
 \caption{图 7.10}
 \end{figure}
 
@@ -5480,7 +5401,7 @@ A 发出的是光量子，而不是连续的对称的波。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7.11}]{assets/physics-4/fig-p0189-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7.11}]{assets/physics-4/fig-p0189-01.png}}
 \caption{图7.11}
 \end{figure}
 
@@ -5525,19 +5446,19 @@ A 发出的是光量子，而不是连续的对称的波。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.12 观察电子衍射装置}]{assets/physics-4/fig-p0192-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.12 观察电子衍射装置}]{assets/physics-4/fig-p0192-01.png}}
 \caption{图 7.12 观察电子衍射装置}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.13 电子衍射花样}]{assets/physics-4/fig-p0192-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.13 电子衍射花样}]{assets/physics-4/fig-p0192-02.png}}
 \caption{图 7.13 电子衍射花样}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 7.14 电子通过食盐单晶产生的衍射花样}]{assets/physics-4/fig-p0192-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 7.14 电子通过食盐单晶产生的衍射花样}]{assets/physics-4/fig-p0192-03.png}}
 \caption{图 7.14 电子通过食盐单晶产生的衍射花样}
 \end{figure}
 
@@ -5785,7 +5706,7 @@ v = \sqrt {\frac {2 e U}{m}} = \sqrt {\frac {2 \times 3.2 \times 10 ^ {- 17}}{0.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.1}]{assets/physics-4/fig-p0202-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.1}]{assets/physics-4/fig-p0202-01.png}}
 \caption{图8.1}
 \end{figure}
 
@@ -5798,7 +5719,7 @@ v = \sqrt {\frac {2 e U}{m}} = \sqrt {\frac {2 \times 3.2 \times 10 ^ {- 17}}{0.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.2 阴极射线}]{assets/physics-4/fig-p0203-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.2 阴极射线}]{assets/physics-4/fig-p0203-01.png}}
 \caption{图8.2 阴极射线}
 \end{figure}
 
@@ -5806,19 +5727,19 @@ v = \sqrt {\frac {2 e U}{m}} = \sqrt {\frac {2 \times 3.2 \times 10 ^ {- 17}}{0.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.3 阴极射线是一种微粒流}]{assets/physics-4/fig-p0203-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.3 阴极射线是一种微粒流}]{assets/physics-4/fig-p0203-02.png}}
 \caption{图8.3 阴极射线是一种微粒流}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.4 阴极射线在磁场中的偏转}]{assets/physics-4/fig-p0204-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.4 阴极射线在磁场中的偏转}]{assets/physics-4/fig-p0204-01.png}}
 \caption{图8.4 阴极射线在磁场中的偏转}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.5 阴极射线在电场中的偏转}]{assets/physics-4/fig-p0204-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.5 阴极射线在电场中的偏转}]{assets/physics-4/fig-p0204-02.png}}
 \caption{图 8.5 阴极射线在电场中的偏转}
 \end{figure}
 
@@ -5851,7 +5772,7 @@ v = \sqrt {\frac {2 e U}{m}} = \sqrt {\frac {2 \times 3.2 \times 10 ^ {- 17}}{0.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.6}]{assets/physics-4/fig-p0205-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.6}]{assets/physics-4/fig-p0205-01.png}}
 \caption{图8.6}
 \end{figure}
 
@@ -5923,7 +5844,7 @@ S = \frac {1}{2} a t ^ {2} = \frac {1}{2} \left(\frac {F}{m}\right) \left(\frac 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.7 密立根油滴实验}]{assets/physics-4/fig-p0207-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.7 密立根油滴实验}]{assets/physics-4/fig-p0207-01.png}}
 \caption{图8.7 密立根油滴实验}
 \end{figure}
 
@@ -6028,7 +5949,7 @@ m = 9.10956 \times 10 ^ {- 31} \text{千克}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.8 汤姆孙的原子模型和用来说明原子稳定性的类比实验}]{assets/physics-4/fig-p0211-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.8 汤姆孙的原子模型和用来说明原子稳定性的类比实验}]{assets/physics-4/fig-p0211-01.png}}
 \caption{图 8.8 汤姆孙的原子模型和用来说明原子稳定性的类比实验}
 \end{figure}
 
@@ -6056,7 +5977,7 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.9 α 粒子散射实验装置}]{assets/physics-4/fig-p0213-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.9 α 粒子散射实验装置}]{assets/physics-4/fig-p0213-01.png}}
 \caption{图 8.9 α 粒子散射实验装置}
 \end{figure}
 
@@ -6082,7 +6003,7 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.10}]{assets/physics-4/fig-p0214-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.10}]{assets/physics-4/fig-p0214-01.png}}
 \caption{图8.10}
 \end{figure}
 
@@ -6129,13 +6050,13 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0216-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0216-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（5）}]{assets/physics-4/fig-p0216-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（5）}]{assets/physics-4/fig-p0216-02.png}}
 \caption{（5）}
 \end{figure}
 
@@ -6143,7 +6064,7 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.12 散射角}]{assets/physics-4/fig-p0216-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.12 散射角}]{assets/physics-4/fig-p0216-03.png}}
 \caption{图8.12 散射角}
 \end{figure}
 
@@ -6158,7 +6079,7 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.13 \textbackslash alpha 粒子可能到达的离原子核中心的最短距离}]{assets/physics-4/fig-p0217-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.13 \textbackslash alpha 粒子可能到达的离原子核中心的最短距离}]{assets/physics-4/fig-p0217-01.png}}
 \caption{图8.13 \(\alpha\) 粒子可能到达的离原子核中心的最短距离}
 \end{figure}
 
@@ -6210,7 +6131,7 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.14 氢原子光谱中的巴耳麦线系}]{assets/physics-4/fig-p0220-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.14 氢原子光谱中的巴耳麦线系}]{assets/physics-4/fig-p0220-01.png}}
 \caption{图 8.14 氢原子光谱中的巴耳麦线系}
 \end{figure}
 
@@ -6469,13 +6390,13 @@ E _ {1} = - 13.6 \text{电子伏特},
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.15 氢原子能级图}]{assets/physics-4/fig-p0226-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.15 氢原子能级图}]{assets/physics-4/fig-p0226-01.png}}
 \caption{图 8.15 氢原子能级图}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.16}]{assets/physics-4/fig-p0226-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.16}]{assets/physics-4/fig-p0226-02.png}}
 \caption{图8.16}
 \end{figure}
 
@@ -6575,7 +6496,7 @@ h \nu = E _ {n} - E _ {k} = \frac {2 \pi^ {2} K ^ {2} e ^ {4} m}{h ^ {2}} \left(
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 B.17 氢原子光谱的产生示意图}]{assets/physics-4/fig-p0229-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 B.17 氢原子光谱的产生示意图}]{assets/physics-4/fig-p0229-01.png}}
 \caption{图 B.17 氢原子光谱的产生示意图}
 \end{figure}
 
@@ -6605,7 +6526,7 @@ V，这时电子穿过栅极所获得的动能是：
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8.18 验证氢原子能级存在的装置示意图}]{assets/physics-4/fig-p0230-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8.18 验证氢原子能级存在的装置示意图}]{assets/physics-4/fig-p0230-01.png}}
 \caption{图 8.18 验证氢原子能级存在的装置示意图}
 \end{figure}
 
@@ -6921,13 +6842,13 @@ h \nu = E _ {n _ {2}} - E _ {n _ {1}} > 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.1}]{assets/physics-4/fig-p0240-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.1}]{assets/physics-4/fig-p0240-01.png}}
 \caption{图9.1}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.2 自发辐射与受激辐射}]{assets/physics-4/fig-p0240-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.2 自发辐射与受激辐射}]{assets/physics-4/fig-p0240-02.png}}
 \caption{图9.2 自发辐射与受激辐射}
 \end{figure}
 
@@ -6944,7 +6865,7 @@ h \nu = E _ {n _ {2}} - E _ {n _ {1}} > 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.3 粒子数的正常分布与反转分布}]{assets/physics-4/fig-p0241-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.3 粒子数的正常分布与反转分布}]{assets/physics-4/fig-p0241-01.png}}
 \caption{图9.3 粒子数的正常分布与反转分布}
 \end{figure}
 
@@ -6959,7 +6880,7 @@ h \nu = E _ {n _ {2}} - E _ {n _ {1}} > 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.4}]{assets/physics-4/fig-p0242-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.4}]{assets/physics-4/fig-p0242-01.png}}
 \caption{图9.4}
 \end{figure}
 
@@ -6974,7 +6895,7 @@ h \nu = E _ {n _ {2}} - E _ {n _ {1}} > 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.5 氦和氖的原子能级示意图}]{assets/physics-4/fig-p0243-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.5 氦和氖的原子能级示意图}]{assets/physics-4/fig-p0243-01.png}}
 \caption{图9.5 氦和氖的原子能级示意图}
 \end{figure}
 
@@ -6987,7 +6908,7 @@ h \nu = E _ {n _ {2}} - E _ {n _ {1}} > 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.6 光学谐振腔}]{assets/physics-4/fig-p0244-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.6 光学谐振腔}]{assets/physics-4/fig-p0244-01.png}}
 \caption{图 9.6 光学谐振腔}
 \end{figure}
 
@@ -7012,7 +6933,7 @@ h \nu = E _ {n _ {2}} - E _ {n _ {1}} > 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9.7 激光器工作顺序示意图}]{assets/physics-4/fig-p0245-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9.7 激光器工作顺序示意图}]{assets/physics-4/fig-p0245-01.png}}
 \caption{图 9.7 激光器工作顺序示意图}
 \end{figure}
 
@@ -7056,7 +6977,7 @@ h \nu = E _ {n _ {2}} - E _ {n _ {1}} > 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.8 激光与普通光的比较}]{assets/physics-4/fig-p0247-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.8 激光与普通光的比较}]{assets/physics-4/fig-p0247-01.png}}
 \caption{图9.8 激光与普通光的比较}
 \end{figure}
 
@@ -7103,7 +7024,7 @@ h \nu = E _ {n _ {2}} - E _ {n _ {1}} > 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.9}]{assets/physics-4/fig-p0249-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.9}]{assets/physics-4/fig-p0249-01.png}}
 \caption{图9.9}
 \end{figure}
 
@@ -7207,13 +7128,13 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.1 威耳逊云室的示意图}]{assets/physics-4/fig-p0253-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.1 威耳逊云室的示意图}]{assets/physics-4/fig-p0253-01.png}}
 \caption{图 10.1 威耳逊云室的示意图}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.2 扩散云室的示意图}]{assets/physics-4/fig-p0254-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.2 扩散云室的示意图}]{assets/physics-4/fig-p0254-01.png}}
 \caption{图 10.2 扩散云室的示意图}
 \end{figure}
 
@@ -7245,7 +7166,7 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图10.3 气泡室结构示意图}]{assets/physics-4/fig-p0255-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图10.3 气泡室结构示意图}]{assets/physics-4/fig-p0255-01.png}}
 \caption{图10.3 气泡室结构示意图}
 \end{figure}
 
@@ -7259,7 +7180,7 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.4 在气泡室里形成的电子和证电子的照片}]{assets/physics-4/fig-p0255-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.4 在气泡室里形成的电子和证电子的照片}]{assets/physics-4/fig-p0255-02.png}}
 \caption{图 10.4 在气泡室里形成的电子和证电子的照片}
 \end{figure}
 
@@ -7273,13 +7194,13 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0256-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0256-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0256-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0256-02.png}}
 \caption{（b）}
 \end{figure}
 
@@ -7291,7 +7212,7 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图10.6 光电倍加管}]{assets/physics-4/fig-p0257-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图10.6 光电倍加管}]{assets/physics-4/fig-p0257-01.png}}
 \caption{图10.6 光电倍加管}
 \end{figure}
 
@@ -7309,7 +7230,7 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.7 盖-弥计数管}]{assets/physics-4/fig-p0258-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.7 盖-弥计数管}]{assets/physics-4/fig-p0258-01.png}}
 \caption{图 10.7 盖-弥计数管}
 \end{figure}
 
@@ -7323,7 +7244,7 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.8 专门用来探测 \textbackslash alpha 粒子的盖-弥计数管}]{assets/physics-4/fig-p0258-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.8 专门用来探测 \textbackslash alpha 粒子的盖-弥计数管}]{assets/physics-4/fig-p0258-02.png}}
 \caption{图 10.8 专门用来探测 \(\alpha\) 粒子的盖-弥计数管}
 \end{figure}
 
@@ -7337,7 +7258,7 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图10.9 乳胶堆}]{assets/physics-4/fig-p0259-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图10.9 乳胶堆}]{assets/physics-4/fig-p0259-01.png}}
 \caption{图10.9 乳胶堆}
 \end{figure}
 
@@ -7359,7 +7280,7 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图10.10 火花室的结论简图}]{assets/physics-4/fig-p0260-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图10.10 火花室的结论简图}]{assets/physics-4/fig-p0260-01.png}}
 \caption{图10.10 火花室的结论简图}
 \end{figure}
 
@@ -7402,7 +7323,7 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.11 用来验证 \textbackslash alpha 粒子是氦原子核的实验装置}]{assets/physics-4/fig-p0261-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.11 用来验证 \textbackslash alpha 粒子是氦原子核的实验装置}]{assets/physics-4/fig-p0261-01.png}}
 \caption{图 10.11 用来验证 \(\alpha\) 粒子是氦原子核的实验装置}
 \end{figure}
 
@@ -7451,7 +7372,7 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.12 β 粒子和 α 粒子的径迹}]{assets/physics-4/fig-p0263-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.12 β 粒子和 α 粒子的径迹}]{assets/physics-4/fig-p0263-01.png}}
 \caption{图 10.12 β 粒子和 α 粒子的径迹}
 \end{figure}
 
@@ -7655,7 +7576,7 @@ N = \frac {M}{\mu} N _ {\mathrm{A}} = \frac {5 \times 10 ^ {- 6}}{225} \times 6.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={表10.1：氢、氦、锂、碳、氮、氧及若干重核同位素的原子质量}]{assets/physics-4/table-p0270-isotope-masses.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={表10.1：氢、氦、锂、碳、氮、氧及若干重核同位素的原子质量}]{assets/physics-4/table-p0270-isotope-masses.png}}
 \caption{表10.1：氢、氦、锂、碳、氮、氧及若干重核同位素的原子质量}
 \end{figure}
 
@@ -7750,7 +7671,7 @@ X、Y 分别表示衰变前后的元素符号，其中 X 是母元素，Y 是子
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.13 三个天然放射性衰变的衰变规律}]{assets/physics-4/fig-p0273-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.13 三个天然放射性衰变的衰变规律}]{assets/physics-4/fig-p0273-01.png}}
 \caption{图 10.13 三个天然放射性衰变的衰变规律}
 \end{figure}
 
@@ -7844,7 +7765,7 @@ X、Y 分别表示衰变前后的元素符号，其中 X 是母元素，Y 是子
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.14 卢瑟福实验的装置示意图}]{assets/physics-4/fig-p0275-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.14 卢瑟福实验的装置示意图}]{assets/physics-4/fig-p0275-01.png}}
 \caption{图 10.14 卢瑟福实验的装置示意图}
 \end{figure}
 
@@ -7954,7 +7875,7 @@ X、Y 分别表示衰变前后的元素符号，其中 X 是母元素，Y 是子
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.15 云室中的径迹显示了 \textbackslash alpha-p 型核反应}]{assets/physics-4/fig-p0278-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.15 云室中的径迹显示了 \textbackslash alpha-p 型核反应}]{assets/physics-4/fig-p0278-01.png}}
 \caption{图 10.15 云室中的径迹显示了 \(\alpha-p\) 型核反应}
 \end{figure}
 
@@ -7990,7 +7911,7 @@ X、Y 分别表示衰变前后的元素符号，其中 X 是母元素，Y 是子
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 10.16 在德威克发现中子的实验装置示意图}]{assets/physics-4/fig-p0280-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 10.16 在德威克发现中子的实验装置示意图}]{assets/physics-4/fig-p0280-01.png}}
 \caption{图 10.16 在德威克发现中子的实验装置示意图}
 \end{figure}
 
@@ -8263,7 +8184,7 @@ R = R _ {0} \sqrt [ 3 ]{A}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（第7题）}]{assets/physics-4/fig-p0288-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（第7题）}]{assets/physics-4/fig-p0288-01.png}}
 \caption{（第7题）}
 \end{figure}
 
@@ -8725,7 +8646,7 @@ m _ {\alpha} = 4.001509 \text{原 子 质 量 单 位} (u)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={表11.1：若干原子核的结合能和核子平均结合能}]{assets/physics-4/table-p0300-binding-energy.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={表11.1：若干原子核的结合能和核子平均结合能}]{assets/physics-4/table-p0300-binding-energy.png}}
 \caption{表11.1：若干原子核的结合能和核子平均结合能}
 \end{figure}
 
@@ -8735,7 +8656,7 @@ m _ {\alpha} = 4.001509 \text{原 子 质 量 单 位} (u)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 11.1 各种元素原子核的核子平均结合能曲线}]{assets/physics-4/fig-p0301-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 11.1 各种元素原子核的核子平均结合能曲线}]{assets/physics-4/fig-p0301-01.png}}
 \caption{图 11.1 各种元素原子核的核子平均结合能曲线}
 \end{figure}
 
@@ -8817,7 +8738,7 @@ MeV，因此一个铀核裂变为两个中等原子量的核碎片在稳定后�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图11.2 铀核的分裂}]{assets/physics-4/fig-p0303-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图11.2 铀核的分裂}]{assets/physics-4/fig-p0303-01.png}}
 \caption{图11.2 铀核的分裂}
 \end{figure}
 
@@ -8838,7 +8759,7 @@ MeV，但如果每个击中铀核的中子只能引起一个铀核裂变，那�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 11.3 铀核裂变的链式反应示意图}]{assets/physics-4/fig-p0304-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 11.3 铀核裂变的链式反应示意图}]{assets/physics-4/fig-p0304-01.png}}
 \caption{图 11.3 铀核裂变的链式反应示意图}
 \end{figure}
 
@@ -8855,7 +8776,7 @@ D₂O）或石墨作为中子的减速剂，让在铀 235
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 11.4 减速剂在铀堆里的作用}]{assets/physics-4/fig-p0305-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 11.4 减速剂在铀堆里的作用}]{assets/physics-4/fig-p0305-01.png}}
 \caption{图 11.4 减速剂在铀堆里的作用}
 \end{figure}
 
@@ -8870,13 +8791,13 @@ D₂O）或石墨作为中子的减速剂，让在铀 235
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0306-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0306-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0306-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0306-02.png}}
 \caption{（b）}
 \end{figure}
 
@@ -8994,13 +8915,13 @@ D
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0310-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0310-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0310-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0310-02.png}}
 \caption{（b）}
 \end{figure}
 
@@ -9013,13 +8934,13 @@ D
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a） 核反应堆的核心}]{assets/physics-4/fig-p0311-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a） 核反应堆的核心}]{assets/physics-4/fig-p0311-01.png}}
 \caption{（a） 核反应堆的核心}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b） 重水型核电站}]{assets/physics-4/fig-p0311-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b） 重水型核电站}]{assets/physics-4/fig-p0311-02.png}}
 \caption{（b） 重水型核电站}
 \end{figure}
 
@@ -9212,7 +9133,7 @@ E _ {2} = 2.82 \times 10 ^ {- 12} \times 1.2 \times 10 ^ {23} \text{焦} = 3.38 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 11.8 氢弹构造示意图}]{assets/physics-4/fig-p0317-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 11.8 氢弹构造示意图}]{assets/physics-4/fig-p0317-01.png}}
 \caption{图 11.8 氢弹构造示意图}
 \end{figure}
 
@@ -9226,7 +9147,7 @@ E _ {2} = 2.82 \times 10 ^ {- 12} \times 1.2 \times 10 ^ {23} \text{焦} = 3.38 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 11.9 我国第一颗氢弹爆炸时产生的巨大火球}]{assets/physics-4/fig-p0318-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 11.9 我国第一颗氢弹爆炸时产生的巨大火球}]{assets/physics-4/fig-p0318-01.png}}
 \caption{图 11.9 我国第一颗氢弹爆炸时产生的巨大火球}
 \end{figure}
 
@@ -9307,7 +9228,7 @@ u和99.9076 u。）
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 11.10 托卡马克装置主要部分的原理示意图}]{assets/physics-4/fig-p0322-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 11.10 托卡马克装置主要部分的原理示意图}]{assets/physics-4/fig-p0322-01.png}}
 \caption{图 11.10 托卡马克装置主要部分的原理示意图}
 \end{figure}
 
@@ -9323,7 +9244,7 @@ u和99.9076 u。）
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 11.11 托卡马克型热核聚变反应堆结构简图}]{assets/physics-4/fig-p0322-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 11.11 托卡马克型热核聚变反应堆结构简图}]{assets/physics-4/fig-p0322-02.png}}
 \caption{图 11.11 托卡马克型热核聚变反应堆结构简图}
 \end{figure}
 
@@ -9335,7 +9256,7 @@ u和99.9076 u。）
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 11.12 激光打靶型热核聚变 反应堆原理示意图}]{assets/physics-4/fig-p0323-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 11.12 激光打靶型热核聚变 反应堆原理示意图}]{assets/physics-4/fig-p0323-01.png}}
 \caption{图 11.12 激光打靶型热核聚变 反应堆原理示意图}
 \end{figure}
 
@@ -9543,7 +9464,7 @@ E = m c ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 12.1 核反应堆多余的中子产生放射性同位素}]{assets/physics-4/fig-p0329-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 12.1 核反应堆多余的中子产生放射性同位素}]{assets/physics-4/fig-p0329-01.png}}
 \caption{图 12.1 核反应堆多余的中子产生放射性同位素}
 \end{figure}
 
@@ -9574,7 +9495,7 @@ I
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 12.2 γ射线探伤示意图}]{assets/physics-4/fig-p0331-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 12.2 γ射线探伤示意图}]{assets/physics-4/fig-p0331-01.png}}
 \caption{图 12.2 γ射线探伤示意图}
 \end{figure}
 
@@ -9587,13 +9508,13 @@ I
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 12.3 钢板厚度自动控制装置}]{assets/physics-4/fig-p0331-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 12.3 钢板厚度自动控制装置}]{assets/physics-4/fig-p0331-02.png}}
 \caption{图 12.3 钢板厚度自动控制装置}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 12.4 利用放射线的电离作用消除静电积累}]{assets/physics-4/fig-p0332-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 12.4 利用放射线的电离作用消除静电积累}]{assets/physics-4/fig-p0332-01.png}}
 \caption{图 12.4 利用放射线的电离作用消除静电积累}
 \end{figure}
 
@@ -9639,7 +9560,7 @@ I
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 12.5 两株燕麦的比较}]{assets/physics-4/fig-p0335-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 12.5 两株燕麦的比较}]{assets/physics-4/fig-p0335-01.png}}
 \caption{图 12.5 两株燕麦的比较}
 \end{figure}
 
@@ -9734,7 +9655,7 @@ I
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 13.1 正电子穿过云室的径迹}]{assets/physics-4/fig-p0340-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 13.1 正电子穿过云室的径迹}]{assets/physics-4/fig-p0340-01.png}}
 \caption{图 13.1 正电子穿过云室的径迹}
 \end{figure}
 
@@ -9742,7 +9663,7 @@ I
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图13.2 簇射现象}]{assets/physics-4/fig-p0341-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图13.2 簇射现象}]{assets/physics-4/fig-p0341-01.png}}
 \caption{图13.2 簇射现象}
 \end{figure}
 
@@ -9794,7 +9715,7 @@ Q。当带有电子的输送带运转到尖针 Q 附近时，电子就通过尖�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 13.3 静电加速器的原理示意图}]{assets/physics-4/fig-p0343-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 13.3 静电加速器的原理示意图}]{assets/physics-4/fig-p0343-01.png}}
 \caption{图 13.3 静电加速器的原理示意图}
 \end{figure}
 
@@ -9807,7 +9728,7 @@ MeV的高能粒子。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 13.4 质子直线加速器原理示意图}]{assets/physics-4/fig-p0344-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 13.4 质子直线加速器原理示意图}]{assets/physics-4/fig-p0344-01.png}}
 \caption{图 13.4 质子直线加速器原理示意图}
 \end{figure}
 
@@ -9822,13 +9743,13 @@ MeV的氘核``气''从回旋加速器喷射出来的情景。劳伦斯由于这�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0345-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0345-01.png}}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0345-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0345-02.png}}
 \caption{（b）}
 \end{figure}
 
@@ -9836,7 +9757,7 @@ MeV的氘核``气''从回旋加速器喷射出来的情景。劳伦斯由于这�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 13.6 从回旋加速器中喷射出来的氘核}]{assets/physics-4/fig-p0346-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 13.6 从回旋加速器中喷射出来的氘核}]{assets/physics-4/fig-p0346-01.png}}
 \caption{图 13.6 从回旋加速器中喷射出来的氘核}
 \end{figure}
 
@@ -9860,7 +9781,7 @@ MeV的质子束打在原子核上，产生了新的粒子。两年后一台叫�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 13.7 ``Bevatron''质子同步加速器}]{assets/physics-4/fig-p0348-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 13.7 ``Bevatron''质子同步加速器}]{assets/physics-4/fig-p0348-01.png}}
 \caption{图 13.7 ``Bevatron''质子同步加速器}
 \end{figure}
 
@@ -10001,13 +9922,13 @@ p + \bar {p} \longrightarrow \pi (\text{或} K)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={表13.1：光子、轻子、介子、核子和超子的粒子符号、反粒子符号、质量与平均寿命}]{assets/physics-4/table-p0353-particle-classification.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={表13.1：光子、轻子、介子、核子和超子的粒子符号、反粒子符号、质量与平均寿命}]{assets/physics-4/table-p0353-particle-classification.png}}
 \caption{表13.1：光子、轻子、介子、核子和超子的粒子符号、反粒子符号、质量与平均寿命}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 13.8 基本粒子分类图}]{assets/physics-4/fig-p0354-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 13.8 基本粒子分类图}]{assets/physics-4/fig-p0354-01.png}}
 \caption{图 13.8 基本粒子分类图}
 \end{figure}
 
@@ -10702,4 +10623,3 @@ SI制单位
 中子的质量 \(m_{n} = 1.67 \times 10^{-27}\) 千克
 
 里德堡常数 \(R = 1.097 \times 10^{7}\) 米\(^{-1}\)
-\end{document}

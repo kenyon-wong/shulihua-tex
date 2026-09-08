@@ -33,8 +33,10 @@ def main() -> int:
         if not path.is_file():
             continue
         text = path.read_text(encoding="utf-8")
-        if r"\begin{document}" not in text or r"\end{document}" not in text:
-            errors.append(f"{path.name}: 缺少 document 环境")
+        if r"\documentclass" in text or r"\begin{document}" in text:
+            errors.append(f"{path.name}: 正文混入了版式（documentclass/document），样式应只在 tex/style/")
+        if not text.strip():
+            errors.append(f"{path.name}: 正文为空")
         rows.append({"title": item["title"], "bytes": path.stat().st_size})
     payload = {
         "schema_version": 1,

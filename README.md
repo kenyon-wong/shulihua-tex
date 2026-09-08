@@ -32,7 +32,8 @@
 
 ```text
 .
-├── tex/books/           # 17 册规范 TeX 正文
+├── tex/style/           # 版式：preamble 与 driver
+├── tex/books/           # 17 册规范 TeX 正文（不含 documentclass）
 ├── books/               # Markdown 对照稿（追踪上游）与插图
 │   ├── *.md
 │   └── assets/          # 4,875 个正文图片资源
@@ -44,14 +45,13 @@
 └── dist/                # 构建出的 PDF（不纳入版本控制）
 ```
 
-规范修改进入 `tex/books/`。`books/*.md` 仅用于对照 `main` 与上游；上游更新后运行 `make md-to-tex` 再审阅 TeX。图片仍由 TeX 通过 `books/assets/` 引用。
+规范正文在 `tex/books/`，版式在 `tex/style/`。`books/*.md` 仅用于对照 `main` 与上游，不经 Pandoc 转写。图片由 TeX 通过 `books/assets/` 引用。
 
 ## 构建
 
 依赖：
 
 - Python 3.10+
-- Pandoc 3.1+
 - GNU Make（可选）
 
 原始 PDF 深度审计额外需要 PyPDF2 3.x、qpdf、Poppler（`pdfinfo`、`pdfdetach`、`pdfsig`、`pdftotext`）和 ExifTool。
@@ -88,16 +88,10 @@ make pdf
 make pdf-verify
 ```
 
-Markdown 对照稿同步进 TeX：
-
-```bash
-make md-to-tex
-```
-
 构建单册：
 
 ```bash
-python3 scripts/build_pdfs.py --from-tex --book '代数（第一册）'
+python3 scripts/build_pdfs.py --book '代数（第一册）'
 ```
 
 输出位于 `dist/`，报告位于 `reports/`。PDF 使用 `ctexbook` + Fandol，同一 TeX Live 与同一 `SOURCE_DATE_EPOCH` 下内容稳定；跨 TeX 版本不保证字节级一致。

@@ -1,82 +1,3 @@
-\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
-\usepackage[
-  b5paper,
-  hmargin=2.2cm,
-  top=1.6cm,
-  bottom=2.2cm,
-  headheight=22pt,
-  headsep=14pt,
-  footskip=16mm,
-  includehead
-]{geometry}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
-\usepackage{float}
-\xeCJKsetup{CJKmath=true}
-\usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
-
-\setcounter{secnumdepth}{-\maxdimen}
-\setlength{\emergencystretch}{3em}
-\graphicspath{{books/}}
-
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi
-}
-\def\fps@figure{htbp}
-\makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\hypersetup{
-  hidelinks,
-  pdflang={zh-CN},
-  pdftitle={平面几何（第二册）},
-  pdfauthor={数理化自学丛书编委会},
-  pdfcreator={XeLaTeX via pandoc}
-}
-
-\title{平面几何（第二册）}
-\author{数理化自学丛书编委会}
-\date{}
-
-\begin{document}
-\frontmatter
-\maketitle
-\renewcommand*\contentsname{目录}
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\mainmatter
 \textbf{丛书：} 数理化自学丛书\\
 \textbf{编者：} 数理化自学丛书编委会\\
 \textbf{出版社：} 上海科学技术出版社
@@ -337,7 +258,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-1}]{assets/plane-geometry-2/fig-p0004-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-1}]{assets/plane-geometry-2/fig-p0004-01.png}}
 \caption{图1-1}
 \end{figure}
 
@@ -365,7 +286,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-2}]{assets/plane-geometry-2/fig-p0005-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-2}]{assets/plane-geometry-2/fig-p0005-01.png}}
 \caption{图1-2}
 \end{figure}
 
@@ -390,7 +311,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0006-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0006-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -400,7 +321,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0006-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0006-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -434,7 +355,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0007-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0007-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -444,7 +365,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0007-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0007-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -488,7 +409,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-5}]{assets/plane-geometry-2/fig-p0008-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-5}]{assets/plane-geometry-2/fig-p0008-01.png}}
 \caption{图1-5}
 \end{figure}
 
@@ -547,7 +468,7 @@ CD 作长度单位去度量 AB 时， 第一回就得用 \(\frac{1}{10}\) CD 去
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-8}]{assets/plane-geometry-2/fig-p0010-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-8}]{assets/plane-geometry-2/fig-p0010-01.png}}
 \caption{图1-8}
 \end{figure}
 
@@ -654,7 +575,7 @@ CD 作长度单位去度量 AB 时， 第一回就得用 \(\frac{1}{10}\) CD 去
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-7}]{assets/plane-geometry-2/fig-p0012-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-7}]{assets/plane-geometry-2/fig-p0012-01.png}}
 \caption{图1-7}
 \end{figure}
 
@@ -669,13 +590,13 @@ CD 作长度单位去度量 AB 时， 第一回就得用 \(\frac{1}{10}\) CD 去
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第12页）}]{assets/plane-geometry-2/fig-p0012-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第12页）}]{assets/plane-geometry-2/fig-p0012-02.png}}
 \caption{图示（原PDF第12页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-8}]{assets/plane-geometry-2/fig-p0012-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-8}]{assets/plane-geometry-2/fig-p0012-03.png}}
 \caption{图1-8}
 \end{figure}
 
@@ -867,7 +788,7 @@ x\text{：} y = 4\text{：} 3. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-9}]{assets/plane-geometry-2/fig-p0016-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-9}]{assets/plane-geometry-2/fig-p0016-01.png}}
 \caption{图1-9}
 \end{figure}
 
@@ -1112,7 +1033,7 @@ B D = B C - D C = 5.6 - 3.5 = 2.1 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-16}]{assets/plane-geometry-2/fig-p0019-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-16}]{assets/plane-geometry-2/fig-p0019-01.png}}
 \caption{图1-16}
 \end{figure}
 
@@ -1153,7 +1074,7 @@ B D = B C - D C = 5.6 - 3.5 = 2.1 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0020-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0020-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -1163,7 +1084,7 @@ B D = B C - D C = 5.6 - 3.5 = 2.1 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0020-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0020-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -1255,7 +1176,7 @@ B D = B C - D C = 5.6 - 3.5 = 2.1 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-12}]{assets/plane-geometry-2/fig-p0022-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-12}]{assets/plane-geometry-2/fig-p0022-01.png}}
 \caption{图1-12}
 \end{figure}
 
@@ -1265,7 +1186,7 @@ B D = B C - D C = 5.6 - 3.5 = 2.1 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-13}]{assets/plane-geometry-2/fig-p0022-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-13}]{assets/plane-geometry-2/fig-p0022-02.png}}
 \caption{图1-13}
 \end{figure}
 
@@ -1358,7 +1279,7 @@ B F = 10 - 6 = 4 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-15}]{assets/plane-geometry-2/fig-p0024-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-15}]{assets/plane-geometry-2/fig-p0024-01.png}}
 \caption{图1-15}
 \end{figure}
 
@@ -1427,7 +1348,7 @@ B F = 10 - 6 = 4 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·16}]{assets/plane-geometry-2/fig-p0025-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·16}]{assets/plane-geometry-2/fig-p0025-01.png}}
 \caption{图1·16}
 \end{figure}
 
@@ -1467,7 +1388,7 @@ A C ^ {\prime} = 3 A C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-17}]{assets/plane-geometry-2/fig-p0026-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-17}]{assets/plane-geometry-2/fig-p0026-01.png}}
 \caption{图1-17}
 \end{figure}
 
@@ -1505,7 +1426,7 @@ A， C， E 和 B， F， D 分别是 \(\angle O\) 两边上的点，并且
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1-18}]{assets/plane-geometry-2/fig-p0026-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1-18}]{assets/plane-geometry-2/fig-p0026-02.png}}
 \caption{图 1-18}
 \end{figure}
 
@@ -1555,7 +1476,7 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-19}]{assets/plane-geometry-2/fig-p0027-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-19}]{assets/plane-geometry-2/fig-p0027-01.png}}
 \caption{图1-19}
 \end{figure}
 
@@ -1624,7 +1545,7 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0028-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0028-02.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -1648,7 +1569,7 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0029-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0029-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -1658,7 +1579,7 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0029-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0029-02.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -1708,7 +1629,7 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0029-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0029-03.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -1718,7 +1639,7 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0029-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0029-04.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -1771,7 +1692,7 @@ A F \parallel C D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0030-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0030-01.png}}
 \caption{(第14题)}
 \end{figure}
 
@@ -1849,7 +1770,7 @@ F。线段 DF 就是求作的线段 x。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.20}]{assets/plane-geometry-2/fig-p0031-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.20}]{assets/plane-geometry-2/fig-p0031-01.png}}
 \caption{图1.20}
 \end{figure}
 
@@ -1873,7 +1794,7 @@ F。线段 DF 就是求作的线段 x。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.21}]{assets/plane-geometry-2/fig-p0032-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.21}]{assets/plane-geometry-2/fig-p0032-01.png}}
 \caption{图1.21}
 \end{figure}
 
@@ -1910,7 +1831,7 @@ F。线段 DF 就是求作的线段 x。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·22}]{assets/plane-geometry-2/fig-p0032-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·22}]{assets/plane-geometry-2/fig-p0032-02.png}}
 \caption{图1·22}
 \end{figure}
 
@@ -1937,7 +1858,7 @@ F。线段 DF 就是求作的线段 x。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-23}]{assets/plane-geometry-2/fig-p0033-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-23}]{assets/plane-geometry-2/fig-p0033-01.png}}
 \caption{图1-23}
 \end{figure}
 
@@ -1981,7 +1902,7 @@ A B + B C + C A = l.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-24}]{assets/plane-geometry-2/fig-p0034-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-24}]{assets/plane-geometry-2/fig-p0034-01.png}}
 \caption{图1-24}
 \end{figure}
 
@@ -2047,7 +1968,7 @@ A B + B C + C A = l.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0035-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0035-01.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -2101,7 +2022,7 @@ C P\text{：} P D = m\text{：} n.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0036-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0036-01.png}}
 \caption{(第12题)}
 \end{figure}
 
@@ -2170,7 +2091,7 @@ C P\text{：} P D = m\text{：} n.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-25}]{assets/plane-geometry-2/fig-p0037-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-25}]{assets/plane-geometry-2/fig-p0037-01.png}}
 \caption{图1-25}
 \end{figure}
 
@@ -2222,7 +2143,7 @@ C P\text{：} P D = m\text{：} n.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-2e}]{assets/plane-geometry-2/fig-p0038-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-2e}]{assets/plane-geometry-2/fig-p0038-01.png}}
 \caption{图1-2e}
 \end{figure}
 
@@ -2274,7 +2195,7 @@ C P\text{：} P D = m\text{：} n.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-27}]{assets/plane-geometry-2/fig-p0039-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-27}]{assets/plane-geometry-2/fig-p0039-01.png}}
 \caption{图1-27}
 \end{figure}
 
@@ -2330,7 +2251,7 @@ b\text{：} a = A F\text{：} (c - A F)\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1-28}]{assets/plane-geometry-2/fig-p0040-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1-28}]{assets/plane-geometry-2/fig-p0040-01.png}}
 \caption{图 1-28}
 \end{figure}
 
@@ -2374,7 +2295,7 @@ B I\text{：} I E = (c + a)\text{：} b\text{；} C I\text{：} I F = (a + b)\te
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-29}]{assets/plane-geometry-2/fig-p0040-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-29}]{assets/plane-geometry-2/fig-p0040-02.png}}
 \caption{图1-29}
 \end{figure}
 
@@ -2419,7 +2340,7 @@ B I\text{：} I E = (c + a)\text{：} b\text{；} C I\text{：} I F = (a + b)\te
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-30}]{assets/plane-geometry-2/fig-p0041-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-30}]{assets/plane-geometry-2/fig-p0041-01.png}}
 \caption{图1-30}
 \end{figure}
 
@@ -2483,7 +2404,7 @@ A、B 两点的距离成 m：n 的点的轨迹是以线段 \(xx'\) 为直径的�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0042-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0042-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -2522,7 +2443,7 @@ A、B 两点的距离成 m：n 的点的轨迹是以线段 \(xx'\) 为直径的�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0043-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0043-01.png}}
 \caption{(2)}
 \end{figure}
 
@@ -2586,7 +2507,7 @@ A B\text{：} A C = B D\text{：} D C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0044-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0044-01.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -2666,7 +2587,7 @@ A B\text{：} A C = B D\text{：} D C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0045-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0045-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -2724,7 +2645,7 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0045-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0045-02.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -2753,7 +2674,7 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0046-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0046-01.png}}
 \caption{(第14题)}
 \end{figure}
 
@@ -2785,7 +2706,7 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-32}]{assets/plane-geometry-2/fig-p0047-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-32}]{assets/plane-geometry-2/fig-p0047-01.png}}
 \caption{图1-32}
 \end{figure}
 
@@ -2795,7 +2716,7 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-33}]{assets/plane-geometry-2/fig-p0047-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-33}]{assets/plane-geometry-2/fig-p0047-02.png}}
 \caption{图1-33}
 \end{figure}
 
@@ -2817,19 +2738,19 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/plane-geometry-2/fig-p0048-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/plane-geometry-2/fig-p0048-01.png}}
 \caption{图示（原PDF第48页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/plane-geometry-2/fig-p0048-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/plane-geometry-2/fig-p0048-02.png}}
 \caption{图示（原PDF第48页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-34}]{assets/plane-geometry-2/fig-p0048-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-34}]{assets/plane-geometry-2/fig-p0048-03.png}}
 \caption{图1-34}
 \end{figure}
 
@@ -2845,19 +2766,19 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/plane-geometry-2/fig-p0048-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/plane-geometry-2/fig-p0048-04.png}}
 \caption{图示（原PDF第48页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/plane-geometry-2/fig-p0048-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第48页）}]{assets/plane-geometry-2/fig-p0048-05.png}}
 \caption{图示（原PDF第48页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-35}]{assets/plane-geometry-2/fig-p0048-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-35}]{assets/plane-geometry-2/fig-p0048-06.png}}
 \caption{图1-35}
 \end{figure}
 
@@ -2881,13 +2802,13 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第49页）}]{assets/plane-geometry-2/fig-p0049-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第49页）}]{assets/plane-geometry-2/fig-p0049-01.png}}
 \caption{图示（原PDF第49页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-36}]{assets/plane-geometry-2/fig-p0049-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-36}]{assets/plane-geometry-2/fig-p0049-02.png}}
 \caption{图1-36}
 \end{figure}
 
@@ -2928,7 +2849,7 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图37}]{assets/plane-geometry-2/fig-p0049-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图37}]{assets/plane-geometry-2/fig-p0049-03.png}}
 \caption{图37}
 \end{figure}
 
@@ -2958,13 +2879,13 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第50页）}]{assets/plane-geometry-2/fig-p0050-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第50页）}]{assets/plane-geometry-2/fig-p0050-01.png}}
 \caption{图示（原PDF第50页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-38}]{assets/plane-geometry-2/fig-p0050-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-38}]{assets/plane-geometry-2/fig-p0050-02.png}}
 \caption{图1-38}
 \end{figure}
 
@@ -3073,7 +2994,7 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0052-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0052-01.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -3103,7 +3024,7 @@ A B\text{：} C B = A D\text{：} C D. \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-39}]{assets/plane-geometry-2/fig-p0053-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-39}]{assets/plane-geometry-2/fig-p0053-01.png}}
 \caption{图1-39}
 \end{figure}
 
@@ -3182,7 +3103,7 @@ AB 和 AC 于 \(B'\) 和 \(C'\)，并且 \(B'O' \parallel BC\) （图 1·39）�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1-40}]{assets/plane-geometry-2/fig-p0054-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1-40}]{assets/plane-geometry-2/fig-p0054-01.png}}
 \caption{图 1-40}
 \end{figure}
 
@@ -3210,7 +3131,7 @@ AB 和 AC 于 \(B'\) 和 \(C'\)，并且 \(B'O' \parallel BC\) （图 1·39）�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1-41}]{assets/plane-geometry-2/fig-p0054-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1-41}]{assets/plane-geometry-2/fig-p0054-02.png}}
 \caption{图 1-41}
 \end{figure}
 
@@ -3283,13 +3204,13 @@ D H = H C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第56页）}]{assets/plane-geometry-2/fig-p0056-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第56页）}]{assets/plane-geometry-2/fig-p0056-01.png}}
 \caption{图示（原PDF第56页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-42}]{assets/plane-geometry-2/fig-p0056-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-42}]{assets/plane-geometry-2/fig-p0056-02.png}}
 \caption{图1-42}
 \end{figure}
 
@@ -3327,13 +3248,13 @@ D H = H C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第56页）}]{assets/plane-geometry-2/fig-p0056-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第56页）}]{assets/plane-geometry-2/fig-p0056-03.png}}
 \caption{图示（原PDF第56页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-48}]{assets/plane-geometry-2/fig-p0056-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-48}]{assets/plane-geometry-2/fig-p0056-04.png}}
 \caption{图1-48}
 \end{figure}
 
@@ -3377,7 +3298,7 @@ EC。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-44}]{assets/plane-geometry-2/fig-p0057-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-44}]{assets/plane-geometry-2/fig-p0057-01.png}}
 \caption{图1-44}
 \end{figure}
 
@@ -3406,7 +3327,7 @@ D。试证 BC 是 AC 和 OD 的比例中项（图 1·45）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-45}]{assets/plane-geometry-2/fig-p0057-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-45}]{assets/plane-geometry-2/fig-p0057-02.png}}
 \caption{图1-45}
 \end{figure}
 
@@ -3451,13 +3372,13 @@ D。试证 BC 是 AC 和 OD 的比例中项（图 1·45）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第58页）}]{assets/plane-geometry-2/fig-p0058-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第58页）}]{assets/plane-geometry-2/fig-p0058-01.png}}
 \caption{图示（原PDF第58页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-46}]{assets/plane-geometry-2/fig-p0058-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-46}]{assets/plane-geometry-2/fig-p0058-02.png}}
 \caption{图1-46}
 \end{figure}
 
@@ -3467,7 +3388,7 @@ D。试证 BC 是 AC 和 OD 的比例中项（图 1·45）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-47}]{assets/plane-geometry-2/fig-p0058-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-47}]{assets/plane-geometry-2/fig-p0058-03.png}}
 \caption{图1-47}
 \end{figure}
 
@@ -3508,7 +3429,7 @@ D。试证 BC 是 AC 和 OD 的比例中项（图 1·45）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1.48}]{assets/plane-geometry-2/fig-p0059-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1.48}]{assets/plane-geometry-2/fig-p0059-01.png}}
 \caption{图 1.48}
 \end{figure}
 
@@ -3538,13 +3459,13 @@ D。试证 BC 是 AC 和 OD 的比例中项（图 1·45）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第59页）}]{assets/plane-geometry-2/fig-p0059-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第59页）}]{assets/plane-geometry-2/fig-p0059-02.png}}
 \caption{图示（原PDF第59页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-49}]{assets/plane-geometry-2/fig-p0059-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-49}]{assets/plane-geometry-2/fig-p0059-03.png}}
 \caption{图1-49}
 \end{figure}
 
@@ -3603,7 +3524,7 @@ OB = 4.5cm， \(OB' = 3cm\)。 求证 \(AB \parallel A'B'\) （图 1·60）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-50}]{assets/plane-geometry-2/fig-p0060-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-50}]{assets/plane-geometry-2/fig-p0060-01.png}}
 \caption{图1-50}
 \end{figure}
 
@@ -3702,7 +3623,7 @@ OB = 4.5cm， \(OB' = 3cm\)。 求证 \(AB \parallel A'B'\) （图 1·60）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-52}]{assets/plane-geometry-2/fig-p0062-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-52}]{assets/plane-geometry-2/fig-p0062-01.png}}
 \caption{图1-52}
 \end{figure}
 
@@ -3744,7 +3665,7 @@ OB = 4.5cm， \(OB' = 3cm\)。 求证 \(AB \parallel A'B'\) （图 1·60）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.53}]{assets/plane-geometry-2/fig-p0063-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.53}]{assets/plane-geometry-2/fig-p0063-01.png}}
 \caption{图1.53}
 \end{figure}
 
@@ -3817,7 +3738,7 @@ D E = \frac {1}{2} A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-54}]{assets/plane-geometry-2/fig-p0064-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-54}]{assets/plane-geometry-2/fig-p0064-01.png}}
 \caption{图1-54}
 \end{figure}
 
@@ -3881,7 +3802,7 @@ D E = \frac {1}{2} A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0065-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0065-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -3891,7 +3812,7 @@ D E = \frac {1}{2} A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0065-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0065-02.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -3928,13 +3849,13 @@ D E = \frac {1}{2} A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第65页）}]{assets/plane-geometry-2/fig-p0065-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第65页）}]{assets/plane-geometry-2/fig-p0065-03.png}}
 \caption{图示（原PDF第65页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0065-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0065-04.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -3966,7 +3887,7 @@ P D ^ {2} = P E \cdot P F\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0066-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0066-01.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -4004,7 +3925,7 @@ P D ^ {2} = P E \cdot P F\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0066-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0066-02.png}}
 \caption{(第18题)}
 \end{figure}
 
@@ -4014,7 +3935,7 @@ P D ^ {2} = P E \cdot P F\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0066-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0066-03.png}}
 \caption{(第14题)}
 \end{figure}
 
@@ -4042,7 +3963,7 @@ P D ^ {2} = P E \cdot P F\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0067-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0067-01.png}}
 \caption{(第16题)}
 \end{figure}
 
@@ -4052,7 +3973,7 @@ P D ^ {2} = P E \cdot P F\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0067-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0067-02.png}}
 \caption{(第18题)}
 \end{figure}
 
@@ -4085,7 +4006,7 @@ P D ^ {2} = P E \cdot P F\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0067-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0067-03.png}}
 \caption{(第20题)}
 \end{figure}
 
@@ -4095,7 +4016,7 @@ P D ^ {2} = P E \cdot P F\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第21题)}]{assets/plane-geometry-2/fig-p0067-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第21题)}]{assets/plane-geometry-2/fig-p0067-04.png}}
 \caption{(第21题)}
 \end{figure}
 
@@ -4153,13 +4074,13 @@ P D ^ {2} = P E \cdot P F\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第69页）}]{assets/plane-geometry-2/fig-p0069-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第69页）}]{assets/plane-geometry-2/fig-p0069-01.png}}
 \caption{图示（原PDF第69页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-55}]{assets/plane-geometry-2/fig-p0069-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-55}]{assets/plane-geometry-2/fig-p0069-02.png}}
 \caption{图1-55}
 \end{figure}
 
@@ -4229,7 +4150,7 @@ A D \cdot B C = B E \cdot A C\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-56}]{assets/plane-geometry-2/fig-p0070-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-56}]{assets/plane-geometry-2/fig-p0070-01.png}}
 \caption{图1-56}
 \end{figure}
 
@@ -4298,13 +4219,13 @@ AC 和 BE，BC 分别是直角三角形 ADC 和 BEC 的直角边和斜边， 只
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-geometry-2/fig-p0071-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-geometry-2/fig-p0071-01.png}}
 \caption{图示（原PDF第71页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-57}]{assets/plane-geometry-2/fig-p0071-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-57}]{assets/plane-geometry-2/fig-p0071-02.png}}
 \caption{图1-57}
 \end{figure}
 
@@ -4389,7 +4310,7 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0072-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0072-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -4411,7 +4332,7 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0072-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0072-02.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -4421,7 +4342,7 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0072-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0072-03.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -4446,7 +4367,7 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0073-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0073-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -4466,7 +4387,7 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0073-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0073-02.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -4519,7 +4440,7 @@ x = \frac {c d}{a - b} + c.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0074-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0074-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -4540,7 +4461,7 @@ x = \frac {c d}{a - b} + c.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·58}]{assets/plane-geometry-2/fig-p0075-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·58}]{assets/plane-geometry-2/fig-p0075-01.png}}
 \caption{图1·58}
 \end{figure}
 
@@ -4578,7 +4499,7 @@ x = \frac {c d}{a - b} + c.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0076-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0076-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -4588,7 +4509,7 @@ x = \frac {c d}{a - b} + c.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-59}]{assets/plane-geometry-2/fig-p0076-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-59}]{assets/plane-geometry-2/fig-p0076-02.png}}
 \caption{图1-59}
 \end{figure}
 
@@ -4630,13 +4551,13 @@ x = \frac {c d}{a - b} + c.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第77页）}]{assets/plane-geometry-2/fig-p0077-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第77页）}]{assets/plane-geometry-2/fig-p0077-01.png}}
 \caption{图示（原PDF第77页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1-60}]{assets/plane-geometry-2/fig-p0077-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1-60}]{assets/plane-geometry-2/fig-p0077-02.png}}
 \caption{图 1-60}
 \end{figure}
 
@@ -4661,7 +4582,7 @@ x = \frac {c d}{a - b} + c.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·81}]{assets/plane-geometry-2/fig-p0077-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·81}]{assets/plane-geometry-2/fig-p0077-03.png}}
 \caption{图1·81}
 \end{figure}
 
@@ -4713,7 +4634,7 @@ D K = D L\text{，} E G = E L.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-62}]{assets/plane-geometry-2/fig-p0078-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-62}]{assets/plane-geometry-2/fig-p0078-01.png}}
 \caption{图1-62}
 \end{figure}
 
@@ -4770,7 +4691,7 @@ M D + D E + E M = M D + D F + F N = M N = m\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0079-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0079-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -4796,7 +4717,7 @@ M D + D E + E M = M D + D F + F N = M N = m\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0080-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0080-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -4806,7 +4727,7 @@ M D + D E + E M = M D + D F + F N = M N = m\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0080-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0080-02.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -4830,7 +4751,7 @@ M D + D E + E M = M D + D F + F N = M N = m\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0080-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0080-03.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -4864,7 +4785,7 @@ M D + D E + E M = M D + D F + F N = M N = m\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.63}]{assets/plane-geometry-2/fig-p0081-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.63}]{assets/plane-geometry-2/fig-p0081-01.png}}
 \caption{图1.63}
 \end{figure}
 
@@ -4915,7 +4836,7 @@ C D = \frac {1}{3} A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-64}]{assets/plane-geometry-2/fig-p0082-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-64}]{assets/plane-geometry-2/fig-p0082-01.png}}
 \caption{图1-64}
 \end{figure}
 
@@ -4939,7 +4860,7 @@ C D = \frac {1}{3} A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.65}]{assets/plane-geometry-2/fig-p0083-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.65}]{assets/plane-geometry-2/fig-p0083-01.png}}
 \caption{图1.65}
 \end{figure}
 
@@ -4994,7 +4915,7 @@ PQ 代表的距离为 7 米 \(\left(\frac{7}{5000} \times 5000\right)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0084-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0084-01.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -5004,7 +4925,7 @@ PQ 代表的距离为 7 米 \(\left(\frac{7}{5000} \times 5000\right)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0084-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0084-02.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -5043,7 +4964,7 @@ PQ 代表的距离为 7 米 \(\left(\frac{7}{5000} \times 5000\right)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0085-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0085-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -5085,7 +5006,7 @@ PQ 代表的距离为 7 米 \(\left(\frac{7}{5000} \times 5000\right)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1.66}]{assets/plane-geometry-2/fig-p0086-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1.66}]{assets/plane-geometry-2/fig-p0086-01.png}}
 \caption{图 1.66}
 \end{figure}
 
@@ -5267,7 +5188,7 @@ A B\text{：} B C\text{：} C D\text{：} D A = 1\text{：} \frac {1}{2}\text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-87}]{assets/plane-geometry-2/fig-p0088-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-87}]{assets/plane-geometry-2/fig-p0088-01.png}}
 \caption{图1-87}
 \end{figure}
 
@@ -5369,7 +5290,7 @@ A B\text{：} B C\text{：} C D\text{：} D A = 1\text{：} \frac {1}{2}\text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-68}]{assets/plane-geometry-2/fig-p0090-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-68}]{assets/plane-geometry-2/fig-p0090-01.png}}
 \caption{图1-68}
 \end{figure}
 
@@ -5456,7 +5377,7 @@ A B\text{：} B C\text{：} C D\text{：} D A = 1\text{：} \frac {1}{2}\text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-69}]{assets/plane-geometry-2/fig-p0091-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-69}]{assets/plane-geometry-2/fig-p0091-01.png}}
 \caption{图1-69}
 \end{figure}
 
@@ -5523,7 +5444,7 @@ A ^ {\prime} B ^ {\prime} = a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0092-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0092-02.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -5533,7 +5454,7 @@ A ^ {\prime} B ^ {\prime} = a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0092-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0092-03.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -5575,7 +5496,7 @@ A ^ {\prime} B ^ {\prime} = a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0093-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0093-01.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -5595,7 +5516,7 @@ A ^ {\prime} B ^ {\prime} = a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0093-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0093-02.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -5631,7 +5552,7 @@ A ^ {\prime} B ^ {\prime} = a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-70}]{assets/plane-geometry-2/fig-p0094-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-70}]{assets/plane-geometry-2/fig-p0094-01.png}}
 \caption{图1-70}
 \end{figure}
 
@@ -5716,7 +5637,7 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-71}]{assets/plane-geometry-2/fig-p0095-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-71}]{assets/plane-geometry-2/fig-p0095-01.png}}
 \caption{图1-71}
 \end{figure}
 
@@ -5757,13 +5678,13 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第97页）}]{assets/plane-geometry-2/fig-p0097-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第97页）}]{assets/plane-geometry-2/fig-p0097-01.png}}
 \caption{图示（原PDF第97页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-72}]{assets/plane-geometry-2/fig-p0097-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-72}]{assets/plane-geometry-2/fig-p0097-02.png}}
 \caption{图1-72}
 \end{figure}
 
@@ -5773,13 +5694,13 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第97页）}]{assets/plane-geometry-2/fig-p0097-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第97页）}]{assets/plane-geometry-2/fig-p0097-03.png}}
 \caption{图示（原PDF第97页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-73}]{assets/plane-geometry-2/fig-p0097-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-73}]{assets/plane-geometry-2/fig-p0097-04.png}}
 \caption{图1-73}
 \end{figure}
 
@@ -5789,13 +5710,13 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第97页）}]{assets/plane-geometry-2/fig-p0097-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第97页）}]{assets/plane-geometry-2/fig-p0097-05.png}}
 \caption{图示（原PDF第97页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-74}]{assets/plane-geometry-2/fig-p0097-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-74}]{assets/plane-geometry-2/fig-p0097-06.png}}
 \caption{图1-74}
 \end{figure}
 
@@ -5812,7 +5733,7 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-75}]{assets/plane-geometry-2/fig-p0098-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-75}]{assets/plane-geometry-2/fig-p0098-01.png}}
 \caption{图1-75}
 \end{figure}
 
@@ -5847,7 +5768,7 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0098-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0098-02.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -5896,7 +5817,7 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0099-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0099-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -5906,7 +5827,7 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0099-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0099-02.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -5950,7 +5871,7 @@ A B\text{：} a = O A\text{：} O A ^ {\prime}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0100-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0100-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -5986,7 +5907,7 @@ AC 上。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1.76}]{assets/plane-geometry-2/fig-p0101-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1.76}]{assets/plane-geometry-2/fig-p0101-01.png}}
 \caption{图 1.76}
 \end{figure}
 
@@ -6041,25 +5962,25 @@ AC 上。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第102页）}]{assets/plane-geometry-2/fig-p0102-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第102页）}]{assets/plane-geometry-2/fig-p0102-01.png}}
 \caption{图示（原PDF第102页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第102页）}]{assets/plane-geometry-2/fig-p0102-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第102页）}]{assets/plane-geometry-2/fig-p0102-02.png}}
 \caption{图示（原PDF第102页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第102页）}]{assets/plane-geometry-2/fig-p0102-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第102页）}]{assets/plane-geometry-2/fig-p0102-03.png}}
 \caption{图示（原PDF第102页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.77}]{assets/plane-geometry-2/fig-p0102-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.77}]{assets/plane-geometry-2/fig-p0102-04.png}}
 \caption{图1.77}
 \end{figure}
 
@@ -6078,7 +5999,7 @@ AC 上。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-78}]{assets/plane-geometry-2/fig-p0103-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-78}]{assets/plane-geometry-2/fig-p0103-01.png}}
 \caption{图1-78}
 \end{figure}
 
@@ -6139,7 +6060,7 @@ MA = MN = NB。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-79}]{assets/plane-geometry-2/fig-p0104-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-79}]{assets/plane-geometry-2/fig-p0104-01.png}}
 \caption{图1-79}
 \end{figure}
 
@@ -6149,7 +6070,7 @@ MA = MN = NB。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-80}]{assets/plane-geometry-2/fig-p0104-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-80}]{assets/plane-geometry-2/fig-p0104-02.png}}
 \caption{图1-80}
 \end{figure}
 
@@ -6212,7 +6133,7 @@ MA = MN = NB。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-81}]{assets/plane-geometry-2/fig-p0105-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-81}]{assets/plane-geometry-2/fig-p0105-01.png}}
 \caption{图1-81}
 \end{figure}
 
@@ -6251,13 +6172,13 @@ MA = MN = NB。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第106页）}]{assets/plane-geometry-2/fig-p0106-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第106页）}]{assets/plane-geometry-2/fig-p0106-02.png}}
 \caption{图示（原PDF第106页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0106-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0106-03.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -6289,7 +6210,7 @@ MA = MN = NB。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0107-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0107-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -6350,13 +6271,13 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第108页）}]{assets/plane-geometry-2/fig-p0108-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第108页）}]{assets/plane-geometry-2/fig-p0108-01.png}}
 \caption{图示（原PDF第108页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-82}]{assets/plane-geometry-2/fig-p0108-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-82}]{assets/plane-geometry-2/fig-p0108-02.png}}
 \caption{图1-82}
 \end{figure}
 
@@ -6402,7 +6323,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-83}]{assets/plane-geometry-2/fig-p0109-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-83}]{assets/plane-geometry-2/fig-p0109-01.png}}
 \caption{图1-83}
 \end{figure}
 
@@ -6532,7 +6453,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0112-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0112-01.png}}
 \caption{(第13题)}
 \end{figure}
 
@@ -6559,7 +6480,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0112-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0112-02.png}}
 \caption{(第15题)}
 \end{figure}
 
@@ -6569,7 +6490,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0112-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0112-03.png}}
 \caption{(第16题)}
 \end{figure}
 
@@ -6613,7 +6534,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0113-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0113-01.png}}
 \caption{(第20题)}
 \end{figure}
 
@@ -6623,7 +6544,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-2/fig-p0113-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-2/fig-p0113-02.png}}
 \caption{(第22题)}
 \end{figure}
 
@@ -6654,7 +6575,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0114-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0114-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -6664,7 +6585,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0114-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0114-02.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -6723,7 +6644,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0114-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0114-03.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -6738,7 +6659,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0115-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0115-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -6748,7 +6669,7 @@ OE 等于 \(\triangle ABC\) 内切圆半径与外接圆半径之和。再在任�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0115-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0115-02.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -6788,7 +6709,7 @@ h _ {a}\text{：} h _ {b}\text{：} h _ {c} = \frac {1}{a}\text{：} \frac {1}{b
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0115-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0115-03.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -6798,7 +6719,7 @@ h _ {a}\text{：} h _ {b}\text{：} h _ {c} = \frac {1}{a}\text{：} \frac {1}{b
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0115-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0115-04.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -6838,7 +6759,7 @@ F，再利用角平分线性质的逆定理。］
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0116-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0116-01.png}}
 \caption{(第13题)}
 \end{figure}
 
@@ -6898,7 +6819,7 @@ a\text{，} B C\text{：} B A = m\text{：} n.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0116-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0116-02.png}}
 \caption{(第20题)}
 \end{figure}
 
@@ -6914,7 +6835,7 @@ a\text{，} B C\text{：} B A = m\text{：} n.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-2/fig-p0117-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-2/fig-p0117-01.png}}
 \caption{(第22题)}
 \end{figure}
 
@@ -6948,7 +6869,7 @@ a\text{，} B C\text{：} B A = m\text{：} n.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第25题)}]{assets/plane-geometry-2/fig-p0117-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第25题)}]{assets/plane-geometry-2/fig-p0117-02.png}}
 \caption{(第25题)}
 \end{figure}
 
@@ -7001,7 +6922,7 @@ a\text{，} B C\text{：} B A = m\text{：} n.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0118-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0118-01.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -7011,7 +6932,7 @@ a\text{，} B C\text{：} B A = m\text{：} n.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0118-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0118-02.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -7038,7 +6959,7 @@ A D ^ {2} = A F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0118-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0118-03.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -7058,7 +6979,7 @@ A D ^ {2} = A F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0119-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0119-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -7068,7 +6989,7 @@ A D ^ {2} = A F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0119-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0119-02.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -7090,7 +7011,7 @@ A D ^ {2} = A F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0119-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0119-03.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -7125,7 +7046,7 @@ A D ^ {2} = A F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-1}]{assets/plane-geometry-2/fig-p0121-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-1}]{assets/plane-geometry-2/fig-p0121-01.png}}
 \caption{图2-1}
 \end{figure}
 
@@ -7135,7 +7056,7 @@ A D ^ {2} = A F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-2}]{assets/plane-geometry-2/fig-p0121-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-2}]{assets/plane-geometry-2/fig-p0121-02.png}}
 \caption{图2-2}
 \end{figure}
 
@@ -7157,7 +7078,7 @@ A D ^ {2} = A F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-3}]{assets/plane-geometry-2/fig-p0122-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-3}]{assets/plane-geometry-2/fig-p0122-01.png}}
 \caption{图2-3}
 \end{figure}
 
@@ -7182,7 +7103,7 @@ A D ^ {2} = A F \cdot A B.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-4}]{assets/plane-geometry-2/fig-p0122-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-4}]{assets/plane-geometry-2/fig-p0122-02.png}}
 \caption{图2-4}
 \end{figure}
 
@@ -7242,7 +7163,7 @@ A D\text{：} C D = C D\text{：} B D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-5}]{assets/plane-geometry-2/fig-p0123-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-5}]{assets/plane-geometry-2/fig-p0123-01.png}}
 \caption{图2-5}
 \end{figure}
 
@@ -7298,13 +7219,13 @@ B C = \sqrt {B C ^ {\prime} \cdot A B} = \sqrt {B C ^ {\prime} \cdot (A C ^ {\pr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第124页）}]{assets/plane-geometry-2/fig-p0124-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第124页）}]{assets/plane-geometry-2/fig-p0124-01.png}}
 \caption{图示（原PDF第124页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-8}]{assets/plane-geometry-2/fig-p0124-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-8}]{assets/plane-geometry-2/fig-p0124-02.png}}
 \caption{图2-8}
 \end{figure}
 
@@ -7314,7 +7235,7 @@ B C = \sqrt {B C ^ {\prime} \cdot A B} = \sqrt {B C ^ {\prime} \cdot (A C ^ {\pr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-7}]{assets/plane-geometry-2/fig-p0124-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-7}]{assets/plane-geometry-2/fig-p0124-03.png}}
 \caption{图2-7}
 \end{figure}
 
@@ -7354,7 +7275,7 @@ B C = \sqrt {B C ^ {\prime} \cdot A B} = \sqrt {B C ^ {\prime} \cdot (A C ^ {\pr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-3}]{assets/plane-geometry-2/fig-p0124-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-3}]{assets/plane-geometry-2/fig-p0124-04.png}}
 \caption{图2-3}
 \end{figure}
 
@@ -7392,7 +7313,7 @@ B C = \sqrt {B C ^ {\prime} \cdot A B} = \sqrt {B C ^ {\prime} \cdot (A C ^ {\pr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0125-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0125-01.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -7412,7 +7333,7 @@ B C = \sqrt {B C ^ {\prime} \cdot A B} = \sqrt {B C ^ {\prime} \cdot (A C ^ {\pr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0125-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0125-02.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -7444,7 +7365,7 @@ B C = \sqrt {B C ^ {\prime} \cdot A B} = \sqrt {B C ^ {\prime} \cdot (A C ^ {\pr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0126-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0126-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -7454,7 +7375,7 @@ B C = \sqrt {B C ^ {\prime} \cdot A B} = \sqrt {B C ^ {\prime} \cdot (A C ^ {\pr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0126-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0126-02.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -7532,7 +7453,7 @@ D B\text{：} B C = B C\text{：} A B\text{，} \text {\text{即}} B C ^ {2} = D
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-9}]{assets/plane-geometry-2/fig-p0127-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-9}]{assets/plane-geometry-2/fig-p0127-01.png}}
 \caption{图2-9}
 \end{figure}
 
@@ -7562,7 +7483,7 @@ B C ^ {2} = O C ^ {2} + O B ^ {2} = 11 ^ {2} + 5 ^ {2} = 146\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·10}]{assets/plane-geometry-2/fig-p0127-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·10}]{assets/plane-geometry-2/fig-p0127-02.png}}
 \caption{图2·10}
 \end{figure}
 
@@ -7591,7 +7512,7 @@ x = \frac {20}{3} \sqrt {3} \approx 11.5.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-11}]{assets/plane-geometry-2/fig-p0128-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-11}]{assets/plane-geometry-2/fig-p0128-01.png}}
 \caption{图2-11}
 \end{figure}
 
@@ -7616,7 +7537,7 @@ x = \frac {20}{3} \sqrt {3} \approx 11.5.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-12}]{assets/plane-geometry-2/fig-p0128-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-12}]{assets/plane-geometry-2/fig-p0128-02.png}}
 \caption{图2-12}
 \end{figure}
 
@@ -7665,7 +7586,7 @@ x ^ {2} = a ^ {2} + b ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·13}]{assets/plane-geometry-2/fig-p0129-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·13}]{assets/plane-geometry-2/fig-p0129-01.png}}
 \caption{图2·13}
 \end{figure}
 
@@ -7691,7 +7612,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-14}]{assets/plane-geometry-2/fig-p0129-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-14}]{assets/plane-geometry-2/fig-p0129-02.png}}
 \caption{图2-14}
 \end{figure}
 
@@ -7747,7 +7668,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题1)}]{assets/plane-geometry-2/fig-p0130-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题1)}]{assets/plane-geometry-2/fig-p0130-01.png}}
 \caption{(第5题1)}
 \end{figure}
 
@@ -7757,7 +7678,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题1i)}]{assets/plane-geometry-2/fig-p0130-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题1i)}]{assets/plane-geometry-2/fig-p0130-02.png}}
 \caption{(第5题1i)}
 \end{figure}
 
@@ -7790,7 +7711,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0130-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0130-03.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -7800,7 +7721,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0130-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0130-04.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -7875,7 +7796,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0131-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0131-01.png}}
 \caption{(第17题)}
 \end{figure}
 
@@ -7885,7 +7806,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-2/fig-p0131-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-2/fig-p0131-02.png}}
 \caption{(第19题)}
 \end{figure}
 
@@ -7913,7 +7834,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0132-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0132-01.png}}
 \caption{(第20题)}
 \end{figure}
 
@@ -7936,7 +7857,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·15}]{assets/plane-geometry-2/fig-p0132-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·15}]{assets/plane-geometry-2/fig-p0132-02.png}}
 \caption{图2·15}
 \end{figure}
 
@@ -7970,7 +7891,7 @@ x = \sqrt {a ^ {2} - b ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-18}]{assets/plane-geometry-2/fig-p0133-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-18}]{assets/plane-geometry-2/fig-p0133-01.png}}
 \caption{图2-18}
 \end{figure}
 
@@ -8044,7 +7965,7 @@ D A = C D + C A. \tag {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-17}]{assets/plane-geometry-2/fig-p0134-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-17}]{assets/plane-geometry-2/fig-p0134-01.png}}
 \caption{图2-17}
 \end{figure}
 
@@ -8072,7 +7993,7 @@ A B ^ {2} = (B C ^ {2} - C D ^ {2}) + (C D + C A) ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·18}]{assets/plane-geometry-2/fig-p0135-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·18}]{assets/plane-geometry-2/fig-p0135-01.png}}
 \caption{图2·18}
 \end{figure}
 
@@ -8105,7 +8026,7 @@ A B ^ {2} = (B C ^ {2} - C D ^ {2}) + (C D + C A) ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-19}]{assets/plane-geometry-2/fig-p0135-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-19}]{assets/plane-geometry-2/fig-p0135-02.png}}
 \caption{图2-19}
 \end{figure}
 
@@ -8190,7 +8111,7 @@ A B ^ {2} = (B C ^ {2} - C D ^ {2}) + (C D + C A) ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-20}]{assets/plane-geometry-2/fig-p0137-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-20}]{assets/plane-geometry-2/fig-p0137-01.png}}
 \caption{图2-20}
 \end{figure}
 
@@ -8272,13 +8193,13 @@ A C ^ {2} + B D ^ {2} = A B ^ {2} + B C ^ {2} + C D ^ {2} + D A ^ {2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第138页）}]{assets/plane-geometry-2/fig-p0138-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第138页）}]{assets/plane-geometry-2/fig-p0138-01.png}}
 \caption{图示（原PDF第138页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0138-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0138-02.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -8359,7 +8280,7 @@ A C ^ {2} + B D ^ {2} = A B ^ {2} + B C ^ {2} + C D ^ {2} + D A ^ {2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0138-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0138-03.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -8414,7 +8335,7 @@ A C ^ {2} + B D ^ {2} = A B ^ {2} + B C ^ {2} + C D ^ {2} + D A ^ {2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0139-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0139-01.png}}
 \caption{(第16题)}
 \end{figure}
 
@@ -8468,7 +8389,7 @@ a-b+c = a+b+c-2b = 2s-2b = 2(s-b)\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·21}]{assets/plane-geometry-2/fig-p0140-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·21}]{assets/plane-geometry-2/fig-p0140-01.png}}
 \caption{图2·21}
 \end{figure}
 
@@ -8502,7 +8423,7 @@ m _ {b} = \frac {1}{2} \sqrt {2 a ^ {2} + 2 c ^ {2} - b ^ {2}}\text{，} \quad m
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·22}]{assets/plane-geometry-2/fig-p0141-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·22}]{assets/plane-geometry-2/fig-p0141-01.png}}
 \caption{图2·22}
 \end{figure}
 
@@ -8585,7 +8506,7 @@ h _ {c} = \frac {2}{c} \sqrt {s (s - a) (s - b) (s - c)}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·23}]{assets/plane-geometry-2/fig-p0142-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·23}]{assets/plane-geometry-2/fig-p0142-01.png}}
 \caption{图2·23}
 \end{figure}
 
@@ -8624,7 +8545,7 @@ D C = \frac {a b}{b + c}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-24}]{assets/plane-geometry-2/fig-p0143-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-24}]{assets/plane-geometry-2/fig-p0143-01.png}}
 \caption{图2-24}
 \end{figure}
 
@@ -8786,7 +8707,7 @@ A ^ {\prime} B ^ {\prime 2} = B ^ {\prime} C ^ {\prime 2} + C ^ {\prime} A ^ {\p
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0145-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0145-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -8833,7 +8754,7 @@ t_a^2 = bc\left[1-\frac{a^2}{(b+c)^2}\right]\quad\text{和}\quad 4bc<(b+c)^2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·25}]{assets/plane-geometry-2/fig-p0146-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·25}]{assets/plane-geometry-2/fig-p0146-01.png}}
 \caption{图2·25}
 \end{figure}
 
@@ -8869,7 +8790,7 @@ t_a^2 = bc\left[1-\frac{a^2}{(b+c)^2}\right]\quad\text{和}\quad 4bc<(b+c)^2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-26}]{assets/plane-geometry-2/fig-p0147-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-26}]{assets/plane-geometry-2/fig-p0147-01.png}}
 \caption{图2-26}
 \end{figure}
 
@@ -8925,7 +8846,7 @@ P D = P O + O D = 12 + r\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·27}]{assets/plane-geometry-2/fig-p0147-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·27}]{assets/plane-geometry-2/fig-p0147-02.png}}
 \caption{图2·27}
 \end{figure}
 
@@ -8955,7 +8876,7 @@ r ^ {2} = 64\text{，} r = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-28}]{assets/plane-geometry-2/fig-p0148-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-28}]{assets/plane-geometry-2/fig-p0148-01.png}}
 \caption{图2-28}
 \end{figure}
 
@@ -8987,7 +8908,7 @@ r ^ {2} = 64\text{，} r = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·29}]{assets/plane-geometry-2/fig-p0148-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·29}]{assets/plane-geometry-2/fig-p0148-02.png}}
 \caption{图2·29}
 \end{figure}
 
@@ -9048,7 +8969,7 @@ r ^ {2} = 64\text{，} r = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0149-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0149-01.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -9075,7 +8996,7 @@ r ^ {2} = 64\text{，} r = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0149-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0149-02.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -9107,7 +9028,7 @@ r ^ {2} = 64\text{，} r = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0150-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0150-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -9136,7 +9057,7 @@ r ^ {2} = 64\text{，} r = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0150-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0150-02.png}}
 \caption{(第12题)}
 \end{figure}
 
@@ -9146,7 +9067,7 @@ r ^ {2} = 64\text{，} r = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0150-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0150-03.png}}
 \caption{(第13题)}
 \end{figure}
 
@@ -9195,7 +9116,7 @@ r ^ {2} = 64\text{，} r = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·30}]{assets/plane-geometry-2/fig-p0151-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·30}]{assets/plane-geometry-2/fig-p0151-01.png}}
 \caption{图2·30}
 \end{figure}
 
@@ -9205,7 +9126,7 @@ r ^ {2} = 64\text{，} r = 8.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·31}]{assets/plane-geometry-2/fig-p0151-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·31}]{assets/plane-geometry-2/fig-p0151-02.png}}
 \caption{图2·31}
 \end{figure}
 
@@ -9243,7 +9164,7 @@ B， C， D 四点共圆。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·32}]{assets/plane-geometry-2/fig-p0152-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·32}]{assets/plane-geometry-2/fig-p0152-01.png}}
 \caption{图2·32}
 \end{figure}
 
@@ -9315,7 +9236,7 @@ B， C， D 四点共圆。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0153-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0153-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -9341,7 +9262,7 @@ B， C， D 四点共圆。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0153-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0153-02.png}}
 \caption{(1)}
 \end{figure}
 
@@ -9351,7 +9272,7 @@ B， C， D 四点共圆。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0153-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0153-03.png}}
 \caption{(2)}
 \end{figure}
 
@@ -9389,7 +9310,7 @@ B， C， D 四点共圆。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0154-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0154-01.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -9399,7 +9320,7 @@ B， C， D 四点共圆。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0154-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0154-02.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -9457,7 +9378,7 @@ A M \cdot M B = O M \cdot M P\text{，} A M \cdot M B = C M \cdot M D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0155-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0155-01.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -9500,7 +9421,7 @@ A M \cdot M B = O M \cdot M P\text{，} A M \cdot M B = C M \cdot M D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·33}]{assets/plane-geometry-2/fig-p0156-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·33}]{assets/plane-geometry-2/fig-p0156-01.png}}
 \caption{图2·33}
 \end{figure}
 
@@ -9510,7 +9431,7 @@ A M \cdot M B = O M \cdot M P\text{，} A M \cdot M B = C M \cdot M D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·34}]{assets/plane-geometry-2/fig-p0156-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·34}]{assets/plane-geometry-2/fig-p0156-02.png}}
 \caption{图2·34}
 \end{figure}
 
@@ -9561,7 +9482,7 @@ P A _ {1} \cdot P B _ {1} = P A _ {2} \cdot P B _ {2} = P A _ {3} \cdot P B _ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·35}]{assets/plane-geometry-2/fig-p0156-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·35}]{assets/plane-geometry-2/fig-p0156-03.png}}
 \caption{图2·35}
 \end{figure}
 
@@ -9584,7 +9505,7 @@ P A _ {1} \cdot P B _ {1} = P A _ {2} \cdot P B _ {2} = P A _ {3} \cdot P B _ {3
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-36}]{assets/plane-geometry-2/fig-p0157-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-36}]{assets/plane-geometry-2/fig-p0157-01.png}}
 \caption{图2-36}
 \end{figure}
 
@@ -9632,7 +9553,7 @@ O 的距离都等于 \(\sqrt{a+r^{2}}\)，即满足问题条件的点都在以 O
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·37}]{assets/plane-geometry-2/fig-p0158-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·37}]{assets/plane-geometry-2/fig-p0158-01.png}}
 \caption{图2·37}
 \end{figure}
 
@@ -9744,19 +9665,19 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第161页）}]{assets/plane-geometry-2/fig-p0161-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第161页）}]{assets/plane-geometry-2/fig-p0161-01.png}}
 \caption{图示（原PDF第161页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第161页）}]{assets/plane-geometry-2/fig-p0161-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第161页）}]{assets/plane-geometry-2/fig-p0161-02.png}}
 \caption{图示（原PDF第161页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.38}]{assets/plane-geometry-2/fig-p0161-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.38}]{assets/plane-geometry-2/fig-p0161-03.png}}
 \caption{图2.38}
 \end{figure}
 
@@ -9783,7 +9704,7 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0161-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0161-04.png}}
 \caption{(1)}
 \end{figure}
 
@@ -9793,7 +9714,7 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0161-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0161-05.png}}
 \caption{(3)}
 \end{figure}
 
@@ -9803,7 +9724,7 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(8)}]{assets/plane-geometry-2/fig-p0161-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(8)}]{assets/plane-geometry-2/fig-p0161-06.png}}
 \caption{(8)}
 \end{figure}
 
@@ -9832,7 +9753,7 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0162-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0162-01.png}}
 \caption{(2)}
 \end{figure}
 
@@ -9986,7 +9907,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0164-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0164-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -10027,7 +9948,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0165-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0165-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -10037,7 +9958,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0165-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0165-02.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -10078,7 +9999,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0166-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0166-01.png}}
 \caption{(第12题)}
 \end{figure}
 
@@ -10088,7 +10009,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0166-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0166-02.png}}
 \caption{(第13题)}
 \end{figure}
 
@@ -10154,7 +10075,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0167-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0167-01.png}}
 \caption{(第17题)}
 \end{figure}
 
@@ -10194,7 +10115,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0168-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0168-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -10204,7 +10125,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0168-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0168-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -10214,7 +10135,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0168-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0168-03.png}}
 \caption{(3)}
 \end{figure}
 
@@ -10224,7 +10145,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0168-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0168-04.png}}
 \caption{(4)}
 \end{figure}
 
@@ -10234,7 +10155,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(5)}]{assets/plane-geometry-2/fig-p0168-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(5)}]{assets/plane-geometry-2/fig-p0168-05.png}}
 \caption{(5)}
 \end{figure}
 
@@ -10244,7 +10165,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(6)}]{assets/plane-geometry-2/fig-p0168-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(6)}]{assets/plane-geometry-2/fig-p0168-06.png}}
 \caption{(6)}
 \end{figure}
 
@@ -10306,7 +10227,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0169-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0169-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -10348,7 +10269,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0170-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0170-01.png}}
 \caption{(第14题)}
 \end{figure}
 
@@ -10358,7 +10279,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0170-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0170-02.png}}
 \caption{(第15题)}
 \end{figure}
 
@@ -10393,7 +10314,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0171-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0171-01.png}}
 \caption{(第18题)}
 \end{figure}
 
@@ -10403,7 +10324,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0171-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0171-02.png}}
 \caption{(第20题)}
 \end{figure}
 
@@ -10451,7 +10372,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0171-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0171-03.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -10488,7 +10409,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0172-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0172-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -10498,7 +10419,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0172-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0172-02.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -10555,7 +10476,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0172-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0172-03.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -10565,7 +10486,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0172-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0172-04.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -10592,7 +10513,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0173-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0173-01.png}}
 \caption{(第13题)}
 \end{figure}
 
@@ -10602,7 +10523,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0173-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0173-02.png}}
 \caption{(第16题)}
 \end{figure}
 
@@ -10665,7 +10586,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-2/fig-p0173-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-2/fig-p0173-03.png}}
 \caption{(第19题)}
 \end{figure}
 
@@ -10688,7 +10609,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第21题)}]{assets/plane-geometry-2/fig-p0174-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第21题)}]{assets/plane-geometry-2/fig-p0174-01.png}}
 \caption{(第21题)}
 \end{figure}
 
@@ -10698,7 +10619,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-2/fig-p0174-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-2/fig-p0174-02.png}}
 \caption{(第22题)}
 \end{figure}
 
@@ -10733,7 +10654,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0174-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0174-03.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -10743,7 +10664,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0174-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0174-04.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -10773,7 +10694,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0175-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0175-01.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -10783,7 +10704,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0175-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0175-02.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -10825,7 +10746,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-1}]{assets/plane-geometry-2/fig-p0177-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-1}]{assets/plane-geometry-2/fig-p0177-01.png}}
 \caption{图3-1}
 \end{figure}
 
@@ -10837,7 +10758,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-2}]{assets/plane-geometry-2/fig-p0177-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-2}]{assets/plane-geometry-2/fig-p0177-02.png}}
 \caption{图3-2}
 \end{figure}
 
@@ -10855,7 +10776,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0178-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0178-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -10865,7 +10786,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0178-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0178-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -10875,7 +10796,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0178-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0178-03.png}}
 \caption{(3)}
 \end{figure}
 
@@ -10885,7 +10806,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0178-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0178-04.png}}
 \caption{(4)}
 \end{figure}
 
@@ -10933,7 +10854,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0179-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0179-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -10960,7 +10881,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-4}]{assets/plane-geometry-2/fig-p0179-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-4}]{assets/plane-geometry-2/fig-p0179-02.png}}
 \caption{图3-4}
 \end{figure}
 
@@ -11060,7 +10981,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-5}]{assets/plane-geometry-2/fig-p0181-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-5}]{assets/plane-geometry-2/fig-p0181-01.png}}
 \caption{图3-5}
 \end{figure}
 
@@ -11070,7 +10991,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第181页）}]{assets/plane-geometry-2/fig-p0181-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第181页）}]{assets/plane-geometry-2/fig-p0181-02.png}}
 \caption{图示（原PDF第181页）}
 \end{figure}
 
@@ -11252,7 +11173,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0185-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0185-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -11262,7 +11183,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0185-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0185-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -11272,7 +11193,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0185-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0185-03.png}}
 \caption{(3)}
 \end{figure}
 
@@ -11282,7 +11203,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0185-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0185-04.png}}
 \caption{(4)}
 \end{figure}
 
@@ -11314,7 +11235,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0186-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0186-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -11324,7 +11245,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0186-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0186-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -11334,7 +11255,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0186-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0186-03.png}}
 \caption{(3)}
 \end{figure}
 
@@ -11344,7 +11265,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0186-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0186-04.png}}
 \caption{(4)}
 \end{figure}
 
@@ -11366,7 +11287,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0186-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0186-05.png}}
 \caption{(1)}
 \end{figure}
 
@@ -11376,7 +11297,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0186-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0186-06.png}}
 \caption{(2)}
 \end{figure}
 
@@ -11386,13 +11307,13 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第186页）}]{assets/plane-geometry-2/fig-p0186-07.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第186页）}]{assets/plane-geometry-2/fig-p0186-07.png}}
 \caption{图示（原PDF第186页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0186-08.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0186-08.png}}
 \caption{(3)}
 \end{figure}
 
@@ -11402,7 +11323,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0186-09.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0186-09.png}}
 \caption{(4)}
 \end{figure}
 
@@ -11412,7 +11333,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0186-10.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0186-10.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -11427,7 +11348,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-6}]{assets/plane-geometry-2/fig-p0187-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-6}]{assets/plane-geometry-2/fig-p0187-01.png}}
 \caption{图3-6}
 \end{figure}
 
@@ -11449,7 +11370,7 @@ cm²。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-7}]{assets/plane-geometry-2/fig-p0187-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-7}]{assets/plane-geometry-2/fig-p0187-02.png}}
 \caption{图3-7}
 \end{figure}
 
@@ -11514,7 +11435,7 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·8}]{assets/plane-geometry-2/fig-p0188-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·8}]{assets/plane-geometry-2/fig-p0188-01.png}}
 \caption{图3·8}
 \end{figure}
 
@@ -11536,7 +11457,7 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(a)}]{assets/plane-geometry-2/fig-p0189-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/plane-geometry-2/fig-p0189-01.png}}
 \caption{(a)}
 \end{figure}
 
@@ -11546,7 +11467,7 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(b)}]{assets/plane-geometry-2/fig-p0189-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/plane-geometry-2/fig-p0189-02.png}}
 \caption{(b)}
 \end{figure}
 
@@ -11569,7 +11490,7 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-10}]{assets/plane-geometry-2/fig-p0189-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-10}]{assets/plane-geometry-2/fig-p0189-03.png}}
 \caption{图3-10}
 \end{figure}
 
@@ -11611,7 +11532,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-11}]{assets/plane-geometry-2/fig-p0190-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-11}]{assets/plane-geometry-2/fig-p0190-01.png}}
 \caption{图3-11}
 \end{figure}
 
@@ -11642,7 +11563,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.12}]{assets/plane-geometry-2/fig-p0191-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.12}]{assets/plane-geometry-2/fig-p0191-01.png}}
 \caption{图3.12}
 \end{figure}
 
@@ -11676,7 +11597,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0191-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0191-02.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -11696,7 +11617,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0191-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0191-03.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -11706,7 +11627,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题).}]{assets/plane-geometry-2/fig-p0191-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题).}]{assets/plane-geometry-2/fig-p0191-04.png}}
 \caption{(第5题).}
 \end{figure}
 
@@ -11753,7 +11674,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0192-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0192-01.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -11806,7 +11727,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·13}]{assets/plane-geometry-2/fig-p0193-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·13}]{assets/plane-geometry-2/fig-p0193-01.png}}
 \caption{图3·13}
 \end{figure}
 
@@ -11850,7 +11771,7 @@ B C ^ {2} = C D ^ {2} + D B ^ {2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-14}]{assets/plane-geometry-2/fig-p0194-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-14}]{assets/plane-geometry-2/fig-p0194-01.png}}
 \caption{图3-14}
 \end{figure}
 
@@ -11860,7 +11781,7 @@ B C ^ {2} = C D ^ {2} + D B ^ {2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-15}]{assets/plane-geometry-2/fig-p0194-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-15}]{assets/plane-geometry-2/fig-p0194-02.png}}
 \caption{图3-15}
 \end{figure}
 
@@ -11906,7 +11827,7 @@ cm （图 3·16）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-16}]{assets/plane-geometry-2/fig-p0195-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-16}]{assets/plane-geometry-2/fig-p0195-01.png}}
 \caption{图3-16}
 \end{figure}
 
@@ -11994,7 +11915,7 @@ h _ {b} = \frac {2}{b} \sqrt {s (s - a) (s - b) (s - c)}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-17}]{assets/plane-geometry-2/fig-p0196-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-17}]{assets/plane-geometry-2/fig-p0196-01.png}}
 \caption{图3-17}
 \end{figure}
 
@@ -12004,7 +11925,7 @@ h _ {b} = \frac {2}{b} \sqrt {s (s - a) (s - b) (s - c)}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-18}]{assets/plane-geometry-2/fig-p0196-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-18}]{assets/plane-geometry-2/fig-p0196-02.png}}
 \caption{图3-18}
 \end{figure}
 
@@ -12091,7 +12012,7 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0198-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0198-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -12101,7 +12022,7 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0198-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0198-02.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -12111,7 +12032,7 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0198-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0198-03.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -12160,7 +12081,7 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0199-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0199-01.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -12170,7 +12091,7 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0199-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0199-02.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -12227,7 +12148,7 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0199-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0199-03.png}}
 \caption{(第13题)}
 \end{figure}
 
@@ -12237,7 +12158,7 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0199-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0199-04.png}}
 \caption{(第15题)}
 \end{figure}
 
@@ -12273,7 +12194,7 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第 16 题)}]{assets/plane-geometry-2/fig-p0200-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第 16 题)}]{assets/plane-geometry-2/fig-p0200-01.png}}
 \caption{(第 16 题)}
 \end{figure}
 
@@ -12283,7 +12204,7 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-2/fig-p0200-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-2/fig-p0200-02.png}}
 \caption{(第19题)}
 \end{figure}
 
@@ -12378,7 +12299,7 @@ s = \frac {1}{2} (13 + 14 + 15) = 21.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-2/fig-p0201-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-2/fig-p0201-01.png}}
 \caption{(第22题)}
 \end{figure}
 
@@ -12422,7 +12343,7 @@ s = \frac {1}{2} (13 + 14 + 15) = 21.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-19}]{assets/plane-geometry-2/fig-p0202-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-19}]{assets/plane-geometry-2/fig-p0202-01.png}}
 \caption{图3-19}
 \end{figure}
 
@@ -12432,7 +12353,7 @@ s = \frac {1}{2} (13 + 14 + 15) = 21.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3-20}]{assets/plane-geometry-2/fig-p0202-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3-20}]{assets/plane-geometry-2/fig-p0202-02.png}}
 \caption{图 3-20}
 \end{figure}
 
@@ -12469,7 +12390,7 @@ M N = \frac {1}{2} (A B + C D)\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图.3-21}]{assets/plane-geometry-2/fig-p0203-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图.3-21}]{assets/plane-geometry-2/fig-p0203-01.png}}
 \caption{图.3-21}
 \end{figure}
 
@@ -12526,7 +12447,7 @@ D D ^ {\prime} = \sqrt {A D ^ {2} - A D ^ {\prime 2}} = \sqrt {41 ^ {2} - 9 ^ {2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-22}]{assets/plane-geometry-2/fig-p0204-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-22}]{assets/plane-geometry-2/fig-p0204-01.png}}
 \caption{图3-22}
 \end{figure}
 
@@ -12575,7 +12496,7 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·23}]{assets/plane-geometry-2/fig-p0205-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·23}]{assets/plane-geometry-2/fig-p0205-01.png}}
 \caption{图3·23}
 \end{figure}
 
@@ -12606,7 +12527,7 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0205-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0205-03.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -12616,7 +12537,7 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0205-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0205-04.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -12651,7 +12572,7 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0206-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0206-01.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -12695,7 +12616,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-24}]{assets/plane-geometry-2/fig-p0207-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-24}]{assets/plane-geometry-2/fig-p0207-01.png}}
 \caption{图3-24}
 \end{figure}
 
@@ -12745,13 +12666,13 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第208页）}]{assets/plane-geometry-2/fig-p0208-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第208页）}]{assets/plane-geometry-2/fig-p0208-01.png}}
 \caption{图示（原PDF第208页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·25}]{assets/plane-geometry-2/fig-p0208-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·25}]{assets/plane-geometry-2/fig-p0208-02.png}}
 \caption{图3·25}
 \end{figure}
 
@@ -12772,13 +12693,13 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第208页）}]{assets/plane-geometry-2/fig-p0208-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第208页）}]{assets/plane-geometry-2/fig-p0208-03.png}}
 \caption{图示（原PDF第208页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·26}]{assets/plane-geometry-2/fig-p0208-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·26}]{assets/plane-geometry-2/fig-p0208-04.png}}
 \caption{图3·26}
 \end{figure}
 
@@ -12797,7 +12718,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·27}]{assets/plane-geometry-2/fig-p0209-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·27}]{assets/plane-geometry-2/fig-p0209-01.png}}
 \caption{图3·27}
 \end{figure}
 
@@ -12848,7 +12769,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-28}]{assets/plane-geometry-2/fig-p0210-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-28}]{assets/plane-geometry-2/fig-p0210-01.png}}
 \caption{图3-28}
 \end{figure}
 
@@ -12921,7 +12842,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·29}]{assets/plane-geometry-2/fig-p0211-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·29}]{assets/plane-geometry-2/fig-p0211-01.png}}
 \caption{图3·29}
 \end{figure}
 
@@ -13044,7 +12965,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0213-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0213-01.png}}
 \caption{(第17题)}
 \end{figure}
 
@@ -13103,7 +13024,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-20}]{assets/plane-geometry-2/fig-p0214-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-20}]{assets/plane-geometry-2/fig-p0214-01.png}}
 \caption{图3-20}
 \end{figure}
 
@@ -13138,7 +13059,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0215-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0215-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -13148,7 +13069,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0215-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0215-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -13158,7 +13079,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0215-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0215-03.png}}
 \caption{(3)}
 \end{figure}
 
@@ -13168,7 +13089,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0215-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0215-04.png}}
 \caption{(4)}
 \end{figure}
 
@@ -13208,7 +13129,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-32}]{assets/plane-geometry-2/fig-p0216-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-32}]{assets/plane-geometry-2/fig-p0216-01.png}}
 \caption{图3-32}
 \end{figure}
 
@@ -13245,7 +13166,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-33}]{assets/plane-geometry-2/fig-p0217-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-33}]{assets/plane-geometry-2/fig-p0217-01.png}}
 \caption{图3-33}
 \end{figure}
 
@@ -13273,7 +13194,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0218-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0218-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -13283,7 +13204,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0218-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0218-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -13293,7 +13214,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0218-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0218-03.png}}
 \caption{(3)}
 \end{figure}
 
@@ -13303,7 +13224,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0218-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0218-04.png}}
 \caption{(4)}
 \end{figure}
 
@@ -13363,7 +13284,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.35}]{assets/plane-geometry-2/fig-p0219-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.35}]{assets/plane-geometry-2/fig-p0219-01.png}}
 \caption{图3.35}
 \end{figure}
 
@@ -13418,7 +13339,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-36}]{assets/plane-geometry-2/fig-p0220-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-36}]{assets/plane-geometry-2/fig-p0220-01.png}}
 \caption{图3-36}
 \end{figure}
 
@@ -13447,7 +13368,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-37}]{assets/plane-geometry-2/fig-p0221-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-37}]{assets/plane-geometry-2/fig-p0221-01.png}}
 \caption{图3-37}
 \end{figure}
 
@@ -13457,7 +13378,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-38}]{assets/plane-geometry-2/fig-p0221-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-38}]{assets/plane-geometry-2/fig-p0221-02.png}}
 \caption{图3-38}
 \end{figure}
 
@@ -13554,7 +13475,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·39}]{assets/plane-geometry-2/fig-p0223-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·39}]{assets/plane-geometry-2/fig-p0223-01.png}}
 \caption{图3·39}
 \end{figure}
 
@@ -13625,7 +13546,7 @@ AD 的延长线交于 F， 以 AF 为边作正方形， 这个正方形就是所
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0224-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0224-02.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -13635,7 +13556,7 @@ AD 的延长线交于 F， 以 AF 为边作正方形， 这个正方形就是所
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0224-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0224-03.png}}
 \caption{(第14题)}
 \end{figure}
 
@@ -13668,7 +13589,7 @@ AD 的延长线交于 F， 以 AF 为边作正方形， 这个正方形就是所
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0225-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0225-01.png}}
 \caption{(第12题)}
 \end{figure}
 
@@ -13773,7 +13694,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0227-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0227-01.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -13783,7 +13704,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0227-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0227-02.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -13859,7 +13780,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0228-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0228-01.png}}
 \caption{(第14题)}
 \end{figure}
 
@@ -13869,7 +13790,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0228-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0228-02.png}}
 \caption{(第15题)}
 \end{figure}
 
@@ -13893,7 +13814,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0228-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0228-03.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -13903,7 +13824,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0228-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0228-04.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -13938,7 +13859,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0229-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0229-01.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -13948,7 +13869,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0229-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0229-02.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -14004,7 +13925,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0230-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0230-01.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -14014,7 +13935,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0230-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0230-02.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -14054,7 +13975,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0230-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0230-03.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -14088,7 +14009,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0231-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0231-01.png}}
 \caption{(第15题)}
 \end{figure}
 
@@ -14110,7 +14031,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0231-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0231-02.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -14120,7 +14041,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0231-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0231-03.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -14142,7 +14063,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0232-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0232-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -14152,7 +14073,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0232-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0232-02.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -14174,7 +14095,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0232-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0232-03.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -14202,13 +14123,13 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第233页）}]{assets/plane-geometry-2/fig-p0233-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第233页）}]{assets/plane-geometry-2/fig-p0233-01.png}}
 \caption{图示（原PDF第233页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-1}]{assets/plane-geometry-2/fig-p0233-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-1}]{assets/plane-geometry-2/fig-p0233-02.png}}
 \caption{图4-1}
 \end{figure}
 
@@ -14223,7 +14144,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-2}]{assets/plane-geometry-2/fig-p0234-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-2}]{assets/plane-geometry-2/fig-p0234-01.png}}
 \caption{图4-2}
 \end{figure}
 
@@ -14259,7 +14180,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-3}]{assets/plane-geometry-2/fig-p0234-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-3}]{assets/plane-geometry-2/fig-p0234-02.png}}
 \caption{图4-3}
 \end{figure}
 
@@ -14374,7 +14295,7 @@ D E = E A (\text { \text{图} } 4 \cdot 4)\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-4}]{assets/plane-geometry-2/fig-p0236-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-4}]{assets/plane-geometry-2/fig-p0236-01.png}}
 \caption{图4-4}
 \end{figure}
 
@@ -14405,7 +14326,7 @@ D E = E A (\text { \text{图} } 4 \cdot 4)\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4·5}]{assets/plane-geometry-2/fig-p0237-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4·5}]{assets/plane-geometry-2/fig-p0237-01.png}}
 \caption{图4·5}
 \end{figure}
 
@@ -14455,7 +14376,7 @@ AB、BC、CD、DE、EF、FA，它们的垂足各为 M、N、P、Q、R、S。过
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-6}]{assets/plane-geometry-2/fig-p0238-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-6}]{assets/plane-geometry-2/fig-p0238-01.png}}
 \caption{图4-6}
 \end{figure}
 
@@ -14465,7 +14386,7 @@ AB、BC、CD、DE、EF、FA，它们的垂足各为 M、N、P、Q、R、S。过
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-7}]{assets/plane-geometry-2/fig-p0238-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-7}]{assets/plane-geometry-2/fig-p0238-02.png}}
 \caption{图4-7}
 \end{figure}
 
@@ -14537,7 +14458,7 @@ AB、BC、CD、DE、EF、FA，它们的垂足各为 M、N、P、Q、R、S。过
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4·8}]{assets/plane-geometry-2/fig-p0239-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4·8}]{assets/plane-geometry-2/fig-p0239-01.png}}
 \caption{图4·8}
 \end{figure}
 
@@ -14582,7 +14503,7 @@ AB、BC、CD、DE、EF、FA，它们的垂足各为 M、N、P、Q、R、S。过
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0240-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0240-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -14623,7 +14544,7 @@ AB、BC、CD、DE、EF、FA，它们的垂足各为 M、N、P、Q、R、S。过
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-9}]{assets/plane-geometry-2/fig-p0240-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-9}]{assets/plane-geometry-2/fig-p0240-02.png}}
 \caption{图4-9}
 \end{figure}
 
@@ -14703,7 +14624,7 @@ DE， EA 都相切。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-10}]{assets/plane-geometry-2/fig-p0242-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-10}]{assets/plane-geometry-2/fig-p0242-01.png}}
 \caption{图4-10}
 \end{figure}
 
@@ -14725,31 +14646,31 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-02.png}}
 \caption{图示（原PDF第242页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-03.png}}
 \caption{图示（原PDF第242页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-04.png}}
 \caption{图示（原PDF第242页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-05.png}}
 \caption{图示（原PDF第242页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-11}]{assets/plane-geometry-2/fig-p0242-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-11}]{assets/plane-geometry-2/fig-p0242-06.png}}
 \caption{图4-11}
 \end{figure}
 
@@ -14794,7 +14715,7 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0243-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0243-02.png}}
 \caption{(第12题)}
 \end{figure}
 
@@ -14885,7 +14806,7 @@ r 表示一个正多边形的边心距的长度。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-12}]{assets/plane-geometry-2/fig-p0245-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-12}]{assets/plane-geometry-2/fig-p0245-01.png}}
 \caption{图4-12}
 \end{figure}
 
@@ -14895,7 +14816,7 @@ r 表示一个正多边形的边心距的长度。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-13}]{assets/plane-geometry-2/fig-p0245-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-13}]{assets/plane-geometry-2/fig-p0245-02.png}}
 \caption{图4-13}
 \end{figure}
 
@@ -14981,7 +14902,7 @@ a_3 = 2LB = 2\sqrt{OB^2-OL^2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-14}]{assets/plane-geometry-2/fig-p0246-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-14}]{assets/plane-geometry-2/fig-p0246-01.png}}
 \caption{图4-14}
 \end{figure}
 
@@ -15034,7 +14955,7 @@ OL^2+LB^2=OB^2\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-18}]{assets/plane-geometry-2/fig-p0247-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-18}]{assets/plane-geometry-2/fig-p0247-01.png}}
 \caption{图4-18}
 \end{figure}
 
@@ -15044,7 +14965,7 @@ OL^2+LB^2=OB^2\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-16}]{assets/plane-geometry-2/fig-p0247-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-16}]{assets/plane-geometry-2/fig-p0247-02.png}}
 \caption{图4-16}
 \end{figure}
 
@@ -15118,7 +15039,7 @@ r=OL=\sqrt{OB^2-LB^2}=\sqrt{R^2-\left(\frac{R}{2}\right)^2}=\frac{\sqrt{3}}{2}R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-17}]{assets/plane-geometry-2/fig-p0248-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-17}]{assets/plane-geometry-2/fig-p0248-01.png}}
 \caption{图4-17}
 \end{figure}
 
@@ -15169,7 +15090,7 @@ r=OL=\sqrt{OB^2-LB^2}=\sqrt{R^2-\left(\frac{R}{2}\right)^2}=\frac{\sqrt{3}}{2}R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4·18}]{assets/plane-geometry-2/fig-p0249-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4·18}]{assets/plane-geometry-2/fig-p0249-01.png}}
 \caption{图4·18}
 \end{figure}
 
@@ -15226,7 +15147,7 @@ a _ {2 n} = \sqrt {2 R ^ {2} - R \sqrt {4 R ^ {2} - a _ {n} ^ {2}}}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-19}]{assets/plane-geometry-2/fig-p0251-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-19}]{assets/plane-geometry-2/fig-p0251-01.png}}
 \caption{图4-19}
 \end{figure}
 
@@ -15285,7 +15206,7 @@ a _ {2 n} ^ {2} = 2 R ^ {2} - 2 R \cdot \sqrt {R ^ {2} - \left(\frac {a _ {n}}{2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4.20}]{assets/plane-geometry-2/fig-p0252-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4.20}]{assets/plane-geometry-2/fig-p0252-01.png}}
 \caption{图4.20}
 \end{figure}
 
@@ -15321,7 +15242,7 @@ a _ {2 n} ^ {2} = 2 R ^ {2} - 2 R \cdot \sqrt {R ^ {2} - \left(\frac {a _ {n}}{2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4·21}]{assets/plane-geometry-2/fig-p0253-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4·21}]{assets/plane-geometry-2/fig-p0253-01.png}}
 \caption{图4·21}
 \end{figure}
 
@@ -15379,7 +15300,7 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0254-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0254-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -15389,7 +15310,7 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0254-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0254-02.png}}
 \caption{(第14题)}
 \end{figure}
 
@@ -15468,7 +15389,7 @@ A B = B D = D A = \sqrt {3} R\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0255-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0255-01.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -15478,7 +15399,7 @@ A B = B D = D A = \sqrt {3} R\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0255-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0255-02.png}}
 \caption{(第17题)}
 \end{figure}
 
@@ -15516,7 +15437,7 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0256-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0256-01.png}}
 \caption{(第18题)}
 \end{figure}
 
@@ -15526,7 +15447,7 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0256-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0256-02.png}}
 \caption{(第20题)}
 \end{figure}
 
@@ -15564,7 +15485,7 @@ n 等分一个圆，那末顺次连结各个分点，所得的多边形就是这
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-22}]{assets/plane-geometry-2/fig-p0256-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-22}]{assets/plane-geometry-2/fig-p0256-03.png}}
 \caption{图4-22}
 \end{figure}
 
@@ -15607,7 +15528,7 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-23}]{assets/plane-geometry-2/fig-p0257-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-23}]{assets/plane-geometry-2/fig-p0257-01.png}}
 \caption{图4-23}
 \end{figure}
 
@@ -15617,7 +15538,7 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-24}]{assets/plane-geometry-2/fig-p0257-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-24}]{assets/plane-geometry-2/fig-p0257-02.png}}
 \caption{图4-24}
 \end{figure}
 
@@ -15649,7 +15570,7 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4·25}]{assets/plane-geometry-2/fig-p0258-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4·25}]{assets/plane-geometry-2/fig-p0258-01.png}}
 \caption{图4·25}
 \end{figure}
 
@@ -15659,7 +15580,7 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4·28}]{assets/plane-geometry-2/fig-p0258-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4·28}]{assets/plane-geometry-2/fig-p0258-02.png}}
 \caption{图4·28}
 \end{figure}
 
@@ -15685,7 +15606,7 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4·27}]{assets/plane-geometry-2/fig-p0258-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4·27}]{assets/plane-geometry-2/fig-p0258-03.png}}
 \caption{图 4·27}
 \end{figure}
 
@@ -15760,7 +15681,7 @@ OM 的弦 \(A_{1}A_{2}\)， \(A_{2}A_{3}\)，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-28}]{assets/plane-geometry-2/fig-p0260-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-28}]{assets/plane-geometry-2/fig-p0260-01.png}}
 \caption{图4-28}
 \end{figure}
 
@@ -15880,7 +15801,7 @@ a _ {10} = \frac {\sqrt {5} - 1}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-28}]{assets/plane-geometry-2/fig-p0262-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-28}]{assets/plane-geometry-2/fig-p0262-01.png}}
 \caption{图4-28}
 \end{figure}
 
@@ -15927,7 +15848,7 @@ a _ {2 n} = a _ {10} = \frac {\sqrt {5} - 1}{2} R\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-30}]{assets/plane-geometry-2/fig-p0263-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-30}]{assets/plane-geometry-2/fig-p0263-01.png}}
 \caption{图4-30}
 \end{figure}
 
@@ -15958,7 +15879,7 @@ a _ {2 n} = a _ {10} = \frac {\sqrt {5} - 1}{2} R\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4·31}]{assets/plane-geometry-2/fig-p0263-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4·31}]{assets/plane-geometry-2/fig-p0263-02.png}}
 \caption{图4·31}
 \end{figure}
 
@@ -16011,7 +15932,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-32}]{assets/plane-geometry-2/fig-p0264-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-32}]{assets/plane-geometry-2/fig-p0264-01.png}}
 \caption{图4-32}
 \end{figure}
 
@@ -16040,55 +15961,55 @@ O M = O M.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-01.png}}
 \caption{图示（原PDF第265页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-02.png}}
 \caption{图示（原PDF第265页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-03.png}}
 \caption{图示（原PDF第265页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-04.png}}
 \caption{图示（原PDF第265页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-05.png}}
 \caption{图示（原PDF第265页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-06.png}}
 \caption{图示（原PDF第265页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-07.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-07.png}}
 \caption{图示（原PDF第265页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-08.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-08.png}}
 \caption{图示（原PDF第265页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-09.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第265页）}]{assets/plane-geometry-2/fig-p0265-09.png}}
 \caption{图示（原PDF第265页）}
 \end{figure}
 
@@ -16122,7 +16043,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0266-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0266-01.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -16247,7 +16168,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0268-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0268-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -16279,7 +16200,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0268-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0268-02.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -16321,7 +16242,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0269-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0269-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -16364,7 +16285,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0270-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0270-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -16374,7 +16295,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0270-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0270-02.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -16415,7 +16336,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0270-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0270-03.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -16425,7 +16346,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0270-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0270-04.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -16447,7 +16368,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0271-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0271-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -16457,7 +16378,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0271-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0271-02.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -16477,7 +16398,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0271-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0271-03.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -16510,7 +16431,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-1}]{assets/plane-geometry-2/fig-p0273-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-1}]{assets/plane-geometry-2/fig-p0273-01.png}}
 \caption{图5-1}
 \end{figure}
 
@@ -16520,7 +16441,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-2}]{assets/plane-geometry-2/fig-p0273-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-2}]{assets/plane-geometry-2/fig-p0273-02.png}}
 \caption{图5-2}
 \end{figure}
 
@@ -16771,7 +16692,7 @@ d = r _ {2} - r _ {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·3}]{assets/plane-geometry-2/fig-p0278-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·3}]{assets/plane-geometry-2/fig-p0278-01.png}}
 \caption{图5·3}
 \end{figure}
 
@@ -16788,7 +16709,7 @@ d = r _ {2} - r _ {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·4}]{assets/plane-geometry-2/fig-p0278-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·4}]{assets/plane-geometry-2/fig-p0278-02.png}}
 \caption{图5·4}
 \end{figure}
 
@@ -16848,7 +16769,7 @@ A O\text{：} O D = A B\text{：} B D.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·5}]{assets/plane-geometry-2/fig-p0279-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·5}]{assets/plane-geometry-2/fig-p0279-01.png}}
 \caption{图5·5}
 \end{figure}
 
@@ -16942,7 +16863,7 @@ O D ^ {2} = D A ^ {2} + O A ^ {2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0281-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0281-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -16972,7 +16893,7 @@ O D ^ {2} = D A ^ {2} + O A ^ {2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0281-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0281-02.png}}
 \caption{(第12题)}
 \end{figure}
 
@@ -16982,7 +16903,7 @@ O D ^ {2} = D A ^ {2} + O A ^ {2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0281-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0281-03.png}}
 \caption{(第13题)}
 \end{figure}
 
@@ -17004,7 +16925,7 @@ O D ^ {2} = D A ^ {2} + O A ^ {2}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0282-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0282-01.png}}
 \caption{(第14题)}
 \end{figure}
 
@@ -17063,7 +16984,7 @@ l = \frac {150 \pi R}{180} = \frac {5}{6} \pi R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-8}]{assets/plane-geometry-2/fig-p0283-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-8}]{assets/plane-geometry-2/fig-p0283-01.png}}
 \caption{图5-8}
 \end{figure}
 
@@ -17091,7 +17012,7 @@ n = \frac {150 \cdot 180}{30 \pi} = 900 \cdot \frac {1}{\pi}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-7}]{assets/plane-geometry-2/fig-p0283-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-7}]{assets/plane-geometry-2/fig-p0283-02.png}}
 \caption{图5-7}
 \end{figure}
 
@@ -17157,7 +17078,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-8}]{assets/plane-geometry-2/fig-p0285-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-8}]{assets/plane-geometry-2/fig-p0285-01.png}}
 \caption{图5-8}
 \end{figure}
 
@@ -17204,7 +17125,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0285-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0285-02.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -17254,7 +17175,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0286-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0286-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -17264,7 +17185,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0286-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0286-02.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -17286,7 +17207,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0287-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0287-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -17296,7 +17217,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0287-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0287-02.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -17319,7 +17240,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-9}]{assets/plane-geometry-2/fig-p0287-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-9}]{assets/plane-geometry-2/fig-p0287-03.png}}
 \caption{图5-9}
 \end{figure}
 
@@ -17329,7 +17250,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-10}]{assets/plane-geometry-2/fig-p0287-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-10}]{assets/plane-geometry-2/fig-p0287-04.png}}
 \caption{图5-10}
 \end{figure}
 
@@ -17429,7 +17350,7 @@ l = \alpha R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-11}]{assets/plane-geometry-2/fig-p0289-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-11}]{assets/plane-geometry-2/fig-p0289-01.png}}
 \caption{图5-11}
 \end{figure}
 
@@ -17451,7 +17372,7 @@ l = \alpha R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-12}]{assets/plane-geometry-2/fig-p0290-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-12}]{assets/plane-geometry-2/fig-p0290-01.png}}
 \caption{图5-12}
 \end{figure}
 
@@ -17523,7 +17444,7 @@ R。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·13}]{assets/plane-geometry-2/fig-p0291-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·13}]{assets/plane-geometry-2/fig-p0291-01.png}}
 \caption{图5·13}
 \end{figure}
 
@@ -17599,7 +17520,7 @@ x = 100 \sqrt {\pi} \approx 177 (\mathrm{cm})\text{。}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·14}]{assets/plane-geometry-2/fig-p0292-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·14}]{assets/plane-geometry-2/fig-p0292-01.png}}
 \caption{图5·14}
 \end{figure}
 
@@ -17626,7 +17547,7 @@ A _ {1} M = \frac {A _ {1} A _ {2}}{2} = \frac {\sqrt {5} - 1}{4} R\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-15}]{assets/plane-geometry-2/fig-p0292-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-15}]{assets/plane-geometry-2/fig-p0292-02.png}}
 \caption{图5-15}
 \end{figure}
 
@@ -17660,7 +17581,7 @@ O A _ {1} ^ {2} = A _ {1} M ^ {2} + O M ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-16}]{assets/plane-geometry-2/fig-p0293-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-16}]{assets/plane-geometry-2/fig-p0293-01.png}}
 \caption{图5-16}
 \end{figure}
 
@@ -17737,7 +17658,7 @@ O A _ {1} ^ {2} = A _ {1} M ^ {2} + O M ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0295-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0295-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -17747,7 +17668,7 @@ O A _ {1} ^ {2} = A _ {1} M ^ {2} + O M ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0295-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0295-02.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -17810,7 +17731,7 @@ O A _ {1} ^ {2} = A _ {1} M ^ {2} + O M ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0296-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0296-01.png}}
 \caption{(第14题)}
 \end{figure}
 
@@ -17820,7 +17741,7 @@ O A _ {1} ^ {2} = A _ {1} M ^ {2} + O M ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0296-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0296-02.png}}
 \caption{(第15题)}
 \end{figure}
 
@@ -17885,7 +17806,7 @@ C B ^ {2} = (C D + D B) ^ {2} = C D ^ {2} + 2 C D \cdot D B + D B ^ {2}\text{，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0297-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0297-01.png}}
 \caption{(第17题)}
 \end{figure}
 
@@ -17918,7 +17839,7 @@ C B ^ {2} = (C D + D B) ^ {2} = C D ^ {2} + 2 C D \cdot D B + D B ^ {2}\text{，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-17}]{assets/plane-geometry-2/fig-p0297-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-17}]{assets/plane-geometry-2/fig-p0297-02.png}}
 \caption{图5-17}
 \end{figure}
 
@@ -17956,7 +17877,7 @@ C B ^ {2} = (C D + D B) ^ {2} = C D ^ {2} + 2 C D \cdot D B + D B ^ {2}\text{，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-18}]{assets/plane-geometry-2/fig-p0298-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-18}]{assets/plane-geometry-2/fig-p0298-01.png}}
 \caption{图5-18}
 \end{figure}
 
@@ -17991,7 +17912,7 @@ C B ^ {2} = (C D + D B) ^ {2} = C D ^ {2} + 2 C D \cdot D B + D B ^ {2}\text{，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·19}]{assets/plane-geometry-2/fig-p0299-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·19}]{assets/plane-geometry-2/fig-p0299-01.png}}
 \caption{图5·19}
 \end{figure}
 
@@ -18034,7 +17955,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-20}]{assets/plane-geometry-2/fig-p0299-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-20}]{assets/plane-geometry-2/fig-p0299-02.png}}
 \caption{图5-20}
 \end{figure}
 
@@ -18079,7 +18000,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0300-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0300-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -18089,7 +18010,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第300页）}]{assets/plane-geometry-2/fig-p0300-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第300页）}]{assets/plane-geometry-2/fig-p0300-03.png}}
 \caption{图示（原PDF第300页）}
 \end{figure}
 
@@ -18126,7 +18047,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0301-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0301-01.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -18145,7 +18066,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0301-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0301-02.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -18155,7 +18076,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0301-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0301-03.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -18175,7 +18096,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0301-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0301-04.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -18185,7 +18106,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0301-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0301-05.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -18218,7 +18139,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0302-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0302-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -18228,7 +18149,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0302-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0302-02.png}}
 \caption{(2)}
 \end{figure}
 
@@ -18238,7 +18159,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0302-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0302-03.png}}
 \caption{(3)}
 \end{figure}
 
@@ -18281,7 +18202,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·22}]{assets/plane-geometry-2/fig-p0303-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·22}]{assets/plane-geometry-2/fig-p0303-01.png}}
 \caption{图5·22}
 \end{figure}
 
@@ -18291,7 +18212,7 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5·23}]{assets/plane-geometry-2/fig-p0303-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5·23}]{assets/plane-geometry-2/fig-p0303-02.png}}
 \caption{图5·23}
 \end{figure}
 
@@ -18336,7 +18257,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-24}]{assets/plane-geometry-2/fig-p0304-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-24}]{assets/plane-geometry-2/fig-p0304-01.png}}
 \caption{图5-24}
 \end{figure}
 
@@ -18377,7 +18298,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0305-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0305-01.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -18387,7 +18308,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0305-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0305-02.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -18408,7 +18329,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0305-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0305-03.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -18418,7 +18339,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0305-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0305-04.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -18442,7 +18363,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0305-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0305-05.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -18452,7 +18373,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0305-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0305-06.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -18490,7 +18411,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0306-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0306-01.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -18500,7 +18421,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0306-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0306-02.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -18550,7 +18471,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0307-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0307-01.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -18590,7 +18511,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0307-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0307-02.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -18600,7 +18521,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0308-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0308-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -18610,7 +18531,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0308-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0308-02.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -18633,7 +18554,7 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0308-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0308-03.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -18643,7 +18564,7 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0308-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0308-04.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -18671,7 +18592,7 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0308-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0308-05.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -18700,7 +18621,7 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0309-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0309-01.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -18710,7 +18631,7 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0309-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0309-02.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -18730,7 +18651,7 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0309-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0309-03.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -18740,7 +18661,7 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0309-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0309-04.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -18769,7 +18690,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0309-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0309-05.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -18795,7 +18716,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0310-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0310-01.png}}
 \caption{(第6题)}
 \end{figure}
 
@@ -18805,7 +18726,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0310-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0310-02.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -18831,7 +18752,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0310-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0310-03.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -18862,7 +18783,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0311-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0311-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -18882,7 +18803,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0311-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0311-02.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -18892,7 +18813,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0311-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0311-03.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -18930,7 +18851,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0312-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0312-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -18940,7 +18861,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0312-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0312-02.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -18971,7 +18892,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0312-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0312-03.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -19004,7 +18925,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0313-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0313-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -19014,7 +18935,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0313-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0313-02.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -19065,7 +18986,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0314-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0314-01.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -19075,7 +18996,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0314-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0314-02.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -19098,7 +19019,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0314-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0314-03.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -19120,7 +19041,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0314-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0314-04.png}}
 \caption{(第12题)}
 \end{figure}
 
@@ -19130,7 +19051,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0314-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0314-05.png}}
 \caption{(第13题)}
 \end{figure}
 
@@ -19165,7 +19086,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0315-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0315-01.png}}
 \caption{(第15题)}
 \end{figure}
 
@@ -19175,7 +19096,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0315-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0315-02.png}}
 \caption{(第16题)}
 \end{figure}
 
@@ -19203,7 +19124,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0315-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0315-03.png}}
 \caption{(第18题)}
 \end{figure}
 
@@ -19213,7 +19134,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-2/fig-p0315-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-2/fig-p0315-04.png}}
 \caption{(第19题)}
 \end{figure}
 
@@ -19249,7 +19170,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0315-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0315-05.png}}
 \caption{(第20题)}
 \end{figure}
 
@@ -19262,7 +19183,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第21题)}]{assets/plane-geometry-2/fig-p0316-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第21题)}]{assets/plane-geometry-2/fig-p0316-01.png}}
 \caption{(第21题)}
 \end{figure}
 
@@ -19272,7 +19193,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第23题)}]{assets/plane-geometry-2/fig-p0316-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第23题)}]{assets/plane-geometry-2/fig-p0316-02.png}}
 \caption{(第23题)}
 \end{figure}
 
@@ -19300,13 +19221,13 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第316页）}]{assets/plane-geometry-2/fig-p0316-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第316页）}]{assets/plane-geometry-2/fig-p0316-03.png}}
 \caption{图示（原PDF第316页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第24题)}]{assets/plane-geometry-2/fig-p0316-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第24题)}]{assets/plane-geometry-2/fig-p0316-04.png}}
 \caption{(第24题)}
 \end{figure}
 
@@ -19340,7 +19261,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0317-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0317-01.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -19350,7 +19271,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0317-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0317-02.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -19390,7 +19311,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0317-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0317-03.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -19422,7 +19343,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0318-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0318-01.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -19432,7 +19353,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0318-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0318-02.png}}
 \caption{(第11题)}
 \end{figure}
 
@@ -19470,7 +19391,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0318-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0318-03.png}}
 \caption{(第15题)}
 \end{figure}
 
@@ -19480,7 +19401,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0318-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0318-04.png}}
 \caption{(第17题)}
 \end{figure}
 
@@ -19520,7 +19441,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0319-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0319-01.png}}
 \caption{(第18题)}
 \end{figure}
 
@@ -19566,7 +19487,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第25题)}]{assets/plane-geometry-2/fig-p0319-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第25题)}]{assets/plane-geometry-2/fig-p0319-02.png}}
 \caption{(第25题)}
 \end{figure}
 
@@ -19591,7 +19512,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0320-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0320-01.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -19601,7 +19522,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0320-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0320-02.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -19624,7 +19545,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0320-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0320-03.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -19634,7 +19555,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0320-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0320-04.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -19664,7 +19585,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0321-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0321-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -19674,7 +19595,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0321-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0321-02.png}}
 \caption{(第8题)}
 \end{figure}
 
@@ -20441,4 +20362,3 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 
 （3） \(S_{\angle PAB} = \frac{4\sqrt{3}}{3}\mathrm{cm}^2;\) 7。
 \(AH:HO = 3:5;\) 8。 （2） \(\frac{R^2(B + a)^2}{a^2}.\)
-\end{document}

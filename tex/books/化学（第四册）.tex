@@ -1,82 +1,3 @@
-\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
-\usepackage[
-  b5paper,
-  hmargin=2.2cm,
-  top=1.6cm,
-  bottom=2.2cm,
-  headheight=22pt,
-  headsep=14pt,
-  footskip=16mm,
-  includehead
-]{geometry}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
-\usepackage{float}
-\xeCJKsetup{CJKmath=true}
-\usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
-
-\setcounter{secnumdepth}{-\maxdimen}
-\setlength{\emergencystretch}{3em}
-\graphicspath{{books/}}
-
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi
-}
-\def\fps@figure{htbp}
-\makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\hypersetup{
-  hidelinks,
-  pdflang={zh-CN},
-  pdftitle={化学（第四册）},
-  pdfauthor={数理化自学丛书编委会},
-  pdfcreator={XeLaTeX via pandoc}
-}
-
-\title{化学（第四册）}
-\author{数理化自学丛书编委会}
-\date{}
-
-\begin{document}
-\frontmatter
-\maketitle
-\renewcommand*\contentsname{目录}
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\mainmatter
 \textbf{丛书：} 数理化自学丛书\\
 \textbf{编者：} 数理化自学丛书编委会\\
 \textbf{编写：} 化学编写小组\\
@@ -358,7 +279,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第8页图示}]{assets/chemistry-4/fig-p0008-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第8页图示}]{assets/chemistry-4/fig-p0008-g01.png}}
 \caption{原PDF第8页图示}
 \end{figure}
 
@@ -372,7 +293,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·1 甲烷的分子结构}]{assets/chemistry-4/fig-p0009-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·1 甲烷的分子结构}]{assets/chemistry-4/fig-p0009-g01.png}}
 \caption{图1·1 甲烷的分子结构}
 \end{figure}
 
@@ -444,7 +365,7 @@ quē）：
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·2 甲烷和卤素的取代反应实验}]{assets/chemistry-4/fig-p0011-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·2 甲烷和卤素的取代反应实验}]{assets/chemistry-4/fig-p0011-g01.png}}
 \caption{图 1·2 甲烷和卤素的取代反应实验}
 \end{figure}
 
@@ -501,7 +422,7 @@ quē）：
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·3 甲烷的实验室制取及其性质试验}]{assets/chemistry-4/fig-p0013-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·3 甲烷的实验室制取及其性质试验}]{assets/chemistry-4/fig-p0013-g01.png}}
 \caption{图 1·3 甲烷的实验室制取及其性质试验}
 \end{figure}
 
@@ -627,7 +548,7 @@ quē）：
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·4 乙烷和丙烷的分子结构}]{assets/chemistry-4/fig-p0016-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·4 乙烷和丙烷的分子结构}]{assets/chemistry-4/fig-p0016-g01.png}}
 \caption{图 1·4 乙烷和丙烷的分子结构}
 \end{figure}
 
@@ -840,13 +761,13 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第22页图示}]{assets/chemistry-4/fig-p0022-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第22页图示}]{assets/chemistry-4/fig-p0022-g01.png}}
 \caption{原PDF第22页图示}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={丁烷}]{assets/chemistry-4/fig-p0023-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={丁烷}]{assets/chemistry-4/fig-p0023-g01.png}}
 \caption{丁烷}
 \end{figure}
 
@@ -865,7 +786,7 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第23页图示}]{assets/chemistry-4/fig-p0023-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第23页图示}]{assets/chemistry-4/fig-p0023-g02.png}}
 \caption{原PDF第23页图示}
 \end{figure}
 
@@ -913,7 +834,7 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第25页图示}]{assets/chemistry-4/fig-p0025-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第25页图示}]{assets/chemistry-4/fig-p0025-g01.png}}
 \caption{原PDF第25页图示}
 \end{figure}
 
@@ -926,7 +847,7 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第25页图示}]{assets/chemistry-4/fig-p0025-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第25页图示}]{assets/chemistry-4/fig-p0025-g02.png}}
 \caption{原PDF第25页图示}
 \end{figure}
 
@@ -943,7 +864,7 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·5}]{assets/chemistry-4/fig-p0026-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·5}]{assets/chemistry-4/fig-p0026-g01.png}}
 \caption{图 1·5}
 \end{figure}
 
@@ -956,7 +877,7 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·6}]{assets/chemistry-4/fig-p0027-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·6}]{assets/chemistry-4/fig-p0027-g01.png}}
 \caption{图 1·6}
 \end{figure}
 
@@ -970,7 +891,7 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（a）；（b）；（c）；（d）}]{assets/chemistry-4/fig-p0028-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（a）；（b）；（c）；（d）}]{assets/chemistry-4/fig-p0028-g01.png}}
 \caption{（a）；（b）；（c）；（d）}
 \end{figure}
 
@@ -996,7 +917,7 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={习题1·5第4题结构式}]{assets/chemistry-4/manual-p0029-exercise-1-5-q4.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={习题1·5第4题结构式}]{assets/chemistry-4/manual-p0029-exercise-1-5-q4.png}}
 \caption{习题1·5第4题结构式}
 \end{figure}
 
@@ -1023,7 +944,7 @@ n 是分子里的碳原子数，氢原子数是碳原子数的二倍再加二，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第30页图示}]{assets/chemistry-4/fig-p0030-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第30页图示}]{assets/chemistry-4/fig-p0030-g01.png}}
 \caption{原PDF第30页图示}
 \end{figure}
 
@@ -1038,7 +959,7 @@ Cu，以及生成物碘化亚铜来看，显然，余下的应当是
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·7 乙烯的分子结构}]{assets/chemistry-4/fig-p0031-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·7 乙烯的分子结构}]{assets/chemistry-4/fig-p0031-g01.png}}
 \caption{图 1·7 乙烯的分子结构}
 \end{figure}
 
@@ -1150,7 +1071,7 @@ Cu，以及生成物碘化亚铜来看，显然，余下的应当是
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第34页图示}]{assets/chemistry-4/fig-p0034-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第34页图示}]{assets/chemistry-4/fig-p0034-g01.png}}
 \caption{原PDF第34页图示}
 \end{figure}
 
@@ -1161,7 +1082,7 @@ Cu，以及生成物碘化亚铜来看，显然，余下的应当是
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·8 乙烯的制取和性质实验}]{assets/chemistry-4/fig-p0034-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·8 乙烯的制取和性质实验}]{assets/chemistry-4/fig-p0034-g02.png}}
 \caption{图 1·8 乙烯的制取和性质实验}
 \end{figure}
 
@@ -1285,7 +1206,7 @@ Cu，以及生成物碘化亚铜来看，显然，余下的应当是
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·9 乙炔的分子结构}]{assets/chemistry-4/fig-p0037-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·9 乙炔的分子结构}]{assets/chemistry-4/fig-p0037-g01.png}}
 \caption{图 1·9 乙炔的分子结构}
 \end{figure}
 
@@ -1392,7 +1313,7 @@ Cu，以及生成物碘化亚铜来看，显然，余下的应当是
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·10 制取乙炔的实验}]{assets/chemistry-4/fig-p0040-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·10 制取乙炔的实验}]{assets/chemistry-4/fig-p0040-g01.png}}
 \caption{图1·10 制取乙炔的实验}
 \end{figure}
 
@@ -1635,7 +1556,7 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第46页图示}]{assets/chemistry-4/fig-p0046-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第46页图示}]{assets/chemistry-4/fig-p0046-g01.png}}
 \caption{原PDF第46页图示}
 \end{figure}
 
@@ -1643,7 +1564,7 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（结构式）；（结构简式）}]{assets/chemistry-4/fig-p0046-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（结构式）；（结构简式）}]{assets/chemistry-4/fig-p0046-g02.png}}
 \caption{（结构式）；（结构简式）}
 \end{figure}
 
@@ -1669,7 +1590,7 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={``图1·11 苯跟溴的取代反应}]{assets/chemistry-4/fig-p0047-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={``图1·11 苯跟溴的取代反应}]{assets/chemistry-4/fig-p0047-g01.png}}
 \caption{``图1·11 苯跟溴的取代反应}
 \end{figure}
 
@@ -1677,7 +1598,7 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第48页图示}]{assets/chemistry-4/fig-p0048-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第48页图示}]{assets/chemistry-4/fig-p0048-g01.png}}
 \caption{原PDF第48页图示}
 \end{figure}
 
@@ -1699,7 +1620,7 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第49页图示}]{assets/chemistry-4/fig-p0049-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第49页图示}]{assets/chemistry-4/fig-p0049-g01.png}}
 \caption{原PDF第49页图示}
 \end{figure}
 
@@ -1723,7 +1644,7 @@ CaO 来自石灰石 \(CaCO_{3}\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={表1·6 苯的同系物}]{assets/chemistry-4/manual-p0050-table-1-6.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={表1·6 苯的同系物}]{assets/chemistry-4/manual-p0050-table-1-6.png}}
 \caption{表1·6 苯的同系物}
 \end{figure}
 
@@ -1760,7 +1681,7 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第51页图示}]{assets/chemistry-4/fig-p0051-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第51页图示}]{assets/chemistry-4/fig-p0051-g01.png}}
 \caption{原PDF第51页图示}
 \end{figure}
 
@@ -1810,7 +1731,7 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·12 煤的干馏}]{assets/chemistry-4/fig-p0053-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·12 煤的干馏}]{assets/chemistry-4/fig-p0053-g01.png}}
 \caption{图1·12 煤的干馏}
 \end{figure}
 
@@ -1824,7 +1745,7 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·13 焦炉气的平均组成}]{assets/chemistry-4/fig-p0053-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·13 焦炉气的平均组成}]{assets/chemistry-4/fig-p0053-g02.png}}
 \caption{图 1·13 焦炉气的平均组成}
 \end{figure}
 
@@ -1884,7 +1805,7 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第55页图示}]{assets/chemistry-4/fig-p0055-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第55页图示}]{assets/chemistry-4/fig-p0055-g01.png}}
 \caption{原PDF第55页图示}
 \end{figure}
 
@@ -1925,7 +1846,7 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·14 石油矿区的地层剖面图}]{assets/chemistry-4/fig-p0056-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·14 石油矿区的地层剖面图}]{assets/chemistry-4/fig-p0056-g01.png}}
 \caption{图 1·14 石油矿区的地层剖面图}
 \end{figure}
 
@@ -1954,7 +1875,7 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·15 石油的分馏}]{assets/chemistry-4/fig-p0057-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·15 石油的分馏}]{assets/chemistry-4/fig-p0057-g01.png}}
 \caption{图1·15 石油的分馏}
 \end{figure}
 
@@ -2022,7 +1943,7 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·16 煤油的热裂化}]{assets/chemistry-4/fig-p0059-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·16 煤油的热裂化}]{assets/chemistry-4/fig-p0059-g01.png}}
 \caption{图1·16 煤油的热裂化}
 \end{figure}
 
@@ -2061,7 +1982,7 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1·17 石油的催化裂化实验装置}]{assets/chemistry-4/fig-p0061-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1·17 石油的催化裂化实验装置}]{assets/chemistry-4/fig-p0061-g01.png}}
 \caption{图 1·17 石油的催化裂化实验装置}
 \end{figure}
 
@@ -2310,13 +2231,13 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={复习题一第7题结构式}]{assets/chemistry-4/manual-p0066-review-q7.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={复习题一第7题结构式}]{assets/chemistry-4/manual-p0066-review-q7.png}}
 \caption{复习题一第7题结构式}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={复习题一第8题反应网络}]{assets/chemistry-4/manual-p0066-review-q8.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={复习题一第8题反应网络}]{assets/chemistry-4/manual-p0066-review-q8.png}}
 \caption{复习题一第8题反应网络}
 \end{figure}
 
@@ -2360,13 +2281,13 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原书脚注中的乙烯加水生成乙醇的反应结构式}]{assets/chemistry-4/fig-p0033-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原书脚注中的乙烯加水生成乙醇的反应结构式}]{assets/chemistry-4/fig-p0033-g01.png}}
 \caption{原书脚注中的乙烯加水生成乙醇的反应结构式}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原书脚注中的萘分子结构}]{assets/chemistry-4/fig-p0054-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原书脚注中的萘分子结构}]{assets/chemistry-4/fig-p0054-g01.png}}
 \caption{原书脚注中的萘分子结构}
 \end{figure}
 
@@ -2459,7 +2380,7 @@ R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={氯苯}]{assets/chemistry-4/fig-p0070-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={氯苯}]{assets/chemistry-4/fig-p0070-g01.png}}
 \caption{氯苯}
 \end{figure}
 
@@ -2499,7 +2420,7 @@ R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第71页图示}]{assets/chemistry-4/fig-p0071-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第71页图示}]{assets/chemistry-4/fig-p0071-g01.png}}
 \caption{原PDF第71页图示}
 \end{figure}
 
@@ -2518,7 +2439,7 @@ R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第72页图示}]{assets/chemistry-4/fig-p0072-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第72页图示}]{assets/chemistry-4/fig-p0072-g01.png}}
 \caption{原PDF第72页图示}
 \end{figure}
 
@@ -2585,7 +2506,7 @@ R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第73页图示}]{assets/chemistry-4/fig-p0073-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第73页图示}]{assets/chemistry-4/fig-p0073-g01.png}}
 \caption{原PDF第73页图示}
 \end{figure}
 
@@ -2598,7 +2519,7 @@ R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·1 测定乙醇分子结构的实验装置}]{assets/chemistry-4/fig-p0074-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·1 测定乙醇分子结构的实验装置}]{assets/chemistry-4/fig-p0074-g01.png}}
 \caption{图2·1 测定乙醇分子结构的实验装置}
 \end{figure}
 
@@ -2746,7 +2667,7 @@ x=\frac{46\times280}{1.15}=11200\text{毫升}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·2 醇跟氢卤酸反应的实验装置}]{assets/chemistry-4/fig-p0077-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·2 醇跟氢卤酸反应的实验装置}]{assets/chemistry-4/fig-p0077-g01.png}}
 \caption{图 2·2 醇跟氢卤酸反应的实验装置}
 \end{figure}
 
@@ -2763,7 +2684,7 @@ x=\frac{46\times280}{1.15}=11200\text{毫升}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第77页图示}]{assets/chemistry-4/fig-p0077-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第77页图示}]{assets/chemistry-4/fig-p0077-g02.png}}
 \caption{原PDF第77页图示}
 \end{figure}
 
@@ -2775,7 +2696,7 @@ x=\frac{46\times280}{1.15}=11200\text{毫升}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第77页图示}]{assets/chemistry-4/fig-p0077-g03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第77页图示}]{assets/chemistry-4/fig-p0077-g03.png}}
 \caption{原PDF第77页图示}
 \end{figure}
 
@@ -2919,7 +2840,7 @@ U 形管中的石灰水时，它所含有的二氧化碳早已被碱石灰所吸
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·3 发酵法制乙醇的实验装置}]{assets/chemistry-4/fig-p0081-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·3 发酵法制乙醇的实验装置}]{assets/chemistry-4/fig-p0081-g01.png}}
 \caption{图 2·3 发酵法制乙醇的实验装置}
 \end{figure}
 
@@ -3151,7 +3072,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（结构式）}]{assets/chemistry-4/fig-p0086-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（结构式）}]{assets/chemistry-4/fig-p0086-g01.png}}
 \caption{（结构式）}
 \end{figure}
 
@@ -3173,7 +3094,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第87页图示}]{assets/chemistry-4/fig-p0087-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第87页图示}]{assets/chemistry-4/fig-p0087-g01.png}}
 \caption{原PDF第87页图示}
 \end{figure}
 
@@ -3181,7 +3102,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={丙三醇铜（绛蓝色）}]{assets/chemistry-4/fig-p0087-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={丙三醇铜（绛蓝色）}]{assets/chemistry-4/fig-p0087-g02.png}}
 \caption{丙三醇铜（绛蓝色）}
 \end{figure}
 
@@ -3195,7 +3116,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第88页图示}]{assets/chemistry-4/fig-p0088-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第88页图示}]{assets/chemistry-4/fig-p0088-g01.png}}
 \caption{原PDF第88页图示}
 \end{figure}
 
@@ -3243,7 +3164,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第89页图示}]{assets/chemistry-4/fig-p0089-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第89页图示}]{assets/chemistry-4/fig-p0089-g01.png}}
 \caption{原PDF第89页图示}
 \end{figure}
 
@@ -3253,7 +3174,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第89页图示}]{assets/chemistry-4/fig-p0089-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第89页图示}]{assets/chemistry-4/fig-p0089-g02.png}}
 \caption{原PDF第89页图示}
 \end{figure}
 
@@ -3267,7 +3188,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（结构式）}]{assets/chemistry-4/fig-p0090-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（结构式）}]{assets/chemistry-4/fig-p0090-g01.png}}
 \caption{（结构式）}
 \end{figure}
 
@@ -3285,7 +3206,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第90页图示}]{assets/chemistry-4/fig-p0090-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第90页图示}]{assets/chemistry-4/fig-p0090-g02.png}}
 \caption{原PDF第90页图示}
 \end{figure}
 
@@ -3335,7 +3256,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第92页图示}]{assets/chemistry-4/fig-p0092-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第92页图示}]{assets/chemistry-4/fig-p0092-g01.png}}
 \caption{原PDF第92页图示}
 \end{figure}
 
@@ -3406,7 +3327,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第94页图示}]{assets/chemistry-4/fig-p0094-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第94页图示}]{assets/chemistry-4/fig-p0094-g01.png}}
 \caption{原PDF第94页图示}
 \end{figure}
 
@@ -3483,7 +3404,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（结构式）；（简式）}]{assets/chemistry-4/fig-p0096-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（结构式）；（简式）}]{assets/chemistry-4/fig-p0096-g01.png}}
 \caption{（结构式）；（简式）}
 \end{figure}
 
@@ -3491,7 +3412,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={甲醇去氢生成甲醛的反应结构式}]{assets/chemistry-4/fig-p0096-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={甲醇去氢生成甲醛的反应结构式}]{assets/chemistry-4/fig-p0096-g02.png}}
 \caption{甲醇去氢生成甲醛的反应结构式}
 \end{figure}
 
@@ -3520,7 +3441,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第97页图示}]{assets/chemistry-4/fig-p0097-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第97页图示}]{assets/chemistry-4/fig-p0097-g01.png}}
 \caption{原PDF第97页图示}
 \end{figure}
 
@@ -3537,7 +3458,7 @@ x = \frac {22400 \times 1.15}{214.6 \times 2} = 60 \text {\text{克}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第98页图示}]{assets/chemistry-4/fig-p0098-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第98页图示}]{assets/chemistry-4/fig-p0098-g01.png}}
 \caption{原PDF第98页图示}
 \end{figure}
 
@@ -3618,13 +3539,13 @@ n \mathrm{HCHO} = (\mathrm{HCHO}) _ {n}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第99页图示}]{assets/chemistry-4/fig-p0099-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第99页图示}]{assets/chemistry-4/fig-p0099-g01.png}}
 \caption{原PDF第99页图示}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第100页图示}]{assets/chemistry-4/fig-p0100-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第100页图示}]{assets/chemistry-4/fig-p0100-g01.png}}
 \caption{原PDF第100页图示}
 \end{figure}
 
@@ -3661,7 +3582,7 @@ n \mathrm{HCHO} = (\mathrm{HCHO}) _ {n}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第101页图示}]{assets/chemistry-4/fig-p0101-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第101页图示}]{assets/chemistry-4/fig-p0101-g01.png}}
 \caption{原PDF第101页图示}
 \end{figure}
 
@@ -3853,7 +3774,7 @@ R---C---R'，R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（结构式）；（简式）}]{assets/chemistry-4/fig-p0106-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（结构式）；（简式）}]{assets/chemistry-4/fig-p0106-g01.png}}
 \caption{（结构式）；（简式）}
 \end{figure}
 
@@ -3867,7 +3788,7 @@ R---C---R'，R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第107页图示}]{assets/chemistry-4/fig-p0107-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第107页图示}]{assets/chemistry-4/fig-p0107-g01.png}}
 \caption{原PDF第107页图示}
 \end{figure}
 
@@ -3907,7 +3828,7 @@ R---C---R'，R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第108页图示}]{assets/chemistry-4/fig-p0108-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第108页图示}]{assets/chemistry-4/fig-p0108-g01.png}}
 \caption{原PDF第108页图示}
 \end{figure}
 
@@ -3915,7 +3836,7 @@ R---C---R'，R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第108页图示}]{assets/chemistry-4/fig-p0108-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第108页图示}]{assets/chemistry-4/fig-p0108-g02.png}}
 \caption{原PDF第108页图示}
 \end{figure}
 
@@ -4016,7 +3937,7 @@ R---C---R'，R 和 R' 可以相同，也可以不同。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·4 由乙炔水化制取乙醛}]{assets/chemistry-4/fig-p0110-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·4 由乙炔水化制取乙醛}]{assets/chemistry-4/fig-p0110-g01.png}}
 \caption{图 2·4 由乙炔水化制取乙醛}
 \end{figure}
 
@@ -4256,7 +4177,7 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第115页图示}]{assets/chemistry-4/fig-p0115-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第115页图示}]{assets/chemistry-4/fig-p0115-g01.png}}
 \caption{原PDF第115页图示}
 \end{figure}
 
@@ -4292,7 +4213,7 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第116页图示}]{assets/chemistry-4/fig-p0116-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第116页图示}]{assets/chemistry-4/fig-p0116-g01.png}}
 \caption{原PDF第116页图示}
 \end{figure}
 
@@ -4370,7 +4291,7 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={硬脂酸甘油酯；软脂酸甘油酯}]{assets/chemistry-4/fig-p0118-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={硬脂酸甘油酯；软脂酸甘油酯}]{assets/chemistry-4/fig-p0118-g01.png}}
 \caption{硬脂酸甘油酯；软脂酸甘油酯}
 \end{figure}
 
@@ -4378,7 +4299,7 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={（高级脂肪酸的酰基）（丙三醇的烃基）}]{assets/chemistry-4/fig-p0119-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={（高级脂肪酸的酰基）（丙三醇的烃基）}]{assets/chemistry-4/fig-p0119-g01.png}}
 \caption{（高级脂肪酸的酰基）（丙三醇的烃基）}
 \end{figure}
 
@@ -4415,7 +4336,7 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第120页图示}]{assets/chemistry-4/fig-p0120-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第120页图示}]{assets/chemistry-4/fig-p0120-g01.png}}
 \caption{原PDF第120页图示}
 \end{figure}
 
@@ -4478,7 +4399,7 @@ R代表烷烃基，等于 \(C_{n}H_{2n+1}(n\geqslant0)\)。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 2·5 肥皂的去污作用示意图}]{assets/chemistry-4/fig-p0122-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 2·5 肥皂的去污作用示意图}]{assets/chemistry-4/fig-p0122-g01.png}}
 \caption{图 2·5 肥皂的去污作用示意图}
 \end{figure}
 
@@ -4844,7 +4765,7 @@ raw 不能唯一判定原版反应式，故未擅改。{]}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原书脚注中的乙醇去氢生成乙醛的结构式}]{assets/chemistry-4/fig-p0096-g03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原书脚注中的乙醇去氢生成乙醛的结构式}]{assets/chemistry-4/fig-p0096-g03.png}}
 \caption{原书脚注中的乙醇去氢生成乙醛的结构式}
 \end{figure}
 
@@ -4911,7 +4832,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·1 葡萄糖分子中的元素定性鉴定}]{assets/chemistry-4/fig-p0132-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·1 葡萄糖分子中的元素定性鉴定}]{assets/chemistry-4/fig-p0132-g01.png}}
 \caption{图3·1 葡萄糖分子中的元素定性鉴定}
 \end{figure}
 
@@ -4948,7 +4869,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第133页图示}]{assets/chemistry-4/fig-p0133-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第133页图示}]{assets/chemistry-4/fig-p0133-g01.png}}
 \caption{原PDF第133页图示}
 \end{figure}
 
@@ -4958,7 +4879,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第133页图示}]{assets/chemistry-4/fig-p0133-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第133页图示}]{assets/chemistry-4/fig-p0133-g02.png}}
 \caption{原PDF第133页图示}
 \end{figure}
 
@@ -4966,7 +4887,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第133页图示}]{assets/chemistry-4/fig-p0133-g03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第133页图示}]{assets/chemistry-4/fig-p0133-g03.png}}
 \caption{原PDF第133页图示}
 \end{figure}
 
@@ -4984,7 +4905,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第134页图示}]{assets/chemistry-4/fig-p0134-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第134页图示}]{assets/chemistry-4/fig-p0134-g01.png}}
 \caption{原PDF第134页图示}
 \end{figure}
 
@@ -4992,7 +4913,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第134页图示}]{assets/chemistry-4/fig-p0134-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第134页图示}]{assets/chemistry-4/fig-p0134-g02.png}}
 \caption{原PDF第134页图示}
 \end{figure}
 
@@ -5039,7 +4960,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第135页图示}]{assets/chemistry-4/fig-p0135-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第135页图示}]{assets/chemistry-4/fig-p0135-g01.png}}
 \caption{原PDF第135页图示}
 \end{figure}
 
@@ -5057,7 +4978,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第136页图示}]{assets/chemistry-4/fig-p0136-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第136页图示}]{assets/chemistry-4/fig-p0136-g01.png}}
 \caption{原PDF第136页图示}
 \end{figure}
 
@@ -5065,7 +4986,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第136页图示}]{assets/chemistry-4/fig-p0136-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第136页图示}]{assets/chemistry-4/fig-p0136-g02.png}}
 \caption{原PDF第136页图示}
 \end{figure}
 
@@ -5075,7 +4996,7 @@ n \mathrm{C} _ {6} \mathrm{H} _ {12} \mathrm{O} _ {6} = (\mathrm{C} _ {6} \mathr
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第137页图示}]{assets/chemistry-4/fig-p0137-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第137页图示}]{assets/chemistry-4/fig-p0137-g01.png}}
 \caption{原PDF第137页图示}
 \end{figure}
 
@@ -5224,7 +5145,7 @@ n\mathrm{C}_{6}\mathrm{H}_{12}\mathrm{O}_{6}\xrightarrow{\text{酶}}(\mathrm{C}_
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·2 马铃薯、小麦和玉蜀黍的淀粉颗粒}]{assets/chemistry-4/fig-p0141-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·2 马铃薯、小麦和玉蜀黍的淀粉颗粒}]{assets/chemistry-4/fig-p0141-g01.png}}
 \caption{图 3·2 马铃薯、小麦和玉蜀黍的淀粉颗粒}
 \end{figure}
 
@@ -5304,7 +5225,7 @@ n\mathrm{C}_{6}\mathrm{H}_{12}\mathrm{O}_{6}\xrightarrow{\text{酶}}(\mathrm{C}_
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第144页图示}]{assets/chemistry-4/fig-p0144-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第144页图示}]{assets/chemistry-4/fig-p0144-g01.png}}
 \caption{原PDF第144页图示}
 \end{figure}
 
@@ -5398,7 +5319,7 @@ n\mathrm{C}_{6}\mathrm{H}_{12}\mathrm{O}_{6}\xrightarrow{\text{酶}}(\mathrm{C}_
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第148页图示}]{assets/chemistry-4/fig-p0148-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第148页图示}]{assets/chemistry-4/fig-p0148-g01.png}}
 \caption{原PDF第148页图示}
 \end{figure}
 
@@ -5597,7 +5518,7 @@ n\mathrm{C}_{6}\mathrm{H}_{12}\mathrm{O}_{6}\xrightarrow{\text{酶}}(\mathrm{C}_
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第152页图示}]{assets/chemistry-4/fig-p0152-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第152页图示}]{assets/chemistry-4/fig-p0152-g01.png}}
 \caption{原PDF第152页图示}
 \end{figure}
 
@@ -5655,7 +5576,7 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第153页图示}]{assets/chemistry-4/fig-p0153-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第153页图示}]{assets/chemistry-4/fig-p0153-g01.png}}
 \caption{原PDF第153页图示}
 \end{figure}
 
@@ -5672,7 +5593,7 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第154页图示}]{assets/chemistry-4/fig-p0154-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第154页图示}]{assets/chemistry-4/fig-p0154-g01.png}}
 \caption{原PDF第154页图示}
 \end{figure}
 
@@ -5759,7 +5680,7 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={硝基苯；苯胺}]{assets/chemistry-4/fig-p0156-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={硝基苯；苯胺}]{assets/chemistry-4/fig-p0156-g01.png}}
 \caption{硝基苯；苯胺}
 \end{figure}
 
@@ -5777,7 +5698,7 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第157页图示}]{assets/chemistry-4/fig-p0157-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第157页图示}]{assets/chemistry-4/fig-p0157-g01.png}}
 \caption{原PDF第157页图示}
 \end{figure}
 
@@ -5835,7 +5756,7 @@ HO---NO\(_{2}\) 里除去``HO---''后所留下的部分， 是个一价基团，
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第159页图示}]{assets/chemistry-4/fig-p0159-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第159页图示}]{assets/chemistry-4/fig-p0159-g01.png}}
 \caption{原PDF第159页图示}
 \end{figure}
 
@@ -6036,7 +5957,7 @@ N & 1\% & 0.5\% \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第167页图示}]{assets/chemistry-4/fig-p0167-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第167页图示}]{assets/chemistry-4/fig-p0167-g01.png}}
 \caption{原PDF第167页图示}
 \end{figure}
 
@@ -6044,7 +5965,7 @@ N & 1\% & 0.5\% \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第167页图示}]{assets/chemistry-4/fig-p0167-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第167页图示}]{assets/chemistry-4/fig-p0167-g02.png}}
 \caption{原PDF第167页图示}
 \end{figure}
 
@@ -6392,7 +6313,7 @@ x\,\mathrm{CH}_{2}=\mathrm{CHCl}\xrightarrow{\text{聚合}}[-\mathrm{CH}_{2}-\ma
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第177页图示}]{assets/chemistry-4/fig-p0177-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第177页图示}]{assets/chemistry-4/fig-p0177-g01.png}}
 \caption{原PDF第177页图示}
 \end{figure}
 
@@ -6402,7 +6323,7 @@ x\,\mathrm{CH}_{2}=\mathrm{CHCl}\xrightarrow{\text{聚合}}[-\mathrm{CH}_{2}-\ma
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·1 高分子的结构示意图}]{assets/chemistry-4/fig-p0177-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·1 高分子的结构示意图}]{assets/chemistry-4/fig-p0177-g02.png}}
 \caption{图 5·1 高分子的结构示意图}
 \end{figure}
 
@@ -6520,7 +6441,7 @@ n\,\mathrm{CH}_{2}=\mathrm{C}(\mathrm{CH}_{3})-\mathrm{CH}=\mathrm{CH}_{2}\xrigh
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 5·2 橡胶硫化后的结构}]{assets/chemistry-4/fig-p0184-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 5·2 橡胶硫化后的结构}]{assets/chemistry-4/fig-p0184-g01.png}}
 \caption{图 5·2 橡胶硫化后的结构}
 \end{figure}
 
@@ -6577,7 +6498,7 @@ n\,\mathrm{CH}_{2}=\mathrm{CH}-\mathrm{CCl}=\mathrm{CH}_{2}\xrightarrow{\text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第186页图示}]{assets/chemistry-4/fig-p0186-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第186页图示}]{assets/chemistry-4/fig-p0186-g01.png}}
 \caption{原PDF第186页图示}
 \end{figure}
 
@@ -6597,7 +6518,7 @@ n\,\mathrm{CH}_{2}=\mathrm{CH}-\mathrm{CCl}=\mathrm{CH}_{2}\xrightarrow{\text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第187页图示}]{assets/chemistry-4/fig-p0187-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第187页图示}]{assets/chemistry-4/fig-p0187-g01.png}}
 \caption{原PDF第187页图示}
 \end{figure}
 
@@ -6607,13 +6528,13 @@ n\,\mathrm{CH}_{2}=\mathrm{CH}-\mathrm{CCl}=\mathrm{CH}_{2}\xrightarrow{\text{�
 \(\mathrm{-NH-CO-}\)
 联结着不同长度的碳链如``---（CH₂）₄---''和``---（CH₂）₅---''等而成。所以这一类合成纤维实际上跟天然的动物纤维具有类似的结构。
 
-合成纤维还有很多品种，象聚氯乙烯、聚丙烯腈（俗称奥纶或人造羊毛）以及新型产品特丽纶\footnote{\pandocbounded{\includegraphics[keepaspectratio,alt={特丽纶结构式}]{assets/chemistry-4/fig-p0188-g01.png}}
+合成纤维还有很多品种，象聚氯乙烯、聚丙烯腈（俗称奥纶或人造羊毛）以及新型产品特丽纶\footnote{\fitfig{\includegraphics[keepaspectratio,alt={特丽纶结构式}]{assets/chemistry-4/fig-p0188-g01.png}}
   每一个乙二醇和二个对苯二甲酸结合，同样每一个对苯二甲酸和二个乙二醇结合形成高分子聚合物，所以从结构来看它应当属于酯类。}
 等。它们各具特性和用途，不过它们的原料还是乙炔和煤焦油产物。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第187页图示}]{assets/chemistry-4/fig-p0187-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第187页图示}]{assets/chemistry-4/fig-p0187-g02.png}}
 \caption{原PDF第187页图示}
 \end{figure}
 
@@ -6759,7 +6680,7 @@ n\,\mathrm{CH}_{2}=\mathrm{CH}-\mathrm{CCl}=\mathrm{CH}_{2}\xrightarrow{\text{�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={碱式滴定管下端的橡皮管、玻璃珠和尖嘴结构（第10题）}]{assets/chemistry-4/fig-p0190-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={碱式滴定管下端的橡皮管、玻璃珠和尖嘴结构（第10题）}]{assets/chemistry-4/fig-p0190-g01.png}}
 \caption{碱式滴定管下端的橡皮管、玻璃珠和尖嘴结构（第10题）}
 \end{figure}
 
@@ -6814,7 +6735,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g01.png}}
 \caption{原PDF第191页图示}
 \end{figure}
 
@@ -6822,7 +6743,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g02.png}}
 \caption{原PDF第191页图示}
 \end{figure}
 
@@ -6830,7 +6751,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g03.png}}
 \caption{原PDF第191页图示}
 \end{figure}
 
@@ -6838,7 +6759,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g04.png}}
 \caption{原PDF第191页图示}
 \end{figure}
 
@@ -6846,7 +6767,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g05.png}}
 \caption{原PDF第191页图示}
 \end{figure}
 
@@ -6854,7 +6775,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g06.png}}
 \caption{原PDF第191页图示}
 \end{figure}
 
@@ -6862,7 +6783,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g07.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g07.png}}
 \caption{原PDF第191页图示}
 \end{figure}
 
@@ -6870,7 +6791,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g08.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原PDF第191页图示}]{assets/chemistry-4/fig-p0191-g08.png}}
 \caption{原PDF第191页图示}
 \end{figure}
 
@@ -7033,7 +6954,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={原书脚注中的乙醇制丁二烯结构反应式}]{assets/chemistry-4/fig-p0184-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={原书脚注中的乙醇制丁二烯结构反应式}]{assets/chemistry-4/fig-p0184-g02.png}}
 \caption{原书脚注中的乙醇制丁二烯结构反应式}
 \end{figure}
 
@@ -7149,7 +7070,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图附}]{assets/chemistry-4/fig-p0195-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图附}]{assets/chemistry-4/fig-p0195-g01.png}}
 \caption{图附}
 \end{figure}
 
@@ -7162,7 +7083,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 2}]{assets/chemistry-4/fig-p0196-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 2}]{assets/chemistry-4/fig-p0196-g01.png}}
 \caption{图 附 2}
 \end{figure}
 
@@ -7172,7 +7093,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 4}]{assets/chemistry-4/fig-p0196-g02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 4}]{assets/chemistry-4/fig-p0196-g02.png}}
 \caption{图 附 4}
 \end{figure}
 
@@ -7182,7 +7103,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 1}]{assets/chemistry-4/fig-p0196-g03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 1}]{assets/chemistry-4/fig-p0196-g03.png}}
 \caption{图 1}
 \end{figure}
 
@@ -7193,7 +7114,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附 7}]{assets/chemistry-4/fig-p0197-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附 7}]{assets/chemistry-4/fig-p0197-g01.png}}
 \caption{图 附 7}
 \end{figure}
 
@@ -7321,7 +7242,7 @@ NH2
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 附8}]{assets/chemistry-4/fig-p0199-g01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 附8}]{assets/chemistry-4/fig-p0199-g01.png}}
 \caption{图 附8}
 \end{figure}
 
@@ -7767,4 +7688,3 @@ NH2
 第202页倒第3行 5. 蛋白质20克，
 
 应为 蛋白质 133.3 克。
-\end{document}

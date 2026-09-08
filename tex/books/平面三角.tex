@@ -1,82 +1,3 @@
-\documentclass[UTF8,fontset=fandol,zihao=-4,oneside,openany]{ctexbook}
-\usepackage[
-  b5paper,
-  hmargin=2.2cm,
-  top=1.6cm,
-  bottom=2.2cm,
-  headheight=22pt,
-  headsep=14pt,
-  footskip=16mm,
-  includehead
-]{geometry}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
-\usepackage{float}
-\xeCJKsetup{CJKmath=true}
-\usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
-
-\setcounter{secnumdepth}{-\maxdimen}
-\setlength{\emergencystretch}{3em}
-\graphicspath{{books/}}
-
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi
-}
-\def\fps@figure{htbp}
-\makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\hypersetup{
-  hidelinks,
-  pdflang={zh-CN},
-  pdftitle={平面三角},
-  pdfauthor={数理化自学丛书编委会},
-  pdfcreator={XeLaTeX via pandoc}
-}
-
-\title{平面三角}
-\author{数理化自学丛书编委会}
-\date{}
-
-\begin{document}
-\frontmatter
-\maketitle
-\renewcommand*\contentsname{目录}
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\mainmatter
 \textbf{丛书：} 数理化自学丛书\\
 \textbf{编者：} 数理化自学丛书编委会\\
 \textbf{出版社：} 上海科学技术出版社
@@ -431,7 +352,7 @@
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.1}]{assets/plane-trigonometry/fig-p0006-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.1}]{assets/plane-trigonometry/fig-p0006-01.png}}
 \caption{图1.1}
 \end{figure}
 
@@ -501,7 +422,7 @@ A''这个记号，就应当联想到它表示：在以∠A为锐角的直角三�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-2}]{assets/plane-trigonometry/fig-p0008-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-2}]{assets/plane-trigonometry/fig-p0008-01.png}}
 \caption{图1-2}
 \end{figure}
 
@@ -570,7 +491,7 @@ A''这个记号，就应当联想到它表示：在以∠A为锐角的直角三�
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-3}]{assets/plane-trigonometry/fig-p0009-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-3}]{assets/plane-trigonometry/fig-p0009-01.png}}
 \caption{图1-3}
 \end{figure}
 
@@ -699,7 +620,7 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-4}]{assets/plane-trigonometry/fig-p0011-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-4}]{assets/plane-trigonometry/fig-p0011-01.png}}
 \caption{图1-4}
 \end{figure}
 
@@ -726,7 +647,7 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·5}]{assets/plane-trigonometry/fig-p0012-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·5}]{assets/plane-trigonometry/fig-p0012-01.png}}
 \caption{图1·5}
 \end{figure}
 
@@ -736,7 +657,7 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1.8}]{assets/plane-trigonometry/fig-p0012-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1.8}]{assets/plane-trigonometry/fig-p0012-02.png}}
 \caption{图1.8}
 \end{figure}
 
@@ -766,7 +687,7 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-7}]{assets/plane-trigonometry/fig-p0013-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-7}]{assets/plane-trigonometry/fig-p0013-01.png}}
 \caption{图1-7}
 \end{figure}
 
@@ -830,7 +751,7 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-8}]{assets/plane-trigonometry/fig-p0014-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-8}]{assets/plane-trigonometry/fig-p0014-01.png}}
 \caption{图1-8}
 \end{figure}
 
@@ -998,7 +919,7 @@ c = \sqrt {a ^ {2} + b ^ {2}} = \sqrt {4 ^ {2} + 5 ^ {2}} = \sqrt {41}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-9}]{assets/plane-trigonometry/fig-p0016-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-9}]{assets/plane-trigonometry/fig-p0016-01.png}}
 \caption{图1-9}
 \end{figure}
 
@@ -1057,7 +978,7 @@ b = \sqrt {c ^ {2} - a ^ {2}} = \sqrt {(2 a) ^ {2} - a ^ {2}} = \sqrt {3 a ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-10}]{assets/plane-trigonometry/fig-p0017-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-10}]{assets/plane-trigonometry/fig-p0017-01.png}}
 \caption{图1-10}
 \end{figure}
 
@@ -1140,7 +1061,7 @@ b = \sqrt {c ^ {2} - a ^ {2}} = \sqrt {(2 a) ^ {2} - a ^ {2}} = \sqrt {3 a ^ {2}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-11}]{assets/plane-trigonometry/fig-p0019-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-11}]{assets/plane-trigonometry/fig-p0019-01.png}}
 \caption{图1-11}
 \end{figure}
 
@@ -1587,7 +1508,7 @@ A
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1-12}]{assets/plane-trigonometry/fig-p0024-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1-12}]{assets/plane-trigonometry/fig-p0024-01.png}}
 \caption{图1-12}
 \end{figure}
 
@@ -2246,7 +2167,7 @@ x = 51 ^{\circ} 24 ^{\prime} + 2 ^{\prime} = 51 ^{\circ} 26 ^{\prime}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图1·13}]{assets/plane-trigonometry/fig-p0033-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图1·13}]{assets/plane-trigonometry/fig-p0033-01.png}}
 \caption{图1·13}
 \end{figure}
 
@@ -2499,7 +2420,7 @@ A
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-1}]{assets/plane-trigonometry/fig-p0037-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-1}]{assets/plane-trigonometry/fig-p0037-01.png}}
 \caption{图2-1}
 \end{figure}
 
@@ -2576,7 +2497,7 @@ A
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-2}]{assets/plane-trigonometry/fig-p0038-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-2}]{assets/plane-trigonometry/fig-p0038-01.png}}
 \caption{图2-2}
 \end{figure}
 
@@ -2593,7 +2514,7 @@ A
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2.8}]{assets/plane-trigonometry/fig-p0038-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2.8}]{assets/plane-trigonometry/fig-p0038-02.png}}
 \caption{图2.8}
 \end{figure}
 
@@ -2673,7 +2594,7 @@ A A ^{\prime} = 2 A C = 2 \times 6.32 = 12.6.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-4}]{assets/plane-trigonometry/fig-p0039-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-4}]{assets/plane-trigonometry/fig-p0039-01.png}}
 \caption{图2-4}
 \end{figure}
 
@@ -2719,7 +2640,7 @@ A A ^{\prime} = 2 A C = 2 \times 6.32 = 12.6.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-5}]{assets/plane-trigonometry/fig-p0040-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-5}]{assets/plane-trigonometry/fig-p0040-01.png}}
 \caption{图2-5}
 \end{figure}
 
@@ -2732,7 +2653,7 @@ A A ^{\prime} = 2 A C = 2 \times 6.32 = 12.6.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-6}]{assets/plane-trigonometry/fig-p0040-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-6}]{assets/plane-trigonometry/fig-p0040-02.png}}
 \caption{图2-6}
 \end{figure}
 
@@ -2754,7 +2675,7 @@ A A ^{\prime} = 2 A C = 2 \times 6.32 = 12.6.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-7}]{assets/plane-trigonometry/fig-p0041-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-7}]{assets/plane-trigonometry/fig-p0041-01.png}}
 \caption{图2-7}
 \end{figure}
 
@@ -2790,7 +2711,7 @@ A A ^{\prime} = 2 A C = 2 \times 6.32 = 12.6.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·8}]{assets/plane-trigonometry/fig-p0041-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·8}]{assets/plane-trigonometry/fig-p0041-02.png}}
 \caption{图2·8}
 \end{figure}
 
@@ -2880,7 +2801,7 @@ A A ^{\prime} = 2 A C = 2 \times 6.32 = 12.6.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-9}]{assets/plane-trigonometry/fig-p0042-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-9}]{assets/plane-trigonometry/fig-p0042-01.png}}
 \caption{图2-9}
 \end{figure}
 
@@ -2906,7 +2827,7 @@ A A ^{\prime} = 2 A C = 2 \times 6.32 = 12.6.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-10}]{assets/plane-trigonometry/fig-p0043-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-10}]{assets/plane-trigonometry/fig-p0043-01.png}}
 \caption{图2-10}
 \end{figure}
 
@@ -2978,7 +2899,7 @@ A A ^{\prime} = 2 A C = 2 \times 6.32 = 12.6.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·11}]{assets/plane-trigonometry/fig-p0044-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·11}]{assets/plane-trigonometry/fig-p0044-01.png}}
 \caption{图2·11}
 \end{figure}
 
@@ -3317,7 +3238,7 @@ x = \frac {78}{\sin 62 ^{\circ} 10 ^{\prime}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-12}]{assets/plane-trigonometry/fig-p0049-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-12}]{assets/plane-trigonometry/fig-p0049-01.png}}
 \caption{图2-12}
 \end{figure}
 
@@ -3347,7 +3268,7 @@ x = \frac {78}{\sin 62 ^{\circ} 10 ^{\prime}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2·13}]{assets/plane-trigonometry/fig-p0050-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2·13}]{assets/plane-trigonometry/fig-p0050-01.png}}
 \caption{图2·13}
 \end{figure}
 
@@ -3402,7 +3323,7 @@ O D = 9.003 \mathrm{cm}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图2-14}]{assets/plane-trigonometry/fig-p0050-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图2-14}]{assets/plane-trigonometry/fig-p0050-02.png}}
 \caption{图2-14}
 \end{figure}
 
@@ -3575,7 +3496,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0053-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0053-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -3623,7 +3544,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-trigonometry/fig-p0054-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-trigonometry/fig-p0054-01.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -3633,7 +3554,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0054-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0054-02.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -3658,7 +3579,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-trigonometry/fig-p0054-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-trigonometry/fig-p0054-03.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -3740,7 +3661,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·1}]{assets/plane-trigonometry/fig-p0056-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·1}]{assets/plane-trigonometry/fig-p0056-01.png}}
 \caption{图3·1}
 \end{figure}
 
@@ -3750,7 +3671,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·2}]{assets/plane-trigonometry/fig-p0056-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·2}]{assets/plane-trigonometry/fig-p0056-02.png}}
 \caption{图3·2}
 \end{figure}
 
@@ -3809,7 +3730,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-3}]{assets/plane-trigonometry/fig-p0058-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-3}]{assets/plane-trigonometry/fig-p0058-01.png}}
 \caption{图3-3}
 \end{figure}
 
@@ -3819,7 +3740,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-4}]{assets/plane-trigonometry/fig-p0058-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-4}]{assets/plane-trigonometry/fig-p0058-02.png}}
 \caption{图3-4}
 \end{figure}
 
@@ -3905,7 +3826,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-5}]{assets/plane-trigonometry/fig-p0059-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-5}]{assets/plane-trigonometry/fig-p0059-01.png}}
 \caption{图3-5}
 \end{figure}
 
@@ -3915,7 +3836,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-6}]{assets/plane-trigonometry/fig-p0059-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-6}]{assets/plane-trigonometry/fig-p0059-02.png}}
 \caption{图3-6}
 \end{figure}
 
@@ -3941,7 +3862,7 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-7}]{assets/plane-trigonometry/fig-p0060-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-7}]{assets/plane-trigonometry/fig-p0060-01.png}}
 \caption{图3-7}
 \end{figure}
 
@@ -3996,7 +3917,7 @@ IV & + & - \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-8}]{assets/plane-trigonometry/fig-p0061-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-8}]{assets/plane-trigonometry/fig-p0061-01.png}}
 \caption{图3-8}
 \end{figure}
 
@@ -4006,7 +3927,7 @@ IV & + & - \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-9}]{assets/plane-trigonometry/fig-p0061-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-9}]{assets/plane-trigonometry/fig-p0061-02.png}}
 \caption{图3-9}
 \end{figure}
 
@@ -4028,7 +3949,7 @@ IV & + & - \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-10}]{assets/plane-trigonometry/fig-p0061-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-10}]{assets/plane-trigonometry/fig-p0061-03.png}}
 \caption{图3-10}
 \end{figure}
 
@@ -4074,7 +3995,7 @@ IV & + & - \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-11}]{assets/plane-trigonometry/fig-p0062-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-11}]{assets/plane-trigonometry/fig-p0062-01.png}}
 \caption{图3-11}
 \end{figure}
 
@@ -4084,7 +4005,7 @@ IV & + & - \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-12}]{assets/plane-trigonometry/fig-p0062-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-12}]{assets/plane-trigonometry/fig-p0062-02.png}}
 \caption{图3-12}
 \end{figure}
 
@@ -4141,7 +4062,7 @@ r = \sqrt {x ^ {2} + y ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·13}]{assets/plane-trigonometry/fig-p0063-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·13}]{assets/plane-trigonometry/fig-p0063-01.png}}
 \caption{图3·13}
 \end{figure}
 
@@ -4160,7 +4081,7 @@ r = \sqrt {x ^ {2} + y ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-14}]{assets/plane-trigonometry/fig-p0063-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-14}]{assets/plane-trigonometry/fig-p0063-02.png}}
 \caption{图3-14}
 \end{figure}
 
@@ -4170,7 +4091,7 @@ r = \sqrt {x ^ {2} + y ^ {2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-15}]{assets/plane-trigonometry/fig-p0063-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-15}]{assets/plane-trigonometry/fig-p0063-03.png}}
 \caption{图3-15}
 \end{figure}
 
@@ -4246,7 +4167,7 @@ P _ {4} (- 5\text{，} 0)\text{；} P _ {5} (0\text{，} - 3)\text{；} P _ {6} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-16}]{assets/plane-trigonometry/fig-p0064-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-16}]{assets/plane-trigonometry/fig-p0064-01.png}}
 \caption{图3-16}
 \end{figure}
 
@@ -4290,7 +4211,7 @@ P _ {4} (- 5\text{，} 0)\text{；} P _ {5} (0\text{，} - 3)\text{；} P _ {6} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·17}]{assets/plane-trigonometry/fig-p0065-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·17}]{assets/plane-trigonometry/fig-p0065-01.png}}
 \caption{图3·17}
 \end{figure}
 
@@ -4303,7 +4224,7 @@ P _ {4} (- 5\text{，} 0)\text{；} P _ {5} (0\text{，} - 3)\text{；} P _ {6} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-18}]{assets/plane-trigonometry/fig-p0065-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-18}]{assets/plane-trigonometry/fig-p0065-02.png}}
 \caption{图3-18}
 \end{figure}
 
@@ -4313,7 +4234,7 @@ P _ {4} (- 5\text{，} 0)\text{；} P _ {5} (0\text{，} - 3)\text{；} P _ {6} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-19}]{assets/plane-trigonometry/fig-p0065-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-19}]{assets/plane-trigonometry/fig-p0065-03.png}}
 \caption{图3-19}
 \end{figure}
 
@@ -4351,7 +4272,7 @@ P _ {4} (- 5\text{，} 0)\text{；} P _ {5} (0\text{，} - 3)\text{；} P _ {6} 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-20}]{assets/plane-trigonometry/fig-p0066-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-20}]{assets/plane-trigonometry/fig-p0066-01.png}}
 \caption{图3-20}
 \end{figure}
 
@@ -4457,7 +4378,7 @@ IV & + & - & + & - & + & - & - & + & - \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-21}]{assets/plane-trigonometry/fig-p0068-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-21}]{assets/plane-trigonometry/fig-p0068-01.png}}
 \caption{图3-21}
 \end{figure}
 
@@ -4503,7 +4424,7 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-22}]{assets/plane-trigonometry/fig-p0069-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-22}]{assets/plane-trigonometry/fig-p0069-01.png}}
 \caption{图3-22}
 \end{figure}
 
@@ -4635,25 +4556,25 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第70页）}]{assets/plane-trigonometry/fig-p0070-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第70页）}]{assets/plane-trigonometry/fig-p0070-01.png}}
 \caption{图示（原PDF第70页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第70页）}]{assets/plane-trigonometry/fig-p0070-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第70页）}]{assets/plane-trigonometry/fig-p0070-02.png}}
 \caption{图示（原PDF第70页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-01.png}}
 \caption{图示（原PDF第71页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-trigonometry/fig-p0071-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-trigonometry/fig-p0071-02.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -4672,25 +4593,25 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-03.png}}
 \caption{图示（原PDF第71页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-04.png}}
 \caption{图示（原PDF第71页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-05.png}}
 \caption{图示（原PDF第71页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-trigonometry/fig-p0071-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-trigonometry/fig-p0071-06.png}}
 \caption{(第10题)}
 \end{figure}
 
@@ -4734,7 +4655,7 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·23}]{assets/plane-trigonometry/fig-p0072-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·23}]{assets/plane-trigonometry/fig-p0072-01.png}}
 \caption{图 3·23}
 \end{figure}
 
@@ -4744,7 +4665,7 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 3·24}]{assets/plane-trigonometry/fig-p0072-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 3·24}]{assets/plane-trigonometry/fig-p0072-02.png}}
 \caption{图 3·24}
 \end{figure}
 
@@ -4788,7 +4709,7 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·25}]{assets/plane-trigonometry/fig-p0073-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·25}]{assets/plane-trigonometry/fig-p0073-01.png}}
 \caption{图3·25}
 \end{figure}
 
@@ -4798,7 +4719,7 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·26}]{assets/plane-trigonometry/fig-p0073-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·26}]{assets/plane-trigonometry/fig-p0073-02.png}}
 \caption{图3·26}
 \end{figure}
 
@@ -5004,7 +4925,7 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·27}]{assets/plane-trigonometry/fig-p0076-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·27}]{assets/plane-trigonometry/fig-p0076-01.png}}
 \caption{图3·27}
 \end{figure}
 
@@ -5088,7 +5009,7 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3.28}]{assets/plane-trigonometry/fig-p0078-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3.28}]{assets/plane-trigonometry/fig-p0078-01.png}}
 \caption{图3.28}
 \end{figure}
 
@@ -5175,7 +5096,7 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·29}]{assets/plane-trigonometry/fig-p0079-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·29}]{assets/plane-trigonometry/fig-p0079-01.png}}
 \caption{图3·29}
 \end{figure}
 
@@ -5350,13 +5271,13 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第81页）}]{assets/plane-trigonometry/fig-p0081-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第81页）}]{assets/plane-trigonometry/fig-p0081-01.png}}
 \caption{图示（原PDF第81页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3·30}]{assets/plane-trigonometry/fig-p0081-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3·30}]{assets/plane-trigonometry/fig-p0081-02.png}}
 \caption{图3·30}
 \end{figure}
 
@@ -5789,25 +5710,25 @@ x = n \cdot 360 ^{\circ} + 329 ^{\circ} 2 ^{\prime}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第87页）}]{assets/plane-trigonometry/fig-p0087-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第87页）}]{assets/plane-trigonometry/fig-p0087-01.png}}
 \caption{图示（原PDF第87页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第87页）}]{assets/plane-trigonometry/fig-p0087-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第87页）}]{assets/plane-trigonometry/fig-p0087-02.png}}
 \caption{图示（原PDF第87页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第87页）}]{assets/plane-trigonometry/fig-p0087-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第87页）}]{assets/plane-trigonometry/fig-p0087-03.png}}
 \caption{图示（原PDF第87页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图3-31}]{assets/plane-trigonometry/fig-p0087-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图3-31}]{assets/plane-trigonometry/fig-p0087-04.png}}
 \caption{图3-31}
 \end{figure}
 
@@ -7034,7 +6955,7 @@ a = 2 R \sin A.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0104-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0104-01.png}}
 \caption{(I)}
 \end{figure}
 
@@ -7044,7 +6965,7 @@ a = 2 R \sin A.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0104-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0104-02.png}}
 \caption{(II)}
 \end{figure}
 
@@ -7054,7 +6975,7 @@ a = 2 R \sin A.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(11)}]{assets/plane-trigonometry/fig-p0104-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(11)}]{assets/plane-trigonometry/fig-p0104-03.png}}
 \caption{(11)}
 \end{figure}
 
@@ -7214,7 +7135,7 @@ c = \frac {b \sin C}{\sin B} = \frac {4 \sin 15 ^{\circ}}{\sin 60 ^{\circ}} = \f
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4·2}]{assets/plane-trigonometry/fig-p0106-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4·2}]{assets/plane-trigonometry/fig-p0106-01.png}}
 \caption{图4·2}
 \end{figure}
 
@@ -7254,7 +7175,7 @@ a = \frac {b \sin A}{\sin B} = \frac {4 \sin 105 ^{\circ}}{\sin 60 ^{\circ}}\tex
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-3}]{assets/plane-trigonometry/fig-p0107-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-3}]{assets/plane-trigonometry/fig-p0107-01.png}}
 \caption{图4-3}
 \end{figure}
 
@@ -7297,7 +7218,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-4}]{assets/plane-trigonometry/fig-p0108-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-4}]{assets/plane-trigonometry/fig-p0108-01.png}}
 \caption{图4-4}
 \end{figure}
 
@@ -7376,7 +7297,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-trigonometry/fig-p0109-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-trigonometry/fig-p0109-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -7386,7 +7307,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-trigonometry/fig-p0109-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-trigonometry/fig-p0109-02.png}}
 \caption{(第9题)}
 \end{figure}
 
@@ -7424,7 +7345,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0110-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0110-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -7434,7 +7355,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0110-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0110-02.png}}
 \caption{(II)}
 \end{figure}
 
@@ -7444,7 +7365,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0110-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0110-03.png}}
 \caption{(II)}
 \end{figure}
 
@@ -7474,7 +7395,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0111-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0111-01.png}}
 \caption{(I)}
 \end{figure}
 
@@ -7484,7 +7405,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0111-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0111-02.png}}
 \caption{(II)}
 \end{figure}
 
@@ -7494,7 +7415,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0111-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0111-03.png}}
 \caption{(1)}
 \end{figure}
 
@@ -7513,7 +7434,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0111-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0111-04.png}}
 \caption{(I)}
 \end{figure}
 
@@ -7523,7 +7444,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0111-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0111-05.png}}
 \caption{(II)}
 \end{figure}
 
@@ -7533,7 +7454,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(Ⅲ)}]{assets/plane-trigonometry/fig-p0111-06.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(Ⅲ)}]{assets/plane-trigonometry/fig-p0111-06.png}}
 \caption{(Ⅲ)}
 \end{figure}
 
@@ -7543,7 +7464,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(IV)}]{assets/plane-trigonometry/fig-p0111-07.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(IV)}]{assets/plane-trigonometry/fig-p0111-07.png}}
 \caption{(IV)}
 \end{figure}
 
@@ -7553,7 +7474,7 @@ a = \frac {b \sin A}{\sin B} = \frac {13.02 \sin 11 ^{\circ} 48 ^{\prime}}{\sin 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(V)}]{assets/plane-trigonometry/fig-p0111-08.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(V)}]{assets/plane-trigonometry/fig-p0111-08.png}}
 \caption{(V)}
 \end{figure}
 
@@ -7649,7 +7570,7 @@ b \sin A = 22 \sin 35 ^{\circ} = 22 \times 0.5736 = 12.62.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-8}]{assets/plane-trigonometry/fig-p0113-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-8}]{assets/plane-trigonometry/fig-p0113-01.png}}
 \caption{图4-8}
 \end{figure}
 
@@ -7692,7 +7613,7 @@ b \sin A = 22 \sin 35 ^{\circ} = 22 \times 0.5736 = 12.62.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-9}]{assets/plane-trigonometry/fig-p0114-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-9}]{assets/plane-trigonometry/fig-p0114-01.png}}
 \caption{图4-9}
 \end{figure}
 
@@ -7836,7 +7757,7 @@ O _ {2} = 180 ^{\circ} - (A + B _ {2})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0116-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0116-01.png}}
 \caption{(I)}
 \end{figure}
 
@@ -7846,7 +7767,7 @@ O _ {2} = 180 ^{\circ} - (A + B _ {2})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0116-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0116-02.png}}
 \caption{(II)}
 \end{figure}
 
@@ -7856,7 +7777,7 @@ O _ {2} = 180 ^{\circ} - (A + B _ {2})
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(III)}]{assets/plane-trigonometry/fig-p0116-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(III)}]{assets/plane-trigonometry/fig-p0116-03.png}}
 \caption{(III)}
 \end{figure}
 
@@ -7907,7 +7828,7 @@ a ^ {2} = C D ^ {2} + B D ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0117-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0117-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -7917,7 +7838,7 @@ a ^ {2} = C D ^ {2} + B D ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0117-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0117-02.png}}
 \caption{(II)}
 \end{figure}
 
@@ -7927,7 +7848,7 @@ a ^ {2} = C D ^ {2} + B D ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(III)}]{assets/plane-trigonometry/fig-p0117-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(III)}]{assets/plane-trigonometry/fig-p0117-03.png}}
 \caption{(III)}
 \end{figure}
 
@@ -8075,7 +7996,7 @@ b ^ {2} = c ^ {2} + a ^ {2} - 2 c a \cos B\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-12}]{assets/plane-trigonometry/fig-p0120-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-12}]{assets/plane-trigonometry/fig-p0120-01.png}}
 \caption{图4-12}
 \end{figure}
 
@@ -8184,7 +8105,7 @@ b ^ {2} = c ^ {2} + a ^ {2} - 2 c a \cos B\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-13}]{assets/plane-trigonometry/fig-p0121-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-13}]{assets/plane-trigonometry/fig-p0121-01.png}}
 \caption{图4-13}
 \end{figure}
 
@@ -8305,7 +8226,7 @@ c ^ {2} = a ^ {2} + b ^ {2} - 2 a b \cos C\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图4-14}]{assets/plane-trigonometry/fig-p0123-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图4-14}]{assets/plane-trigonometry/fig-p0123-01.png}}
 \caption{图4-14}
 \end{figure}
 
@@ -8382,7 +8303,7 @@ B = 26 ^{\circ} 30 ^{\prime}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 4·15}]{assets/plane-trigonometry/fig-p0125-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 4·15}]{assets/plane-trigonometry/fig-p0125-01.png}}
 \caption{图 4·15}
 \end{figure}
 
@@ -8535,7 +8456,7 @@ b = c \cos A + a \cos C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-trigonometry/fig-p0127-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-trigonometry/fig-p0127-01.png}}
 \caption{(第2题)}
 \end{figure}
 
@@ -8561,7 +8482,7 @@ b = c \cos A + a \cos C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0127-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0127-02.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -8581,7 +8502,7 @@ b = c \cos A + a \cos C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-trigonometry/fig-p0128-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-trigonometry/fig-p0128-01.png}}
 \caption{(第5题)}
 \end{figure}
 
@@ -8639,7 +8560,7 @@ b = c \cos A + a \cos C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-trigonometry/fig-p0128-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-trigonometry/fig-p0128-02.png}}
 \caption{(第3题)}
 \end{figure}
 
@@ -8689,7 +8610,7 @@ b = c \cos A + a \cos C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-trigonometry/fig-p0129-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-trigonometry/fig-p0129-01.png}}
 \caption{(第7题)}
 \end{figure}
 
@@ -8794,7 +8715,7 @@ OA 和 OB 分别是角 \(\alpha\) 和 \(\beta\) 的终边。 考察以 OB 为始
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-1}]{assets/plane-trigonometry/fig-p0132-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-1}]{assets/plane-trigonometry/fig-p0132-01.png}}
 \caption{图5-1}
 \end{figure}
 
@@ -8804,7 +8725,7 @@ OA 和 OB 分别是角 \(\alpha\) 和 \(\beta\) 的终边。 考察以 OB 为始
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-2}]{assets/plane-trigonometry/fig-p0132-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-2}]{assets/plane-trigonometry/fig-p0132-02.png}}
 \caption{图5-2}
 \end{figure}
 
@@ -10731,7 +10652,7 @@ k \left(\frac {a}{k} \sin x + \frac {b}{k} \cos x\right)\text{，} \tag {1}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图5-3}]{assets/plane-trigonometry/fig-p0164-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图5-3}]{assets/plane-trigonometry/fig-p0164-01.png}}
 \caption{图5-3}
 \end{figure}
 
@@ -10906,7 +10827,7 @@ k = \sqrt {a ^ {2} + b ^ {2}}\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第167页）}]{assets/plane-trigonometry/fig-p0167-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第167页）}]{assets/plane-trigonometry/fig-p0167-01.png}}
 \caption{图示（原PDF第167页）}
 \end{figure}
 
@@ -11865,7 +11786,7 @@ s - a = 1.635\text{，} s - b = 1.275\text{，} s - c = 0.405.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0183-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0183-01.png}}
 \caption{(I)}
 \end{figure}
 
@@ -11875,7 +11796,7 @@ s - a = 1.635\text{，} s - b = 1.275\text{，} s - c = 0.405.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0183-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(II)}]{assets/plane-trigonometry/fig-p0183-02.png}}
 \caption{(II)}
 \end{figure}
 
@@ -11885,7 +11806,7 @@ s - a = 1.635\text{，} s - b = 1.275\text{，} s - c = 0.405.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(III)}]{assets/plane-trigonometry/fig-p0183-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(III)}]{assets/plane-trigonometry/fig-p0183-03.png}}
 \caption{(III)}
 \end{figure}
 
@@ -12067,7 +11988,7 @@ b ^ {2} \sin 2 C + c ^ {2} \sin 2 B = 2 b \sin A.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0186-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0186-01.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -12145,7 +12066,7 @@ IF. 从平面几何学中知道， ID， IE 和 IF 分别垂直于 BC， CA 和 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图6·2}]{assets/plane-trigonometry/fig-p0188-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图6·2}]{assets/plane-trigonometry/fig-p0188-01.png}}
 \caption{图6·2}
 \end{figure}
 
@@ -12497,7 +12418,7 @@ R = \frac {a}{2 \sin A} = \frac {b}{2 \sin B} = \frac {c}{2 \sin C}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7·1}]{assets/plane-trigonometry/fig-p0194-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7·1}]{assets/plane-trigonometry/fig-p0194-01.png}}
 \caption{图7·1}
 \end{figure}
 
@@ -12522,7 +12443,7 @@ l = \frac {n}{360} \cdot 2 \pi R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-2}]{assets/plane-trigonometry/fig-p0195-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-2}]{assets/plane-trigonometry/fig-p0195-01.png}}
 \caption{图7-2}
 \end{figure}
 
@@ -12632,7 +12553,7 @@ l = \frac {n}{360} \cdot 2 \pi R.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-3}]{assets/plane-trigonometry/fig-p0197-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-3}]{assets/plane-trigonometry/fig-p0197-01.png}}
 \caption{图7-3}
 \end{figure}
 
@@ -12778,31 +12699,31 @@ r 总看作等于正数 1。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第199页）}]{assets/plane-trigonometry/fig-p0199-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第199页）}]{assets/plane-trigonometry/fig-p0199-01.png}}
 \caption{图示（原PDF第199页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第199页）}]{assets/plane-trigonometry/fig-p0199-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第199页）}]{assets/plane-trigonometry/fig-p0199-02.png}}
 \caption{图示（原PDF第199页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第199页）}]{assets/plane-trigonometry/fig-p0199-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第199页）}]{assets/plane-trigonometry/fig-p0199-03.png}}
 \caption{图示（原PDF第199页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第199页）}]{assets/plane-trigonometry/fig-p0199-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第199页）}]{assets/plane-trigonometry/fig-p0199-04.png}}
 \caption{图示（原PDF第199页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-4}]{assets/plane-trigonometry/fig-p0199-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-4}]{assets/plane-trigonometry/fig-p0199-05.png}}
 \caption{图7-4}
 \end{figure}
 
@@ -12846,7 +12767,7 @@ r 总看作等于正数 1。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-5}]{assets/plane-trigonometry/fig-p0200-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-5}]{assets/plane-trigonometry/fig-p0200-01.png}}
 \caption{图7-5}
 \end{figure}
 
@@ -12876,31 +12797,31 @@ r 总看作等于正数 1。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-01.png}}
 \caption{图示（原PDF第201页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-02.png}}
 \caption{图示（原PDF第201页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-03.png}}
 \caption{图示（原PDF第201页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-04.png}}
 \caption{图示（原PDF第201页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第201页）}]{assets/plane-trigonometry/fig-p0201-05.png}}
 \caption{图示（原PDF第201页）}
 \end{figure}
 
@@ -13142,7 +13063,7 @@ x \neq n \pi
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-7}]{assets/plane-trigonometry/fig-p0206-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-7}]{assets/plane-trigonometry/fig-p0206-01.png}}
 \caption{图7-7}
 \end{figure}
 
@@ -13910,7 +13831,7 @@ y & -0.50 & -0.87 & -7.00 & -0.87 & -0.50 & 0 & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-8}]{assets/plane-trigonometry/fig-p0219-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-8}]{assets/plane-trigonometry/fig-p0219-01.png}}
 \caption{图7-8}
 \end{figure}
 
@@ -13927,7 +13848,7 @@ y & -0.50 & -0.87 & -7.00 & -0.87 & -0.50 & 0 & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-9}]{assets/plane-trigonometry/fig-p0220-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-9}]{assets/plane-trigonometry/fig-p0220-01.png}}
 \caption{图7-9}
 \end{figure}
 
@@ -13946,7 +13867,7 @@ y & -0.50 & -0.87 & -7.00 & -0.87 & -0.50 & 0 & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-10}]{assets/plane-trigonometry/fig-p0220-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-10}]{assets/plane-trigonometry/fig-p0220-02.png}}
 \caption{图7-10}
 \end{figure}
 
@@ -14027,7 +13948,7 @@ y & -0.87 & -0.50 & 0 & 0.50 & 0.87 & 1 & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-11}]{assets/plane-trigonometry/fig-p0221-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-11}]{assets/plane-trigonometry/fig-p0221-01.png}}
 \caption{图7-11}
 \end{figure}
 
@@ -14042,7 +13963,7 @@ y & -0.87 & -0.50 & 0 & 0.50 & 0.87 & 1 & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-12}]{assets/plane-trigonometry/fig-p0222-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-12}]{assets/plane-trigonometry/fig-p0222-01.png}}
 \caption{图7-12}
 \end{figure}
 
@@ -14110,7 +14031,7 @@ y & \ldots{} & -3.73 & -1.73 & -0.58 & 0 & 0.58 & 1.73 & 3.73 & --- \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-13}]{assets/plane-trigonometry/fig-p0222-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-13}]{assets/plane-trigonometry/fig-p0222-02.png}}
 \caption{图7-13}
 \end{figure}
 
@@ -14126,7 +14047,7 @@ y & \ldots{} & -3.73 & -1.73 & -0.58 & 0 & 0.58 & 1.73 & 3.73 & --- \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-14}]{assets/plane-trigonometry/fig-p0223-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-14}]{assets/plane-trigonometry/fig-p0223-01.png}}
 \caption{图7-14}
 \end{figure}
 
@@ -14146,7 +14067,7 @@ y & \ldots{} & -3.73 & -1.73 & -0.58 & 0 & 0.58 & 1.73 & 3.73 & --- \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-15}]{assets/plane-trigonometry/fig-p0223-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-15}]{assets/plane-trigonometry/fig-p0223-02.png}}
 \caption{图7-15}
 \end{figure}
 
@@ -14217,7 +14138,7 @@ y & \ldots{} & 3.73 & 1.73 & 0.35 & 0 & 0.75 & -1.73 & -3.73 & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-16}]{assets/plane-trigonometry/fig-p0224-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-16}]{assets/plane-trigonometry/fig-p0224-01.png}}
 \caption{图7-16}
 \end{figure}
 
@@ -14231,7 +14152,7 @@ y & \ldots{} & 3.73 & 1.73 & 0.35 & 0 & 0.75 & -1.73 & -3.73 & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-17}]{assets/plane-trigonometry/fig-p0224-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-17}]{assets/plane-trigonometry/fig-p0224-02.png}}
 \caption{图7-17}
 \end{figure}
 
@@ -14244,7 +14165,7 @@ y & \ldots{} & 3.73 & 1.73 & 0.35 & 0 & 0.75 & -1.73 & -3.73 & \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-18}]{assets/plane-trigonometry/fig-p0225-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-18}]{assets/plane-trigonometry/fig-p0225-01.png}}
 \caption{图7-18}
 \end{figure}
 
@@ -14335,7 +14256,7 @@ y=1-sin x & 1 & 0 & 1 & 3 & 1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-18}]{assets/plane-trigonometry/fig-p0226-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-18}]{assets/plane-trigonometry/fig-p0226-01.png}}
 \caption{图7-18}
 \end{figure}
 
@@ -14399,7 +14320,7 @@ y=\textbar cos x\textbar{} & 1 & 0.7 & 0 & 0.7 & 1 & 0.7 & 0 & 0.7 &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-20}]{assets/plane-trigonometry/fig-p0227-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-20}]{assets/plane-trigonometry/fig-p0227-01.png}}
 \caption{图7-20}
 \end{figure}
 
@@ -14451,7 +14372,7 @@ y & --- & -1 & 0 & 1 & --- \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7·21}]{assets/plane-trigonometry/fig-p0227-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7·21}]{assets/plane-trigonometry/fig-p0227-02.png}}
 \caption{图7·21}
 \end{figure}
 
@@ -14461,7 +14382,7 @@ y & --- & -1 & 0 & 1 & --- \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7·22}]{assets/plane-trigonometry/fig-p0227-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7·22}]{assets/plane-trigonometry/fig-p0227-03.png}}
 \caption{图7·22}
 \end{figure}
 
@@ -14524,7 +14445,7 @@ y & --- & -1 & 0 & 1 & --- \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7·23}]{assets/plane-trigonometry/fig-p0228-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7·23}]{assets/plane-trigonometry/fig-p0228-01.png}}
 \caption{图7·23}
 \end{figure}
 
@@ -14592,7 +14513,7 @@ y = A \sin (\omega t + \varphi)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7·24}]{assets/plane-trigonometry/fig-p0229-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7·24}]{assets/plane-trigonometry/fig-p0229-01.png}}
 \caption{图7·24}
 \end{figure}
 
@@ -14648,7 +14569,7 @@ y = A \sin (\omega t + \varphi)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7·25}]{assets/plane-trigonometry/fig-p0230-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7·25}]{assets/plane-trigonometry/fig-p0230-01.png}}
 \caption{图7·25}
 \end{figure}
 
@@ -14711,7 +14632,7 @@ t & \(\frac{\pi}{6}\) & \(\frac{5\pi}{12}\) & \(\frac{2\pi}{3}\) &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7·26}]{assets/plane-trigonometry/fig-p0231-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7·26}]{assets/plane-trigonometry/fig-p0231-01.png}}
 \caption{图7·26}
 \end{figure}
 
@@ -14761,7 +14682,7 @@ t & \(-\frac{\pi}{3}\) & \(\frac{2\pi}{3}\) & \(\frac{5\pi}{3}\) &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第231页）}]{assets/plane-trigonometry/fig-p0231-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第231页）}]{assets/plane-trigonometry/fig-p0231-02.png}}
 \caption{图示（原PDF第231页）}
 \end{figure}
 
@@ -14826,7 +14747,7 @@ t & \(-\frac{\pi}{3}\) & \(\frac{2\pi}{3}\) & \(\frac{5\pi}{3}\) &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7·28}]{assets/plane-trigonometry/fig-p0232-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7·28}]{assets/plane-trigonometry/fig-p0232-01.png}}
 \caption{图7·28}
 \end{figure}
 
@@ -14893,7 +14814,7 @@ t & \(-\frac{\pi}{3}\) & \(\frac{2\pi}{3}\) & \(\frac{5\pi}{3}\) &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7·29}]{assets/plane-trigonometry/fig-p0233-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7·29}]{assets/plane-trigonometry/fig-p0233-01.png}}
 \caption{图7·29}
 \end{figure}
 
@@ -14987,31 +14908,31 @@ t & \(-\frac{\pi}{3}\) & \(\frac{2\pi}{3}\) & \(\frac{5\pi}{3}\) &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第235页）}]{assets/plane-trigonometry/fig-p0235-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第235页）}]{assets/plane-trigonometry/fig-p0235-01.png}}
 \caption{图示（原PDF第235页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第235页）}]{assets/plane-trigonometry/fig-p0235-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第235页）}]{assets/plane-trigonometry/fig-p0235-02.png}}
 \caption{图示（原PDF第235页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第235页）}]{assets/plane-trigonometry/fig-p0235-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第235页）}]{assets/plane-trigonometry/fig-p0235-03.png}}
 \caption{图示（原PDF第235页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第235页）}]{assets/plane-trigonometry/fig-p0235-04.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第235页）}]{assets/plane-trigonometry/fig-p0235-04.png}}
 \caption{图示（原PDF第235页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图7-80}]{assets/plane-trigonometry/fig-p0235-05.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图7-80}]{assets/plane-trigonometry/fig-p0235-05.png}}
 \caption{图7-80}
 \end{figure}
 
@@ -15259,7 +15180,7 @@ cm 表示 1 安培，横坐标 t 以 1 cm 表示 \(\frac{1}{200}\) 秒）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-1}]{assets/plane-trigonometry/fig-p0239-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-1}]{assets/plane-trigonometry/fig-p0239-01.png}}
 \caption{图8-1}
 \end{figure}
 
@@ -15432,7 +15353,7 @@ cm 表示 1 安培，横坐标 t 以 1 cm 表示 \(\frac{1}{200}\) 秒）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.2}]{assets/plane-trigonometry/fig-p0242-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.2}]{assets/plane-trigonometry/fig-p0242-01.png}}
 \caption{图8.2}
 \end{figure}
 
@@ -15616,7 +15537,7 @@ cm 表示 1 安培，横坐标 t 以 1 cm 表示 \(\frac{1}{200}\) 秒）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8.3}]{assets/plane-trigonometry/fig-p0244-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8.3}]{assets/plane-trigonometry/fig-p0244-01.png}}
 \caption{图8.3}
 \end{figure}
 
@@ -15779,7 +15700,7 @@ cm 表示 1 安培，横坐标 t 以 1 cm 表示 \(\frac{1}{200}\) 秒）。
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-4}]{assets/plane-trigonometry/fig-p0247-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-4}]{assets/plane-trigonometry/fig-p0247-01.png}}
 \caption{图8-4}
 \end{figure}
 
@@ -15962,7 +15883,7 @@ x = \log_ {2} y.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8·5}]{assets/plane-trigonometry/fig-p0250-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8·5}]{assets/plane-trigonometry/fig-p0250-01.png}}
 \caption{图8·5}
 \end{figure}
 
@@ -16012,7 +15933,7 @@ x = + \sqrt {y}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-6}]{assets/plane-trigonometry/fig-p0251-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-6}]{assets/plane-trigonometry/fig-p0251-01.png}}
 \caption{图8-6}
 \end{figure}
 
@@ -16077,7 +15998,7 @@ x = \operatorname{arccos} y\text{，}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 B·7}]{assets/plane-trigonometry/fig-p0252-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 B·7}]{assets/plane-trigonometry/fig-p0252-01.png}}
 \caption{图 B·7}
 \end{figure}
 
@@ -16134,7 +16055,7 @@ x = \operatorname{arctg} y.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-8}]{assets/plane-trigonometry/fig-p0253-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-8}]{assets/plane-trigonometry/fig-p0253-01.png}}
 \caption{图8-8}
 \end{figure}
 
@@ -16200,7 +16121,7 @@ y = \operatorname{arcctg}x.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8·9}]{assets/plane-trigonometry/fig-p0254-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8·9}]{assets/plane-trigonometry/fig-p0254-01.png}}
 \caption{图 8·9}
 \end{figure}
 
@@ -16400,7 +16321,7 @@ x & -1 & -0.87 & 0.50 & 0 & 0.50 & 0.87 & 1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8·10}]{assets/plane-trigonometry/fig-p0256-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8·10}]{assets/plane-trigonometry/fig-p0256-01.png}}
 \caption{图 8·10}
 \end{figure}
 
@@ -16410,7 +16331,7 @@ x & -1 & -0.87 & 0.50 & 0 & 0.50 & 0.87 & 1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 8·11}]{assets/plane-trigonometry/fig-p0256-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 8·11}]{assets/plane-trigonometry/fig-p0256-02.png}}
 \caption{图 8·11}
 \end{figure}
 
@@ -16427,7 +16348,7 @@ x & -1 & -0.87 & 0.50 & 0 & 0.50 & 0.87 & 1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-12}]{assets/plane-trigonometry/fig-p0257-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-12}]{assets/plane-trigonometry/fig-p0257-01.png}}
 \caption{图8-12}
 \end{figure}
 
@@ -16437,7 +16358,7 @@ x & -1 & -0.87 & 0.50 & 0 & 0.50 & 0.87 & 1 \\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图8-13}]{assets/plane-trigonometry/fig-p0257-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图8-13}]{assets/plane-trigonometry/fig-p0257-02.png}}
 \caption{图8-13}
 \end{figure}
 
@@ -17465,7 +17386,7 @@ x _ {2} = \pi - \arcsin a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={0\textless a\textless1}]{assets/plane-trigonometry/fig-p0273-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={0\textless a\textless1}]{assets/plane-trigonometry/fig-p0273-01.png}}
 \caption{0\textless a\textless1}
 \end{figure}
 
@@ -17479,7 +17400,7 @@ x _ {2} = \pi - \arcsin a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={-1\textless a\textless0}]{assets/plane-trigonometry/fig-p0273-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={-1\textless a\textless0}]{assets/plane-trigonometry/fig-p0273-02.png}}
 \caption{-1\textless a\textless0}
 \end{figure}
 
@@ -17516,7 +17437,7 @@ x _ {2} = \pi - \arcsin a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={sin x = 0}]{assets/plane-trigonometry/fig-p0274-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={sin x = 0}]{assets/plane-trigonometry/fig-p0274-01.png}}
 \caption{sin x = 0}
 \end{figure}
 
@@ -17530,7 +17451,7 @@ sin x = 0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={sin x = 1}]{assets/plane-trigonometry/fig-p0274-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={sin x = 1}]{assets/plane-trigonometry/fig-p0274-02.png}}
 \caption{sin x = 1}
 \end{figure}
 
@@ -17544,7 +17465,7 @@ sin x = 1
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={sin x = -1}]{assets/plane-trigonometry/fig-p0274-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={sin x = -1}]{assets/plane-trigonometry/fig-p0274-03.png}}
 \caption{sin x = -1}
 \end{figure}
 
@@ -17616,7 +17537,7 @@ x = (2 n + 1) \pi - \arcsin \left(- \frac {2}{3}\right) = (2 n + 1) \pi + \arcsi
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0275-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-trigonometry/fig-p0275-01.png}}
 \caption{(1)}
 \end{figure}
 
@@ -17626,7 +17547,7 @@ x = (2 n + 1) \pi - \arcsin \left(- \frac {2}{3}\right) = (2 n + 1) \pi + \arcsi
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(11)}]{assets/plane-trigonometry/fig-p0275-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(11)}]{assets/plane-trigonometry/fig-p0275-02.png}}
 \caption{(11)}
 \end{figure}
 
@@ -17656,7 +17577,7 @@ x = (2 n + 1) \pi - \arcsin \left(- \frac {2}{3}\right) = (2 n + 1) \pi + \arcsi
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/plane-trigonometry/fig-p0276-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/plane-trigonometry/fig-p0276-01.png}}
 \caption{图示（原PDF第276页）}
 \end{figure}
 
@@ -17668,7 +17589,7 @@ x = (2 n + 1) \pi - \arcsin \left(- \frac {2}{3}\right) = (2 n + 1) \pi + \arcsi
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/plane-trigonometry/fig-p0276-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/plane-trigonometry/fig-p0276-02.png}}
 \caption{图示（原PDF第276页）}
 \end{figure}
 
@@ -17680,7 +17601,7 @@ x = (2 n + 1) \pi - \arcsin \left(- \frac {2}{3}\right) = (2 n + 1) \pi + \arcsi
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9-4}]{assets/plane-trigonometry/fig-p0276-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9-4}]{assets/plane-trigonometry/fig-p0276-03.png}}
 \caption{图9-4}
 \end{figure}
 
@@ -17743,7 +17664,7 @@ x_2=\pi+\operatorname{arctg}a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={a\textgreater0}]{assets/plane-trigonometry/fig-p0277-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={a\textgreater0}]{assets/plane-trigonometry/fig-p0277-01.png}}
 \caption{a\textgreater0}
 \end{figure}
 
@@ -17757,7 +17678,7 @@ a\textgreater0
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={a\textless0}]{assets/plane-trigonometry/fig-p0277-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={a\textless0}]{assets/plane-trigonometry/fig-p0277-02.png}}
 \caption{a\textless0}
 \end{figure}
 
@@ -17830,7 +17751,7 @@ x _ {2} = \pi + \operatorname{arctg} a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0278-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0278-01.png}}
 \caption{(I)}
 \end{figure}
 
@@ -17840,7 +17761,7 @@ x _ {2} = \pi + \operatorname{arctg} a.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={a\textless0}]{assets/plane-trigonometry/fig-p0278-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={a\textless0}]{assets/plane-trigonometry/fig-p0278-02.png}}
 \caption{a\textless0}
 \end{figure}
 
@@ -18902,7 +18823,7 @@ x _ {1} = 0\text{，} x _ {2\text{，} 3} \approx \pm 1.0\text{，} x _ {4\text{
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图 9·7}]{assets/plane-trigonometry/fig-p0296-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图 9·7}]{assets/plane-trigonometry/fig-p0296-01.png}}
 \caption{图 9·7}
 \end{figure}
 
@@ -18930,7 +18851,7 @@ AOB 的面积 \(=\frac{x}{2\pi}\cdot\pi R^{2}=\frac{1}{2}R^{2}x.\)
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9-8}]{assets/plane-trigonometry/fig-p0296-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9-8}]{assets/plane-trigonometry/fig-p0296-02.png}}
 \caption{图9-8}
 \end{figure}
 
@@ -18967,7 +18888,7 @@ x \approx 2.3.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9.9}]{assets/plane-trigonometry/fig-p0297-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9.9}]{assets/plane-trigonometry/fig-p0297-01.png}}
 \caption{图9.9}
 \end{figure}
 
@@ -18989,7 +18910,7 @@ x \approx 2.3.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={图9-10}]{assets/plane-trigonometry/fig-p0298-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={图9-10}]{assets/plane-trigonometry/fig-p0298-01.png}}
 \caption{图9-10}
 \end{figure}
 
@@ -19258,7 +19179,7 @@ x \approx 2.3.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-trigonometry/fig-p0302-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-trigonometry/fig-p0302-01.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -19382,7 +19303,7 @@ x = \frac {a \sin \alpha \sin \beta}{\sin (\beta - \alpha)}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-trigonometry/fig-p0303-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-trigonometry/fig-p0303-01.png}}
 \caption{(第20题)}
 \end{figure}
 
@@ -19403,7 +19324,7 @@ x = \frac {a \sin \alpha \sin \beta}{\sin (\beta - \alpha)}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-trigonometry/fig-p0304-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-trigonometry/fig-p0304-01.png}}
 \caption{(第22题)}
 \end{figure}
 
@@ -19413,7 +19334,7 @@ x = \frac {a \sin \alpha \sin \beta}{\sin (\beta - \alpha)}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第23题)}]{assets/plane-trigonometry/fig-p0304-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第23题)}]{assets/plane-trigonometry/fig-p0304-02.png}}
 \caption{(第23题)}
 \end{figure}
 
@@ -19470,7 +19391,7 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第 28 题)}]{assets/plane-trigonometry/fig-p0304-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第 28 题)}]{assets/plane-trigonometry/fig-p0304-03.png}}
 \caption{(第 28 题)}
 \end{figure}
 
@@ -19790,7 +19711,7 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-trigonometry/fig-p0308-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-trigonometry/fig-p0308-01.png}}
 \caption{(第1题)}
 \end{figure}
 
@@ -19815,7 +19736,7 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0308-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0308-02.png}}
 \caption{(第4题)}
 \end{figure}
 
@@ -19928,7 +19849,7 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-trigonometry/fig-p0310-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-trigonometry/fig-p0310-01.png}}
 \caption{(第18题)}
 \end{figure}
 
@@ -19938,7 +19859,7 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-trigonometry/fig-p0310-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-trigonometry/fig-p0310-02.png}}
 \caption{(第19题)}
 \end{figure}
 
@@ -19984,7 +19905,7 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第23题)}]{assets/plane-trigonometry/fig-p0310-03.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第23题)}]{assets/plane-trigonometry/fig-p0310-03.png}}
 \caption{(第23题)}
 \end{figure}
 
@@ -20010,7 +19931,7 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第25题)}]{assets/plane-trigonometry/fig-p0311-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第25题)}]{assets/plane-trigonometry/fig-p0311-01.png}}
 \caption{(第25题)}
 \end{figure}
 
@@ -20037,7 +19958,7 @@ a ^ {2} - 2 a b \cos (60 ^{\circ} + C) = c ^ {2} - 2 b c \cos (60 ^{\circ} + A)\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第28题)}]{assets/plane-trigonometry/fig-p0311-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第28题)}]{assets/plane-trigonometry/fig-p0311-02.png}}
 \caption{(第28题)}
 \end{figure}
 
@@ -20211,7 +20132,7 @@ A D + B D = B C.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第44题)}]{assets/plane-trigonometry/fig-p0313-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第44题)}]{assets/plane-trigonometry/fig-p0313-01.png}}
 \caption{(第44题)}
 \end{figure}
 
@@ -20301,7 +20222,7 @@ A D = \frac {2 r \cos \frac {B}{2} \cos \frac {C}{2}}{\sin \frac {A}{2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第 52 题)}]{assets/plane-trigonometry/fig-p0314-01.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第 52 题)}]{assets/plane-trigonometry/fig-p0314-01.png}}
 \caption{(第 52 题)}
 \end{figure}
 
@@ -20338,7 +20259,7 @@ A D = \frac {2 r \cos \frac {B}{2} \cos \frac {C}{2}}{\sin \frac {A}{2}}.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={(第56题)}]{assets/plane-trigonometry/fig-p0314-02.png}}
+\fitfig{\includegraphics[keepaspectratio,alt={(第56题)}]{assets/plane-trigonometry/fig-p0314-02.png}}
 \caption{(第56题)}
 \end{figure}
 
@@ -22560,4 +22481,3 @@ B _ {3} = 113 ^{\circ} 51 ^{\prime}\text{，} C _ {2} = 10 ^{\circ} 45 ^{\prime}
   \(\left[n\pi + \frac{\pi}{6}, n\pi + \frac{2\pi}{3}\right]\)；9.
   \(n \cdot 180^{\circ} + 63^{\circ}26'\)，\(n \cdot 180^{\circ} + 56^{\circ}18'\)。
 \end{enumerate}
-\end{document}
