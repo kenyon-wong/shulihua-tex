@@ -310,7 +310,45 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·4 金属的熔点}]{assets/chemistry-3/fig-p0010-01.png}}
+\fitfig{%
+% fig-alt: 纵轴熔点（°C）−500–3500；十六根竖线依次为 W、Pt、Fe、Ni、Cu、Au、Ag、Ca、Al、Mg、Zn、Pb、Sn、Na、K、Hg（汞在零下）
+\begin{tikzpicture}[line cap=round,x=0.58cm,y=0.00200cm]
+  \draw (0,-640) -- (0,3680);
+  \draw (0,0) -- (16.55,0);
+  \foreach \v in {-500,0,500,1000,1500,2000,2500,3000,3500}{
+    \draw (-0.14,\v) -- (0,\v);
+    \node[anchor=east,inner sep=1pt,font=\scriptsize] at (-0.18,\v) {\v};
+  }
+  \node[anchor=south,rotate=90,inner sep=1pt] at (-2.05,1450) {熔点（°C）};
+  \foreach \i/\lab/\val in {1/W/3370, 2/Pt/1774, 3/Fe/1535, 4/Ni/1455, 7/Ag/961, 8/Ca/848, 11/Zn/419, 12/Pb/328, 13/Sn/232}{
+    \draw (\i,0) -- (\i,\val);
+    \node[anchor=south west,inner sep=0.3pt,font=\scriptsize] at (\i,\val) {\val};
+    \node[anchor=north,inner sep=0.5pt,font=\scriptsize] at (\i,0) {\lab};
+  }
+  \draw (14,0) -- (14,98);
+  \node[anchor=south east,inner sep=0.3pt,font=\scriptsize] at (14,98) {98};
+  \node[anchor=north,inner sep=0.5pt,font=\scriptsize] at (14,0) {Na};
+  \draw (15,0) -- (15,62.3);
+  \node[anchor=south,inner sep=0.3pt,font=\scriptsize] at (15,78) {62.3};
+  \node[anchor=north,inner sep=0.5pt,font=\scriptsize] at (15,0) {K};
+  % 熔点接近的四对错开标注，避免叠字
+  \draw (5,0) -- (5,1083);
+  \node[anchor=south east,inner sep=0.3pt,font=\scriptsize] at (5,1083) {1083};
+  \node[anchor=north,inner sep=0.5pt,font=\scriptsize] at (5,0) {Cu};
+  \draw (6,0) -- (6,1063);
+  \node[anchor=south west,inner sep=0.3pt,font=\scriptsize] at (6,1063) {1063};
+  \node[anchor=north,inner sep=0.5pt,font=\scriptsize] at (6,0) {Au};
+  \draw (9,0) -- (9,660);
+  \node[anchor=south east,inner sep=0.3pt,font=\scriptsize] at (9,660) {660};
+  \node[anchor=north,inner sep=0.5pt,font=\scriptsize] at (9,0) {Al};
+  \draw (10,0) -- (10,651);
+  \node[anchor=south west,inner sep=0.3pt,font=\scriptsize] at (10,651) {651};
+  \node[anchor=north,inner sep=0.5pt,font=\scriptsize] at (10,0) {Mg};
+  \draw (16.35,0) -- (16.35,-39);
+  \node[anchor=north,inner sep=0.4pt,font=\scriptsize] at (16.35,-48) {$-39$};
+  \node[anchor=south west,inner sep=0.4pt,font=\scriptsize] at (16.42,8) {Hg};
+\end{tikzpicture}%
+}
 \caption{图1·4 金属的熔点}
 \end{figure}
 
@@ -2050,7 +2088,71 @@ IV
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·6 用氨碱法制造纯碱的流程简图}]{assets/chemistry-3/fig-p0059-01.png}}
+\fitfig{%
+% fig-alt: 氨碱法流程：食盐溶液经泵入高位槽、吸氨塔，氨化盐水进碳酸塔，碳酸氢钠晶体母液经过滤机入转炉得纯碱，母液排出，转炉二氧化碳回碳酸塔
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=0.92cm]
+  % 高位槽、吸氨塔、碳酸塔
+  \draw (0.95,6.05) rectangle (1.75,6.75);
+  \node[font=\scriptsize,anchor=west] at (1.82,6.40) {高位槽};
+  \draw (2.55,1.70) rectangle (3.22,5.20);
+  \foreach \y in {2.15,2.60,3.05,3.50,3.95,4.40,4.80}{
+    \draw (2.55,\y) -- (3.22,\y);
+  }
+  \node[font=\scriptsize,anchor=south] at (2.88,5.24) {吸氨塔};
+  \draw (4.35,1.70) rectangle (5.02,6.10);
+  \draw (4.35,6.10) -- (4.50,6.42) -- (4.87,6.42) -- (5.02,6.10);
+  \foreach \y in {2.15,2.60,3.05,3.50,3.95,4.40,4.85,5.30,5.70}{
+    \draw (4.35,\y) -- (5.02,\y);
+  }
+  \node[font=\scriptsize,anchor=west] at (5.10,6.22) {碳酸塔};
+  % 食盐溶液经泵入高位槽，再入吸氨塔顶
+  \node[font=\scriptsize,anchor=east] at (0.42,1.42) {食盐溶液};
+  \draw[->] (0.46,1.28) -- (1.02,1.28);
+  \draw (1.30,1.28) circle[radius=0.26];
+  \node[font=\scriptsize,anchor=west] at (1.60,1.28) {泵};
+  \draw (1.30,1.54) -- (1.30,6.05);
+  \draw (1.75,6.40) -- (2.88,6.40);
+  \draw[->] (2.88,6.40) -- (2.88,5.20);
+  % 氨入吸氨塔底；二氧化碳入碳酸塔底
+  \draw[->] (1.05,0.88) -- (2.55,0.88);
+  \draw (2.55,0.88) -- (2.72,0.88) -- (2.72,1.70);
+  \node[font=\scriptsize,anchor=east] at (1.02,0.88) {$\mathrm{NH}_{3}$};
+  \draw (2.95,0.50) -- (4.62,0.50);
+  \draw[->] (4.62,0.50) -- (4.62,1.70);
+  \node[font=\scriptsize,anchor=south] at (3.40,0.52) {$\mathrm{CO}_{2}$};
+  % 氨化盐水入碳酸塔顶
+  \draw (3.22,4.85) -- (3.70,4.85) -- (3.70,5.95) -- (4.20,5.95);
+  \draw[->] (4.18,5.95) -- (4.35,5.95);
+  \node[font=\scriptsize,align=center] at (3.48,5.05) {氨\\化\\盐\\水};
+  % 晶体母液入过滤机
+  \draw (5.02,1.95) -- (5.85,1.95);
+  \draw[->] (5.85,1.95) -- (5.85,2.15);
+  \node[font=\scriptsize,anchor=north,align=center] at (5.40,1.88) {$\mathrm{NaHCO}_{3}$\\晶体母液};
+  % 过滤机
+  \draw (5.85,2.12) -- (5.85,3.05) arc[start angle=180,end angle=0,radius=0.40] -- (6.65,2.12) -- cycle;
+  \draw (6.25,2.58) circle[radius=0.17];
+  \node[font=\scriptsize,anchor=east] at (5.72,2.70) {过滤机};
+  \draw[->] (6.25,2.12) -- (6.25,1.35);
+  \node[font=\scriptsize,anchor=north,align=center] at (6.25,1.28) {母液\\（$\mathrm{NaCl}$，$\mathrm{NH}_{4}\mathrm{Cl}$）};
+  % 转炉
+  \draw[->] (6.65,2.55) -- (7.45,2.55);
+  \node[font=\scriptsize,anchor=south] at (7.20,2.72) {$\mathrm{NaHCO}_{3}$};
+  \draw (7.45,2.15) rectangle (10.15,2.98);
+  \foreach \x in {8.05,8.65,9.25}{
+    \draw (\x,2.15) -- (\x,2.98);
+  }
+  \node[font=\scriptsize,anchor=south] at (8.80,3.00) {转炉};
+  % 转炉二氧化碳回碳酸塔
+  \draw (8.80,2.98) -- (8.80,4.15) -- (5.28,4.15);
+  \draw[->] (5.28,4.15) -- (5.02,3.55);
+  \node[font=\scriptsize,anchor=south] at (6.90,4.18) {$\mathrm{CO}_{2}$};
+  % 纯碱
+  \draw (10.15,2.48) -- (11.05,2.48);
+  \draw[->] (11.05,2.48) -- (11.05,1.82);
+  \draw (10.45,1.15) -- (11.65,1.15) -- (11.65,1.78) -- (10.45,1.78) -- cycle;
+  \node[font=\scriptsize,anchor=south] at (11.05,1.80) {纯碱};
+\end{tikzpicture}%
+}
 \caption{图 2·6 用氨碱法制造纯碱的流程简图}
 \end{figure}
 
@@ -2181,7 +2283,38 @@ IV
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第63页图示}]{assets/chemistry-3/fig-p0063-01.png}}
+\fitfig{%
+% fig-alt: 钠及其化合物关系框：熔融电解得钠并放出氯，溶液电解沿框顶至氢氧化钠，钠常温成氧化钠、燃烧成过氧化钠，皆遇水成氢氧化钠；氨碱法得碳酸氢钠，煅烧成碳酸钠，苛化成氢氧化钠；氢氧化钠遇硫酸铜得氢氧化铜沉淀
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=0.90cm]
+  \draw (0.20,0.12) rectangle (9.70,4.40);
+  \node[fill=white,inner sep=1.5pt,font=\small] at (4.90,4.40) {溶液电解};
+  \node[font=\small] (nacl) at (1.35,3.05) {$\mathrm{NaCl}$};
+  \node (na) at (3.20,3.05) {$\mathrm{Na}$};
+  \node (nao) at (5.45,3.05) {$\mathrm{Na}_{2}\mathrm{O}$};
+  \node (naoh) at (7.85,3.05) {$\mathrm{NaOH}$};
+  \draw[->] (nacl) -- node[above,font=\scriptsize] {熔融电解} (na);
+  \node[font=\scriptsize] at (2.25,2.68) {$\mathrm{Cl}_{2}$};
+  \draw[->] (na) -- node[above,font=\scriptsize] {$\mathrm{O}_{2}$ 常温} (nao);
+  \draw[->] (nao) -- node[above,font=\scriptsize] {$\mathrm{H}_{2}\mathrm{O}$} (naoh);
+  \draw (nacl.north) -- (1.35,4.12);
+  \draw[->] (9.70,4.05) -- (9.70,3.42) -- (naoh.north);
+  \node[font=\scriptsize] (hcl) at (10.35,3.78) {$\mathrm{HCl}$};
+  \draw[->] (hcl.west) -- (9.76,3.78);
+  \node (nao2) at (4.10,1.72) {$\mathrm{Na}_{2}\mathrm{O}_{2}$};
+  \draw[->] (na.south) -- node[left,font=\scriptsize,align=center] {$\mathrm{O}_{2}$\\燃烧} (nao2.north);
+  \draw[->] (nao2.east) -- node[above,font=\scriptsize,sloped] {$\mathrm{H}_{2}\mathrm{O}$} (naoh.south west);
+  \node[font=\scriptsize,align=center] at (0.48,1.78) {氨\\碱\\法};
+  \node[font=\scriptsize,align=right] at (1.02,1.95) {$\mathrm{NH}_{3}$\\$\mathrm{H}_{2}\mathrm{O}$\\$\mathrm{CO}_{2}$};
+  \node (nahco) at (1.35,0.45) {$\mathrm{NaHCO}_{3}$};
+  \draw[->] (nacl.south) -- (nahco.north);
+  \node (na2co) at (5.85,0.45) {$\mathrm{Na}_{2}\mathrm{CO}_{3}$};
+  \draw[->] (nahco) -- node[above,font=\scriptsize] {煅烧} (na2co);
+  \node[font=\scriptsize] at (7.15,0.88) {$\mathrm{CO}_{2}$};
+  \draw[->] (na2co.north) -- node[right,font=\scriptsize,align=center] {苛化法\\$\mathrm{Ca(OH)}_{2}$} (naoh.south);
+  \node[font=\scriptsize,anchor=west] (cu) at (10.05,2.05) {$\mathrm{Cu(OH)}_{2}\downarrow$};
+  \draw[->] (naoh.east) -- node[below,font=\scriptsize] {$\mathrm{CuSO}_{4}$} (cu.west);
+\end{tikzpicture}%
+}
 \caption{原PDF第63页图示}
 \end{figure}
 
@@ -3258,7 +3391,22 @@ II 类主族）的一个元素是镁，后面（第 IV
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第87页图示}]{assets/chemistry-3/fig-p0087-02.png}}
+\fitfig{%
+% fig-alt: 铝片截面：右侧标注铝片、铝汞合金，左缘短线为氧化铝
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw (0,0) rectangle (1.15,3.40);
+  \draw (0.16,0) -- (0.16,3.40);
+  \foreach \y in {0.12,0.32,...,3.28}{
+    \draw (-0.26,\y) -- (0,\y);
+  }
+  \draw (0.72,2.85) -- (1.65,2.85);
+  \node[anchor=west,font=\small] at (1.70,2.85) {铝片};
+  \draw (0.16,1.80) -- (1.65,1.80);
+  \node[anchor=west,font=\small] at (1.70,1.80) {铝汞合金};
+  \draw (-0.26,0.55) -- (-0.48,0.55) -- (-0.48,-0.38) -- (1.65,-0.38);
+  \node[anchor=west,font=\small] at (1.70,-0.38) {氧化铝};
+\end{tikzpicture}%
+}
 \caption{原PDF第87页图示}
 \end{figure}
 
@@ -3882,7 +4030,21 @@ x=1 或 3）、冰晶石
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第102页图示}]{assets/chemistry-3/fig-p0102-01.png}}
+\fitfig{%
+% fig-alt: 铁原子结构简图：核内+26，自内而外四层电子数 2、8、14、2
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw (0,0) circle[radius=0.46];
+  \node at (0,0) {$+26$};
+  \draw (68:0.82) arc (68:-68:0.82);
+  \node[font=\small] at (1.05,0) {2};
+  \draw (70:1.22) arc (70:-70:1.22);
+  \node[font=\small] at (1.52,0) {8};
+  \draw (72:1.68) arc (72:-72:1.68);
+  \node[font=\small] at (2.05,0) {14};
+  \draw (74:2.18) arc (74:-74:2.18);
+  \node[font=\small] at (2.62,0) {2};
+\end{tikzpicture}%
+}
 \caption{原PDF第102页图示}
 \end{figure}
 
@@ -4898,7 +5060,21 @@ V _ {1} = \frac {273 \times 750 \times 1}{293 \times 760} = 0.9196 (\text {\text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6·1 标准状况下,气体分子间平均距离示意图}]{assets/chemistry-3/fig-p0131-01.png}}
+\fitfig{%
+% fig-alt: 两团气体分子黑点，其间双箭头标注距离比分子直径约大15～20倍
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill (0,0) circle[radius=0.09];
+  \fill (0.24,0.14) circle[radius=0.09];
+  \fill (0.20,-0.16) circle[radius=0.09];
+  \node[anchor=north,font=\small] at (0.14,-0.32) {气体分子};
+  \fill (3.55,1.55) circle[radius=0.09];
+  \fill (3.78,1.70) circle[radius=0.09];
+  \fill (3.62,1.34) circle[radius=0.09];
+  \node[anchor=west,font=\small] at (3.92,1.22) {气体分子};
+  \draw[<->] (0.48,0.28) -- (3.28,1.38);
+  \node[rotate=22,font=\small,anchor=south] at (1.85,0.92) {距离比分子直径约大15～20倍};
+\end{tikzpicture}%
+}
 \caption{图6·1 标准状况下,气体分子间平均距离示意图}
 \end{figure}
 
