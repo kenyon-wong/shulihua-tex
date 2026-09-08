@@ -1939,7 +1939,36 @@ a 是平面 M 外的一直线，b 是平面 M 内的一直线， \(a \parallel b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-30}]{assets/solid-geometry/fig-p0026-02.png}}
+\fitfig{%
+% fig-alt: 图1-30：上为斜平行四边形平面N，下为平面M，前左标M、左上标N；粗线a在N上部，右端弯成实弧落到交线右端点S；b为虚线，左端经实折接交线左角，右端伸出N右缘到M后右尖；虚线只用于b，其余实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Ntl) at (0.46,2.58);
+  \coordinate (Ntr) at (3.52,2.58);
+  \coordinate (Nbr) at (3.78,1.28);
+  \coordinate (Nbl) at (0.72,1.28);
+  \coordinate (Mfl) at (0.06,0.12);
+  \coordinate (Mfr) at (3.22,0.08);
+  \coordinate (Mtip) at (4.42,1.72);
+  \coordinate (S) at (3.42,1.28);
+  \coordinate (step) at (1.02,1.58);
+  \coordinate (bL) at (1.42,1.78);
+  \coordinate (aL) at (0.98,2.02);
+  \coordinate (aR) at (2.28,2.00);
+  \draw[line width=0.7pt] (Ntl) -- (Ntr) -- (Nbr);
+  \draw[line width=0.7pt] (Ntl) -- (Nbl) -- (Mfl) -- (Mfr) -- (Nbr);
+  \draw[line width=0.7pt] (Nbl) -- (Nbr);
+  \draw[line width=0.7pt] (Nbr) -- (Mtip);
+  \draw[line width=0.7pt] (Nbl) -- (step) -- (bL);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (bL) -- (Mtip);
+  \draw[line width=1.2pt] (aL) -- (aR);
+  \draw[line width=1.2pt] (aR) .. controls (2.78,1.98) and (3.18,1.78) .. (S);
+  \node[below right=2pt] at (Ntl) {$N$};
+  \node[above=2pt] at (1.52,2.02) {$a$};
+  \node[below=2pt] at (1.95,1.78) {$b$};
+  \node[above right=2pt] at (Mfl) {$M$};
+  \node[below=2pt] at (S) {$S$};
+\end{tikzpicture}%
+}
 \caption{图1-30}
 \end{figure}
 
@@ -1973,7 +2002,43 @@ E、F、G 的平面 M 和 AC 平行，也和 BD 平行。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-31}]{assets/solid-geometry/fig-p0027-01.png}}
+\fitfig{%
+% fig-alt: 图1-31：平面M为平行四边形，前左标M；B、D在平面上方，BD实线；A、C在平面下方，AC实线；AB过E、BC过F、CD过G，EFG在平面上为实线；E、G下方紧贴平面的短段为虚线，以下到A、C为实线；BF及FC为实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Ml) at (0.10,1.72);
+  \coordinate (Mr) at (4.15,1.88);
+  \coordinate (Mfr) at (3.55,1.05);
+  \coordinate (Mfl) at (0.00,0.92);
+  \coordinate (B) at (1.55,2.72);
+  \coordinate (D) at (3.22,2.95);
+  \coordinate (E) at (1.18,1.58);
+  \coordinate (F) at (1.92,1.42);
+  \coordinate (G) at (2.78,1.52);
+  \coordinate (A) at (0.55,0.18);
+  \coordinate (C) at (2.05,0.00);
+  \coordinate (Ed) at (1.05,1.22);
+  \coordinate (Gd) at (2.55,1.12);
+  \draw[line width=0.7pt] (Ml) -- (Mr) -- (Mfr) -- (Mfl) -- cycle;
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (B) -- (E);
+  \draw[line width=0.75pt] (B) -- (F) -- (C);
+  \draw[line width=0.75pt] (D) -- (G);
+  \draw[line width=0.65pt,dash pattern=on 2.4pt off 1.5pt] (E) -- (Ed);
+  \draw[line width=0.75pt] (Ed) -- (A);
+  \draw[line width=0.65pt,dash pattern=on 2.4pt off 1.5pt] (G) -- (Gd);
+  \draw[line width=0.75pt] (Gd) -- (C);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.7pt] (E) .. controls (1.55,1.36) and (2.20,1.34) .. (G);
+  \node[above=1pt] at (B) {$B$};
+  \node[above=1pt] at (D) {$D$};
+  \node[left=2pt] at (E) {$E$};
+  \node[left=2pt] at (1.62,1.18) {$F$};
+  \node[right=2pt] at (G) {$G$};
+  \node[below left=0pt] at (A) {$A$};
+  \node[below=1pt] at (C) {$C$};
+  \node[right=2pt] at (Mfl) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-31}
 \end{figure}
 
@@ -2012,7 +2077,44 @@ E、F、G 的平面 M 和 AC 平行，也和 BD 平行。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/solid-geometry/fig-p0027-02.png}}
+\fitfig{%
+% fig-alt: 第6题：空间四边形ABCD，A在上、B左、C右，AD竖直穿到近底边的D；E、F、G、H为四边中点，EFGH斜线填充；AB、BC、CA、AD、BD、CD及EFGH均为实线，无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (2.05,3.35);
+  \coordinate (B) at (0.12,0.38);
+  \coordinate (C) at (3.92,0.42);
+  \coordinate (D) at (1.98,0.72);
+  \coordinate (E) at (1.08,1.86);
+  \coordinate (F) at (2.02,0.40);
+  \coordinate (G) at (2.95,0.57);
+  \coordinate (H) at (2.02,2.04);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (D) -- (C);
+  \draw[line width=0.7pt] (E) -- (F) -- (G) -- (H) -- cycle;
+  \begin{scope}
+    \clip (E) -- (F) -- (G) -- (H) -- cycle;
+    \draw[line width=0.35pt] (0.55,2.55) -- (1.35,0.15);
+    \draw[line width=0.35pt] (0.85,2.55) -- (1.65,0.15);
+    \draw[line width=0.35pt] (1.15,2.55) -- (1.95,0.15);
+    \draw[line width=0.35pt] (1.45,2.55) -- (2.25,0.15);
+    \draw[line width=0.35pt] (1.75,2.55) -- (2.55,0.15);
+    \draw[line width=0.35pt] (2.05,2.55) -- (2.85,0.15);
+    \draw[line width=0.35pt] (2.35,2.55) -- (3.15,0.15);
+    \draw[line width=0.35pt] (2.65,2.55) -- (3.45,0.15);
+  \end{scope}
+  \draw[line width=0.7pt] (E) -- (F) -- (G) -- (H) -- cycle;
+  \node[above=1pt] at (A) {$A$};
+  \node[left=1pt] at (B) {$B$};
+  \node[right=1pt] at (C) {$C$};
+  \node[left=2pt] at (1.72,0.62) {$D$};
+  \node[left=1pt] at (E) {$E$};
+  \node[below=2pt] at (F) {$F$};
+  \node[right=2pt] at (G) {$G$};
+  \node[above right=1pt] at (H) {$H$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -2040,7 +2142,32 @@ E、F、G 的平面 M 和 AC 平行，也和 BD 平行。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-32}]{assets/solid-geometry/fig-p0028-01.png}}
+\fitfig{%
+% fig-alt: 图1-32：直立矩形平面N与水平平行四边形M相交；N在左上、M在前左；粗线a在N内与底边平行；b为虚线，左端经实折并有短虚线接到N底左角，右端伸出N右缘到M后右尖；其余轮廓实线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Ntl) at (0.62,2.62);
+  \coordinate (Ntr) at (3.48,2.62);
+  \coordinate (Nbr) at (3.48,1.22);
+  \coordinate (Nbl) at (0.62,1.22);
+  \coordinate (Mfl) at (0.04,0.10);
+  \coordinate (Mfr) at (3.05,0.06);
+  \coordinate (Mtip) at (4.22,1.68);
+  \coordinate (step) at (1.08,1.52);
+  \coordinate (bL) at (1.42,1.72);
+  \coordinate (hook) at (0.82,1.38);
+  \draw[line width=0.7pt] (Ntl) -- (Ntr) -- (Nbr) -- (Nbl) -- cycle;
+  \draw[line width=0.7pt] (Nbl) -- (Mfl) -- (Mfr) -- (Nbr);
+  \draw[line width=0.7pt] (Nbr) -- (Mtip);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.5pt] (Nbl) -- (hook);
+  \draw[line width=0.7pt] (hook) -- (step) -- (bL);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (bL) -- (Mtip);
+  \draw[line width=1.25pt] (1.22,2.12) -- (2.72,2.12);
+  \node[below right=1pt] at (Ntl) {$N$};
+  \node[above=1pt] at (1.97,2.12) {$a$};
+  \node[below=1pt] at (2.15,1.72) {$b$};
+  \node[above right=1pt] at (Mfl) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-32}
 \end{figure}
 
@@ -2067,7 +2194,31 @@ E、F、G 的平面 M 和 AC 平行，也和 BD 平行。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·33}]{assets/solid-geometry/fig-p0028-02.png}}
+\fitfig{%
+% fig-alt: 图1·33：水平平面M，前左标M；直立平行四边形N立于M上，右上标N；N内粗线a斜向右上并标a；底边为粗线，左端P、右端附近标Q1；均为实线，无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.08,0.28);
+  \coordinate (Mfr) at (3.35,0.18);
+  \coordinate (Mbr) at (4.15,1.15);
+  \coordinate (Mbl) at (0.88,1.22);
+  \coordinate (P) at (1.38,0.68);
+  \coordinate (Qr) at (2.78,1.05);
+  \coordinate (Ntl) at (1.38,2.72);
+  \coordinate (Ntr) at (2.78,2.98);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.7pt] (Mbl) -- (1.50,1.16);
+  \draw[line width=0.7pt] (1.82,1.20) -- (Mbr);
+  \draw[line width=0.7pt] (Ntl) -- (Ntr) -- (Qr);
+  \draw[line width=0.7pt] (Ntl) -- (P);
+  \draw[line width=1.15pt] (P) -- (Qr);
+  \draw[line width=1.15pt] (1.55,1.95) -- (2.42,2.16);
+  \node[above right=2pt] at (Mfl) {$M$};
+  \node[below left=1pt] at (Ntr) {$N$};
+  \node[above=2pt] at (1.85,2.05) {$a$};
+  \node[left=1pt] at (P) {$P$};
+  \node[below right=0pt] at (Qr) {$Q_{1}$};
+\end{tikzpicture}%
+}
 \caption{图1·33}
 \end{figure}
 
@@ -2092,19 +2243,77 @@ E、F、G 的平面 M 和 AC 平行，也和 BD 平行。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第29页）}]{assets/solid-geometry/fig-p0029-02.png}}
+\fitfig{%
+% fig-alt: 图1-34（1）：斜平面穿过水平平行四边形；交线为虚线；斜面上与水平面内各有一条与交线平行的粗实线；斜面左下略伸出水平面；下方标(1)；不画扫描中误入的正文笔划
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Vtl) at (0.72,2.15);
+  \coordinate (Vtr) at (3.15,2.85);
+  \coordinate (Vbr) at (3.28,1.35);
+  \coordinate (Vbl) at (0.55,1.05);
+  \coordinate (Hfl) at (0.08,0.42);
+  \coordinate (Hfr) at (2.55,0.28);
+  \coordinate (Hbr) at (3.55,1.22);
+  \coordinate (Hbl) at (0.85,1.28);
+  \draw[line width=0.7pt] (Vtl) -- (Vtr) -- (Vbr);
+  \draw[line width=0.7pt] (Vtl) -- (Vbl) -- (0.42,0.78);
+  \draw[line width=0.7pt] (Hfl) -- (Hfr) -- (Hbr);
+  \draw[line width=0.7pt] (Hfl) -- (Hbl);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.5pt] (Vbl) -- (Vbr);
+  \draw[line width=1.15pt] (1.15,2.22) -- (2.35,2.48);
+  \draw[line width=1.15pt] (0.95,0.95) -- (2.15,1.18);
+  \node at (1.70,0.00) {$(1)$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第29页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第29页）}]{assets/solid-geometry/fig-p0029-03.png}}
+\fitfig{%
+% fig-alt: 图1-34（2）：斜平面穿过水平平行四边形并伸到水平面之下；交线为虚线；斜面上一条粗实线，水平面内一条粗实线从左前边斜向右上穿出交线；水平面后右缘为虚线；下方标(2)
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Vtl) at (0.68,2.25);
+  \coordinate (Vtr) at (3.05,2.92);
+  \coordinate (Vbr) at (3.22,1.42);
+  \coordinate (Vbl) at (0.52,1.12);
+  \coordinate (Vbot) at (0.38,0.42);
+  \coordinate (Vbr2) at (1.55,0.28);
+  \coordinate (Hfl) at (0.05,0.55);
+  \coordinate (Hfr) at (2.48,0.38);
+  \coordinate (Hbr) at (3.48,1.22);
+  \coordinate (Hbl) at (0.82,1.32);
+  \draw[line width=0.7pt] (Vtl) -- (Vtr) -- (Vbr);
+  \draw[line width=0.7pt] (Vtl) -- (Vbl) -- (Vbot) -- (Vbr2);
+  \draw[line width=0.7pt] (Hfl) -- (Hfr);
+  \draw[line width=0.7pt] (Hfl) -- (0.55,1.00);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.5pt] (Vbl) -- (Vbr);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.5pt] (1.15,1.18) -- (Hbr);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.5pt] (Hbr) -- (2.62,0.55);
+  \draw[line width=1.15pt] (1.12,2.28) -- (2.28,2.55);
+  \draw[line width=1.15pt] (0.42,0.72) -- (2.55,1.28);
+  \node at (1.65,0.00) {$(2)$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第29页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-34}]{assets/solid-geometry/fig-p0029-04.png}}
+\fitfig{%
+% fig-alt: 图1-34（3）：两平面相交成书页形，左斜平面与右水平平行四边形共左缘，均为实线；右上方有一条与交线平行的粗实线，不接触平面；下方标(3)
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Fl) at (0.15,0.35);
+  \coordinate (Fr) at (2.85,0.28);
+  \coordinate (Br) at (3.55,0.95);
+  \coordinate (Fold) at (0.72,0.95);
+  \coordinate (Ul) at (0.55,1.85);
+  \coordinate (Ut) at (1.15,2.55);
+  \draw[line width=0.7pt] (Fl) -- (Fr) -- (Br) -- (Fold) -- cycle;
+  \draw[line width=0.7pt] (Fl) -- (Ul) -- (Ut) -- (Fold);
+  \draw[line width=1.2pt] (2.15,1.85) -- (3.05,2.55);
+  \node at (1.75,0.00) {$(3)$};
+\end{tikzpicture}%
+}
 \caption{图1-34}
 \end{figure}
 
