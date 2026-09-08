@@ -3790,7 +3790,27 @@ O D = 9.003 \mathrm{cm}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-14}]{assets/plane-trigonometry/fig-p0050-02.png}}
+\fitfig{%
+% fig-alt: 圆及弦AB，圆心O在弦上方，OD垂直AB并在O下有直角记号；OA标x，OD右侧标9.003cm，弦下标18.32cm
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-1.46,-1.44);
+  \coordinate (B) at (1.46,-1.44);
+  \coordinate (D) at (0,-1.44);
+  \draw[line width=0.7pt] (0,0) circle[radius=2.05];
+  \draw[line width=0.7pt] (A) -- (O) -- (B) -- cycle;
+  \draw[line width=0.7pt] (O) -- (D);
+  \draw[line width=0.55pt] (-0.13,-0.16) -- (-0.13,-0.29) -- (0,-0.29);
+  \draw[line width=0.45pt] (0.10,-0.62) -- (0.38,-0.62);
+  \node[above=1pt] at (0,0.06) {$O$};
+  \node[below left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=0.8pt] at (0.10,-1.22) {$D$};
+  \node[above left=2pt,inner sep=1pt] at (-0.82,-0.66) {$x$};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (0.44,-0.58) {$9.003\,\mathrm{cm}$};
+  \node[font=\scriptsize,inner sep=0.4pt] at (0.02,-1.84) {$18.32\,\mathrm{cm}$};
+\end{tikzpicture}%
+}
 \caption{图2-14}
 \end{figure}
 
@@ -3963,7 +3983,33 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0053-01.png}}
+\fitfig{%
+% fig-alt: 地面A、B、M，塔尖P在M上方；∠A标45°，∠B标60°，AB下有双向箭头标100m，PM左侧标x，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (M) at (4.20,0);
+  \coordinate (P) at (4.20,4.20);
+  \coordinate (B) at (1.78,0);
+  \draw[line width=0.7pt] (A) -- (M);
+  \draw[line width=0.7pt] (M) -- (P);
+  \draw[line width=0.7pt] (A) -- (P);
+  \draw[line width=0.7pt] (B) -- (P);
+  \draw[line width=0.6pt] (0.46,0) arc[start angle=0, end angle=45, radius=0.46];
+  \draw[line width=0.6pt] (B) ++(0:0.40) arc[start angle=0, end angle=60, radius=0.40];
+  \draw[line width=0.5pt] (0,-0.58) -- (0,-0.78);
+  \draw[line width=0.5pt] (1.78,-0.58) -- (1.78,-0.78);
+  \draw[->, line width=0.45pt] (0.58,-0.78) -- (0.12,-0.78);
+  \draw[->, line width=0.45pt] (1.20,-0.78) -- (1.66,-0.78);
+  \node[font=\scriptsize,anchor=south west,inner sep=0.5pt] at (0.54,0.10) {$45^{\circ}$};
+  \node[font=\scriptsize,anchor=south west,inner sep=0.5pt] at (2.24,0.12) {$60^{\circ}$};
+  \node[below left=0.5pt] at (A) {$A$};
+  \node[below=0.5pt] at (B) {$B$};
+  \node[below right=1pt] at (M) {$M$};
+  \node[above right=1pt] at (P) {$P$};
+  \node[left=8pt,inner sep=1pt] at (4.20,2.40) {$x$};
+  \node[font=\scriptsize,inner sep=0.5pt] at (0.89,-0.98) {$100\,\mathrm{m}$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -4011,7 +4057,30 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-trigonometry/fig-p0054-01.png}}
+\fitfig{%
+% fig-alt: 矩形EADB，A在右上；自A向左的水平线下有30°弧至AC、60°弧至AD；C在左边上部，CD左侧标x，AB右侧标200m，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (E) at (0,3.81);
+  \coordinate (A) at (2.20,3.81);
+  \coordinate (B) at (2.20,0);
+  \coordinate (D) at (0,0);
+  \coordinate (C) at (0,2.54);
+  \draw[line width=0.7pt] (E) -- (A) -- (B) -- (D) -- cycle;
+  \draw[line width=0.7pt] (A) -- (C);
+  \draw[line width=0.7pt] (A) -- (D);
+  \draw[line width=0.6pt] (A) ++(180:0.42) arc[start angle=180, end angle=210, radius=0.42];
+  \draw[line width=0.6pt] (A) ++(180:0.68) arc[start angle=180, end angle=240, radius=0.68];
+  \node[above left=1pt] at (E) {$E$};
+  \node[above right=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[below left=1pt] at (D) {$D$};
+  \node[left=1pt] at (C) {$C$};
+  \node[font=\scriptsize,anchor=east,inner sep=0.4pt] at (1.52,3.58) {$30^{\circ}$};
+  \node[font=\scriptsize,anchor=east,inner sep=0.5pt] at (1.22,3.02) {$60^{\circ}$};
+  \node[left=2pt] at (0,1.20) {$x$};
+  \node[right=2pt] at (2.20,1.90) {$200\,\mathrm{m}$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -4021,7 +4090,33 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-trigonometry/fig-p0054-02.png}}
+\fitfig{%
+% fig-alt: 左高楼AB、右矮楼CD，A向右水平箭头；内弧40°至AD，外弧35°至AC；BD下双向箭头标72.6m，无直角记号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,3.52);
+  \coordinate (B) at (0,0);
+  \coordinate (D) at (4.20,0);
+  \coordinate (C) at (4.20,0.58);
+  \draw[line width=0.7pt] (A) -- (B) -- (D);
+  \draw[line width=0.7pt] (C) -- (D);
+  \draw[line width=0.7pt] (A) -- (C);
+  \draw[line width=0.7pt] (A) -- (D);
+  \draw[->, line width=0.7pt] (A) -- (2.70,3.52);
+  \draw[line width=0.6pt] (A) ++(0:0.36) arc[start angle=0, end angle=-40, radius=0.36];
+  \draw[line width=0.6pt] (A) ++(0:0.62) arc[start angle=0, end angle=-35, radius=0.62];
+  \draw[line width=0.5pt] (0,-0.62) -- (0,-0.82);
+  \draw[line width=0.5pt] (4.20,-0.62) -- (4.20,-0.82);
+  \draw[->, line width=0.45pt] (1.40,-0.82) -- (0.16,-0.82);
+  \draw[->, line width=0.45pt] (2.80,-0.82) -- (4.04,-0.82);
+  \node[left=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (-0.04,-0.04) {$B$};
+  \node[below right=1pt] at (D) {$D$};
+  \node[right=2pt] at (C) {$C$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.2pt] at (0.50,3.36) {$40^{\circ}$};
+  \node[font=\scriptsize,anchor=west,inner sep=0.2pt] at (1.10,3.06) {$35^{\circ}$};
+  \node[font=\scriptsize,inner sep=0.5pt] at (2.10,-1.02) {$72.6\,\mathrm{m}$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -4128,7 +4223,20 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·1}]{assets/plane-trigonometry/fig-p0056-01.png}}
+\fitfig{%
+% fig-alt: 始边OA水平向右，终边OB斜向右上，O处有角弧，无度数
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (3.40,0);
+  \coordinate (B) at (30:3.15);
+  \draw[line width=0.7pt] (O) -- (A);
+  \draw[line width=0.7pt] (O) -- (B);
+  \draw[line width=0.6pt] (0.38,0) arc[start angle=0, end angle=30, radius=0.38];
+  \node[below left=1pt] at (O) {$O$};
+  \node[right=1pt] at (A) {$A$};
+  \node[above=1pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{图3·1}
 \end{figure}
 
@@ -4197,7 +4305,18 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-3}]{assets/plane-trigonometry/fig-p0058-01.png}}
+\fitfig{%
+% fig-alt: 逆时针两圈螺线，始边OA水平向右，终边OB指向220°并伸出螺线，中心标O，无度数
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.6pt, domain=18:940, samples=240, smooth]
+    plot ({(0.16+0.00127*\x)*cos(\x)}, {(0.16+0.00127*\x)*sin(\x)});
+  \draw[line width=0.7pt] (0.08,0) -- (2.45,0);
+  \draw[line width=0.7pt] (0,0) -- (220:1.95);
+  \node[above=1pt] at (2.45,0) {$A$};
+  \node[below left=2pt] at (220:1.95) {$B$};
+  \node[inner sep=0.3pt] at (0.30,-0.44) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-3}
 \end{figure}
 
