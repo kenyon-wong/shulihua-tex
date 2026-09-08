@@ -3925,7 +3925,27 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 球面波}]{assets/physics-2/fig-p0073-01.png}}
+\fitfig{%
+% fig-alt: 图2.15(a) 球面波：点波源 O，同心圆为波面，最外圈为波前，向外的射线为波线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \foreach \rad in {0.52,1.05,1.55}{
+    \draw[line width=0.7pt] (0,0) circle[radius=\rad];
+  }
+  \draw[line width=0.95pt] (0,0) circle[radius=2.05];
+  \draw[->,line width=0.6pt] (0,0) -- (142:2.05);
+  \draw[->,line width=0.6pt] (0,0) -- (230:2.05);
+  \draw[->,line width=0.6pt] (0,0) -- (2.05,0);
+  \draw[line width=0.6pt] (0,0) -- (-34:2.05);
+  \fill (0,0) circle[radius=1.15pt];
+  \node[below=3pt] at (0,0) {$O$};
+  \node[anchor=west] at (2.70,1.28) {波面};
+  \draw[line width=0.45pt] (2.64,1.22) -- (1.34,0.78);
+  \node[anchor=west] at (2.70,0.28) {波前};
+  \draw[line width=0.45pt] (2.64,0.26) -- (2.08,0.18);
+  \node[anchor=west] at (2.70,-1.05) {波线};
+  \draw[line width=0.45pt] (2.64,-0.98) -- (1.48,-1.00);
+\end{tikzpicture}%
+}
 \caption{(a) 球面波}
 \end{figure}
 
@@ -3935,7 +3955,22 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 平面波}]{assets/physics-2/fig-p0073-02.png}}
+\fitfig{%
+% fig-alt: 图2.15(b) 平面波：平行竖线为波面，最右粗线为波前，水平箭头为波线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \foreach \x in {0.45,1.45,2.45}{
+    \draw[line width=0.7pt] (\x,-1.85) -- (\x,1.85);
+  }
+  \draw[line width=1.15pt] (3.45,-2.00) -- (3.45,2.00);
+  \foreach \y in {1.35,0.00,-1.35}{
+    \draw[->,line width=0.6pt] (-0.25,\y) -- (3.20,\y);
+  }
+  \draw[line width=0.55pt] (-0.45,0.72) -- (1.45,0.18);
+  \draw[line width=0.55pt] (-0.45,0.48) -- (1.45,-0.02);
+  \draw[line width=0.55pt] (-0.35,-1.55) -- (0.45,-0.85);
+  \node[anchor=west] at (3.68,-0.08) {波前};
+\end{tikzpicture}%
+}
 \caption{(b) 平面波}
 \end{figure}
 
@@ -4305,7 +4340,17 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-2/fig-p0084-05.png}}
+\fitfig{%
+% fig-alt: 第2题：同相波源 S_1、S_2 在一条直线上，过中点的竖线为垂直平分线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.8pt] (0.15,0) -- (5.35,0);
+  \draw[line width=0.85pt] (2.40,0) -- (2.40,3.15);
+  \fill (1.15,0) circle[radius=1.35pt];
+  \fill (3.65,0) circle[radius=1.35pt];
+  \node[below=3pt] at (1.15,0) {$S_1$};
+  \node[below=3pt] at (3.65,0) {$S_2$};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -4324,7 +4369,30 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0085-01.png}}
+\fitfig{%
+% fig-alt: 第3题：波源 S_1、S_2 在基线上，连到 P_1、P_2、P_3 的路径
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.75pt] (0.05,0) -- (4.55,0);
+  \coordinate (S1) at (0.55,0);
+  \coordinate (S2) at (2.95,0);
+  \coordinate (P1) at (1.15,3.25);
+  \coordinate (P2) at (2.70,1.95);
+  \coordinate (P3) at (3.85,2.55);
+  \draw[line width=0.6pt] (S1) -- (P1);
+  \draw[line width=0.6pt] (S1) -- (P2);
+  \draw[line width=0.6pt] (S1) -- (P3);
+  \draw[line width=0.6pt] (S2) -- (P1);
+  \draw[line width=0.6pt] (S2) -- (P2);
+  \draw[line width=0.6pt] (S2) -- (P3);
+  \fill (S1) circle[radius=1.2pt];
+  \fill (S2) circle[radius=1.2pt];
+  \node[above=1pt] at (P1) {$P_1$};
+  \node[above=1pt] at (P2) {$P_2$};
+  \node[anchor=south west] at (P3) {$P_3$};
+  \node[below=2pt] at (S1) {$S_1$};
+  \node[below=2pt] at (S2) {$S_2$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -4354,7 +4422,30 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0085-02.png}}
+\fitfig{%
+% fig-alt: 第3题：波源 S_1、S_2 在基线上，连到 P_1、P_2、P_3 的路径
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.75pt] (0.05,0) -- (4.55,0);
+  \coordinate (S1) at (0.55,0);
+  \coordinate (S2) at (2.95,0);
+  \coordinate (P1) at (1.15,3.25);
+  \coordinate (P2) at (2.70,1.95);
+  \coordinate (P3) at (3.85,2.55);
+  \draw[line width=0.6pt] (S1) -- (P1);
+  \draw[line width=0.6pt] (S1) -- (P2);
+  \draw[line width=0.6pt] (S1) -- (P3);
+  \draw[line width=0.6pt] (S2) -- (P1);
+  \draw[line width=0.6pt] (S2) -- (P2);
+  \draw[line width=0.6pt] (S2) -- (P3);
+  \fill (S1) circle[radius=1.2pt];
+  \fill (S2) circle[radius=1.2pt];
+  \node[above=1pt] at (P1) {$P_1$};
+  \node[above=1pt] at (P2) {$P_2$};
+  \node[anchor=south west] at (P3) {$P_3$};
+  \node[below=2pt] at (S1) {$S_1$};
+  \node[below=2pt] at (S2) {$S_2$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
