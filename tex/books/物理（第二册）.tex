@@ -9373,7 +9373,17 @@ m=M-M^\prime=(6.5\times0.028-0.164)\ \text{千克}=0.018\ \text{千克}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-2/fig-p0200-01.png}}
+\fitfig{%
+% fig-alt: （第7题）两只等大圆球 1、2，底部以双线 U 形细管相连
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0,0.92) circle[radius=0.50];
+  \draw[line width=0.7pt] (2.12,0.92) circle[radius=0.50];
+  \node at (0,0.92) {$1$};
+  \node at (2.12,0.92) {$2$};
+  \draw[line width=0.7pt] (-0.10,0.43) -- (-0.10,-0.28) -- (2.22,-0.28) -- (2.22,0.43);
+  \draw[line width=0.7pt] (0.10,0.43) -- (0.10,-0.08) -- (2.02,-0.08) -- (2.02,0.43);
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -9383,7 +9393,18 @@ m=M-M^\prime=(6.5\times0.028-0.164)\ \text{千克}=0.018\ \text{千克}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-2/fig-p0200-02.png}}
+\fitfig{%
+% fig-alt: （第8题）两只等大圆球 $\mathrm{N}_{2}$、$\mathrm{O}_{2}$，底部双线 U 形细管，中部一段黑水银滴
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (0,0.92) circle[radius=0.50];
+  \draw[line width=0.7pt] (2.12,0.92) circle[radius=0.50];
+  \node at (0,0.92) {$\mathrm{N}_{2}$};
+  \node at (2.12,0.92) {$\mathrm{O}_{2}$};
+  \fill (0.86,-0.26) rectangle (1.26,-0.10);
+  \draw[line width=0.7pt] (-0.10,0.43) -- (-0.10,-0.28) -- (2.22,-0.28) -- (2.22,0.43);
+  \draw[line width=0.7pt] (0.10,0.43) -- (0.10,-0.08) -- (2.02,-0.08) -- (2.02,0.43);
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -9871,7 +9892,19 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.4 分子力与分子距离的关系}]{assets/physics-2/fig-p0211-01.png}}
+\fitfig{%
+% fig-alt: 图6.4 分子力–距离：纵轴 $f$（分子力），引力在上、斥力在下；过 $r_0$ 后引力达峰再渐近于横轴，$r$（分子距离）在右端
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,-2.15) -- (0,2.08);
+  \draw[->,line width=0.7pt] (0,0) -- (4.95,0);
+  \node[anchor=south west] at (0.08,1.92) {$f$（分子力）};
+  \node[anchor=east,align=center] at (-0.07,1.18) {引\\力};
+  \node[anchor=east,align=center] at (-0.07,-1.28) {斥\\力};
+  \draw[line width=0.85pt] plot[smooth] coordinates {(0.30,-1.90) (0.46,-1.18) (0.62,-0.58) (0.80,-0.16) (1.02,0) (1.22,0.48) (1.42,0.88) (1.64,1.08) (1.90,1.00) (2.18,0.74) (2.52,0.44) (2.92,0.20) (3.28,0.08) (3.55,0.03)};
+  \node[anchor=north] at (0.98,-0.12) {$r_{0}$};
+  \node[anchor=south west] at (3.62,0.20) {$r$（分子距离）};
+\end{tikzpicture}%
+}
 \caption{图6.4 分子力与分子距离的关系}
 \end{figure}
 
@@ -9936,7 +9969,25 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.6 布朗运动示意图}]{assets/physics-2/fig-p0214-01.png}}
+\fitfig{%
+% fig-alt: 图6.6 五个橡胶粒子的折线位移示意：左上折线、右上小方环、中右下行、左下密折、右下较疏折线，下为微米标尺
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (1.95,3.62) -- (2.22,3.28) -- (1.82,3.05) -- (2.08,2.78) -- (1.62,2.52) -- (1.28,2.68) -- (0.95,2.32) -- (0.68,2.48) -- (0.45,2.08) -- (0.78,1.82) -- (0.52,1.52);
+  \fill (0.52,1.52) circle[radius=1.15pt];
+  \draw[line width=0.7pt] (3.42,3.68) -- (3.78,3.68) -- (3.78,3.34) -- (3.46,3.34) -- (3.46,3.52) -- (3.62,3.52) -- (3.46,3.22);
+  \fill (3.46,3.22) circle[radius=1.15pt];
+  \draw[line width=0.7pt] (3.15,2.55) -- (2.92,2.28) -- (3.22,2.02) -- (2.95,1.78) -- (2.72,1.48) -- (3.02,1.32);
+  \fill (3.02,1.32) circle[radius=1.15pt];
+  \draw[line width=0.7pt] (1.92,1.18) -- (2.18,0.98) -- (1.95,0.78) -- (2.22,0.58) -- (1.98,0.40) -- (2.28,0.26) -- (2.05,0.48) -- (2.32,0.68) -- (2.08,0.88) -- (1.78,0.55) -- (2.12,0.32) -- (2.38,0.85) -- (2.48,0.52);
+  \fill (2.55,0.70) circle[radius=1.15pt];
+  \draw[line width=0.7pt] (4.05,1.55) -- (3.78,1.32) -- (4.12,1.08) -- (4.38,0.88) -- (4.08,0.68) -- (4.48,0.52) -- (4.68,0.38);
+  \fill (4.05,1.55) circle[radius=1.15pt];
+  \draw[line width=0.65pt] (0.15,0) -- (5.35,0);
+  \foreach \k in {0.28,0.78,1.28,1.78,2.28,2.78,3.28,3.78,4.28,4.78,5.12} {
+    \draw[line width=0.55pt] (\k,0) -- (\k,0.13);
+  }
+\end{tikzpicture}%
+}
 \caption{图6.6 布朗运动示意图}
 \end{figure}
 
@@ -9989,7 +10040,27 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.8 在一定温度下，理想气体的分子速率分布曲线}]{assets/physics-2/fig-p0216-01.png}}
+\fitfig{%
+% fig-alt: 图6.8 麦克斯韦速率分布：$f(v)$ 自原点升起，峰处虚线至 $v_p$；左侧斜线窄条为 $v$ 到 $v+\Delta v$
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,2.88);
+  \draw[->,line width=0.7pt] (0,0) -- (4.55,0);
+  \node[anchor=south west] at (0.08,2.72) {$f(v)$};
+  \node[anchor=west] at (4.52,0.06) {$v$};
+  \draw[line width=0.85pt] plot[domain=0:4.05,samples=60,smooth] (\x,{(\x/1.72)^2*exp(1-(\x/1.72)^2)*1.82});
+  \draw[dashed,line width=0.55pt] (1.72,0) -- (1.72,1.82);
+  \begin{scope}
+    \clip (0.52,0) rectangle (0.70,0.64);
+    \foreach \k in {0.44,0.52,0.60,0.68,0.76} {
+      \draw[line width=0.35pt] (\k,-0.04) -- (\k+0.22,0.78);
+    }
+  \end{scope}
+  \draw[line width=0.5pt] (0.52,0) rectangle (0.70,0.58);
+  \node[anchor=north east] at (0.44,-0.08) {$v$};
+  \node[anchor=north west,font=\small] at (0.76,-0.08) {$v+\Delta v$};
+  \node[anchor=north west] at (2.02,-0.08) {$v_{p}$};
+\end{tikzpicture}%
+}
 \caption{图6.8 在一定温度下，理想气体的分子速率分布曲线}
 \end{figure}
 
@@ -10011,7 +10082,19 @@ v _ {p} = \sqrt {\frac {2 R T}{\mu}} \tag {6.1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.9 不同温度下的分子速率分布曲线}]{assets/physics-2/fig-p0217-01.png}}
+\fitfig{%
+% fig-alt: 图6.9 两条麦克斯韦曲线：实线 $T_1$ 高而窄，虚线 $T_2>T_1$ 较矮较宽并向右延展
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,2.92);
+  \draw[->,line width=0.7pt] (0,0) -- (4.35,0);
+  \node[anchor=south west] at (0.08,2.76) {$f(v)$};
+  \node[anchor=west] at (4.32,0.06) {$v$};
+  \draw[line width=0.85pt] plot[domain=0:2.85,samples=52,smooth] (\x,{(\x/1.05)^2*exp(1-(\x/1.05)^2)*2.22});
+  \draw[dashed,line width=0.7pt] plot[domain=0:3.72,samples=60,smooth] (\x,{(\x/1.55)^2*exp(1-(\x/1.55)^2)*1.52});
+  \node[anchor=south west] at (1.30,2.38) {$T_{1}$};
+  \node[anchor=south west] at (2.08,1.62) {$T_{2}>T_{1}$};
+\end{tikzpicture}%
+}
 \caption{图6.9 不同温度下的分子速率分布曲线}
 \end{figure}
 
