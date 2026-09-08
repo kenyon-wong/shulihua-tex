@@ -784,7 +784,27 @@ C，并使它们接触，然后使它们带同种电荷。由于斥力，两球�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.12}]{assets/physics-3/fig-p0021-01.png}}
+\fitfig{%
+% fig-alt: 图1.12 异种点电荷：左圆内正号标Q1、右圆内负号标Q2，连线中段虚线，两力F相向，下方为距离r
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (0,0) circle[radius=0.30];
+  \draw[line width=0.75pt] (5.15,0) circle[radius=0.30];
+  \node at (0,0) {$+$};
+  \node at (5.15,0) {$-$};
+  \node at (0,0.78) {$Q_1$};
+  \node at (5.15,0.78) {$Q_2$};
+  \draw[line width=0.7pt,->] (0.34,0) -- (1.55,0);
+  \node[above=2pt] at (1.10,0) {$F$};
+  \draw[line width=0.7pt,dashed] (1.68,0) -- (3.48,0);
+  \draw[line width=0.7pt,->] (4.81,0) -- (3.60,0);
+  \node[above=2pt] at (4.05,0) {$F$};
+  \draw[line width=0.6pt] (0,-0.32) -- (0,-0.86);
+  \draw[line width=0.6pt] (-0.16,-0.86) -- (0,-0.86);
+  \draw[line width=0.6pt,<->] (0,-0.86) -- (5.15,-0.86);
+  \draw[line width=0.6pt,dashed] (5.15,-0.30) -- (5.15,-0.86);
+  \node at (2.57,-0.58) {$r$};
+\end{tikzpicture}%
+}
 \caption{图1.12}
 \end{figure}
 
@@ -867,7 +887,26 @@ e = 1.60 \times 10^{-19} \text{库}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.13}]{assets/physics-3/fig-p0023-01.png}}
+\fitfig{%
+% fig-alt: 图1.13 同种正电荷：两圆内正号分别标Q1、Q2，连线中段虚线，两力F相背，下方为距离r
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (0,0) circle[radius=0.30];
+  \draw[line width=0.75pt] (5.20,0) circle[radius=0.30];
+  \node at (0,0) {$+$};
+  \node at (5.20,0) {$+$};
+  \node at (0,0.78) {$Q_1$};
+  \node at (5.20,0.78) {$Q_2$};
+  \draw[line width=0.7pt,->] (-0.32,0) -- (-1.45,0);
+  \node[above=2pt] at (-0.88,0) {$F$};
+  \draw[line width=0.7pt,dashed] (0.34,0) -- (4.86,0);
+  \draw[line width=0.7pt,->] (5.52,0) -- (6.65,0);
+  \node[above=2pt] at (6.08,0) {$F$};
+  \draw[line width=0.6pt] (0,-0.32) -- (0,-0.92);
+  \draw[line width=0.6pt] (5.20,-0.32) -- (5.20,-0.92);
+  \draw[line width=0.6pt,<->] (0,-0.78) -- (5.20,-0.78);
+  \node at (2.60,-0.52) {$r$};
+\end{tikzpicture}%
+}
 \caption{图1.13}
 \end{figure}
 
@@ -929,7 +968,35 @@ e = 1.60 \times 10^{-19} \text{库}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.14}]{assets/physics-3/fig-p0025-01.png}}
+\fitfig{%
+% fig-alt: 图1.14 直角三角形ABC顶点受力：AB=0.4米、AC=0.3米、BC=0.5米，A点F1、F2及其合力F
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \coordinate (B) at (0,0);
+  \coordinate (A) at (3.20,2.40);
+  \coordinate (C) at (5.00,0);
+  \draw[line width=0.75pt] (B) -- (A) -- (C) -- cycle;
+  \fill (B) circle[radius=0.055];
+  \fill (A) circle[radius=0.055];
+  \fill (C) circle[radius=0.055];
+  \node[left=2pt] at (B) {$B$};
+  \node[above left=1pt] at (A) {$A$};
+  \node[below right=1pt] at (C) {$C$};
+  \node[rotate=36.9] at (1.28,1.58) {0.4\,米};
+  \node[rotate=-53] at (4.48,1.48) {0.3\,米};
+  \node[below=3pt] at (2.50,0) {0.5\,米};
+  \coordinate (P1) at (4.12,3.09);
+  \coordinate (P2) at (4.31,0.92);
+  \coordinate (FF) at (5.23,1.61);
+  \draw[line width=0.6pt,dashed] (P1) -- (FF);
+  \draw[line width=0.6pt,dashed] (P2) -- (FF);
+  \draw[line width=0.7pt,->] (A) -- (P1);
+  \draw[line width=0.7pt,->] (A) -- (P2);
+  \draw[line width=0.7pt,->] (A) -- (FF);
+  \node[above=2pt] at (P1) {$F_1$};
+  \node[left=2pt] at (3.78,1.35) {$F_2$};
+  \node[right=2pt] at (FF) {$F$};
+\end{tikzpicture}%
+}
 \caption{图1.14}
 \end{figure}
 
@@ -990,7 +1057,37 @@ F = \sqrt{F_{1}^{2} + F_{2}^{2}} = \sqrt{1.0^{2} + 2.7^{2}} \text{牛} = 2.9 \te
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.15}]{assets/physics-3/fig-p0026-01.png}}
+\fitfig{%
+% fig-alt: 图1.15 两等长细线悬挂等量同种电荷小球：OA、OB实线，OC虚线，B点受T、F、mg，合力R
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \coordinate (O) at (0,5.00);
+  \coordinate (A) at (-1.15,0);
+  \coordinate (B) at (1.15,0);
+  \draw[line width=0.7pt,dashed] (O) -- (0,0);
+  \draw[line width=0.75pt] (O) -- (A);
+  \draw[line width=0.75pt] (O) -- (B);
+  \draw[line width=0.7pt,dashed] (-1.78,0) -- (1.82,0);
+  \draw[line width=0.7pt,->] (-0.71,1.90) -- (-0.87,1.20);
+  \draw[line width=0.7pt,->] (0.80,1.55) -- (0.62,2.25);
+  \node[right=3pt] at (0.95,1.90) {$T$};
+  \node[above=2pt] at (O) {$O$};
+  \node[rotate=-18] at (1.45,3.40) {0.5\,米};
+  \node[left=4pt] at (-1.22,0.18) {$A$};
+  \node at (-0.18,-0.28) {$C$};
+  \node at (0.70,-0.28) {$B$};
+  \draw[line width=0.7pt,->] (-1.22,0) -- (-1.72,0);
+  \draw[line width=0.7pt,->] (-1.15,-0.06) -- (-1.15,-0.32);
+  \draw[line width=0.65pt,<->] (-1.15,-1.12) -- (1.15,-1.12);
+  \node[below=2pt] at (-0.40,-1.12) {0.2\,米};
+  \draw[line width=0.7pt,->] (1.24,0) -- (1.78,0);
+  \node[above=3pt] at (1.72,0.02) {$F$};
+  \draw[line width=0.75pt] (1.15,-0.04) -- (1.15,-1.72);
+  \node[below=1pt] at (1.22,-1.78) {$mg$};
+  \draw[line width=0.65pt,dashed] (1.15,0) -- (1.74,-1.72);
+  \draw[line width=0.65pt,dashed] (1.15,-1.72) -- (1.74,-1.72);
+  \node[right=2pt] at (1.74,-1.45) {$R$};
+\end{tikzpicture}%
+}
 \caption{图1.15}
 \end{figure}
 
@@ -1093,7 +1190,35 @@ F = \frac{Q_{1} Q_{2}}{r^{2}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.16 电场中不同的点， q\_\{1\} 受力情况}]{assets/physics-3/fig-p0029-01.png}}
+\fitfig{%
+% fig-alt: 图1.16 正点电荷Q的电场：A、B、C三点检验电荷+q1沿矢径受向外的F_a1、F_b1、F_c1，距离ra、rb、rc
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \coordinate (Q) at (0,0);
+  \coordinate (B) at (-1.74,1.09);
+  \coordinate (A) at (1.25,1.49);
+  \coordinate (C) at (1.25,-1.99);
+  \draw[line width=0.7pt,->] (-0.39,0.24) -- (-2.35,1.46);
+  \draw[line width=0.7pt,->] (0.30,0.35) -- (1.72,2.04);
+  \draw[line width=0.7pt,->] (0.27,-0.43) -- (1.58,-2.52);
+  \draw[line width=0.8pt,fill=white] (Q) circle[radius=0.46];
+  \node at (Q) {$+Q$};
+  \draw[line width=0.7pt,fill=white] (B) circle[radius=0.075];
+  \draw[line width=0.7pt,fill=white] (A) circle[radius=0.075];
+  \draw[line width=0.7pt,fill=white] (C) circle[radius=0.075];
+  \node[below left=1pt] at (-1.95,0.92) {$+q_1$};
+  \node[below=2pt] at (B) {$B$};
+  \node at (-1.08,0.48) {$r_b$};
+  \node[above left=1pt] at (-2.35,1.62) {$F_{b1}$};
+  \node[above left=3pt] at (1.12,1.62) {$A$};
+  \node[right=4pt] at (1.45,1.58) {$+q_1$};
+  \node at (0.92,0.72) {$r_a$};
+  \node[above right=1pt] at (1.72,2.08) {$F_{a1}$};
+  \node[left=3pt] at (C) {$C$};
+  \node[right=3pt] at (1.42,-1.85) {$+q_1$};
+  \node at (0.52,-1.18) {$r_c$};
+  \node[below=2pt] at (1.58,-2.52) {$F_{c1}$};
+\end{tikzpicture}%
+}
 \caption{图1.16 电场中不同的点， \(q_{1}\) 受力情况}
 \end{figure}
 
@@ -1239,7 +1364,18 @@ E = \frac{F}{q} \tag{1.2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.17}]{assets/physics-3/fig-p0032-01.png}}
+\fitfig{%
+% fig-alt: 图1.17 负电荷在A点：小圆上方标-q、下方标A，力F向左，场强E向右
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,->] (-0.18,0) -- (-1.78,0);
+  \node[left=1pt] at (-1.78,0) {$F$};
+  \draw[line width=0.75pt,->] (0.18,0) -- (1.78,0);
+  \node[right=1pt] at (1.78,0) {$E$};
+  \draw[line width=0.8pt,fill=white] (0,0) circle[radius=0.16];
+  \node[above=1pt] at (0,0.16) {$-q$};
+  \node[below=1pt] at (0,-0.16) {$A$};
+\end{tikzpicture}%
+}
 \caption{图1.17}
 \end{figure}
 

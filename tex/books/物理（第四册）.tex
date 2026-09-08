@@ -544,7 +544,40 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.7}]{assets/physics-4/fig-p0011-03.png}}
+% fig-alt: 三支高低不同的小烛照在圆柱上，桌面阴影会聚成锥，近柱处为较深本影，外侧斜线为半影
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.10,0.55) -- (8.25,0.55);
+  % 三支小烛，自左向右渐高
+  \draw[line width=0.6pt] (1.00,-0.58) -- (1.00,0.46) arc (180:0:0.12 and 0.055) -- (1.24,-0.58) arc (0:-180:0.12 and 0.055);
+  \draw[line width=0.5pt] (1.06,0.48) .. controls (1.01,0.70) and (1.10,0.92) .. (1.12,1.02)
+    .. controls (1.22,0.80) and (1.24,0.60) .. (1.14,0.48);
+  \draw[line width=0.6pt] (1.95,-0.78) -- (1.95,0.46) arc (180:0:0.12 and 0.055) -- (2.19,-0.78) arc (0:-180:0.12 and 0.055);
+  \draw[line width=0.5pt] (2.01,0.48) .. controls (1.97,0.76) and (2.05,1.04) .. (2.07,1.16)
+    .. controls (2.17,0.88) and (2.19,0.60) .. (2.09,0.48);
+  \draw[line width=0.6pt] (2.85,-0.98) -- (2.85,0.46) arc (180:0:0.12 and 0.055) -- (3.09,-0.98) arc (0:-180:0.12 and 0.055);
+  \draw[line width=0.5pt] (2.91,0.48) .. controls (2.87,0.80) and (2.94,1.14) .. (2.97,1.28)
+    .. controls (3.07,0.92) and (3.09,0.60) .. (2.99,0.48);
+  % 圆柱
+  \draw[line width=0.7pt] (5.20,0.55) ellipse (0.55 and 0.16);
+  \draw[line width=0.7pt] (4.65,0.55) -- (4.65,1.88);
+  \draw[line width=0.7pt] (5.75,0.55) -- (5.75,1.88);
+  \draw[line width=0.7pt] (4.65,1.88) arc (180:0:0.55 and 0.16);
+  \draw[line width=0.32pt] (4.88,0.60) -- (4.88,1.80);
+  \draw[line width=0.32pt] (5.10,0.62) -- (5.10,1.86);
+  \draw[line width=0.32pt] (5.32,0.60) -- (5.32,1.80);
+  \draw[line width=0.32pt] (5.52,0.58) -- (5.52,1.74);
+  % 会聚半影斜线，近柱本影
+    % 会聚半影：平行斜线，远点收尖；近柱一小块本影
+  \begin{scope}
+    \clip (5.58,0.50) -- (8.05,-1.05) -- (5.78,0.12) -- cycle;
+    \foreach \x in {0,0.16,...,2.6} {
+      \draw[line width=0.32pt] ({5.45+\x},0.62) -- ({6.15+\x},-1.25);
+    }
+  \end{scope}
+  \fill[black] (5.60,0.48) -- (6.20,0.34) -- (5.74,0.22) -- cycle;
+\end{tikzpicture}%
+}
 \caption{图1.7}
 \end{figure}
 
@@ -780,7 +813,50 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.11}]{assets/physics-4/fig-p0017-01.png}}
+% fig-alt: 斐索测光速：光源经玻璃板、转动齿轮射向远处的镜，再返回人眼；镜与齿轮相距8633米
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 镜
+  \draw[line width=0.7pt] (0.12,0.02) -- (0.32,-0.22) -- (1.22,-0.22) -- (1.22,1.22) -- (0.12,1.02) -- cycle;
+  \node[below=2pt] at (0.68,-0.22) {镜};
+  % 距离 8633 米，两端箭头，中部小折
+    \draw[line width=0.55pt] (0.45,1.48) -- (0.45,1.64);
+  \draw[line width=0.55pt] (4.55,1.48) -- (4.55,1.64);
+  \draw[line width=0.55pt,<->] (0.45,1.56) -- (4.55,1.56);
+  \node[above=1pt] at (2.50,1.58) {8633\,米};
+  % 光路
+  \draw[line width=0.6pt] (1.22,0.38) -- (3.55,0.38);
+  \draw[line width=0.55pt,->] (2.85,0.38) -- (1.95,0.38);
+  \draw[line width=0.6pt] (4.15,0.38) -- (5.28,0.38);
+  \draw[line width=0.6pt] (6.05,0.38) -- (7.05,0.38);
+  \draw[line width=0.55pt,->] (6.45,0.38) -- (7.05,0.38);
+  % 转动齿轮（侧视齿）
+  \draw[line width=0.65pt] (3.78,0.08) -- (3.78,0.78);
+  \foreach \y in {0.12,0.26,0.40,0.54,0.66} {
+    \draw[line width=0.45pt] (3.78,\y) -- (3.62,\y+0.06) -- (3.78,\y+0.11);
+    \draw[line width=0.45pt] (3.78,\y) -- (3.94,\y+0.06) -- (3.78,\y+0.11);
+  }
+  \node[below=4pt] at (3.78,0.02) {转动齿轮};
+  % 玻璃板
+  \draw[line width=0.65pt] (5.38,0.05) -- (5.82,0.68) -- (6.08,0.54) -- (5.64,-0.09) -- cycle;
+  \draw[line width=0.4pt] (5.50,0.18) -- (5.95,0.58);
+  \node[below=2pt] at (5.75,-0.12) {玻璃板};
+  % 光源
+  \draw[line width=0.55pt] (5.55,0.95) -- (5.88,0.95) -- (5.82,1.18) -- (5.61,1.18) -- cycle;
+  \draw[line width=0.5pt] (5.58,1.18) -- (5.50,1.40) -- (5.93,1.40) -- (5.85,1.18);
+  \draw[line width=0.55pt,->] (5.72,0.92) -- (5.72,0.68);
+  \node[above=1pt] at (5.72,1.40) {光源};
+  % 观察者，面向装置
+  \draw[line width=0.6pt] (7.55,0.95) circle (0.28);
+  \draw[line width=0.55pt] (7.32,0.92) -- (7.18,0.88) -- (7.32,0.82);
+  \fill (7.34,0.98) circle (0.03);
+  \draw[line width=0.55pt] (7.55,0.67) -- (7.55,0.22);
+  \draw[line width=0.55pt] (7.55,0.52) -- (7.28,0.38);
+  \draw[line width=0.55pt] (7.42,0.22) -- (7.38,0.02);
+  \draw[line width=0.55pt] (7.66,0.22) -- (7.78,0.02);
+  \draw[line width=0.55pt] (7.28,0.22) -- (8.05,0.22) -- (8.12,0.42) -- (7.72,0.48);
+\end{tikzpicture}%
+}
 \caption{图1.11}
 \end{figure}
 
@@ -800,7 +876,46 @@ c = \frac {1.7266 \times 10 ^ {4}}{5.51 \times 10 ^ {- 5}} = 3.18 \times 10 ^ {8
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.12}]{assets/physics-4/fig-p0018-01.png}}
+% fig-alt: 迈克耳逊测光速：光源经八面镜面1射向凹面镜M，再至远处平面镜M'折回，由镜面3进入望远镜
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 远山与平面镜 M'
+  \draw[line width=0.55pt] (0.02,0.42) -- (0.38,0.88) -- (0.55,0.62) -- (0.88,1.02) -- (1.12,0.70) -- (1.48,0.92) -- (1.78,0.55) -- (2.05,0.72);
+  \draw[line width=0.65pt] (0.78,0.82) circle (0.20);
+  \draw[line width=0.4pt] (0.68,0.72) arc (210:20:0.11);
+  \node[above right=0pt] at (0.96,0.98) {$M'$};
+  % 往返光线
+  \draw[line width=0.55pt,->] (1.35,1.16) -- (6.05,1.16);
+  \draw[line width=0.55pt,->] (6.05,1.00) -- (1.15,1.00);
+  % 凹面镜 M
+  \draw[line width=0.7pt] (6.42,0.55) ellipse (0.52 and 0.92);
+  \draw[line width=0.4pt] (6.28,1.12) -- (6.55,1.22);
+  \draw[line width=0.4pt] (6.34,0.55) -- (6.58,0.60);
+  \draw[line width=0.4pt] (6.28,0.02) -- (6.55,-0.06);
+  \node[right=2pt] at (6.92,0.72) {$M$};
+  % 上下光线
+  \draw[line width=0.55pt,->] (6.32,-0.35) -- (6.32,-1.05);
+  \draw[line width=0.55pt,->] (6.52,-1.05) -- (6.52,0.00);
+  % 八面镜，镜面标 3、4、1
+  \draw[line width=0.7pt] (6.05,-1.55) -- (6.22,-1.28) -- (6.50,-1.12) -- (6.82,-1.28) -- (6.98,-1.55) -- (6.82,-1.82) -- (6.50,-1.98) -- (6.22,-1.82) -- cycle;
+  \node[left=2pt] at (6.02,-1.55) {$3$};
+  \node[above left=1pt] at (6.28,-1.18) {$4$};
+  \node[right=2pt] at (6.98,-1.55) {$1$};
+  \draw[line width=0.55pt] (6.50,-1.98) -- (6.50,-2.22);
+  \draw[line width=0.55pt,->] (6.28,-2.38) arc (-160:-20:0.22);
+  % 望远镜
+  \draw[line width=0.6pt] (3.35,-1.48) rectangle (4.75,-1.22);
+  \draw[line width=0.6pt] (3.08,-1.58) -- (3.08,-1.12) -- (3.35,-1.22) -- (3.35,-1.48) -- cycle;
+  \draw[line width=0.55pt] (4.75,-1.35) -- (6.05,-1.48);
+  % 光源
+  \draw[line width=0.55pt] (7.15,-1.55) -- (7.72,-1.55);
+  \draw[line width=0.7pt] (7.72,-1.32) -- (8.00,-1.55) -- (7.72,-1.78) -- cycle;
+  \draw[line width=0.55pt] (8.16,-1.55) circle (0.13);
+  \draw[line width=0.4pt] (8.32,-1.55) -- (8.50,-1.55);
+  \draw[line width=0.4pt] (8.28,-1.42) -- (8.46,-1.32);
+  \draw[line width=0.4pt] (8.28,-1.68) -- (8.46,-1.78);
+\end{tikzpicture}%
+}
 \caption{图1.12}
 \end{figure}
 
@@ -925,7 +1040,37 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.2}]{assets/physics-4/fig-p0023-03.png}}
+% fig-alt: 界面上入射光线、反射光线与折射光线，法线及入射角a、反射角b、折射角r，并标入射点
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (3.15,0);
+  \foreach \y in {-0.32,-0.62,-0.92,-1.22,-1.52,-1.82} {
+    \draw[line width=0.4pt] (0.15,\y) -- (5.55,\y);
+  }
+  \draw[line width=0.7pt,dashed] (0.15,-2.18) -- (6.35,-2.18);
+  \draw[line width=0.9pt] (0.15,0) -- (6.35,0);
+  \draw[line width=0.6pt,dashed] (3.15,2.15) -- (3.15,-1.95);
+  \node[above=1pt] at (3.15,2.15) {法线};
+  \draw[line width=0.65pt] (0.25,1.85) -- (O);
+  \draw[line width=0.55pt,->] (1.05,1.55) -- (1.75,1.10);
+  \draw[line width=0.65pt] (O) -- (5.95,1.78);
+  \draw[line width=0.55pt,->] (4.25,0.68) -- (4.95,1.08);
+  \draw[line width=0.35pt] (O) -- (5.65,-1.45);
+  \draw[line width=0.75pt] (O) -- (4.45,-2.05);
+  \draw[line width=0.55pt,->] (3.70,-0.95) -- (4.02,-1.42);
+  \fill (O) circle (0.05);
+  \draw[line width=0.5pt] (3.15,0.58) arc (90:128:0.58);
+  \draw[line width=0.5pt] (3.15,0.58) arc (90:52:0.58);
+  \draw[line width=0.5pt] (3.15,-0.52) arc (-90:-58:0.52);
+  \node at (2.55,0.68) {$a$};
+  \node at (3.75,0.68) {$b$};
+  \node at (3.62,-0.78) {$r$};
+  \node[below=1pt] at (2.15,-0.08) {入射点};
+  \node[left=1pt] at (0.55,1.62) {入射光线};
+  \node[right=1pt] at (5.55,1.62) {反射光线};
+  \node[below right=0pt] at (4.45,-2.05) {折射光线};
+\end{tikzpicture}%
+}
 \caption{图2.2}
 \end{figure}
 
@@ -942,7 +1087,22 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.3}]{assets/physics-4/fig-p0024-01.png}}
+% fig-alt: 平行光线射到镜面后仍平行反射
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0.15,0) rectangle (6.35,0.55);
+  \foreach \x in {0.28,0.52,...,6.20} {
+    \draw[line width=0.28pt] (\x,0.04) -- (\x,0.51);
+  }
+  \foreach \y in {0.12,0.28,0.42} {
+    \draw[line width=0.28pt] (0.20,\y) -- (6.28,\y);
+  }
+  \foreach \i in {0,1,2,3} {
+    \draw[line width=0.6pt,->] ({0.35+0.85*\i},2.15) -- ({1.55+0.85*\i},0.58);
+    \draw[line width=0.6pt,->] ({1.55+0.85*\i},0.58) -- ({2.75+0.85*\i},2.15);
+  }
+\end{tikzpicture}%
+}
 \caption{图2.3}
 \end{figure}
 
@@ -961,7 +1121,38 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.4}]{assets/physics-4/fig-p0025-01.png}}
+% fig-alt: 两块可沿接缝ON折合的屏。左图共面时见光线AO与OB；右图后折后不见反射光。屏下小镜M
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 左：两屏共面
+  \draw[line width=0.65pt] (0.20,0.05) -- (2.35,-0.48) -- (4.55,0.22) -- (2.40,0.78) -- cycle;
+  \draw[line width=0.7pt] (0.45,0.42) rectangle (2.05,2.35);
+  \draw[line width=0.7pt] (2.05,0.42) rectangle (3.75,2.35);
+  \draw[line width=0.55pt] (2.05,0.42) -- (2.05,2.35);
+  \node[above=1pt] at (2.05,2.35) {$N$};
+  \node[left=1pt] at (0.45,1.45) {$A$};
+  \node[right=1pt] at (3.75,1.40) {$B$};
+  \draw[line width=0.6pt,->] (0.62,1.62) -- (1.95,0.55);
+  \draw[line width=0.6pt,->] (2.12,0.55) -- (3.58,1.48);
+  \draw[line width=0.45pt] (1.92,0.72) arc (120:45:0.22);
+  \draw[line width=0.6pt] (1.72,0.22) -- (2.48,0.22) -- (2.62,0.40) -- (1.86,0.40) -- cycle;
+  \node[below=1pt] at (2.20,0.16) {$M$};
+  \node[above left=0pt] at (1.78,0.38) {$O$};
+  % 右：右屏后折
+  \begin{scope}[xshift=5.55cm]
+    \draw[line width=0.65pt] (0.20,0.05) -- (2.35,-0.48) -- (4.70,0.22) -- (2.55,0.78) -- cycle;
+    \draw[line width=0.7pt] (0.45,0.42) rectangle (2.05,2.35);
+    \draw[line width=0.7pt] (2.05,2.35) -- (2.92,1.95) -- (2.92,0.18) -- (2.05,0.42) -- cycle;
+    \draw[line width=0.5pt] (2.05,2.35) -- (2.05,0.42);
+    \node[above=1pt] at (2.05,2.35) {$N$};
+    \node[left=1pt] at (0.45,1.45) {$A$};
+    \draw[line width=0.6pt,->] (0.62,1.62) -- (1.95,0.55);
+    \draw[line width=0.6pt] (1.72,0.22) -- (2.48,0.22) -- (2.62,0.40) -- (1.86,0.40) -- cycle;
+    \node[below=1pt] at (2.20,0.16) {$M$};
+    \node[above left=0pt] at (1.78,0.38) {$O$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图2.4}
 \end{figure}
 
@@ -970,7 +1161,54 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.5}]{assets/physics-4/fig-p0025-02.png}}
+% fig-alt: 刻度圆盘圆心立小平面镜，光源S可相对转动，法线N，入射角a与反射角b标于盘上
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\Ro{2.25}
+  \def\Ri{1.78}
+  \draw[line width=0.7pt] (0,0) circle (\Ro);
+  \draw[line width=0.55pt] (0,0) circle (\Ri);
+  \foreach \a in {0,10,...,350} {
+    \draw[line width=0.3pt] (\a:\Ri) -- (\a:\Ro);
+  }
+  \foreach \k/\ang in {0/105,30/75,60/45,90/15,120/345,150/315,180/285,30/135,60/165,90/195,120/225,150/255} {
+    \node[font=\scriptsize] at (\ang:2.02) {\k};
+  }
+  \draw[line width=0.6pt] (105:0.18) -- (105:\Ri);
+  \node[above=1pt] at (105:2.42) {$N$};
+  \node[above right=0pt] at (48:2.48) {$B$};
+  \draw[line width=0.6pt] (-2.85,0) -- (0.28,0);
+  \draw[line width=0.55pt,->] (-1.20,0) -- (-0.42,0);
+  \draw[line width=0.6pt] (225:1.62) -- (48:1.62);
+  \draw[line width=0.55pt,->] (48:0.62) -- (48:1.42);
+  \draw[line width=0.5pt] (105:0.48) arc (105:170:0.48);
+  \draw[line width=0.5pt] (105:0.48) arc (105:50:0.48);
+  \node at (140:0.74) {$a$};
+  \node at (78:0.74) {$b$};
+  \draw[line width=0.7pt,rotate around={16:(0,0)}] (-0.26,-0.07) rectangle (0.26,0.07);
+  \foreach \x in {-0.16,-0.08,0,0.08,0.16} {
+    \draw[line width=0.28pt,rotate around={16:(0,0)}] (\x,-0.07) -- (\x,0.07);
+  }
+  \node[above left=0pt] at (-0.12,0.14) {$O$};
+  \node[left=1pt] at (-2.72,0.32) {$S$};
+  \draw[line width=0.45pt] (-2.55,0) -- ++(0.11,0.08);
+  \draw[line width=0.45pt] (-2.55,0) -- ++(0.11,-0.08);
+  \draw[line width=0.45pt] (-2.55,0) -- ++(-0.10,0.08);
+  \draw[line width=0.45pt] (-2.55,0) -- ++(-0.10,-0.08);
+  \draw[line width=0.45pt] (-2.55,0) -- ++(0,0.13);
+  \draw[line width=0.45pt] (-2.55,0) -- ++(0,-0.13);
+  \draw[line width=0.55pt,<->] (-3.08,0.58) arc (75:250:0.26);
+  \draw[line width=0.6pt] (-0.32,-\Ro) -- (-0.32,-3.15);
+  \draw[line width=0.6pt] (0.32,-\Ro) -- (0.32,-3.15);
+  \foreach \x in {-0.20,-0.10,0,0.10,0.20} {
+    \draw[line width=0.28pt] (\x,-\Ro) -- (\x,-3.15);
+  }
+  \draw[line width=0.7pt] (-1.25,-3.15) rectangle (1.25,-3.52);
+  \foreach \y in {-3.24,-3.34,-3.44} {
+    \draw[line width=0.28pt] (-1.20,\y) -- (1.20,\y);
+  }
+\end{tikzpicture}%
+}
 \caption{图2.5}
 \end{figure}
 
