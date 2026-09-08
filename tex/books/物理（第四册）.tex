@@ -2806,13 +2806,77 @@ f = \frac {R}{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.6 实焦点}]{assets/physics-4/fig-p0054-01.png}}
+% fig-alt: 凹镜实焦点：平行主轴的光线射到凹镜后会聚于F并继续穿过，标O、F、C
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (3.70,0);
+  \coordinate (O) at (0.35,0);
+  \coordinate (F) at (2.02,0);
+  \draw[line width=0.65pt] (C) ++(148:3.35) arc (148:212:3.35);
+  \draw[line width=0.65pt] (C) ++(148:3.51) arc (148:212:3.51);
+  \draw[line width=0.55pt] (C) ++(148:3.35) -- ++(148:0.16);
+  \draw[line width=0.55pt] (C) ++(212:3.35) -- ++(212:0.16);
+  \draw[line width=0.55pt] (-0.08,0) -- (5.25,0);
+  \draw[line width=0.55pt] (5.15,1.12) -- (0.54,1.12);
+  \draw[line width=0.5pt,->] (4.55,1.12) -- (3.85,1.12);
+  \draw[line width=0.55pt] (0.54,1.12) -- (2.65,-0.47);
+  \draw[line width=0.55pt] (5.15,0.58) -- (0.40,0.58);
+  \draw[line width=0.5pt,->] (4.55,0.58) -- (3.85,0.58);
+  \draw[line width=0.55pt] (0.40,0.58) -- (2.76,-0.26);
+  \draw[line width=0.55pt] (5.15,-0.58) -- (0.40,-0.58);
+  \draw[line width=0.5pt,->] (4.55,-0.58) -- (3.85,-0.58);
+  \draw[line width=0.55pt] (0.40,-0.58) -- (2.76,0.26);
+  \draw[line width=0.55pt] (5.15,-1.12) -- (0.54,-1.12);
+  \draw[line width=0.5pt,->] (4.55,-1.12) -- (3.85,-1.12);
+  \draw[line width=0.55pt] (0.54,-1.12) -- (2.65,0.47);
+  \fill (C) circle (0.035);
+  \node[below=1pt] at (0.62,-0.08) {$O$};
+  \node[above=1pt] at (2.00,0.08) {$F$};
+  \node[above=2pt] at (3.70,0.10) {$C$};
+\end{tikzpicture}%
+}
 \caption{图3.6 实焦点}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.7 虚焦点}]{assets/physics-4/fig-p0054-02.png}}
+% fig-alt: 凸镜虚焦点：平行光线反射后发散，虚线延长交于F，标C、F、O
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (0.40,0);
+  \coordinate (O) at (3.65,0);
+  \coordinate (F) at (2.02,0);
+  \draw[line width=0.65pt] (C) ++(38:3.25) arc (38:-38:3.25);
+  \draw[line width=0.65pt] (C) ++(38:3.09) arc (38:-38:3.09);
+  \draw[line width=0.55pt] (C) ++(38:3.09) -- ++(38:0.16);
+  \draw[line width=0.55pt] (C) ++(-38:3.09) -- ++(-38:0.16);
+  \draw[line width=0.55pt] (-0.15,0) -- (5.85,0);
+  \draw[line width=0.55pt] (5.75,1.02) -- (3.49,1.02);
+  \draw[line width=0.5pt,->] (5.15,1.02) -- (4.45,1.02);
+  \draw[line width=0.5pt,dashed] (3.49,1.02) -- (F);
+  \draw[line width=0.55pt] (3.49,1.02) -- (4.95,1.82);
+  \draw[line width=0.5pt,->] (3.88,1.22) -- (4.22,1.40);
+  \draw[line width=0.55pt] (5.75,0.50) -- (3.61,0.50);
+  \draw[line width=0.5pt,->] (5.15,0.50) -- (4.45,0.50);
+  \draw[line width=0.5pt,dashed] (3.61,0.50) -- (F);
+  \draw[line width=0.55pt] (3.61,0.50) -- (5.30,0.94);
+  \draw[line width=0.5pt,->] (4.12,0.62) -- (4.55,0.74);
+  \draw[line width=0.55pt] (5.75,-0.50) -- (3.61,-0.50);
+  \draw[line width=0.5pt,->] (5.15,-0.50) -- (4.45,-0.50);
+  \draw[line width=0.5pt,dashed] (3.61,-0.50) -- (F);
+  \draw[line width=0.55pt] (3.61,-0.50) -- (5.30,-0.94);
+  \draw[line width=0.5pt,->] (4.12,-0.62) -- (4.55,-0.74);
+  \draw[line width=0.55pt] (5.75,-1.02) -- (3.49,-1.02);
+  \draw[line width=0.5pt,->] (5.15,-1.02) -- (4.45,-1.02);
+  \draw[line width=0.5pt,dashed] (3.49,-1.02) -- (F);
+  \draw[line width=0.55pt] (3.49,-1.02) -- (4.95,-1.82);
+  \draw[line width=0.5pt,->] (3.88,-1.22) -- (4.22,-1.40);
+  \fill (C) circle (0.035);
+  \node[left=1pt] at (0.36,0.02) {$C$};
+  \node[above=1pt] at (2.02,0.04) {$F$};
+  \node[below=1pt] at (3.38,-0.16) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3.7 虚焦点}
 \end{figure}
 
@@ -2844,13 +2908,113 @@ f = \frac {R}{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.9}]{assets/physics-4/fig-p0056-01.png}}
+% fig-alt: 图3.9测焦距：凹镜M对着窗，平行光射向镜面，屏上得倒象，镜到屏为f
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.6pt] (0.62,0.05) ellipse (0.22 and 0.46);
+  \node[above left=1pt] at (0.38,0.46) {凹镜};
+  \node[below left=1pt] at (0.38,-0.40) {$M$};
+  \draw[line width=0.55pt] (0.84,0.16) -- (4.18,0.16);
+  \draw[line width=0.55pt] (0.84,-0.02) -- (4.18,-0.02);
+  \draw[line width=0.5pt,->] (3.40,0.16) -- (2.70,0.16);
+  \draw[line width=0.5pt,->] (3.40,-0.02) -- (2.70,-0.02);
+  \node[above=1pt] at (2.40,0.18) {平行光};
+  \draw[line width=0.55pt] (0.70,-0.30) -- (1.78,-1.05);
+  \draw[line width=0.5pt] (1.62,-0.78) -- (2.32,-1.18) -- (2.08,-1.72) -- (1.32,-1.28) -- cycle;
+  \draw[line width=0.4pt] (1.82,-1.00) -- (1.88,-1.48);
+  \draw[line width=0.4pt] (1.52,-1.10) -- (2.10,-1.36);
+  \node[above right=1pt] at (2.22,-0.88) {$P$};
+  \node[right=1pt] at (2.16,-1.28) {倒象};
+  \node[below right=1pt] at (1.85,-1.78) {屏};
+  \draw[line width=0.45pt,<->] (0.62,-2.18) -- (1.55,-2.18);
+  \node[below=1pt] at (1.08,-2.18) {$f$};
+  \draw[line width=0.55pt] (4.22,0.92) -- (5.58,1.32) -- (5.58,-1.12) -- (4.22,-0.72) -- cycle;
+  \draw[line width=0.45pt] (4.40,0.70) -- (5.36,1.02) -- (5.36,-0.76) -- (4.40,-0.46) -- cycle;
+  \draw[line width=0.4pt] (4.40,0.12) -- (5.36,0.13);
+  \draw[line width=0.4pt] (4.88,0.88) -- (4.88,-0.60);
+  \node[left=1pt] at (4.22,0.04) {$W$};
+  \node[below=1pt] at (4.88,-1.16) {窗};
+  \draw[line width=0.4pt] (5.58,1.32) -- (6.02,1.46);
+  \draw[line width=0.4pt] (5.58,0.82) -- (6.02,0.96);
+  \draw[line width=0.4pt] (5.58,0.32) -- (6.02,0.46);
+  \draw[line width=0.4pt] (5.58,-0.18) -- (6.02,-0.04);
+  \draw[line width=0.4pt] (5.58,-0.68) -- (6.02,-0.54);
+  \draw[line width=0.4pt] (5.58,-1.12) -- (6.02,-0.98);
+  \draw[line width=0.4pt] (5.78,1.40) -- (5.78,-1.06);
+\end{tikzpicture}%
+}
 \caption{图3.9}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.10 凹镜成象}]{assets/physics-4/fig-p0056-02.png}}
+% fig-alt: 凹镜成象：(a)物在C外、屏在F与C间为缩小倒立实象；(b)物在F与C间、屏在C外为放大倒立实象；(c)物在F内，镜后为正立放大虚象，眼对着凹镜，下标2F
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node[left=2pt] at (-0.22,0) {$(a)$};
+  \draw[line width=0.6pt] (0.22,0.72) arc (148:212:1.55);
+  \draw[line width=0.6pt] (0.08,0.78) arc (146:214:1.68);
+  \draw[line width=0.5pt] (-0.55,0) -- (4.85,0);
+  \node[below=1pt] at (0.48,-0.02) {$O$};
+  \node[above=1pt] at (1.85,0.03) {$F$};
+  \node[above=1pt] at (3.22,0.03) {$C$};
+  \draw[line width=0.45pt,dashed] (1.85,-0.58) -- (1.85,0.58);
+  \draw[line width=0.45pt,dashed] (3.22,-0.58) -- (3.22,0.58);
+  \draw[line width=0.45pt] (2.40,-0.36) rectangle (2.64,0.36);
+  \draw[line width=0.35pt] (2.44,-0.26) -- (2.56,0.02);
+  \draw[line width=0.35pt] (2.44,-0.08) -- (2.60,0.20);
+  \draw[line width=0.35pt] (2.44,0.10) -- (2.60,0.32);
+  \draw[line width=0.35pt] (2.50,-0.36) -- (2.60,-0.06);
+  \draw[line width=0.4pt] (2.52,-0.20) .. controls (2.60,-0.30) and (2.58,-0.40) .. (2.52,-0.44)
+    .. controls (2.48,-0.38) and (2.46,-0.28) .. (2.52,-0.20);
+  \draw[line width=0.45pt] (4.18,0) -- (4.18,0.50) -- (4.32,0.50) -- (4.32,0) -- cycle;
+  \draw[line width=0.4pt] (4.25,0.50) .. controls (4.34,0.62) and (4.30,0.76) .. (4.25,0.84)
+    .. controls (4.20,0.72) and (4.16,0.60) .. (4.25,0.50);
+  \node[left=2pt] at (-0.22,-2.20) {$(b)$};
+  \begin{scope}[shift={(0,-2.20)}]
+    \draw[line width=0.6pt] (0.22,0.72) arc (148:212:1.55);
+    \draw[line width=0.6pt] (0.08,0.78) arc (146:214:1.68);
+    \draw[line width=0.5pt] (-0.55,0) -- (4.85,0);
+    \node[below=1pt] at (0.48,-0.02) {$O$};
+    \node[above=1pt] at (1.85,0.03) {$F$};
+    \node[above=1pt] at (3.22,0.03) {$C$};
+    \draw[line width=0.45pt,dashed] (1.85,-0.58) -- (1.85,0.58);
+    \draw[line width=0.45pt,dashed] (3.22,-0.58) -- (3.22,0.58);
+    \draw[line width=0.45pt] (2.48,0) -- (2.48,0.46) -- (2.62,0.46) -- (2.62,0) -- cycle;
+    \draw[line width=0.4pt] (2.55,0.46) .. controls (2.64,0.58) and (2.60,0.72) .. (2.55,0.78)
+      .. controls (2.50,0.68) and (2.46,0.56) .. (2.55,0.46);
+    \draw[line width=0.45pt] (4.32,-0.48) rectangle (4.58,0.48);
+    \draw[line width=0.35pt] (4.36,-0.40) -- (4.50,-0.08);
+    \draw[line width=0.35pt] (4.36,-0.20) -- (4.54,0.12);
+    \draw[line width=0.35pt] (4.36,0.00) -- (4.54,0.32);
+    \draw[line width=0.35pt] (4.44,-0.48) -- (4.56,-0.16);
+    \draw[line width=0.4pt] (4.45,-0.32) .. controls (4.54,-0.44) and (4.52,-0.56) .. (4.45,-0.60)
+      .. controls (4.40,-0.52) and (4.38,-0.40) .. (4.45,-0.32);
+  \end{scope}
+  \node[left=2pt] at (-1.55,-4.40) {$(c)$};
+  \begin{scope}[shift={(0,-4.40)}]
+    \draw[line width=0.6pt] (0.22,0.72) arc (148:212:1.55);
+    \draw[line width=0.6pt] (0.08,0.78) arc (146:214:1.68);
+    \draw[line width=0.5pt] (-1.55,0) -- (4.85,0);
+    \node[below=1pt] at (0.48,-0.02) {$O$};
+    \node[above=1pt] at (1.85,0.03) {$F$};
+    \node[above=1pt] at (3.22,0.03) {$C$};
+    \draw[line width=0.45pt,dashed] (1.85,-0.58) -- (1.85,0.58);
+    \draw[line width=0.45pt,dashed] (3.22,-0.58) -- (3.22,0.58);
+    \draw[line width=0.5pt] (-1.22,-0.95) -- (-1.22,0.85) -- (-1.02,0.85) -- (-1.02,-0.95) -- cycle;
+    \draw[line width=0.45pt] (-1.12,0.85) .. controls (-0.94,1.08) and (-1.02,1.32) .. (-1.12,1.42)
+      .. controls (-1.24,1.24) and (-1.30,1.02) .. (-1.12,0.85);
+    \draw[line width=0.45pt] (1.22,0) -- (1.22,0.36) -- (1.34,0.36) -- (1.34,0) -- cycle;
+    \draw[line width=0.4pt] (1.28,0.36) .. controls (1.36,0.48) and (1.32,0.60) .. (1.28,0.66)
+      .. controls (1.22,0.56) and (1.20,0.44) .. (1.28,0.36);
+    \draw[line width=0.45pt] (2.42,0.16) .. controls (2.28,0.26) and (2.16,0.24) .. (2.06,0.16)
+      .. controls (2.16,0.08) and (2.28,0.08) .. (2.42,0.16);
+    \fill (2.26,0.16) circle (0.03);
+    \draw[line width=0.45pt,<->] (0.48,-0.78) -- (3.22,-0.78);
+    \node[below=1pt] at (1.85,-0.78) {$2F$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3.10 凹镜成象}
 \end{figure}
 
@@ -2877,7 +3041,52 @@ f = \frac {R}{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.11}]{assets/physics-4/fig-p0058-01.png}}
+% fig-alt: 同样大小的平面镜与凸镜视野：上图平面镜张角θ1，下图凸镜张角θ2更大，两端为眼
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill (0.00,-0.045) rectangle (0.16,0.045);
+  \draw[line width=0.5pt] (0.16,0) -- (6.15,0);
+  \draw[line width=0.7pt] (3.18,-0.98) -- (3.18,1.00);
+  \draw[line width=0.7pt] (3.32,-0.98) -- (3.32,1.00);
+  \draw[line width=0.5pt] (0.08,0) -- (3.25,1.00);
+  \draw[line width=0.5pt] (3.25,1.00) -- (6.20,0);
+  \draw[line width=0.5pt] (0.08,0) -- (3.25,-0.98);
+  \draw[line width=0.5pt] (3.25,-0.98) -- (6.20,0);
+  \draw[line width=0.5pt] (3.25,1.00) -- (3.78,1.28);
+  \draw[line width=0.5pt] (3.25,-0.98) -- (3.78,-1.26);
+  \draw[line width=0.4pt] (0.08,0) ++(16:0.42) arc (16:-16:0.42);
+  \node[right=1pt] at (0.50,0.18) {$\theta_{1}$};
+  \begin{scope}[shift={(6.32,0.02)}]
+    \draw[line width=0.5pt] (0.02,0.05) .. controls (-0.14,0.14) and (-0.26,0.08) .. (-0.30,0.00)
+      .. controls (-0.26,-0.09) and (-0.14,-0.10) .. (0.02,0.02);
+    \fill (-0.14,0.02) circle (0.032);
+  \end{scope}
+  \begin{scope}[shift={(0.15,-2.85)}]
+    \fill (0.00,-0.045) rectangle (0.16,0.045);
+    \draw[line width=0.5pt] (0.16,0) -- (5.55,0);
+    \coordinate (K) at (2.15,0);
+    \draw[line width=0.65pt] (K) ++(128:1.18) arc (128:232:1.18);
+    \draw[line width=0.65pt] (K) ++(128:1.32) arc (128:232:1.32);
+    \draw[line width=0.5pt] (K) ++(128:1.18) -- ++(128:0.14);
+    \draw[line width=0.5pt] (K) ++(232:1.18) -- ++(232:0.14);
+    \draw[line width=0.5pt] (0.08,0) -- (1.42,0.93);
+    \draw[line width=0.5pt] (1.42,0.93) -- (5.55,0);
+    \draw[line width=0.5pt] (0.08,0) -- (1.42,-0.93);
+    \draw[line width=0.5pt] (1.42,-0.93) -- (5.55,0);
+    \draw[line width=0.45pt,dashed] (1.42,0.93) -- (1.88,1.42);
+    \draw[line width=0.45pt,dashed] (1.42,0.93) -- (1.72,1.38);
+    \draw[line width=0.45pt,dashed] (1.42,-0.93) -- (1.88,-1.42);
+    \draw[line width=0.45pt,dashed] (1.42,-0.93) -- (1.78,-1.48);
+    \draw[line width=0.4pt] (0.08,0) ++(34:0.38) arc (34:-34:0.38);
+    \node[above=1pt] at (0.46,0.16) {$\theta_{2}$};
+    \begin{scope}[shift={(5.68,0.02)}]
+      \draw[line width=0.5pt] (0.02,0.05) .. controls (-0.14,0.14) and (-0.26,0.08) .. (-0.30,0.00)
+        .. controls (-0.26,-0.09) and (-0.14,-0.10) .. (0.02,0.02);
+      \fill (-0.14,0.02) circle (0.032);
+    \end{scope}
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3.11}
 \end{figure}
 
@@ -2916,7 +3125,54 @@ A，怎样知道象点的位置呢？我我们可以通过作光路图来求出�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.13}]{assets/physics-4/fig-p0059-01.png}}
+% fig-alt: 凹镜成象作图：发光点A的三条入射光线AP、AQ、AT，法线CP、CQ、CT实线，反射后交于实象A'，标角1至6
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (4.85,0);
+  \coordinate (O) at (1.45,0);
+  \coordinate (P) at (1.77,1.44);
+  \coordinate (Q) at (1.62,-1.05);
+  \coordinate (T) at (2.10,-2.00);
+  \coordinate (A) at (4.55,1.42);
+  \coordinate (Ap) at (4.18,-1.26);
+  \draw[line width=0.65pt] (C) ++(150:3.40) arc (150:218:3.40);
+  \draw[line width=0.65pt] (C) ++(150:3.56) arc (150:218:3.56);
+  \draw[line width=0.55pt] (C) ++(150:3.40) -- ++(150:0.16);
+  \draw[line width=0.55pt] (C) ++(218:3.40) -- ++(218:0.16);
+  \draw[line width=0.55pt,->] (5.55,0) -- (-0.25,0);
+  \draw[line width=0.55pt] (A) -- (P);
+  \draw[line width=0.55pt] (A) -- (Q);
+  \draw[line width=0.55pt] (A) -- (T);
+  \draw[line width=0.5pt] (P) -- (C);
+  \draw[line width=0.5pt] (Q) -- (C);
+  \draw[line width=0.5pt] (T) -- (C);
+  \draw[line width=0.55pt] (P) -- (Ap);
+  \draw[line width=0.55pt] (Q) -- (Ap);
+  \draw[line width=0.55pt] (T) -- (Ap);
+  \draw[line width=0.45pt,->] (3.70,1.43) -- (3.10,1.43);
+  \draw[line width=0.45pt,->] (3.40,0.55) -- (2.85,0.10);
+  \draw[line width=0.45pt,->] (3.55,-0.05) -- (3.05,-0.85);
+  \draw[line width=0.45pt,->] (2.70,0.55) -- (3.15,0.05);
+  \draw[line width=0.45pt,->] (2.55,-1.35) -- (3.00,-1.45);
+  \draw[line width=0.45pt,->] (2.85,-1.70) -- (3.25,-1.52);
+  \fill (A) circle (0.035);
+  \fill (Ap) circle (0.035);
+  \fill (C) circle (0.035);
+  \node[above left=1pt] at (1.72,1.48) {$P$};
+  \node[left=1pt] at (1.55,-1.02) {$Q$};
+  \node[left=1pt] at (2.02,-2.05) {$T$};
+  \node[above right=1pt] at (4.58,1.42) {$A$};
+  \node[below right=1pt] at (4.20,-1.28) {$A'$};
+  \node[below=1pt] at (1.45,-0.02) {$O$};
+  \node[above=1pt] at (4.85,0.05) {$C$};
+  \node[above=1pt] at (2.35,1.50) {$1$};
+  \node[below=1pt] at (2.12,1.12) {$2$};
+  \node[above=1pt] at (1.92,-0.62) {$3$};
+  \node[below=1pt] at (2.05,-1.22) {$4$};
+  \node[left=1pt] at (2.42,-1.68) {$5$};
+  \node[right=1pt] at (2.62,-1.92) {$6$};
+\end{tikzpicture}%
+}
 \caption{图3.13}
 \end{figure}
 
@@ -2945,7 +3201,47 @@ A，怎样知道象点的位置呢？我我们可以通过作光路图来求出�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.14}]{assets/physics-4/fig-p0061-01.png}}
+% fig-alt: 蜡烛在2f以外经凹镜成象：A、B两条特殊光线分别平行主轴及过F，反射后交于缩小倒立实象A'B'
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (3.30,0);
+  \coordinate (F) at (1.65,0);
+  \coordinate (O) at (0.04,0);
+  \coordinate (A) at (5.45,1.00);
+  \coordinate (B) at (5.45,-1.00);
+  \coordinate (Ap) at (2.37,-0.43);
+  \coordinate (Bp) at (2.37,0.43);
+  \draw[line width=0.65pt] (C) ++(150:3.30) arc (150:210:3.30);
+  \draw[line width=0.65pt] (C) ++(150:3.46) arc (150:210:3.46);
+  \draw[line width=0.55pt] (C) ++(150:3.30) -- ++(150:0.16);
+  \draw[line width=0.55pt] (C) ++(210:3.30) -- ++(210:0.16);
+  \draw[line width=0.5pt] (-0.12,0) -- (5.75,0);
+  \draw[line width=0.5pt] (A) -- (0.16,1.00);
+  \draw[line width=0.5pt] (0.16,1.00) -- (2.92,-0.75);
+  \draw[line width=0.5pt] (A) -- (0.03,-0.43);
+  \draw[line width=0.5pt] (0.03,-0.43) -- (5.70,-0.43);
+  \draw[line width=0.5pt] (B) -- (0.16,-1.00);
+  \draw[line width=0.5pt] (0.16,-1.00) -- (2.92,0.75);
+  \draw[line width=0.5pt] (B) -- (0.03,0.43);
+  \draw[line width=0.5pt] (0.03,0.43) -- (5.70,0.43);
+  \draw[line width=0.55pt] (2.30,-0.47) rectangle (2.44,0.47);
+  \draw[line width=0.35pt] (2.33,-0.38) -- (2.41,-0.10);
+  \draw[line width=0.35pt] (2.33,-0.20) -- (2.41,0.08);
+  \draw[line width=0.35pt] (2.33,-0.02) -- (2.41,0.26);
+  \draw[line width=0.35pt] (2.33,0.16) -- (2.41,0.42);
+  \draw[line width=0.5pt] (5.38,-1.00) -- (5.38,0.84) -- (5.52,0.84) -- (5.52,-1.00) -- cycle;
+  \draw[line width=0.45pt] (5.45,0.84) .. controls (5.56,0.98) and (5.52,1.14) .. (5.45,1.20)
+    .. controls (5.38,1.10) and (5.34,0.94) .. (5.45,0.84);
+  \fill (C) circle (0.03);
+  \node[below=1pt] at (0.12,-0.06) {$O$};
+  \node[above left=1pt] at (1.52,0.08) {$F$};
+  \node[above=1pt] at (3.30,0.06) {$C$};
+  \node[above left=1pt] at (2.22,0.50) {$B'$};
+  \node[below left=1pt] at (2.22,-0.50) {$A'$};
+  \node[above right=1pt] at (5.48,1.08) {$A$};
+  \node[below right=1pt] at (5.52,-1.00) {$B$};
+\end{tikzpicture}%
+}
 \caption{图3.14}
 \end{figure}
 
