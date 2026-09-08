@@ -9484,7 +9484,29 @@ A ^{\prime} P ^{\prime} = AP ^{\prime} (\text{ 对 称 图 形 性 质 } 2)\text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-35}]{assets/plane-geometry-1/fig-p0102-01.png}}
+\fitfig{%
+% fig-alt: 图2-35 扫描：A左、B右、C在上偏右，直角在C；CD竖直落在AB上的D；C处直角记号在角内，D处直角记号在竖线左侧、底边之上，竖线略穿出底边；B处小角弧，60°标在弧左；无等号杠、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.18,0.32);
+  \coordinate (B) at (4.82,0.32);
+  \coordinate (C) at (3.66,2.32);
+  \coordinate (D) at (3.66,0.32);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (C) -- (B);
+  \draw[line width=0.75pt] (C) -- (3.66,0.22);
+  \draw[line width=0.5pt] (3.50,0.32) -- (3.50,0.48) -- (3.66,0.48);
+  \draw[line width=0.5pt] (3.521,2.240) -- (3.601,2.082) -- (3.740,2.182);
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (122:0.34) arc[start angle=122, end angle=180, radius=0.34];
+  \end{scope}
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=0.5pt] at (3.70,2.34) {$C$};
+  \node[anchor=north, inner sep=1pt] at (3.60,0.16) {$D$};
+  \node[anchor=west, inner sep=0.5pt] at (4.08,0.78) {$60^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{图2-35}
 \end{figure}
 
@@ -9514,7 +9536,28 @@ CD \perp AB\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·36}]{assets/plane-geometry-1/fig-p0102-02.png}}
+\fitfig{%
+% fig-alt: 图2·36 扫描：A在上，B左、C在底边中右、D在右；F在AB上，FC、AC、AD实线；BC实线，CD虚线且与C略留空隙；C处AC与FC之间有小直角记号；无角弧、无等号杠
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (2.02,2.45);
+  \coordinate (B) at (0.16,0.32);
+  \coordinate (C) at (3.22,0.32);
+  \coordinate (D) at (4.95,0.32);
+  \coordinate (F) at (1.276,1.598);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (F) -- (C);
+  \draw[dashed, line width=0.55pt] (3.42,0.32) -- (D);
+  \draw[line width=0.5pt] (3.122,0.494) -- (2.955,0.604) -- (3.053,0.430);
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1pt] at (3.12,0.26) {$C$};
+  \node[anchor=west, inner sep=1pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1pt] at (1.12,1.66) {$F$};
+\end{tikzpicture}%
+}
 \caption{图2·36}
 \end{figure}
 
@@ -9554,7 +9597,30 @@ CD \perp AB\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·37}]{assets/plane-geometry-1/fig-p0103-01.png}}
+\fitfig{%
+% fig-alt: 图2·37 扫描：A在下、B在中、N在上，AB竖直向上延至N；C在左，CB近水平略向右下；B处角弧在CB上方、84°标在弧左；A处角弧，42°标在弧左；无直角记号、无等号杠、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (2.52,0.20);
+  \coordinate (B) at (2.52,3.08);
+  \coordinate (N) at (2.52,3.95);
+  \coordinate (C) at (0.16,3.20);
+  \draw[line width=0.75pt] (A) -- (N);
+  \draw[line width=0.75pt] (C) -- (B);
+  \draw[line width=0.75pt] (C) -- (A);
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (98:0.36) arc[start angle=98, end angle=172, radius=0.36];
+    \node[anchor=east, inner sep=1pt] at (132:0.62) {$84^{\circ}$};
+  \end{scope}
+  \begin{scope}[shift={(A)}]
+    \draw[line width=0.5pt] (94:0.34) arc[start angle=94, end angle=124, radius=0.34];
+    \node[anchor=south east, inner sep=0.5pt] at (112:0.70) {$42^{\circ}$};
+  \end{scope}
+  \node[anchor=south, inner sep=1pt] at (N) {$N$};
+  \node[anchor=west, inner sep=1.5pt] at (2.58,3.00) {$B$};
+  \node[anchor=north west, inner sep=0.5pt] at (2.56,0.12) {$A$};
+  \node[anchor=east, inner sep=1pt] at (C) {$C$};
+\end{tikzpicture}%
+}
 \caption{图2·37}
 \end{figure}
 
@@ -9584,7 +9650,35 @@ CD \perp AB\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-1/fig-p0104-01.png}}
+\fitfig{%
+% fig-alt: （第1题）扫描：△ABC等腰，A在上、B左、C右；AB、AC各一短等号杠；BO、CO为底角平分线，O标在交点上；B处3在BO上方、1在BO与底边之间，C处4在CO上方、2在CO与底边之间；无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.68,3.32);
+  \coordinate (B) at (0.12,0.28);
+  \coordinate (C) at (3.24,0.28);
+  \coordinate (O) at (1.68,1.02);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (B) -- (O) -- (C);
+  \draw[line width=0.55pt] (0.76,1.88) -- (1.04,1.72);
+  \draw[line width=0.55pt] (2.32,1.88) -- (2.60,1.72);
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (34:0.26) arc[start angle=32, end angle=56, radius=0.26];
+    \node[anchor=south, inner sep=0.4pt] at (50:0.62) {$3$};
+    \draw[line width=0.5pt] (4:0.26) arc[start angle=4, end angle=20, radius=0.26];
+    \node[anchor=north west, inner sep=0.4pt] at (12:0.58) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(C)}]
+    \draw[line width=0.5pt] (124:0.26) arc[start angle=124, end angle=148, radius=0.26];
+    \node[anchor=south, inner sep=0.4pt] at (130:0.62) {$4$};
+    \draw[line width=0.5pt] (158:0.26) arc[start angle=158, end angle=176, radius=0.26];
+    \node[anchor=north east, inner sep=0.4pt] at (168:0.58) {$2$};
+  \end{scope}
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1pt] at (O) {$O$};
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -9592,7 +9686,31 @@ CD \perp AB\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-1/fig-p0104-02.png}}
+\fitfig{%
+% fig-alt: （第2题）扫描：△ABC，A在上、B左、C右；EF水平交两腰于E、F，E标在左、F标在右；1在E右、EF上方，2在F左、EF上方；B、C各一小角弧；无等号杠、无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.62,3.48);
+  \coordinate (B) at (0.16,0.28);
+  \coordinate (C) at (3.08,0.28);
+  \coordinate (E) at (0.59,1.22);
+  \coordinate (F) at (2.65,1.22);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (E) -- (F);
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (8:0.26) arc[start angle=8, end angle=52, radius=0.26];
+  \end{scope}
+  \begin{scope}[shift={(C)}]
+    \draw[line width=0.5pt] (128:0.26) arc[start angle=128, end angle=172, radius=0.26];
+  \end{scope}
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1pt] at (0.48,1.26) {$E$};
+  \node[anchor=west, inner sep=1pt] at (2.76,1.26) {$F$};
+  \node[anchor=south west, inner sep=0.4pt] at (0.74,1.26) {$1$};
+  \node[anchor=south east, inner sep=0.4pt] at (2.50,1.26) {$2$};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -9675,7 +9793,33 @@ AE = AF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-1/fig-p0105-01.png}}
+\fitfig{%
+% fig-alt: （第6题）扫描：H—A—E—C为水平基线，右端波浪截断；AB为斜屋脊，D在AB上，DE、BC竖直；DC斜线；B右下接短横再以竖向折线截断；A处小角弧，150°标在弧左、基线之上；无直角记号、无等号杠、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (H) at (0.14,0.46);
+  \coordinate (A) at (1.22,0.46);
+  \coordinate (E) at (2.48,0.46);
+  \coordinate (C) at (3.74,0.46);
+  \coordinate (B) at (3.74,2.20);
+  \coordinate (D) at (2.48,1.33);
+  \draw[line width=0.75pt] (H) -- (5.08,0.46);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (D) -- (E);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (D) -- (C);
+  \draw[line width=0.75pt] (B) -- (4.72,1.50) -- (5.04,1.50) -- (5.14,1.34) -- (4.96,1.16) -- (5.14,1.00) -- (4.94,0.82) -- (5.12,0.64) -- (5.08,0.46);
+  \begin{scope}[shift={(A)}]
+    \draw[line width=0.5pt] (38:0.22) arc[start angle=38, end angle=158, radius=0.22];
+  \end{scope}
+  \node[anchor=east, inner sep=1pt] at (H) {$H$};
+  \node[anchor=north, inner sep=1pt] at (1.30,0.40) {$A$};
+  \node[anchor=north, inner sep=1pt] at (E) {$E$};
+  \node[anchor=north, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south east, inner sep=0.5pt] at (2.40,1.38) {$D$};
+  \node[anchor=south, inner sep=1pt] at (0.58,0.70) {$150^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -9683,7 +9827,33 @@ AE = AF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-1/fig-p0105-02.png}}
+\fitfig{%
+% fig-alt: （第7题）扫描：△ABC，A在上、B左、C右，D在内；BD、DC成V，D标在V上；AB、AC各一短等号杠，BD、DC各一短等号杠；1在AB与BD之间并靠近B有小弧，2在AC与DC之间并靠近C有小弧；无直角记号、无虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.82,2.48);
+  \coordinate (B) at (0.16,0.26);
+  \coordinate (C) at (3.48,0.26);
+  \coordinate (D) at (1.85,1.40);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (B) -- (D) -- (C);
+  \draw[line width=0.55pt] (0.82,1.28) -- (1.08,1.16);
+  \draw[line width=0.55pt] (2.56,1.28) -- (2.82,1.16);
+  \draw[line width=0.55pt] (0.92,0.78) -- (1.12,0.66);
+  \draw[line width=0.55pt] (2.58,0.78) -- (2.78,0.66);
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (38:0.32) arc[start angle=36, end angle=50, radius=0.32];
+    \node[anchor=west, inner sep=0.5pt] at (48:1.02) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(C)}]
+    \draw[line width=0.5pt] (130:0.32) arc[start angle=130, end angle=144, radius=0.32];
+    \node[anchor=east, inner sep=0.5pt] at (132:1.02) {$2$};
+  \end{scope}
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -9724,7 +9894,43 @@ AE = AF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·38}]{assets/plane-geometry-1/fig-p0106-01.png}}
+\fitfig{%
+% fig-alt: 图2·38 扫描：左右两个同形△ABC与△A'B'C'；A、A'处各一角弧，B、B'处各一角弧；AC、A'C'各一双短等号杠，BC、B'C'各一单短等号杠；AB、A'B'无杠；无直角记号、无虚线、无度数
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.08,1.98);
+  \coordinate (B) at (0.14,0.24);
+  \coordinate (C) at (2.88,0.24);
+  \coordinate (Ap) at (5.28,1.98);
+  \coordinate (Bp) at (4.34,0.24);
+  \coordinate (Cp) at (7.08,0.24);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- cycle;
+  \draw[line width=0.55pt] (1.832,1.100) -- (1.984,1.258);
+  \draw[line width=0.55pt] (1.976,0.962) -- (2.128,1.120);
+  \draw[line width=0.55pt] (1.51,0.14) -- (1.51,0.36);
+  \draw[line width=0.55pt] (6.032,1.100) -- (6.184,1.258);
+  \draw[line width=0.55pt] (6.176,0.962) -- (6.328,1.120);
+  \draw[line width=0.55pt] (5.71,0.14) -- (5.71,0.36);
+  \begin{scope}[shift={(A)}]
+    \draw[line width=0.5pt] (242:0.30) arc[start angle=242, end angle=304, radius=0.30];
+  \end{scope}
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.5pt] (8:0.26) arc[start angle=8, end angle=52, radius=0.26];
+  \end{scope}
+  \begin{scope}[shift={(Ap)}]
+    \draw[line width=0.5pt] (242:0.30) arc[start angle=242, end angle=304, radius=0.30];
+  \end{scope}
+  \begin{scope}[shift={(Bp)}]
+    \draw[line width=0.5pt] (8:0.26) arc[start angle=8, end angle=52, radius=0.26];
+  \end{scope}
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1pt] at (Ap) {$A'$};
+  \node[anchor=north east, inner sep=1pt] at (Bp) {$B'$};
+  \node[anchor=north west, inner sep=1pt] at (Cp) {$C'$};
+\end{tikzpicture}%
+}
 \caption{图2·38}
 \end{figure}
 
