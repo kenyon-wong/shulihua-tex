@@ -348,7 +348,19 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-2}]{assets/solid-geometry/fig-p0006-01.png}}
+\fitfig{%
+% fig-alt: 左为水平位置的平行四边形平面，下标“水平位置的平面”；右为左右边竖直、上下边向右上倾斜的平行四边形，下标“直立的平面”
+\begin{tikzpicture}[line cap=round]
+  % 水平位置的平面
+  \draw[line width=0.7pt] (0,0) -- (2.15,0) -- (3.05,1.02) -- (0.90,1.02) -- cycle;
+  \node[below=2pt] at (1.08,-0.02) {\footnotesize 水平位置的平面};
+  % 直立的平面
+  \begin{scope}[xshift=4.15cm]
+    \draw[line width=0.7pt] (0,0) -- (0,2.05) -- (1.08,3.05) -- (1.08,1.05) -- cycle;
+    \node[right=2pt] at (0.55,-0.02) {\footnotesize 直立的平面};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-2}
 \end{figure}
 
@@ -361,7 +373,17 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-3}]{assets/solid-geometry/fig-p0006-02.png}}
+\fitfig{%
+% fig-alt: 水平位置的平行四边形，顶点左下A、右下B、右上C、左上D，内部靠右上标M
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (3.45,0) -- (4.55,1.25) -- (1.10,1.25) -- cycle;
+  \node[left=1pt] at (0,0) {$A$};
+  \node[below=1pt] at (3.45,0) {$B$};
+  \node[above right=0pt] at (4.55,1.25) {$C$};
+  \node[above=1pt] at (1.10,1.25) {$D$};
+  \node at (3.55,0.88) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-3}
 \end{figure}
 
@@ -384,7 +406,27 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-4}]{assets/solid-geometry/fig-p0007-02.png}}
+\fitfig{%
+% fig-alt: 水平平面M与直立平面相交，只画可见实线：底为平行四边形，直立部分左右竖边，中有竖线与斜线，右上标N，左下标M，不画虚线
+\begin{tikzpicture}[line cap=round,x=0.022cm,y=-0.022cm]
+  \draw[line width=0.7pt] (8,96) -- (108,97);
+  \draw[line width=0.7pt] (8,96) -- (43,62);
+  \draw[line width=0.7pt] (100,98) -- (138,62);
+  \draw[line width=0.7pt] (110,61) -- (138,63);
+  \draw[line width=0.7pt] (40,46) -- (40,98);
+  \draw[line width=0.7pt] (74,26) -- (74,82);
+  \draw[line width=0.7pt] (91,44) -- (91,99);
+  \draw[line width=0.7pt] (110,12) -- (110,63);
+  \draw[line width=0.7pt] (40,47) -- (112,12);
+  \draw[line width=0.7pt] (56,10) -- (92,49);
+  \draw[line width=0.7pt] (56,10) -- (56,32);
+  \draw[line width=0.7pt] (32,99) -- (76,78);
+  \draw[line width=0.7pt] (71,77) -- (93,99);
+  \draw[line width=0.7pt] (89,71) -- (114,59);
+  \node[yscale=-1] at (22,86) {$M$};
+  \node[yscale=-1] at (104,20) {$N$};
+\end{tikzpicture}%
+}
 \caption{图1-4}
 \end{figure}
 
@@ -485,7 +527,40 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-8}]{assets/solid-geometry/fig-p0009-01.png}}
+\fitfig{%
+% fig-alt: 左为圆，水平直径两端带箭头并标A、B，竖直直径两端带箭头，直径十二等分后作垂线弦；右为平面M内的椭圆，水平直径标A1、B1，右端与短轴上方各有箭头，内有四十五度平行弦
+\begin{tikzpicture}[line cap=round]
+  \def\R{1.12}
+  \foreach \i in {1,...,11} {
+    \pgfmathsetmacro{\x}{-\R+2*\R*\i/12}
+    \pgfmathsetmacro{\h}{sqrt(\R*\R-\x*\x)}
+    \draw[line width=0.45pt] (\x,-\h) -- (\x,\h);
+  }
+  \draw[line width=0.7pt] (0,0) circle (\R);
+  \draw[<->,line width=0.7pt] (-1.85,0) -- (1.85,0);
+  \draw[<->,line width=0.7pt] (0,-1.85) -- (0,1.85);
+  \node[below=1pt] at (-1.38,0) {$A$};
+  \node[below=1pt] at (1.42,0) {$B$};
+  \begin{scope}[xshift=5.15cm,yshift=-0.15cm]
+    \draw[line width=0.7pt] (0,0) -- (3.15,0) -- (4.15,0.95) -- (1.00,0.95) -- cycle;
+    \begin{scope}[shift={(1.85,0.38)}]
+      \draw[line width=0.7pt] (-1.12,0) -- (1.28,0);
+      \draw[->,line width=0.7pt] (1.12,0) -- (1.42,0);
+      \draw[->,line width=0.6pt] (0,0.36) -- (0,0.58);
+      \begin{scope}
+        \clip (0,0) ellipse (1.12 and 0.34);
+        \foreach \i in {-6,...,6} {
+          \draw[line width=0.4pt] ({0.17*\i-0.85},{-0.17*\i-0.85}) -- ({0.17*\i+0.85},{-0.17*\i+0.85});
+        }
+      \end{scope}
+      \draw[line width=0.7pt] (0,0) ellipse (1.12 and 0.34);
+      \node[left=1pt] at (-1.12,0) {$A_{1}$};
+      \node[right=1pt] at (1.18,0) {$B_{1}$};
+    \end{scope}
+    \node[above right=-1pt] at (4.15,0.95) {$M$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-8}
 \end{figure}
 
