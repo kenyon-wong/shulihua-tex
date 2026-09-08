@@ -9990,7 +9990,50 @@ x & ..。 & -3 & -2 & -1 & 0 & 1 & 2 & 3 & ..。 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-1}]{assets/algebra-3/fig-p0156-01.png}}
+% fig-alt: 三条平行直线y=2x+3、y=2x、y=2x-3；y轴标9、7、5、3、1、-1、-3、-5、-7、-9，x轴标-3、3，左箭头与右箭头标x，y轴上箭头标y；实心点为表中整数横坐标
+\fitfig{%
+\begin{tikzpicture}[x=0.46cm,y=0.42cm,line cap=round,line join=round]
+  \draw[line width=0.95pt,->] (-4.35,0) -- (-5.1,0);
+  \draw[line width=0.85pt] (-4.2,0) -- (5.05,0);
+  \draw[line width=0.95pt,->] (4.9,0) -- (5.75,0);
+  \node[right=1pt] at (5.75,0) {$x$};
+  \draw[line width=0.85pt] (0,-10.25) -- (0,10.55);
+  \draw[line width=0.95pt,->] (0,10.4) -- (0,11.2);
+  \node[above=1pt] at (0,11.2) {$y$};
+  \foreach \x in {-4,-2,-1,1,2,4}{
+    \draw[line width=0.5pt] (\x,-0.12) -- (\x,0.12);
+  }
+  \draw[line width=0.55pt] (-3,-0.14) -- (-3,0.14);
+  \draw[line width=0.55pt] (3,-0.14) -- (3,0.14);
+  \node[below=4pt] at (-3,0) {$-3$};
+  \node[below=4pt] at (3,0) {$3$};
+  \foreach \y in {1,3,5,7,9}{
+    \draw[line width=0.55pt] (-0.1,\y) -- (0.1,\y);
+    \node[anchor=east] at (-0.24,\y) {$\y$};
+  }
+  \foreach \y in {-1,-3,-5,-7,-9}{
+    \draw[line width=0.55pt] (-0.1,\y) -- (0.1,\y);
+    \node[anchor=east] at (-0.24,\y) {$\y$};
+  }
+  \draw[line width=1.05pt] (-4.4,-5.8) -- (3.25,9.5);
+  \draw[line width=1.05pt] (-4.55,-9.1) -- (3.75,7.5);
+  \draw[line width=1.05pt] (-3.85,-10.7) -- (4.05,5.1);
+  \foreach \x/\y in {-3/-3,-2/-1,-1/1,0/3,1/5,2/7,3/9}{
+    \fill (\x,\y) circle[radius=1.65pt];
+  }
+  \foreach \x/\y in {-3/-6,-2/-4,-1/-2,0/0,1/2,2/4,3/6}{
+    \fill (\x,\y) circle[radius=1.65pt];
+  }
+  \foreach \x/\y in {-3/-9,-2/-7,-1/-5,0/-3,1/-1,2/1,3/3}{
+    \fill (\x,\y) circle[radius=1.65pt];
+  }
+  \node[anchor=west] at (3.48,9.62) {$y=2x+3$};
+  \draw[line width=0.55pt] (3.45,7.1) -- (4.15,7.82);
+  \node[anchor=west] at (4.85,7.88) {$y=2x$};
+  \draw[line width=0.55pt] (3.85,4.7) -- (4.15,6.15);
+  \node[anchor=west] at (4.85,6.28) {$y=2x-3$};
+\end{tikzpicture}%
+}
 \caption{图4-1}
 \end{figure}
 
@@ -10024,7 +10067,28 @@ y = k x + b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.2}]{assets/algebra-3/fig-p0157-02.png}}
+% fig-alt: y=1/2 x+3/2过实心点(1,2)、(3,3)，直线向左越过x轴；y轴上箭头标y，x轴右箭头标x，原点O，刻度无数字，右上标函数式
+\fitfig{%
+\begin{tikzpicture}[x=0.58cm,y=0.5cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-4.15,0) -- (5.05,0);
+  \draw[line width=0.95pt,->] (4.9,0) -- (5.75,0);
+  \node[right=1pt] at (5.75,0) {$x$};
+  \draw[line width=0.85pt] (0,-2.15) -- (0,4.15);
+  \draw[line width=0.95pt,->] (0,4.0) -- (0,4.85);
+  \node[above=1pt] at (0,4.85) {$y$};
+  \node[anchor=north west] at (0.1,-0.14) {$O$};
+  \foreach \x in {-3,-2,-1,1,2,3,4}{
+    \draw[line width=0.5pt] (\x,-0.1) -- (\x,0.1);
+  }
+  \foreach \y in {-2,-1,1,2,3}{
+    \draw[line width=0.5pt] (-0.09,\y) -- (0.09,\y);
+  }
+  \draw[line width=1.05pt] (-4.2,-0.6) -- (4.7,3.85);
+  \fill (1,2) circle[radius=1.7pt];
+  \fill (3,3) circle[radius=1.7pt];
+  \node[anchor=south west] at (0.85,3.78) {$y=\frac{1}{2}x+\frac{3}{2}$};
+\end{tikzpicture}%
+}
 \caption{图4.2}
 \end{figure}
 
@@ -10074,7 +10138,45 @@ y = k x + b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.3}]{assets/algebra-3/fig-p0158-01.png}}
+% fig-alt: 左右两坐标系。左为y=3x+2，标签在直线右上；右为y=-3x+2，标签在直线左上。两图x轴两端箭头、右端标x，y轴上箭头标y，原点O，刻度无数字
+\fitfig{%
+\begin{tikzpicture}[x=0.42cm,y=0.36cm,line cap=round,line join=round]
+  \draw[line width=0.95pt,->] (-3.25,0) -- (-3.95,0);
+  \draw[line width=0.85pt] (-3.15,0) -- (3.25,0);
+  \draw[line width=0.95pt,->] (3.1,0) -- (3.85,0);
+  \node[right=1pt] at (3.85,0) {$x$};
+  \draw[line width=0.85pt] (0,-2.85) -- (0,5.55);
+  \draw[line width=0.95pt,->] (0,5.4) -- (0,6.2);
+  \node[above=1pt] at (0,6.2) {$y$};
+  \node[anchor=north] at (0.14,-0.16) {$O$};
+  \foreach \x in {-3,-2,-1,1,2,3}{
+    \draw[line width=0.5pt] (\x,-0.12) -- (\x,0.12);
+  }
+  \foreach \y in {-2,-1,1,2,3,4,5}{
+    \draw[line width=0.5pt] (-0.1,\y) -- (0.1,\y);
+  }
+  \draw[line width=1.05pt] (-1.55,-2.65) -- (1.15,5.45);
+  \node[anchor=west] at (1.22,4.05) {$y=3x+2$};
+  \begin{scope}[xshift=6.6cm]
+    \draw[line width=0.95pt,->] (-3.25,0) -- (-3.95,0);
+    \draw[line width=0.85pt] (-3.15,0) -- (3.25,0);
+    \draw[line width=0.95pt,->] (3.1,0) -- (3.85,0);
+    \node[right=1pt] at (3.85,0) {$x$};
+    \draw[line width=0.85pt] (0,-2.85) -- (0,5.55);
+    \draw[line width=0.95pt,->] (0,5.4) -- (0,6.2);
+    \node[above=1pt] at (0,6.2) {$y$};
+    \node[anchor=north] at (0.14,-0.16) {$O$};
+    \foreach \x in {-3,-2,-1,1,2,3}{
+      \draw[line width=0.5pt] (\x,-0.12) -- (\x,0.12);
+    }
+    \foreach \y in {-2,-1,1,2,3,4,5}{
+      \draw[line width=0.5pt] (-0.1,\y) -- (0.1,\y);
+    }
+    \draw[line width=1.05pt] (-1.15,5.45) -- (1.55,-2.65);
+    \node[anchor=east] at (-1.48,4.55) {$y=-3x+2$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图4.3}
 \end{figure}
 
@@ -10333,7 +10435,36 @@ y = \frac{1}{2} x + \frac{3}{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-4}]{assets/algebra-3/fig-p0162-01.png}}
+% fig-alt: y=1/2 x+3/2过B(-1,1)与A(1,2)；y轴上箭头标y、轴右标1，x轴右箭头标x、下标-1与1，原点O，直线右上标函数式
+\fitfig{%
+\begin{tikzpicture}[x=0.62cm,y=0.55cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-4.35,0) -- (4.85,0);
+  \draw[line width=0.95pt,->] (4.7,0) -- (5.55,0);
+  \node[right=1pt] at (5.55,0) {$x$};
+  \draw[line width=0.85pt] (0,-1.35) -- (0,4.15);
+  \draw[line width=0.95pt,->] (0,4.0) -- (0,4.75);
+  \node[above=1pt] at (0,4.75) {$y$};
+  \node[anchor=north] at (0.08,-0.16) {$O$};
+  \foreach \x in {-3,-2,2,3,4}{
+    \draw[line width=0.5pt] (\x,-0.1) -- (\x,0.1);
+  }
+  \draw[line width=0.55pt] (-1,-0.12) -- (-1,0.12);
+  \draw[line width=0.55pt] (1,-0.12) -- (1,0.12);
+  \foreach \y in {-1,2,3}{
+    \draw[line width=0.5pt] (-0.09,\y) -- (0.09,\y);
+  }
+  \draw[line width=0.55pt] (-0.1,1) -- (0.1,1);
+  \node[below=3pt] at (-1,0) {$-1$};
+  \node[below=3pt] at (1,0) {$1$};
+  \node[anchor=west] at (0.22,1) {$1$};
+  \draw[line width=1.05pt] (-4.3,-0.65) -- (4.15,3.575);
+  \fill (-1,1) circle[radius=1.7pt];
+  \fill (1,2) circle[radius=1.7pt];
+  \node[anchor=south] at (-1.02,1.16) {$B$};
+  \node[anchor=north west] at (1.16,1.72) {$A$};
+  \node[anchor=south west] at (1.85,2.95) {$y=\frac{1}{2}x+\frac{3}{2}$};
+\end{tikzpicture}%
+}
 \caption{图4-4}
 \end{figure}
 
@@ -10477,7 +10608,24 @@ x - 0 y - \frac{c}{a}. \tag {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-5}]{assets/algebra-3/fig-p0165-01.png}}
+% fig-alt: y轴上箭头标y；x轴虚线、两端箭头、右端标x，轴上标y=0，原点O；上方实线标y=-c/b>0，下方实线标y=-c/b<0
+\fitfig{%
+\begin{tikzpicture}[x=0.72cm,y=0.55cm,line cap=round,line join=round]
+  \draw[line width=0.95pt,->] (-3.15,0) -- (-3.85,0);
+  \draw[dashed,line width=0.7pt] (-3.05,0) -- (3.15,0);
+  \draw[line width=0.95pt,->] (3.05,0) -- (3.8,0);
+  \node[right=1pt] at (3.8,0) {$x$};
+  \draw[line width=0.9pt] (0,-3.15) -- (0,3.35);
+  \draw[line width=0.95pt,->] (0,3.2) -- (0,4.05);
+  \node[above=1pt] at (0,4.05) {$y$};
+  \node[anchor=north west] at (0.12,-0.12) {$O$};
+  \draw[line width=1.15pt] (-2.55,2.15) -- (2.55,2.15);
+  \draw[line width=1.15pt] (-2.55,-2.15) -- (2.55,-2.15);
+  \node[anchor=west] at (2.68,2.15) {$y=-\dfrac{c}{b}>0$};
+  \node[anchor=south west] at (0.7,0.08) {$y=0$};
+  \node[anchor=west] at (2.68,-2.15) {$y=-\dfrac{c}{b}<0$};
+\end{tikzpicture}%
+}
 \caption{图4-5}
 \end{figure}
 
@@ -10485,7 +10633,24 @@ x - 0 y - \frac{c}{a}. \tag {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-6}]{assets/algebra-3/fig-p0165-02.png}}
+% fig-alt: x轴虚线、两端箭头、右端标x；y轴上箭头标y，轴右上标x=0，原点O；左侧竖实线标x=-c/a<0，右侧竖实线标x=-c/a>0
+\fitfig{%
+\begin{tikzpicture}[x=0.72cm,y=0.55cm,line cap=round,line join=round]
+  \draw[line width=0.95pt,->] (-3.35,0) -- (-4.05,0);
+  \draw[dashed,line width=0.7pt] (-3.2,0) -- (3.35,0);
+  \draw[line width=0.95pt,->] (3.2,0) -- (4.55,0);
+  \node[right=1pt] at (4.55,0) {$x$};
+  \draw[line width=0.9pt] (0,-2.85) -- (0,3.15);
+  \draw[line width=0.95pt,->] (0,3.0) -- (0,3.75);
+  \node[above=1pt] at (0,3.75) {$y$};
+  \node[anchor=north] at (0.14,-0.12) {$O$};
+  \draw[line width=1.15pt] (-2.05,-2.55) -- (-2.05,2.85);
+  \draw[line width=1.15pt] (2.05,-2.55) -- (2.05,2.85);
+  \node[anchor=south east] at (-2.18,2.95) {$x=-\dfrac{c}{a}<0$};
+  \node[anchor=south west] at (0.14,2.85) {$x=0$};
+  \node[anchor=south west] at (2.18,2.95) {$x=-\dfrac{c}{a}>0$};
+\end{tikzpicture}%
+}
 \caption{图4-6}
 \end{figure}
 
@@ -10513,7 +10678,39 @@ x - 0 y - \frac{c}{a}. \tag {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-7}]{assets/algebra-3/fig-p0166-02.png}}
+% fig-alt: 方程2x+3y=17的方格图，x从-2到9、y从-2到7；y轴左标7至1与-1、-2，x轴下标-2、O、1至8，上箭头标y、右箭头标x；实心点(1,5)、(4,3)、(7,1)
+\fitfig{%
+\begin{tikzpicture}[x=0.48cm,y=0.56cm,line cap=round,line join=round]
+  \foreach \x in {-2,-1,1,2,3,4,5,6,7,8}{
+    \draw[line width=0.4pt] (\x,-2) -- (\x,7);
+  }
+  \draw[line width=0.7pt] (9,-2) -- (9,7);
+  \foreach \y in {-2,-1,1,2,3,4,5,6,7}{
+    \draw[line width=0.4pt] (-2,\y) -- (9,\y);
+  }
+  \draw[line width=0.95pt] (0,-2) -- (0,6.85);
+  \draw[line width=1.0pt,->] (0,6.75) -- (0,7.65);
+  \node[above=1pt] at (0,7.65) {$y$};
+  \draw[line width=0.95pt] (-2,0) -- (8.85,0);
+  \draw[line width=1.0pt,->] (8.75,0) -- (9.7,0);
+  \node[right=1pt] at (9.7,0) {$x$};
+  \node[anchor=north west,font=\footnotesize] at (0.28,-0.16) {$O$};
+  \node[below=7pt,font=\footnotesize] at (-2.25,0) {$-2$};
+  \foreach \x in {1,2,3,4,5,6,7,8}{
+    \node[below=6pt,font=\footnotesize] at (\x,0) {$\x$};
+  }
+  \foreach \y in {2,3,4,5,6,7}{
+    \node[anchor=east,font=\footnotesize] at (-0.5,\y) {$\y$};
+  }
+  \node[anchor=east,font=\footnotesize] at (-0.62,1.08) {$1$};
+  \node[anchor=east,font=\footnotesize] at (-0.78,-1.18) {$-1$};
+  \node[anchor=east,font=\footnotesize] at (-0.78,-2.28) {$-2$};
+  \draw[line width=1.15pt] (0.16,5.547) -- (8.42,0.053);
+  \fill (1,5) circle[radius=1.9pt];
+  \fill (4,3) circle[radius=1.9pt];
+  \fill (7,1) circle[radius=1.9pt];
+\end{tikzpicture}%
+}
 \caption{图4-7}
 \end{figure}
 
@@ -10599,7 +10796,39 @@ y & -1 & \(1\frac{1}{3}\) \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.8}]{assets/algebra-3/fig-p0167-01.png}}
+% fig-alt: 直线x-y+2=0过B(-2,0)、P、A(0,2)，右上标x-y+2=0；直线7x+2y+2=0过P与C(0,-1)至D；P处虚线引向两轴；y轴上箭头标y，x轴两端箭头、右端标x，原点O
+\fitfig{%
+\begin{tikzpicture}[x=0.72cm,y=0.52cm,line cap=round,line join=round]
+  \draw[line width=0.95pt,->] (-3.45,0) -- (-4.15,0);
+  \draw[line width=0.85pt] (-3.3,0) -- (3.55,0);
+  \draw[line width=0.95pt,->] (3.4,0) -- (4.3,0);
+  \node[right=1pt] at (4.35,0) {$x$};
+  \draw[line width=0.85pt] (0,-3.35) -- (0,3.85);
+  \draw[line width=0.95pt,->] (0,3.7) -- (0,4.5);
+  \node[above=1pt] at (0,4.5) {$y$};
+  \node[anchor=north west] at (0.12,-0.12) {$O$};
+  \foreach \x in {-3,-2,-1,1,2,3}{
+    \draw[line width=0.5pt] (\x,-0.1) -- (\x,0.1);
+  }
+  \foreach \y in {-3,-2,-1,1,2,3}{
+    \draw[line width=0.5pt] (-0.09,\y) -- (0.09,\y);
+  }
+  \draw[dashed,line width=0.6pt] (-0.667,0) -- (-0.667,1.333) -- (0,1.333);
+  \draw[line width=1.05pt] (-3.25,-1.25) -- (1.7,3.7);
+  \draw[line width=1.05pt] (-1.22,3.375) -- (0.55,-2.925);
+  \fill (-2,0) circle[radius=1.5pt];
+  \fill (-0.667,1.333) circle[radius=1.6pt];
+  \fill (0,2) circle[radius=1.5pt];
+  \fill (0,-1) circle[radius=1.5pt];
+  \fill (0.5,-2.75) circle[radius=1.5pt];
+  \node[anchor=south] at (-2.02,0.14) {$B$};
+  \node[anchor=south east] at (-0.98,1.58) {$P$};
+  \node[anchor=north west] at (0.22,1.78) {$A$};
+  \node[anchor=east] at (-0.48,-1.22) {$C$};
+  \node[anchor=west] at (0.78,-2.55) {$D$};
+  \node[anchor=south west] at (0.85,3.55) {$x-y+2=0$};
+\end{tikzpicture}%
+}
 \caption{图4.8}
 \end{figure}
 
