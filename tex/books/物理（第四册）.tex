@@ -1537,7 +1537,32 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（第3题）}]{assets/physics-4/fig-p0030-03.png}}
+% fig-alt: 两平面镜互相垂直，光束由A经B、C反射后沿CD射出
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0.22,3.48) -- (4.58,3.48) -- (4.58,0.42);
+  \foreach \x in {0.40,0.68,0.96,1.24,1.52,1.80,2.08,2.36,2.64,2.92,3.20,3.48,3.76,4.04,4.32} {
+    \draw[line width=0.32pt] (\x,3.48) -- ++(0.20,0.24);
+  }
+  \foreach \y in {3.26,2.98,2.70,2.42,2.14,1.86,1.58,1.30,1.02,0.74} {
+    \draw[line width=0.32pt] (4.58,\y) -- ++(0.24,-0.20);
+  }
+  \coordinate (A) at (0.18,1.38);
+  \coordinate (B) at (2.70,3.48);
+  \coordinate (C) at (4.58,1.66);
+  \coordinate (D) at (2.19,-0.34);
+  \draw[line width=0.6pt] (A) -- (B);
+  \draw[line width=0.55pt,->] (1.24,2.26) -- (1.74,2.68);
+  \draw[line width=0.6pt] (B) -- (C);
+  \draw[line width=0.55pt,->] (3.45,2.75) -- (3.87,2.35);
+  \draw[line width=0.6pt] (C) -- (D);
+  \draw[line width=0.55pt,->] (3.62,0.86) -- (3.10,0.42);
+  \node[left=2pt] at (A) {$A$};
+  \node[above=1pt] at (2.62,3.48) {$B$};
+  \node[right=3pt] at (4.62,1.66) {$C$};
+  \node[below=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{（第3题）}
 \end{figure}
 
@@ -1574,19 +1599,108 @@ r 总是小于入射角 a 的，但是它们的比值 \(\alpha/r\) 不是常数�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.14}]{assets/physics-4/fig-p0031-01.png}}
+% fig-alt: 半圆形玻璃水缸置于刻度圆盘，光源S可沿盘转动，入射角a与折射角r
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\Ro{2.18}
+  \def\Ri{1.72}
+  \draw[line width=0.7pt] (0,0) circle (\Ro);
+  \draw[line width=0.55pt] (0,0) circle (\Ri);
+  \foreach \a in {0,10,...,350} {
+    \draw[line width=0.28pt] (\a:\Ri) -- (\a:\Ro);
+  }
+  \draw[line width=0.5pt] (0,\Ri) -- (0,-\Ri);
+  \draw[line width=0.5pt] (-\Ri,0) -- (\Ri,0);
+  \node[above=1pt] at (90:\Ro) {$N$};
+  \node[font=\scriptsize] at (90:1.38) {$0$};
+  \node[font=\scriptsize] at (270:1.48) {$0$};
+  \node[font=\scriptsize] at (180:1.48) {$0$};
+  \node[font=\scriptsize] at (0:1.48) {$0$};
+  \begin{scope}
+    \clip (-1.08,-1.08) rectangle (1.08,0.0);
+    \clip (0,0) circle (1.02);
+    \foreach \y in {-0.10,-0.20,-0.30,-0.40,-0.50,-0.60,-0.70,-0.80,-0.90} {
+      \draw[line width=0.28pt] (-1.10,\y) -- (1.10,\y);
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (180:1.02) arc (180:360:1.02);
+  \draw[line width=0.55pt] (-1.02,0) -- (1.02,0);
+  \draw[line width=0.7pt] (48:2.62) -- (228:1.02);
+  \draw[line width=0.6pt,->] (48:1.62) -- (48:0.78);
+  \draw[line width=0.6pt,->] (228:0.32) -- (228:0.78);
+  \draw[line width=0.5pt] (90:0.52) arc (90:48:0.52);
+  \draw[line width=0.5pt] (270:0.50) arc (270:228:0.50);
+  \node at (70:0.78) {$a$};
+  \node at (242:0.82) {$r$};
+  \node[left=1pt] at (-0.12,0.10) {$O$};
+  \foreach \d in {0,45,90,135,180,225,270,315} {
+    \draw[line width=0.45pt] (48:2.55) -- ++(\d:0.18);
+  }
+  \node[above right=0pt] at (52:2.82) {$S$};
+  \draw[line width=0.5pt,->] (80:2.52) arc (78:58:2.52);
+  \draw[line width=0.6pt] (-0.34,-\Ro) -- (-0.34,-3.18);
+  \draw[line width=0.6pt] (0.34,-\Ro) -- (0.34,-3.18);
+  \foreach \x in {-0.20,-0.08,0.04,0.16} {
+    \draw[line width=0.28pt] (\x,-\Ro) -- (\x,-3.18);
+  }
+  \draw[line width=0.7pt] (-1.28,-3.18) rectangle (1.28,-3.58);
+  \foreach \y in {-3.28,-3.38,-3.48} {
+    \draw[line width=0.28pt] (-1.20,\y) -- (1.20,\y);
+  }
+\end{tikzpicture}%
+}%
+}
 \caption{图2.14}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.15}]{assets/physics-4/fig-p0032-01.png}}
+% fig-alt: 入射角α与折射角r的图象，虚线为水、实线为玻璃
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.066cm,y=0.056cm]
+  \draw[line width=0.7pt] (0,0) -- (96,0);
+  \draw[line width=0.7pt] (0,0) -- (0,56);
+  \foreach \x in {10,20,...,90} {
+    \draw[line width=0.45pt] (\x,0) -- (\x,-2.2);
+    \node[below=0pt,font=\scriptsize] at (\x,-2.2) {$\x^{\circ}$};
+  }
+  \node[below left=0pt,font=\scriptsize] at (0,-0.4) {$0^{\circ}$};
+  \foreach \y in {10,20,30,40,50} {
+    \draw[line width=0.45pt] (0,\y) -- (-2.4,\y);
+    \node[left=1pt,font=\scriptsize] at (-2.4,\y) {$\y^{\circ}$};
+  }
+  \draw[line width=0.65pt,dashed] plot[smooth] coordinates {(0,0) (12,7.2) (22,14.2) (32,21) (42,27.2) (52,34) (62,40) (72,45.2) (82,49) (90,51.6)};
+  \draw[line width=0.7pt] plot[smooth] coordinates {(0,0) (10,5.4) (20,10.8) (30,16.2) (40,21.6) (50,27.2) (60,33.2) (70,38.4) (80,42.6) (90,45.8)};
+  \node[above right=0pt] at (86,51.6) {水};
+  \node[below right=1pt] at (78,43.2) {玻璃};
+  \node[rotate=90,anchor=south] at (-16,28) {折射角 $r$};
+  \node[below=10pt] at (45,-8) {入射角 $\alpha$};
+\end{tikzpicture}%
+}
 \caption{图2.15}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.16}]{assets/physics-4/fig-p0032-02.png}}
+% fig-alt: 入射角的正弦与折射角的正弦成一条倾斜直线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=6.1cm,y=6.0cm]
+  \draw[line width=0.7pt] (0,0) -- (1.08,0);
+  \draw[line width=0.7pt] (0,0) -- (0,0.76);
+  \foreach \x in {0.2,0.4,0.6,0.8,1.0} {
+    \draw[line width=0.45pt] (\x,0) -- (\x,-0.018);
+    \node[below=1pt,font=\scriptsize] at (\x,-0.018) {\x};
+  }
+  \node[below left=0pt,font=\scriptsize] at (0,-0.008) {$0$};
+  \foreach \y in {0.1,0.2,0.3,0.4,0.5,0.6,0.7} {
+    \draw[line width=0.45pt] (0,\y) -- (-0.018,\y);
+    \node[left=1pt,font=\scriptsize] at (-0.018,\y) {\y};
+  }
+  \draw[line width=0.7pt] (0,0) -- (1.0,0.67);
+  \node[rotate=90,anchor=south] at (-0.16,0.38) {折射角的正弦 $\sin r$};
+  \node[below=12pt] at (0.50,-0.05) {入射角的正弦 $\sin\alpha$};
+\end{tikzpicture}%
+}
 \caption{图2.16}
 \end{figure}
 
@@ -1632,13 +1746,78 @@ r 总是小于入射角 a 的，但是它们的比值 \(\alpha/r\) 不是常数�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.18}]{assets/physics-4/fig-p0034-01.png}}
+% fig-alt: 圆及直径MM'、NN'，水中针A、B与A'、B'，空气中C、C'，标入射角a与折射角r
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.22}
+  \draw[line width=0.7pt] (0,0) circle (\R);
+  \draw[line width=0.55pt] (180:\R) -- (0:\R);
+  \draw[line width=0.55pt] (90:\R) -- (270:\R);
+  \node[left=2pt] at (180:\R) {$M$};
+  \node[right=2pt] at (0:\R) {$M'$};
+  \node[above=1pt] at (90:\R) {$N$};
+  \node[below=2pt] at (270:\R) {$N'$};
+  \draw[line width=0.6pt] (218:\R) -- (0,0);
+  \draw[line width=0.6pt] (236:\R) -- (0,0);
+  \draw[line width=0.55pt,->] (218:1.58) -- (218:0.92);
+  \draw[line width=0.55pt,->] (236:1.52) -- (236:0.88);
+  \draw[line width=0.6pt] (0,0) -- (52:\R);
+  \draw[line width=0.6pt] (0,0) -- (36:\R);
+  \draw[line width=0.55pt,->] (52:0.78) -- (52:1.42);
+  \draw[line width=0.55pt,->] (36:0.78) -- (36:1.42);
+  \fill[white] (218:1.32) circle (0.055);
+  \draw[line width=0.5pt] (218:1.32) circle (0.055);
+  \fill[white] (236:1.26) circle (0.055);
+  \draw[line width=0.5pt] (236:1.26) circle (0.055);
+  \fill[white] (52:1.38) circle (0.055);
+  \draw[line width=0.5pt] (52:1.38) circle (0.055);
+  \fill[white] (36:1.45) circle (0.055);
+  \draw[line width=0.5pt] (36:1.45) circle (0.055);
+  \node[left=1pt] at (218:2.38) {$A'$};
+  \node[below left=1pt] at (236:2.28) {$A$};
+  \node[left=1pt] at (218:1.32) {$B'$};
+  \node[right=1pt] at (236:1.26) {$B$};
+  \node[above=1pt] at (52:1.38) {$C$};
+  \node[below right=0pt] at (36:1.45) {$C'$};
+  \draw[line width=0.45pt] (270:0.48) arc (270:236:0.48);
+  \draw[line width=0.45pt] (90:0.50) arc (90:52:0.50);
+  \node at (252:0.72) {$a$};
+  \node at (70:0.74) {$r$};
+  \node[right=1pt] at (0.08,0.02) {$O$};
+\end{tikzpicture}%
+}%
+}
 \caption{图2.18}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.19}]{assets/physics-4/fig-p0034-02.png}}
+% fig-alt: 灯光斜射入水槽，在槽底反射后再折入空气
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0.15,0) -- (7.25,0);
+  \draw[line width=0.55pt] (0.55,0) -- (0.55,-1.18);
+  \draw[line width=0.55pt] (1.08,0) -- (1.08,-1.18);
+  \draw[line width=0.55pt] (6.20,0) -- (6.20,-1.18);
+  \draw[line width=0.55pt] (6.72,0) -- (6.65,-1.18);
+  \draw[line width=0.4pt] (0.88,-0.64) -- (6.42,-0.64);
+  \draw[line width=0.65pt] (1.28,0.12) -- (6.48,0.12) -- (6.48,2.02) -- (1.28,2.02) -- cycle;
+  \draw[line width=0.55pt] (1.28,2.02) -- (1.68,2.42) -- (6.88,2.42) -- (6.48,2.02);
+  \draw[line width=0.45pt] (1.40,1.18) -- (6.36,1.18);
+  \draw[line width=0.4pt] (1.52,1.42) -- (6.62,1.50);
+  \draw[line width=0.55pt] (0.78,0.18) .. controls (0.42,0.85) and (0.38,1.85) .. (0.62,2.72);
+  \draw[line width=0.55pt] (0.62,2.72) .. controls (0.82,3.18) and (1.12,3.42) .. (1.48,3.38);
+  \draw[line width=0.6pt] (1.38,3.62) -- (2.22,3.28) -- (2.08,2.92) -- (1.22,3.28) -- cycle;
+  \draw[line width=0.5pt] (1.52,3.55) -- (1.95,3.78) -- (2.28,3.42) -- (1.82,3.12);
+  \draw[line width=0.45pt] (1.95,3.78) arc (40:150:0.22);
+  \draw[line width=0.6pt] (2.08,3.08) -- (2.92,1.18);
+  \draw[line width=0.6pt] (2.92,1.18) -- (3.42,0.36);
+  \draw[line width=0.6pt] (3.42,0.36) -- (4.18,1.18);
+  \draw[line width=0.6pt] (4.18,1.18) -- (5.62,3.35);
+  \draw[line width=0.55pt,->] (4.78,2.05) -- (5.38,2.98);
+\end{tikzpicture}%
+}%
+}
 \caption{图2.19}
 \end{figure}
 
