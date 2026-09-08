@@ -3458,7 +3458,30 @@ PA、PB 都和平面 M 垂直，并设 \(PA\)、\(PB\) 所确定的平面和平�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-47}]{assets/solid-geometry/fig-p0038-03.png}}
+\fitfig{%
+% fig-alt: 图1-47：直立平行四边形平面N，左缘近竖直、上下缘向右上；水平线两端箭头，A在左下、B在右下、M在平面上；左缘至M为虚线，M至B为实线；MC、MD为实线，C在M左上、D在M左下；N在左下角。不画题文未印的边
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Nl) at (0.55,0.05);
+  \coordinate (Ntl) at (0.78,2.85);
+  \coordinate (Ntr) at (1.95,3.55);
+  \coordinate (Nr) at (1.72,0.72);
+  \coordinate (M) at (1.18,1.62);
+  \coordinate (C) at (0.82,2.22);
+  \coordinate (D) at (0.88,0.98);
+  \draw[line width=0.7pt] (Ntl) -- (Ntr) -- (Nr) -- (Nl) -- cycle;
+  \draw[line width=0.75pt, <-] (0.66,1.62) -- (-0.55,1.62);
+  \draw[line width=0.65pt, dash pattern=on 2.6pt off 1.6pt] (0.66,1.62) -- (M);
+  \draw[line width=0.75pt, ->] (M) -- (2.55,1.62);
+  \draw[line width=0.75pt] (M) -- (C);
+  \draw[line width=0.75pt] (M) -- (D);
+  \node[below=1pt] at (-0.32,1.62) {$A$};
+  \node[below=1pt] at (2.28,1.62) {$B$};
+  \node[above right=1pt] at (M) {$M$};
+  \node[above left=1pt] at (C) {$C$};
+  \node[left=2pt] at (D) {$D$};
+  \node[above right=1pt] at (0.62,0.22) {$N$};
+\end{tikzpicture}%
+}
 \caption{图1-47}
 \end{figure}
 
@@ -3466,7 +3489,37 @@ PA、PB 都和平面 M 垂直，并设 \(PA\)、\(PB\) 所确定的平面和平�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-48}]{assets/solid-geometry/fig-p0038-04.png}}
+\fitfig{%
+% fig-alt: 图1-48：平面N同图1-47；A左、O中、B右，左缘至O为虚线，O至B实线且右端箭头；P在O上方，实线AP、PB、P—O—P1；Q在左缘外，实线AQ、Q—P1—B共线；P1A为虚线。扫描标P1，题文作P_1，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Nl) at (0.58,0.02);
+  \coordinate (Ntl) at (0.80,2.82);
+  \coordinate (Ntr) at (1.98,3.52);
+  \coordinate (Nr) at (1.76,0.68);
+  \coordinate (A) at (-0.05,1.68);
+  \coordinate (O) at (1.28,1.68);
+  \coordinate (B) at (2.48,1.68);
+  \coordinate (P) at (1.02,2.38);
+  \coordinate (Pone) at (1.12,1.12);
+  \coordinate (Q) at (0.22,0.78);
+  \draw[line width=0.7pt] (Ntl) -- (Ntr) -- (Nr) -- (Nl) -- cycle;
+  \draw[line width=0.75pt] (A) -- (0.70,1.68);
+  \draw[line width=0.65pt, dash pattern=on 2.6pt off 1.6pt] (0.70,1.68) -- (O);
+  \draw[line width=0.75pt, ->] (O) -- (B);
+  \draw[line width=0.75pt] (A) -- (P) -- (B);
+  \draw[line width=0.75pt] (P) -- (O) -- (Pone);
+  \draw[line width=0.75pt] (A) -- (Q);
+  \draw[line width=0.75pt] (Q) -- (Pone) -- (B);
+  \draw[line width=0.65pt, dash pattern=on 2.4pt off 1.5pt] (Pone) -- (A);
+  \node[below=1pt] at (A) {$A$};
+  \node[above right=1pt] at (O) {$O$};
+  \node[below=1pt] at (B) {$B$};
+  \node[above left=1pt] at (P) {$P$};
+  \node[below=2pt] at (1.22,1.02) {$P_{1}$};
+  \node[left=1pt] at (Q) {$Q$};
+  \node[right=1pt] at (0.48,0.16) {$N$};
+\end{tikzpicture}%
+}
 \caption{图1-48}
 \end{figure}
 
@@ -3512,7 +3565,32 @@ a 和 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-49}]{assets/solid-geometry/fig-p0039-01.png}}
+\fitfig{%
+% fig-alt: 图1-49：下平行四边形平面M，后边虚线，前边实线标c，左下标M；上平行四边形平面N，顶边标a、右端标N；左竖线b止于A，不伸出平面下方。扫描斜线标a，题文夹杂\alpha，从扫描；全部可见边实线，只此一条虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.28,0.18);
+  \coordinate (Mfr) at (3.05,0.04);
+  \coordinate (Mbr) at (3.58,0.55);
+  \coordinate (Mbl) at (0.82,0.68);
+  \coordinate (Nfl) at (0.62,1.08);
+  \coordinate (Nfr) at (3.22,1.18);
+  \coordinate (aR) at (3.58,1.78);
+  \coordinate (aL) at (1.02,1.68);
+  \coordinate (A) at (0.22,0.95);
+  \coordinate (bTop) at (0.22,2.12);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr);
+  \draw[line width=0.7pt] (Mfl) -- (Mbl);
+  \draw[line width=0.65pt, dash pattern=on 2.8pt off 1.7pt] (Mbl) -- (Mbr);
+  \draw[line width=0.7pt] (Nfl) -- (Nfr) -- (aR) -- (aL) -- cycle;
+  \draw[line width=0.75pt] (bTop) -- (A);
+  \node[left=1pt] at (0.22,1.68) {$b$};
+  \node[left=1pt] at (A) {$A$};
+  \node[above=1pt] at (2.25,1.78) {$a$};
+  \node[right=1pt] at (aR) {$N$};
+  \node[below=1pt] at (1.62,0.02) {$c$};
+  \node[above right=1pt] at (Mfl) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-49}
 \end{figure}
 
@@ -3551,7 +3629,37 @@ a \perp b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-50}]{assets/solid-geometry/fig-p0040-01.png}}
+\fitfig{%
+% fig-alt: 图1-50：地面为平行四边形，左下标“地面”；旗杆PO竖直实线，PA、PB实线，OA、OB虚线；O处直角标记。扫描印出12、13、5，从扫描
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Gfl) at (0.08,0.22);
+  \coordinate (Gfr) at (3.15,0.12);
+  \coordinate (Gbr) at (3.72,0.70);
+  \coordinate (Gbl) at (0.68,0.80);
+  \coordinate (O) at (1.78,0.48);
+  \coordinate (P) at (1.72,2.42);
+  \coordinate (A) at (0.58,0.55);
+  \coordinate (B) at (2.82,0.38);
+  \draw[line width=0.7pt] (Gfl) -- (Gfr) -- (Gbr) -- (Gbl) -- cycle;
+  \draw[line width=0.8pt] (P) -- (O);
+  \draw[line width=0.75pt] (P) -- (A);
+  \draw[line width=0.75pt] (P) -- (B);
+  \draw[line width=0.65pt, dash pattern=on 2.5pt off 1.5pt] (O) -- (A);
+  \draw[line width=0.65pt, dash pattern=on 2.5pt off 1.5pt] (O) -- (B);
+  \draw[line width=0.55pt] (1.72,0.68) -- (1.56,0.66) -- (1.58,0.50);
+  \draw[line width=0.55pt] (1.78,0.66) -- (1.94,0.62) -- (1.90,0.48);
+  \node[above=1pt] at (P) {$P$};
+  \node[below=2pt] at (1.78,0.38) {$O$};
+  \node[left=1pt] at (A) {$A$};
+  \node[right=1pt] at (B) {$B$};
+  \node[above left=1pt] at (0.22,0.28) {地面};
+  \node[right=2pt] at (1.82,1.55) {$12$};
+  \node[left=1pt] at (0.95,1.62) {$13$};
+  \node[right=1pt] at (2.42,1.55) {$13$};
+  \node[above=1pt] at (1.10,0.62) {$5$};
+  \node[above=1pt] at (2.28,0.52) {$5$};
+\end{tikzpicture}%
+}
 \caption{图1-50}
 \end{figure}
 
@@ -3608,7 +3716,33 @@ a \perp b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·51}]{assets/solid-geometry/fig-p0041-01.png}}
+\fitfig{%
+% fig-alt: 图1·51：平面N同图1-47；A—O—B水平，左缘至O虚线，其余实线；直线l过P向右上，右端箭头并标l，左端伸出平面；实线AP、PB。不画扫描未印的PO
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Nl) at (0.52,0.10);
+  \coordinate (Ntl) at (0.70,2.42);
+  \coordinate (Ntr) at (1.78,3.02);
+  \coordinate (Nr) at (1.58,0.80);
+  \coordinate (A) at (0.08,1.38);
+  \coordinate (O) at (1.12,1.38);
+  \coordinate (B) at (2.15,1.38);
+  \coordinate (P) at (1.05,1.95);
+  \coordinate (lL) at (0.02,1.62);
+  \coordinate (lR) at (2.28,2.22);
+  \draw[line width=0.7pt] (Ntl) -- (Ntr) -- (Nr) -- (Nl) -- cycle;
+  \draw[line width=0.75pt] (A) -- (0.62,1.38);
+  \draw[line width=0.65pt, dash pattern=on 2.5pt off 1.6pt] (0.62,1.38) -- (O);
+  \draw[line width=0.75pt] (O) -- (B);
+  \draw[line width=0.75pt] (A) -- (P) -- (B);
+  \draw[line width=0.75pt, ->] (lL) -- (lR);
+  \node[below left=1pt] at (A) {$A$};
+  \node[above=1pt] at (O) {$O$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[above left=1pt] at (P) {$P$};
+  \node[above right=1pt] at (lR) {$l$};
+  \node[below left=1pt] at (Nl) {$N$};
+\end{tikzpicture}%
+}
 \caption{图1·51}
 \end{figure}
 
@@ -3648,7 +3782,30 @@ a \perp b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/solid-geometry/fig-p0041-02.png}}
+\fitfig{%
+% fig-alt: 第3题：平面M斜立于右上，N为水平平行四边形，共左前顶点C；A在M上，B在N上靠右；实线AC、BC、AB；右上标M，右端标N。全部实线，不画虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (0.15,0.95);
+  \coordinate (Nfr) at (3.25,0.78);
+  \coordinate (Nbr) at (3.72,1.32);
+  \coordinate (Nbl) at (0.72,1.48);
+  \coordinate (A) at (1.05,1.78);
+  \coordinate (Mul) at (1.55,2.15);
+  \coordinate (Mtip) at (2.35,2.48);
+  \coordinate (Mbr) at (2.85,1.85);
+  \coordinate (B) at (2.35,1.02);
+  \draw[line width=0.7pt] (C) -- (Nfr) -- (Nbr) -- (Nbl) -- cycle;
+  \draw[line width=0.7pt] (C) -- (Mul) -- (Mtip) -- (Mbr) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.8pt] (A) -- (B);
+  \node[above left=1pt] at (A) {$A$};
+  \node[below=1pt] at (B) {$B$};
+  \node[below left=1pt] at (C) {$C$};
+  \node[above right=1pt] at (Mtip) {$M$};
+  \node[right=1pt] at (Nbr) {$N$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -3681,7 +3838,30 @@ a \perp b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/solid-geometry/fig-p0042-02.png}}
+\fitfig{%
+% fig-alt: 第6题：平面P为水平平行四边形，左下标P，后边向右略伸出；A在B正上方，AB竖直实线；平面内直角BCD，C在B左，D在C左前，C处直角标记。全部实线，不画未印的AC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Pfl) at (0.12,0.18);
+  \coordinate (Pfr) at (2.78,0.08);
+  \coordinate (Pbr) at (3.28,0.62);
+  \coordinate (Pbl) at (0.62,0.70);
+  \coordinate (B) at (2.12,0.90);
+  \coordinate (A) at (2.12,1.98);
+  \coordinate (C) at (1.28,0.84);
+  \coordinate (D) at (0.72,0.48);
+  \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
+  \draw[line width=0.7pt] (Pbr) -- (3.88,0.62);
+  \draw[line width=0.8pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.55pt] (1.12,0.82) -- (1.12,0.66) -- (1.28,0.82);
+  \node[above=1pt] at (A) {$A$};
+  \node[below right=1pt] at (B) {$B$};
+  \node[above=1pt] at (C) {$C$};
+  \node[left=1pt] at (D) {$D$};
+  \node[below left=1pt] at (Pfl) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -3725,7 +3905,30 @@ a \perp b.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-52}]{assets/solid-geometry/fig-p0042-03.png}}
+\fitfig{%
+% fig-alt: 图1-52：平面M为水平平行四边形，左下标M；AB竖直实线，A在上、B在平面上；D处两条靠近的实线，左斜线顶标C，右近竖直顶标b，同止于D。扫描标b，题文作DE，从扫描；不画虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Mfl) at (0.12,0.22);
+  \coordinate (Mfr) at (2.92,0.10);
+  \coordinate (Mbr) at (3.42,0.64);
+  \coordinate (Mbl) at (0.62,0.74);
+  \coordinate (B) at (1.12,0.72);
+  \coordinate (A) at (1.12,1.98);
+  \coordinate (D) at (2.22,0.66);
+  \coordinate (C) at (2.05,1.88);
+  \coordinate (bTop) at (2.32,1.82);
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.8pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (bTop) -- (D);
+  \node[above=1pt] at (A) {$A$};
+  \node[below left=1pt] at (B) {$B$};
+  \node[above left=1pt] at (C) {$C$};
+  \node[above right=1pt] at (bTop) {$b$};
+  \node[below=1pt] at (D) {$D$};
+  \node[above left=1pt] at (Mfl) {$M$};
+\end{tikzpicture}%
+}
 \caption{图1-52}
 \end{figure}
 
