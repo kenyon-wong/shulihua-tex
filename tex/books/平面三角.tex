@@ -20636,7 +20636,21 @@ x _ {2} = \pi + \operatorname{arctg} a.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(I)}]{assets/plane-trigonometry/fig-p0278-01.png}}
+\fitfig{%
+% fig-alt: (I) a>0；过原点约30°粗直线；小弧标arcctg a，大弧自该射线逆时针至第三象限标π+arcctg a；负y轴虚线，上方短上箭头；图下印a>0
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.62pt] (-1.92,0) -- (1.55,0);
+  \draw[line width=0.62pt,-latex] (1.55,0) -- (2.18,0);
+  \draw[line width=0.55pt,dash pattern=on 1.5pt off 1.4pt] (0,-0.22) -- (0,-0.92);
+  \draw[line width=0.62pt,-latex] (0,1.22) -- (0,1.62);
+  \draw[line width=1.08pt] (210:1.78) -- (30:1.72);
+  \draw[line width=0.55pt,-latex] (0:0.42) arc[start angle=0,end angle=30,radius=0.42];
+  \draw[line width=0.55pt,-latex] (0:0.78) arc[start angle=0,end angle=210,radius=0.78];
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.92,0.42) {$\pi+\operatorname{arcctg}a$};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (0.78,0.22) {$\operatorname{arcctg}a$};
+  \node[anchor=north,inner sep=1pt] at (0.05,-1.18) {$a>0$};
+\end{tikzpicture}%
+}
 \caption{(I)}
 \end{figure}
 
@@ -20646,7 +20660,20 @@ x _ {2} = \pi + \operatorname{arctg} a.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={a\textless0}]{assets/plane-trigonometry/fig-p0278-02.png}}
+\fitfig{%
+% fig-alt: a<0；过原点约-32°粗直线；外弧自正x轴至第二象限射线标arcctg a；内弧近一周至第四象限射线标π+arcctg a
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.62pt] (-1.85,0) -- (1.62,0);
+  \draw[line width=0.62pt,-latex] (1.62,0) -- (2.22,0);
+  \draw[line width=0.62pt] (0,-1.62) -- (0,1.22);
+  \draw[line width=0.62pt,-latex] (0,1.22) -- (0,1.78);
+  \draw[line width=1.08pt] (-32:1.82) -- (148:1.78);
+  \draw[line width=0.55pt,-latex] (0:1.18) arc[start angle=0,end angle=148,radius=1.18];
+  \draw[line width=0.55pt,-latex] (0:0.62) arc[start angle=0,end angle=328,radius=0.62];
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (1.05,0.78) {$\operatorname{arcctg}a$};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-1.28,-0.16) {$\pi+\operatorname{arcctg}a$};
+\end{tikzpicture}%
+}
 \caption{a\textless0}
 \end{figure}
 
@@ -21708,7 +21735,27 @@ x _ {1} = 0\text{，} x _ {2\text{，} 3} \approx \pm 1.0\text{，} x _ {4\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9·7}]{assets/plane-trigonometry/fig-p0296-01.png}}
+\fitfig{%
+% fig-alt: 图9·7；方格纸上y=sin x与y=sin 2x，区间约-π到π；横轴标-3.0、-2.0、-1.0、0、1.0、2.0、3.0；纵轴标1.0、0.5
+\begin{tikzpicture}[x=0.70cm,y=0.78cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.28pt] (-3.5,-1.5) grid (3.5,1.5);
+  \draw[line width=0.62pt] (-3.5,0) -- (3.55,0);
+  \draw[line width=0.62pt,-latex] (3.55,0) -- (4.05,0) node[anchor=west,inner sep=1pt] {$x$};
+  \draw[line width=0.62pt] (0,-1.5) -- (0,1.55);
+  \draw[line width=0.62pt,-latex] (0,1.55) -- (0,1.95) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.85pt] plot[domain=-3.1416:3.1416,samples=97] (\x,{sin(deg(\x))});
+  \draw[line width=0.85pt] plot[domain=-3.1416:3.1416,samples=145] (\x,{sin(deg(2*\x))});
+  \node[font=\scriptsize,anchor=north,inner sep=0.5pt] at (-3.0,-0.22) {$-3.0$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.5pt] at (-2.0,-0.22) {$-2.0$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.5pt] at (-1.0,-0.22) {$-1.0$};
+  \node[font=\scriptsize,anchor=north west,inner sep=0.4pt] at (0.08,-0.16) {$0$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.5pt] at (1.0,-0.22) {$1.0$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.5pt] at (2.0,-0.22) {$2.0$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.5pt] at (3.0,-0.22) {$3.0$};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.08,1.0) {$1.0$};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.08,0.5) {$0.5$};
+\end{tikzpicture}%
+}
 \caption{图 9·7}
 \end{figure}
 
@@ -21736,7 +21783,21 @@ AOB 的面积 \(=\frac{x}{2\pi}\cdot\pi R^{2}=\frac{1}{2}R^{2}x.\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-8}]{assets/plane-trigonometry/fig-p0296-02.png}}
+\fitfig{%
+% fig-alt: 图9·8；圆O，A在右端，B在左上约132°，C在圆顶；弦AB、半径OA与OB，圆心角小弧；E在OA上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.8pt] (0,0) circle[radius=1.52];
+  \draw[line width=0.7pt] (0,0) -- (1.52,0);
+  \draw[line width=0.7pt] (0,0) -- (132:1.52);
+  \draw[line width=0.7pt] (1.52,0) -- (132:1.52);
+  \draw[line width=0.5pt] (0.38,0) arc[start angle=0,end angle=132,radius=0.38];
+  \node[anchor=north,inner sep=1pt] at (0.02,-0.08) {$O$};
+  \node[anchor=west,inner sep=1pt] at (1.56,0.02) {$A$};
+  \node[anchor=south east,inner sep=1pt] at (132:1.56) {$B$};
+  \node[anchor=south,inner sep=1pt] at (90:1.58) {$C$};
+  \node[anchor=north,inner sep=1pt] at (0.78,-0.04) {$E$};
+\end{tikzpicture}%
+}
 \caption{图9-8}
 \end{figure}
 
@@ -21773,7 +21834,30 @@ x \approx 2.3.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.9}]{assets/plane-trigonometry/fig-p0297-01.png}}
+\fitfig{%
+% fig-alt: 图9·9；方格纸上y=sin x（0到π）与直线y=x-π/2；横轴标0、0.5、1.0、1.5、2.0、2.5、3.0；纵轴标1.0、0.5、0、-0.5、-1.0、-1.5
+\begin{tikzpicture}[x=1.12cm,y=0.56cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.28pt] (-0.5,-2.5) grid (3.5,1.5);
+  \draw[line width=0.62pt] (-0.5,0) -- (3.55,0);
+  \draw[line width=0.62pt,-latex] (3.55,0) -- (4.05,0) node[anchor=west,inner sep=1pt] {$x$};
+  \draw[line width=0.62pt] (0,-2.5) -- (0,1.55);
+  \draw[line width=0.62pt,-latex] (0,1.55) -- (0,1.95) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.85pt] plot[domain=0:3.1416,samples=81] (\x,{sin(deg(\x))});
+  \draw[line width=0.85pt] (-0.5,-2.0708) -- (3.0708,1.5);
+  \node[font=\scriptsize,anchor=north west,inner sep=0.4pt] at (0.06,-0.10) {$0$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.4pt] at (0.5,-0.16) {$0.5$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.4pt] at (1.0,-0.16) {$1.0$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.4pt] at (1.5,-0.16) {$1.5$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.4pt] at (2.0,-0.16) {$2.0$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.4pt] at (2.5,-0.16) {$2.5$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.4pt] at (3.0,-0.16) {$3.0$};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.08,1.0) {$1.0$};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.08,0.5) {$0.5$};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.08,-0.5) {$-0.5$};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.08,-1.0) {$-1.0$};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.08,-1.5) {$-1.5$};
+\end{tikzpicture}%
+}
 \caption{图9.9}
 \end{figure}
 
@@ -21795,7 +21879,36 @@ x \approx 2.3.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-10}]{assets/plane-trigonometry/fig-p0298-01.png}}
+\fitfig{%
+% fig-alt: 图9·10；方格纸上y=x与y=tg x，渐近线-3π/2、-π/2、π/2、3π/2、5π/2；轴下标-3π/2、-π、-π/2、π/2、π、3π/2、2π
+\begin{tikzpicture}[x=0.52cm,y=0.36cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.26pt] (-5,-6) grid (8,7);
+  \draw[line width=0.45pt] ({-3*pi/2},-6) -- ({-3*pi/2},7);
+  \draw[line width=0.45pt] ({-pi/2},-6) -- ({-pi/2},7);
+  \draw[line width=0.45pt] ({pi/2},-6) -- ({pi/2},7);
+  \draw[line width=0.45pt] ({3*pi/2},-6) -- ({3*pi/2},7);
+  \draw[line width=0.45pt] ({5*pi/2},-6) -- ({5*pi/2},7);
+  \draw[line width=0.62pt] (-5,0) -- (8.05,0);
+  \draw[line width=0.62pt,-latex] (8.05,0) -- (8.55,0) node[anchor=west,inner sep=1pt] {$x$};
+  \draw[line width=0.62pt] (0,-6.15) -- (0,7.05);
+  \draw[line width=0.62pt,-latex] (0,7.05) -- (0,7.55) node[anchor=south,inner sep=1pt] {$y$};
+  \begin{scope}
+    \clip (-5,-6) rectangle (8,7);
+    \draw[line width=0.8pt] plot[domain=-4.56:-1.72,samples=40] (\x,{tan(deg(\x))});
+    \draw[line width=0.8pt] plot[domain=-1.42:1.42,samples=40] (\x,{tan(deg(\x))});
+    \draw[line width=0.8pt] plot[domain=1.72:4.56,samples=40] (\x,{tan(deg(\x))});
+    \draw[line width=0.8pt] plot[domain=4.86:7.70,samples=40] (\x,{tan(deg(\x))});
+    \draw[line width=0.8pt] (-5,-5) -- (7,7);
+  \end{scope}
+  \node[font=\scriptsize,anchor=north west,inner sep=0.2pt] at ({-3*pi/2+0.05},-0.72) {$-\frac{3\pi}{2}$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.2pt] at ({-pi},-0.72) {$-\pi$};
+  \node[font=\scriptsize,anchor=north east,inner sep=0.2pt] at ({-pi/2-0.06},-0.72) {$-\frac{\pi}{2}$};
+  \node[font=\scriptsize,anchor=north west,inner sep=0.2pt] at ({pi/2+0.06},-0.72) {$\frac{\pi}{2}$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.2pt] at ({pi},-0.72) {$\pi$};
+  \node[font=\scriptsize,anchor=north,inner sep=0.2pt] at ({3*pi/2},-0.72) {$\frac{3\pi}{2}$};
+  \node[font=\scriptsize,anchor=north west,inner sep=0.2pt] at ({2*pi+0.05},-0.72) {$2\pi$};
+\end{tikzpicture}%
+}
 \caption{图9-10}
 \end{figure}
 
@@ -22064,7 +22177,28 @@ x \approx 2.3.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-trigonometry/fig-p0302-01.png}}
+\fitfig{%
+% fig-alt: 第1题梯形ABCD；AB∥DC，上底a、下底b、左腰c、右腰d；D处标β，C处标α
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \coordinate (D) at (0,0);
+  \coordinate (C) at (3.35,0);
+  \coordinate (A) at (0.48,1.05);
+  \coordinate (B) at (1.58,1.05);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.5pt] (0.34,0) arc[start angle=0,end angle=65,radius=0.34];
+  \draw[line width=0.5pt] (2.98,0) arc[start angle=180,end angle=150,radius=0.37];
+  \node[anchor=south,inner sep=1pt] at (0.40,1.08) {$A$};
+  \node[anchor=south,inner sep=1pt] at (1.66,1.08) {$B$};
+  \node[anchor=south,inner sep=1pt] at (1.03,1.08) {$a$};
+  \node[anchor=north east,inner sep=1pt] at (-0.02,-0.02) {$D$};
+  \node[anchor=north west,inner sep=1pt] at (3.38,0.02) {$C$};
+  \node[anchor=north,inner sep=1pt] at (1.68,-0.04) {$b$};
+  \node[anchor=east,inner sep=1pt] at (0.16,0.52) {$c$};
+  \node[anchor=south west,inner sep=1pt] at (2.35,0.62) {$d$};
+  \node[anchor=south west,inner sep=0.4pt] at (0.22,0.16) {$\beta$};
+  \node[anchor=west,inner sep=0.4pt] at (2.62,0.22) {$\alpha$};
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -22188,7 +22322,21 @@ x = \frac {a \sin \alpha \sin \beta}{\sin (\beta - \alpha)}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-trigonometry/fig-p0303-01.png}}
+\fitfig{%
+% fig-alt: 第20题；圆A、圆B、圆C，A与B、A与C外切；半径2√3、4-2√3、2；圆心三角形，AB水平；图中不标60°
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.58]
+  \coordinate (B) at (0,0);
+  \coordinate (A) at (4,0);
+  \coordinate (C) at ({4+2*(1+sqrt(3))*cos(120)},{2*(1+sqrt(3))*sin(120)});
+  \draw[line width=0.7pt] (A) circle[radius={2*sqrt(3)}];
+  \draw[line width=0.7pt] (B) circle[radius={4-2*sqrt(3)}];
+  \draw[line width=0.7pt] (C) circle[radius=2];
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+  \node[anchor=south west,inner sep=1pt] at (4.08,0.12) {$A$};
+  \node[anchor=east,inner sep=1.5pt] at ({-(4-2*sqrt(3))-0.06},0.02) {$B$};
+  \node[anchor=south,inner sep=1pt] at ({4+2*(1+sqrt(3))*cos(120)},{2*(1+sqrt(3))*sin(120)+0.14}) {$C$};
+\end{tikzpicture}%
+}
 \caption{(第20题)}
 \end{figure}
 
