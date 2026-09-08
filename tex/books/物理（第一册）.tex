@@ -4639,7 +4639,30 @@ u = \frac {s ^ {\prime}}{t} = \frac {0.6 \text{公里}}{0.0225 \text{小时}} \a
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4·6 物体在不同时间内所通过的路程}]{assets/physics-1/fig-p0102-01.png}}
+% fig-alt: 坐标轴S（米）、t（秒）均标0至6；点A(3,2)、B(6,4)，各有水平与竖直虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.58cm,y=0.40cm]
+  \draw[line width=0.6pt,->] (0,0) -- (6.9,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,6.75);
+  \foreach \i in {1,2,3,4,5,6} {
+    \draw[line width=0.45pt] (\i,0) -- (\i,-0.13);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (\i,-0.16) {$\i$};
+    \draw[line width=0.45pt] (0,\i) -- (-0.13,\i);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=east] at (-0.18,\i) {$\i$};
+  }
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north east] at (-0.08,-0.08) {$0$};
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.45pt] (0,2) -- (3,2);
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.45pt] (3,0) -- (3,2);
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.45pt] (0,4) -- (6,4);
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.45pt] (6,0) -- (6,4);
+  \fill (3,2) circle[radius=0.75pt];
+  \fill (6,4) circle[radius=0.75pt];
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south west] at (3.14,2.10) {$A(3,\,2)$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south west] at (6.14,4.10) {$B(6,\,4)$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (-0.22,6.78) {$S$（米）};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (7.00,0.02) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图 4·6 物体在不同时间内所通过的路程}
 \end{figure}
 
@@ -4688,7 +4711,43 @@ B（6，4）；等等。这里括弧内的两个数就是该点的时间、路�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·7 匀速直线运动的路程图线}]{assets/physics-1/fig-p0103-01.png}}
+% fig-alt: 路程轴标0、4、8、12、16，时间轴标0、2、4、6；直线过A(2,5)、B(4,10)、C(6,15)至D；N=3秒处垂线交P，再垂至M
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.50cm,y=0.24cm]
+  \draw[line width=0.6pt,->] (0,0) -- (7.35,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,17.4);
+  \foreach \i in {2,4,6} {
+    \draw[line width=0.45pt] (\i,0) -- (\i,-0.32);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (\i,-0.38) {$\i$};
+  }
+  \foreach \j in {4,8,12,16} {
+    \draw[line width=0.45pt] (0,\j) -- (-0.18,\j);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=east] at (-0.24,\j) {$\j$};
+  }
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north east] at (-0.08,-0.12) {$0$};
+  \draw[line width=0.48pt,dash pattern=on 2.1pt off 1.4pt] (0,5) -- (2,5);
+  \draw[line width=0.48pt,dash pattern=on 2.1pt off 1.4pt] (2,0) -- (2,5);
+  \draw[line width=0.48pt,dash pattern=on 2.1pt off 1.4pt] (0,10) -- (4,10);
+  \draw[line width=0.48pt,dash pattern=on 2.1pt off 1.4pt] (4,0) -- (4,10);
+  \draw[line width=0.48pt,dash pattern=on 2.1pt off 1.4pt] (0,15) -- (6,15);
+  \draw[line width=0.48pt,dash pattern=on 2.1pt off 1.4pt] (6,0) -- (6,15);
+  \draw[line width=0.48pt,dash pattern=on 2.1pt off 1.4pt] (3,0) -- (3,7.5);
+  \draw[line width=0.48pt,dash pattern=on 2.1pt off 1.4pt] (0,7.5) -- (3,7.5);
+  \draw[line width=0.7pt,->] (0,0) -- (6.90,17.0);
+  \fill (2,5) circle[radius=0.75pt];
+  \fill (4,10) circle[radius=0.75pt];
+  \fill (6,15) circle[radius=0.75pt];
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south west] at (2.10,5.25) {$A$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south west] at (4.10,10.25) {$B$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south east] at (5.70,15.55) {$C$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south west] at (6.62,16.95) {$D$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=east] at (-1.05,7.5) {$M$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=north] at (3,-0.38) {$N$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=west] at (3.16,7.85) {$P$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (-0.28,17.45) {$S$（米）};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (7.45,0.02) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图4·7 匀速直线运动的路程图线}
 \end{figure}
 
@@ -4696,7 +4755,26 @@ B（6，4）；等等。这里括弧内的两个数就是该点的时间、路�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·8 两个匀速直线运动的路程图线}]{assets/physics-1/fig-p0103-02.png}}
+% fig-alt: 无数字刻度；过原点两倾斜直线I、II，I较陡；时间轴A处竖线交II于B、交I于C，B、C各有水平虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.02cm,y=0.82cm]
+  \draw[line width=0.6pt,->] (0,0) -- (4.05,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,4.05);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north east] at (-0.05,-0.04) {$O$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (-0.08,4.08) {$S$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (4.12,0.02) {$t$};
+  \draw[line width=0.55pt] (2.55,0) -- (2.55,3.28);
+  \draw[line width=0.48pt,dash pattern=on 2.2pt off 1.4pt] (0,1.12) -- (2.55,1.12);
+  \draw[line width=0.48pt,dash pattern=on 2.2pt off 1.4pt] (0,2.72) -- (2.55,2.72);
+  \draw[line width=0.7pt,->] (0,0) -- (3.08,1.38);
+  \draw[line width=0.7pt,->] (0,0) -- (3.42,3.65);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (2.55,-0.05) {$A$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (2.72,1.20) {$B$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (2.72,2.80) {$C$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south west] at (3.22,1.48) {$\mathrm{II}$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (3.36,3.70) {$\mathrm{I}$};
+\end{tikzpicture}%
+}
 \caption{图4·8 两个匀速直线运动的路程图线}
 \end{figure}
 
@@ -4714,7 +4792,29 @@ B（6，4）；等等。这里括弧内的两个数就是该点的时间、路�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-9 匀速直线运动的速度图线}]{assets/physics-1/fig-p0104-01.png}}
+% fig-alt: 速度轴标0、2、4，时间轴标0、2、4、6、8；平行于时间轴的直线MN在4米/秒，右端N处竖直虚线落到8秒
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.52cm,y=0.52cm]
+  \draw[line width=0.6pt,->] (0,0) -- (9.15,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,4.9);
+  \foreach \i in {2,4,6,8} {
+    \draw[line width=0.45pt] (\i,0) -- (\i,-0.12);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (\i,-0.15) {$\i$};
+  }
+  \foreach \j in {2,4} {
+    \draw[line width=0.45pt] (0,\j) -- (-0.13,\j);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=east] at (-0.18,\j) {$\j$};
+  }
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north east] at (-0.06,-0.06) {$0$};
+  \draw[line width=0.7pt] (0,4) -- (8,4);
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (8,4) -- (8,0);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south west] at (0.10,4.06) {$M$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south east] at (7.88,4.06) {$N$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (3.15,4.10) {$v=4$米/秒};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (-0.32,4.92) {$v$（米/秒）};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (9.24,0.02) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图4-9 匀速直线运动的速度图线}
 \end{figure}
 
@@ -4740,7 +4840,31 @@ B（6，4）；等等。这里括弧内的两个数就是该点的时间、路�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4·10 速度图线和路程}]{assets/physics-1/fig-p0105-01.png}}
+% fig-alt: 速度轴标0、2、4、6，时间轴标0、2、4、6；直线PM在5米/秒，右端M向N作竖直虚线，N在6与轴箭头之间
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.50cm,y=0.46cm]
+  \draw[line width=0.6pt,->] (0,0) -- (9.15,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,6.75);
+  \foreach \i in {2,4,6} {
+    \draw[line width=0.45pt] (\i,0) -- (\i,-0.13);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (\i,-0.16) {$\i$};
+  }
+  \foreach \j in {2,4,6} {
+    \draw[line width=0.45pt] (0,\j) -- (-0.14,\j);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=east] at (-0.20,\j) {$\j$};
+  }
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north east] at (-0.06,-0.06) {$0$};
+  \draw[line width=0.7pt] (0,5) -- (7,5);
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (7,5) -- (7,0);
+  \draw[line width=0.45pt] (7,0) -- (7,-0.13);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=east] at (-0.20,5) {$P$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south east] at (6.86,5.08) {$M$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north west] at (7.08,-0.16) {$N$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (2.35,5.10) {$v=5$米/秒};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (-0.38,6.78) {$v$（米/秒）};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (9.25,0.02) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图 4·10 速度图线和路程}
 \end{figure}
 
@@ -4796,7 +4920,40 @@ B（6，4）；等等。这里括弧内的两个数就是该点的时间、路�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.11 s-t 图}]{assets/physics-1/fig-p0106-01.png}}
+% fig-alt: s-t折线，路程轴0至35厘米、时间轴0至8秒；OA上升、AB水平、BC再上升，点上有小黑点；N=3.5秒垂至M，F在10厘米，H、P在25厘米
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.52cm,y=0.118cm]
+  \draw[line width=0.6pt,->] (0,0) -- (8.85,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,37.2);
+  \foreach \i in {1,2,3,4,5,6,7,8} {
+    \draw[line width=0.45pt] (\i,0) -- (\i,-0.7);
+    \node[font=\scriptsize,inner sep=0.2pt,anchor=north] at (\i,-0.85) {$\i$};
+  }
+  \foreach \j in {5,10,15,20,25,30,35} {
+    \draw[line width=0.45pt] (0,\j) -- (-0.16,\j);
+    \node[font=\scriptsize,inner sep=0.2pt,anchor=east] at (-0.22,\j) {$\j$};
+  }
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=north east] at (-0.06,-0.2) {$0$};
+  \draw[line width=0.48pt,dash pattern=on 2.0pt off 1.35pt] (0,10) -- (3.5,10);
+  \draw[line width=0.48pt,dash pattern=on 2.0pt off 1.35pt] (3.5,0) -- (3.5,10);
+  \draw[line width=0.48pt,dash pattern=on 2.0pt off 1.35pt] (0,25) -- (6.5,25);
+  \draw[line width=0.48pt,dash pattern=on 2.0pt off 1.35pt] (6.5,0) -- (6.5,25);
+  \draw[line width=0.7pt] (0,0) -- (2,10) -- (4,10) -- (8,34);
+  \foreach \t/\sv in {1/5,2/10,3/10,4/10,5/16,6/22,7/28,8/34} {
+    \fill (\t,\sv) circle[radius=0.7pt];
+  }
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south west] at (2.08,10.4) {$A$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south west] at (4.08,10.4) {$B$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south west] at (8.08,34.2) {$C$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=east] at (-1.55,10) {$F$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=east] at (-1.55,25) {$H$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south] at (2.85,10.7) {$M$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=north] at (3.5,-2.15) {$N$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south west] at (6.58,25.5) {$P$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (-0.35,37.3) {$S$（厘米）};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (8.95,0.05) {$t$（秒）};
+\end{tikzpicture}%
+}
 \caption{图 4.11 s-t 图}
 \end{figure}
 
@@ -4877,7 +5034,34 @@ s _ {A} + s _ {B} = 220 \text{公 里}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4·12 A、B 两车的路程图线}]{assets/physics-1/fig-p0108-01.png}}
+% fig-alt: 路程轴标0、60、120、180、240公里，时间轴标0至4小时；A自原点斜升过E(4,160)，B自220公里经C、D折至F，与A交于E，E有水平与竖直虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.78cm,y=0.0132cm]
+  \draw[line width=0.6pt,->] (0,0) -- (5.55,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,262);
+  \foreach \i in {1,2,3,4} {
+    \draw[line width=0.45pt] (\i,0) -- (\i,-5);
+    \node[font=\scriptsize,inner sep=0.2pt,anchor=north] at (\i,-6) {$\i$};
+  }
+  \foreach \j in {60,120,180,240} {
+    \draw[line width=0.45pt] (0,\j) -- (-0.09,\j);
+    \node[font=\scriptsize,inner sep=0.2pt,anchor=east] at (-0.12,\j) {$\j$};
+  }
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=north east] at (-0.04,-2) {$0$};
+  \draw[line width=0.48pt,dash pattern=on 2.0pt off 1.35pt] (0,160) -- (4,160);
+  \draw[line width=0.48pt,dash pattern=on 2.0pt off 1.35pt] (4,160) -- (4,0);
+  \draw[line width=0.7pt,->] (0,0) -- (5.15,206);
+  \draw[line width=0.7pt] (0,220) -- (1,190) -- (3,190) -- (4.7,142);
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=east] at (-0.95,216) {$B$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south] at (1,194) {$C$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south] at (3,194) {$D$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south west] at (4.16,168) {$E(4,\,160)$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=north west] at (4.72,140) {$F$};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=south west] at (5.05,208) {$A$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (-0.28,264) {$S$（公里）};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (5.62,1) {$t$（小时）};
+\end{tikzpicture}%
+}
 \caption{图 4·12 A、B 两车的路程图线}
 \end{figure}
 
@@ -4905,7 +5089,25 @@ s _ {A} + s _ {B} = 220 \text{公 里}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-1/fig-p0109-02.png}}
+% fig-alt: 路程轴标0、100、200、300公里，时间轴标0、1、2小时；自原点的直线终止于略高于300、1与2之间
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.15cm,y=0.0118cm]
+  \draw[line width=0.6pt,->] (0,0) -- (2.45,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,338);
+  \foreach \i in {1,2} {
+    \draw[line width=0.45pt] (\i,0) -- (\i,-6);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (\i,-7) {$\i$};
+  }
+  \foreach \j in {100,200,300} {
+    \draw[line width=0.45pt] (0,\j) -- (-0.08,\j);
+    \node[font=\scriptsize,inner sep=0.2pt,anchor=east] at (-0.12,\j) {$\j$};
+  }
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north east] at (-0.04,-2) {$0$};
+  \draw[line width=0.7pt] (0,0) -- (1.52,303);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (-0.22,342) {$S$（公里）};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (2.52,1) {$t$（小时）};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -4913,7 +5115,30 @@ s _ {A} + s _ {B} = 220 \text{公 里}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-1/fig-p0109-03.png}}
+% fig-alt: 路程轴标0、20、40、60、80公里，时间轴标0、1、2、3小时；折线OA陡升、AB短平、BC上弯至略高于80、靠近3小时
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.05cm,y=0.038cm]
+  \draw[line width=0.6pt,->] (0,0) -- (3.45,0);
+  \draw[line width=0.6pt,->] (0,0) -- (0,92);
+  \foreach \i in {1,2,3} {
+    \draw[line width=0.45pt] (\i,0) -- (\i,-1.6);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (\i,-1.8) {$\i$};
+  }
+  \foreach \j in {20,40,60,80} {
+    \draw[line width=0.45pt] (0,\j) -- (-0.07,\j);
+    \node[font=\scriptsize,inner sep=0.2pt,anchor=east] at (-0.10,\j) {$\j$};
+  }
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north east] at (-0.04,-0.6) {$0$};
+  \draw[line width=0.7pt] (0,0) -- (1.52,69);
+  \draw[line width=0.7pt] (1.52,69) -- (1.95,69);
+  \draw[line width=0.7pt] (1.95,69) .. controls (2.28,71) and (2.55,76) .. (3.08,87);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south east] at (1.48,70.5) {$A$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (1.95,70.2) {$B$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south west] at (3.02,87.2) {$C$};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (-0.18,94) {$S$（公里）};
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (3.52,0.4) {$t$（小时）};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
