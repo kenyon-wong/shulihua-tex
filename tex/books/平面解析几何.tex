@@ -15222,7 +15222,7 @@ b， c， e
   \draw[line width=0.7pt] plot[domain=-56:56,samples=34] ({-2.05/cos(\x)},{1.48*tan(\x)});
   \draw[line width=0.75pt] (-4.15,0) -- (0,0);
   \draw[line width=0.75pt,-latex] (0,0) -- (4.55,0) node[right=1pt] {$x$};
-  \draw[line width=0.75pt] (0,-2.85) -- (0,0);
+  \draw[line width=0.75pt] (0,-3.15) -- (0,0);
   \draw[line width=0.75pt,-latex] (0,0) -- (0,2.75) node[above=1pt] {$y$};
   \fill (-2.95,0) circle (1.1pt);
   \fill (2.05,0) circle (1.1pt);
@@ -15648,7 +15648,48 @@ MC_{1} + r_{1} = \left| MC_{2} \right| + r_{2} (= R),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/analytic-geometry/fig-p0209-02.png}}
+\fitfig{%
+% fig-alt: (第2题) 双曲面传动辊截面与检验样板；腰 φ117，端部 φ156.76，半长 60
+\begin{tikzpicture}[x=0.52cm,y=0.52cm,line cap=round,line join=round,>=latex]
+  \begin{scope}
+    \clip (3.62,-2.32) -- (3.62,2.32) -- (2.42,2.32) -- plot[domain=40:-40,samples=28] ({1.85/cos(\x)},{2.76*tan(\x)}) -- cycle;
+    \foreach \k in {-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6}
+      \draw[line width=0.32pt] (1.6+\k,-2.6) -- (3.9+\k,2.6);
+  \end{scope}
+  \draw[line width=0.7pt] plot[domain=-40:40,samples=36] ({-1.85/cos(\x)},{2.76*tan(\x)});
+  \draw[line width=0.7pt] plot[domain=-40:40,samples=36] ({1.85/cos(\x)},{2.76*tan(\x)});
+  \draw[line width=0.7pt] (-2.42,2.32) -- (3.62,2.32);
+  \draw[line width=0.7pt] (-2.42,-2.32) -- (3.62,-2.32);
+  \draw[line width=0.7pt] (3.62,2.32) -- (3.62,-2.32);
+  \draw[line width=0.75pt] (-3.35,0) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (4.35,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-2.32) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (0,3.15) node[above=1pt] {$y$};
+  \draw[line width=0.45pt] (-3.05,2.32) -- (-3.05,2.48);
+  \draw[line width=0.45pt] (-3.05,0) -- (-3.15,0);
+  \draw[line width=0.5pt,latex-latex] (-3.05,0) -- (-3.05,2.32);
+  \draw[line width=0.45pt,latex-latex] (-1.85,-0.42) -- (1.85,-0.42);
+  \draw[line width=0.4pt] (-1.85,-0.12) -- (-1.85,-0.42);
+  \draw[line width=0.4pt] (1.85,-0.12) -- (1.85,-0.42);
+  \draw[line width=0.5pt,latex-latex] (-2.42,-2.78) -- (2.42,-2.78);
+  \draw[line width=0.4pt] (-2.42,-2.32) -- (-2.42,-2.78);
+  \draw[line width=0.4pt] (2.42,-2.32) -- (2.42,-2.78);
+  \fill (-1.85,0) circle (1.15pt);
+  \fill (1.85,0) circle (1.15pt);
+  \fill (0,0) circle (1.05pt);
+  \node[anchor=south] at (0.05,2.40) {$D_{1}$};
+  \node[anchor=south] at (3.55,2.38) {$C_{1}$};
+  \node[anchor=north] at (3.62,-2.42) {$C_{2}$};
+  \node[anchor=south west] at (0.12,0.10) {$O$};
+  \node[anchor=east] at (-1.98,0.22) {$A_{0}$};
+  \node[anchor=west] at (1.98,0.22) {$A_{1}$};
+  \node[anchor=north] at (0,-0.46) {$\phi\,117$};
+  \node[anchor=north] at (0,-2.82) {$D_{1}$};
+  \node[anchor=north] at (0,-3.28) {$\phi\,156.76$};
+  \node[anchor=east] at (-3.12,1.16) {$60$};
+  \node[rotate=-90,fill=white,inner sep=1.4pt] at (3.08,0.05) {检验样板};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -15678,7 +15719,54 @@ MC_{1} + r_{1} = \left| MC_{2} \right| + r_{2} (= R),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·43}]{assets/analytic-geometry/fig-p0210-01.png}}
+\fitfig{%
+% fig-alt: 图4·43 以 F1、F2 为心、2a+t 与 t 为半径交于 P1、P'1；下栏 A'A=2a、AM=t、2c
+\begin{tikzpicture}[x=0.46cm,y=0.46cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] plot[domain=-48:48,samples=36] ({-1.70/cos(\x)},{2.05*tan(\x)});
+  \draw[line width=0.7pt] plot[domain=-52:52,samples=36] ({1.70/cos(\x)},{2.05*tan(\x)});
+  \draw[line width=0.55pt] (-3.40,0) -- (2.00,1.28);
+  \draw[line width=0.55pt] (2.85,0) -- (2.00,1.28);
+  \draw[line width=0.75pt] (-4.55,0) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (4.55,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-2.85) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (0,3.55) node[above=1pt] {$y$};
+  \foreach \px/\py in {2.00/1.28, 2.29/1.85, 2.64/2.44, 2.00/-1.28, 2.29/-1.85, 2.64/-2.44}{
+    \draw[line width=0.45pt] (\px-0.16,\py-0.16) -- (\px+0.16,\py+0.16);
+    \draw[line width=0.45pt] (\px-0.16,\py+0.16) -- (\px+0.16,\py-0.16);
+  }
+  \fill (-3.40,0) circle (1.15pt);
+  \fill (2.85,0) circle (1.15pt);
+  \fill (0,0) circle (1.05pt);
+  \node[anchor=north] at (-3.48,-0.16) {$F_{1}$};
+  \node[anchor=north east] at (-0.08,-0.10) {$O$};
+  \node[anchor=north west] at (2.98,-0.12) {$F_{2}$};
+  \node[anchor=south] at (-1.15,0.55) {$2a+t$};
+  \node[anchor=south west] at (2.48,0.55) {$t$};
+  \node[anchor=north east] at (1.78,1.05) {$P_{1}$};
+  \node[anchor=east] at (2.05,1.95) {$P_{2}$};
+  \node[anchor=south east] at (2.42,2.58) {$P_{3}$};
+  \node[anchor=north east] at (1.78,-1.42) {$P'_{1}$};
+  \node[anchor=west] at (2.48,-1.95) {$P'_{2}$};
+  \node[anchor=west] at (2.78,-2.55) {$P'_{3}$};
+  \draw[line width=0.7pt] (-3.55,-5.35) -- (-0.55,-5.35);
+  \draw[line width=0.45pt] (-3.55,-5.50) -- (-0.55,-5.50);
+  \draw[line width=0.55pt] (-0.55,-5.35) -- (1.15,-5.35);
+  \draw[line width=0.4pt] (-3.55,-5.62) -- (-3.55,-5.20);
+  \draw[line width=0.4pt] (-0.55,-5.58) -- (-0.55,-5.22);
+  \draw[line width=0.45pt] (1.15,-5.22) arc (90:-90:0.13);
+  \draw[dashed,line width=0.45pt] (1.28,-5.35) -- (2.15,-5.35);
+  \node[anchor=south] at (-2.05,-5.28) {$2a$};
+  \node[anchor=south] at (0.30,-5.28) {$t$};
+  \node[anchor=east] at (-3.62,-5.35) {$A'$};
+  \node[anchor=south] at (-0.55,-5.08) {$A$};
+  \node[anchor=south] at (1.22,-5.08) {$M$};
+  \node[anchor=north] at (-1.20,-5.52) {$2a+t$};
+  \draw[line width=0.5pt] (-3.05,-6.22) -- (-3.05,-6.48);
+  \draw[line width=0.5pt] (1.75,-6.22) -- (1.75,-6.48);
+  \draw[line width=0.55pt] (-3.15,-6.35) -- (1.85,-6.35);
+  \node[anchor=north] at (-0.65,-6.38) {$2c$};
+\end{tikzpicture}%
+}
 \caption{图4·43}
 \end{figure}
 
@@ -15762,7 +15850,22 @@ MC_{1} + r_{1} = \left| MC_{2} \right| + r_{2} (= R),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.44}]{assets/analytic-geometry/fig-p0212-01.png}}
+\fitfig{%
+% fig-alt: 图4.44 实线 y=ax^2（a>0）向上，虚线开口向下（a<0）
+\begin{tikzpicture}[x=0.62cm,y=0.62cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] plot[domain=-2.15:2.15,samples=40] (\x,{0.34*\x*\x});
+  \draw[dashed,line width=0.65pt] plot[domain=-2.15:2.15,samples=40] (\x,{-0.34*\x*\x});
+  \draw[line width=0.75pt] (-2.85,0) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (3.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-2.35) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (0,2.35) node[above=1pt] {$y$};
+  \fill (0,0) circle (1.1pt);
+  \node[anchor=north east] at (-0.08,-0.10) {$O$};
+  \node[anchor=south west] at (1.55,1.35) {$y=ax^{2}$};
+  \node[anchor=west] at (2.05,0.72) {$(a>0)$};
+  \node[anchor=west] at (2.05,-1.15) {$(a<0)$};
+\end{tikzpicture}%
+}
 \caption{图4.44}
 \end{figure}
 
@@ -15770,7 +15873,27 @@ MC_{1} + r_{1} = \left| MC_{2} \right| + r_{2} (= R),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.45}]{assets/analytic-geometry/fig-p0212-02.png}}
+\fitfig{%
+% fig-alt: 图4.45 砖砌抛物线拱桥，拱下水面横纹
+\begin{tikzpicture}[x=0.50cm,y=0.50cm,line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.18) rectangle (8.2,3.05);
+  \foreach \k in {0,1,2,3,4,5,6,7}
+    \draw[line width=0.32pt] (0,{0.18+0.36*\k}) -- (8.2,{0.18+0.36*\k});
+  \foreach \k in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+    \draw[line width=0.28pt] ({0.52*\k},0.18) -- ({0.52*\k},0.54) ({0.52*\k+0.26},0.54) -- ({0.52*\k+0.26},0.90) ({0.52*\k},0.90) -- ({0.52*\k},1.26) ({0.52*\k+0.26},1.26) -- ({0.52*\k+0.26},1.62) ({0.52*\k},1.62) -- ({0.52*\k},1.98) ({0.52*\k+0.26},2.05) -- ({0.52*\k+0.26},2.34) ({0.52*\k},2.34) -- ({0.52*\k},2.70) ({0.52*\k+0.26},2.70) -- ({0.52*\k+0.26},3.05);
+  \fill[white] plot[domain=0.62:7.58,samples=40] (\x,{2.42-0.132*(\x-4.1)*(\x-4.1)}) -- (7.58,0.18) -- (0.62,0.18) -- cycle;
+  \draw[line width=0.7pt] (0,0.18) -- (0,3.05) -- (8.2,3.05) -- (8.2,0.18) -- cycle;
+  \draw[line width=0.5pt] plot[domain=0:8.2,samples=24] (\x,{3.12+0.05*\x*(8.2-\x)/8.2});
+  \draw[line width=0.75pt] plot[domain=0.62:7.58,samples=40] (\x,{2.42-0.132*(\x-4.1)*(\x-4.1)});
+  \draw[line width=0.45pt] plot[domain=0.78:7.42,samples=36] (\x,{2.56-0.122*(\x-4.1)*(\x-4.1)});
+  \begin{scope}
+    \clip (0.7,0.18) rectangle (7.5,1.15);
+    \clip plot[domain=0.62:7.58,samples=36] (\x,{2.42-0.132*(\x-4.1)*(\x-4.1)}) -- (7.58,0.18) -- (0.62,0.18) -- cycle;
+    \foreach \k in {0,1,2,3,4}
+      \draw[line width=0.3pt] (1.15,{0.32+0.16*\k}) -- (7.05,{0.32+0.16*\k});
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图4.45}
 \end{figure}
 
@@ -15778,7 +15901,35 @@ MC_{1} + r_{1} = \left| MC_{2} \right| + r_{2} (= R),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.46}]{assets/analytic-geometry/fig-p0212-03.png}}
+\fitfig{%
+% fig-alt: 图4.46 轮式探照灯与抛物面反射镜截面，无字母标注
+\begin{tikzpicture}[x=0.46cm,y=0.46cm,line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.85,0.85) circle (0.58);
+  \draw[line width=0.4pt] (0.85,0.85) circle (0.18);
+  \draw[line width=0.65pt] (2.85,0.72) circle (0.46);
+  \draw[line width=0.4pt] (2.85,0.72) circle (0.14);
+  \draw[line width=0.6pt] (1.35,0.85) -- (2.42,0.78);
+  \draw[line width=0.6pt] (1.55,1.28) -- (1.55,1.85) -- (2.45,1.72) -- (2.45,1.22) -- cycle;
+  \draw[line width=0.7pt] (1.85,1.85) -- (3.55,4.05) -- (4.55,3.35) -- (2.55,1.78) -- cycle;
+  \draw[line width=0.7pt] (3.85,3.55) ellipse (0.72 and 0.95);
+  \draw[line width=0.45pt] (3.85,3.55) ellipse (0.28 and 0.42);
+  \begin{scope}
+    \clip (3.55,3.15) -- (8.55,7.35) -- (6.85,8.35) -- (2.55,3.85) -- cycle;
+    \foreach \k in {0,1,2,3,4,5,6,7,8,9,10,11,12}
+      \draw[line width=0.28pt] ({3.15+0.12*\k},{2.95+0.16*\k}) -- ({7.15+0.10*\k},{7.15+0.08*\k});
+  \end{scope}
+  \draw[line width=1.15pt] (5.35,5.15) -- (5.85,5.85);
+  \draw[line width=0.7pt] (9.55,1.35) .. controls (8.85,2.05) and (8.75,2.95) .. (9.55,3.65);
+  \draw[line width=0.55pt] (9.42,1.55) .. controls (9.05,2.15) and (9.05,2.85) .. (9.42,3.45);
+  \draw[line width=0.7pt] (9.55,3.65) arc (70:-70:1.15 and 1.22);
+  \fill (9.05,2.50) circle (1.25pt);
+  \draw[line width=0.32pt] (9.05,2.50) -- (9.55,1.55);
+  \draw[line width=0.32pt] (9.05,2.50) -- (9.55,3.45);
+  \draw[line width=0.32pt] (9.05,2.50) -- (9.48,2.50);
+  \foreach \k in {-4,-3,-2,-1,0,1,2,3,4}
+    \draw[line width=0.38pt] (10.05,{2.50+0.24*\k}) -- (13.1,{2.50+0.24*\k});
+\end{tikzpicture}%
+}
 \caption{图4.46}
 \end{figure}
 
@@ -15802,7 +15953,30 @@ MC_{1} + r_{1} = \left| MC_{2} \right| + r_{2} (= R),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-47}]{assets/analytic-geometry/fig-p0213-01.png}}
+\fitfig{%
+% fig-alt: 图4-47 直尺定直线 l、直角三角板、细绳与焦点 F，笔尖 P 画出抛物线
+\begin{tikzpicture}[x=0.52cm,y=0.52cm,line cap=round,line join=round]
+  \draw[line width=0.75pt] (0.2,0.25) -- (7.4,0.25) -- (7.4,0.78) -- (1.05,0.78) -- (1.05,3.15) -- (0.45,3.15) -- (0.45,0.78) -- (0.2,0.78) -- cycle;
+  \draw[line width=0.55pt] (1.05,0.78) -- (6.9,0.78);
+  \draw[line width=0.7pt] (1.35,1.05) -- (4.15,1.05) -- (2.05,2.35) -- cycle;
+  \draw[line width=0.55pt] (2.05,2.35) -- (4.15,1.05);
+  \draw[line width=0.75pt] (2.05,2.35) -- (2.05,3.95);
+  \draw[line width=0.55pt] (1.92,3.85) -- (2.18,3.85);
+  \fill (4.15,1.05) circle (1.15pt);
+  \fill (2.05,2.35) circle (1.2pt);
+  \fill (2.55,1.42) circle (1.2pt);
+  \draw[line width=0.55pt] (4.15,1.05) -- (2.05,2.35);
+  \draw[line width=0.55pt] (2.05,2.35) -- (2.55,1.42);
+  \draw[line width=0.7pt] plot[domain=0.85:2.45,samples=28] ({1.62+0.42*(\x-1.15)*(\x-1.15)},{\x});
+  \draw[dashed,line width=0.4pt] (2.15,1.05) -- (3.6,1.05);
+  \draw[line width=0.45pt] (2.45,3.55) .. controls (3.15,4.15) and (3.85,4.05) .. (4.05,3.35);
+  \draw[line width=0.45pt] (2.22,3.25) .. controls (2.85,3.75) and (3.35,3.65) .. (3.45,2.75);
+  \node[anchor=east] at (0.85,1.95) {$l$};
+  \node[anchor=south east] at (1.92,2.42) {$P$};
+  \node[anchor=west] at (4.28,1.08) {$A$};
+  \node[anchor=north] at (2.62,1.28) {$F$};
+\end{tikzpicture}%
+}
 \caption{图4-47}
 \end{figure}
 
@@ -15850,7 +16024,34 @@ x = - \frac {p}{2} (p > 0)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.4B}]{assets/analytic-geometry/fig-p0214-01.png}}
+\fitfig{%
+% fig-alt: 图4·48（题注仍作图 4.4B）抛物线 y^2=2px，准线 l：x=-p/2，Q、P、F
+\begin{tikzpicture}[x=0.55cm,y=0.58cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] plot[domain=-2.70:2.70,samples=40] ({0.425*\x*\x},{\x});
+  \draw[line width=0.7pt] (-1.05,-2.95) -- (-1.05,3.15);
+  \draw[line width=0.55pt] (-1.05,2.25) -- (2.15,2.25);
+  \draw[line width=0.55pt] (1.05,0) -- (2.15,2.25);
+  \draw[line width=0.75pt] (-2.25,0) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (3.65,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-2.65) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (0,3.45) node[above=1pt] {$y$};
+  \draw[line width=0.4pt] (-1.05,0.14) -- (-0.08,0.14);
+  \draw[line width=0.4pt] (0.12,0.30) -- (0.98,0.30);
+  \fill (-1.05,2.25) circle (1.2pt);
+  \fill (2.15,2.25) circle (1.2pt);
+  \fill (1.05,0) circle (1.2pt);
+  \fill (0,0) circle (1.05pt);
+  \node[anchor=east] at (-1.18,2.48) {$Q\left(-\dfrac{p}{2},\,y\right)$};
+  \node[anchor=west] at (2.26,2.38) {$P(x,\,y)$};
+  \node[anchor=north west] at (1.18,-0.16) {$F\left(\frac{p}{2},\,0\right)$};
+  \node[anchor=south] at (-1.12,0.18) {$K$};
+  \node[anchor=north east] at (-0.08,-0.10) {$O$};
+  \node[anchor=east] at (-1.14,-1.45) {$l$};
+  \node[anchor=north east] at (-1.12,-2.82) {$x=-\dfrac{p}{2}$};
+  \node[anchor=south] at (-0.52,0.18) {$\dfrac{p}{2}$};
+  \node[anchor=south] at (0.52,0.34) {$\dfrac{p}{2}$};
+\end{tikzpicture}%
+}
 \caption{图 4.4B}
 \end{figure}
 
@@ -15986,7 +16187,30 @@ x = - \frac {5}{4},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·43}]{assets/analytic-geometry/fig-p0217-01.png}}
+\fitfig{%
+% fig-alt: 图4·49 扫描（题注写图4·43）抛物线 y^2=5x，准线 x=-5/4，焦点 F(5/4,0)
+\begin{tikzpicture}[x=0.42cm,y=0.42cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] plot[domain=-5.15:5.15,samples=42] ({0.2*\x*\x},{\x});
+  \draw[line width=0.7pt] (-1.25,-5.55) -- (-1.25,4.85);
+  \draw[line width=0.75pt] (-2.35,0) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (6.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-5.35) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (0,5.55) node[above=1pt] {$y$};
+  \foreach \k in {1.25,3,5}
+    \draw[line width=0.35pt] (\k,0.10) -- (\k,-0.10);
+  \fill (0,0) circle (1.15pt);
+  \fill (1.25,0) circle (1.2pt);
+  \fill (1.25,2.5) circle (1.15pt);
+  \fill (1.25,-2.5) circle (1.15pt);
+  \fill (3,3.87) circle (1.15pt);
+  \fill (3,-3.87) circle (1.15pt);
+  \fill (5,5) circle (1.15pt);
+  \fill (5,-5) circle (1.15pt);
+  \node[anchor=north east] at (-0.10,-0.12) {$O$};
+  \node[anchor=north west] at (1.45,-0.20) {$F\left(\frac{5}{4},\,0\right)$};
+  \node[anchor=north east] at (-1.32,-5.42) {$x=-\dfrac{5}{4}$};
+\end{tikzpicture}%
+}
 \caption{图4·43}
 \end{figure}
 
@@ -18259,7 +18483,30 @@ e^{4} + e^{2} - 1 = 0.
 \end{tikzpicture}%
 }
 &
-\fitfig{\includegraphics[keepaspectratio,alt={抛物线}]{assets/analytic-geometry/fig-p0217-01.png}} \\
+\fitfig{%
+% fig-alt: 图4·49 扫描（题注写图4·43）抛物线 y^2=5x，准线 x=-5/4，焦点 F(5/4,0)
+\begin{tikzpicture}[x=0.42cm,y=0.42cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] plot[domain=-5.15:5.15,samples=42] ({0.2*\x*\x},{\x});
+  \draw[line width=0.7pt] (-1.25,-5.55) -- (-1.25,4.85);
+  \draw[line width=0.75pt] (-2.35,0) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (6.15,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-5.35) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (0,5.55) node[above=1pt] {$y$};
+  \foreach \k in {1.25,3,5}
+    \draw[line width=0.35pt] (\k,0.10) -- (\k,-0.10);
+  \fill (0,0) circle (1.15pt);
+  \fill (1.25,0) circle (1.2pt);
+  \fill (1.25,2.5) circle (1.15pt);
+  \fill (1.25,-2.5) circle (1.15pt);
+  \fill (3,3.87) circle (1.15pt);
+  \fill (3,-3.87) circle (1.15pt);
+  \fill (5,5) circle (1.15pt);
+  \fill (5,-5) circle (1.15pt);
+  \node[anchor=north east] at (-0.10,-0.12) {$O$};
+  \node[anchor=north west] at (1.45,-0.20) {$F\left(\frac{5}{4},\,0\right)$};
+  \node[anchor=north east] at (-1.32,-5.42) {$x=-\dfrac{5}{4}$};
+\end{tikzpicture}%
+} \\
 顶点 & （-a，0），（a，0）（0，-b），（0，b） & （-a，0），（a，0） &
 （0，0） \\
 对称轴 & 对称轴： x轴，y轴长轴的长： 2a短轴的长： 2b & 对称轴：
