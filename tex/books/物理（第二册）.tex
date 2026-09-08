@@ -12290,7 +12290,27 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0250-02.png}}
+\fitfig{%
+% fig-alt: 图7.21(b) 左立墙密斜线，梁穿墙，左端短帽并下垂短划；梁顶底平直，内两虚线右端下弯，右端向下箭头。扫描无字母 F
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (1.18,0.12) rectangle (1.52,3.38);
+    \foreach \yy in {0.18,0.32,0.46,0.60,0.74,0.88,1.02,1.16,1.30,1.44,1.58,1.72,1.86,2.00,2.14,2.28,2.42,2.56,2.70,2.84,2.98,3.12,3.26} {
+      \draw[line width=0.34pt] (1.16,\yy) -- (1.54,{\yy-0.28});
+    }
+  \end{scope}
+  \draw[line width=0.7pt] (1.18,0.12) -- (1.18,3.38);
+  \draw[line width=1.05pt] (1.52,0.08) -- (1.52,3.42);
+  \fill[white] (0.38,1.55) rectangle (5.12,2.08);
+  \draw[line width=0.75pt] (0.38,1.55) rectangle (5.12,2.08);
+  \draw[line width=1.15pt] (0.28,1.48) -- (0.28,2.16);
+  \draw[line width=0.7pt] (0.46,1.55) -- (0.46,1.18);
+  \draw[line width=1.15pt] (5.12,1.48) -- (5.12,2.14);
+  \draw[dashed,line width=0.5pt] (1.72,1.92) .. controls (3.05,1.90) and (4.15,1.78) .. (5.02,1.62);
+  \draw[dashed,line width=0.5pt] (1.72,1.72) .. controls (2.9,1.66) and (4.0,1.38) .. (4.98,1.16);
+  \draw[line width=0.75pt,->] (4.92,1.58) -- (4.92,0.92);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -12312,7 +12332,29 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.22 中立层}]{assets/physics-2/fig-p0250-04.png}}
+\fitfig{%
+% fig-alt: 图7.22 未弯矩形梁：上 A、c、a、e、B，下 D、d、b、f、C，左 l、右 m；c-d 与较粗 a-b 竖线，中虚线为中立层。图注不绘入
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \draw[line width=0.8pt] (0.42,0.52) rectangle (5.48,1.28);
+  \draw[line width=0.6pt] (1.62,0.52) -- (1.62,1.28);
+  \draw[line width=0.95pt] (2.82,0.52) -- (2.82,1.28);
+  \draw[dashed,line width=0.45pt] (0.42,0.90) -- (2.62,0.90);
+  \draw[line width=1.05pt] (2.68,0.90) -- (2.96,0.90);
+  \draw[dashed,line width=0.45pt] (3.02,0.90) -- (5.48,0.90);
+  \node[anchor=south,font=\small] at (0.42,1.32) {$A$};
+  \node[anchor=south,font=\small] at (1.62,1.32) {$c$};
+  \node[anchor=south,font=\small] at (2.82,1.32) {$a$};
+  \node[anchor=south,font=\small] at (3.98,1.32) {$e$};
+  \node[anchor=south west,font=\small] at (5.52,1.28) {$B$};
+  \node[anchor=north,font=\small] at (0.42,0.48) {$D$};
+  \node[anchor=north,font=\small] at (1.62,0.48) {$d$};
+  \node[anchor=north,font=\small] at (2.82,0.48) {$b$};
+  \node[anchor=north,font=\small] at (3.98,0.48) {$f$};
+  \node[anchor=north west,font=\small] at (5.50,0.50) {$C$};
+  \node[anchor=east,font=\small] at (0.34,0.90) {$l$};
+  \node[anchor=west,font=\small] at (5.56,0.90) {$m$};
+\end{tikzpicture}%
+}
 \caption{图7.22 中立层}
 \end{figure}
 
@@ -12324,7 +12366,61 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.23 截面积为 A 和 B 的梁和棒，反抗弯曲的作用几乎相等}]{assets/physics-2/fig-p0250-05.png}}
+\fitfig{%
+% fig-alt: 图7.23 (a) 斜线矩形中线标 A，下工字梁中线无字母；(b) 斜线实心圆中线标 A，管壁斜线、孔内虚线标 B。不把 A 抄到工字梁
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (0.48,2.08) rectangle (1.62,3.22);
+    \foreach \k in {-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12} {
+      \draw[line width=0.28pt] ({0.22+0.14*\k},3.35) -- ({0.22+0.14*\k+1.35},1.95);
+    }
+  \end{scope}
+  \draw[line width=0.8pt] (0.48,2.08) rectangle (1.62,3.22);
+  \draw[line width=0.7pt] (0.18,2.65) -- (0.36,2.65);
+  \draw[line width=0.55pt] (0.18,2.58) -- (0.18,2.72);
+  \draw[dashed,line width=0.45pt] (0.36,2.65) -- (0.86,2.65);
+  \draw[dashed,line width=0.45pt] (1.18,2.65) -- (1.78,2.65);
+  \node[anchor=south,font=\small] at (1.02,2.68) {$A$};
+  \begin{scope}
+    \clip (3.28,2.65) circle (0.62);
+    \foreach \k in {-2,-1,0,1,2,3,4,5,6,7,8,9,10,11} {
+      \draw[line width=0.28pt] ({2.50+0.14*\k},3.40) -- ({2.50+0.14*\k+1.40},1.90);
+    }
+  \end{scope}
+  \draw[line width=0.85pt] (3.28,2.65) circle (0.62);
+  \draw[line width=0.7pt] (2.48,2.65) -- (2.62,2.65);
+  \draw[line width=0.55pt] (2.48,2.58) -- (2.48,2.72);
+  \draw[dashed,line width=0.45pt] (2.62,2.65) -- (3.10,2.65);
+  \draw[dashed,line width=0.45pt] (3.46,2.65) -- (4.02,2.65);
+  \draw[line width=0.7pt] (3.94,2.65) -- (4.08,2.65);
+  \node[anchor=south,font=\small] at (3.28,2.68) {$A$};
+  \begin{scope}
+    \clip (0.32,0.18) -- (1.78,0.18) -- (1.78,0.44) -- (1.22,0.58) -- (1.22,1.28) -- (1.78,1.42) -- (1.78,1.68) -- (0.32,1.68) -- (0.32,1.42) -- (0.88,1.28) -- (0.88,0.58) -- (0.32,0.44) -- cycle;
+    \foreach \k in {-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13} {
+      \draw[line width=0.28pt] ({0.05+0.14*\k},1.85) -- ({0.05+0.14*\k+1.55},0.02);
+    }
+  \end{scope}
+  \draw[line width=0.8pt] (0.32,0.18) -- (1.78,0.18) -- (1.78,0.44) -- (1.22,0.58) -- (1.22,1.28) -- (1.78,1.42) -- (1.78,1.68) -- (0.32,1.68) -- (0.32,1.42) -- (0.88,1.28) -- (0.88,0.58) -- (0.32,0.44) -- cycle;
+  \draw[line width=0.7pt] (0.06,0.93) -- (0.20,0.93);
+  \draw[line width=0.55pt] (0.06,0.86) -- (0.06,1.00);
+  \draw[dashed,line width=0.45pt] (0.20,0.93) -- (1.92,0.93);
+  \begin{scope}
+    \clip (3.28,0.93) circle (0.68);
+    \foreach \k in {-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12} {
+      \draw[line width=0.28pt] ({2.45+0.14*\k},1.75) -- ({2.45+0.14*\k+1.55},0.05);
+    }
+  \end{scope}
+  \fill[white] (3.28,0.93) circle (0.32);
+  \draw[line width=0.85pt] (3.28,0.93) circle (0.68);
+  \draw[line width=0.75pt] (3.28,0.93) circle (0.32);
+  \draw[dashed,line width=0.45pt] (2.96,0.93) -- (3.12,0.93);
+  \draw[dashed,line width=0.45pt] (3.44,0.93) -- (4.08,0.93);
+  \draw[line width=0.7pt] (4.00,0.93) -- (4.14,0.93);
+  \node[anchor=south,font=\small] at (3.28,0.96) {$B$};
+  \node[anchor=north,font=\small] at (1.05,-0.08) {$(a)$};
+  \node[anchor=north,font=\small] at (3.28,-0.08) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{图7.23 截面积为 \(A\) 和 \(B\)
 的梁和棒，反抗弯曲的作用几乎相等}
 \end{figure}
@@ -12344,7 +12440,26 @@ P
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.24 拉伸试件}]{assets/physics-2/fig-p0251-01.png}}
+\fitfig{%
+% fig-alt: 图7.24 拉伸试件：两端 P 向外，中段较细，A、B 在标距上方，下引线标 l_0，标距内虚线中心线。不是试验机照片
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.75pt,->] (0.92,0.82) -- (0.12,0.82);
+  \node[anchor=south,font=\small] at (0.40,0.88) {$P$};
+  \draw[line width=0.75pt] (0.92,0.52) rectangle (1.62,1.12);
+  \draw[line width=0.75pt] (1.62,0.52) -- (1.98,0.70) -- (4.22,0.70) -- (4.58,0.52);
+  \draw[line width=0.75pt] (1.62,1.12) -- (1.98,0.94) -- (4.22,0.94) -- (4.58,1.12);
+  \draw[dashed,line width=0.4pt] (1.98,0.82) -- (4.22,0.82);
+  \draw[line width=0.75pt] (4.58,0.52) rectangle (5.32,1.12);
+  \draw[line width=0.75pt,->] (5.32,0.82) -- (6.12,0.82);
+  \node[anchor=south,font=\small] at (5.74,0.88) {$P$};
+  \node[anchor=south,font=\small] at (2.08,1.00) {$A$};
+  \node[anchor=south,font=\small] at (4.12,1.00) {$B$};
+  \draw[line width=0.45pt] (2.08,0.64) -- (2.08,0.18);
+  \draw[line width=0.45pt] (4.12,0.64) -- (4.12,0.18);
+  \draw[<->,line width=0.5pt] (2.08,0.28) -- (4.12,0.28);
+  \node[fill=white,inner sep=1.2pt,font=\small] at (3.10,0.28) {$l_0$};
+\end{tikzpicture}%
+}
 \caption{图7.24 拉伸试件}
 \end{figure}
 
@@ -12704,7 +12819,26 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0260-02.png}}
+\fitfig{%
+% fig-alt: 图8.2(a) 萘熔解：纵轴温度（°C）0–100 自下而上，横轴时间（分）0–10；曲线自约 2 分、20℃ 升至 A 后水平至 B，再陡升过 100
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,4.85);
+  \draw[->,line width=0.7pt] (0,0) -- (4.55,0);
+  \foreach \k/\lab in {0/0,1/20,2/40,3/60,4/80,5/100} {
+    \draw[line width=0.45pt] (-0.07,{0.76*\k}) -- (0,{0.76*\k});
+    \node[anchor=east,font=\footnotesize] at (-0.12,{0.76*\k}) {$\lab$};
+  }
+  \foreach \k/\lab in {1/2,2/4,3/6,4/8,5/10} {
+    \draw[line width=0.45pt] ({0.72*\k},0) -- ({0.72*\k},-0.07);
+    \node[anchor=north,font=\footnotesize] at ({0.72*\k},-0.10) {$\lab$};
+  }
+  \node[rotate=90,anchor=center,font=\small] at (-1.08,2.05) {温度（$^{\circ}\mathrm{C}$）};
+  \node[anchor=north,font=\small] at (2.05,-0.48) {时间（分）};
+  \draw[line width=0.85pt] (0.72,0.76) .. controls (1.20,1.08) and (1.70,2.05) .. (2.16,3.04) -- (3.22,3.08) .. controls (3.42,3.14) and (3.52,3.48) .. (3.78,4.32);
+  \node[anchor=south,font=\small] at (2.08,3.14) {$A$};
+  \node[anchor=south,font=\small] at (3.16,3.16) {$B$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -12714,7 +12848,26 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0260-03.png}}
+\fitfig{%
+% fig-alt: 图8.2(b) 萘凝固：自左上降到 C 后水平至 D，再下弯趋近 20℃。C 在平台左、D 在平台右。轴标同 (a)
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,4.85);
+  \draw[->,line width=0.7pt] (0,0) -- (4.55,0);
+  \foreach \k/\lab in {0/0,1/20,2/40,3/60,4/80,5/100} {
+    \draw[line width=0.45pt] (-0.07,{0.76*\k}) -- (0,{0.76*\k});
+    \node[anchor=east,font=\footnotesize] at (-0.12,{0.76*\k}) {$\lab$};
+  }
+  \foreach \k/\lab in {1/2,2/4,3/6,4/8,5/10} {
+    \draw[line width=0.45pt] ({0.72*\k},0) -- ({0.72*\k},-0.07);
+    \node[anchor=north,font=\footnotesize] at ({0.72*\k},-0.10) {$\lab$};
+  }
+  \node[rotate=90,anchor=center,font=\small] at (-1.08,2.05) {温度（$^{\circ}\mathrm{C}$）};
+  \node[anchor=north,font=\small] at (2.05,-0.48) {时间（分）};
+  \draw[line width=0.85pt] (0.38,4.28) .. controls (0.62,3.85) and (0.78,3.28) .. (0.82,3.04) -- (2.16,3.04) .. controls (2.48,2.92) and (2.85,2.15) .. (3.25,1.35) .. controls (3.55,0.90) and (3.72,0.82) .. (3.78,0.78);
+  \node[anchor=south west,font=\small] at (0.70,3.16) {$C$};
+  \node[anchor=south,font=\small] at (2.16,3.12) {$D$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -12728,7 +12881,25 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0261-01.png}}
+\fitfig{%
+% fig-alt: 图8.3(a) 松香熔解：光滑上凹曲线，无平台、无字母。纵轴 20–100，横轴 0–10，原点标 0
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,4.85);
+  \draw[->,line width=0.7pt] (0,0) -- (4.55,0);
+  \foreach \k/\lab in {1/20,2/40,3/60,4/80,5/100} {
+    \draw[line width=0.45pt] (-0.07,{0.76*\k}) -- (0,{0.76*\k});
+    \node[anchor=east,font=\footnotesize] at (-0.12,{0.76*\k}) {$\lab$};
+  }
+  \node[anchor=north,font=\footnotesize] at (0,-0.10) {$0$};
+  \foreach \k/\lab in {1/2,2/4,3/6,4/8,5/10} {
+    \draw[line width=0.45pt] ({0.72*\k},0) -- ({0.72*\k},-0.07);
+    \node[anchor=north,font=\footnotesize] at ({0.72*\k},-0.10) {$\lab$};
+  }
+  \node[rotate=90,anchor=center,font=\small] at (-1.08,2.35) {温度（$^{\circ}\mathrm{C}$）};
+  \node[anchor=north,font=\small] at (2.05,-0.48) {时间（分）};
+  \draw[line width=0.85pt] (0.70,1.52) .. controls (1.55,1.68) and (2.35,2.10) .. (3.10,2.85) .. controls (3.48,3.40) and (3.64,3.82) .. (3.88,4.38);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -12738,7 +12909,25 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0261-02.png}}
+\fitfig{%
+% fig-alt: 图8.3(b) 松香凝固：自上弯下、逐渐变平，无平台、无字母。纵轴标 40–100，横轴 0–10
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[->,line width=0.7pt] (0,0) -- (0,4.85);
+  \draw[->,line width=0.7pt] (0,0) -- (4.55,0);
+  \foreach \k/\lab in {2/40,3/60,4/80,5/100} {
+    \draw[line width=0.45pt] (-0.07,{0.76*\k}) -- (0,{0.76*\k});
+    \node[anchor=east,font=\footnotesize] at (-0.12,{0.76*\k}) {$\lab$};
+  }
+  \node[anchor=north,font=\footnotesize] at (0,-0.10) {$0$};
+  \foreach \k/\lab in {1/2,2/4,3/6,4/8,5/10} {
+    \draw[line width=0.45pt] ({0.72*\k},0) -- ({0.72*\k},-0.07);
+    \node[anchor=north,font=\footnotesize] at ({0.72*\k},-0.10) {$\lab$};
+  }
+  \node[rotate=90,anchor=center,font=\small] at (-1.08,2.45) {温度（$^{\circ}\mathrm{C}$）};
+  \node[anchor=north,font=\small] at (2.05,-0.48) {时间（分）};
+  \draw[line width=0.85pt] (0.40,4.32) .. controls (0.95,3.55) and (1.55,2.75) .. (2.25,1.95) .. controls (2.85,1.55) and (3.30,1.50) .. (3.72,1.52);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
