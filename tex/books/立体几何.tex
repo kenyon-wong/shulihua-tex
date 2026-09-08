@@ -1711,7 +1711,34 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/solid-geometry/fig-p0024-01.png}}
+\fitfig{%
+% fig-alt: 第4题：左直立平行四边形为平面P，右为相交平面Q；交线竖直线上A在上、B在下；粗实线AC向右上、BD向右；底尖标P，右上标Q；均为实线，无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Ptl) at (0.22,3.30);
+  \coordinate (Ptr) at (1.48,2.72);
+  \coordinate (Ptip) at (2.22,0.06);
+  \coordinate (Pbl) at (0.06,0.52);
+  \coordinate (Qur) at (2.72,2.92);
+  \coordinate (Qbr) at (2.88,0.48);
+  \coordinate (It) at (1.48,2.72);
+  \coordinate (Ib) at (1.48,0.98);
+  \coordinate (A) at (1.10,2.12);
+  \coordinate (C) at (1.98,2.40);
+  \coordinate (B) at (1.22,1.32);
+  \coordinate (D) at (2.12,1.38);
+  \draw[line width=0.7pt] (Ptl) -- (Ptr) -- (Ptip) -- (Pbl) -- cycle;
+  \draw[line width=0.7pt] (It) -- (Qur) -- (Qbr) -- (Ib);
+  \draw[line width=0.7pt] (It) -- (Ib);
+  \draw[line width=1.1pt] (A) -- (C);
+  \draw[line width=1.1pt] (B) -- (D);
+  \node[left=1pt] at (A) {$A$};
+  \node[above right=0pt] at (C) {$C$};
+  \node[left=1pt] at (B) {$B$};
+  \node[right=1pt] at (D) {$D$};
+  \node[below=1pt] at (Ptip) {$P$};
+  \node[above left=0pt] at (Qur) {$Q$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -1719,7 +1746,35 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/solid-geometry/fig-p0024-02.png}}
+\fitfig{%
+% fig-alt: 第7题：正方体，A前左下、B前右下、C后右下、D后左；顶面A1B1C1D1实线；竖边AA1、BB1、CC1实线，AD、BC实线；空间对角线BD1为实线；隐藏边DD1、DC为虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.00,0.16);
+  \coordinate (B) at (2.08,0.12);
+  \coordinate (C) at (2.88,0.58);
+  \coordinate (D) at (0.84,0.64);
+  \coordinate (A1) at (0.00,2.12);
+  \coordinate (B1) at (2.08,2.08);
+  \coordinate (C1) at (2.88,2.54);
+  \coordinate (D1) at (0.84,2.58);
+  \draw[line width=0.7pt] (A) -- (B) -- (C);
+  \draw[line width=0.7pt] (A) -- (D);
+  \draw[line width=0.7pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.7pt] (A1) -- (D1) -- (C1) -- (B1);
+  \draw[line width=0.7pt] (C) -- (C1);
+  \draw[line width=0.65pt,dash pattern=on 2.7pt off 1.7pt] (D) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.7pt off 1.7pt] (D) -- (C);
+  \draw[line width=0.75pt] (B) -- (D1);
+  \node[below left=0pt] at (A) {$A$};
+  \node[below=1pt] at (B) {$B$};
+  \node[right=1pt] at (C) {$C$};
+  \node[left=1pt] at (D) {$D$};
+  \node[left=1pt] at (A1) {$A_{1}$};
+  \node[below left=0pt] at (B1) {$B_{1}$};
+  \node[above right=0pt] at (C1) {$C_{1}$};
+  \node[above=1pt] at (D1) {$D_{1}$};
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -1762,7 +1817,20 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·26}]{assets/solid-geometry/fig-p0025-01.png}}
+\fitfig{%
+% fig-alt: 图1-26：水平平行四边形平面，前左标M；平面上方斜线段AB，A在上端、B在下端，B不接触平面；均为实线，无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (BL) at (0.00,0.00);
+  \coordinate (BR) at (2.62,0.02);
+  \coordinate (TR) at (3.92,0.95);
+  \coordinate (TL) at (1.18,0.98);
+  \draw[line width=0.7pt] (BL) -- (BR) -- (TR) -- (TL) -- cycle;
+  \draw[line width=0.9pt] (1.78,2.08) -- (2.52,1.12);
+  \node[above left=0pt] at (1.72,2.10) {$A$};
+  \node[right=1pt] at (2.62,1.08) {$B$};
+  \node[above right=1pt] at (BL) {$M$};
+\end{tikzpicture}%
+}
 \caption{图 1·26}
 \end{figure}
 
@@ -1780,7 +1848,20 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-27}]{assets/solid-geometry/fig-p0025-03.png}}
+\fitfig{%
+% fig-alt: 图1-27（2）：平行四边形平面，前左标M；直线a自顶边向下进入平面内、止于底边之上，不伸出底边；a标在线段右侧；下方标(2)；均为实线，无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (BL) at (0.00,0.58);
+  \coordinate (BR) at (2.58,0.55);
+  \coordinate (TR) at (3.58,1.38);
+  \coordinate (TL) at (0.98,1.42);
+  \draw[line width=0.7pt] (BL) -- (BR) -- (TR) -- (TL) -- cycle;
+  \draw[line width=0.75pt] (1.92,1.40) -- (2.08,0.78);
+  \node[right=1pt] at (2.02,1.22) {$a$};
+  \node[above right=1pt] at (BL) {$M$};
+  \node at (1.55,0.15) {$(2)$};
+\end{tikzpicture}%
+}
 \caption{图1-27}
 \end{figure}
 
@@ -1788,7 +1869,19 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0025-04.png}}
+\fitfig{%
+% fig-alt: 图1-28（1）：平行四边形平面，前左标M；平面外上方有与顶边平行的水平线段，上方标a，线段不接触平面；均为实线，无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (BL) at (0.00,0.00);
+  \coordinate (BR) at (2.58,0.02);
+  \coordinate (TR) at (3.72,0.96);
+  \coordinate (TL) at (1.08,1.00);
+  \draw[line width=0.7pt] (BL) -- (BR) -- (TR) -- (TL) -- cycle;
+  \draw[line width=0.85pt] (1.88,1.55) -- (3.38,1.55);
+  \node[above=1pt] at (2.62,1.55) {$a$};
+  \node[above right=1pt] at (BL) {$M$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -1796,7 +1889,19 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0025-05.png}}
+\fitfig{%
+% fig-alt: 图1-28（2）：平行四边形平面，前左标M；水平粗线a画在平面中部、与长边平行，右端伸出右斜边并标a；均为实线，无虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (BL) at (0.00,0.00);
+  \coordinate (BR) at (2.68,0.02);
+  \coordinate (TR) at (3.82,0.78);
+  \coordinate (TL) at (1.08,0.82);
+  \draw[line width=0.7pt] (BL) -- (BR) -- (TR) -- (TL) -- cycle;
+  \draw[line width=0.95pt] (1.92,0.42) -- (4.18,0.46);
+  \node[above right=0pt] at (4.18,0.46) {$a$};
+  \node[above right=0pt] at (BL) {$M$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
