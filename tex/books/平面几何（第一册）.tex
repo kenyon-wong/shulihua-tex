@@ -1493,7 +1493,23 @@ CD = 2.5 \mathrm{mm} \times 10 = 25 \mathrm{mm} = 2.5 \mathrm{cm}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·23}]{assets/plane-geometry-1/fig-p0022-01.png}}
+\fitfig{%
+% fig-alt: 圆O，半径OA水平向右并略伸出，OB指向上左，OC指向下偏右；圆外三处弧箭表示逆时针旋转
+\begin{tikzpicture}[line cap=round]
+  \def\r{1.18}
+  \draw[line width=0.7pt] (0,0) circle (\r);
+  \draw[line width=0.7pt] (0,0) -- (135:\r);
+  \draw[line width=0.7pt] (0,0) -- (1.34,0);
+  \draw[line width=0.7pt] (0,0) -- (-76:\r);
+  \draw[->, line width=0.6pt] (160:1.34) arc[start angle=160, end angle=205, radius=1.34];
+  \draw[->, line width=0.6pt] (28:1.34) arc[start angle=28, end angle=62, radius=1.34];
+  \draw[->, line width=0.6pt] (236:1.34) arc[start angle=236, end angle=286, radius=1.34];
+  \node[above=1pt] at (0.02,0.04) {$O$};
+  \node[above=1pt] at (135:\r) {$B$};
+  \node[right=1pt] at (1.22,0) {$A$};
+  \node[below=1pt] at (-76:\r) {$C$};
+\end{tikzpicture}%
+}
 \caption{图1·23}
 \end{figure}
 
@@ -1530,7 +1546,25 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-25}]{assets/plane-geometry-1/fig-p0023-01.png}}
+\fitfig{%
+% fig-alt: 左圆M，圆周上A在左下、B在右；右圆N，圆周上C在左、E在右、D在右下；两圆心为点，两圆不相交
+\begin{tikzpicture}[line cap=round]
+  \def\r{0.92}
+  \draw[line width=0.7pt] (0,0) circle (\r);
+  \fill (0,0) circle (0.035);
+  \node[right=2pt] at (0,0) {$M$};
+  \node[below left=1pt] at (238:\r) {$A$};
+  \node[above right=1pt] at (18:\r) {$B$};
+  \begin{scope}[xshift=2.70cm]
+    \draw[line width=0.7pt] (0,0) circle (\r);
+    \fill (0,0) circle (0.035);
+    \node[right=2pt] at (0,0) {$N$};
+    \node[below left=1pt] at (200:\r) {$C$};
+    \node[right=1pt] at (2:\r) {$E$};
+    \node[below right=0pt] at (322:\r) {$D$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-25}
 \end{figure}
 
@@ -1591,7 +1625,19 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-26}]{assets/plane-geometry-1/fig-p0024-01.png}}
+\fitfig{%
+% fig-alt: 顶点引出两条虚线射线，下边水平向右、上边斜向右上，两端有箭头，角内有小弧，顶点旁标顶点，两边各标边
+\begin{tikzpicture}[line cap=round]
+  \draw[dashed, line width=0.7pt] (0,0) -- (2.05,0);
+  \draw[->, line width=0.7pt] (2.05,0) -- (2.38,0);
+  \draw[dashed, line width=0.75pt] (0,0) -- (32:1.95);
+  \draw[->, line width=0.75pt] (32:1.95) -- (32:2.28);
+  \draw[line width=0.6pt] (0.46,0) arc[start angle=0, end angle=32, radius=0.46];
+  \node[left=2pt] at (0,0) {顶点};
+  \node[below=2pt] at (1.20,0) {边};
+  \node at (0.62,0.92) {边};
+\end{tikzpicture}%
+}
 \caption{图1-26}
 \end{figure}
 
@@ -1599,7 +1645,29 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-27}]{assets/plane-geometry-1/fig-p0024-02.png}}
+\fitfig{%
+% fig-alt: 左为顶点O在上的虚线角，下端标F与E，角内有小弧；右为顶点B的角，斜边虚线箭头指向A，水平边实线至C外再虚线箭头，角内标1
+\begin{tikzpicture}[line cap=round]
+  \draw[dashed, line width=0.7pt] (0,1.85) -- (-0.52,0);
+  \draw[dashed, line width=0.7pt] (0,1.85) -- (0.52,0);
+  \draw[line width=0.6pt] (-0.11,1.50) arc[start angle=-106, end angle=-74, radius=0.36];
+  \node[above=1pt] at (0,1.85) {$O$};
+  \node[below left=0pt] at (-0.52,0) {$F$};
+  \node[below right=0pt] at (0.52,0) {$E$};
+  \begin{scope}[xshift=2.35cm]
+    \draw[line width=0.7pt] (0,0) -- (1.55,0);
+    \draw[dashed, line width=0.7pt] (1.55,0) -- (2.05,0);
+    \draw[->, line width=0.7pt] (2.05,0) -- (2.42,0);
+    \draw[dashed, line width=0.7pt] (0,0) -- (34:1.72);
+    \draw[->, line width=0.7pt] (34:1.72) -- (34:2.08);
+    \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=34, radius=0.42];
+    \node[above=1pt] at (17:0.64) {$1$};
+    \node[below left=0pt] at (0,0) {$B$};
+    \node[above=1pt] at (34:2.08) {$A$};
+    \node[right=1pt] at (2.42,0) {$C$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-27}
 \end{figure}
 
@@ -1623,13 +1691,33 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第24页）}]{assets/plane-geometry-1/fig-p0024-04.png}}
+\fitfig{%
+% fig-alt: 卡钳，顶部为圆铰，两腿下伸后尖端向内弯合
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) circle (0.11);
+  \fill (0,0) circle (0.03);
+  \draw[line width=0.7pt] (-0.07,-0.09) -- (-0.38,-1.20)
+    .. controls (-0.44,-1.48) and (-0.16,-1.58) .. (-0.02,-1.55);
+  \draw[line width=0.7pt] (0.07,-0.09) -- (0.30,-0.85)
+    .. controls (0.46,-1.28) and (0.14,-1.50) .. (0.04,-1.52);
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第24页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-29}]{assets/plane-geometry-1/fig-p0024-05.png}}
+\fitfig{%
+% fig-alt: 顶点O引出实线射线OA水平向右、OB斜向右上，角内有小弧，无箭头
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.15,0);
+  \draw[line width=0.7pt] (0,0) -- (36:1.95);
+  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=36, radius=0.42];
+  \node[below left=0pt] at (0,0) {$O$};
+  \node[above=1pt] at (2.15,0) {$A$};
+  \node[above=1pt] at (36:1.95) {$B$};
+\end{tikzpicture}%
+}
 \caption{图1-29}
 \end{figure}
 
@@ -1645,7 +1733,18 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·30}]{assets/plane-geometry-1/fig-p0025-01.png}}
+\fitfig{%
+% fig-alt: 平角，水平虚线两端有箭头，上方自左标B、右标A，下方中央标O，O上方有半圆弧
+\begin{tikzpicture}[line cap=round]
+  \draw[dashed, line width=0.7pt] (-1.92,0) -- (1.92,0);
+  \draw[->, line width=0.7pt] (-1.92,0) -- (-2.24,0);
+  \draw[->, line width=0.7pt] (1.92,0) -- (2.24,0);
+  \draw[line width=0.7pt] (180:0.52) arc[start angle=180, end angle=0, radius=0.52];
+  \node[above=1pt] at (-1.05,0) {$B$};
+  \node[below=1pt] at (0,0) {$O$};
+  \node[above=1pt] at (1.05,0) {$A$};
+\end{tikzpicture}%
+}
 \caption{图 1·30}
 \end{figure}
 
@@ -1653,7 +1752,19 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·31}]{assets/plane-geometry-1/fig-p0025-02.png}}
+\fitfig{%
+% fig-alt: 周角，O处有圆，圆周右侧有箭头；射线自O向右实线经过A，至B后再虚线箭头向右，A在线上方，B在线下方
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) circle (0.38);
+  \draw[->, line width=0.6pt] (-32:0.38) arc[start angle=-32, end angle=-6, radius=0.38];
+  \draw[line width=0.7pt] (0,0) -- (1.72,0);
+  \draw[dashed, line width=0.7pt] (1.72,0) -- (2.02,0);
+  \draw[->, line width=0.7pt] (2.02,0) -- (2.32,0);
+  \node[above=1pt] at (0.02,0.04) {$O$};
+  \node[above=2pt] at (1.08,0) {$A$};
+  \node[below=2pt] at (1.62,0) {$B$};
+\end{tikzpicture}%
+}
 \caption{图 1·31}
 \end{figure}
 
@@ -1672,7 +1783,22 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·32}]{assets/plane-geometry-1/fig-p0025-03.png}}
+\fitfig{%
+% fig-alt: 顶点O引出三条实线射线，OA水平向右，OB略向上，OC更陡；OA与OB之间标2，OB与OC之间标1
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.35,0);
+  \draw[line width=0.7pt] (0,0) -- (20:2.15);
+  \draw[line width=0.7pt] (0,0) -- (50:2.05);
+  \draw[line width=0.6pt] (0.48,0) arc[start angle=0, end angle=20, radius=0.48];
+  \draw[line width=0.6pt] (20:0.62) arc[start angle=20, end angle=50, radius=0.62];
+  \node[above=1pt] at (10:0.70) {$2$};
+  \node[above left=1pt] at (36:0.86) {$1$};
+  \node[below left=0pt] at (0,0) {$O$};
+  \node[above=1pt] at (2.35,0) {$A$};
+  \node[above=1pt] at (20:2.15) {$B$};
+  \node[above=1pt] at (50:2.05) {$C$};
+\end{tikzpicture}%
+}
 \caption{图 1·32}
 \end{figure}
 
@@ -1680,7 +1806,22 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·33}]{assets/plane-geometry-1/fig-p0025-04.png}}
+\fitfig{%
+% fig-alt: 顶点B引出三条实线射线，BD水平向右，BE略向上，BF更陡；BD与BE之间标1，BE与BF之间标2
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (2.40,0);
+  \draw[line width=0.7pt] (0,0) -- (18:2.20);
+  \draw[line width=0.7pt] (0,0) -- (48:2.15);
+  \draw[line width=0.6pt] (0.46,0) arc[start angle=0, end angle=18, radius=0.46];
+  \draw[line width=0.6pt] (18:0.64) arc[start angle=18, end angle=48, radius=0.64];
+  \node[above=0pt] at (9:0.64) {$1$};
+  \node[above=0pt] at (33:0.80) {$2$};
+  \node[below left=0pt] at (0,0) {$B$};
+  \node[above=1pt] at (2.40,0) {$D$};
+  \node[above=1pt] at (18:2.20) {$E$};
+  \node[above=1pt] at (48:2.15) {$F$};
+\end{tikzpicture}%
+}
 \caption{图 1·33}
 \end{figure}
 
@@ -1706,7 +1847,20 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-1/fig-p0026-01.png}}
+\fitfig{%
+% fig-alt: 顶点O引出四条实线射线，OA向左上，OB竖直向上，OC向右上，OD水平向右，无角码
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (125:1.85);
+  \draw[line width=0.7pt] (0,0) -- (90:1.75);
+  \draw[line width=0.7pt] (0,0) -- (24:1.70);
+  \draw[line width=0.7pt] (0,0) -- (1.85,0);
+  \node[above left=0pt] at (125:1.85) {$A$};
+  \node[above=1pt] at (90:1.75) {$B$};
+  \node[above=1pt] at (24:1.70) {$C$};
+  \node[right=1pt] at (1.85,0) {$D$};
+  \node[below=1pt] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -1714,7 +1868,28 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-1/fig-p0026-02.png}}
+\fitfig{%
+% fig-alt: 顶点O引出四条实线射线，OA最上，OB次之，OC水平向右，OD向右下；OA与OB间标1，OB与OC间标3，靠近OC上方标4，OA至OD的大弧上标2
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (40:2.40);
+  \draw[line width=0.7pt] (0,0) -- (22:2.30);
+  \draw[line width=0.7pt] (0,0) -- (2.55,0);
+  \draw[line width=0.7pt] (0,0) -- (-28:2.25);
+  \draw[line width=0.6pt] (22:0.46) arc[start angle=22, end angle=40, radius=0.46];
+  \draw[line width=0.6pt] (0:0.62) arc[start angle=0, end angle=22, radius=0.62];
+  \draw[line width=0.6pt] (0:0.84) arc[start angle=0, end angle=40, radius=0.84];
+  \draw[line width=0.6pt] (-28:1.05) arc[start angle=-28, end angle=40, radius=1.05];
+  \node[above=2pt] at (31:0.68) {$1$};
+  \node[above=3pt] at (14:0.82) {$3$};
+  \node[above=2pt] at (7:1.12) {$4$};
+  \node[below=2pt] at (-16:1.28) {$2$};
+  \node[below left=1pt] at (0,0) {$O$};
+  \node[above=1pt] at (40:2.40) {$A$};
+  \node[above=1pt] at (22:2.30) {$B$};
+  \node[above right=0pt] at (2.55,0) {$C$};
+  \node[below=1pt] at (-28:2.25) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
