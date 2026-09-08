@@ -5590,7 +5590,26 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.24 平面波的新}]{assets/physics-2/fig-p0084-01.png}}
+\fitfig{%
+% fig-alt: 图2.24 平面波新波前：左竖线 S_1、右竖线 S_2，其间半圆子波，左侧三支向右箭头
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (-0.01,-2.38) rectangle (0.76,2.38);
+    \foreach \yy in {-2.08,-1.56,-1.04,-0.52,0,0.52,1.04,1.56,2.08}{
+      \draw[line width=0.40pt] (0,{\yy-0.74}) arc[start angle=-90,end angle=90,radius=0.74];
+      \draw[line width=0.38pt] (0,{\yy-0.46}) arc[start angle=-90,end angle=90,radius=0.46];
+      \draw[line width=0.36pt] (0,{\yy-0.26}) arc[start angle=-90,end angle=90,radius=0.26];
+    }
+  \end{scope}
+  \draw[line width=1.05pt] (0,-2.42) -- (0,2.42);
+  \draw[line width=0.82pt] (0.74,-2.34) -- (0.74,2.34);
+  \foreach \y in {1.50,0.02,-1.46}{
+    \draw[->,line width=0.55pt] (-1.58,\y) -- (-0.10,\y);
+  }
+  \node[anchor=east] at (-0.07,0.82) {$S_1$};
+  \node[anchor=west] at (0.98,1.28) {$S_2$};
+\end{tikzpicture}%
+}
 \caption{图 2.24 平面波的新}
 \end{figure}
 
@@ -5600,7 +5619,31 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.25 球面波的新}]{assets/physics-2/fig-p0084-02.png}}
+\fitfig{%
+% fig-alt: 图2.25 球面波新波前：内圆 S_1、外圆 S_2，圆心 O，R_1 指内圆、R_2 水平指向外圆，环带为子波网格
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \begin{scope}
+    \clip (0,0) circle[radius=2.08] (1.10,0) arc[start angle=0,end angle=-360,radius=1.10];
+    \draw[line width=0.40pt] (0,0) circle[radius=1.43];
+    \draw[line width=0.40pt] (0,0) circle[radius=1.74];
+    \foreach \ang in {0,20,40,60,80,100,120,140,160,180,200,220,240,260,280,300,320,340}{
+      \draw[line width=0.38pt] ({1.12*cos(\ang)},{1.12*sin(\ang)}) circle[radius=0.93];
+    }
+  \end{scope}
+  \foreach \ang in {0,22.5,45,67.5,90,112.5,135,157.5,180,202.5,225,247.5,270,292.5,315,337.5}{
+    \draw[line width=0.36pt] ({1.12*cos(\ang)},{1.12*sin(\ang)}) -- ({2.05*cos(\ang)},{2.05*sin(\ang)});
+  }
+  \draw[line width=0.85pt] (0,0) circle[radius=1.12];
+  \draw[line width=0.95pt] (0,0) circle[radius=2.05];
+  \draw[line width=0.55pt] (0,0) -- (58:1.12);
+  \node[anchor=south east,font=\footnotesize] at (62:0.55) {$R_1$};
+  \draw[line width=0.55pt] (0,0) -- (2.05,0);
+  \node[anchor=south] at (0.78,0.05) {$R_2$};
+  \node[anchor=north] at (0.02,-0.08) {$O$};
+  \node[anchor=west] at (-1.02,0.10) {$S_1$};
+  \node[anchor=east] at (-2.18,0.16) {$S_2$};
+\end{tikzpicture}%
+}
 \caption{图 2.25 球面波的新}
 \end{figure}
 
@@ -5610,7 +5653,32 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 缝宽 d 大于波长 \textbackslash lambda}]{assets/physics-2/fig-p0084-03.png}}
+\fitfig{%
+% fig-alt: 图2.26(a) 缝宽 d 大于波长：缝 AB 上方平面波向下，缝后中央波前仍平直、两端弯曲，下方标 d
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.75pt] (0.02,0.72) -- (5.38,0.72);
+  \foreach \x in {0.38,1.02,1.66,2.30,2.70,3.10,3.74,4.38,5.02}{
+    \draw[->,line width=0.48pt] (\x,0.66) -- (\x,0.16);
+  }
+  \draw[line width=0.8pt] (0,0) -- (5.4,0);
+  \node[anchor=south east] at (-0.02,0.02) {$A$};
+  \node[anchor=south west] at (5.42,0.02) {$B$};
+  \foreach \sx in {0.42,1.05,1.68,2.31,2.70,3.09,3.72,4.35,4.98}{
+    \draw[line width=0.42pt] ({\sx-0.30},0) arc[start angle=180,end angle=360,radius=0.30];
+  }
+  \draw[line width=0.7pt] (0.22,-0.02) .. controls (0.40,-0.28) and (0.82,-0.48) .. (1.22,-0.48) -- (4.18,-0.48) .. controls (4.58,-0.48) and (5.00,-0.28) .. (5.18,-0.02);
+  \draw[line width=0.75pt] (0.08,-0.10) .. controls (0.05,-0.95) and (0.62,-1.48) .. (1.05,-1.48) -- (4.35,-1.48) .. controls (4.78,-1.48) and (5.35,-0.95) .. (5.32,-0.10);
+  \foreach \x in {1.75,2.70,3.65}{
+    \draw[->,line width=0.48pt] (\x,-0.22) -- (\x,-0.95);
+  }
+  \draw[->,line width=0.55pt] (0.28,-0.22) -- (-0.18,-0.88);
+  \draw[->,line width=0.55pt] (5.12,-0.22) -- (5.58,-0.88);
+  \draw[line width=0.45pt] (1.22,-0.48) -- (1.22,-1.78);
+  \draw[line width=0.45pt] (4.18,-0.48) -- (4.18,-1.78);
+  \draw[<->,line width=0.55pt] (1.22,-1.68) -- (4.18,-1.68);
+  \node[anchor=south] at (2.70,-1.66) {$d$};
+\end{tikzpicture}%
+}
 \caption{(a) 缝宽 d 大于波长 \(\lambda\)}
 \end{figure}
 
@@ -5995,7 +6063,38 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.4}]{assets/physics-2/fig-p0092-01.png}}
+\fitfig{%
+% fig-alt: 图3.4 (a) 乐音为三段相似的周期波形；(b) 噪声为不规则非周期折线
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \draw[line width=0.7pt] (-0.15,0) -- (8.55,0);
+  \draw[line width=0.75pt] plot[smooth,tension=0.7] coordinates {
+(0.00,0.00) (0.13,0.18) (0.26,0.37) (0.39,0.41) (0.52,0.64) (0.65,0.78)
+(0.78,0.84) (0.92,0.96) (1.05,1.05) (1.31,1.03) (1.44,0.87) (1.57,0.84)
+(1.70,0.87) (1.83,0.66) (1.96,0.46) (2.16,0.39) (2.35,0.32) (2.55,0.02)
+(2.94,0.00) (3.07,0.32) (3.20,0.37) (3.33,0.43) (3.46,0.66) (3.60,0.80)
+(3.73,0.89) (3.86,1.05) (4.22,1.03) (4.35,0.89) (4.48,0.84) (4.61,0.84)
+(4.74,0.66) (4.87,0.46) (5.07,0.39) (5.26,0.27) (5.46,0.00) (5.85,0.00)
+(5.98,0.30) (6.11,0.41) (6.24,0.48) (6.37,0.71) (6.50,0.87) (6.64,0.94)
+(6.80,1.00) (7.13,1.05) (7.26,0.91) (7.39,0.82) (7.52,0.84) (7.65,0.57)
+(7.78,0.46) (7.91,0.41) (8.04,0.39) (8.17,0.30) (8.30,0.07) (8.40,0.00)
+  };
+  \node[anchor=north] at (4.15,-0.55) {$(a)$ 乐音};
+  \begin{scope}[yshift=-2.15cm]
+    \draw[line width=0.7pt] (-0.15,0) -- (8.15,0);
+    \draw[line width=0.7pt,yscale=1.45] plot coordinates {
+(0.36,0.00) (0.49,0.08) (0.64,0.21) (0.78,0.13) (0.91,0.34) (1.06,0.19)
+(1.21,0.06) (1.36,0.17) (1.50,0.04) (1.65,0.11) (1.80,0.23) (1.92,0.08)
+(2.07,0.40) (2.19,0.61) (2.32,0.23) (2.45,0.44) (2.57,0.17) (2.70,0.50)
+(2.80,0.15) (2.93,0.32) (3.06,0.13) (3.18,0.23) (3.31,0.08) (3.43,0.29)
+(3.56,0.19) (3.69,0.38) (3.81,0.15) (3.94,0.44) (4.06,0.61) (4.19,0.27)
+(4.32,0.53) (4.42,0.71) (4.53,0.34) (4.63,0.65) (4.74,0.23) (4.86,0.15)
+(4.99,0.21) (5.11,0.08) (5.26,0.17) (5.41,0.23) (5.53,0.11) (5.68,0.06)
+(5.83,0.15) (5.95,0.08) (6.10,0.04)
+    };
+    \node[anchor=north] at (4.05,-0.48) {$(b)$ 噪声};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3.4}
 \end{figure}
 
@@ -6158,7 +6257,57 @@ I _ {1}\text{：} I _ {2} = r _ {2} ^ {2}\text{：} r _ {1} ^ {2} \tag {3.1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.8 小提琴所发出的声音的波形图}]{assets/physics-2/fig-p0098-01.png}}
+\fitfig{%
+% fig-alt: 图3.8 小提琴波形与声谱：纵轴只标 1.0、0.5、0，频率 0 到 4000；基音在 500 左近 1.0，约 2200 处另有近 1.0 的泛音
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \node[anchor=east] at (-0.22,2.72) {$(a)$};
+  \draw[line width=0.72pt] plot[smooth,tension=0.55] coordinates {
+(0.12,2.08) (0.27,2.55) (0.42,3.05) (0.57,2.55) (0.70,2.78) (0.85,2.32)
+(1.00,2.95) (1.15,2.28) (1.30,2.55) (1.45,2.18) (1.61,3.08) (1.76,2.22)
+(1.91,2.12) (2.06,2.30) (2.21,2.22) (2.36,2.48) (2.51,2.78) (2.66,2.62)
+(2.81,3.12) (2.96,2.70) (3.11,2.48) (3.26,2.62) (3.41,2.48) (3.56,2.88)
+(3.71,3.15) (3.86,2.55) (4.01,2.12) (4.16,2.28) (4.31,2.22) (4.46,2.58)
+(4.61,3.02) (4.76,2.48) (4.91,2.62) (5.06,3.18) (5.21,2.62) (5.36,2.50)
+(5.52,2.22) (5.67,2.55) (5.82,3.05) (5.97,2.42) (6.12,2.15) (6.27,2.32)
+(6.42,2.18) (6.57,2.48) (6.72,2.22) (6.87,2.70) (7.02,2.28) (7.17,3.08)
+(7.32,2.45) (7.47,2.25)
+  };
+  \node[anchor=west,fill=white,inner sep=0.6pt] at (6.55,1.92) {小提琴};
+  \node[anchor=east] at (-0.78,1.22) {振};
+  \node[anchor=east] at (-0.78,0.78) {幅};
+  \draw[line width=0.6pt] (0,0) rectangle (7.6,1.72);
+  \draw[line width=0.4pt] (0,0.43) -- (7.6,0.43);
+  \draw[line width=0.4pt] (0,0.86) -- (7.6,0.86);
+  \draw[line width=0.4pt] (0,1.29) -- (7.6,1.29);
+  \draw[line width=1.25pt] (0.817,0) -- (0.817,1.720);
+  \draw[line width=1.25pt] (1.159,0) -- (1.159,0.550);
+  \draw[line width=1.25pt] (1.634,0) -- (1.634,1.548);
+  \draw[line width=1.25pt] (2.242,0) -- (2.242,0.688);
+  \draw[line width=1.25pt] (2.622,0) -- (2.622,0.206);
+  \draw[line width=1.25pt] (3.078,0) -- (3.078,0.619);
+  \draw[line width=1.25pt] (3.572,0) -- (3.572,0.722);
+  \draw[line width=1.25pt] (4.256,0) -- (4.256,1.720);
+  \draw[line width=1.25pt] (4.845,0) -- (4.845,0.378);
+  \draw[line width=1.25pt] (5.358,0) -- (5.358,0.447);
+  \draw[line width=1.25pt] (5.928,0) -- (5.928,0.378);
+  \draw[line width=1.25pt] (6.498,0) -- (6.498,0.275);
+  \draw[line width=1.25pt] (7.258,0) -- (7.258,0.310);
+  \node[anchor=east] at (-0.05,1.72) {$1.0$};
+  \node[anchor=east] at (-0.05,0.86) {$0.5$};
+  \node[anchor=east] at (-0.05,0.00) {$0$};
+  \node[anchor=east] at (-1.28,-0.22) {$(b)$};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (0.000,-0.03) {0};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (0.950,-0.03) {500};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (1.900,-0.03) {1000};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (2.850,-0.03) {1500};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (3.800,-0.03) {2000};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (4.750,-0.03) {2500};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (5.700,-0.03) {3000};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (6.650,-0.03) {3500};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (7.600,-0.03) {4000};
+  \node[anchor=north] at (3.80,-0.38) {频率};
+\end{tikzpicture}%
+}
 \caption{图 3.8 小提琴所发出的声音的波形图}
 \end{figure}
 
@@ -6168,7 +6317,60 @@ I _ {1}\text{：} I _ {2} = r _ {2} ^ {2}\text{：} r _ {1} ^ {2} \tag {3.1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.9 钢琴所发出的声音的波形图}]{assets/physics-2/fig-p0098-02.png}}
+\fitfig{%
+% fig-alt: 图3.9 钢琴波形与声谱：四段缓降脉冲及右端再起，声谱基音在 500 左最高约 0.6，泛音都较矮
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \node[anchor=east] at (-0.22,2.70) {$(a)$};
+  \draw[line width=0.72pt,yshift=-0.16cm] plot[smooth,tension=0.65] coordinates {
+(0.15,2.00) (0.22,2.40) (0.29,2.90) (0.39,3.10) (0.52,3.06) (0.68,3.02)
+(0.87,2.98) (1.05,2.92) (1.20,2.76) (1.33,2.53) (1.46,2.30) (1.59,2.14)
+(1.73,2.06) (1.90,2.01) (1.92,2.00) (1.99,2.40) (2.07,2.90) (2.16,3.10)
+(2.29,3.06) (2.45,3.02) (2.64,2.98) (2.82,2.92) (2.97,2.76) (3.10,2.53)
+(3.23,2.30) (3.36,2.14) (3.50,2.06) (3.67,2.01) (3.69,2.00) (3.76,2.40)
+(3.84,2.90) (3.93,3.10) (4.06,3.06) (4.22,3.02) (4.41,2.98) (4.59,2.92)
+(4.74,2.76) (4.87,2.53) (5.00,2.30) (5.13,2.14) (5.28,2.06) (5.44,2.01)
+(5.46,2.00) (5.53,2.40) (5.61,2.90) (5.70,3.10) (5.83,3.06) (6.00,3.02)
+(6.18,2.98) (6.37,2.92) (6.51,2.76) (6.64,2.53) (6.77,2.30) (6.90,2.14)
+(7.05,2.06) (7.21,2.01) (7.25,2.00) (7.33,2.38) (7.43,2.83) (7.50,3.03)
+  };
+  \node[anchor=west] at (5.35,2.12) {钢琴};
+  \node[anchor=east] at (-0.78,1.22) {振};
+  \node[anchor=east] at (-0.78,0.78) {幅};
+  \draw[line width=0.6pt] (0,0) rectangle (7.6,1.72);
+  \draw[line width=0.4pt] (0,0.43) -- (7.6,0.43);
+  \draw[line width=0.4pt] (0,0.86) -- (7.6,0.86);
+  \draw[line width=0.4pt] (0,1.29) -- (7.6,1.29);
+  \draw[line width=1.25pt] (0.817,0) -- (0.817,0.998);
+  \draw[line width=1.25pt] (1.292,0) -- (1.292,0.310);
+  \draw[line width=1.25pt] (1.672,0) -- (1.672,0.516);
+  \draw[line width=1.25pt] (2.128,0) -- (2.128,0.275);
+  \draw[line width=1.25pt] (2.546,0) -- (2.546,0.378);
+  \draw[line width=1.25pt] (2.964,0) -- (2.964,0.310);
+  \draw[line width=1.25pt] (3.382,0) -- (3.382,0.447);
+  \draw[line width=1.25pt] (3.838,0) -- (3.838,0.275);
+  \draw[line width=1.25pt] (4.256,0) -- (4.256,0.310);
+  \draw[line width=1.25pt] (4.788,0) -- (4.788,0.258);
+  \draw[line width=1.25pt] (5.320,0) -- (5.320,0.275);
+  \draw[line width=1.25pt] (5.852,0) -- (5.852,0.378);
+  \draw[line width=1.25pt] (6.384,0) -- (6.384,0.275);
+  \draw[line width=1.25pt] (6.916,0) -- (6.916,0.344);
+  \draw[line width=1.25pt] (7.448,0) -- (7.448,0.241);
+  \node[anchor=east] at (-0.05,1.72) {$1.0$};
+  \node[anchor=east] at (-0.05,0.86) {$0.5$};
+  \node[anchor=east] at (-0.05,0.00) {$0$};
+  \node[anchor=east] at (-1.28,-0.22) {$(b)$};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (0.000,-0.03) {0};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (0.950,-0.03) {500};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (1.900,-0.03) {1000};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (2.850,-0.03) {1500};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (3.800,-0.03) {2000};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (4.750,-0.03) {2500};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (5.700,-0.03) {3000};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (6.650,-0.03) {3500};
+  \node[anchor=north,font=\scriptsize,inner sep=0.4pt] at (7.600,-0.03) {4000};
+  \node[anchor=north] at (3.80,-0.38) {频率};
+\end{tikzpicture}%
+}
 \caption{图 3.9 钢琴所发出的声音的波形图}
 \end{figure}
 
