@@ -29221,8 +29221,31 @@ OP = OA \cos \angle AO P,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-14}]{assets/analytic-geometry/fig-p0389-01.png}}
-\caption{图7-14}
+\fitfig{%
+% fig-alt: 图7·14 圆 ρ=a cosθ 的弦 OQ 延长至 P 使 QP=a；Q(ρ₁,θ₁)、P(ρ,θ)，轨迹为心脏线 ρ=a(1+cosθ)
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{1.42}
+  \def\th{52}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at ({\aa/2},0);
+  \coordinate (Q) at ({\th}:{\aa*cos(\th)});
+  \coordinate (P) at ({\th}:{\aa*(1+cos(\th))});
+  \draw[line width=0.65pt,-latex] (-0.42,0) -- ({\aa*2+0.72},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.82pt] (C) circle ({\aa/2});
+  \draw[line width=0.9pt,domain=0:360,samples=160,smooth]
+    plot ({\aa*(1+cos(\x))*cos(\x)}, {\aa*(1+cos(\x))*sin(\x)});
+  \draw[line width=0.75pt] (O) -- (P);
+  \draw[line width=0.45pt] (0.42,0) arc (0:\th:0.42);
+  \fill (O) circle (1.15pt);
+  \fill (Q) circle (1.15pt);
+  \fill (P) circle (1.2pt);
+  \node[anchor=east,inner sep=2pt,font=\small] at (O) {$O$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at (Q) {$Q(\rho_1,\theta_1)$};
+  \node[anchor=south,inner sep=2pt,font=\small] at (P) {$P(\rho,\theta)$};
+  \node[anchor=west,inner sep=1pt,font=\small] at (0.46,0.16) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{图7·14}
 \end{figure}
 
 \emph{图7·14}
@@ -29245,20 +29268,113 @@ OP = OA \cos \angle AO P,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第389页）}]{assets/analytic-geometry/fig-p0389-02.png}}
-\caption{图示（原PDF第389页）}
+\fitfig{%
+% fig-alt: 蜗线 ρ=a cosθ+b（a＞b）有内环；圆 ρ=a cosθ，射线过 P′、Q、P
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{1.48}
+  \def\bb{0.74}
+  \def\th{24}
+  \pgfmathsetmacro{\rP}{\bb+\aa*cos(\th)}
+  \pgfmathsetmacro{\rQ}{\aa*cos(\th)}
+  \pgfmathsetmacro{\rPp}{abs(\bb+\aa*cos(\th+180))}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at ({\aa},0);
+  \coordinate (C) at ({\aa/2},0);
+  \coordinate (P) at ({\th}:{\rP});
+  \coordinate (Q) at ({\th}:{\rQ});
+  \coordinate (Pp) at ({\th}:{\rPp});
+  \draw[line width=0.55pt] (0,{-(\aa*0.95)}) -- (0,{\aa*1.15});
+  \draw[line width=0.55pt] ({\th+180}:{\aa*0.95}) -- ({\th}:{\rP+0.55});
+  \draw[line width=0.65pt,-latex] (-{\aa*0.55},0) -- ({\aa+\bb+0.85},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.82pt] (C) circle ({\aa/2});
+  \draw[line width=0.9pt,domain=0:360,samples=200,smooth]
+    plot ({(\bb+\aa*cos(\x))*cos(\x)}, {(\bb+\aa*cos(\x))*sin(\x)});
+  \fill (O) circle (1.1pt);
+  \fill (A) circle (1.05pt);
+  \fill (Q) circle (1.1pt);
+  \fill (P) circle (1.15pt);
+  \fill (Pp) circle (1.05pt);
+  \node[anchor=north east,inner sep=1.4pt,font=\small] at (O) {$O$};
+  \node[anchor=north,inner sep=1.6pt,font=\small] at (A) {$A$};
+  \node[anchor=south,inner sep=1.4pt,font=\small] at (Q) {$Q$};
+  \node[anchor=south west,inner sep=1.4pt,font=\small] at (P) {$P$};
+  \node[anchor=south,inner sep=1.2pt,font=\small] at (Pp) {$P'$};
+  \node[anchor=west,inner sep=0.8pt,font=\scriptsize] at (0.42,0.10) {$\theta$};
+  \node[anchor=north,inner sep=4pt,font=\small] at (0,{-(\aa+\bb)*0.42}) {$a>b$};
+\end{tikzpicture}%
+}
+\caption{蜗线（a＞b）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第389页）}]{assets/analytic-geometry/fig-p0389-03.png}}
-\caption{图示（原PDF第389页）}
+\fitfig{%
+% fig-alt: 蜗线 ρ=a cosθ+b（a＝b）即心脏线；圆过极点，尖点在 O，标 P′
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{1.32}
+  \def\th{68}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at ({\aa},0);
+  \coordinate (C) at ({\aa/2},0);
+  \coordinate (Q) at ({\th}:{\aa*cos(\th)});
+  \coordinate (P) at ({\th}:{\aa*(1+cos(\th))});
+  \draw[line width=0.65pt,-latex] (-0.72,0) -- ({\aa*2+0.7},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.82pt] (C) circle ({\aa/2});
+  \draw[line width=0.9pt,domain=0:360,samples=160,smooth]
+    plot ({\aa*(1+cos(\x))*cos(\x)}, {\aa*(1+cos(\x))*sin(\x)});
+  \draw[line width=0.75pt] (O) -- (P);
+  \draw[line width=0.45pt] (0.38,0) arc (0:\th:0.38);
+  \fill (O) circle (1.1pt);
+  \fill (A) circle (1.05pt);
+  \fill (Q) circle (1.1pt);
+  \fill (P) circle (1.15pt);
+  \node[anchor=south east,inner sep=1.5pt,font=\small] at (O) {$O$};
+  \node[anchor=north,inner sep=1.6pt,font=\small] at (A) {$A$};
+  \node[anchor=south east,inner sep=1.3pt,font=\small] at (Q) {$Q$};
+  \node[anchor=south,inner sep=2pt,font=\small] at (P) {$P$};
+  \node[anchor=east,inner sep=2.4pt,font=\small] at (-0.12,0) {$P'$};
+  \node[anchor=west,inner sep=1pt,font=\small] at (0.42,0.18) {$\theta$};
+  \node[anchor=north,inner sep=5pt,font=\small] at ({\aa*0.15},{-(\aa)*0.55}) {$a=b$};
+\end{tikzpicture}%
+}
+\caption{蜗线（a＝b）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-15}]{assets/analytic-geometry/fig-p0389-04.png}}
-\caption{图7-15}
+\fitfig{%
+% fig-alt: 图7·15 蜗线 ρ=a cosθ+b（a＜b）无内环，左侧微凹；圆过极点，射线 OQP
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{1.18}
+  \def\bb{1.95}
+  \def\th{56}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at ({\aa},0);
+  \coordinate (C) at ({\aa/2},0);
+  \coordinate (Q) at ({\th}:{\aa*cos(\th)});
+  \coordinate (P) at ({\th}:{\bb+\aa*cos(\th)});
+  \coordinate (Pp) at ({180}:{\bb-\aa});
+  \draw[line width=0.65pt,-latex] ({-(\bb-\aa)-0.62},0) -- ({\aa+\bb+0.7},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.82pt] (C) circle ({\aa/2});
+  \draw[line width=0.9pt,domain=0:360,samples=180,smooth]
+    plot ({(\bb+\aa*cos(\x))*cos(\x)}, {(\bb+\aa*cos(\x))*sin(\x)});
+  \draw[line width=0.75pt] (O) -- (P);
+  \draw[line width=0.45pt] (0.36,0) arc (0:\th:0.36);
+  \fill (O) circle (1.1pt);
+  \fill (A) circle (1.05pt);
+  \fill (Q) circle (1.1pt);
+  \fill (P) circle (1.15pt);
+  \fill (Pp) circle (1.05pt);
+  \node[anchor=north,inner sep=1.8pt,font=\small] at (0.08,-0.06) {$O$};
+  \node[anchor=north,inner sep=1.6pt,font=\small] at (A) {$A$};
+  \node[anchor=south east,inner sep=1.2pt,font=\small] at (Q) {$Q$};
+  \node[anchor=south west,inner sep=1.3pt,font=\small] at (P) {$P$};
+  \node[anchor=east,inner sep=2pt,font=\small] at (Pp) {$P'$};
+  \node[anchor=west,inner sep=1pt,font=\small] at (0.40,0.16) {$\theta$};
+  \node[anchor=north,inner sep=5pt,font=\small] at ({\aa*0.2},{-(\aa)*0.72}) {$a<b$};
+\end{tikzpicture}%
+}
+\caption{图7·15}
 \end{figure}
 
 \emph{图7·15}
@@ -29386,32 +29502,144 @@ OP = OA \cos \angle AO P,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1(4)题)}]{assets/analytic-geometry/fig-p0391-01.png}}
-\caption{(第1(4)题)}
+\fitfig{%
+% fig-alt: 第1（4）题 三叶玫瑰线 ρ=a cos3θ（a＞0），叶在 0°、120°、240°，各叶标 a
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{2.05}
+  \def\rl{2.48}
+  \def\rout{2.72}
+  \foreach \ang in {30,60,90,120,150,180,210,240,270,300,330} {
+    \draw[line width=0.3pt] (0,0) -- ({\ang}:{\rl});
+  }
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\rl+0.42},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \fill (0,0) circle (1.1pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (-0.04,-0.04) {$O$};
+  \foreach \ang/\lab in {30/30^\circ,60/60^\circ,90/90^\circ,120/120^\circ,150/150^\circ,180/180^\circ,210/210^\circ,240/240^\circ,270/270^\circ,300/300^\circ,330/330^\circ} {
+    \node[font=\scriptsize,inner sep=0.5pt] at ({\ang}:{\rout}) {$\lab$};
+  }
+  \draw[line width=0.95pt,domain=-30:30,samples=50,smooth]
+    plot ({\aa*cos(3*\x)*cos(\x)}, {\aa*cos(3*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=90:150,samples=50,smooth]
+    plot ({\aa*cos(3*\x)*cos(\x)}, {\aa*cos(3*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=210:270,samples=50,smooth]
+    plot ({\aa*cos(3*\x)*cos(\x)}, {\aa*cos(3*\x)*sin(\x)});
+  \node[anchor=south,inner sep=1pt,font=\small] at ({0}:{\aa*0.50}) {$a$};
+  \node[anchor=south east,inner sep=1pt,font=\small] at ({120}:{\aa*0.50}) {$a$};
+  \node[anchor=north east,inner sep=1pt,font=\small] at ({240}:{\aa*0.50}) {$a$};
+\end{tikzpicture}%
+}
+\caption{（第1（4）题）}
 \end{figure}
 
 \emph{（第1（4）题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1(5)题)}]{assets/analytic-geometry/fig-p0391-02.png}}
-\caption{(第1(5)题)}
+\fitfig{%
+% fig-alt: 第1（5）题 三叶玫瑰线 ρ=a sin3θ（a＞0），叶在 30°、150°、270°，各叶标 a
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{2.05}
+  \def\rl{2.48}
+  \def\rout{2.72}
+  \foreach \ang in {30,90,150,210,270,330} {
+    \draw[line width=0.3pt] (0,0) -- ({\ang}:{\rl});
+  }
+  \draw[line width=0.55pt] (0,0) -- ({180}:{\rl});
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\rl+0.42},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \node[anchor=east,inner sep=1.5pt,font=\small] at ({180}:{\rl}) {$x$};
+  \fill (0,0) circle (1.1pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (-0.04,-0.04) {$O$};
+  \foreach \ang/\lab in {30/30^\circ,90/90^\circ,150/150^\circ,180/180^\circ,210/210^\circ,270/270^\circ,330/330^\circ} {
+    \node[font=\scriptsize,inner sep=0.5pt] at ({\ang}:{\rout}) {$\lab$};
+  }
+  \draw[line width=0.95pt,domain=0:60,samples=50,smooth]
+    plot ({\aa*sin(3*\x)*cos(\x)}, {\aa*sin(3*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=120:180,samples=50,smooth]
+    plot ({\aa*sin(3*\x)*cos(\x)}, {\aa*sin(3*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=240:300,samples=50,smooth]
+    plot ({\aa*sin(3*\x)*cos(\x)}, {\aa*sin(3*\x)*sin(\x)});
+  \node[anchor=south east,inner sep=1pt,font=\small] at ({30}:{\aa*0.50}) {$a$};
+  \node[anchor=south west,inner sep=1pt,font=\small] at ({150}:{\aa*0.50}) {$a$};
+  \node[anchor=east,inner sep=1.4pt,font=\small] at ({270}:{\aa*0.50}) {$a$};
+\end{tikzpicture}%
+}
+\caption{（第1（5）题）}
 \end{figure}
 
 \emph{（第1（5）题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/analytic-geometry/fig-p0391-03.png}}
-\caption{(第16题)}
+\fitfig{%
+% fig-alt: 第1（6）题 四叶玫瑰线 ρ=a sin2θ（a＞0），叶在 45°、135°、225°、315°，各叶标 a
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{2.00}
+  \def\rl{2.42}
+  \def\rout{2.66}
+  \foreach \ang in {45,135,225,315} {
+    \draw[dash pattern=on 1.15pt off 0.9pt,line width=0.28pt] (0,0) -- ({\ang}:{\rl});
+  }
+  \draw[line width=0.55pt] (0,{-(\rl)}) -- (0,{\rl});
+  \draw[line width=0.55pt] ({-(\rl)},0) -- (0,0);
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\rl+0.42},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \fill (0,0) circle (1.1pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (-0.04,-0.04) {$O$};
+  \foreach \ang/\lab in {45/45^\circ,90/90^\circ,135/135^\circ,225/225^\circ,315/315^\circ} {
+    \node[font=\scriptsize,inner sep=0.5pt] at ({\ang}:{\rout}) {$\lab$};
+  }
+  \draw[line width=0.95pt,domain=0:90,samples=50,smooth]
+    plot ({\aa*sin(2*\x)*cos(\x)}, {\aa*sin(2*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=90:180,samples=50,smooth]
+    plot ({\aa*sin(2*\x)*cos(\x)}, {\aa*sin(2*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=180:270,samples=50,smooth]
+    plot ({\aa*sin(2*\x)*cos(\x)}, {\aa*sin(2*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=270:360,samples=50,smooth]
+    plot ({\aa*sin(2*\x)*cos(\x)}, {\aa*sin(2*\x)*sin(\x)});
+  \node[anchor=south east,inner sep=0.8pt,font=\small] at ({45}:{\aa*0.48}) {$a$};
+  \node[anchor=south west,inner sep=0.8pt,font=\small] at ({135}:{\aa*0.48}) {$a$};
+  \node[anchor=north west,inner sep=0.8pt,font=\small] at ({225}:{\aa*0.48}) {$a$};
+  \node[anchor=north east,inner sep=0.8pt,font=\small] at ({315}:{\aa*0.48}) {$a$};
+\end{tikzpicture}%
+}
+\caption{（第1（6）题）}
 \end{figure}
 
 \emph{（第16题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/analytic-geometry/fig-p0391-04.png}}
-\caption{(第17题)}
+\fitfig{%
+% fig-alt: 第1（7）题 四叶玫瑰线 ρ=a cos2θ（a＞0），叶在 0°、90°、180°、270°，各叶标 a
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{2.00}
+  \def\rl{2.42}
+  \def\rout{2.66}
+  \foreach \ang in {45,135,225,315} {
+    \draw[dash pattern=on 1.15pt off 0.9pt,line width=0.28pt] (0,0) -- ({\ang}:{\rl});
+  }
+  \draw[line width=0.55pt] (0,{-(\rl)}) -- (0,{\rl});
+  \draw[line width=0.55pt] ({-(\rl)},0) -- (0,0);
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\rl+0.42},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \fill (0,0) circle (1.1pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (-0.04,-0.04) {$O$};
+  \foreach \ang/\lab in {45/45^\circ,90/90^\circ,135/135^\circ,225/225^\circ,315/315^\circ} {
+    \node[font=\scriptsize,inner sep=0.5pt] at ({\ang}:{\rout}) {$\lab$};
+  }
+  \draw[line width=0.95pt,domain=-45:45,samples=50,smooth]
+    plot ({\aa*cos(2*\x)*cos(\x)}, {\aa*cos(2*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=45:135,samples=50,smooth]
+    plot ({\aa*cos(2*\x)*cos(\x)}, {\aa*cos(2*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=135:225,samples=50,smooth]
+    plot ({\aa*cos(2*\x)*cos(\x)}, {\aa*cos(2*\x)*sin(\x)});
+  \draw[line width=0.95pt,domain=225:315,samples=50,smooth]
+    plot ({\aa*cos(2*\x)*cos(\x)}, {\aa*cos(2*\x)*sin(\x)});
+  \node[anchor=south,inner sep=1pt,font=\small] at ({0}:{\aa*0.50}) {$a$};
+  \node[anchor=east,inner sep=1.4pt,font=\small] at ({90}:{\aa*0.50}) {$a$};
+  \node[anchor=south,inner sep=1pt,font=\small] at ({180}:{\aa*0.50}) {$a$};
+  \node[anchor=east,inner sep=1.4pt,font=\small] at ({270}:{\aa*0.50}) {$a$};
+\end{tikzpicture}%
+}
+\caption{（第1（7）题）}
 \end{figure}
 
 \emph{（第17题）}
