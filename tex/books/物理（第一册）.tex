@@ -21141,7 +21141,59 @@ G。根据题意，动力功为 \(12 \times 2 \times \pi \times 0.4\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-1/fig-p0330-01.png}}
+% fig-alt: 第7题劈压紧A、B：中倒三角劈顶下箭F、尖角θ；两侧斜影夹块；外点纹块A、B；再外斜影固定块（外缘波浪）；底厚座。图内不写题号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % base
+  \draw[line width=0.75pt] (-3.55,0.00) -- (3.55,0.00) -- (3.55,0.42) -- (-3.55,0.42) -- cycle;
+  \foreach \x in {-3.20,-2.70,-2.20,2.20,2.70,3.20}
+    \draw[line width=0.4pt] (\x,0.00) -- (\x,-0.18);
+  % outer fixed (wavy outer edge), hatch
+  \begin{scope}
+    \clip (-3.35,0.42) -- (-2.35,0.42) -- (-2.35,2.35) -- (-3.35,2.35) -- cycle;
+    \foreach \k in {0,...,14}
+      \draw[line width=0.28pt] (-3.50,0.20+0.18*\k) -- (-2.20,0.55+0.18*\k);
+  \end{scope}
+  \draw[line width=0.65pt] (-2.35,0.42) -- (-2.35,2.35);
+  \draw[line width=0.65pt,decorate,decoration={zigzag,segment length=2.2mm,amplitude=0.55mm}] (-3.35,0.42) -- (-3.35,2.35);
+  \draw[line width=0.55pt] (-3.35,2.35) -- (-2.35,2.35);
+  \begin{scope}
+    \clip (2.35,0.42) -- (3.35,0.42) -- (3.35,2.35) -- (2.35,2.35) -- cycle;
+    \foreach \k in {0,...,14}
+      \draw[line width=0.28pt] (2.20,0.20+0.18*\k) -- (3.50,0.55+0.18*\k);
+  \end{scope}
+  \draw[line width=0.65pt] (2.35,0.42) -- (2.35,2.35);
+  \draw[line width=0.65pt,decorate,decoration={zigzag,segment length=2.2mm,amplitude=0.55mm}] (3.35,0.42) -- (3.35,2.35);
+  \draw[line width=0.55pt] (2.35,2.35) -- (3.35,2.35);
+  % A, B stippled
+  \fill[pattern=dots] (-2.35,0.42) rectangle (-1.15,2.05);
+  \draw[line width=0.55pt] (-2.35,0.42) rectangle (-1.15,2.05);
+  \node at (-1.75,1.25) {$A$};
+  \fill[pattern=dots] (1.15,0.42) rectangle (2.35,2.05);
+  \draw[line width=0.55pt] (1.15,0.42) rectangle (2.35,2.05);
+  \node at (1.75,1.25) {$B$};
+  % central jaws (hatched), full inner slant matching wedge
+  \begin{scope}
+    \clip (-1.15,0.42) -- (-0.08,0.42) -- (-0.55,2.85) -- (-1.15,2.85) -- cycle;
+    \foreach \k in {0,...,16}
+      \draw[line width=0.28pt] (-1.30,0.15+0.20*\k) -- (-0.05,0.55+0.20*\k);
+  \end{scope}
+  \draw[line width=0.65pt] (-1.15,0.42) -- (-0.08,0.42) -- (-0.55,2.85) -- (-1.15,2.85) -- cycle;
+  \begin{scope}
+    \clip (1.15,0.42) -- (0.08,0.42) -- (0.55,2.85) -- (1.15,2.85) -- cycle;
+    \foreach \k in {0,...,16}
+      \draw[line width=0.28pt] (0.05,0.15+0.20*\k) -- (1.30,0.55+0.20*\k);
+  \end{scope}
+  \draw[line width=0.65pt] (1.15,0.42) -- (0.08,0.42) -- (0.55,2.85) -- (1.15,2.85) -- cycle;
+  % wedge seated in slant
+  \draw[line width=0.7pt] (-0.48,3.55) -- (0.48,3.55) -- (0.00,1.85) -- cycle;
+  \draw[line width=0.35pt] (0.00,2.15) arc[start angle=248,end angle=292,radius=0.50];
+  \node[anchor=south] at (0.00,2.28) {$\theta$};
+  % F
+  \draw[line width=0.8pt,->] (0.00,4.35) -- (0.00,3.65);
+  \node[anchor=south] at (0.00,4.40) {$F$};
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -21303,8 +21355,65 @@ A=\frac{2\pi L}{h}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第333页）}]{assets/physics-1/fig-p0333-01.png}}
-\caption{图示（原PDF第333页）}
+% fig-alt: 复习题十第7题：左轮轴外R1内R2，左缘下绳箭P；中过桥齿轮R3（与R1重叠弧虚线）；右轮轴外R4内R5；R5下动滑轮吊斜影重物G。假caption已改(第7题)。图内不写题号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\Rone{1.35}
+  \def\Rtwo{0.72}
+  \def\Rthree{0.85}
+  \def\Rfour{1.20}
+  \def\Rfive{0.55}
+  \coordinate (C1) at (0,0);
+  \coordinate (C2) at ({0.72+0.85},0);
+  \coordinate (C3) at ({0.72+0.85+0.85+1.20},0);
+  % left compound
+  \draw[line width=0.7pt] (C1) circle[radius=\Rone];
+  \draw[line width=0.65pt] (C1) circle[radius=\Rtwo];
+  \fill (C1) circle[radius=0.045];
+  \draw[line width=0.4pt,->] (C1) -- ++(140:\Rone);
+  \node[anchor=north east] at ($(C1)+(140:0.72)$) {$R_{1}$};
+  \draw[line width=0.4pt,->] (C1) -- ++(50:\Rtwo);
+  \node[anchor=south west] at ($(C1)+(50:0.38)$) {$R_{2}$};
+  % idler R3 (solid; overlap with R1 left as solid for clarity)
+  \draw[line width=0.65pt] (C2) circle[radius=\Rthree];
+  \begin{scope}
+    \clip (C1) circle[radius=\Rone];
+    \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.0pt] (C2) circle[radius=\Rthree];
+  \end{scope}
+  \fill (C2) circle[radius=0.04];
+  \draw[line width=0.4pt,->] (C2) -- ++(55:\Rthree);
+  \node[anchor=south west] at ($(C2)+(55:0.45)$) {$R_{3}$};
+  % right compound
+  \draw[line width=0.7pt] (C3) circle[radius=\Rfour];
+  \draw[line width=0.65pt] (C3) circle[radius=\Rfive];
+  \fill (C3) circle[radius=0.045];
+  \draw[line width=0.4pt,->] (C3) -- ++(130:\Rfour);
+  \node[anchor=north east] at ($(C3)+(130:0.65)$) {$R_{4}$};
+  \draw[line width=0.4pt,->] (C3) -- ++(40:\Rfive);
+  \node[anchor=south west] at ($(C3)+(40:0.28)$) {$R_{5}$};
+  % left rope P
+  \draw[line width=0.55pt] ({-\Rone},0) -- ({-\Rone},-2.15);
+  \draw[line width=0.75pt,->] ({-\Rone},-2.15) -- ({-\Rone},-2.75);
+  \node[anchor=west] at ({-\Rone+0.08},-2.45) {$P$};
+  % movable pulley under R5
+  \coordinate (MP) at ($(C3)+(0,-2.35)$);
+  \draw[line width=0.55pt] ($(C3)+({-\Rfive},0)$) -- ($(MP)+({-\Rfive},0)$);
+  \draw[line width=0.55pt] ($(C3)+({\Rfive},0)$) -- ($(MP)+({\Rfive},0)$);
+  \draw[line width=0.65pt] (MP) circle[radius=\Rfive];
+  \fill (MP) circle[radius=0.04];
+  \draw[line width=0.55pt] ($(MP)+({\Rfive},0)$) arc[start angle=0,end angle=-180,radius=\Rfive];
+  % weight G
+  \draw[line width=0.55pt] (MP) -- ++(0,-0.55);
+  \begin{scope}
+    \clip ($(MP)+(-0.42,-0.55)$) rectangle ($(MP)+(0.42,-1.35)$);
+    \foreach \k in {0,...,8}
+      \draw[line width=0.28pt] ($(MP)+(-0.55,-0.70+0.12*\k)$) -- ($(MP)+(0.55,-0.40+0.12*\k)$);
+  \end{scope}
+  \draw[line width=0.65pt] ($(MP)+(-0.42,-0.55)$) rectangle ($(MP)+(0.42,-1.35)$);
+  \node at ($(MP)+(0,-0.95)$) {$G$};
+\end{tikzpicture}%
+}
+\caption{(第7题)}
 \end{figure}
 
 \chapter{第11章 机械能}
@@ -21350,7 +21459,31 @@ H = F s \tag {11.1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11·3}]{assets/physics-1/fig-p0336-01.png}}
+% fig-alt: 图11·3：水平地面斜影；左实线点纹物块中心空心圆右箭F；右虚线物块中心空心圆虚箭F；两中心上虚竖线间双箭头标s。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ground
+  \draw[line width=0.7pt] (-0.15,0) -- (7.40,0);
+  \foreach \x in {0.05,0.35,...,7.20}
+    \draw[line width=0.28pt] (\x,0) -- (\x+0.18,-0.22);
+  % left solid block
+  \fill[pattern=dots] (0.35,0) rectangle (1.85,1.15);
+  \draw[line width=0.65pt] (0.35,0) rectangle (1.85,1.15);
+  \draw[line width=0.45pt] (1.10,0.58) circle[radius=0.08];
+  \draw[line width=0.7pt,->] (1.10,0.58) -- (2.55,0.58);
+  \node[anchor=south] at (2.35,0.62) {$F$};
+  % right dashed block
+  \draw[line width=0.55pt,dashed] (4.55,0) rectangle (6.05,1.15);
+  \draw[line width=0.4pt] (5.30,0.58) circle[radius=0.08];
+  \draw[line width=0.6pt,dashed,->] (5.30,0.58) -- (6.75,0.58);
+  \node[anchor=south] at (6.55,0.62) {$F$};
+  % s dimension
+  \draw[line width=0.4pt,dashed] (1.10,0.58) -- (1.10,1.95);
+  \draw[line width=0.4pt,dashed] (5.30,0.58) -- (5.30,1.95);
+  \draw[line width=0.55pt,<->] (1.10,1.85) -- (5.30,1.85);
+  \node[anchor=south] at (3.20,1.88) {$s$};
+\end{tikzpicture}%
+}
 \caption{图 11·3}
 \end{figure}
 
@@ -21396,8 +21529,37 @@ W = F s \cos \alpha
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11.5}]{assets/physics-1/fig-p0337-02.png}}
-\caption{图11.5}
+% fig-alt: 图11·5：左透视滚子与U形架；架端为力原点，斜上箭F，竖分F1，水平分F2，虚线成矩形，角α；右下粗箭标运动方向。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % roller (perspective-ish)
+  \draw[line width=0.65pt] (0.15,0.55) ellipse[x radius=0.55,y radius=0.72];
+  \draw[line width=0.55pt] (0.15,1.27) -- (1.85,1.15);
+  \draw[line width=0.55pt] (0.15,-0.17) -- (1.85,-0.05);
+  \draw[line width=0.55pt] (1.85,1.15) arc[start angle=90,end angle=-90,x radius=0.22,y radius=0.60];
+  \foreach \k in {0,...,5}
+    \draw[line width=0.22pt] (-0.20+0.08*\k,0.95-0.05*\k) -- (-0.05+0.08*\k,-0.35-0.05*\k);
+  % axle and U-frame
+  \draw[line width=0.5pt] (-0.15,0.55) -- (2.05,0.55);
+  \draw[line width=0.55pt] (-0.05,0.95) -- (2.55,0.55) -- (-0.05,0.15);
+  \fill (2.55,0.55) circle[radius=0.04];
+  % forces from hitch
+  \coordinate (O) at (2.55,0.55);
+  \draw[line width=0.7pt,->] (O) -- ++(0,1.55);
+  \node[anchor=south] at ($(O)+(0,1.58)$) {$F_{1}$};
+  \draw[line width=0.7pt,->] (O) -- ++(2.35,0);
+  \node[anchor=west] at ($(O)+(2.38,0)$) {$F_{2}$};
+  \draw[line width=0.75pt,->] (O) -- ++(2.35,1.55);
+  \node[anchor=south west] at ($(O)+(2.20,1.45)$) {$F$};
+  \draw[line width=0.4pt,dashed] ($(O)+(0,1.55)$) -- ($(O)+(2.35,1.55)$) -- ($(O)+(2.35,0)$);
+  \draw[line width=0.35pt] ($(O)+(0.55,0)$) arc[start angle=0,end angle=33,radius=0.55];
+  \node[anchor=south west] at ($(O)+(0.62,0.12)$) {$\alpha$};
+  % motion
+  \draw[line width=0.9pt,->] (3.35,-0.85) -- (5.15,-0.85);
+  \node[anchor=west] at (5.25,-0.85) {运动方向};
+\end{tikzpicture}%
+}
+\caption{图 11·5}
 \end{figure}
 
 \emph{图11·5}
@@ -21438,8 +21600,37 @@ W = F s \cos \alpha \tag {11.2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-6}]{assets/physics-1/fig-p0339-01.png}}
-\caption{图11-6}
+% fig-alt: 图11·6：左起重机车身双轮；斜臂汇于端滑轮；竖缆吊方块；缆上上箭F，块中下箭G，旁上箭a。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % truck
+  \draw[line width=0.6pt] (0.10,0.55) rectangle (0.85,1.15);
+  \draw[line width=0.65pt] (0.85,0.55) rectangle (2.55,1.85);
+  \draw[line width=0.55pt] (1.05,0.55) circle[radius=0.22];
+  \draw[line width=0.55pt] (2.15,0.55) circle[radius=0.22];
+  \draw[line width=0.35pt] (1.05,0.55) circle[radius=0.08];
+  \draw[line width=0.35pt] (2.15,0.55) circle[radius=0.08];
+  % boom
+  \draw[line width=0.55pt] (1.15,1.85) -- (5.35,3.55);
+  \draw[line width=0.55pt] (2.25,1.85) -- (5.35,3.55);
+  \draw[line width=0.35pt] (1.70,1.85) -- (5.35,3.55);
+  % pulley
+  \draw[line width=0.55pt] (5.35,3.55) circle[radius=0.16];
+  \fill (5.35,3.55) circle[radius=0.035];
+  % cable + load
+  \draw[line width=0.5pt] (5.35,3.39) -- (5.35,1.55);
+  \draw[line width=0.65pt] (4.95,0.85) rectangle (5.75,1.55);
+  % F, G, a
+  \fill (5.35,2.35) circle[radius=0.035];
+  \draw[line width=0.7pt,->] (5.35,2.35) -- (5.35,2.95);
+  \node[anchor=west] at (5.45,2.70) {$F$};
+  \draw[line width=0.7pt,->] (5.35,1.20) -- (5.35,0.35);
+  \node[anchor=west] at (5.45,0.55) {$G$};
+  \draw[line width=0.7pt,->] (6.35,1.05) -- (6.35,1.85);
+  \node[anchor=west] at (6.45,1.50) {$a$};
+\end{tikzpicture}%
+}
+\caption{图 11·6}
 \end{figure}
 
 \emph{图11·6}
@@ -21469,8 +21660,56 @@ F \cos \alpha = F _ {1} \cos \alpha_ {1} + F _ {2} \cos \alpha_ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-7}]{assets/physics-1/fig-p0339-02.png}}
-\caption{图11-7}
+% fig-alt: 图11·7：水平地面斜影；左实线块右缘中点O；F1、F、F2斜上，虚线平行四边形；水平虚线落足A、C、B，角α1、α、α2；右虚线块；底双箭头标s。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ground
+  \draw[line width=0.7pt] (-0.20,0) -- (7.60,0);
+  \foreach \x in {0.0,0.32,...,7.40}
+    \draw[line width=0.28pt] (\x,0) -- (\x+0.16,-0.20);
+  % solid block
+  \draw[line width=0.65pt] (0.40,0) rectangle (1.70,1.30);
+  \coordinate (O) at (1.70,0.65);
+  \fill (O) circle[radius=0.035];
+  \node[anchor=north east] at ($(O)+(-0.08,-0.02)$) {$O$};
+  % F1 steep, F2 shallow; F = F1+F2 (parallelogram)
+  \coordinate (F1t) at ($(O)+(1.00,1.60)$); % ~58deg
+  \coordinate (F2t) at ($(O)+(1.90,0.62)$); % ~18deg
+  \coordinate (Ft) at ($(O)+(1.00+1.90,1.60+0.62)$);
+  \draw[line width=0.7pt,->] (O) -- (F1t);
+  \node[anchor=south west] at (F1t) {$F_{1}$};
+  \draw[line width=0.7pt,->] (O) -- (F2t);
+  \node[anchor=west] at (F2t) {$F_{2}$};
+  \draw[line width=0.75pt,->] (O) -- (Ft);
+  \node[anchor=south west] at (Ft) {$F$};
+  % parallelogram dashed
+  \draw[line width=0.4pt,dashed] (F1t) -- (Ft);
+  \draw[line width=0.4pt,dashed] (F2t) -- (Ft);
+  % horizontal ref + drops A(F1), B(F2), C(F); OC=OA+OB
+  \draw[line width=0.4pt,dashed] (O) -- ++(4.20,0);
+  \draw[line width=0.35pt,dashed] (F1t) -- (F1t |- O);
+  \draw[line width=0.35pt,dashed] (F2t) -- (F2t |- O);
+  \draw[line width=0.35pt,dashed] (Ft) -- (Ft |- O);
+  \node[anchor=north] at (F1t |- O) {$A$};
+  \node[anchor=north] at (F2t |- O) {$B$};
+  \node[anchor=north] at (Ft |- O) {$C$};
+  % angles
+  \draw[line width=0.3pt] ($(O)+(0.40,0)$) arc[start angle=0,end angle=58,radius=0.40];
+  \node[anchor=south west] at ($(O)+(0.46,0.26)$) {$\alpha_{1}$};
+  \draw[line width=0.3pt] ($(O)+(0.72,0)$) arc[start angle=0,end angle=33,radius=0.72];
+  \node[anchor=south west] at ($(O)+(0.80,0.16)$) {$\alpha$};
+  \draw[line width=0.3pt] ($(O)+(1.05,0)$) arc[start angle=0,end angle=18,radius=1.05];
+  \node[anchor=south west] at ($(O)+(1.15,0.06)$) {$\alpha_{2}$};
+  % dashed final block
+  \draw[line width=0.5pt,dashed] (4.60,0) rectangle (5.90,1.30);
+  % s
+  \draw[line width=0.4pt] (1.70,0) -- (1.70,-0.55);
+  \draw[line width=0.4pt] (5.90,0) -- (5.90,-0.55);
+  \draw[line width=0.55pt,<->] (1.70,-0.45) -- (5.90,-0.45);
+  \node[anchor=north] at (3.80,-0.48) {$s$};
+\end{tikzpicture}%
+}
+\caption{图 11·7}
 \end{figure}
 
 \emph{图11·7}
@@ -21528,8 +21767,54 @@ h=\frac{v^{2}}{2g}=\frac{20^{2}}{2\times9.8}\text{米}=20.4\text{米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11-8}]{assets/physics-1/fig-p0340-01.png}}
-\caption{图 11-8}
+% fig-alt: 图11·8：斜面θ；块上G竖直下，N垂直斜面向上，F沿斜面向上，f沿斜面向下；虚线分力G1沿斜面向下、G2垂直斜面向下；G与G2夹θ，G与G1夹α。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\th{32}
+  % incline
+  \draw[line width=0.7pt] (0,0) -- (5.40,0);
+  \draw[line width=0.7pt] (0,0) -- ({5.40*cos(\th)},{5.40*sin(\th)});
+  \draw[line width=0.35pt] (0.55,0) arc[start angle=0,end angle=\th,radius=0.55];
+  \node[anchor=south west] at (0.62,0.08) {$\theta$};
+  % block center on incline
+  \coordinate (P) at ({2.55*cos(\th)},{2.55*sin(\th)});
+  \begin{scope}[rotate around={\th:(P)}]
+    \draw[line width=0.65pt] ($(P)+(-0.55,-0.35)$) rectangle ($(P)+(0.55,0.35)$);
+    % N up-perp (in rotated: +y)
+    \draw[line width=0.7pt,->] (P) -- ++(0,1.35);
+    \node[anchor=south] at ($(P)+(0.05,1.40)$) {$N$};
+    % F up-incline (+x)
+    \draw[line width=0.7pt,->] (P) -- ++(1.55,0);
+    \node[anchor=west] at ($(P)+(1.60,0.08)$) {$F$};
+    % f down-incline
+    \draw[line width=0.65pt,->] ($(P)+(0,-0.35)$) -- ++(-1.05,0);
+    \node[anchor=north east] at ($(P)+(-0.70,-0.40)$) {$f$};
+    % G1 dashed down-incline
+    \draw[line width=0.55pt,dashed,->] (P) -- ++(-1.45,0);
+    \node[anchor=north] at ($(P)+(-1.20,-0.08)$) {$G_{1}$};
+    % G2 dashed into plane (-y)
+    \draw[line width=0.55pt,dashed,->] (P) -- ++(0,-1.25);
+    \node[anchor=west] at ($(P)+(0.08,-1.15)$) {$G_{2}$};
+    % right angle at P between axes
+    \draw[line width=0.3pt] ($(P)+(-0.18,0)$) -- ($(P)+(-0.18,0.18)$) -- ($(P)+(0,0.18)$);
+  \end{scope}
+  % G vertical
+  \draw[line width=0.75pt,->] (P) -- ++(0,-1.70);
+  \node[anchor=north] at ($(P)+(0.08,-1.75)$) {$G$};
+  % dashed completion of G components rectangle-ish
+  \begin{scope}[rotate around={\th:(P)}]
+    \draw[line width=0.35pt,dashed] ($(P)+(-1.45,0)$) -- ($(P)+(-1.45,-1.25)$) -- ($(P)+(0,-1.25)$);
+  \end{scope}
+  % angle theta between G (down) and G2 (perp into plane = direction th-90)
+  % G2 global direction: rotate (0,-1) by th => (sin th, -cos th)
+  \draw[line width=0.3pt] ($(P)+(0,-0.55)$) arc[start angle=-90,end angle={-90+\th},radius=0.55];
+  \node[anchor=north west] at ($(P)+(0.08,-0.70)$) {$\theta$};
+  % alpha between G and G1 (G1 global: rotate (-1,0) by th => (-cos th, -sin th))
+  \draw[line width=0.3pt] ($(P)+(0,-0.85)$) arc[start angle=-90,end angle={-90-\th},radius=0.85];
+  \node[anchor=north east] at ($(P)+(-0.15,-0.95)$) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{图 11·8}
 \end{figure}
 
 \emph{图11·8}
@@ -21650,8 +21935,26 @@ W _ {F} = H ^ {\prime} \cos (180 ^ {\circ}) = 40.513 \times 2 \times (- 1) \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-9}]{assets/physics-1/fig-p0343-01.png}}
-\caption{图11-9}
+% fig-alt: 图11·9：水平线；左实线方块右缘中点右箭F；右虚线方块右缘虚箭F；底两竖标间双箭头s0。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.7pt] (-0.15,0) -- (6.40,0);
+  % solid
+  \draw[line width=0.65pt] (0.30,0) rectangle (1.50,1.20);
+  \draw[line width=0.7pt,->] (1.50,0.60) -- (2.55,0.60);
+  \node[anchor=south] at (2.20,0.65) {$F$};
+  % dashed
+  \draw[line width=0.55pt,dashed] (3.70,0) rectangle (4.90,1.20);
+  \draw[line width=0.6pt,dashed,->] (4.90,0.60) -- (5.95,0.60);
+  \node[anchor=south] at (5.60,0.65) {$F$};
+  % s0
+  \draw[line width=0.4pt] (1.50,0) -- (1.50,-0.55);
+  \draw[line width=0.4pt] (4.90,0) -- (4.90,-0.55);
+  \draw[line width=0.55pt,<->] (1.50,-0.42) -- (4.90,-0.42);
+  \node[anchor=north] at (3.20,-0.45) {$s_{0}$};
+\end{tikzpicture}%
+}
+\caption{图 11·9}
 \end{figure}
 
 \emph{图11·9}
