@@ -24999,24 +24999,64 @@ F=\frac{-0.96}{2\times10^{-5}}\text{牛顿} =-48000\text{牛顿(向左)}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-1/fig-p0396-03.png}}
-\caption{(c)}
+% fig-alt: （c）由原点向右$mv_{1}'$、向下$mv_{1}''$、斜下右$mv_{1}$；竖向与$mv_{1}$夹角$\alpha_{1}$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\L{2.35}
+  \def\aa{60}
+  \fill (0,0) circle[radius=0.05];
+  \draw[line width=0.6pt,->] (0,0) -- ({\L*sin(\aa)},0);
+  \node[anchor=south] at ({0.78*\L*sin(\aa)},0.06) {$mv_{1}'$};
+  \draw[line width=0.6pt,->] (0,0) -- (0,{-\L*cos(\aa)});
+  \node[anchor=north] at (0,{-\L*cos(\aa)-0.08}) {$mv_{1}''$};
+  \draw[line width=0.6pt,->] (0,0) -- ({\L*sin(\aa)},{-\L*cos(\aa)});
+  \node[anchor=west] at ({\L*sin(\aa)+0.06},{-\L*cos(\aa)}) {$mv_{1}$};
+  \draw[line width=0.4pt] (0,-0.55) arc[start angle=-90,end angle=-90+\aa,radius=0.55];
+  \node at ({0.72*sin(\aa/2)},{-0.72*cos(\aa/2)}) {$\alpha_{1}$};
+\end{tikzpicture}%
+}
+\caption{（c）}
 \end{figure}
 
 \emph{（c）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(d)}]{assets/physics-1/fig-p0396-04.png}}
-\caption{(d)}
+% fig-alt: （d）由原点向右$mv_{2}'$、向上$mv_{2}''$、斜上右$mv_{2}$；竖向与$mv_{2}$夹角$\alpha_{2}$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\L{2.35}
+  \def\aa{60}
+  \fill (0,0) circle[radius=0.05];
+  \draw[line width=0.6pt,->] (0,0) -- ({\L*sin(\aa)},0);
+  \node[anchor=north] at ({0.78*\L*sin(\aa)},-0.06) {$mv_{2}'$};
+  \draw[line width=0.6pt,->] (0,0) -- (0,{\L*cos(\aa)});
+  \node[anchor=south] at (0,{\L*cos(\aa)+0.08}) {$mv_{2}''$};
+  \draw[line width=0.6pt,->] (0,0) -- ({\L*sin(\aa)},{\L*cos(\aa)});
+  \node[anchor=west] at ({\L*sin(\aa)+0.06},{\L*cos(\aa)}) {$mv_{2}$};
+  \draw[line width=0.4pt] (0,0.55) arc[start angle=90,end angle=90-\aa,radius=0.55];
+  \node at ({0.72*sin(\aa/2)},{0.72*cos(\aa/2)}) {$\alpha_{2}$};
+\end{tikzpicture}%
+}
+\caption{（d）}
 \end{figure}
 
 \emph{（d）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(0)}]{assets/physics-1/fig-p0396-05.png}}
-\caption{(0)}
+% fig-alt: （e）质点$m$；竖向弹力$F$向上、重力$G$向下。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \fill (0,0) circle[radius=0.07];
+  \node[anchor=west] at (0.14,0.02) {$m$};
+  \draw[line width=0.65pt,->] (0,0.08) -- (0,2.70);
+  \node[anchor=west] at (0.12,2.40) {$F$};
+  \draw[line width=0.65pt,->] (0,-0.08) -- (0,-0.72);
+  \node[anchor=west] at (0.12,-0.55) {$G$};
+\end{tikzpicture}%
+}
+\caption{（e）}
 \end{figure}
 
 \emph{（0）}
@@ -25085,8 +25125,33 @@ F\approx\frac{1.25}{0.001}\text{牛顿}=1250\text{牛顿}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 12·8}]{assets/physics-1/fig-p0398-01.png}}
-\caption{图 12·8}
+% fig-alt: 图12·8：竖虚线$M$–$O$–$N$；$P_{1}$斜下右、$P_{2}$斜上右，与竖向夹角$\alpha_{1}$、$\alpha_{2}$；自$P_{1}$末端竖直向上至$P_{2}$末端为$\Delta P=I$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\L{2.55}
+  \def\aa{60}
+  \coordinate (O) at (0,0);
+  \coordinate (P1) at ({\L*sin(\aa)},{-\L*cos(\aa)});
+  \coordinate (P2) at ({\L*sin(\aa)},{\L*cos(\aa)});
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.1pt on 0.5pt off 1.1pt]
+    (0,2.85) -- (0,-2.85);
+  \node[anchor=south] at (0,2.88) {$M$};
+  \node[anchor=east] at (-0.12,0) {$O$};
+  \node[anchor=north] at (0,-2.88) {$N$};
+  \fill (O) circle[radius=0.045];
+  \draw[line width=0.65pt,->] (O) -- (P1);
+  \node[anchor=north west] at ($(P1)!0.55!(O)$) {$P_{1}$};
+  \draw[line width=0.65pt,->] (O) -- (P2);
+  \node[anchor=south west] at ($(P2)!0.55!(O)$) {$P_{2}$};
+  \draw[line width=0.65pt,->] (P1) -- (P2);
+  \node[anchor=east] at ($(P1)!0.50!(P2)+(-0.08,0)$) {$\Delta P=I$};
+  \draw[line width=0.4pt] (0,-0.62) arc[start angle=-90,end angle=-90+\aa,radius=0.62];
+  \node at ({0.88*sin(\aa/2)},{-0.88*cos(\aa/2)}) {$\alpha_{1}$};
+  \draw[line width=0.4pt] (0,0.62) arc[start angle=90,end angle=90-\aa,radius=0.62];
+  \node at ({0.88*sin(\aa/2)},{0.88*cos(\aa/2)}) {$\alpha_{2}$};
+\end{tikzpicture}%
+}
+\caption{图12·8}
 \end{figure}
 
 \emph{图 12·8}
@@ -25157,16 +25222,45 @@ I = P _ {2} + P _ {2},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0399-01.png}}
-\caption{(a)}
+% fig-alt: （a）点$O$：$P_{1}=mv_{1}$向右、$P_{2}=mv_{2}$向左；下方冲量$I=mv_{2}-mv_{1}$自$P_{1}$末端指向$P_{2}$末端（向左）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\Lp{1.70}
+  \def\Lq{2.35}
+  \fill (0,0) circle[radius=0.045];
+  \node[anchor=south] at (0,0.12) {$O$};
+  \draw[line width=0.65pt,->] (0,0) -- (\Lp,0);
+  \node[anchor=south] at ({\Lp*0.55},0.08) {$P_{1}=mv_{1}$};
+  \draw[line width=0.65pt,->] (0,0) -- (-\Lq,0);
+  \node[anchor=south] at ({-\Lq*0.55},0.08) {$P_{2}=mv_{2}$};
+  \draw[line width=0.65pt,->] (\Lp,-0.85) -- (-\Lq,-0.85);
+  \node[anchor=north] at ({(\Lp-\Lq)/2},-0.92) {$I=mv_{2}-mv_{1}$};
+\end{tikzpicture}%
+}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0399-02.png}}
-\caption{(b)}
+% fig-alt: （b）点$O$：$P_{1}=mv_{1}$较长向右、$P_{2}=mv_{2}$较短向右；冲量$I=P_{2}-P_{1}$自$P_{1}$末端指向$P_{2}$末端（向左）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\Lp{3.20}
+  \def\Lq{2.05}
+  \node[anchor=east] at (-0.12,0.20) {$O$};
+  \fill (0,0.55) circle[radius=0.04];
+  \draw[line width=0.65pt,->] (0,0.55) -- (\Lp,0.55);
+  \node[anchor=south] at ({\Lp*0.55},0.62) {$P_{1}=mv_{1}$};
+  \fill (0,-0.05) circle[radius=0.04];
+  \draw[line width=0.65pt,->] (0,-0.05) -- (\Lq,-0.05);
+  \node[anchor=north] at ({\Lq*0.45},-0.12) {$P_{2}=mv_{2}$};
+  \draw[line width=0.65pt,->] (\Lp,-0.85) -- (\Lq,-0.85);
+  \node[anchor=north] at ({(\Lp+\Lq)/2},-0.92) {$I=P_{2}-P_{1}$};
+\end{tikzpicture}%
+}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -25213,14 +25307,50 @@ I = P _ {2} + P _ {2},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第401页）}]{assets/physics-1/fig-p0401-01.png}}
-\caption{图示（原PDF第401页）}
+% fig-alt: 碰撞前：斜影水平桌面；左球$m_2$右向较长$v_{02}$，右球$m_1$右向较短$v_{01}$（$v_{02}>v_{01}$）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{0.38}
+  \draw[line width=0.65pt] (-0.55,0) -- (5.55,0);
+  \foreach \x in {-0.35,0.05,0.45,0.85,1.25,1.65,2.05,2.45,2.85,3.25,3.65,4.05,4.45,4.85,5.25}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  % m2 left
+  \draw[line width=0.55pt,fill=white] (0.85,\R) circle[radius=\R];
+  \node[anchor=south] at (0.85,{2*\R+0.06}) {$m_{2}$};
+  \draw[line width=0.6pt,->] (0.85,\R) -- (2.55,\R);
+  \node[anchor=south] at (1.75,{\R+0.08}) {$v_{02}$};
+  % m1 right
+  \draw[line width=0.55pt,fill=white] (3.85,\R) circle[radius=\R];
+  \node[anchor=south] at (3.85,{2*\R+0.06}) {$m_{1}$};
+  \draw[line width=0.6pt,->] (3.85,\R) -- (4.85,\R);
+  \node[anchor=south] at (4.40,{\R+0.08}) {$v_{01}$};
+\end{tikzpicture}%
+}
+\caption{碰撞前两球同向，$m_2$以$v_{02}$追$m_1$（$v_{01}$）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第401页）}]{assets/physics-1/fig-p0401-02.png}}
-\caption{图示（原PDF第401页）}
+% fig-alt: 碰撞接触：斜影桌面；左$m_2$、右$m_1$相切；$F_1$自接触点向右；$v_{02}$、$v_{01}$右向。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{0.55}
+  \draw[line width=0.65pt] (-0.35,0) -- (3.55,0);
+  \foreach \x in {-0.15,0.25,0.65,1.05,1.45,1.85,2.25,2.65,3.05,3.35}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  \draw[line width=0.55pt,fill=white] (\R,\R) circle[radius=\R];
+  \node at (\R,\R) {$m_{2}$};
+  \draw[line width=0.55pt,fill=white] ({3*\R},\R) circle[radius=\R];
+  \node at ({3*\R},\R) {$m_{1}$};
+  \draw[line width=0.55pt,->] ({\R-0.15},{2*\R+0.28}) -- ({\R+0.55},{2*\R+0.28});
+  \node[anchor=south] at ({\R+0.20},{2*\R+0.32}) {$v_{02}$};
+  \draw[line width=0.55pt,->] ({3*\R-0.15},{2*\R+0.28}) -- ({3*\R+0.45},{2*\R+0.28});
+  \node[anchor=south] at ({3*\R+0.15},{2*\R+0.32}) {$v_{01}$};
+  \draw[line width=0.65pt,->] ({2*\R},\R) -- ({2*\R+0.72},\R);
+  \node[anchor=south] at ({2*\R+0.40},{\R+0.06}) {$F_{1}$};
+\end{tikzpicture}%
+}
+\caption{碰撞时$F_1$向右作用于$m_1$；上方$v_{02}$、$v_{01}$}
 \end{figure}
 
 \begin{figure}
