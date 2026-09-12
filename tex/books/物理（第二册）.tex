@@ -9688,12 +9688,50 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-2/fig-p0152-01.png}}
-\caption{(4)}
+\fitfig{%
+% fig-alt: 图4.21(a) 铁架台夹持圆底烧瓶，瓶下酒精灯加热；图内无字母，正文图题改为 (a)
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  % 底座
+  \draw[line width=2.6pt] (0.02,0.08) -- (4.35,0.08);
+  % 立杆
+  \draw[line width=1.3pt] (0.78,0.08) -- (0.78,6.62);
+  \fill (0.78,6.68) circle[radius=0.07];
+  % 夹持：左为十字头螺钉，杆上圆座，横臂中部小钩，右钳口夹瓶颈
+  \draw[line width=0.7pt] (0.12,4.22) -- (0.62,4.22);
+  \draw[line width=0.55pt] (0.12,4.12) -- (0.12,4.32);
+  \draw[line width=0.55pt] (0.32,4.14) -- (0.32,4.30);
+  \draw[line width=0.75pt] (0.78,4.22) circle[radius=0.14];
+  \draw[line width=0.4pt] (0.68,4.22) -- (0.88,4.22);
+  \draw[line width=0.4pt] (0.78,4.12) -- (0.78,4.32);
+  \draw[line width=0.7pt] (0.92,4.22) -- (2.18,4.22);
+  \draw[line width=0.5pt] (1.52,4.22) -- (1.52,4.04);
+  \draw[line width=0.5pt] (1.44,4.04) -- (1.60,4.04);
+  \fill (2.22,4.04) rectangle (2.72,4.40);
+  % 瓶口
+  \draw[line width=0.7pt] (2.28,4.40) -- (2.28,4.82);
+  \draw[line width=0.7pt] (2.66,4.82) -- (2.66,4.40);
+  \draw[line width=0.55pt] (2.47,4.82) ellipse[x radius=0.19,y radius=0.055];
+  % 瓶颈接到球面
+  \draw[line width=0.75pt] (2.30,4.04) -- (2.30,3.58);
+  \draw[line width=0.75pt] (2.64,4.04) -- (2.64,3.58);
+  % 圆底（顶沿与瓶颈相接，底在焰上）
+  \draw[line width=0.8pt] (2.47,2.68) circle[radius=0.90];
+  % 酒精灯（瓶状灯身）
+  \draw[line width=0.7pt]
+    (1.95,0.16) -- (2.98,0.16) -- (2.90,0.58) -- (2.68,0.88)
+    -- (2.68,1.08) -- (2.26,1.08) -- (2.26,0.88) -- (2.04,0.58) -- cycle;
+  \draw[line width=0.5pt] (2.38,1.08) -- (2.38,1.20);
+  \draw[line width=0.5pt] (2.56,1.08) -- (2.56,1.20);
+  \draw[line width=0.5pt] (2.47,1.20)
+    .. controls (2.28,1.48) and (2.30,1.72) .. (2.47,1.88)
+    .. controls (2.64,1.72) and (2.66,1.48) .. (2.47,1.20);
+\end{tikzpicture}%
+}
+\caption{(a)}
 \end{figure}
 
 \begin{quote}
-（4）
+（a）
 \end{quote}
 
 \begin{figure}
@@ -9756,17 +9794,109 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 \end{quote}
 
 \begin{quote}
-图 4.21 液体中气体的对流
+图 4.21 液体和气体的对流
 \end{quote}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.22 维氏气冷球系统}]{assets/physics-2/fig-p0152-03.png}}
-\caption{图 4.22 维氏气冷球系统}
+\fitfig{%
+% fig-alt: 图4.22 拖拉机冷却系统：水套（1）四缸凹口，上接管（4）入散热器（2），风扇（3）在前，下接管（5）通底部水泵
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % ===== 水套（1） =====
+  % 本体：左圆、前斜切、底边、右接到上水管
+  \draw[line width=0.85pt]
+    (0.42,3.05)
+    .. controls (0.32,3.55) and (0.55,3.95) .. (1.05,3.98)
+    -- (5.15,3.98)
+    .. controls (5.55,3.98) and (5.72,3.72) .. (5.68,3.28)
+    -- (5.42,2.05)
+    .. controls (5.35,1.82) and (5.08,1.70) .. (4.75,1.72)
+    -- (1.15,1.72)
+    .. controls (0.72,1.72) and (0.48,1.95) .. (0.50,2.28)
+    -- cycle;
+  % 左端短管下垂
+  \draw[line width=0.7pt] (0.18,3.62) -- (0.52,3.72);
+  \draw[line width=0.7pt] (0.18,3.62) -- (0.18,2.45);
+  \fill (0.18,3.64) circle[radius=0.04];
+  % 顶缘螺栓
+  \foreach \p in {(1.15,3.98),(2.15,4.00),(3.15,4.00),(4.15,4.00),(5.05,3.96)} {
+    \draw[line width=0.4pt] \p circle[radius=0.05];
+  }
+  % 前壁螺栓
+  \foreach \p in {(1.35,1.88),(2.25,1.86),(4.15,1.86),(4.95,1.90)} {
+    \draw[line width=0.4pt] \p circle[radius=0.045];
+  }
+  % 四缸凹口（顶面平行四边形 + 前立面）
+  \foreach \x in {0.78,1.95,3.12,4.29} {
+    \draw[line width=0.6pt]
+      (\x,3.05) -- ({\x+0.95},3.05) -- ({\x+1.12},3.78) -- ({\x+0.17},3.78) -- cycle;
+    \draw[line width=0.5pt] (\x,3.05) -- (\x,2.68) -- ({\x+0.95},2.68) -- ({\x+0.95},3.05);
+  }
+  % 右端接风扇轴的凸台
+  \draw[line width=0.6pt] (5.35,3.15) -- (6.05,3.38) -- (6.18,3.05) -- (5.48,2.82) -- cycle;
+  \fill (5.72,3.42) circle[radius=0.055];
+  % ===== 上接管（4） =====
+  \draw[line width=1.15pt]
+    (5.15,3.98)
+    .. controls (5.55,4.05) and (5.85,4.55) .. (6.25,5.15)
+    .. controls (6.55,5.55) and (7.05,5.72) .. (7.55,5.70);
+  \node at (6.15,5.22) {4};
+  % ===== 散热器（2） =====
+  \draw[line width=0.85pt] (7.35,1.15) -- (7.35,5.35) -- (9.35,5.35) -- (9.35,1.15)
+    .. controls (9.35,0.95) and (9.12,0.88) .. (8.88,0.90) -- (7.62,0.90)
+    .. controls (7.42,0.92) and (7.35,1.02) .. (7.35,1.15);
+  \draw[line width=0.8pt] (7.35,5.35) -- (7.95,5.88) -- (9.95,5.88) -- (9.35,5.35);
+  \draw[line width=0.8pt] (9.35,5.35) -- (9.95,5.88) -- (9.95,1.62)
+    .. controls (9.95,1.25) and (9.65,1.10) .. (9.35,1.15);
+  % 加水盖
+  \draw[line width=0.6pt] (8.85,5.88) ellipse[x radius=0.20,y radius=0.07];
+  \draw[line width=0.55pt] (8.68,5.88) -- (8.68,6.04) -- (9.02,6.04) -- (9.02,5.88);
+  \draw[line width=0.5pt] (8.85,6.04) ellipse[x radius=0.17,y radius=0.05];
+  \foreach \x in {7.75,8.05,8.35,8.65,8.95,9.20} {
+    \draw[line width=0.32pt] (\x,1.22) -- (\x,5.25);
+  }
+  \node at (9.12,3.70) {2};
+  % ===== 风扇（3） =====
+  \draw[line width=0.8pt] (6.62,2.85) circle[radius=0.38];
+  \draw[line width=0.5pt] (6.62,2.85) circle[radius=0.14];
+  \fill (6.62,2.85) circle[radius=0.05];
+  % 三叶：右上、左下、下
+  \draw[line width=0.8pt]
+    (6.88,3.08) -- (7.72,3.85) -- (7.38,4.12) -- (6.70,3.18) -- cycle;
+  \draw[line width=0.8pt]
+    (6.38,2.58) -- (5.52,1.95) -- (5.82,1.68) -- (6.58,2.48) -- cycle;
+  \draw[line width=0.8pt]
+    (6.78,2.55) -- (7.35,1.72) -- (7.02,1.52) -- (6.52,2.48) -- cycle;
+  \node at (9.12,2.42) {3};
+  % ===== 下接管（5）与水泵 =====
+  % 水套前壁接出弯头（1）：下垂后左转再折向右，开口弯管
+  \draw[line width=1.2pt] (2.62,1.72) -- (2.62,1.18);
+  \draw[line width=1.2pt] (2.62,1.18)
+    .. controls (2.62,0.92) and (2.28,0.88) .. (2.12,1.05)
+    .. controls (1.98,1.18) and (2.08,1.38) .. (2.28,1.32);
+  \draw[line width=1.2pt] (2.28,1.18)
+    .. controls (2.48,0.98) and (2.85,0.95) .. (3.15,0.92)
+    -- (6.55,0.68);
+  % 套箍
+  \draw[line width=0.7pt] (2.95,0.80) -- (3.05,1.08);
+  \draw[line width=0.7pt] (3.05,0.78) -- (3.15,1.06);
+  \draw[line width=0.7pt] (6.12,0.58) -- (6.26,0.86);
+  \draw[line width=0.7pt] (6.22,0.55) -- (6.36,0.83);
+  \node at (1.55,1.22) {1};
+  \node at (4.35,0.55) {5};
+  % 水泵（底部点纹盒 + 右端圆头）
+  \fill[pattern=dots] (6.95,0.38) rectangle (8.55,1.22);
+  \draw[line width=0.75pt] (6.95,0.38) rectangle (8.55,1.22);
+  \draw[line width=0.75pt] (8.55,0.38) -- (9.15,0.18) -- (9.35,0.42)
+    -- (9.35,1.02) -- (8.55,1.22);
+  \draw[line width=0.8pt] (6.55,0.68) -- (6.95,0.68);
+\end{tikzpicture}%
+}
+\caption{图 4.22 拖拉机的冷却系统}
 \end{figure}
 
 \begin{quote}
-图 4.22 维氏气冷球系统
+图 4.22 拖拉机的冷却系统
 \end{quote}
 
 在汽车和拖拉机的发动机中，都是采用水来冷却的。图4.22就是拖拉机的冷却系统的示意图。在汽缸臂和发动机外壳之间装满了水，形成一个水套。水套由连接管与散热器相连。整个冷却装置里的水就是用一个小水泵来强迫循环流动的，而散热器里的水还可以用风扇产生的气流进行冷却。小水泵和风扇都是安装在同一根轴上的。
@@ -18967,18 +19097,6 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-03.png}}
-\caption{图示（原PDF第290页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-04.png}}
-\caption{图示（原PDF第290页）}
-\end{figure}
-
-\begin{figure}
-\centering
 \fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-05.png}}
 \caption{图示（原PDF第290页）}
 \end{figure}
@@ -18987,12 +19105,6 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-06.png}}
 \caption{图示（原PDF第290页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.14 乙醚的临界状态}]{assets/physics-2/fig-p0290-07.png}}
-\caption{图 8.14 乙醚的临界状态}
 \end{figure}
 
 \begin{quote}
