@@ -14004,7 +14004,36 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.10 磁场中不同点的磁场方向分布}]{assets/physics-3/fig-p0207-01.png}}
+\fitfig{%
+% fig-alt: 图3.10 条形磁体左N右S。磁力线自N出、入S；左端箭离N，右端箭入S，上下弧箭自左向右
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % field first, magnet filled white on top
+  \draw[line width=0.55pt,->] (-1.85,0) -- (-3.15,0);
+  \draw[line width=0.55pt,->] (3.15,0) -- (1.85,0);
+  \foreach \a/\L in {148/1.05,162/1.15,180/1.25,198/1.15,212/1.05} {
+    \draw[line width=0.55pt,->] (-1.85,0) -- ++(\a:\L);
+  }
+  \draw[line width=0.55pt,->] (-1.85,0.28) .. controls (-2.55,0.95) and (-2.85,1.45) .. (-2.55,1.85);
+  \draw[line width=0.55pt,->] (-1.85,-0.28) .. controls (-2.55,-0.95) and (-2.85,-1.45) .. (-2.55,-1.85);
+  \foreach \a/\L in {18/1.20,32/1.10,-18/1.20,-32/1.10} {
+    \draw[line width=0.55pt,->] (1.85,0) ++(\a:\L) -- (1.85,0);
+  }
+  \draw[line width=0.55pt,->] (2.65,1.70) .. controls (2.85,1.10) and (2.35,0.55) .. (1.85,0.22);
+  \draw[line width=0.55pt,->] (2.65,-1.70) .. controls (2.85,-1.10) and (2.35,-0.55) .. (1.85,-0.22);
+  \foreach \ya/\yb/\yc in {0.34/0.88/0.34,0.22/1.18/0.22,0.10/1.48/0.12,0.00/1.78/0.02,-0.08/2.05/-0.05} {
+    \draw[line width=0.55pt,->] (-1.85,\ya) .. controls (-0.95,\yb) and (-0.20,\yb+0.08) .. (0.05,\yb);
+    \draw[line width=0.55pt,->] (0.05,\yb) .. controls (0.55,\yb) and (1.20,\yb-0.25) .. (1.85,\yc);
+  }
+  \foreach \ya/\yb/\yc in {-0.34/-0.88/-0.34,-0.22/-1.18/-0.22,-0.10/-1.48/-0.12,0.00/-1.78/-0.02,0.08/-2.05/0.05} {
+    \draw[line width=0.55pt,->] (-1.85,\ya) .. controls (-0.95,\yb) and (-0.20,\yb-0.08) .. (0.05,\yb);
+    \draw[line width=0.55pt,->] (0.05,\yb) .. controls (0.55,\yb) and (1.20,\yb+0.25) .. (1.85,\yc);
+  }
+  \fill[white] (-1.85,-0.38) rectangle (1.85,0.38);
+  \draw[line width=0.8pt] (-1.85,-0.38) rectangle (1.85,0.38);
+  \node at (-1.15,0) {$N$};
+  \node at (1.15,0) {$S$};
+\end{tikzpicture}%
+}
 \caption{图3.10 磁场中不同点的磁场方向分布}
 \end{figure}
 
@@ -14018,7 +14047,24 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.11 磁力线}]{assets/physics-3/fig-p0208-01.png}}
+\fitfig{%
+% fig-alt: 图3.11 一根磁力线。A、B、C三点；A处切线箭斜上，B处水平箭指右，C处切线箭斜下
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.85pt]
+    (0.10,0.18) .. controls (1.10,0.55) and (2.20,1.10) .. (3.15,1.55)
+    .. controls (4.10,1.95) and (4.85,1.35) .. (5.35,0.55)
+    .. controls (5.55,0.25) and (5.60,0.05) .. (5.55,-0.15);
+  \fill (1.55,0.82) circle[radius=0.05];
+  \node[anchor=south east,inner sep=1pt] at (1.42,0.90) {$A$};
+  \draw[line width=0.7pt,->] (1.55,0.82) -- ++(38:0.95);
+  \fill (3.15,1.55) circle[radius=0.05];
+  \node[anchor=south,inner sep=1pt] at (2.95,1.62) {$B$};
+  \draw[line width=0.7pt,->] (3.15,1.55) -- ++(0:1.05);
+  \fill (4.85,0.95) circle[radius=0.05];
+  \node[anchor=west,inner sep=1pt] at (4.98,0.88) {$C$};
+  \draw[line width=0.7pt,->] (4.85,0.95) -- ++(-52:0.95);
+\end{tikzpicture}%
+}
 \caption{图3.11 磁力线}
 \end{figure}
 
@@ -14059,8 +14105,47 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.14 磁场}]{assets/physics-3/fig-p0209-02.png}}
-\caption{图3.14 磁场}
+\fitfig{%
+% fig-alt: 图3.14 地球。上地理北极、地磁南极S；下地理南极、地磁北极N。外虚线磁力线自下N弯上入S
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\R{1.70}
+  \draw[line width=0.85pt] (0,0) circle[radius=\R];
+  \draw[line width=0.4pt] (-\R,0) -- (\R,0);
+  \draw[line width=0.4pt] (0,-\R) .. controls (-0.85,-0.55) and (-0.85,0.55) .. (0,\R);
+  \draw[line width=0.4pt] (0,-\R) .. controls (-0.45,-0.85) and (-0.45,0.85) .. (0,\R);
+  \draw[line width=0.4pt] (0,-\R) .. controls (0.45,-0.85) and (0.45,0.85) .. (0,\R);
+  \draw[line width=0.4pt] (0,-\R) .. controls (0.85,-0.55) and (0.85,0.55) .. (0,\R);
+  \draw[line width=0.4pt] (-1.45,0.85) .. controls (-0.4,1.05) and (0.4,1.05) .. (1.45,0.85);
+  \draw[line width=0.4pt] (-1.55,0.45) .. controls (-0.4,0.58) and (0.4,0.58) .. (1.55,0.45);
+  \draw[line width=0.4pt] (-1.55,-0.45) .. controls (-0.4,-0.58) and (0.4,-0.58) .. (1.55,-0.45);
+  \draw[line width=0.4pt] (-1.45,-0.85) .. controls (-0.4,-1.05) and (0.4,-1.05) .. (1.45,-0.85);
+  \draw[line width=0.55pt] (-0.12,-\R-0.12) -- (0.18,\R+0.12);
+  \draw[line width=0.5pt,dashed] (-0.42,-\R*0.92) -- (0.38,\R*0.92);
+  \node at (-0.05,0.92) {$S$};
+  \node at (0.08,-0.92) {$N$};
+  \node[anchor=south east,inner sep=1pt,font=\small] at (-1.25,2.05) {地磁南极};
+  \draw[line width=0.5pt,->] (-1.10,1.95) -- (-0.35,1.35);
+  \node[anchor=south west,inner sep=1pt,font=\small] at (0.55,2.05) {地理北极};
+  \draw[line width=0.5pt,->] (0.85,1.95) -- (0.22,1.55);
+  \node[anchor=north east,inner sep=1pt,font=\small] at (-1.35,-1.95) {地理南极};
+  \draw[line width=0.5pt,->] (-1.05,-1.95) -- (-0.22,-1.55);
+  \node[anchor=north west,inner sep=1pt,font=\small] at (0.55,-2.05) {地磁北极};
+  \draw[line width=0.5pt,->] (1.05,-1.95) -- (0.12,-1.35);
+  \draw[line width=0.55pt,dashed,->]
+    (-0.25,-1.45) .. controls (-1.65,-1.85) and (-2.45,-0.35) .. (-2.25,0.35);
+  \draw[line width=0.55pt,dashed,->]
+    (-2.25,0.35) .. controls (-2.05,1.15) and (-1.25,1.85) .. (-0.35,1.35);
+  \draw[line width=0.55pt,dashed,->]
+    (0.15,-1.48) .. controls (1.55,-2.05) and (2.55,-0.55) .. (2.35,0.25);
+  \draw[line width=0.55pt,dashed,->]
+    (2.35,0.25) .. controls (2.15,1.25) and (1.25,1.95) .. (0.25,1.42);
+  \draw[line width=0.5pt,dashed,->]
+    (-0.15,-1.35) .. controls (-1.35,-1.55) and (-1.95,-0.25) .. (-1.85,0.25);
+  \draw[line width=0.5pt,dashed,->]
+    (-1.85,0.25) .. controls (-1.75,0.95) and (-1.05,1.45) .. (-0.28,1.22);
+\end{tikzpicture}%
+}
+\caption{图3.14 地磁场}
 \end{figure}
 
 \emph{图3.14 磁场}
@@ -14093,32 +14178,157 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) (2)}]{assets/physics-3/fig-p0210-01.png}}
-\caption{(1) (2)}
+\fitfig{%
+% fig-alt: 习题3.1第6题 (a)–(e)。磁铁不标极。针：(a)左S右N黑；(b)斜上尖N尾S近左极；(c)隙中左S右N；(d)棒形右旁左S右N；(e)竖针上N下S
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \begin{scope}[shift={(0,3.6)}]
+    \draw[line width=0.75pt] (0,0) rectangle (2.40,0.55);
+    \fill (1.25,0.92) -- (1.95,0.92) -- (1.25,1.00) -- (1.25,0.84) -- cycle;
+    \draw[line width=0.55pt,fill=white] (1.25,0.92) -- (0.55,0.92) -- (1.25,1.00) -- (1.25,0.84) -- cycle;
+    \draw[line width=0.55pt] (1.25,1.00) -- (1.95,0.92) -- (1.25,0.84);
+    \node[anchor=east,inner sep=1pt] at (0.48,0.92) {$S$};
+    \node[anchor=west,inner sep=1pt] at (2.02,0.92) {$N$};
+    \node[anchor=west,inner sep=1pt,font=\small] at (2.70,1.05) {条形磁铁};
+    \draw[line width=0.45pt] (2.70,0.95) -- (2.10,0.55);
+    \node[anchor=north] at (1.20,-0.15) {$(a)$};
+  \end{scope}
+  \begin{scope}[shift={(4.5,3.55)}]
+    \draw[line width=0.75pt]
+      (-0.55,0.85) -- (-0.55,0.15) arc (180:360:0.55) -- (0.55,0.85)
+      -- (0.28,0.85) -- (0.28,0.28) arc (0:-180:0.28) -- (-0.28,0.85) -- cycle;
+    \begin{scope}[shift={(-0.42,1.35)},rotate=48]
+      \fill (0,0) -- (0.58,0) -- (0,0.08) -- (0,-0.08) -- cycle;
+      \draw[line width=0.55pt,fill=white] (0,0) -- (-0.58,0) -- (0,0.08) -- (0,-0.08) -- cycle;
+      \draw[line width=0.55pt] (0,0.08) -- (0.58,0) -- (0,-0.08);
+    \end{scope}
+    \node[anchor=south west,inner sep=0pt] at (0.00,1.72) {$N$};
+    \node[anchor=east,inner sep=1pt] at (-0.98,1.05) {$S$};
+    \node[anchor=west,inner sep=1pt,font=\small] at (0.90,1.20) {蹄形磁铁};
+    \draw[line width=0.45pt] (0.90,1.12) -- (0.48,0.75);
+    \node[anchor=north] at (0,-0.25) {$(b)$};
+  \end{scope}
+  \begin{scope}[shift={(8.1,3.85)}]
+    \draw[line width=0.75pt] (-1.55,-0.40) rectangle (-0.55,0.40);
+    \draw[line width=0.75pt] (0.55,-0.40) rectangle (1.55,0.40);
+    \fill (0.05,0) -- (0.55,0) -- (0.05,0.08) -- (0.05,-0.08) -- cycle;
+    \draw[line width=0.55pt,fill=white] (0.05,0) -- (-0.45,0) -- (0.05,0.08) -- (0.05,-0.08) -- cycle;
+    \draw[line width=0.55pt] (0.05,0.08) -- (0.55,0) -- (0.05,-0.08);
+    \node[anchor=south,inner sep=1pt] at (-0.25,0.12) {$S$};
+    \node[anchor=south,inner sep=1pt] at (0.35,0.12) {$N$};
+    \node[anchor=south,inner sep=1pt,font=\small] at (0,0.95) {磁铁};
+    \draw[line width=0.45pt] (-0.35,0.88) -- (-0.85,0.40);
+    \draw[line width=0.45pt] (0.35,0.88) -- (0.85,0.40);
+    \node[anchor=north] at (0,-0.55) {$(c)$};
+  \end{scope}
+  \begin{scope}[shift={(0.2,0.9)}]
+    \draw[line width=0.75pt]
+      (0.15,0.18) -- (2.05,0.18) arc (-90:90:0.18) -- (0.15,0.54) arc (90:270:0.18) -- cycle;
+    \draw[line width=0.65pt] (2.23,0.36) ellipse[x radius=0.10,y radius=0.18];
+    \node[anchor=south,inner sep=1pt,font=\small] at (0.55,0.72) {棒形磁铁};
+    \draw[line width=0.45pt] (0.95,0.70) -- (1.25,0.50);
+    \fill (2.90,0.36) -- (3.45,0.36) -- (2.90,0.44) -- (2.90,0.28) -- cycle;
+    \draw[line width=0.55pt,fill=white] (2.90,0.36) -- (2.35,0.36) -- (2.90,0.44) -- (2.90,0.28) -- cycle;
+    \draw[line width=0.55pt] (2.90,0.44) -- (3.45,0.36) -- (2.90,0.28);
+    \node[anchor=south,inner sep=1pt] at (2.55,0.48) {$S$};
+    \node[anchor=south,inner sep=1pt] at (3.30,0.48) {$N$};
+    \node[anchor=north] at (1.40,-0.15) {$(d)$};
+  \end{scope}
+  \begin{scope}[shift={(5.9,0.95)}]
+    \draw[line width=0.75pt] (-1.55,-0.35) rectangle (-0.55,0.45);
+    \draw[line width=0.75pt] (0.55,-0.35) rectangle (1.55,0.45);
+    \fill (0,0.05) -- (0,0.55) -- (-0.08,0.05) -- (0.08,0.05) -- cycle;
+    \draw[line width=0.55pt,fill=white] (0,0.05) -- (0,-0.45) -- (-0.08,0.05) -- (0.08,0.05) -- cycle;
+    \draw[line width=0.55pt] (-0.08,0.05) -- (0,0.55) -- (0.08,0.05);
+    \node[anchor=south,inner sep=1pt] at (0,0.60) {$N$};
+    \node[anchor=north,inner sep=1pt] at (0,-0.52) {$S$};
+    \node[anchor=south,inner sep=1pt,font=\small] at (0,1.05) {磁铁};
+    \draw[line width=0.45pt] (-0.35,0.98) -- (-0.85,0.45);
+    \draw[line width=0.45pt] (0.35,0.98) -- (0.85,0.45);
+    \node[anchor=north] at (0,-0.75) {$(e)$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{(a)--(e)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) (2)}]{assets/physics-3/fig-p0210-02.png}}
-\caption{(1) (2)}
+\fitfig{%
+% fig-alt: (a) 条形磁铁上方磁针，左S右N黑端，引出线标条形磁铁
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) rectangle (3.40,0.58);
+  \fill (1.85,0.98) -- (2.55,0.98) -- (1.85,1.06) -- (1.85,0.90) -- cycle;
+  \draw[line width=0.55pt,fill=white] (1.85,0.98) -- (1.15,0.98) -- (1.85,1.06) -- (1.85,0.90) -- cycle;
+  \draw[line width=0.55pt] (1.85,1.06) -- (2.55,0.98) -- (1.85,0.90);
+  \node[anchor=east,inner sep=1pt] at (1.05,0.98) {$S$};
+  \node[anchor=west,inner sep=1pt] at (2.65,0.98) {$N$};
+  \node[anchor=west,inner sep=1pt,font=\small] at (2.95,1.20) {条形磁铁};
+  \draw[line width=0.45pt] (3.00,1.08) -- (2.50,0.58);
+\end{tikzpicture}%
+}
+\caption{(a)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) (2)}]{assets/physics-3/fig-p0210-03.png}}
-\caption{(1) (2)}
+\fitfig{%
+% fig-alt: (b) 蹄形磁铁开口向上，左极上斜磁针尖N尾S近极面，旁标蹄形磁铁
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt]
+    (-0.70,1.55) -- (-0.70,0.55) arc (180:360:0.70) -- (0.70,1.55)
+    -- (0.35,1.55) -- (0.35,0.70) arc (0:-180:0.35) -- (-0.35,1.55) -- cycle;
+  \begin{scope}[shift={(-0.52,2.15)},rotate=48]
+    \fill (0,0) -- (0.70,0) -- (0,0.10) -- (0,-0.10) -- cycle;
+    \draw[line width=0.55pt,fill=white] (0,0) -- (-0.70,0) -- (0,0.10) -- (0,-0.10) -- cycle;
+    \draw[line width=0.55pt] (0,0.10) -- (0.70,0) -- (0,-0.10);
+  \end{scope}
+  \node[anchor=south west,inner sep=0pt] at (0.05,2.55) {$N$};
+  \node[anchor=east,inner sep=1pt] at (-1.15,1.75) {$S$};
+  \node[anchor=west,inner sep=1pt,font=\small] at (1.00,1.85) {蹄形磁铁};
+  \draw[line width=0.45pt] (1.00,1.75) -- (0.55,1.40);
+\end{tikzpicture}%
+}
+\caption{(b)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) (2)}]{assets/physics-3/fig-p0210-04.png}}
-\caption{(1) (2)}
+\fitfig{%
+% fig-alt: (c) 两磁极相对，隙中水平磁针左S右N，上标磁铁分指两极
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-2.10,-0.55) rectangle (-0.70,0.55);
+  \draw[line width=0.75pt] (0.70,-0.55) rectangle (2.10,0.55);
+  \fill (0.05,0) -- (0.70,0) -- (0.05,0.09) -- (0.05,-0.09) -- cycle;
+  \draw[line width=0.55pt,fill=white] (0.05,0) -- (-0.60,0) -- (0.05,0.09) -- (0.05,-0.09) -- cycle;
+  \draw[line width=0.55pt] (0.05,0.09) -- (0.70,0) -- (0.05,-0.09);
+  \node[anchor=south,inner sep=1pt] at (-0.30,0.14) {$S$};
+  \node[anchor=south,inner sep=1pt] at (0.40,0.14) {$N$};
+  \node[anchor=south,inner sep=1pt,font=\small] at (0,1.15) {磁铁};
+  \draw[line width=0.45pt] (-0.40,1.05) -- (-1.10,0.55);
+  \draw[line width=0.45pt] (0.40,1.05) -- (1.10,0.55);
+\end{tikzpicture}%
+}
+\caption{(c)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) (2)}]{assets/physics-3/fig-p0210-05.png}}
-\caption{(1) (2)}
+\fitfig{%
+% fig-alt: (d) 棒形磁铁右端椭圆截面，右旁磁针左S右N，上标棒形磁铁
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt]
+    (0.15,0.20) -- (2.55,0.20) arc (-90:90:0.20) -- (0.15,0.60) arc (90:270:0.20) -- cycle;
+  \draw[line width=0.65pt] (2.75,0.40) ellipse[x radius=0.11,y radius=0.20];
+  \node[anchor=south,inner sep=1pt,font=\small] at (0.55,0.78) {棒形磁铁};
+  \draw[line width=0.45pt] (1.00,0.75) -- (1.40,0.55);
+  \fill (3.35,0.40) -- (4.00,0.40) -- (3.35,0.50) -- (3.35,0.30) -- cycle;
+  \draw[line width=0.55pt,fill=white] (3.35,0.40) -- (2.70,0.40) -- (3.35,0.50) -- (3.35,0.30) -- cycle;
+  \draw[line width=0.55pt] (3.35,0.50) -- (4.00,0.40) -- (3.35,0.30);
+  \node[anchor=south,inner sep=1pt] at (2.95,0.55) {$S$};
+  \node[anchor=south,inner sep=1pt] at (3.80,0.55) {$N$};
+\end{tikzpicture}%
+}
+\caption{(d)}
 \end{figure}
 
 \begin{figure}
@@ -14127,7 +14337,7 @@ K & V读数 & A读数 \\
 \caption{(1) (2)}
 \end{figure}
 
-\emph{（1） （2）}
+\emph{（a）--（e）}
 
 \section{§ 3.2 电流的磁场}
 
