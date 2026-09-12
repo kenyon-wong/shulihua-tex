@@ -27618,11 +27618,49 @@ v _ {0 y} = v _ {0} \sin \theta
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·12}]{assets/physics-1/fig-p0433-01.png}}
-\caption{图 13·12}
+% fig-alt: 图13·12：地面原点$O$，$O'$高$y_0$斜抛$v_0$仰角$\theta$；顶点$A$水平$v_A=v_0\cos\theta$；点$P$标$x,y$与切向速度。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (O) at (0,0);
+  \coordinate (Op) at (0,1.55);
+  \coordinate (Aa) at (3.15,2.85);
+  \coordinate (P) at (5.10,1.95);
+  \coordinate (Px) at (5.10,0);
+  \draw[line width=0.55pt,->] (-0.20,0) -- (7.35,0);
+  \node[anchor=south west] at (7.20,0.04) {$x$};
+  \draw[line width=0.55pt,->] (0,-0.15) -- (0,3.55);
+  \node[anchor=north east] at (-0.08,3.55) {$y$};
+  \node[anchor=north east] at (-0.10,-0.06) {$O$};
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 0.9pt] (-0.55,0) -- (-0.55,1.55);
+  \draw[line width=0.35pt] (-0.68,0) -- (-0.42,0);
+  \draw[line width=0.35pt] (-0.68,1.55) -- (-0.42,1.55);
+  \node[anchor=east] at (-0.72,0.78) {$y_{0}$};
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 0.9pt] (Op) -- ++(1.85,0);
+  \node[anchor=south west] at ($(Op)+(0.06,0.04)$) {$O'$};
+  \draw[line width=0.6pt] plot[domain=0:6.4,samples=70]
+    ({\x},{1.55 + 1.05*\x - 0.167*\x*\x});
+  \draw[line width=0.55pt,->] (Op) -- ++(0.95,0.78);
+  \node[anchor=south east] at ($(Op)+(0.55,0.78)$) {$v_{0}$};
+  \draw[line width=0.35pt] ($(Op)+(0.48,0)$) arc[start angle=0,end angle=39,radius=0.48];
+  \node[anchor=south west,inner sep=0.5pt] at ($(Op)+(0.52,0.06)$) {$\theta$};
+  \fill (Aa) circle[radius=0.03];
+  \node[anchor=south east] at ($(Aa)+(-0.06,0.08)$) {$A$};
+  \draw[line width=0.55pt,->] (Aa) -- ++(0.95,0);
+  \node[anchor=south west] at ($(Aa)+(0.20,0.06)$) {$v_{A}=v_{0}\cos\theta$};
+  \fill (P) circle[radius=0.035];
+  \node[anchor=south west] at ($(P)+(0.06,0.04)$) {$P$};
+  \draw[line width=0.55pt,->] (P) -- ++(0.70,-0.42);
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 0.9pt] (P) -- (Px);
+  \node[anchor=west] at ($(P)!0.55!(Px)+(0.06,0)$) {$y$};
+  \draw[line width=0.45pt,<->] (0,-0.38) -- (5.10,-0.38);
+  \node[anchor=north] at (2.55,-0.40) {$x$};
+  \fill (Px) circle[radius=0.03];
+\end{tikzpicture}%
+}
+\caption{图13·12}
 \end{figure}
 
-\emph{图 13·12}
+\emph{图13·12}
 
 \[
 y = y _ {0} + v _ {0} \sin \theta \cdot t - \frac {1}{2} g t ^ {2} \tag {13.4}
@@ -27662,8 +27700,57 @@ y = - \frac {1}{2} g t ^ {2}, v _ {y} = - g t
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13-13}]{assets/physics-1/fig-p0434-01.png}}
-\caption{图 13-13}
+% fig-alt: 图13·13：管$L$斜抛$v_0$仰角$\theta$；直线$OO'$标$v_0\cdot t$；抛物线上$P,P'$；竖虚线$APB$与$A'P'$；标$v_0\sin\theta\cdot t$、$v_0\cos\theta\cdot t$、$y$、$\frac12 gt^2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt},
+  decoration={brace,amplitude=3.5pt,raise=1.5pt}]
+  \def\th{38}
+  \draw[line width=0.55pt,->] (-0.25,0) -- (7.55,0);
+  \node[anchor=south west] at (7.40,0.04) {$x$};
+  \draw[line width=0.55pt,->] (0,-0.20) -- (0,4.55);
+  \node[anchor=north east] at (-0.08,4.55) {$y$};
+  \node[anchor=north east] at (-0.10,-0.06) {$O$};
+  \begin{scope}[rotate=\th]
+    \draw[line width=0.5pt] (-0.08,-0.10) rectangle (0.55,0.10);
+  \end{scope}
+  \node[anchor=north east] at (-0.05,0.55) {$L$};
+  \draw[line width=0.55pt] (0,0) -- ({\th}:6.6);
+  \node[anchor=south west] at ({\th}:6.55) {$O'$};
+  \draw[line width=0.55pt,->] (0,0) -- ({\th}:1.15);
+  \node[anchor=south east] at (0.55,0.72) {$v_{0}$};
+  \draw[line width=0.35pt] (0.55,0) arc[start angle=0,end angle=\th,radius=0.55];
+  \node[anchor=west,inner sep=1pt] at (0.62,0.14) {$\theta$};
+  \coordinate (A) at ({\th}:3.55);
+  \coordinate (Ap) at ({\th}:5.35);
+  \coordinate (B) at ({3.55*cos(\th)},0);
+  \coordinate (P) at ({3.55*cos(\th)},{3.55*sin(\th)-1.05});
+  \coordinate (Pp) at ({5.35*cos(\th)},{5.35*sin(\th)-2.35});
+  \draw[line width=0.6pt] plot[domain=0:6.2,samples=70]
+    ({\x*cos(\th)},{\x*sin(\th)-0.083*\x*\x});
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 0.9pt] (A) -- (B);
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 0.9pt] (Ap) -- (Pp);
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 0.9pt] (A) -- (0,{3.55*sin(\th)});
+  \node[anchor=east] at (-0.06,{3.55*sin(\th)}) {$v_{0}\sin\theta\cdot t$};
+  \node[anchor=south east,rotate=\th] at ($({0,0})!0.42!(A)$) {$v_{0}\cdot t$};
+  \draw[line width=0.4pt,decorate] (A) -- (P);
+  \node[anchor=west] at ($(A)!0.50!(P)+(0.28,0)$) {$\frac{1}{2}gt^{2}$};
+  \draw[line width=0.4pt,decorate] (P) -- (B);
+  \node[anchor=west] at ($(P)!0.50!(B)+(0.22,0)$) {$y$};
+  \node[anchor=east] at ($(P)+(-0.12,0.02)$) {$1$};
+  \node[anchor=west] at ($(P)+(0.12,0.02)$) {$2$};
+  \fill (P) circle[radius=0.04];
+  \node[anchor=south west] at ($(P)+(0.10,0.10)$) {$P$};
+  \fill (Pp) circle[radius=0.04];
+  \node[anchor=south west] at ($(Pp)+(0.08,0.06)$) {$P'$};
+  \fill (A) circle[radius=0.03];
+  \node[anchor=south east] at ($(A)+(-0.06,0.04)$) {$A$};
+  \fill (Ap) circle[radius=0.03];
+  \node[anchor=south east] at ($(Ap)+(-0.06,0.04)$) {$A'$};
+  \draw[line width=0.45pt,<->] (0,-0.42) -- ({3.55*cos(\th)},-0.42);
+  \node[anchor=north] at ({3.55*cos(\th)/2},-0.44) {$v_{0}\cos\theta\cdot t$};
+\end{tikzpicture}%
+}
+\caption{图13·13}
 \end{figure}
 
 \emph{图13·13}
@@ -27754,8 +27841,34 @@ x _ {D} = v _ {0} \cos \theta \cdot \frac {2 v _ {0} \sin \theta}{g}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-14}]{assets/physics-1/fig-p0437-01.png}}
-\caption{图13-14}
+% fig-alt: 图13·14：同$v_0$两投射角$\theta$与$\theta'=\frac{\pi}{2}-\theta$，抛物线Ⅰ、Ⅱ交于$D$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (O) at (0,0);
+  \coordinate (D) at (6.0,0);
+  \draw[line width=0.55pt,->] (-0.20,0) -- (6.85,0);
+  \node[anchor=south west] at (6.70,0.04) {$x$};
+  \draw[line width=0.55pt,->] (0,-0.15) -- (0,4.05);
+  \node[anchor=north east] at (-0.08,4.05) {$y$};
+  \node[anchor=north east] at (-0.10,-0.06) {$O$};
+  \node[anchor=north] at (D) {$D$};
+  \draw[line width=0.6pt] plot[domain=0:6,samples=60]
+    (\x,{0.577*\x*(1-\x/6)});
+  \node[anchor=south] at (3.0,0.95) {I};
+  \draw[line width=0.6pt] plot[domain=0:6,samples=60]
+    (\x,{1.732*\x*(1-\x/6)});
+  \node[anchor=south] at (3.0,2.75) {II};
+  \draw[line width=0.55pt,->] (O) -- ++(30:1.35);
+  \node[anchor=south west] at (30:1.15) {$v_{0}$};
+  \draw[line width=0.55pt,->] (O) -- ++(60:1.35);
+  \node[anchor=south east] at (60:1.20) {$v_{0}$};
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.8pt] (0.70,0) arc[start angle=0,end angle=30,radius=0.70];
+  \node[anchor=west,inner sep=1pt] at (0.78,0.14) {$\theta$};
+  \draw[line width=0.35pt] (0.95,0) arc[start angle=0,end angle=60,radius=0.95];
+  \node[anchor=south west,inner sep=0.5pt] at (0.72,0.72) {$\theta'=\dfrac{\pi}{2}-\theta$};
+\end{tikzpicture}%
+}
+\caption{图13·14}
 \end{figure}
 
 \emph{图13·14}
@@ -27794,11 +27907,55 @@ x _ {\max} = \frac {v _ {0} ^ {2}}{g} \tag {13.12}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·15}]{assets/physics-1/fig-p0438-01.png}}
-\caption{图 13·15}
+% fig-alt: 图13·15：斜抛$O$至$D$；顶点$A$；等高$B,C$虚线；落地$v_D$分$v_{Dx},v_{Dy}$夹角$\theta'$；起点$v_0$分$v_0\cos\theta,v_0\sin\theta$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (O) at (0,0);
+  \coordinate (Dd) at (8.00,0);
+  \coordinate (Aa) at (4.00,2.30);
+  \coordinate (B) at (1.60,1.472);
+  \coordinate (C) at (6.40,1.472);
+  \draw[line width=0.55pt,->] (-0.55,0) -- (9.15,0);
+  \node[anchor=south west] at (9.00,0.04) {$x$};
+  \draw[line width=0.55pt,->] (0,-0.95) -- (0,3.15);
+  \node[anchor=north east] at (-0.08,3.15) {$y$};
+  \node[anchor=north east] at (-0.10,-0.06) {$O$};
+  \node[anchor=north] at (Dd) {$D$};
+  \draw[line width=0.6pt] plot[domain=0:8,samples=80] (\x,{1.15*\x - 0.14375*\x*\x});
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (B) -- (C);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (Aa) -- (4.00,0);
+  \node[anchor=south east] at ($(Aa)+(-0.06,0.08)$) {$A$};
+  \node[anchor=east] at ($(B)+(-0.08,0.02)$) {$B$};
+  \node[anchor=west] at ($(C)+(0.08,0.02)$) {$C$};
+  \fill (B) circle[radius=0.03];
+  \fill (C) circle[radius=0.03];
+  \draw[line width=0.55pt,->] (O) -- ++(0.95,1.10);
+  \node[anchor=south east] at (0.55,1.05) {$v_{0}$};
+  \draw[line width=0.5pt,->] (O) -- ++(1.05,0);
+  \node[anchor=north] at (0.95,-0.08) {$v_{0}\cos\theta$};
+  \draw[line width=0.5pt,->] (O) -- ++(0,0.95);
+  \node[anchor=east] at (-0.08,0.55) {$v_{0}\sin\theta$};
+  \draw[line width=0.35pt] (0.48,0) arc[start angle=0,end angle=49,radius=0.48];
+  \node[anchor=south west,inner sep=0.5pt] at (0.52,0.08) {$\theta$};
+  \draw[line width=0.55pt,->] (B) -- ++(0.55,0.42);
+  \node[anchor=south west] at ($(B)+(0.30,0.35)$) {$v_{B}$};
+  \draw[line width=0.55pt,->] (C) -- ++(0.55,-0.42);
+  \node[anchor=north west] at ($(C)+(0.28,-0.28)$) {$v_{C}$};
+  \draw[line width=0.55pt,->] (Dd) -- ++(0.85,-0.98);
+  \node[anchor=west] at ($(Dd)+(0.88,-0.85)$) {$v_{D}$};
+  \draw[line width=0.5pt,->] (Dd) -- ++(0.95,0);
+  \node[anchor=south west] at ($(Dd)+(0.55,0.04)$) {$v_{Dx}$};
+  \draw[line width=0.5pt,->] (Dd) -- ++(0,-0.95);
+  \node[anchor=east] at ($(Dd)+(-0.06,-0.55)$) {$v_{Dy}$};
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.8pt] (Dd) -- ++(1.35,0);
+  \draw[line width=0.35pt] ($(Dd)+(0.55,0)$) arc[start angle=0,end angle=-49,radius=0.55];
+  \node[anchor=north west,inner sep=0.5pt] at ($(Dd)+(0.58,-0.06)$) {$\theta'$};
+\end{tikzpicture}%
+}
+\caption{图13·15}
 \end{figure}
 
-\emph{图 13·15}
+\emph{图13·15}
 
 \[
 t _ {D} = \frac {2 v _ {0} \sin \theta}{g}
@@ -27889,8 +28046,48 @@ y（米） & 0 & 37.43 & 64.86 & 82.29 & 89.72 & 87.15 & 74.58 & 52.01 &
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-16}]{assets/physics-1/fig-p0439-01.png}}
-\caption{图13-16}
+% fig-alt: 图13·16：坐标轴刻度60米；$v_0=60$、$\theta=45^\circ$轨迹点$A$–$H$，落点$I$于360米。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 1 unit = 60 m
+  \draw[line width=0.55pt,->] (-0.25,0) -- (6.85,0);
+  \node[anchor=south west] at (6.55,0.06) {$x$（米）};
+  \draw[line width=0.55pt,->] (0,-0.20) -- (0,2.65);
+  \node[anchor=north east] at (-0.06,2.65) {$y$（米）};
+  \node[anchor=north east] at (-0.08,-0.05) {$O$};
+  \foreach \xx/\lab in {1/60,2/120,3/180,4/240,5/300,6/360} {
+    \draw[line width=0.4pt] (\xx,0) -- (\xx,-0.08);
+    \node[anchor=north] at (\xx,-0.10) {\lab};
+  }
+  \foreach \yy/\lab in {1/60,2/120} {
+    \draw[line width=0.4pt] (0,\yy) -- (-0.08,\yy);
+    \node[anchor=east] at (-0.10,\yy) {\lab};
+  }
+  \draw[line width=0.6pt] plot[domain=0:6,samples=80] (\x,{\x - \x*\x/6});
+  \coordinate (A) at (0.707,0.624);
+  \coordinate (B) at (1.414,1.081);
+  \coordinate (C) at (2.122,1.372);
+  \coordinate (D) at (2.829,1.495);
+  \coordinate (E) at (3.536,1.453);
+  \coordinate (F) at (4.243,1.243);
+  \coordinate (G) at (4.950,0.867);
+  \coordinate (H) at (5.657,0.324);
+  \coordinate (I) at (6.000,0);
+  \foreach \P/\L/\anch in {A/A/south,B/B/south,C/C/south,D/D/south east,E/E/south west,F/F/south,G/G/south,H/H/south west} {
+    \fill (\P) circle[radius=0.035];
+    \node[anchor=\anch] at (\P) {$\L$};
+    \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (\P) -- (\P|-0,0);
+  }
+  \fill (I) circle[radius=0.035];
+  \node[anchor=south] at (6.00,0.10) {$I$};
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (B) -- (0,1.081);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (C) -- (0,1.372);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (D) -- (0,1.495);
+  \draw[line width=0.55pt,->] (0,0) -- (0.55,0.55);
+  \node[anchor=south east] at (0.40,0.52) {$v_{0}$};
+\end{tikzpicture}%
+}
+\caption{图13·16}
 \end{figure}
 
 \emph{图13·16}
@@ -27957,11 +28154,62 @@ t _ {I} = \frac {2 v _ {0} \sin \theta}{g} = \frac {2 \times 60 \times \sin 45 ^
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·17}]{assets/physics-1/fig-p0440-01.png}}
-\caption{图 13·17}
+% fig-alt: 图13·17：例7轨迹；点1、2高$y=4.2$，对称轴$MN$过顶点$C$；标$v_0=20$、$v_1=v_2=17.72$、$x_1,x_2,x_3$与$\alpha_1,\alpha_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 1 unit = 5 m
+  \draw[line width=0.55pt,->] (-0.35,0) -- (7.85,0);
+  \node[anchor=south west] at (7.55,0.06) {$x$（米）};
+  \draw[line width=0.55pt,->] (0,-0.55) -- (0,1.85);
+  \node[anchor=north east] at (-0.06,1.85) {$y$（米）};
+  \node[anchor=north east] at (-0.08,-0.05) {$O$};
+  \draw[line width=0.6pt] plot[domain=0:6.93,samples=80]
+    (\x,{2.88675*\x - 0.41667*\x*\x});
+  \coordinate (P1) at (2.08,0.84);
+  \coordinate (P2) at (4.85,0.84);
+  \coordinate (Cc) at (3.465,1.00);
+  \coordinate (Xm) at (6.93,0);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (P1) -- (P2);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (P1) -- (2.08,0);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (P2) -- (4.85,0);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (P1) -- (0,0.84);
+  \node[anchor=east] at (-0.08,0.84) {$y=4.2$};
+  \draw[line width=0.45pt,dash pattern=on 2.2pt off 0.9pt on 0.5pt off 0.9pt]
+    (3.465,1.55) -- (3.465,-0.45);
+  \node[anchor=south] at (3.465,1.58) {$M$};
+  \node[anchor=north] at (3.465,-0.48) {$N$};
+  \fill (Cc) circle[radius=0.035];
+  \node[anchor=south west] at (3.55,1.05) {$C$};
+  \node[anchor=north] at (3.465,-0.08) {$B$};
+  \node[anchor=north] at (2.08,-0.08) {$x_{1}=10.4$};
+  \node[anchor=north] at (4.85,-0.08) {$x_{2}=24.25$};
+  \node[anchor=north] at (6.93,-0.08) {$x_{3}=34.65$};
+  \node[anchor=south] at (3.465,0.08) {$17.325$};
+  \fill (P1) circle[radius=0.035];
+  \fill (P2) circle[radius=0.035];
+  \node[anchor=south east] at (2.00,0.90) {$1$};
+  \node[anchor=south west] at (4.95,0.90) {$2$};
+  \draw[line width=0.55pt,->] (0,0) -- (30:0.95);
+  \node[anchor=south west] at (30:0.75) {$v_{0}=20$};
+  \draw[line width=0.35pt] (0.45,0) arc[start angle=0,end angle=30,radius=0.45];
+  \node[anchor=west,inner sep=1pt] at (0.50,0.10) {$\theta$};
+  \draw[line width=0.55pt,->] (P1) -- ++(13:0.85);
+  \node[anchor=south west] at ($(P1)+(0.45,0.22)$) {$v_{1}=17.72$};
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.8pt] ($(P1)+(-0.35,0)$) -- ($(P1)+(0.85,0)$);
+  \draw[line width=0.3pt] ($(P1)+(0.40,0)$) arc[start angle=0,end angle=13,radius=0.40];
+  \node[anchor=south west,inner sep=0.4pt] at ($(P1)+(0.42,0.02)$) {$\alpha_{1}$};
+  \draw[line width=0.55pt,->] (P2) -- ++(-13:0.85);
+  \node[anchor=north west] at ($(P2)+(0.40,-0.22)$) {$v_{2}=17.72$};
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.8pt] ($(P2)+(-0.35,0)$) -- ($(P2)+(0.85,0)$);
+  \draw[line width=0.3pt] ($(P2)+(0.40,0)$) arc[start angle=0,end angle=-13,radius=0.40];
+  \node[anchor=north west,inner sep=0.4pt] at ($(P2)+(0.42,-0.02)$) {$\alpha_{2}$};
+  \fill (Xm) circle[radius=0.035];
+\end{tikzpicture}%
+}
+\caption{图13·17}
 \end{figure}
 
-\emph{图 13·17}
+\emph{图13·17}
 
 初速 \(v_{0} = 20\) 米/秒，如图13·18所示，求水平距离 \(OB\)。
 
@@ -27978,8 +28226,41 @@ y=h+v_{0}\sin\theta\cdot t-\frac{1}{2}gt^{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-18}]{assets/physics-1/fig-p0441-01.png}}
-\caption{图13-18}
+% fig-alt: 图13·18：悬崖顶$A$高$h$，斜下抛$v_0$俯角$\theta$至地面$B$；虚线水平$x$与竖线$BB'$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (0,2.85);
+  \coordinate (B) at (4.55,0);
+  \coordinate (Bp) at (4.55,2.85);
+  \draw[line width=0.55pt,->] (-0.35,0) -- (5.85,0);
+  \node[anchor=south west] at (5.70,0.04) {$x$};
+  \draw[line width=0.55pt,->] (0,-0.20) -- (0,3.85);
+  \node[anchor=north east] at (-0.08,3.85) {$y$};
+  \node[anchor=north east] at (-0.10,-0.06) {$O$};
+  \draw[line width=0.55pt]
+    (-0.95,0) .. controls (-0.85,1.10) and (-0.55,2.15) .. (0,2.85)
+    .. controls (0.35,2.55) and (0.55,1.85) .. (0.70,1.35)
+    -- (0.70,0);
+  \fill[pattern=north east lines,pattern color=black!70]
+    (-0.95,0) .. controls (-0.85,1.10) and (-0.55,2.15) .. (0,2.85)
+    .. controls (0.35,2.55) and (0.55,1.85) .. (0.70,1.35)
+    -- (0.70,0) -- cycle;
+  \node[anchor=east] at (-1.05,1.40) {$h$};
+  \node[anchor=south east] at ($(A)+(-0.08,0.06)$) {$A$};
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt,->] (A) -- ++(5.35,0);
+  \node[anchor=south west] at ($(A)+(5.15,0.04)$) {$x$};
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (Bp) -- (B);
+  \node[anchor=south] at ($(Bp)+(0,0.08)$) {$B'$};
+  \node[anchor=north] at ($(B)+(0,-0.06)$) {$B$};
+  \draw[line width=0.6pt] (A) -- (B);
+  \draw[line width=0.55pt,->] (A) -- ++(-15:1.35);
+  \node[anchor=north west] at ($(A)+(0.85,-0.35)$) {$v_{0}$};
+  \draw[line width=0.35pt] ($(A)+(0.70,0)$) arc[start angle=0,end angle=-15,radius=0.70];
+  \node[anchor=north west,inner sep=0.5pt] at ($(A)+(0.72,-0.02)$) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{图13·18}
 \end{figure}
 
 \emph{图13·18}
@@ -28044,8 +28325,36 @@ t _ {1} = 4.55 \text{秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-1/fig-p0442-01.png}}
-\caption{(第4题)}
+% fig-alt: （第4题）摩托车冲上斜坡以$v_0$仰角$\theta$飞越宽$l$、落差$h$的沟。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (L) at (0,2.10);
+  \draw[line width=0.6pt]
+    (-2.20,0.35) -- (-2.20,1.15) -- (0,2.10) -- (0,0.35) -- cycle;
+  \fill[pattern=north east lines,pattern color=black!65]
+    (-2.20,0.35) -- (-2.20,1.15) -- (0,2.10) -- (0,0.35) -- cycle;
+  \draw[line width=0.6pt]
+    (3.55,1.35) -- (5.40,1.35) -- (5.40,0.35) -- (3.55,0.35) -- cycle;
+  \fill[pattern=north east lines,pattern color=black!65]
+    (3.55,1.35) -- (5.40,1.35) -- (5.40,0.35) -- (3.55,0.35) -- cycle;
+  \draw[line width=0.5pt] (-0.35,2.05) -- (0.05,2.22);
+  \draw[line width=0.45pt] (-0.28,2.00) circle[radius=0.10];
+  \draw[line width=0.45pt] (-0.05,2.12) circle[radius=0.09];
+  \draw[line width=0.4pt] (-0.22,2.18) -- (-0.10,2.32) -- (0.02,2.22);
+  \draw[line width=0.55pt,->] (L) -- ++(30:1.25);
+  \node[anchor=south west] at ($(L)+(0.85,0.55)$) {$v_{0}$};
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 0.9pt] (L) -- ++(1.60,0);
+  \draw[line width=0.35pt] ($(L)+(0.55,0)$) arc[start angle=0,end angle=30,radius=0.55];
+  \node[anchor=south west,inner sep=0.5pt] at ($(L)+(0.58,0.06)$) {$\theta$};
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt]
+    plot[domain=0:3.55,samples=40] ({\x},{2.10 + 0.35*\x - 0.155*\x*\x});
+  \draw[line width=0.45pt,<->] (0.35,2.10) -- (0.35,1.35);
+  \node[anchor=west] at (0.42,1.72) {$h$};
+  \draw[line width=0.45pt,<->] (0,0.55) -- (3.55,0.55);
+  \node[anchor=north] at (1.78,0.52) {$l$};
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \emph{（第4题）}
