@@ -22678,33 +22678,64 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-02.png}}
-\caption{图示（原PDF第242页）}
+\fitfig{%
+% fig-alt: 图4·11 正三角形、正方形、正五边形、正六边形及其对称轴（虚线）；标（1）（2）（3）（4）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\ext{1.18}
+  % (1) equilateral triangle, vertex up
+  \begin{scope}[shift={(0,0)}]
+    \def\R{1.05}
+    \coordinate (C) at (0,0);
+    \foreach \ang/\name in {90/A,210/B,330/D} {
+      \coordinate (\name) at (\ang:\R);
+    }
+    \foreach \ang in {90,210,330} {
+      \draw[dashed,line width=0.55pt] (\ang:\ext*\R) -- ({180+\ang}:\ext*\R);
+    }
+    \draw[line width=0.75pt] (A) -- (B) -- (D) -- cycle;
+    \node[anchor=north,inner sep=2pt] at (0,-\R-0.05) {（1）};
+  \end{scope}
+  % (2) square, sides horizontal
+  \begin{scope}[shift={(3.05,0)}]
+    \def\R{1.05}
+    \coordinate (C) at (0,0);
+    \foreach \ang in {0,45,90,135} {
+      \draw[dashed,line width=0.55pt] (\ang:\ext*\R) -- ({180+\ang}:\ext*\R);
+    }
+    \draw[line width=0.75pt] (45:\R) -- (135:\R) -- (225:\R) -- (315:\R) -- cycle;
+    \node[anchor=north,inner sep=2pt] at (0,-\R-0.05) {（2）};
+  \end{scope}
+  % (3) regular pentagon, vertex up
+  \begin{scope}[shift={(6.10,0)}]
+    \def\R{1.05}
+    \coordinate (C) at (0,0);
+    \foreach \k in {0,...,4} {
+      \pgfmathsetmacro{\ang}{90+72*\k}
+      \draw[dashed,line width=0.55pt] (\ang:\ext*\R) -- ({\ang+180}:\ext*\R);
+    }
+    \draw[line width=0.75pt]
+      (90:\R) -- (162:\R) -- (234:\R) -- (306:\R) -- (18:\R) -- cycle;
+    \node[anchor=north,inner sep=2pt] at (0,-\R-0.05) {（3）};
+  \end{scope}
+  % (4) regular hexagon, flat top
+  \begin{scope}[shift={(9.15,0)}]
+    \def\R{1.05}
+    \coordinate (C) at (0,0);
+    \foreach \ang in {0,30,60,90,120,150} {
+      \draw[dashed,line width=0.55pt] (\ang:\ext*\R) -- ({\ang+180}:\ext*\R);
+    }
+    \draw[line width=0.75pt]
+      (0:\R) -- (60:\R) -- (120:\R) -- (180:\R) -- (240:\R) -- (300:\R) -- cycle;
+    \node[anchor=north,inner sep=2pt] at (0,-\R-0.05) {（4）};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图4·11}
 \end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-03.png}}
-\caption{图示（原PDF第242页）}
-\end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-04.png}}
-\caption{图示（原PDF第242页）}
-\end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第242页）}]{assets/plane-geometry-2/fig-p0242-05.png}}
-\caption{图示（原PDF第242页）}
-\end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-11}]{assets/plane-geometry-2/fig-p0242-06.png}}
-\caption{图4-11}
-\end{figure}
 
 \begin{quote}
 图4·11
@@ -22745,8 +22776,37 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0243-02.png}}
-\caption{(第12题)}
+\fitfig{%
+% fig-alt: （第12题）圆O；切线AC切于A；AB=AC=AO；OC交圆于E；虚线OB、AB、BC、AE、BE
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.05}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (180:\R);
+  \coordinate (B) at (120:\R);
+  \coordinate (C) at (-\R,-\R);
+  \coordinate (E) at (225:\R);
+  % tangent through A (extend a bit above A and below C)
+  \draw[line width=0.75pt] (-\R,1.15) -- (-\R,-2.35);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (O) -- (A);
+  \draw[line width=0.75pt] (O) -- (C);
+  \draw[dashed,line width=0.65pt] (O) -- (B);
+  \draw[dashed,line width=0.65pt] (A) -- (B);
+  \draw[dashed,line width=0.65pt] (B) -- (C);
+  \draw[dashed,line width=0.65pt] (A) -- (E);
+  \draw[dashed,line width=0.65pt] (B) -- (E);
+  % angle mark 1 at E in ∠AEO (between EA and EO)
+  \draw[line width=0.5pt] (E) ++(45:0.28) arc[start angle=45, end angle=135, radius=0.28];
+  \node[inner sep=0.5pt,font=\scriptsize] at ($(E)+(0.38,0.18)$) {$1$};
+  \fill (O) circle (1.0pt);
+  \node[anchor=west,inner sep=2pt] at (O) {$O$};
+  \node[anchor=east,inner sep=2pt] at (A) {$A$};
+  \node[anchor=south east,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=east,inner sep=2pt] at (C) {$C$};
+  \node[anchor=north west,inner sep=1.5pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{（第12题）}
 \end{figure}
 
 \begin{quote}
@@ -22789,11 +22849,11 @@ n 表示一个正多边形的边数， 并且 \(n \geqslant 3\)；
 
 \(a_{n}\) 表示一个正 n 边形的一条边的长度；
 
-\(a_{n}\) 表示一个正 n 边形的一个中心角的度数；
+\(\alpha_{n}\) 表示一个正 n 边形的一个中心角的度数；
 
 \(p_{n}\) 表示一个正 n 边形的周长， 显然 \(p_{n}=na_{n}\)；
 
-B 表示一个正多边形的半径的长度；
+\(R\) 表示一个正多边形的半径的长度；
 
 r 表示一个正多边形的边心距的长度。
 
@@ -22833,8 +22893,45 @@ r 表示一个正多边形的边心距的长度。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-12}]{assets/plane-geometry-2/fig-p0245-01.png}}
-\caption{图4-12}
+\fitfig{%
+% fig-alt: 图4·12 正六边形ABCDEF内接于圆O；半径OA等与边心距OL,OM,ON,OP,OQ,OR
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \pgfmathsetmacro{\Rr}{\R*cos(30)}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (240:\R);
+  \coordinate (B) at (300:\R);
+  \coordinate (C) at (0:\R);
+  \coordinate (D) at (60:\R);
+  \coordinate (E) at (120:\R);
+  \coordinate (F) at (180:\R);
+  \coordinate (L) at (270:\Rr);
+  \coordinate (M) at (330:\Rr);
+  \coordinate (N) at (30:\Rr);
+  \coordinate (P) at (90:\Rr);
+  \coordinate (Q) at (150:\Rr);
+  \coordinate (R) at (210:\Rr);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+  \foreach \P in {A,B,C,D,E,F} {\draw[line width=0.65pt] (O) -- (\P);}
+  \foreach \P in {L,M,N,P,Q,R} {\draw[line width=0.65pt] (O) -- (\P);}
+  \fill (O) circle (1.0pt);
+  \node[anchor=center,inner sep=0pt] at ($(O)+(0.28,-0.18)$) {$O$};
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (E) {$E$};
+  \node[anchor=east,inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=north,inner sep=1.2pt] at (L) {$L$};
+  \node[anchor=north west,inner sep=0.8pt] at (M) {$M$};
+  \node[anchor=south west,inner sep=0.8pt] at (N) {$N$};
+  \node[anchor=south,inner sep=1.2pt] at (P) {$P$};
+  \node[anchor=south east,inner sep=0.8pt] at (Q) {$Q$};
+  \node[anchor=north east,inner sep=0.8pt] at (R) {$R$};
+\end{tikzpicture}%
+}
+\caption{图4·12}
 \end{figure}
 
 \begin{quote}
@@ -22843,8 +22940,31 @@ r 表示一个正多边形的边心距的长度。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-13}]{assets/plane-geometry-2/fig-p0245-02.png}}
-\caption{图4-13}
+\fitfig{%
+% fig-alt: 图4·13 圆O；弦AB；半径OA、OB；边心距OL⊥AB于L（直角记号）；OL标r
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \pgfmathsetmacro{\Rr}{\R*cos(30)}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (240:\R);
+  \coordinate (B) at (300:\R);
+  \coordinate (L) at (270:\Rr);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (O) -- (A);
+  \draw[line width=0.75pt] (O) -- (B);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (O) -- (L);
+  % right angle at L (inside toward O, between LA leftish and LO up)
+  \draw[line width=0.5pt] ($(L)+(-0.14,0)$) -- ($(L)+(-0.14,0.14)$) -- ($(L)+(0,0.14)$);
+  \fill (O) circle (1.0pt);
+  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=east,inner sep=1.5pt] at ($(L)+(-0.18,0.08)$) {$L$};
+  \node[anchor=west,inner sep=1.5pt] at ($(L)!0.55!(O)$) {$r$};
+\end{tikzpicture}%
+}
+\caption{图4·13}
 \end{figure}
 
 \begin{quote}
@@ -22858,7 +22978,7 @@ r 表示一个正多边形的边心距的长度。
 \(OAL\)）的一条直角边 \((OL)\) 是正 \(n\) 边形的边心距
 \(r\)，另一条直角边 \((AL)\) 是正 \(n\) 边形的边 \(a_{n}\)
 的一半，它的斜边 \((OA)\) 是正 \(n\) 边形的半径 \(R\)，一个锐角
-\((\angle AOL)\) 的度数是正 \(n\) 边形的中心角度数 \(a_{n}\) 的一半。
+\((\angle AOL)\) 的度数是正 \(n\) 边形的中心角度数 \(\alpha_{n}\) 的一半。
 
 对这些直角三角形， 应用勾股定理， 可得
 
@@ -22929,8 +23049,34 @@ a_3 = 2LB = 2\sqrt{OB^2-OL^2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-14}]{assets/plane-geometry-2/fig-p0246-01.png}}
-\caption{图4-14}
+\fitfig{%
+% fig-alt: 图4·14 正三角形ABC内接于圆O（C在顶）；边心距OL⊥AB于L；半径OB标R；∠LOB=60°
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (90:\R);
+  \coordinate (A) at (210:\R);
+  \coordinate (B) at (330:\R);
+  \coordinate (L) at (270:{\R*cos(60)}); % = R/2
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (O) -- (L);
+  \draw[line width=0.75pt] (O) -- (B);
+  % right angle at L
+  \draw[line width=0.5pt] ($(L)+(-0.14,0)$) -- ($(L)+(-0.14,0.14)$) -- ($(L)+(0,0.14)$);
+  % angle 60° at O between OL (270°) and OB (330°)
+  \draw[line width=0.5pt] (270:0.45) arc[start angle=270, end angle=330, radius=0.45];
+  \node[inner sep=0.5pt] at (300:0.72) {$60^{\circ}$};
+  \fill (O) circle (1.0pt);
+  \node[anchor=east,inner sep=2pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1.5pt] at (L) {$L$};
+  \node[anchor=south west,inner sep=1pt] at ($(O)!0.55!(B)$) {$R$};
+\end{tikzpicture}%
+}
+\caption{图4·14}
 \end{figure}
 
 \begin{quote}
@@ -22982,8 +23128,35 @@ OL^2+LB^2=OB^2\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-18}]{assets/plane-geometry-2/fig-p0247-01.png}}
-\caption{图4-18}
+\fitfig{%
+% fig-alt: 图4·15 正方形ABCD内接于圆O；边心距OL（虚线）⊥AB于L；半径OB标R；∠LOB=45°
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \pgfmathsetmacro{\Rr}{\R*cos(45)}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (225:\R);
+  \coordinate (B) at (315:\R);
+  \coordinate (C) at (45:\R);
+  \coordinate (D) at (135:\R);
+  \coordinate (L) at (270:\Rr);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed,line width=0.65pt] (O) -- (L);
+  \draw[line width=0.75pt] (O) -- (B);
+  % angle 45° at O between OL (270°) and OB (315°)
+  \draw[line width=0.5pt] (270:0.48) arc[start angle=270, end angle=315, radius=0.48];
+  \node[inner sep=0.5pt] at (292:0.78) {$45^{\circ}$};
+  \fill (O) circle (1.0pt);
+  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (L) {$L$};
+  \node[anchor=south west,inner sep=1pt] at ($(O)!0.55!(B)$) {$R$};
+\end{tikzpicture}%
+}
+\caption{图4·15}
 \end{figure}
 
 \begin{quote}
@@ -22992,8 +23165,39 @@ OL^2+LB^2=OB^2\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-16}]{assets/plane-geometry-2/fig-p0247-02.png}}
-\caption{图4-16}
+\fitfig{%
+% fig-alt: 图4·16 正六边形ABCDEF内接于圆O；边心距OL（虚线）⊥AB于L；半径OB标R；∠LOB=30°
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \pgfmathsetmacro{\Rr}{\R*cos(30)}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (240:\R);
+  \coordinate (B) at (300:\R);
+  \coordinate (C) at (0:\R);
+  \coordinate (D) at (60:\R);
+  \coordinate (E) at (120:\R);
+  \coordinate (F) at (180:\R);
+  \coordinate (L) at (270:\Rr);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+  \draw[dashed,line width=0.65pt] (O) -- (L);
+  \draw[line width=0.75pt] (O) -- (B);
+  % angle 30° at O between OL (270°) and OB (300°)
+  \draw[line width=0.5pt] (270:0.50) arc[start angle=270, end angle=300, radius=0.50];
+  \node[inner sep=0.5pt] at (285:0.82) {$30^{\circ}$};
+  \fill (O) circle (1.0pt);
+  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (E) {$E$};
+  \node[anchor=east,inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=north,inner sep=1.5pt] at (L) {$L$};
+  \node[anchor=south west,inner sep=1pt] at ($(O)!0.55!(B)$) {$R$};
+\end{tikzpicture}%
+}
+\caption{图4·16}
 \end{figure}
 
 \begin{quote}
@@ -23066,8 +23270,50 @@ r=OL=\sqrt{OB^2-LB^2}=\sqrt{R^2-\left(\frac{R}{2}\right)^2}=\frac{\sqrt{3}}{2}R.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-17}]{assets/plane-geometry-2/fig-p0248-01.png}}
-\caption{图4-17}
+\fitfig{%
+% fig-alt: 图4·17 两个正六边形ABCDEF与A'B'C'D'E'F'各内接于圆（同向，右侧较小）
+\begin{tikzpicture}[line cap=round,line join=round]
+  % left larger
+  \begin{scope}[shift={(0,0)}]
+    \def\R{1.85}
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (240:\R);
+    \coordinate (B) at (300:\R);
+    \coordinate (C) at (0:\R);
+    \coordinate (D) at (60:\R);
+    \coordinate (E) at (120:\R);
+    \coordinate (F) at (180:\R);
+    \draw[line width=0.75pt] (O) circle (\R);
+    \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+    \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+    \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+    \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
+    \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+    \node[anchor=south east,inner sep=1pt] at (E) {$E$};
+    \node[anchor=east,inner sep=1.5pt] at (F) {$F$};
+  \end{scope}
+  % right smaller
+  \begin{scope}[shift={(4.35,0)}]
+    \def\R{1.25}
+    \coordinate (O) at (0,0);
+    \coordinate (Ap) at (240:\R);
+    \coordinate (Bp) at (300:\R);
+    \coordinate (Cp) at (0:\R);
+    \coordinate (Dp) at (60:\R);
+    \coordinate (Ep) at (120:\R);
+    \coordinate (Fp) at (180:\R);
+    \draw[line width=0.75pt] (O) circle (\R);
+    \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- (Ep) -- (Fp) -- cycle;
+    \node[anchor=north east,inner sep=1pt] at (Ap) {$A'$};
+    \node[anchor=north west,inner sep=1pt] at (Bp) {$B'$};
+    \node[anchor=west,inner sep=1.5pt] at (Cp) {$C'$};
+    \node[anchor=south west,inner sep=1pt] at (Dp) {$D'$};
+    \node[anchor=south east,inner sep=1pt] at (Ep) {$E'$};
+    \node[anchor=east,inner sep=1.5pt] at (Fp) {$F'$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图4·17}
 \end{figure}
 
 \begin{quote}
