@@ -21365,11 +21365,61 @@ P^{\prime} = I^{2} R = \frac{\varepsilon^{2}}{R} = \frac{(0.6)^{2}}{0.2} \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.17 自感现象实验(一)}]{assets/physics-3/fig-p0285-01.png}}
-\caption{图 4.17 自感现象实验(一)}
+\fitfig{%
+% fig-alt: 图4.17 自感现象实验(一)。干路电源、开关K、变阻器r；上支路铁心线圈L与灯泡A串联，下支路变阻器R与灯泡B串联
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % outer frame
+  \draw[line width=0.7pt] (0,0) -- (0,2.55) -- (4.60,2.55) -- (4.60,0) -- cycle;
+  % left vertical split for parallel
+  \fill (0,2.55) circle[radius=0.045];
+  \fill (0,1.05) circle[radius=0.045];
+  \fill (4.60,2.55) circle[radius=0.045];
+  \fill (4.60,1.05) circle[radius=0.045];
+  \draw[line width=0.7pt] (0,1.05) -- (4.60,1.05);
+  % battery on bottom (long/short, left positive)
+  \draw[line width=0.9pt] (0.55,-0.22) -- (0.55,0.22);
+  \draw[line width=0.7pt] (0.72,-0.12) -- (0.72,0.12);
+  \draw[line width=0.9pt] (0.89,-0.22) -- (0.89,0.22);
+  \draw[line width=0.7pt] (1.06,-0.12) -- (1.06,0.12);
+  % break bottom for battery
+  \draw[line width=0.7pt,white] (0.45,0) -- (1.15,0);
+  % switch K (open) on bottom
+  \fill (2.05,0) circle[radius=0.045];
+  \fill (2.55,0) circle[radius=0.045];
+  \draw[line width=0.7pt] (2.05,0) -- (2.38,0.28);
+  \node[anchor=south,inner sep=1pt] at (2.30,0.30) {$K$};
+  \draw[line width=0.7pt,white] (2.10,0) -- (2.50,0);
+  % rheostat r on bottom right
+  \draw[line width=0.7pt,white] (3.35,0) -- (4.15,0);
+  \draw[line width=0.65pt] (3.40,-0.18) rectangle (4.10,0.18);
+  \draw[line width=0.65pt,->] (3.55,-0.28) -- (4.00,0.32);
+  \node[anchor=south,inner sep=1pt] at (3.95,0.34) {$r$};
+  % upper branch: L then A
+  % inductor L with core bar
+  \draw[line width=0.85pt] (0.55,2.78) -- (1.95,2.78);
+  \foreach \x in {0.70,1.00,1.30,1.60} {
+    \draw[line width=0.65pt] (\x,2.55) arc[start angle=180,end angle=0,radius=0.15];
+  }
+  \node[anchor=south,inner sep=1pt] at (1.25,2.80) {$L$};
+  % lamp A
+  \draw[line width=0.7pt] (3.20,2.55) circle[radius=0.22];
+  \draw[line width=0.5pt] (3.06,2.39) -- (3.34,2.71);
+  \draw[line width=0.5pt] (3.06,2.71) -- (3.34,2.39);
+  \node[anchor=south west,inner sep=1pt] at (3.40,2.65) {$A$};
+  % lower parallel branch: R then B
+  \draw[line width=0.65pt] (0.70,0.87) rectangle (1.80,1.23);
+  \draw[line width=0.65pt,->] (0.85,0.75) -- (1.70,1.35);
+  \node[anchor=south,inner sep=1pt] at (1.25,1.25) {$R$};
+  \draw[line width=0.7pt] (3.20,1.05) circle[radius=0.22];
+  \draw[line width=0.5pt] (3.06,0.89) -- (3.34,1.21);
+  \draw[line width=0.5pt] (3.06,1.21) -- (3.34,0.89);
+  \node[anchor=south west,inner sep=1pt] at (3.40,1.15) {$B$};
+\end{tikzpicture}%
+}
+\caption{图4.17 自感现象实验（一）}
 \end{figure}
 
-\emph{图 4.17 自感现象实验（一）}
+\emph{图4.17 自感现象实验（一）}
 
 电路。在一支路中串联着小电灯泡 A 和带铁心的线圈 \(I_{4}\)
 在另一支路中串联着小电灯泡 B 和变阻器 R。先调节变阻器
@@ -21387,11 +21437,44 @@ r，使两个灯泡正常发光，然后断开电路。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.18 白总现象实验(二)}]{assets/physics-3/fig-p0285-02.png}}
-\caption{图4.18 白总现象实验(二)}
+\fitfig{%
+% fig-alt: 图4.18 自感现象实验(二)。灯泡与铁心线圈L并联；底边电源与开关K（断开瞬间）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0,0) -- (0,2.20) -- (3.40,2.20) -- (3.40,0) -- cycle;
+  \fill (0,2.20) circle[radius=0.045];
+  \fill (0,1.10) circle[radius=0.045];
+  \fill (3.40,2.20) circle[radius=0.045];
+  \fill (3.40,1.10) circle[radius=0.045];
+  \draw[line width=0.7pt] (0,1.10) -- (3.40,1.10);
+  % battery bottom left
+  \draw[line width=0.9pt] (0.45,-0.22) -- (0.45,0.22);
+  \draw[line width=0.7pt] (0.62,-0.12) -- (0.62,0.12);
+  \draw[line width=0.9pt] (0.79,-0.22) -- (0.79,0.22);
+  \draw[line width=0.7pt] (0.96,-0.12) -- (0.96,0.12);
+  \draw[line width=0.7pt,white] (0.35,0) -- (1.05,0);
+  % switch K open with opening arrow
+  \fill (2.10,0) circle[radius=0.045];
+  \fill (2.60,0) circle[radius=0.045];
+  \draw[line width=0.7pt] (2.10,0) -- (2.42,0.28);
+  \draw[line width=0.55pt,->] (2.42,0.28) -- (2.70,0.48);
+  \node[anchor=south,inner sep=1pt] at (2.35,0.32) {$K$};
+  \draw[line width=0.7pt,white] (2.15,0) -- (2.55,0);
+  % upper: lamp
+  \draw[line width=0.7pt] (1.70,2.20) circle[radius=0.22];
+  \draw[line width=0.5pt] (1.56,2.04) -- (1.84,2.36);
+  \draw[line width=0.5pt] (1.56,2.36) -- (1.84,2.04);
+  % lower parallel: L with core
+  \draw[line width=0.85pt] (1.05,1.32) -- (2.35,1.32);
+  \foreach \x in {1.20,1.50,1.80,2.10} {
+    \draw[line width=0.65pt] (\x,1.10) arc[start angle=180,end angle=0,radius=0.15];
+  }
+  \node[anchor=south,inner sep=1pt] at (1.70,1.34) {$L$};
+\end{tikzpicture}%
+}
+\caption{图4.18 自感现象实验（二）}
 \end{figure}
 
-\emph{图4.18 白总现象实验（二）}
+\emph{图4.18 自感现象实验（二）}
 
 看到：小灯泡在熄灭之前突然发出相当强的光，这种现象表明：当电路断开时，通过小灯泡的电流不是立刻减小为零，反而会瞬时地增大然后减小为零。
 
@@ -21479,19 +21562,83 @@ L 是个定值；对不同的线圈来说，自感系数一般是不同的。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.19 日光灯的电路图}]{assets/physics-3/fig-p0289-01.png}}
-\caption{图 4.19 日光灯的电路图}
+\fitfig{%
+% fig-alt: 图4.19 日光灯电路。上启动器S跨接灯管两端灯丝；左镇流器与开关K串接电源；灯管标灯管
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % lamp tube
+  \draw[line width=0.7pt] (0.40,1.55) rectangle (4.00,1.95);
+  \node[anchor=north,inner sep=2pt] at (2.20,1.52) {灯管};
+  % filaments (small loops at ends)
+  \draw[line width=0.55pt] (0.55,1.62) -- (0.55,1.88);
+  \draw[line width=0.55pt] (0.70,1.62) -- (0.70,1.88);
+  \draw[line width=0.45pt] (0.55,1.75) .. controls (0.62,1.68) .. (0.70,1.75);
+  \draw[line width=0.55pt] (3.70,1.62) -- (3.70,1.88);
+  \draw[line width=0.55pt] (3.85,1.62) -- (3.85,1.88);
+  \draw[line width=0.45pt] (3.70,1.75) .. controls (3.77,1.68) .. (3.85,1.75);
+  % starter S above
+  \draw[line width=0.65pt] (0.55,1.88) -- (0.55,2.55) -- (1.70,2.55);
+  \draw[line width=0.65pt] (3.85,1.88) -- (3.85,2.55) -- (2.70,2.55);
+  \draw[line width=0.7pt] (2.20,2.55) circle[radius=0.28];
+  \node at (2.20,2.55) {$S$};
+  \node[anchor=south,inner sep=2pt] at (2.20,2.88) {启动器};
+  % bottom-left ballast + switch
+  \draw[line width=0.65pt] (0.70,1.55) -- (0.70,0.95);
+  % ballast inductor with core
+  \draw[line width=0.8pt] (0.48,0.72) -- (1.55,0.72);
+  \foreach \x in {0.60,0.90,1.20} {
+    \draw[line width=0.6pt] (\x,0.55) arc[start angle=180,end angle=0,radius=0.15];
+  }
+  \node[anchor=east,inner sep=2pt] at (0.40,0.65) {镇流器};
+  \draw[line width=0.65pt] (0.70,0.55) -- (0.70,0.35);
+  % switch K open
+  \fill (0.70,0.35) circle[radius=0.04];
+  \fill (0.70,0.05) circle[radius=0.04];
+  \draw[line width=0.65pt] (0.70,0.35) -- (1.00,0.18);
+  \node[anchor=east,inner sep=2pt] at (0.55,0.20) {$K$};
+  \draw[line width=0.65pt] (0.70,0.05) -- (0.70,-0.25);
+  % power terminals
+  \draw[line width=0.7pt] (0.70,-0.25) circle[radius=0.08];
+  \draw[line width=0.65pt] (3.85,1.55) -- (3.85,-0.25);
+  \draw[line width=0.7pt] (3.85,-0.25) circle[radius=0.08];
+\end{tikzpicture}%
+}
+\caption{图4.19 日光灯的电路图}
 \end{figure}
 
-\emph{图 4.19 日光灯的电路图}
+\emph{图4.19 日光灯的电路图}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.20 启动后的构造}]{assets/physics-3/fig-p0289-02.png}}
-\caption{图 4.20 启动后的构造}
+\fitfig{%
+% fig-alt: 图4.20 启动器的构造。氖泡内左静触片、右U形触片，充有氖气；底两引出线
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % glass envelope
+  \draw[line width=0.7pt]
+    (-0.70,0.15) -- (-0.70,2.10)
+    arc[start angle=180,end angle=0,radius=0.70]
+    -- (0.70,0.15) -- cycle;
+  % base plug
+  \draw[line width=0.65pt] (-0.45,0.15) -- (-0.35,-0.05) -- (0.35,-0.05) -- (0.45,0.15);
+  \draw[line width=0.55pt] (-0.18,-0.05) -- (-0.28,-0.35);
+  \draw[line width=0.55pt] (0.18,-0.05) -- (0.28,-0.35);
+  % stationary contact (left)
+  \draw[line width=0.75pt] (-0.28,0.15) -- (-0.28,1.85);
+  % U-shaped bimetal (right)
+  \draw[line width=0.75pt] (0.28,0.15) -- (0.28,1.55)
+    -- (0.05,1.85) -- (-0.12,1.70);
+  % labels with leaders
+  \draw[line width=0.45pt] (-0.28,1.75) -- (-1.35,2.15);
+  \node[anchor=east,inner sep=1pt] at (-1.35,2.15) {静触片};
+  \draw[line width=0.45pt] (0.15,1.80) -- (1.35,2.20);
+  \node[anchor=west,inner sep=1pt] at (1.35,2.20) {U形触片};
+  \draw[line width=0.45pt] (-0.05,1.15) -- (-1.45,1.10);
+  \node[anchor=east,inner sep=1pt] at (-1.45,1.10) {充有氖气};
+\end{tikzpicture}%
+}
+\caption{图4.20 启动器的构造}
 \end{figure}
 
-\emph{图 4.20 启动后的构造}
+\emph{图4.20 启动器的构造}
 
 水银蒸气导电时，就发出紫外线。紫外线作用在涂在管壁上的荧光粉上使之发出柔和的白光。要激发水银蒸气导电需要一个很高的瞬时电压，这个电压是怎样获得的呢？下面简单介绍一下产生这一瞬时高电压的过程。
 
@@ -21539,7 +21686,51 @@ L 是个定值；对不同的线圈来说，自感系数一般是不同的。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.22 变压器结构示意图}]{assets/physics-3/fig-p0290-01.png}}
+\fitfig{%
+% fig-alt: 图4.22 变压器结构。矩形铁心左右绕原线圈、副线圈；标U1、U2、ε1、ε2、N1、N2及磁通Φ
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=0.85cm,y=0.85cm]
+  % iron core rectangle with thickness (perspective-ish double)
+  \draw[line width=0.85pt] (-1.70,-1.35) rectangle (1.70,1.35);
+  \draw[line width=0.65pt] (-1.15,-0.80) rectangle (1.15,0.80);
+  % flux dashed loop with arrows
+  \draw[line width=0.5pt,dashed,->] (-0.85,-0.45) -- (-0.85,0.45) -- (0.85,0.45);
+  \draw[line width=0.5pt,dashed,->] (0.85,0.45) -- (0.85,-0.45) -- (-0.85,-0.45);
+  \node[anchor=south,inner sep=1pt] at (0,0.48) {$\Phi$};
+  \node[anchor=north,inner sep=1pt] at (0,-0.48) {$\Phi$};
+  % primary windings on left leg
+  \foreach \y in {-0.95,-0.60,-0.25,0.10,0.45,0.80} {
+    \draw[line width=0.65pt] (-1.70,\y) arc[start angle=90,end angle=270,x radius=0.28,y radius=0.16];
+  }
+  \node[anchor=south east,inner sep=1pt] at (-1.85,1.45) {原线圈};
+  \draw[line width=0.45pt] (-1.95,1.40) -- (-1.55,0.95);
+  % primary leads
+  \draw[line width=0.65pt] (-2.00,0.95) -- (-2.85,0.95);
+  \draw[line width=0.65pt] (-2.00,-0.95) -- (-2.85,-0.95);
+  \node[anchor=east,inner sep=2pt] at (-2.95,0.20) {$\sim$};
+  \draw[line width=0.55pt,<->] (-2.55,0.85) -- (-2.55,-0.85);
+  \node[anchor=east,inner sep=1pt] at (-2.60,0) {$U_1$};
+  \node at (-0.55,0.35) {$\varepsilon_1$};
+  \node at (-0.55,-0.35) {$N_1$};
+  % secondary windings on right leg
+  \foreach \y in {-0.95,-0.60,-0.25,0.10,0.45,0.80} {
+    \draw[line width=0.65pt] (1.70,\y) arc[start angle=90,end angle=-90,x radius=0.28,y radius=0.16];
+  }
+  \node[anchor=south west,inner sep=1pt] at (1.85,1.45) {副线圈};
+  \draw[line width=0.45pt] (1.95,1.40) -- (1.55,0.95);
+  \draw[line width=0.65pt] (2.00,0.95) -- (2.85,0.95);
+  \draw[line width=0.65pt] (2.00,-0.95) -- (2.85,-0.95);
+  \draw[line width=0.55pt,<->] (2.55,0.85) -- (2.55,-0.85);
+  \node[anchor=west,inner sep=1pt] at (2.60,0) {$U_2$};
+  \node at (0.55,0.35) {$\varepsilon_2$};
+  \node at (0.55,-0.35) {$N_2$};
+  % dashed load/meter on right
+  \draw[line width=0.5pt,dashed] (2.85,0.95) -- (3.35,0.95) -- (3.35,0.25);
+  \draw[line width=0.5pt,dashed] (2.85,-0.95) -- (3.35,-0.95) -- (3.35,-0.25);
+  \draw[line width=0.55pt,dashed] (3.35,0) circle[radius=0.25];
+  \node[anchor=north west,inner sep=2pt] at (1.40,-1.45) {铁心};
+  \draw[line width=0.45pt] (1.55,-1.35) -- (1.70,-1.55);
+\end{tikzpicture}%
+}
 \caption{图4.22 变压器结构示意图}
 \end{figure}
 
@@ -21635,7 +21826,64 @@ P_{\text{出}} = P_{\text{人}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.23 自耦变压器}]{assets/physics-3/fig-p0293-01.png}}
+\fitfig{%
+% fig-alt: 图4.23 自耦变压器。(a)升压：输入跨n1、输出跨n1+n2；(b)降压：输入跨全线圈、输出跨n2
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % ===== (a) step-up =====
+  % vertical coil (a)
+  \foreach \y/\i in {0.15/1,0.50/2,0.85/3,1.20/4,1.55/5,1.90/6,2.25/7,2.60/8} {
+    \draw[line width=0.65pt] (0,\y) arc[start angle=180,end angle=0,radius=0.18];
+  }
+  \draw[line width=0.65pt] (0,0.15) -- (0,2.78);
+  % tap at mid (~1.45)
+  \fill (0.36,1.40) circle[radius=0.035];
+  % bottom common
+  \draw[line width=0.65pt] (-1.55,0.15) -- (1.55,0.15);
+  \draw[line width=0.7pt] (-1.55,0.15) circle[radius=0.07];
+  \draw[line width=0.7pt] (1.55,0.15) circle[radius=0.07];
+  % input left to tap
+  \draw[line width=0.65pt] (-1.55,1.40) -- (0.36,1.40);
+  \draw[line width=0.7pt] (-1.55,1.40) circle[radius=0.07];
+  \draw[line width=0.55pt,<->] (-1.15,1.30) -- (-1.15,0.25);
+  \node[anchor=east,inner sep=1pt] at (-1.20,0.80) {$U_1$};
+  \node[anchor=east,inner sep=1pt] at (-1.70,0.85) {输入端};
+  \node[anchor=west,inner sep=2pt] at (0.40,0.75) {$n_1$};
+  \node[anchor=west,inner sep=2pt] at (0.40,2.05) {$n_2$};
+  % output right full
+  \draw[line width=0.65pt] (0,2.78) -- (0.40,2.78) -- (1.55,2.78);
+  \draw[line width=0.7pt] (1.55,2.78) circle[radius=0.07];
+  \draw[line width=0.55pt,<->] (1.20,2.68) -- (1.20,0.25);
+  \node[anchor=west,inner sep=1pt] at (1.25,1.50) {$U_2$};
+  \node[anchor=west,inner sep=1pt] at (1.70,1.55) {输出端};
+  \node at (0,-0.35) {(a)};
+  % ===== (b) step-down =====
+  \begin{scope}[xshift=5.2cm]
+  \foreach \y in {0.15,0.50,0.85,1.20,1.55,1.90,2.25,2.60} {
+    \draw[line width=0.65pt] (0,\y) arc[start angle=180,end angle=0,radius=0.18];
+  }
+  \draw[line width=0.65pt] (0,0.15) -- (0,2.78);
+  \fill (0.36,1.40) circle[radius=0.035];
+  \draw[line width=0.65pt] (-1.55,0.15) -- (1.55,0.15);
+  \draw[line width=0.7pt] (-1.55,0.15) circle[radius=0.07];
+  \draw[line width=0.7pt] (1.55,0.15) circle[radius=0.07];
+  % input left full height
+  \draw[line width=0.65pt] (-1.55,2.78) -- (0,2.78);
+  \draw[line width=0.7pt] (-1.55,2.78) circle[radius=0.07];
+  \draw[line width=0.55pt,<->] (-1.15,2.68) -- (-1.15,0.25);
+  \node[anchor=east,inner sep=1pt] at (-1.20,1.50) {$U_1$};
+  \node[anchor=east,inner sep=1pt] at (-1.70,1.55) {输入端};
+  \node[anchor=west,inner sep=2pt] at (0.40,2.05) {$n_1$};
+  \node[anchor=west,inner sep=2pt] at (0.40,0.75) {$n_2$};
+  % output right to tap
+  \draw[line width=0.65pt] (0.36,1.40) -- (1.55,1.40);
+  \draw[line width=0.7pt] (1.55,1.40) circle[radius=0.07];
+  \draw[line width=0.55pt,<->] (1.20,1.30) -- (1.20,0.25);
+  \node[anchor=west,inner sep=1pt] at (1.25,0.80) {$U_2$};
+  \node[anchor=west,inner sep=1pt] at (1.70,0.85) {输出端};
+  \node at (0,-0.35) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图4.23 自耦变压器}
 \end{figure}
 
@@ -21723,7 +21971,76 @@ I_{1}^{\prime} = \frac{P_{1}^{\prime}}{U_{1}} = \frac{1320}{110} = 12 \text{安}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.24 电力网示意图}]{assets/physics-3/fig-p0296-01.png}}
+\fitfig{%
+% fig-alt: 图4.24 电力网示意图。上：发电机→升压→铁塔(220kV/110kV)→降压→配电→用户；下：单线图标变电所与线路
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\footnotesize]
+  % ---- top pictorial row ----
+  % generator cylinder
+  \draw[line width=0.65pt] (-0.10,2.55) ellipse[x radius=0.22,y radius=0.55];
+  \draw[line width=0.65pt] (-0.10,2.00) -- (0.55,2.00);
+  \draw[line width=0.65pt] (-0.10,3.10) -- (0.55,3.10);
+  \draw[line width=0.65pt] (0.55,2.00) arc[start angle=-90,end angle=90,x radius=0.18,y radius=0.55];
+  \foreach \y in {2.20,2.45,2.70,2.95} {
+    \draw[line width=0.4pt] (-0.05,\y) -- (0.50,\y);
+  }
+  % 3 lines to step-up
+  \draw[line width=0.5pt] (0.75,2.35) -- (1.35,2.35);
+  \draw[line width=0.5pt] (0.75,2.55) -- (1.35,2.55);
+  \draw[line width=0.5pt] (0.75,2.75) -- (1.35,2.75);
+  \node[anchor=south,inner sep=1pt] at (1.05,2.80) {10000伏};
+  % step-up box
+  \draw[line width=0.65pt] (1.35,2.15) rectangle (2.05,3.00);
+  \node[anchor=north,inner sep=1pt] at (1.70,2.10) {升压};
+  % tower
+  \draw[line width=0.55pt] (2.55,2.15) -- (2.85,3.55) -- (3.15,2.15);
+  \draw[line width=0.45pt] (2.60,2.70) -- (3.10,2.70);
+  \draw[line width=0.45pt] (2.65,3.10) -- (3.05,3.10);
+  \draw[line width=0.45pt] (2.70,3.40) -- (3.00,3.40);
+  \node[anchor=south,inner sep=0pt] at (3.55,3.55) {220000伏};
+  \node[anchor=south,inner sep=0pt] at (3.55,3.25) {110000伏};
+  \draw[line width=0.45pt,dashed] (3.15,3.40) -- (4.00,3.40);
+  \draw[line width=0.45pt,dashed] (3.15,3.10) -- (4.00,3.10);
+  % step-down boxes
+  \draw[line width=0.55pt] (4.10,2.20) rectangle (4.70,2.90);
+  \node[anchor=north,inner sep=1pt] at (4.40,2.15) {降压};
+  \node[anchor=south,inner sep=1pt] at (4.40,2.95) {35000伏};
+  \draw[line width=0.5pt] (4.70,2.55) -- (5.10,2.55);
+  \draw[line width=0.55pt] (5.10,2.25) rectangle (5.70,2.85);
+  \node[anchor=north,inner sep=1pt] at (5.40,2.20) {高压配电};
+  \node[anchor=south,inner sep=1pt] at (5.40,2.90) {6000伏};
+  \draw[line width=0.5pt] (5.70,2.55) -- (6.10,2.55);
+  \draw[line width=0.55pt] (6.10,2.30) rectangle (6.70,2.80);
+  \node[anchor=north,inner sep=1pt] at (6.40,2.25) {低压配电};
+  \draw[line width=0.5pt] (6.70,2.55) -- (7.25,2.55);
+  \node[anchor=west,inner sep=1pt] at (7.10,2.85) {220、380伏};
+  \node[anchor=west,inner sep=1pt] at (7.30,2.55) {用户};
+  \draw[line width=0.55pt,->] (7.25,2.55) -- (7.70,2.55);
+  % ---- bottom single-line schematic ----
+  \draw[line width=0.7pt] (0.0,0.85) rectangle (0.95,1.35);
+  \node at (0.475,1.10) {发电机};
+  \draw[line width=0.65pt] (0.95,1.10) -- (7.40,1.10);
+  \draw[line width=0.55pt,->] (1.35,1.10) -- (1.35,0.55);
+  \node[anchor=north,inner sep=1pt] at (1.35,0.50) {（去近区用户）};
+  % transformer symbols (two overlapping circles)
+  \draw[line width=0.6pt] (2.10,1.10) circle[radius=0.22];
+\draw[line width=0.6pt] (2.38,1.10) circle[radius=0.22];
+\node[anchor=south,inner sep=2pt] at (2.24,1.35) {升压变电所};
+\draw[line width=0.6pt] (3.60,1.10) circle[radius=0.22];
+\draw[line width=0.6pt] (3.88,1.10) circle[radius=0.22];
+\node[anchor=south,inner sep=2pt] at (3.74,1.35) {降压变电所};
+\draw[line width=0.6pt] (5.10,1.10) circle[radius=0.22];
+\draw[line width=0.6pt] (5.38,1.10) circle[radius=0.22];
+\node[anchor=south,inner sep=2pt] at (5.24,1.35) {高压配电变电所};
+\draw[line width=0.6pt] (6.50,1.10) circle[radius=0.22];
+\draw[line width=0.6pt] (6.78,1.10) circle[radius=0.22];
+\node[anchor=south,inner sep=2pt] at (6.64,1.35) {低压配电变电所};
+  \node[anchor=north,inner sep=1pt] at (2.85,0.95) {高压输电线路};
+  \node[anchor=north,inner sep=1pt] at (4.35,0.95) {高压配电线路};
+  \node[anchor=north,inner sep=1pt] at (5.80,0.95) {低压配电线路};
+  \draw[line width=0.65pt,->] (7.40,1.10) -- (7.90,1.10);
+  \node[anchor=west,inner sep=1pt] at (7.95,1.10) {至用户};
+\end{tikzpicture}%
+}
 \caption{图4.24 电力网示意图}
 \end{figure}
 
@@ -21816,7 +22133,50 @@ P^{\prime} = \frac{P^{2} R}{U^{2}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.25 输电路上电压分布情况}]{assets/physics-3/fig-p0298-01.png}}
+\fitfig{%
+% fig-alt: 图4.25 外电路电压分布。左发电机G，右负载；上下导线中段虚线，旁标U端、U用及各1/2 U线
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left vertical with G
+  \draw[line width=0.7pt] (0,2.20) -- (0,1.35);
+  \draw[line width=0.7pt] (0,0.85) circle[radius=0.35];
+  \node at (0,0.85) {$G$};
+  \draw[line width=0.7pt] (0,0.50) -- (0,0);
+  % top and bottom lines with dashed mid
+  \draw[line width=0.7pt] (0,2.20) -- (1.60,2.20);
+  \draw[line width=0.7pt,dash pattern=on 3.5pt off 2pt] (1.60,2.20) -- (3.40,2.20);
+  \draw[line width=0.7pt] (3.40,2.20) -- (5.00,2.20);
+  \draw[line width=0.7pt] (0,0) -- (1.60,0);
+  \draw[line width=0.7pt,dash pattern=on 3.5pt off 2pt] (1.60,0) -- (3.40,0);
+  \draw[line width=0.7pt] (3.40,0) -- (5.00,0);
+  % right load rectangle
+  \draw[line width=0.7pt] (4.70,0) -- (4.70,0.35);
+  \draw[line width=0.7pt] (4.55,0.35) rectangle (4.85,1.85);
+  \node at (4.70,1.35) {负};
+  \node at (4.70,0.95) {载};
+  \draw[line width=0.7pt] (4.70,1.85) -- (4.70,2.20);
+  \draw[line width=0.7pt] (5.00,2.20) -- (5.00,0);
+  % dimension U_端 left
+  \draw[line width=0.5pt] (-0.55,2.20) -- (-0.25,2.20);
+  \draw[line width=0.5pt] (-0.55,0) -- (-0.25,0);
+  \draw[line width=0.55pt,<->] (-0.45,2.10) -- (-0.45,0.10);
+  \node[anchor=east,inner sep=2pt] at (-0.55,1.10) {$U_{\text{端}}$};
+  % dimension U_用 right
+  \draw[line width=0.5pt] (5.15,2.20) -- (5.45,2.20);
+  \draw[line width=0.5pt] (5.15,0) -- (5.45,0);
+  \draw[line width=0.55pt,<->] (5.35,2.10) -- (5.35,0.10);
+  \node[anchor=west,inner sep=2pt] at (5.45,1.10) {$U_{\text{用}}$};
+  % top 1/2 U_线
+  \draw[line width=0.5pt] (0,2.45) -- (0,2.65);
+  \draw[line width=0.5pt] (5.00,2.45) -- (5.00,2.65);
+  \draw[line width=0.55pt,<->] (0.10,2.55) -- (4.90,2.55);
+  \node[anchor=south,inner sep=1pt] at (2.50,2.58) {$\dfrac{1}{2}U_{\text{线}}$};
+  % bottom 1/2 U_线
+  \draw[line width=0.5pt] (0,-0.25) -- (0,-0.45);
+  \draw[line width=0.5pt] (5.00,-0.25) -- (5.00,-0.45);
+  \draw[line width=0.55pt,<->] (0.10,-0.35) -- (4.90,-0.35);
+  \node[anchor=north,inner sep=1pt] at (2.50,-0.38) {$\dfrac{1}{2}U_{\text{线}}$};
+\end{tikzpicture}%
+}
 \caption{图4.25 输电路上电压分布情况}
 \end{figure}
 
