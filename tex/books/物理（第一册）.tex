@@ -24497,8 +24497,47 @@ F\Delta t = \Delta(mv) \tag{12.6}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0391-02.png}}
-\caption{(b)}
+% fig-alt: （b）运动员戴帽后仰缓冲，双手顺球后收；身后与肘后有后撤弧线，球带轨迹飞来。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % head leaning back slightly
+  \draw[line width=0.7pt,fill=white] (-0.05,3.48) circle[radius=0.30];
+  \fill[black] (-0.05,3.48) ++(200:0.30) arc[start angle=200,end angle=-20,radius=0.30] -- cycle;
+  \draw[line width=0.8pt] (-0.32,3.58) -- (0.40,3.56);
+  \fill (-0.15,3.46) circle[radius=0.028];
+  \fill (0.05,3.46) circle[radius=0.028];
+  % torso
+  \draw[line width=0.65pt] (-0.22,3.18) -- (-0.55,2.48) -- (-0.52,1.68) -- (0.42,1.68) -- (0.38,2.50) -- (0.18,3.18);
+  \draw[line width=0.55pt] (-0.52,1.82) -- (0.42,1.82);
+  \fill[black!80] (-0.48,1.92) rectangle (0.38,2.08);
+  % arms reaching forward but pulling back (hands closer, elbows back)
+  \draw[line width=0.6pt] (-0.28,2.70) -- (0.35,2.55) -- (0.95,2.72);
+  \draw[line width=0.7pt] (0.22,2.68) -- (0.58,2.42) -- (1.05,2.70);
+  % gloves / hands
+  \draw[line width=0.5pt] (0.95,2.72) .. controls (1.12,2.90) .. (1.22,3.00);
+  \draw[line width=0.5pt] (0.98,2.74) .. controls (1.18,2.82) .. (1.28,2.88);
+  \draw[line width=0.5pt] (1.00,2.70) .. controls (1.18,2.68) .. (1.30,2.72);
+  \draw[line width=0.5pt] (1.05,2.70) .. controls (1.20,2.58) .. (1.26,2.50);
+  % pull-back motion lines near elbows / waist
+  \draw[line width=0.4pt] (-0.02,2.35) -- (-0.42,2.18);
+  \draw[line width=0.4pt] (0.08,2.20) -- (-0.32,2.02);
+  \draw[line width=0.4pt] (0.18,2.05) -- (-0.20,1.88);
+  % body recoil arcs behind back
+  \draw[line width=0.4pt] (-0.70,2.85) .. controls (-0.95,2.55) .. (-0.88,2.20);
+  \draw[line width=0.4pt] (-0.78,2.95) .. controls (-1.08,2.55) .. (-0.98,2.10);
+  % ball near hands with trail from right
+  \fill (1.55,2.78) circle[radius=0.11];
+  \draw[line width=0.55pt] (1.72,2.86) -- (2.45,3.05);
+  \draw[line width=0.45pt] (1.72,2.72) -- (2.40,2.88);
+  \draw[line width=0.45pt] (1.70,2.60) -- (2.35,2.72);
+  % legs crouched
+  \draw[line width=0.7pt] (-0.35,1.68) -- (-0.62,0.55);
+  \draw[line width=0.7pt] (0.28,1.68) -- (0.52,0.55);
+  \fill[black] (-0.88,0.48) -- (-0.38,0.50) -- (-0.36,0.66) -- (-0.90,0.64) -- cycle;
+  \fill[black] (0.35,0.50) -- (0.82,0.48) -- (0.84,0.64) -- (0.38,0.66) -- cycle;
+\end{tikzpicture}%
+}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -24530,14 +24569,68 @@ O。G。8 单位制中的单位。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第392页）}]{assets/physics-1/fig-p0392-01.png}}
-\caption{图示（原PDF第392页）}
+% fig-alt: （a）棒球以$v_1$水平飞向竖直球棒；（b）撞击时球被压扁贴棒。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ---- (a) ----
+  \begin{scope}
+    % bat barrel+handle with hatch
+    \fill[pattern=north east lines,pattern color=black!65]
+      (0.00,2.35) -- (0.42,2.35) -- (0.42,0.55) -- (0.28,0.20) -- (0.14,0.20) -- (0.00,0.55) -- cycle;
+    \draw[line width=0.55pt]
+      (0.00,2.35) -- (0.42,2.35) -- (0.42,0.55) -- (0.28,0.20) -- (0.14,0.20) -- (0.00,0.55) -- cycle;
+    \draw[line width=0.55pt,fill=white] (0.21,0.12) circle[radius=0.10];
+    % round top of barrel
+    \draw[line width=0.55pt] (0.00,2.35) arc[start angle=180,end angle=0,radius=0.21];
+    \fill[pattern=north east lines,pattern color=black!65]
+      (0.00,2.35) arc[start angle=180,end angle=0,radius=0.21] -- cycle;
+    % ball + v1
+    \draw[line width=0.55pt,fill=white] (-0.55,2.05) circle[radius=0.16];
+    \draw[line width=0.6pt,->] (-1.45,2.05) -- (-0.78,2.05);
+    \node[anchor=north] at (-1.10,2.00) {$v_{1}$};
+    \node[anchor=west] at (0.55,1.35) {（a）};
+  \end{scope}
+  % ---- (b) ----
+  \begin{scope}[shift={(0,-2.85)}]
+    \fill[pattern=north east lines,pattern color=black!65]
+      (0.00,2.35) -- (0.42,2.35) -- (0.42,0.55) -- (0.28,0.20) -- (0.14,0.20) -- (0.00,0.55) -- cycle;
+    \draw[line width=0.55pt]
+      (0.00,2.35) -- (0.42,2.35) -- (0.42,0.55) -- (0.28,0.20) -- (0.14,0.20) -- (0.00,0.55) -- cycle;
+    \draw[line width=0.55pt,fill=white] (0.21,0.12) circle[radius=0.10];
+    \draw[line width=0.55pt] (0.00,2.35) arc[start angle=180,end angle=0,radius=0.21];
+    \fill[pattern=north east lines,pattern color=black!65]
+      (0.00,2.35) arc[start angle=180,end angle=0,radius=0.21] -- cycle;
+    % compressed ball against bat
+    \draw[line width=0.55pt,fill=white]
+      (-0.02,2.22) .. controls (-0.38,2.28) and (-0.52,2.12) .. (-0.52,1.95)
+      .. controls (-0.52,1.78) and (-0.38,1.62) .. (-0.02,1.68) -- cycle;
+    \node[anchor=west] at (0.55,1.35) {（b）};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{（a）$v_{1}$飞向球棒；（b）球被压扁}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图12-3}]{assets/physics-1/fig-p0392-02.png}}
-\caption{图12-3}
+% fig-alt: 图12·3：（c）球恢复原形并以$v_2$向左弹离竖直球棒。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \fill[pattern=north east lines,pattern color=black!65]
+    (0.00,2.20) -- (0.38,2.20) -- (0.38,0.45) -- (0.26,0.12) -- (0.12,0.12) -- (0.00,0.45) -- cycle;
+  \draw[line width=0.55pt]
+    (0.00,2.20) -- (0.38,2.20) -- (0.38,0.45) -- (0.26,0.12) -- (0.12,0.12) -- (0.00,0.45) -- cycle;
+  \draw[line width=0.55pt,fill=white] (0.19,0.05) circle[radius=0.09];
+  \draw[line width=0.55pt] (0.00,2.20) arc[start angle=180,end angle=0,radius=0.19];
+  \fill[pattern=north east lines,pattern color=black!65]
+    (0.00,2.20) arc[start angle=180,end angle=0,radius=0.19] -- cycle;
+  \draw[line width=0.55pt,fill=white] (-0.22,1.55) circle[radius=0.15];
+  \draw[line width=0.6pt,->] (-0.42,1.55) -- (-1.25,1.55);
+  \node[anchor=south] at (-0.85,1.58) {$v_{2}$};
+  \node[anchor=west] at (0.52,1.35) {（c）};
+\end{tikzpicture}%
+}
+\caption{图12·3}
 \end{figure}
 
 \emph{图12·3}
@@ -24591,8 +24684,33 @@ F = \frac {- 15}{0.02} \text{牛顿} = - 750 \text{牛顿}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图12-4}]{assets/physics-1/fig-p0393-01.png}}
-\caption{图12-4}
+% fig-alt: 图12·4：夯块标$m$、$G$，中点受力$F$上、$G$下；两侧斜导索；下木桩半埋入地面斜影。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % hammer block
+  \draw[line width=0.65pt] (-0.70,2.10) rectangle (0.70,3.55);
+  \node at (0.28,3.22) {$m$};
+  \node at (-0.28,2.42) {$G$};
+  \fill (0,2.82) circle[radius=0.045];
+  % guides / ropes
+  \draw[line width=0.7pt] (-0.70,2.82) -- (-1.85,3.55);
+  \draw[line width=0.7pt] (0.70,2.82) -- (1.85,3.55);
+  % forces
+  \draw[line width=0.7pt,->] (0,2.82) -- (0,4.15);
+  \node[anchor=west] at (0.08,4.00) {$F$};
+  \draw[line width=0.65pt,->] (0,2.82) -- (0,1.95);
+  % pile
+  \draw[line width=0.55pt] (-0.38,0.15) -- (-0.38,1.55) -- (0.38,1.55) -- (0.38,0.15);
+  \draw[line width=0.45pt] (-0.38,1.55) arc[start angle=180,end angle=0,x radius=0.38,y radius=0.10];
+  \foreach \x in {-0.22,-0.06,0.10,0.26}
+    \draw[line width=0.28pt] (\x,0.25) -- (\x,1.45);
+  % ground
+  \draw[line width=0.6pt] (-2.10,0.55) -- (2.10,0.55);
+  \foreach \x in {-1.90,-1.55,-1.20,-0.85,-0.55,0.55,0.90,1.25,1.60,1.90}
+    \draw[line width=0.28pt] (\x,0.55) -- (\x-0.12,0.38);
+\end{tikzpicture}%
+}
+\caption{图12·4}
 \end{figure}
 
 \emph{图12·4}
@@ -24672,8 +24790,61 @@ F \approx \frac {495}{0.01} \text{牛顿} = 49500 \text{牛顿}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图12-5}]{assets/physics-1/fig-p0394-01.png}}
-\caption{图12-5}
+% fig-alt: 图12·5：（a）桁架吊臂斜伸，钩吊成捆货箱；（b）货箱受$F$上、$G$下，右竖箭$mv_1=0$至$mv_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ---- (a) lattice boom ----
+  \begin{scope}[shift={(0,0)}]
+    % boom outline
+    \coordinate (A) at (3.20,0.20);
+    \coordinate (B) at (0.35,2.95);
+    \coordinate (C) at (0.70,3.25);
+    \coordinate (D) at (3.55,0.50);
+    \draw[line width=0.5pt] (A) -- (B) -- (C) -- (D) -- cycle;
+    % lattice
+    \foreach \t in {0.15,0.30,0.45,0.60,0.75}
+      \draw[line width=0.35pt] ($(A)!\t!(B)$) -- ($(D)!\t!(C)$);
+    \foreach \t in {0.12,0.28,0.44,0.60,0.76}
+      \draw[line width=0.32pt] ($(A)!\t!(B)$) -- ($(D)!{\t+0.12}!(C)$);
+    \foreach \t in {0.20,0.36,0.52,0.68}
+      \draw[line width=0.32pt] ($(D)!\t!(C)$) -- ($(A)!{\t+0.12}!(B)$);
+    % tip pulley + cable
+    \draw[line width=0.55pt,fill=white] (0.45,3.20) circle[radius=0.10];
+    \draw[line width=0.55pt] (0.45,3.10) -- (0.45,1.85);
+    \draw[line width=0.5pt] (0.45,1.85) -- (0.10,1.55);
+    \draw[line width=0.5pt] (0.45,1.85) -- (0.80,1.55);
+    % load crates
+    \draw[line width=0.5pt] (-0.05,0.85) rectangle (0.95,1.55);
+    \draw[line width=0.35pt] (0.28,0.85) -- (0.28,1.55);
+    \draw[line width=0.35pt] (0.62,0.85) -- (0.62,1.55);
+    \draw[line width=0.35pt] (-0.05,1.20) -- (0.95,1.20);
+    \node[anchor=north] at (1.70,0.05) {（a）};
+  \end{scope}
+  % ---- (b) force diagram ----
+  \begin{scope}[shift={(5.10,0.40)}]
+    \draw[line width=0.55pt] (-0.70,0.70) rectangle (0.70,1.55);
+    \draw[line width=0.35pt] (-0.23,0.70) -- (-0.23,1.55);
+    \draw[line width=0.35pt] (0.23,0.70) -- (0.23,1.55);
+    \draw[line width=0.35pt] (-0.70,1.12) -- (0.70,1.12);
+    % sling
+    \draw[line width=0.55pt] (-0.55,1.55) -- (0.00,2.15);
+    \draw[line width=0.55pt] (0.55,1.55) -- (0.00,2.15);
+    \fill (0.00,2.15) circle[radius=0.04];
+    % F up
+    \draw[line width=0.7pt,->] (0.00,2.15) -- (0.00,3.45);
+    \node[anchor=west] at (0.08,3.30) {$F$};
+    % G down
+    \draw[line width=0.65pt,->] (0.00,1.12) -- (0.00,0.15);
+    \node[anchor=west] at (0.10,0.35) {$G$};
+    % momentum arrow
+    \draw[line width=0.6pt,->] (1.45,0.55) -- (1.45,2.55);
+    \node[anchor=west] at (1.55,0.55) {$mv_{1}=0$};
+    \node[anchor=west] at (1.55,2.55) {$mv_{2}$};
+    \node[anchor=north] at (0.35,-0.15) {（b）};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图12·5}
 \end{figure}
 
 \emph{图12·5}
@@ -24727,8 +24898,31 @@ F=\left(\frac{3.64\times10^{5}}{0.2}+140\times10^{3}\times9.8\right)\text{牛顿
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 12.6}]{assets/physics-1/fig-p0395-01.png}}
-\caption{图 12.6}
+% fig-alt: 图12·6：固定木板立于斜影地面；左子弹$m$、$v_1$射入，右$m$、$v_2$穿出；板内虚线弹道。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ground
+  \draw[line width=0.6pt] (-2.40,0.00) -- (2.40,0.00);
+  \foreach \x in {-2.20,-1.85,-1.50,-1.15,-0.80,-0.45,0.45,0.80,1.15,1.50,1.85,2.20}
+    \draw[line width=0.28pt] (\x,0.00) -- (\x-0.14,-0.18);
+  % board
+  \draw[line width=0.6pt] (-0.45,0.00) rectangle (0.45,2.20);
+  % tunnel dashed
+  \draw[line width=0.4pt,dash pattern=on 1.6pt off 1.1pt] (-0.45,1.05) -- (0.45,1.05);
+  \draw[line width=0.4pt,dash pattern=on 1.6pt off 1.1pt] (-0.45,1.25) -- (0.45,1.25);
+  % bullet left
+  \draw[line width=0.55pt,fill=white] (-1.55,1.08) -- (-1.05,1.08) -- (-0.92,1.15) -- (-1.05,1.22) -- (-1.55,1.22) -- cycle;
+  \draw[line width=0.55pt,->] (-1.95,1.15) -- (-1.62,1.15);
+  \node[anchor=south] at (-1.30,1.28) {$v_{1}$};
+  \node[anchor=north] at (-1.30,1.00) {$m$};
+  % bullet right
+  \draw[line width=0.55pt,fill=white] (0.95,1.08) -- (1.45,1.08) -- (1.58,1.15) -- (1.45,1.22) -- (0.95,1.22) -- cycle;
+  \draw[line width=0.55pt,->] (1.65,1.15) -- (1.98,1.15);
+  \node[anchor=south] at (1.25,1.28) {$v_{2}$};
+  \node[anchor=north] at (1.25,1.00) {$m$};
+\end{tikzpicture}%
+}
+\caption{图12·6}
 \end{figure}
 
 \emph{图12·6}
@@ -24760,16 +24954,45 @@ F=\frac{-0.96}{2\times10^{-5}}\text{牛顿} =-48000\text{牛顿(向左)}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-1/fig-p0396-01.png}}
-\caption{(2)}
+% fig-alt: （a）水平钢板斜影；质点$m$；竖点划法线；斜向入射$v_1$与法线夹角$\alpha_1$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.65pt] (-1.90,0.00) -- (1.90,0.00);
+  \foreach \x in {-1.70,-1.35,-1.00,-0.65,-0.30,0.30,0.65,1.00,1.35,1.70}
+    \draw[line width=0.28pt] (\x,0.00) -- (\x-0.14,-0.18);
+  \fill (0,0.00) circle[radius=0.06];
+  \node[anchor=west] at (0.12,0.18) {$m$};
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.1pt on 0.5pt off 1.1pt] (0,0.00) -- (0,2.60);
+  % α1=60° from vertical → incident from upper-left at 60° to vertical
+  \draw[line width=0.6pt,->] ({-2.20*sin(60)},{2.20*cos(60)}) -- (0.00,0.08);
+  \node[anchor=south east] at ({-1.15*sin(60)},{1.15*cos(60)}) {$v_{1}$};
+  \draw[line width=0.4pt] (0,0.55) arc[start angle=90,end angle=90+60,radius=0.55];
+  \node at ({-0.78*sin(30)},{0.78*cos(30)}) {$\alpha_{1}$};
+\end{tikzpicture}%
+}
+\caption{（a）}
 \end{figure}
 
 \emph{（2）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0396-02.png}}
-\caption{(b)}
+% fig-alt: （b）水平钢板斜影；质点$m$；竖点划法线；斜向弹出$v_2$与法线夹角$\alpha_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.65pt] (-1.90,0.00) -- (1.90,0.00);
+  \foreach \x in {-1.70,-1.35,-1.00,-0.65,-0.30,0.30,0.65,1.00,1.35,1.70}
+    \draw[line width=0.28pt] (\x,0.00) -- (\x-0.14,-0.18);
+  \fill (0,0.00) circle[radius=0.06];
+  \node[anchor=east] at (-0.12,0.18) {$m$};
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.1pt on 0.5pt off 1.1pt] (0,0.00) -- (0,2.60);
+  \draw[line width=0.6pt,->] (0.00,0.08) -- ({2.20*sin(60)},{2.20*cos(60)});
+  \node[anchor=south west] at ({1.20*sin(60)},{1.20*cos(60)}) {$v_{2}$};
+  \draw[line width=0.4pt] (0,0.55) arc[start angle=90,end angle=30,radius=0.55];
+  \node at ({0.78*sin(30)},{0.78*cos(30)}) {$\alpha_{2}$};
+\end{tikzpicture}%
+}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
