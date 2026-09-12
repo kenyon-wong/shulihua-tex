@@ -18110,8 +18110,25 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-2/fig-p0198-02.png}}
-\caption{(第6题)}
+\fitfig{%
+% fig-alt: （第6题）梯形ABCD（AD上∥BC下），对角AC、BD交于O
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (4.20,0);
+  \coordinate (A) at (0.95,2.05);
+  \coordinate (D) at (3.05,2.05);
+  \coordinate (O) at (intersection of A--C and B--D);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (D);
+  \node[anchor=south east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \begin{quote}
@@ -18120,8 +18137,30 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0198-03.png}}
-\caption{(第7题)}
+\fitfig{%
+% fig-alt: （第7题）AE∥BC；A、D、E共线于上底，B、C于下底；连AB/AC、DB/DC、EB/EC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (1.10,0);
+  \coordinate (C) at (3.10,0);
+  \coordinate (A) at (0,2.05);
+  \coordinate (D) at (2.10,2.05);
+  \coordinate (E) at (4.20,2.05);
+  \draw[line width=0.75pt] (A) -- (E);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (D) -- (B);
+  \draw[line width=0.75pt] (D) -- (C);
+  \draw[line width=0.75pt] (E) -- (B);
+  \draw[line width=0.75pt] (E) -- (C);
+  \node[anchor=south east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (E) {$E$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
 
 \begin{quote}
@@ -18168,8 +18207,27 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0199-01.png}}
-\caption{(第9题)}
+\fitfig{%
+% fig-alt: （第9题）△ABC；AB上AD=⅓AB取D，BC上BE=⅓BC取E，CA上CF=⅓CA取F；连DEF与AE
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (4.60,0);
+  \coordinate (A) at (1.85,3.35);
+  \coordinate (D) at ($(A)!{1/3}!(B)$);
+  \coordinate (E) at ($(B)!{1/3}!(C)$);
+  \coordinate (F) at ($(C)!{1/3}!(A)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (D) -- (E) -- (F) -- cycle;
+  \draw[line width=0.75pt] (A) -- (E);
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=east,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=west,inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第9题）}
 \end{figure}
 
 \begin{quote}
@@ -18178,8 +18236,46 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0199-02.png}}
-\caption{(第10题)}
+\fitfig{%
+% fig-alt: （第10题）□ABCD（D左下A右下C左上B右上）；E在AB上，CE延长交DA延长于F；连DE、BF；虚线AC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (D) at (0,0);
+  \coordinate (A) at (3.20,0);
+  \coordinate (F) at (4.70,0);
+  \coordinate (C) at (0.55,2.35);
+  \coordinate (B) at (3.75,2.35);
+  % E = AB ∩ CF; AB: A+(B-A)s, CF: C+(F-C)t
+  \pgfmathsetmacro{\abx}{3.75-3.20}
+  \pgfmathsetmacro{\aby}{2.35-0}
+  \pgfmathsetmacro{\cfx}{4.70-0.55}
+  \pgfmathsetmacro{\cfy}{0-2.35}
+  \pgfmathsetmacro{\acx}{0.55-3.20}
+  \pgfmathsetmacro{\acy}{2.35-0}
+  % A + s(B-A) = C + t(F-C)
+  % 3.20 + s*0.55 = 0.55 + t*4.15
+  % 0 + s*2.35 = 2.35 + t*(-2.35)
+  % from y: s*2.35 = 2.35 - t*2.35 => s = 1 - t
+  % x: 3.20 + (1-t)*0.55 = 0.55 + t*4.15
+  % 3.20 + 0.55 - 0.55 t = 0.55 + 4.15 t
+  % 3.75 = 0.55 + 4.70 t => 3.20 = 4.70 t => t = 3.20/4.70
+  \pgfmathsetmacro{\tt}{3.20/4.70}
+  \pgfmathsetmacro{\ss}{1-\tt}
+  \coordinate (E) at ({3.20+\ss*\abx},{\ss*\aby});
+  \draw[line width=0.75pt] (D) -- (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (F);
+  \draw[line width=0.75pt] (C) -- (F);
+  \draw[line width=0.75pt] (B) -- (F);
+  \draw[line width=0.75pt] (D) -- (E);
+  \draw[dashed,line width=0.6pt] (A) -- (C);
+  \node[anchor=north,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=west,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north west,inner sep=1pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第10题）}
 \end{figure}
 
 \begin{quote}
@@ -18227,8 +18323,36 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0199-03.png}}
-\caption{(第13题)}
+\fitfig{%
+% fig-alt: （第13题）□ABCD；E在AB、F在BC且EF∥AC；实线AC、DE、DF、EF；虚线AF、CE
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\b{4.40}
+  \def\dx{1.15}
+  \def\dy{2.45}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (\b,0);
+  \coordinate (D) at (\dx,\dy);
+  \coordinate (C) at ({\b+\dx},\dy);
+  \def\e{2.65}
+  \coordinate (E) at (\e,0);
+  \pgfmathsetmacro{\tt}{(\b-\e)/\b}
+  \coordinate (F) at ({\b+\tt*\dx},{\tt*\dy});
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (D) -- (E);
+  \draw[line width=0.75pt] (D) -- (F);
+  \draw[line width=0.75pt] (E) -- (F);
+  \draw[dashed,line width=0.6pt] (A) -- (F);
+  \draw[dashed,line width=0.6pt] (C) -- (E);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=west,inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第13题）}
 \end{figure}
 
 \begin{quote}
@@ -18237,8 +18361,89 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0199-04.png}}
-\caption{(第15题)}
+\fitfig{%
+% fig-alt: （第15题）△ABC旁切圆Oₐ（切BC及AB、AC延长线）；连AOₐ/BOₐ/COₐ；虚线半径至三切点（直角方）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\ang{22}
+  \def\R{1.15}
+  \coordinate (A) at (0,0);
+  \coordinate (Oa) at ({2.55},0);
+  % rays at ±ang from horizontal through A-Oa
+  \pgfmathsetmacro{\ux}{cos(\ang)}
+  \pgfmathsetmacro{\uy}{sin(\ang)}
+  % tangency on upper ray: from Oa drop perp to upper ray
+  % upper ray direction (ux,uy); normal pointing toward Oa side
+  % dist from Oa to ray = R; ray through A along (ux,uy)
+  % foot Tu = A + t*(ux,uy) where (Oa-A)·perp = ...
+  % signed dist from Oa to line A+ t d: ((Oa-A) × d) /|d| in 2d
+  % for upper ray d=(ux,uy), left normal (-uy,ux)
+  % Oa is on bisector, dist to each ray = R
+  \pgfmathsetmacro{\oa}{2.55}
+  \pgfmathsetmacro{\Rchk}{\oa*sin(\ang)}
+  % use actual R = oa*sin(ang)
+  \pgfmathsetmacro{\Rr}{\oa*sin(\ang)}
+  % tangency upper: Oa + Rr * inward unit normal to upper ray
+  % upper ray normal pointing down toward bisector: (uy, -ux)? 
+  % direction of upper ray (ux,uy); rotate 90 CW toward bisector (below ray): (uy, -ux)
+  \coordinate (Tu) at ({\oa + \Rr*sin(\ang)}, {\Rr*cos(\ang)});
+  % Wait: foot from Oa to upper ray
+  % projection: t = (Oa-A)·d = oa*ux, foot = t*d
+  \pgfmathsetmacro{\tu}{\oa*cos(\ang)}
+  \coordinate (Tu) at ({\tu*cos(\ang)},{\tu*sin(\ang)});
+  \pgfmathsetmacro{\tl}{\oa*cos(\ang)}
+  \coordinate (Tl) at ({\tl*cos(\ang)},{-\tl*sin(\ang)});
+  % BC is the third tangent, on the side toward A relative to Oa? 
+  % For excircle opposite A, BC is between A and Oa, tangent "from the left" of Oa
+  % tangent line perpendicular to bisector: x = oa - Rr
+  \pgfmathsetmacro{\bx}{\oa-\Rr}
+  % B = intersection of upper ray with x=bx
+  % t*ux = bx => t = bx/ux
+  \pgfmathsetmacro{\tb}{\bx/cos(\ang)}
+  \coordinate (B) at ({\tb*cos(\ang)},{\tb*sin(\ang)});
+  \coordinate (C) at ({\tb*cos(\ang)},{-\tb*sin(\ang)});
+  \coordinate (Tb) at (\bx,0);
+  % extend rays past tangency
+  \pgfmathsetmacro{\tmax}{\tu+0.85}
+  \coordinate (Ru) at ({\tmax*cos(\ang)},{\tmax*sin(\ang)});
+  \coordinate (Rl) at ({\tmax*cos(\ang)},{-\tmax*sin(\ang)});
+  \draw[line width=0.75pt] (A) -- (Ru);
+  \draw[line width=0.75pt] (A) -- (Rl);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (Oa) circle[radius=\Rr];
+  \draw[line width=0.75pt] (A) -- (Oa);
+  \draw[line width=0.75pt] (B) -- (Oa);
+  \draw[line width=0.75pt] (C) -- (Oa);
+  \draw[dashed,line width=0.6pt] (Oa) -- (Tu);
+  \draw[dashed,line width=0.6pt] (Oa) -- (Tl);
+  \draw[dashed,line width=0.6pt] (Oa) -- (Tb);
+  % right angles at tangency points
+  \pgfmathsetmacro{\nux}{sin(\ang)}
+  \pgfmathsetmacro{\nuy}{-cos(\ang)}
+  % at Tu, radius direction from Tu to Oa
+  \pgfmathsetmacro{\rdx}{\oa-\tu*cos(\ang)}
+  \pgfmathsetmacro{\rdy}{0-\tu*sin(\ang)}
+  \pgfmathsetmacro{\rdl}{sqrt(\rdx*\rdx+\rdy*\rdy)}
+  \pgfmathsetmacro{\rux}{\rdx/\rdl}
+  \pgfmathsetmacro{\ruy}{\rdy/\rdl}
+  \pgfmathsetmacro{\tux}{cos(\ang)}
+  \pgfmathsetmacro{\tuy}{sin(\ang)}
+  \draw[line width=0.55pt] (Tu) -- ++({0.14*\rux},{0.14*\ruy}) -- ++({0.14*\tux},{0.14*\tuy}) -- ++({-0.14*\rux},{-0.14*\ruy});
+  \pgfmathsetmacro{\rdx}{\oa-\tl*cos(\ang)}
+  \pgfmathsetmacro{\rdy}{0-(-\tl*sin(\ang))}
+  \pgfmathsetmacro{\rdl}{sqrt(\rdx*\rdx+\rdy*\rdy)}
+  \pgfmathsetmacro{\rlx}{\rdx/\rdl}
+  \pgfmathsetmacro{\rly}{\rdy/\rdl}
+  \pgfmathsetmacro{\tlv}{cos(\ang)}
+  \pgfmathsetmacro{\tly}{-sin(\ang)}
+  \draw[line width=0.55pt] (Tl) -- ++({0.14*\rlx},{0.14*\rly}) -- ++({0.14*\tlv},{0.14*\tly}) -- ++({-0.14*\rlx},{-0.14*\rly});
+  \draw[line width=0.55pt] (Tb) -- ++(0.14,0) -- ++(0,0.14) -- ++(-0.14,0);
+  \node[anchor=east,inner sep=2pt] at (A) {$A$};
+  \node[anchor=south east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=west,inner sep=2pt] at (Oa) {$O_a$};
+\end{tikzpicture}%
+}
+\caption{（第15题）}
 \end{figure}
 
 \begin{quote}
@@ -18270,8 +18475,29 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第 16 题)}]{assets/plane-geometry-2/fig-p0200-01.png}}
-\caption{(第 16 题)}
+\fitfig{%
+% fig-alt: （第16题）菱形ABCD（∠A锐角）；对角AC、BD；高DE⊥AB于E（直角方）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\side{3.60}
+  \def\ang{30}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (\side,0);
+  \coordinate (D) at ({\side*cos(\ang)},{\side*sin(\ang)});
+  \coordinate (C) at ({(\side)+(\side*cos(\ang))},{\side*sin(\ang)});
+  \coordinate (E) at ({\side*cos(\ang)},0);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (D) -- (E);
+  \draw[line width=0.55pt] (E) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{（第16题）}
 \end{figure}
 
 \begin{quote}
@@ -18280,8 +18506,31 @@ s - c = 22 - 20 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/plane-geometry-2/fig-p0200-02.png}}
-\caption{(第19题)}
+\fitfig{%
+% fig-alt: （第19题）△ABC（AB底）；O在AB上，⊙O切AC于D、切BC于E；实线半径OD/OE（直角方）；虚线CO
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.92,0);
+  \coordinate (C) at (2.52,3.36);
+  \coordinate (O) at (2.10,0);
+  \coordinate (D) at (0.756,1.008);
+  \coordinate (E) at (3.651,0.646);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (O) circle[radius=1.68];
+  \draw[line width=0.75pt] (O) -- (D);
+  \draw[line width=0.75pt] (O) -- (E);
+  \draw[dashed,line width=0.6pt] (C) -- (O);
+  \draw[line width=0.55pt] (D) -- ++(0.112,-0.084) -- ++(0.084,0.112) -- ++(-0.112,0.084);
+  \draw[line width=0.55pt] (E) -- ++(-0.129,-0.054) -- ++(-0.054,0.129) -- ++(0.129,0.054);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{（第19题）}
 \end{figure}
 
 \begin{quote}
