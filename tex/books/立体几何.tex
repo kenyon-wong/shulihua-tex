@@ -21669,22 +21669,119 @@ m=5 时， 得 n=3.
 a，取棱 AB 的中点 M，连结 PM、QM，则 \(PM \perp AB, QM \perp AB\)。所以
 \(\angle PMQ\) 是二面角 AB 的平面角。
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·87}]{assets/solid-geometry/fig-p0202-03.png}}
+% fig-alt: 图2·87：五种正多面体展开图（含粘舌）。上排正四面体、正六面体、正八面体；下排正十二面体、正二十面体。外轮廓实线，折痕虚线。扫描无字母
+\begin{tikzpicture}[line cap=round,line join=round]
+  % tetrahedron net (top-left)
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (1.00,8.10) -- (0.25,6.80) -- (1.75,6.80) -- cycle;
+  \draw[line width=0.75pt] (1.00,9.40) -- (-0.50,6.80) -- (2.50,6.80) -- cycle;
+  \draw[line width=0.55pt] (-0.50,6.80) -- (-0.85,6.50) -- (-0.10,6.30) -- (0.25,6.80);
+  % cube net cross (top-center)
+  \draw[line width=0.75pt] (4.00,9.40) rectangle (5.00,10.40);
+  \draw[line width=0.75pt] (4.00,8.40) rectangle (5.00,9.40);
+  \draw[line width=0.75pt] (4.00,7.40) rectangle (5.00,8.40);
+  \draw[line width=0.75pt] (3.00,8.40) rectangle (4.00,9.40);
+  \draw[line width=0.75pt] (5.00,8.40) rectangle (6.00,9.40);
+  \draw[line width=0.75pt] (6.00,8.40) rectangle (7.00,9.40);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (4.00,9.40) -- (5.00,9.40);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (4.00,8.40) -- (5.00,8.40);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (4.00,8.40) -- (4.00,9.40);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (5.00,8.40) -- (5.00,9.40);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (5.00,8.40) -- (6.00,8.40);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (6.00,8.40) -- (6.00,9.40);
+  \draw[line width=0.55pt] (4.25,10.40) -- (4.40,10.62) -- (4.80,10.62) -- (5.00,10.40);
+  \draw[line width=0.55pt] (4.25,7.40) -- (4.40,7.18) -- (4.80,7.18) -- (5.00,7.40);
+  \draw[line width=0.55pt] (7.00,8.65) -- (7.22,8.80) -- (7.22,9.20) -- (7.00,9.40);
+  % octahedron net (top-right)
+  \draw[line width=0.75pt] (8.00,9.20) -- (8.90,9.20) -- (8.45,9.98) -- cycle;
+  \draw[line width=0.75pt] (8.45,9.98) -- (9.35,9.98) -- (8.90,9.20) -- cycle;
+  \draw[line width=0.75pt] (8.90,9.20) -- (9.80,9.20) -- (9.35,9.98) -- cycle;
+  \draw[line width=0.75pt] (9.35,9.98) -- (10.25,9.98) -- (9.80,9.20) -- cycle;
+  \draw[line width=0.75pt] (8.45,8.42) -- (9.35,8.42) -- (8.90,9.20) -- cycle;
+  \draw[line width=0.75pt] (8.90,9.20) -- (9.80,9.20) -- (9.35,8.42) -- cycle;
+  \draw[line width=0.75pt] (9.35,8.42) -- (10.25,8.42) -- (9.80,9.20) -- cycle;
+  \draw[line width=0.75pt] (9.80,9.20) -- (10.70,9.20) -- (10.25,8.42) -- cycle;
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (8.00,9.20) -- (10.70,9.20);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (8.45,9.98) -- (10.25,9.98);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (8.45,8.42) -- (10.25,8.42);
+  \draw[line width=0.55pt] (8.25,9.98) -- (8.35,10.20) -- (8.65,10.20) -- (8.45,9.98);
+  \draw[line width=0.55pt] (10.05,8.42) -- (10.15,8.20) -- (10.45,8.20) -- (10.25,8.42);
+  % dodecahedron two flowers (bottom-left)
+  \foreach \cx/\cy in {1.60/3.40, 5.40/3.40} {
+    \foreach \k in {0,1,2,3,4} {
+      \pgfmathsetmacro{\a}{90+\k*72}
+      \pgfmathsetmacro{\b}{90+(\k+1)*72}
+      \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] ({\cx+0.78*cos(\a)},{\cy+0.78*sin(\a)}) -- ({\cx+0.78*cos(\b)},{\cy+0.78*sin(\b)});
+    }
+    \foreach \k in {0,1,2,3,4} {
+      \pgfmathsetmacro{\a}{90+\k*72}
+      \pgfmathsetmacro{\b}{90+(\k+1)*72}
+      \pgfmathsetmacro{\mx}{\cx+0.78*(cos(\a)+cos(\b))/2}
+      \pgfmathsetmacro{\my}{\cy+0.78*(sin(\a)+sin(\b))/2}
+      \pgfmathsetmacro{\ang}{atan2(\my-\cy,\mx-\cx)}
+      \pgfmathsetmacro{\qx}{\mx+1.20*cos(\ang)}
+      \pgfmathsetmacro{\qy}{\my+1.20*sin(\ang)}
+      \pgfmathsetmacro{\rx}{\mx+0.98*cos(\ang-32)}
+      \pgfmathsetmacro{\ry}{\my+0.98*sin(\ang-32)}
+      \pgfmathsetmacro{\sx}{\mx+0.98*cos(\ang+32)}
+      \pgfmathsetmacro{\sy}{\my+0.98*sin(\ang+32)}
+      \draw[line width=0.75pt] ({\cx+0.78*cos(\a)},{\cy+0.78*sin(\a)}) -- (\rx,\ry) -- (\qx,\qy) -- (\sx,\sy) -- ({\cx+0.78*cos(\b)},{\cy+0.78*sin(\b)});
+    }
+  }
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (2.95,3.40) -- (4.05,3.40);
+  % icosahedron strip (bottom-right)
+  \foreach \i in {0,1,2,3,4} {
+    \pgfmathsetmacro{\x}{7.10+\i*0.72}
+    \draw[line width=0.75pt] (\x,3.20) -- ({\x+0.72},3.20) -- ({\x+0.36},3.82) -- cycle;
+    \draw[line width=0.75pt] ({\x+0.36},3.82) -- ({\x+1.08},3.82) -- ({\x+0.72},3.20) -- cycle;
+    \draw[line width=0.75pt] ({\x+0.36},3.82) -- ({\x+0.72},4.44) -- ({\x+1.08},3.82);
+    \draw[line width=0.75pt] ({\x+0.36},3.20) -- ({\x+0.72},2.58) -- ({\x+1.08},3.20);
+    \draw[line width=0.75pt] ({\x+0.72},2.58) -- ({\x+1.08},1.96) -- ({\x+1.44},2.58);
+  }
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (7.10,3.20) -- (11.05,3.20);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (7.46,3.82) -- (11.05,3.82);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (7.46,2.58) -- (11.05,2.58);
+\end{tikzpicture}
+}
 \caption{图2·87}
 \end{figure}
-
-\emph{图2·87}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-88}]{assets/solid-geometry/fig-p0202-04.png}}
-\caption{图2-88}
+\fitfig{%
+% fig-alt: 图2·88：正二十面体相邻面APB与ABQ。M为AB中点，PM、QM；PQ为对角面五边形对角线；MH⊥PQ，∠QMH=φ。扫描有A、B、P、Q、C、D、M、H、φ
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.70,3.20);
+  \coordinate (B) at (1.70,0.20);
+  \coordinate (M) at (1.70,1.95);
+  \coordinate (P) at (0.15,1.35);
+  \coordinate (Q) at (3.25,1.35);
+  \coordinate (H) at (1.70,1.35);
+  \coordinate (D) at (0.75,2.15);
+  \coordinate (C) at (2.65,2.15);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (P) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Q) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (P) -- (Q);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (M) -- (H);
+  \draw[line width=0.85pt] (A) -- (P) -- (B) -- (Q) -- cycle;
+  \draw[line width=0.85pt] (A) -- (B);
+  \draw[line width=0.85pt] (P) -- (M) -- (Q);
+  \draw[line width=0.55pt] (H) ++(0.14,0) -- ++(0,0.14) -- ++(-0.14,0);
+  \draw[line width=0.55pt] (M) ++(0.22,-0.05) arc[start angle=-12,end angle=-72,radius=0.28];
+  \node[anchor=south,inner sep=0.06pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.06pt] at (B) {$B$};
+  \node[anchor=east,inner sep=0.06pt] at (P) {$P$};
+  \node[anchor=west,inner sep=0.06pt] at (Q) {$Q$};
+  \node[anchor=east,inner sep=0.05pt] at (M) {$M$};
+  \node[anchor=north west,inner sep=0.04pt] at (H) {$H$};
+  \node[anchor=south east,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=0.04pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.10pt] at (2.08,1.72) {$\varphi$};
+\end{tikzpicture}
+}
+\caption{图2·88}
 \end{figure}
-
-\emph{图2·88}
-
 连结 PQ， PQ 是对角面正五边形 PBQCD 的对角线。 平面几何中边长为 a
 的正五边形的对角线长 \(\frac{a(\sqrt{5}+1)}{2}\) . 自点 M 在平面 MPQ
 内作 \(MH \perp PQ\)，并设 \(\angle QMH = \varphi\)，则在直角三角形 MHQ
@@ -21712,12 +21809,46 @@ P 的中心 M， 作这个平面 P 的垂线与二面角 \(AB\) 的分角面相�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-89}]{assets/solid-geometry/fig-p0203-01.png}}
-\caption{图2-89}
+\fitfig{%
+% fig-alt: 图2·89：正十二面体相邻两面。右面正五边形ABCDE中心M1，左面P中心M；公共棱AB中点H；中心O；OM、OM1、OH虚线，MH、M1H实线。扫描有P、A、B、C、D、E、M、M1、H、O
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.55,2.95);
+  \coordinate (B) at (1.35,1.15);
+  \coordinate (H) at (1.45,2.05);
+  \coordinate (C) at (2.55,0.85);
+  \coordinate (D) at (3.15,1.75);
+  \coordinate (E) at (2.55,2.75);
+  \coordinate (P) at (0.15,2.35);
+  \coordinate (Pl) at (0.25,1.25);
+  \coordinate (M) at (0.85,2.00);
+  \coordinate (M1) at (2.20,1.90);
+  \coordinate (O) at (1.55,0.25);
+  % dashed to center
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (M);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (M1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (H);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (B);
+  % left face (partial pentagon P)
+  \draw[line width=0.85pt] (A) -- (P) -- (Pl) -- (B);
+  \draw[line width=0.85pt] (A) -- (B);
+  % right pentagon ABCDE
+  \draw[line width=0.85pt] (A) -- (E) -- (D) -- (C) -- (B);
+  % face centers to H
+  \draw[line width=0.85pt] (M) -- (H) -- (M1);
+  \node[anchor=south,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=0.04pt] at (B) {$B$};
+  \node[anchor=north,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=0.04pt] at (E) {$E$};
+  \node[anchor=south east,inner sep=0.05pt] at (P) {$P$};
+  \node[anchor=east,inner sep=0.05pt] at (M) {$M$};
+  \node[anchor=west,inner sep=0.05pt] at (M1) {$M_{1}$};
+  \node[anchor=west,inner sep=0.04pt] at (H) {$H$};
+  \node[anchor=north,inner sep=0.05pt] at (O) {$O$};
+\end{tikzpicture}
+}
+\caption{图2·89}
 \end{figure}
-
-\emph{图2·89}
-
 连结 \(OH\)，在直角三角形 \(HMO\) 及 \(HM_{1}O\) 中，
 
 \[
@@ -21749,7 +21880,7 @@ H O = H O\text{，} \angle M H O = \angle M _ {1} H O\text{，}
 \subsubsection{例 1}
 
 分别以正四面体的高和棱为一边作出两个正方形，求证这两个正方形面积的比为
-2：8.
+2：3.
 
 \textbf{［证］} 设正四面体 \(ABCD\) 的棱长为 \(a, AO\) 垂直平面 \(BCD\)
 （图2·90）。
@@ -21764,12 +21895,36 @@ H O = H O\text{，} \angle M H O = \angle M _ {1} H O\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-90}]{assets/solid-geometry/fig-p0204-01.png}}
-\caption{图2-90}
+\fitfig{%
+% fig-alt: 图2·90：正四面体ABCD，高AO⊥底面BCD，O为底心；连BO等。前棱实线，底后棱BD及高、底心连线虚线；直角记号在O。扫描有A–D、O
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.55,3.20);
+  \coordinate (D) at (0.15,1.05);
+  \coordinate (B) at (3.05,1.00);
+  \coordinate (C) at (1.35,0.15);
+  \coordinate (O) at (1.55,0.85);
+  % hidden base edge and altitude / radii
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (O);
+  % visible
+  \draw[line width=0.85pt] (A) -- (D);
+  \draw[line width=0.85pt] (A) -- (C);
+  \draw[line width=0.85pt] (A) -- (B);
+  \draw[line width=0.85pt] (D) -- (C) -- (B);
+  % right angle at O (AO ⊥ BO)
+  \draw[line width=0.55pt] (O) ++(0.00,0.16) -- ++(0.16,0.00) -- ++(0.00,-0.16);
+  \node[anchor=south,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=north,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+\end{tikzpicture}
+}
+\caption{图2·90}
 \end{figure}
-
-\emph{图2·90}
-
 \[
 \left(\frac {a \sqrt {6}}{3}\right) ^ {2} = \frac {2 a ^ {2}}{3}\text{；}
 \]
@@ -21781,7 +21936,7 @@ H O = H O\text{，} \angle M H O = \angle M _ {1} H O\text{，}
 
 正八面体的棱长为 a，求它的两个相对平面间的距离。
 
-\textbf{［解］} 在正八面体中，\(\triangle AOD\) 及 \(\triangle BEF\)
+\textbf{［解］} 在正八面体中，\(\triangle ACD\) 及 \(\triangle BEF\)
 为相对的两个平面（图2·91）。
 
 在平面 BODE 内， 自对角线的交点 O作 \(OM \perp CD\)， 连结 \(AM\).
@@ -21789,12 +21944,47 @@ H O = H O\text{，} \angle M H O = \angle M _ {1} H O\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-91}]{assets/solid-geometry/fig-p0204-02.png}}
-\caption{图2-91}
+\fitfig{%
+% fig-alt: 图2·91：正八面体A–CDBE–F，相对面ACD与BEF；赤道BCDE对角线交于O；OM⊥CD，AM，OP⊥AM。前棱实线，后棱与对角线、辅助线虚线。扫描有A–F、O、M、P
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.70,3.25);
+  \coordinate (F) at (1.70,0.15);
+  \coordinate (C) at (0.15,1.70);
+  \coordinate (B) at (3.25,1.70);
+  \coordinate (D) at (1.15,1.15);
+  \coordinate (E) at (2.25,2.25);
+  \coordinate (O) at (1.70,1.70);
+  \coordinate (M) at (0.65,1.42);
+  \coordinate (P) at (1.35,2.35);
+  % hidden octa edges to E and back
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (F) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (F);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (M);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (M);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (P);
+  % visible
+  \draw[line width=0.85pt] (A) -- (C) -- (F) -- (B) -- cycle;
+  \draw[line width=0.85pt] (A) -- (D);
+  \draw[line width=0.85pt] (F) -- (D);
+  \draw[line width=0.85pt] (C) -- (D) -- (B);
+  \node[anchor=south,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.05pt] at (F) {$F$};
+  \node[anchor=east,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=0.04pt] at (E) {$E$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+  \node[anchor=east,inner sep=0.04pt] at (M) {$M$};
+  \node[anchor=east,inner sep=0.04pt] at (P) {$P$};
+\end{tikzpicture}
+}
+\caption{图2·91}
 \end{figure}
-
-\emph{图2·91}
-
 因 \(AO \perp CD, AM \perp CD\)， 所以平面 \(ACD\) 与平面 \(AOM\)
 互相垂直， \(AM\) 为它们的交线。 自点 \(O\) 在 \(\triangle AOM\)
 平面内作 \(OP \perp AM\)， 那么 \(OP\) 垂直平面 \(ACD\)， 所以 \(OP\)
@@ -21818,7 +22008,7 @@ H O = H O\text{，} \angle M H O = \angle M _ {1} H O\text{，}
 因此知这两个相对的平面的距离为 \(\frac{a\sqrt{6}}{3}\).
 
 答：棱长为 \(a\) 的正八面体相对两个平面间的距离为
-\(-\frac{a\sqrt{6}}{3}\)。
+\(\frac{a\sqrt{6}}{3}\)。
 
 \begin{enumerate}
 \item
@@ -21848,12 +22038,26 @@ H O = H O\text{，} \angle M H O = \angle M _ {1} H O\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/solid-geometry/fig-p0205-01.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第3题）：两正四面体共面粘合所得三角双锥。赤道公共三角形斜线填充；外轮廓实线，后棱虚线。扫描无字母
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (T) at (1.55,3.15);
+  \coordinate (S) at (1.55,0.15);
+  \coordinate (L) at (0.10,1.40);
+  \coordinate (R) at (3.00,1.50);
+  \coordinate (Bk) at (1.70,1.85);
+  \fill[pattern=north east lines,pattern color=black!55] (L) -- (R) -- (Bk) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (T) -- (Bk);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (S) -- (Bk);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (L) -- (Bk);
+  \draw[line width=0.85pt] (T) -- (L) -- (S) -- (R) -- cycle;
+  \draw[line width=0.85pt] (T) -- (R);
+  \draw[line width=0.85pt] (L) -- (R);
+  \draw[line width=0.85pt] (R) -- (Bk);
+\end{tikzpicture}
+}
+\caption{（第3题）}
 \end{figure}
-
-\emph{（第3题）}
-
 \begin{enumerate}
 \setcounter{enumi}{5}
 \item
@@ -21881,16 +22085,83 @@ H O = H O\text{，} \angle M H O = \angle M _ {1} H O\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/solid-geometry/fig-p0206-02.png}}
-\caption{(第8题)}
+\fitfig{%
+% fig-alt: （第8题）：正八面体内接立方体，立方体各顶点在八面体棱上。八面体前棱实线、后棱虚线；内接立方体棱皆虚线。扫描无字母
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (U) at (1.70,3.20);
+  \coordinate (D) at (1.70,0.20);
+  \coordinate (L) at (0.15,1.70);
+  \coordinate (R) at (3.25,1.70);
+  \coordinate (F) at (1.15,1.25);
+  \coordinate (B) at (2.25,2.15);
+  % cube vertices on upper/lower lateral edges (ratio ~0.38 from apex)
+  \coordinate (U1) at (0.92,2.55);
+  \coordinate (U2) at (1.45,2.35);
+  \coordinate (U3) at (2.40,2.55);
+  \coordinate (U4) at (1.95,2.75);
+  \coordinate (D1) at (0.92,0.85);
+  \coordinate (D2) at (1.45,1.05);
+  \coordinate (D3) at (2.40,0.85);
+  \coordinate (D4) at (1.95,0.65);
+  % hidden octa
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (U) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (L) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (R) -- (B);
+  % cube (all dashed)
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (U1) -- (U2) -- (U3) -- (U4) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D1) -- (D2) -- (D3) -- (D4) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (U1) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (U2) -- (D2);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (U3) -- (D3);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (U4) -- (D4);
+  % visible octa
+  \draw[line width=0.85pt] (U) -- (L) -- (D) -- (R) -- cycle;
+  \draw[line width=0.85pt] (U) -- (F);
+  \draw[line width=0.85pt] (D) -- (F);
+  \draw[line width=0.85pt] (L) -- (F);
+  \draw[line width=0.85pt] (R) -- (F);
+\end{tikzpicture}
+}
+\caption{（第8题）}
 \end{figure}
-
-\emph{（第8题）}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/solid-geometry/fig-p0206-03.png}}
-\caption{(第9题)}
+\fitfig{%
+% fig-alt: （第9题）：正八面体ABCDEF，过A作AG⊥BC；△ACD斜线填充以示拼上正四面体GACD。前棱实线，后棱与至D虚线。扫描有A–G
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.55,2.55);
+  \coordinate (G) at (1.55,3.25);
+  \coordinate (F) at (1.55,0.15);
+  \coordinate (E) at (0.15,1.55);
+  \coordinate (C) at (3.05,1.55);
+  \coordinate (B) at (1.15,1.05);
+  \coordinate (D) at (2.05,2.05);
+  \fill[pattern=north east lines,pattern color=black!55] (A) -- (C) -- (D) -- cycle;
+  % hidden
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (F) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (E) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (G) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (F);
+  % visible
+  \draw[line width=0.85pt] (G) -- (A);
+  \draw[line width=0.85pt] (G) -- (C);
+  \draw[line width=0.85pt] (A) -- (E) -- (F) -- (C) -- cycle;
+  \draw[line width=0.85pt] (A) -- (B);
+  \draw[line width=0.85pt] (F) -- (B);
+  \draw[line width=0.85pt] (E) -- (B) -- (C);
+  \node[anchor=south,inner sep=0.05pt] at (G) {$G$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=east,inner sep=0.05pt] at (E) {$E$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=north east,inner sep=0.04pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=north,inner sep=0.05pt] at (F) {$F$};
+\end{tikzpicture}
+}
+\caption{（第9题）}
 \end{figure}
 
 \emph{（第9题）}
@@ -21901,7 +22172,7 @@ H O = H O\text{，} \angle M H O = \angle M _ {1} H O\text{，}
   求证正四面体的二面角与正八面体的二面角之间，互为补角。
 \end{enumerate}
 
-［提示：本题可以通过分别求出正四面体和正八面体的两面角而得到证明。也可以采用另一种证法：过正八面体
+［提示：本题可以通过分别求出正四面体和正八面体的二面角而得到证明。也可以采用另一种证法：过正八面体
 \(ABCDEF\) 的一顶点 \(A\)，作 \(AG \perp BC\)。易见 \(\triangle ABC\) 和
 \(\triangle AGC\) 共面，只须证明拼上去多面体 \(GACD\)
 是正四面体就可以了。］
