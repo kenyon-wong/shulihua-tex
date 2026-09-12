@@ -18587,16 +18587,103 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/physics-3/fig-p0257-01.png}}
-\caption{(第16题)}
+\fitfig{%
+% fig-alt: 复习题三第16题。正方形空腔截面，角a、c、d为微孔；腔内匀强磁场B为×向里
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\L{1.55}
+  \def\g{0.22}
+  \def\t{0.14}
+  % four thick walls with corner gaps (microholes at a,c,d; b likewise open)
+  % top wall
+  \fill[black!8] (-\L+\g,\L-\t) rectangle (\L-\g,\L+\t);
+  \draw[line width=0.75pt] (-\L+\g,\L-\t) rectangle (\L-\g,\L+\t);
+  % bottom wall
+  \fill[black!8] (-\L+\g,-\L-\t) rectangle (\L-\g,-\L+\t);
+  \draw[line width=0.75pt] (-\L+\g,-\L-\t) rectangle (\L-\g,-\L+\t);
+  % left wall
+  \fill[black!8] (-\L-\t,-\L+\g) rectangle (-\L+\t,\L-\g);
+  \draw[line width=0.75pt] (-\L-\t,-\L+\g) rectangle (-\L+\t,\L-\g);
+  % right wall
+  \fill[black!8] (\L-\t,-\L+\g) rectangle (\L+\t,\L-\g);
+  \draw[line width=0.75pt] (\L-\t,-\L+\g) rectangle (\L+\t,\L-\g);
+  % light hatch on walls
+  \foreach \x in {-1.15,-0.75,-0.35,0.05,0.45,0.85} {
+    \draw[line width=0.25pt] (\x,\L-\t) -- ({\x+0.18},\L+\t);
+    \draw[line width=0.25pt] (\x,-\L-\t) -- ({\x+0.18},-\L+\t);
+  }
+  \foreach \y in {-1.15,-0.75,-0.35,0.05,0.45,0.85} {
+    \draw[line width=0.25pt] (-\L-\t,\y) -- (-\L+\t,{\y+0.18});
+    \draw[line width=0.25pt] (\L-\t,\y) -- (\L+\t,{\y+0.18});
+  }
+  % B into page 4x4
+  \foreach \x in {-0.90,-0.30,0.30,0.90} {
+    \foreach \y in {-0.90,-0.30,0.30,0.90} {
+      \node[inner sep=0pt,font=\small] at (\x,\y) {$\times$};
+    }
+  }
+  % labels
+  \node[anchor=south east,inner sep=1pt] at (-\L,\L) {$a$};
+  \node[anchor=south west,inner sep=1pt] at (\L,\L) {$b$};
+  \node[anchor=north west,inner sep=1pt] at (\L,-\L) {$c$};
+  \node[anchor=north east,inner sep=1pt] at (-\L,-\L) {$d$};
+\end{tikzpicture}%
+}
+\caption{（第16题）}
 \end{figure}
 
 \emph{（第16题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/physics-3/fig-p0257-02.png}}
-\caption{(第17题)}
+\fitfig{%
+% fig-alt: 复习题三第17题。左为速度选择器：狭缝S、S'，电场E向下，磁场B为×向里；右为B'点阵向外，离子半圆半径R
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left slit S
+  \draw[line width=0.85pt] (-3.35,0.85) -- (-3.35,0.22);
+  \draw[line width=0.85pt] (-3.35,-0.22) -- (-3.35,-0.85);
+  \node[anchor=east,inner sep=2pt] at (-3.35,0) {$S$};
+  % incoming beam
+  \draw[line width=0.7pt,->] (-3.95,0) -- (-3.40,0);
+  % plates
+  \draw[line width=0.7pt] (-3.15,0.95) rectangle (-0.55,1.25);
+  \draw[line width=0.7pt] (-3.15,-1.25) rectangle (-0.55,-0.95);
+  \node[font=\scriptsize] at (-2.70,1.10) {$+$};
+  \node[font=\scriptsize] at (-1.85,1.10) {$+$};
+  \node[font=\scriptsize] at (-1.00,1.10) {$+$};
+  \node[font=\scriptsize] at (-2.70,-1.10) {$-$};
+  \node[font=\scriptsize] at (-1.85,-1.10) {$-$};
+  \node[font=\scriptsize] at (-1.00,-1.10) {$-$};
+  % B into page between plates
+  \foreach \x in {-2.85,-2.25,-1.65,-1.05} {
+    \foreach \y in {0.55,0.05,-0.45} {
+      \node[inner sep=0pt,font=\scriptsize] at (\x,\y) {$\times$};
+    }
+  }
+  \node[anchor=west,inner sep=1pt] at (-0.85,0.55) {$B$};
+  % E down
+  \draw[line width=0.7pt,->] (-1.95,0.70) -- (-1.95,-0.55);
+  \node[anchor=west,inner sep=1pt] at (-1.90,0.15) {$E$};
+  % path through selector
+  \draw[line width=0.75pt] (-3.35,0) -- (-0.15,0);
+  % exit slit S'
+  \draw[line width=0.85pt] (-0.15,0.85) -- (-0.15,0.22);
+  \draw[line width=0.85pt] (-0.15,-0.22) -- (-0.15,-0.85);
+  \node[anchor=south,inner sep=1pt] at (-0.15,0.88) {$S'$};
+  % B' region (dots out)
+  \foreach \x in {0.35,0.95,1.55,2.15,2.75} {
+    \foreach \y in {0.55,0.05,-0.45,-0.95,-1.45,-1.95} {
+      \node[inner sep=0pt,font=\tiny] at (\x,\y) {$\cdot$};
+    }
+  }
+  \node[anchor=west,inner sep=1pt] at (2.85,0.35) {$B'$};
+  % semicircle trajectory downward, radius ~1.1, center at (-0.15,-1.1)
+  \draw[line width=0.8pt,->] (-0.15,0) arc[start angle=90,end angle=-90,radius=1.10];
+  % radius R
+  \draw[line width=0.55pt] (-0.15,-1.10) -- (0.95,-1.10);
+  \node[anchor=south,inner sep=1pt] at (0.40,-1.08) {$R$};
+\end{tikzpicture}%
+}
+\caption{（第17题）}
 \end{figure}
 
 \emph{（第17题）}
@@ -18638,43 +18725,131 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（1）匀强磁场 B 向右，直导线电流 I 垂直纸面向里}]{assets/physics-3/fig-p0258-01.png}}
+\fitfig{%
+% fig-alt: （1）匀强磁场B水平向右，直导线电流I垂直纸面向里（圆内叉）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {0.90,0.30,-0.30,-0.90} {
+    \draw[line width=0.7pt,->] (-1.55,\y) -- (1.55,\y);
+  }
+  \node[anchor=west,inner sep=2pt] at (1.55,0) {$B$};
+  % current into page
+  \draw[line width=0.75pt,fill=white] (0,0) circle[radius=0.22];
+  \draw[line width=0.65pt] (-0.12,-0.12) -- (0.12,0.12);
+  \draw[line width=0.65pt] (-0.12,0.12) -- (0.12,-0.12);
+\end{tikzpicture}%
+}
 \caption{（1）匀强磁场 B 向右，直导线电流 I 垂直纸面向里}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（2）---（4）直导线在点阵、叉阵和弯曲磁场中的三种情形}]{assets/physics-3/fig-p0258-02.png}}
+\fitfig{%
+% fig-alt: （2）点阵向外磁场中竖直导线，F向右；（3）叉阵向里磁场中斜导线，I右上；（4）弯曲磁力线中电流向外
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % ---- (2) ----
+  \begin{scope}[shift={(0,0)}]
+    \node[anchor=south,inner sep=2pt] at (0.75,1.55) {（2）};
+    \foreach \x in {0,0.50,1.00,1.50} {
+      \foreach \y in {0,0.50,1.00,1.50} {
+        \fill (\x,\y) circle[radius=0.035];
+      }
+    }
+    \draw[line width=1.15pt] (0.75,-0.15) -- (0.75,1.65);
+    \draw[line width=0.7pt,->] (0.75,0.75) -- (1.55,0.75);
+    \node[anchor=west,inner sep=1pt] at (1.55,0.75) {$F$};
+  \end{scope}
+  % ---- (3) ----
+  \begin{scope}[shift={(3.10,0)}]
+    \node[anchor=south,inner sep=2pt] at (0.75,1.55) {（3）};
+    \foreach \x in {0,0.50,1.00,1.50} {
+      \foreach \y in {0,0.50,1.00,1.50} {
+        \node[inner sep=0pt,font=\scriptsize] at (\x,\y) {$\times$};
+      }
+    }
+    \draw[line width=1.15pt] (0.05,0.05) -- (1.45,1.45);
+    \draw[line width=0.65pt,->] (0.35,0.55) -- (1.05,1.25);
+    \node[anchor=south west,inner sep=1pt] at (0.95,1.20) {$I$};
+  \end{scope}
+  % ---- (4) ----
+  \begin{scope}[shift={(6.20,0)}]
+    \node[anchor=south,inner sep=2pt] at (0.90,1.55) {（4）};
+    \foreach \yy/\c in {0.15/0.55, 0.55/0.85, 0.95/1.15} {
+      \draw[line width=0.65pt,->]
+        (-0.15,\yy) .. controls (0.55,{\yy+0.35}) and (1.15,{\yy+0.15}) .. (1.85,{\yy+\c-0.55});
+    }
+    \node[anchor=west,inner sep=1pt] at (1.90,1.35) {$B$};
+    \draw[line width=0.7pt,fill=white] (0.85,0.70) circle[radius=0.18];
+    \fill (0.85,0.70) circle[radius=0.045];
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{（2）---（4）直导线在点阵、叉阵和弯曲磁场中的三种情形}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（5）直导线电流 I 向右、磁场力 F 向下}]{assets/physics-3/fig-p0258-03.png}}
+\fitfig{%
+% fig-alt: （5）水平直导线电流I向右，磁场力F竖直向下
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=1.35pt] (-1.40,0.35) -- (1.40,0.35);
+  \draw[line width=0.7pt,->] (-0.55,0.70) -- (0.65,0.70);
+  \node[anchor=south,inner sep=1pt] at (0.15,0.72) {$I$};
+  \draw[line width=0.7pt,->] (0,0.35) -- (0,-0.55);
+  \node[anchor=north,inner sep=1pt] at (0,-0.55) {$F$};
+\end{tikzpicture}%
+}
 \caption{（5）直导线电流 I 向右、磁场力 F 向下}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（6）电流 I 垂直纸面向里、磁场力 F 向下}]{assets/physics-3/fig-p0258-04.png}}
+\fitfig{%
+% fig-alt: （6）电流I垂直纸面向里（圆内叉），磁场力F竖直向下
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,fill=white] (0,0.55) circle[radius=0.28];
+  \draw[line width=0.65pt] (-0.14,0.41) -- (0.14,0.69);
+  \draw[line width=0.65pt] (-0.14,0.69) -- (0.14,0.41);
+  \node[anchor=west,inner sep=2pt] at (0.32,0.70) {$I$};
+  \draw[line width=0.7pt,->] (0,0.27) -- (0,-0.55);
+  \node[anchor=west,inner sep=2pt] at (0.08,-0.35) {$F$};
+\end{tikzpicture}%
+}
 \caption{（6）电流 I 垂直纸面向里、磁场力 F 向下}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（7）左侧 N 极与垂直纸面向里的电流（左半图）}]{assets/physics-3/fig-p0258-05.png}}
-\caption{（7）左侧 N 极与垂直纸面向里的电流（左半图）}
+\fitfig{%
+% fig-alt: （7）左N右S磁极，中间电流I垂直纸面向里
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % N pole
+  \draw[line width=0.75pt] (-1.55,-1.05) rectangle (-0.75,1.05);
+  \node at (-1.15,0) {$N$};
+  % S pole
+  \draw[line width=0.75pt] (0.75,-1.05) rectangle (1.55,1.05);
+  \node at (1.15,0) {$S$};
+  % current into page
+  \draw[line width=0.75pt,fill=white] (0,0) circle[radius=0.26];
+  \draw[line width=0.65pt] (-0.13,-0.13) -- (0.13,0.13);
+  \draw[line width=0.65pt] (-0.13,0.13) -- (0.13,-0.13);
+\end{tikzpicture}%
+}
+\caption{（7）左 N 右 S 磁极，中间电流垂直纸面向里}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（7）右侧 S 极（右半图）}]{assets/physics-3/fig-p0258-06.png}}
-\caption{（7）右侧 S 极（右半图）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={（8）N、S 磁极上下相对，中间电流垂直纸面向外}]{assets/physics-3/fig-p0258-07.png}}
+\fitfig{%
+% fig-alt: （8）上N下S磁极，中间电流I垂直纸面向外（圆内点）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (-0.85,0.85) rectangle (0.85,1.55);
+  \node at (0,1.20) {$N$};
+  \draw[line width=0.75pt] (-0.85,-1.55) rectangle (0.85,-0.85);
+  \node at (0,-1.20) {$S$};
+  \draw[line width=0.75pt,fill=white] (0,0) circle[radius=0.26];
+  \fill (0,0) circle[radius=0.055];
+\end{tikzpicture}%
+}
 \caption{（8）N、S 磁极上下相对，中间电流垂直纸面向外}
 \end{figure}
 
