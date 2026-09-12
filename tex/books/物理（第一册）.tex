@@ -27041,27 +27041,115 @@ F = \frac {\Delta p}{\Delta t}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第427页）}]{assets/physics-1/fig-p0427-01.png}}
-\caption{图示（原PDF第427页）}
+% fig-alt: （a）质量$m$分别受$F_1$、$F_2$单独作用：上为$F_1$与同向$a_1$，下为$F_2$与同向$a_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % F1, a1 up-right
+  \coordinate (S1) at (0.10,1.85);
+  \coordinate (M1) at (2.05,3.10);
+  \coordinate (E1) at (3.05,3.75);
+  \fill (S1) circle[radius=0.03];
+  \draw[line width=0.55pt,->] (S1) -- (E1);
+  \fill (M1) circle[radius=0.055];
+  \draw[line width=0.55pt,->] ($(S1)!0.62!(M1)$) -- ($(S1)!0.78!(M1)$);
+  \node[anchor=north] at ($(S1)!0.42!(M1)+(0.02,-0.06)$) {$F_{1}$};
+  \node[anchor=south] at ($(M1)+(0.02,0.10)$) {$m$};
+  \node[anchor=south west] at ($(E1)+(-0.05,0.02)$) {$a_{1}$};
+  % F2, a2 down-right
+  \coordinate (S2) at (1.15,1.15);
+  \coordinate (M2) at (2.95,0.28);
+  \coordinate (E2) at (3.80,-0.12);
+  \draw[line width=0.55pt,->] (S2) -- (E2);
+  \fill (M2) circle[radius=0.055];
+  \draw[line width=0.55pt,->] ($(S2)!0.62!(M2)$) -- ($(S2)!0.78!(M2)$);
+  \node[anchor=north] at ($(S2)!0.40!(M2)+(0.00,-0.04)$) {$F_{2}$};
+  \node[anchor=south] at ($(M2)+(0.00,0.10)$) {$m$};
+  \node[anchor=north west] at ($(E2)+(0.02,-0.02)$) {$a_{2}$};
+\end{tikzpicture}%
+}
+\caption{（a）}
 \end{figure}
+
+\emph{（a）}
+
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-7}]{assets/physics-1/fig-p0427-02.png}}
-\caption{图13-7}
+% fig-alt: （b）$m$处$F_1$、$F_2$平行四边形，对角合力$P$；边上标$a_1,a_2$，对角标$a$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (M) at (0.15,1.20);
+  \coordinate (F1) at (2.05,2.15);
+  \coordinate (F2) at (2.05,0.25);
+  \coordinate (P) at (3.95,1.20);
+  \draw[line width=0.55pt] (M) -- (F1) -- (P);
+  \draw[line width=0.55pt] (M) -- (F2) -- (P);
+  \draw[line width=0.6pt,->] (M) -- (P);
+  \draw[line width=0.55pt,->] ($(M)!0.38!(F1)$) -- ($(M)!0.52!(F1)$);
+  \draw[line width=0.55pt,->] ($(M)!0.38!(F2)$) -- ($(M)!0.52!(F2)$);
+  \fill (F1) circle[radius=0.035];
+  \fill (F2) circle[radius=0.035];
+  \fill ($(M)!0.50!(P)$) circle[radius=0.035];
+  \draw[line width=0.5pt,fill=white] (M) circle[radius=0.075];
+  \node[anchor=east] at ($(M)+(-0.10,0.02)$) {$m$};
+  \node[anchor=south] at ($(F1)+(0,0.08)$) {$F_{1}$};
+  \node[anchor=north] at ($(F2)+(0,-0.08)$) {$F_{2}$};
+  \node[anchor=west] at ($(P)+(0.08,0.02)$) {$P$};
+  \node[anchor=south east] at ($(M)!0.42!(F1)+(-0.06,0.04)$) {$a_{1}$};
+  \node[anchor=north east] at ($(M)!0.42!(F2)+(-0.06,-0.04)$) {$a_{2}$};
+  \node[anchor=north] at ($(M)!0.50!(P)+(0,-0.08)$) {$a$};
+\end{tikzpicture}%
+}
+\caption{（b）}
 \end{figure}
 
+\emph{（b）}
+
 \emph{图13·7}
+
 
 现在我们来分析平抛物体运动的规律。如图13·8所示，在光滑的水平桌面上放着一个小球，如果我们沿水平方向用手指弹一下小球，给它一个水平方向的速度，则当小球离开桌面时，小球就以这个速度为初速度开始作抛体运动，这相当于沿水平方向投掷一个物体的运动，所以叫做平抛运动。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-8}]{assets/physics-1/fig-p0427-03.png}}
-\caption{图13-8}
+% fig-alt: 图13·8：桌上手弹小球；桌缘实心球，水平短实线后虚抛物线，沿途空心圆示平抛位置。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % table
+  \draw[line width=0.6pt,fill=white]
+    (0.05,1.85) -- (3.35,1.85) -- (3.35,2.08) -- (0.05,2.08) -- cycle;
+  \draw[line width=0.55pt] (2.55,1.85) -- (2.55,0.85);
+  \draw[line width=0.45pt] (3.15,1.85) -- (3.15,1.55) -- (3.35,1.55) -- (3.35,1.85);
+  % hand: forearm + palm + thumb + fingers
+  \draw[line width=0.55pt] (0.05,2.22) -- (0.05,2.55);
+  \draw[line width=0.55pt] (0.05,2.22) -- (0.78,2.24);
+  \draw[line width=0.55pt] (0.05,2.55) -- (0.75,2.58);
+  \draw[line width=0.55pt] (1.20,2.50) ellipse[x radius=0.46,y radius=0.34];
+  \draw[line width=0.5pt] (1.48,2.72) .. controls (1.60,2.88) and (1.78,2.86) .. (1.72,2.68);
+  \draw[line width=0.5pt] (1.55,2.58) .. controls (1.72,2.66) and (1.86,2.60) .. (1.75,2.48);
+  \draw[line width=0.55pt] (1.15,2.20) .. controls (1.38,1.98) and (1.68,2.04) .. (1.58,2.26)
+    .. controls (1.50,2.34) and (1.32,2.32) .. (1.18,2.26);
+  % ball on table (dark ring)
+  \draw[line width=0.75pt,fill=white] (2.15,2.22) circle[radius=0.14];
+  \fill (2.15,2.22) circle[radius=0.04];
+  % horizontal flick line at table level
+  \draw[line width=0.5pt] (2.32,2.22) -- (4.25,2.22);
+  \draw[line width=0.4pt,fill=white] (3.55,2.22) circle[radius=0.09];
+  \fill (4.25,2.22) circle[radius=0.035];
+  % projectile after leaving table
+  \draw[line width=0.45pt,dash pattern=on 1.3pt off 0.9pt]
+    (3.35,1.96) .. controls (3.95,1.70) and (4.55,1.15) .. (5.15,0.45)
+    .. controls (5.35,0.22) and (5.50,0.02) .. (5.62,-0.12);
+  \draw[line width=0.4pt,fill=white] (4.15,1.48) circle[radius=0.13];
+  \draw[line width=0.4pt,fill=white] (5.05,0.52) circle[radius=0.13];
+  \fill (5.62,-0.12) circle[radius=0.035];
+\end{tikzpicture}%
+}
+\caption{图13·8}
 \end{figure}
 
 \emph{图13·8}
+
 
 我们用坐标来表示物体在不同时刻的位置。画出坐标轴 \(Ox\) 和
 \(Oy\)，并设向右的方向为 \(Ox\) 轴的正方向，向下的方向为 \(Oy\)
@@ -27088,9 +27176,71 @@ x = v _ {0} t, \quad v _ {x} = v _ {0} = \text{恒 定} \tag {13.1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第428页）}]{assets/physics-1/fig-p0428-01.png}}
-\caption{图示（原PDF第428页）}
+% fig-alt: 图13·9：原点$O$，$Ox$向右、$Oy$向下；等间隔$A$–$E$与$A'$–$E'$虚线交于$A_1$–$E_1$，实抛物线落地，地面斜影。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt},
+  x=0.82cm,y=0.58cm]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (1,0);
+  \coordinate (B) at (2,0);
+  \coordinate (C) at (3,0);
+  \coordinate (D) at (4,0);
+  \coordinate (E) at (5,0);
+  \coordinate (Ap) at (0,-0.25);
+  \coordinate (Bp) at (0,-1.00);
+  \coordinate (Cp) at (0,-2.25);
+  \coordinate (Dp) at (0,-4.00);
+  \coordinate (Ep) at (0,-6.25);
+  \coordinate (A1) at (1,-0.25);
+  \coordinate (B1) at (2,-1.00);
+  \coordinate (C1) at (3,-2.25);
+  \coordinate (D1) at (4,-4.00);
+  \coordinate (E1) at (5,-6.25);
+  \draw[line width=0.55pt,->] (O) -- (5.70,0);
+  \node[anchor=south west] at (5.58,0.02) {$x$};
+  \draw[line width=0.55pt,->] (O) -- (0,-7.10);
+  \node[anchor=north] at (0,-7.15) {$y$};
+  \node[anchor=south east] at (-0.08,0.08) {$O$};
+  \node[anchor=south] at (A) {$A$};
+  \node[anchor=south] at (B) {$B$};
+  \node[anchor=south] at (C) {$C$};
+  \node[anchor=south] at (D) {$D$};
+  \node[anchor=south] at (E) {$E$};
+  \node[anchor=east] at (Ap) {$A'$};
+  \node[anchor=east] at (Bp) {$B'$};
+  \node[anchor=east] at (Cp) {$C'$};
+  \node[anchor=east] at (Dp) {$D'$};
+  \node[anchor=east] at (Ep) {$E'$};
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (A) -- (A1);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (B) -- (B1);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (C) -- (C1);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (D) -- (D1);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (E) -- (E1);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (Ap) -- (A1);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (Bp) -- (B1);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (Cp) -- (C1);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 0.9pt] (Dp) -- (D1);
+  \draw[line width=0.6pt] (-0.12,-6.25) -- (5.55,-6.25);
+  \foreach \x in {0.00,0.30,0.60,0.90,1.20,1.50,1.80,2.10,2.40,2.70,3.00,3.30,3.60,3.90,4.20,4.50,4.80,5.10,5.35}
+    \draw[line width=0.28pt] (\x,-6.25) -- (\x-0.14,-6.50);
+  \draw[line width=0.62pt] plot[domain=0:5,samples=60] (\x,{-0.25*\x*\x});
+  \fill (A1) circle[radius=0.045];
+  \fill (B1) circle[radius=0.045];
+  \fill (C1) circle[radius=0.045];
+  \fill (D1) circle[radius=0.045];
+  \fill (E1) circle[radius=0.045];
+  \node[anchor=north west] at ($(A1)+(0.10,-0.10)$) {$A_{1}$};
+  \node[anchor=north west] at ($(B1)+(0.06,-0.02)$) {$B_{1}$};
+  \node[anchor=west] at ($(C1)+(0.08,0.02)$) {$C_{1}$};
+  \node[anchor=west] at ($(D1)+(0.08,-0.02)$) {$D_{1}$};
+  \node[anchor=south west] at ($(E1)+(0.06,0.06)$) {$E_{1}$};
+\end{tikzpicture}%
+}
+\caption{图13·9}
 \end{figure}
+
+\emph{图13·9}
+
 
 \[
 y = \frac {1}{2} g t ^ {2}, v _ {y} = g t \tag {13.2}
@@ -27177,11 +27327,43 @@ v _ {y} = g t = 10 \times 5 \text{米 / 秒} = 50 \text{米 / 秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-10}]{assets/physics-1/fig-p0430-01.png}}
-\caption{图13-10}
+% fig-alt: 图13·10：塔顶$O$平抛$v_0$；高$h$至地面$E$；落地$E_1$处水平$v_x$、竖直$v_y$与合速度$v$，夹角$\beta$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (O) at (0,3.35);
+  \coordinate (Ee) at (0,0);
+  \coordinate (E1) at (2.68,0);
+  % height / ground
+  \draw[line width=0.55pt] (O) -- (Ee);
+  \node[anchor=east] at (-0.10,1.70) {$h$};
+  \draw[line width=0.6pt] (Ee) -- (3.85,0);
+  \node[anchor=north east] at ($(Ee)+(-0.02,-0.04)$) {$E$};
+  \node[anchor=south east] at ($(O)+(-0.04,0.06)$) {$O$};
+  % trajectory: x=20t, y=5t^2, t=0..5; scale so h=3.35 => 125m
+  % x_end = 3.35*100/125 = 2.68
+  \draw[line width=0.6pt] plot[domain=0:5,samples=50]
+    ({0.536*\x},{-0.134*\x*\x+3.35});
+  % v0
+  \draw[line width=0.55pt,->] (O) -- ++(0.72,0);
+  \node[anchor=south] at ($(O)+(0.42,0.06)$) {$v_{0}$};
+  % at E1
+  \fill (E1) circle[radius=0.035];
+  \node[anchor=south east] at ($(E1)+(-0.06,0.06)$) {$E_{1}$};
+  \draw[line width=0.55pt,->] (E1) -- ++(0.70,0);
+  \node[anchor=south west] at ($(E1)+(0.42,0.04)$) {$v_{x}$};
+  \draw[line width=0.55pt,->] (E1) -- ++(0,-1.05);
+  \node[anchor=north] at ($(E1)+(0,-1.08)$) {$v_{y}$};
+  \draw[line width=0.55pt,->] (E1) -- ++(0.42,-1.05);
+  \node[anchor=west] at ($(E1)+(0.44,-1.00)$) {$v$};
+  \draw[line width=0.35pt] ($(E1)+(0,-0.42)$) arc[start angle=-90,end angle=-68,radius=0.42];
+  \node[anchor=north west,inner sep=0.6pt] at ($(E1)+(0.06,-0.28)$) {$\beta$};
+\end{tikzpicture}%
+}
+\caption{图13·10}
 \end{figure}
 
 \emph{图13·10}
+
 
 \[
 v = \sqrt {v _ {x} ^ {2} + v _ {y} ^ {2}} = 53.85 \text{米 / 秒}
@@ -27253,11 +27435,31 @@ x = v _ {0} t = \frac {500}{9} \times 4 \sqrt {15} \text{米} = 860.66 \text{米
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-1/fig-p0431-01.png}}
-\caption{(第5题)}
+% fig-alt: （第5题）高桌；左空心球以$v$向右，桌缘第二空心球；虚抛物线落到地面斜影上的斜线球。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.6pt,fill=white]
+    (0.05,1.55) -- (2.85,1.55) -- (2.85,1.78) -- (0.05,1.78) -- cycle;
+  \draw[line width=0.55pt] (1.85,1.55) -- (1.85,0.18);
+  \draw[line width=0.45pt] (2.65,1.55) -- (2.65,1.32) -- (2.85,1.32) -- (2.85,1.55);
+  \draw[line width=0.4pt,fill=white] (0.45,1.93) circle[radius=0.15];
+  \draw[line width=0.4pt,fill=white] (2.52,1.93) circle[radius=0.15];
+  \draw[line width=0.55pt,->] (0.15,2.35) -- (0.95,2.35);
+  \node[anchor=south] at (0.55,2.38) {$v$};
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt]
+    (2.85,1.78) .. controls (3.55,1.45) and (4.25,0.95) .. (5.05,0.32);
+  \draw[line width=0.45pt,pattern=north east lines] (5.05,0.32) circle[radius=0.13];
+  \draw[line width=0.45pt] (5.05,0.32) circle[radius=0.13];
+  \draw[line width=0.6pt] (-0.15,0.18) -- (5.55,0.18);
+  \foreach \x in {0.00,0.35,0.70,1.05,1.40,1.75,2.10,2.45,2.80,3.15,3.50,3.85,4.20,4.55,4.90,5.25}
+    \draw[line width=0.28pt] (\x,0.18) -- (\x-0.14,-0.02);
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \emph{（第5题）}
+
 
 \begin{enumerate}
 \setcounter{enumi}{5}
@@ -27269,11 +27471,42 @@ x = v _ {0} t = \frac {500}{9} \times 4 \sqrt {15} \text{米} = 860.66 \text{米
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-1/fig-p0432-01.png}}
-\caption{(第6题)}
+% fig-alt: （第6题）四分之一光滑圆弧槽，顶点$A$实心球，圆心$O$，半径过$B$；底端高$h$处出射，平抛至地面$D$空心球，$C$为底端垂足。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (O) at (2.15,2.85);
+  \coordinate (A) at (0.85,2.85);
+  \coordinate (Bot) at (2.15,1.55);
+  \coordinate (Meet) at (1.231,1.931);
+  \draw[line width=0.6pt] (A) arc[start angle=180,end angle=270,radius=1.30];
+  \draw[line width=0.5pt] (O) -- (Meet);
+  \fill (Meet) circle[radius=0.03];
+  \node[anchor=south west] at ($(O)+(0.04,0.04)$) {$O$};
+  \node[anchor=south west] at ($(O)!0.48!(Meet)+(0.06,0.02)$) {$B$};
+  \draw[line width=0.45pt,fill=black] (A) circle[radius=0.08];
+  \node[anchor=south east] at ($(A)+(-0.06,0.04)$) {$A$};
+  % projectile from bottom to D
+  \coordinate (D) at (5.25,0.35);
+  \draw[line width=0.55pt] plot[domain=0:3.10,samples=40]
+    ({2.15+\x},{1.55-0.125*\x*\x});
+  \draw[line width=0.45pt,fill=white] (D) circle[radius=0.11];
+  \node[anchor=north] at ($(D)+(0,-0.16)$) {$D$};
+  % height h
+  \draw[line width=0.45pt] (Bot) -- (2.15,0.35);
+  \node[anchor=east] at (2.08,1.55) {$B$};
+  \node[anchor=west] at (2.22,0.95) {$h$};
+  \node[anchor=north] at (2.15,0.18) {$C$};
+  % ground
+  \draw[line width=0.6pt] (0.15,0.35) -- (5.75,0.35);
+  \foreach \x in {0.25,0.55,0.85,1.15,1.45,1.75,2.05,2.35,2.65,2.95,3.25,3.55,3.85,4.15,4.45,4.75,5.05,5.35,5.60}
+    \draw[line width=0.28pt] (\x,0.35) -- (\x-0.14,0.16);
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \emph{（第6题）}
+
 
 \begin{enumerate}
 \setcounter{enumi}{6}
@@ -27291,11 +27524,65 @@ x = v _ {0} t = \frac {500}{9} \times 4 \sqrt {15} \text{米} = 860.66 \text{米
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13-11}]{assets/physics-1/fig-p0432-02.png}}
-\caption{图 13-11}
+% fig-alt: 图13·11：斜抛抛物线$O$至$D$；初速$v_0$仰角$\theta$，分速$v_{0x},v_{0y}$；点$P$标$v_y,v,v_x=v_{0x}$与坐标$x,y$；顶点$A$水平$v_A=v_x$；虚线$BC$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % y = 1.15 x - 0.14375 x^2 ; range 8, hmax=2.3 at x=4
+  \coordinate (O) at (0,0);
+  \coordinate (Dd) at (8.00,0);
+  \coordinate (Aa) at (4.00,2.30);
+  \coordinate (P) at (2.70,2.056);
+  \coordinate (B) at (1.40,1.328);
+  \coordinate (C) at (6.60,1.328);
+  \coordinate (Px) at (2.70,0);
+  % axes
+  \draw[line width=0.55pt,->] (-0.15,0) -- (8.55,0);
+  \node[anchor=south west] at (8.42,0.04) {$x$};
+  \draw[line width=0.55pt,->] (0,-0.12) -- (0,3.05);
+  \node[anchor=north east] at (-0.08,3.05) {$y$};
+  \node[anchor=north east] at (-0.08,-0.06) {$O$};
+  \node[anchor=north] at (Dd) {$D$};
+  % parabola
+  \draw[line width=0.6pt] plot[domain=0:8,samples=80] (\x,{1.15*\x - 0.14375*\x*\x});
+  % dashed BC
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (B) -- (C);
+  \node[anchor=east] at ($(B)+(-0.08,0.02)$) {$B$};
+  \node[anchor=west] at ($(C)+(0.08,0.02)$) {$C$};
+  % P vertical / x
+  \draw[line width=0.5pt,->] (P) -- (Px);
+  \node[anchor=west] at ($(P)!0.55!(Px)+(0.06,0)$) {$y$};
+  \draw[line width=0.5pt,<->] (0,-0.32) -- (2.70,-0.32);
+  \node[anchor=north] at (1.35,-0.34) {$x$};
+  \fill (Px) circle[radius=0.03];
+  % at O: v0, theta, v0x, v0y
+  \draw[line width=0.55pt,->] (O) -- ++(0.85,0.98);
+  \node[anchor=south east] at (0.55,0.95) {$v_{0}$};
+  \draw[line width=0.5pt,->] (O) -- ++(0.95,0);
+  \node[anchor=south] at (0.95,0.10) {$v_{0x}$};
+  \draw[line width=0.5pt,->] (-0.38,0) -- (-0.38,0.85);
+  \node[anchor=east] at (-0.42,0.50) {$v_{0y}$};
+  \draw[line width=0.35pt] (0.42,0) arc[start angle=0,end angle=49,radius=0.42];
+  \node[anchor=south west,inner sep=0.5pt] at (0.46,0.06) {$\theta$};
+  % at P
+  \fill (P) circle[radius=0.035];
+  \node[anchor=south east] at ($(P)+(-0.06,0.04)$) {$P$};
+  \draw[line width=0.55pt,->] (P) -- ++(0,0.55);
+  \node[anchor=south] at ($(P)+(0.02,0.56)$) {$v_{y}$};
+  \draw[line width=0.55pt,->] (P) -- ++(0.72,0.28);
+  \node[anchor=south west] at ($(P)+(0.40,0.22)$) {$v$};
+  \draw[line width=0.5pt,->] (P) -- ++(0.62,0);
+  \node[anchor=north west] at ($(P)+(0.18,-0.02)$) {$v_{x}=v_{0x}$};
+  % at A
+  \node[anchor=south east] at ($(Aa)+(-0.08,0.10)$) {$A$};
+  \draw[line width=0.55pt,->] (Aa) -- ++(0.78,0);
+  \node[anchor=south west] at ($(Aa)+(0.28,0.06)$) {$v_{A}=v_{x}$};
+\end{tikzpicture}%
+}
+\caption{图13·11}
 \end{figure}
 
 \emph{图13·11}
+
 
 取坐标轴 \(Ox, Oy\)，如图13·11所示，并将初速度 \(v_0\) 分解成两个分速度
 \(v_{ox}\) 和 \(v_{oy}\)，\(v_{ox}\) 沿 \(Ox\) 方向，\(v_{oy}\) 沿
