@@ -21579,19 +21579,89 @@ AB 是圆 O 的直径，自半径 OP 的端点 P，引\(PH \perp AB\)，作 PM �
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4·16}]{assets/plane-geometry-1/fig-p0223-02.png}}
-\caption{图 4·16}
+\fitfig{%
+% fig-alt: 图4·16 圆 O，直径 AB 水平；P 在上右，实线半径 OP、垂线 PH⊥AB 于 H；M 在下端，实线弦 PM；虚线半径 OM
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\R,0);
+  \coordinate (B) at (\R,0);
+  \coordinate (P) at (70:\R);
+  \coordinate (H) at ({(\R)*cos(70)},0);
+  \coordinate (M) at (0,-\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.65pt] (O) -- (P);
+  \draw[line width=0.65pt] (P) -- (H);
+  \draw[line width=0.65pt] (P) -- (M);
+  \draw[line width=0.55pt, dashed] (O) -- (M);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=north east, inner sep=2pt] at (O) {$O$};
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=2pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (H) {$H$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+
+\caption{图4·16}
 \end{figure}
 
-\emph{图 4·16}
+\emph{图4·16}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4·17}]{assets/plane-geometry-1/fig-p0223-03.png}}
-\caption{图 4·17}
+\fitfig{%
+% fig-alt: 图4·17 圆 O，下弦 AB；半径 OA、OB、OC、OD 三等分弧 AB；OC、OD 交 AB 于 R、S；OA 上取 S'（OS'=OS），虚线 RS'
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  % chord AB below center; arc AB bottom trisected by C,D
+  \pgfmathsetmacro{\ya}{-0.52*\R}
+  \pgfmathsetmacro{\ax}{sqrt(\R*\R-\ya*\ya)}
+  \coordinate (A) at ({-\ax},\ya);
+  \coordinate (B) at ({\ax},\ya);
+  \pgfmathsetmacro{\angA}{atan2(\ya,-\ax)}
+  \pgfmathsetmacro{\angB}{atan2(\ya,\ax)}
+  % ensure angles in lower half: angA ~ 212, angB ~ 328 if using 0-360
+  \pgfmathsetmacro{\angA}{180+atan(\ax/abs(\ya))}
+  \pgfmathsetmacro{\angB}{360-atan(\ax/abs(\ya))}
+  \pgfmathsetmacro{\angC}{\angA+(\angB-\angA)/3}
+  \pgfmathsetmacro{\angD}{\angA+2*(\angB-\angA)/3}
+  \coordinate (C) at ({\angC}:\R);
+  \coordinate (D) at ({\angD}:\R);
+  % R = OC ∩ AB, S = OD ∩ AB (AB is y=\ya)
+  \pgfmathsetmacro{\rx}{\ya/tan(\angC)}
+  \pgfmathsetmacro{\sx}{\ya/tan(\angD)}
+  \coordinate (R) at (\rx,\ya);
+  \coordinate (S) at (\sx,\ya);
+  % S' on OA with OS'=OS
+  \pgfmathsetmacro{\oslen}{veclen(\sx,\ya)}
+  \coordinate (Sp) at ($(O)!{\oslen/\R}!(A)$);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.65pt] (O) -- (A);
+  \draw[line width=0.65pt] (O) -- (B);
+  \draw[line width=0.65pt] (O) -- (C);
+  \draw[line width=0.65pt] (O) -- (D);
+  \draw[line width=0.55pt, dashed] (R) -- (Sp);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south, inner sep=2pt] at (O) {$O$};
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1.2pt] at (R) {$R$};
+  \node[anchor=south, inner sep=1.2pt] at (S) {$S$};
+  \node[anchor=east, inner sep=1.5pt] at (Sp) {$S'$};
+\end{tikzpicture}%
+}
+
+\caption{图4·17}
 \end{figure}
 
-\emph{图 4·17}
+\emph{图4·17}
 
 \textbf{［求证］}
 
@@ -21634,7 +21704,38 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-1/fig-p0224-01.png}}
+\fitfig{%
+% fig-alt: （第5题）圆 O，垂直直径 EF；上水平弦 AB（较短）、下水平弦 CD（较长，AB∥CD）；实线 AD、BC 交于 EF 上（O 上方）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (E) at (0,\R);
+  \coordinate (F) at (0,-\R);
+  \pgfmathsetmacro{\yb}{0.55*\R}
+  \pgfmathsetmacro{\yd}{-0.28*\R}
+  \pgfmathsetmacro{\xb}{sqrt(\R*\R-\yb*\yb)}
+  \pgfmathsetmacro{\xd}{sqrt(\R*\R-\yd*\yd)}
+  \coordinate (A) at ({-\xb},\yb);
+  \coordinate (B) at ({\xb},\yb);
+  \coordinate (C) at ({-\xd},\yd);
+  \coordinate (D) at ({\xd},\yd);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (E) -- (F);
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.65pt] (A) -- (D);
+  \draw[line width=0.65pt] (B) -- (C);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=west, inner sep=2pt] at (O) {$O$};
+  \node[anchor=south, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north east, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north west, inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+
 \caption{(第5题)}
 \end{figure}
 
@@ -21642,7 +21743,37 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-1/fig-p0224-02.png}}
+\fitfig{%
+% fig-alt: （第6题）圆 O，弦 AD（上）∥CB（下，较短）；腰 AC、BD；对角 AB、CD 相交；∠1 在 A（AD与AB间），∠2 在 D（AD与CD间）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\ya}{-0.22*\R}
+  \pgfmathsetmacro{\yc}{-0.72*\R}
+  \pgfmathsetmacro{\xa}{sqrt(\R*\R-\ya*\ya)}
+  \pgfmathsetmacro{\xc}{sqrt(\R*\R-\yc*\yc)}
+  \coordinate (A) at ({-\xa},\ya);
+  \coordinate (D) at ({\xa},\ya);
+  \coordinate (C) at ({-\xc},\yc);
+  \coordinate (B) at ({\xc},\yc);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (D);
+  \draw[line width=0.70pt] (C) -- (B);
+  \draw[line width=0.65pt] (A) -- (C);
+  \draw[line width=0.65pt] (B) -- (D);
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (C) -- (D);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south, inner sep=2pt] at (O) {$O$};
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=2pt] at (D) {$D$};
+  \node[anchor=north east, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[inner sep=0.4pt] at ($(A)!0.22!(D)!0.55!($(A)!0.22!(B)$)$) {$1$};
+  \node[inner sep=0.4pt] at ($(D)!0.22!(A)!0.55!($(D)!0.22!(C)$)$) {$2$};
+\end{tikzpicture}%
+}
+
 \caption{(第6题)}
 \end{figure}
 
@@ -21674,7 +21805,48 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-1/fig-p0225-01.png}}
+\fitfig{%
+% fig-alt: （第8题）圆 O，圆外点 M（右）；实线 OM；上割线 MBA（B 近 M、A 远），下割线 MDC（D 近 M、C 远）；关于 OM 对称
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.85}
+  \coordinate (O) at (0,0);
+  \coordinate (M) at (3.55,0);
+  % secant angle ~18°
+  \pgfmathsetmacro{\ang}{18}
+  % intersections of ray from M at 180-\ang with circle: solve |O+t*u|=\R
+  % direction unit for upper: angle 180-ang
+  \pgfmathsetmacro{\ux}{cos(180-\ang)}
+  \pgfmathsetmacro{\uy}{sin(180-\ang)}
+  % M = (mx,0), points = M + t*(ux,uy), |point|^2 = R^2
+  % (mx+t*ux)^2 + (t*uy)^2 = R^2
+  \pgfmathsetmacro{\mx}{3.55}
+  \pgfmathsetmacro{\qa}{1}
+  \pgfmathsetmacro{\qb}{2*\mx*\ux}
+  \pgfmathsetmacro{\qc}{\mx*\mx-\R*\R}
+  \pgfmathsetmacro{\disc}{sqrt(\qb*\qb-4*\qa*\qc)}
+  \pgfmathsetmacro{\tB}{(-\qb-\disc)/2}
+  \pgfmathsetmacro{\tA}{(-\qb+\disc)/2}
+  % smaller positive t is nearer M? ux is negative so t>0 goes left from M
+  % both t should be positive; nearer M has smaller t
+  \coordinate (B) at ({\mx+\tB*\ux},{\tB*\uy});
+  \coordinate (A) at ({\mx+\tA*\ux},{\tA*\uy});
+  \coordinate (D) at ({\mx+\tB*\ux},{-\tB*\uy});
+  \coordinate (C) at ({\mx+\tA*\ux},{-\tA*\uy});
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (O) -- (M);
+  \draw[line width=0.65pt] (M) -- (A);
+  \draw[line width=0.65pt] (M) -- (C);
+  \fill (O) circle [radius=1.2pt];
+  \fill (M) circle [radius=1.2pt];
+  \node[anchor=north, inner sep=2pt] at (O) {$O$};
+  \node[anchor=west, inner sep=2pt] at (M) {$M$};
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+
 \caption{(第8题)}
 \end{figure}
 
@@ -21684,7 +21856,32 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-1/fig-p0225-02.png}}
+\fitfig{%
+% fig-alt: （第10题）圆 O，直径 AB 水平；P 在上右，实线 OP、PH⊥AB 于 H；M 为下半圆周中点，实线 OM、PM
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\R,0);
+  \coordinate (B) at (\R,0);
+  \coordinate (P) at (72:\R);
+  \coordinate (H) at ({(\R)*cos(72)},0);
+  \coordinate (M) at (0,-\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.65pt] (O) -- (P);
+  \draw[line width=0.65pt] (P) -- (H);
+  \draw[line width=0.65pt] (O) -- (M);
+  \draw[line width=0.65pt] (P) -- (M);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=north east, inner sep=2pt] at (O) {$O$};
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=2pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (H) {$H$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+
 \caption{(第10题)}
 \end{figure}
 
@@ -21692,7 +21889,52 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-1/fig-p0225-03.png}}
+\fitfig{%
+% fig-alt: （第11题）圆 O，垂直直径 AB（水平）与 CD（竖直）；N 在 OA、M 在 OD 且 OM=ON；DN 延交圆于 F，BM 延交圆于 G，交于 E
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\R,0);
+  \coordinate (B) at (\R,0);
+  \coordinate (C) at (0,\R);
+  \coordinate (D) at (0,-\R);
+  \def\d{0.70}
+  \coordinate (N) at (-\d,0);
+  \coordinate (M) at (0,-\d);
+  % line D(0,-R)--N(-d,0): parametric; extend to circle at F (other than D)
+  % line: (0,-R) + t*((-d)-0, 0-(-R)) = (0,-R)+t*(-d,R) = (-t*d, -R+t*R)
+  % |pt|^2=R^2: t^2 d^2 + R^2(t-1)^2 = R^2
+  % t^2 d^2 + R^2(t^2-2t+1) = R^2 => t^2(d^2+R^2) - 2 R^2 t = 0 => t[t(d^2+R^2)-2R^2]=0
+  % t=0 is D; t=2R^2/(d^2+R^2)
+  \pgfmathsetmacro{\tF}{2*\R*\R/(\d*\d+\R*\R)}
+  \coordinate (F) at ({-\tF*\d},{-\R+\tF*\R});
+  % line B(R,0)--M(0,-d): (R,0)+s*((0-R),(-d-0))=(R,0)+s*(-R,-d)=(R(1-s), -s*d)
+  % R^2(1-s)^2 + s^2 d^2 = R^2 => R^2(1-2s+s^2)+s^2 d^2=R^2 => -2R^2 s + s^2(R^2+d^2)=0
+  % s[ -2R^2 + s(R^2+d^2)]=0 => s=0 is B; s=2R^2/(R^2+d^2)
+  \pgfmathsetmacro{\tG}{2*\R*\R/(\d*\d+\R*\R)}
+  \coordinate (G) at ({\R*(1-\tG)},{-\tG*\d});
+  % E = intersection of DF and BG
+  % DF: (0,-R)+u*(F-(0,-R)) or use TikZ intersection via calc
+  \coordinate (E) at (intersection of D--F and B--G);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.65pt] (D) -- (F);
+  \draw[line width=0.65pt] (B) -- (G);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south west, inner sep=2pt] at (O) {$O$};
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=2pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south east, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=north east, inner sep=1.5pt] at (G) {$G$};
+  \node[anchor=south, inner sep=1.2pt] at (N) {$N$};
+  \node[anchor=west, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south east, inner sep=1.2pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+
 \caption{(第11题)}
 \end{figure}
 
@@ -21728,11 +21970,43 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·18}]{assets/plane-geometry-1/fig-p0226-01.png}}
+\fitfig{%
+% fig-alt: 图4·18 圆 O；圆心角 ∠AOB（右上）与 ∠A'OB'（下，A' 在底）；两角处小弧等号；虚线弯箭头示 A'OB' 旋至 AOB
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\angA}{20}
+  \pgfmathsetmacro{\angB}{75}
+  \pgfmathsetmacro{\angAp}{270}
+  \pgfmathsetmacro{\angBp}{325}
+  \coordinate (A) at ({\angA}:\R);
+  \coordinate (B) at ({\angB}:\R);
+  \coordinate (Ap) at ({\angAp}:\R);
+  \coordinate (Bp) at ({\angBp}:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (O) -- (A);
+  \draw[line width=0.65pt] (O) -- (B);
+  \draw[line width=0.65pt] (O) -- (Ap);
+  \draw[line width=0.65pt] (O) -- (Bp);
+  % equal angle marks
+  \draw[line width=0.45pt] ({\angA}:0.42) arc[start angle=\angA, end angle=\angB, radius=0.42];
+  \draw[line width=0.45pt] ({\angAp}:0.42) arc[start angle=\angAp, end angle=\angBp, radius=0.42];
+  % dashed rotation arrow: from primed toward unprimed (CCW)
+  \draw[line width=0.50pt, dashed, -{Stealth[length=2.0mm]}]
+    (300:1.35) arc[start angle=300, end angle=45, radius=1.35];
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=east, inner sep=2pt] at (O) {$O$};
+  \node[anchor=west, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (Ap) {$A'$};
+  \node[anchor=west, inner sep=1.5pt] at (Bp) {$B'$};
+\end{tikzpicture}%
+}
+
 \caption{图4·18}
 \end{figure}
 
-\emph{图 4·18}
+\emph{图4·18}
 
 \begin{figure}
 \centering
