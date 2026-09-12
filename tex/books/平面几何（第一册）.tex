@@ -18164,7 +18164,31 @@ GB > GC\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-1/fig-p0194-02.png}}
+\fitfig{%
+% fig-alt: （第8题）扫描：∠AOB（O左，OB上斜、OA下斜）；S在OB、N在OA，实线SN过P（P为SN中点）；虚线MP∥OB交OA于M
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (O) at (0.00,1.40);
+  \coordinate (B) at (4.60,2.10);
+  \coordinate (A) at (4.40,0.00);
+  \coordinate (S) at (2.85,1.83);
+  \coordinate (N) at (3.17,0.39);
+  \coordinate (P) at (3.01,1.11);
+  \coordinate (M) at (1.58,0.90);
+  \draw[line width=0.75pt] (O) -- (A);
+  \draw[line width=0.75pt] (O) -- (B);
+  \draw[line width=0.70pt] (S) -- (N);
+  \draw[dashed, line width=0.65pt] (M) -- (P);
+  \node[anchor=east, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=south west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.5pt] at (S) {$S$};
+  \node[anchor=north, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+
+
 \caption{(第8题)}
 \end{figure}
 
@@ -18200,7 +18224,40 @@ GB > GC\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-1/fig-p0194-03.png}}
+\fitfig{%
+% fig-alt: （第13题）扫描：河右岸树标B、左岸A；虚线AB；C在左岸下，实线CA、CB（CB过河）；AC/BC中点连虚中位线∥AB（中位线在左岸）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (C) at (0.80,0.05);
+  \coordinate (A) at (0.20,2.70);
+  \coordinate (B) at (3.90,2.70);
+  \coordinate (Ma) at ($(C)!0.5!(A)$);
+  \coordinate (Mb) at ($(C)!0.5!(B)$);
+  % river banks (between midsegment and B)
+  \draw[line width=0.55pt] plot[smooth, tension=0.65] coordinates {
+    (2.55,3.60) (2.35,2.95) (2.55,2.35) (2.30,1.70) (2.60,1.00) (2.40,0.20)
+  };
+  \draw[line width=0.55pt] plot[smooth, tension=0.65] coordinates {
+    (3.35,3.60) (3.15,2.95) (3.35,2.35) (3.10,1.70) (3.40,1.00) (3.20,0.20)
+  };
+  \foreach \y in {0.40,0.90,1.40,1.90,2.40,2.90,3.30} {
+    \draw[line width=0.35pt] (2.45,\y) ++ (0.06,0.05) -- ++ (0.32,-0.09);
+    \draw[line width=0.35pt] (2.75,\y+0.12) ++ (0.04,0.04) -- ++ (0.28,-0.08);
+  }
+  \draw[line width=0.75pt] (C) -- (A);
+  \draw[line width=0.75pt] (C) -- (B);
+  \draw[dashed, line width=0.65pt] (A) -- (B);
+  \draw[dashed, line width=0.65pt] (Ma) -- (Mb);
+  % upright tree at B
+  \draw[line width=0.70pt] (B) -- ++ (0.00,0.18);
+  \fill[black] (B) ++ (0.00,0.18) -- ++ (0.18,0.38) -- ++ (-0.36,0) -- cycle;
+  \fill[black] (B) ++ (0.00,0.38) -- ++ (0.22,0.42) -- ++ (-0.44,0) -- cycle;
+  \fill[black] (B) ++ (0.00,0.58) -- ++ (0.16,0.32) -- ++ (-0.32,0) -- cycle;
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=2.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
+
+
 \caption{(第13题)}
 \end{figure}
 
@@ -18237,15 +18294,72 @@ BF，证明直角\(\triangle FEB \cong \triangle FCB\)，再研究\(\triangle DE
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第16题:}]{assets/plane-geometry-1/fig-p0195-01.png}}
-\caption{(第16题:}
+\fitfig{%
+% fig-alt: （第16题）扫描：正方形ABCD（A左上B左下C右下D右上）；实线对角BD；E在BD上BE=BC；实线EF⊥BD交CD于F（E处直角方）；虚线BF
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (3.20,0.00);
+  \coordinate (D) at (3.20,3.20);
+  \coordinate (A) at (0.00,3.20);
+  \coordinate (E) at (2.2627,2.2627);
+  \coordinate (F) at (3.20,1.3254);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (B) -- (D);
+  \draw[line width=0.70pt] (E) -- (F);
+  \draw[dashed, line width=0.65pt] (B) -- (F);
+  \coordinate (Ea) at ($(E)!0.20!(D)$);
+  \coordinate (Eb) at ($(E)!0.20!(F)$);
+  \coordinate (Ec) at ($(Ea)+(Eb)-(E)$);
+  \draw[line width=0.50pt] (Ea) -- (Ec) -- (Eb);
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south east, inner sep=1pt] at (E) {$E$};
+  \node[anchor=west, inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+
+\caption{(第16题)}
 \end{figure}
 
-\emph{（第16题：}
+\emph{（第16题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-1/fig-p0195-02.png}}
+\fitfig{%
+% fig-alt: （第17题）扫描：四边形ABCD（AB=CD）；M/N为AD/BC中点；BA、CD延长分别交NM延长于G、P；实线AD/BC与线GNMP；虚线BD及中点O，虚线OM/ON
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.37,1.19);
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (2.29,0.00);
+  \coordinate (D) at (2.07,1.23);
+  \coordinate (M) at (1.22,1.21);
+  \coordinate (N) at (1.14,0.00);
+  \coordinate (O) at (1.04,0.61);
+  \coordinate (G) at (1.43,4.66);
+  \coordinate (P) at (1.44,4.80);
+  \draw[line width=0.75pt] (B) -- (A) -- (G);
+  \draw[line width=0.75pt] (C) -- (D) -- (P);
+  \draw[line width=0.75pt] (G) -- (P);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.70pt] (A) -- (D);
+  \draw[line width=0.70pt] (N) -- (M) -- (G);
+  \draw[dashed, line width=0.65pt] (B) -- (D);
+  \draw[dashed, line width=0.65pt] (O) -- (M);
+  \draw[dashed, line width=0.65pt] (O) -- (N);
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=west, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south west, inner sep=0.8pt] at (M) {$M$};
+  \node[anchor=north, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=east, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=east, inner sep=1.5pt] at (G) {$G$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+
 \caption{(第17题)}
 \end{figure}
 
@@ -18303,7 +18417,36 @@ ON，利用三角形的中位线性质证明\(\triangle OMN\)是等腰的，就�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0196-04.png}}
+\fitfig{%
+% fig-alt: 图3-43(1) 扫描：梯形ABCD（AB下底∥CD上底）；M/N腰中点，中位线MN；高DK⊥AB于K；底角A、B单弧；标上底/下底/中位线/高
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (5.20,0.00);
+  \coordinate (D) at (1.20,2.40);
+  \coordinate (C) at (4.20,2.40);
+  \coordinate (K) at (1.20,0.00);
+  \coordinate (M) at ($(A)!0.5!(D)$);
+  \coordinate (N) at ($(B)!0.5!(C)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (M) -- (N);
+  \draw[line width=0.70pt] (D) -- (K);
+  \draw[line width=0.50pt] (K) -- ++ (0.18,0) -- ++ (0,0.18) -- ++ (-0.18,0);
+  \draw[line width=0.50pt] ($(A)+(0.42,0)$) arc[start angle=0, end angle={atan2(2.40,1.20)}, radius=0.42];
+  \draw[line width=0.50pt] ($(B)+({atan2(2.40,-1.00)}:0.42)$) arc[start angle={atan2(2.40,-1.00)}, end angle=180, radius=0.42];
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=north, inner sep=1.5pt] at (K) {$K$};
+  \node[anchor=south, inner sep=1.5pt] at ($(D)!0.5!(C)$) {上底};
+  \node[anchor=south, inner sep=1pt] at (2.90,0.08) {下底};
+  \node[anchor=north, inner sep=1pt] at ($(M)!0.5!(N)$) {中位线};
+  \node[anchor=west, inner sep=1.5pt] at ($(D)!0.5!(K)$) {高};
+\end{tikzpicture}%
+}
+
 \caption{(1)}
 \end{figure}
 
@@ -18311,7 +18454,26 @@ ON，利用三角形的中位线性质证明\(\triangle OMN\)是等腰的，就�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0196-05.png}}
+\fitfig{%
+% fig-alt: 图3-43(2) 扫描：等腰梯形EFGH（E左上H右上F左下G右下）；腰EF=HG单杠；内标“等腰梯形”
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (F) at (0.00,0.00);
+  \coordinate (G) at (4.40,0.00);
+  \coordinate (E) at (0.90,2.20);
+  \coordinate (H) at (3.50,2.20);
+  \draw[line width=0.75pt] (E) -- (F) -- (G) -- (H) -- cycle;
+  \foreach \Pa/\Qa in {E/F, H/G} {
+    \draw[line width=0.50pt] let \p1=($(\Qa)-(\Pa)$), \n1={atan2(\y1,\x1)} in
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1+90:0.10) -- ++ (\n1-90:0.20);
+  }
+  \node[anchor=south east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south west, inner sep=1.5pt] at (H) {$H$};
+  \node[anchor=east, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=west, inner sep=1.5pt] at (G) {$G$};
+  \node at ($(E)!0.5!(G)$) {等腰梯形};
+\end{tikzpicture}%
+}
+
 \caption{(2)}
 \end{figure}
 
@@ -18319,7 +18481,19 @@ ON，利用三角形的中位线性质证明\(\triangle OMN\)是等腰的，就�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-1/fig-p0196-06.png}}
+\fitfig{%
+% fig-alt: 图3-43(3) 扫描：直角梯形（左腰垂直两底，右腰外斜）；左下直角方；内标“直角梯形”
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (Bl) at (0.00,0.00);
+  \coordinate (Br) at (4.00,0.00);
+  \coordinate (Tl) at (0.00,2.00);
+  \coordinate (Tr) at (2.40,2.00);
+  \draw[line width=0.75pt] (Bl) -- (Br) -- (Tr) -- (Tl) -- cycle;
+  \draw[line width=0.50pt] (Bl) -- ++ (0.22,0) -- ++ (0,0.22) -- ++ (-0.22,0);
+  \node at (1.40,1.00) {直角梯形};
+\end{tikzpicture}%
+}
+
 \caption{(3)}
 \end{figure}
 
@@ -18342,7 +18516,39 @@ ON，利用三角形的中位线性质证明\(\triangle OMN\)是等腰的，就�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·44}]{assets/plane-geometry-1/fig-p0196-07.png}}
+\fitfig{%
+% fig-alt: 图3-44 扫描：等腰梯形ABCD（AD上∥BC下，AB=CD单杠）；虚线AS∥CD交BC于S（AS单杠）；∠B、∠ASB、∠C单弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (5.00,0.00);
+  \coordinate (A) at (1.00,2.30);
+  \coordinate (D) at (4.00,2.30);
+  % AS // CD; CD vector = D-C = (-1,2.3)? C=(5,0), D=(4,2.3) => (-1,2.3)
+  % Actually D-C = (4-5,2.3-0)=(-1,2.3). AS // CD means A to S has same direction as D to C or C to D.
+  % Text: AS // DC. DC = C-D = (1,-2.3). From A parallel to DC: S = A + (C-D) = (1,2.3)+(1,-2.3)=(2,0).
+  % Or AS // DC with S on BC: since ASCD parallelogram, S = A + (C-D) wait
+  % ASCD parallelogram with AS//DC and AD//SC: S = A + (C-D)? Vector DC from D to C = C-D. AS = DC => S = A+(C-D)=(2,0).
+  % Check: AS = (1,-2.3), DC = (1,-2.3) ok. AD=(3,0), SC = C-S=(3,0) ok.
+  \coordinate (S) at (2.00,0.00);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed, line width=0.65pt] (A) -- (S);
+  \foreach \Pa/\Qa in {A/B, A/S, D/C} {
+    \draw[line width=0.50pt] let \p1=($(\Qa)-(\Pa)$), \n1={atan2(\y1,\x1)} in
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1+90:0.10) -- ++ (\n1-90:0.20);
+  }
+  % angle arcs at B, S (right side ASB? angle ASB between AS and SB toward C is angle ASC actually - text angle ASB = angle C)
+  % arcs at B (angle ABC), at S (angle ASC / ASB facing right), at C (angle BCD)
+  \draw[line width=0.50pt] ($(B)+(0.45,0)$) arc[start angle=0, end angle={atan2(2.30,1.00)}, radius=0.45];
+  \draw[line width=0.50pt] ($(S)+({atan2(2.30,-1.00)}:0.40)$) arc[start angle={atan2(2.30,-1.00)}, end angle=0, radius=0.40];
+  \draw[line width=0.50pt] ($(C)+({atan2(2.30,-1.00)}:0.45)$) arc[start angle={atan2(2.30,-1.00)}, end angle=180, radius=0.45];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+}
+
 \caption{图 3·44}
 \end{figure}
 
