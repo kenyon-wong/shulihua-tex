@@ -18265,14 +18265,40 @@ V-ADC 沿着 AD 轴旋转，使它的底面 \(\triangle ADC\) 与棱锥 V-ADB �
 \end{figure}
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0168-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图2·55（2）：多面体V-ABCD-V'（正八面体状）。V上、V'下；B左、A右、C前、D后。外轮廓VB、VC、VA与V'B、V'C、V'A及底BC、CA实线；VD、V'D与底BD、DA及对角BA、CD虚线；直角于对角交点。扫描有V、V'、A、B、C、D
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (1.70,3.20);
+  \coordinate (Vp) at (1.70,0.05);
+  \coordinate (B) at (0.10,1.55);
+  \coordinate (A) at (3.30,1.55);
+  \coordinate (C) at (1.70,0.95);
+  \coordinate (D) at (1.70,2.15);
+  \coordinate (O) at (1.70,1.55);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (A);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Vp) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D);
+  \draw[line width=0.85pt] (V) -- (B);
+  \draw[line width=0.85pt] (V) -- (A);
+  \draw[line width=0.85pt] (V) -- (C);
+  \draw[line width=0.85pt] (Vp) -- (B);
+  \draw[line width=0.85pt] (Vp) -- (A);
+  \draw[line width=0.85pt] (Vp) -- (C);
+  \draw[line width=0.85pt] (B) -- (C) -- (A);
+  \draw[line width=0.55pt] (O) ++(0.00,-0.10) -- ++(0.10,0.00) -- ++(0.00,0.10);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=north,inner sep=0.05pt] at (Vp) {$V'$};
+  \node[anchor=east,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=0.04pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{图2·55（2）}
 \end{figure}
-
-\emph{（2）}
-
-\emph{图2·55}
-
 很明显， 这个多面体的体积是由棱锥 \(V - ABC\) 的两部分合成的，
 所以它们的体积是相等的， 但是它们就不可能重合。
 
@@ -18313,12 +18339,65 @@ V = a b c.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-56}]{assets/solid-geometry/fig-p0169-01.png}}
-\caption{图2-56}
+\fitfig{%
+% fig-alt: 图2·56：长方体，左旁单位正方体。A前右下、B前左下、C后右下、D在A正上。底面4×3单位立方格；a在AB下、b在AC旁、c在AD旁。外轮廓实线；底面内网格及后隐棱虚线。扫描有A–D、a、b、c及单位立方体
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (uA) at (-1.55,0.45);
+  \coordinate (uB) at (-2.05,0.45);
+  \coordinate (uC) at (-2.32,0.25);
+  \coordinate (uD) at (-1.82,0.25);
+  \coordinate (uA1) at (-1.55,0.95);
+  \coordinate (uB1) at (-2.05,0.95);
+  \coordinate (uC1) at (-2.32,0.75);
+  \coordinate (uD1) at (-1.82,0.75);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (uB) -- (uD) -- (uC);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (uD) -- (uD1);
+  \draw[line width=0.70pt] (uB) -- (uA) -- (uC);
+  \draw[line width=0.70pt] (uB) -- (uB1) -- (uA1) -- (uA);
+  \draw[line width=0.70pt] (uA1) -- (uD1) -- (uC1) -- (uB1);
+  \draw[line width=0.70pt] (uC) -- (uC1);
+  \coordinate (A) at (3.35,0.25);
+  \coordinate (B) at (1.15,0.25);
+  \coordinate (C) at (2.45,-0.40);
+  \coordinate (Bl) at (0.25,-0.40);
+  \coordinate (D) at (3.35,2.25);
+  \coordinate (Bt) at (1.15,2.25);
+  \coordinate (Ct) at (2.45,1.60);
+  \coordinate (Blt) at (0.25,1.60);
+  \coordinate (Au) at (3.35,0.78);
+  \coordinate (Bu) at (1.15,0.78);
+  \coordinate (Cu) at (2.45,0.13);
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (B) -- (Bl) -- (C);
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (Bl) -- (Blt);
+  \draw[line width=0.50pt,dash pattern=on 1.5pt off 1.1pt] (1.70,0.78) -- (0.80,0.13);
+  \draw[line width=0.50pt,dash pattern=on 1.5pt off 1.1pt] (2.25,0.78) -- (1.35,0.13);
+  \draw[line width=0.50pt,dash pattern=on 1.5pt off 1.1pt] (2.80,0.78) -- (1.90,0.13);
+  \draw[line width=0.50pt,dash pattern=on 1.5pt off 1.1pt] (0.85,0.56) -- (3.05,0.56);
+  \draw[line width=0.50pt,dash pattern=on 1.5pt off 1.1pt] (0.55,0.35) -- (2.75,0.35);
+  \draw[line width=0.65pt] (1.15,0.25) -- (1.15,0.78);
+  \draw[line width=0.65pt] (1.70,0.25) -- (1.70,0.78);
+  \draw[line width=0.65pt] (2.25,0.25) -- (2.25,0.78);
+  \draw[line width=0.65pt] (2.80,0.25) -- (2.80,0.78);
+  \draw[line width=0.65pt] (3.35,0.25) -- (3.35,0.78);
+  \draw[line width=0.65pt] (3.05,0.03) -- (3.05,0.56);
+  \draw[line width=0.65pt] (2.75,-0.18) -- (2.75,0.35);
+  \draw[line width=0.65pt] (2.45,-0.40) -- (2.45,0.13);
+  \draw[line width=0.70pt] (Bu) -- (Au) -- (Cu);
+  \draw[line width=0.85pt] (B) -- (A) -- (C);
+  \draw[line width=0.85pt] (A) -- (D) -- (Bt) -- (B);
+  \draw[line width=0.85pt] (D) -- (Blt) -- (Ct) -- (Bt);
+  \draw[line width=0.85pt] (C) -- (Ct);
+  \node[anchor=north west,inner sep=0.06pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=0.06pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.06pt] at (D) {$D$};
+  \node[anchor=north,inner sep=0.12pt] at (2.25,0.25) {$a$};
+  \node[anchor=north west,inner sep=0.04pt] at (2.95,-0.12) {$b$};
+  \node[anchor=west,inner sep=0.08pt] at (3.40,1.20) {$c$};
+\end{tikzpicture}%
+}
+\caption{图2·56}
 \end{figure}
-
-\emph{图2·56}
-
 \[
 A B = \frac {p}{m} = a\text{，}
 \]
@@ -18377,18 +18456,79 @@ A B = p \text {\text{个}} \left(\frac {1}{m}\right)\text{，} A C = q \text {\t
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-57}]{assets/solid-geometry/fig-p0171-01.png}}
-\caption{图2-57}
+\fitfig{%
+% fig-alt: 图2·57：三长方体共顶点A。AB向左有B1、B、B2；AC向后有C1、C、C2；AD向上有D1、D、D2。外轮廓与可见棱实线；各长方体后左隐棱虚线。扫描有A、B/B1/B2、C/C1/C2、D/D1/D2
+\begin{tikzpicture}[line cap=round,line join=round]
+  % A at front-right bottom; length left, depth back-right-up, height up
+  \def\dx{0.55}
+  \def\dy{0.38}
+  \coordinate (A) at (3.55,0.15);
+  \coordinate (B1) at (2.55,0.15);
+  \coordinate (B) at (1.70,0.15);
+  \coordinate (B2) at (0.55,0.15);
+  \coordinate (C1) at (3.55+\dx,0.15+\dy);
+  \coordinate (C) at (3.55+1.55*\dx,0.15+1.55*\dy);
+  \coordinate (C2) at (3.55+2.35*\dx,0.15+2.35*\dy);
+  \coordinate (D1) at (3.55,1.05);
+  \coordinate (D) at (3.55,1.70);
+  \coordinate (D2) at (3.55,2.55);
+  % tops above B's
+  \coordinate (Q1) at (2.55,1.05);
+  \coordinate (Q) at (1.70,1.70);
+  \coordinate (Q2) at (0.55,2.55);
+  % tops above C's (= above back-right of each)
+  \coordinate (E1) at (3.55+\dx,1.05+\dy);
+  \coordinate (E) at (3.55+1.55*\dx,1.70+1.55*\dy);
+  \coordinate (E2) at (3.55+2.35*\dx,2.55+2.35*\dy);
+  % back-left tops (above back-left bottoms)
+  \coordinate (F1) at (2.55+\dx,1.05+\dy);
+  \coordinate (F) at (1.70+1.55*\dx,1.70+1.55*\dy);
+  \coordinate (F2) at (0.55+2.35*\dx,2.55+2.35*\dy);
+  \coordinate (G1) at (2.55+\dx,0.15+\dy);
+  \coordinate (G) at (1.70+1.55*\dx,0.15+1.55*\dy);
+  \coordinate (G2) at (0.55+2.35*\dx,0.15+2.35*\dy);
+  % hidden edges (back-left verticals and back bottoms) for all three
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (G1) -- (B1);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (G1) -- (C1);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (G1) -- (F1);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (G) -- (B);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (G) -- (C);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (G) -- (F);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (G2) -- (B2);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (G2) -- (C2);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (G2) -- (F2);
+  % small box solid
+  \draw[line width=0.75pt] (A) -- (B1) -- (Q1) -- (D1) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C1) -- (E1) -- (D1);
+  \draw[line width=0.75pt] (Q1) -- (F1) -- (E1);
+  % mid box solid
+  \draw[line width=0.80pt] (A) -- (B) -- (Q) -- (D) -- cycle;
+  \draw[line width=0.80pt] (A) -- (C) -- (E) -- (D);
+  \draw[line width=0.80pt] (Q) -- (F) -- (E);
+  % large box solid
+  \draw[line width=0.85pt] (A) -- (B2) -- (Q2) -- (D2) -- cycle;
+  \draw[line width=0.85pt] (A) -- (C2) -- (E2) -- (D2);
+  \draw[line width=0.85pt] (Q2) -- (F2) -- (E2);
+  \node[anchor=north west,inner sep=0.04pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.03pt] at (B1) {$B_{1}$};
+  \node[anchor=north,inner sep=0.03pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=0.04pt] at (B2) {$B_{2}$};
+  \node[anchor=west,inner sep=0.03pt] at (C1) {$C_{1}$};
+  \node[anchor=west,inner sep=0.03pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.03pt] at (C2) {$C_{2}$};
+  \node[anchor=east,inner sep=0.03pt] at (D1) {$D_{1}$};
+  \node[anchor=east,inner sep=0.03pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.04pt] at (D2) {$D_{2}$};
+\end{tikzpicture}%
+}
+\caption{图2·57}
 \end{figure}
-
-\emph{图2·57}
-
 \[
 \frac {p _ {n}}{10 ^ {n}} <   a <   \frac {p _ {n} + 1}{10 ^ {n}}\text{；} \quad \frac {q _ {n}}{10 ^ {n}} <   b <   \frac {q _ {n} + 1}{10 ^ {n}}\text{；}
 \]
 
 \[
-\frac {r _ {n}}{10 ^ {n}} <   e <   \frac {r _ {n} + 1}{10 ^ {n}}.
+\frac {r _ {n}}{10 ^ {n}} <   c <   \frac {r _ {n} + 1}{10 ^ {n}}.
 \]
 
 设以 \(AB_{1}, AC_{1}, AD_{1}\) 为三度的长方体为 \(Q_{1}\)，以
@@ -18469,20 +18609,73 @@ abc，即 \(V = a \cdot b \cdot c\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-58}]{assets/solid-geometry/fig-p0173-01.png}}
-\caption{图2-58}
+\fitfig{%
+% fig-alt: 图2·58：正方体ABCD-A1B1C1D1。隐棱AD、DC、DD1虚线；其余棱实线；体对角线A1C虚线标l。扫描有A–D、A1–D1、l
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.20,0.20);
+  \coordinate (B) at (2.10,0.20);
+  \coordinate (C) at (2.85,0.85);
+  \coordinate (D) at (0.95,0.85);
+  \coordinate (A1) at (0.20,2.20);
+  \coordinate (B1) at (2.10,2.20);
+  \coordinate (C1) at (2.85,2.85);
+  \coordinate (D1) at (0.95,2.85);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (C);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (A1) -- (D1) -- (C1) -- (B1);
+  \draw[line width=0.85pt] (C) -- (C1);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (D1) {$D_{1}$};
+  \node[anchor=south west,inner sep=0.06pt] at (1.55,1.45) {$l$};
+\end{tikzpicture}%
+}
+\caption{图2·58}
 \end{figure}
-
-\emph{图2·58}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-59}]{assets/solid-geometry/fig-p0173-02.png}}
-\caption{图2-59}
+\fitfig{%
+% fig-alt: 图2·59：长方体ABCD-A1B1C1D1，C前下。隐棱AB、AD、AA1虚线；其余棱实线；体对角线A1C虚线标l；面对角B1C、D1C实线。扫描有A–D、A1–D1、l
+\begin{tikzpicture}[line cap=round,line join=round]
+  % C front-bottom center-ish; A back-left hidden
+  \coordinate (C) at (1.90,0.15);
+  \coordinate (B) at (0.35,0.55);
+  \coordinate (D) at (3.35,0.55);
+  \coordinate (A) at (1.70,1.05);
+  \coordinate (C1) at (1.90,2.35);
+  \coordinate (B1) at (0.35,2.75);
+  \coordinate (D1) at (3.35,2.75);
+  \coordinate (A1) at (1.70,3.25);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (A) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (A1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (C);
+  \draw[line width=0.85pt] (B) -- (C) -- (D);
+  \draw[line width=0.85pt] (B) -- (B1) -- (C1) -- (C);
+  \draw[line width=0.85pt] (D) -- (D1) -- (C1);
+  \draw[line width=0.85pt] (B1) -- (A1) -- (D1);
+  \draw[line width=0.85pt] (B1) -- (C);
+  \draw[line width=0.85pt] (D1) -- (C);
+  \node[anchor=north,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=0.04pt] at (A) {$A$};
+  \node[anchor=south,inner sep=0.04pt] at (C1) {$C_{1}$};
+  \node[anchor=east,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (D1) {$D_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.06pt] at (2.35,1.55) {$l$};
+\end{tikzpicture}%
+}
+\caption{图2·59}
 \end{figure}
-
-\emph{图2·59}
-
 \subsubsection{例 2}
 
 长方体的对角线长为 l，这对角线与一个面的交角为
@@ -18553,7 +18746,7 @@ V = C C _ {1} \cdot C B \cdot C D = \frac {l}{2} \cdot \frac {\sqrt {2 l}}{2} \c
 \textbf{［注意］}
 
 （1）
-夹在两平行平面间的两个几何体，不一定指都是多面体，如果一个是多面体，另一个不是多面体，甚至两个都不是多面体，都是可以的（图2·6L）。
+夹在两平行平面间的两个几何体，不一定指都是多面体，如果一个是多面体，另一个不是多面体，甚至两个都不是多面体，都是可以的（图2·61）。
 
 （2） 两个几何体夹在两个平行平面之间，这意味着此
 
@@ -18565,12 +18758,59 @@ V = C C _ {1} \cdot C B \cdot C D = \frac {l}{2} \cdot \frac {\sqrt {2 l}}{2} \c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.61}]{assets/solid-geometry/fig-p0175-01.png}}
-\caption{图2.61}
+\fitfig{%
+% fig-alt: 图2·61：三平行平面间，左直圆柱、右斜五棱柱。中截面均斜线填充；柱面与棱柱可见轮廓实线，背面椭圆弧与隐棱虚线。扫描无字母
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \y in {0.20,1.60,3.00} {
+    \draw[line width=0.70pt] (0.05,\y) -- (5.20,\y) -- (5.95,\y+0.40) -- (0.80,\y+0.40) -- cycle;
+  }
+  % cylinder
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (2.20,0.20) arc (0:180:0.70 and 0.20);
+  \draw[line width=0.80pt] (2.20,0.20) arc (0:-180:0.70 and 0.20);
+  \begin{scope}
+    \clip (1.50,1.60) ellipse (0.70 and 0.20);
+    \foreach \t in {-1.0,-0.7,...,1.0} {
+      \draw[line width=0.35pt] (1.50+\t-0.55,1.40) -- (1.50+\t+0.55,1.80);
+    }
+  \end{scope}
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (2.20,1.60) arc (0:180:0.70 and 0.20);
+  \draw[line width=0.80pt] (2.20,1.60) arc (0:-180:0.70 and 0.20);
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (2.20,3.00) arc (0:180:0.70 and 0.20);
+  \draw[line width=0.80pt] (2.20,3.00) arc (0:-180:0.70 and 0.20);
+  \draw[line width=0.80pt] (0.80,0.20) -- (0.80,3.00);
+  \draw[line width=0.80pt] (2.20,0.20) -- (2.20,3.00);
+  % oblique pentagon prism
+  \coordinate (T1) at (3.40,3.00);
+  \coordinate (T2) at (4.05,3.00);
+  \coordinate (T3) at (4.45,3.28);
+  \coordinate (T4) at (3.95,3.42);
+  \coordinate (T5) at (3.35,3.22);
+  \coordinate (M1) at (3.85,1.60);
+  \coordinate (M2) at (4.50,1.60);
+  \coordinate (M3) at (4.90,1.88);
+  \coordinate (M4) at (4.40,2.02);
+  \coordinate (M5) at (3.80,1.82);
+  \coordinate (B1) at (4.30,0.20);
+  \coordinate (B2) at (4.95,0.20);
+  \coordinate (B3) at (5.35,0.48);
+  \coordinate (B4) at (4.85,0.62);
+  \coordinate (B5) at (4.25,0.42);
+  \fill[pattern=north east lines,pattern color=black!65] (M1) -- (M2) -- (M3) -- (M4) -- (M5) -- cycle;
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (T4) -- (T5) -- (T1);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (M4) -- (M5) -- (M1);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (B4) -- (B5) -- (B1);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (T4) -- (M4) -- (B4);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.4pt] (T5) -- (M5) -- (B5);
+  \draw[line width=0.80pt] (T1) -- (T2) -- (T3) -- (T4);
+  \draw[line width=0.80pt] (M1) -- (M2) -- (M3) -- (M4);
+  \draw[line width=0.80pt] (B1) -- (B2) -- (B3) -- (B4);
+  \draw[line width=0.80pt] (T1) -- (M1) -- (B1);
+  \draw[line width=0.80pt] (T2) -- (M2) -- (B2);
+  \draw[line width=0.80pt] (T3) -- (M3) -- (B3);
+\end{tikzpicture}%
+}
+\caption{图2·61}
 \end{figure}
-
-\emph{图2·61}
-
 \subsubsection{例}
 
 应用祖暅定理，证明：长方体的一个对角面把长方体分成体积相等的两个部分。
@@ -18593,12 +18833,49 @@ A B D - A _ {1} B _ {1} D _ {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.62}]{assets/solid-geometry/fig-p0175-02.png}}
-\caption{图2.62}
+\fitfig{%
+% fig-alt: 图2·62：长方体ABCD-A1B1C1D1，中截面A2B2C2D2。隐棱AD/DC/DD1及中后棱、底与中截面对角DB/D2B2虚线；顶对角D1B1实线；其余棱实线。扫描有A–D、A1–D1、A2–D2
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.20,0.15);
+  \coordinate (B) at (2.20,0.15);
+  \coordinate (C) at (3.00,0.85);
+  \coordinate (D) at (1.00,0.85);
+  \coordinate (A2) at (0.20,1.55);
+  \coordinate (B2) at (2.20,1.55);
+  \coordinate (C2) at (3.00,2.25);
+  \coordinate (D2) at (1.00,2.25);
+  \coordinate (A1) at (0.20,2.95);
+  \coordinate (B1) at (2.20,2.95);
+  \coordinate (C1) at (3.00,3.65);
+  \coordinate (D1) at (1.00,3.65);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (D2) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A2) -- (D2) -- (C2);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D2) -- (B2);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (A2) -- (A1);
+  \draw[line width=0.85pt] (B) -- (B2) -- (B1);
+  \draw[line width=0.85pt] (C) -- (C2) -- (C1);
+  \draw[line width=0.85pt] (A2) -- (B2) -- (C2);
+  \draw[line width=0.85pt] (A1) -- (B1) -- (C1) -- (D1) -- cycle;
+  \draw[line width=0.85pt] (D1) -- (B1);
+  \node[anchor=north east,inner sep=0.04pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.04pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.04pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.04pt] at (A2) {$A_{2}$};
+  \node[anchor=west,inner sep=0.04pt] at (B2) {$B_{2}$};
+  \node[anchor=west,inner sep=0.04pt] at (C2) {$C_{2}$};
+  \node[anchor=east,inner sep=0.04pt] at (D2) {$D_{2}$};
+  \node[anchor=east,inner sep=0.04pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.04pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.04pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.04pt] at (D1) {$D_{1}$};
+\end{tikzpicture}%
+}
+\caption{图2·62}
 \end{figure}
-
-\emph{图2·62}
-
 故而直三棱柱 \(ABD - A_{1}B_{1}D_{1}\) 和 \(BCD - B_{1}C_{1}D_{1}\)
 夹在两个平行平面 \(ABCD\) 和 \(A_{1}B_{1}C_{1}D_{1}\) 之间。
 
@@ -18611,7 +18888,7 @@ A B D - A _ {1} B _ {1} D _ {1}
 
 ∵ 平面 \(A_{2}B_{2}C_{2}D_{2} \parallel\) 平面 ABCD，∴
 \(A_{2}B_{2}C_{2}D_{2}\) 也是矩形，∴ \(\triangle A_{2}B_{2}D_{2}\)
-的面积 \(-\triangle B_{2}O_{2}D\) 的面积。
+的面积 \(=\triangle B_{2}C_{2}D_{2}\) 的面积。
 
 因此，这两个直三棱柱被平行于两个底面的任何平面所截得的两个截面的面积都相等。
 
@@ -18639,7 +18916,7 @@ A B D - A _ {1} B _ {1} D _ {1}
   \(30 \mathrm{~mm}\)，求它的重量。
 \end{enumerate}
 
-［提示：铸铁的北量约是7.4克/厘米 \(^{3}\) .］
+［提示：铸铁的比重约是7.4克/厘米 \(^{3}\) .］
 
 \begin{enumerate}
 \setcounter{enumi}{6}
@@ -18710,12 +18987,41 @@ A _ {1} B _ {1} C _ {1} D _ {1} E _ {1} - A B C D E
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-64}]{assets/solid-geometry/fig-p0177-01.png}}
-\caption{图2-64}
+\fitfig{%
+% fig-alt: 图2·64：直平行六面体ABCD-A1B1C1D1。底□ABCD，AB=8cm，∠DAB≈60°。隐棱AD、DC、DD1虚线；顶面对角D1B1实线；体对角DB1虚线；∠DB1D1弧；AB旁标8cm。扫描有A–D、A1–D1、8cm
+\begin{tikzpicture}[line cap=round,line join=round]
+  % parallelogram base: A front-left, B front-right, angle at A ~60° so D goes up-right-back
+  \coordinate (A) at (0.35,0.25);
+  \coordinate (B) at (2.35,0.25);
+  \coordinate (C) at (3.35,1.15);
+  \coordinate (D) at (1.35,1.15);
+  \coordinate (A1) at (0.35,2.35);
+  \coordinate (B1) at (2.35,2.35);
+  \coordinate (C1) at (3.35,3.25);
+  \coordinate (D1) at (1.35,3.25);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (B1);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (A1) -- (D1) -- (C1) -- (B1);
+  \draw[line width=0.85pt] (C) -- (C1);
+  \draw[line width=0.85pt] (D1) -- (B1);
+  % angle arc at B1 between D1B1 and DB1
+  \draw[line width=0.55pt] (B1) ++(-0.28,0.00) arc (180:230:0.28);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (D1) {$D_{1}$};
+  \node[anchor=north,inner sep=0.08pt] at (1.35,0.25) {$8\mathrm{cm}$};
+\end{tikzpicture}%
+}
+\caption{图2·64}
 \end{figure}
-
-\emph{图2·64}
-
 \textbf{［解］} 设直平行六面体 \(AC_{1}\)
 中（图2·64），\(\angle DB_{1}D_{1}=30^{\circ}\)，\(AB=8\mathrm{~cm}\)，\(AD=15\mathrm{~cm}\)，\(\angle DAB=60^{\circ}\)。
 
