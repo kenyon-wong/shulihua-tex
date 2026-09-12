@@ -20148,8 +20148,52 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-33}]{assets/plane-geometry-2/fig-p0217-01.png}}
-\caption{图3-33}
+\fitfig{%
+% fig-alt: 图3·33 左△ABC，虚高CD⊥AB于D；右以EG为直径虚半圆，EF=½AB、FG=CD，FJ⊥EG交半圆于J（标x），正方形FHIJ
+\begin{tikzpicture}[line cap=round,line join=round]
+  % left triangle
+  \begin{scope}[shift={(0,0)}]
+    \coordinate (A) at (0.00,0.00);
+    \coordinate (B) at (2.70,0.00);
+    \coordinate (D) at (1.85,0.00);
+    \coordinate (C) at (1.85,1.85);
+    \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+    \draw[dashed,line width=0.6pt] (C) -- (D);
+    \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+    \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+    \node[anchor=south,inner sep=1.5pt] at (C) {$C$};
+    \node[anchor=north,inner sep=1.5pt] at (D) {$D$};
+  \end{scope}
+  % right: geometric mean + square
+  \begin{scope}[shift={(3.55,0)}]
+    \def\ef{1.25}
+    \def\fg{3.20}
+    \pgfmathsetmacro{\xx}{sqrt(\ef*\fg)}
+    \coordinate (E) at (0,0);
+    \coordinate (F) at (\ef,0);
+    \coordinate (G) at ({\ef+\fg},0);
+    \coordinate (J) at (\ef,\xx);
+    \coordinate (H) at ({\ef+\xx},0);
+    \coordinate (I) at ({\ef+\xx},\xx);
+    \draw[line width=0.75pt] (E) -- (G);
+    \pgfmathsetmacro{\rrad}{(\ef+\fg)/2}
+    \draw[dashed,line width=0.6pt] (E) arc[start angle=180,end angle=0,radius=\rrad];
+    \draw[line width=0.75pt] (F) -- (J) -- (I) -- (H) -- cycle;
+    \draw[<->,line width=0.45pt] (0,-0.42) -- (\ef,-0.42);
+    \node[anchor=north,inner sep=1pt,font=\small] at ({\ef/2},-0.42) {$\frac{1}{2}AB$};
+    \draw[<->,line width=0.45pt] (\ef,-0.42) -- ({\ef+\fg},-0.42);
+    \node[anchor=north,inner sep=1pt,font=\small] at ({\ef+\fg/2},-0.42) {$CD$};
+    \node[anchor=east,inner sep=1.5pt] at ({\ef},{\xx/2}) {$x$};
+    \node[anchor=north,inner sep=1.2pt] at (E) {$E$};
+    \node[anchor=south,inner sep=1.2pt] at (F) {$F$};
+    \node[anchor=south,inner sep=1.2pt] at (H) {$H$};
+    \node[anchor=north west,inner sep=1pt] at (G) {$G$};
+    \node[anchor=south east,inner sep=1pt] at (J) {$J$};
+    \node[anchor=south west,inner sep=1pt] at (I) {$I$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图3·33}
 \end{figure}
 
 \begin{quote}
@@ -20176,8 +20220,22 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0218-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图3·34（1）△ABC，虚高CD⊥AB于D
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (3.20,0.00);
+  \coordinate (D) at (2.35,0.00);
+  \coordinate (C) at (2.35,2.20);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[dashed,line width=0.6pt] (C) -- (D);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{（1）}
 \end{figure}
 
 \begin{quote}
@@ -20186,8 +20244,31 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0218-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图3·34（2）射线OE、OF；下斜射线三等分，虚平行线截得EF=⅔AB
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0.00,0.00);
+  % lower ray direction (unit-ish)
+  \coordinate (Q1) at (1.55,-0.95);
+  \coordinate (Q2) at (3.10,-1.90);
+  \coordinate (Q3) at (4.65,-2.85);
+  % horizontal: OE : EF = 1:2 so E at 1/3 of OF, F at OF
+  \coordinate (E) at (1.70,0.00);
+  \coordinate (M) at (3.40,0.00);
+  \coordinate (F) at (5.10,0.00);
+  \draw[line width=0.75pt] (O) -- (5.40,0.00);
+  \draw[line width=0.75pt] (O) -- (4.90,-3.00);
+  \draw[dashed,line width=0.55pt] (Q1) -- (E);
+  \draw[dashed,line width=0.55pt] (Q2) -- (M);
+  \draw[dashed,line width=0.55pt] (Q3) -- (F);
+  \draw[<->,line width=0.45pt] (1.70,0.55) -- (5.10,0.55);
+  \node[anchor=south,inner sep=1pt,font=\small] at (3.40,0.55) {$\frac{2}{3}AB$};
+  \node[anchor=east,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=south,inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1.2pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（2）}
 \end{figure}
 
 \begin{quote}
@@ -20196,8 +20277,31 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0218-03.png}}
-\caption{(3)}
+\fitfig{%
+% fig-alt: 图3·34（3）虚线直角△GHI（直角在G）；GI=CD，GH=√3 CD，HI=2CD
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (G) at (0.00,0.00);
+  \coordinate (I) at (0.00,1.70);
+  \coordinate (H) at ({1.70*sqrt(3)},0.00);
+  \draw[dashed,line width=0.7pt] (G) -- (I) -- (H) -- cycle;
+  \draw[line width=0.5pt] (0.18,0) -- (0.18,0.18) -- (0,0.18);
+  % vertical dim CD
+  \draw[<->,line width=0.45pt] (-0.55,0.00) -- (-0.55,1.70);
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.58,0.85) {$CD$};
+  % horizontal dim
+  \draw[<->,line width=0.45pt] (0.00,-0.48) -- ({1.70*sqrt(3)},-0.48);
+  \node[anchor=north,inner sep=1pt,font=\small] at ({0.85*sqrt(3)},-0.48) {$\sqrt{3}\,CD$};
+  % hypotenuse dim (offset parallel)
+  \coordinate (Im) at ($(I)!0.12!90:(H)$);
+  \coordinate (Hm) at ($(H)!0.12!-90:(I)$);
+  \draw[<->,line width=0.45pt] (Im) -- (Hm);
+  \node[font=\small,inner sep=1pt] at ($(Im)!0.5!(Hm)!0.22!90:(Hm)$) {$2CD$};
+  \node[anchor=north east,inner sep=1pt] at (G) {$G$};
+  \node[anchor=north west,inner sep=1pt] at (H) {$H$};
+  \node[anchor=south east,inner sep=1pt] at (I) {$I$};
+\end{tikzpicture}%
+}
+\caption{（3）}
 \end{figure}
 
 \begin{quote}
@@ -20206,8 +20310,34 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0218-04.png}}
-\caption{(4)}
+\fitfig{%
+% fig-alt: 图3·34（4）MN为直径虚半圆；MA'=⅔AB、A'N=√3 CD；A'C'⊥MN交半圆；等边△A'B'C'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\ma{2.00}
+  \def\an{2.60}
+  \pgfmathsetmacro{\ac}{sqrt(\ma*\an)}
+  \coordinate (M) at (0,0);
+  \coordinate (Ap) at (\ma,0);
+  \coordinate (N) at ({\ma+\an},0);
+  \coordinate (Cp) at (\ma,\ac);
+  % equilateral to the right of vertical A'C'
+  \coordinate (Bp) at ({\ma + \ac*sqrt(3)/2}, {\ac/2});
+  \pgfmathsetmacro{\rrad}{(\ma+\an)/2}
+  \draw[line width=0.75pt] (M) -- (N);
+  \draw[dashed,line width=0.6pt] (M) arc[start angle=180,end angle=0,radius=\rrad];
+  \draw[line width=0.75pt] (Ap) -- (Cp) -- (Bp) -- cycle;
+  \draw[<->,line width=0.45pt] (0,-0.45) -- (\ma,-0.45);
+  \node[anchor=north,inner sep=1pt,font=\small] at ({\ma/2},-0.45) {$\frac{2}{3}AB$};
+  \draw[<->,line width=0.45pt] (\ma,-0.45) -- ({\ma+\an},-0.45);
+  \node[anchor=north,inner sep=1pt,font=\small] at ({\ma+\an/2},-0.45) {$\sqrt{3}\,CD$};
+  \node[anchor=north east,inner sep=1pt] at (M) {$M$};
+  \node[anchor=north,inner sep=1.2pt] at (Ap) {$A'$};
+  \node[anchor=north west,inner sep=1pt] at (N) {$N$};
+  \node[anchor=south,inner sep=1.5pt] at (Cp) {$C'$};
+  \node[anchor=west,inner sep=1.5pt] at (Bp) {$B'$};
+\end{tikzpicture}%
+}
+\caption{（4）}
 \end{figure}
 
 \begin{quote}
@@ -20266,8 +20396,42 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.35}]{assets/plane-geometry-2/fig-p0219-01.png}}
-\caption{图3.35}
+\fitfig{%
+% fig-alt: 图3·35 左正方形ABCD边长a；右矩形A'B'C'D'，高x=a/2、底y=2a
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\aa{2.00}
+  % square
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (\aa,0);
+  \coordinate (C) at (\aa,\aa);
+  \coordinate (D) at (0,\aa);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=2pt] at ({\aa/2},0.15) {$a$};
+  % rectangle
+  \begin{scope}[shift={(3.10,0)}]
+    \def\xx{1.00}
+    \def\yy{4.00}
+    \coordinate (Ap) at (0,0);
+    \coordinate (Bp) at (\yy,0);
+    \coordinate (Cp) at (\yy,\xx);
+    \coordinate (Dp) at (0,\xx);
+    \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
+    \draw[<->,line width=0.45pt] (-0.45,0) -- (-0.45,\xx);
+    \node[anchor=east,inner sep=1pt,font=\small] at (-0.48,{\xx/2}) {$x=\dfrac{a}{2}$};
+    \draw[<->,line width=0.45pt] (0,-0.45) -- (\yy,-0.45);
+    \node[anchor=north,inner sep=1pt,font=\small] at ({\yy/2},-0.45) {$y=2a$};
+    \node[anchor=north east,inner sep=1pt] at (Ap) {$A'$};
+    \node[anchor=north west,inner sep=1pt] at (Bp) {$B'$};
+    \node[anchor=south west,inner sep=1pt] at (Cp) {$C'$};
+    \node[anchor=south east,inner sep=1pt] at (Dp) {$D'$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图3·35}
 \end{figure}
 
 \begin{quote}
@@ -20321,8 +20485,33 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-36}]{assets/plane-geometry-2/fig-p0220-01.png}}
-\caption{图3-36}
+\fitfig{%
+% fig-alt: 图3·36 △ABC；底BC三等分点D、E；实线AD、AE；下斜射线与虚平行线示三等分
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (4.50,0.00);
+  \coordinate (D) at (1.50,0.00);
+  \coordinate (E) at (3.00,0.00);
+  \coordinate (A) at (2.70,3.20);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (A) -- (E);
+  % trisection construction below: ray from B, equal segments, parallels to C
+  \coordinate (R1) at (1.20,-0.85);
+  \coordinate (R2) at (2.40,-1.70);
+  \coordinate (R3) at (3.60,-2.55);
+  \draw[dashed,line width=0.55pt] (B) -- (3.90,-2.75);
+  \draw[dashed,line width=0.55pt] (R1) -- (D);
+  \draw[dashed,line width=0.55pt] (R2) -- (E);
+  \draw[dashed,line width=0.55pt] (R3) -- (C);
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1.5pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{图3·36}
 \end{figure}
 
 \begin{quote}
@@ -20350,8 +20539,30 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-37}]{assets/plane-geometry-2/fig-p0221-01.png}}
-\caption{图3-37}
+\fitfig{%
+% fig-alt: 图3·37 △ABC；M为BC中点；P在BC；Q在AC；虚线AP、AM、MQ∥AP；实线PQ
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (5.00,0.00);
+  \coordinate (M) at (2.50,0.00);
+  \coordinate (P) at (1.15,0.00);
+  \coordinate (A) at (3.20,3.60);
+  % Q on AC with MQ ∥ AP (computed)
+  \coordinate (Q) at (3.831,2.338);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (P) -- (Q);
+  \draw[dashed,line width=0.6pt] (A) -- (P);
+  \draw[dashed,line width=0.6pt] (A) -- (M);
+  \draw[dashed,line width=0.6pt] (M) -- (Q);
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1.2pt] at (P) {$P$};
+  \node[anchor=north,inner sep=1.2pt] at (M) {$M$};
+  \node[anchor=west,inner sep=1.5pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+\caption{图3·37}
 \end{figure}
 
 \begin{quote}
