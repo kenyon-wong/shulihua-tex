@@ -15144,7 +15144,77 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.27 磁场对直线电流的作用}]{assets/physics-3/fig-p0218-01.png}}
+\fitfig{%
+% fig-alt: 图3.27 磁场对直线电流的作用。(a) A+ B−，F↑弹簧较短；(b) B+ A−，F↓弹簧拉长。蹄形磁铁左N右S，顶横梁吊两弹簧悬AB
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % ===== (a) rod high in gap =====
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt,pattern=north east lines,pattern color=black!65]
+      (0.00,3.85) rectangle (3.20,4.05);
+    \draw[line width=0.7pt] (0.00,3.85) rectangle (3.20,4.05);
+    \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.38,segment length=2.4pt,amplitude=1.7pt}]
+      (0.70,3.85) -- (0.70,2.55);
+    \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.38,segment length=2.4pt,amplitude=1.7pt}]
+      (2.50,3.85) -- (2.50,2.55);
+    % magnet first (behind rod partially)
+    \draw[line width=0.7pt]
+      (0.55,0.20) -- (0.55,2.85) -- (1.20,2.85) -- (1.20,0.95)
+      -- (2.00,0.95) -- (2.00,2.85) -- (2.65,2.85) -- (2.65,0.20)
+      -- cycle;
+    \draw[line width=0.55pt]
+      (0.55,2.85) -- (0.75,3.05) -- (1.40,3.05) -- (1.20,2.85);
+    \draw[line width=0.55pt]
+      (2.00,2.85) -- (2.20,3.05) -- (2.85,3.05) -- (2.65,2.85);
+    \draw[line width=0.55pt]
+      (2.65,2.85) -- (2.85,3.05) -- (2.85,0.40) -- (2.65,0.20);
+    \draw[line width=0.55pt]
+      (1.20,0.95) -- (1.40,1.15) -- (2.20,1.15) -- (2.00,0.95);
+    \node at (0.88,2.10) {$N$};
+    \node at (2.32,2.10) {$S$};
+    % rod through gap
+    \draw[line width=1.15pt] (0.05,2.35) -- (3.15,2.35);
+    \node[anchor=east,inner sep=1pt] at (-0.02,2.35) {$B$};
+    \node[anchor=west,inner sep=1pt] at (3.22,2.35) {$A$};
+    \node[anchor=south,inner sep=0.5pt] at (0.20,2.45) {$-$};
+    \node[anchor=south,inner sep=0.5pt] at (3.00,2.45) {$+$};
+    \draw[line width=0.65pt,dashed,->] (1.60,2.48) -- (1.60,3.25);
+    \node[anchor=west,inner sep=1pt] at (1.70,3.15) {$F$};
+    \node[anchor=north,inner sep=2pt] at (1.60,-0.05) {(a)};
+  \end{scope}
+  % ===== (b) rod low, springs long =====
+  \begin{scope}[shift={(4.20,0)}]
+    \draw[line width=0.7pt,pattern=north east lines,pattern color=black!65]
+      (0.00,3.85) rectangle (3.20,4.05);
+    \draw[line width=0.7pt] (0.00,3.85) rectangle (3.20,4.05);
+    \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.38,segment length=2.4pt,amplitude=1.7pt}]
+      (0.70,3.85) -- (0.70,1.75);
+    \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.38,segment length=2.4pt,amplitude=1.7pt}]
+      (2.50,3.85) -- (2.50,1.75);
+    \draw[line width=0.7pt]
+      (0.55,0.20) -- (0.55,2.85) -- (1.20,2.85) -- (1.20,0.95)
+      -- (2.00,0.95) -- (2.00,2.85) -- (2.65,2.85) -- (2.65,0.20)
+      -- cycle;
+    \draw[line width=0.55pt]
+      (0.55,2.85) -- (0.75,3.05) -- (1.40,3.05) -- (1.20,2.85);
+    \draw[line width=0.55pt]
+      (2.00,2.85) -- (2.20,3.05) -- (2.85,3.05) -- (2.65,2.85);
+    \draw[line width=0.55pt]
+      (2.65,2.85) -- (2.85,3.05) -- (2.85,0.40) -- (2.65,0.20);
+    \draw[line width=0.55pt]
+      (1.20,0.95) -- (1.40,1.15) -- (2.20,1.15) -- (2.00,0.95);
+    \node at (0.88,2.20) {$N$};
+    \node at (2.32,2.20) {$S$};
+    \draw[line width=1.15pt] (0.05,1.55) -- (3.15,1.55);
+    \node[anchor=east,inner sep=1pt] at (-0.02,1.55) {$B$};
+    \node[anchor=west,inner sep=1pt] at (3.22,1.55) {$A$};
+    \node[anchor=south,inner sep=0.5pt] at (0.20,1.65) {$+$};
+    \node[anchor=south,inner sep=0.5pt] at (3.00,1.65) {$-$};
+    \draw[line width=0.65pt,dashed,->] (1.60,1.42) -- (1.60,0.70);
+    \node[anchor=west,inner sep=1pt] at (1.70,0.80) {$F$};
+    \node[anchor=north,inner sep=2pt] at (1.60,-0.05) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 3.27 磁场对直线电流的作用}
 \end{figure}
 
@@ -15161,7 +15231,59 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.28 测磁感应强度实验}]{assets/physics-3/fig-p0219-01.png}}
+\fitfig{%
+% fig-alt: 图3.28 测磁感应强度实验。铁架台横杆挂弹簧秤，下悬矩形线圈短边L入蹄形磁铁N–S隙；引线经电键接电池组
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % stand base
+  \draw[line width=0.65pt]
+    (0.00,0.00) -- (3.60,0.00) -- (3.95,0.40) -- (0.35,0.40) -- cycle;
+  \draw[line width=0.55pt] (0.00,0.00) -- (0.00,-0.12) -- (3.60,-0.12) -- (3.60,0.00);
+  % upright + crossbar
+  \draw[line width=0.9pt] (0.50,0.40) -- (0.50,5.35);
+  \draw[line width=0.7pt] (0.30,5.10) -- (0.70,5.10);
+  \draw[line width=0.7pt] (0.50,5.10) -- (2.70,5.10);
+  % spring scale
+  \draw[line width=0.65pt] (2.30,3.70) rectangle (2.85,4.95);
+  \foreach \yy in {3.90,4.10,4.30,4.50,4.70} {
+    \draw[line width=0.35pt] (2.30,\yy) -- (2.48,\yy);
+  }
+  \draw[line width=0.45pt] (2.575,4.95) -- (2.575,5.10);
+  \draw[line width=0.55pt] (2.575,3.70) -- (2.575,3.45);
+  \draw[line width=0.5pt] (2.40,3.45) -- (2.75,3.45);
+  % rectangular coil
+  \draw[line width=0.7pt]
+    (1.65,3.45) -- (3.50,3.45) -- (3.50,1.25) -- (1.65,1.25) -- cycle;
+  \node at (2.575,1.75) {$L$};
+  % horseshoe magnet
+  \draw[line width=0.7pt]
+    (1.45,0.40) -- (1.45,1.70) -- (2.05,1.70) -- (2.05,1.00)
+    -- (3.10,1.00) -- (3.10,1.70) -- (3.70,1.70) -- (3.70,0.40)
+    -- cycle;
+  \draw[line width=0.5pt]
+    (1.45,1.70) -- (1.60,1.88) -- (2.20,1.88) -- (2.05,1.70);
+  \draw[line width=0.5pt]
+    (3.10,1.70) -- (3.25,1.88) -- (3.85,1.88) -- (3.70,1.70);
+  \draw[line width=0.5pt]
+    (3.70,1.70) -- (3.85,1.88) -- (3.85,0.58) -- (3.70,0.40);
+  \node at (1.75,1.35) {$N$};
+  \node at (3.40,1.35) {$S$};
+  % leads
+  \draw[line width=0.5pt] (1.65,3.45) .. controls (0.85,3.70) and (0.55,3.00) .. (0.70,2.35);
+  \draw[line width=0.5pt] (3.50,3.45) .. controls (4.35,3.65) and (4.90,2.80) .. (4.90,1.90);
+  % switch
+  \fill (0.70,2.35) circle[radius=0.045];
+  \fill (1.20,2.35) circle[radius=0.045];
+  \draw[line width=0.5pt] (0.70,2.35) -- (1.12,2.58);
+  \draw[line width=0.5pt] (1.20,2.35) -- (4.20,2.35) -- (4.20,1.55);
+  % battery to the right of magnet
+  \draw[line width=0.6pt] (4.20,1.15) rectangle (5.35,1.55);
+  \draw[line width=0.45pt] (4.45,1.55) -- (4.45,1.70);
+  \draw[line width=0.45pt] (5.10,1.55) -- (5.10,1.70);
+  \node[anchor=south,inner sep=0.5pt,font=\scriptsize] at (4.45,1.70) {$-$};
+  \node[anchor=south,inner sep=0.5pt,font=\scriptsize] at (5.10,1.70) {$+$};
+  \draw[line width=0.5pt] (5.35,1.35) -- (4.90,1.35) -- (4.90,1.90);
+\end{tikzpicture}%
+}
 \caption{图3.28 测磁感应强度实验}
 \end{figure}
 
@@ -15239,7 +15361,38 @@ B 的单位，决定于 F、 \(\Delta L\) 和 I 的单位，在国际单位制�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.29 匀强磁场}]{assets/physics-3/fig-p0221-01.png}}
+\fitfig{%
+% fig-alt: 图3.29 匀强磁场。左N右S极面相对，隙间四条平行磁力线右指，上下各一外弯磁力线右指
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left N
+  \fill[pattern=dots,pattern color=black!50] (0.00,0.15) rectangle (0.95,2.65);
+  \draw[line width=0.7pt] (0.95,0.15) -- (0.95,2.65);
+  \draw[line width=0.7pt] (0.00,2.65) -- (0.95,2.65);
+  \draw[line width=0.7pt] (0.00,0.15) -- (0.95,0.15);
+  \draw[line width=0.7pt]
+    (0.00,2.65) -- (0.08,2.45) -- (-0.05,2.20) -- (0.10,1.90)
+    -- (-0.02,1.55) -- (0.08,1.20) -- (-0.05,0.85) -- (0.06,0.50)
+    -- (0.00,0.15);
+  \node at (0.48,1.40) {$N$};
+  % right S
+  \fill[pattern=dots,pattern color=black!50] (2.60,0.15) rectangle (3.55,2.65);
+  \draw[line width=0.7pt] (2.60,0.15) -- (2.60,2.65);
+  \draw[line width=0.7pt] (2.60,2.65) -- (3.55,2.65);
+  \draw[line width=0.7pt] (2.60,0.15) -- (3.55,0.15);
+  \draw[line width=0.7pt]
+    (3.55,2.65) -- (3.48,2.40) -- (3.62,2.10) -- (3.45,1.75)
+    -- (3.60,1.40) -- (3.48,1.05) -- (3.62,0.70) -- (3.50,0.40)
+    -- (3.55,0.15);
+  \node at (3.08,1.40) {$S$};
+  % parallel
+  \foreach \y in {0.65,1.15,1.65,2.15} {
+    \draw[line width=0.55pt,->] (0.95,\y) -- (2.60,\y);
+  }
+  % fringe
+  \draw[line width=0.55pt,->] (0.95,2.65) .. controls (1.45,3.15) and (2.10,3.15) .. (2.60,2.65);
+  \draw[line width=0.55pt,->] (0.95,0.15) .. controls (1.45,-0.35) and (2.10,-0.35) .. (2.60,0.15);
+\end{tikzpicture}%
+}
 \caption{图3.29 匀强磁场}
 \end{figure}
 
@@ -15322,11 +15475,37 @@ B=\frac{\Phi}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.30 通电导线与磁力线成任意角度6}]{assets/physics-3/fig-p0223-01.png}}
-\caption{图3.30 通电导线与磁力线成任意角度6}
+\fitfig{%
+% fig-alt: 图3.30 通电导线与磁力线成任意角度θ。竖圆柱导线I向下；斜向右下平行磁力线B；左分解B为竖B1、横B2，夹角θ
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \xx in {0.10,0.50,0.90,1.30,1.70,2.10} {
+    \draw[line width=0.5pt] (\xx,4.60) -- ++(2.70,-2.95);
+  }
+  \node[anchor=west,inner sep=1pt] at (4.60,1.50) {$B$};
+  \fill[white] (2.32,0.30) rectangle (2.78,4.90);
+  \draw[line width=0.7pt] (2.55,0.30) ellipse[x radius=0.20,y radius=0.09];
+  \draw[line width=0.7pt] (2.35,0.30) -- (2.35,4.90);
+  \draw[line width=0.7pt] (2.75,0.30) -- (2.75,4.90);
+  \draw[line width=0.7pt,fill=white] (2.55,4.90) ellipse[x radius=0.20,y radius=0.09];
+  \draw[line width=0.65pt,->] (2.55,5.40) -- (2.55,5.05);
+  \node[anchor=west,inner sep=1pt] at (2.72,5.30) {$I$};
+  \draw[line width=0.65pt,->] (2.55,0.12) -- (2.55,-0.25);
+  \node[anchor=west,inner sep=1pt] at (2.72,-0.15) {$I$};
+  \draw[line width=0.45pt] (2.55,1.55) arc[start angle=90,end angle=48,radius=0.50];
+  \node[anchor=south west,inner sep=1pt] at (2.62,1.45) {$\theta$};
+  \draw[line width=0.65pt,->] (0.70,3.60) -- (0.70,2.05) node[midway,left,inner sep=2pt] {$B_{1}$};
+  \draw[line width=0.65pt,->] (0.70,3.60) -- (2.10,3.60) node[midway,above,inner sep=1pt] {$B_{2}$};
+  \draw[line width=0.65pt,->] (0.70,3.60) -- (2.10,2.05) node[pos=0.58,above right,inner sep=0.5pt] {$B$};
+  \draw[line width=0.5pt,dashed] (2.10,3.60) -- (2.10,2.05);
+  \draw[line width=0.5pt,dashed] (0.70,2.05) -- (2.10,2.05);
+  \draw[line width=0.45pt] (0.70,3.18) arc[start angle=270,end angle=312,radius=0.42];
+  \node[anchor=north west,inner sep=1pt] at (0.82,3.15) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{图3.30 通电导线与磁力线成任意角度$\theta$}
 \end{figure}
 
-\emph{图3.30 通电导线与磁力线成任意角度6}
+\emph{图3.30 通电导线与磁力线成任意角度$\theta$}
 
 根垂直于磁场方向的通电导线所受的作用力，与磁感应强度成正比，与通过的电流强度成正比，与通电导体的长度成正比，即
 
@@ -15364,25 +15543,117 @@ F = B_{2} I L
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.31 电流、磁场和磁场力的方向}]{assets/physics-3/fig-p0224-01.png}}
+\fitfig{%
+% fig-alt: 图3.31。左N右S，B右指，电流·向外，F向上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \fill[pattern=dots,pattern color=black!50] (-2.05,-1.05) rectangle (-1.25,1.05);
+  \draw[line width=0.65pt] (-2.05,-1.05) rectangle (-1.25,1.05);
+  \node at (-1.65,0.00) {$N$};
+  \fill[pattern=dots,pattern color=black!50] (1.25,-1.05) rectangle (2.05,1.05);
+  \draw[line width=0.65pt] (1.25,-1.05) rectangle (2.05,1.05);
+  \node at (1.65,0.00) {$S$};
+  \draw[line width=0.55pt] (-2.05,-1.05) -- (-1.95,-1.18) -- (-1.75,-1.05) -- (-1.55,-1.20) -- (-1.35,-1.05) -- (-1.25,-1.16);
+  \draw[line width=0.55pt] (1.25,-1.05) -- (1.40,-1.18) -- (1.60,-1.05) -- (1.80,-1.20) -- (1.95,-1.05) -- (2.05,-1.15);
+  \draw[line width=0.5pt,->] (-1.25,-0.8) -- (1.25,-0.8);
+  \draw[line width=0.5pt,->] (-1.25,-0.4) -- (1.25,-0.4);
+  \draw[line width=0.5pt,->] (-1.25,0.0) -- (-0.28,0.0);
+  \draw[line width=0.5pt,->] (0.28,0.0) -- (1.25,0.0);
+  \draw[line width=0.5pt,->] (-1.25,0.4) -- (1.25,0.4);
+  \draw[line width=0.5pt,->] (-1.25,0.8) -- (1.25,0.8);
+  \node[anchor=north,inner sep=1pt] at (0.00,-0.95) {$B$};
+  \draw[line width=0.7pt,fill=white] (0,0) circle[radius=0.22];
+  \fill (0,0) circle[radius=0.07];
+  \draw[line width=0.65pt,->] (0,0.22) -- (0,1.15);
+  \node[anchor=west,inner sep=1pt] at (0.08,1.10) {$F$};
+\end{tikzpicture}%
+}
 \caption{图3.31 电流、磁场和磁场力的方向}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.31 电流、磁场和磁场力的方向}]{assets/physics-3/fig-p0224-02.png}}
+\fitfig{%
+% fig-alt: 图3.31。左S右N，B左指，电流·向外，F向下
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \fill[pattern=dots,pattern color=black!50] (-2.05,-1.05) rectangle (-1.25,1.05);
+  \draw[line width=0.65pt] (-2.05,-1.05) rectangle (-1.25,1.05);
+  \node at (-1.65,0.00) {$S$};
+  \fill[pattern=dots,pattern color=black!50] (1.25,-1.05) rectangle (2.05,1.05);
+  \draw[line width=0.65pt] (1.25,-1.05) rectangle (2.05,1.05);
+  \node at (1.65,0.00) {$N$};
+  \draw[line width=0.55pt] (-2.05,-1.05) -- (-1.95,-1.18) -- (-1.75,-1.05) -- (-1.55,-1.20) -- (-1.35,-1.05) -- (-1.25,-1.16);
+  \draw[line width=0.55pt] (1.25,-1.05) -- (1.40,-1.18) -- (1.60,-1.05) -- (1.80,-1.20) -- (1.95,-1.05) -- (2.05,-1.15);
+  \draw[line width=0.5pt,<-] (-1.25,-0.8) -- (1.25,-0.8);
+  \draw[line width=0.5pt,<-] (-1.25,-0.4) -- (1.25,-0.4);
+  \draw[line width=0.5pt,<-] (-1.25,0.0) -- (-0.28,0.0);
+  \draw[line width=0.5pt,<-] (0.28,0.0) -- (1.25,0.0);
+  \draw[line width=0.5pt,<-] (-1.25,0.4) -- (1.25,0.4);
+  \draw[line width=0.5pt,<-] (-1.25,0.8) -- (1.25,0.8);
+  \node[anchor=south,inner sep=1pt] at (0.00,0.95) {$B$};
+  \draw[line width=0.7pt,fill=white] (0,0) circle[radius=0.22];
+  \fill (0,0) circle[radius=0.07];
+  \draw[line width=0.65pt,->] (0,-0.22) -- (0,-1.15);
+  \node[anchor=west,inner sep=1pt] at (0.08,-1.10) {$F$};
+\end{tikzpicture}%
+}
 \caption{图3.31 电流、磁场和磁场力的方向}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.31 电流、磁场和磁场力的方向}]{assets/physics-3/fig-p0224-03.png}}
+\fitfig{%
+% fig-alt: 图3.31。左N右S，B右指，电流×向里，F向下
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \fill[pattern=dots,pattern color=black!50] (-2.05,-1.05) rectangle (-1.25,1.05);
+  \draw[line width=0.65pt] (-2.05,-1.05) rectangle (-1.25,1.05);
+  \node at (-1.65,0.00) {$N$};
+  \fill[pattern=dots,pattern color=black!50] (1.25,-1.05) rectangle (2.05,1.05);
+  \draw[line width=0.65pt] (1.25,-1.05) rectangle (2.05,1.05);
+  \node at (1.65,0.00) {$S$};
+  \draw[line width=0.55pt] (-2.05,-1.05) -- (-1.95,-1.18) -- (-1.75,-1.05) -- (-1.55,-1.20) -- (-1.35,-1.05) -- (-1.25,-1.16);
+  \draw[line width=0.55pt] (1.25,-1.05) -- (1.40,-1.18) -- (1.60,-1.05) -- (1.80,-1.20) -- (1.95,-1.05) -- (2.05,-1.15);
+  \draw[line width=0.5pt,->] (-1.25,-0.8) -- (1.25,-0.8);
+  \draw[line width=0.5pt,->] (-1.25,-0.4) -- (1.25,-0.4);
+  \draw[line width=0.5pt,->] (-1.25,0.0) -- (-0.28,0.0);
+  \draw[line width=0.5pt,->] (0.28,0.0) -- (1.25,0.0);
+  \draw[line width=0.5pt,->] (-1.25,0.4) -- (1.25,0.4);
+  \draw[line width=0.5pt,->] (-1.25,0.8) -- (1.25,0.8);
+  \node[anchor=south,inner sep=1pt] at (0.00,0.95) {$B$};
+  \draw[line width=0.7pt,fill=white] (0,0) circle[radius=0.22];
+  \node[inner sep=0pt] at (0,0) {$\times$};
+  \draw[line width=0.65pt,->] (0,-0.22) -- (0,-1.15);
+  \node[anchor=west,inner sep=1pt] at (0.08,-1.10) {$F$};
+\end{tikzpicture}%
+}
 \caption{图3.31 电流、磁场和磁场力的方向}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.31 电流、磁场和磁场力的方向}]{assets/physics-3/fig-p0224-04.png}}
+\fitfig{%
+% fig-alt: 图3.31。左S右N，B左指，电流×向里，F向上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \fill[pattern=dots,pattern color=black!50] (-2.05,-1.05) rectangle (-1.25,1.05);
+  \draw[line width=0.65pt] (-2.05,-1.05) rectangle (-1.25,1.05);
+  \node at (-1.65,0.00) {$S$};
+  \fill[pattern=dots,pattern color=black!50] (1.25,-1.05) rectangle (2.05,1.05);
+  \draw[line width=0.65pt] (1.25,-1.05) rectangle (2.05,1.05);
+  \node at (1.65,0.00) {$N$};
+  \draw[line width=0.55pt] (-2.05,-1.05) -- (-1.95,-1.18) -- (-1.75,-1.05) -- (-1.55,-1.20) -- (-1.35,-1.05) -- (-1.25,-1.16);
+  \draw[line width=0.55pt] (1.25,-1.05) -- (1.40,-1.18) -- (1.60,-1.05) -- (1.80,-1.20) -- (1.95,-1.05) -- (2.05,-1.15);
+  \draw[line width=0.5pt,<-] (-1.25,-0.8) -- (1.25,-0.8);
+  \draw[line width=0.5pt,<-] (-1.25,-0.4) -- (1.25,-0.4);
+  \draw[line width=0.5pt,<-] (-1.25,0.0) -- (-0.28,0.0);
+  \draw[line width=0.5pt,<-] (0.28,0.0) -- (1.25,0.0);
+  \draw[line width=0.5pt,<-] (-1.25,0.4) -- (1.25,0.4);
+  \draw[line width=0.5pt,<-] (-1.25,0.8) -- (1.25,0.8);
+  \node[anchor=north,inner sep=1pt] at (0.00,-0.95) {$B$};
+  \draw[line width=0.7pt,fill=white] (0,0) circle[radius=0.22];
+  \node[inner sep=0pt] at (0,0) {$\times$};
+  \draw[line width=0.65pt,->] (0,0.22) -- (0,1.15);
+  \node[anchor=west,inner sep=1pt] at (0.08,1.10) {$F$};
+\end{tikzpicture}%
+}
 \caption{图3.31 电流、磁场和磁场力的方向}
 \end{figure}
 
