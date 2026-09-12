@@ -23197,23 +23197,45 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 叫做圆锥的顶角。
 
 在图3·7 中的圆锥的轴截面 VAB， 其中 \(\angle AVB\) 为圆锥的顶角。又
-\(VO\) 和 \(VD\) 是不在一个轴截面内的两条母线，它们的夹角为
+\(VC\) 和 \(VD\) 是不在一个轴截面内的两条母线，它们的夹角为
 \(\angle CVD\).
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·7}]{assets/solid-geometry/fig-p0217-01.png}}
+\fitfig{%
+% fig-alt: 图3·7：圆锥。轴截面VAB（顶角∠AVB）；另两母线VC、VD（夹角∠CVD）。底前弧实线、后弧虚线；直径AB与弦CD虚线；轴VO虚线。扫描有V、A、B、C、D、O
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0,3.55);
+  \coordinate (O) at (0,0.55);
+  \coordinate (A) at (-1.55,0.55);
+  \coordinate (B) at (1.55,0.55);
+  \coordinate (C) at (-0.85,0.55-0.34);
+  \coordinate (D) at (0.95,0.55-0.30);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) arc (0:180:1.55 and 0.42);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.85pt] (B) arc (0:-180:1.55 and 0.42);
+  \draw[line width=0.85pt] (V) -- (A);
+  \draw[line width=0.85pt] (V) -- (B);
+  \draw[line width=0.85pt] (V) -- (C);
+  \draw[line width=0.85pt] (V) -- (D);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=0.03pt] at (C) {$C$};
+  \node[anchor=north west,inner sep=0.03pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+\end{tikzpicture}
+}
 \caption{图3·7}
 \end{figure}
-
-\emph{图3·7}
-
-在 \(\triangle AVB\) 和 \(\triangle CVD\) 中，\(VA = VB = VO = VD\)
+在 \(\triangle AVB\) 和 \(\triangle CVD\) 中，\(VA = VB = VC = VD\)
 （都是圆锥的母线），∵ AB \textgreater{} CD （AB 是底圆的直径， CD
 是弦），
 
 \[
-\therefore \angle A V B > \angle O V D
+\therefore \angle A V B > \angle C V D
 \]
 
 （两三角形有二边相等，第三边大的对角大）。
@@ -23232,25 +23254,78 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 \textbf{［解］} 因为 \(\triangle VAB\) 等边， \(OA = r\)， 可求得高
 \(VO = r\sqrt{3}\).
 
-今设 \(OC = x\)，则
-\(OO = 2x\)在等边圆锥和等边圆柱的共同的轴截面中（如图3·9），\(\triangle VCO' \sim \triangle VAO\)，则有
+今设 \(O'C = x\)，则
+\(O'O = 2x\)。在等边圆锥和等边圆柱的共同的轴截面中（如图3·9），\(\triangle VCO' \sim \triangle VAO\)，则有
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.8}]{assets/solid-geometry/fig-p0218-01.png}}
-\caption{图3.8}
+\fitfig{%
+% fig-alt: 图3·8：等边圆锥内接等边圆柱。圆锥轴截面VAB；圆柱顶面直径CD（中心O'），竖棱CE；轴VO点划线略伸出；底与顶前弧实线、后弧虚线；圆柱侧棱虚线。扫描有V、A、B、C、D、E、O、O'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0,3.18);
+  \coordinate (O) at (0,0.50);
+  \coordinate (A) at (-1.55,0.50);
+  \coordinate (B) at (1.55,0.50);
+  \coordinate (Op) at (0,1.937);
+  \coordinate (C) at (-0.719,1.937);
+  \coordinate (D) at (0.719,1.937);
+  \coordinate (E) at (-0.719,0.50);
+  \coordinate (F) at (0.719,0.50);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.4pt on 0.6pt off 1.4pt] (0,3.45) -- (0,0.15);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) arc (0:180:1.55 and 0.42);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) arc (0:180:0.719 and 0.20);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (F) arc (0:180:0.719 and 0.20);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (F);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.85pt] (B) arc (0:-180:1.55 and 0.42);
+  \draw[line width=0.85pt] (D) arc (0:-180:0.719 and 0.20);
+  \draw[line width=0.85pt] (F) arc (0:-180:0.719 and 0.20);
+  \draw[line width=0.85pt] (V) -- (A);
+  \draw[line width=0.85pt] (V) -- (B);
+  \draw[line width=0.85pt] (Op) -- (C);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=east,inner sep=0.04pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=north east,inner sep=0.03pt] at (E) {$E$};
+  \node[anchor=west,inner sep=0.04pt] at (Op) {$O'$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+\end{tikzpicture}
+}
+\caption{图3·8}
 \end{figure}
-
-\emph{图3·8}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-9}]{assets/solid-geometry/fig-p0218-02.png}}
-\caption{图3-9}
+\fitfig{%
+% fig-alt: 图3·9：等边圆锥与内接等边圆柱的轴截面。等边△VAB；矩形竖边自C、D落至底；CD∥AB交轴于O'；轴VO虚线。扫描有V、A、B、C、D、O、O'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0,3.08);
+  \coordinate (O) at (0,0.20);
+  \coordinate (A) at (-1.55,0.20);
+  \coordinate (B) at (1.55,0.20);
+  \coordinate (Op) at (0,1.637);
+  \coordinate (C) at (-0.719,1.637);
+  \coordinate (D) at (0.719,1.637);
+  \coordinate (Cl) at (-0.719,0.20);
+  \coordinate (Dr) at (0.719,0.20);
+  \draw[line width=0.85pt] (V) -- (A) -- (B) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (Cl);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (Dr);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=north east,inner sep=0.04pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.04pt] at (B) {$B$};
+  \node[anchor=east,inner sep=0.04pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=0.03pt] at (Op) {$O'$};
+  \node[anchor=north,inner sep=0.05pt] at (O) {$O$};
+\end{tikzpicture}
+}
+\caption{图3·9}
 \end{figure}
-
-\emph{图3·9}
-
 \[
 \frac {C O ^ {\prime}}{A O} = \frac {V O ^ {\prime}}{V O}\text{，}
 \]
@@ -23283,28 +23358,69 @@ h，在它里面作一个各侧面都是正方形的内接正三棱柱，求这�
 为这棱柱的棱长，那末从圆锥的顶点到内接正三棱柱上底面的距离等于
 \(h - x\)；又上底面
 
-正三角形的半径
+正三角形的外接圆半径
 
 \[
-O _ {1} O _ {1} = \frac {\sqrt {3} x}{3}.
+O _ {1} C _ {1} = \frac {\sqrt {3} x}{3}.
 \]
 
 又 \(OD = r\)因为 \(\triangle VO_{1}C_{1}\sim\triangle VOD,\)
 
 \[
-\therefore O _ {1} O _ {1}\text{：} O D = V O _ {1}\text{：} V O\text{，}
+\therefore O _ {1} C _ {1}\text{：} O D = V O _ {1}\text{：} V O\text{，}
 \]
 
 即
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-10}]{assets/solid-geometry/fig-p0218-03.png}}
-\caption{图3-10}
+\fitfig{%
+% fig-alt: 图3·10：圆锥内接正三棱柱（侧面为正方形）。上底A1B1C1、下底ABC；轴VO虚线过O1；半径O1C1实线、OD实线（D在底圆，C在OD上）；母线VD过C1；竖棱虚线，后棱虚线。扫描有V、A–C、A1–C1、O、O1、D
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0,4.10);
+  \coordinate (O) at (0,0.55);
+  \coordinate (O1) at (0,2.05);
+  \coordinate (D) at (-1.55,0.55);
+  \coordinate (Rp) at (1.55,0.55);
+  % top circumradius ~0.85; bottom same horizontal radius (vertical prism)
+  \coordinate (C1) at (-0.85,2.05);
+  \coordinate (A1) at (0.425,2.05-0.20);
+  \coordinate (B1) at (0.425,2.05+0.18);
+  \coordinate (C) at (-0.85,0.55);
+  \coordinate (A) at (0.425,0.55-0.20);
+  \coordinate (B) at (0.425,0.55+0.18);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Rp) arc (0:180:1.55 and 0.42);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (0.85,2.05) arc (0:180:0.85 and 0.24);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (B1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B1) -- (C1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (A);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B1) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C1) -- (C);
+  \draw[line width=0.85pt] (Rp) arc (0:-180:1.55 and 0.42);
+  \draw[line width=0.85pt] (0.85,2.05) arc (0:-180:0.85 and 0.24);
+  \draw[line width=0.85pt] (V) -- (D);
+  \draw[line width=0.85pt] (V) -- (Rp);
+  \draw[line width=0.85pt] (O1) -- (C1);
+  \draw[line width=0.85pt] (O) -- (D);
+  \draw[line width=0.85pt] (A1) -- (C1);
+  \draw[line width=0.85pt] (A) -- (C);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=south east,inner sep=0.03pt] at (C1) {$C_{1}$};
+  \node[anchor=north west,inner sep=0.03pt] at (A1) {$A_{1}$};
+  \node[anchor=south west,inner sep=0.03pt] at (B1) {$B_{1}$};
+  \node[anchor=north east,inner sep=0.03pt] at (C) {$C$};
+  \node[anchor=north west,inner sep=0.03pt] at (A) {$A$};
+  \node[anchor=south west,inner sep=0.03pt] at (B) {$B$};
+  \node[anchor=east,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=west,inner sep=0.04pt] at (O1) {$O_{1}$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+\end{tikzpicture}
+}
+\caption{图3·10}
 \end{figure}
-
-\emph{图3·10}
-
 \[
 \frac {\sqrt {3} x}{3}\text{：} r = \text{（}h - x\text{）：} h\text{，}
 \]
@@ -23330,12 +23446,26 @@ O _ {1} O _ {1} = \frac {\sqrt {3} x}{3}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题的轴截面)}]{assets/solid-geometry/fig-p0219-01.png}}
-\caption{(第4题的轴截面)}
+\fitfig{%
+% fig-alt: （第4题的轴截面）：等边圆柱轴截面为正方形ABB'A'；AB、A'B'为底圆直径，AA'、BB'为母线；O、O'为上下底圆心。扫描有A、B、O、A'、B'、O'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,2.40);
+  \coordinate (B) at (2.40,2.40);
+  \coordinate (Ap) at (0,0.00);
+  \coordinate (Bp) at (2.40,0.00);
+  \coordinate (O) at (1.20,2.40);
+  \coordinate (Op) at (1.20,0.00);
+  \draw[line width=0.85pt] (A) -- (B) -- (Bp) -- (Ap) -- cycle;
+  \node[anchor=south,inner sep=0.06pt] at (A) {$A$};
+  \node[anchor=south,inner sep=0.06pt] at (O) {$O$};
+  \node[anchor=south,inner sep=0.06pt] at (B) {$B$};
+  \node[anchor=north,inner sep=0.06pt] at (Ap) {$A'$};
+  \node[anchor=north,inner sep=0.06pt] at (Op) {$O'$};
+  \node[anchor=north,inner sep=0.06pt] at (Bp) {$B'$};
+\end{tikzpicture}
+}
+\caption{（第4题的轴截面）}
 \end{figure}
-
-\emph{（第4题的轴截面）}
-
 ［提示：等边圆柱的轴截面是一个正方形，其中 \(AB\)
 是底面圆的直径，\(AA'\) 是母线.］
 
@@ -23389,18 +23519,38 @@ O _ {1} O _ {1} = \frac {\sqrt {3} x}{3}.
 \((A_{1}A)\)
 叫做圆台的母线。由母线旋转所成的面，叫做圆台的侧面。梯形的两条底边
 \((O_{1}A_{1}\)
-和OA）旋转一周所成的两个互相平行的圆面叫做圆台的底面。两个底面圆间的距离叫做圆台的高（如轴
+和 \(OA\)）旋转一周所成的两个互相平行的圆面叫做圆台的底面。两个底面圆间的距离叫做圆台的高（如轴
 \(O_{1}O\) 垂直于两底面， \(O_{1}O\)
-就我们容易证得圆台有下面的一些性质：
+就是圆台的高）。我们容易证得圆台有下面的一些性质：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.11}]{assets/solid-geometry/fig-p0220-01.png}}
-\caption{图3.11}
+\fitfig{%
+% fig-alt: 图3·11：直角梯形O1OAA1绕轴O1O旋转成圆台。上下底椭圆；轴O1O点划线略伸出；半径O1A1实线、OA虚线；母线A1A实线。扫描有O1、O、A1、A
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0.55);
+  \coordinate (O1) at (0,3.15);
+  \coordinate (A) at (-1.55,0.55);
+  \coordinate (A1) at (-0.85,3.15);
+  \coordinate (R) at (1.55,0.55);
+  \coordinate (R1) at (0.85,3.15);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.4pt on 0.6pt off 1.4pt] (0,3.50) -- (0,0.20);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (R) arc (0:180:1.55 and 0.42);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (R1) arc (0:180:0.85 and 0.24);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (A);
+  \draw[line width=0.85pt] (R) arc (0:-180:1.55 and 0.42);
+  \draw[line width=0.85pt] (R1) arc (0:-180:0.85 and 0.24);
+  \draw[line width=0.85pt] (A1) -- (A);
+  \draw[line width=0.85pt] (R1) -- (R);
+  \draw[line width=0.85pt] (O1) -- (A1);
+  \node[anchor=west,inner sep=0.05pt] at (O1) {$O_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (O) {$O$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+\end{tikzpicture}
+}
+\caption{图3·11}
 \end{figure}
-
-\emph{图3·11}
-
 定理 1 圆台的轴过两个底面的中心，且垂直于两个底面。
 
 \textbf{［证］} 圆台可以看成是一个圆锥 \((V - OA)\) 截去一个圆锥
@@ -23415,20 +23565,64 @@ O _ {1} O _ {1} = \frac {\sqrt {3} x}{3}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-12}]{assets/solid-geometry/fig-p0220-02.png}}
-\caption{图3-12}
+\fitfig{%
+% fig-alt: 图3·12：圆锥V-OA截去平行于底的小圆锥V-O1A1得圆台。底与截面圆前弧实线、后弧虚线；轴VO虚线；直径AB实线、A1B1虚线；直角记号在O1。扫描有V、A、B、A1、B1、O、O1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0,3.80);
+  \coordinate (O) at (0,0.50);
+  \coordinate (A) at (-1.55,0.50);
+  \coordinate (B) at (1.55,0.50);
+  \coordinate (O1) at (0,2.10);
+  \coordinate (A1) at (-0.80,2.10);
+  \coordinate (B1) at (0.80,2.10);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) arc (0:180:1.55 and 0.42);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B1) arc (0:180:0.80 and 0.23);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (B1);
+  \draw[line width=0.85pt] (B) arc (0:-180:1.55 and 0.42);
+  \draw[line width=0.85pt] (B1) arc (0:-180:0.80 and 0.23);
+  \draw[line width=0.85pt] (V) -- (A);
+  \draw[line width=0.85pt] (V) -- (B);
+  \draw[line width=0.85pt] (A) -- (B);
+  % right angle at O1 toward B1
+  \draw[line width=0.55pt] (0.14,2.10) -- (0.14,2.24) -- (0.00,2.24);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=east,inner sep=0.04pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.04pt] at (B1) {$B_{1}$};
+  \node[anchor=south west,inner sep=0.03pt] at (O1) {$O_{1}$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+\end{tikzpicture}
+}
+\caption{图3·12}
 \end{figure}
-
-\emph{图3·12}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-13}]{assets/solid-geometry/fig-p0220-03.png}}
-\caption{图3-13}
+\fitfig{%
+% fig-alt: 图3·13：圆锥轴截面VAB；平行截面直径A1B1（虚线）交轴于O1；轴VO实线。扫描有V、A、B、A1、B1、O、O1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0,3.50);
+  \coordinate (O) at (0,0.20);
+  \coordinate (A) at (-1.70,0.20);
+  \coordinate (B) at (1.70,0.20);
+  \coordinate (O1) at (0,1.85);
+  \coordinate (A1) at (-0.90,1.85);
+  \coordinate (B1) at (0.90,1.85);
+  \draw[line width=0.85pt] (V) -- (A) -- (B) -- cycle;
+  \draw[line width=0.85pt] (V) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (B1);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=north east,inner sep=0.04pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.04pt] at (B) {$B$};
+  \node[anchor=east,inner sep=0.04pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.04pt] at (B1) {$B_{1}$};
+  \node[anchor=south east,inner sep=0.03pt] at (O1) {$O_{1}$};
+  \node[anchor=north,inner sep=0.05pt] at (O) {$O$};
+\end{tikzpicture}
+}
+\caption{图3·13}
 \end{figure}
-
-\emph{图3·13}
-
 定理2 圆台中任两条母线在一个平面内。
 
 \textbf{［证］} 如图3·14中， \(A_{1}A\)， \(B_{1}B\) 和 \(C_1C\)
