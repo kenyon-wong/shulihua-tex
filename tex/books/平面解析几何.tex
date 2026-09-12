@@ -18361,17 +18361,80 @@ a^{2} - b^{2} = c^{2}. \tag {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·78}]{assets/analytic-geometry/fig-p0254-01.png}}
+\fitfig{%
+% fig-alt: 图4·78 双曲线右支反射：自 F2 发出光线经反射后沿 F1P 延长线射出（虚线连 F1）
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round,>=latex]
+  \draw[dash pattern=on 2.4pt off 1.2pt on 0.55pt off 1.2pt,line width=0.55pt,-latex] (-4.0,0) -- (5.2,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[dash pattern=on 2.4pt off 1.2pt on 0.55pt off 1.2pt,line width=0.55pt,-latex] (0,-2.6) -- (0,2.8) node[anchor=south,inner sep=2pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \draw[line width=0.75pt] plot[domain=-1.25:1.25,samples=55] ({1.55*cosh(\x)},{1.15*sinh(\x)});
+  \draw[line width=0.75pt] plot[domain=-1.25:1.25,samples=55] ({-1.55*cosh(\x)},{1.15*sinh(\x)});
+  \fill (-1.9300,0) circle (1.15pt);
+  \fill (1.9300,0) circle (1.15pt);
+  \node[anchor=north,inner sep=1.5pt] at (-1.9300,-0.06) {$F_{1}$};
+  \node[anchor=north,inner sep=1.5pt] at (1.9300,-0.06) {$F_{2}$};
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.4pt] (-1.9300,0) -- (2.4859,-1.4419);
+  \draw[line width=0.55pt,-latex] (1.9300,0) -- (2.4859,-1.4419);
+  \draw[line width=0.55pt,-latex] (2.4859,-1.4419) -- (4.2445,-2.0162);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.4pt] (-1.9300,0) -- (1.8891,-0.8013);
+  \draw[line width=0.55pt,-latex] (1.9300,0) -- (1.8891,-0.8013);
+  \draw[line width=0.55pt,-latex] (1.8891,-0.8013) -- (3.6997,-1.1811);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.4pt] (-1.9300,0) -- (1.6300,-0.3743);
+  \draw[line width=0.55pt,-latex] (1.9300,0) -- (1.6300,-0.3743);
+  \draw[line width=0.55pt,-latex] (1.6300,-0.3743) -- (3.4699,-0.5678);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.4pt] (-1.9300,0) -- (1.5500,0.0000);
+  \draw[line width=0.55pt,-latex] (1.9300,0) -- (1.5500,0.0000);
+  \draw[line width=0.55pt,-latex] (1.5500,0.0000) -- (3.4000,0.0000);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.4pt] (-1.9300,0) -- (1.6300,0.3743);
+  \draw[line width=0.55pt,-latex] (1.9300,0) -- (1.6300,0.3743);
+  \draw[line width=0.55pt,-latex] (1.6300,0.3743) -- (3.4699,0.5678);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.4pt] (-1.9300,0) -- (1.8891,0.8013);
+  \draw[line width=0.55pt,-latex] (1.9300,0) -- (1.8891,0.8013);
+  \draw[line width=0.55pt,-latex] (1.8891,0.8013) -- (3.6997,1.1811);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.4pt] (-1.9300,0) -- (2.4859,1.4419);
+  \draw[line width=0.55pt,-latex] (1.9300,0) -- (2.4859,1.4419);
+  \draw[line width=0.55pt,-latex] (2.4859,1.4419) -- (4.2445,2.0162);
+\end{tikzpicture}%
+}
 \caption{图4·78}
 \end{figure}
+
 
 \emph{图4·78}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·79}]{assets/analytic-geometry/fig-p0254-02.png}}
+\fitfig{%
+% fig-alt: 图4·79 椭圆反射镜示意，A/A'、焦点 F1/F2，AF1=14.5、AF2=46.5，左弧加粗，F1 处示灯泡底座
+\begin{tikzpicture}[x=0.55cm,y=0.55cm,line cap=round,line join=round,>=latex]
+  \draw[dash pattern=on 2.4pt off 1.2pt on 0.55pt off 1.2pt,line width=0.5pt,-latex] (-3.8,0) -- (3.9,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[dash pattern=on 2.4pt off 1.2pt on 0.55pt off 1.2pt,line width=0.5pt,-latex] (0,-3.1) -- (0,3.3) node[anchor=south,inner sep=2pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.1,-0.1) {$O$};
+  \draw[dash pattern=on 1.8pt off 1.3pt,line width=0.55pt] (0,0) ellipse (3.05 and 2.597);
+  \draw[line width=1.15pt] plot[domain=110:250,samples=45] ({3.05*cos(\x)},{2.597*sin(\x)});
+  \draw[line width=0.7pt] (-1.6,-2.211) -- (-1.6,2.211);
+  \draw[fill=white,line width=0.55pt] (-1.6,0) circle (2.0pt);
+  \draw[fill=white,line width=0.55pt] (1.6,0) circle (2.0pt);
+  \node[anchor=north,inner sep=1pt] at (-3.05,-0.12) {$A$};
+  \node[anchor=north,inner sep=1pt] at (3.05,-0.12) {$A'$};
+  \node[anchor=north,inner sep=1.5pt] at (-1.6,-0.22) {$F_{1}$};
+  \node[anchor=north,inner sep=1.5pt] at (1.6,-0.22) {$F_{2}$};
+  \draw[line width=0.4pt] (-3.05,2.85) -- (-3.05,3.05);
+  \draw[line width=0.4pt] (-1.6,2.85) -- (-1.6,3.05);
+  \draw[line width=0.4pt] (1.6,2.55) -- (1.6,2.75);
+  \draw[line width=0.4pt] (-3.05,2.55) -- (-3.05,2.75);
+  \draw[<->,line width=0.4pt] (-3.05,2.95) -- (-1.6,2.95);
+  \node[anchor=south,inner sep=1pt,font=\small] at (-2.325,2.95) {$14.5$};
+  \draw[<->,line width=0.4pt] (-3.05,2.65) -- (1.6,2.65);
+  \node[anchor=south,inner sep=1pt,font=\small] at (-0.725,2.65) {$46.5$};
+  \draw[line width=0.55pt] (-1.78,-2.45) -- (-1.42,-2.45) -- (-1.46,-2.75) -- (-1.50,-3.15) -- (-1.70,-3.15) -- (-1.74,-2.75) -- cycle;
+  \draw[line width=0.4pt] (-1.68,-2.85) -- (-1.52,-2.85);
+  \draw[line width=0.4pt] (-1.68,-2.98) -- (-1.52,-2.98);
+\end{tikzpicture}%
+}
 \caption{图4·79}
 \end{figure}
+
 
 \emph{图4·79}
 
@@ -18444,9 +18507,30 @@ y + b = \frac {a}{c} x.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-80}]{assets/analytic-geometry/fig-p0255-01.png}}
+\fitfig{%
+% fig-alt: 图4-80 椭圆通径 P1P2，切线于 P1，法线过短轴端 B(0,-b)，焦点 F(c,0)
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \draw[dash pattern=on 2.4pt off 1.2pt on 0.55pt off 1.2pt,line width=0.55pt,-latex] (-3.1,0) -- (3.3,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[dash pattern=on 2.4pt off 1.2pt on 0.55pt off 1.2pt,line width=0.55pt,-latex] (0,-2.3) -- (0,2.4) node[anchor=south,inner sep=2pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \draw[line width=0.75pt] (0,0) ellipse (2.7000 and 1.6687);
+  \fill (2.1226,0) circle (1.15pt);
+  \fill (-2.1226,0) circle (1.15pt);
+  \fill (2.1226,1.0313) circle (1.15pt);
+  \fill (2.1226,-1.0313) circle (1.1pt);
+  \fill (0,-1.6687) circle (1.15pt);
+  \draw[dash pattern=on 1.7pt off 1.2pt,line width=0.5pt] (2.1226,1.0313) -- (2.1226,-1.0313);
+  \draw[line width=0.65pt] (-0.5000,3.0931) -- (3.1000,0.2629);
+  \draw[dash pattern=on 1.7pt off 1.2pt,line width=0.55pt] (-0.4245,-2.2087) -- (2.8655,1.9763);
+  \node[anchor=north west,inner sep=1pt] at (2.1226,-0.08) {$F(c,\,0)$};
+  \node[anchor=south west,inner sep=1pt] at (2.1226+0.08,1.0313+0.05) {$P_{1}\bigl(c,\,\frac{b^{2}}{a}\bigr)$};
+  \node[anchor=north west,inner sep=1pt] at (2.1226+0.06,-1.0313-0.02) {$P_{2}$};
+  \node[anchor=north west,inner sep=1pt] at (0.08,-1.6687) {$B(0,\,-b)$};
+\end{tikzpicture}%
+}
 \caption{图4-80}
 \end{figure}
+
 
 \emph{图4·80}
 
@@ -18470,9 +18554,25 @@ e^{4} + e^{2} - 1 = 0.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/analytic-geometry/fig-p0255-02.png}}
+\fitfig{%
+% fig-alt: (第3题) 抛物线开口向右，口径 3、深度 0.2（示意），顶点在原点
+\begin{tikzpicture}[x=1.0cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.65pt,-latex] (-0.35,0) -- (2.5,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.65pt,-latex] (0,-2.1) -- (0,2.2) node[anchor=south,inner sep=2pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.06,-0.06) {$O$};
+  \draw[line width=0.85pt] plot[domain=-1.5:1.5,samples=60] ({0.5333*\x*\x},{\x});
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (1.2,1.5) -- (1.2,-1.5);
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (0,1.5) -- (1.2,1.5);
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (0,-1.5) -- (1.2,-1.5);
+  \draw[<->,line width=0.4pt] (0,1.68) -- (1.2,1.68);
+  \node[anchor=south,inner sep=1pt,font=\small] at (0.6,1.68) {$0.2$};
+  \draw[<->,line width=0.4pt] (1.45,1.5) -- (1.45,-1.5);
+  \node[anchor=west,inner sep=2pt] at (1.45,0) {$3$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
+
 
 \emph{（第3题）}
 
@@ -18667,9 +18767,29 @@ x轴，y轴实轴的长： 2a虚轴的长： 2b & 对称轴： x轴 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/analytic-geometry/fig-p0258-01.png}}
+\fitfig{%
+% fig-alt: (第4题) 圆与同心椭圆，竖线连 P1(圆上)、P(椭圆上)、M(x 轴)，MP/MP1=1/2
+\begin{tikzpicture}[x=0.95cm,y=0.95cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.65pt,-latex] (-2.5,0) -- (2.7,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.65pt,-latex] (0,-2.5) -- (0,2.7) node[anchor=south,inner sep=2pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \draw[line width=0.75pt] (0,0) circle (2.0);
+  \draw[line width=0.75pt] (0,0) ellipse (2.0 and 1.0);
+  \coordinate (P1) at (1.2,1.6);
+  \coordinate (P) at (1.2,0.8);
+  \coordinate (M) at (1.2,0);
+  \draw[dash pattern=on 1.7pt off 1.2pt,line width=0.5pt] (P1) -- (M);
+  \fill (P1) circle (1.2pt);
+  \fill (P) circle (1.2pt);
+  \fill (M) circle (1.1pt);
+  \node[anchor=south west,inner sep=1pt] at (1.28,1.65) {$P_{1}(x_{1},\,y_{1})$};
+  \node[anchor=west,inner sep=2pt] at (1.28,0.8) {$P(x,\,y)$};
+  \node[anchor=north,inner sep=1.5pt] at (1.2,-0.06) {$M$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
+
 
 \emph{（第4题）}
 
@@ -18843,9 +18963,31 @@ S = \left| \frac {1}{4 p} (y_{1} - y_{2}) (y_{2} - y_{3}) (y_{3} - y_{1}) \right
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/analytic-geometry/fig-p0260-01.png}}
+\fitfig{%
+% fig-alt: (第12题) 抛物线 y^2=2px，切线 PT 交轴于 T、H，焦点 F，FH 与焦点弦 PQ
+\begin{tikzpicture}[x=0.55cm,y=0.55cm,line cap=round,line join=round,>=latex]
+  \draw[dash pattern=on 2.2pt off 1.5pt,line width=0.55pt,-latex] (-5.0,0) -- (6.0,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[dash pattern=on 2.2pt off 1.5pt,line width=0.55pt,-latex] (0,-3.6) -- (0,5.2) node[anchor=south,inner sep=2pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.1,-0.1) {$O$};
+  \draw[line width=0.8pt] plot[domain=-3.2:3.2,samples=60] ({(\x*\x)/4},{\x});
+  \draw[line width=0.65pt] (-4.6,-0.3) -- (5.2,4.6);
+  \fill (4,4) circle (1.2pt);
+  \fill (1,0) circle (1.15pt);
+  \fill (-4,0) circle (1.1pt);
+  \fill (0,2) circle (1.15pt);
+  \fill (0.25,-1) circle (1.15pt);
+  \draw[dash pattern=on 1.7pt off 1.2pt,line width=0.5pt] (4,4) -- (0.25,-1);
+  \draw[dash pattern=on 1.7pt off 1.2pt,line width=0.5pt] (1,0) -- (0,2);
+  \node[anchor=south west,inner sep=1pt] at (4.1,4.1) {$P(x_{0},\,y_{0})$};
+  \node[anchor=north,inner sep=1.5pt] at (1,-0.12) {$F\bigl(\frac{p}{2},\,0\bigr)$};
+  \node[anchor=north,inner sep=1.5pt] at (-4,-0.12) {$T$};
+  \node[anchor=east,inner sep=2pt] at (-0.12,2.05) {$H$};
+  \node[anchor=north west,inner sep=1pt] at (0.35,-1.05) {$Q$};
+\end{tikzpicture}%
+}
 \caption{(第12题)}
 \end{figure}
+
 
 \emph{（第12题）}
 
@@ -18982,9 +19124,52 @@ S = \left| \frac {1}{4 p} (y_{1} - y_{2}) (y_{2} - y_{3}) (y_{3} - y_{1}) \right
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5-1}]{assets/analytic-geometry/fig-p0263-01.png}}
+\fitfig{%
+% fig-alt: 图5-1 坐标轴平移示意，新原点 O'(h,k)，点 P 对两系投影，另标 A(-2,2)
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,-latex] (-3.2,0) -- (6.2,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-1.6) -- (0,5.4) node[anchor=south,inner sep=2pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.1,-0.1) {$O$};
+  \foreach \kx in {-1,1} {
+    \draw[line width=0.35pt] (\kx,-0.12) -- (\kx,0.12);
+  }
+  \node[anchor=north,inner sep=1pt,font=\small] at (1,-0.12) {$1$};
+  \node[anchor=north,inner sep=1pt,font=\small] at (-1,-0.12) {$-1$};
+  \draw[line width=0.7pt,-latex] (-1.2,1.8) -- (6.0,1.8) node[anchor=west,inner sep=2pt] {$x'$};
+  \draw[line width=0.7pt,-latex] (2.2,-1.0) -- (2.2,5.2) node[anchor=south,inner sep=2pt] {$y'$};
+  \fill (2.2,1.8) circle (1.2pt);
+  \node[anchor=south east,inner sep=1pt] at (2.1,1.95) {$O'(h,\,k)$};
+  \draw[line width=0.35pt] (3.2,1.68) -- (3.2,1.92);
+  \draw[line width=0.35pt] (2.08,2.8) -- (2.32,2.8);
+  \node[anchor=north,inner sep=1pt,font=\small] at (3.2,1.55) {$1$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (2.05,2.8) {$1$};
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.45pt] (2.2,1.8) -- (2.2,0);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.45pt] (2.2,1.8) -- (0,1.8);
+  \fill (2.2,0) circle (1.0pt);
+  \fill (0,1.8) circle (1.0pt);
+  \node[anchor=north,inner sep=1pt] at (2.2,-0.08) {$H$};
+  \node[anchor=east,inner sep=1pt] at (-0.08,1.8) {$K$};
+  \node[anchor=north,inner sep=0.5pt,font=\small] at (1.1,-0.35) {$h$};
+  \node[anchor=east,inner sep=0.5pt,font=\small] at (-0.35,0.9) {$k$};
+  \fill (4.6,3.6) circle (1.2pt);
+  \node[anchor=south west,inner sep=1pt] at (4.7,3.7) {$P$};
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.45pt] (4.6,3.6) -- (4.6,0);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.45pt] (4.6,3.6) -- (0,3.6);
+  \fill (4.6,1.8) circle (1.0pt);
+  \fill (2.2,3.6) circle (1.0pt);
+  \fill (4.6,0) circle (1.0pt);
+  \fill (0,3.6) circle (1.0pt);
+  \node[anchor=south,inner sep=1pt] at (4.6,1.9) {$M'$};
+  \node[anchor=east,inner sep=1pt] at (2.08,3.6) {$N'$};
+  \node[anchor=north,inner sep=1pt] at (4.6,-0.08) {$M$};
+  \node[anchor=east,inner sep=1pt] at (-0.08,3.6) {$N$};
+  \fill (-2,2) circle (1.2pt);
+  \node[anchor=south east,inner sep=1pt] at (-2.05,2.1) {$A(-2,\,2)$};
+\end{tikzpicture}%
+}
 \caption{图5-1}
 \end{figure}
+
 
 \emph{图5·1}
 
@@ -19064,9 +19249,46 @@ x^{\prime} = - 1, y^{\prime} = 3,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5·2}]{assets/analytic-geometry/fig-p0264-01.png}}
+\fitfig{%
+% fig-alt: 图5·2 平移至 O'(-3,4)，标 O(0,0)、A(-4,2)、B(0,4)、C(-1,-2) 及新轴 x'/y'
+\begin{tikzpicture}[x=0.48cm,y=0.48cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,-latex] (-5.5,0) -- (3.2,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-3.5) -- (0,6.5) node[anchor=south,inner sep=2pt] {$y$};
+  \foreach \kx in {-5,-4,-3,-2,-1,1,2} {
+    \draw[line width=0.32pt] (\kx,-0.12) -- (\kx,0.12);
+  }
+  \foreach \ky in {-3,-2,-1,1,2,3,4,5,6} {
+    \draw[line width=0.32pt] (-0.12,\ky) -- (0.12,\ky);
+  }
+  \draw[line width=0.7pt,-latex] (-5.5,4) -- (3.0,4) node[anchor=west,inner sep=2pt] {$x'$};
+  \draw[line width=0.7pt,-latex] (-3,-3.2) -- (-3,6.3) node[anchor=south,inner sep=2pt] {$y'$};
+  \foreach \kx in {-5,-4,-2,-1,0,1,2} {
+    \draw[line width=0.28pt] (\kx,3.88) -- (\kx,4.12);
+  }
+  \foreach \ky in {-2,-1,0,1,2,3,5,6} {
+    \draw[line width=0.28pt] (-3.12,\ky) -- (-2.88,\ky);
+  }
+  \fill (0,0) circle (1.25pt);
+  \fill (-3,4) circle (1.25pt);
+  \fill (-4,2) circle (1.25pt);
+  \fill (0,4) circle (1.25pt);
+  \fill (-1,-2) circle (1.25pt);
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (-3,4) -- (-3,0);
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (-3,4) -- (0,4);
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (-4,2) -- (-4,0);
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (-4,2) -- (0,2);
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (-1,-2) -- (-1,0);
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (-1,-2) -- (0,-2);
+  \node[anchor=north west,inner sep=1pt] at (0.1,-0.15) {$O(0,\,0)$};
+  \node[anchor=south east,inner sep=1pt] at (-3.15,4.15) {$O'(-3,\,4)$};
+  \node[anchor=north east,inner sep=1pt] at (-4.1,1.9) {$A(-4,\,2)$};
+  \node[anchor=north west,inner sep=1pt] at (0.12,3.85) {$B(0,\,4)$};
+  \node[anchor=north west,inner sep=1pt] at (-0.9,-2.15) {$C(-1,\,-2)$};
+\end{tikzpicture}%
+}
 \caption{图5·2}
 \end{figure}
+
 
 \emph{图5·2}
 
