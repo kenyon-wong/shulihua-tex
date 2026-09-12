@@ -13656,7 +13656,63 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) (b)}]{assets/physics-2/fig-p0208-01.png}}
+\fitfig{%
+% fig-alt: 图6.1 (a) 左细管下层水、上层酒精，顶面有记号；(b) 右细管为水和酒精混合物，液面低于 (a)。正文图题仍是 (a) (b)
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  % (a)
+  \begin{scope}[xshift=0cm]
+    \draw[line width=0.7pt] (0.00,0.00) -- (0.00,5.20);
+    \draw[line width=0.7pt] (0.55,0.00) -- (0.55,5.20);
+    \draw[line width=0.7pt] (0.00,0.00) -- (0.55,0.00);
+    \draw[line width=0.55pt] (-0.08,5.20) -- (0.63,5.20);
+    % water bottom ~ half
+    \begin{scope}
+      \clip (0.03,0.03) rectangle (0.52,2.45);
+      \foreach \yy in {0.12,0.28,0.44,0.60,0.76,0.92,1.08,1.24,1.40,1.56,1.72,1.88,2.04,2.20,2.36} {
+        \draw[line width=0.28pt] (0.03,\yy) -- (0.52,\yy);
+      }
+      \foreach \xx in {0.12,0.26,0.40} {
+        \draw[line width=0.28pt] (\xx,0.03) -- (\xx,2.45);
+      }
+    \end{scope}
+    \draw[line width=0.45pt] (0.03,2.45) -- (0.52,2.45);
+    % alcohol top
+    \begin{scope}
+      \clip (0.03,2.45) rectangle (0.52,4.85);
+      \foreach \k in {-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16} {
+        \draw[line width=0.28pt] ({-0.2+0.18*\k},2.45) -- ({0.35+0.18*\k},4.85);
+      }
+    \end{scope}
+    \draw[line width=0.45pt] (0.03,4.85) -- (0.52,4.85);
+    \draw[line width=0.55pt] (-0.18,4.85) -- (0.00,4.85);
+    \node[anchor=east,font=\scriptsize] at (-0.20,4.85) {$\times$};
+    \node[anchor=east,align=center,font=\scriptsize] at (-0.22,3.55) {酒\\精};
+    \node[anchor=east,align=center,font=\scriptsize] at (-0.22,1.20) {水};
+    \node[anchor=north,font=\small] at (0.28,-0.12) {$(a)$};
+  \end{scope}
+  % (b)
+  \begin{scope}[xshift=2.05cm]
+    \draw[line width=0.7pt] (0.00,0.00) -- (0.00,5.20);
+    \draw[line width=0.7pt] (0.55,0.00) -- (0.55,5.20);
+    \draw[line width=0.7pt] (0.00,0.00) -- (0.55,0.00);
+    \draw[line width=0.55pt] (-0.08,5.20) -- (0.63,5.20);
+    \begin{scope}
+      \clip (0.03,0.03) rectangle (0.52,4.15);
+      \foreach \yy in {0.12,0.28,0.44,0.60,0.76,0.92,1.08,1.24,1.40,1.56,1.72,1.88,2.04,2.20,2.36,2.52,2.68,2.84,3.00,3.16,3.32,3.48,3.64,3.80,3.96} {
+        \draw[line width=0.26pt] (0.03,\yy) -- (0.52,\yy);
+      }
+      \foreach \k in {-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14} {
+        \draw[line width=0.26pt] ({-0.15+0.18*\k},0.03) -- ({0.40+0.18*\k},4.15);
+      }
+    \end{scope}
+    \draw[line width=0.45pt] (0.03,4.15) -- (0.52,4.15);
+    % reference dashed from (a) mark height
+    \draw[dashed,line width=0.35pt] (-1.50,4.85) -- (0.55,4.85);
+    \node[anchor=west,align=center,font=\scriptsize] at (0.72,2.20) {水\\和\\酒\\精\\的\\混\\合\\物};
+    \node[anchor=north,font=\small] at (0.28,-0.12) {$(b)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(a) (b)}
 \end{figure}
 
@@ -13697,7 +13753,55 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6.3 液体层与液体层之间的引力}]{assets/physics-2/fig-p0210-02.png}}
+\fitfig{%
+% fig-alt: 图6.3 手持弹簧秤，下端细线吊水平玻璃片贴在水面；水槽标水，片旁标玻璃
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  % water tank
+  \draw[line width=0.75pt] (0.00,0.00) rectangle (4.20,2.55);
+  \foreach \yy in {0.22,0.48,0.74,1.00,1.26} {
+    \foreach \xx in {0.25,0.85,1.45,2.05,2.65,3.25,3.75} {
+      \draw[line width=0.32pt] (\xx,\yy) -- ++(0.28,0);
+    }
+  }
+  \draw[line width=0.45pt] (0.08,1.55) -- (4.12,1.55);
+  \node[font=\small] at (2.10,0.72) {水};
+  % glass plate
+  \draw[line width=0.85pt] (0.85,1.55) rectangle (3.35,1.78);
+  \fill[white] (0.90,1.58) rectangle (3.30,1.75);
+  \draw[line width=0.55pt] (0.85,1.55) rectangle (3.35,1.78);
+  \node[anchor=west,font=\small] at (3.42,1.68) {玻璃};
+  % V strings
+  \draw[line width=0.55pt] (1.35,1.78) -- (2.10,2.72);
+  \draw[line width=0.55pt] (2.85,1.78) -- (2.10,2.72);
+  \draw[line width=0.55pt] (2.10,2.72) -- (2.10,2.95);
+  % spring scale
+  \draw[line width=0.7pt] (1.78,2.95) -- (1.78,4.55);
+  \draw[line width=0.7pt] (2.42,2.95) -- (2.42,4.55);
+  \draw[line width=0.7pt] (1.78,2.95) -- (2.42,2.95);
+  \draw[line width=0.7pt] (1.78,4.55) -- (2.42,4.55);
+  \draw[line width=0.45pt] (1.92,3.10) rectangle (2.28,4.35);
+  \foreach \yy in {3.25,3.45,3.65,3.85,4.05,4.25} {
+    \draw[line width=0.32pt] (1.92,\yy) -- (2.05,\yy);
+  }
+  \draw[line width=0.55pt] (1.95,3.72) -- (2.25,3.72);
+  \draw[line width=0.55pt] (2.10,2.95) -- (2.10,2.82);
+  \draw[line width=0.55pt] (2.02,2.82) arc[start angle=180,end angle=360,radius=0.08];
+  % top ring
+  \draw[line width=0.55pt] (2.10,4.55) -- (2.10,4.68);
+  \draw[line width=0.55pt] (2.10,4.78) circle[radius=0.10];
+  % hand gripping ring
+  \draw[line width=0.6pt] (1.55,4.95)
+    .. controls (1.72,5.25) and (1.95,5.35) .. (2.22,5.28)
+    .. controls (2.45,5.22) and (2.55,5.00) .. (2.48,4.82)
+    .. controls (2.35,4.70) and (2.18,4.72) .. (2.10,4.78);
+  \draw[line width=0.55pt] (2.22,5.20)
+    .. controls (2.48,5.42) and (2.72,5.35) .. (2.82,5.12)
+    .. controls (2.88,4.95) and (2.70,4.88) .. (2.52,4.92);
+  \draw[line width=0.5pt] (1.70,5.05)
+    .. controls (1.55,5.22) and (1.48,5.45) .. (1.62,5.58)
+    .. controls (1.78,5.68) and (1.95,5.55) .. (1.98,5.35);
+\end{tikzpicture}%
+}
 \caption{图 6.3 液体层与液体层之间的引力}
 \end{figure}
 
@@ -13771,7 +13875,56 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6.5 观察布朗运动的装置示意图和在显微镜下看到的墨汁颗粒}]{assets/physics-2/fig-p0213-01.png}}
+\fitfig{%
+% fig-alt: 图6.5 (a) 显微镜物镜对准载物玻璃凹槽中的悬浊液，上覆盖玻璃；(b) 圆形视场内墨汁颗粒。正文图题仍是图6.5
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % (a)
+  \begin{scope}[xshift=0cm]
+    % slide
+    \draw[line width=0.75pt] (0.15,0.35) rectangle (3.55,1.35);
+    % well
+    \draw[line width=0.55pt] (1.35,0.95) rectangle (2.35,1.35);
+    \fill[gray!18] (1.38,0.98) rectangle (2.32,1.32);
+    % cover glass
+    \draw[line width=0.65pt] (1.05,1.35) -- (2.65,1.35);
+    \draw[line width=0.45pt] (1.05,1.42) -- (2.65,1.42);
+    % objective
+    \draw[line width=0.75pt] (1.55,1.72) -- (1.55,2.95);
+    \draw[line width=0.75pt] (2.15,1.72) -- (2.15,2.95);
+    \draw[line width=0.75pt] (1.55,2.95) -- (2.15,2.95);
+    \draw[line width=0.7pt] (1.48,1.72) -- (1.62,1.48) -- (2.08,1.48) -- (2.22,1.72);
+    \draw[line width=0.55pt] (1.62,1.48) -- (2.08,1.48);
+    % labels
+    \draw[line width=0.4pt] (2.20,2.45) -- (3.05,2.70);
+    \node[anchor=west] at (3.08,2.70) {显微镜物镜};
+    \draw[line width=0.4pt] (2.65,1.40) -- (3.25,1.55);
+    \node[anchor=west] at (3.28,1.55) {盖玻璃};
+    \draw[line width=0.4pt] (2.32,1.15) -- (3.20,0.95);
+    \node[anchor=west] at (3.22,0.95) {悬浊液};
+    \draw[line width=0.4pt] (0.90,0.55) -- (0.35,0.15);
+    \node[anchor=north] at (0.55,-0.02) {载物玻璃};
+    \node[anchor=north,font=\small] at (1.85,-0.35) {$(a)$};
+  \end{scope}
+  % (b)
+  \begin{scope}[xshift=5.35cm,yshift=0.55cm]
+    \draw[line width=0.75pt] (0,0) circle[radius=1.35];
+    \foreach \p/\r in {
+      (-0.55,0.72)/0.055,(-0.15,0.95)/0.04,(0.35,0.80)/0.06,(0.75,0.45)/0.045,
+      (-0.85,0.20)/0.05,(-0.35,0.25)/0.035,(0.10,0.40)/0.05,(0.55,0.10)/0.04,
+      (-0.60,-0.25)/0.045,(-0.10,-0.15)/0.055,(0.40,-0.35)/0.04,(0.85,-0.10)/0.05,
+      (-0.75,-0.70)/0.04,(-0.25,-0.85)/0.05,(0.25,-0.70)/0.045,(0.65,-0.80)/0.035,
+      (0.00,0.05)/0.04,(0.95,0.70)/0.03,(-0.95,0.55)/0.035,(0.15,-1.00)/0.03
+    } {
+      \fill \p circle[radius=\r];
+    }
+    \foreach \p in {(-0.40,0.55),(0.50,0.55),(-0.50,-0.50),(0.70,-0.45),(0.20,0.75)} {
+      \draw[line width=0.4pt] \p circle[radius=0.06];
+    }
+    \node[anchor=north,align=center,font=\scriptsize] at (0,-1.55) {经过放大后的悬浊液};
+    \node[anchor=north,font=\small] at (0,-1.95) {$(b)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 6.5 观察布朗运动的装置示意图和在显微镜下看到的墨汁颗粒}
 \end{figure}
 
@@ -13847,7 +14000,149 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.7 伽耳顿板}]{assets/physics-2/fig-p0215-01.png}}
+\fitfig{%
+% fig-alt: 图6.7 伽耳顿板：上漏斗、交错钉阵，下多狭槽，钢珠堆积中间多两侧少
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  % outer frame
+  \draw[line width=0.8pt] (0.15,0.15) -- (0.15,5.55);
+  \draw[line width=0.8pt] (3.55,0.15) -- (3.55,5.55);
+  \draw[line width=0.8pt] (0.15,0.15) -- (3.55,0.15);
+  % funnel
+  \draw[line width=0.75pt] (0.15,5.55) -- (1.55,4.95);
+  \draw[line width=0.75pt] (3.55,5.55) -- (2.15,4.95);
+  \draw[line width=0.65pt] (1.55,4.95) -- (1.55,4.78);
+  \draw[line width=0.65pt] (2.15,4.95) -- (2.15,4.78);
+  \fill (0.55,4.55) circle[radius=0.035];
+  \fill (0.93,4.55) circle[radius=0.035];
+  \fill (1.31,4.55) circle[radius=0.035];
+  \fill (1.69,4.55) circle[radius=0.035];
+  \fill (2.07,4.55) circle[radius=0.035];
+  \fill (2.45,4.55) circle[radius=0.035];
+  \fill (2.83,4.55) circle[radius=0.035];
+  \fill (3.21,4.55) circle[radius=0.035];
+  \fill (0.40,4.23) circle[radius=0.035];
+  \fill (0.78,4.23) circle[radius=0.035];
+  \fill (1.16,4.23) circle[radius=0.035];
+  \fill (1.54,4.23) circle[radius=0.035];
+  \fill (1.92,4.23) circle[radius=0.035];
+  \fill (2.30,4.23) circle[radius=0.035];
+  \fill (2.68,4.23) circle[radius=0.035];
+  \fill (3.06,4.23) circle[radius=0.035];
+  \fill (3.44,4.23) circle[radius=0.035];
+  \fill (0.55,3.91) circle[radius=0.035];
+  \fill (0.93,3.91) circle[radius=0.035];
+  \fill (1.31,3.91) circle[radius=0.035];
+  \fill (1.69,3.91) circle[radius=0.035];
+  \fill (2.07,3.91) circle[radius=0.035];
+  \fill (2.45,3.91) circle[radius=0.035];
+  \fill (2.83,3.91) circle[radius=0.035];
+  \fill (3.21,3.91) circle[radius=0.035];
+  \fill (0.40,3.59) circle[radius=0.035];
+  \fill (0.78,3.59) circle[radius=0.035];
+  \fill (1.16,3.59) circle[radius=0.035];
+  \fill (1.54,3.59) circle[radius=0.035];
+  \fill (1.92,3.59) circle[radius=0.035];
+  \fill (2.30,3.59) circle[radius=0.035];
+  \fill (2.68,3.59) circle[radius=0.035];
+  \fill (3.06,3.59) circle[radius=0.035];
+  \fill (3.44,3.59) circle[radius=0.035];
+  \fill (0.55,3.27) circle[radius=0.035];
+  \fill (0.93,3.27) circle[radius=0.035];
+  \fill (1.31,3.27) circle[radius=0.035];
+  \fill (1.69,3.27) circle[radius=0.035];
+  \fill (2.07,3.27) circle[radius=0.035];
+  \fill (2.45,3.27) circle[radius=0.035];
+  \fill (2.83,3.27) circle[radius=0.035];
+  \fill (3.21,3.27) circle[radius=0.035];
+  \fill (0.40,2.95) circle[radius=0.035];
+  \fill (0.78,2.95) circle[radius=0.035];
+  \fill (1.16,2.95) circle[radius=0.035];
+  \fill (1.54,2.95) circle[radius=0.035];
+  \fill (1.92,2.95) circle[radius=0.035];
+  \fill (2.30,2.95) circle[radius=0.035];
+  \fill (2.68,2.95) circle[radius=0.035];
+  \fill (3.06,2.95) circle[radius=0.035];
+  \fill (3.44,2.95) circle[radius=0.035];
+  \fill (0.55,2.63) circle[radius=0.035];
+  \fill (0.93,2.63) circle[radius=0.035];
+  \fill (1.31,2.63) circle[radius=0.035];
+  \fill (1.69,2.63) circle[radius=0.035];
+  \fill (2.07,2.63) circle[radius=0.035];
+  \fill (2.45,2.63) circle[radius=0.035];
+  \fill (2.83,2.63) circle[radius=0.035];
+  \fill (3.21,2.63) circle[radius=0.035];
+  \draw[line width=0.5pt] (0.20,0.15) -- (0.20,2.05);
+  \draw[line width=0.5pt] (0.50,0.15) -- (0.50,2.05);
+  \draw[line width=0.5pt] (0.80,0.15) -- (0.80,2.05);
+  \draw[line width=0.5pt] (1.10,0.15) -- (1.10,2.05);
+  \draw[line width=0.5pt] (1.40,0.15) -- (1.40,2.05);
+  \draw[line width=0.5pt] (1.70,0.15) -- (1.70,2.05);
+  \draw[line width=0.5pt] (2.00,0.15) -- (2.00,2.05);
+  \draw[line width=0.5pt] (2.30,0.15) -- (2.30,2.05);
+  \draw[line width=0.5pt] (2.60,0.15) -- (2.60,2.05);
+  \draw[line width=0.5pt] (2.90,0.15) -- (2.90,2.05);
+  \draw[line width=0.5pt] (3.20,0.15) -- (3.20,2.05);
+  \draw[line width=0.5pt] (3.50,0.15) -- (3.50,2.05);
+  \draw[line width=0.55pt] (0.20,2.05) -- (3.50,2.05);
+  \draw[line width=0.4pt] (0.35,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (0.65,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (0.65,0.45) circle[radius=0.07];
+  \draw[line width=0.4pt] (0.95,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (0.95,0.45) circle[radius=0.07];
+  \draw[line width=0.4pt] (0.95,0.62) circle[radius=0.07];
+  \draw[line width=0.4pt] (0.95,0.79) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.25,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.25,0.45) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.25,0.62) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.25,0.79) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.25,0.96) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.25,1.13) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.55,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.55,0.45) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.55,0.62) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.55,0.79) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.55,0.96) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.55,1.13) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.55,1.30) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.55,1.47) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,0.45) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,0.62) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,0.79) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,0.96) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,1.13) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,1.30) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,1.47) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,1.64) circle[radius=0.07];
+  \draw[line width=0.4pt] (1.85,1.81) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.15,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.15,0.45) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.15,0.62) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.15,0.79) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.15,0.96) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.15,1.13) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.15,1.30) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.15,1.47) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.45,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.45,0.45) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.45,0.62) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.45,0.79) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.45,0.96) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.45,1.13) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.75,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.75,0.45) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.75,0.62) circle[radius=0.07];
+  \draw[line width=0.4pt] (2.75,0.79) circle[radius=0.07];
+  \draw[line width=0.4pt] (3.05,0.28) circle[radius=0.07];
+  \draw[line width=0.4pt] (3.05,0.45) circle[radius=0.07];
+  \draw[line width=0.4pt] (3.35,0.28) circle[radius=0.07];
+  % dashed distribution curve
+  \draw[dashed,line width=0.45pt] plot[smooth] coordinates {
+    (0.35,0.40) (0.65,0.55) (0.95,0.85) (1.25,1.20) (1.55,1.55)
+    (1.85,1.85) (2.15,1.55) (2.45,1.20) (2.75,0.85) (3.05,0.55) (3.35,0.40)
+  };
+\end{tikzpicture}%
+}
 \caption{图6.7 伽耳顿板}
 \end{figure}
 
@@ -14579,7 +14874,108 @@ p = \frac {1}{3} n m \overline {{v}} ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-2/fig-p0228-01.png}}
+\fitfig{%
+% fig-alt: 第3题：上方较小容器1内有疏点气体，下方较大容器2为空，中间细管带旋塞。正文图题仍是 (第3题)
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  % upper vessel 1 (taller, narrower)
+  \draw[line width=0.8pt] (0.30,2.80) -- (0.30,4.50) -- (1.50,4.50) -- (1.50,2.80);
+  \draw[line width=0.8pt] (0.30,2.80) -- (0.70,2.80);
+  \draw[line width=0.8pt] (1.10,2.80) -- (1.50,2.80);
+  \fill (0.28,2.85) circle[radius=0.012];
+  \fill (0.46,2.85) circle[radius=0.012];
+  \fill (0.64,2.85) circle[radius=0.012];
+  \fill (0.82,2.85) circle[radius=0.012];
+  \fill (1.00,2.85) circle[radius=0.012];
+  \fill (1.18,2.85) circle[radius=0.012];
+  \fill (1.36,2.85) circle[radius=0.012];
+  \fill (0.37,3.01) circle[radius=0.012];
+  \fill (0.55,3.01) circle[radius=0.012];
+  \fill (0.73,3.01) circle[radius=0.012];
+  \fill (0.91,3.01) circle[radius=0.012];
+  \fill (1.09,3.01) circle[radius=0.012];
+  \fill (1.27,3.01) circle[radius=0.012];
+  \fill (1.45,3.01) circle[radius=0.012];
+  \fill (0.28,3.17) circle[radius=0.012];
+  \fill (0.46,3.17) circle[radius=0.012];
+  \fill (0.64,3.17) circle[radius=0.012];
+  \fill (0.82,3.17) circle[radius=0.012];
+  \fill (1.00,3.17) circle[radius=0.012];
+  \fill (1.18,3.17) circle[radius=0.012];
+  \fill (1.36,3.17) circle[radius=0.012];
+  \fill (0.37,3.33) circle[radius=0.012];
+  \fill (0.55,3.33) circle[radius=0.012];
+  \fill (0.73,3.33) circle[radius=0.012];
+  \fill (0.91,3.33) circle[radius=0.012];
+  \fill (1.09,3.33) circle[radius=0.012];
+  \fill (1.27,3.33) circle[radius=0.012];
+  \fill (1.45,3.33) circle[radius=0.012];
+  \fill (0.28,3.49) circle[radius=0.012];
+  \fill (0.46,3.49) circle[radius=0.012];
+  \fill (0.64,3.49) circle[radius=0.012];
+  \fill (0.82,3.49) circle[radius=0.012];
+  \fill (1.00,3.49) circle[radius=0.012];
+  \fill (1.18,3.49) circle[radius=0.012];
+  \fill (1.36,3.49) circle[radius=0.012];
+  \fill (0.37,3.65) circle[radius=0.012];
+  \fill (0.55,3.65) circle[radius=0.012];
+  \fill (0.73,3.65) circle[radius=0.012];
+  \fill (0.91,3.65) circle[radius=0.012];
+  \fill (1.09,3.65) circle[radius=0.012];
+  \fill (1.27,3.65) circle[radius=0.012];
+  \fill (1.45,3.65) circle[radius=0.012];
+  \fill (0.28,3.81) circle[radius=0.012];
+  \fill (0.46,3.81) circle[radius=0.012];
+  \fill (0.64,3.81) circle[radius=0.012];
+  \fill (0.82,3.81) circle[radius=0.012];
+  \fill (1.00,3.81) circle[radius=0.012];
+  \fill (1.18,3.81) circle[radius=0.012];
+  \fill (1.36,3.81) circle[radius=0.012];
+  \fill (0.37,3.97) circle[radius=0.012];
+  \fill (0.55,3.97) circle[radius=0.012];
+  \fill (0.73,3.97) circle[radius=0.012];
+  \fill (0.91,3.97) circle[radius=0.012];
+  \fill (1.09,3.97) circle[radius=0.012];
+  \fill (1.27,3.97) circle[radius=0.012];
+  \fill (1.45,3.97) circle[radius=0.012];
+  \fill (0.28,4.13) circle[radius=0.012];
+  \fill (0.46,4.13) circle[radius=0.012];
+  \fill (0.64,4.13) circle[radius=0.012];
+  \fill (0.82,4.13) circle[radius=0.012];
+  \fill (1.00,4.13) circle[radius=0.012];
+  \fill (1.18,4.13) circle[radius=0.012];
+  \fill (1.36,4.13) circle[radius=0.012];
+  \fill (0.37,4.29) circle[radius=0.012];
+  \fill (0.55,4.29) circle[radius=0.012];
+  \fill (0.73,4.29) circle[radius=0.012];
+  \fill (0.91,4.29) circle[radius=0.012];
+  \fill (1.09,4.29) circle[radius=0.012];
+  \fill (1.27,4.29) circle[radius=0.012];
+  \fill (1.45,4.29) circle[radius=0.012];
+  \node at (0.90,3.70) {$1$};
+  % neck
+  \draw[line width=0.75pt] (0.70,2.80) -- (0.70,1.70);
+  \draw[line width=0.75pt] (1.10,2.80) -- (1.10,1.70);
+  \fill (0.72,2.35) circle[radius=0.012];
+  \fill (0.88,2.35) circle[radius=0.012];
+  \fill (1.04,2.35) circle[radius=0.012];
+  \fill (0.81,2.50) circle[radius=0.012];
+  \fill (0.97,2.50) circle[radius=0.012];
+  \fill (0.72,2.65) circle[radius=0.012];
+  \fill (0.88,2.65) circle[radius=0.012];
+  \fill (1.04,2.65) circle[radius=0.012];
+  \fill (0.81,2.80) circle[radius=0.012];
+  \fill (0.97,2.80) circle[radius=0.012];
+  % stopcock
+  \draw[line width=0.65pt] (0.55,2.15) -- (1.25,2.15);
+  \draw[line width=0.65pt] (0.55,2.32) -- (1.25,2.32);
+  \draw[line width=0.7pt] (1.25,2.08) -- (1.58,2.08) -- (1.58,2.40) -- (1.25,2.40);
+  \draw[line width=0.55pt] (1.58,2.24) -- (1.82,2.24);
+  \fill (1.82,2.24) circle[radius=0.04];
+  % lower vessel 2
+  \draw[line width=0.8pt] (0.05,0.10) rectangle (1.85,1.70);
+  \node at (0.95,0.90) {$2$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -14838,7 +15234,56 @@ mg。又因为金属丝在上移时受到两边的液膜对它的拉力（图7.5
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-5 表面张力系数的测定}]{assets/physics-2/fig-p0232-02.png}}
+\fitfig{%
+% fig-alt: 图7.5 左：金属丝长 l 与下拉表面张力示意；右：弹簧测力计吊金属丝水平段，浸于杯中液面
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  % left: dimension l
+  \draw[line width=0.55pt] (0.10,4.55) -- (2.40,4.55);
+  \draw[line width=0.45pt] (0.10,4.45) -- (0.10,4.65);
+  \draw[line width=0.45pt] (2.40,4.45) -- (2.40,4.65);
+  \draw[dashed,line width=0.35pt] (0.10,4.55) -- (0.10,3.70);
+  \draw[dashed,line width=0.35pt] (2.40,4.55) -- (2.40,3.70);
+  \node[font=\small] at (1.25,4.75) {$l$};
+  \draw[line width=0.45pt] (0.10,4.22) -- (0.10,4.12) -- (1.15,4.12) -- (1.25,4.28) -- (1.35,4.12) -- (2.40,4.12) -- (2.40,4.22);
+  % perspective wire bar + downward film arrows
+  \draw[line width=0.7pt] (0.20,3.55) -- (2.30,3.72);
+  \draw[line width=0.55pt] (0.20,3.55) -- (0.48,3.15);
+  \draw[line width=0.55pt] (2.30,3.72) -- (2.58,3.32);
+  \draw[line width=0.55pt] (0.48,3.15) -- (2.58,3.32);
+  \draw[line width=0.55pt] (1.25,3.63) -- (1.25,3.88);
+  \foreach \x in {0.40,0.65,0.90,1.15,1.40,1.65,1.90,2.15} {
+    \draw[->,line width=0.4pt] (\x,3.58) -- ++(0.06,-0.38);
+  }
+  % right: spring scale above beaker; wire dips to liquid surface inside cup
+  \begin{scope}[xshift=3.45cm]
+    \draw[line width=0.75pt] (0.55,3.35) rectangle (1.40,5.45);
+    \fill[gray!22] (0.55,5.25) rectangle (1.40,5.45);
+    \draw[line width=0.45pt] (0.55,5.25) -- (1.40,5.25);
+    \draw[decorate,decoration={coil,aspect=0.55,segment length=2.2pt,amplitude=3.2pt},line width=0.55pt]
+      (0.98,5.15) -- (0.98,4.15);
+    \draw[line width=0.55pt] (0.98,4.15) -- (0.98,3.35);
+    \foreach \yy in {3.55,3.80,4.05,4.30,4.55,4.80,5.05} {
+      \draw[line width=0.32pt] (1.22,\yy) -- (1.40,\yy);
+    }
+    \draw[line width=0.55pt] (0.98,3.35) -- (0.98,3.05);
+    \draw[line width=0.55pt] (0.90,3.05) arc[start angle=180,end angle=360,radius=0.08];
+    % stem to wire
+    \draw[line width=0.55pt] (0.98,2.97) -- (0.98,2.05);
+    \draw[line width=0.7pt] (0.45,2.05) -- (1.50,2.05);
+    \draw[line width=0.45pt] (0.98,2.05) -- (0.98,2.20);
+    % beaker: rim above liquid; wire at liquid surface
+    \draw[line width=0.75pt] (0.30,0.15) -- (-0.05,2.55) -- (2.00,2.55) -- (1.65,0.15) -- cycle;
+    % liquid up to y=2.05
+    \foreach \yy in {0.35,0.55,0.75,0.95,1.15,1.35,1.55,1.75,1.95} {
+      \pgfmathsetmacro{\t}{(\yy-0.15)/2.40}
+      \pgfmathsetmacro{\xl}{0.30-0.35*\t}
+      \pgfmathsetmacro{\xr}{1.65+0.35*\t}
+      \draw[line width=0.32pt] (\xl,\yy) -- (\xr,\yy);
+    }
+    \draw[line width=0.45pt] (0.22,2.05) -- (1.73,2.05);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图7-5 表面张力系数的测定}
 \end{figure}
 
@@ -15536,7 +15981,48 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.13 食盐晶体的外形}]{assets/physics-2/fig-p0242-02.png}}
+\fitfig{%
+% fig-alt: 图7.13 食盐晶体三外形：左立方体（虚线隐棱），中八面体，右截角立方（立方八面混合）
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  % cube
+  \begin{scope}[xshift=0.0cm,yshift=0.15cm]
+    \draw[line width=0.7pt] (0.00,0.00) -- (1.35,0.00) -- (1.35,1.35) -- (0.00,1.35) -- cycle;
+    \draw[line width=0.7pt] (0.00,1.35) -- (0.45,1.70) -- (1.80,1.70) -- (1.35,1.35);
+    \draw[line width=0.7pt] (1.35,0.00) -- (1.80,0.35) -- (1.80,1.70);
+    \draw[dashed,line width=0.5pt] (0.00,0.00) -- (0.45,0.35) -- (0.45,1.70);
+    \draw[dashed,line width=0.5pt] (0.45,0.35) -- (1.80,0.35);
+  \end{scope}
+  % octahedron
+  \begin{scope}[xshift=3.05cm,yshift=0.05cm]
+    \coordinate (T) at (0.95,2.05);
+    \coordinate (B) at (0.95,-0.05);
+    \coordinate (L) at (0.00,1.00);
+    \coordinate (R) at (1.90,1.00);
+    \coordinate (F) at (0.95,0.55);
+    \coordinate (Bk) at (0.95,1.35);
+    \draw[line width=0.7pt] (T) -- (L) -- (B) -- (R) -- (T);
+    \draw[line width=0.7pt] (T) -- (F);
+    \draw[line width=0.7pt] (L) -- (F) -- (R);
+    \draw[line width=0.7pt] (B) -- (F);
+    \draw[dashed,line width=0.5pt] (T) -- (Bk);
+    \draw[dashed,line width=0.5pt] (L) -- (Bk) -- (R);
+    \draw[dashed,line width=0.5pt] (B) -- (Bk);
+  \end{scope}
+  % truncated cube / cubocta-like
+  \begin{scope}[xshift=5.85cm,yshift=0.20cm]
+    % simplified truncated cube in cabinet projection
+    \draw[line width=0.7pt] (0.25,0.00) -- (1.10,0.00) -- (1.35,0.25) -- (1.35,1.10) -- (1.10,1.35) -- (0.25,1.35) -- (0.00,1.10) -- (0.00,0.25) -- cycle;
+    \draw[line width=0.7pt] (0.25,1.35) -- (0.55,1.65) -- (1.40,1.65) -- (1.10,1.35);
+    \draw[line width=0.7pt] (1.35,1.10) -- (1.65,1.40) -- (1.65,1.65) -- (1.40,1.65);
+    \draw[line width=0.7pt] (1.35,0.25) -- (1.65,0.55) -- (1.65,1.40);
+    \draw[line width=0.7pt] (1.10,0.00) -- (1.40,0.30) -- (1.65,0.55);
+    \draw[line width=0.55pt] (0.55,1.65) -- (0.55,1.40) -- (0.00,1.10);
+    \draw[line width=0.55pt] (1.40,0.30) -- (1.40,0.55) -- (1.65,0.55);
+    \draw[line width=0.55pt] (0.55,1.40) -- (1.40,1.40) -- (1.65,1.40);
+    \draw[line width=0.55pt] (1.40,1.40) -- (1.40,0.55);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 7.13 食盐晶体的外形}
 \end{figure}
 
@@ -16129,7 +16615,33 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第250页）}]{assets/physics-2/fig-p0250-03.png}}
+\fitfig{%
+% fig-alt: 弯曲横梁纵断面：上弧 A1 c' a' e' B1，下弧 D1 d' b' f' C1，中立层虚线 l'–m'，竖线 cd、粗 ab、ef
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  % concentric arcs: center (3.05, 5.20); top R=3.60, bottom R=4.25, mid 3.925
+  \draw[line width=0.75pt] (3.05,5.20) ++({215:3.60}) arc[start angle=215,end angle=325,radius=3.60];
+  \draw[line width=0.75pt] (3.05,5.20) ++({215:4.25}) arc[start angle=215,end angle=325,radius=4.25];
+  \draw[line width=0.7pt] (3.05,5.20) ++({215:3.60}) -- ++({215:0.65});
+  \draw[line width=0.7pt] (3.05,5.20) ++({325:3.60}) -- ++({325:0.65});
+  \draw[line width=0.55pt] (3.05,5.20) ++({240:3.60}) -- ++({240:0.65});
+  \draw[line width=0.95pt] (3.05,5.20) ++({270:3.60}) -- ++({270:0.65});
+  \draw[line width=0.55pt] (3.05,5.20) ++({300:3.60}) -- ++({300:0.65});
+  \draw[dash pattern=on 2.2pt off 1.1pt on 0.5pt off 1.1pt,line width=0.5pt]
+    (3.05,5.20) ++({215:3.925}) arc[start angle=215,end angle=325,radius=3.925];
+  \node[anchor=south east,font=\small] at ({3.05+3.60*cos(215)},{5.20+3.60*sin(215)}) {$A_{1}$};
+  \node[anchor=south west,font=\small] at ({3.05+3.60*cos(325)},{5.20+3.60*sin(325)}) {$B_{1}$};
+  \node[anchor=north east,font=\small] at ({3.05+4.25*cos(215)},{5.20+4.25*sin(215)}) {$D_{1}$};
+  \node[anchor=north west,font=\small] at ({3.05+4.25*cos(325)},{5.20+4.25*sin(325)}) {$C_{1}$};
+  \node[anchor=south,font=\small] at ({3.05+3.60*cos(240)},{5.20+3.60*sin(240)}) {$c'$};
+  \node[anchor=north,font=\small] at ({3.05+4.25*cos(240)},{5.20+4.25*sin(240)}) {$d'$};
+  \node[anchor=south,font=\small] at ({3.05+3.60*cos(270)},{5.20+3.60*sin(270)}) {$a'$};
+  \node[anchor=north,font=\small] at ({3.05+4.25*cos(270)},{5.20+4.25*sin(270)}) {$b'$};
+  \node[anchor=south,font=\small] at ({3.05+3.60*cos(300)},{5.20+3.60*sin(300)}) {$e'$};
+  \node[anchor=north,font=\small] at ({3.05+4.25*cos(300)},{5.20+4.25*sin(300)}) {$f'$};
+  \node[anchor=east,font=\small] at ({3.05+3.925*cos(215)},{5.20+3.925*sin(215)}) {$l'$};
+  \node[anchor=west,font=\small] at ({3.05+3.925*cos(325)},{5.20+3.925*sin(325)}) {$m'$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第250页）}
 \end{figure}
 
