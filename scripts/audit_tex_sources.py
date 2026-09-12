@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -11,6 +12,38 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog.json"
 TEX_ROOT = ROOT / "tex" / "books"
 REPORT = ROOT / "reports" / "tex-source-audit.json"
+
+CJK_BACKSLASH = re.compile(r"[\u4e00-\u9fff]\\[\u4e00-\u9fff]")
+ENV_TOKEN = re.compile(r"\\(begin|end)\{([A-Za-z*]+)\}")
+
+
+def strip_comments(text: str) -> str:
+    lines = []
+    for line in text.splitlines():
+        lines.append(re.sub(r"(?<!\\)%.*", "", line))
+    return "\n".join(lines)
+
+
+def env_balance_errors(path: Path, text: str) -> list[str]:
+    body = strip_comments(text)
+    stack: list[tuple[str, int]] = []
+    errors: list[str] = []
+    for i, line in enumerate(body.splitlines(), 1):
+        for kind, env in ENV_TOKEN.findall(line):
+            if kind == "begin":
+                stack.append((env, i))
+                continue
+            if not stack:
+                errors.append(f"{path.name}:{i}: \\end{{{env}}} 没有对应的 \\begin")
+                continue
+            begin, at = stack.pop()
+            if begin != env:
+                errors.append(
+                    f"{path.name}:{i}: \\end{{{env}}} 与 {at} 行的 \\begin{{{begin}}} 不配对"
+                )
+    for env, at in stack:
+        errors.append(f"{path.name}:{at}: \\begin{{{env}}} 没有对应的 \\end")
+    return errors
 
 
 def main() -> int:
@@ -35,8 +68,17 @@ def main() -> int:
         text = path.read_text(encoding="utf-8")
         if r"\documentclass" in text or r"\begin{document}" in text:
             errors.append(f"{path.name}: 正文混入了版式（documentclass/document），样式应只在 tex/style/")
+        if r"\tableofcontents" in text:
+            errors.append(f"{path.name}: 正文不得含 \\tableofcontents，目录由 driver/合订本生成")
+        if r"\chapter{目录}" in text:
+            errors.append(f"{path.name}: 不得保留 OCR \\chapter{{目录}}")
         if not text.strip():
             errors.append(f"{path.name}: 正文为空")
+        for i, line in enumerate(text.splitlines(), 1):
+            if CJK_BACKSLASH.search(line):
+                errors.append(f"{path.name}:{i}: 汉字后的 \\ 会被当成控制序列")
+                break
+        errors.extend(env_balance_errors(path, text))
         rows.append({"title": item["title"], "bytes": path.stat().st_size})
     payload = {
         "schema_version": 1,
