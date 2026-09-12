@@ -17706,7 +17706,7 @@ D 形盒的边缘，这时它已具有很大的动能，被用一定方式引出
   \node[anchor=east,inner sep=2pt] at (-2.20,1.05) {$v_0$};
 \end{tikzpicture}%
 }
-\caption{（第7题）}
+\caption{(第7题)}
 \end{figure}
 
 \emph{（第7题）}
@@ -17936,23 +17936,126 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-3/fig-p0253-01.png}}
-\caption{(第2题)}
+\fitfig{%
+% fig-alt: 复习题三第2题。环形导线顶开口左−右+；环内水平磁针左S右N（N涂黑）；环下同向磁针置于支座
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % loop with top gap
+  \draw[line width=1.15pt]
+    (100:1.55) arc[start angle=100,end angle=440,radius=1.55];
+  % terminals
+  \draw[line width=1.15pt] (100:1.55) -- (100:1.55 |- 0,1.85);
+  \draw[line width=1.15pt] (80:1.55) -- (80:1.55 |- 0,1.85);
+  \node[anchor=south,inner sep=1pt,font=\small] at (100:1.55 |- 0,1.88) {$-$};
+  \node[anchor=south,inner sep=1pt,font=\small] at (80:1.55 |- 0,1.88) {$+$};
+  % current arrow at bottom (clockwise: leftward)
+  \draw[line width=0.7pt,->] (20:1.35) arc[start angle=20,end angle=-20,radius=1.35];
+  \node[anchor=north,inner sep=1pt] at (0,-1.22) {$I$};
+  % inner compass needle
+  \begin{scope}
+    \fill[black] (0.05,0.02) -- (0.72,0.02) -- (0.05,0.16) -- cycle;
+    \fill[black] (0.05,-0.02) -- (0.72,-0.02) -- (0.05,-0.16) -- cycle;
+    \draw[line width=0.55pt,fill=white] (-0.05,0.02) -- (-0.72,0.02) -- (-0.05,0.16) -- cycle;
+    \draw[line width=0.55pt,fill=white] (-0.05,-0.02) -- (-0.72,-0.02) -- (-0.05,-0.16) -- cycle;
+    \draw[line width=0.55pt] (-0.72,0) -- (0.72,0);
+    \fill (0,0) circle[radius=0.04];
+    \node[anchor=east,inner sep=2pt,font=\small] at (-0.78,0) {$S$};
+    \node[anchor=west,inner sep=2pt,font=\small] at (0.78,0) {$N$};
+  \end{scope}
+  % pivot for inner needle (short stand)
+  \draw[line width=0.5pt] (0,-0.18) -- (0,-0.42);
+  \draw[line width=0.5pt] (-0.18,-0.42) -- (0.18,-0.42);
+  % outer compass below
+  \begin{scope}[shift={(0,-2.55)}]
+    \fill[black] (0.05,0.02) -- (0.72,0.02) -- (0.05,0.16) -- cycle;
+    \fill[black] (0.05,-0.02) -- (0.72,-0.02) -- (0.05,-0.16) -- cycle;
+    \draw[line width=0.55pt,fill=white] (-0.05,0.02) -- (-0.72,0.02) -- (-0.05,0.16) -- cycle;
+    \draw[line width=0.55pt,fill=white] (-0.05,-0.02) -- (-0.72,-0.02) -- (-0.05,-0.16) -- cycle;
+    \draw[line width=0.55pt] (-0.72,0) -- (0.72,0);
+    \fill (0,0) circle[radius=0.04];
+    \node[anchor=east,inner sep=2pt,font=\small] at (-0.78,0) {$S$};
+    \node[anchor=west,inner sep=2pt,font=\small] at (0.78,0) {$N$};
+    \draw[line width=0.55pt] (0,-0.18) -- (0,-0.55);
+    \draw[line width=0.55pt] (-0.28,-0.55) -- (0.28,-0.55);
+    \draw[line width=0.45pt] (-0.18,-0.62) -- (0.18,-0.62);
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{（第2题）}
 \end{figure}
 
 \emph{（第2题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-3/fig-p0253-02.png}}
-\caption{(第4题)}
+\fitfig{%
+% fig-alt: 复习题三第4题。容器盛稀硫酸；液面浮斜线软木塞，插两金属片浸入液中；上部小铜线圈约三匝连接两片
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % vessel
+  \draw[line width=0.8pt]
+    (-2.10,1.85) -- (-2.10,-0.15) -- (2.10,-0.15) -- (2.10,1.85);
+  % rim lips
+  \draw[line width=0.7pt] (-2.10,1.85) -- (-2.35,1.95);
+  \draw[line width=0.7pt] (2.10,1.85) -- (2.35,1.95);
+  % liquid surface + dashes
+  \draw[line width=0.55pt] (-1.95,1.05) -- (1.95,1.05);
+  \foreach \y in {0.15,0.35,0.55,0.75} {
+    \foreach \x in {-1.70,-1.10,-0.50,0.10,0.70,1.30} {
+      \draw[line width=0.35pt,dash pattern=on 2.2pt off 1.6pt]
+        ({\x+0.05*\y},{\y}) -- ({\x+0.35},{\y});
+    }
+  }
+  % cork (hatched)
+  \draw[line width=0.65pt,pattern=north east lines,pattern color=black!70]
+    (-0.85,0.88) rectangle (0.85,1.28);
+  \draw[line width=0.65pt] (-0.85,0.88) rectangle (0.85,1.28);
+  % electrodes through cork into liquid
+  \draw[line width=1.05pt] (-0.42,1.28) -- (-0.42,0.45);
+  \draw[line width=1.05pt] (0.42,1.28) -- (0.42,0.45);
+  % coil on top (3 turns)
+  \draw[line width=0.7pt] (-0.42,1.28) -- (-0.42,1.55);
+  \draw[line width=0.7pt] (0.42,1.28) -- (0.42,1.55);
+  \foreach \i/\cx in {0/-0.28,1/0.00,2/0.28} {
+    \draw[line width=0.7pt] ({\cx-0.14},1.55) arc[start angle=180,end angle=0,x radius=0.14,y radius=0.22];
+  }
+  \draw[line width=0.7pt] (-0.42,1.55) -- (0.42,1.55);
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \emph{（第4题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0254-01.png}}
+\fitfig{%
+% fig-alt: 复习题三第5题(a)。左右凹面磁极标N、S；中间竖直矩形线圈，顶引出两线，左箭↑右箭↓
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left pole N
+  \fill[pattern=dots,pattern color=black!55]
+    (-2.50,-1.30) -- (-2.50,1.30) -- ({1.25*cos(108)},{1.25*sin(108)})
+    arc[start angle=108,end angle=252,radius=1.25] -- cycle;
+  \draw[line width=0.75pt]
+    (-2.50,-1.30) -- (-2.50,1.30) -- ({1.25*cos(108)},{1.25*sin(108)})
+    arc[start angle=108,end angle=252,radius=1.25] -- cycle;
+  \node at (-1.85,0) {$N$};
+  % right pole S
+  \fill[pattern=dots,pattern color=black!55]
+    (2.50,-1.30) -- (2.50,1.30) -- ({1.25*cos(72)},{1.25*sin(72)})
+    arc[start angle=72,end angle=-72,radius=1.25] -- cycle;
+  \draw[line width=0.75pt]
+    (2.50,-1.30) -- (2.50,1.30) -- ({1.25*cos(72)},{1.25*sin(72)})
+    arc[start angle=72,end angle=-72,radius=1.25] -- cycle;
+  \node at (1.85,0) {$S$};
+  % rectangular coil + leads
+  \draw[line width=0.8pt] (-0.38,-0.90) -- (-0.38,0.90) -- (-0.12,0.90);
+  \draw[line width=0.8pt] (0.38,-0.90) -- (0.38,0.90) -- (0.12,0.90);
+  \draw[line width=0.8pt] (-0.38,-0.90) -- (0.38,-0.90);
+  \draw[line width=0.75pt] (-0.12,0.90) -- (-0.12,1.50);
+  \draw[line width=0.75pt] (0.12,0.90) -- (0.12,1.50);
+  \draw[line width=0.65pt,->] (-0.12,1.00) -- (-0.12,1.40);
+  \draw[line width=0.65pt,->] (0.12,1.40) -- (0.12,1.00);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -17960,7 +18063,32 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0254-02.png}}
+\fitfig{%
+% fig-alt: 复习题三第5题(b)。左右凹面磁极标N、S；中间竖直矩形线圈，顶引出两线，左箭↓右箭↑
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \fill[pattern=dots,pattern color=black!55]
+    (-2.50,-1.30) -- (-2.50,1.30) -- ({1.25*cos(108)},{1.25*sin(108)})
+    arc[start angle=108,end angle=252,radius=1.25] -- cycle;
+  \draw[line width=0.75pt]
+    (-2.50,-1.30) -- (-2.50,1.30) -- ({1.25*cos(108)},{1.25*sin(108)})
+    arc[start angle=108,end angle=252,radius=1.25] -- cycle;
+  \node at (-1.85,0) {$N$};
+  \fill[pattern=dots,pattern color=black!55]
+    (2.50,-1.30) -- (2.50,1.30) -- ({1.25*cos(72)},{1.25*sin(72)})
+    arc[start angle=72,end angle=-72,radius=1.25] -- cycle;
+  \draw[line width=0.75pt]
+    (2.50,-1.30) -- (2.50,1.30) -- ({1.25*cos(72)},{1.25*sin(72)})
+    arc[start angle=72,end angle=-72,radius=1.25] -- cycle;
+  \node at (1.85,0) {$S$};
+  \draw[line width=0.8pt] (-0.38,-0.90) -- (-0.38,0.90) -- (-0.12,0.90);
+  \draw[line width=0.8pt] (0.38,-0.90) -- (0.38,0.90) -- (0.12,0.90);
+  \draw[line width=0.8pt] (-0.38,-0.90) -- (0.38,-0.90);
+  \draw[line width=0.75pt] (-0.12,0.90) -- (-0.12,1.50);
+  \draw[line width=0.75pt] (0.12,0.90) -- (0.12,1.50);
+  \draw[line width=0.65pt,->] (-0.12,1.40) -- (-0.12,1.00);
+  \draw[line width=0.65pt,->] (0.12,1.00) -- (0.12,1.40);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -17968,7 +18096,32 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-3/fig-p0254-03.png}}
+\fitfig{%
+% fig-alt: 复习题三第5题(c)。左右凹面磁极（无N/S字）；竖直线圈；左边F1斜向左下，右边F2斜向右上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \fill[pattern=dots,pattern color=black!55]
+    (-2.50,-1.30) -- (-2.50,1.30) -- ({1.25*cos(108)},{1.25*sin(108)})
+    arc[start angle=108,end angle=252,radius=1.25] -- cycle;
+  \draw[line width=0.75pt]
+    (-2.50,-1.30) -- (-2.50,1.30) -- ({1.25*cos(108)},{1.25*sin(108)})
+    arc[start angle=108,end angle=252,radius=1.25] -- cycle;
+  \fill[pattern=dots,pattern color=black!55]
+    (2.50,-1.30) -- (2.50,1.30) -- ({1.25*cos(72)},{1.25*sin(72)})
+    arc[start angle=72,end angle=-72,radius=1.25] -- cycle;
+  \draw[line width=0.75pt]
+    (2.50,-1.30) -- (2.50,1.30) -- ({1.25*cos(72)},{1.25*sin(72)})
+    arc[start angle=72,end angle=-72,radius=1.25] -- cycle;
+  \draw[line width=0.8pt] (-0.38,-0.90) -- (-0.38,0.90) -- (-0.12,0.90);
+  \draw[line width=0.8pt] (0.38,-0.90) -- (0.38,0.90) -- (0.12,0.90);
+  \draw[line width=0.8pt] (-0.38,-0.90) -- (0.38,-0.90);
+  \draw[line width=0.75pt] (-0.12,0.90) -- (-0.12,1.40);
+  \draw[line width=0.75pt] (0.12,0.90) -- (0.12,1.40);
+  \draw[line width=0.7pt,->] (-0.38,0.10) -- (-0.95,-0.40);
+  \node[anchor=north east,inner sep=1pt] at (-0.95,-0.40) {$F_1$};
+  \draw[line width=0.7pt,->] (0.38,-0.10) -- (0.95,0.40);
+  \node[anchor=south west,inner sep=1pt] at (0.95,0.40) {$F_2$};
+\end{tikzpicture}%
+}
 \caption{(c)}
 \end{figure}
 
@@ -17993,16 +18146,71 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-3/fig-p0254-05.png}}
-\caption{(第6题)}
+\fitfig{%
+% fig-alt: 复习题三第6题。匀强磁场B水平向左（多条平行箭）；竖直导体AB，点O近B端（OA=2OB）；电流I向上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B field lines pointing left
+  \foreach \y in {0.20,0.70,1.20,1.70,2.20} {
+    \draw[line width=0.65pt,->] (3.40,\y) -- (0.15,\y);
+  }
+  \node[anchor=east,inner sep=2pt] at (0.10,1.20) {$B$};
+  % conductor AB (vertical), O at 1/3 from B
+  % A at y=2.55, B at y=0.00, O at y=0.85 (OA=1.70, OB=0.85)
+  \draw[line width=1.35pt] (1.75,0.00) -- (1.75,2.55);
+  \node[anchor=south,inner sep=2pt] at (1.75,2.55) {$A$};
+  \node[anchor=north,inner sep=2pt] at (1.75,0.00) {$B$};
+  \fill (1.75,0.85) circle[radius=0.045];
+  \node[anchor=west,inner sep=3pt] at (1.78,0.85) {$O$};
+  % I upward near OB
+  \draw[line width=0.7pt,->] (1.45,0.25) -- (1.45,0.75);
+  \node[anchor=east,inner sep=2pt] at (1.42,0.55) {$I$};
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \emph{（第6题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-3/fig-p0254-06.png}}
-\caption{(第7题)}
+\fitfig{%
+% fig-alt: 复习题三第7题。左右磁极块标N、S夹水平隙；导体AB斜穿隙中，P点处F竖直向上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left N pole (oblique box)
+  \draw[line width=0.75pt]
+    (0.00,0.35) -- (1.55,0.35) -- (1.55,1.85) -- (0.00,1.85) -- cycle;
+  \draw[line width=0.75pt]
+    (0.00,1.85) -- (0.35,2.20) -- (1.90,2.20) -- (1.55,1.85);
+  \draw[line width=0.75pt]
+    (1.55,0.35) -- (1.90,0.70) -- (1.90,2.20);
+  % jagged left face hint
+  \draw[line width=0.55pt] (0.00,0.35) -- (-0.08,0.55) -- (0.00,0.75)
+    -- (-0.08,0.95) -- (0.00,1.15) -- (-0.08,1.35) -- (0.00,1.55) -- (-0.08,1.75) -- (0.00,1.85);
+  \node at (0.78,1.10) {$N$};
+  % right S pole
+  \begin{scope}[shift={(2.55,0)}]
+    \draw[line width=0.75pt]
+      (0.00,0.35) -- (1.55,0.35) -- (1.55,1.85) -- (0.00,1.85) -- cycle;
+    \draw[line width=0.75pt]
+      (0.00,1.85) -- (0.35,2.20) -- (1.90,2.20) -- (1.55,1.85);
+    \draw[line width=0.75pt]
+      (1.55,0.35) -- (1.90,0.70) -- (1.90,2.20);
+    \draw[line width=0.55pt] (1.55,0.35) -- (1.63,0.55) -- (1.55,0.75)
+      -- (1.63,0.95) -- (1.55,1.15) -- (1.63,1.35) -- (1.55,1.55) -- (1.63,1.75) -- (1.55,1.85);
+    \node at (0.78,1.10) {$S$};
+  \end{scope}
+  % conductor AB through gap (perspective: A front-left, B back-right)
+  \draw[line width=1.2pt] (0.55,-0.15) -- (3.95,2.55);
+  \node[anchor=north east,inner sep=2pt] at (0.55,-0.10) {$A$};
+  \node[anchor=south west,inner sep=2pt] at (3.95,2.55) {$B$};
+  % point P and F up
+  \fill (2.15,1.15) circle[radius=0.045];
+  \node[anchor=east,inner sep=2pt] at (2.08,1.15) {$P$};
+  \draw[line width=0.75pt,->] (2.15,1.20) -- (2.15,2.35);
+  \node[anchor=west,inner sep=2pt] at (2.20,2.25) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
 
 \emph{（第7题）}
@@ -18019,7 +18227,23 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0254-07.png}}
+\fitfig{%
+% fig-alt: 复习题三第8题(a)。竖直载流导线L1电流I1向上；右侧水平可动导线L2电流I2向左
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % L1 vertical
+  \draw[line width=1.4pt] (0.00,-1.80) -- (0.00,1.90);
+  \node[anchor=south,inner sep=2pt] at (0.00,1.90) {$L_1$};
+  % I1 up
+  \draw[line width=0.7pt,->] (-0.35,-0.55) -- (-0.35,0.35);
+  \node[anchor=east,inner sep=2pt] at (-0.40,0.00) {$I_1$};
+  % L2 horizontal
+  \draw[line width=1.4pt] (0.55,0.25) -- (2.85,0.25);
+  \node[anchor=west,inner sep=2pt] at (2.85,0.25) {$L_2$};
+  % I2 left
+  \draw[line width=0.7pt,->] (2.20,-0.15) -- (1.10,-0.15);
+  \node[anchor=north,inner sep=2pt] at (1.65,-0.18) {$I_2$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
