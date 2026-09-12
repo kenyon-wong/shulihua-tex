@@ -14333,8 +14333,22 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) (2)}]{assets/physics-3/fig-p0210-06.png}}
-\caption{(1) (2)}
+\fitfig{%
+% fig-alt: (e) 两磁极相对，隙中竖直磁针上N黑下S白，上标磁铁分指两极
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-2.10,-0.55) rectangle (-0.70,0.55);
+  \draw[line width=0.75pt] (0.70,-0.55) rectangle (2.10,0.55);
+  \fill (0,0.05) -- (0,0.70) -- (-0.09,0.05) -- (0.09,0.05) -- cycle;
+  \draw[line width=0.55pt,fill=white] (0,0.05) -- (0,-0.60) -- (-0.09,0.05) -- (0.09,0.05) -- cycle;
+  \draw[line width=0.55pt] (-0.09,0.05) -- (0,0.70) -- (0.09,0.05);
+  \node[anchor=south,inner sep=1pt] at (0,0.75) {$N$};
+  \node[anchor=north,inner sep=1pt] at (0,-0.68) {$S$};
+  \node[anchor=south,inner sep=1pt,font=\small] at (0,1.15) {磁铁};
+  \draw[line width=0.45pt] (-0.40,1.05) -- (-1.10,0.55);
+  \draw[line width=0.45pt] (0.40,1.05) -- (1.10,0.55);
+\end{tikzpicture}%
+}
+\caption{(e)}
 \end{figure}
 
 \emph{（a）--（e）}
@@ -14350,7 +14364,73 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.15 奥斯特实验}]{assets/physics-3/fig-p0211-01.png}}
+\fitfig{%
+% fig-alt: 图3.15 奥斯特实验。双手持直导线横于磁针上方，电流左→右，针左N右S略偏转；右杯形电池双极板
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % battery beaker
+  \draw[line width=0.7pt] (5.40,0.00) -- (5.40,1.20) -- (6.70,1.20) -- (6.70,0.00);
+  \draw[line width=0.5pt] (5.40,0.58) -- (6.70,0.58);
+  \foreach \x in {5.55,5.70,...,6.55} {
+    \foreach \y in {0.15,0.30,0.45} {\fill (\x,\y) circle[radius=0.016];}
+  }
+  \draw[line width=0.65pt] (5.70,0.22) -- (5.70,1.08);
+  \draw[line width=0.65pt] (6.40,0.22) -- (6.40,1.08);
+  % leads from electrodes
+  \draw[line width=0.7pt] (5.70,1.08) -- (5.70,1.58) -- (4.85,1.58);
+  \draw[line width=0.7pt] (6.40,1.08) -- (6.40,1.78) -- (5.15,1.78) -- (5.15,1.58);
+  % right hand (fig1.1-like) gripping right junction
+  \begin{scope}[shift={(4.95,1.35)},rotate=-15]
+    \draw[line width=0.6pt]
+      (0.15,0.35)
+      .. controls (0.05,0.70) and (-0.35,0.82) .. (-0.65,0.58)
+      .. controls (-0.82,0.42) and (-0.78,0.18) .. (-0.55,0.08)
+      .. controls (-0.30,-0.02) and (0.05,0.05) .. (0.18,0.22)
+      -- cycle;
+    \draw[line width=0.5pt]
+      (-0.55,0.50) .. controls (-0.62,0.68) and (-0.45,0.78) .. (-0.35,0.58);
+    \draw[line width=0.5pt]
+      (-0.40,0.48) .. controls (-0.48,0.66) and (-0.28,0.74) .. (-0.20,0.55);
+    \draw[line width=0.5pt]
+      (-0.25,0.45) .. controls (-0.32,0.62) and (-0.12,0.68) .. (-0.05,0.50);
+    \draw[line width=0.55pt]
+      (0.05,0.15) .. controls (0.25,-0.05) and (0.55,-0.08) .. (0.72,0.12);
+  \end{scope}
+  % horizontal wire
+  \draw[line width=0.8pt] (0.55,1.58) -- (4.85,1.58);
+  \draw[line width=0.6pt,->] (1.40,1.78) -- (2.60,1.78);
+  \draw[line width=0.6pt,->] (2.80,1.78) -- (4.00,1.78);
+  % left hand
+  \begin{scope}[shift={(0.70,1.35)},rotate=15]
+    \draw[line width=0.6pt]
+      (-0.15,0.35)
+      .. controls (-0.05,0.70) and (0.35,0.82) .. (0.65,0.58)
+      .. controls (0.82,0.42) and (0.78,0.18) .. (0.55,0.08)
+      .. controls (0.30,-0.02) and (-0.05,0.05) .. (-0.18,0.22)
+      -- cycle;
+    \draw[line width=0.5pt]
+      (0.55,0.50) .. controls (0.62,0.68) and (0.45,0.78) .. (0.35,0.58);
+    \draw[line width=0.5pt]
+      (0.40,0.48) .. controls (0.48,0.66) and (0.28,0.74) .. (0.20,0.55);
+    \draw[line width=0.5pt]
+      (0.25,0.45) .. controls (0.32,0.62) and (0.12,0.68) .. (0.05,0.50);
+    \draw[line width=0.55pt]
+      (-0.05,0.15) .. controls (-0.25,-0.05) and (-0.55,-0.08) .. (-0.72,0.12);
+  \end{scope}
+  \draw[line width=0.7pt] (0.55,1.58) -- (0.40,1.58);
+  % needle stand
+  \draw[line width=0.55pt] (2.45,0.08) ellipse[x radius=0.30,y radius=0.08];
+  \draw[line width=0.55pt] (2.45,0.08) -- (2.45,0.98);
+  \begin{scope}[shift={(2.45,0.98)},rotate=-14]
+    \fill (0,0) -- (-1.00,0) -- (0,0.09) -- (0,-0.09) -- cycle;
+    \draw[line width=0.55pt,fill=white] (0,0) -- (1.00,0) -- (0,0.09) -- (0,-0.09) -- cycle;
+    \draw[line width=0.55pt] (0,0.09) -- (-1.00,0) -- (0,-0.09);
+  \end{scope}
+  \node[anchor=east,inner sep=1pt] at (1.40,0.78) {$N$};
+  \node[anchor=west,inner sep=1pt] at (3.50,1.08) {$S$};
+  \draw[line width=0.45pt,->] (1.50,0.55) .. controls (1.60,0.32) and (1.85,0.28) .. (2.05,0.42);
+  \draw[line width=0.45pt,->] (3.40,1.28) .. controls (3.55,1.45) and (3.75,1.48) .. (3.95,1.35);
+\end{tikzpicture}%
+}
 \caption{图3.15 奥斯特实验}
 \end{figure}
 
@@ -14368,7 +14448,28 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.17 直线电流的磁力线方向}]{assets/physics-3/fig-p0211-03.png}}
+\fitfig{%
+% fig-alt: 图3.17 竖直导线穿水平板，板上三同心磁力线，箭逆时针（俯视）；下标电流方向上指
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \coordinate (A) at (-2.30,-0.90);
+  \coordinate (B) at (2.50,-0.90);
+  \coordinate (C) at (1.60,1.10);
+  \coordinate (D) at (-3.20,1.10);
+  \fill[white] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=1.15pt] (0,-2.15) -- (0,-0.05);
+  \foreach \rx/\ry in {0.55/0.28,1.00/0.50,1.45/0.72} {
+    \draw[line width=0.55pt] (0,0.12) ellipse[x radius=\rx,y radius=\ry];
+    % front (near viewer): leftward for CCW from above
+    \draw[line width=0.6pt,->] (\rx*0.35,0.12-\ry*0.95) -- (-\rx*0.35,0.12-\ry*0.95);
+    % right flank: toward back
+    \draw[line width=0.55pt,->] (\rx*0.98,0.12-0.15*\ry) -- (\rx*0.85,0.12+0.45*\ry);
+  }
+  \draw[line width=1.15pt] (0,0.12) -- (0,2.20);
+  \draw[line width=0.65pt,->] (0.50,-1.85) -- (0.50,-1.15);
+  \node[anchor=west,inner sep=2pt,font=\small] at (0.65,-1.50) {电流方向};
+\end{tikzpicture}%
+}
 \caption{图 3.17 直线电流的磁力线方向}
 \end{figure}
 
@@ -14380,7 +14481,51 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.18 安培定则(一)}]{assets/physics-3/fig-p0212-01.png}}
+\fitfig{%
+% fig-alt: 图3.18 安培定则(一)。右手握水平导线，拇指向左为I，四指环绕示磁力线；右标I与电流方向
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % wire
+  \draw[line width=1.2pt] (-3.40,0.50) -- (3.50,0.50);
+  % field circle left of hand (fingers curl: over top toward viewer)
+  \draw[line width=0.7pt]
+    (-2.55,0.50) .. controls (-2.55,1.35) and (-1.70,1.70) .. (-1.15,1.15);
+  \draw[line width=0.7pt,->]
+    (-1.15,1.15) .. controls (-0.85,0.85) and (-0.85,0.15) .. (-1.20,-0.15)
+    .. controls (-1.60,-0.40) and (-2.35,-0.25) .. (-2.55,0.35);
+  % hand body (back of hand facing up-right)
+  \draw[line width=0.65pt,fill=white]
+    (0.35,0.15)
+    .. controls (0.10,0.55) and (0.25,1.25) .. (0.85,1.55)
+    .. controls (1.35,1.75) and (2.05,1.55) .. (2.25,1.05)
+    .. controls (2.35,0.65) and (2.05,0.25) .. (1.55,0.10)
+    .. controls (1.05,0.00) and (0.60,0.05) .. (0.35,0.15);
+  % thumb along wire to left
+  \draw[line width=0.65pt,fill=white]
+    (0.20,0.55)
+    .. controls (-0.40,0.90) and (-1.20,0.95) .. (-1.95,0.70)
+    .. controls (-2.20,0.58) and (-2.15,0.35) .. (-1.90,0.28)
+    .. controls (-1.20,0.15) and (-0.45,0.22) .. (0.15,0.42)
+    -- cycle;
+  % four fingers curling over top toward front/down
+  \foreach \i in {0,1,2,3} {
+    \pgfmathsetmacro{\dx}{\i*0.22}
+    \pgfmathsetmacro{\lift}{1.45-0.06*\i}
+    \draw[line width=0.55pt]
+      (0.90+\dx,\lift)
+      .. controls (0.55+\dx,\lift+0.35) and (0.15+\dx,\lift+0.15) .. (0.05+\dx,\lift-0.35)
+      .. controls (0.00+\dx,\lift-0.60) and (0.25+\dx,\lift-0.75) .. (0.55+\dx,\lift-0.70);
+  }
+  % wrist/cuff
+  \draw[line width=0.55pt]
+    (1.40,0.12) .. controls (1.55,-0.35) and (2.00,-0.50) .. (2.45,-0.20);
+  \draw[line width=0.45pt]
+    (1.55,-0.05) -- (2.15,-0.15);
+  % current label
+  \draw[line width=0.7pt,->] (3.25,1.15) -- (2.20,1.15);
+  \node[anchor=south,inner sep=1pt] at (2.72,1.18) {$I$};
+  \node[anchor=north,inner sep=1pt,font=\small] at (2.72,1.05) {电流方向};
+\end{tikzpicture}%
+}
 \caption{图3.18 安培定则(一)}
 \end{figure}
 
@@ -14403,7 +14548,54 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.20 环形电流磁场中磁力线的方向}]{assets/physics-3/fig-p0212-03.png}}
+\fitfig{%
+% fig-alt: 图3.20 竖直半环穿水平板；I沿环顶左→右；板面磁力线绕左右穿点，中心竖针上N黑下S；下接+−
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % plane
+  \coordinate (A) at (-3.40,-0.35);
+  \coordinate (B) at (3.40,-0.35);
+  \coordinate (C) at (2.60,1.55);
+  \coordinate (D) at (-4.20,1.55);
+  \fill[white] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.55pt,dashed] (A) -- (B) -- (C) -- (D) -- cycle;
+  % pierce points
+  \def\Lx{-1.35}
+  \def\Rx{1.35}
+  \def\Py{0.55}
+  % field lines left (CCW from above = current up)
+  \foreach \rx/\ry in {0.35/0.18,0.60/0.30,0.90/0.45} {
+    \draw[line width=0.45pt] (\Lx,\Py) ellipse[x radius=\rx,y radius=\ry];
+  }
+  \draw[line width=0.5pt,->] (\Lx+0.15,\Py-0.45) -- (\Lx-0.15,\Py-0.45);
+  \draw[line width=0.5pt,->] (\Lx+0.90,\Py) -- (\Lx+0.82,\Py+0.22);
+  % field lines right (CW from above = current down)
+  \foreach \rx/\ry in {0.35/0.18,0.60/0.30,0.90/0.45} {
+    \draw[line width=0.45pt] (\Rx,\Py) ellipse[x radius=\rx,y radius=\ry];
+  }
+  \draw[line width=0.5pt,->] (\Rx-0.15,\Py-0.45) -- (\Rx+0.15,\Py-0.45);
+  \draw[line width=0.5pt,->] (\Rx-0.90,\Py) -- (\Rx-0.82,\Py+0.22);
+  % center-ish connecting arcs (field through center toward viewer -> N up in drawing as vertical needle)
+  \draw[line width=0.45pt] (\Lx+0.55,\Py+0.15) .. controls (-0.40,\Py+0.55) and (0.40,\Py+0.55) .. (\Rx-0.55,\Py+0.15);
+  \draw[line width=0.45pt] (\Lx+0.70,\Py-0.05) .. controls (-0.30,\Py+0.25) and (0.30,\Py+0.25) .. (\Rx-0.70,\Py-0.05);
+  % vertical needle at center: N (black) toward viewer = up in this diagram style from scan
+  \fill (0,\Py+0.05) -- (0,\Py+0.55) -- (-0.08,\Py+0.05) -- (0.08,\Py+0.05) -- cycle;
+  \draw[line width=0.5pt,fill=white] (0,\Py+0.05) -- (0,\Py-0.45) -- (-0.08,\Py+0.05) -- (0.08,\Py+0.05) -- cycle;
+  \draw[line width=0.5pt] (-0.08,\Py+0.05) -- (0,\Py+0.55) -- (0.08,\Py+0.05);
+  \node[anchor=south,inner sep=0pt] at (0.22,\Py+0.42) {$N$};
+  \node[anchor=north,inner sep=0pt] at (0.22,\Py-0.42) {$S$};
+  % wire below plane
+  \draw[line width=1.0pt] (\Lx,\Py) -- (\Lx,-1.55);
+  \draw[line width=1.0pt] (\Rx,\Py) -- (\Rx,-1.55);
+  \draw[line width=0.55pt] (\Lx,-1.55) .. controls (\Lx,-1.85) and (-2.2,-2.05) .. (-2.55,-2.05);
+  \draw[line width=0.55pt] (\Rx,-1.55) .. controls (\Rx,-1.85) and (2.2,-2.05) .. (2.55,-2.05);
+  \node[anchor=east,inner sep=1pt] at (-2.60,-2.05) {$+$};
+  \node[anchor=west,inner sep=1pt] at (2.60,-2.05) {$-$};
+  % loop arc above
+  \draw[line width=1.05pt] (\Lx,\Py) .. controls (\Lx,2.35) and (\Rx,2.35) .. (\Rx,\Py);
+  \draw[line width=0.65pt,->] (-0.35,2.15) -- (0.35,2.15);
+  \node[anchor=south,inner sep=1pt] at (0,2.18) {$I$};
+\end{tikzpicture}%
+}
 \caption{图3.20 环形电流磁场中磁力线的方向}
 \end{figure}
 
@@ -14413,7 +14605,42 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.21 安培定则判定环形电流磁场的方向}]{assets/physics-3/fig-p0213-01.png}}
+\fitfig{%
+% fig-alt: 图3.21 安培定则判环形电流。右手四指顺环流I，拇指沿轴线指右为B
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B axis through center
+  \draw[line width=0.65pt,dashed,->] (-2.40,0.40) -- (2.55,0.40);
+  \node[anchor=west,inner sep=2pt] at (2.60,0.40) {$B$};
+  % loop ellipse (vertical-ish)
+  \draw[line width=1.05pt] (0,0.40) ellipse[x radius=0.95,y radius=1.55];
+  % I arrow on lower-left of loop (downward/clockwise-ish matching fingers)
+  \draw[line width=0.65pt,->] (-0.55,-0.55) -- (-0.75,-0.95);
+  \node[anchor=east,inner sep=1pt] at (-0.85,-0.70) {$I$};
+  % right hand: thumb to right, fingers curl
+  % palm
+  \draw[line width=0.6pt,fill=white]
+    (-0.10,0.55) .. controls (-0.35,1.15) and (0.15,1.85) .. (0.85,1.95)
+    .. controls (1.45,1.95) and (1.85,1.55) .. (1.75,1.00)
+    .. controls (1.70,0.55) and (1.25,0.25) .. (0.65,0.30)
+    .. controls (0.25,0.32) and (0.05,0.40) .. (-0.10,0.55);
+  % thumb pointing right
+  \draw[line width=0.6pt,fill=white]
+    (1.55,0.70) .. controls (1.95,0.95) and (2.45,0.90) .. (2.75,0.65)
+    .. controls (2.90,0.50) and (2.80,0.35) .. (2.55,0.30)
+    .. controls (2.15,0.25) and (1.70,0.35) .. (1.50,0.55) -- cycle;
+  % curled fingers (four)
+  \foreach \a in {0,1,2,3} {
+    \pgfmathsetmacro{\dx}{\a*0.18}
+    \pgfmathsetmacro{\dy}{\a*0.08}
+    \draw[line width=0.5pt]
+      (0.55+\dx,1.70-\dy) .. controls (0.25+\dx,1.95-\dy) and (-0.15+\dx,1.75-\dy) .. (-0.25+\dx,1.35-\dy)
+      .. controls (-0.30+\dx,1.05-\dy) and (-0.05+\dx,0.85-\dy) .. (0.25+\dx,0.90-\dy);
+  }
+  % wrist
+  \draw[line width=0.55pt]
+    (0.85,0.35) .. controls (0.95,-0.15) and (1.25,-0.35) .. (1.65,-0.25);
+\end{tikzpicture}%
+}
 \caption{图3.21 安培定则判定环形电流磁场的方向}
 \end{figure}
 
@@ -14436,11 +14663,45 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.22 通电螺线管磁层}]{assets/physics-3/fig-p0213-03.png}}
-\caption{图 3.22 通电螺线管磁层}
+\fitfig{%
+% fig-alt: 图3.22(b) 通电螺线管磁力线。管轴水平，内虚线自右向左；外弧自左N出回右S；左+上箭、右−下箭
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % external field loops
+  \draw[line width=0.55pt,->]
+    (-2.55,0.15) .. controls (-3.35,1.55) and (-1.20,2.45) .. (0.10,2.35)
+    .. controls (1.50,2.25) and (3.20,1.55) .. (2.55,0.15);
+  \draw[line width=0.55pt,->]
+    (-2.40,-0.15) .. controls (-3.20,-1.45) and (-1.10,-2.25) .. (0.10,-2.15)
+    .. controls (1.40,-2.05) and (3.05,-1.35) .. (2.40,-0.15);
+  \draw[line width=0.5pt]
+    (-2.20,0.35) .. controls (-2.70,1.15) and (-0.90,1.75) .. (0.10,1.70)
+    .. controls (1.20,1.65) and (2.55,1.15) .. (2.20,0.35);
+  \draw[line width=0.5pt]
+    (-2.20,-0.35) .. controls (-2.70,-1.05) and (-0.90,-1.55) .. (0.10,-1.50)
+    .. controls (1.20,-1.45) and (2.55,-1.05) .. (2.20,-0.35);
+  % axis field through solenoid (leftward = N on left)
+  \draw[line width=0.55pt,dashed,->] (2.35,0) -- (-2.35,0);
+  \node[anchor=east,inner sep=2pt] at (-2.45,0.35) {$N$};
+  \node[anchor=west,inner sep=2pt] at (2.45,0.35) {$S$};
+  % solenoid turns (ellipses)
+  \foreach \x in {-1.70,-1.30,-0.90,-0.50,-0.10,0.30,0.70,1.10,1.50} {
+    \draw[line width=0.7pt] (\x,0) ellipse[x radius=0.22,y radius=0.72];
+  }
+  % leads
+  \draw[line width=0.7pt] (-1.70,-0.55) -- (-1.70,-1.55);
+  \draw[line width=0.7pt] (1.50,-0.55) -- (1.50,-1.55);
+  \draw[line width=0.55pt,->] (-1.95,-1.35) -- (-1.95,-0.75);
+  \node[anchor=east,inner sep=1pt] at (-2.05,-1.05) {$+$};
+  \node[anchor=east,inner sep=1pt] at (-2.05,-0.70) {$I$};
+  \draw[line width=0.55pt,->] (1.75,-0.75) -- (1.75,-1.35);
+  \node[anchor=west,inner sep=1pt] at (1.85,-1.05) {$-$};
+  \node[anchor=west,inner sep=1pt] at (1.85,-0.70) {$I$};
+\end{tikzpicture}%
+}
+\caption{图 3.22 通电螺线管磁场}
 \end{figure}
 
-\emph{图 3.22 通电螺线管磁层}
+\emph{图 3.22 通电螺线管磁场}
 
 所示。在螺线管内部的磁力线大部分是和管轴平行的，在螺线管的两端磁力线逐渐向外散开。每一根磁力线都是穿过螺线管内部的封闭曲线。
 
@@ -14456,7 +14717,49 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.24 安培定则(二)}]{assets/physics-3/fig-p0214-02.png}}
+\fitfig{%
+% fig-alt: 图3.24 安培定则(二)。右手握螺线管，四指顺电流，拇指左指N；左N右S，端有磁力线扇
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % field fans at ends
+  \foreach \a in {150,165,180,195,210} {
+    \draw[line width=0.45pt,dashed] (-2.05,0) -- ++(\a:0.55);
+  }
+  \foreach \a in {-30,-15,0,15,30} {
+    \draw[line width=0.45pt,dashed] (2.05,0) -- ++(\a:0.55);
+  }
+  \node[anchor=south,inner sep=1pt] at (-2.05,0.55) {$N$};
+  \node[anchor=south,inner sep=1pt] at (2.05,0.55) {$S$};
+  % solenoid core hint
+  \draw[line width=0.5pt,dashed] (-1.95,0) -- (1.95,0);
+  % turns
+  \foreach \x in {-1.60,-1.15,-0.70,-0.25,0.20,0.65,1.10,1.55} {
+    \draw[line width=0.7pt] (\x,0) ellipse[x radius=0.24,y radius=0.62];
+  }
+  % leads down
+  \draw[line width=0.65pt] (-1.60,-0.45) -- (-1.60,-1.35);
+  \draw[line width=0.65pt] (1.55,-0.45) -- (1.55,-1.35);
+  % right hand gripping: thumb left, fingers over top down front
+  \draw[line width=0.6pt,fill=white]
+    (-0.15,0.15) .. controls (-0.40,0.75) and (0.10,1.35) .. (0.75,1.40)
+    .. controls (1.25,1.40) and (1.55,1.05) .. (1.50,0.55)
+    .. controls (1.45,0.20) and (1.05,-0.05) .. (0.55,0.00)
+    .. controls (0.20,0.02) and (0.00,0.08) .. (-0.15,0.15);
+  % thumb to left
+  \draw[line width=0.6pt,fill=white]
+    (-0.20,0.35) .. controls (-0.70,0.65) and (-1.40,0.70) .. (-1.95,0.45)
+    .. controls (-2.15,0.35) and (-2.10,0.15) .. (-1.90,0.08)
+    .. controls (-1.35,0.00) and (-0.70,0.08) .. (-0.25,0.25) -- cycle;
+  % fingers curling down front
+  \foreach \i/\dx in {0/0.00,1/0.20,2/0.40,3/0.60} {
+    \draw[line width=0.5pt]
+      (0.55+\dx,1.25) .. controls (0.35+\dx,1.45) and (0.05+\dx,1.35) .. (-0.05+\dx,1.05)
+      .. controls (-0.10+\dx,0.80) and (0.05+\dx,0.60) .. (0.30+\dx,0.55);
+  }
+  % cuff
+  \draw[line width=0.5pt]
+    (0.70,0.05) .. controls (0.85,-0.35) and (1.15,-0.45) .. (1.45,-0.25);
+\end{tikzpicture}%
+}
 \caption{图 3.24 安培定则(二)}
 \end{figure}
 
