@@ -23783,29 +23783,88 @@ PDE 是 P 的西摩松线，可知 P、E、C、D
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) 相离}]{assets/plane-geometry-1/fig-p0240-03.png}}
-\caption{(1) 相离}
+\fitfig{%
+% fig-alt: 图4·38（1）圆 O，直线 l 在圆上方相离；垂足 P，半径端 C，OP=d＞OC
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.55}
+  \def\d{2.15}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (0,\R);
+  \coordinate (P) at (0,\d);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (-2.15,\d) -- (2.15,\d);
+  \draw[line width=0.65pt] (O) -- (P);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=2pt] at (-2.15,\d) {$l$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=west, inner sep=2pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=west, inner sep=2pt] at (0,{(\R+\d)/2}) {$d$};
+\end{tikzpicture}%
+}
+\caption{图4·38（1）}
 \end{figure}
 
 \emph{（1） 相离}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2) 相交}]{assets/plane-geometry-1/fig-p0240-04.png}}
-\caption{(2) 相交}
+\fitfig{%
+% fig-alt: 图4·38（2）圆 O，直线 l 交圆于 R、S；垂足 M，半径端 C，OM=d＜OC
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.55}
+  \def\d{0.85}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (0,\R);
+  \coordinate (M) at (0,\d);
+  \pgfmathsetmacro{\hx}{sqrt(\R*\R-\d*\d)}
+  \coordinate (R) at (-\hx,\d);
+  \coordinate (S) at (\hx,\d);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (-2.25,\d) -- (2.25,\d);
+  \draw[line width=0.65pt] (O) -- (C);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=2pt] at (-2.25,\d) {$l$};
+  \node[anchor=south east, inner sep=1.2pt] at (R) {$R$};
+  \node[anchor=south west, inner sep=1.2pt] at (S) {$S$};
+  \node[anchor=south west, inner sep=1.2pt] at (M) {$M$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=west, inner sep=2pt] at (0,{\d/2}) {$d$};
+\end{tikzpicture}%
+}
+\caption{图4·38（2）}
 \end{figure}
 
 \emph{（2） 相交}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3) 相切}]{assets/plane-geometry-1/fig-p0240-05.png}}
-\caption{(3) 相切}
+\fitfig{%
+% fig-alt: 图4·38（3）圆 O，直线 l 切于 C；半径 OC=d；线上点 Q，虚线 OQ
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.55}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (0,\R);
+  \coordinate (Q) at (1.35,\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (-2.15,\R) -- (2.15,\R);
+  \draw[line width=0.65pt] (O) -- (C);
+  \draw[line width=0.55pt, dashed] (O) -- (Q);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=2pt] at (-2.15,\R) {$l$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=west, inner sep=1.5pt] at (0,{\R*0.78}) {$d$};
+\end{tikzpicture}%
+}
+\caption{图4·38（3）}
 \end{figure}
 
 \emph{（3） 相切}
 
-\emph{图 4·38}
+\emph{图4·38}
 
 从圆心到直线的距离可能大于圆的半径。在这种情况下，直线和圆没有任何公共点。例如图
 4·38（1），自圆心O至直线l的距离OP大于圆的半径OC。因为OP是圆心O至直线l上任何一点的最短距离，所以可以断定直线l和圆O没有任何公共点，也就是直线和圆相离。
@@ -23846,11 +23905,35 @@ OQ > OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-39}]{assets/plane-geometry-1/fig-p0242-01.png}}
-\caption{图4-39}
+\fitfig{%
+% fig-alt: 图4·39 圆 O，切线 AB 切于 C；OC=d；C 两侧点 Q、P；虚线 OQ、OP
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.55}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (0,\R);
+  \coordinate (A) at (-2.35,\R);
+  \coordinate (Q) at (-1.15,\R);
+  \coordinate (P) at (1.25,\R);
+  \coordinate (B) at (2.35,\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (O) -- (C);
+  \draw[line width=0.55pt, dashed] (O) -- (Q);
+  \draw[line width=0.55pt, dashed] (O) -- (P);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=south west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=west, inner sep=1.5pt] at (0,{\R*0.72}) {$d$};
+\end{tikzpicture}%
+}
+\caption{图4·39}
 \end{figure}
 
-\emph{图 4·39}
+\emph{图4·39}
 
 反过来，如果已知直线\(AB\)是圆\(O\)的切线，切点是\(C\)则\(AB \perp OC\)。
 
@@ -23875,11 +23958,29 @@ OQ > OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-40}]{assets/plane-geometry-1/fig-p0242-02.png}}
-\caption{图4-40}
+\fitfig{%
+% fig-alt: 图4·40 圆 O，过圆上点 C 的切线 AB；实线半径 OC，虚线向上延长过 C
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.65}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (0,\R);
+  \coordinate (A) at (-2.20,\R);
+  \coordinate (B) at (2.20,\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (O) -- (C);
+  \draw[line width=0.55pt, dashed] (C) -- (0,{\R+1.15});
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=2pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{图4·40}
 \end{figure}
 
-\emph{图 4·40}
+\emph{图4·40}
 
 \textbf{［作法］}
 以三角板的直角顶点放在点\(C\)上，并使一直角边沿着半径\(OC\)落下，用第二块三角板，使它的一边紧靠着第一块三角板的垂直于半径
@@ -23888,19 +23989,85 @@ OC 的那一条边，然后抽去第一块三角板，过点 C
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-41}]{assets/plane-geometry-1/fig-p0243-01.png}}
-\caption{图4-41}
+\fitfig{%
+% fig-alt: 图4·41 圆 O 切线 AB 切于 C；下方直角三角板直角在 C、一直角边沿 OC；上方三角板靠齐画 AB
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.05}
+  \coordinate (O) at (0,-\R);
+  \coordinate (C) at (0,0);
+  \coordinate (A) at (-2.55,0);
+  \coordinate (B) at (2.55,0);
+  % lower right triangle (right angle at C): legs along +x and -y
+  \coordinate (L1) at (2.05,0);
+  \coordinate (L2) at (0,-2.05);
+  \draw[line width=0.55pt, fill=white] (C) -- (L1) -- (L2) -- cycle;
+  % triangular cutout lower
+  \coordinate (Lc1) at (0.55,-0.35);
+  \coordinate (Lc2) at (1.35,-0.35);
+  \coordinate (Lc3) at (0.55,-1.15);
+  \draw[line width=0.45pt, fill=white] (Lc1) -- (Lc2) -- (Lc3) -- cycle;
+  % upper isosceles triangle on AB
+  \coordinate (U1) at (-1.55,0);
+  \coordinate (U2) at (1.55,0);
+  \coordinate (U3) at (0,1.45);
+  \draw[line width=0.55pt, fill=white] (U1) -- (U2) -- (U3) -- cycle;
+  \coordinate (Uc1) at (-0.55,0.35);
+  \coordinate (Uc2) at (0.55,0.35);
+  \coordinate (Uc3) at (0,1.00);
+  \draw[line width=0.45pt, fill=white] (Uc1) -- (Uc2) -- (Uc3) -- cycle;
+  % circle and AB / OC on top
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.65pt] (O) -- (C);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=east, inner sep=2pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{图4·41}
 \end{figure}
 
-\emph{图 4·41}
+\emph{图4·41}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-42}]{assets/plane-geometry-1/fig-p0243-02.png}}
-\caption{图4-42}
+\fitfig{%
+% fig-alt: 图4·42 圆 O，圆外点 C；以 OC 为直径圆 O₁ 交圆 O 于 P、P'；实线 CP、CP'；虚线 OC、OP、OP'
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.25}
+  \def\OC{3.20}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (\OC,0);
+  \coordinate (O1) at ({\OC/2},0);
+  \pgfmathsetmacro{\Rone}{\OC/2}
+  % intersection of circle O (r=R) and circle O1 (r=Rone) centered at (OC/2,0)
+  % x = R^2/(2*Rone) = R^2/OC ; y = +/- sqrt(R^2-x^2)
+  \pgfmathsetmacro{\Px}{\R*\R/\OC}
+  \pgfmathsetmacro{\Py}{sqrt(\R*\R-\Px*\Px)}
+  \coordinate (P) at (\Px,\Py);
+  \coordinate (Pp) at (\Px,-\Py);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (O1) circle [radius=\Rone];
+  \draw[line width=0.55pt, dashed] (O) -- (C);
+  \draw[line width=0.55pt, dashed] (O) -- (P);
+  \draw[line width=0.55pt, dashed] (O) -- (Pp);
+  \draw[line width=0.65pt] (C) -- (P);
+  \draw[line width=0.65pt] (C) -- (Pp);
+  \fill (O) circle [radius=1.1pt];
+  \fill (O1) circle [radius=1.0pt];
+  \node[anchor=east, inner sep=2pt] at (O) {$O$};
+  \node[anchor=north, inner sep=1.5pt] at (O1) {$O_{1}$};
+  \node[anchor=west, inner sep=2pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (Pp) {$P'$};
+\end{tikzpicture}%
+}
+\caption{图4·42}
 \end{figure}
 
-\emph{图 4·42}
+\emph{图4·42}
 
 （2） 已知点 C 在圆外（图 4·42）。
 
@@ -23961,11 +24128,37 @@ BC（图 4·43）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-43}]{assets/plane-geometry-1/fig-p0244-01.png}}
-\caption{图4-43}
+\fitfig{%
+% fig-alt: 图4·43 圆 O 外点 M，切线 MA、MB；直径 BC；实线 AC、OM；虚线 AB
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.45}
+  \def\OM{2.85}
+  \coordinate (O) at (0,0);
+  \coordinate (M) at (\OM,0);
+  % tangent points: angle theta = acos(R/OM)
+  \pgfmathsetmacro{\th}{acos(\R/\OM)}
+  \coordinate (A) at ({\th}:\R);
+  \coordinate (B) at ({-\th}:\R);
+  \coordinate (C) at ({-\th+180}:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (M) -- (A);
+  \draw[line width=0.65pt] (M) -- (B);
+  \draw[line width=0.65pt] (B) -- (C);
+  \draw[line width=0.65pt] (A) -- (C);
+  \draw[line width=0.65pt] (O) -- (M);
+  \draw[line width=0.55pt, dashed] (A) -- (B);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=south west, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=south east, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=west, inner sep=2pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{图4·43}
 \end{figure}
 
-\emph{图 4·43}
+\emph{图4·43}
 
 \textbf{［证］} \(MA\)和\(MB\)都是圆\(O\)的切线，\(A, B\)是切点。所以有
 
