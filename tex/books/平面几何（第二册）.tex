@@ -16193,8 +16193,38 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-5}]{assets/plane-geometry-2/fig-p0181-01.png}}
-\caption{图3-5}
+\fitfig{%
+% fig-alt: 图3·5：共顶点A的三矩形；实线矩形ABCD；内虚线矩形AB₁C₁D₁；外虚线矩形AB₂C₂D₂；底边自左向右A、B₁、B、B₂，左边自下而上A、D₁、D、D₂，右上角C₁、C、C₂
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B1) at (3.00,0);
+  \coordinate (B) at (3.45,0);
+  \coordinate (B2) at (3.90,0);
+  \coordinate (D1) at (0,2.20);
+  \coordinate (D) at (0,2.55);
+  \coordinate (D2) at (0,2.90);
+  \coordinate (C1) at (3.00,2.20);
+  \coordinate (C) at (3.45,2.55);
+  \coordinate (C2) at (3.90,2.90);
+  % outer dashed free sides
+  \draw[dashed,line width=0.6pt] (D) -- (D2) -- (C2) -- (B2) -- (B);
+  % solid middle
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  % inner dashed free sides
+  \draw[dashed,line width=0.6pt] (D1) -- (C1) -- (B1);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B1) {$B_{1}$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (B2) {$B_{2}$};
+  \node[anchor=east,inner sep=1pt] at (D1) {$D_{1}$};
+  \node[anchor=east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (D2) {$D_{2}$};
+  \node[anchor=north east,inner sep=1pt,font=\small] at (C1) {$C_{1}$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (C2) {$C_{2}$};
+\end{tikzpicture}%
+}
+\caption{图3·5}
 \end{figure}
 
 \begin{quote}
@@ -16384,7 +16414,35 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0185-01.png}}
+\fitfig{%
+% fig-alt: （1）L形截面：外廓宽、高均为b，两臂厚度均为a，内部斜线阴影
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\b{2.60}
+  \def\a{0.85}
+  \fill[pattern=north east lines,pattern color=black!70]
+    (0,0) -- (\b,0) -- (\b,\a) -- (\a,\a) -- (\a,\b) -- (0,\b) -- cycle;
+  \draw[line width=0.75pt]
+    (0,0) -- (\b,0) -- (\b,\a) -- (\a,\a) -- (\a,\b) -- (0,\b) -- cycle;
+  % bottom b
+  \draw[line width=0.5pt] (0,-0.28) -- (\b,-0.28);
+  \draw[line width=0.5pt] (0,-0.38) -- (0,-0.18);
+  \draw[line width=0.5pt] (\b,-0.38) -- (\b,-0.18);
+  \node[anchor=north,inner sep=1pt] at (0.5*\b,-0.28) {$b$};
+  % left b
+  \draw[line width=0.5pt] (-0.28,0) -- (-0.28,\b);
+  \draw[line width=0.5pt] (-0.38,0) -- (-0.18,0);
+  \draw[line width=0.5pt] (-0.38,\b) -- (-0.18,\b);
+  \node[anchor=east,inner sep=1pt] at (-0.28,0.5*\b) {$b$};
+  % top a (inward arrows)
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (0,\b+0.28) -- (\a,\b+0.28);
+  \node[anchor=south,inner sep=1pt] at (0.5*\a,\b+0.28) {$a$};
+  % right a
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (\b+0.28,0) -- (\b+0.28,\a);
+  \node[anchor=west,inner sep=1pt] at (\b+0.28,0.5*\a) {$a$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -16394,7 +16452,37 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0185-02.png}}
+\fitfig{%
+% fig-alt: （2）倒T形截面：底宽b、底厚t，立柱宽a、总高h，内部斜线阴影
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\b{3.20}
+  \def\a{0.70}
+  \def\t{0.55}
+  \def\h{2.70}
+  \pgfmathsetmacro{\xl}{0.5*(\b-\a)}
+  \pgfmathsetmacro{\xr}{0.5*(\b+\a)}
+  \fill[pattern=north east lines,pattern color=black!70]
+    (0,0) -- (\b,0) -- (\b,\t) -- (\xr,\t) -- (\xr,\h) -- (\xl,\h) -- (\xl,\t) -- (0,\t) -- cycle;
+  \draw[line width=0.75pt]
+    (0,0) -- (\b,0) -- (\b,\t) -- (\xr,\t) -- (\xr,\h) -- (\xl,\h) -- (\xl,\t) -- (0,\t) -- cycle;
+  % bottom b
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (0,-0.32) -- (\b,-0.32);
+  \node[anchor=north,inner sep=1pt] at (0.5*\b,-0.32) {$b$};
+  % top a
+  \draw[line width=0.5pt] (\xl,\h+0.22) -- (\xr,\h+0.22);
+  \draw[line width=0.5pt] (\xl,\h+0.12) -- (\xl,\h+0.32);
+  \draw[line width=0.5pt] (\xr,\h+0.12) -- (\xr,\h+0.32);
+  \node[anchor=south,inner sep=1pt] at (0.5*\b,\h+0.22) {$a$};
+  % right h (total) and t (flange)
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (\b+0.55,0) -- (\b+0.55,\h);
+  \node[anchor=west,inner sep=1pt] at (\b+0.55,0.55*\h) {$h$};
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (\b+0.28,0) -- (\b+0.28,\t);
+  \node[anchor=west,inner sep=0.5pt,font=\small] at (\b+0.28,0.5*\t) {$t$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -16414,7 +16502,45 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0185-04.png}}
+\fitfig{%
+% fig-alt: （4）Z形截面：两翼缘长均为b、厚均为t，腹板厚a、总高h，内部斜线阴影
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\b{2.40}
+  \def\a{0.55}
+  \def\t{0.45}
+  \def\h{2.50}
+  % path: top flange left, web, bottom flange right
+  % top-left of flange at (a-b, h) ... web from x=0 to x=a
+  \fill[pattern=north east lines,pattern color=black!70]
+    ({-\b+\a},\h) -- (\a,\h) -- (\a,\t) -- (\b,\t) -- (\b,0) -- (0,0) -- (0,{\h-\t}) -- ({-\b+\a},{\h-\t}) -- cycle;
+  \draw[line width=0.75pt]
+    ({-\b+\a},\h) -- (\a,\h) -- (\a,\t) -- (\b,\t) -- (\b,0) -- (0,0) -- (0,{\h-\t}) -- ({-\b+\a},{\h-\t}) -- cycle;
+  % top b
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    ({-\b+\a},\h+0.28) -- (\a,\h+0.28);
+  \node[anchor=south,inner sep=1pt] at ({0.5*(-\b+\a+\a)},\h+0.28) {$b$};
+  % bottom b
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (0,-0.28) -- (\b,-0.28);
+  \node[anchor=north,inner sep=1pt] at (0.5*\b,-0.28) {$b$};
+  % left t (top flange)
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    ({-\b+\a-0.28},{\h-\t}) -- ({-\b+\a-0.28},\h);
+  \node[anchor=east,inner sep=1pt] at ({-\b+\a-0.28},{\h-0.5*\t}) {$t$};
+  % right t (bottom flange)
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (\b+0.28,0) -- (\b+0.28,\t);
+  \node[anchor=west,inner sep=1pt] at (\b+0.28,0.5*\t) {$t$};
+  % web a (inward)
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (0,0.55*\h) -- (\a,0.55*\h);
+  \node[anchor=south,inner sep=1pt] at (0.5*\a,0.55*\h) {$a$};
+  % total h
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (\b+0.55,0) -- (\b+0.55,\h);
+  \node[anchor=west,inner sep=1pt] at (\b+0.55,0.5*\h) {$h$};
+\end{tikzpicture}%
+}
 \caption{(4)}
 \end{figure}
 
@@ -16444,7 +16570,30 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0186-01.png}}
+\fitfig{%
+% fig-alt: （1）边长a+b的正方形：纵分a|b、横分a|b，得a²、两个ab与b²，示(a+b)²
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\aa{2.40}
+  \def\bb{0.90}
+  \draw[line width=0.75pt] (0,0) rectangle (\aa+\bb,\aa+\bb);
+  \draw[line width=0.75pt] (\aa,0) -- (\aa,\aa+\bb);
+  \draw[line width=0.75pt] (0,\bb) -- (\aa+\bb,\bb);
+  % top dims
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (0,\aa+\bb+0.28) -- (\aa,\aa+\bb+0.28);
+  \node[anchor=south,inner sep=1pt] at (0.5*\aa,\aa+\bb+0.28) {$a$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (\aa,\aa+\bb+0.28) -- (\aa+\bb,\aa+\bb+0.28);
+  \node[anchor=south,inner sep=1pt] at (\aa+0.5*\bb,\aa+\bb+0.28) {$b$};
+  % left dims
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (-0.28,\bb) -- (-0.28,\aa+\bb);
+  \node[anchor=east,inner sep=1pt] at (-0.28,\bb+0.5*\aa) {$a$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (-0.28,0) -- (-0.28,\bb);
+  \node[anchor=east,inner sep=1pt] at (-0.28,0.5*\bb) {$b$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -16464,7 +16613,44 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0186-03.png}}
+\fitfig{%
+% fig-alt: （3）边长a的正方形右上角有边长b的阴影小正方形；左边标a与b，上边标b，示a²−b²=(a+b)(a−b)
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\aa{2.80}
+  \def\bb{0.85}
+  % large square
+  \draw[line width=0.75pt] (0,0) rectangle (\aa,\aa);
+  % inner divisions: vertical at a-b, horizontal at a-b from bottom = b from top
+  \draw[line width=0.75pt] ({\aa-\bb},{\aa-\bb}) -- ({\aa-\bb},\aa);
+  \draw[line width=0.75pt] ({\aa-\bb},{\aa-\bb}) -- (\aa,{\aa-\bb});
+  % dashed extensions into lower/left (for rearrangement cue)
+  \draw[dashed,line width=0.55pt] ({\aa-\bb},0) -- ({\aa-\bb},{\aa-\bb});
+  \draw[dashed,line width=0.55pt] (0,{\aa-\bb}) -- ({\aa-\bb},{\aa-\bb});
+  % hatched b×b top-right
+  \fill[pattern=north east lines,pattern color=black!70]
+    ({\aa-\bb},{\aa-\bb}) rectangle (\aa,\aa);
+  \draw[line width=0.75pt] ({\aa-\bb},{\aa-\bb}) rectangle (\aa,\aa);
+  % top b
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    ({\aa-\bb},\aa+0.28) -- (\aa,\aa+0.28);
+  \node[anchor=south,inner sep=1pt] at ({\aa-0.5*\bb},\aa+0.28) {$b$};
+  % left: full a, and top b
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (-0.45,0) -- (-0.45,\aa);
+  \node[anchor=east,inner sep=1pt] at (-0.45,0.5*\aa) {$a$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (-0.22,{\aa-\bb}) -- (-0.22,\aa);
+  \node[anchor=east,inner sep=0.5pt,font=\small] at (-0.22,{\aa-0.5*\bb}) {$b$};
+  % bottom a
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (0,-0.28) -- (\aa,-0.28);
+  \node[anchor=north,inner sep=1pt] at (0.5*\aa,-0.28) {$a$};
+  % right b on hatched
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (\aa+0.22,{\aa-\bb}) -- (\aa+0.22,\aa);
+  \node[anchor=west,inner sep=1pt] at (\aa+0.22,{\aa-0.5*\bb}) {$b$};
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -16474,7 +16660,31 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0186-04.png}}
+\fitfig{%
+% fig-alt: （4）矩形边长x+a与x+b：纵分x|a、横分x|b，得x²、xa、xb与ab，示(x+a)(x+b)
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\xx{2.20}
+  \def\aa{0.95}
+  \def\bb{0.80}
+  \draw[line width=0.75pt] (0,0) rectangle (\xx+\aa,\xx+\bb);
+  \draw[line width=0.75pt] (\xx,0) -- (\xx,\xx+\bb);
+  \draw[line width=0.75pt] (0,\bb) -- (\xx+\aa,\bb);
+  % top: x , a
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (0,\xx+\bb+0.28) -- (\xx,\xx+\bb+0.28);
+  \node[anchor=south,inner sep=1pt] at (0.5*\xx,\xx+\bb+0.28) {$x$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (\xx,\xx+\bb+0.28) -- (\xx+\aa,\xx+\bb+0.28);
+  \node[anchor=south,inner sep=1pt] at (\xx+0.5*\aa,\xx+\bb+0.28) {$a$};
+  % left: x (upper), b (lower)
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (-0.28,\bb) -- (-0.28,\xx+\bb);
+  \node[anchor=east,inner sep=1pt] at (-0.28,\bb+0.5*\xx) {$x$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (-0.28,0) -- (-0.28,\bb);
+  \node[anchor=east,inner sep=1pt] at (-0.28,0.5*\bb) {$b$};
+\end{tikzpicture}%
+}
 \caption{(4)}
 \end{figure}
 
@@ -16496,7 +16706,26 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0186-05.png}}
+\fitfig{%
+% fig-alt: （1）△ABC高AD⊥BC于D（直角方）；虚线矩形以BC为底、过A为顶，示三角形与同底同高矩形一半等积
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (3.60,0);
+  \coordinate (D) at (1.10,0);
+  \coordinate (A) at (1.10,2.20);
+  % dashed rectangle
+  \draw[dashed,line width=0.6pt] (B) -- (0,2.20) -- (3.60,2.20) -- (C);
+  % triangle + altitude
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (D);
+  % right angle at D
+  \draw[line width=0.55pt] (D) -- ++(0.18,0) -- ++(0,0.18) -- ++(-0.18,0);
+  \node[anchor=south,inner sep=2pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=2pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
