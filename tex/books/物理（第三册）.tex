@@ -27554,16 +27554,67 @@ P = I U
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0360-02.png}}
-\caption{(b)}
+\fitfig{%
+% fig-alt: 图5.35（b）·(0∼T/4)纯电容充电：电源u上+下−，电流i顺时针与电压同向，C上极++++、下极−−−−
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.05]
+  \def\W{3.1}\def\H{2.35}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC left
+  \fill[white] (-0.02,{\H/2-0.38}) rectangle (0.02,{\H/2+0.38});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.28];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.32,{\H/2}) {$u$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.02,{\H/2+0.52}) {$+$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.02,{\H/2-0.52}) {$-$};
+  % capacitor right
+  \fill[white] ({\W-0.02},{\H/2-0.42}) rectangle ({\W+0.02},{\H/2+0.42});
+  \draw[line width=0.9pt] ({\W-0.28},{\H/2+0.12}) -- ({\W+0.28},{\H/2+0.12});
+  \draw[line width=0.9pt] ({\W-0.28},{\H/2-0.12}) -- ({\W+0.28},{\H/2-0.12});
+  % charges ++++ above top plate, ---- below bottom
+  \foreach \dx in {-0.18,-0.06,0.06,0.18} {
+    \node[inner sep=0pt,font=\tiny] at ({\W+\dx},{\H/2+0.28}) {$+$};
+    \node[inner sep=0pt,font=\tiny] at ({\W+\dx},{\H/2-0.28}) {$-$};
+  }
+  % current clockwise
+  \draw[line width=0.7pt,->] ({\W*0.28},\H) -- ({\W*0.72},\H);
+  \node[anchor=south,inner sep=2pt] at ({\W*0.50},{\H+0.02}) {$i$};
+  \draw[line width=0.7pt,->] ({\W*0.72},0) -- ({\W*0.28},0);
+  \node[anchor=south,inner sep=2pt] at ({\W*0.50},0.02) {$i$};
+\end{tikzpicture}%
+}
+\caption{图5.35（b）·$(0\sim T/4)$ $C$充电}
 \end{figure}
 
 \emph{图5.35（b）·$(0\sim T/4)$ $C$充电}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-3/fig-p0360-03.png}}
-\caption{(c)}
+\fitfig{%
+% fig-alt: 图5.35（c）·(T/4∼T/2)纯电容放电：电源u上−下+，电流i逆时针与电压反向，C上极+、下极−
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.05]
+  \def\W{3.1}\def\H{2.35}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC left (reversed polarity)
+  \fill[white] (-0.02,{\H/2-0.38}) rectangle (0.02,{\H/2+0.38});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.28];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.32,{\H/2}) {$u$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.02,{\H/2+0.52}) {$-$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.02,{\H/2-0.52}) {$+$};
+  % capacitor right with residual charge
+  \fill[white] ({\W-0.02},{\H/2-0.42}) rectangle ({\W+0.02},{\H/2+0.42});
+  \draw[line width=0.9pt] ({\W-0.28},{\H/2+0.12}) -- ({\W+0.28},{\H/2+0.12});
+  \draw[line width=0.9pt] ({\W-0.28},{\H/2-0.12}) -- ({\W+0.28},{\H/2-0.12});
+  \node[inner sep=0pt,font=\small] at ({\W},{\H/2+0.28}) {$+$};
+  \node[inner sep=0pt,font=\small] at ({\W},{\H/2-0.28}) {$-$};
+  % current counterclockwise (reversed)
+  \draw[line width=0.7pt,->] ({\W*0.72},\H) -- ({\W*0.28},\H);
+  \node[anchor=south,inner sep=2pt] at ({\W*0.50},{\H+0.02}) {$i$};
+  \draw[line width=0.7pt,->] ({\W*0.28},0) -- ({\W*0.72},0);
+  \node[anchor=south,inner sep=2pt] at ({\W*0.50},0.02) {$i$};
+\end{tikzpicture}%
+}
+\caption{图5.35（c）·$(T/4\sim T/2)$ $C$放电}
 \end{figure}
 
 \emph{图5.35（c）·$(T/4\sim T/2)$ $C$放电}
@@ -27582,7 +27633,7 @@ P = I U
 以上我们定性分析了交流电路里三种不同性质的元件消耗功率的情况，那么在交流电路里功率究竟怎样计算呢？
 
 设有一个电阻与电抗性元件（即电容或电感等）串联的电路如图5.36（a）所示。电路中电流与总电压有位相差
-\(\rho\)，它们的矢量图如图5.35（b）所示。由上面的讨论可知，只有电阻元件是消耗功率的，而电阻上消耗的功率可以根据电阻上电流的有效值和它上面电压的有效值来计算，即
+\(\varphi\)，它们的矢量图如图5.36（b）所示。由上面的讨论可知，只有电阻元件是消耗功率的，而电阻上消耗的功率可以根据电阻上电流的有效值和它上面电压的有效值来计算，即
 
 \[
 P = I U_{R}
@@ -27602,19 +27653,66 @@ P = I U \cos \varphi \tag{5.24}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0361-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.36（a）·电阻与电抗串联：左交流电源u，右上电阻R、下电抗X，旁标UR、UX
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.0]
+  \def\W{2.70}\def\H{2.85}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC left
+  \fill[white] (-0.02,{\H/2-0.32}) rectangle (0.02,{\H/2+0.32});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.26];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.30,{\H/2}) {$u$};
+  % R upper right
+  \pgfmathsetmacro{\yRtop}{\H-0.22}
+  \pgfmathsetmacro{\yRbot}{\H/2+0.12}
+  \fill[white] ({\W-0.02},\yRbot) rectangle ({\W+0.02},\yRtop);
+  \draw[line width=0.75pt] ({\W-0.16},\yRbot) rectangle ({\W+0.16},\yRtop);
+  \node[anchor=east,inner sep=2pt] at ({\W-0.28},{(\yRtop+\yRbot)/2}) {$R$};
+  % X lower right
+  \pgfmathsetmacro{\yXtop}{\H/2-0.12}
+  \pgfmathsetmacro{\yXbot}{0.22}
+  \fill[white] ({\W-0.02},\yXbot) rectangle ({\W+0.02},\yXtop);
+  \draw[line width=0.75pt] ({\W-0.16},\yXbot) rectangle ({\W+0.16},\yXtop);
+  \node[anchor=east,inner sep=2pt] at ({\W-0.28},{(\yXtop+\yXbot)/2}) {$X$};
+  % voltage brackets
+  \pgfmathsetmacro{\xb}{\W+0.85}
+  \draw[line width=0.55pt,|<->|] (\xb,\yRtop) -- (\xb,\yRbot);
+  \node[anchor=west,inner sep=2pt] at ({\xb+0.05},{(\yRtop+\yRbot)/2}) {$U_R$};
+  \draw[line width=0.4pt] ({\xb-0.12},\yRbot) -- ({\xb+0.12},\yRbot);
+  \draw[line width=0.4pt] ({\xb-0.12},\yXtop) -- ({\xb+0.12},\yXtop);
+  \draw[line width=0.55pt,|<->|] (\xb,\yXtop) -- (\xb,\yXbot);
+  \node[anchor=west,inner sep=2pt] at ({\xb+0.05},{(\yXtop+\yXbot)/2}) {$U_X$};
+\end{tikzpicture}%
+}
+\caption{图5.36（a）·电阻与电抗串联电路}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.36（a）·电阻与电抗串联电路}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-3/fig-p0361-02.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图5.36（b）·串联矢量图：水平I与UR，竖直UX，对角线合电压U，夹角φ
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.15]
+  \def\Rx{2.55}\def\Xy{1.55}
+  \draw[line width=0.65pt,->] (-0.15,0) -- (3.45,0);
+  \draw[line width=0.65pt,->] (0,-0.15) -- (0,{\Xy+0.45});
+  \draw[line width=0.9pt,->] (0,0) -- (3.15,0) node[anchor=west,inner sep=2pt] {$I$};
+  \draw[line width=0.9pt,->] (0,0) -- (\Rx,0);
+  \node[anchor=north,inner sep=2pt] at ({\Rx*0.55},-0.05) {$U_R$};
+  \draw[line width=0.9pt,->] (0,0) -- (0,\Xy) node[anchor=east,inner sep=2pt] {$U_X$};
+  \draw[line width=0.95pt,->] (0,0) -- (\Rx,\Xy) node[anchor=south west,inner sep=2pt] {$U$};
+  \draw[line width=0.5pt,dashed] (\Rx,0) -- (\Rx,\Xy);
+  \draw[line width=0.5pt,dashed] (0,\Xy) -- (\Rx,\Xy);
+  \draw[line width=0.55pt] (0.55,0) arc[start angle=0,end angle={atan(\Xy/\Rx)},radius=0.55];
+  \node[anchor=west,inner sep=1pt] at (0.62,0.20) {$\varphi$};
+\end{tikzpicture}%
+}
+\caption{图5.36（b）·串联电路电流与电压矢量图}
 \end{figure}
 
-\emph{（1）}
+\emph{图5.36（b）·串联电路电流与电压矢量图}
 
 \emph{图5.36}
 
@@ -27623,40 +27721,89 @@ P = I U \cos \varphi \tag{5.24}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0362-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.37（a）·电阻与电抗并联：左交流u，中支路R（iR↓），右支路X（iX↓），总电流i
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.0]
+  \def\W{3.60}\def\H{2.20}
+  \def\xm{1.70}
+  % outer rectangle
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC left
+  \fill[white] (-0.02,{\H/2-0.32}) rectangle (0.02,{\H/2+0.32});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.26];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.30,{\H/2}) {$u$};
+  % total current i on top near source
+  \draw[line width=0.65pt,->] (0.45,\H) -- (1.15,\H);
+  \node[anchor=south,inner sep=1pt] at (0.80,{\H+0.02}) {$i$};
+  % middle branch R
+  \fill[white] ({\xm-0.02},0.35) rectangle ({\xm+0.02},{\H-0.35});
+  \draw[line width=0.75pt] ({\xm-0.16},0.45) rectangle ({\xm+0.16},{\H-0.85});
+  \node[anchor=west,inner sep=2pt] at ({\xm+0.20},{(\H-0.85+0.45)/2}) {$R$};
+  \draw[line width=0.65pt,->] (\xm,{\H-0.15}) -- (\xm,{\H-0.70});
+  \node[anchor=east,inner sep=1pt] at ({\xm-0.05},{\H-0.40}) {$i_R$};
+  \fill (\xm,\H) circle[radius=1.6pt];
+  \fill (\xm,0) circle[radius=1.6pt];
+  \draw[line width=0.75pt] (\xm,\H) -- (\xm,{\H-0.35});
+  \draw[line width=0.75pt] (\xm,0.35) -- (\xm,0);
+  % right branch X (already on right wall)
+  \fill[white] ({\W-0.02},0.35) rectangle ({\W+0.02},{\H-0.35});
+  \draw[line width=0.75pt] ({\W-0.16},0.45) rectangle ({\W+0.16},{\H-0.85});
+  \node[anchor=west,inner sep=2pt] at ({\W+0.20},{(\H-0.85+0.45)/2}) {$X$};
+  \draw[line width=0.65pt,->] (\W,{\H-0.15}) -- (\W,{\H-0.70});
+  \node[anchor=east,inner sep=1pt] at ({\W-0.05},{\H-0.40}) {$i_X$};
+\end{tikzpicture}%
+}
+\caption{图5.37（a）·电阻与电抗并联电路}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.37（a）·电阻与电抗并联电路}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-3/fig-p0362-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图5.37（b）·并联矢量图：水平U与IR，竖直IX，对角线合电流I，夹角φ
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.15]
+  \def\IRx{2.35}\def\IXy{1.55}
+  \draw[line width=0.65pt,->] (-0.15,0) -- (3.55,0);
+  \draw[line width=0.65pt,->] (0,-0.15) -- (0,{\IXy+0.45});
+  % U reference longer on +x
+  \draw[line width=0.9pt,->] (0,0) -- (3.25,0) node[anchor=west,inner sep=2pt] {$U$};
+  \draw[line width=0.9pt,->] (0,0) -- (\IRx,0);
+  \node[anchor=north,inner sep=2pt] at ({\IRx*0.55},-0.05) {$I_R$};
+  \draw[line width=0.9pt,->] (0,0) -- (0,\IXy) node[anchor=east,inner sep=2pt] {$I_X$};
+  \draw[line width=0.95pt,->] (0,0) -- (\IRx,\IXy) node[anchor=south west,inner sep=2pt] {$I$};
+  \draw[line width=0.5pt,dashed] (\IRx,0) -- (\IRx,\IXy);
+  \draw[line width=0.5pt,dashed] (0,\IXy) -- (\IRx,\IXy);
+  \draw[line width=0.55pt] (0.55,0) arc[start angle=0,end angle={atan(\IXy/\IRx)},radius=0.55];
+  \node[anchor=west,inner sep=1pt] at (0.62,0.20) {$\varphi$};
+\end{tikzpicture}%
+}
+\caption{图5.37（b）·并联电路电流与电压矢量图}
 \end{figure}
 
-\emph{（2）}
+\emph{图5.37（b）·并联电路电流与电压矢量图}
 
 \emph{图5.37}
 
-元件中电流 \(I_{x}\) 则比 U 超前 \(90^{\circ}\) （电容性电路），或落后
-\(90^{\circ}\) （电感性电路）。电路总电流为 \(I_{R}\) 与 \(I_{X}\)
-的矢量和，它们的矢量图如图 5.37（b）
-所示，因并联电路的端电压都相同，矢量图中以端电压有效值 U 为参考矢量。
+元件中电流 \(I_{X}\) 则比 \(U\) 超前 \(90^{\circ}\)（电容性电路），或落后
+\(90^{\circ}\)（电感性电路）。电路总电流为 \(I_{R}\) 与 \(I_{X}\)
+的矢量和，它们的矢量图如图5.37（b）
+所示，因并联电路的端电压都相同，矢量图中以端电压有效值 \(U\) 为参考矢量。
 
 由图可见， 当总电流与端电压之间位相差为 \(\varphi\) 时，
 总电流中与端电压 \(U\) 同位相的分量为 \(I \cos \varphi\)，
-它就是通过电阻元件的电流 \(I_{B}\). 所以电路消耗的功率
+它就是通过电阻元件的电流 \(I_{R}\). 所以电路消耗的功率
 
 \[
 P = I_{R} U = I U \cos \varphi
 \]
 
-因此不管是串联电路，还是并联电路，当电路的总电流 I 与总电压 U
+因此不管是串联电路，还是并联电路，当电路的总电流 \(I\) 与总电压 \(U\)
 之间有位相差 \(\varphi\) 时，电路从电源取得的功率（即平均功率）为
 \(P = IU \cos \varphi\)。这个功率叫做交流电的有功功率，它表示电路消耗的功率（可能转变为热，或其他形式的能量）。
 
-电路上总电流与总电压的乘积 UI 叫做视在功率，常用 S 来表示，即
+电路上总电流与总电压的乘积 \(UI\) 叫做视在功率，常用 S 来表示，即
 
 \[
 S = U I \tag{5.25}
@@ -28014,7 +28161,7 @@ e = 15.7 \sqrt{2} \sin 6280 t \text{毫伏}
 欧·米到 \(10^{5}\)
 欧·米之间。锗、硅、硒等元素和许多金属氧化物和化合物（如氧化亚铜、硫化铅、砷化镓、锑化铟）等都是半导体。
 
-半导体之所以能获得如此广泛的应用，到并不在于它的导电能力介于导体和绝缘体之间，而是由于半导体的导电能力在外界条件影响下可以发生很大变化的特点。半导体的导电能力随温度、光照等变化很大。例如，在摄氏零度锗的电阻率约2欧·米，但温度升高到室温时，锗的电阻率可下降到0.6欧·米。当半导体受到光的照射时，它的导电能力也会明显增长。
+半导体之所以能获得如此广泛的应用，倒并不在于它的导电能力介于导体和绝缘体之间，而是由于半导体的导电能力在外界条件影响下可以发生很大变化的特点。半导体的导电能力随温度、光照等变化很大。例如，在摄氏零度锗的电阻率约2欧·米，但温度升高到室温时，锗的电阻率可下降到0.6欧·米。当半导体受到光的照射时，它的导电能力也会明显增长。
 
 半导体的另一个显著特性是它的导电能力受杂质的影响很大。例如，在纯净的硅半导体中掺入百万分之一的杂质，它的电阻率会减小到原来的十万分之一。人们正是利用半导体的这种特性，制成各种不同性质的半导体材料，再用这种半导体材料制成各种晶体二极管、晶体三极管以及其他各种半导体器件的。
 
@@ -28023,29 +28170,100 @@ e = 15.7 \sqrt{2} \sin 6280 t \text{毫伏}
 
 半导体所以有以上特性是和它的内部结构分不开的。硅和锗是两种常用的制造晶体管的半导体材料，它们的结构与它们的导电特性之间有什么联系呢？
 
-图 6.1 是硅原子和锗原子的结构示意图， 可以看到， 这两种原子的最外层都是
+图6.1是硅原子和锗原子的结构示意图， 可以看到， 这两种原子的最外层都是
 4 个电子。通常原子最外层的电子叫价电子， 有几个价电子就叫几价元素，
 所以硅和锗都是四价元素。硅（或锗）的内层电子和原子核结合得较紧密，
 把它们看做一个整体， 好象是一个带有 4 个基本电荷的正电荷，
-因此可以用如图 6.2 的简化图来代表它的结构。
+因此可以用如图6.2的简化图来代表它的结构。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.1}]{assets/physics-3/fig-p0372-01.png}}
-\caption{图6.1}
+\fitfig{%
+% fig-alt: 图6.1·（a）锗原子+32四层电子（最外层4个价电子）；（b）硅原子+14三层电子（最外层4个价电子）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.92]
+  % ---- (a) Ge ----
+  \begin{scope}[shift={(0,0)}]
+    \foreach \r in {0.55,0.95,1.40,1.90} {
+      \draw[line width=0.55pt] (0,0) circle[radius=\r];
+    }
+    \draw[line width=0.6pt,fill=white] (0,0) circle[radius=0.28];
+    \node[inner sep=0pt,font=\small] at (0,0) {$+32$};
+    % K: 2
+    \foreach \a in {90,270} {
+      \fill ({0.55*cos(\a)},{0.55*sin(\a)}) circle[radius=1.5pt];
+    }
+    % L: 8
+    \foreach \a in {0,45,...,315} {
+      \fill ({0.95*cos(\a)},{0.95*sin(\a)}) circle[radius=1.5pt];
+    }
+    % M: 18
+    \foreach \a in {0,20,...,340} {
+      \fill ({1.40*cos(\a)},{1.40*sin(\a)}) circle[radius=1.35pt];
+    }
+    % N valence: 4
+    \foreach \a in {90,0,270,180} {
+      \fill ({1.90*cos(\a)},{1.90*sin(\a)}) circle[radius=1.7pt];
+    }
+    \draw[line width=0.45pt,dashed] (0.20,0.18) -- (1.15,1.55);
+    \node[anchor=west,inner sep=1pt,font=\small] at (1.15,1.55) {原子核};
+    \draw[line width=0.45pt,dashed] ({1.90*cos(20)},{1.90*sin(20)}) -- (2.55,1.10);
+    \node[anchor=west,inner sep=1pt,font=\small] at (2.55,1.10) {价电子};
+    \node[anchor=north,inner sep=2pt,font=\small] at (0,-2.15) {（a）锗原子};
+  \end{scope}
+  % ---- (b) Si ----
+  \begin{scope}[shift={(6.2,0)}]
+    \foreach \r in {0.55,0.95,1.55} {
+      \draw[line width=0.55pt] (0,0) circle[radius=\r];
+    }
+    \draw[line width=0.6pt,fill=white] (0,0) circle[radius=0.28];
+    \node[inner sep=0pt,font=\small] at (0,0) {$+14$};
+    % K: 2
+    \foreach \a in {90,270} {
+      \fill ({0.55*cos(\a)},{0.55*sin(\a)}) circle[radius=1.5pt];
+    }
+    % L: 8
+    \foreach \a in {0,45,...,315} {
+      \fill ({0.95*cos(\a)},{0.95*sin(\a)}) circle[radius=1.5pt];
+    }
+    % M valence: 4
+    \foreach \a in {90,0,270,180} {
+      \fill ({1.55*cos(\a)},{1.55*sin(\a)}) circle[radius=1.7pt];
+    }
+    \draw[line width=0.45pt,dashed] (0.20,0.18) -- (1.00,1.35);
+    \node[anchor=west,inner sep=1pt,font=\small] at (1.00,1.35) {原子核};
+    \draw[line width=0.45pt,dashed] ({1.55*cos(25)},{1.55*sin(25)}) -- (2.20,1.00);
+    \node[anchor=west,inner sep=1pt,font=\small] at (2.20,1.00) {价电子};
+    \node[anchor=north,inner sep=2pt,font=\small] at (0,-2.15) {（b）硅原子};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图6.1·硅原子和锗原子的结构示意图}
 \end{figure}
 
-\emph{图6.1}
+\emph{图6.1·硅原子和锗原子的结构示意图}
 
 把硅制成单晶体（整个晶体的原子按一定规律整齐排列）时，它的原子排列得很整齐。每个原子和周围相邻的4个原子相联结。每两个相邻原子共有一对价电子，这一对价电子中，任何一个电子一方面绕自身原子核运动，另一方面也常常出现在相邻原子的轨道
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.2 4价原子简化示意图}]{assets/physics-3/fig-p0372-02.png}}
-\caption{图6.2 4价原子简化示意图}
+\fitfig{%
+% fig-alt: 图6.2·4价原子简化示意图：内核+4，外层4个价电子
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.15]
+  \def\R{1.35}
+  \draw[line width=0.7pt] (0,0) circle[radius=0.38];
+  \node[inner sep=0pt] at (0,0) {$+4$};
+  \draw[line width=0.7pt] (0,0) circle[radius=\R];
+  \foreach \a in {90,0,270,180} {
+    \fill ({\R*cos(\a)},{\R*sin(\a)}) circle[radius=2.0pt];
+  }
+  \draw[line width=0.5pt] ({0},{\R}) -- (0.85,1.85);
+  \node[anchor=west,inner sep=1pt,font=\small] at (0.85,1.85) {价电子};
+\end{tikzpicture}%
+}
+\caption{图6.2·4价原子简化示意图}
 \end{figure}
 
-\emph{图6.2 4价原子简化示意图}
+\emph{图6.2·4价原子简化示意图}
 
 上，这样的结构叫做共价键（键就是联结的意思）结构。硅（或锗）的共价键结构平面示意图如图6.3所示。
 
