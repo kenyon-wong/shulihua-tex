@@ -25352,29 +25352,160 @@ U_{R} = \sqrt{3} U_{R 0} \tag{5.11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0333-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.14（a）·N、S极间线圈abcd倾斜，电流d→c→b→a，ab边受力向上、cd边向下，半圆环B接K₂、A接K₁，电源正极经K₂供电
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  \draw[line width=0.85pt] (-2.85,1.35) -- (-2.85,-1.35) -- (-2.05,-1.35)
+    .. controls (-1.70,-0.70) and (-1.70,0.70) .. (-2.05,1.35) -- cycle;
+  \node at (-2.50,0.00) {$N$};
+  \draw[line width=0.85pt] (2.05,1.35) -- (2.05,-1.35) -- (1.25,-1.35)
+    .. controls (0.90,-0.70) and (0.90,0.70) .. (1.25,1.35) -- cycle;
+  \node at (1.70,0.00) {$S$};
+  \foreach \y in {-0.85,-0.28,0.28,0.85} {
+    \draw[line width=0.4pt,dashed] (-1.55,\y) -- (0.75,\y);
+  }
+  \coordinate (c) at (-0.95,0.85);
+  \coordinate (b) at (0.35,0.55);
+  \coordinate (a) at (0.35,-0.75);
+  \coordinate (d) at (-0.95,-0.45);
+  \draw[line width=0.85pt] (a) -- (b) -- (c) -- (d) -- cycle;
+  \node[anchor=north west,inner sep=1pt] at (a) {$a$};
+  \node[anchor=south west,inner sep=1pt] at (b) {$b$};
+  \node[anchor=south east,inner sep=1pt] at (c) {$c$};
+  \node[anchor=north east,inner sep=1pt] at (d) {$d$};
+  % current d→c→b→a
+  \draw[line width=0.55pt,->] ($(d)!0.35!(c)$) -- ($(d)!0.65!(c)$);
+  \draw[line width=0.55pt,->] ($(b)!0.35!(a)$) -- ($(b)!0.65!(a)$);
+  % clockwise rotation (left down / right up)
+  \draw[line width=0.55pt,->] (-0.55,-0.95) arc[start angle=250,end angle=340,radius=0.42];
+  \draw[line width=0.55pt,->] (0.55,0.95) arc[start angle=70,end angle=160,radius=0.42];
+  \draw[line width=0.4pt,dashed] (-0.30,1.15) -- (-0.30,-1.55);
+  \draw[line width=0.75pt] (-0.55,-1.35) arc[start angle=180,end angle=360,x radius=0.28,y radius=0.18];
+  \draw[line width=0.75pt] (-0.05,-1.35) arc[start angle=0,end angle=-180,x radius=0.28,y radius=0.18];
+  \node[anchor=south,inner sep=1pt] at (-0.55,-1.15) {$B$};
+  \node[anchor=south,inner sep=1pt] at (0.00,-1.15) {$A$};
+  \draw[line width=0.55pt] (a) -- (-0.05,-1.35);
+  \draw[line width=0.55pt] (d) -- (-0.55,-1.35);
+  \draw[line width=0.7pt] (-0.55,-1.53) -- (-0.55,-1.85) -- (-1.15,-1.85);
+  \draw[line width=0.7pt] (-0.05,-1.53) -- (-0.05,-1.85) -- (0.55,-1.85);
+  \node[anchor=east,inner sep=2pt] at (-1.15,-1.85) {$K_2$};
+  \node[anchor=west,inner sep=2pt] at (0.55,-1.85) {$K_1$};
+  \draw[line width=0.65pt] (-1.15,-1.85) -- (-1.15,-2.55) -- (0.55,-2.55) -- (0.55,-1.85);
+  % battery: + left (long), − right (short)
+  \draw[line width=0.7pt] (-0.48,-2.40) -- (-0.48,-2.70);
+  \draw[line width=0.9pt] (-0.28,-2.48) -- (-0.28,-2.62);
+  \draw[line width=0.7pt] (-0.08,-2.40) -- (-0.08,-2.70);
+  \draw[line width=0.9pt] (0.12,-2.48) -- (0.12,-2.62);
+  \draw[line width=0.5pt,->] (-0.60,-2.55) -- (-1.05,-2.55);
+  \draw[line width=0.5pt,->] (0.45,-1.95) -- (0.45,-2.40);
+\end{tikzpicture}%
+}
+
+\caption{图5.14（a）·线圈倾斜，电流$d\rightarrow c\rightarrow b\rightarrow a$，顺时针转动}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.14（a）·线圈倾斜，电流$d\rightarrow c\rightarrow b\rightarrow a$，顺时针转动}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0333-02.png}}
-\caption{(b)}
+\fitfig{%
+% fig-alt: 图5.14（b）·线圈位于中性面竖直位置，半圆环缝隙对着电刷K₁、K₂，线圈中无电流
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  \draw[line width=0.85pt] (-2.85,1.35) -- (-2.85,-1.35) -- (-2.05,-1.35)
+    .. controls (-1.70,-0.70) and (-1.70,0.70) .. (-2.05,1.35) -- cycle;
+  \node at (-2.50,0.00) {$N$};
+  \draw[line width=0.85pt] (2.05,1.35) -- (2.05,-1.35) -- (1.25,-1.35)
+    .. controls (0.90,-0.70) and (0.90,0.70) .. (1.25,1.35) -- cycle;
+  \node at (1.70,0.00) {$S$};
+  \foreach \y in {-0.85,-0.28,0.28,0.85} {
+    \draw[line width=0.4pt,dashed] (-1.55,\y) -- (0.75,\y);
+  }
+  \coordinate (c) at (-0.55,0.95);
+  \coordinate (b) at (0.05,0.95);
+  \coordinate (a) at (0.05,-0.95);
+  \coordinate (d) at (-0.55,-0.95);
+  \draw[line width=0.9pt] (a) -- (b) -- (c) -- (d) -- cycle;
+  \node[anchor=west,inner sep=2pt] at (b) {$a{,}b$};
+  \node[anchor=east,inner sep=2pt] at (c) {$c{,}d$};
+  \draw[line width=0.55pt,->] (0.45,0.55) arc[start angle=10,end angle=100,radius=0.40];
+  \draw[line width=0.4pt,dashed] (-0.25,1.20) -- (-0.25,-1.55);
+  \draw[line width=0.75pt] (-0.55,-1.35) arc[start angle=110,end angle=250,x radius=0.30,y radius=0.20];
+  \draw[line width=0.75pt] (0.05,-1.35) arc[start angle=70,end angle=-70,x radius=0.30,y radius=0.20];
+  \node[anchor=south,inner sep=1pt] at (-0.55,-1.12) {$B$};
+  \node[anchor=south,inner sep=1pt] at (0.05,-1.12) {$A$};
+  \draw[line width=0.55pt] (a) -- (0.05,-1.35);
+  \draw[line width=0.55pt] (d) -- (-0.55,-1.35);
+  \draw[line width=0.7pt] (-0.55,-1.55) -- (-0.55,-1.85) -- (-1.15,-1.85);
+  \draw[line width=0.7pt] (0.05,-1.55) -- (0.05,-1.85) -- (0.65,-1.85);
+  \node[anchor=east,inner sep=2pt] at (-1.15,-1.85) {$K_2$};
+  \node[anchor=west,inner sep=2pt] at (0.65,-1.85) {$K_1$};
+  \draw[line width=0.65pt] (-1.15,-1.85) -- (-1.15,-2.55) -- (0.65,-2.55) -- (0.65,-1.85);
+  \draw[line width=0.7pt] (-0.48,-2.40) -- (-0.48,-2.70);
+  \draw[line width=0.9pt] (-0.28,-2.48) -- (-0.28,-2.62);
+  \draw[line width=0.7pt] (-0.08,-2.40) -- (-0.08,-2.70);
+  \draw[line width=0.9pt] (0.12,-2.48) -- (0.12,-2.62);
+\end{tikzpicture}%
+}
+\caption{图5.14（b）·线圈位于中性面，电刷对着换向器缝隙，线圈中无电流}
 \end{figure}
 
-\emph{（b）}
+\emph{图5.14（b）·线圈位于中性面，电刷对着换向器缝隙，线圈中无电流}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-3/fig-p0333-03.png}}
-\caption{(c)}
+\fitfig{%
+% fig-alt: 图5.14（c）·线圈再转半周，电流a→b→c→d，cd边受力向上、ab边向下，半圆环A接K₂、B接K₁，仍顺时针转动
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  \draw[line width=0.85pt] (-2.85,1.35) -- (-2.85,-1.35) -- (-2.05,-1.35)
+    .. controls (-1.70,-0.70) and (-1.70,0.70) .. (-2.05,1.35) -- cycle;
+  \node at (-2.50,0.00) {$N$};
+  \draw[line width=0.85pt] (2.05,1.35) -- (2.05,-1.35) -- (1.25,-1.35)
+    .. controls (0.90,-0.70) and (0.90,0.70) .. (1.25,1.35) -- cycle;
+  \node at (1.70,0.00) {$S$};
+  \foreach \y in {-0.85,-0.28,0.28,0.85} {
+    \draw[line width=0.4pt,dashed] (-1.55,\y) -- (0.75,\y);
+  }
+  \coordinate (a) at (-0.95,0.85);
+  \coordinate (d) at (0.35,0.55);
+  \coordinate (c) at (0.35,-0.75);
+  \coordinate (b) at (-0.95,-0.45);
+  \draw[line width=0.85pt] (a) -- (b) -- (c) -- (d) -- cycle;
+  \node[anchor=south east,inner sep=1pt] at (a) {$a$};
+  \node[anchor=north east,inner sep=1pt] at (b) {$b$};
+  \node[anchor=north west,inner sep=1pt] at (c) {$c$};
+  \node[anchor=south west,inner sep=1pt] at (d) {$d$};
+  % current a→b→c→d
+  \draw[line width=0.55pt,->] ($(a)!0.35!(b)$) -- ($(a)!0.65!(b)$);
+  \draw[line width=0.55pt,->] ($(c)!0.35!(d)$) -- ($(c)!0.65!(d)$);
+  \draw[line width=0.55pt,->] (-0.55,-0.95) arc[start angle=250,end angle=340,radius=0.42];
+  \draw[line width=0.55pt,->] (0.55,0.95) arc[start angle=70,end angle=160,radius=0.42];
+  \draw[line width=0.4pt,dashed] (-0.30,1.15) -- (-0.30,-1.55);
+  \draw[line width=0.75pt] (-0.55,-1.35) arc[start angle=180,end angle=360,x radius=0.28,y radius=0.18];
+  \draw[line width=0.75pt] (-0.05,-1.35) arc[start angle=0,end angle=-180,x radius=0.28,y radius=0.18];
+  \node[anchor=south,inner sep=1pt] at (-0.55,-1.15) {$A$};
+  \node[anchor=south,inner sep=1pt] at (0.00,-1.15) {$B$};
+  \draw[line width=0.55pt] (a) -- (-0.55,-1.35);
+  \draw[line width=0.55pt] (d) -- (-0.05,-1.35);
+  \draw[line width=0.7pt] (-0.55,-1.53) -- (-0.55,-1.85) -- (-1.15,-1.85);
+  \draw[line width=0.7pt] (-0.05,-1.53) -- (-0.05,-1.85) -- (0.55,-1.85);
+  \node[anchor=east,inner sep=2pt] at (-1.15,-1.85) {$K_2$};
+  \node[anchor=west,inner sep=2pt] at (0.55,-1.85) {$K_1$};
+  \draw[line width=0.65pt] (-1.15,-1.85) -- (-1.15,-2.55) -- (0.55,-2.55) -- (0.55,-1.85);
+  \draw[line width=0.7pt] (-0.48,-2.40) -- (-0.48,-2.70);
+  \draw[line width=0.9pt] (-0.28,-2.48) -- (-0.28,-2.62);
+  \draw[line width=0.7pt] (-0.08,-2.40) -- (-0.08,-2.70);
+  \draw[line width=0.9pt] (0.12,-2.48) -- (0.12,-2.62);
+  \draw[line width=0.5pt,->] (-0.60,-2.55) -- (-1.05,-2.55);
+  \draw[line width=0.5pt,->] (0.45,-1.95) -- (0.45,-2.40);
+\end{tikzpicture}%
+}
+
+\caption{图5.14（c）·换向后电流$a\rightarrow b\rightarrow c\rightarrow d$，仍顺时针转动}
 \end{figure}
 
-\emph{（c）}
+\emph{图5.14（c）·换向后电流$a\rightarrow b\rightarrow c\rightarrow d$，仍顺时针转动}
 
-\emph{图 5.14 直流电动机工作原理}
+\emph{图5.14·直流电动机工作原理}
 
 直流电动机具有转速容易控制，启动时力矩较大的特点，所以在电力机车，轧钢机等上面应用很广。
 
@@ -25395,19 +25526,99 @@ U_{R} = \sqrt{3} U_{R 0} \tag{5.11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.15 旋转磁场实验}]{assets/physics-3/fig-p0334-01.png}}
-\caption{图 5.15 旋转磁场实验}
+\fitfig{%
+% fig-alt: 图5.15·闭合小铝框悬于蹄形磁铁N、S极间，磁铁可绕竖直轴OO′转动
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.92]
+  % ceiling
+  \draw[line width=0.7pt] (-1.35,3.55) -- (1.35,3.55);
+  \foreach \x in {-1.25,-1.00,-0.75,-0.50,-0.25,0.00,0.25,0.50,0.75,1.00,1.25} {
+    \draw[line width=0.45pt] (\x,3.55) -- ({(\x)-0.18},3.78);
+  }
+  % suspension
+  \draw[line width=0.55pt] (0,3.55) -- (0,2.10);
+  % aluminum frame (closed rectangular wire frame)
+  \draw[line width=0.8pt]
+    (-0.40,2.10) -- (0.40,2.10) -- (0.52,1.98) -- (-0.28,1.98) -- cycle;
+  \draw[line width=0.8pt] (-0.40,2.10) -- (-0.40,0.60);
+  \draw[line width=0.8pt] (0.40,2.10) -- (0.40,0.60);
+  \draw[line width=0.8pt] (-0.28,1.98) -- (-0.28,0.48);
+  \draw[line width=0.8pt] (0.52,1.98) -- (0.52,0.48);
+  \draw[line width=0.8pt]
+    (-0.40,0.60) -- (0.40,0.60) -- (0.52,0.48) -- (-0.28,0.48) -- cycle;
+  % horseshoe magnet poles
+  \draw[line width=0.85pt,fill=white]
+    (-1.40,1.90) -- (-0.58,1.90) -- (-0.58,0.20) -- (-1.15,0.20)
+    -- (-1.15,-0.45) -- (-1.55,-0.45) -- (-1.55,1.60) -- (-1.40,1.60) -- cycle;
+  \node at (-0.98,1.10) {$N$};
+  \draw[line width=0.85pt,fill=white]
+    (0.58,1.90) -- (1.40,1.90) -- (1.40,1.60) -- (1.55,1.60)
+    -- (1.55,-0.45) -- (1.15,-0.45) -- (1.15,0.20) -- (0.58,0.20) -- cycle;
+  \node at (0.98,1.10) {$S$};
+  % U bottom
+  \draw[line width=0.85pt]
+    (-1.55,-0.45) -- (-1.55,-0.85)
+    .. controls (-1.10,-1.40) and (1.10,-1.40) ..
+    (1.55,-0.85) -- (1.55,-0.45);
+  \draw[line width=0.55pt]
+    (-1.15,-0.45) -- (-1.15,-0.75)
+    .. controls (-0.85,-1.15) and (0.85,-1.15) ..
+    (1.15,-0.75) -- (1.15,-0.45);
+  % axis OO'
+  \draw[line width=0.45pt,dash pattern=on 2.5pt off 1.2pt on 0.6pt off 1.2pt]
+    (0,3.55) -- (0,-2.00);
+  \node[anchor=west,inner sep=3pt] at (0.10,0.15) {$O'$};
+  \node[anchor=west,inner sep=3pt] at (0.10,-1.80) {$O$};
+  % rotation arrow around O (magnet turns)
+  \draw[line width=0.65pt,->]
+    (0.42,-1.55) arc[start angle=40,end angle=-220,radius=0.42];
+\end{tikzpicture}%
+}
+
+\caption{图5.15·旋转磁场实验：铝框悬于蹄形磁铁两极间，磁铁绕$OO'$转动}
 \end{figure}
 
-\emph{图 5.15 旋转磁场实验}
+\emph{图5.15·旋转磁场实验：铝框悬于蹄形磁铁两极间，磁铁绕$OO'$转动}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.16 磁场旋转时,铝框两边受到转动力矩}]{assets/physics-3/fig-p0334-02.png}}
-\caption{图 5.16 磁场旋转时,铝框两边受到转动力矩}
+\fitfig{%
+% fig-alt: 图5.16·N、S极间磁力线向右；铝框两边截面左×（流入）、右·（流出），F左下右上，顺磁场方向转动
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  % poles
+  \draw[line width=0.85pt] (-2.55,-1.35) rectangle (-1.55,1.35);
+  \node at (-2.05,0.00) {$N$};
+  \draw[line width=0.85pt] (1.55,-1.35) rectangle (2.55,1.35);
+  \node at (2.05,0.00) {$S$};
+  % field lines N→S
+  \foreach \y in {-0.85,-0.28,0.28,0.85} {
+    \draw[line width=0.45pt,->] (-1.45,\y) -- (1.45,\y);
+  }
+  \draw[line width=0.45pt,->]
+    (-1.45,1.15) .. controls (-0.20,1.45) and (0.20,1.45) .. (1.45,1.15);
+  \draw[line width=0.45pt,->]
+    (-1.45,-1.15) .. controls (-0.20,-1.45) and (0.20,-1.45) .. (1.45,-1.15);
+  % coil cross-sections
+  \draw[line width=0.75pt] (-0.55,-0.32) rectangle (-0.22,0.32);
+  \draw[line width=0.75pt] (0.22,-0.32) rectangle (0.55,0.32);
+  % left: into page (×); right: out of page (·)
+  \draw[line width=0.55pt] (-0.48,-0.18) -- (-0.29,0.18);
+  \draw[line width=0.55pt] (-0.48,0.18) -- (-0.29,-0.18);
+  \fill (0.385,0.00) circle[radius=0.055];
+  \draw[line width=0.45pt] (0.385,0.00) circle[radius=0.12];
+  % forces
+  \draw[line width=0.7pt,->] (-0.385,-0.38) -- (-0.385,-1.05);
+  \node[anchor=north,inner sep=1pt] at (-0.385,-1.05) {$F$};
+  \draw[line width=0.7pt,->] (0.385,0.38) -- (0.385,1.05);
+  \node[anchor=south,inner sep=1pt] at (0.385,1.05) {$F$};
+  % clockwise rotation arrows
+  \draw[line width=0.6pt,->] (-1.85,-1.50) arc[start angle=250,end angle=320,radius=0.85];
+  \draw[line width=0.6pt,->] (1.85,1.50) arc[start angle=70,end angle=140,radius=0.85];
+\end{tikzpicture}%
+}
+\caption{图5.16·磁场旋转时，铝框两边受到转动力矩}
 \end{figure}
 
-\emph{图 5.16 磁场旋转时，铝框两边受到转动力矩}
+\emph{图5.16·磁场旋转时，铝框两边受到转动力矩}
 
 我们知道， 当磁铁转动时，
 磁极间的磁场也一起转动。闭合铝框的两条对边是垂直于磁力线方向的，
@@ -25432,21 +25643,58 @@ U_{R} = \sqrt{3} U_{R 0} \tag{5.11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0335-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.17（a）·三线圈互成120°，中心放小磁针，星形接三相交流电演示旋转磁场
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  \draw[line width=0.8pt] (0,0) circle[radius=1.55];
+  % three coils at 90°, 210°, 330° (approx 120° spacing), as rectangular winding blocks
+  \foreach \ang in {90,210,330} {
+    \begin{scope}[rotate=\ang]
+      \draw[line width=0.7pt,fill=white]
+        (-0.38,1.12) rectangle (0.38,1.55);
+      \foreach \yy in {1.18,1.26,1.34,1.42,1.50} {
+        \draw[line width=0.35pt] (-0.32,\yy) -- (0.32,\yy);
+      }
+    \end{scope}
+  }
+  % magnetic needle (N black / S white diamond)
+  \fill[black] (0,0) -- (0.12,0.08) -- (0.55,0) -- (0.12,-0.08) -- cycle;
+  \draw[line width=0.55pt,fill=white] (0,0) -- (-0.12,0.08) -- (-0.55,0) -- (-0.12,-0.08) -- cycle;
+  \fill (0,0) circle[radius=0.04];
+\end{tikzpicture}%
+}
+\caption{图5.17（a）·三线圈互成$120^{\circ}$，中心放小磁针}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.17（a）·三线圈互成$120^{\circ}$，中心放小磁针}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0335-02.png}}
-\caption{(b)}
+\fitfig{%
+% fig-alt: 图5.17（b）·三线圈互成120°，中心改放小铝框，接通电源后铝框旋转
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  \draw[line width=0.8pt] (0,0) circle[radius=1.55];
+  \foreach \ang in {90,210,330} {
+    \begin{scope}[rotate=\ang]
+      \draw[line width=0.7pt,fill=white]
+        (-0.38,1.12) rectangle (0.38,1.55);
+      \foreach \yy in {1.18,1.26,1.34,1.42,1.50} {
+        \draw[line width=0.35pt] (-0.32,\yy) -- (0.32,\yy);
+      }
+    \end{scope}
+  }
+  % small aluminum frame (top view rectangle, slightly rotated)
+  \begin{scope}[rotate=35]
+    \draw[line width=0.7pt] (-0.42,-0.28) rectangle (0.42,0.28);
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图5.17（b）·三线圈中心改放小铝框}
 \end{figure}
 
-\emph{（b）}
+\emph{图5.17（b）·三线圈中心改放小铝框}
 
-\emph{图 5.17 三相交流电产生旋转磁场}
+\emph{图5.17·三相交流电产生旋转磁场}
 
 源时，可以看到中间小磁针就旋转起来。小磁针的旋转表明三个线圈中间的空间有一个旋转磁场存在着。用小铝框代替小磁针，放在三个线圈中间（图5.17b），当接通电源时，小铝框也会旋转，跟铝框放在旋转的蹄形磁铁中间完全相同。这一结果表明三个按照相隔
 
@@ -25460,11 +25708,67 @@ U_{R} = \sqrt{3} U_{R 0} \tag{5.11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.18 三相异步电动机定子和转子}]{assets/physics-3/fig-p0335-03.png}}
-\caption{图 5.18 三相异步电动机定子和转子}
+\fitfig{%
+% fig-alt: 图5.18·（a）定子外壳与出线盒；（b）转子铁心与转轴；（c）鼠笼铜环与铜条
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.78]
+  % ---- (a) stator ----
+  \begin{scope}[shift={(-4.2,0)}]
+    % body cylinder perspective
+    \draw[line width=0.75pt]
+      (-1.35,-0.85) -- (-1.35,0.95) -- (1.05,0.95) -- (1.05,-0.85) -- cycle;
+    % cooling fins (side)
+    \foreach \x in {-1.20,-0.95,-0.70,-0.45,-0.20,0.05,0.30,0.55,0.80} {
+      \draw[line width=0.4pt] (\x,-0.85) -- (\x,0.95);
+    }
+    % front ring face
+    \draw[line width=0.8pt] (1.05,0.05) circle[radius=0.90];
+    \draw[line width=0.65pt] (1.05,0.05) circle[radius=0.55];
+    % slots on inner
+    \foreach \a in {0,20,...,340} {
+      \draw[line width=0.3pt] ({1.05+0.55*cos(\a)},{0.05+0.55*sin(\a)})
+        -- ({1.05+0.78*cos(\a)},{0.05+0.78*sin(\a)});
+    }
+    % terminal box
+    \draw[line width=0.7pt] (0.15,0.95) rectangle (0.85,1.35);
+    \node[font=\scriptsize,anchor=south] at (0.50,1.35) {出线盒};
+    % feet
+    \draw[line width=0.7pt] (-1.15,-0.85) -- (-1.35,-1.15) -- (-0.75,-1.15) -- (-0.55,-0.85);
+    \draw[line width=0.7pt] (0.25,-0.85) -- (0.05,-1.15) -- (0.65,-1.15) -- (0.85,-0.85);
+    \node[anchor=north] at (0.00,-1.35) {（a）};
+  \end{scope}
+  % ---- (b) rotor ----
+  \begin{scope}[shift={(0.35,0.05)}]
+    \draw[line width=0.75pt]
+      (-0.95,-0.55) -- (-0.95,0.55) -- (0.95,0.55) -- (0.95,-0.55) -- cycle;
+    \foreach \x in {-0.75,-0.50,-0.25,0.00,0.25,0.50,0.75} {
+      \draw[line width=0.35pt] (\x,-0.50) -- (\x,0.50);
+    }
+    % shaft
+    \draw[line width=0.7pt] (-1.55,-0.10) -- (-0.95,-0.10) -- (-0.95,0.10) -- (-1.55,0.10) -- cycle;
+    \draw[line width=0.7pt] (0.95,-0.10) -- (1.55,-0.10) -- (1.55,0.10) -- (0.95,0.10) -- cycle;
+    \node[anchor=north] at (0.00,-0.95) {（b）};
+  \end{scope}
+  % ---- (c) squirrel cage ----
+  \begin{scope}[shift={(3.55,0.05)}]
+    % end rings as ellipses
+    \draw[line width=0.75pt] (-0.85,0) circle[x radius=0.22,y radius=0.55];
+    \draw[line width=0.75pt] (0.85,0) circle[x radius=0.22,y radius=0.55];
+    % bars
+    \foreach \y in {-0.45,-0.30,-0.15,0.00,0.15,0.30,0.45} {
+      \draw[line width=0.55pt] (-0.85,\y) -- (0.85,\y);
+    }
+    \draw[line width=0.45pt,->] (-1.45,0.55) -- (-0.95,0.35);
+    \node[font=\scriptsize,anchor=east] at (-1.45,0.55) {铜环};
+    \draw[line width=0.45pt,->] (0.15,-0.95) -- (0.15,-0.35);
+    \node[font=\scriptsize,anchor=north] at (0.15,-0.95) {铜条};
+    \node[anchor=north] at (0.00,-1.25) {（c）};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图5.18·三相异步电动机定子和转子：（a）定子；（b）转子；（c）鼠笼}
 \end{figure}
 
-\emph{图 5.18 三相异步电动机定子和转子}
+\emph{图5.18·三相异步电动机定子和转子：（a）定子；（b）转子；（c）鼠笼}
 
 当定子绕组中通入三相交流电时，就产生一个旋转磁场。鼠笼式的短路铜条，在旋转磁场作用下，产生感生电流。它们受到磁场力的作用，使转子转动。
 
