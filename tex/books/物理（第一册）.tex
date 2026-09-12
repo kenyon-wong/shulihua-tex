@@ -23337,8 +23337,61 @@ E_{B}=E_{p_B}+E_{k_B} =(mgh-mgh_{1})+mgh_{1}=mgh
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11-25}]{assets/physics-1/fig-p0367-01.png}}
-\caption{图 11-25}
+% fig-alt: 图11·25：左固定壁斜影；竖虚线过平衡位置1；六行弹簧：1原长空心球、2伸长实心球（下左箭v）、1原长实心、3压缩实心（下右箭v）、1原长实心、2伸长空心球。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\L{4.15}
+  \def\s{1.35}
+  \pgfmathsetmacro{\xeq}{\L}
+  \pgfmathsetmacro{\xext}{\L+\s}
+  \pgfmathsetmacro{\xcmp}{\L-\s}
+  \draw[line width=1.1pt] (0,-0.50) -- (0,6.00);
+  \foreach \y in {-0.40,-0.10,0.20,0.50,0.80,1.10,1.40,1.70,2.00,2.30,2.60,2.90,3.20,3.50,3.80,4.10,4.40,4.70,5.00,5.30,5.60,5.90}
+    \draw[line width=0.45pt] (0,\y) -- (-0.32,\y+0.22);
+  \draw[line width=0.45pt,dash pattern=on 2.4pt off 1.5pt] (\xeq,5.90) -- (\xeq,-0.40);
+  \draw[line width=0.55pt] (0,5.40) -- (0.12,5.40);
+  \draw[line width=0.55pt,decorate,decoration={zigzag,segment length=2.05mm,amplitude=1.35mm}]
+    (0.12,5.40) -- ({\xeq-0.16},5.40);
+  \draw[line width=0.55pt] ({\xeq-0.16},5.40) -- (\xeq,5.40);
+  \draw[line width=0.65pt,fill=white] (\xeq,5.40) circle[radius=0.13];
+  \node[anchor=west] at (\xeq+0.16,5.40) {1};
+  \draw[line width=0.55pt] (0,4.32) -- (0.12,4.32);
+  \draw[line width=0.55pt,decorate,decoration={zigzag,segment length=2.35mm,amplitude=1.35mm}]
+    (0.12,4.32) -- ({\xext-0.16},4.32);
+  \draw[line width=0.55pt] ({\xext-0.16},4.32) -- (\xext,4.32);
+  \fill (\xext,4.32) circle[radius=0.13];
+  \node[anchor=west] at (\xext+0.16,4.32) {2};
+  \draw[line width=0.6pt,->] ({\xeq-0.05},3.86) -- ({\xeq-0.85},3.86);
+  \node[anchor=east] at ({\xeq-0.90},3.86) {$v$};
+  \draw[line width=0.55pt] (0,3.24) -- (0.12,3.24);
+  \draw[line width=0.55pt,decorate,decoration={zigzag,segment length=2.05mm,amplitude=1.35mm}]
+    (0.12,3.24) -- ({\xeq-0.16},3.24);
+  \draw[line width=0.55pt] ({\xeq-0.16},3.24) -- (\xeq,3.24);
+  \fill (\xeq,3.24) circle[radius=0.13];
+  \node[anchor=west] at (\xeq+0.16,3.24) {1};
+  \draw[line width=0.55pt] (0,2.16) -- (0.12,2.16);
+  \draw[line width=0.55pt,decorate,decoration={zigzag,segment length=1.75mm,amplitude=1.35mm}]
+    (0.12,2.16) -- ({\xcmp-0.16},2.16);
+  \draw[line width=0.55pt] ({\xcmp-0.16},2.16) -- (\xcmp,2.16);
+  \fill (\xcmp,2.16) circle[radius=0.13];
+  \node[anchor=west] at (\xcmp+0.16,2.16) {3};
+  \draw[line width=0.6pt,->] ({\xeq+0.05},1.70) -- ({\xeq+0.85},1.70);
+  \node[anchor=west] at ({\xeq+0.90},1.70) {$v$};
+  \draw[line width=0.55pt] (0,1.08) -- (0.12,1.08);
+  \draw[line width=0.55pt,decorate,decoration={zigzag,segment length=2.05mm,amplitude=1.35mm}]
+    (0.12,1.08) -- ({\xeq-0.16},1.08);
+  \draw[line width=0.55pt] ({\xeq-0.16},1.08) -- (\xeq,1.08);
+  \fill (\xeq,1.08) circle[radius=0.13];
+  \node[anchor=west] at (\xeq+0.16,1.08) {1};
+  \draw[line width=0.55pt] (0,0.00) -- (0.12,0.00);
+  \draw[line width=0.55pt,decorate,decoration={zigzag,segment length=2.35mm,amplitude=1.35mm}]
+    (0.12,0.00) -- ({\xext-0.16},0.00);
+  \draw[line width=0.55pt] ({\xext-0.16},0.00) -- (\xext,0.00);
+  \draw[line width=0.65pt,fill=white] (\xext,0.00) circle[radius=0.13];
+  \node[anchor=west] at (\xext+0.16,0.00) {2};
+\end{tikzpicture}%
+}
+\caption{图11·25}
 \end{figure}
 
 \emph{图11·25}
@@ -23436,8 +23489,40 @@ v，物体的质量为 m。在高度 h 时动能和势能相等。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-26}]{assets/physics-1/fig-p0371-01.png}}
-\caption{图11-26}
+% fig-alt: 图11·26：斜面长L高h；顶斜影块m，底空心块；中点N垂直斜面（直角标）、mg竖直下；斜面双箭头L，右竖双箭头h。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\al{28}
+  \def\len{5.80}
+  \coordinate (O) at (0,0);
+  \coordinate (T) at ({\len*cos(\al)},{\len*sin(\al)});
+  \coordinate (B) at ({\len*cos(\al)},0);
+  \draw[line width=0.8pt] (O) -- (T) -- (B);
+  \begin{scope}[shift={(T)},rotate=\al]
+    \fill[pattern=north east lines,pattern color=black!70] (-0.28,0.02) rectangle (0.28,0.36);
+    \draw[line width=0.55pt] (-0.28,0.02) rectangle (0.28,0.36);
+  \end{scope}
+  \node[anchor=south west] at ($(T)+(0.22,0.22)$) {$m$};
+  \begin{scope}[shift={(O)},rotate=\al]
+    \draw[line width=0.55pt] (0.06,0.02) rectangle (0.46,0.34);
+  \end{scope}
+  \draw[line width=0.45pt,<->] ($(O)!0.06!(T)+({-1.45*sin(\al)},{1.45*cos(\al)})$)
+    -- ($(O)!0.94!(T)+({-1.45*sin(\al)},{1.45*cos(\al)})$);
+  \node[anchor=south] at ($($(O)!0.38!(T)$)+({-1.70*sin(\al)},{1.70*cos(\al)})$) {$L$};
+  \coordinate (M) at ($(O)!0.50!(T)$);
+  \draw[line width=0.65pt,->] (M) -- ++({-1.05*sin(\al)},{1.05*cos(\al)});
+  \node[anchor=south east] at ($(M)+({-1.12*sin(\al)},{1.12*cos(\al)})$) {$N$};
+  \draw[line width=0.4pt] ($(M)+({-0.18*sin(\al)},{0.18*cos(\al)})$)
+    -- ++({0.18*cos(\al)},{0.18*sin(\al)})
+    -- ++({0.18*sin(\al)},{-0.18*cos(\al)});
+  \draw[line width=0.65pt,->] (M) -- ++(0,-1.25);
+  \node[anchor=north] at ($(M)+(0.02,-1.28)$) {$mg$};
+  \draw[line width=0.55pt,<->] ($(B)+(0.55,0)$) -- ($(T)+(0.55,0)$);
+  \node[anchor=west] at ({(\len*cos(\al))+0.68},{\len*sin(\al)*0.5}) {$h$};
+\end{tikzpicture}%
+}
+
+\caption{图11·26}
 \end{figure}
 
 \emph{图11·26}
@@ -23507,8 +23592,30 @@ v = \sqrt {2 g h}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-1/fig-p0372-01.png}}
-\caption{(第4题)}
+% fig-alt: （第4题）斜面角α，顶圆甲，右圆乙，乙下竖线；右竖双箭头h。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\al{32}
+  \def\hh{2.55}
+  \pgfmathsetmacro{\ww}{\hh/tan(\al)}
+  \coordinate (BL) at (0,0);
+  \coordinate (BR) at (\ww,0);
+  \coordinate (P) at (\ww,\hh);
+  \draw[line width=0.7pt] (BL) -- (BR) -- (P) -- cycle;
+  \draw[line width=0.35pt] (0.48,0) arc[start angle=0,end angle=\al,radius=0.48];
+  \node[anchor=south west] at (0.56,0.06) {$\alpha$};
+  \draw[line width=0.65pt,fill=white] (P) circle[radius=0.13];
+  \node[anchor=south] at ($(P)+(-0.02,0.16)$) {甲};
+  \coordinate (Y) at ({\ww+0.52},\hh);
+  \draw[line width=0.55pt] (P) -- (Y);
+  \draw[line width=0.65pt,fill=white] (Y) circle[radius=0.13];
+  \node[anchor=south] at ($(Y)+(0.02,0.16)$) {乙};
+  \draw[line width=0.5pt] (Y) -- ({\ww+0.52},0);
+  \draw[line width=0.5pt,<->] ({\ww+0.82},\hh) -- ({\ww+0.82},0);
+  \node[anchor=west] at ({\ww+0.92},{\hh*0.5}) {$h$};
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \emph{（第4题）}
@@ -23531,16 +23638,73 @@ v = \sqrt {2 g L} (1 - \cos \alpha)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-1/fig-p0372-02.png}}
-\caption{(第6题)}
+% fig-alt: （第6题）O处斜影支点；竖线至圆B；斜线至圆A；夹角α。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\al{36}
+  \def\LL{3.15}
+  \coordinate (O) at (0,\LL);
+  \coordinate (B) at (0,0);
+  \coordinate (A) at ({\LL*sin(\al)},{\LL-\LL*cos(\al)});
+  \draw[line width=0.7pt] (-0.28,\LL+0.02) -- (0.28,\LL+0.02);
+  \foreach \x in {-0.22,-0.06,0.10,0.22}
+    \draw[line width=0.35pt] (\x,\LL+0.02) -- (\x-0.14,\LL+0.20);
+  \draw[line width=0.65pt] (O) -- (B);
+  \draw[line width=0.65pt] (O) -- (A);
+  \draw[line width=0.6pt,fill=white] (B) circle[radius=0.10];
+  \draw[line width=0.6pt,fill=white] (A) circle[radius=0.10];
+  \node[anchor=south] at ($(O)+(0,0.22)$) {$O$};
+  \node[anchor=west] at ($(A)+(0.12,0)$) {$A$};
+  \node[anchor=east] at ($(B)+(-0.14,0)$) {$B$};
+  \draw[line width=0.35pt] ($(O)+(0,-0.55)$) arc[start angle=-90,end angle={-90+\al},radius=0.55];
+  \node[anchor=north] at (0.28,{\LL-0.72}) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \emph{（第6题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-1/fig-p0372-03.png}}
-\caption{(第7题)}
+% fig-alt: （第7题）斜槽A→B长L；圆心O半径R，圆心角2α，底C；D出槽后抛物线至地E；B高水平虚线。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.85}
+  \def\al{40}
+  \def\inc{56}
+  \coordinate (O) at (0,\R);
+  \coordinate (C) at (0,0);
+  \coordinate (B) at ({-\R*sin(\al)},{\R-\R*cos(\al)});
+  \coordinate (D) at ({\R*sin(\al)},{\R-\R*cos(\al)});
+  \coordinate (A) at ($(B)+({-2.25*cos(\inc)},{2.25*sin(\inc)})$);
+  \coordinate (E) at (3.85,0);
+  \draw[line width=0.7pt] (A) -- (B);
+  \fill (A) circle[radius=0.035];
+  \node[anchor=south east] at ($(A)+(-0.05,0.05)$) {$A$};
+  \node[anchor=south] at ($($(A)!0.40!(B)$)+({-0.22*sin(\inc)},{0.22*cos(\inc)})$) {$L$};
+  \draw[line width=0.4pt,dash pattern=on 2pt off 1.3pt] ($(B)+(-1.25,0)$) -- (B);
+  \node[anchor=south east] at ($(B)+(-0.10,0.10)$) {$B$};
+  \draw[line width=0.5pt] (O) -- (B);
+  \draw[line width=0.55pt] (O) -- (C);
+  \node[anchor=south] at ($(O)+(0.02,0.12)$) {$O$};
+  \node[anchor=south east] at ($($(O)!0.50!(B)$)+(-0.04,0.10)$) {$R$};
+  \draw[line width=0.4pt] ($(O)+(0,-0.50)$) arc[start angle=-90,end angle={-90-\al},radius=0.50];
+  \node[anchor=north] at (-0.42,{\R-0.62}) {$\alpha$};
+  \draw[line width=0.8pt] (B) arc[start angle={270-\al},end angle={270+\al},radius=\R];
+  \node[anchor=north] at ($(C)+(0.02,-0.30)$) {$C$};
+  \node[anchor=south west] at ($(D)+(0.08,0.06)$) {$D$};
+  \draw[line width=0.7pt] (D)
+    .. controls ($(D)+({1.15*cos(\al)},{0.80*sin(\al)})$)
+            and ($(E)+(-0.20,0.90)$) .. (E);
+  \draw[line width=0.55pt,fill=white] (E) circle[radius=0.075];
+  \node[anchor=north] at ($(E)+(0,-0.14)$) {$E$};
+  \draw[line width=0.7pt] (-1.65,0) -- (4.25,0);
+  \foreach \x in {-1.50,-1.20,-0.90,-0.60,-0.30,0.00,0.30,0.60,0.90,1.20,1.50,1.80,2.10,2.40,2.70,3.00,3.30,3.60,3.90,4.15}
+    \draw[line width=0.32pt] (\x,0) -- (\x-0.18,-0.18);
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
 
 \emph{（第7题）}
@@ -23575,8 +23739,71 @@ v = \sqrt {2 g L} (1 - \cos \alpha)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11·27}]{assets/physics-1/fig-p0374-01.png}}
-\caption{图 11·27}
+% fig-alt: 图11·27：（a）斜面楔木纹；左实心车v1与h1，右空心车v2与竖h2，斜面标s、θ；（b）车受力：沿斜面F、f、mg sinθ，中虚线圆心。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\al{20}
+  \draw[line width=0.85pt] (0.0,0) -- (7.6,0);
+  \coordinate (WL) at (0.85,0);
+  \coordinate (WR) at (6.70,0);
+  \coordinate (WT) at (6.70,2.35);
+  \fill[pattern=north east lines,pattern color=black!40] (WL) -- (WR) -- (WT) -- cycle;
+  \draw[line width=0.75pt] (WL) -- (WT) -- (WR) -- cycle;
+  \draw[line width=0.5pt] (WT) -- ++(0.42,0.22) -- ++({0.85-6.70},{0-2.35}) -- (WL);
+  \draw[line width=0.5pt] (WR) -- ++(0.42,0.22) -- ++(0,2.35);
+  \draw[line width=0.35pt] (1.40,0) arc[start angle=0,end angle=\al,radius=0.55];
+  \node[anchor=south west] at (1.48,0.04) {$\theta$};
+  \draw[line width=0.45pt,dashed] (6.35,2.22) -- (6.35,0);
+  \node[anchor=east] at (6.22,1.15) {$h_{2}$};
+  \coordinate (CL) at ({0.85+2.05*cos(\al)},{2.05*sin(\al)});
+  \begin{scope}[shift={(CL)},rotate=\al]
+    \fill[black!82] (0.00,0.16) -- (1.55,0.16) -- (1.55,0.62) -- (0.00,0.62) -- cycle;
+    \fill[black!55] (1.55,0.16) -- (1.82,0.34) -- (1.82,0.80) -- (1.55,0.62) -- cycle;
+    \fill[black!70] (0.00,0.62) -- (1.55,0.62) -- (1.82,0.80) -- (0.27,0.80) -- cycle;
+    \draw[line width=0.55pt] (0.00,0.16) -- (1.55,0.16) -- (1.55,0.62) -- (0.00,0.62) -- cycle;
+    \draw[line width=0.5pt] (1.55,0.16) -- (1.82,0.34) -- (1.82,0.80) -- (1.55,0.62);
+    \draw[line width=0.5pt] (0.00,0.62) -- (0.27,0.80) -- (1.82,0.80);
+    \draw[line width=0.6pt,fill=white] (0.32,0.08) circle[radius=0.13];
+    \draw[line width=0.6pt,fill=white] (1.22,0.08) circle[radius=0.13];
+  \end{scope}
+  \node[anchor=south] at ($(CL)+(0.70,1.05)$) {$v_{1}$};
+  \draw[line width=0.5pt,<->] ($(CL)+(-0.22,0.02)$) -- ($(CL)+(-0.22,{-2.05*sin(\al)})$);
+  \node[anchor=east] at ($(CL)+(-0.30,{0.55*2.05*sin(\al)})$) {$h_{1}$};
+  \coordinate (CR) at ({0.85+4.70*cos(\al)},{4.70*sin(\al)});
+  \begin{scope}[shift={(CR)},rotate=\al]
+    \draw[line width=0.65pt] (0.00,0.16) -- (1.70,0.16) -- (1.70,0.66) -- (0.00,0.66) -- cycle;
+    \draw[line width=0.55pt] (1.70,0.16) -- (2.00,0.36) -- (2.00,0.86) -- (1.70,0.66);
+    \draw[line width=0.55pt] (0.00,0.66) -- (0.30,0.86) -- (2.00,0.86);
+    \draw[line width=0.45pt] (0.00,0.16) -- (0.30,0.36) -- (0.30,0.86);
+    \draw[line width=0.6pt] (0.38,0.08) circle[radius=0.13];
+    \draw[line width=0.6pt] (1.38,0.08) circle[radius=0.13];
+  \end{scope}
+  \node[anchor=south] at ($(CR)+(0.85,1.15)$) {$v_{2}$};
+  \node[anchor=south] at ($($(CL)!0.80!(CR)$)+({-0.15*sin(\al)},{0.55*cos(\al)})$) {$s$};
+  \node[anchor=north] at (3.8,-0.15) {$(a)$};
+  \begin{scope}[shift={(8.55,0.55)}]
+    \def\bt{17}
+    \draw[line width=0.65pt] (0.0,0) -- (3.85,0);
+    \foreach \x in {0.15,0.40,0.65,0.90,1.15,1.40,1.65,1.90,2.15,2.40,2.65,2.90,3.15,3.40,3.65}
+      \draw[line width=0.28pt] (\x,0) -- (\x-0.16,-0.16);
+    \begin{scope}[rotate=\bt]
+      \draw[line width=0.7pt] (0.40,0.24) rectangle (2.45,0.92);
+      \draw[line width=0.4pt,dashed] (0.40,0.58) -- (2.45,0.58);
+      \draw[line width=0.5pt] (1.425,0.58) circle[radius=0.08];
+      \draw[line width=0.55pt] (0.80,0.12) circle[radius=0.12];
+      \draw[line width=0.55pt] (2.00,0.12) circle[radius=0.12];
+      \draw[line width=0.7pt,->] (2.45,0.58) -- (3.40,0.58);
+      \node[anchor=south west] at (3.42,0.62) {$F$};
+      \draw[line width=0.6pt,->] (0.40,0.28) -- (-0.55,0.28);
+      \node[anchor=north east] at (-0.15,-0.02) {$f$};
+      \draw[line width=0.6pt,->] (0.40,0.78) -- (-0.50,0.78);
+    \end{scope}
+    \node[anchor=south east] at (0.15,1.35) {$mg\sin\theta$};
+    \node[anchor=north] at (1.9,-0.85) {$(b)$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图11·27}
 \end{figure}
 
 \emph{图 11·27}
@@ -24121,8 +24348,59 @@ F\Delta t = \Delta(mv) \tag{12.6}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图12-1}]{assets/physics-1/fig-p0389-01.png}}
-\caption{图12-1}
+% fig-alt: 图12·1：左列汽锤下落：高处斜影块v0=0与竖h；砧上v1=√2gh、v2=0，底双箭头Δt；右自由下落仅G；撞击锤G下F上；砧受F'、G'、N。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \fill[pattern=north east lines,pattern color=black!70] (1.10,3.70) rectangle (1.80,4.32);
+  \draw[line width=0.55pt] (1.10,3.70) rectangle (1.80,4.32);
+  \node[anchor=west] at (1.88,4.10) {$v_{0}=0$};
+  \draw[line width=0.6pt] (0.80,1.05) rectangle (1.90,2.05);
+  \fill[black!85] (1.90,1.05) -- (2.32,1.05) -- (1.90,1.48) -- cycle;
+  \draw[line width=0.45pt] (1.90,1.05) -- (2.32,1.05) -- (1.90,1.48);
+  \fill[pattern=north east lines,pattern color=black!70] (1.05,2.05) rectangle (1.70,2.62);
+  \draw[line width=0.55pt] (1.05,2.05) rectangle (1.70,2.62);
+  \draw[line width=0.55pt,->] (1.95,2.62) -- (1.95,2.18);
+  \node[anchor=west] at (2.02,2.48) {$v_{1}=\sqrt{2gh}$};
+  \draw[line width=0.55pt] (0.65,1.05) -- (2.40,1.05);
+  \foreach \x in {0.75,1.00,1.25,1.50,1.75,2.00,2.25}
+    \draw[line width=0.28pt] (\x,1.05) -- (\x-0.14,0.88);
+  \draw[line width=0.55pt,<->] (0.72,3.70) -- (0.72,2.62);
+  \node[anchor=east] at (0.64,3.16) {$h$};
+  \begin{scope}[shift={(3.15,0)}]
+    \draw[line width=0.6pt] (0.80,1.05) rectangle (1.90,2.05);
+    \fill[black!85] (1.90,1.05) -- (2.32,1.05) -- (1.90,1.48) -- cycle;
+    \draw[line width=0.45pt] (1.90,1.05) -- (2.32,1.05) -- (1.90,1.48);
+    \fill[pattern=north east lines,pattern color=black!70] (1.05,2.05) rectangle (1.70,2.62);
+    \draw[line width=0.55pt] (1.05,2.05) rectangle (1.70,2.62);
+    \node[anchor=west] at (1.78,2.48) {$v_{2}=0$};
+    \draw[line width=0.55pt] (0.65,1.05) -- (2.40,1.05);
+    \foreach \x in {0.75,1.00,1.25,1.50,1.75,2.00,2.25}
+      \draw[line width=0.28pt] (\x,1.05) -- (\x-0.14,0.88);
+  \end{scope}
+  \draw[line width=0.5pt,<->] (1.35,0.62) -- (5.00,0.62);
+  \node[anchor=north] at (3.18,0.60) {$\Delta t$};
+  \fill[pattern=north east lines,pattern color=black!70] (6.35,3.70) rectangle (6.95,4.32);
+  \draw[line width=0.55pt] (6.35,3.70) rectangle (6.95,4.32);
+  \draw[line width=0.6pt,->] (6.65,3.70) -- (6.65,3.05);
+  \node[anchor=east] at (6.58,3.28) {$G$};
+  \fill[pattern=north east lines,pattern color=black!70] (6.20,2.05) rectangle (6.80,2.62);
+  \draw[line width=0.55pt] (6.20,2.05) rectangle (6.80,2.62);
+  \draw[line width=0.6pt,->] (6.50,2.05) -- (6.50,1.58);
+  \node[anchor=east] at (6.42,1.80) {$G$};
+  \draw[line width=0.6pt,->] (6.50,1.42) -- (6.50,2.02);
+  \node[anchor=west] at (6.60,1.38) {$F$};
+  \draw[line width=0.6pt] (7.85,1.25) rectangle (9.00,2.10);
+  \fill[black!85] (9.00,1.25) -- (9.48,1.25) -- (9.00,1.68) -- cycle;
+  \draw[line width=0.45pt] (9.00,1.25) -- (9.48,1.25) -- (9.00,1.68);
+  \draw[line width=0.65pt,->] (8.42,2.85) -- (8.42,2.16);
+  \node[anchor=east] at (8.34,2.58) {$F'$};
+  \draw[line width=0.55pt,->] (8.15,1.25) -- (8.15,0.78);
+  \node[anchor=east] at (8.08,0.95) {$G'$};
+  \draw[line width=0.55pt,->] (8.70,0.78) -- (8.70,1.22);
+  \node[anchor=west] at (8.78,0.82) {$N$};
+\end{tikzpicture}%
+}
+\caption{图12·1}
 \end{figure}
 
 \emph{图12·1}
@@ -24179,8 +24457,38 @@ F\Delta t = \Delta(mv) \tag{12.6}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0391-01.png}}
-\caption{(a)}
+% fig-alt: （a）运动员戴帽前倾，双手前伸迎飞来棒球；球带轨迹。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % head
+  \draw[line width=0.7pt,fill=white] (0.20,3.52) circle[radius=0.30];
+  % cap crown
+  \fill[black] (0.20,3.52) ++(200:0.30) arc[start angle=200,end angle=-20,radius=0.30] -- cycle;
+  \draw[line width=0.8pt] (-0.08,3.62) -- (0.62,3.60);
+  \fill (0.10,3.50) circle[radius=0.028];
+  \fill (0.30,3.50) circle[radius=0.028];
+  % shirt
+  \draw[line width=0.65pt] (-0.05,3.22) -- (-0.40,2.50) -- (-0.44,1.72) -- (0.52,1.72) -- (0.50,2.52) -- (0.32,3.22);
+  \draw[line width=0.55pt] (-0.44,1.86) -- (0.52,1.86);
+  % arms both reaching right
+  \draw[line width=0.6pt] (-0.18,2.72) -- (0.62,2.45) -- (1.22,2.70);
+  \draw[line width=0.7pt] (0.40,2.70) -- (0.88,2.40) -- (1.32,2.68);
+  \draw[line width=0.5pt] (1.22,2.70) .. controls (1.40,2.90) .. (1.52,3.02);
+  \draw[line width=0.5pt] (1.24,2.72) .. controls (1.46,2.84) .. (1.60,2.92);
+  \draw[line width=0.5pt] (1.28,2.68) .. controls (1.48,2.70) .. (1.62,2.74);
+  \draw[line width=0.5pt] (1.32,2.68) .. controls (1.48,2.58) .. (1.55,2.50);
+  \draw[line width=0.4pt] (-0.78,2.60) -- (-0.42,2.68);
+  \draw[line width=0.4pt] (-0.76,2.30) -- (-0.42,2.40);
+  \draw[line width=0.65pt,fill=white] (1.95,2.86) circle[radius=0.12];
+  \draw[line width=0.6pt] (2.12,2.94) -- (2.78,3.18);
+  \draw[line width=0.7pt] (-0.28,1.72) -- (-0.55,0.55);
+  \draw[line width=0.7pt] (0.36,1.72) -- (0.55,0.55);
+  \fill[black] (-0.78,0.48) -- (-0.28,0.50) -- (-0.26,0.66) -- (-0.80,0.64) -- cycle;
+  \fill[black] (0.38,0.50) -- (0.84,0.48) -- (0.86,0.64) -- (0.40,0.66) -- cycle;
+\end{tikzpicture}%
+}
+
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
