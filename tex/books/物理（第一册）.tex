@@ -30820,16 +30820,94 @@ iii。向心力不是一种虚构的特殊类型的力，而是另一个物体�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/physics-1/fig-p0478-01.png}}
-\caption{(第11题)}
+% fig-alt: （第11题）：竖轴$O'O$，顶虚线$A,B,C$；三道共心$O'$的$1/4$圆槽至$A',B',C'$；出口水平速度$v_1,v_2,v_3$；自$A'$虚线抛物线落地。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (Op) at (0,4.2);
+  \coordinate (O) at (0,0);
+  \draw[line width=0.55pt] (Op) -- (O);
+  \draw[line width=0.55pt] (O) -- (4.6,0);
+  \node[anchor=south] at (0,4.28) {$O'$};
+  \node[anchor=north east] at (-0.02,-0.05) {$O$};
+  % top dashed
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (Op) -- (-4.35,4.2);
+  % radii (quarter circles centered at O')
+  \def\rA{1.15}
+  \def\rB{2.35}
+  \def\rC{3.55}
+  \coordinate (A) at ({-\rA},4.2);
+  \coordinate (B) at ({-\rB},4.2);
+  \coordinate (C) at ({-\rC},4.2);
+  \coordinate (Ap) at (0,{4.2-\rA});
+  \coordinate (Bp) at (0,{4.2-\rB});
+  \coordinate (Cp) at (0,{4.2-\rC});
+  \fill (A) circle[radius=0.045];
+  \fill (B) circle[radius=0.045];
+  \fill (C) circle[radius=0.045];
+  \node[anchor=south] at (A) {$A$};
+  \node[anchor=south] at (B) {$B$};
+  \node[anchor=south] at (C) {$C$};
+  \draw[line width=0.55pt] (A) arc[start angle=180,end angle=270,radius=\rA];
+  \draw[line width=0.55pt] (B) arc[start angle=180,end angle=270,radius=\rB];
+  \draw[line width=0.55pt] (C) arc[start angle=180,end angle=270,radius=\rC];
+  \fill (Ap) circle[radius=0.04];
+  \fill (Bp) circle[radius=0.04];
+  \fill (Cp) circle[radius=0.04];
+  \node[anchor=east] at (-0.08,{4.2-\rA}) {$A'$};
+  \node[anchor=east] at (-0.08,{4.2-\rB}) {$B'$};
+  \node[anchor=east] at (-0.08,{4.2-\rC}) {$C'$};
+  % velocities
+  \draw[line width=0.55pt,->] (Ap) -- ++(0.95,0);
+  \node[anchor=south west] at ($(Ap)+(0.55,0.04)$) {$v_1$};
+  \draw[line width=0.55pt,->] (Bp) -- ++(0.95,0);
+  \node[anchor=south west] at ($(Bp)+(0.55,0.04)$) {$v_2$};
+  \draw[line width=0.55pt,->] (Cp) -- ++(0.95,0);
+  \node[anchor=south west] at ($(Cp)+(0.55,0.04)$) {$v_3$};
+  % dashed projectile from A'
+  \draw[line width=0.45pt,dash pattern=on 1.3pt off 1.0pt]
+    plot[domain=0:2.85,samples=40] (\x,{4.2-\rA - 0.38*\x*\x});
+\end{tikzpicture}%
+}
+\caption{（第11题）}
 \end{figure}
 
 \emph{（第11题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/physics-1/fig-p0478-02.png}}
-\caption{(第12题)}
+% fig-alt: （第12题）：水平板$P$中心小孔；小球$m$以半径$R$圆周运动；细线穿孔下悬重物$M$；虚线椭圆轨迹示转向。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % parallelogram plate
+  \coordinate (Psw) at (0,1.55);
+  \coordinate (Pse) at (4.6,1.55);
+  \coordinate (Pne) at (5.55,3.35);
+  \coordinate (Pnw) at (0.95,3.35);
+  \draw[line width=0.55pt] (Psw) -- (Pse) -- (Pne) -- (Pnw) -- cycle;
+  \node[anchor=north west] at ($(Psw)+(0.12,0.02)$) {$P$};
+  % hole / sleeve at center
+  \coordinate (H) at (2.75,2.45);
+  \draw[line width=0.5pt,fill=white] ($(H)+(-0.08,-0.12)$) rectangle ($(H)+(0.08,0.18)$);
+  \draw[line width=0.45pt,fill=black!15] ($(H)+(-0.05,-0.02)$) rectangle ($(H)+(0.05,0.10)$);
+  % dashed elliptical path
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt]
+    (H) ++(1.55,0) ellipse[x radius=1.55,y radius=0.62];
+  % direction arrows on ellipse (clockwise as viewed from above ~ right side forward)
+  \draw[line width=0.45pt,->] ($(H)+(-0.35,0.58)$) -- ($(H)+(0.15,0.62)$);
+  \draw[line width=0.45pt,->] ($(H)+(0.35,-0.58)$) -- ($(H)+(-0.15,-0.62)$);
+  % radius and mass m
+  \coordinate (Mm) at ($(H)+(1.55,0)$);
+  \draw[line width=0.5pt] (H) -- (Mm);
+  \fill (Mm) circle[radius=0.07];
+  \node[anchor=south west] at ($(Mm)+(0.05,0.02)$) {$m$};
+  \node[anchor=south] at ($(H)!0.55!(Mm)+(0,0.06)$) {$R$};
+  % hanging M
+  \draw[line width=0.45pt] (H) -- ++(0,-1.55);
+  \draw[line width=0.55pt,fill=white] ($(H)+(-0.28,-2.05)$) rectangle ($(H)+(0.28,-1.55)$);
+  \node[anchor=west] at ($(H)+(0.34,-1.80)$) {$M$};
+\end{tikzpicture}%
+}
+\caption{（第12题）}
 \end{figure}
 
 \emph{（第12题）}
@@ -30884,8 +30962,57 @@ R 和它们的周期 T：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图14-1}]{assets/physics-1/fig-p0481-01.png}}
-\caption{图14-1}
+% fig-alt: 图14·1：椭圆轨道，焦点标“日”；近焦点扇形$AB$与远焦点扇形$CD$斜线等面积。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\a{2.55}
+  \def\b{1.35}
+  \pgfmathsetmacro{\c}{sqrt(\a*\a-\b*\b)}
+  \coordinate (O) at (0,0);
+  \coordinate (S) at ({\c},0); % sun at right focus
+  \draw[line width=0.55pt] (O) ellipse[x radius=\a,y radius=\b];
+  \fill (S) circle[radius=0.035];
+  \node[anchor=north] at ($(S)+(0,-0.08)$) {日};
+  % points: A,B near perihelion (right); C,D farther left
+  % angles from ellipse center for points on ellipse
+  \pgfmathsetmacro{\ax}{\a*cos(-28)}
+  \pgfmathsetmacro{\ay}{\b*sin(-28)}
+  \pgfmathsetmacro{\bx}{\a*cos(38)}
+  \pgfmathsetmacro{\by}{\b*sin(38)}
+  \pgfmathsetmacro{\cx}{\a*cos(128)}
+  \pgfmathsetmacro{\cy}{\b*sin(128)}
+  \pgfmathsetmacro{\dx}{\a*cos(158)}
+  \pgfmathsetmacro{\dy}{\b*sin(158)}
+  \coordinate (A) at ({\ax},{\ay});
+  \coordinate (B) at ({\bx},{\by});
+  \coordinate (C) at ({\cx},{\cy});
+  \coordinate (D) at ({\dx},{\dy});
+  \fill (A) circle[radius=0.03];
+  \fill (B) circle[radius=0.03];
+  \fill (C) circle[radius=0.03];
+  \fill (D) circle[radius=0.03];
+  \node[anchor=north west] at ($(A)+(0.02,-0.02)$) {$A$};
+  \node[anchor=south west] at ($(B)+(0.02,0.02)$) {$B$};
+  \node[anchor=south] at ($(C)+(0,0.06)$) {$C$};
+  \node[anchor=east] at ($(D)+(-0.06,0)$) {$D$};
+  % hatched sectors via clip
+  \begin{scope}
+    \clip (S) -- (A) arc[start angle=-28,end angle=38,x radius=\a,y radius=\b] -- cycle;
+    \foreach \s in {-3.2,-2.9,...,3.2}
+      \draw[line width=0.22pt] ({\s-2.2},{-2.2}) -- ({\s+2.2},{2.2});
+  \end{scope}
+  \draw[line width=0.4pt] (S) -- (A);
+  \draw[line width=0.4pt] (S) -- (B);
+  \begin{scope}
+    \clip (S) -- (C) arc[start angle=128,end angle=158,x radius=\a,y radius=\b] -- cycle;
+    \foreach \s in {-3.2,-2.9,...,3.2}
+      \draw[line width=0.22pt] ({\s-2.2},{-2.2}) -- ({\s+2.2},{2.2});
+  \end{scope}
+  \draw[line width=0.4pt] (S) -- (C);
+  \draw[line width=0.4pt] (S) -- (D);
+\end{tikzpicture}%
+}
+\caption{图14·1}
 \end{figure}
 
 \emph{图14·1}
@@ -30967,8 +31094,41 @@ F=G\frac{m_{1}m_{2}}{r^{2}} \tag{14.1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 14-2}]{assets/physics-1/fig-p0483-01.png}}
-\caption{图 14-2}
+% fig-alt: 图14·2：石英丝$D$悬轻棒，中有小镜；两端小球$m_1,m_2$；大球$M_1$在$m_1$前方、$M_2$在$m_2$后方，各立于圆座支架。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % top support
+  \draw[line width=0.7pt] (-0.55,5.55) -- (0.55,5.55);
+  % fiber D
+  \draw[line width=0.4pt] (0,5.55) -- (0,3.15);
+  \node[anchor=east] at (-0.08,4.55) {$D$};
+  % small mirror
+  \draw[line width=0.5pt,fill=white] (-0.22,3.15) rectangle (0.22,3.55);
+  \node[anchor=west] at (0.28,3.35) {小镜};
+  % rod
+  \draw[line width=0.55pt] (-2.15,3.15) -- (2.15,3.15);
+  % small balls
+  \fill (-2.15,3.15) circle[radius=0.14];
+  \fill (2.15,3.15) circle[radius=0.14];
+  \node[anchor=north] at (-2.15,2.95) {$m_1$};
+  \node[anchor=north] at (2.15,2.95) {$m_2$};
+  % large M1 lower-front-left
+  \begin{scope}[shift={(-2.55,1.35)}]
+    \fill (0,0.55) circle[radius=0.48];
+    \draw[line width=0.45pt] (0,0.05) -- (0,-0.55);
+    \draw[line width=0.5pt,fill=white] (0,-0.55) ellipse[x radius=0.42,y radius=0.14];
+    \node[anchor=west] at (0.55,0.55) {$M_1$};
+  \end{scope}
+  % large M2 upper-back-right
+  \begin{scope}[shift={(2.55,4.05)}]
+    \fill (0,0.15) circle[radius=0.48];
+    \draw[line width=0.45pt] (0,-0.35) -- (0,-0.95);
+    \draw[line width=0.5pt,fill=white] (0,-0.95) ellipse[x radius=0.42,y radius=0.14];
+    \node[anchor=west] at (0.55,0.20) {$M_2$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图14·2}
 \end{figure}
 
 \emph{图14·2}
@@ -30985,8 +31145,49 @@ M_{2}=2F'l
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图14-3}]{assets/physics-1/fig-p0484-01.png}}
-\caption{图14-3}
+% fig-alt: 图14·3：圆心$O$，水平$AA$；扭至$A'A'$夹角$\theta$；大球位于$B$，$\angle AOB=\theta_0$；半径$l$；$A'$处引力$F$指向$B$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{2.35}
+  \pgfmathsetmacro{\AngA}{28}
+  \pgfmathsetmacro{\AngB}{55}
+  \pgfmathsetmacro{\AngAh}{14}
+  \pgfmathsetmacro{\AngBh}{27.5}
+  \pgfmathsetmacro{\Fsa}{32}
+  \pgfmathsetmacro{\Fea}{47}
+  \pgfmathsetmacro{\Fmid}{41.5}
+  \coordinate (O) at (0,0);
+  \draw[line width=0.5pt] (O) circle[radius=\R];
+  \draw[line width=0.5pt] (-\R,0) -- (\R,0);
+  \node[anchor=west] at (2.41,0) {$A$};
+  \node[anchor=east] at (-2.41,0) {$A$};
+  \draw[line width=0.5pt] (\AngA:\R) -- ({180+\AngA}:\R);
+  \node[anchor=south west] at (\AngA:2.43) {$A'$};
+  \node[anchor=north east] at ({180+\AngA}:2.43) {$A'$};
+  \draw[line width=0.5pt] (\AngB:\R) -- ({180+\AngB}:\R);
+  \fill (\AngB:\R) circle[radius=0.11];
+  \fill ({180+\AngB}:\R) circle[radius=0.11];
+  \node[anchor=south west] at (\AngB:2.51) {$B$};
+  \node[anchor=north east] at ({180+\AngB}:2.51) {$B$};
+  \fill (O) circle[radius=0.035];
+  \node[anchor=north west] at (0.06,-0.06) {$O$};
+  \draw[line width=0.35pt] (0.55,0) arc[start angle=0,end angle=\AngA,radius=0.55];
+  \node[anchor=west] at (\AngAh:0.72) {$\theta$};
+  \draw[line width=0.35pt] (0.95,0) arc[start angle=0,end angle=\AngB,radius=0.95];
+  \node[anchor=west] at (\AngBh:1.18) {$\theta_0$};
+  \draw[line width=0.35pt] (-0.55,0) arc[start angle=180,end angle={180+\AngA},radius=0.55];
+  \node[anchor=east] at ({180+\AngAh}:0.72) {$\theta$};
+  \draw[line width=0.35pt] (-0.95,0) arc[start angle=180,end angle={180+\AngB},radius=0.95];
+  \node[anchor=east] at ({180+\AngBh}:1.18) {$\theta_0$};
+  \draw[line width=0.5pt,->] (\Fsa:\R) arc[start angle=\Fsa,end angle=\Fea,radius=\R];
+  \node[anchor=south west] at (\Fmid:2.57) {$F$};
+  \draw[line width=0.5pt,->] ({180+\Fsa}:\R) arc[start angle={180+\Fsa},end angle={180+\Fea},radius=\R];
+  \node[anchor=north east] at ({180+\Fmid}:2.57) {$F$};
+  \draw[line width=0.45pt,->] (O) -- (-32:2.16);
+  \node[anchor=north west] at (-32:1.25) {$l$};
+\end{tikzpicture}%
+}
+\caption{图14·3}
 \end{figure}
 
 \emph{图14·3}
@@ -31199,11 +31400,38 @@ g _ {h} = \frac {G M}{(R _ {0} + h) ^ {2}} \tag {14.3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 14·4}]{assets/physics-1/fig-p0488-01.png}}
-\caption{图 14·4}
+% fig-alt: 图14·4：地球圆，$O$；半径$R_0$；竖直至$P$，高$h$；表面$g_0$与$P$处$g_h$向下。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{2.05}
+  \def\h{1.15}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (0,{\R+\h});
+  \draw[line width=0.55pt] (O) circle[radius=\R];
+  \fill (O) circle[radius=0.035];
+  \node[anchor=north east] at (-0.06,-0.06) {$O$};
+  % radius Re/R0 to lower-right
+  \draw[line width=0.5pt,->] (O) -- ({-40:\R});
+  \node[anchor=north west] at ({-40:\R*0.55}) {$R_0$};
+  % vertical axis
+  \draw[line width=0.5pt] (O) -- (P);
+  \fill (P) circle[radius=0.04];
+  \node[anchor=south] at ($(P)+(0,0.06)$) {$P$};
+  % brace h
+  \draw[line width=0.4pt,decoration={brace,amplitude=4pt,mirror},decorate]
+    (-0.18,\R) -- (-0.18,{\R+\h});
+  \node[anchor=east] at (-0.42,{(\R+\R+\h)/2}) {$h$};
+  % g vectors
+  \draw[line width=0.55pt,->] (0.28,{\R+\h-0.05}) -- ++(0,-0.55);
+  \node[anchor=west] at (0.38,{\R+\h-0.28}) {$g_h$};
+  \draw[line width=0.55pt,->] (0.28,{\R-0.02}) -- ++(0,-0.55);
+  \node[anchor=west] at (0.38,{\R-0.28}) {$g_0$};
+\end{tikzpicture}%
+}
+\caption{图14·4}
 \end{figure}
 
-\emph{图 14·4}
+\emph{图14·4}
 
 \[
 g _ {h} = \frac {R _ {0} ^ {2}}{(R _ {0} + h) ^ {2}} g _ {0} \tag {14.4}
@@ -31316,7 +31544,27 @@ h ^ {\prime} = \frac {g}{g _ {0}} h = \frac {9.8}{24.6} \times 1 \text{米} = 0.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图14·5}]{assets/physics-1/fig-p0490-01.png}}
+% fig-alt: 图14·5：影线地面；高处水平$v_0$；四条嵌套抛物线落点渐远。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\H{2.35}
+  \coordinate (L) at (0,\H);
+  \draw[line width=0.55pt] (0,0) -- (0,{\H+0.25});
+  \draw[line width=0.55pt] (0,0) -- (5.4,0);
+  % ground hatch
+  \foreach \x in {0.15,0.45,...,5.25}
+    \draw[line width=0.28pt] (\x,0) -- ++(-0.18,-0.22);
+  \fill (L) circle[radius=0.05];
+  \draw[line width=0.55pt,->] (L) -- ++(0.95,0);
+  \node[anchor=south] at ($(L)+(0.45,0.06)$) {$v_0$};
+  % four nested parabolas y = H (1 - (x/R)^2)
+  \foreach \R/\samp in {1.55/28, 2.55/36, 3.55/44, 4.65/52} {
+    \draw[line width=0.5pt]
+      plot[domain=0:\R,samples=\samp] (\x,{\H*(1-(\x/\R)*(\x/\R))});
+    \fill ({\R},0) circle[radius=0.045];
+  }
+\end{tikzpicture}%
+}
 \caption{图14·5}
 \end{figure}
 
@@ -31346,8 +31594,75 @@ VI
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图14-6}]{assets/physics-1/fig-p0491-01.png}}
-\caption{图14-6}
+% fig-alt: 图14·6：地球圆$O$半径$R$；顶点$P$水平$v_0$；椭圆$I,II,III$落$A,B$等；圆周$IV$；椭圆$V$远地点$P'$；逃逸$VI$；焦点$O_1,O_2,O_3$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\Re{2.05}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (0,\Re);
+  \draw[line width=0.6pt] (O) circle[radius=\Re];
+  \fill (O) circle[radius=0.035];
+  \node[anchor=north east] at (-0.08,-0.05) {$O$};
+  % radius R
+  \draw[line width=0.45pt,<->] (O) -- ({200:\Re});
+  \node[anchor=east] at ({200:\Re*0.55}) {$R$};
+  % vertical diameter
+  \draw[line width=0.4pt] (0,{-\Re-1.55}) -- (0,{\Re+0.15});
+  \fill (P) circle[radius=0.04];
+  \node[anchor=south] at (0,{\Re+0.12}) {$P$};
+  \draw[line width=0.5pt,->] (P) -- ++(0.85,0);
+  \node[anchor=south] at ($(P)+(0.42,0.05)$) {$v_0$};
+  % foci O1 O2 O3 on axis
+  \coordinate (O1) at (0,1.35);
+  \coordinate (O2) at (0,0.85);
+  \coordinate (O3) at (0,0.40);
+  \fill (O1) circle[radius=0.03];
+  \fill (O2) circle[radius=0.03];
+  \fill (O3) circle[radius=0.03];
+  \node[anchor=east] at (-0.08,1.35) {$O_1$};
+  \node[anchor=east] at (-0.08,0.85) {$O_2$};
+  \node[anchor=east] at (-0.08,0.40) {$O_3$};
+  % Ellipse I: foci O and O1, through P — approx ellipse centered between O and O1
+  % Use clipped arcs approximating falling trajectories
+  % Path I (dashed): narrow, hits at A ~ 50 deg
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt]
+    (P) .. controls (0.85,1.85) and (1.55,1.35) .. (50:\Re);
+  \fill (50:\Re) circle[radius=0.035];
+  \node[anchor=south west] at (50:\Re+0.05) {$A$};
+  \node[anchor=west] at (1.15,1.55) {$I$};
+  % Path II
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt]
+    (P) .. controls (1.25,1.75) and (2.05,0.85) .. (10:\Re);
+  \fill (10:\Re) circle[radius=0.035];
+  \node[anchor=west] at (10:\Re+0.08) {$B$};
+  \node[anchor=west] at (1.85,0.95) {$II$};
+  % Path III (dashed wider, toward lower right on earth)
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt]
+    (P) .. controls (1.55,1.55) and (2.35,0.15) .. (-55:\Re);
+  \fill (-55:\Re) circle[radius=0.035];
+  \node[anchor=north west] at (-55:\Re+0.06) {$C$};
+  \node[anchor=west] at (2.15,0.25) {$III$};
+  % Path IV: circular orbit at surface
+  \draw[line width=0.55pt] (O) circle[radius={\Re+0.02}];
+  \node[anchor=north] at (0,{-\Re-0.18}) {$IV$};
+  % Path V large ellipse: periapsis P, apoapsis P'
+  % ellipse with semi-major along y, center slightly below O
+  \begin{scope}
+    \clip (-4.2,-4.0) rectangle (4.2,{\Re+0.2});
+    \draw[line width=0.5pt] (0,-0.55) ellipse[x radius=2.85,y radius=2.60];
+  \end{scope}
+  \coordinate (Pp) at (0,{-0.55-2.60});
+  \fill (Pp) circle[radius=0.04];
+  \node[anchor=north] at ($(Pp)+(0,-0.05)$) {$P'$};
+  \draw[line width=0.45pt,->] (2.55,-0.2) -- (2.45,-0.85);
+  \node[anchor=west] at (2.65,-0.55) {$V$};
+  % Path VI escape
+  \draw[line width=0.5pt,->]
+    (P) .. controls (1.85,2.05) and (3.35,1.55) .. (4.15,0.85);
+  \node[anchor=south west] at (3.55,1.25) {$VI$};
+\end{tikzpicture}%
+}
+\caption{图14·6}
 \end{figure}
 
 \emph{图14·6}
