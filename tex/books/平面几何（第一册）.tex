@@ -16467,7 +16467,80 @@ OB。也就是两个对称点的连结线段被对称中心所平分。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·24}]{assets/plane-geometry-1/fig-p0179-01.png}}
+\fitfig{%
+% fig-alt: 图3·24 扫描：菱形ABCD竖立（C上A下D左B右）；对角线AC/DB交O，O处左上直角方；AC平分∠C与∠A（单弧）；DB平分∠D与∠B（双弧）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (O) at (0.00,0.00);
+  \coordinate (C) at (0.00,2.35);
+  \coordinate (A) at (0.00,-2.35);
+  \coordinate (D) at (-1.35,0.00);
+  \coordinate (B) at (1.35,0.00);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (D) -- (B);
+  % right angle at O (upper-left: toward C and D)
+  \coordinate (OraC) at ($(O)!0.16!(C)$);
+  \coordinate (OraD) at ($(O)!0.16!(D)$);
+  \coordinate (Ora) at ($(OraC)+(OraD)-(O)$);
+  \draw[line width=0.45pt] (OraC) -- (Ora) -- (OraD);
+  % single arcs at C (bisected by AC)
+  \draw[line width=0.45pt] let \p1=($(D)-(C)$), \p2=($(A)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.32) arc[start angle=\n1, delta angle=\n3, radius=0.32];
+  \draw[line width=0.45pt] let \p1=($(B)-(C)$), \p2=($(A)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.32) arc[start angle=\n1, delta angle=\n3, radius=0.32];
+  % single arcs at A
+  \draw[line width=0.45pt] let \p1=($(D)-(A)$), \p2=($(C)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.32) arc[start angle=\n1, delta angle=\n3, radius=0.32];
+  \draw[line width=0.45pt] let \p1=($(B)-(A)$), \p2=($(C)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.32) arc[start angle=\n1, delta angle=\n3, radius=0.32];
+  % double arcs at D
+  \draw[line width=0.45pt] let \p1=($(C)-(D)$), \p2=($(B)-(D)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (D) ++ (\n1:0.26) arc[start angle=\n1, delta angle=\n3, radius=0.26];
+  \draw[line width=0.45pt] let \p1=($(C)-(D)$), \p2=($(B)-(D)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (D) ++ (\n1:0.36) arc[start angle=\n1, delta angle=\n3, radius=0.36];
+  \draw[line width=0.45pt] let \p1=($(A)-(D)$), \p2=($(B)-(D)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (D) ++ (\n1:0.26) arc[start angle=\n1, delta angle=\n3, radius=0.26];
+  \draw[line width=0.45pt] let \p1=($(A)-(D)$), \p2=($(B)-(D)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (D) ++ (\n1:0.36) arc[start angle=\n1, delta angle=\n3, radius=0.36];
+  % double arcs at B
+  \draw[line width=0.45pt] let \p1=($(C)-(B)$), \p2=($(D)-(B)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (B) ++ (\n1:0.26) arc[start angle=\n1, delta angle=\n3, radius=0.26];
+  \draw[line width=0.45pt] let \p1=($(C)-(B)$), \p2=($(D)-(B)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (B) ++ (\n1:0.36) arc[start angle=\n1, delta angle=\n3, radius=0.36];
+  \draw[line width=0.45pt] let \p1=($(A)-(B)$), \p2=($(D)-(B)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (B) ++ (\n1:0.26) arc[start angle=\n1, delta angle=\n3, radius=0.26];
+  \draw[line width=0.45pt] let \p1=($(A)-(B)$), \p2=($(D)-(B)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (B) ++ (\n1:0.36) arc[start angle=\n1, delta angle=\n3, radius=0.36];
+  \node[anchor=south, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{图 3·24}
 \end{figure}
 
@@ -16481,7 +16554,30 @@ OB。也就是两个对称点的连结线段被对称中心所平分。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·25}]{assets/plane-geometry-1/fig-p0179-02.png}}
+\fitfig{%
+% fig-alt: 图3·25 扫描：矩形ABCD（A左下B右下C右上D左上）；P在AD、Q在BC；实线AC与PQ；虚线AS∥PQ交BC于S（S在B、Q间）；无角弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (4.20,0.00);
+  \coordinate (C) at (4.20,2.20);
+  \coordinate (D) at (0.00,2.20);
+  \coordinate (P) at (0.00,0.72);
+  \coordinate (Q) at (4.20,1.70);
+  % AS ∥ PQ: S = (4.20, 1.70-0.72) = (4.20, 0.98)
+  \coordinate (S) at (4.20,0.98);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (P) -- (Q);
+  \draw[dashed, line width=0.65pt] (A) -- (S);
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=west, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=west, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+}
 \caption{图3·25}
 \end{figure}
 
@@ -16525,7 +16621,70 @@ AB = AD\text{，} BF ^{\prime} = FD\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-26}]{assets/plane-geometry-1/fig-p0180-01.png}}
+\fitfig{%
+% fig-alt: 图3-26 扫描：正方形ABCD（D左下A右下B右上C左上）；E在CB、F在CD；延长CB至F'使BF'=DF；实线AF/AE，虚线AF'/BF'；B处直角方；A处∠DAF与∠BAF'单弧，∠FAE与∠EAF'双弧；F与F'处角弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (D) at (0.00,0.00);
+  \coordinate (A) at (2.60,0.00);
+  \coordinate (B) at (2.60,2.60);
+  \coordinate (C) at (0.00,2.60);
+  \coordinate (E) at (0.85,2.60);
+  \coordinate (AuD) at ($(A)!1cm!(D)$);
+  \coordinate (AuE) at ($(A)!1cm!(E)$);
+  \coordinate (Abis) at ($(AuD)+(AuE)-(A)$);
+  \coordinate (F) at (intersection of A--Abis and C--D);
+  \path let \p1=($(F)-(D)$), \n1={veclen(\x1,\y1)} in
+    coordinate (Fp) at ($(B) + (\n1,0)$);
+  \draw[line width=0.75pt] (D) -- (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (F);
+  \draw[line width=0.75pt] (A) -- (E);
+  \draw[dashed, line width=0.65pt] (B) -- (Fp);
+  \draw[dashed, line width=0.65pt] (A) -- (Fp);
+  \coordinate (BraA) at ($(B)!0.14!(A)$);
+  \coordinate (BraFp) at ($(B)!0.14!(Fp)$);
+  \coordinate (Bra) at ($(BraA)+(BraFp)-(B)$);
+  \draw[line width=0.45pt] (BraA) -- (Bra) -- (BraFp);
+  \draw[line width=0.45pt] let \p1=($(D)-(A)$), \p2=($(F)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(B)-(A)$), \p2=($(Fp)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(F)-(A)$), \p2=($(E)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.42) arc[start angle=\n1, delta angle=\n3, radius=0.42];
+  \draw[line width=0.45pt] let \p1=($(F)-(A)$), \p2=($(E)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.52) arc[start angle=\n1, delta angle=\n3, radius=0.52];
+  \draw[line width=0.45pt] let \p1=($(E)-(A)$), \p2=($(Fp)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.42) arc[start angle=\n1, delta angle=\n3, radius=0.42];
+  \draw[line width=0.45pt] let \p1=($(E)-(A)$), \p2=($(Fp)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.52) arc[start angle=\n1, delta angle=\n3, radius=0.52];
+  \draw[line width=0.45pt] let \p1=($(D)-(F)$), \p2=($(A)-(F)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (F) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \draw[line width=0.45pt] let \p1=($(B)-(Fp)$), \p2=($(A)-(Fp)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (Fp) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \node[anchor=north west, inner sep=1pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south east, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east, inner sep=1pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1pt] at (E) {$E$};
+  \node[anchor=east, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south, inner sep=1pt] at (Fp) {$F'$};
+\end{tikzpicture}%
+}
 \caption{图3-26}
 \end{figure}
 
@@ -16558,7 +16717,46 @@ DF。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-1/fig-p0180-02.png}}
+\fitfig{%
+% fig-alt: （第2题）扫描：左矩形两条虚对称轴（横竖过中心）；中菱形两条虚对角线对称轴；右正方形四条虚对称轴（横竖+两对角线）；轴略伸出边外；无字母
+\begin{tikzpicture}[line cap=round, line join=round]
+  % left: rectangle
+  \begin{scope}[shift={(0.00,0.00)}]
+    \coordinate (Ra) at (0.00,0.00);
+    \coordinate (Rb) at (2.40,0.00);
+    \coordinate (Rc) at (2.40,1.40);
+    \coordinate (Rd) at (0.00,1.40);
+    \coordinate (Rm) at ($(Ra)!0.5!(Rc)$);
+    \draw[line width=0.75pt] (Ra) -- (Rb) -- (Rc) -- (Rd) -- cycle;
+    \draw[dashed, line width=0.55pt] ($(Rm)+(0,-0.85)$) -- ($(Rm)+(0,0.85)$);
+    \draw[dashed, line width=0.55pt] ($(Rm)+(-1.35,0)$) -- ($(Rm)+(1.35,0)$);
+  \end{scope}
+  % middle: rhombus
+  \begin{scope}[shift={(4.00,0.70)}]
+    \coordinate (Ho) at (0.00,0.00);
+    \coordinate (Ht) at (0.00,1.15);
+    \coordinate (Hb) at (0.00,-1.15);
+    \coordinate (Hl) at (-1.55,0.00);
+    \coordinate (Hr) at (1.55,0.00);
+    \draw[line width=0.75pt] (Ht) -- (Hr) -- (Hb) -- (Hl) -- cycle;
+    \draw[dashed, line width=0.55pt] ($(Ht)+(0,0.25)$) -- ($(Hb)+(0,-0.25)$);
+    \draw[dashed, line width=0.55pt] ($(Hl)+(-0.25,0)$) -- ($(Hr)+(0.25,0)$);
+  \end{scope}
+  % right: square
+  \begin{scope}[shift={(7.00,0.00)}]
+    \coordinate (Sa) at (0.00,0.00);
+    \coordinate (Sb) at (1.70,0.00);
+    \coordinate (Sc) at (1.70,1.70);
+    \coordinate (Sd) at (0.00,1.70);
+    \coordinate (Sm) at ($(Sa)!0.5!(Sc)$);
+    \draw[line width=0.75pt] (Sa) -- (Sb) -- (Sc) -- (Sd) -- cycle;
+    \draw[dashed, line width=0.55pt] ($(Sm)+(0,-1.05)$) -- ($(Sm)+(0,1.05)$);
+    \draw[dashed, line width=0.55pt] ($(Sm)+(-1.05,0)$) -- ($(Sm)+(1.05,0)$);
+    \draw[dashed, line width=0.55pt] ($(Sa)+(-0.18,-0.18)$) -- ($(Sc)+(0.18,0.18)$);
+    \draw[dashed, line width=0.55pt] ($(Sd)+(-0.18,0.18)$) -- ($(Sb)+(0.18,-0.18)$);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -16599,7 +16797,93 @@ DF。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-1/fig-p0181-01.png}}
+\fitfig{%
+% fig-alt: （第10题）扫描：□ABCD（A左下B右下C右上D左上右倾）；四顶点角平分线交成矩形PQRS（P=A∩B偏上、Q=C∩D偏下、R右、S左）；P/Q/R/S各直角方；A/B/C/D各双单弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (4.20,0.00);
+  \coordinate (D) at (1.20,2.20);
+  \coordinate (C) at ($(B)+(D)-(A)$);
+  \coordinate (AuB) at ($(A)!1cm!(B)$);
+  \coordinate (AuD) at ($(A)!1cm!(D)$);
+  \coordinate (Abis) at ($(AuB)+(AuD)-(A)$);
+  \coordinate (BuA) at ($(B)!1cm!(A)$);
+  \coordinate (BuC) at ($(B)!1cm!(C)$);
+  \coordinate (Bbis) at ($(BuA)+(BuC)-(B)$);
+  \coordinate (CuB) at ($(C)!1cm!(B)$);
+  \coordinate (CuD) at ($(C)!1cm!(D)$);
+  \coordinate (Cbis) at ($(CuB)+(CuD)-(C)$);
+  \coordinate (DuA) at ($(D)!1cm!(A)$);
+  \coordinate (DuC) at ($(D)!1cm!(C)$);
+  \coordinate (Dbis) at ($(DuA)+(DuC)-(D)$);
+  \coordinate (P) at (intersection of A--Abis and B--Bbis);
+  \coordinate (R) at (intersection of B--Bbis and C--Cbis);
+  \coordinate (Q) at (intersection of C--Cbis and D--Dbis);
+  \coordinate (S) at (intersection of D--Dbis and A--Abis);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (P) -- (R) -- (Q) -- (S) -- cycle;
+  \draw[line width=0.75pt] (A) -- (P);
+  \draw[line width=0.75pt] (B) -- (R);
+  \draw[line width=0.75pt] (C) -- (Q);
+  \draw[line width=0.75pt] (D) -- (S);
+  \coordinate (PraS) at ($(P)!0.14!(S)$);
+  \coordinate (PraR) at ($(P)!0.14!(R)$);
+  \coordinate (Pra) at ($(PraS)+(PraR)-(P)$);
+  \draw[line width=0.40pt] (PraS) -- (Pra) -- (PraR);
+  \coordinate (RraP) at ($(R)!0.14!(P)$);
+  \coordinate (RraQ) at ($(R)!0.14!(Q)$);
+  \coordinate (Rra) at ($(RraP)+(RraQ)-(R)$);
+  \draw[line width=0.40pt] (RraP) -- (Rra) -- (RraQ);
+  \coordinate (QraR) at ($(Q)!0.14!(R)$);
+  \coordinate (QraS) at ($(Q)!0.14!(S)$);
+  \coordinate (Qra) at ($(QraR)+(QraS)-(Q)$);
+  \draw[line width=0.40pt] (QraR) -- (Qra) -- (QraS);
+  \coordinate (SraQ) at ($(S)!0.14!(Q)$);
+  \coordinate (SraP) at ($(S)!0.14!(P)$);
+  \coordinate (Sra) at ($(SraQ)+(SraP)-(S)$);
+  \draw[line width=0.40pt] (SraQ) -- (Sra) -- (SraP);
+  \draw[line width=0.45pt] let \p1=($(B)-(A)$), \p2=($(P)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(D)-(A)$), \p2=($(P)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(A)-(B)$), \p2=($(P)-(B)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (B) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(C)-(B)$), \p2=($(P)-(B)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (B) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(B)-(C)$), \p2=($(Q)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(D)-(C)$), \p2=($(Q)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(A)-(D)$), \p2=($(Q)-(D)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (D) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(C)-(D)$), \p2=($(Q)-(D)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (D) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=south, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=west, inner sep=1.5pt] at (R) {$R$};
+  \node[anchor=east, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -16607,7 +16891,30 @@ DF。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-1/fig-p0181-02.png}}
+\fitfig{%
+% fig-alt: （第12题）扫描：正方形ABCD（A左上B左下C右下D右上）；对角线AC；P在AC偏A；过P作横竖线分别交AB/CD与AD/BC；无角弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,2.80);
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (2.80,0.00);
+  \coordinate (D) at (2.80,2.80);
+  \coordinate (P) at ($(A)!0.32!(C)$);
+  \path let \p1=(P) in
+    coordinate (Hleft) at (0.00,\y1)
+    coordinate (Hright) at (2.80,\y1)
+    coordinate (Vtop) at (\x1,2.80)
+    coordinate (Vbot) at (\x1,0.00);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (Hleft) -- (Hright);
+  \draw[line width=0.75pt] (Vtop) -- (Vbot);
+  \node[anchor=south east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1pt] at (D) {$D$};
+  \node[anchor=south west, inner sep=1.2pt] at ($(P)+(0.06,0.06)$) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第12题)}
 \end{figure}
 
@@ -16647,7 +16954,52 @@ DF。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·27}]{assets/plane-geometry-1/fig-p0182-01.png}}
+\fitfig{%
+% fig-alt: 图3·27 扫描：三水平平行线；左截线l1过A/C/E，右截线l2过B/D/F（上聚）；虚线BS∥l1交中线于S，虚线DK∥l1交底线于K；∠SBD与∠KDF角弧，D/F处同位角弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.75pt] (-0.30,3.00) -- (4.40,3.00);
+  \draw[line width=0.75pt] (-0.30,1.60) -- (4.40,1.60);
+  \draw[line width=0.75pt] (-0.30,0.20) -- (4.40,0.20);
+  \coordinate (A) at (1.10,3.00);
+  \coordinate (C) at (0.70,1.60);
+  \coordinate (E) at (0.30,0.20);
+  \coordinate (B) at (2.60,3.00);
+  \coordinate (D) at (3.20,1.60);
+  \coordinate (F) at (3.80,0.20);
+  \draw[line width=0.75pt] ($(A)!-0.20!(E)$) -- ($(E)!-0.15!(A)$);
+  \draw[line width=0.75pt] ($(B)!-0.20!(F)$) -- ($(F)!-0.15!(B)$);
+  \coordinate (S) at ($(B)+(C)-(A)$);
+  \coordinate (K) at ($(D)+(E)-(C)$);
+  \draw[dashed, line width=0.65pt] (B) -- (S);
+  \draw[dashed, line width=0.65pt] (D) -- (K);
+  \draw[line width=0.45pt] let \p1=($(S)-(B)$), \p2=($(D)-(B)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (B) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(K)-(D)$), \p2=($(F)-(D)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (D) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(4.40,1.60)-(D)$), \p2=($(B)-(D)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (D) ++ (\n1:0.36) arc[start angle=\n1, delta angle=\n3, radius=0.36];
+  \draw[line width=0.45pt] let \p1=($(4.40,0.20)-(F)$), \p2=($(D)-(F)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (F) ++ (\n1:0.36) arc[start angle=\n1, delta angle=\n3, radius=0.36];
+  \node[anchor=south, inner sep=1pt] at ($(A)!-0.28!(E)$) {$l_1$};
+  \node[anchor=south, inner sep=1pt] at ($(B)!-0.28!(F)$) {$l_2$};
+  \node[anchor=south east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=east, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north east, inner sep=0.8pt] at (S) {$S$};
+  \node[anchor=west, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north east, inner sep=0.8pt] at (K) {$K$};
+  \node[anchor=west, inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
 \caption{图3·27}
 \end{figure}
 
@@ -16715,7 +17067,32 @@ AP = PQ = QR = RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-29}]{assets/plane-geometry-1/fig-p0183-02.png}}
+\fitfig{%
+% fig-alt: 图3-29 扫描：竖框内等距横格线（6条）；斜放纸条右缘PQ跨5格；P在顶格、Q在底格；交点小实心圆；格线在纸条右侧续绘
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\W{2.50}
+  \def\H{4.20}
+  \draw[line width=0.75pt] (0,0) rectangle (\W,\H);
+  \foreach \i in {0,1,2,3,4,5} {
+    \draw[line width=0.55pt] (0,{\i*\H/5}) -- (\W,{\i*\H/5});
+  }
+  \coordinate (P) at (1.65,\H);
+  \coordinate (Q) at (2.05,0.00);
+  \coordinate (P2) at ($(P)+(-1.25,0.22)$);
+  \coordinate (Q2) at ($(Q)+(-1.25,0.22)$);
+  \fill[white] (P) -- (Q) -- (Q2) -- (P2) -- cycle;
+  \draw[line width=0.70pt] (P) -- (Q) -- (Q2) -- (P2) -- cycle;
+  \foreach \i in {0,1,2,3,4,5} {
+    \coordinate (Gi) at (0,{\i*\H/5});
+    \coordinate (Gj) at (\W,{\i*\H/5});
+    \coordinate (Xi) at (intersection of P--Q and Gi--Gj);
+    \draw[line width=0.55pt] (Xi) -- (Gj);
+    \fill (Xi) circle (1.3pt);
+  }
+  \node[anchor=east, inner sep=2.5pt] at (P) {$P$};
+  \node[anchor=east, inner sep=2.5pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
 \caption{图3-29}
 \end{figure}
 
