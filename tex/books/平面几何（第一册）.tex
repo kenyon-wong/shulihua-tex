@@ -27064,21 +27064,61 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0271-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·71（1）两弧 M、N（均下凹）与外公切线 AB；A、B 为吻接点
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\RM{1.050}
+  \def\RN{0.680}
+  \coordinate (A) at (0.000,0.000);
+  \coordinate (B) at (3.100,0.000);
+  \coordinate (CM) at (0.000,-\RM);
+  \coordinate (CN) at (3.100,-\RN);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (CM) ++(200:\RM) arc[start angle=200, end angle=-25, radius=\RM];
+  \draw[line width=0.75pt] (CN) ++(160:\RN) arc[start angle=160, end angle=-40, radius=\RN];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=east, inner sep=1.5pt] at ($(CM)+(-0.95*\RM,0.05)$) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at ($(CN)+(0.95*\RN,0.05)$) {$N$};
+\end{tikzpicture}%
+}
+\caption{图4·71（1）}
 \end{figure}
 
 \emph{（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0271-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图4·71（2）弧 M（上凹下）与弧 N（下凹上）以内公切线 AB 吻接；A、B 为吻接点
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\RM{0.950}
+  \def\RN{0.800}
+  \coordinate (CM) at (0.000,0.800);
+  \coordinate (CN) at (2.900,-0.900);
+  % internal common tangent: centers on opposite sides of AB
+  % use equal-offset construction with angle phi = asin((RM+RN)/d) roughly
+  % hard-set contact points so radii ⊥ AB and opposite
+  \coordinate (A) at (0.780,0.220);
+  \coordinate (B) at (2.050,-0.480);
+  % verify-ish: draw arcs with peaks M,N and tangent AB
+  \draw[line width=0.75pt] ($(A)!-0.10!(B)$) -- ($(B)!-0.10!(A)$);
+  % arc M about CM: from left, over top M, past A slightly
+  \draw[line width=0.75pt] (CM) ++(170:\RM) arc[start angle=170, end angle=-5, radius=\RM];
+  % arc N about CN: from upper-left past B, through bottom N, to right
+  \draw[line width=0.75pt] (CN) ++(130:\RN) arc[start angle=130, end angle=-55, radius=\RN];
+  \node[anchor=south, inner sep=1.5pt] at ($(CM)+(0,\RM)$) {$M$};
+  \node[anchor=south, inner sep=1.2pt] at ($(A)+(0.00,0.02)$) {$A$};
+  \node[anchor=north, inner sep=1.2pt] at ($(B)+(0.00,-0.02)$) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at ($(CN)+(0,-\RN)$) {$N$};
+\end{tikzpicture}%
+}
+\caption{图4·71（2）}
 \end{figure}
 
 \emph{（2）}
 
-\emph{图 4·71}
+\emph{图4·71}
 
 \textbf{［注意］}
 象图（1）只能画两弧的外公切线来吻接，并且不能规定吻接点。象图（2）只能画两弧的内公切线来吻接，也不能规定吻接点。当然，如果两弧的位置改变了，外公切线和内公切线都可以用来吻接它们，但是有时两弧也会找不到吻接的线段。
@@ -27095,19 +27135,85 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-72}]{assets/plane-geometry-1/fig-p0271-03.png}}
-\caption{图4-72}
+\fitfig{%
+% fig-alt: 图4·72 矩形 ABCD；虚线直径 AD、BC；两侧向外半圆弧吻接上下边
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\W{2.200}
+  \def\H{0.850}
+  \coordinate (A) at (0.000,0.000);
+  \coordinate (B) at (\W,0.000);
+  \coordinate (C) at (\W,\H);
+  \coordinate (D) at (0.000,\H);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (D) -- (C);
+  \draw[line width=0.55pt, dashed] (A) -- (D);
+  \draw[line width=0.55pt, dashed] (B) -- (C);
+  \draw[line width=0.75pt] (D) arc[start angle=90, end angle=270, radius=0.5*\H];
+  \draw[line width=0.75pt] (B) arc[start angle=-90, end angle=90, radius=0.5*\H];
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{图4·72}
 \end{figure}
 
-\emph{图 4·72}
+\emph{图4·72}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-73}]{assets/plane-geometry-1/fig-p0271-04.png}}
-\caption{图4-73}
+\fitfig{%
+% fig-alt: 图4·73 直线 AB、CD；平行虚线距原直线为 R 交于 O；弧 PMQ 半径 R，OP⊥AB、OQ⊥CD
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.150}
+  \coordinate (O) at (0.000,0.000);
+  \coordinate (Q) at (0.000,-\R);
+  % OP at 145° so P upper-left; AB ⊥ OP (direction 55°)
+  \coordinate (P) at ({(\R)*cos(145)},{(\R)*sin(145)});
+  \coordinate (Mpt) at ({(\R)*cos(200)},{(\R)*sin(200)});
+  % line CD horizontal through Q
+  \coordinate (C) at (-2.050,-\R);
+  \coordinate (D) at (2.350,-\R);
+  % line AB through P, direction 55°
+  \coordinate (A) at ($(P)+({-1.350*cos(55)},{-1.350*sin(55)})$);
+  \coordinate (B) at ($(P)+({1.650*cos(55)},{1.650*sin(55)})$);
+  % parallels through O
+  \coordinate (H1) at (-1.900,0.000);
+  \coordinate (H2) at (2.200,0.000);
+  \coordinate (S1) at ({-1.600*cos(55)},{-1.600*sin(55)});
+  \coordinate (S2) at ({2.000*cos(55)},{2.000*sin(55)});
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.55pt, dashed] (H1) -- (H2);
+  \draw[line width=0.55pt, dashed] (S1) -- (S2);
+  \draw[line width=0.70pt] (O) -- (P);
+  \draw[line width=0.70pt] (O) -- (Q);
+  \draw[line width=0.75pt] (P) arc[start angle=145, end angle=270, radius=\R];
+  % R dimension marks
+  \draw[{Latex[length=2.0pt]}-{Latex[length=2.0pt]}, line width=0.50pt]
+    (1.350,0.000) -- (1.350,-\R);
+  \node[anchor=west, inner sep=1.5pt] at (1.350,-0.5*\R) {$R$};
+  \coordinate (Rp0) at ({0.35*cos(55)},{0.35*sin(55)});
+  \coordinate (Rp1) at ($(Rp0)+({\R*cos(145)},{\R*sin(145)})$);
+  \draw[{Latex[length=2.0pt]}-{Latex[length=2.0pt]}, line width=0.50pt]
+    (Rp0) -- (Rp1);
+  \node[anchor=south west, inner sep=1.0pt] at ($(Rp0)!0.50!(Rp1)$) {$R$};
+  \fill (O) circle [radius=1.0pt];
+  \node[anchor=north west, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=south east, inner sep=1.2pt] at (P) {$P$};
+  \node[anchor=north east, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=east, inner sep=1.5pt] at (Mpt) {$M$};
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north east, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north west, inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{图4·73}
 \end{figure}
 
-\emph{图 4·73}
+\emph{图4·73}
 
 （ii） 画定半径的弧使它和两条已知的不平行直线吻接（图 4·73）。
 
@@ -27122,17 +27228,52 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第272页）}]{assets/plane-geometry-1/fig-p0272-01.png}}
-\caption{图示（原PDF第272页）}
+\fitfig{%
+% fig-alt: 圆吻接应用：中心圆与四周六圆外切；左右两圆较小，上下两两近切
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{0.520}
+  \def\r{0.360}
+  \coordinate (O) at (0.000,0.000);
+  \coordinate (L) at ({-(\R+\r)},0.000);
+  \coordinate (Rgt) at ({(\R+\r)},0.000);
+  \pgfmathsetmacro{\ang}{acos(\R/(\R+\r))}
+  \coordinate (TR) at ({2*\R*cos(\ang)},{2*\R*sin(\ang)});
+  \coordinate (BR) at ({2*\R*cos(-\ang)},{2*\R*sin(-\ang)});
+  \coordinate (TL) at ({2*\R*cos(180-\ang)},{2*\R*sin(180-\ang)});
+  \coordinate (BL) at ({2*\R*cos(180+\ang)},{2*\R*sin(180+\ang)});
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.75pt] (L) circle [radius=\r];
+  \draw[line width=0.75pt] (Rgt) circle [radius=\r];
+  \draw[line width=0.75pt] (TR) circle [radius=\R];
+  \draw[line width=0.75pt] (BR) circle [radius=\R];
+  \draw[line width=0.75pt] (TL) circle [radius=\R];
+  \draw[line width=0.75pt] (BL) circle [radius=\R];
+\end{tikzpicture}%
+}
+\caption{圆吻接应用}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-74}]{assets/plane-geometry-1/fig-p0272-02.png}}
-\caption{图4-74}
+\fitfig{%
+% fig-alt: 图4·74 大圆内三等圆两两外切且均与大圆内切
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\r{0.620}
+  \pgfmathsetmacro{\d}{2*\r/sqrt(3)}
+  \pgfmathsetmacro{\Rbig}{\d+\r}
+  \coordinate (C1) at (90:\d);
+  \coordinate (C2) at (210:\d);
+  \coordinate (C3) at (330:\d);
+  \draw[line width=0.75pt] (0,0) circle [radius=\Rbig];
+  \draw[line width=0.75pt] (C1) circle [radius=\r];
+  \draw[line width=0.75pt] (C2) circle [radius=\r];
+  \draw[line width=0.75pt] (C3) circle [radius=\r];
+\end{tikzpicture}%
+}
+\caption{图4·74}
 \end{figure}
 
-\emph{图 4·74}
+\emph{图4·74}
 
 一条弧过另一条弧的端点，并且在这点的两弧相切，如果这两弧是平滑地连接着，这时称为两弧吻接。
 
@@ -27142,21 +27283,71 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0272-03.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·75（1）弧 AB 圆心 M；在 MB 上取 N 使 NB=R；弧 BC 圆心 N；虚线 MNB；旁注半径 R
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\RAB{2.200}
+  \def\R{0.850}
+  \coordinate (M) at (0.000,0.000);
+  \coordinate (B) at ({\RAB*cos(48)},{\RAB*sin(48)});
+  \coordinate (N) at ($(B)!{\R}!(M)$); % N between M and B, NB=R
+  \coordinate (A) at ({\RAB*cos(125)},{\RAB*sin(125)});
+  \coordinate (C) at ($(N)+({(\R)*cos(48-95)},{(\R)*sin(48-95)})$);
+  \draw[line width=0.55pt, dashed] ($(M)!-0.18!(B)$) -- ($(B)!-0.18!(M)$);
+  \draw[line width=0.75pt] (A) arc[start angle=125, end angle=48, radius=\RAB];
+  \draw[line width=0.75pt] (B) arc[start angle=48, end angle=48-95, radius=\R];
+  \fill (M) circle [radius=1.0pt];
+  \fill (N) circle [radius=1.0pt];
+  \node[anchor=north east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.0pt] at ($(N)!0.55!(B)$) {$R$};
+  % reference R segment
+  \draw[line width=0.60pt] (2.550,1.850) -- ++(\R,0);
+  \draw[line width=0.60pt] (2.550,1.850) ++(0,-0.08) -- ++(0,0.16);
+  \draw[line width=0.60pt] (2.550,1.850) ++(\R,-0.08) -- ++(0,0.16);
+  \node[anchor=south, inner sep=1.0pt] at ($(2.550,1.850)+(0.5*\R,0)$) {$R$};
+\end{tikzpicture}%
+}
+\caption{图4·75（1）}
 \end{figure}
 
 \emph{（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2).}]{assets/plane-geometry-1/fig-p0272-04.png}}
-\caption{(2).}
+\fitfig{%
+% fig-alt: 图4·75（2）弧 AB 圆心 M；N 在 MB 延长线上 NB=R；弧 BC 圆心 N；虚线 MBN；曲线 ABC 呈 S 形
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\RAB{1.700}
+  \def\R{0.920}
+  \coordinate (M) at (0.000,0.000);
+  \coordinate (B) at ({\RAB*cos(38)},{\RAB*sin(38)});
+  \coordinate (N) at ($(M)!{(\RAB+\R)/\RAB}!(B)$); % M-B-N, NB=R
+  \coordinate (A) at ({\RAB*cos(145)},{\RAB*sin(145)});
+  % from N, B is at angle 38+180=218°
+  \coordinate (C) at ($(N)+({(\R)*cos(218+105)},{(\R)*sin(218+105)})$);
+  \draw[line width=0.55pt, dashed] ($(M)!-0.22!(B)$) -- ($(N)!-0.18!(B)$);
+  \draw[line width=0.75pt] (A) arc[start angle=145, end angle=38, radius=\RAB];
+  \draw[line width=0.75pt] (B) arc[start angle=218, end angle=218+105, radius=\R];
+  \fill (M) circle [radius=1.0pt];
+  \fill (N) circle [radius=1.0pt];
+  \node[anchor=north east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=north, inner sep=1.8pt] at (B) {$B$};
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.0pt] at ($(B)!0.55!(N)$) {$R$};
+\end{tikzpicture}%
+}
+\caption{图4·75（2）}
 \end{figure}
 
-\emph{（2）。}
+\emph{（2）}
 
-\emph{图 4·75}
+\emph{图4·75}
 
 \textbf{［作法］}
 先求得弧\(AB\)的圆心\(M\)，连结\(MB\)，在\(MB\)上取一点\(N\)使\(NB = R\)。
