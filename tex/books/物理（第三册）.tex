@@ -22887,11 +22887,77 @@ UI，那么在导线上损耗的功率为 \(I^{2}R\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-3/fig-p0308-02.png}}
-\caption{(第7题)}
+\fitfig{%
+% fig-alt: 复习题四第7题 竖直铁心A上L1接电源与变阻器R、下L2；水平铁心B上L3经虚线接L2、L4接检流计G
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % Core A
+  \draw[line width=0.9pt] (0.00,-2.25) rectangle (0.50,2.35);
+  \node[anchor=south,inner sep=2pt] at (0.25,2.35) {$A$};
+  % L1
+  \foreach \y in {0.55,0.90,1.25,1.60} {
+    \draw[line width=0.65pt] (-0.12,\y) -- (0.62,\y+0.14);
+  }
+  \foreach \y in {0.55,0.90,1.25} {
+    \draw[line width=0.45pt] (-0.12,\y+0.32) -- (0.62,\y+0.14);
+  }
+  \node[anchor=west,inner sep=1.5pt] at (0.70,1.15) {$L_1$};
+  % top of L1 -> right-angle to battery above-left
+  \draw[line width=0.65pt] (-0.12,1.74) -- (-0.12,2.15) -- (-0.85,2.15);
+  % battery: long + (top), short - (bottom)
+  \draw[line width=1.05pt] (-1.15,2.15) -- (-0.55,2.15);
+  \draw[line width=1.25pt] (-1.05,1.88) -- (-0.65,1.88);
+  \draw[line width=0.65pt] (-0.85,1.88) -- (-0.85,1.00);
+  % rheostat R
+  \draw[line width=0.75pt] (-1.65,0.82) rectangle (-0.45,1.18);
+  \draw[line width=0.75pt,->] (-0.85,1.00) -- (-1.45,1.00);
+  \draw[line width=0.7pt,->] (-1.05,1.38) -- (-1.45,1.00);
+  \node[anchor=north,inner sep=1.5pt] at (-1.05,0.82) {$R$};
+  \draw[line width=0.65pt] (-0.45,1.00) -- (-0.12,1.00) -- (-0.12,0.55);
+  % L2
+  \foreach \y in {-1.65,-1.30,-0.95,-0.60} {
+    \draw[line width=0.65pt] (-0.12,\y) -- (0.62,\y+0.14);
+  }
+  \foreach \y in {-1.65,-1.30,-0.95} {
+    \draw[line width=0.45pt] (-0.12,\y+0.32) -- (0.62,\y+0.14);
+  }
+  \node[anchor=west,inner sep=1.5pt] at (0.70,-1.00) {$L_2$};
+  % L2 -> dashed -> L3
+  \draw[line width=0.65pt] (0.62,-0.46) -- (1.25,-0.46);
+  \draw[line width=0.65pt,dashed] (1.25,-0.46) -- (3.00,-0.46);
+  \draw[line width=0.65pt] (0.62,-1.65) -- (1.25,-1.65);
+  \draw[line width=0.65pt,dashed] (1.25,-1.65) -- (2.20,-1.65);
+  % Core B
+  \draw[line width=0.9pt] (2.20,-2.15) rectangle (5.20,-1.55);
+  \node[anchor=east,inner sep=2pt] at (2.20,-1.85) {$B$};
+  % L3
+  \foreach \x in {2.45,2.75,3.05,3.35} {
+    \draw[line width=0.65pt] (\x,-2.22) -- (\x+0.14,-1.48);
+  }
+  \foreach \x in {2.45,2.75,3.05} {
+    \draw[line width=0.45pt] (\x+0.28,-2.22) -- (\x+0.14,-1.48);
+  }
+  \node[anchor=north,inner sep=1.5pt] at (2.95,-2.24) {$L_3$};
+  % connections: top dashed to right of L3; bottom dashed to left of L3
+  \draw[line width=0.65pt] (3.00,-0.46) -- (3.49,-0.46) -- (3.49,-1.48);
+  \draw[line width=0.65pt] (2.20,-1.65) -- (2.20,-2.22) -- (2.45,-2.22);
+  % L4 + G
+  \foreach \x in {3.90,4.20,4.50,4.80} {
+    \draw[line width=0.65pt] (\x,-2.22) -- (\x+0.14,-1.48);
+  }
+  \foreach \x in {3.90,4.20,4.50} {
+    \draw[line width=0.45pt] (\x+0.28,-2.22) -- (\x+0.14,-1.48);
+  }
+  \node[anchor=north,inner sep=1.5pt] at (4.45,-2.24) {$L_4$};
+  \draw[line width=0.65pt] (3.90,-1.48) -- (3.90,-0.55) -- (4.55,-0.55);
+  \draw[line width=0.65pt] (4.94,-1.48) -- (4.94,-0.55) -- (4.55,-0.55);
+  \draw[line width=0.85pt] (4.55,-0.55) circle[radius=0.34];
+  \node at (4.55,-0.55) {$G$};
+\end{tikzpicture}%
+}
+\caption{复习题四第7题 铁心A上L1接电源与R、L2；铁心B上L3接L2、L4接G}
 \end{figure}
 
-\emph{（第7题）}
+\emph{复习题四第7题 铁心A上L1接电源与R、L2；铁心B上L3接L2、L4接G}
 
 \begin{enumerate}
 \setcounter{enumi}{6}
@@ -22909,19 +22975,77 @@ UI，那么在导线上损耗的功率为 \(I^{2}R\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-3/fig-p0308-03.png}}
-\caption{(第8题)}
+\fitfig{%
+% fig-alt: 复习题四第8题 法拉第圆盘：水平导体圆盘在向上匀强磁场B中绕竖直轴以角速度ω转动
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B field arrows (behind / through disk)
+  \foreach \x in {-1.15,-0.40,0.40,1.15} {
+    \draw[line width=0.7pt,->] (\x,-1.55) -- (\x,1.55);
+  }
+  \node[anchor=west,inner sep=2pt] at (1.20,0.85) {$B$};
+  % disk (perspective ellipse + thickness)
+  \fill[white] (0,0) ellipse[x radius=1.55,y radius=0.42];
+  \draw[line width=0.8pt] (0,0) ellipse[x radius=1.55,y radius=0.42];
+  \draw[line width=0.7pt] (-1.55,0) -- (-1.55,-0.12);
+  \draw[line width=0.7pt] (1.55,0) -- (1.55,-0.12);
+  \draw[line width=0.7pt] (-1.55,-0.12) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.42];
+  % axis dash-dot
+  \draw[line width=0.7pt,dash pattern=on 3.5pt off 1.6pt on 0.7pt off 1.6pt] (0,-1.85) -- (0,2.05);
+  % omega arc arrow (CCW viewed from above -> curved at top)
+  \draw[line width=0.75pt,->] (0.35,1.85) arc[start angle=20,end angle=160,radius=0.42];
+  \node[anchor=west,inner sep=2pt] at (0.55,2.05) {$\omega$};
+\end{tikzpicture}%
+}
+\caption{复习题四第8题 法拉第圆盘在向上磁场B中以ω绕轴转动}
 \end{figure}
 
-\emph{（第8题）}
+\emph{复习题四第8题 法拉第圆盘在向上磁场B中以ω绕轴转动}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/physics-3/fig-p0308-04.png}}
-\caption{(第9题)}
+\fitfig{%
+% fig-alt: 复习题四第9题 ×向里匀强磁场中铜环与直径杆AB顺时针转；电刷K在轴心、L在环底，外接电阻R
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B field ×
+  \foreach \x in {-1.55,-1.05,-0.55,-0.05,0.45,0.95,1.45} {
+    \foreach \y in {-1.55,-1.05,-0.55,-0.05,0.45,0.95,1.45} {
+      \draw[line width=0.32pt] (\x-0.07,\y-0.07) -- (\x+0.07,\y+0.07);
+      \draw[line width=0.32pt] (\x-0.07,\y+0.07) -- (\x+0.07,\y-0.07);
+    }
+  }
+  % ring
+  \draw[line width=0.9pt] (0,0) circle[radius=1.28];
+  \draw[line width=0.55pt] (0,0) circle[radius=1.18];
+  % rod AB
+  \fill[white] (-1.18,-0.09) rectangle (1.18,0.09);
+  \draw[line width=0.85pt] (-1.18,-0.09) rectangle (1.18,0.09);
+  \fill (0,0) circle[radius=0.05];
+  \node[anchor=east,inner sep=2pt] at (-1.35,0.02) {$A$};
+  \node[anchor=west,inner sep=2pt] at (1.35,0.02) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (0.06,-0.02) {$O$};
+  % clockwise rotation (upper-left arc, tip toward left)
+  \draw[line width=0.8pt,->] (-0.25,1.05) arc[start angle=100,delta angle=-75,radius=1.08];
+  % brush K on center of rod; lead goes UP then RIGHT (does not place K on rim)
+  \fill[white] (-0.12,0.09) rectangle (0.12,0.30);
+  \draw[line width=0.7pt] (-0.12,0.09) rectangle (0.12,0.30);
+  \node[anchor=south west,inner sep=1.5pt] at (0.14,0.22) {$K$};
+  \draw[line width=0.7pt] (0,0.30) -- (0,1.72) -- (2.40,1.72);
+  % brush L at bottom rim
+  \fill[white] (-0.12,-1.42) rectangle (0.12,-1.22);
+  \draw[line width=0.7pt] (-0.12,-1.42) rectangle (0.12,-1.22);
+  \node[anchor=north west,inner sep=1.5pt] at (0.14,-1.30) {$L$};
+  \draw[line width=0.7pt] (0,-1.42) -- (0,-1.88) -- (2.40,-1.88);
+  % R
+  \draw[line width=0.7pt] (2.40,1.72) -- (2.40,0.58);
+  \draw[line width=0.8pt] (2.22,0.58) rectangle (2.58,-0.58);
+  \node[anchor=east,inner sep=2pt] at (2.18,0.00) {$R$};
+  \draw[line width=0.7pt] (2.40,-0.58) -- (2.40,-1.88);
+\end{tikzpicture}%
+}
+\caption{复习题四第9题 ×场中铜环与杆AB顺时针转，电刷K、L接R}
 \end{figure}
 
-\emph{（第9题）}
+\emph{复习题四第9题 ×场中铜环与杆AB顺时针转，电刷K、L接R}
 
 \begin{enumerate}
 \setcounter{enumi}{8}
@@ -22931,7 +23055,7 @@ UI，那么在导线上损耗的功率为 \(I^{2}R\)。
   厘米，一直金属杆 \(AB\)
   通过环心，两端和环连在一起，此金属杆的电阻为0.8欧姆，铜环绕着通过杆中心而垂直于环面的铜轴顺时针匀速转动，转速为
   \(n = 50\) 转/秒，一阻值 \(R = 1.37\) 欧姆的电阻经过电刷 \(K, L\)
-  分别与轴和环相接触，问通过电阻的电流强度是多少安培？方向怎样？（铜环和销轴的电阻很小，可忽略不计.）
+  分别与轴和环相接触，问通过电阻的电流强度是多少安培？方向怎样？（铜环和铜轴的电阻很小，可忽略不计.）
 \item
   如附图所示，一个 U 形导体框架，宽为 1 米，其所在平面与水平面交角
   \(\theta = 30^{\circ}\)，其电阻可以忽略不计。设匀强磁场与 U
@@ -22941,11 +23065,45 @@ UI，那么在导线上损耗的功率为 \(I^{2}R\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/physics-3/fig-p0309-01.png}}
-\caption{(第10题)}
+\fitfig{%
+% fig-alt: 复习题四第10题 倾角θ的U形导轨cd上跨放导体棒ab；匀强磁场B垂直于导轨平面向上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % perspective-ish: rails go up-right; bottom cd shorter in front
+  % point d at origin-ish, rails along direction (1,0.45)
+  \coordinate (C) at (0.00,0.55);
+  \coordinate (D) at (1.55,0.00);
+  \coordinate (Ctop) at (3.10,2.20);
+  \coordinate (Dtop) at (4.65,1.65);
+  % rails
+  \draw[line width=0.85pt] (C) -- (Ctop);
+  \draw[line width=0.85pt] (D) -- (Dtop);
+  \draw[line width=0.85pt] (C) -- (D);
+  \node[anchor=north east,inner sep=2pt] at (C) {$c$};
+  \node[anchor=north west,inner sep=2pt] at (D) {$d$};
+  % horizontal reference + theta at D
+  \draw[line width=0.55pt] (D) -- (3.10,0.00);
+  \draw[line width=0.55pt] (2.15,0.00) arc[start angle=0,end angle=28,radius=0.60];
+  \node[anchor=west,inner sep=1pt] at (2.75,0.22) {$\theta$};
+  % rod ab (thick) about mid-rail
+  \coordinate (A) at (1.55,1.38);
+  \coordinate (B) at (3.10,0.83);
+  \draw[line width=1.35pt] (A) -- (B);
+  \draw[line width=0.55pt,fill=white] ($(A)+(-0.08,-0.08)$) rectangle ($(A)+(0.08,0.08)$);
+  \draw[line width=0.55pt,fill=white] ($(B)+(-0.08,-0.08)$) rectangle ($(B)+(0.08,0.08)$);
+  \node[anchor=south east,inner sep=2pt] at (A) {$a$};
+  \node[anchor=north west,inner sep=2pt] at (B) {$b$};
+  % B arrows perpendicular to plane (up-left-ish)
+  \foreach \t in {0.22,0.40,0.58,0.76} {
+    \coordinate (P) at ($(C)!\t!(Dtop)-(0.15,0.05)$);
+    \draw[line width=0.7pt,->] (P) -- ++(-0.35,0.95);
+  }
+  \node[anchor=south east,inner sep=1pt] at ($(C)!0.22!(Dtop)+(-0.35,0.95)$) {$B$};
+\end{tikzpicture}%
+}
+\caption{复习题四第10题 倾角θ的U形导轨上棒ab，B垂直导轨平面向上}
 \end{figure}
 
-\emph{（第10题）}
+\emph{复习题四第10题 倾角θ的U形导轨上棒ab，B垂直导轨平面向上}
 
 欧姆，跨放在 U 形架上，并且能无摩擦地滑动。假设框架足够长。求：（1）
 导体 ab 下滑的最大速度 \(v_{m}\)； （2） 在最大速度 \(v_{m}\) 时，在 ab
@@ -22970,11 +23128,52 @@ UI，那么在导线上损耗的功率为 \(I^{2}R\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/physics-3/fig-p0309-02.png}}
-\caption{(第12题)}
+\fitfig{%
+% fig-alt: 复习题四第12题 矩形铁心变压器：左绕组100 V，右绕组3300 V，底单匝接伏特表V
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % iron core
+  \draw[line width=0.85pt] (0.00,0.00) rectangle (3.40,2.60);
+  \draw[line width=0.85pt] (0.42,0.42) rectangle (2.98,2.18);
+  % left coil
+  \foreach \y in {0.85,1.20,1.55} {
+    \draw[line width=0.7pt] (-0.05,\y) -- (0.50,\y+0.12);
+  }
+  \foreach \y in {0.85,1.20} {
+    \draw[line width=0.45pt] (-0.05,\y+0.30) -- (0.50,\y+0.12);
+  }
+  \draw[line width=0.65pt] (-0.05,1.67) -- (-1.15,1.67);
+  \draw[line width=0.65pt] (-0.05,0.85) -- (-1.15,0.85);
+  \fill (-1.15,1.67) circle[radius=0.045];
+  \fill (-1.15,0.85) circle[radius=0.045];
+  \node[anchor=east,inner sep=3pt] at (-1.22,1.26) {100 V};
+  % right coil
+  \foreach \y in {0.70,1.00,1.30,1.60,1.90} {
+    \draw[line width=0.7pt] (2.90,\y) -- (3.45,\y+0.12);
+  }
+  \foreach \y in {0.70,1.00,1.30,1.60} {
+    \draw[line width=0.45pt] (2.90,\y+0.30) -- (3.45,\y+0.12);
+  }
+  \draw[line width=0.65pt] (3.45,2.02) -- (4.55,2.02);
+  \draw[line width=0.65pt] (3.45,0.70) -- (4.55,0.70);
+  \fill (4.55,2.02) circle[radius=0.045];
+  \fill (4.55,0.70) circle[radius=0.045];
+  \node[anchor=west,inner sep=3pt] at (4.62,1.36) {3300 V};
+  % single turn on bottom limb
+  \draw[line width=0.75pt] (1.25,0.42) -- (1.25,-0.08) -- (2.15,-0.08) -- (2.15,0.42);
+  % leads down to V
+  \draw[line width=0.7pt] (1.25,-0.08) -- (1.25,-0.45);
+  \draw[line width=0.7pt] (2.15,-0.08) -- (2.15,-0.45);
+  \draw[line width=0.7pt] (1.25,-0.45) -- (1.70,-0.45);
+  \draw[line width=0.7pt] (2.15,-0.45) -- (1.70,-0.45);
+  \draw[line width=0.85pt] (1.70,-0.90) circle[radius=0.34];
+  \node at (1.70,-0.90) {\large $V$};
+  \draw[line width=0.65pt] (1.70,-0.45) -- (1.70,-0.56);
+\end{tikzpicture}%
+}
+\caption{复习题四第12题 变压器左100 V右3300 V，底单匝接伏特表V}
 \end{figure}
 
-\emph{（第12题）}
+\emph{复习题四第12题 变压器左100 V右3300 V，底单匝接伏特表V}
 
 \begin{enumerate}
 \setcounter{enumi}{12}
@@ -22997,28 +23196,49 @@ UI，那么在导线上损耗的功率为 \(I^{2}R\)。
 
 （1） 仅在象限 I，
 
-（2） 仅在象限 \(\Pi\)，
+（2） 仅在象限 II，
 
 （3） 仅在象限 I， IV，
 
-（4） 仅在象限Ⅱ、Ⅳ，
+（4） 仅在象限 II、IV，
 
-（5） 仅在象限 I， II.
+（5） 仅在象限 I、III.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-3/fig-p0310-01.png}}
-\caption{(第1题)}
+\fitfig{%
+% fig-alt: 单元检查第1题 虚线方框内正交双线导线：竖直I向下、水平I向右；象限I–IV
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,dashed] (-2.05,-2.05) rectangle (2.05,2.05);
+  % vertical double wire
+  \draw[line width=0.75pt] (-0.10,-2.05) -- (-0.10,2.05);
+  \draw[line width=0.75pt] (0.10,-2.05) -- (0.10,2.05);
+  % horizontal double wire
+  \draw[line width=0.75pt] (-2.05,-0.10) -- (2.05,-0.10);
+  \draw[line width=0.75pt] (-2.05,0.10) -- (2.05,0.10);
+  % arrows (inside the strip)
+  \draw[line width=0.9pt,->] (0,1.55) -- (0,0.55);
+  \node[anchor=west,inner sep=3pt] at (0.18,1.05) {$I$};
+  \draw[line width=0.9pt,->] (0.45,0) -- (1.45,0);
+  \node[anchor=south,inner sep=2pt] at (0.95,0.12) {$I$};
+  % quadrants
+  \node at (1.05,1.05) {I};
+  \node at (-1.05,1.05) {II};
+  \node at (-1.05,-1.05) {III};
+  \node at (1.05,-1.05) {IV};
+\end{tikzpicture}%
+}
+\caption{单元检查第1题 正交导线I向下与向右，象限I–IV}
 \end{figure}
 
-\emph{（第1题）}
+\emph{单元检查第1题 正交导线I向下与向右，象限I–IV}
 
 答：
 
 \begin{enumerate}
 \setcounter{enumi}{1}
 \item
-  如图所示， \(ABOD\) 为一固定线圈， 磁铁绕 \(OO_{1}\) 轴旋转， 当 \(N\)
+  如图所示， \(ABCD\) 为一固定线圈， 磁铁绕 \(OO_{1}\) 轴旋转， 当 \(N\)
   极离开读者， \(S\) 极向着读者运动的瞬间， \(AB\) 部分的电流方向为：
 \end{enumerate}
 
@@ -23032,19 +23252,63 @@ UI，那么在导线上损耗的功率为 \(I^{2}R\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-3/fig-p0310-02.png}}
-\caption{(第2题)}
+\fitfig{%
+% fig-alt: 单元检查第2题 固定线圈ABCD，中心条形磁铁SN（N极阴影）绕竖直轴OO′
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.85pt] (-1.70,-1.35) rectangle (1.70,1.35);
+  \node[anchor=south east,inner sep=2pt] at (-1.70,1.35) {$A$};
+  \node[anchor=south west,inner sep=2pt] at (1.70,1.35) {$B$};
+  \node[anchor=north west,inner sep=2pt] at (1.70,-1.35) {$C$};
+  \node[anchor=north east,inner sep=2pt] at (-1.70,-1.35) {$D$};
+  % axis OO'
+  \draw[line width=0.7pt,dash pattern=on 3.5pt off 1.6pt on 0.7pt off 1.6pt] (0,-1.75) -- (0,1.75);
+  \node[anchor=south,inner sep=2pt] at (0,1.75) {$O$};
+  \node[anchor=north,inner sep=2pt] at (0,-1.75) {$O'$};
+  % bar magnet
+  \draw[line width=0.75pt] (-0.95,-0.28) rectangle (0.95,0.28);
+  \draw[line width=0.55pt] (0,-0.28) -- (0,0.28);
+  \node at (-0.48,0) {$S$};
+  % N with hatching
+  \begin{scope}
+    \clip (0,-0.28) rectangle (0.95,0.28);
+    \foreach \x in {0.05,0.20,0.35,0.50,0.65,0.80,0.95} {
+      \draw[line width=0.35pt] (\x,-0.28) -- (\x-0.35,0.28);
+    }
+  \end{scope}
+  \node at (0.48,0) {$N$};
+\end{tikzpicture}%
+}
+\caption{单元检查第2题 线圈ABCD中磁铁SN绕OO′轴}
 \end{figure}
 
-\emph{（第2题）}
+\emph{单元检查第2题 线圈ABCD中磁铁SN绕OO′轴}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-3/fig-p0310-03.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: 单元检查第3题 匀强磁场⊙向外中矩形框abcd以速度v向右平动
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % field dots
+  \foreach \x in {-1.50,-0.90,-0.30,0.30,0.90,1.50} {
+    \foreach \y in {-1.20,-0.60,0.00,0.60,1.20} {
+      \fill (\x,\y) circle[radius=0.045];
+    }
+  }
+  % loop
+  \draw[line width=0.85pt] (-0.95,-0.95) rectangle (0.95,0.95);
+  \node[anchor=south,inner sep=2pt] at (0,0.95) {$a$};
+  \node[anchor=west,inner sep=2pt] at (0.95,0.20) {$b$};
+  \node[anchor=north,inner sep=2pt] at (0,-0.95) {$c$};
+  \node[anchor=east,inner sep=2pt] at (-0.95,0) {$d$};
+  % v arrow
+  \draw[line width=0.8pt,->] (0.95,0) -- (1.85,0);
+  \node[anchor=west,inner sep=2pt] at (1.85,0) {$v$};
+\end{tikzpicture}%
+}
+\caption{单元检查第3题 ⊙场中框abcd以v向右平动}
 \end{figure}
 
-\emph{（第3题）}
+\emph{单元检查第3题 ⊙场中框abcd以v向右平动}
 
 \begin{enumerate}
 \setcounter{enumi}{2}
@@ -23053,11 +23317,10 @@ UI，那么在导线上损耗的功率为 \(I^{2}R\)。
   矩形闭合导线框在垂直于纸面向外的匀强磁场中向右平动，则（1）因为通过
   abcd 的磁通量不变，感生电动势为零，a、b、c、d
   各点电势相同；（2）因为线框切割磁力线，线框中的感生电动势不为零，a
-  点电势高，c 点电势低；（3）感生电动势为零，无感生电流，但 c
-  点电势最高，c 点电势最低；（4）感生电动势为零，无感生电流，但 c
+  点电势高，c 点电势低；（3）感生电动势为零，无感生电流，但 a 点电势最高，c 点电势最低；（4）感生电动势为零，无感生电流，但 c
   点电势最高，a 点电势最低。答：
 \item
-  如图所示， 长 50 厘米的金属棒， 在 \(B - 0.5\) 特斯拉的匀强磁场中受
+  如图所示， 长 50 厘米的金属棒， 在 \(B = 0.5\) 特斯拉的匀强磁场中受
   0.5 牛顿的外力作用沿金属框运动。设金属框足够长，
   金属棒能在框上无摩擦地滑动， 回路 \(abcd\) 的总电阻 \(R = 0.1\) 欧姆，
   并在运动过程中保持不变。导线滑动的最大速度为： （1） 0.1 米/秒； （2）
