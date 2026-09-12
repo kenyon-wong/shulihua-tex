@@ -23363,7 +23363,35 @@ r=OL=\sqrt{OB^2-LB^2}=\sqrt{R^2-\left(\frac{R}{2}\right)^2}=\frac{\sqrt{3}}{2}R.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·18}]{assets/plane-geometry-2/fig-p0249-01.png}}
+\fitfig{%
+% fig-alt: 图4·18 圆O；内接边AB与外切边A'B'；边心距OM、OM'；射线OA'过A、OB'过B；M'为切点
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.10}
+  \pgfmathsetmacro{\ang}{42}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at ({270-\ang}:\R);
+  \coordinate (B) at ({270+\ang}:\R);
+  \coordinate (Mp) at (270:\R);
+  \coordinate (M) at (0,{-\R*cos(\ang)});
+  \pgfmathsetmacro{\tx}{\R*tan(\ang)}
+  \coordinate (Ap) at ({-\tx},-\R);
+  \coordinate (Bp) at ({\tx},-\R);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (Ap) -- (Bp);
+  \draw[line width=0.75pt] (O) -- (Ap);
+  \draw[line width=0.75pt] (O) -- (Bp);
+  \draw[line width=0.75pt] (O) -- (Mp);
+  \fill (O) circle (1.0pt);
+  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (M) {$M$};
+  \node[anchor=north,inner sep=1.5pt] at (Mp) {$M'$};
+  \node[anchor=north east,inner sep=1.5pt] at (Ap) {$A'$};
+  \node[anchor=north west,inner sep=1.5pt] at (Bp) {$B'$};
+\end{tikzpicture}%
+}
 \caption{图4·18}
 \end{figure}
 
@@ -23420,8 +23448,32 @@ a _ {2 n} = \sqrt {2 R ^ {2} - R \sqrt {4 R ^ {2} - a _ {n} ^ {2}}}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-19}]{assets/plane-geometry-2/fig-p0251-01.png}}
-\caption{图4-19}
+\fitfig{%
+% fig-alt: 图4·19 圆O；弦AB=a_n；垂直平分线交弦于D、交弧于C；连OA（虚线）、AC；OD虚线
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \pgfmathsetmacro{\yd}{-0.72*\R}
+  \pgfmathsetmacro{\xa}{sqrt(\R*\R-\yd*\yd)}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (0,-\R);
+  \coordinate (D) at (0,\yd);
+  \coordinate (A) at (-\xa,\yd);
+  \coordinate (B) at (\xa,\yd);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (D) -- (C);
+  \draw[dashed,line width=0.65pt] (O) -- (A);
+  \draw[dashed,line width=0.65pt] (O) -- (D);
+  \fill (O) circle (1.0pt);
+  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{图4·19}
 \end{figure}
 
 \begin{quote}
@@ -23479,8 +23531,34 @@ a _ {2 n} ^ {2} = 2 R ^ {2} - 2 R \cdot \sqrt {R ^ {2} - \left(\frac {a _ {n}}{2
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.20}]{assets/plane-geometry-2/fig-p0252-01.png}}
-\caption{图4.20}
+\fitfig{%
+% fig-alt: 图4·20 圆O内接正方形ABCD（A在底）与正八边形AEBFCGDH；半径OA；边心距OM⊥AE于M
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \foreach \ang/\name in {270/A,0/B,90/C,180/D,315/E,45/F,135/G,225/H} {
+    \coordinate (\name) at (\ang:\R);
+  }
+  \coordinate (M) at ($(A)!0.5!(E)$);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (E) -- (B) -- (F) -- (C) -- (G) -- (D) -- (H) -- cycle;
+  \draw[line width=0.75pt] (O) -- (A);
+  \draw[line width=0.75pt] (O) -- (M);
+  \fill (O) circle (1.0pt);
+  \node[anchor=north west,inner sep=1pt] at (O) {$O$};
+  \node[anchor=north,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=east,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south west,inner sep=1pt] at (F) {$F$};
+  \node[anchor=south east,inner sep=1pt] at (G) {$G$};
+  \node[anchor=north east,inner sep=1pt] at (H) {$H$};
+  \node[anchor=south east,inner sep=1pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{图4·20}
 \end{figure}
 
 \begin{quote}
@@ -23515,7 +23593,33 @@ a _ {2 n} ^ {2} = 2 R ^ {2} - 2 R \cdot \sqrt {R ^ {2} - \left(\frac {a _ {n}}{2
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·21}]{assets/plane-geometry-2/fig-p0253-01.png}}
+\fitfig{%
+% fig-alt: 图4·21 圆O内接正六边形ABCDEF与正十二边形（弧中点G,H,I,J,K,L）；AB=a_6，AG=a_12
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \foreach \ang/\name in {240/A,300/B,0/C,60/D,120/E,180/F,270/G,330/H,30/I,90/J,150/K,210/L} {
+    \coordinate (\name) at (\ang:\R);
+  }
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+  \draw[line width=0.75pt] (A) -- (G) -- (B) -- (H) -- (C) -- (I) -- (D) -- (J) -- (E) -- (K) -- (F) -- (L) -- cycle;
+  \fill (O) circle (1.0pt);
+  \node[anchor=south west,inner sep=0.5pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (E) {$E$};
+  \node[anchor=east,inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=north,inner sep=1.5pt] at (G) {$G$};
+  \node[anchor=north west,inner sep=1pt] at (H) {$H$};
+  \node[anchor=south west,inner sep=1pt] at (I) {$I$};
+  \node[anchor=south,inner sep=1.5pt] at (J) {$J$};
+  \node[anchor=south east,inner sep=1pt] at (K) {$K$};
+  \node[anchor=north east,inner sep=1pt] at (L) {$L$};
+\end{tikzpicture}%
+}
 \caption{图4·21}
 \end{figure}
 
@@ -23570,22 +23674,112 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0254-01.png}}
-\caption{(第4题)}
+\fitfig{%
+% fig-alt: （第5题）正方形ABCD；虚线对角线交于O；以各顶点为心、对角线一半为半径作虚弧交边于E,F,G,H,K,L,M,N；粗线连NE,FG,HK,LM成正八边形
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\s{2.30}
+  \coordinate (A) at (-\s,-\s);
+  \coordinate (B) at (\s,-\s);
+  \coordinate (C) at (\s,\s);
+  \coordinate (D) at (-\s,\s);
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\rr}{\s*sqrt(2)}
+  % intersection of arc(center A,r=AO) with AB and AD
+  \coordinate (E) at ({-\s+\rr},-\s);
+  \coordinate (N) at (-\s,{-\s+\rr});
+  \coordinate (F) at ({\s-\rr},-\s);
+  \coordinate (G) at (\s,{-\s+\rr});
+  \coordinate (H) at (\s,{\s-\rr});
+  \coordinate (K) at ({\s-\rr},\s);
+  \coordinate (L) at ({-\s+\rr},\s);
+  \coordinate (M) at (-\s,{\s-\rr});
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed,line width=0.55pt] (A) -- (C);
+  \draw[dashed,line width=0.55pt] (B) -- (D);
+  % arcs centered at vertices through O
+  \draw[dashed,line width=0.55pt] (E) arc[start angle=0, end angle=90, radius=\rr];
+  \draw[dashed,line width=0.55pt] (G) arc[start angle=90, end angle=180, radius=\rr];
+  \draw[dashed,line width=0.55pt] (K) arc[start angle=180, end angle=270, radius=\rr];
+  \draw[dashed,line width=0.55pt] (M) arc[start angle=270, end angle=360, radius=\rr];
+  % thick corner cuts of octagon
+  \draw[line width=1.05pt] (N) -- (E);
+  \draw[line width=1.05pt] (F) -- (G);
+  \draw[line width=1.05pt] (H) -- (K);
+  \draw[line width=1.05pt] (L) -- (M);
+  \fill (O) circle (1.0pt);
+  \node[anchor=north east,inner sep=2pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=2pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=2pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=2pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=north,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=west,inner sep=1.5pt] at (G) {$G$};
+  \node[anchor=west,inner sep=1.5pt] at (H) {$H$};
+  \node[anchor=south,inner sep=1.5pt] at (K) {$K$};
+  \node[anchor=south,inner sep=1.5pt] at (L) {$L$};
+  \node[anchor=east,inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=east,inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \begin{quote}
-（第4题）
+（第5题）
 \end{quote}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0254-02.png}}
-\caption{(第14题)}
+\fitfig{%
+% fig-alt: （第6题）正方形削去四角成正八边形；切角直角边标x，斜边与余边标$\sqrt{2}x$
+\begin{tikzpicture}[line cap=round,line join=round]
+  \pgfmathsetmacro{\x}{0.85}
+  \pgfmathsetmacro{\m}{\x*sqrt(2)}
+  \pgfmathsetmacro{\S}{2*\x+\m}
+  \coordinate (A) at (0,\S);
+  \coordinate (B) at (\S,\S);
+  \coordinate (C) at (\S,0);
+  \coordinate (D) at (0,0);
+  % octagon vertices clockwise from top of left side
+  \coordinate (P1) at (0,{\S-\x});
+  \coordinate (P2) at (\x,\S);
+  \coordinate (P3) at ({\S-\x},\S);
+  \coordinate (P4) at (\S,{\S-\x});
+  \coordinate (P5) at (\S,\x);
+  \coordinate (P6) at ({\S-\x},0);
+  \coordinate (P7) at (\x,0);
+  \coordinate (P8) at (0,\x);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- (P6) -- (P7) -- (P8) -- cycle;
+  % dimension: top-left cut horizontal x
+  \draw[line width=0.45pt] (0,{\S+0.28}) -- (\x,{\S+0.28});
+  \draw[line width=0.45pt] (0,{\S+0.18}) -- (0,{\S+0.38});
+  \draw[line width=0.45pt] (\x,{\S+0.18}) -- (\x,{\S+0.38});
+  \node[anchor=south,inner sep=1pt,font=\small] at ({0.5*\x},{\S+0.28}) {$x$};
+  % dimension: left-top cut vertical x
+  \draw[line width=0.45pt] (-0.28,{\S}) -- (-0.28,{\S-\x});
+  \draw[line width=0.45pt] (-0.18,\S) -- (-0.38,\S);
+  \draw[line width=0.45pt] (-0.18,{\S-\x}) -- (-0.38,{\S-\x});
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.28,{\S-0.5*\x}) {$x$};
+  % dimension: left middle side sqrt(2)x
+  \draw[line width=0.45pt] (-0.28,{\S-\x}) -- (-0.28,\x);
+  \draw[line width=0.45pt] (-0.18,\x) -- (-0.38,\x);
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.28,{0.5*\S}) {$\sqrt{2}x$};
+  % dimension: bottom-left cut vertical x
+  \draw[line width=0.45pt] (-0.28,\x) -- (-0.28,0);
+  \draw[line width=0.45pt] (-0.18,0) -- (-0.38,0);
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.28,{0.5*\x}) {$x$};
+  % dimension along top-left diagonal cut
+  \coordinate (Q1) at ($(P1)!0.5!(P2)$);
+  \node[anchor=south east,inner sep=2pt,font=\small,rotate=45] at (Q1) {$\sqrt{2}x$};
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \begin{quote}
-（第14题）
+（第6题）
 \end{quote}
 
 ［证：顺次连接弧与各边交点所得到的八边形，设为 EFGHKLMN（如图）。已知
@@ -23605,7 +23799,7 @@ ABCD 这个正方形的边长为 2a，那末，由勾股定理可求出对角线
   已知边长为 a 的正方形，怎样削去四角，使它成为一个正八边形？
 \end{enumerate}
 
-［提示： 参考第 4 题， 求出图中 x 的长。］
+［提示： 参考第 5 题， 求出图中 x 的长。］
 
 \begin{enumerate}
 \setcounter{enumi}{6}
@@ -23654,8 +23848,25 @@ A B = B D = D A = \sqrt {3} R\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0255-01.png}}
-\caption{(第11题)}
+\fitfig{%
+% fig-alt: （第11题）圆内接正三角形ABD与三角形ABC；AB=BD=DA；BC为内接正六边形边；C在右弧
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \coordinate (D) at (90:\R);
+  \coordinate (A) at (210:\R);
+  \coordinate (B) at (330:\R);
+  \coordinate (C) at (30:\R);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C) -- (B);
+  \node[anchor=north east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south,inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{（第11题）}
 \end{figure}
 
 \begin{quote}
@@ -23664,8 +23875,34 @@ A B = B D = D A = \sqrt {3} R\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0255-02.png}}
-\caption{(第17题)}
+\fitfig{%
+% fig-alt: （第17题）圆O；正六边形相间顶点连线成两正三角形（六角星）；中心正六边形ABCDEF阴影
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \foreach \ang/\name in {90/T1,210/T2,330/T3,30/S1,150/S2,270/S3} {
+    \coordinate (\name) at (\ang:\R);
+  }
+  \pgfmathsetmacro{\rh}{\R/3}
+  \foreach \ang/\name in {0/D,60/E,120/F,180/A,240/B,300/C} {
+    \coordinate (\name) at (\ang:\rh);
+  }
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (T1) -- (T2) -- (T3) -- cycle;
+  \draw[line width=0.75pt] (S1) -- (S2) -- (S3) -- cycle;
+  \fill[pattern=north east lines,pattern color=black!70] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+  \fill (O) circle (1.0pt);
+  \node[anchor=south,inner sep=1.5pt] at (0,0.12) {$O$};
+  \node[anchor=east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=west,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south east,inner sep=1pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第17题）}
 \end{figure}
 
 \begin{quote}
