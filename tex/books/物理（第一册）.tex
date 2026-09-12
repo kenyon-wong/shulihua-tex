@@ -22734,8 +22734,37 @@ E _ {p} = m g h \tag{11.9}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-18}]{assets/physics-1/fig-p0358-01.png}}
-\caption{图11-18}
+% fig-alt: 图11·18：地面斜影；上虚线M'N'上斜影块；中虚线MN；块下竖粗箭；右竖双箭头h1（M'N'–MN）、h2（MN–地）、h（M'N'–地）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ground
+  \draw[line width=0.75pt] (-2.35,0) -- (2.55,0);
+  \foreach \x in {-2.25,-1.95,-1.65,-1.35,-1.05,-0.75,-0.45,-0.15,0.15,0.45,0.75,1.05,1.35,1.65,1.95,2.25,2.45}
+    \draw[line width=0.35pt] (\x,0) -- (\x-0.22,-0.22);
+  % levels
+  \def\hA{3.55}
+  \def\hB{2.05}
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt] (-2.15,\hA) -- (1.55,\hA);
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt] (-2.15,\hB) -- (1.55,\hB);
+  \node[anchor=south east] at (-2.15,\hA+0.02) {$M'$};
+  \node[anchor=south west] at (1.55,\hA+0.02) {$N'$};
+  \node[anchor=south east] at (-2.15,\hB+0.02) {$M$};
+  \node[anchor=south west] at (1.55,\hB+0.02) {$N$};
+  % block on M'N'
+  \fill[pattern=north east lines,pattern color=black!70] (-0.55,\hA) rectangle (0.55,\hA+0.95);
+  \draw[line width=0.65pt] (-0.55,\hA) rectangle (0.55,\hA+0.95);
+  % thick down arrow between levels under block
+  \draw[line width=1.15pt,->] (0,{\hA-0.12}) -- (0,{\hB+0.18});
+  % dimension arrows on the right
+  \draw[line width=0.55pt,<->] (1.85,\hA) -- (1.85,\hB);
+  \node[anchor=west] at (1.95,{(\hA+\hB)/2}) {$h_{1}$};
+  \draw[line width=0.55pt,<->] (1.85,\hB) -- (1.85,0);
+  \node[anchor=west] at (1.95,{\hB/2}) {$h_{2}$};
+  \draw[line width=0.55pt,<->] (2.45,\hA) -- (2.45,0);
+  \node[anchor=west] at (2.55,{\hA/2}) {$h$};
+\end{tikzpicture}%
+}
+\caption{图11·18}
 \end{figure}
 
 \emph{图11·18}
@@ -22824,8 +22853,31 @@ m g s _ {4} = 10 \times 9.8 \times 34.3 = 3361.4 \text{焦耳}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-19}]{assets/physics-1/fig-p0360-01.png}}
-\caption{图11-19}
+% fig-alt: 图11·19：竖直下箭，顶实心点标0，左刻1–5；间隔按自由落体奇数比1:3:5:7:9，右标s1–s5。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % positions y = -0.22 * t^2  (unit spacing for odd intervals)
+  \def\k{0.22}
+  \coordinate (P0) at (0,0);
+  \coordinate (P1) at (0,{-1*\k});
+  \coordinate (P2) at (0,{-4*\k});
+  \coordinate (P3) at (0,{-9*\k});
+  \coordinate (P4) at (0,{-16*\k});
+  \coordinate (P5) at (0,{-25*\k});
+  \fill (P0) circle[radius=0.07];
+  \draw[line width=0.75pt,->] (P0) -- (0,{-25*\k-0.55});
+  \foreach \n/\P in {0/P0,1/P1,2/P2,3/P3,4/P4,5/P5} {
+    \draw[line width=0.45pt] ($(\P)+(-0.18,0)$) -- ($(\P)+(0.05,0)$);
+    \node[anchor=east] at ($(\P)+(-0.22,0)$) {\n};
+  }
+  \node[anchor=west] at ($(P0)!0.5!(P1)+(0.22,0)$) {$s_{1}$};
+  \node[anchor=west] at ($(P1)!0.5!(P2)+(0.22,0)$) {$s_{2}$};
+  \node[anchor=west] at ($(P2)!0.5!(P3)+(0.22,0)$) {$s_{3}$};
+  \node[anchor=west] at ($(P3)!0.5!(P4)+(0.22,0)$) {$s_{4}$};
+  \node[anchor=west] at ($(P4)!0.5!(P5)+(0.22,0)$) {$s_{5}$};
+\end{tikzpicture}%
+}
+\caption{图11·19}
 \end{figure}
 
 \emph{图11·19}
@@ -22886,16 +22938,77 @@ W = m g \left(h _ {1} - h _ {2}\right) = m g h _ {1} - m g h _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-20}]{assets/physics-1/fig-p0362-01.png}}
-\caption{图11-20}
+% fig-alt: 图11·20：地面斜影；上斜影块m，下空心块；右竖双箭头h1（上块底至地）、h2（下块底至地），水平虚线辅助。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.75pt] (-1.35,0) -- (2.35,0);
+  \foreach \x in {-1.25,-0.95,-0.65,-0.35,-0.05,0.25,0.55,0.85,1.15,1.45,1.75,2.05,2.25}
+    \draw[line width=0.35pt] (\x,0) -- (\x-0.22,-0.22);
+  % upper hatched block
+  \fill[pattern=north east lines,pattern color=black!70] (-0.55,3.35) rectangle (0.55,4.35);
+  \draw[line width=0.65pt] (-0.55,3.35) rectangle (0.55,4.35);
+  \node[anchor=west] at (0.62,4.15) {$m$};
+  % lower hollow block
+  \draw[line width=0.65pt] (-0.55,1.35) rectangle (0.55,2.35);
+  % dashed guides
+  \draw[line width=0.4pt,dashed] (0.55,3.35) -- (1.55,3.35);
+  \draw[line width=0.4pt,dashed] (0.55,1.35) -- (1.55,1.35);
+  % h1, h2
+  \draw[line width=0.55pt,<->] (1.70,3.35) -- (1.70,0);
+  \node[anchor=west] at (1.80,1.70) {$h_{1}$};
+  \draw[line width=0.55pt,<->] (1.15,1.35) -- (1.15,0);
+  \node[anchor=east] at (1.05,0.70) {$h_{2}$};
+\end{tikzpicture}%
+}
+\caption{图11·20}
 \end{figure}
 
 \emph{图11·20}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-21}]{assets/physics-1/fig-p0362-02.png}}
-\caption{图11-21}
+% fig-alt: 图11·21：斜面α；上实线块m与竖双箭头h1；中虚线块上重力竖直分与沿/垂直斜面分力（虚线成矩形）；下实线块与竖双箭头h2。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\al{28}
+  % ground + incline
+  \draw[line width=0.75pt] (0,0) -- (6.4,0);
+  \draw[line width=0.75pt] (0,0) -- ({6.2*cos(\al)},{6.2*sin(\al)});
+  \draw[line width=0.35pt] (0.70,0) arc[start angle=0,end angle=\al,radius=0.70];
+  \node[anchor=south west] at (0.78,0.08) {$\alpha$};
+  % top block
+  \coordinate (PT) at ({5.15*cos(\al)},{5.15*sin(\al)});
+  \begin{scope}[rotate around={\al:(PT)}]
+    \draw[line width=0.65pt] ($(PT)+(-0.38,-0.28)$) rectangle ($(PT)+(0.38,0.28)$);
+  \end{scope}
+  \node[anchor=south] at ($(PT)+(-0.15,{0.55*cos(\al)})$) {$m$};
+  % h1
+  \draw[line width=0.45pt,dashed] (PT) -- ({5.15*cos(\al)},0);
+  \draw[line width=0.55pt,<->] ({5.15*cos(\al)+0.28},{5.15*sin(\al)}) -- ({5.15*cos(\al)+0.28},0);
+  \node[anchor=west] at ({5.15*cos(\al)+0.38},{5.15*sin(\al)*0.5}) {$h_{1}$};
+  % middle dashed block with forces
+  \coordinate (PM) at ({3.15*cos(\al)},{3.15*sin(\al)});
+  \begin{scope}[rotate around={\al:(PM)}]
+    \draw[line width=0.55pt,dashed] ($(PM)+(-0.40,-0.30)$) rectangle ($(PM)+(0.40,0.30)$);
+    % G_∥ down-incline, G_⊥ into plane, dashed rectangle of components
+    \draw[line width=0.6pt,->] (PM) -- ++(-1.10,0);
+    \draw[line width=0.55pt,dashed,->] (PM) -- ++(0,-0.90);
+    \draw[line width=0.35pt,dashed] ($(PM)+(-1.10,0)$) -- ($(PM)+(-1.10,-0.90)$) -- ($(PM)+(0,-0.90)$);
+  \end{scope}
+  % G vertical
+  \draw[line width=0.7pt,->] (PM) -- ++(0,-1.40);
+  % bottom block
+  \coordinate (PB) at ({1.35*cos(\al)},{1.35*sin(\al)});
+  \begin{scope}[rotate around={\al:(PB)}]
+    \draw[line width=0.65pt] ($(PB)+(-0.38,-0.28)$) rectangle ($(PB)+(0.38,0.28)$);
+  \end{scope}
+  % h2
+  \draw[line width=0.45pt,dashed] (PB) -- ({1.35*cos(\al)},0);
+  \draw[line width=0.55pt,<->] ({1.35*cos(\al)+0.22},{1.35*sin(\al)}) -- ({1.35*cos(\al)+0.22},0);
+  \node[anchor=west] at ({1.35*cos(\al)+0.32},{1.35*sin(\al)*0.55}) {$h_{2}$};
+\end{tikzpicture}%
+}
+\caption{图11·21}
 \end{figure}
 
 \emph{图11·21}
@@ -22929,16 +23042,75 @@ W = m g \sin \alpha \cdot \frac {h _ {1} - h _ {2}}{\sin \alpha} = m g h _ {1} -
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-22}]{assets/physics-1/fig-p0363-01.png}}
-\caption{图11-22}
+% fig-alt: 图11·22：竖线AB0标h；底水平B3–B2–B1–B0；斜线AB1、AB2、AB3。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (A) at (0,3.2);
+  \coordinate (B0) at (0,0);
+  \coordinate (B1) at (-1.55,0);
+  \coordinate (B2) at (-3.35,0);
+  \coordinate (B3) at (-5.55,0);
+  \draw[line width=0.7pt] (B3) -- (B0) -- (A);
+  \draw[line width=0.65pt] (A) -- (B1);
+  \draw[line width=0.65pt] (A) -- (B2);
+  \draw[line width=0.65pt] (A) -- (B3);
+  \node[anchor=south west] at (0.08,3.22) {$A$};
+  \node[anchor=north] at (0,-0.08) {$B_{0}$};
+  \node[anchor=north] at (-1.55,-0.08) {$B_{1}$};
+  \node[anchor=north] at (-3.35,-0.08) {$B_{2}$};
+  \node[anchor=north] at (-5.55,-0.08) {$B_{3}$};
+  \node[anchor=west] at (0.18,1.60) {$h$};
+\end{tikzpicture}%
+}
+\caption{图11·22}
 \end{figure}
 
 \emph{图11·22}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图11-23}]{assets/physics-1/fig-p0363-02.png}}
-\caption{图11-23}
+% fig-alt: 图11·23：地面斜影；曲线A0→A1→A2→A3→A4→B；阶梯虚线标h01、h12、h23、hBn；右竖双箭头h1（A0至地）、h2（B至地）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ground
+  \draw[line width=0.75pt] (-0.2,0) -- (6.3,0);
+  \foreach \x in {0.0,0.3,0.6,0.9,1.2,1.5,1.8,2.1,2.4,2.7,3.0,3.3,3.6,3.9,4.2,4.5,4.8,5.1,5.4,5.7,6.0,6.2}
+    \draw[line width=0.32pt] (\x,0) -- (\x-0.20,-0.20);
+  % curve points (descending leftward parabola-like)
+  \coordinate (A0) at (5.35,3.55);
+  \coordinate (A1) at (4.35,3.05);
+  \coordinate (A2) at (3.40,2.40);
+  \coordinate (A3) at (2.55,1.65);
+  \coordinate (A4) at (1.85,1.05);
+  \coordinate (B)  at (0.85,0.55);
+  \draw[line width=0.7pt] (A0) .. controls (4.85,3.45) and (4.55,3.25) .. (A1)
+    .. controls (3.90,2.80) and (3.70,2.60) .. (A2)
+    .. controls (3.00,2.05) and (2.80,1.85) .. (A3)
+    .. controls (2.20,1.35) and (2.05,1.20) .. (A4)
+    .. controls (1.35,0.75) and (1.10,0.65) .. (B);
+  \foreach \P/\lab/\anch in {A0/$A_{0}$/south,A1/$A_{1}$/south,A2/$A_{2}$/south,A3/$A_{3}$/south,A4/$A_{4}$/south,B/$B$/west} {
+    \fill (\P) circle[radius=0.035];
+    \node[anchor=\anch] at ($(\P)+(0,0.12)$) {\lab};
+  }
+  % step constructions (horizontal then vertical)
+  \draw[line width=0.4pt,dashed] (A0) -- (5.35,3.05) -- (A1);
+  \node[anchor=west] at (5.42,3.30) {$h_{01}$};
+  \draw[line width=0.4pt,dashed] (A1) -- (4.35,2.40) -- (A2);
+  \node[anchor=west] at (4.42,2.72) {$h_{12}$};
+  \draw[line width=0.4pt,dashed] (A2) -- (3.40,1.65) -- (A3);
+  \node[anchor=west] at (3.47,2.02) {$h_{23}$};
+  \draw[line width=0.4pt,dashed] (A4) -- (1.85,0.55) -- (B);
+  \node[anchor=west] at (1.92,0.80) {$h_{Bn}$};
+  % total heights
+  \draw[line width=0.4pt,dashed] (A0) -- (6.05,3.55);
+  \draw[line width=0.55pt,<->] (6.05,3.55) -- (6.05,0);
+  \node[anchor=west] at (6.15,1.80) {$h_{1}$};
+  \draw[line width=0.4pt,dashed] (B) -- (5.55,0.55);
+  \draw[line width=0.55pt,<->] (5.55,0.55) -- (5.55,0);
+  \node[anchor=west] at (5.65,0.28) {$h_{2}$};
+\end{tikzpicture}%
+}
+\caption{图11·23}
 \end{figure}
 
 \emph{图11·23}
@@ -23020,7 +23192,37 @@ W = E _ {p _ {1}} - E _ {p _ {2}} = 4900 \text{焦耳}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-1/fig-p0365-01.png}}
+% fig-alt: （第2题）四分之一圆弧滑道：左竖与底实线成L；上、右虚线交于圆心；弧A→B标R；A处斜影块，弧中空心斜块。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{2.6}
+  % L frame solid
+  \draw[line width=0.75pt] (0,\R+0.15) -- (0,0) -- (\R+0.15,0);
+  % dashed square to center
+  \draw[line width=0.45pt,dashed] (0,\R) -- (\R,\R) -- (\R,0);
+  % quarter arc A(top-left) to B(bottom-right), center at (0,0) would be wrong;
+  % center at (0,\R)? No: center at bottom-left of dashed square = (0,0) if A=(0,R), B=(R,0)
+  % Wait: L corner is bottom-left (0,0); A at (0,R); B at (R,0); center of arc is (0,0)?
+  % Arc concave toward bottom-left means center at (0,0) with arc from 90° to 0°.
+  % But then L left wall is from (0,0) to (0,R) and bottom (0,0) to (R,0) — that's the axes through center.
+  % Looking at ASCII: left wall AND bottom are solid, arc from top-left to bottom-right, dashed from A right and B up.
+  % So center is at top-right of L? No - center is at intersection of dashed lines = (\R,\R) if A=(0,\R), B=(\R,0).
+  % Arc from A to B with center C=(\R,\R): angle from 180° to 270°.
+  \draw[line width=0.85pt] (0,\R) arc[start angle=180,end angle=270,radius=\R];
+  \node[anchor=south east] at (-0.08,\R) {$A$};
+  \node[anchor=west] at (\R+0.08,-0.02) {$B$};
+  \node[anchor=west] at (\R+0.12,{\R*0.55}) {$R$};
+  % block at A (hatched)
+  \fill[pattern=north east lines,pattern color=black!70] (-0.28,\R) rectangle (0.28,\R+0.48);
+  \draw[line width=0.6pt] (-0.28,\R) rectangle (0.28,\R+0.48);
+  % mid block on arc at 45° (angle 225° from center)
+  \coordinate (PM) at ({\R + \R*cos(225)},{\R + \R*sin(225)});
+  % tangent angle: for circle center (R,R), at 225°, tangent is 225+90=315° = -45°
+  \begin{scope}[rotate around={-45:(PM)}]
+    \draw[line width=0.6pt] ($(PM)+(-0.26,-0.26)$) rectangle ($(PM)+(0.26,0.26)$);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -23076,8 +23278,37 @@ E_{p_B}=mg(h-h_{1})=mgh-mgh_{1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11-24}]{assets/physics-1/fig-p0366-01.png}}
-\caption{图 11-24}
+% fig-alt: 图11·24：地面斜影；竖轴上圆C（顶）、实心圆B、圆A（着地）；右竖双箭头h（C顶至地）、h1（C顶至B顶）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\r{0.42}
+  \def\yA{\r}
+  \def\yB{2.55}
+  \def\yC{4.55}
+  % ground
+  \draw[line width=0.75pt] (-1.35,0) -- (2.55,0);
+  \foreach \x in {-1.25,-0.95,-0.65,-0.35,-0.05,0.25,0.55,0.85,1.15,1.45,1.75,2.05,2.35}
+    \draw[line width=0.35pt] (\x,0) -- (\x-0.22,-0.22);
+  % axis through centers
+  \draw[line width=0.45pt] (0,0) -- (0,{\yC});
+  % spheres
+  \draw[line width=0.65pt] (0,\yA) circle[radius=\r];
+  \fill[black!25] (0,\yB) circle[radius=\r];
+  \draw[line width=0.65pt] (0,\yB) circle[radius=\r];
+  \draw[line width=0.65pt] (0,\yC) circle[radius=\r];
+  \node[anchor=east] at (-0.55,\yA) {$A$};
+  \node[anchor=east] at (-0.55,\yB) {$B$};
+  \node[anchor=east] at (-0.55,\yC) {$C$};
+  % dims from top of C
+  \draw[line width=0.4pt,dashed] ({\r+0.05},{\yC+\r}) -- (1.55,{\yC+\r});
+  \draw[line width=0.4pt,dashed] ({\r+0.05},{\yB+\r}) -- (1.55,{\yB+\r});
+  \draw[line width=0.55pt,<->] (1.45,{\yC+\r}) -- (1.45,{\yB+\r});
+  \node[anchor=west] at (1.55,{(\yC+\yB)/2+\r}) {$h_{1}$};
+  \draw[line width=0.55pt,<->] (2.05,{\yC+\r}) -- (2.05,0);
+  \node[anchor=west] at (2.15,{(\yC+\r)/2}) {$h$};
+\end{tikzpicture}%
+}
+\caption{图11·24}
 \end{figure}
 
 \emph{图11·24}
