@@ -23310,17 +23310,103 @@ CS，则有
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第238页）}]{assets/plane-geometry-1/fig-p0238-01.png}}
-\caption{图示（原PDF第238页）}
+\fitfig{%
+% fig-alt: 图4·37（1）圆内接 △ABC，P 在弧 BC；PD⊥BC、PF⊥AB、PE⊥AC 延线；虚线 PB、PC；F、D、E 共线；直角方
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (70:\R);
+  \coordinate (B) at (175:\R);
+  \coordinate (C) at (5:\R);
+  \coordinate (P) at (-90:\R);
+  \coordinate (D) at ($(B)!(P)!(C)$);
+  \coordinate (F) at ($(A)!(P)!(B)$);
+  \coordinate (E) at ($(A)!(P)!(C)$);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (A) -- ($(A)!1.55!(C)$);
+  \draw[line width=0.65pt] (P) -- (D);
+  \draw[line width=0.65pt] (P) -- (F);
+  \draw[line width=0.65pt] (P) -- (E);
+  \draw[line width=0.60pt] ($(F)!-0.22!(E)$) -- ($(E)!-0.15!(F)$);
+  \draw[line width=0.55pt, dashed] (P) -- (B);
+  \draw[line width=0.55pt, dashed] (P) -- (C);
+  \coordinate (RD1) at ($(D)!0.13!(P)$);
+  \coordinate (RD2) at ($(D)!0.13!(C)$);
+  \coordinate (RD3) at ($(RD1)+(RD2)-(D)$);
+  \draw[line width=0.40pt] (RD1) -- (RD3) -- (RD2);
+  \coordinate (RF1) at ($(F)!0.13!(P)$);
+  \coordinate (RF2) at ($(F)!0.13!(A)$);
+  \coordinate (RF3) at ($(RF1)+(RF2)-(F)$);
+  \draw[line width=0.40pt] (RF1) -- (RF3) -- (RF2);
+  \coordinate (RE1) at ($(E)!0.13!(P)$);
+  \coordinate (RE2) at ($(E)!0.13!(C)$);
+  \coordinate (RE3) at ($(RE1)+(RE2)-(E)$);
+  \draw[line width=0.40pt] (RE1) -- (RE3) -- (RE2);
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2pt] at (B) {$B$};
+  \node[anchor=west, inner sep=2pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=south, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south east, inner sep=1.2pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{图4·37（1）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-37}]{assets/plane-geometry-1/fig-p0238-02.png}}
-\caption{图4-37}
+\fitfig{%
+% fig-alt: 图4·37（2）弧过 B、A、C、P；P 在 C 外侧；PF⊥AB 延、PD⊥BC 延、PE⊥AC 延；虚线 PB、PC；F、D、E 共线；直角方
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.35}
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (150:\R);
+  \coordinate (A) at (95:\R);
+  \coordinate (C) at (20:\R);
+  \coordinate (P) at (-30:\R);
+  \coordinate (D) at ($(B)!(P)!(C)$);
+  \coordinate (F) at ($(A)!(P)!(B)$);
+  \coordinate (E) at ($(A)!(P)!(C)$);
+  \draw[line width=0.75pt] (B) arc [start angle=150, end angle=-40, radius=\R];
+  \draw[line width=0.65pt] ($(B)!-0.12!(C)$) -- ($(C)!-0.65!(B)$);
+  \draw[line width=0.65pt] ($(B)!-0.12!(A)$) -- ($(A)!-0.60!(B)$);
+  \draw[line width=0.65pt] ($(A)!-0.12!(C)$) -- ($(C)!-0.75!(A)$);
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (B) -- (C);
+  \draw[line width=0.65pt] (A) -- (C);
+  \draw[line width=0.65pt] (P) -- (D);
+  \draw[line width=0.65pt] (P) -- (F);
+  \draw[line width=0.65pt] (P) -- (E);
+  \draw[line width=0.60pt] ($(F)!-0.18!(E)$) -- ($(E)!-0.12!(F)$);
+  \draw[line width=0.55pt, dashed] (P) -- (B);
+  \draw[line width=0.55pt, dashed] (P) -- (C);
+  \coordinate (RD1) at ($(D)!0.13!(P)$);
+  \coordinate (RD2) at ($(D)!0.13!(B)$);
+  \coordinate (RD3) at ($(RD1)+(RD2)-(D)$);
+  \draw[line width=0.40pt] (RD1) -- (RD3) -- (RD2);
+  \coordinate (RF1) at ($(F)!0.13!(P)$);
+  \coordinate (RF2) at ($(F)!0.13!(B)$);
+  \coordinate (RF3) at ($(RF1)+(RF2)-(F)$);
+  \draw[line width=0.40pt] (RF1) -- (RF3) -- (RF2);
+  \coordinate (RE1) at ($(E)!0.13!(P)$);
+  \coordinate (RE2) at ($(E)!0.13!(A)$);
+  \coordinate (RE3) at ($(RE1)+(RE2)-(E)$);
+  \draw[line width=0.40pt] (RE1) -- (RE3) -- (RE2);
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north west, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=south, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south, inner sep=1.2pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{图4·37（2）}
 \end{figure}
 
-\emph{图 4·37}
+\emph{图4·37}
 
 \textbf{证} 明\(\angle PDF + \angle PDE = 180^{\circ}\)就可以了。
 
@@ -23359,8 +23445,64 @@ P，D，C，E 共圆（在4.37右图中是 P，C，D，E 共圆）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-1/fig-p0238-04.png}}
-\caption{(第2题)}
+\fitfig{%
+% fig-alt: （第2题）左：∠CAD 内点 P，PE⊥AD、PF⊥AC，直角方；右：角外点 P，同法垂足 E、F，直角方
+\begin{tikzpicture}[line cap=round, line join=round]
+  \begin{scope}
+    \coordinate (A) at (0,0);
+    \coordinate (D) at (3.2,0);
+    \coordinate (C) at (2.55,2.05);
+    \coordinate (P) at (1.55,0.85);
+    \coordinate (E) at ($(A)!(P)!(D)$);
+    \coordinate (F) at ($(A)!(P)!(C)$);
+    \draw[line width=0.70pt] (A) -- (D);
+    \draw[line width=0.70pt] (A) -- (C);
+    \draw[line width=0.65pt] (P) -- (E);
+    \draw[line width=0.65pt] (P) -- (F);
+    \coordinate (RE1) at ($(E)!0.14!(P)$);
+    \coordinate (RE2) at ($(E)!0.14!(D)$);
+    \coordinate (RE3) at ($(RE1)+(RE2)-(E)$);
+    \draw[line width=0.40pt] (RE1) -- (RE3) -- (RE2);
+    \coordinate (RF1) at ($(F)!0.14!(P)$);
+    \coordinate (RF2) at ($(F)!0.14!(C)$);
+    \coordinate (RF3) at ($(RF1)+(RF2)-(F)$);
+    \draw[line width=0.40pt] (RF1) -- (RF3) -- (RF2);
+    \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+    \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+    \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+    \node[anchor=south west, inner sep=1.5pt] at (P) {$P$};
+    \node[anchor=north, inner sep=1.2pt] at (E) {$E$};
+    \node[anchor=south east, inner sep=1.2pt] at (F) {$F$};
+  \end{scope}
+  \begin{scope}[shift={(4.6,0)}]
+    \coordinate (A) at (0,0);
+    \coordinate (D) at (3.4,0);
+    \coordinate (C) at (3.15,1.35);
+    \coordinate (P) at (1.85,2.05);
+    \coordinate (E) at ($(A)!(P)!(D)$);
+    \coordinate (F) at ($(A)!(P)!(C)$);
+    \draw[line width=0.70pt] (A) -- (D);
+    \draw[line width=0.70pt] (A) -- (C);
+    \draw[line width=0.65pt] (P) -- (E);
+    \draw[line width=0.65pt] (P) -- (F);
+    \coordinate (RE1) at ($(E)!0.14!(P)$);
+    \coordinate (RE2) at ($(E)!0.14!(D)$);
+    \coordinate (RE3) at ($(RE1)+(RE2)-(E)$);
+    \draw[line width=0.40pt] (RE1) -- (RE3) -- (RE2);
+    \coordinate (RF1) at ($(F)!0.14!(P)$);
+    \coordinate (RF2) at ($(F)!0.14!(C)$);
+    \coordinate (RF3) at ($(RF1)+(RF2)-(F)$);
+    \draw[line width=0.40pt] (RF1) -- (RF3) -- (RF2);
+    \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+    \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+    \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+    \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+    \node[anchor=north, inner sep=1.2pt] at (E) {$E$};
+    \node[anchor=south east, inner sep=1.2pt] at (F) {$F$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{（第2题）}
 \end{figure}
 
 \emph{（第2题）}
@@ -23380,8 +23522,37 @@ P，D，C，E 共圆（在4.37右图中是 P，C，D，E 共圆）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3,4题)}]{assets/plane-geometry-1/fig-p0239-01.png}}
-\caption{(第3,4题)}
+\fitfig{%
+% fig-alt: （第3，4题）等圆 O₁、O₂ 交于 A、P；割线 BPC；实线 AB、AC、AP；虚线 AC'、PC'（C' 为 C 关于 AP 对称）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.95}
+  \coordinate (O1) at (-1.25,0);
+  \coordinate (O2) at (1.25,0);
+  \coordinate (A) at (0,1.497);
+  \coordinate (P) at (0,-1.497);
+  \coordinate (B) at (-2.864,-1.094);
+  \coordinate (C) at (2.039,-1.783);
+  \coordinate (Cp) at (-2.039,-1.783);
+  \draw[line width=0.75pt] (O1) circle [radius=\R];
+  \draw[line width=0.75pt] (O2) circle [radius=\R];
+  \draw[line width=0.65pt] ($(B)!-0.18!(C)$) -- ($(C)!-0.18!(B)$);
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (A) -- (C);
+  \draw[line width=0.65pt] (A) -- (P);
+  \draw[line width=0.55pt, dashed] (A) -- (Cp);
+  \draw[line width=0.55pt, dashed] (P) -- (Cp);
+  \fill (O1) circle [radius=1.2pt];
+  \fill (O2) circle [radius=1.2pt];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1.5pt] at (Cp) {$C'$};
+  \node[anchor=south west, inner sep=1.5pt] at (O1) {$O_1$};
+  \node[anchor=south east, inner sep=1.5pt] at (O2) {$O_2$};
+\end{tikzpicture}%
+}
+\caption{（第3，4题）}
 \end{figure}
 
 \emph{（第3，4题）}
@@ -23398,14 +23569,78 @@ P，D，C，E 共圆（在4.37右图中是 P，C，D，E 共圆）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第239页）}]{assets/plane-geometry-1/fig-p0239-02.png}}
-\caption{图示（原PDF第239页）}
+\fitfig{%
+% fig-alt: （第5题）圆 O，弦 BC；实线 △ABC（∠A 单弧）；虚线 △A'BC（∠A' 单弧）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.05}
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (210:\R);
+  \coordinate (C) at (-30:\R);
+  \coordinate (A) at (55:\R);
+  \coordinate (Ap) at (125:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (B) -- (C);
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (A) -- (C);
+  \draw[line width=0.55pt, dashed] (Ap) -- (B);
+  \draw[line width=0.55pt, dashed] (Ap) -- (C);
+  \fill (O) circle [radius=1.2pt];
+  \draw[line width=0.45pt] let \p1=($(B)-(A)$), \p2=($(C)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(B)-(Ap)$), \p2=($(C)-(Ap)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (Ap) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \node[anchor=south west, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south east, inner sep=1.5pt] at (Ap) {$A'$};
+  \node[anchor=north east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=west, inner sep=2pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5,6题)}]{assets/plane-geometry-1/fig-p0239-03.png}}
-\caption{(第5,6题)}
+\fitfig{%
+% fig-alt: （第6题）圆 O₁，弦 B'C'；实线 △A'B'C'（∠A' 单弧）与 △D'B'C'（∠D' 双弧）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.05}
+  \coordinate (O1) at (0,0);
+  \coordinate (Bp) at (200:\R);
+  \coordinate (Cp) at (-20:\R);
+  \coordinate (Ap) at (110:\R);
+  \coordinate (Dp) at (-95:\R);
+  \draw[line width=0.75pt] (O1) circle [radius=\R];
+  \draw[line width=0.65pt] (Bp) -- (Cp);
+  \draw[line width=0.65pt] (Ap) -- (Bp);
+  \draw[line width=0.65pt] (Ap) -- (Cp);
+  \draw[line width=0.65pt] (Dp) -- (Bp);
+  \draw[line width=0.65pt] (Dp) -- (Cp);
+  \fill (O1) circle [radius=1.2pt];
+  \draw[line width=0.45pt] let \p1=($(Bp)-(Ap)$), \p2=($(Cp)-(Ap)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (Ap) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(Bp)-(Dp)$), \p2=($(Cp)-(Dp)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (Dp) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \draw[line width=0.45pt] let \p1=($(Bp)-(Dp)$), \p2=($(Cp)-(Dp)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (Dp) ++ (\n1:0.40) arc[start angle=\n1, delta angle=\n3, radius=0.40];
+  \node[anchor=south, inner sep=1.5pt] at (Ap) {$A'$};
+  \node[anchor=east, inner sep=1.5pt] at (Bp) {$B'$};
+  \node[anchor=west, inner sep=1.5pt] at (Cp) {$C'$};
+  \node[anchor=north, inner sep=1.5pt] at (Dp) {$D'$};
+  \node[anchor=west, inner sep=2pt] at (O1) {$O_1$};
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \emph{（第5，6题）}
@@ -23426,16 +23661,98 @@ P，D，C，E 共圆（在4.37右图中是 P，C，D，E 共圆）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-1/fig-p0240-01.png}}
-\caption{(第9题)}
+\fitfig{%
+% fig-alt: （第9题）△ABC；N、M 为 AB、AC 中点；NQ⊥AB、MP⊥AC；虚线 NM、PQ；∠1 在 N，∠B 单弧；直角方
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0,4.00);
+  \coordinate (B) at (-2.00,0);
+  \coordinate (C) at (2.20,0);
+  \coordinate (N) at (-1.00,2.00);
+  \coordinate (M) at (1.10,2.00);
+  \coordinate (P) at (-1.797,0.407);
+  \coordinate (Q) at (1.897,0.552);
+  \draw[line width=0.70pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (N) -- (Q);
+  \draw[line width=0.65pt] (M) -- (P);
+  \draw[line width=0.55pt, dashed] (N) -- (M);
+  \draw[line width=0.55pt, dashed] (P) -- (Q);
+  \coordinate (RN1) at ($(N)!0.14!(Q)$);
+  \coordinate (RN2) at ($(N)!0.14!(B)$);
+  \coordinate (RN3) at ($(RN1)+(RN2)-(N)$);
+  \draw[line width=0.40pt] (RN1) -- (RN3) -- (RN2);
+  \coordinate (RM1) at ($(M)!0.14!(P)$);
+  \coordinate (RM2) at ($(M)!0.14!(C)$);
+  \coordinate (RM3) at ($(RM1)+(RM2)-(M)$);
+  \draw[line width=0.40pt] (RM1) -- (RM3) -- (RM2);
+  \draw[line width=0.45pt] let \p1=($(A)-(N)$), \p2=($(M)-(N)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (N) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \draw[line width=0.45pt] let \p1=($(A)-(B)$), \p2=($(C)-(B)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (B) ++ (\n1:0.32) arc[start angle=\n1, delta angle=\n3, radius=0.32];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=west, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=east, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=west, inner sep=1.5pt] at (Q) {$Q$};
+  \node[font=\small, inner sep=0.4pt] at ($(N)!0.42!(A)!0.22!(M)$) {$1$};
+\end{tikzpicture}%
+}
+\caption{（第9题）}
 \end{figure}
 
 \emph{（第9题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-1/fig-p0240-02.png}}
-\caption{(第10题)}
+\fitfig{%
+% fig-alt: （第10题）圆内接 △ABC，P 在弧 BC；西摩松线 FDE；PD 延交圆于 R；实线 RA；直角方于 F、D、E
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (50:\R);
+  \coordinate (B) at (160:\R);
+  \coordinate (C) at (10:\R);
+  \coordinate (P) at (-90:\R);
+  \coordinate (D) at ($(B)!(P)!(C)$);
+  \coordinate (F) at ($(A)!(P)!(B)$);
+  \coordinate (E) at ($(A)!(P)!(C)$);
+  \coordinate (R) at (0.382,2.167);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (A) -- ($(A)!1.55!(C)$);
+  \draw[line width=0.65pt] (P) -- (R);
+  \draw[line width=0.65pt] (P) -- (F);
+  \draw[line width=0.65pt] (P) -- (E);
+  \draw[line width=0.65pt] (R) -- (A);
+  \draw[line width=0.60pt] ($(F)!-0.20!(E)$) -- ($(E)!-0.12!(F)$);
+  \coordinate (RD1) at ($(D)!0.13!(P)$);
+  \coordinate (RD2) at ($(D)!0.13!(C)$);
+  \coordinate (RD3) at ($(RD1)+(RD2)-(D)$);
+  \draw[line width=0.40pt] (RD1) -- (RD3) -- (RD2);
+  \coordinate (RF1) at ($(F)!0.13!(P)$);
+  \coordinate (RF2) at ($(F)!0.13!(A)$);
+  \coordinate (RF3) at ($(RF1)+(RF2)-(F)$);
+  \draw[line width=0.40pt] (RF1) -- (RF3) -- (RF2);
+  \coordinate (RE1) at ($(E)!0.13!(P)$);
+  \coordinate (RE2) at ($(E)!0.13!(C)$);
+  \coordinate (RE3) at ($(RE1)+(RE2)-(E)$);
+  \draw[line width=0.40pt] (RE1) -- (RE3) -- (RE2);
+  \node[anchor=south west, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2pt] at (B) {$B$};
+  \node[anchor=west, inner sep=2pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=south, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south east, inner sep=1.2pt] at (F) {$F$};
+  \node[anchor=south, inner sep=1.5pt] at (R) {$R$};
+\end{tikzpicture}%
+}
+\caption{（第10题）}
 \end{figure}
 
 \emph{（第10题）}
