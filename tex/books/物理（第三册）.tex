@@ -255,7 +255,62 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.1}]{assets/physics-3/fig-p0005-01.png}}
+\fitfig{%
+% fig-alt: 图1.1 摩擦带电棒吸引浅盘中纸屑：右手持棒斜抵盘左，纸屑向棒飞起
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt]
+    (0.00,0.50) -- (5.90,0.24) -- (6.38,1.02) -- (0.44,1.22) -- cycle;
+  \draw[line width=0.75pt]
+    (0.00,0.50) -- (0.00,0.16) -- (5.90,-0.10) -- (5.90,0.24);
+  \draw[line width=0.7pt]
+    (5.90,-0.10) -- (6.38,0.68) -- (6.38,1.02);
+  \foreach \ya/\yb in {0.62/0.36, 0.76/0.50, 0.90/0.64, 1.04/0.78} {
+    \draw[line width=0.32pt] (0.12,\ya) -- (6.05,\yb);
+  }
+  \foreach \x/\y/\ang in {
+    0.38/0.72/12, 0.62/0.58/-8, 0.50/0.90/25, 0.82/0.70/6,
+    1.08/0.60/-15, 0.95/0.88/18, 1.28/0.76/4, 0.70/0.48/10,
+    1.45/0.64/-20, 1.18/0.52/8} {
+    \begin{scope}[rotate around={\ang:(\x,\y)}]
+      \draw[line width=0.45pt] (\x,\y) rectangle ++(0.16,0.08);
+    \end{scope}
+  }
+  \draw[line width=0.45pt] (1.12,1.10) -- (1.28,1.20) -- (1.20,1.04) -- cycle;
+  \draw[line width=0.45pt] (1.40,1.22) rectangle (1.54,1.32);
+  \draw[line width=0.45pt] (1.62,1.36) -- (1.76,1.44) -- (1.70,1.30) -- cycle;
+  \draw[line width=0.45pt] (1.88,1.48) rectangle (2.00,1.56);
+  \draw[line width=0.45pt] (1.55,1.12) -- (1.68,1.18) -- (1.62,1.06) -- cycle;
+  \fill (1.05,1.02) circle[radius=0.04];
+  \fill (1.72,1.30) circle[radius=0.035];
+  \begin{scope}[shift={(2.85,1.70)}, rotate=18]
+    \fill[white] (-2.65,0.13) -- (2.55,0.13) -- (2.55,-0.13) -- (-2.65,-0.13) -- cycle;
+    \draw[line width=0.75pt] (-2.65,0.13) -- (2.55,0.13);
+    \draw[line width=0.75pt] (-2.65,-0.13) -- (2.55,-0.13);
+    \draw[line width=0.75pt] (-2.65,0) ellipse[x radius=0.08, y radius=0.13];
+  \end{scope}
+  \draw[line width=0.7pt]
+    (6.05,2.28) -- (6.95,2.58) -- (7.08,2.10) -- (6.18,1.80) -- cycle;
+  \draw[line width=0.55pt] (6.20,2.22) -- (6.32,1.90);
+  \draw[line width=0.7pt]
+    (6.08,2.32)
+    .. controls (5.95,2.72) and (5.45,2.85) .. (5.12,2.62)
+    .. controls (4.95,2.48) and (4.98,2.28) .. (5.18,2.18)
+    .. controls (5.28,1.95) and (5.70,1.92) .. (5.95,2.08)
+    .. controls (6.12,2.12) and (6.15,2.20) .. (6.08,2.32);
+  \draw[line width=0.6pt]
+    (5.15,2.48) .. controls (5.08,2.72) and (5.32,2.80) .. (5.42,2.52);
+  \draw[line width=0.6pt]
+    (5.38,2.50) .. controls (5.32,2.78) and (5.58,2.85) .. (5.68,2.50);
+  \draw[line width=0.6pt]
+    (5.60,2.48) .. controls (5.55,2.75) and (5.80,2.80) .. (5.88,2.48);
+  \draw[line width=0.6pt]
+    (5.82,2.46) .. controls (5.78,2.68) and (6.00,2.72) .. (6.05,2.42);
+  \draw[line width=0.65pt]
+    (5.28,2.20)
+    .. controls (5.05,2.12) and (4.98,1.95) .. (5.18,1.85)
+    .. controls (5.38,1.78) and (5.58,1.92) .. (5.55,2.12);
+\end{tikzpicture}%
+}
 \caption{图1.1}
 \end{figure}
 
@@ -272,13 +327,73 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.2}]{assets/physics-3/fig-p0005-02.png}}
-\caption{图1.2}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.2}]{assets/physics-3/fig-p0005-03.png}}
+\fitfig{%
+% fig-alt: 图1.2 (a) 丝线悬挂的棒被右下方棒推开，弯箭头逆时针；(b) 悬挂棒右端被吸向下，弯箭头向下
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \begin{scope}[shift={(0,0)}]
+    \begin{scope}[rotate=32]
+      \draw[line width=0.55pt,gray]
+        (-1.95,0.22) -- (1.95,0.22)
+        (-1.95,-0.22) -- (1.95,-0.22);
+      \draw[line width=0.55pt,gray] (-1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \draw[line width=0.55pt,gray] (1.95,0) ellipse[x radius=0.10, y radius=0.22];
+    \end{scope}
+    \begin{scope}[rotate=6]
+      \fill[white] (-1.95,0.22) -- (1.95,0.22) -- (1.95,-0.22) -- (-1.95,-0.22) -- cycle;
+      \fill[white] (-1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \fill[white] (1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \draw[line width=0.7pt]
+        (-1.95,0.22) -- (1.95,0.22)
+        (-1.95,-0.22) -- (1.95,-0.22);
+      \draw[line width=0.7pt] (-1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \draw[line width=0.7pt] (1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \draw[line width=0.7pt] (-0.18,0.24) -- (-0.18,-0.24);
+      \draw[line width=0.7pt] (0.18,0.24) -- (0.18,-0.24);
+    \end{scope}
+    \draw[line width=0.7pt] (0,2.65) -- (0,0.68);
+    \draw[line width=0.7pt] (0,0.68) -- (-0.32,0.22);
+    \draw[line width=0.7pt] (0,0.68) -- (0.32,0.24);
+    \draw[line width=0.7pt,->] (1.22,1.18) arc[start angle=8, end angle=88, radius=0.58];
+    \begin{scope}[shift={(2.62,-1.05)}, rotate=-40]
+      \draw[line width=0.7pt] (0,0.20) -- (2.05,0.20);
+      \draw[line width=0.7pt] (0,-0.20) -- (2.05,-0.20);
+      \draw[line width=0.7pt] (0,0) ellipse[x radius=0.09, y radius=0.20];
+    \end{scope}
+    \node[font=\scriptsize] at (0.10,-1.70) {(a)};
+  \end{scope}
+  \begin{scope}[shift={(7.4,0)}]
+    \begin{scope}[rotate=-22]
+      \draw[line width=0.55pt,gray]
+        (-1.95,0.22) -- (1.95,0.22)
+        (-1.95,-0.22) -- (1.95,-0.22);
+      \draw[line width=0.55pt,gray] (-1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \draw[line width=0.55pt,gray] (1.95,0) ellipse[x radius=0.10, y radius=0.22];
+    \end{scope}
+    \begin{scope}[rotate=5]
+      \fill[white] (-1.95,0.22) -- (1.95,0.22) -- (1.95,-0.22) -- (-1.95,-0.22) -- cycle;
+      \fill[white] (-1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \fill[white] (1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \draw[line width=0.7pt]
+        (-1.95,0.22) -- (1.95,0.22)
+        (-1.95,-0.22) -- (1.95,-0.22);
+      \draw[line width=0.7pt] (-1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \draw[line width=0.7pt] (1.95,0) ellipse[x radius=0.10, y radius=0.22];
+      \draw[line width=0.7pt] (-0.18,0.24) -- (-0.18,-0.24);
+      \draw[line width=0.7pt] (0.18,0.24) -- (0.18,-0.24);
+    \end{scope}
+    \draw[line width=0.7pt] (0,2.65) -- (0,0.68);
+    \draw[line width=0.7pt] (0,0.68) -- (-0.32,0.22);
+    \draw[line width=0.7pt] (0,0.68) -- (0.32,0.24);
+    \draw[line width=0.7pt,->] (2.05,0.38) arc[start angle=100, end angle=20, radius=0.42];
+    \begin{scope}[shift={(2.55,-0.92)}, rotate=-50]
+      \draw[line width=0.7pt] (0,0.20) -- (1.90,0.20);
+      \draw[line width=0.7pt] (0,-0.20) -- (1.90,-0.20);
+      \draw[line width=0.7pt] (0,0) ellipse[x radius=0.09, y radius=0.20];
+    \end{scope}
+    \node[font=\scriptsize] at (0.10,-1.70) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1.2}
 \end{figure}
 
@@ -459,27 +574,62 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0011-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图1.5 金箔验电器：(a) 未带电，箔闭合；(b) 带正电棒接触顶球，箔张开并标正号；(c) 带负电棒接触，箔张开并标负号
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \X in {0, 3.55, 7.10} {
+    \begin{scope}[shift={(\X,0)}]
+      \draw[line width=0.8pt] (0,0) circle[radius=1.18];
+      \fill[white] (-0.22,1.04) rectangle (0.22,1.40);
+      \draw[line width=0.7pt] (-0.22,1.04) rectangle (0.22,1.40);
+      \draw[line width=0.7pt] (0,1.40) -- (0,1.68);
+      \fill[white] (0,1.80) circle[radius=0.12];
+      \draw[line width=0.7pt] (0,1.80) circle[radius=0.12];
+      \draw[line width=0.7pt] (-0.10,-1.18) -- (-0.10,-1.36);
+      \draw[line width=0.7pt] (0.10,-1.18) -- (0.10,-1.36);
+      \draw[line width=0.7pt]
+        (-0.10,-1.36) -- (-0.40,-1.52) -- (-0.40,-1.62)
+        -- (0.40,-1.62) -- (0.40,-1.52) -- (0.10,-1.36);
+      \draw[line width=0.7pt] (-0.48,-1.62) rectangle (-0.32,-1.70);
+      \draw[line width=0.7pt] (0.32,-1.62) rectangle (0.48,-1.70);
+    \end{scope}
+  }
+  \draw[line width=0.7pt] (0,1.04) -- (0,-0.38);
+  \node[font=\scriptsize] at (0,-2.05) {(a)};
+  \draw[line width=0.7pt] (3.55,1.04) -- (3.55,0.20);
+  \draw[line width=0.7pt] (3.55,0.20) -- (3.32,-0.48);
+  \draw[line width=0.7pt] (3.55,0.20) -- (3.78,-0.48);
+  \node[font=\scriptsize] at (3.14,-0.08) {$+$};
+  \node[font=\scriptsize] at (3.10,-0.48) {$+$};
+  \node[font=\scriptsize] at (4.00,-0.22) {$+$};
+  \begin{scope}[shift={(4.45,1.80)}]
+    \draw[line width=0.7pt] (-0.72,0.09) -- (0.72,0.09);
+    \draw[line width=0.7pt] (-0.72,-0.09) -- (0.72,-0.09);
+    \draw[line width=0.7pt] (0.72,0.09) -- (0.72,-0.09);
+  \end{scope}
+  \fill[white] (3.55,1.80) circle[radius=0.12];
+  \draw[line width=0.7pt] (3.55,1.80) circle[radius=0.12];
+  \node[font=\scriptsize] at (3.55,-2.05) {(b)};
+  \draw[line width=0.7pt] (7.10,1.04) -- (7.10,0.20);
+  \draw[line width=0.7pt] (7.10,0.20) -- (6.87,-0.48);
+  \draw[line width=0.7pt] (7.10,0.20) -- (7.33,-0.48);
+  \node[font=\scriptsize] at (6.68,-0.08) {$-$};
+  \node[font=\scriptsize] at (6.64,-0.48) {$-$};
+  \node[font=\scriptsize] at (7.55,-0.22) {$-$};
+  \begin{scope}[shift={(8.00,1.80)}]
+    \draw[line width=0.7pt] (-0.72,0.09) -- (0.72,0.09);
+    \draw[line width=0.7pt] (-0.72,-0.09) -- (0.72,-0.09);
+    \draw[line width=0.7pt] (0.72,0.09) -- (0.72,-0.09);
+  \end{scope}
+  \fill[white] (7.10,1.80) circle[radius=0.12];
+  \draw[line width=0.7pt] (7.10,1.80) circle[radius=0.12];
+  \draw[line width=0.4pt] (6.92,1.10) -- (7.28,1.34);
+  \draw[line width=0.4pt] (6.92,1.22) -- (7.28,1.40);
+  \node[font=\scriptsize] at (7.10,-2.05) {(c)};
+\end{tikzpicture}%
+}
+\caption{图1.5 金箔验电器}
 \end{figure}
-
-\emph{（a）}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0011-02.png}}
-\caption{(b)}
-\end{figure}
-
-\emph{（b）}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-3/fig-p0011-03.png}}
-\caption{(c)}
-\end{figure}
-
-\emph{（c）}
 
 \emph{图1.5 金箔验电器}
 
@@ -506,25 +656,51 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0012-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 习题1.2第3题 (a) 瓶塞与穿过的U形金属丝；(b) 药瓶自制验电器，塞内挂两条金属箔
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}[shift={(0,0.15)}]
+    \draw[line width=0.7pt] (0,0.14) ellipse[x radius=0.50, y radius=0.17];
+    \draw[line width=0.7pt] (-0.50,0.14) -- (-0.50,-0.12);
+    \draw[line width=0.7pt] (0.50,0.14) -- (0.50,-0.12);
+    \draw[line width=0.7pt] (0,-0.12) ellipse[x radius=0.50, y radius=0.17];
+    \draw[line width=0.75pt] (0,0.14) -- (0,1.00);
+    \draw[line width=0.75pt] (0.00,1.28) arc[start angle=180, end angle=-80, radius=0.28];
+    \draw[line width=0.75pt] (0,-0.12) -- (0,-0.92);
+    \draw[line width=0.75pt] (0,-0.92) arc[start angle=0, end angle=-180, radius=0.20];
+    \node[font=\scriptsize] at (0,-1.55) {(a)};
+  \end{scope}
+  \begin{scope}[shift={(3.35,0)}]
+    \draw[line width=0.75pt]
+      (-0.82,-1.42) -- (0.82,-1.42) -- (0.82,0.08)
+      .. controls (0.82,0.38) and (0.48,0.52) .. (0.40,0.72)
+      -- (0.40,0.92) -- (-0.40,0.92)
+      -- (-0.40,0.72)
+      .. controls (-0.48,0.52) and (-0.82,0.38) .. (-0.82,0.08)
+      -- cycle;
+    \fill[white] (-0.34,0.92) rectangle (0.34,1.22);
+    \draw[line width=0.7pt] (-0.34,0.92) rectangle (0.34,1.22);
+    \foreach \xx in {-0.28,-0.16,-0.04,0.08,0.20} {
+      \draw[line width=0.35pt] (\xx,0.92) -- ++(0.14,0.30);
+    }
+    \draw[line width=0.75pt] (0,1.22) -- (0,1.58);
+    \draw[line width=0.75pt] (0.00,1.82) arc[start angle=180, end angle=-80, radius=0.24];
+    \draw[line width=0.7pt] (0,0.92) -- (0,0.05);
+    \draw[line width=0.7pt] (-0.10,0.05) -- (0.10,0.05);
+    \draw[line width=0.85pt] (-0.08,0.05) -- (-0.28,-0.58);
+    \draw[line width=0.85pt] (0.08,0.05) -- (0.24,-0.52);
+    \node[font=\scriptsize] at (0,-1.70) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
-
-\emph{（a）}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0012-02.png}}
-\caption{(b)}
-\end{figure}
-
-\emph{（b）}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{3}
 \item
-  取一枝金属笔套，塑料笔杆的钢笔。手 （第3题）
+  取一枝金属笔套，塑料笔杆的钢笔。手
   握笔杆，用丝绸摩擦金属笔套后，让它跟上题中自制验电器上端接触，看它是否带电。
 \item
   把带正电体靠近验电器金属球时， 即使不接触金属球， 金箔也会张开。

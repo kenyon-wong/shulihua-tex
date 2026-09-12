@@ -361,7 +361,77 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·1 国际米原器}]{assets/physics-1/fig-p0007-01.png}}
+% fig-alt: 国际米原器，X 形截面长杆的轴测图，近端与远端均为 X 形端面，顶槽与下翼沿杆长延伸
+\fitfig{%
+\begin{tikzpicture}[
+  line cap=round,line join=round,
+  x={(0.76cm,-0.14cm)},
+  y={(0cm,0.54cm)},
+  z={(-0.44cm,0.78cm)}
+]
+  % 截面 16 点（倒角 X）：近端 z=0，远端 z=5.4
+  \coordinate (N1) at (-0.679,0.453,0);
+  \coordinate (N2) at (-0.453,0.679,0);
+  \coordinate (N3) at (-0.141,0.368,0);
+  \coordinate (N4) at (0.141,0.368,0);
+  \coordinate (N5) at (0.453,0.679,0);
+  \coordinate (N6) at (0.679,0.453,0);
+  \coordinate (N7) at (0.368,0.141,0);
+  \coordinate (N8) at (0.368,-0.141,0);
+  \coordinate (N9) at (0.679,-0.453,0);
+  \coordinate (N10) at (0.453,-0.679,0);
+  \coordinate (N11) at (0.141,-0.368,0);
+  \coordinate (N12) at (-0.141,-0.368,0);
+  \coordinate (N13) at (-0.453,-0.679,0);
+  \coordinate (N14) at (-0.679,-0.453,0);
+  \coordinate (N15) at (-0.368,-0.141,0);
+  \coordinate (N16) at (-0.368,0.141,0);
+  \coordinate (F1) at (-0.679,0.453,5.4);
+  \coordinate (F2) at (-0.453,0.679,5.4);
+  \coordinate (F3) at (-0.141,0.368,5.4);
+  \coordinate (F4) at (0.141,0.368,5.4);
+  \coordinate (F5) at (0.453,0.679,5.4);
+  \coordinate (F6) at (0.679,0.453,5.4);
+  \coordinate (F7) at (0.368,0.141,5.4);
+  \coordinate (F8) at (0.368,-0.141,5.4);
+  \coordinate (F9) at (0.679,-0.453,5.4);
+  \coordinate (F10) at (0.453,-0.679,5.4);
+  \coordinate (F11) at (0.141,-0.368,5.4);
+  \coordinate (F12) at (-0.141,-0.368,5.4);
+  \coordinate (F13) at (-0.453,-0.679,5.4);
+  \coordinate (F14) at (-0.679,-0.453,5.4);
+  \coordinate (F15) at (-0.368,-0.141,5.4);
+  \coordinate (F16) at (-0.368,0.141,5.4);
+  % 远端 X 形截面（与近端同形，非 U 形顶槽）
+  \fill[white]
+    (F1) -- (F2) -- (F3) -- (F4) -- (F5) -- (F6) -- (F7) -- (F8)
+    -- (F9) -- (F10) -- (F11) -- (F12) -- (F13) -- (F14) -- (F15) -- (F16) -- cycle;
+  \draw[line width=0.7pt]
+    (F1) -- (F2) -- (F3) -- (F4) -- (F5) -- (F6) -- (F7) -- (F8)
+    -- (F9) -- (F10) -- (F11) -- (F12) -- (F13) -- (F14) -- (F15) -- (F16) -- cycle;
+  % 四翼沿杆长：上槽内外沿、左右腰、下翼
+  \draw[line width=0.75pt] (N1) -- (F1);
+  \draw[line width=0.75pt] (N2) -- (F2);
+  \draw[line width=0.7pt] (N3) -- (F3);
+  \draw[line width=0.7pt] (N4) -- (F4);
+  \draw[line width=0.75pt] (N5) -- (F5);
+  \draw[line width=0.75pt] (N6) -- (F6);
+  \draw[line width=0.7pt] (N7) -- (F7);
+  \draw[line width=0.7pt] (N8) -- (F8);
+  \draw[line width=0.75pt] (N9) -- (F9);
+  \draw[line width=0.75pt] (N10) -- (F10);
+  \draw[line width=0.7pt] (N13) -- (F13);
+  \draw[line width=0.75pt] (N14) -- (F14);
+  \draw[line width=0.7pt] (N16) -- (F16);
+  % 近端 X 形截面
+  \fill[white]
+    (N1) -- (N2) -- (N3) -- (N4) -- (N5) -- (N6) -- (N7) -- (N8)
+    -- (N9) -- (N10) -- (N11) -- (N12) -- (N13) -- (N14) -- (N15) -- (N16) -- cycle;
+  \draw[line width=0.75pt]
+    (N1) -- (N2) -- (N3) -- (N4) -- (N5) -- (N6) -- (N7) -- (N8)
+    -- (N9) -- (N10) -- (N11) -- (N12) -- (N13) -- (N14) -- (N15) -- (N16) -- cycle;
+\end{tikzpicture}%
+}
 \caption{图1·1 国际米原器}
 \end{figure}
 
@@ -371,8 +441,74 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-2}]{assets/physics-1/fig-p0008-01.png}}
-\caption{图1-2}
+% fig-alt: 对数长度轴，从 10^{-10} 到 10^{10} 米；上标原子直径、人发直径、人高、珠穆朗玛峰高、地球半径、地球轨道半径，下标光的波长
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.12cm,y=1cm]
+  \draw[line width=0.8pt,<->] (-0.45,0) -- (10.55,0);
+  \foreach \i in {0,...,10}
+    \draw[line width=0.55pt] (\i,0.12) -- (\i,-0.12);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (0,-0.18) {$10^{-10}$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (1,-0.18) {$10^{-8}$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (2,-0.18) {$10^{-6}$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (3,-0.18) {$10^{-4}$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (4,-0.18) {$10^{-2}$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (5,-0.18) {$0$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (6,-0.18) {$10^{2}$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (7,-0.18) {$10^{4}$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (8,-0.18) {$10^{6}$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (9,-0.18) {$10^{8}$};
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (10,-0.18) {$10^{10}$};
+  % 原子直径
+  \draw[line width=0.55pt] (0.08,0.12) -- (0.08,0.62);
+  \draw[line width=0.7pt,rotate around={28:(0.08,1.05)}] (0.08,1.05) ellipse[x radius=0.42,y radius=0.22];
+  \fill (0.08,1.05) circle[radius=0.06];
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=south] at (0.08,1.42) {原子直径};
+  % 光的波长
+  \draw[line width=0.5pt] (2.0,0) -- (2.0,-0.72);
+  \draw[line width=0.55pt] (1.42,-0.72)
+    .. controls (1.58,-0.58) and (1.74,-0.86) .. (1.90,-0.72)
+    .. controls (2.06,-0.58) and (2.22,-0.86) .. (2.38,-0.72)
+    .. controls (2.54,-0.58) and (2.70,-0.86) .. (2.86,-0.72);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (2.0,-0.86) {光的波长};
+  % 人发直径
+  \draw[line width=0.55pt] (3.05,0.12) -- (3.05,0.52);
+  \draw[line width=0.65pt] (3.02,0.78) circle[radius=0.22];
+  \fill (3.18,0.82)
+    .. controls (3.22,1.05) and (3.38,1.18) .. (3.42,1.05)
+    .. controls (3.52,0.92) and (3.42,0.68) .. (3.22,0.62)
+    .. controls (3.12,0.70) and (3.12,0.78) .. (3.18,0.82) -- cycle;
+  \draw[line width=0.5pt] (2.88,0.82) -- (2.78,0.80);
+  \draw[line width=0.55pt] (3.00,0.56) -- (2.95,0.42);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=south] at (3.05,1.52) {人发直径};
+  % 人高
+  \draw[line width=0.55pt] (5.0,0.12) -- (5.0,0.55);
+  \draw[line width=0.65pt] (5.0,1.48) circle[radius=0.12];
+  \draw[line width=0.65pt] (5.0,1.36) -- (5.0,0.92);
+  \draw[line width=0.65pt] (4.82,1.22) -- (5.18,1.22);
+  \draw[line width=0.65pt] (5.0,0.92) -- (4.86,0.58);
+  \draw[line width=0.65pt] (5.0,0.92) -- (5.14,0.58);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=south] at (5.0,1.68) {人高};
+  % 珠穆朗玛峰高
+  \draw[line width=0.55pt] (7.0,0.12) -- (7.0,0.52);
+  \draw[line width=0.7pt] (6.42,0.58) -- (6.85,1.42) -- (7.05,1.08) -- (7.22,1.55) -- (7.62,0.58);
+  \draw[line width=0.45pt] (6.85,1.42) -- (6.95,0.70);
+  \draw[line width=0.45pt] (7.22,1.55) -- (7.12,0.72);
+  \draw[line width=0.45pt] (7.05,1.08) -- (7.18,0.62);
+  \node[font=\scriptsize,inner sep=0.4pt,align=center,anchor=south] at (7.0,1.68) {珠穆朗玛\\峰高};
+  % 地球半径
+  \draw[line width=0.55pt] (8.35,0.12) -- (8.35,0.52);
+  \draw[line width=0.7pt] (8.35,1.05) circle[radius=0.38];
+  \draw[line width=0.4pt] (8.12,1.18) .. controls (8.28,1.22) and (8.48,1.08) .. (8.58,1.22);
+  \draw[line width=0.4pt] (8.08,0.95) .. controls (8.22,0.88) and (8.42,0.92) .. (8.62,0.98);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=south] at (8.35,1.52) {地球半径};
+  % 地球轨道半径
+  \draw[line width=0.55pt] (10.15,0.12) -- (10.15,0.52);
+  \draw[line width=0.7pt,rotate around={18:(10.15,1.02)}] (10.15,1.02) ellipse[x radius=0.52,y radius=0.22];
+  \draw[line width=0.55pt] (10.15,1.02) circle[radius=0.10];
+  \node[font=\scriptsize,inner sep=0.4pt,align=center,anchor=south] at (10.15,1.52) {地球轨\\道半径};
+\end{tikzpicture}%
+}
+\caption{图1·2}
 \end{figure}
 
 \emph{图1·2}
@@ -614,8 +750,84 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-7 游标卡尺}]{assets/physics-1/fig-p0010-03.png}}
-\caption{图1-7 游标卡尺}
+% fig-alt: 游标卡尺，卡脚合拢；标尺身、游标、卡脚。右下放大尺身与游标：游标 0 与尺身 0 重合，游标末线与尺身 9 毫米重合
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 左测头与下卡脚
+  \draw[line width=0.7pt]
+    (0.00,2.38) -- (1.72,2.38) -- (1.72,1.58)
+    -- (1.18,0.18) -- (0.78,0.05) -- (0.42,0.18) -- (0.42,1.58) -- (0.00,1.58) -- cycle;
+  \draw[line width=0.5pt] (0.86,1.58) -- (0.86,0.28);
+  % 上卡脚（内量爪）
+  \draw[line width=0.7pt] (0.52,2.38) -- (0.42,3.15) -- (0.70,3.28) -- (0.82,2.38);
+  \draw[line width=0.7pt] (0.90,2.38) -- (0.98,3.28) -- (1.26,3.15) -- (1.18,2.38);
+  \draw[line width=0.4pt] (0.82,2.38) -- (0.84,3.12);
+  % 菱形铭牌
+  \draw[line width=0.5pt] (0.42,1.92) -- (0.68,2.08) -- (0.94,1.92) -- (0.68,1.76) -- cycle;
+  \draw[line width=0.4pt] (0.60,1.92) -- (0.76,1.92);
+  % 尺身（左段 0--6）
+  \draw[line width=0.7pt] (1.72,1.70) rectangle (7.05,2.28);
+  \foreach \n in {0,1,...,6} {
+    \draw[line width=0.45pt] ({1.78+\n*0.82},1.70) -- ++(0,0.20);
+    \node[font=\scriptsize,inner sep=0pt] at ({1.78+\n*0.82},2.08) {\n};
+  }
+  \foreach \n in {0,1,...,5}
+    \foreach \k in {1,2,...,9}
+      \draw[line width=0.28pt] ({1.78+\n*0.82+\k*0.082},1.70) -- ++(0,0.10);
+  % 游标：上下夹板，不遮尺身数字
+  \fill[white] (1.72,2.28) rectangle (4.95,2.62);
+  \draw[line width=0.6pt] (1.88,2.38) rectangle (4.62,2.58);
+  \node[font=\scriptsize,inner sep=0pt] at (3.25,2.48) {0.1\,mm};
+  \fill (3.25,2.78) circle[radius=0.15];
+  \draw[line width=0.45pt] (3.25,2.78) circle[radius=0.08];
+  \fill[white] (1.72,1.38) rectangle (4.95,1.70);
+  \draw[line width=0.7pt] (1.72,1.50) -- (1.72,2.38) -- (4.95,2.38) -- (4.95,1.50) -- cycle;
+  \draw[line width=0.6pt] (1.72,1.38) rectangle (4.95,1.58);
+  \fill (2.15,1.48) circle[radius=0.07];
+  \fill (3.55,1.48) circle[radius=0.07];
+  \draw[line width=0.6pt] (4.42,1.38) arc[start angle=180,end angle=360,x radius=0.32,y radius=0.28];
+  \foreach \k in {0,1,...,10}
+    \draw[line width=0.35pt] ({1.78+\k*0.0738},1.50) -- ++(0,0.20);
+  \foreach \n in {0,1,...,4}
+    \node[font=\scriptsize,inner sep=0pt,fill=white] at ({1.78+\n*0.82},2.08) {\n};
+  % 尺身右段
+  \draw[line width=0.7pt] (7.22,1.70) rectangle (10.62,2.28);
+  \foreach \n in {8,9,...,12} {
+    \draw[line width=0.4pt] ({7.48+(\n-8)*0.72},1.70) -- ++(0,0.18);
+    \node[font=\scriptsize,inner sep=0pt] at ({7.48+(\n-8)*0.72},2.06) {\n};
+  }
+  \node[font=\scriptsize,inner sep=0.6pt,anchor=south] at (8.90,2.32) {尺身};
+  % 标注
+  \draw[line width=0.45pt] (1.05,0.85) -- (1.55,0.55);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (1.58,0.52) {卡脚};
+  \draw[line width=0.45pt] (4.72,1.12) -- (5.15,0.72);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (5.18,0.68) {游标};
+  % 放大尺身与游标
+  \begin{scope}[shift={(6.35,-0.15)}]
+    \foreach \n in {0,1,...,14}
+      \draw[line width=0.35pt] ({0.22*\n},0.85) -- ++(0,0.28);
+    \foreach \n in {0,5,10}
+      \draw[line width=0.55pt] ({0.22*\n},0.85) -- ++(0,0.42);
+    \node[font=\scriptsize,inner sep=0pt,anchor=south] at (0,1.32) {0};
+    \node[font=\scriptsize,inner sep=0pt,anchor=south] at (2.20,1.32) {1};
+    \draw[line width=0.55pt] (-0.08,0.85) -- (3.20,0.85);
+    % 游标：10 格 = 9 毫米，0 与尺身 0 重合，末线与 9 毫米重合
+    \foreach \k in {0,1,...,10}
+      \draw[line width=0.35pt] ({0.198*\k},0.85) -- ++(0,-0.28);
+    \draw[line width=0.55pt] (0,0.85) -- ++(0,-0.42);
+    \draw[line width=0.55pt] (0.99,0.85) -- ++(0,-0.36);
+    \draw[line width=0.55pt] (1.98,0.85) -- ++(0,-0.42);
+    \node[font=\scriptsize,inner sep=0pt,anchor=north] at (0,0.38) {0};
+    \node[font=\scriptsize,inner sep=0pt,anchor=north] at (0.99,0.44) {5};
+    \node[font=\scriptsize,inner sep=0pt,anchor=north] at (1.98,0.38) {0};
+    \draw[line width=0.45pt] (3.05,0.98) -- (3.55,1.18);
+    \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (3.58,1.18) {尺身};
+    \draw[line width=0.45pt] (2.55,0.55) -- (3.45,0.28);
+    \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (3.48,0.25) {游标};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图1·7 游标卡尺}
 \end{figure}
 
 \emph{图1·7 游标卡尺}
@@ -627,7 +839,88 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·8 被测零件的宽度是5.2毫米}]{assets/physics-1/fig-p0011-01.png}}
+% fig-alt: 游标卡尺夹住零件；下卡脚间有剖面线矩形。右下放大：尺身 0、1，游标 0 过 5 毫米，第 2 线与尺身重合，读 5.2 毫米
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\gap{0.42}
+  % 左测头与下卡脚（张开）
+  \draw[line width=0.7pt]
+    (0.00,2.38) -- (1.72,2.38) -- (1.72,1.58)
+    -- (1.18,0.18) -- (0.78,0.05) -- (0.42,0.18) -- (0.42,1.58) -- (0.00,1.58) -- cycle;
+  % 活动下卡脚
+  \draw[line width=0.7pt]
+    ({1.72+\gap},1.58) -- ({1.18+\gap},0.18) -- ({0.92+\gap},0.08)
+    -- ({0.92+\gap},1.58);
+  % 被测零件（剖面线）
+  \begin{scope}
+    \clip (0.86,0.22) rectangle ({0.86+\gap},1.20);
+    \foreach \s in {0.70,0.82,...,1.70}
+      \draw[line width=0.28pt] (\s,0.10) -- ++(0.42,1.25);
+  \end{scope}
+  \draw[line width=0.45pt] (0.86,0.22) rectangle ({0.86+\gap},1.20);
+  % 上卡脚略张开
+  \draw[line width=0.7pt] (0.52,2.38) -- (0.42,3.15) -- (0.70,3.28) -- (0.82,2.38);
+  \draw[line width=0.7pt] ({0.90+\gap},2.38) -- ({0.98+\gap},3.28) -- ({1.26+\gap},3.15) -- ({1.18+\gap},2.38);
+  % 菱形铭牌
+  \draw[line width=0.5pt] (0.42,1.92) -- (0.68,2.08) -- (0.94,1.92) -- (0.68,1.76) -- cycle;
+  \draw[line width=0.4pt] (0.60,1.92) -- (0.76,1.92);
+  % 尺身左段
+  \draw[line width=0.7pt] (1.72,1.70) rectangle (7.15,2.28);
+  \foreach \n in {0,1,...,6} {
+    \draw[line width=0.45pt] ({1.78+\n*0.82},1.70) -- ++(0,0.20);
+    \node[font=\scriptsize,inner sep=0pt] at ({1.78+\n*0.82},2.08) {\n};
+  }
+  \foreach \n in {0,1,...,5}
+    \foreach \k in {1,2,...,9}
+      \draw[line width=0.28pt] ({1.78+\n*0.82+\k*0.082},1.70) -- ++(0,0.10);
+  % 游标（右移约 5.2 毫米）
+  \begin{scope}[shift={(\gap,0)}]
+    \fill[white] (1.72,2.28) rectangle (4.95,2.62);
+    \draw[line width=0.6pt] (1.88,2.38) rectangle (4.62,2.58);
+    \node[font=\scriptsize,inner sep=0pt] at (3.25,2.48) {0.1\,mm};
+    \fill (3.25,2.78) circle[radius=0.15];
+    \draw[line width=0.45pt] (3.25,2.78) circle[radius=0.08];
+    \fill[white] (1.72,1.38) rectangle (4.95,1.70);
+    \draw[line width=0.7pt] (1.72,1.50) -- (1.72,2.38) -- (4.95,2.38) -- (4.95,1.50) -- cycle;
+    \draw[line width=0.6pt] (1.72,1.38) rectangle (4.95,1.58);
+    \fill (2.15,1.48) circle[radius=0.07];
+    \fill (3.55,1.48) circle[radius=0.07];
+    \draw[line width=0.6pt] (4.42,1.38) arc[start angle=180,end angle=360,x radius=0.32,y radius=0.28];
+    \foreach \k in {0,1,...,10}
+      \draw[line width=0.35pt] ({1.78+\k*0.0738},1.50) -- ++(0,0.20);
+  \end{scope}
+  \foreach \n in {0,1,...,5}
+    \node[font=\scriptsize,inner sep=0pt,fill=white] at ({1.78+\n*0.82},2.08) {\n};
+  % 尺身右段
+  \draw[line width=0.7pt] (7.32,1.70) rectangle (10.72,2.28);
+  \foreach \n in {8,9,...,12} {
+    \draw[line width=0.4pt] ({7.48+(\n-8)*0.72},1.70) -- ++(0,0.18);
+    \node[font=\scriptsize,inner sep=0pt] at ({7.48+(\n-8)*0.72},2.06) {\n};
+  }
+  % 放大：游标 0 在 5.2 毫米，第 2 线与尺身 7 毫米重合
+  \begin{scope}[shift={(6.45,-0.05)}]
+    \draw[line width=0.55pt] (-0.08,0.95) -- (3.35,0.95);
+    \foreach \n in {0,1,...,15}
+      \draw[line width=0.32pt] ({0.20*\n},0.95) -- ++(0,0.22);
+    \foreach \n in {0,5,10}
+      \draw[line width=0.55pt] ({0.20*\n},0.95) -- ++(0,0.38);
+    \node[font=\scriptsize,inner sep=0pt,anchor=south] at (0,1.38) {0};
+    \node[font=\scriptsize,inner sep=0pt,anchor=south] at (2.00,1.38) {1};
+    \foreach \k in {0,1,...,10}
+      \draw[line width=0.32pt] ({1.04+0.18*\k},0.95) -- ++(0,-0.22);
+    \draw[line width=0.55pt] (1.04,0.95) -- ++(0,-0.38);
+    \draw[line width=0.55pt] (1.04+0.90,0.95) -- ++(0,-0.32);
+    \draw[line width=0.55pt] (1.04+1.80,0.95) -- ++(0,-0.38);
+    % 第 2 游标线与 7 毫米重合，加粗提示
+    \draw[line width=0.7pt] (1.40,1.22) -- (1.40,0.68);
+    \node[font=\scriptsize,inner sep=0pt,anchor=north] at (1.04,0.50) {0};
+    \node[font=\scriptsize,inner sep=0pt,anchor=north] at (1.94,0.56) {5};
+    \node[font=\scriptsize,inner sep=0pt,anchor=north] at (2.84,0.50) {0};
+    \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (3.42,1.12) {（尺身）};
+    \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (3.42,0.58) {（游标）};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1·8 被测零件的宽度是5.2毫米}
 \end{figure}
 
@@ -652,8 +945,46 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-1/fig-p0011-03.png}}
-\caption{(第4题)}
+% fig-alt: 直尺标 0、1、21，手掌张开，拇指近 1、小指尖对 21，21 处有竖虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,1.55) rectangle (6.35,2.28);
+  \node[font=\scriptsize,inner sep=0pt] at (0.32,1.95) {0};
+  \node[font=\scriptsize,inner sep=0pt] at (1.15,1.95) {1};
+  \node[font=\scriptsize,inner sep=0pt] at (5.35,1.95) {21};
+  \foreach \n in {0,1,...,9}
+    \draw[line width=0.32pt] ({0.18+\n*0.10},1.55) -- ++(0,0.18);
+  \foreach \n in {0,1,2}
+    \draw[line width=0.45pt] ({0.18+\n*0.50},1.55) -- ++(0,0.28);
+  \foreach \n in {0,1,...,6}
+    \draw[line width=0.32pt] ({5.55+\n*0.10},1.55) -- ++(0,0.16);
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.1pt] (5.42,2.55) -- (5.42,1.42);
+  % 手：拇指近 1，小指尖对 21
+  \fill[white,draw=black,line width=0.7pt]
+    (2.55,0.12)
+    .. controls (2.15,0.55) and (2.05,1.05) .. (2.15,1.48)
+    .. controls (1.55,1.72) and (1.05,1.85) .. (0.95,2.05)
+    .. controls (0.88,2.18) and (1.05,2.28) .. (1.22,2.18)
+    .. controls (1.85,1.95) and (2.15,1.82) .. (2.42,1.70)
+    .. controls (2.48,2.15) and (2.52,2.85) .. (2.48,3.22)
+    .. controls (2.48,3.42) and (2.72,3.48) .. (2.82,3.28)
+    .. controls (2.95,2.85) and (3.02,2.25) .. (3.05,1.92)
+    .. controls (3.12,2.35) and (3.22,3.05) .. (3.28,3.38)
+    .. controls (3.32,3.55) and (3.55,3.52) .. (3.58,3.32)
+    .. controls (3.55,2.85) and (3.48,2.25) .. (3.48,1.88)
+    .. controls (3.62,2.15) and (3.85,2.55) .. (4.05,2.72)
+    .. controls (4.18,2.82) and (4.32,2.68) .. (4.22,2.52)
+    .. controls (3.95,2.15) and (3.72,1.85) .. (3.62,1.62)
+    .. controls (3.95,1.55) and (4.55,1.62) .. (5.15,1.85)
+    .. controls (5.35,1.95) and (5.55,1.92) .. (5.48,1.72)
+    .. controls (5.28,1.52) and (4.55,1.38) .. (3.95,1.42)
+    .. controls (3.55,1.22) and (3.25,0.72) .. (3.15,0.18)
+    -- cycle;
+  \draw[line width=0.4pt] (1.08,2.12) ellipse[x radius=0.10,y radius=0.06];
+  \draw[line width=0.4pt] (5.32,1.82) ellipse[x radius=0.10,y radius=0.05];
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \emph{（第4题）}
@@ -825,11 +1156,50 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·12 鼠筒(左)、量杯(右)}]{assets/physics-1/fig-p0014-02.png}}
-\caption{图1·12 鼠筒(左)、量杯(右)}
+% fig-alt: 左为量筒，刻度 10 至 100，上口椭圆带倾嘴；右为量杯，刻度 0 至 100，上宽下窄带倾嘴
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 量筒
+  \draw[line width=0.7pt] (0.22,0.42) -- (0.22,6.35);
+  \draw[line width=0.7pt] (1.72,0.42) -- (1.72,6.35);
+  \draw[line width=0.7pt] (0.22,6.35) arc[start angle=180,end angle=360,x radius=0.75,y radius=0.22];
+  \draw[line width=0.55pt] (0.22,6.35) arc[start angle=180,end angle=0,x radius=0.75,y radius=0.16];
+  \draw[line width=0.7pt] (1.72,6.35) -- (1.98,6.52) -- (1.72,6.55);
+  \draw[line width=0.7pt] (0.22,0.42) arc[start angle=180,end angle=360,x radius=0.75,y radius=0.16];
+  \draw[line width=0.5pt] (0.22,0.42) arc[start angle=180,end angle=0,x radius=0.75,y radius=0.10];
+  \draw[line width=0.7pt] (-0.05,0.18) -- (1.99,0.18);
+  \draw[line width=0.7pt] (-0.05,0.18) arc[start angle=180,end angle=360,x radius=1.02,y radius=0.18];
+  \draw[line width=0.7pt] (1.99,0.18) -- (1.72,0.42);
+  \draw[line width=0.7pt] (-0.05,0.18) -- (0.22,0.42);
+  \foreach \n/\k in {10/0,20/1,30/2,40/3,50/4,60/5,70/6,80/7,90/8,100/9} {
+    \draw[line width=0.45pt] (1.72,{0.85+\k*0.52}) -- (1.38,{0.85+\k*0.52});
+    \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (1.34,{0.85+\k*0.52}) {\n};
+  }
+  \foreach \k in {0,1,...,9}
+    \draw[line width=0.32pt] (1.72,{1.11+\k*0.52}) -- (1.50,{1.11+\k*0.52});
+  \draw[line width=0.32pt] (1.72,0.59) -- (1.50,0.59);
+  % 量杯
+  \draw[line width=0.7pt] (3.15,0.55) -- (2.55,4.15);
+  \draw[line width=0.7pt] (4.55,0.55) -- (5.15,4.15);
+  \draw[line width=0.7pt] (2.55,4.15) arc[start angle=180,end angle=360,x radius=1.30,y radius=0.32];
+  \draw[line width=0.55pt] (2.55,4.15) arc[start angle=180,end angle=0,x radius=1.30,y radius=0.22];
+  \draw[line width=0.7pt] (5.15,4.15) -- (5.55,4.28) -- (5.15,4.38);
+  \draw[line width=0.7pt] (3.15,0.55) arc[start angle=180,end angle=360,x radius=0.70,y radius=0.16];
+  \draw[line width=0.5pt] (3.15,0.55) arc[start angle=180,end angle=0,x radius=0.70,y radius=0.10];
+  \draw[line width=0.7pt] (2.92,0.22) -- (4.78,0.22);
+  \draw[line width=0.7pt] (2.92,0.22) arc[start angle=180,end angle=360,x radius=0.93,y radius=0.16];
+  \draw[line width=0.7pt] (2.92,0.22) -- (3.15,0.55);
+  \draw[line width=0.7pt] (4.78,0.22) -- (4.55,0.55);
+  \foreach \n/\k in {0/0,10/1,20/2,30/3,40/4,50/5,60/6,70/7,80/8,90/9,100/10} {
+    \draw[line width=0.45pt] ({4.56+\k*0.05},{0.62+\k*0.30}) -- ({4.28+\k*0.05},{0.62+\k*0.30});
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=east] at ({4.24+\k*0.05},{0.62+\k*0.30}) {\n};
+  }
+\end{tikzpicture}%
+}
+\caption{图1·12 量筒（左）、量杯（右）}
 \end{figure}
 
-\emph{图1·12 鼠筒（左）、量杯（右）}
+\emph{图1·12 量筒（左）、量杯（右）}
 
 液体没有一定的形状，要测量液体的体积必须把液体倒在带有刻度的容器里，这种容器叫做量筒或量杯（图1·12），筒壁或杯壁上带有刻度，常标明立方厘米的数目。
 
@@ -1025,11 +1395,46 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·15 国际标准千克源器}]{assets/physics-1/fig-p0017-01.png}}
-\caption{图 1·15 国际标准千克源器}
+% fig-alt: 国际千克原器：铂铱圆柱置于小圆座上，外罩内外两层钟形玻璃罩，罩顶各有圆球钮，坐在椭圆底盘上
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 外底盘
+  \draw[line width=0.75pt] (0,0.28) ellipse[x radius=2.18,y radius=0.42];
+  \draw[line width=0.75pt] (-2.18,0.28) -- (-2.18,0.06);
+  \draw[line width=0.75pt] (2.18,0.28) -- (2.18,0.06);
+  \draw[line width=0.75pt] (-2.18,0.06) arc[start angle=180,end angle=360,x radius=2.18,y radius=0.42];
+  % 外罩
+  \draw[line width=0.7pt] (0,0.62) ellipse[x radius=1.52,y radius=0.28];
+  \draw[line width=0.7pt] (-1.52,0.62) -- (-1.52,2.35)
+    .. controls (-1.52,3.35) and (-0.85,4.05) .. (0,4.18)
+    .. controls (0.85,4.05) and (1.52,3.35) .. (1.52,2.35) -- (1.52,0.62);
+  \draw[line width=0.7pt] (0,4.95) circle[radius=0.38];
+  \draw[line width=0.65pt] (-0.22,4.58) .. controls (-0.16,4.38) and (-0.10,4.25) .. (0,4.18)
+    .. controls (0.10,4.25) and (0.16,4.38) .. (0.22,4.58);
+  % 内罩底
+  \draw[line width=0.65pt] (0,0.78) ellipse[x radius=1.02,y radius=0.20];
+  % 圆柱原器与圆座
+  \draw[line width=0.7pt] (0,1.85) ellipse[x radius=0.44,y radius=0.15];
+  \draw[line width=0.7pt] (-0.44,1.85) -- (-0.44,1.15);
+  \draw[line width=0.7pt] (0.44,1.85) -- (0.44,1.15);
+  \draw[line width=0.7pt] (0,1.15) ellipse[x radius=0.44,y radius=0.15];
+  \draw[line width=0.6pt] (0,1.00) ellipse[x radius=0.66,y radius=0.15];
+  \draw[line width=0.6pt] (-0.66,1.00) -- (-0.66,0.86);
+  \draw[line width=0.6pt] (0.66,1.00) -- (0.66,0.86);
+  \draw[line width=0.6pt] (0,0.86) ellipse[x radius=0.66,y radius=0.15];
+  % 内罩（明显小于外罩，顶上另有圆钮）
+  \draw[line width=0.7pt] (-1.02,0.78) -- (-1.02,2.05)
+    .. controls (-1.02,2.55) and (-0.55,2.95) .. (0,3.08)
+    .. controls (0.55,2.95) and (1.02,2.55) .. (1.02,2.05) -- (1.02,0.78);
+  \draw[line width=0.7pt] (0,3.58) circle[radius=0.24];
+  \draw[line width=0.6pt] (-0.14,3.34) .. controls (-0.10,3.20) and (-0.06,3.12) .. (0,3.08)
+    .. controls (0.06,3.12) and (0.10,3.20) .. (0.14,3.34);
+\end{tikzpicture}%
+}
+\caption{图1·15 国际标准千克原器}
 \end{figure}
 
-\emph{图 1·15 国际标准千克原器}
+\emph{图1·15 国际标准千克原器}
 
 除把千克作为质量的基本单位外，其它的质量单位还有克、毫克等。
 
@@ -1039,17 +1444,110 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第18页）}]{assets/physics-1/fig-p0018-01.png}}
-\caption{图示（原PDF第18页）}
+% fig-alt: 图1·16 左为双盘天平（支柱 F、指针 D、标尺 K、指针尖 G、止动旋钮 E），右为横梁 A/C/B 与指针 D
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 底座
+  \draw[line width=0.75pt] (-3.55,0.22) rectangle (3.55,0.58);
+  \draw[line width=0.55pt] (-3.25,0.22) -- (-3.25,0.08) -- (-2.95,0.08);
+  \draw[line width=0.55pt] (3.25,0.22) -- (3.25,0.08) -- (2.95,0.08);
+  \draw[line width=0.5pt] (-3.70,0.00) -- (3.70,0.00);
+  \fill (0,0.40) circle[radius=0.12];
+  \draw[line width=0.55pt] (-0.16,0.22) rectangle (0.16,0.58);
+  \node[font=\scriptsize,inner sep=0.6pt,anchor=north] at (0,-0.02) {$E$};
+  % 支柱 F
+  \fill[white] (-0.16,0.58) rectangle (0.16,3.15);
+  \draw[line width=0.75pt] (-0.16,0.58) -- (-0.16,3.15);
+  \draw[line width=0.75pt] (0.16,0.58) -- (0.16,3.15);
+  \draw[line width=0.7pt] (-0.42,0.58) -- (0.42,0.58) -- (0.42,0.72) -- (-0.42,0.72) -- cycle;
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (0.28,2.55) {$F$};
+  % 制动叉
+  \draw[line width=0.6pt] (-0.95,2.85) -- (-0.16,2.85);
+  \draw[line width=0.6pt] (0.16,2.85) -- (0.95,2.85);
+  \draw[line width=0.6pt] (-0.95,2.72) -- (-0.95,3.05);
+  \draw[line width=0.6pt] (0.95,2.72) -- (0.95,3.05);
+  \draw[line width=0.5pt] (-1.12,2.85) -- (-0.78,2.85);
+  \draw[line width=0.5pt] (0.78,2.85) -- (1.12,2.85);
+  % 刀承
+  \fill (0,3.22) -- (-0.22,3.02) -- (0.22,3.02) -- cycle;
+  \draw[line width=0.55pt] (0,3.48) circle[radius=0.10];
+  \fill (0,3.48) circle[radius=0.05];
+  % 横梁
+  \draw[line width=0.7pt]
+    (-3.05,3.22) -- (-2.55,3.22) -- (-2.15,3.48) -- (-0.22,3.48)
+    -- (0.22,3.48) -- (2.15,3.48) -- (2.55,3.22) -- (3.05,3.22);
+  \draw[line width=0.7pt]
+    (-3.05,3.02) -- (-2.55,3.02) -- (-2.15,3.28) -- (0,3.28)
+    -- (2.15,3.28) -- (2.55,3.02) -- (3.05,3.02);
+  \draw[line width=0.55pt] (-3.05,3.02) -- (-3.05,3.22);
+  \draw[line width=0.55pt] (3.05,3.02) -- (3.05,3.22);
+  \fill (-3.28,3.12) circle[radius=0.10];
+  \fill (3.28,3.12) circle[radius=0.10];
+  \draw[line width=0.5pt] (-3.05,3.12) -- (-3.18,3.12);
+  \draw[line width=0.5pt] (3.05,3.12) -- (3.18,3.12);
+  % 吊耳
+  \draw[line width=0.55pt] (-2.72,3.02) -- (-2.72,2.78);
+  \draw[line width=0.55pt] (2.72,3.02) -- (2.72,2.78);
+  \draw[line width=0.5pt] (-2.82,2.78) rectangle (-2.62,2.62);
+  \draw[line width=0.5pt] (2.62,2.62) rectangle (2.82,2.78);
+  % 支柱加粗
+  \fill (-0.10,0.72) rectangle (0.10,3.12);
+  % 左盘（线框吊架）
+  \draw[line width=0.65pt] (-2.72,2.62) -- (-3.38,2.05) -- (-3.38,1.22);
+  \draw[line width=0.65pt] (-2.72,2.62) -- (-2.06,2.05) -- (-2.06,1.22);
+  \draw[line width=0.65pt] (-3.38,2.05) -- (-2.06,2.05);
+  \draw[line width=0.65pt] (-2.72,1.18) ellipse[x radius=0.72,y radius=0.14];
+  \draw[line width=0.65pt] (-3.44,1.22) -- (-3.44,1.48) -- (-2.00,1.48) -- (-2.00,1.22);
+  \draw[line width=0.5pt] (-3.08,1.32) .. controls (-2.88,1.48) and (-2.58,1.22) .. (-2.38,1.40)
+    .. controls (-2.52,1.18) and (-2.88,1.14) .. (-3.08,1.32);
+  % 右盘
+  \draw[line width=0.65pt] (2.72,2.62) -- (2.06,2.05) -- (2.06,1.22);
+  \draw[line width=0.65pt] (2.72,2.62) -- (3.38,2.05) -- (3.38,1.22);
+  \draw[line width=0.65pt] (2.06,2.05) -- (3.38,2.05);
+  \draw[line width=0.65pt] (2.72,1.18) ellipse[x radius=0.72,y radius=0.14];
+  \draw[line width=0.65pt] (2.00,1.22) -- (2.00,1.48) -- (3.44,1.48) -- (3.44,1.22);
+  \draw[line width=0.55pt] (2.72,1.48) ellipse[x radius=0.16,y radius=0.05];
+  \draw[line width=0.55pt] (2.56,1.48) -- (2.56,1.22);
+  \draw[line width=0.55pt] (2.88,1.48) -- (2.88,1.22);
+  \draw[line width=0.55pt] (2.72,1.58) circle[radius=0.08];
+  % 指针 D 与标尺 K
+  \draw[line width=0.55pt] (0,3.02) -- (-0.22,1.02);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (0.22,1.85) {$D$};
+  \draw[line width=0.7pt] (-0.62,0.92) rectangle (0.62,1.28);
+  \foreach \n in {-3,-2,...,3}
+    \draw[line width=0.35pt] ({0.14*\n},0.92) -- ++(0,0.12);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (0.70,1.10) {$K$};
+  \draw[line width=0.5pt,->] (-0.22,1.02) -- (-0.22,0.82);
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=east] at (-0.70,0.95) {$G$};
+  % 右：横梁 A/C/B 与指针 D（与左视同属图1·16）
+  \begin{scope}[xshift=7.35cm,yshift=0.35cm]
+    \draw[line width=0.7pt] (0,0.22) -- (0,2.22);
+    \draw[line width=0.55pt] (-0.28,0.08) rectangle (0.28,0.32);
+    \foreach \x in {-0.16,-0.08,0,0.08,0.16}
+      \draw[line width=0.35pt] (\x,0.08) -- ++(0,0.10);
+    \draw[line width=0.7pt] (-0.22,2.38) -- (0,2.18) -- (0.22,2.38);
+    \draw[line width=0.75pt]
+      (-2.35,2.42) -- (-1.85,2.42) -- (-1.45,2.58) -- (0,2.58)
+      -- (1.45,2.58) -- (1.85,2.42) -- (2.35,2.42);
+    \draw[line width=0.75pt]
+      (-2.35,2.26) -- (-1.85,2.26) -- (-1.45,2.42) -- (0,2.42)
+      -- (1.45,2.42) -- (1.85,2.26) -- (2.35,2.26);
+    \draw[line width=0.55pt] (-2.35,2.26) -- (-2.35,2.42);
+    \draw[line width=0.55pt] (2.35,2.26) -- (2.35,2.42);
+    \fill (-2.52,2.34) circle[radius=0.09];
+    \fill (2.52,2.34) circle[radius=0.09];
+    \draw[line width=0.55pt] (0,2.22) -- (0,0.32);
+    \node[font=\scriptsize,inner sep=0.5pt] at (-2.52,2.78) {$A$};
+    \node[font=\scriptsize,inner sep=0.5pt] at (0.38,2.78) {$C$};
+    \node[font=\scriptsize,inner sep=0.5pt] at (2.52,2.78) {$B$};
+    \node[font=\scriptsize,inner sep=0.5pt,anchor=west] at (0.18,1.25) {$D$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图1·16 测定物体质量用的天平}
 \end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·16 确定物体质量用的天平}]{assets/physics-1/fig-p0018-02.png}}
-\caption{图1·16 确定物体质量用的天平}
-\end{figure}
-
-\emph{图1·16 确定物体质量用的天平}
+\emph{图1·16 测定物体质量用的天平}
 
 测量质量的工具很多，可以根据不同需要来选用。在实验室里，为了精确地测定物体的质量，常常使用天平
 （图1·16）。天平最主要的部分是它的横梁
@@ -1062,7 +1560,82 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·17 砝码}]{assets/physics-1/fig-p0018-03.png}}
+% fig-alt: 图1·17 砝码：左为打开的砝码盒（盒盖圆槽、盒内带钮砝码与毫克片、盒前挂钩），右上镊子夹一小砝码，右下标 20、10、100、50、500、200 的砝码外形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 盒体：前、右、顶口
+  \draw[line width=0.7pt] (0.15,0.28) -- (4.85,0.28) -- (4.85,2.12) -- (0.15,2.12) -- cycle;
+  \draw[line width=0.7pt] (4.85,0.28) -- (3.55,1.18) -- (3.55,3.02) -- (4.85,2.12);
+  \draw[line width=0.7pt] (0.15,2.12) -- (-1.15,3.02) -- (3.55,3.02) -- (4.85,2.12);
+  \fill[white] (0.28,2.16) -- (4.62,2.16) -- (3.42,2.92) -- (-0.92,2.92) -- cycle;
+  \draw[line width=0.45pt] (0.28,2.16) -- (4.62,2.16) -- (3.42,2.92) -- (-0.92,2.92) -- cycle;
+  % 盒前挂钩
+  \draw[line width=0.55pt] (3.35,1.05) -- (3.35,0.72);
+  \draw[line width=0.55pt] (3.35,0.72) arc[start angle=180,end angle=360,x radius=0.16,y radius=0.16];
+  % 盒盖（内面，铰于顶口后沿）
+  \draw[line width=0.7pt] (-1.15,3.02) -- (3.55,3.02) -- (2.58,5.42) -- (-2.12,5.42) -- cycle;
+  \draw[line width=0.55pt] (-2.12,5.42) -- (-2.12,5.62) -- (2.58,5.62) -- (2.58,5.42);
+  \draw[line width=0.5pt] (2.58,5.62) -- (3.55,3.22);
+  % 盖内：镊子槽
+  \draw[line width=0.45pt] (-1.35,5.12) -- (0.85,5.12) -- (1.02,4.92) -- (-1.18,4.92) -- cycle;
+  % 盖内圆槽（左列三、右列四）
+  \draw[line width=0.4pt] (-0.55,4.55) ellipse[x radius=0.22,y radius=0.16];
+  \draw[line width=0.4pt] (-0.42,4.12) ellipse[x radius=0.28,y radius=0.18];
+  \draw[line width=0.4pt] (-0.28,3.62) ellipse[x radius=0.34,y radius=0.20];
+  \draw[line width=0.4pt] (0.55,4.58) ellipse[x radius=0.18,y radius=0.14];
+  \draw[line width=0.4pt] (0.72,4.22) ellipse[x radius=0.22,y radius=0.15];
+  \draw[line width=0.4pt] (0.92,3.82) ellipse[x radius=0.28,y radius=0.17];
+  \draw[line width=0.4pt] (1.15,3.38) ellipse[x radius=0.32,y radius=0.18];
+  % 盖内大圆槽与椭圆槽
+  \draw[line width=0.45pt] (-0.15,3.28) ellipse[x radius=0.52,y radius=0.28];
+  \draw[line width=0.45pt] (1.85,3.42) ellipse[x radius=0.42,y radius=0.24];
+  % 盒内带钮砝码（左大右小）
+  \foreach \x/\y/\rx/\ry in {0.95/2.48/0.46/0.18, 2.05/2.52/0.32/0.14, 2.85/2.55/0.24/0.11, 1.55/2.72/0.22/0.10, 2.35/2.78/0.18/0.09, 3.05/2.78/0.16/0.08} {
+    \draw[line width=0.5pt] (\x,\y) ellipse[x radius=\rx,y radius=\ry];
+    \draw[line width=0.45pt] ({\x-\rx},\y) -- ({\x-0.85*\rx},{\y+0.22});
+    \draw[line width=0.45pt] ({\x+\rx},\y) -- ({\x+0.85*\rx},{\y+0.22});
+    \draw[line width=0.5pt] ({\x-0.08},{\y+0.22}) ellipse[x radius=\rx,y radius=0.85*\ry];
+    \draw[line width=0.4pt] ({\x-0.08},{\y+0.34}) -- ({\x-0.08},{\y+0.48});
+    \draw[line width=0.4pt] ({\x-0.08},{\y+0.50}) ellipse[x radius=0.22*\rx,y radius=0.05];
+  }
+  % 盒前毫克片
+  \draw[line width=0.4pt] (3.15,2.28) -- (3.42,2.48) -- (3.55,2.28) -- cycle;
+  \draw[line width=0.4pt] (3.42,2.22) -- (3.62,2.40) -- (3.78,2.22) -- cycle;
+  \draw[line width=0.4pt] (3.58,2.18) -- (3.82,2.18) -- (3.82,2.32) -- (3.58,2.32) -- cycle;
+  \draw[line width=0.4pt] (3.22,2.18) -- (3.48,2.18) -- (3.42,2.08) -- (3.18,2.08) -- cycle;
+  \draw[line width=0.4pt] (2.85,2.22) -- (3.12,2.38) -- (3.22,2.22) -- cycle;
+  % 镊子与手（示意）
+  \draw[line width=0.55pt] (6.55,4.72) -- (7.55,5.42);
+  \draw[line width=0.55pt] (6.62,4.58) -- (7.62,5.28);
+  \draw[line width=0.45pt] (6.55,4.72) -- (6.42,4.55);
+  \draw[line width=0.45pt] (6.62,4.58) -- (6.48,4.42);
+  \draw[line width=0.5pt] (6.48,4.38) ellipse[x radius=0.16,y radius=0.09];
+  \draw[line width=0.5pt] (6.32,4.38) -- (6.32,4.22);
+  \draw[line width=0.5pt] (6.64,4.38) -- (6.64,4.22);
+  \draw[line width=0.5pt] (6.48,4.22) ellipse[x radius=0.16,y radius=0.08];
+  \draw[line width=0.55pt] (7.55,5.42) .. controls (7.85,5.72) and (8.15,5.85) .. (8.55,5.72);
+  \draw[line width=0.55pt] (7.62,5.28) .. controls (7.95,5.12) and (8.35,5.05) .. (8.72,5.22);
+  \draw[line width=0.5pt] (8.55,5.72) .. controls (8.95,6.05) and (9.35,6.15) .. (9.72,5.85);
+  \draw[line width=0.5pt] (8.72,5.22) .. controls (9.15,5.05) and (9.55,5.15) .. (9.78,5.48);
+  \draw[line width=0.5pt] (9.72,5.85) .. controls (10.05,5.95) and (10.15,5.55) .. (9.78,5.48);
+  \draw[line width=0.45pt] (8.15,5.55) .. controls (8.35,5.85) and (8.55,5.95) .. (8.72,5.72);
+  \draw[line width=0.4pt] (8.35,5.42) .. controls (8.55,5.22) and (8.85,5.18) .. (9.05,5.35);
+  \draw[line width=0.4pt] (8.55,5.38) .. controls (8.75,5.18) and (9.05,5.15) .. (9.22,5.32);
+  % 右下：砝码外形
+  \draw[line width=0.6pt] (6.55,3.55) rectangle (7.35,4.18);
+  \node[font=\scriptsize,inner sep=0.3pt] at (6.95,3.86) {20};
+  \draw[line width=0.6pt] (8.05,3.55) -- (8.95,3.86) -- (8.05,4.18) -- cycle;
+  \node[font=\scriptsize,inner sep=0.3pt] at (8.28,3.86) {10};
+  \draw[line width=0.6pt] (6.25,2.88) -- (7.95,3.28) -- (7.95,2.48) -- cycle;
+  \node[font=\scriptsize,inner sep=0.3pt] at (7.35,2.88) {100};
+  \draw[line width=0.6pt] (8.55,2.88) -- (9.05,3.18) -- (9.55,2.88) -- (9.55,2.42) -- (9.05,2.12) -- (8.55,2.42) -- cycle;
+  \node[font=\scriptsize,inner sep=0.3pt] at (9.05,2.65) {50};
+  \draw[line width=0.6pt] (7.18,1.52) -- (8.22,1.52) -- (8.74,1.05) -- (8.22,0.58) -- (7.18,0.58) -- (6.66,1.05) -- cycle;
+  \node[font=\scriptsize,inner sep=0.3pt] at (7.70,1.05) {500};
+  \draw[line width=0.6pt] (9.35,1.55) -- (9.65,1.85) -- (10.25,1.85) -- (10.55,1.55) -- (10.55,1.05) -- (10.25,0.75) -- (9.65,0.75) -- (9.35,1.05) -- cycle;
+  \node[font=\scriptsize,inner sep=0.3pt] at (9.95,1.30) {200};
+\end{tikzpicture}%
+}
 \caption{图1·17 砝码}
 \end{figure}
 
@@ -1125,7 +1698,43 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-1/fig-p0020-01.png}}
+% fig-alt: 第6题简易天平：底板、中柱、钉孔刀口、横梁、两盘（鞋油盒盖）用线悬挂
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 底板（示厚度）
+  \draw[line width=0.7pt] (-2.55,0.22) -- (2.55,0.22) -- (2.72,0.42) -- (-2.38,0.42) -- cycle;
+  \draw[line width=0.7pt] (-2.55,0.22) -- (-2.55,0.00) -- (2.55,0.00) -- (2.55,0.22);
+  \draw[line width=0.55pt] (2.55,0.00) -- (2.72,0.20) -- (2.72,0.42);
+  % 中柱
+  \fill[white] (-0.22,0.42) rectangle (0.22,2.55);
+  \draw[line width=0.7pt] (-0.22,0.42) rectangle (0.22,2.55);
+  % 刀口座
+  \draw[line width=0.65pt] (0,2.92) -- (-0.38,2.55) -- (0.38,2.55) -- cycle;
+  \draw[line width=0.55pt] (0,2.78) circle[radius=0.10];
+  \fill (0,2.78) circle[radius=0.035];
+  % 横梁
+  \draw[line width=0.75pt] (-2.55,2.72) -- (2.55,2.72);
+  \draw[line width=0.75pt] (-2.55,2.86) -- (2.55,2.86);
+  \draw[line width=0.55pt] (-2.55,2.72) -- (-2.55,2.86);
+  \draw[line width=0.55pt] (2.55,2.72) -- (2.55,2.86);
+  % 左盘
+  \draw[line width=0.55pt] (-2.42,2.72) -- (-2.85,1.15);
+  \draw[line width=0.55pt] (-2.42,2.72) -- (-1.98,1.15);
+  \draw[line width=0.65pt] (-2.42,1.08) ellipse[x radius=0.62,y radius=0.16];
+  \draw[line width=0.55pt] (-3.04,1.08) -- (-3.04,0.82);
+  \draw[line width=0.55pt] (-1.80,1.08) -- (-1.80,0.82);
+  \draw[line width=0.65pt] (-2.42,0.82) ellipse[x radius=0.62,y radius=0.16];
+  \draw[line width=0.4pt] (-3.04,1.08) arc[start angle=180,end angle=360,x radius=0.62,y radius=0.10];
+  % 右盘
+  \draw[line width=0.55pt] (2.42,2.72) -- (1.98,1.15);
+  \draw[line width=0.55pt] (2.42,2.72) -- (2.85,1.15);
+  \draw[line width=0.65pt] (2.42,1.08) ellipse[x radius=0.62,y radius=0.16];
+  \draw[line width=0.55pt] (1.80,1.08) -- (1.80,0.82);
+  \draw[line width=0.55pt] (3.04,1.08) -- (3.04,0.82);
+  \draw[line width=0.65pt] (2.42,0.82) ellipse[x radius=0.62,y radius=0.16];
+  \draw[line width=0.4pt] (1.80,1.08) arc[start angle=180,end angle=360,x radius=0.62,y radius=0.10];
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -1154,7 +1763,76 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1·18 钟、表、秒表}]{assets/physics-1/fig-p0021-01.png}}
+% fig-alt: 图1·18 左有摆座钟（面针约3时，下摆锤），中手表（约10时10分，右侧日窗），右秒表（外圈0至55，内圈标1/10，秒针偏右下）；下标钟、表、秒表
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 座钟
+  \draw[line width=0.7pt] (0.15,0.35) -- (3.05,0.35) -- (3.18,0.52) -- (0.02,0.52) -- cycle;
+  \draw[line width=0.7pt] (0.22,0.52) -- (0.22,5.05);
+  \draw[line width=0.7pt] (2.98,0.52) -- (2.98,5.05);
+  \draw[line width=0.7pt] (0.22,5.05) -- (0.02,5.22) -- (1.60,5.95) -- (3.18,5.22) -- (2.98,5.05);
+  \draw[line width=0.55pt] (1.60,5.52) circle[radius=0.22];
+  \draw[line width=0.4pt] (1.52,5.58) .. controls (1.60,5.70) and (1.70,5.68) .. (1.68,5.52);
+  \draw[line width=0.65pt] (1.60,3.55) circle[radius=1.12];
+  \draw[line width=0.45pt] (1.60,3.55) circle[radius=0.98];
+  \foreach \a in {0,30,...,330}
+    \draw[line width=0.35pt] ({1.60+0.92*cos(\a)},{3.55+0.92*sin(\a)}) -- ({1.60+1.08*cos(\a)},{3.55+1.08*sin(\a)});
+  \draw[line width=0.7pt] (1.60,3.55) -- (1.60,4.42);
+  \draw[line width=0.65pt] (1.60,3.55) -- (2.48,3.42);
+  \fill (1.60,3.55) circle[radius=0.04];
+  \draw[line width=0.4pt] (0.42,4.35) .. controls (0.22,3.85) and (0.28,3.25) .. (0.48,2.85);
+  \draw[line width=0.4pt] (2.78,4.35) .. controls (2.98,3.85) and (2.92,3.25) .. (2.72,2.85);
+  \draw[line width=0.55pt] (0.42,2.22) rectangle (1.32,2.68);
+  \draw[line width=0.55pt] (1.88,2.22) rectangle (2.78,2.68);
+  \draw[line width=0.55pt] (0.48,0.62) -- (1.60,1.95) -- (2.72,0.62);
+  \draw[line width=0.55pt] (0.48,1.95) -- (2.72,1.95);
+  \draw[line width=0.55pt] (0.48,1.95) -- (2.72,0.62);
+  \draw[line width=0.6pt] (1.60,1.28) circle[radius=0.28];
+  \node[font=\scriptsize,inner sep=0.4pt] at (1.60,-0.05) {钟};
+  % 手表
+  \begin{scope}[shift={(5.15,2.85)}]
+    \draw[line width=0.55pt] (-0.42,1.35) -- (-0.32,2.15) -- (0.32,2.15) -- (0.42,1.35);
+    \draw[line width=0.4pt] (-0.22,1.55) -- (-0.16,2.02);
+    \draw[line width=0.4pt] (0.22,1.55) -- (0.16,2.02);
+    \draw[line width=0.55pt] (-0.42,-1.35) -- (-0.32,-2.15) -- (0.32,-2.15) -- (0.42,-1.35);
+    \draw[line width=0.4pt] (-0.22,-1.55) -- (-0.16,-2.02);
+    \draw[line width=0.4pt] (0.22,-1.55) -- (0.16,-2.02);
+    \draw[line width=0.7pt] (0,0) circle[radius=1.22];
+    \draw[line width=0.45pt] (0,0) circle[radius=1.08];
+    \foreach \a in {0,30,...,330}
+      \draw[line width=0.35pt] ({0.98*cos(\a)},{0.98*sin(\a)}) -- ({1.14*cos(\a)},{1.14*sin(\a)});
+    \draw[line width=0.45pt] (0.72,-0.16) rectangle (0.98,0.16);
+    \node[font=\tiny,inner sep=0pt] at (0.85,0.00) {1};
+    \draw[line width=0.65pt] (0,0) -- ({0.62*cos(120)},{0.62*sin(120)});
+    \draw[line width=0.6pt] (0,0) -- ({0.92*cos(30)},{0.92*sin(30)});
+    \fill (0,0) circle[radius=0.04];
+  \end{scope}
+  \node[font=\scriptsize,inner sep=0.4pt] at (5.15,-0.05) {表};
+  % 秒表
+  \begin{scope}[shift={(8.85,2.85)}]
+    \draw[line width=0.7pt] (0,0) circle[radius=1.85];
+    \draw[line width=0.45pt] (0,0) circle[radius=1.72];
+    \draw[line width=0.6pt] (-0.22,1.85) rectangle (0.22,2.12);
+    \draw[line width=0.55pt] (0,2.12) ellipse[x radius=0.28,y radius=0.16];
+    \foreach \ang/\lab in {90/0,60/5,30/10,0/15,-30/20,-60/25,-90/30,-120/35,-150/40,-180/45,-210/50,-240/55} {
+      \draw[line width=0.35pt] ({1.58*cos(\ang)},{1.58*sin(\ang)}) -- ({1.78*cos(\ang)},{1.78*sin(\ang)});
+      \node[font=\scriptsize,inner sep=0.2pt] at ({1.38*cos(\ang)},{1.38*sin(\ang)}) {\lab};
+    }
+    \foreach \ang in {90,84,...,-264}
+      \draw[line width=0.22pt] ({1.68*cos(\ang)},{1.68*sin(\ang)}) -- ({1.78*cos(\ang)},{1.78*sin(\ang)});
+    \draw[line width=0.5pt] (0,0.58) circle[radius=0.62];
+    \node[font=\tiny,inner sep=0.08pt] at (0,1.08) {0};
+    \node[font=\tiny,inner sep=0.08pt] at (0.50,0.58) {10};
+    \node[font=\tiny,inner sep=0.08pt] at (0,0.08) {20};
+    \node[font=\tiny,inner sep=0.08pt] at (-0.50,0.58) {30};
+    \node[font=\tiny,inner sep=0.08pt] at (0,0.58) {$1/10$};
+    \draw[line width=0.4pt] (0,0.58) -- ({0.32*cos(40)},{0.58+0.32*sin(40)});
+    \draw[line width=0.7pt] ({0.22*cos(138)},{0.22*sin(138)}) -- ({1.55*cos(-42)},{1.55*sin(-42)});
+    \fill (0,0) circle[radius=0.045];
+  \end{scope}
+  \node[font=\scriptsize,inner sep=0.4pt] at (8.85,-0.05) {秒表};
+\end{tikzpicture}%
+}
 \caption{图1·18 钟、表、秒表}
 \end{figure}
 
@@ -1184,7 +1862,22 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题) 单摆}]{assets/physics-1/fig-p0022-01.png}}
+% fig-alt: 第6题单摆：悬点固定于短影线天花板，中为竖直虚线平衡位置，左右两实线偏开，三球为空心圆
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.55pt] (-0.55,3.55) -- (0.55,3.55);
+  \foreach \s in {-0.48,-0.32,...,0.52}
+    \draw[line width=0.28pt] (\s,3.55) -- (\s+0.10,3.72);
+  \fill[white] (-0.22,3.42) rectangle (0.22,3.55);
+  \draw[line width=0.55pt] (-0.22,3.42) rectangle (0.22,3.55);
+  \draw[line width=0.55pt,dash pattern=on 1.6pt off 1.1pt] (0,3.42) -- (0,0.42);
+  \draw[line width=0.6pt] (0,3.42) -- (-1.15,0.42);
+  \draw[line width=0.6pt] (0,3.42) -- (1.15,0.42);
+  \draw[line width=0.65pt] (-1.15,0.22) circle[radius=0.20];
+  \draw[line width=0.65pt] (0,0.22) circle[radius=0.20];
+  \draw[line width=0.65pt] (1.15,0.22) circle[radius=0.20];
+\end{tikzpicture}%
+}
 \caption{(第6题) 单摆}
 \end{figure}
 
@@ -1250,7 +1943,23 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-1/fig-p0023-01.png}}
+% fig-alt: 第5题长方形薄板，底标1米，右标50厘米；自左下角至右边中点的对角线以下为阴影
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (6.00,3.00);
+  \begin{scope}
+    \clip (0,0) -- (6.00,0) -- (6.00,1.50) -- cycle;
+    \foreach \s in {-3.2,-2.8,...,6.4}
+      \draw[line width=0.28pt] (\s,-0.2) -- (\s+3.4,3.2);
+  \end{scope}
+  \draw[line width=0.55pt] (0,0) -- (6.00,1.50);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (3.00,-0.08) {1米};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=west] at (6.12,2.72) {5};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=west] at (6.12,2.42) {0};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=west] at (6.12,2.12) {厘};
+  \node[font=\scriptsize,inner sep=0.2pt,anchor=west] at (6.12,1.82) {米};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -1388,7 +2097,48 @@ B 画一个箭头（注意，画箭头时不能使 AB 之长超过 5
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·2 力的图示}]{assets/physics-1/fig-p0027-01.png}}
+% fig-alt: 图2·2 人向左拉绳拖小车；绳上八等分刻度，一格下标1公斤；力的作用点在车钩，方向水平向左
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 人（示意，面向左拉）
+  \draw[line width=0.55pt] (1.05,2.92) circle[radius=0.28];
+  \draw[line width=0.5pt] (0.78,3.15) -- (0.55,3.18) -- (0.68,3.00);
+  \draw[line width=0.5pt] (0.78,3.18) .. controls (1.05,3.38) and (1.35,3.28) .. (1.35,3.02);
+  \draw[line width=0.55pt] (0.88,2.65) -- (1.28,2.65) -- (1.38,1.62) -- (0.92,1.62) -- cycle;
+  \draw[line width=0.5pt] (1.18,2.48) -- (1.88,2.10);
+  \draw[line width=0.5pt] (1.22,2.32) -- (1.92,2.10);
+  \draw[line width=0.55pt] (1.05,1.62) -- (0.52,0.42);
+  \draw[line width=0.55pt] (1.22,1.62) -- (1.88,0.38);
+  \draw[line width=0.5pt] (0.35,0.42) -- (0.70,0.32) -- (0.78,0.48);
+  \draw[line width=0.5pt] (1.72,0.38) -- (2.12,0.28) -- (2.05,0.48);
+  % 力的图示：自车钩水平向左，八格
+  \draw[line width=0.7pt] (1.92,2.08) -- (5.12,2.08);
+  \foreach \n in {0,1,...,8}
+    \draw[line width=0.45pt] ({1.92+0.40*\n},2.00) -- ({1.92+0.40*\n},2.16);
+  \draw[line width=0.4pt] (2.32,1.78) -- (2.32,1.88) -- (2.72,1.88) -- (2.72,1.78);
+  \node[font=\scriptsize,inner sep=0.3pt,anchor=north] at (2.52,1.76) {1公斤};
+  % 小车
+  \draw[line width=0.7pt] (5.12,1.15) -- (5.12,2.55) -- (8.55,2.55) -- (8.55,1.15) -- cycle;
+  \draw[line width=0.55pt] (5.12,2.55) -- (5.42,2.82) -- (8.85,2.82) -- (8.55,2.55);
+  \draw[line width=0.55pt] (8.55,2.55) -- (8.85,2.82) -- (8.85,1.42) -- (8.55,1.15);
+  \fill[black!18] (5.14,2.57) -- (5.42,2.80) -- (8.83,2.80) -- (8.53,2.57) -- cycle;
+  \begin{scope}
+    \clip (5.14,1.17) rectangle (8.53,2.53);
+    \foreach \s in {5.35,5.65,...,8.40}
+      \draw[line width=0.28pt] (\s,1.17) -- (\s+0.08,2.53);
+  \end{scope}
+  \draw[line width=0.55pt] (5.12,2.08) -- (4.95,2.08);
+  \draw[line width=0.5pt] (4.95,2.08) circle[radius=0.08];
+  \draw[line width=0.6pt] (5.85,1.15) circle[radius=0.42];
+  \draw[line width=0.6pt] (7.85,1.15) circle[radius=0.42];
+  \draw[line width=0.4pt] (5.85,1.15) circle[radius=0.12];
+  \draw[line width=0.4pt] (7.85,1.15) circle[radius=0.12];
+  \draw[line width=0.5pt] (6.15,1.42) circle[radius=0.32];
+  \draw[line width=0.5pt] (8.15,1.42) circle[radius=0.32];
+  \draw[line width=0.32pt] (6.15,1.42) circle[radius=0.08];
+  \draw[line width=0.32pt] (8.15,1.42) circle[radius=0.08];
+\end{tikzpicture}%
+}
 \caption{图2·2 力的图示}
 \end{figure}
 
@@ -1404,7 +2154,67 @@ B 画一个箭头（注意，画箭头时不能使 AB 之长超过 5
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 物体对支持物的压力}]{assets/physics-1/fig-p0028-01.png}}
+% fig-alt: (a) 左上曲臂托石块，左下同姿空掌向下箭；右上石块压弯搁于两木座的板，右下弯板向下箭
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 左上：曲臂托石
+  \draw[line width=0.65pt] (0.85,3.95) -- (0.85,2.85) -- (2.55,2.85);
+  \draw[line width=0.55pt] (0.62,3.95) -- (0.62,2.62) -- (2.55,2.62);
+  \draw[line width=0.5pt] (0.62,3.95) -- (0.85,3.95);
+  \draw[line width=0.55pt] (2.55,2.85) .. controls (2.85,2.95) and (3.05,2.82) .. (3.12,2.62);
+  \draw[line width=0.55pt] (2.55,2.62) .. controls (2.75,2.48) and (2.95,2.52) .. (3.12,2.62);
+  \draw[line width=0.45pt] (2.72,2.78) -- (2.92,2.92);
+  \draw[line width=0.45pt] (2.85,2.72) -- (3.08,2.85);
+  \draw[line width=0.6pt] plot[smooth cycle,tension=0.8] coordinates {(2.55,2.95) (2.35,3.28) (2.55,3.58) (2.95,3.65) (3.28,3.35) (3.22,2.95) (2.92,2.78)};
+  \begin{scope}
+    \clip plot[smooth cycle,tension=0.8] coordinates {(2.55,2.95) (2.35,3.28) (2.55,3.58) (2.95,3.65) (3.28,3.35) (3.22,2.95) (2.92,2.78)};
+    \foreach \s in {2.40,2.52,...,3.30}
+      \draw[line width=0.22pt] (\s,2.72) -- (\s+0.12,3.70);
+  \end{scope}
+  % 左下：空掌与向下箭
+  \draw[line width=0.65pt] (0.85,2.15) -- (0.85,1.05) -- (2.55,1.05);
+  \draw[line width=0.55pt] (0.62,2.15) -- (0.62,0.82) -- (2.55,0.82);
+  \draw[line width=0.5pt] (0.62,2.15) -- (0.85,2.15);
+  \draw[line width=0.55pt] (2.55,1.05) .. controls (2.85,1.15) and (3.05,1.02) .. (3.12,0.82);
+  \draw[line width=0.55pt] (2.55,0.82) .. controls (2.75,0.68) and (2.95,0.72) .. (3.12,0.82);
+  \draw[line width=0.45pt] (2.72,0.98) -- (2.92,1.12);
+  \draw[line width=0.45pt] (2.85,0.92) -- (3.08,1.05);
+  \draw[line width=0.7pt,->] (2.85,0.72) -- (2.85,0.12);
+  % 右上：石压弯板
+  \draw[line width=0.65pt] (4.15,2.95) -- (4.15,3.55) -- (4.72,3.55) -- (4.72,2.95) -- cycle;
+  \draw[line width=0.4pt] (4.15,3.55) -- (4.35,3.72) -- (4.92,3.72) -- (4.72,3.55);
+  \draw[line width=0.4pt] (4.72,3.55) -- (4.92,3.72) -- (4.92,3.12) -- (4.72,2.95);
+  \begin{scope}
+    \clip (4.17,2.97) rectangle (4.70,3.53);
+    \foreach \s in {4.20,4.32,...,4.70}
+      \draw[line width=0.22pt] (\s,2.97) -- (\s+0.10,3.53);
+  \end{scope}
+  \draw[line width=0.65pt] (7.35,2.95) -- (7.35,3.55) -- (7.92,3.55) -- (7.92,2.95) -- cycle;
+  \draw[line width=0.4pt] (7.35,3.55) -- (7.55,3.72) -- (8.12,3.72) -- (7.92,3.55);
+  \draw[line width=0.4pt] (7.92,3.55) -- (8.12,3.72) -- (8.12,3.12) -- (7.92,2.95);
+  \begin{scope}
+    \clip (7.37,2.97) rectangle (7.90,3.53);
+    \foreach \s in {7.40,7.52,...,7.90}
+      \draw[line width=0.22pt] (\s,2.97) -- (\s+0.10,3.53);
+  \end{scope}
+  \draw[line width=0.7pt] (4.72,3.42) .. controls (5.55,3.05) and (6.55,3.05) .. (7.35,3.42);
+  \draw[line width=0.7pt] (4.72,3.22) .. controls (5.55,2.85) and (6.55,2.85) .. (7.35,3.22);
+  \draw[line width=0.55pt] (4.72,3.42) -- (4.72,3.22);
+  \draw[line width=0.55pt] (7.35,3.42) -- (7.35,3.22);
+  \draw[line width=0.6pt] plot[smooth cycle,tension=0.8] coordinates {(5.72,3.35) (5.52,3.68) (5.72,3.98) (6.15,4.05) (6.48,3.75) (6.42,3.38) (6.08,3.22)};
+  \begin{scope}
+    \clip plot[smooth cycle,tension=0.8] coordinates {(5.72,3.35) (5.52,3.68) (5.72,3.98) (6.15,4.05) (6.48,3.75) (6.42,3.38) (6.08,3.22)};
+    \foreach \s in {5.55,5.68,...,6.50}
+      \draw[line width=0.22pt] (\s,3.20) -- (\s+0.12,4.10);
+  \end{scope}
+  % 右下：弯板与向下箭
+  \draw[line width=0.7pt] (4.55,1.55) .. controls (5.45,1.18) and (6.55,1.18) .. (7.45,1.55);
+  \draw[line width=0.7pt] (4.55,1.35) .. controls (5.45,0.98) and (6.55,0.98) .. (7.45,1.35);
+  \draw[line width=0.55pt] (4.55,1.55) -- (4.55,1.35);
+  \draw[line width=0.55pt] (7.45,1.55) -- (7.45,1.35);
+  \draw[line width=0.7pt,->] (6.00,1.05) -- (6.00,0.22);
+\end{tikzpicture}%
+}
 \caption{(a) 物体对支持物的压力}
 \end{figure}
 
@@ -1412,7 +2222,53 @@ B 画一个箭头（注意，画箭头时不能使 AB 之长超过 5
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 物体对支持物的拉力}]{assets/physics-1/fig-p0028-02.png}}
+% fig-alt: (b) 左臂提水桶，次为同臂向下箭；再次横杆挂钩吊桶，最右横杆挂钩拉紧向下箭
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 左：提桶
+  \draw[line width=0.65pt] (0.95,4.55) -- (0.72,2.55);
+  \draw[line width=0.55pt] (1.22,4.55) -- (1.05,2.55);
+  \draw[line width=0.5pt] (0.95,4.55) -- (1.22,4.55);
+  \draw[line width=0.55pt] (0.72,2.55) .. controls (0.55,2.28) and (0.85,2.12) .. (1.12,2.28);
+  \draw[line width=0.55pt] (1.05,2.55) .. controls (1.22,2.42) and (1.28,2.22) .. (1.12,2.12);
+  \draw[line width=0.45pt] (0.85,2.22) -- (0.95,2.05);
+  \draw[line width=0.6pt] (0.42,1.95) -- (0.55,0.55);
+  \draw[line width=0.6pt] (1.78,1.95) -- (1.65,0.55);
+  \draw[line width=0.55pt] (1.10,1.95) ellipse[x radius=0.68,y radius=0.16];
+  \draw[line width=0.55pt] (1.10,0.55) ellipse[x radius=0.55,y radius=0.12];
+  \draw[line width=0.4pt] (1.10,1.72) ellipse[x radius=0.50,y radius=0.10];
+  \draw[line width=0.5pt] (0.42,1.95) -- (1.10,2.22);
+  \draw[line width=0.5pt] (1.78,1.95) -- (1.10,2.22);
+  % 次：空拳向下箭
+  \draw[line width=0.65pt] (3.15,4.55) -- (2.92,2.55);
+  \draw[line width=0.55pt] (3.42,4.55) -- (3.25,2.55);
+  \draw[line width=0.5pt] (3.15,4.55) -- (3.42,4.55);
+  \draw[line width=0.55pt] (2.92,2.55) .. controls (2.75,2.28) and (3.05,2.12) .. (3.32,2.28);
+  \draw[line width=0.55pt] (3.25,2.55) .. controls (3.42,2.42) and (3.48,2.22) .. (3.32,2.12);
+  \draw[line width=0.45pt] (3.05,2.22) -- (3.15,2.05);
+  \draw[line width=0.7pt,->] (3.18,1.95) -- (3.18,0.45);
+  % 横杆吊桶
+  \draw[line width=0.7pt] (4.35,4.55) -- (6.15,4.55);
+  \draw[line width=0.55pt] (5.25,4.55) -- (5.25,4.28);
+  \draw[line width=0.5pt] (5.15,4.28) -- (5.15,4.05) -- (5.35,4.05) -- (5.35,4.22);
+  \draw[line width=0.45pt] (5.35,4.12) arc[start angle=90,end angle=270,x radius=0.10,y radius=0.10];
+  \draw[line width=0.55pt] (5.25,4.05) -- (5.25,2.15);
+  \draw[line width=0.6pt] (4.55,1.95) -- (4.70,0.55);
+  \draw[line width=0.6pt] (5.95,1.95) -- (5.80,0.55);
+  \draw[line width=0.55pt] (5.25,1.95) ellipse[x radius=0.70,y radius=0.16];
+  \draw[line width=0.55pt] (5.25,0.55) ellipse[x radius=0.55,y radius=0.12];
+  \draw[line width=0.4pt] (5.25,1.72) ellipse[x radius=0.50,y radius=0.10];
+  \draw[line width=0.5pt] (4.55,1.95) -- (5.25,2.15);
+  \draw[line width=0.5pt] (5.95,1.95) -- (5.25,2.15);
+  % 横杆拉力箭
+  \draw[line width=0.7pt] (6.85,4.55) -- (8.55,4.55);
+  \draw[line width=0.55pt] (7.70,4.55) -- (7.70,4.28);
+  \draw[line width=0.5pt] (7.60,4.28) -- (7.60,4.05) -- (7.80,4.05) -- (7.80,4.22);
+  \draw[line width=0.45pt] (7.80,4.12) arc[start angle=90,end angle=270,x radius=0.10,y radius=0.10];
+  \draw[line width=0.55pt] (7.70,4.05) -- (7.70,1.15);
+  \draw[line width=0.7pt,->] (7.70,1.15) -- (7.70,0.35);
+\end{tikzpicture}%
+}
 \caption{(b) 物体对支持物的拉力}
 \end{figure}
 
@@ -1451,8 +2307,15 @@ B 画一个箭头（注意，画箭头时不能使 AB 之长超过 5
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第30页）}]{assets/physics-1/fig-p0030-01.png}}
-\caption{图示（原PDF第30页）}
+% fig-alt: 矩形标注框，三行：重量（重力）的／方向总是竖直／向下
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node[draw, line width=0.7pt, align=left, font=\small, inner sep=7pt, text width=3.15cm] {%
+    重量（重力）的\\
+    方向总是竖直\\
+    向下};
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{figure}
@@ -1484,8 +2347,23 @@ B 画一个箭头（注意，画箭头时不能使 AB 之长超过 5
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-1/fig-p0030-03.png}}
-\caption{(第4题)}
+% fig-alt: 第4题：矩形车厢，右壁标 A，两轮着地，地面有斜影线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.12,0.78) rectangle (4.42,2.42);
+  \node[font=\scriptsize,inner sep=1pt,anchor=east] at (4.32,1.58) {$A$};
+  \draw[line width=0.7pt] (0.82,0.78) circle[radius=0.38];
+  \draw[line width=0.45pt] (0.82,0.78) circle[radius=0.12];
+  \fill (0.82,0.78) circle[radius=0.04];
+  \draw[line width=0.7pt] (3.62,0.78) circle[radius=0.38];
+  \draw[line width=0.45pt] (3.62,0.78) circle[radius=0.12];
+  \fill (3.62,0.78) circle[radius=0.04];
+  \draw[line width=0.7pt] (-0.22,0.40) -- (4.78,0.40);
+  \foreach \x in {-0.05,0.22,...,4.75}
+    \draw[line width=0.4pt] (\x,0.40) -- (\x-0.22,0.12);
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \emph{（第4题）}
@@ -1736,7 +2614,89 @@ V = \frac {5 \text{吨}}{0.9 \text{吨/米} ^ {3}} = \frac {5}{0.9} \text{米} ^
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·6 固体、液体和气体}]{assets/physics-1/fig-p0036-01.png}}
+% fig-alt: 图2·6 (a)墙角砖墙与打碎的砖块；(b)水桶倾倒，流出的水成一滩；(c)气球放气成云团。下标打碎的砖仍有一定的形状和体积、流出的水只有一定的体积、气体既无一定的形状也无一定的体积
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % ---- (a) 砖墙与碎砖 ----
+  \draw[line width=0.7pt] (0.08,0.95) -- (0.08,3.22);
+  \draw[line width=0.7pt] (0.08,0.95) -- (3.22,0.95);
+  \draw[line width=0.7pt] (0.08,0.95) -- (0.08,2.58) -- (2.48,2.58) -- (2.48,0.95);
+  \begin{scope}
+    \clip (0.08,0.95) rectangle (2.48,2.58);
+    \foreach \r in {0,1,2,3} {
+      \pgfmathsetmacro{\ox}{mod(\r,2)*0.28}
+      \foreach \c in {-1,0,1,2,3,4}
+        \draw[line width=0.45pt] ({0.08+\ox+\c*0.56},{0.95+\r*0.408}) rectangle ++(0.56,0.408);
+    }
+  \end{scope}
+  % 碎砖（左较完整，右已破）
+  \draw[line width=0.55pt] (0.22,0.08) -- (1.18,0.08) -- (1.18,0.40) -- (0.22,0.40) -- cycle;
+  \draw[line width=0.55pt] (0.22,0.40) -- (0.40,0.55) -- (1.36,0.55) -- (1.18,0.40);
+  \draw[line width=0.55pt] (1.18,0.08) -- (1.36,0.23) -- (1.36,0.55);
+  \begin{scope}
+    \clip (0.22,0.08) rectangle (1.18,0.40);
+    \foreach \s in {0.18,0.32,...,1.18}
+      \draw[line width=0.22pt] (\s,0.08) -- (\s+0.10,0.40);
+  \end{scope}
+  \draw[line width=0.55pt] (1.72,0.10) -- (2.42,0.12) -- (2.52,0.28) -- (2.32,0.46) -- (1.70,0.42) -- cycle;
+  \draw[line width=0.55pt] (1.70,0.42) -- (1.82,0.56) -- (2.48,0.58) -- (2.32,0.46);
+  \fill (1.32,0.10) circle[radius=0.035];
+  \fill (1.48,0.06) circle[radius=0.028];
+  \draw[line width=0.4pt] (1.42,0.22) circle[radius=0.045];
+  \fill (1.58,0.16) circle[radius=0.022];
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=north] at (1.55,-0.08) {$(a)$};
+  \node[font=\scriptsize,align=center,inner sep=0.4pt,anchor=north] at (1.55,-0.42) {打碎的砖仍有一\\定的形状和体积};
+  % ---- (b) 倾倒的水桶（口朝左下，水流进水滩） ----
+  \begin{scope}[shift={(5.55,1.85)}, rotate=52]
+    \draw[line width=0.7pt] (0,1.22) ellipse[x radius=0.70,y radius=0.20];
+    \draw[line width=0.7pt] (-0.70,1.22) -- (-0.50,0.00);
+    \draw[line width=0.7pt] (0.70,1.22) -- (0.50,0.00);
+    \draw[line width=0.7pt] (0,0.00) ellipse[x radius=0.50,y radius=0.14];
+    \draw[line width=0.45pt] (0,0.00) arc[start angle=180,end angle=360,x radius=0.50,y radius=0.09];
+    \draw[line width=0.65pt] (-0.12,1.32) .. controls (-0.72,1.92) and (0.72,1.92) .. (0.12,1.32);
+    \begin{scope}
+      \clip (-0.70,1.22) -- (-0.50,0.00)
+        arc[start angle=180,end angle=360,x radius=0.50,y radius=0.14]
+        -- (0.70,1.22)
+        arc[start angle=0,end angle=180,x radius=0.70,y radius=0.20]
+        -- cycle;
+      \foreach \s in {-1.10,-0.88,...,1.15}
+        \draw[line width=0.28pt] (\s,-0.12) -- (\s+0.50,1.35);
+    \end{scope}
+    \draw[line width=0.45pt] (0.04,0.78) ellipse[x radius=0.55,y radius=0.13];
+  \end{scope}
+  % 倾口约在 (4.15,2.05)，水流落入水滩
+  \draw[line width=0.65pt] (4.18,2.08) .. controls (3.95,1.55) and (3.92,1.05) .. (4.15,0.72);
+  \draw[line width=0.65pt] (4.42,2.00) .. controls (4.55,1.45) and (4.72,1.00) .. (5.05,0.70);
+  \draw[line width=0.7pt] plot[smooth cycle, tension=0.75] coordinates {
+    (3.62,0.68) (3.78,0.22) (4.42,0.05) (5.22,0.10) (5.78,0.35)
+    (5.88,0.62) (5.38,0.82) (4.58,0.85) (3.92,0.78)
+  };
+  \begin{scope}
+    \clip plot[smooth cycle, tension=0.75] coordinates {
+      (3.62,0.68) (3.78,0.22) (4.42,0.05) (5.22,0.10) (5.78,0.35)
+      (5.88,0.62) (5.38,0.82) (4.58,0.85) (3.92,0.78)
+    };
+    \foreach \s in {3.3,3.52,...,6.0}
+      \draw[line width=0.28pt] (\s,0.00) -- (\s+0.45,0.95);
+  \end{scope}
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=north] at (5.15,-0.08) {$(b)$};
+  \node[font=\scriptsize,align=center,inner sep=0.4pt,anchor=north] at (5.15,-0.42) {流出的水只有一\\定的体积};
+  % ---- (c) 放气的气球 ----
+  \draw[line width=0.7pt] (9.55,2.55) ellipse[x radius=0.58,y radius=0.78];
+  \draw[line width=0.6pt] (9.38,1.80) -- (9.22,1.52) -- (9.52,1.48) -- (9.72,1.80);
+  \draw[line width=0.5pt] (9.28,1.48) -- (8.85,0.72);
+  \draw[line width=0.5pt] (9.38,1.46) -- (9.15,0.62);
+  \draw[line width=0.5pt] (9.48,1.46) -- (9.48,0.68);
+  \draw[line width=0.5pt] (9.58,1.48) -- (9.82,0.72);
+  \draw[line width=0.65pt] plot[smooth cycle, tension=0.85] coordinates {
+    (8.55,0.55) (8.42,0.22) (8.75,-0.02) (9.25,0.00) (9.72,0.18)
+    (9.95,0.48) (9.65,0.68) (9.15,0.72) (8.75,0.62)
+  };
+  \node[font=\scriptsize,inner sep=0.5pt,anchor=north] at (9.35,-0.08) {$(c)$};
+  \node[font=\scriptsize,align=center,inner sep=0.4pt,anchor=north] at (9.35,-0.42) {气体既无一定的形\\状也无一定的体积};
+\end{tikzpicture}%
+}
 \caption{图2·6 固体、液体和气体}
 \end{figure}
 
@@ -1766,27 +2726,64 @@ V = \frac {5 \text{吨}}{0.9 \text{吨/米} ^ {3}} = \frac {5}{0.9} \text{米} ^
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0039-01.png}}
-\caption{(a)}
+% fig-alt: 图2·7 三台带刻度尺的支架。(a) 空盘，指针在虚线高度；(b) 盘中100克，弹簧伸长，指针低于虚线；(c) 盘中200克，弹簧更长，指针更低
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \xs/\yp/\wlab/\lab/\nwt in {
+    0.00/3.22/{}/{(a)}/0,
+    3.85/2.90/{100克}/{(b)}/1,
+    7.70/2.58/{200克}/{(c)}/2
+  } {
+    \begin{scope}[shift={(\xs,0)}]
+      % 底座
+      \draw[line width=0.7pt] (0.18,0.32) -- (2.55,0.32) -- (2.88,0.55) -- (0.50,0.55) -- cycle;
+      \draw[line width=0.7pt] (0.18,0.32) -- (0.18,0.12) -- (2.55,0.12) -- (2.55,0.32);
+      \draw[line width=0.55pt] (2.55,0.12) -- (2.88,0.35) -- (2.88,0.55);
+      % 立柱
+      \draw[line width=0.7pt] (0.52,0.55) -- (0.52,5.05);
+      \draw[line width=0.7pt] (0.72,0.55) -- (0.72,5.05);
+      \draw[line width=0.55pt] (0.52,5.05) -- (0.72,5.05);
+      % 横臂与夹
+      \draw[line width=0.65pt] (0.42,4.82) rectangle (0.85,5.08);
+      \draw[line width=0.7pt] (0.85,4.88) -- (2.18,4.88);
+      \draw[line width=0.7pt] (0.85,5.00) -- (2.18,5.00);
+      \draw[line width=0.55pt] (2.18,4.88) -- (2.18,5.00);
+      % 刻度尺
+      \draw[line width=0.55pt] (0.98,1.48) rectangle (1.26,3.92);
+      \foreach \k in {0,...,12}
+        \draw[line width=0.4pt] (0.98,{1.48+0.188*\k}) -- (0.86,{1.48+0.188*\k});
+      \draw[line width=0.45pt] (0.72,3.78) -- (0.98,3.78);
+      % 弹簧（同一圈数，随伸长拉开）
+      \draw[line width=0.65pt] (2.05,4.88) -- (2.05,4.72);
+      \draw[line width=0.65pt] plot[domain=0:1, samples=55, smooth]
+        ({2.05+0.20*sin(\x*1440)},{4.72-\x*(4.72-\yp-0.12)});
+      \draw[line width=0.55pt] (2.05,\yp) circle[radius=0.08];
+      % 指针
+      \draw[line width=0.5pt] (1.26,\yp) -- (1.97,\yp);
+      % 盘
+      \draw[line width=0.55pt] (2.05,\yp-0.08) -- (1.78,\yp-0.52);
+      \draw[line width=0.55pt] (2.05,\yp-0.08) -- (2.32,\yp-0.52);
+      \draw[line width=0.65pt] (2.05,\yp-0.52) ellipse[x radius=0.32,y radius=0.08];
+      \draw[line width=0.65pt] (1.73,\yp-0.52) -- (1.62,\yp-1.12);
+      \draw[line width=0.65pt] (2.37,\yp-0.52) -- (2.48,\yp-1.12);
+      \draw[line width=0.65pt] (2.05,\yp-1.12) ellipse[x radius=0.43,y radius=0.11];
+      % 砝码
+      \ifnum\nwt>0
+        \draw[line width=0.5pt] (1.88,\yp-1.05) rectangle (2.22,\yp-0.78);
+        \draw[line width=0.4pt] (1.88,\yp-0.78) -- (1.96,\yp-0.70) -- (2.30,\yp-0.70) -- (2.22,\yp-0.78);
+      \fi
+      \ifnum\nwt>1
+        \draw[line width=0.5pt] (1.90,\yp-0.78) rectangle (2.20,\yp-0.62);
+      \fi
+      \node[font=\scriptsize,inner sep=0.6pt,anchor=west] at (2.52,\yp-1.05) {\wlab};
+      \node[font=\scriptsize,inner sep=0.5pt,anchor=north] at (1.50,-0.08) {\lab};
+    \end{scope}
+  }
+  \draw[line width=0.45pt, dash pattern=on 1.8pt off 1.2pt] (-0.10,3.22) -- (10.55,3.22);
+\end{tikzpicture}%
+}
+\caption{图2·7 弹簧的伸长}
 \end{figure}
-
-\emph{（a）}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0039-02.png}}
-\caption{(b)}
-\end{figure}
-
-\emph{（b）}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-1/fig-p0039-03.png}}
-\caption{(c)}
-\end{figure}
-
-\emph{（c）}
 
 \emph{图2·7 弹簧的伸长}
 
@@ -1794,8 +2791,110 @@ V = \frac {5 \text{吨}}{0.9 \text{吨/米} ^ {3}} = \frac {5}{0.9} \text{米} ^
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-8 弹簧秤}]{assets/physics-1/fig-p0039-04.png}}
-\caption{图2-8 弹簧秤}
+% fig-alt: 图2·8 弹簧秤。左：外壳刻度0–300，指标近0，手拉挂钩；中：弹簧与指标；右：指标在100，挂钩吊阴影砝码
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % ---- 左：外壳与手拉 ----
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt] (1.10,6.55) circle[radius=0.28];
+    \draw[line width=0.65pt] (0.98,6.28) -- (0.98,5.82);
+    \draw[line width=0.65pt] (1.22,6.28) -- (1.22,5.82);
+    \draw[line width=0.7pt]
+      (0.22,5.72) -- (0.22,1.55) -- (0.52,1.28) -- (1.68,1.28)
+      -- (1.98,1.55) -- (1.98,5.72) -- (1.62,6.00) -- (0.58,6.00) -- cycle;
+    % 窗孔
+    \draw[line width=0.55pt] (0.88,1.72) -- (0.88,5.38);
+    \draw[line width=0.55pt] (1.32,1.72) -- (1.32,5.38);
+    \draw[line width=0.55pt] (0.88,5.38) arc[start angle=180,end angle=0,x radius=0.22,y radius=0.16];
+    \draw[line width=0.55pt] (0.88,1.72) arc[start angle=180,end angle=360,x radius=0.22,y radius=0.16];
+    \begin{scope}
+      \clip (0.88,1.72) -- (0.88,5.38)
+        arc[start angle=180,end angle=0,x radius=0.22,y radius=0.16]
+        -- (1.32,1.72)
+        arc[start angle=0,end angle=-180,x radius=0.22,y radius=0.16]
+        -- cycle;
+      \foreach \s in {0.55,0.70,...,1.70}
+        \draw[line width=0.28pt] (\s,4.95) -- (\s+0.22,5.62);
+      \fill[black] (0.88,4.68) rectangle (1.32,4.92);
+    \end{scope}
+    \foreach \n/\y in {0/5.35,100/4.22,200/3.10,300/1.98} {
+      \draw[line width=0.4pt] (1.32,\y) -- (1.42,\y);
+      \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (1.46,\y) {\n};
+    }
+    \draw[line width=0.4pt] (1.72,4.80) -- (2.05,4.80);
+    \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (2.08,4.80) {指标};
+    \draw[line width=0.65pt] (1.10,1.28) -- (1.10,0.72);
+    \draw[line width=0.65pt] (1.10,0.72) arc[start angle=180,end angle=360,radius=0.18];
+    \draw[line width=0.5pt] (1.28,0.72) arc[start angle=0,end angle=-180,radius=0.08];
+    % 手（示意握钩）
+    \draw[line width=0.6pt] (0.55,0.58) .. controls (0.22,0.82) and (0.18,0.42) .. (0.48,0.22);
+    \draw[line width=0.55pt] (0.82,0.62) .. controls (0.68,0.92) and (1.12,1.00) .. (1.32,0.70);
+    \draw[line width=0.55pt] (0.92,0.48) .. controls (0.82,0.78) and (1.22,0.88) .. (1.38,0.58);
+    \draw[line width=0.55pt] (0.98,0.35) .. controls (0.92,0.62) and (1.28,0.70) .. (1.40,0.42);
+    \draw[line width=0.6pt] (0.52,0.18) .. controls (0.42,-0.28) and (0.85,-0.78) .. (1.42,-0.98);
+    \draw[line width=0.6pt] (1.38,0.28) .. controls (1.58,-0.05) and (1.75,-0.42) .. (1.92,-0.78);
+    \draw[line width=0.6pt] (1.42,-0.98) -- (1.92,-0.78);
+  \end{scope}
+  % ---- 中：弹簧与指标 ----
+  \begin{scope}[shift={(4.15,0.15)}]
+    \draw[line width=0.7pt] (0.00,6.35) circle[radius=0.26];
+    \draw[line width=0.55pt] (-0.08,6.10) -- (-0.08,5.55);
+    \draw[line width=0.55pt] (0.08,6.10) -- (0.08,5.55);
+    \foreach \k in {0,...,10}
+      \draw[line width=0.55pt] (0.00,{5.48-0.14*\k}) ellipse[x radius=0.38,y radius=0.075];
+    \draw[line width=0.55pt] (0.38,4.78) -- (0.72,4.78);
+    \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (-0.48,4.92) {弹簧};
+    \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (0.78,4.78) {指标};
+    \draw[line width=0.65pt] (0.00,3.95) -- (0.00,1.05);
+    \draw[line width=0.65pt] (0.00,1.05) arc[start angle=180,end angle=360,radius=0.22];
+    \draw[line width=0.5pt] (0.22,1.05) arc[start angle=0,end angle=-180,radius=0.10];
+  \end{scope}
+  % ---- 右：挂钩吊砝码 ----
+  \begin{scope}[shift={(6.55,0)}]
+    \draw[line width=0.7pt] (1.10,6.55) circle[radius=0.28];
+    \draw[line width=0.65pt] (0.98,6.28) -- (0.98,5.82);
+    \draw[line width=0.65pt] (1.22,6.28) -- (1.22,5.82);
+    \draw[line width=0.7pt]
+      (0.22,5.72) -- (0.22,1.55) -- (0.52,1.28) -- (1.68,1.28)
+      -- (1.98,1.55) -- (1.98,5.72) -- (1.62,6.00) -- (0.58,6.00) -- cycle;
+    \draw[line width=0.55pt] (0.88,1.72) -- (0.88,5.38);
+    \draw[line width=0.55pt] (1.32,1.72) -- (1.32,5.38);
+    \draw[line width=0.55pt] (0.88,5.38) arc[start angle=180,end angle=0,x radius=0.22,y radius=0.16];
+    \draw[line width=0.55pt] (0.88,1.72) arc[start angle=180,end angle=360,x radius=0.22,y radius=0.16];
+    \begin{scope}
+      \clip (0.88,1.72) -- (0.88,5.38)
+        arc[start angle=180,end angle=0,x radius=0.22,y radius=0.16]
+        -- (1.32,1.72)
+        arc[start angle=0,end angle=-180,x radius=0.22,y radius=0.16]
+        -- cycle;
+      \foreach \s in {0.55,0.70,...,1.70}
+        \draw[line width=0.28pt] (\s,4.22) -- (\s+0.22,5.62);
+      \fill[black] (0.88,3.98) rectangle (1.32,4.22);
+    \end{scope}
+    \foreach \n/\y in {0/5.35,100/4.22,200/3.10,300/1.98} {
+      \draw[line width=0.4pt] (1.32,\y) -- (1.42,\y);
+      \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (1.46,\y) {\n};
+    }
+    \draw[line width=0.4pt] (1.72,4.10) -- (2.05,4.10);
+    \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (2.08,4.10) {指标};
+    \draw[line width=0.65pt] (1.10,1.28) -- (1.10,0.72);
+    \draw[line width=0.65pt] (1.10,0.72) arc[start angle=180,end angle=360,radius=0.18];
+    \draw[line width=0.5pt] (1.28,0.72) arc[start angle=0,end angle=-180,radius=0.08];
+    % 砝码
+    \draw[line width=0.55pt] (1.10,0.38) circle[radius=0.10];
+    \draw[line width=0.55pt] (1.10,0.28) -- (1.10,0.12);
+    \draw[line width=0.65pt] (0.55,-0.72) rectangle (1.65,0.12);
+    \draw[line width=0.55pt] (0.55,0.12) -- (0.72,0.28) -- (1.82,0.28) -- (1.65,0.12);
+    \draw[line width=0.55pt] (1.65,0.12) -- (1.82,0.28) -- (1.82,-0.56) -- (1.65,-0.72);
+    \begin{scope}
+      \clip (0.55,-0.72) rectangle (1.65,0.12);
+      \foreach \s in {0.50,0.64,...,1.65}
+        \draw[line width=0.28pt] (\s,-0.72) -- (\s+0.14,0.12);
+    \end{scope}
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图2·8 弹簧秤}
 \end{figure}
 
 \emph{图2·8 弹簧秤}
@@ -1884,15 +2983,138 @@ l = \frac {500 \text{克} \times 165 \text{毫米}}{300 \text{克}} = 275 \text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-1/fig-p0042-01.png}}
-\caption{(第7题)}
+% fig-alt: 第7题：两只带塞细管的锥形烧瓶。左瓶静置桌上，管中水柱与虚线相齐；右瓶用手压底，管中水柱高于虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 桌面（右瓶在桌沿，下手托底）
+  \draw[line width=0.7pt] (-0.15,0.22) -- (4.55,0.22);
+  \foreach \x in {0.05,0.32,...,4.50}
+    \draw[line width=0.4pt] (\x,0.22) -- (\x-0.22,-0.08);
+  \draw[line width=0.55pt] (4.55,0.22) -- (4.55,-0.02);
+  % 左瓶
+  \begin{scope}[shift={(1.35,0.22)}]
+    \draw[line width=0.7pt] (-1.12,0.02) arc[start angle=180,end angle=360,x radius=1.12,y radius=0.16];
+    \draw[line width=0.45pt] (-1.12,0.02) arc[start angle=180,end angle=0,x radius=1.12,y radius=0.10];
+    \draw[line width=0.7pt] (-1.12,0.02) -- (-0.42,2.42);
+    \draw[line width=0.7pt] (1.12,0.02) -- (0.42,2.42);
+    \draw[line width=0.7pt] (-0.42,2.42) -- (-0.42,2.92);
+    \draw[line width=0.7pt] (0.42,2.42) -- (0.42,2.92);
+    \draw[line width=0.7pt] (-0.42,2.92) arc[start angle=180,end angle=360,x radius=0.42,y radius=0.10];
+    \draw[line width=0.45pt] (-0.42,2.92) arc[start angle=180,end angle=0,x radius=0.42,y radius=0.07];
+    \begin{scope}
+      \clip (-1.12,0.02) arc[start angle=180,end angle=360,x radius=1.12,y radius=0.16]
+        -- (1.12,0.02) -- (0.42,2.42) -- (0.42,2.55) -- (-0.42,2.55) -- (-0.42,2.42) -- cycle;
+      \foreach \s in {-1.6,-1.35,...,1.5}
+        \draw[line width=0.28pt] (\s,-0.10) -- (\s+0.85,2.65);
+    \end{scope}
+    \fill[black!80] (-0.50,2.78) rectangle (0.50,3.18);
+    \draw[line width=0.5pt] (-0.50,2.78) rectangle (0.50,3.18);
+    \draw[line width=0.55pt] (-0.11,1.35) -- (-0.11,4.55);
+    \draw[line width=0.55pt] (0.11,1.35) -- (0.11,4.55);
+    \draw[line width=0.55pt] (-0.11,4.55) -- (0.11,4.55);
+    \begin{scope}
+      \clip (-0.11,2.55) rectangle (0.11,3.55);
+      \foreach \s in {-0.20,-0.05,...,0.25}
+        \draw[line width=0.22pt] (\s,2.50) -- (\s+0.12,3.60);
+    \end{scope}
+    \draw[line width=0.45pt] (-0.11,3.55) -- (0.11,3.55);
+  \end{scope}
+  % 右瓶（水柱更高）
+  \begin{scope}[shift={(4.05,0.22)}]
+    \draw[line width=0.7pt] (-1.12,0.02) arc[start angle=180,end angle=360,x radius=1.12,y radius=0.16];
+    \draw[line width=0.45pt] (-1.12,0.02) arc[start angle=180,end angle=0,x radius=1.12,y radius=0.10];
+    \draw[line width=0.7pt] (-1.12,0.02) -- (-0.42,2.42);
+    \draw[line width=0.7pt] (1.12,0.02) -- (0.42,2.42);
+    \draw[line width=0.7pt] (-0.42,2.42) -- (-0.42,2.92);
+    \draw[line width=0.7pt] (0.42,2.42) -- (0.42,2.92);
+    \draw[line width=0.7pt] (-0.42,2.92) arc[start angle=180,end angle=360,x radius=0.42,y radius=0.10];
+    \draw[line width=0.45pt] (-0.42,2.92) arc[start angle=180,end angle=0,x radius=0.42,y radius=0.07];
+    \begin{scope}
+      \clip (-1.12,0.02) arc[start angle=180,end angle=360,x radius=1.12,y radius=0.16]
+        -- (1.12,0.02) -- (0.42,2.42) -- (0.42,2.55) -- (-0.42,2.55) -- (-0.42,2.42) -- cycle;
+      \foreach \s in {-1.6,-1.35,...,1.5}
+        \draw[line width=0.28pt] (\s,-0.10) -- (\s+0.85,2.65);
+    \end{scope}
+    \fill[black!80] (-0.50,2.78) rectangle (0.50,3.18);
+    \draw[line width=0.5pt] (-0.50,2.78) rectangle (0.50,3.18);
+    \draw[line width=0.55pt] (-0.11,1.35) -- (-0.11,4.55);
+    \draw[line width=0.55pt] (0.11,1.35) -- (0.11,4.55);
+    \draw[line width=0.55pt] (-0.11,4.55) -- (0.11,4.55);
+    \begin{scope}
+      \clip (-0.11,2.55) rectangle (0.11,4.22);
+      \foreach \s in {-0.20,-0.05,...,0.25}
+        \draw[line width=0.22pt] (\s,2.50) -- (\s+0.12,4.30);
+    \end{scope}
+    \draw[line width=0.45pt] (-0.11,4.22) -- (0.11,4.22);
+  \end{scope}
+  % 虚线：左管原水位
+  \draw[line width=0.45pt, dash pattern=on 1.6pt off 1.1pt] (1.20,3.77) -- (4.20,3.77);
+  % 上手：按在瓶侧（四指朝瓶）
+  \draw[line width=0.55pt] (5.18,2.42) -- (4.62,2.22);
+  \draw[line width=0.55pt] (5.18,2.22) -- (4.58,2.05);
+  \draw[line width=0.55pt] (5.20,2.02) -- (4.60,1.88);
+  \draw[line width=0.55pt] (5.22,1.82) -- (4.68,1.70);
+  \draw[line width=0.6pt] (5.18,2.42) -- (5.55,2.52) -- (5.92,2.22) -- (5.85,1.72) -- (5.22,1.82);
+  \draw[line width=0.6pt] (5.92,2.15) -- (6.55,2.22) -- (6.62,1.78) -- (5.85,1.72);
+  % 下手：托压瓶底
+  \draw[line width=0.55pt] (5.05,0.42) -- (4.42,0.18);
+  \draw[line width=0.55pt] (5.08,0.28) -- (4.38,0.05);
+  \draw[line width=0.55pt] (5.12,0.14) -- (4.48,-0.05);
+  \draw[line width=0.6pt] (5.05,0.42) -- (5.48,0.55) -- (5.92,0.38) -- (5.78,0.02) -- (5.12,0.14);
+  \draw[line width=0.6pt] (5.92,0.32) -- (6.55,0.22) -- (6.42,-0.12) -- (5.78,0.02);
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
 
 \emph{（第7题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-1/fig-p0042-02.png}}
+% fig-alt: 第8题橡皮筋测力计：木板正面刻度0、100、200、300，顶环悬橡皮筋，圆形针指0，下端线结接挂钩
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 木板（轴测：正面、右侧、顶面）
+  \draw[line width=0.7pt] (0.15,0.35) -- (0.15,5.72) -- (2.28,5.72) -- (2.28,0.35) -- cycle;
+  \draw[line width=0.7pt] (2.28,0.35) -- (2.62,0.62) -- (2.62,5.98) -- (2.28,5.72);
+  \draw[line width=0.7pt] (0.15,5.72) -- (0.48,5.98) -- (2.62,5.98);
+  % 顶环
+  \draw[line width=0.7pt] (1.22,6.28) circle[radius=0.22];
+  \draw[line width=0.55pt] (1.12,6.08) -- (1.12,5.72);
+  \draw[line width=0.55pt] (1.32,6.08) -- (1.32,5.72);
+  % 橡皮筋（双线窄条）
+  \draw[line width=0.7pt] (1.10,5.72) -- (1.10,4.42);
+  \draw[line width=0.7pt] (1.34,5.72) -- (1.34,4.42);
+  \draw[line width=0.45pt] (1.10,5.42) -- (1.34,5.42);
+  \draw[line width=0.45pt] (1.10,5.12) -- (1.34,5.12);
+  \draw[line width=0.45pt] (1.10,4.82) -- (1.34,4.82);
+  \node[font=\scriptsize,align=center,inner sep=0.3pt,anchor=west] at (2.42,5.15) {橡\\皮\\筋};
+  % 圆形针（圆片，短针指向右侧0刻度）
+  \draw[line width=0.65pt] (1.22,4.22) circle[radius=0.20];
+  \draw[line width=0.4pt] (1.22,4.22) circle[radius=0.07];
+  \fill (1.22,4.22) circle[radius=0.03];
+  \draw[line width=0.7pt] (1.42,4.22) -- (1.55,4.22);
+  \draw[line width=0.4pt] (-0.15,4.48) -- (1.04,4.38);
+  \draw[line width=0.4pt] (-0.15,3.95) -- (1.04,4.08);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=east] at (-0.18,4.22) {圆形针};
+  % 刻度 0–300（0 在圆形针高度）
+  \foreach \n/\y in {0/4.22,100/3.28,200/2.34,300/1.40} {
+    \draw[line width=0.45pt] (1.55,\y) -- (1.72,\y);
+    \node[font=\scriptsize,inner sep=0.3pt,anchor=west] at (1.76,\y) {\n};
+  }
+  \foreach \k in {1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,21,22,23,24,25,26,27,28,29}
+    \draw[line width=0.28pt] (1.55,{4.22-0.094*\k}) -- (1.66,{4.22-0.094*\k});
+  % 下端细线、线结、挂钩
+  \draw[line width=0.55pt] (1.22,4.02) -- (1.22,0.92);
+  \draw[line width=0.55pt] (1.12,1.55) circle[radius=0.08];
+  \draw[line width=0.55pt] (1.12,1.22) circle[radius=0.08];
+  \draw[line width=0.4pt] (2.05,1.38) -- (1.22,1.38);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (2.08,1.38) {线结};
+  \draw[line width=0.65pt] (1.22,0.92) -- (1.22,0.62);
+  \draw[line width=0.65pt] (1.22,0.62) arc[start angle=180,end angle=360,radius=0.20];
+  \draw[line width=0.5pt] (1.42,0.62) arc[start angle=0,end angle=-180,radius=0.09];
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -1912,7 +3134,40 @@ l = \frac {500 \text{克} \times 165 \text{毫米}}{300 \text{克}} = 275 \text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-9 手对图钉施加压力}]{assets/physics-1/fig-p0042-03.png}}
+% fig-alt: 图2·9 左手握图钉按入竖直墙面，钉帽在墙左，钉尖穿墙，水平向右压力箭头
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 墙（竖线+右侧影线）
+  \draw[line width=0.75pt] (4.05,0.15) -- (4.05,4.55);
+  \foreach \y in {0.28,0.58,...,4.50}
+    \draw[line width=0.4pt] (4.05,\y) -- (4.38,\y+0.22);
+  % 图钉：钉帽、钉杆、钉尖
+  \draw[line width=0.7pt] (3.52,2.48) -- (3.52,2.82) -- (3.78,2.82) -- (3.78,2.48) -- cycle;
+  \draw[line width=0.55pt] (3.52,2.82) -- (3.58,2.92) -- (3.84,2.92) -- (3.78,2.82);
+  \draw[line width=0.55pt] (3.78,2.82) -- (3.84,2.92) -- (3.84,2.58) -- (3.78,2.48);
+  \draw[line width=0.7pt] (3.78,2.65) -- (4.05,2.65);
+  \fill (4.05,2.65) -- (4.22,2.72) -- (4.22,2.58) -- cycle;
+  % 压力箭头（自钉帽向右）
+  \draw[line width=0.75pt,->] (3.88,2.65) -- (5.55,2.65);
+  % 拇指（按在钉帽上）
+  \draw[line width=0.6pt] (3.48,2.88) .. controls (3.22,3.35) and (2.72,3.42) .. (2.42,3.12);
+  \draw[line width=0.6pt] (3.50,2.55) .. controls (3.28,2.72) and (2.85,3.05) .. (2.48,2.95);
+  \draw[line width=0.45pt] (2.92,3.22) -- (3.05,3.42);
+  % 拳（四指握拢）
+  \draw[line width=0.6pt] (2.42,3.12) .. controls (1.85,3.05) and (1.55,2.55) .. (1.62,1.95);
+  \draw[line width=0.6pt] (1.62,1.95) .. controls (1.85,1.55) and (2.55,1.42) .. (3.12,1.72);
+  \draw[line width=0.6pt] (3.12,1.72) .. controls (3.35,1.95) and (3.42,2.22) .. (3.48,2.48);
+  \draw[line width=0.5pt] (2.05,2.72) .. controls (2.35,2.55) and (2.85,2.42) .. (3.22,2.48);
+  \draw[line width=0.5pt] (2.02,2.48) .. controls (2.42,2.28) and (2.92,2.18) .. (3.28,2.28);
+  \draw[line width=0.5pt] (2.08,2.22) .. controls (2.48,2.05) and (2.95,1.98) .. (3.25,2.08);
+  \draw[line width=0.5pt] (2.22,1.95) .. controls (2.58,1.82) and (2.95,1.78) .. (3.18,1.88);
+  % 袖口
+  \draw[line width=0.6pt] (1.55,2.85) .. controls (1.22,2.55) and (1.18,2.05) .. (1.48,1.72);
+  \draw[line width=0.55pt] (1.22,2.72) -- (1.12,1.85);
+  \draw[line width=0.55pt] (1.22,2.72) .. controls (0.85,2.92) and (0.55,2.55) .. (0.62,2.12);
+  \draw[line width=0.55pt] (0.62,2.12) .. controls (0.72,1.72) and (1.05,1.62) .. (1.42,1.78);
+\end{tikzpicture}%
+}
 \caption{图2-9 手对图钉施加压力}
 \end{figure}
 
@@ -1928,7 +3183,71 @@ l = \frac {500 \text{克} \times 165 \text{毫米}}{300 \text{克}} = 275 \text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·10 在泥烂的路上行走}]{assets/physics-1/fig-p0043-01.png}}
+% fig-alt: 图2·10 (a)人在泥路行走，脚下两只深脚印；(b)人走在木板上，板下矩形内许多浅脚印
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % ---- (a) 泥路行走 ----
+  \begin{scope}[shift={(0.15,1.35)}]
+    % 头
+    \draw[line width=0.55pt] (1.55,3.22) circle[radius=0.32];
+    \draw[line width=0.45pt] (1.28,3.38) .. controls (1.55,3.58) and (1.88,3.48) .. (1.85,3.18);
+    % 上身
+    \draw[line width=0.55pt] (1.22,2.88) -- (1.88,2.88) -- (1.95,2.05) -- (1.15,2.05) -- cycle;
+    \draw[line width=0.4pt] (1.15,2.05) rectangle (1.95,1.88);
+    % 摆臂：左后、右前
+    \draw[line width=0.5pt] (1.22,2.72) -- (0.55,2.35) -- (0.38,2.55);
+    \draw[line width=0.45pt] (0.38,2.55) -- (0.22,2.48) -- (0.32,2.38) -- (0.48,2.42);
+    \draw[line width=0.5pt] (1.88,2.70) -- (2.35,2.22);
+    \draw[line width=0.45pt] (2.28,2.18) -- (2.48,2.05) -- (2.42,2.22);
+    % 腿：左前踏泥、右后
+    \draw[line width=0.55pt] (1.32,1.88) -- (1.05,0.72) -- (1.28,0.72) -- (1.48,1.88);
+    \draw[line width=0.55pt] (1.62,1.88) -- (2.05,0.85) -- (2.28,0.92) -- (1.82,1.88);
+    \draw[line width=0.5pt] (0.92,0.72) -- (1.32,0.62);
+    \draw[line width=0.5pt] (2.02,0.82) -- (2.42,0.78);
+    % 泥路（波浪）与溅起
+    \draw[line width=0.65pt] (-0.35,0.55) .. controls (0.35,0.72) and (0.85,0.42) .. (1.35,0.58)
+      .. controls (1.85,0.75) and (2.45,0.40) .. (3.15,0.58);
+    \draw[line width=0.4pt] (1.15,0.70) .. controls (1.05,0.92) and (1.35,0.95) .. (1.42,0.75);
+    \draw[line width=0.4pt] (2.15,0.88) .. controls (2.28,1.05) and (2.48,0.98) .. (2.42,0.82);
+  \end{scope}
+  % 两只深脚印
+  \draw[line width=0.55pt] (1.35,0.72) ellipse[x radius=0.22,y radius=0.12];
+  \draw[line width=0.4pt] (1.35,0.72) ellipse[x radius=0.12,y radius=0.06];
+  \draw[line width=0.55pt] (1.92,0.48) ellipse[x radius=0.22,y radius=0.12];
+  \draw[line width=0.4pt] (1.92,0.48) ellipse[x radius=0.12,y radius=0.06];
+  \node[font=\scriptsize,inner sep=0.4pt] at (1.65,-0.02) {$(a)$};
+  % ---- (b) 木板行走 ----
+  \begin{scope}[shift={(4.35,1.35)}]
+    \draw[line width=0.55pt] (2.55,3.28) circle[radius=0.32];
+    \draw[line width=0.45pt] (2.28,3.44) .. controls (2.55,3.64) and (2.88,3.54) .. (2.85,3.24);
+    \draw[line width=0.55pt] (2.22,2.94) -- (2.88,2.94) -- (2.95,2.12) -- (2.15,2.12) -- cycle;
+    \draw[line width=0.4pt] (2.15,2.12) rectangle (2.95,1.95);
+    \draw[line width=0.5pt] (2.22,2.78) -- (1.72,2.22);
+    \draw[line width=0.45pt] (1.65,2.18) -- (1.52,2.08) -- (1.72,2.05);
+    \draw[line width=0.5pt] (2.88,2.78) -- (3.42,2.22);
+    \draw[line width=0.45pt] (3.38,2.18) -- (3.58,2.05) -- (3.48,2.22);
+    % 一脚在板、一脚抬起迈步
+    \draw[line width=0.55pt] (2.32,1.95) -- (2.15,1.12) -- (2.42,1.12) -- (2.48,1.95);
+    \draw[line width=0.55pt] (2.62,1.95) -- (2.95,1.28) -- (3.18,1.38) -- (2.82,1.95);
+    \draw[line width=0.5pt] (2.05,1.12) -- (2.48,1.02);
+    \draw[line width=0.5pt] (2.92,1.22) -- (3.28,1.18);
+    % 木板（轴测矩形）
+    \draw[line width=0.7pt] (0.35,0.95) -- (4.55,0.95) -- (4.95,1.28) -- (0.75,1.28) -- cycle;
+    \draw[line width=0.55pt] (0.35,0.95) -- (0.35,0.78) -- (4.55,0.78) -- (4.55,0.95);
+    \draw[line width=0.45pt] (4.55,0.78) -- (4.95,1.12) -- (4.95,1.28);
+    \foreach \x in {0.85,1.55,2.25,2.95,3.65,4.35}
+      \draw[line width=0.28pt] (\x,0.95) -- ({\x+0.40},1.28);
+  \end{scope}
+  % 板下许多浅脚印
+  \draw[line width=0.55pt] (4.85,0.08) rectangle (9.15,0.82);
+  \foreach \r in {0,1,2} {
+    \foreach \c in {0,1,2,3,4,5,6} {
+      \draw[line width=0.35pt] ({5.18+0.52*\c},{0.22+0.22*\r}) ellipse[x radius=0.16,y radius=0.07];
+    }
+  }
+  \node[font=\scriptsize,inner sep=0.4pt] at (7.00,-0.02) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{图2·10 在泥烂的路上行走}
 \end{figure}
 
@@ -2177,7 +3496,47 @@ p = \frac {F}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·1 注射器内水的压力和压强}]{assets/physics-1/fig-p0051-01.png}}
+% fig-alt: 图3·1 卧式注射器。左端封闭，水中有空气泡，四周向内箭头；右为斜影线活塞，外端向左推压箭头。上标水和空气泡
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 针筒外壁
+  \draw[line width=0.7pt] (0.35,1.55) -- (8.55,1.55);
+  \draw[line width=0.7pt] (0.35,0.15) -- (8.55,0.15);
+  \draw[line width=0.7pt] (0.22,1.42) -- (0.35,1.55) -- (0.35,0.15) -- (0.22,0.28) -- cycle;
+  % 左端封闭帽
+  \draw[line width=0.65pt] (0.05,0.72) -- (0.05,0.98) -- (0.22,0.98) -- (0.22,0.72) -- cycle;
+  \draw[line width=0.5pt] (0.05,0.85) -- (-0.12,0.85);
+  \draw[line width=0.5pt] (-0.12,0.72) -- (-0.12,0.98);
+  % 水（点阵）
+  \begin{scope}
+    \clip (0.35,0.15) rectangle (4.05,1.55);
+    \foreach \x in {0.50,0.72,...,4.00} {
+      \foreach \y/\dx in {0.28/0.00,0.50/0.08,0.72/0.00,0.94/0.08,1.16/0.00,1.38/0.08}
+        \fill ({\x+\dx},\y) circle[radius=0.018];
+    }
+  \end{scope}
+  % 空气泡与四周向内箭头
+  \draw[line width=0.65pt] (1.85,0.85) ellipse[x radius=0.42,y radius=0.22];
+  \foreach \ang in {0,45,90,135,180,225,270,315}
+    \draw[line width=0.5pt,->] ({1.85+0.78*cos(\ang)},{0.85+0.52*sin(\ang)}) -- ({1.85+0.50*cos(\ang)},{0.85+0.32*sin(\ang)});
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=south] at (0.95,1.62) {水};
+  \draw[line width=0.4pt] (0.95,1.62) -- (0.72,1.28);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=south] at (2.55,1.62) {空气泡};
+  \draw[line width=0.4pt] (2.35,1.62) -- (2.05,1.08);
+  % 活塞（斜影线）
+  \draw[line width=0.7pt] (4.05,0.15) rectangle (8.35,1.55);
+  \begin{scope}
+    \clip (4.05,0.15) rectangle (8.35,1.55);
+    \foreach \s in {3.6,3.85,...,8.4}
+      \draw[line width=0.28pt] (\s,0.15) -- (\s+0.55,1.55);
+  \end{scope}
+  % 活塞柄
+  \draw[line width=0.7pt] (8.35,0.15) -- (8.55,0.15) -- (8.55,1.55) -- (8.35,1.55);
+  \draw[line width=0.7pt] (8.55,0.02) -- (8.55,1.68) -- (8.72,1.68) -- (8.72,0.02) -- cycle;
+  % 向左推压箭头
+  \draw[line width=0.75pt,->] (9.85,0.85) -- (8.92,0.85);
+\end{tikzpicture}%
+}
 \caption{图3·1 注射器内水的压力和压强}
 \end{figure}
 
@@ -2196,7 +3555,101 @@ p = \frac {F}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·2 密闭的连通器中液体传递压力和压强的作用}]{assets/physics-1/fig-p0051-02.png}}
+% fig-alt: 图3·2 左支架夹细注射器A（活塞上有砝码），右支架夹粗注射器B立于台秤C上；橡皮管连通，旁有圆框放大液体内各向箭头
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 台面
+  \draw[line width=0.7pt] (-0.35,0.42) -- (10.55,0.42);
+  \foreach \x in {-0.15,0.15,...,10.50}
+    \draw[line width=0.35pt] (\x,0.42) -- (\x-0.22,0.12);
+  % ---- 左支架与注射器 A ----
+  \draw[line width=0.7pt] (-0.15,0.42) -- (1.55,0.42) -- (1.72,0.62) -- (0.02,0.62) -- cycle;
+  \draw[line width=0.55pt] (-0.15,0.42) -- (-0.15,0.22) -- (1.55,0.22) -- (1.55,0.42);
+  \draw[line width=0.85pt] (0.72,0.62) -- (0.72,5.35);
+  % 横杆与夹
+  \draw[line width=0.7pt] (0.72,3.55) -- (1.55,3.55);
+  \draw[line width=0.65pt] (1.48,3.38) -- (1.92,3.38) -- (1.92,3.72) -- (1.48,3.72);
+  \draw[line width=0.5pt] (1.55,3.55) -- (1.82,3.55);
+  % 注射器 A
+  \draw[line width=0.7pt] (1.72,2.05) rectangle (2.28,4.55);
+  \draw[line width=0.55pt] (1.92,2.05) -- (1.92,1.78) -- (2.08,1.78) -- (2.08,2.05);
+  \draw[line width=0.5pt] (1.85,1.78) -- (2.15,1.78) -- (2.00,1.62) -- cycle;
+  \begin{scope}
+    \clip (1.72,2.05) rectangle (2.28,3.92);
+    \foreach \s in {1.60,1.75,...,2.35}
+      \draw[line width=0.22pt] (\s,2.05) -- (\s+0.12,3.92);
+  \end{scope}
+  % 活塞与砝码
+  \draw[line width=0.65pt] (1.78,3.92) rectangle (2.22,4.22);
+  \begin{scope}
+    \clip (1.78,3.92) rectangle (2.22,4.22);
+    \foreach \s in {1.70,1.82,...,2.25}
+      \draw[line width=0.22pt] (\s,3.92) -- (\s+0.12,4.22);
+  \end{scope}
+  \draw[line width=0.55pt] (2.00,4.22) -- (2.00,4.85);
+  \draw[line width=0.55pt] (1.88,4.85) rectangle (2.12,5.12);
+  \draw[line width=0.5pt] (2.00,5.12) -- (2.00,5.28);
+  \draw[line width=0.55pt] (2.00,5.38) circle[radius=0.10];
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (2.42,2.55) {$A$};
+  % ---- 右支架 ----
+  \draw[line width=0.7pt] (8.85,0.42) -- (10.45,0.42) -- (10.62,0.62) -- (9.02,0.62) -- cycle;
+  \draw[line width=0.55pt] (8.85,0.42) -- (8.85,0.22) -- (10.45,0.22) -- (10.45,0.42);
+  \draw[line width=0.85pt] (9.85,0.62) -- (9.85,5.55);
+  \draw[line width=0.7pt] (8.35,3.85) -- (9.85,3.85);
+  \draw[line width=0.65pt] (8.05,3.68) -- (8.48,3.68) -- (8.48,4.02) -- (8.05,4.02);
+  \draw[line width=0.5pt] (8.22,3.85) -- (8.35,3.85);
+  % 注射器 B：筒身被夹住，上口接橡皮管，活塞向下压台秤
+  \draw[line width=0.7pt] (6.55,2.72) rectangle (7.85,5.05);
+  \draw[line width=0.55pt] (7.08,5.05) -- (7.08,5.28);
+  \draw[line width=0.55pt] (7.32,5.05) -- (7.32,5.28);
+  \draw[line width=0.6pt] (6.98,5.22) rectangle (7.42,5.48);
+  % 筒内水
+  \begin{scope}
+    \clip (6.55,3.22) rectangle (7.85,5.05);
+    \foreach \s in {6.40,6.58,...,7.90}
+      \draw[line width=0.22pt] (\s,3.22) -- (\s+0.28,5.05);
+  \end{scope}
+  % 活塞（下）
+  \draw[line width=0.65pt] (6.62,2.72) rectangle (7.78,3.22);
+  \begin{scope}
+    \clip (6.62,2.72) rectangle (7.78,3.22);
+    \foreach \s in {6.50,6.68,...,7.85}
+      \draw[line width=0.22pt] (\s,2.72) -- (\s+0.22,3.22);
+  \end{scope}
+  \draw[line width=0.55pt] (7.20,2.72) -- (7.20,2.42);
+  \draw[line width=0.6pt] (6.72,2.22) rectangle (7.68,2.42);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (7.95,4.55) {$B$};
+  % 台秤 C
+  \draw[line width=0.7pt] (6.15,2.22) -- (8.25,2.22) -- (8.05,1.98) -- (6.35,1.98) -- cycle;
+  \draw[line width=0.65pt] (7.20,1.22) circle[radius=0.72];
+  \draw[line width=0.4pt] (7.20,1.22) circle[radius=0.58];
+  \foreach \a in {0,30,...,330}
+    \draw[line width=0.28pt] ({7.20+0.52*cos(\a)},{1.22+0.52*sin(\a)}) -- ({7.20+0.62*cos(\a)},{1.22+0.62*sin(\a)});
+  \draw[line width=0.55pt] (7.20,1.22) -- (7.48,1.62);
+  \fill (7.20,1.22) circle[radius=0.035];
+  \draw[line width=0.65pt] (6.55,0.42) -- (7.85,0.42) -- (8.05,0.62) -- (6.35,0.62) -- cycle;
+  \draw[line width=0.5pt] (6.72,0.62) -- (6.55,1.22);
+  \draw[line width=0.5pt] (7.68,0.62) -- (7.85,1.22);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (8.05,1.35) {$C$};
+  % 连通橡皮管：A 下口下垂后上弯接到 B 上口
+  \draw[line width=0.7pt] (2.00,1.62)
+    .. controls (2.00,0.72) and (2.85,0.42) .. (4.15,0.55)
+    .. controls (5.85,0.72) and (6.55,1.85) .. (6.85,3.55)
+    .. controls (7.02,4.55) and (7.12,5.15) .. (7.20,5.45);
+  % 圆框放大：液体内各向压强
+  \draw[line width=0.65pt] (3.85,3.55) circle[radius=0.78];
+  \begin{scope}
+    \clip (3.85,3.55) circle[radius=0.78];
+    \foreach \x in {3.15,3.38,...,4.60} {
+      \foreach \y/\dx in {2.85/0.00,3.08/0.08,3.31/0.00,3.54/0.08,3.77/0.00,4.00/0.08,4.23/0.00}
+        \fill ({\x+\dx},\y) circle[radius=0.016];
+    }
+  \end{scope}
+  \foreach \ang in {0,45,90,135,180,225,270,315}
+    \draw[line width=0.5pt,->] ({3.85+0.68*cos(\ang)},{3.55+0.68*sin(\ang)}) -- ({3.85+0.38*cos(\ang)},{3.55+0.38*sin(\ang)});
+  \draw[line width=0.4pt] (3.85,2.77) -- (3.85,1.55) -- (4.55,0.72);
+\end{tikzpicture}%
+}
 \caption{图3·2 密闭的连通器中液体传递压力和压强的作用}
 \end{figure}
 
@@ -2214,7 +3667,90 @@ B 上，方向向上。设大小两活塞的横截面积分别为 \(S_{1}\) 和
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-3 液压机工作原理示意图}]{assets/physics-1/fig-p0052-01.png}}
+% fig-alt: 图3·3 液压机剖面。左大活塞B与上压板夹工件，底阀D；右小活塞A，下阀C通液槽；两筒底部连通
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % ---- 大缸（左）----
+  % 上横梁与两立柱
+  \draw[line width=0.7pt] (0.15,5.35) rectangle (3.55,5.62);
+  \draw[line width=0.55pt] (0.22,5.62) -- (0.42,5.78) -- (3.72,5.78) -- (3.55,5.62);
+  \draw[line width=0.7pt] (0.35,3.85) rectangle (0.62,5.35);
+  \draw[line width=0.7pt] (3.08,3.85) rectangle (3.35,5.35);
+  \fill (0.48,5.48) circle[radius=0.06];
+  \fill (3.22,5.48) circle[radius=0.06];
+  % 工件（斜影线圆柱）
+  \draw[line width=0.65pt] (1.15,4.22) -- (1.15,5.22) -- (2.55,5.22) -- (2.55,4.22);
+  \draw[line width=0.65pt] (1.85,5.22) ellipse[x radius=0.70,y radius=0.16];
+  \draw[line width=0.65pt] (1.85,4.22) ellipse[x radius=0.70,y radius=0.16];
+  \begin{scope}
+    \clip (1.15,4.22) -- (1.15,5.22) -- (2.55,5.22) -- (2.55,4.22) -- cycle;
+    \foreach \s in {0.95,1.12,...,2.60}
+      \draw[line width=0.22pt] (\s,4.22) -- (\s+0.22,5.22);
+  \end{scope}
+  % 大活塞 B
+  \draw[line width=0.7pt] (0.95,3.55) rectangle (2.75,4.12);
+  \draw[line width=0.55pt] (1.85,4.12) ellipse[x radius=0.90,y radius=0.12];
+  \node[font=\scriptsize,inner sep=0.4pt] at (1.85,3.82) {$B$};
+  % 大缸壁（剖面）
+  \draw[line width=0.7pt] (0.72,1.55) -- (0.72,3.72) -- (0.95,3.72) -- (0.95,3.55);
+  \draw[line width=0.7pt] (2.75,3.55) -- (2.75,3.72) -- (2.98,3.72) -- (2.98,2.22);
+  \draw[line width=0.7pt] (0.72,1.55) -- (0.72,1.22) -- (2.22,1.22);
+  % 缸内液体
+  \begin{scope}
+    \clip (0.72,1.22) -- (0.72,3.55) -- (2.98,3.55) -- (2.98,2.22) -- (2.22,2.22) -- (2.22,1.22) -- cycle;
+    \foreach \s in {0.40,0.62,...,3.20}
+      \draw[line width=0.22pt] (\s,1.15) -- (\s+0.55,3.60);
+  \end{scope}
+  % 阀 D（连通管左侧活门）
+  \draw[line width=0.65pt] (2.22,1.22) -- (2.22,2.22) -- (3.55,2.22) -- (3.55,1.55) -- (2.98,1.55);
+  \draw[line width=0.6pt] (1.15,1.55) -- (1.55,1.92);
+  \draw[line width=0.5pt] (1.55,1.92) -- (1.42,1.72) -- (1.68,1.78);
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=north] at (1.35,1.18) {$D$};
+  % 水平连通管
+  \draw[line width=0.7pt] (2.22,1.22) -- (4.55,1.22);
+  \draw[line width=0.7pt] (3.55,1.55) -- (4.55,1.55);
+  \begin{scope}
+    \clip (2.22,1.22) rectangle (4.55,1.55);
+    \foreach \s in {2.10,2.32,...,4.60}
+      \draw[line width=0.22pt] (\s,1.22) -- (\s+0.22,1.55);
+  \end{scope}
+  % ---- 小缸（右）----
+  \draw[line width=0.7pt] (4.55,1.22) -- (4.55,3.55) -- (4.78,3.55);
+  \draw[line width=0.7pt] (5.55,3.55) -- (5.78,3.55) -- (5.78,1.22) -- (4.55,1.22);
+  % 小活塞 A
+  \draw[line width=0.7pt] (4.78,2.55) rectangle (5.55,3.85);
+  \begin{scope}
+    \clip (4.78,2.55) rectangle (5.55,3.22);
+    \foreach \s in {4.70,4.85,...,5.60}
+      \draw[line width=0.22pt] (\s,2.55) -- (\s+0.18,3.22);
+  \end{scope}
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (5.88,3.35) {$A$};
+  % 小缸内液体
+  \begin{scope}
+    \clip (4.55,1.22) -- (4.55,2.55) -- (5.78,2.55) -- (5.78,1.22) -- cycle;
+    \foreach \s in {4.40,4.58,...,5.90}
+      \draw[line width=0.22pt] (\s,1.22) -- (\s+0.22,2.55);
+  \end{scope}
+  % 活塞杆与手柄
+  \draw[line width=0.65pt] (5.55,3.22) -- (6.15,3.22) -- (6.15,3.48) -- (5.55,3.48);
+  \draw[line width=0.7pt] (6.15,3.35) -- (8.55,3.35);
+  \draw[line width=0.55pt] (8.55,3.18) -- (8.55,3.52) -- (8.85,3.52) -- (8.85,3.18) -- cycle;
+  \draw[line width=0.45pt] (8.85,3.35) -- (9.05,3.35);
+  % 阀 C（小缸底通液槽）
+  \draw[line width=0.65pt] (4.95,1.22) -- (4.95,0.72) -- (5.38,0.72) -- (5.38,1.22);
+  \draw[line width=0.55pt] (5.05,1.05) -- (5.28,0.85);
+  \draw[line width=0.4pt] (5.28,0.85) -- (5.15,0.92) -- (5.32,0.95);
+  % 液槽
+  \draw[line width=0.7pt] (4.35,0.12) -- (4.35,0.72) -- (6.55,0.72) -- (6.55,0.12) -- cycle;
+  \draw[line width=0.45pt] (4.35,0.48) -- (6.55,0.48);
+  \begin{scope}
+    \clip (4.35,0.12) rectangle (6.55,0.48);
+    \foreach \s in {4.20,4.38,...,6.55}
+      \draw[line width=0.22pt] (\s,0.12) -- (\s+0.18,0.48);
+  \end{scope}
+  \node[font=\scriptsize,inner sep=0.4pt,anchor=west] at (6.68,0.42) {$C$};
+\end{tikzpicture}%
+}
 \caption{图3-3 液压机工作原理示意图}
 \end{figure}
 
@@ -2332,7 +3868,80 @@ G = \frac {500 \text{克}}{\pi \text{厘米} ^ {2}} \times 25 \pi \text{厘米} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·5 液体对容器底的压强}]{assets/physics-1/fig-p0056-01.png}}
+% fig-alt: 图3·5 两支下端蒙橡皮膜的玻璃管。左管水位较低、膜微凸；右管手握管身，另一手倾杯注水，水位较高、膜更凸
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % ---- 左管 ----
+  \begin{scope}[shift={(0.15,0.15)}]
+    \draw[line width=0.7pt] (0.55,4.85) ellipse[x radius=0.52,y radius=0.16];
+    \draw[line width=0.45pt] (0.55,4.85) ellipse[x radius=0.42,y radius=0.10];
+    \draw[line width=0.7pt] (0.03,4.85) -- (0.03,0.85);
+    \draw[line width=0.7pt] (1.07,4.85) -- (1.07,0.85);
+    % 水
+    \draw[line width=0.5pt] (0.03,1.85) -- (1.07,1.85);
+    \begin{scope}
+      \clip (0.03,0.85) rectangle (1.07,1.85);
+      \foreach \s in {-0.25,-0.05,...,1.20}
+        \draw[line width=0.22pt] (\s,0.85) -- (\s+0.35,1.85);
+    \end{scope}
+    % 橡皮膜（微凸）
+    \fill[black!75] (0.03,0.85) -- (0.03,0.55)
+      .. controls (0.22,0.28) and (0.88,0.28) .. (1.07,0.55) -- (1.07,0.85) -- cycle;
+    \draw[line width=0.55pt] (0.03,0.85) -- (0.03,0.55)
+      .. controls (0.22,0.28) and (0.88,0.28) .. (1.07,0.55) -- (1.07,0.85);
+  \end{scope}
+  % ---- 右管 ----
+  \begin{scope}[shift={(3.85,0.15)}]
+    \draw[line width=0.7pt] (0.55,4.85) ellipse[x radius=0.52,y radius=0.16];
+    \draw[line width=0.45pt] (0.55,4.85) ellipse[x radius=0.42,y radius=0.10];
+    \draw[line width=0.7pt] (0.03,4.85) -- (0.03,0.85);
+    \draw[line width=0.7pt] (1.07,4.85) -- (1.07,0.85);
+    % 水（更高）
+    \draw[line width=0.5pt] (0.03,2.55) -- (1.07,2.55);
+    \begin{scope}
+      \clip (0.03,0.85) rectangle (1.07,2.55);
+      \foreach \s in {-0.25,-0.05,...,1.20}
+        \draw[line width=0.22pt] (\s,0.85) -- (\s+0.42,2.55);
+    \end{scope}
+    % 橡皮膜（更凸）
+    \fill[black!80] (0.03,0.85) -- (0.03,0.48)
+      .. controls (0.18,0.05) and (0.92,0.05) .. (1.07,0.48) -- (1.07,0.85) -- cycle;
+    \draw[line width=0.55pt] (0.03,0.85) -- (0.03,0.48)
+      .. controls (0.18,0.05) and (0.92,0.05) .. (1.07,0.48) -- (1.07,0.85);
+    % 握管的手
+    \draw[line width=0.55pt] (-0.85,3.55) -- (-0.15,3.72);
+    \draw[line width=0.55pt] (-0.82,3.35) -- (-0.12,3.52);
+    \draw[line width=0.55pt] (-0.78,3.15) -- (0.05,3.32);
+    \draw[line width=0.55pt] (1.12,3.55) -- (1.55,3.42);
+    \draw[line width=0.6pt] (-0.85,3.55) -- (-1.15,3.22) -- (-1.08,2.85) -- (-0.72,2.95) -- (-0.78,3.15);
+    \draw[line width=0.55pt] (-1.15,3.15) -- (-1.72,2.95) -- (-1.65,2.55) -- (-1.08,2.85);
+  \end{scope}
+  % 倾杯注水
+  \begin{scope}[shift={(5.55,3.55)},rotate=-42]
+    \draw[line width=0.65pt] (0.00,0.85) ellipse[x radius=0.48,y radius=0.14];
+    \draw[line width=0.65pt] (-0.48,0.85) -- (-0.38,0.05);
+    \draw[line width=0.65pt] (0.48,0.85) -- (0.38,0.05);
+    \draw[line width=0.65pt] (0.00,0.05) ellipse[x radius=0.38,y radius=0.10];
+    \begin{scope}
+      \clip (-0.48,0.85) -- (-0.38,0.05)
+        arc[start angle=180,end angle=360,x radius=0.38,y radius=0.10]
+        -- (0.48,0.85) arc[start angle=0,end angle=180,x radius=0.48,y radius=0.14] -- cycle;
+      \foreach \s in {-0.70,-0.52,...,0.55}
+        \draw[line width=0.22pt] (\s,0.00) -- (\s+0.28,0.90);
+    \end{scope}
+  \end{scope}
+  % 水流
+  \draw[line width=0.5pt] (4.72,3.55) .. controls (4.62,3.22) and (4.55,2.95) .. (4.48,2.72);
+  \draw[line width=0.5pt] (4.92,3.48) .. controls (4.82,3.18) and (4.72,2.92) .. (4.62,2.72);
+  % 持杯的手
+  \draw[line width=0.6pt] (6.15,4.55) .. controls (6.55,4.85) and (7.05,4.72) .. (7.22,4.28);
+  \draw[line width=0.55pt] (6.35,4.42) -- (6.85,4.22);
+  \draw[line width=0.55pt] (6.42,4.22) -- (6.92,4.05);
+  \draw[line width=0.55pt] (6.48,4.02) -- (6.95,3.88);
+  \draw[line width=0.6pt] (7.22,4.28) .. controls (7.55,3.95) and (7.42,3.45) .. (6.95,3.28);
+  \draw[line width=0.55pt] (6.95,3.28) -- (6.55,3.42);
+\end{tikzpicture}%
+}
 \caption{图 3·5 液体对容器底的压强}
 \end{figure}
 
@@ -2398,7 +4007,83 @@ G = \frac {500 \text{克}}{\pi \text{厘米} ^ {2}} \times 25 \pi \text{厘米} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·7 压强计}]{assets/physics-1/fig-p0057-01.png}}
+% fig-alt: 图3·7 U形压强计立于带座木板上，两臂间有刻度；左管口经橡皮管接漏斗膜，手按膜，左液面低于右液面
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 木板与底座
+  \draw[line width=0.7pt] (2.15,0.85) -- (2.15,5.85) -- (4.85,5.85) -- (4.85,0.85) -- cycle;
+  \draw[line width=0.55pt] (4.85,0.85) -- (5.12,1.05) -- (5.12,6.02) -- (4.85,5.85);
+  \draw[line width=0.55pt] (2.15,5.85) -- (2.42,6.02) -- (5.12,6.02);
+  \draw[line width=0.7pt] (1.85,0.42) -- (5.15,0.42) -- (5.45,0.72) -- (2.15,0.72) -- cycle;
+  \draw[line width=0.55pt] (1.85,0.42) -- (1.85,0.22) -- (5.15,0.22) -- (5.15,0.42);
+  \draw[line width=0.45pt] (5.15,0.22) -- (5.45,0.52) -- (5.45,0.72);
+  \begin{scope}
+    \clip (1.85,0.42) -- (5.15,0.42) -- (5.45,0.72) -- (2.15,0.72) -- cycle;
+    \foreach \s in {1.70,1.88,...,5.40}
+      \draw[line width=0.22pt] (\s,0.40) -- (\s+0.18,0.75);
+  \end{scope}
+  % 刻度尺（两臂之间）
+  \draw[line width=0.45pt] (3.42,1.55) -- (3.42,5.22);
+  \foreach \k in {0,1,...,18}
+    \draw[line width=0.28pt] (3.42,{1.55+0.20*\k}) -- (3.52,{1.55+0.20*\k});
+  \foreach \k in {0,5,10,15}
+    \draw[line width=0.4pt] (3.42,{1.55+0.20*\k}) -- (3.62,{1.55+0.20*\k});
+  % U 形管
+  \draw[line width=0.7pt] (2.72,5.35) -- (2.72,1.85);
+  \draw[line width=0.7pt] (3.05,5.35) -- (3.05,1.85);
+  \draw[line width=0.7pt] (3.78,5.55) -- (3.78,1.85);
+  \draw[line width=0.7pt] (4.12,5.55) -- (4.12,1.85);
+  \draw[line width=0.7pt] (2.72,1.85) arc[start angle=180,end angle=360,x radius=0.70,y radius=0.48];
+  \draw[line width=0.7pt] (3.05,1.85) arc[start angle=180,end angle=360,x radius=0.40,y radius=0.28];
+  % 管内液体：左低右高
+  \begin{scope}
+    \clip (2.72,1.37) rectangle (3.05,2.85);
+    \foreach \s in {2.55,2.72,...,3.15}
+      \draw[line width=0.22pt] (\s,1.37) -- (\s+0.18,2.85);
+  \end{scope}
+  \begin{scope}
+    \clip (3.78,1.37) rectangle (4.12,4.05);
+    \foreach \s in {3.60,3.78,...,4.20}
+      \draw[line width=0.22pt] (\s,1.37) -- (\s+0.22,4.05);
+  \end{scope}
+  \begin{scope}
+    \clip (2.72,1.85) arc[start angle=180,end angle=360,x radius=0.70,y radius=0.48]
+      -- (4.12,1.85) -- (4.12,1.37)
+      arc[start angle=360,end angle=180,x radius=0.70,y radius=0.48] -- cycle;
+    \foreach \s in {2.40,2.58,...,4.30}
+      \draw[line width=0.22pt] (\s,1.20) -- (\s+0.22,1.95);
+  \end{scope}
+  \draw[line width=0.45pt] (2.72,2.85) -- (3.05,2.85);
+  \draw[line width=0.45pt] (3.78,4.05) -- (4.12,4.05);
+  % 左管口弯头接橡皮管
+  \draw[line width=0.7pt] (2.72,5.35) -- (2.72,5.62) -- (2.35,5.62) -- (2.35,5.35) -- (2.55,5.35);
+  \draw[line width=0.7pt] (3.05,5.35) -- (3.05,5.48);
+  \fill[black!70] (2.22,5.28) rectangle (2.55,5.72);
+  \draw[line width=0.5pt] (2.22,5.28) rectangle (2.55,5.72);
+  % 橡皮管：上端向下再右弯至漏斗
+  \draw[line width=0.85pt] (2.22,5.50)
+    .. controls (1.55,5.50) and (1.05,4.85) .. (0.92,3.55)
+    .. controls (0.78,2.15) and (0.85,0.85) .. (1.85,0.22)
+    .. controls (2.85,-0.22) and (4.15,-0.05) .. (5.15,0.55)
+    .. controls (5.75,0.95) and (6.05,1.35) .. (6.22,1.72);
+  % 漏斗与橡皮膜
+  \draw[line width=0.65pt] (6.05,1.72) -- (6.42,1.72);
+  \draw[line width=0.65pt] (6.05,1.95) -- (6.42,1.95);
+  \draw[line width=0.6pt] (6.42,1.62) -- (6.42,2.05);
+  \draw[line width=0.6pt] (6.42,1.72) -- (6.85,1.42);
+  \draw[line width=0.6pt] (6.42,1.95) -- (6.85,2.25);
+  \draw[line width=0.65pt] (6.85,1.42) .. controls (7.35,1.32) and (7.62,1.68) .. (7.58,1.84)
+    .. controls (7.62,2.00) and (7.35,2.35) .. (6.85,2.25);
+  % 手按膜
+  \draw[line width=0.6pt] (7.35,1.85) .. controls (7.72,2.15) and (8.15,2.22) .. (8.42,1.92);
+  \draw[line width=0.55pt] (7.55,1.72) -- (8.05,1.55);
+  \draw[line width=0.55pt] (7.58,1.55) -- (8.08,1.38);
+  \draw[line width=0.55pt] (7.62,1.38) -- (8.05,1.22);
+  \draw[line width=0.6pt] (8.42,1.92) .. controls (8.85,1.72) and (8.95,1.22) .. (8.55,0.85);
+  \draw[line width=0.55pt] (8.55,0.85) -- (7.95,0.95);
+  \draw[line width=0.55pt] (8.72,1.55) -- (9.15,1.22) -- (8.95,0.92) -- (8.55,1.05);
+\end{tikzpicture}%
+}
 \caption{图3·7 压强计}
 \end{figure}
 
