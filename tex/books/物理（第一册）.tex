@@ -25972,8 +25972,23 @@ E ^ {\prime} = (m + M) g
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-1/fig-p0410-03.png}}
-\caption{(c)}
+% fig-alt: （c）上为静止原子核$M+m$（斜线填充），右标「原子核」；下左空心小圆$m$左向$v$，下右斜线核$M$右向$v'$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt,pattern=north east lines] (0,2.35) circle[radius=0.48];
+  \node[anchor=south] at (0,2.88) {$M+m$};
+  \node[anchor=west] at (0.62,2.35) {原子核};
+  \draw[line width=0.55pt,fill=white] (-1.55,0.55) circle[radius=0.18];
+  \node[anchor=south] at (-1.55,0.80) {$m$};
+  \draw[line width=0.55pt,->] (-1.55,0.55) -- (-2.55,0.55);
+  \node[anchor=east] at (-2.60,0.55) {$v$};
+  \draw[line width=0.55pt,pattern=north east lines] (0.25,0.55) circle[radius=0.42];
+  \node[anchor=south] at (0.25,1.05) {$M$};
+  \draw[line width=0.55pt,->] (0.25,0.55) -- (1.40,0.55);
+  \node[anchor=west] at (1.45,0.55) {$v'$};
+\end{tikzpicture}%
+}
+\caption{（c）}
 \end{figure}
 
 \emph{（c）}
@@ -25982,8 +25997,41 @@ E ^ {\prime} = (m + M) g
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图12-18}]{assets/physics-1/fig-p0411-01.png}}
-\caption{图12-18}
+% fig-alt: 图12·18：上为$t$时刻火箭质量$M$右向$v$；下为$t+\Delta t$时刻火箭$M-\Delta m$右向$v+\Delta v$，尾喷$\Delta m$左向相对地面速度$v_0-v$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \begin{scope}[shift={(0,2.6)}]
+    \draw[line width=0.55pt,fill=white] (0,-0.28) rectangle (2.40,0.28);
+    \draw[line width=0.45pt,pattern=dots] (-0.35,-0.28) rectangle (0,0.28);
+    \draw[line width=0.55pt,fill=white] (2.40,-0.28) -- (2.95,0) -- (2.40,0.28) -- cycle;
+    \draw[line width=0.55pt,->] (0.85,0.55) -- (2.15,0.55);
+    \node[anchor=south] at (1.50,0.58) {$v$};
+    \node[anchor=north] at (1.20,-0.35) {$M$};
+    \node[anchor=west] at (3.15,0) {在 $t$ 时刻};
+  \end{scope}
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.45pt]
+      (-1.55,0.05) .. controls (-1.70,0.35) and (-1.35,0.55) .. (-1.00,0.42)
+      .. controls (-0.85,0.55) and (-0.55,0.48) .. (-0.40,0.28)
+      -- (-0.40,-0.28)
+      .. controls (-0.55,-0.48) and (-0.85,-0.55) .. (-1.00,-0.42)
+      .. controls (-1.35,-0.55) and (-1.70,-0.35) .. (-1.55,-0.05) -- cycle;
+    \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (-1.35,0.15) -- (-0.55,0.08);
+    \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (-1.35,-0.15) -- (-0.55,-0.08);
+    \draw[line width=0.55pt,->] (-0.55,0.72) -- (-1.65,0.72);
+    \node[anchor=south] at (-1.10,0.76) {$v_{0}-v$};
+    \node[anchor=north] at (-1.00,-0.55) {$\Delta m$};
+    \draw[line width=0.55pt,fill=white] (0,-0.28) rectangle (2.40,0.28);
+    \draw[line width=0.45pt,pattern=dots] (-0.35,-0.28) rectangle (0,0.28);
+    \draw[line width=0.55pt,fill=white] (2.40,-0.28) -- (2.95,0) -- (2.40,0.28) -- cycle;
+    \draw[line width=0.55pt,->] (0.70,0.55) -- (2.35,0.55);
+    \node[anchor=south] at (1.55,0.58) {$v+\Delta v$};
+    \node[anchor=north] at (1.20,-0.35) {$M-\Delta m$};
+    \node[anchor=west] at (3.15,0) {在 $t+\Delta t$ 时刻};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图12·18}
 \end{figure}
 
 \emph{图12·18}
@@ -26078,14 +26126,47 @@ F = a v _ {0}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第413页）}]{assets/physics-1/fig-p0413-01.png}}
-\caption{图示（原PDF第413页）}
+% fig-alt: 碰撞前：斜影水平桌面；左球$m_1$右向较长$v_1$，右球$m_2$右向较短$v_2$（$v_1>v_2$）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{0.42}
+  \draw[line width=0.65pt] (-0.45,0) -- (5.35,0);
+  \foreach \x in {-0.25,0.15,0.55,0.95,1.35,1.75,2.15,2.55,2.95,3.35,3.75,4.15,4.55,4.95,5.20}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  \draw[line width=0.55pt,fill=white] (1.05,\R) circle[radius=\R];
+  \node at (1.05,\R) {$m_{1}$};
+  \draw[line width=0.6pt,->] (0.55,{2*\R+0.22}) -- (2.05,{2*\R+0.22});
+  \node[anchor=east] at (0.50,{2*\R+0.22}) {$v_{1}$};
+  \draw[line width=0.55pt,fill=white] (3.55,\R) circle[radius=\R];
+  \node at (3.55,\R) {$m_{2}$};
+  \draw[line width=0.6pt,->] (3.15,{2*\R+0.22}) -- (4.15,{2*\R+0.22});
+  \node[anchor=east] at (3.10,{2*\R+0.22}) {$v_{2}$};
+\end{tikzpicture}%
+}
+\caption{碰撞前两球同向，$m_1$以$v_1$追$m_2$（$v_2$）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 12·19}]{assets/physics-1/fig-p0413-02.png}}
-\caption{图 12·19}
+% fig-alt: 图12·19：斜影桌面；左$m_1$右向$v'_1$，右$m_2$右向较长$v'_2$；下标「碰撞后」。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{0.42}
+  \draw[line width=0.65pt] (-0.45,0) -- (5.35,0);
+  \foreach \x in {-0.25,0.15,0.55,0.95,1.35,1.75,2.15,2.55,2.95,3.35,3.75,4.15,4.55,4.95,5.20}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  \draw[line width=0.55pt,fill=white] (1.05,\R) circle[radius=\R];
+  \node at (1.05,\R) {$m_{1}$};
+  \draw[line width=0.6pt,->] (0.55,{2*\R+0.22}) -- (1.45,{2*\R+0.22});
+  \node[anchor=east] at (0.50,{2*\R+0.22}) {$v'_{1}$};
+  \draw[line width=0.55pt,fill=white] (3.55,\R) circle[radius=\R];
+  \node at (3.55,\R) {$m_{2}$};
+  \draw[line width=0.6pt,->] (3.05,{2*\R+0.22}) -- (4.55,{2*\R+0.22});
+  \node[anchor=east] at (3.00,{2*\R+0.22}) {$v'_{2}$};
+  \node[anchor=north] at (2.45,-0.35) {碰撞后};
+\end{tikzpicture}%
+}
+\caption{图12·19}
 \end{figure}
 
 \emph{图 12·19}
@@ -26212,8 +26293,41 @@ E _ {k} ^ {\prime} = \frac {1}{2} m v _ {1} ^ {\prime 2} + \frac {1}{2} m v _ {2
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图12-20}]{assets/physics-1/fig-p0416-01.png}}
-\caption{图12-20}
+% fig-alt: 图12·20：左为冲击摆：顶支点$O$，悬木块$M$，子弹$m$以$v_0$水平射入；右为碰撞后共同$v$并摆高$h$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt] (-0.85,3.55) -- (1.55,3.55);
+  \foreach \x in {-0.70,-0.40,-0.10,0.20,0.50,0.80,1.10,1.40}
+    \draw[line width=0.28pt] (\x,3.55) -- (\x+0.12,3.72);
+  \node[anchor=north east] at (0.05,3.52) {$O$};
+  \draw[line width=0.55pt] (0.35,3.55) -- (0.35,1.55);
+  \draw[line width=0.55pt,fill=white] (-0.05,0.85) rectangle (0.75,1.55);
+  \node[anchor=west] at (0.80,1.35) {$M$};
+  \draw[line width=0.45pt,fill=white] (-1.35,1.10) -- (-0.55,1.10) -- (-0.40,1.20) -- (-0.55,1.30) -- (-1.35,1.30) -- cycle;
+  \node[anchor=south] at (-0.95,1.35) {$m$};
+  \draw[line width=0.55pt,->] (-1.35,0.85) -- (-0.45,0.85);
+  \node[anchor=north] at (-0.90,0.80) {$v_{0}$};
+  \begin{scope}[shift={(3.6,0)}]
+    \draw[line width=0.55pt] (-0.85,3.55) -- (2.35,3.55);
+    \foreach \x in {-0.70,-0.40,-0.10,0.20,0.50,0.80,1.10,1.40,1.70,2.00,2.20}
+      \draw[line width=0.28pt] (\x,3.55) -- (\x+0.12,3.72);
+    \node[anchor=north east] at (0.05,3.52) {$O$};
+    \draw[line width=0.4pt,dash pattern=on 1.5pt off 1.1pt] (0.35,3.55) -- (0.35,0.85);
+    \draw[line width=0.55pt,fill=white] (-0.05,0.85) rectangle (0.75,1.55);
+    \draw[line width=0.4pt,fill=white] (0.10,1.05) -- (0.45,1.05) -- (0.55,1.20) -- (0.45,1.35) -- (0.10,1.35) -- cycle;
+    \draw[line width=0.55pt,->] (0.85,1.05) -- (1.55,1.05);
+    \node[anchor=south] at (1.20,1.10) {$v$};
+    \draw[line width=0.55pt] (0.35,3.55) -- (1.90,2.15);
+    \draw[line width=0.55pt,fill=white] (1.50,1.45) rectangle (2.30,2.15);
+    \draw[line width=0.4pt,fill=white] (1.65,1.65) -- (2.00,1.65) -- (2.10,1.80) -- (2.00,1.95) -- (1.65,1.95) -- cycle;
+    \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.0pt] (0.75,0.85) -- (2.55,0.85);
+    \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.0pt] (2.30,1.45) -- (2.55,1.45);
+    \draw[line width=0.5pt,<->] (2.55,0.85) -- (2.55,1.45);
+    \node[anchor=west] at (2.62,1.15) {$h$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图12·20}
 \end{figure}
 
 \emph{图12·20}
@@ -26256,8 +26370,37 @@ v _ {0} = \frac {m + M}{m} \sqrt {2 g h}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 12-21}]{assets/physics-1/fig-p0417-01.png}}
-\caption{图 12-21}
+% fig-alt: 图12·21：上为$m_1$（斜线）以$v_1$撞静止$m_2$（$v_2=0$）；下为相碰后$m_1$以$v'_1$偏$\alpha_1$、$m_2$以$v'_2$偏$\alpha_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{0.38}
+  \draw[line width=0.55pt,pattern=north west lines] (0,4.0) circle[radius=\R];
+  \node[anchor=south] at (0,{4.0+\R+0.05}) {$m_{1}$};
+  \draw[line width=0.55pt,->] ({\R+0.05},4.0) -- (1.55,4.0);
+  \node[anchor=south] at (0.95,4.05) {$v_{1}$};
+  \draw[line width=0.55pt,fill=white] (3.0,4.0) circle[radius=\R];
+  \node[anchor=south] at (3.0,{4.0+\R+0.05}) {$m_{2}$};
+  \node[anchor=north] at (3.0,{4.0-\R-0.05}) {$v_{2}=0$};
+  \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.0pt] (3.0,3.55) -- (3.0,2.55);
+  \coordinate (C1) at (1.75,0.85);
+  \coordinate (C2) at (2.45,1.55);
+  \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.0pt] (0.40,1.20) -- (4.10,1.20);
+  \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.0pt] (2.10,-0.15) -- (2.10,2.55);
+  \draw[line width=0.55pt,pattern=north west lines] (C1) circle[radius=\R];
+  \node[anchor=east] at ({1.75-\R-0.05},0.85) {$m_{1}$};
+  \draw[line width=0.55pt,fill=white] (C2) circle[radius=\R];
+  \node[anchor=south] at (2.45,{1.55+\R+0.05}) {$m_{2}$};
+  \draw[line width=0.6pt,->] (C1) -- ++(1.15,-0.55);
+  \node[anchor=north west] at (2.55,0.45) {$v'_{1}$};
+  \draw[line width=0.35pt] (2.35,0.85) arc[start angle=0,end angle=-25,radius=0.60];
+  \node at (2.95,0.68) {$\alpha_{1}$};
+  \draw[line width=0.6pt,->] (C2) -- ++(1.05,0.70);
+  \node[anchor=south west] at (3.20,2.10) {$v'_{2}$};
+  \draw[line width=0.35pt] (2.95,1.55) arc[start angle=0,end angle=34,radius=0.50];
+  \node at (3.55,1.78) {$\alpha_{2}$};
+\end{tikzpicture}%
+}
+\caption{图12·21}
 \end{figure}
 
 \emph{图12·21}
@@ -26372,8 +26515,27 @@ F = \frac {\Delta p}{\Delta t}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-1/fig-p0420-01.png}}
-\caption{(第7题)}
+% fig-alt: （第7题）斜抛$v_0$仰角$60^\circ$；升段实线至最高点，降段虚线落地；最高点竖直双向箭标$h$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.65pt] (-0.35,0) -- (6.2,0);
+  \foreach \x in {-0.15,0.25,0.65,1.05,1.45,1.85,2.25,2.65,3.05,3.45,3.85,4.25,4.65,5.05,5.45,5.85,6.05}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  \draw[line width=0.45pt,->] (-0.20,0) -- (0.35,0);
+  \draw[line width=0.5pt,fill=white] (0.25,0.12) circle[radius=0.12];
+  \draw[line width=0.6pt,->] (0.25,0.12) -- (1.35,1.85);
+  \node[anchor=south west] at (1.20,1.70) {$v_{0}$};
+  \draw[line width=0.35pt] (0.70,0.12) arc[start angle=0,end angle=58,radius=0.55];
+  \node at (1.05,0.45) {$60^{\circ}$};
+  \draw[line width=0.6pt] (0.25,0.12) .. controls (1.4,2.0) and (2.2,2.85) .. (3.05,3.05);
+  \draw[line width=0.5pt,fill=white] (3.05,3.05) circle[radius=0.12];
+  \draw[line width=0.6pt,dash pattern=on 2.0pt off 1.4pt] (3.05,3.05) .. controls (3.9,2.85) and (4.7,2.0) .. (5.85,0.12);
+  \draw[line width=0.5pt,fill=white] (5.85,0.12) circle[radius=0.12];
+  \draw[line width=0.45pt,<->,dash pattern=on 1.5pt off 1.1pt] (3.05,0) -- (3.05,3.05);
+  \node[anchor=west] at (3.15,1.50) {$h$};
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
 
 \emph{（第7题）}
@@ -26423,8 +26585,43 @@ F = \frac {\Delta p}{\Delta t}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13-1}]{assets/physics-1/fig-p0422-01.png}}
-\caption{图 13-1}
+% fig-alt: 图13·1：透视桌面；右上斜槽滚下钢球，中左条形磁铁；球沿实线弯向磁铁，多位置小圆示轨迹。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (FL) at (0.0,0.55);
+  \coordinate (FR) at (6.2,0.55);
+  \coordinate (BR) at (5.35,2.55);
+  \coordinate (BL) at (-0.55,2.55);
+  \draw[line width=0.6pt,fill=white] (FL) -- (FR) -- (BR) -- (BL) -- cycle;
+  \draw[line width=0.3pt] ($ (FL)!0.5!(FR) $) -- ($ (BL)!0.5!(BR) $);
+  \draw[line width=0.5pt] (FL) -- ++(0,-0.85);
+  \draw[line width=0.5pt] (FR) -- ++(0,-0.85);
+  \draw[line width=0.45pt] ($(BL)!0.12!(FL)$) -- ++(0,-0.55);
+  \draw[line width=0.45pt] ($(BR)!0.12!(FR)$) -- ++(0,-0.55);
+  % right-side brace
+  \draw[line width=0.4pt] ($(FR)+(0,-0.42)$) -- ($(BR)!0.12!(FR)+(0,-0.28)$);
+  % ramp back-right
+  \draw[line width=0.5pt,fill=white]
+    (4.55,2.15) -- (5.15,2.15) -- (5.05,2.45) -- (4.45,2.45) -- cycle;
+  \draw[line width=0.5pt,fill=white]
+    (4.45,2.45) -- (5.05,2.45) -- (4.95,2.70) -- (4.55,2.55) -- cycle;
+  \draw[line width=0.45pt,fill=gray!30] (4.85,2.62) circle[radius=0.08];
+  % bar magnet (flat cuboid, front edge shaded)
+  \draw[line width=0.55pt,fill=white]
+    (1.05,1.25) -- (1.95,1.25) -- (1.78,1.95) -- (0.88,1.95) -- cycle;
+  \draw[line width=0.45pt] (1.95,1.25) -- (1.95,1.40) -- (1.78,2.10) -- (1.78,1.95);
+  \draw[line width=0.45pt] (0.88,1.95) -- (1.78,2.10) -- (1.95,1.40);
+  \draw[line width=0.4pt,fill=gray!45]
+    (1.05,1.25) -- (1.95,1.25) -- (1.95,1.40) -- (1.05,1.40) -- cycle;
+  % trajectory: from ramp, then curve toward magnet / front-left
+  \draw[line width=0.55pt]
+    (4.70,2.20) .. controls (3.90,2.05) and (3.10,1.85) .. (2.40,1.70)
+    .. controls (1.85,1.55) and (1.20,1.20) .. (0.45,0.80);
+  \foreach \p in {(4.70,2.20),(3.70,1.95),(2.55,1.72),(1.55,1.35),(0.60,0.90)}
+    \draw[line width=0.45pt,fill=white] \p circle[radius=0.09];
+\end{tikzpicture}%
+}
+\caption{图13·1}
 \end{figure}
 
 \emph{图13·1}
