@@ -18591,8 +18591,30 @@ S，则 ASCD 是一个平行四边形。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-45}]{assets/plane-geometry-1/fig-p0197-01.png}}
-\caption{图3-45}
+\fitfig{%
+% fig-alt: 图3·45 扫描：等腰梯形ABCD（AD上∥BC下，AB=DC单杠）；实线对角AC、BD；底角B、C单弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (5.00,0.00);
+  \coordinate (A) at (1.00,2.30);
+  \coordinate (D) at (4.00,2.30);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[line width=0.70pt] (B) -- (D);
+  \foreach \Pa/\Qa in {A/B, D/C} {
+    \draw[line width=0.50pt] let \p1=($(\Qa)-(\Pa)$), \n1={atan2(\y1,\x1)} in
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1+90:0.10) -- ++ (\n1-90:0.20);
+  }
+  \draw[line width=0.50pt] ($(B)+(0.48,0)$) arc[start angle=0, end angle={atan2(2.30,1.00)}, radius=0.48];
+  \draw[line width=0.50pt] ($(C)+({atan2(2.30,-1.00)}:0.48)$) arc[start angle={atan2(2.30,-1.00)}, end angle=180, radius=0.48];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+
+\caption{图 3·45}
 \end{figure}
 
 \emph{图 3·45}
@@ -18613,8 +18635,27 @@ S，则 ASCD 是一个平行四边形。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3-48(1)}]{assets/plane-geometry-1/fig-p0197-02.png}}
-\caption{图 3-48(1)}
+\fitfig{%
+% fig-alt: 图3·46(1) 扫描：等腰梯形ABCD（AB下∥DC上）；两腰延长虚线交于P；底角A、B单弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (4.40,0.00);
+  \coordinate (P) at (2.20,3.60);
+  \coordinate (D) at ($(P)!0.42!(A)$);
+  \coordinate (C) at ($(P)!0.42!(B)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed, line width=0.65pt] (D) -- (P) -- (C);
+  \draw[line width=0.50pt] ($(A)+(0.42,0)$) arc[start angle=0, end angle={atan2(3.60,2.20)}, radius=0.42];
+  \draw[line width=0.50pt] ($(B)+({atan2(3.60,-2.20)}:0.42)$) arc[start angle={atan2(3.60,-2.20)}, end angle=180, radius=0.42];
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=east, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+\end{tikzpicture}%
+}
+
+\caption{图 3·46（1）}
 \end{figure}
 
 \emph{图 3·46（1）}
@@ -18643,8 +18684,28 @@ AD=BC，可先平移其中一线段，使与另一线段在同一个三角形中
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3-46(2)}]{assets/plane-geometry-1/fig-p0198-01.png}}
-\caption{图 3-46(2)}
+\fitfig{%
+% fig-alt: 图3·46(2) 扫描：等腰梯形ABCD（AB下∥CD上）；虚线DP∥CB交AB于P；∠A、∠DPA、∠B单弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (5.00,0.00);
+  \coordinate (D) at (1.00,2.20);
+  \coordinate (C) at (4.00,2.20);
+  \coordinate (P) at (2.00,0.00);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed, line width=0.65pt] (D) -- (P);
+  \draw[line width=0.50pt] ($(A)+(0.42,0)$) arc[start angle=0, end angle={atan2(2.20,1.00)}, radius=0.42];
+  \draw[line width=0.50pt] ($(P)+({atan2(2.20,-1.00)}:0.40)$) arc[start angle={atan2(2.20,-1.00)}, end angle=180, radius=0.40];
+  \draw[line width=0.50pt] ($(B)+({atan2(2.20,-1.00)}:0.42)$) arc[start angle={atan2(2.20,-1.00)}, end angle=180, radius=0.42];
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+
+\caption{图 3·46（2）}
 \end{figure}
 
 \emph{图 3·46（2）}
@@ -18685,8 +18746,39 @@ AD=BC，可先平移其中一线段，使与另一线段在同一个三角形中
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-47}]{assets/plane-geometry-1/fig-p0198-02.png}}
-\caption{图3-47}
+\fitfig{%
+% fig-alt: 图3·47 扫描：梯形ABCD（AD上∥BC下）及对角AC、BD（AC=BD=DS单杠）；虚线DS∥AC交BC延长于S；∠1=∠DBC、∠2=∠ACB，S处单弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (4.20,0.00);
+  \coordinate (A) at (0.90,2.20);
+  \coordinate (D) at (3.30,2.20);
+  \coordinate (S) at (6.60,0.00);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[line width=0.70pt] (B) -- (D);
+  \draw[dashed, line width=0.65pt] (C) -- (S);
+  \draw[dashed, line width=0.65pt] (D) -- (S);
+  \foreach \Pa/\Qa in {A/C, B/D, D/S} {
+    \draw[line width=0.50pt] let \p1=($(\Qa)-(\Pa)$), \n1={atan2(\y1,\x1)} in
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1+90:0.10) -- ++ (\n1-90:0.20);
+  }
+  \draw[line width=0.50pt] ($(B)+(0.42,0)$) arc[start angle=0, end angle={atan2(2.20,3.30)}, radius=0.42];
+  \node[anchor=south west, inner sep=1pt] at ($(B)+(0.55,0.12)$) {$1$};
+  \pgfmathsetmacro{\acbang}{atan2(2.20,-3.30)}
+  \draw[line width=0.50pt] ($(C)+({\acbang}:0.42)$) arc[start angle=\acbang, end angle=180, radius=0.42];
+  \node[anchor=south east, inner sep=1pt] at ($(C)+(-0.55,0.12)$) {$2$};
+  \pgfmathsetmacro{\dsang}{atan2(2.20,-3.30)}
+  \draw[line width=0.50pt] ($(S)+({\dsang}:0.42)$) arc[start angle=\dsang, end angle=180, radius=0.42];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north west, inner sep=1pt] at (S) {$S$};
+\end{tikzpicture}%
+}
+
+\caption{图 3·47}
 \end{figure}
 
 \emph{图 3·47}
@@ -18744,13 +18836,47 @@ AD=BC，可先平移其中一线段，使与另一线段在同一个三角形中
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第199页）}]{assets/plane-geometry-1/fig-p0199-01.png}}
-\caption{图示（原PDF第199页）}
+\fitfig{%
+% fig-alt: 已知四条水平线段a、b、c、d（左端对齐，两端短竖线；a最长，其次b，再次d，c最短）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \foreach \y/\len/\lab in {3.00/3.50/a, 2.00/2.20/b, 1.00/1.50/c, 0.00/1.80/d} {
+    \draw[line width=0.75pt] (0,\y) -- (\len,\y);
+    \draw[line width=0.55pt] (0,\y-0.10) -- (0,\y+0.10);
+    \draw[line width=0.55pt] (\len,\y-0.10) -- (\len,\y+0.10);
+    \node[anchor=south, inner sep=1.5pt] at ({0.5*\len},\y) {$\lab$};
+  }
+\end{tikzpicture}%
+}
+
+\caption{已知线段 \(a\)、\(b\)、\(c\)、\(d\)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0199-02.png}}
+\fitfig{%
+% fig-alt: 图3·48(1) 草图：梯形A'B'C'D'（A'B'下∥D'C'上）；E'在A'B'上，E'C'∥A'D'（均标d）；△E'B'C'水平阴线；标c、b、(a-c)
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (Ap) at (0.00,0.00);
+  \coordinate (Bp) at (5.00,0.00);
+  \coordinate (Dp) at (0.70,2.30);
+  \coordinate (Cp) at (3.10,2.30);
+  \coordinate (Ep) at (2.40,0.00);
+  \fill[pattern=horizontal lines, pattern color=black!70] (Ep) -- (Bp) -- (Cp) -- cycle;
+  \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
+  \draw[line width=0.70pt] (Ep) -- (Cp);
+  \node[anchor=north east, inner sep=1pt] at (Ap) {$A'$};
+  \node[anchor=north west, inner sep=1pt] at (Bp) {$B'$};
+  \node[anchor=south west, inner sep=1.5pt] at (Cp) {$C'$};
+  \node[anchor=south east, inner sep=1.5pt] at (Dp) {$D'$};
+  \node[anchor=north, inner sep=1.5pt] at (Ep) {$E'$};
+  \node[anchor=south, inner sep=1.5pt] at ($(Dp)!0.5!(Cp)$) {$c$};
+  \node[anchor=east, inner sep=1.5pt] at ($(Ap)!0.5!(Dp)$) {$d$};
+  \node[anchor=east, inner sep=1pt] at ($(Ep)!0.55!(Cp)$) {$d$};
+  \node[anchor=west, inner sep=1.5pt] at ($(Bp)!0.5!(Cp)$) {$b$};
+  \node[anchor=north, inner sep=1pt] at ($(Ep)!0.5!(Bp)$) {$(a-c)$};
+\end{tikzpicture}%
+}
+
 \caption{(1)}
 \end{figure}
 
@@ -18758,7 +18884,30 @@ AD=BC，可先平移其中一线段，使与另一线段在同一个三角形中
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0199-03.png}}
+\fitfig{%
+% fig-alt: 图3·48(2) 作法：梯形ABCD（AB下∥CD上）；E在AB上，CE∥AD（均标d）；△EBC斜阴线；标c、b、(a-c)
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (5.20,0.00);
+  \coordinate (D) at (0.80,2.30);
+  \coordinate (C) at (3.20,2.30);
+  \coordinate (E) at (2.40,0.00);
+  \fill[pattern=north east lines, pattern color=black!70] (E) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (E) -- (C);
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south, inner sep=1.5pt] at ($(D)!0.5!(C)$) {$c$};
+  \node[anchor=east, inner sep=1.5pt] at ($(A)!0.5!(D)$) {$d$};
+  \node[anchor=east, inner sep=1pt] at ($(E)!0.55!(C)$) {$d$};
+  \node[anchor=west, inner sep=1.5pt] at ($(B)!0.5!(C)$) {$b$};
+  \node[anchor=north, inner sep=1pt] at ($(E)!0.5!(B)$) {$(a-c)$};
+\end{tikzpicture}%
+}
+
 \caption{(2)}
 \end{figure}
 
@@ -18809,8 +18958,42 @@ AD = EC = d.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-49}]{assets/plane-geometry-1/fig-p0200-01.png}}
-\caption{图3-49}
+\fitfig{%
+% fig-alt: 图3·49 扫描：直角梯形ABCD（AB上∥CD下，AD竖直）；M为AD中点；实线BM、CM，虚线ME与DE（E在CD延长线上）；∠1/∠2在B，∠3/∠4在C
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (C) at (0.00,0.00);
+  \coordinate (D) at (2.40,0.00);
+  \coordinate (A) at (2.40,3.92);
+  \coordinate (B) at (0.80,3.92);
+  \coordinate (M) at (2.40,1.96);
+  \coordinate (E) at (4.00,0.00);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (B) -- (M);
+  \draw[line width=0.70pt] (C) -- (M);
+  \draw[dashed, line width=0.65pt] (M) -- (E);
+  \draw[dashed, line width=0.65pt] (D) -- (E);
+  \pgfmathsetmacro{\bcang}{atan2(-3.92,-0.80)}
+  \pgfmathsetmacro{\bmang}{atan2(-1.96,1.60)}
+  \draw[line width=0.50pt] ($(B)+({\bcang}:0.48)$) arc[start angle=\bcang, end angle=\bmang, radius=0.48];
+  \node at ($(B)+({(\bcang+\bmang)/2}:0.72)$) {$1$};
+  \draw[line width=0.50pt] ($(B)+({\bmang}:0.42)$) arc[start angle=\bmang, end angle=0, radius=0.42];
+  \node at ($(B)+({\bmang/2}:0.68)$) {$2$};
+  \pgfmathsetmacro{\cbang}{atan2(3.92,0.80)}
+  \pgfmathsetmacro{\cmang}{atan2(1.96,2.40)}
+  \draw[line width=0.50pt] ($(C)+({\cbang}:0.48)$) arc[start angle=\cbang, end angle=\cmang, radius=0.48];
+  \node at ($(C)+({(\cbang+\cmang)/2}:0.72)$) {$3$};
+  \draw[line width=0.50pt] ($(C)+({\cmang}:0.42)$) arc[start angle=\cmang, end angle=0, radius=0.42];
+  \node at ($(C)+({\cmang/2}:0.68)$) {$4$};
+  \node[anchor=south west, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north east, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north west, inner sep=1pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+
+\caption{图 3·49}
 \end{figure}
 
 \emph{图 3·49}
