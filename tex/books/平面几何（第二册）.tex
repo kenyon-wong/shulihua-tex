@@ -14513,7 +14513,33 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0168-02.png}}
+\fitfig{%
+% fig-alt: （2）圆O（小空心圆）；点M在左上，水平切线触圆于C(D)；割线MAB交圆于A（左上）、B（右下）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rr{1.350}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (0,\rr);
+  \coordinate (M) at (-2.450,\rr);
+  \coordinate (B) at ({1.003},{-0.903});
+  \pgfmathsetmacro{\bdx}{1.003-(-2.450)}
+  \pgfmathsetmacro{\bdy}{-0.903-\rr}
+  \pgfmathsetmacro{\qa}{\bdx*\bdx+\bdy*\bdy}
+  \pgfmathsetmacro{\qb}{2*(-2.450)*\bdx+2*\rr*\bdy}
+  \pgfmathsetmacro{\qc}{(-2.450)*(-2.450)+\rr*\rr-\rr*\rr}
+  \pgfmathsetmacro{\disc}{\qb*\qb-4*\qa*\qc}
+  \pgfmathsetmacro{\ta}{(-\qb-sqrt(\disc))/(2*\qa)}
+  \coordinate (A) at ({-2.450+\ta*\bdx},{\rr+\ta*\bdy});
+  \draw[line width=0.75pt] (O) circle (\rr);
+  \draw[line width=0.75pt] (M) -- (C);
+  \draw[line width=0.75pt] (M) -- (B);
+  \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
+  \node[anchor=south west,inner sep=1pt] at (0.06,0.02) {$O$};
+  \node[anchor=east,inner sep=2pt] at (M) {$M$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C(D)$};
+  \node[anchor=east,inner sep=2pt] at (A) {$A$};
+  \node[anchor=north,inner sep=2pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -14523,7 +14549,30 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0168-03.png}}
+\fitfig{%
+% fig-alt: （3）圆O（小空心圆）；点M在左，两切线触于上C(D)、下A(B)；虚线MO与半径OC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rr{1.350}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (0,\rr);
+  \coordinate (M) at (-2.200,\rr);
+  \pgfmathsetmacro{\mo}{sqrt((-2.200)*(-2.200)+\rr*\rr)}
+  \pgfmathsetmacro{\omang}{atan2(\rr,-2.200)}
+  \pgfmathsetmacro{\half}{acos(\rr/\mo)}
+  \pgfmathsetmacro{\aang}{\omang+\half}
+  \coordinate (A) at ({\rr*cos(\aang)},{\rr*sin(\aang)});
+  \draw[line width=0.75pt] (O) circle (\rr);
+  \draw[line width=0.75pt] (M) -- (C);
+  \draw[line width=0.75pt] (M) -- (A);
+  \draw[dashed,line width=0.6pt] (M) -- (O);
+  \draw[dashed,line width=0.6pt] (O) -- (C);
+  \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
+  \node[anchor=north west,inner sep=1pt] at (0.06,-0.02) {$O$};
+  \node[anchor=east,inner sep=2pt] at (M) {$M$};
+  \node[anchor=south,inner sep=1pt] at (0.15,\rr+0.02) {$C(D)$};
+  \node[anchor=east,inner sep=2pt] at (A) {$A(B)$};
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -14533,7 +14582,29 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0168-04.png}}
+\fitfig{%
+% fig-alt: （4）圆O（小空心圆）；水平割线经M、A、O至B（直径）；切线自M触圆于C(D)
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rr{1.350}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\rr,0);
+  \coordinate (B) at (\rr,0);
+  \coordinate (M) at (-2.550,0);
+  % tangent from M: MO=2.55, sin(theta)=R/MO
+  \pgfmathsetmacro{\mo}{2.550}
+  \pgfmathsetmacro{\th}{asin(\rr/\mo)}
+  \coordinate (C) at ({-\rr*cos(\th)},{\rr*sin(\th)});
+  \draw[line width=0.75pt] (O) circle (\rr);
+  \draw[line width=0.75pt] (M) -- (B);
+  \draw[line width=0.75pt] (M) -- (C);
+  \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
+  \node[anchor=north,inner sep=2pt] at (0,-0.02) {$O$};
+  \node[anchor=east,inner sep=2pt] at (M) {$M$};
+  \node[anchor=north,inner sep=2pt] at (A) {$A$};
+  \node[anchor=west,inner sep=2pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C(D)$};
+\end{tikzpicture}%
+}
 \caption{(4)}
 \end{figure}
 
@@ -14543,7 +14614,38 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(5)}]{assets/plane-geometry-2/fig-p0168-05.png}}
+\fitfig{%
+% fig-alt: （5）圆O（小空心圆）；弦AB与弦CD交于圆内M（M在O左上方）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rr{1.450}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at ({168}:\rr);
+  \coordinate (B) at ({25}:\rr);
+  \coordinate (C) at ({135}:\rr);
+  \coordinate (D) at ({-30}:\rr);
+  \pgfmathsetmacro{\ax}{\rr*cos(168)}
+  \pgfmathsetmacro{\ay}{\rr*sin(168)}
+  \pgfmathsetmacro{\bx}{\rr*cos(25)-\ax}
+  \pgfmathsetmacro{\by}{\rr*sin(25)-\ay}
+  \pgfmathsetmacro{\cx}{\rr*cos(135)}
+  \pgfmathsetmacro{\cy}{\rr*sin(135)}
+  \pgfmathsetmacro{\dx}{\rr*cos(-30)-\cx}
+  \pgfmathsetmacro{\dy}{\rr*sin(-30)-\cy}
+  \pgfmathsetmacro{\den}{\bx*\dy-\by*\dx}
+  \pgfmathsetmacro{\ss}{((\cx-\ax)*\dy-(\cy-\ay)*\dx)/\den}
+  \coordinate (M) at ({\ax+\ss*\bx},{\ay+\ss*\by});
+  \draw[line width=0.75pt] (O) circle (\rr);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
+  \node[anchor=north,inner sep=2pt] at (0,-0.02) {$O$};
+  \node[anchor=east,inner sep=2pt] at (A) {$A$};
+  \node[anchor=south west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=west,inner sep=2pt] at (D) {$D$};
+  \node[anchor=north,inner sep=2pt] at (M) {$M$};
+\end{tikzpicture}%
+}
 \caption{(5)}
 \end{figure}
 
@@ -14553,7 +14655,32 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(6)}]{assets/plane-geometry-2/fig-p0168-06.png}}
+\fitfig{%
+% fig-alt: （6）圆O（小空心圆）；直径AB水平；弦CD⊥AB于M（M在AO上）；M处直角方标
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rr{1.450}
+  \def\mx{-0.620}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\rr,0);
+  \coordinate (B) at (\rr,0);
+  \coordinate (M) at (\mx,0);
+  \pgfmathsetmacro{\hy}{sqrt(\rr*\rr-\mx*\mx)}
+  \coordinate (C) at (\mx,\hy);
+  \coordinate (D) at (\mx,-\hy);
+  \draw[line width=0.75pt] (O) circle (\rr);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  % right angle at M, upper-left (between MA left and MC up)
+  \draw[line width=0.5pt] (\mx-0.16,0) -- (\mx-0.16,0.16) -- (\mx,0.16);
+  \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
+  \node[anchor=north west,inner sep=1pt] at (0.06,-0.02) {$O$};
+  \node[anchor=east,inner sep=2pt] at (A) {$A$};
+  \node[anchor=west,inner sep=2pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=2pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (\mx+0.04,0.04) {$M$};
+\end{tikzpicture}%
+}
 \caption{(6)}
 \end{figure}
 
@@ -14614,7 +14741,46 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0169-01.png}}
+\fitfig{%
+% fig-alt: 第10题：△ABC，AC=42、BC=39、AB=45；CE⊥AB于E（直角方标）；CD⊥CA于C（直角方标）交AB延长于D；AB下尺寸线45
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\s{0.078}
+  \coordinate (A) at (0,0);
+  \coordinate (E) at ({25.2*\s},0);
+  \coordinate (B) at ({45*\s},0);
+  \coordinate (D) at ({70*\s},0);
+  \coordinate (C) at ({25.2*\s},{33.6*\s});
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (C) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (C) -- (E);
+  % right angle at E (NE: between CE up and ED right)
+  \draw[line width=0.5pt] ({25.2*\s+0.14},0) -- ({25.2*\s+0.14},0.14) -- ({25.2*\s},0.14);
+  % right angle at C between CA and CD
+  % CA direction from C to A: (-25.2, -33.6) = (-3,-4) unit (-0.6,-0.8)
+  % CD direction from C to D: (70-25.2, -33.6)=(44.8,-33.6)=(4,-3)/5? 44.8/33.6=4/3 so (4,-3) unit (0.8,-0.6)
+  % perpendicular inward for square: from C along unit CA * s and unit CD * s
+  \pgfmathsetmacro{\ux}{-0.6*0.16}
+  \pgfmathsetmacro{\uy}{-0.8*0.16}
+  \pgfmathsetmacro{\vx}{0.8*0.16}
+  \pgfmathsetmacro{\vy}{-0.6*0.16}
+  \draw[line width=0.5pt] ({25.2*\s+\ux},{33.6*\s+\uy}) -- ({25.2*\s+\ux+\vx},{33.6*\s+\uy+\vy}) -- ({25.2*\s+\vx},{33.6*\s+\vy});
+  % dimension AB
+  \def\yd{-0.42}
+  \draw[line width=0.45pt] (0,\yd) -- (0,{\yd-0.12});
+  \draw[line width=0.45pt] ({45*\s},\yd) -- ({45*\s},{\yd-0.12});
+  \draw[line width=0.45pt] (0,{\yd-0.06}) -- ({45*\s},{\yd-0.06});
+  \node[anchor=north,inner sep=1pt] at ({22.5*\s},{\yd-0.06}) {$45$};
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=2pt] at (E) {$E$};
+  \node[anchor=north,inner sep=2pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=east,inner sep=2pt] at ({10*\s},{18*\s}) {$42$};
+  \node[anchor=west,inner sep=1pt] at ({36*\s},{18*\s}) {$39$};
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -14655,7 +14821,34 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0170-01.png}}
+\fitfig{%
+% fig-alt: 第14题：大圆O；等小圆O1内切于B、O2外切于A；连OO1B、OO2经A、O1O2；∠O1OO2标60°。心皆小空心圆
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\RR{2.000}
+  \def\rr{0.550}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (\RR,0);
+  \coordinate (Otwo) at ({\RR+\rr},0);
+  \coordinate (B) at ({\RR*cos(60)},{\RR*sin(60)});
+  \coordinate (Oone) at ({(\RR-\rr)*cos(60)},{(\RR-\rr)*sin(60)});
+  \draw[line width=0.75pt] (O) circle (\RR);
+  \draw[line width=0.75pt] (Oone) circle (\rr);
+  \draw[line width=0.75pt] (Otwo) circle (\rr);
+  \draw[line width=0.75pt] (O) -- (B);
+  \draw[line width=0.75pt] (O) -- (Otwo);
+  \draw[line width=0.75pt] (Oone) -- (Otwo);
+  \draw[line width=0.5pt] (0.42,0) arc[start angle=0,end angle=60,radius=0.42];
+  \node[anchor=south west,inner sep=1pt] at (0.28,0.18) {$60^{\circ}$};
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.040);
+  \filldraw[fill=white,line width=0.55pt] (Oone) circle (0.040);
+  \filldraw[fill=white,line width=0.55pt] (Otwo) circle (0.040);
+  \node[anchor=north east,inner sep=1pt] at (-0.02,-0.02) {$O$};
+  \node[anchor=south,inner sep=1pt] at (Oone) {$O_{1}$};
+  \node[anchor=west,inner sep=2pt] at (Otwo) {$O_{2}$};
+  \node[anchor=north,inner sep=2pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第14题)}
 \end{figure}
 
@@ -14665,7 +14858,34 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0170-02.png}}
+\fitfig{%
+% fig-alt: 第15题：圆O直径AB；半径OC⊥AB；M为OC中点；弦BD过M。AO下标R。O小空心圆
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rr{1.550}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\rr,0);
+  \coordinate (B) at (\rr,0);
+  \coordinate (C) at (0,\rr);
+  \coordinate (M) at (0,{0.5*\rr});
+  \pgfmathsetmacro{\dx}{-\rr}
+  \pgfmathsetmacro{\dy}{0.5*\rr}
+  \pgfmathsetmacro{\qa}{\dx*\dx+\dy*\dy}
+  \pgfmathsetmacro{\tother}{-2*\rr*\dx/\qa}
+  \coordinate (D) at ({\rr+\tother*\dx},{\tother*\dy});
+  \draw[line width=0.75pt] (O) circle (\rr);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (O) -- (C);
+  \draw[line width=0.75pt] (B) -- (D);
+  \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
+  \node[anchor=north west,inner sep=1pt] at (0.06,-0.02) {$O$};
+  \node[anchor=east,inner sep=2pt] at (A) {$A$};
+  \node[anchor=west,inner sep=2pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=west,inner sep=2pt] at (M) {$M$};
+  \node[anchor=north,inner sep=2pt] at ({-0.5*\rr},-0.02) {$R$};
+\end{tikzpicture}%
+}
 \caption{(第15题)}
 \end{figure}
 
