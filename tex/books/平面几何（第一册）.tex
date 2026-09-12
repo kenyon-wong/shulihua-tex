@@ -20609,21 +20609,62 @@ OA = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0216-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·4（1）直角△外接圆 O，斜边为直径过圆心；虚线为三边垂直平分线；直角方在直角顶点
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (-1.548,-1.492);
+  \coordinate (A) at (-1.548,1.492);
+  \coordinate (B) at (1.548,-1.492);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B) -- (C) -- cycle;
+  % perp bisectors: of vertical leg (horizontal), of horizontal leg (vertical), of hypotenuse
+  \draw[line width=0.55pt, dashed] (-2.55,0) -- (2.55,0);
+  \draw[line width=0.55pt, dashed] (0,-2.55) -- (0,2.55);
+  \draw[line width=0.55pt, dashed] (-1.70,-1.76) -- (1.70,1.76);
+  \coordinate (RA1) at ($(C)!0.16!(A)$);
+  \coordinate (RA2) at ($(C)!0.16!(B)$);
+  \coordinate (RA3) at ($(RA1)+(RA2)-(C)$);
+  \draw[line width=0.40pt] (RA1) -- (RA3) -- (RA2);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=north west, inner sep=2pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+
+\caption{图4·4（1）}
 \end{figure}
 
-\emph{（1）}
+\emph{图4·4（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0216-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图4·4（2）钝角△外接圆 O，外心在形外；虚线为三边垂直平分线交于 O
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  % obtuse at A (upper); base BC horizontal above O
+  \coordinate (A) at (0.000,2.150);
+  \coordinate (B) at (1.862,1.075);
+  \coordinate (C) at (-1.862,1.075);
+  \coordinate (Mab) at ($(A)!0.5!(B)$);
+  \coordinate (Mbc) at ($(B)!0.5!(C)$);
+  \coordinate (Mac) at ($(A)!0.5!(C)$);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.55pt, dashed] ($(Mab)!-1.10!(O)$) -- ($(Mab)!2.35!(O)$);
+  \draw[line width=0.55pt, dashed] ($(Mbc)!-1.10!(O)$) -- ($(Mbc)!2.35!(O)$);
+  \draw[line width=0.55pt, dashed] ($(Mac)!-1.10!(O)$) -- ($(Mac)!2.35!(O)$);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=west, inner sep=2.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+
+\caption{图4·4（2）}
 \end{figure}
 
-\emph{（2）}
-
-\emph{图 4·4}
+\emph{图4·4（2）}
 
 下面利用三角形的外心来证明三角形的三条高交于一点。
 
@@ -20643,11 +20684,47 @@ OA = OC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-5}]{assets/plane-geometry-1/fig-p0216-03.png}}
-\caption{图4-5}
+\fitfig{%
+% fig-alt: 图4·5 △ABC 三高 AD、BE、CF 交于垂心 H；外虚线△PQS（过各顶点作对边平行线）；直角方在 D、E、F
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (4.60,0.00);
+  \coordinate (A) at (1.70,2.85);
+  \coordinate (D) at ($(B)!(A)!(C)$);
+  \coordinate (E) at ($(A)!(B)!(C)$);
+  \coordinate (F) at ($(A)!(C)!(B)$);
+  \coordinate (H) at (intersection of A--D and B--E);
+  \coordinate (P) at ($(A)+(B)-(C)$);
+  \coordinate (Q) at ($(B)+(C)-(A)$);
+  \coordinate (S) at ($(A)+(C)-(B)$);
+  \draw[line width=0.60pt, dashed] (P) -- (Q) -- (S) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (A) -- (D);
+  \draw[line width=0.65pt] (B) -- (E);
+  \draw[line width=0.65pt] (C) -- (F);
+  \foreach \Ft/\U/\V in {D/A/C, E/B/A, F/C/A} {
+    \coordinate (RA1) at ($(\Ft)!0.14!(\U)$);
+    \coordinate (RA2) at ($(\Ft)!0.14!(\V)$);
+    \coordinate (RA3) at ($(RA1)+(RA2)-(\Ft)$);
+    \draw[line width=0.40pt] (RA1) -- (RA3) -- (RA2);
+  }
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south west, inner sep=1pt] at (E) {$E$};
+  \node[anchor=south east, inner sep=1pt] at (F) {$F$};
+  \node[anchor=north west, inner sep=1.5pt] at (H) {$H$};
+  \node[anchor=east, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=west, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+}
+
+\caption{图4·5}
 \end{figure}
 
-\emph{图 4·5}
+\emph{图4·5}
 
 \[
 \therefore PA = BC\text{，} AS = BC.
@@ -20682,21 +20759,86 @@ CF 是 QS 的垂直平分线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0217-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·6（1）直角△ABC（直角在 B），高 BD 垂于斜边 AC；直角方并标 d 在 B 与 D；垂心即直角顶点 B
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (A) at (3.40,0.00);
+  \coordinate (C) at (0.00,2.40);
+  \coordinate (D) at ($(A)!(B)!(C)$); % foot of altitude from B to AC
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (B) -- (D);
+  % right angle at B (标 d)
+  \draw[line width=0.40pt] (0.18,0.00) -- (0.18,0.18) -- (0.00,0.18);
+  \node[anchor=center, inner sep=0pt] at (0.34,0.34) {$d$};
+  % right angle at D (标 d)
+  \coordinate (RA1) at ($(D)!0.16!(B)$);
+  \coordinate (RA2) at ($(D)!0.16!(A)$);
+  \coordinate (RA3) at ($(RA1)+(RA2)-(D)$);
+  \draw[line width=0.40pt] (RA1) -- (RA3) -- (RA2);
+  \coordinate (Dd) at ($(RA1)!0.5!(RA2)$);
+  \node[anchor=south west, inner sep=1pt] at (Dd) {$d$};
+  \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2pt] at (B) {$B$};
+  \node[anchor=east, inner sep=2pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+
+\caption{图4·6（1）}
 \end{figure}
 
-\emph{（1）}
+\emph{图4·6（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0217-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图4·6（2）钝角△ABC（钝角在 A，BC 在上），垂心 H 在形外；三高交于 H（虚线外延）；形内竖线阴线；直角方并标 d
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (C) at (-2.20,2.60);
+  \coordinate (B) at (2.40,2.60);
+  \coordinate (A) at (0.15,1.10);
+  \coordinate (D) at ($(C)!(A)!(B)$);
+  \coordinate (E) at ($(A)!(B)!(C)$);
+  \coordinate (F) at ($(A)!(C)!(B)$);
+  \coordinate (H) at (intersection of A--D and B--E);
+  \fill[pattern=vertical lines, pattern color=black!55] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  % extend sides to feet on exterior
+  \draw[line width=0.55pt, dashed] (A) -- (E);
+  \draw[line width=0.55pt, dashed] (A) -- (F);
+  \draw[line width=0.65pt] (A) -- (D);
+  \draw[line width=0.55pt, dashed] (A) -- (H);
+  \draw[line width=0.55pt, dashed] (B) -- (H);
+  \draw[line width=0.55pt, dashed] (C) -- (H);
+  % right angle at D
+  \coordinate (R1) at ($(D)!0.14!(A)$);
+  \coordinate (R2) at ($(D)!0.14!(B)$);
+  \coordinate (R3) at ($(R1)+(R2)-(D)$);
+  \draw[line width=0.40pt] (R1) -- (R3) -- (R2);
+  \node[anchor=south, inner sep=1pt] at ($(D)!0.35!(A)$) {$d$};
+  % right angle at E (on AC ext)
+  \coordinate (R1) at ($(E)!0.14!(B)$);
+  \coordinate (R2) at ($(E)!0.14!(A)$);
+  \coordinate (R3) at ($(R1)+(R2)-(E)$);
+  \draw[line width=0.40pt] (R1) -- (R3) -- (R2);
+  \node[anchor=east, inner sep=1pt] at (E) {$d$};
+  % right angle at F
+  \coordinate (R1) at ($(F)!0.14!(C)$);
+  \coordinate (R2) at ($(F)!0.14!(A)$);
+  \coordinate (R3) at ($(R1)+(R2)-(F)$);
+  \draw[line width=0.40pt] (R1) -- (R3) -- (R2);
+  \node[anchor=west, inner sep=1pt] at (F) {$d$};
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south east, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (H) {$H$};
+\end{tikzpicture}%
+}
+
+\caption{图4·6（2）}
 \end{figure}
 
-\emph{（2）}
-
-\emph{图 4·6}
+\emph{图4·6（2）}
 
 圆的任何一条直径所在的直线都是被这条直径所分成两部分的对称轴，所以圆是关于它的直径为轴对称的图形。圆也是关于圆心为对称中心的中心对称图形。
 
@@ -20752,11 +20894,38 @@ CF 是 QS 的垂直平分线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-7}]{assets/plane-geometry-1/fig-p0218-02.png}}
-\caption{图4-7}
+\fitfig{%
+% fig-alt: 图4·7 圆 O，直径 AB 竖直，弦 CD 水平交 AB 于 E（AB⊥CD）；虚线半径 OC、OD
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (0,\R);
+  \coordinate (B) at (0,-\R);
+  \coordinate (E) at (0,{-0.55*\R});
+  \pgfmathsetmacro{\hx}{sqrt(\R*\R-0.55*\R*0.55*\R)}
+  \coordinate (C) at ({-\hx},{-0.55*\R});
+  \coordinate (D) at ({\hx},{-0.55*\R});
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.55pt, dashed] (O) -- (C);
+  \draw[line width=0.55pt, dashed] (O) -- (D);
+  % right angle at E
+  \draw[line width=0.40pt] (0.16,{-0.55*\R}) -- (0.16,{-0.55*\R+0.16}) -- (0,{-0.55*\R+0.16});
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=east, inner sep=2pt] at (C) {$C$};
+  \node[anchor=west, inner sep=2pt] at (D) {$D$};
+  \node[anchor=north west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south west, inner sep=2pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+
+\caption{图4·7}
 \end{figure}
 
-\emph{图 4·7}
+\emph{图4·7}
 
 要证明\(\widehat{CB} = \widehat{BD},\widehat{CA} = \widehat{DA}\)，只须利用轴对称图形的性质。沿着直径\(AB\)折迭起来，就可看出\(\widehat{CB} = \widehat{BD},\widehat{CA} = \widehat{DA}\)
 
@@ -20792,21 +20961,79 @@ CE = ED.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0219-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·8（1）弧 PS（实线），弦 PS 虚线；AB 为弦的垂直平分线（虚线），交弧于中点 M；A、B 处构造叉号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (P) at (-2.15,0.20);
+  \coordinate (S) at (2.15,0.20);
+  \coordinate (Cen) at (0.00,-0.95);
+  \pgfmathsetmacro{\RRa}{sqrt(2.15*2.15+1.15*1.15)}
+  \coordinate (M) at (0.00, {-0.95+\RRa});
+  \coordinate (Ax) at (0.00, {-0.95+\RRa+0.42});
+  \coordinate (Bx) at (0.00, -0.70);
+  % solid arc PS (upper): CCW from S to P
+  \pgfmathsetmacro{\angS}{atan2(1.15,2.15)}
+  \pgfmathsetmacro{\angP}{180-\angS}
+  \draw[line width=0.75pt] (S) arc[start angle=\angS, end angle=\angP, radius=\RRa];
+  % dashed chord PS and perp bisector AB
+  \draw[line width=0.60pt, dashed] (P) -- (S);
+  \draw[line width=0.60pt, dashed] (Ax) -- (Bx);
+  % construction crosses at A,B
+  \draw[line width=0.45pt] ($(Ax)+(-0.10,-0.10)$) -- ($(Ax)+(0.10,0.10)$);
+  \draw[line width=0.45pt] ($(Ax)+(-0.10,0.10)$) -- ($(Ax)+(0.10,-0.10)$);
+  \draw[line width=0.45pt] ($(Bx)+(-0.10,-0.10)$) -- ($(Bx)+(0.10,0.10)$);
+  \draw[line width=0.45pt] ($(Bx)+(-0.10,0.10)$) -- ($(Bx)+(0.10,-0.10)$);
+  \node[anchor=east, inner sep=2pt] at (P) {$P$};
+  \node[anchor=west, inner sep=2pt] at (S) {$S$};
+  \node[anchor=south west, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south, inner sep=1.5pt] at (Ax) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (Bx) {$B$};
+\end{tikzpicture}%
+}
+
+\caption{图4·8（1）}
 \end{figure}
 
-\emph{（1）}
+\emph{图4·8（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0219-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图4·8（2）圆 O，直径 EF 竖直；平行弦 CD（上）与 AB（下）分别交 EF 于 M、N
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (E) at (0,\R);
+  \coordinate (F) at (0,-\R);
+  \coordinate (M) at (0,{0.55*\R});
+  \coordinate (N) at (0,{-0.35*\R});
+  \pgfmathsetmacro{\cx}{sqrt(\R*\R-0.55*\R*0.55*\R)}
+  \pgfmathsetmacro{\ax}{sqrt(\R*\R-0.35*\R*0.35*\R)}
+  \coordinate (C) at ({-\cx},{0.55*\R});
+  \coordinate (D) at ({\cx},{0.55*\R});
+  \coordinate (A) at ({-\ax},{-0.35*\R});
+  \coordinate (B) at ({\ax},{-0.35*\R});
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (E) -- (F);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.70pt] (A) -- (B);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=east, inner sep=2pt] at (C) {$C$};
+  \node[anchor=west, inner sep=2pt] at (D) {$D$};
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=2pt] at (B) {$B$};
+  \node[anchor=west, inner sep=2pt] at (M) {$M$};
+  \node[anchor=west, inner sep=2pt] at (N) {$N$};
+  \node[anchor=west, inner sep=2.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+
+\caption{图4·8（2）}
 \end{figure}
 
-\emph{（2）}
-
-\emph{图 4·8}
+\emph{图4·8（2）}
 
 定理 8 平行弦之间所夹的弧相等。
 
