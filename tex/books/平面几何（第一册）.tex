@@ -28243,8 +28243,32 @@ QN=l，可知 N 点的位置一定，连结 PN，EN；则有 EN 平行 SQ，∴�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-1/fig-p0280-03.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: 图（第3题）圆弦 AB；直线 l 交圆于 P、P'；连 PA、PB、P'A、P'B；于 P、P' 标视角弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.70}
+  \coordinate (O) at (0,0);
+  \draw[line width=0.85pt] (O) circle [radius=\R];
+  \coordinate (A) at (220:\R);
+  \coordinate (B) at (320:\R);
+  \coordinate (P) at (125:\R);
+  \coordinate (Pp) at (50:\R);
+  \draw[line width=0.80pt] (A) -- (B);
+  \draw[line width=0.80pt] (A) -- (P) -- (B);
+  \draw[line width=0.80pt] (A) -- (Pp) -- (B);
+  \draw[line width=0.80pt] ($(P)!-0.55!(Pp)$) -- ($(Pp)!-0.45!(P)$);
+  \draw[line width=0.50pt] let \p1=($(A)-(P)$), \p2=($(B)-(P)$) in
+    (P) ++({atan2(\y1,\x1)}:0.32) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.32];
+  \draw[line width=0.50pt] let \p1=($(A)-(Pp)$), \p2=($(B)-(Pp)$) in
+    (Pp) ++({atan2(\y1,\x1)}:0.30) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.30];
+  \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south east, inner sep=1pt] at (P) {$P$};
+  \node[anchor=south west, inner sep=1pt] at (Pp) {$P'$};
+  \node[anchor=east, inner sep=1.5pt] at ($(P)!-0.55!(Pp)$) {$l$};
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \emph{（第3题）}
@@ -28276,25 +28300,65 @@ QN=l，可知 N 点的位置一定，连结 PN，EN；则有 EN 平行 SQ，∴�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-1/fig-p0281-01.png}}
-\caption{(第8题)}
+\fitfig{%
+% fig-alt: 图（第6题）AB 为底；D 在 A 上方；AD、DB；射线 AO 交 DB 于 O；左弧 AD、下半圆弧 AB；∠DAO 弧标记
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.20,0);
+  \coordinate (D) at (0.25,1.60);
+  \draw[line width=0.80pt] (A) -- (B);
+  \draw[line width=0.80pt] (A) -- (D) -- (B);
+  \coordinate (O) at ($(D)!0.42!(B)$);
+  \draw[line width=0.80pt] (A) -- ($(A)!1.38!(O)$);
+  \draw[line width=0.70pt] (A) arc[start angle=180, end angle=360, radius=1.60];
+  \draw[line width=0.55pt] (D) .. controls ($(D)+(-0.55,0.05)$) and ($(A)+(-0.55,0.55)$) .. (A);
+  \draw[line width=0.50pt] let \p1=($(D)-(A)$), \p2=($(O)-(A)$) in
+    (A) ++({atan2(\y1,\x1)}:0.38) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.38];
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=south west, inner sep=1pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
-\emph{（第8题）}
+\emph{（第6题）}
 
 \begin{enumerate}
 \setcounter{enumi}{6}
 \item
   在已知圆上求一点，使它与已知线段的端点连线所成的角等于\(60^{\circ}\)。
 \item
-  如图，点 A 是半圆外的一点，AB 和 AC 分别和半圆相交于 E、F，则 BE 和 CF
+  如图，点 A 是半圆外的一点，AB 和 AC 分别和半圆相交于 F、E，则 BE 和 CF
   的交点 H 是三角形 ABC 的垂心（三高的交点）。
 \end{enumerate}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-1/fig-p0281-02.png}}
-\caption{(第8题)}
+\fitfig{%
+% fig-alt: 图（第8题）△ABC；以 BC 为直径的半圆交 AB、AC 于 F、E；BE、CF 交于垂心 H
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (3.40,0);
+  \coordinate (A) at (1.55,2.85);
+  \draw[line width=0.80pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (B) arc[start angle=180, end angle=0, radius=1.70];
+  % feet of perpendiculars: F = proj of C on AB, E = proj of B on AC
+  \coordinate (F) at ($(A)!(C)!(B)$);
+  \coordinate (E) at ($(A)!(B)!(C)$);
+  \draw[line width=0.75pt] (B) -- (E);
+  \draw[line width=0.75pt] (C) -- (F);
+  \coordinate (H) at (intersection of B--E and C--F);
+  \node[anchor=south, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1.2pt] at (F) {$F$};
+  \node[anchor=west, inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=north, inner sep=1.5pt] at (H) {$H$};
+\end{tikzpicture}%
+}
+\caption{（第8题）}
 \end{figure}
 
 \emph{（第8题）}
@@ -28312,16 +28376,54 @@ QN=l，可知 N 点的位置一定，连结 PN，EN；则有 EN 平行 SQ，∴�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-1/fig-p0282-01.png}}
-\caption{(第10题)}
+\fitfig{%
+% fig-alt: 已知∠AOB（OA 水平、OB 斜下）与线段 EF（两端短竖线）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (O) at (0,1.80);
+  \coordinate (A) at (2.40,1.80);
+  \coordinate (B) at (0.85,0.15);
+  \draw[line width=0.80pt] (O) -- (A);
+  \draw[line width=0.80pt] (O) -- (B);
+  \node[anchor=south east, inner sep=1pt] at (O) {$O$};
+  \node[anchor=west, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \coordinate (E) at (0.10,-0.35);
+  \coordinate (F) at (2.20,-0.35);
+  \draw[line width=0.80pt] (E) -- (F);
+  \draw[line width=0.80pt] ($(E)+(0,-0.10)$) -- ($(E)+(0,0.10)$);
+  \draw[line width=0.80pt] ($(F)+(0,-0.10)$) -- ($(F)+(0,0.10)$);
+  \node[anchor=north, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north, inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第10题）}
 \end{figure}
 
 \emph{（第10题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-1/fig-p0282-02.png}}
-\caption{(第11题)}
+\fitfig{%
+% fig-alt: 已知线段 AB（斜上，两端短竖线）与线段 EF（水平，两端短竖线）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.10,0.85);
+  \coordinate (B) at (2.45,1.70);
+  \draw[line width=0.80pt] (A) -- (B);
+  \pgfmathsetmacro{\ang}{atan2(0.85,2.35)}
+  \draw[line width=0.80pt] ($(A)+({\ang+90}:0.10)$) -- ($(A)+({\ang-90}:0.10)$);
+  \draw[line width=0.80pt] ($(B)+({\ang+90}:0.10)$) -- ($(B)+({\ang-90}:0.10)$);
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \coordinate (E) at (0.10,0.05);
+  \coordinate (F) at (2.20,0.05);
+  \draw[line width=0.80pt] (E) -- (F);
+  \draw[line width=0.80pt] ($(E)+(0,-0.10)$) -- ($(E)+(0,0.10)$);
+  \draw[line width=0.80pt] ($(F)+(0,-0.10)$) -- ($(F)+(0,0.10)$);
+  \node[anchor=east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=west, inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第11题）}
 \end{figure}
 
 \emph{（第11题）}
@@ -28337,14 +28439,38 @@ QN=l，可知 N 点的位置一定，连结 PN，EN；则有 EN 平行 SQ，∴�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第282页）}]{assets/plane-geometry-1/fig-p0282-03.png}}
-\caption{图示（原PDF第282页）}
+\fitfig{%
+% fig-alt: 已知距离 l（两端短竖线）与定点 Q
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (L0) at (0,0.85);
+  \coordinate (L1) at (1.70,0.85);
+  \draw[line width=0.80pt] (L0) -- (L1);
+  \draw[line width=0.80pt] ($(L0)+(0,-0.10)$) -- ($(L0)+(0,0.10)$);
+  \draw[line width=0.80pt] ($(L1)+(0,-0.10)$) -- ($(L1)+(0,0.10)$);
+  \node[anchor=south, inner sep=1.5pt] at ($(L0)!0.5!(L1)$) {$l$};
+  \coordinate (Q) at (0.35,0.05);
+  \fill (Q) circle [radius=1.1pt];
+  \node[anchor=west, inner sep=2pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+\caption{已知距离 $l$ 与定点 $Q$}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={已知线段 AB（第12题条件图的一部分）}]{assets/plane-geometry-1/fig-p0282-04.png}}
-\caption{已知线段 AB（第12题条件图的一部分）}
+\fitfig{%
+% fig-alt: 已知线段 AB（两端短竖线）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.60,0);
+  \draw[line width=0.80pt] (A) -- (B);
+  \draw[line width=0.80pt] ($(A)+(0,-0.10)$) -- ($(A)+(0,0.10)$);
+  \draw[line width=0.80pt] ($(B)+(0,-0.10)$) -- ($(B)+(0,0.10)$);
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
+\caption{已知线段 $AB$}
 \end{figure}
 
 \emph{（第12题）}
@@ -28357,8 +28483,16 @@ QN=l，可知 N 点的位置一定，连结 PN，EN；则有 EN 平行 SQ，∴�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第282页）}]{assets/plane-geometry-1/fig-p0282-05.png}}
-\caption{图示（原PDF第282页）}
+\fitfig{%
+% fig-alt: 已知两平行线 $l_1$、$l_2$（同向微斜）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.80pt] (0,1.05) -- (2.80,0.35);
+  \draw[line width=0.80pt] (0,0.45) -- (2.80,-0.25);
+  \node[anchor=east, inner sep=1.5pt] at (0,1.05) {$l_1$};
+  \node[anchor=east, inner sep=1.5pt] at (0,0.45) {$l_2$};
+\end{tikzpicture}%
+}
+\caption{已知平行线 $l_1$、$l_2$}
 \end{figure}
 
 \begin{figure}
