@@ -15743,7 +15743,30 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-1}]{assets/plane-geometry-2/fig-p0177-01.png}}
+\fitfig{%
+% fig-alt: 图3-1：矩形ABCD（A左下、B右下、C右上、D左上）被虚线分成2列3行共6个单位正方形，下方标P；右侧单位正方形边长标1 cm，下方标U
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\u{0.85}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2*\u,0);
+  \coordinate (C) at (2*\u,3*\u);
+  \coordinate (D) at (0,3*\u);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed,line width=0.6pt] (\u,0) -- (\u,3*\u);
+  \draw[dashed,line width=0.6pt] (0,\u) -- (2*\u,\u);
+  \draw[dashed,line width=0.6pt] (0,2*\u) -- (2*\u,2*\u);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=2pt] at (1*\u,0) {$P$};
+  \coordinate (Ul) at (3.15*\u,1.85*\u);
+  \draw[line width=0.75pt] (Ul) rectangle ++(\u,\u);
+  \node[anchor=south,inner sep=2pt] at ([shift={(0.5*\u,\u)}]Ul) {$1\,\mathrm{cm}$};
+  \node[anchor=east,inner sep=2pt] at ([shift={(0,0.5*\u)}]Ul) {$1\,\mathrm{cm}$};
+  \node[anchor=north,inner sep=2pt] at ([shift={(0.5*\u,0)}]Ul) {$U$};
+\end{tikzpicture}%
+}
 \caption{图3-1}
 \end{figure}
 
@@ -15755,7 +15778,37 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-2}]{assets/plane-geometry-2/fig-p0177-02.png}}
+\fitfig{%
+% fig-alt: 图3-2：左侧单位正方形U边长1 cm；右侧L形虚线方格网（底4×2、右上3×1缺左上格）上叠五边形ABCDE，顶点多不在格点
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\u{0.72}
+  \coordinate (U0) at (0,0.55*\u);
+  \draw[line width=0.75pt] (U0) rectangle ++(\u,\u);
+  \node[anchor=south,inner sep=2pt] at ([shift={(0.5*\u,\u)}]U0) {$1\,\mathrm{cm}$};
+  \node[anchor=east,inner sep=2pt] at ([shift={(0,0.5*\u)}]U0) {$1\,\mathrm{cm}$};
+  \node[anchor=center,inner sep=0pt] at ([shift={(0.5*\u,0.28*\u)}]U0) {$U$};
+  \begin{scope}[shift={(2.15*\u,0)}]
+    \draw[line width=0.75pt]
+      (0,0) -- (4*\u,0) -- (4*\u,3*\u) -- (1*\u,3*\u) -- (1*\u,2*\u) -- (0,2*\u) -- cycle;
+    \draw[dashed,line width=0.55pt] (1*\u,0) -- (1*\u,2*\u);
+    \draw[dashed,line width=0.55pt] (2*\u,0) -- (2*\u,3*\u);
+    \draw[dashed,line width=0.55pt] (3*\u,0) -- (3*\u,3*\u);
+    \draw[dashed,line width=0.55pt] (0,1*\u) -- (4*\u,1*\u);
+    \draw[dashed,line width=0.55pt] (1*\u,2*\u) -- (4*\u,2*\u);
+    \coordinate (A) at (1.05*\u,0);
+    \coordinate (B) at (4*\u,0);
+    \coordinate (C) at (3.55*\u,1.55*\u);
+    \coordinate (D) at (2.45*\u,2.65*\u);
+    \coordinate (E) at (0.45*\u,1.40*\u);
+    \draw[line width=0.85pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+    \node[anchor=north,inner sep=1pt] at (A) {$A$};
+    \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+    \node[anchor=west,inner sep=2pt] at (C) {$C$};
+    \node[anchor=south,inner sep=1pt] at (D) {$D$};
+    \node[anchor=east,inner sep=2pt] at (E) {$E$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3-2}
 \end{figure}
 
@@ -15764,7 +15817,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \end{quote}
 
 在推导某些多边形的面积计算公式时，我们常常割去一个多边形的一部分，把割下的部分改变了位置，再把它拼凑在原有多边形的剩余部分上。象在图3·3里，我们在四边形ABCD的左边，割去一个三角形I（图3·3（1）），然后把三角形I搬到四边形ABCD的右边去（图3·3（2）和（3）），把它拼凑在四边形II上，成为四边形
-\(EED'D\)
+\(EE'D'D\)
 （图3·3（4））。这样处理图形的方法叫面积割补法。显然多边形经过割补之后，
 它的面积没有改变， 即经过割补后的多边形和原多边形是等积的。
 割补一个多边形的目的在于改变它的形状，
@@ -15773,7 +15826,25 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0178-01.png}}
+\fitfig{%
+% fig-alt: 图3-3(1)：平行四边形ABCD（底AB水平）；高DE⊥AB于E；左直角△ADE标I，右直角梯形EBCD标II
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (E) at (1.0000,0);
+  \coordinate (B) at (3.6000,0);
+  \coordinate (D) at (1.0000,1.8000);
+  \coordinate (C) at (4.6000,1.8000);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (D) -- (E);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=2pt] at (E) {$E$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node at (0.55,0.70) {$I$};
+  \node at (2.70,0.90) {$II$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -15783,7 +15854,38 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0178-02.png}}
+\fitfig{%
+% fig-alt: 图3-3(2)：割下的直角△I（竖边D'E'）与梯形II（竖边DE）略分开；弯箭头示意将I移到II右侧
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\h{1.7000}
+  \def\s{0.9500}
+  \def\g{0.2800}
+  \def\w{2.4000}
+  % triangle I (left)
+  \coordinate (A) at (0,0);
+  \coordinate (Ep) at (\s,0);
+  \coordinate (Dp) at (\s,\h);
+  \draw[line width=0.75pt] (A) -- (Ep) -- (Dp) -- cycle;
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (Ep) {$E'$};
+  \node[anchor=south,inner sep=1pt] at (Dp) {$D'$};
+  \node at (0.55,0.55) {$I$};
+  % trapezoid II (right)
+  \coordinate (E) at (\s+\g,0);
+  \coordinate (D) at (\s+\g,\h);
+  \coordinate (B) at (\s+\g+\w,0);
+  \coordinate (C) at (\s+\g+\w+\s,\h);
+  \draw[line width=0.75pt] (E) -- (B) -- (C) -- (D) -- cycle;
+  \node[anchor=north,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node at (\s+\g+1.20,0.85) {$II$};
+  % curved arrow
+  \draw[-{Stealth[length=2.2mm]},line width=0.7pt]
+    (0.30,-0.35) .. controls (1.80,-1.05) and (3.60,-0.95) .. (4.55,-0.15);
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -15793,7 +15895,38 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0178-03.png}}
+\fitfig{%
+% fig-alt: 图3-3(3)：梯形II在左（竖边DE、斜边BC）；直角△I在右（竖边D'E'、斜边近BC）；弯箭头示意拼合
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\h{1.7000}
+  \def\s{0.9500}
+  \def\w{2.2000}
+  \def\g{0.3200}
+  % trapezoid II
+  \coordinate (E) at (0,0);
+  \coordinate (D) at (0,\h);
+  \coordinate (B) at (\w,0);
+  \coordinate (C) at (\w+\s,\h);
+  \draw[line width=0.75pt] (E) -- (B) -- (C) -- (D) -- cycle;
+  \node[anchor=north east,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node at (1.00,0.85) {$II$};
+  % triangle I on the right (final orientation)
+  \coordinate (A) at (\w+\g,0);
+  \coordinate (Ep) at (\w+\g+\s,0);
+  \coordinate (Dp) at (\w+\g+\s,\h);
+  \draw[line width=0.75pt] (A) -- (Ep) -- (Dp) -- cycle;
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (Ep) {$E'$};
+  \node[anchor=south west,inner sep=1pt] at (Dp) {$D'$};
+  \node at (\w+\g+0.55,0.55) {$I$};
+  % curved arrow
+  \draw[-{Stealth[length=2.2mm]},line width=0.7pt]
+    (-0.15,-0.35) .. controls (1.50,-1.10) and (3.20,-0.90) .. (3.85,0.35);
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -15803,7 +15936,29 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0178-04.png}}
+\fitfig{%
+% fig-alt: 图3-3(4)：矩形EE'D'D（E左下、E'右下、D'右上、D左上）；斜线D'B分出左梯形II与右直角△I（B在底边）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\h{1.7000}
+  \def\s{0.9500}
+  \def\w{2.4000}
+  \coordinate (E) at (0,0);
+  \coordinate (Ep) at (\w+\s,0);
+  \coordinate (Dp) at (\w+\s,\h);
+  \coordinate (D) at (0,\h);
+  \coordinate (B) at (\w,0);
+  \coordinate (C) at (\w+\s,\h); % = D'
+  \draw[line width=0.75pt] (E) -- (Ep) -- (Dp) -- (D) -- cycle;
+  \draw[line width=0.75pt] (B) -- (Dp);
+  \node[anchor=north east,inner sep=1pt] at (E) {$E$};
+  \node[anchor=north west,inner sep=1pt] at (Ep) {$E'$};
+  \node[anchor=south west,inner sep=1pt] at (Dp) {$D'$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=2pt] at (B) {$B$};
+  \node at (1.10,0.85) {$II$};
+  \node at (\w+0.45,0.55) {$I$};
+\end{tikzpicture}%
+}
 \caption{(4)}
 \end{figure}
 
@@ -15848,7 +16003,32 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0179-01.png}}
+\fitfig{%
+% fig-alt: 第3题：共底AB、夹于平行线间的□ABCD与□ABC'D'；顶边从左到右D'、D、C'、C；左△D'AD标I，右△C'BC标II，中部四边形ABC'D标III
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.2000,0);
+  \coordinate (Dp) at (-0.7000,1.9000);
+  \coordinate (D) at (0.9000,1.9000);
+  \coordinate (Cp) at (2.5000,1.9000);
+  \coordinate (C) at (4.1000,1.9000);
+  \draw[line width=0.75pt] (Dp) -- (C);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (Dp);
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (B) -- (Cp);
+  \draw[line width=0.75pt] (B) -- (C);
+  \node[anchor=north,inner sep=2pt] at (A) {$A$};
+  \node[anchor=north,inner sep=2pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (Dp) {$D'$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (Cp) {$C'$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node at (0.05,1.15) {$I$};
+  \node at (3.25,1.15) {$II$};
+  \node at (1.60,0.85) {$III$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -15875,7 +16055,45 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-4}]{assets/plane-geometry-2/fig-p0179-02.png}}
+\fitfig{%
+% fig-alt: 图3-4：左单位正方形U边长a；右矩形ABCD虚线分成5列3行，底标b与各段a，高标h与各段a
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\u{0.70}
+  \coordinate (U0) at (0,0.90*\u);
+  \draw[line width=0.75pt] (U0) rectangle ++(\u,\u);
+  \node[anchor=south,inner sep=1pt] at ([shift={(0.5*\u,\u)}]U0) {$a$};
+  \node[anchor=east,inner sep=1pt] at ([shift={(0,0.5*\u)}]U0) {$a$};
+  \node[anchor=center,inner sep=0pt] at ([shift={(0.5*\u,0.28*\u)}]U0) {$U$};
+  \begin{scope}[shift={(2.15*\u,0)}]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (5*\u,0);
+    \coordinate (C) at (5*\u,3*\u);
+    \coordinate (D) at (0,3*\u);
+    \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+    \foreach \x in {1,2,3,4} {
+      \draw[dashed,line width=0.55pt] (\x*\u,0) -- (\x*\u,3*\u);
+    }
+    \foreach \y in {1,2} {
+      \draw[dashed,line width=0.55pt] (0,\y*\u) -- (5*\u,\y*\u);
+    }
+    \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+    \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+    \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+    \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+    \foreach \x in {0,1,2,3,4} {
+      \node[anchor=north,inner sep=0.5pt,font=\scriptsize] at ({\x*\u+0.5*\u},-0.12*\u) {$a$};
+    }
+    \foreach \y in {0,1,2} {
+      \node[anchor=east,inner sep=0.5pt,font=\scriptsize] at (-0.08*\u,{\y*\u+0.5*\u}) {$a$};
+      \node[anchor=west,inner sep=0.5pt,font=\scriptsize] at (5*\u+0.08*\u,{\y*\u+0.5*\u}) {$a$};
+    }
+    \draw[<->,line width=0.55pt] (0,-0.72*\u) -- (5*\u,-0.72*\u);
+    \node[anchor=north,inner sep=1pt] at (2.5*\u,-0.72*\u) {$b$};
+    \draw[<->,line width=0.55pt] (-0.85*\u,0) -- (-0.85*\u,3*\u);
+    \node[anchor=east,inner sep=1pt] at (-0.85*\u,1.5*\u) {$h$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3-4}
 \end{figure}
 
