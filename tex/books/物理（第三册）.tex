@@ -18855,26 +18855,128 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（9）S、N 磁极左右相对，中间电流向外、磁场力向下}]{assets/physics-3/fig-p0258-08.png}}
-\caption{（9）S、N 磁极左右相对，中间电流向外、磁场力向下}
+\fitfig{%
+% fig-alt: （9）左S右N磁极，中间电流I垂直纸面向外（圆内点），磁场力F竖直向下
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (-1.55,-1.05) rectangle (-0.75,1.05);
+  \node at (-1.15,0) {$S$};
+  \draw[line width=0.75pt] (0.75,-1.05) rectangle (1.55,1.05);
+  \node at (1.15,0) {$N$};
+  \draw[line width=0.75pt,fill=white] (0,0.15) circle[radius=0.26];
+  \fill (0,0.15) circle[radius=0.055];
+  \draw[line width=0.7pt,->] (0,-0.15) -- (0,-1.05);
+  \node[anchor=north,inner sep=1pt] at (0,-1.05) {$F$};
+\end{tikzpicture}%
+}
+\caption{（9）左 S 右 N 磁极，中间电流向外，磁场力 F 向下}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（10）N、S 磁极间的倾斜通电导线及磁场力}]{assets/physics-3/fig-p0258-09.png}}
-\caption{（10）N、S 磁极间的倾斜通电导线及磁场力}
+\fitfig{%
+% fig-alt: （10）左N右S立体磁极，中间竖直导线，磁场力F垂直纸面向里
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left N pole (oblique)
+  \draw[line width=0.7pt]
+    (-1.55,-0.15) -- (-0.55,-0.15) -- (-0.55,1.35) -- (-1.55,1.35) -- cycle;
+  \draw[line width=0.7pt]
+    (-0.55,-0.15) -- (-0.30,0.10) -- (-0.30,1.60) -- (-0.55,1.35);
+  \draw[line width=0.7pt]
+    (-1.55,1.35) -- (-1.30,1.60) -- (-0.30,1.60);
+  \node at (-1.05,0.60) {$N$};
+  % right S pole
+  \draw[line width=0.7pt]
+    (0.55,-0.15) -- (1.55,-0.15) -- (1.55,1.35) -- (0.55,1.35) -- cycle;
+  \draw[line width=0.7pt]
+    (1.55,-0.15) -- (1.80,0.10) -- (1.80,1.60) -- (1.55,1.35);
+  \draw[line width=0.7pt]
+    (0.55,1.35) -- (0.80,1.60) -- (1.80,1.60);
+  \node at (1.05,0.60) {$S$};
+  % vertical wire
+  \draw[line width=1.15pt] (0,-0.55) -- (0,1.75);
+  % curly leads
+  \draw[line width=0.55pt] (0,1.75)
+    .. controls (0.12,1.92) and (-0.10,2.05) .. (0.08,2.18);
+  \draw[line width=0.55pt] (0,-0.55)
+    .. controls (0.12,-0.72) and (-0.10,-0.85) .. (0.08,-0.98);
+  % F into page (foreshortened)
+  \draw[line width=0.7pt,->] (0,0.55) -- (-0.55,0.95);
+  \node[anchor=south east,inner sep=1pt] at (-0.55,0.95) {$F$};
+\end{tikzpicture}%
+}
+\caption{（10）左 N 右 S 磁极，竖直导线，磁场力 F 垂直纸面向里}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（11）S、N 磁极间的竖直通电导线}]{assets/physics-3/fig-p0258-10.png}}
-\caption{（11）S、N 磁极间的竖直通电导线}
+\fitfig{%
+% fig-alt: （11）左S右N立体磁极，中间竖直导线，电流I向上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left S
+  \draw[line width=0.7pt]
+    (-1.55,-0.15) -- (-0.55,-0.15) -- (-0.55,1.35) -- (-1.55,1.35) -- cycle;
+  \draw[line width=0.7pt]
+    (-0.55,-0.15) -- (-0.30,0.10) -- (-0.30,1.60) -- (-0.55,1.35);
+  \draw[line width=0.7pt]
+    (-1.55,1.35) -- (-1.30,1.60) -- (-0.30,1.60);
+  \node at (-1.05,0.60) {$S$};
+  % right N
+  \draw[line width=0.7pt]
+    (0.55,-0.15) -- (1.55,-0.15) -- (1.55,1.35) -- (0.55,1.35) -- cycle;
+  \draw[line width=0.7pt]
+    (1.55,-0.15) -- (1.80,0.10) -- (1.80,1.60) -- (1.55,1.35);
+  \draw[line width=0.7pt]
+    (0.55,1.35) -- (0.80,1.60) -- (1.80,1.60);
+  \node at (1.05,0.60) {$N$};
+  % wire
+  \draw[line width=1.15pt] (0,-0.55) -- (0,1.75);
+  \draw[line width=0.55pt] (0,1.75)
+    .. controls (0.12,1.92) and (-0.10,2.05) .. (0.08,2.18);
+  \draw[line width=0.55pt] (0,-0.55)
+    .. controls (0.12,-0.72) and (-0.10,-0.85) .. (0.08,-0.98);
+  % I up
+  \draw[line width=0.7pt,->] (-0.28,0.15) -- (-0.28,1.05);
+  \node[anchor=east,inner sep=2pt] at (-0.28,1.15) {$I$};
+\end{tikzpicture}%
+}
+\caption{（11）左 S 右 N 磁极，竖直通电导线，电流 I 向上}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（12）马蹄形磁铁间的倾斜通电导线}]{assets/physics-3/fig-p0258-11.png}}
-\caption{（12）马蹄形磁铁间的倾斜通电导线}
+\fitfig{%
+% fig-alt: （12）横放马蹄形磁铁上臂N，间隙中斜向通电导线电流I向右后
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % horseshoe opening to the right (oblique-ish double outline)
+  % outer
+  \draw[line width=0.95pt]
+    (1.35,0.95) -- (-0.15,0.95)
+    arc[start angle=90,end angle=270,radius=0.95]
+    -- (1.35,-0.95);
+  \draw[line width=0.95pt]
+    (1.35,0.35) -- (-0.15,0.35)
+    arc[start angle=90,end angle=270,radius=0.35]
+    -- (1.35,-0.35);
+  % close pole ends
+  \draw[line width=0.95pt] (1.35,0.95) -- (1.35,0.35);
+  \draw[line width=0.95pt] (1.35,-0.35) -- (1.35,-0.95);
+  % slight top face hint
+  \draw[line width=0.65pt] (-0.15,0.95) -- (0.05,1.15) -- (1.55,1.15) -- (1.35,0.95);
+  \draw[line width=0.65pt] (1.35,0.35) -- (1.55,0.55) -- (1.55,1.15);
+  \node at (0.55,0.65) {$N$};
+  % tilted wire through gap
+  \draw[line width=1.15pt] (-0.55,-0.55) -- (1.85,0.55);
+  % curly ends
+  \draw[line width=0.5pt] (-0.55,-0.55)
+    .. controls (-0.75,-0.70) and (-0.70,-0.90) .. (-0.90,-0.95);
+  \draw[line width=0.5pt] (1.85,0.55)
+    .. controls (2.05,0.70) and (2.00,0.90) .. (2.20,0.95);
+  % I along wire
+  \draw[line width=0.7pt,->] (0.55,0.05) -- (1.25,0.35);
+  \node[anchor=south,inner sep=1pt] at (0.95,0.32) {$I$};
+\end{tikzpicture}%
+}
+\caption{（12）马蹄形磁铁（上臂 N）间隙中的倾斜通电导线}
 \end{figure}
 
 \emph{（2）}
@@ -18906,8 +19008,31 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={转向：}]{assets/physics-3/fig-p0258-12.png}}
-\caption{转向：}
+\fitfig{%
+% fig-alt: （1）匀强磁场B水平向右；线圈截面左边电流向里、右边向外；轴OO'水平
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {0.85,0.35,-0.15,-0.65} {
+    \draw[line width=0.65pt,->] (-1.70,\y) -- (1.70,\y);
+  }
+  \node[anchor=west,inner sep=2pt] at (1.70,0.35) {$B$};
+  % coil cross-section: left into, right out
+  \draw[line width=0.7pt,fill=white] (-0.85,0.10) circle[radius=0.20];
+  \draw[line width=0.55pt] (-0.96,-0.01) -- (-0.74,0.21);
+  \draw[line width=0.55pt] (-0.96,0.21) -- (-0.74,-0.01);
+  \draw[line width=0.7pt,fill=white] (0.85,0.10) circle[radius=0.20];
+  \fill (0.85,0.10) circle[radius=0.045];
+  % dashed coil edges
+  \draw[line width=0.55pt,dashed] (-0.85,0.30) -- (0.85,0.30);
+  \draw[line width=0.55pt,dashed] (-0.85,-0.10) -- (0.85,-0.10);
+  % OO'
+  \draw[line width=0.55pt,dash pattern=on 2.5pt off 1.2pt on 0.6pt off 1.2pt]
+    (-1.35,-0.95) -- (1.35,-0.95);
+  \fill (0,-0.95) circle[radius=0.035];
+  \node[anchor=east,inner sep=2pt] at (-1.35,-0.95) {$O$};
+  \node[anchor=west,inner sep=2pt] at (1.35,-0.95) {$O'$};
+\end{tikzpicture}%
+}
+\caption{（1）磁场 B 向右，线圈截面左里右外，轴 \(OO'\)}
 \end{figure}
 
 \emph{转向：}
@@ -18916,8 +19041,37 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={转向：}]{assets/physics-3/fig-p0258-13.png}}
-\caption{转向：}
+\fitfig{%
+% fig-alt: （2）匀强磁场B水平向左；线圈截面倾斜60°，左下电流向里、右上向外；轴OO'
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {1.05,0.45,-0.15,-0.75} {
+    \draw[line width=0.65pt,->] (1.75,\y) -- (-1.75,\y);
+  }
+  \node[anchor=east,inner sep=2pt] at (-1.75,0.45) {$B$};
+  % tilted coil: angle 60° to horizontal
+  \def\ang{60}
+  \def\R{1.05}
+  % centers of wire ends
+  \coordinate (L) at ({-\R*cos(\ang)},{-\R*sin(\ang)});
+  \coordinate (R) at ({\R*cos(\ang)},{\R*sin(\ang)});
+  \draw[line width=0.7pt,fill=white] (L) circle[radius=0.18];
+  \draw[line width=0.5pt] ([shift={(-0.09,-0.09)}]L) -- ([shift={(0.09,0.09)}]L);
+  \draw[line width=0.5pt] ([shift={(-0.09,0.09)}]L) -- ([shift={(0.09,-0.09)}]L);
+  \draw[line width=0.7pt,fill=white] (R) circle[radius=0.18];
+  \fill (R) circle[radius=0.04];
+  \draw[line width=0.55pt,dashed] (L) -- (R);
+  % OO' along coil
+  \draw[line width=0.5pt,dash pattern=on 2.5pt off 1.2pt on 0.6pt off 1.2pt]
+    ({-1.35*cos(\ang)},{-1.35*sin(\ang)}) -- ({1.35*cos(\ang)},{1.35*sin(\ang)});
+  \fill (0,0) circle[radius=0.03];
+  \node[anchor=north east,inner sep=1pt] at ({-1.15*cos(\ang)},{-1.15*sin(\ang)}) {$O$};
+  \node[anchor=south west,inner sep=1pt] at ({1.15*cos(\ang)},{1.15*sin(\ang)}) {$O'$};
+  % 60° arc at L between horizontal and coil
+  \draw[line width=0.5pt] (L) ++(0.55,0) arc[start angle=0,end angle=60,radius=0.55];
+  \node[anchor=west,inner sep=1pt,font=\small] at ([shift={(0.62,0.18)}]L) {$60^\circ$};
+\end{tikzpicture}%
+}
+\caption{（2）磁场 B 向左，线圈截面与 B 成 \(60^\circ\)，轴 \(OO'\)}
 \end{figure}
 
 \emph{转向：}
@@ -18926,8 +19080,28 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={左视转向：}]{assets/physics-3/fig-p0258-14.png}}
-\caption{左视转向：}
+\fitfig{%
+% fig-alt: （3）匀强磁场B为×向里；矩形线圈逆时针电流；水平轴OO'；左视
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \x in {-1.15,-0.55,0.05,0.65,1.25} {
+    \foreach \y in {-1.05,-0.45,0.15,0.75,1.35} {
+      \node[inner sep=0pt,font=\scriptsize] at (\x,\y) {$\times$};
+    }
+  }
+  \draw[line width=0.85pt] (-0.95,-0.85) rectangle (0.95,0.95);
+  % CCW current arrows
+  \draw[line width=0.65pt,->] (-0.95,-0.35) -- (-0.95,0.45);
+  \draw[line width=0.65pt,->] (-0.45,0.95) -- (0.45,0.95);
+  \draw[line width=0.65pt,->] (0.95,0.45) -- (0.95,-0.35);
+  \draw[line width=0.65pt,->] (0.45,-0.85) -- (-0.45,-0.85);
+  % OO'
+  \draw[line width=0.6pt,dash pattern=on 2.5pt off 1.2pt on 0.6pt off 1.2pt]
+    (-1.45,0.05) -- (1.45,0.05);
+  \node[anchor=east,inner sep=2pt] at (-1.45,0.05) {$O$};
+  \node[anchor=west,inner sep=2pt] at (1.45,0.05) {$O'$};
+\end{tikzpicture}%
+}
+\caption{（3）磁场 B 向里（$\times$），矩形线圈，轴 \(OO'$（左视）}
 \end{figure}
 
 \emph{左视转向：}
@@ -18936,8 +19110,32 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={转向：}]{assets/physics-3/fig-p0258-15.png}}
-\caption{转向：}
+\fitfig{%
+% fig-alt: （4）匀强磁场B水平向右；矩形线圈绕竖直轴OO'，左臂电流向上、右臂向下
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B field
+  \foreach \y in {1.35,0.75,0.15,-0.45} {
+    \draw[line width=0.6pt,->] (-1.85,\y) -- (1.85,\y);
+  }
+  \node[anchor=west,inner sep=2pt] at (1.85,0.75) {$B$};
+  % 3D rectangle coil: front-right closer
+  % back-left vertical, front-right vertical, top/bottom connecting
+  \coordinate (A) at (-0.85,1.15); % top back-left
+  \coordinate (B) at (0.55,1.35);  % top front-right
+  \coordinate (C) at (0.55,-0.85); % bottom front-right
+  \coordinate (D) at (-0.85,-1.05); % bottom back-left
+  \draw[line width=0.85pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  % current: left up, right down
+  \draw[line width=0.65pt,->] (-0.85,-0.35) -- (-0.85,0.55);
+  \draw[line width=0.65pt,->] (0.55,0.55) -- (0.55,-0.35);
+  % OO' vertical through midpoints
+  \draw[line width=0.55pt,dash pattern=on 2.5pt off 1.2pt on 0.6pt off 1.2pt]
+    (-0.15,1.75) -- (-0.15,-1.45);
+  \node[anchor=south,inner sep=1pt] at (-0.15,1.75) {$O'$};
+  \node[anchor=north,inner sep=1pt] at (-0.15,-1.45) {$O$};
+\end{tikzpicture}%
+}
+\caption{（4）磁场 B 向右，矩形线圈绕竖直轴 \(OO'\)}
 \end{figure}
 
 \emph{转向：}
