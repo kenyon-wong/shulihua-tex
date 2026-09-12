@@ -1435,7 +1435,7 @@
 \caption{(第6题)}
 \end{figure}
 
-\emph{（第6题）}
+\emph{（第8题）}
 
 \section{§1·5 时间的量度}
 
@@ -30112,13 +30112,118 @@ v = \frac {\pi d _ {1} n _ {1}}{60} = \frac {\pi d _ {2} n _ {2}}{60}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·39}]{assets/physics-1/fig-p0469-01.png}}
-\caption{图 13·39}
+% fig-alt: 图13·39：左立体开口皮带，大轮$A$与小轮$B$，上层皮带标$v$；右平面交叉皮带，左小轮与右大轮转向相反，带段标$v$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ===== left: open belt 3D =====
+  \begin{scope}[shift={(0,0)}]
+    % pulley A (larger, front-left)
+    \def\ARx{0.95}
+    \def\ARy{0.38}
+    \def\ACx{0.10}
+    \def\ACy{0.15}
+    \def\Athk{0.55}
+    % pulley B (smaller, back-right)
+    \def\BRx{0.55}
+    \def\BRy{0.22}
+    \def\BCx{3.35}
+    \def\BCy{1.85}
+    \def\Bthk{0.38}
+    % belt top (near) and bottom edges as ribbons
+    % back pulley B cylinder
+    \draw[line width=0.45pt] ({\BCx},{\BCy}) ellipse[x radius=\BRx,y radius=\BRy];
+    \draw[line width=0.45pt] ({\BCx-\BRx},{\BCy}) -- ({\BCx-\BRx},{\BCy+\Bthk});
+    \draw[line width=0.45pt] ({\BCx+\BRx},{\BCy}) -- ({\BCx+\BRx},{\BCy+\Bthk});
+    \draw[line width=0.45pt] ({\BCx},{\BCy+\Bthk}) ellipse[x radius=\BRx,y radius=\BRy];
+    % shaft B
+    \draw[line width=0.4pt] ({\BCx-\BRx-0.35},{\BCy+\Bthk*0.5}) -- ({\BCx+\BRx+0.25},{\BCy+\Bthk*0.5});
+    % front pulley A cylinder
+    \draw[line width=0.5pt] ({\ACx},{\ACy}) ellipse[x radius=\ARx,y radius=\ARy];
+    \draw[line width=0.5pt] ({\ACx-\ARx},{\ACy}) -- ({\ACx-\ARx},{\ACy+\Athk});
+    \draw[line width=0.5pt] ({\ACx+\ARx},{\ACy}) -- ({\ACx+\ARx},{\ACy+\Athk});
+    \draw[line width=0.5pt] ({\ACx},{\ACy+\Athk}) ellipse[x radius=\ARx,y radius=\ARy];
+    % shaft A
+    \draw[line width=0.45pt] ({\ACx-\ARx-0.55},{\ACy+\Athk*0.5}) -- ({\ACx+\ARx+0.35},{\ACy+\Athk*0.5});
+    \draw[line width=0.4pt] ({\ACx-\ARx-0.55},{\ACy+\Athk*0.5}) circle[radius=0.12];
+    % open belt: upper strand A top-right to B bottom-left of top ellipse-ish
+    \coordinate (AtopR) at ({\ACx+0.55},{\ACy+\Athk+\ARy*0.15});
+    \coordinate (BtopL) at ({\BCx-0.35},{\BCy+\Bthk+\BRy*0.10});
+    \coordinate (AtopR2) at ({\ACx+0.70},{\ACy+\Athk-\ARy*0.55});
+    \coordinate (BtopL2) at ({\BCx-0.20},{\BCy+\Bthk-\BRy*0.55});
+    \draw[line width=0.45pt] (AtopR) -- (BtopL);
+    \draw[line width=0.45pt] (AtopR2) -- (BtopL2);
+    \draw[line width=0.35pt] ($(AtopR)!0.25!(BtopL)$) -- ($(AtopR2)!0.25!(BtopL2)$);
+    \draw[line width=0.35pt] ($(AtopR)!0.50!(BtopL)$) -- ($(AtopR2)!0.50!(BtopL2)$);
+    \draw[line width=0.35pt] ($(AtopR)!0.75!(BtopL)$) -- ($(AtopR2)!0.75!(BtopL2)$);
+    % lower strand
+    \coordinate (AbotR) at ({\ACx+0.75},{\ACy-\ARy*0.05});
+    \coordinate (BbotL) at ({\BCx-0.25},{\BCy-\BRy*0.05});
+    \coordinate (AbotR2) at ({\ACx+0.55},{\ACy+\Athk*0.15});
+    \coordinate (BbotL2) at ({\BCx-0.40},{\BCy+\Bthk*0.15});
+    \draw[line width=0.45pt] (AbotR) -- (BbotL);
+    \draw[line width=0.45pt] (AbotR2) -- (BbotL2);
+    % v on upper belt
+    \draw[line width=0.5pt,->] ($(AtopR)!0.35!(BtopL)+(0.05,0.18)$) -- ($(AtopR)!0.62!(BtopL)+(0.05,0.18)$);
+    \node[anchor=south] at ($(AtopR)!0.50!(BtopL)+(0.05,0.22)$) {$v$};
+    % labels
+    \node[anchor=north] at ({\ACx},{\ACy-\ARy-0.08}) {$A$};
+    \node[anchor=south west] at ({\BCx+\BRx*0.2},{\BCy+\Bthk+\BRy+0.05}) {$B$};
+    % rotation marks on A face
+    \draw[line width=0.4pt,->] ({20}:{\ARx*0.55}) ++({\ACx},{\ACy+\Athk}) arc[start angle=20,end angle=110,radius={\ARx*0.55}];
+  \end{scope}
+  % ===== right: crossed belt 2D =====
+  \begin{scope}[shift={(5.6,0.35)}]
+    \def\rL{0.70}
+    \def\rR{1.25}
+    \coordinate (OL) at (0,0);
+    \coordinate (OR) at (3.35,0);
+    % wheels
+    \draw[line width=0.55pt] (OL) circle[radius=\rL];
+    \draw[line width=0.55pt] (OR) circle[radius=\rR];
+    \fill (OL) circle[radius=0.035];
+    \fill (OR) circle[radius=0.035];
+    % spokes on right
+    \foreach \ang in {0,60,120,180,240,300} {
+      \draw[line width=0.35pt] (OR) -- ++({\ang}:{\rR*0.92});
+    }
+    % few spokes on left
+    \foreach \ang in {30,120,210,300} {
+      \draw[line width=0.35pt] (OL) -- ++({\ang}:{\rL*0.88});
+    }
+    % crossed belt = internal tangents (approx)
+    % upper-left of L to lower-right-ish of R crossing
+    % external crossing: from top of L to bottom of R, and bottom of L to top of R
+    \coordinate (Ltop) at ($(OL)+(90:\rL)$);
+    \coordinate (Lbot) at ($(OL)+(-90:\rL)$);
+    \coordinate (Rtop) at ($(OR)+(90:\rR)$);
+    \coordinate (Rbot) at ($(OR)+(-90:\rR)$);
+    % slightly offset tangency for visual cross
+    \coordinate (Lt1) at ($(OL)+(70:\rL)$);
+    \coordinate (Lb1) at ($(OL)+(-70:\rL)$);
+    \coordinate (Rt1) at ($(OR)+(110:\rR)$);
+    \coordinate (Rb1) at ($(OR)+(-110:\rR)$);
+    \draw[line width=0.5pt] (Lt1) -- (Rb1);
+    \draw[line width=0.5pt] (Lb1) -- (Rt1);
+    % wrap arcs (visible outer arcs)
+    \draw[line width=0.5pt] ($(OL)+(70:\rL)$) arc[start angle=70,end angle=290,radius=\rL];
+    \draw[line width=0.5pt] ($(OR)+(-110:\rR)$) arc[start angle=-110,end angle=110,radius=\rR];
+    % rotation arrows: L CCW, R CW (opposite due to cross)
+    \draw[line width=0.45pt,->] ($(OL)+(-160:{\rL+0.22})$) arc[start angle=-160,end angle=-80,radius={\rL+0.22}];
+    \draw[line width=0.45pt,->] ($(OR)+(20:{\rR+0.22})$) arc[start angle=20,end angle=-60,radius={\rR+0.22}];
+    % v arrows on belt segments near cross
+    \draw[line width=0.45pt,->] ($(Lt1)!0.35!(Rb1)$) -- ($(Lt1)!0.55!(Rb1)$);
+    \node[anchor=south east] at ($(Lt1)!0.42!(Rb1)+(-0.02,0.02)$) {$v$};
+    \draw[line width=0.45pt,->] ($(Lb1)!0.55!(Rt1)$) -- ($(Lb1)!0.35!(Rt1)$);
+    \node[anchor=north east] at ($(Lb1)!0.42!(Rt1)+(-0.02,-0.02)$) {$v$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图13·39}
 \end{figure}
 
-\emph{图 13·39}
+\emph{图13·39}
 
-\emph{图 13·40}
+\emph{图13·40}
 
 即两个皮带轮的每分钟转数与它们的直径成反比。比值 \(n_{2}/n_{1}\)
 叫做传动速度比。
@@ -30227,16 +30332,79 @@ F = \frac {7350}{7.8} \text{牛顿} = 942.3 \text{牛顿}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-1/fig-p0472-02.png}}
-\caption{(第2题)}
+% fig-alt: （第2题）：齿轮$A$半径$R_1$与轮轴型齿轮内圆$r$外啮合；外圆半径$R_2$与齿轮$C$半径$R_3$外啮合。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\Rone{0.90}
+  \def\rr{0.42}
+  \def\Rtwo{1.20}
+  \def\Rthree{1.15}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (1.291,0.274);
+  \coordinate (C) at (3.284,-0.971);
+  \draw[line width=0.55pt] (A) circle[radius=\Rone];
+  \fill (A) circle[radius=0.03];
+  \node[anchor=south] at ($(A)+(0,\Rone+0.08)$) {$A$};
+  \draw[line width=0.45pt,->] (A) -- ++(180:\Rone);
+  \node[anchor=south] at ($(A)+(180:0.48)+(0,0.08)$) {$R_{1}$};
+  \draw[line width=0.55pt] (B) circle[radius=\Rtwo];
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.0pt] ($(B)+(155:\Rtwo)$) arc[start angle=155,end angle=230,radius=\Rtwo];
+  \draw[line width=0.55pt] (A) circle[radius=\Rone];
+  \draw[line width=0.55pt] (B) circle[radius=\rr];
+  \fill (B) circle[radius=0.03];
+  \node[anchor=south] at ($(B)+(0,\Rtwo+0.08)$) {$B$};
+  \draw[line width=0.45pt,->] (B) -- ++(5:\Rtwo);
+  \node[anchor=north] at ($(B)+(5:0.72)+(0,-0.06)$) {$R_{2}$};
+  \draw[line width=0.45pt,->] (B) -- ++(70:\rr);
+  \node[anchor=south west] at ($(B)+(70:0.30)+(0.04,0.02)$) {$r$};
+  \draw[line width=0.55pt] (C) circle[radius=\Rthree];
+  \fill (C) circle[radius=0.03];
+  \node[anchor=south] at ($(C)+(0,\Rthree+0.08)$) {$C$};
+  \draw[line width=0.45pt,->] (C) -- ++(-40:\Rthree);
+  \node[anchor=north west] at ($(C)+(-40:0.65)+(0.02,-0.02)$) {$R_{3}$};
+\end{tikzpicture}%
+}
+\caption{（第2题）}
 \end{figure}
 
 \emph{（第2题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-1/fig-p0472-03.png}}
-\caption{(第3题)}
+% fig-alt: （第3题）：大齿轮$B$半径$R_2$内啮合小轮$A$（$R_1$）与$C$（$R_3$）；弧箭示转向。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\Rtwo{2.05}
+  \def\Rone{0.62}
+  \def\Rthree{1.00}
+  \coordinate (OB) at (0,0);
+  % place A, C for internal mesh: |OB-OA|=R2-R1
+  \coordinate (OA) at ({35}:{\Rtwo-\Rone});
+  \coordinate (OC) at ({215}:{\Rtwo-\Rthree});
+  \draw[line width=0.6pt] (OB) circle[radius=\Rtwo];
+  \fill (OB) circle[radius=0.03];
+  \draw[line width=0.45pt] (OB) -- ({\Rtwo},0);
+  \node[anchor=north] at ({\Rtwo*0.50},-0.06) {$R_{2}$};
+  % A
+  \draw[line width=0.55pt] (OA) circle[radius=\Rone];
+  \fill (OA) circle[radius=0.025];
+  \node at ($(OA)+(0.18,0)$) {$A$};
+  \draw[line width=0.4pt] (OA) -- ++({180}:\Rone);
+  \node[anchor=south] at ($(OA)+({180}:{\Rone*0.50})+(0,0.06)$) {$R_{1}$};
+  \draw[line width=0.4pt,->] ($(OA)+(120:{\Rone+0.12})$) arc[start angle=120,end angle=200,radius={\Rone+0.12}];
+  % C
+  \draw[line width=0.55pt] (OC) circle[radius=\Rthree];
+  \fill (OC) circle[radius=0.025];
+  \node at ($(OC)+(-0.22,0)$) {$C$};
+  \draw[line width=0.4pt] (OC) -- ++({90}:\Rthree);
+  \node[anchor=west] at ($(OC)+({90}:{\Rthree*0.50})+(0.06,0)$) {$R_{3}$};
+  \draw[line width=0.4pt,->] ($(OC)+(-20:{\Rthree+0.14})$) arc[start angle=-20,end angle=-100,radius={\Rthree+0.14}];
+  % B rotation (inner rim, CCW)
+  \draw[line width=0.45pt,->] ({130}:{\Rtwo-0.18}) arc[start angle=130,end angle=200,radius={\Rtwo-0.18}];
+  \node[anchor=south east] at ({155}:{\Rtwo-0.35}) {$B$};
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \emph{（第3题）}
@@ -30373,8 +30541,48 @@ iii。向心力不是一种虚构的特殊类型的力，而是另一个物体�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-1/fig-p0475-01.png}}
-\caption{(第4题)}
+% fig-alt: （第4题）：斜抛抛物线，点$A,B,C,D$；$A$与$D$、$B$与$C$等高；垂足$A',B',C',D'$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\L{5.20}
+  \def\H{2.35}
+  % y = 4H x (L-x) / L^2
+  \draw[line width=0.5pt,->] (-0.15,0) -- ({\L+0.45},0) node[anchor=west] {$x$};
+  \draw[line width=0.5pt,->] (0,-0.15) -- (0,{\H+0.45}) node[anchor=south] {$y$};
+  \node[anchor=north east] at (-0.06,-0.06) {$O$};
+  \draw[line width=0.65pt,domain=0:\L,smooth,samples=80] plot (\x,{4*\H*\x*(\L-\x)/(\L*\L)});
+  % points: A at 0.18L, B at 0.32L, C at 0.68L, D at 0.82L
+  \foreach \xf/\lab in {0.18/A,0.32/B,0.68/C,0.82/D} {
+    \pgfmathsetmacro{\px}{\xf*\L}
+    \pgfmathsetmacro{\py}{4*\H*\px*(\L-\px)/(\L*\L)}
+    \coordinate (\lab) at (\px,\py);
+    \fill (\lab) circle[radius=0.035];
+  }
+  \node[anchor=south east] at ($(A)+(-0.04,0.06)$) {$A$};
+  \node[anchor=south east] at ($(B)+(-0.04,0.06)$) {$B$};
+  \node[anchor=south west] at ($(C)+(0.04,0.06)$) {$C$};
+  \node[anchor=south west] at ($(D)+(0.04,0.06)$) {$D$};
+  % horizontal dashed AD, BC
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (A) -- (D);
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (B) -- (C);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 1.0pt] (A) -- (0,0 |- A);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 1.0pt] (B) -- (0,0 |- B);
+  % vertical dashed to x-axis
+  \foreach \lab/\name in {A/A',B/B',C/C',D/D'} {
+    \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (\lab) -- (\lab|-0,0);
+    \coordinate (\name) at (\lab|-0,0);
+    \fill (\name) circle[radius=0.03];
+  }
+  \node[anchor=north] at ($(A')+(0,-0.06)$) {$A'$};
+  \node[anchor=north] at ($(B')+(0,-0.06)$) {$B'$};
+  \node[anchor=north] at ($(C')+(0,-0.06)$) {$C'$};
+  \node[anchor=north] at ($(D')+(0,-0.06)$) {$D'$};
+  % direction arrows on curve
+  \draw[line width=0.45pt,->] ($(A)!0.55!(B)$) -- ++(0.35,0.12);
+  \draw[line width=0.45pt,->] ($(C)!0.55!(D)$) -- ++(0.35,-0.12);
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \emph{（第4题）}
@@ -30418,8 +30626,36 @@ iii。向心力不是一种虚构的特殊类型的力，而是另一个物体�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-1/fig-p0476-01.png}}
-\caption{(第3题)}
+% fig-alt: （第3题）：倾角$\alpha$斜面；物块$A$沿斜面下滑；同高物块$B$竖直下落；地面有影线。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\W{3.60}
+  \def\H{2.20}
+  % ground
+  \draw[line width=0.6pt] (-0.35,0) -- (4.95,0);
+  \foreach \x in {-0.20,-0.05,...,4.80} {
+    \draw[line width=0.35pt] (\x,0) -- ++(-0.12,-0.18);
+  }
+  % incline triangle: left base to right top? Asset: hypotenuse from BL to TR, vertical on right
+  \draw[line width=0.55pt] (0,0) -- (\W,\H) -- (\W,0) -- cycle;
+  % angle alpha
+  \draw[line width=0.35pt] (0.55,0) arc[start angle=0,end angle=31.4,radius=0.55];
+  \node[anchor=south west] at (0.62,0.08) {$\alpha$};
+  % block A on slope near top
+  \coordinate (Amid) at ($($(0,0)!0.78!(\W,\H)$)$);
+  \begin{scope}[shift={(Amid)},rotate=31.4]
+    \draw[line width=0.45pt,fill=white] (-0.18,0) rectangle (0.18,0.28);
+  \end{scope}
+  \node[anchor=south] at ($(Amid)+(-0.05,0.38)$) {$A$};
+  \draw[line width=0.5pt,->] (Amid) -- ($($(Amid)!0.55!(0,0)$)$);
+  % block B free fall at same height
+  \coordinate (Bmid) at ({\W+0.55},\H);
+  \draw[line width=0.45pt,fill=white] ($(Bmid)+(-0.18,-0.14)$) rectangle ($(Bmid)+(0.18,0.14)$);
+  \node[anchor=south] at ($(Bmid)+(0,0.22)$) {$B$};
+  \draw[line width=0.5pt,->] (Bmid) -- ++(0,-0.70);
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \emph{（第3题）}
@@ -30444,16 +30680,72 @@ iii。向心力不是一种虚构的特殊类型的力，而是另一个物体�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-1/fig-p0477-01.png}}
-\caption{(第7题)}
+% fig-alt: （第7题）：悬点$O$，摆长$l$水平；下方$\frac{1}{2}l$处水平钢板；虚线摆至板上夹角$\alpha$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\L{2.80}
+  \def\h{1.40} % 1/2 l
+  \coordinate (O) at (0,\h);
+  \coordinate (BallH) at (\L,\h);
+  % geometry: sin(alpha)=h/L=1/2 => alpha=30
+  \coordinate (BallP) at ({\L*0.866},0);
+  % plate
+  \draw[line width=0.7pt] (-0.55,0) -- ({\L+0.35},0);
+  % vertical height mark
+  \draw[line width=0.4pt] (-0.35,\h) -- (-0.35,0);
+  \node[anchor=east] at (-0.42,{\h*0.50}) {$\frac{1}{2}l$};
+  % pivot
+  \draw[line width=0.45pt,fill=white] (O) circle[radius=0.06];
+  \node[anchor=south east] at ($(O)+(-0.06,0.06)$) {$O$};
+  % horizontal string
+  \draw[line width=0.5pt] (O) -- (BallH);
+  \node[anchor=south] at ($(O)!0.50!(BallH)+(0,0.08)$) {$l$};
+  \draw[line width=0.45pt,fill=white] (BallH) circle[radius=0.07];
+  % dashed string to plate
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt] (O) -- (BallP);
+  \draw[line width=0.45pt,fill=white] (BallP) circle[radius=0.07];
+  % angle alpha
+  \draw[line width=0.35pt] ($(O)+(0.55,0)$) arc[start angle=0,end angle=-30,radius=0.55];
+  \node[anchor=north west] at ($(O)+(0.58,-0.12)$) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
 
 \emph{（第7题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-1/fig-p0477-02.png}}
-\caption{(第6题)}
+% fig-alt: （第8题）：水平影线地面上劈$M$；小球$m$以$v_1$水平射向斜面；碰后球竖直速度$v'_1$向上，劈以$v$右移。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\W{2.80}
+  \def\H{2.00}
+  % ground
+  \draw[line width=0.6pt] (-1.60,0) -- (4.20,0);
+  \foreach \x in {-1.45,-1.20,...,4.00} {
+    \draw[line width=0.35pt] (\x,0) -- ++(-0.12,-0.18);
+  }
+  % wedge: vertical on right, slope on left
+  \draw[line width=0.55pt,fill=white] (0,0) -- (\W,0) -- (\W,\H) -- cycle;
+  \node at ({\W*0.72},{\H*0.32}) {$M$};
+  % ball
+  \coordinate (Ball) at (-0.85,{\H*0.48});
+  \draw[line width=0.5pt,fill=white] (Ball) circle[radius=0.10];
+  \node[anchor=east] at ($(Ball)+(-0.14,0)$) {$m$};
+  % v1 toward slope
+  \draw[line width=0.5pt,->] ($(Ball)+(0.14,0)$) -- ++(1.05,0);
+  \node[anchor=south] at ($(Ball)+(0.65,0.08)$) {$v_{1}$};
+  % post-collision upward v'_1 near slope
+  \coordinate (Hit) at ($($(0,0)!0.55!(\W,\H)$)+(0.15,0.25)$);
+  \draw[line width=0.5pt,->] (Hit) -- ++(0,0.95);
+  \node[anchor=west] at ($(Hit)+(0.08,0.75)$) {$v'_{1}$};
+  % wedge velocity v
+  \draw[line width=0.5pt,->] ({\W},{\H*0.55}) -- ++(0.85,0);
+  \node[anchor=south] at (3.25,1.18) {$v$};
+\end{tikzpicture}%
+}
+\caption{（第8题）}
 \end{figure}
 
 \emph{（第6题）}
@@ -30474,8 +30766,40 @@ iii。向心力不是一种虚构的特殊类型的力，而是另一个物体�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/physics-1/fig-p0477-03.png}}
-\caption{(第10题)}
+% fig-alt: （第10题）：竖直转轴，水平臂长$d$；端点悬线长$l$，偏角$\alpha$；角速度$\omega$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\d{2.40}
+  \def\ell{1.70}
+  \def\alp{45}
+  % axis
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (0,1.15) -- (0,-1.85);
+  % omega arrow around axis
+  \draw[line width=0.45pt,->] (0.28,-0.05) arc[start angle=10,end angle=160,x radius=0.32,y radius=0.14];
+  \node[anchor=east] at (-0.40,0.05) {$\omega$};
+  % horizontal arm (thick)
+  \draw[line width=1.3pt] (-0.35,0.55) -- (\d,0.55);
+  % dimension d
+  \draw[line width=0.4pt,<->] (0,0.95) -- (\d,0.95);
+  \node[anchor=south] at ({\d*0.50},0.98) {$d$};
+  \draw[line width=0.3pt] (0,0.55) -- (0,0.95);
+  \draw[line width=0.3pt] (\d,0.55) -- (\d,0.95);
+  % suspension point
+  \coordinate (S) at (\d,0.55);
+  \fill (S) circle[radius=0.035];
+  % vertical dashed
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (S) -- ++(0,{-1.55});
+  % string at angle alpha from vertical
+  \coordinate (Bob) at ($(S)+(-45:\ell)$);
+  \draw[line width=0.5pt] (S) -- (Bob);
+  \fill (Bob) circle[radius=0.08];
+  \node[anchor=south east] at ($(S)!0.55!(Bob)+(-0.06,0.02)$) {$l$};
+  % angle alpha
+  \draw[line width=0.35pt] ($(S)+(0,-0.45)$) arc[start angle=-90,end angle={-90+\alp},radius=0.45];
+  \node[anchor=north west] at ($(S)+(0.08,-0.55)$) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{（第10题）}
 \end{figure}
 
 \emph{（第10题）}
