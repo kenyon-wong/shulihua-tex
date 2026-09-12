@@ -22010,8 +22010,28 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-19}]{assets/plane-geometry-1/fig-p0226-02.png}}
-\caption{图4-19}
+\fitfig{%
+% fig-alt: 图4·19 圆 O，半径 OE、OF，圆心角标 n°，弧 EF 外侧标「n°的弧」
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\angE}{35}
+  \pgfmathsetmacro{\angF}{-25}
+  \coordinate (E) at ({\angE}:\R);
+  \coordinate (F) at ({\angF}:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (O) -- (E);
+  \draw[line width=0.65pt] (O) -- (F);
+  \draw[line width=0.45pt] ({\angF}:0.48) arc[start angle=\angF, end angle=\angE, radius=0.48];
+  \node[anchor=west, inner sep=1pt, font=\small] at ({(\angE+\angF)/2}:0.78) {$n^{\circ}$};
+  \node[anchor=west, inner sep=2pt, font=\small] at ({(\angE+\angF)/2}:{\R+0.08}) {$n^{\circ}$的弧};
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=east, inner sep=2pt] at (O) {$O$};
+  \node[anchor=south west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north west, inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{图4·19}
 \end{figure}
 
 \emph{图 4·19}
@@ -22028,8 +22048,35 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-20}]{assets/plane-geometry-1/fig-p0226-03.png}}
-\caption{图4-20}
+\fitfig{%
+% fig-alt: 图4·20 同心圆 O，射线经 A'、B' 至 A、B；圆心角标 d；弧 AB、A'B' 加粗
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \def\r{1.25}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\angB}{40}
+  \pgfmathsetmacro{\angA}{-50}
+  \coordinate (A) at ({\angA}:\R);
+  \coordinate (B) at ({\angB}:\R);
+  \coordinate (Ap) at ({\angA}:\r);
+  \coordinate (Bp) at ({\angB}:\r);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.75pt] (O) circle [radius=\r];
+  \draw[line width=0.65pt] (O) -- (A);
+  \draw[line width=0.65pt] (O) -- (B);
+  \draw[line width=1.35pt] ({\angA}:\R) arc[start angle=\angA, end angle=\angB, radius=\R];
+  \draw[line width=1.35pt] ({\angA}:\r) arc[start angle=\angA, end angle=\angB, radius=\r];
+  \draw[line width=0.45pt] ({\angA}:0.42) arc[start angle=\angA, end angle=\angB, radius=0.42];
+  \node[anchor=west, inner sep=1pt, font=\small] at ({(\angA+\angB)/2}:0.64) {$d$};
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=east, inner sep=2pt] at (O) {$O$};
+  \node[anchor=north west, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.2pt] at (Ap) {$A'$};
+  \node[anchor=south west, inner sep=1.2pt] at (Bp) {$B'$};
+\end{tikzpicture}%
+}
+\caption{图4·20}
 \end{figure}
 
 \emph{图 4·20}
@@ -22054,7 +22101,23 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·21}]{assets/plane-geometry-1/fig-p0227-01.png}}
+\fitfig{%
+% fig-alt: 图4·21 圆 O，圆周上 A、P、B；实线弦 PA、PB 构成圆周角 ∠APB
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (175:\R);
+  \coordinate (P) at (70:\R);
+  \coordinate (B) at (-40:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (P) -- (B);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=north, inner sep=2pt] at (O) {$O$};
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{图4·21}
 \end{figure}
 
@@ -22066,7 +22129,32 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0227-02.png}}
+\fitfig{%
+% fig-alt: 图4·22（1）圆 O，直径 AP；点 B 在圆周；实线 PB；虚线 OB；∠POB 双弧，底角单弧等号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\angP}{40}
+  \pgfmathsetmacro{\angA}{220}
+  \pgfmathsetmacro{\angB}{-30}
+  \coordinate (P) at ({\angP}:\R);
+  \coordinate (A) at ({\angA}:\R);
+  \coordinate (B) at ({\angB}:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (P);
+  \draw[line width=0.65pt] (P) -- (B);
+  \draw[line width=0.55pt, dashed] (O) -- (B);
+  \draw[line width=0.40pt] ($(P)+(-140:0.30)$) arc[start angle=-140, end angle=-85, radius=0.30];
+  \draw[line width=0.40pt] ($(B)+(95:0.30)$) arc[start angle=95, end angle=150, radius=0.30];
+  \draw[line width=0.40pt] ({\angB}:0.36) arc[start angle=\angB, end angle=\angP, radius=0.36];
+  \draw[line width=0.40pt] ({\angB}:0.46) arc[start angle=\angB, end angle=\angP, radius=0.46];
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south east, inner sep=2pt] at (O) {$O$};
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -22074,7 +22162,29 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0227-03.png}}
+\fitfig{%
+% fig-alt: 图4·22（2）圆 O，圆周角 ∠APB（O 在角内）；虚线直径 PS 与半径 OA、OB
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (90:\R);
+  \coordinate (S) at (270:\R);
+  \coordinate (A) at (210:\R);
+  \coordinate (B) at (330:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (P) -- (A);
+  \draw[line width=0.65pt] (P) -- (B);
+  \draw[line width=0.55pt, dashed] (P) -- (S);
+  \draw[line width=0.55pt, dashed] (O) -- (A);
+  \draw[line width=0.55pt, dashed] (O) -- (B);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south east, inner sep=2pt] at (O) {$O$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (S) {$S$};
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -22082,7 +22192,29 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-1/fig-p0227-04.png}}
+\fitfig{%
+% fig-alt: 图4·22（3）圆 O，圆周角 ∠APB（A、B 同侧，O 在角外）；实线直径 PS；虚线 OA、OB
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (90:\R);
+  \coordinate (S) at (270:\R);
+  \coordinate (A) at (155:\R);
+  \coordinate (B) at (210:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (P) -- (S);
+  \draw[line width=0.65pt] (P) -- (A);
+  \draw[line width=0.65pt] (P) -- (B);
+  \draw[line width=0.55pt, dashed] (O) -- (A);
+  \draw[line width=0.55pt, dashed] (O) -- (B);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=west, inner sep=2.5pt] at (O) {$O$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (S) {$S$};
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -22122,7 +22254,30 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·23}]{assets/plane-geometry-1/fig-p0228-01.png}}
+\fitfig{%
+% fig-alt: 图4·23 圆 O，虚线直径 AB；P 在上弧，实线 AP、BP，P 处直角记号；Q 在下端
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\R,0);
+  \coordinate (B) at (\R,0);
+  \coordinate (P) at (55:\R);
+  \coordinate (Q) at (270:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.55pt, dashed] (A) -- (B);
+  \draw[line width=0.65pt] (A) -- (P) -- (B);
+  \coordinate (RA1) at ($(P)!0.16!(A)$);
+  \coordinate (RA2) at ($(P)!0.16!(B)$);
+  \coordinate (RA3) at ($(RA1)+(RA2)-(P)$);
+  \draw[line width=0.40pt] (RA1) -- (RA3) -- (RA2);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=north, inner sep=2pt] at (O) {$O$};
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=2pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
 \caption{图4·23}
 \end{figure}
 
@@ -22130,7 +22285,38 @@ AR > RS.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·24}]{assets/plane-geometry-1/fig-p0228-02.png}}
+\fitfig{%
+% fig-alt: 图4·24 圆 O，虚线 OA、OB；上弧 P、Q、R 各连 A、B；∠APB、∠AQB、∠ARB 单弧等号，∠AOB 双弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\angA}{235}
+  \pgfmathsetmacro{\angB}{315}
+  \coordinate (A) at ({\angA}:\R);
+  \coordinate (B) at ({\angB}:\R);
+  \coordinate (P) at (155:\R);
+  \coordinate (Q) at (90:\R);
+  \coordinate (R) at (45:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.60pt] (A) -- (P) -- (B);
+  \draw[line width=0.60pt] (A) -- (Q) -- (B);
+  \draw[line width=0.60pt] (A) -- (R) -- (B);
+  \draw[line width=0.55pt, dashed] (O) -- (A);
+  \draw[line width=0.55pt, dashed] (O) -- (B);
+  \draw[line width=0.40pt] ($(P)+(-75.00:0.28)$) arc[start angle=-75.00, end angle=-35.00, radius=0.28];
+  \draw[line width=0.40pt] ($(Q)+(-107.50:0.28)$) arc[start angle=-107.50, end angle=-67.50, radius=0.28];
+  \draw[line width=0.40pt] ($(R)+(-130.00:0.28)$) arc[start angle=-130.00, end angle=-90.00, radius=0.28];
+  \draw[line width=0.40pt] ({\angA}:0.36) arc[start angle=\angA, end angle=\angB, radius=0.36];
+  \draw[line width=0.40pt] ({\angA}:0.46) arc[start angle=\angA, end angle=\angB, radius=0.46];
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south, inner sep=2pt] at (O) {$O$};
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=east, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=south, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=south west, inner sep=1.5pt] at (R) {$R$};
+\end{tikzpicture}%
+}
 \caption{图4·24}
 \end{figure}
 
