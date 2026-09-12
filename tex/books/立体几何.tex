@@ -15821,58 +15821,194 @@ OZ 轴成 \(45^{\circ}\) 的角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0147-01.png}}
+\fitfig{%
+% fig-alt: 图2·36（1）：正方体斜二测直观图。O在前右下顶点；Ox向左、Oy向右上45°、Oz竖直向上；隐棱（后左下三棱）虚线。扫描有O、x、y、z
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\s{1.35}
+  \pgfmathsetmacro{\c}{0.5*cos(45)*\s}
+  \pgfmathsetmacro{\u}{0.5*sin(45)*\s}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\s,0);
+  \coordinate (C) at (\c,\u);
+  \coordinate (D) at ({-\s+\c},\u);
+  \coordinate (Oz) at (0,\s);
+  \coordinate (Az) at (-\s,\s);
+  \coordinate (Cz) at (\c,{\s+\u});
+  \coordinate (Dz) at ({-\s+\c},{\s+\u});
+  \draw[line width=0.75pt] (O) -- (-1.75,0) node[anchor=east,inner sep=1pt] {$x$};
+  \draw[line width=0.75pt] (O) -- (0,1.75) node[anchor=south,inner sep=1pt] {$z$};
+  \draw[line width=0.75pt] (O) -- ({1.15*\c},{1.15*\u}) node[anchor=south west,inner sep=1pt] {$y$};
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (Dz);
+  \draw[line width=0.85pt] (O) -- (A) -- (Az) -- (Oz) -- cycle;
+  \draw[line width=0.85pt] (O) -- (C) -- (Cz) -- (Oz);
+  \draw[line width=0.85pt] (Az) -- (Dz) -- (Cz);
+  \draw[line width=0.85pt] (A) -- (Az);
+  \draw[line width=0.85pt] (C) -- (Cz);
+  \node[anchor=north west,inner sep=1pt] at (O) {$O$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
-
-\emph{（1）}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0147-02.png}}
+\fitfig{%
+% fig-alt: 图2·36（2）：正方体斜二测直观图。O在前左下顶点；Ox向右、Oy向右上45°、Oz竖直向上；沿Oy底棱及后隐棱虚线。扫描有O、x、y、z
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\s{1.25}
+  \pgfmathsetmacro{\c}{0.5*cos(45)*\s}
+  \pgfmathsetmacro{\u}{0.5*sin(45)*\s}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (\s,0);
+  \coordinate (C) at (\c,\u);
+  \coordinate (D) at ({\s+\c},\u);
+  \coordinate (Oz) at (0,\s);
+  \coordinate (Az) at (\s,\s);
+  \coordinate (Cz) at (\c,{\s+\u});
+  \coordinate (Dz) at ({\s+\c},{\s+\u});
+  \draw[line width=0.75pt] (O) -- (1.65,0) node[anchor=west,inner sep=1pt] {$x$};
+  \draw[line width=0.75pt] (O) -- (0,1.65) node[anchor=south,inner sep=1pt] {$z$};
+  \draw[line width=0.75pt] (O) -- ({1.25*\c},{1.25*\u}) node[anchor=south west,inner sep=1pt] {$y$};
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (Cz);
+  \draw[line width=0.85pt] (O) -- (A) -- (Az) -- (Oz) -- cycle;
+  \draw[line width=0.85pt] (A) -- (D) -- (Dz) -- (Az);
+  \draw[line width=0.85pt] (Oz) -- (Cz) -- (Dz);
+  \node[anchor=north east,inner sep=1pt] at (O) {$O$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
-
-\emph{（2）}
-
 \emph{图2·36}
 
 （1） 画出底面正方形 \(AOCD\)， 使它的边长等于正方体的棱长， 取直线
-\(OA\) 为 \(OX\) 轴、\(OO\) 为 \(OY\) 轴 （图2·37（1））。
+\(OA\) 为 \(OX\) 轴、\(OC\) 为 \(OY\) 轴 （图2·37（1））。
 
 （2） 画 \(O_{1}X_{1}, O_{1}Y_{1}\) 和 \(O_{1}Z_{1}\) 三条轴，使
 \(\angle X_{1}O_{1}Z_{1} = 90^{\circ}, \angle Y_{1}O_{1}Z_{1} = 45^{\circ}\).
 
 在 \(O_{1}X_{1}\) 轴上截取 \(O_{1}A_{1} = OA\)，在 \(O_{1}Y_{1}\)
-轴上截取 \(O_{1}C_{1} = \frac{1}{2} OO\)，画出平行四边形
+轴上截取 \(O_{1}C_{1} = \frac{1}{2} OC\)，画出平行四边形
 \(A_{1}O_{1}C_{1}D_{1}\)。这个平行四边形就是正方体直观图的底面（图2·37（2））。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={a)}]{assets/solid-geometry/fig-p0147-03.png}}
-\caption{a)}
+\fitfig{%
+% fig-alt: 图2·37（1）：底面正方形AOCD。OA在Ox（向左），OC在Oy（向上）；轴端标x、y。扫描有A、O、C、D、x、y
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\s{1.55}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\s,0);
+  \coordinate (C) at (0,\s);
+  \coordinate (D) at (-\s,\s);
+  \draw[line width=0.75pt] (0.15,0) -- (-2.05,0) node[anchor=east,inner sep=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-0.1) -- (0,2.05) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.85pt] (O) -- (A) -- (D) -- (C) -- cycle;
+  \node[anchor=north,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (O) {$O$};
+  \node[anchor=west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=east,inner sep=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{(1)}
 \end{figure}
-
-\emph{a）}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0147-04.png}}
+\fitfig{%
+% fig-alt: 图2·37（2）：斜二测底面。轴O1X1向左、O1Y1右上45°、O1Z1竖直；平行四边形A1O1C1D1，O1A1=OA，O1C1=OC/2。扫描有O1、A1、C1、D1、x1、y1、z1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\s{1.55}
+  \pgfmathsetmacro{\c}{0.5*cos(45)*\s}
+  \pgfmathsetmacro{\u}{0.5*sin(45)*\s}
+  \coordinate (O1) at (0,0);
+  \coordinate (A1) at (-\s,0);
+  \coordinate (C1) at (\c,\u);
+  \coordinate (D1) at ({-\s+\c},\u);
+  \draw[line width=0.75pt] (0.2,0) -- (-2.05,0) node[anchor=east,inner sep=1pt] {$x_{1}$};
+  \draw[line width=0.75pt] (0,-0.05) -- (0,2.05) node[anchor=south,inner sep=1pt] {$z_{1}$};
+  \draw[line width=0.75pt] (O1) -- ({1.55*\c},{1.55*\u}) node[anchor=south west,inner sep=1pt] {$y_{1}$};
+  \draw[line width=0.85pt] (O1) -- (A1) -- (D1) -- (C1) -- cycle;
+  \node[anchor=north west,inner sep=1pt] at (O1) {$O_{1}$};
+  \node[anchor=north,inner sep=1pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=1pt] at (C1) {$C_{1}$};
+  \node[anchor=south east,inner sep=1pt] at (D1) {$D_{1}$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
-
-\emph{（2）}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第147页）}]{assets/solid-geometry/fig-p0147-05.png}}
-\caption{图示（原PDF第147页）}
+\fitfig{%
+% fig-alt: 图2·37（3）：在底面A1O1C1D1各顶点作平行O1Z1的高等于棱长的线段，得A2、O2、C2、D2；轴仍保留。扫描有O1、O2、A1、A2、C1、C2、D1、D2及x1、y1、z1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\s{1.45}
+  \pgfmathsetmacro{\c}{0.5*cos(45)*\s}
+  \pgfmathsetmacro{\u}{0.5*sin(45)*\s}
+  \coordinate (O1) at (0,0);
+  \coordinate (A1) at (-\s,0);
+  \coordinate (C1) at (\c,\u);
+  \coordinate (D1) at ({-\s+\c},\u);
+  \coordinate (O2) at (0,\s);
+  \coordinate (A2) at (-\s,\s);
+  \coordinate (C2) at (\c,{\s+\u});
+  \coordinate (D2) at ({-\s+\c},{\s+\u});
+  \draw[line width=0.70pt] (0.15,0) -- (-1.95,0) node[anchor=east,inner sep=1pt] {$x_{1}$};
+  \draw[line width=0.70pt] (0,-0.05) -- (0,1.95) node[anchor=south,inner sep=1pt] {$z_{1}$};
+  \draw[line width=0.70pt] (O1) -- ({1.45*\c},{1.45*\u}) node[anchor=south west,inner sep=1pt] {$y_{1}$};
+  \draw[line width=0.85pt] (O1) -- (A1) -- (D1) -- (C1) -- cycle;
+  \draw[line width=0.85pt] (O1) -- (O2);
+  \draw[line width=0.85pt] (A1) -- (A2);
+  \draw[line width=0.85pt] (C1) -- (C2);
+  \draw[line width=0.85pt] (D1) -- (D2);
+  \node[anchor=north west,inner sep=0.8pt] at (O1) {$O_{1}$};
+  \node[anchor=north,inner sep=0.8pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.8pt] at (C1) {$C_{1}$};
+  \node[anchor=east,inner sep=0.6pt] at (D1) {$D_{1}$};
+  \node[anchor=east,inner sep=0.8pt] at (O2) {$O_{2}$};
+  \node[anchor=east,inner sep=0.8pt] at (A2) {$A_{2}$};
+  \node[anchor=west,inner sep=0.8pt] at (C2) {$C_{2}$};
+  \node[anchor=east,inner sep=0.6pt] at (D2) {$D_{2}$};
+\end{tikzpicture}%
+}
+\caption{(3)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·37}]{assets/solid-geometry/fig-p0147-06.png}}
-\caption{图2·37}
+\fitfig{%
+% fig-alt: 图2·37（4）：正方体直观图A1O1C1D1-A2O2C2D2。隐棱A1D1、D1C1、D1D2虚线；余棱实线；轴已擦去。扫描有A1、O1、C1、D1、A2、O2、C2、D2
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\s{1.35}
+  \pgfmathsetmacro{\c}{0.5*cos(45)*\s}
+  \pgfmathsetmacro{\u}{0.5*sin(45)*\s}
+  \coordinate (O1) at (0,0);
+  \coordinate (A1) at (-\s,0);
+  \coordinate (C1) at (\c,\u);
+  \coordinate (D1) at ({-\s+\c},\u);
+  \coordinate (O2) at (0,\s);
+  \coordinate (A2) at (-\s,\s);
+  \coordinate (C2) at (\c,{\s+\u});
+  \coordinate (D2) at ({-\s+\c},{\s+\u});
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D1) -- (C1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D1) -- (D2);
+  \draw[line width=0.85pt] (A1) -- (O1) -- (C1);
+  \draw[line width=0.85pt] (A1) -- (A2) -- (O2) -- (O1);
+  \draw[line width=0.85pt] (O2) -- (C2) -- (C1);
+  \draw[line width=0.85pt] (A2) -- (D2) -- (C2);
+  \node[anchor=north,inner sep=0.8pt] at (A1) {$A_{1}$};
+  \node[anchor=north west,inner sep=0.8pt] at (O1) {$O_{1}$};
+  \node[anchor=north west,inner sep=0.8pt] at (C1) {$C_{1}$};
+  \node[anchor=east,inner sep=0.5pt] at (D1) {$D_{1}$};
+  \node[anchor=east,inner sep=0.8pt] at (A2) {$A_{2}$};
+  \node[anchor=west,inner sep=0.8pt] at (O2) {$O_{2}$};
+  \node[anchor=west,inner sep=0.8pt] at (C2) {$C_{2}$};
+  \node[anchor=south east,inner sep=0.5pt] at (D2) {$D_{2}$};
+\end{tikzpicture}%
+}
+\caption{(4)}
 \end{figure}
 
 \emph{图2·37}
@@ -15880,7 +16016,7 @@ OZ 轴成 \(45^{\circ}\) 的角。
 （3） 在 \(O_{1}Z_{1}\) 轴上截取 \(O_{1}O_{2}\)
 等于正方体的棱长（图2·37（3））。
 
-（4） 画和 \(O_{1}O_{2}\) 平行且相等的线段 \(A_{1}A_{2}, C_{1}O_{2}\) 和
+（4） 画和 \(O_{1}O_{2}\) 平行且相等的线段 \(A_{1}A_{2}, C_{1}C_{2}\) 和
 \(D_{1}D_{2}\) （图2·37（3））， 顺次连结 \(A_{2}, O_{2}, C_{2}, D_{2}\)
 各点， 就得到这个正方体的直观图 （图2·37（4））。
 
@@ -15920,20 +16056,72 @@ OZ 轴成 \(45^{\circ}\) 的角。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0149-01.png}}
+\fitfig{%
+% fig-alt: 图2·38（1）：正五边形ABCDE。Ox向左、Oy向上；AB在Ox上，C在Oy上；EH、DG垂Ox于H、G，DF、EC平行Ox交Oy于F、C。扫描有A–E、O、H、G、F、x、y
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-2.0944,0.0000);
+  \coordinate (B) at (-0.4944,0.0000);
+  \coordinate (C) at (-0.0000,1.5217);
+  \coordinate (D) at (-1.2944,2.4622);
+  \coordinate (E) at (-2.5889,1.5217);
+  \coordinate (H) at (-2.5889,0.0000);
+  \coordinate (G) at (-1.2944,0.0000);
+  \coordinate (F) at (-0.0000,2.4622);
+  \draw[line width=0.70pt] (0.25,0) -- (-2.9389,0) node[anchor=east,inner sep=1pt] {$x$};
+  \draw[line width=0.70pt] (0,-0.15) -- (0,2.8122) node[anchor=south,inner sep=1pt] {$y$};
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (E) -- (H);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (G);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (F);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (E) -- (C);
+  \draw[line width=0.85pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+  \node[anchor=north,inner sep=0.8pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.8pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.8pt] at (C) {$C$};
+  \node[anchor=south,inner sep=0.8pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.8pt] at (E) {$E$};
+  \node[anchor=north west,inner sep=0.8pt] at (O) {$O$};
+  \node[anchor=north,inner sep=0.6pt] at (H) {$H$};
+  \node[anchor=north,inner sep=0.6pt] at (G) {$G$};
+  \node[anchor=west,inner sep=0.6pt] at (F) {$F$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
-
-\emph{（1）}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0149-02.png}}
+\fitfig{%
+% fig-alt: 图2·38（2）：斜二测底面五边形A1B1C1D1E1。O1X1向左、O1Y1右上45°；横距同（1），纵距减半；辅助虚线平行轴。扫描有A1–E1、O1、H1、G1、F1、x1、y1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O1) at (0,0);
+  \coordinate (A1) at (-2.0944,0.0000);
+  \coordinate (B1) at (-0.4944,0.0000);
+  \coordinate (C1) at (0.5380,0.5380);
+  \coordinate (D1) at (-0.4239,0.8705);
+  \coordinate (E1) at (-2.0509,0.5380);
+  \coordinate (H1) at (-2.5889,0.0000);
+  \coordinate (G1) at (-1.2944,0.0000);
+  \coordinate (F1) at (0.8705,0.8705);
+  \draw[line width=0.70pt] (0.25,0) -- (-2.8889,0) node[anchor=east,inner sep=1pt] {$x_{1}$};
+  \draw[line width=0.70pt] (O1) -- (0.7263,0.7263) node[anchor=south west,inner sep=1pt] {$y_{1}$};
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (E1) -- (H1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D1) -- (G1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D1) -- (F1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (E1) -- (C1);
+  \draw[line width=0.85pt] (A1) -- (B1) -- (C1) -- (D1) -- (E1) -- cycle;
+  \node[anchor=north,inner sep=0.7pt] at (A1) {$A_{1}$};
+  \node[anchor=north,inner sep=0.7pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.7pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.7pt] at (D1) {$D_{1}$};
+  \node[anchor=east,inner sep=0.7pt] at (E1) {$E_{1}$};
+  \node[anchor=north west,inner sep=0.7pt] at (O1) {$O_{1}$};
+  \node[anchor=north,inner sep=0.5pt] at (H1) {$H_{1}$};
+  \node[anchor=north,inner sep=0.5pt] at (G1) {$G_{1}$};
+  \node[anchor=south west,inner sep=0.5pt] at (F1) {$F_{1}$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
-
-\emph{（2）}
-
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/solid-geometry/fig-p0149-03.png}}
