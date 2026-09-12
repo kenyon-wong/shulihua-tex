@@ -25815,21 +25815,56 @@ U_{R} = \sqrt{3} U_{R 0} \tag{5.11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0337-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.19（a）·纯电阻电路：左交流电源u（圆内～），右电阻R（竖矩形），矩形回路
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.05]
+  \def\W{2.6}
+  \def\H{1.7}
+  % wires
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC source on left: circle with ~
+  \fill[white] (-0.02,{\H/2-0.28}) rectangle (0.02,{\H/2+0.28});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.26];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=west,inner sep=2pt] at (0.28,{\H/2}) {$u$};
+  % resistor on right: vertical rectangle
+  \fill[white] ({\W-0.02},{\H/2-0.38}) rectangle ({\W+0.02},{\H/2+0.38});
+  \draw[line width=0.75pt] ({\W-0.14},{\H/2-0.38}) rectangle ({\W+0.14},{\H/2+0.38});
+  \node[anchor=east,inner sep=2pt] at ({\W-0.18},{\H/2}) {$R$};
+\end{tikzpicture}%
+}
+\caption{图5.19（a）·纯电阻电路：交流电源$u$与电阻$R$}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.19（a）·纯电阻电路：交流电源$u$与电阻$R$}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0337-02.png}}
-\caption{(b)}
+\fitfig{%
+% fig-alt: 图5.19（b）·纯电阻电路电压u与电流i随ωt变化的同相正弦波，u振幅大于i，横轴标π、2π
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  \draw[line width=0.7pt,->] (0,0) -- (7.0,0) node[anchor=west,inner sep=2pt] {$\omega t$};
+  \draw[line width=0.7pt,->] (0,-1.75) -- (0,1.95) node[anchor=south,inner sep=2pt] {$u,\,i$};
+  \pgfmathsetmacro{\Au}{1.45}
+  \pgfmathsetmacro{\Ai}{0.85}
+  \draw[line width=0.8pt,smooth,samples=140,domain=0:6.9,variable=\t]
+    plot (\t, {\Au*sin(deg(\t))});
+  \draw[line width=0.8pt,smooth,samples=140,domain=0:6.9,variable=\t]
+    plot (\t, {\Ai*sin(deg(\t))});
+  \node[anchor=south,inner sep=1pt] at (1.57,\Au) {$u$};
+  \node[anchor=south,inner sep=1pt] at (1.57,\Ai) {$i$};
+  \foreach \xx/\lab in {3.1416/$\pi$,6.2832/$2\pi$} {
+    \draw[line width=0.4pt] (\xx,-0.08) -- (\xx,0.08);
+    \node[anchor=north,inner sep=2pt] at (\xx,-0.10) {\lab};
+  }
+\end{tikzpicture}%
+}
+\caption{图5.19（b）·电压$u$与电流$i$同相正弦波}
 \end{figure}
 
-\emph{（b）}
+\emph{图5.19（b）·电压$u$与电流$i$同相正弦波}
 
-\emph{图 5.19 纯电阻电路电流与电压使用}
+\emph{图5.19·纯电阻电路电流与电压相位}
 
 设在电阻 \(R\) 两端施加交变电压
 \(u = U_{m}\sin \omega t\)，根据欧姆定律，电路中电流为
@@ -25868,23 +25903,146 @@ I = \frac{U}{R}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0338-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.20·（a）直流电源、亮灯泡与铁心线圈串联，阻碍作用小；（b）交流电源、较暗灯泡与铁心线圈串联，阻碍作用大
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.92]
+  % ---- (a) left: DC ----
+  \begin{scope}[shift={(0,0)}]
+    \def\W{3.2}\def\H{2.35}
+    \draw[line width=0.7pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+    % battery left (long top +, short bottom -)
+    \fill[white] (-0.02,{\H/2-0.32}) rectangle (0.02,{\H/2+0.32});
+    \draw[line width=0.9pt] (-0.22,{\H/2+0.12}) -- (0.22,{\H/2+0.12});
+    \draw[line width=1.1pt] (-0.12,{\H/2-0.12}) -- (0.12,{\H/2-0.12});
+    % bright bulb on top
+    \fill[white] ({\W/2-0.35},\H) rectangle ({\W/2+0.35},\H);
+    \draw[line width=0.65pt] ({\W/2-0.22},{\H-0.08}) rectangle ({\W/2+0.22},{\H+0.08});
+    \draw[line width=0.7pt] ({\W/2},{\H+0.32}) circle[radius=0.24];
+    \draw[line width=0.45pt] ({\W/2-0.10},{\H+0.22}) .. controls ({\W/2},{\H+0.38}) .. ({\W/2+0.10},{\H+0.22});
+    \foreach \a in {70,90,110,50,130,40,140} {
+      \draw[line width=0.45pt] ({(\W/2)+0.28*cos(\a)},{(\H+0.32)+0.28*sin(\a)})
+        -- ({(\W/2)+0.55*cos(\a)},{(\H+0.32)+0.55*sin(\a)});
+    }
+    % iron-core coil on right
+    \fill[white] ({\W-0.02},{\H/2-0.55}) rectangle ({\W+0.02},{\H/2+0.55});
+    \draw[line width=0.65pt] ({\W-0.10},{\H/2-0.55}) rectangle ({\W+0.10},{\H/2+0.55});
+    \foreach \y in {0.35,0.15,-0.05,-0.25} {
+      \draw[line width=0.65pt] ({\W-0.22},{\H/2+\y})
+        arc[start angle=180,end angle=0,x radius=0.22,y radius=0.11];
+    }
+    \node[anchor=north,inner sep=2pt] at ({\W/2},-0.05) {(a)};
+  \end{scope}
+  % ---- (b) right: AC ----
+  \begin{scope}[shift={(4.3,0)}]
+    \def\W{3.2}\def\H{2.35}
+    \draw[line width=0.7pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+    % AC source: two terminals with sine between
+    \fill[white] (-0.02,{\H/2-0.55}) rectangle (0.02,{\H/2+0.55});
+    \fill (0,{\H/2+0.42}) circle[radius=0.045];
+    \fill (0,{\H/2-0.42}) circle[radius=0.045];
+    \draw[line width=0.65pt,smooth,samples=40,domain=-0.35:0.35,variable=\t]
+      plot ({0.22*sin(deg(8*\t))}, {\H/2+\t});
+    % dimmer bulb
+    \fill[white] ({\W/2-0.35},\H) rectangle ({\W/2+0.35},\H);
+    \draw[line width=0.65pt] ({\W/2-0.22},{\H-0.08}) rectangle ({\W/2+0.22},{\H+0.08});
+    \draw[line width=0.7pt] ({\W/2},{\H+0.32}) circle[radius=0.24];
+    \draw[line width=0.45pt] ({\W/2-0.10},{\H+0.22}) .. controls ({\W/2},{\H+0.38}) .. ({\W/2+0.10},{\H+0.22});
+    \foreach \a in {70,90,110,50,130} {
+      \draw[line width=0.45pt] ({(\W/2)+0.28*cos(\a)},{(\H+0.32)+0.28*sin(\a)})
+        -- ({(\W/2)+0.42*cos(\a)},{(\H+0.32)+0.42*sin(\a)});
+    }
+    % iron-core coil (slight hatching)
+    \fill[white] ({\W-0.02},{\H/2-0.55}) rectangle ({\W+0.02},{\H/2+0.55});
+    \draw[line width=0.65pt] ({\W-0.10},{\H/2-0.55}) rectangle ({\W+0.10},{\H/2+0.55});
+    \foreach \yy in {-0.45,-0.25,-0.05,0.15,0.35} {
+      \draw[line width=0.3pt] ({\W-0.08},{\H/2+\yy}) -- ({\W+0.08},{\H/2+\yy+0.12});
+    }
+    \foreach \y in {0.35,0.15,-0.05,-0.25} {
+      \draw[line width=0.65pt] ({\W-0.22},{\H/2+\y})
+        arc[start angle=180,end angle=0,x radius=0.22,y radius=0.11];
+    }
+    \node[anchor=north,inner sep=2pt] at ({\W/2},-0.05) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图5.20·（a）线圈阻碍作用小；（b）线圈阻碍作用大}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.20（a）·线圈阻碍作用小}
 
-\emph{（b）}
+\emph{图5.20（b）·线圈阻碍作用大}
 
-\emph{图 5.20 （a） 线圈互感作用小 （b） 线圈阻特性厚大}
+\emph{图5.20·（a）线圈阻碍作用小；（b）线圈阻碍作用大}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.21 (a) 频率低线圈温的伟用小；(b) 频率高线圈阻碍作用大}]{assets/physics-3/fig-p0339-01.png}}
-\caption{图 5.21 (a) 频率低线圈温的伟用小；(b) 频率高线圈阻碍作用大}
+\fitfig{%
+% fig-alt: 图5.21·（a）低频交流、铁心上抽、灯泡较亮，线圈阻碍作用小；（b）高频交流、铁心在线圈外、灯泡较暗，线圈阻碍作用大
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.90]
+  % ---- (a) low frequency ----
+  \begin{scope}[shift={(0,0)}]
+    \def\W{3.2}\def\H{2.35}
+    \draw[line width=0.7pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+    % AC low-freq: few cycles between terminals
+    \fill[white] (-0.02,{\H/2-0.55}) rectangle (0.02,{\H/2+0.55});
+    \fill (0,{\H/2+0.42}) circle[radius=0.045];
+    \fill (0,{\H/2-0.42}) circle[radius=0.045];
+    \draw[line width=0.6pt,smooth,samples=50,domain=-0.38:0.38,variable=\t]
+      plot ({0.20*sin(deg(10*\t))}, {\H/2+\t});
+    % bright bulb
+    \fill[white] ({\W/2-0.35},\H) rectangle ({\W/2+0.35},\H);
+    \draw[line width=0.65pt] ({\W/2-0.22},{\H-0.08}) rectangle ({\W/2+0.22},{\H+0.08});
+    \draw[line width=0.7pt] ({\W/2},{\H+0.32}) circle[radius=0.24];
+    \draw[line width=0.45pt] ({\W/2-0.10},{\H+0.22}) .. controls ({\W/2},{\H+0.38}) .. ({\W/2+0.10},{\H+0.22});
+    \foreach \a in {60,80,100,120,45,135,30,150} {
+      \draw[line width=0.45pt] ({(\W/2)+0.28*cos(\a)},{(\H+0.32)+0.28*sin(\a)})
+        -- ({(\W/2)+0.52*cos(\a)},{(\H+0.32)+0.52*sin(\a)});
+    }
+    % coil + iron core being pulled up
+    \fill[white] ({\W-0.02},{\H/2-0.50}) rectangle ({\W+0.02},{\H/2+0.50});
+    \foreach \y in {0.32,0.12,-0.08,-0.28} {
+      \draw[line width=0.65pt] ({\W-0.22},{\H/2+\y})
+        arc[start angle=180,end angle=0,x radius=0.22,y radius=0.11];
+    }
+    % iron core partially in, dashed arrow up
+    \draw[line width=0.7pt] ({\W-0.11},{\H/2+0.35}) rectangle ({\W+0.11},{\H+0.55});
+    \draw[line width=0.55pt,dashed,->] (\W,{\H+0.60}) -- (\W,{\H+1.05});
+    \node[anchor=north,inner sep=2pt] at ({\W/2},-0.05) {(a)};
+  \end{scope}
+  % ---- (b) high frequency ----
+  \begin{scope}[shift={(4.4,0)}]
+    \def\W{3.2}\def\H{2.35}
+    \draw[line width=0.7pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+    % AC high-freq: many cycles
+    \fill[white] (-0.02,{\H/2-0.55}) rectangle (0.02,{\H/2+0.55});
+    \fill (0,{\H/2+0.42}) circle[radius=0.045];
+    \fill (0,{\H/2-0.42}) circle[radius=0.045];
+    \draw[line width=0.55pt,smooth,samples=80,domain=-0.38:0.38,variable=\t]
+      plot ({0.18*sin(deg(28*\t))}, {\H/2+\t});
+    % dim bulb
+    \fill[white] ({\W/2-0.35},\H) rectangle ({\W/2+0.35},\H);
+    \draw[line width=0.65pt] ({\W/2-0.22},{\H-0.08}) rectangle ({\W/2+0.22},{\H+0.08});
+    \draw[line width=0.7pt] ({\W/2},{\H+0.32}) circle[radius=0.24];
+    \draw[line width=0.45pt] ({\W/2-0.10},{\H+0.22}) .. controls ({\W/2},{\H+0.38}) .. ({\W/2+0.10},{\H+0.22});
+    \foreach \a in {70,90,110,50,130} {
+      \draw[line width=0.45pt] ({(\W/2)+0.28*cos(\a)},{(\H+0.32)+0.28*sin(\a)})
+        -- ({(\W/2)+0.40*cos(\a)},{(\H+0.32)+0.40*sin(\a)});
+    }
+    % coil + iron core above (out)
+    \fill[white] ({\W-0.02},{\H/2-0.50}) rectangle ({\W+0.02},{\H/2+0.50});
+    \foreach \y in {0.32,0.12,-0.08,-0.28} {
+      \draw[line width=0.65pt] ({\W-0.22},{\H/2+\y})
+        arc[start angle=180,end angle=0,x radius=0.22,y radius=0.11];
+    }
+    \draw[line width=0.7pt] ({\W-0.11},{\H+0.45}) rectangle ({\W+0.11},{\H+1.05});
+    \node[anchor=north,inner sep=2pt] at ({\W/2},-0.05) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图5.21·（a）频率低线圈阻碍作用小；（b）频率高线圈阻碍作用大}
 \end{figure}
 
-\emph{图 5.21 （a） 频率低线圈温的伟用小；（b） 频率高线圈阻碍作用大}
+\emph{图5.21·（a）频率低线圈阻碍作用小；（b）频率高线圈阻碍作用大}
 
 再接到一个适当大小的直流电源上，可以看到小灯泡发光明亮（图 5.20a）。
 
@@ -25935,23 +26093,75 @@ X_{L} = 2 \pi f L = \omega L \tag{5.13}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-3/fig-p0341-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图5.22（a）·低频扼流圈：壳式铁心框内绕线筒，底边安装脚与引线
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  % simplified isometric low-frequency choke
+  % outer core frame (perspective-ish)
+  \draw[line width=0.8pt]
+    (0.15,0.35) -- (0.15,2.55) -- (0.55,2.85) -- (2.35,2.85) -- (2.35,0.65) -- (1.95,0.35) -- cycle;
+  % left pillar front
+  \draw[line width=0.8pt] (0.15,0.35) -- (0.55,0.65) -- (0.55,2.85);
+  \draw[line width=0.55pt] (0.15,2.55) -- (0.55,2.85);
+  % right pillar
+  \draw[line width=0.8pt] (1.95,0.35) -- (1.95,2.55) -- (2.35,2.85);
+  \draw[line width=0.55pt] (1.95,2.55) -- (2.35,2.85);
+  % top window opening (inner)
+  \draw[line width=0.65pt] (0.70,1.95) -- (1.70,1.95) -- (1.70,2.55) -- (0.70,2.55) -- cycle;
+  \draw[line width=0.5pt] (0.70,2.55) -- (0.95,2.75) -- (1.95,2.75) -- (1.70,2.55);
+  % central coil cylinder
+  \draw[line width=0.8pt] (0.75,0.55) -- (0.75,1.85)
+    arc[start angle=180,end angle=0,x radius=0.55,y radius=0.18]
+    -- (1.85,0.55)
+    arc[start angle=0,end angle=-180,x radius=0.55,y radius=0.18];
+  % winding arcs on top face
+  \foreach \r in {0.18,0.32,0.45} {
+    \draw[line width=0.45pt] (1.30,1.85)
+      ++({-\r},0) arc[start angle=180,end angle=0,x radius=\r,y radius=0.10];
+  }
+  % base feet with holes
+  \draw[line width=0.7pt] (-0.15,0.35) -- (0.15,0.35) -- (0.55,0.65) -- (0.25,0.65) -- cycle;
+  \draw[line width=0.7pt] (1.95,0.35) -- (2.45,0.35) -- (2.75,0.65) -- (2.35,0.65) -- cycle;
+  \draw[line width=0.5pt] (0.05,0.48) circle[radius=0.07];
+  \draw[line width=0.5pt] (2.40,0.48) circle[radius=0.07];
+  % three leads from bottom of coil
+  \draw[line width=0.55pt] (1.00,0.45) .. controls (1.15,-0.15) and (1.45,-0.25) .. (1.80,-0.35);
+  \draw[line width=0.55pt] (1.20,0.40) .. controls (1.35,-0.20) and (1.65,-0.35) .. (2.05,-0.45);
+  \draw[line width=0.55pt] (1.45,0.40) .. controls (1.60,-0.10) and (1.90,-0.20) .. (2.25,-0.30);
+  \node[anchor=north,inner sep=2pt] at (1.30,-0.55) {(a)};
+\end{tikzpicture}%
+}
+\caption{图5.22（a）·低频扼流圈}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-3/fig-p0341-02.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图5.22（b）·高频扼流圈：竖磁心上两段斜线填充绕组
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.15]
+  % vertical core
+  \draw[line width=0.75pt] (-0.12,-0.05) rectangle (0.12,2.05);
+  % upper winding (hatched)
+  \draw[line width=0.7pt,pattern=north east lines,pattern color=black!70]
+    (-0.55,1.15) rectangle (0.55,1.70);
+  \draw[line width=0.7pt] (-0.55,1.15) rectangle (0.55,1.70);
+  % lower winding (hatched)
+  \draw[line width=0.7pt,pattern=north east lines,pattern color=black!70]
+    (-0.55,0.25) rectangle (0.55,0.80);
+  \draw[line width=0.7pt] (-0.55,0.25) rectangle (0.55,0.80);
+  \node[anchor=north,inner sep=2pt] at (0,-0.15) {(b)};
+\end{tikzpicture}%
+}
+\caption{图5.22（b）·高频扼流圈}
 \end{figure}
 
-\emph{（1）}
+\emph{图5.22（a）·低频扼流圈}
 
-\emph{（a）}
+\emph{图5.22（b）·高频扼流圈}
 
-\emph{图5.22}
+\emph{图5.22·低频扼流圈与高频扼流圈}
 
-\emph{（a） 低频扼流陷；（b） 高频扼流圈}
+\emph{图5.22·（a）低频扼流圈；（b）高频扼流圈}
 
 电感在交流电路中，除了要阻碍交流电通过外，还要影响电路中电流和电压的位相关系。下面就来研究这个问题。
 
@@ -25981,11 +26191,70 @@ u = L \frac{\Delta i}{\Delta t} \tag{5.14}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.23 (a) 由题中电流曲线；(b) 由感上电压曲线}]{assets/physics-3/fig-p0342-01.png}}
-\caption{图 5.23 (a) 由题中电流曲线；(b) 由感上电压曲线}
+\fitfig{%
+% fig-alt: 图5.23·（a）电感中电流i–t正弦曲线，标A–F与Δt；（b）电感上电压u–t余弦曲线；虚线对照，电压超前电流90°
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  \pgfmathsetmacro{\Ai}{1.15}
+  \pgfmathsetmacro{\Au}{1.15}
+  \pgfmathsetmacro{\Tlen}{5.6}
+  \pgfmathsetmacro{\xZero}{0.70}
+  % ---- (a) current ----
+  \begin{scope}[shift={(0,3.55)}]
+    \draw[line width=0.7pt,->] (0,0) -- (6.35,0) node[anchor=west,inner sep=2pt] {$t$};
+    \draw[line width=0.7pt,->] (0,-1.45) -- (0,1.55) node[anchor=south,inner sep=2pt] {$i$};
+    \draw[line width=0.8pt,smooth,samples=160,domain=0:6.1,variable=\t]
+      plot (\t, {\Ai*sin(deg(2*pi/\Tlen*(\t-\xZero)))});
+    \pgfmathsetmacro{\xB}{\xZero}
+    \pgfmathsetmacro{\xA}{\xZero-0.28}
+    \pgfmathsetmacro{\xC}{\xZero+\Tlen/4}
+    \pgfmathsetmacro{\xD}{\xC+0.28}
+    \pgfmathsetmacro{\xE}{\xZero+\Tlen/2}
+    \pgfmathsetmacro{\xF}{\xE+0.28}
+    \pgfmathsetmacro{\xTend}{\xZero+\Tlen}
+    \pgfmathsetmacro{\xV}{\xZero+3*\Tlen/4}
+    \foreach \xx in {\xA,\xB,\xC,\xD,\xE,\xF,\xTend,\xV} {
+      \draw[line width=0.4pt,dashed] (\xx,1.35) -- (\xx,-4.85);
+    }
+    \fill (\xA,{\Ai*sin(deg(2*pi/\Tlen*(\xA-\xZero)))}) circle[radius=0.035];
+    \fill (\xB,0) circle[radius=0.035];
+    \fill (\xC,\Ai) circle[radius=0.035];
+    \fill (\xD,{\Ai*sin(deg(2*pi/\Tlen*(\xD-\xZero)))}) circle[radius=0.035];
+    \fill (\xE,0) circle[radius=0.035];
+    \fill (\xF,{\Ai*sin(deg(2*pi/\Tlen*(\xF-\xZero)))}) circle[radius=0.035];
+    \node[anchor=south east,inner sep=1pt] at (\xA,{\Ai*sin(deg(2*pi/\Tlen*(\xA-\xZero)))}) {$A$};
+    \node[anchor=south west,inner sep=1pt] at (\xB,0.08) {$B$};
+    \node[anchor=south,inner sep=1pt] at (\xC,\Ai) {$C$};
+    \node[anchor=south west,inner sep=1pt] at (\xD,{\Ai*sin(deg(2*pi/\Tlen*(\xD-\xZero)))}) {$D$};
+    \node[anchor=south east,inner sep=1pt] at (\xE,0.08) {$E$};
+    \node[anchor=north west,inner sep=1pt] at (\xF,{\Ai*sin(deg(2*pi/\Tlen*(\xF-\xZero)))}) {$F$};
+    \draw[line width=0.45pt,<->] (\xA,1.20) -- (\xB,1.20);
+    \node[anchor=south,inner sep=0pt,font=\small] at ({(\xA+\xB)/2},1.20) {$\Delta t$};
+    \draw[line width=0.45pt,<->] (\xC,1.20) -- (\xD,1.20);
+    \node[anchor=south,inner sep=0pt,font=\small] at ({(\xC+\xD)/2},1.20) {$\Delta t$};
+    \draw[line width=0.45pt,<->] (\xE,1.20) -- (\xF,1.20);
+    \node[anchor=south,inner sep=0pt,font=\small] at ({(\xE+\xF)/2},1.20) {$\Delta t$};
+    \draw[line width=0.45pt,<->] (\xB,-1.30) -- (\xTend,-1.30);
+    \node[anchor=north,inner sep=1pt] at ({(\xB+\xTend)/2},-1.30) {$T$};
+    \node[anchor=north,inner sep=2pt] at (3.0,-1.55) {(a)};
+  \end{scope}
+  % ---- (b) voltage cosine ----
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt,->] (0,0) -- (6.35,0) node[anchor=west,inner sep=2pt] {$t$};
+    \draw[line width=0.7pt,->] (0,-1.45) -- (0,1.55) node[anchor=south,inner sep=2pt] {$u$};
+    \node[anchor=north east,inner sep=1pt] at (0,0) {$O$};
+    \draw[line width=0.8pt,smooth,samples=160,domain=0:6.1,variable=\t]
+      plot (\t, {\Au*cos(deg(2*pi/\Tlen*(\t-\xZero)))});
+    \pgfmathsetmacro{\xTend}{\xZero+\Tlen}
+    \draw[line width=0.45pt,<->] (\xZero,-1.30) -- (\xTend,-1.30);
+    \node[anchor=north,inner sep=1pt] at ({(\xZero+\xTend)/2},-1.30) {$T$};
+    \node[anchor=north,inner sep=2pt] at (3.0,-1.55) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图5.23·（a）电感中电流曲线；（b）电感上电压曲线}
 \end{figure}
 
-\emph{图 5.23 （a） 由题中电流曲线；（b） 由感上电压曲线}
+\emph{图5.23·（a）电感中电流曲线；（b）电感上电压曲线}
 
 总结上述可得电感两端电压变化的趋势是，从 \(AB\)
 间某点正最大值逐渐减小，经过 \(CD\) 间的零点，变为负值，并在 \(EF\)
@@ -26074,11 +26343,33 @@ I_{2} = \frac{U}{X_{L 2}} = \frac{100}{7.55 \times 10^{3}} \text{安} = 0.013 \t
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0344-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.24（a）·直流电源、灯泡与电容器串联，灯泡不亮（直流电不能通过电容器）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.0]
+  \def\W{2.55}\def\H{2.45}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % battery on left (long +, short -), two cells
+  \fill[white] (-0.02,{\H/2-0.40}) rectangle (0.02,{\H/2+0.40});
+  \draw[line width=0.9pt] (-0.22,{\H/2+0.22}) -- (0.22,{\H/2+0.22});
+  \draw[line width=1.05pt] (-0.12,{\H/2+0.06}) -- (0.12,{\H/2+0.06});
+  \draw[line width=0.9pt] (-0.22,{\H/2-0.06}) -- (0.22,{\H/2-0.06});
+  \draw[line width=1.05pt] (-0.12,{\H/2-0.22}) -- (0.12,{\H/2-0.22});
+  % dark bulb on top (no rays); socket + circle + X filament
+  \fill[white] ({\W/2-0.38},\H) rectangle ({\W/2+0.38},\H);
+  \draw[line width=0.65pt] ({\W/2-0.24},{\H-0.10}) rectangle ({\W/2+0.24},{\H+0.08});
+  \draw[line width=0.7pt] ({\W/2},{\H+0.34}) circle[radius=0.26];
+  \draw[line width=0.5pt] ({\W/2-0.12},{\H+0.22}) -- ({\W/2+0.12},{\H+0.46});
+  \draw[line width=0.5pt] ({\W/2-0.12},{\H+0.46}) -- ({\W/2+0.12},{\H+0.22});
+  % capacitor on right
+  \fill[white] ({\W-0.02},{\H/2-0.28}) rectangle ({\W+0.02},{\H/2+0.28});
+  \draw[line width=0.85pt] ({\W-0.12},{\H/2-0.28}) -- ({\W-0.12},{\H/2+0.28});
+  \draw[line width=0.85pt] ({\W+0.12},{\H/2-0.28}) -- ({\W+0.12},{\H/2+0.28});
+\end{tikzpicture}%
+}
+\caption{图5.24（a）·直流电不能通过电容器}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.24（a）·直流电不能通过电容器}
 
 \begin{figure}
 \centering
@@ -26088,7 +26379,7 @@ I_{2} = \frac{U}{X_{L 2}} = \frac{100}{7.55 \times 10^{3}} \text{安} = 0.013 \t
 
 \emph{（b）}
 
-\emph{图 5.24 （a） 真导电不能通过电容器；（b） 交流电通过电容器}
+\emph{图5.24·（a）直流电不能通过电容器；（b）交流电能通过电容器}
 
 电容器在直流电路里只有在电源接通的瞬间，电路里才对电容器的充电电流流通。这时一块极板上积累正电荷，另一极板上积累负电荷，两板间建立起相应的电压。当电荷的积累，使两板间电压等于电源电压时，充电电流就消失了。这时电路就好象被切断一样，所以说直流电不能通过电容器。
 
