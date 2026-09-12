@@ -28373,8 +28373,30 @@ t _ {1} = 4.55 \text{秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-1/fig-p0442-02.png}}
-\caption{(第6题)}
+% fig-alt: （第6题）山脚以$v_0$仰角$\theta=60^\circ$斜抛，斜坡仰角$\alpha=30^\circ$，轨迹落于坡面。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (O) at (0,0);
+  \coordinate (Top) at ({5.4*cos(30)},{5.4*sin(30)});
+  \coordinate (BaseR) at ({5.4*cos(30)},0);
+  \draw[line width=0.6pt] (-0.55,-0.32) -- (O) -- (Top) -- (BaseR) -- cycle;
+  \draw[line width=0.45pt] (O) -- (4.85,0);
+  \draw[line width=0.5pt] (-0.42,-0.08) -- (0.02,0.02);
+  \draw[line width=0.5pt] (-0.38,-0.22) -- (0.05,-0.08);
+  \draw[line width=0.55pt,->] (O) -- (60:1.55);
+  \node[anchor=south west] at (60:1.62) {$v_{0}$};
+  \draw[line width=0.35pt] (0.72,0) arc[start angle=0,end angle=30,radius=0.72];
+  \node[anchor=west,inner sep=1pt] at (12:0.82) {$\alpha=30^{\circ}$};
+  \draw[line width=0.35pt] (1.15,0) arc[start angle=0,end angle=60,radius=1.15];
+  \node[anchor=south west,inner sep=0.5pt] at (42:1.22) {$\theta=60^{\circ}$};
+  \draw[line width=0.55pt] plot[domain=0:3.25,samples=55]
+    ({\x},{\x*1.73205 - 0.361*\x*\x});
+  \coordinate (Hit) at (3.20,{3.20/1.73205});
+  \draw[line width=0.45pt,fill=white] (O) circle[radius=0.06];
+  \draw[line width=0.45pt,fill=white] (Hit) circle[radius=0.06];
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \emph{（第6题）}
@@ -28394,8 +28416,23 @@ v=\frac{\Delta S}{\Delta t} \tag{13.13}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13-19}]{assets/physics-1/fig-p0443-01.png}}
-\caption{图 13-19}
+% fig-alt: 图13·19：圆周及圆心$O$；顺时针切向速度箭（上、左、下、右及右下），右下标$v$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.55}
+  \def\L{0.72}
+  \draw[line width=0.6pt] (0,0) circle[radius=\R];
+  \fill (0,0) circle[radius=0.035];
+  \node[anchor=north west,inner sep=1pt] at (0.06,-0.06) {$O$};
+  \draw[line width=0.55pt,->] (90:\R) -- ++(0:\L);
+  \draw[line width=0.55pt,->] (180:\R) -- ++(90:\L);
+  \draw[line width=0.55pt,->] (270:\R) -- ++(180:\L);
+  \draw[line width=0.55pt,->] (0:\R) -- ++(-90:\L);
+  \draw[line width=0.55pt,->] (-40:\R) -- ++(-130:\L);
+  \node[anchor=west] at ($(-40:\R)+(-130:0.45)$) {$v$};
+\end{tikzpicture}%
+}
+\caption{图13·19}
 \end{figure}
 
 \emph{图13·19}
@@ -28439,8 +28476,30 @@ v = 2 \pi R f \tag {13.16}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-20}]{assets/physics-1/fig-p0444-01.png}}
-\caption{图13-20}
+% fig-alt: 图13·20：圆心$O$，基线$Ox$；半径$OA$、$OB$与$Ox$夹角$\theta_1$、$\theta_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.85}
+  \draw[line width=0.6pt] (0,0) circle[radius=\R];
+  \fill (0,0) circle[radius=0.035];
+  \node[anchor=north east] at (-0.08,-0.06) {$O$};
+  \draw[line width=0.5pt,dash pattern=on 1.4pt off 1.0pt,->] (0,0) -- ({\R+0.85},0);
+  \node[anchor=west] at ({\R+0.88},0) {$x$};
+  \def\tha{28}
+  \def\thb{68}
+  \draw[line width=0.55pt] (0,0) -- (\tha:\R);
+  \fill (\tha:\R) circle[radius=0.035];
+  \node[anchor=south west] at (\tha:{\R+0.12}) {$A$};
+  \draw[line width=0.55pt] (0,0) -- (\thb:\R);
+  \fill (\thb:\R) circle[radius=0.035];
+  \node[anchor=south west] at (\thb:{\R+0.12}) {$B$};
+  \draw[line width=0.35pt] (0.55,0) arc[start angle=0,end angle=\tha,radius=0.55];
+  \node[anchor=west,inner sep=1pt] at ({\tha/2}:0.68) {$\theta_{1}$};
+  \draw[line width=0.35pt] (0.95,0) arc[start angle=0,end angle=\thb,radius=0.95];
+  \node[anchor=west,inner sep=1pt] at ({\thb/2+4}:1.12) {$\theta_{2}$};
+\end{tikzpicture}%
+}
+\caption{图13·20}
 \end{figure}
 
 \emph{图13·20}
@@ -28457,8 +28516,26 @@ v = 2 \pi R f \tag {13.16}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13-21}]{assets/physics-1/fig-p0444-02.png}}
-\caption{图 13-21}
+% fig-alt: 图13·21：圆心$O$，半径$OA=R$与$OB$，圆心角标1弧度（弧$\widehat{AB}=R$）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.75}
+  \def\th{57.3}
+  \draw[line width=0.6pt] (0,0) circle[radius=\R];
+  \fill (0,0) circle[radius=0.035];
+  \node[anchor=east] at (-0.12,0) {$O$};
+  \draw[line width=0.55pt] (0,0) -- (\R,0);
+  \fill (\R,0) circle[radius=0.035];
+  \node[anchor=west] at ({\R+0.08},0) {$A$};
+  \node[anchor=north] at ({\R/2},-0.08) {$R$};
+  \draw[line width=0.55pt] (0,0) -- (\th:\R);
+  \fill (\th:\R) circle[radius=0.035];
+  \node[anchor=south west] at (\th:{\R+0.10}) {$B$};
+  \draw[line width=0.35pt] (0.48,0) arc[start angle=0,end angle=\th,radius=0.48];
+  \node[anchor=west,inner sep=1.5pt,font=\scriptsize] at (28:0.62) {1弧度};
+\end{tikzpicture}%
+}
+\caption{图13·21}
 \end{figure}
 
 \emph{图13·21}
@@ -28510,8 +28587,26 @@ v = 2 \pi R f \tag {13.16}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-22}]{assets/physics-1/fig-p0445-02.png}}
-\caption{图13-22}
+% fig-alt: 图13·22：人侧立举手，绳牵小球在头顶水平虚线椭圆轨道上作匀速圆周运动。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (Hand) at (2.35,3.55);
+  \draw[line width=0.5pt] (2.55,2.55) circle[radius=0.22];
+  \draw[line width=0.55pt] (2.55,2.33) -- (2.55,1.35);
+  \draw[line width=0.55pt] (2.55,1.35) -- (2.25,0.35);
+  \draw[line width=0.55pt] (2.55,1.35) -- (2.90,0.35);
+  \draw[line width=0.5pt] (2.05,0.35) -- (2.35,0.35);
+  \draw[line width=0.5pt] (2.78,0.35) -- (3.08,0.35);
+  \draw[line width=0.55pt] (2.55,2.15) -- (2.55,2.85) -- (Hand);
+  \draw[line width=0.5pt] (2.55,2.15) -- (2.15,1.70) -- (2.05,1.35);
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt]
+    (Hand) ellipse[x radius=1.55,y radius=0.48];
+  \coordinate (Ball) at ($(Hand)+(-1.55,0)$);
+  \draw[line width=0.55pt] (Hand) -- (Ball);
+  \fill (Ball) circle[radius=0.08];
+\end{tikzpicture}%
+}
+\caption{图13·22}
 \end{figure}
 
 \emph{图13·22}
@@ -28541,22 +28636,81 @@ v = 2 \pi R f \tag {13.16}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第446页）}]{assets/physics-1/fig-p0446-01.png}}
-\caption{图示（原PDF第446页）}
+% fig-alt: 图13·23（a）大圆：圆心$O$，半径$OA$、$OB$成直角；$A$处$v_1$向上，$B$处$v_2$向左；弧箭示$A\to B$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.45}
+  \draw[line width=0.6pt] (0,0) circle[radius=\R];
+  \fill (0,0) circle[radius=0.03];
+  \node[anchor=north east] at (-0.06,-0.06) {$O$};
+  \draw[line width=0.5pt] (0,0) -- (\R,0);
+  \draw[line width=0.5pt] (0,0) -- (0,\R);
+  \fill (\R,0) circle[radius=0.03];
+  \node[anchor=west] at ({\R+0.08},0) {$A$};
+  \fill (0,\R) circle[radius=0.03];
+  \node[anchor=south] at (0,{\R+0.10}) {$B$};
+  \node[anchor=north] at ({\R/2},-0.06) {$R$};
+  \draw[line width=0.55pt,->] (\R,0) -- ++(0,0.85);
+  \node[anchor=west] at ({\R+0.06},0.70) {$v_{1}$};
+  \draw[line width=0.55pt,->] (0,\R) -- ++(-0.85,0);
+  \node[anchor=south] at (-0.70,{\R+0.06}) {$v_{2}$};
+  \draw[line width=0.4pt,->] (0.42,0) arc[start angle=0,end angle=90,radius=0.42];
+\end{tikzpicture}%
+}
+\caption{大圆转过$90^{\circ}$}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0446-02.png}}
-\caption{(a)}
+% fig-alt: 图13·23（a）小圆：圆心$O'$半径$R_1$；直径端$A$、$B$；$A$处$v_1$向上，$B$处$v_2$向下（转过半周）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.05}
+  \draw[line width=0.6pt] (0,0) circle[radius=\R];
+  \fill (0,0) circle[radius=0.03];
+  \node[anchor=north] at (0,-0.08) {$O'$};
+  \draw[line width=0.5pt] (-\R,0) -- (\R,0);
+  \fill (\R,0) circle[radius=0.03];
+  \node[anchor=west] at ({\R+0.08},0) {$A$};
+  \fill (-\R,0) circle[radius=0.03];
+  \node[anchor=east] at ({-\R-0.08},0) {$B$};
+  \node[anchor=north] at ({\R/2},-0.05) {$R_{1}$};
+  \draw[line width=0.4pt,->] (0.32,0) arc[start angle=0,end angle=180,radius=0.32];
+  \draw[line width=0.55pt,->] (\R,0) -- ++(0,0.70);
+  \node[anchor=west] at ({\R+0.05},0.55) {$v_{1}$};
+  \draw[line width=0.55pt,->] (-\R,0) -- ++(0,-0.70);
+  \node[anchor=east] at ({-\R-0.05},-0.55) {$v_{2}$};
+\end{tikzpicture}%
+}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第446页）}]{assets/physics-1/fig-p0446-03.png}}
-\caption{图示（原PDF第446页）}
+% fig-alt: 图13·23（b）左：圆心$O$，点$A$、$B$；$A$处$v_1$向上，$B$处$v_2$切向；圆心角小于半周。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.40}
+  \def\thb{70}
+  \draw[line width=0.6pt] (0,0) circle[radius=\R];
+  \fill (0,0) circle[radius=0.03];
+  \node[anchor=north east] at (-0.06,-0.06) {$O$};
+  \draw[line width=0.5pt] (0,0) -- (\R,0);
+  \draw[line width=0.5pt] (0,0) -- (\thb:\R);
+  \fill (\R,0) circle[radius=0.03];
+  \node[anchor=west] at ({\R+0.08},0) {$A$};
+  \fill (\thb:\R) circle[radius=0.03];
+  \node[anchor=south west] at (\thb:{\R+0.10}) {$B$};
+  \draw[line width=0.4pt,->] (0.38,0) arc[start angle=0,end angle=\thb,radius=0.38];
+  \draw[line width=0.55pt,->] (\R,0) -- ++(0,0.80);
+  \node[anchor=west] at ({\R+0.05},0.65) {$v_{1}$};
+  \draw[line width=0.55pt,->] (\thb:\R) -- ++({\thb+90}:0.80);
+  \node[anchor=south east] at ($(\thb:\R)+({\thb+90}:0.55)$) {$v_{2}$};
+\end{tikzpicture}%
+}
+\caption{同半径较小转角}
 \end{figure}
 
 \begin{figure}
@@ -28565,7 +28719,7 @@ v = 2 \pi R f \tag {13.16}
 \caption{(3)}
 \end{figure}
 
-\emph{（3）}
+\emph{（b）}
 
 \emph{图13·23}
 
