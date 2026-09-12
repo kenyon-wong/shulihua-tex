@@ -24192,11 +24192,54 @@ l 于 D，E. （图 4·44）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-4-44}]{assets/plane-geometry-1/fig-p0245-01.png}}
-\caption{图4-4-44}
+\fitfig{%
+% fig-alt: 图4·44 圆 O，圆外直线 l，垂足 A；割线交圆于 B、C；切线 BD、CE；虚线 OD、OE
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.45}
+  \def\d{2.15}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (0,-\d);
+  \pgfmathsetmacro{\alph}{25}
+  \pgfmathsetmacro{\sx}{sin(\alph)}
+  \pgfmathsetmacro{\sy}{cos(\alph)}
+  \pgfmathsetmacro{\disc}{sqrt(\R*\R - \d*\d*\sx*\sx)}
+  \pgfmathsetmacro{\tB}{\d*\sy - \disc}
+  \pgfmathsetmacro{\tC}{\d*\sy + \disc}
+  \coordinate (B) at ({\tB*\sx},{-\d+\tB*\sy});
+  \coordinate (C) at ({\tC*\sx},{-\d+\tC*\sy});
+  \pgfmathsetmacro{\Bx}{\tB*\sx}
+  \pgfmathsetmacro{\By}{-\d+\tB*\sy}
+  \pgfmathsetmacro{\Cx}{\tC*\sx}
+  \pgfmathsetmacro{\Cy}{-\d+\tC*\sy}
+  \pgfmathsetmacro{\Dx}{(\R*\R + \d*\By)/\Bx}
+  \pgfmathsetmacro{\Ex}{(\R*\R + \d*\Cy)/\Cx}
+  \coordinate (D) at ({\Dx},-\d);
+  \coordinate (E) at ({\Ex},-\d);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \pgfmathsetmacro{\lR}{\Ex+0.45}
+  \draw[line width=0.65pt] (-2.7,-\d) -- ({\lR},-\d);
+  \draw[line width=0.65pt] (O) -- (A);
+  \draw[line width=0.65pt] (A) -- (C);
+  \draw[line width=0.65pt] (B) -- (D);
+  \draw[line width=0.65pt] (C) -- (E);
+  \draw[line width=0.65pt] (O) -- (B);
+  \draw[line width=0.65pt] (O) -- (C);
+  \draw[line width=0.55pt, dashed] (O) -- (D);
+  \draw[line width=0.55pt, dashed] (O) -- (E);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=2pt] at (-2.7,-\d) {$l$};
+  \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south, inner sep=1.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{图4·44}
 \end{figure}
 
-\emph{图 4·44}
+\emph{图4·44}
 
 现在有 OB=OC，要判定它们全等还缺少一个条件。如果能断定 O、A、E、C
 四点共圆，则有\(\angle OAG=\angle OEC\)，如果能断定 O、D、A、B
@@ -24218,11 +24261,35 @@ P 是圆 O 外的一点，直线 PO 与圆相交于 A，B 两点（图 4·45）�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-45}]{assets/plane-geometry-1/fig-p0245-02.png}}
-\caption{图4-45}
+\fitfig{%
+% fig-alt: 图4·45 圆 O，圆外点 P，直线 PO 交圆于 A、B；圆上点 S、K；实线 PS；虚线 PK、SK（过 O）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.55}
+  \def\OP{2.55}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (0,\R);
+  \coordinate (B) at (0,-\R);
+  \coordinate (P) at (0,\OP);
+  \coordinate (S) at (125:\R);
+  \coordinate (K) at ({125-180}:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (P) -- (B);
+  \draw[line width=0.65pt] (P) -- (S);
+  \draw[line width=0.55pt, dashed] (P) -- (K);
+  \draw[line width=0.55pt, dashed] (S) -- (K);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=west, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1.5pt] at (S) {$S$};
+  \node[anchor=west, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=west, inner sep=1.5pt] at (K) {$K$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
+\caption{图4·45}
 \end{figure}
 
-\emph{图 4·45}
+\emph{图4·45}
 
 \textbf{［证］} 在圆上任意取一点\(S\)。
 连结\(PS\)和\(SO\)，则在\(\triangle PSO\)中有
@@ -24272,11 +24339,45 @@ E、P、Q、F 四点就共圆了。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-48}]{assets/plane-geometry-1/fig-p0246-01.png}}
-\caption{图4-48}
+\fitfig{%
+% fig-alt: 图4·46 圆上点 A 为弧 BC 中点；弦 AP、AQ 交弦 BC 于 E、F；虚线 PQ；标 ∠AEF、∠AQP
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.65}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (90:\R);
+  \coordinate (B) at (150:\R);
+  \coordinate (C) at (30:\R);
+  \coordinate (P) at (240:\R);
+  \coordinate (Q) at (300:\R);
+  % E = AP ∩ BC, F = AQ ∩ BC via section formula / calc
+  % line AP: A + u(P-A); BC: B + v(C-B)
+  \coordinate (E) at (intersection of A--P and B--C);
+  \coordinate (F) at (intersection of A--Q and B--C);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (B) -- (C);
+  \draw[line width=0.65pt] (A) -- (P);
+  \draw[line width=0.65pt] (A) -- (Q);
+  \draw[line width=0.55pt, dashed] (P) -- (Q);
+  % angle arcs at E (∠AEF ~ along EA to EF=BC toward F) and Q (∠AQP)
+  \draw[line width=0.45pt] let \p1=($(A)-(E)$), \p2=($(F)-(E)$),
+    \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)} in
+    (E) ++ (\n1:0.28) arc[start angle=\n1, end angle=\n2, radius=0.28];
+  \draw[line width=0.45pt] let \p1=($(A)-(Q)$), \p2=($(P)-(Q)$),
+    \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)} in
+    (Q) ++ (\n1:0.28) arc[start angle=\n1, end angle=\n2, radius=0.28];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1pt] at (E) {$E$};
+  \node[anchor=south west, inner sep=1pt] at (F) {$F$};
+  \node[anchor=north east, inner sep=1.2pt] at (P) {$P$};
+  \node[anchor=north west, inner sep=1.2pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+\caption{图4·46}
 \end{figure}
 
-\emph{图 4·46}
+\emph{图4·46}
 
 \textbf{［证］}
 连结\(PQ\)，则\(\angle AEF\)是四边形\(EPQF\)的一个外角，而\(\angle AEF\)等于\((\widehat{BP} + \widehat{AC})\)的度数的一半，又题设点\(A\)是\(\widehat{BO}\)的中点，即\(\widehat{AC}\)等于\(\widehat{AB}\)，所以\(\angle AEF = \frac{1}{2} (\widehat{BP} + \widehat{AB}) = \frac{1}{2} \widehat{ABP}\)，又\(\angle AQP = \frac{1}{2} \widehat{ABP}\)，
@@ -24350,24 +24451,99 @@ E、P、Q、F 四点就共圆了。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-1/fig-p0247-01.png}}
-\caption{(第7题)}
+\fitfig{%
+% fig-alt: （第7题）圆 O 直径 AB，切线 BC；割线 CA 交圆于 D（AD=DC）；连 BD
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.35}
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (-\R,0);
+  \coordinate (A) at (\R,0);
+  \coordinate (C) at (-\R,{2*\R});
+  \coordinate (D) at (0,\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (B) -- (A);
+  \draw[line width=0.65pt] (B) -- (C);
+  \draw[line width=0.65pt] (C) -- (A);
+  \draw[line width=0.65pt] (B) -- (D);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=west, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
 
 \emph{（第7题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-1/fig-p0247-02.png}}
-\caption{(第9题)}
+\fitfig{%
+% fig-alt: （第9题）圆 O，平行切线 AB、CD；右侧切线交 AB、CD 于 K、L；连 OK、OL
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.25}
+  \coordinate (O) at (0,0);
+  \coordinate (N) at (0,\R);
+  \coordinate (S) at (0,-\R);
+  % right-side tangent at angle 0 (east): tangent x=R, but tilted
+  % use tangent at T=(cos θ, sin θ) with θ≈-20° so it hits top and bottom
+  \pgfmathsetmacro{\th}{-25}
+  \coordinate (T) at ({\th}:\R);
+  % tangent: x cosθ + y sinθ = R
+  % intersect y=R: x cosθ + R sinθ = R => x = (R - R sinθ)/cosθ = R(1-sinθ)/cosθ
+  \pgfmathsetmacro{\Kx}{\R*(1-sin(\th))/cos(\th)}
+  \pgfmathsetmacro{\Lx}{\R*(-1-sin(\th))/cos(\th)}
+  % wait bottom y=-R: x cosθ - R sinθ = R => x = R(1+sinθ)/cosθ
+  \pgfmathsetmacro{\Lx}{\R*(1+sin(\th))/cos(\th)}
+  \coordinate (K) at ({\Kx},\R);
+  \coordinate (L) at ({\Lx},-\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (-2.0,\R) -- ({\Kx+0.35},\R);
+  \draw[line width=0.65pt] (-2.0,-\R) -- ({\Lx+0.35},-\R);
+  \draw[line width=0.65pt] (K) -- (L);
+  \draw[line width=0.65pt] (O) -- (K);
+  \draw[line width=0.65pt] (O) -- (L);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=south, inner sep=1.2pt] at (-1.7,\R) {$A$};
+  \node[anchor=south, inner sep=1.2pt] at (0.35,\R) {$B$};
+  \node[anchor=north, inner sep=1.2pt] at (-1.7,-\R) {$C$};
+  \node[anchor=north, inner sep=1.2pt] at (0.35,-\R) {$D$};
+  \node[anchor=south west, inner sep=1.2pt] at (K) {$K$};
+  \node[anchor=north west, inner sep=1.2pt] at (L) {$L$};
+  \node[anchor=east, inner sep=1.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第9题）}
 \end{figure}
 
 \emph{（第9题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-1/fig-p0247-03.png}}
-\caption{(第11题)}
+\fitfig{%
+% fig-alt: （第11题）圆 O，弦 AB；弧 AB 中点 M，MP∥AB 且切于圆；虚线 OM
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.45}
+  \coordinate (O) at (0,0);
+  \coordinate (M) at (0,\R);
+  \coordinate (A) at (155:\R);
+  \coordinate (B) at (25:\R);
+  \coordinate (P) at (1.85,\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (-1.55,\R) -- (2.05,\R);
+  \draw[line width=0.55pt, dashed] (O) -- (M);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=south, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south west, inner sep=1.2pt] at (P) {$P$};
+  \node[anchor=south east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第11题）}
 \end{figure}
 
 \emph{（第11题）}
@@ -24387,8 +24563,39 @@ E、P、Q、F 四点就共圆了。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-1/fig-p0248-01.png}}
-\caption{(第13题)}
+\fitfig{%
+% fig-alt: （第13题）直角△ABC，∠C=90°；以 AC 为直径的圆交 AB 于 D；切线 DE 交 BC 于 E；虚线 CD、OD、OE
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.35}
+  \def\h{3.35}
+  \coordinate (C) at (0,0);
+  \coordinate (A) at ({2*\R},0);
+  \coordinate (O) at (\R,0);
+  \coordinate (B) at (0,\h);
+  \pgfmathsetmacro{\tD}{\h*\h/(4*\R*\R+\h*\h)}
+  \coordinate (D) at ({2*\R*\tD},{\h*(1-\tD)});
+  \pgfmathsetmacro{\Dx}{2*\R*\tD}
+  \pgfmathsetmacro{\Dy}{\h*(1-\tD)}
+  \pgfmathsetmacro{\Ey}{\Dy + \Dx*(\Dx-\R)/\Dy}
+  \coordinate (E) at (0,{\Ey});
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (C) -- (A);
+  \draw[line width=0.65pt] (C) -- (B);
+  \draw[line width=0.65pt] (B) -- (A);
+  \draw[line width=0.65pt] (E) -- (D);
+  \draw[line width=0.55pt, dashed] (C) -- (D);
+  \draw[line width=0.55pt, dashed] (O) -- (D);
+  \draw[line width=0.55pt, dashed] (O) -- (E);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north east, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第13题）}
 \end{figure}
 
 \emph{（第13题）}
@@ -24413,8 +24620,41 @@ E、P、Q、F 四点就共圆了。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-1/fig-p0248-02.png}}
-\caption{(第17题)}
+\fitfig{%
+% fig-alt: （第17题）定心仪：直角尺两边切于圆，角平分线过圆心；圆内正交直径
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.15}
+  \def\t{0.36}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\xin}{-\R}
+  \pgfmathsetmacro{\yin}{\R}
+  \pgfmathsetmacro{\xout}{-\R-\t}
+  \pgfmathsetmacro{\yout}{\R+\t}
+  \coordinate (V) at ({\xin},{\yin});
+  \coordinate (TL) at ({\xout},{\yout});
+  \coordinate (TRi) at (1.75,{\yin});
+  \coordinate (TRo) at (1.75,{\yout});
+  \coordinate (BLi) at ({\xin},-1.65);
+  \coordinate (BLo) at ({\xout},-1.65);
+  \draw[line width=0.7pt]
+    (BLo) -- (TL) -- (TRo)
+    (BLi) -- (V) -- (TRi);
+  % jagged ends
+  \draw[line width=0.7pt]
+    (TRo) -- ++(0.02,-0.10) -- ++(0.10,-0.05) -- ++(-0.08,-0.08) -- ++(0.08,-0.05) -- (TRi);
+  \draw[line width=0.7pt]
+    (BLo) -- ++(0.10,0.02) -- ++(0.05,0.10) -- ++(0.08,-0.08) -- ++(0.05,0.08) -- (BLi);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  % bisector from inner corner through O, extend past circle
+  \draw[line width=0.55pt] (V) -- ($(O)!{-1.15/\R}!(V)$);
+  % perpendicular diameter
+  \pgfmathsetmacro{\q}{0.707*\R}
+  \draw[line width=0.55pt] (-\q,-\q) -- (\q,\q);
+  \fill (O) circle [radius=1.0pt];
+  \node[font=\small] at (-1.55,-0.85) {定心仪};
+\end{tikzpicture}%
+}
+\caption{（第17题）}
 \end{figure}
 
 \emph{（第17题）}
