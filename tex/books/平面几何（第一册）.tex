@@ -26381,11 +26381,49 @@ R，所以切圆的圆心一定在直线 MR 上。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图：4.65}]{assets/plane-geometry-1/fig-p0265-02.png}}
-\caption{图：4.65}
+\fitfig{%
+% fig-alt: 图4·65 定圆 O（半径 K）；实线同心圆半径 K+R、K−R 为圆心轨迹；圆 O1、O2 半径 R 切直线 l
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\K{1.550}
+  \def\RR{0.500}
+  \coordinate (O) at (0,0);
+  \coordinate (O1) at (1.901,0.768);
+  \coordinate (O2) at (1.262,-1.615);
+  \coordinate (T1) at (2.384,0.639);
+  \coordinate (T2) at (1.745,-1.744);
+  \coordinate (LpA) at (2.350,2.240);
+  \coordinate (LpB) at (0.850,-2.960);
+  \coordinate (LA) at (2.833,2.111);
+  \coordinate (LB) at (1.400,-2.600);
+  \draw[line width=0.65pt] (-2.100,2.520) -- (-1.600,2.520);
+  \draw[line width=0.50pt] (-2.100,2.450) -- (-2.100,2.590);
+  \draw[line width=0.50pt] (-1.600,2.450) -- (-1.600,2.590);
+  \node[anchor=south, inner sep=1.2pt] at (-1.850,2.520) {$R$};
+  \draw[line width=0.75pt] (O) circle [radius=2.050];
+  \draw[line width=0.75pt] (O) circle [radius=\K];
+  \draw[line width=0.75pt] (O) circle [radius=1.050];
+  \draw[line width=0.65pt] (O) -- (0.996,1.188);
+  \draw[line width=0.65pt] (O) -- (1.050,0);
+  \node[anchor=south east, inner sep=1.0pt] at (0.500,0.700) {$K$};
+  \node[anchor=north, inner sep=1.5pt] at (0.720,0) {$K-R$};
+  \draw[line width=0.70pt] (O1) circle [radius=\RR];
+  \draw[line width=0.70pt] (O2) circle [radius=\RR];
+  \draw[line width=0.65pt] (LpA) -- (LpB);
+  \draw[line width=0.65pt] (LA) -- (LB);
+  \draw[line width=0.65pt] (O1) -- (T1);
+  \node[anchor=south west, inner sep=1.0pt] at (2.384,0.639) {$R$};
+  \fill (O) circle [radius=1.1pt];
+  \fill (O1) circle [radius=1.1pt];
+  \fill (O2) circle [radius=1.1pt];
+  \node[anchor=north east, inner sep=2.0pt] at (O) {$O$};
+  \node[anchor=south east, inner sep=1.2pt] at (1.70,0.40) {$O_1$};
+  \node[anchor=north, inner sep=1.2pt] at (1.262,-1.850) {$O_2$};
+\end{tikzpicture}%
+}
+\caption{图4·65}
 \end{figure}
 
-\emph{图 4·65}
+\emph{图4·65}
 
 先考虑与圆 O 相切，则所求圆的圆心轨迹是以 O
 为圆心，\((K+R)\)为半径的圆和以 K-R 为半径（如果\(K<R\)，则可以 R-K
@@ -26420,14 +26458,62 @@ V。以它们的交点\((O_{1}\)和\(O_{2})\)为圆心，R
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第266页）}]{assets/plane-geometry-1/fig-p0266-01.png}}
-\caption{图示（原PDF第266页）}
+\fitfig{%
+% fig-alt: （第2题）圆 M、N 外切于 P；过 P 的直线交两圆于 A、B；连 MA、NB；虚线连心线 MN
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rm{1.150}
+  \def\rn{1.200}
+  \coordinate (M) at (0,0);
+  \coordinate (P) at (1.150,0);
+  \coordinate (N) at (2.350,0);
+  \coordinate (A) at (-0.575,0.996);
+  \coordinate (B) at (2.950,-1.039);
+  \draw[line width=0.75pt] (M) circle [radius=\rm];
+  \draw[line width=0.75pt] (N) circle [radius=\rn];
+  \draw[line width=0.55pt, dashed] (M) -- (N);
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (M) -- (A);
+  \draw[line width=0.65pt] (N) -- (B);
+  \fill (M) circle [radius=1.1pt];
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2.0pt] at (M) {$M$};
+  \node[anchor=south, inner sep=2.0pt] at (P) {$P$};
+  \node[anchor=west, inner sep=2.0pt] at (N) {$N$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
+\caption{（第2题）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-1/fig-p0266-02.png}}
-\caption{(第2题)}
+\fitfig{%
+% fig-alt: （第2题）圆 M、N 内切于 P；过 P 的直线交两圆于 A、B；连 MA、NB
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rm{1.550}
+  \def\rn{0.780}
+  \coordinate (M) at (0,0);
+  \coordinate (N) at (0.770,0);
+  \coordinate (P) at (1.550,0);
+  \coordinate (A) at (0,1.550);
+  \coordinate (B) at (0.770,0.780);
+  \draw[line width=0.75pt] (M) circle [radius=\rm];
+  \draw[line width=0.75pt] (N) circle [radius=\rn];
+  \draw[line width=0.65pt] (M) -- (P);
+  \draw[line width=0.65pt] (A) -- (P);
+  \draw[line width=0.65pt] (M) -- (A);
+  \draw[line width=0.65pt] (N) -- (B);
+  \fill (M) circle [radius=1.1pt];
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north, inner sep=1.8pt] at (N) {$N$};
+  \node[anchor=west, inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+\caption{（第2题）}
 \end{figure}
 
 \emph{（第2题）}
@@ -26450,16 +26536,79 @@ V。以它们的交点\((O_{1}\)和\(O_{2})\)为圆心，R
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-1/fig-p0267-01.png}}
-\caption{(第4题)}
+\fitfig{%
+% fig-alt: （第4题）圆 M、N 外切于 C；过 C 的直线交两圆于 A、B；切线 AP、BQ；虚线连心线 MN
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rm{1.300}
+  \def\rn{0.850}
+  \coordinate (M) at (0,0);
+  \coordinate (C) at (1.300,0);
+  \coordinate (N) at (2.150,0);
+  \coordinate (A) at (-0.919,0.919);
+  \coordinate (B) at (2.751,-0.601);
+  \coordinate (Pend) at (-1.732,0.106);
+  \coordinate (Aext) at (-0.424,1.414);
+  \coordinate (Qend) at (2.044,-1.308);
+  \coordinate (Bext) at (3.352,0.000);
+  \draw[line width=0.75pt] (M) circle [radius=\rm];
+  \draw[line width=0.75pt] (N) circle [radius=\rn];
+  \draw[line width=0.55pt, dashed] (M) -- (N);
+  \draw[line width=0.65pt] (Pend) -- (Aext);
+  \draw[line width=0.65pt] (Qend) -- (Bext);
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.55pt] (M) -- (A);
+  \draw[line width=0.55pt] (N) -- (B);
+  \fill (M) circle [radius=1.1pt];
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2.0pt] at (Pend) {$P$};
+  \node[anchor=east, inner sep=2.0pt] at (M) {$M$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=west, inner sep=2.0pt] at (N) {$N$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north east, inner sep=1.2pt] at (Qend) {$Q$};
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \emph{（第4题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-1/fig-p0267-02.png}}
-\caption{(第5题)}
+\fitfig{%
+% fig-alt: （第5题）圆 M、N 外切于 P；平行直径 AB、CD；连 APD、BPC；标角 1（M）、2（N）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rm{1.400}
+  \def\rn{0.780}
+  \coordinate (M) at (0,0);
+  \coordinate (P) at (1.386,0.198);
+  \coordinate (N) at (2.158,0.308);
+  \coordinate (B) at (0,1.400);
+  \coordinate (A) at (0,-1.400);
+  \coordinate (D) at (2.158,1.088);
+  \coordinate (C) at (2.158,-0.472);
+  \draw[line width=0.75pt] (M) circle [radius=\rm];
+  \draw[line width=0.75pt] (N) circle [radius=\rn];
+  \draw[line width=0.55pt, dashed] (M) -- (N);
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (C) -- (D);
+  \draw[line width=0.65pt] (A) -- (D);
+  \draw[line width=0.65pt] (B) -- (C);
+  \fill (M) circle [radius=1.1pt];
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=south, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=east, inner sep=2.0pt] at (M) {$M$};
+  \node[anchor=west, inner sep=2.0pt] at (N) {$N$};
+  \node[anchor=south, inner sep=1.8pt] at (P) {$P$};
+  \node[anchor=south west, inner sep=1.2pt] at (0.22,0.06) {$1$};
+  \node[anchor=south east, inner sep=1.0pt] at (2.05,0.20) {$2$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \emph{（第5题）}
@@ -26482,14 +26631,33 @@ V。以它们的交点\((O_{1}\)和\(O_{2})\)为圆心，R
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第267页）}]{assets/plane-geometry-1/fig-p0267-03.png}}
-\caption{图示（原PDF第267页）}
+\fitfig{%
+% fig-alt: （第6题）大圆内四叶形：以两条垂直半径为直径作四圆
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.200}
+  \def\r{0.600}
+  \draw[line width=0.75pt] (0,0) circle [radius=\R];
+  \draw[line width=0.75pt] (\r,0) circle [radius=\r];
+  \draw[line width=0.75pt] (-\r,0) circle [radius=\r];
+  \draw[line width=0.75pt] (0,\r) circle [radius=\r];
+  \draw[line width=0.75pt] (0,-\r) circle [radius=\r];
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-1/fig-p0267-04.png}}
-\caption{(第6题)}
+\fitfig{%
+% fig-alt: （第6题）三等圆连环：相邻圆心距等于半径
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\r{1.000}
+  \draw[line width=0.75pt] (0,0) circle [radius=\r];
+  \draw[line width=0.75pt] (\r,0) circle [radius=\r];
+  \draw[line width=0.75pt] (2*\r,0) circle [radius=\r];
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \emph{（第6题）}
@@ -26504,8 +26672,41 @@ V。以它们的交点\((O_{1}\)和\(O_{2})\)为圆心，R
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-1/fig-p0267-05.png}}
-\caption{(第8题)}
+\fitfig{%
+% fig-alt: （第8题）两圆交于 A、B；直线 PAQ、RBS；虚线公弦 AB；标角 P、1（Q）、2（B）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rL{1.050}
+  \def\rR{1.400}
+  \coordinate (CL) at (0,0);
+  \coordinate (CR) at (1.350,0);
+  \coordinate (A) at (0.357,0.987);
+  \coordinate (B) at (0.357,-0.987);
+  \coordinate (P) at (-0.860,0.602);
+  \coordinate (Q) at (1.594,1.379);
+  \coordinate (R) at (-0.860,-0.602);
+  \coordinate (S) at (1.594,-1.379);
+  \coordinate (Qext) at (2.050,1.550);
+  \draw[line width=0.75pt] (CL) circle [radius=\rL];
+  \draw[line width=0.75pt] (CR) circle [radius=\rR];
+  \draw[line width=0.65pt] (P) -- (Qext);
+  \draw[line width=0.65pt] (R) -- (S);
+  \draw[line width=0.65pt] (P) -- (R);
+  \draw[line width=0.65pt] (Q) -- (S);
+  \draw[line width=0.55pt, dashed] (A) -- (B);
+  \draw[line width=0.50pt] ($(P)+(0.18,-0.02)$) arc[start angle=-8, end angle=-90, radius=0.20];
+  \draw[line width=0.50pt] ($(Q)+(0.16,-0.05)$) arc[start angle=-18, end angle=-90, radius=0.18];
+  \draw[line width=0.50pt] ($(B)+(0.16,0.02)$) arc[start angle=8, end angle=80, radius=0.16];
+  \node[anchor=east, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=east, inner sep=1.5pt] at (R) {$R$};
+  \node[anchor=south east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=north west, inner sep=1.2pt] at (S) {$S$};
+  \node[anchor=west, inner sep=1.0pt] at (1.82,1.42) {$1$};
+  \node[anchor=south west, inner sep=0.8pt] at (0.56,-0.86) {$2$};
+\end{tikzpicture}%
+}
+\caption{（第8题）}
 \end{figure}
 
 \emph{（第8题）}
