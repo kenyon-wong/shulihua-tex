@@ -17472,7 +17472,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
   \coordinate (C) at (\b,0);
   \coordinate (A) at (\s,\h);
   \coordinate (D) at ({\b+\s},\h);
-  \coordinate (O) at ({(\b+\s)/2},{\h/2});
+  \coordinate (O) at ({(\b+\s)/2},{0.5*\hexh});
   % E = foot from O to BC (y=0): (Ox, 0); given OB⊥BC in problem — draw OE vertical from O
   \coordinate (E) at ({(\b+\s)/2},0);
   \coordinate (F) at ({(\b+\s)/2},\h);
@@ -23938,8 +23938,36 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0256-01.png}}
-\caption{(第18题)}
+\fitfig{%
+% fig-alt: （第18题）扳头开口b夹正六边形螺帽（对边距）；底边标a；中心圆孔
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\s{0.82}
+  \pgfmathsetmacro{\hexh}{\s*sqrt(3)}
+  \pgfmathsetmacro{\Ro}{1.28*\s}
+  \pgfmathsetmacro{\aopen}{asin((0.5*\hexh)/\Ro)}
+  \pgfmathsetmacro{\cx}{\Ro*cos(\aopen)}
+  \pgfmathsetmacro{\jleft}{-\cx-0.22}
+  \pgfmathsetmacro{\hh}{0.38*\s}
+  \pgfmathsetmacro{\hxend}{\Ro+2.55*\s}
+  \draw[line width=0.75pt] (0:\s) -- (60:\s) -- (120:\s) -- (180:\s) -- (240:\s) -- (300:\s) -- cycle;
+  \draw[line width=0.75pt] (0,0) circle (0.34*\s);
+  \draw[line width=0.85pt] ({180-\aopen}:\Ro) arc[start angle={180-\aopen}, end angle={-180+\aopen}, radius=\Ro];
+  \draw[line width=0.85pt] ({-\cx},{0.5*\hexh}) -- (\jleft,{0.5*\hexh});
+  \draw[line width=0.85pt] ({-\cx},{-0.5*\hexh}) -- (\jleft,{-0.5*\hexh});
+  \draw[line width=0.85pt] ({\Ro-0.02},\hh) -- (\hxend,\hh) -- (\hxend,-\hh) -- ({\Ro-0.02},-\hh);
+  % dim b (opening)
+  \draw[line width=0.45pt] (\jleft-0.32,{0.5*\hexh}) -- (\jleft-0.32,{-0.5*\hexh});
+  \draw[line width=0.45pt] (\jleft-0.22,{0.5*\hexh}) -- (\jleft-0.42,{0.5*\hexh});
+  \draw[line width=0.45pt] (\jleft-0.22,{-0.5*\hexh}) -- (\jleft-0.42,{-0.5*\hexh});
+  \node[anchor=east,inner sep=1.2pt,font=\small] at (\jleft-0.32,0) {$b$};
+  % dim a (hex side, bottom)
+  \draw[line width=0.45pt] ({-0.5*\s},{-0.5*\hexh-0.28}) -- ({0.5*\s},{-0.5*\hexh-0.28});
+  \draw[line width=0.45pt] ({-0.5*\s},{-0.5*\hexh-0.20}) -- ({-0.5*\s},{-0.5*\hexh-0.36});
+  \draw[line width=0.45pt] ({0.5*\s},{-0.5*\hexh-0.20}) -- ({0.5*\s},{-0.5*\hexh-0.36});
+  \node[anchor=north,inner sep=1pt,font=\small] at (0,{-0.5*\hexh-0.28}) {$a$};
+\end{tikzpicture}%
+}
+\caption{（第18题）}
 \end{figure}
 
 \begin{quote}
@@ -23973,9 +24001,7 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
 \subsection{§4·4
 正多边形的作图}
 
-我们学习过正多边形的性质之后，容易体会出正多边形的作图问题，实质上就是等分圆的问题。只要应用圆规和直尺能够
-n 等分一个圆，那末顺次连结各个分点，所得的多边形就是这个圆的内接正 n
-边形。
+我们学习过正多边形的性质之后，容易体会出正多边形的作图问题，实质上就是等分圆的问题。只要应用圆规和直尺能够 $n$ 等分一个圆，那末顺次连结各个分点，所得的多边形就是这个圆的内接正 $n$ 边形。
 
 \subsubsection{作图题 1}
 
@@ -23985,8 +24011,29 @@ n 等分一个圆，那末顺次连结各个分点，所得的多边形就是这
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-22}]{assets/plane-geometry-2/fig-p0256-03.png}}
-\caption{图4-22}
+\fitfig{%
+% fig-alt: 图4·22 圆O内接正六边形A1…A6（A1在底）；虚线半径OA1，实线半径OA2
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \foreach \ang/\name in {270/A1,330/A2,30/A3,90/A4,150/A5,210/A6} {
+    \coordinate (\name) at (\ang:\R);
+  }
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A1) -- (A2) -- (A3) -- (A4) -- (A5) -- (A6) -- cycle;
+  \draw[dashed,line width=0.65pt] (O) -- (A1);
+  \draw[line width=0.75pt] (O) -- (A2);
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
+  \node[anchor=south east,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=north,inner sep=1.5pt] at (A1) {$A_1$};
+  \node[anchor=north west,inner sep=1pt] at (A2) {$A_2$};
+  \node[anchor=west,inner sep=1.5pt] at (A3) {$A_3$};
+  \node[anchor=south,inner sep=1.5pt] at (A4) {$A_4$};
+  \node[anchor=east,inner sep=1.5pt] at (A5) {$A_5$};
+  \node[anchor=east,inner sep=1.5pt] at (A6) {$A_6$};
+\end{tikzpicture}%
+}
+\caption{图4·22}
 \end{figure}
 
 \begin{quote}
@@ -24007,7 +24054,7 @@ n 等分一个圆，那末顺次连结各个分点，所得的多边形就是这
 \(\triangle OA_{1}A_{2}\) 是正三角形，
 
 \[
-A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
+A_1A_2=\text{半径 }OA_1.
 \]
 
 \textbf{［作法］} 从圆上任意点 \(A_{1}\) 起，用圆规连续截取等于半径的弦
@@ -24028,8 +24075,31 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-23}]{assets/plane-geometry-2/fig-p0257-01.png}}
-\caption{图4-23}
+\fitfig{%
+% fig-alt: 图4·23 圆O；直径A1A4（虚线）与竖虚线；以A1、A4为心、半径R作弧交圆于A2,A6与A3,A5；内接正六边形
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \foreach \ang/\name in {180/A1,240/A2,300/A3,0/A4,60/A5,120/A6} {
+    \coordinate (\name) at (\ang:\R);
+  }
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A1) -- (A2) -- (A3) -- (A4) -- (A5) -- (A6) -- cycle;
+  \draw[dashed,line width=0.65pt] (A1) -- (A4);
+  \draw[dashed,line width=0.65pt] (0,-\R) -- (0,\R);
+  \draw[line width=0.60pt] (A6) arc[start angle=60, end angle=-60, radius=\R];
+  \draw[line width=0.60pt] (A5) arc[start angle=120, end angle=240, radius=\R];
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
+  \node[anchor=south,inner sep=1.2pt] at (0,0.08) {$O$};
+  \node[anchor=east,inner sep=2pt] at (A1) {$A_1$};
+  \node[anchor=north east,inner sep=1pt] at (A2) {$A_2$};
+  \node[anchor=north west,inner sep=1pt] at (A3) {$A_3$};
+  \node[anchor=west,inner sep=2pt] at (A4) {$A_4$};
+  \node[anchor=south west,inner sep=1pt] at (A5) {$A_5$};
+  \node[anchor=south east,inner sep=1pt] at (A6) {$A_6$};
+\end{tikzpicture}%
+}
+\caption{图4·23}
 \end{figure}
 
 \begin{quote}
@@ -24038,8 +24108,27 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-24}]{assets/plane-geometry-2/fig-p0257-02.png}}
-\caption{图4-24}
+\fitfig{%
+% fig-alt: 图4·24 圆O；六等分点A1…A6；隔点连A1A3A5成内接正三角形（A5在顶）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \foreach \ang/\name in {210/A1,270/A2,330/A3,30/A4,90/A5,150/A6} {
+    \coordinate (\name) at (\ang:\R);
+  }
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A1) -- (A3) -- (A5) -- cycle;
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
+  \node[anchor=north,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1.5pt] at (A1) {$A_1$};
+  \node[anchor=north,inner sep=1.5pt] at (A2) {$A_2$};
+  \node[anchor=north west,inner sep=1.5pt] at (A3) {$A_3$};
+  \node[anchor=south west,inner sep=1pt] at (A4) {$A_4$};
+  \node[anchor=south,inner sep=1.5pt] at (A5) {$A_5$};
+  \node[anchor=south east,inner sep=1pt] at (A6) {$A_6$};
+\end{tikzpicture}%
+}
+\caption{图4·24}
 \end{figure}
 
 \begin{quote}
@@ -24048,7 +24137,7 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \paragraph{作图题 2}
 
-。 已知圆 \(O\)， 求作这个圆的内接正三角形。
+已知圆 \(O\)，求作这个圆的内接正三角形。
 
 分析 求作圆 O 的内接正三角形， 首先应当三等分这个圆。
 但是三等分一个圆可以在六等分这个圆的基础上完成， 因为全圆的
@@ -24070,7 +24159,27 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·25}]{assets/plane-geometry-2/fig-p0258-01.png}}
+\fitfig{%
+% fig-alt: 图4·25 圆O；虚线直径A1B（A1在顶）；以B为心、R为半径作弧交圆于A2、A3并过O；△A1A2A3
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \coordinate (A1) at (90:\R);
+  \coordinate (B) at (270:\R);
+  \coordinate (A2) at (210:\R);
+  \coordinate (A3) at (330:\R);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A1) -- (A2) -- (A3) -- cycle;
+  \draw[dashed,line width=0.65pt] (A1) -- (B);
+  \draw[line width=0.60pt] (A2) arc[start angle=150, end angle=30, radius=\R];
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
+  \node[anchor=west,inner sep=2pt] at (O) {$O$};
+  \node[anchor=south,inner sep=1.5pt] at (A1) {$A_1$};
+  \node[anchor=north east,inner sep=1.5pt] at (A2) {$A_2$};
+  \node[anchor=north west,inner sep=1.5pt] at (A3) {$A_3$};
+  \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
 \caption{图4·25}
 \end{figure}
 
@@ -24080,8 +24189,27 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·28}]{assets/plane-geometry-2/fig-p0258-02.png}}
-\caption{图4·28}
+\fitfig{%
+% fig-alt: 图4·26 圆O内接正方形A1A2A3A4（边水平）；对角线A1A3、A2A4为互相垂直的直径
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.15}
+  \coordinate (O) at (0,0);
+  \foreach \ang/\name in {225/A1,315/A2,45/A3,135/A4} {
+    \coordinate (\name) at (\ang:\R);
+  }
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A1) -- (A2) -- (A3) -- (A4) -- cycle;
+  \draw[line width=0.65pt] (A1) -- (A3);
+  \draw[line width=0.65pt] (A2) -- (A4);
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
+  \node[anchor=south west,inner sep=1pt] at (0.06,0.04) {$O$};
+  \node[anchor=north east,inner sep=1.5pt] at (A1) {$A_1$};
+  \node[anchor=north west,inner sep=1.5pt] at (A2) {$A_2$};
+  \node[anchor=south west,inner sep=1.5pt] at (A3) {$A_3$};
+  \node[anchor=south east,inner sep=1.5pt] at (A4) {$A_4$};
+\end{tikzpicture}%
+}
+\caption{图4·26}
 \end{figure}
 
 \begin{quote}
@@ -24090,13 +24218,13 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \paragraph{作图题 3}
 
-。 已知圆 \(O\)， 求作这个圆的内接正方形。 分析 求作圆 \(O\)
+已知圆 \(O\)，求作这个圆的内接正方形。 分析 求作圆 \(O\)
 的内接正方形， 首先应当四等分这个圆。 设 \(\widehat{A_1A_2}\) 是圆 \(O\)
 的 \(\frac{1}{4}\)， 连结半径 \(OA_1\) 和 \(OA_2\)。
 
 因为 \(\widehat{A_1A_2}\) 是全圆的 \(\frac{1}{4}\)， 所以
 \(\angle A_1OA_2 = 90^\circ (360^\circ\) 的 \(\frac{1}{4})\)， 从而
-\(OA_{2} \perp OA_{2}\) （图 4·26）。
+\(OA_1\perp OA_2\)（图4·26）。
 
 \textbf{［作法］} 作互相垂直的直径 \(A_{1}A_{3}\) 和
 \(A_{2}A_{4}\)，顺次连结直径的端点，得四边形
@@ -24106,8 +24234,30 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4·27}]{assets/plane-geometry-2/fig-p0258-03.png}}
-\caption{图 4·27}
+\fitfig{%
+% fig-alt: 图4·27 圆O；弦A1A2对36°圆心角；△OA1A2底角72°；A2M平分∠OA2A1，M在OA1上
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.20}
+  \pgfmathsetmacro{\phi}{0.5*(sqrt(5)-1)}
+  \coordinate (O) at (0,0);
+  \coordinate (A1) at (252:\R);
+  \coordinate (A2) at (288:\R);
+  \coordinate (M) at (252:{\phi*\R});
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (O) -- (A1) -- (A2) -- cycle;
+  \draw[line width=0.75pt] (A2) -- (M);
+  \draw[line width=0.40pt] (252:0.36) arc (252:288:0.36);
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
+  \node[anchor=south,inner sep=2pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1.5pt] at (A1) {$A_1$};
+  \node[anchor=north west,inner sep=1.5pt] at (A2) {$A_2$};
+  \node[anchor=east,inner sep=2pt] at (M) {$M$};
+  \node[font=\small,inner sep=0.5pt] at (270:0.58) {$36^{\circ}$};
+  \node[font=\small,inner sep=0.5pt] at ($(A1)+(0.42,0.28)$) {$72^{\circ}$};
+  \node[font=\small,inner sep=0.5pt] at ($(A2)+(0.42,0.22)$) {$72^{\circ}$};
+\end{tikzpicture}%
+}
+\caption{图4·27}
 \end{figure}
 
 \begin{quote}
@@ -24116,7 +24266,7 @@ A _ {1} A _ {2} = \text { \text{半径} } O A _ {1}.
 
 \paragraph{作图题 4}
 
-。 已知圆 \(O\)， 求作这个圆的内接正十边形。
+已知圆 \(O\)，求作这个圆的内接正十边形。
 
 分析 要作圆 \(O\) 的内接正十边形， 首先应当十等分这个圆。 设
 \(\widehat{A_1A_2}\) 是圆 \(O\) 的 \(\frac{1}{10}\) （图4·27）， 连结
@@ -24163,7 +24313,7 @@ O A _ {2}\text{：} A _ {1} A _ {2} = O M\text{：} M A _ {1}\text{，}
 O A _ {1}\text{：} O M = O M\text{：} M A _ {1}.
 \]
 
-由这个比例式，可知点 M 按中外比分割半径 \(OA_{1}\) （\(§2-8\) 例
+由这个比例式，可知点 M 按中外比分割半径 \(OA_{1}\) （§2·8 例
 3），由中外比分割半径 \(OA_{1}\) 所得的较大线段 OM 就是圆 O
 的内接正十边形的一边。
 
@@ -24181,8 +24331,47 @@ OM 的弦 \(A_{1}A_{2}\)， \(A_{2}A_{3}\)，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-28}]{assets/plane-geometry-2/fig-p0260-01.png}}
-\caption{图4-28}
+\fitfig{%
+% fig-alt: 图4·28 圆O内接正十边形A1…A10（A1在底）；A1B⊥OA1且A1B=OA1/2；BO交以B、BA1为半径之弧于C；以O、OC为半径之弧截OA1于M；连OA2、A2M
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.20}
+  \pgfmathsetmacro{\phi}{0.5*(sqrt(5)-1)}
+  \coordinate (O) at (0,0);
+  \foreach \k in {1,...,10} {
+    \pgfmathsetmacro{\ang}{270+(\k-1)*36}
+    \coordinate (A\k) at (\ang:\R);
+  }
+  \coordinate (B) at ({-0.5*\R},-\R);
+  \coordinate (M) at (0,{-\phi*\R});
+  % C: from B toward O by distance R/2
+  \pgfmathsetmacro{\bo}{\R*sqrt(1.25)}
+  \coordinate (C) at ($(B)!{(\R/2)/\bo}!(O)$);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A1) -- (A2) -- (A3) -- (A4) -- (A5) -- (A6) -- (A7) -- (A8) -- (A9) -- (A10) -- cycle;
+  \draw[line width=0.65pt] (O) -- (A1);
+  \draw[line width=0.65pt] (O) -- (A2);
+  \draw[line width=0.65pt] (A2) -- (M);
+  \draw[line width=0.65pt] (B) -- (O);
+  \draw[dashed,line width=0.55pt] ({-0.72*\R},-\R) -- ({0.18*\R},-\R);
+  \draw[line width=0.70pt] let \p1=(C) in (C) arc[start angle={atan2(\y1,\x1)}, end angle=-90, radius={\phi*\R}];
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
+  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=north,inner sep=1.5pt] at (A1) {$A_1$};
+  \node[anchor=north west,inner sep=1pt] at (A2) {$A_2$};
+  \node[anchor=west,inner sep=1.5pt] at (A3) {$A_3$};
+  \node[anchor=west,inner sep=1.5pt] at (A4) {$A_4$};
+  \node[anchor=south west,inner sep=1pt] at (A5) {$A_5$};
+  \node[anchor=south,inner sep=1.5pt] at (A6) {$A_6$};
+  \node[anchor=south east,inner sep=1pt] at (A7) {$A_7$};
+  \node[anchor=east,inner sep=1.5pt] at (A8) {$A_8$};
+  \node[anchor=east,inner sep=1.5pt] at (A9) {$A_9$};
+  \node[anchor=east,inner sep=2pt] at (A10) {$A_{10}$};
+  \node[anchor=north east,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south east,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1.5pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{图4·28}
 \end{figure}
 
 \begin{quote}
