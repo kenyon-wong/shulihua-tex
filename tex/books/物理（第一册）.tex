@@ -29568,11 +29568,40 @@ P _ {n} = m g \operatorname{tg} \theta = m \frac {v ^ {2}}{R}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·32}]{assets/physics-1/fig-p0461-01.png}}
-\caption{图 13·32}
+% fig-alt: 图13·32：左弧上点$A$，虚线半径至$O$，向心力$F_n$沿半径指向$O$；右自$O$沿同向虚线向外标离心力$F_e$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % left panel
+  \begin{scope}[shift={(0,0)}]
+    \def\R{2.10}
+    \def\th{48}
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (\th:\R);
+    \draw[line width=0.6pt] ({15}:\R) arc[start angle=15,end angle=78,radius=\R];
+    \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (O) -- (A);
+    \fill (A) circle[radius=0.04];
+    \node[anchor=south west] at ($(A)+(0.06,0.04)$) {$A$};
+    \node[anchor=north east] at (-0.08,-0.06) {$O$};
+    \draw[line width=0.55pt,->] (A) -- ($($(A)!0.42!(O)$)$);
+    \node[anchor=north west] at ($($(A)!0.28!(O)$)+(-0.02,-0.08)$) {$F_{\mathrm{n}}$};
+  \end{scope}
+  % right panel
+  \begin{scope}[shift={(3.55,0)}]
+    \def\R{2.10}
+    \def\th{48}
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (\th:\R);
+    \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (O) -- (P);
+    \node[anchor=north east] at (-0.08,-0.06) {$O$};
+    \draw[line width=0.55pt,->] (P) -- ++(\th:0.95);
+    \node[anchor=south west] at ($(P)+(\th:0.55)+(0.06,0.04)$) {$F_{\mathrm{e}}$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图13·32}
 \end{figure}
 
-\emph{图 13·32}
+\emph{图13·32}
 
 当向心力是几个其它物体对作圆周运动的物体的诸作用力的合力时，则作圆周运动的物体对其它物体也各施以反作用力，这些反作用力分别作用在其它各个物体上。这些反作用力的矢量和与向心力等值反向在同一直线上，但我们不可以把这些反作用力合成为一个合力，并把它称为反作用离心力，因为作用在不同物体上的几个力的合力在物理上是没有意义的。我们说``这些反作用力的矢量和''，是就数学上而言的，这并不意味着这个矢量和就是合力。例如汽车经过凹圆弧形桥的中央时，汽车受到的向心力就是桥面对汽车的正压力与汽车受到的重力的合力，如图13·33所示，即
 \(N_{2} - G = m\frac{v^{2}}{H}\)，显然 \(N_{2} > G\) 而 \(N_{3}\)
@@ -29584,16 +29613,59 @@ P _ {n} = m g \operatorname{tg} \theta = m \frac {v ^ {2}}{R}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-33}]{assets/physics-1/fig-p0462-01.png}}
-\caption{图13-33}
+% fig-alt: 图13·33：凹圆弧底汽车$m$，水平速度$v$；竖直向上$N_2$长于向下$G$；圆心在上，半径$R$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{2.40}
+  \coordinate (C) at (0,\R);
+  \coordinate (Bot) at (0,0);
+  \draw[line width=0.65pt] ($(C)+(240:\R)$) arc[start angle=240,end angle=300,radius=\R];
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (Bot) -- (C);
+  \draw[line width=0.5pt] (C) -- ($(C)+(250:\R)$);
+  \coordinate (Rpt) at ($(C)+(250:\R)$);
+  \node[anchor=south east] at ($(C)!0.55!(Rpt)+(-0.08,0.04)$) {$R$};
+  % car at bottom
+  \begin{scope}[shift={(Bot)}]
+    \draw[line width=0.45pt,fill=white] (-0.34,0.02) rectangle (0.34,0.30);
+    \draw[line width=0.4pt] (-0.18,0.02) circle[radius=0.05];
+    \draw[line width=0.4pt] (0.18,0.02) circle[radius=0.05];
+  \end{scope}
+  \coordinate (CM) at (0,0.18);
+  \node[anchor=east] at (-0.42,0.22) {$m$};
+  \draw[line width=0.55pt,->] (CM) -- ++(0.95,0);
+  \node[anchor=south] at ($(CM)+(0.70,0.06)$) {$v$};
+  \draw[line width=0.55pt,->] (CM) -- ++(0,1.35);
+  \node[anchor=west] at ($(CM)+(0.08,1.15)$) {$N_{2}$};
+  \draw[line width=0.55pt,->] (CM) -- ++(0,-0.85);
+  \node[anchor=west] at ($(CM)+(0.08,-0.70)$) {$G$};
+\end{tikzpicture}%
+}
+\caption{图13·33}
 \end{figure}
 
 \emph{图13·33}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-34}]{assets/physics-1/fig-p0462-02.png}}
-\caption{图13-34}
+% fig-alt: 图13·34：圆心$O$，半径$R$至右侧质点$m$；切向速度$v$向上；弧箭示角速度$\omega$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.85}
+  \coordinate (O) at (0,0);
+  \draw[line width=0.6pt] (O) circle[radius=\R];
+  \fill (O) circle[radius=0.035];
+  \node[anchor=east] at (-0.10,0) {$O$};
+  \draw[line width=0.5pt] (O) -- (\R,0);
+  \node[anchor=south] at ({\R*0.50},0.08) {$R$};
+  \fill (\R,0) circle[radius=0.09];
+  \node[anchor=west] at ({\R+0.12},0) {$m$};
+  \draw[line width=0.55pt,->] (\R,0) -- ++(0,1.00);
+  \node[anchor=west] at ({\R+0.08},0.85) {$v$};
+  \draw[line width=0.45pt,->] (20:0.70) arc[start angle=20,end angle=85,radius=0.70];
+  \node[anchor=south west] at (78:0.88) {$\omega$};
+\end{tikzpicture}%
+}
+\caption{图13·34}
 \end{figure}
 
 \emph{图13·34}
@@ -29629,7 +29701,61 @@ O
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13·35}]{assets/physics-1/fig-p0464-01.png}}
+% fig-alt: 图13·35：轴$AB$上重球$M$、弹簧$N$、套筒$K$；虚线示张开位；杠杆连阀$C$及弯管气流。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % shaft AB
+  \draw[line width=0.7pt] (0,2.55) -- (0,-0.15);
+  \node[anchor=south] at (0,2.62) {$A$};
+  \node[anchor=north] at (0,-0.22) {$B$};
+  % top hinge bar
+  \draw[line width=0.5pt] (-0.22,2.40) -- (0.22,2.40);
+  \fill (0,2.40) circle[radius=0.035];
+  % spring N (zigzag around shaft)
+  \draw[line width=0.45pt] (0.10,2.28)
+    -- (0.22,2.14) -- (-0.22,2.00) -- (0.22,1.86) -- (-0.22,1.72) -- (0.22,1.58) -- (0.10,1.48);
+  \node[anchor=west] at (0.28,1.90) {$N$};
+  % sleeve K
+  \draw[line width=0.5pt,fill=white] (-0.22,1.05) rectangle (0.22,1.28);
+  \node[anchor=west] at (0.28,1.16) {$K$};
+  % arms solid (lower speed)
+  \coordinate (ML) at (-1.15,0.55);
+  \coordinate (MR) at (1.15,0.55);
+  \draw[line width=0.55pt] (0,2.40) -- (ML);
+  \draw[line width=0.55pt] (0,2.40) -- (MR);
+  \fill (ML) circle[radius=0.16];
+  \fill (MR) circle[radius=0.16];
+  \node[anchor=north] at ($(ML)+(0,-0.18)$) {$M$};
+  \node[anchor=north] at ($(MR)+(0,-0.18)$) {$M$};
+  % links to sleeve
+  \draw[line width=0.45pt] ($(ML)!0.45!(0,2.40)$) -- (-0.18,1.28);
+  \draw[line width=0.45pt] ($(MR)!0.45!(0,2.40)$) -- (0.18,1.28);
+  % dashed raised position
+  \coordinate (MLd) at (-1.55,1.15);
+  \coordinate (MRd) at (1.55,1.15);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (0,2.40) -- (MLd);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (0,2.40) -- (MRd);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (MLd) circle[radius=0.16];
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (MRd) circle[radius=0.16];
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] ($(ML)+(-0.05,0.05)$) arc[start angle=250,end angle=310,radius=1.55];
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] ($(MR)+(0.05,0.05)$) arc[start angle=290,end angle=230,radius=1.55];
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (-0.22,1.55) rectangle (0.22,1.75);
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] ($(MLd)!0.45!(0,2.40)$) -- (-0.18,1.75);
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] ($(MRd)!0.45!(0,2.40)$) -- (0.18,1.75);
+  % lever from K to right
+  \draw[line width=0.5pt] (0.22,1.16) -- (2.10,1.16);
+  \fill (2.10,1.16) circle[radius=0.035];
+  % parallelogram / linkage frame
+  \draw[line width=0.45pt] (2.10,1.16) -- (2.55,1.55) -- (3.15,1.55) -- (2.70,1.16) -- cycle;
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (2.10,1.16) -- (2.55,0.78) -- (3.15,0.78) -- (2.70,1.16);
+  % valve pipe C
+  \draw[line width=0.55pt] (3.35,0.35) -- (3.35,1.35) -- (2.85,1.35);
+  \draw[line width=0.55pt] (3.55,0.35) -- (3.55,1.55) -- (2.85,1.55);
+  \draw[line width=0.45pt] (3.05,1.25) -- (3.35,1.45);
+  \node[anchor=south] at (3.20,1.58) {$C$};
+  \draw[line width=0.5pt,->] (3.45,-0.05) -- (3.45,0.30);
+\end{tikzpicture}%
+}
 \caption{图13·35}
 \end{figure}
 
@@ -29648,11 +29774,53 @@ m。节速器的角速度为 \(\omega\)，棒与竖直轴之间夹角为
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·36}]{assets/physics-1/fig-p0465-01.png}}
-\caption{图 13·36}
+% fig-alt: 图13·36：竖直轴$AB$；两棒自$A$挂重球，右球$m$标拉力$T$、重力$mg$、向心力$F$及夹角$\theta$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\H{2.70}
+  \def\th{32}
+  \coordinate (A) at (0,\H);
+  \coordinate (Bb) at (0,0);
+  % hatched shaft
+  \draw[line width=0.45pt,pattern=north east lines,pattern color=black!70] (-0.10,0) rectangle (0.10,\H);
+  \draw[line width=0.5pt] (-0.10,0) rectangle (0.10,\H);
+  \node[anchor=south east] at (-0.12,\H) {$A$};
+  \node[anchor=north east] at (-0.12,-0.02) {$B$};
+  % left ball (simple)
+  \coordinate (L) at (-{2.35*sin(\th)},{\H-2.35*cos(\th)});
+  \draw[line width=0.55pt] (A) -- (L);
+  \fill (L) circle[radius=0.10];
+  % right ball
+  \coordinate (R) at ({2.35*sin(\th)},{\H-2.35*cos(\th)});
+  \draw[line width=0.55pt] (A) -- (R);
+  \fill (R) circle[radius=0.10];
+  \node[anchor=south west] at ($(R)+(0.08,0.06)$) {$m$};
+  % angle at A
+  \draw[line width=0.35pt] (0,{\H-0.55}) arc[start angle=-90,end angle={-90+\th},radius=0.55];
+  \node[anchor=north] at ({0.28},{\H-0.42}) {$\theta$};
+  % forces at R
+  % T along string toward A
+  \draw[line width=0.55pt,->] (R) -- ($(R)!0.42!(A)$);
+  \node[anchor=south west] at ($($(R)!0.30!(A)$)+(0.06,0.02)$) {$T$};
+  % mg down
+  \coordinate (Gtip) at ($(R)+(0,-1.15)$);
+  \draw[line width=0.55pt,->] (R) -- (Gtip);
+  \node[anchor=north] at ($(Gtip)+(0,-0.02)$) {$mg$};
+  % F horizontal toward axis
+  \coordinate (Ftip) at ($(R)+({-1.05},0)$);
+  \draw[line width=0.5pt,->] (R) -- (Ftip);
+  \node[anchor=south] at ($(Ftip)+(0.15,0.08)$) {$F$};
+  % dashed hypotenuse of force triangle (parallel to string)
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (Gtip) -- (Ftip);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 1.0pt] (Ftip) -- ($(Ftip)+(0,0.85)$);
+  \draw[line width=0.35pt] ($(Gtip)+(0,0.42)$) arc[start angle=90,end angle={90+\th},radius=0.42];
+  \node[anchor=south east] at ($(Gtip)+({-0.12},{0.55})$) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{图13·36}
 \end{figure}
 
-\emph{图 13·36}
+\emph{图13·36}
 
 周运动时，受到两个力的作用，一个是重力 \(mg,\) 一个是棒对重球的拉力
 \(T\)。这两个力的合力 \(F\) 就是向心力。由图可知
@@ -29699,8 +29867,44 @@ f _ {n} = m R \omega^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13-37}]{assets/physics-1/fig-p0466-01.png}}
-\caption{图 13-37}
+% fig-alt: 图13·37：竖直圆筒绕轴转，角速度$\omega$，半径$R$；筒壁内侧人受向心力$f_n$与反作用$f$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\Rx{1.15}
+  \def\Ry{0.32}
+  \def\H{3.20}
+  % top ellipse
+  \draw[line width=0.55pt] (0,\H) ellipse[x radius=\Rx,y radius=\Ry];
+  % sides
+  \draw[line width=0.55pt] (-\Rx,\H) -- (-\Rx,0);
+  \draw[line width=0.55pt] (\Rx,\H) -- (\Rx,0);
+  % bottom (front arc solid, back dashed)
+  \draw[line width=0.45pt,dash pattern=on 1.3pt off 1.0pt] (-\Rx,0) arc[start angle=180,end angle=360,x radius=\Rx,y radius=\Ry];
+  \draw[line width=0.55pt] (-\Rx,0) arc[start angle=180,end angle=0,x radius=\Rx,y radius=\Ry];
+  % axis
+  \draw[line width=0.4pt,dash pattern=on 1.5pt off 1.1pt] (0,{\H+0.45}) -- (0,{-0.35});
+  % omega arc
+  \draw[line width=0.45pt,->] ({0.22},{\H+0.42}) arc[start angle=20,end angle=160,radius=0.28];
+  \node[anchor=east] at (-0.40,{\H+0.55}) {$\omega$};
+  % radius on top
+  \draw[line width=0.5pt] (0,\H) -- (\Rx,\H);
+  \node[anchor=south] at ({\Rx*0.50},{\H+0.06}) {$R$};
+  % person on right wall
+  \coordinate (P) at (\Rx,{1.55});
+  \fill ($(P)+(-0.08,0.42)$) circle[radius=0.07]; % head
+  \draw[line width=0.45pt] ($(P)+(-0.08,0.35)$) -- ($(P)+(-0.08,0.05)$); % torso
+  \draw[line width=0.4pt] ($(P)+(-0.08,0.28)$) -- ($(P)+(-0.28,0.12)$);
+  \draw[line width=0.4pt] ($(P)+(-0.08,0.28)$) -- ($(P)+(0.05,0.12)$);
+  \draw[line width=0.4pt] ($(P)+(-0.08,0.05)$) -- ($(P)+(-0.22,-0.22)$);
+  \draw[line width=0.4pt] ($(P)+(-0.08,0.05)$) -- ($(P)+(0.02,-0.22)$);
+  % forces
+  \draw[line width=0.55pt,->] ($(P)+(-0.08,0.20)$) -- ++(-0.85,0);
+  \node[anchor=south] at ($(P)+(-0.55,0.28)$) {$f_{\mathrm{n}}$};
+  \draw[line width=0.55pt,->] ($(P)+(-0.08,0.20)$) -- ++(0.85,0);
+  \node[anchor=south] at ($(P)+(0.45,0.28)$) {$f$};
+\end{tikzpicture}%
+}
+\caption{图13·37}
 \end{figure}
 
 \emph{图13·37}
@@ -29745,8 +29949,36 @@ f=1.3\text{周/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-1/fig-p0467-01.png}}
-\caption{(第4题)}
+% fig-alt: （第4题）：上大下小圆台壁；竖直点画轴；水平半径$R$；壁与竖直夹角$\alpha$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\Rt{1.55}
+  \def\Rb{0.85}
+  \def\H{2.20}
+  \def\ryt{0.38}
+  \def\ryb{0.22}
+  % top ellipse
+  \draw[line width=0.55pt] (0,\H) ellipse[x radius=\Rt,y radius=\ryt];
+  % sides
+  \draw[line width=0.55pt] (-\Rt,\H) -- (-\Rb,0);
+  \draw[line width=0.55pt] (\Rt,\H) -- (\Rb,0);
+  % bottom ellipse dashed
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt] (0,0) ellipse[x radius=\Rb,y radius=\ryb];
+  % axis dash-dot
+  \draw[line width=0.4pt,dash pattern=on 2.0pt off 0.8pt on 0.4pt off 0.8pt] (0,{\H+0.25}) -- (0,{-0.30});
+  % radius R at mid height
+  \def\ym{1.25}
+  \pgfmathsetmacro{\Rm}{\Rb+(\Rt-\Rb)*(\ym)/\H}
+  \draw[line width=0.45pt,dash pattern=on 1.3pt off 1.0pt,<->] (0,\ym) -- (-\Rm,\ym);
+  \node[anchor=south] at ({-\Rm*0.50},{\ym+0.06}) {$R$};
+  % vertical dashed at contact for alpha
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (-\Rm,\ym) -- (-\Rm,{-0.05});
+  % angle alpha between wall and vertical
+  \draw[line width=0.35pt] (-\Rm,{\ym-0.55}) arc[start angle=-90,end angle={-90-18},radius=0.55];
+  \node[anchor=north east] at ({-\Rm-0.08},{\ym-0.35}) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \emph{（第4题）}
@@ -29772,8 +30004,33 @@ f=1.3\text{周/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0468-01.png}}
-\caption{(a)}
+% fig-alt: 图13·38（a）：楔块$A$水平可移，竖直杆$B$在导槽中可上下移，杆端倚斜面。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ground
+  \draw[line width=0.55pt] (-1.60,0) -- (2.40,0);
+  % wedge A
+  \draw[line width=0.55pt,fill=white] (0,0) -- (0,1.15) -- (2.10,0) -- cycle;
+  \node at (0.45,0.38) {$A$};
+  % rod B
+  \draw[line width=0.55pt,fill=white] (0.85,0.68) rectangle (1.05,2.55);
+  \node[anchor=east] at (0.78,1.70) {$B$};
+  % guides (brush)
+  \foreach \y in {1.35,2.15} {
+    \foreach \dx/\s in {-0.08/1, 0.28/-1} {
+      \foreach \i in {0,...,3} {
+        \draw[line width=0.35pt] ({0.85+\dx},{\y+0.08-0.05*\i}) -- ++({\s*0.22},0.04-0.02*\i);
+      }
+    }
+  }
+  % motion arrows
+  \draw[line width=0.5pt,->] (0.70,-0.28) -- (0.15,-0.28);
+  \draw[line width=0.5pt,->] (1.15,-0.28) -- (1.70,-0.28);
+  \draw[line width=0.5pt,->] (1.35,1.55) -- (1.35,1.95);
+  \draw[line width=0.5pt,->] (1.35,1.45) -- (1.35,1.05);
+\end{tikzpicture}%
+}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
