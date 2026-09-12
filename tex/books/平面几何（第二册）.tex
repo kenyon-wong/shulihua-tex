@@ -19608,7 +19608,37 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·29}]{assets/plane-geometry-2/fig-p0211-01.png}}
+\fitfig{%
+% fig-alt: 图3·29 直角△ABC（直角在C，直角方）；边a=BC、b=CA、c=AB；外侧相似五边形P（BC上）、Q（CA上）、R（AB上）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (2.900,0.000);
+  \coordinate (B) at (0.000,2.400);
+  \coordinate (C) at (0.000,0.000);
+  \coordinate (Pp1) at (-0.960,2.784);
+  \coordinate (Pp2) at (-2.064,1.680);
+  \coordinate (Pp3) at (-1.320,0.120);
+  \coordinate (Qp1) at (-0.464,-1.160);
+  \coordinate (Qp2) at (0.870,-2.494);
+  \coordinate (Qp3) at (2.755,-1.595);
+  \coordinate (Rp1) at (0.496,3.944);
+  \coordinate (Rp2) at (2.934,4.174);
+  \coordinate (Rp3) at (4.075,1.715);
+  \draw[line width=0.75pt] (B) -- (Pp1) -- (Pp2) -- (Pp3) -- (C) -- cycle;
+  \draw[line width=0.75pt] (C) -- (Qp1) -- (Qp2) -- (Qp3) -- (A) -- cycle;
+  \draw[line width=0.75pt] (B) -- (Rp1) -- (Rp2) -- (Rp3) -- (A) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.55pt] (C) -- ++(0.18,0) -- ++(0,0.18) -- ++(-0.18,0);
+  \node[anchor=north west,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=west,inner sep=2pt] at ($(B)!0.45!(C)+(-0.15,0)$) {$a$};
+  \node[anchor=north,inner sep=2pt] at ($(C)!0.50!(A)+(0,-0.12)$) {$b$};
+  \node[anchor=south west,inner sep=1.5pt] at ($(A)!0.42!(B)$) {$c$};
+  \node at (-0.869,1.397) {$P$};
+  \node at (1.212,-1.050) {$Q$};
+  \node at (2.081,2.447) {$R$};
+\end{tikzpicture}%
+}
 \caption{图3·29}
 \end{figure}
 
@@ -19726,8 +19756,39 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-2/fig-p0213-01.png}}
-\caption{(第17题)}
+\fitfig{%
+% fig-alt: （第17题）△ABC内点P；过P作MN∥BC、HG∥AC、EF∥AB；△PEM、△PFG、△PHN面积标S1、S2、S3
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.000,3.350);
+  \coordinate (B) at (-2.450,0.000);
+  \coordinate (C) at (2.850,0.000);
+  \coordinate (P) at (0.177,1.273);
+  \coordinate (N) at (-1.519,1.273);
+  \coordinate (M) at (1.767,1.273);
+  \coordinate (H) at (-0.735,2.345);
+  \coordinate (G) at (1.260,0.000);
+  \coordinate (E) at (0.912,2.278);
+  \coordinate (F) at (-0.754,0.000);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (N) -- (M);
+  \draw[line width=0.75pt] (H) -- (G);
+  \draw[line width=0.75pt] (E) -- (F);
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (P) {$P$};
+  \node[anchor=east,inner sep=1.2pt] at (N) {$N$};
+  \node[anchor=west,inner sep=1.2pt] at (M) {$M$};
+  \node[anchor=east,inner sep=1.2pt] at (H) {$H$};
+  \node[anchor=north,inner sep=1.2pt] at (G) {$G$};
+  \node[anchor=west,inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1.2pt] at (F) {$F$};
+  \node at (0.952,1.608) {$S_1$};
+  \node at (0.228,0.424) {$S_2$};
+  \node at (-0.692,1.630) {$S_3$};
+\end{tikzpicture}%
+}
+\caption{（第17题）}
 \end{figure}
 
 \begin{quote}
@@ -19785,8 +19846,30 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-20}]{assets/plane-geometry-2/fig-p0214-01.png}}
-\caption{图3-20}
+\fitfig{%
+% fig-alt: 图3·30 底虚线含实段AB；上实线XY含C1、C2；△ABC1与△ABC2同底AB等高h（右侧双箭头）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.80,0);
+  \coordinate (B) at (3.60,0);
+  \coordinate (C1) at (0.20,2.55);
+  \coordinate (C2) at (4.40,2.55);
+  \draw[dashed,line width=0.6pt] (-0.20,0) -- (A);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[dashed,line width=0.6pt] (B) -- (5.20,0);
+  \draw[line width=0.75pt] (-0.30,2.55) -- (5.30,2.55);
+  \draw[line width=0.75pt] (A) -- (C1) -- (B) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C2) -- (B);
+  \draw[<->,dashed,line width=0.55pt] (5.55,0) -- (5.55,2.55);
+  \node[anchor=north,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1.5pt] at (C1) {$C_1$};
+  \node[anchor=south,inner sep=1.5pt] at (C2) {$C_2$};
+  \node[anchor=east,inner sep=2pt] at (-0.30,2.55) {$X$};
+  \node[anchor=west,inner sep=2pt] at (5.30,2.55) {$Y$};
+  \node[anchor=west,inner sep=2pt] at (5.55,1.27) {$h$};
+\end{tikzpicture}%
+}
+\caption{图3·30}
 \end{figure}
 
 \begin{quote}
@@ -19820,42 +19903,159 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0215-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图3·31（1）XY∥BC；A在XY上；BC垂直平分线MN（虚）交XY于A'；△ABC与等腰△A'BC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (1.10,0);
+  \coordinate (C) at (4.40,0);
+  \coordinate (A) at (0.55,2.70);
+  \coordinate (Ap) at (2.75,2.70);
+  \draw[line width=0.75pt] (-0.20,2.70) -- (5.20,2.70);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (Ap) -- (B);
+  \draw[line width=0.75pt] (Ap) -- (C);
+  \draw[dashed,line width=0.6pt] (2.75,-0.55) -- (2.75,3.35);
+  \node[anchor=east,inner sep=2pt] at (-0.20,2.70) {$X$};
+  \node[anchor=west,inner sep=2pt] at (5.20,2.70) {$Y$};
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
+  \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1.5pt] at (2.75,-0.55) {$M$};
+  \node[anchor=south,inner sep=1.5pt] at (2.75,3.35) {$N$};
+\end{tikzpicture}%
+}
+\caption{图3·31（1）}
 \end{figure}
 
 \begin{quote}
-（1）
+图3·31（1）
 \end{quote}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0215-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图3·31（2）直线v∥BC；A在v上；自B作∠A'BC=α交v于A'；上方另绘已知角α；△ABC与△A'BC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (1.40,0);
+  \coordinate (C) at (4.50,0);
+  \coordinate (A) at (0.35,2.55);
+  \coordinate (Ap) at (2.85,2.55);
+  \draw[line width=0.75pt] (-0.25,2.55) -- (5.10,2.55);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (Ap) -- (B);
+  \draw[line width=0.75pt] (Ap) -- (C);
+  \pgfmathsetmacro{\alang}{atan2(2.55,2.85-1.40)}
+  \draw[line width=0.5pt] (B) ++(0:0.42) arc (0:\alang:0.42);
+  \node[anchor=south west,inner sep=1pt] at ($(B)+(0.50,0.20)$) {$\alpha$};
+  % reference angle: horizontal right + ray up-left (matches raw)
+  \draw[line width=0.65pt] (2.20,3.55) -- (2.95,3.55);
+  \draw[line width=0.65pt] (2.20,3.55) -- ({2.20-0.70*cos(40)},{3.55+0.70*sin(40)});
+  \draw[line width=0.5pt] (2.20,3.55) ++(180:0.30) arc (180:{180-40}:0.30);
+  \node[anchor=south,inner sep=1.5pt] at (2.05,3.78) {$\alpha$};
+  \node[anchor=east,inner sep=2pt] at (-0.25,2.55) {$X$};
+  \node[anchor=west,inner sep=1.5pt] at (5.10,2.55) {$v$};
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
+  \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1.5pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+\caption{图3·31（2）}
 \end{figure}
 
 \begin{quote}
-（2）
+图3·31（2）
 \end{quote}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0215-03.png}}
-\caption{(3)}
+\fitfig{%
+% fig-alt: 图3·31（3）XY∥BC；A在XY；虚圆过B、C交XY于A'、A''；∠BA'C=∠BA''C=β；另绘已知角β
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (1.100,0.000);
+  \coordinate (C) at (4.000,0.000);
+  \coordinate (A) at (-0.050,2.500);
+  \coordinate (Ap) at (0.937,2.500);
+  \coordinate (App) at (4.163,2.500);
+  \coordinate (Ocirc) at (2.550,1.350);
+  \pgfmathsetmacro{\rrad}{1.9812}
+  \draw[line width=0.75pt] (-0.45,2.50) -- (5.40,2.50);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[dashed,line width=0.6pt] (Ocirc) circle (\rrad);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (Ap) -- (B);
+  \draw[line width=0.75pt] (Ap) -- (C);
+  \draw[line width=0.75pt] (App) -- (B);
+  \draw[line width=0.75pt] (App) -- (C);
+  \draw[line width=0.5pt] (Ap) ++(-86.264:0.38) arc (-86.264:-39.219:0.38);
+  \draw[line width=0.5pt] (App) ++(-93.736:0.38) arc (-93.736:-140.781:0.38);
+  \node[inner sep=1pt] at (1.137,1.950) {$\beta$};
+  \node[inner sep=1pt] at (3.963,1.950) {$\beta$};
+  \draw[line width=0.65pt] (0.55,3.45) -- (1.35,3.45);
+  \draw[line width=0.65pt] (0.55,3.45) -- ({0.55-0.65*cos(45)},{3.45+0.65*sin(45)});
+  \draw[line width=0.5pt] (0.55,3.45) ++(180:0.28) arc (180:{180-45}:0.28);
+  \node[anchor=south,inner sep=1.5pt] at (0.35,3.68) {$\beta$};
+  \node[anchor=east,inner sep=2pt] at (-0.45,2.50) {$X$};
+  \node[anchor=west,inner sep=2pt] at (5.40,2.50) {$Y$};
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
+  \node[anchor=south,inner sep=1.5pt] at (App) {$A''$};
+  \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1.5pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+\caption{图3·31（3）}
 \end{figure}
 
 \begin{quote}
-（3）
+图3·31（3）
 \end{quote}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0215-04.png}}
-\caption{(4)}
+\fitfig{%
+% fig-alt: 图3·31（4）XY∥BC；A在XY；O为BC中点；以O为心、l为半径虚弧交XY于A'、A''；虚线OA'、OA''；上方标已知线段l
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (1.00,0);
+  \coordinate (C) at (4.20,0);
+  \coordinate (O) at (2.60,0);
+  \coordinate (A) at (0.45,2.35);
+  \pgfmathsetmacro{\rl}{2.55}
+  \coordinate (Ap) at ({2.60-sqrt(\rl*\rl-2.35*2.35)},2.35);
+  \coordinate (App) at ({2.60+sqrt(\rl*\rl-2.35*2.35)},2.35);
+  \draw[line width=0.75pt] (-0.25,2.35) -- (5.40,2.35);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (Ap) -- (B);
+  \draw[line width=0.75pt] (Ap) -- (C);
+  \draw[line width=0.75pt] (App) -- (B);
+  \draw[line width=0.75pt] (App) -- (C);
+  \draw[dashed,line width=0.6pt] (O) -- (Ap);
+  \draw[dashed,line width=0.6pt] (O) -- (App);
+  \draw[dashed,line width=0.6pt] ({2.60+\rl*cos(-25)},{\rl*sin(-25)}) arc (-25:205:\rl);
+  \draw[line width=0.7pt] (1.70,3.25) -- (3.50,3.25);
+  \draw[line width=0.7pt] (1.70,3.15) -- (1.70,3.35);
+  \draw[line width=0.7pt] (3.50,3.15) -- (3.50,3.35);
+  \node[anchor=south,inner sep=1.5pt] at (2.60,3.25) {$l$};
+  \node[anchor=east,inner sep=2pt] at (-0.25,2.35) {$X$};
+  \node[anchor=west,inner sep=2pt] at (5.40,2.35) {$Y$};
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
+  \node[anchor=south,inner sep=1.5pt] at (App) {$A''$};
+  \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1.5pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{图3·31（4）}
 \end{figure}
 
 \begin{quote}
-（4）
+图3·31（4）
 \end{quote}
 
 \begin{quote}
@@ -19890,8 +20090,29 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-32}]{assets/plane-geometry-2/fig-p0216-01.png}}
-\caption{图3-32}
+\fitfig{%
+% fig-alt: 图3·32 五边形ABCDE；延长AB至F使CF∥DB（虚线CF、DB）；连DF；等积四边形AFDE
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.000,0.000);
+  \coordinate (B) at (2.200,0.000);
+  \coordinate (C) at (3.350,1.550);
+  \coordinate (D) at (1.550,2.550);
+  \coordinate (E) at (-0.850,1.350);
+  \coordinate (F) at (3.745,0.000);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+  \draw[line width=0.75pt] (B) -- (F);
+  \draw[line width=0.75pt] (D) -- (F);
+  \draw[dashed,line width=0.6pt] (D) -- (B);
+  \draw[dashed,line width=0.6pt] (C) -- (F);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=east,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{图3·32}
 \end{figure}
 
 \begin{quote}
