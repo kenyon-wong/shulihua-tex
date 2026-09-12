@@ -35863,19 +35863,50 @@ x - y + 3 = 0 \quad \text {\text{或}} \quad x + y - 1 = 0;
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(习题 7·3\textasciitilde7·4 第 1(2) 题) (习题 7·3\textasciitilde7·4 第 1(3) 题)}]{assets/analytic-geometry/fig-p0451-02.png}}
-\caption{(习题 7·3\textasciitilde7·4 第 1(2) 题) (习题
-7·3\textasciitilde7·4 第 1(3) 题)}
+\fitfig{%
+% fig-alt: 抛物线 ρ=2/(1−cosθ)，焦点 O，顶点 (−1,0)；极轴 Ox，极垂线虚线；标 −1
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.5pt,dash pattern=on 2.0pt off 1.4pt] (0,-2.35) -- (0,2.35);
+  \draw[line width=0.55pt] (-1.85,0) -- (0,0);
+  \draw[line width=0.55pt,-latex] (0,0) -- (3.15,0) node[anchor=west,inner sep=1.2pt] {$x$};
+  \draw[line width=0.85pt,domain=-2.15:2.15,samples=80,smooth]
+    plot ({(\x)*(\x)/4 - 1}, \x);
+  \draw[line width=0.35pt] (-1,0.12) -- (-1,-0.12);
+  \node[anchor=north,inner sep=1.4pt,font=\small] at (-1,0) {$-1$};
+  \fill (0,0) circle (1.1pt);
+  \node[anchor=north west,inner sep=1.3pt,font=\small] at (0.02,-0.02) {$O$};
+\end{tikzpicture}%
+}
+\caption{（习题 7·3～7·4 第 1（2）题）}
 \end{figure}
 
-\emph{（习题 7·3\textasciitilde7·4 第 1（2） 题） （习题
-7·3\textasciitilde7·4 第 1（3） 题）}
+\emph{（习题 7·3～7·4 第 1（2）题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第451页）}]{assets/analytic-geometry/fig-p0451-03.png}}
-\caption{图示（原PDF第451页）}
+\fitfig{%
+% fig-alt: 双纽线 ρ²=a²sin2θ；叶在一、三象限；对称轴标 a；极轴与 90° 虚线
+\begin{tikzpicture}[x=0.95cm,y=0.95cm,line cap=round,line join=round,>=latex]
+  \def\aa{1.55}
+  \draw[line width=0.5pt,dash pattern=on 2.0pt off 1.4pt] (0,-1.75) -- (0,1.85);
+  \node[anchor=south,inner sep=1.2pt,font=\small] at (0,1.85) {$90^\circ$};
+  \draw[line width=0.5pt,dash pattern=on 2.0pt off 1.4pt] (-1.75,0) -- (0,0);
+  \draw[line width=0.55pt,-latex] (0,0) -- (1.95,0) node[anchor=west,inner sep=1.2pt] {$x$};
+  \draw[line width=0.55pt] ({-1.05*\aa*cos(45)},{-1.05*\aa*sin(45)}) -- ({1.05*\aa*cos(45)},{1.05*\aa*sin(45)});
+  \draw[line width=0.85pt,domain=2:88,samples=60,smooth]
+    plot ({(\aa*sqrt(sin(2*\x)))*cos(\x)},{(\aa*sqrt(sin(2*\x)))*sin(\x)});
+  \draw[line width=0.85pt,domain=182:268,samples=60,smooth]
+    plot ({(\aa*sqrt(sin(2*\x)))*cos(\x)},{(\aa*sqrt(sin(2*\x)))*sin(\x)});
+  \node[anchor=south east,inner sep=1.0pt,font=\small] at ({0.48*\aa*cos(45)},{0.48*\aa*sin(45)}) {$a$};
+  \node[anchor=north west,inner sep=1.0pt,font=\small] at ({-0.48*\aa*cos(45)},{-0.48*\aa*sin(45)}) {$a$};
+  \fill (0,0) circle (1.1pt);
+  \node[anchor=north east,inner sep=1.3pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（习题 7·3～7·4 第 1（3）题）}
 \end{figure}
+
+\emph{（习题 7·3～7·4 第 1（3）题）}
 
 \begin{enumerate}
 \setcounter{enumi}{1}
@@ -35887,8 +35918,34 @@ x - y + 3 = 0 \quad \text {\text{或}} \quad x + y - 1 = 0;
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(习题 7·3\textasciitilde7·4 第 3 题)}]{assets/analytic-geometry/fig-p0452-01.png}}
-\caption{(习题 7·3\textasciitilde7·4 第 3 题)}
+\fitfig{%
+% fig-alt: 蚌线 ρ=a(1±secθ)；定直线过 A，尖点于 O；射线交直线于 Q、外支于 P；标 θ
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \def\aa{1.55}
+  \def\th{38}
+  \draw[line width=0.5pt,dash pattern=on 1.8pt off 1.3pt] (0,0) -- ({3.55*\aa},0);
+  \draw[line width=0.55pt,-latex] ({3.55*\aa},0) -- ({3.85*\aa},0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.6pt] ({\aa},{-2.55}) -- ({\aa},{2.55});
+  \node[anchor=north west,inner sep=1.2pt,font=\small] at ({\aa},0) {$A$};
+  \draw[line width=0.9pt,domain=-72:72,samples=90,smooth]
+    plot ({(\aa*(1+1/cos(\x)))*cos(\x)},{(\aa*(1+1/cos(\x)))*sin(\x)});
+  \draw[line width=0.9pt,domain=8:72,samples=70,smooth]
+    plot ({(\aa*(1/cos(\x)-1))*cos(\x)},{(\aa*(1/cos(\x)-1))*sin(\x)});
+  \draw[line width=0.9pt,domain=-72:-8,samples=70,smooth]
+    plot ({(\aa*(1/cos(\x)-1))*cos(\x)},{(\aa*(1/cos(\x)-1))*sin(\x)});
+  \pgfmathsetmacro{\rQ}{\aa/cos(\th)}
+  \pgfmathsetmacro{\rP}{\aa*(1+1/cos(\th))}
+  \draw[line width=0.55pt] (0,0) -- ({\th}:{\rP+0.85}) node[anchor=south west,inner sep=1.0pt] {$B$};
+  \fill ({\th}:{\rQ}) circle (1.05pt);
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at ({\th}:{\rQ}) {$Q$};
+  \fill ({\th}:{\rP}) circle (1.05pt);
+  \node[anchor=south east,inner sep=1.3pt,font=\small] at ({\th}:{\rP}) {$P$};
+  \draw[line width=0.4pt] (0.55,0) arc (0:{\th}:0.55);
+  \node[anchor=west,inner sep=0.8pt,font=\small] at ({0.68*cos(\th/2)},{0.68*sin(\th/2)}) {$\theta$};
+  \fill (0,0) circle (1.1pt);
+\end{tikzpicture}%
+}
+\caption{（习题 7·3～7·4 第 3 题）}
 \end{figure}
 
 \emph{（习题 7·3\textasciitilde7·4 第 3 题）}
@@ -35962,8 +36019,23 @@ x - y + 3 = 0 \quad \text {\text{或}} \quad x + y - 1 = 0;
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9(1)题)}]{assets/analytic-geometry/fig-p0453-01.png}}
-\caption{(第9(1)题)}
+\fitfig{%
+% fig-alt: 双曲线 ρ=8/(1−2cosθ)；焦点 O 在右支右方；横轴虚线；左右两支
+\begin{tikzpicture}[x=0.38cm,y=0.38cm,line cap=round,line join=round,>=latex]
+  \def\cx{-5.333}
+  \def\aa{2.667}
+  \def\bb{4.619}
+  \draw[line width=0.5pt,dash pattern=on 2.0pt off 1.4pt] ({\cx-5.5},0) -- (0.15,0);
+  \draw[line width=0.55pt,-latex] (0,0) -- (3.0,0);
+  \draw[line width=0.9pt,domain=-1.15:1.15,samples=60,smooth]
+    plot ({\cx + \aa*cosh(\x)}, {\bb*sinh(\x)});
+  \draw[line width=0.9pt,domain=-1.15:1.15,samples=60,smooth]
+    plot ({\cx - \aa*cosh(\x)}, {\bb*sinh(\x)});
+  \fill (0,0) circle (1.2pt);
+  \node[anchor=north,inner sep=1.5pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第9（1）题）}
 \end{figure}
 
 \emph{（第9（1）题）}
@@ -36077,8 +36149,18 @@ x^{2} + (x - a) y^{2} = 0.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/analytic-geometry/fig-p0454-01.png}}
-\caption{(第4题)}
+\fitfig{%
+% fig-alt: 心形线 ρ=a(1−sinθ)，尖点在 O（上方），波瓣向下；极轴 Ox
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \def\aa{1.15}
+  \draw[line width=0.55pt,-latex] (0,0) -- (2.35,0) node[anchor=west,inner sep=1.2pt] {$x$};
+  \draw[line width=0.85pt,domain=0:360,samples=180,smooth]
+    plot ({(\aa*(1-sin(\x)))*cos(\x)},{(\aa*(1-sin(\x)))*sin(\x)});
+  \fill (0,0) circle (1.1pt);
+  \node[anchor=south east,inner sep=1.3pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \emph{（第4题）}
@@ -36091,8 +36173,24 @@ x^{2} + (x - a) y^{2} = 0.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5(2)题)}]{assets/analytic-geometry/fig-p0454-02.png}}
-\caption{(第5(2)题)}
+\fitfig{%
+% fig-alt: 双曲线 ρ=5/(3−4cosθ)；焦点 O 在右支右方；横轴虚线，O 右实线箭头
+\begin{tikzpicture}[x=0.55cm,y=0.55cm,line cap=round,line join=round,>=latex]
+  % 中心 (-20/7,0), a=15/7, b=5/√7
+  \def\cx{-2.857}
+  \def\aa{2.143}
+  \def\bb{1.890}
+  \draw[line width=0.5pt,dash pattern=on 2.0pt off 1.4pt] ({\cx-4.8},0) -- (0,0);
+  \draw[line width=0.55pt,-latex] (0,0) -- (2.6,0);
+  \draw[line width=0.9pt,domain=-1.35:1.35,samples=70,smooth]
+    plot ({\cx + \aa*cosh(\x)}, {\bb*sinh(\x)});
+  \draw[line width=0.9pt,domain=-1.35:1.35,samples=70,smooth]
+    plot ({\cx - \aa*cosh(\x)}, {\bb*sinh(\x)});
+  \fill (0,0) circle (1.15pt);
+  \node[anchor=north,inner sep=1.5pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第5（2）题）}
 \end{figure}
 
 \emph{（第5（2）题）}
@@ -36117,8 +36215,41 @@ A (\rho_{1}, \theta), B (\rho_{2}, \theta + x), C (\rho_{3}, \theta + \frac {\pi
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第454页）}]{assets/analytic-geometry/fig-p0454-03.png}}
-\caption{图示（原PDF第454页）}
+\fitfig{%
+% fig-alt: 圆锥曲线焦点 F；互相垂直焦弦 AB、CD；极径 ρ1…ρ4；极角 θ；极轴
+\begin{tikzpicture}[x=0.9cm,y=0.9cm,line cap=round,line join=round,>=latex]
+  \def\ee{0.58}
+  \def\pp{1.85}
+  \def\th{50}
+  \draw[line width=0.5pt,dash pattern=on 1.8pt off 1.3pt] (-2.65,0) -- (0,0);
+  \draw[line width=0.55pt,-latex] (0,0) -- (2.45,0);
+  \draw[line width=0.88pt,domain=0:360,samples=160,smooth]
+    plot ({(\ee*\pp/(1+\ee*cos(\x)))*cos(\x)},{(\ee*\pp/(1+\ee*cos(\x)))*sin(\x)});
+  \pgfmathsetmacro{\rA}{\ee*\pp/(1+\ee*cos(\th))}
+  \pgfmathsetmacro{\rB}{\ee*\pp/(1+\ee*cos(\th+180))}
+  \pgfmathsetmacro{\rC}{\ee*\pp/(1+\ee*cos(\th+90))}
+  \pgfmathsetmacro{\rD}{\ee*\pp/(1+\ee*cos(\th-90))}
+  \draw[line width=0.55pt] ({\th}:{\rA}) -- ({\th+180}:{\rB});
+  \draw[line width=0.55pt] ({\th+90}:{\rC}) -- ({\th-90}:{\rD});
+  \fill (0,0) circle (1.15pt);
+  \node[anchor=north west,inner sep=1.2pt,font=\small] at (0.05,-0.05) {$F$};
+  \fill ({\th}:{\rA}) circle (1.0pt);
+  \fill ({\th+180}:{\rB}) circle (1.0pt);
+  \fill ({\th+90}:{\rC}) circle (1.0pt);
+  \fill ({\th-90}:{\rD}) circle (1.0pt);
+  \node[anchor=south west,inner sep=1.1pt,font=\small] at ({\th}:{\rA}) {$A$};
+  \node[anchor=north east,inner sep=1.1pt,font=\small] at ({\th+180}:{\rB}) {$B$};
+  \node[anchor=south east,inner sep=1.1pt,font=\small] at ({\th+90}:{\rC}) {$C$};
+  \node[anchor=north west,inner sep=1.1pt,font=\small] at ({\th-90}:{\rD}) {$D$};
+  \node[anchor=south,inner sep=0.55pt,font=\scriptsize] at ({\th}:{\rA*0.50}) {$\rho_1$};
+  \node[anchor=east,inner sep=0.55pt,font=\scriptsize] at ({\th+180}:{\rB*0.52}) {$\rho_2$};
+  \node[anchor=south,inner sep=0.45pt,font=\scriptsize] at ({\th+90}:{\rC*0.52}) {$\rho_3$};
+  \node[anchor=west,inner sep=0.45pt,font=\scriptsize] at ({\th-90}:{\rD*0.52}) {$\rho_4$};
+  \draw[line width=0.4pt] (0.42,0) arc (0:{\th}:0.42);
+  \node[anchor=west,inner sep=0.45pt,font=\small] at ({0.55*cos(\th/2)},{0.55*sin(\th/2)}) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
 
 \[
@@ -36337,8 +36468,54 @@ x^{2} - \frac {4}{\sqrt {3}} x y + \frac {7}{3} y^{2} = a^{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第456页）}]{assets/analytic-geometry/fig-p0456-01.png}}
-\caption{图示（原PDF第456页）}
+\fitfig{%
+% fig-alt: ∠MON=60°；等边△ABP 边长 a 在角内滑动；P 轨迹椭圆弧；PD⊥OM；标 θ
+\begin{tikzpicture}[x=1.05cm,y=1.05cm,line cap=round,line join=round,>=latex]
+  \def\aa{1.30}
+  \pgfmathsetmacro{\Amaj}{sqrt(3)*\aa}
+  \pgfmathsetmacro{\Bmin}{\aa/sqrt(3)}
+  \draw[line width=0.75pt,-latex] (0,0) -- (3.70,0) node[anchor=west,inner sep=1.2pt] {$M$};
+  \draw[line width=0.75pt,-latex] (0,0) -- ({3.50*cos(60)},{3.50*sin(60)}) node[anchor=south west,inner sep=1.1pt] {$N$};
+  \draw[line width=0.4pt] (0.50,0) arc (0:60:0.50);
+  \node[anchor=south west,inner sep=0.5pt,font=\small] at ({0.60*cos(30)},{0.60*sin(30)}) {$60^\circ$};
+  \begin{scope}
+    \clip (0,0) -- (3.8,0) -- ({3.8*cos(60)},{3.8*sin(60)}) -- cycle;
+    \draw[line width=0.92pt,rotate=30] (0,0) ellipse ({\Amaj} and {\Bmin});
+  \end{scope}
+  \def\th{38}
+  \pgfmathsetmacro{\Ax}{2*\aa*sin(\th)/sqrt(3)}
+  \pgfmathsetmacro{\Px}{\Ax + \aa*cos(\th)}
+  \pgfmathsetmacro{\Py}{\aa*sin(\th)}
+  \pgfmathsetmacro{\Vx}{\Px-\Ax}
+  \pgfmathsetmacro{\Vy}{\Py}
+  % A→P 绕 A 旋 +60° 得 B（落在 ON）
+  \pgfmathsetmacro{\Bx}{\Ax + \Vx*cos(60) - \Vy*sin(60)}
+  \pgfmathsetmacro{\By}{\Vx*sin(60) + \Vy*cos(60)}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at ({\Ax},0);
+  \coordinate (P) at ({\Px},{\Py});
+  \coordinate (B) at ({\Bx},{\By});
+  \coordinate (D) at ({\Px},0);
+  \draw[line width=0.8pt] (A) -- (B) -- (P) -- cycle;
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1.1pt] (P) -- (D);
+  \fill (O) circle (1.05pt);
+  \fill (A) circle (1.0pt);
+  \fill (B) circle (1.0pt);
+  \fill (P) circle (1.0pt);
+  \fill (D) circle (0.85pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (O) {$O$};
+  \node[anchor=north,inner sep=1.35pt,font=\small] at (A) {$A$};
+  \node[anchor=south east,inner sep=1.1pt,font=\small] at (B) {$B$};
+  \node[anchor=south west,inner sep=1.0pt,font=\small] at (P) {$P(x,y)$};
+  \node[anchor=north,inner sep=1.15pt,font=\small] at (D) {$D$};
+  \node[anchor=west,inner sep=1.15pt,font=\small] at ({(\Ax+\Px)/2},{\Py/2}) {$a$};
+  \node[anchor=south,inner sep=0.65pt,font=\small] at ({(\Ax+\Bx)/2},{\By/2}) {$a$};
+  \node[anchor=south east,inner sep=0.65pt,font=\small] at ({(\Px+\Bx)/2},{({\Py}+\By)/2}) {$a$};
+  \draw[line width=0.35pt] ({\Ax+0.34},0) arc (0:{\th}:0.34);
+  \node[anchor=west,inner sep=0.35pt,font=\scriptsize] at ({\Ax+0.42*cos(\th/2)},{0.42*sin(\th/2)}) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{（第42题）}
 \end{figure}
 
 经转轴变换得
