@@ -12076,9 +12076,62 @@ m = 9.10956 \times 10 ^ {- 31} \text{千克}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.8 汤姆孙的原子模型和用来说明原子稳定性的类比实验}]{assets/physics-4/fig-p0211-01.png}}
+% fig-alt: 图8.8汤姆孙类比：四组俯视圆盘与侧视皿上条形磁铁N下指；浮磁针(a)居中(b)左右两枚(c)等边三角(d)正方形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.78cm,y=0.78cm]
+  \newcommand{\topview}[3]{% #1=shiftx #2=shifty #3=dots cmd
+    \begin{scope}[shift={(#1,#2)}]
+      \draw[line width=0.5pt] (0,0) circle (0.95);
+      \begin{scope}
+        \clip (0,0) circle (0.93);
+        \foreach \yy in {-0.72,-0.48,-0.24,0,0.24,0.48,0.72}
+          {\draw[line width=0.25pt] (-0.95,\yy) -- (0.95,\yy);}
+      \end{scope}
+      #3
+    \end{scope}}
+  \newcommand{\needle}[2]{%
+    \fill (#1,#2) circle (0.07);
+    \draw[line width=0.45pt] ({#1-0.14},#2) -- ({#1+0.14},#2);}
+  \newcommand{\dish}[4]{% shiftx shifty; needle placements as list via #3; label N/S magnet
+    \begin{scope}[shift={(#1,#2)}]
+      % dish ellipse
+      \draw[line width=0.5pt] (0,0) ellipse (0.95 and 0.32);
+      \draw[line width=0.5pt] (-0.95,-0.55) -- (-0.95,0);
+      \draw[line width=0.5pt] (0.95,-0.55) -- (0.95,0);
+      \draw[line width=0.5pt] (0,-0.55) ellipse (0.95 and 0.32);
+      \draw[line width=0.35pt] (0,-0.12) ellipse (0.88 and 0.26); % liquid
+      % bar magnet above
+      \draw[line width=0.5pt,pattern=north east lines,pattern color=black!55] (-0.18,1.05) rectangle (0.18,1.55);
+      \node[font=\scriptsize] at (0,1.30) {$S$};
+      \draw[line width=0.5pt] (-0.18,0.55) rectangle (0.18,1.05);
+      \node[font=\scriptsize] at (0,0.80) {$N$};
+      \draw[line width=0.4pt] (0,0.55) -- (0,0.28);
+      #3
+    \end{scope}}
+  \newcommand{\pin}[2]{%
+    \draw[line width=0.55pt] (#1,{#2-0.05}) -- (#1,{#2+0.22});
+    \fill (#1,{#2+0.22}) circle (0.055);}
+  % (a)
+  \topview{0}{4.6}{\needle{0}{0}}
+  \dish{2.6}{4.6}{\pin{0}{-0.12}}{}
+  \node at (1.3,3.55) {（a）};
+  % (b)
+  \topview{5.4}{4.6}{\needle{-0.38}{0}\needle{0.38}{0}}
+  \dish{8.0}{4.6}{\pin{-0.35}{-0.12}\pin{0.35}{-0.12}}{}
+  \node at (6.7,3.55) {（b）};
+  % (c)
+  \topview{0}{1.55}{\needle{0}{0.42}\needle{-0.36}{-0.22}\needle{0.36}{-0.22}}
+  \dish{2.6}{1.55}{\pin{0}{0.05}\pin{-0.32}{-0.18}\pin{0.32}{-0.18}}{}
+  \node at (1.3,0.45) {（c）};
+  % (d) square
+  \topview{5.4}{1.55}{\needle{0}{0.40}\needle{0.40}{0}\needle{0}{-0.40}\needle{-0.40}{0}}
+  \dish{8.0}{1.55}{\pin{0}{0.02}\pin{0.32}{-0.12}\pin{0}{-0.22}\pin{-0.32}{-0.12}}{}
+  \node at (6.7,0.45) {（d）};
+\end{tikzpicture}%
+}
 \caption{图 8.8 汤姆孙的原子模型和用来说明原子稳定性的类比实验}
 \end{figure}
+
 
 \[
 F = - k \frac {e}{a ^ {2}} \left(\frac {3}{4} \pi a ^ {8} \rho\right) = - \frac {3 K \pi \rho e}{4} \cdot a
@@ -12104,9 +12157,82 @@ R 都是固定不变的。在这个实验里卢瑟福所选用的放射源是钋
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.9 α 粒子散射实验装置}]{assets/physics-4/fig-p0213-01.png}}
-\caption{图 8.9 α 粒子散射实验装置}
+% fig-alt: 图8.9α散射：(a)侧视真空匣B、显微镜M与荧光屏S、箔F、放射源匣E、底座C；(b)俯视圆匣，源R射向中心箔F，散射虚线至显微镜M与屏S，眼视θ
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.85cm,y=0.85cm]
+  % ---- (a) side ----
+  \begin{scope}[shift={(0,0)}]
+    % base C hatched
+    \fill[pattern=north east lines,pattern color=black!50] (1.55,-0.55) rectangle (7.35,-0.15);
+    \draw[line width=0.5pt] (1.55,-0.55) rectangle (7.35,-0.15);
+    \node[font=\small\itshape] at (4.45,-0.78) {$C$};
+    % feet
+    \draw[line width=0.45pt] (2.05,-0.55) -- (1.75,-0.95) -- (2.35,-0.95) -- cycle;
+    \draw[line width=0.45pt] (6.85,-0.55) -- (6.55,-0.95) -- (7.15,-0.95) -- cycle;
+    % chamber B body
+    \draw[line width=0.55pt] (1.70,0.05) rectangle (7.20,2.35);
+    \node[font=\small\itshape] at (2.05,2.10) {$B$};
+    % microscope M from left
+    \draw[line width=0.5pt] (0.15,1.05) -- (0.15,1.45) -- (1.70,1.45) -- (1.70,1.05) -- cycle;
+    \draw[line width=0.45pt] (1.70,1.00) -- (2.55,1.00) -- (2.55,1.50) -- (1.70,1.50);
+    \draw[line width=0.45pt] (2.55,1.10) -- (3.05,1.10) -- (3.05,1.40) -- (2.55,1.40);
+    \node[font=\small\itshape,anchor=south] at (0.85,1.50) {$M$};
+    % screen S
+    \draw[line width=0.7pt] (3.15,0.95) -- (3.15,1.55);
+    \node[font=\small\itshape,anchor=south] at (3.15,1.58) {$S$};
+    % foil F on vertical rod
+    \draw[line width=0.45pt] (4.55,-0.15) -- (4.55,1.85);
+    \draw[line width=0.7pt] (4.45,0.85) -- (4.45,1.55) -- (4.65,1.55) -- (4.65,0.85) -- cycle;
+    \node[font=\small\itshape,anchor=south] at (4.55,1.60) {$F$};
+    % source housing E hatched
+    \fill[pattern=north east lines,pattern color=black!55] (6.15,0.85) rectangle (6.95,1.65);
+    \draw[line width=0.5pt] (6.15,0.85) rectangle (6.95,1.65);
+    \draw[line width=0.4pt] (6.15,1.15) -- (6.15,1.35); % opening
+    \node[font=\small\itshape,anchor=west] at (7.05,1.25) {$E$};
+    % vacuum pipe from center down-right
+    \draw[line width=0.45pt] (4.55,-0.15) -- (4.55,-0.95) -- (7.55,-0.95);
+    \draw[line width=0.4pt] (7.55,-0.95) -- (7.55,-0.75);
+    \node at (4.45,-1.35) {（a）};
+  \end{scope}
+  % ---- (b) top ----
+  \begin{scope}[shift={(9.6,0.55)}]
+    \draw[line width=0.55pt] (0,0) circle (1.85);
+    % source R at ~8 o'clock
+    \fill[pattern=north east lines,pattern color=black!50] (-1.55,-1.05) rectangle (-0.95,-0.55);
+    \draw[line width=0.45pt] (-1.55,-1.05) rectangle (-0.95,-0.55);
+    \node[font=\small\itshape,anchor=east] at (-1.60,-0.80) {$R$};
+    % beam to center
+    \draw[line width=0.4pt,dashed] (-0.95,-0.80) -- (-0.15,-0.05);
+    % foil F small rectangle at center tilted
+    \draw[line width=0.55pt,rotate around={25:(0,0)}] (-0.18,-0.08) rectangle (0.18,0.08);
+    \node[font=\small\itshape,anchor=south] at (0.05,0.22) {$F$};
+    % scattered rays
+    \foreach \ang in {-35,-10,25,55,90,130} {
+      \draw[line width=0.35pt,dashed,->] (0,0) -- ({\ang}:1.55);
+    }
+    \draw[line width=0.35pt,dashed] (0,0) -- (-0.95,-0.80);
+    % microscope at 3 o'clock
+    \draw[line width=0.5pt] (1.85,-0.18) rectangle (2.85,0.18);
+    \draw[line width=0.45pt] (2.85,-0.28) -- (3.35,-0.28) -- (3.35,0.28) -- (2.85,0.28);
+    \node[font=\small\itshape,anchor=south] at (2.35,0.22) {$M$};
+    % screen S
+    \draw[line width=0.65pt] (1.72,-0.22) -- (1.72,0.22);
+    \node[font=\scriptsize\itshape,anchor=south east] at (1.70,0.25) {$S$};
+    % eye
+    \draw[line width=0.45pt] (3.55,0.05) .. controls (3.75,0.28) and (4.05,0.28) .. (4.25,0.05)
+      .. controls (4.05,-0.18) and (3.75,-0.18) .. (3.55,0.05);
+    \fill (3.90,0.05) circle (0.04);
+    % angle arc theta
+    \draw[line width=0.35pt,dashed] (0,0) -- (25:1.85);
+    \draw[line width=0.35pt] (0.45,0) arc (0:25:0.45);
+    \node[font=\small] at (0.72,0.18) {$\theta$};
+    \node at (0,-2.25) {（b）};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图 8.9 \(\alpha\) 粒子散射实验装置}
 \end{figure}
+
 
 实验时，先从下方把 \(B\) 厘中的空气抽掉，以避免使 \(\alpha\)
 粒子由于空气分子的影响而发生附加的散射。如果在 \(F\)
@@ -12947,9 +13073,75 @@ V，这时电子穿过栅极所获得的动能是：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.18 验证氢原子能级存在的装置示意图}]{assets/physics-4/fig-p0230-01.png}}
+% fig-alt: 图8.18三极管：灯丝F接电池A并接地，栅极G虚线、板极P；分压器跨电池B，滑臂接G并经检流计G到P
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.0cm,y=1.0cm]
+  % tube body
+  \draw[line width=0.55pt]
+    (0.7,2.35) -- (5.0,2.35)
+    .. controls (5.45,2.35) and (5.55,2.05) .. (5.55,1.75)
+    .. controls (5.55,1.45) and (5.45,1.15) .. (5.0,1.15)
+    -- (0.7,1.15)
+    .. controls (0.25,1.15) and (0.15,1.45) .. (0.15,1.75)
+    .. controls (0.15,2.05) and (0.25,2.35) .. (0.7,2.35);
+  % left stem flare
+  \draw[line width=0.45pt] (0.55,1.35) .. controls (0.20,1.40) and (0.15,1.60) .. (0.25,1.75)
+    .. controls (0.15,1.90) and (0.20,2.10) .. (0.55,2.15);
+  % filament helix
+  \draw[line width=0.5pt] (0.45,1.45) -- (0.55,1.55) -- (0.45,1.65) -- (0.55,1.75) -- (0.45,1.85) -- (0.55,1.95) -- (0.45,2.05);
+  \node[font=\small\itshape] at (0.85,2.15) {$F$};
+  % filament leads
+  \draw[line width=0.45pt] (0.35,1.55) -- (-0.25,1.55) -- (-0.25,0.70);
+  \draw[line width=0.45pt] (0.40,1.40) -- (0.40,0.95) -- (-0.25,0.95);
+  % battery A
+  \draw[line width=0.8pt] (-0.45,0.70) -- (-0.45,0.95);
+  \draw[line width=0.4pt] (-0.32,0.78) -- (-0.32,0.87);
+  \node[font=\small\itshape,anchor=east] at (-0.55,0.82) {$A$};
+  \draw[line width=0.45pt] (-0.25,0.70) -- (0.50,0.70);
+  % ground bus + symbol
+  \draw[line width=0.45pt] (0.50,0.70) -- (0.50,0.25) -- (3.10,0.25);
+  \draw[line width=0.45pt] (0.50,0.25) -- (0.50,0.05);
+  \draw[line width=0.5pt] (0.32,0.05) -- (0.68,0.05);
+  \draw[line width=0.45pt] (0.38,-0.05) -- (0.62,-0.05);
+  \draw[line width=0.4pt] (0.44,-0.15) -- (0.56,-0.15);
+  % exhaust tip
+  \draw[line width=0.4pt] (1.60,1.15) -- (1.60,0.95) -- (1.80,0.95) -- (1.80,1.15);
+  % grid
+  \draw[line width=0.5pt,dashed] (2.10,1.25) -- (2.10,2.25);
+  \node[font=\small\itshape] at (2.40,2.05) {$G$};
+  \draw[line width=0.45pt] (2.10,1.15) -- (2.10,0.95);
+  % plate
+  \draw[line width=1.2pt] (4.70,1.30) -- (4.70,2.20);
+  \node[font=\small\itshape,anchor=west] at (4.85,1.75) {$P$};
+  \draw[line width=0.45pt] (4.70,1.15) -- (4.70,0.95) -- (5.70,0.95);
+  % battery B cells (below pot)
+  \foreach \i/\h in {0/0.28,1/0.55,2/0.28,3/0.55,4/0.28,5/0.55,6/0.28} {
+    \draw[line width=0.45pt] ({1.20+\i*0.22},0.55) -- ({1.20+\i*0.22},{0.55+\h*0.5}) ({1.20+\i*0.22},0.55) -- ({1.20+\i*0.22},{0.55-\h*0.5});
+  }
+  \node[font=\small] at (1.05,0.30) {$-$};
+  \node[font=\small] at (2.75,0.30) {$+$};
+  \node[font=\small\itshape] at (1.95,0.10) {$B$};
+  \draw[line width=0.45pt] (0.50,0.70) -- (0.50,0.55) -- (1.20,0.55);
+  \draw[line width=0.45pt] (2.52,0.55) -- (3.10,0.55) -- (3.10,0.25);
+  % potentiometer zigzag above battery line
+  \draw[line width=0.5pt] (1.20,0.85) -- (1.35,0.98) -- (1.50,0.72) -- (1.65,0.98) -- (1.80,0.72)
+    -- (1.95,0.98) -- (2.10,0.72) -- (2.25,0.98) -- (2.40,0.72) -- (2.52,0.85);
+  \draw[line width=0.4pt] (1.20,0.55) -- (1.20,0.85);
+  \draw[line width=0.4pt] (2.52,0.55) -- (2.52,0.85);
+  % wiper
+  \draw[line width=0.5pt,->] (1.95,1.15) -- (1.95,0.90);
+  \draw[line width=0.45pt] (1.95,1.15) -- (2.10,1.15) -- (2.10,0.95);
+  \draw[line width=0.45pt] (1.95,1.15) -- (3.55,1.15);
+  % galvanometer
+  \draw[line width=0.5pt] (3.95,1.15) circle (0.30);
+  \node[font=\small] at (3.95,1.15) {G};
+  \draw[line width=0.45pt] (3.55,1.15) -- (3.65,1.15);
+  \draw[line width=0.45pt] (4.25,1.15) -- (5.70,1.15) -- (5.70,0.95);
+\end{tikzpicture}%
+}
 \caption{图 8.18 验证氢原子能级存在的装置示意图}
 \end{figure}
+
 
 \[
 E _ {\text{动}} = \mathrm{eV} = \frac {1}{2} m v ^ {2}
@@ -13917,15 +14109,97 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10.1 威耳逊云室的示意图}]{assets/physics-4/fig-p0253-01.png}}
+% fig-alt: 图10.1威耳逊云室：上玻璃板G、室C、活塞P与下杆；左光束射入；右电池+接G、−接活塞杆；壁上A为放射源位置
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.05cm,y=1.05cm]
+  % chamber outer
+  \draw[line width=0.55pt] (0,0) rectangle (4.2,2.55);
+  % top plate G thicker
+  \draw[line width=0.85pt] (-0.08,2.55) -- (4.28,2.55);
+  \draw[line width=0.55pt] (-0.08,2.55) -- (-0.08,2.72) -- (4.28,2.72) -- (4.28,2.55);
+  \node[font=\small\itshape] at (2.1,2.95) {$G$};
+  % piston P
+  \draw[line width=0.7pt] (0.08,0.85) -- (4.12,0.85);
+  \draw[line width=0.55pt] (0.08,0.70) -- (4.12,0.70) -- (4.12,0.85) -- (0.08,0.85) -- cycle;
+  \node[font=\small\itshape] at (3.55,1.00) {$P$};
+  % piston rod
+  \draw[line width=0.65pt] (1.95,0.70) -- (1.95,-0.55) -- (2.25,-0.55) -- (2.25,0.70);
+  % labels
+  \node[font=\small\itshape] at (2.1,1.70) {$C$};
+  \node[font=\small\itshape] at (3.85,2.15) {$A$};
+  \fill (3.95,2.00) circle (0.035);
+  % light beam
+  \draw[line width=0.45pt,->] (-1.15,1.85) -- (-0.05,1.85);
+  \draw[line width=0.45pt,->] (-1.15,1.60) -- (-0.05,1.60);
+  \node[font=\small,anchor=south] at (-0.60,1.90) {光束};
+  % battery circuit right
+  \draw[line width=0.45pt] (4.28,2.63) -- (5.15,2.63) -- (5.15,1.85);
+  % battery cells horizontal stack drawn as vertical lines
+  \foreach \i/\w in {0/0.55,1/0.28,2/0.55,3/0.28,4/0.55} {
+    \draw[line width=0.45pt] (5.15,{1.85-0.22*\i}) -- ({5.15+\w},{1.85-0.22*\i});
+  }
+  \node[font=\small,anchor=west] at (5.75,1.85) {$+$};
+  \node[font=\small,anchor=west] at (5.75,0.97) {$-$};
+  \draw[line width=0.45pt] (5.15,0.97) -- (5.15,-0.35) -- (2.25,-0.35) -- (2.25,-0.55);
+\end{tikzpicture}%
+}
 \caption{图 10.1 威耳逊云室的示意图}
 \end{figure}
 
+
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10.2 扩散云室的示意图}]{assets/physics-4/fig-p0254-01.png}}
+% fig-alt: 图10.2扩散云室：1光源射入；2底部干冰斜线底；3下部点状酒精过饱和区有径迹；4右侧放射源针
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.0cm,y=1.0cm]
+  % chamber double wall
+  \draw[line width=0.55pt] (0,0.55) rectangle (5.2,2.85);
+  \draw[line width=0.4pt] (0.12,0.67) rectangle (5.08,2.73);
+  % corner reinforcements
+  \foreach \x/\y in {0/0.55,5.08/0.55,0/2.73,5.08/2.73} {
+    \draw[line width=0.4pt] (\x,\y) rectangle ({\x+0.12},{\y+0.12});
+  }
+  % dry ice base 2 hatched
+  \fill[pattern=north east lines,pattern color=black!55] (0,0) rectangle (5.2,0.55);
+  \draw[line width=0.5pt] (0,0) rectangle (5.2,0.55);
+  \node[font=\small] at (2.6,-0.35) {2};
+  \draw[line width=0.35pt] (2.6,-0.15) -- (2.6,0.28);
+  % vapor region 3 stipple lower half
+  \foreach \x in {0.3,0.55,...,4.9} {
+    \foreach \y in {0.80,0.95,1.10,1.25,1.40}
+      {\fill (\x,\y) circle (0.012);}
+  }
+  \foreach \x in {0.42,0.67,...,4.8} {
+    \foreach \y in {0.88,1.03,1.18,1.33}
+      {\fill (\x,\y) circle (0.012);}
+  }
+  \draw[line width=0.35pt] (0.12,1.55) -- (5.08,1.55);
+  \node[font=\small] at (1.35,0.25) {3};
+  \draw[line width=0.35pt] (1.35,0.40) -- (1.35,1.15);
+  % source 4
+  \fill (4.55,1.25) circle (0.08);
+  \draw[line width=0.4pt] (4.55,1.25) -- (5.08,1.25);
+  \node[font=\small,anchor=south] at (4.55,1.55) {4};
+  \draw[line width=0.35pt] (4.55,1.50) -- (4.55,1.35);
+  % tracks from source
+  \foreach \a/\L in {175/2.8,185/2.4,195/1.9,168/2.2,205/1.2} {
+    \draw[line width=0.4pt] (4.55,1.25) -- ++({\a}:\L);
+  }
+  \draw[line width=0.35pt] (4.55,1.25) -- ++(10:0.45);
+  \draw[line width=0.35pt] (4.55,1.25) -- ++(-8:0.35);
+  % lamp 1
+  \draw[line width=0.5pt] (-1.35,1.55) .. controls (-1.55,1.95) and (-1.55,2.35) .. (-1.15,2.55)
+    -- (-0.85,2.55) -- (-0.85,1.55) -- cycle;
+  \draw[line width=0.45pt] (-0.85,1.55) -- (-0.85,2.55);
+  \foreach \y in {1.75,2.00,2.25} {
+    \draw[line width=0.4pt,->] (-0.75,\y) -- (0.02,\y);
+  }
+  \node[font=\small] at (-1.10,2.85) {1};
+\end{tikzpicture}%
+}
 \caption{图 10.2 扩散云室的示意图}
 \end{figure}
+
 
 \begin{quote}
 图中标注：1-光源 2-干冰 3-酒精
@@ -13955,9 +14229,58 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图10.3 气泡室结构示意图}]{assets/physics-4/fig-p0255-01.png}}
+% fig-alt: 图10.3气泡室：上照相机1与两侧灯照明；左射线束2经窗入室3内分叉径迹；右管4通抽气机
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.95cm,y=0.95cm]
+  % chamber 3
+  \draw[line width=0.7pt] (0.8,0.55) -- (0.8,2.15) -- (1.05,2.15) -- (1.05,0.55) -- cycle; % left end plate
+  \draw[line width=0.7pt] (6.55,0.55) -- (6.55,2.15) -- (6.80,2.15) -- (6.80,0.55) -- cycle; % right
+  \draw[line width=0.5pt] (1.05,2.15) -- (6.55,2.15);
+  \draw[line width=0.5pt] (1.05,0.55) -- (6.55,0.55);
+  % vapor dashed lines
+  \foreach \y in {0.85,1.10,1.35,1.60,1.85} {
+    \draw[line width=0.3pt,dashed] (1.15,\y) -- (6.45,\y);
+  }
+  % track fork
+  \draw[line width=0.55pt] (1.05,1.35) -- (3.55,1.35);
+  \draw[line width=0.55pt] (3.55,1.35) -- (5.85,1.75);
+  \draw[line width=0.55pt] (3.55,1.35) -- (5.85,0.95);
+  \node[font=\small] at (3.9,0.15) {3};
+  % beam 2
+  \foreach \y in {1.15,1.35,1.55} {
+    \draw[line width=0.4pt,->] (-0.15,\y) -- (0.75,\y);
+  }
+  \node[font=\small] at (-0.55,1.35) {2};
+  % aperture
+  \draw[line width=0.45pt] (0.80,1.20) -- (0.80,1.50);
+  % pump pipe 4
+  \draw[line width=0.5pt] (6.80,1.35) -- (7.55,1.35) -- (7.55,0.35);
+  \draw[line width=0.45pt,->] (7.55,0.35) -- (7.55,0.05);
+  \node[font=\small,anchor=west] at (7.70,0.20) {4};
+  % lights and camera 1
+  % left lamp
+  \draw[line width=0.45pt] (2.15,3.55) arc (200:340:0.35);
+  \fill (2.35,3.35) circle (0.06);
+  \foreach \a in {-70,-90,-110} {
+    \draw[line width=0.35pt,->] (2.35,3.35) -- ++({\a}:0.95);
+  }
+  % right lamp
+  \draw[line width=0.45pt] (5.45,3.55) arc (200:340:0.35);
+  \fill (5.65,3.35) circle (0.06);
+  \foreach \a in {-70,-90,-110} {
+    \draw[line width=0.35pt,->] (5.65,3.35) -- ++({\a}:0.95);
+  }
+  % camera
+  \draw[line width=0.5pt] (3.55,3.95) -- (3.25,3.55) -- (4.55,3.55) -- (4.25,3.95) -- cycle;
+  \draw[line width=0.45pt] (3.70,3.55) -- (3.70,3.25) -- (4.10,3.25) -- (4.10,3.55);
+  \draw[line width=0.4pt] (3.90,3.25) circle (0.12);
+  \draw[line width=0.35pt,->] (3.90,2.15) -- (3.90,3.10);
+  \node[font=\small] at (3.90,4.25) {1};
+\end{tikzpicture}%
+}
 \caption{图10.3 气泡室结构示意图}
 \end{figure}
+
 
 \begin{quote}
 图中标注：1--照相机 2--射线束 3---气泡室 4---通往抽气机
@@ -14019,9 +14342,47 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10.7 盖-弥计数管}]{assets/physics-4/fig-p0258-01.png}}
+% fig-alt: 图10.7盖-弥管：玻璃管3内铜圆筒2为阴极标−，轴丝为阳极标+；下接放大器1与高压电池；斜箭4为高能粒子
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.0cm,y=1.0cm]
+  % glass tube 3 capsule
+  \draw[line width=0.55pt] (0.4,1.55) -- (5.6,1.55) arc (90:-90:0.55) -- (0.4,0.45) arc (270:90:0.55);
+  \node[font=\small] at (6.35,1.00) {3};
+  \draw[line width=0.35pt] (5.95,1.00) -- (6.20,1.00);
+  % copper cylinder 2
+  \draw[line width=0.55pt] (1.15,0.70) rectangle (4.85,1.30);
+  \node[font=\small] at (3.00,1.85) {2};
+  \draw[line width=0.35pt] (3.00,1.70) -- (3.00,1.35);
+  % minus signs on cylinder
+  \foreach \x in {1.55,2.35,3.15,3.95} {
+    \node[font=\scriptsize] at (\x,1.18) {$-$};
+    \node[font=\scriptsize] at (\x,0.82) {$-$};
+  }
+  % central wire
+  \draw[line width=0.55pt] (0.15,1.00) -- (5.95,1.00);
+  \node[font=\scriptsize] at (0.55,1.18) {$+$};
+  \node[font=\scriptsize] at (5.45,1.18) {$+$};
+  % particle 4
+  \draw[line width=0.5pt,->] (4.85,1.85) -- (1.55,0.25);
+  \node[font=\small] at (5.15,2.05) {4};
+  % circuit: anode(+) -- amp -- battery(+) ... battery(-) -- cathode cylinder
+  \draw[line width=0.45pt] (0.15,1.00) -- (0.15,-0.35) -- (1.55,-0.35);
+  % amp box 1
+  \draw[line width=0.5pt] (1.55,-0.55) rectangle (2.55,-0.15);
+  \node[font=\small] at (2.05,-0.35) {1};
+  \draw[line width=0.45pt] (2.55,-0.35) -- (3.15,-0.35);
+  % battery: + left (toward anode/amp) , - right (toward cathode)
+  \foreach \i/\w in {0/0.45,1/0.22,2/0.45,3/0.22,4/0.45,5/0.22} {
+    \draw[line width=0.45pt] ({3.15+\i*0.18},{-0.35-\w/2+0.11}) -- ({3.15+\i*0.18},{-0.35+\w/2+0.11});
+  }
+  \node[font=\scriptsize] at (3.20,-0.65) {$+$};
+  \node[font=\scriptsize] at (4.20,-0.65) {$-$};
+  \draw[line width=0.45pt] (4.25,-0.24) -- (5.10,-0.24) -- (5.10,0.70) -- (4.85,0.70);
+\end{tikzpicture}%
+}
 \caption{图 10.7 盖-弥计数管}
 \end{figure}
+
 
 \begin{quote}
 图中标注：1---放大器 2---铜质圆筒 3---玻璃管 4---高能带电粒子
@@ -14033,9 +14394,50 @@ P 和玻璃板 G
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10.8 专门用来探测 \textbackslash alpha 粒子的盖-弥计数管}]{assets/physics-4/fig-p0258-02.png}}
+% fig-alt: 图10.8α盖-弥管：左云母窗A，中轴丝经右绝缘块伸出；外壳接电池−，+接地；电阻R跨至接放大器端
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=1.05cm,y=1.05cm]
+  % chamber open left
+  \draw[line width=0.55pt] (0.35,0.35) -- (0.35,1.85) -- (5.40,1.85) -- (5.40,0.35) -- (0.35,0.35);
+  % left window gap + A plate
+  \draw[line width=0.55pt] (0.35,0.95) -- (0.35,1.25); % gap visual by not drawing mid
+  \draw[line width=0.7pt] (0.05,0.85) -- (0.05,1.35);
+  \draw[line width=0.45pt] (0.05,1.10) -- (0.35,1.10);
+  \node[font=\small\itshape,anchor=east] at (-0.05,1.10) {$A$};
+  % erase mid of left wall for window: overlay white? use clip approach - redraw gap
+  \draw[line width=1.2pt,white] (0.35,0.98) -- (0.35,1.22);
+  \draw[line width=0.55pt] (0.35,0.35) -- (0.35,0.95);
+  \draw[line width=0.55pt] (0.35,1.25) -- (0.35,1.85);
+  % central wire
+  \draw[line width=0.5pt] (0.55,1.10) -- (6.35,1.10);
+  % insulator hatched at right wall
+  \fill[pattern=north east lines,pattern color=black!55] (5.25,0.85) rectangle (5.55,1.35);
+  \draw[line width=0.45pt] (5.25,0.85) rectangle (5.55,1.35);
+  % shell to battery -
+  \draw[line width=0.45pt] (2.70,0.35) -- (2.70,-0.15);
+  \draw[line width=0.7pt] (2.55,-0.15) -- (2.55,-0.45);
+  \draw[line width=0.4pt] (2.70,-0.25) -- (2.70,-0.35);
+  \node[font=\small] at (2.35,-0.30) {$-$};
+  \node[font=\small] at (3.15,-0.30) {$+$};
+  \draw[line width=0.45pt] (2.85,-0.30) -- (4.55,-0.30);
+  % ground
+  \draw[line width=0.45pt] (4.55,-0.30) -- (4.55,-0.45);
+  \draw[line width=0.5pt] (4.35,-0.45) -- (4.75,-0.45);
+  \draw[line width=0.45pt] (4.40,-0.55) -- (4.70,-0.55);
+  \draw[line width=0.4pt] (4.45,-0.65) -- (4.65,-0.65);
+  % resistor R vertical
+  \draw[line width=0.5pt,decorate,decoration={zigzag,segment length=5pt,amplitude=2pt}]
+    (4.55,-0.30) -- (4.55,1.10);
+  \node[font=\small\itshape,anchor=west] at (4.75,0.40) {$R$};
+  % to amplifier
+  \draw[line width=0.45pt] (6.35,1.10) -- (7.15,1.10);
+  \draw[line width=0.45pt] (7.15,1.10) circle (0.06);
+  \node[font=\small,anchor=west] at (7.30,1.10) {接放大器};
+\end{tikzpicture}%
+}
 \caption{图 10.8 专门用来探测 \(\alpha\) 粒子的盖-弥计数管}
 \end{figure}
+
 
 当利用盖-弥计数器对 \(\alpha\) 射线进行计数时，由于 \(\alpha\)
 粒子的贯穿能力较小，因此必须在计数管上装一个很薄的云母小窗 \(A\)
