@@ -125,7 +125,46 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.3}]{assets/physics-4/fig-p0009-01.png}}
+% fig-alt: 小孔成象：烛焰A、B、C、D经暗箱小孔在毛玻璃上成倒象A'、B'、C'、D'，虚线光路交于小孔
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 桌面
+  \draw[line width=0.55pt] (0.00,0.10) -- (1.60,0.28) -- (1.60,0.12) -- (0.00,-0.06) -- cycle;
+  \draw[line width=0.5pt] (0.20,0.02) -- (0.12,-0.52);
+  \draw[line width=0.5pt] (1.40,0.18) -- (1.48,-0.38);
+  \draw[line width=0.45pt] (0.05,-0.45) -- (1.55,-0.30);
+  % 蜡烛与焰
+  \draw[line width=0.55pt] (0.70,0.22) -- (0.70,0.95) arc(180:0:0.10 and 0.05) -- (0.90,0.22) arc(0:-180:0.10 and 0.05);
+  \draw[line width=0.5pt] (0.76,0.97) .. controls (0.68,1.22) and (0.76,1.42) .. (0.80,1.52)
+    .. controls (0.88,1.32) and (0.94,1.12) .. (0.84,0.97);
+  \node[above=0pt] at (0.80,1.54) {$A$};
+  \node[left=1pt] at (0.68,1.18) {$D$};
+  \node[right=1pt] at (0.96,1.18) {$C$};
+  \node[below=1pt] at (0.80,0.95) {$B$};
+  \coordinate (P) at (3.00,0.98);
+  \fill (P) circle (0.03);
+  % 外筒前盖
+  \draw[line width=0.6pt] (2.55,0.25) -- (2.55,1.70) -- (3.50,1.82) -- (3.50,0.37) -- cycle;
+  \draw[line width=0.5pt] (2.55,1.70) -- (2.68,1.88) -- (3.63,2.00) -- (3.50,1.82);
+  \draw[line width=0.5pt] (3.50,0.37) -- (3.63,0.52) -- (3.63,2.00);
+  % 切口与内筒
+  \draw[line width=0.55pt] (3.50,1.55) -- (5.45,1.72) -- (5.45,0.45) -- (3.50,0.37);
+  \draw[line width=0.5pt] (5.45,1.72) -- (5.58,1.88) -- (5.58,0.60) -- (5.45,0.45);
+  \draw[line width=0.5pt] (3.63,2.00) -- (5.58,1.88);
+  % 毛玻璃屏与倒焰
+  \draw[line width=0.55pt] (5.05,1.08) ellipse (0.20 and 0.52);
+  \draw[line width=0.35pt] (4.85,1.45) .. controls (4.68,1.52) and (4.62,1.32) .. (4.78,1.18);
+  \draw[line width=0.5pt] (5.05,1.32) .. controls (4.98,1.15) and (5.00,0.98) .. (5.05,0.85)
+    .. controls (5.12,0.98) and (5.14,1.15) .. (5.05,1.32);
+  \node[above=0pt] at (5.05,1.36) {$B'$};
+  \node[below=0pt] at (5.05,0.80) {$A'$};
+  \node[left=0pt] at (4.88,1.08) {$C'$};
+  \node[right=0pt] at (5.22,1.08) {$D'$};
+  % 虚线光线
+  \draw[line width=0.45pt,dashed] (0.80,1.52) -- (P) -- (5.05,0.85);
+  \draw[line width=0.45pt,dashed] (0.80,0.98) -- (P) -- (5.05,1.32);
+\end{tikzpicture}%
+}
 \caption{图1.3}
 \end{figure}
 
@@ -1020,13 +1059,100 @@ c = 3 \times 10 ^ {8} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.9}]{assets/physics-4/fig-p0028-01.png}}
+% fig-alt: 橱窗平面玻璃：太阳光入射后反射入眼，遮挡对橱内半身像的观看；窗框斜线填充
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 地面
+  \draw[line width=0.55pt] (0.10,0.10) -- (4.55,0.10);
+  % 橱窗底座与顶框（斜线）
+  \fill[pattern=north west lines,pattern color=black] (3.05,0.10) rectangle (4.35,1.55);
+  \draw[line width=0.6pt] (3.05,0.10) rectangle (4.35,1.55);
+  \fill[pattern=north west lines,pattern color=black] (3.05,3.55) rectangle (4.35,3.85);
+  \draw[line width=0.55pt] (3.05,3.55) rectangle (4.35,3.85);
+  % 玻璃竖线
+  \draw[line width=0.7pt] (3.05,1.55) -- (3.05,3.55);
+  % 半身像（橱内）
+  \begin{scope}[shift={(3.55,2.35)}]
+    \draw[line width=0.45pt] (0.00,0.55) .. controls (-0.22,0.55) and (-0.32,0.28) .. (-0.22,0.05)
+      .. controls (-0.10,-0.05) and (0.12,-0.05) .. (0.22,0.08)
+      .. controls (0.32,0.28) and (0.22,0.55) .. (0.00,0.55);
+    \draw[line width=0.45pt] (-0.28,0.02) -- (-0.45,-0.55) -- (0.42,-0.55) -- (0.28,0.05);
+    \draw[line width=0.4pt] (-0.12,0.28) -- (-0.02,0.22); \fill (0.08,0.28) circle (0.02);
+  \end{scope}
+  % 太阳
+  \draw[line width=0.5pt] (0.55,3.55) circle (0.22);
+  \foreach \a in {0,45,90,135,180,225,270,315}
+    \draw[line width=0.4pt] ({0.55+0.28*cos(\a)},{3.55+0.28*sin(\a)}) -- ({0.55+0.42*cos(\a)},{3.55+0.42*sin(\a)});
+  % 女孩（简线）
+  \begin{scope}[shift={(1.15,0.10)}]
+    \draw[line width=0.5pt] (0.00,1.55) circle (0.22); % head
+    \draw[line width=0.45pt] (-0.18,1.68) .. controls (-0.35,1.55) and (-0.32,1.35) .. (-0.18,1.42); % hair
+    \fill (-0.06,1.58) circle (0.018);
+    \draw[line width=0.45pt] (0.00,1.33) -- (0.00,0.78); % torso
+    \draw[line width=0.45pt] (-0.28,0.78) -- (0.28,0.78) -- (0.22,0.42) -- (-0.22,0.42) -- cycle; % skirt
+    \draw[line width=0.45pt] (-0.12,0.42) -- (-0.18,0.00);
+    \draw[line width=0.45pt] (0.12,0.42) -- (0.18,0.00);
+    \draw[line width=0.45pt] (-0.22,1.15) -- (-0.05,0.95) -- (0.18,1.10); % arms holding ball
+    \draw[line width=0.45pt] (0.00,0.95) circle (0.12);
+  \end{scope}
+  % 光线：太阳 -> 玻璃 -> 眼
+  \coordinate (Sun) at (0.75,3.40);
+  \coordinate (Hit) at (3.05,2.55);
+  \coordinate (Eye) at (1.25,1.68);
+  \draw[line width=0.55pt] (Sun) -- (Hit);
+  \draw[line width=0.55pt,->] (1.55,3.12) -- (2.05,2.92);
+  \draw[line width=0.55pt] (Hit) -- (Eye);
+  \draw[line width=0.55pt,->] (2.35,2.25) -- (1.90,2.02);
+\end{tikzpicture}%
+}
 \caption{图2.9}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.10}]{assets/physics-4/fig-p0028-02.png}}
+% fig-alt: 弧形橱窗玻璃凸向观察者：太阳光反射偏向下方，观察者可透过玻璃看清橱内半身像
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.55pt] (0.10,0.10) -- (4.55,0.10);
+  \fill[pattern=north east lines,pattern color=black] (3.05,0.10) rectangle (4.45,1.45);
+  \draw[line width=0.6pt] (3.05,0.10) rectangle (4.45,1.45);
+  \fill[pattern=north east lines,pattern color=black] (3.05,3.45) rectangle (4.45,3.78);
+  \draw[line width=0.55pt] (3.05,3.45) rectangle (4.45,3.78);
+  % 弧形玻璃：凸向左（观察者）
+  \draw[line width=0.7pt] (3.25,1.45) .. controls (2.45,2.05) and (2.45,2.85) .. (3.25,3.45);
+  % 半身像
+  \begin{scope}[shift={(3.70,2.25)}]
+    \draw[line width=0.45pt] (0.00,0.52) .. controls (-0.20,0.52) and (-0.30,0.25) .. (-0.20,0.02)
+      .. controls (-0.08,-0.08) and (0.12,-0.08) .. (0.20,0.05)
+      .. controls (0.30,0.25) and (0.20,0.52) .. (0.00,0.52);
+    \draw[line width=0.45pt] (-0.26,0.00) -- (-0.42,-0.52) -- (0.40,-0.52) -- (0.26,0.02);
+  \end{scope}
+  % 太阳
+  \draw[line width=0.5pt] (0.55,3.50) circle (0.20);
+  \foreach \a in {0,45,...,315}
+    \draw[line width=0.4pt] ({0.55+0.26*cos(\a)},{3.50+0.26*sin(\a)}) -- ({0.55+0.40*cos(\a)},{3.50+0.40*sin(\a)});
+  % 女孩
+  \begin{scope}[shift={(1.40,0.10)}]
+    \draw[line width=0.5pt] (0.00,1.50) circle (0.20);
+    \draw[line width=0.45pt] (-0.16,1.62) .. controls (-0.32,1.48) and (-0.30,1.30) .. (-0.16,1.38);
+    \fill (-0.05,1.52) circle (0.016);
+    \draw[line width=0.45pt] (0.00,1.30) -- (0.00,0.75);
+    \draw[line width=0.45pt] (-0.26,0.75) -- (0.26,0.75) -- (0.20,0.40) -- (-0.20,0.40) -- cycle;
+    \draw[line width=0.45pt] (-0.10,0.40) -- (-0.16,0.00);
+    \draw[line width=0.45pt] (0.10,0.40) -- (0.16,0.00);
+    \draw[line width=0.45pt] (-0.20,1.10) -- (-0.02,0.92) -- (0.16,1.05);
+    \draw[line width=0.45pt] (0.00,0.92) circle (0.11);
+  \end{scope}
+  % 入射到弧面，反射向下到基座顶面
+  \coordinate (Sun) at (0.72,3.35);
+  \coordinate (Hit) at (2.62,2.50);
+  \coordinate (Down) at (3.05,1.45);
+  \draw[line width=0.55pt] (Sun) -- (Hit);
+  \draw[line width=0.55pt,->] (1.40,3.05) -- (1.90,2.82);
+  \draw[line width=0.55pt] (Hit) -- (Down);
+  \draw[line width=0.55pt,->] (2.78,2.10) -- (2.92,1.72);
+\end{tikzpicture}%
+}
 \caption{图2.10}
 \end{figure}
 
@@ -1748,7 +1874,67 @@ n _ {21} = \frac {1}{n _ {12}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.21}]{assets/physics-4/fig-p0039-01.png}}
+% fig-alt: 水池中鱼A的光线经水面折射入眼，反向延长交于虚象A'，鱼看上去浮起
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 地面与池壁透视
+  \draw[line width=0.6pt] (0.05,2.05) -- (1.55,2.05);
+  \draw[line width=0.6pt] (1.55,2.05) -- (1.85,2.35) -- (6.55,2.35) -- (6.25,2.05) -- (1.55,2.05);
+  \draw[line width=0.55pt] (1.85,2.35) -- (1.85,0.25) -- (6.55,0.25) -- (6.55,2.35);
+  \draw[line width=0.55pt] (1.55,2.05) -- (1.55,0.05) -- (6.25,0.05) -- (6.25,2.05);
+  \draw[line width=0.5pt] (1.55,0.05) -- (1.85,0.25);
+  \draw[line width=0.5pt] (6.25,0.05) -- (6.55,0.25);
+  % 水面与水纹虚线
+  \draw[line width=0.55pt] (1.60,2.05) -- (6.30,2.05);
+  \foreach \y in {1.70,1.35,1.00,0.65,0.30}
+    \draw[line width=0.35pt,dashed] (1.70,\y) -- (6.15,\y);
+  % 人（左）
+  \begin{scope}[shift={(0.55,2.05)}]
+    \draw[line width=0.5pt] (0.15,1.15) circle (0.20);
+    \fill (0.22,1.18) circle (0.018);
+    \draw[line width=0.45pt] (0.15,0.95) -- (0.15,0.35);
+    \draw[line width=0.45pt] (0.15,0.75) -- (0.45,0.55);
+    \draw[line width=0.45pt] (0.15,0.75) -- (-0.05,0.50);
+    \draw[line width=0.45pt] (0.15,0.35) -- (0.00,0.00);
+    \draw[line width=0.45pt] (0.15,0.35) -- (0.32,0.00);
+  \end{scope}
+  \coordinate (Eye) at (0.78,3.22);
+  % 真鱼 A
+  \begin{scope}[shift={(5.15,0.55)}]
+    \draw[line width=0.5pt] (-0.35,0.00) .. controls (-0.10,0.22) and (0.20,0.18) .. (0.40,0.00)
+      .. controls (0.20,-0.18) and (-0.10,-0.22) .. (-0.35,0.00);
+    \draw[line width=0.45pt] (0.40,0.00) -- (0.62,0.12) -- (0.62,-0.12) -- cycle;
+    \fill (0.05,0.06) circle (0.02);
+  \end{scope}
+  \coordinate (A) at (5.15,0.55);
+  \node[below=2pt] at (5.15,0.32) {$A$};
+  % 虚象鱼 A'
+  \begin{scope}[shift={(5.15,1.45)}]
+    \draw[line width=0.5pt] (-0.35,0.00) .. controls (-0.10,0.22) and (0.20,0.18) .. (0.40,0.00)
+      .. controls (0.20,-0.18) and (-0.10,-0.22) .. (-0.35,0.00);
+    \draw[line width=0.45pt] (0.40,0.00) -- (0.62,0.12) -- (0.62,-0.12) -- cycle;
+    \fill (0.05,0.06) circle (0.02);
+  \end{scope}
+  \coordinate (Ap) at (5.15,1.45);
+  \node[above=1pt] at (5.15,1.68) {$A'$};
+  \draw[line width=0.4pt,dashed] (A) -- (Ap);
+  % 水面交点
+  \coordinate (S1) at (3.55,2.05);
+  \coordinate (S2) at (4.45,2.05);
+  % 水中入射（实线）
+  \draw[line width=0.55pt] (A) -- (S1);
+  \draw[line width=0.55pt] (A) -- (S2);
+  \draw[line width=0.5pt,->] (4.55,1.05) -- (4.15,1.40);
+  \draw[line width=0.5pt,->] (4.90,1.15) -- (4.70,1.55);
+  % 空气折射（实线）到眼
+  \draw[line width=0.55pt] (S1) -- (Eye);
+  \draw[line width=0.55pt] (S2) -- (Eye);
+  \draw[line width=0.5pt,->] (2.55,2.45) -- (1.85,2.75);
+  % 虚线反向延长到 A'
+  \draw[line width=0.45pt,dashed] (S1) -- (Ap);
+  \draw[line width=0.45pt,dashed] (S2) -- (Ap);
+\end{tikzpicture}%
+}
 \caption{图2.21}
 \end{figure}
 
@@ -1757,13 +1943,91 @@ n _ {21} = \frac {1}{n _ {12}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.22}]{assets/physics-4/fig-p0040-01.png}}
+% fig-alt: 岸上人看水中人腿：脚发出的光经水面折射入眼，虚线为空气段反向延长的视在脚位置
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 水池外框
+  \draw[line width=0.6pt] (0.15,0.15) -- (5.35,0.15) -- (5.35,1.85) -- (0.15,1.85) -- cycle;
+  \draw[line width=0.65pt] (0.15,1.85) -- (5.35,1.85);
+  \foreach \y in {1.50,1.15,0.80,0.45}
+    \draw[line width=0.35pt,dashed] (0.25,\y) -- (5.25,\y);
+  % 左岸台
+  \draw[line width=0.55pt] (0.15,1.85) -- (0.15,2.40) -- (1.65,2.40) -- (1.65,1.85);
+  % 坐着的观察者
+  \begin{scope}[shift={(0.85,2.40)}]
+    \draw[line width=0.5pt] (0.00,0.72) circle (0.16);
+    \fill (0.07,0.74) circle (0.015);
+    \draw[line width=0.45pt] (0.00,0.56) -- (0.00,0.18);
+    \draw[line width=0.45pt] (0.00,0.40) -- (0.28,0.28);
+    \draw[line width=0.45pt] (0.00,0.18) -- (0.30,0.05);
+    \draw[line width=0.45pt] (0.00,0.18) -- (-0.12,0.00);
+  \end{scope}
+  \coordinate (Eye) at (0.92,3.12);
+  % 水中站立者
+  \begin{scope}[shift={(4.05,1.85)}]
+    \draw[line width=0.5pt] (0.00,1.20) circle (0.16);
+    \draw[line width=0.45pt] (0.00,1.04) -- (0.00,0.35);
+    \draw[line width=0.45pt] (0.00,0.78) -- (-0.25,0.55);
+    \draw[line width=0.45pt] (0.00,0.78) -- (0.30,0.60);
+    \draw[line width=0.45pt] (0.18,0.62) circle (0.11);
+    \draw[line width=0.3pt] (0.10,0.55) -- (0.26,0.68);
+    \draw[line width=0.3pt] (0.10,0.68) -- (0.26,0.55);
+    % 水下腿到池底
+    \draw[line width=0.5pt] (-0.06,0.00) -- (-0.10,-1.55);
+    \draw[line width=0.5pt] (0.06,0.00) -- (0.10,-1.55);
+    \draw[line width=0.4pt] (-0.18,-1.55) -- (0.18,-1.55);
+  \end{scope}
+  \coordinate (Foot) at (4.05,0.30);
+  \coordinate (Hit) at (2.45,1.85);
+  \coordinate (Appar) at (4.05,1.05);
+  % 实线：脚 -> 水面 -> 眼
+  \draw[line width=0.55pt] (Foot) -- (Hit) -- (Eye);
+  \draw[line width=0.5pt,->] (3.45,0.95) -- (3.05,1.30);
+  \draw[line width=0.5pt,->] (1.90,2.25) -- (1.50,2.55);
+  % 虚线：空气段反向延长到视在脚
+  \draw[line width=0.45pt,dashed] (Hit) -- (Appar);
+  \fill (Appar) circle (0.03);
+\end{tikzpicture}%
+}
 \caption{图2.22}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.23}]{assets/physics-4/fig-p0040-02.png}}
+% fig-alt: 水中站立者因折射显得腿短：水面波纹，上半身实线，水下短腿虚线，远景山峰
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 远山
+  \draw[line width=0.4pt] (0.10,2.45) -- (0.45,2.95) -- (0.85,2.55) -- (1.20,3.05) -- (1.70,2.50);
+  \draw[line width=0.4pt] (2.40,2.50) -- (2.85,2.95) -- (3.20,2.55);
+  % 水面横线
+  \foreach \y in {1.78,1.68,1.58}
+    \draw[line width=0.35pt] (0.15,\y) -- (3.25,\y);
+  % 腰部波纹
+  \draw[line width=0.4pt] (1.60,1.72) ellipse (0.95 and 0.22);
+  \draw[line width=0.35pt] (1.60,1.72) ellipse (0.70 and 0.15);
+  % 手旁小波纹
+  \draw[line width=0.35pt] (2.35,1.72) ellipse (0.32 and 0.10);
+  % 头部与发
+  \draw[line width=0.5pt] (1.60,3.15) circle (0.22);
+  \draw[line width=0.4pt] (1.42,3.28) .. controls (1.20,3.15) and (1.22,2.90) .. (1.40,2.98);
+  \draw[line width=0.4pt] (1.78,3.28) .. controls (2.00,3.15) and (1.98,2.90) .. (1.80,2.98);
+  \fill (1.52,3.18) circle (0.015); \fill (1.68,3.18) circle (0.015);
+  \draw[line width=0.3pt] (1.55,3.08) -- (1.65,3.08);
+  % 泳衣上身
+  \draw[line width=0.5pt] (1.35,2.90) -- (1.32,1.85) -- (1.88,1.85) -- (1.85,2.90)
+    .. controls (1.75,2.98) and (1.45,2.98) .. (1.35,2.90);
+  \draw[line width=0.3pt] (1.42,2.55) -- (1.78,2.48);
+  \draw[line width=0.3pt] (1.42,2.30) -- (1.78,2.22);
+  \draw[line width=0.3pt] (1.42,2.05) -- (1.78,2.00);
+  % 臂
+  \draw[line width=0.45pt] (1.35,2.70) -- (1.12,2.10) -- (1.18,1.85);
+  \draw[line width=0.45pt] (1.85,2.70) -- (2.20,2.15) -- (2.35,1.72);
+  % 水下短腿（虚线，缩短）
+  \draw[line width=0.5pt,dashed] (1.48,1.70) -- (1.42,1.05) -- (1.55,1.05);
+  \draw[line width=0.5pt,dashed] (1.72,1.70) -- (1.78,1.05) -- (1.65,1.05);
+\end{tikzpicture}%
+}
 \caption{图2.23}
 \end{figure}
 
@@ -1992,7 +2256,60 @@ O 点射出的光线经水面 O 处反射到眼里，入射角 \(\angle CON\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.27}]{assets/physics-4/fig-p0044-01.png}}
+% fig-alt: 烧瓶半盛水，塞中钢丝过球心O，右烛于A，右侧每10°刻度；AO折射至C，OB方向入眼，标B、N
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0);
+  % 瓶身
+  \draw[line width=0.65pt] (0,0) circle (1.55);
+  % 瓶颈与塞
+  \draw[line width=0.55pt] (-0.22,1.38) -- (-0.22,2.18) -- (0.22,2.18) -- (0.22,1.38);
+  \fill[pattern=dots,pattern color=black] (-0.30,2.18) rectangle (0.30,2.48);
+  \draw[line width=0.5pt] (-0.30,2.18) rectangle (0.30,2.48);
+  % 钢丝到 O，再虚线到 N
+  \draw[line width=0.45pt] (0,2.48) -- (0,0);
+  \draw[line width=0.45pt,dashed] (0,0) -- (0,-1.55);
+  \fill (0,0) circle (0.035);
+  \node[above left=1pt] at (-0.08,0.10) {$O$};
+  \node[below=1pt] at (0,-1.55) {$N$};
+  % 水面
+  \draw[line width=0.55pt] (-1.55,0) -- (1.55,0);
+  \draw[line width=0.45pt] (0,0) ellipse (1.55 and 0.26);
+  % 水中横线
+  \begin{scope}
+    \clip (0,0) circle (1.55);
+    \foreach \y in {-0.28,-0.55,-0.82,-1.08,-1.32}
+      \draw[line width=0.28pt] (-1.55,\y) -- (1.55,\y);
+  \end{scope}
+  % 右侧刻度：水面到瓶底每10°（9等分）
+  \foreach \a in {0,-10,...,-90}
+    \draw[line width=0.35pt] ({1.55*cos(\a)},{1.55*sin(\a)}) -- ({1.70*cos(\a)},{1.70*sin(\a)});
+  % A 与烛
+  \coordinate (A) at (1.55,0);
+  \node[above right=-1pt] at (1.55,0.08) {$A$};
+  \draw[line width=0.5pt] (1.82,-0.02) -- (1.82,0.30) arc(180:0:0.055 and 0.03) -- (1.93,-0.02) arc(0:-180:0.055 and 0.03);
+  \draw[line width=0.4pt] (1.85,0.32) .. controls (1.82,0.45) and (1.88,0.55) .. (1.90,0.58)
+    .. controls (1.94,0.48) and (1.96,0.38) .. (1.90,0.32);
+  % C 约 -40°
+  \coordinate (C) at ({1.55*cos(-40)},{1.55*sin(-40)});
+  \node[below right=0pt] at (C) {$C$};
+  \draw[line width=0.55pt] (A) -- (O) -- (C);
+  \draw[line width=0.5pt,->] (0.45,-0.28) -- (0.85,-0.55);
+  % B 约 -130°（与竖直线约50°）
+  \coordinate (B) at ({1.55*cos(-130)},{1.55*sin(-130)});
+  \node[below left=0pt] at (B) {$B$};
+  \draw[line width=0.55pt] (O) -- (B);
+  \draw[line width=0.5pt,->] (-0.50,-0.40) -- (-0.90,-0.62);
+  % 眼在 OB 延长线
+  \coordinate (Eye) at ({2.35*cos(-130)},{2.35*sin(-130)});
+  \draw[line width=0.5pt] (B) -- (Eye);
+  \draw[line width=0.5pt,->] ({1.75*cos(-130)},{1.75*sin(-130)}) -- ({2.05*cos(-130)},{2.05*sin(-130)});
+  \begin{scope}[shift={(Eye)},rotate=-40]
+    \draw[line width=0.45pt] (0.00,0.00) .. controls (0.20,0.12) and (0.20,-0.12) .. (0.00,0.00);
+    \fill (0.09,0.00) circle (0.03);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图2.27}
 \end{figure}
 
@@ -2347,7 +2664,83 @@ BD，这一束光射入眼里，看上去就好象它们是从镜里 \(S'\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.2}]{assets/physics-4/fig-p0051-01.png}}
+% fig-alt: 左：平面镜前实箭与镜后虚箭对称，实线入射反射入眼，虚线延长到虚象；右：手掌在镜中左右对调
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % ===== 左图 =====
+  \begin{scope}[shift={(0,0)}]
+    % 镜
+    \draw[line width=0.7pt] (2.20,-0.15) -- (2.20,2.55);
+    \foreach \y in {0.0,0.25,...,2.4}
+      \draw[line width=0.35pt] (2.20,\y) -- (2.38,\y+0.12);
+    % 物箭
+    \draw[line width=0.7pt,fill=black!70] (0.85,0.35) -- (0.85,1.55) -- (0.72,1.55) -- (0.85,1.85) -- (0.98,1.55) -- (0.85,1.55);
+    \draw[line width=0.55pt,fill=black!70] (0.72,0.35) rectangle (0.98,0.48);
+    % 虚象箭
+    \draw[line width=0.55pt,dashed] (3.55,0.35) -- (3.55,1.55);
+    \draw[line width=0.55pt,dashed] (3.42,1.55) -- (3.55,1.85) -- (3.68,1.55);
+    \draw[line width=0.45pt,dashed] (3.42,0.35) rectangle (3.68,0.48);
+    % 基线
+    \draw[line width=0.4pt] (0.85,0.35) -- (3.55,0.35);
+    % 眼
+    \begin{scope}[shift={(0.35,2.15)}]
+      \draw[line width=0.45pt] (0.00,0.00) .. controls (0.28,0.16) and (0.28,-0.16) .. (0.00,0.00);
+      \fill (0.12,0.00) circle (0.035);
+    \end{scope}
+    \coordinate (E) at (0.55,2.15);
+    \coordinate (Ot) at (0.85,1.85);
+    \coordinate (Ob) at (0.85,0.42);
+    \coordinate (It) at (3.55,1.85);
+    \coordinate (Ib) at (3.55,0.42);
+    \coordinate (Mt1) at (2.20,1.95);
+    \coordinate (Mt2) at (2.20,1.55);
+    \coordinate (Mb1) at (2.20,0.85);
+    \coordinate (Mb2) at (2.20,0.55);
+    % 顶：物到镜到眼 + 虚延长
+    \draw[line width=0.5pt] (Ot) -- (Mt1);
+    \draw[line width=0.5pt,->] (1.35,1.88) -- (1.70,1.92);
+    \draw[line width=0.5pt] (Mt1) -- (E);
+    \draw[line width=0.5pt,->] (1.55,2.02) -- (1.15,2.08);
+    \draw[line width=0.45pt,dashed] (Mt1) -- (It);
+    \draw[line width=0.5pt] (Ot) -- (Mt2);
+    \draw[line width=0.5pt,->] (1.40,1.72) -- (1.75,1.65);
+    \draw[line width=0.5pt] (Mt2) -- (E);
+    \draw[line width=0.45pt,dashed] (Mt2) -- (It);
+    % 底
+    \draw[line width=0.5pt] (Ob) -- (Mb1);
+    \draw[line width=0.5pt,->] (1.35,0.60) -- (1.70,0.70);
+    \draw[line width=0.5pt] (Mb1) -- (E);
+    \draw[line width=0.5pt,->] (1.60,1.30) -- (1.20,1.60);
+    \draw[line width=0.45pt,dashed] (Mb1) -- (Ib);
+    \draw[line width=0.5pt] (Ob) -- (Mb2);
+    \draw[line width=0.5pt] (Mb2) -- (E);
+    \draw[line width=0.45pt,dashed] (Mb2) -- (Ib);
+  \end{scope}
+  % ===== 右图：手与镜 =====
+  \begin{scope}[shift={(5.0,0.3)}]
+    % 镜面透视矩形
+    \draw[line width=0.6pt] (0.80,0.20) -- (2.55,0.55) -- (2.55,2.35) -- (0.80,2.00) -- cycle;
+    \foreach \t in {0.15,0.35,0.55,0.75}
+      \draw[line width=0.3pt] ({0.80+1.75*\t},{0.20+0.35*\t}) -- ({0.80+1.75*\t},{2.00+0.35*\t});
+    % 实物手（简）
+    \draw[line width=0.5pt] (0.15,0.85) .. controls (0.05,1.15) and (0.10,1.45) .. (0.35,1.55)
+      .. controls (0.55,1.62) and (0.70,1.45) .. (0.68,1.20)
+      .. controls (0.75,1.35) and (0.92,1.40) .. (0.95,1.18)
+      .. controls (1.02,1.32) and (1.18,1.28) .. (1.12,1.05)
+      .. controls (1.15,0.85) and (0.95,0.70) .. (0.70,0.72)
+      .. controls (0.55,0.55) and (0.35,0.60) .. (0.15,0.85);
+    % 虚象手（左右对调示意）
+    \draw[line width=0.5pt] (1.55,1.00) .. controls (1.45,1.30) and (1.50,1.55) .. (1.75,1.65)
+      .. controls (1.95,1.72) and (2.10,1.55) .. (2.08,1.32)
+      .. controls (2.15,1.45) and (2.32,1.48) .. (2.35,1.28)
+      .. controls (2.42,1.40) and (2.55,1.35) .. (2.48,1.15)
+      .. controls (2.50,0.95) and (2.30,0.82) .. (2.05,0.85)
+      .. controls (1.90,0.68) and (1.70,0.75) .. (1.55,1.00);
+    % 对应箭头
+    \draw[line width=0.5pt,->] (0.85,1.35) -- (1.45,1.40);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3.2}
 \end{figure}
 
