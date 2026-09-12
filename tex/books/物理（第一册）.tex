@@ -4677,7 +4677,7 @@ h _ {1} \gamma_ {1} = h _ {2} \gamma_ {2}, \quad \therefore \quad \gamma_ {2} = 
   \node[font=\scriptsize,inner sep=0.4pt] at (2.10,-0.12) {$(b)$};
 \end{tikzpicture}%
 }
-\caption{(b)}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -13853,8 +13853,24 @@ N _ {2} = 59 \text{牛顿} - 10 \times 9.8 \text{牛顿} - 10 \times 2 \text{牛
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第227页）}]{assets/physics-1/fig-p0227-01.png}}
-\caption{图示（原PDF第227页）}
+% fig-alt: 图8·11左：甲块；$N_{1}$上、$G_{1}$下、$f_{1}$左、$T_{1}$右。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图8·11 左：甲块受力
+  \draw[line width=0.6pt] (0.72,0.28) rectangle (2.42,1.98);
+  \draw[line width=0.55pt] (0.72,1.98) -- (1.34,2.42) -- (3.04,2.42) -- (2.42,1.98);
+  \draw[line width=0.55pt] (2.42,0.28) -- (3.04,0.72) -- (3.04,2.42);
+  \fill (1.28,1.18) circle[radius=0.04];
+  \draw[line width=0.7pt,->] (1.28,1.18) -- (1.28,1.78);
+  \node[anchor=west] at (1.40,1.68) {$N_{1}$};
+  \draw[line width=0.7pt,->] (1.28,1.18) -- (1.28,0.48);
+  \node[anchor=west] at (1.40,0.55) {$G_{1}$};
+  \draw[line width=0.6pt,->] (1.22,1.34) -- (0.78,1.34);
+  \node[anchor=south] at (0.96,1.38) {$f_{1}$};
+  \draw[line width=0.7pt,->] (2.42,1.18) -- (3.88,1.18);
+  \node[anchor=south] at (3.42,1.22) {$T_{1}$};
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{figure}
@@ -13878,7 +13894,7 @@ N _ {2} = 59 \text{牛顿} - 10 \times 9.8 \text{牛顿} - 10 \times 2 \text{牛
   \node[anchor=south] at (3.42,1.22) {$F$};
 \end{tikzpicture}%
 }
-\caption{图8-11}
+\caption{图8·11}
 \end{figure}
 
 \emph{图8·11}
@@ -15305,7 +15321,7 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
   \end{scope}
 \end{tikzpicture}%
 }
-\caption{图9-3}
+\caption{图9·3}
 \end{figure}
 
 \emph{图9·3}
@@ -15338,7 +15354,7 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
   \node[anchor=west] at (6.68,1.55) {$R$};
 \end{tikzpicture}%
 }
-\caption{图9-4}
+\caption{图9·4}
 \end{figure}
 
 \emph{图9·4}
@@ -15365,23 +15381,70 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第248页）}]{assets/physics-1/fig-p0248-01.png}}
-\caption{图示（原PDF第248页）}
+% fig-alt: 图9·5：（a）$F_{1}$、$F_{2}$平行四边形虚线得$R$，等值反向$F_{3}$；（b）三角形法则$F_{1}$、$F_{2}$、$R$；（c）封闭三角形$F_{1}$、$F_{2}$、$F_{3}$。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图9·5（a）（b）（c）
+  \begin{scope} % (a)
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (2.15,0);
+    \coordinate (B) at (0.95,1.55);
+    \coordinate (C) at (3.10,1.55);
+    \coordinate (F3e) at (-2.05,-1.02);
+    \draw[line width=0.45pt,dash pattern=on 1.2pt off 0.85pt] (A) -- (C);
+    \draw[line width=0.45pt,dash pattern=on 1.2pt off 0.85pt] (B) -- (C);
+    \draw[line width=0.55pt,dash pattern=on 1.2pt off 0.85pt,->] (O) -- (C);
+    \node[anchor=south east] at (1.35,0.95) {$R$};
+    \draw[line width=0.75pt,->] (O) -- (A);
+    \node[anchor=north] at (1.05,-0.08) {$F_{1}$};
+    \draw[line width=0.75pt,->] (O) -- (B);
+    \node[anchor=east] at (0.55,1.05) {$F_{2}$};
+    \draw[line width=0.75pt,->] (O) -- (F3e);
+    \node[anchor=south east] at (-1.25,-0.55) {$F_{3}$};
+    \node[anchor=north east] at (-0.08,-0.06) {$O$};
+    \node[anchor=north] at (2.15,-0.06) {$A$};
+    \node[anchor=south east] at (0.88,1.62) {$B$};
+    \node[anchor=south west] at (3.15,1.55) {$C$};
+    \node[anchor=north] at (0.85,-1.55) {（a）};
+  \end{scope}
+  \begin{scope}[xshift=4.85cm] % (b)
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (2.15,0);
+    \coordinate (C) at (3.10,1.55);
+    \draw[line width=0.75pt,->] (O) -- (A);
+    \node[anchor=north] at (1.05,-0.08) {$F_{1}$};
+    \draw[line width=0.75pt,->] (A) -- (C);
+    \node[anchor=west] at (2.75,0.85) {$F_{2}$};
+    \draw[line width=0.75pt,->] (O) -- (C);
+    \node[anchor=south east] at (1.35,0.95) {$R$};
+    \node[anchor=north east] at (-0.08,-0.06) {$O$};
+    \node[anchor=north] at (2.15,-0.06) {$A$};
+    \node[anchor=south west] at (3.15,1.55) {$C$};
+    \node[anchor=north] at (1.55,-1.55) {（b）};
+  \end{scope}
+  \begin{scope}[xshift=8.85cm] % (c)
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (2.15,0);
+    \coordinate (C) at (3.10,1.55);
+    \draw[line width=0.75pt,->] (O) -- (A);
+    \node[anchor=north] at (1.05,-0.08) {$F_{1}$};
+    \draw[line width=0.75pt,->] (A) -- (C);
+    \node[anchor=west] at (2.75,0.85) {$F_{2}$};
+    \draw[line width=0.75pt,->] (C) -- (O);
+    \node[anchor=south east] at (1.35,0.95) {$F_{3}$};
+    \node[anchor=north east] at (-0.08,-0.06) {$O$};
+    \node[anchor=north] at (2.15,-0.06) {$A$};
+    \node[anchor=south west] at (3.15,1.55) {$C$};
+    \node[anchor=north] at (1.55,-1.55) {（c）};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图9·5}
 \end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0248-02.png}}
-\caption{(b)}
-\end{figure}
 
 \emph{（b）}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-1/fig-p0248-03.png}}
-\caption{(c)}
-\end{figure}
 
 \emph{（c）}
 
@@ -15405,56 +15468,114 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第248页）}]{assets/physics-1/fig-p0248-04.png}}
-\caption{图示（原PDF第248页）}
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: 图9-6：扫描只含封闭四边形。F1底边向右，F2右侧向上，F3上左侧向左下，F4接下侧向左下，首尾相接。
+% fig-alt: 图9·6：左$O$处四共点力$F_{1}$右、$F_{2}$左上、$F_{3}$左下、$F_{4}$右下；右封闭四边形$F_{1}\to F_{2}\to F_{3}\to F_{4}$；并入原0248-05。
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
-  \coordinate (T) at (2.55,2.95);
-  \coordinate (L) at (0.28,1.52);
-  \coordinate (B) at (0.92,0.42);
-  \coordinate (E) at (4.05,0.32);
-  \draw[line width=0.75pt,->] (B) -- (E);
-  \node[anchor=north] at (2.48,0.22) {$F_{1}$};
-  \draw[line width=0.75pt,->] (E) -- (T);
-  \node[anchor=west] at (3.72,1.72) {$F_{2}$};
-  \draw[line width=0.75pt,->] (T) -- (L);
-  \node[anchor=east] at (1.15,2.42) {$F_{3}$};
-  \draw[line width=0.75pt,->] (L) -- (B);
-  \node[anchor=east] at (0.42,0.92) {$F_{4}$};
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图9·6：左共点力；右封闭四边形（并入原0248-05）
+  \begin{scope}
+    \fill (0,0) circle[radius=0.045];
+    \node[anchor=south west] at (0.06,0.06) {$O$};
+    \draw[line width=0.75pt,->] (0,0) -- (1.85,0);
+    \node[anchor=south] at (1.05,0.08) {$F_{1}$};
+    \draw[line width=0.75pt,->] (0,0) -- (-1.55,1.85);
+    \node[anchor=south east] at (-0.95,1.35) {$F_{2}$};
+    \draw[line width=0.75pt,->] (0,0) -- (-1.65,-0.95);
+    \node[anchor=north east] at (-0.95,-0.55) {$F_{3}$};
+    \draw[line width=0.75pt,->] (0,0) -- (1.15,-1.15);
+    \node[anchor=north west] at (0.55,-0.75) {$F_{4}$};
+  \end{scope}
+  \begin{scope}[xshift=4.35cm]
+    \coordinate (T) at (2.55,2.95);
+    \coordinate (L) at (0.28,1.52);
+    \coordinate (B) at (0.92,0.42);
+    \coordinate (E) at (4.05,0.32);
+    \draw[line width=0.75pt,->] (B) -- (E);
+    \node[anchor=north] at (2.48,0.22) {$F_{1}$};
+    \draw[line width=0.75pt,->] (E) -- (T);
+    \node[anchor=west] at (3.72,1.72) {$F_{2}$};
+    \draw[line width=0.75pt,->] (T) -- (L);
+    \node[anchor=east] at (1.15,2.42) {$F_{3}$};
+    \draw[line width=0.75pt,->] (L) -- (B);
+    \node[anchor=east] at (0.42,0.92) {$F_{4}$};
+  \end{scope}
 \end{tikzpicture}%
 }
-\caption{图9-6}
+\caption{图9·6}
 \end{figure}
+
 
 \emph{图9·6}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第248页）}]{assets/physics-1/fig-p0248-06.png}}
-\caption{图示（原PDF第248页）}
+% fig-alt: 图9·7：三封闭三角形对应图9·3；左$G$、$N$、$T$；中$G$、$T_{1}$、$T_{2}$；右$G$、$N$、$F$。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图9·7：对应图9·3三种情形的封闭三角形
+  \begin{scope} % 皮球：G、N、T
+    \coordinate (TL) at (0,2.35);
+    \coordinate (BL) at (0,0);
+    \coordinate (BR) at (1.55,0);
+    \draw[line width=0.75pt,->] (TL) -- (BL);
+    \node[anchor=east] at (-0.08,1.15) {$G$};
+    \draw[line width=0.75pt,->] (BL) -- (BR);
+    \node[anchor=north] at (0.75,-0.08) {$N$};
+    \draw[line width=0.75pt,->] (BR) -- (TL);
+    \node[anchor=south west] at (0.95,1.25) {$T$};
+    \draw[line width=0.35pt] (0.18,0) -- (0.18,0.18) -- (0,0.18);
+  \end{scope}
+  \begin{scope}[xshift=3.15cm] % 电灯：G、T1、T2
+    \coordinate (T) at (0,2.55);
+    \coordinate (B) at (0,0);
+    \coordinate (R) at (1.45,1.05);
+    \draw[line width=0.75pt,->] (T) -- (B);
+    \node[anchor=east] at (-0.08,1.25) {$G$};
+    \draw[line width=0.75pt,->] (B) -- (R);
+    \node[anchor=north west] at (0.85,0.35) {$T_{2}$};
+    \draw[line width=0.75pt,->] (R) -- (T);
+    \node[anchor=south west] at (0.85,1.95) {$T_{1}$};
+  \end{scope}
+  \begin{scope}[xshift=6.15cm] % 梯子：G、N、F
+    \coordinate (TL) at (0,2.35);
+    \coordinate (BL) at (0,0);
+    \coordinate (BR) at (1.55,0);
+    \draw[line width=0.75pt,->] (TL) -- (BL);
+    \node[anchor=east] at (-0.08,1.15) {$G$};
+    \draw[line width=0.75pt,->] (BL) -- (BR);
+    \node[anchor=north] at (0.75,-0.08) {$N$};
+    \draw[line width=0.75pt,->] (BR) -- (TL);
+    \node[anchor=south west] at (0.95,1.25) {$F$};
+    \draw[line width=0.35pt] (0.18,0) -- (0.18,0.18) -- (0,0.18);
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图9·7}
 \end{figure}
+
+
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第248页）}]{assets/physics-1/fig-p0248-07.png}}
-\caption{图示（原PDF第248页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第248页）}]{assets/physics-1/fig-p0248-08.png}}
-\caption{图示（原PDF第248页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-7}]{assets/physics-1/fig-p0248-09.png}}
-\caption{图9-7}
+% fig-alt: 图9·8：四力封闭四边形另一作图次序；$F_{1}$顶边右向，自交于中。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图9·8：四力封闭四边形另一种次序（自交）
+  \coordinate (P1) at (0.15,2.65);
+  \coordinate (P2) at (2.55,2.65);
+  \coordinate (P3) at (0.55,1.15);
+  \coordinate (P4) at (2.35,0.15);
+  \coordinate (P5) at (0.15,2.65);
+  \draw[line width=0.75pt,->] (P1) -- (P2);
+  \node[anchor=south] at (1.35,2.72) {$F_{1}$};
+  \draw[line width=0.75pt,->] (P2) -- (P3);
+  \node[anchor=west] at (1.85,1.85) {$F_{2}$};
+  \draw[line width=0.75pt,->] (P3) -- (P4);
+  \node[anchor=south west] at (1.55,0.55) {$F_{3}$};
+  \draw[line width=0.75pt,->] (P4) -- (P1);
+  \node[anchor=north east] at (0.85,1.15) {$F_{4}$};
+\end{tikzpicture}%
+}
+\caption{图9·8}
 \end{figure}
 
 \emph{图9·7}
@@ -15503,7 +15624,7 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
   \node[anchor=north] at (5.90,0.46) {20公斤};
 \end{tikzpicture}%
 }
-\caption{图9-9}
+\caption{图9·9}
 \end{figure}
 
 \emph{图9·9}
@@ -15547,7 +15668,7 @@ m = \frac {m _ {0}}{\sqrt {1 - v ^ {2} / c ^ {2}}}
   \node[anchor=east] at (2.16,1.05) {$F_{3}$};
 \end{tikzpicture}%
 }
-\caption{图9-10}
+\caption{图9·10}
 \end{figure}
 
 \emph{图9·10}
@@ -15618,7 +15739,7 @@ F _ {3} = \sqrt {F _ {1} ^ {2} + F _ {2} ^ {2}} = \sqrt {20 ^ {2} + 15 ^ {2}} = 
   \node[anchor=north] at (6.50,0.94) {两臂成$120^{\circ}$};
 \end{tikzpicture}%
 }
-\caption{图9-11}
+\caption{图9·11}
 \end{figure}
 
 \emph{图9·11}
@@ -15664,7 +15785,7 @@ F = \frac {G}{2 \cos \frac {\alpha}{2}}
   \node[anchor=south west] at (0.42,0.28) {$\beta$};
 \end{tikzpicture}%
 }
-\caption{图9-12}
+\caption{图9·12}
 \end{figure}
 
 \emph{图9·12}
@@ -15754,7 +15875,7 @@ F = \frac {G}{2 \cos (10 ^ {\circ})} = G = 45 \text{公斤}
   \node[anchor=north] at (0.72,0.70) {$\alpha_{2}$};
 \end{tikzpicture}%
 }
-\caption{(b)}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -15956,7 +16077,7 @@ N _ {2} = 43.3 \text{公 斤}
   \node[anchor=north] at (2.78,1.48) {$O$};
 \end{tikzpicture}%
 }
-\caption{(b)}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -16326,7 +16447,7 @@ F _ {1} = F _ {2} \cos 60 ^ {\circ} = 646.6 \times \frac {1}{2} \text{牛顿} = 
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0259-02.png}}
-\caption{(b)}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -16334,7 +16455,7 @@ F _ {1} = F _ {2} \cos 60 ^ {\circ} = 646.6 \times \frac {1}{2} \text{牛顿} = 
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-1/fig-p0259-03.png}}
-\caption{(c)}
+\caption{（c）}
 \end{figure}
 
 \emph{（c）}
@@ -16360,7 +16481,7 @@ F _ {1} = F _ {2} \cos 60 ^ {\circ} = 646.6 \times \frac {1}{2} \text{牛顿} = 
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0259-06.png}}
-\caption{(b)}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -18514,7 +18635,7 @@ D O = \frac {F _ {3}}{R} \times D C = \frac {300}{600} \times 30 \text{厘米} -
   \node[anchor=west] at (1.28,-0.32) {$G$};
 \end{tikzpicture}%
 }
-\caption{(b)}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -19022,7 +19143,7 @@ x = \frac {l}{8}
   \node[anchor=north west] at (3.18,0.86) {$O$};
 \end{tikzpicture}%
 }
-\caption{(c)}
+\caption{（c）}
 \end{figure}
 
 \emph{（c）}
@@ -19092,7 +19213,7 @@ x = \frac {l}{8}
   \end{scope}
 \end{tikzpicture}%
 }
-\caption{(b)}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -31562,7 +31683,7 @@ f=1.3\text{周/秒}
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0468-02.png}}
-\caption{(b)}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -31570,7 +31691,7 @@ f=1.3\text{周/秒}
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-1/fig-p0468-03.png}}
-\caption{(c)}
+\caption{（c）}
 \end{figure}
 
 \emph{（c）}
