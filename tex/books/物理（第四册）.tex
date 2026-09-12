@@ -4694,7 +4694,44 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.10}]{assets/physics-4/fig-p0075-03.png}}
+% fig-alt: 图4.10手持放大镜会聚阳光：平行光经凸透镜会聚于纸面一点，冒烟示意点燃
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 纸面（透视四边形，网点）
+  \fill[pattern=dots,pattern color=black!70] (3.05,-0.15) -- (4.85,0.55) -- (5.35,-0.55) -- (3.55,-1.25) -- cycle;
+  \draw[line width=0.55pt] (3.05,-0.15) -- (4.85,0.55) -- (5.35,-0.55) -- (3.55,-1.25) -- cycle;
+  \coordinate (Fpt) at (4.15,-0.35);
+  % 放大镜镜框（倾斜椭圆）
+  \begin{scope}[rotate around={-38:(2.05,1.55)}]
+    \draw[line width=1.1pt] (2.05,1.55) ellipse (1.05 and 0.72);
+    \draw[line width=0.55pt] (2.05,1.55) ellipse (0.88 and 0.58);
+    % 手柄
+    \draw[line width=0.7pt] (2.05,0.72) -- (2.05,-0.05);
+    \draw[line width=0.55pt] (1.88,-0.05) rectangle (2.22,-0.55);
+  \end{scope}
+  % 手（简笔）
+  \draw[line width=0.5pt]
+    (0.35,-0.15) .. controls (0.15,0.35) and (0.25,0.85) .. (0.75,1.00)
+    .. controls (1.05,1.08) and (1.25,0.85) .. (1.22,0.55)
+    .. controls (1.35,0.75) and (1.58,0.78) .. (1.62,0.48)
+    .. controls (1.72,0.68) and (1.95,0.62) .. (1.88,0.32)
+    .. controls (1.95,0.10) and (1.70,-0.05) .. (1.40,0.00)
+    .. controls (1.15,-0.25) and (0.70,-0.35) .. (0.35,-0.15);
+  \draw[line width=0.45pt] (0.05,-0.45) -- (0.55,-0.25) -- (0.70,-0.55) -- (0.15,-0.75) -- cycle;
+  % 平行入射光（4条）
+  \foreach \dy in {0.55,0.15,-0.25,-0.65} {
+    \draw[line width=0.5pt] (-0.35,2.85+\dy*0.15) -- (1.55,1.95+\dy*0.55);
+  }
+  % 会聚折射光至焦点
+  \foreach \t/\a in {0.55/1.95,0.15/1.72,-0.25/1.48,-0.65/1.25} {
+    \draw[line width=0.5pt] (2.55,\a) -- (Fpt);
+  }
+  % 烟
+  \draw[line width=0.4pt] (4.05,-0.20) .. controls (3.95,0.05) and (4.15,0.25) .. (4.00,0.55);
+  \draw[line width=0.4pt] (4.18,-0.18) .. controls (4.28,0.10) and (4.10,0.35) .. (4.25,0.62);
+  \draw[line width=0.4pt] (4.28,-0.22) .. controls (4.40,0.05) and (4.30,0.28) .. (4.42,0.48);
+\end{tikzpicture}%
+}
 \caption{图4.10}
 \end{figure}
 
@@ -4998,7 +5035,100 @@ D = \frac {1}{f}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（第1题）}]{assets/physics-4/fig-p0080-01.png}}
+% fig-alt: （第1题）九个方框光路：入射与出射光线已绘，框内器件留空待判；中左仅两条水平入射无出射
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % ---- row1 ----
+  \begin{scope}[shift={(0,4.2)}]
+    \draw[line width=0.55pt] (0,0) rectangle (1.55,1.55);
+    \draw[line width=0.5pt] (-0.85,0.25) -- (0,0.55);
+    \draw[line width=0.45pt,->] (-0.55,0.36) -- (-0.30,0.46);
+    \draw[line width=0.5pt] (1.55,1.00) -- (2.40,1.30);
+    \draw[line width=0.45pt,->] (1.85,1.10) -- (2.10,1.19);
+  \end{scope}
+  \begin{scope}[shift={(2.85,4.2)}]
+    \draw[line width=0.55pt] (0,0) rectangle (1.55,1.55);
+    \draw[line width=0.5pt] (-0.85,0.15) -- (0,0.55);
+    \draw[line width=0.5pt] (-0.85,0.45) -- (0,0.85);
+    \draw[line width=0.45pt,->] (-0.55,0.26) -- (-0.30,0.40);
+    \draw[line width=0.45pt,->] (-0.55,0.56) -- (-0.30,0.70);
+    \draw[line width=0.5pt] (1.55,0.55) -- (2.40,0.15);
+    \draw[line width=0.5pt] (1.55,0.85) -- (2.40,0.45);
+    \draw[line width=0.45pt,->] (1.85,0.41) -- (2.10,0.29);
+    \draw[line width=0.45pt,->] (1.85,0.71) -- (2.10,0.59);
+  \end{scope}
+  \begin{scope}[shift={(5.7,4.2)}]
+    \draw[line width=0.55pt] (0,0) rectangle (1.55,1.55);
+    \draw[line width=0.5pt] (-0.85,0.775) -- (0,0.775);
+    \draw[line width=0.45pt,->] (-0.55,0.775) -- (-0.25,0.775);
+    \draw[line width=0.5pt] (0.775,0) -- (0.775,-0.70);
+    \draw[line width=0.45pt,->] (0.775,-0.25) -- (0.775,-0.50);
+  \end{scope}
+  % ---- row2 ----
+  \begin{scope}[shift={(0,2.1)}]
+    \draw[line width=0.55pt] (0,0) rectangle (1.55,1.55);
+    \draw[line width=0.5pt] (-0.95,1.15) -- (0,1.15);
+    \draw[line width=0.5pt] (-0.95,0.40) -- (0,0.40);
+    \draw[line width=0.45pt,->] (-0.60,1.15) -- (-0.30,1.15);
+    \draw[line width=0.45pt,->] (-0.60,0.40) -- (-0.30,0.40);
+  \end{scope}
+  \begin{scope}[shift={(2.85,2.1)}]
+    \draw[line width=0.55pt] (0,0) rectangle (1.55,1.55);
+    \draw[line width=0.5pt] (-0.85,1.05) -- (0,1.05);
+    \draw[line width=0.5pt] (-0.85,0.50) -- (0,0.50);
+    \draw[line width=0.45pt,->] (-0.55,1.05) -- (-0.25,1.05);
+    \draw[line width=0.45pt,->] (-0.55,0.50) -- (-0.25,0.50);
+    \draw[line width=0.5pt] (1.55,1.05) -- (2.45,1.45);
+    \draw[line width=0.5pt] (1.55,0.50) -- (2.45,0.10);
+    \draw[line width=0.45pt,->] (1.85,1.18) -- (2.10,1.29);
+    \draw[line width=0.45pt,->] (1.85,0.37) -- (2.10,0.26);
+  \end{scope}
+  \begin{scope}[shift={(5.7,2.1)}]
+    \draw[line width=0.55pt] (0,0) rectangle (1.55,1.55);
+    \draw[line width=0.5pt] (-0.85,1.05) -- (0,1.05);
+    \draw[line width=0.5pt] (-0.85,0.50) -- (0,0.50);
+    \draw[line width=0.45pt,->] (-0.55,1.05) -- (-0.25,1.05);
+    \draw[line width=0.45pt,->] (-0.55,0.50) -- (-0.25,0.50);
+    \draw[line width=0.5pt] (1.55,1.05) -- (2.55,0.25);
+    \draw[line width=0.5pt] (1.55,0.50) -- (2.55,1.30);
+    \draw[line width=0.45pt,->] (1.85,0.81) -- (2.10,0.61);
+    \draw[line width=0.45pt,->] (1.85,0.74) -- (2.10,0.94);
+  \end{scope}
+  % ---- row3 ----
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.55pt] (0,0) rectangle (1.55,1.55);
+    \draw[line width=0.5pt] (-0.95,1.35) -- (0,0.95);
+    \draw[line width=0.5pt] (-0.95,0.20) -- (0,0.60);
+    \draw[line width=0.45pt,->] (-0.60,1.20) -- (-0.30,1.08);
+    \draw[line width=0.45pt,->] (-0.60,0.35) -- (-0.30,0.47);
+    \draw[line width=0.5pt] (1.55,0.95) -- (2.40,0.95);
+    \draw[line width=0.5pt] (1.55,0.60) -- (2.40,0.60);
+    \draw[line width=0.45pt,->] (1.85,0.95) -- (2.15,0.95);
+    \draw[line width=0.45pt,->] (1.85,0.60) -- (2.15,0.60);
+  \end{scope}
+  \begin{scope}[shift={(2.85,0)}]
+    \draw[line width=0.55pt] (0,0) rectangle (1.55,1.55);
+    \draw[line width=0.5pt] (-0.95,0.85) -- (0,1.20);
+    \draw[line width=0.5pt] (-0.95,0.70) -- (0,0.35);
+    \draw[line width=0.45pt,->] (-0.60,0.98) -- (-0.30,1.09);
+    \draw[line width=0.45pt,->] (-0.60,0.57) -- (-0.30,0.46);
+    \draw[line width=0.5pt] (1.55,1.20) -- (2.40,1.20);
+    \draw[line width=0.5pt] (1.55,0.35) -- (2.40,0.35);
+    \draw[line width=0.45pt,->] (1.85,1.20) -- (2.15,1.20);
+    \draw[line width=0.45pt,->] (1.85,0.35) -- (2.15,0.35);
+  \end{scope}
+  \begin{scope}[shift={(5.7,0)}]
+    \draw[line width=0.55pt] (0,0) rectangle (1.55,1.55);
+    \foreach \dy in {0.00,0.22,0.44} {
+      \draw[line width=0.5pt] (-0.95,{0.20+\dy}) -- (0,{0.55+\dy});
+      \draw[line width=0.45pt,->] (-0.60,{0.33+\dy}) -- (-0.35,{0.43+\dy});
+      \draw[line width=0.5pt] (1.55,{1.00+\dy*0.5}) -- (2.55,{1.45+\dy*0.5});
+      \draw[line width=0.4pt,->] (1.75,{1.09+\dy*0.5}) -- (1.95,{1.18+\dy*0.5});
+      \draw[line width=0.4pt,->] (2.05,{1.225+\dy*0.5}) -- (2.25,{1.315+\dy*0.5});
+    }
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{（第1题）}
 \end{figure}
 
@@ -5010,7 +5140,30 @@ D = \frac {1}{f}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（第2题）}]{assets/physics-4/fig-p0080-02.png}}
+% fig-alt: （第2题）两厚玻璃砖夹空气层：左为宏观狭缝，右圆内放大缝隙及斜向示意光线，空心箭头从放大圆指向缝
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 左：两块玻璃砖
+  \fill[pattern=north east lines,pattern color=black] (0.00,0.28) rectangle (2.40,0.72);
+  \fill[pattern=north east lines,pattern color=black] (0.00,-0.72) rectangle (2.40,-0.28);
+  \draw[line width=0.55pt] (0.00,0.28) rectangle (2.40,0.72);
+  \draw[line width=0.55pt] (0.00,-0.72) rectangle (2.40,-0.28);
+  % 空心箭头：尖端朝左指向缝
+  \draw[line width=0.55pt] (4.15,-0.18) -- (3.25,-0.18) -- (3.25,-0.42) -- (2.75,0)
+    -- (3.25,0.42) -- (3.25,0.18) -- (4.15,0.18) -- cycle;
+  % 右：放大圆
+  \begin{scope}
+    \clip (5.55,0) circle (1.55);
+    \fill[pattern=north east lines,pattern color=black] (3.90,0.28) rectangle (7.20,1.70);
+    \fill[pattern=north east lines,pattern color=black] (3.90,-1.70) rectangle (7.20,-0.28);
+  \end{scope}
+  \draw[line width=0.6pt] (5.55,0) circle (1.55);
+  \draw[line width=0.5pt] (4.00,0.28) -- (7.10,0.28);
+  \draw[line width=0.5pt] (4.00,-0.28) -- (7.10,-0.28);
+  % 圆内上半斜线
+  \draw[line width=0.55pt] (4.35,1.20) -- (5.55,0.28);
+\end{tikzpicture}%
+}
 \caption{（第2题）}
 \end{figure}
 
@@ -5061,13 +5214,121 @@ D = \frac {1}{f}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0081-02.png}}
+% fig-alt: （a）凸透镜，自左焦点F发出两条入射光线射向透镜上半；未画折射
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\f{1.85}
+  \def\h{1.35}
+  \draw[line width=0.5pt] (-3.55,0) -- (3.55,0);
+  \draw[line width=0.55pt] (0,0) ellipse (0.16 and \h);
+  \draw[line width=0.4pt,dashed] (0,-\h) -- (0,\h);
+  \fill (-\f,0) circle (0.035);
+  \fill (\f,0) circle (0.035);
+  \fill (0,0) circle (0.028);
+  \draw[line width=0.5pt] (-\f,0) -- (0,1.15);
+  \draw[line width=0.5pt] (-\f,0) -- (0,0.55);
+  \draw[line width=0.45pt,->] (-1.15,0.52) -- (-0.70,0.78);
+  \draw[line width=0.45pt,->] (-1.15,0.25) -- (-0.70,0.38);
+  \node[anchor=north] at (-\f,-0.06) {$F$};
+  \node[anchor=north] at (\f,-0.06) {$F$};
+  \node[anchor=north west] at (0.06,-0.02) {$O$};
+\end{tikzpicture}%
+}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（第4题）}]{assets/physics-4/fig-p0081-03.png}}
+% fig-alt: （第4题）四幅未完成光路：(b)凸透镜点A两条入射；(c)凸透镜焦平面上B三点入射；(d)凹透镜射向右方F虚线；另凹透镜两条平行入射；均未补折射
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % ---- (b) top-right: convex, A left of F ----
+  \begin{scope}[shift={(4.6,4.0)}]
+    \def\f{1.55}\def\h{1.15}
+    \draw[line width=0.45pt] (-3.2,0) -- (3.0,0);
+    \draw[line width=0.5pt] (0,0) ellipse (0.14 and \h);
+    \draw[line width=0.35pt,dashed] (0,-\h) -- (0,\h);
+    \draw[line width=0.35pt,dashed] (-\f,-1.05) -- (-\f,1.05);
+    \draw[line width=0.35pt,dashed] (\f,-1.05) -- (\f,1.05);
+    \coordinate (A) at (-2.55,0.95);
+    \fill (A) circle (0.03);
+    \draw[line width=0.5pt] (A) -- (0,0.95);
+    \draw[line width=0.5pt] (A) -- (0,0);
+    \draw[line width=0.4pt,->] (-1.55,0.95) -- (-1.05,0.95);
+    \draw[line width=0.4pt,->] (-1.55,0.58) -- (-1.05,0.38);
+    \fill (-\f,0) circle (0.03); \fill (\f,0) circle (0.03); \fill (0,0) circle (0.025);
+    \node[anchor=south east] at (A) {$A$};
+    \node[anchor=north] at (-\f,-0.05) {$F$};
+    \node[anchor=north] at (\f,-0.05) {$F$};
+    \node[anchor=north west] at (0.05,-0.02) {$O$};
+    \node[anchor=north] at (0,-1.35) {$(b)$};
+  \end{scope}
+  % ---- (c) mid-left: convex, B on left focal plane below ----
+  \begin{scope}[shift={(0,1.6)}]
+    \def\f{1.55}\def\h{1.15}
+    \draw[line width=0.45pt] (-3.0,0) -- (3.0,0);
+    \draw[line width=0.5pt] (0,0) ellipse (0.14 and \h);
+    \draw[line width=0.35pt,dashed] (0,-\h) -- (0,\h);
+    \draw[line width=0.35pt,dashed] (-\f,-1.05) -- (-\f,1.05);
+    \draw[line width=0.35pt,dashed] (\f,-1.05) -- (\f,1.05);
+    \coordinate (B) at (-\f,-0.85);
+    \fill (B) circle (0.03);
+    \draw[line width=0.5pt] (B) -- (0,0.95);
+    \draw[line width=0.5pt] (B) -- (0,0);
+    \draw[line width=0.5pt] (B) -- (0,-0.55);
+    \draw[line width=0.4pt,->] (-0.95,0.05) -- (-0.55,0.40);
+    \draw[line width=0.4pt,->] (-0.95,-0.43) -- (-0.55,-0.22);
+    \draw[line width=0.4pt,->] (-0.95,-0.70) -- (-0.55,-0.62);
+    \fill (-\f,0) circle (0.03); \fill (\f,0) circle (0.03); \fill (0,0) circle (0.025);
+    \node[anchor=east] at (B) {$B$};
+    \node[anchor=north] at (-\f,-0.05) {$F$};
+    \node[anchor=north] at (\f,-0.05) {$F$};
+    \node[anchor=north west] at (0.05,-0.02) {$O$};
+    \node[anchor=north] at (0,-1.35) {$(c)$};
+  \end{scope}
+  % ---- (d) mid-right: concave, ray toward right F, dashed ----
+  \begin{scope}[shift={(4.6,1.6)}]
+    \def\f{1.55}\def\h{1.15}
+    \draw[line width=0.45pt] (-2.8,0) -- (2.8,0);
+    % concave lens
+    \draw[line width=0.55pt] (-0.18,\h) .. controls (0.12,0.55) and (0.12,-0.55) .. (-0.18,-\h);
+    \draw[line width=0.55pt] (0.18,\h) .. controls (-0.12,0.55) and (-0.12,-0.55) .. (0.18,-\h);
+    \draw[line width=0.55pt] (-0.18,\h) -- (0.18,\h);
+    \draw[line width=0.55pt] (-0.18,-\h) -- (0.18,-\h);
+    \draw[line width=0.35pt,dashed] (0,-\h) -- (0,\h);
+    \fill (-\f,0) circle (0.03); \fill (\f,0) circle (0.03); \fill (0,0) circle (0.025);
+    \draw[line width=0.5pt] (-2.4,1.05) -- (0,0.42);
+    \draw[line width=0.4pt,dashed] (0,0.42) -- (\f,0);
+    \draw[line width=0.4pt,->] (-1.40,0.78) -- (-0.90,0.62);
+    \node[anchor=north] at (-\f,-0.05) {$F$};
+    \node[anchor=north] at (\f,-0.05) {$F$};
+    \node[anchor=north west] at (0.08,-0.02) {$O$};
+    \node[anchor=north] at (0,-1.40) {$(d)$};
+  \end{scope}
+  % ---- (e) bottom-left: concave, two parallel incident ----
+  \begin{scope}[shift={(0,-0.9)}]
+    \def\f{1.55}\def\h{1.15}
+    \draw[line width=0.45pt] (-3.0,0) -- (3.0,0);
+    \draw[line width=0.55pt] (-0.18,\h) .. controls (0.12,0.55) and (0.12,-0.55) .. (-0.18,-\h);
+    \draw[line width=0.55pt] (0.18,\h) .. controls (-0.12,0.55) and (-0.12,-0.55) .. (0.18,-\h);
+    \draw[line width=0.55pt] (-0.18,\h) -- (0.18,\h);
+    \draw[line width=0.55pt] (-0.18,-\h) -- (0.18,-\h);
+    \draw[line width=0.35pt,dashed] (0,-\h) -- (0,\h);
+    \draw[line width=0.35pt,dashed] (-\f,-1.05) -- (-\f,1.05);
+    \draw[line width=0.35pt,dashed] (\f,-1.05) -- (\f,1.05);
+    \fill (-\f,0) circle (0.03); \fill (\f,0) circle (0.03); \fill (0,0) circle (0.025);
+    % two parallel rays sloping up-right; lower through O
+    \draw[line width=0.5pt] (-2.7,-1.05) -- (0,0);
+    \draw[line width=0.5pt] (-2.7,-0.35) -- (0,0.70);
+    \draw[line width=0.4pt,->] (-1.70,-0.66) -- (-1.20,-0.47);
+    \draw[line width=0.4pt,->] (-1.70,-0.02) -- (-1.20,0.17);
+    \node[anchor=north] at (-\f,-0.05) {$F$};
+    \node[anchor=north] at (\f,-0.05) {$F$};
+    \node[anchor=north west] at (0.08,-0.02) {$O$};
+    % no sublabel on last panel
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{（第4题）}
 \end{figure}
 
@@ -6641,19 +6902,141 @@ f = \frac {L ^ {2} - d ^ {2}}{4 L}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0105-01.png}}
+% fig-alt: （a）凸透镜成倒立实象：物AB跨主轴中点M，象A'B'中点M'，F与F'，由A、B各作过光心与平行主轴的光线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\f{1.35}
+  \pgfmathsetmacro{\u}{2.70}
+  \pgfmathsetmacro{\v}{2.70}
+  \pgfmathsetmacro{\h}{0.85}
+  \draw[line width=0.45pt,dash pattern=on 2.2pt off 1.1pt on 0.5pt off 1.1pt] (-3.55,0) -- (3.55,0);
+  \draw[line width=0.55pt] (0,0) ellipse (0.16 and 1.20);
+  \draw[line width=0.35pt] (0,-1.20) -- (0,1.20);
+  % object AB
+  \draw[line width=0.7pt,->] (-\u,0) -- (-\u,\h);
+  \draw[line width=0.7pt,->] (-\u,0) -- (-\u,-\h);
+  % image A'B' inverted
+  \draw[line width=0.7pt,->] (\v,0) -- (\v,-\h);
+  \draw[line width=0.7pt,->] (\v,0) -- (\v,\h);
+  % rays from A (top)
+  \draw[line width=0.5pt] (-\u,\h) -- (0,\h) -- (\v,-\h);
+  \draw[line width=0.5pt] (-\u,\h) -- (0,0) -- (\v,-\h);
+  \draw[line width=0.5pt] (-\u,\h) -- (0,-\h) -- (\v,-\h);
+  % rays from B (bottom)
+  \draw[line width=0.5pt] (-\u,-\h) -- (0,-\h) -- (\v,\h);
+  \draw[line width=0.5pt] (-\u,-\h) -- (0,0) -- (\v,\h);
+  \draw[line width=0.5pt] (-\u,-\h) -- (0,\h) -- (\v,\h);
+  \draw[line width=0.4pt,->] (-1.9,\h) -- (-1.4,\h);
+  \draw[line width=0.4pt,->] (0.9,0.28) -- (1.3,0.05);
+  \draw[line width=0.4pt,->] (-1.9,-\h) -- (-1.4,-\h);
+  \draw[line width=0.4pt,->] (0.9,-0.28) -- (1.3,-0.05);
+  \fill (-\f,0) circle (0.03); \fill (\f,0) circle (0.03); \fill (0,0) circle (0.028);
+  \node[anchor=south east] at (-\u,\h) {$A$};
+  \node[anchor=north east] at (-\u,-\h) {$B$};
+  \node[anchor=east] at (-\u,0.02) {$M$};
+  \node[anchor=north] at (-\f,-0.05) {$F$};
+  \node[anchor=north] at (\f,-0.05) {$F'$};
+  \node[anchor=south] at (0.08,0.05) {$O$};
+  \node[anchor=north west] at (\v,-\h) {$A'$};
+  \node[anchor=south west] at (\v,\h) {$B'$};
+  \node[anchor=west] at (\v,0.02) {$M'$};
+\end{tikzpicture}%
+}
 \caption{（a）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0105-02.png}}
+% fig-alt: （b）截去下半的凸透镜仍成完整倒立实象A'B'：物AB中点M，左F'右F，仅上半透镜；光线均经上半或光心
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\f{1.20}
+  \pgfmathsetmacro{\u}{2.85}
+  \pgfmathsetmacro{\v}{2.05}
+  \pgfmathsetmacro{\ho}{0.80}
+  \pgfmathsetmacro{\hi}{0.55}
+  \draw[line width=0.45pt,dash pattern=on 2.2pt off 1.1pt on 0.5pt off 1.1pt] (-3.55,0) -- (3.25,0);
+  \begin{scope}
+    \clip (-0.40,-0.02) rectangle (0.40,1.25);
+    \draw[line width=0.55pt] (0,0) ellipse (0.16 and 1.15);
+  \end{scope}
+  \draw[line width=0.55pt] (-0.16,0) -- (0.16,0);
+  \draw[line width=0.35pt] (0,0) -- (0,1.15);
+  \draw[line width=0.7pt,->] (-\u,0) -- (-\u,\ho);
+  \draw[line width=0.7pt,->] (-\u,0) -- (-\u,-\ho);
+  \draw[line width=0.7pt,->] (\v,0) -- (\v,-\hi);
+  \draw[line width=0.7pt,->] (\v,0) -- (\v,\hi);
+  % A: parallel (upper) then through F; through O
+  \draw[line width=0.5pt] (-\u,\ho) -- (0,\ho) -- (\v,-\hi);
+  \draw[line width=0.5pt] (-\u,\ho) -- (0,0) -- (\v,-\hi);
+  % B: through O; through F' then emerge toward B' (hits upper half)
+  \draw[line width=0.5pt] (-\u,-\ho) -- (0,0) -- (\v,\hi);
+  \draw[line width=0.5pt] (-\u,-\ho) -- (-\f,0);
+  \draw[line width=0.5pt] (-\f,0) -- (0,0.42) -- (\v,\hi);
+  \draw[line width=0.4pt,->] (-1.9,\ho) -- (-1.4,\ho);
+  \draw[line width=0.4pt,->] (0.7,0.22) -- (1.15,0.02);
+  \draw[line width=0.4pt,->] (-1.55,-0.35) -- (-1.15,-0.12);
+  \fill (-\f,0) circle (0.03); \fill (\f,0) circle (0.03); \fill (0,0) circle (0.028);
+  \node[anchor=south east] at (-\u,\ho) {$A$};
+  \node[anchor=north east] at (-\u,-\ho) {$B$};
+  \node[anchor=east] at (-\u,0.02) {$M$};
+  \node[anchor=north] at (-\f,-0.05) {$F'$};
+  \node[anchor=north] at (\f,-0.05) {$F$};
+  \node[anchor=south] at (0.08,0.05) {$O$};
+  \node[anchor=north west] at (\v,-\hi) {$A'$};
+  \node[anchor=south west] at (\v,\hi) {$B'$};
+  \node[anchor=west] at (\v,0.02) {$M'$};
+\end{tikzpicture}%
+}
 \caption{（b）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0105-03.png}}
+% fig-alt: （c）半透镜上移：物中点M为向上箭头，成倒立象M'，焦平面虚线过F、F'，象相对上移
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\f{1.40}
+  \pgfmathsetmacro{\u}{2.40}
+  \pgfmathsetmacro{\v}{3.35}
+  \pgfmathsetmacro{\hm}{0.72}
+  \pgfmathsetmacro{\hmp}{\hm*\v/\u}
+  \pgfmathsetmacro{\ys}{0.40}
+  \draw[line width=0.45pt,dash pattern=on 2.2pt off 1.1pt on 0.5pt off 1.1pt] (-3.2,0) -- (4.1,0);
+  \draw[line width=0.35pt,dashed] (-\f,-1.45) -- (-\f,1.65);
+  \draw[line width=0.35pt,dashed] (\f,-1.45) -- (\f,1.65);
+  % half lens shifted up
+  \begin{scope}[shift={(0,\ys)}]
+    \begin{scope}
+      \clip (-0.40,-0.02) rectangle (0.40,1.20);
+      \draw[line width=0.55pt] (0,0) ellipse (0.15 and 1.10);
+    \end{scope}
+    \draw[line width=0.55pt] (-0.15,0) -- (0.15,0);
+    \draw[line width=0.35pt] (0,0) -- (0,1.10);
+  \end{scope}
+  \coordinate (Oc) at (0,\ys);
+  \coordinate (Mtip) at (-\u,\hm);
+  \coordinate (Mptip) at (\v,\ys-\hmp);
+  \draw[line width=0.75pt,->] (-\u,0) -- (Mtip);
+  \draw[line width=0.75pt,->] (\v,\ys) -- (Mptip);
+  % parallel to lens height, then through F'
+  \draw[line width=0.5pt] (Mtip) -- (0,\hm) -- (Mptip);
+  % through Oc
+  \draw[line width=0.5pt] (Mtip) -- (Oc) -- (Mptip);
+  % through F then to image
+  \draw[line width=0.5pt] (Mtip) -- (-\f,0);
+  \draw[line width=0.5pt] (-\f,0) -- (0,{\ys-(\ys)*\f/(\u-\f)}) -- (Mptip);
+  \draw[line width=0.4pt,->] (-1.55,\hm) -- (-1.05,\hm);
+  \draw[line width=0.4pt,->] (1.1,0.05) -- (1.6,-0.15);
+  \fill (-\f,0) circle (0.03); \fill (\f,0) circle (0.03);
+  \fill (Oc) circle (0.028);
+  \node[anchor=south east] at (Mtip) {$M$};
+  \node[anchor=north west] at (Mptip) {$M'$};
+  \node[anchor=north] at (-\f,-0.05) {$F$};
+  \node[anchor=north] at (\f,-0.05) {$F'$};
+  \node[anchor=north west] at (0.10,\ys-0.05) {$O$};
+\end{tikzpicture}%
+}
 \caption{（c）}
 \end{figure}
 
