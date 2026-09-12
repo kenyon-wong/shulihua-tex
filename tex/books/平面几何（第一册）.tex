@@ -22829,19 +22829,66 @@ S，则圆内角\(\angle MSP\)等于\((\widehat{MP} + \widehat{QN})\)的度数�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-30}]{assets/plane-geometry-1/fig-p0233-01.png}}
-\caption{图4-30}
+\fitfig{%
+% fig-alt: 图4·30 圆 O 内接四边形 ABCD；圆心 O 有实心点
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (200:\R);
+  \coordinate (B) at (-30:\R);
+  \coordinate (C) at (55:\R);
+  \coordinate (D) at (130:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=north west, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{图4·30}
 \end{figure}
 
-\emph{图 4·30}
+\emph{图4·30}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-31}]{assets/plane-geometry-1/fig-p0233-02.png}}
-\caption{图4-31}
+\fitfig{%
+% fig-alt: 图4·31 圆 O 内接四边形 ABCD；BC 延至 E；∠DAB 与外角 ∠DCE 标单弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (70:\R);
+  \coordinate (B) at (200:\R);
+  \coordinate (C) at (-40:\R);
+  \coordinate (D) at (20:\R);
+  \coordinate (E) at ($(B)!1.35!(C)$);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.65pt] (C) -- (E);
+  \fill (O) circle [radius=1.2pt];
+  \draw[line width=0.45pt] let \p1=($(D)-(A)$), \p2=($(B)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.32) arc[start angle=\n1, delta angle=\n3, radius=0.32];
+  \draw[line width=0.45pt] let \p1=($(D)-(C)$), \p2=($(E)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.32) arc[start angle=\n1, delta angle=\n3, radius=0.32];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=west, inner sep=2pt] at (D) {$D$};
+  \node[anchor=north west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=west, inner sep=2pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{图4·31}
 \end{figure}
 
-\emph{图 4·31}
+\emph{图4·31}
 
 图 4·31 的\(\angle DCE\)是四边形 ABCD
 的一个外角，\(\angle A\)是\(\angle DCE\)相邻内角的对角。
@@ -22866,21 +22913,64 @@ S，则圆内角\(\angle MSP\)等于\((\widehat{MP} + \widehat{QN})\)的度数�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0234-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·32（1）圆 O 过 A、B、C、S；D 在圆外，A、S、D 共线；实线 AB、BC、CD、AD；虚线 SC
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.10}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (115:\R);
+  \coordinate (B) at (210:\R);
+  \coordinate (C) at (-40:\R);
+  \coordinate (S) at (35:\R);
+  \coordinate (D) at ($(A)!1.55!(S)$);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.55pt, dashed] (S) -- (C);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=west, inner sep=2pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1.5pt] at (S) {$S$};
+  \node[anchor=west, inner sep=2pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{图4·32（1）}
 \end{figure}
 
-\emph{（1）}
+\emph{图4·32（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0234-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图4·32（2）圆 O 过 A、B、C、S；D 在圆内，A、D、S 共线；实线 AB、BC、CD、DA；虚线 DS、SC
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.10}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (115:\R);
+  \coordinate (B) at (205:\R);
+  \coordinate (C) at (-30:\R);
+  \coordinate (S) at (25:\R);
+  \coordinate (D) at ($(A)!0.62!(S)$);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.55pt, dashed] (D) -- (S);
+  \draw[line width=0.55pt, dashed] (S) -- (C);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=west, inner sep=2pt] at (S) {$S$};
+  \node[anchor=west, inner sep=2pt] at (O) {$O$};
+\end{tikzpicture}%
+}
+\caption{图4·32（2）}
 \end{figure}
 
-\emph{（2）}
+\emph{图4·32（2）}
 
-\emph{图 4·32}
+
 
 \textbf{分析}
 我们已经知道不在一直线上的三点确定一圆。现在通过\(A, B, C\)三点作一圆，再讨论这个圆是否通过点\(D, A, B, C\)三点的圆对点\(D\)来看不外乎下面的三种情形之一：（1）
@@ -22925,17 +23015,36 @@ CS，则有
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·33}]{assets/plane-geometry-1/fig-p0235-01.png}}
+\fitfig{%
+% fig-alt: 图4·33 四边形 ABCD（AB 底较长）；对角 AC、BD；∠1=∠ADB，∠2=∠ACB，各标单弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.60,0);
+  \coordinate (C) at (3.05,2.55);
+  \coordinate (D) at (0.55,2.35);
+  \draw[line width=0.70pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.65pt] (A) -- (C);
+  \draw[line width=0.65pt] (B) -- (D);
+  \draw[line width=0.45pt] let \p1=($(A)-(D)$), \p2=($(B)-(D)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (D) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \draw[line width=0.45pt] let \p1=($(A)-(C)$), \p2=($(B)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+  \node[font=\small, inner sep=0.5pt] at ($(D)!0.42!(A)!0.18!(B)$) {$1$};
+  \node[font=\small, inner sep=0.5pt] at ($(C)!0.42!(B)!0.18!(A)$) {$2$};
+\end{tikzpicture}%
+}
 \caption{图4·33}
 \end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·33}]{assets/plane-geometry-1/fig-p0235-02.png}}
-\caption{图4·33}
-\end{figure}
-
-\emph{图 4·33}
+\emph{图4·33}
 
 \textbf{［求证］} A，B，C，D 四点共圆。
 
@@ -22961,11 +23070,49 @@ CS，则有
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-34}]{assets/plane-geometry-1/fig-p0235-03.png}}
-\caption{图4-34}
+\fitfig{%
+% fig-alt: 图4·34 圆内接四边形 ABCD；AB、DC 延交于 E；EG 平分 ∠E，交 BC 于 F、AD 于 G；∠1–∠4；A、C 处双弧等号
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-1.4261,0.8298);
+  \coordinate (B) at (-0.4494,-1.5876);
+  \coordinate (C) at (0.4494,-1.5876);
+  \coordinate (D) at (1.4261,0.8298);
+  \coordinate (E) at (0.0000,-2.7000);
+  \coordinate (G) at (0.0000,0.8298);
+  \coordinate (F) at (0.0000,-1.5876);
+  \draw[line width=0.75pt] (O) circle [radius=1.65];
+  \draw[line width=0.65pt] (A) -- (E) -- (D);
+  \draw[line width=0.65pt] (A) -- (D);
+  \draw[line width=0.65pt] (B) -- (C);
+  \draw[line width=0.65pt] (E) -- (G);
+  \draw[line width=0.40pt] let \p1=($(D)-(A)$), \p2=($(B)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.24) arc[start angle=\n1, delta angle=\n3, radius=0.24]
+    (A) ++ (\n1:0.34) arc[start angle=\n1, delta angle=\n3, radius=0.34];
+  \draw[line width=0.40pt] let \p1=($(B)-(C)$), \p2=($(D)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.24) arc[start angle=\n1, delta angle=\n3, radius=0.24]
+    (C) ++ (\n1:0.34) arc[start angle=\n1, delta angle=\n3, radius=0.34];
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=2pt] at (B) {$B$};
+  \node[anchor=west, inner sep=2pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south east, inner sep=1pt] at (G) {$G$};
+  \node[anchor=south east, inner sep=1pt] at (F) {$F$};
+  \node[font=\small, inner sep=0.4pt] at ($(F)+(0.26,0.20)$) {$1$};
+  \node[font=\small, inner sep=0.4pt] at ($(G)+(0.26,-0.20)$) {$2$};
+  \node[font=\small, inner sep=0.4pt] at ($(E)+(-0.28,0.40)$) {$3$};
+  \node[font=\small, inner sep=0.4pt] at ($(E)+(0.28,0.40)$) {$4$};
+\end{tikzpicture}%
+}
+\caption{图4·34}
 \end{figure}
 
-\emph{图 4·34}
+\emph{图4·34}
 
 \[
 \angle 3 = \angle 4.
@@ -22998,11 +23145,54 @@ CS，则有
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-35}]{assets/plane-geometry-1/fig-p0236-01.png}}
-\caption{图4-35}
+\fitfig{%
+% fig-alt: 图4·35 △ABC，CF⊥AB 于 F；FQ⊥AC，FP⊥BC；虚线 PQ；F、Q、P 直角方；∠A 单弧；∠1 在 P，∠2 在 F
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.20,0);
+  \coordinate (C) at (1.35,2.85);
+  \coordinate (F) at ($(A)!(C)!(B)$);
+  \coordinate (Q) at ($(A)!(F)!(C)$);
+  \coordinate (P) at ($(B)!(F)!(C)$);
+  \draw[line width=0.70pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (C) -- (F);
+  \draw[line width=0.65pt] (F) -- (Q);
+  \draw[line width=0.65pt] (F) -- (P);
+  \draw[line width=0.55pt, dashed] (Q) -- (P);
+  % right angle at F (CF ⊥ AB)
+  \coordinate (RF1) at ($(F)!0.14!(A)$);
+  \coordinate (RF2) at ($(F)!0.14!(C)$);
+  \coordinate (RF3) at ($(RF1)+(RF2)-(F)$);
+  \draw[line width=0.40pt] (RF1) -- (RF3) -- (RF2);
+  % right angle at Q (FQ ⊥ AC)
+  \coordinate (RQ1) at ($(Q)!0.14!(F)$);
+  \coordinate (RQ2) at ($(Q)!0.14!(C)$);
+  \coordinate (RQ3) at ($(RQ1)+(RQ2)-(Q)$);
+  \draw[line width=0.40pt] (RQ1) -- (RQ3) -- (RQ2);
+  % right angle at P (FP ⊥ BC)
+  \coordinate (RP1) at ($(P)!0.14!(F)$);
+  \coordinate (RP2) at ($(P)!0.14!(C)$);
+  \coordinate (RP3) at ($(RP1)+(RP2)-(P)$);
+  \draw[line width=0.40pt] (RP1) -- (RP3) -- (RP2);
+  % arc at A
+  \draw[line width=0.45pt] let \p1=($(B)-(A)$), \p2=($(C)-(A)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (A) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=east, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=west, inner sep=1.5pt] at (P) {$P$};
+  \node[font=\small, inner sep=0.4pt] at ($(P)!0.55!(C)!0.22!(Q)$) {$1$};
+  \node[font=\small, inner sep=0.4pt] at ($(F)!0.45!(C)!0.25!(Q)$) {$2$};
+\end{tikzpicture}%
+}
+\caption{图4·35}
 \end{figure}
 
-\emph{图 4·35}
+\emph{图4·35}
 
 \textbf{［证］} 连结 PQ. 在四边形 QFPC 中，
 
@@ -23042,11 +23232,53 @@ CS，则有
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-38}]{assets/plane-geometry-1/fig-p0237-01.png}}
-\caption{图4-38}
+\fitfig{%
+% fig-alt: 图4·36 锐角 △ABC；D、E、F 各边中点；AP⊥BC 于 P（直角方）；实线 EF、FD、PE；∠1 在 P，∠2 在 C，∠3 在 F
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (4.20,0);
+  \coordinate (A) at (2.55,2.75);
+  \coordinate (D) at ($(B)!0.5!(C)$);
+  \coordinate (E) at ($(A)!0.5!(C)$);
+  \coordinate (F) at ($(A)!0.5!(B)$);
+  \coordinate (P) at ($(B)!(A)!(C)$);
+  \draw[line width=0.70pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (A) -- (P);
+  \draw[line width=0.65pt] (E) -- (F);
+  \draw[line width=0.65pt] (F) -- (D);
+  \draw[line width=0.65pt] (P) -- (E);
+  \coordinate (RP1) at ($(P)!0.14!(A)$);
+  \coordinate (RP2) at ($(P)!0.14!(B)$);
+  \coordinate (RP3) at ($(RP1)+(RP2)-(P)$);
+  \draw[line width=0.40pt] (RP1) -- (RP3) -- (RP2);
+  \draw[line width=0.45pt] let \p1=($(E)-(P)$), \p2=($(C)-(P)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (P) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \draw[line width=0.45pt] let \p1=($(A)-(C)$), \p2=($(B)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.30) arc[start angle=\n1, delta angle=\n3, radius=0.30];
+  \draw[line width=0.45pt] let \p1=($(E)-(F)$), \p2=($(D)-(F)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (F) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=east, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=north west, inner sep=1.2pt] at (P) {$P$};
+  \node[font=\small, inner sep=0.4pt] at ($(P)!0.40!(E)!0.20!(C)$) {$1$};
+  \node[font=\small, inner sep=0.4pt] at ($(C)!0.35!(A)!0.18!(B)$) {$2$};
+  \node[font=\small, inner sep=0.4pt] at ($(F)!0.40!(E)!0.22!(D)$) {$3$};
+\end{tikzpicture}%
+}
+\caption{图4·36}
 \end{figure}
 
-\emph{图 4·36}
+\emph{图4·36}
 
 \textbf{［证］} 连结\(EF, FD\)和\(PE\)。
 因为\(E, F, D\)是\(\triangle ABC\)各边的中点，所以四边形\(EFDC\)是一个平行四边形，则有
