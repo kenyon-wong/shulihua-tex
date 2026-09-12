@@ -26373,11 +26373,35 @@ I_{2} = \frac{U}{X_{L 2}} = \frac{100}{7.55 \times 10^{3}} \text{安} = 0.013 \t
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0344-02.png}}
-\caption{(b)}
+\fitfig{%
+% fig-alt: 图5.24（b）·交流电源u、发光灯泡与电容器串联（交流电能通过电容器）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.0]
+  \def\W{2.55}\def\H{2.45}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC source on left: circle with ~
+  \fill[white] (-0.02,{\H/2-0.32}) rectangle (0.02,{\H/2+0.32});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.26];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.30,{\H/2}) {$u$};
+  % lit bulb on top with rays
+  \fill[white] ({\W/2-0.38},\H) rectangle ({\W/2+0.38},\H);
+  \draw[line width=0.65pt] ({\W/2-0.24},{\H-0.10}) rectangle ({\W/2+0.24},{\H+0.08});
+  \draw[line width=0.7pt] ({\W/2},{\H+0.34}) circle[radius=0.26];
+  \draw[line width=0.45pt] ({\W/2-0.11},{\H+0.22}) .. controls ({\W/2},{\H+0.40}) .. ({\W/2+0.11},{\H+0.22});
+  \foreach \a in {50,70,90,110,130,40,140} {
+    \draw[line width=0.45pt] ({(\W/2)+0.30*cos(\a)},{(\H+0.34)+0.30*sin(\a)})
+      -- ({(\W/2)+0.55*cos(\a)},{(\H+0.34)+0.55*sin(\a)});
+  }
+  % capacitor on right
+  \fill[white] ({\W-0.02},{\H/2-0.28}) rectangle ({\W+0.02},{\H/2+0.28});
+  \draw[line width=0.85pt] ({\W-0.12},{\H/2-0.28}) -- ({\W-0.12},{\H/2+0.28});
+  \draw[line width=0.85pt] ({\W+0.12},{\H/2-0.28}) -- ({\W+0.12},{\H/2+0.28});
+\end{tikzpicture}%
+}
+\caption{图5.24（b）·交流电能通过电容器}
 \end{figure}
 
-\emph{（b）}
+\emph{图5.24（b）·交流电能通过电容器}
 
 \emph{图5.24·（a）直流电不能通过电容器；（b）交流电能通过电容器}
 
@@ -26420,11 +26444,30 @@ q = C u = \sqrt{2} C U \sin \omega t
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.25}]{assets/physics-3/fig-p0345-01.png}}
-\caption{图5.25}
+\fitfig{%
+% fig-alt: 图5.25·电压u与电荷q随时间t同相正弦变化，q振幅大于u，横轴标T/2、T
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  \pgfmathsetmacro{\Aq}{1.35}
+  \pgfmathsetmacro{\Au}{0.85}
+  \pgfmathsetmacro{\Tlen}{4.4}
+  \draw[line width=0.7pt,->] (0,0) -- (7.2,0) node[anchor=west,inner sep=2pt] {$t$};
+  \draw[line width=0.7pt,->] (0,-1.55) -- (0,1.70) node[anchor=south,inner sep=2pt] {$u,\,q$};
+  \draw[line width=0.8pt,smooth,samples=160,domain=0:7.0,variable=\t]
+    plot (\t, {\Aq*sin(deg(2*pi/\Tlen*\t))});
+  \draw[line width=0.8pt,smooth,samples=160,domain=0:7.0,variable=\t]
+    plot (\t, {\Au*sin(deg(2*pi/\Tlen*\t))});
+  \node[anchor=south,inner sep=1pt] at ({\Tlen/4},\Aq) {$q$};
+  \node[anchor=south,inner sep=1pt] at ({\Tlen/4},\Au) {$u$};
+  \draw[line width=0.4pt] ({\Tlen/2},-0.08) -- ({\Tlen/2},0.08);
+  \node[anchor=north,inner sep=2pt] at ({\Tlen/2},-0.10) {$T/2$};
+  \draw[line width=0.4pt] (\Tlen,-0.08) -- (\Tlen,0.08);
+  \node[anchor=north,inner sep=2pt] at (\Tlen,-0.10) {$T$};
+\end{tikzpicture}%
+}
+\caption{图5.25·电容器上电压$u$与电荷$q$随时间同相变化}
 \end{figure}
 
-\emph{图5.25}
+\emph{图5.25·电容器上电压$u$与电荷$q$随时间同相变化}
 
 增长，这就表现为电容器对于交流电的通过有一定的阻碍作用。那么在纯电容电路中电流的大小与哪些因素有关呢？
 
@@ -26461,26 +26504,111 @@ X_{c} = \frac{1}{2 \pi f C} - \frac{1}{\omega C} \tag{5.16}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0347-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.26（a）·耦合电容：源内含交流u与直流U，串联C后电阻R上仅余交流电流i
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  % source box
+  \draw[line width=0.7pt] (0,0) rectangle (3.35,2.55);
+  % top: u~t sine
+  \begin{scope}[shift={(0.45,1.55)}]
+    \draw[line width=0.55pt,->] (0,0) -- (2.35,0) node[anchor=west,inner sep=1pt,font=\small] {$t$};
+    \draw[line width=0.55pt,->] (0,-0.55) -- (0,0.70) node[anchor=south,inner sep=1pt,font=\small] {$u$};
+    \draw[line width=0.65pt,smooth,samples=80,domain=0:2.15,variable=\t]
+      plot (\t, {0.42*sin(360*3*\t/2.15)});
+  \end{scope}
+  % bottom: U DC
+  \begin{scope}[shift={(0.45,0.35)}]
+    \draw[line width=0.55pt,->] (0,0) -- (2.35,0) node[anchor=west,inner sep=1pt,font=\small] {$t$};
+    \draw[line width=0.55pt,->] (0,-0.15) -- (0,0.70) node[anchor=south,inner sep=1pt,font=\small] {$U$};
+    \draw[line width=0.65pt] (0,0.38) -- (2.15,0.38);
+  \end{scope}
+  % wires out
+  \draw[line width=0.7pt] (3.35,2.05) -- (5.55,2.05);
+  \draw[line width=0.7pt] (3.35,0.50) -- (5.55,0.50);
+  % capacitor C on top wire
+  \fill[white] (4.05,1.95) rectangle (4.45,2.15);
+  \draw[line width=0.85pt] (4.12,1.78) -- (4.12,2.32);
+  \draw[line width=0.85pt] (4.38,1.78) -- (4.38,2.32);
+  \node[anchor=south,inner sep=1pt] at (4.25,2.35) {$C$};
+  % resistor R vertical
+  \draw[line width=0.7pt] (5.55,2.05) -- (5.55,0.50);
+  \fill[white] (5.40,0.95) rectangle (5.70,1.60);
+  \draw[line width=0.7pt] (5.40,0.95) rectangle (5.70,1.60);
+  \node[anchor=east,inner sep=2pt] at (5.35,1.28) {$R$};
+  % output i~t
+  \begin{scope}[shift={(6.15,0.85)}]
+    \draw[line width=0.55pt,->] (0,0) -- (2.35,0) node[anchor=west,inner sep=1pt,font=\small] {$t$};
+    \draw[line width=0.55pt,->] (0,-0.70) -- (0,0.85) node[anchor=south,inner sep=1pt,font=\small] {$i$};
+    \draw[line width=0.65pt,smooth,samples=80,domain=0:2.15,variable=\t]
+      plot (\t, {0.55*sin(360*3*\t/2.15)});
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图5.26（a）·耦合电容：隔直流、通交流}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.26（a）·耦合电容：隔直流、通交流}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0347-02.png}}
-\caption{(b)}
+\fitfig{%
+% fig-alt: 图5.26（b）·旁路电容：源内含高频i₁与低频i₂，C与R并联后R上仅余低频i₂
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  \draw[line width=0.7pt] (0,0) rectangle (3.35,2.55);
+  % top: i1 high freq
+  \begin{scope}[shift={(0.45,1.55)}]
+    \draw[line width=0.55pt,->] (0,0) -- (2.35,0) node[anchor=west,inner sep=1pt,font=\small] {$t$};
+    \draw[line width=0.55pt,->] (0,-0.55) -- (0,0.70) node[anchor=south,inner sep=1pt,font=\small] {$i_1$};
+    \draw[line width=0.55pt,smooth,samples=120,domain=0:2.15,variable=\t]
+      plot (\t, {0.38*sin(360*8*\t/2.15)});
+  \end{scope}
+  % bottom: i2 low freq
+  \begin{scope}[shift={(0.45,0.35)}]
+    \draw[line width=0.55pt,->] (0,0) -- (2.35,0) node[anchor=west,inner sep=1pt,font=\small] {$t$};
+    \draw[line width=0.55pt,->] (0,-0.55) -- (0,0.70) node[anchor=south,inner sep=1pt,font=\small] {$i_2$};
+    \draw[line width=0.65pt,smooth,samples=60,domain=0:2.15,variable=\t]
+      plot (\t, {0.42*sin(360*1.5*\t/2.15)});
+  \end{scope}
+  % wires
+  \draw[line width=0.7pt] (3.35,2.05) -- (6.85,2.05);
+  \draw[line width=0.7pt] (3.35,0.50) -- (6.85,0.50);
+  % capacitor branch
+  \fill (4.35,2.05) circle[radius=0.035];
+  \fill (4.35,0.50) circle[radius=0.035];
+  \draw[line width=0.7pt] (4.35,2.05) -- (4.35,1.45);
+  \draw[line width=0.7pt] (4.35,1.10) -- (4.35,0.50);
+  \draw[line width=0.85pt] (4.12,1.45) -- (4.58,1.45);
+  \draw[line width=0.85pt] (4.12,1.10) -- (4.58,1.10);
+  \node[anchor=west,inner sep=2pt] at (4.62,1.28) {$C$};
+  % resistor branch
+  \fill (5.95,2.05) circle[radius=0.035];
+  \fill (5.95,0.50) circle[radius=0.035];
+  \draw[line width=0.7pt] (5.95,2.05) -- (5.95,0.50);
+  \fill[white] (5.80,0.95) rectangle (6.10,1.60);
+  \draw[line width=0.7pt] (5.80,0.95) rectangle (6.10,1.60);
+  \node[anchor=west,inner sep=2pt] at (6.15,1.28) {$R$};
+  % output i2
+  \begin{scope}[shift={(7.20,0.85)}]
+    \draw[line width=0.55pt,->] (0,0) -- (2.20,0) node[anchor=west,inner sep=1pt,font=\small] {$t$};
+    \draw[line width=0.55pt,->] (0,-0.70) -- (0,0.85) node[anchor=south,inner sep=1pt,font=\small] {$i_2$};
+    \draw[line width=0.65pt,smooth,samples=60,domain=0:2.00,variable=\t]
+      plot (\t, {0.55*sin(360*1.5*\t/2.00)});
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图5.26（b）·旁路电容：通高频、阻低频}
 \end{figure}
 
-\emph{（b）}
+\emph{图5.26（b）·旁路电容：通高频、阻低频}
 
-\emph{图5.26}
+\emph{图5.26·（a）隔直流、通交流；（b）通高频、阻低频}
 
-（a） 电容与后面电阻串联，把直流制断只有交流通过；
+（a）电容与后面电阻串联，把直流隔断，只让交流通过；
 
 （b）
-电容与电阻并联，把高频率交流电旁路串，电且上只有低频率交流电响电流与电压间的位相关系，我们可以相同的讨论方法来对电容器上电荷的变化图线进行考察。前面已经证明，电容器上电荷变化图线是一条正弦曲线，这里重画于图5.27（a）中，它与纯电感电
+电容与电阻并联，把高频率交流电旁路掉，电阻上只有低频率交流电。
+
+响电流与电压间的位相关系，我们可以用相同的讨论方法来对电容器上电荷的变化图线进行考察。前面已经证明，电容器上电荷变化图线是一条正弦曲线，这里重画于图5.27（a）中，它与纯电感电
 
 \begin{quote}
 \textbf{提示：} 纯电容电路中电流的位相比电压超前90°
@@ -26492,13 +26620,53 @@ X_{c} = \frac{1}{2 \pi f C} - \frac{1}{\omega C} \tag{5.16}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.27}]{assets/physics-3/fig-p0348-01.png}}
-\caption{图5.27}
+\fitfig{%
+% fig-alt: 图5.27·（a）电容器上电压u（虚线）与电荷q（实线）同相正弦；（b）电流i余弦，超前90°；虚线竖线对照
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  \pgfmathsetmacro{\Aq}{1.20}
+  \pgfmathsetmacro{\Au}{0.75}
+  \pgfmathsetmacro{\Ai}{1.15}
+  \pgfmathsetmacro{\Tlen}{5.2}
+  % ---- (a) ----
+  \begin{scope}[shift={(0,3.40)}]
+    \draw[line width=0.7pt,->] (0,0) -- (6.0,0) node[anchor=west,inner sep=2pt] {$t$};
+    \draw[line width=0.7pt,->] (0,-1.45) -- (0,1.55) node[anchor=south,inner sep=2pt] {$u,\,q$};
+    \node[anchor=north east,inner sep=1pt] at (0,0) {$O$};
+    \draw[line width=0.8pt,smooth,samples=160,domain=0:5.7,variable=\t]
+      plot (\t, {\Aq*sin(deg(2*pi/\Tlen*\t))});
+    \draw[line width=0.75pt,dashed,smooth,samples=160,domain=0:5.7,variable=\t]
+      plot (\t, {\Au*sin(deg(2*pi/\Tlen*\t))});
+    \node[anchor=south,inner sep=1pt] at ({\Tlen/4},\Aq) {$q$};
+    \node[anchor=north,inner sep=1pt] at ({\Tlen/4+0.15},{\Au-0.05}) {$u$};
+    \draw[line width=0.4pt] ({\Tlen/2},-0.08) -- ({\Tlen/2},0.08);
+    \node[anchor=north,inner sep=1pt] at ({\Tlen/2},-0.08) {$T/2$};
+    \draw[line width=0.4pt] (\Tlen,-0.08) -- (\Tlen,0.08);
+    \node[anchor=north,inner sep=1pt] at (\Tlen,-0.08) {$T$};
+    \foreach \xx in {\Tlen/4,\Tlen/2,3*\Tlen/4,\Tlen} {
+      \draw[line width=0.4pt,dashed] (\xx,1.40) -- (\xx,-4.70);
+    }
+    \node[anchor=north,inner sep=2pt] at (2.6,-1.55) {(a)};
+  \end{scope}
+  % ---- (b) ----
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt,->] (0,0) -- (6.0,0) node[anchor=west,inner sep=2pt] {$t$};
+    \draw[line width=0.7pt,->] (0,-1.45) -- (0,1.55) node[anchor=south,inner sep=2pt] {$i$};
+    \draw[line width=0.8pt,smooth,samples=160,domain=0:5.7,variable=\t]
+      plot (\t, {\Ai*cos(deg(2*pi/\Tlen*\t))});
+    \draw[line width=0.4pt] ({\Tlen/2},-0.08) -- ({\Tlen/2},0.08);
+    \node[anchor=north,inner sep=1pt] at ({\Tlen/2},-0.08) {$T/2$};
+    \draw[line width=0.4pt] (\Tlen,-0.08) -- (\Tlen,0.08);
+    \node[anchor=north,inner sep=1pt] at (\Tlen,-0.08) {$T$};
+    \node[anchor=north,inner sep=2pt] at (2.6,-1.55) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图5.27·（a）电容器上电压和电荷的变化曲线；（b）通过电容器的电流曲线}
 \end{figure}
 
-\emph{图5.27}
+\emph{图5.27·（a）电容器上电压和电荷的变化曲线；（b）通过电容器的电流曲线}
 
-\emph{（a） 电容器上电压和电荷的变化曲线；（b） 通过电容器的电流曲线}
+\emph{图5.27（a）·电容器上电压和电荷的变化曲线；（b）·通过电容器的电流曲线}
 
 \(\frac{1}{4}\)
 周期。因电容器上电荷的变化是与电压变化同相的，所以，纯电容电路中，电流要比电容器上电压超前
@@ -26595,11 +26763,39 @@ v_{L} = \sqrt{2} I X_{L} \sin (\omega t + 90^{\circ}) = \sqrt{2} U_{L} \cos \ome
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.28}]{assets/physics-3/fig-p0350-01.png}}
-\caption{图5.28}
+\fitfig{%
+% fig-alt: 图5.28·交流电源u与电阻R、电感L串联，右侧标出u_R与u_L
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.0]
+  \def\W{2.8}\def\H{2.6}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC source left
+  \fill[white] (-0.02,{\H/2-0.32}) rectangle (0.02,{\H/2+0.32});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.26];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.30,{\H/2}) {$u$};
+  % R on upper right
+  \fill[white] ({\W-0.02},{\H-0.15}) rectangle ({\W+0.02},{\H/2+0.08});
+  \draw[line width=0.75pt] ({\W-0.16},{\H/2+0.20}) rectangle ({\W+0.16},{\H-0.25});
+  \node[anchor=east,inner sep=2pt] at ({\W-0.20},{\H/2+0.75}) {$R$};
+  % L coil on lower right
+  \fill[white] ({\W-0.02},{\H/2-0.08}) rectangle ({\W+0.02},0.15);
+  \foreach \y in {0.95,0.72,0.49,0.26} {
+    \draw[line width=0.7pt] ({\W-0.22},\y)
+      arc[start angle=180,end angle=0,x radius=0.22,y radius=0.12];
+  }
+  \node[anchor=east,inner sep=2pt] at ({\W-0.28},0.70) {$L$};
+  % voltage brackets on right
+  \draw[line width=0.55pt,|<->|] ({\W+0.55},{\H-0.25}) -- ({\W+0.55},{\H/2+0.20});
+  \node[anchor=west,inner sep=2pt] at ({\W+0.60},{\H/2+0.75}) {$u_R$};
+  \draw[line width=0.55pt,|<->|] ({\W+0.55},{\H/2-0.05}) -- ({\W+0.55},0.15);
+  \node[anchor=west,inner sep=2pt] at ({\W+0.60},0.70) {$u_L$};
+  \draw[line width=0.4pt] ({\W+0.42},{\H/2+0.08}) -- ({\W+0.68},{\H/2+0.08});
+\end{tikzpicture}%
+}
+\caption{图5.28·电阻和电感串联电路}
 \end{figure}
 
-\emph{图5.28}
+\emph{图5.28·电阻和电感串联电路}
 
 串联电路的总电压，在任何瞬时，都等于各个分电压的瞬时值之和
 
@@ -26622,11 +26818,23 @@ U = \sqrt{U_{R}^{2} + U_{L}^{2}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.29}]{assets/physics-3/fig-p0351-01.png}}
-\caption{图5.29}
+\fitfig{%
+% fig-alt: 图5.29·矢量图：水平U_R、竖直U_L与对角线合电压U，夹角φ
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.15]
+  \def\Rx{2.6}\def\Ly{1.55}
+  \draw[line width=0.85pt,->] (0,0) -- (\Rx,0) node[anchor=west,inner sep=2pt] {$U_R$};
+  \draw[line width=0.85pt,->] (0,0) -- (0,\Ly) node[anchor=south,inner sep=2pt] {$U_L$};
+  \draw[line width=0.85pt,->] (0,0) -- (\Rx,\Ly) node[anchor=south west,inner sep=2pt] {$U$};
+  \draw[line width=0.55pt,dashed] (\Rx,0) -- (\Rx,\Ly);
+  \draw[line width=0.55pt,dashed] (0,\Ly) -- (\Rx,\Ly);
+  \draw[line width=0.55pt] (0.55,0) arc[start angle=0,end angle={atan(\Ly/\Rx)},radius=0.55];
+  \node[anchor=west,inner sep=1pt] at (0.62,0.22) {$\varphi$};
+\end{tikzpicture}%
+}
+\caption{图5.29·$U_R$与$U_L$合成总电压$U$的矢量图}
 \end{figure}
 
-\emph{图5.29}
+\emph{图5.29·$U_R$与$U_L$合成总电压$U$的矢量图}
 
 利用这个矩形， \(U_{L}\) 和 \(U_{r}\) 可分别写成
 
@@ -26725,14 +26933,35 @@ I = \frac{U}{Z} \tag{5.20}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.30 矢量图示法}]{assets/physics-3/fig-p0352-01.png}}
-\caption{图 5.30 矢量图示法}
+\fitfig{%
+% fig-alt: 图5.30·矢量图示法：参考轴x上U₁、U₂与合矢量U，标φ₁、φ、φ₂
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.05]
+  \coordinate (O) at (0,0);
+  \coordinate (U1) at (2.55,0.85);
+  \coordinate (U2) at (1.05,2.35);
+  \coordinate (U) at ({2.55+1.05},{0.85+2.35});
+  \draw[line width=0.7pt,->] (O) -- (4.6,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.85pt,->] (O) -- (U1) node[anchor=south west,inner sep=2pt] {$U_1$};
+  \draw[line width=0.85pt,->] (O) -- (U2) node[anchor=south east,inner sep=2pt] {$U_2$};
+  \draw[line width=0.85pt,->] (O) -- (U) node[anchor=south west,inner sep=2pt] {$U$};
+  \draw[line width=0.55pt,dashed] (U1) -- (U);
+  \draw[line width=0.55pt,dashed] (U2) -- (U);
+  % angles
+  \draw[line width=0.5pt] (0.70,0) arc[start angle=0,end angle={atan(0.85/2.55)},radius=0.70];
+  \node[anchor=west,inner sep=0pt,font=\small] at (0.78,0.12) {$\varphi_1$};
+  \draw[line width=0.5pt] (1.05,0) arc[start angle=0,end angle={atan(3.2/3.6)},radius=1.05];
+  \node[anchor=west,inner sep=0pt,font=\small] at (1.12,0.42) {$\varphi$};
+  \draw[line width=0.5pt] (1.40,0) arc[start angle=0,end angle={atan(2.35/1.05)},radius=1.40];
+  \node[anchor=west,inner sep=0pt,font=\small] at (1.15,1.15) {$\varphi_2$};
+\end{tikzpicture}%
+}
+\caption{图5.30·矢量图示法}
 \end{figure}
 
-\emph{图 5.30 矢量图示法}
+\emph{图5.30·矢量图示法}
 
 （3） 利用平行四边形法则， 求出这两个分矢量对角线的长度， 它就是合电压
-\(U\) 的有效值 （或峰值）， 对角线与参考矢量的夹角就是合电压的初位律。
+\(U\) 的有效值 （或峰值）， 对角线与参考矢量的夹角就是合电压的初位相。
 
 以上方法也可以用来求两个同频率正弦交变电流的合成。
 
