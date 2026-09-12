@@ -11549,7 +11549,29 @@ A B ^ {2} = (B C ^ {2} - C D ^ {2}) + (C D + C A) ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-20}]{assets/plane-geometry-2/fig-p0137-01.png}}
+\fitfig{%
+% fig-alt: 图2·20：平行四边形ABCD，A左下、B右下、D左上、C右上；对角线AC、BD实线；DF、CE虚高，BE虚延；F在AB上，E在AB延长线上。扫描无直角方标，不补
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.60,0);
+  \coordinate (D) at (1.20,2.05);
+  \coordinate (C) at (4.80,2.05);
+  \coordinate (F) at (1.20,0);
+  \coordinate (E) at (4.80,0);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[dashed,line width=0.6pt] (D) -- (F);
+  \draw[dashed,line width=0.6pt] (B) -- (E);
+  \draw[dashed,line width=0.6pt] (C) -- (E);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at ($(B)+(-0.12,-0.02)$) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1pt] at ($(E)+(0.06,-0.02)$) {$E$};
+  \node[anchor=north,inner sep=1pt] at ($(F)+(0.10,-0.02)$) {$F$};
+\end{tikzpicture}%
+}
 \caption{图2-20}
 \end{figure}
 
@@ -11629,13 +11651,49 @@ A C ^ {2} + B D ^ {2} = A B ^ {2} + B C ^ {2} + C D ^ {2} + D A ^ {2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第138页）}]{assets/plane-geometry-2/fig-p0138-01.png}}
-\caption{图示（原PDF第138页）}
+\fitfig{%
+% fig-alt: （第1题）左：锐角三角形，左边b、右边a、底边c（标在底上内侧），高h实线，底左至垂足下方尺寸线标p。扫描无直角方标，不补
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (L) at (0,0);
+  \coordinate (R) at (3.20,0);
+  \coordinate (H) at (2.05,0);
+  \coordinate (T) at (2.05,2.15);
+  \draw[line width=0.75pt] (L) -- (R) -- (T) -- cycle;
+  \draw[line width=0.75pt] (T) -- (H);
+  \node[anchor=east,inner sep=1pt] at (1.00,1.15) {$b$};
+  \node[anchor=west,inner sep=1pt] at (2.75,1.10) {$a$};
+  \node[anchor=east,inner sep=1pt] at (1.92,1.05) {$h$};
+  \node[anchor=south,inner sep=1pt] at (1.55,0.06) {$c$};
+  \draw[line width=0.5pt] (0.00,-0.38) -- (0.00,-0.52);
+  \draw[line width=0.5pt] (2.05,-0.38) -- (2.05,-0.52);
+  \draw[<->,line width=0.5pt] (0.00,-0.45) -- (2.05,-0.45);
+  \node[anchor=north,inner sep=1pt] at (1.025,-0.48) {$p$};
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0138-02.png}}
+\fitfig{%
+% fig-alt: （第1题）右：钝角三角形，底边c实、向右虚延；左边b、右边a；高h实线落在延长线上；下方尺寸线标p（左端至垂足）。扫描无直角方标，不补
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (L) at (0,0);
+  \coordinate (R) at (2.55,0);
+  \coordinate (Ft) at (3.85,0);
+  \coordinate (T) at (3.85,2.20);
+  \draw[line width=0.75pt] (L) -- (R) -- (T) -- cycle;
+  \draw[dashed,line width=0.6pt] (R) -- (Ft);
+  \draw[line width=0.75pt] (T) -- (Ft);
+  \node[anchor=south,inner sep=1pt] at (1.85,1.20) {$b$};
+  \node[anchor=west,inner sep=1pt] at (3.35,1.15) {$a$};
+  \node[anchor=west,inner sep=1pt] at (3.95,1.10) {$h$};
+  \node[anchor=south,inner sep=1pt] at (1.25,0.06) {$c$};
+  \draw[line width=0.5pt] (0.00,-0.38) -- (0.00,-0.52);
+  \draw[line width=0.5pt] (3.85,-0.38) -- (3.85,-0.52);
+  \draw[<->,line width=0.5pt] (0.00,-0.45) -- (3.85,-0.45);
+  \node[anchor=north,inner sep=1pt] at (1.925,-0.48) {$p$};
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -11709,7 +11767,44 @@ A C ^ {2} + B D ^ {2} = A B ^ {2} + B C ^ {2} + C D ^ {2} + D A ^ {2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0138-03.png}}
+\fitfig{%
+% fig-alt: （第9题）对称铁质梁架：大等腰三角形，中央竖杆至底中点；左右竖杆高标3，底上直角方标；虚水平线连左右竖杆顶；底中至竖杆顶的斜杆，外侧等边三角（竖、斜撑、斜边段）各边标3；底中两段尺寸线标3
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0.000,1.987);
+  \coordinate (AL) at (-3.442,0.000);
+  \coordinate (AR) at (3.442,0.000);
+  \coordinate (M) at (0.000,0.000);
+  \coordinate (PL) at (-1.260,0.000);
+  \coordinate (PR) at (1.260,0.000);
+  \coordinate (QL) at (-1.260,1.260);
+  \coordinate (QR) at (1.260,1.260);
+  \coordinate (SL) at (-2.351,0.630);
+  \coordinate (SR) at (2.351,0.630);
+  \draw[line width=0.75pt] (AL) -- (V) -- (AR) -- cycle;
+  \draw[line width=0.75pt] (V) -- (M);
+  \draw[line width=0.75pt] (PL) -- (QL);
+  \draw[line width=0.75pt] (PR) -- (QR);
+  \draw[line width=0.75pt] (M) -- (QL);
+  \draw[line width=0.75pt] (M) -- (QR);
+  \draw[line width=0.75pt] (PL) -- (SL);
+  \draw[line width=0.75pt] (PR) -- (SR);
+  \draw[dashed,line width=0.6pt] (QL) -- (QR);
+  \draw[line width=0.5pt] ($(PL)+(0.14,0)$) -- ($(PL)+(0.14,0.14)$) -- ($(PL)+(0,0.14)$);
+  \draw[line width=0.5pt] ($(PR)+(-0.14,0)$) -- ($(PR)+(-0.14,0.14)$) -- ($(PR)+(0,0.14)$);
+  \draw[<->,line width=0.5pt] (-1.260,-0.28) -- (0.000,-0.28);
+  \node[anchor=north,inner sep=0.6pt] at (-0.630,-0.3) {$3$};
+  \draw[<->,line width=0.5pt] (0.000,-0.28) -- (1.260,-0.28);
+  \node[anchor=north,inner sep=0.6pt] at (0.630,-0.3) {$3$};
+  \node[anchor=east,inner sep=1pt] at (-1.280,0.630) {$3$};
+  \node[anchor=west,inner sep=1pt] at (1.280,0.630) {$3$};
+  \node[anchor=north,inner sep=0.5pt] at (-1.806,0.295) {$3$};
+  \node[anchor=north,inner sep=0.5pt] at (1.806,0.295) {$3$};
+  \node[anchor=east,inner sep=0.5pt] at (-2.917,0.315) {$3$};
+  \node[anchor=west,inner sep=0.5pt] at (2.917,0.315) {$3$};
+  \node[anchor=east,inner sep=0.5pt] at (-1.826,0.995) {$3$};
+  \node[anchor=west,inner sep=0.5pt] at (1.826,0.995) {$3$};
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -11762,7 +11857,29 @@ A C ^ {2} + B D ^ {2} = A B ^ {2} + B C ^ {2} + C D ^ {2} + D A ^ {2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/plane-geometry-2/fig-p0139-01.png}}
+\fitfig{%
+% fig-alt: （第16题）等腰梯形ABCD，A左上、D右上、B左下、C右下；对角线AC实线；AE、DF虚高，E、F在BC上，E、F处直角方标
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (E) at (1.15,0);
+  \coordinate (F) at (3.55,0);
+  \coordinate (C) at (4.70,0);
+  \coordinate (A) at (1.15,2.05);
+  \coordinate (D) at (3.55,2.05);
+  \draw[line width=0.75pt] (A) -- (D) -- (C) -- (B) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[dashed,line width=0.6pt] (A) -- (E);
+  \draw[dashed,line width=0.6pt] (D) -- (F);
+  \draw[line width=0.5pt] (1.15,0.16) -- (1.31,0.16) -- (1.31,0);
+  \draw[line width=0.5pt] (3.55,0.16) -- (3.39,0.16) -- (3.39,0);
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1pt] at (F) {$F$};
+\end{tikzpicture}%
+}
 \caption{(第16题)}
 \end{figure}
 
@@ -11816,7 +11933,27 @@ a-b+c = a+b+c-2b = 2s-2b = 2(s-b)\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·21}]{assets/plane-geometry-2/fig-p0140-01.png}}
+\fitfig{%
+% fig-alt: 图2·21：△ABC，A上偏右、B左、C右；中线AM实线标m_a，延长ME虚线，BE、CE虚线成平行四边形ABEC。M为BC中点
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (-1.85,0);
+  \coordinate (C) at (1.85,0);
+  \coordinate (M) at (0,0);
+  \coordinate (A) at (0.55,2.35);
+  \coordinate (E) at (-0.55,-2.35);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (M);
+  \draw[dashed,line width=0.6pt] (M) -- (E);
+  \draw[dashed,line width=0.6pt] (B) -- (E);
+  \draw[dashed,line width=0.6pt] (C) -- (E);
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north west,inner sep=1pt] at (0.06,-0.02) {$M$};
+  \node[anchor=north,inner sep=1pt] at (E) {$E$};
+  \node[anchor=west,inner sep=1pt] at (0.42,1.15) {$m_{a}$};
+\end{tikzpicture}%
+}
 \caption{图2·21}
 \end{figure}
 
@@ -11850,7 +11987,28 @@ m _ {b} = \frac {1}{2} \sqrt {2 a ^ {2} + 2 c ^ {2} - b ^ {2}}\text{，} \quad m
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·22}]{assets/plane-geometry-2/fig-p0141-01.png}}
+\fitfig{%
+% fig-alt: 图2·22：左锐角△ABC，高AH实线落在BC上，标h_a；右钝角△ABC，∠C钝，CH虚延，高AH实线落在延长线上，标h_a。扫描无直角方标，不补
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) -- (3.55,0) -- (2.55,2.35) -- cycle;
+  \draw[line width=0.75pt] (2.55,2.35) -- (2.55,0);
+  \node[anchor=south,inner sep=1pt] at (2.55,2.40) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (-0.04,-0.02) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (3.60,-0.02) {$C$};
+  \node[anchor=north,inner sep=1pt] at (2.55,-0.04) {$H$};
+  \node[anchor=east,inner sep=1pt] at (2.42,1.15) {$h_{a}$};
+  \begin{scope}[shift={(5.10,0)}]
+    \draw[line width=0.75pt] (0,0) -- (1.85,0) -- (3.35,2.35) -- cycle;
+    \draw[dashed,line width=0.6pt] (1.85,0) -- (3.35,0);
+    \draw[line width=0.75pt] (3.35,2.35) -- (3.35,0);
+    \node[anchor=south,inner sep=1pt] at (3.35,2.40) {$A$};
+    \node[anchor=north east,inner sep=1pt] at (-0.04,-0.02) {$B$};
+    \node[anchor=north,inner sep=1pt] at (1.85,-0.04) {$C$};
+    \node[anchor=north west,inner sep=1pt] at (3.40,-0.02) {$H$};
+    \node[anchor=west,inner sep=1pt] at (3.48,1.15) {$h_{a}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图2·22}
 \end{figure}
 
@@ -11933,7 +12091,28 @@ h _ {c} = \frac {2}{c} \sqrt {s (s - a) (s - b) (s - c)}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·23}]{assets/plane-geometry-2/fig-p0142-01.png}}
+\fitfig{%
+% fig-alt: 图2·23：圆O内接△ABC，直径AD过O并标R；AH虚高交BC于H，H处直角方标；CD虚线，C处∠ACD直角方标；B、D处等角弧。扫描有方标与角弧
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.850);
+  \draw[line width=0.75pt] (0.980,1.569) -- (-1.677,0.782) -- (1.759,-0.572) -- cycle;
+  \draw[line width=0.75pt] (0.980,1.569) -- (-0.980,-1.569);
+  \draw[dashed,line width=0.6pt] (0.980,1.569) -- (0.355,-0.018);
+  \draw[dashed,line width=0.6pt] (1.759,-0.572) -- (-0.980,-1.569);
+  \draw[line width=0.5pt] (0.504,-0.077) -- (0.563,0.072) -- (0.414,0.130);
+  \draw[line width=0.5pt] (1.705,-0.421) -- (1.554,-0.476) -- (1.609,-0.626);
+  \draw[line width=0.5pt] (-1.677,0.782) ++({16.50}:0.26) arc ({16.50}:{-21.50}:0.26);
+  \draw[line width=0.5pt] (-0.980,-1.569) ++({58.00}:0.26) arc ({58.00}:{20.00}:0.26);
+  \fill (0,0) circle (0.025);
+  \node[anchor=south west,inner sep=1pt] at (0.980,1.569) {$A$};
+  \node[anchor=east,inner sep=1pt] at (-1.677,0.782) {$B$};
+  \node[anchor=west,inner sep=1pt] at (1.759,-0.572) {$C$};
+  \node[anchor=north east,inner sep=1pt] at (-0.980,-1.569) {$D$};
+  \node[anchor=north west,inner sep=1pt] at (0.06,-0.08) {$O$};
+  \node[anchor=north,inner sep=1pt] at (0.355,-0.038) {$H$};
+  \node[anchor=south east,inner sep=1pt] at (0.490,0.784) {$R$};
+\end{tikzpicture}%
+}
 \caption{图2·23}
 \end{figure}
 
