@@ -20571,8 +20571,32 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-38}]{assets/plane-geometry-2/fig-p0221-02.png}}
-\caption{图3-38}
+\fitfig{%
+% fig-alt: 图3·38 △ABC；AB三等分，AN=⅓AB；虚圆以AB为直径，PN⊥AB交圆于P；AB'=AP；B'C'∥BC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (3.000,3.500);
+  \coordinate (B) at (0.000,0.000);
+  \coordinate (C) at (4.500,0.000);
+  \coordinate (N) at (2.000,2.333);
+  \coordinate (Bp) at (1.268,1.479);
+  \coordinate (Cp) at (3.866,1.479);
+  \coordinate (P) at (0.350,3.748);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (Bp) -- (Cp);
+  \draw[dashed,line width=0.55pt] (B) arc[start angle=-130.60,delta angle=-180,radius=2.305];
+  \draw[dashed,line width=0.55pt] (P) -- (A);
+  \draw[dashed,line width=0.55pt] (P) -- (N);
+  \draw[line width=0.5pt] (1.084,1.095) -- (0.916,1.238);
+  \node[anchor=south west,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=west,inner sep=1.6pt] at (N) {$N$};
+  \node[anchor=east,inner sep=2.0pt] at (Bp) {$B'$};
+  \node[anchor=west,inner sep=1.5pt] at (Cp) {$C'$};
+  \node[anchor=south,inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+\caption{图3·38}
 \end{figure}
 
 \begin{quote}
@@ -20668,7 +20692,50 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·39}]{assets/plane-geometry-2/fig-p0223-01.png}}
+\fitfig{%
+% fig-alt: 图3·39 左正方形ABCD；中正方形A'B'C'D'；右虚线直角△OA''B''（OA''=AB、OB''=A'B'），斜边正方形A''B''C''D''
+\begin{tikzpicture}[line cap=round,line join=round]
+  % small square ABCD
+  \begin{scope}[shift={(0.00,0.00)}]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (1.35,0);
+    \coordinate (Cc) at (1.35,1.35);
+    \coordinate (D) at (0,1.35);
+    \draw[line width=0.75pt] (A) -- (B) -- (Cc) -- (D) -- cycle;
+    \node[anchor=north,inner sep=1.2pt] at (A) {$A$};
+    \node[anchor=north,inner sep=1.2pt] at (B) {$B$};
+    \node[anchor=south,inner sep=1.2pt] at (Cc) {$C$};
+    \node[anchor=south,inner sep=1.2pt] at (D) {$D$};
+  \end{scope}
+  % larger square A'B'C'D'
+  \begin{scope}[shift={(1.85,0.00)}]
+    \coordinate (Ap) at (0,0);
+    \coordinate (Bp) at (2.05,0);
+    \coordinate (Cpp) at (2.05,2.05);
+    \coordinate (Dp) at (0,2.05);
+    \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cpp) -- (Dp) -- cycle;
+    \node[anchor=north,inner sep=1.2pt] at (Ap) {$A'$};
+    \node[anchor=north,inner sep=1.2pt] at (Bp) {$B'$};
+    \node[anchor=south,inner sep=1.2pt] at (Cpp) {$C'$};
+    \node[anchor=south,inner sep=1.2pt] at (Dp) {$D'$};
+  \end{scope}
+  % right △OA''B'' (dashed) and square on hypotenuse
+  \begin{scope}[shift={(5.35,0.00)}]
+    \coordinate (O) at (0,0);
+    \coordinate (App) at (0,1.35);
+    \coordinate (Bpp) at (2.05,0);
+    \coordinate (Cpp) at (3.4,2.05);
+    \coordinate (Dpp) at (1.35,3.4);
+    \draw[dashed,line width=0.6pt] (App) -- (O) -- (Bpp);
+    \draw[line width=0.75pt] (App) -- (Bpp) -- (Cpp) -- (Dpp) -- cycle;
+    \node[anchor=north,inner sep=1.2pt] at (O) {$O$};
+    \node[anchor=south east,inner sep=1.5pt] at (App) {$A''$};
+    \node[anchor=north west,inner sep=1pt] at (Bpp) {$B''$};
+    \node[anchor=west,inner sep=1.5pt] at (Cpp) {$C''$};
+    \node[anchor=south,inner sep=1.5pt] at (Dpp) {$D''$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3·39}
 \end{figure}
 
@@ -20736,8 +20803,35 @@ AD 的延长线交于 F， 以 AF 为边作正方形， 这个正方形就是所
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0224-02.png}}
-\caption{(第10题)}
+\fitfig{%
+% fig-alt: （第10题）矩形ABCD；延长BA至E使AE=AD；BE为直径半圆交AD延长于F；以AF为边向左正方形
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\ww{3.500}
+  \def\hh{1.550}
+  \def\ss{2.329}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (\ww,0);
+  \coordinate (C) at (\ww,\hh);
+  \coordinate (D) at (0,\hh);
+  \coordinate (E) at (-\hh,0);
+  \coordinate (F) at (0,\ss);
+  \coordinate (SqL) at (-\ss,0);
+  \coordinate (SqTL) at (-\ss,\ss);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (F) -- (SqTL) -- (SqL) -- (A);
+  \draw[line width=0.75pt] (A) -- (F);
+  \draw[line width=0.7pt] (E) arc[start angle=180,end angle=0,radius=2.525];
+  \draw[line width=0.7pt] (F) -- (E);
+  \draw[line width=0.7pt] (F) -- (B);
+  \node[anchor=north,inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第10题）}
 \end{figure}
 
 \begin{quote}
@@ -20746,8 +20840,26 @@ AD 的延长线交于 F， 以 AF 为边作正方形， 这个正方形就是所
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0224-03.png}}
-\caption{(第14题)}
+\fitfig{%
+% fig-alt: （第14题）△ABC与等腰△ADE共顶角A；D在AB上，C在AE上；AD=AE，AD²=AB·AC；BC与DE相交
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (2.700,2.850);
+  \coordinate (B) at (0.000,0.250);
+  \coordinate (C) at (3.550,1.200);
+  \coordinate (D) at (0.800,1.020);
+  \coordinate (E) at (3.908,0.505);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (E);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (D) -- (E);
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=1pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{（第14题）}
 \end{figure}
 
 \begin{quote}
@@ -20777,8 +20889,37 @@ AD 的延长线交于 F， 以 AF 为边作正方形， 这个正方形就是所
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-2/fig-p0225-01.png}}
-\caption{(第12题)}
+\fitfig{%
+% fig-alt: （第12题）线段ABC（AB=m、BC=n）；AC为直径半圆；DB⊥AC交半圆于D；连DA、DC；DF=l；FE∥AC交DA于E；正方形DEKH
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.000,0.000);
+  \coordinate (B) at (1.250,0.000);
+  \coordinate (C) at (4.100,0.000);
+  \coordinate (D) at (1.250,1.887);
+  \coordinate (E) at (0.344,0.520);
+  \coordinate (F) at (3.315,0.520);
+  \coordinate (G) at (1.250,0.520);
+  \coordinate (K) at (-1.023,1.426);
+  \coordinate (H) at (-0.117,2.793);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (A) arc[start angle=180,end angle=0,radius=2.050];
+  \draw[line width=0.75pt] (D) -- (A);
+  \draw[line width=0.75pt] (D) -- (C);
+  \draw[line width=0.75pt] (D) -- (B);
+  \draw[line width=0.75pt] (E) -- (F);
+  \draw[line width=0.75pt] (D) -- (E) -- (K) -- (H) -- cycle;
+  \node[anchor=north,inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=south,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north east,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1.2pt] at (F) {$F$};
+  \node[anchor=south west,inner sep=0.8pt] at (G) {$G$};
+  \node[anchor=east,inner sep=1.5pt] at (K) {$K$};
+  \node[anchor=south,inner sep=1.5pt] at (H) {$H$};
+\end{tikzpicture}%
+}
+\caption{（第12题）}
 \end{figure}
 
 \begin{quote}
@@ -20879,8 +21020,25 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0227-01.png}}
-\caption{(第2题)}
+\fitfig{%
+% fig-alt: （第2题）正方形ABED；E在BC上，DE:EC=5:3；连DC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,2.350);
+  \coordinate (B) at (0,0);
+  \coordinate (E) at (2.350,0);
+  \coordinate (D) at (2.350,2.350);
+  \coordinate (C) at (3.760,0);
+  \draw[line width=0.75pt] (A) -- (B) -- (E) -- (D) -- cycle;
+  \draw[line width=0.75pt] (E) -- (C);
+  \draw[line width=0.75pt] (D) -- (C);
+  \node[anchor=south east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+\caption{（第2题）}
 \end{figure}
 
 \begin{quote}
@@ -20889,8 +21047,34 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0227-02.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第3题）等腰直角△ABC（直角在C，AC=BC=10）；等腰直角△DEF（直角在F，EF=DF=7）；CD=1；G=AB∩EF，H=AB∩ED，I=AC∩ED
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (3.200,3.200);
+  \coordinate (B) at (0.000,0.000);
+  \coordinate (C) at (3.200,0.000);
+  \coordinate (D) at (3.520,0.000);
+  \coordinate (E) at (1.280,2.240);
+  \coordinate (F) at (1.280,0.000);
+  \coordinate (G) at (1.280,1.280);
+  \coordinate (H) at (1.760,1.760);
+  \coordinate (I) at (3.200,0.320);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (B) -- (A) -- (C);
+  \draw[line width=0.75pt] (E) -- (F);
+  \draw[line width=0.75pt] (E) -- (D);
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=north west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1.2pt] at (F) {$F$};
+  \node[anchor=east,inner sep=1.5pt] at (G) {$G$};
+  \node[anchor=south west,inner sep=1pt] at (H) {$H$};
+  \node[anchor=west,inner sep=1.5pt] at (I) {$I$};
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \begin{quote}
@@ -20960,8 +21144,30 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-2/fig-p0228-01.png}}
-\caption{(第14题)}
+\fitfig{%
+% fig-alt: （第14题）四边形ABCD；E、F、G、H分别为AB、BC、CD、DA中点；平行四边形EFGH
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.000,0.000);
+  \coordinate (B) at (3.400,0.000);
+  \coordinate (C) at (3.400,2.100);
+  \coordinate (D) at (0.800,2.550);
+  \coordinate (E) at (1.700,0.000);
+  \coordinate (F) at (3.400,1.050);
+  \coordinate (G) at (2.100,2.325);
+  \coordinate (H) at (0.400,1.275);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (E) -- (F) -- (G) -- (H) -- cycle;
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=west,inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south,inner sep=1.2pt] at (G) {$G$};
+  \node[anchor=east,inner sep=1.5pt] at (H) {$H$};
+\end{tikzpicture}%
+}
+\caption{（第14题）}
 \end{figure}
 
 \begin{quote}
