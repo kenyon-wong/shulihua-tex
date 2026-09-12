@@ -21479,7 +21479,52 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.21 将活塞的往复运动变成机轴、飞轮转动的装置}]{assets/physics-2/fig-p0345-01.png}}
+\fitfig{%
+% fig-alt: 图9.21 卧式汽缸（1）内活塞，活塞杆（2）连导板间十字头（3），连杆（4）接曲柄（5），右为飞轮（6）
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % 汽缸筒
+  \draw[line width=0.85pt] (0.00,0.55) rectangle (2.55,2.15);
+  % 左法兰
+  \draw[line width=0.85pt] (-0.18,0.38) -- (0.22,0.38) -- (0.22,0.55);
+  \draw[line width=0.85pt] (-0.18,2.32) -- (0.22,2.32) -- (0.22,2.15);
+  \draw[line width=0.85pt] (-0.18,0.38) -- (-0.18,2.32);
+  % 右法兰
+  \draw[line width=0.85pt] (2.55,0.38) -- (2.82,0.38) -- (2.82,2.32) -- (2.55,2.32);
+  % 进汽短管
+  \draw[line width=0.7pt] (0.55,2.15) -- (0.55,2.70);
+  \draw[line width=0.7pt] (0.88,2.15) -- (0.88,2.70);
+  % 活塞（竖板，近左端）
+  \draw[line width=0.7pt] (0.28,0.68) rectangle (0.58,2.02);
+  % 活塞杆
+  \draw[line width=0.7pt] (0.58,1.25) -- (4.70,1.25);
+  \draw[line width=0.7pt] (0.58,1.45) -- (4.70,1.45);
+  % 导板
+  \draw[line width=0.75pt] (2.82,2.05) -- (5.35,2.05);
+  \draw[line width=0.75pt] (2.82,0.65) -- (5.35,0.65);
+  % 十字头
+  \draw[line width=0.8pt] (4.85,1.35) circle[radius=0.38];
+  \draw[line width=0.45pt] (4.85,1.35) circle[radius=0.10];
+  % 连杆
+  \draw[line width=1.4pt] (5.20,1.48) -- (8.50,2.08);
+  % 细杆至轮毂
+  \draw[line width=0.45pt] (5.05,2.22) circle[radius=0.07];
+  \draw[line width=0.45pt] (5.12,2.22) -- (9.20,2.15);
+  % 飞轮
+  \draw[line width=0.95pt] (9.48,1.58) circle[radius=1.72];
+  \draw[line width=0.5pt] (9.48,1.58) circle[radius=1.56];
+  \draw[line width=0.7pt] (9.48,1.58) circle[radius=0.20];
+  \fill (8.66,2.00) circle[radius=0.07];
+  \draw[line width=0.7pt] (9.48,1.58) -- (8.66,2.00);
+  \draw[line width=0.5pt] (10.00,1.35) circle[radius=0.10];
+  \draw[line width=0.55pt] (9.48,1.58) -- (10.00,1.35);
+  \node at (1.20,0.22) {1};
+  \node at (3.50,1.00) {2};
+  \node at (4.85,0.40) {3};
+  \node at (6.90,1.95) {4};
+  \node at (9.48,2.98) {5};
+  \node at (11.36,1.58) {6};
+\end{tikzpicture}%
+}
 \caption{图9.21 将活塞的往复运动变成机轴、飞轮转动的装置}
 \end{figure}
 
@@ -21662,8 +21707,40 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第349页）}]{assets/physics-2/fig-p0349-01.png}}
-\caption{图示（原PDF第349页）}
+\fitfig{%
+% fig-alt: 图9.22 单级蒸汽轮机转子剖面：轴（1）穿叶轮盘（2），外沿弧形叶片（3），斜喷管（4）对叶片
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % 叶轮盘（侧视，横线示厚盘）
+  \fill[pattern=horizontal lines] (1.62,0.02) rectangle (2.38,4.22);
+  \draw[line width=0.8pt] (1.62,0.02) rectangle (2.38,4.22);
+  % 叶片（盘右侧弧线）
+  \draw[line width=0.55pt] (1.72,3.05) .. controls (1.98,3.22) and (2.18,3.22) .. (2.32,3.08);
+  \draw[line width=0.55pt] (1.72,2.72) .. controls (1.98,2.90) and (2.18,2.90) .. (2.32,2.76);
+  \draw[line width=0.55pt] (1.72,2.40) .. controls (1.98,2.58) and (2.18,2.58) .. (2.32,2.44);
+  % 机轴（压在盘上）
+  \fill[white] (-0.22,1.92) rectangle (4.12,2.28);
+  \draw[line width=0.75pt] (-0.22,1.92) -- (4.12,1.92) -- (4.12,2.28) -- (-0.22,2.28) -- cycle;
+  \fill (-0.28,2.10) circle[radius=0.07];
+  \fill (4.18,2.10) circle[radius=0.07];
+  % 轴承座（斜线影）
+  \fill[pattern=north east lines] (-0.08,1.74) rectangle (0.58,2.46);
+  \draw[line width=0.55pt] (-0.08,1.74) rectangle (0.58,2.46);
+  \fill[pattern=north east lines] (3.32,1.74) rectangle (3.98,2.46);
+  \draw[line width=0.55pt] (3.32,1.74) rectangle (3.98,2.46);
+  % 喷管（斜置厚管，按扫描）
+  \fill[white] (0.02,1.62) -- (1.62,2.18) -- (1.22,1.42) -- (-0.38,0.86) -- cycle;
+  \draw[line width=0.8pt] (0.02,1.62) -- (1.62,2.18) -- (1.22,1.42) -- (-0.38,0.86) -- cycle;
+  \draw[line width=0.45pt] (-0.18,1.24) -- (1.42,1.80);
+  \draw[->,line width=0.55pt] (0.05,0.48) -- (0.85,1.12);
+  % 转向短箭
+  \draw[->,line width=0.5pt] (1.38,3.58) -- (1.38,4.02);
+  \node at (-0.62,2.10) {1};
+  \node at (2.68,4.12) {2};
+  \node at (2.85,3.15) {3};
+  \node at (0.42,0.78) {4};
+\end{tikzpicture}%
+}
+\caption{图9.22 单级蒸汽轮机的转子（剖面）}
 \end{figure}
 
 \begin{figure}
@@ -21756,7 +21833,101 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.25 奥托内燃机主要结构和动作示意图}]{assets/physics-2/fig-p0352-01.png}}
+\fitfig{%
+% fig-alt: 图9.25 奥托内燃机四冲程：吸气（进气阀开，混气进入）、压缩（阀关，活塞上）、做功（火花塞点火，活塞下）、排气（排气阀开，废气出）
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % 连杆：活塞销 (px,py) → 曲柄销 (cx,cy)
+  % ===== 1 吸气 =====
+  \begin{scope}[xshift=0.0cm]
+    \draw[line width=0.75pt] (0.00,1.20) rectangle (1.40,3.40);
+    \draw[line width=0.65pt] (0.08,1.62) rectangle (1.32,2.10);
+    \fill (0.70,1.86) circle[radius=0.045];
+    \fill[white] (0.62,1.62) -- (0.78,1.62) -- (0.98,0.18) -- (0.55,0.10) -- cycle;
+    \draw[line width=0.6pt] (0.62,1.62) -- (0.78,1.62) -- (0.98,0.18) -- (0.55,0.10) -- cycle;
+    \draw[line width=0.7pt] (0.70,0.02) circle[radius=0.52];
+    \begin{scope}
+      \clip (0.70,0.02) -- (1.22,-0.10) arc[start angle=-12,end angle=-125,radius=0.52] -- cycle;
+      \fill (0.70,0.02) circle[radius=0.52];
+    \end{scope}
+    \draw[line width=0.5pt] (0.52,0.16) circle[radius=0.18];
+    \draw[line width=0.65pt] (0.24,3.40) -- (0.24,3.75) -- (-0.45,3.75) -- (-0.45,4.00);
+    \draw[line width=0.5pt] (-0.58,4.00) -- (-0.32,4.00);
+    \draw[->,line width=0.5pt] (-0.45,4.48) -- (-0.45,4.05);
+    \node[anchor=south] at (0.05,4.50) {空气和汽油};
+    \draw[line width=0.6pt] (0.70,3.40) -- (0.70,3.98);
+    \draw[line width=0.6pt] (1.16,3.40) -- (1.16,3.85);
+    \draw[line width=0.5pt] (1.04,3.85) -- (1.28,3.85);
+    \node[anchor=east] at (-0.05,3.52) {进气阀开};
+    \node[anchor=west] at (1.32,3.72) {关};
+    \node[anchor=north] at (0.70,-0.70) {吸气冲程};
+  \end{scope}
+  % ===== 2 压缩 =====
+  \begin{scope}[xshift=3.55cm]
+    \draw[line width=0.75pt] (0.00,1.20) rectangle (1.40,3.40);
+    \node[align=center] at (0.70,2.95) {空气和\\汽油的\\混合物};
+    \draw[line width=0.65pt] (0.08,1.95) rectangle (1.32,2.42);
+    \fill (0.70,2.18) circle[radius=0.045];
+    \fill[white] (0.62,1.95) -- (0.78,1.95) -- (0.52,0.16) -- (0.88,0.10) -- cycle;
+    \draw[line width=0.6pt] (0.62,1.95) -- (0.78,1.95) -- (0.52,0.16) -- (0.88,0.10) -- cycle;
+    \draw[->,line width=0.5pt] (1.55,1.70) -- (1.55,2.25);
+    \draw[line width=0.7pt] (0.70,0.02) circle[radius=0.52];
+    \begin{scope}
+      \clip (0.70,0.02) -- (0.18,-0.10) arc[start angle=194,end angle=300,radius=0.52] -- cycle;
+      \fill (0.70,0.02) circle[radius=0.52];
+    \end{scope}
+    \draw[line width=0.5pt] (0.88,0.14) circle[radius=0.18];
+    \foreach \x in {0.24,0.70,1.16} {
+      \draw[line width=0.6pt] (\x,3.40) -- (\x,3.90);
+    }
+    \node[anchor=south] at (0.70,3.94) {关};
+    \node[anchor=east] at (-0.06,2.18) {活塞};
+    \node[anchor=west] at (1.50,1.90) {汽缸};
+    \node[anchor=north] at (0.70,-0.70) {压缩冲程};
+  \end{scope}
+  % ===== 3 做功 =====
+  \begin{scope}[xshift=7.10cm]
+    \draw[line width=0.75pt] (0.00,1.20) rectangle (1.40,3.40);
+    \draw[line width=0.65pt] (0.08,1.62) rectangle (1.32,2.10);
+    \fill (0.70,1.86) circle[radius=0.045];
+    \fill[white] (0.62,1.62) -- (0.78,1.62) -- (0.82,0.08) -- (0.58,0.08) -- cycle;
+    \draw[line width=0.6pt] (0.62,1.62) -- (0.78,1.62) -- (0.82,0.08) -- (0.58,0.08) -- cycle;
+    \draw[line width=0.7pt] (0.70,0.02) circle[radius=0.52];
+    \begin{scope}
+      \clip (0.70,0.02) -- (0.40,-0.48) arc[start angle=240,end angle=330,radius=0.52] -- cycle;
+      \fill (0.70,0.02) circle[radius=0.52];
+    \end{scope}
+    \draw[line width=0.5pt] (0.70,0.20) circle[radius=0.18];
+    \foreach \x in {0.24,0.70,1.16} {
+      \draw[line width=0.6pt] (\x,3.40) -- (\x,3.90);
+    }
+    \draw[line width=0.5pt] (0.58,3.90) -- (0.82,3.90);
+    \node[anchor=south] at (0.70,3.94) {火花塞};
+    \node[anchor=north] at (0.70,-0.70) {做功冲程};
+  \end{scope}
+  % ===== 4 排气 =====
+  \begin{scope}[xshift=10.65cm]
+    \draw[line width=0.75pt] (0.00,1.20) rectangle (1.40,3.40);
+    \draw[line width=0.65pt] (0.08,2.78) rectangle (1.32,3.26);
+    \fill (0.70,3.02) circle[radius=0.045];
+    \node at (0.70,2.48) {废气};
+    \fill[white] (0.62,2.78) -- (0.78,2.78) -- (0.98,0.16) -- (0.55,0.08) -- cycle;
+    \draw[line width=0.6pt] (0.62,2.78) -- (0.78,2.78) -- (0.98,0.16) -- (0.55,0.08) -- cycle;
+    \draw[->,line width=0.5pt] (0.42,1.70) -- (0.42,2.30);
+    \draw[line width=0.7pt] (0.70,0.02) circle[radius=0.52];
+    \begin{scope}
+      \clip (0.70,0.02) -- (1.20,-0.08) arc[start angle=-10,end angle=-130,radius=0.52] -- cycle;
+      \fill (0.70,0.02) circle[radius=0.52];
+    \end{scope}
+    \draw[line width=0.5pt] (0.52,0.16) circle[radius=0.18];
+    \draw[line width=0.6pt] (0.24,3.40) -- (0.24,3.90);
+    \draw[line width=0.6pt] (0.70,3.40) -- (0.70,3.90);
+    \draw[line width=0.65pt] (1.16,3.40) -- (1.16,3.75) -- (1.85,3.75) -- (1.85,4.00);
+    \draw[line width=0.5pt] (1.72,4.00) -- (1.98,4.00);
+    \node[anchor=south] at (1.85,4.04) {排气阀开};
+    \node[anchor=north] at (0.70,-0.70) {排气冲程};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 9.25 奥托内燃机主要结构和动作示意图}
 \end{figure}
 
@@ -21903,7 +22074,100 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.30 狄塞耳内燃机主要结构和动作示意图}]{assets/physics-2/fig-p0357-02.png}}
+\fitfig{%
+% fig-alt: 图9.30 狄塞耳内燃机四冲程：吸气（只进空气）、压缩（空气受压）、做功（喷油自燃）、排气（废气排出）；无火花塞
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % ===== 1 吸气 =====
+  \begin{scope}[xshift=0.0cm]
+    \draw[line width=0.75pt] (0.00,1.20) rectangle (1.40,3.40);
+    \draw[line width=0.65pt] (0.08,1.62) rectangle (1.32,2.10);
+    \fill (0.70,1.86) circle[radius=0.045];
+    \fill[white] (0.62,1.62) -- (0.78,1.62) -- (0.98,0.18) -- (0.55,0.10) -- cycle;
+    \draw[line width=0.6pt] (0.62,1.62) -- (0.78,1.62) -- (0.98,0.18) -- (0.55,0.10) -- cycle;
+    \draw[line width=0.7pt] (0.70,0.02) circle[radius=0.52];
+    \begin{scope}
+      \clip (0.70,0.02) -- (1.22,-0.10) arc[start angle=-12,end angle=-125,radius=0.52] -- cycle;
+      \fill (0.70,0.02) circle[radius=0.52];
+    \end{scope}
+    \draw[line width=0.5pt] (0.52,0.16) circle[radius=0.18];
+    \draw[line width=0.65pt] (0.24,3.40) -- (0.24,3.75) -- (-0.45,3.75) -- (-0.45,4.00);
+    \draw[line width=0.5pt] (-0.58,4.00) -- (-0.32,4.00);
+    \node[anchor=east] at (-0.02,4.22) {进气口开};
+    \node[anchor=east] at (-0.52,3.52) {空气};
+    \draw[line width=0.6pt] (0.70,3.40) -- (0.70,3.92);
+    \draw[line width=0.6pt] (1.16,3.40) -- (1.16,3.85);
+    \draw[line width=0.5pt] (1.04,3.85) -- (1.28,3.85);
+    \node[anchor=west] at (1.32,3.72) {关};
+    \node[anchor=north] at (0.70,-0.70) {吸气冲程};
+  \end{scope}
+  % ===== 2 压缩 =====
+  \begin{scope}[xshift=3.55cm]
+    \draw[line width=0.75pt] (0.00,1.20) rectangle (1.40,3.40);
+    \node at (0.70,2.95) {空气};
+    \draw[line width=0.65pt] (0.08,2.20) rectangle (1.32,2.68);
+    \fill (0.70,2.44) circle[radius=0.045];
+    \fill[white] (0.62,2.20) -- (0.78,2.20) -- (0.52,0.16) -- (0.88,0.10) -- cycle;
+    \draw[line width=0.6pt] (0.62,2.20) -- (0.78,2.20) -- (0.52,0.16) -- (0.88,0.10) -- cycle;
+    \draw[->,line width=0.5pt] (1.55,1.70) -- (1.55,2.25);
+    \draw[line width=0.7pt] (0.70,0.02) circle[radius=0.52];
+    \begin{scope}
+      \clip (0.70,0.02) -- (0.18,-0.10) arc[start angle=194,end angle=300,radius=0.52] -- cycle;
+      \fill (0.70,0.02) circle[radius=0.52];
+    \end{scope}
+    \draw[line width=0.5pt] (0.88,0.14) circle[radius=0.18];
+    \foreach \x in {0.24,0.70,1.16} {
+      \draw[line width=0.6pt] (\x,3.40) -- (\x,3.90);
+    }
+    \node[anchor=east,align=center] at (-0.06,2.20) {空气受\\到压缩};
+    \node[anchor=north] at (0.70,-0.70) {压缩冲程};
+  \end{scope}
+  % ===== 3 做功 =====
+  \begin{scope}[xshift=7.10cm]
+    \draw[line width=0.75pt] (0.00,1.20) rectangle (1.40,3.40);
+    \draw[line width=0.65pt] (0.08,1.62) rectangle (1.32,2.10);
+    \fill (0.70,1.86) circle[radius=0.045];
+    \fill[white] (0.62,1.62) -- (0.78,1.62) -- (0.82,0.08) -- (0.58,0.08) -- cycle;
+    \draw[line width=0.6pt] (0.62,1.62) -- (0.78,1.62) -- (0.82,0.08) -- (0.58,0.08) -- cycle;
+    \draw[line width=0.7pt] (0.70,0.02) circle[radius=0.52];
+    \begin{scope}
+      \clip (0.70,0.02) -- (0.40,-0.48) arc[start angle=240,end angle=330,radius=0.52] -- cycle;
+      \fill (0.70,0.02) circle[radius=0.52];
+    \end{scope}
+    \draw[line width=0.5pt] (0.70,0.20) circle[radius=0.18];
+    \foreach \x in {0.24,0.70,1.16} {
+      \draw[line width=0.6pt] (\x,3.40) -- (\x,3.90);
+    }
+    \draw[line width=0.5pt] (0.58,3.90) -- (0.82,3.90);
+    \node[anchor=south] at (0.70,3.94) {喷油};
+    \node[anchor=east,align=center] at (-0.06,2.15) {燃料和\\空气\\燃烧};
+    \node[anchor=north] at (0.70,-0.70) {做功冲程};
+  \end{scope}
+  % ===== 4 排气 =====
+  \begin{scope}[xshift=10.65cm]
+    \draw[line width=0.75pt] (0.00,1.20) rectangle (1.40,3.40);
+    \draw[line width=0.65pt] (0.08,2.78) rectangle (1.32,3.26);
+    \fill (0.70,3.02) circle[radius=0.045];
+    \node at (0.70,2.48) {废气};
+    \fill[white] (0.62,2.78) -- (0.78,2.78) -- (0.98,0.16) -- (0.55,0.08) -- cycle;
+    \draw[line width=0.6pt] (0.62,2.78) -- (0.78,2.78) -- (0.98,0.16) -- (0.55,0.08) -- cycle;
+    \draw[->,line width=0.5pt] (0.42,1.70) -- (0.42,2.30);
+    \draw[line width=0.7pt] (0.70,0.02) circle[radius=0.52];
+    \begin{scope}
+      \clip (0.70,0.02) -- (1.20,-0.08) arc[start angle=-10,end angle=-130,radius=0.52] -- cycle;
+      \fill (0.70,0.02) circle[radius=0.52];
+    \end{scope}
+    \draw[line width=0.5pt] (0.52,0.16) circle[radius=0.18];
+    \draw[line width=0.6pt] (0.24,3.40) -- (0.24,3.85);
+    \draw[line width=0.5pt] (0.12,3.85) -- (0.36,3.85);
+    \draw[line width=0.6pt] (0.70,3.40) -- (0.70,3.90);
+    \draw[line width=0.65pt] (1.16,3.40) -- (1.16,3.75) -- (1.85,3.75) -- (1.85,4.00);
+    \draw[line width=0.5pt] (1.72,4.00) -- (1.98,4.00);
+    \node[anchor=east] at (0.08,3.72) {关};
+    \node[anchor=south] at (1.85,4.04) {排气口开};
+    \node[anchor=north] at (0.70,-0.70) {排气冲程};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 9.30 狄塞耳内燃机主要结构和动作示意图}
 \end{figure}
 
@@ -22157,7 +22421,41 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.35 冲压式空气喷气发动机结构示意图}]{assets/physics-2/fig-p0365-01.png}}
+\fitfig{%
+% fig-alt: 图9.35 冲压式喷气发动机剖面：筒壁斜线影，左进高速空气，上火花塞、下燃料喷口，尾收敛喷口
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % 外壁（上、下，斜线影）
+  \fill[pattern=north east lines] (0.00,1.55) -- (5.20,1.55) -- (6.85,1.12) -- (6.85,1.28)
+    -- (5.20,1.72) -- (0.00,1.72) -- cycle;
+  \fill[pattern=north east lines] (0.00,0.28) -- (5.20,0.28) -- (6.85,0.72) -- (6.85,0.56)
+    -- (5.20,0.12) -- (0.00,0.12) -- cycle;
+  \draw[line width=0.75pt] (0.00,1.72) -- (5.20,1.72) -- (6.85,1.28);
+  \draw[line width=0.75pt] (0.00,1.55) -- (5.20,1.55) -- (6.85,1.12);
+  \draw[line width=0.75pt] (0.00,0.12) -- (5.20,0.12) -- (6.85,0.56);
+  \draw[line width=0.75pt] (0.00,0.28) -- (5.20,0.28) -- (6.85,0.72);
+  \draw[line width=0.7pt] (6.85,0.56) -- (6.85,1.28);
+  \draw[line width=0.7pt] (0.00,0.12) -- (0.00,0.28);
+  \draw[line width=0.7pt] (0.00,1.55) -- (0.00,1.72);
+  % 进气气流线
+  \draw[line width=0.5pt] (-0.55,1.22) -- (0.85,1.22);
+  \draw[line width=0.5pt] (-0.55,0.92) -- (0.85,0.92);
+  \draw[line width=0.5pt] (-0.55,0.62) -- (0.85,0.62);
+  % 燃烧室点纹
+  \foreach \x in {1.4,1.75,2.1,2.45,2.8,3.15,3.5,3.85,4.2,4.55,4.9} {
+    \foreach \y in {0.48,0.72,0.96,1.20,1.40} {
+      \fill (\x,\y) circle[radius=0.012];
+    }
+  }
+  % 火花塞（自上壁竖直插入）
+  \draw[line width=0.65pt] (2.05,1.72) -- (2.05,0.88);
+  \draw[line width=0.45pt] (1.92,1.72) -- (2.18,1.72);
+  % 燃料喷口（自下壁斜入，与火花塞不相交于一点）
+  \draw[line width=0.65pt] (1.05,0.12) -- (1.70,0.78);
+  \node[anchor=south] at (0.55,1.78) {高速空气};
+  \node[anchor=south] at (1.85,1.78) {火花塞};
+  \node[anchor=north] at (1.55,-0.02) {燃料喷口};
+\end{tikzpicture}%
+}
 \caption{图 9.35 冲压式空气喷气发动机结构示意图}
 \end{figure}
 
@@ -22177,7 +22475,58 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.36 轮机式空气喷气发动机结构示意图}]{assets/physics-2/fig-p0365-02.png}}
+\fitfig{%
+% fig-alt: 图9.36 轮机式喷气发动机剖面：左进气与前端竖杆整流罩，压气机级、中轴、燃烧室、气轮机级、尾喷管
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % 外壳
+  \fill[pattern=north east lines] (0.85,2.05) -- (7.10,2.05) -- (9.15,1.42) -- (9.15,1.58)
+    -- (7.10,2.22) -- (0.85,2.22) -- cycle;
+  \fill[pattern=north east lines] (0.85,0.18) -- (7.10,0.18) -- (9.15,0.82) -- (9.15,0.66)
+    -- (7.10,0.02) -- (0.85,0.02) -- cycle;
+  \draw[line width=0.75pt] (0.85,2.22) -- (7.10,2.22) -- (9.15,1.58);
+  \draw[line width=0.75pt] (0.85,2.05) -- (7.10,2.05) -- (9.15,1.42);
+  \draw[line width=0.75pt] (0.85,0.02) -- (7.10,0.02) -- (9.15,0.66);
+  \draw[line width=0.75pt] (0.85,0.18) -- (7.10,0.18) -- (9.15,0.82);
+  \draw[line width=0.7pt] (0.85,0.02) -- (0.85,0.18);
+  \draw[line width=0.7pt] (0.85,2.05) -- (0.85,2.22);
+  \draw[line width=0.7pt] (9.15,0.66) -- (9.15,1.58);
+  % 前端竖杆 + 整流罩圆 + 方盒（按扫描）
+  \draw[line width=1.15pt] (0.22,-0.15) -- (0.22,2.40);
+  \draw[line width=0.7pt] (0.22,1.12) circle[radius=0.20];
+  \fill[white] (0.22,1.12) circle[radius=0.08];
+  \draw[line width=0.6pt] (0.48,0.92) rectangle (0.82,1.32);
+  % 空气箭
+  \draw[->,line width=0.5pt] (0.55,1.62) -- (1.35,1.62);
+  \draw[->,line width=0.5pt] (0.55,0.62) -- (1.35,0.62);
+  \node[anchor=west] at (1.40,1.62) {空气};
+  \node[anchor=west] at (1.40,0.62) {空气};
+  % 压气机（两级竖影）
+  \fill[pattern=vertical lines] (1.55,0.18) rectangle (1.92,2.05);
+  \draw[line width=0.6pt] (1.55,0.18) rectangle (1.92,2.05);
+  \fill[pattern=vertical lines] (2.12,0.18) rectangle (2.49,2.05);
+  \draw[line width=0.6pt] (2.12,0.18) rectangle (2.49,2.05);
+  % 中轴（点纹/影）
+  \fill[pattern=crosshatch dots] (2.49,0.78) rectangle (6.20,1.42);
+  \draw[line width=0.55pt] (2.49,0.78) rectangle (6.20,1.42);
+  % 气轮机（两级）
+  \fill[pattern=vertical lines] (6.20,0.18) rectangle (6.57,2.05);
+  \draw[line width=0.6pt] (6.20,0.18) rectangle (6.57,2.05);
+  \fill[pattern=vertical lines] (6.72,0.18) rectangle (7.10,2.05);
+  \draw[line width=0.6pt] (6.72,0.18) rectangle (7.10,2.05);
+  % 尾锥
+  \draw[line width=0.6pt] (7.10,0.78) -- (8.85,1.10) -- (7.10,1.42);
+  % 火花塞
+  \draw[line width=0.55pt] (3.85,2.22) -- (3.85,1.55);
+  \node[anchor=south] at (2.90,2.28) {燃料};
+  \node[anchor=south] at (3.85,2.28) {火花塞};
+  \node[anchor=south] at (5.15,2.28) {燃烧室};
+  \node[anchor=south] at (8.55,1.85) {尾喷管};
+  \node[anchor=north] at (2.00,-0.05) {空气压缩机};
+  \node[anchor=north] at (4.35,-0.05) {螺旋桨轴};
+  \node[anchor=north] at (6.65,-0.05) {气轮机};
+  \node[anchor=west] at (8.55,0.55) {热气};
+\end{tikzpicture}%
+}
 \caption{图 9.36 轮机式空气喷气发动机结构示意图}
 \end{figure}
 
@@ -22201,12 +22550,63 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.37 轮机螺旋桨式吹气发动机的小息图}]{assets/physics-2/fig-p0366-01.png}}
-\caption{图 9.37 轮机螺旋桨式吹气发动机的小息图}
+\fitfig{%
+% fig-alt: 图9.37 轮机螺旋桨式喷气发动机剖面：左伸机轴，压气机两级、燃烧室与中轴、气轮机两级、尾喷口喷热气
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % 外壳（略鼓的筒 + 尾收敛）
+  \fill[pattern=north east lines] (0.15,1.85) -- (7.35,1.85) -- (9.55,1.28) -- (9.55,1.42)
+    -- (7.35,2.02) -- (0.15,2.02) -- cycle;
+  \fill[pattern=north east lines] (0.15,0.18) -- (7.35,0.18) -- (9.55,0.72) -- (9.55,0.58)
+    -- (7.35,0.02) -- (0.15,0.02) -- cycle;
+  \draw[line width=0.75pt] (0.15,2.02) -- (7.35,2.02) -- (9.55,1.42);
+  \draw[line width=0.75pt] (0.15,1.85) -- (7.35,1.85) -- (9.55,1.28);
+  \draw[line width=0.75pt] (0.15,0.02) -- (7.35,0.02) -- (9.55,0.58);
+  \draw[line width=0.75pt] (0.15,0.18) -- (7.35,0.18) -- (9.55,0.72);
+  \draw[line width=0.7pt] (0.15,0.02) -- (0.15,0.18);
+  \draw[line width=0.7pt] (0.15,1.85) -- (0.15,2.02);
+  \draw[line width=0.7pt] (9.55,0.58) -- (9.55,1.42);
+  % 前伸机轴
+  \draw[line width=0.7pt] (-0.95,0.95) -- (1.55,0.95);
+  \draw[line width=0.7pt] (-0.95,1.15) -- (1.55,1.15);
+  \draw[line width=0.6pt] (-0.95,0.95) -- (-1.12,1.05) -- (-0.95,1.15);
+  % 空气箭
+  \draw[->,line width=0.5pt] (-0.15,1.55) -- (0.85,1.55);
+  \draw[->,line width=0.5pt] (-0.15,0.72) -- (0.85,0.72);
+  \draw[->,line width=0.5pt] (-0.15,0.42) -- (0.85,0.42);
+  \node[anchor=south west] at (-0.10,1.55) {空气};
+  % 压气机两级
+  \fill[pattern=vertical lines] (1.55,0.18) rectangle (1.95,1.85);
+  \draw[line width=0.6pt] (1.55,0.18) rectangle (1.95,1.85);
+  \fill[pattern=vertical lines] (2.15,0.18) rectangle (2.55,1.85);
+  \draw[line width=0.6pt] (2.15,0.18) rectangle (2.55,1.85);
+  % 中轴（点纹）
+  \fill[pattern=crosshatch dots] (2.55,0.72) rectangle (6.45,1.32);
+  \draw[line width=0.55pt] (2.55,0.72) rectangle (6.45,1.32);
+  % 轴上小台阶
+  \draw[line width=0.45pt] (4.35,0.72) -- (4.35,1.32);
+  % 气轮机两级
+  \fill[pattern=vertical lines] (6.45,0.18) rectangle (6.85,1.85);
+  \draw[line width=0.6pt] (6.45,0.18) rectangle (6.85,1.85);
+  \fill[pattern=vertical lines] (7.00,0.18) rectangle (7.40,1.85);
+  \draw[line width=0.6pt] (7.00,0.18) rectangle (7.40,1.85);
+  % 尾锥
+  \draw[line width=0.6pt] (7.40,0.72) -- (9.20,1.00) -- (7.40,1.32);
+  % 火花塞
+  \draw[line width=0.55pt] (3.55,2.02) -- (3.55,1.45);
+  \node[anchor=south] at (2.85,2.08) {燃料};
+  \node[anchor=south] at (3.55,2.08) {火花塞};
+  \node[anchor=south] at (6.85,2.08) {气轮机};
+  \node[anchor=south] at (9.15,1.70) {喷口};
+  \node[anchor=north] at (1.95,-0.05) {空气压缩机};
+  \node[anchor=north] at (4.50,-0.05) {燃烧室};
+  \node[anchor=west] at (8.15,0.48) {热气};
+\end{tikzpicture}%
+}
+\caption{图9.37 轮机螺旋桨式喷气发动机的示意图}
 \end{figure}
 
 \begin{quote}
-图 9.37 轮机螺旋桨式吹气发动机的小息图
+图9.37 轮机螺旋桨式喷气发动机的示意图
 \end{quote}
 
 与活塞内燃发动机相比，空气喷气发动机的最突出的优点是重量轻、体积小、功率大。例如一架安装在飞机上的重量只有13000牛顿的空气喷气发动机可以产生33000牛顿的牵引力；如果在飞机上安装活塞内燃发动机，要得到同样的牵引力，发动机的重量就要有90000牛顿。
