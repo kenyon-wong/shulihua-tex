@@ -14544,7 +14544,27 @@ PQ。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-1/fig-p0159-03.png}}
+\fitfig{%
+% fig-alt: （第8题）扫描：A上、B左下、C右下；无底边BC；F在AB、E在AC（约中上）；实线BE与CF交于O；O标在交点上方；全实线、无角弧、无等号杠
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.70,2.55);
+  \coordinate (B) at (0.10,0.18);
+  \coordinate (C) at (3.30,0.18);
+  \coordinate (F) at ($ (A)!0.38!(B) $);
+  \coordinate (E) at ($ (A)!0.38!(C) $);
+  \coordinate (O) at (intersection of B--E and C--F);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (E);
+  \draw[line width=0.75pt] (C) -- (F);
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1pt] at (F) {$F$};
+  \node[anchor=west, inner sep=1pt] at (E) {$E$};
+  \node[anchor=south, inner sep=0.8pt] at ($(O)+(0.00,0.08)$) {$O$};
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -14568,7 +14588,27 @@ PQ。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-1}]{assets/plane-geometry-1/fig-p0160-01.png}}
+\fitfig{%
+% fig-alt: 图3-1 扫描：横排四凸多边形——不规则四边形、竖向菱形/风筝形、平顶正六边形、尖顶正五边形；无顶点字母
+\begin{tikzpicture}[line cap=round, line join=round]
+  % 1 irregular convex quadrilateral
+  \draw[line width=0.75pt] (0.05,1.55) -- (1.55,1.62) -- (2.05,0.12) -- (0.02,0.28) -- cycle;
+  % 2 kite / rhombus (tall)
+  \begin{scope}[xshift=2.95cm]
+    \draw[line width=0.75pt] (0.65,2.00) -- (1.22,0.98) -- (0.65,0.02) -- (0.08,0.98) -- cycle;
+  \end{scope}
+  % 3 regular hexagon (flat top)
+  \begin{scope}[xshift=5.55cm, yshift=0.98cm]
+    \draw[line width=0.75pt]
+      (0:0.98) -- (60:0.98) -- (120:0.98) -- (180:0.98) -- (240:0.98) -- (300:0.98) -- cycle;
+  \end{scope}
+  % 4 regular pentagon (point up)
+  \begin{scope}[xshift=8.15cm, yshift=0.92cm]
+    \draw[line width=0.75pt]
+      (90:1.05) -- (18:1.05) -- (-54:1.05) -- (-126:1.05) -- (162:1.05) -- cycle;
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3-1}
 \end{figure}
 
@@ -14585,7 +14625,27 @@ PQ。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-2}]{assets/plane-geometry-1/fig-p0161-01.png}}
+\fitfig{%
+% fig-alt: 图3-2 扫描：凸五边形ABCDE，E上、A左、D右、B左下、C右下；AD近水平，BC近水平较短；实线对角线AC、AD；过A、B的直线两端延长（实线）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.35,1.55);
+  \coordinate (B) at (1.05,0.35);
+  \coordinate (C) at (2.85,0.35);
+  \coordinate (D) at (3.55,1.55);
+  \coordinate (E) at (1.95,2.75);
+  \coordinate (ABlo) at ($ (A)!-0.55!(B) $);
+  \coordinate (ABhi) at ($ (B)!-0.45!(A) $);
+  \draw[line width=0.75pt] (ABlo) -- (ABhi);
+  \draw[line width=0.75pt] (A) -- (E) -- (D) -- (C) -- (B);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (A) -- (D);
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=west, inner sep=1pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1pt] at (E) {$E$};
+\end{tikzpicture}%
+}
 \caption{图3-2}
 \end{figure}
 
@@ -14593,7 +14653,24 @@ PQ。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-3}]{assets/plane-geometry-1/fig-p0161-02.png}}
+\fitfig{%
+% fig-alt: 图3-3 扫描：凹五边形ABCDE，A左、E右上、D右下、B左下、C凹入中右；实线ABCDEA；虚线为DC过C的延长线，斜向左上穿过AE伸出形外
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.20,1.55);
+  \coordinate (B) at (1.15,0.15);
+  \coordinate (C) at (2.35,0.95);
+  \coordinate (D) at (3.35,0.35);
+  \coordinate (E) at (2.95,2.45);
+  \coordinate (Cext) at ($ (D)!3.15!(C) $);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+  \draw[dashed, line width=0.55pt] (C) -- (Cext);
+  \node[anchor=east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=0.8pt] at (C) {$C$};
+  \node[anchor=north west, inner sep=1pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1pt] at (E) {$E$};
+\end{tikzpicture}%
+}
 \caption{图3-3}
 \end{figure}
 
@@ -14628,7 +14705,20 @@ PQ。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-4}]{assets/plane-geometry-1/fig-p0162-01.png}}
+\fitfig{%
+% fig-alt: 图3-4 扫描：四边形ABCD，A左下B右下水平底，C在B正上方（BC近竖直），D左中；无对角线、无角弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.85,0.20);
+  \coordinate (B) at (3.15,0.20);
+  \coordinate (C) at (3.15,2.55);
+  \coordinate (D) at (0.20,1.35);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \node[anchor=north, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{图3-4}
 \end{figure}
 
@@ -14669,7 +14759,25 @@ ADBC 等等？
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-1/fig-p0162-02.png}}
+\fitfig{%
+% fig-alt: （第8题）扫描：△ABC，A偏右上、B左下、C右下，BC水平；直线截AB于E、AC于D，两端略伸出三角形外；全实线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.15,0.20);
+  \coordinate (C) at (3.25,0.20);
+  \coordinate (A) at (2.45,2.85);
+  \coordinate (E) at ($ (B)!0.32!(A) $);
+  \coordinate (D) at ($ (C)!0.42!(A) $);
+  \coordinate (L) at ($ (D)!-0.35!(E) $);
+  \coordinate (R) at ($ (E)!-0.28!(D) $);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (L) -- (R);
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=0.8pt] at (E) {$E$};
+  \node[anchor=south west, inner sep=0.8pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -14707,7 +14815,43 @@ n 边形的内角和 =\((n-2) \cdot 180^{\circ}\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-5}]{assets/plane-geometry-1/fig-p0163-01.png}}
+\fitfig{%
+% fig-alt: 图3-5 扫描：凸五边形ABCDE（A左下B右下C右D上右E上左）；各边顺次延长成外角，弧标1–5；AB水平
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.35,0.35);
+  \coordinate (B) at (2.55,0.35);
+  \coordinate (C) at (3.15,1.55);
+  \coordinate (D) at (2.25,2.75);
+  \coordinate (E) at (0.55,2.35);
+  \coordinate (Aext) at ($ (E)!1.28!(A) $);
+  \coordinate (Bext) at ($ (A)!1.28!(B) $);
+  \coordinate (Cext) at ($ (B)!1.28!(C) $);
+  \coordinate (Dext) at ($ (C)!1.28!(D) $);
+  \coordinate (Eext) at ($ (D)!1.28!(E) $);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+  \draw[line width=0.75pt] (A) -- (Aext);
+  \draw[line width=0.75pt] (B) -- (Bext);
+  \draw[line width=0.75pt] (C) -- (Cext);
+  \draw[line width=0.75pt] (D) -- (Dext);
+  \draw[line width=0.75pt] (E) -- (Eext);
+  % exterior arcs
+  \draw[line width=0.5pt] (A) ++(264.3:0.30) arc (264.3:360:0.30);
+  \node[font=\small, inner sep=0.3pt] at ($(A)+(0.12,-0.48)$) {$1$};
+  \draw[line width=0.5pt] (B) ++(0:0.30) arc (0:63.4:0.30);
+  \node[font=\small, inner sep=0.3pt] at ($(B)+(0.48,0.16)$) {$2$};
+  \draw[line width=0.5pt] (C) ++(63.4:0.28) arc (63.4:126.9:0.28);
+  \node[font=\small, inner sep=0.3pt] at ($(C)+(0.42,0.10)$) {$3$};
+  \draw[line width=0.5pt] (D) ++(126.9:0.28) arc (126.9:193.2:0.28);
+  \node[font=\small, inner sep=0.3pt] at ($(D)+(-0.02,0.48)$) {$4$};
+  \draw[line width=0.5pt] (E) ++(193.2:0.28) arc (193.2:264.3:0.28);
+  \node[font=\small, inner sep=0.3pt] at ($(E)+(-0.48,-0.02)$) {$5$};
+  \node[anchor=north east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1.2pt] at (E) {$E$};
+\end{tikzpicture}%
+}
 \caption{图3-5}
 \end{figure}
 
@@ -14863,8 +15007,32 @@ n - 2 = 2\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第166页）}]{assets/plane-geometry-1/fig-p0166-01.png}}
-\caption{图示（原PDF第166页）}
+\fitfig{%
+% fig-alt: 图3-6（左）扫描：两对平行线相交成□ABCD；AD∥BC略上扬，AB∥DC陡上扬；四线均伸出顶点；A左上B左下C右下D右上
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (1.15,2.15);
+  \coordinate (B) at (0.55,0.55);
+  \coordinate (C) at (2.85,0.95);
+  \coordinate (D) at (3.45,2.55);
+  \coordinate (ADl) at ($ (D)!-0.35!(A) $);
+  \coordinate (ADr) at ($ (A)!-0.35!(D) $);
+  \coordinate (BCl) at ($ (C)!-0.35!(B) $);
+  \coordinate (BCr) at ($ (B)!-0.35!(C) $);
+  \coordinate (ABt) at ($ (B)!-0.32!(A) $);
+  \coordinate (ABb) at ($ (A)!-0.32!(B) $);
+  \coordinate (DCt) at ($ (C)!-0.32!(D) $);
+  \coordinate (DCb) at ($ (D)!-0.32!(C) $);
+  \draw[line width=0.75pt] (ADl) -- (ADr);
+  \draw[line width=0.75pt] (BCl) -- (BCr);
+  \draw[line width=0.75pt] (ABt) -- (ABb);
+  \draw[line width=0.75pt] (DCt) -- (DCb);
+  \node[anchor=south east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{图3-6}
 \end{figure}
 
 \begin{figure}
