@@ -21961,8 +21961,41 @@ W _ {F} = H ^ {\prime} \cos (180 ^ {\circ}) = 40.513 \times 2 \times (- 1) \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11-10}]{assets/physics-1/fig-p0343-02.png}}
-\caption{图 11-10}
+% fig-alt: 图11·10：F–s图。纵轴F(牛顿)刻度2–8，横轴s(米)刻度0.5–2；水平线MN在F=8，N'在s0=2；矩形OMN's0斜影，内标W=Fs0。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt},x=0.95cm,y=0.38cm]
+  % axes
+  \draw[line width=0.7pt,->] (0,0) -- (0,10.2);
+  \draw[line width=0.7pt,->] (0,0) -- (5.6,0);
+  \node[anchor=south west] at (0,10.2) {$F(\text{牛顿})$};
+  \node[anchor=west] at (5.65,0) {$s(\text{米})$};
+  \node[anchor=north east] at (-0.05,-0.05) {$0$};
+  % ticks F
+  \foreach \y/\lab in {2/2,4/4,6/6,8/8} {
+    \draw[line width=0.4pt] (-0.12,\y) -- (0.12,\y);
+    \node[anchor=east] at (-0.18,\y) {\lab};
+  }
+  % ticks s
+  \foreach \x/\lab in {1/0.5,2/1,3/1.5,4/2} {
+    \draw[line width=0.4pt] (\x,-0.18) -- (\x,0.18);
+    \node[anchor=north] at (\x,-0.22) {\lab};
+  }
+  % hatch rectangle O-(4,0)-(4,8)-(0,8)
+  \fill[pattern=north east lines,pattern color=black!65] (0,0) rectangle (4,8);
+  \draw[line width=0.55pt] (0,0) -- (4,0);
+  \draw[line width=0.55pt] (0,0) -- (0,8);
+  \draw[line width=0.5pt,dashed] (4,0) -- (4,8);
+  % MN line beyond N'
+  \draw[line width=0.7pt] (0,8) -- (5.15,8);
+  \node[anchor=south east] at (-0.05,8.15) {$M$};
+  \node[anchor=south] at (4.0,8.20) {$N'$};
+  \node[anchor=south west] at (5.15,8.10) {$N$};
+  \node[anchor=south west] at (4.08,0.15) {$s_{0}$};
+  \node at (1.35,4.0) {$W$};
+  \node at (2.85,4.0) {$Fs_{0}$};
+\end{tikzpicture}%
+}
+\caption{图 11·10}
 \end{figure}
 
 \emph{图11·10}
@@ -21987,16 +22020,65 @@ W = F s _ {0} = (8 \times 2) \text{焦耳} = 16 \text{焦耳},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11-11}]{assets/physics-1/fig-p0343-03.png}}
-\caption{图 11-11}
+% fig-alt: 图11·11：f–s图。纵轴f，横轴s；水平线PQ在f=-2，Q'在s0正下方；矩形OPQ's0斜影，内标W=-fs0。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % axes
+  \draw[line width=0.7pt,->] (0,-2.55) -- (0,1.35);
+  \draw[line width=0.7pt,->] (0,0) -- (4.55,0);
+  \node[anchor=south west] at (0.08,1.35) {$f$};
+  \node[anchor=west] at (4.60,0) {$s$};
+  \node[anchor=south east] at (-0.08,0.08) {$0$};
+  % tick -2
+  \draw[line width=0.4pt] (-0.12,-1.60) -- (0.12,-1.60);
+  \node[anchor=east] at (-0.18,-1.60) {$-2$};
+  % hatch
+  \fill[pattern=north east lines,pattern color=black!65] (0,0) rectangle (3.20,-1.60);
+  \draw[line width=0.55pt] (0,0) -- (3.20,0) -- (3.20,-1.60) -- (0,-1.60) -- cycle;
+  % PQ line
+  \draw[line width=0.7pt] (0,-1.60) -- (4.05,-1.60);
+  \node[anchor=north] at (0.00,-1.68) {$P$};
+  \node[anchor=north] at (3.20,-1.68) {$Q'$};
+  \node[anchor=north west] at (4.05,-1.68) {$Q$};
+  \node[anchor=south] at (3.20,0.08) {$s_{0}$};
+  \node at (1.60,-0.80) {$W=-fs_{0}$};
+\end{tikzpicture}%
+}
+\caption{图 11·11}
 \end{figure}
 
 \emph{图11·11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11.12}]{assets/physics-1/fig-p0343-04.png}}
-\caption{图 11.12}
+% fig-alt: 图11·12：左固定壁斜影；上弹簧原长右端P，竖虚线；下弹簧拉长右端P'，右箭F，竖虚线；两虚线间双箭头标s0。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % wall
+  \draw[line width=0.75pt] (0,-0.35) -- (0,3.55);
+  \foreach \y in {0.0,0.35,0.70,1.05,1.40,1.75,2.10,2.45,2.80,3.15,3.45}
+    \draw[line width=0.35pt] (0,\y) -- (-0.28,\y+0.18);
+  % top spring (natural)
+  \draw[line width=0.65pt,decorate,decoration={zigzag,segment length=2.0mm,amplitude=1.6mm}]
+    (0,2.85) -- (3.15,2.85);
+  \fill (3.15,2.85) circle[radius=0.04];
+  \node[anchor=south west] at (3.20,2.92) {$P$};
+  \draw[line width=0.45pt,dashed] (3.15,3.20) -- (3.15,-0.15);
+  % bottom spring (stretched)
+  \draw[line width=0.65pt,decorate,decoration={zigzag,segment length=2.6mm,amplitude=1.6mm}]
+    (0,0.95) -- (4.55,0.95);
+  \fill (4.55,0.95) circle[radius=0.04];
+  \node[anchor=south] at (4.55,1.12) {$P'$};
+  \draw[line width=0.45pt,dashed] (4.55,1.55) -- (4.55,-0.15);
+  % F
+  \draw[line width=0.75pt,->] (4.55,0.95) -- (5.55,0.95);
+  \node[anchor=west] at (5.60,0.95) {$F$};
+  % s0
+  \draw[line width=0.5pt,<->] (3.15,-0.05) -- (4.55,-0.05);
+  \node[anchor=north] at (3.85,-0.08) {$s_{0}$};
+\end{tikzpicture}%
+}
+\caption{图 11·12}
 \end{figure}
 
 \emph{图11·12}
@@ -22015,8 +22097,33 @@ W = F s _ {0} = (8 \times 2) \text{焦耳} = 16 \text{焦耳},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11-13}]{assets/physics-1/fig-p0344-01.png}}
-\caption{图 11-13}
+% fig-alt: 图11·13：F–s图。斜直线过原点至Q；竖虚线至s0，横虚线至Ks0；三角形OQs0斜影，内标W与1/2 K s0^2。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (O) at (0,0);
+  \coordinate (S0) at (3.60,0);
+  \coordinate (Q) at (3.60,2.70);
+  \coordinate (FK) at (0,2.70);
+  % axes
+  \draw[line width=0.7pt,->] (0,-0.15) -- (0,3.55);
+  \draw[line width=0.7pt,->] (-0.15,0) -- (4.70,0);
+  \node[anchor=south west] at (0.08,3.55) {$F$};
+  \node[anchor=west] at (4.75,0) {$s$};
+  \node[anchor=north east] at (-0.08,-0.08) {$O$};
+  % hatch triangle
+  \fill[pattern=north east lines,pattern color=black!65] (O) -- (S0) -- (Q) -- cycle;
+  \draw[line width=0.7pt] (O) -- (Q);
+  % dashed projections
+  \draw[line width=0.45pt,dashed] (Q) -- (FK);
+  \draw[line width=0.45pt,dashed] (Q) -- (S0);
+  \node[anchor=south west] at ($(Q)+(0.08,0.05)$) {$Q$};
+  \node[anchor=north] at (3.60,-0.08) {$s_{0}$};
+  \node[anchor=east] at (-0.12,2.70) {$Ks_{0}$};
+  \node at (1.15,0.95) {$W$};
+  \node at (2.35,0.85) {$\dfrac{1}{2}Ks_{0}^{2}$};
+\end{tikzpicture}%
+}
+\caption{图 11·13}
 \end{figure}
 
 \emph{图11·13}
@@ -22222,8 +22329,31 @@ P = 10 ^ {3} \times \sqrt {2 \times 0.2 \times 5} = \sqrt {2} \times 10 ^ {5} = 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11.14}]{assets/physics-1/fig-p0349-01.png}}
-\caption{图 11.14}
+% fig-alt: 图11·14：左实线斜影块m，上右箭v，块右缘向左箭f=ma；右虚线斜影块m；底两竖标间双箭头标s=v^2/(2a)。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % left solid block
+  \fill[pattern=north east lines,pattern color=black!60] (0.40,0.70) rectangle (1.90,1.90);
+  \draw[line width=0.65pt] (0.40,0.70) rectangle (1.90,1.90);
+  \node at (1.15,1.30) {$m$};
+  % v to the right above
+  \draw[line width=0.7pt,->] (0.55,2.30) -- (1.75,2.30);
+  \node[anchor=south] at (1.15,2.33) {$v$};
+  % f = ma pointing left into the right face (retarding)
+  \draw[line width=0.7pt,->] (3.20,1.30) -- (1.90,1.30);
+  \node[anchor=south] at (2.55,1.35) {$f=ma$};
+  % right dashed block
+  \fill[pattern=north east lines,pattern color=black!45] (4.40,0.70) rectangle (5.90,1.90);
+  \draw[line width=0.55pt,dashed] (4.40,0.70) rectangle (5.90,1.90);
+  \node at (5.15,1.30) {$m$};
+  % s dimension between right edges
+  \draw[line width=0.4pt] (1.90,0.70) -- (1.90,0.15);
+  \draw[line width=0.4pt] (5.90,0.70) -- (5.90,0.15);
+  \draw[line width=0.55pt,<->] (1.90,0.28) -- (5.90,0.28);
+  \node[anchor=north] at (3.90,0.25) {$s=\dfrac{v^{2}}{2a}$};
+\end{tikzpicture}%
+}
+\caption{图 11·14}
 \end{figure}
 
 \emph{图11·14}
@@ -22233,8 +22363,15 @@ P = 10 ^ {3} \times \sqrt {2 \times 0.2 \times 5} = \sqrt {2} \times 10 ^ {5} = 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第350页）}]{assets/physics-1/fig-p0350-01.png}}
-\caption{图示（原PDF第350页）}
+% fig-alt: 框示：上「物体的动能」，下 Ek=1/2 mv^2。假caption（原PDF第350页）已删。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \node[draw,line width=0.7pt,inner sep=10pt,align=center] {
+    {\normalsize\bfseries 物体的动能}\\[0.45em]
+    $\displaystyle E_{k}=\dfrac{1}{2}mv^{2}$
+  };
+\end{tikzpicture}%
+}
 \end{figure}
 
 \[
@@ -22288,8 +22425,34 @@ E _ {k} = \frac {1}{2} m v ^ {2} \tag {11.6}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11.15}]{assets/physics-1/fig-p0351-01.png}}
-\caption{图 11.15}
+% fig-alt: 图11·15：地面斜影；左实线块m，上右箭v1，右缘右箭F；右虚线块，上右箭v2，右缘虚箭F；底两竖标间双箭头s。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % ground
+  \draw[line width=0.7pt] (-0.20,0.55) -- (7.40,0.55);
+  \foreach \x in {0.0,0.45,0.90,1.35,1.80,2.25,2.70,3.15,3.60,4.05,4.50,4.95,5.40,5.85,6.30,6.75,7.20}
+    \draw[line width=0.35pt] (\x,0.55) -- (\x-0.22,0.28);
+  % left solid
+  \draw[line width=0.65pt] (0.40,0.55) rectangle (1.80,1.65);
+  \node at (1.10,1.10) {$m$};
+  \draw[line width=0.65pt,->] (0.55,1.95) -- (1.65,1.95);
+  \node[anchor=south] at (1.10,1.98) {$v_{1}$};
+  \draw[line width=0.7pt,->] (1.80,1.10) -- (2.85,1.10);
+  \node[anchor=west] at (2.90,1.10) {$F$};
+  % right dashed
+  \draw[line width=0.55pt,dashed] (4.40,0.55) rectangle (5.80,1.65);
+  \draw[line width=0.55pt,dashed,->] (4.55,1.95) -- (5.65,1.95);
+  \node[anchor=south] at (5.10,1.98) {$v_{2}$};
+  \draw[line width=0.55pt,dashed,->] (5.80,1.10) -- (6.85,1.10);
+  \node[anchor=west] at (6.90,1.10) {$F$};
+  % s
+  \draw[line width=0.4pt] (1.80,0.55) -- (1.80,0.05);
+  \draw[line width=0.4pt] (5.80,0.55) -- (5.80,0.05);
+  \draw[line width=0.55pt,<->] (1.80,0.18) -- (5.80,0.18);
+  \node[anchor=north] at (3.80,0.15) {$s$};
+\end{tikzpicture}%
+}
+\caption{图 11·15}
 \end{figure}
 
 \emph{图11·15}
@@ -22385,8 +22548,47 @@ AB = l 时，其高度为 h，则由动能定理，得：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 11-16}]{assets/physics-1/fig-p0354-01.png}}
-\caption{图 11-16}
+% fig-alt: 图11·16：斜面θ，底左A；A处实线块上沿斜面箭v0；斜面中虚线块上箭v；块上G竖直下、N垂直斜面向上、G1沿斜面向下、G2垂直斜面向下（虚线成矩形）。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\th{28}
+  % incline wedge
+  \draw[line width=0.7pt] (0,0) -- ({5.80*cos(\th)},{5.80*sin(\th)}) -- ({5.80*cos(\th)},0) -- cycle;
+  \draw[line width=0.35pt] (0.55,0) arc[start angle=0,end angle=\th,radius=0.55];
+  \node[anchor=south west] at (0.62,0.08) {$\theta$};
+  \node[anchor=north east] at (0.05,-0.05) {$A$};
+  % block at A (solid), center near bottom
+  \coordinate (PA) at ({0.85*cos(\th)},{0.85*sin(\th)});
+  \begin{scope}[rotate around={\th:(PA)}]
+    \draw[line width=0.65pt] ($(PA)+(-0.42,-0.28)$) rectangle ($(PA)+(0.42,0.28)$);
+    \draw[line width=0.65pt,->] ($(PA)+(0.10,0.45)$) -- ($(PA)+(1.15,0.45)$);
+    \node[anchor=south] at ($(PA)+(0.60,0.48)$) {$v_{0}$};
+  \end{scope}
+  % block higher (dashed) with forces
+  \coordinate (P) at ({3.40*cos(\th)},{3.40*sin(\th)});
+  \begin{scope}[rotate around={\th:(P)}]
+    \draw[line width=0.55pt,dashed] ($(P)+(-0.48,-0.32)$) rectangle ($(P)+(0.48,0.32)$);
+    % v up-incline
+    \draw[line width=0.6pt,->] ($(P)+(0.05,0.50)$) -- ($(P)+(1.05,0.50)$);
+    \node[anchor=south] at ($(P)+(0.55,0.53)$) {$v$};
+    % N up-perp
+    \draw[line width=0.7pt,->] (P) -- ++(0,1.25);
+    \node[anchor=south] at ($(P)+(0.05,1.30)$) {$N$};
+    % G1 down-incline (component, dashed)
+    \draw[line width=0.55pt,dashed,->] (P) -- ++(-1.35,0);
+    \node[anchor=north] at ($(P)+(-1.10,-0.08)$) {$G_{1}$};
+    % G2 into plane (component, dashed)
+    \draw[line width=0.55pt,dashed,->] (P) -- ++(0,-1.15);
+    \node[anchor=west] at ($(P)+(0.08,-1.05)$) {$G_{2}$};
+    % dashed completion
+    \draw[line width=0.35pt,dashed] ($(P)+(-1.35,0)$) -- ($(P)+(-1.35,-1.15)$) -- ($(P)+(0,-1.15)$);
+  \end{scope}
+  % G vertical
+  \draw[line width=0.75pt,->] (P) -- ++(0,-1.55);
+  \node[anchor=north] at ($(P)+(0.10,-1.60)$) {$G$};
+\end{tikzpicture}%
+}
+\caption{图 11·16}
 \end{figure}
 
 \emph{图11·16}
