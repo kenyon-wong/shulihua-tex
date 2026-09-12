@@ -14918,7 +14918,34 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/plane-geometry-2/fig-p0171-01.png}}
+\fitfig{%
+% fig-alt: 第18题：圆；P在左；切线PA、PC触于上A下C；割线PBD交圆于B（近）、D（远）；弦AB、AD、CB、CD；关于PBD对称
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rr{1.450}
+  \def\pd{2.650}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (-\pd,0);
+  \coordinate (B) at (-\rr,0);
+  \coordinate (D) at (\rr,0);
+  \pgfmathsetmacro{\ax}{-\rr*\rr/\pd}
+  \pgfmathsetmacro{\ay}{(\rr/\pd)*sqrt(\pd*\pd-\rr*\rr)}
+  \coordinate (A) at (\ax,\ay);
+  \coordinate (C) at (\ax,-\ay);
+  \draw[line width=0.75pt] (O) circle (\rr);
+  \draw[line width=0.75pt] (P) -- (A);
+  \draw[line width=0.75pt] (P) -- (C);
+  \draw[line width=0.75pt] (P) -- (D);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (C) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \node[anchor=east,inner sep=2pt] at (P) {$P$};
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=west,inner sep=2pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第18题)}
 \end{figure}
 
@@ -14928,7 +14955,35 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-2/fig-p0171-02.png}}
+\fitfig{%
+% fig-alt: 第20题：梯形上下底标a、b；中位平行线标x；自x左端向右下虚线∥右腰交下底
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\aa{1.600}
+  \def\bb{3.200}
+  \def\hh{2.000}
+  % x = sqrt(a*b) for similar trapezoids
+  \pgfmathsetmacro{\xx}{sqrt(\aa*\bb)}
+  \pgfmathsetmacro{\yy}{\hh*(\bb-\xx)/(\bb-\aa)}
+  \coordinate (Bl) at ({-\bb/2},0);
+  \coordinate (Br) at ({\bb/2},0);
+  \coordinate (Tl) at ({-\aa/2},\hh);
+  \coordinate (Tr) at ({\aa/2},\hh);
+  \coordinate (Xl) at ({-\xx/2},\yy);
+  \coordinate (Xr) at ({\xx/2},\yy);
+  % dashed from Xl parallel to right leg (Tr->Br): dir ((\bb-\aa)/2, -\hh)
+  \pgfmathsetmacro{\rdx}{(\bb-\aa)/2}
+  \pgfmathsetmacro{\rdy}{-\hh}
+  % Xl + t*(rdx,rdy) hits y=0: yy + t*rdy = 0 => t = yy/hh
+  \pgfmathsetmacro{\tt}{\yy/\hh}
+  \coordinate (Q) at ({-\xx/2+\tt*\rdx},0);
+  \draw[line width=0.75pt] (Bl) -- (Br) -- (Tr) -- (Tl) -- cycle;
+  \draw[line width=0.75pt] (Xl) -- (Xr);
+  \draw[dashed,line width=0.6pt] (Xl) -- (Q);
+  \node[anchor=south,inner sep=1pt] at (0,\hh) {$a$};
+  \node[anchor=south,inner sep=1pt] at (0,\yy) {$x$};
+  \node[anchor=north,inner sep=1pt] at (0,0) {$b$};
+\end{tikzpicture}%
+}
 \caption{(第20题)}
 \end{figure}
 
@@ -14971,7 +15026,29 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0171-03.png}}
+\fitfig{%
+% fig-alt: 第2题：等腰△ABC（A上，BC底）；角平分线BD、CE交于G；连AG；E在AB、D在AC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (-2.400,0);
+  \coordinate (C) at (2.400,0);
+  \coordinate (A) at (0,3.200);
+  % AE:EB=5:6 on AB; AD:DC=5:6 on AC
+  \coordinate (E) at ($ (A)!{5/11}!(B) $);
+  \coordinate (D) at ($ (A)!{5/11}!(C) $);
+  % incenter G = (aA+bB+cC)/(a+b+c); a=12,b=10,c=10 scaled
+  \coordinate (G) at (0,1.200);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (C) -- (E);
+  \draw[line width=0.75pt] (A) -- (G);
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=east,inner sep=2pt] at (B) {$B$};
+  \node[anchor=west,inner sep=2pt] at (C) {$C$};
+  \node[anchor=east,inner sep=2pt] at (E) {$E$};
+  \node[anchor=west,inner sep=2pt] at (D) {$D$};
+  \node[anchor=north,inner sep=2pt] at (G) {$G$};
+\end{tikzpicture}%
+}
 \caption{(第2题)}
 \end{figure}
 
@@ -15004,7 +15081,41 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0172-01.png}}
+\fitfig{%
+% fig-alt: 第6题：两圆O1>O2外切于C；外公切线AB；半径O1A标r1、O2B标r2；虚线BD∥O1O2交O1A于D；心小空心圆
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rone{1.450}
+  \def\rtwo{0.850}
+  \coordinate (Oone) at (0,0);
+  \coordinate (Otwo) at ({\rone+\rtwo},0);
+  \coordinate (C) at (\rone,0);
+  \pgfmathsetmacro{\oo}{\rone+\rtwo}
+  \pgfmathsetmacro{\theta}{asin((\rone-\rtwo)/\oo)}
+  \pgfmathsetmacro{\ph}{90-\theta}
+  \coordinate (A) at ({\rone*cos(\ph)},{\rone*sin(\ph)});
+  \coordinate (B) at ({\rone+\rtwo+\rtwo*cos(\ph)},{\rtwo*sin(\ph)});
+  \coordinate (D) at ({\rtwo*cos(\ph)},{\rtwo*sin(\ph)});
+  \coordinate (Aext) at ($(A)!-0.35!(B)$);
+  \coordinate (Bext) at ($(B)!-0.35!(A)$);
+  \draw[line width=0.75pt] (Oone) circle (\rone);
+  \draw[line width=0.75pt] (Otwo) circle (\rtwo);
+  \draw[line width=0.75pt] (Oone) -- (Otwo);
+  \draw[line width=0.75pt] (Oone) -- (A);
+  \draw[line width=0.75pt] (Otwo) -- (B);
+  \draw[line width=0.75pt] (Aext) -- (Bext);
+  \draw[dashed,line width=0.6pt] (B) -- (D);
+  \filldraw[fill=white,line width=0.55pt] (Oone) circle (0.040);
+  \filldraw[fill=white,line width=0.55pt] (Otwo) circle (0.040);
+  \node[anchor=north,inner sep=2pt] at (Oone) {$O_{1}$};
+  \node[anchor=north,inner sep=2pt] at (Otwo) {$O_{2}$};
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north,inner sep=2pt] at (C) {$C$};
+  \node[anchor=east,inner sep=2pt] at (D) {$D$};
+  \node[anchor=east,inner sep=2pt] at ({0.55*cos(\ph)},{0.55*sin(\ph)}) {$r_{1}$};
+  \node[anchor=west,inner sep=2pt] at ({(\rone+\rtwo)+0.45*cos(\ph)},{0.45*sin(\ph)}) {$r_{2}$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -15014,7 +15125,44 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-2/fig-p0172-02.png}}
+\fitfig{%
+% fig-alt: 第7题：两圆O1>O2外切于C；外公切线AB；竖切线CE；弦AC、BC；虚线BD∥O1O2、虚线O1E交AC于F；心小空心圆
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rone{1.350}
+  \def\rtwo{0.800}
+  \coordinate (Oone) at (0,0);
+  \coordinate (Otwo) at (2.1500,0);
+  \coordinate (C) at (1.350,0);
+  \coordinate (A) at (0.3453,1.3051);
+  \coordinate (B) at (2.3547,0.7734);
+  \coordinate (D) at (0.2047,0.7734);
+  \coordinate (E) at (1.3500,1.0392);
+  \coordinate (F) at (0.8477,0.6525);
+  \coordinate (Aext) at ($(A)!-0.25!(B)$);
+  \coordinate (Bext) at ($(B)!-0.25!(A)$);
+  \draw[line width=0.75pt] (Oone) circle (\rone);
+  \draw[line width=0.75pt] (Otwo) circle (\rtwo);
+  \draw[line width=0.75pt] (Oone) -- (Otwo);
+  \draw[line width=0.75pt] (Oone) -- (A);
+  \draw[line width=0.75pt] (Otwo) -- (B);
+  \draw[line width=0.75pt] (Aext) -- (Bext);
+  \draw[line width=0.75pt] (C) -- (E);
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[dashed,line width=0.6pt] (B) -- (D);
+  \draw[dashed,line width=0.6pt] (Oone) -- (E);
+  \filldraw[fill=white,line width=0.55pt] (Oone) circle (0.040);
+  \filldraw[fill=white,line width=0.55pt] (Otwo) circle (0.040);
+  \node[anchor=north,inner sep=2pt] at (Oone) {$O_{1}$};
+  \node[anchor=north,inner sep=2pt] at (Otwo) {$O_{2}$};
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south east,inner sep=0.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -15063,7 +15211,35 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-2/fig-p0172-03.png}}
+\fitfig{%
+% fig-alt: 第10题：大圆O与圆A（A在⊙O上）交于B、C；弦BC⊥直径线于E；D-O-F-E-A-G共线；F为⊙A左交点
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\RR{1.60}
+  \def\rr{0.95}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (\RR,0);
+  \coordinate (D) at (-\RR,0);
+  \coordinate (F) at (0.6500,0);
+  \coordinate (E) at (1.3180,0);
+  \coordinate (G) at (2.5500,0);
+  \coordinate (B) at (1.3180,0.9072);
+  \coordinate (C) at (1.3180,-0.9072);
+  \draw[line width=0.75pt] (O) circle (\RR);
+  \draw[line width=0.75pt] (A) circle (\rr);
+  \draw[line width=0.75pt] (D) -- (G);
+  \draw[line width=0.75pt] (B) -- (C);
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.040);
+  \filldraw[fill=white,line width=0.55pt] (A) circle (0.040);
+  \node[anchor=south east,inner sep=1pt] at (O) {$O$};
+  \node[anchor=south west,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (E) {$E$};
+  \node[anchor=north,inner sep=2pt] at (F) {$F$};
+  \node[anchor=south west,inner sep=1pt] at (G) {$G$};
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -15073,7 +15249,35 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/plane-geometry-2/fig-p0172-04.png}}
+\fitfig{%
+% fig-alt: 第11题：圆O；P在右；切线PA、PB；弦AB交OP于M；过M弦CD；连PC、PD；O小空心圆
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\rr{1.50}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (2.80,0);
+  \coordinate (A) at (0.8036,1.2666);
+  \coordinate (B) at (0.8036,-1.2666);
+  \coordinate (M) at (0.8036,0);
+  \coordinate (C) at (1.3362,0.6817);
+  \coordinate (D) at (-0.3382,-1.4614);
+  \draw[line width=0.75pt] (O) circle (\rr);
+  \draw[line width=0.75pt] (O) -- (P);
+  \draw[line width=0.75pt] (P) -- (A);
+  \draw[line width=0.75pt] (P) -- (B);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (P) -- (C);
+  \draw[line width=0.75pt] (P) -- (D);
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.040);
+  \node[anchor=east,inner sep=2pt] at (O) {$O$};
+  \node[anchor=west,inner sep=2pt] at (P) {$P$};
+  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south east,inner sep=1pt] at (M) {$M$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east,inner sep=1pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第11题)}
 \end{figure}
 
@@ -15099,7 +15303,36 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-2/fig-p0173-01.png}}
+\fitfig{%
+% fig-alt: 第13题：□ABCD；G在DB；直线AGE交BC于F、交DC延长于E；⊙O外接△FEC；GH切⊙O于H；O小空心圆
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.0000,0.0000);
+  \coordinate (B) at (3.6000,0.0000);
+  \coordinate (C) at (4.1500,2.1500);
+  \coordinate (D) at (0.5500,2.1500);
+  \coordinate (G) at (2.4410,0.8170);
+  \coordinate (E) at (6.4237,2.1500);
+  \coordinate (F) at (3.9371,1.3177);
+  \coordinate (O) at (5.2868,1.4158);
+  \coordinate (H) at (4.9172,0.1140);
+  \draw[line width=0.75pt] (O) circle (1.3533);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (D) -- (E);
+  \draw[line width=0.75pt] (D) -- (B);
+  \draw[line width=0.75pt] (A) -- (E);
+  \draw[line width=0.75pt] (G) -- (H);
+  \filldraw[fill=white,line width=0.55pt] (O) circle (0.040);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1pt] at (F) {$F$};
+  \node[anchor=north east,inner sep=1pt] at (G) {$G$};
+  \node[anchor=north west,inner sep=1pt] at (H) {$H$};
+  \node[anchor=north west,inner sep=1pt] at (O) {$O$};
+\end{tikzpicture}%
+}
 \caption{(第13题)}
 \end{figure}
 
