@@ -27786,8 +27786,48 @@ AB 线段的垂直平分线 MN 上。又自 AB 的端点 B 作 BD
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-78}]{assets/plane-geometry-1/fig-p0276-02.png}}
-\caption{图4-78}
+\fitfig{%
+% fig-alt: 图4·78 弦 AB=a；MN 垂直平分 AB；切线 BD 使 ∠DBA=α；BT⊥BD 交 MN 于圆心 O；实线上弧 ACB、虚线下弧；△ABC 于 C 标 α
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.550}
+  \def\alp{50}
+  \pgfmathsetmacro{\om}{\R*cos(\alp)}
+  \pgfmathsetmacro{\am}{\R*sin(\alp)}
+  \coordinate (M) at (0,0);
+  \coordinate (O) at (0,\om);
+  \coordinate (A) at (-\am,0);
+  \coordinate (B) at (\am,0);
+  \coordinate (N) at (0,{\om+\R+0.12});
+  \coordinate (C) at ($(O)+(70:\R)$);
+  \pgfmathsetmacro{\td}{sqrt(\om*\om+\am*\am)}
+  \coordinate (D) at ($(B)+({-\om/\td*1.35},{-\am/\td*1.35})$);
+  \coordinate (T) at ($(B)!1.52!(O)$);
+  \pgfmathsetmacro{\angA}{atan2(-\om,-\am)}
+  \pgfmathsetmacro{\angB}{atan2(-\om,\am)}
+  \draw[line width=0.85pt] ($(O)+(\angB:\R)$) arc[start angle=\angB, end angle=\angA+360, radius=\R];
+  \draw[line width=0.70pt, dashed] ($(O)+(\angA:\R)$) arc[start angle=\angA, end angle=\angB, radius=\R];
+  \draw[line width=0.80pt] (A) -- (B);
+  \draw[line width=0.80pt] (A) -- (C) -- (B);
+  \draw[line width=0.55pt, dashed] (0,-0.28) -- (N);
+  \draw[line width=0.55pt, dashed] (B) -- (T);
+  \draw[line width=0.80pt] (B) -- (D);
+  \draw[line width=0.50pt] let \p1=($(A)-(C)$), \p2=($(B)-(C)$) in
+    (C) ++({atan2(\y1,\x1)}:0.30) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.30];
+  \pgfmathsetmacro{\aBD}{atan2(-\am/\td,-\om/\td)}
+  \draw[line width=0.50pt] (B) ++(180:0.30) arc[start angle=180, end angle=\aBD, radius=0.30];
+  \node[anchor=south, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north east, inner sep=0.5pt] at ($(C)+(-0.05,-0.40)$) {$\alpha$};
+  \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (M) {$M$};
+  \node[anchor=east, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=south, inner sep=1pt] at (N) {$N$};
+  \node[anchor=east, inner sep=1.2pt] at (T) {$T$};
+  \node[anchor=north, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at ($(A)!0.5!(M)+(0,-0.08)$) {$a$};
+\end{tikzpicture}%
+}
+\caption{图4·78}
 \end{figure}
 
 \emph{图4·78}
@@ -27816,18 +27856,65 @@ BT 的交点 O 就是所要画的弧的圆心。
 定理和已知线段的两端点连线的夹角等于已知角的顶点的轨迹，是以已知线段为弦，并含有已知圆周角的两个弧。
 
 \textbf{［已知］} AB 是已知线段，弧 APB
-上的圆周角等于已知\(\angle1\)（图 4·79）。
+上的圆周角等于已知\(\angle1\)（图4·79）。
 
 \textbf{［求证］}
 点\(P\)的轨迹是以\(AB\)为弦并含有圆周角1的两个弧\(APB\)和\(AKB\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4-79}]{assets/plane-geometry-1/fig-p0277-01.png}}
-\caption{图 4-79}
+\fitfig{%
+% fig-alt: 图4·79 左为已知∠1；右以 AB 为弦、含圆周角1的两弧 APB 与 AKB；P 上标1；弧外 Q、弧内 Q' 及辅助虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \begin{scope}[shift={(-3.55,0.55)}]
+    \draw[line width=0.80pt] (0,0) -- (1.75,0);
+    \draw[line width=0.80pt] (0,0) -- (50:1.65);
+    \draw[line width=0.50pt] (0.40,0) arc[start angle=0, end angle=50, radius=0.40];
+    \node[anchor=west, inner sep=1pt] at (25:0.58) {$1$};
+  \end{scope}
+  \def\R{1.70}
+  \def\alp{50}
+  \pgfmathsetmacro{\om}{\R*cos(\alp)}
+  \pgfmathsetmacro{\am}{\R*sin(\alp)}
+  \coordinate (A) at (-\am,0);
+  \coordinate (B) at (\am,0);
+  \coordinate (Ou) at (0,{\om});
+  \coordinate (Ol) at (0,{-\om});
+  \pgfmathsetmacro{\angBu}{atan2(-\om,\am)}
+  \pgfmathsetmacro{\angAu}{atan2(-\om,-\am)}
+  \draw[line width=0.85pt] ($(Ou)+(\angBu:\R)$) arc[start angle=\angBu, end angle=\angAu+360, radius=\R];
+  \pgfmathsetmacro{\angBl}{atan2(\om,\am)}
+  \pgfmathsetmacro{\angAl}{atan2(\om,-\am)}
+  \draw[line width=0.85pt] ($(Ol)+(\angAl:\R)$) arc[start angle=\angAl, end angle=\angBl+360, radius=\R];
+  \draw[line width=0.80pt] (A) -- (B);
+  \coordinate (P) at ($(Ou)+(55:\R)$);
+  \coordinate (Pp) at ($(Ou)+(125:\R)$);
+  \draw[line width=0.80pt] (A) -- (P) -- (B);
+  \draw[line width=0.80pt] (A) -- (Pp) -- (B);
+  \coordinate (Q) at ($(A)!1.55!(Pp)$);
+  \coordinate (Qp) at ($(A)!0.50!(Pp)$);
+  \draw[line width=0.55pt, dashed] (Pp) -- (Q);
+  \draw[line width=0.55pt, dashed] (B) -- (Q);
+  \draw[line width=0.55pt, dashed] (B) -- (Qp);
+  \draw[line width=0.50pt] let \p1=($(A)-(P)$), \p2=($(B)-(P)$) in
+    (P) ++({atan2(\y1,\x1)}:0.30) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.30];
+  \node[anchor=north, inner sep=0.8pt] at ($(P)+(0.02,-0.36)$) {$1$};
+  \draw[line width=0.50pt] let \p1=($(A)-(Pp)$), \p2=($(B)-(Pp)$) in
+    (Pp) ++({atan2(\y1,\x1)}:0.26) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.26];
+  \coordinate (K) at ($(Ol)+(-90:\R)$);
+  \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1pt] at (P) {$P$};
+  \node[anchor=south east, inner sep=1pt] at (Pp) {$P'$};
+  \node[anchor=south, inner sep=1pt] at (Q) {$Q$};
+  \node[anchor=east, inner sep=1pt] at (Qp) {$Q'$};
+  \node[anchor=north, inner sep=1.5pt] at (K) {$K$};
+\end{tikzpicture}%
+}
+\caption{图4·79}
 \end{figure}
 
-\emph{图 4·79}
+\emph{图4·79}
 
 \textbf{［证］} （1）
 在含有\(\angle 1\)为圆周角的弧上任取一点\(P(A, B\)除外），连结\(AP\)和\(BP\)，则有\(\angle APB = \angle 1\)。
@@ -27842,7 +27929,7 @@ BT 的交点 O 就是所要画的弧的圆心。
 又因\(\angle AP'B\)是\(\triangle AP'Q\)的外角，可知\(\angle Q < \angle AP'B\)，即\(\angle Q < \angle 1\)。
 这样就证明了在弧\(APB\)外的任一点都是不符合条件的。
 
-同样，在弧\(APB\)和弧\(AKB\)之间任取一点\(Q''\)，也可证明\(\angle AQ'B\)大于\(\angle 1\)。
+同样，在弧\(APB\)和弧\(AKB\)之间任取一点\(Q'\)，也可证明\(\angle AQ'B\)大于\(\angle 1\)。
 就是在弧\(APB\)和\(AKB\)之间的任一点也都是不符合条件的。
 
 至此，已证明点\(P\)的轨迹是以\(AB\)为弦，且圆周角等于\(\angle 1\)的两个弧\(APB\)和\(AKB\)。
@@ -27853,28 +27940,79 @@ BT 的交点 O 就是所要画的弧的圆心。
 
 已知线段\(a, h_a\)和\(\angle A\)。
 
-求作一三角形，使它的一边等于\(a, a\)边上的高等于\(h_a\)，\(a\)边对角等于\(\angle A\)（图
-4·80）。
+求作一三角形，使它的一边等于\(a, a\)边上的高等于\(h_a\)，\(a\)边对角等于\(\angle A\)（图4·80）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第278页）}]{assets/plane-geometry-1/fig-p0278-01.png}}
-\caption{图示（原PDF第278页）}
+\fitfig{%
+% fig-alt: 已知线段 a、h_a 与 ∠A（两端短竖线；锐角弧标记）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.80pt] (0,2.10) -- (2.40,2.10);
+  \draw[line width=0.80pt] (0,2.02) -- (0,2.18);
+  \draw[line width=0.80pt] (2.40,2.02) -- (2.40,2.18);
+  \node[anchor=south, inner sep=1.5pt] at (1.20,2.10) {$a$};
+  \draw[line width=0.80pt] (0,1.45) -- (1.55,1.45);
+  \draw[line width=0.80pt] (0,1.37) -- (0,1.53);
+  \draw[line width=0.80pt] (1.55,1.37) -- (1.55,1.53);
+  \node[anchor=south, inner sep=1.5pt] at (0.78,1.45) {$h_a$};
+  \draw[line width=0.80pt] (0,0) -- (2.10,0);
+  \draw[line width=0.80pt] (0,0) -- (58:1.90);
+  \draw[line width=0.50pt] (0.42,0) arc[start angle=0, end angle=58, radius=0.42];
+  \node[anchor=east, inner sep=1.5pt] at (0,0) {$A$};
+\end{tikzpicture}%
+}
+\caption{已知线段 $a$、$h_a$ 和 $\angle A$}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-80}]{assets/plane-geometry-1/fig-p0278-02.png}}
-\caption{图4-80}
+\fitfig{%
+% fig-alt: 图4·80 以 BC=a 为弦的含 ∠A 圆弧；距 BC 为 h_a 的虚线平行线交弧于 A、A'；PQ=h_a，AD 为高
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \def\alp{50}
+  \pgfmathsetmacro{\om}{\R*cos(\alp)}
+  \pgfmathsetmacro{\am}{\R*sin(\alp)}
+  \coordinate (B) at (-\am,0);
+  \coordinate (C) at (\am,0);
+  \coordinate (Ou) at (0,{\om});
+  \pgfmathsetmacro{\ha}{1.35}
+  \pgfmathsetmacro{\angB}{atan2(-\om,\am)}
+  \pgfmathsetmacro{\angC}{atan2(-\om,-\am)}
+  \draw[line width=0.85pt] ($(Ou)+(\angB:\R)$) arc[start angle=\angB, end angle=\angC+360, radius=\R];
+  \draw[line width=0.80pt] (B) -- (C);
+  \pgfmathsetmacro{\yy}{\ha-\om}
+  \pgfmathsetmacro{\xx}{sqrt(\R*\R-\yy*\yy)}
+  \coordinate (Ap) at (-\xx,\ha);
+  \coordinate (A) at (\xx,\ha);
+  \draw[line width=0.55pt, dashed, {Latex[length=2.2pt]}-{Latex[length=2.2pt]}] ({-\am-0.45},\ha) -- ({\am+0.45},\ha);
+  \coordinate (Q) at (-0.40,0);
+  \coordinate (P) at (-0.40,\ha);
+  \coordinate (D) at (\xx,0);
+  \draw[line width=0.80pt] (B) -- (A) -- (C);
+  \draw[line width=0.80pt] (B) -- (Ap) -- (C);
+  \draw[line width=0.75pt] (P) -- (Q);
+  \draw[line width=0.75pt] (A) -- (D);
+  \node[anchor=south, inner sep=1pt] at (Ap) {$A'$};
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=south east, inner sep=1pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.2pt] at (Q) {$Q$};
+  \node[anchor=north, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.2pt] at ($(P)!0.5!(Q)$) {$h_a$};
+  \node[anchor=north, inner sep=1.2pt] at (0,-0.02) {$a$};
+\end{tikzpicture}%
+}
+\caption{图4·80}
 \end{figure}
 
-\emph{图 4·80}
+\emph{图4·80}
 
 \textbf{［作法］} （1）
-画\(BC = a\)。以\(BC\)为弦，作出含圆周角等于\(\angle A\)的圆弧（如图
-4·80）。
+画\(BC = a\)。以\(BC\)为弦，作出含圆周角等于\(\angle A\)的圆弧（如图4·80）。
 
-（2） 作\(BC\)的垂线\(PQ\)，并使\(PQ = h_{\alpha}\)。
+（2） 作\(BC\)的垂线\(PQ\)，并使\(PQ = h_a\)。
 过点\(P\)作\(BC\)的平行线和弧相交于\(A\)和\(A'\)。
 
 （3）
@@ -27894,26 +28032,79 @@ BT 的交点 O 就是所要画的弧的圆心。
 已知线段 a，\(h_{b}\)和\(\angle A\)。
 
 \textbf{［求作］}
-\(\triangle ABC\)，使\(BC = a\)，\(\angle BAC = \angle A\)，\(AC\)上的高等于\(h_b\)（图
-4·81）。
+\(\triangle ABC\)，使\(BC = a\)，\(\angle BAC = \angle A\)，\(AC\)上的高等于\(h_b\)（图4·81）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第279页）}]{assets/plane-geometry-1/fig-p0279-01.png}}
-\caption{图示（原PDF第279页）}
+\fitfig{%
+% fig-alt: 已知线段 a、h_b 与 ∠A（两端短竖线；锐角双弧标记）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.80pt] (0,2.10) -- (2.40,2.10);
+  \draw[line width=0.80pt] (0,2.02) -- (0,2.18);
+  \draw[line width=0.80pt] (2.40,2.02) -- (2.40,2.18);
+  \node[anchor=south, inner sep=1.5pt] at (1.20,2.10) {$a$};
+  \draw[line width=0.80pt] (0,1.45) -- (1.45,1.45);
+  \draw[line width=0.80pt] (0,1.37) -- (0,1.53);
+  \draw[line width=0.80pt] (1.45,1.37) -- (1.45,1.53);
+  \node[anchor=south, inner sep=1.5pt] at (0.72,1.45) {$h_b$};
+  \draw[line width=0.80pt] (0,0) -- (2.10,0);
+  \draw[line width=0.80pt] (0,0) -- (62:1.90);
+  \draw[line width=0.50pt] (0.42,0) arc[start angle=0, end angle=62, radius=0.42];
+  \draw[line width=0.45pt] (0.52,0) arc[start angle=0, end angle=62, radius=0.52];
+  \node[anchor=east, inner sep=1.5pt] at (0,0) {$A$};
+\end{tikzpicture}%
+}
+\caption{已知线段 $a$、$h_b$ 和 $\angle A$}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-81}]{assets/plane-geometry-1/fig-p0279-02.png}}
-\caption{图4-81}
+\fitfig{%
+% fig-alt: 图4·81 以 BC=a 为弦的含 ∠A 大弧；以 BC 为直径的半圆交 BE=h_b 于 E（∠BEC=d）；延长 CE 交大弧于 A
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.30}
+  \def\alp{48}
+  \pgfmathsetmacro{\om}{\R*cos(\alp)}
+  \pgfmathsetmacro{\am}{\R*sin(\alp)}
+  \coordinate (B) at (-\am,0);
+  \coordinate (C) at (\am,0);
+  \coordinate (Ou) at (0,{\om});
+  \pgfmathsetmacro{\angB}{atan2(-\om,\am)}
+  \pgfmathsetmacro{\angC}{atan2(-\om,-\am)}
+  \draw[line width=0.85pt] ($(Ou)+(\angB:\R)$) arc[start angle=\angB, end angle=\angC+360, radius=\R];
+  \draw[line width=0.80pt] (B) -- (C);
+  \pgfmathsetmacro{\rd}{\am}
+  \draw[line width=0.75pt] (B) arc[start angle=180, end angle=0, radius=\rd];
+  \pgfmathsetmacro{\hb}{1.05}
+  \pgfmathsetmacro{\ex}{\hb*\hb/(2*\am)-\am}
+  \pgfmathsetmacro{\ey}{sqrt(\am*\am-\ex*\ex)}
+  \coordinate (E) at (\ex,\ey);
+  \coordinate (A) at ($(Ou)+(130:\R)$);
+  \draw[line width=0.80pt] (A) -- (C);
+  \draw[line width=0.80pt] (A) -- (B);
+  \draw[line width=0.80pt] (B) -- (E);
+  \draw[line width=0.50pt] let \p1=($(B)-(A)$), \p2=($(C)-(A)$) in
+    (A) ++({atan2(\y1,\x1)}:0.28) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.28];
+  \draw[line width=0.45pt] let \p1=($(B)-(A)$), \p2=($(C)-(A)$) in
+    (A) ++({atan2(\y1,\x1)}:0.38) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.38];
+  \draw[line width=0.50pt] let \p1=($(B)-(E)$), \p2=($(C)-(E)$) in
+    (E) ++({atan2(\y1,\x1)}:0.22) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.22];
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1pt] at (E) {$E$};
+  \node[anchor=west, inner sep=1pt] at ($(E)+(0.32,0.02)$) {$d$};
+  \node[anchor=south east, inner sep=1pt] at ($(B)!0.55!(E)$) {$h_b$};
+  \node[anchor=north, inner sep=1.2pt] at (0,-0.02) {$a$};
+\end{tikzpicture}%
+}
+\caption{图4·81}
 \end{figure}
 
-\emph{图 4·81}
+\emph{图4·81}
 
 \textbf{［作法］} （1）
-画\(BC = a\)，以\(BC\)为弦画含圆周角等于\(\angle A\)的圆弧 （如图
-4·81）。
+画\(BC = a\)，以\(BC\)为弦画含圆周角等于\(\angle A\)的圆弧（如图4·81）。
 
 （2） 已知\(BE \perp AC\)，且\(BE = h_b\)。
 因此以\(BC\)为直径画半圆，再以\(B\)为圆心，\(h_b\)之长为半径画弧，和半圆相交于\(E\)。
@@ -27933,15 +28124,66 @@ AB 是已知定圆内的定弦，P、Q 是 AB 同侧的圆上两定点，求在 
 的另一侧圆上找一点 S，它与点 P、Q 的连线截 AB 于 E、F，使 EF 等于定长
 l。
 
-设如图 4·82. 定弦\(AB\)，\(P, Q\)是圆上在\(AB\)同侧的两定点。
+设如图4·82。 定弦\(AB\)，\(P, Q\)是圆上在\(AB\)同侧的两定点。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-82}]{assets/plane-geometry-1/fig-p0279-03.png}}
-\caption{图4-82}
+\fitfig{%
+% fig-alt: 图4·82 定圆弦 AB；同侧定点 P、Q；另侧 S、S' 使 SP、SQ 截 AB 得 EF=l；辅助 QN∥AB、弧 PEN
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.85}
+  \coordinate (O) at (0,0);
+  \draw[line width=0.85pt] (O) circle [radius=\R];
+  \pgfmathsetmacro{\yh}{0.20}
+  \pgfmathsetmacro{\xh}{sqrt(\R*\R-\yh*\yh)}
+  \coordinate (A) at (-\xh,\yh);
+  \coordinate (B) at (\xh,\yh);
+  \draw[line width=0.80pt] (A) -- (B);
+  \coordinate (P) at (230:\R);
+  \coordinate (Q) at (320:\R);
+  \coordinate (S) at (55:\R);
+  \coordinate (Sp) at (125:\R);
+  % intersections with AB (y=yh)
+  \coordinate (E) at (intersection of S--P and A--B);
+  \coordinate (F) at (intersection of S--Q and A--B);
+  \coordinate (Ep) at (intersection of Sp--P and A--B);
+  \coordinate (Fp) at (intersection of Sp--Q and A--B);
+  \draw[line width=0.75pt] (S) -- (P);
+  \draw[line width=0.75pt] (S) -- (Q);
+  \draw[line width=0.60pt] (Sp) -- (P);
+  \draw[line width=0.60pt] (Sp) -- (Q);
+  % QN parallel AB length l
+  \pgfmathsetmacro{\ell}{0.85}
+  \coordinate (N) at ($(Q)+(-\ell,0)$);
+  \draw[line width=0.55pt, dashed] (Q) -- (N);
+  % arc through P,E,N (schematic)
+  \draw[line width=0.70pt] (P) .. controls ($(P)!0.4!(E)+(0.15,0.25)$) and ($(E)!0.4!(N)+(0.10,-0.15)$) .. (N);
+  \draw[line width=0.50pt] let \p1=($(P)-(S)$), \p2=($(Q)-(S)$) in
+    (S) ++({atan2(\y1,\x1)}:0.28) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.28];
+  \draw[line width=0.50pt] let \p1=($(P)-(Sp)$), \p2=($(Q)-(Sp)$) in
+    (Sp) ++({atan2(\y1,\x1)}:0.26) arc[start angle={atan2(\y1,\x1)}, end angle={atan2(\y2,\x2)}, radius=0.26];
+  % given l
+  \draw[line width=0.75pt] (-2.55,1.55) -- (-2.55+\ell,1.55);
+  \draw[line width=0.75pt] (-2.55,1.48) -- (-2.55,1.62);
+  \draw[line width=0.75pt] (-2.55+\ell,1.48) -- (-2.55+\ell,1.62);
+  \node[anchor=south, inner sep=1pt] at (-2.55+\ell/2,1.55) {$l$};
+  \node[anchor=east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1pt] at (Q) {$Q$};
+  \node[anchor=south, inner sep=1pt] at (S) {$S$};
+  \node[anchor=south, inner sep=1pt] at (Sp) {$S'$};
+  \node[anchor=south, inner sep=0.8pt] at (E) {$E$};
+  \node[anchor=south, inner sep=0.8pt] at (F) {$F$};
+  \node[anchor=south, inner sep=0.6pt] at (Ep) {$E'$};
+  \node[anchor=south, inner sep=0.6pt] at (Fp) {$F'$};
+  \node[anchor=north, inner sep=1pt] at (N) {$N$};
+\end{tikzpicture}%
+}
+\caption{图4·82}
 \end{figure}
 
-\emph{图 4·82}
+\emph{图4·82}
 
 求在\(AB\)的另一侧圆上，找一点\(S\)，并使\(SP, SQ\)截 AB 于 E、F，使 EF
 等于定长 l。
@@ -27982,13 +28224,21 @@ QN=l，可知 N 点的位置一定，连结 PN，EN；则有 EN 平行 SQ，∴�
   在已知直线上（位置一定的直线）求一点，使它与已知线段（位置和长短都一定）的端点连线所成的角等于已知角。
 \end{enumerate}
 
-［设如图，已知直线 l 和线段 AB，又已知角\(\angle a\)，在直线 l
-上求作一点，使这点对 AB 的视角等于\(\angle a\)。
+［设如图，已知直线 l 和线段 AB，又已知角\(\angle \alpha\)，在直线 l
+上求作一点，使这点对 AB 的视角等于\(\angle \alpha\)。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第280页）}]{assets/plane-geometry-1/fig-p0280-02.png}}
-\caption{图示（原PDF第280页）}
+\fitfig{%
+% fig-alt: 已知角 α（锐角，弧标记）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.80pt] (0,0) -- (2.20,0);
+  \draw[line width=0.80pt] (0,0) -- (58:2.00);
+  \draw[line width=0.50pt] (0.45,0) arc[start angle=0, end angle=58, radius=0.45];
+  \node[anchor=west, inner sep=1pt] at (29:0.70) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{已知角 $\alpha$}
 \end{figure}
 
 \begin{figure}
