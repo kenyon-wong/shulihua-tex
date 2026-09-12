@@ -23986,8 +23986,35 @@ y - y_{1} = k (x - x_{1}), \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.8}]{assets/analytic-geometry/fig-p0330-01.png}}
-\caption{图6.8}
+\fitfig{%
+% fig-alt: 图6·8 直线倾角 α，定点 P1(x1,y1) 与动点 P(x,y)，有向距离 |t|，水平/竖直虚线直角三角形
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \def\ang{32}
+  \coordinate (O) at (0,0);
+  \coordinate (P1) at (1.6,1.55);
+  \coordinate (P) at (3.55,2.77);
+  % line extension
+  \draw[line width=0.7pt,-latex] (-0.35,0) -- (5.1,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-0.35) -- (0,4.0) node[anchor=south,inner sep=2pt] {$y$};
+  % full line
+  \draw[line width=0.75pt] (-0.55,0.20) -- (4.55,3.40);
+  % dashed right triangle
+  \coordinate (R) at (3.55,1.55);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.45pt] (P1) -- (R) -- (P);
+  % angle α at P1 along horizontal
+  \draw[line width=0.4pt] (P1) ++(0.62,0) arc[start angle=0,end angle=\ang,radius=0.62];
+  \node[anchor=west,inner sep=1pt,font=\small] at (2.35,1.72) {$\alpha$};
+  % |t| along segment
+  \node[anchor=south,inner sep=1pt,font=\small,rotate=\ang] at (2.55,2.35) {$|t|$};
+  \fill (O) circle (1.15pt);
+  \fill (P1) circle (1.2pt);
+  \fill (P) circle (1.2pt);
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \node[anchor=north west,inner sep=1.5pt] at (P1) {$P_1(x_1,y_1)$};
+  \node[anchor=north west,inner sep=1.5pt] at (P) {$P(x,y)$};
+\end{tikzpicture}%
+}
+\caption{图6·8}
 \end{figure}
 
 \emph{图6·8}
@@ -24081,11 +24108,43 @@ y - y_{1} = k (x - x_{1}), \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6·3(1)}]{assets/analytic-geometry/fig-p0332-01.png}}
-\caption{图6·3(1)}
+\fitfig{%
+% fig-alt: 图6·9(1) 直线 l 过 P(-2,3) 倾角 3π/4，与 l1:3x-y-2=0、l2:x-2y-4=0 交于 A、B
+\begin{tikzpicture}[x=0.42cm,y=0.42cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,-latex] (-4.3,0) -- (5.2,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-3.2) -- (0,6.3) node[anchor=south,inner sep=2pt] {$y$};
+  \foreach \x in {-3,-2,-1,1,2,3,4} {
+    \draw[line width=0.35pt] (\x,0.12) -- (\x,-0.12);
+  }
+  \foreach \y in {-2,-1,1,2,3,4,5} {
+    \draw[line width=0.35pt] (0.12,\y) -- (-0.12,\y);
+  }
+  % l: y = -x + 1
+  \draw[line width=0.7pt] (-3.2,4.2) -- (3.8,-2.8);
+  \node[anchor=south east,inner sep=1pt,font=\small] at (-2.9,3.9) {$l$};
+  % l1: y = 3x - 2
+  \draw[line width=0.7pt] (-0.2,-2.6) -- (2.65,5.95);
+  \node[anchor=south west,inner sep=1pt,font=\small] at (2.3,5.3) {$l_1$};
+  % l2: y = 0.5x - 2
+  \draw[line width=0.7pt] (-1.8,-2.9) -- (5.0,0.5);
+  \node[anchor=west,inner sep=1pt,font=\small] at (4.55,0.35) {$l_2$};
+  \coordinate (P) at (-2,3);
+  \coordinate (A) at (0.75,0.25);
+  \coordinate (B) at (2,-1);
+  \fill (0,0) circle (1.1pt);
+  \fill (P) circle (1.2pt);
+  \fill (A) circle (1.2pt);
+  \fill (B) circle (1.2pt);
+  \node[anchor=north east,inner sep=1pt] at (-0.1,-0.1) {$O$};
+  \node[anchor=east,inner sep=2pt] at (P) {$P(-2,3)$};
+  \node[anchor=south,inner sep=2pt] at (0.75,0.55) {$A$};
+  \node[anchor=north east,inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
+\caption{图6·9（1）}
 \end{figure}
 
-\emph{图6·3（1）}
+\emph{图6·9（1）}
 
 \[
 \left\{ \begin{array}{l} x = - 2 + t \cos \frac {3 \pi}{4}, \\ y = 3 + t \sin \frac {3 \pi}{4}. \end{array} \right.
@@ -24168,8 +24227,39 @@ t_{1} \cdot t_{2} = 9, t_{1} + t_{2} = - 5 \sqrt {2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.9(2)}]{assets/analytic-geometry/fig-p0334-01.png}}
-\caption{图6.9(2)}
+\fitfig{%
+% fig-alt: 图6·9(2) 圆 x^2+y^2=4 与直线 l（过 P(-2,3)，斜率 -1）交于 N、M，线上箭头示参数方向
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,-latex] (-3.3,0) -- (3.5,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-2.7) -- (0,3.7) node[anchor=south,inner sep=2pt] {$y$};
+  \draw[line width=0.35pt] (1,0.12) -- (1,-0.12);
+  \draw[line width=0.35pt] (2,0.12) -- (2,-0.12);
+  \node[anchor=north,inner sep=1pt,font=\footnotesize] at (1,-0.12) {$1$};
+  \node[anchor=north,inner sep=1pt,font=\footnotesize] at (2,-0.12) {$2$};
+  \draw[line width=0.75pt] (0,0) circle (2);
+  % line y = -x + 1 from ~(-2.6,3.6) to ~(2.8,-1.8)
+  \draw[line width=0.7pt] (-2.7,3.7) -- (2.9,-1.9);
+  % mid arrow on line (direction down-right), between P and N
+  \draw[line width=0.65pt,-latex] (-1.55,2.55) -- (-1.15,2.15);
+  % intersections: x=(1±sqrt(7))/2
+  \pgfmathsetmacro{\xa}{(1-sqrt(7))/2}
+  \pgfmathsetmacro{\ya}{(1+sqrt(7))/2}
+  \pgfmathsetmacro{\xb}{(1+sqrt(7))/2}
+  \pgfmathsetmacro{\yb}{(1-sqrt(7))/2}
+  \coordinate (P) at (-2,3);
+  \coordinate (N) at (\xa,\ya);
+  \coordinate (M) at (\xb,\yb);
+  \fill (0,0) circle (1.1pt);
+  \fill (P) circle (1.2pt);
+  \fill (N) circle (1.2pt);
+  \fill (M) circle (1.2pt);
+  \node[anchor=north east,inner sep=1pt] at (-0.1,-0.1) {$O$};
+  \node[anchor=east,inner sep=2pt] at (P) {$P(-2,3)$};
+  \node[anchor=south east,inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=north east,inner sep=1.5pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{图6·9（2）}
 \end{figure}
 
 \emph{图6·9（2）}
@@ -24193,8 +24283,39 @@ k^{\prime} = \operatorname{tg} \alpha - \frac {4}{3},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.10}]{assets/analytic-geometry/fig-p0334-02.png}}
-\caption{图6.10}
+\fitfig{%
+% fig-alt: 图6·10 直线 l:3x+4y-70=0 与法线 l'，两圆半径 10 切于 A(10,10)，圆心 C(16,18)、C'(4,2)
+\begin{tikzpicture}[x=0.145cm,y=0.145cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,-latex] (-3,0) -- (29,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-6) -- (0,30) node[anchor=south,inner sep=2pt] {$y$};
+  \foreach \x in {5,10} {
+    \draw[line width=0.35pt] (\x,0.55) -- (\x,-0.55);
+    \node[anchor=north,inner sep=1pt,font=\footnotesize] at (\x,-0.55) {$\x$};
+  }
+  \draw[line width=0.35pt] (0.55,5) -- (-0.55,5);
+  \node[anchor=east,inner sep=1pt,font=\footnotesize] at (-0.55,5) {$5$};
+  % l: 3x+4y=70
+  \draw[line width=0.7pt] (-1,{73/4}) -- (24,{-2/4});
+  \node[anchor=south,inner sep=1.5pt,font=\small] at (5,15.2) {$l\!:\!3x+4y-70=0$};
+  % l' slope 4/3 through A
+  \draw[line width=0.65pt] (-0.5,{10+4/3*(-0.5-10)}) -- (23,{10+4/3*(23-10)});
+  \node[anchor=west,inner sep=2pt,font=\small] at (21.5,25.2) {$l'$};
+  \coordinate (A) at (10,10);
+  \coordinate (C) at (16,18);
+  \coordinate (Cp) at (4,2);
+  \draw[line width=0.75pt] (C) circle (10);
+  \draw[line width=0.75pt] (Cp) circle (10);
+  \fill (0,0) circle (1.3pt);
+  \fill (A) circle (1.5pt);
+  \fill (C) circle (1.5pt);
+  \fill (Cp) circle (1.5pt);
+  \node[anchor=north east,inner sep=1pt] at (-0.35,-0.35) {$O$};
+  \node[anchor=west,inner sep=2.5pt] at (10.6,10.3) {$A(10,10)$};
+  \node[anchor=south west,inner sep=2pt] at (16.3,18.3) {$C$};
+  \node[anchor=north east,inner sep=2pt] at (3.7,1.7) {$C'$};
+\end{tikzpicture}%
+}
+\caption{图6·10}
 \end{figure}
 
 \emph{图6·10}
@@ -24248,11 +24369,37 @@ k^{\prime} = \operatorname{tg} \alpha - \frac {4}{3},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-11}]{assets/analytic-geometry/fig-p0335-01.png}}
-\caption{图8-11}
+\fitfig{%
+% fig-alt: 图6·11 抛物线 y^2=2px，焦点 F(p/2,0)，焦点弦 AB 过 F
+\begin{tikzpicture}[x=0.95cm,y=0.95cm,line cap=round,line join=round,>=latex]
+  % take p=2 so F=(1,0), y^2=4x
+  \draw[line width=0.7pt,-latex] (-0.4,0) -- (4.0,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-2.7) -- (0,2.7) node[anchor=south,inner sep=2pt] {$y$};
+  \draw[line width=0.75pt] plot[domain=-2.35:2.35,samples=60] ({\x*\x/4},\x);
+  \coordinate (F) at (1,0);
+  % chord with slope ~0.7 through F; intersections with y^2=4x
+  % line: y = m(x-1), m=0.75 → (0.75(x-1))^2 = 4x
+  % pick A≈(2.25,1.5), B≈(0.25,-0.75) roughly — better solve
+  % parametric t through F: use points on parabola with focal chord
+  % For y^2=4x, points (t^2,2t); focal chord when t1*t2=-1
+  % take t1=1.2, t2=-1/1.2≈-0.833 → A=(1.44,2.4), B=(0.694,-1.667)
+  \coordinate (A) at (1.44,2.4);
+  \coordinate (B) at (0.694,-1.667);
+  \draw[line width=0.7pt] (A) -- (B);
+  \fill (0,0) circle (1.15pt);
+  \fill (F) circle (1.2pt);
+  \fill (A) circle (1.2pt);
+  \fill (B) circle (1.2pt);
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \node[anchor=north west,inner sep=1.5pt] at (1.08,-0.05) {$F(\frac{p}{2},0)$};
+  \node[anchor=east,inner sep=2pt] at (A) {$A$};
+  \node[anchor=east,inner sep=2pt] at (B) {$B$};
+\end{tikzpicture}%
+}
+\caption{图6·11}
 \end{figure}
 
-\emph{图8·11}
+\emph{图6·11}
 
 就是 \((\sin^2\alpha)t^2 -(2p\cos \alpha)t - p^2 = 0.\) 方程的两根
 \(|t_1|\) 和 \(|t_2|\) 对应于两条焦点半径 \(FA\) 和 \(FB\) 的长，所以
@@ -24329,8 +24476,43 @@ CQ = DM = x - x_{1},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6·12}]{assets/analytic-geometry/fig-p0336-01.png}}
-\caption{图 6·12}
+\fitfig{%
+% fig-alt: 图6·12 圆心 C、半径 CP，圆心角 θ；虚线 CD、CQ、PM，点 P(x,y)、Q、M、D
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \def\h{2.35}
+  \def\k{2.55}
+  \def\r{1.55}
+  \def\th{42}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at (\h,\k);
+  \coordinate (D) at (\h,0);
+  \coordinate (P) at ({\h+\r*cos(\th)},{\k+\r*sin(\th)});
+  \coordinate (Q) at ({\h+\r*cos(\th)},\k);
+  \coordinate (M) at ({\h+\r*cos(\th)},0);
+  \draw[line width=0.7pt,-latex] (-0.35,0) -- ({\h+\r+1.35},0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-0.35) -- (0,{\k+\r+0.95}) node[anchor=south,inner sep=2pt] {$y$};
+  \draw[line width=0.75pt] (C) circle (\r);
+  \draw[line width=0.7pt] (C) -- (P);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.45pt] (C) -- (D);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.45pt] (C) -- (Q);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.45pt] (P) -- (M);
+  \draw[line width=0.4pt] (C) ++(0.55,0) arc[start angle=0,end angle=\th,radius=0.55];
+  \node[anchor=west,inner sep=1pt,font=\small] at ({\h+0.62},{\k+0.22}) {$\theta$};
+  \fill (O) circle (1.15pt);
+  \fill (C) circle (1.2pt);
+  \fill (P) circle (1.2pt);
+  \fill (Q) circle (1.0pt);
+  \fill (D) circle (1.0pt);
+  \fill (M) circle (1.0pt);
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \node[anchor=east,inner sep=2pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1.5pt] at (P) {$P(x,y)$};
+  \node[anchor=west,inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=north,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{图6·12}
 \end{figure}
 
 \emph{图6·12}
@@ -24403,8 +24585,41 @@ QP = MP - MQ = y - y_{1},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6-13}]{assets/analytic-geometry/fig-p0337-01.png}}
-\caption{图6-13}
+\fitfig{%
+% fig-alt: 图6·13 圆 (x-2)^2+(y-1)^2=25，直径端点 P(6,4)、Q(-2,-2)，直线 4x+3y+19=0
+\begin{tikzpicture}[x=0.32cm,y=0.32cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,-latex] (-7.5,0) -- (10.5,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-8.2) -- (0,8.0) node[anchor=south,inner sep=2pt] {$y$};
+  \foreach \x in {-4,-2,2,4,6,8} {
+    \draw[line width=0.3pt] (\x,0.25) -- (\x,-0.25);
+  }
+  \foreach \y in {-6,-4,-2,2,4,6} {
+    \draw[line width=0.3pt] (0.25,\y) -- (-0.25,\y);
+  }
+  \coordinate (Ctr) at (2,1);
+  \coordinate (P) at (6,4);
+  \coordinate (Q) at (-2,-2);
+  \draw[line width=0.75pt] (Ctr) circle (5);
+  % diameter line extended toward external line
+  % line PQ: direction (8,6)=4:3, extend past Q to meet 4x+3y+19=0
+  % parametric from Ctr: (2,1)+t(4/5,3/5); at P t=5, at Q t=-5
+  % meet 4x+3y+19=0: 4(2+4t/5)+3(1+3t/5)+19=0 → 8+16t/5+3+9t/5+19=0 → 30+5t=0 → t=-6
+  \coordinate (Hit) at ({2-6*4/5},{1-6*3/5}); % (-2.8,-2.6)
+  \draw[line width=0.7pt] (P) -- (Hit);
+  % external line 4x+3y+19=0 → y=-(4x+19)/3
+  \draw[line width=0.7pt] (-6.2,{-(4*(-6.2)+19)/3}) -- (-0.3,{-(4*(-0.3)+19)/3});
+  \node[anchor=north west,inner sep=1pt,font=\small,rotate=-53] at (-5.6,-1.2) {$4x+3y+19=0$};
+  \fill (0,0) circle (1.2pt);
+  \fill (Ctr) circle (1.3pt);
+  \fill (P) circle (1.3pt);
+  \fill (Q) circle (1.3pt);
+  \node[anchor=north east,inner sep=1pt] at (-0.15,-0.15) {$O$};
+  \node[anchor=north west,inner sep=1.5pt] at (2.15,0.85) {$(2,1)$};
+  \node[anchor=south west,inner sep=1.5pt] at (P) {$P(6,4)$};
+  \node[anchor=north west,inner sep=1.5pt] at (Q) {$Q(-2,-2)$};
+\end{tikzpicture}%
+}
+\caption{图6·13}
 \end{figure}
 
 \emph{图6·13}
@@ -24471,8 +24686,49 @@ y = b \sin \phi.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.14}]{assets/analytic-geometry/fig-p0339-01.png}}
-\caption{图6.14}
+\fitfig{%
+% fig-alt: 图6·14 椭圆与辅助圆半径 a、b，离心角 φ，射线交大圆于 N、小圆于 M，P(x,y)= (a cosφ, b sinφ)，Q 为垂足
+\begin{tikzpicture}[x=0.78cm,y=0.78cm,line cap=round,line join=round,>=latex]
+  \def\a{3.2}
+  \def\b{2.1}
+  \def\ph{48}
+  \coordinate (O) at (0,0);
+  \coordinate (N) at ({\a*cos(\ph)},{\a*sin(\ph)});
+  \coordinate (M) at ({\b*cos(\ph)},{\b*sin(\ph)});
+  \coordinate (P) at ({\a*cos(\ph)},{\b*sin(\ph)});
+  \coordinate (Q) at ({\a*cos(\ph)},0);
+  \draw[line width=0.7pt,-latex] ({-\a-0.45},0) -- ({\a+0.7},0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,{-\a-0.35}) -- (0,{\a+0.55}) node[anchor=south,inner sep=2pt] {$y$};
+  \draw[line width=0.7pt] (0,0) circle (\a);
+  \draw[line width=0.7pt] (0,0) circle (\b);
+  \draw[line width=0.75pt] (0,0) ellipse ({\a} and {\b});
+  % ray
+  \draw[line width=0.65pt] (O) -- ({\a*1.08*cos(\ph)},{\a*1.08*sin(\ph)});
+  % dashed projections
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.45pt] (N) -- (Q);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.45pt] (M) -- (P);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.4pt] (M) -- ({\b*cos(\ph)},0);
+  % angle φ
+  \draw[line width=0.4pt] (0.7,0) arc[start angle=0,end angle=\ph,radius=0.7];
+  \node[anchor=west,inner sep=1pt,font=\small] at (0.85,0.28) {$\phi$};
+  % radius arrows in Q2
+  \draw[line width=0.5pt,-latex] (0,0) -- ({-\a*0.65},{\a*0.76});
+  \node[anchor=south east,inner sep=1pt,font=\small] at ({-\a*0.38},{\a*0.62}) {$a$};
+  \draw[line width=0.5pt,-latex] (0,0) -- ({-\b*0.85},{\b*0.527});
+  \node[anchor=east,inner sep=1.5pt,font=\small] at ({-\b*0.55},{\b*0.28}) {$b$};
+  \fill (O) circle (1.15pt);
+  \fill (N) circle (1.15pt);
+  \fill (M) circle (1.15pt);
+  \fill (P) circle (1.2pt);
+  \fill (Q) circle (1.0pt);
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \node[anchor=south west,inner sep=1pt] at (N) {$N$};
+  \node[anchor=east,inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west,inner sep=2pt] at (P) {$P(x,y)$};
+  \node[anchor=north,inner sep=1.5pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+\caption{图6·14}
 \end{figure}
 
 \emph{图6·14}
