@@ -8195,8 +8195,43 @@ E (\pi, \sqrt{2}); F (\sqrt{3}, - 1); G (\sqrt{2}, 0); E (0, \pi).
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第128页）}]{assets/algebra-3/fig-p0128-01.png}}
-\caption{图示（原PDF第128页）}
+% fig-alt: 实线坐标格-3至3含半分线，y上箭头标y、x右箭头标x，原点O；实心点A(2.5,2.5)、B(0,1.5)、C(-2,2)、D(-3,0)、E(-1.3,-1.0)、F(0,-2.5)、G(1.5,-1.5)
+\fitfig{%
+\begin{tikzpicture}[x=0.70cm,y=0.70cm,line cap=round,line join=round]
+  \draw[line width=0.7pt] (-3,-3) rectangle (3,3);
+  \foreach \s in {-2.5,-2,-1.5,-1,-0.5,0.5,1,1.5,2,2.5}{
+    \draw[line width=0.4pt] (\s,-3) -- (\s,3);
+    \draw[line width=0.4pt] (-3,\s) -- (3,\s);
+  }
+  \draw[line width=0.85pt] (-3.55,0) -- (3.35,0);
+  \draw[line width=0.95pt,->] (3.25,0) -- (3.95,0);
+  \draw[line width=0.85pt] (0,-3.45) -- (0,3.35);
+  \draw[line width=0.95pt,->] (0,3.25) -- (0,3.95);
+  \node[anchor=west] at (4.00,0) {$x$};
+  \node[anchor=south] at (0,4.00) {$y$};
+  \node[anchor=north west] at (0.12,-0.12) {$O$};
+  \foreach \x in {-3,-2,-1,1,2,3}{
+    \node[anchor=south] at (\x,0.22) {$\x$};
+  }
+  \foreach \y in {1,2,3,-1,-2,-3}{
+    \node[anchor=east] at (-0.38,\y) {$\y$};
+  }
+  \fill (2.5,2.5) circle[radius=1.4pt];
+  \node[anchor=west] at (2.62,2.55) {$A$};
+  \fill (0,1.5) circle[radius=1.4pt];
+  \node[anchor=west] at (0.14,1.55) {$B$};
+  \fill (-2,2) circle[radius=1.4pt];
+  \node[anchor=east] at (-2.16,2.05) {$C$};
+  \fill (-3,0) circle[radius=1.4pt];
+  \node[anchor=north] at (-3,-0.16) {$D$};
+  \fill (-1.3,-1.0) circle[radius=1.4pt];
+  \node[anchor=east] at (-1.42,-0.98) {$E$};
+  \fill (0,-2.5) circle[radius=1.4pt];
+  \node[anchor=west] at (0.14,-2.52) {$F$};
+  \fill (1.5,-1.5) circle[radius=1.4pt];
+  \node[anchor=west] at (1.62,-1.48) {$G$};
+\end{tikzpicture}%
+}
 \end{figure}
 
 ［提示：这里 E
@@ -8448,8 +8483,22 @@ W = 7.8 V,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第133页）}]{assets/algebra-3/fig-p0133-01.png}}
-\caption{图示（原PDF第133页）}
+% fig-alt: V与W对应表，左列V(立方厘米)、W(克)，横线分隔；V取1至5及省略号，箭头向下对应W为7.8、15.6、23.4、31.2、39.0及省略号
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0,0.72) -- (0,-0.72);
+  \draw[line width=0.85pt] (-2.95,0) -- (8.55,0);
+  \node[anchor=east] at (-0.18,0.40) {$V$（立方厘米）};
+  \node[anchor=east] at (-0.18,-0.40) {$W$（克）};
+  \foreach \x/\v/\w in {1.35/1/7.8, 2.55/2/15.6, 3.75/3/23.4, 4.95/4/31.2, 6.15/5/39.0}{
+    \node at (\x,0.40) {$\v$};
+    \node at (\x,-0.40) {$\w$};
+    \draw[line width=0.7pt,->] (\x,0.22) -- (\x,-0.18);
+  }
+  \node at (7.45,0.40) {$\cdots\cdots$};
+  \node at (7.45,-0.40) {$\cdots\cdots$};
+\end{tikzpicture}%
+}
 \end{figure}
 
 这里我们看到：当体积\(V\)扩大（或者缩小）若干倍的时候，重量\(P\)也随着扩大（或者缩小）相同的倍数。在算术里，我们已经知道具有这样性质的两个量，叫做成正比例关系的量。
@@ -8895,11 +8944,17 @@ T P \cdot T V.
 
 \textbf{［解］} 列表：作图：
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第139页）}]{assets/algebra-3/fig-p0139-01.png}}
-\caption{图示（原PDF第139页）}
-\end{figure}
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+x & 0 & 4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+y & 0 & 2 \\
+\end{longtable}
+}
 
 \begin{figure}
 \centering
@@ -9094,13 +9149,7 @@ s（公里） & & & & & \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第142页）}]{assets/algebra-3/fig-p0142-01.png}}
-\caption{图示（原PDF第142页）}
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: 负斜率直线过原点，N(x,y)在第二象限，自N向下虚线至x轴；α在原点右侧靠近x轴正方向；y上箭头、x右箭头、原点O
+% fig-alt: 图3-17左右两坐标系。左：正斜率直线过原点，N(x,y)在第一象限，自N向下虚线至x轴，α为x轴正方向到直线向上方向的锐角；右：负斜率直线过原点，N(x,y)在第二象限，自N向下虚线至x轴，α为钝角。两图y上箭头、x右箭头、原点O
 \fitfig{%
 \begin{tikzpicture}[x=1.12cm,y=1.05cm,line cap=round,line join=round]
     \draw[line width=0.85pt] (-2.15,0) -- (2.35,0);
@@ -9109,14 +9158,30 @@ s（公里） & & & & & \\
     \draw[line width=0.95pt,->] (0,2.7) -- (0,3.45);
     \node[right=1pt] at (3.05,0) {$x$};
     \node[above=1pt] at (0,3.45) {$y$};
-    \node[anchor=north east] at (-0.08,-0.08) {$O$};
-    \draw[line width=1.05pt] (-1.78,2.4) -- (1.62,-2.16);
-    \draw[dashed,line width=0.55pt] (-1.28,1.71) -- (-1.28,0);
-    \fill (-1.28,1.71) circle[radius=1.35pt];
+    \node[anchor=north east] at (-0.18,-0.14) {$O$};
+    \draw[line width=1.05pt] (-1.62,-2.16) -- (1.78,2.4);
+    \draw[dashed,line width=0.55pt] (1.28,1.71) -- (1.28,0);
+    \fill (1.28,1.71) circle[radius=1.35pt];
     \fill (0,0) circle[radius=1.2pt];
-    \node[anchor=east] at (-1.88,2.08) {$N(x,y)$};
-    \draw[line width=0.6pt] (0:0.48) arc (0:32:0.48);
-    \node[anchor=south west] at (0.42,0.22) {$\alpha$};
+    \node[anchor=west] at (1.42,2.08) {$N(x,y)$};
+    \draw[line width=0.6pt] (0:0.48) arc (0:53.3:0.48);
+    \node[anchor=south west] at (0.42,0.14) {$\alpha$};
+    \begin{scope}[xshift=8.2cm]
+      \draw[line width=0.85pt] (-2.15,0) -- (2.35,0);
+      \draw[line width=0.95pt,->] (2.2,0) -- (3.05,0);
+      \draw[line width=0.85pt] (0,-2.45) -- (0,2.85);
+      \draw[line width=0.95pt,->] (0,2.7) -- (0,3.45);
+      \node[right=1pt] at (3.05,0) {$x$};
+      \node[above=1pt] at (0,3.45) {$y$};
+      \node[anchor=north east] at (-0.08,-0.08) {$O$};
+      \draw[line width=1.05pt] (-1.78,2.4) -- (1.62,-2.16);
+      \draw[dashed,line width=0.55pt] (-1.28,1.71) -- (-1.28,0);
+      \fill (-1.28,1.71) circle[radius=1.35pt];
+      \fill (0,0) circle[radius=1.2pt];
+      \node[anchor=east] at (-1.88,2.08) {$N(x,y)$};
+      \draw[line width=0.6pt] (0:0.72) arc (0:126.8:0.72);
+      \node at (52:0.98) {$\alpha$};
+    \end{scope}
 \end{tikzpicture}%
 }
 \caption{图3-17}
@@ -10088,11 +10153,17 @@ y = k x + b.
 
 作图：
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第157页）}]{assets/algebra-3/fig-p0157-01.png}}
-\caption{图示（原PDF第157页）}
-\end{figure}
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+x & 1 & 3 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+y & 2 & 3 \\
+\end{longtable}
+}
 
 \begin{figure}
 \centering
@@ -10699,11 +10770,17 @@ x - 0 y - \frac{c}{a}. \tag {3}
 
 \textbf{［解］} 列表：作图：
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第166页）}]{assets/algebra-3/fig-p0166-01.png}}
-\caption{图示（原PDF第166页）}
-\end{figure}
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+x & 1 & 4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+y & 5 & 3 \\
+\end{longtable}
+}
 
 \begin{figure}
 \centering
@@ -12250,8 +12327,24 @@ y = - 2 c^{2} + 8 x - 5.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第186页）}]{assets/algebra-3/fig-p0186-01.png}}
-\caption{图示（原PDF第186页）}
+% fig-alt: 二次函数条件表，x为1、2、3，对应y为0、0、4
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0,0) rectangle (6.40,-2.10);
+  \draw[line width=0.7pt] (0,-1.05) -- (6.40,-1.05);
+  \draw[line width=0.7pt] (1.45,0) -- (1.45,-2.10);
+  \draw[line width=0.7pt] (3.10,0) -- (3.10,-2.10);
+  \draw[line width=0.7pt] (4.75,0) -- (4.75,-2.10);
+  \node at (0.72,-0.52) {$x$};
+  \node at (0.72,-1.58) {$y$};
+  \node at (2.28,-0.52) {$1$};
+  \node at (3.92,-0.52) {$2$};
+  \node at (5.58,-0.52) {$3$};
+  \node at (2.28,-1.58) {$0$};
+  \node at (3.92,-1.58) {$0$};
+  \node at (5.58,-1.58) {$4$};
+\end{tikzpicture}%
+}
 \end{figure}
 
 （2）
@@ -12626,8 +12719,21 @@ t = \frac{11600}{3712} = 3 \frac{1}{8}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第192页）}]{assets/algebra-3/fig-p0192-02.png}}
-\caption{图示（原PDF第192页）}
+% fig-alt: 正方形ABCD，A左上、B左下、C右下、D右上；等长截段AP、BQ、CR、DS，内接正方形PQRS
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.9pt] (0,0) rectangle (4.00,4.00);
+  \draw[line width=0.85pt] (0,2.80) -- (1.20,0) -- (4.00,1.20) -- (2.80,4.00) -- cycle;
+  \node[anchor=south east] at (-0.02,4.02) {$A$};
+  \node[anchor=north east] at (-0.02,-0.02) {$B$};
+  \node[anchor=north west] at (4.02,-0.02) {$C$};
+  \node[anchor=south west] at (4.02,4.02) {$D$};
+  \node[anchor=east] at (-0.08,2.80) {$P$};
+  \node[anchor=north] at (1.20,-0.08) {$Q$};
+  \node[anchor=west] at (4.08,1.20) {$R$};
+  \node[anchor=south] at (2.80,4.08) {$S$};
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{enumerate}
@@ -12641,8 +12747,21 @@ t = \frac{11600}{3712} = 3 \frac{1}{8}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第193页）}]{assets/algebra-3/fig-p0193-01.png}}
-\caption{图示（原PDF第193页）}
+% fig-alt: 圆内接矩形，顶点B左上、A右上、D右下、C左下；圆心O，半径OA标20厘米
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0,0) circle[radius=2.00cm];
+  \draw[line width=0.85pt] (-1.789,0.894) rectangle (1.789,-0.894);
+  \draw[line width=0.7pt] (0,0) -- (1.789,0.894);
+  \draw[line width=0.7pt] (0,0) circle[radius=1.15pt];
+  \node[anchor=north east] at (-0.06,-0.06) {$O$};
+  \node[anchor=south east] at (-1.82,0.96) {$B$};
+  \node[anchor=south west] at (1.82,0.96) {$A$};
+  \node[anchor=north west] at (1.82,-0.96) {$D$};
+  \node[anchor=north east] at (-1.82,-0.96) {$C$};
+  \node[anchor=south west,font=\scriptsize] at (0.52,0.40) {20厘米};
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{enumerate}
@@ -13811,8 +13930,27 @@ f: x \rightarrow 2 x = y
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第210页）}]{assets/algebra-3/fig-p0210-01.png}}
-\caption{图示（原PDF第210页）}
+% fig-alt: 左椭圆下标A，内为1、2、3、4；右椭圆下标B，内为2、4、6、8；四支水平箭向右，1→2、2→4、3→6、4→8
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.8pt] (0,0) ellipse (1.08 and 2.05);
+  \draw[line width=0.8pt] (4.25,0) ellipse (1.08 and 2.05);
+  \node[anchor=west] at (-0.68,1.28) {$1$};
+  \node[anchor=west] at (-0.68,0.42) {$2$};
+  \node[anchor=west] at (-0.68,-0.44) {$3$};
+  \node[anchor=west] at (-0.68,-1.30) {$4$};
+  \draw[line width=0.7pt,->] (-0.32,1.28) -- (3.28,1.28);
+  \draw[line width=0.7pt,->] (-0.32,0.42) -- (3.28,0.42);
+  \draw[line width=0.7pt,->] (-0.22,-0.44) -- (3.28,-0.44);
+  \draw[line width=0.7pt,->] (-0.32,-1.30) -- (3.28,-1.30);
+  \node[anchor=west] at (3.48,1.28) {$2$};
+  \node[anchor=west] at (3.48,0.42) {$4$};
+  \node[anchor=west] at (3.48,-0.44) {$6$};
+  \node[anchor=west] at (3.48,-1.30) {$8$};
+  \node[anchor=north] at (-0.12,-2.12) {$A$};
+  \node[anchor=north] at (4.12,-2.12) {$B$};
+\end{tikzpicture}%
+}
 \end{figure}
 
 \[
@@ -13980,14 +14118,50 @@ h^{- 1}: y \rightarrow \sqrt{y} = x (y \in \{y | y \geqslant 0 \}, x \in \{x | x
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第212页）}]{assets/algebra-3/fig-p0212-03.png}}
-\caption{图示（原PDF第212页）}
+% fig-alt: 两椭圆对应图(3)，左A含a、b、c，右B含d、f、g、h；平行箭号a→d、b→f、c→g，h无箭号
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+  \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+  \node at (-0.32,1.05) {$a$};
+  \node at (-0.32,0.15) {$b$};
+  \node at (-0.32,-0.75) {$c$};
+  \node at (-0.62,-1.68) {$A$};
+  \node at (4.28,1.05) {$d$};
+  \node at (4.28,0.15) {$f$};
+  \node at (4.28,-0.75) {$g$};
+  \node at (4.28,-1.35) {$h$};
+  \node at (4.00,-1.68) {$B$};
+  \draw[line width=0.7pt,->] (0.00,1.05) -- (3.95,1.05);
+  \draw[line width=0.7pt,->] (0.00,0.15) -- (3.95,0.15);
+  \draw[line width=0.7pt,->] (0.00,-0.75) -- (3.95,-0.75);
+\end{tikzpicture}%
+}
+\caption{(3)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第212页）}]{assets/algebra-3/fig-p0212-04.png}}
-\caption{图示（原PDF第212页）}
+% fig-alt: 两椭圆对应图(4)，左A含a、b、c、d，右B含c、f；箭号a→c、b→c、c→f、d→f
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+  \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+  \node at (-0.32,1.18) {$a$};
+  \node at (-0.32,0.38) {$b$};
+  \node at (-0.32,-0.38) {$c$};
+  \node at (-0.32,-1.18) {$d$};
+  \node at (-0.62,-1.68) {$A$};
+  \node at (4.28,0.55) {$c$};
+  \node at (4.28,-0.55) {$f$};
+  \node at (4.00,-1.68) {$B$};
+  \draw[line width=0.7pt,->] (0.05,1.18) -- (3.95,0.62);
+  \draw[line width=0.7pt,->] (0.05,0.38) -- (3.95,0.48);
+  \draw[line width=0.7pt,->] (0.05,-0.38) -- (3.95,-0.48);
+  \draw[line width=0.7pt,->] (0.05,-1.18) -- (3.95,-0.62);
+\end{tikzpicture}%
+}
+\caption{(4)}
 \end{figure}
 
 \begin{enumerate}
@@ -14819,11 +14993,17 @@ x_{2} + x_{1} > 0, x_{2} - x_{1} > 0, (x_{1} x_{2})^{2} > 0.
 
 描出下表中各点，并利用图象的对称性可作出函数\(y = x^{-2}\)的近似图象（图5·13）。
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第226页）}]{assets/algebra-3/fig-p0226-01.png}}
-\caption{图示（原PDF第226页）}
-\end{figure}
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+x & \(\frac{1}{3}\) & \(\frac{1}{2}\) & 1 & 2 & 3 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+y & 9 & 4 & 1 & \(\frac{1}{4}\) & \(\frac{1}{9}\) \\
+\end{longtable}
+}
 
 \begin{figure}
 \centering
@@ -15152,11 +15332,17 @@ u = x^{2}, y = \sqrt[3]{u} = u^{\frac{1}{3}}.
 应用描点法，先作出它在第一象限内的图象，然后再利用对称性，就容易作出它的图象如图
 5·17 所示。
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第231页）}]{assets/algebra-3/fig-p0231-01.png}}
-\caption{图示（原PDF第231页）}
-\end{figure}
+\begin{center}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+\(x\) & 0 & 1 & 2 & 3 & \ldots{} \\
+\midrule
+\(u=x^{2}\) & 0 & 1 & 4 & 9 & \ldots{} \\
+\midrule
+\(y=\sqrt[3]{u}\) & 0 & 1 & 1.6 & 2.1 & \ldots{} \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \begin{figure}
 \centering
@@ -15469,8 +15655,36 @@ x = \frac{y + 3}{2 - y} (y \neq 2)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第237页）}]{assets/algebra-3/fig-p0237-01.png}}
-\caption{图示（原PDF第237页）}
+% fig-alt: 求反函数步骤：原函数y=f(x)经①解出得x=f^{-1}(y)，再②交换字母得y=f^{-1}(x)；定义域x∈X与值域y∈Y经交叉对调后水平对应到x∈Y、y∈X
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node at (0.20,2.58) {原函数};
+  \node[align=center] at (4.55,2.72) {以 $y$ 为自变量\\的反函数};
+  \node at (8.90,2.58) {反函数};
+  \draw[line width=0.7pt,->] (0.20,2.32) -- (0.20,1.95);
+  \draw[line width=0.7pt,->] (4.55,2.22) -- (4.55,1.95);
+  \draw[line width=0.7pt,->] (8.90,2.32) -- (8.90,1.95);
+  \node at (0.20,1.68) {$y=f(x)$};
+  \node at (4.55,1.68) {$x=f^{-1}(y)$};
+  \node at (8.90,1.68) {$y=f^{-1}(x)$};
+  \draw[line width=0.7pt,->] (1.25,1.68) -- (3.25,1.68);
+  \node[draw,circle,inner sep=0.55pt,line width=0.5pt,font=\scriptsize] at (1.58,1.92) {1};
+  \node[anchor=west] at (1.78,1.92) {解出};
+  \draw[line width=0.7pt,->] (5.85,1.68) -- (7.85,1.68);
+  \node[draw,circle,inner sep=0.55pt,line width=0.5pt,font=\scriptsize] at (6.12,1.92) {2};
+  \node[anchor=west] at (6.32,1.92) {交换字母};
+  \node[anchor=east] at (0.95,0.58) {定义域 $x\in X$};
+  \node[anchor=east] at (0.95,-0.22) {值\hspace{1em}域 $y\in Y$};
+  \node at (4.55,0.58) {$y\in Y$};
+  \node at (4.55,-0.22) {$x\in X$};
+  \node at (8.90,0.58) {$x\in Y$};
+  \node at (8.90,-0.22) {$y\in X$};
+  \draw[line width=0.7pt] (1.15,0.58) -- (3.55,-0.22);
+  \draw[line width=0.7pt] (1.15,-0.22) -- (3.55,0.58);
+  \draw[line width=0.7pt,->] (5.45,0.58) -- (7.85,0.58);
+  \draw[line width=0.7pt,->] (5.45,-0.22) -- (7.85,-0.22);
+\end{tikzpicture}%
+}
 \end{figure}
 
 求下列函数的反函数（表示为\(y=f(x)\)的形式），并指出反函数的定义域和值域：
@@ -22139,8 +22353,57 @@ a^{x^{2} + 6} > a^{5 x} \quad (a > 0, a \neq 1)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第332页）}]{assets/algebra-3/fig-p0332-01.png}}
-\caption{图示（原PDF第332页）}
+% fig-alt: 左右两坐标系。左标a>1：实线y=a^x过(0,1)上升，实线y=log_a x过(1,0)上升，虚线y=x居中；右标0<a<1：实线y=a^x过(0,1)下降，实线y=log_a x过(1,0)下降，虚线y=x，三线交于第一象限一点；刻度无数字，原点O；y上箭头，x右箭头
+\fitfig{%
+\begin{tikzpicture}[x=0.48cm,y=0.48cm,line cap=round,line join=round]
+  \node[font=\normalsize] at (1.20,5.62) {图};
+  \node[font=\normalsize] at (10.00,5.62) {象};
+  % left a>1
+  \draw[line width=0.8pt] (-2.95,0) -- (4.35,0);
+  \draw[line width=0.9pt,->] (4.20,0) -- (4.95,0);
+  \node[anchor=west,font=\scriptsize] at (5.02,0) {$x$};
+  \draw[line width=0.8pt] (0,-2.45) -- (0,4.05);
+  \draw[line width=0.9pt,->] (0,3.90) -- (0,4.58);
+  \node[anchor=east,font=\scriptsize] at (-0.12,4.50) {$y$};
+  \node[anchor=north west,font=\scriptsize] at (0.10,-0.08) {$O$};
+  \foreach \k in {-2,-1,1,2,3,4}{\draw[line width=0.45pt] (\k,-0.10) -- (\k,0.10);}
+  \foreach \k in {-2,-1,1,2,3}{\draw[line width=0.45pt] (-0.09,\k) -- (0.09,\k);}
+  \draw[dashed,line width=0.65pt] (-2.35,-2.35) -- (3.55,3.55);
+  \begin{scope}
+    \clip (-2.90,-2.40) rectangle (4.25,4.20);
+    \draw[line width=1.05pt] plot[domain=-2.85:1.82,samples=80] (\x,{pow(2,\x)});
+    \draw[line width=1.05pt] plot[domain=0.145:3.90,samples=80] (\x,{ln(\x)/ln(2)});
+  \end{scope}
+  \node[anchor=south,font=\scriptsize] at (1.42,3.55) {$y=a^{x}$};
+  \node[anchor=west,font=\scriptsize] at (3.62,3.55) {$y=x$};
+  \node[anchor=west,font=\scriptsize] at (3.55,1.85) {$y=\log_{a}x$};
+  \node[anchor=north,font=\scriptsize] at (1.55,-2.58) {$a>1$};
+  % right 0<a<1
+  \begin{scope}[shift={(8.80,0)}]
+    \draw[line width=0.8pt] (-2.55,0) -- (4.55,0);
+    \draw[line width=0.9pt,->] (4.40,0) -- (5.15,0);
+    \node[anchor=west,font=\scriptsize] at (5.22,0) {$x$};
+    \draw[line width=0.8pt] (0,-1.85) -- (0,4.05);
+    \draw[line width=0.9pt,->] (0,3.90) -- (0,4.58);
+    \node[anchor=east,font=\scriptsize] at (-0.12,4.50) {$y$};
+    \node[anchor=north west,font=\scriptsize] at (0.10,-0.08) {$O$};
+    \foreach \k in {-1,1,2,3,4}{\draw[line width=0.45pt] (\k,-0.10) -- (\k,0.10);}
+    \foreach \k in {-1,1,2,3}{\draw[line width=0.45pt] (-0.09,\k) -- (0.09,\k);}
+    \draw[dashed,line width=0.65pt] (-2.15,-2.15) -- (3.55,3.55);
+    \begin{scope}
+      \clip (-2.50,-2.45) rectangle (4.50,4.20);
+      \draw[line width=1.05pt] plot[domain=-2.00:2.45,samples=80] (\x,{pow(2,-\x)});
+      \draw[line width=1.05pt] plot[domain=0.100:4.20,samples=80] (\x,{-ln(\x)/ln(2)});
+    \end{scope}
+    \node[anchor=south,font=\scriptsize] at (-1.95,4.06) {$y=a^{x}$};
+    \node[anchor=west,font=\scriptsize] at (3.62,3.55) {$y=x$};
+    \node[anchor=south west,font=\scriptsize] at (3.40,-2.10) {$y=\log_{a}x$};
+    \node[anchor=north,font=\scriptsize] at (1.90,-2.58) {$0<a<1$};
+  \end{scope}
+  \draw[line width=0.7pt] (current bounding box.west |- 0,5.12) -- (current bounding box.east |- 0,5.12);
+  \draw[line width=0.7pt] (current bounding box.west |- 0,-3.42) -- (current bounding box.east |- 0,-3.42);
+\end{tikzpicture}%
+}
 \end{figure}
 
 .2. 指数方程和对数方程的解法
