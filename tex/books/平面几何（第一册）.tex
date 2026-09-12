@@ -25123,7 +25123,7 @@ CD = CE = \frac{1}{2} (CA + CB - AB)\text{。}
 
 定理圆的外切四边形两组对边之和相等。
 
-\textbf{［已知］} 四边形\(ABCD\)外切于圆（图 4·52）。
+\textbf{［已知］} 四边形\(ABCD\)外切于圆（图4·52）。
 
 \textbf{［求证］} 四边形\(ABCD\)的两组对边之和相等，也就是证明
 
@@ -25140,11 +25140,35 @@ AP = AS\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4-7-52}]{assets/plane-geometry-1/fig-p0253-02.png}}
-\caption{图 4-7-52}
+\fitfig{%
+% fig-alt: 图4·52 四边形 ABCD 外切于圆，切点 P（AB）、Q（BC）、R（CD）、S（DA）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.280}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (0.000,-1.280);
+  \coordinate (Q) at (1.217,0.396);
+  \coordinate (R) at (-0.178,1.268);
+  \coordinate (S) at (-1.252,0.266);
+  \coordinate (A) at (-1.581,-1.280);
+  \coordinate (B) at (1.762,-1.280);
+  \coordinate (C) at (0.885,1.417);
+  \coordinate (D) at (-1.066,1.143);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \node[anchor=north east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=west, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=south, inner sep=1.2pt] at (R) {$R$};
+  \node[anchor=east, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+}
+\caption{图4·52}
 \end{figure}
 
-\emph{图 4·52}
+\emph{图4·52}
 
 \[
 PB = BQ\text{，}
@@ -25172,23 +25196,68 @@ AP + PB + CR + DR = AS + BQ + QC + DS\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0254-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·53（1）圆 N 切 AB、BC、CD；AD 与圆不相交；虚线切线 AD' 交 CD 于 D'；实线 BN、CN
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.050}
+  \coordinate (N) at (0.000,1.050);
+  \coordinate (A) at (-1.500,2.100);
+  \coordinate (B) at (-0.735,0.000);
+  \coordinate (C) at (0.806,-0.000);
+  \coordinate (D) at (1.526,2.688);
+  \coordinate (Dp) at (1.368,2.100);
+  \draw[line width=0.75pt] (N) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.55pt, dashed] (A) -- (Dp);
+  \draw[line width=0.65pt] (B) -- (N) -- (C);
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=south east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.2pt] at (Dp) {$D'$};
+  \node[anchor=south, inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+}
+\caption{图4·53（1）}
 \end{figure}
 
 \emph{（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0254-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图4·53（2）圆 N 切 AB、BC、CD；AD 与圆交于两点；虚线切线 AD' 交 CD 延长线于 D'；实线 BN、CN
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.050}
+  \coordinate (N) at (0.000,1.050);
+  \coordinate (A) at (-1.050,2.100);
+  \coordinate (B) at (-1.050,0.000);
+  \coordinate (C) at (0.582,-0.000);
+  \coordinate (D) at (1.501,1.470);
+  \coordinate (Dp) at (1.894,2.100);
+  \draw[line width=0.75pt] (N) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.55pt, dashed] (A) -- (Dp);
+  \draw[line width=0.55pt, dashed] (D) -- (Dp);
+  \draw[line width=0.65pt] (B) -- (N) -- (C);
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=south east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=south west, inner sep=1.2pt] at (Dp) {$D'$};
+  \node[anchor=south, inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+}
+\caption{图4·53（2）}
 \end{figure}
 
 \emph{（2）}
 
-\emph{图 4·53}
+\emph{图4·53}
 
-\textbf{［已知］} 如图 4·53. 四边形 ABCD 中，
+\textbf{［已知］} 如图4·53. 四边形 ABCD 中，
 
 \[
 AB + CD = AD + BC.
@@ -25199,8 +25268,7 @@ AB + CD = AD + BC.
 \textbf{［证］}
 引\(\angle B\)和\(\angle C\)的平分线，它们相交于\(N\)，则点\(N\)与\(AB, BC, CD\)三边等距离，因此以\(N\)为圆心可作一圆与\(AB, BC, CD\)相切。这时，\(AD\)可能与圆\(N\)不相交，或交于两点，或相切于一点。
 
-（1） 先设\(AD\)与圆\(N\)不相交 （如图
-4·53（1））。过点\(A\)引圆\(N\)的切线交\(CD\)于\(D'\)。
+（1） 先设\(AD\)与圆\(N\)不相交 （如图4·53（1））。过点\(A\)引圆\(N\)的切线交\(CD\)于\(D'\)。
 因\(ABCD'\)外切于圆\(N\)，故
 
 \[
@@ -25215,8 +25283,7 @@ AB + CD = AD + BC\text{，} \tag {2}
 
 由（2）-（1），\(DD' = AD - AD'\)，这显然是不合理的，因为三角形两边之差不能等于第三边，所以AD不能和圆N不相交。
 
-（2） 设\(AD\)与圆\(N\)交于两点 （如图
-4·53（2））。过点\(A\)引圆\(N\)的切线交\(CD\)的延长线于\(D'\)。
+（2） 设\(AD\)与圆\(N\)交于两点 （如图4·53（2））。过点\(A\)引圆\(N\)的切线交\(CD\)的延长线于\(D'\)。
 因\(ABCD'\)外切于圆\(N\)，故知用和 （1）
 同样的证明方法，可以证得\(AD\)不能和圆\(N\)交于两点。
 
@@ -25228,7 +25295,7 @@ AB + CD = AD + BC\text{，} \tag {2}
 
 圆的外切平行四边形是一个菱形。
 
-\textbf{［已知］} ABCD 是外切于圆 M 的平行四边形（图 4·54）。
+\textbf{［已知］} ABCD 是外切于圆 M 的平行四边形（图4·54）。
 
 \textbf{［求证］} ABCD 是一菱形。
 
@@ -25238,11 +25305,29 @@ AB + CD = AD + BC\text{，} \tag {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-54}]{assets/plane-geometry-1/fig-p0255-01.png}}
-\caption{图4-54}
+\fitfig{%
+% fig-alt: 图4·54 菱形 ABCD 内切圆 M
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{0.950}
+  \coordinate (M) at (0,0);
+  \coordinate (A) at (-1.100,-0.950);
+  \coordinate (B) at (1.100,-0.950);
+  \coordinate (C) at (2.209,0.950);
+  \coordinate (D) at (0.009,0.950);
+  \draw[line width=0.75pt] (M) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \fill (M) circle [radius=1.1pt];
+  \node[anchor=north east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=west, inner sep=2pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{图4·54}
 \end{figure}
 
-\emph{图 4·54}
+\emph{图4·54}
 
 \[
 AB = DC\text{，} BC = AD.
@@ -25255,18 +25340,42 @@ AB = DC\text{，} BC = AD.
 
 顺次连结等腰梯形各边的中点所成的四边形可外切于圆。
 
-\textbf{［已知］} 如图 4·55.
+\textbf{［已知］} 如图4·55.
 在梯形ABCD中，腰\(AB = CD, E, F, G, H\)依次是\(AB, BC, CD, DA\)的中点。
 
 \textbf{［求证］} 四边形 HEFG 可外切于圆。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-55}]{assets/plane-geometry-1/fig-p0255-02.png}}
-\caption{图4-55}
+\fitfig{%
+% fig-alt: 图4·55 等腰梯形 ABCD（AD∥BC），中点 E、F、G、H；菱形 EFGH；虚线对角线 AC、BD
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (-1.000,2.000);
+  \coordinate (B) at (-2.150,0.000);
+  \coordinate (C) at (2.150,0.000);
+  \coordinate (D) at (1.000,2.000);
+  \coordinate (E) at (-1.575,1.000);
+  \coordinate (F) at (0.000,0.000);
+  \coordinate (G) at (1.575,1.000);
+  \coordinate (H) at (0.000,2.000);
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.55pt, dashed] (A) -- (C);
+  \draw[line width=0.55pt, dashed] (B) -- (D);
+  \draw[line width=0.65pt] (E) -- (F) -- (G) -- (H) -- cycle;
+  \node[anchor=south east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=west, inner sep=1.5pt] at (G) {$G$};
+  \node[anchor=south, inner sep=1.2pt] at (H) {$H$};
+\end{tikzpicture}%
+}
+\caption{图4·55}
 \end{figure}
 
-\emph{图 4·55}
+\emph{图4·55}
 
 \textbf{分析} 要证明 HEFG
 四边形可外切于一圆。只要证明它的对边之和相等就可以了。
@@ -25325,7 +25434,7 @@ m。再研究内切圆的圆心与垂直底边的腰两端点所组成的三角�
 一个角的顶点在圆上，其中一边是圆的切线，另一边包含过切点的弦，这样的角叫做弦切角。如图
 4·56（1） 的\(\angle TAB\)。
 
-下面我们来研究弦切角的度量（图 4·56（1））。
+下面我们来研究弦切角的度量（图4·56（1））。
 
 研究弦切角的度量，可以从和它夹同弧 AB 的圆周角 C 来考虑。
 
@@ -25343,36 +25452,106 @@ BO，则\(\angle B\)是半圆上的圆周角，所以\(\angle B = d\)。又 AC
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0257-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·56（1）圆 M，切线 AT 切于 A；虚线直径 AC；实线弦 AB；虚线 BC；∠TAB 与 ∠ACB 标弧；B 处直角
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.350}
+  \coordinate (M) at (0,0);
+  \coordinate (A) at (0,\R);
+  \coordinate (C) at (0,-\R);
+  \coordinate (B) at (1.064,-0.831);
+  \coordinate (T) at (1.55,\R);
+  \draw[line width=0.75pt] (M) circle [radius=\R];
+  \draw[line width=0.65pt] (-1.35,\R) -- (T);
+  \draw[line width=0.55pt, dashed] (A) -- (C);
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.55pt, dashed] (B) -- (C);
+  \fill (M) circle [radius=1.1pt];
+  \draw[line width=0.45pt] (A) ++(0:0.28) arc (0:-64.000:0.28);
+  \draw[line width=0.45pt] (C) ++(26.000:0.28) arc (26.000:90:0.28);
+  \coordinate (BA) at ($(B)!0.18!(A)$);
+  \coordinate (BC) at ($(B)!0.18!(C)$);
+  \coordinate (Bsq) at ($(BA)+(BC)-(B)$);
+  \draw[line width=0.40pt] (BA) -- (Bsq) -- (BC);
+  \node[anchor=south, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=west, inner sep=2pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.2pt] at (T) {$T$};
+\end{tikzpicture}%
+}
+\caption{图4·56（1）}
 \end{figure}
 
 \emph{（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0257-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图4·56（2）圆 M，切线 AT 切于 A；直径 AB；A 处直角标 d；S 在右弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.350}
+  \coordinate (M) at (0,0);
+  \coordinate (A) at (0,\R);
+  \coordinate (B) at (0,-\R);
+  \coordinate (T) at (1.55,\R);
+  \coordinate (S) at (\R,0);
+  \draw[line width=0.75pt] (M) circle [radius=\R];
+  \draw[line width=0.65pt] (-1.35,\R) -- (T);
+  \draw[line width=0.65pt] (A) -- (B);
+  \fill (M) circle [radius=1.1pt];
+  \draw[line width=0.40pt] (0.20,1.350) -- (0.20,1.150) -- (0,1.150);
+  \node[anchor=center, inner sep=0pt] at (0.38,0.970) {$d$};
+  \node[anchor=south, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west, inner sep=2pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.2pt] at (T) {$T$};
+  \node[anchor=west, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+}
+\caption{图4·56（2）}
 \end{figure}
 
 \emph{（2）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-1/fig-p0257-03.png}}
-\caption{(3)}
+\fitfig{%
+% fig-alt: 图4·56（3）圆 M，切线 AT 切于 A；虚线直径 AC；实线弦 AB（B 在左下）；标钝角 ∠TAB；S 在右弧
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.350}
+  \coordinate (M) at (0,0);
+  \coordinate (A) at (0,\R);
+  \coordinate (C) at (0,-\R);
+  \coordinate (B) at (-0.955,-0.955);
+  \coordinate (T) at (1.55,\R);
+  \coordinate (S) at (1.269,-0.459);
+  \draw[line width=0.75pt] (M) circle [radius=\R];
+  \draw[line width=0.65pt] (-1.35,\R) -- (T);
+  \draw[line width=0.55pt, dashed] (A) -- (C);
+  \draw[line width=0.65pt] (A) -- (B);
+  \fill (M) circle [radius=1.1pt];
+  \draw[line width=0.45pt] (A) ++(0:0.30) arc (0:-112.500:0.30);
+  \node[anchor=south, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=west, inner sep=2pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.2pt] at (T) {$T$};
+  \node[anchor=west, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+}
+\caption{图4·56（3）}
 \end{figure}
 
 \emph{（3）}
 
-\emph{图 4·56}
+\emph{图4·56}
 
 下面我们再看当\(\angle TAB\)是直角和钝角的情形：
 
-（2） 如果弦切角\(TAB\)的一边正好在圆的直径上，如图
-4·56的（2），则有\(\angle TAB = d\)。而它所夹的弧是一个半圆\(ASB\)，半圆的度数\(180^{\circ}\)的一半等于\(90^{\circ}\)。
+（2） 如果弦切角\(TAB\)的一边正好在圆的直径上，如图4·56的（2），则有\(\angle TAB = d\)。而它所夹的弧是一个半圆\(ASB\)，半圆的度数\(180^{\circ}\)的一半等于\(90^{\circ}\)。
 
-（3） 如果弦切角\(TAB\)是一个钝角，如图 4·56的
+（3） 如果弦切角\(TAB\)是一个钝角，如图4·56的
 （3），过切点\(A\)作直径\(AC\)，则有
 
 \[
