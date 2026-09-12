@@ -21082,11 +21082,59 @@ OM = ON.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-9}]{assets/plane-geometry-1/fig-p0220-01.png}}
-\caption{图4-9}
+\fitfig{%
+% fig-alt: 图4·9 圆 O，弦 AB（下）与 CD（左上）；实线弦心距 OM⊥AB、ON⊥CD（直角方）；虚线半径 OA、OB、OC、OD；A 外虚线弯箭头示旋转
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\ym}{-0.62*\R}
+  \pgfmathsetmacro{\ax}{sqrt(\R*\R-\ym*\ym)}
+  \coordinate (A) at ({-\ax},\ym);
+  \coordinate (B) at ({\ax},\ym);
+  \coordinate (M) at (0,\ym);
+  \pgfmathsetmacro{\angA}{atan2(\ym,-\ax)}
+  \pgfmathsetmacro{\angB}{atan2(\ym,\ax)}
+  \pgfmathsetmacro{\rot}{237}
+  \pgfmathsetmacro{\angC}{\angA+\rot}
+  \pgfmathsetmacro{\angD}{\angB+\rot}
+  \coordinate (C) at ({\angC}:\R);
+  \coordinate (D) at ({\angD}:\R);
+  \coordinate (N) at ($(C)!0.5!(D)$);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.65pt] (O) -- (M);
+  \draw[line width=0.65pt] (O) -- (N);
+  \draw[line width=0.55pt, dashed] (O) -- (A);
+  \draw[line width=0.55pt, dashed] (O) -- (B);
+  \draw[line width=0.55pt, dashed] (O) -- (C);
+  \draw[line width=0.55pt, dashed] (O) -- (D);
+  \coordinate (RAm1) at ($(M)!0.15!(B)$);
+  \coordinate (RAm2) at ($(M)!0.15!(O)$);
+  \coordinate (RAm3) at ($(RAm1)+(RAm2)-(M)$);
+  \draw[line width=0.40pt] (RAm1) -- (RAm3) -- (RAm2);
+  \coordinate (RAn1) at ($(N)!0.15!(C)$);
+  \coordinate (RAn2) at ($(N)!0.15!(O)$);
+  \coordinate (RAn3) at ($(RAn1)+(RAn2)-(N)$);
+  \draw[line width=0.40pt] (RAn1) -- (RAn3) -- (RAn2);
+  \draw[line width=0.50pt, dashed, -{Stealth[length=2.0mm]}]
+    (215:{\R+0.28}) arc[start angle=215, end angle=155, radius={\R+0.28}];
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south west, inner sep=2pt] at (O) {$O$};
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=east, inner sep=2pt] at (D) {$D$};
+  \node[anchor=south east, inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+
+}
+
+\caption{图4·9}
 \end{figure}
 
-\emph{图 4·9}
+\emph{图4·9}
 
 定理 1
 在同圆或等圆\footnote{如果弦\(AB\)和\(CD\)在两个等圆\(O\)和\(O'\)中，则应先把圆\(O'\)和圆\(O\)重合，再用旋转的方法。}中，相等的弧所对的弦相等；相等的弦的弦心距相等。
@@ -21103,17 +21151,90 @@ OM = ON.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第221页）}]{assets/plane-geometry-1/fig-p0221-01.png}}
-\caption{图示（原PDF第221页）}
+\fitfig{%
+% fig-alt: 图4·10（1）圆 O，弦 AB（下）与 CD（左上）；实线弦心距 OM⊥AB、ON⊥CD（直角方）；虚线半径 OA、OB、OC、OD
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\ym}{-0.58*\R}
+  \pgfmathsetmacro{\ax}{sqrt(\R*\R-\ym*\ym)}
+  \coordinate (A) at ({-\ax},\ym);
+  \coordinate (B) at ({\ax},\ym);
+  \coordinate (M) at (0,\ym);
+  \pgfmathsetmacro{\angA}{atan2(\ym,-\ax)}
+  \pgfmathsetmacro{\angB}{atan2(\ym,\ax)}
+  \pgfmathsetmacro{\rot}{237}
+  \pgfmathsetmacro{\angC}{\angA+\rot}
+  \pgfmathsetmacro{\angD}{\angB+\rot}
+  \coordinate (C) at ({\angC}:\R);
+  \coordinate (D) at ({\angD}:\R);
+  \coordinate (N) at ($(C)!0.5!(D)$);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.65pt] (O) -- (M);
+  \draw[line width=0.65pt] (O) -- (N);
+  \draw[line width=0.55pt, dashed] (O) -- (A);
+  \draw[line width=0.55pt, dashed] (O) -- (B);
+  \draw[line width=0.55pt, dashed] (O) -- (C);
+  \draw[line width=0.55pt, dashed] (O) -- (D);
+  \coordinate (RAm1) at ($(M)!0.15!(B)$);
+  \coordinate (RAm2) at ($(M)!0.15!(O)$);
+  \coordinate (RAm3) at ($(RAm1)+(RAm2)-(M)$);
+  \draw[line width=0.40pt] (RAm1) -- (RAm3) -- (RAm2);
+  \coordinate (RAn1) at ($(N)!0.15!(C)$);
+  \coordinate (RAn2) at ($(N)!0.15!(O)$);
+  \coordinate (RAn3) at ($(RAn1)+(RAn2)-(N)$);
+  \draw[line width=0.40pt] (RAn1) -- (RAn3) -- (RAn2);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south west, inner sep=2pt] at (O) {$O$};
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=east, inner sep=2pt] at (D) {$D$};
+  \node[anchor=south east, inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+
+}
+
+\caption{图4·10（1）}
 \end{figure}
 
+\emph{图4·10（1）}
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-10}]{assets/plane-geometry-1/fig-p0221-02.png}}
-\caption{图4-10}
+\fitfig{%
+% fig-alt: 图4·10（2）等圆 O'，弦 CD（下）；实线弦心距 O'N⊥CD（直角方）；实线半径 O'C、O'D
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (Op) at (0,0);
+  \pgfmathsetmacro{\yn}{-0.55*\R}
+  \pgfmathsetmacro{\cx}{sqrt(\R*\R-\yn*\yn)}
+  \coordinate (C) at ({-\cx},\yn);
+  \coordinate (D) at ({\cx},\yn);
+  \coordinate (N) at (0,\yn);
+  \draw[line width=0.75pt] (Op) circle [radius=\R];
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.65pt] (Op) -- (N);
+  \draw[line width=0.60pt] (Op) -- (C);
+  \draw[line width=0.60pt] (Op) -- (D);
+  \coordinate (RAn1) at ($(N)!0.15!(D)$);
+  \coordinate (RAn2) at ($(N)!0.15!(Op)$);
+  \coordinate (RAn3) at ($(RAn1)+(RAn2)-(N)$);
+  \draw[line width=0.40pt] (RAn1) -- (RAn3) -- (RAn2);
+  \fill (Op) circle [radius=1.2pt];
+  \node[anchor=south, inner sep=2pt] at (Op) {$O'$};
+  \node[anchor=north east, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north west, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+}
+
+\caption{图4·10（2）}
 \end{figure}
 
-\emph{图 4·10}
+\emph{图4·10（2）}
 
 下面来讨论弦和弦心距之间的不等量关系：
 
@@ -21130,11 +21251,63 @@ OM = ON.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-11}]{assets/plane-geometry-1/fig-p0221-03.png}}
-\caption{图4-11}
+\fitfig{%
+% fig-alt: 图4·11 圆 O，竖直弦 AB（右，较长）弦心距 OM；较短弦 CD（左下）弦心距 ON；作 AE=CD，虚线 OK⊥AE 交 AB 于 S；直角方在 M、N、K
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.25}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\xm}{0.40*\R}
+  \pgfmathsetmacro{\ay}{sqrt(\R*\R-\xm*\xm)}
+  \coordinate (B) at (\xm,{\ay});
+  \coordinate (A) at (\xm,{-\ay});
+  \coordinate (M) at (\xm,0);
+  \coordinate (C) at (155:\R);
+  \coordinate (D) at (240:\R);
+  \coordinate (N) at ($(C)!0.5!(D)$);
+  \pgfmathsetmacro{\angA}{atan2(-\ay,\xm)}
+  \pgfmathsetmacro{\dth}{85}
+  \pgfmathsetmacro{\angE}{\angA+\dth}
+  \coordinate (E) at ({\angE}:\R);
+  \coordinate (K) at ($(A)!(O)!(E)$);
+  \coordinate (S) at (intersection of O--K and A--B);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.70pt] (A) -- (E);
+  \draw[line width=0.65pt] (O) -- (M);
+  \draw[line width=0.65pt] (O) -- (N);
+  \draw[line width=0.55pt, dashed] (O) -- (K);
+  \coordinate (RAm1) at ($(M)!0.14!(B)$);
+  \coordinate (RAm2) at ($(M)!0.14!(O)$);
+  \coordinate (RAm3) at ($(RAm1)+(RAm2)-(M)$);
+  \draw[line width=0.40pt] (RAm1) -- (RAm3) -- (RAm2);
+  \coordinate (RAn1) at ($(N)!0.14!(C)$);
+  \coordinate (RAn2) at ($(N)!0.14!(O)$);
+  \coordinate (RAn3) at ($(RAn1)+(RAn2)-(N)$);
+  \draw[line width=0.40pt] (RAn1) -- (RAn3) -- (RAn2);
+  \coordinate (RAk1) at ($(K)!0.14!(A)$);
+  \coordinate (RAk2) at ($(K)!0.14!(O)$);
+  \coordinate (RAk3) at ($(RAk1)+(RAk2)-(K)$);
+  \draw[line width=0.40pt] (RAk1) -- (RAk3) -- (RAk2);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=south west, inner sep=2pt] at (O) {$O$};
+  \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=east, inner sep=2pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=west, inner sep=1.5pt] at (K) {$K$};
+  \node[anchor=east, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+
+}
+
+\caption{图4·11}
 \end{figure}
 
-\emph{图 4·11}
+\emph{图4·11}
 
 在\(\triangle OMS\)中，因为\(OM \perp AB\)，可知\(OS\)是直角三角形\(OMS\)的斜边，因此
 
@@ -21178,11 +21351,48 @@ AB = CD\text{，} AB < CD\text{，} AB > CD.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-12}]{assets/plane-geometry-1/fig-p0222-01.png}}
-\caption{图4-12}
+\fitfig{%
+% fig-alt: 图4·12 圆 O，弦 AB（下，较长）弦心距 OM⊥AB；较短弦 CD（右上）弦心距 ON⊥CD；直角方在 M、N；OM < ON
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\ym}{-0.45*\R}
+  \pgfmathsetmacro{\ax}{sqrt(\R*\R-\ym*\ym)}
+  \coordinate (A) at ({-\ax},\ym);
+  \coordinate (B) at ({\ax},\ym);
+  \coordinate (M) at (0,\ym);
+  % CD shorter upper-right
+  \coordinate (D) at (100:\R);
+  \coordinate (C) at (25:\R);
+  \coordinate (N) at ($($(C)!0.5!(D)$)$);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.65pt] (O) -- (M);
+  \draw[line width=0.65pt] (O) -- (N);
+  \coordinate (RAm1) at ($(M)!0.15!(B)$);
+  \coordinate (RAm2) at ($(M)!0.15!(O)$);
+  \coordinate (RAm3) at ($(RAm1)+(RAm2)-(M)$);
+  \draw[line width=0.40pt] (RAm1) -- (RAm3) -- (RAm2);
+  \coordinate (RAn1) at ($(N)!0.15!(C)$);
+  \coordinate (RAn2) at ($(N)!0.15!(O)$);
+  \coordinate (RAn3) at ($(RAn1)+(RAn2)-(N)$);
+  \draw[line width=0.40pt] (RAn1) -- (RAn3) -- (RAn2);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=east, inner sep=2pt] at (O) {$O$};
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west, inner sep=2pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south east, inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+}
+
+\caption{图4·12}
 \end{figure}
 
-\emph{图 4·12}
+\emph{图4·12}
 
 但是\(AB\)不可能等于\(CD\)，因为这样就要有\(OM = ON\)，这和假设\(OM < ON\)相矛盾。
 
@@ -21200,11 +21410,33 @@ AB 也不可能小于 CD，因为这样就要有 OM \textgreater{} ON，这和�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-13}]{assets/plane-geometry-1/fig-p0222-02.png}}
-\caption{图4-13}
+\fitfig{%
+% fig-alt: 图4·13 圆 O，直径 AB 水平；上弦 CD；虚线半径 OC、OD
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-\R,0);
+  \coordinate (B) at (\R,0);
+  \coordinate (C) at (145:\R);
+  \coordinate (D) at (40:\R);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.55pt, dashed] (O) -- (C);
+  \draw[line width=0.55pt, dashed] (O) -- (D);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=north, inner sep=2pt] at (O) {$O$};
+  \node[anchor=east, inner sep=2pt] at (A) {$A$};
+  \node[anchor=west, inner sep=2pt] at (B) {$B$};
+  \node[anchor=south east, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+
+\caption{图4·13}
 \end{figure}
 
-\emph{图 4·13}
+\emph{图4·13}
 
 \textbf{［求证］} \(AB > CD.\)
 
@@ -21236,11 +21468,37 @@ OC + OD > CD\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-14}]{assets/plane-geometry-1/fig-p0222-03.png}}
-\caption{图4-14}
+\fitfig{%
+% fig-alt: 图4·14 圆 O，平行弦 AB（上，较短）与 DC（下，较长）；实线对角 AC、BD 相交
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\ya}{0.55*\R}
+  \pgfmathsetmacro{\yd}{-0.35*\R}
+  \pgfmathsetmacro{\ax}{sqrt(\R*\R-\ya*\ya)}
+  \pgfmathsetmacro{\dx}{sqrt(\R*\R-\yd*\yd)}
+  \coordinate (A) at ({-\ax},\ya);
+  \coordinate (B) at ({\ax},\ya);
+  \coordinate (D) at ({-\dx},\yd);
+  \coordinate (C) at ({\dx},\yd);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (D) -- (C);
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[line width=0.70pt] (B) -- (D);
+  \fill (O) circle [radius=1.2pt];
+  \node[anchor=west, inner sep=2pt] at (O) {$O$};
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north east, inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+
+\caption{图4·14}
 \end{figure}
 
-\emph{图 4·14}
+\emph{图4·14}
 
 ［证1］ 因为\(AB \parallel DC\)
 ∴\(\widehat{BO}=\widehat{AD}\)（平行弦之间所夹的弧相等）。
@@ -21268,11 +21526,37 @@ AB 是圆 O 的直径，自半径 OP 的端点 P，引\(PH \perp AB\)，作 PM �
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-15}]{assets/plane-geometry-1/fig-p0223-01.png}}
-\caption{图4-15}
+\fitfig{%
+% fig-alt: 图4·15 圆内等腰梯形 ABCD，AB∥DC（AB 较短在上）；实线对角 AC、BD；虚线腰 AD、BC
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{2.20}
+  \coordinate (O) at (0,0);
+  \pgfmathsetmacro{\ya}{0.48*\R}
+  \pgfmathsetmacro{\yd}{-0.28*\R}
+  \pgfmathsetmacro{\ax}{sqrt(\R*\R-\ya*\ya)}
+  \pgfmathsetmacro{\dx}{sqrt(\R*\R-\yd*\yd)}
+  \coordinate (A) at ({-\ax},\ya);
+  \coordinate (B) at ({\ax},\ya);
+  \coordinate (D) at ({-\dx},\yd);
+  \coordinate (C) at ({\dx},\yd);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.70pt] (D) -- (C);
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[line width=0.70pt] (B) -- (D);
+  \draw[line width=0.55pt, dashed] (A) -- (D);
+  \draw[line width=0.55pt, dashed] (B) -- (C);
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west, inner sep=2pt] at (C) {$C$};
+  \node[anchor=east, inner sep=2pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+
+\caption{图4·15}
 \end{figure}
 
-\emph{图 4·15}
+\emph{图4·15}
 
 \textbf{分析} 要证明\(PM\)过\(AMB\)的中点，可连结\(OM\)，只要证明
 \(MO \perp AB\)，就可知 M
