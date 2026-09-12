@@ -4315,7 +4315,39 @@ a，b & tg A=a/b & B=90°-A & c=√a2+b2或c=a/sin A \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·2}]{assets/plane-trigonometry/fig-p0056-02.png}}
+\fitfig{%
+% fig-alt: 两齿轮外啮合，半径相同；左轮顺时针弧矢，右轮逆时针弧矢；各有轮毂两同心圆；无齿数、无度数
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\rootR{0.82}
+  \def\addR{1.10}
+  \def\hubR{0.42}
+  \def\boreR{0.22}
+  \begin{scope}[rotate=15]
+    \fill[white] (0,0) circle[radius=\rootR];
+    \draw[line width=0.7pt] (0,0) circle[radius=\rootR];
+    \foreach \i in {0,...,11} {
+      \fill[white,draw=black,line width=0.7pt]
+        ({30*\i-8.5}:\rootR) -- ({30*\i-3.2}:\addR) -- ({30*\i+3.2}:\addR) -- ({30*\i+8.5}:\rootR) -- cycle;
+    }
+    \draw[line width=0.7pt] (0,0) circle[radius=\hubR];
+    \draw[line width=0.7pt] (0,0) circle[radius=\boreR];
+  \end{scope}
+  \begin{scope}[xshift=1.78cm]
+    \fill[white] (0,0) circle[radius=\rootR];
+    \draw[line width=0.7pt] (0,0) circle[radius=\rootR];
+    \foreach \i in {0,...,11} {
+      \fill[white,draw=black,line width=0.7pt]
+        ({30*\i-8.5}:\rootR) -- ({30*\i-3.2}:\addR) -- ({30*\i+3.2}:\addR) -- ({30*\i+8.5}:\rootR) -- cycle;
+    }
+    \draw[line width=0.7pt] (0,0) circle[radius=\hubR];
+    \draw[line width=0.7pt] (0,0) circle[radius=\boreR];
+  \end{scope}
+  \draw[line width=0.75pt,-latex] (280:0.60) arc[start angle=280, delta angle=-185, radius=0.60];
+  \begin{scope}[xshift=1.78cm]
+    \draw[line width=0.75pt,-latex] (-70:0.60) arc[start angle=-70, delta angle=195, radius=0.60];
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3·2}
 \end{figure}
 
@@ -5603,44 +5635,80 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第70页）}]{assets/plane-trigonometry/fig-p0070-01.png}}
-\caption{图示（原PDF第70页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第70页）}]{assets/plane-trigonometry/fig-p0070-02.png}}
-\caption{图示（原PDF第70页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-01.png}}
-\caption{图示（原PDF第71页）}
-\end{figure}
-
-\begin{figure}
-\centering
 \fitfig{%
-% fig-alt: 圆上315°，半径至P4并有箭头，垂足在正x轴；横边标1，竖边标-1，斜边标√2；角弧标315°在左下方，原点O，正x与正y带箭头，无刻度
+% fig-alt: 四圆：45°、135°、225°、315°；直角边标1或-1，斜边标√2；仅315°半径有箭头；点P1至P4，原点O，正x与正y带箭头，无刻度
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
   \def\R{1.32}
-  \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+0.36},0);
-  \draw[line width=0.7pt,-latex] ({\R+0.36},0) -- ({\R+0.78},0) node[right=1pt] {$x$};
-  \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+0.32});
-  \draw[line width=0.7pt,-latex] (0,{\R+0.32}) -- (0,{\R+0.70}) node[above=1pt] {$y$};
-  \draw[line width=0.7pt] (0,0) circle[radius=\R];
-  \draw[line width=0.7pt] (0,0) -- (315:0.72);
-  \draw[line width=0.7pt,-latex] (315:0.72) -- (315:\R);
-  \draw[line width=0.7pt] (315:\R) -- (315:\R |- 0,0);
-  \draw[line width=0.6pt] (0.62,0) arc[start angle=0, end angle=315, radius=0.62];
-  \fill (315:\R) circle (1.05pt);
-  \node[font=\scriptsize,anchor=east,inner sep=0.5pt] at (-0.48,-0.22) {$315^{\circ}$};
-  \node[font=\scriptsize,anchor=south,inner sep=0.6pt] at (0.46,0.12) {$1$};
-  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (0.90,-0.38) {$-1$};
-  \node[font=\scriptsize,anchor=north,inner sep=0.8pt] at (0.52,-0.78) {$\sqrt{2}$};
-  \node[anchor=north west,inner sep=1pt] at (1.00,-1.12) {$P_{4}$};
-  \node[anchor=north east,inner sep=1pt] at (-0.06,-0.12) {$O$};
+  \def\axisext{0.42}
+  \begin{scope}[xshift=0cm,yshift=0cm]
+    \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+\axisext},0);
+    \draw[line width=0.7pt,-latex] ({\R+\axisext},0) -- ({\R+\axisext+0.48},0) node[right=1pt] {$x$};
+    \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+\axisext});
+    \draw[line width=0.7pt,-latex] (0,{\R+\axisext}) -- (0,{\R+\axisext+0.42}) node[above=1pt] {$y$};
+    \draw[line width=0.7pt] (0,0) circle[radius=\R];
+    \draw[line width=0.7pt] (0,0) -- (45:\R);
+    \draw[line width=0.7pt] (45:\R) -- (45:\R |- 0,0);
+    \draw[line width=0.6pt] (0.32,0) arc[start angle=0, end angle=45, radius=0.32];
+    \fill (45:\R) circle (1.05pt);
+    \node[font=\scriptsize,anchor=south west,inner sep=0.4pt] at (0.36,0.12) {$45^{\circ}$};
+    \node[font=\scriptsize,anchor=south,inner sep=0.6pt] at (0.48,0.62) {$\sqrt{2}$};
+    \node[font=\scriptsize,anchor=west,inner sep=0.6pt] at (1.02,0.42) {$1$};
+    \node[font=\scriptsize,anchor=north,inner sep=0.6pt] at (0.48,-0.14) {$1$};
+    \node[anchor=south west,inner sep=1pt] at (47:{\R+0.10}) {$P_{1}$};
+    \node[anchor=north east,inner sep=1pt] at (-0.06,-0.14) {$O$};
+  \end{scope}
+  \begin{scope}[xshift=4.55cm,yshift=0cm]
+    \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+\axisext},0);
+    \draw[line width=0.7pt,-latex] ({\R+\axisext},0) -- ({\R+\axisext+0.48},0) node[right=1pt] {$x$};
+    \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+\axisext});
+    \draw[line width=0.7pt,-latex] (0,{\R+\axisext}) -- (0,{\R+\axisext+0.42}) node[above=1pt] {$y$};
+    \draw[line width=0.7pt] (0,0) circle[radius=\R];
+    \draw[line width=0.7pt] (0,0) -- (135:\R);
+    \draw[line width=0.7pt] (135:\R) -- (135:\R |- 0,0);
+    \draw[line width=0.6pt] (0.50,0) arc[start angle=0, end angle=135, radius=0.50];
+    \fill (135:\R) circle (1.05pt);
+    \node[font=\scriptsize,anchor=south,inner sep=0.4pt] at (0.42,0.28) {$135^{\circ}$};
+    \node[font=\scriptsize,anchor=south,inner sep=0.6pt] at (-0.42,0.62) {$\sqrt{2}$};
+    \node[font=\scriptsize,anchor=east,inner sep=0.6pt] at (-1.02,0.42) {$1$};
+    \node[font=\scriptsize,anchor=north,inner sep=0.6pt] at (-0.48,-0.14) {$-1$};
+    \node[anchor=south east,inner sep=1pt] at (133:{\R+0.10}) {$P_{2}$};
+    \node[anchor=north west,inner sep=1pt] at (0.08,-0.14) {$O$};
+  \end{scope}
+  \begin{scope}[xshift=0cm,yshift=-4.25cm]
+    \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+\axisext},0);
+    \draw[line width=0.7pt,-latex] ({\R+\axisext},0) -- ({\R+\axisext+0.48},0) node[right=1pt] {$x$};
+    \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+\axisext});
+    \draw[line width=0.7pt,-latex] (0,{\R+\axisext}) -- (0,{\R+\axisext+0.42}) node[above=1pt] {$y$};
+    \draw[line width=0.7pt] (0,0) circle[radius=\R];
+    \draw[line width=0.7pt] (0,0) -- (225:\R);
+    \draw[line width=0.7pt] (225:\R) -- (225:\R |- 0,0);
+    \draw[line width=0.6pt] (0.62,0) arc[start angle=0, end angle=225, radius=0.62];
+    \fill (225:\R) circle (1.05pt);
+    \node[font=\scriptsize,anchor=east,inner sep=0.4pt] at (-0.22,0.42) {$225^{\circ}$};
+    \node[font=\scriptsize,anchor=north,inner sep=0.6pt] at (-0.52,-0.78) {$\sqrt{2}$};
+    \node[font=\scriptsize,anchor=west,inner sep=0.6pt] at (-0.84,-0.40) {$-1$};
+    \node[font=\scriptsize,anchor=east,inner sep=0.6pt] at (-1.08,0.12) {$-1$};
+    \node[anchor=north east,inner sep=1pt] at (227:{\R+0.12}) {$P_{3}$};
+    \node[anchor=north west,inner sep=1pt] at (0.10,-0.14) {$O$};
+  \end{scope}
+  \begin{scope}[xshift=4.55cm,yshift=-4.25cm]
+    \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+\axisext},0);
+    \draw[line width=0.7pt,-latex] ({\R+\axisext},0) -- ({\R+\axisext+0.48},0) node[right=1pt] {$x$};
+    \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+\axisext});
+    \draw[line width=0.7pt,-latex] (0,{\R+\axisext}) -- (0,{\R+\axisext+0.42}) node[above=1pt] {$y$};
+    \draw[line width=0.7pt] (0,0) circle[radius=\R];
+    \draw[line width=0.7pt] (0,0) -- (315:0.72);
+    \draw[line width=0.7pt,-latex] (315:0.72) -- (315:\R);
+    \draw[line width=0.7pt] (315:\R) -- (315:\R |- 0,0);
+    \draw[line width=0.6pt] (0.62,0) arc[start angle=0, end angle=315, radius=0.62];
+    \fill (315:\R) circle (1.05pt);
+    \node[font=\scriptsize,anchor=east,inner sep=0.5pt] at (-0.48,-0.22) {$315^{\circ}$};
+    \node[font=\scriptsize,anchor=south,inner sep=0.6pt] at (0.46,0.12) {$1$};
+    \node[font=\scriptsize,anchor=east,inner sep=1pt] at (0.90,-0.38) {$-1$};
+    \node[font=\scriptsize,anchor=north,inner sep=0.8pt] at (0.52,-0.78) {$\sqrt{2}$};
+    \node[anchor=north west,inner sep=1pt] at (1.00,-1.12) {$P_{4}$};
+    \node[anchor=north east,inner sep=1pt] at (-0.06,-0.12) {$O$};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{(第9题)}
@@ -5661,45 +5729,81 @@ cosec α & 不存在 & 1 & 不存在 & -1 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-03.png}}
-\caption{图示（原PDF第71页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-04.png}}
-\caption{图示（原PDF第71页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第71页）}]{assets/plane-trigonometry/fig-p0071-05.png}}
-\caption{图示（原PDF第71页）}
-\end{figure}
-
-\begin{figure}
-\centering
 \fitfig{%
-% fig-alt: 圆上300°，半径至P4并有箭头，垂足在正x轴；横边标1，竖边内侧标-、外侧标√3，斜边标2；角弧标300°在左上方，原点O，正x与正y带箭头，无刻度
+% fig-alt: 四圆：60°、120°、240°、300°；直角边标1或-1与√3，斜边标2；仅300°半径有箭头；点P1至P4，原点O，正x与正y带箭头，无刻度
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
   \def\R{1.34}
-  \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+0.36},0);
-  \draw[line width=0.7pt,-latex] ({\R+0.36},0) -- ({\R+0.78},0) node[right=1pt] {$x$};
-  \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+0.32});
-  \draw[line width=0.7pt,-latex] (0,{\R+0.32}) -- (0,{\R+0.70}) node[above=1pt] {$y$};
-  \draw[line width=0.7pt] (0,0) circle[radius=\R];
-  \draw[line width=0.7pt] (0,0) -- (300:0.70);
-  \draw[line width=0.7pt,-latex] (300:0.70) -- (300:\R);
-  \draw[line width=0.7pt] (300:\R) -- (300:\R |- 0,0);
-  \draw[line width=0.6pt] (0.60,0) arc[start angle=0, end angle=300, radius=0.60];
-  \fill (300:\R) circle (1.05pt);
-  \node[font=\scriptsize,anchor=east,inner sep=0.5pt] at (-0.36,0.34) {$300^{\circ}$};
-  \node[font=\scriptsize,anchor=south,inner sep=0.6pt] at (0.30,0.12) {$1$};
-  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (0.64,-0.48) {$-$};
-  \node[font=\scriptsize,anchor=west,inner sep=0.6pt] at (0.78,-0.50) {$\sqrt{3}$};
-  \node[font=\scriptsize,anchor=east,inner sep=0.8pt] at (0.02,-0.88) {$2$};
-  \node[anchor=north west,inner sep=1pt] at (0.78,-1.28) {$P_{4}$};
-  \node[anchor=north east,inner sep=1pt] at (-0.04,-0.14) {$O$};
+  \def\axisext{0.42}
+  \begin{scope}[xshift=0cm,yshift=0cm]
+    \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+\axisext},0);
+    \draw[line width=0.7pt,-latex] ({\R+\axisext},0) -- ({\R+\axisext+0.48},0) node[right=1pt] {$x$};
+    \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+\axisext});
+    \draw[line width=0.7pt,-latex] (0,{\R+\axisext}) -- (0,{\R+\axisext+0.42}) node[above=1pt] {$y$};
+    \draw[line width=0.7pt] (0,0) circle[radius=\R];
+    \draw[line width=0.7pt] (0,0) -- (60:\R);
+    \draw[line width=0.7pt] (60:\R) -- (60:\R |- 0,0);
+    \draw[line width=0.6pt] (0.32,0) arc[start angle=0, end angle=60, radius=0.32];
+    \fill (60:\R) circle (1.05pt);
+    \node[font=\scriptsize,anchor=south west,inner sep=0.4pt] at (0.34,0.10) {$60^{\circ}$};
+    \node[font=\scriptsize,anchor=south,inner sep=0.6pt] at (0.42,0.62) {$2$};
+    \node[font=\scriptsize,anchor=west,inner sep=0.6pt] at (0.78,0.52) {$\sqrt{3}$};
+    \node[font=\scriptsize,anchor=north,inner sep=0.6pt] at (0.34,-0.14) {$1$};
+    \node[anchor=south west,inner sep=1pt] at (62:{\R+0.10}) {$P_{1}$};
+    \node[anchor=north east,inner sep=1pt] at (-0.06,-0.14) {$O$};
+  \end{scope}
+  \begin{scope}[xshift=4.55cm,yshift=0cm]
+    \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+\axisext},0);
+    \draw[line width=0.7pt,-latex] ({\R+\axisext},0) -- ({\R+\axisext+0.48},0) node[right=1pt] {$x$};
+    \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+\axisext});
+    \draw[line width=0.7pt,-latex] (0,{\R+\axisext}) -- (0,{\R+\axisext+0.42}) node[above=1pt] {$y$};
+    \draw[line width=0.7pt] (0,0) circle[radius=\R];
+    \draw[line width=0.7pt] (0,0) -- (120:\R);
+    \draw[line width=0.7pt] (120:\R) -- (120:\R |- 0,0);
+    \draw[line width=0.6pt] (0.50,0) arc[start angle=0, end angle=120, radius=0.50];
+    \fill (120:\R) circle (1.05pt);
+    \node[font=\scriptsize,anchor=south,inner sep=0.4pt] at (0.42,0.28) {$120^{\circ}$};
+    \node[font=\scriptsize,anchor=south,inner sep=0.6pt] at (-0.42,0.62) {$2$};
+    \node[font=\scriptsize,anchor=east,inner sep=0.6pt] at (-0.78,0.52) {$\sqrt{3}$};
+    \node[font=\scriptsize,anchor=north,inner sep=0.6pt] at (-0.34,-0.14) {$-1$};
+    \node[anchor=south east,inner sep=1pt] at (118:{\R+0.10}) {$P_{2}$};
+    \node[anchor=north west,inner sep=1pt] at (0.08,-0.14) {$O$};
+  \end{scope}
+  \begin{scope}[xshift=0cm,yshift=-4.25cm]
+    \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+\axisext},0);
+    \draw[line width=0.7pt,-latex] ({\R+\axisext},0) -- ({\R+\axisext+0.48},0) node[right=1pt] {$x$};
+    \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+\axisext});
+    \draw[line width=0.7pt,-latex] (0,{\R+\axisext}) -- (0,{\R+\axisext+0.42}) node[above=1pt] {$y$};
+    \draw[line width=0.7pt] (0,0) circle[radius=\R];
+    \draw[line width=0.7pt] (0,0) -- (240:\R);
+    \draw[line width=0.7pt] (240:\R) -- (240:\R |- 0,0);
+    \draw[line width=0.6pt] (0.60,0) arc[start angle=0, end angle=240, radius=0.60];
+    \fill (240:\R) circle (1.05pt);
+    \node[font=\scriptsize,anchor=east,inner sep=0.4pt] at (-0.28,0.38) {$240^{\circ}$};
+    \node[font=\scriptsize,anchor=east,inner sep=0.6pt] at (-0.02,-0.72) {$2$};
+    \node[font=\scriptsize,anchor=east,inner sep=0.6pt] at (-0.78,-0.50) {$-\sqrt{3}$};
+    \node[font=\scriptsize,anchor=north,inner sep=0.6pt] at (-0.34,-0.14) {$1$};
+    \node[anchor=north east,inner sep=1pt] at (242:{\R+0.12}) {$P_{3}$};
+    \node[anchor=north west,inner sep=1pt] at (0.10,-0.14) {$O$};
+  \end{scope}
+  \begin{scope}[xshift=4.55cm,yshift=-4.25cm]
+    \draw[line width=0.7pt] ({-\R-0.28},0) -- ({\R+\axisext},0);
+    \draw[line width=0.7pt,-latex] ({\R+\axisext},0) -- ({\R+\axisext+0.48},0) node[right=1pt] {$x$};
+    \draw[line width=0.7pt] (0,{-\R-0.28}) -- (0,{\R+\axisext});
+    \draw[line width=0.7pt,-latex] (0,{\R+\axisext}) -- (0,{\R+\axisext+0.42}) node[above=1pt] {$y$};
+    \draw[line width=0.7pt] (0,0) circle[radius=\R];
+    \draw[line width=0.7pt] (0,0) -- (300:0.70);
+    \draw[line width=0.7pt,-latex] (300:0.70) -- (300:\R);
+    \draw[line width=0.7pt] (300:\R) -- (300:\R |- 0,0);
+    \draw[line width=0.6pt] (0.60,0) arc[start angle=0, end angle=300, radius=0.60];
+    \fill (300:\R) circle (1.05pt);
+    \node[font=\scriptsize,anchor=east,inner sep=0.5pt] at (-0.36,0.34) {$300^{\circ}$};
+    \node[font=\scriptsize,anchor=south,inner sep=0.6pt] at (0.30,0.12) {$1$};
+    \node[font=\scriptsize,anchor=east,inner sep=1pt] at (0.64,-0.48) {$-$};
+    \node[font=\scriptsize,anchor=west,inner sep=0.6pt] at (0.78,-0.50) {$\sqrt{3}$};
+    \node[font=\scriptsize,anchor=east,inner sep=0.8pt] at (0.02,-0.88) {$2$};
+    \node[anchor=north west,inner sep=1pt] at (0.78,-1.28) {$P_{4}$};
+    \node[anchor=north east,inner sep=1pt] at (-0.04,-0.14) {$O$};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{(第10题)}
@@ -9925,8 +10029,58 @@ b ^ {2} = c ^ {2} + a ^ {2} - 2 c a \cos B\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-13}]{assets/plane-trigonometry/fig-p0121-01.png}}
-\caption{图4-13}
+\fitfig{%
+% fig-alt: 三角形CAB，C在左、A在上、B在下；∠C标68°42'；AB近竖直，池为沿AB的多层闭合轮廓；无边长
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (0,0);
+  \coordinate (A) at (46.7:3.40);
+  \coordinate (B) at (-22:2.37);
+  \fill[gray!20]
+    plot[smooth cycle,tension=0.70] coordinates {
+      (1.52,1.92) (1.72,2.18) (2.02,2.28) (2.32,2.12) (2.48,1.78)
+      (2.58,1.42) (2.62,1.02) (2.52,0.62) (2.48,0.28) (2.28,-0.02)
+      (1.98,-0.12) (1.70,0.02) (1.50,0.32) (1.38,0.62) (1.48,0.92)
+      (1.36,1.22) (1.42,1.55)
+    };
+  \draw[line width=0.55pt]
+    plot[smooth cycle,tension=0.70] coordinates {
+      (1.52,1.92) (1.72,2.18) (2.02,2.28) (2.32,2.12) (2.48,1.78)
+      (2.58,1.42) (2.62,1.02) (2.52,0.62) (2.48,0.28) (2.28,-0.02)
+      (1.98,-0.12) (1.70,0.02) (1.50,0.32) (1.38,0.62) (1.48,0.92)
+      (1.36,1.22) (1.42,1.55)
+    };
+  \fill[gray!10]
+    plot[smooth cycle,tension=0.68] coordinates {
+      (1.68,1.72) (1.90,1.95) (2.18,1.98) (2.36,1.75) (2.42,1.40)
+      (2.44,1.02) (2.36,0.65) (2.22,0.32) (2.00,0.18) (1.76,0.28)
+      (1.58,0.55) (1.55,0.92) (1.52,1.28) (1.58,1.52)
+    };
+  \draw[line width=0.55pt]
+    plot[smooth cycle,tension=0.68] coordinates {
+      (1.68,1.72) (1.90,1.95) (2.18,1.98) (2.36,1.75) (2.42,1.40)
+      (2.44,1.02) (2.36,0.65) (2.22,0.32) (2.00,0.18) (1.76,0.28)
+      (1.58,0.55) (1.55,0.92) (1.52,1.28) (1.58,1.52)
+    };
+  \draw[line width=0.5pt]
+    plot[smooth cycle,tension=0.65] coordinates {
+      (1.82,1.48) (1.98,1.62) (2.18,1.58) (2.28,1.38) (2.30,1.12)
+      (2.24,0.85) (2.12,0.62) (1.94,0.52) (1.78,0.62) (1.70,0.88)
+      (1.70,1.15) (1.76,1.35)
+    };
+  \draw[line width=0.5pt]
+    plot[smooth cycle,tension=0.62] coordinates {
+      (1.92,1.22) (2.05,1.32) (2.16,1.22) (2.18,1.06) (2.10,0.92)
+      (1.98,0.88) (1.88,0.98) (1.88,1.12)
+    };
+  \draw[line width=0.7pt] (C) -- (A) -- (B) -- cycle;
+  \draw[line width=0.6pt] (-22:0.52) arc[start angle=-22, end angle=46.7, radius=0.52];
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (12.3:0.62) {$68^{\circ}42'$};
+  \node[anchor=south,inner sep=2pt] at (A) {$A$};
+  \node[anchor=west,inner sep=2pt] at (B) {$B$};
+  \node[anchor=east,inner sep=2pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+\caption{图4·13}
 \end{figure}
 
 \begin{quote}

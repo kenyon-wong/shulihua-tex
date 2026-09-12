@@ -393,7 +393,43 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4}]{assets/plane-geometry-1/fig-p0007-02.png}}
+\fitfig{%
+% fig-alt: 勾股3-4-5：斜边5上正方形（5×5格），直角边4上正方形（4×4格），直角边3上正方形（3×3格），直角顶点有直角记号
+\begin{tikzpicture}[line cap=round, line join=round, x=0.46cm, y=0.46cm]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5,0);
+  \coordinate (C) at (3.2,2.4);
+  \coordinate (P) at (-2.4,3.2);
+  \coordinate (Q) at (0.8,5.6);
+  \coordinate (R) at (5.6,4.2);
+  \coordinate (S) at (7.4,1.8);
+  \coordinate (T) at (5,-5);
+  \coordinate (U) at (0,-5);
+  \foreach \i in {0,1,2,3,4,5} {
+    \draw[line width=0.5pt] (\i,0) -- (\i,-5);
+    \draw[line width=0.5pt] (0,-\i) -- (5,-\i);
+  }
+  \foreach \i in {0,1,2,3,4} {
+    \draw[line width=0.5pt]
+      ({0.8*\i},{0.6*\i}) -- ({0.8*\i-2.4},{0.6*\i+3.2});
+    \draw[line width=0.5pt]
+      ({-0.6*\i},{0.8*\i}) -- ({-0.6*\i+3.2},{0.8*\i+2.4});
+  }
+  \foreach \i in {0,1,2,3} {
+    \draw[line width=0.5pt]
+      ({3.2+0.6*\i},{2.4-0.8*\i}) -- ({5.6+0.6*\i},{4.2-0.8*\i});
+    \draw[line width=0.5pt]
+      ({3.2+0.8*\i},{2.4+0.6*\i}) -- ({5.0+0.8*\i},{0.0+0.6*\i});
+  }
+  \draw[line width=0.7pt] (A) -- (B) -- (T) -- (U) -- cycle;
+  \draw[line width=0.7pt] (A) -- (C) -- (Q) -- (P) -- cycle;
+  \draw[line width=0.7pt] (C) -- (B) -- (S) -- (R) -- cycle;
+  \draw[line width=0.55pt] (2.896,2.172) -- (3.124,1.868) -- (3.428,2.096);
+  \node[font=\scriptsize, inner sep=1pt] at (1.48,0.72) {4};
+  \node[font=\scriptsize, inner sep=1pt] at (2.50,0.28) {5};
+  \node[font=\scriptsize, inner sep=1pt] at (3.88,0.72) {3};
+\end{tikzpicture}%
+}
 \caption{图4}
 \end{figure}
 
@@ -440,7 +476,26 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7}]{assets/plane-geometry-1/fig-p0009-01.png}}
+\fitfig{%
+% fig-alt: 锥形玻璃杯，上层油面有椭圆波纹，中层标分界面，下层为水，右侧引出油、分界面、水
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.85pt] (0,3.28) ellipse (1.18 and 0.26);
+  \draw[line width=0.7pt] (-1.18,3.28) -- (-0.66,0.20);
+  \draw[line width=0.7pt] (1.18,3.28) -- (0.66,0.20);
+  \draw[line width=0.7pt] (0,0.20) ellipse (0.66 and 0.18);
+  \draw[line width=0.65pt] (0,2.38) ellipse (1.00 and 0.22);
+  \draw[line width=0.5pt] (0.06,2.42) ellipse (0.36 and 0.10);
+  \draw[line width=0.65pt] (0,1.52) ellipse (0.88 and 0.20);
+  \draw[line width=0.45pt] (0,1.52) ellipse (0.58 and 0.13);
+  \draw[line width=0.45pt] (0.02,1.54) ellipse (0.28 and 0.07);
+  \draw[line width=0.45pt] (0.95,2.12) -- (1.52,2.28);
+  \node[font=\scriptsize, anchor=west, inner sep=1pt] at (1.52,2.28) {油};
+  \draw[line width=0.45pt] (0.90,1.52) -- (1.52,1.58);
+  \node[font=\scriptsize, anchor=west, inner sep=1pt] at (1.52,1.58) {分界面};
+  \draw[line width=0.45pt] (0.80,0.92) -- (1.52,0.92);
+  \node[font=\scriptsize, anchor=west, inner sep=1pt] at (1.52,0.92) {水};
+\end{tikzpicture}%
+}
 \caption{图7}
 \end{figure}
 
@@ -468,7 +523,30 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9}]{assets/plane-geometry-1/fig-p0009-04.png}}
+\fitfig{%
+% fig-alt: 左为两端圆头的两直线交于一点；中为两圆弧相交；右为铅笔尖与所画曲线的交点。交点旁均标“点”
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=1.35pt] (-1.62,-0.52) -- (0.98,0.40);
+  \fill (-1.62,-0.52) circle (0.07);
+  \fill (0.98,0.40) circle (0.055);
+  \draw[line width=1.35pt] (-1.22,0.78) -- (1.12,-0.62);
+  \fill (-1.22,0.78) circle (0.055);
+  \fill (1.12,-0.62) circle (0.055);
+  \node[font=\scriptsize, inner sep=1pt] at (0.12,-0.28) {点};
+  \begin{scope}[xshift=2.55cm]
+    \draw[line width=0.85pt] (0.05,-0.62) arc[start angle=185, end angle=8, radius=1.02];
+    \draw[line width=0.85pt] (0.95,-0.38) arc[start angle=175, end angle=-8, radius=1.08];
+    \node[font=\scriptsize, inner sep=1pt] at (1.28,0.18) {点};
+  \end{scope}
+  \begin{scope}[xshift=5.55cm]
+    \fill[black] (0.02,0.42) -- (0.02,2.08) arc[start angle=180, end angle=0, x radius=0.12, y radius=0.10] -- (0.26,0.42) -- cycle;
+    \draw[line width=0.6pt] (0.02,0.42) -- (0.14,0.04) -- (0.26,0.42);
+    \fill[black] (0.08,0.28) -- (0.14,0.04) -- (0.20,0.28) -- cycle;
+    \draw[line width=0.7pt] (0.14,0.04) .. controls (0.16,-0.22) and (0.32,-0.38) .. (0.78,-0.40);
+    \node[font=\scriptsize, inner sep=1pt] at (0.92,-0.18) {点};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图9}
 \end{figure}
 
@@ -484,7 +562,25 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图10}]{assets/plane-geometry-1/fig-p0010-01.png}}
+\fitfig{%
+% fig-alt: 平行四边形框内自左至右：相交直线、角、两条平行线、三角形、水平网纹椭圆
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.7pt] (0,0) -- (8.55,0) -- (8.92,1.68) -- (0.37,1.68) -- cycle;
+  \draw[line width=0.7pt] (0.42,0.38) -- (1.72,1.38);
+  \draw[line width=0.7pt] (0.48,1.32) -- (1.88,0.32);
+  \draw[line width=0.7pt] (2.18,0.38) -- (3.58,0.38);
+  \draw[line width=0.7pt] (2.18,0.38) -- (3.48,1.28);
+  \draw[line width=0.7pt] (3.95,1.12) -- (5.18,1.12);
+  \draw[line width=0.7pt] (3.78,0.38) -- (5.42,0.38);
+  \draw[line width=0.7pt] (5.62,0.35) -- (7.12,0.35) -- (6.40,1.38) -- cycle;
+  \begin{scope}
+    \clip[rotate around={48:(7.85,0.88)}] (7.85,0.88) ellipse (0.42 and 0.28);
+    \foreach \y in {0.38,0.48,...,1.38}
+      \draw[line width=0.35pt] (7.20,\y) -- (8.55,\y);
+  \end{scope}
+  \draw[rotate around={48:(7.85,0.88)}, line width=0.7pt] (7.85,0.88) ellipse (0.42 and 0.28);
+\end{tikzpicture}%
+}
 \caption{图10}
 \end{figure}
 
@@ -548,19 +644,29 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0012-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: （1）直尺在直线一侧为实线矩形，另一侧为虚线矩形，边缘与过两点的直线重合；（2）尺边弯曲，两侧所画曲线不重合
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.7pt] (0.52,0.22) rectangle (3.22,0.62);
+  \draw[line width=0.7pt] (0.02,0.22) -- (3.68,0.22);
+  \draw[line width=0.7pt] (0.28,0.22) -- (0.28,0.02);
+  \draw[line width=0.7pt] (3.38,0.22) -- (3.38,0.02);
+  \draw[dashed, line width=0.7pt] (0.28,0.22) -- (0.28,-0.32) -- (3.38,-0.32) -- (3.38,0.22);
+  \node[font=\scriptsize, below=11pt] at (1.85,0.02) {（1）};
+  \begin{scope}[xshift=4.35cm]
+    \draw[line width=0.7pt] (0,0.20) -- (0,0.58);
+    \draw[line width=0.7pt] (2.95,0.20) -- (2.95,0.58);
+    \draw[line width=0.7pt] (0,0.58) .. controls (0.95,0.70) and (2.00,0.70) .. (2.95,0.58);
+    \draw[line width=0.85pt] (0,0.20) .. controls (0.95,0.32) and (2.00,0.32) .. (2.95,0.20);
+    \draw[dashed, line width=0.7pt] (0,0.20) -- (0,-0.28);
+    \draw[dashed, line width=0.7pt] (2.95,0.20) -- (2.95,-0.28);
+    \draw[dashed, line width=0.7pt] (0,-0.28) .. controls (0.95,-0.40) and (2.00,-0.40) .. (2.95,-0.28);
+    \node[font=\scriptsize, below=11pt] at (1.48,-0.28) {（2）};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图1-2}
 \end{figure}
-
-\emph{（1）}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0012-02.png}}
-\caption{(2)}
-\end{figure}
-
-\emph{（2）}
 
 \emph{图 1·2}
 
@@ -898,7 +1004,35 @@ PQ > RS \text{或者} RS < PQ.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-12}]{assets/plane-geometry-1/fig-p0015-04.png}}
+\fitfig{%
+% fig-alt: 长方体杆件架在刻度尺0到3之间，尺上有毫米刻度，0、1、2、3标在尺面，杆件背面底棱为虚线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.7pt] (0,0) -- (0,1.10) -- (4.72,1.10) -- (4.88,0.96) -- (4.88,0) -- cycle;
+  \foreach \i in {0,1,...,35} {
+    \draw[line width=0.4pt] ({0.40+0.11*\i},1.10) -- ({0.40+0.11*\i},0.96);
+  }
+  \foreach \i in {0,5,...,35} {
+    \draw[line width=0.5pt] ({0.40+0.11*\i},1.10) -- ({0.40+0.11*\i},0.88);
+  }
+  \foreach \i/\lab in {0/0,10/1,20/2,30/3} {
+    \draw[line width=0.55pt] ({0.40+0.11*\i},1.10) -- ({0.40+0.11*\i},0.58);
+    \node[font=\scriptsize, inner sep=1pt] at ({0.40+0.11*\i},0.42) {\lab};
+  }
+  \coordinate (FBL) at (0.40,1.28);
+  \coordinate (FBR) at (3.70,1.28);
+  \coordinate (FTR) at (3.70,1.68);
+  \coordinate (FTL) at (0.40,1.68);
+  \coordinate (BBL) at (0.72,1.48);
+  \coordinate (BBR) at (4.02,1.48);
+  \coordinate (BTR) at (4.02,1.88);
+  \coordinate (BTL) at (0.72,1.88);
+  \draw[line width=0.7pt] (FBL) -- (FBR) -- (FTR) -- (FTL) -- cycle;
+  \draw[line width=0.7pt] (FTL) -- (BTL) -- (BTR) -- (FTR);
+  \draw[line width=0.7pt] (FBL) -- (BBL) -- (BTL);
+  \draw[line width=0.7pt] (FBR) -- (BBR) -- (BTR);
+  \draw[dashed, line width=0.6pt] (BBL) -- (BBR);
+\end{tikzpicture}%
+}
 \caption{图1-12}
 \end{figure}
 
@@ -906,7 +1040,28 @@ PQ > RS \text{或者} RS < PQ.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0016-01.png}}
+\fitfig{%
+% fig-alt: 分割规两脚张开，针尖落在线段AB两端，顶部有手柄和铰链，近针处有脚关节
+\begin{tikzpicture}[line cap=round, line join=round]
+  \draw[line width=0.7pt] (0,0) -- (2.10,0);
+  \node[below=1pt] at (0,0) {$A$};
+  \node[below=1pt] at (2.10,0) {$B$};
+  \draw[line width=0.6pt] (0,0) -- (0.10,0.40);
+  \draw[line width=0.6pt] (2.10,0) -- (2.00,0.40);
+  \draw[line width=0.55pt] (0.12,0.52) circle (0.13);
+  \fill (-0.01,0.58) circle (0.07);
+  \draw[line width=0.55pt] (1.98,0.52) circle (0.13);
+  \fill (2.11,0.58) circle (0.07);
+  \draw[line width=0.7pt] (0.18,0.64) -- (0.90,3.78);
+  \draw[line width=0.55pt] (0.32,0.62) -- (1.02,3.78);
+  \draw[line width=0.55pt] (1.08,3.78) -- (1.78,0.62);
+  \draw[line width=0.9pt] (1.20,3.78) -- (1.92,0.64);
+  \draw[line width=0.65pt] (0.86,3.70) -- (0.86,4.32) -- (0.94,4.44) -- (1.16,4.44) -- (1.24,4.32) -- (1.24,3.70) -- cycle;
+  \draw[line width=0.55pt] (0.82,4.20) circle (0.13);
+  \fill (0.78,4.24) circle (0.055);
+  \fill[black] (0.96,4.44) -- (0.96,5.10) -- (1.05,5.18) -- (1.14,5.10) -- (1.14,4.44) -- cycle;
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
