@@ -32380,11 +32380,43 @@ p _ {a} + \frac {1}{2} \rho v _ {a} ^ {2} = p _ {b} + \frac {1}{2} \rho v _ {b} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 15·9}]{assets/physics-1/fig-p0506-01.png}}
-\caption{图 15·9}
+% fig-alt: 图15·9：水平管左粗右细，管内水平短虚线示流体，两箭头向右；下方U形管连通粗细部，粗侧液面低、细侧液面高。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt] (-3.1,1.0) -- (-0.4,1.0) -- (0.5,0.55) -- (3.1,0.55);
+  \draw[line width=0.55pt] (-3.1,0.1) -- (-1.15,0.1);
+  \draw[line width=0.55pt] (-0.75,0.1) -- (0.15,0.1) -- (0.9,0.35) -- (1.55,0.35);
+  \draw[line width=0.55pt] (1.95,0.35) -- (3.1,0.35);
+  \draw[line width=0.45pt] (-3.1,1.0) -- (-3.1,0.1);
+  \draw[line width=0.45pt] (3.1,0.55) -- (3.1,0.35);
+  \draw[line width=0.55pt,->] (-2.3,0.55) -- (-1.3,0.55);
+  \draw[line width=0.55pt,->] (1.6,0.45) -- (2.5,0.45);
+  \foreach \x/\y in {-2.7/0.75,-2.0/0.35,-1.4/0.75,-0.2/0.35,1.2/0.45,2.2/0.45} {
+    \draw[line width=0.28pt,dash pattern=on 0.7pt off 1.0pt] (\x,\y) -- ++(0.32,0);
+  }
+  \draw[line width=0.5pt]
+    (-1.15,0.1) -- (-1.15,-1.9)
+    .. controls (-1.15,-2.45) and (2.45,-2.45) .. (2.45,-1.9)
+    -- (2.45,0.35);
+  \draw[line width=0.5pt]
+    (-0.75,0.1) -- (-0.75,-1.55)
+    .. controls (-0.75,-2.05) and (2.05,-2.05) .. (2.05,-1.55)
+    -- (2.05,0.35);
+  \foreach \y in {-1.85,-1.70,-1.55,-1.40} {
+    \draw[line width=0.28pt,dash pattern=on 0.55pt off 0.5pt] (-1.10,\y) -- (-0.80,\y);
+  }
+  \foreach \y in {-1.85,-1.70,-1.55,-1.40,-1.25,-1.10,-0.95,-0.80,-0.65,-0.50} {
+    \draw[line width=0.28pt,dash pattern=on 0.55pt off 0.5pt] (2.10,\y) -- (2.40,\y);
+  }
+  \foreach \x in {-0.5,0.0,0.5,1.0,1.5} {
+    \draw[line width=0.28pt,dash pattern=on 0.55pt off 0.5pt] (\x,-2.15) -- ++(0.35,0);
+  }
+\end{tikzpicture}%
+}
+\caption{图15·9}
 \end{figure}
 
-\emph{图 15·9}
+\emph{图15·9}
 
 \section{§15·5
 液流和气流的空吸作用}
@@ -32400,11 +32432,53 @@ AB
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 15·10}]{assets/physics-1/fig-p0506-02.png}}
-\caption{图 15·10}
+% fig-alt: 图15·10：水平管$AB$中部缩细，左端箭头入流；细部接下竖管$CD$，下端$D$浸入容器$E$液面下；管内短横线示流体。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % horizontal Venturi pipe AB
+  \draw[line width=0.55pt]
+    (-3.35,1.55) -- (-1.35,1.55)
+    .. controls (-0.75,1.55) and (-0.55,1.05) .. (0.0,1.05)
+    .. controls (0.55,1.05) and (0.75,1.55) .. (1.35,1.55)
+    -- (3.35,1.55);
+  \draw[line width=0.55pt]
+    (-3.35,0.55) -- (-1.35,0.55)
+    .. controls (-0.75,0.55) and (-0.55,0.95) .. (0.0,0.95)
+    .. controls (0.55,0.95) and (0.75,0.55) .. (1.35,0.55)
+    -- (3.35,0.55);
+  \draw[line width=0.45pt] (-3.35,1.55) -- (-3.35,0.55);
+  \draw[line width=0.45pt] (3.35,1.55) -- (3.35,0.55);
+  % inlet arrow + A
+  \draw[line width=0.55pt,->] (-4.05,1.05) -- (-3.45,1.05);
+  \node[anchor=east] at (-4.10,1.05) {$A$};
+  \node[anchor=south west] at (3.10,1.58) {$B$};
+  % fluid dashes in AB
+  \foreach \x/\y in {-2.8/1.30,-2.1/0.80,-1.5/1.25,-0.9/0.85,0.0/1.00,0.9/0.85,1.6/1.25,2.3/0.80,2.9/1.30} {
+    \draw[line width=0.28pt,dash pattern=on 0.7pt off 1.0pt] (\x,\y) -- ++(0.30,0);
+  }
+  % vertical tube CD (gap in bottom wall at throat)
+  \draw[line width=0.5pt] (-0.18,0.95) -- (-0.18,-2.35);
+  \draw[line width=0.5pt] (0.18,0.95) -- (0.18,-2.35);
+  \node[anchor=west] at (0.28,0.55) {$C$};
+  \node[anchor=west] at (0.28,-2.15) {$D$};
+  % liquid in CD
+  \foreach \y in {0.70,0.40,0.10,-0.20,-0.50,-0.80,-1.10,-1.40,-1.70,-2.00,-2.25} {
+    \draw[line width=0.28pt,dash pattern=on 0.55pt off 0.5pt] (-0.14,\y) -- (0.14,\y);
+  }
+  % beaker E
+  \draw[line width=0.55pt] (-1.15,-2.55) -- (-1.15,-1.35) -- (1.15,-1.35) -- (1.15,-2.55);
+  \draw[line width=0.55pt] (-1.15,-2.55) -- (1.15,-2.55);
+  \node[anchor=east] at (-1.25,-1.95) {$E$};
+  % liquid in E
+  \foreach \y in {-1.55,-1.75,-1.95,-2.15,-2.35} {
+    \draw[line width=0.28pt,dash pattern=on 0.7pt off 0.6pt] (-1.05,\y) -- (1.05,\y);
+  }
+\end{tikzpicture}%
+}
+\caption{图15·10}
 \end{figure}
 
-\emph{图 15·10}
+\emph{图15·10}
 
 图 15·11
 是利用空吸作用的水流抽气管示意图。从自来水管流出来的水经过玻璃管的细窄部分
@@ -32416,8 +32490,61 @@ A 内的空气的压强降低到与细窄部分 M
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 15-11}]{assets/physics-1/fig-p0507-01.png}}
-\caption{图 15-11}
+% fig-alt: 图15·11：左为抽气细部放大（上标水、侧标空气、喉口$M$）；右为龙头接竖管$M$，侧管连烧瓶$A$，瓶内箭头向上示抽气。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt] (-4.6,2.6) -- (-4.6,1.1) .. controls (-4.6,0.5) and (-3.5,0.5) .. (-3.5,1.1) -- (-3.5,2.6) .. controls (-3.5,3.0) and (-4.6,3.0) .. (-4.6,2.6);
+  \draw[line width=0.5pt] (-4.25,2.75) -- (-4.25,3.55);
+  \draw[line width=0.5pt] (-3.85,2.75) -- (-3.85,3.55);
+  \draw[line width=0.45pt] (-4.25,3.55) -- (-3.85,3.55);
+  \node[anchor=east] at (-4.35,3.35) {水};
+  \draw[line width=0.5pt,->] (-4.05,3.4) -- (-4.05,2.95);
+  \draw[line width=0.5pt] (-4.25,2.75) -- (-4.12,1.85) -- (-3.98,1.85) -- (-3.85,2.75);
+  \draw[line width=0.5pt] (-4.28,1.55) -- (-4.28,0.2);
+  \draw[line width=0.5pt] (-3.82,1.55) -- (-3.82,0.2);
+  \draw[line width=0.45pt] (-4.28,1.55) -- (-3.82,1.55);
+  \draw[line width=0.5pt,->] (-4.05,0.55) -- (-4.05,0.1);
+  \node[anchor=west] at (-3.7,1.45) {$M$};
+  \draw[line width=0.5pt] (-3.5,1.95) -- (-2.5,1.95);
+  \draw[line width=0.5pt] (-3.5,1.65) -- (-2.5,1.65);
+  \draw[line width=0.45pt] (-2.5,1.95) -- (-2.5,1.65);
+  \node[anchor=west] at (-2.4,1.8) {空气};
+  \draw[line width=0.45pt,->] (-2.7,1.8) -- (-3.4,1.8);
+  \draw[line width=0.4pt,->] (-3.45,1.8) .. controls (-3.65,1.7) and (-3.8,1.65) .. (-3.95,1.58);
+  \foreach \y in {3.35,3.15,2.95} {
+    \draw[line width=0.25pt,dash pattern=on 0.5pt off 0.45pt] (-4.2,\y) -- (-3.9,\y);
+  }
+  \foreach \y in {1.35,1.05,0.75,0.45} {
+    \draw[line width=0.25pt,dash pattern=on 0.5pt off 0.45pt] (-4.22,\y) -- (-3.88,\y);
+  }
+  \draw[line width=0.55pt] (0.2,3.5) -- (0.2,2.55) -- (1.4,2.55);
+  \draw[line width=0.5pt] (0.55,2.55) -- (0.55,2.95) -- (1.0,2.95) -- (1.0,2.55);
+  \draw[line width=0.4pt] (0.78,2.95) -- (0.78,3.2);
+  \draw[line width=0.35pt] (0.58,3.2) -- (0.98,3.2);
+  \draw[line width=0.5pt] (0.6,2.55) -- (0.6,0.4);
+  \draw[line width=0.5pt] (0.95,2.55) -- (0.95,0.4);
+  \draw[line width=0.5pt] (0.45,1.9) -- (0.45,1.25) .. controls (0.45,0.95) and (1.1,0.95) .. (1.1,1.25) -- (1.1,1.9) .. controls (1.1,2.15) and (0.45,2.15) .. (0.45,1.9);
+  \node[anchor=east] at (0.35,1.55) {$M$};
+  \draw[line width=0.45pt] (1.1,1.65) -- (2.0,1.65);
+  \draw[line width=0.45pt] (1.1,1.4) -- (2.0,1.4);
+  \draw[line width=0.5pt] (2.0,1.52) .. controls (2.7,1.9) and (3.0,1.4) .. (3.15,0.95);
+  \draw[line width=0.45pt] (2.0,1.52) .. controls (2.55,1.6) and (2.9,1.2) .. (3.05,0.85);
+  \draw[line width=0.55pt] (2.85,0.75) -- (2.85,0.45) .. controls (2.85,-0.55) and (4.0,-0.55) .. (4.0,0.45) -- (4.0,0.75);
+  \draw[line width=0.5pt] (3.1,0.75) -- (3.1,1.05) -- (3.75,1.05) -- (3.75,0.75);
+  \draw[line width=0.4pt] (3.3,1.05) -- (3.3,0.55);
+  \draw[line width=0.55pt,->] (3.4,0.05) -- (3.4,0.7);
+  \node[anchor=west] at (4.1,0.35) {$A$};
+  \draw[line width=0.55pt] (1.6,-0.05) -- (4.4,-0.05);
+  \draw[line width=0.45pt] (1.9,-0.05) -- (1.9,-0.55);
+  \draw[line width=0.45pt] (4.1,-0.05) -- (4.1,-0.55);
+  \draw[line width=0.5pt] (0.6,0.4) .. controls (0.5,-0.2) and (1.2,-0.4) .. (1.7,-0.3);
+  \draw[line width=0.5pt] (0.95,0.4) .. controls (1.0,-0.05) and (1.3,-0.2) .. (1.7,-0.18);
+  \foreach \a in {-15,0,15,30} {
+    \draw[line width=0.35pt] (1.7,-0.24) -- ++({\a}:0.32);
+  }
+\end{tikzpicture}%
+}
+\caption{图15·11}
 \end{figure}
 
 \emph{图15·11}
@@ -32426,11 +32553,52 @@ A 内的空气的压强降低到与细窄部分 M
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 15·12}]{assets/physics-1/fig-p0507-02.png}}
-\caption{图 15·12}
+% fig-alt: 图15·12：斜置打气筒活塞右推，末端小孔$A$对竖管$B$上口；管$B$浸入容器$E$；$A$处放射线示雾状喷出。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % pump cylinder tilted ~18 deg (use rotated scope)
+  \begin{scope}[rotate=18]
+    % cylinder body
+    \draw[line width=0.55pt] (0.0,0.28) rectangle (3.55,-0.28);
+    % piston
+    \fill[black!75] (1.15,-0.22) rectangle (1.45,0.22);
+    % plunger rod + handle
+    \draw[line width=0.5pt] (-0.85,0.0) -- (1.15,0.0);
+    \fill (-0.95,0.0) circle[radius=0.16];
+    \draw[line width=0.45pt,->] (-0.55,0.22) -- (0.35,0.22);
+    % nozzle taper
+    \draw[line width=0.5pt] (3.55,0.12) -- (3.95,0.04);
+    \draw[line width=0.5pt] (3.55,-0.12) -- (3.95,-0.04);
+    \draw[line width=0.45pt] (3.95,0.04) -- (3.95,-0.04);
+  \end{scope}
+  % A near nozzle (approx after rotation)
+  \node[anchor=south] at (3.85,1.35) {$A$};
+  \fill (3.72,1.18) circle[radius=0.035];
+  % spray fan
+  \foreach \a in {-18,-9,0,9,18,27} {
+    \draw[line width=0.4pt] (3.85,1.15) -- ++({\a}:1.15);
+  }
+  % vertical tube B
+  \draw[line width=0.5pt] (3.55,-0.85) -- (3.55,1.10);
+  \draw[line width=0.5pt] (3.75,-0.85) -- (3.75,1.10);
+  \node[anchor=west] at (3.85,0.15) {$B$};
+  % container E
+  \draw[line width=0.55pt]
+    (2.55,-1.55) -- (2.55,-0.55) -- (4.55,-0.55) -- (4.55,-1.55) -- cycle;
+  \node[anchor=west] at (4.65,-1.05) {$E$};
+  % liquid dashes in E and lower B
+  \foreach \y in {-0.70,-0.90,-1.10,-1.30} {
+    \draw[line width=0.28pt,dash pattern=on 0.65pt off 0.55pt] (2.65,\y) -- (4.45,\y);
+  }
+  \foreach \y in {-0.70,-0.40,-0.10,0.20,0.50,0.80} {
+    \draw[line width=0.25pt,dash pattern=on 0.5pt off 0.45pt] (3.58,\y) -- (3.72,\y);
+  }
+\end{tikzpicture}%
+}
+\caption{图15·12}
 \end{figure}
 
-\emph{图 15·12}
+\emph{图15·12}
 
 的空气就从圆筒末端的小孔 \(A\)
 以很大的速度流出，因此小孔附近的空气压强小于大气压强。于是容器
@@ -32447,8 +32615,45 @@ A 内的空气的压强降低到与细窄部分 M
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-1/fig-p0508-01.png}}
-\caption{(第1题)}
+% fig-alt: （第1题）：两细棒上并挂两纸片向内侧弯；上方标吹气及三向下箭头；两侧水平箭头指向纸片。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % two rods (slight perspective)
+  \draw[line width=0.7pt] (-1.15,2.35) -- (0.55,2.05);
+  \draw[line width=0.7pt] (0.35,2.35) -- (2.05,2.05);
+  % blow label + arrows
+  \node[font=\small] at (0.45,2.85) {吹气};
+  \draw[line width=0.5pt,->] (-0.05,2.55) -- (-0.05,2.15);
+  \draw[line width=0.5pt,->] (0.45,2.55) -- (0.45,2.15);
+  \draw[line width=0.5pt,->] (0.95,2.55) -- (0.95,2.15);
+  % left paper (curves inward)
+  \draw[line width=0.5pt,fill=black!6]
+    (-0.95,2.25)
+    .. controls (-1.05,1.55) and (-0.35,1.10) .. (-0.15,0.35)
+    -- (0.35,0.35)
+    .. controls (0.15,1.10) and (-0.55,1.55) .. (-0.45,2.22)
+    -- cycle;
+  \foreach \t in {0.2,0.4,0.6,0.8} {
+    \draw[line width=0.22pt,dash pattern=on 0.4pt off 0.5pt]
+      ($(-0.95,2.25)!\t!(-0.15,0.35)$) -- ($(-0.45,2.22)!\t!(0.35,0.35)$);
+  }
+  % right paper
+  \draw[line width=0.5pt,fill=black!6]
+    (0.85,2.22)
+    .. controls (0.65,1.55) and (0.95,1.10) .. (0.75,0.35)
+    -- (1.25,0.35)
+    .. controls (1.55,1.10) and (1.85,1.55) .. (1.75,2.22)
+    -- cycle;
+  \foreach \t in {0.2,0.4,0.6,0.8} {
+    \draw[line width=0.22pt,dash pattern=on 0.4pt off 0.5pt]
+      ($(0.85,2.22)!\t!(0.75,0.35)$) -- ($(1.75,2.22)!\t!(1.25,0.35)$);
+  }
+  % side pressure arrows
+  \draw[line width=0.55pt,->] (-1.85,1.15) -- (-1.15,1.15);
+  \draw[line width=0.55pt,->] (2.65,1.15) -- (1.95,1.15);
+\end{tikzpicture}%
+}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
@@ -32465,8 +32670,35 @@ A 内的空气的压强降低到与细窄部分 M
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-1/fig-p0508-02.png}}
-\caption{(第3题)}
+% fig-alt: （第3题）：水平管左粗中细右粗；粗部与细部各接一上竖管，粗侧液柱高、细侧液柱低；管内短横线示水流。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt]
+    (-3.0,0.9) -- (-1.1,0.9)
+    .. controls (-0.55,0.9) and (-0.35,0.4) .. (0.2,0.4)
+    .. controls (0.75,0.4) and (0.95,0.9) .. (1.5,0.9)
+    -- (3.0,0.9);
+  \draw[line width=0.55pt] (-3.0,0.05) -- (3.0,0.05);
+  \draw[line width=0.45pt] (-3.0,0.9) -- (-3.0,0.05);
+  \draw[line width=0.45pt] (3.0,0.9) -- (3.0,0.05);
+  \draw[line width=0.5pt] (-2.05,0.9) -- (-2.05,2.75);
+  \draw[line width=0.5pt] (-1.65,0.9) -- (-1.65,2.75);
+  \draw[line width=0.4pt,dash pattern=on 0.9pt off 0.7pt] (-2.05,2.4) -- (-1.65,2.4);
+  \draw[line width=0.5pt] (0.0,0.4) -- (0.0,2.75);
+  \draw[line width=0.5pt] (0.4,0.4) -- (0.4,2.75);
+  \draw[line width=0.4pt,dash pattern=on 0.9pt off 0.7pt] (0.0,1.35) -- (0.4,1.35);
+  \foreach \x/\y in {-2.5/0.55,-1.7/0.35,-0.9/0.55,0.2/0.22,1.2/0.55,2.0/0.35,2.5/0.55} {
+    \draw[line width=0.28pt,dash pattern=on 0.7pt off 0.9pt] (\x,\y) -- ++(0.32,0);
+  }
+  \foreach \y in {1.05,1.3,1.55,1.8,2.05,2.3} {
+    \draw[line width=0.28pt,dash pattern=on 0.55pt off 0.5pt] (-2.0,\y) -- (-1.7,\y);
+  }
+  \foreach \y in {0.55,0.8,1.05,1.25} {
+    \draw[line width=0.28pt,dash pattern=on 0.55pt off 0.5pt] (0.05,\y) -- (0.35,\y);
+  }
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \emph{（第3题）}
@@ -32535,8 +32767,46 @@ A 的前方）的压强，圆柱体前后方的压强差就构成了压差阻力
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图15-15}]{assets/physics-1/fig-p0511-01.png}}
-\caption{图15-15}
+% fig-alt: 图15·15：四形体自上而下受流向箭头；自左至右为纺垂形$1/25$、圆头柱$1/5$、锥头柱$1/2\sim1/4$、平头柱$1$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % helper: two down arrows above each
+  \foreach \x in {0.0,2.0,4.0,5.8} {
+    \draw[line width=0.45pt,->] (\x-0.18,2.55) -- (\x-0.18,2.05);
+    \draw[line width=0.45pt,->] (\x+0.18,2.55) -- (\x+0.18,2.05);
+  }
+  % 1) spindle 1/25
+  \draw[line width=0.5pt,pattern=north east lines,pattern color=black!55]
+    (0.0,1.85) .. controls (0.45,1.55) and (0.45,0.15) .. (0.0,-0.15)
+    .. controls (-0.45,0.15) and (-0.45,1.55) .. cycle;
+  \draw[line width=0.35pt,dash pattern=on 0.8pt off 0.6pt]
+    (-0.42,0.85) .. controls (-0.15,0.70) and (0.15,0.70) .. (0.42,0.85);
+  \node at (0.0,-0.55) {$\frac{1}{25}$};
+  % 2) rounded head 1/5
+  \draw[line width=0.5pt,pattern=north east lines,pattern color=black!55]
+    (1.55,0.05) -- (1.55,1.15)
+    .. controls (1.55,1.65) and (2.45,1.65) .. (2.45,1.15)
+    -- (2.45,0.05) -- cycle;
+  \draw[line width=0.35pt,dash pattern=on 0.8pt off 0.6pt]
+    (1.55,1.15) .. controls (1.75,1.00) and (2.25,1.00) .. (2.45,1.15);
+  \node at (2.0,-0.55) {$\frac{1}{5}$};
+  % 3) cone head 1/2 ~ 1/4
+  \draw[line width=0.5pt,pattern=north east lines,pattern color=black!55]
+    (3.55,0.05) -- (3.55,0.95) -- (4.0,1.85) -- (4.45,0.95) -- (4.45,0.05) -- cycle;
+  \draw[line width=0.35pt,dash pattern=on 0.8pt off 0.6pt]
+    (3.55,0.95) .. controls (3.75,0.80) and (4.25,0.80) .. (4.45,0.95);
+  \node at (4.0,-0.45) {$\frac{1}{2}\!\sim\!\frac{1}{4}$};
+  % 4) flat cylinder 1
+  \draw[line width=0.5pt,pattern=north east lines,pattern color=black!55]
+    (5.35,0.05) rectangle (6.25,1.05);
+  \draw[line width=0.35pt,dash pattern=on 0.8pt off 0.6pt]
+    (5.35,1.05) .. controls (5.55,0.90) and (6.05,0.90) .. (6.25,1.05);
+  \draw[line width=0.35pt]
+    (5.35,1.05) .. controls (5.55,1.18) and (6.05,1.18) .. (6.25,1.05);
+  \node at (5.8,-0.55) {$1$};
+\end{tikzpicture}%
+}
+\caption{图15·15}
 \end{figure}
 
 \emph{图15·15}
@@ -32565,8 +32835,43 @@ A 的前方）的压强，圆柱体前后方的压强差就构成了压差阻力
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 15-17}]{assets/physics-1/fig-p0512-01.png}}
-\caption{图 15-17}
+% fig-alt: 图15·17：机翼剖面，斜线填充；标前缘、后缘、翼弦；迎面流速$v$与翼弦夹角$\alpha$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % airfoil (nose up, chord tilted)
+  \coordinate (LE) at (0.15,0.85);
+  \coordinate (TE) at (4.55,0.15);
+  \fill[pattern=north east lines,pattern color=black!60]
+    (LE)
+    .. controls (0.55,1.35) and (2.2,1.45) .. (3.6,0.75)
+    .. controls (4.1,0.45) and (4.4,0.25) .. (TE)
+    .. controls (3.8,0.05) and (2.0,0.15) .. (0.7,0.45)
+    .. controls (0.35,0.55) and (0.15,0.70) .. (LE);
+  \draw[line width=0.55pt]
+    (LE)
+    .. controls (0.55,1.35) and (2.2,1.45) .. (3.6,0.75)
+    .. controls (4.1,0.45) and (4.4,0.25) .. (TE)
+    .. controls (3.8,0.05) and (2.0,0.15) .. (0.7,0.45)
+    .. controls (0.35,0.55) and (0.15,0.70) .. (LE);
+  % chord dashed
+  \draw[line width=0.4pt,dash pattern=on 1.2pt off 0.8pt] (LE) -- (TE);
+  \node[anchor=south] at (2.2,1.35) {翼弦};
+  \draw[line width=0.35pt] (2.2,1.28) -- (2.2,0.72);
+  \node[anchor=south east] at (0.55,1.25) {前缘};
+  \node[anchor=south west] at (4.35,0.35) {后缘};
+  % horizontal reference through TE level and alpha at LE
+  \draw[line width=0.4pt,dash pattern=on 1.0pt off 0.7pt] (-1.35,0.15) -- (4.85,0.15);
+  % chord extension left of LE for angle
+  \draw[line width=0.4pt] (LE) -- ++(171:1.35);
+  % alpha arc
+  \draw[line width=0.4pt] ($(LE)+(-1.0,0.0)$) arc[start angle=180,end angle=171,radius=1.0];
+  \node[anchor=east] at (-0.55,0.55) {$\alpha$};
+  % velocity arrow
+  \draw[line width=0.55pt,->] (-1.55,0.15) -- (-0.55,0.15);
+  \node[anchor=south] at (-1.05,0.22) {$v$};
+\end{tikzpicture}%
+}
+\caption{图15·17}
 \end{figure}
 
 \emph{图15·17}
