@@ -32454,8 +32454,38 @@ x_{2} + x_{1} = l \operatorname{tg} \alpha. \tag {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/analytic-geometry/fig-p0420-02.png}}
-\caption{(第11题)}
+\fitfig{%
+% fig-alt: 抛物线 y=x²；弦 AB 端点在曲线上，中点 M；AB 延长线与 x 轴夹角 α；A、B、M 向 x 轴作垂线
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\xa{1.55}
+  \def\xb{-0.55}
+  \pgfmathsetmacro{\ya}{\xa*\xa}
+  \pgfmathsetmacro{\yb}{\xb*\xb}
+  \pgfmathsetmacro{\xm}{(\xa+\xb)/2}
+  \pgfmathsetmacro{\ym}{(\ya+\yb)/2}
+  \pgfmathsetmacro{\sl}{(\ya-\yb)/(\xa-\xb)}
+  \pgfmathsetmacro{\xi}{-\ym/\sl+\xm}
+  \draw[line width=0.5pt,-latex] ({\xi-0.35},0) -- (2.75,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-0.25) -- (0,3.05) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[line width=0.85pt,domain=-1.35:1.75,samples=55,smooth] plot (\x,{\x*\x});
+  \draw[line width=0.7pt] ({\xi-0.15},{\sl*(\xi-0.15-\xm)+\ym}) -- ({\xa+0.35},{\sl*(\xa+0.35-\xm)+\ym});
+  \draw[line width=0.45pt] (\xb,0) -- (\xb,{\yb});
+  \draw[line width=0.45pt] (\xm,0) -- (\xm,{\ym});
+  \draw[line width=0.45pt] (\xa,0) -- (\xa,{\ya});
+  \pgfmathsetmacro{\alang}{atan(\sl)}
+  \draw[line width=0.4pt] ({\xi+0.55},0) arc (0:{\alang}:0.55);
+  \fill (\xa,{\ya}) circle (1.05pt);
+  \fill (\xb,{\yb}) circle (1.05pt);
+  \fill (\xm,{\ym}) circle (1.05pt);
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.1pt,font=\small] at (0,0) {$O$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at (\xa,{\ya}) {$A$};
+  \node[anchor=south east,inner sep=1.2pt,font=\small] at (\xb,{\yb}) {$B$};
+  \node[anchor=south,inner sep=1.3pt,font=\small] at (\xm,{\ym}) {$M$};
+  \node[anchor=north west,inner sep=1.0pt,font=\small] at ({\xi+0.42},0.08) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{（第11题）}
 \end{figure}
 
 \emph{（第11题）}
@@ -32589,16 +32619,113 @@ b^{2} x^{2} + a^{2} y^{2} = k a^{2} b^{2} \quad (0 \leqslant k < 1)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/analytic-geometry/fig-p0422-01.png}}
-\caption{(第18题)}
+\fitfig{%
+% fig-alt: 双曲线两支；右焦点 F；切点 M 处切线，P 为 F 关于切线的对称点，N 为 PF 中点（在切线上）；连 OM
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{1.05}
+  \def\bb{0.95}
+  \pgfmathsetmacro{\cc}{sqrt(\aa*\aa+\bb*\bb)}
+  \draw[line width=0.5pt,-latex] (-2.35,0) -- (2.95,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-1.95) -- (0,2.45) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[line width=0.85pt,domain=-1.35:1.35,samples=45,smooth] plot ({\aa*cosh(\x)},{\bb*sinh(\x)});
+  \draw[line width=0.85pt,domain=-1.35:1.35,samples=45,smooth] plot ({-\aa*cosh(\x)},{\bb*sinh(\x)});
+  \def\phiang{40}
+  \pgfmathsetmacro{\mx}{\aa/cos(\phiang)}
+  \pgfmathsetmacro{\my}{\bb*tan(\phiang)}
+  \pgfmathsetmacro{\tslope}{\bb/(\aa*sin(\phiang))}
+  % tangent: (sec/a)x - (tan/b)y - 1 = 0
+  \pgfmathsetmacro{\Aa}{1/(\aa*cos(\phiang))}
+  \pgfmathsetmacro{\Bb}{-tan(\phiang)/\bb}
+  \pgfmathsetmacro{\Cc}{-1}
+  \pgfmathsetmacro{\den}{\Aa*\Aa+\Bb*\Bb}
+  \pgfmathsetmacro{\tt}{(\Aa*\cc+\Cc)/\den}
+  \pgfmathsetmacro{\nx}{\cc-\Aa*\tt}
+  \pgfmathsetmacro{\ny}{0-\Bb*\tt}
+  \pgfmathsetmacro{\px}{2*\nx-\cc}
+  \pgfmathsetmacro{\py}{2*\ny}
+  \pgfmathsetmacro{\txa}{\mx-1.45}
+  \pgfmathsetmacro{\tya}{\my+\tslope*(\txa-\mx)}
+  \pgfmathsetmacro{\txb}{\mx+1.25}
+  \pgfmathsetmacro{\tyb}{\my+\tslope*(\txb-\mx)}
+  \draw[line width=0.7pt] ({\txa},{\tya}) -- ({\txb},{\tyb});
+  \draw[line width=0.65pt] (0,0) -- ({\mx*1.05},{\my*1.05});
+  \draw[line width=0.65pt] ({\px},{\py}) -- ({\cc},0);
+  \draw[line width=0.55pt] ({\mx},{\my}) -- ({\cc},0);
+  \fill (0,0) circle (1.0pt);
+  \fill ({\cc},0) circle (1.05pt);
+  \fill ({\mx},{\my}) circle (1.05pt);
+  \fill ({\nx},{\ny}) circle (1.05pt);
+  \fill ({\px},{\py}) circle (1.05pt);
+  \node[anchor=north east,inner sep=1.1pt,font=\small] at (0,0) {$O$};
+  \node[anchor=north,inner sep=1.2pt,font=\small] at ({\cc},0) {$F$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at ({\mx},{\my}) {$M$};
+  \node[anchor=east,inner sep=1.2pt,font=\small] at ({\nx},{\ny}) {$N$};
+  \node[anchor=south,inner sep=1.3pt,font=\small] at ({\px},{\py}) {$P(x,y)$};
+\end{tikzpicture}%
+}
+\caption{（第18题）}
 \end{figure}
 
 \emph{（第18题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/analytic-geometry/fig-p0422-02.png}}
-\caption{(第19题)}
+\fitfig{%
+% fig-alt: ∠AOB=2α，角平分线为 x 轴；点 P 使 ∠xOP=θ；PM⊥OA、PN⊥OB，直角记号在 M、N
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\alph{34}
+  \def\thet{15}
+  \def\rp{2.2}
+  \draw[line width=0.5pt,-latex] (0,0) -- (0,2.55) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[line width=0.5pt,dashed,-latex] (0,0) -- (2.9,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt] (0,-2.2) -- (0,0);
+  \draw[line width=0.75pt] (0,0) -- ({\alph}:2.6) node[anchor=south west,inner sep=1.2pt,font=\small] {$B$};
+  \draw[line width=0.75pt] (0,0) -- ({-\alph}:2.6) node[anchor=north west,inner sep=1.2pt,font=\small] {$A$};
+  \coordinate (P) at ({\thet}:\rp);
+  \draw[line width=0.65pt] (0,0) -- (P);
+  \pgfmathsetmacro{\px}{\rp*cos(\thet)}
+  \pgfmathsetmacro{\py}{\rp*sin(\thet)}
+  \pgfmathsetmacro{\tn}{\px*cos(\alph)+\py*sin(\alph)}
+  \pgfmathsetmacro{\nx}{\tn*cos(\alph)}
+  \pgfmathsetmacro{\ny}{\tn*sin(\alph)}
+  \pgfmathsetmacro{\tm}{\px*cos(-\alph)+\py*sin(-\alph)}
+  \pgfmathsetmacro{\mx}{\tm*cos(-\alph)}
+  \pgfmathsetmacro{\my}{\tm*sin(-\alph)}
+  \coordinate (N) at ({\nx},{\ny});
+  \coordinate (M) at ({\mx},{\my});
+  \draw[line width=0.65pt] (P) -- (N);
+  \draw[line width=0.65pt] (P) -- (M);
+  \pgfmathsetmacro{\s}{0.15}
+  % unit along OB and perpendicular toward P
+  \pgfmathsetmacro{\ux}{cos(\alph)}
+  \pgfmathsetmacro{\uy}{sin(\alph)}
+  \pgfmathsetmacro{\vx}{-sin(\alph)}
+  \pgfmathsetmacro{\vy}{cos(\alph)}
+  \pgfmathsetmacro{\sgN}{((\px-\nx)*\vx+(\py-\ny)*\vy)<0?-1:1}
+  \draw[line width=0.35pt] ({\nx+\s*\ux},{\ny+\s*\uy}) -- ({\nx+\s*\ux+\sgN*\s*\vx},{\ny+\s*\uy+\sgN*\s*\vy}) -- ({\nx+\sgN*\s*\vx},{\ny+\sgN*\s*\vy});
+  \pgfmathsetmacro{\uxb}{cos(-\alph)}
+  \pgfmathsetmacro{\uyb}{sin(-\alph)}
+  \pgfmathsetmacro{\vxb}{sin(\alph)}
+  \pgfmathsetmacro{\vyb}{cos(\alph)}
+  \pgfmathsetmacro{\sgM}{((\px-\mx)*\vxb+(\py-\my)*\vyb)<0?-1:1}
+  \draw[line width=0.35pt] ({\mx+\s*\uxb},{\my+\s*\uyb}) -- ({\mx+\s*\uxb+\sgM*\s*\vxb},{\my+\s*\uyb+\sgM*\s*\vyb}) -- ({\mx+\sgM*\s*\vxb},{\my+\sgM*\s*\vyb});
+  \draw[line width=0.4pt] (0.5,0) arc (0:\alph:0.5);
+  \draw[line width=0.4pt] (0.65,0) arc (0:{-\alph}:0.65);
+  \draw[line width=0.4pt] (0.85,0) arc (0:\thet:0.85);
+  \fill (0,0) circle (1.0pt);
+  \fill (P) circle (1.05pt);
+  \fill (N) circle (1.0pt);
+  \fill (M) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.1pt,font=\small] at (0,0) {$O$};
+  \node[anchor=west,inner sep=1.4pt,font=\small] at (P) {$P$};
+  \node[anchor=south east,inner sep=1.2pt,font=\small] at (N) {$N$};
+  \node[anchor=north west,inner sep=1.2pt,font=\small] at (M) {$M$};
+  \node[anchor=south west,inner sep=0.8pt,font=\small] at ({0.58*cos(\alph/2)},{0.58*sin(\alph/2)}) {$\alpha$};
+  \node[anchor=north west,inner sep=0.8pt,font=\small] at ({0.75*cos(-\alph/2)},{0.75*sin(-\alph/2)}) {$\alpha$};
+  \node[anchor=west,inner sep=0.6pt,font=\small] at ({1.02*cos(\thet/2)},{1.02*sin(\thet/2)}) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{（第19题）}
 \end{figure}
 
 \emph{（第19题）}
@@ -32772,8 +32899,46 @@ A x^{2} + B x y + C y^{2} + D x + E y + F = 0,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第26题)}]{assets/analytic-geometry/fig-p0424-01.png}}
-\caption{(第26题)}
+\fitfig{%
+% fig-alt: 圆 O：x²+y²=9 与圆心(4,0)半径5之圆，交于 A(0,3)、A′(0,-3)；过 A 的直线交两圆于 M、N，线上标 P、P′
+\begin{tikzpicture}[x=0.42cm,y=0.42cm,line cap=round,line join=round,>=latex]
+  \def\th{22}
+  \draw[line width=0.45pt,dash pattern=on 2.2pt off 1.4pt,-latex] (-4.2,0) -- (10.2,0) node[anchor=west,inner sep=1.0pt] {$x$};
+  \draw[line width=0.45pt,dash pattern=on 2.2pt off 1.4pt,-latex] (0,-6.2) -- (0,6.6) node[anchor=south,inner sep=1.0pt] {$y$};
+  \draw[line width=0.85pt] (0,0) circle (3);
+  \draw[line width=0.85pt] (4,0) circle (5);
+  \pgfmathsetmacro{\ca}{cos(\th)}
+  \pgfmathsetmacro{\sa}{sin(\th)}
+  \pgfmathsetmacro{\tM}{-6*\sa}
+  \pgfmathsetmacro{\tN}{-6*\sa+8*\ca}
+  \pgfmathsetmacro{\tP}{8*\ca}
+  \pgfmathsetmacro{\tPp}{-8*\ca}
+  \pgfmathsetmacro{\Mx}{\tM*\ca}
+  \pgfmathsetmacro{\My}{3+\tM*\sa}
+  \pgfmathsetmacro{\Nx}{\tN*\ca}
+  \pgfmathsetmacro{\Ny}{3+\tN*\sa}
+  \pgfmathsetmacro{\Px}{\tP*\ca}
+  \pgfmathsetmacro{\Py}{3+\tP*\sa}
+  \pgfmathsetmacro{\Ppx}{\tPp*\ca}
+  \pgfmathsetmacro{\Ppy}{3+\tPp*\sa}
+  \draw[line width=0.7pt] ({\tPp*\ca-1.2*\ca},{3+\tPp*\sa-1.2*\sa}) -- ({\tP*\ca+1.4*\ca},{3+\tP*\sa+1.4*\sa});
+  \fill (0,0) circle (1.8pt);
+  \fill (0,3) circle (1.8pt);
+  \fill (0,-3) circle (1.8pt);
+  \fill ({\Mx},{\My}) circle (1.8pt);
+  \fill ({\Nx},{\Ny}) circle (1.8pt);
+  \fill ({\Px},{\Py}) circle (1.8pt);
+  \fill ({\Ppx},{\Ppy}) circle (1.8pt);
+  \node[anchor=north east,inner sep=1.0pt,font=\small] at (0,0) {$O$};
+  \node[anchor=south east,inner sep=1.1pt,font=\small] at (0,3) {$A$};
+  \node[anchor=north east,inner sep=1.1pt,font=\small] at (0,-3) {$A'$};
+  \node[anchor=south east,inner sep=1.1pt,font=\small] at ({\Mx},{\My}) {$M$};
+  \node[anchor=south west,inner sep=1.1pt,font=\small] at ({\Nx},{\Ny}) {$N$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at ({\Px},{\Py}) {$P$};
+  \node[anchor=north east,inner sep=1.1pt,font=\small] at ({\Ppx},{\Ppy}) {$P'$};
+\end{tikzpicture}%
+}
+\caption{（第26题）}
 \end{figure}
 
 \emph{（第26题）}
@@ -32852,8 +33017,39 @@ AP^{\prime} = - 8 \cos \theta,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第30题)}]{assets/analytic-geometry/fig-p0425-01.png}}
-\caption{(第30题)}
+\fitfig{%
+% fig-alt: 定圆直径端点 A 为极点，极轴 Ax；弦 AB、AC 与极轴夹角分别为 α、β，直线 BC 为割线
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\rr{1.35}
+  \def\alp{55}
+  \def\bet{25}
+  \draw[line width=0.85pt] (\rr,0) circle ({\rr});
+  \draw[line width=0.5pt,dashed,-latex] (0,0) -- ({2*\rr+0.85},0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \pgfmathsetmacro{\bx}{2*\rr*cos(\alp)*cos(\alp)}
+  \pgfmathsetmacro{\by}{2*\rr*cos(\alp)*sin(\alp)}
+  \pgfmathsetmacro{\cx}{2*\rr*cos(\bet)*cos(\bet)}
+  \pgfmathsetmacro{\cy}{2*\rr*cos(\bet)*sin(\bet)}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at ({\bx},{\by});
+  \coordinate (C) at ({\cx},{\cy});
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.7pt] (A) -- (C);
+  \pgfmathsetmacro{\dx}{\cx-\bx}
+  \pgfmathsetmacro{\dy}{\cy-\by}
+  \draw[line width=0.7pt] ({\bx-0.7*\dx},{\by-0.7*\dy}) -- ({\cx+0.9*\dx},{\cy+0.9*\dy});
+  \draw[line width=0.4pt] (0.55,0) arc (0:\bet:0.55);
+  \draw[line width=0.4pt] (0.78,0) arc (0:\alp:0.78);
+  \fill (A) circle (1.05pt);
+  \fill (B) circle (1.05pt);
+  \fill (C) circle (1.05pt);
+  \node[anchor=east,inner sep=1.3pt,font=\small] at (A) {$A$};
+  \node[anchor=south east,inner sep=1.2pt,font=\small] at (B) {$B$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at (C) {$C$};
+  \node[anchor=south west,inner sep=0.5pt,font=\small] at ({0.92*cos(\alp*0.72)},{0.92*sin(\alp*0.72)}) {$\alpha$};
+  \node[anchor=south west,inner sep=0.5pt,font=\small] at ({0.68*cos(\bet*0.55)},{0.68*sin(\bet*0.55)}) {$\beta$};
+\end{tikzpicture}%
+}
+\caption{（第30题）}
 \end{figure}
 
 \emph{（第30题）}
@@ -32908,8 +33104,37 @@ AP^{\prime} = - 8 \cos \theta,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/analytic-geometry/fig-p0426-01.png}}
-\caption{(第10题)}
+\fitfig{%
+% fig-alt: 椭圆中心 O，焦点 F₁、F₂；曲线上点 P；PF₁、PF₂ 与 x 轴夹角分别为 α、β
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{2.25}
+  \def\bb{1.45}
+  \pgfmathsetmacro{\cc}{sqrt(\aa*\aa-\bb*\bb)}
+  \def\th{48}
+  \pgfmathsetmacro{\px}{\aa*cos(\th)}
+  \pgfmathsetmacro{\py}{\bb*sin(\th)}
+  \draw[line width=0.5pt,-latex] ({-\aa-0.25},0) -- ({\aa+0.55},0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,{-\bb-0.2}) -- (0,{\bb+0.45}) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[line width=0.85pt] (0,0) ellipse ({\aa} and {\bb});
+  \draw[line width=0.7pt] ({-\cc},0) -- ({\px},{\py});
+  \draw[line width=0.7pt] ({\cc},0) -- ({\px},{\py});
+  \pgfmathsetmacro{\alang}{atan2(\py,\px+\cc)}
+  \pgfmathsetmacro{\blang}{atan2(\py,\px-\cc)}
+  \draw[line width=0.4pt] ({-\cc+0.42},0) arc (0:{\alang}:0.42);
+  \draw[line width=0.4pt] ({\cc+0.42},0) arc (0:{\blang}:0.42);
+  \fill (0,0) circle (1.0pt);
+  \fill ({-\cc},0) circle (1.05pt);
+  \fill ({\cc},0) circle (1.05pt);
+  \fill ({\px},{\py}) circle (1.05pt);
+  \node[anchor=north east,inner sep=1.1pt,font=\small] at (0,0) {$O$};
+  \node[anchor=north,inner sep=1.2pt,font=\small] at ({-\cc},0) {$F_1$};
+  \node[anchor=north,inner sep=1.2pt,font=\small] at ({\cc},0) {$F_2$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at ({\px},{\py}) {$P$};
+  \node[anchor=south west,inner sep=0.6pt,font=\small] at ({-\cc+0.55*cos(\alang/2)},{0.55*sin(\alang/2)}) {$\alpha$};
+  \node[anchor=south west,inner sep=0.6pt,font=\small] at ({\cc+0.55*cos(\blang/2)},{0.55*sin(\blang/2)}) {$\beta$};
+\end{tikzpicture}%
+}
+\caption{（第10题）}
 \end{figure}
 
 \emph{（第10题）}
@@ -32971,8 +33196,43 @@ D \left(\frac {5 \sqrt {2}}{2}, - \frac {5 \sqrt {2}}{2}\right)\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/analytic-geometry/fig-p0427-01.png}}
-\caption{(第5题)}
+\fitfig{%
+% fig-alt: 以 A(0,0) 为原点、AB 为 x 轴；AB=8、AD=5、∠A=60° 的平行四边形四种情形，顶点标 Bᵢ、Cᵢ、Dᵢ 坐标
+\begin{tikzpicture}[x=0.28cm,y=0.28cm,line cap=round,line join=round,>=latex]
+  \pgfmathsetmacro{\hx}{5/2}
+  \pgfmathsetmacro{\hy}{5*sqrt(3)/2}
+  \coordinate (A) at (0,0);
+  \coordinate (B1) at (8,0);
+  \coordinate (B2) at (-8,0);
+  \coordinate (D1) at ({\hx},{\hy});
+  \coordinate (C1) at ({8+\hx},{\hy});
+  \coordinate (D2) at ({-\hx},{\hy});
+  \coordinate (C2) at ({-8-\hx},{\hy});
+  \coordinate (D3) at ({-\hx},{-\hy});
+  \coordinate (C3) at ({-8-\hx},{-\hy});
+  \coordinate (D4) at ({\hx},{-\hy});
+  \coordinate (C4) at ({8+\hx},{-\hy});
+  \draw[line width=0.5pt,-latex] (-12.2,0) -- (12.6,0) node[anchor=west,inner sep=1.0pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-6.2) -- (0,6.6) node[anchor=south,inner sep=1.0pt] {$y$};
+  \draw[line width=0.85pt] (A) -- (D1) -- (C1) -- (B1) -- cycle;
+  \draw[line width=0.85pt] (A) -- (D2) -- (C2) -- (B2) -- cycle;
+  \draw[line width=0.85pt] (A) -- (D3) -- (C3) -- (B2) -- cycle;
+  \draw[line width=0.85pt] (A) -- (D4) -- (C4) -- (B1) -- cycle;
+  \foreach \p in {A,B1,B2,D1,C1,D2,C2,D3,C3,D4,C4} \fill (\p) circle (1.6pt);
+  \node[anchor=north east,inner sep=1.0pt,font=\scriptsize] at (A) {$A(0,0)$};
+  \node[anchor=north,inner sep=1.0pt,font=\scriptsize] at (B1) {$B_1(8,0)$};
+  \node[anchor=north,inner sep=1.0pt,font=\scriptsize] at (B2) {$B_2(-8,0)$};
+  \node[anchor=south east,inner sep=0.8pt,font=\scriptsize] at (D1) {$D_1(\frac{5}{2},\frac{5\sqrt{3}}{2})$};
+  \node[anchor=south west,inner sep=0.8pt,font=\scriptsize] at (C1) {$C_1(\frac{21}{2},\frac{5\sqrt{3}}{2})$};
+  \node[anchor=south west,inner sep=0.8pt,font=\scriptsize] at (D2) {$D_2(-\frac{5}{2},\frac{5\sqrt{3}}{2})$};
+  \node[anchor=south east,inner sep=0.8pt,font=\scriptsize] at (C2) {$C_2(-\frac{21}{2},\frac{5\sqrt{3}}{2})$};
+  \node[anchor=north west,inner sep=0.8pt,font=\scriptsize] at (D3) {$D_3(-\frac{5}{2},-\frac{5\sqrt{3}}{2})$};
+  \node[anchor=north east,inner sep=0.8pt,font=\scriptsize] at (C3) {$C_3(-\frac{21}{2},-\frac{5\sqrt{3}}{2})$};
+  \node[anchor=north east,inner sep=0.8pt,font=\scriptsize] at (D4) {$D_4(\frac{5}{2},-\frac{5\sqrt{3}}{2})$};
+  \node[anchor=north west,inner sep=0.8pt,font=\scriptsize] at (C4) {$C_4(\frac{21}{2},-\frac{5\sqrt{3}}{2})$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \emph{（第5题）}
@@ -33280,8 +33540,23 @@ D \left(\frac {5 \sqrt {2}}{2}, - \frac {5 \sqrt {2}}{2}\right)\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(习题 2.3\textasciitilde2.4 第 1 题)}]{assets/analytic-geometry/fig-p0430-01.png}}
-\caption{(习题 2.3\textasciitilde2.4 第 1 题)}
+\fitfig{%
+% fig-alt: 开口向右抛物线顶点在原点；x、y 轴正向标刻度 1、2
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.5pt,-latex] (-0.35,0) -- (3.35,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-2.65) -- (0,2.85) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[line width=0.85pt,domain=-2.45:2.45,samples=55,smooth] plot ({\x*\x/4},\x);
+  \foreach \t in {1,2} {
+    \draw[line width=0.4pt] (\t,0.08) -- (\t,-0.08);
+    \node[anchor=north,inner sep=1.5pt,font=\small] at (\t,0) {$\t$};
+    \draw[line width=0.4pt] (0.08,\t) -- (-0.08,\t);
+    \node[anchor=east,inner sep=1.5pt,font=\small] at (0,\t) {$\t$};
+  }
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（习题 2.3～2.4 第 1 题）}
 \end{figure}
 
 \emph{（习题 2.3\textasciitilde2.4 第 1 题）}
