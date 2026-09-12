@@ -20601,21 +20601,60 @@ L ^ {\prime} = 62.5 \text{公 斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-1/fig-p0324-02.png}}
-\caption{(1)}
+% fig-alt: 图10·27(b)劈入木：竖圆柱木纹，顶椭圆裂开；倒三角劈插入；顶下箭F。假caption(1)已删，图内写(b)。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % log body
+  \draw[line width=0.65pt] (-0.95,0.15) -- (-0.95,3.55);
+  \draw[line width=0.65pt] (0.95,0.15) -- (0.95,3.55);
+  \draw[line width=0.55pt] (-0.95,0.15) arc[start angle=180,end angle=360,x radius=0.95,y radius=0.28];
+  \draw[line width=0.45pt,dashed] (-0.95,0.15) arc[start angle=180,end angle=0,x radius=0.95,y radius=0.28];
+  % split top ellipses
+  \draw[line width=0.55pt] (-0.95,3.55) .. controls (-0.70,3.85) and (-0.35,3.95) .. (-0.12,3.70);
+  \draw[line width=0.55pt] (0.95,3.55) .. controls (0.70,3.85) and (0.35,3.95) .. (0.12,3.70);
+  \draw[line width=0.45pt] (-0.12,3.70) -- (-0.18,2.55);
+  \draw[line width=0.45pt] (0.12,3.70) -- (0.18,2.55);
+  % wood grain
+  \foreach \x/\a in {-0.55/0.08,-0.20/0.05,0.25/-0.04,0.60/-0.07}
+    \draw[line width=0.28pt] (\x,0.55) .. controls (\x+\a,1.5) and (\x-\a,2.5) .. (\x,3.35);
+  % wedge
+  \draw[line width=0.7pt] (-0.42,4.05) -- (0.42,4.05) -- (0.00,2.55) -- cycle;
+  % force F
+  \draw[line width=0.75pt,->] (0.00,4.85) -- (0.00,4.15);
+  \node[anchor=west] at (0.12,4.55) {$F$};
+  \node at (0.00,-0.25) {(b)};
+\end{tikzpicture}%
+}
 \end{figure}
-
-\emph{（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-1/fig-p0324-03.png}}
-\caption{(2)}
+% fig-alt: 图10·27(c)斜面卷成螺旋：左直角三角形θ、斜边小刻痕；右竖圆柱面螺纹（前实后虚）。假caption(2)已删，图内写(c)。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % triangle
+  \draw[line width=0.7pt] (0.15,0.35) -- (3.55,0.35) -- (3.55,2.95) -- cycle;
+  \draw[line width=0.4pt] (0.50,0.35) arc[start angle=0,end angle=36,radius=0.42];
+  \node[anchor=south west] at (0.68,0.42) {$\theta$};
+  % ticks on hypotenuse
+  \foreach \t in {0.15,0.30,0.45,0.60,0.75}
+    \draw[line width=0.35pt] ({0.15+3.4*\t},{0.35+2.6*\t}) -- ++({-0.10*0.6},{0.10*0.78});
+  % baseline dashed to cylinder
+  \draw[line width=0.35pt,dashed] (0.15,0.35) -- (5.35,0.35);
+  % cylinder
+  \draw[line width=0.65pt] (3.70,0.35) rectangle (5.15,2.95);
+  % helix front (solid) and back (dashed)
+  \foreach \k in {0,...,5} {
+    \pgfmathsetmacro{\ya}{2.95-0.40*\k}
+    \pgfmathsetmacro{\yb}{\ya-0.22}
+    \pgfmathsetmacro{\yc}{\yb-0.18}
+    \draw[line width=0.45pt] (3.70,\ya) -- (5.15,\yb);
+    \draw[line width=0.35pt,dashed] (5.15,\yb) -- (3.70,\yc);
+  }
+  \node at (2.65,-0.20) {(c)};
+\end{tikzpicture}%
+}
 \end{figure}
-
-\emph{（2）}
-
-\emph{图0·27}
 
 \begin{figure}
 \centering
@@ -20723,8 +20762,35 @@ F - 2 N \sin \theta = 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={利用劈夫辛起重物}]{assets/physics-1/fig-p0326-01.png}}
-\caption{利用劈夫辛起重物}
+% fig-alt: 图10·30左：刀、斧；右下利用劈举重：长斜影劈左尖，辊轮竖杆顶平台重物，旁上箭。caption改为利用劈来举起重物。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % knife
+  \draw[line width=0.6pt] (0.15,3.55) -- (2.05,3.55) -- (2.05,2.85) -- (0.35,2.85) -- cycle;
+  \draw[line width=0.55pt] (2.05,3.35) -- (2.85,3.35) -- (2.85,3.05) -- (2.05,3.05);
+  \node at (1.40,2.55) {刀};
+  % axe
+  \draw[line width=0.6pt] (0.55,1.85) -- (0.95,0.55);
+  \draw[line width=0.65pt] (0.75,1.70) -- (1.85,2.05) -- (1.95,1.55) -- (1.05,1.35) -- cycle;
+  \draw[line width=0.35pt] (1.15,1.55) -- (1.70,1.75);
+  \node at (1.55,0.95) {斧};
+  % lifting wedge
+  \draw[line width=0.65pt,pattern=north east lines,pattern color=black!70]
+    (3.10,0.35) -- (6.40,0.35) -- (6.40,0.95) -- cycle;
+  \draw[line width=0.65pt] (3.10,0.35) -- (6.40,0.35) -- (6.40,0.95) -- cycle;
+  % roller + rod + platform + weight
+  \fill (4.55,0.78) circle[radius=0.10];
+  \draw[line width=0.55pt] (4.55,0.78) circle[radius=0.10];
+  \draw[line width=0.6pt] (4.55,0.88) -- (4.55,2.15);
+  \draw[line width=0.55pt] (4.15,2.15) rectangle (4.95,2.35);
+  \draw[line width=0.55pt] (4.25,2.35) rectangle (4.85,2.95);
+  \foreach \y in {2.50,2.65,2.80}
+    \draw[line width=0.28pt] (4.25,\y) -- (4.85,\y);
+  \draw[line width=0.7pt,->] (5.20,1.35) -- (5.20,2.05);
+  \node at (4.75,0.05) {利用劈来举起重物};
+\end{tikzpicture}%
+}
+\caption{利用劈来举起重物}
 \end{figure}
 
 \emph{利用劈夫辛起重物}
@@ -20739,8 +20805,36 @@ F - 2 N \sin \theta = 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={劈人玉棒机}]{assets/physics-1/fig-p0326-03.png}}
-\caption{劈人玉棒机}
+% fig-alt: 图10·30右劈式压榨机：底梁、两侧立柱、中点划线；中压物；顶横梁两侧斜劈内向箭；虚线示压下。caption改为劈式压榨机。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % centerline
+  \draw[line width=0.35pt,dash pattern=on 2pt off 1.2pt on 0.6pt off 1.2pt] (2.40,0.15) -- (2.40,4.35);
+  % base
+  \draw[line width=0.75pt] (0.35,0.35) rectangle (4.45,0.75);
+  % posts
+  \draw[line width=0.65pt] (0.70,0.75) rectangle (1.15,3.55);
+  \draw[line width=0.65pt] (3.65,0.75) rectangle (4.10,3.55);
+  % workpiece
+  \draw[line width=0.55pt] (1.70,0.75) .. controls (1.55,1.6) and (1.55,2.4) .. (1.70,3.05)
+    -- (3.10,3.05) .. controls (3.25,2.4) and (3.25,1.6) .. (3.10,0.75) -- cycle;
+  \foreach \y in {1.15,1.55,1.95,2.35,2.75}
+    \draw[line width=0.22pt] (1.75,\y) -- (3.05,\y);
+  % movable bar (solid high)
+  \draw[line width=0.7pt] (0.55,3.05) rectangle (4.25,3.40);
+  % compressed state dashed
+  \draw[line width=0.45pt,dashed] (0.55,2.35) rectangle (4.25,2.70);
+  \draw[line width=0.35pt,dashed] (1.70,0.75) -- (1.70,2.35) -- (3.10,2.35) -- (3.10,0.75);
+  % top guide
+  \draw[line width=0.55pt] (0.55,3.85) rectangle (4.25,4.10);
+  % wedges driven inward
+  \draw[line width=0.65pt] (0.55,3.40) -- (1.25,3.40) -- (0.55,3.85) -- cycle;
+  \draw[line width=0.65pt] (4.25,3.40) -- (3.55,3.40) -- (4.25,3.85) -- cycle;
+  \draw[line width=0.7pt,->] (0.15,3.62) -- (0.50,3.62);
+  \draw[line width=0.7pt,->] (4.65,3.62) -- (4.30,3.62);
+\end{tikzpicture}%
+}
+\caption{劈式压榨机}
 \end{figure}
 
 \emph{劈人玉棒机}
@@ -20757,7 +20851,39 @@ F - 2 N \sin \theta = 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10·32}]{assets/physics-1/fig-p0326-05.png}}
+% fig-alt: 图10·32：左尖等腰劈，中点划线，半角θ；背右箭F；上下侧面法向N，分解水平N1、竖直N2。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.75pt] (0.40,2.50) -- (4.30,3.45) -- (4.30,1.55) -- cycle;
+  \draw[line width=0.4pt,dash pattern=on 2pt off 1.2pt on 0.6pt off 1.2pt] (-0.05,2.50) -- (5.20,2.50);
+  \draw[line width=0.35pt] (0.85,2.50) arc[start angle=0,end angle=13,radius=0.55];
+  \draw[line width=0.35pt] (0.85,2.50) arc[start angle=0,end angle=-13,radius=0.55];
+  \node[anchor=west] at (1.25,2.72) {$\theta$};
+  \node[anchor=west] at (1.25,2.28) {$\theta$};
+  % F from back to the right (scan)
+  \draw[line width=0.8pt,->] (4.30,2.50) -- (5.45,2.50);
+  \node[anchor=west] at (5.50,2.50) {$F$};
+  % top face contact ~ (2.55,3.00); normal angle ~ 90+13 = inward from above
+  % N pointing to face from outside (down-right?); draw N arrow toward face from up-left
+  \draw[line width=0.7pt,->] (1.55,4.15) -- (2.45,3.15);
+  \node[anchor=south east] at (1.55,4.20) {$N$};
+  % N2 vertical down from N start
+  \draw[line width=0.55pt,->] (1.55,4.15) -- (1.55,3.15);
+  \node[anchor=west] at (1.68,3.65) {$N_2$};
+  % N1 horizontal left from N tip area: complete rectangle
+  \draw[line width=0.55pt,->] (2.45,3.15) -- (1.55,3.15);
+  \node[anchor=north] at (2.00,3.05) {$N_1$};
+  \draw[line width=0.35pt,dashed] (1.55,4.15) -- (2.45,4.15) -- (2.45,3.15);
+  % bottom symmetric
+  \draw[line width=0.7pt,->] (1.55,0.85) -- (2.45,1.85);
+  \node[anchor=north east] at (1.55,0.80) {$N$};
+  \draw[line width=0.55pt,->] (1.55,0.85) -- (1.55,1.85);
+  \node[anchor=west] at (1.68,1.35) {$N_2$};
+  \draw[line width=0.55pt,->] (2.45,1.85) -- (1.55,1.85);
+  \node[anchor=south] at (2.00,1.95) {$N_1$};
+  \draw[line width=0.35pt,dashed] (1.55,0.85) -- (2.45,0.85) -- (2.45,1.85);
+\end{tikzpicture}%
+}
 \caption{图 10·32}
 \end{figure}
 
@@ -20772,7 +20898,38 @@ A = \frac {N}{F} = \frac {1}{2 \sin \theta} \tag {10.15}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10·33}]{assets/physics-1/fig-p0327-01.png}}
+% fig-alt: 图10·33：左尖等腰劈，中点划线，半角θ；背右箭F；上下侧面外法向N；底标长h，背半厚各h'。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.75pt] (0.35,2.10) -- (4.55,2.85) -- (4.55,1.35) -- cycle;
+  \draw[line width=0.4pt,dash pattern=on 2pt off 1.2pt on 0.6pt off 1.2pt] (-0.15,2.10) -- (5.55,2.10);
+  \draw[line width=0.35pt] (0.80,2.10) arc[start angle=0,end angle=12,radius=0.50];
+  \draw[line width=0.35pt] (0.80,2.10) arc[start angle=0,end angle=-12,radius=0.50];
+  \node[anchor=west] at (1.15,2.30) {$\theta$};
+  \node[anchor=west] at (1.15,1.90) {$\theta$};
+  % F to the right from back (match scan)
+  \draw[line width=0.8pt,->] (4.55,2.10) -- (5.55,2.10);
+  \node[anchor=west] at (5.60,2.10) {$F$};
+  % N outward on faces (useful resistance on object side / or on wedge — draw outward)
+  \draw[line width=0.7pt,->] (2.55,2.55) -- (2.20,3.35);
+  \node[anchor=south] at (2.15,3.40) {$N$};
+  \draw[line width=0.7pt,->] (2.55,1.65) -- (2.20,0.85);
+  \node[anchor=north] at (2.15,0.80) {$N$};
+  % h below
+  \draw[line width=0.35pt] (0.35,0.95) -- (0.35,0.55);
+  \draw[line width=0.35pt] (4.55,0.95) -- (4.55,0.55);
+  \draw[line width=0.4pt,<->] (0.35,0.65) -- (4.55,0.65);
+  \node[anchor=north] at (2.45,0.60) {$h$};
+  % h' on back
+  \draw[line width=0.35pt] (4.75,2.85) -- (5.05,2.85);
+  \draw[line width=0.35pt] (4.75,2.10) -- (5.05,2.10);
+  \draw[line width=0.35pt] (4.75,1.35) -- (5.05,1.35);
+  \draw[line width=0.4pt,<->] (4.95,2.10) -- (4.95,2.85);
+  \node[anchor=west] at (5.08,2.48) {$h'$};
+  \draw[line width=0.4pt,<->] (4.95,1.35) -- (4.95,2.10);
+  \node[anchor=west] at (5.08,1.72) {$h'$};
+\end{tikzpicture}%
+}
 \caption{图 10·33}
 \end{figure}
 
@@ -20818,7 +20975,42 @@ A = \frac{1}{2\sin\theta} = \frac{L}{d} \tag{10.16}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10·34}]{assets/physics-1/fig-p0328-01.png}}
+% fig-alt: 图10·34举重螺旋：点划轴线；底座斜影剖面；螺杆螺纹；顶帽下箭G；右把手长L，端切向F；虚线椭圆示一周；螺距h。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % axis
+  \draw[line width=0.35pt,dash pattern=on 2pt off 1.2pt on 0.6pt off 1.2pt] (2.40,0.20) -- (2.40,7.35);
+  % base cross-section (trapezoid with hole)
+  \draw[line width=0.65pt,pattern=north east lines] (0.70,0.45) -- (4.10,0.45) -- (3.55,2.35) -- (2.85,2.35) -- (2.85,0.90) -- (1.95,0.90) -- (1.95,2.35) -- (1.25,2.35) -- cycle;
+  \draw[line width=0.65pt] (0.70,0.45) -- (4.10,0.45) -- (3.55,2.35) -- (1.25,2.35) -- cycle;
+  \draw[line width=0.5pt] (1.95,0.90) rectangle (2.85,2.35);
+  % screw rod
+  \draw[line width=0.65pt] (1.95,2.35) rectangle (2.85,5.55);
+  % threads
+  \foreach \y in {2.55,2.85,3.15,3.45,3.75,4.05,4.35,4.65,4.95,5.25}
+    \draw[line width=0.4pt] (1.95,\y) -- (2.85,{\y+0.12});
+  % pitch h
+  \draw[line width=0.35pt] (1.75,3.45) -- (1.55,3.45);
+  \draw[line width=0.35pt] (1.75,3.75) -- (1.55,3.75);
+  \draw[line width=0.4pt,<->] (1.60,3.45) -- (1.60,3.75);
+  \node[anchor=east] at (1.48,3.60) {$h$};
+  % head
+  \draw[line width=0.7pt] (1.70,5.55) -- (3.10,5.55) -- (2.95,5.95) -- (1.85,5.95) -- cycle;
+  % G
+  \draw[line width=0.8pt,->] (2.40,6.85) -- (2.40,6.10);
+  \node[anchor=south] at (2.40,6.90) {$G$};
+  % handle
+  \draw[line width=0.75pt] (2.40,5.75) -- (5.20,5.75);
+  \fill (5.20,5.75) circle[radius=0.06];
+  \draw[line width=0.4pt,<->] (2.40,5.40) -- (5.20,5.40);
+  \node[anchor=north] at (3.80,5.35) {$L$};
+  % dashed ellipse path of handle tip
+  \draw[line width=0.4pt,dashed] (2.40,5.75) ellipse[x radius=2.80,y radius=0.52];
+  % F tangential at tip
+  \draw[line width=0.75pt,->] (5.20,5.75) -- (5.70,6.20);
+  \node[anchor=south west] at (5.60,6.20) {$F$};
+\end{tikzpicture}%
+}
 \caption{图 10·34}
 \end{figure}
 
@@ -20869,7 +21061,29 @@ A = \frac{G}{F} = \frac{2\pi L}{h} \tag{10.17}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10·36}]{assets/physics-1/fig-p0329-01.png}}
+% fig-alt: 图10·36单面劈：直角三角形，尖在下θ，顶背下箭F；斜面法向N；右侧力三角形N斜边、竖分N1（=F）、角θ。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % tip at bottom-left; vertical face left; horizontal back top; slant hypotenuse
+  \draw[line width=0.75pt] (0.80,0.70) -- (0.80,3.50) -- (2.70,3.50) -- cycle;
+  % theta at tip between vertical and slant
+  \draw[line width=0.35pt] (0.80,1.15) arc[start angle=90,end angle=58,radius=0.45];
+  \node[anchor=south west] at (1.05,1.20) {$\theta$};
+  \draw[line width=0.8pt,->] (1.55,4.25) -- (1.55,3.60);
+  \node[anchor=south] at (1.55,4.30) {$F$};
+  % N onto slant (perpendicular, into wedge)
+  \draw[line width=0.7pt,->] (2.55,1.70) -- (1.85,2.25);
+  \node[anchor=north west] at (2.50,1.55) {$N$};
+  % resolution triangle: N1 vertical (=F), N hypotenuse, theta between them
+  \draw[line width=0.65pt,->] (3.60,1.20) -- (4.70,2.90);
+  \node[anchor=south west] at (4.35,2.50) {$N$};
+  \draw[line width=0.55pt,->] (3.60,1.20) -- (3.60,2.90);
+  \node[anchor=east] at (3.48,2.10) {$N_1$};
+  \draw[line width=0.45pt,dashed] (3.60,2.90) -- (4.70,2.90);
+  \draw[line width=0.35pt] (3.60,1.45) arc[start angle=90,end angle=58,radius=0.38];
+  \node[anchor=south west] at (3.82,1.48) {$\theta$};
+\end{tikzpicture}%
+}
 \caption{图 10·36}
 \end{figure}
 
