@@ -10761,7 +10761,7 @@ R = \sqrt {F _ {1} ^ {2} + F _ {2} ^ {2}}
 \caption{(4)}
 \end{figure}
 
-\emph{（4）}
+\emph{（c）}
 
 \begin{figure}
 \centering
@@ -26638,32 +26638,170 @@ F = \frac {\Delta p}{\Delta t}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0422-02.png}}
-\caption{(a)}
+% fig-alt: （a）斜抛抛物线虚轨迹；地面斜影；三点标$v_1,v_2,v_3$切向与竖直向下$G$，夹角$\alpha_1,\alpha_2,\alpha_3$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.65pt] (-0.15,0) -- (5.55,0);
+  \foreach \x in {0.05,0.45,0.85,1.25,1.65,2.05,2.45,2.85,3.25,3.65,4.05,4.45,4.85,5.25}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.1pt]
+    (0,0) .. controls (1.2,1.85) and (2.0,2.05) .. (2.6,2.05)
+    .. controls (3.3,2.05) and (4.2,1.55) .. (5.2,0);
+  \coordinate (P1) at (0,0);
+  \coordinate (P2) at (1.55,1.55);
+  \coordinate (P3) at (3.85,1.45);
+  \fill (P1) circle[radius=0.045];
+  \fill (P2) circle[radius=0.045];
+  \fill (P3) circle[radius=0.045];
+  \draw[line width=0.55pt,->] (P1) -- ++(0.95,0.72);
+  \node[anchor=south west] at ($(P1)+(0.55,0.55)$) {$v_{1}$};
+  \draw[line width=0.55pt,->] (P1) -- ++(0,-0.72);
+  \node[anchor=west] at ($(P1)+(0.06,-0.55)$) {$G$};
+  \draw[line width=0.35pt] (0.42,0) arc[start angle=0,end angle=37,radius=0.42];
+  \node[anchor=south west,inner sep=0.5pt] at (0.48,0.08) {$\alpha_{1}$};
+  \draw[line width=0.55pt,->] (P2) -- ++(0.85,0.35);
+  \node[anchor=south west] at ($(P2)+(0.45,0.22)$) {$v_{2}$};
+  \draw[line width=0.55pt,->] (P2) -- ++(0,-0.72);
+  \node[anchor=west] at ($(P2)+(0.06,-0.55)$) {$G$};
+  \draw[line width=0.35pt] ($(P2)+(0,-0.38)$) arc[start angle=-90,end angle=22,radius=0.38];
+  \node[anchor=north west,inner sep=0.5pt] at ($(P2)+(0.12,-0.02)$) {$\alpha_{2}$};
+  \draw[line width=0.55pt,->] (P3) -- ++(0.80,-0.48);
+  \node[anchor=north west] at ($(P3)+(0.40,-0.30)$) {$v_{3}$};
+  \draw[line width=0.55pt,->] (P3) -- ++(0,-0.72);
+  \node[anchor=east] at ($(P3)+(-0.06,-0.50)$) {$G$};
+  \draw[line width=0.35pt] ($(P3)+(0,-0.38)$) arc[start angle=-90,end angle=-31,radius=0.38];
+  \node[anchor=north east,inner sep=0.5pt] at ($(P3)+(-0.05,-0.05)$) {$\alpha_{3}$};
+\end{tikzpicture}%
+}
+
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0422-03.png}}
-\caption{(b)}
+% fig-alt: （b）平行板$A$（负）与$B$（正）；电子自左入，场内实线弯下至$Q$，出后虚直线至屏$M$上$P$；水平虚线至$O$；标$v_1,v_2,F$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt] (0.55,1.85) -- (4.05,1.85);
+  \node[anchor=east] at (0.50,1.85) {$A$};
+  \foreach \x in {0.85,1.35,1.85,2.35,2.85,3.35,3.75}
+    \node at (\x,2.08) {$-$};
+  \draw[line width=0.55pt] (0.55,0.35) -- (4.05,0.35);
+  \node[anchor=east] at (0.50,0.35) {$B$};
+  \foreach \x in {0.85,1.35,1.85,2.35,2.85,3.35,3.75}
+    \node at (\x,0.12) {$+$};
+  \draw[line width=0.6pt] (5.55,-0.15) -- (5.55,2.35);
+  \node[anchor=south] at (5.55,2.40) {$M$};
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (0.15,1.10) -- (5.55,1.10);
+  \fill (5.55,1.10) circle[radius=0.035];
+  \node[anchor=west] at (5.62,1.10) {$O$};
+  \coordinate (E) at (0.35,1.10);
+  \fill (E) circle[radius=0.04];
+  \draw[line width=0.55pt,->] (E) -- ++(0.70,0);
+  \node[anchor=south] at ($(E)+(0.35,0.06)$) {$v_{1}$};
+  \draw[line width=0.55pt,->] (E) -- ++(0,-0.55);
+  \node[anchor=east] at ($(E)+(-0.05,-0.35)$) {$F$};
+  \coordinate (Q) at (4.05,0.48);
+  \draw[line width=0.55pt]
+    (0.35,1.10) .. controls (1.6,1.10) and (3.0,0.85) .. (4.05,0.48);
+  \fill (Q) circle[radius=0.04];
+  \node[anchor=south east] at ($(Q)+(-0.05,0.08)$) {$Q$};
+  \coordinate (Mpt) at (2.20,0.92);
+  \fill (Mpt) circle[radius=0.035];
+  \draw[line width=0.55pt,->] (Mpt) -- ++(0.75,-0.28);
+  \node[anchor=south west] at ($(Mpt)+(0.35,0.02)$) {$v_{2}$};
+  \draw[line width=0.55pt,->] (Mpt) -- ++(0,-0.50);
+  \node[anchor=west] at ($(Mpt)+(0.05,-0.35)$) {$F$};
+  \coordinate (P) at (5.55,-0.05);
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt] (Q) -- (P);
+  \fill (P) circle[radius=0.035];
+  \node[anchor=west] at (5.62,-0.05) {$P$};
+\end{tikzpicture}%
+}
+
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-1/fig-p0422-04.png}}
-\caption{(4)}
+% fig-alt: （c）$\alpha$散射：右下正核$+$；实线双曲轨迹绕开；三点切向$v_1,v_2,v_3$，径向虚线外指斥力$F_1,F_2,F_3$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (N) at (2.55,0.35);
+  \draw[line width=0.55pt,fill=white] (N) circle[radius=0.22];
+  \node at (N) {$+$};
+  \draw[line width=0.55pt]
+    (0.15,0.95) .. controls (1.15,1.05) and (1.85,1.35) .. (2.25,2.05)
+    .. controls (2.45,2.45) and (2.70,3.05) .. (3.15,3.55);
+  \coordinate (P1) at (0.55,0.98);
+  \coordinate (P2) at (1.85,1.45);
+  \coordinate (P3) at (2.55,2.70);
+  \fill (P1) circle[radius=0.04];
+  \fill (P2) circle[radius=0.04];
+  \fill (P3) circle[radius=0.04];
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (N) -- (P1);
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (N) -- (P2);
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (N) -- (P3);
+  \draw[line width=0.55pt,->] (P1) -- ($(N)!1.85!(P1)$);
+  \node[anchor=east] at ($(N)!1.45!(P1)$) {$F_{1}$};
+  \draw[line width=0.55pt,->] (P2) -- ($(N)!1.85!(P2)$);
+  \node[anchor=south east] at ($(N)!1.45!(P2)$) {$F_{2}$};
+  \draw[line width=0.55pt,->] (P3) -- ($(N)!1.70!(P3)$);
+  \node[anchor=west] at ($(N)!1.35!(P3)$) {$F_{3}$};
+  \draw[line width=0.55pt,->] (P1) -- ++(0.75,0.18);
+  \node[anchor=south] at ($(P1)+(0.40,0.18)$) {$v_{1}$};
+  \draw[line width=0.55pt,->] (P2) -- ++(0.45,0.70);
+  \node[anchor=west] at ($(P2)+(0.40,0.45)$) {$v_{2}$};
+  \draw[line width=0.55pt,->] (P3) -- ++(0.35,0.70);
+  \node[anchor=west] at ($(P3)+(0.30,0.45)$) {$v_{3}$};
+\end{tikzpicture}%
+}
+
+\caption{（c）}
 \end{figure}
 
-\emph{（4）}
+\emph{（c）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13-2}]{assets/physics-1/fig-p0422-05.png}}
-\caption{图 13-2}
+% fig-alt: （d）宇宙飞船绕月：中心圆$A$（月）；虚线弯轨绕过；三点切向$v_1,v_2,v_3$，连线指向$A$的引力$F_1,F_2,F_3$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (A) at (2.85,1.55);
+  \draw[line width=0.55pt,fill=white] (A) circle[radius=0.28];
+  \node at (A) {$A$};
+  \draw[line width=0.5pt,dash pattern=on 1.5pt off 1.1pt]
+    (0.35,2.85) .. controls (1.55,2.95) and (3.55,2.85) .. (4.15,1.55)
+    .. controls (3.55,0.25) and (1.55,0.15) .. (0.35,0.25);
+  \coordinate (P1) at (1.15,2.88);
+  \coordinate (P2) at (4.05,1.55);
+  \coordinate (P3) at (1.15,0.22);
+  \draw[line width=0.4pt,fill=white] (P1) circle[radius=0.07];
+  \draw[line width=0.4pt,fill=white] (P2) circle[radius=0.07];
+  \draw[line width=0.4pt,fill=white] (P3) circle[radius=0.07];
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (P1) -- (A);
+  \draw[line width=0.55pt,->] (P1) -- ($(P1)!0.42!(A)$);
+  \node[anchor=south east] at ($(P1)!0.28!(A)$) {$F_{1}$};
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (P2) -- (A);
+  \draw[line width=0.55pt,->] (P2) -- ($(P2)!0.55!(A)$);
+  \node[anchor=south] at ($(P2)!0.35!(A)$) {$F_{2}$};
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (P3) -- (A);
+  \draw[line width=0.55pt,->] (P3) -- ($(P3)!0.42!(A)$);
+  \node[anchor=north east] at ($(P3)!0.28!(A)$) {$F_{3}$};
+  \draw[line width=0.55pt,->] (P1) -- ++(0.85,0.05);
+  \node[anchor=south] at ($(P1)+(0.45,0.08)$) {$v_{1}$};
+  \draw[line width=0.55pt,->] (P2) -- ++(0.05,-0.75);
+  \node[anchor=west] at ($(P2)+(0.08,-0.40)$) {$v_{2}$};
+  \draw[line width=0.55pt,->] (P3) -- ++(-0.75,-0.15);
+  \node[anchor=north] at ($(P3)+(-0.40,-0.12)$) {$v_{3}$};
+\end{tikzpicture}%
+}
+
+\caption{（d）}
 \end{figure}
 
 \emph{图13·2}
@@ -26709,8 +26847,43 @@ F = \frac {\Delta p}{\Delta t}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-3}]{assets/physics-1/fig-p0423-01.png}}
-\caption{图13-3}
+% fig-alt: 图13·3：曲线$MN$过$O$；自$O$作水平切向$v$，及割线$v_{A''},v_{A'},v_A$指向$A'',A',A$，示趋近切线。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % curve: roughly y = 0.22*x^2 for x>=0, with left tail
+  \draw[line width=0.55pt]
+    (-1.15,0.35) .. controls (-0.55,0.05) and (-0.25,0) .. (0,0)
+    .. controls (0.85,0.05) and (1.55,0.55) .. (2.15,1.15)
+    .. controls (2.55,1.55) and (2.95,2.15) .. (3.25,2.75);
+  \node[anchor=east] at (-1.20,0.35) {$M$};
+  \node[anchor=south west] at (3.20,2.80) {$N$};
+  \coordinate (O) at (0,0);
+  \fill (O) circle[radius=0.04];
+  \node[anchor=north east] at (-0.06,-0.06) {$O$};
+  % points on curve
+  \coordinate (App) at (0.75,0.22);
+  \coordinate (Ap) at (1.55,0.72);
+  \coordinate (Aa) at (2.55,1.85);
+  \fill (App) circle[radius=0.035];
+  \fill (Ap) circle[radius=0.035];
+  \fill (Aa) circle[radius=0.035];
+  \node[anchor=west] at ($(App)+(0.08,0.02)$) {$A''$};
+  \node[anchor=west] at ($(Ap)+(0.08,0.02)$) {$A'$};
+  \node[anchor=west] at ($(Aa)+(0.08,0.02)$) {$A$};
+  % small direction ticks on curve
+  \draw[line width=0.4pt,->] (2.85,2.25) -- (3.05,2.55);
+  % vectors from O
+  \draw[line width=0.55pt,->] (O) -- (2.35,0);
+  \node[anchor=north] at (2.20,-0.05) {$v$};
+  \draw[line width=0.55pt,->] (O) -- (App);
+  \node[anchor=south east] at ($(App)!0.55!(O)$) {$v_{A''}$};
+  \draw[line width=0.55pt,->] (O) -- (Ap);
+  \node[anchor=south east] at ($(Ap)!0.55!(O)$) {$v_{A'}$};
+  \draw[line width=0.55pt,->] (O) -- (Aa);
+  \node[anchor=south east] at ($(Aa)!0.45!(O)$) {$v_{A}$};
+\end{tikzpicture}%
+}
+\caption{图13·3}
 \end{figure}
 
 \emph{图13·3}
@@ -26721,23 +26894,117 @@ F = \frac {\Delta p}{\Delta t}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·4}]{assets/physics-1/fig-p0425-01.png}}
-\caption{图 13·4}
+% fig-alt: 图13·4：开伞侧视；柄下弯钩；伞缘虚椭圆示转动平面，小点与短虚线示水滴沿切向飞出；柄旁小弧箭示旋转。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.7pt] (0,0.35) -- (0,3.35);
+  \draw[line width=0.7pt] (0,0.35) -- (0,0.05) arc[start angle=180,end angle=360,radius=0.28];
+  \draw[line width=0.55pt] (0,3.35) -- (-1.55,2.35);
+  \draw[line width=0.55pt] (0,3.35) -- (-0.95,2.28);
+  \draw[line width=0.55pt] (0,3.35) -- (-0.35,2.22);
+  \draw[line width=0.55pt] (0,3.35) -- (0.35,2.22);
+  \draw[line width=0.55pt] (0,3.35) -- (0.95,2.28);
+  \draw[line width=0.55pt] (0,3.35) -- (1.55,2.35);
+  \draw[line width=0.55pt] (-1.55,2.35) .. controls (-1.1,2.05) and (-0.4,2.00) .. (0,2.08)
+    .. controls (0.4,2.00) and (1.1,2.05) .. (1.55,2.35);
+  \draw[line width=0.45pt] (-1.55,2.35) .. controls (-1.35,2.55) and (-0.6,2.70) .. (0,2.72)
+    .. controls (0.6,2.70) and (1.35,2.55) .. (1.55,2.35);
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt]
+    (0,2.25) ellipse[x radius=2.15,y radius=0.55];
+  \foreach \x/\y in {-2.10/2.30,-1.70/2.55,-1.10/2.70,-0.40/2.75,0.40/2.75,1.10/2.70,1.70/2.55,2.10/2.30,1.90/2.00,1.20/1.80,0.00/1.72,-1.20/1.80,-1.90/2.00}
+    \fill (\x,\y) circle[radius=0.035];
+  \draw[line width=0.35pt,dash pattern=on 0.8pt off 0.6pt] (1.55,2.35) -- (2.35,2.55);
+  \draw[line width=0.35pt,dash pattern=on 0.8pt off 0.6pt] (-1.55,2.35) -- (-2.35,2.50);
+  \draw[line width=0.35pt,dash pattern=on 0.8pt off 0.6pt] (0.0,2.78) -- (0.25,3.15);
+  \draw[line width=0.35pt,dash pattern=on 0.8pt off 0.6pt] (2.05,2.05) -- (2.75,1.95);
+  \draw[line width=0.45pt,->] (0.35,0.95) arc[start angle=20,end angle=200,x radius=0.38,y radius=0.14];
+\end{tikzpicture}%
+}
+
+\caption{图13·4}
 \end{figure}
 
 \emph{图 13·4}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·5}]{assets/physics-1/fig-p0425-02.png}}
-\caption{图 13·5}
+% fig-alt: 图13·5：桌上电动机带砂轮；顺时针弧箭；刀条抵轮缘，切向虚线示炽热铁屑飞出。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt,fill=white]
+    (0.0,0.85) -- (4.6,0.85) -- (5.1,1.35) -- (0.5,1.35) -- cycle;
+  \draw[line width=0.5pt] (0.0,0.85) -- (0.0,0.15);
+  \draw[line width=0.5pt] (4.6,0.85) -- (4.6,0.15);
+  \draw[line width=0.45pt] (0.5,1.35) -- (0.5,0.75);
+  \draw[line width=0.55pt,fill=white]
+    (0.85,1.45) -- (2.55,1.45) -- (2.55,2.35) -- (0.85,2.35) -- cycle;
+  \draw[line width=0.45pt] (2.55,1.45) -- (2.75,1.60) -- (2.75,2.50) -- (2.55,2.35);
+  \draw[line width=0.45pt] (0.85,2.35) -- (1.05,2.50) -- (2.75,2.50);
+  \draw[line width=0.45pt,fill=white]
+    (0.65,1.35) -- (2.85,1.35) -- (2.95,1.45) -- (0.75,1.45) -- cycle;
+  \draw[line width=0.5pt] (2.75,1.95) -- (3.15,1.95);
+  \draw[line width=0.55pt,fill=white] (3.55,1.95) circle[radius=0.85];
+  \draw[line width=0.35pt,pattern=dots] (3.55,1.95) circle[radius=0.72];
+  \draw[line width=0.4pt,fill=white] (3.55,1.95) circle[radius=0.12];
+  \draw[line width=0.45pt,->]
+    (4.22,1.15) arc[start angle=-50,end angle=40,radius=1.05];
+  \draw[line width=0.6pt] (3.95,2.70) -- (3.55,2.78);
+  \draw[line width=0.55pt] (3.95,2.70) -- (5.05,3.15);
+  \coordinate (C) at (3.55,2.78);
+  \draw[line width=0.35pt,dash pattern=on 1.0pt off 0.7pt] (C) -- ++(1.35,0.12);
+  \draw[line width=0.35pt,dash pattern=on 1.0pt off 0.7pt] (C) -- ++(1.55,0.02);
+  \draw[line width=0.35pt,dash pattern=on 1.0pt off 0.7pt] (C) -- ++(1.25,-0.08);
+  \draw[line width=0.35pt,dash pattern=on 1.0pt off 0.7pt] (C) -- ++(1.10,-0.18);
+\end{tikzpicture}%
+}
+
+\caption{图13·5}
 \end{figure}
 
 \emph{图 13·5}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13·6}]{assets/physics-1/fig-p0425-03.png}}
+% fig-alt: 图13·6：起伏曲线过$A,B,C,D$；各点虚切线与实心箭$v_A,v_B,v_C,v_D$沿切向。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt]
+    (0.0,0.55) .. controls (0.6,1.55) and (1.2,2.35) .. (1.9,2.15)
+    .. controls (2.5,1.95) and (2.9,0.85) .. (3.5,0.75)
+    .. controls (4.1,0.65) and (4.5,1.85) .. (5.2,2.25)
+    .. controls (5.6,2.50) and (6.0,2.35) .. (6.5,1.95);
+  % points approx on curve
+  \coordinate (A) at (0.85,1.55);
+  \coordinate (B) at (2.55,1.35);
+  \coordinate (C) at (4.35,1.35);
+  \coordinate (D) at (5.35,2.28);
+  \fill (A) circle[radius=0.04];
+  \fill (B) circle[radius=0.04];
+  \fill (C) circle[radius=0.04];
+  \fill (D) circle[radius=0.04];
+  \node[anchor=north east] at ($(A)+(-0.05,-0.05)$) {$A$};
+  \node[anchor=north] at ($(B)+(0,-0.08)$) {$B$};
+  \node[anchor=north east] at ($(C)+(-0.05,-0.05)$) {$C$};
+  \node[anchor=south] at ($(D)+(0,0.08)$) {$D$};
+  % dashed tangents + velocity arrows
+  % A: up-right
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] ($(A)+(-0.45,-0.55)$) -- ($(A)+(0.55,0.68)$);
+  \draw[line width=0.55pt,->] (A) -- ++(0.70,0.85);
+  \node[anchor=south west] at ($(A)+(0.35,0.55)$) {$v_{A}$};
+  % B: down-right
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] ($(B)+(-0.45,0.40)$) -- ($(B)+(0.55,-0.48)$);
+  \draw[line width=0.55pt,->] (B) -- ++(0.75,-0.65);
+  \node[anchor=north west] at ($(B)+(0.40,-0.40)$) {$v_{B}$};
+  % C: up-right steep
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] ($(C)+(-0.35,-0.55)$) -- ($(C)+(0.45,0.70)$);
+  \draw[line width=0.55pt,->] (C) -- ++(0.55,0.85);
+  \node[anchor=south west] at ($(C)+(0.30,0.55)$) {$v_{C}$};
+  % D: horizontal
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] ($(D)+(-0.55,0)$) -- ($(D)+(0.70,0)$);
+  \draw[line width=0.55pt,->] (D) -- ++(0.85,0);
+  \node[anchor=south] at ($(D)+(0.45,0.08)$) {$v_{D}$};
+\end{tikzpicture}%
+}
 \caption{图13·6}
 \end{figure}
 
