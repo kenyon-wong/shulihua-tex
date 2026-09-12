@@ -17289,7 +17289,34 @@ f=qvB\sin\alpha
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0242-01.png}}
+\fitfig{%
+% fig-alt: 图3.49(a) 正电荷在匀强磁场中作圆周运动。B为×向里；+q在圆顶，v左指，f下指圆心，半径r指左上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\R{1.55}
+  % B into page
+  \foreach \x/\y in {
+    -2.10/2.05, -0.70/2.05, 0.70/2.05, 2.10/2.05,
+    -2.10/0.70, -0.70/0.70, 0.70/0.70, 2.10/0.70,
+    -2.10/-0.70, -0.70/-0.70, 0.70/-0.70, 2.10/-0.70,
+    -2.10/-2.05, -0.70/-2.05, 0.70/-2.05, 2.10/-2.05} {
+    \node[inner sep=0pt,font=\small] at (\x,\y) {$\times$};
+  }
+  \draw[line width=0.8pt] (0,0) circle[radius=\R];
+  % particle +q at top
+  \fill (0,\R) circle[radius=0.045];
+  \node[anchor=south,inner sep=1.5pt] at (0,\R) {$+q$};
+  % v to the left
+  \draw[line width=0.7pt,->] (-0.12,\R) -- (-1.15,\R);
+  \node[anchor=south,inner sep=1pt] at (-0.85,\R) {$v$};
+  % f toward center
+  \draw[line width=0.7pt,->] (0,{\R-0.08}) -- (0,0.35);
+  \node[anchor=west,inner sep=2pt] at (0.02,0.85) {$f$};
+  % radius
+  \draw[line width=0.6pt] (0,0) -- ({150}:\R);
+  \node[anchor=north,inner sep=1pt] at ({150}:0.72) {$r$};
+  \fill (0,0) circle[radius=0.035];
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -17297,13 +17324,35 @@ f=qvB\sin\alpha
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0242-02.png}}
+\fitfig{%
+% fig-alt: 图3.49(b) 负电荷在匀强磁场中作圆周运动。B为×向里；−q在圆顶，v右指，f下指圆心，半径r指左
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\R{1.55}
+  \foreach \x/\y in {
+    -2.10/2.05, -0.70/2.05, 0.70/2.05, 2.10/2.05,
+    -2.10/0.70, -0.70/0.70, 0.70/0.70, 2.10/0.70,
+    -2.10/-0.70, -0.70/-0.70, 0.70/-0.70, 2.10/-0.70,
+    -2.10/-2.05, -0.70/-2.05, 0.70/-2.05, 2.10/-2.05} {
+    \node[inner sep=0pt,font=\small] at (\x,\y) {$\times$};
+  }
+  \draw[line width=0.8pt] (0,0) circle[radius=\R];
+  \fill (0,\R) circle[radius=0.045];
+  \node[anchor=south,inner sep=1.5pt] at (0,\R) {$-q$};
+  \draw[line width=0.7pt,->] (0.12,\R) -- (1.15,\R);
+  \node[anchor=south,inner sep=1pt] at (0.85,\R) {$v$};
+  \draw[line width=0.7pt,->] (0,{\R-0.08}) -- (0,0.35);
+  \node[anchor=west,inner sep=2pt] at (0.02,0.85) {$f$};
+  \draw[line width=0.6pt] (0,0) -- ({170}:\R);
+  \node[anchor=north,inner sep=1pt] at ({170}:0.72) {$r$};
+  \fill (0,0) circle[radius=0.035];
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
 \emph{（b）}
 
-\emph{图 3.49 带电粒子在匀强磁场中作圆周运动}
+\emph{图3.49 带电粒子在匀强磁场中作圆周运动}
 
 带电粒子做圆周运动的轨道半径 r
 有多大呢？我们在力学中曾经学过，如果粒子的质量是
@@ -17337,7 +17386,30 @@ T = \frac{2 \pi m}{q B}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.50}]{assets/physics-3/fig-p0243-01.png}}
+\fitfig{%
+% fig-alt: 图3.50 正电荷q在匀强磁场中作圆周运动。B为×向里；q在圆顶，v左指，f下指圆心O，半径r指左上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\R{1.70}
+  \foreach \x/\y in {
+    -2.25/2.20, -0.75/2.20, 0.75/2.20, 2.25/2.20,
+    -2.25/0.75, -0.75/0.75, 0.75/0.75, 2.25/0.75,
+    -2.25/-0.75, -0.75/-0.75, 0.75/-0.75, 2.25/-0.75,
+    -2.25/-2.20, -0.75/-2.20, 0.75/-2.20, 2.25/-2.20} {
+    \node[inner sep=0pt,font=\small] at (\x,\y) {$\times$};
+  }
+  \draw[line width=0.8pt] (0,0) circle[radius=\R];
+  \fill (0,\R) circle[radius=0.045];
+  \node[anchor=south,inner sep=1.5pt] at (0.08,\R) {$q$};
+  \draw[line width=0.7pt,->] (-0.12,\R) -- (-1.25,\R);
+  \node[anchor=south,inner sep=1pt] at (-0.90,\R) {$v$};
+  \draw[line width=0.7pt,->] (0,{\R-0.08}) -- (0,0.38);
+  \node[anchor=west,inner sep=2pt] at (0.04,0.95) {$f$};
+  \draw[line width=0.6pt] (0,0) -- ({145}:\R);
+  \node[anchor=north,inner sep=1pt] at ({145}:0.80) {$r$};
+  \fill (0,0) circle[radius=0.04];
+  \node[anchor=north,inner sep=2pt] at (0,-0.06) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3.50}
 \end{figure}
 
@@ -17381,11 +17453,45 @@ T = \frac{2 \times 3.14 \times 6.7 \times 10^{-27}}{3.2 \times 10^{-19} \times 2
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.51 质谱仪原理示意图}]{assets/physics-3/fig-p0245-01.png}}
-\caption{图 3.51 质谱仪原理示意图}
+\fitfig{%
+% fig-alt: 图3.51 质谱仪原理示意图。左离子源盒与加速极板接加速电压U；中实心圆柱磁场；无磁场时粒子水平打在右照相底板上方，有磁场时斜下打在下方
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % ion source box 3/4
+  \draw[line width=0.7pt] (0.00,1.50) -- (0.80,1.50) -- (0.80,2.20) -- (0.00,2.20) -- cycle;
+  \draw[line width=0.7pt] (0.80,1.50) -- (1.08,1.72) -- (1.08,2.42) -- (0.80,2.20);
+  \draw[line width=0.7pt] (0.00,2.20) -- (0.28,2.42) -- (1.08,2.42);
+  \fill (0.80,1.85) circle[radius=0.03];
+  % accelerating plate
+  \draw[line width=1.0pt] (1.32,1.28) -- (1.32,2.50);
+  \fill (1.32,1.85) circle[radius=0.03];
+  % leads
+  \draw[line width=0.55pt] (0.40,1.50) .. controls (0.28,1.05) and (0.10,0.78) .. (0.08,0.55);
+  \draw[line width=0.55pt] (1.32,1.28) -- (1.32,0.55);
+  \node[anchor=east,inner sep=1pt] at (0.02,0.55) {$+$};
+  \node[anchor=west,inner sep=1pt] at (1.38,0.55) {$-$};
+  \node[anchor=north,inner sep=2pt,font=\small] at (0.70,0.42) {加速电压 $U$};
+  % solid cylinder magnet, axis +x
+  \draw[line width=0.75pt] (2.55,1.15) ellipse[x radius=0.40,y radius=0.98];
+  \draw[line width=0.75pt] (2.55,2.13) -- (4.05,2.13);
+  \draw[line width=0.75pt] (2.55,0.17) -- (4.05,0.17);
+  \draw[line width=0.75pt] (4.05,2.13) arc[start angle=90,end angle=-90,x radius=0.40,y radius=0.98];
+  % paths
+  \draw[line width=0.55pt] (0.80,1.85) -- (1.32,1.85) -- (2.20,1.85);
+  \draw[line width=0.55pt] (2.20,1.85) -- (6.20,1.85);
+  \fill (6.20,1.85) circle[radius=0.04];
+  \node[anchor=south,inner sep=1pt,font=\small] at (4.70,1.88) {无磁场时的带电粒子};
+  \draw[line width=0.55pt] (3.30,1.15) -- (6.20,0.52);
+  \fill (6.20,0.52) circle[radius=0.04];
+  % plate
+  \draw[line width=0.7pt] (6.20,-0.20) -- (6.20,2.55) -- (7.45,2.98) -- (7.45,0.22) -- cycle;
+  \draw[line width=0.45pt] (6.80,-0.08) -- (6.20,0.52);
+  \node[anchor=north,inner sep=2pt,font=\small] at (6.70,-0.22) {照相底板};
+\end{tikzpicture}%
+}
+\caption{图3.51 质谱仪原理示意图}
 \end{figure}
 
-\emph{图 3.51 质谱仪原理示意图}
+\emph{图3.51 质谱仪原理示意图}
 
 设带电粒子在电势差为 U 的极板间加速，则离开电场后粒子的动能
 
@@ -17424,11 +17530,66 @@ q，它的质量就很容易计算出来的。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.52 回旋加速}]{assets/physics-3/fig-p0246-01.png}}
-\caption{图3.52 回旋加速}
+\fitfig{%
+% fig-alt: 图3.52 回旋加速器。顶侧视S、N极夹D形盒（A→B）；左下两D形盒立体（D1、D2）；右下俯视D形盒、虚线螺旋径迹、左接高频、右靶T
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % --- side view ---
+  \begin{scope}[shift={(3.55,4.55)}]
+    \draw[line width=0.7pt] (-1.45,1.05) -- (-1.45,1.55) -- (1.45,1.55) -- (1.45,1.05);
+    \node at (0,1.28) {$S$};
+    \draw[line width=0.7pt] (-1.35,0.15) rectangle (1.35,0.85);
+    \node[anchor=west,inner sep=2pt] at (-1.28,0.50) {$A$};
+    \node[anchor=east,inner sep=2pt] at (1.28,0.50) {$B$};
+    \draw[line width=0.6pt,->] (-0.55,0.50) -- (0.55,0.50);
+    \draw[line width=0.7pt] (-1.45,-0.05) -- (-1.45,-0.55) -- (1.45,-0.55) -- (1.45,-0.05);
+    \node at (0,-0.32) {$N$};
+  \end{scope}
+  % --- 3D D-boxes ---
+  \begin{scope}[shift={(0.10,1.10)}]
+    \draw[line width=0.7pt] (1.40,1.20) ellipse[x radius=1.40,y radius=0.44];
+    \draw[line width=0.65pt] (1.40,1.64) -- (1.40,0.76);
+    \draw[line width=0.7pt] (0.00,1.20) -- (0.00,0.58);
+    \draw[line width=0.7pt] (2.80,1.20) -- (2.80,0.58);
+    \draw[line width=0.7pt] (1.40,0.76) -- (1.40,0.14);
+    \draw[line width=0.7pt] (2.80,0.58) arc[start angle=0,end angle=-180,x radius=1.40,y radius=0.44];
+    \node[anchor=north,inner sep=2pt] at (0.55,0.10) {$D_1$};
+    \node[anchor=north,inner sep=2pt] at (2.20,0.10) {$D_2$};
+  \end{scope}
+  % --- plan view ---
+  \begin{scope}[shift={(6.25,1.40)}]
+    % outer chamber with exit chamfer
+    \draw[line width=0.75pt]
+      (180:1.72) arc[start angle=180,end angle=28,radius=1.72]
+      -- (1.72,0.55) -- (1.72,0.12);
+    \draw[line width=0.75pt]
+      (1.72,-0.12) -- (1.55,-0.55) arc[start angle=-18,end angle=-180,radius=1.72];
+    % D gap
+    \draw[line width=0.65pt] (-1.55,0.10) -- (1.55,0.10);
+    \draw[line width=0.65pt] (-1.55,-0.10) -- (1.55,-0.10);
+    % left HF terminals
+    \draw[line width=0.65pt] (-1.72,0.10) -- (-2.10,0.10) -- (-2.10,0.30);
+    \draw[line width=0.65pt] (-1.72,-0.10) -- (-2.10,-0.10) -- (-2.10,-0.30);
+    \fill (-2.10,0.30) circle[radius=0.05];
+    \fill (-2.10,-0.30) circle[radius=0.05];
+    % dashed spiral
+    \foreach \rr in {0.32,0.58,0.84,1.10,1.36} {
+      \draw[dash pattern=on 1.3pt off 1.0pt,line width=0.4pt] (0,0) circle[radius=\rr];
+    }
+    % extractor / oscillator lead
+    \draw[line width=0.6pt] (1.72,0.55) -- (2.05,0.95) -- (2.55,0.95);
+    \fill (2.55,0.95) circle[radius=0.04];
+    \draw[line width=0.45pt] (2.70,0.95) -- (2.98,0.95);
+    \fill (2.98,0.95) circle[radius=0.04];
+    % target
+    \draw[line width=1.0pt] (2.05,-0.18) -- (2.42,-0.05);
+    \node[anchor=west,inner sep=2pt] at (2.48,-0.05) {$T$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图3.52 回旋加速器}
 \end{figure}
 
-\emph{图3.52 回旋加速}
+\emph{图3.52 回旋加速器}
 
 设正好当 \(D_{2}\) 电势高于 \(D_{1}\)
 时，从离子源产生一个正离子例如质子）。这个带正电的粒子在缝隙间电场力作用下被加速以速率
@@ -17466,7 +17627,39 @@ D 形盒的边缘，这时它已具有很大的动能，被用一定方式引出
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-3/fig-p0247-01.png}}
+\fitfig{%
+% fig-alt: 习题3.5第3题。平行板上接电池正极、下接地；板间×向里；左带电质点以v水平向右穿过
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % plates
+  \draw[line width=1.35pt] (0.15,2.15) -- (3.55,2.15);
+  \draw[line width=1.35pt] (0.15,0.55) -- (3.55,0.55);
+  % B into page
+  \foreach \y in {0.85,1.20,1.55,1.90} {
+    \foreach \x in {0.45,0.95,1.45,1.95,2.45,2.95,3.35} {
+      \node[inner sep=0pt,font=\small] at (\x,\y) {$\times$};
+    }
+  }
+  % particle + v
+  \draw[line width=0.55pt] (-0.35,1.35) circle[radius=0.12];
+  \draw[line width=0.7pt,->] (-0.18,1.35) -- (0.85,1.35);
+  \node[anchor=south,inner sep=1pt] at (0.45,1.38) {$v$};
+  % top lead to battery
+  \draw[line width=0.7pt] (1.85,2.15) -- (1.85,2.85) -- (4.35,2.85) -- (4.35,2.05);
+  % battery: long + on top, short − below
+  \draw[line width=1.15pt] (4.05,2.05) -- (4.65,2.05);
+  \draw[line width=0.7pt] (4.35,2.05) -- (4.35,1.15);
+  \draw[line width=1.35pt] (4.18,1.15) -- (4.52,1.15);
+  \draw[line width=0.7pt] (4.35,1.15) -- (4.35,0.35);
+  % grounds
+  \draw[line width=0.7pt] (1.85,0.55) -- (1.85,0.15);
+  \draw[line width=0.7pt] (1.58,0.15) -- (2.12,0.15);
+  \draw[line width=0.7pt] (1.68,0.05) -- (2.02,0.05);
+  \draw[line width=0.7pt] (1.78,-0.05) -- (1.92,-0.05);
+  \draw[line width=0.7pt] (4.12,0.35) -- (4.58,0.35);
+  \draw[line width=0.7pt] (4.20,0.25) -- (4.50,0.25);
+  \draw[line width=0.7pt] (4.28,0.15) -- (4.42,0.15);
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -17499,11 +17692,24 @@ D 形盒的边缘，这时它已具有很大的动能，被用一定方式引出
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={. 第7题)}]{assets/physics-3/fig-p0248-01.png}}
-\caption{. 第7题)}
+\fitfig{%
+% fig-alt: 习题3.5第7题。A处v0竖直向上，沿上半圆至B；AB直径标10厘米
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (-2.20,0) arc[start angle=180,end angle=0,radius=2.20];
+  \draw[line width=0.7pt,->] (-2.20,0) -- (2.20,0);
+  \fill (-2.20,0) circle[radius=0.04];
+  \fill (2.20,0) circle[radius=0.04];
+  \node[anchor=east,inner sep=3pt] at (-2.20,0) {$A$};
+  \node[anchor=west,inner sep=3pt] at (2.20,0) {$B$};
+  \node[anchor=north,inner sep=2pt] at (0,0) {$10$厘米};
+  \draw[line width=0.7pt,->] (-2.20,0.08) -- (-2.20,1.15);
+  \node[anchor=east,inner sep=2pt] at (-2.20,1.05) {$v_0$};
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
 
-\emph{. 第7题）}
+\emph{（第7题）}
 
 子沿图示半圆自 A 到 B，问在此区域中磁感应强度的大小与方向？（2） 电子由
 A 到 B 要多少时间？
