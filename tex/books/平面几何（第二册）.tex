@@ -17084,8 +17084,39 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/plane-geometry-2/fig-p0189-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图3·9（a）：□ABCD右斜；虚线自D竖下至高约半处H，水平交AD于Q并延伸交BC于F，再自Q竖下交AB于R；分I（△DQH）、II（梯形HFCD）、III（△AQR）、IV（四边形QRBF）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\b{3.20}
+  \def\s{1.35}
+  \def\h{2.40}
+  \def\ym{1.05}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (\b,0);
+  \coordinate (D) at (\s,\h);
+  \coordinate (C) at (\b+\s,\h);
+  % Q on AD at y=ym: AD=(0,0)->(s,h), t=ym/h
+  \pgfmathsetmacro{\tq}{\ym/\h}
+  \coordinate (Q) at ({\tq*\s},\ym);
+  \coordinate (H) at (\s,\ym);
+  % F on BC at y=ym: BC=(b,0)->(b+s,h), t=ym/h
+  \coordinate (F) at ({\b+\tq*\s},\ym);
+  \coordinate (R) at ({\tq*\s},0);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed,line width=0.6pt] (D) -- (H);
+  \draw[dashed,line width=0.6pt] (Q) -- (F);
+  \draw[dashed,line width=0.6pt] (Q) -- (R);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node at ({(\s+\tq*\s)/2},{(\h+\ym)/2}) {$I$};
+  \node at ({\b*0.55+\s},{\ym+0.55*(\h-\ym)}) {$II$};
+  \node at ({0.45*\tq*\s},{0.40*\ym}) {$III$};
+  \node at ({\b*0.45},{\ym*0.45}) {$IV$};
+\end{tikzpicture}%
+}
+\caption{（a）}
 \end{figure}
 
 \begin{quote}
@@ -17094,8 +17125,34 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/plane-geometry-2/fig-p0189-02.png}}
-\caption{(b)}
+\fitfig{%
+% fig-alt: 图3·9（b）：矩形A'B'C'D'等底同高；虚线斜线C'E（E在A'D'）、F'G（F'在B'C'、G在A'B'）与水平EF'；分II'（左上△）、I'（右上△）、IV'（左下）、III'（右下△）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\w{2.40}
+  \def\h{2.80}
+  \coordinate (Ap) at (0,0);
+  \coordinate (Bp) at (\w,0);
+  \coordinate (Cp) at (\w,\h);
+  \coordinate (Dp) at (0,\h);
+  \def\ye{0.95}
+  \coordinate (E) at (0,\ye);
+  \coordinate (Fp) at (\w,\ye);
+  \coordinate (G) at ({0.68*\w},0);
+  \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
+  \draw[dashed,line width=0.6pt] (Cp) -- (E);
+  \draw[dashed,line width=0.6pt] (Fp) -- (G);
+  \draw[dashed,line width=0.6pt] (E) -- (Fp);
+  \node[anchor=north east,inner sep=1pt] at (Ap) {$A'$};
+  \node[anchor=north west,inner sep=1pt] at (Bp) {$B'$};
+  \node[anchor=south west,inner sep=1pt] at (Cp) {$C'$};
+  \node[anchor=south east,inner sep=1pt] at (Dp) {$D'$};
+  \node at ({0.38},{\ye + (\h-\ye)*0.55}) {$II'$};
+  \node at ({\w - 0.48},{\ye + (\h-\ye)*0.32}) {$I'$};
+  \node at ({0.48},{\ye*0.45}) {$IV'$};
+  \node at ({\w - 0.42},{\ye*0.38}) {$III'$};
+\end{tikzpicture}%
+}
+\caption{（b）}
 \end{figure}
 
 \begin{quote}
@@ -17117,8 +17174,35 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-10}]{assets/plane-geometry-2/fig-p0189-03.png}}
-\caption{图3-10}
+\fitfig{%
+% fig-alt: 图3·10：□ABCD底AB=5cm、邻边AD=4cm、∠DAB=60°；高DD'⊥AB于D'（直角方）；AD与AB旁有双向箭头尺寸标注
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\sc{0.55}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at ({5*\sc},0);
+  \coordinate (Dp) at ({2*\sc},0);
+  \coordinate (D) at ({2*\sc},{2*1.7320508*\sc});
+  \coordinate (C) at ({7*\sc},{2*1.7320508*\sc});
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (D) -- (Dp);
+  \draw[line width=0.55pt] (Dp) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
+  \draw[line width=0.55pt] (0.42,0) arc[start angle=0, end angle=60, radius=0.42];
+  \node[anchor=south west,inner sep=1pt] at (0.48,0.12) {$60^\circ$};
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1pt] at (Dp) {$D'$};
+  \draw[<->,line width=0.5pt] (0,-0.38) -- ({5*\sc},-0.38);
+  \node[anchor=north,inner sep=1pt] at ({2.5*\sc},-0.38) {$5\,\mathrm{cm}$};
+  % 4cm along a line parallel to AD, offset left-up normal
+  \coordinate (Aoff) at ($(A)+({-0.32*0.866},{-0.32*0.5})$);
+  \coordinate (Doff) at ($(D)+({-0.32*0.866},{-0.32*0.5})$);
+  \draw[<->,line width=0.5pt] (Aoff) -- (Doff);
+  \node[anchor=east,inner sep=2pt] at ($(Aoff)!0.5!(Doff)$) {$4\,\mathrm{cm}$};
+\end{tikzpicture}%
+}
+\caption{图3·10}
 \end{figure}
 
 \begin{quote}
@@ -17159,8 +17243,40 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-11}]{assets/plane-geometry-2/fig-p0190-01.png}}
-\caption{图3-11}
+\fitfig{%
+% fig-alt: 图3·11：□ABCD对角实线AC；过AC上任意点P作EF∥AD（E在AB、F在CD）、GH∥AB（G在AD、H在BC），三分线交于P
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\b{3.40}
+  \def\s{1.10}
+  \def\h{2.20}
+  \def\t{0.42}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (\b,0);
+  \coordinate (D) at (\s,\h);
+  \coordinate (C) at (\b+\s,\h);
+  \coordinate (P) at ({\t*(\b+\s)},{\t*\h});
+  % EF ∥ AD through P: AD direction (s,h); E on AB => y=0: P+u(s,h)=(x,0)=> u=-t, E=(t(b+s)-t s, 0)=(t b, 0)
+  \coordinate (E) at ({\t*\b},0);
+  \coordinate (F) at ({\t*\b + \s},\h);
+  % GH ∥ AB (horizontal) through P
+  \coordinate (G) at ({\t*\s},{\t*\h});
+  \coordinate (H) at ({\b + \t*\s},{\t*\h});
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (E) -- (F);
+  \draw[line width=0.75pt] (G) -- (H);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1pt] at (F) {$F$};
+  \node[anchor=east,inner sep=2pt] at (G) {$G$};
+  \node[anchor=west,inner sep=2pt] at (H) {$H$};
+  \node[anchor=south west,inner sep=1pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+\caption{图3·11}
 \end{figure}
 
 \begin{quote}
@@ -17190,8 +17306,49 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.12}]{assets/plane-geometry-2/fig-p0191-01.png}}
-\caption{图3.12}
+\fitfig{%
+% fig-alt: 图3·12：左正方形ABCD各边标a；右菱形A'B'C'D'各边标a，虚高D'E'⊥A'B'于E'并标h
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\a{1.70}
+  \begin{scope}
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (\a,0);
+    \coordinate (C) at (\a,\a);
+    \coordinate (D) at (0,\a);
+    \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+    \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+    \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+    \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+    \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+    \node[anchor=north,inner sep=1pt] at ({0.5*\a},0) {$a$};
+    \node[anchor=west,inner sep=2pt] at (\a,{0.5*\a}) {$a$};
+    \node[anchor=south,inner sep=1pt] at ({0.5*\a},\a) {$a$};
+    \node[anchor=east,inner sep=2pt] at (0,{0.5*\a}) {$a$};
+  \end{scope}
+  \begin{scope}[shift={(3.10,0)}]
+    \def\hh{1.15}
+    \pgfmathsetmacro{\off}{sqrt(\a*\a-\hh*\hh)}
+    \coordinate (Ap) at (0,0);
+    \coordinate (Bp) at (\a,0);
+    \coordinate (Dp) at (\off,\hh);
+    \coordinate (Cp) at ({\a+\off},\hh);
+    \coordinate (Ep) at (\off,0);
+    \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
+    \draw[dashed,line width=0.6pt] (Dp) -- (Ep);
+    \node[anchor=north east,inner sep=1pt] at (Ap) {$A'$};
+    \node[anchor=north west,inner sep=1pt] at (Bp) {$B'$};
+    \node[anchor=south west,inner sep=1pt] at (Cp) {$C'$};
+    \node[anchor=south east,inner sep=1pt] at (Dp) {$D'$};
+    \node[anchor=north,inner sep=1pt] at (Ep) {$E'$};
+    \node[anchor=north,inner sep=1pt] at ({0.5*\a},0) {$a$};
+    \node[anchor=west,inner sep=2pt] at ({\a+\off*0.5},{0.5*\hh}) {$a$};
+    \node[anchor=south,inner sep=1pt] at ({\a*0.5+\off},\hh) {$a$};
+    \node[anchor=east,inner sep=2pt] at ({\off*0.5},{0.5*\hh}) {$a$};
+    \node[anchor=west,inner sep=2pt] at ({\off},{0.5*\hh}) {$h$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图3·12}
 \end{figure}
 
 \begin{quote}
@@ -17223,8 +17380,35 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0191-02.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第3题）□ABCD（A左上B左下C右下D右上）；虚高BF、CE⊥AD所在直线于F、E（F在DA延长线上），直角方；矩形EFBC
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\w{3.20}
+  \def\h{1.90}
+  \def\s{0.95}
+  % B(0,0), C(w,0), A(s,h), D(s+w,h); F(0,h), E(w,h)
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (\w,0);
+  \coordinate (A) at (\s,\h);
+  \coordinate (D) at ({\s+\w},\h);
+  \coordinate (F) at (0,\h);
+  \coordinate (E) at (\w,\h);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed,line width=0.6pt] (B) -- (F);
+  \draw[dashed,line width=0.6pt] (F) -- (A);
+  \draw[dashed,line width=0.6pt] (C) -- (E);
+  % right angles at F and E (inside toward BC)
+  \draw[line width=0.55pt] (F) -- ++(0.16,0) -- ++(0,-0.16) -- ++(-0.16,0);
+  \draw[line width=0.55pt] (E) -- ++(-0.16,0) -- ++(0,-0.16) -- ++(0.16,0);
+  \node[anchor=south east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south east,inner sep=1pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \begin{quote}
@@ -17241,8 +17425,32 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0191-03.png}}
-\caption{(第4题)}
+\fitfig{%
+% fig-alt: （第4题）梯形ABCD（AB∥DC，AB底较长）；M为腰BC中点；过M虚线EF∥AD，E在AB上、F在DC延长线上（CF虚延）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.20,0);
+  \coordinate (D) at (0.70,2.00);
+  \coordinate (C) at (2.60,2.00);
+  \coordinate (M) at ({(4.20+2.60)/2},{(0+2.00)/2});
+  % EF ∥ AD through M. AD direction = D-A = (0.70,2.00)
+  % line: M + t(0.70,2); E on AB (y=0): My + t*2 = 0 => t = -My/2 = -0.5
+  \coordinate (E) at ({(4.20+2.60)/2 + (-0.5)*0.70}, 0);
+  % F on DC line y=2: My + t*2 = 2 => t = (2-My)/2 = 0.5
+  \coordinate (F) at ({(4.20+2.60)/2 + 0.5*0.70}, 2.00);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed,line width=0.6pt] (E) -- (F);
+  \draw[dashed,line width=0.6pt] (C) -- (F);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south west,inner sep=1pt] at (F) {$F$};
+  \node[anchor=west,inner sep=2pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \begin{quote}
@@ -17251,8 +17459,43 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题).}]{assets/plane-geometry-2/fig-p0191-04.png}}
-\caption{(第5题).}
+\fitfig{%
+% fig-alt: （第5题）□ABCD对角AC、BD交于O；实线OE⊥BC于E（直角方）；虚线OF交AD于F、虚高AH⊥BC于H（直角方）；OB⊥BC
+\begin{tikzpicture}[line cap=round,line join=round]
+  % OB ⊥ BC with BC horizontal => O and B share x... but PNG shows lean.
+  % Match PNG: A top-left, B bottom-left, C bottom-right, D top-right; slight right lean;
+  % vertical through O for FOE; AH dashed left of O.
+  \def\b{3.20}
+  \def\s{0.35}
+  \def\h{2.20}
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (\b,0);
+  \coordinate (A) at (\s,\h);
+  \coordinate (D) at ({\b+\s},\h);
+  \coordinate (O) at ({(\b+\s)/2},{\h/2});
+  % E = foot from O to BC (y=0): (Ox, 0); given OB⊥BC in problem — draw OE vertical from O
+  \coordinate (E) at ({(\b+\s)/2},0);
+  \coordinate (F) at ({(\b+\s)/2},\h);
+  \coordinate (H) at (\s,0);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (O) -- (E);
+  \draw[dashed,line width=0.6pt] (O) -- (F);
+  \draw[dashed,line width=0.6pt] (A) -- (H);
+  \draw[line width=0.55pt] (E) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
+  \draw[line width=0.55pt] (H) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
+  \node[anchor=south east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=west,inner sep=2pt] at (O) {$O$};
+  \node[anchor=north,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1pt] at (F) {$F$};
+  \node[anchor=north,inner sep=1pt] at (H) {$H$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \begin{quote}
