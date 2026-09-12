@@ -4632,7 +4632,7 @@ h _ {1} \gamma_ {1} = h _ {2} \gamma_ {2}, \quad \therefore \quad \gamma_ {2} = 
   \node[font=\scriptsize,inner sep=0.5pt,fill=white] at (2.32,2.30) {$h_2$};
 \end{tikzpicture}%
 }
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -9691,7 +9691,7 @@ v = v _ {1} + v _ {2} = v _ {0} - g t
 \]
 
 \[
-s\text{：} s _ {1} + s _ {2} = v _ {0} i - \frac {1}{2} g t ^ {2}
+s = s _ {1} + s _ {2} = v _ {0} t - \frac {1}{2} g t ^ {2}
 \]
 
 这样，我们就可以把竖直上抛到最高点，再自由下落的整个过程看成一个运动。直接应用上面两个式子来解题，例题10
@@ -9699,11 +9699,45 @@ s\text{：} s _ {1} + s _ {2} = v _ {0} i - \frac {1}{2} g t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5·14 竖直上抛运动中的速度、加速度和位移}]{assets/physics-1/fig-p0155-01.png}}
-\caption{图 5·14 竖直上抛运动中的速度、加速度和位移}
+% fig-alt: 图5·14：窄U形竖直上抛轨迹；虚线标$s=0$；左侧$v>0$、顶$v=0$、右侧$v<0$；两侧$a=-g$向下；右缘$s>0$（上）与$s<0$（下）。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图5·14 竖直上抛：窄U形；虚线s=0；v>0 / v=0 / v<0；a=-g；s>0 / s<0
+  \draw[line width=0.65pt]
+    (-0.22,-2.4) -- (-0.22,3.2)
+    .. controls (-0.22,3.65) and (0.22,3.65) .. (0.22,3.2)
+    -- (0.22,-2.4);
+  % s=0 虚线
+  \draw[line width=0.5pt,dashed] (-1.6,0) -- (2.6,0);
+  % 点：左空心、右实心
+  \draw[line width=0.5pt,fill=white] (-0.22,0) circle[radius=0.06];
+  \draw[line width=0.5pt,fill=white] (-0.22,1.6) circle[radius=0.06];
+  \fill (0,3.55) circle[radius=0.055];
+  \fill (0.22,1.6) circle[radius=0.055];
+  \fill (0.22,0) circle[radius=0.055];
+  \fill (0.22,-1.5) circle[radius=0.055];
+  % v 标注
+  \draw[line width=0.55pt,->] (-0.55,0.15) -- (-0.55,1.35);
+  \node[anchor=east] at (-0.65,0.75) {$v>0$};
+  \node[anchor=south] at (0,3.7) {$v=0$};
+  \draw[line width=0.55pt,->] (0.55,1.45) -- (0.55,0.25);
+  \node[anchor=west] at (0.65,0.85) {$v<0$};
+  % a=-g
+  \draw[line width=0.55pt,->] (-1.25,2.4) -- (-1.25,1.3);
+  \node[anchor=east] at (-1.35,1.85) {$a=-g$};
+  \draw[line width=0.55pt,->] (1.15,2.4) -- (1.15,1.3);
+  \node[anchor=west] at (1.25,1.85) {$a=-g$};
+  % s
+  \draw[line width=0.55pt,<->] (2.15,0.08) -- (2.15,2.6);
+  \node[anchor=west] at (2.25,1.35) {$s>0$};
+  \draw[line width=0.55pt,<->] (2.15,-0.08) -- (2.15,-2.2);
+  \node[anchor=west] at (2.25,-1.15) {$s<0$};
+\end{tikzpicture}%
+}
+\caption{图5·14 竖直上抛运动中的速度、加速度和位移}
 \end{figure}
 
-\emph{图 5·14 竖直上抛运动中的速度、加速度和位移}
+\emph{图5·14 竖直上抛运动中的速度、加速度和位移}
 
 在 \(v = v_0 - gt\) 的式子中，速度向上为正，向下为负，即取初速度 \(v_0\)
 方向为正，因而 \(v\) 的正负就由时间 \(t\) 的长短所决定。如果 \(t\)
@@ -9712,7 +9746,7 @@ s\text{：} s _ {1} + s _ {2} = v _ {0} i - \frac {1}{2} g t ^ {2}
 是从出发点算起的位移，在上为正，在下为负。当 \(t\) 足够大时，\(s\)
 可以是负值。这表示物体已回到原处，而且由原处再向下落下去了。
 
-图 5·14 表示竖直上抛运动中的速度、加速度和位移。
+图5·14 表示竖直上抛运动中的速度、加速度和位移。
 
 \subsubsection{例 11}
 
@@ -10219,11 +10253,38 @@ h = \frac {1}{2} g t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6·1 钢珠碰``碰''，改变了运动方向}]{assets/physics-1/fig-p0167-01.png}}
-\caption{图 6·1 钢珠碰``碰''，改变了运动方向}
+% fig-alt: 图6·1：透视桌面上钢珠自左向右滚；条形磁铁在右侧；虚线轨迹近磁铁处弯折，终点实心球；旁标磁铁。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图6·1 光滑桌面钢珠遇磁铁偏转
+  % 桌面（透视平行四边形）
+  \draw[line width=0.7pt] (0,0.9) -- (6.2,0.9) -- (7.0,2.4) -- (0.8,2.4) -- cycle;
+  % 桌沿厚度
+  \draw[line width=0.55pt] (0,0.9) -- (0,0.7) -- (6.2,0.7) -- (6.2,0.9);
+  \draw[line width=0.55pt] (6.2,0.7) -- (7.0,2.2) -- (7.0,2.4);
+  % 桌腿
+  \draw[line width=0.55pt] (0.35,0.7) -- (0.35,0);
+  \draw[line width=0.55pt] (5.7,0.7) -- (5.7,0);
+  \draw[line width=0.55pt] (1.15,2.4) -- (1.15,1.55);
+  \draw[line width=0.55pt] (6.55,2.4) -- (6.55,1.55);
+  % 条形磁铁（右前）
+  \fill[white] (3.9,1.15) -- (5.35,1.35) -- (5.5,1.7) -- (4.05,1.5) -- cycle;
+  \draw[line width=0.6pt] (3.9,1.15) -- (5.35,1.35) -- (5.5,1.7) -- (4.05,1.5) -- cycle;
+  \draw[line width=0.45pt] (5.35,1.35) -- (5.5,1.7);
+  \node[anchor=west] at (5.55,1.55) {磁铁};
+  % 钢珠起点（空心）与终点（实心）
+  \draw[line width=0.55pt,fill=white] (1.35,1.55) circle[radius=0.09];
+  % 轨迹：先直后弯向磁铁后方
+  \draw[line width=0.55pt,dashed,->]
+    (1.5,1.55) -- (3.4,1.55)
+    .. controls (4.2,1.55) and (4.6,1.85) .. (5.6,2.15);
+  \fill (5.65,2.18) circle[radius=0.09];
+\end{tikzpicture}%
+}
+\caption{图6·1 钢珠碰到磁铁，改变了运动方向}
 \end{figure}
 
-\emph{图 6·1 钢珠碰``碰''，改变了运动方向}
+\emph{图6·1 钢珠碰到磁铁，改变了运动方向}
 
 综上所述，要使静止的物体运动，或使运动的物体静止，要改变物体运动的快慢或运动的方向，都必须有其它物体的力的作用。
 
@@ -10297,19 +10358,59 @@ h = \frac {1}{2} g t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 压缩的弹簧在向右推手}]{assets/physics-1/fig-p0170-01.png}}
-\caption{(a) 压缩的弹簧在向右推手}
+% fig-alt: 图6·2（a）：L形支架上压缩弹簧；右手向左压端头；弹力箭头向右推手。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % (a) 压缩弹簧向右推手
+  \draw[line width=1.1pt] (0,0) -- (0,1.55);
+  \draw[line width=1.1pt] (0,0) -- (4.8,0);
+  \draw[line width=0.6pt] (0.08,0.85) -- (0.25,0.85);
+  \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.42,segment length=1.7pt,amplitude=2.4pt,pre length=1pt,post length=1pt}]
+    (0.25,0.85) -- (1.85,0.85);
+  \draw[line width=0.7pt] (1.85,0.55) -- (1.85,1.15);
+  % 弹力向右
+  \draw[line width=0.7pt,->] (2.0,1.25) -- (2.7,1.25);
+  % 手向左压
+  \draw[line width=0.55pt,fill=white]
+    (2.0,0.85) .. controls (2.35,1.3) and (2.85,1.4) .. (3.3,1.15)
+    .. controls (3.65,0.95) and (3.6,0.5) .. (3.2,0.35)
+    .. controls (2.75,0.2) and (2.25,0.4) .. (2.0,0.75) -- cycle;
+  \draw[line width=0.5pt] (3.3,1.15) .. controls (3.7,1.35) and (4.0,1.15) .. (3.9,0.85);
+  \draw[line width=0.5pt] (3.2,0.35) .. controls (3.5,0.1) and (3.9,0.2) .. (3.95,0.5);
+\end{tikzpicture}%
+}
+\caption{（a）压缩的弹簧在向右推手}
 \end{figure}
 
-\emph{（a） 压缩的弹簧在向右推手}
+\emph{（a）压缩的弹簧在向右推手}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 拉长的弹簧在向左拉手}]{assets/physics-1/fig-p0170-02.png}}
-\caption{(b) 拉长的弹簧在向左拉手}
+% fig-alt: 图6·2（b）：L形支架上拉长弹簧；右手向右拉端头；弹力箭头向左拉手。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % (b) 拉长弹簧向左拉手
+  \draw[line width=1.1pt] (0,0) -- (0,1.55);
+  \draw[line width=1.1pt] (0,0) -- (5.6,0);
+  \draw[line width=0.6pt] (0.08,0.85) -- (0.25,0.85);
+  \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.42,segment length=3.2pt,amplitude=2.4pt,pre length=1pt,post length=1pt}]
+    (0.25,0.85) -- (3.35,0.85);
+  \draw[line width=0.7pt] (3.35,0.55) -- (3.35,1.15);
+  % 弹力向左（画在端头稍上，避免被手盖住）
+  \draw[line width=0.7pt,->] (3.2,1.25) -- (2.4,1.25);
+  % 手向右拉
+  \draw[line width=0.55pt,fill=white]
+    (3.55,0.85) .. controls (3.9,1.3) and (4.4,1.45) .. (4.85,1.2)
+    .. controls (5.2,1.0) and (5.15,0.5) .. (4.7,0.35)
+    .. controls (4.25,0.2) and (3.75,0.4) .. (3.55,0.75) -- cycle;
+  \draw[line width=0.5pt] (4.85,1.2) .. controls (5.25,1.4) and (5.55,1.2) .. (5.45,0.9);
+  \draw[line width=0.5pt] (4.7,0.35) .. controls (5.05,0.1) and (5.4,0.25) .. (5.45,0.55);
+\end{tikzpicture}%
+}
+\caption{（b）拉长的弹簧在向左拉手}
 \end{figure}
 
-\emph{（b） 拉长的弹簧在向左拉手}
+\emph{（b）拉长的弹簧在向左拉手}
 
 \emph{图6·2 弹性力}
 
@@ -10318,11 +10419,52 @@ h = \frac {1}{2} g t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6·3 弯曲的竹片使物体运动}]{assets/physics-1/fig-p0171-01.png}}
-\caption{图 6·3 弯曲的竹片使物体运动}
+% fig-alt: 图6·3：水面浮木；弯曲竹片插入木端；手握竹片上端；木上箭头示运动方向。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图6·3 弯曲竹片拨动水面浮木
+  % 水面
+  \foreach \y in {0.15,0.45,0.75} {
+    \foreach \x in {0.0,0.7,1.4,2.1,2.8,3.5,4.2,4.9} {
+      \draw[line width=0.32pt] (\x+0.05*\y,\y) -- ++(0.4,0);
+    }
+  }
+  % 浮木：斜向左上的圆柱（前端椭圆在右下）
+  \fill[white]
+    (2.55,0.55) .. controls (2.85,0.25) and (3.35,0.45) .. (3.25,0.95)
+    .. controls (2.55,1.55) and (1.55,2.25) .. (0.85,2.45)
+    -- (0.55,2.05)
+    .. controls (1.25,1.85) and (2.15,1.15) .. (2.55,0.55);
+  \draw[line width=0.65pt]
+    (2.55,0.55) .. controls (2.85,0.25) and (3.35,0.45) .. (3.25,0.95)
+    .. controls (2.55,1.55) and (1.55,2.25) .. (0.85,2.45)
+    -- (0.55,2.05)
+    .. controls (1.25,1.85) and (2.15,1.15) .. (2.55,0.55);
+  % 前端椭圆
+  \draw[line width=0.6pt]
+    (2.55,0.55) .. controls (2.85,0.35) and (3.2,0.55) .. (3.25,0.95)
+    .. controls (3.15,1.2) and (2.75,1.15) .. (2.55,0.55);
+  % 木纹
+  \draw[line width=0.35pt] (2.35,0.95) .. controls (1.85,1.35) and (1.25,1.85) .. (0.85,2.15);
+  \draw[line width=0.35pt] (2.55,1.15) .. controls (2.05,1.55) and (1.45,2.0) .. (1.05,2.25);
+  % 运动方向（沿木轴向左上）
+  \draw[line width=0.65pt,->] (2.35,1.55) -- (1.45,2.05);
+  % 弯曲竹片：从木前端弯向右上手
+  \draw[line width=0.7pt]
+    (2.95,0.75) .. controls (3.7,0.35) and (4.55,1.05) .. (5.15,2.15);
+  % 手（右上）
+  \draw[line width=0.55pt,fill=white]
+    (5.0,2.05) .. controls (5.15,2.45) and (5.55,2.65) .. (5.85,2.35)
+    .. controls (6.1,2.1) and (6.05,1.7) .. (5.7,1.55)
+    .. controls (5.35,1.45) and (5.05,1.7) .. (5.0,2.05);
+  \draw[line width=0.45pt] (5.85,2.35) .. controls (6.15,2.55) and (6.4,2.35) .. (6.3,2.05);
+  \draw[line width=0.45pt] (5.7,1.55) .. controls (5.95,1.3) and (6.25,1.4) .. (6.35,1.7);
+\end{tikzpicture}%
+}
+\caption{图6·3 弯曲的竹片使物体运动}
 \end{figure}
 
-\emph{图 6·3 弯曲的竹片使物体运动}
+\emph{图6·3 弯曲的竹片使物体运动}
 
 这里，我们要请读者注意``同时''这两个字。它的意思是：物体一发生形变，就立刻出现弹力；形变消失后，弹力也立刻消失。形变总是由小到大的，因而弹力也是逐渐增大。例如，用力拉一根弹簧时，即使你拉的很快，弹簧的形变总有一个从小到大的拉长过程。只要比原来的长度稍长一点，立刻就有弹力出现，只是很小而已。逐渐拉长，弹力逐渐增大，拉得越长，弹力越大。如果让弹簧逐渐恢复原状，弹力也是逐渐减小，直到最后恢复到原来的长度，弹力也完全没有了。
 
@@ -10358,11 +10500,51 @@ h = \frac {1}{2} g t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6-4 打哈啰的表演}]{assets/physics-1/fig-p0173-01.png}}
-\caption{图6-4 打哈啰的表演}
+% fig-alt: 图6·4：桌面木块经绳跨滑轮吊砝码盘；木块左侧$f$向左，绳上$F$；盘内叠放砝码。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图6·4 静摩擦实验：木块、绳、滑轮、砝码盘
+  % 桌面
+  \draw[line width=0.7pt] (0,1.6) -- (5.4,1.6) -- (5.9,2.15) -- (0.5,2.15) -- cycle;
+  \draw[line width=0.55pt] (0,1.6) -- (0,1.4) -- (5.4,1.4) -- (5.4,1.6);
+  \draw[line width=0.55pt] (5.4,1.4) -- (5.9,1.95) -- (5.9,2.15);
+  % 桌腿
+  \draw[line width=0.55pt] (4.6,1.4) -- (4.6,0.35) -- (4.85,0.35);
+  \draw[line width=0.55pt] (5.55,1.95) -- (5.55,0.85);
+  % 木块
+  \draw[line width=0.6pt,fill=white] (0.7,1.6) -- (2.15,1.6) -- (2.35,1.95) -- (0.9,1.95) -- cycle;
+  \draw[line width=0.6pt] (2.15,1.6) -- (2.15,2.25) -- (2.35,2.55) -- (2.35,1.95);
+  \draw[line width=0.6pt] (0.7,1.6) -- (0.7,2.25) -- (0.9,2.55) -- (0.9,1.95);
+  \draw[line width=0.6pt] (0.7,2.25) -- (2.15,2.25) -- (2.35,2.55) -- (0.9,2.55) -- cycle;
+  % 木纹
+  \draw[line width=0.35pt] (0.95,2.35) .. controls (1.3,2.42) and (1.7,2.38) .. (2.05,2.45);
+  \draw[line width=0.35pt] (0.85,1.85) .. controls (1.2,1.9) and (1.55,1.82) .. (1.95,1.88);
+  % 摩擦力 f（向左）
+  \draw[line width=0.6pt,->] (0.65,1.85) -- (0.05,1.85);
+  \node[anchor=east] at (-0.02,1.85) {$f$};
+  % 绳与拉力 F
+  \draw[line width=0.5pt] (2.15,1.95) -- (5.55,1.95);
+  \node[anchor=south] at (3.7,2.0) {$F$};
+  % 滑轮
+  \draw[line width=0.6pt,fill=white] (5.55,1.95) circle[radius=0.22];
+  \draw[line width=0.4pt] (5.55,1.95) circle[radius=0.08];
+  \draw[line width=0.45pt] (5.35,1.75) -- (5.35,1.4);
+  % 竖直绳与砝码盘
+  \draw[line width=0.5pt] (5.77,1.95) -- (5.77,0.95);
+  \draw[line width=0.55pt,fill=white] (5.45,0.55) rectangle (6.1,0.95);
+  \draw[line width=0.45pt] (5.55,0.95) -- (5.55,1.15);
+  \draw[line width=0.45pt] (6.0,0.95) -- (6.0,1.15);
+  \draw[line width=0.45pt] (5.55,1.15) -- (6.0,1.15);
+  % 砝码圆柱
+  \draw[line width=0.5pt,fill=white] (5.58,0.7) rectangle (5.95,0.95);
+  \draw[line width=0.5pt,fill=white] (5.62,0.5) rectangle (5.92,0.7);
+  \draw[line width=0.5pt,fill=white] (5.66,0.32) rectangle (5.88,0.5);
+\end{tikzpicture}%
+}
+\caption{图6·4 静摩擦实验装置}
 \end{figure}
 
-\emph{图6·4 打哈啰的表演}
+\emph{图6·4 静摩擦实验装置}
 
 在物体上加几个砝码，增大它对桌面的压力（通常叫正压力）N，同样地做几次实验，我们发现，最大静摩擦力的大小是与正压力的大小成正比的。即
 
@@ -10454,8 +10636,48 @@ f = \mu N
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6·6 手从拖拉机张紧皮带用的张紧轮}]{assets/physics-1/fig-p0176-01.png}}
-\caption{图6·6 手从拖拉机张紧皮带用的张紧轮}
+% fig-alt: 图6·6：手扶拖拉机皮带传动示意；发动机小带轮与传动大带轮；上方张紧轮压紧皮带；右有扶手与车轮。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图6·6 手扶拖拉机皮带张紧示意（简化机械图）
+  % 发动机侧小带轮
+  \draw[line width=0.7pt,fill=white] (1.1,1.55) circle[radius=0.55];
+  \draw[line width=0.5pt] (1.1,1.55) circle[radius=0.28];
+  \fill (1.1,1.55) circle[radius=0.06];
+  % 发动机方框示意
+  \draw[line width=0.6pt] (0.15,0.85) rectangle (1.55,2.35);
+  \draw[line width=0.45pt] (0.35,2.35) rectangle (0.85,2.65);
+  \node[anchor=north,font=\tiny] at (0.85,0.82) {发动机};
+  % 传动侧大带轮
+  \draw[line width=0.7pt,fill=white] (5.0,1.35) circle[radius=0.95];
+  \draw[line width=0.5pt] (5.0,1.35) circle[radius=0.45];
+  \fill (5.0,1.35) circle[radius=0.06];
+  % 变速箱示意
+  \draw[line width=0.6pt] (4.2,0.55) -- (6.1,0.55) -- (6.1,1.85) -- (5.7,2.15) -- (4.2,1.85) -- cycle;
+  % 张紧轮（压在皮带上）
+  \draw[line width=0.65pt,fill=white] (3.05,2.35) circle[radius=0.32];
+  \fill (3.05,2.35) circle[radius=0.05];
+  \node[anchor=south,font=\tiny] at (3.05,2.72) {张紧轮};
+  % 皮带（外包络，经张紧轮）
+  \draw[line width=0.7pt]
+    (1.1,2.1) .. controls (2.0,2.55) and (2.5,2.7) .. (3.05,2.67)
+    .. controls (3.7,2.7) and (4.2,2.45) .. (5.0,2.3);
+  \draw[line width=0.7pt]
+    (5.0,0.4) .. controls (3.5,0.25) and (2.2,0.55) .. (1.1,1.0);
+  % 车轮示意
+  \draw[line width=0.65pt] (4.35,-0.15) circle[radius=0.7];
+  \draw[line width=0.45pt] (4.35,-0.15) circle[radius=0.28];
+  \foreach \a in {0,45,90,135,180,225,270,315} {
+    \draw[line width=0.4pt] (4.35,-0.15) ++(\a:0.55) -- ++(\a:0.15);
+  }
+  % 扶手
+  \draw[line width=0.6pt] (5.7,2.0) -- (7.2,3.1);
+  \draw[line width=0.6pt] (5.9,1.7) -- (7.35,2.85);
+  \draw[line width=0.7pt] (7.15,3.05) -- (7.55,3.25);
+  \draw[line width=0.7pt] (7.3,2.8) -- (7.7,3.0);
+\end{tikzpicture}%
+}
+\caption{图6·6 手扶拖拉机张紧皮带用的张紧轮}
 \end{figure}
 
 \emph{图6·6 手扶拖拉机张紧皮带用的张紧轮}
@@ -10468,8 +10690,40 @@ f = \mu N
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0177-01.png}}
-\caption{(a)}
+% fig-alt: 图6·7（a）：滑动轴承座；中央轴瓦带竖线影；顶有油孔；标注油孔、轴承座、轴瓦。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图6·7（a）滑动轴承：轴承座、轴瓦、油孔
+  % 底座与翼
+  \draw[line width=0.65pt,fill=white]
+    (-0.2,0) -- (3.4,0) -- (3.55,0.25) -- (3.4,0.45) -- (-0.05,0.45) -- (-0.2,0.25) -- cycle;
+  % 左右安装孔
+  \draw[line width=0.5pt] (0.35,0.22) circle[radius=0.12];
+  \draw[line width=0.5pt] (2.85,0.22) circle[radius=0.12];
+  % 中央立座（圆顶）
+  \draw[line width=0.65pt,fill=white]
+    (0.55,0.45) -- (0.55,1.15)
+    arc[start angle=180,end angle=0,radius=1.05]
+    -- (2.65,0.45) -- cycle;
+  % 轴孔外圈
+  \draw[line width=0.6pt] (1.6,1.15) circle[radius=0.72];
+  % 轴瓦内孔（竖直影线）
+  \draw[line width=0.55pt,fill=white] (1.6,1.15) circle[radius=0.48];
+  \foreach \x in {-0.32,-0.16,0,0.16,0.32} {
+    \draw[line width=0.35pt] ($(1.6,1.15)+(\x,-0.42)$) -- ($(1.6,1.15)+(\x,0.42)$);
+  }
+  % 油孔
+  \draw[line width=0.5pt,fill=white] (1.6,2.12) circle[radius=0.08];
+  % 标注
+  \draw[line width=0.4pt,dashed] (1.72,2.12) -- (2.55,2.55);
+  \node[anchor=west] at (2.55,2.55) {油孔};
+  \draw[line width=0.4pt,dashed] (0.45,0.7) -- (-0.35,1.35);
+  \node[anchor=east] at (-0.35,1.35) {轴承座};
+  \draw[line width=0.4pt,dashed] (2.05,1.0) -- (2.95,0.7);
+  \node[anchor=west] at (2.95,0.7) {轴瓦};
+\end{tikzpicture}%
+}
+\caption{（a）滑动轴承}
 \end{figure}
 
 \emph{（a）}
@@ -10477,7 +10731,7 @@ f = \mu N
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={b)}]{assets/physics-1/fig-p0177-02.png}}
-\caption{b)}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -10487,7 +10741,7 @@ f = \mu N
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0177-03.png}}
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -13444,7 +13698,7 @@ T _ {1} ^ {\prime} - \mu m _ {1} g = m _ {1} a
   \node[anchor=west] at (5.15,3.55) {(a)};
 \end{tikzpicture}%
 }
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -15177,7 +15431,7 @@ F = \frac {G}{2 \cos (10 ^ {\circ})} = G = 45 \text{公斤}
   \node[anchor=north west] at (2.86,0.10) {$G$};
 \end{tikzpicture}%
 }
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -15376,7 +15630,7 @@ N _ {2} = 43.3 \text{公 斤}
   \node[anchor=west] at (2.52,1.72) {$R$};
 \end{tikzpicture}%
 }
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -15767,7 +16021,7 @@ F _ {1} = F _ {2} \cos 60 ^ {\circ} = 646.6 \times \frac {1}{2} \text{牛顿} = 
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0259-01.png}}
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -15801,7 +16055,7 @@ F _ {1} = F _ {2} \cos 60 ^ {\circ} = 646.6 \times \frac {1}{2} \text{牛顿} = 
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0259-05.png}}
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -17921,7 +18175,7 @@ D O = \frac {F _ {3}}{R} \times D C = \frac {300}{600} \times 30 \text{厘米} -
   \node[anchor=west] at (2.78,0.32) {$G$};
 \end{tikzpicture}%
 }
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -18421,7 +18675,7 @@ x = \frac {l}{8}
   \node[anchor=north] at (2.52,0.04) {$G$};
 \end{tikzpicture}%
 }
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -18514,7 +18768,7 @@ x = \frac {l}{8}
   \end{scope}
 \end{tikzpicture}%
 }
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -20551,7 +20805,7 @@ G = 720 F = 720 \times 10 \text{公斤}
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0316-01.png}}
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -30030,7 +30284,7 @@ F _ {n} = m g \operatorname{tg} \theta
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0452-02.png}}
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -31209,7 +31463,7 @@ v = \frac {\pi d _ {1} n _ {1}}{60} = \frac {\pi d _ {2} n _ {2}}{60}
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0470-01.png}}
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
@@ -33141,7 +33395,7 @@ Q = S v = \text{恒量} \tag {15.3}
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0502-02.png}}
-\caption{(a)}
+\caption{（a）}
 \end{figure}
 
 \emph{（a）}
