@@ -17599,7 +17599,22 @@ x^{2} - 4 (- 2 x + m) ^ {2} = 9,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·69}]{assets/analytic-geometry/fig-p0243-01.png}}
+\fitfig{%
+% fig-alt: 图4·69 双曲线 x^2-4y^2=9，平行切线 y=-2x±(3/2)√15，切点 P、P'，轴为虚线
+\begin{tikzpicture}[x=0.52cm,y=0.52cm,line cap=round,line join=round,>=latex]
+  \draw[dash pattern=on 2.2pt off 1.6pt,line width=0.55pt,-latex] (-5.6,0) -- (5.8,0) node[right=1pt] {$x$};
+  \draw[dash pattern=on 2.2pt off 1.6pt,line width=0.55pt,-latex] (0,-3.4) -- (0,3.6) node[above=1pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \draw[line width=0.75pt] plot[domain=-1.55:1.55,samples=55] ({3*cosh(\x)},{1.5*sinh(\x)});
+  \draw[line width=0.75pt] plot[domain=-1.55:1.55,samples=55] ({-3*cosh(\x)},{1.5*sinh(\x)});
+  \draw[line width=0.65pt] (-1.2,8.21) -- (4.6,-3.39);
+  \draw[line width=0.65pt] (-4.6,3.39) -- (1.2,-8.21);
+  \fill (3.098,-0.387) circle (1.15pt);
+  \fill (-3.098,0.387) circle (1.15pt);
+  \node[anchor=north east,inner sep=1pt] at (2.95,-0.55) {$P$};
+  \node[anchor=south west,inner sep=1pt] at (-2.95,0.55) {$P'$};
+\end{tikzpicture}%
+}
 \caption{图4·69}
 \end{figure}
 
@@ -17751,7 +17766,25 @@ y = \frac {2}{3} x \pm \sqrt {4 \cdot \left(\frac {2}{3}\right) ^ {2} + \frac {2
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-70}]{assets/analytic-geometry/fig-p0246-01.png}}
+\fitfig{%
+% fig-alt: 图4-70 椭圆 7x^2+3y^2=28，平行切线斜率 2/3，切点(-4/5,14/5)与(4/5,-14/5)，轴有刻度
+\begin{tikzpicture}[x=0.58cm,y=0.58cm,line cap=round,line join=round,>=latex]
+  \draw[dash pattern=on 2.2pt off 1.6pt,line width=0.55pt,-latex] (-3.2,0) -- (3.4,0) node[right=1pt] {$x$};
+  \draw[dash pattern=on 2.2pt off 1.6pt,line width=0.55pt,-latex] (0,-4.0) -- (0,4.2) node[above=1pt] {$y$};
+  \foreach \k in {-2,-1,1,2}
+    \draw[line width=0.32pt] (\k,-0.12) -- (\k,0.12);
+  \foreach \k in {-3,-2,-1,1,2,3}
+    \draw[line width=0.32pt] (-0.12,\k) -- (0.12,\k);
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \draw[line width=0.75pt] (0,0) ellipse (2 and 3.055);
+  \draw[line width=0.65pt] (-3.4,-1.60) -- (2.2,4.73);
+  \draw[line width=0.65pt] (-2.2,-4.73) -- (3.4,1.60);
+  \fill (-0.8,2.8) circle (1.15pt);
+  \fill (0.8,-2.8) circle (1.15pt);
+  \node[anchor=south east,inner sep=1pt] at (-0.95,2.95) {$\bigl(-\dfrac{4}{5},\,\dfrac{14}{5}\bigr)$};
+  \node[anchor=north west,inner sep=1pt] at (0.95,-2.95) {$\bigl(\dfrac{4}{5},\,-\dfrac{14}{5}\bigr)$};
+\end{tikzpicture}%
+}
 \caption{图4-70}
 \end{figure}
 
@@ -17759,7 +17792,20 @@ y = \frac {2}{3} x \pm \sqrt {4 \cdot \left(\frac {2}{3}\right) ^ {2} + \frac {2
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-71}]{assets/analytic-geometry/fig-p0246-02.png}}
+\fitfig{%
+% fig-alt: 图4-71 抛物线 y^2=5x 与圆 x^2+y^2=(4/3)^2 的两条公切线，交于负 x 轴
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,-latex] (-3.0,0) -- (4.2,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-3.4) -- (0,3.5) node[above=1pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \draw[line width=0.75pt] (0,0) circle (1.333);
+  \draw[line width=0.75pt] plot[domain=0:3.6,samples=50] (\x,{sqrt(5*\x)});
+  \draw[line width=0.75pt] plot[domain=0:3.6,samples=50] (\x,{-sqrt(5*\x)});
+  \draw[line width=0.65pt] (-2.55,-0.25) -- (3.2,4.07);
+  \draw[line width=0.65pt] (-2.55,0.25) -- (3.2,-4.07);
+  \fill (-2.222,0) circle (1.1pt);
+\end{tikzpicture}%
+}
 \caption{图4-71}
 \end{figure}
 
@@ -17933,7 +17979,60 @@ y = k x \pm \sqrt {a^{2} k^{2} - b^{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-72}]{assets/analytic-geometry/fig-p0248-01.png}}
+\fitfig{%
+% fig-alt: 图4-72 抛物线 y^2=2px，焦点 F、准线、切点 P、切线 T、法线 N，角 α、θ、α1、α2、β1、β2
+\begin{tikzpicture}[x=0.55cm,y=0.55cm,line cap=round,line join=round,>=latex]
+  % p=2, P=(4,4), F=(1,0), T=(-4,0), N=(6,0), Q=(-1,4)
+  \draw[line width=0.7pt] (-1.0,-3.6) -- (-1.0,5.2);
+  \draw[<->,line width=0.4pt] (-1.0,-0.55) -- (0,-0.55);
+  \node[anchor=north,inner sep=1pt,font=\small] at (-0.5,-0.55) {$\dfrac{p}{2}$};
+  \draw[dash pattern=on 2.0pt off 1.5pt,line width=0.55pt,-latex] (0,-3.4) -- (0,5.4) node[above=1pt] {$y$};
+  \draw[line width=0.7pt,-latex] (-4.8,0) -- (7.2,0) node[right=1pt] {$x$};
+  \node[anchor=north east,inner sep=1pt] at (-0.1,-0.1) {$O$};
+  \draw[line width=0.75pt] plot[domain=-3.2:4.6,samples=60] ({\x*\x/4},\x);
+  \node[anchor=west,inner sep=1pt,font=\small] at (4.3,-2.6) {$y^{2}=2px$};
+  \draw[line width=0.65pt] (-4.8,-0.8) -- (5.6,9.6);
+  \draw[line width=0.65pt] (2.2,7.8) -- (7.0,-1.0);
+  \draw[line width=0.6pt] (1,0) -- (4,4);
+  \draw[dash pattern=on 2.0pt off 1.5pt,line width=0.5pt] (-1.0,4) -- (6.4,4);
+  \fill (1,0) circle (1.15pt);
+  \fill (4,4) circle (1.15pt);
+  \fill (-4,0) circle (1.05pt);
+  \fill (6,0) circle (1.05pt);
+  \node[anchor=north,inner sep=1pt] at (1,-0.12) {$F$};
+  \node[anchor=south west,inner sep=1pt] at (4.15,4.15) {$P$};
+  \node[anchor=north,inner sep=1pt] at (-4,-0.12) {$T$};
+  \node[anchor=north,inner sep=1pt] at (6,-0.12) {$N$};
+  \node[anchor=east,inner sep=1pt] at (-1.12,4) {$Q$};
+  \node[anchor=west,inner sep=1pt] at (6.4,4) {$R$};
+  % alpha at T
+  \draw[line width=0.45pt] (-3.35,0) arc (0:45:0.65);
+  \node[anchor=south west,inner sep=0.5pt,font=\small] at (-3.55,0.22) {$\alpha$};
+  % theta at F
+  \draw[line width=0.45pt] (1.75,0) arc (0:53.13:0.75);
+  \node[anchor=south west,inner sep=0.5pt,font=\small] at (1.85,0.28) {$\theta$};
+  % beta1 between tangent and PR (horizontal right): tangent angle 45, horizontal 0
+  \draw[line width=0.45pt] (4.7,4) arc (0:45:0.70);
+  \node[anchor=west,inner sep=0.5pt,font=\small] at (5.45,4.18) {$\beta_{1}$};
+  % beta2 between tangent down-left and PF: PF angle ~53.13 from +x at P? from P to F: vec=(-3,-4), angle
+  % at P: tangent direction down-left 225°, PF direction toward F atan2(-4,-3)=233.13°? 
+  % Use local arcs matching scan layout
+  \draw[line width=0.45pt] (3.45,3.45) arc (225:233.13:0.78);
+  \node[anchor=east,inner sep=0.5pt,font=\small] at (3.15,3.55) {$\beta_{2}$};
+  % alpha1 between normal (slope -1, dir up-right 135° from +x? normal through P slope -1: up-right is 135° from +x... wait slope -1 up-right is direction 315° or down-right.
+  % Normal line: y-4=-(x-4), direction vector (1,-1) or (-1,1). Up-left of normal: (-1,1) angle 135°.
+  % Horizontal right: 0°. Angle alpha1 between normal toward upper-right side and PR:
+  % Looking at scan: alpha1 between normal (up-rightish) and horizontal; for slope -1 normal, "up-right" from P along normal toward N is down-right (1,-1).
+  % Toward above P along normal is (-1,1) northwest.
+  % Scan: normal crosses from upper-left to lower-right through P to N.
+  % alpha1 at P between PR (right) and normal going up-left? Actually between PR and the part of normal above... 
+  % Double-check book: alpha1 between normal and PE (horizontal parallel to axis), alpha2 between normal and FP.
+  \draw[line width=0.45pt] (4.55,4) arc (0:135:0.55);
+  \node[anchor=south west,inner sep=0.5pt,font=\small] at (4.7,4.55) {$\alpha_{1}$};
+  \draw[line width=0.45pt] (3.55,4.55) arc (135:233.13:0.62);
+  \node[anchor=south east,inner sep=0.5pt,font=\small] at (3.35,4.75) {$\alpha_{2}$};
+\end{tikzpicture}%
+}
 \caption{图4-72}
 \end{figure}
 
@@ -18004,7 +18103,23 @@ k_{PF} = \operatorname{tg} \theta = \frac {y_{1}}{x_{1} - \frac {p}{2}},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·73}]{assets/analytic-geometry/fig-p0250-01.png}}
+\fitfig{%
+% fig-alt: 图4·73 抛物线开口向右，平行于轴的入射光线经反射汇于焦点 F
+\begin{tikzpicture}[x=0.70cm,y=0.70cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,-latex] (-0.35,0) -- (4.6,0) node[right=1pt] {$x$};
+  \draw[line width=0.8pt] plot[domain=-2.35:2.35,samples=60] ({\x*\x/2.2},\x);
+  \fill (0.55,0) circle (1.2pt);
+  \node[anchor=north,inner sep=1pt] at (0.55,-0.08) {$F$};
+  \draw[line width=0.55pt,<-] (0.1375,0.55) -- (4.15,0.55);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.5pt] (0.1375,0.55) -- (0.55,0);
+  \draw[line width=0.55pt,<-] (0.5011,1.05) -- (4.15,1.05);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.5pt] (0.5011,1.05) -- (0.55,0);
+  \draw[line width=0.55pt,<-] (1.0920,1.55) -- (4.15,1.55);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.5pt] (1.0920,1.55) -- (0.55,0);
+  \draw[line width=0.55pt,<-] (1.9102,2.05) -- (4.15,2.05);
+  \draw[dash pattern=on 1.6pt off 1.2pt,line width=0.5pt] (1.9102,2.05) -- (0.55,0);
+\end{tikzpicture}%
+}
 \caption{图4·73}
 \end{figure}
 
@@ -18040,7 +18155,44 @@ PT 和 PN 是经过 P 点的切线和法线， \(PF_{1}\) 和 \(PF_{2}\) 是 P
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·75}]{assets/analytic-geometry/fig-p0251-01.png}}
+\fitfig{%
+% fig-alt: 图4·75 椭圆上点 P(x1,y1)，焦点 F1、F2，切线 T 与法线交 x 轴于 N，角 α1=α2
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,-latex] (-3.6,0) -- (3.8,0) node[right=1pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-2.5) -- (0,2.7) node[above=1pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \draw[line width=0.75pt] (0,0) ellipse (3 and 2);
+  \coordinate (F1) at (-2.236,0);
+  \coordinate (F2) at (2.236,0);
+  \coordinate (P) at (1.928,1.532);
+  \coordinate (N) at (1.071,0);
+  \fill (F1) circle (1.15pt);
+  \fill (F2) circle (1.15pt);
+  \fill (P) circle (1.15pt);
+  \fill (N) circle (1.05pt);
+  \node[anchor=north,inner sep=1pt] at (-2.236,-0.12) {$F_{1}(-c,\,0)$};
+  \node[anchor=north,inner sep=1pt] at (2.236,-0.12) {$F_{2}(c,\,0)$};
+  \node[anchor=south west,inner sep=1pt] at (2.05,1.60) {$P(x_{1},\,y_{1})$};
+  \node[anchor=north,inner sep=1pt] at (1.071,-0.12) {$N$};
+  \draw[line width=0.6pt] (F1) -- (P) -- (F2);
+  % tangent slope -0.5594 through P; extend both ways
+  \draw[line width=0.65pt] (-1.2,3.28) -- (3.6,0.60);
+  \node[anchor=south east,inner sep=1pt] at (-1.05,3.15) {$T$};
+  % normal through P and N
+  \draw[line width=0.65pt] (0.35,2.82) -- (1.55,-0.85);
+  % angle arcs at P: alpha1 between PN and PF2; alpha2 between PN and PF1
+  % directions from P: to N (1.071-1.928,0-1.532)=(-0.857,-1.532) angle ~240.8°
+  % better: normal direction down to N ~ atan2(-1.532,-0.857)≈240.8°
+  % to F2: (2.236-1.928,0-1.532)=(0.308,-1.532) angle ~-78.6°=281.4°
+  % to F1: (-2.236-1.928,0-1.532)=(-4.164,-1.532) angle ~200.2°
+  % Also normal upward opposite: 240.8-180=60.8°
+  % Angles of bisector between focal radii — arcs near P in the wedge
+  \draw[line width=0.45pt] (1.70,1.20) arc (240.8:281.4:0.55);
+  \node[anchor=north,inner sep=0.5pt,font=\small] at (1.95,0.95) {$\alpha_{1}$};
+  \draw[line width=0.45pt] (1.55,1.25) arc (200.2:240.8:0.58);
+  \node[anchor=north east,inner sep=0.5pt,font=\small] at (1.35,1.05) {$\alpha_{2}$};
+\end{tikzpicture}%
+}
 \caption{图4·75}
 \end{figure}
 
@@ -18121,7 +18273,32 @@ a^{2} - b^{2} = c^{2}. \tag {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·76}]{assets/analytic-geometry/fig-p0253-01.png}}
+\fitfig{%
+% fig-alt: 图4·76 椭圆内自 F1 发出光线经上半弧反射汇于 F2，点 P 处示切线与法线
+\begin{tikzpicture}[x=0.95cm,y=0.95cm,line cap=round,line join=round,>=latex]
+  \draw[dash pattern=on 2.5pt off 1.2pt on 0.6pt off 1.2pt,line width=0.55pt,-latex] (-3.35,0) -- (3.45,0);
+  \draw[line width=0.75pt] (0,0) ellipse (3 and 1.6);
+  \coordinate (F1) at (-2.5377,0);
+  \coordinate (F2) at (2.5377,0);
+  \fill (F1) circle (1.15pt);
+  \fill (F2) circle (1.15pt);
+  \node[anchor=north,inner sep=1pt] at (-2.5377,-0.08) {$F_{1}$};
+  \node[anchor=north,inner sep=1pt] at (2.5377,-0.08) {$F_{2}$};
+  \coordinate (A) at (-1.0261,1.5035);
+  \coordinate (P) at (1.7207,1.3106);
+  \coordinate (B) at (2.5981,0.8000);
+  \fill (P) circle (1.1pt);
+  \node[anchor=south,inner sep=1pt] at (1.7207,1.4306) {$P$};
+  \draw[line width=0.55pt,-latex] (F1) -- (A);
+  \draw[line width=0.55pt,-latex] (A) -- (F2);
+  \draw[line width=0.55pt,-latex] (F1) -- (P);
+  \draw[line width=0.55pt,-latex] (P) -- (F2);
+  \draw[line width=0.55pt,-latex] (F1) -- (B);
+  \draw[line width=0.55pt,-latex] (B) -- (F2);
+  \draw[dash pattern=on 1.8pt off 1.3pt,line width=0.45pt] (0.8207,1.6467) -- (2.6207,0.9745);
+  \draw[dash pattern=on 1.8pt off 1.3pt,line width=0.45pt] (1.5283,0.7954) -- (1.9131,1.8259);
+\end{tikzpicture}%
+}
 \caption{图4·76}
 \end{figure}
 
@@ -18141,7 +18318,34 @@ a^{2} - b^{2} = c^{2}. \tag {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-77}]{assets/analytic-geometry/fig-p0253-02.png}}
+\fitfig{%
+% fig-alt: 图4-77 双曲线上点 P(x1,y1)，焦点 F1、F2，切线交 x 轴于 T，法线 N，切线平分焦点半径夹角
+\begin{tikzpicture}[x=0.68cm,y=0.68cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,-latex] (-4.2,0) -- (4.6,0) node[right=1pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-2.8) -- (0,3.2) node[above=1pt] {$y$};
+  \node[anchor=north east,inner sep=1pt] at (-0.08,-0.08) {$O$};
+  \draw[line width=0.75pt] plot[domain=-1.35:1.35,samples=50] ({2*cosh(\x)},{1.5*sinh(\x)});
+  \draw[line width=0.75pt] plot[domain=-1.35:1.35,samples=50] ({-2*cosh(\x)},{1.5*sinh(\x)});
+  \coordinate (F1) at (-2.5,0);
+  \coordinate (F2) at (2.5,0);
+  \coordinate (P) at (2.510,1.138);
+  \coordinate (T) at (1.593,0);
+  \fill (F1) circle (1.15pt);
+  \fill (F2) circle (1.15pt);
+  \fill (P) circle (1.15pt);
+  \fill (T) circle (1.05pt);
+  \node[anchor=north,inner sep=1pt] at (-2.5,-0.12) {$F_{1}$};
+  \node[anchor=north,inner sep=1pt] at (2.5,-0.12) {$F_{2}$};
+  \node[anchor=south west,inner sep=1pt] at (2.65,1.25) {$P(x_{1},\,y_{1})$};
+  \node[anchor=north,inner sep=1pt] at (1.593,-0.12) {$T$};
+  \draw[line width=0.6pt] (F1) -- (P) -- (F2);
+  \draw[line width=0.65pt] (-0.4,-1.20) -- (4.0,2.98);
+  \draw[line width=0.65pt] (0.6,2.68) -- (3.6,0.26);
+  \node[anchor=south east,inner sep=1pt] at (0.75,2.55) {$N$};
+  \draw[line width=0.45pt] (2.05,0.95) arc (215:251:0.55);
+  \draw[line width=0.45pt] (2.95,1.35) arc (51:90:0.50);
+\end{tikzpicture}%
+}
 \caption{图4-77}
 \end{figure}
 
