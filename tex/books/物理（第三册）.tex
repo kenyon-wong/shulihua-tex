@@ -24838,11 +24838,50 @@ e_{0} = e_{m} \sin (\omega t + 120^{\circ})
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.7 三相交流电}]{assets/physics-3/fig-p0329-01.png}}
-\caption{图5.7 三相交流电}
+\fitfig{%
+% fig-alt: 图5.7·三相交流电 e–ωt 波形：e_A、e_B、e_C 三正弦波，位相差 2π/3，左侧虚线延拓
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.92]
+  \draw[line width=0.7pt,->] (-2.55,0) -- (7.15,0) node[anchor=west,inner sep=2pt] {$\omega t$};
+  \draw[line width=0.7pt,->] (0,-1.85) -- (0,2.05) node[anchor=south,inner sep=2pt] {$e$};
+  \node[anchor=north east,inner sep=1pt] at (0,0) {$O$};
+  \foreach \x/\lab in {3.14/$\pi$,6.28/$2\pi$} {
+    \draw[line width=0.4pt] (\x,-0.08) -- (\x,0.08);
+    \node[anchor=north,inner sep=2pt] at (\x,-0.10) {\lab};
+  }
+  \pgfmathsetmacro{\Amp}{1.45}
+  \pgfmathsetmacro{\ph}{2.094395} % 2π/3
+  % e_A = Amp sin(x)
+  \draw[line width=0.8pt,smooth,samples=40,domain=-1.2:0,dashed]
+    plot (\x, {\Amp*sin(deg(\x))});
+  \draw[line width=0.8pt,smooth,samples=140,domain=0:6.60]
+    plot (\x, {\Amp*sin(deg(\x))});
+  \node[anchor=south,inner sep=1pt] at (1.57,\Amp) {$e_A$};
+  % e_B = Amp sin(x - 2π/3)
+  \draw[line width=0.8pt,smooth,samples=40,domain=-1.2:0,dashed]
+    plot (\x, {\Amp*sin(deg(\x-\ph))});
+  \draw[line width=0.8pt,smooth,samples=140,domain=0:6.60]
+    plot (\x, {\Amp*sin(deg(\x-\ph))});
+  \node[anchor=south,inner sep=1pt] at ({1.57+\ph},\Amp) {$e_B$};
+  % e_C = Amp sin(x + 2π/3)
+  \draw[line width=0.8pt,smooth,samples=50,domain=-2.2:0,dashed]
+    plot (\x, {\Amp*sin(deg(\x+\ph))});
+  \draw[line width=0.8pt,smooth,samples=140,domain=0:6.60]
+    plot (\x, {\Amp*sin(deg(\x+\ph))});
+  \node[anchor=south,inner sep=1pt] at ({1.57-\ph+6.2832},\Amp) {$e_C$};
+  % phase marks 2π/3
+  \draw[line width=0.4pt,dashed] (-\ph,0) -- (-\ph,-1.15);
+  \draw[line width=0.4pt,dashed] (0,0) -- (0,-1.15);
+  \draw[line width=0.4pt,dashed] (\ph,0) -- (\ph,-1.15);
+  \draw[line width=0.45pt,<->] (-\ph,-1.00) -- (0,-1.00);
+  \node[anchor=north,inner sep=1pt,font=\small] at ({-\ph/2},-1.00) {$\dfrac{2}{3}\pi$};
+  \draw[line width=0.45pt,<->] (0,-1.00) -- (\ph,-1.00);
+  \node[anchor=north,inner sep=1pt,font=\small] at ({\ph/2},-1.00) {$\dfrac{2}{3}\pi$};
+\end{tikzpicture}%
+}
+\caption{图5.7·三相交流电}
 \end{figure}
 
-\emph{图5.7 三相交流电}
+\emph{图5.7·三相交流电}
 
 上面装有 A、B、C 三个完全相同的线圈，它们彼此相隔 \(120^{\circ}\)。
 
@@ -24852,11 +24891,80 @@ e_{0} = e_{m} \sin (\omega t + 120^{\circ})
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.8 三外交流发电机示意图}]{assets/physics-3/fig-p0330-01.png}}
-\caption{图 5.8 三外交流发电机示意图}
+\fitfig{%
+% fig-alt: 图5.8·三相交流发电机截面：定子三线圈 A-X、B-Y、C-Z 互隔120°，中心转子磁极 N、S
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  \draw[line width=0.85pt] (-1.60,-2.10) -- (1.60,-2.10) -- (1.60,-1.82) -- (-1.60,-1.82) -- cycle;
+  \draw[line width=0.9pt] (0,0) circle[radius=1.75];
+  \draw[line width=0.75pt] (0,0) circle[radius=1.40];
+  % --- pole A (top) ---
+  \begin{scope}[rotate=90]
+    \draw[line width=0.7pt,fill=white]
+      (-0.34,1.08) -- (-0.44,1.40) arc[start angle=108,end angle=72,radius=1.40]
+      -- (0.34,1.08) -- (0.24,0.95) -- (-0.24,0.95) -- cycle;
+    \foreach \yy in {1.00,1.07,1.14,1.21} {
+      \draw[line width=0.45pt] (-0.30,\yy) -- (0.30,\yy);
+    }
+  \end{scope}
+  \node[font=\small] at (0,1.22) {$A$};
+  \draw[line width=0.55pt] (-0.20,1.40) -- (-0.20,2.05);
+  \draw[line width=0.55pt] (0.20,1.40) -- (0.20,2.05);
+  \draw[line width=0.55pt,fill=white] (-0.20,2.05) circle[radius=0.07];
+  \draw[line width=0.55pt,fill=white] (0.20,2.05) circle[radius=0.07];
+  \node[anchor=south east,inner sep=1pt] at (-0.20,2.05) {$A$};
+  \node[anchor=south west,inner sep=1pt] at (0.20,2.05) {$X$};
+  % --- pole B (bottom-right, -30°) ---
+  \begin{scope}[rotate=-30]
+    \draw[line width=0.7pt,fill=white]
+      (-0.34,1.08) -- (-0.44,1.40) arc[start angle=108,end angle=72,radius=1.40]
+      -- (0.34,1.08) -- (0.24,0.95) -- (-0.24,0.95) -- cycle;
+    \foreach \yy in {1.00,1.07,1.14,1.21} {
+      \draw[line width=0.45pt] (-0.30,\yy) -- (0.30,\yy);
+    }
+    \draw[line width=0.55pt] (-0.18,1.40) -- (-0.18,2.00);
+    \draw[line width=0.55pt] (0.18,1.40) -- (0.18,2.00);
+    \draw[line width=0.55pt,fill=white] (-0.18,2.00) circle[radius=0.07];
+    \draw[line width=0.55pt,fill=white] (0.18,2.00) circle[radius=0.07];
+    \node[anchor=south,inner sep=1pt,font=\small] at (0,1.15) {$B$};
+  \end{scope}
+  \node[anchor=west,inner sep=2pt] at (1.78,-0.55) {$B$};
+  \node[anchor=west,inner sep=2pt] at (1.55,-1.05) {$Y$};
+  % --- pole C (bottom-left, 210°) ---
+  \begin{scope}[rotate=210]
+    \draw[line width=0.7pt,fill=white]
+      (-0.34,1.08) -- (-0.44,1.40) arc[start angle=108,end angle=72,radius=1.40]
+      -- (0.34,1.08) -- (0.24,0.95) -- (-0.24,0.95) -- cycle;
+    \foreach \yy in {1.00,1.07,1.14,1.21} {
+      \draw[line width=0.45pt] (-0.30,\yy) -- (0.30,\yy);
+    }
+    \draw[line width=0.55pt] (-0.18,1.40) -- (-0.18,2.00);
+    \draw[line width=0.55pt] (0.18,1.40) -- (0.18,2.00);
+    \draw[line width=0.55pt,fill=white] (-0.18,2.00) circle[radius=0.07];
+    \draw[line width=0.55pt,fill=white] (0.18,2.00) circle[radius=0.07];
+    \node[anchor=south,inner sep=1pt,font=\small] at (0,1.15) {$C$};
+  \end{scope}
+  \node[anchor=east,inner sep=2pt] at (-1.78,-0.55) {$Z$};
+  \node[anchor=east,inner sep=2pt] at (-1.55,-1.05) {$C$};
+  % rotor
+  \draw[line width=0.8pt,fill=white]
+    (-0.38,0.98) -- (-0.52,0.50) -- (-0.26,0.20) -- (-0.26,-0.20)
+    -- (-0.52,-0.50) -- (-0.38,-0.98)
+    -- (0.38,-0.98) -- (0.52,-0.50) -- (0.26,-0.20) -- (0.26,0.20)
+    -- (0.52,0.50) -- (0.38,0.98) -- cycle;
+  \draw[line width=0.7pt] (-0.38,0.98) arc[start angle=155,end angle=25,radius=0.98];
+  \draw[line width=0.7pt] (-0.38,-0.98) arc[start angle=-155,end angle=-25,radius=0.98];
+  \foreach \yy in {-0.16,-0.05,0.05,0.16} {
+    \draw[line width=0.4pt] (-0.20,\yy) -- (0.20,\yy);
+  }
+  \draw[line width=0.65pt,fill=white] (0,0) circle[radius=0.15];
+  \node at (0,0.60) {$N$};
+  \node at (0,-0.60) {$S$};
+\end{tikzpicture}%
+}
+\caption{图5.8·三相交流发电机示意图}
 \end{figure}
 
-\emph{图 5.8 三外交流发电机示意图}
+\emph{图5.8·三相交流发电机示意图}
 
 在三相发电机中，每一个线圈都自成一个电源，都可以各自向一个电路输出电能，这样就需要有六根连接导线很不经济。在实际应用中，为了节省导线，常把发电机线圈的三个端点
 \(X, Y, Z\) 连接在一
@@ -24874,11 +24982,67 @@ Y 形接法）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.9}]{assets/physics-3/fig-p0330-02.png}}
-\caption{图5.9}
+\fitfig{%
+% fig-alt: 图5.9·三相四线制星形接法：左线圈 A/X、B/Y、C/Z 共点 O，右三灯共点 O′，三根相线与一根中性线
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.90]
+  \coordinate (O) at (0,0);
+  \fill (O) circle[radius=0.045];
+  \node[anchor=north west,inner sep=2pt] at (0.05,-0.05) {$O$};
+  % A coil up
+  \draw[line width=0.7pt,decorate,decoration={coil,aspect=0.45,segment length=2.5pt,amplitude=2.2pt}]
+    (0,0.15) -- (0,1.30);
+  \fill (0,1.40) circle[radius=0.045];
+  \node[anchor=south,inner sep=2pt] at (0,1.40) {$A$};
+  \node[anchor=east,inner sep=2pt] at (-0.08,0.55) {$X$};
+  % B coil down-right
+  \begin{scope}[rotate=-30]
+    \draw[line width=0.7pt,decorate,decoration={coil,aspect=0.45,segment length=2.5pt,amplitude=2.2pt}]
+      (0.15,0) -- (1.30,0);
+  \end{scope}
+  \coordinate (Bpt) at (1.212,-0.700);
+  \fill (Bpt) circle[radius=0.045];
+  \node[anchor=west,inner sep=2pt] at (Bpt) {$B$};
+  \node[anchor=north east,inner sep=1pt] at (0.50,-0.40) {$Y$};
+  % C coil down-left
+  \begin{scope}[rotate=210]
+    \draw[line width=0.7pt,decorate,decoration={coil,aspect=0.45,segment length=2.5pt,amplitude=2.2pt}]
+      (0.15,0) -- (1.30,0);
+  \end{scope}
+  \coordinate (Cpt) at (-1.212,-0.700);
+  \fill (Cpt) circle[radius=0.045];
+  \node[anchor=east,inner sep=2pt] at (Cpt) {$C$};
+  \node[anchor=north west,inner sep=1pt] at (-0.50,-0.40) {$Z$};
+  % right loads
+  \coordinate (Op) at (5.50,0);
+  \fill (Op) circle[radius=0.045];
+  \node[anchor=north west,inner sep=2pt] at (5.55,-0.05) {$O'$};
+  \coordinate (Lt) at (5.50,1.35);
+  \coordinate (Lbr) at (6.55,-0.60);
+  \coordinate (Lbl) at (4.45,-0.60);
+  \draw[line width=0.65pt] (Op) -- (Lt);
+  \draw[line width=0.65pt] (Op) -- (Lbr);
+  \draw[line width=0.65pt] (Op) -- (Lbl);
+  \foreach \px/\py in {5.50/1.35,6.55/-0.60,4.45/-0.60} {
+    \draw[line width=0.65pt] (\px,\py) circle[radius=0.20];
+    \draw[line width=0.45pt] (\px-0.12,\py-0.12) -- (\px+0.12,\py+0.12);
+    \draw[line width=0.45pt] (\px-0.12,\py+0.12) -- (\px+0.12,\py-0.12);
+  }
+  % phase lines
+  \draw[line width=0.7pt] (0,1.40) -- (5.50,1.55);
+  \node[anchor=south,inner sep=1pt,font=\small] at (2.75,1.55) {相线};
+  \draw[line width=0.7pt] (Bpt) -- (2.10,-0.70) -- (2.10,-0.60) -- (6.55,-0.60);
+  \node[anchor=south,inner sep=1pt,font=\small] at (3.80,-0.55) {相线};
+  \draw[line width=0.7pt] (Cpt) -- (-1.212,-1.40) -- (4.45,-1.40) -- (4.45,-0.60);
+  \node[anchor=north,inner sep=1pt,font=\small] at (1.60,-1.40) {相线};
+  % neutral
+  \draw[line width=0.7pt] (O) -- (Op);
+  \node[anchor=south,inner sep=1pt,font=\small] at (2.75,0.05) {中性线};
+\end{tikzpicture}%
+}
+\caption{图5.9·三相四线制星形接法}
 \end{figure}
 
-\emph{图5.9}
+\emph{图5.9·三相四线制星形接法}
 
 从发电机各个线圈的始端引出的导线叫做相线，也叫做火线。从各个线圈的公共点（即
 O
@@ -24895,11 +25059,68 @@ U_{R} = \sqrt{3} U_{R 0} \tag{5.11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.10 电灯接在一根相线与中性线之间}]{assets/physics-3/fig-p0331-01.png}}
-\caption{图 5.10 电灯接在一根相线与中性线之间}
+\fitfig{%
+% fig-alt: 图5.10·三相四线：上三根相线、下一根中性线；三组并联电灯分接于各相线与中性线之间
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  \foreach \y in {2.40,1.70,1.00,0.20} {
+    \draw[line width=0.7pt] (0,\y) -- (6.20,\y);
+  }
+  \node[anchor=west,inner sep=3pt,font=\small] at (6.20,2.40) {相线};
+  \node[anchor=west,inner sep=3pt,font=\small] at (6.20,1.70) {相线};
+  \node[anchor=west,inner sep=3pt,font=\small] at (6.20,1.00) {相线};
+  \node[anchor=west,inner sep=3pt,font=\small] at (6.20,0.20) {中性线};
+  % helper: two parallel lamps between (x, ytop) and neutral
+  % left group from 3rd phase (y=1.00)
+  \fill (1.10,1.00) circle[radius=0.045];
+  \draw[line width=0.65pt] (1.10,1.00) -- (1.10,0.78);
+  \draw[line width=0.65pt] (0.85,0.78) -- (1.35,0.78);
+  \draw[line width=0.65pt] (0.85,0.78) -- (0.85,0.42);
+  \draw[line width=0.65pt] (1.35,0.78) -- (1.35,0.42);
+  \draw[line width=0.6pt] (0.85,0.55) circle[radius=0.16];
+  \draw[line width=0.45pt] (0.74,0.44) -- (0.96,0.66);
+  \draw[line width=0.45pt] (0.74,0.66) -- (0.96,0.44);
+  \draw[line width=0.6pt] (1.35,0.55) circle[radius=0.16];
+  \draw[line width=0.45pt] (1.24,0.44) -- (1.46,0.66);
+  \draw[line width=0.45pt] (1.24,0.66) -- (1.46,0.44);
+  \draw[line width=0.65pt] (0.85,0.42) -- (1.35,0.42);
+  \draw[line width=0.65pt] (1.10,0.42) -- (1.10,0.20);
+  \fill (1.10,0.20) circle[radius=0.045];
+  % middle group from 2nd phase (y=1.70)
+  \fill (3.10,1.70) circle[radius=0.045];
+  \draw[line width=0.65pt] (3.10,1.70) -- (3.10,0.78);
+  \draw[line width=0.65pt] (2.85,0.78) -- (3.35,0.78);
+  \draw[line width=0.65pt] (2.85,0.78) -- (2.85,0.42);
+  \draw[line width=0.65pt] (3.35,0.78) -- (3.35,0.42);
+  \draw[line width=0.6pt] (2.85,0.55) circle[radius=0.16];
+  \draw[line width=0.45pt] (2.74,0.44) -- (2.96,0.66);
+  \draw[line width=0.45pt] (2.74,0.66) -- (2.96,0.44);
+  \draw[line width=0.6pt] (3.35,0.55) circle[radius=0.16];
+  \draw[line width=0.45pt] (3.24,0.44) -- (3.46,0.66);
+  \draw[line width=0.45pt] (3.24,0.66) -- (3.46,0.44);
+  \draw[line width=0.65pt] (2.85,0.42) -- (3.35,0.42);
+  \draw[line width=0.65pt] (3.10,0.42) -- (3.10,0.20);
+  \fill (3.10,0.20) circle[radius=0.045];
+  % right group from 1st phase (y=2.40)
+  \fill (5.10,2.40) circle[radius=0.045];
+  \draw[line width=0.65pt] (5.10,2.40) -- (5.10,0.78);
+  \draw[line width=0.65pt] (4.85,0.78) -- (5.35,0.78);
+  \draw[line width=0.65pt] (4.85,0.78) -- (4.85,0.42);
+  \draw[line width=0.65pt] (5.35,0.78) -- (5.35,0.42);
+  \draw[line width=0.6pt] (4.85,0.55) circle[radius=0.16];
+  \draw[line width=0.45pt] (4.74,0.44) -- (4.96,0.66);
+  \draw[line width=0.45pt] (4.74,0.66) -- (4.96,0.44);
+  \draw[line width=0.6pt] (5.35,0.55) circle[radius=0.16];
+  \draw[line width=0.45pt] (5.24,0.44) -- (5.46,0.66);
+  \draw[line width=0.45pt] (5.24,0.66) -- (5.46,0.44);
+  \draw[line width=0.65pt] (4.85,0.42) -- (5.35,0.42);
+  \draw[line width=0.65pt] (5.10,0.42) -- (5.10,0.20);
+  \fill (5.10,0.20) circle[radius=0.045];
+\end{tikzpicture}%
+}
+\caption{图5.10·电灯接在一根相线与中性线之间}
 \end{figure}
 
-\emph{图 5.10 电灯接在一根相线与中性线之间}
+\emph{图5.10·电灯接在一根相线与中性线之间}
 
 \subsection{3.
 直流发电机和直流电动机}
@@ -24922,29 +25143,158 @@ U_{R} = \sqrt{3} U_{R 0} \tag{5.11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0332-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.11（a）·N、S极间线圈abcd倾斜，半圆环A接K₁、B接K₂，外电路电流自K₂经电流表流向K₁
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  % poles
+  \draw[line width=0.85pt] (-2.85,1.35) -- (-2.85,-1.35) -- (-2.05,-1.35)
+    .. controls (-1.70,-0.70) and (-1.70,0.70) .. (-2.05,1.35) -- cycle;
+  \node at (-2.50,0.00) {$N$};
+  \draw[line width=0.85pt] (2.05,1.35) -- (2.05,-1.35) -- (1.25,-1.35)
+    .. controls (0.90,-0.70) and (0.90,0.70) .. (1.25,1.35) -- cycle;
+  \node at (1.70,0.00) {$S$};
+  \foreach \y in {-0.85,-0.28,0.28,0.85} {
+    \draw[line width=0.4pt,dashed] (-1.55,\y) -- (0.75,\y);
+  }
+  % coil tilted: c top-near-N, b top-near-S, d bot-near-N, a bot-near-S
+  \coordinate (c) at (-0.95,0.85);
+  \coordinate (b) at (0.35,0.55);
+  \coordinate (a) at (0.35,-0.75);
+  \coordinate (d) at (-0.95,-0.45);
+  \draw[line width=0.85pt] (a) -- (b) -- (c) -- (d) -- cycle;
+  \node[anchor=north west,inner sep=1pt] at (a) {$a$};
+  \node[anchor=south west,inner sep=1pt] at (b) {$b$};
+  \node[anchor=south east,inner sep=1pt] at (c) {$c$};
+  \node[anchor=north east,inner sep=1pt] at (d) {$d$};
+  % current arrows on ab and cd
+  \draw[line width=0.55pt,->] ($(a)!0.35!(b)$) -- ($(a)!0.65!(b)$);
+  \draw[line width=0.55pt,->] ($(c)!0.35!(d)$) -- ($(c)!0.65!(d)$);
+  % rotation arrow CCW (text: 逆时针)
+  \draw[line width=0.55pt,->] (0.55,0.95) arc[start angle=20,end angle=120,radius=0.42];
+  % axis dashed
+  \draw[line width=0.4pt,dashed] (-0.30,1.15) -- (-0.30,-1.55);
+  % half-rings A (right, to a) and B (left, to d) — front view ellipses split
+  \draw[line width=0.75pt] (-0.55,-1.35) arc[start angle=180,end angle=360,x radius=0.28,y radius=0.18];
+  \draw[line width=0.75pt] (-0.05,-1.35) arc[start angle=0,end angle=-180,x radius=0.28,y radius=0.18];
+  \node[anchor=south,inner sep=1pt] at (-0.55,-1.15) {$B$};
+  \node[anchor=south,inner sep=1pt] at (0.00,-1.15) {$A$};
+  % leads from coil to rings
+  \draw[line width=0.55pt] (a) -- (-0.05,-1.35);
+  \draw[line width=0.55pt] (d) -- (-0.55,-1.35);
+  % brushes
+  \draw[line width=0.7pt] (-0.55,-1.53) -- (-0.55,-1.85) -- (-1.15,-1.85);
+  \draw[line width=0.7pt] (-0.05,-1.53) -- (-0.05,-1.85) -- (0.55,-1.85);
+  \node[anchor=east,inner sep=2pt] at (-1.15,-1.85) {$K_2$};
+  \node[anchor=west,inner sep=2pt] at (0.55,-1.85) {$K_1$};
+  % external loop + meter
+  \draw[line width=0.65pt] (-1.15,-1.85) -- (-1.15,-2.55) -- (0.55,-2.55) -- (0.55,-1.85);
+  \draw[line width=0.7pt] (-0.30,-2.55) circle[radius=0.28];
+  \draw[line width=0.5pt,->] (-0.30,-2.70) -- (-0.05,-2.40);
+  \draw[line width=0.5pt,->] (-0.85,-2.55) -- (-0.55,-2.55);
+\end{tikzpicture}%
+}
+\caption{图5.11（a）·线圈转过中性面后，外电路电流自$K_2$经负载流向$K_1$}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.11（a）·线圈转过中性面后，外电路电流自$K_2$经负载流向$K_1$}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0332-02.png}}
-\caption{(b)}
+\fitfig{%
+% fig-alt: 图5.11（b）·线圈位于中性面竖直位置，半圆环缝隙对着电刷K₁、K₂，电流表指针为零
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  \draw[line width=0.85pt] (-2.85,1.35) -- (-2.85,-1.35) -- (-2.05,-1.35)
+    .. controls (-1.70,-0.70) and (-1.70,0.70) .. (-2.05,1.35) -- cycle;
+  \node at (-2.50,0.00) {$N$};
+  \draw[line width=0.85pt] (2.05,1.35) -- (2.05,-1.35) -- (1.25,-1.35)
+    .. controls (0.90,-0.70) and (0.90,0.70) .. (1.25,1.35) -- cycle;
+  \node at (1.70,0.00) {$S$};
+  \foreach \y in {-0.85,-0.28,0.28,0.85} {
+    \draw[line width=0.4pt,dashed] (-1.55,\y) -- (0.75,\y);
+  }
+  % coil nearly edge-on / vertical (neutral plane): ab bottom, cd top? or collapsed look
+  \coordinate (c) at (-0.55,0.95);
+  \coordinate (b) at (0.05,0.95);
+  \coordinate (a) at (0.05,-0.95);
+  \coordinate (d) at (-0.55,-0.95);
+  \draw[line width=0.9pt] (a) -- (b) -- (c) -- (d) -- cycle;
+  \node[anchor=west,inner sep=2pt] at (b) {$a{,}b$};
+  \node[anchor=east,inner sep=2pt] at (c) {$c{,}d$};
+  \draw[line width=0.55pt,->] (0.45,0.55) arc[start angle=10,end angle=100,radius=0.40];
+  \draw[line width=0.4pt,dashed] (-0.25,1.20) -- (-0.25,-1.55);
+  % half-rings gap facing brushes (gap vertical)
+  \draw[line width=0.75pt] (-0.55,-1.35) arc[start angle=110,end angle=250,x radius=0.30,y radius=0.20];
+  \draw[line width=0.75pt] (0.05,-1.35) arc[start angle=70,end angle=-70,x radius=0.30,y radius=0.20];
+  \node[anchor=south,inner sep=1pt] at (-0.55,-1.12) {$B$};
+  \node[anchor=south,inner sep=1pt] at (0.05,-1.12) {$A$};
+  \draw[line width=0.55pt] (a) -- (0.05,-1.35);
+  \draw[line width=0.55pt] (d) -- (-0.55,-1.35);
+  \draw[line width=0.7pt] (-0.55,-1.55) -- (-0.55,-1.85) -- (-1.15,-1.85);
+  \draw[line width=0.7pt] (0.05,-1.55) -- (0.05,-1.85) -- (0.65,-1.85);
+  \node[anchor=east,inner sep=2pt] at (-1.15,-1.85) {$K_2$};
+  \node[anchor=west,inner sep=2pt] at (0.65,-1.85) {$K_1$};
+  \draw[line width=0.65pt] (-1.15,-1.85) -- (-1.15,-2.55) -- (0.65,-2.55) -- (0.65,-1.85);
+  \draw[line width=0.7pt] (-0.25,-2.55) circle[radius=0.28];
+  \draw[line width=0.5pt,->] (-0.25,-2.72) -- (-0.25,-2.38);
+\end{tikzpicture}%
+}
+\caption{图5.11（b）·线圈位于中性面，电刷对着换向器缝隙，外电路电流为零}
 \end{figure}
 
-\emph{（b）}
+\emph{图5.11（b）·线圈位于中性面，电刷对着换向器缝隙，外电路电流为零}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-3/fig-p0332-03.png}}
-\caption{(c)}
+\fitfig{%
+% fig-alt: 图5.11（c）·线圈再转半周，半圆环A接K₂、B接K₁，外电路电流仍自K₂经电流表流向K₁
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.88]
+  \draw[line width=0.85pt] (-2.85,1.35) -- (-2.85,-1.35) -- (-2.05,-1.35)
+    .. controls (-1.70,-0.70) and (-1.70,0.70) .. (-2.05,1.35) -- cycle;
+  \node at (-2.50,0.00) {$N$};
+  \draw[line width=0.85pt] (2.05,1.35) -- (2.05,-1.35) -- (1.25,-1.35)
+    .. controls (0.90,-0.70) and (0.90,0.70) .. (1.25,1.35) -- cycle;
+  \node at (1.70,0.00) {$S$};
+  \foreach \y in {-0.85,-0.28,0.28,0.85} {
+    \draw[line width=0.4pt,dashed] (-1.55,\y) -- (0.75,\y);
+  }
+  % coil swapped: a near N top-ish, d near S
+  \coordinate (a) at (-0.95,0.85);
+  \coordinate (d) at (0.35,0.55);
+  \coordinate (c) at (0.35,-0.75);
+  \coordinate (b) at (-0.95,-0.45);
+  \draw[line width=0.85pt] (a) -- (b) -- (c) -- (d) -- cycle;
+  \node[anchor=south east,inner sep=1pt] at (a) {$a$};
+  \node[anchor=north east,inner sep=1pt] at (b) {$b$};
+  \node[anchor=north west,inner sep=1pt] at (c) {$c$};
+  \node[anchor=south west,inner sep=1pt] at (d) {$d$};
+  % current d->c->b->a : on dc c<-d, on ba a<-b
+  \draw[line width=0.55pt,->] ($(d)!0.35!(c)$) -- ($(d)!0.65!(c)$);
+  \draw[line width=0.55pt,->] ($(b)!0.35!(a)$) -- ($(b)!0.65!(a)$);
+  \draw[line width=0.55pt,->] (0.55,0.95) arc[start angle=20,end angle=120,radius=0.42];
+  \draw[line width=0.4pt,dashed] (-0.30,1.15) -- (-0.30,-1.55);
+  % rings swapped contact: A left (K2), B right (K1)
+  \draw[line width=0.75pt] (-0.55,-1.35) arc[start angle=180,end angle=360,x radius=0.28,y radius=0.18];
+  \draw[line width=0.75pt] (-0.05,-1.35) arc[start angle=0,end angle=-180,x radius=0.28,y radius=0.18];
+  \node[anchor=south,inner sep=1pt] at (-0.55,-1.15) {$A$};
+  \node[anchor=south,inner sep=1pt] at (0.00,-1.15) {$B$};
+  \draw[line width=0.55pt] (a) -- (-0.55,-1.35);
+  \draw[line width=0.55pt] (d) -- (-0.05,-1.35);
+  \draw[line width=0.7pt] (-0.55,-1.53) -- (-0.55,-1.85) -- (-1.15,-1.85);
+  \draw[line width=0.7pt] (-0.05,-1.53) -- (-0.05,-1.85) -- (0.55,-1.85);
+  \node[anchor=east,inner sep=2pt] at (-1.15,-1.85) {$K_2$};
+  \node[anchor=west,inner sep=2pt] at (0.55,-1.85) {$K_1$};
+  \draw[line width=0.65pt] (-1.15,-1.85) -- (-1.15,-2.55) -- (0.55,-2.55) -- (0.55,-1.85);
+  \draw[line width=0.7pt] (-0.30,-2.55) circle[radius=0.28];
+  \draw[line width=0.5pt,->] (-0.30,-2.70) -- (-0.05,-2.40);
+  \draw[line width=0.5pt,->] (-0.85,-2.55) -- (-0.55,-2.55);
+\end{tikzpicture}%
+}
+\caption{图5.11（c）·半圆环对换电刷后，外电路电流方向仍自$K_2$流向$K_1$}
 \end{figure}
 
-\emph{（c）}
+\emph{图5.11（c）·半圆环对换电刷后，外电路电流方向仍自$K_2$流向$K_1$}
 
-\emph{图 5.11 直流发电机换向器工作原理}
+\emph{图5.11·直流发电机换向器工作原理}
 
 为从电刷 \(K_{2}\) 经过负载流向电刷 \(K_{1}\) （图5.11a）。
 
@@ -24958,11 +25308,25 @@ U_{R} = \sqrt{3} U_{R 0} \tag{5.11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.12 单向脉动电流}]{assets/physics-3/fig-p0332-04.png}}
-\caption{图 5.12 单向脉动电流}
+\fitfig{%
+% fig-alt: 图5.12·单向脉动电流：实线为外电路正向半波脉动，虚线为内电路负半周交变部分
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  \draw[line width=0.7pt,->] (-0.35,0) -- (7.35,0) node[anchor=west,inner sep=2pt] {$\omega t$};
+  \draw[line width=0.7pt,->] (0,-1.65) -- (0,1.95) node[anchor=south,inner sep=2pt] {$i$};
+  \node[anchor=north east,inner sep=1pt] at (0,0) {$O$};
+  \pgfmathsetmacro{\Amp}{1.35}
+  % solid |sin| for 0..~3π
+  \draw[line width=0.85pt,smooth,samples=80,domain=0:9.42]
+    plot (\x, {\Amp*abs(sin(deg(\x)))});
+  % dashed negative half under second lobe (π..2π)
+  \draw[line width=0.75pt,dashed,smooth,samples=50,domain=3.14:6.28]
+    plot (\x, {\Amp*sin(deg(\x))});
+\end{tikzpicture}%
+}
+\caption{图5.12·单向脉动电流}
 \end{figure}
 
-\emph{图 5.12 单向脉动电流}
+\emph{图5.12·单向脉动电流}
 
 \begin{figure}
 \centering
