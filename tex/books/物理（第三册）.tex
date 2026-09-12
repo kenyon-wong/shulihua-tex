@@ -20884,7 +20884,48 @@ R）把A、B两端接通以后，在外电路上，电流从高电势的B端流�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.14 研究感生电动势的大小}]{assets/physics-3/fig-p0280-01.png}}
+\fitfig{%
+% fig-alt: 图4.14 匀强磁场×向里；左接检流计G的矩形框；导体棒ab以速度v向右至虚线a'b'，棒上电流↑，安培力F←，棒长L
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B field × grid
+  \foreach \x in {-2.55,-1.95,-1.35,-0.75,-0.15,0.45,1.05,1.65,2.25,2.85} {
+    \foreach \y in {-1.55,-1.05,-0.55,0.00,0.55,1.05,1.55} {
+      \draw[line width=0.35pt] (\x-0.08,\y-0.08) -- (\x+0.08,\y+0.08);
+      \draw[line width=0.35pt] (\x-0.08,\y+0.08) -- (\x+0.08,\y-0.08);
+    }
+  }
+  % rails
+  \draw[line width=0.7pt] (-2.70,1.35) -- (3.15,1.35);
+  \draw[line width=0.7pt] (-2.70,-1.35) -- (3.15,-1.35);
+  \draw[line width=0.55pt,dashed] (3.15,1.35) -- (3.55,1.35);
+  \draw[line width=0.55pt,dashed] (3.15,-1.35) -- (3.55,-1.35);
+  % left vertical with G
+  \draw[line width=0.7pt] (-2.70,1.35) -- (-2.70,0.42);
+  \draw[line width=0.7pt] (-2.70,-0.42) -- (-2.70,-1.35);
+  \draw[line width=0.7pt,fill=white] (-2.70,0) circle[radius=0.42];
+  \node at (-2.70,0) {$G$};
+  % rod ab (solid, slightly thick)
+  \draw[line width=1.15pt] (0.35,1.48) -- (0.35,-1.48);
+  \draw[line width=0.45pt] (0.48,1.42) -- (0.48,-1.42);
+  % dashed rod a'b'
+  \draw[line width=0.85pt,dashed] (1.85,1.48) -- (1.85,-1.48);
+  \draw[line width=0.40pt,dashed] (1.98,1.42) -- (1.98,-1.42);
+  % current arrow up on ab
+  \draw[line width=0.7pt,->] (0.35,-0.55) -- (0.35,0.55);
+  % v right, F left
+  \draw[line width=0.75pt,->] (0.55,0.12) -- (1.45,0.12);
+  \node[anchor=south,inner sep=1pt] at (1.05,0.14) {$v$};
+  \draw[line width=0.75pt,->] (0.20,0.12) -- (-0.70,0.12);
+  \node[anchor=south,inner sep=1pt] at (-0.40,0.14) {$F$};
+  % labels
+  \node[anchor=south,inner sep=1pt] at (0.35,1.48) {$a$};
+  \node[anchor=north,inner sep=1pt] at (0.35,-1.48) {$b$};
+  \node[anchor=south,inner sep=1pt] at (1.90,1.48) {$a'$};
+  \node[anchor=north,inner sep=1pt] at (1.90,-1.48) {$b'$};
+  \node[anchor=east,inner sep=2pt] at (0.20,0.70) {$L$};
+  \node[anchor=west,inner sep=2pt] at (3.00,-0.95) {$B$};
+\end{tikzpicture}%
+}
 \caption{图4.14 研究感生电动势的大小}
 \end{figure}
 
@@ -20916,11 +20957,40 @@ R）把A、B两端接通以后，在外电路上，电流从高电势的B端流�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.15 导线运动方向的磁动线成任意角度时的感生电动势}]{assets/physics-3/fig-p0280-02.png}}
-\caption{图 4.15 导线运动方向的磁动线成任意角度时的感生电动势}
+\fitfig{%
+% fig-alt: 图4.15 匀强磁场B水平向右；导线截面处速度v斜向下右，与B夹角α；分解为垂直分量v'↓与平行分量v''→
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B field lines
+  \foreach \y in {1.35,0.85,0.35,-0.15,-0.65} {
+    \draw[line width=0.55pt,->] (-2.55,\y) -- (2.85,\y);
+  }
+  \node[anchor=west,inner sep=2pt] at (2.90,0.35) {$B$};
+  % particle (hatched circle) on second line from top
+  \fill[pattern=north east lines,pattern color=black!70] (-1.10,0.85) circle[radius=0.22];
+  \draw[line width=0.65pt] (-1.10,0.85) circle[radius=0.22];
+  % vertical dashed through center
+  \draw[line width=0.45pt,dashed] (-1.10,0.85) -- (-1.10,-1.15);
+  % v'' horizontal solid
+  \draw[line width=0.75pt,->] (-1.10,0.85) -- (0.55,0.85);
+  \node[anchor=south,inner sep=1pt] at (0.35,0.88) {$v''$};
+  % v' vertical solid down
+  \draw[line width=0.75pt,->] (-1.10,0.85) -- (-1.10,-0.95);
+  \node[anchor=east,inner sep=2pt] at (-1.15,-0.55) {$v'$};
+  % dashed completion of parallelogram
+  \draw[line width=0.45pt,dashed] (0.55,0.85) -- (0.55,-0.95);
+  \draw[line width=0.45pt,dashed] (-1.10,-0.95) -- (0.55,-0.95);
+  % resultant v diagonal
+  \draw[line width=0.8pt,->] (-1.10,0.85) -- (0.55,-0.95);
+  \node[anchor=west,inner sep=2pt] at (0.58,-0.75) {$v$};
+  % angle alpha between v'' and v
+  \draw[line width=0.45pt] (-0.55,0.85) arc[start angle=0,end angle=-48,radius=0.55];
+  \node[anchor=north west,inner sep=1pt] at (-0.45,0.78) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{图4.15 导线运动方向跟磁力线成任意角度时的感生电动势}
 \end{figure}
 
-\emph{图 4.15 导线运动方向的磁动线成任意角度时的感生电动势}
+\emph{图4.15 导线运动方向跟磁力线成任意角度时的感生电动势}
 
 式中 B 的单位是特斯拉， L 的单位是米， v 的单位是米/秒， \(\varepsilon\)
 的单位是伏特。
@@ -20995,11 +21065,36 @@ ab
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.16}]{assets/physics-3/fig-p0282-01.png}}
-\caption{图4.16}
+\fitfig{%
+% fig-alt: 图4.16 匀强磁场×向里；U形导轨开口向右，导体棒ab跨在导轨上并以速度v向左滑动
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B field ×
+  \foreach \x in {-1.35,-0.75,-0.15,0.45,1.05,1.65} {
+    \foreach \y in {-1.35,-0.75,-0.15,0.45,1.05,1.65} {
+      \draw[line width=0.35pt] (\x-0.08,\y-0.08) -- (\x+0.08,\y+0.08);
+      \draw[line width=0.35pt] (\x-0.08,\y+0.08) -- (\x+0.08,\y-0.08);
+    }
+  }
+  % U-frame
+  \draw[line width=0.75pt] (-1.55,1.45) -- (1.95,1.45);
+  \draw[line width=0.75pt] (-1.55,-1.45) -- (1.95,-1.45);
+  \draw[line width=0.75pt] (-1.55,1.45) -- (-1.55,-1.45);
+  % rod ab (thick vertical bar)
+  \draw[line width=1.2pt] (1.35,1.60) -- (1.35,-1.60);
+  \draw[line width=0.45pt] (1.48,1.55) -- (1.48,-1.55);
+  % v to the left
+  \draw[line width=0.8pt,->] (1.20,0.05) -- (0.15,0.05);
+  \node[anchor=south,inner sep=1pt] at (0.55,0.08) {$v$};
+  % labels
+  \node[anchor=south,inner sep=1pt] at (1.40,1.62) {$a$};
+  \node[anchor=north,inner sep=1pt] at (1.40,-1.62) {$b$};
+  \node[anchor=west,inner sep=1pt] at (-0.55,-0.95) {$B$};
+\end{tikzpicture}%
+}
+\caption{图4.16 U形导轨上导体棒$ab$以速度$v$向左切割磁力线}
 \end{figure}
 
-\emph{图4.16}
+\emph{图4.16 U形导轨上导体棒$ab$以速度$v$向左切割磁力线}
 
 设矩形线圈的电阻恒定，为0.2欧姆，求移动导线ab所需要的外力。（4）比较外力所做的功率（即抵抗磁场力所做的功率）和全电路上的电功率。
 
@@ -21077,19 +21172,56 @@ P^{\prime} = I^{2} R = \frac{\varepsilon^{2}}{R} = \frac{(0.6)^{2}}{0.2} \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-3/fig-p0284-01.png}}
-\caption{(第2题)}
+\fitfig{%
+% fig-alt: 习题4.3第2题 匀强磁场B水平向右；竖直矩形线圈左边上下端标a、b，线圈平面与磁力线平行
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {1.40,0.95,0.50,0.05,-0.40,-0.85,-1.30} {
+    \draw[line width=0.55pt,->] (-2.55,\y) -- (2.55,\y);
+  }
+  \node[anchor=west,inner sep=2pt] at (2.60,0.05) {$B$};
+  \draw[line width=0.9pt] (-0.55,-1.15) rectangle (0.85,1.25);
+  \node[anchor=south east,inner sep=1pt] at (-0.55,1.25) {$a$};
+  \node[anchor=north east,inner sep=1pt] at (-0.55,-1.15) {$b$};
+\end{tikzpicture}%
+}
+\caption{习题4.3第2题 矩形线圈平面与匀强磁场$B$平行，左边为$ab$}
 \end{figure}
 
-\emph{（第2题）}
+\emph{习题4.3第2题 矩形线圈平面与匀强磁场$B$平行，左边为$ab$}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-3/fig-p0284-02.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: 习题4.3第3题 匀强磁场水平向右；透视长方体线框倾斜置于磁场中，磁力线穿过框面
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {1.25,0.75,0.25,-0.25,-0.75,-1.25} {
+    \draw[line width=0.5pt,->] (-2.40,\y) -- (2.50,\y);
+  }
+  % oblique cuboid: vertical edges + depth along (dx,dy) + depth (ux,uy)
+  % front-bottom-left A
+  \coordinate (A) at (-1.15,-0.85);
+  \coordinate (B) at (1.05,-0.55);   % +length tilted up-right
+  \coordinate (D) at (-0.55,-0.15);  % +depth up-right
+  \coordinate (C) at (1.65,0.15);   % B+depth
+  \coordinate (E) at (-1.15,0.55);  % A up
+  \coordinate (F) at (1.05,0.85);
+  \coordinate (H) at (-0.55,1.25);
+  \coordinate (G) at (1.65,1.55);
+  % bottom face
+  \draw[line width=0.7pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  % top face
+  \draw[line width=0.7pt] (E) -- (F) -- (G) -- (H) -- cycle;
+  % verticals
+  \draw[line width=0.7pt] (A) -- (E);
+  \draw[line width=0.7pt] (B) -- (F);
+  \draw[line width=0.7pt] (C) -- (G);
+  \draw[line width=0.7pt] (D) -- (H);
+\end{tikzpicture}%
+}
+\caption{习题4.3第3题 矩形线圈在匀强磁场中平动（透视）}
 \end{figure}
 
-\emph{（第3题）}
+\emph{习题4.3第3题 矩形线圈在匀强磁场中平动（透视）}
 
 法为什么不对？
 
@@ -21108,11 +21240,36 @@ P^{\prime} = I^{2} R = \frac{\varepsilon^{2}}{R} = \frac{(0.6)^{2}}{0.2} \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-3/fig-p0284-03.png}}
-\caption{(第6题)}
+\fitfig{%
+% fig-alt: 习题4.3第6题 匀强磁场⊙向外；折线导线abc（ab竖直、bc与水平夹角α）整体以速度v向上运动
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B out of page: circle with center dot
+  \foreach \x in {-1.20,-0.55,0.10,0.75,1.40} {
+    \foreach \y in {-1.70,-1.10,-0.50,0.10,0.70,1.30,1.90} {
+      \draw[line width=0.4pt] (\x,\y) circle[radius=0.09];
+      \fill (\x,\y) circle[radius=0.028];
+    }
+  }
+  % wire: a bottom -- b bend -- c slant end
+  \draw[line width=1.15pt] (0.00,-1.55) -- (0.00,0.15) -- (1.35,1.15);
+  % horizontal dashed from b
+  \draw[line width=0.45pt,dashed] (0.00,0.15) -- (1.55,0.15);
+  % angle alpha
+  \draw[line width=0.45pt] (0.45,0.15) arc[start angle=0,end angle=36,radius=0.45];
+  \node[anchor=south west,inner sep=1pt] at (0.50,0.22) {$\alpha$};
+  % v upward from mid of bc
+  \draw[line width=0.75pt,->] (0.55,0.55) -- (0.55,1.45);
+  \node[anchor=west,inner sep=2pt] at (0.58,1.25) {$v$};
+  % labels
+  \node[anchor=east,inner sep=2pt] at (0.00,-1.55) {$a$};
+  \node[anchor=east,inner sep=2pt] at (-0.05,0.20) {$b$};
+  \node[anchor=south west,inner sep=1pt] at (1.35,1.15) {$c$};
+\end{tikzpicture}%
+}
+\caption{习题4.3第6题 折线导线$abc$在磁场⊙中以速度$v$向上运动}
 \end{figure}
 
-\emph{（第6题）}
+\emph{习题4.3第6题 折线导线$abc$在磁场⊙中以速度$v$向上运动}
 
 \begin{enumerate}
 \setcounter{enumi}{6}
@@ -21124,19 +21281,71 @@ P^{\prime} = I^{2} R = \frac{\varepsilon^{2}}{R} = \frac{(0.6)^{2}}{0.2} \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-3/fig-p0284-04.png}}
-\caption{(第7题)}
+\fitfig{%
+% fig-alt: 习题4.3第7题 左N右S磁极间有竖直铝框下落；框面∥磁场边界；间隙中自上而下标a、b、c三点
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left N pole
+  \draw[line width=0.7pt] (-2.45,-0.90) -- (-1.20,-0.90) -- (-1.20,0.90) -- (-2.45,0.90) -- cycle;
+  \draw[line width=0.65pt] (-2.45,0.90) -- (-2.15,1.20) -- (-0.90,1.20) -- (-1.20,0.90);
+  \draw[line width=0.65pt] (-1.20,-0.90) -- (-0.90,-0.60) -- (-0.90,1.20);
+  \draw[line width=0.55pt] (-2.45,-0.90) -- (-2.15,-0.60) -- (-2.15,1.20);
+  \node at (-1.82,0.00) {$N$};
+  % right S pole
+  \draw[line width=0.7pt] (1.20,-0.90) -- (2.45,-0.90) -- (2.45,0.90) -- (1.20,0.90) -- cycle;
+  \draw[line width=0.65pt] (1.20,0.90) -- (1.50,1.20) -- (2.75,1.20) -- (2.45,0.90);
+  \draw[line width=0.65pt] (2.45,-0.90) -- (2.75,-0.60) -- (2.75,1.20);
+  \draw[line width=0.55pt] (1.20,-0.90) -- (1.50,-0.60) -- (1.50,1.20);
+  \node at (1.82,0.00) {$S$};
+  % field boundary dashed
+  \draw[line width=0.45pt,dashed] (-1.20,0.90) -- (1.20,0.90);
+  \draw[line width=0.45pt,dashed] (-0.90,1.20) -- (1.50,1.20);
+  \draw[line width=0.45pt,dashed] (-1.20,-0.90) -- (1.20,-0.90);
+  \draw[line width=0.45pt,dashed] (-0.90,-0.60) -- (1.50,-0.60);
+  % aluminum rectangular frame (clear loop)
+  \draw[line width=0.8pt] (-0.42,-0.25) rectangle (0.42,2.05);
+  % points a (near top boundary), b (mid), c (near bottom boundary)
+  \fill (0.00,1.05) circle[radius=0.05];
+  \fill (0.00,0.15) circle[radius=0.05];
+  \fill (0.00,-0.75) circle[radius=0.05];
+  \node[anchor=west,inner sep=3pt] at (0.08,1.05) {$a$};
+  \node[anchor=west,inner sep=3pt] at (0.08,0.15) {$b$};
+  \node[anchor=west,inner sep=3pt] at (0.08,-0.75) {$c$};
+\end{tikzpicture}%
+}
+
+\caption{习题4.3第7题 铝框经N、S极间$a,b,c$三点下落}
 \end{figure}
 
-\emph{（第7题）}
+\emph{习题4.3第7题 铝框经N、S极间$a,b,c$三点下落}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-3/fig-p0284-05.png}}
-\caption{(第8题)}
+\fitfig{%
+% fig-alt: 习题4.3第8题 矩形线圈abcd以速度v向右进入右侧×向里的匀强磁场，bc边已在磁场内
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % field region on the right
+  \foreach \x in {0.15,0.75,1.35,1.95,2.55} {
+    \foreach \y in {-1.55,-0.95,-0.35,0.25,0.85,1.45} {
+      \draw[line width=0.35pt] (\x-0.08,\y-0.08) -- (\x+0.08,\y+0.08);
+      \draw[line width=0.35pt] (\x-0.08,\y+0.08) -- (\x+0.08,\y-0.08);
+    }
+  }
+  % square loop abcd; right half in field
+  \draw[line width=0.85pt] (-1.55,1.35) -- (0.95,1.35) -- (0.95,-1.35) -- (-1.55,-1.35) -- cycle;
+  % v from mid of bc to the right
+  \draw[line width=0.8pt,->] (1.05,0.05) -- (2.00,0.05);
+  \node[anchor=south,inner sep=1pt] at (1.50,0.08) {$v$};
+  % labels
+  \node[anchor=south east,inner sep=1pt] at (-1.55,1.35) {$a$};
+  \node[anchor=south west,inner sep=1pt] at (0.95,1.35) {$b$};
+  \node[anchor=north west,inner sep=1pt] at (0.95,-1.35) {$c$};
+  \node[anchor=north east,inner sep=1pt] at (-1.55,-1.35) {$d$};
+\end{tikzpicture}%
+}
+\caption{习题4.3第8题 矩形线圈$abcd$以速度$v$向右进入×向里磁场}
 \end{figure}
 
-\emph{（第8题）}
+\emph{习题4.3第8题 矩形线圈$abcd$以速度$v$向右进入×向里磁场}
 
 \begin{enumerate}
 \setcounter{enumi}{7}
