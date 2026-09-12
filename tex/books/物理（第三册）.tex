@@ -28269,11 +28269,50 @@ e = 15.7 \sqrt{2} \sin 6280 t \text{毫伏}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.3 硅(锗)单晶体的共价键结构}]{assets/physics-3/fig-p0373-01.png}}
-\caption{图6.3 硅(锗)单晶体的共价键结构}
+\fitfig{%
+% fig-alt: 图6.3·硅(锗)单晶体共价键结构：3–2–3交错+4原子，对角共价键虚线胶囊内各一对电子，边缘虚线伸出表示晶格延续
+\begin{tikzpicture}[line cap=round,line join=round,x=1.20cm,y=1.05cm]
+  \def\Ri{0.20}
+  \def\Ro{0.46}
+  \def\er{0.050}
+  \foreach \name/\x/\y in {
+    A1/0/2, A2/2/2, A3/4/2,
+    A4/1/1, A5/3/1,
+    A6/0/0, A7/2/0, A8/4/0} {
+    \coordinate (\name) at (\x,\y);
+    \draw[line width=0.55pt] (\name) circle[radius=\Ri];
+    \node[inner sep=0pt,font=\scriptsize] at (\name) {$+4$};
+    \draw[line width=0.5pt] (\name) circle[radius=\Ro];
+  }
+  \foreach \a/\b in {
+    A1/A4, A2/A4, A2/A5, A3/A5,
+    A4/A6, A4/A7, A5/A7, A5/A8} {
+    \fill ($(\a)!\Ro!(\b)$) circle[radius=\er];
+    \fill ($(\b)!\Ro!(\a)$) circle[radius=\er];
+    \path let \p1=($(\b)-(\a)$), \n1={atan2(\y1,\x1)} in
+      ($(\a)!0.5!(\b)$) node[draw,line width=0.4pt,dashed,
+        minimum width=5.2mm,minimum height=2.6mm,
+        rounded corners=1.2pt,rotate=\n1,inner sep=0pt] {};
+  }
+  \foreach \a/\ang in {
+    A1/135, A1/45, A1/225,
+    A2/135, A2/45,
+    A3/135, A3/45, A3/315,
+    A4/225,
+    A5/315,
+    A6/135, A6/225, A6/315,
+    A7/225, A7/315,
+    A8/45, A8/225, A8/315} {
+    \fill ($(\a)+(\ang:\Ro)$) circle[radius=\er];
+    \draw[line width=0.4pt,dashed]
+      ($(\a)+(\ang:\Ro)$) -- ($(\a)+(\ang:\Ro+0.28)$);
+  }
+\end{tikzpicture}%
+}
+\caption{图6.3·硅（锗）单晶体的共价键结构}
 \end{figure}
 
-\emph{图6.3 硅（锗）单晶体的共价键结构}
+\emph{图6.3·硅（锗）单晶体的共价键结构}
 
 由原子结构的理论知道，原子的最外层电子达到8个时，呈现比较稳定的状态。从硅的原子结构来看，由于共价键的作用，相当于最外层轨道上有8个电子，所以比较稳定。但所谓稳定是相对的，共价键上电子所受的束缚并不象绝缘体里那样牢固，在一定温度下，由于热运动共价键上的少数电子有可能获得足够能量，挣脱原子核束缚而成为自由电子。没有外电场作用时，这些自由电子在晶体内部作无规则的运动，在有外电场作用时，它们受到电场力的作用。将逆着电场方向作定向移动形成电流，这叫做电子导电。
 
@@ -28285,21 +28324,113 @@ e = 15.7 \sqrt{2} \sin 6280 t \text{毫伏}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.4 空穴相当于一个带正电的粒子}]{assets/physics-3/fig-p0374-01.png}}
-\caption{图6.4 空穴相当于一个带正电的粒子}
+\fitfig{%
+% fig-alt: 图6.4·空穴相当于带正电粒子：中心+4原子四向共价键，右下键位空心圆为空穴，旁有自由电子黑点；右侧“= +”示等效正电
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.15]
+  \def\Ri{0.28}
+  \def\Ro{0.85}
+  \def\er{0.055}
+  \draw[line width=0.65pt] (0,0) circle[radius=\Ri];
+  \node[inner sep=0pt,font=\small] at (0,0) {$+4$};
+  \draw[line width=0.6pt] (0,0) circle[radius=\Ro];
+  % four bond stubs
+  \foreach \ang in {45,135,225,315} {
+    \draw[line width=0.45pt,dashed]
+      ($(\ang:\Ro)+({\ang+90}:0.08)$) -- ($(\ang:\Ro+0.38)+({\ang+90}:0.08)$);
+    \draw[line width=0.45pt,dashed]
+      ($(\ang:\Ro)+({\ang-90}:0.08)$) -- ($(\ang:\Ro+0.38)+({\ang-90}:0.08)$);
+    \draw[line width=0.4pt,dashed] (\ang:\Ro) circle[radius=0.16];
+  }
+  % electron pairs at 45,135,225
+  \foreach \ang in {45,135,225} {
+    \fill ($(\ang:\Ro)+({\ang+90}:0.07)$) circle[radius=\er];
+    \fill ($(\ang:\Ro)+({\ang-90}:0.07)$) circle[radius=\er];
+  }
+  % hole at 315
+  \draw[line width=0.55pt,fill=white] ($(315:\Ro)+({315-90}:0.07)$) circle[radius=\er];
+  \fill ($(315:\Ro)+({315+90}:0.07)$) circle[radius=\er];
+  % free electron outside
+  \fill (1.35,-1.05) circle[radius=\er];
+  % labels
+  \draw[line width=0.4pt] (1.05,-0.55) -- (1.55,-0.25);
+  \node[anchor=west,inner sep=1pt,font=\small] at (1.55,-0.25) {空穴};
+  \draw[line width=0.4pt] (1.35,-1.05) -- (1.55,-1.45);
+  \node[anchor=west,inner sep=1pt,font=\small] at (1.55,-1.45) {自由电子};
+  % equivalence
+  \node at (2.35,0.15) {$=$};
+  \node[font=\Large] at (2.85,0.15) {$+$};
+\end{tikzpicture}%
+}
+\caption{图6.4·空穴相当于一个带正电的粒子}
 \end{figure}
 
-\emph{图6.4 空穴相当于一个带正电的粒子}
+\emph{图6.4·空穴相当于一个带正电的粒子}
 
 动是毫无规则的。在有外电场时，束缚电子将逆着电场方向做填补空穴的运动，这相当于空穴顺着电场方向移动，因为空穴相当于带正电的粒子，空穴的定向移动相当于正电荷的定向移动，所以也要形成电流，这叫做空穴导电。对于空穴的运动，我们可以打个比方，就好象剧场里坐满了观众，前排走了一个人，出现了一个空位子，坐在后面的就喜欢向前坐，同时，后排又出现了一个新的空位子，再后面的又向前填补。这样，人们依次填补空位向前移动，看起来就好象
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.5 空穴的运动形式}]{assets/physics-3/fig-p0374-02.png}}
-\caption{图6.5 空穴的运动形式}
+\fitfig{%
+% fig-alt: 图6.5·空穴运动形式：共价键晶格中束缚电子沿弧箭填补空穴并留下新空穴，底图例标电子与空穴
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1.15cm,y=1.00cm]
+  \def\Ri{0.18}
+  \def\Ro{0.42}
+  \def\er{0.048}
+  \foreach \name/\x/\y in {
+    A1/0/2, A2/2/2, A3/4/2,
+    A4/1/1, A5/3/1,
+    A6/0/0, A7/2/0, A8/4/0} {
+    \coordinate (\name) at (\x,\y);
+    \draw[line width=0.5pt] (\name) circle[radius=\Ri];
+    \node[inner sep=0pt,font=\scriptsize] at (\name) {$+4$};
+    \draw[line width=0.45pt] (\name) circle[radius=\Ro];
+  }
+  \foreach \a/\b in {A1/A4, A2/A5, A3/A5, A4/A6, A5/A8, A5/A7} {
+    \fill ($(\a)!\Ro!(\b)$) circle[radius=\er];
+    \fill ($(\b)!\Ro!(\a)$) circle[radius=\er];
+    \path let \p1=($(\b)-(\a)$), \n1={atan2(\y1,\x1)} in
+      ($(\a)!0.5!(\b)$) node[draw,line width=0.35pt,dashed,
+        minimum width=4.8mm,minimum height=2.5mm,
+        rounded corners=1.1pt,rotate=\n1,inner sep=0pt] {};
+  }
+  % A2-A4: hole near A4
+  \fill ($(A2)!\Ro!(A4)$) circle[radius=\er];
+  \draw[line width=0.5pt,fill=white] ($(A4)!\Ro!(A2)$) circle[radius=\er];
+  \path let \p1=($(A4)-(A2)$), \n1={atan2(\y1,\x1)} in
+    ($(A2)!0.5!(A4)$) node[draw,line width=0.35pt,dashed,
+      minimum width=4.8mm,minimum height=2.5mm,
+      rounded corners=1.1pt,rotate=\n1,inner sep=0pt] {};
+  % A4-A7: hole near A7
+  \fill ($(A4)!\Ro!(A7)$) circle[radius=\er];
+  \draw[line width=0.5pt,fill=white] ($(A7)!\Ro!(A4)$) circle[radius=\er];
+  \path let \p1=($(A7)-(A4)$), \n1={atan2(\y1,\x1)} in
+    ($(A4)!0.5!(A7)$) node[draw,line width=0.35pt,dashed,
+      minimum width=4.8mm,minimum height=2.5mm,
+      rounded corners=1.1pt,rotate=\n1,inner sep=0pt] {};
+  \draw[line width=0.55pt,->,dashed]
+    ($(A4)+(0.15,0.25)$) to[bend left=35] ($(A2)!0.55!(A4)$);
+  \fill ($(A4)!0.35!(A2)+(0.20,0.18)$) circle[radius=\er];
+  \draw[line width=0.55pt,->,dashed]
+    ($(A7)+(-0.05,0.30)$) to[bend left=30] ($(A4)!0.55!(A7)$);
+  \fill ($(A7)!0.40!(A4)+(-0.12,0.20)$) circle[radius=\er];
+  \fill (2.55,1.55) circle[radius=\er];
+  \foreach \a/\ang in {
+    A1/135, A1/45, A3/45, A3/315,
+    A6/225, A6/315, A8/45, A8/315} {
+    \fill ($(\a)+(\ang:\Ro)$) circle[radius=\er];
+    \draw[line width=0.35pt,dashed]
+      ($(\a)+(\ang:\Ro)$) -- ($(\a)+(\ang:\Ro+0.25)$);
+  }
+  \fill (1.2,-0.85) circle[radius=\er];
+  \node[anchor=west,inner sep=3pt,font=\small] at (1.3,-0.85) {电子};
+  \draw[line width=0.5pt,fill=white] (2.5,-0.85) circle[radius=\er];
+  \node[anchor=west,inner sep=3pt,font=\small] at (2.6,-0.85) {空穴};
+\end{tikzpicture}%
+}
+\caption{图6.5·空穴的运动形式}
 \end{figure}
 
-\emph{图6.5 空穴的运动形式}
+\emph{图6.5·空穴的运动形式}
 
 空位子向后移动一样。
 
@@ -28307,11 +28438,32 @@ e = 15.7 \sqrt{2} \sin 6280 t \text{毫伏}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.6}]{assets/physics-3/fig-p0375-01.png}}
-\caption{图6.6}
+\fitfig{%
+% fig-alt: 图6.6·电场E向右；电子向左运动，空穴向右运动；合电流I向右
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.05]
+  \def\W{4.2}\def\H{2.55}
+  \draw[line width=0.7pt] (0,0) rectangle (\W,\H);
+  % E
+  \draw[line width=0.75pt,->] (0.35,{\H-0.35}) -- ({\W-0.35},{\H-0.35});
+  \node[anchor=north,inner sep=2pt] at ({\W-0.55},{\H-0.35}) {$E$};
+  % electron left
+  \fill (1.55,{\H*0.62}) circle[radius=0.07];
+  \draw[line width=0.7pt,->] (1.55,{\H*0.62}) -- (0.55,{\H*0.62});
+  \node[anchor=west,inner sep=3pt,font=\small] at (1.70,{\H*0.62}) {电子};
+  % hole right
+  \draw[line width=0.65pt,fill=white] (2.55,{\H*0.38}) circle[radius=0.07];
+  \draw[line width=0.7pt,->] (2.55,{\H*0.38}) -- (3.55,{\H*0.38});
+  \node[anchor=east,inner sep=3pt,font=\small] at (2.40,{\H*0.38}) {空穴};
+  % I
+  \draw[line width=0.75pt,->] (0.35,0.45) -- ({\W-0.35},0.45);
+  \node[anchor=west,inner sep=2pt] at ({\W-0.32},0.45) {$I$};
+  \node[anchor=north,inner sep=2pt,font=\small] at ({\W/2},0.42) {电流};
+\end{tikzpicture}%
+}
+\caption{图6.6·电子、空穴移动与电流方向}
 \end{figure}
 
-\emph{图6.6}
+\emph{图6.6·电子、空穴移动与电流方向}
 
 电子导电和空穴导电，因此流过半导体中的总电流是电子移动形成的电流和空穴移动形成的电流之和。这两种带电粒子虽然在外电场作用下移动方向相反，但形成的电流方向是相同的（图6.6）.由于无论是自由电子还是空穴，它们的定向移动都形成电
 
@@ -28355,11 +28507,51 @@ P型半导体和N型半导体}\label{pux578bux534aux5bfcux4f53ux548cnux578bux534
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.7 N 型半导体}]{assets/physics-3/fig-p0377-01.png}}
-\caption{图6.7 \(N\) 型半导体}
+\fitfig{%
+% fig-alt: 图6.7·N型半导体：硅晶格中掺入+5价磷原子，四价电子成共价键，多余一个自由电子；底标自由电子图例
+\begin{tikzpicture}[line cap=round,line join=round,x=1.15cm,y=1.00cm]
+  \def\Ri{0.20}
+  \def\Ro{0.45}
+  \def\er{0.050}
+  \foreach \name/\x/\y/\lab in {
+    A1/0/2/+4, A2/2/2/+4, A3/4/2/+4,
+    A4/1/1/+5, A5/3/1/+4,
+    A6/0/0/+4, A7/2/0/+4, A8/4/0/+4} {
+    \coordinate (\name) at (\x,\y);
+    \draw[line width=0.55pt] (\name) circle[radius=\Ri];
+    \node[inner sep=0pt,font=\scriptsize] at (\name) {$\lab$};
+    \draw[line width=0.5pt] (\name) circle[radius=\Ro];
+  }
+  \foreach \a/\b in {
+    A1/A4, A2/A4, A2/A5, A3/A5,
+    A4/A6, A4/A7, A5/A7, A5/A8} {
+    \fill ($(\a)!\Ro!(\b)$) circle[radius=\er];
+    \fill ($(\b)!\Ro!(\a)$) circle[radius=\er];
+    \path let \p1=($(\b)-(\a)$), \n1={atan2(\y1,\x1)} in
+      ($(\a)!0.5!(\b)$) node[draw,line width=0.4pt,dashed,
+        minimum width=5.0mm,minimum height=2.6mm,
+        rounded corners=1.2pt,rotate=\n1,inner sep=0pt] {};
+  }
+  \fill (1.55,1.15) circle[radius=\er];
+  \foreach \a/\ang in {
+    A1/135, A1/45, A1/225,
+    A2/135, A2/45,
+    A3/135, A3/45, A3/315,
+    A6/135, A6/225, A6/315,
+    A7/225, A7/315,
+    A8/45, A8/225, A8/315} {
+    \fill ($(\a)+(\ang:\Ro)$) circle[radius=\er];
+    \draw[line width=0.35pt,dashed]
+      ($(\a)+(\ang:\Ro)$) -- ($(\a)+(\ang:\Ro+0.26)$);
+  }
+  \fill (1.6,-0.75) circle[radius=\er];
+  \node[anchor=west,inner sep=3pt,font=\small] at (1.7,-0.75) {自由电子};
+\end{tikzpicture}%
+}
+\caption{图6.7·$N$ 型半导体}
 \end{figure}
 
-\emph{图6.7 \(N\) 型半导体}
+\emph{图6.7·$N$ 型半导体}
 
 弱， 很容易受到激发而成为自由电子 （图 6.7）。 这样，
 掺入硅晶体中的每个磷原子都可能供给一个自由电子。 因此在这类半导体中，
@@ -28369,17 +28561,31 @@ P型半导体和N型半导体}\label{pux578bux534aux5bfcux4f53ux548cnux578bux534
 但电子的数量要比空穴多得多， 主要是靠电子导电。
 每个磷原子失去一个价电子后就成为正离子， 它在半
 
-\emph{⊕ 五价杂质离子}
-
-\emph{- 自由电子}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.8 N 型半导体简化示意图}]{assets/physics-3/fig-p0377-02.png}}
-\caption{图6.8 \(N\) 型半导体简化示意图}
+\fitfig{%
+% fig-alt: 图6.8·N型半导体简化示意图：矩形框内3×4正离子（圆内+）与间隙中自由电子黑点
+\begin{tikzpicture}[line cap=round,line join=round,x=0.95cm,y=0.95cm]
+  \draw[line width=0.7pt] (-0.55,0.45) rectangle (3.55,-2.55);
+  \foreach \x in {0,1,2,3} {
+    \foreach \y in {0,-1,-2} {
+      \draw[line width=0.55pt] (\x,\y) circle[radius=0.28];
+      \node[inner sep=0pt] at (\x,\y) {$+$};
+    }
+  }
+  % free electrons in gaps (irregular)
+  \foreach \x/\y in {
+    0.50/0.28, 1.48/0.05, 2.55/-0.18, 3.28/0.15,
+    -0.28/-0.55, 0.52/-0.62, 1.45/-0.40, 2.42/-0.70, 3.22/-0.95,
+    -0.22/-1.55, 0.48/-1.35, 1.55/-1.70, 2.50/-1.55, 3.25/-1.80} {
+    \fill (\x,\y) circle[radius=0.055];
+  }
+\end{tikzpicture}%
+}
+\caption{图6.8·$N$ 型半导体简化示意图}
 \end{figure}
 
-\emph{图6.8 \(N\) 型半导体简化示意图}
+\emph{图6.8·$N$ 型半导体简化示意图}
 
 导体里是不能移动的。
 
@@ -28407,27 +28613,100 @@ P型半导体和N型半导体}\label{pux578bux534aux5bfcux4f53ux548cnux578bux534
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.9 P 基本半导体}]{assets/physics-3/fig-p0378-01.png}}
-\caption{图6.9 P 基本半导体}
+\fitfig{%
+% fig-alt: 图6.9·P型半导体：硅晶格中掺入B(+3)，与邻硅共价键缺一电子形成空穴；弧箭示邻近电子填补，底标空穴图例
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1.15cm,y=1.00cm]
+  \def\Ri{0.20}
+  \def\Ro{0.45}
+  \def\er{0.050}
+  \foreach \name/\x/\y/\lab in {
+    A1/0/2/+4, A2/2/2/+4, A3/4/2/+4,
+    A4/1/1/+3, A5/3/1/+4,
+    A6/0/0/+4, A7/2/0/+4, A8/4/0/+4} {
+    \coordinate (\name) at (\x,\y);
+    \draw[line width=0.55pt] (\name) circle[radius=\Ri];
+    \node[inner sep=0pt,font=\scriptsize] at (\name) {$\lab$};
+    \draw[line width=0.5pt] (\name) circle[radius=\Ro];
+  }
+  \node[anchor=south east,inner sep=1pt,font=\small] at ($(A4)+(-0.15,0.15)$) {B};
+  \foreach \a/\b in {
+    A1/A4, A2/A4, A3/A5,
+    A4/A6, A5/A7, A5/A8, A4/A7, A2/A5} {
+    \fill ($(\a)!\Ro!(\b)$) circle[radius=\er];
+    \fill ($(\b)!\Ro!(\a)$) circle[radius=\er];
+    \path let \p1=($(\b)-(\a)$), \n1={atan2(\y1,\x1)} in
+      ($(\a)!0.5!(\b)$) node[draw,line width=0.4pt,dashed,
+        minimum width=5.0mm,minimum height=2.6mm,
+        rounded corners=1.2pt,rotate=\n1,inner sep=0pt] {};
+  }
+  % incomplete A4-A5
+  \fill ($(A4)!\Ro!(A5)$) circle[radius=\er];
+  \draw[line width=0.55pt,fill=white] ($(A5)!\Ro!(A4)$) circle[radius=\er];
+  \path let \p1=($(A5)-(A4)$), \n1={atan2(\y1,\x1)} in
+    ($(A4)!0.5!(A5)$) node[draw,line width=0.4pt,dashed,
+      minimum width=5.0mm,minimum height=2.6mm,
+      rounded corners=1.2pt,rotate=\n1,inner sep=0pt] {};
+  \draw[line width=0.55pt,->]
+    ($(A5)+(-0.05,0.35)$) to[bend left=40] ($(A4)!0.62!(A5)$);
+  \fill ($(A5)!0.35!(A4)+(0.05,0.28)$) circle[radius=\er];
+  \node[anchor=north,inner sep=1pt,font=\scriptsize] at (1.6,0.55) {B的空穴被电子填补};
+  \foreach \a/\ang in {
+    A1/135, A1/45, A1/225,
+    A2/135, A2/45,
+    A3/135, A3/45, A3/315,
+    A6/135, A6/225, A6/315,
+    A7/225, A7/315,
+    A8/45, A8/225, A8/315} {
+    \fill ($(\a)+(\ang:\Ro)$) circle[radius=\er];
+    \draw[line width=0.35pt,dashed]
+      ($(\a)+(\ang:\Ro)$) -- ($(\a)+(\ang:\Ro+0.26)$);
+  }
+  \draw[line width=0.5pt,fill=white] (1.7,-0.75) circle[radius=\er];
+  \node[anchor=west,inner sep=3pt,font=\small] at (1.8,-0.75) {空穴};
+\end{tikzpicture}%
+}
+\caption{图6.9·$P$ 型半导体}
 \end{figure}
 
-\emph{图6.9 P 基本半导体}
+\emph{图6.9·$P$ 型半导体}
 
-要靠空气导电，所以叫做空穴型半导体，又叫做 P 型半导体。
+要靠空穴导电，所以叫做空穴型半导体，又叫做 $P$ 型半导体。
 
 由此可见，在 \(P\)
 型半导体中，含有大量相当于带正电粒子的空穴，和几乎同等数量的负离子，还有少量的自由电子。就整块
 \(P\)
 型半导体来说，它里面正、负电荷的总数是相等的，所以是电中性的。为了方便，也常把
-\(N\) 型半导体画成图6.10
+\(P\) 型半导体画成图6.10
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.10 F 型半导体简化示意图}]{assets/physics-3/fig-p0379-01.png}}
-\caption{图6.10 \(F\) 型半导体简化示意图}
+\fitfig{%
+% fig-alt: 图6.10·P型半导体简化示意图：框内3×4受主杂质负离子（圆内−）各旁一小空心圆为空穴；下方图例
+\begin{tikzpicture}[line cap=round,line join=round,x=0.95cm,y=0.95cm]
+  \draw[line width=0.7pt] (-0.55,0.45) rectangle (3.55,-2.55);
+  % ions + holes with varied offsets
+  \foreach \x/\y/\hx/\hy in {
+    0/0/-0.22/0.22, 1/0/-0.20/0.24, 2/0/0.22/0.20, 3/0/-0.18/0.22,
+    0/-1/-0.22/0.20, 1/-1/0.20/0.22, 2/-1/-0.20/0.18, 3/-1/0.22/0.20,
+    0/-2/0.20/0.22, 1/-2/-0.22/0.18, 2/-2/0.18/0.22, 3/-2/-0.20/0.20} {
+    \draw[line width=0.55pt] (\x,\y) circle[radius=0.28];
+    \node[inner sep=0pt] at (\x,\y) {$-$};
+    \draw[line width=0.5pt,fill=white] ($(\x,\y)+(\hx,\hy)$) circle[radius=0.08];
+  }
+  % legend
+  \begin{scope}[shift={(0.2,-3.15)}]
+    \draw[line width=0.5pt] (0,0.35) circle[radius=0.22];
+    \node[inner sep=0pt] at (0,0.35) {$-$};
+    \node[anchor=west,inner sep=4pt,font=\small] at (0.35,0.35) {受主杂质离子};
+    \draw[line width=0.5pt,fill=white] (0,-0.25) circle[radius=0.08];
+    \node[anchor=west,inner sep=4pt,font=\small] at (0.35,-0.25) {空穴};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图6.10·$P$ 型半导体简化示意图}
 \end{figure}
 
-\emph{图6.10 \(F\) 型半导体简化示意图}
+\emph{图6.10·$P$ 型半导体简化示意图}
 
 \section{§ 6.3 PN 结}\label{pn-ux7ed3}
 
