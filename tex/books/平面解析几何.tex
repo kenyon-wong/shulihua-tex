@@ -33563,40 +33563,142 @@ D \left(\frac {5 \sqrt {2}}{2}, - \frac {5 \sqrt {2}}{2}\right)\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(习题 2.3\textasciitilde2.4 第 2 题)}]{assets/analytic-geometry/fig-p0430-02.png}}
-\caption{(习题 2.3\textasciitilde2.4 第 2 题)}
+\fitfig{%
+% fig-alt: 椭圆 x²/4+y²/9=1；中心原点，横截距 ±2、纵截距 ±3；x 轴标 1、2，y 轴标 1、2、3
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.5pt,-latex] (-2.85,0) -- (3.15,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-3.55) -- (0,3.75) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[line width=0.85pt] (0,0) ellipse (2 and 3);
+  \foreach \t in {1,2} {
+    \draw[line width=0.4pt] (\t,0.08) -- (\t,-0.08);
+    \node[anchor=north,inner sep=1.5pt,font=\small] at (\t,0) {$\t$};
+  }
+  \foreach \t in {1,2,3} {
+    \draw[line width=0.4pt] (0.08,\t) -- (-0.08,\t);
+    \node[anchor=east,inner sep=1.5pt,font=\small] at (0,\t) {$\t$};
+  }
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（习题 2.3～2.4 第 2 题）}
 \end{figure}
 
 \emph{（习题 2.3\textasciitilde2.4 第 2 题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(习题2·3\textasciitilde2·4第3题)}]{assets/analytic-geometry/fig-p0431-01.png}}
-\caption{(习题2·3\textasciitilde2·4第3题)}
+\fitfig{%
+% fig-alt: 双曲线 x²/9−y²/4=1 两支；渐近线 y=±(2/3)x；顶点 (±3,0)；轴上标 1、2、3
+\begin{tikzpicture}[x=0.58cm,y=0.58cm,line cap=round,line join=round,>=latex]
+  \def\aa{3}
+  \def\bb{2}
+  \draw[line width=0.45pt] (-4.6,{-4.6*\bb/\aa}) -- (4.6,{4.6*\bb/\aa});
+  \draw[line width=0.45pt] (-4.6,{4.6*\bb/\aa}) -- (4.6,{-4.6*\bb/\aa});
+  \draw[line width=0.5pt,-latex] (-4.85,0) -- (5.05,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-3.85) -- (0,4.05) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[line width=0.85pt,domain=-1.25:1.25,samples=45,smooth] plot ({\aa*cosh(\x)},{\bb*sinh(\x)});
+  \draw[line width=0.85pt,domain=-1.25:1.25,samples=45,smooth] plot ({-\aa*cosh(\x)},{\bb*sinh(\x)});
+  \foreach \t in {1,2,3} {
+    \draw[line width=0.4pt] (\t,0.09) -- (\t,-0.09);
+    \node[anchor=north,inner sep=1.4pt,font=\small] at (\t,0) {$\t$};
+    \draw[line width=0.4pt] (0.09,\t) -- (-0.09,\t);
+    \node[anchor=east,inner sep=1.4pt,font=\small] at (0,\t) {$\t$};
+  }
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（习题 2.3～2.4 第 3 题）}
 \end{figure}
 
 \emph{（习题2·3\textasciitilde2·4第3题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(习题 2·3\textasciitilde2·4 第 4 题)}]{assets/analytic-geometry/fig-p0431-02.png}}
-\caption{(习题 2·3\textasciitilde2·4 第 4 题)}
+\fitfig{%
+% fig-alt: 双曲线 (x+4)(y−3)=2；渐近线 x=−4、y=3；交轴于 (−14/3,0)、(0,3.5)
+\begin{tikzpicture}[x=0.48cm,y=0.48cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.45pt] (-4,-2.8) -- (-4,6.2);
+  \draw[line width=0.45pt] (-8.2,3) -- (3.6,3);
+  \draw[line width=0.5pt,-latex] (-8.4,0) -- (4.0,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-2.9) -- (0,6.4) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[line width=0.85pt,domain=-3.65:3.2,samples=55,smooth]
+    plot (\x,{3+2/(\x+4)});
+  \draw[line width=0.85pt,domain=-8.0:-4.35,samples=45,smooth]
+    plot (\x,{3+2/(\x+4)});
+  \draw[line width=0.4pt] (1,0.09) -- (1,-0.09);
+  \node[anchor=north,inner sep=1.3pt,font=\small] at (1,0) {$1$};
+  \draw[line width=0.4pt] (-4,0.09) -- (-4,-0.09);
+  \node[anchor=north,inner sep=1.2pt,font=\small] at (-4,-0.05) {$-4$};
+  \draw[line width=0.4pt] ({-14/3},0.09) -- ({-14/3},-0.09);
+  \node[anchor=north,inner sep=1.0pt,font=\scriptsize] at ({-14/3},-0.08) {$-\frac{14}{3}$};
+  \foreach \t in {1,2,3} {
+    \draw[line width=0.4pt] (0.09,\t) -- (-0.09,\t);
+    \node[anchor=east,inner sep=1.3pt,font=\small] at (0,\t) {$\t$};
+  }
+  \draw[line width=0.4pt] (0.09,3.5) -- (-0.09,3.5);
+  \node[anchor=west,inner sep=1.3pt,font=\scriptsize] at (0.12,3.5) {$3.5$};
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（习题 2.3～2.4 第 4 题）}
 \end{figure}
 
 \emph{（习题 2·3\textasciitilde2·4 第 4 题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(习题 2·3\textasciitilde2·4 第 5 题)}]{assets/analytic-geometry/fig-p0431-03.png}}
-\caption{(习题 2·3\textasciitilde2·4 第 5 题)}
+\fitfig{%
+% fig-alt: 过原点两直线 y=±(4/5)x（由 16x²−25y²=0）；轴上标 ±2、±4
+\begin{tikzpicture}[x=0.42cm,y=0.42cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt,latex-latex] (-5.2,{-5.2*4/5}) -- (5.2,{5.2*4/5});
+  \draw[line width=0.75pt,latex-latex] (-5.2,{5.2*4/5}) -- (5.2,{-5.2*4/5});
+  \draw[line width=0.5pt,-latex] (-5.6,0) -- (5.9,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-5.0) -- (0,5.3) node[anchor=south,inner sep=1.1pt] {$y$};
+  \foreach \t in {-4,-2,2,4} {
+    \draw[line width=0.35pt] (\t,0.12) -- (\t,-0.12);
+    \node[anchor=north,inner sep=1.2pt,font=\small] at (\t,0) {$\t$};
+    \draw[line width=0.35pt] (0.12,\t) -- (-0.12,\t);
+    \node[anchor=east,inner sep=1.2pt,font=\small] at (0,\t) {$\t$};
+  }
+  \foreach \t in {-5,-3,-1,1,3,5} {
+    \draw[line width=0.3pt] (\t,0.08) -- (\t,-0.08);
+    \draw[line width=0.3pt] (0.08,\t) -- (-0.08,\t);
+  }
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（习题 2.3～2.4 第 5 题）}
 \end{figure}
 
 \emph{（习题 2·3\textasciitilde2·4 第 5 题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(习题 2·3\textasciitilde2·4 第 6 题)}]{assets/analytic-geometry/fig-p0431-04.png}}
-\caption{(习题 2·3\textasciitilde2·4 第 6 题)}
+\fitfig{%
+% fig-alt: 直线 x=±2 与 y=±1（四端箭头）；轴上标 −2…2
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt,latex-latex] (2,-2.15) -- (2,2.35);
+  \draw[line width=0.7pt,latex-latex] (-2,-2.15) -- (-2,2.35);
+  \draw[line width=0.7pt,latex-latex] (-2.85,1) -- (2.95,1);
+  \draw[line width=0.7pt,latex-latex] (-2.85,-1) -- (2.95,-1);
+  \draw[line width=0.5pt,-latex] (-3.05,0) -- (3.25,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-2.45) -- (0,2.65) node[anchor=south,inner sep=1.1pt] {$y$};
+  \foreach \t in {-2,-1,1,2} {
+    \draw[line width=0.4pt] (\t,0.08) -- (\t,-0.08);
+    \node[anchor=north,inner sep=1.4pt,font=\small] at (\t,0) {$\t$};
+  }
+  \node[anchor=north west,inner sep=1.2pt,font=\small] at (0.05,0) {$0$};
+  \foreach \t in {-2,-1,1,2} {
+    \draw[line width=0.4pt] (0.08,\t) -- (-0.08,\t);
+    \node[anchor=east,inner sep=1.4pt,font=\small] at (0,\t) {$\t$};
+  }
+\end{tikzpicture}%
+}
+\caption{（习题 2.3～2.4 第 6 题）}
 \end{figure}
 
 \emph{（习题 2·3\textasciitilde2·4 第 6 题）}
@@ -33609,8 +33711,32 @@ D \left(\frac {5 \sqrt {2}}{2}, - \frac {5 \sqrt {2}}{2}\right)\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(习题 2·3\textasciitilde2·4 第 7 题)}]{assets/analytic-geometry/fig-p0431-05.png}}
-\caption{(习题 2·3\textasciitilde2·4 第 7 题)}
+\fitfig{%
+% fig-alt: 直角坐标系中孤立点 (2,−3)；虚线投影至两轴；轴上标 ±2
+\begin{tikzpicture}[x=0.55cm,y=0.55cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.5pt,-latex] (-3.4,0) -- (4.2,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-4.2) -- (0,3.6) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.45pt] (2,0) -- (2,-3);
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.45pt] (0,-3) -- (2,-3);
+  \fill (2,-3) circle (1.35pt);
+  \node[anchor=north,inner sep=1.5pt,font=\small] at (2,-3.05) {$(2,-3)$};
+  \foreach \t in {-2,2} {
+    \draw[line width=0.4pt] (\t,0.1) -- (\t,-0.1);
+    \node[anchor=north,inner sep=1.4pt,font=\small] at (\t,0) {$\t$};
+  }
+  \foreach \t in {-2,2} {
+    \draw[line width=0.4pt] (0.1,\t) -- (-0.1,\t);
+    \node[anchor=east,inner sep=1.4pt,font=\small] at (0,\t) {$\t$};
+  }
+  \foreach \t in {-3,-1,1,3} {
+    \draw[line width=0.3pt] (\t,0.07) -- (\t,-0.07);
+    \draw[line width=0.3pt] (0.07,\t) -- (-0.07,\t);
+  }
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（习题 2.3～2.4 第 7 题）}
 \end{figure}
 
 \emph{（习题 2·3\textasciitilde2·4 第 7 题）}
@@ -33697,16 +33823,43 @@ D \left(\frac {5 \sqrt {2}}{2}, - \frac {5 \sqrt {2}}{2}\right)\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3(1)题)}]{assets/analytic-geometry/fig-p0432-01.png}}
-\caption{(第3(1)题)}
+\fitfig{%
+% fig-alt: 平行于 y 轴的两直线 x=±2；原点标 0，轴端标 x、y
+\begin{tikzpicture}[x=0.75cm,y=0.75cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (2,-1.85) -- (2,2.35);
+  \draw[line width=0.75pt] (-2,-1.85) -- (-2,2.35);
+  \draw[line width=0.5pt,-latex] (-3.15,0) -- (3.35,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-2.15) -- (0,2.65) node[anchor=south,inner sep=1.1pt] {$y$};
+  \node[anchor=north,inner sep=1.5pt,font=\small] at (2,0) {$2$};
+  \node[anchor=north,inner sep=1.5pt,font=\small] at (-2,0) {$-2$};
+  \node[anchor=north west,inner sep=1.3pt,font=\small] at (0.05,0) {$0$};
+\end{tikzpicture}%
+}
+\caption{（第3（1）题）}
 \end{figure}
 
 \emph{（第3（1）题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3(2)题)}]{assets/analytic-geometry/fig-p0432-02.png}}
-\caption{(第3(2)题)}
+\fitfig{%
+% fig-alt: 圆 x²+y²=9，圆心原点半径 3；轴上标 ±3
+\begin{tikzpicture}[x=0.58cm,y=0.58cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.5pt,-latex] (-4.0,0) -- (4.2,0) node[anchor=west,inner sep=1.1pt] {$x$};
+  \draw[line width=0.5pt,-latex] (0,-4.0) -- (0,4.2) node[anchor=south,inner sep=1.1pt] {$y$};
+  \draw[line width=0.85pt] (0,0) circle (3);
+  \foreach \t/\lab in {3/$3$,-3/$-3$} {
+    \draw[line width=0.4pt] (\t,0.1) -- (\t,-0.1);
+    \node[anchor=north,inner sep=1.4pt,font=\small] at (\t,0) {\lab};
+    \draw[line width=0.4pt] (0.1,\t) -- (-0.1,\t);
+  }
+  \node[anchor=south east,inner sep=1.3pt,font=\small] at (0,3) {$3$};
+  \node[anchor=north east,inner sep=1.3pt,font=\small] at (0,-3) {$-3$};
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+\end{tikzpicture}%
+}
+\caption{（第3（2）题）}
 \end{figure}
 
 \emph{（第3（2）题）}
