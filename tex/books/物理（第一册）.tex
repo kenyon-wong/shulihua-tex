@@ -33888,8 +33888,35 @@ S _ {1} v _ {1} = S _ {2} v _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第23题)}]{assets/physics-1/fig-p0522-02.png}}
-\caption{(第23题)}
+% fig-alt: （第23题）：四分之一光滑圆弧最高点小球 $Q$，半径 $R$；圆弧接水平光滑面，面上依次排有小球 $1,2,3,4,\ldots,n$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \coordinate (C) at (0,1.85);
+  \coordinate (Q) at (-1.85,1.85);
+  \draw[line width=0.7pt] (Q) arc[start angle=180,end angle=270,radius=1.85] -- (5.15,0);
+  \foreach \t in {12,24,...,84} {
+    \draw[line width=0.32pt]
+      ({-1.85*cos(\t)},{1.85-1.85*sin(\t)})
+      -- ++({-0.20*cos(\t)},{-0.20*sin(\t)});
+  }
+  \foreach \x in {0.12,0.38,...,5.05} {
+    \draw[line width=0.32pt] (\x,0) -- ++(-0.18,-0.22);
+  }
+  \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.1pt] (Q) -- (C) -- (0,0);
+  \draw[line width=0.32pt] (-0.18,1.85) -- (-0.18,1.67) -- (0,1.67);
+  \node[anchor=west,inner sep=2pt] at (0.08,0.92) {$R$};
+  \draw[line width=0.45pt,fill=white] (Q) circle (0.11);
+  \node[anchor=south east,inner sep=1pt] at (-1.90,1.90) {$Q$};
+  \foreach \x/\lab in {1.15/1,1.70/2,2.25/3,2.80/4} {
+    \draw[line width=0.45pt,fill=white] (\x,0.11) circle (0.11);
+    \node[anchor=north,inner sep=1pt] at (\x,-0.02) {$\lab$};
+  }
+  \node[anchor=north,inner sep=1pt] at (3.45,-0.02) {$\cdots$};
+  \draw[line width=0.45pt,fill=white] (4.15,0.11) circle (0.11);
+  \node[anchor=north,inner sep=1pt] at (4.15,-0.02) {$n$};
+\end{tikzpicture}%
+}
+\caption{（第23题）}
 \end{figure}
 
 \emph{（第23题）}
@@ -33915,8 +33942,48 @@ S _ {1} v _ {1} = S _ {2} v _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第26题)}]{assets/physics-1/fig-p0522-03.png}}
-\caption{(第26题)}
+% fig-alt: （第26题）：粗细均匀弯管，弯角 $\alpha$；中心线虚线示流向，入口流速 $v_1$、出口流速 $v_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 弯管：圆心 (0,0)，中线半径 1.55，半宽 0.28；弧 120°→240°（经 180°），弯角 α=60°
+  \def\Rm{1.55}
+  \def\Rw{0.28}
+  \draw[line width=0.55pt]
+    ({(\Rm+\Rw)*cos(120)},{(\Rm+\Rw)*sin(120)})
+    arc[start angle=120,end angle=240,radius={\Rm+\Rw}];
+  \draw[line width=0.55pt]
+    ({(\Rm-\Rw)*cos(120)},{(\Rm-\Rw)*sin(120)})
+    arc[start angle=120,end angle=240,radius={\Rm-\Rw}];
+  \draw[line width=0.55pt]
+    ({(\Rm-\Rw)*cos(120)},{(\Rm-\Rw)*sin(120)})
+    -- ({(\Rm+\Rw)*cos(120)},{(\Rm+\Rw)*sin(120)});
+  \draw[line width=0.55pt]
+    ({(\Rm-\Rw)*cos(240)},{(\Rm-\Rw)*sin(240)})
+    -- ({(\Rm+\Rw)*cos(240)},{(\Rm+\Rw)*sin(240)});
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 1.0pt]
+    ({\Rm*cos(120)},{\Rm*sin(120)})
+    arc[start angle=120,end angle=240,radius=\Rm];
+  % v1 沿切向流入（210°）
+  \draw[line width=0.55pt,->]
+    ({\Rm*cos(120)-0.72*cos(210)},{\Rm*sin(120)-0.72*sin(210)})
+    -- ({\Rm*cos(120)-0.06*cos(210)},{\Rm*sin(120)-0.06*sin(210)});
+  \node[anchor=south west,inner sep=1pt] at ({\Rm*cos(120)+0.02},{\Rm*sin(120)+0.12}) {$v_1$};
+  % v2 沿切向流出（330°）
+  \draw[line width=0.55pt,->]
+    ({\Rm*cos(240)+0.06*cos(330)},{\Rm*sin(240)+0.06*sin(330)})
+    -- ({\Rm*cos(240)+0.72*cos(330)},{\Rm*sin(240)+0.72*sin(330)});
+  \node[anchor=north west,inner sep=1pt] at ({\Rm*cos(240)+0.22},{\Rm*sin(240)-0.02}) {$v_2$};
+  % 外壁切线交于左侧，夹角 α=60°
+  \coordinate (Meet) at ({-(\Rm+\Rw)/cos(60)},{0});
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 1.0pt]
+    ({(\Rm+\Rw)*cos(120)},{(\Rm+\Rw)*sin(120)}) -- (Meet);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 1.0pt]
+    ({(\Rm+\Rw)*cos(240)},{(\Rm+\Rw)*sin(240)}) -- (Meet);
+  \draw[line width=0.32pt] ($(Meet)+(30:0.45)$) arc[start angle=30,end angle=-30,radius=0.45];
+  \node[anchor=east,inner sep=1pt] at ($(Meet)+(-0.08,0)$) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{（第26题）}
 \end{figure}
 
 \emph{（第26题）}
@@ -33931,16 +33998,78 @@ S _ {1} v _ {1} = S _ {2} v _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第27题)}]{assets/physics-1/fig-p0523-01.png}}
-\caption{(第27题)}
+% fig-alt: （第27题）：静止铀核碎成三片 $m_1,m_2,m_3$；$v_1$、$v_2$ 与水平向右各成 $60^\circ$，$v_3$ 水平向左；上方示 $M=m_1+m_2+m_3$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 上方：原核
+  \draw[line width=0.5pt] (0.15,3.35) .. controls (0.55,3.65) and (1.15,3.60) .. (1.35,3.25)
+    .. controls (1.55,2.95) and (1.05,2.75) .. (0.55,2.85)
+    .. controls (0.15,2.95) and (-0.05,3.15) .. (0.15,3.35);
+  \node[anchor=east,inner sep=2pt] at (-0.15,3.20) {$M=m_1+m_2+m_3$};
+  % 水平点划线
+  \draw[line width=0.35pt,dash pattern=on 2.2pt off 1.0pt on 0.5pt off 1.0pt] (-2.55,1.15) -- (2.85,1.15);
+  % 三碎片
+  \draw[line width=0.45pt] (0.55,1.85) .. controls (0.85,2.05) and (1.15,1.95) .. (1.15,1.65)
+    .. controls (1.15,1.40) and (0.75,1.35) .. (0.50,1.50)
+    .. controls (0.30,1.65) and (0.35,1.75) .. (0.55,1.85);
+  \node[anchor=south,inner sep=1pt] at (0.85,2.08) {$m_1$};
+  \draw[line width=0.45pt] (0.55,0.55) .. controls (0.85,0.35) and (1.20,0.40) .. (1.20,0.70)
+    .. controls (1.20,0.95) and (0.80,1.00) .. (0.50,0.85)
+    .. controls (0.30,0.70) and (0.35,0.60) .. (0.55,0.55);
+  \node[anchor=west,inner sep=1pt] at (1.28,0.65) {$m_2$};
+  \draw[line width=0.45pt] (-1.45,1.15) .. controls (-1.65,1.40) and (-1.25,1.55) .. (-1.00,1.35)
+    .. controls (-0.80,1.20) and (-0.85,0.90) .. (-1.15,0.85)
+    .. controls (-1.40,0.80) and (-1.55,0.95) .. (-1.45,1.15);
+  \node[anchor=north,inner sep=1pt] at (-1.25,0.72) {$m_3$};
+  % 速度箭头
+  \draw[line width=0.55pt,->] (0.25,1.35) -- (1.85,2.25);
+  \node[anchor=south west,inner sep=1pt] at (1.55,2.20) {$v_1$};
+  \draw[line width=0.55pt,->] (0.25,0.95) -- (1.85,0.05);
+  \node[anchor=north west,inner sep=1pt] at (1.55,0.15) {$v_2$};
+  \draw[line width=0.55pt,->] (-0.35,1.15) -- (-2.35,1.15);
+  \node[anchor=south,inner sep=1pt] at (-1.85,1.22) {$v_3$};
+  % 60° 角
+  \draw[line width=0.32pt] (0.85,1.15) arc[start angle=0,end angle=60,radius=0.70];
+  \node[anchor=west,inner sep=1pt] at (1.45,1.42) {$60^\circ$};
+  \draw[line width=0.32pt] (0.85,1.15) arc[start angle=0,end angle=-60,radius=0.70];
+  \node[anchor=west,inner sep=1pt] at (1.45,0.88) {$60^\circ$};
+\end{tikzpicture}%
+}
+\caption{（第27题）}
 \end{figure}
 
 \emph{（第27题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第28题)}]{assets/physics-1/fig-p0523-02.png}}
-\caption{(第28题)}
+% fig-alt: （第28题）：屋顶水平抛出，初速 $v_0$；窗口高度 $A$、$B$ 间距 $h$，轨迹上对应 $A'$、$B'$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.65pt] (0,0) -- (0,3.55);
+  \draw[line width=0.65pt] (0,0) -- (3.55,0);
+  \foreach \x in {0.15,0.40,...,3.45} {
+    \draw[line width=0.32pt] (\x,0) -- ++(-0.18,-0.22);
+  }
+  % parabola: x = 0.85 t, y = 3.35 - 0.55 t^2 ; land near t=2.47
+  \draw[line width=0.55pt]
+    (0,3.35) .. controls (0.85,3.35) and (1.70,2.55) .. (2.55,1.05)
+    .. controls (2.90,0.45) and (3.15,0.15) .. (3.35,0);
+  \draw[line width=0.55pt,->] (0.08,3.35) -- (1.05,3.35);
+  \node[anchor=south,inner sep=1pt] at (0.55,3.40) {$v_0$};
+  % A / A'
+  \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.1pt] (0,2.55) -- (1.35,2.55);
+  \fill (1.35,2.55) circle (1.2pt);
+  \node[anchor=east,inner sep=2pt] at (0,2.55) {$A$};
+  \node[anchor=west,inner sep=2pt] at (1.42,2.55) {$A'$};
+  % B / B'
+  \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.1pt] (0,1.55) -- (2.15,1.55);
+  \fill (2.15,1.55) circle (1.2pt);
+  \node[anchor=east,inner sep=2pt] at (0,1.55) {$B$};
+  \node[anchor=west,inner sep=2pt] at (2.22,1.55) {$B'$};
+  \node[anchor=east,inner sep=2pt] at (-0.05,2.05) {$h$};
+\end{tikzpicture}%
+}
+\caption{（第28题）}
 \end{figure}
 
 \emph{（第28题）}
@@ -33962,8 +34091,40 @@ S _ {1} v _ {1} = S _ {2} v _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第29题)}]{assets/physics-1/fig-p0523-03.png}}
-\caption{(第29题)}
+% fig-alt: （第29题）：斜抛轨迹上两水平面，下方 $A,A'$，上方 $B,B'$，间距 $h$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.65pt] (-0.15,0) -- (4.55,0);
+  \foreach \x in {0.0,0.25,...,4.45} {
+    \draw[line width=0.32pt] (\x,0) -- ++(-0.18,-0.22);
+  }
+  % parabola peak at (2.2, 2.15)
+  \draw[line width=0.55pt,->]
+    (0.15,0) .. controls (0.70,1.35) and (1.30,2.05) .. (1.70,2.12);
+  \draw[line width=0.55pt,->]
+    (1.70,2.12) .. controls (1.95,2.18) and (2.10,2.18) .. (2.35,2.12);
+  \draw[line width=0.55pt,->]
+    (2.35,2.12) .. controls (2.95,1.90) and (3.55,1.10) .. (4.25,0);
+  % upper dashed BB'
+  \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.1pt] (0.95,1.55) -- (3.45,1.55);
+  \fill (0.95,1.55) circle (1.15pt);
+  \fill (3.45,1.55) circle (1.15pt);
+  \node[anchor=south east,inner sep=1pt] at (0.90,1.58) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (3.50,1.58) {$B'$};
+  % lower dashed AA'
+  \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.1pt] (0.55,0.75) -- (3.85,0.75);
+  \fill (0.55,0.75) circle (1.15pt);
+  \fill (3.85,0.75) circle (1.15pt);
+  \node[anchor=north east,inner sep=1pt] at (0.50,0.72) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (3.90,0.72) {$A'$};
+  % h
+  \draw[line width=0.35pt] (4.05,0.75) -- (4.05,1.55);
+  \draw[line width=0.32pt] (3.95,0.75) -- (4.15,0.75);
+  \draw[line width=0.32pt] (3.95,1.55) -- (4.15,1.55);
+  \node[anchor=west,inner sep=2pt] at (4.12,1.15) {$h$};
+\end{tikzpicture}%
+}
+\caption{（第29题）}
 \end{figure}
 
 \emph{（第29题）}
@@ -33991,14 +34152,52 @@ S _ {1} v _ {1} = S _ {2} v _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第524页）}]{assets/physics-1/fig-p0524-01.png}}
-\caption{图示（原PDF第524页）}
+% fig-alt: （第33题）：弹簧原长 $L_0$，悬挂平衡后伸长 $L_0/2$，总长 $L$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 顶梁
+  \draw[line width=0.7pt] (-0.15,3.05) -- (2.85,3.05);
+  % 左弹簧 L0
+  \draw[line width=0.55pt,decorate,decoration={zigzag,segment length=2.1mm,amplitude=1.35mm}]
+    (0.55,3.05) -- (0.55,1.35);
+  \draw[line width=0.4pt,<->] (0.05,3.05) -- (0.05,1.35);
+  \node[anchor=east,inner sep=1pt] at (0.0,2.20) {$L_0$};
+  % 右弹簧 L = L0 + L0/2
+  \draw[line width=0.55pt,decorate,decoration={zigzag,segment length=2.6mm,amplitude=1.35mm}]
+    (2.05,3.05) -- (2.05,0.50);
+  \draw[line width=0.35pt,dash pattern=on 1.4pt off 1.1pt] (0.55,1.35) -- (2.05,1.35);
+  \draw[line width=0.4pt,<->] (1.35,1.35) -- (1.35,0.50);
+  \node[anchor=west,inner sep=1pt] at (1.40,0.92) {$\frac{L_0}{2}$};
+  \draw[line width=0.4pt,<->] (2.55,3.05) -- (2.55,0.50);
+  \node[anchor=west,inner sep=1pt] at (2.60,1.78) {$L$};
+\end{tikzpicture}%
+}
+\caption{（第33题）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第33题)}]{assets/physics-1/fig-p0524-02.png}}
-\caption{(第33题)}
+% fig-alt: （第33题）：光滑水平面内弹簧拉小球 $B$ 绕 $O$ 作匀速圆周运动。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 水平面（透视平行四边形）
+  \draw[line width=0.55pt] (-0.15,0.35) -- (3.55,0.35) -- (4.15,1.85) -- (0.45,1.85) -- cycle;
+  % 虚线椭圆轨迹（圆心约 (2.0,1.05)）
+  \draw[line width=0.4pt,dash pattern=on 1.5pt off 1.1pt]
+    (2.05,1.05) ellipse[x radius=1.35,y radius=0.55];
+  % 转向箭头（上缘向左，俯视逆时针）
+  \draw[line width=0.45pt,->]
+    (2.55,1.52) arc[start angle=50,end angle=115,x radius=1.35,y radius=0.55];
+  % 弹簧 O→B
+  \fill (2.05,1.05) circle (1.15pt);
+  \node[anchor=north east,inner sep=1pt] at (1.98,1.00) {$O$};
+  \draw[line width=0.5pt,decorate,decoration={zigzag,segment length=2.0mm,amplitude=1.15mm}]
+    (2.05,1.05) -- (3.40,1.05);
+  \fill (3.40,1.05) circle (1.3pt);
+  \node[anchor=north west,inner sep=1pt] at (3.45,0.98) {$B$};
+\end{tikzpicture}%
+}
+\caption{（第33题）}
 \end{figure}
 
 \emph{（第33题）}
@@ -34020,8 +34219,40 @@ S _ {1} v _ {1} = S _ {2} v _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第35题)}]{assets/physics-1/fig-p0524-03.png}}
-\caption{(第35题)}
+% fig-alt: （第35题）：光滑铜杆 $AB$ 绕竖直轴 $OC$ 以角速度 $\omega$ 转动；铜环 $m_1$、$m_2$ 距轴分别为 $l_1$、$l_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 竖直轴 OC（剖面影线）
+  \fill[pattern=north east lines,pattern color=black!70] (-0.14,0.15) rectangle (0.14,2.55);
+  \draw[line width=0.5pt] (-0.14,0.15) rectangle (0.14,2.55);
+  \draw[line width=0.35pt,dash pattern=on 1.3pt off 1.0pt] (0,2.70) -- (0,0.05);
+  \node[anchor=south,inner sep=1pt] at (0,2.58) {$O$};
+  \node[anchor=north,inner sep=1pt] at (0,0.12) {$C$};
+  % 水平杆 AB
+  \fill[pattern=north east lines,pattern color=black!70] (-2.55,2.28) rectangle (2.55,2.52);
+  \draw[line width=0.5pt] (-2.55,2.28) rectangle (2.55,2.52);
+  \node[anchor=east,inner sep=2pt] at (-2.58,2.40) {$A$};
+  \node[anchor=west,inner sep=2pt] at (2.58,2.40) {$B$};
+  % 铜环 m1（左，较薄）、m2（右，较厚）
+  \fill[pattern=horizontal lines,pattern color=black!70] (-1.85,2.05) rectangle (-1.55,2.75);
+  \draw[line width=0.5pt] (-1.85,2.05) rectangle (-1.55,2.75);
+  \node[anchor=south,inner sep=1pt] at (-1.70,2.78) {$m_1$};
+  \fill[pattern=horizontal lines,pattern color=black!70] (0.95,2.00) rectangle (1.55,2.80);
+  \draw[line width=0.5pt] (0.95,2.00) rectangle (1.55,2.80);
+  \node[anchor=south,inner sep=1pt] at (1.25,2.83) {$m_2$};
+  % 尺寸 l1、l2
+  \draw[line width=0.35pt,<->] (0,2.95) -- (-1.70,2.95);
+  \node[anchor=south,inner sep=1pt] at (-0.85,2.98) {$l_1$};
+  \draw[line width=0.35pt,<->] (0,2.95) -- (1.25,2.95);
+  \node[anchor=south,inner sep=1pt] at (0.62,2.98) {$l_2$};
+  \draw[line width=0.3pt] (0,2.88) -- (0,3.02);
+  % ω
+  \draw[line width=0.45pt,->]
+    (0.35,1.15) arc[start angle=-20,end angle=200,radius=0.42];
+  \node[anchor=west,inner sep=2pt] at (0.55,1.55) {$\omega$};
+\end{tikzpicture}%
+}
+\caption{（第35题）}
 \end{figure}
 
 \emph{（第35题）}
