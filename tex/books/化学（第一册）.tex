@@ -1728,8 +1728,54 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2-3 铁丝在氧气里燃烧}]{assets/chemistry-1/fig-p0049-01.png}}
-\caption{图 2-3 铁丝在氧气里燃烧}
+\fitfig{%
+% fig-alt: 集气瓶盖玻片穿入铁丝，瓶内螺旋铁丝燃烧火花四射，瓶底有水；右标铁丝、水
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 瓶身
+  \draw[line width=0.7pt]
+    (-1.02,-2.48) -- (-1.02,-0.42)
+    -- (-0.78,-0.18) -- (-0.58,-0.18) -- (-0.58,-0.02)
+    -- (0.58,-0.02) -- (0.58,-0.18) -- (0.78,-0.18)
+    -- (1.02,-0.42) -- (1.02,-2.48);
+  \draw[line width=0.7pt] (-1.02,-2.48)
+    arc[start angle=180, end angle=360, x radius=1.02, y radius=0.24];
+  \draw[line width=0.5pt] (-0.82,-2.40)
+    arc[start angle=180, end angle=360, x radius=0.82, y radius=0.14];
+  % 水
+  \fill[black!12]
+    (-1.02,-1.92) -- (1.02,-1.92) -- (1.02,-2.48)
+    arc[start angle=0, end angle=-180, x radius=1.02, y radius=0.24] -- cycle;
+  \draw[line width=0.7pt]
+    (-1.02,-2.48) -- (-1.02,-0.42)
+    -- (-0.78,-0.18) -- (-0.58,-0.18) -- (-0.58,-0.02)
+    -- (0.58,-0.02) -- (0.58,-0.18) -- (0.78,-0.18)
+    -- (1.02,-0.42) -- (1.02,-2.48);
+  \draw[line width=0.7pt] (-1.02,-2.48)
+    arc[start angle=180, end angle=360, x radius=1.02, y radius=0.24];
+  \draw[line width=0.55pt] (-1.02,-1.92) -- (1.02,-1.92);
+  % 盖玻片
+  \fill[white] (0,0.06) ellipse (1.08 and 0.16);
+  \draw[line width=0.7pt] (0,0.06) ellipse (1.08 and 0.16);
+  \draw[line width=0.45pt] (0,0.12) ellipse (0.78 and 0.09);
+  \fill[white] (0,0.08) circle (0.06);
+  \draw[line width=0.5pt] (0,0.08) circle (0.06);
+  % 铁丝与螺旋
+  \draw[line width=0.7pt] (0,2.55) -- (0,-0.28);
+  \foreach \i in {0,1,2,3,4,5} {
+    \draw[line width=0.65pt] (0,{-0.32-0.13*\i}) ellipse (0.22 and 0.07);
+  }
+  % 火花
+  \foreach \a/\r in {10/0.62, 30/0.48, 50/0.70, 75/0.42, 95/0.66, 120/0.50,
+      145/0.72, 170/0.44, 190/0.60, 215/0.48, 240/0.70, 260/0.40,
+      280/0.64, 305/0.46, 325/0.68, 345/0.42} {
+    \draw[line width=0.5pt] ({0.10*cos(\a)},{-0.70+0.10*sin(\a)})
+      -- ({\r*cos(\a)},{-0.70+\r*sin(\a)});
+  }
+  \node[anchor=west] at (1.18,-0.62) {铁丝};
+  \node[anchor=west] at (1.18,-1.92) {水};
+\end{tikzpicture}%
+}
+\caption{图 2·3 铁丝在氧气里燃烧}
 \end{figure}
 
 \emph{图 2·3 铁丝在氧气里燃烧}
@@ -1811,7 +1857,93 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·4 氧炔吹管}]{assets/chemistry-1/fig-p0052-01.png}}
+\fitfig{%
+% fig-alt: 氧炔吹管剖面：左弯管嘴，内管通氧气、外管乙炔沿管身通到混合区再至管口，右上入口标乙炔、右下入口标氧气
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 金属外壁（剖面斜线）
+  \fill[pattern=north east lines, pattern color=black]
+    (0.10,-1.32) -- (0.10,-0.20)
+    .. controls (0.10,0.46) and (0.42,0.50) .. (1.20,0.50)
+    -- (3.55,0.50)
+    -- (3.78,0.72) -- (4.72,0.72) -- (4.95,0.50)
+    -- (9.40,0.50) -- (9.40,0.30)
+    -- (10.62,0.30) -- (10.62,0.10) -- (9.40,0.10)
+    -- (9.40,-0.10)
+    -- (10.62,-0.10) -- (10.62,-0.30) -- (9.40,-0.30)
+    -- (9.40,-0.50)
+    -- (4.95,-0.50) -- (4.72,-0.72) -- (3.78,-0.72) -- (3.55,-0.50)
+    -- (1.20,-0.50)
+    .. controls (0.70,-0.50) and (0.66,-0.18) .. (0.66,-0.18)
+    -- (0.66,-1.32) -- cycle;
+  % 混合气通道通至管口
+  \fill[white]
+    (0.28,-1.32) -- (0.28,-0.20)
+    .. controls (0.28,0.16) and (0.55,0.22) .. (1.20,0.22)
+    -- (4.02,0.22) -- (4.38,0.00) -- (4.02,-0.22)
+    -- (1.20,-0.22)
+    .. controls (0.55,-0.22) and (0.48,-0.18) .. (0.48,-0.18)
+    -- (0.48,-1.32) -- cycle;
+  % 氧气内管接到下入口
+  \fill[white]
+    (4.38,0.00) -- (4.68,0.12) -- (9.40,0.12) -- (9.40,-0.12) -- (4.68,-0.12) -- cycle;
+  % 乙炔环隙沿管身通到混合区（与混合气通道共边，非盲端）
+  \fill[white]
+    (4.02,0.22) -- (4.38,0.00) -- (4.38,0.12) -- (4.50,0.18)
+    -- (9.40,0.18) -- (9.40,0.34) -- (4.95,0.34)
+    -- (4.72,0.52) -- (4.20,0.42) -- cycle;
+  \fill[white]
+    (4.02,-0.22) -- (4.38,0.00) -- (4.38,-0.12) -- (4.50,-0.18)
+    -- (9.40,-0.18) -- (9.40,-0.34) -- (4.95,-0.34)
+    -- (4.72,-0.52) -- (4.20,-0.42) -- cycle;
+  % 乙炔入口孔
+  \fill[white] (9.40,0.10) rectangle (10.58,0.30);
+  % 氧气入口孔
+  \fill[white] (9.40,-0.30) rectangle (10.58,-0.10);
+  % 外轮廓
+  \draw[line width=0.7pt]
+    (0.10,-1.32) -- (0.10,-0.20)
+    .. controls (0.10,0.46) and (0.42,0.50) .. (1.20,0.50)
+    -- (3.55,0.50)
+    -- (3.78,0.72) -- (4.72,0.72) -- (4.95,0.50)
+    -- (9.40,0.50) -- (9.40,0.30)
+    -- (10.62,0.30) -- (10.62,0.10) -- (9.40,0.10)
+    -- (9.40,-0.10)
+    -- (10.62,-0.10) -- (10.62,-0.30) -- (9.40,-0.30)
+    -- (9.40,-0.50)
+    -- (4.95,-0.50) -- (4.72,-0.72) -- (3.78,-0.72) -- (3.55,-0.50)
+    -- (1.20,-0.50)
+    .. controls (0.70,-0.50) and (0.66,-0.18) .. (0.66,-0.18)
+    -- (0.66,-1.32);
+  % 管口保持开口，不封死
+  \draw[line width=0.5pt]
+    (0.28,-1.32) -- (0.28,-0.20)
+    .. controls (0.28,0.16) and (0.55,0.22) .. (1.20,0.22)
+    -- (4.02,0.22) -- (4.38,0.00);
+  \draw[line width=0.5pt]
+    (0.48,-1.32) -- (0.48,-0.18)
+    .. controls (0.48,-0.18) and (0.55,-0.22) .. (1.20,-0.22)
+    -- (4.02,-0.22) -- (4.38,0.00);
+  \draw[line width=0.5pt] (4.38,0.00) -- (4.68,0.12) -- (9.40,0.12);
+  \draw[line width=0.5pt] (4.38,0.00) -- (4.68,-0.12) -- (9.40,-0.12);
+  \draw[line width=0.45pt] (4.02,0.22) -- (4.20,0.42) -- (4.72,0.52) -- (4.95,0.34) -- (9.40,0.34);
+  \draw[line width=0.45pt] (4.02,-0.22) -- (4.20,-0.42) -- (4.72,-0.52) -- (4.95,-0.34) -- (9.40,-0.34);
+  \draw[line width=0.45pt] (4.38,0.12) -- (4.50,0.18) -- (9.40,0.18);
+  \draw[line width=0.45pt] (4.38,-0.12) -- (4.50,-0.18) -- (9.40,-0.18);
+  % 入口螺帽
+  \draw[line width=0.55pt] (10.18,0.10) -- (10.18,0.30);
+  \draw[line width=0.55pt] (10.34,0.10) -- (10.34,0.30);
+  \draw[line width=0.55pt] (10.18,-0.30) -- (10.18,-0.10);
+  \draw[line width=0.55pt] (10.34,-0.30) -- (10.34,-0.10);
+  % 乙炔阀柄
+  \draw[line width=0.6pt] (10.05,0.30) -- (10.05,0.68) -- (10.42,0.78);
+  \fill (10.05,0.68) circle (0.04);
+  % 气体入口箭头与标注
+  \draw[->, line width=0.65pt] (11.45,0.20) -- (10.70,0.20);
+  \node[anchor=west] at (11.50,0.20) {乙炔};
+  \draw[->, line width=0.65pt] (11.45,-0.20) -- (10.70,-0.20);
+  \node[anchor=west] at (11.50,-0.20) {氧气};
+\end{tikzpicture}%
+}
 \caption{图 2·4 氧炔吹管}
 \end{figure}
 
@@ -1823,15 +1955,93 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2-5 利用氧炔吹管焊美金}]{assets/chemistry-1/fig-p0053-01.png}}
-\caption{图 2-5 利用氧炔吹管焊美金}
+\fitfig{%
+% fig-alt: 左手持焊条、右手持氧炔吹管焊接金属板，焊缝处火花；标焊条、氧炔吹管、乙炔、氧气
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 金属板
+  \draw[line width=0.7pt] (0.50,1.00) -- (6.40,1.00) -- (7.60,2.80) -- (1.70,2.80) -- cycle;
+  \draw[line width=0.7pt] (0.50,1.00) -- (0.50,0.82) -- (6.40,0.82) -- (6.40,1.00);
+  \draw[line width=0.45pt] (1.10,1.90) -- (7.00,1.90);
+  % 焊缝火花
+  \foreach \a/\r in {10/0.55, 35/0.38, 60/0.62, 90/0.42, 120/0.58, 150/0.36,
+      180/0.50, 210/0.40, 240/0.64, 270/0.34, 300/0.52, 330/0.40} {
+    \draw[line width=0.5pt] (1.88,2.02) -- ++({\r*cos(\a)},{\r*sin(\a)});
+  }
+  % 焊条
+  \draw[line width=0.7pt] (0.62,0.18) -- (1.78,1.88);
+  \node[anchor=east] at (0.88,1.18) {焊条};
+  % 左手：袖口+拇指，握住焊条
+  \draw[line width=0.6pt] (0.15,-0.55) -- (0.55,-0.05) -- (0.72,0.05) -- (0.42,-0.62) -- cycle;
+  \draw[line width=0.6pt] (0.22,-0.08) -- (0.05,0.22) -- (0.28,0.38) -- (0.52,0.08);
+  \draw[line width=0.55pt] (0.48,0.12) -- (0.62,0.32) -- (0.78,0.22);
+  % 吹管（双线管身）
+  \draw[line width=0.55pt, double, double distance=2.3pt]
+    (1.95,2.08) .. controls (2.55,2.42) and (3.65,2.22) .. (5.15,1.78)
+    -- (6.35,1.48);
+  \node[anchor=south] at (4.55,2.12) {氧炔吹管};
+  % 阀体
+  \draw[line width=0.65pt] (6.15,1.62) rectangle (6.72,1.28);
+  \draw[line width=0.5pt] (6.28,1.62) -- (6.28,1.82) -- (6.55,1.88) -- (6.55,1.62);
+  \draw[line width=0.65pt] (6.55,1.42) rectangle (7.12,1.12);
+  \draw[line width=0.5pt] (6.70,1.12) -- (6.70,0.92) -- (6.95,0.85);
+  % 右手握住柄部
+  \draw[line width=0.6pt] (6.85,1.55) -- (7.55,1.62) -- (7.62,1.22) -- (6.92,1.12) -- cycle;
+  \draw[line width=0.6pt] (7.55,1.42) -- (8.25,1.28) -- (8.18,0.95) -- (7.48,1.08);
+  \draw[line width=0.55pt] (6.95,1.55) -- (6.82,1.85) -- (7.15,1.95) -- (7.28,1.60);
+  % 皮管
+  \draw[line width=0.65pt] (7.12,1.12) .. controls (7.35,0.45) and (7.48,0.05) .. (7.52,-0.22);
+  \draw[line width=0.65pt] (6.95,1.08) .. controls (7.12,0.40) and (7.22,0.00) .. (7.25,-0.22);
+  \node[anchor=west] at (7.68,-0.08) {乙炔};
+  \node[anchor=west] at (7.68,-0.35) {氧气};
+\end{tikzpicture}%
+}
+\caption{图 2·5 利用氧炔吹管焊接金属}
 \end{figure}
 
 \emph{图 2·5 利用氧炔吹管焊接金属}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·6 利用氧炔吹管切割金属}]{assets/chemistry-1/fig-p0053-02.png}}
+\fitfig{%
+% fig-alt: 切割用氧炔吹管附加氧气管，喷嘴向下切割金属板，火花飞溅；标切割用的氧炔吹管、氧气、乙炔
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 金属板（可见厚度）
+  \draw[line width=0.7pt] (0.10,0.52) -- (5.90,0.52) -- (7.20,1.82) -- (1.40,1.82) -- cycle;
+  \draw[line width=0.7pt] (0.10,0.52) -- (0.10,0.25) -- (5.90,0.25) -- (5.90,0.52);
+  \draw[line width=0.7pt] (5.90,0.25) -- (7.20,1.55) -- (7.20,1.82);
+  % 切口火花
+  \foreach \a/\r in {200/0.55, 220/0.72, 240/0.48, 255/0.80, 270/0.42,
+      290/0.70, 310/0.50, 330/0.38, 160/0.45, 140/0.32} {
+    \draw[line width=0.5pt] (1.12,0.42) -- ++({\r*cos(\a)},{\r*sin(\a)});
+  }
+  \draw[line width=0.55pt] (1.00,0.25) -- (1.48,-0.22);
+  % 喷嘴朝下
+  \draw[line width=0.55pt, double, double distance=2.2pt] (1.22,0.55) -- (1.22,1.18);
+  \draw[line width=0.7pt] (0.95,1.18) rectangle (1.52,1.48);
+  % 管身
+  \draw[line width=0.55pt, double, double distance=2.6pt] (1.52,1.35) -- (5.35,2.28);
+  % 切割用附属氧气管及阀门
+  \draw[line width=0.6pt, double, double distance=1.5pt] (4.55,2.18) -- (5.15,2.55);
+  \draw[line width=0.65pt] (5.15,2.55) circle (0.22);
+  \draw[line width=0.5pt] (5.02,2.55) -- (5.28,2.55);
+  \draw[line width=0.5pt] (5.15,2.42) -- (5.15,2.68);
+  \draw[line width=0.45pt] (4.28,2.88) -- (5.00,2.72);
+  \node[anchor=east] at (4.25,2.95) {切割用的氧炔吹管};
+  % 后部阀组
+  \draw[line width=0.65pt] (5.35,2.15) rectangle (6.15,2.48);
+  \draw[line width=0.55pt] (5.85,2.48) circle (0.16);
+  \draw[line width=0.55pt] (6.28,2.18) circle (0.14);
+  % 右手握住后部
+  \draw[line width=0.6pt] (6.05,2.55) -- (6.85,2.68) -- (6.95,2.22) -- (6.12,2.08) -- cycle;
+  \draw[line width=0.6pt] (6.85,2.45) -- (7.55,2.35) -- (7.48,1.98) -- (6.78,2.08);
+  \draw[line width=0.55pt] (6.20,2.55) -- (6.15,2.88) -- (6.48,2.95) -- (6.55,2.62);
+  % 皮管
+  \draw[line width=0.65pt] (6.28,2.32) -- (8.15,2.52);
+  \draw[line width=0.65pt] (6.15,2.08) -- (8.05,2.18);
+  \node[anchor=west] at (8.22,2.55) {氧气};
+  \node[anchor=west] at (8.12,2.15) {乙炔};
+\end{tikzpicture}%
+}
 \caption{图 2·6 利用氧炔吹管切割金属}
 \end{figure}
 
@@ -1892,7 +2102,82 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·7 氯酸钾的分解}]{assets/chemistry-1/fig-p0056-01.png}}
+\fitfig{%
+% fig-alt: （a）试管口朝右上，酒精灯在氯酸钾圆底下方加热至熔化尚未放氧；（b）向熔化氯酸钾加入二氧化锰，带余烬的木条在管口，氧气迅速放出
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % ===== (a) =====
+  \begin{scope}[shift={(0,0)}]
+    % 酒精灯
+    \draw[line width=0.7pt] (-0.15,-2.55) ellipse (0.72 and 0.18);
+    \draw[line width=0.7pt] (-0.87,-2.55) -- (-0.95,-2.05)
+      arc[start angle=180, end angle=0, x radius=0.80, y radius=0.22] -- (0.57,-2.55);
+    \fill[black!15] (-0.90,-2.22) -- (0.60,-2.22)
+      arc[start angle=0, end angle=180, x radius=0.75, y radius=0.16] -- cycle;
+    \draw[line width=0.55pt] (-0.90,-2.22) -- (0.60,-2.22);
+    \draw[line width=0.65pt] (-0.22,-2.05) -- (-0.22,-1.42) -- (-0.08,-1.42) -- (-0.08,-2.05);
+    % 火焰
+    \draw[line width=0.6pt] (-0.28,-1.42)
+      .. controls (-0.32,-0.95) and (-0.22,-0.55) .. (-0.15,-0.32)
+      .. controls (-0.08,-0.55) and (0.02,-0.95) .. (-0.02,-1.42);
+    \draw[line width=0.45pt] (-0.20,-1.42)
+      .. controls (-0.22,-1.12) and (-0.18,-0.88) .. (-0.15,-0.72)
+      .. controls (-0.12,-0.88) and (-0.08,-1.12) .. (-0.10,-1.42);
+    % 斜试管：口朝右上，圆底在灯焰上方
+    \begin{scope}[shift={(-0.12,0.05)}, rotate=-36]
+      \draw[line width=0.7pt] (-0.28,0.00)
+        -- (-0.28,2.70) -- (0.28,2.70) -- (0.28,0.00)
+        arc[start angle=0, end angle=-180, x radius=0.28, y radius=0.28];
+      \fill[black!18] (-0.26,0.10) -- (0.26,0.10)
+        arc[start angle=0, end angle=-180, x radius=0.26, y radius=0.26] -- cycle;
+      % 试管夹
+      \draw[line width=0.7pt] (-0.42,2.22) -- (0.42,2.22) -- (0.42,2.50) -- (-0.42,2.50) -- cycle;
+      \draw[line width=0.55pt] (0.42,2.36) -- (1.40,3.15) -- (1.40,3.00) -- (1.85,3.22);
+      \draw[line width=0.55pt] (0.42,2.36) -- (1.40,3.28) -- (1.40,3.15);
+      % 右手握住夹柄
+      \draw[line width=0.6pt] (1.35,3.05) -- (2.05,3.22) -- (2.10,3.48) -- (1.40,3.32) -- cycle;
+      \draw[line width=0.6pt] (2.05,3.28) -- (2.55,3.38) -- (2.50,3.10) -- (1.95,3.05);
+      \draw[line width=0.55pt] (1.45,3.32) -- (1.40,3.55) -- (1.68,3.58) -- (1.72,3.35);
+    \end{scope}
+    \node[align=center, font=\scriptsize, anchor=north, text width=4.4cm] at (0.85,-2.85)
+      {（a）氯酸钾加热到熔化，但还没有氧气分解出来};
+  \end{scope}
+  % ===== (b) =====
+  \begin{scope}[shift={(6.35,0.15)}]
+    % 直立试管
+    \draw[line width=0.7pt] (-0.32,-1.55)
+      -- (-0.32,1.15) -- (0.32,1.15) -- (0.32,-1.55)
+      arc[start angle=0, end angle=-180, x radius=0.32, y radius=0.32];
+    \fill[black!12] (-0.30,-0.55) -- (0.30,-0.55) -- (0.30,-1.55)
+      arc[start angle=0, end angle=-180, x radius=0.30, y radius=0.30] -- cycle;
+    \draw[line width=0.45pt] (-0.30,-0.55) -- (0.30,-0.55);
+    % 气泡
+    \foreach \p in {(-0.12,-0.95), (0.08,-1.15), (-0.05,-1.35), (0.12,-0.78), (-0.16,-0.70)} {
+      \draw[line width=0.4pt] \p circle (0.05);
+    }
+    % 试管夹
+    \draw[line width=0.7pt] (-0.48,0.72) -- (0.48,0.72) -- (0.48,1.02) -- (-0.48,1.02) -- cycle;
+    \draw[line width=0.55pt] (0.48,0.87) -- (1.45,0.87) -- (1.45,0.72) -- (2.00,0.72);
+    \draw[line width=0.55pt] (0.48,0.87) -- (1.45,1.02) -- (1.45,0.87);
+    % 右手握住夹柄
+    \draw[line width=0.6pt] (1.90,0.58) -- (2.60,0.62) -- (2.65,0.88) -- (1.95,0.86) -- cycle;
+    \draw[line width=0.6pt] (2.60,0.68) -- (3.20,0.58) -- (3.15,0.32) -- (2.52,0.42);
+    \draw[line width=0.55pt] (2.00,0.86) -- (1.95,1.08) -- (2.22,1.12) -- (2.28,0.86);
+    % 带余烬的木条
+    \draw[line width=0.7pt] (0.08,1.15) -- (0.08,2.35);
+    \draw[line width=0.5pt] (0.02,1.22) -- (0.14,1.22);
+    \node[anchor=west] at (0.55,1.85) {带余烬的木条};
+    % 左手持小瓶加入二氧化锰
+    \draw[line width=0.65pt] (-0.55,1.55) ellipse (0.18 and 0.12);
+    \draw[line width=0.65pt] (-0.73,1.55) -- (-0.68,1.95) -- (-0.42,1.95) -- (-0.37,1.55);
+    \draw[line width=0.5pt] (-0.62,1.95) -- (-0.62,2.12) -- (-0.48,2.12) -- (-0.48,1.95);
+    \draw[line width=0.6pt] (-1.35,1.95) -- (-0.75,1.85) -- (-0.70,2.18) -- (-1.28,2.28) -- cycle;
+    \draw[line width=0.6pt] (-1.35,2.05) -- (-1.85,2.15) -- (-1.80,2.45) -- (-1.28,2.32);
+    \draw[line width=0.55pt] (-0.78,2.18) -- (-0.72,2.42) -- (-0.48,2.38) -- (-0.55,2.15);
+    \node[align=center, font=\scriptsize, anchor=north, text width=4.6cm] at (0.55,-2.95)
+      {（b）在熔化的氯酸钾里加入少量二氧化锰，氧气迅速跑出};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 2·7 氯酸钾的分解}
 \end{figure}
 
@@ -1921,8 +2206,47 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图29 氧气钢筒}]{assets/chemistry-1/fig-p0058-01.png}}
-\caption{图29 氧气钢筒}
+\fitfig{%
+% fig-alt: 氧气钢筒立放，颈上钢筒阀门接减压表与两根导管
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 筒身
+  \draw[line width=0.7pt]
+    (-0.98,3.15) -- (-1.08,-2.55)
+    arc[start angle=180, end angle=360, x radius=1.08, y radius=0.28]
+    -- (0.98,3.15);
+  \draw[line width=0.7pt] (0,3.15) ellipse (0.98 and 0.22);
+  \draw[line width=0.45pt] (-0.52,3.05) -- (-0.58,-2.50);
+  \draw[line width=0.45pt] (0.22,3.08) -- (0.18,-2.52);
+  % 底座
+  \draw[line width=0.7pt] (-1.28,-2.62) -- (-1.12,-2.42) -- (1.12,-2.42) -- (1.28,-2.62)
+    -- (1.12,-2.92) -- (-1.12,-2.92) -- cycle;
+  % 瓶颈
+  \draw[line width=0.7pt] (-0.28,3.32) -- (-0.22,3.72) -- (0.22,3.72) -- (0.28,3.32);
+  \draw[line width=0.55pt] (0,3.32) ellipse (0.28 and 0.08);
+  % 钢筒阀门（颈上手轮）
+  \draw[line width=0.7pt] (-0.10,3.72) -- (-0.10,4.15) -- (0.10,4.15) -- (0.10,3.72);
+  \draw[line width=0.65pt] (0.10,4.02) -- (0.55,4.02) -- (0.55,4.22) -- (0.10,4.22);
+  \draw[line width=0.55pt] (0.55,3.92) -- (0.55,4.32);
+  \draw[line width=0.55pt] (0.42,4.12) -- (0.68,4.12);
+  % 减压器与压力表
+  \draw[line width=0.65pt] (-0.10,3.92) -- (-1.15,3.92) -- (-1.15,3.72) -- (-0.10,3.72);
+  \draw[line width=0.6pt] (-1.55,3.82) circle (0.38);
+  \draw[line width=0.45pt] (-1.55,3.82) -- (-1.42,4.08);
+  \draw[line width=0.5pt] (-1.55,3.48) -- (-1.55,3.44);
+  % 侧向小表
+  \draw[line width=0.6pt] (-2.15,4.15) ellipse (0.16 and 0.28);
+  \draw[line width=0.5pt] (-1.98,3.95) -- (-1.70,3.95);
+  % 小阀门
+  \draw[line width=0.55pt] (-1.85,3.72) -- (-1.85,3.52) -- (-1.55,3.52) -- (-1.55,3.44);
+  \draw[line width=0.5pt] (-1.95,3.52) -- (-1.75,3.52);
+  \draw[line width=0.55pt] (-1.35,3.72) -- (-1.35,3.42);
+  \draw[line width=0.5pt] (-1.48,3.42) -- (-1.22,3.42);
+  % 导管
+  \draw[line width=0.65pt] (-1.95,4.15) .. controls (-2.55,4.35) and (-2.85,4.15) .. (-3.15,3.85);
+  \draw[line width=0.65pt] (-1.55,3.44) -- (-1.55,2.55) .. controls (-1.55,2.15) and (-1.85,1.95) .. (-2.05,1.75);
+\end{tikzpicture}%
+}
+\caption{图 2·9 氧气钢筒}
 \end{figure}
 
 \emph{图 2·9 氧气钢筒}
@@ -2156,7 +2480,67 @@ M=1\times12+2\times16=44
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·12 物质不灭定律的简单实验}]{assets/chemistry-1/fig-p0066-01.png}}
+\fitfig{%
+% fig-alt: （a）天平左盘两杯溶液与右盘砝码平衡；（b）反应后一烧杯生沉淀，天平仍平衡
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  \tikzset{
+    balancebody/.pic={
+      % 左右座脚
+      \draw[line width=0.7pt]
+        (-1.85,-1.70) -- (-1.68,-1.38) -- (-1.18,-1.38) -- (-1.02,-1.70)
+        -- (-1.18,-1.88) -- (-1.68,-1.88) -- cycle;
+      \draw[line width=0.7pt]
+        (1.02,-1.70) -- (1.18,-1.38) -- (1.68,-1.38) -- (1.85,-1.70)
+        -- (1.68,-1.88) -- (1.18,-1.88) -- cycle;
+      % 中座
+      \draw[line width=0.7pt] (-0.42,-1.52) rectangle (0.42,-0.58);
+      % 中柱与指针
+      \draw[line width=0.7pt] (-0.12,-0.58) rectangle (0.12,0.48);
+      \draw[line width=0.65pt] (0,0.48) -- (0,1.92);
+      \draw[line width=0.7pt] (-0.32,1.85) -- (0,2.22) -- (0.32,1.85) -- cycle;
+      \draw[line width=0.45pt] (-0.18,2.00) -- (0.18,2.00);
+      % 横梁与游码
+      \draw[line width=0.7pt] (-2.20,0.40) rectangle (2.20,0.58);
+      \fill[black] (1.08,0.49) circle (0.05);
+      % 立柱（由座脚顶到托盘）
+      \draw[line width=0.65pt] (-1.42,-1.38) -- (-1.42,0.22);
+      \draw[line width=0.5pt] (-1.55,-0.18) -- (-1.29,-0.18);
+      \draw[line width=0.5pt] (-1.55,-0.05) -- (-1.29,-0.05);
+      \draw[line width=0.65pt] (1.42,-1.38) -- (1.42,0.22);
+      \draw[line width=0.5pt] (1.29,-0.18) -- (1.55,-0.18);
+      \draw[line width=0.5pt] (1.29,-0.05) -- (1.55,-0.05);
+      \draw[line width=0.5pt] (-1.42,-0.58) -- (1.42,-0.58);
+      % 托盘
+      \draw[line width=0.7pt] (-2.18,0.22) -- (-0.68,0.22) -- (-0.58,0.36) -- (-2.28,0.36) -- cycle;
+      \draw[line width=0.7pt] (0.68,0.22) -- (2.18,0.22) -- (2.28,0.36) -- (0.58,0.36) -- cycle;
+      % 右盘砝码
+      \draw[line width=0.6pt, fill=white] (1.22,0.36) rectangle (1.62,0.60);
+      \draw[line width=0.6pt, fill=white] (1.28,0.60) rectangle (1.56,0.78);
+    }
+  }
+  \begin{scope}[shift={(0,0)}]
+    \pic {balancebody};
+    \draw[line width=0.6pt] (-1.98,0.36) -- (-1.98,1.05) -- (-1.58,1.05) -- (-1.58,0.36);
+    \fill[black!12] (-1.96,0.36) rectangle (-1.60,0.72);
+    \draw[line width=0.45pt] (-1.96,0.72) -- (-1.60,0.72);
+    \draw[line width=0.6pt] (-1.50,0.36) -- (-1.50,1.05) -- (-1.10,1.05) -- (-1.10,0.36);
+    \fill[black!12] (-1.48,0.36) rectangle (-1.12,0.68);
+    \draw[line width=0.45pt] (-1.48,0.68) -- (-1.12,0.68);
+    \node[align=center, font=\scriptsize, anchor=north, text width=4.6cm] at (0,-2.08)
+      {（a）反应前两杯溶液的总重量和砝码平衡};
+  \end{scope}
+  \begin{scope}[shift={(5.55,0)}]
+    \pic {balancebody};
+    \draw[line width=0.6pt] (-1.98,0.36) -- (-1.98,1.05) -- (-1.58,1.05) -- (-1.58,0.36);
+    \fill[black!12] (-1.96,0.36) rectangle (-1.60,0.82);
+    \fill[pattern=north east lines, pattern color=black] (-1.96,0.36) rectangle (-1.60,0.55);
+    \draw[line width=0.45pt] (-1.96,0.82) -- (-1.60,0.82);
+    \draw[line width=0.6pt] (-1.50,0.36) -- (-1.50,1.05) -- (-1.10,1.05) -- (-1.10,0.36);
+    \node[align=center, font=\scriptsize, anchor=north, text width=4.4cm] at (0,-2.08)
+      {（b）反应后生成了新物质，但重量没有改变};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 2·12 物质不灭定律的简单实验}
 \end{figure}
 
@@ -2605,7 +2989,60 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 启普发生器}]{assets/chemistry-1/fig-p0080-01.png}}
+\fitfig{%
+% fig-alt: 启普发生器外形：上为球形漏斗，中球与下半球容器，右上开口橡皮塞接导管与活栓
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 下半球
+  \draw[line width=0.7pt] (0,1.02) ellipse (1.58 and 0.40);
+  \draw[line width=0.7pt] (-1.58,1.02)
+    arc[start angle=180, end angle=360, x radius=1.58, y radius=1.02];
+  \draw[line width=0.45pt] (0,0.98) ellipse (1.38 and 0.30);
+  % 中球
+  \draw[line width=0.7pt] (0,2.18) circle (1.02);
+  % 中球上口
+  \draw[line width=0.65pt] (-0.40,3.12) -- (-0.40,3.32);
+  \draw[line width=0.65pt] (0.40,3.12) -- (0.40,3.32);
+  \draw[line width=0.65pt] (0,3.32) ellipse (0.40 and 0.09);
+  % 上球（球形漏斗）
+  \draw[line width=0.7pt] (0,4.48) circle (1.12);
+  \draw[line width=0.65pt] (-0.30,5.52) -- (-0.26,5.82);
+  \draw[line width=0.65pt] (0.30,5.52) -- (0.26,5.82);
+  \draw[line width=0.7pt] (0,5.92) ellipse (0.46 and 0.12);
+  \draw[line width=0.55pt] (0,5.86) ellipse (0.34 and 0.08);
+  \draw[line width=0.45pt] (0,5.82) ellipse (0.22 and 0.05);
+  % 漏斗长颈（贯穿三室）
+  \draw[line width=0.55pt] (-0.24,5.52) -- (-0.20,4.48) -- (-0.18,2.18) -- (-0.15,0.48);
+  \draw[line width=0.55pt] (0.24,5.52) -- (0.20,4.48) -- (0.18,2.18) -- (0.15,0.48);
+  \draw[line width=0.55pt] (-0.15,0.48)
+    arc[start angle=180, end angle=360, x radius=0.15, y radius=0.10];
+  % 右侧开口、橡皮塞与导管、活栓
+  \begin{scope}[shift={(1.08,2.58)}, rotate=30]
+    \fill[pattern=north east lines, pattern color=black]
+      (-0.20,-0.16) rectangle (0.30,0.16);
+    \draw[line width=0.55pt] (-0.20,-0.16) rectangle (0.30,0.16);
+  \end{scope}
+  \draw[line width=0.65pt] (1.32,2.78) -- (1.78,3.08) -- (3.22,3.08);
+  \draw[line width=0.65pt] (1.38,2.50) -- (1.78,2.88) -- (3.22,2.88);
+  \draw[line width=0.65pt] (2.42,2.78) rectangle (2.78,3.18);
+  \draw[line width=0.55pt] (2.60,3.18) -- (2.60,3.52);
+  \draw[line width=0.55pt] (2.42,3.52) -- (2.78,3.52);
+  \draw[line width=0.45pt] (2.42,3.52) -- (2.42,3.62);
+  \draw[line width=0.45pt] (2.78,3.52) -- (2.78,3.62);
+  % 下半球左侧排水活栓
+  \begin{scope}[shift={(-1.50,0.68)}, rotate=205]
+    \draw[line width=0.55pt] (0.00,-0.06) -- (0.30,-0.06);
+    \draw[line width=0.55pt] (0.00,0.06) -- (0.30,0.06);
+    \draw[line width=0.55pt] (0.24,-0.13) rectangle (0.52,0.13);
+    \draw[line width=0.5pt] (0.38,0.13) -- (0.38,0.32);
+    \draw[line width=0.5pt] (0.24,0.32) -- (0.52,0.32);
+    \draw[line width=0.4pt] (0.24,0.32) -- (0.24,0.40);
+    \draw[line width=0.4pt] (0.52,0.32) -- (0.52,0.40);
+  \end{scope}
+  % 玻璃高光
+  \draw[line width=0.4pt] (-0.58,4.95) arc[start angle=150, end angle=85, radius=0.52];
+  \draw[line width=0.4pt] (-0.52,2.62) arc[start angle=150, end angle=85, radius=0.46];
+\end{tikzpicture}%
+}
 \caption{(a) 启普发生器}
 \end{figure}
 
@@ -2613,7 +3050,66 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 启普发生器的两个组成部分}]{assets/chemistry-1/fig-p0080-02.png}}
+\fitfig{%
+% fig-alt: 启普发生器拆成球形漏斗a与容器b；容器右上开口c接导管与活栓d
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 左：球形漏斗 a
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt] (0,3.55) circle (1.12);
+    \draw[line width=0.65pt] (-0.30,4.58) -- (-0.26,4.88);
+    \draw[line width=0.65pt] (0.30,4.58) -- (0.26,4.88);
+    \draw[line width=0.7pt] (0,4.98) ellipse (0.46 and 0.12);
+    \draw[line width=0.55pt] (0,4.92) ellipse (0.34 and 0.08);
+    \draw[line width=0.45pt] (0,4.88) ellipse (0.22 and 0.05);
+    \draw[line width=0.65pt] (-0.28,2.50) -- (-0.18,0.18);
+    \draw[line width=0.65pt] (0.28,2.50) -- (0.18,0.18);
+    \draw[line width=0.65pt] (-0.18,0.18)
+      arc[start angle=180, end angle=360, x radius=0.18, y radius=0.12];
+    \draw[line width=0.55pt] (-0.24,4.58) -- (-0.22,3.55) -- (-0.28,2.50);
+    \draw[line width=0.55pt] (0.24,4.58) -- (0.22,3.55) -- (0.28,2.50);
+    \draw[line width=0.4pt] (-0.55,4.02) arc[start angle=150, end angle=85, radius=0.50];
+    \node[anchor=west] at (1.18,3.55) {$a$};
+  \end{scope}
+  % 右：容器 b
+  \begin{scope}[shift={(4.15,0)}]
+    \draw[line width=0.7pt] (0,1.02) ellipse (1.58 and 0.40);
+    \draw[line width=0.7pt] (-1.58,1.02)
+      arc[start angle=180, end angle=360, x radius=1.58, y radius=1.02];
+    \draw[line width=0.45pt] (0,0.98) ellipse (1.38 and 0.30);
+    \draw[line width=0.7pt] (0,2.18) circle (1.02);
+    \draw[line width=0.65pt] (-0.42,3.12) -- (-0.42,3.38);
+    \draw[line width=0.65pt] (0.42,3.12) -- (0.42,3.38);
+    \draw[line width=0.7pt] (0,3.48) ellipse (0.52 and 0.12);
+    \draw[line width=0.5pt] (0,3.42) ellipse (0.38 and 0.08);
+    \begin{scope}[shift={(1.08,2.58)}, rotate=30]
+      \fill[pattern=north east lines, pattern color=black]
+        (-0.20,-0.16) rectangle (0.30,0.16);
+      \draw[line width=0.55pt] (-0.20,-0.16) rectangle (0.30,0.16);
+    \end{scope}
+    \draw[line width=0.65pt] (1.32,2.78) -- (1.78,3.08) -- (3.22,3.08);
+    \draw[line width=0.65pt] (1.38,2.50) -- (1.78,2.88) -- (3.22,2.88);
+    \draw[line width=0.65pt] (2.42,2.78) rectangle (2.78,3.18);
+    \draw[line width=0.55pt] (2.60,3.18) -- (2.60,3.52);
+    \draw[line width=0.55pt] (2.42,3.52) -- (2.78,3.52);
+    \draw[line width=0.45pt] (2.42,3.52) -- (2.42,3.62);
+    \draw[line width=0.45pt] (2.78,3.52) -- (2.78,3.62);
+    % 下半球左侧排水活栓
+    \begin{scope}[shift={(-1.50,0.68)}, rotate=205]
+      \draw[line width=0.55pt] (0.00,-0.06) -- (0.30,-0.06);
+      \draw[line width=0.55pt] (0.00,0.06) -- (0.30,0.06);
+      \draw[line width=0.55pt] (0.24,-0.13) rectangle (0.52,0.13);
+      \draw[line width=0.5pt] (0.38,0.13) -- (0.38,0.32);
+      \draw[line width=0.5pt] (0.24,0.32) -- (0.52,0.32);
+      \draw[line width=0.4pt] (0.24,0.32) -- (0.24,0.40);
+      \draw[line width=0.4pt] (0.52,0.32) -- (0.52,0.40);
+    \end{scope}
+    \draw[line width=0.4pt] (-0.52,2.62) arc[start angle=150, end angle=85, radius=0.46];
+    \node[anchor=west] at (1.05,1.35) {$b$};
+    \node[anchor=south] at (1.05,2.92) {$c$};
+    \node[anchor=south] at (2.60,3.68) {$d$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(b) 启普发生器的两个组成部分}
 \end{figure}
 
@@ -2621,7 +3117,84 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c) 产生氢气的情形}]{assets/chemistry-1/fig-p0080-03.png}}
+\fitfig{%
+% fig-alt: 启普发生器产生氢气：球形漏斗内稀硫酸，中球锌粒与酸接触，氢气经活栓放出
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 下半球
+  \draw[line width=0.7pt] (0,1.02) ellipse (1.58 and 0.40);
+  \draw[line width=0.7pt] (-1.58,1.02)
+    arc[start angle=180, end angle=360, x radius=1.58, y radius=1.02];
+  % 中球、上球
+  \draw[line width=0.7pt] (0,2.18) circle (1.02);
+  \draw[line width=0.65pt] (-0.40,3.12) -- (-0.40,3.32);
+  \draw[line width=0.65pt] (0.40,3.12) -- (0.40,3.32);
+  \draw[line width=0.65pt] (0,3.32) ellipse (0.40 and 0.09);
+  \draw[line width=0.7pt] (0,4.48) circle (1.12);
+  \draw[line width=0.65pt] (-0.30,5.52) -- (-0.26,5.82);
+  \draw[line width=0.65pt] (0.30,5.52) -- (0.26,5.82);
+  \draw[line width=0.7pt] (0,5.92) ellipse (0.46 and 0.12);
+  \draw[line width=0.55pt] (0,5.86) ellipse (0.34 and 0.08);
+  \draw[line width=0.45pt] (0,5.82) ellipse (0.22 and 0.05);
+  % 酸液：上球、长颈、下半球与中球下部
+  \begin{scope}
+    \clip (0,4.48) circle (1.10);
+    \fill[black!12] (-1.20,3.36) rectangle (1.20,4.18);
+  \end{scope}
+  \draw[line width=0.5pt] (0,4.18) ellipse (1.02 and 0.18);
+  \fill[black!12] (-0.19,4.18) -- (0.19,4.18) -- (0.15,0.55) -- (-0.15,0.55) -- cycle;
+  \begin{scope}
+    \clip (0,2.18) circle (1.00);
+    \fill[black!12] (-1.10,1.16) rectangle (1.10,2.02);
+  \end{scope}
+  \draw[line width=0.5pt] (0,2.02) ellipse (0.96 and 0.20);
+  \begin{scope}
+    \clip (-1.58,1.02)
+      arc[start angle=180, end angle=360, x radius=1.58, y radius=1.02]
+      -- (1.58,1.02) -- cycle;
+    \fill[black!12] (-1.70,0.00) rectangle (1.70,1.10);
+  \end{scope}
+  % 长颈壁
+  \draw[line width=0.55pt] (-0.24,5.52) -- (-0.20,4.48) -- (-0.18,2.18) -- (-0.15,0.48);
+  \draw[line width=0.55pt] (0.24,5.52) -- (0.20,4.48) -- (0.18,2.18) -- (0.15,0.48);
+  \draw[line width=0.55pt] (-0.15,0.48)
+    arc[start angle=180, end angle=360, x radius=0.15, y radius=0.10];
+  % 锌粒
+  \foreach \x/\y/\r in {-0.22/2.12/0.10, 0.18/2.22/0.09, 0.42/2.00/0.08,
+      -0.48/1.95/0.07, 0.02/1.88/0.08, 0.55/2.18/0.07} {
+    \draw[line width=0.45pt, fill=black!22] (\x,\y) circle (\r);
+  }
+  % 导管与活栓
+  \begin{scope}[shift={(1.08,2.58)}, rotate=30]
+    \fill[pattern=north east lines, pattern color=black]
+      (-0.20,-0.16) rectangle (0.30,0.16);
+    \draw[line width=0.55pt] (-0.20,-0.16) rectangle (0.30,0.16);
+  \end{scope}
+  \draw[line width=0.65pt] (1.32,2.78) -- (1.78,3.08) -- (3.22,3.08);
+  \draw[line width=0.65pt] (1.38,2.50) -- (1.78,2.88) -- (3.22,2.88);
+  \draw[line width=0.65pt] (2.42,2.78) rectangle (2.78,3.18);
+  \draw[line width=0.55pt] (2.60,3.18) -- (2.60,3.52);
+  \draw[line width=0.55pt] (2.42,3.52) -- (2.78,3.52);
+  \draw[line width=0.45pt] (2.42,3.52) -- (2.42,3.62);
+  \draw[line width=0.45pt] (2.78,3.52) -- (2.78,3.62);
+  % 下半球左侧排水活栓
+  \begin{scope}[shift={(-1.50,0.68)}, rotate=205]
+    \draw[line width=0.55pt] (0.00,-0.06) -- (0.30,-0.06);
+    \draw[line width=0.55pt] (0.00,0.06) -- (0.30,0.06);
+    \draw[line width=0.55pt] (0.24,-0.13) rectangle (0.52,0.13);
+    \draw[line width=0.5pt] (0.38,0.13) -- (0.38,0.32);
+    \draw[line width=0.5pt] (0.24,0.32) -- (0.52,0.32);
+    \draw[line width=0.4pt] (0.24,0.32) -- (0.24,0.40);
+    \draw[line width=0.4pt] (0.52,0.32) -- (0.52,0.40);
+  \end{scope}
+  \draw[line width=0.4pt] (-0.58,4.95) arc[start angle=150, end angle=85, radius=0.52];
+  \node[anchor=east] at (-1.40,4.72) {$\mathrm{H_2SO_4}$};
+  \node[anchor=west] at (1.28,4.72) {$a$};
+  \node[anchor=east] at (-1.35,2.32) {Zn};
+  \node[anchor=west] at (1.20,1.28) {$b$};
+  \node[anchor=south] at (1.08,2.92) {$c$};
+  \node[anchor=south] at (2.60,3.68) {$d$};
+\end{tikzpicture}%
+}
 \caption{(c) 产生氢气的情形}
 \end{figure}
 
@@ -2813,8 +3386,45 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2-16 氢气在空气燃烧}]{assets/chemistry-1/fig-p0084-01.png}}
-\caption{图 2-16 氢气在空气燃烧}
+\fitfig{%
+% fig-alt: 弯导管伸入直立玻璃筒，管口火焰燃烧，筒壁附水滴
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 底座
+  \draw[line width=0.7pt] (0,-2.72) ellipse (1.22 and 0.28);
+  \draw[line width=0.7pt] (-1.22,-2.72) -- (-1.22,-2.92);
+  \draw[line width=0.7pt] (1.22,-2.72) -- (1.22,-2.92);
+  \draw[line width=0.7pt] (-1.22,-2.92)
+    arc[start angle=180, end angle=360, x radius=1.22, y radius=0.22];
+  % 筒身
+  \draw[line width=0.7pt] (-0.92,-2.55) -- (-0.92,2.35);
+  \draw[line width=0.7pt] (0.92,-2.55) -- (0.92,2.35);
+  \draw[line width=0.7pt] (0,2.35) ellipse (0.92 and 0.22);
+  \draw[line width=0.5pt] (0,2.42) ellipse (0.78 and 0.16);
+  \draw[line width=0.45pt] (0,-2.55) ellipse (0.78 and 0.16);
+  \draw[line width=0.7pt] (0,-2.55) ellipse (0.92 and 0.22);
+  % 内壁水滴
+  \foreach \p in {(0.55,1.55), (0.62,1.18), (0.48,0.82), (0.70,0.45),
+      (0.52,0.12), (0.66,-0.28), (-0.58,1.35), (-0.48,0.70)} {
+    \draw[line width=0.4pt] \p ellipse (0.07 and 0.10);
+  }
+  % 导管（双线，自左弯入筒内）
+  \draw[line width=0.65pt] (-3.15,2.72) -- (-0.22,2.72) -- (-0.22,0.35);
+  \draw[line width=0.65pt] (-3.15,2.52) -- (-0.42,2.52) -- (-0.42,0.35);
+  \draw[line width=0.55pt] (-0.42,0.35)
+    arc[start angle=180, end angle=360, x radius=0.10, y radius=0.08];
+  \draw[->, line width=0.65pt] (-3.85,2.62) -- (-3.22,2.62);
+  % 火焰
+  \draw[line width=0.6pt] (-0.32,0.42)
+    .. controls (-0.55,0.95) and (-0.22,1.55) .. (-0.32,1.95)
+    .. controls (-0.08,1.55) and (0.12,0.95) .. (-0.12,0.42);
+  \draw[line width=0.45pt] (-0.28,0.48)
+    .. controls (-0.38,0.82) and (-0.28,1.12) .. (-0.32,1.35)
+    .. controls (-0.22,1.12) and (-0.12,0.82) .. (-0.18,0.48);
+  \draw[line width=0.4pt] (0.78,0.82) -- (1.18,1.08);
+  \node[anchor=west] at (1.20,1.10) {水滴};
+\end{tikzpicture}%
+}
+\caption{图 2·16 氢气在空气燃烧}
 \end{figure}
 
 \emph{图 2·16 氢气在空气燃烧}
@@ -2851,7 +3461,81 @@ a 的长颈插在容器 b 内。球形体的上端
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·17 氢气还原氧化铜的实验}]{assets/chemistry-1/fig-p0086-01.png}}
+\fitfig{%
+% fig-alt: 氢气自左通入硬质玻管，酒精灯加热管中氧化铜，右接干燥管凝结水滴；铁架台夹持
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 木垫
+  \draw[line width=0.7pt] (0.85,0.00) -- (2.55,0.00) -- (2.85,0.32) -- (1.15,0.32) -- cycle;
+  \draw[line width=0.7pt] (0.85,0.00) -- (0.85,0.95) -- (1.15,1.27) -- (1.15,0.32);
+  \draw[line width=0.7pt] (2.55,0.00) -- (2.55,0.95) -- (2.85,1.27) -- (2.85,0.32);
+  \draw[line width=0.7pt] (0.85,0.95) -- (2.55,0.95);
+  \draw[line width=0.7pt] (1.15,1.27) -- (2.85,1.27);
+  \draw[line width=0.45pt] (0.95,0.12) -- (2.45,0.82);
+  \draw[line width=0.45pt] (0.95,0.82) -- (2.45,0.12);
+  % 酒精灯
+  \draw[line width=0.7pt] (1.85,1.27) ellipse (0.62 and 0.14);
+  \draw[line width=0.7pt] (1.23,1.27) -- (1.32,1.78)
+    arc[start angle=180, end angle=0, x radius=0.53, y radius=0.12] -- (2.47,1.27);
+  \fill[black!12] (1.28,1.48) -- (2.42,1.48)
+    arc[start angle=0, end angle=180, x radius=0.57, y radius=0.10] -- cycle;
+  \draw[line width=0.5pt] (1.28,1.48) -- (2.42,1.48);
+  \draw[line width=0.65pt] (1.76,1.88) -- (1.76,2.22) -- (1.94,2.22) -- (1.94,1.88);
+  \draw[line width=0.6pt] (1.85,2.22)
+    .. controls (1.62,2.48) and (1.72,2.62) .. (1.85,2.70)
+    .. controls (1.98,2.62) and (2.08,2.48) .. (1.85,2.22);
+  \draw[line width=0.45pt] (1.85,2.22)
+    .. controls (1.76,2.40) and (1.80,2.52) .. (1.85,2.58)
+    .. controls (1.90,2.52) and (1.94,2.40) .. (1.85,2.22);
+  % 铁架台座
+  \draw[line width=0.7pt] (3.55,0.00) -- (6.05,0.00) -- (6.40,0.32) -- (3.90,0.32) -- cycle;
+  \draw[line width=0.7pt] (3.55,0.00) -- (3.55,-0.14) -- (6.05,-0.14) -- (6.05,0.00);
+  \draw[line width=0.7pt] (6.05,-0.14) -- (6.40,0.18) -- (6.40,0.32);
+  \draw[line width=0.45pt] (3.70,0.10) -- (6.20,0.10);
+  \draw[line width=0.45pt] (3.78,0.20) -- (6.28,0.20);
+  \draw[line width=1.0pt] (5.15,0.32) -- (5.15,4.35);
+  \draw[line width=0.5pt] (5.02,4.35) -- (5.28,4.35);
+  % 硬质玻管
+  \draw[line width=0.7pt] (0.55,3.28) -- (6.35,3.28);
+  \draw[line width=0.7pt] (0.55,2.72) -- (6.35,2.72);
+  \draw[line width=0.7pt] (0.55,3.00) ellipse (0.12 and 0.28);
+  \draw[line width=0.7pt] (6.35,3.00) ellipse (0.12 and 0.28);
+  % 左塞与进气管
+  \fill[black!18] (0.42,2.68) rectangle (0.92,3.32);
+  \draw[line width=0.55pt] (0.42,2.68) rectangle (0.92,3.32);
+  \draw[line width=0.65pt] (-0.55,3.08) -- (0.42,3.08);
+  \draw[line width=0.65pt] (-0.55,2.92) -- (0.42,2.92);
+  \draw[->, line width=0.65pt] (-1.55,3.00) -- (-0.62,3.00);
+  \node[anchor=south] at (-1.10,3.12) {氢气};
+  % 氧化铜粉末
+  \fill[black!25] (1.55,2.74) ellipse (0.62 and 0.10);
+  \foreach \p in {(1.35,2.80), (1.52,2.86), (1.70,2.78), (1.88,2.84),
+      (1.22,2.76), (1.62,2.74)} {
+    \fill \p circle (0.035);
+  }
+  \node[anchor=south] at (2.55,3.32) {$a$};
+  \node[anchor=east] at (1.12,2.52) {$\mathrm{CuO}$};
+  % 铁夹
+  \draw[line width=0.65pt] (4.72,2.62) rectangle (5.58,3.38);
+  \draw[line width=0.55pt] (5.58,3.00) -- (5.15,3.00);
+  \draw[line width=0.6pt] (5.02,3.22) rectangle (5.28,3.52);
+  \draw[line width=0.5pt] (5.28,3.38) -- (5.55,3.55) -- (5.62,3.38);
+  % 右塞与干燥管
+  \fill[black!18] (6.05,2.68) rectangle (6.55,3.32);
+  \draw[line width=0.55pt] (6.05,2.68) rectangle (6.55,3.32);
+  \draw[line width=0.65pt] (6.55,3.08) -- (6.92,3.08);
+  \draw[line width=0.65pt] (6.55,2.92) -- (6.92,2.92);
+  \draw[line width=0.7pt] (7.35,3.00) circle (0.42);
+  \draw[line width=0.65pt] (7.72,3.12) -- (8.85,3.12);
+  \draw[line width=0.65pt] (7.72,2.88) -- (8.85,2.88);
+  \draw[line width=0.65pt] (8.85,2.88)
+    arc[start angle=-90, end angle=90, x radius=0.14, y radius=0.12];
+  \node[anchor=south] at (7.35,3.42) {$b$};
+  \node[anchor=north] at (8.30,2.70) {水滴};
+  \foreach \p in {(7.95,2.96), (8.22,3.02), (8.48,2.94)} {
+    \draw[line width=0.4pt] \p ellipse (0.05 and 0.07);
+  }
+\end{tikzpicture}%
+}
 \caption{图 2·17 氢气还原氧化铜的实验}
 \end{figure}
 
@@ -3753,8 +4437,86 @@ AlO。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·3 用水炭还原氧化铜}]{assets/chemistry-1/fig-p0113-01.png}}
-\caption{图 3·3 用水炭还原氧化铜}
+\fitfig{%
+% fig-alt: 硬质试管a盛氧化铜与木炭，酒精灯加热，导管通入试管b中石灰水；两座铁架台
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 木垫与酒精灯
+  \draw[line width=0.7pt] (0.10,0.00) -- (1.75,0.00) -- (2.05,0.30) -- (0.40,0.30) -- cycle;
+  \draw[line width=0.7pt] (0.10,0.00) -- (0.10,0.88) -- (0.40,1.18) -- (0.40,0.30);
+  \draw[line width=0.7pt] (1.75,0.00) -- (1.75,0.88) -- (2.05,1.18) -- (2.05,0.30);
+  \draw[line width=0.7pt] (0.10,0.88) -- (1.75,0.88);
+  \draw[line width=0.7pt] (0.40,1.18) -- (2.05,1.18);
+  \draw[line width=0.45pt] (0.22,0.10) -- (1.65,0.78);
+  \draw[line width=0.45pt] (0.22,0.78) -- (1.65,0.10);
+  \draw[line width=0.7pt] (1.08,1.18) ellipse (0.55 and 0.12);
+  \draw[line width=0.7pt] (0.53,1.18) -- (0.62,1.65)
+    arc[start angle=180, end angle=0, x radius=0.46, y radius=0.11] -- (1.63,1.18);
+  \fill[black!12] (0.58,1.38) -- (1.58,1.38)
+    arc[start angle=0, end angle=180, x radius=0.50, y radius=0.09] -- cycle;
+  \draw[line width=0.5pt] (0.58,1.38) -- (1.58,1.38);
+  \draw[line width=0.65pt] (0.99,1.74) -- (0.99,2.08) -- (1.17,2.08) -- (1.17,1.74);
+  \draw[line width=0.6pt] (1.08,2.08)
+    .. controls (0.88,2.35) and (0.96,2.62) .. (1.08,2.82)
+    .. controls (1.20,2.62) and (1.28,2.35) .. (1.08,2.08);
+  \draw[line width=0.45pt] (1.08,2.08)
+    .. controls (1.00,2.25) and (1.04,2.42) .. (1.08,2.55)
+    .. controls (1.12,2.42) and (1.16,2.25) .. (1.08,2.08);
+  % 铁架台 1
+  \draw[line width=0.7pt] (2.15,0.00) -- (4.45,0.00) -- (4.80,0.28) -- (2.50,0.28) -- cycle;
+  \draw[line width=0.7pt] (2.15,0.00) -- (2.15,-0.12) -- (4.45,-0.12) -- (4.45,0.00);
+  \draw[line width=0.7pt] (4.45,-0.12) -- (4.80,0.16) -- (4.80,0.28);
+  \draw[line width=0.45pt] (2.30,0.09) -- (4.60,0.09);
+  \draw[line width=0.45pt] (2.38,0.18) -- (4.68,0.18);
+  \draw[line width=1.0pt] (3.55,0.28) -- (3.55,4.15);
+  \draw[line width=0.5pt] (3.42,4.15) -- (3.68,4.15);
+  % 硬质试管 a（圆底在左）
+  \draw[line width=0.7pt] (0.22,3.50) -- (4.15,3.50);
+  \draw[line width=0.7pt] (0.22,2.94) -- (4.15,2.94);
+  \draw[line width=0.7pt] (0.22,3.50)
+    arc[start angle=90, end angle=270, x radius=0.28, y radius=0.28];
+  \draw[line width=0.55pt] (4.15,3.50) -- (4.22,3.56) -- (4.22,2.88) -- (4.15,2.94);
+  \fill[black!18] (4.05,2.86) rectangle (4.52,3.58);
+  \draw[line width=0.55pt] (4.05,2.86) rectangle (4.52,3.58);
+  \fill[black!25] (0.85,2.96) ellipse (0.70 and 0.12);
+  \foreach \p in {(0.55,3.02), (0.78,3.08), (1.02,3.00), (1.25,3.06), (1.48,2.98)} {
+    \fill \p circle (0.035);
+  }
+  \node[anchor=south] at (0.55,3.50) {$a$};
+  \node[anchor=west] at (1.55,2.48) {$\mathrm{CuO}+\mathrm{C}$};
+  % 铁夹 1
+  \draw[line width=0.65pt] (3.15,2.82) rectangle (3.95,3.62);
+  \draw[line width=0.6pt] (3.42,3.48) rectangle (3.68,3.78);
+  \draw[line width=0.5pt] (3.68,3.62) -- (3.95,3.78) -- (4.02,3.62);
+  % 导管通入试管 b
+  \draw[line width=0.65pt] (4.52,3.28) -- (7.25,3.28) -- (7.25,1.05);
+  \draw[line width=0.65pt] (4.52,3.12) -- (7.09,3.12) -- (7.09,1.05);
+  % 铁架台 2
+  \draw[line width=0.7pt] (5.35,0.00) -- (7.65,0.00) -- (8.00,0.28) -- (5.70,0.28) -- cycle;
+  \draw[line width=0.7pt] (5.35,0.00) -- (5.35,-0.12) -- (7.65,-0.12) -- (7.65,0.00);
+  \draw[line width=0.7pt] (7.65,-0.12) -- (8.00,0.16) -- (8.00,0.28);
+  \draw[line width=0.45pt] (5.50,0.09) -- (7.80,0.09);
+  \draw[line width=0.45pt] (5.58,0.18) -- (7.88,0.18);
+  \draw[line width=1.0pt] (6.48,0.28) -- (6.48,4.15);
+  \draw[line width=0.5pt] (6.35,4.15) -- (6.61,4.15);
+  % 导管夹
+  \draw[line width=0.6pt] (6.32,3.05) rectangle (6.62,3.42);
+  \draw[line width=0.55pt] (6.62,3.20) -- (7.09,3.20);
+  \draw[line width=0.5pt] (6.62,3.28) -- (6.95,3.48) -- (7.02,3.32);
+  % 试管 b
+  \draw[line width=0.7pt] (6.95,2.55) -- (6.95,0.42)
+    arc[start angle=180, end angle=360, x radius=0.32, y radius=0.22] -- (7.59,2.55);
+  \draw[line width=0.5pt] (6.95,2.55) -- (6.88,2.66) -- (7.66,2.66) -- (7.59,2.55);
+  \fill[black!12] (6.95,0.42) -- (6.95,1.35) -- (7.59,1.35) -- (7.59,0.42)
+    arc[start angle=0, end angle=-180, x radius=0.32, y radius=0.22] -- cycle;
+  \draw[line width=0.45pt] (6.95,1.35) -- (7.59,1.35);
+  \foreach \p in {(7.12,1.55), (7.32,1.72), (7.42,1.48)} {
+    \draw[line width=0.4pt] \p circle (0.05);
+  }
+  \node[anchor=west] at (7.72,1.85) {$b$};
+  \node[anchor=west] at (7.72,0.85) {石灰水};
+\end{tikzpicture}%
+}
+\caption{图 3·3 用木炭还原氧化铜}
 \end{figure}
 
 \emph{图 3·3 用木炭还原氧化铜}
@@ -3841,7 +4603,7 @@ Ca）在电炉里强热，能够直接化合生成碳化钙
 比起氧气或氢气来，二氧化碳就显得很易液化，在平常温度下，只要把压强增加到60个大气压，它就变成无色的液体。液态二氧化碳平时贮存在坚固的圆形钢筒里。当把液态二氧化碳从钢筒里倒出时，其中一部分迅速蒸发并吸收大量的热，使其余部分液态二氧化碳的温度急剧下降，最后凝成雪状的固体。经过压缩后的固态二氧化碳的外形象冰，称做``干冰''。
 
 把一筒（一般用钢筒）液态二氧化碳，斜置桌上（图
-3·4）。在流出口处系上一个坚固的砂布袋，打开活门，让液态二氧化碳流出，数分钟后，可以看到袋中有雪状的二氧化碳固体。
+3·4）。在流出口处系上一个坚固的帆布袋，打开活门，让液态二氧化碳流出，数分钟后，可以看到袋中有雪状的二氧化碳固体。
 
 ``干冰''是一种比冰更好的致冷剂\footnote{致冷剂就是能够产生低温的物质。}。它冷却的温度比冰低得多，利用``干冰''，可以产生
 \(-78^{\circ}\mathrm{C}\)
@@ -3849,8 +4611,45 @@ Ca）在电炉里强热，能够直接化合生成碳化钙
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-4 干冰的生表}]{assets/chemistry-1/fig-p0116-01.png}}
-\caption{图3-4 干冰的生表}
+\fitfig{%
+% fig-alt: 钢筒斜置桌上，筒身标液态二氧化碳，出口活门下系帆布袋
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 桌面与桌腿
+  \draw[line width=0.7pt] (0.20,1.20) -- (8.10,1.20);
+  \draw[line width=0.7pt] (0.20,1.20) -- (0.20,0.98) -- (8.10,0.98) -- (8.10,1.20);
+  \draw[line width=0.55pt] (0.85,0.98) -- (0.85,0.12);
+  \draw[line width=0.55pt] (1.35,0.98) -- (1.35,0.12);
+  % 木楔
+  \draw[line width=0.7pt] (5.05,1.20) -- (6.20,1.20) -- (6.20,1.95) -- (5.30,1.95) -- cycle;
+  \draw[line width=0.45pt] (5.20,1.32) -- (6.05,1.82);
+  \draw[line width=0.45pt] (5.20,1.82) -- (6.05,1.32);
+  % 钢筒：右端椭圆坐在木楔上，左肩贴桌面，瓶颈伸出桌沿
+  \draw[line width=0.7pt] (6.50,2.62) ellipse (0.36 and 0.70);
+  \draw[line width=0.45pt] (6.50,2.62) ellipse (0.22 and 0.48);
+  \draw[line width=0.7pt] (6.50,3.32) -- (2.15,2.18);
+  \draw[line width=0.7pt] (6.50,1.92) -- (2.15,1.22);
+  \draw[line width=0.45pt] (6.22,2.95) -- (2.40,1.95);
+  \draw[line width=0.45pt] (6.25,2.22) -- (2.45,1.45);
+  \draw[line width=0.7pt] (2.15,1.70) ellipse (0.18 and 0.48);
+  \draw[line width=0.65pt] (2.00,1.98) -- (1.38,1.78);
+  \draw[line width=0.65pt] (2.00,1.42) -- (1.38,1.50);
+  \draw[line width=0.65pt] (1.38,1.64) ellipse (0.11 and 0.18);
+  \draw[line width=0.65pt] (1.14,1.64) circle (0.24);
+  \draw[line width=0.5pt] (0.94,1.64) -- (1.34,1.64);
+  \draw[line width=0.5pt] (1.14,1.44) -- (1.14,1.84);
+  \node at (4.25,2.28) {液态 $\mathrm{CO_2}$};
+  % 帆布袋（系于活门，垂于桌沿下）
+  \draw[line width=0.55pt] (1.14,1.42) -- (1.14,1.18);
+  \draw[line width=0.65pt] (0.94,1.18) -- (1.34,1.18);
+  \draw[line width=0.7pt] (0.94,1.18)
+    .. controls (0.50,0.75) and (0.58,0.12) .. (1.14,-0.10)
+    .. controls (1.68,0.12) and (1.74,0.75) .. (1.34,1.18);
+  \draw[line width=0.45pt] (0.98,0.82) -- (1.28,0.72);
+  \draw[line width=0.45pt] (0.96,0.45) -- (1.30,0.35);
+  \node[anchor=west] at (1.80,0.30) {帆布袋};
+\end{tikzpicture}%
+}
+\caption{图 3·4 干冰的制备}
 \end{figure}
 
 \emph{图 3·4 干冰的制备}
@@ -3868,8 +4667,65 @@ Ca）在电炉里强热，能够直接化合生成碳化钙
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·5 碳倒 CO\_\{2\} 灭火的实验}]{assets/chemistry-1/fig-p0117-01.png}}
-\caption{图 3·5 碳倒 \(CO_{2}\) 灭火的实验}
+\fitfig{%
+% fig-alt: 手持二氧化碳集气瓶向烧杯倾倒，杯内梯形架上两枝蜡烛
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 烧杯
+  \draw[line width=0.7pt] (0.15,0.15) ellipse (1.45 and 0.32);
+  \draw[line width=0.7pt] (-1.30,0.15) -- (-1.22,2.55);
+  \draw[line width=0.7pt] (1.60,0.15) -- (1.52,2.55);
+  \draw[line width=0.7pt] (0.15,2.55) ellipse (1.37 and 0.32);
+  \draw[line width=0.5pt] (0.15,2.62) ellipse (1.22 and 0.24);
+  % 杯嘴
+  \draw[line width=0.65pt] (-1.22,2.55) -- (-1.48,2.78) -- (-1.05,2.70);
+  % 梯形烛架
+  \draw[line width=0.65pt]
+    (-0.55,0.35) -- (-0.55,1.55) -- (0.05,1.55) -- (0.05,0.95)
+    -- (0.85,0.95) -- (0.85,0.35) -- cycle;
+  \draw[line width=0.5pt] (-0.55,1.42) -- (0.05,1.42);
+  \draw[line width=0.5pt] (0.05,0.82) -- (0.85,0.82);
+  % 上烛
+  \draw[line width=0.6pt] (-0.42,1.55) rectangle (-0.18,2.12);
+  \fill[black!10] (-0.42,1.55) rectangle (-0.18,2.12);
+  \draw[line width=0.45pt] (-0.30,2.12) -- (-0.30,2.25);
+  \draw[line width=0.5pt] (-0.30,2.25)
+    .. controls (-0.42,2.42) and (-0.36,2.58) .. (-0.30,2.70)
+    .. controls (-0.24,2.58) and (-0.18,2.42) .. (-0.30,2.25);
+  % 下烛
+  \draw[line width=0.6pt] (0.42,0.95) rectangle (0.66,1.48);
+  \fill[black!10] (0.42,0.95) rectangle (0.66,1.48);
+  \draw[line width=0.45pt] (0.54,1.48) -- (0.54,1.60);
+  \draw[line width=0.5pt] (0.54,1.60)
+    .. controls (0.42,1.76) and (0.48,1.92) .. (0.54,2.04)
+    .. controls (0.60,1.92) and (0.66,1.76) .. (0.54,1.60);
+  % 倾倒的集气瓶（瓶口朝向烧杯）
+  \begin{scope}[shift={(2.75,3.35)}, rotate=38]
+    \draw[line width=0.7pt] (1.55,0) ellipse (0.16 and 0.52);
+    \draw[line width=0.7pt] (1.55,0.52) -- (-0.32,0.48);
+    \draw[line width=0.7pt] (1.55,-0.52) -- (-0.32,-0.48);
+    \draw[line width=0.7pt] (-0.32,0) ellipse (0.14 and 0.48);
+    \draw[line width=0.65pt] (-0.42,0.22) -- (-1.08,0.18);
+    \draw[line width=0.65pt] (-0.42,-0.22) -- (-1.08,-0.18);
+    \draw[line width=0.7pt] (-1.08,0) ellipse (0.08 and 0.18);
+    \node at (0.55,0.02) {$\mathrm{CO_2}$};
+  \end{scope}
+  % 倾出气流
+  \draw[line width=0.55pt]
+    (1.90,2.72) .. controls (1.55,2.45) and (1.15,2.15) .. (0.72,1.85);
+  \draw[line width=0.45pt]
+    (1.82,2.80) .. controls (1.42,2.48) and (1.05,2.18) .. (0.62,1.92);
+  % 手（示意：握住瓶身）
+  \draw[line width=0.65pt]
+    (3.15,4.12) .. controls (3.55,4.32) and (4.05,4.22) .. (4.28,3.88)
+    -- (4.18,3.42) .. controls (3.72,3.28) and (3.28,3.42) .. (3.02,3.68)
+    -- cycle;
+  \draw[line width=0.6pt]
+    (2.88,3.48) .. controls (2.62,3.22) and (2.78,2.98) .. (3.12,3.08)
+    -- (3.28,3.42);
+  \draw[line width=0.6pt] (4.22,3.92) -- (5.15,4.05) -- (5.28,3.52) -- (4.18,3.42);
+\end{tikzpicture}%
+}
+\caption{图 3·5 倾倒 \(\mathrm{CO}_{2}\) 灭火的实验}
 \end{figure}
 
 \emph{图 3·5 倾倒 \(CO_{2}\) 灭火的实验}
@@ -3964,8 +4820,92 @@ Ca）在电炉里强热，能够直接化合生成碳化钙
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3-8 实验室里制取二氧化碳}]{assets/chemistry-1/fig-p0121-01.png}}
-\caption{图 3-8 实验室里制取二氧化碳}
+\fitfig{%
+% fig-alt: 启普发生器产生二氧化碳，导管经活栓通入盖玻片下的集气瓶近瓶底（下方排气）
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 下半球
+  \draw[line width=0.7pt] (0,1.02) ellipse (1.58 and 0.40);
+  \draw[line width=0.7pt] (-1.58,1.02)
+    arc[start angle=180, end angle=360, x radius=1.58, y radius=1.02];
+  \draw[line width=0.45pt] (0,0.98) ellipse (1.38 and 0.30);
+  % 中球
+  \draw[line width=0.7pt] (0,2.18) circle (1.02);
+  \draw[line width=0.65pt] (-0.40,3.12) -- (-0.40,3.32);
+  \draw[line width=0.65pt] (0.40,3.12) -- (0.40,3.32);
+  \draw[line width=0.65pt] (0,3.32) ellipse (0.40 and 0.09);
+  % 上球（球形漏斗）
+  \draw[line width=0.7pt] (0,4.48) circle (1.12);
+  \draw[line width=0.65pt] (-0.30,5.52) -- (-0.26,5.82);
+  \draw[line width=0.65pt] (0.30,5.52) -- (0.26,5.82);
+  \draw[line width=0.7pt] (0,5.92) ellipse (0.46 and 0.12);
+  \draw[line width=0.55pt] (0,5.86) ellipse (0.34 and 0.08);
+  \draw[line width=0.45pt] (0,5.82) ellipse (0.22 and 0.05);
+  % 酸液：中球下部与下半球
+  \begin{scope}
+    \clip (0,2.18) circle (1.00);
+    \fill[black!12] (-1.10,1.16) rectangle (1.10,2.08);
+  \end{scope}
+  \draw[line width=0.45pt] (0,2.08) ellipse (0.96 and 0.20);
+  \begin{scope}
+    \clip (-1.58,1.02)
+      arc[start angle=180, end angle=360, x radius=1.58, y radius=1.02]
+      -- (1.58,1.02) -- cycle;
+    \fill[black!12] (-1.70,0.00) rectangle (1.70,1.20);
+  \end{scope}
+  % 漏斗长颈
+  \draw[line width=0.55pt] (-0.24,5.52) -- (-0.20,4.48) -- (-0.18,2.18) -- (-0.15,0.48);
+  \draw[line width=0.55pt] (0.24,5.52) -- (0.20,4.48) -- (0.18,2.18) -- (0.15,0.48);
+  \draw[line width=0.55pt] (-0.15,0.48)
+    arc[start angle=180, end angle=360, x radius=0.15, y radius=0.10];
+  % 大理石块
+  \foreach \x/\y/\r in {-0.28/2.10/0.10, 0.22/2.20/0.09, 0.48/1.98/0.08,
+      -0.52/1.92/0.07, 0.02/1.86/0.08, 0.58/2.16/0.07, -0.12/1.70/0.06} {
+    \draw[line width=0.45pt, fill=black!22] (\x,\y) circle (\r);
+  }
+  % 右侧开口、橡皮塞、水平导管与活栓
+  \begin{scope}[shift={(1.05,2.62)}, rotate=28]
+    \fill[pattern=north east lines, pattern color=black]
+      (-0.20,-0.16) rectangle (0.32,0.16);
+    \draw[line width=0.55pt] (-0.20,-0.16) rectangle (0.32,0.16);
+  \end{scope}
+  \draw[line width=0.65pt] (1.28,2.78) -- (1.72,3.05) -- (3.05,3.05);
+  \draw[line width=0.65pt] (1.34,2.48) -- (1.72,2.85) -- (3.05,2.85);
+  \draw[line width=0.65pt] (2.28,2.72) rectangle (2.62,3.18);
+  \draw[line width=0.55pt] (2.45,3.18) -- (2.45,3.48);
+  \draw[line width=0.55pt] (2.28,3.48) -- (2.62,3.48);
+  \draw[line width=0.45pt] (2.28,3.48) -- (2.28,3.58);
+  \draw[line width=0.45pt] (2.62,3.48) -- (2.62,3.58);
+  % 橡皮管
+  \fill[black!18] (3.05,2.78) rectangle (3.62,3.12);
+  \draw[line width=0.55pt] (3.05,2.78) rectangle (3.62,3.12);
+  % 下半球左侧排水活栓
+  \begin{scope}[shift={(-1.50,0.68)}, rotate=205]
+    \draw[line width=0.55pt] (0.00,-0.06) -- (0.30,-0.06);
+    \draw[line width=0.55pt] (0.00,0.06) -- (0.30,0.06);
+    \draw[line width=0.55pt] (0.24,-0.13) rectangle (0.52,0.13);
+    \draw[line width=0.5pt] (0.38,0.13) -- (0.38,0.32);
+    \draw[line width=0.5pt] (0.24,0.32) -- (0.52,0.32);
+    \draw[line width=0.4pt] (0.24,0.32) -- (0.24,0.40);
+    \draw[line width=0.4pt] (0.52,0.32) -- (0.52,0.40);
+  \end{scope}
+  % 集气瓶
+  \draw[line width=0.7pt] (4.62,0.18) ellipse (0.92 and 0.20);
+  \draw[line width=0.7pt] (3.70,0.18) -- (3.70,2.55);
+  \draw[line width=0.7pt] (5.54,0.18) -- (5.54,2.55);
+  \draw[line width=0.7pt] (4.62,2.55) ellipse (0.92 and 0.20);
+  \draw[line width=0.5pt] (4.62,2.62) ellipse (0.72 and 0.14);
+  % 盖玻片（先画，导管从中穿过）
+  \draw[line width=0.7pt] (3.48,2.78) -- (5.68,2.78) -- (5.82,2.98) -- (3.62,2.98) -- cycle;
+  % 导气管弯入集气瓶近瓶底
+  \draw[line width=0.65pt] (3.62,3.05) -- (4.72,3.05) -- (4.72,0.55);
+  \draw[line width=0.65pt] (3.62,2.85) -- (4.52,2.85) -- (4.52,0.55);
+  \draw[line width=0.55pt] (4.52,0.55)
+    arc[start angle=180, end angle=360, x radius=0.10, y radius=0.08];
+  \draw[line width=0.4pt] (-0.58,4.95) arc[start angle=150, end angle=85, radius=0.52];
+  \draw[line width=0.4pt] (-0.52,2.62) arc[start angle=150, end angle=85, radius=0.46];
+\end{tikzpicture}%
+}
+\caption{图 3·8 实验室里制取二氧化碳}
 \end{figure}
 
 \emph{图 3·8 实验室里制取二氧化碳}
@@ -4059,8 +4999,127 @@ c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3-9 一氧化碳的制取}]{assets/chemistry-1/fig-p0124-01.png}}
-\caption{图 3-9 一氧化碳的制取}
+\fitfig{%
+% fig-alt: 左瓶盐酸与大理石产CO2，硬质玻管a盛炭用酒精灯b加热，管c石灰加苛性钠，右水槽排水收集CO
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % ===== 左：二氧化碳发生瓶 =====
+  \draw[line width=0.7pt] (1.15,0.18) ellipse (1.12 and 0.22);
+  \draw[line width=0.7pt] (0.03,0.18) -- (0.10,2.85);
+  \draw[line width=0.7pt] (2.27,0.18) -- (2.20,2.85);
+  \draw[line width=0.7pt] (1.15,2.85) ellipse (1.05 and 0.20);
+  \draw[line width=0.65pt] (0.55,2.95) -- (0.58,3.22);
+  \draw[line width=0.65pt] (1.75,2.95) -- (1.72,3.22);
+  \draw[line width=0.7pt] (1.15,3.22) ellipse (0.58 and 0.12);
+  % 液体与大理石
+  \fill[black!12] (0.06,0.18) -- (0.10,1.35) -- (2.20,1.35) -- (2.24,0.18)
+    arc[start angle=0, end angle=-180, x radius=1.09, y radius=0.20] -- cycle;
+  \draw[line width=0.45pt] (0.10,1.35) -- (2.20,1.35);
+  \foreach \p in {(0.55,0.42), (0.92,0.38), (1.28,0.48), (1.62,0.36), (1.95,0.44),
+      (0.72,0.62), (1.10,0.58), (1.48,0.64)} {
+    \draw[line width=0.4pt, fill=black!25] \p circle (0.08);
+  }
+  % 塞
+  \fill[black!18] (0.62,3.18) rectangle (1.68,3.52);
+  \draw[line width=0.55pt] (0.62,3.18) rectangle (1.68,3.52);
+  % 长颈漏斗
+  \draw[line width=0.55pt] (0.78,3.52) -- (0.72,0.72);
+  \draw[line width=0.55pt] (0.98,3.52) -- (0.92,0.72);
+  \draw[line width=0.5pt] (0.72,0.72)
+    arc[start angle=180, end angle=360, x radius=0.10, y radius=0.07];
+  \draw[line width=0.65pt] (0.62,3.52) -- (0.48,4.22);
+  \draw[line width=0.65pt] (1.14,3.52) -- (1.28,4.22);
+  \draw[line width=0.7pt] (0.88,4.28) ellipse (0.42 and 0.12);
+  \draw[line width=0.45pt] (0.88,4.22) ellipse (0.28 and 0.07);
+  \node[anchor=south] at (0.88,4.42) {盐酸};
+  % 导气管标 CO2
+  \draw[line width=0.65pt] (1.68,3.42) -- (2.72,3.42) -- (2.72,3.28);
+  \draw[line width=0.65pt] (1.68,3.28) -- (2.56,3.28);
+  \node[anchor=south] at (2.05,3.46) {$\mathrm{CO_2}$};
+  \node[anchor=north] at (1.15,-0.08) {大理石+盐酸};
+  % ===== 硬质玻管 a =====
+  \draw[line width=0.7pt] (2.72,3.58) -- (6.35,3.58);
+  \draw[line width=0.7pt] (2.72,3.12) -- (6.35,3.12);
+  \draw[line width=0.7pt] (2.72,3.35) ellipse (0.10 and 0.23);
+  \draw[line width=0.7pt] (6.35,3.35) ellipse (0.10 and 0.23);
+  \fill[black!18] (2.58,3.08) rectangle (3.05,3.62);
+  \draw[line width=0.55pt] (2.58,3.08) rectangle (3.05,3.62);
+  \fill[black!18] (6.18,3.08) rectangle (6.62,3.62);
+  \draw[line width=0.55pt] (6.18,3.08) rectangle (6.62,3.62);
+  % 炭
+  \fill[black!22] (4.15,3.14) ellipse (0.78 and 0.12);
+  \foreach \p/\r in {3.78/0.05, 4.02/0.06, 4.22/0.05, 4.42/0.06, 4.62/0.05, 3.95/0.04, 4.32/0.045} {
+    \draw[line width=0.4pt, fill=black!30] (\p,3.24) circle (\r);
+  }
+  \node[anchor=south] at (3.55,3.62) {$a$};
+  \draw[<-, line width=0.5pt] (4.28,3.62) -- (4.28,4.05);
+  \node[anchor=south] at (4.28,4.05) {炭};
+  % 铁架台立柱与夹
+  \draw[line width=1.0pt] (5.22,0.95) -- (5.22,5.15);
+  \draw[line width=0.5pt] (5.10,5.15) -- (5.34,5.15);
+  \draw[line width=0.65pt] (4.85,3.02) rectangle (5.55,3.68);
+  \draw[line width=0.55pt] (5.10,3.68) rectangle (5.34,3.92);
+  % 木垫与酒精灯 b
+  \draw[line width=0.7pt] (3.35,0.00) -- (5.05,0.00) -- (5.38,0.28) -- (3.68,0.28) -- cycle;
+  \draw[line width=0.7pt] (3.35,0.00) -- (3.35,0.82) -- (3.68,1.10) -- (3.68,0.28);
+  \draw[line width=0.7pt] (5.05,0.00) -- (5.05,0.82) -- (5.38,1.10) -- (5.38,0.28);
+  \draw[line width=0.7pt] (3.35,0.82) -- (5.05,0.82);
+  \draw[line width=0.7pt] (3.68,1.10) -- (5.38,1.10);
+  \draw[line width=0.45pt] (3.48,0.12) -- (4.95,0.70);
+  \draw[line width=0.45pt] (3.48,0.70) -- (4.95,0.12);
+  \draw[line width=0.7pt] (4.38,1.10) ellipse (0.58 and 0.12);
+  \draw[line width=0.7pt] (3.80,1.10) -- (3.88,1.58)
+    arc[start angle=180, end angle=0, x radius=0.50, y radius=0.10] -- (4.96,1.10);
+  \fill[black!12] (3.86,1.32) -- (4.90,1.32)
+    arc[start angle=0, end angle=180, x radius=0.52, y radius=0.09] -- cycle;
+  \draw[line width=0.5pt] (3.86,1.32) -- (4.90,1.32);
+  \draw[line width=0.65pt] (4.28,1.66) -- (4.28,2.00) -- (4.48,2.00) -- (4.48,1.66);
+  \draw[line width=0.6pt] (4.38,2.00)
+    .. controls (4.18,2.32) and (4.28,2.62) .. (4.38,2.85)
+    .. controls (4.48,2.62) and (4.58,2.32) .. (4.38,2.00);
+  \draw[line width=0.45pt] (4.38,2.00)
+    .. controls (4.30,2.22) and (4.34,2.42) .. (4.38,2.55)
+    .. controls (4.42,2.42) and (4.46,2.22) .. (4.38,2.00);
+  \node[anchor=west] at (5.42,1.55) {$b$};
+  % ===== 管 c：石灰+苛性钠 =====
+  \draw[line width=0.7pt] (6.62,3.35) ellipse (0.08 and 0.18);
+  \draw[line width=0.7pt] (6.62,3.53) -- (7.05,3.53);
+  \draw[line width=0.7pt] (6.62,3.17) -- (7.05,3.17);
+  \draw[line width=0.7pt] (7.55,3.35) circle (0.48);
+  \draw[line width=0.7pt] (7.95,3.53) -- (8.85,3.53);
+  \draw[line width=0.7pt] (7.95,3.17) -- (8.85,3.17);
+  \draw[line width=0.7pt] (8.85,3.35) ellipse (0.08 and 0.18);
+  \fill[black!18] (8.72,3.12) rectangle (9.12,3.58);
+  \draw[line width=0.55pt] (8.72,3.12) rectangle (9.12,3.58);
+  \begin{scope}
+    \clip (7.55,3.35) circle (0.46);
+    \fill[black!15] (7.05,3.05) rectangle (8.05,3.42);
+  \end{scope}
+  \fill[black!15] (7.95,3.19) rectangle (8.72,3.42);
+  \node[anchor=south] at (7.55,3.88) {$c$};
+  \node[anchor=north] at (7.70,2.95) {石灰+苛性钠};
+  % ===== 右：水槽排水集气 =====
+  \draw[line width=0.7pt] (10.55,0.12) ellipse (1.05 and 0.22);
+  \draw[line width=0.7pt] (9.50,0.12) -- (9.58,2.05);
+  \draw[line width=0.7pt] (11.60,0.12) -- (11.52,2.05);
+  \draw[line width=0.7pt] (10.55,2.05) ellipse (0.97 and 0.18);
+  \fill[black!12] (9.52,0.12) -- (9.55,1.22) -- (11.55,1.22) -- (11.58,0.12)
+    arc[start angle=0, end angle=-180, x radius=1.03, y radius=0.20] -- cycle;
+  \draw[line width=0.45pt] (9.55,1.22) -- (11.55,1.22);
+  \draw[line width=0.65pt] (9.12,3.42) -- (9.95,3.42) -- (9.95,0.72);
+  \draw[line width=0.65pt] (9.12,3.28) -- (9.81,3.28) -- (9.81,0.72);
+  \draw[line width=0.5pt] (9.81,0.72)
+    arc[start angle=180, end angle=360, x radius=0.07, y radius=0.06];
+  % 倒立试管收集 CO（管口没入水中，罩住导管口）
+  \begin{scope}[shift={(10.02,0.52)}, rotate=18}
+    \draw[line width=0.7pt] (-0.28,0.00)
+      -- (-0.28,2.22)
+      arc[start angle=180, end angle=360, x radius=0.28, y radius=0.16] -- (0.28,0.00);
+    \draw[line width=0.5pt] (-0.28,0.00) -- (-0.34,-0.10) -- (0.34,-0.10) -- (0.28,0.00);
+    \node at (0,1.62) {$\mathrm{CO}$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图 3·9 一氧化碳的制取}
 \end{figure}
 
 \emph{图 3·9 一氧化碳的制取}
@@ -4208,7 +5267,73 @@ c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·12 煤气发生炉的简单构造图}]{assets/chemistry-1/fig-p0129-01.png}}
+\fitfig{%
+% fig-alt: 煤气发生炉剖面：顶上加料斗与带隔板滚筒、料钟，炉身燃料层，右侧发生炉煤气出口，底部炉篦鼓风与炉灰
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 炉身外壁（剖面斜线）
+  \fill[pattern=north east lines, pattern color=black]
+    (0.00,0.95) -- (0.00,4.55) -- (0.42,4.55) -- (0.42,1.35)
+    -- (3.18,1.35) -- (3.18,4.55) -- (3.60,4.55) -- (3.60,0.95)
+    -- (2.55,0.95) -- (2.55,1.35) -- (1.05,1.35) -- (1.05,0.95) -- cycle;
+  \draw[line width=0.7pt] (0.00,0.95) -- (0.00,4.55) -- (0.42,4.55) -- (0.42,1.35)
+    -- (3.18,1.35) -- (3.18,4.55) -- (3.60,4.55) -- (3.60,0.95);
+  \draw[line width=0.7pt] (0.00,4.55) -- (3.60,4.55);
+  \fill[white] (0.42,1.35) rectangle (3.18,4.55);
+  % 炉顶盖与料钟通道
+  \draw[line width=0.7pt] (1.15,4.55) -- (1.15,4.82) -- (2.45,4.82) -- (2.45,4.55);
+  \draw[line width=0.7pt] (1.15,4.82) -- (1.05,5.05) -- (2.55,5.05) -- (2.45,4.82);
+  % 料钟
+  \draw[line width=0.65pt] (1.35,4.42) -- (1.80,4.72) -- (2.25,4.42) -- cycle;
+  \draw[line width=0.5pt] (1.80,4.72) -- (1.80,5.05);
+  % 滚筒（带隔板）
+  \draw[line width=0.7pt] (1.80,5.78) circle (0.62);
+  \draw[line width=0.55pt] (1.28,6.05) -- (2.32,5.50);
+  \foreach \p in {(1.58,5.92), (1.88,5.98), (1.68,5.58), (1.98,5.62), (1.50,5.70)} {
+    \draw[line width=0.4pt, fill=black!22] \p circle (0.07);
+  }
+  % 滚筒壳体
+  \draw[line width=0.65pt] (1.12,6.38) -- (1.12,5.18) -- (2.48,5.18) -- (2.48,6.38);
+  \draw[line width=0.65pt] (1.12,6.38) -- (2.48,6.38);
+  % 加料斗
+  \draw[line width=0.7pt] (0.22,7.15) -- (1.22,6.38) -- (1.58,6.38) -- (0.72,7.28) -- cycle;
+  \draw[line width=0.55pt] (0.32,7.08) -- (1.28,6.38);
+  \foreach \p in {(0.62,6.85), (0.88,6.72), (0.75,6.98), (1.02,6.58)} {
+    \draw[line width=0.4pt, fill=black!22] \p circle (0.06);
+  }
+  \draw[<-, line width=0.6pt] (0.48,7.22) -- (-0.15,7.62);
+  \node[anchor=east] at (-0.18,7.65) {燃料};
+  % 滚筒左转轮
+  \draw[line width=0.6pt] (0.95,5.52) circle (0.18);
+  \draw[line width=0.45pt] (0.86,5.52) -- (1.04,5.52);
+  \draw[line width=0.45pt] (0.95,5.43) -- (0.95,5.61);
+  % 发生炉煤气出口
+  \draw[line width=0.7pt] (3.60,3.85) -- (4.05,3.85) -- (4.05,4.18) -- (3.60,4.18);
+  \draw[line width=0.65pt] (4.05,3.72) rectangle (4.22,4.32);
+  \draw[->, line width=0.6pt] (4.22,4.02) -- (4.85,4.02);
+  \node[anchor=west, align=left] at (4.90,4.12) {发生炉\\煤气};
+  % 燃料层
+  \foreach \p in {(0.85,3.95), (1.25,4.15), (1.70,3.88), (2.15,4.08), (2.55,3.92),
+      (1.05,3.55), (1.55,3.42), (2.05,3.58), (2.45,3.38),
+      (0.95,2.95), (1.40,2.72), (1.85,2.88), (2.30,2.70), (2.65,2.95),
+      (1.15,2.25), (1.65,2.08), (2.15,2.22),
+      (0.92,1.78), (1.50,2.18), (2.12,2.15), (2.68,1.80)} {
+    \draw[line width=0.4pt, fill=black!18] \p circle (0.10);
+  }
+  % 炉篦（正锥，尖朝上，坐在炉床开口上；下接鼓风室）
+  \fill[white] (1.22,1.35) -- (1.80,1.90) -- (2.38,1.35) -- cycle;
+  \draw[line width=0.7pt] (1.22,1.35) -- (1.80,1.90) -- (2.38,1.35) -- cycle;
+  \draw[line width=0.5pt] (1.80,1.35) -- (1.80,0.85);
+  % 鼓风室
+  \draw[line width=0.7pt] (1.15,0.55) -- (1.15,0.15) -- (2.45,0.15) -- (2.45,0.55)
+    -- (2.15,0.85) -- (1.45,0.85) -- cycle;
+  \draw[->, line width=0.6pt] (1.80,-0.28) -- (1.80,0.50);
+  \node[anchor=north] at (1.80,-0.32) {鼓风};
+  % 炉灰箱
+  \draw[line width=0.7pt] (-0.55,0.55) rectangle (1.05,1.15);
+  \draw[line width=0.5pt] (-0.55,0.85) -- (1.05,0.85);
+  \node at (0.25,0.70) {炉灰};
+\end{tikzpicture}%
+}
 \caption{图 3·12 煤气发生炉的简单构造图}
 \end{figure}
 
@@ -4273,8 +5398,57 @@ c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3-14 把火焰内部气态物质引入烧瓶}]{assets/chemistry-1/fig-p0132-02.png}}
-\caption{图 3-14 把火焰内部气态物质引入烧瓶}
+\fitfig{%
+% fig-alt: 烛焰焰心插入弯玻管，经橡皮管导入圆底烧瓶，瓶内石蜡蒸气凝聚
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 烛台底盘
+  \draw[line width=0.7pt] (1.15,0.18) ellipse (1.22 and 0.28);
+  \draw[line width=0.55pt] (1.15,0.22) ellipse (0.95 and 0.18);
+  % 烛台柄环
+  \draw[line width=0.65pt] (2.28,0.22) -- (2.55,0.22)
+    arc[start angle=-90, end angle=270, x radius=0.28, y radius=0.28];
+  % 烛台柱
+  \draw[line width=0.7pt] (0.92,0.28) -- (0.85,1.55) -- (1.45,1.55) -- (1.38,0.28);
+  \draw[line width=0.55pt] (0.85,1.55) -- (0.78,1.68) -- (1.52,1.68) -- (1.45,1.55);
+  % 蜡烛
+  \draw[line width=0.7pt] (0.95,1.68) -- (0.95,2.55) -- (1.35,2.55) -- (1.35,1.68);
+  \fill[black!10] (0.95,1.68) rectangle (1.35,2.55);
+  \draw[line width=0.5pt] (0.95,2.42) -- (1.35,2.48);
+  \draw[line width=0.45pt] (1.15,2.55) -- (1.15,2.72);
+  % 火焰
+  \draw[line width=0.65pt] (1.15,2.72)
+    .. controls (0.88,3.15) and (0.92,3.55) .. (1.15,4.05)
+    .. controls (1.38,3.55) and (1.42,3.15) .. (1.15,2.72);
+  \draw[line width=0.45pt] (1.15,2.72)
+    .. controls (1.02,3.00) and (1.05,3.28) .. (1.15,3.52)
+    .. controls (1.25,3.28) and (1.28,3.00) .. (1.15,2.72);
+  % 弯玻管：竖直段插入焰心
+  \draw[line width=0.65pt] (1.08,3.35) -- (1.08,4.55) -- (3.55,4.55);
+  \draw[line width=0.65pt] (1.22,3.35) -- (1.22,4.41) -- (3.55,4.41);
+  % 橡皮管
+  \fill[black!18] (3.55,4.32) rectangle (4.55,4.64);
+  \draw[line width=0.55pt] (3.55,4.32) rectangle (4.55,4.64);
+  % 弯入烧瓶
+  \draw[line width=0.65pt] (4.55,4.55) -- (5.85,4.55) -- (5.85,1.55);
+  \draw[line width=0.65pt] (4.55,4.41) -- (5.71,4.41) -- (5.71,1.55);
+  % 圆底烧瓶
+  \draw[line width=0.7pt] (5.78,2.05) circle (1.22);
+  \draw[line width=0.7pt] (5.42,3.12) -- (5.42,4.22);
+  \draw[line width=0.7pt] (6.14,3.12) -- (6.14,4.22);
+  \draw[line width=0.7pt] (5.78,4.22) ellipse (0.36 and 0.10);
+  \draw[line width=0.5pt] (5.78,4.28) ellipse (0.28 and 0.07);
+  % 瓶内凝聚蒸气（示意云纹）
+  \draw[line width=0.4pt] (5.15,1.85)
+    .. controls (5.35,2.05) and (5.55,1.72) .. (5.78,1.95)
+    .. controls (6.05,2.18) and (6.15,1.78) .. (6.38,1.92);
+  \draw[line width=0.4pt] (5.05,2.15)
+    .. controls (5.28,2.38) and (5.50,2.00) .. (5.78,2.22)
+    .. controls (6.08,2.45) and (6.22,2.05) .. (6.45,2.18);
+  \draw[line width=0.4pt] (5.22,2.48)
+    .. controls (5.45,2.62) and (5.60,2.35) .. (5.85,2.52);
+\end{tikzpicture}%
+}
+\caption{图 3·14 把火焰内部气态物质引入烧瓶}
 \end{figure}
 
 \emph{图 3·14 把火焰内部气态物质引入烧瓶}
@@ -4299,8 +5473,56 @@ c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3-15 证明焰心是由可燃性气体和组成}]{assets/chemistry-1/fig-p0133-01.png}}
-\caption{图 3-15 证明焰心是由可燃性气体和组成}
+\fitfig{%
+% fig-alt: 烛焰焰心插入尖嘴玻管，镊夹管身，管口另有一小火焰
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 烛台底盘与柄环
+  \draw[line width=0.7pt] (1.05,0.18) ellipse (1.15 and 0.26);
+  \draw[line width=0.55pt] (1.05,0.22) ellipse (0.88 and 0.16);
+  \draw[line width=0.65pt] (2.12,0.20) -- (2.38,0.20)
+    arc[start angle=-90, end angle=270, x radius=0.26, y radius=0.26];
+  % 烛台柱
+  \draw[line width=0.7pt] (0.82,0.28) -- (0.76,1.42) -- (1.34,1.42) -- (1.28,0.28);
+  \draw[line width=0.55pt] (0.76,1.42) -- (0.70,1.55) -- (1.40,1.55) -- (1.34,1.42);
+  % 蜡烛
+  \draw[line width=0.7pt] (0.88,1.55) -- (0.88,2.42) -- (1.22,2.42) -- (1.22,1.55);
+  \fill[black!10] (0.88,1.55) rectangle (1.22,2.42);
+  \draw[line width=0.45pt] (1.05,2.42) -- (1.05,2.58);
+  % 烛焰
+  \draw[line width=0.65pt] (1.05,2.58)
+    .. controls (0.82,2.95) and (0.88,3.32) .. (1.05,3.72)
+    .. controls (1.22,3.32) and (1.28,2.95) .. (1.05,2.58);
+  \draw[line width=0.45pt] (1.05,2.58)
+    .. controls (0.95,2.82) and (0.98,3.05) .. (1.05,3.22)
+    .. controls (1.12,3.05) and (1.15,2.82) .. (1.05,2.58);
+  % 尖嘴玻管：自焰心斜向上
+  \draw[line width=0.65pt] (1.02,3.12) -- (2.55,4.85);
+  \draw[line width=0.65pt] (1.16,3.18) -- (2.68,4.88);
+  \draw[line width=0.5pt] (2.55,4.85) -- (2.68,4.88);
+  % 管口小火焰
+  \draw[line width=0.55pt] (2.62,4.88)
+    .. controls (2.48,5.18) and (2.55,5.42) .. (2.64,5.62)
+    .. controls (2.75,5.42) and (2.80,5.18) .. (2.62,4.88);
+  % 镊子
+  \draw[line width=0.65pt] (1.85,3.72) -- (3.62,3.08);
+  \draw[line width=0.65pt] (1.95,3.85) -- (3.70,3.25);
+  \draw[line width=0.5pt] (2.55,3.42) -- (2.62,3.58);
+  \fill[black] (2.58,3.50) circle (0.05);
+  % 手（示意：拇指在上、四指握镊柄，腕向右下）
+  \draw[line width=0.65pt]
+    (3.55,3.32) -- (3.42,3.62) -- (3.78,3.82) -- (4.12,3.55) -- (3.95,3.28);
+  \draw[line width=0.65pt]
+    (3.95,3.28) -- (4.55,3.38) -- (4.72,2.55) -- (4.05,2.38) -- (3.78,2.92) -- cycle;
+  \draw[line width=0.65pt] (3.48,3.05) -- (3.22,2.72) -- (3.55,2.52) -- (3.78,2.85);
+  \draw[line width=0.65pt] (3.52,2.82) -- (3.28,2.48) -- (3.62,2.32) -- (3.82,2.62);
+  \draw[line width=0.65pt] (3.58,2.58) -- (3.38,2.22) -- (3.72,2.08) -- (3.88,2.42);
+  \draw[line width=0.65pt] (3.68,2.38) -- (3.55,2.02) -- (3.88,1.92) -- (4.00,2.28);
+  \draw[line width=0.65pt] (4.55,3.05) -- (5.15,2.55);
+  \draw[line width=0.65pt] (4.72,2.55) -- (5.28,2.12);
+  \draw[line width=0.5pt] (5.15,2.55) -- (5.28,2.12);
+\end{tikzpicture}%
+}
+\caption{图 3·15 证明焰心是由可燃性气体组成}
 \end{figure}
 
 \emph{图 3·15 证明焰心是由可燃性气体组成}
@@ -4327,8 +5549,42 @@ c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第134页）}]{assets/chemistry-1/fig-p0134-01.png}}
-\caption{图示（原PDF第134页）}
+\fitfig{%
+% fig-alt: 酒精灯火焰中平放火柴杆，杆穿过外焰
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 灯体（下宽上窄）
+  \draw[line width=0.7pt] (0,0.18) ellipse (1.45 and 0.28);
+  \draw[line width=0.7pt] (-1.45,0.18) -- (-1.05,1.55);
+  \draw[line width=0.7pt] (1.45,0.18) -- (1.05,1.55);
+  \draw[line width=0.7pt] (0,1.55) ellipse (1.05 and 0.22);
+  % 酒精
+  \fill[black!12] (-1.32,0.28) -- (-1.18,1.02) -- (1.18,1.02) -- (1.32,0.28)
+    arc[start angle=0, end angle=-180, x radius=1.32, y radius=0.22] -- cycle;
+  \draw[line width=0.45pt] (-1.18,1.02) -- (1.18,1.02);
+  \draw[line width=0.4pt] (-0.55,0.55)
+    .. controls (-0.15,0.68) and (0.25,0.42) .. (0.70,0.58);
+  % 灯颈与灯帽座
+  \draw[line width=0.7pt] (-0.42,1.62) -- (-0.42,2.35) -- (0.42,2.35) -- (0.42,1.62);
+  \draw[line width=0.55pt] (-0.48,2.28) -- (-0.48,2.48) -- (0.48,2.48) -- (0.48,2.28);
+  \draw[line width=0.5pt] (-0.22,2.48) -- (-0.22,2.62) -- (0.22,2.62) -- (0.22,2.48);
+  % 灯芯
+  \draw[line width=0.5pt] (-0.08,2.62) -- (-0.08,2.78) -- (0.08,2.78) -- (0.08,2.62);
+  % 火焰（外焰、内焰）
+  \draw[line width=0.65pt] (0,2.78)
+    .. controls (-0.55,3.35) and (-0.42,4.05) .. (0,4.72)
+    .. controls (0.42,4.05) and (0.55,3.35) .. (0,2.78);
+  \draw[line width=0.5pt] (0,2.78)
+    .. controls (-0.28,3.15) and (-0.22,3.55) .. (0,3.95)
+    .. controls (0.22,3.55) and (0.28,3.15) .. (0,2.78);
+  % 火柴杆横穿火焰
+  \draw[line width=0.7pt] (-1.55,3.42) -- (1.55,3.42);
+  \draw[line width=0.7pt] (-1.55,3.28) -- (1.55,3.28);
+  \draw[line width=0.55pt] (-1.55,3.28) -- (-1.55,3.42);
+  \draw[line width=0.55pt] (1.55,3.28) -- (1.55,3.42);
+  \node[anchor=north] at (0,-0.18) {（a）};
+\end{tikzpicture}%
+}
+\caption{（a）}
 \end{figure}
 
 \begin{figure}
@@ -6094,14 +7350,129 @@ x = \frac {340 \times 25}{170} = 50 (\text{ 克 })\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-01.png}}
-\caption{图示（原PDF第187页）}
+\fitfig{%
+% fig-alt: 图4·6晶体外形：食盐立方体、明矾八面体、硝石六方柱、硫酸镁柱状、硫酸铜板状
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 食盐：立方体
+  \begin{scope}[shift={(0.15,2.55)}]
+    \draw[line width=0.7pt] (0,0) -- (1.15,0) -- (1.15,1.15) -- (0,1.15) -- cycle;
+    \draw[line width=0.7pt] (0,1.15) -- (0.48,1.50) -- (1.63,1.50) -- (1.15,1.15);
+    \draw[line width=0.7pt] (1.15,0) -- (1.63,0.35) -- (1.63,1.50);
+    \draw[line width=0.55pt] (0,0) -- (0.48,0.35) -- (1.63,0.35);
+    \draw[line width=0.55pt] (0.48,0.35) -- (0.48,1.50);
+    \node[anchor=north] at (0.80,-0.12) {食盐};
+  \end{scope}
+  % 明矾：八面体
+  \begin{scope}[shift={(0.85,0.95)}]
+    \coordinate (T) at (0.08,1.05);
+    \coordinate (B) at (0.12,-1.00);
+    \coordinate (L) at (-1.18,-0.12);
+    \coordinate (R) at (1.22,0.08);
+    \coordinate (F) at (0.22,-0.28);
+    \coordinate (K) at (-0.18,0.32);
+    \draw[line width=0.7pt] (T) -- (L) -- (B) -- (R) -- (T);
+    \draw[line width=0.7pt] (T) -- (F) -- (B);
+    \draw[line width=0.7pt] (L) -- (F) -- (R);
+    \draw[line width=0.55pt] (T) -- (K) -- (B);
+    \draw[line width=0.55pt] (L) -- (K) -- (R);
+    \node[anchor=north] at (0.05,-1.18) {明矾};
+  \end{scope}
+  % 硝石：六方柱，两端锥
+  \begin{scope}[shift={(2.55,0.15)}]
+    \coordinate (TA) at (0.72,3.28);
+    \coordinate (BA) at (0.72,0.02);
+    \coordinate (T1) at (0.08,2.48);
+    \coordinate (T2) at (0.55,2.32);
+    \coordinate (T3) at (1.18,2.48);
+    \coordinate (T4) at (1.42,2.72);
+    \coordinate (T5) at (0.95,2.88);
+    \coordinate (T6) at (0.32,2.72);
+    \coordinate (B1) at (0.08,0.72);
+    \coordinate (B2) at (0.55,0.56);
+    \coordinate (B3) at (1.18,0.72);
+    \coordinate (B4) at (1.42,0.96);
+    \coordinate (B5) at (0.95,1.12);
+    \coordinate (B6) at (0.32,0.96);
+    \draw[line width=0.7pt] (T1) -- (B1);
+    \draw[line width=0.7pt] (T2) -- (B2);
+    \draw[line width=0.7pt] (T3) -- (B3);
+    \draw[line width=0.7pt] (T4) -- (B4);
+    \draw[line width=0.55pt] (T6) -- (B6);
+    \draw[line width=0.55pt] (T5) -- (B5);
+    \draw[line width=0.7pt] (TA) -- (T1) -- (T2) -- (T3) -- (T4) -- (TA);
+    \draw[line width=0.7pt] (TA) -- (T6);
+    \draw[line width=0.55pt] (TA) -- (T5);
+    \draw[line width=0.55pt] (T6) -- (T5) -- (T4);
+    \draw[line width=0.7pt] (BA) -- (B1) -- (B2) -- (B3) -- (B4) -- (BA);
+    \draw[line width=0.7pt] (BA) -- (B6);
+    \draw[line width=0.55pt] (BA) -- (B5);
+    \draw[line width=0.55pt] (B6) -- (B5) -- (B4);
+    \draw[line width=0.55pt] (T1) -- (T6);
+    \draw[line width=0.55pt] (B1) -- (B6);
+    \node[anchor=north] at (0.72,-0.12) {硝石};
+  \end{scope}
+  % 硫酸镁：较短六方柱
+  \begin{scope}[shift={(4.55,0.55)}]
+    \coordinate (TA) at (0.62,2.42);
+    \coordinate (BA) at (0.62,0.05);
+    \coordinate (T1) at (0.08,1.85);
+    \coordinate (T2) at (0.50,1.72);
+    \coordinate (T3) at (1.05,1.85);
+    \coordinate (T4) at (1.22,2.05);
+    \coordinate (T6) at (0.28,2.05);
+    \coordinate (B1) at (0.08,0.58);
+    \coordinate (B2) at (0.50,0.45);
+    \coordinate (B3) at (1.05,0.58);
+    \coordinate (B4) at (1.22,0.78);
+    \coordinate (B6) at (0.28,0.78);
+    \draw[line width=0.7pt] (T1) -- (B1);
+    \draw[line width=0.7pt] (T2) -- (B2);
+    \draw[line width=0.7pt] (T3) -- (B3);
+    \draw[line width=0.7pt] (T4) -- (B4);
+    \draw[line width=0.55pt] (T6) -- (B6);
+    \draw[line width=0.7pt] (TA) -- (T1) -- (T2) -- (T3) -- (T4) -- (TA);
+    \draw[line width=0.7pt] (TA) -- (T6);
+    \draw[line width=0.55pt] (T1) -- (T6);
+    \draw[line width=0.7pt] (BA) -- (B1) -- (B2) -- (B3) -- (B4) -- (BA);
+    \draw[line width=0.7pt] (BA) -- (B6);
+    \draw[line width=0.55pt] (B1) -- (B6);
+    \node[anchor=north] at (0.62,-0.12) {硫酸镁};
+  \end{scope}
+  % 硫酸铜：板状六方
+  \begin{scope}[shift={(6.15,1.05)}]
+    \draw[line width=0.7pt]
+      (0.00,0.55) -- (1.45,0.95) -- (1.95,0.58) -- (1.72,0.05)
+      -- (0.28,-0.35) -- (-0.22,0.02) -- cycle;
+    \draw[line width=0.55pt]
+      (0.22,0.32) -- (1.67,0.72) -- (2.17,0.35) -- (1.94,-0.18)
+      -- (0.50,-0.58) -- (0.00,-0.21) -- cycle;
+    \draw[line width=0.55pt] (0.00,0.55) -- (0.22,0.32);
+    \draw[line width=0.55pt] (1.45,0.95) -- (1.67,0.72);
+    \draw[line width=0.55pt] (1.95,0.58) -- (2.17,0.35);
+    \draw[line width=0.55pt] (1.72,0.05) -- (1.94,-0.18);
+    \draw[line width=0.55pt] (0.28,-0.35) -- (0.50,-0.58);
+    \draw[line width=0.55pt] (-0.22,0.02) -- (0.00,-0.21);
+    \node[anchor=north] at (0.95,-0.72) {硫酸铜};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图 4·6 晶体}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-02.png}}
-\caption{图示（原PDF第187页）}
+\fitfig{%
+% fig-alt: 食盐立方体外形
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  \draw[line width=0.7pt] (0,0) -- (1.35,0) -- (1.35,1.35) -- (0,1.35) -- cycle;
+  \draw[line width=0.7pt] (0,1.35) -- (0.55,1.75) -- (1.90,1.75) -- (1.35,1.35);
+  \draw[line width=0.7pt] (1.35,0) -- (1.90,0.40) -- (1.90,1.75);
+  \draw[line width=0.55pt] (0,0) -- (0.55,0.40) -- (1.90,0.40);
+  \draw[line width=0.55pt] (0.55,0.40) -- (0.55,1.75);
+  \node[anchor=north] at (0.95,-0.12) {食盐};
+\end{tikzpicture}%
+}
+\caption{食盐}
 \end{figure}
 
 \begin{figure}
@@ -6118,14 +7489,57 @@ x = \frac {340 \times 25}{170} = 50 (\text{ 克 })\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第187页）}]{assets/chemistry-1/fig-p0187-05.png}}
-\caption{图示（原PDF第187页）}
+\fitfig{%
+% fig-alt: 硫酸镁晶体：较短的六方柱，顶底为六边形晶面
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  \coordinate (T1) at (0.08,2.22);
+  \coordinate (T2) at (0.58,2.05);
+  \coordinate (T3) at (1.18,2.22);
+  \coordinate (T4) at (1.38,2.48);
+  \coordinate (T5) at (0.88,2.65);
+  \coordinate (T6) at (0.28,2.48);
+  \coordinate (B1) at (0.08,0.42);
+  \coordinate (B2) at (0.58,0.25);
+  \coordinate (B3) at (1.18,0.42);
+  \coordinate (B4) at (1.38,0.68);
+  \coordinate (B5) at (0.88,0.85);
+  \coordinate (B6) at (0.28,0.68);
+  \draw[line width=0.7pt] (T1) -- (B1);
+  \draw[line width=0.7pt] (T2) -- (B2);
+  \draw[line width=0.7pt] (T3) -- (B3);
+  \draw[line width=0.7pt] (T4) -- (B4);
+  \draw[line width=0.55pt] (T6) -- (B6);
+  \draw[line width=0.55pt] (T5) -- (B5);
+  \draw[line width=0.7pt] (T1) -- (T2) -- (T3) -- (T4) -- (T5) -- (T6) -- cycle;
+  \draw[line width=0.7pt] (B1) -- (B2) -- (B3) -- (B4);
+  \draw[line width=0.55pt] (B4) -- (B5) -- (B6) -- (B1);
+  \node[anchor=north] at (0.72,-0.05) {硫酸镁};
+\end{tikzpicture}%
+}
+\caption{硫酸镁}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4-6 总 体}]{assets/chemistry-1/fig-p0187-06.png}}
-\caption{图 4-6 总 体}
+\fitfig{%
+% fig-alt: 硫酸铜晶体：扁平六方板状，斜置，可见厚度
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  \draw[line width=0.7pt]
+    (0.05,0.72) -- (0.55,1.18) -- (2.25,1.18) -- (2.75,0.72)
+    -- (2.25,0.26) -- (0.55,0.26) -- cycle;
+  \draw[line width=0.55pt]
+    (0.28,0.42) -- (0.78,0.88) -- (2.48,0.88) -- (2.98,0.42)
+    -- (2.48,-0.04) -- (0.78,-0.04) -- cycle;
+  \draw[line width=0.7pt] (0.05,0.72) -- (0.28,0.42);
+  \draw[line width=0.7pt] (0.55,0.26) -- (0.78,-0.04);
+  \draw[line width=0.7pt] (2.25,0.26) -- (2.48,-0.04);
+  \draw[line width=0.7pt] (2.75,0.72) -- (2.98,0.42);
+  \draw[line width=0.55pt] (0.55,1.18) -- (0.78,0.88);
+  \draw[line width=0.55pt] (2.25,1.18) -- (2.48,0.88);
+  \node[anchor=north] at (1.50,-0.22) {硫酸铜};
+\end{tikzpicture}%
+}
+\caption{硫酸铜}
 \end{figure}
 
 \emph{图 4·6 晶体}
@@ -6815,14 +8229,59 @@ x = \frac {1 \times 120}{2 \times 2} = 30 (\text{毫升})\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第203页）}]{assets/chemistry-1/fig-p0203-01.png}}
-\caption{图示（原PDF第203页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-8 量瓶}]{assets/chemistry-1/fig-p0203-02.png}}
-\caption{图4-8 量瓶}
+\fitfig{%
+% fig-alt: 图4·8 量瓶一对：左瓶颈标注刻痕，两瓶球体均标 1000 ml，有磨口塞
+\begin{tikzpicture}[line cap=round, line join=round, every node/.style={font=\scriptsize, inner sep=1pt}]
+  % 左量瓶（刻痕）
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt]
+      (-0.28,2.28)
+      .. controls (-1.22,1.95) and (-1.32,0.72) .. (-1.08,0.22)
+      .. controls (-0.78,-0.18) and (0.78,-0.18) .. (1.08,0.22)
+      .. controls (1.32,0.72) and (1.22,1.95) .. (0.28,2.28);
+    \draw[line width=0.7pt] (-0.28,2.28) -- (-0.22,4.05);
+    \draw[line width=0.7pt] (0.28,2.28) -- (0.22,4.05);
+    \draw[line width=0.7pt] (0,4.05) ellipse (0.22 and 0.06);
+    \draw[line width=0.55pt] (-0.20,3.42) -- (0.20,3.42);
+    \node[anchor=west] at (0.42,3.42) {刻痕};
+    \fill[black!18] (-0.18,4.18) -- (0.18,4.18) -- (0.22,4.38) -- (-0.22,4.38) -- cycle;
+    \draw[line width=0.65pt] (-0.18,4.18) -- (0.18,4.18) -- (0.22,4.38) -- (-0.22,4.38) -- cycle;
+    \fill[black!22] (0,4.58) circle (0.16);
+    \draw[line width=0.65pt] (0,4.58) circle (0.16);
+    \draw[line width=0.5pt] (-0.12,4.38) -- (-0.10,4.48);
+    \draw[line width=0.5pt] (0.12,4.38) -- (0.10,4.48);
+    \draw[line width=0.4pt] (-0.72,1.35) arc[start angle=160, end angle=95, radius=0.55];
+    \node at (0,0.72) {1000 ml};
+    \draw[line width=0.4pt] (0.82,-0.02) -- (1.48,0.12);
+    \draw[line width=0.4pt] (0.92,-0.08) -- (1.58,0.06);
+  \end{scope}
+  % 右量瓶
+  \begin{scope}[shift={(3.55,0)}]
+    \draw[line width=0.7pt]
+      (-0.28,2.28)
+      .. controls (-1.22,1.95) and (-1.32,0.72) .. (-1.08,0.22)
+      .. controls (-0.78,-0.18) and (0.78,-0.18) .. (1.08,0.22)
+      .. controls (1.32,0.72) and (1.22,1.95) .. (0.28,2.28);
+    \draw[line width=0.7pt] (-0.28,2.28) -- (-0.22,4.05);
+    \draw[line width=0.7pt] (0.28,2.28) -- (0.22,4.05);
+    \draw[line width=0.7pt] (0,4.05) ellipse (0.22 and 0.06);
+    \draw[line width=0.55pt] (-0.20,3.42) -- (0.20,3.42);
+    \draw[line width=0.45pt] (-0.18,3.38)
+      .. controls (0.00,3.30) and (0.00,3.30) .. (0.18,3.38);
+    \fill[black!18] (-0.18,4.18) -- (0.18,4.18) -- (0.22,4.38) -- (-0.22,4.38) -- cycle;
+    \draw[line width=0.65pt] (-0.18,4.18) -- (0.18,4.18) -- (0.22,4.38) -- (-0.22,4.38) -- cycle;
+    \fill[black!22] (0,4.58) circle (0.16);
+    \draw[line width=0.65pt] (0,4.58) circle (0.16);
+    \draw[line width=0.5pt] (-0.12,4.38) -- (-0.10,4.48);
+    \draw[line width=0.5pt] (0.12,4.38) -- (0.10,4.48);
+    \draw[line width=0.4pt] (-0.72,1.35) arc[start angle=160, end angle=95, radius=0.55];
+    \node at (0,0.72) {1000 ml};
+    \draw[line width=0.4pt] (0.82,-0.02) -- (1.48,0.12);
+    \draw[line width=0.4pt] (0.92,-0.08) -- (1.58,0.06);
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图 4·8 量瓶}
 \end{figure}
 
 \emph{图 4·8 量瓶}
@@ -9372,8 +10831,101 @@ Ne、Ar、Kr &
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第262页）}]{assets/chemistry-1/fig-p0262-01.png}}
-\caption{图示（原PDF第262页）}
+\fitfig{%
+% fig-alt: 附表3（二）各类物质相互作用：金属、非金属、碱性氧化物、酸性氧化物、碱、酸、盐，箭头标反应号数1--18
+\begin{tikzpicture}[
+    line cap=round, line join=round,
+    every node/.style={font=\scriptsize, inner sep=1pt},
+    ncirc/.style={draw, circle, line width=0.7pt, font=\scriptsize,
+      inner sep=1pt, outer sep=0.8pt, align=center, minimum size=1.48cm, fill=white},
+    nbox/.style={draw, rectangle, line width=0.6pt, font=\scriptsize,
+      inner sep=2.4pt, fill=white, align=center},
+    rnum/.style={draw, circle, inner sep=0.35pt, font=\tiny, fill=white,
+      line width=0.45pt, minimum size=0.30cm}
+  ]
+  \node[ncirc] (metal) at (0,9.55) {金属};
+  \node[ncirc] (nonmet) at (7.6,9.55) {非金属};
+  \node[ncirc] (basox) at (0,6.45) {碱性\\氧化物};
+  \node[ncirc] (aciox) at (7.6,6.45) {酸性\\氧化物};
+  \node[ncirc] (base) at (0,3.35) {碱};
+  \node[ncirc] (acid) at (7.6,3.35) {酸};
+  \node[ncirc] (saltL) at (0,0.25) {盐};
+  \node[ncirc] (saltR) at (7.6,0.25) {盐};
+  \node[nbox] (saltTop) at (3.80,8.00) {盐};
+  \node[nbox] (saltW) at (3.80,3.35) {盐＋水};
+  \node[nbox] (baseS) at (2.35,1.80) {碱＋盐};
+  \node[nbox] (acidS) at (5.25,1.80) {酸＋盐};
+  \node[nbox] (saltS) at (3.80,0.25) {盐＋盐};
+  \node[nbox] (saltM) at (-2.85,6.45) {盐＋金属};
+  \node[nbox] (saltH) at (10.55,3.35) {盐＋氢气};
+  % ④ 金属＋非金属 → 盐
+  \draw[line width=0.7pt] (metal) -- (nonmet);
+  \draw[->, line width=0.7pt] (3.80,9.55) -- (saltTop.north);
+  \node[rnum] at (4.18,8.78) {4};
+  % ⑦ 碱性氧化物＋酸性氧化物 → 盐
+  \draw[line width=0.7pt] (basox) -- (aciox);
+  \draw[->, line width=0.7pt] (3.80,6.45) -- (saltTop.south);
+  \node[rnum] at (4.18,7.18) {7};
+  % ① 金属＋O2 → 碱性氧化物
+  \draw[->, line width=0.7pt] (metal) -- (basox);
+  \node[anchor=east] at (-0.18,8.00) {$+O_2$};
+  \node[rnum] at (0.38,8.00) {1};
+  % ② 非金属＋O2 → 酸性氧化物（原图作 $-O_2$）
+  \draw[->, line width=0.7pt] (nonmet) -- (aciox);
+  \node[rnum] at (7.22,8.00) {2};
+  \node[anchor=west] at (7.98,8.00) {$-O_2$};
+  % ⑤／⑯ 碱性氧化物 $\leftrightarrow$ 碱
+  \draw[<->, line width=0.7pt] (basox) -- (base);
+  \node[anchor=east] at (-0.22,4.90) {$-H_2O$};
+  \node[rnum] at (-0.58,4.55) {16};
+  \node[anchor=west] at (0.22,4.90) {$+H_2O$};
+  \node[rnum] at (0.62,4.55) {5};
+  % ⑥／⑰ 酸性氧化物 $\leftrightarrow$ 酸
+  \draw[<->, line width=0.7pt] (aciox) -- (acid);
+  \node[anchor=east] at (7.38,4.90) {$+H_2O$};
+  \node[rnum] at (6.98,4.55) {6};
+  \node[anchor=west] at (7.82,4.90) {$-H_2O$};
+  \node[rnum] at (8.18,4.55) {17};
+  % ⑨⑩ 交叉（碱＋酸性氧化物、酸＋碱性氧化物）经 盐＋水
+  \draw[line width=0.7pt] (basox) -- (acid);
+  \draw[line width=0.7pt] (aciox) -- (base);
+  \draw[->, line width=0.7pt] (3.15,4.55) -- (3.55,3.78);
+  \node[rnum] at (2.95,4.35) {9};
+  \draw[->, line width=0.7pt] (4.45,4.55) -- (4.05,3.78);
+  \node[rnum] at (4.65,4.35) {10};
+  % ⑧ 碱＋酸 → 盐＋水；并 碱$\xrightarrow{+\text{酸}}$盐、酸$\xrightarrow{+\text{碱}}$盐
+  \draw[line width=0.7pt] (base) -- (acid);
+  \draw[->, line width=0.7pt] (3.80,2.72) -- (saltW.south);
+  \node[rnum] at (3.80,2.55) {8};
+  \draw[->, line width=0.7pt] (base) -- (saltL);
+  \node[anchor=east] at (-0.22,1.80) {＋酸};
+  \node[rnum] at (-0.62,1.80) {8};
+  \draw[->, line width=0.7pt] (acid) -- (saltR);
+  \node[rnum] at (8.22,1.80) {8};
+  \node[anchor=west] at (8.58,1.80) {＋碱};
+  % ⑪ 碱＋盐；⑫ 酸＋盐
+  \draw[line width=0.7pt] (base) -- (saltR);
+  \draw[line width=0.7pt] (acid) -- (saltL);
+  \node[rnum] at (3.42,1.80) {11};
+  \node[rnum] at (4.18,1.80) {12};
+  % ⑬ 盐＋盐
+  \draw[line width=0.7pt] (saltL) -- (saltR);
+  \draw[->, line width=0.7pt] (3.80,0.88) -- (saltS.north);
+  \node[rnum] at (3.80,-0.42) {13};
+  % ⑮ 盐＋金属（左外框）
+  \draw[line width=0.7pt] (saltL.west) -- ++(-0.72,0) coordinate (LV)
+    -- (LV |- metal.west) -- (metal.west);
+  \draw[->, line width=0.7pt] (saltM.east) -- (LV |- saltM);
+  \node[rnum] at (-1.55,6.45) {15};
+  % ⑭ 酸＋金属 → 盐＋氢气（右上外框）
+  \draw[line width=0.7pt] (metal.north) -- ++(0,0.58) coordinate (TOP)
+    -- (TOP -| nonmet.east) -- ++(1.12,0) coordinate (TR)
+    -- (TR |- acid.east) -- (acid.east);
+  \draw[->, line width=0.7pt] (TR |- acid) -- (saltH.west);
+  \node[rnum] at (9.18,3.35) {14};
+\end{tikzpicture}%
+}
+\caption{附表3　各类物质的相互作用（二）}
 \end{figure}
 
 说明：图中的数字是附表3（一）里的``反应号数''。

@@ -757,7 +757,57 @@ K，Na，Ca，Mg，Al，Mn，Zn，Cr，Fe，Ni，Sn，Pb，（H），Cu，Hg，A
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·6}]{assets/chemistry-3/fig-p0025-01.png}}
+\fitfig{%
+% fig-alt: 原电池：烧杯盛稀硫酸，左锌片标负、右铜片标正，顶接电流计；溶液中标 H⁺、Zn⁺⁺，铜片旁气泡标 H₂；底注 Zn−2e→Zn⁺⁺ 与 2H⁺+2e→H₂↑
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,line width=0.7pt]
+  % 溶液剖面
+  \begin{scope}
+    \clip (-1.42,0.10) -- (-1.42,1.40) -- (1.42,1.40)
+      -- (1.42,0.22) arc[start angle=0,end angle=-180,x radius=1.42,y radius=0.26];
+    \foreach \y in {0.22,0.34,0.46,0.58,0.70,0.82,0.94,1.06,1.18,1.30} {
+      \draw[line width=0.32pt] (-1.50,\y) -- (1.50,\y);
+    }
+  \end{scope}
+  \draw[line width=0.45pt] (-1.42,1.40) -- (1.42,1.40);
+  % 烧杯
+  \draw (-1.42,2.36) -- (-1.42,0.22)
+    arc[start angle=180,end angle=360,x radius=1.42,y radius=0.26]
+    -- (1.42,2.36);
+  \draw (-1.58,2.36) -- (1.58,2.36);
+  \draw (-1.58,2.36) -- (-1.42,2.20);
+  \draw (1.58,2.36) -- (1.42,2.20);
+  % 锌片、铜片
+  \fill[white] (-0.70,0.20) rectangle (-0.42,3.58);
+  \draw (-0.70,0.20) rectangle (-0.42,3.58);
+  \fill[white] (0.42,0.20) rectangle (0.70,3.58);
+  \draw (0.42,0.20) rectangle (0.70,3.58);
+  % 铜片氢气泡
+  \foreach \p in {{(0.80,0.52)},{(0.90,0.72)},{(0.82,0.92)},{(0.92,1.12)},{(0.84,1.30)}} {
+    \draw[line width=0.4pt] \p circle[radius=0.055];
+  }
+  % 顶导线与电流计
+  \draw (-0.56,3.58) -- (-0.56,4.16) -- (-0.32,4.16);
+  \draw (0.56,3.58) -- (0.56,4.16) -- (0.32,4.16);
+  \draw (0,4.16) circle[radius=0.32];
+  \draw[line width=0.55pt] (-0.14,4.06) -- (0.16,4.28);
+  \fill (0.16,4.28) circle[radius=0.03];
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.64,4.16) {$-$};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (0.70,4.16) {$+$};
+  % 标注
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.82,3.12) {锌片};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (0.82,3.12) {铜片};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (0.98,1.70) {$\mathrm{H}_{2}$};
+  \draw[line width=0.45pt] (1.42,1.40) -- (2.08,1.58);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (2.10,1.58) {稀硫酸};
+  \node[font=\scriptsize,inner sep=1pt,fill=white] at (0.05,0.92) {$\mathrm{H}^{+}$};
+  \node[font=\scriptsize,inner sep=1pt,fill=white] at (-0.22,0.40) {$\mathrm{Zn}^{++}$};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (0.05,-0.42)
+    {$\mathrm{Zn}-2e\rightarrow\mathrm{Zn}^{++}$};
+  \draw[line width=0.45pt] (0.56,0.20) -- (1.05,-0.12);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (0.55,-0.48)
+    {$2\mathrm{H}^{+}+2e\rightarrow\mathrm{H}_{2}\uparrow$};
+\end{tikzpicture}%
+}
 \caption{图 1·6}
 \end{figure}
 
@@ -1573,7 +1623,61 @@ ROH）。它们的氢氧化物都是强碱。所以碱金属所显示的金属�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·2 用焰色反应检验钠盐或钾盐}]{assets/chemistry-3/fig-p0047-01.png}}
+\fitfig{%
+% fig-alt: 酒精灯火焰中伸入带小环的铁丝，右端熔接玻璃棒，手持玻璃棒作把手
+\begin{tikzpicture}[line cap=round,line join=round,line width=0.7pt]
+  % 灯足
+  \draw (-0.62,0.10) -- (-0.48,0.34);
+  \draw (0.00,0.04) -- (0.00,0.30);
+  \draw (0.62,0.10) -- (0.48,0.34);
+  % 灯壶
+  \draw (-0.22,1.58)
+    .. controls (-1.18,1.42) and (-1.22,0.42) .. (-0.48,0.30)
+    .. controls (-0.18,0.18) and (0.18,0.18) .. (0.48,0.30)
+    .. controls (1.22,0.42) and (1.18,1.42) .. (0.22,1.58);
+  \draw[line width=0.45pt] (0,0.78) ellipse (0.88 and 0.14);
+  % 灯芯管与灯芯
+  \draw (-0.22,1.58) -- (-0.14,1.98);
+  \draw (0.22,1.58) -- (0.14,1.98);
+  \draw (-0.14,1.98) -- (0.14,1.98);
+  \draw[line width=0.5pt] (-0.08,1.72) -- (-0.06,1.98);
+  \draw[line width=0.5pt] (0.08,1.72) -- (0.06,1.98);
+  \draw[line width=0.55pt] (0,1.90) -- (0,2.14);
+  % 火焰
+  \draw (0.00,2.12)
+    .. controls (-0.28,2.32) and (-0.22,2.68) .. (0.00,3.02)
+    .. controls (0.22,2.68) and (0.28,2.32) .. (0.00,2.12);
+  \draw[line width=0.45pt] (0.00,2.14)
+    .. controls (-0.10,2.26) and (-0.08,2.42) .. (0.00,2.55)
+    .. controls (0.08,2.42) and (0.10,2.26) .. (0.00,2.14);
+  % 铁丝小环与玻璃棒把手
+  \draw[line width=0.55pt] (0.10,2.38) ellipse (0.11 and 0.07);
+  \draw[line width=0.5pt] (0.21,2.38) -- (3.42,2.32);
+  \draw (3.42,2.18) -- (5.05,2.18) -- (5.05,2.46) -- (3.42,2.46) -- cycle;
+  \draw[line width=0.45pt] (3.42,2.18) -- (3.42,2.46);
+  % 手（示意线稿：拇指压棒上，四指握棒下，袖口在右）
+  \draw (5.05,2.40)
+    .. controls (5.18,2.62) and (5.05,2.88) .. (4.72,2.95)
+    .. controls (4.48,3.00) and (4.32,2.82) .. (4.38,2.58)
+    .. controls (4.42,2.48) and (4.55,2.46) .. (5.05,2.46);
+  \draw (5.05,2.18)
+    .. controls (4.55,2.12) and (4.28,1.95) .. (4.22,1.72)
+    .. controls (4.18,1.52) and (4.42,1.42) .. (4.68,1.50)
+    .. controls (4.82,1.55) and (4.88,1.70) .. (5.00,1.88);
+  \draw[line width=0.5pt] (4.55,2.12)
+    .. controls (4.42,1.92) and (4.58,1.62) .. (4.85,1.58);
+  \draw[line width=0.5pt] (4.72,2.10)
+    .. controls (4.62,1.88) and (4.80,1.52) .. (5.08,1.55);
+  \draw[line width=0.5pt] (4.88,2.08)
+    .. controls (4.82,1.85) and (5.02,1.48) .. (5.28,1.58);
+  \draw (5.05,2.46)
+    .. controls (5.55,2.55) and (6.05,2.85) .. (6.18,2.55)
+    .. controls (6.32,2.22) and (6.22,1.72) .. (5.72,1.42)
+    .. controls (5.42,1.25) and (5.12,1.38) .. (5.02,1.72);
+  \draw[line width=0.5pt] (5.22,1.62)
+    .. controls (5.55,1.72) and (5.62,2.35) .. (5.28,2.52);
+\end{tikzpicture}%
+}
 \caption{图2·2 用焰色反应检验钠盐或钾盐}
 \end{figure}
 
@@ -1832,9 +1936,93 @@ IV
 
 \emph{阴极上阳极上}
 
+\usetikzlibrary{patterns}
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·3}]{assets/chemistry-3/fig-p0052-01.png}}
+\fitfig{%
+% fig-alt: （a）烧杯电解食盐水：Cl₂/H₂在两极之间的电解液中，溶液中标OH⁻、H⁺、Cl⁻、Na⁺；（b）隔膜电解槽：阳极–隔膜间Cl₂、隔膜–阴极间H₂均在液相，槽顶另有Cl₂↑/H₂↑，右出NaOH
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,line width=0.7pt]
+  % ---- (a) 烧杯 ----
+  \begin{scope}
+    \clip (-1.52,0.08) -- (-1.52,1.02) -- (1.52,1.02)
+      -- (1.52,0.20) arc[start angle=0,end angle=-180,x radius=1.52,y radius=0.22];
+    \foreach \y in {0.20,0.32,0.44,0.56,0.68,0.80,0.92} {
+      \draw[line width=0.32pt] (-1.60,\y) -- (1.60,\y);
+    }
+  \end{scope}
+  \draw[line width=0.45pt] (-1.52,1.02) -- (1.52,1.02);
+  \draw (-1.52,2.18) -- (-1.52,0.20)
+    arc[start angle=180,end angle=360,x radius=1.52,y radius=0.22]
+    -- (1.52,2.18);
+  \draw (-1.68,2.18) -- (1.68,2.18);
+  \draw (-1.68,2.18) -- (-1.52,2.02);
+  \draw (1.68,2.18) -- (1.52,2.02);
+  % 电极
+  \fill[white] (-0.78,0.70) rectangle (-0.52,2.48);
+  \draw (-0.78,0.70) rectangle (-0.52,2.48);
+  \fill[white] (0.52,0.70) rectangle (0.78,2.48);
+  \draw (0.52,0.70) rectangle (0.78,2.48);
+  \node[font=\scriptsize,inner sep=0.5pt,fill=white] at (-0.65,2.32) {$+$};
+  \draw (-0.65,2.48) .. controls (-0.55,2.85) and (-0.15,3.05) .. (0.15,3.18);
+  \draw (0.65,2.48) .. controls (0.78,2.85) and (1.15,3.05) .. (1.42,3.18);
+  % Cl2/H2 在两极之间的电解液中（非液面上外侧）
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (-0.28,0.90) {$\mathrm{Cl}_{2}$};
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (0.28,0.90) {$\mathrm{H}_{2}$};
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (-0.28,0.58) {$\mathrm{OH}^{-}$};
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (0.28,0.58) {$\mathrm{H}^{+}$};
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (-0.28,0.32) {$\mathrm{Cl}^{-}$};
+  \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (0.28,0.32) {$\mathrm{Na}^{+}$};
+  \node[font=\scriptsize] at (0,-0.55) {（a）};
+  % ---- (b) 隔膜槽 ----
+  \begin{scope}[xshift=5.15cm]
+    \draw[line width=1.05pt] (0,0) rectangle (3.70,2.42);
+    \draw[line width=0.45pt] (0.12,0.12) rectangle (3.58,2.30);
+    \draw[line width=1.05pt] (-0.02,2.42) -- (3.72,2.42) -- (3.72,2.55) -- (-0.02,2.55) -- cycle;
+    \begin{scope}
+      \clip (0.12,0.12) rectangle (3.58,1.12);
+      \foreach \y in {0.20,0.32,0.44,0.56,0.68,0.80,0.92,1.04} {
+        \draw[line width=0.32pt] (0.05,\y) -- (3.65,\y);
+      }
+    \end{scope}
+    \draw[line width=0.45pt] (0.12,1.12) -- (3.58,1.12);
+    % 左进液管
+    \draw (-0.85,1.12) -- (0.12,1.12);
+    \draw (-0.85,1.12) -- (-0.85,0.72);
+    \node[font=\scriptsize,align=center,inner sep=1pt] at (-0.15,1.72)
+      {$\mathrm{NaCl}$\\溶液};
+    \draw[->,line width=0.55pt] (-0.15,1.42) -- (-0.15,1.18);
+    % 电极
+    \fill[white] (0.78,0.72) rectangle (1.02,2.22);
+    \draw (0.78,0.72) rectangle (1.02,2.22);
+    \fill[white] (2.68,0.72) rectangle (2.92,2.22);
+    \draw (2.68,0.72) rectangle (2.92,2.22);
+    \node[font=\scriptsize,inner sep=0.4pt] at (0.90,2.08) {$+$};
+    \node[font=\scriptsize,inner sep=0.4pt] at (2.80,2.08) {$-$};
+    \draw (0.90,2.22) .. controls (0.78,2.62) and (0.42,2.85) .. (0.18,3.05);
+    \draw (2.80,2.22) .. controls (2.92,2.62) and (3.28,2.85) .. (3.52,3.05);
+    % 隔膜
+    \fill[pattern=north east lines,pattern color=black] (1.78,0.12) rectangle (1.98,1.55);
+    \draw[line width=0.45pt] (1.78,0.12) rectangle (1.98,1.55);
+    % 液相产物：阳极–隔膜、隔膜–阴极（槽顶另有导出口）
+    \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (1.40,0.62) {$\mathrm{Cl}_{2}$};
+    \draw[->,line width=0.45pt] (1.40,0.78) -- (1.40,1.02);
+    \node[font=\scriptsize,inner sep=0.6pt,fill=white] at (2.35,0.62) {$\mathrm{H}_{2}$};
+    \draw[->,line width=0.45pt] (2.35,0.78) -- (2.35,1.02);
+    \draw[->,line width=0.55pt] (0.90,2.62) -- (0.90,2.92);
+    \node[font=\scriptsize,anchor=south,inner sep=1pt] at (0.55,2.94) {$\mathrm{Cl}_{2}$};
+    \draw[->,line width=0.55pt] (2.80,2.62) -- (2.80,2.92);
+    \node[font=\scriptsize,anchor=south,inner sep=1pt] at (3.15,2.94) {$\mathrm{H}_{2}$};
+    % 右出碱管
+    \draw (3.58,1.12) -- (4.15,1.12);
+    \draw[->,line width=0.55pt] (4.15,1.12) -- (4.42,1.12);
+    \node[font=\scriptsize,anchor=west,inner sep=1pt] at (4.15,1.38) {$\mathrm{NaOH}$};
+    \node[font=\scriptsize] at (1.85,-0.55) {（b）};
+  \end{scope}
+  % 两槽共用「食盐溶液」
+  \draw[line width=0.45pt] (1.52,0.70) -- (3.55,0.70) -- (5.30,0.70);
+  \node[font=\scriptsize,anchor=south,inner sep=1pt] at (3.35,0.72) {食盐溶液};
+\end{tikzpicture}%
+}
 \caption{图2·3}
 \end{figure}
 
@@ -1872,7 +2060,65 @@ IV
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·4 水平式隔膜电解槽示意图}]{assets/chemistry-3/fig-p0054-01.png}}
+\fitfig{%
+% fig-alt: 水平式隔膜电解槽：槽顶+接两块石墨阳极，阳极下水平隔膜与铁丝网阴极；左出氯气，右进食盐溶液，阴极室左出氢气，槽底虹吸管出电解碱液
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,line width=0.7pt]
+  % 槽体外壁
+  \draw[line width=1.1pt] (0,0) rectangle (7.20,3.35);
+  \draw[line width=0.45pt] (0.16,0.16) rectangle (7.04,3.20);
+  \draw[line width=1.05pt] (-0.04,3.35) rectangle (7.24,3.52);
+  % 阳极区溶液
+  \begin{scope}
+    \clip (0.16,0.92) rectangle (7.04,2.28);
+    \foreach \y in {1.00,1.12,1.24,1.36,1.48,1.60,1.72,1.84,1.96,2.08,2.20} {
+      \draw[line width=0.32pt] (0.10,\y) -- (7.10,\y);
+    }
+  \end{scope}
+  \draw[line width=0.45pt] (0.16,2.28) -- (7.04,2.28);
+  % 石墨阳极（两块竖板+底部水平阳极）
+  \fill[pattern=north east lines,pattern color=black] (2.15,1.55) rectangle (2.85,3.35);
+  \fill[pattern=north east lines,pattern color=black] (4.35,1.55) rectangle (5.05,3.35);
+  \fill[pattern=north east lines,pattern color=black] (1.85,1.42) rectangle (5.35,1.62);
+  \draw (2.15,1.55) rectangle (2.85,3.35);
+  \draw (4.35,1.55) rectangle (5.05,3.35);
+  \draw (1.85,1.42) rectangle (5.35,1.62);
+  \draw (1.95,3.20) rectangle (5.25,3.35);
+  \draw (3.60,3.52) -- (3.60,4.22);
+  \node[font=\scriptsize,anchor=south,inner sep=1pt] at (3.60,4.24) {$+$};
+  % 隔膜与阴极网
+  \draw[line width=0.55pt] (0.16,0.88) -- (7.04,0.88);
+  \fill[pattern=north east lines,pattern color=black] (0.16,0.42) rectangle (7.04,0.88);
+  \draw (0.16,0.42) rectangle (7.04,0.88);
+  \foreach \x in {0.45,1.05,1.65,2.25,2.85,3.45,4.05,4.65,5.25,5.85,6.45} {
+    \draw[->,line width=0.45pt] (\x,0.42) -- (\x,0.18);
+  }
+  % 氯气导出管（气相，向左）
+  \draw (0.85,3.52) -- (0.85,3.92) -- (-0.55,3.92);
+  \draw[->,line width=0.55pt] (-0.55,3.92) -- (-1.05,3.92);
+  \node[font=\scriptsize,anchor=south,inner sep=1pt] at (-0.10,4.02) {氯气};
+  % 食盐溶液导入管（倒U，末端浸入阳极区）
+  \draw (6.25,1.80) -- (6.25,3.92) -- (6.95,3.92) -- (6.95,3.52);
+  \draw[->,line width=0.55pt] (6.60,4.22) -- (6.60,3.92);
+  \node[font=\scriptsize,anchor=south,inner sep=1pt] at (6.60,4.24) {食盐溶液};
+  % 氢气出口（阴极室左侧）
+  \draw[line width=0.9pt] (-0.02,0.48) rectangle (0.16,0.82);
+  \draw[->,line width=0.55pt] (0.00,0.65) -- (-0.85,0.65);
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.88,0.88) {氢气};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.88,0.52) {出口};
+  % 虹吸管出电解碱液
+  \draw (5.55,0) -- (5.55,-0.32) -- (6.15,-0.32) -- (6.15,-0.78);
+  \draw[->,line width=0.55pt] (6.15,-0.78) -- (6.15,-1.12);
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (6.05,-1.18) {电解碱液};
+  % 标注
+  \draw[line width=0.45pt] (1.85,1.52) -- (-0.35,1.52);
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.38,1.52) {阳极};
+  \draw[line width=0.45pt] (0.16,0.88) -- (-0.35,1.12);
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.38,1.12) {隔膜};
+  \draw[line width=0.45pt] (7.04,0.65) -- (7.55,0.65);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (7.58,0.65) {阴极};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (7.58,0.38) {$-$};
+\end{tikzpicture}%
+}
 \caption{图 2·4 水平式隔膜电解槽示意图}
 \end{figure}
 
@@ -1888,7 +2134,55 @@ IV
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2·5 垂直式隔膜电解槽示意图}]{assets/chemistry-3/fig-p0054-02.png}}
+\fitfig{%
+% fig-alt: 垂直式隔膜电解槽：中为石墨阳极（+挂于槽盖），其右侧细管浸入阳极区进食盐溶液；左出氢气，右出氯气，槽底虹吸管出电解碱液
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,line width=0.7pt]
+  \draw[line width=1.1pt] (0,0) rectangle (3.85,4.15);
+  \draw[line width=0.45pt] (0.16,0.16) rectangle (3.69,3.98);
+  \draw[line width=1.05pt] (-0.04,4.15) rectangle (3.89,4.32);
+  % 溶液
+  \begin{scope}
+    \clip (0.16,0.16) rectangle (3.69,2.45);
+    \foreach \y in {0.28,0.42,0.56,0.70,0.84,0.98,1.12,1.26,1.40,1.54,1.68,1.82,1.96,2.10,2.24,2.38} {
+      \draw[line width=0.32pt] (0.10,\y) -- (3.75,\y);
+    }
+  \end{scope}
+  \draw[line width=0.45pt] (0.16,2.45) -- (3.69,2.45);
+  % 阴极与隔膜（左侧竖板）
+  \draw[line width=0.9pt] (0.28,0.16) -- (0.28,3.85);
+  \fill[pattern=north east lines,pattern color=black] (0.28,0.16) rectangle (0.72,3.70);
+  \draw[line width=0.45pt] (0.28,0.16) rectangle (0.72,3.70);
+  % 阳极（中部竖块，挂于槽盖）
+  \fill[pattern=north east lines,pattern color=black] (1.55,0.85) rectangle (2.28,4.15);
+  \draw (1.55,0.85) rectangle (2.28,4.15);
+  % 氢气导出管
+  \draw (0.55,4.32) -- (0.55,4.78) -- (-0.55,4.78);
+  \draw[->,line width=0.55pt] (-0.55,4.78) -- (-0.95,4.78);
+  \node[font=\scriptsize,anchor=south,inner sep=1pt] at (-0.35,4.86) {氢气};
+  % 正极在阳极块上；食盐溶液导入管在阳极右侧浸入阳极区
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (1.48,4.58) {$+$};
+  \draw (2.50,4.32) -- (2.50,1.55);
+  \draw (2.62,4.32) -- (2.62,1.55);
+  \draw (2.50,1.55) -- (2.62,1.55);
+  \draw[->,line width=0.55pt] (2.56,4.88) -- (2.56,4.40);
+  \node[font=\scriptsize,anchor=south,inner sep=1pt] at (2.56,4.90) {食盐溶液};
+  % 氯气导出管
+  \draw (3.30,4.32) -- (3.30,4.78) -- (4.40,4.78);
+  \draw[->,line width=0.55pt] (4.40,4.78) -- (4.80,4.78);
+  \node[font=\scriptsize,anchor=south,inner sep=1pt] at (4.20,4.86) {氯气};
+  % 虹吸管
+  \draw (0.55,0) -- (0.55,-0.42) -- (0.15,-0.42) -- (0.15,-0.95);
+  \draw[->,line width=0.55pt] (0.15,-0.95) -- (0.15,-1.28);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (0.28,-1.32) {电解碱液};
+  % 标注
+  \draw[line width=0.45pt] (0.28,2.85) -- (-0.55,2.85);
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (-0.58,2.85) {阴极};
+  \draw[line width=0.45pt] (2.28,1.18) -- (3.20,1.18);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt,fill=white] at (3.22,1.18) {阳极};
+  \draw[line width=0.45pt] (0.72,0.55) -- (1.15,0.55) -- (1.15,0.22) -- (3.20,0.22);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt,fill=white] at (3.22,0.22) {隔膜};
+\end{tikzpicture}%
+}
 \caption{图 2·5 垂直式隔膜电解槽示意图}
 \end{figure}
 
@@ -2513,7 +2807,60 @@ Be---Mg---Ca---Sr---Ba
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·1 镁带的燃烧}]{assets/chemistry-3/fig-p0068-01.png}}
+\fitfig{%
+% fig-alt: 手持坩埚钳夹镁带燃烧：上方烟尘标氧化镁微粒，镁带下端火花，下方石棉板残留标氧化镁
+\begin{tikzpicture}[line cap=round,line join=round,line width=0.7pt]
+  % 石棉板
+  \draw (0.15,0.15) -- (3.35,0.15) -- (3.85,1.05) -- (0.65,1.05) -- cycle;
+  \draw[line width=0.45pt] (1.15,0.52)
+    .. controls (1.35,0.62) and (1.55,0.48) .. (1.75,0.58)
+    .. controls (1.92,0.66) and (2.05,0.50) .. (2.22,0.55);
+  \draw[line width=0.45pt] (2.55,0.72) -- (3.95,0.95);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (3.98,0.95) {氧化镁};
+  % 镁带与火花
+  \draw[line width=0.85pt] (2.05,1.55) -- (2.12,2.42);
+  \foreach \a/\r in {0/0.42,20/0.28,40/0.48,70/0.22,90/0.40,120/0.26,150/0.46,180/0.24,210/0.42,240/0.22,270/0.18,300/0.36,330/0.24} {
+    \draw[line width=0.45pt] (2.08,1.52) -- ++(\a:\r);
+  }
+  \foreach \p in {{(1.72,1.38)},{(2.42,1.40)},{(1.95,1.22)},{(2.25,1.18)}} {
+    \fill \p circle[radius=0.025];
+  }
+  \draw[line width=0.45pt] (2.18,2.05) -- (3.05,1.85);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (3.08,1.85) {镁带};
+  % 烟尘（氧化镁微粒）
+  \foreach \x/\y in {1.55/2.55,1.35/2.85,1.62/3.15,1.22/3.35,1.48/3.55,1.72/3.75,1.28/3.95} {
+    \draw[line width=0.4pt] (\x,\y)
+      .. controls (\x-0.18,\y+0.22) and (\x+0.12,\y+0.38) .. (\x-0.08,\y+0.55);
+  }
+  \foreach \p in {{(1.42,2.72)},{(1.18,3.08)},{(1.58,3.42)},{(1.28,3.68)},{(1.52,4.02)},{(1.08,3.52)}} {
+    \fill \p circle[radius=0.03];
+  }
+  \draw[line width=0.45pt] (1.55,3.55) -- (0.55,3.85);
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (0.52,3.85) {氧化镁微粒};
+  % 坩埚钳
+  \draw (2.05,2.42) -- (2.55,2.72) -- (4.35,3.55);
+  \draw (2.18,2.48) -- (2.62,2.58) -- (4.42,3.38);
+  \draw (3.55,3.12) circle[radius=0.16];
+  \draw (4.35,3.38) -- (4.55,3.72) -- (5.15,3.55) -- (4.95,3.22) -- (4.42,3.38);
+  % 手（示意线稿：拇指压钳柄上，三指握下，袖口在右）
+  \draw (4.72,3.55)
+    .. controls (4.55,3.72) and (4.62,3.98) .. (4.92,4.08)
+    .. controls (5.18,4.18) and (5.42,4.02) .. (5.48,3.78);
+  \draw (4.78,3.28)
+    .. controls (4.55,3.12) and (4.72,2.88) .. (5.02,2.92)
+    .. controls (5.22,2.95) and (5.28,3.12) .. (5.18,3.28);
+  \draw[line width=0.5pt] (4.95,3.22)
+    .. controls (4.82,3.02) and (5.02,2.82) .. (5.25,2.88);
+  \draw[line width=0.5pt] (5.08,3.18)
+    .. controls (5.00,2.95) and (5.22,2.72) .. (5.45,2.82);
+  \draw (5.18,3.38)
+    .. controls (5.55,3.22) and (6.05,3.35) .. (6.22,3.62)
+    .. controls (6.38,3.88) and (6.15,4.22) .. (5.72,4.28)
+    .. controls (5.42,4.32) and (5.22,4.12) .. (5.12,3.85);
+  \draw[line width=0.5pt] (5.35,3.48)
+    .. controls (5.62,3.52) and (5.72,3.85) .. (5.48,4.08);
+\end{tikzpicture}%
+}
 \caption{图 3·1 镁带的燃烧}
 \end{figure}
 
@@ -2521,7 +2868,55 @@ Be---Mg---Ca---Sr---Ba
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·2 镁在二氧化碳里燃烧}]{assets/chemistry-3/fig-p0068-02.png}}
+\fitfig{%
+% fig-alt: 手持坩埚钳将燃着镁条伸入烧杯，杯中火花，右标镁条与 CO₂，杯下垫板
+\begin{tikzpicture}[line cap=round,line join=round,line width=0.7pt]
+  % 垫板
+  \draw (0.05,0.08) rectangle (2.85,0.28);
+  \draw (0.05,0.28) -- (0.22,0.42) -- (3.02,0.42) -- (2.85,0.28);
+  \draw (2.85,0.08) -- (3.02,0.22) -- (3.02,0.42);
+  % 烧杯
+  \draw (0.35,0.28) -- (0.35,2.15);
+  \draw (2.55,0.28) -- (2.55,2.15);
+  \draw (0.35,0.28) -- (2.55,0.28);
+  \draw (0.22,2.15) -- (0.35,2.00);
+  \draw (2.68,2.15) -- (2.55,2.00);
+  \draw (0.22,2.15) -- (2.68,2.15);
+  % 杯中燃烧
+  \foreach \a/\r in {0/0.38,30/0.22,60/0.42,90/0.18,120/0.36,150/0.20,180/0.32,210/0.16,240/0.28,270/0.14,300/0.34,330/0.18} {
+    \draw[line width=0.4pt] (1.45,0.95) -- ++(\a:\r);
+  }
+  \foreach \p in {{(1.22,0.72)},{(1.68,0.70)},{(1.45,0.55)},{(1.32,1.18)},{(1.58,1.22)}} {
+    \fill \p circle[radius=0.025];
+  }
+  \draw[line width=0.8pt] (1.42,0.95) -- (1.48,2.55);
+  \draw[line width=0.45pt] (1.55,1.85) -- (2.85,2.05);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (2.88,2.05) {镁条};
+  \draw[line width=0.45pt] (2.55,1.15) -- (3.05,1.15);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (3.08,1.15) {$\mathrm{CO}_{2}$};
+  % 坩埚钳（竖向）
+  \draw (1.35,2.52) -- (1.28,4.05);
+  \draw (1.55,2.52) -- (1.62,4.05);
+  \draw (1.28,3.55) -- (1.62,3.55);
+  \draw (1.45,3.55) circle[radius=0.14];
+  \draw (1.22,4.05) -- (1.18,4.45) -- (1.72,4.48) -- (1.68,4.05);
+  % 手（示意线稿：拇指在左，三指在右握钳柄）
+  \draw (1.05,4.38)
+    .. controls (0.62,4.48) and (0.48,4.95) .. (0.72,5.28)
+    .. controls (0.92,5.52) and (1.22,5.48) .. (1.35,5.22);
+  \draw (1.72,4.38)
+    .. controls (2.15,4.42) and (2.38,4.85) .. (2.18,5.22)
+    .. controls (2.02,5.48) and (1.68,5.52) .. (1.52,5.28);
+  \draw[line width=0.5pt] (1.78,4.52)
+    .. controls (2.02,4.72) and (2.08,5.05) .. (1.85,5.22);
+  \draw[line width=0.5pt] (1.88,4.48)
+    .. controls (2.18,4.62) and (2.28,4.95) .. (2.02,5.12);
+  \draw (1.05,4.38) -- (1.22,4.05);
+  \draw (1.72,4.38) -- (1.68,4.05);
+  \draw[line width=0.5pt] (0.95,4.72)
+    .. controls (1.08,4.95) and (1.28,5.08) .. (1.42,5.05);
+\end{tikzpicture}%
+}
 \caption{图 3·2 镁在二氧化碳里燃烧}
 \end{figure}
 
@@ -3456,7 +3851,63 @@ II 类主族）的一个元素是镁，后面（第 IV
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4·2 用铝热剂焊接钢轨（剖面图）}]{assets/chemistry-3/fig-p0089-02.png}}
+\fitfig{%
+% fig-alt: 铝热焊剖面：吊钩悬挂坩埚盛铝热剂，底孔铁水流入耐火模；模中两段钢轨对接，左附钢轨剖面
+\begin{tikzpicture}[line cap=round,line join=round,line width=0.7pt]
+  % 钢轨剖面（左）
+  \draw (0.15,1.55) -- (0.15,1.78) -- (1.15,1.78) -- (1.15,1.55)
+    -- (0.82,1.55) -- (0.82,0.72) -- (1.22,0.72) -- (1.22,0.48)
+    -- (0.08,0.48) -- (0.08,0.72) -- (0.48,0.72) -- (0.48,1.55) -- cycle;
+  \node[font=\scriptsize,anchor=north,inner sep=2pt] at (0.65,0.46) {钢轨剖面};
+  % 吊索与吊钩
+  \draw (3.15,6.55) -- (3.15,5.55);
+  \draw (6.55,6.55) -- (6.55,5.55);
+  \draw (3.15,5.55) .. controls (2.95,5.35) and (2.85,5.05) .. (3.15,4.85)
+    .. controls (3.42,4.68) and (3.58,4.92) .. (3.42,5.12);
+  \draw (6.55,5.55) .. controls (6.75,5.35) and (6.85,5.05) .. (6.55,4.85)
+    .. controls (6.28,4.68) and (6.12,4.92) .. (6.28,5.12);
+  % 坩埚（六边形剖面，两侧耳钩）
+  \draw (3.40,5.12) -- (2.58,4.42) -- (2.88,2.95) -- (4.55,2.52)
+    -- (6.22,2.95) -- (6.52,4.42) -- (5.70,5.12) -- cycle;
+  \draw (2.58,4.42) -- (6.52,4.42);
+  \draw (3.40,5.12) -- (3.15,4.88);
+  \draw (5.70,5.12) -- (6.55,4.88);
+  % 铝热剂（液面与颗粒）
+  \draw[line width=0.45pt] (2.95,3.88)
+    .. controls (3.85,4.08) and (5.55,3.68) .. (6.15,3.95);
+  \foreach \p in {{(3.55,3.55)},{(4.15,3.72)},{(4.85,3.48)},{(5.45,3.68)},{(6.05,3.42)},{(3.95,3.28)},{(5.15,3.22)},{(4.45,3.15)}} {
+    \fill \p circle[radius=0.035];
+  }
+  % 底孔与铁水
+  \draw (4.42,2.55) -- (4.42,1.85) -- (4.68,1.85) -- (4.68,2.55);
+  \draw[line width=0.9pt] (4.55,1.85) -- (4.55,1.42);
+  \draw[line width=0.45pt] (6.22,3.55) -- (6.95,3.55);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (6.98,3.55) {坩埚};
+  \draw[line width=0.45pt] (6.22,3.18) -- (6.95,3.18);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (6.98,3.18) {铝热剂};
+  % 耐火模（剖面，顶中浇口）
+  \fill[pattern=north east lines,pattern color=black]
+    (2.55,0.15) -- (6.55,0.15) -- (6.55,1.42)
+    -- (5.48,1.42) -- (5.48,0.95) -- (4.22,0.95) -- (4.22,1.42)
+    -- (2.55,1.42) -- cycle;
+  \draw (2.55,0.15) -- (6.55,0.15) -- (6.55,1.42)
+    -- (5.48,1.42) -- (5.48,0.95) -- (4.22,0.95) -- (4.22,1.42)
+    -- (2.55,1.42) -- cycle;
+  % 钢轨（剖面伸入模中，中缝为焊缝）
+  \fill[white] (1.85,0.55) rectangle (4.48,0.95);
+  \draw (1.85,0.55) rectangle (4.48,0.95);
+  \draw[line width=0.45pt] (1.95,0.68) -- (4.38,0.68);
+  \draw[line width=0.45pt] (1.95,0.82) -- (4.38,0.82);
+  \fill[white] (4.62,0.55) rectangle (7.85,0.95);
+  \draw (4.62,0.55) rectangle (7.85,0.95);
+  \draw[line width=0.45pt] (4.72,0.68) -- (7.75,0.68);
+  \draw[line width=0.45pt] (4.72,0.82) -- (7.75,0.82);
+  \draw[line width=0.45pt] (6.55,1.28) -- (7.35,1.55);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (7.38,1.55) {模子};
+  \draw[line width=0.45pt] (7.85,0.75) -- (8.25,0.75);
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (8.28,0.75) {钢轨};
+\end{tikzpicture}%
+}
 \caption{图 4·2 用铝热剂焊接钢轨（剖面图）}
 \end{figure}
 
@@ -4480,9 +4931,74 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 生铁是在高炉（又名鼓风炉或炼铁炉）里冶炼的。现代的高炉是用耐火砖砌成的高大建筑物，炉体的外面包着钢壳。大型的高炉高达几十米，比一般的十层楼房还要高，一昼夜可以生产
 2000～3000 吨生铁。
 
+\usetikzlibrary{decorations.pathreplacing}
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5·1 炼铁高炉和炼铁时炉内的化学过程示意图}]{assets/chemistry-3/fig-p0114-01.png}}
+\fitfig{%
+% fig-alt: 高炉剖面：上进矿石焦炭熔剂，炉喉高炉煤气约400–500°，炉身CO还原与石灰石分解，炉腰成渣成铁，炉腹约1800°燃烧，炉缸风口、炉渣、生铁，底出渣口与出铁口
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,line width=0.7pt]
+  % 炉体外形（炉喉→炉身→炉腰→炉腹→炉缸）
+  \draw
+    (3.42,9.52) -- (3.62,9.70) -- (4.78,9.70) -- (4.98,9.52)
+    -- (5.02,8.22) -- (5.72,4.58) -- (5.72,3.62)
+    -- (5.28,2.18) -- (5.28,0.48) -- (2.72,0.48)
+    -- (2.72,2.18) -- (2.28,3.62) -- (2.28,4.58)
+    -- (2.98,8.22) -- cycle;
+  % 炉腰上下虚线
+  \draw[line width=0.45pt, dash pattern=on 2.2pt off 1.3pt]
+    (2.28,4.58) -- (5.72,4.58);
+  \draw[line width=0.45pt, dash pattern=on 2.2pt off 1.3pt]
+    (2.28,3.62) -- (5.72,3.62);
+  % 炉喉高炉煤气虚线框（落在炉喉内壁之内）
+  \draw[line width=0.45pt, dash pattern=on 1.8pt off 1.1pt]
+    (3.52,8.78) rectangle (4.82,9.38);
+  \node[font=\scriptsize, inner sep=0.8pt] at (4.17,9.08) {高炉煤气};
+  % 顶口进料
+  \draw[->, line width=0.55pt] (4.20,10.18) -- (4.20,9.72);
+  \node[font=\scriptsize, anchor=south, inner sep=1pt] at (4.20,10.20)
+    {矿石、焦炭、熔剂};
+  % 风口（炉缸上部左右）
+  \draw (2.12,1.72) rectangle (2.72,2.08);
+  \draw (5.28,1.72) -- (6.18,1.72) -- (6.18,1.48) -- (6.38,1.48)
+    -- (6.38,2.32) -- (6.18,2.32) -- (6.18,2.08) -- (5.28,2.08) -- cycle;
+  \node[font=\scriptsize, inner sep=0.8pt] at (3.22,1.90) {风口};
+  \node[font=\scriptsize, anchor=west, inner sep=1pt] at (6.48,1.90) {风口};
+  % 炉缸内炉渣、生铁
+  \draw (3.02,0.62) rectangle (4.98,1.58);
+  \draw (3.02,1.10) -- (4.98,1.10);
+  \node[font=\scriptsize, inner sep=0.6pt] at (4.00,1.34) {炉渣};
+  \node[font=\scriptsize, inner sep=0.6pt] at (4.00,0.86) {生铁};
+  \node[font=\scriptsize, anchor=north, inner sep=1pt] at (3.55,0.46) {出渣口};
+  \node[font=\scriptsize, anchor=north, inner sep=1pt] at (5.85,0.46) {出铁口};
+  % 温度（炉喉～400/500°，炉身～800/1000°，炉腹～1800°）
+  \node[font=\scriptsize, inner sep=0.6pt] at (3.62,8.58) {$\sim 400^{\circ}$};
+  \node[font=\scriptsize, inner sep=0.6pt] at (3.58,8.30) {$\sim 500^{\circ}$};
+  \node[font=\scriptsize, inner sep=0.6pt] at (3.22,6.42) {$\sim 800^{\circ}$};
+  \node[font=\scriptsize, inner sep=0.6pt] at (3.18,5.22) {$\sim 1000^{\circ}$};
+  \node[font=\scriptsize, inner sep=0.6pt] at (3.18,2.58) {$\sim 1800^{\circ}$};
+  % 炉内反应
+  \node[font=\scriptsize, inner sep=0.5pt] at (4.35,7.25)
+    {$\mathrm{CO}_{2}+\mathrm{C}=2\mathrm{CO}$};
+  \node[font=\scriptsize, align=center, inner sep=0.5pt] at (4.42,6.42)
+    {$\mathrm{Fe}_{2}\mathrm{O}_{3}+3\mathrm{CO}$\\$=2\mathrm{Fe}+3\mathrm{CO}_{2}$};
+  \node[font=\scriptsize, inner sep=0.5pt] at (4.42,5.55)
+    {$\mathrm{CaCO}_{3}=\mathrm{CaO}+\mathrm{CO}_{2}$};
+  \node[font=\scriptsize, inner sep=0.5pt] at (4.22,4.22)
+    {$\mathrm{CaO}+\mathrm{SiO}_{2}=\mathrm{CaSiO}_{3}$};
+  \node[font=\scriptsize, inner sep=0.5pt] at (4.22,3.88)
+    {铁跟碳等物质形成生铁};
+  \node[font=\scriptsize, align=center, inner sep=0.5pt] at (4.42,3.18)
+    {$\mathrm{CO}_{2}+\mathrm{C}=2\mathrm{CO}$\\$\mathrm{C}+\mathrm{O}_{2}=\mathrm{CO}_{2}$};
+  % 左括注：炉喉、炉身、炉腰、炉腹、炉缸
+  \draw[decorate, decoration={brace, amplitude=5pt, raise=2pt}]
+    (2.08,0.48) -- (2.08,9.70);
+  \node[font=\scriptsize, anchor=east, inner sep=1pt] at (1.72,8.85) {炉喉};
+  \node[font=\scriptsize, anchor=east, inner sep=1pt] at (1.72,6.35) {炉身};
+  \node[font=\scriptsize, anchor=east, inner sep=1pt] at (1.72,4.10) {炉腰};
+  \node[font=\scriptsize, anchor=east, inner sep=1pt] at (1.72,2.90) {炉腹};
+  \node[font=\scriptsize, anchor=east, inner sep=1pt] at (1.72,1.33) {炉缸};
+\end{tikzpicture}%
+}
 \caption{图 5·1 炼铁高炉和炼铁时炉内的化学过程示意图}
 \end{figure}
 
@@ -4510,7 +5026,56 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 炉料进入小料斗}]{assets/chemistry-3/fig-p0115-02.png}}
+\fitfig{%
+% fig-alt: （a）料车向小料斗卸料；小料钟堵住小料斗，大料钟堵住大料斗；炉喉两侧为剖面炉壁
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,line width=0.7pt]
+  % 炉喉剖面壁（疏斜线，勿填实）
+  \begin{scope}
+    \clip (0.70,0.12) -- (1.32,0.12) -- (1.72,2.62) -- (1.10,2.62) -- cycle;
+    \foreach \s in {0.05,0.28,0.51,0.74,0.97,1.20,1.43,1.66,1.89,2.12,2.35} {
+      \draw[line width=0.4pt] (0.55+\s*0.22,0.08) -- ++(0.70,2.60);
+    }
+  \end{scope}
+  \draw (0.70,0.12) -- (1.32,0.12) -- (1.72,2.62) -- (1.10,2.62) -- cycle;
+  \begin{scope}
+    \clip (3.68,0.12) -- (4.30,0.12) -- (3.90,2.62) -- (3.28,2.62) -- cycle;
+    \foreach \s in {0.05,0.28,0.51,0.74,0.97,1.20,1.43,1.66,1.89,2.12,2.35} {
+      \draw[line width=0.4pt] (3.20+\s*0.22,0.08) -- ++(0.70,2.60);
+    }
+  \end{scope}
+  \draw (3.68,0.12) -- (4.30,0.12) -- (3.90,2.62) -- (3.28,2.62) -- cycle;
+  % 大料斗（口沿高出炉壁）
+  \draw (1.72,3.22) -- (1.95,1.42) -- (3.05,1.42) -- (3.28,3.22);
+  \draw (1.72,3.22) -- (3.28,3.22);
+  % 小料斗
+  \draw (1.98,3.22) -- (2.14,4.28) -- (2.86,4.28) -- (3.02,3.22);
+  \draw (2.14,4.28) -- (2.86,4.28);
+  % 大料钟（堵住大料斗）
+  \draw (2.08,2.62) -- (2.50,1.38) -- (2.92,2.62) -- cycle;
+  % 小料钟（堵住小料斗）
+  \draw (2.22,4.00) -- (2.50,3.28) -- (2.78,4.00) -- cycle;
+  % 料钟拉杆与顶上曲柄
+  \draw[line width=0.55pt] (2.50,1.38) -- (2.50,5.28);
+  \draw[line width=0.55pt] (2.38,4.55) -- (2.38,5.12);
+  \draw[line width=0.55pt] (2.50,5.28) -- (2.50,5.48)
+    .. controls (3.05,5.62) and (3.55,5.55) .. (3.92,5.28);
+  % 料车向小料斗卸料
+  \draw[line width=0.5pt] (1.05,5.55) -- (1.05,4.92);
+  \draw (0.58,4.42) -- (1.18,4.92) -- (1.48,4.58) -- (1.35,4.22) -- (0.75,3.82) -- cycle;
+  \foreach \p in {{(1.32,4.12)},{(1.48,3.95)},{(1.22,3.88)},{(1.55,3.72)},
+      {(1.38,3.58)},{(2.28,4.08)},{(2.42,3.92)},{(2.58,4.05)},{(2.70,3.82)}} {
+    \fill \p circle[radius=0.032];
+  }
+  % 标注
+  \draw[line width=0.45pt] (1.05,3.78) -- (1.98,3.62);
+  \node[font=\scriptsize, anchor=east, inner sep=1pt] at (1.02,3.78) {小料斗};
+  \draw[line width=0.45pt] (2.78,3.62) -- (3.55,3.78);
+  \node[font=\scriptsize, anchor=west, inner sep=1pt] at (3.58,3.78) {小料钟};
+  \draw[line width=0.45pt] (3.22,2.55) -- (3.85,2.42);
+  \node[font=\scriptsize, anchor=west, inner sep=1pt] at (3.88,2.42) {大料斗};
+  \node[font=\scriptsize, anchor=north, inner sep=2pt] at (2.50,1.36) {大料钟};
+\end{tikzpicture}%
+}
 \caption{(a) 炉料进入小料斗}
 \end{figure}
 
@@ -4526,7 +5091,49 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c) 炉料进入炉内}]{assets/chemistry-3/fig-p0115-04.png}}
+\fitfig{%
+% fig-alt: （c）小料钟升起堵住小料斗，大料钟放下，炉料自大料斗落入炉内
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,line width=0.7pt]
+  % 炉喉剖面壁（疏斜线，勿填实）
+  \begin{scope}
+    \clip (0.70,0.12) -- (1.32,0.12) -- (1.72,2.62) -- (1.10,2.62) -- cycle;
+    \foreach \s in {0.05,0.28,0.51,0.74,0.97,1.20,1.43,1.66,1.89,2.12,2.35} {
+      \draw[line width=0.4pt] (0.55+\s*0.22,0.08) -- ++(0.70,2.60);
+    }
+  \end{scope}
+  \draw (0.70,0.12) -- (1.32,0.12) -- (1.72,2.62) -- (1.10,2.62) -- cycle;
+  \begin{scope}
+    \clip (3.68,0.12) -- (4.30,0.12) -- (3.90,2.62) -- (3.28,2.62) -- cycle;
+    \foreach \s in {0.05,0.28,0.51,0.74,0.97,1.20,1.43,1.66,1.89,2.12,2.35} {
+      \draw[line width=0.4pt] (3.20+\s*0.22,0.08) -- ++(0.70,2.60);
+    }
+  \end{scope}
+  \draw (3.68,0.12) -- (4.30,0.12) -- (3.90,2.62) -- (3.28,2.62) -- cycle;
+  % 大料斗
+  \draw (1.72,3.22) -- (1.95,1.42) -- (3.05,1.42) -- (3.28,3.22);
+  \draw (1.72,3.22) -- (3.28,3.22);
+  % 小料斗
+  \draw (1.98,3.22) -- (2.14,4.28) -- (2.86,4.28) -- (3.02,3.22);
+  \draw (2.14,4.28) -- (2.86,4.28);
+  % 小料钟升起，堵住小料斗
+  \draw (2.22,4.18) -- (2.50,3.42) -- (2.78,4.18) -- cycle;
+  % 大料钟放下
+  \draw (2.05,1.22) -- (2.50,0.22) -- (2.95,1.22) -- cycle;
+  % 拉杆与顶上曲柄
+  \draw[line width=0.55pt] (2.50,0.22) -- (2.50,5.28);
+  \draw[line width=0.55pt] (2.38,4.12) -- (2.38,5.12);
+  \draw[line width=0.55pt] (2.50,5.28) -- (2.50,5.48)
+    .. controls (3.05,5.62) and (3.55,5.55) .. (3.92,5.28);
+  % 炉料落入炉内
+  \draw[->, line width=0.6pt] (2.50,2.85) -- (2.50,1.55);
+  \foreach \p in {{(2.22,2.55)},{(2.48,2.42)},{(2.68,2.58)},{(2.35,2.18)},
+      {(2.58,2.05)},{(2.18,1.85)},{(2.72,1.78)},{(2.08,1.42)},{(2.88,1.38)},
+      {(1.95,0.95)},{(2.12,0.72)},{(2.82,0.85)},{(3.02,0.62)},{(1.82,0.55)},
+      {(2.22,0.42)},{(2.78,0.38)},{(3.12,0.48)}} {
+    \fill \p circle[radius=0.032];
+  }
+\end{tikzpicture}%
+}
 \caption{(c) 炉料进入炉内}
 \end{figure}
 
@@ -6474,15 +7081,136 @@ V _ {2} = \frac {167 \times (273 + 15) \times 760}{273 \times 750} = 178.5 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第155页图示}]{assets/chemistry-3/fig-p0155-01.png}}
-\caption{原PDF第155页图示}
+\fitfig{%
+% fig-alt: 图附1：大试管弯成曲管，左为圆底封闭端，右为喇叭口
+\begin{tikzpicture}[line cap=round,line join=round,line width=0.7pt]
+  % 外壁：圆底在左下，弯折后水平向右至管口
+  \draw (0.22,0.92)
+    .. controls (0.08,0.48) and (0.58,0.12) .. (1.05,0.42)
+    -- (1.85,1.18) -- (4.55,1.18);
+  \draw (0.22,0.92)
+    .. controls (0.32,1.28) and (0.82,1.55) .. (1.22,1.62)
+    -- (1.85,1.68) -- (4.55,1.68);
+  % 内壁
+  \draw[line width=0.45pt] (0.48,0.92)
+    .. controls (0.42,0.62) and (0.72,0.42) .. (1.02,0.62)
+    -- (1.85,1.32) -- (4.55,1.32);
+  \draw[line width=0.45pt] (0.48,0.92)
+    .. controls (0.55,1.18) and (0.88,1.38) .. (1.22,1.48)
+    -- (1.85,1.54) -- (4.55,1.54);
+  % 喇叭口
+  \draw (4.55,1.68) -- (4.72,1.82);
+  \draw (4.55,1.18) -- (4.72,1.04);
+  \draw (4.72,1.82) -- (4.72,1.04);
+\end{tikzpicture}%
+}
+\caption{图附 1}
 \end{figure}
 
 \emph{图附 1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图附2}]{assets/chemistry-3/fig-p0155-02.png}}
+\fitfig{%
+% fig-alt: 图附2：弯管左端盛水、水平段盛锌粉，两盏酒精灯分别加热；铁架台夹持管口单孔塞，导管通入水槽倒立试管排水集气
+\begin{tikzpicture}[line cap=round,line join=round,line width=0.7pt]
+  \tikzset{
+    alamp/.pic={
+      \draw[line width=0.55pt] (-0.42,0.08) -- (-0.32,0.28);
+      \draw[line width=0.55pt] (0.00,0.04) -- (0.00,0.24);
+      \draw[line width=0.55pt] (0.42,0.08) -- (0.32,0.28);
+      \draw (-0.16,1.22)
+        .. controls (-0.82,1.10) and (-0.88,0.38) .. (-0.32,0.26)
+        .. controls (-0.12,0.16) and (0.12,0.16) .. (0.32,0.26)
+        .. controls (0.88,0.38) and (0.82,1.10) .. (0.16,1.22);
+      \draw[line width=0.4pt] (0,0.62) ellipse (0.62 and 0.10);
+      \draw (-0.16,1.22) -- (-0.10,1.52);
+      \draw (0.16,1.22) -- (0.10,1.52);
+      \draw (-0.10,1.52) -- (0.10,1.52);
+      \draw[line width=0.45pt] (0,1.48) -- (0,1.62);
+      \draw (0,1.60)
+        .. controls (-0.20,1.78) and (-0.16,2.05) .. (0,2.28)
+        .. controls (0.16,2.05) and (0.20,1.78) .. (0,1.60);
+      \draw[line width=0.4pt] (0,1.62)
+        .. controls (-0.08,1.74) and (-0.06,1.90) .. (0,2.02)
+        .. controls (0.06,1.90) and (0.08,1.74) .. (0,1.62);
+    }
+  }
+  % 木垫块（右灯垫高）
+  \draw (3.22,0.08) -- (5.12,0.08) -- (5.12,1.28) -- (3.22,1.28) -- cycle;
+  \draw (5.12,0.08) -- (5.48,0.42) -- (5.48,1.62) -- (5.12,1.28);
+  \draw (3.22,1.28) -- (3.58,1.62) -- (5.48,1.62);
+  \foreach \y in {0.32,0.58,0.84,1.10} {
+    \draw[line width=0.4pt] (3.32,\y) -- (5.02,\y);
+  }
+  % 铁架台底座与立杆
+  \draw (5.28,0.06) -- (6.95,0.06) -- (7.32,0.46) -- (5.65,0.46) -- cycle;
+  \draw (5.28,0.06) -- (5.28,-0.06) -- (6.95,-0.06) -- (6.95,0.06);
+  \draw (6.95,-0.06) -- (7.32,0.34) -- (7.32,0.46);
+  \draw[line width=1.15pt] (6.55,0.46) -- (6.55,5.52);
+  % 两盏酒精灯
+  \pic at (1.72,0.02) {alamp};
+  \pic at (4.22,1.28) {alamp};
+  % 弯管（双线，左圆底，右接塞）
+  \begin{scope}
+    \clip (-0.20,-0.40) rectangle (6.28,6.20);
+    \draw[line width=0.5pt, double distance=5.2mm, line cap=round]
+      (1.72,2.52) .. controls (2.18,3.12) and (2.28,3.68) .. (2.78,3.68)
+      -- (6.45,3.68);
+  \end{scope}
+  % 管内的水（封闭端液面，不溢出管壁）
+  \draw[line width=0.45pt] (1.50,2.72) -- (1.90,2.52);
+  % 锌粉
+  \foreach \p in {{(3.85,3.48)},{(4.05,3.46)},{(4.22,3.50)},{(4.42,3.47)},
+      {(3.95,3.54)},{(4.18,3.56)},{(4.35,3.53)}} {
+    \fill \p circle[radius=0.028];
+  }
+  % 铁夹（夹持管口）
+  \draw (6.05,3.42) -- (6.78,3.42) -- (6.78,3.94) -- (6.05,3.94) -- cycle;
+  \draw (6.55,3.68) -- (6.78,3.68);
+  \draw (6.78,3.55) -- (7.12,3.92);
+  \draw (6.98,3.78) -- (7.22,3.68) -- (7.32,3.88) -- (7.08,3.98);
+  % 单孔塞与导气管
+  \fill[black!18] (6.08,3.40) rectangle (6.40,3.96);
+  \draw (6.08,3.40) rectangle (6.40,3.96);
+  \draw[line width=0.55pt] (6.40,3.68) -- (7.05,3.68)
+    -- (8.95,1.42) -- (9.55,0.48)
+    -- (9.55,0.26) -- (10.22,0.26) -- (10.22,0.78);
+  % 水槽（在铁架台右侧，不重叠立杆）
+  \draw (10.20,1.48) ellipse (1.58 and 0.38);
+  \draw (8.62,1.48) -- (8.62,0.12);
+  \draw (11.78,1.48) -- (11.78,0.12);
+  \draw (10.20,0.12) ellipse (1.58 and 0.28);
+  \begin{scope}
+    \clip (8.62,0.12) -- (8.62,1.12) -- (11.78,1.12) -- (11.78,0.12)
+      arc[start angle=0, end angle=-180, x radius=1.58, y radius=0.28];
+    \foreach \y in {0.28,0.42,0.56,0.70,0.84,0.98} {
+      \draw[line width=0.32pt] (8.50,\y) -- (11.90,\y);
+    }
+  \end{scope}
+  \draw[line width=0.45pt] (10.20,1.12) ellipse (1.58 and 0.32);
+  % 倒立试管（口朝左下，底朝右上）
+  \begin{scope}[shift={(10.05,0.68)}, rotate=-26]
+    \fill[white] (-0.22,0.02) -- (-0.22,1.95)
+      arc[start angle=180, end angle=0, x radius=0.22, y radius=0.20]
+      -- (0.22,0.02) -- cycle;
+    \draw (-0.22,0.02) -- (-0.22,1.95)
+      arc[start angle=180, end angle=0, x radius=0.22, y radius=0.20]
+      -- (0.22,0.02);
+    \draw (0,0.02) ellipse (0.22 and 0.08);
+    \foreach \p in {{(-0.06,0.72)},{(0.08,1.02)},{(-0.04,1.28)},{(0.06,1.52)}} {
+      \draw[line width=0.4pt] \p circle[radius=0.05];
+    }
+  \end{scope}
+  % 水槽内支架
+  \draw[line width=0.5pt] (9.72,0.16) -- (10.02,0.68) -- (10.32,0.16);
+  % 标注
+  \draw[line width=0.45pt] (0.72,3.42) -- (1.48,2.85);
+  \node[font=\scriptsize, anchor=east, inner sep=1pt] at (0.70,3.42) {水};
+  \draw[line width=0.45pt] (4.55,4.42) -- (4.22,3.62);
+  \node[font=\scriptsize, anchor=south, inner sep=1pt] at (4.55,4.44) {锌粉};
+\end{tikzpicture}%
+}
 \caption{图附2}
 \end{figure}
 
@@ -6696,7 +7424,41 @@ V _ {2} = \frac {167 \times (273 + 15) \times 760}{273 \times 750} = 178.5 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 附 4}]{assets/chemistry-3/fig-p0159-03.png}}
+\fitfig{%
+% fig-alt: 图附4：烧杯盛水，试管倒插其中，管内螺旋铁丝高于水面
+\begin{tikzpicture}[line cap=round,line join=round,line width=0.7pt]
+  % 烧杯
+  \draw (0,2.55) ellipse (1.22 and 0.28);
+  \draw (-1.22,2.55) -- (-1.22,0.32);
+  \draw (1.22,2.55) -- (1.22,0.32);
+  \draw (0,0.32) ellipse (1.22 and 0.22);
+  % 水面
+  \begin{scope}
+    \clip (-1.22,0.32) -- (-1.22,1.18) -- (1.22,1.18) -- (1.22,0.32)
+      arc[start angle=0, end angle=-180, x radius=1.22, y radius=0.22];
+    \foreach \y in {0.42,0.54,0.66,0.78,0.90,1.02} {
+      \draw[line width=0.32pt] (-1.32,\y) -- (1.32,\y);
+    }
+  \end{scope}
+  \draw[line width=0.45pt] (0,1.18) ellipse (1.22 and 0.24);
+  % 倒插试管（口在水下偏右，封闭端近杯口；铁丝在水面以上）
+  \begin{scope}[shift={(0.38,0.45)}, rotate=22]
+    \fill[white] (-0.24,0.02) -- (-0.24,2.18)
+      arc[start angle=180, end angle=0, x radius=0.24, y radius=0.22]
+      -- (0.24,0.02) -- cycle;
+    \draw (-0.24,0.02) -- (-0.24,2.18)
+      arc[start angle=180, end angle=0, x radius=0.24, y radius=0.22]
+      -- (0.24,0.02);
+    \draw (0,0.02) ellipse (0.24 and 0.09);
+    % 螺旋铁丝（不沾水）
+    \foreach \i in {0,1,2,3,4,5,6} {
+      \draw[line width=0.55pt] (0,{1.05+0.14*\i}) ellipse (0.15 and 0.055);
+    }
+  \end{scope}
+  % 重描杯口，保持透视
+  \draw (0,2.55) ellipse (1.22 and 0.28);
+\end{tikzpicture}%
+}
 \caption{图 附 4}
 \end{figure}
 
