@@ -26722,21 +26722,82 @@ V。以它们的交点\((O_{1}\)和\(O_{2})\)为圆心，R
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0268-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·66（1）两轮盘（左大右小，各有轮毂）与履带：履带沿两轮外弧及上、下外公切线成闭环；上切线箭头向右、下切线箭头向左
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\RL{1.150}
+  \def\rL{0.380}
+  \def\RR{0.780}
+  \def\rR{0.280}
+  \coordinate (M) at (0,0);
+  \coordinate (N) at (3.300,0);
+  % external tangent points (θ≈83.56°)
+  \coordinate (At) at (0.129,1.143);
+  \coordinate (Bt) at (3.387,0.775);
+  \coordinate (Ab) at (0.129,-1.143);
+  \coordinate (Bb) at (3.387,-0.775);
+  % extend tangents slightly past contact for belt look
+  \coordinate (Atx) at ($(At)!-0.08!(Bt)$);
+  \coordinate (Btx) at ($(Bt)!-0.08!(At)$);
+  \coordinate (Abx) at ($(Ab)!-0.08!(Bb)$);
+  \coordinate (Bbx) at ($(Bb)!-0.08!(Ab)$);
+  % hubs + rims
+  \draw[line width=0.70pt] (M) circle [radius=\RL];
+  \draw[line width=0.65pt] (M) circle [radius=\rL];
+  \draw[line width=0.70pt] (N) circle [radius=\RR];
+  \draw[line width=0.65pt] (N) circle [radius=\rR];
+  % belt tangents
+  \draw[line width=0.75pt] (Atx) -- (Btx);
+  \draw[line width=0.75pt] (Abx) -- (Bbx);
+  % arrows: top → right, bottom → left
+  \draw[line width=0.70pt, -{Latex[length=3.2pt]}] ($(At)!0.35!(Bt)$) -- ($(At)!0.62!(Bt)$);
+  \draw[line width=0.70pt, -{Latex[length=3.2pt]}] ($(Bb)!0.35!(Ab)$) -- ($(Bb)!0.62!(Ab)$);
+\end{tikzpicture}%
+}
+\caption{图4·66（1）}
 \end{figure}
 
 \emph{（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0268-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图4·66（2）两轮盘（左大右小，各有轮毂）与交叉传动带：带沿两轮外弧及交叉内公切线成 8 字形；两切线中段各有沿带方向箭头
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\RL{1.150}
+  \def\rL{0.380}
+  \def\RR{0.720}
+  \def\rR{0.260}
+  \coordinate (M) at (0,0);
+  \coordinate (N) at (3.500,0);
+  % internal tangent points (θ≈57.70°)
+  \coordinate (A1) at (0.614,0.972);
+  \coordinate (B1) at (3.115,-0.609);
+  \coordinate (A2) at (0.614,-0.972);
+  \coordinate (B2) at (3.115,0.609);
+  \coordinate (A1x) at ($(A1)!-0.06!(B1)$);
+  \coordinate (B1x) at ($(B1)!-0.06!(A1)$);
+  \coordinate (A2x) at ($(A2)!-0.06!(B2)$);
+  \coordinate (B2x) at ($(B2)!-0.06!(A2)$);
+  \draw[line width=0.70pt] (M) circle [radius=\RL];
+  \draw[line width=0.65pt] (M) circle [radius=\rL];
+  \draw[line width=0.70pt] (N) circle [radius=\RR];
+  \draw[line width=0.65pt] (N) circle [radius=\rR];
+  \draw[line width=0.75pt] (A1x) -- (B1x);
+  \draw[line width=0.75pt] (A2x) -- (B2x);
+  % arrows along belt: A1→B1 (down-right), A2→B2 (up-right) wait:
+  % belt around left CW outer: from A2 up-left-arc to A1 then to B1, around right to B2, back to A2
+  % so on A1-B1 arrow toward B1; on B2-A2 arrow toward A2 (or A2 toward B2 for same circulation)
+  \draw[line width=0.70pt, -{Latex[length=3.2pt]}] ($(A1)!0.32!(B1)$) -- ($(A1)!0.58!(B1)$);
+  \draw[line width=0.70pt, -{Latex[length=3.2pt]}] ($(A2)!0.32!(B2)$) -- ($(A2)!0.58!(B2)$);
+\end{tikzpicture}%
+}
+\caption{图4·66（2）}
 \end{figure}
 
 \emph{（2）}
 
-\emph{图 4·66}
+\emph{图4·66}
 
 一条直线和两个圆都相切，这条直线叫做这两个圆的公切线。
 
@@ -26748,11 +26809,54 @@ V。以它们的交点\((O_{1}\)和\(O_{2})\)为圆心，R
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.67}]{assets/plane-geometry-1/fig-p0268-03.png}}
-\caption{图4.67}
+\fitfig{%
+% fig-alt: 图4·67 圆 M（大）、圆 N（小）；虚线辅助圆半径 MA−NB；外公切线 AB、A′B′；虚线 MN、MA、MA′、NB、NB′、PN；P 为辅助圆切点
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\RM{1.350}
+  \def\RN{0.780}
+  \def\d{3.600}
+  \pgfmathsetmacro{\Raux}{\RM-\RN}
+  \coordinate (M) at (0,0);
+  \coordinate (N) at (\d,0);
+  \pgfmathsetmacro{\th}{acos(\Raux/\d)}
+  \coordinate (A) at ({\RM*cos(\th)},{\RM*sin(\th)});
+  \coordinate (Ap) at ({\RM*cos(-\th)},{\RM*sin(-\th)});
+  \coordinate (B) at ({\d+\RN*cos(\th)},{\RN*sin(\th)});
+  \coordinate (Bp) at ({\d+\RN*cos(-\th)},{\RN*sin(-\th)});
+  \coordinate (P) at ({\Raux*cos(\th)},{\Raux*sin(\th)});
+  \coordinate (Ax) at ($(A)!-0.35!(B)$);
+  \coordinate (Bx) at ($(B)!-0.45!(A)$);
+  \coordinate (Apx) at ($(Ap)!-0.35!(Bp)$);
+  \coordinate (Bpx) at ($(Bp)!-0.45!(Ap)$);
+  % circles
+  \draw[line width=0.75pt] (M) circle [radius=\RM];
+  \draw[line width=0.75pt] (N) circle [radius=\RN];
+  \draw[line width=0.55pt, dashed] (M) circle [radius=\Raux];
+  % tangents
+  \draw[line width=0.70pt] (Ax) -- (Bx);
+  \draw[line width=0.70pt] (Apx) -- (Bpx);
+  % construction
+  \draw[line width=0.55pt, dashed] (M) -- (N);
+  \draw[line width=0.55pt, dashed] (M) -- (A);
+  \draw[line width=0.55pt, dashed] (M) -- (Ap);
+  \draw[line width=0.55pt, dashed] (N) -- (B);
+  \draw[line width=0.55pt, dashed] (N) -- (Bp);
+  \draw[line width=0.55pt, dashed] (P) -- (N);
+  \fill (M) circle [radius=1.1pt];
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=north east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north east, inner sep=1.2pt] at (Ap) {$A'$};
+  \node[anchor=north west, inner sep=1.2pt] at (Bp) {$B'$};
+  \node[anchor=south east, inner sep=1.0pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+\caption{图4·67}
 \end{figure}
 
-\emph{图 4·67}
+\emph{图4·67}
 
 假设两圆 M 和 N 的公切线 AB 已画好，那末 MA 和 NB 都垂直于 AB，所以从 N
 画 NP 平行于 AB，交 MA 于 P，我们就得到矩形 APNB。由此可以看出，NP 是以
@@ -26770,11 +26874,49 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-68}]{assets/plane-geometry-1/fig-p0269-01.png}}
-\caption{图4-68}
+\fitfig{%
+% fig-alt: 图4·68 圆 M（大）、圆 N（小）；虚线辅助圆半径 MA+BN；内公切线 AB、A′B′ 交叉；虚线 MP（过 A）、NP、NB、NB′；P 为辅助圆切点
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\RM{1.200}
+  \def\RN{0.700}
+  \def\d{3.400}
+  \pgfmathsetmacro{\Raux}{\RM+\RN}
+  \coordinate (M) at (0,0);
+  \coordinate (N) at (\d,0);
+  \pgfmathsetmacro{\th}{acos(\Raux/\d)}
+  \coordinate (A) at ({\RM*cos(\th)},{\RM*sin(\th)});
+  \coordinate (Ap) at ({\RM*cos(-\th)},{\RM*sin(-\th)});
+  \coordinate (B) at ({\d-\RN*cos(\th)},{-\RN*sin(\th)});
+  \coordinate (Bp) at ({\d-\RN*cos(-\th)},{-\RN*sin(-\th)});
+  \coordinate (P) at ({\Raux*cos(\th)},{\Raux*sin(\th)});
+  \coordinate (Ax) at ($(A)!-0.45!(B)$);
+  \coordinate (Bx) at ($(B)!-0.45!(A)$);
+  \coordinate (Apx) at ($(Ap)!-0.45!(Bp)$);
+  \coordinate (Bpx) at ($(Bp)!-0.45!(Ap)$);
+  \draw[line width=0.75pt] (M) circle [radius=\RM];
+  \draw[line width=0.75pt] (N) circle [radius=\RN];
+  \draw[line width=0.55pt, dashed] (M) circle [radius=\Raux];
+  \draw[line width=0.70pt] (Ax) -- (Bx);
+  \draw[line width=0.70pt] (Apx) -- (Bpx);
+  \draw[line width=0.55pt, dashed] (M) -- (P);
+  \draw[line width=0.55pt, dashed] (P) -- (N);
+  \draw[line width=0.55pt, dashed] (N) -- (B);
+  \draw[line width=0.55pt, dashed] (N) -- (Bp);
+  \fill (M) circle [radius=1.1pt];
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=north east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south east, inner sep=1.0pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.0pt] at (B) {$B$};
+  \node[anchor=north east, inner sep=1.0pt] at (Ap) {$A'$};
+  \node[anchor=south west, inner sep=1.0pt] at (Bp) {$B'$};
+  \node[anchor=south west, inner sep=1.2pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+\caption{图4·68}
 \end{figure}
 
-\emph{图 4·68}
+\emph{图4·68}
 
 \textbf{［注意］}
 我们画两个圆的公切线时，总是以较大的圆的圆心为圆心，先画一个辅助圆。如果要画的是外公切线，那末辅助圆的半径等于两圆半径的差；如果要画的是内公切线，那末辅助圆的半径等于两圆半径的和。辅助圆画好后，再从较小的圆的圆心作辅助圆的切线，连结切点和较大圆的圆心的线段，使与较大圆相交于一点（画外公切线时要延长），然后过这交点画辅助圆的切线的平行线，就得到所要画的公切线。总之，画外公切线和画内公切线的方法是一样的，只是辅助圆的半径不同。
@@ -26790,7 +26932,22 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={跑道}]{assets/plane-geometry-1/fig-p0270-01.png}}
+\fitfig{%
+% fig-alt: 图4·69 跑道：内外两层胶囊形（两端半圆与直线吻接）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\Ro{0.720}
+  \def\Ri{0.520}
+  \def\L{1.550}
+  % outer stadium
+  \draw[line width=0.75pt]
+    (-\L,\Ro) -- (\L,\Ro) arc[start angle=90, end angle=-90, radius=\Ro]
+    -- (-\L,-\Ro) arc[start angle=270, end angle=90, radius=\Ro] -- cycle;
+  % inner stadium
+  \draw[line width=0.75pt]
+    (-\L,\Ri) -- (\L,\Ri) arc[start angle=90, end angle=-90, radius=\Ri]
+    -- (-\L,-\Ri) arc[start angle=270, end angle=90, radius=\Ri] -- cycle;
+\end{tikzpicture}%
+}
 \caption{跑道}
 \end{figure}
 
@@ -26798,7 +26955,27 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={机械零件}]{assets/plane-geometry-1/fig-p0270-02.png}}
+\fitfig{%
+% fig-alt: 图4·69 机械零件：胶囊外形两端半圆吻接直线；两端圆心处各一圆孔；水平及两竖直点画中心线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{0.720}
+  \def\r{0.320}
+  \def\L{1.050}
+  \coordinate (L) at (-\L,0);
+  \coordinate (R) at (\L,0);
+  \draw[line width=0.55pt, dash pattern=on 3.2pt off 1.1pt on 0.7pt off 1.1pt]
+    (-\L-\R-0.25,0) -- (\L+\R+0.25,0);
+  \draw[line width=0.55pt, dash pattern=on 3.2pt off 1.1pt on 0.7pt off 1.1pt]
+    (-\L,\R+0.25) -- (-\L,-\R-0.25);
+  \draw[line width=0.55pt, dash pattern=on 3.2pt off 1.1pt on 0.7pt off 1.1pt]
+    (\L,\R+0.25) -- (\L,-\R-0.25);
+  \draw[line width=0.75pt]
+    (-\L,\R) -- (\L,\R) arc[start angle=90, end angle=-90, radius=\R]
+    -- (-\L,-\R) arc[start angle=270, end angle=90, radius=\R] -- cycle;
+  \draw[line width=0.70pt] (L) circle [radius=\r];
+  \draw[line width=0.70pt] (R) circle [radius=\r];
+\end{tikzpicture}%
+}
 \caption{机械零件}
 \end{figure}
 
@@ -26806,13 +26983,37 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={鼓风机外壳}]{assets/plane-geometry-1/fig-p0270-03.png}}
+\fitfig{%
+% fig-alt: 图4·69 鼓风机外壳：轮毂、八辐、内外轮缘；虚线中间圆；实线外壳弧；左下矩形出风口与弧吻接
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (O) at (0,0);
+  \def\rhub{0.10}
+  \def\rrim{0.52}
+  \def\rmid{0.64}
+  \def\rdash{0.84}
+  \def\Rout{1.05}
+  \foreach \a in {0,45,...,315} {
+    \draw[line width=0.50pt] (O) -- +(\a:\rrim);
+  }
+  \draw[line width=0.60pt] (O) circle [radius=\rhub];
+  \draw[line width=0.65pt] (O) circle [radius=\rrim];
+  \draw[line width=0.65pt] (O) circle [radius=\rmid];
+  \draw[line width=0.55pt, dashed] (O) circle [radius=\rdash];
+  % outer casing arc: from outlet top (~155°) clockwise all around to outlet bottom (~-95°)
+  \draw[line width=0.70pt] ({(\Rout)*cos(155)},{(\Rout)*sin(155)})
+    arc[start angle=155, end angle=-95, radius=\Rout];
+  % outlet rectangle
+  \coordinate (OT) at ({(\Rout)*cos(155)},{(\Rout)*sin(155)});
+  \coordinate (OB) at ({(\Rout)*cos(-95)},{(\Rout)*sin(-95)});
+  \draw[line width=0.70pt] (OT) -- (-1.35,0.44) -- (-1.35,-1.05) -- (OB);
+\end{tikzpicture}%
+}
 \caption{鼓风机外壳}
 \end{figure}
 
 \emph{鼓风机外壳}
 
-\emph{图 4·69}
+\emph{图4·69}
 
 一条直线过一条弧的端点，并且在这点和弧相切，如果直线在这点平滑地和弧连接，这种连接叫做直线和弧的吻接。
 
@@ -26825,11 +27026,34 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-70}]{assets/plane-geometry-1/fig-p0270-04.png}}
-\caption{图4-70}
+\fitfig{%
+% fig-alt: 图4·70 圆心 O；弧 AMB；虚线半径 OA；过 A 的切线：实线 AP（吻接侧）、虚线 AQ（非吻接侧）；OA⊥AP
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.550}
+  \coordinate (O) at (\R,0);
+  \coordinate (A) at (0,0);
+  \coordinate (P) at (0,-2.650);
+  \coordinate (Q) at (0,0.950);
+  \coordinate (M) at ({\R+\R*cos(90)},{\R*sin(90)});
+  \coordinate (B) at ({\R+\R*cos(25)},{\R*sin(25)});
+  \draw[line width=0.75pt] (P) -- (A);
+  \draw[line width=0.55pt, dashed] (A) -- (Q);
+  \draw[line width=0.55pt, dashed] (A) -- (O);
+  \draw[line width=0.75pt] (A) arc[start angle=180, end angle=25, radius=\R];
+  \fill (A) circle [radius=1.0pt];
+  \fill (O) circle [radius=1.0pt];
+  \node[anchor=east, inner sep=2.0pt] at (A) {$A$};
+  \node[anchor=north, inner sep=2.0pt] at (P) {$P$};
+  \node[anchor=south, inner sep=2.0pt] at (Q) {$Q$};
+  \node[anchor=west, inner sep=2.0pt] at (O) {$O$};
+  \node[anchor=south, inner sep=2.0pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
+\caption{图4·70}
 \end{figure}
 
-\emph{图 4·70}
+\emph{图4·70}
 
 \textbf{［注意］} 曲线 BMAQ 就不称吻接，因为这样已不是平滑地和弧连接了。
 
