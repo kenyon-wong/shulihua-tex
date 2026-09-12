@@ -16234,7 +16234,51 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 金刚石}]{assets/physics-2/fig-p0245-02.png}}
+\fitfig{%
+% fig-alt: (a) 金刚石：四面体配位碳点阵示意，上下分层，结点为圆、键为实线
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt},
+  x={(0.78cm,-0.28cm)}, y={(0.78cm,0.28cm)}, z={(0cm,0.92cm)}]
+  % 简化金刚石片段：两层四面体 + 顶结
+  \newcommand{\Catom}[1]{\fill[white] #1 circle[radius=0.075];\draw[line width=0.55pt] #1 circle[radius=0.075];\fill #1 circle[radius=0.028];}
+  % bonds (back to front)
+  \draw[line width=0.55pt] (0,0,0) -- (1,1,0) -- (0,2,0) -- (-1,1,0) -- cycle;
+  \draw[line width=0.55pt] (0,0,0) -- (0.5,0.5,1);
+  \draw[line width=0.55pt] (1,1,0) -- (0.5,0.5,1);
+  \draw[line width=0.55pt] (0,2,0) -- (0.5,0.5,1);
+  \draw[line width=0.55pt] (-1,1,0) -- (0.5,0.5,1);
+  \draw[line width=0.55pt] (0.5,0.5,1) -- (0.5,0.5,2);
+  \draw[line width=0.55pt] (0.5,0.5,2) -- (1.5,0.5,2.6);
+  \draw[line width=0.55pt] (0.5,0.5,2) -- (-0.5,0.5,2.6);
+  \draw[line width=0.55pt] (0.5,0.5,2) -- (0.5,1.5,2.6);
+  \draw[line width=0.55pt] (1.5,0.5,2.6) -- (1.5,1.5,2.0) -- (0.5,1.5,2.6);
+  \draw[line width=0.55pt] (-0.5,0.5,2.6) -- (-0.5,1.5,2.0) -- (0.5,1.5,2.6);
+  \draw[line width=0.55pt] (1.5,1.5,2.0) -- (0.5,0.5,2);
+  \draw[line width=0.55pt] (-0.5,1.5,2.0) -- (0.5,0.5,2);
+  \draw[line width=0.55pt] (0.5,1.5,2.6) -- (0.5,1.5,3.5);
+  \draw[line width=0.55pt] (1.5,0.5,2.6) -- (1.5,0.5,3.5) -- (0.5,1.5,3.5);
+  \draw[line width=0.55pt] (-0.5,0.5,2.6) -- (-0.5,0.5,3.5) -- (0.5,1.5,3.5);
+  \draw[line width=0.55pt] (0.5,1.5,3.5) -- (0.5,0.5,4.2);
+  % atoms
+  \Catom{(0,0,0)}
+  \Catom{(1,1,0)}
+  \Catom{(0,2,0)}
+  \Catom{(-1,1,0)}
+  \Catom{(0.5,0.5,1)}
+  \Catom{(0.5,0.5,2)}
+  \Catom{(1.5,0.5,2.6)}
+  \Catom{(-0.5,0.5,2.6)}
+  \Catom{(0.5,1.5,2.6)}
+  \Catom{(1.5,1.5,2.0)}
+  \Catom{(-0.5,1.5,2.0)}
+  \Catom{(1.5,0.5,3.5)}
+  \Catom{(-0.5,0.5,3.5)}
+  \Catom{(0.5,1.5,3.5)}
+  \Catom{(0.5,0.5,4.2)}
+  \node[anchor=west,font=\scriptsize] at (2.1,0.2,0.2) {下层};
+  \node[anchor=west,font=\scriptsize] at (2.1,0.2,2.4) {中层};
+  \node[anchor=west,font=\scriptsize] at (2.1,0.2,4.0) {上层};
+\end{tikzpicture}%
+}
 \caption{(a) 金刚石}
 \end{figure}
 
@@ -16244,7 +16288,47 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 石墨}]{assets/physics-2/fig-p0245-03.png}}
+\fitfig{%
+% fig-alt: (b) 石墨：三层六角蜂窝点阵 a/b/c，层内实线键，层间竖虚线示对齐
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt},
+  x={(0.72cm,-0.22cm)}, y={(0.72cm,0.22cm)}, z={(0cm,0.85cm)}]
+  \newcommand{\Gatom}[1]{\fill[white] #1 circle[radius=0.055];\draw[line width=0.5pt] #1 circle[radius=0.055];\fill #1 circle[radius=0.02];}
+  % hex lattice helper: rows of points
+  % layer at z, offset ox,oy
+  \foreach \zz/\ox/\oy in {0/0/0, 1.55/0/0, 3.10/0/0} {
+    % hex centers approx: draw a small honeycomb
+    \foreach \i/\j in {0/0,1/0,2/0, 0/1,1/1,2/1, 0.5/0.5,1.5/0.5,0.5/1.5,1.5/1.5} {
+      \coordinate (P-\i-\j-\zz) at ({\ox+\i},{\oy+\j},\zz);
+    }
+  }
+  % bonds within each layer (hexagon rings)
+  \foreach \zz in {0,1.55,3.10} {
+    \draw[line width=0.5pt]
+      (0,0,\zz) -- (1,0,\zz) -- (1.5,0.5,\zz) -- (1,1,\zz) -- (0,1,\zz) -- (-0.5,0.5,\zz) -- cycle;
+    \draw[line width=0.5pt]
+      (1,0,\zz) -- (2,0,\zz) -- (2.5,0.5,\zz) -- (2,1,\zz) -- (1,1,\zz) -- (1.5,0.5,\zz) -- cycle;
+    \draw[line width=0.5pt]
+      (0,1,\zz) -- (1,1,\zz) -- (1.5,1.5,\zz) -- (1,2,\zz) -- (0,2,\zz) -- (-0.5,1.5,\zz) -- cycle;
+    \draw[line width=0.5pt]
+      (1,1,\zz) -- (2,1,\zz) -- (2.5,1.5,\zz) -- (2,2,\zz) -- (1,2,\zz) -- (1.5,1.5,\zz) -- cycle;
+  }
+  % vertical dashed alignment lines (left side)
+  \foreach \xx/\yy in {0/0, 1/0, 0/1, 1/1} {
+    \draw[dashed,line width=0.35pt] (\xx,\yy,0) -- (\xx,\yy,3.10);
+  }
+  % atoms on all layers
+  \foreach \zz in {0,1.55,3.10} {
+    \foreach \pt in {(0,0,\zz),(1,0,\zz),(2,0,\zz),(1.5,0.5,\zz),(2.5,0.5,\zz),
+      (-0.5,0.5,\zz),(0,1,\zz),(1,1,\zz),(2,1,\zz),(1.5,1.5,\zz),(2.5,1.5,\zz),
+      (-0.5,1.5,\zz),(0,2,\zz),(1,2,\zz),(2,2,\zz)} {
+      \Gatom{\pt}
+    }
+  }
+  \node[anchor=west,font=\small] at (2.85,0.6,3.10) {$a$};
+  \node[anchor=west,font=\small] at (2.85,0.6,1.55) {$b$};
+  \node[anchor=west,font=\small] at (2.85,0.6,0.00) {$c$};
+\end{tikzpicture}%
+}
 \caption{(b) 石墨}
 \end{figure}
 
@@ -17102,7 +17186,79 @@ s = \frac {\Delta l}{l _ {0}} = \frac {l - l _ {0}}{l _ {0}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8.1 萘(樟脑)的熔解的演示}]{assets/physics-2/fig-p0260-01.png}}
+\fitfig{%
+% fig-alt: 图8.1 铁架台：酒精灯、石棉网、烧杯水浴、试管盛萘、温度计插入试管
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % 底座
+  \draw[line width=0.75pt] (0.05,0.00) -- (3.35,0.00) -- (3.35,0.20) -- (0.05,0.20) -- cycle;
+  \fill[gray!12] (0.05,0.20) -- (0.25,0.36) -- (3.55,0.36) -- (3.35,0.20) -- cycle;
+  \draw[line width=0.65pt] (0.05,0.20) -- (0.25,0.36) -- (3.55,0.36) -- (3.35,0.20);
+  % 立杆
+  \draw[line width=1.2pt] (0.55,0.36) -- (0.55,7.05);
+  \draw[line width=0.45pt] (0.42,7.05) -- (0.68,7.05);
+  % 下夹 + 铁环石棉网
+  \draw[line width=0.65pt] (0.55,1.95) circle[radius=0.13];
+  \draw[line width=0.45pt] (0.42,1.95) -- (0.26,2.05) -- (0.28,1.95) -- (0.26,1.85) -- cycle;
+  \draw[line width=0.6pt] (0.68,1.95) -- (1.20,1.95);
+  \draw[line width=0.65pt] (1.95,1.95) ellipse[x radius=0.78,y radius=0.12];
+  \draw[line width=0.5pt] (1.20,2.00) -- (2.70,2.00) -- (2.78,2.10) -- (1.28,2.10) -- cycle;
+  \foreach \x in {1.30,1.45,...,2.68} {
+    \draw[line width=0.28pt] (\x,2.00) -- ({\x+0.08},2.10);
+  }
+  % 酒精灯
+  \draw[line width=0.6pt] (1.95,0.48) ellipse[x radius=0.38,y radius=0.08];
+  \draw[line width=0.6pt] (1.57,0.48) -- (1.70,1.05);
+  \draw[line width=0.6pt] (2.33,0.48) -- (2.20,1.05);
+  \draw[line width=0.6pt] (1.95,1.05) ellipse[x radius=0.20,y radius=0.05];
+  \draw[line width=0.5pt] (1.95,1.10)
+    .. controls (1.82,1.28) and (1.84,1.48) .. (1.95,1.68)
+    .. controls (2.06,1.48) and (2.08,1.28) .. (1.95,1.10);
+  % 烧杯
+  \draw[line width=0.7pt] (1.95,3.85) ellipse[x radius=0.78,y radius=0.14];
+  \draw[line width=0.7pt] (1.17,3.85) -- (1.17,2.12);
+  \draw[line width=0.7pt] (2.73,3.85) -- (2.73,2.12);
+  \draw[line width=0.5pt] (1.95,2.12) ellipse[x radius=0.78,y radius=0.10];
+  \begin{scope}
+    \clip (1.19,2.18) -- (1.19,3.15) -- (2.71,3.15) -- (2.71,2.18) -- (1.95,2.08) -- cycle;
+    \fill[gray!12] (1.15,2.08) rectangle (2.75,3.15);
+  \end{scope}
+  \draw[line width=0.4pt] (1.19,3.15) -- (2.71,3.15);
+  % 中夹持试管
+  \draw[line width=0.65pt] (0.55,4.55) circle[radius=0.13];
+  \draw[line width=0.45pt] (0.42,4.55) -- (0.26,4.65) -- (0.28,4.55) -- (0.26,4.45) -- cycle;
+  \draw[line width=0.6pt] (0.68,4.55) -- (1.55,4.55);
+  \draw[line width=0.55pt] (1.55,4.42) rectangle (1.95,4.68);
+  % 试管
+  \draw[line width=0.65pt] (1.72,5.35) -- (1.72,2.55);
+  \draw[line width=0.65pt] (2.18,5.35) -- (2.18,2.55);
+  \draw[line width=0.65pt] (1.72,2.55) arc[start angle=180,end angle=360,x radius=0.23,y radius=0.18];
+  \draw[line width=0.45pt] (1.95,5.35) ellipse[x radius=0.23,y radius=0.06];
+  % 萘粉
+  \begin{scope}
+    \clip (1.74,2.45) -- (1.74,3.05) -- (2.16,3.05) -- (2.16,2.45)
+      -- (1.95,2.38) -- cycle;
+    \foreach \yy in {2.50,2.60,2.70,2.80,2.90,3.00} {
+      \draw[line width=0.28pt] (1.74,\yy) -- (2.16,\yy);
+    }
+  \end{scope}
+  \draw[line width=0.4pt] (1.74,3.05) -- (2.16,3.05);
+  % 上夹持温度计
+  \draw[line width=0.65pt] (0.55,6.35) circle[radius=0.13];
+  \draw[line width=0.45pt] (0.42,6.35) -- (0.26,6.45) -- (0.28,6.35) -- (0.26,6.25) -- cycle;
+  \draw[line width=0.6pt] (0.68,6.35) -- (1.70,6.35);
+  \draw[line width=0.5pt] (1.70,6.22) rectangle (2.10,6.48);
+  % 温度计
+  \draw[line width=0.55pt] (1.95,6.95) ellipse[x radius=0.09,y radius=0.06];
+  \draw[line width=0.5pt] (1.88,6.90) -- (1.88,2.72);
+  \draw[line width=0.5pt] (2.02,6.90) -- (2.02,2.72);
+  \draw[line width=0.55pt] (1.95,2.62) circle[radius=0.11];
+  \fill[black!75] (1.95,2.62) circle[radius=0.06];
+  \fill[black!75] (1.92,2.70) rectangle (1.98,4.20);
+  \foreach \y in {3.40,3.70,4.00,4.30,4.60,4.90,5.20,5.50,5.80,6.10} {
+    \draw[line width=0.28pt] (2.02,\y) -- (2.10,\y);
+  }
+\end{tikzpicture}%
+}
 \caption{图8.1 萘(樟脑)的熔解的演示}
 \end{figure}
 
@@ -17731,7 +17887,67 @@ Q_3=C_3m_3(0-t_3)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.5 研究液体饱和汽压的实验装置示意图}]{assets/physics-2/fig-p0272-02.png}}
+\fitfig{%
+% fig-alt: 图8.5 (a)(b)(c) 三只带漏斗与活门S的连通器：真空/未饱和乙醚汽/饱和汽，(a)标76厘米
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt}]
+  \begin{scope}[xshift=0cm]
+    \draw[line width=0.6pt] (0.30,5.05) -- (0.36,4.85) -- (0.54,4.85) -- (0.60,5.05);
+    \draw[line width=0.55pt] (0.28,5.05) -- (0.62,5.05);
+    \draw[line width=0.55pt] (0.45,4.85) -- (0.45,4.72);
+    \draw[line width=0.55pt] (0.32,4.72) rectangle (0.58,4.55);
+    \draw[line width=0.4pt] (0.35,4.70) -- (0.55,4.57);
+    \draw[line width=0.4pt] (0.35,4.57) -- (0.55,4.70);
+    \node[anchor=west,font=\footnotesize] at (0.62,4.62) {$S$};
+    \draw[line width=0.7pt] (0.35,4.55) -- (0.35,0.55) .. controls (0.35,0.18) and (1.40,0.18) .. (1.40,0.55) -- (1.40,2.55);
+    \draw[line width=0.7pt] (0.55,4.55) -- (0.55,0.65) .. controls (0.55,0.36) and (1.20,0.36) .. (1.20,0.65) -- (1.20,2.55);
+    \fill (0.38,0.52) rectangle (0.53,3.85);
+    \fill (1.22,0.52) rectangle (1.37,1.55);
+    \fill (0.38,0.45) rectangle (1.37,0.65);
+    \node[font=\scriptsize,align=center] at (0.45,4.12) {真空};
+    \draw[dashed,line width=0.4pt] (-0.15,3.85) -- (0.35,3.85);
+    \draw[dashed,line width=0.4pt] (-0.15,1.55) -- (1.40,1.55);
+    \draw[<->,line width=0.5pt] (-0.08,1.55) -- (-0.08,3.85);
+    \node[anchor=east,font=\scriptsize,align=center] at (-0.12,2.70) {76\\厘米};
+    \node[anchor=north,font=\small] at (0.88,-0.05) {$(a)$};
+  \end{scope}
+  \begin{scope}[xshift=2.85cm]
+    \draw[line width=0.6pt] (0.30,5.05) -- (0.36,4.85) -- (0.54,4.85) -- (0.60,5.05);
+    \draw[line width=0.55pt] (0.28,5.05) -- (0.62,5.05);
+    \draw[line width=0.55pt] (0.45,4.85) -- (0.45,4.72);
+    \draw[line width=0.55pt] (0.32,4.72) rectangle (0.58,4.55);
+    \draw[line width=0.4pt] (0.35,4.70) -- (0.55,4.57);
+    \draw[line width=0.4pt] (0.35,4.57) -- (0.55,4.70);
+    \node[anchor=west,font=\footnotesize] at (0.62,4.62) {$S$};
+    \draw[line width=0.7pt] (0.35,4.55) -- (0.35,0.55) .. controls (0.35,0.18) and (1.40,0.18) .. (1.40,0.55) -- (1.40,2.55);
+    \draw[line width=0.7pt] (0.55,4.55) -- (0.55,0.65) .. controls (0.55,0.36) and (1.20,0.36) .. (1.20,0.65) -- (1.20,2.55);
+    \fill (0.38,0.52) rectangle (0.53,3.35);
+    \fill (1.22,0.52) rectangle (1.37,1.75);
+    \fill (0.38,0.45) rectangle (1.37,0.65);
+    \foreach \yy in {4.90,4.96,5.02} {\draw[line width=0.35pt] (0.34,\yy) -- (0.58,\yy);}
+    \node[anchor=south,font=\scriptsize] at (0.45,5.08) {乙醚};
+    \node[font=\scriptsize,align=center] at (0.45,3.88) {未饱和汽};
+    \node[anchor=north,font=\small] at (0.88,-0.05) {$(b)$};
+  \end{scope}
+  \begin{scope}[xshift=5.70cm]
+    \draw[line width=0.6pt] (0.30,5.05) -- (0.36,4.85) -- (0.54,4.85) -- (0.60,5.05);
+    \draw[line width=0.55pt] (0.28,5.05) -- (0.62,5.05);
+    \draw[line width=0.55pt] (0.45,4.85) -- (0.45,4.72);
+    \draw[line width=0.55pt] (0.32,4.72) rectangle (0.58,4.55);
+    \draw[line width=0.4pt] (0.35,4.70) -- (0.55,4.57);
+    \draw[line width=0.4pt] (0.35,4.57) -- (0.55,4.70);
+    \node[anchor=west,font=\footnotesize] at (0.62,4.62) {$S$};
+    \draw[line width=0.7pt] (0.35,4.55) -- (0.35,0.55) .. controls (0.35,0.18) and (1.40,0.18) .. (1.40,0.55) -- (1.40,2.55);
+    \draw[line width=0.7pt] (0.55,4.55) -- (0.55,0.65) .. controls (0.55,0.36) and (1.20,0.36) .. (1.20,0.65) -- (1.20,2.55);
+    \fill (0.38,0.52) rectangle (0.53,2.55);
+    \fill (1.22,0.52) rectangle (1.37,2.05);
+    \fill (0.38,0.45) rectangle (1.37,0.65);
+    \fill[gray!35] (0.38,2.55) rectangle (0.53,2.73);
+    \draw[line width=0.4pt] (0.38,2.73) -- (0.53,2.73);
+    \node[font=\scriptsize,align=center] at (0.45,3.57) {饱和汽};
+    \node[anchor=north,font=\small] at (0.88,-0.05) {$(c)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 8.5 研究液体饱和汽压的实验装置示意图}
 \end{figure}
 
@@ -18261,7 +18477,91 @@ J/kg。此外汽化热的常用单位还有千卡/千克，即 kC/kg。表 8.6
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.11 测定水的汽化热的实验装置}]{assets/physics-2/fig-p0283-01.png}}
+\fitfig{%
+% fig-alt: 图8.11 A蒸汽锅（酒精灯加热）—保温管—B汽室试管—保温管—C量热器（内有温度计）
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % --- A: alcohol lamp + flask ---
+  \draw[line width=0.55pt] (0.85,0.05) -- (0.55,0.55) -- (1.55,0.55) -- (1.25,0.05) -- cycle;
+  \draw[line width=0.5pt] (0.70,0.55) -- (0.78,0.72);
+  \draw[line width=0.5pt] (1.40,0.55) -- (1.32,0.72);
+  \draw[line width=0.5pt] (0.78,0.72) -- (1.32,0.72);
+  \draw[line width=0.55pt] (1.05,0.12) ellipse[x radius=0.28,y radius=0.06];
+  \draw[line width=0.5pt] (0.80,0.12) -- (0.90,0.42);
+  \draw[line width=0.5pt] (1.30,0.12) -- (1.20,0.42);
+  \draw[line width=0.5pt] (1.05,0.42) ellipse[x radius=0.15,y radius=0.04];
+  \draw[line width=0.45pt] (1.05,0.46)
+    .. controls (0.95,0.58) and (0.96,0.68) .. (1.05,0.78)
+    .. controls (1.14,0.68) and (1.15,0.58) .. (1.05,0.46);
+  % gauze
+  \draw[line width=0.5pt] (0.45,0.85) -- (1.65,0.85) -- (1.72,0.95) -- (0.52,0.95) -- cycle;
+  \foreach \x in {0.55,0.70,...,1.60} {\draw[line width=0.25pt] (\x,0.85) -- ({\x+0.07},0.95);}
+  % flask
+  \draw[line width=0.7pt] (1.05,1.55) circle[radius=0.55];
+  \draw[line width=0.65pt] (0.88,2.00) -- (0.88,2.55);
+  \draw[line width=0.65pt] (1.22,2.00) -- (1.22,2.55);
+  \draw[line width=0.55pt] (1.05,2.55) ellipse[x radius=0.17,y radius=0.05];
+  \begin{scope}
+    \clip (0.55,1.15) rectangle (1.55,1.55);
+    \fill[gray!15] (0.50,1.15) rectangle (1.60,1.55);
+  \end{scope}
+  \draw[line width=0.4pt] (0.60,1.55) -- (1.50,1.55);
+  \foreach \p in {(0.85,1.70),(1.05,1.78),(1.25,1.68)} {\fill \p circle[radius=0.025];}
+  % stopper A
+  \fill[gray!25] (0.86,2.55) rectangle (1.24,2.78);
+  \draw[line width=0.5pt] (0.86,2.55) rectangle (1.24,2.78);
+  % tube from A
+  \draw[line width=0.55pt] (1.05,2.78) -- (1.05,3.05) -- (2.55,3.05);
+  \draw[line width=0.55pt] (1.12,2.78) -- (1.12,2.98) -- (2.55,2.98);
+  % insulation A-B
+  \foreach \x in {1.30,1.50,...,2.40} {
+    \draw[line width=0.35pt] (\x,2.90) -- ({\x+0.12},3.12);
+    \draw[line width=0.35pt] (\x,3.12) -- ({\x+0.12},2.90);
+  }
+  \node[font=\small] at (1.55,2.25) {$A$};
+  % --- B: trap tube ---
+  \draw[line width=0.65pt] (2.70,1.55) -- (2.70,3.25);
+  \draw[line width=0.65pt] (3.25,1.55) -- (3.25,3.25);
+  \draw[line width=0.65pt] (2.70,1.55) arc[start angle=180,end angle=360,x radius=0.275,y radius=0.18];
+  \fill[gray!20] (2.72,1.50) rectangle (3.23,1.85);
+  \draw[line width=0.4pt] (2.72,1.85) -- (3.23,1.85);
+  \fill[gray!25] (2.68,3.25) rectangle (3.27,3.48);
+  \draw[line width=0.5pt] (2.68,3.25) rectangle (3.27,3.48);
+  % inlet down into B
+  \draw[line width=0.5pt] (2.55,3.05) -- (2.88,3.05) -- (2.88,2.35);
+  \draw[line width=0.5pt] (2.55,2.98) -- (2.82,2.98) -- (2.82,2.35);
+  % outlet from B
+  \draw[line width=0.5pt] (3.10,2.35) -- (3.10,3.05) -- (4.55,3.05);
+  \draw[line width=0.5pt] (3.16,2.35) -- (3.16,2.98) -- (4.55,2.98);
+  \foreach \x in {3.40,3.60,...,4.40} {
+    \draw[line width=0.35pt] (\x,2.90) -- ({\x+0.12},3.12);
+    \draw[line width=0.35pt] (\x,3.12) -- ({\x+0.12},2.90);
+  }
+  \node[font=\small] at (2.98,1.25) {$B$};
+  % --- C: calorimeter ---
+  \draw[line width=0.75pt] (4.55,0.55) rectangle (7.05,3.55);
+  \draw[line width=0.6pt] (4.80,0.85) -- (4.80,3.15) -- (6.55,3.15) -- (6.55,0.85) -- cycle;
+  \draw[line width=0.45pt] (5.05,0.85) -- (5.20,0.70) -- (5.35,0.85);
+  \draw[line width=0.45pt] (6.00,0.85) -- (6.15,0.70) -- (6.30,0.85);
+  \begin{scope}
+    \clip (4.82,0.87) rectangle (6.53,2.35);
+    \foreach \yy in {1.00,1.20,...,2.30} {\draw[line width=0.28pt] (4.85,\yy) -- (6.50,\yy);}
+  \end{scope}
+  \draw[line width=0.4pt] (4.82,2.35) -- (6.53,2.35);
+  % delivery tube into C
+  \draw[line width=0.5pt] (4.55,3.05) -- (5.15,3.05) -- (5.15,1.15);
+  \draw[line width=0.5pt] (4.55,2.98) -- (5.08,2.98) -- (5.08,1.15);
+  % thermometer
+  \draw[line width=0.5pt] (5.85,3.85) ellipse[x radius=0.08,y radius=0.05];
+  \draw[line width=0.45pt] (5.79,3.80) -- (5.79,1.25);
+  \draw[line width=0.45pt] (5.91,3.80) -- (5.91,1.25);
+  \draw[line width=0.5pt] (5.85,1.15) circle[radius=0.10];
+  \fill[black!70] (5.85,1.15) circle[radius=0.055];
+  \foreach \y in {1.60,1.90,2.20,2.50,2.80,3.10,3.40} {
+    \draw[line width=0.28pt] (5.91,\y) -- (5.98,\y);
+  }
+  \node[font=\small] at (6.30,2.70) {$C$};
+\end{tikzpicture}%
+}
 \caption{图 8.11 测定水的汽化热的实验装置}
 \end{figure}
 
@@ -18578,8 +18878,91 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-02.png}}
-\caption{图示（原PDF第290页）}
+\fitfig{%
+% fig-alt: 图8.14 (a)–(e) 密封玻璃管中乙醚：液面上升、界面模糊至消失（临界态）再复现
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt}]
+  \begin{scope}[xshift=0.00cm]
+  \draw[line width=0.65pt] (-0.21,1.20) -- (-0.21,3.15)
+    arc[start angle=180,end angle=0,radius=0.21]
+    -- (0.21,1.20)
+    .. controls (0.21,0.70) and (0.08,0.35) .. (0,0.35)
+    .. controls (-0.08,0.35) and (-0.21,0.70) .. (-0.21,1.20);
+  \draw[line width=0.35pt] (0.09,3.30) -- (0.09,2.80);
+  \begin{scope}
+    \clip (-0.19,0.40) -- (-0.19,2.04) -- (0.19,2.04)
+      -- (0.19,0.40) -- (0,0.37) -- cycle;
+    \foreach \yy in {0.47,0.57,...,2.02} {
+      \draw[line width=0.28pt] (-0.19,\yy) -- (0.19,\yy);
+    }
+  \end{scope}
+  \draw[line width=0.4pt] (-0.19,2.04) -- (0.19,2.04);
+  \node[anchor=north,font=\small] at (0,-0.08) {$(a)$};
+  \end{scope}
+  \begin{scope}[xshift=1.05cm]
+  \draw[line width=0.65pt] (-0.21,1.20) -- (-0.21,3.15)
+    arc[start angle=180,end angle=0,radius=0.21]
+    -- (0.21,1.20)
+    .. controls (0.21,0.70) and (0.08,0.35) .. (0,0.35)
+    .. controls (-0.08,0.35) and (-0.21,0.70) .. (-0.21,1.20);
+  \draw[line width=0.35pt] (0.09,3.30) -- (0.09,2.80);
+  \begin{scope}
+    \clip (-0.19,0.40) -- (-0.19,2.56) -- (0.19,2.56)
+      -- (0.19,0.40) -- (0,0.37) -- cycle;
+    \foreach \yy in {0.47,0.57,...,2.54} {
+      \draw[line width=0.28pt] (-0.19,\yy) -- (0.19,\yy);
+    }
+  \end{scope}
+  \draw[line width=0.4pt] (-0.19,2.56) -- (0.19,2.56);
+  \foreach \yy in {2.71,2.86,...,3.00} {
+    \foreach \xx in {-0.10,0.00,0.10} {\fill (\xx,\yy) circle[radius=0.015];}
+  }
+  \node[anchor=north,font=\small] at (0,-0.08) {$(b)$};
+  \end{scope}
+  \begin{scope}[xshift=2.10cm]
+  \draw[line width=0.65pt] (-0.21,1.20) -- (-0.21,3.15)
+    arc[start angle=180,end angle=0,radius=0.21]
+    -- (0.21,1.20)
+    .. controls (0.21,0.70) and (0.08,0.35) .. (0,0.35)
+    .. controls (-0.08,0.35) and (-0.21,0.70) .. (-0.21,1.20);
+  \draw[line width=0.35pt] (0.09,3.30) -- (0.09,2.80);
+  \foreach \yy in {0.50,0.63,...,3.05} {
+    \foreach \xx in {-0.12,-0.04,0.04,0.12} {\fill (\xx,\yy) circle[radius=0.018];}
+  }
+  \fill[gray!50] (-0.19,2.22) rectangle (0.19,2.42);
+  \node[anchor=north,font=\small] at (0,-0.08) {$(c)$};
+  \end{scope}
+  \begin{scope}[xshift=3.15cm]
+  \draw[line width=0.65pt] (-0.21,1.20) -- (-0.21,3.15)
+    arc[start angle=180,end angle=0,radius=0.21]
+    -- (0.21,1.20)
+    .. controls (0.21,0.70) and (0.08,0.35) .. (0,0.35)
+    .. controls (-0.08,0.35) and (-0.21,0.70) .. (-0.21,1.20);
+  \draw[line width=0.35pt] (0.09,3.30) -- (0.09,2.80);
+  \foreach \yy in {0.50,0.63,...,3.05} {
+    \foreach \xx in {-0.12,-0.04,0.04,0.12} {\fill (\xx,\yy) circle[radius=0.02];}
+  }
+  \node[anchor=north,font=\small] at (0,-0.08) {$(d)$};
+  \end{scope}
+  \begin{scope}[xshift=4.20cm]
+  \draw[line width=0.65pt] (-0.21,1.20) -- (-0.21,3.15)
+    arc[start angle=180,end angle=0,radius=0.21]
+    -- (0.21,1.20)
+    .. controls (0.21,0.70) and (0.08,0.35) .. (0,0.35)
+    .. controls (-0.08,0.35) and (-0.21,0.70) .. (-0.21,1.20);
+  \draw[line width=0.35pt] (0.09,3.30) -- (0.09,2.80);
+  \begin{scope}
+    \clip (-0.19,0.40) -- (-0.19,2.64) -- (0.19,2.64)
+      -- (0.19,0.40) -- (0,0.37) -- cycle;
+    \foreach \yy in {0.47,0.57,...,2.62} {
+      \draw[line width=0.28pt] (-0.19,\yy) -- (0.19,\yy);
+    }
+  \end{scope}
+  \draw[line width=0.4pt] (-0.19,2.64) -- (0.19,2.64);
+  \node[anchor=north,font=\small] at (0,-0.08) {$(e)$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图 8.14 乙醚的临界状态}
 \end{figure}
 
 \begin{figure}
@@ -18782,7 +19165,66 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.17 制造液态空气的林德机示意图}]{assets/physics-2/fig-p0294-01.png}}
+\fitfig{%
+% fig-alt: 图8.17 林德机：压缩机a、管b、冷却蛇管c、膨胀小孔d、回流管f、液态空气g
+\begin{tikzpicture}[line cap=round,line join=round,>=stealth,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % compressor a
+  \draw[line width=0.7pt] (0.15,3.55) rectangle (1.15,4.85);
+  \fill[gray!30] (0.28,4.15) rectangle (1.02,4.45);
+  \draw[line width=0.5pt] (0.28,4.15) rectangle (1.02,4.45);
+  \foreach \k in {0,1,2,3} {
+    \draw[line width=0.35pt] ({0.35+0.15*\k},4.15) -- ({0.35+0.15*\k},4.45);
+  }
+  \draw[line width=0.55pt] (0.55,4.45) rectangle (0.75,4.95);
+  \node at (0.65,4.30) {$a$};
+  % valves / bottom pipes
+  \draw[line width=0.65pt] (0.35,3.55) -- (0.35,3.25) -- (1.55,3.25);
+  \draw[line width=0.65pt] (0.95,3.55) -- (0.95,3.25);
+  \draw[line width=0.45pt] (0.55,3.40) -- (0.75,3.10);
+  \draw[line width=0.45pt] (0.55,3.10) -- (0.75,3.40);
+  \draw[line width=0.45pt] (1.15,3.40) -- (1.35,3.10);
+  \draw[line width=0.45pt] (1.15,3.10) -- (1.35,3.40);
+  \draw[->,line width=0.5pt] (1.55,3.25) -- (2.15,3.25);
+  \node at (1.85,3.45) {$b$};
+  % cooling box c
+  \draw[line width=0.7pt] (2.15,2.55) rectangle (4.35,4.15);
+  \draw[line width=0.6pt] (2.15,3.25) -- (2.45,3.25)
+    -- (2.45,3.85) -- (3.25,3.85) -- (3.25,2.85) -- (4.05,2.85) -- (4.05,3.25) -- (4.35,3.25);
+  \draw[->,line width=0.45pt] (2.70,3.85) -- (3.05,3.85);
+  \draw[->,line width=0.45pt] (3.25,3.50) -- (3.25,3.10);
+  \draw[->,line width=0.45pt] (3.50,2.85) -- (3.85,2.85);
+  \node at (3.25,3.55) {$c$};
+  % down into vessel
+  \draw[line width=0.65pt] (4.35,3.25) -- (5.05,3.25) -- (5.05,1.15);
+  \node[anchor=west] at (5.12,1.35) {$d$};
+  % large vessel
+  \draw[line width=0.75pt] (4.55,0.55) -- (4.55,4.55) arc[start angle=180,end angle=0,radius=0.70] -- (5.95,0.55)
+    arc[start angle=0,end angle=-180,x radius=0.70,y radius=0.35];
+  \draw[line width=0.55pt] (4.75,0.70) -- (4.75,4.40);
+  \draw[line width=0.55pt] (5.75,0.70) -- (5.75,4.40);
+  % liquid g
+  \begin{scope}
+    \clip (4.57,0.40) -- (4.57,1.35) -- (5.93,1.35) -- (5.93,0.40) -- (5.25,0.22) -- cycle;
+    \foreach \yy in {0.55,0.70,0.85,1.00,1.15,1.30} {
+      \draw[line width=0.3pt,dashed] (4.60,\yy) -- (5.90,\yy);
+    }
+  \end{scope}
+  \draw[line width=0.4pt] (4.57,1.35) -- (5.93,1.35);
+  \node at (5.25,0.95) {$g$};
+  % drain
+  \draw[line width=0.5pt] (5.15,0.22) -- (5.15,-0.05) -- (5.35,-0.05);
+  \draw[line width=0.4pt] (5.25,-0.12) -- (5.40,0.02);
+  \draw[line width=0.4pt] (5.25,0.02) -- (5.40,-0.12);
+  % up arrows in vessel
+  \draw[->,line width=0.5pt] (4.85,1.55) -- (4.85,3.85);
+  \draw[->,line width=0.5pt] (5.65,1.55) -- (5.65,3.85);
+  % return f
+  \draw[line width=0.65pt] (4.55,3.95) -- (3.85,3.95) -- (3.85,2.15) -- (0.35,2.15) -- (0.35,3.25);
+  \draw[->,line width=0.5pt] (3.40,2.15) -- (1.20,2.15);
+  \draw[->,line width=0.5pt] (0.35,2.40) -- (0.35,3.05);
+  \node at (2.10,2.35) {$f$};
+\end{tikzpicture}%
+}
 \caption{图 8.17 制造液态空气的林德机示意图}
 \end{figure}
 
@@ -18948,7 +19390,66 @@ B = \frac {8}{15.48} \times 100 \% \doteq 51.7 \%
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8.19 最简单的露点温度计}]{assets/physics-2/fig-p0301-01.png}}
+\fitfig{%
+% fig-alt: 图8.19 玻璃杯盖三孔：温度计、短出气管、长进气管接打气球；杯内乙醚，外壁露珠示意
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=1pt,font=\scriptsize}]
+  % beaker
+  \draw[line width=0.75pt] (0.55,0.35) -- (0.40,3.55);
+  \draw[line width=0.75pt] (2.95,0.35) -- (3.10,3.55);
+  \draw[line width=0.75pt] (0.55,0.35) arc[start angle=180,end angle=360,x radius=1.20,y radius=0.28];
+  \draw[line width=0.65pt] (1.75,3.55) ellipse[x radius=1.35,y radius=0.22];
+  % liquid
+  \begin{scope}
+    \clip (0.48,0.40) -- (0.42,2.15) -- (3.08,2.15) -- (3.02,0.40) -- (1.75,0.15) -- cycle;
+    \foreach \yy in {0.55,0.75,0.95,1.15,1.35,1.55,1.75,1.95} {
+      \draw[line width=0.3pt] (0.50,\yy) -- (3.00,\yy);
+    }
+  \end{scope}
+  \draw[line width=0.45pt] (0.42,2.15) -- (3.08,2.15);
+  % dew dots on wall
+  \foreach \p in {(0.32,1.20),(0.28,1.55),(0.35,1.90),(3.18,1.35),(3.22,1.70),(3.15,2.05)} {
+    \fill \p circle[radius=0.035];
+  }
+  % stopper
+  \fill[gray!30] (0.70,3.55) -- (0.85,4.05) -- (2.65,4.05) -- (2.80,3.55) -- cycle;
+  \draw[line width=0.6pt] (0.70,3.55) -- (0.85,4.05) -- (2.65,4.05) -- (2.80,3.55);
+  \draw[line width=0.55pt] (1.75,4.05) ellipse[x radius=0.90,y radius=0.12];
+  \foreach \x in {1.0,1.2,...,2.5} {
+    \fill (\x,3.78) circle[radius=0.015];
+  }
+  % left outlet tube (short, above liquid)
+  \draw[line width=0.55pt] (1.05,3.70) -- (1.05,4.35) -- (0.15,4.35);
+  \draw[line width=0.55pt] (1.15,3.70) -- (1.15,4.25) -- (0.15,4.25);
+  % thermometer center
+  \draw[line width=0.55pt] (1.75,5.05) ellipse[x radius=0.09,y radius=0.06];
+  \draw[line width=0.5pt] (1.68,5.00) -- (1.68,0.85);
+  \draw[line width=0.5pt] (1.82,5.00) -- (1.82,0.85);
+  \draw[line width=0.55pt] (1.75,0.75) circle[radius=0.12];
+  \fill[black!75] (1.75,0.75) circle[radius=0.07];
+  \fill[black!75] (1.71,0.85) rectangle (1.79,2.40);
+  \foreach \y in {2.60,2.90,3.20,3.50,3.80,4.10,4.40,4.70} {
+    \draw[line width=0.28pt] (1.82,\y) -- (1.90,\y);
+  }
+  % right inlet tube deep into liquid
+  \draw[line width=0.55pt] (2.40,0.95) -- (2.40,4.35) -- (3.55,4.35);
+  \draw[line width=0.55pt] (2.50,0.95) -- (2.50,4.25) -- (3.55,4.25);
+  % coupler + hose
+  \draw[line width=0.55pt] (3.55,4.15) rectangle (3.85,4.45);
+  \draw[line width=0.6pt] (3.85,4.30)
+    .. controls (4.55,4.10) and (4.85,3.20) .. (5.15,2.35)
+    .. controls (5.35,1.85) and (5.55,1.55) .. (5.95,1.45);
+  \draw[line width=0.6pt] (3.85,4.20)
+    .. controls (4.45,4.00) and (4.75,3.10) .. (5.05,2.25)
+    .. controls (5.25,1.80) and (5.45,1.50) .. (5.85,1.40);
+  % squeeze bulb
+  \draw[line width=0.7pt] (6.45,1.35) ellipse[x radius=0.55,y radius=0.38];
+  \foreach \a in {-40,-20,0,20,40} {
+    \draw[line width=0.3pt] ({6.45+0.45*cos(\a)},{1.35+0.30*sin(\a)}) -- ({6.45+0.20*cos(\a)},{1.35+0.12*sin(\a)});
+  }
+  \draw[line width=0.5pt] (6.95,1.35) -- (7.25,1.35);
+  \draw[line width=0.45pt] (7.25,1.25) -- (7.40,1.35) -- (7.25,1.45);
+\end{tikzpicture}%
+}
 \caption{图8.19 最简单的露点温度计}
 \end{figure}
 
