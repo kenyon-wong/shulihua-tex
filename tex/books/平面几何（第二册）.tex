@@ -13472,7 +13472,38 @@ P A _ {1} \cdot P B _ {1} = P A _ {2} \cdot P B _ {2} = P A _ {3} \cdot P B _ {3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-36}]{assets/plane-geometry-2/fig-p0157-01.png}}
+\fitfig{%
+% fig-alt: 图2·36：圆O内点P（在O正上方），虚线OP；弦AB水平过P（最短弦），另有弦A₁B₁、A₂B₂、A₃B₃皆过P。O小空心圆
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (0,0.620);
+  \draw[line width=0.75pt] (O) circle (1.650);
+  \coordinate (A) at (-1.529,0.620);
+  \coordinate (B) at (1.529,0.620);
+  \coordinate (A1) at (-1.051,-1.272);
+  \coordinate (B1) at (0.525,1.564);
+  \coordinate (A2) at (-1.627,-0.275);
+  \coordinate (B2) at (1.103,1.227);
+  \coordinate (A3) at (-0.525,1.564);
+  \coordinate (B3) at (1.051,-1.272);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A1) -- (B1);
+  \draw[line width=0.75pt] (A2) -- (B2);
+  \draw[line width=0.75pt] (A3) -- (B3);
+  \draw[dashed,line width=0.6pt] (O) -- (P);
+  \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
+  \node[anchor=south,inner sep=1pt] at (P) {$P$};
+  \node[anchor=north,inner sep=1pt] at (0,-0.08) {$O$};
+  \node[anchor=east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=0.6pt,font=\small] at (A1) {$A_1$};
+  \node[anchor=south west,inner sep=0.6pt,font=\small] at (B1) {$B_1$};
+  \node[anchor=east,inner sep=0.6pt,font=\small] at (A2) {$A_2$};
+  \node[anchor=west,inner sep=0.6pt,font=\small] at (B2) {$B_2$};
+  \node[anchor=south east,inner sep=0.6pt,font=\small] at (A3) {$A_3$};
+  \node[anchor=north west,inner sep=0.6pt,font=\small] at (B3) {$B_3$};
+\end{tikzpicture}%
+}
 \caption{图2-36}
 \end{figure}
 
@@ -13520,7 +13551,31 @@ O 的距离都等于 \(\sqrt{a+r^{2}}\)，即满足问题条件的点都在以 O
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·37}]{assets/plane-geometry-2/fig-p0158-01.png}}
+\fitfig{%
+% fig-alt: 图2·37：左⊙O₁较大、右⊙O₂较小；连心线O₁O₂；等幂轴过H⊥O₁O₂（直角方标），上有点P，连PO₁、PO₂。O₁、O₂小空心圆
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O1) at (0,0);
+  \coordinate (O2) at (4.200,0);
+  \def\Rone{1.450}
+  \def\Rtwo{0.950}
+  \pgfmathsetmacro{\hpos}{(4.200*4.200 + \Rone*\Rone - \Rtwo*\Rtwo)/(2*4.200)}
+  \coordinate (H) at (\hpos,0);
+  \coordinate (P) at (\hpos,2.350);
+  \draw[line width=0.75pt] (O1) circle (\Rone);
+  \draw[line width=0.75pt] (O2) circle (\Rtwo);
+  \draw[line width=0.75pt] (O1) -- (O2);
+  \draw[line width=0.75pt] (\hpos,-1.550) -- (\hpos,2.700);
+  \draw[line width=0.75pt] (P) -- (O1);
+  \draw[line width=0.75pt] (P) -- (O2);
+  \draw[line width=0.5pt] (\hpos-0.140,0) -- (\hpos-0.140,0.140) -- (\hpos,0.140);
+  \filldraw[fill=white,line width=0.6pt] (O1) circle (0.045);
+  \filldraw[fill=white,line width=0.6pt] (O2) circle (0.045);
+  \node[anchor=north east,inner sep=1pt] at (-0.05,-0.08) {$O_1$};
+  \node[anchor=north west,inner sep=1pt] at (4.25,-0.08) {$O_2$};
+  \node[anchor=north east,inner sep=1pt] at (\hpos-0.05,-0.08) {$H$};
+  \node[anchor=west,inner sep=1pt] at (\hpos+0.08,2.350) {$P$};
+\end{tikzpicture}%
+}
 \caption{图2·37}
 \end{figure}
 
@@ -13631,20 +13686,92 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第161页）}]{assets/plane-geometry-2/fig-p0161-01.png}}
-\caption{图示（原PDF第161页）}
+\fitfig{%
+% fig-alt: 图2·38（1）：上线段a、中线段b；下虚线三段各标a，下标c=3a。左侧（1）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\aa{1.100}
+  \def\bb{1.700}
+  \def\yy{1.450}
+  \def\ym{0.850}
+  \def\yb{0.150}
+  \node[anchor=east,inner sep=2pt] at (-0.35,\yy) {$(1)$};
+  % a
+  \draw[line width=0.75pt] (0,\yy) -- (\aa,\yy);
+  \draw[line width=0.55pt] (0,\yy-0.08) -- (0,\yy+0.08);
+  \draw[line width=0.55pt] (\aa,\yy-0.08) -- (\aa,\yy+0.08);
+  \node[anchor=south,inner sep=1pt] at (0.5*\aa,\yy) {$a$};
+  % b
+  \draw[line width=0.75pt] (0,\ym) -- (\bb,\ym);
+  \draw[line width=0.55pt] (0,\ym-0.08) -- (0,\ym+0.08);
+  \draw[line width=0.55pt] (\bb,\ym-0.08) -- (\bb,\ym+0.08);
+  \node[anchor=south,inner sep=1pt] at (0.5*\bb,\ym) {$b$};
+  % c=3a dashed
+  \draw[dashed,line width=0.75pt] (0,\yb) -- (3*\aa,\yb);
+  \foreach \x in {0,\aa,2*\aa,3*\aa} {
+    \draw[line width=0.55pt] (\x,\yb-0.08) -- (\x,\yb+0.08);
+  }
+  \node[anchor=south,inner sep=1pt] at (0.5*\aa,\yb) {$a$};
+  \node[anchor=south,inner sep=1pt] at (1.5*\aa,\yb) {$a$};
+  \node[anchor=south,inner sep=1pt] at (2.5*\aa,\yb) {$a$};
+  \node[anchor=north,inner sep=2pt] at (1.5*\aa,\yb) {$c=3a$};
+\end{tikzpicture}%
+}
+\caption{(1)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第161页）}]{assets/plane-geometry-2/fig-p0161-02.png}}
-\caption{图示（原PDF第161页）}
+\fitfig{%
+% fig-alt: 图2·38（2）：虚线直角△，底b、竖边a、斜边d=√(a²+b²)，直角方标。左侧（2）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\bb{2.400}
+  \def\aa{1.350}
+  \coordinate (L) at (0,0);
+  \coordinate (R) at (\bb,0);
+  \coordinate (T) at (\bb,\aa);
+  \node[anchor=east,inner sep=2pt] at (-0.35,0.55*\aa) {$(2)$};
+  \draw[dashed,line width=0.75pt] (L) -- (R);
+  \draw[dashed,line width=0.75pt] (R) -- (T);
+  \draw[dashed,line width=0.75pt] (T) -- (L) node[midway,above,sloped,inner sep=1pt] {$d=\sqrt{a^2+b^2}$};
+  \draw[line width=0.5pt] (\bb-0.140,0) -- (\bb-0.140,0.140) -- (\bb,0.140);
+  \node[anchor=north,inner sep=1pt] at (0.5*\bb,0) {$b$};
+  \node[anchor=west,inner sep=1pt] at (\bb,0.5*\aa) {$a$};
+\end{tikzpicture}%
+}
+\caption{(2)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.38}]{assets/plane-geometry-2/fig-p0161-03.png}}
-\caption{图2.38}
+\fitfig{%
+% fig-alt: 图2·38（3）：角顶点左；上射线标d、b；下射线虚线3a、实线x；两平行截线。左侧（3）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0,0);
+  \def\dlen{1.600}
+  \def\blen{1.100}
+  \def\calen{2.400}
+  \pgfmathsetmacro{\xlen}{\calen*\blen/\dlen}
+  \def\ang{28}
+  \coordinate (D) at ({\dlen*cos(\ang)},{\dlen*sin(\ang)});
+  \coordinate (E) at ({(\dlen+\blen)*cos(\ang)},{(\dlen+\blen)*sin(\ang)});
+  \coordinate (Aend) at ({(\dlen+\blen+0.55)*cos(\ang)},{(\dlen+\blen+0.55)*sin(\ang)});
+  \coordinate (Cpt) at (\calen,0);
+  \coordinate (Xpt) at ({\calen+\xlen},0);
+  \coordinate (Bend) at ({\calen+\xlen+0.55},0);
+  \node[anchor=east,inner sep=2pt] at (-0.35,0.35) {$(3)$};
+  \draw[line width=0.75pt] (V) -- (Aend);
+  \draw[dashed,line width=0.75pt] (V) -- (Cpt);
+  \draw[line width=0.75pt] (Cpt) -- (Xpt);
+  \draw[dashed,line width=0.75pt] (Xpt) -- (Bend);
+  \draw[line width=0.75pt] (D) -- (Cpt);
+  \draw[line width=0.75pt] (E) -- (Xpt);
+  \path (V) -- (D) node[midway,above,inner sep=1pt] {$d$};
+  \path (D) -- (E) node[midway,above,inner sep=1pt] {$b$};
+  \path (V) -- (Cpt) node[midway,below,inner sep=1pt] {$3a$};
+  \path (Cpt) -- (Xpt) node[midway,below,inner sep=1pt] {$x$};
+\end{tikzpicture}%
+}
+\caption{图2·38}
 \end{figure}
 
 \begin{quote}
@@ -13670,7 +13797,32 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-2/fig-p0161-04.png}}
+\fitfig{%
+% fig-alt: 图2·39（1）：上线段a、中线段b；下左虚线a接右实线b，下标c=a+b
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\aa{1.800}
+  \def\bb{1.150}
+  \def\yy{1.350}
+  \def\ym{0.800}
+  \def\yb{0.150}
+  \draw[line width=0.75pt] (0,\yy) -- (\aa,\yy);
+  \draw[line width=0.55pt] (0,\yy-0.08) -- (0,\yy+0.08);
+  \draw[line width=0.55pt] (\aa,\yy-0.08) -- (\aa,\yy+0.08);
+  \node[anchor=south,inner sep=1pt] at (0.5*\aa,\yy) {$a$};
+  \draw[line width=0.75pt] (0,\ym) -- (\bb,\ym);
+  \draw[line width=0.55pt] (0,\ym-0.08) -- (0,\ym+0.08);
+  \draw[line width=0.55pt] (\bb,\ym-0.08) -- (\bb,\ym+0.08);
+  \node[anchor=south,inner sep=1pt] at (0.5*\bb,\ym) {$b$};
+  \draw[dashed,line width=0.75pt] (0,\yb) -- (\aa,\yb);
+  \draw[line width=0.75pt] (\aa,\yb) -- ({\aa+\bb},\yb);
+  \draw[line width=0.55pt] (0,\yb-0.08) -- (0,\yb+0.08);
+  \draw[line width=0.55pt] (\aa,\yb-0.08) -- (\aa,\yb+0.08);
+  \draw[line width=0.55pt] ({\aa+\bb},\yb-0.08) -- ({\aa+\bb},\yb+0.08);
+  \node[anchor=south,inner sep=1pt] at (0.5*\aa,\yb) {$a$};
+  \node[anchor=south,inner sep=1pt] at ({\aa+0.5*\bb},\yb) {$b$};
+  \node[anchor=north,inner sep=2pt] at ({0.5*(\aa+\bb)},\yb) {$c=a+b$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -13680,8 +13832,22 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0161-05.png}}
-\caption{(3)}
+\fitfig{%
+% fig-alt: 图2·39（2）：虚线直角△，斜边a、竖边b、底边d=√(a²-b²)；底线略向左延长
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\dd{2.000}
+  \def\bb{1.200}
+  \coordinate (L) at (0,0);
+  \coordinate (R) at (\dd,0);
+  \coordinate (T) at (\dd,\bb);
+  \draw[dashed,line width=0.75pt] (-0.450,0) -- (R);
+  \draw[dashed,line width=0.75pt] (R) -- (T);
+  \draw[dashed,line width=0.75pt] (T) -- (L) node[midway,above,sloped,inner sep=1pt] {$a$};
+  \node[anchor=west,inner sep=1pt] at (\dd,0.5*\bb) {$b$};
+  \node[anchor=north,inner sep=1pt] at (0.5*\dd,0) {$d=\sqrt{a^2-b^2}$};
+\end{tikzpicture}%
+}
+\caption{(2)}
 \end{figure}
 
 \begin{quote}
@@ -13690,8 +13856,28 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(8)}]{assets/plane-geometry-2/fig-p0161-06.png}}
-\caption{(8)}
+\fitfig{%
+% fig-alt: 图2·39（3）：虚线半圆以c+d为直径；实线高x⊥直径，分直径为左c、右d
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\cc{2.400}
+  \def\dd{1.200}
+  \pgfmathsetmacro{\rrad}{0.5*(\cc+\dd)}
+  \pgfmathsetmacro{\cx}{0.5*(\dd-\cc)}
+  % foot of altitude at 0; left end at -cc, right at dd; center at (dd-cc)/2
+  \coordinate (L) at (-\cc,0);
+  \coordinate (F) at (0,0);
+  \coordinate (R) at (\dd,0);
+  \pgfmathsetmacro{\xh}{sqrt(\cc*\dd)}
+  \coordinate (Top) at (0,\xh);
+  \draw[dashed,line width=0.75pt] (L) -- (R);
+  \draw[dashed,line width=0.75pt] (L) arc[start angle=180,end angle=0,radius=\rrad];
+  \draw[line width=0.75pt] (F) -- (Top);
+  \node[anchor=east,inner sep=2pt] at (-0.12,0.5*\xh) {$x$};
+  \node[anchor=north,inner sep=2pt] at (-0.5*\cc,0) {$c$};
+  \node[anchor=north,inner sep=2pt] at (0.5*\dd,0) {$d$};
+\end{tikzpicture}%
+}
+\caption{(3)}
 \end{figure}
 
 \begin{quote}
