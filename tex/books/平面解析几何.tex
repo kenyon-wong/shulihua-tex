@@ -25474,11 +25474,58 @@ x^{2} + y^{2} = a^{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8-20(1)}]{assets/analytic-geometry/fig-p0347-01.png}}
-\caption{图 8-20(1)}
+\fitfig{%
+% fig-alt: 图6·20（1） 圆沿 x 轴滚动，定点 P 描旋轮线（摆线）；圆心 C、切点 A、垂足 M、水平辅助点 Q，∠PCQ=θ
+\begin{tikzpicture}[x=0.55cm,y=0.55cm,line cap=round,line join=round,>=latex]
+  \def\r{1.55}
+  \def\th{1.05} % radians
+  \pgfmathsetmacro{\cx}{\r*\th}
+  \pgfmathsetmacro{\px}{\r*(\th-sin(\th r))}
+  \pgfmathsetmacro{\py}{\r*(1-cos(\th r))}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at ({\cx},\r);
+  \coordinate (A) at ({\cx},0);
+  \coordinate (P) at ({\px},{\py});
+  \coordinate (M) at ({\px},0);
+  \coordinate (Q) at ({\cx},{\py});
+  \pgfmathsetmacro{\ex}{2*pi*\r}
+  \coordinate (E) at ({\ex},0);
+  % axes
+  \draw[line width=0.7pt,-latex] (-1.6,0) -- ({\ex+1.3},0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-0.35) -- (0,{2*\r+0.85}) node[anchor=south,inner sep=2pt] {$y$};
+  % cycloid (partial previous + one arch + a bit)
+  \draw[line width=0.85pt] plot[domain=-0.55:6.55,samples=120,smooth]
+    ({\r*(\x-sin(\x r))},{\r*(1-cos(\x r))});
+  % rolling circle
+  \draw[line width=0.7pt] (C) circle (\r);
+  \draw[line width=0.6pt] (C) -- (A);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.5pt] (C) -- (P);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.5pt] (P) -- (Q);
+  \draw[line width=0.55pt] (P) -- (M);
+  % angle θ at C between downward vertical and CP
+  \draw[line width=0.4pt] (C) ++(0,-0.55) arc[start angle=-90,end angle={-90-\th r},radius=0.55];
+  \node[anchor=north,inner sep=1pt,font=\small] at ({(\cx)-0.35},{\r-0.72}) {$\theta$};
+  \node[anchor=south east,inner sep=1pt,font=\small] at ({(\px+\cx)/2},{(\py+\r)/2+0.05}) {$r$};
+  \fill (O) circle (1.15pt);
+  \fill (C) circle (1.15pt);
+  \fill (A) circle (1.1pt);
+  \fill (P) circle (1.25pt);
+  \fill (M) circle (1.05pt);
+  \fill (Q) circle (1.05pt);
+  \fill (E) circle (1.05pt);
+  \node[anchor=north east,inner sep=1.5pt] at (-0.08,-0.08) {$O$};
+  \node[anchor=south,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west,inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north,inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west,inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=north,inner sep=1.5pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{图6·20（1）}
 \end{figure}
 
-\emph{图8·20（1）}
+\emph{图6·20（1）}
 
 代入上两式得参数方程为
 
@@ -25514,11 +25561,79 @@ x = r \operatorname{arc} \cos \frac {r - y}{r} - \sqrt {2 r y - y^{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8-20(2)}]{assets/analytic-geometry/fig-p0347-02.png}}
-\caption{图 8-20(2)}
+\fitfig{%
+% fig-alt: 图6·20（2） 摆线作齿条齿廓：滚动圆两位置 C，定点 P、Q，下方阴影齿槽轮廓标「摆线」
+\begin{tikzpicture}[x=0.5cm,y=0.5cm,line cap=round,line join=round,>=latex]
+  \def\r{1.4}
+  % left circle nearly starting; right further along
+  \def\thP{1.15}
+  \def\thQ{2.35}
+  \pgfmathsetmacro{\cpx}{\r*\thP}
+  \pgfmathsetmacro{\cqx}{\r*\thQ}
+  \pgfmathsetmacro{\px}{\r*(\thP-sin(\thP r))}
+  \pgfmathsetmacro{\py}{\r*(1-cos(\thP r))}
+  \pgfmathsetmacro{\qx}{\r*(\thQ-sin(\thQ r))}
+  \pgfmathsetmacro{\qy}{\r*(1-cos(\thQ r))}
+  \coordinate (O) at (0,0);
+  \coordinate (Cp) at ({\cpx},\r);
+  \coordinate (Cq) at ({\cqx},\r);
+  \coordinate (M) at ({\cpx},0);
+  \coordinate (A) at ({\cqx},0);
+  \coordinate (P) at ({\px},{\py});
+  \coordinate (Q) at ({\qx},{\qy});
+  \pgfmathsetmacro{\Qp}{{\cpx}} % for horizontal from P to vertical CM
+  \coordinate (Hp) at ({\cpx},{\py});
+  \coordinate (Hq) at ({\cqx},{\qy});
+  % axes
+  \draw[line width=0.65pt,-latex] (-2.2,0) -- ({2*pi*\r+1.0},0);
+  \draw[line width=0.65pt,-latex] (0,-2.6) -- (0,{2*\r+0.55}) node[anchor=south,inner sep=1.5pt] {$y$};
+  % cycloid above (generating curve)
+  \draw[line width=0.8pt] plot[domain=-0.2:6.5,samples=110,smooth]
+    ({\r*(\x-sin(\x r))},{\r*(1-cos(\x r))});
+  % rack tooth troughs below pitch line: inverted cycloid arches with hatch on material
+  % material is OUTSIDE the troughs (below the trough curve)
+  \begin{scope}
+    \clip (-2.0,-2.45) rectangle ({2*pi*\r+0.3},0.02);
+    % fill material (everything below pitch line except the "air" in troughs is hatched via path)
+    \fill[pattern=north east lines,pattern color=black!50]
+      (-2.0,0) -- (-2.0,-2.45) -- ({2*pi*\r+0.3},-2.45) -- ({2*pi*\r+0.3},0)
+      -- plot[domain={2*pi}:0,samples=90,smooth] ({\r*(\x-sin(\x r))},{-0.72*\r*(1-cos(\x r))})
+      -- cycle;
+  \end{scope}
+  \draw[line width=0.7pt]
+    plot[domain=-0.15:6.4,samples=90,smooth]
+    ({\r*(\x-sin(\x r))},{-0.72*\r*(1-cos(\x r))});
+  % two rolling circles
+  \draw[line width=0.65pt] (Cp) circle (\r);
+  \draw[line width=0.65pt] (Cq) circle (\r);
+  \draw[line width=0.5pt] (Cp) -- (M);
+  \draw[line width=0.5pt] (Cq) -- (A);
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.45pt] (Cp) -- (P);
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.45pt] (P) -- (Hp);
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.45pt] (Cq) -- (Q);
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.45pt] (Q) -- (Hq);
+  \fill (O) circle (1.1pt);
+  \fill (Cp) circle (1.1pt);
+  \fill (Cq) circle (1.1pt);
+  \fill (P) circle (1.15pt);
+  \fill (Q) circle (1.15pt);
+  \fill (M) circle (1.0pt);
+  \fill (A) circle (1.0pt);
+  \node[anchor=north east,inner sep=1.2pt] at (-0.08,-0.08) {$O$};
+  \node[anchor=south,inner sep=1.2pt] at (Cp) {$C$};
+  \node[anchor=south,inner sep=1.2pt] at (Cq) {$C$};
+  \node[anchor=south west,inner sep=1.2pt] at (P) {$P$};
+  \node[anchor=west,inner sep=1.2pt] at (Q) {$Q$};
+  \node[anchor=north,inner sep=1.2pt] at (M) {$M$};
+  \node[anchor=north,inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.2,-1.0) {摆线};
+  \draw[line width=0.35pt] (-0.05,-1.0) -- ({0.35*\r},{-0.35*\r});
+\end{tikzpicture}%
+}
+\caption{图6·20（2）}
 \end{figure}
 
-\emph{图8·20（2）}
+\emph{图6·20（2）}
 
 ［解］ 以圆心为坐标的原点，使 \(x\) 轴经过圆上 \(A\) 点，\(A\) 点为绳端
 \(P\) 合于圆上时的位置，\(AB\) 是围绕圆的一段绳子，现在拉到 \(BP\)
@@ -25538,8 +25653,73 @@ x = r \operatorname{arc} \cos \frac {r - y}{r} - \sqrt {2 r y - y^{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.21(1)}]{assets/analytic-geometry/fig-p0348-01.png}}
-\caption{图6.21(1)}
+\fitfig{%
+% fig-alt: 图6·21（1） 圆的渐开线：基圆半径 r，切点 B，切线段 BP=弧 BA，∠AOB=θ，垂足 D、M 与水平辅助点 Q
+\begin{tikzpicture}[x=0.48cm,y=0.48cm,line cap=round,line join=round,>=latex]
+  \def\r{1.7}
+  \def\th{1.05} % radians for main point
+  \pgfmathsetmacro{\bx}{\r*cos(\th r)}
+  \pgfmathsetmacro{\by}{\r*sin(\th r)}
+  \pgfmathsetmacro{\px}{\r*(cos(\th r)+\th*sin(\th r))}
+  \pgfmathsetmacro{\py}{\r*(sin(\th r)-\th*cos(\th r))}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (\r,0);
+  \coordinate (B) at ({\bx},{\by});
+  \coordinate (P) at ({\px},{\py});
+  \coordinate (D) at ({\bx},0);
+  \coordinate (M) at ({\px},0);
+  \coordinate (Q) at ({\bx},{\py});
+  % axes (dashed style common in this book figure)
+  \draw[dash pattern=on 2.0pt off 1.3pt,line width=0.55pt,-latex] ({-1.15*\r},0) -- ({3.6*\r},0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[dash pattern=on 2.0pt off 1.3pt,line width=0.55pt,-latex] (0,{-1.15*\r}) -- (0,{2.7*\r}) node[anchor=south,inner sep=2pt] {$y$};
+  % base circle
+  \draw[line width=0.75pt] (0,0) circle (\r);
+  % involute
+  \draw[line width=0.85pt] plot[domain=0.02:4.4,samples=140,smooth]
+    ({\r*(cos(\x r)+\x*sin(\x r))},{\r*(sin(\x r)-\x*cos(\x r))});
+  % construction tangents at several angles
+  \foreach \t in {0.45,0.75,1.35,1.75,2.2,2.7,3.2,3.7} {
+    \pgfmathsetmacro{\tx}{\r*cos(\t r)}
+    \pgfmathsetmacro{\ty}{\r*sin(\t r)}
+    \pgfmathsetmacro{\ix}{\r*(cos(\t r)+\t*sin(\t r))}
+    \pgfmathsetmacro{\iy}{\r*(sin(\t r)-\t*cos(\t r))}
+    \draw[line width=0.45pt] ({\tx},{\ty}) -- ({\ix},{\iy});
+    \draw[line width=0.35pt] (O) -- ({\tx},{\ty});
+  }
+  % main OB, BP, projections
+  \draw[line width=0.7pt] (O) -- (B);
+  \draw[line width=0.7pt] (B) -- (P);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.5pt] (B) -- (D);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.5pt] (P) -- (M);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.5pt] (P) -- (Q);
+  % right angle mark at B (OB ⊥ BP): OB dir (cos,sin), BP dir (sin,-cos)
+  \draw[line width=0.35pt] (B) ++({0.28*cos(\th r)},{0.28*sin(\th r)})
+    -- ++({0.28*sin(\th r)},{-0.28*cos(\th r)})
+    -- ++({-0.28*cos(\th r)},{-0.28*sin(\th r)});
+  % angles θ
+  \draw[line width=0.4pt] (0.55,0) arc[start angle=0,end angle={\th r},radius=0.55];
+  \node[anchor=west,inner sep=1pt,font=\small] at (0.7,0.22) {$\theta$};
+  \draw[line width=0.35pt] (B) ++({0.5*sin(\th r)},{-0.5*cos(\th r)})
+    arc[start angle={\th r-90},end angle={\th r-90+\th r},radius=0.5];
+  \node[anchor=north west,inner sep=0.5pt,font=\small] at ({(\bx)+0.15},{(\py)+0.15}) {$\theta$};
+  \node[anchor=north east,inner sep=1pt,font=\small] at ({0.55*\bx},{0.55*\by}) {$r$};
+  \fill (O) circle (1.15pt);
+  \fill (A) circle (1.1pt);
+  \fill (B) circle (1.2pt);
+  \fill (P) circle (1.25pt);
+  \fill (D) circle (1.05pt);
+  \fill (M) circle (1.05pt);
+  \fill (Q) circle (1.05pt);
+  \node[anchor=north east,inner sep=1.5pt] at (-0.12,-0.12) {$O$};
+  \node[anchor=north,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south east,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west,inner sep=2pt] at (P) {$P$};
+  \node[anchor=north,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=east,inner sep=1.5pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+\caption{图6·21（1）}
 \end{figure}
 
 \emph{图6·21（1）}
@@ -25556,8 +25736,65 @@ x = r \operatorname{arc} \cos \frac {r - y}{r} - \sqrt {2 r y - y^{2}}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6·21(2)}]{assets/analytic-geometry/fig-p0348-02.png}}
-\caption{图 6·21(2)}
+\fitfig{%
+% fig-alt: 图6·21（2） 齿轮齿面为圆的渐开线，虚线基圆；三齿扇形与径向点划中心线
+\begin{tikzpicture}[x=1.0cm,y=1.0cm,line cap=round,line join=round,>=latex]
+  \def\rb{1.45}
+  \def\rr{1.2}
+  \def\rt{2.05}
+  \def\ox{0.16}
+  \def\oy{0.12}
+  % radial dash-dot lines for tooth centers
+  \foreach \ang in {70,90,110} {
+    \draw[dash pattern=on 2.0pt off 1.1pt on 0.55pt off 1.1pt,line width=0.4pt]
+      (0,0) -- ({1.15*\rt*cos(\ang)},{1.15*\rt*sin(\ang)});
+  }
+  % back face arcs (light offset)
+  \begin{scope}[shift={(\ox,\oy)}]
+    \draw[line width=0.4pt,black!45] ({\rr*cos(55)},{\rr*sin(55)}) arc[start angle=55,end angle=125,radius=\rr];
+    \draw[line width=0.4pt,black!45] ({\rt*cos(62)},{\rt*sin(62)}) arc[start angle=62,end angle=78,radius=\rt];
+    \draw[line width=0.4pt,black!45] ({\rt*cos(82)},{\rt*sin(82)}) arc[start angle=82,end angle=98,radius=\rt];
+    \draw[line width=0.4pt,black!45] ({\rt*cos(102)},{\rt*sin(102)}) arc[start angle=102,end angle=118,radius=\rt];
+  \end{scope}
+  % root arc
+  \draw[line width=0.7pt] ({\rr*cos(55)},{\rr*sin(55)}) arc[start angle=55,end angle=125,radius=\rr];
+  % tip lands
+  \foreach \a/\b in {63/77,83/97,103/117} {
+    \draw[line width=0.7pt] ({\rt*cos(\a)},{\rt*sin(\a)}) arc[start angle=\a,end angle=\b,radius=\rt];
+  }
+  % base circle
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.55pt]
+    ({\rb*cos(52)},{\rb*sin(52)}) arc[start angle=52,end angle=128,radius=\rb];
+  % involute flanks for three teeth
+  \foreach \phi in {70,90,110} {
+    % left flank
+    \draw[line width=0.72pt] plot[domain=0.12:0.95,samples=30,smooth]
+      ({(\rb*(cos(\x r)+\x*sin(\x r)))*cos(\phi+9)-(\rb*(sin(\x r)-\x*cos(\x r)))*sin(\phi+9)},
+       {(\rb*(cos(\x r)+\x*sin(\x r)))*sin(\phi+9)+(\rb*(sin(\x r)-\x*cos(\x r)))*cos(\phi+9)});
+    % right flank
+    \draw[line width=0.72pt] plot[domain=0.12:0.95,samples=30,smooth]
+      ({(\rb*(cos(\x r)+\x*sin(\x r)))*cos(\phi-9)+(\rb*(sin(\x r)-\x*cos(\x r)))*sin(\phi-9)},
+       {(\rb*(cos(\x r)+\x*sin(\x r)))*sin(\phi-9)-(\rb*(sin(\x r)-\x*cos(\x r)))*cos(\phi-9)});
+  }
+  % root fillets connecting tip gaps (approx chords at root between teeth)
+  \foreach \a/\b in {77/83,97/103} {
+    \draw[line width=0.55pt] ({\rr*1.02*cos(\a)},{\rr*1.02*sin(\a)}) -- ({\rr*1.02*cos(\b)},{\rr*1.02*sin(\b)});
+  }
+  % thickness connectors
+  \draw[line width=0.4pt,black!50] ({\rt*cos(63)},{\rt*sin(63)}) -- ({\rt*cos(63)+\ox},{\rt*sin(63)+\oy});
+  \draw[line width=0.4pt,black!50] ({\rr*cos(55)},{\rr*sin(55)}) -- ({\rr*cos(55)+\ox},{\rr*sin(55)+\oy});
+  % dotted extension of one involute
+  \draw[dash pattern=on 1.1pt off 0.9pt,line width=0.4pt] plot[domain=0.85:1.2,samples=18,smooth]
+    ({(\rb*(cos(\x r)+\x*sin(\x r)))*cos(79)-(\rb*(sin(\x r)-\x*cos(\x r)))*sin(79)},
+     {(\rb*(cos(\x r)+\x*sin(\x r)))*sin(79)+(\rb*(sin(\x r)-\x*cos(\x r)))*cos(79)});
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.05,1.4) {基圆};
+  \draw[line width=0.35pt] (0.05,1.4) -- ({\rb*cos(105)},{\rb*sin(105)});
+  \node[anchor=south,inner sep=1pt,font=\small] at (0.2,2.35) {渐开线};
+  \draw[line width=0.35pt] (0.35,2.25) -- ({1.7*cos(100)},{2.05*sin(100)});
+  \fill (0,0) circle (1.15pt);
+\end{tikzpicture}%
+}
+\caption{图6·21（2）}
 \end{figure}
 
 \emph{图6·21（2）}
@@ -25580,8 +25817,61 @@ x = t. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.22}]{assets/analytic-geometry/fig-p0349-01.png}}
-\caption{图6.22}
+\fitfig{%
+% fig-alt: 图6·22 底边 AB=2a、高 h 的三角形，垂心 P 的轨迹为抛物线；C(t,h)、高 CD 与 BE⊥AC
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round,>=latex]
+  \def\a{2.35}
+  \def\h{2.75}
+  \def\t{1.15}
+  \pgfmathsetmacro{\py}{(\a*\a-\t*\t)/\h}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at ({\a},0);
+  \coordinate (B) at ({-\a},0);
+  \coordinate (C) at ({\t},{\h});
+  \coordinate (D) at ({\t},0);
+  \coordinate (P) at ({\t},{\py});
+  \pgfmathsetmacro{\ta}{\t-\a}
+  \pgfmathsetmacro{\xe}{\a*(\h*\h-\ta*\ta)/(\h*\h+\ta*\ta)}
+  \pgfmathsetmacro{\ye}{(\h/\ta)*(\xe-\a)}
+  \coordinate (E) at ({\xe},{\ye});
+  \draw[line width=0.7pt,-latex] ({-\a-0.7},0) -- ({\a+1.0},0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-1.15) -- (0,{\h+0.65}) node[anchor=south,inner sep=2pt] {$y$};
+  \draw[dash pattern=on 2.0pt off 1.3pt,line width=0.5pt] ({-\a-0.35},{\h}) -- ({\a+0.55},{\h});
+  \draw[line width=0.8pt] plot[domain={-\a-0.4}:{\a+0.4},samples=70,smooth]
+    ({\x},{(\a*\a-(\x)*(\x))/\h});
+  \draw[line width=0.7pt] (B) -- (C) -- (A);
+  \draw[line width=0.65pt] (C) -- (D);
+  \draw[line width=0.65pt] (B) -- (E);
+  % right angle BE ⊥ AC at E
+  \pgfmathsetmacro{\acx}{\t-\a}
+  \pgfmathsetmacro{\acy}{\h}
+  \pgfmathsetmacro{\acl}{sqrt(\acx*\acx+\acy*\acy)}
+  \pgfmathsetmacro{\ux}{\acx/\acl}
+  \pgfmathsetmacro{\uy}{\acy/\acl}
+  \pgfmathsetmacro{\bex}{-\a-\xe}
+  \pgfmathsetmacro{\bey}{0-\ye}
+  \pgfmathsetmacro{\bel}{sqrt(\bex*\bex+\bey*\bey)}
+  \pgfmathsetmacro{\vx}{\bex/\bel}
+  \pgfmathsetmacro{\vy}{\bey/\bel}
+  % unit along AC toward A from E, and along EB toward B
+  \draw[line width=0.35pt] (E) ++({-0.24*\ux},{-0.24*\uy}) -- ++({0.24*\vx},{0.24*\vy}) -- ++({0.24*\ux},{0.24*\uy});
+  \fill (O) circle (1.1pt);
+  \fill (A) circle (1.1pt);
+  \fill (B) circle (1.1pt);
+  \fill (C) circle (1.15pt);
+  \fill (D) circle (1.05pt);
+  \fill (P) circle (1.25pt);
+  \fill (E) circle (1.05pt);
+  \node[anchor=north east,inner sep=1pt] at (-0.1,-0.1) {$O$};
+  \node[anchor=north,inner sep=1.5pt] at (A) {$A(a,0)$};
+  \node[anchor=north,inner sep=1.5pt] at (B) {$B(-a,0)$};
+  \node[anchor=south west,inner sep=1.5pt] at (C) {$C(t,h)$};
+  \node[anchor=north west,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=west,inner sep=2pt] at (P) {$P$};
+  \node[anchor=south west,inner sep=1pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{图6·22}
 \end{figure}
 
 \emph{图6·22}
@@ -25658,7 +25948,34 @@ x^{2} + y^{2} = a^{2} + b^{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6·23}]{assets/analytic-geometry/fig-p0350-01.png}}
+\fitfig{%
+% fig-alt: 图6·23 椭圆的两条垂直切线交于点 C，交点轨迹为圆 x^2+y^2=a^2+b^2
+\begin{tikzpicture}[x=0.7cm,y=0.7cm,line cap=round,line join=round,>=latex]
+  \def\a{2.25}
+  \def\b{1.35}
+  \pgfmathsetmacro{\R}{sqrt(\a*\a+\b*\b)}
+  \def\m{0.75}
+  \pgfmathsetmacro{\sone}{sqrt(\a*\a*\m*\m+\b*\b)}
+  \pgfmathsetmacro{\stwo}{sqrt(\a*\a/(\m*\m)+\b*\b)}
+  \pgfmathsetmacro{\cx}{(\stwo-\sone)/(\m+1/\m)}
+  \pgfmathsetmacro{\cy}{\m*\cx+\sone}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at ({\cx},{\cy});
+  \draw[line width=0.7pt,-latex] ({-\R-0.35},0) -- ({\R+0.55},0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,{-\R-0.3}) -- (0,{\R+0.5}) node[anchor=south,inner sep=2pt] {$y$};
+  \draw[line width=0.75pt] (0,0) ellipse ({\a} and {\b});
+  \draw[line width=0.7pt] (0,0) circle ({\R});
+  % two perpendicular tangents through C, extended
+  \draw[line width=0.65pt]
+    ({\cx-2.8},{\cy-\m*2.8}) -- ({\cx+1.6},{\cy+\m*1.6});
+  \draw[line width=0.65pt]
+    ({\cx-1.3},{\cy+(1/\m)*1.3}) -- ({\cx+2.2},{\cy-(1/\m)*2.2});
+  \fill (O) circle (1.1pt);
+  \fill (C) circle (1.25pt);
+  \node[anchor=north east,inner sep=1.5pt] at (-0.1,-0.1) {$O$};
+  \node[anchor=south west,inner sep=2pt] at (C) {$C$};
+\end{tikzpicture}%
+}
 \caption{图6·23}
 \end{figure}
 
@@ -25666,8 +25983,49 @@ x^{2} + y^{2} = a^{2} + b^{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6-24}]{assets/analytic-geometry/fig-p0350-02.png}}
-\caption{图6-24}
+\fitfig{%
+% fig-alt: 图6·24 椭圆上点 P 的切线交 x 轴于 Q，△OPQ 垂心 H 的轨迹为另一椭圆；垂线 HD 过 P
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,line cap=round,line join=round,>=latex]
+  % original ellipse: x=2cosθ, y=sinθ → a=2,b=1
+  % H locus: x=2cosθ, y=4sinθ → a=2,b=4
+  \def\ae{2.0}
+  \def\be{1.0}
+  \def\bh{3.2} % draw locus a bit compressed for fit (ratio similar)
+  \def\th{48} % degrees for illustration
+  \pgfmathsetmacro{\px}{\ae*cos(\th)}
+  \pgfmathsetmacro{\py}{\be*sin(\th)}
+  \pgfmathsetmacro{\hx}{\ae*cos(\th)}
+  \pgfmathsetmacro{\hy}{\bh*sin(\th)}
+  \pgfmathsetmacro{\qx}{\ae/cos(\th)}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at ({\px},{\py});
+  \coordinate (H) at ({\hx},{\hy});
+  \coordinate (D) at ({\px},0);
+  \coordinate (Q) at ({\qx},0);
+  \draw[line width=0.7pt,-latex] (-2.6,0) -- (3.4,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-3.5) -- (0,3.7) node[anchor=south,inner sep=2pt] {$y$};
+  % original (flat) ellipse
+  \draw[line width=0.75pt] (0,0) ellipse ({\ae} and {\be});
+  % H locus (tall) ellipse
+  \draw[line width=0.75pt] (0,0) ellipse ({\ae} and {\bh});
+  % lines
+  \draw[line width=0.6pt] (O) -- (H);
+  \draw[line width=0.55pt] (H) -- (D);
+  \draw[line width=0.55pt] (P) -- (Q);
+  \draw[line width=0.5pt] (O) -- (P);
+  \fill (O) circle (1.1pt);
+  \fill (P) circle (1.15pt);
+  \fill (H) circle (1.2pt);
+  \fill (D) circle (1.05pt);
+  \fill (Q) circle (1.1pt);
+  \node[anchor=north east,inner sep=1.5pt] at (-0.1,-0.1) {$O$};
+  \node[anchor=west,inner sep=2pt] at (H) {$H(x,y)$};
+  \node[anchor=east,inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+\caption{图6·24}
 \end{figure}
 
 \emph{图6·24}
@@ -25739,7 +26097,22 @@ x = 2 \cos \theta, \tag {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/analytic-geometry/fig-p0352-01.png}}
+\fitfig{%
+% fig-alt: 图6·25（a） 圆的一组平行弦（水平）及其中点落在竖直直径上
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round]
+  \def\R{2.35}
+  \draw[line width=0.8pt] (0,0) circle (\R);
+  \draw[line width=0.7pt] (0,{-\R}) -- (0,{\R});
+  \foreach \k in {-9,-8,...,9} {
+    \pgfmathsetmacro{\yy}{\k*\R/10}
+    \pgfmathsetmacro{\xx}{sqrt(\R*\R-\yy*\yy)}
+    \draw[line width=0.55pt] ({-\xx},{\yy}) -- ({\xx},{\yy});
+    \draw[line width=0.55pt,fill=white] (0,{\yy}) circle (0.07);
+  }
+  \draw[line width=0.55pt,fill=white] (0,{\R}) circle (0.07);
+  \draw[line width=0.55pt,fill=white] (0,{-\R}) circle (0.07);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
