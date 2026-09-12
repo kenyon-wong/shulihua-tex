@@ -26965,7 +26965,7 @@ I = \frac{U}{Z} \tag{5.20}
 
 以上方法也可以用来求两个同频率正弦交变电流的合成。
 
-在实际交流电问题中，重要的是各个正弦交变量之间相互的位相关系，而不是每个量的初位相。所以在作矢量图时，总是选择一个电流或电压作为参考矢量，即它的初位相取作零，而其他电流或电压可以根据它与参考电流或电机的相对位相关系来作出。例如，在所讨论的
+在实际交流电问题中，重要的是各个正弦交变量之间相互的位相关系，而不是每个量的初位相。所以在作矢量图时，总是选择一个电流或电压作为参考矢量，即它的初位相取作零，而其他电流或电压可以根据它与参考电流或电压的相对位相关系来作出。例如，在所讨论的
 \(R\)、\(L\) 串联电路中，电流是处处相同的，可以取电流 \(I\)
 作为参考矢量。这样 \(U_{R}\) 与 \(I\) 相等，就画在 \(I\)
 同一方向上，\(U_{L}\) 比 \(I\)
@@ -26981,45 +26981,119 @@ I = \frac{U}{Z} \tag{5.20}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.31 RLC串联电路}]{assets/physics-3/fig-p0353-01.png}}
-\caption{图5.31 RLC串联电路}
+\fitfig{%
+% fig-alt: 图5.31·RLC串联电路：左交流电源u，右自上而下电阻R、电感L、电容C，旁标UR、UL、UC
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.0]
+  \def\W{2.75}\def\H{3.35}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC source left
+  \fill[white] (-0.02,{\H/2-0.32}) rectangle (0.02,{\H/2+0.32});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.26];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.30,{\H/2}) {$u$};
+  % R upper right
+  \pgfmathsetmacro{\yRtop}{\H-0.20}
+  \pgfmathsetmacro{\yRbot}{\H*2/3+0.08}
+  \fill[white] ({\W-0.02},\yRbot) rectangle ({\W+0.02},\yRtop);
+  \draw[line width=0.75pt] ({\W-0.15},\yRbot) rectangle ({\W+0.15},\yRtop);
+  \node[anchor=west,inner sep=2pt] at ({\W+0.18},{(\yRtop+\yRbot)/2}) {$R$};
+  % L middle right (4 loops)
+  \pgfmathsetmacro{\yLtop}{\H*2/3-0.05}
+  \pgfmathsetmacro{\yLbot}{\H/3+0.05}
+  \fill[white] ({\W-0.02},\yLbot) rectangle ({\W+0.02},\yLtop);
+  \foreach \y in {0,1,2,3} {
+    \pgfmathsetmacro{\yy}{\yLtop-0.12-0.22*\y}
+    \draw[line width=0.7pt] ({\W-0.20},\yy)
+      arc[start angle=180,end angle=0,x radius=0.20,y radius=0.11];
+  }
+  \node[anchor=west,inner sep=2pt] at ({\W+0.22},{(\yLtop+\yLbot)/2}) {$L$};
+  % C lower right
+  \pgfmathsetmacro{\yC}{\H/6+0.05}
+  \fill[white] ({\W-0.02},{\yC-0.22}) rectangle ({\W+0.02},{\yC+0.22});
+  \draw[line width=0.85pt] ({\W-0.20},{\yC+0.10}) -- ({\W+0.20},{\yC+0.10});
+  \draw[line width=0.85pt] ({\W-0.20},{\yC-0.10}) -- ({\W+0.20},{\yC-0.10});
+  \node[anchor=west,inner sep=2pt] at ({\W+0.22},\yC) {$C$};
+  % voltage brackets further right
+  \pgfmathsetmacro{\xb}{\W+0.95}
+  \draw[line width=0.55pt,|<->|] (\xb,\yRtop) -- (\xb,\yRbot);
+  \node[anchor=west,inner sep=2pt] at ({\xb+0.05},{(\yRtop+\yRbot)/2}) {$U_R$};
+  \draw[line width=0.4pt] ({\xb-0.12},\yRbot) -- ({\xb+0.12},\yRbot);
+  \draw[line width=0.55pt,|<->|] (\xb,\yLtop) -- (\xb,\yLbot);
+  \node[anchor=west,inner sep=2pt] at ({\xb+0.05},{(\yLtop+\yLbot)/2}) {$U_L$};
+  \draw[line width=0.4pt] ({\xb-0.12},\yLbot) -- ({\xb+0.12},\yLbot);
+  \draw[line width=0.55pt,|<->|] (\xb,{\yC+0.22}) -- (\xb,{\yC-0.22});
+  \node[anchor=west,inner sep=2pt] at ({\xb+0.05},\yC) {$U_C$};
+\end{tikzpicture}%
+}
+\caption{图5.31·RLC串联电路}
 \end{figure}
 
-\emph{图5.31 RLC串联电路}
+\emph{图5.31·RLC串联电路}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5.32 RLC串联电路中电流和电压矢量图}]{assets/physics-3/fig-p0353-02.png}}
-\caption{图5.32 RLC串联电路中电流和电压矢量图}
+\fitfig{%
+% fig-alt: 图5.32·RLC串联矢量图：水平I与UR，竖直UL上、UC下，净UL−UC与合电压U，夹角φ
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.05]
+  \def\Rx{2.35}
+  \def\Uylen{2.55}
+  \def\Cylen{1.35}
+  \def\Ny{1.20}
+  % axes
+  \draw[line width=0.65pt,->] (-0.15,0) -- (3.55,0);
+  \draw[line width=0.65pt,->] (0,{-\Cylen-0.35}) -- (0,{\Uylen+0.35});
+  % I (longer along +x)
+  \draw[line width=0.9pt,->] (0,0) -- (3.25,0) node[anchor=west,inner sep=2pt] {$I$};
+  % UR
+  \draw[line width=0.9pt,->] (0,0) -- (\Rx,0);
+  \node[anchor=north,inner sep=2pt] at ({\Rx*0.55},-0.05) {$U_R$};
+  % UL up
+  \draw[line width=0.9pt,->] (0,0) -- (0,\Uylen) node[anchor=south,inner sep=2pt] {$U_L$};
+  % UC down
+  \draw[line width=0.9pt,->] (0,0) -- (0,{-\Cylen}) node[anchor=north,inner sep=2pt] {$U_C$};
+  % UL-UC net (shorter up arrow with label left)
+  \draw[line width=0.85pt,->] (0,0) -- (0,\Ny);
+  \node[anchor=east,inner sep=2pt] at (-0.08,{\Ny*0.55}) {$U_L-U_C$};
+  % resultant U
+  \draw[line width=0.95pt,->] (0,0) -- (\Rx,\Ny) node[anchor=south west,inner sep=2pt] {$U$};
+  % dashed rectangle
+  \draw[line width=0.5pt,dashed] (\Rx,0) -- (\Rx,\Ny);
+  \draw[line width=0.5pt,dashed] (0,\Ny) -- (\Rx,\Ny);
+  % phi
+  \draw[line width=0.55pt] (0.55,0) arc[start angle=0,end angle={atan(\Ny/\Rx)},radius=0.55];
+  \node[anchor=west,inner sep=1pt] at (0.62,0.18) {$\varphi$};
+\end{tikzpicture}%
+}
+\caption{图5.32·RLC串联电路中电流和电压矢量图}
 \end{figure}
 
-\emph{图5.32 RLC串联电路中电流和电压矢量图}
+\emph{图5.32·RLC串联电路中电流和电压矢量图}
 
 因串联电路各处电流相等，作矢量图时可以用电流做参考矢量。电阻上电压
-\(U_{R}\) 与电流间和面在电流矢量同一方向上，电感上电压 \(U_{L}\)
+\(U_{R}\) 与电流同位相，画在电流矢量同一方向上，电感上电压 \(U_{L}\)
 比电流超前 \(90^{\circ}\)，画一矢量与电流矢量成 \(+90^{\circ}\)
 角。电容上电压 \(U_{C}\) 比电流落后 \(90^{\circ}\)，画一矢量与电流矢量成
 \(-90^{\circ}\) 角， \(U_{R}\)、 \(U_{L}\) 和 \(U_{C}\)
 三个矢量如图5.32所示。串联电路的总电压等于这三个电压的矢量和。因
 \(U_{L}\) 与 \(U_{C}\) 方向相反，它们的合矢量大小等于
 \(|U_{L}-U_{C}|\)，方向与其中数值大的一个相同。 \(U_{L}\) 和 \(U_{C}\)
-的合电压与 \(U_{R}\) 的矢量和即等三总电压 \(U\)，如图5.32中所示。
+的合电压与 \(U_{R}\) 的矢量和即等于总电压 \(U\)，如图5.32中所示。
 
 由图可以计算总电压 U
 
 \[
-U = \sqrt{U_{R}^{2} + (U_{L} - U_{O})^{2}}
+U = \sqrt{U_{R}^{2} + (U_{L} - U_{C})^{2}}
 \]
 
-因 \(U_{R} = IR, U_{L} = I X_{L}, U_{c} = I X_{c}\)
+因 \(U_{R} = IR, U_{L} = I X_{L}, U_{C} = I X_{C}\)
 
 以之代入上式， 得
 
 \[
-U = \sqrt{T^{2} \text{［} R^{2} + (\overline {{{X_{L} - X_{O}}}})^{2} \text{］}} = I \sqrt{H^{2} + (\overline {{{X_{L} - X_{O}}}})^{2}}
+U = \sqrt{I^{2} [ R^{2} + (X_{L} - X_{C})^{2} ]} = I \sqrt{R^{2} + (X_{L} - X_{C})^{2}}
 \]
 
-移项后得 \(I=\frac{U}{\sqrt{R^{2}+(X_{L}-X_{O})^{2}}}=\frac{U}{Z}\)
+移项后得 \(I=\frac{U}{\sqrt{R^{2}+(X_{L}-X_{C})^{2}}}=\frac{U}{Z}\)
 （5.22）
 
 上式中 \(\left|X_{L}-X_{C}\right|\)
@@ -27032,17 +27106,17 @@ U = \sqrt{T^{2} \text{［} R^{2} + (\overline {{{X_{L} - X_{O}}}})^{2} \text{］
 由图还可以计算电感电压与电流之间位相差 \(\varphi\)
 
 \[
-\varphi = \mathrm{ig}^{- 1} \frac{U_{i} - U_{0}}{U_{0}} = \mathrm{tg}^{- 1} \frac{X_{i} - X_{0}}{R}. \tag{5.23}
+\varphi = \mathrm{tg}^{- 1} \frac{U_{L} - U_{C}}{U_{R}} = \mathrm{tg}^{- 1} \frac{X_{L} - X_{C}}{R}. \tag{5.23}
 \]
 
-由上式可以看出，当 \(X_{L} > X_{0}\) 时，\(\varphi\)
+由上式可以看出，当 \(X_{L} > X_{C}\) 时，\(\varphi\)
 为正值，电压位相超前于电流。它的意义是，电路中电感的作用大于电容的作用，电路呈现电感性，故电压位相超前于电流。
 
-当 \(X_{L} < X_{0}\) 时，\(\varphi\)
+当 \(X_{L} < X_{C}\) 时，\(\varphi\)
 为负值，电压位相落后于电流。它的意义是，电路中电容的作用大于电感的作用，电路呈现电容性，故电压位相落后于电流。
 
-当 \(X_{L} = X_{0}\) 时，\(\varphi\)
-等于零，电压与电流岗位相。它的意义是，电路中电感的作用与电容的作用相抵消，电路象一个纯电阻电路，故电压与电流同位相。这种情况叫做串联谐振，在无线电技术中很有用处。
+当 \(X_{L} = X_{C}\) 时，\(\varphi\)
+等于零，电压与电流同位相。它的意义是，电路中电感的作用与电容的作用相抵消，电路象一个纯电阻电路，故电压与电流同位相。这种情况叫做串联谐振，在无线电技术中很有用处。
 
 \subsubsection{例 7}
 
@@ -27052,35 +27126,80 @@ U = \sqrt{T^{2} \text{［} R^{2} + (\overline {{{X_{L} - X_{O}}}})^{2} \text{］
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0354-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.33（a）·RC串联：左交流电源u，右上电容C、下电阻R
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.05]
+  \def\W{2.55}\def\H{2.55}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC
+  \fill[white] (-0.02,{\H/2-0.32}) rectangle (0.02,{\H/2+0.32});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.26];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.30,{\H/2}) {$u$};
+  % C upper right
+  \fill[white] ({\W-0.02},{\H/2+0.15}) rectangle ({\W+0.02},{\H-0.15});
+  \draw[line width=0.85pt] ({\W-0.20},{\H*3/4+0.10}) -- ({\W+0.20},{\H*3/4+0.10});
+  \draw[line width=0.85pt] ({\W-0.20},{\H*3/4-0.10}) -- ({\W+0.20},{\H*3/4-0.10});
+  \node[anchor=west,inner sep=2pt] at ({\W+0.24},{\H*3/4}) {$C$};
+  % R lower right
+  \fill[white] ({\W-0.02},0.15) rectangle ({\W+0.02},{\H/2-0.05});
+  \draw[line width=0.75pt] ({\W-0.15},0.25) rectangle ({\W+0.15},{\H/2-0.15});
+  \node[anchor=west,inner sep=2pt] at ({\W+0.18},{\H/4+0.05}) {$R$};
+\end{tikzpicture}%
+}
+\caption{图5.33（a）·RC串联电路}
 \end{figure}
 
-\emph{（a）}
+\emph{图5.33（a）·RC串联电路}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-3/fig-p0354-02.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图5.33（b）·矢量图：水平I与UR，竖直向下UC，合电压U在第四象限，夹角φ
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.1]
+  \def\Rx{2.2}
+  \def\Cylen{1.85}
+  % axes: +x and +y up a bit, -y down
+  \draw[line width=0.65pt,->] (-0.1,0) -- (3.35,0);
+  \draw[line width=0.65pt] (0,0.55) -- (0,0);
+  \draw[line width=0.65pt,->] (0,0) -- (0,{-\Cylen-0.35});
+  % I
+  \draw[line width=0.9pt,->] (0,0) -- (3.05,0) node[anchor=west,inner sep=2pt] {$I$};
+  % UR
+  \draw[line width=0.9pt,->] (0,0) -- (\Rx,0);
+  \node[anchor=south,inner sep=2pt] at ({\Rx*0.55},0.05) {$U_R$};
+  % UC down
+  \draw[line width=0.9pt,->] (0,0) -- (0,{-\Cylen}) node[anchor=east,inner sep=3pt] {$U_C$};
+  % U diagonal
+  \draw[line width=0.95pt,->] (0,0) -- (\Rx,{-\Cylen}) node[anchor=west,inner sep=2pt] {$U$};
+  % dashed box
+  \draw[line width=0.5pt,dashed] (\Rx,0) -- (\Rx,{-\Cylen});
+  \draw[line width=0.5pt,dashed] (0,{-\Cylen}) -- (\Rx,{-\Cylen});
+  % phi (below axis)
+  \draw[line width=0.55pt] (0.55,0) arc[start angle=0,end angle={-atan(\Cylen/\Rx)},radius=0.55];
+  \node[anchor=west,inner sep=1pt] at (0.60,-0.28) {$\varphi$};
+\end{tikzpicture}%
+}
+\caption{图5.33（b）·RC串联电路矢量图}
 \end{figure}
 
-\emph{（1）}
+\emph{图5.33（b）·RC串联电路矢量图}
 
-\emph{图5.33}
+\emph{图5.33·RC串联电路及其矢量图}
 
 \textbf{［解］} 本题可以看出 \(RLC\)
-串联电路的特征，即其中电感被短路，\(X_{1}=0\)。
+串联电路的特征，即其中电感被短路，\(X_{L}=0\)。
 
 （1） 先计算电路的容抗
 
 \[
-X_{0} = \frac{1}{2 \pi f C} = \frac{1}{2 \times 3.14 \times 600 \times 10 \times 10^{- 6}} \Omega = 26.5 \Omega
+X_{C} = \frac{1}{2 \pi f C} = \frac{1}{2 \times 3.14 \times 600 \times 10 \times 10^{- 6}} \Omega = 26.5 \Omega
 \]
 
 故电路阻抗为
 
 \[
-Z = \sqrt{R^{2} - X_{0}^{2}} = \sqrt{20^{2} + 26.5^{2}} \Omega = 38.2 \Omega
+Z = \sqrt{R^{2} + X_{C}^{2}} = \sqrt{20^{2} + 26.5^{2}} \Omega = 38.2 \Omega
 \]
 
 （2） 电路中电流
@@ -27092,7 +27211,7 @@ I = \frac{U}{Z} = \frac{50}{33.2} \text{安} = 1.51 \text{安}
 （3） 电阻上电压
 
 \[
-U_{n} = I R = 1.51 \times 20 \text{伏} = 30.2 \text{伏}
+U_{R} = I R = 1.51 \times 20 \text{伏} = 30.2 \text{伏}
 \]
 
 电容器上电压
@@ -27268,7 +27387,7 @@ P = I U
 我们已经知道，纯电感电路中电流落后于电压
 
 \[
-\frac{T}{4} \cdot 90^{\circ})
+\frac{T}{4}\ (90^{\circ})
 \]
 
 它们的变化图线如图 5.34（c） 所示。在 \(0 \sim \frac{T}{4}\)
@@ -27280,23 +27399,107 @@ P = I U
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 纯电感电路上电流与电压的位置关系}]{assets/physics-3/fig-p0359-01.png}}
-\caption{(a) 纯电感电路上电流与电压的位置关系}
+\fitfig{%
+% fig-alt: 图5.34（a）·纯电感电路u、i随t变化：u为余弦、i为正弦，电流落后电压90°，横轴标T/4至T
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  \pgfmathsetmacro{\Au}{1.35}
+  \pgfmathsetmacro{\Ai}{1.05}
+  \pgfmathsetmacro{\Tlen}{5.6}
+  \draw[line width=0.7pt,->] (0,0) -- (6.4,0) node[anchor=west,inner sep=2pt] {$t$};
+  \draw[line width=0.7pt,->] (0,-1.65) -- (0,1.70) node[anchor=south,inner sep=2pt] {$u,\,i$};
+  % u = cos
+  \draw[line width=0.8pt,smooth,samples=160,domain=0:\Tlen,variable=\t]
+    plot (\t, {\Au*cos(deg(2*pi/\Tlen*\t))});
+  % i = sin
+  \draw[line width=0.8pt,smooth,samples=160,domain=0:\Tlen,variable=\t]
+    plot (\t, {\Ai*sin(deg(2*pi/\Tlen*\t))});
+  \node[anchor=west,inner sep=1pt] at (0.08,\Au) {$u$};
+  \node[anchor=south,inner sep=1pt] at ({\Tlen/4},\Ai) {$i$};
+  \foreach \k/\lab in {0.25/{$T/4$},0.5/{$T/2$},0.75/{$3T/4$},1/{$T$}} {
+    \pgfmathsetmacro{\xx}{\k*\Tlen}
+    \draw[line width=0.4pt] (\xx,-0.08) -- (\xx,0.08);
+    \node[anchor=north,inner sep=2pt] at (\xx,-0.10) {\lab};
+  }
+\end{tikzpicture}%
+}
+\caption{图5.34（a）·纯电感电路上电流与电压的位相关系}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 纯电感电路上电流与电压的位置关系}]{assets/physics-3/fig-p0359-02.png}}
-\caption{(a) 纯电感电路上电流与电压的位置关系}
+\fitfig{%
+% fig-alt: 图5.34（b）·(0∼T/4)纯电感：电源u上+下−，线圈e上+下−，电流i顺时针与电压同向
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.05]
+  \def\W{3.1}\def\H{2.35}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC left
+  \fill[white] (-0.02,{\H/2-0.38}) rectangle (0.02,{\H/2+0.38});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.28];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.32,{\H/2}) {$u$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.02,{\H/2+0.52}) {$+$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.02,{\H/2-0.52}) {$-$};
+  % iron-core coil right
+  \fill[white] ({\W-0.02},{\H/2-0.70}) rectangle ({\W+0.02},{\H/2+0.70});
+  \draw[line width=0.65pt] ({\W-0.11},{\H/2-0.65}) rectangle ({\W+0.11},{\H/2+0.65});
+  \foreach \y in {0.42,0.22,0.02,-0.18,-0.38} {
+    \draw[line width=0.65pt] ({\W-0.24},{\H/2+\y})
+      arc[start angle=180,end angle=0,x radius=0.24,y radius=0.11];
+  }
+  \node[anchor=east,inner sep=2pt] at ({\W-0.30},{\H/2}) {$e$};
+  \node[anchor=east,inner sep=1pt,font=\small] at ({\W-0.02},{\H/2+0.78}) {$+$};
+  \node[anchor=east,inner sep=1pt,font=\small] at ({\W-0.02},{\H/2-0.78}) {$-$};
+  % current arrows: clockwise
+  \draw[line width=0.7pt,->] ({\W*0.28},\H) -- ({\W*0.72},\H);
+  \node[anchor=south,inner sep=2pt] at ({\W*0.50},{\H+0.02}) {$i$};
+  \draw[line width=0.7pt,->] ({\W*0.72},0) -- ({\W*0.28},0);
+  \node[anchor=south,inner sep=2pt] at ({\W*0.50},0.02) {$i$};
+\end{tikzpicture}%
+}
+\caption{图5.34（b）·$(0\sim T/4)$电源电压与电流同方向}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 纯电感电路上电流与电压的位置关系}]{assets/physics-3/fig-p0359-03.png}}
-\caption{(a) 纯电感电路上电流与电压的位置关系}
+\fitfig{%
+% fig-alt: 图5.34（c）·(T/4∼T/2)纯电感：电源u上−下+，线圈e上−下+，电流i仍顺时针与电压反向
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=1.05]
+  \def\W{3.1}\def\H{2.35}
+  \draw[line width=0.75pt] (0,0) -- (\W,0) -- (\W,\H) -- (0,\H) -- cycle;
+  % AC left (reversed polarity)
+  \fill[white] (-0.02,{\H/2-0.38}) rectangle (0.02,{\H/2+0.38});
+  \draw[line width=0.75pt] (0,{\H/2}) circle[radius=0.28];
+  \node[inner sep=0pt] at (0,{\H/2}) {$\sim$};
+  \node[anchor=east,inner sep=2pt] at (-0.32,{\H/2}) {$u$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.02,{\H/2+0.52}) {$-$};
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.02,{\H/2-0.52}) {$+$};
+  % iron-core coil right (reversed e polarity)
+  \fill[white] ({\W-0.02},{\H/2-0.70}) rectangle ({\W+0.02},{\H/2+0.70});
+  \draw[line width=0.65pt] ({\W-0.11},{\H/2-0.65}) rectangle ({\W+0.11},{\H/2+0.65});
+  \foreach \y in {0.42,0.22,0.02,-0.18,-0.38} {
+    \draw[line width=0.65pt] ({\W-0.24},{\H/2+\y})
+      arc[start angle=180,end angle=0,x radius=0.24,y radius=0.11];
+  }
+  \node[anchor=east,inner sep=2pt] at ({\W-0.30},{\H/2}) {$e$};
+  \node[anchor=east,inner sep=1pt,font=\small] at ({\W-0.02},{\H/2+0.78}) {$-$};
+  \node[anchor=east,inner sep=1pt,font=\small] at ({\W-0.02},{\H/2-0.78}) {$+$};
+  % current still clockwise
+  \draw[line width=0.7pt,->] ({\W*0.28},\H) -- ({\W*0.72},\H);
+  \node[anchor=south,inner sep=2pt] at ({\W*0.50},{\H+0.02}) {$i$};
+  \draw[line width=0.7pt,->] ({\W*0.72},0) -- ({\W*0.28},0);
+  \node[anchor=south,inner sep=2pt] at ({\W*0.50},0.02) {$i$};
+\end{tikzpicture}%
+}
+\caption{图5.34（c）·$(T/4\sim T/2)$电流与电源电压反方向}
 \end{figure}
 
-\emph{（a） 纯电感电路上电流与电压的位置关系}
+\emph{图5.34（a）·纯电感电路上电流与电压的位相关系}
+
+\emph{图5.34（b）·$(0\sim T/4)$电源电压与电流同方向}
+
+\emph{图5.34（c）·$(T/4\sim T/2)$电流与电源电压反方向}
+
+\emph{图5.34·纯电感电路能量交换}
 
 （b） \(\left(0\sim \frac{T}{4}\right)\) 电源电压与电流同方向 （c）
 \(\left(\frac{T}{4}\sim \frac{T}{2}\right)\)
@@ -27310,19 +27513,44 @@ P = I U
 所以它从电源取得的平均功率也等于零。纯电容电路中， 电流超前于电压
 \(\frac{T}{4} (90^{\circ})\)，它们的变化图线如图5.35（a）所示。在\(0\sim \frac{T}{4}\)
 的期间里，电源电压过零值向正峰值增加，电容器被充电。电路上电流方向与电源电压方向一致（图5.35b），电源提供电能。此电能转换为电容器极板间的电场能。在\(\frac{T}{4}\sim \frac{T}{2}\)
-的间期里电源电压过正峰值趋向下降，因电容器在充电时，极板上电压亦已达到正峰值，电源电压下降时，电容器通过电源放电。电路上电流方向反向，与电源电压方向相反（图5.35c）。这时电源又好象蓄电池被充电一样吸收能量。所以这时电容器的电场能又转换成电能返回电源。
-
-\emph{图5.34}
+的期间里电源电压过正峰值趋向下降，因电容器在充电时，极板上电压亦已达到正峰值，电源电压下降时，电容器通过电源放电。电路上电流方向反向，与电源电压方向相反（图5.35c）。这时电源又好象蓄电池被充电一样吸收能量。所以这时电容器的电场能又转换成电能返回电源。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0360-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图5.35（a）·纯电容电路u、i随t：i为余弦、u为正弦，电流超前电压90°；横轴下标充电/放电
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  \pgfmathsetmacro{\Ai}{1.40}
+  \pgfmathsetmacro{\Au}{1.10}
+  \pgfmathsetmacro{\Tlen}{5.6}
+  \draw[line width=0.7pt,->] (0,0) -- (6.4,0) node[anchor=west,inner sep=2pt] {$t$};
+  \draw[line width=0.7pt,->] (0,-1.70) -- (0,1.75) node[anchor=south,inner sep=2pt] {$u,\,i$};
+  % dashed zero line extension look
+  \draw[line width=0.45pt,dash pattern=on 2.5pt off 1.5pt on 0.6pt off 1.5pt] (0.05,0) -- (\Tlen,0);
+  % i = cos (leads)
+  \draw[line width=0.8pt,smooth,samples=160,domain=0:\Tlen,variable=\t]
+    plot (\t, {\Ai*cos(deg(2*pi/\Tlen*\t))});
+  % u = sin
+  \draw[line width=0.8pt,smooth,samples=160,domain=0:\Tlen,variable=\t]
+    plot (\t, {\Au*sin(deg(2*pi/\Tlen*\t))});
+  \node[anchor=west,inner sep=1pt] at (0.08,\Ai) {$i$};
+  \node[anchor=south,inner sep=1pt] at ({\Tlen/4},\Au) {$u$};
+  \foreach \k/\lab in {0.25/{$T/4$},0.5/{$T/2$},0.75/{$3T/4$},1/{$T$}} {
+    \pgfmathsetmacro{\xx}{\k*\Tlen}
+    \draw[line width=0.4pt] (\xx,-0.08) -- (\xx,0.08);
+    \node[anchor=north,inner sep=1pt] at (\xx,-0.08) {\lab};
+  }
+  % 充电 / 放电 under axis
+  \node[anchor=north,inner sep=1pt,font=\small] at ({\Tlen*0.125},-0.55) {充电};
+  \node[anchor=north,inner sep=1pt,font=\small] at ({\Tlen*0.375},-0.55) {放电};
+  \node[anchor=north,inner sep=1pt,font=\small] at ({\Tlen*0.625},-0.55) {充电};
+  \node[anchor=north,inner sep=1pt,font=\small] at ({\Tlen*0.875},-0.55) {放电};
+\end{tikzpicture}%
+}
+\caption{图5.35（a）·纯电容电路上电流与电压的位相关系}
 \end{figure}
 
-\emph{（a）}
-
-\emph{（a） 纯电容电路上电流与电压的位相关系}
+\emph{图5.35（a）·纯电容电路上电流与电压的位相关系}
 
 \begin{figure}
 \centering
@@ -27330,7 +27558,7 @@ P = I U
 \caption{(b)}
 \end{figure}
 
-\emph{（b）}
+\emph{图5.35（b）·$(0\sim T/4)$ $C$充电}
 
 \begin{figure}
 \centering
@@ -27338,13 +27566,9 @@ P = I U
 \caption{(c)}
 \end{figure}
 
-\emph{（c）}
+\emph{图5.35（c）·$(T/4\sim T/2)$ $C$放电}
 
-\emph{（c） \(\left(\frac{u}{\alpha}\right)^{n}C\) 充电}
-
-\emph{（c） \(\left(\frac{T}{4}\sim\frac{i}{2}\right)C\) 放电}
-
-\emph{图5.35}
+\emph{图5.35·纯电容电路能量交换}
 
 下半个周期里， 情况与上半个周期相似， 也是电容器被充电，
 电源电能转换为电容器的电场能， 然后电容器放电，
