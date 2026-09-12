@@ -16849,7 +16849,39 @@ R = 99 \text{欧姆}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0238-01.png}}
+\fitfig{%
+% fig-alt: 图3.45(a) 欧姆表调零。顶左可变电阻R2（下滑触），顶中表头指针右满偏，右竖固定电阻R1，左竖电池；底两测试棒交叉短接，左−右+
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % meter
+  \draw[line width=0.7pt] (1.55,3.15) circle[radius=0.42];
+  \draw[line width=0.45pt] (1.30,3.35) arc[start angle=130,end angle=50,radius=0.38];
+  \draw[line width=0.65pt,->] (1.55,3.15) -- (1.88,3.40);
+  % top: R2 then to meter then right
+  \draw[line width=0.7pt] (0.15,3.15) -- (0.35,3.15);
+  \draw[line width=0.7pt] (0.35,3.00) rectangle (1.05,3.30);
+  \node[anchor=south,inner sep=1pt] at (0.70,3.32) {$R_2$};
+  \draw[line width=0.65pt,->] (0.70,3.55) -- (0.70,3.32);
+  \draw[line width=0.7pt] (1.05,3.15) -- (1.13,3.15);
+  \draw[line width=0.7pt] (1.97,3.15) -- (2.55,3.15) -- (2.55,2.55);
+  % R1 vertical
+  \draw[line width=0.7pt] (2.40,1.85) rectangle (2.70,2.55);
+  \node[anchor=east,inner sep=2pt] at (2.38,2.20) {$R_1$};
+  \draw[line width=0.7pt] (2.55,1.85) -- (2.55,0.95);
+  % left battery branch
+  \draw[line width=0.7pt] (0.15,3.15) -- (0.15,2.55);
+  \draw[line width=0.7pt] (-0.12,2.40) -- (0.42,2.40);
+  \draw[line width=1.1pt] (0.00,2.20) -- (0.30,2.20);
+  \draw[line width=0.7pt] (0.15,2.20) -- (0.15,0.95);
+  % probe terminals
+  \fill (0.15,0.95) circle[radius=0.045];
+  \fill (2.55,0.95) circle[radius=0.045];
+  % crossed probes
+  \draw[line width=1.35pt] (0.15,0.95) -- (1.55,0.15);
+  \draw[line width=1.35pt] (2.55,0.95) -- (1.15,0.15);
+  \node[anchor=east,inner sep=3pt] at (0.05,0.55) {$-$};
+  \node[anchor=west,inner sep=3pt] at (2.65,0.55) {$+$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -16857,7 +16889,39 @@ R = 99 \text{欧姆}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0238-02.png}}
+\fitfig{%
+% fig-alt: 图3.45(b) 欧姆表测阻。顶左R2、顶中表头指针中偏，右竖R1，左竖电池；底两测试棒间接待测电阻Rx，左−右+
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (1.55,3.35) circle[radius=0.42];
+  \draw[line width=0.45pt] (1.30,3.55) arc[start angle=130,end angle=50,radius=0.38];
+  \draw[line width=0.65pt,->] (1.55,3.35) -- (1.72,3.68);
+  \draw[line width=0.7pt] (0.15,3.35) -- (0.35,3.35);
+  \draw[line width=0.7pt] (0.35,3.20) rectangle (1.05,3.50);
+  \node[anchor=south,inner sep=1pt] at (0.70,3.52) {$R_2$};
+  \draw[line width=0.65pt,->] (0.70,3.75) -- (0.70,3.52);
+  \draw[line width=0.7pt] (1.05,3.35) -- (1.13,3.35);
+  \draw[line width=0.7pt] (1.97,3.35) -- (2.55,3.35) -- (2.55,2.75);
+  \draw[line width=0.7pt] (2.40,2.05) rectangle (2.70,2.75);
+  \node[anchor=east,inner sep=2pt] at (2.38,2.40) {$R_1$};
+  \draw[line width=0.7pt] (2.55,2.05) -- (2.55,1.15);
+  \draw[line width=0.7pt] (0.15,3.35) -- (0.15,2.75);
+  \draw[line width=0.7pt] (-0.12,2.60) -- (0.42,2.60);
+  \draw[line width=1.1pt] (0.00,2.40) -- (0.30,2.40);
+  \draw[line width=0.7pt] (0.15,2.40) -- (0.15,1.15);
+  \fill (0.15,1.15) circle[radius=0.045];
+  \fill (2.55,1.15) circle[radius=0.045];
+  % vertical probe bars
+  \draw[line width=1.4pt] (0.15,1.15) -- (0.15,0.35);
+  \draw[line width=1.4pt] (2.55,1.15) -- (2.55,0.35);
+  \node[anchor=east,inner sep=3pt] at (0.05,0.75) {$-$};
+  \node[anchor=west,inner sep=3pt] at (2.65,0.75) {$+$};
+  % Rx between tips
+  \draw[line width=0.7pt] (0.15,0.35) -- (0.55,0.35);
+  \draw[line width=0.7pt] (0.55,0.20) rectangle (2.15,0.50);
+  \node[anchor=south,inner sep=1pt] at (1.35,0.52) {$R_x$};
+  \draw[line width=0.7pt] (2.15,0.35) -- (2.55,0.35);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -16930,41 +16994,150 @@ R = 99 \text{欧姆}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-3/fig-p0240-01.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图3.46(a) 阴极射线管无磁场。横胶囊管左阴极−右阳极+，管内荧光屏矩形，电子束沿中轴直线
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % capsule tube
+  \draw[line width=0.75pt] (0.55,0.55) arc[start angle=90,end angle=270,radius=0.55];
+  \draw[line width=0.75pt] (0.55,1.10) -- (4.45,1.10);
+  \draw[line width=0.75pt] (0.55,0.00) -- (4.45,0.00);
+  \draw[line width=0.75pt] (4.45,0.55) arc[start angle=-90,end angle=90,radius=0.55];
+  % cathode / anode plates
+  \draw[line width=1.1pt] (0.42,0.22) arc[start angle=250,end angle=110,radius=0.38];
+  \draw[line width=1.1pt] (4.58,0.22) arc[start angle=-70,end angle=70,radius=0.38];
+  \draw[line width=0.55pt] (0.05,0.55) -- (0.35,0.55);
+  \draw[line width=0.55pt] (4.65,0.55) -- (4.95,0.55);
+  \node[anchor=east,inner sep=2pt] at (0.00,0.55) {$-$};
+  \node[anchor=west,inner sep=2pt] at (5.00,0.55) {$+$};
+  % fluorescent screen
+  \draw[line width=0.55pt] (1.10,0.28) rectangle (3.90,0.82);
+  % beam
+  \draw[line width=0.7pt] (0.55,0.55) -- (4.45,0.55);
+\end{tikzpicture}%
+}
+\caption{(a)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-3/fig-p0240-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图3.46(b) 蹄形磁铁前N后S，电子束下弯；下左手定则四指右指、拇指向下
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+% tube
+  \draw[line width=0.75pt] (0.55,0.55) arc[start angle=90,end angle=270,radius=0.55];
+  \draw[line width=0.75pt] (0.55,1.10) -- (4.45,1.10);
+  \draw[line width=0.75pt] (0.55,0.00) -- (4.45,0.00);
+  \draw[line width=0.75pt] (4.45,0.55) arc[start angle=-90,end angle=90,radius=0.55];
+  \draw[line width=1.1pt] (0.42,0.22) arc[start angle=250,end angle=110,radius=0.38];
+  \draw[line width=1.1pt] (4.58,0.22) arc[start angle=-70,end angle=70,radius=0.38];
+  \draw[line width=0.55pt] (0.05,0.55) -- (0.35,0.55);
+  \draw[line width=0.55pt] (4.65,0.55) -- (4.95,0.55);
+  \node[anchor=east,inner sep=2pt] at (0.00,0.55) {$-$};
+  \node[anchor=west,inner sep=2pt] at (5.00,0.55) {$+$};
+  % screen (slight perspective parallelogram)
+  \draw[line width=0.5pt] (1.05,0.30) -- (3.85,0.30) -- (3.95,0.82) -- (1.15,0.82) -- cycle;
+  % horseshoe magnet straddling
+  \draw[line width=0.85pt]
+    (2.05,0.15) -- (2.05,1.55) -- (2.95,1.55) -- (2.95,0.15)
+    (2.20,0.15) -- (2.20,1.40) -- (2.80,1.40) -- (2.80,0.15);
+  \draw[line width=0.7pt] (2.05,0.15) -- (2.20,0.15);
+  \draw[line width=0.7pt] (2.80,0.15) -- (2.95,0.15);
+  \node[anchor=north,inner sep=1pt,font=\small] at (2.12,-0.02) {$N$};
+  \node[anchor=north,inner sep=1pt,font=\small] at (2.88,-0.02) {$S$};
+  % beam: straight then down
+  \draw[line width=0.7pt] (0.55,0.55) -- (2.00,0.55);
+  \draw[line width=0.7pt] (2.00,0.55) .. controls (2.55,0.55) and (3.10,0.35) .. (3.90,0.12);
+  \begin{scope}[shift={(1.2,-2.35)}, scale=0.85]
+% simplified left hand, palm toward viewer, fingers to right, thumb down
+  % palm
+  \draw[line width=0.65pt,fill=white]
+    (0.10,1.10) .. controls (0.00,1.55) and (0.35,1.85) .. (0.85,1.90)
+    .. controls (1.35,1.92) and (1.70,1.70) .. (1.75,1.25)
+    .. controls (1.78,0.90) and (1.55,0.65) .. (1.15,0.55)
+    .. controls (0.70,0.48) and (0.25,0.65) .. (0.10,1.10);
+  % four fingers pointing right
+  \foreach \y/\dy in {1.78/0.00,1.58/0.02,1.38/0.04,1.20/0.06} {
+    \draw[line width=0.55pt]
+      (1.55,\y) .. controls (1.95,\y+0.05) and (2.35,\y+\dy) .. (2.70,\y+\dy-0.02)
+      .. controls (2.85,\y+\dy-0.08) and (2.80,\y+\dy-0.18) .. (2.60,\y+\dy-0.20)
+      .. controls (2.20,\y+\dy-0.18) and (1.80,\y-0.12) .. (1.55,\y-0.18);
+  }
+  % thumb down
+  \draw[line width=0.6pt,fill=white]
+    (0.55,0.70) .. controls (0.35,0.35) and (0.40,-0.05) .. (0.65,-0.35)
+    .. controls (0.85,-0.50) and (1.05,-0.35) .. (1.00,-0.05)
+    .. controls (0.95,0.25) and (0.90,0.50) .. (0.85,0.65) -- cycle;
+  % wrist
+  \draw[line width=0.55pt]
+    (0.15,1.05) .. controls (-0.25,0.95) and (-0.35,0.55) .. (-0.10,0.35)
+    .. controls (0.15,0.20) and (0.55,0.30) .. (0.70,0.55);
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{(b)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-3/fig-p0240-03.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图3.46(c) 磁极对调前S后N，电子束上弯；下左手定则四指右指、拇指向上
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+\draw[line width=0.75pt] (0.55,0.55) arc[start angle=90,end angle=270,radius=0.55];
+  \draw[line width=0.75pt] (0.55,1.10) -- (4.45,1.10);
+  \draw[line width=0.75pt] (0.55,0.00) -- (4.45,0.00);
+  \draw[line width=0.75pt] (4.45,0.55) arc[start angle=-90,end angle=90,radius=0.55];
+  \draw[line width=1.1pt] (0.42,0.22) arc[start angle=250,end angle=110,radius=0.38];
+  \draw[line width=1.1pt] (4.58,0.22) arc[start angle=-70,end angle=70,radius=0.38];
+  \draw[line width=0.55pt] (0.05,0.55) -- (0.35,0.55);
+  \draw[line width=0.55pt] (4.65,0.55) -- (4.95,0.55);
+  \node[anchor=east,inner sep=2pt] at (0.00,0.55) {$-$};
+  \node[anchor=west,inner sep=2pt] at (5.00,0.55) {$+$};
+  \draw[line width=0.5pt] (1.05,0.30) -- (3.85,0.30) -- (3.95,0.82) -- (1.15,0.82) -- cycle;
+  \draw[line width=0.85pt]
+    (2.05,0.15) -- (2.05,1.55) -- (2.95,1.55) -- (2.95,0.15)
+    (2.20,0.15) -- (2.20,1.40) -- (2.80,1.40) -- (2.80,0.15);
+  \draw[line width=0.7pt] (2.05,0.15) -- (2.20,0.15);
+  \draw[line width=0.7pt] (2.80,0.15) -- (2.95,0.15);
+  \node[anchor=north,inner sep=1pt,font=\small] at (2.12,-0.02) {$S$};
+  \node[anchor=north,inner sep=1pt,font=\small] at (2.88,-0.02) {$N$};
+  \draw[line width=0.7pt] (0.55,0.55) -- (2.00,0.55);
+  \draw[line width=0.7pt] (2.00,0.55) .. controls (2.55,0.55) and (3.10,0.75) .. (3.90,0.98);
+  \begin{scope}[shift={(1.2,-2.35)}, scale=0.85]
+% palm
+  \draw[line width=0.65pt,fill=white]
+    (0.10,0.90) .. controls (0.00,0.45) and (0.35,0.15) .. (0.85,0.10)
+    .. controls (1.35,0.08) and (1.70,0.30) .. (1.75,0.75)
+    .. controls (1.78,1.10) and (1.55,1.35) .. (1.15,1.45)
+    .. controls (0.70,1.52) and (0.25,1.35) .. (0.10,0.90);
+  % four fingers pointing right
+  \foreach \y/\dy in {0.22/0.00,0.42/-0.02,0.62/-0.04,0.80/-0.06} {
+    \draw[line width=0.55pt]
+      (1.55,\y) .. controls (1.95,\y-0.05) and (2.35,\y+\dy) .. (2.70,\y+\dy+0.02)
+      .. controls (2.85,\y+\dy+0.08) and (2.80,\y+\dy+0.18) .. (2.60,\y+\dy+0.20)
+      .. controls (2.20,\y+\dy+0.18) and (1.80,\y+0.12) .. (1.55,\y+0.18);
+  }
+  % thumb up
+  \draw[line width=0.6pt,fill=white]
+    (0.55,1.30) .. controls (0.35,1.65) and (0.40,2.05) .. (0.65,2.35)
+    .. controls (0.85,2.50) and (1.05,2.35) .. (1.00,2.05)
+    .. controls (0.95,1.75) and (0.90,1.50) .. (0.85,1.35) -- cycle;
+  % wrist
+  \draw[line width=0.55pt]
+    (0.15,0.95) .. controls (-0.25,1.05) and (-0.35,1.45) .. (-0.10,1.65)
+    .. controls (0.15,1.80) and (0.55,1.70) .. (0.70,1.45);
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{(c)}
 \end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-3/fig-p0240-04.png}}
-\caption{(2)}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-3/fig-p0240-05.png}}
-\caption{(2)}
-\end{figure}
-
-\emph{（2）}
+\emph{（a）}
 
 \emph{（b）}
 
 \emph{（c）}
 
-\emph{图 3.46 磁场使用摄射线偏转的实验}
+\emph{图3.46 磁场使阴极射线偏转的实验}
 
 迹发生了弯曲。这说明在磁场中运动着的带电粒子要受到磁场力的作用。
 
@@ -16976,11 +17149,45 @@ R = 99 \text{欧姆}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.47 金属导体中连续运动的电子}]{assets/physics-3/fig-p0241-01.png}}
-\caption{图3.47 金属导体中连续运动的电子}
+\fitfig{%
+% fig-alt: 图3.47 金属导体中定向运动的电子。水平圆柱段两端椭圆剖面斜线，标M、N；内九个带−电子均右指短箭
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % cylinder body
+  \draw[line width=0.7pt] (0.55,0.15) -- (5.45,0.15);
+  \draw[line width=0.7pt] (0.55,1.85) -- (5.45,1.85);
+  % left ellipse M
+  \draw[line width=0.7pt] (0.55,1.00) ellipse[x radius=0.38,y radius=0.85];
+  \begin{scope}
+    \clip (0.55,1.00) ellipse[x radius=0.38,y radius=0.85];
+    \foreach \x in {-0.35,-0.20,-0.05,0.10,0.25} {
+      \draw[line width=0.35pt] (0.55+\x,-0.05) -- (0.55+\x+0.55,2.05);
+    }
+  \end{scope}
+  \node at (0.55,1.00) {$M$};
+  % right ellipse N
+  \draw[line width=0.7pt] (5.45,1.00) ellipse[x radius=0.38,y radius=0.85];
+  \begin{scope}
+    \clip (5.45,1.00) ellipse[x radius=0.38,y radius=0.85];
+    \foreach \x in {-0.35,-0.20,-0.05,0.10,0.25} {
+      \draw[line width=0.35pt] (5.45+\x,-0.05) -- (5.45+\x+0.55,2.05);
+    }
+  \end{scope}
+  \node at (5.45,1.00) {$N$};
+  % electrons 3x3 with arrows
+  \foreach \x/\y in {
+    1.35/1.45, 2.45/1.50, 3.55/1.42,
+    1.55/1.00, 2.65/0.95, 3.75/1.05,
+    1.40/0.55, 2.50/0.50, 3.60/0.58} {
+    \draw[line width=0.55pt] (\x,\y) circle[radius=0.16];
+    \node[inner sep=0pt,font=\small] at (\x,\y) {$-$};
+    \draw[line width=0.55pt,->] ({\x+0.20},\y) -- ({\x+0.55},\y);
+  }
+\end{tikzpicture}%
+}
+\caption{图3.47 金属导体中定向运动的电子}
 \end{figure}
 
-\emph{图3.47 金属导体中连续运动的电子}
+\emph{图3.47 金属导体中定向运动的电子}
 
 所示，设在金属导体中长度为 \(l\) 的一段导体内共有 \(N\)
 个自由电子，如果在 \(t\) 秒内有 \(N\) 个电子从导体一端流出，则同时有
@@ -17017,11 +17224,44 @@ f=qvB
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.48 磁场对运动电荷的阻力}]{assets/physics-3/fig-p0241-02.png}}
-\caption{图3.48 磁场对运动电荷的阻力}
+\fitfig{%
+% fig-alt: 图3.48 磁场对运动电荷的作用力。四条水平B线右指；v斜上与B夹角α；B分解为沿v的Bcosα与垂直的Bsinα
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {0.0, 0.90, 1.80, 2.70} {
+    \draw[line width=0.55pt,->] (0.0,\y) -- (5.4,\y);
+  }
+  \node[anchor=west,inner sep=2pt] at (5.45,0.90) {$B$};
+  \coordinate (O) at (1.50,0.90);
+  % v
+  \draw[line width=0.9pt,->] (O) -- ++(32:2.55);
+  \node[anchor=south west,inner sep=1pt] at ($(1.50,0.90)+(32:2.60)$) {$v$};
+  % alpha
+  \draw[line width=0.45pt] ($(O)+(0:0.50)$) arc[start angle=0,end angle=32,radius=0.50];
+  \node[font=\small] at ($(O)+(16:0.72)$) {$\alpha$};
+  % B as horizontal arrow from O (the field strength vector for decomposition)
+  \coordinate (Bend) at (3.70,0.90);
+  \draw[line width=0.8pt,->] (O) -- (Bend);
+  % projection of Bend onto v direction: B cos α along v
+  % length of B = 2.20; Bcosα length = 2.20*cos(32)
+  \pgfmathsetmacro{\Blen}{2.20}
+  \pgfmathsetmacro{\Bcos}{\Blen*cos(32)}
+  \pgfmathsetmacro{\Bsin}{\Blen*sin(32)}
+  \coordinate (Bpar) at ($(O)+(32:\Bcos)$);
+  % B sin α: from Bpar perpendicular to v, to Bend
+  % Perpendicular to 32° is 32-90 = -58°
+  \draw[line width=0.7pt] (O) -- (Bpar);
+  \node[anchor=south,sloped,inner sep=2pt,font=\small] at ($(O)!0.55!(Bpar)$) {$B\cos\alpha$};
+  \draw[line width=0.7pt] (Bpar) -- (Bend);
+  \node[anchor=west,inner sep=2pt,font=\small] at ($(Bpar)!0.5!(Bend)$) {$B\sin\alpha$};
+  % right angle mark at Bpar
+  \draw[line width=0.4pt]
+    ($(Bpar)+(-58:0.18)$) -- ($(Bpar)+(-58:0.18)+(32:0.18)$) -- ($(Bpar)+(32:0.18)$);
+\end{tikzpicture}%
+}
+\caption{图3.48 磁场对运动电荷的作用力}
 \end{figure}
 
-\emph{图3.48 磁场对运动电荷的阻力}
+\emph{图3.48 磁场对运动电荷的作用力}
 
 \[
 f=qvB\sin\alpha
