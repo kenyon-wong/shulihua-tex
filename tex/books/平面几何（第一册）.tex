@@ -27351,10 +27351,9 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \textbf{［作法］}
 先求得弧\(AB\)的圆心\(M\)，连结\(MB\)，在\(MB\)上取一点\(N\)使\(NB = R\)。
-（图
-4·75（1）），以\(N\)为圆心，\(NB\)为半径画\(BC\)弧，则曲线\(ABC\)就是所要画的吻接的弧。
+（图4·75（1）），以\(N\)为圆心，\(NB\)为半径画\(BC\)弧，则曲线\(ABC\)就是所要画的吻接的弧。
 
-用同样的方法画图 4·75 的 （2），只要把圆心点 N 取在 MB 的延长线上，使 NB
+用同样的方法画图4·75 的 （2），只要把圆心点 N 取在 MB 的延长线上，使 NB
 = R，画弧 BC，就可得到两弧吻接的曲线 ABC。
 
 \textbf{［证］} 根据两圆相切和圆心距的关系，读者试自己证明。
@@ -27368,11 +27367,45 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-76}]{assets/plane-geometry-1/fig-p0273-01.png}}
-\caption{图4-76}
+\fitfig{%
+% fig-alt: 图4·76 两圆 M（小）、N（大）的两外公切线交于 P；切点 B、B'（圆 M）与 A、A'（圆 N）；PB、PB' 虚线，BA、B'A' 实线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rM{0.520}
+  \def\rN{0.900}
+  \pgfmathsetmacro{\d}{\rM+\rN}
+  \pgfmathsetmacro{\p}{-\rM*\d/(\rN-\rM)}
+  \coordinate (M) at (0.000,0.000);
+  \coordinate (N) at (\d,0.000);
+  \coordinate (P) at (\p,0.000);
+  \pgfmathsetmacro{\ang}{asin(\rM/abs(\p))}
+  % upper tangency on M / N
+  \coordinate (B) at ({\rM*sin(\ang)},{\rM*cos(\ang)});
+  \coordinate (A) at ({\d+\rN*sin(\ang)},{\rN*cos(\ang)});
+  % lower
+  \coordinate (Bp) at ({\rM*sin(\ang)},{-\rM*cos(\ang)});
+  \coordinate (Ap) at ({\d+\rN*sin(\ang)},{-\rN*cos(\ang)});
+  \draw[line width=0.75pt] (M) circle [radius=\rM];
+  \draw[line width=0.75pt] (N) circle [radius=\rN];
+  \fill (M) circle [radius=1.0pt];
+  \fill (N) circle [radius=1.0pt];
+  % dashed P to first tangency; solid through second and beyond
+  \draw[line width=0.55pt, dashed] (P) -- (B);
+  \draw[line width=0.55pt, dashed] (P) -- (Bp);
+  \draw[line width=0.75pt] (B) -- ($(A)!-0.35!(B)$);
+  \draw[line width=0.75pt] (Bp) -- ($(Ap)!-0.35!(Bp)$);
+  \node[anchor=east, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at ($(M)+(0,-\rM)$) {$M$};
+  \node[anchor=north, inner sep=1.5pt] at ($(N)+(0,-\rN)$) {$N$};
+  \node[anchor=south, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (Bp) {$B'$};
+  \node[anchor=north west, inner sep=1.5pt] at (Ap) {$A'$};
+\end{tikzpicture}%
+}
+\caption{图4·76}
 \end{figure}
 
-\emph{图 4·76}
+\emph{图4·76}
 
 \textbf{［求证］} \(AB = A'B'\)
 
@@ -27404,18 +27437,47 @@ PA - PB = PA ^{\prime} - PB ^{\prime}.
 
 汽车厂里常要把长方形铁板的四个角，截成一定半径的弧做样板。
 
-假设长方形铁板宽15厘米，长30厘米。四角截成5厘米为半径的弧 （图
-4·77）。按1：5的比例尺画出。
+假设长方形铁板宽15厘米，长30厘米。四角截成5厘米为半径的弧 （图4·77）。按1：5的比例尺画出。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={按1:5比例尺}]{assets/plane-geometry-1/fig-p0273-02.png}}
-\caption{按1:5比例尺}
+\fitfig{%
+% fig-alt: 图4·77 长 30cm、宽 15cm 的长方形，四角以 R=5cm 圆弧截去（样板）；标注 30cm、15cm、R=5cm
+\begin{tikzpicture}[line cap=round, line join=round, x=0.12cm, y=0.12cm]
+  \def\W{30}
+  \def\H{15}
+  \def\R{5}
+  % outer sharp rectangle (原板轮廓)
+  \draw[line width=0.60pt] (0,0) rectangle (\W,\H);
+  % rounded cut (样板轮廓)
+  \draw[line width=0.85pt]
+    (\R,0) -- ({\W-\R},0)
+    arc[start angle=-90, end angle=0, radius=\R] -- (\W,{\H-\R})
+    arc[start angle=0, end angle=90, radius=\R] -- (\R,\H)
+    arc[start angle=90, end angle=180, radius=\R] -- (0,\R)
+    arc[start angle=180, end angle=270, radius=\R] -- cycle;
+  % width dim
+  \draw[{Latex[length=2.2pt]}-{Latex[length=2.2pt]}, line width=0.45pt]
+    (0,{\H+2.2}) -- (\W,{\H+2.2});
+  \draw[line width=0.40pt] (0,\H) -- (0,{\H+2.2});
+  \draw[line width=0.40pt] (\W,\H) -- (\W,{\H+2.2});
+  \node[anchor=south, inner sep=1.2pt] at (0.5*\W,{\H+2.2}) {$30\mathrm{cm}$};
+  % height dim
+  \draw[{Latex[length=2.2pt]}-{Latex[length=2.2pt]}, line width=0.45pt]
+    ({\W+2.2},0) -- ({\W+2.2},\H);
+  \draw[line width=0.40pt] (\W,0) -- ({\W+2.2},0);
+  \draw[line width=0.40pt] (\W,\H) -- ({\W+2.2},\H);
+  \node[anchor=west, inner sep=1.2pt, rotate=90] at ({\W+2.2},0.5*\H) {$15\mathrm{cm}$};
+  % R callout to bottom-left arc
+  \draw[-{Latex[length=2.2pt]}, line width=0.45pt]
+    (8.5,4.2) -- (3.2,2.2);
+  \node[anchor=west, inner sep=1.0pt] at (8.5,4.2) {$R=5\mathrm{cm}$};
+\end{tikzpicture}%
+}
+\caption{图4·77}
 \end{figure}
 
-\emph{按1：5比例尺}
-
-\emph{图 4·77}
+\emph{图4·77}
 
 \textbf{［作法］} 依照 1：5 的比例尺，先画出长方形，使它的宽为 3
 厘米，长为 6 厘米。
@@ -27471,8 +27533,35 @@ AP = AR = \frac{1}{4} AB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-1/fig-p0274-02.png}}
-\caption{(第10题)}
+\fitfig{%
+% fig-alt: （第10题）等边三角形 OAB；三角以吻接弧修圆；A 旁切点 P（在 OA 上）、R（在 AB 上），AP=AR=1/4 AB
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\s{3.200}
+  \pgfmathsetmacro{\d}{\s/4}
+  \pgfmathsetmacro{\r}{\d/sqrt(3)}
+  \coordinate (A) at (0.000,0.000);
+  \coordinate (B) at (\s,0.000);
+  \coordinate (O) at ({0.5*\s},{\s*sqrt(3)/2});
+  \coordinate (PR) at (\d,0.000);
+  \coordinate (PP) at ({\d*cos(60)},{\d*sin(60)});
+  \coordinate (BQ) at ({\s-\d},0.000);
+  \coordinate (BS) at ({\s-\d*cos(60)},{\d*sin(60)});
+  \coordinate (OT) at ({0.5*\s-0.5*\d},{\s*sqrt(3)/2-\d*sqrt(3)/2});
+  \coordinate (OU) at ({0.5*\s+0.5*\d},{\s*sqrt(3)/2-\d*sqrt(3)/2});
+  \draw[line width=0.55pt] (A) -- (B) -- (O) -- cycle;
+  \draw[line width=0.95pt]
+    (PP) -- (OT)
+    arc[start angle=150, delta angle=-120, radius=\r] -- (BS)
+    arc[start angle=30, delta angle=-120, radius=\r] -- (PR)
+    arc[start angle=-90, delta angle=-120, radius=\r] -- cycle;
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=east, inner sep=1.5pt] at (PP) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (PR) {$R$};
+\end{tikzpicture}%
+}
+\caption{（第10题）}
 \end{figure}
 
 \emph{（第10题）}
@@ -27488,16 +27577,83 @@ AP = AR = \frac{1}{4} AB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-1/fig-p0275-01.png}}
-\caption{(第12题)}
+\fitfig{%
+% fig-alt: （第12题）公路改向 60°：两条平行边经同心圆弧吻接后沿 -60° 方向延伸；虚线延长原方向并标 60°；路中有方向箭头
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\w{0.420}
+  \def\Ro{2.200}
+  \pgfmathsetmacro{\Ri}{\Ro-\w}
+  % centers of concentric arcs at origin; outer path starts at left on y=\Ro? 
+  % Put center so outer top is y=0 initially: center at (0,-\Ro) for outer, road between y=0 and y=-\w
+  \coordinate (Co) at (0.000,-\Ro);
+  % left straight (outer top y=0, inner y=-w)
+  \draw[line width=0.75pt] (-1.800,0.000) -- (0.000,0.000);
+  \draw[line width=0.75pt] (-1.800,-\w) -- (0.000,-\w);
+  % arcs 90° -> 30° (60° clockwise turn)
+  \draw[line width=0.75pt] (0.000,0.000) arc[start angle=90, end angle=30, radius=\Ro];
+  \draw[line width=0.75pt] (0.000,-\w) arc[start angle=90, end angle=30, radius=\Ri];
+  % departing straights at -60°
+  \coordinate (To) at ({\Ro*cos(30)},{-\Ro+\Ro*sin(30)});
+  \coordinate (Ti) at ({\Ri*cos(30)},{-\Ro+\Ri*sin(30)});
+  \draw[line width=0.75pt] (To) -- ($(To)+({1.600*cos(-60)},{1.600*sin(-60)})$);
+  \draw[line width=0.75pt] (Ti) -- ($(Ti)+({1.600*cos(-60)},{1.600*sin(-60)})$);
+  % dashed original direction + angle
+  \draw[line width=0.50pt, dashed] (0.000,0.000) -- (1.350,0.000);
+  \draw[line width=0.45pt] (0.550,0.000) arc[start angle=0, end angle=-60, radius=0.550];
+  \node[anchor=west, inner sep=1.0pt] at (0.720,-0.280) {$60^{\circ}$};
+  % direction arrows
+  \draw[-{Latex[length=2.4pt]}, line width=0.55pt] (-1.250,-0.5*\w) -- (-0.550,-0.5*\w);
+  \coordinate (Am) at ($(To)!0.50!(Ti)$);
+  \draw[-{Latex[length=2.4pt]}, line width=0.55pt]
+    ($(Am)+({0.250*cos(-60)},{0.250*sin(-60)})$) --
+    ($(Am)+({0.950*cos(-60)},{0.950*sin(-60)})$);
+\end{tikzpicture}%
+}
+\caption{（第12题）}
 \end{figure}
 
 \emph{（第12题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/plane-geometry-1/fig-p0275-02.png}}
-\caption{(第13题)}
+\fitfig{%
+% fig-alt: （第13题）三心曲线：AB 上 AC=CD=DB；等边三角形 CDG（G 在下）；弧 AE 圆心 C、弧 EF 圆心 G、弧 FB 圆心 D；虚线 GCE、GDF
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\a{1.000}
+  \coordinate (A) at (0.000,0.000);
+  \coordinate (C) at (\a,0.000);
+  \coordinate (D) at (2*\a,0.000);
+  \coordinate (B) at (3*\a,0.000);
+  \coordinate (G) at ({1.5*\a},{-\a*sqrt(3)/2});
+  % E on GC extended beyond C, CE=a
+  \coordinate (E) at ($(C)!{-1}!(G)$); % from C away from G by |CG|=a → E = 2C-G
+  % F on GD extended beyond D
+  \coordinate (F) at ($(D)!{-1}!(G)$);
+  \draw[line width=0.70pt] (A) -- (B);
+  \draw[line width=0.55pt, dashed] (G) -- (E);
+  \draw[line width=0.55pt, dashed] (G) -- (F);
+  % arc AE center C radius a: A at 180°, E at 120°
+  \draw[line width=0.80pt] (A) arc[start angle=180, end angle=120, radius=\a];
+  % arc FB center D: B at 0°, F at 60°
+  \draw[line width=0.80pt] (B) arc[start angle=0, end angle=60, radius=\a];
+  % arc EF center G radius 2a: E is at angle of C from G = 90+30=120°?
+  % G to C: C-G = ( -0.5a? C=(a,0), G=(1.5a, -a√3/2), C-G = (-0.5a, a√3/2) → angle 120°
+  % G to D: (0.5a, a√3/2) → angle 60°
+  % E is beyond C from G, same direction 120°; F at 60°
+  \draw[line width=0.80pt] (E) arc[start angle=120, end angle=60, radius=2*\a];
+  \fill (C) circle [radius=0.9pt];
+  \fill (D) circle [radius=0.9pt];
+  \fill (G) circle [radius=0.9pt];
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=south, inner sep=1.2pt] at (F) {$F$};
+  \node[anchor=south, inner sep=1.5pt] at (G) {$G$};
+\end{tikzpicture}%
+}
+\caption{（第13题）}
 \end{figure}
 
 \emph{（第13题）}
@@ -27513,16 +27669,73 @@ AP = AR = \frac{1}{4} AB.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/plane-geometry-1/fig-p0275-03.png}}
-\caption{(第14题)}
+\fitfig{%
+% fig-alt: （第14题）两平行直线以 S 形吻接弧 ABC 相连；弧 AB、BC 各 45° 且半径相等；虚线竖线与对角辅助线过 B
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.600}
+  \pgfmathsetmacro{\s}{sqrt(2)/2}
+  \coordinate (A) at (0.000,0.000);
+  \coordinate (M) at (0.000,-\R);
+  \coordinate (B) at ({\R*\s},{-\R+\R*\s});
+  \coordinate (N) at ({2*\R*\s},{-\R+2*\R*\s});
+  \coordinate (C) at ({2*\R*\s},{-\R+2*\R*\s-\R});
+  % tracks
+  \draw[line width=0.75pt] (-1.200,0.000) -- (A);
+  \draw[line width=0.75pt] (C) -- ($(C)+(1.400,0.000)$);
+  % arcs
+  \draw[line width=0.80pt] (A) arc[start angle=90, end angle=45, radius=\R];
+  \draw[line width=0.80pt] (B) arc[start angle=225, end angle=270, radius=\R];
+  % dashed construction
+  \draw[line width=0.50pt, dashed] (A) -- (0.000,{-\R+2*\R*\s-\R});
+  \draw[line width=0.50pt, dashed] (C) -- ({2*\R*\s},0.000);
+  \draw[line width=0.50pt, dashed] (0.000,{-\R+2*\R*\s-\R}) -- ({2*\R*\s},0.000);
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+\caption{（第14题）}
 \end{figure}
 
 \emph{（第14题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-1/fig-p0275-04.png}}
-\caption{(第15题)}
+\fitfig{%
+% fig-alt: （第15题）正方形 ABCD 的渐伸线：弧 C1 圆心 B，弧 12 圆心 A，弧 23 圆心 D，弧 34 圆心 C，弧 45 圆心 B
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\s{0.380}
+  \coordinate (A) at (0.000,0.000);
+  \coordinate (B) at (\s,0.000);
+  \coordinate (C) at (\s,\s);
+  \coordinate (D) at (0.000,\s);
+  \coordinate (P1) at (2*\s,0.000);
+  \coordinate (P2) at (0.000,-2*\s);
+  \coordinate (P3) at (-3*\s,\s);
+  \coordinate (P4) at (\s,5*\s);
+  \coordinate (P5) at (6*\s,0.000);
+  \draw[line width=0.70pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.55pt] (A) -- (P5);
+  \draw[line width=0.55pt] (D) -- (P2);
+  \draw[line width=0.55pt] (C) -- (P3);
+  \draw[line width=0.55pt] (B) -- (P4);
+  \draw[line width=0.80pt] (C) arc[start angle=90, end angle=0, radius=\s];
+  \draw[line width=0.80pt] (P1) arc[start angle=0, end angle=-90, radius=2*\s];
+  \draw[line width=0.80pt] (P2) arc[start angle=-90, end angle=-180, radius=3*\s];
+  \draw[line width=0.80pt] (P3) arc[start angle=180, end angle=90, radius=4*\s];
+  \draw[line width=0.80pt] (P4) arc[start angle=90, end angle=0, radius=5*\s];
+  \node[anchor=north east, inner sep=0.8pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=0.8pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=0.8pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=0.8pt] at (D) {$D$};
+  \node[anchor=north west, inner sep=1.2pt] at (P1) {$1$};
+  \node[anchor=north, inner sep=1.0pt] at (P2) {$2$};
+  \node[anchor=east, inner sep=1.0pt] at (P3) {$3$};
+  \node[anchor=south, inner sep=1.0pt] at (P4) {$4$};
+  \node[anchor=west, inner sep=1.0pt] at (P5) {$5$};
+\end{tikzpicture}%
+}
+\caption{（第15题）}
 \end{figure}
 
 \emph{（第15题）}
@@ -27541,20 +27754,34 @@ AP = AR = \frac{1}{4} AB.
 我们在 § 4.4 圆周角定理的推论 2
 里，已经知道同一条弧上的圆周角都相等。在这个推论的基础上，现在我们来研究在已知线段上作含有已知圆周角的弧的画法。
 
-\textbf{［已知］} 已知线段\(a\)和角\(\alpha\)（图 4·78）。
+\textbf{［已知］} 已知线段\(a\)和角\(\alpha\)（图4·78）。
 
 \textbf{［求作］}
 一圆弧，使它所对的弦是线段\(a\)，弧上的圆周角等于\(\angle \alpha\)。
 
-\textbf{分析} 要画圆弧关键是找到这个圆弧的圆心，图 4·78中 AB=a，因为 AB
+\textbf{分析} 要画圆弧关键是找到这个圆弧的圆心，图4·78中 AB=a，因为 AB
 是所求弧所对的弦，因此这弧的圆心与 AB 的两端点是等距的，可知圆心应该在
 AB 线段的垂直平分线 MN 上。又自 AB 的端点 B 作 BD
 和这圆弧所在的圆相切，因此有
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/plane-geometry-1/fig-p0276-01.png}}
-\caption{图示（原PDF第276页）}
+\fitfig{%
+% fig-alt: 已知线段 a（两端短竖线）与角 α（锐角，弧标记）
+\begin{tikzpicture}[line cap=round, line join=round]
+  % segment a
+  \draw[line width=0.80pt] (0.000,1.600) -- (2.200,1.600);
+  \draw[line width=0.80pt] (0.000,1.520) -- (0.000,1.680);
+  \draw[line width=0.80pt] (2.200,1.520) -- (2.200,1.680);
+  \node[anchor=south, inner sep=1.5pt] at (1.100,1.600) {$a$};
+  % angle α ≈ 55°
+  \draw[line width=0.80pt] (0.000,0.000) -- (2.400,0.000);
+  \draw[line width=0.80pt] (0.000,0.000) -- (55:2.200);
+  \draw[line width=0.55pt] (0.450,0.000) arc[start angle=0, end angle=55, radius=0.450];
+  \node[anchor=west, inner sep=1.0pt] at (27.5:0.720) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{已知线段 $a$ 和角 $\alpha$}
 \end{figure}
 
 \begin{figure}
@@ -27563,7 +27790,7 @@ AB 线段的垂直平分线 MN 上。又自 AB 的端点 B 作 BD
 \caption{图4-78}
 \end{figure}
 
-\emph{图 4·78}
+\emph{图4·78}
 
 \[
 \angle DBA = \angle C = \angle \alpha.
@@ -27575,9 +27802,9 @@ BT 的交点 O 就是所要画的弧的圆心。
 \textbf{［作法］}
 画线段\(AB = a\)，作\(MN\)垂直平分\(AB\)。过点\(B\)作\(BD\)使\(\angle DBA = \angle \alpha\)。过\(B\)作\(BT \perp BD\)，使\(BT\)和\(MN\)相交于\(O\)。以点\(O\)为圆心，\(OB\)为半径画圆，则弧\(ACB\)就是求作的弧。
 
-\textbf{［证］} 。在圆弧上取任意点\(C(A, B\)除外），连结\(AC\)和\(BC\)。
+\textbf{［证］} 在圆弧上取任意点\(C(A, B\)除外），连结\(AC\)和\(BC\)。
 圆周角\(C\)等于\(\widehat{AB}\)的度数之半。又从作法可知\(BD \perp OB\)，\(OB\)是圆的半径，所以\(BD\)是圆的切线。因此弦切角\(DBA\)也等于\(\widehat{AB}\)的度数之半。可见\(\angle C = \angle DBA\)。
-但是\(\angle DBA = \angle \alpha\)，所以\(\angle C = \angle e\)。
+但是\(\angle DBA = \angle \alpha\)，所以\(\angle C = \angle \alpha\)。
 
 \textbf{［注意］}
 上面证明里的叙述方式和以前的证明的叙述方式有些不同。前面的格式是分行书写的，理由用括弧注在结论后面，在这里则把有些理由插入叙述中，并且在结论之前，对某些显然的事实，就不再叙述理由了。希望读者在熟悉前面的叙述方式以后，逐步练习这里所介绍的叙述方式，因为后面的叙述方式要比前面的更清楚些。
