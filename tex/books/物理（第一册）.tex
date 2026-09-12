@@ -3525,7 +3525,7 @@ G = \frac {500 \text{克}}{\pi \text{厘米} ^ {2}} \times 25 \pi \text{厘米} 
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-1/fig-p0055-01.png}}
-\caption{(第1题)}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
@@ -4271,7 +4271,7 @@ S = (20 \times 1.2 + 10 \times 1.2) \times 2 \text{米} ^ {2} = 72 \text{米} ^ 
   \node[font=\scriptsize,inner sep=0.3pt,anchor=south] at (3.02,0.78) {$D$};
 \end{tikzpicture}%
 }
-\caption{(第1题)}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
@@ -9330,7 +9330,7 @@ s _ {\text{乙}} = \triangle O B M = \frac {1}{2} \times 3 \times 6 \text{米} =
   \node[anchor=west] at (4.22,0.04) {$t$};
 \end{tikzpicture}%
 }
-\caption{(第1题)}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
@@ -10192,7 +10192,7 @@ h = \frac {1}{2} g t ^ {2}
   \draw[line width=0.85pt] (0,0) -- (0,-4) -- (6,-4) -- (6,4) -- (-3,4) -- (-3,0);
 \end{tikzpicture}%
 }
-\caption{(第1题)}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
@@ -10730,8 +10730,44 @@ f = \mu N
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={b)}]{assets/physics-1/fig-p0177-02.png}}
-\caption{（b）}
+% fig-alt: 图6·7（b）：透视滑动轴承座中央穿轴；顶有油孔；左右安装孔；旁标轴。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图6·7（b）轴与轴瓦：透视轴承座穿轴
+  % 轴（斜圆柱）
+  \draw[line width=0.65pt,fill=white]
+    (-0.35,1.55) -- (3.55,0.55)
+    -- (3.55,0.95) -- (-0.35,1.95) -- cycle;
+  \draw[line width=0.55pt,fill=gray!18]
+    (3.55,0.75) ellipse[x radius=0.12,y radius=0.22];
+  \draw[line width=0.55pt]
+    (-0.35,1.75) ellipse[x radius=0.12,y radius=0.22];
+  % 轴承座底座（透视）
+  \draw[line width=0.65pt,fill=white]
+    (0.15,0.15) -- (2.85,0.15) -- (3.15,0.42) -- (2.95,0.55)
+    -- (0.35,0.55) -- (0.05,0.42) -- cycle;
+  % 左右安装孔
+  \draw[line width=0.45pt] (0.55,0.38) ellipse[x radius=0.12,y radius=0.07];
+  \draw[line width=0.35pt] (0.55,0.38) ellipse[x radius=0.06,y radius=0.035];
+  \draw[line width=0.45pt] (2.55,0.38) ellipse[x radius=0.12,y radius=0.07];
+  \draw[line width=0.35pt] (2.55,0.38) ellipse[x radius=0.06,y radius=0.035];
+  % 中央立座外廓（拱顶）
+  \draw[line width=0.65pt,fill=white]
+    (0.55,0.55) -- (0.55,1.05)
+    .. controls (0.55,1.55) and (0.95,1.85) .. (1.55,1.85)
+    .. controls (2.15,1.85) and (2.55,1.55) .. (2.55,1.05)
+    -- (2.55,0.55) -- cycle;
+  % 轴孔前缘椭圆（轴穿过）
+  \draw[line width=0.55pt]
+    (1.55,1.25) ellipse[x radius=0.55,y radius=0.42];
+  % 顶油孔
+  \draw[line width=0.45pt,fill=white] (1.55,1.85) ellipse[x radius=0.08,y radius=0.05];
+  % 标注轴
+  \draw[line width=0.4pt,dashed] (0.15,1.72) -- (-0.55,2.15);
+  \node[anchor=south east] at (-0.55,2.15) {轴};
+\end{tikzpicture}%
+}
+\caption{（b）轴与轴瓦相对运动}
 \end{figure}
 
 \emph{（b）}
@@ -10740,8 +10776,98 @@ f = \mu N
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-1/fig-p0177-03.png}}
-\caption{（a）}
+% fig-alt: 图6·8：左滚珠轴承剖视（外圈、钢球、内圈）；中滚柱轴承剖视（滚柱）；右轴上滚动轴承；旁标轴。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图6·8（a）滚珠/滚柱轴承剖视；（b）轴与轴承
+  % ---- 左：滚珠轴承剖视 ----
+  \begin{scope}[xshift=0cm]
+    % 外圈
+    \draw[line width=0.65pt] (0,0) circle[radius=1.05];
+    \draw[line width=0.55pt] (0,0) circle[radius=0.88];
+    % 内圈
+    \draw[line width=0.65pt] (0,0) circle[radius=0.48];
+    \draw[line width=0.55pt] (0,0) circle[radius=0.32];
+    % 剖去右上角：影线截面
+    \begin{scope}
+      \clip (0.15,0.15) -- (1.2,0.15) -- (1.2,1.2) -- (0.15,1.2) -- cycle;
+      \fill[white] (0,0) circle[radius=1.08];
+    \end{scope}
+    % 重新画剖口边
+    \draw[line width=0.55pt] (0.32,0.22) -- (0.88,0.22) -- (0.88,0.48);
+    \draw[line width=0.55pt] (0.22,0.32) -- (0.22,0.88) -- (0.48,0.88);
+    \begin{scope}
+      \clip (0.22,0.22) rectangle (0.88,0.88);
+      \foreach \s in {0.25,0.35,...,0.85}
+        \draw[line width=0.25pt] (\s,0.22) -- (\s+0.12,0.88);
+    \end{scope}
+    % 钢球
+    \foreach \a in {110,160,210,260,310,20,70} {
+      \fill[white] ({0.68*cos(\a)},{0.68*sin(\a)}) circle[radius=0.13];
+      \draw[line width=0.45pt] ({0.68*cos(\a)},{0.68*sin(\a)}) circle[radius=0.13];
+    }
+    % 剖口处钢球
+    \fill[white] (0.55,0.55) circle[radius=0.14];
+    \draw[line width=0.5pt] (0.55,0.55) circle[radius=0.14];
+    % 标注
+    \draw[line width=0.4pt,->] (0.55,1.35) -- (0.55,0.72);
+    \node[anchor=south] at (0.55,1.35) {钢球};
+    \draw[line width=0.4pt,->] (-1.45,0.15) -- (-0.92,0.15);
+    \node[anchor=east] at (-1.45,0.15) {外圈};
+    \draw[line width=0.4pt,->] (-0.85,-0.85) -- (-0.35,-0.35);
+    \node[anchor=north east] at (-0.85,-0.85) {内圈};
+  \end{scope}
+  % ---- 中：滚柱轴承 ----
+  \begin{scope}[xshift=3.35cm]
+    \draw[line width=0.65pt] (0,0) circle[radius=0.95];
+    \draw[line width=0.55pt] (0,0) circle[radius=0.78];
+    \draw[line width=0.65pt] (0,0) circle[radius=0.42];
+    \draw[line width=0.55pt] (0,0) circle[radius=0.28];
+    \begin{scope}
+      \clip (0.1,0.1) -- (1.1,0.1) -- (1.1,1.1) -- (0.1,1.1) -- cycle;
+      \fill[white] (0,0) circle[radius=0.98];
+    \end{scope}
+    \draw[line width=0.55pt] (0.28,0.18) -- (0.78,0.18) -- (0.78,0.42);
+    \draw[line width=0.55pt] (0.18,0.28) -- (0.18,0.78) -- (0.42,0.78);
+    \begin{scope}
+      \clip (0.18,0.18) rectangle (0.78,0.78);
+      \foreach \s in {0.22,0.32,...,0.75}
+        \draw[line width=0.25pt] (\s,0.18) -- (\s+0.12,0.78);
+    \end{scope}
+    % 滚柱（小圆柱侧视）
+    \foreach \a in {130,180,230,280,330,40,90} {
+      \begin{scope}[rotate=\a]
+        \draw[line width=0.4pt,fill=white] (0.52,-0.09) rectangle (0.72,0.09);
+      \end{scope}
+    }
+    \draw[line width=0.45pt,fill=white] (0.48,0.42) rectangle (0.72,0.62);
+    \draw[line width=0.4pt,->] (0.6,1.25) -- (0.6,0.68);
+    \node[anchor=south] at (0.6,1.25) {滚柱};
+  \end{scope}
+  % ---- 右：轴上轴承 ----
+  \begin{scope}[xshift=6.55cm,yshift=0.05cm]
+    % 轴
+    \draw[line width=0.6pt,fill=white]
+      (-1.55,-0.22) -- (1.85,-0.22) -- (1.85,0.22) -- (-1.55,0.22) -- cycle;
+    \draw[line width=0.5pt,fill=gray!15] (1.85,0) ellipse[x radius=0.1,y radius=0.22];
+    % 断口线
+    \draw[line width=0.45pt]
+      (-1.55,-0.22) .. controls (-1.42,-0.05) and (-1.68,0.05) .. (-1.55,0.22);
+    % 轴承外圈/内圈（正视圆）
+    \draw[line width=0.65pt] (0.15,0) circle[radius=0.78];
+    \draw[line width=0.55pt] (0.15,0) circle[radius=0.62];
+    \draw[line width=0.55pt] (0.15,0) circle[radius=0.38];
+    % 可见钢球
+    \foreach \a in {50,110,170,230,290,350} {
+      \draw[line width=0.4pt,fill=white]
+        ({0.15+0.50*cos(\a)},{0.50*sin(\a)}) circle[radius=0.10];
+    }
+    \draw[line width=0.4pt,dashed] (-0.95,0.35) -- (-1.45,0.85);
+    \node[anchor=south east] at (-1.45,0.85) {轴};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图6·8 （a）滚动轴承 （b）轴、内圈与外圈之间的关系}
 \end{figure}
 
 \emph{（a）}
@@ -10790,7 +10916,7 @@ f = \mu N = 0.45 \times 900 \text{公斤}
 \]
 
 \[
-f = 405 \text{公 斤}
+f = 405 \text{公斤}
 \]
 
 \subsection{习题6·2}
@@ -10812,8 +10938,45 @@ f = 405 \text{公 斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-1/fig-p0179-01.png}}
-\caption{(第1题)}
+% fig-alt: （第1题）：桌面光杠杆；左墙、手电筒水平入射；右平面镜反射至墙；中指下压桌面。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 习题6·2第1题：桌面形变光杠杆示意
+  % 墙（左）
+  \draw[line width=0.7pt] (0,0.2) -- (0,4.35);
+  \foreach \y in {0.45,0.85,...,4.2}
+    \draw[line width=0.35pt] (-0.22,\y) -- (0,\y+0.18);
+  % 地面
+  \draw[line width=0.7pt] (0,0.35) -- (7.2,0.35);
+  % 桌腿与桌面
+  \draw[line width=0.65pt] (1.15,0.35) -- (1.55,1.85);
+  \draw[line width=0.65pt] (5.55,0.35) -- (5.15,1.85);
+  \draw[line width=0.75pt] (0.95,1.85) -- (5.75,1.85);
+  \draw[line width=0.55pt] (0.95,1.95) -- (5.75,1.95);
+  % 手电筒
+  \draw[line width=0.55pt,fill=white]
+    (1.35,2.15) -- (2.15,2.15) -- (2.15,2.55) -- (1.35,2.55) -- cycle;
+  \draw[line width=0.5pt,fill=white]
+    (2.15,2.22) -- (2.45,2.18) -- (2.45,2.52) -- (2.15,2.48) -- cycle;
+  % 入射光
+  \draw[line width=0.55pt,->] (2.5,2.35) -- (5.35,2.35);
+  % 平面镜支架
+  \draw[line width=0.5pt,fill=white] (5.25,1.95) rectangle (5.85,2.05);
+  \draw[line width=0.55pt] (5.55,2.05) -- (5.55,2.55);
+  % 镜面（斜）
+  \draw[line width=0.85pt] (5.35,2.35) -- (5.78,2.78);
+  % 反射光
+  \draw[line width=0.55pt,->] (5.45,2.48) -- (0.08,4.05);
+  % 手指下压
+  \draw[line width=0.55pt,fill=white]
+    (3.15,2.55) .. controls (3.05,2.95) and (3.25,3.25) .. (3.55,3.35)
+    .. controls (3.85,3.45) and (4.05,3.15) .. (3.95,2.85)
+    .. controls (3.85,2.55) and (3.45,2.45) .. (3.15,2.55);
+  \draw[line width=0.45pt] (3.55,3.35) .. controls (3.65,3.55) and (3.85,3.55) .. (3.95,3.35);
+  \draw[line width=0.7pt,->] (3.45,2.45) -- (3.45,2.05);
+\end{tikzpicture}%
+}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
@@ -11136,13 +11299,24 @@ f = 405 \text{公 斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第183页）}]{assets/physics-1/fig-p0183-02.png}}
-\caption{图示（原PDF第183页）}
+% fig-alt: 框注：影响合力的大小和方向的因素是：1.分力的大小；2.分力之间的夹角。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \node[draw, line width=0.7pt, align=left, font=\small, inner sep=7pt, text width=3.15cm] {%
+    影响合力的\\
+    大小和方向的\\
+    因素是：\\
+    1. 分力的大\\
+    小\\
+    2. 分力之间\\
+    的夹角};
+\end{tikzpicture}%
+}
 \end{figure}
 
 应用力的平行四边形法则，还可以求出两个以上的共点力的合力。具体步骤是：先求出任意两个力的合力，再求出这个合力和第三个力的合力。依次类推，一直到与最后一个分力相加为止。图6·12表明求
 \(F_{1}, F_{2}, F_{3}, F_{4}\) 四个力的合力的例子，\(R_{12}\) 是
-\(F_{1}, F_{2}\) 的合力，\(R_{123}\) 是 \(F_{1}, F_{3}, F_{3}\)
+\(F_{1}, F_{2}\) 的合力，\(R_{123}\) 是 \(F_{1}, F_{2}, F_{3}\)
 的合力，\(R\) 就是它们四个力的合力。
 
 \begin{figure}
@@ -11303,7 +11477,7 @@ f = 405 \text{公 斤}
   \node[anchor=north] at (2.55,-1.22) {$(5)$};
 \end{tikzpicture}%
 }
-\caption{(第1题)}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
@@ -12046,11 +12220,48 @@ R = \sqrt {F _ {1} ^ {2} + F _ {2} ^ {2}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7·1 研究质量、加速度和作用力三者之间的关系}]{assets/physics-1/fig-p0196-01.png}}
-\caption{图 7·1 研究质量、加速度和作用力三者之间的关系}
+% fig-alt: 图7·1：刻度斜面垫起；顶端小车载两砝码，手扶车尾；左上手持秒表；箭头示下滑方向。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图7·1 斜面小车实验
+  \draw[line width=0.7pt] (-0.15,0) -- (8.4,0);
+  \foreach \x in {0.05,0.35,...,8.2}
+    \draw[line width=0.3pt] (\x,-0.28) -- (\x+0.22,0);
+  \draw[line width=0.7pt,fill=white]
+    (0.35,0.08) -- (7.55,2.35) -- (7.55,2.55) -- (0.35,0.28) -- cycle;
+  \foreach \t in {0.08,0.16,...,0.92} {
+    \pgfmathsetmacro{\xx}{0.35+7.2*\t}
+    \pgfmathsetmacro{\yy}{0.08+2.27*\t}
+    \draw[line width=0.35pt] (\xx,\yy+0.20) -- (\xx,\yy+0.38);
+  }
+  \draw[line width=0.6pt,fill=white] (6.55,0) rectangle (7.05,2.05);
+  \begin{scope}[shift={(6.55,2.28)},rotate=17.5]
+    \draw[line width=0.55pt,fill=white] (-0.55,0.08) rectangle (0.55,0.48);
+    \draw[line width=0.45pt,fill=white] (-0.32,0) circle[radius=0.12];
+    \draw[line width=0.45pt,fill=white] (0.32,0) circle[radius=0.12];
+    \draw[line width=0.45pt,fill=white] (-0.28,0.48) rectangle (-0.08,0.78);
+    \draw[line width=0.45pt,fill=white] (0.08,0.48) rectangle (0.28,0.78);
+    \draw[line width=0.5pt,fill=white]
+      (0.55,0.28) .. controls (0.85,0.55) and (1.15,0.55) .. (1.25,0.28)
+      .. controls (1.35,0.05) and (1.05,-0.05) .. (0.75,0.08)
+      .. controls (0.6,0.12) and (0.55,0.2) .. (0.55,0.28);
+  \end{scope}
+  \draw[line width=0.7pt,->] (5.35,2.55) -- (3.55,1.95);
+  % 左手与秒表（简化）
+  \draw[line width=0.5pt,fill=white]
+    (1.85,3.55) .. controls (1.55,3.95) and (1.75,4.35) .. (2.15,4.45)
+    .. controls (2.55,4.55) and (2.75,4.15) .. (2.55,3.75)
+    -- (2.25,3.55) -- cycle;
+  \draw[line width=0.55pt,fill=white] (2.45,3.95) circle[radius=0.38];
+  \draw[line width=0.4pt] (2.45,4.33) -- (2.45,4.48);
+  \draw[line width=0.35pt] (2.38,4.48) -- (2.52,4.48);
+  \draw[line width=0.45pt,->] (2.45,3.95) -- (2.62,4.18);
+\end{tikzpicture}%
+}
+\caption{图7·1 研究质量、加速度和作用力三者之间的关系}
 \end{figure}
 
-\emph{图 7·1 研究质量、加速度和作用力三者之间的关系}
+\emph{图7·1 研究质量、加速度和作用力三者之间的关系}
 
 \begin{quote}
 \textbf{质量相同时，加速度与作用 力成正比}
@@ -12338,7 +12549,7 @@ m = 1500 \text{克} = 1.5 \text{千克}
   \node[anchor=west] at (12.42,0.06) {$t$（秒）};
 \end{tikzpicture}%
 }
-\caption{(第9题)}
+\caption{（第9题）}
 \end{figure}
 
 \emph{（第9题）}
@@ -12428,8 +12639,57 @@ G = m g
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-3 圆道1千克物体的重量}]{assets/physics-1/fig-p0205-01.png}}
-\caption{图7-3 圆道1千克物体的重量}
+% fig-alt: 图7·3：地球四周弹簧秤测1千克物体重量；极处$G=1.003$公斤，赤道$G\approx0.997$公斤。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图7·3 地球上1千克物体的重量
+  \draw[line width=0.7pt] (0,0) circle[radius=1.35];
+  \draw[line width=0.4pt] (-1.35,0) -- (1.35,0);
+  \draw[line width=0.4pt] (0,-1.35) -- (0,1.35);
+  % 经线（竖向椭圆）
+  \draw[line width=0.35pt] (0,0) ellipse[x radius=0.55,y radius=1.35];
+  \draw[line width=0.35pt] (0,0) ellipse[x radius=1.05,y radius=1.35];
+  % 纬线
+  \draw[line width=0.35pt] (0,0.55) ellipse[x radius=1.22,y radius=0.28];
+  \draw[line width=0.35pt] (0,-0.55) ellipse[x radius=1.22,y radius=0.28];
+  \node at (0,0) {地球};
+  % 顶端（两极）弹簧秤
+  \draw[line width=0.55pt] (-0.55,2.85) -- (0.55,2.85);
+  \foreach \x in {-0.45,-0.25,...,0.45}
+    \draw[line width=0.28pt] (\x,2.85) -- (\x+0.12,3.05);
+  \draw[line width=0.5pt,decorate,decoration={zigzag,segment length=3.2pt,amplitude=1.6pt}]
+    (0,2.85) -- (0,2.15);
+  \draw[line width=0.5pt,pattern=north east lines] (-0.22,1.78) rectangle (0.22,2.15);
+  \draw[line width=0.65pt,->] (0.45,2.15) -- (0.45,1.55);
+  \node[anchor=west] at (0.55,1.85) {$G=1.003$公斤};
+  % 底端
+  \draw[line width=0.55pt] (-0.55,-2.85) -- (0.55,-2.85);
+  \foreach \x in {-0.45,-0.25,...,0.45}
+    \draw[line width=0.28pt] (\x,-2.85) -- (\x+0.12,-3.05);
+  \draw[line width=0.5pt,decorate,decoration={zigzag,segment length=3.2pt,amplitude=1.6pt}]
+    (0,-2.85) -- (0,-2.15);
+  \draw[line width=0.5pt,pattern=north east lines] (-0.22,-2.15) rectangle (0.22,-1.78);
+  \draw[line width=0.65pt,->] (-0.45,-1.78) -- (-0.45,-1.35);
+  % 右侧赤道
+  \draw[line width=0.55pt] (2.85,-0.55) -- (2.85,0.55);
+  \foreach \y in {-0.45,-0.25,...,0.45}
+    \draw[line width=0.28pt] (2.85,\y) -- (3.05,\y+0.12);
+  \draw[line width=0.5pt,decorate,decoration={zigzag,segment length=3.2pt,amplitude=1.6pt}]
+    (2.85,0) -- (2.15,0);
+  \draw[line width=0.5pt,pattern=north east lines] (1.78,-0.22) rectangle (2.15,0.22);
+  \draw[line width=0.65pt,->] (1.78,-0.45) -- (1.35,-0.45);
+  \node[anchor=north] at (2.0,-0.55) {$G\approx0.997$公斤};
+  % 左侧赤道
+  \draw[line width=0.55pt] (-2.85,-0.55) -- (-2.85,0.55);
+  \foreach \y in {-0.45,-0.25,...,0.45}
+    \draw[line width=0.28pt] (-2.85,\y) -- (-3.05,\y+0.12);
+  \draw[line width=0.5pt,decorate,decoration={zigzag,segment length=3.2pt,amplitude=1.6pt}]
+    (-2.85,0) -- (-2.15,0);
+  \draw[line width=0.5pt,pattern=north east lines] (-2.15,-0.22) rectangle (-1.78,0.22);
+  \draw[line width=0.65pt,->] (-1.78,0.4) -- (-1.35,0.4);
+\end{tikzpicture}%
+}
+\caption{图7·3 地球上1千克物体的重量}
 \end{figure}
 
 \emph{图7·3 地球上1千克物体的重量}
@@ -12987,8 +13247,31 @@ s，那么，用相同的力在相同的时间内，可以把质量为 \(\frac{m
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/physics-1/fig-p0216-01.png}}
-\caption{(第9题)}
+% fig-alt: （第9题）：$v$-$t$图；$(0,0)\to(2,6)\to(6,6)\to(8,2)$；虚线对齐刻度。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 第9题 v-t 图（纯 TikZ，不用 pgfplots）
+  \draw[line width=0.7pt,->] (0,0) -- (5.6,0) node[anchor=west] {$t$（秒）};
+  \draw[line width=0.7pt,->] (0,0) -- (0,3.55) node[anchor=south] {$v$（米/秒）};
+  \foreach \x/\lab in {1/2,2/4,3/6,4/8,5/10} {
+    \draw[line width=0.45pt] (\x,0.06) -- (\x,-0.06);
+    \node[anchor=north] at (\x,-0.08) {\lab};
+  }
+  \foreach \y/\lab in {0.9/2,1.8/4,2.7/6} {
+    \draw[line width=0.45pt] (0.06,\y) -- (-0.06,\y);
+    \node[anchor=east] at (-0.1,\y) {\lab};
+  }
+  % 辅助虚线
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (0,2.7) -- (1,2.7);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (1,0) -- (1,2.7);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (3,0) -- (3,2.7);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (0,0.9) -- (4,0.9);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (4,0) -- (4,0.9);
+  % 折线：(0,0)-(2,6)-(6,6)-(8,2) → 坐标缩放 x:0.5cm/单位, y:0.45cm/单位
+  \draw[line width=0.85pt] (0,0) -- (1,2.7) -- (3,2.7) -- (4,0.9);
+\end{tikzpicture}%
+}
+\caption{（第9题）}
 \end{figure}
 
 \emph{（第9题）}
@@ -13419,34 +13702,48 @@ F _ {B} = m _ {B} a _ {B}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第225页）}]{assets/physics-1/fig-p0225-01.png}}
-\caption{图示（原PDF第225页）}
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: 图8-9右图：乙块。N2自顶向上，N2'沿同轴向下，G2自底向下。左图甲为未改的图示碎片
+% fig-alt: 图8·9：甲块$N_{1}$上、$G_{1}$下；乙块$N_{2}$上、$N_{1}'$下、$G_{2}$下；合并原误拆左右裁切。
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
-  \draw[line width=0.6pt] (0.55,1.15) rectangle (2.15,2.55);
-  \draw[line width=0.55pt] (0.55,2.55) -- (1.15,2.95) -- (2.75,2.95) -- (2.15,2.55);
-  \draw[line width=0.55pt] (2.15,1.15) -- (2.75,1.55) -- (2.75,2.95);
-  \begin{scope}
-    \clip (0.58,1.18) rectangle (2.12,2.52);
-    \foreach \s in {0.78,0.98,1.18,1.38,1.58,1.78,1.98}
-      \draw[line width=0.2pt] (\s,1.18) -- (\s,2.52);
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图8·9 甲、乙受力（合并误拆左右图）
+  % ---- 甲 ----
+  \begin{scope}[xshift=0cm]
+    \draw[line width=0.6pt,fill=white]
+      (0.4,1.0) -- (1.9,1.0) -- (1.9,2.5) -- (0.4,2.5) -- cycle;
+    \draw[line width=0.55pt] (0.4,2.5) -- (0.95,2.95) -- (2.45,2.95) -- (1.9,2.5);
+    \draw[line width=0.55pt] (1.9,1.0) -- (2.45,1.45) -- (2.45,2.95);
+    \draw[line width=0.4pt,dashed] (1.15,1.0) -- (1.15,2.5);
+    \node at (1.15,1.75) {甲};
+    \draw[line width=0.7pt,->] (1.15,2.5) -- (1.15,3.35);
+    \node[anchor=west] at (1.22,3.2) {$N_{1}$};
+    \draw[line width=0.7pt,->] (1.15,1.0) -- (1.15,0.15);
+    \node[anchor=west] at (1.22,0.3) {$G_{1}$};
   \end{scope}
-  \node[anchor=east] at (1.22,1.82) {乙};
-  \draw[line width=0.7pt,->] (1.35,2.55) -- (1.35,3.35);
-  \node[anchor=west] at (1.42,3.18) {$N_{2}$};
-  \draw[line width=0.65pt,->] (1.35,2.55) -- (1.35,0.55);
-  \node[anchor=west] at (1.42,0.72) {$N_{2}'$};
-  \draw[line width=0.7pt,->] (1.35,0.42) -- (1.35,-0.28);
-  \node[anchor=west] at (1.42,-0.12) {$G_{2}$};
+  % ---- 乙 ----
+  \begin{scope}[xshift=3.6cm]
+    \draw[line width=0.6pt,fill=white]
+      (0.25,1.0) -- (2.35,1.0) -- (2.35,2.5) -- (0.25,2.5) -- cycle;
+    \draw[line width=0.55pt] (0.25,2.5) -- (0.8,2.95) -- (2.9,2.95) -- (2.35,2.5);
+    \draw[line width=0.55pt] (2.35,1.0) -- (2.9,1.45) -- (2.9,2.95);
+    \begin{scope}
+      \clip (0.28,1.03) rectangle (2.32,2.47);
+      \foreach \s in {0.45,0.65,...,2.2}
+        \draw[line width=0.2pt] (\s,1.03) -- (\s,2.47);
+    \end{scope}
+    \draw[line width=0.4pt,dashed] (1.3,1.0) -- (1.3,2.5);
+    \node at (1.3,1.75) {乙};
+    \draw[line width=0.7pt,->] (1.3,2.5) -- (1.3,3.35);
+    \node[anchor=west] at (1.38,3.2) {$N_{2}$};
+    \draw[line width=0.65pt,->] (1.3,2.5) -- (1.3,1.55);
+    \node[anchor=west] at (1.38,1.85) {$N_{1}'$};
+    \draw[line width=0.7pt,->] (1.3,1.0) -- (1.3,0.15);
+    \node[anchor=west] at (1.38,0.3) {$G_{2}$};
+  \end{scope}
 \end{tikzpicture}%
 }
-\caption{图8-9}
+\caption{图8·9}
 \end{figure}
+
 
 \emph{图8·9}
 
