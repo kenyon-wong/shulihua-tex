@@ -22797,12 +22797,36 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/solid-geometry/fig-p0212-02.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第3题）：正方体。P、Q、R 分别为上后棱、左前竖棱、下前棱的中点。隐棱三条虚线交于后下角；余棱实线。扫描有P、Q、R
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.15,0.25);
+  \coordinate (B) at (2.15,0.25);
+  \coordinate (C) at (2.85,0.95);
+  \coordinate (D) at (0.85,0.95);
+  \coordinate (A1) at (0.15,2.25);
+  \coordinate (B1) at (2.15,2.25);
+  \coordinate (C1) at (2.85,2.95);
+  \coordinate (D1) at (0.85,2.95);
+  \coordinate (P) at (1.85,2.95);
+  \coordinate (Q) at (0.15,1.25);
+  \coordinate (R) at (1.15,0.25);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (D1);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (B1) -- (C1) -- (C);
+  \draw[line width=0.85pt] (A1) -- (D1) -- (C1);
+  \fill (P) circle (1.1pt);
+  \fill (Q) circle (1.1pt);
+  \fill (R) circle (1.1pt);
+  \node[anchor=south,inner sep=0.05pt] at (P) {$P$};
+  \node[anchor=east,inner sep=0.05pt] at (Q) {$Q$};
+  \node[anchor=north,inner sep=0.05pt] at (R) {$R$};
+\end{tikzpicture}
+}
+\caption{（第3题）}
 \end{figure}
-
-\emph{（第3题）}
-
 \begin{enumerate}
 \setcounter{enumi}{4}
 \item
@@ -22814,23 +22838,67 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 \(V'\)。今把三面角 \(V'\) 重送到三面
 
 角 V 上， 然后再证明它们的体积之比等于
-\(VA \cdot VB \cdot VC: V'A_{1} \cdot V'B_{1} \cdot\)\(\nabla^{\prime}G_{1}\)
+\(VA \cdot VB \cdot VC: V'A_{1} \cdot V'B_{1} \cdot V'C_{1}\)
 .
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第212页）}]{assets/solid-geometry/fig-p0212-03.png}}
-\caption{图示（原PDF第212页）}
+\fitfig{%
+% fig-alt: （第5题）：四面体V-ABC内嵌A1B1C1（A1在VA、B1在VB、C1在VC）。VA、VC、AC、AB、BC、C1A1实线；VB、A1B1、C1B1及高CE、C1F虚线。扫描有V、A–C、A1–C1、E、F
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0.10,0.20);
+  \coordinate (A) at (4.60,0.20);
+  \coordinate (C) at (2.55,3.35);
+  \coordinate (B) at (4.10,1.55);
+  \coordinate (A1) at (2.80,0.20);
+  \coordinate (C1) at (1.70,2.20);
+  \coordinate (B1) at (2.70,1.08);
+  \coordinate (E) at (2.55,0.20);
+  \coordinate (F) at (1.70,0.20);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (B1) -- (C1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C1) -- (F);
+  \draw[line width=0.85pt] (V) -- (A);
+  \draw[line width=0.85pt] (V) -- (C) -- (A);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A1) -- (C1);
+  \node[anchor=east,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=north west,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=south,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=north,inner sep=0.04pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.04pt] at (B1) {$B_{1}$};
+  \node[anchor=east,inner sep=0.04pt] at (C1) {$C_{1}$};
+  \node[anchor=north,inner sep=0.03pt] at (E) {$E$};
+  \node[anchor=north,inner sep=0.03pt] at (F) {$F$};
+\end{tikzpicture}
+}
+\caption{（第5题）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/solid-geometry/fig-p0212-04.png}}
-\caption{(第5题)}
+\fitfig{%
+% fig-alt: （第5题）：四面体V'-A1B1C1。前棱V'A1、V'C1、C1A1、C1B1、B1A1实线；隐棱V'B1虚线。扫描有V'、A1、B1、C1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Vp) at (0.10,0.15);
+  \coordinate (A1) at (3.55,0.15);
+  \coordinate (C1) at (1.35,2.15);
+  \coordinate (B1) at (2.85,1.85);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Vp) -- (B1);
+  \draw[line width=0.85pt] (Vp) -- (A1);
+  \draw[line width=0.85pt] (Vp) -- (C1);
+  \draw[line width=0.85pt] (C1) -- (A1);
+  \draw[line width=0.85pt] (C1) -- (B1) -- (A1);
+  \node[anchor=east,inner sep=0.05pt] at (Vp) {$V'$};
+  \node[anchor=north west,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=south east,inner sep=0.05pt] at (C1) {$C_{1}$};
+\end{tikzpicture}
+}
+\caption{（第5题）}
 \end{figure}
-
-\emph{（第5题）}
-
 \begin{enumerate}
 \setcounter{enumi}{5}
 \item
@@ -22852,20 +22920,42 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
   则其中一个的体积是其他二个棱锥体积的比例中项。
 \end{enumerate}
 
-［提示：如图，分为三个棱锥 \(E - ABC, E - ACD\) 和
-\(E - DCF\)，再设法证明 \(V_{2 - ACD}\) 是 \(V_{2 - ACD}\) 与
-\(V_{2 - DCF}\) 的
-
-项.］
+［提示：如图，分为三个棱锥 \(E-ABC\)、\(E-ACD\) 和
+\(E-DCF\)，再设法证明 \(V_{E-ACD}\) 是 \(V_{E-ABC}\) 与
+\(V_{E-DCF}\) 的比例中项.］
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/solid-geometry/fig-p0213-01.png}}
-\caption{(第8题)}
+\fitfig{%
+% fig-alt: （第8题）：三棱台ABC-DEF。下底ABC、上底DEF；内分棱锥E-ABC、E-ACD、E-DCF。隐棱AC、DF、CF虚线；余棱与AE、CE、CD实线。扫描有A–F
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.10,1.35);
+  \coordinate (B) at (1.55,0.10);
+  \coordinate (C) at (3.55,1.25);
+  \coordinate (D) at (0.85,2.85);
+  \coordinate (E) at (2.05,2.95);
+  \coordinate (F) at (3.05,2.55);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (F);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (F);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (D) -- (E) -- (F);
+  \draw[line width=0.85pt] (A) -- (D);
+  \draw[line width=0.85pt] (B) -- (E);
+  \draw[line width=0.85pt] (A) -- (E);
+  \draw[line width=0.85pt] (C) -- (E);
+  \draw[line width=0.85pt] (B) -- (D);
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=south,inner sep=0.05pt] at (E) {$E$};
+  \node[anchor=south west,inner sep=0.05pt] at (F) {$F$};
+\end{tikzpicture}
+}
+\caption{（第8题）}
 \end{figure}
-
-\emph{（第8题）}
-
 \chapter{第三章 旋转体}
 
 \section{圆柱、圆锥和圆台}
@@ -22883,12 +22973,30 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-1}]{assets/solid-geometry/fig-p0214-01.png}}
-\caption{图3-1}
+\fitfig{%
+% fig-alt: 图3·1：矩形O1OAA1绕轴O1O旋转成圆柱。上下底椭圆实线；轴O1O虚线略伸出；半径O1A1、OA与母线A1A实线。扫描有O1、O、A、A1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0.55);
+  \coordinate (O1) at (0,3.35);
+  \coordinate (A) at (-1.35,0.55);
+  \coordinate (A1) at (-1.35,3.35);
+  \coordinate (R) at (1.35,0.55);
+  \coordinate (R1) at (1.35,3.35);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (0,3.70) -- (0,0.20);
+  \draw[line width=0.85pt] (0,3.35) ellipse (1.35 and 0.38);
+  \draw[line width=0.85pt] (0,0.55) ellipse (1.35 and 0.38);
+  \draw[line width=0.85pt] (A1) -- (A);
+  \draw[line width=0.85pt] (R1) -- (R);
+  \draw[line width=0.85pt] (O1) -- (A1);
+  \draw[line width=0.85pt] (O) -- (A);
+  \node[anchor=west,inner sep=0.05pt] at (O1) {$O_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (O) {$O$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+\end{tikzpicture}
+}
+\caption{图3·1}
 \end{figure}
-
-\emph{图3·1}
-
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={图3-2}]{assets/solid-geometry/fig-p0214-02.png}}
@@ -22909,7 +23017,7 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
   是圆柱的母线，\(D_{1}A_{1}\)和 \(DA\) 是两个底面圆的直径。
 \item
   平行于圆柱轴的平面， 截圆柱所得的截面是一个矩形 \((B_{1}BCC_{1})\)，
-  \(B_{1}B\) 和 \(C_{1}O\) 是圆柱的母线， \(C_{1}B_{1}\) 和 \(CB\)
+  \(B_{1}B\) 和 \(C_{1}C\) 是圆柱的母线， \(C_{1}B_{1}\) 和 \(CB\)
   是底面圆的弦。
 \end{enumerate}
 
@@ -22926,12 +23034,40 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-3}]{assets/solid-geometry/fig-p0215-01.png}}
-\caption{图3-3}
+\fitfig{%
+% fig-alt: 图3·3：圆柱。母线A1A、B1B（直径两端）与C1C；轴O1O虚线；顶椭圆与直径A1B1、弦A1C1实线；底前弧与AB实线，底后弧与AC虚线。扫描有O1、O、A、B、C、A1、B1、C1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O) at (0,0.50);
+  \coordinate (O1) at (0,3.20);
+  \coordinate (A) at (-1.45,0.50);
+  \coordinate (B) at (1.45,0.50);
+  \coordinate (A1) at (-1.45,3.20);
+  \coordinate (B1) at (1.45,3.20);
+  \coordinate (C) at (0.72,0.20);
+  \coordinate (C1) at (0.72,2.90);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O1) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) arc (0:180:1.45 and 0.40);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.85pt] (0,3.20) ellipse (1.45 and 0.40);
+  \draw[line width=0.85pt] (B) arc (0:-180:1.45 and 0.40);
+  \draw[line width=0.85pt] (A1) -- (A);
+  \draw[line width=0.85pt] (B1) -- (B);
+  \draw[line width=0.85pt] (C1) -- (C);
+  \draw[line width=0.85pt] (A1) -- (B1);
+  \draw[line width=0.85pt] (A1) -- (C1);
+  \draw[line width=0.85pt] (A) -- (B);
+  \node[anchor=south,inner sep=0.04pt] at (O1) {$O_{1}$};
+  \node[anchor=north,inner sep=0.04pt] at (O) {$O$};
+  \node[anchor=east,inner sep=0.04pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.04pt] at (B1) {$B_{1}$};
+  \node[anchor=north,inner sep=0.03pt] at (C1) {$C_{1}$};
+  \node[anchor=east,inner sep=0.04pt] at (A) {$A$};
+  \node[anchor=west,inner sep=0.04pt] at (B) {$B$};
+  \node[anchor=north,inner sep=0.03pt] at (C) {$C$};
+\end{tikzpicture}
+}
+\caption{图3·3}
 \end{figure}
-
-\emph{图3·3}
-
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={图3-4}]{assets/solid-geometry/fig-p0215-02.png}}
@@ -22979,20 +23115,64 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-5}]{assets/solid-geometry/fig-p0216-01.png}}
-\caption{图3-5}
+\fitfig{%
+% fig-alt: 图3·5：直角三角形VAO绕轴VO旋转成圆锥。母线VA与底前弧实线；底后弧与半径OA虚线；轴VO点划线略伸出。扫描有V、A、O
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0,3.55);
+  \coordinate (O) at (0,0.55);
+  \coordinate (A) at (-1.45,0.55);
+  \coordinate (Ap) at (1.45,0.55);
+  \draw[line width=0.7pt,dash pattern=on 2.5pt off 1.4pt on 0.6pt off 1.4pt] (0,3.85) -- (0,0.20);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Ap) arc (0:180:1.45 and 0.40);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (A);
+  \draw[line width=0.85pt] (Ap) arc (0:-180:1.45 and 0.40);
+  \draw[line width=0.85pt] (V) -- (A);
+  \draw[line width=0.85pt] (V) -- (Ap);
+  \draw[line width=0.85pt] (V) -- (O);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+\end{tikzpicture}
+}
+\caption{图3·5}
 \end{figure}
-
-\emph{图3·5}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-6}]{assets/solid-geometry/fig-p0216-02.png}}
-\caption{图3-6}
+\fitfig{%
+% fig-alt: 图3·6：圆锥。轴截面VAA'；平行于底的截面圆（中心O'）；过顶点截面VBC。底与截面圆前弧实线、后弧虚线；轴VO虚线；母线VA、VA'、VB、VC实线。扫描有V、A、A'、B、C、O、O'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (0,3.70);
+  \coordinate (O) at (0,0.55);
+  \coordinate (A) at (-1.55,0.55);
+  \coordinate (Ap) at (1.55,0.55);
+  \coordinate (B) at (-0.55,0.55-0.32);
+  \coordinate (C) at (0.70,0.55-0.28);
+  % parallel section at height fraction ~0.45 from base toward V
+  \coordinate (Op) at (0,1.95);
+  \coordinate (As) at (-0.85,1.95);
+  \coordinate (Aps) at (0.85,1.95);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Ap) arc (0:180:1.55 and 0.42);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (Ap);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Aps) arc (0:180:0.85 and 0.24);
+  \draw[line width=0.85pt] (Ap) arc (0:-180:1.55 and 0.42);
+  \draw[line width=0.85pt] (Aps) arc (0:-180:0.85 and 0.24);
+  \draw[line width=0.85pt] (V) -- (A);
+  \draw[line width=0.85pt] (V) -- (Ap);
+  \draw[line width=0.85pt] (V) -- (B);
+  \draw[line width=0.85pt] (V) -- (C);
+  \draw[line width=0.85pt] (B) -- (C);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=west,inner sep=0.05pt] at (Ap) {$A'$};
+  \node[anchor=north east,inner sep=0.03pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=0.03pt] at (C) {$C$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+  \node[anchor=west,inner sep=0.04pt] at (Op) {$O'$};
+\end{tikzpicture}
+}
+\caption{图3·6}
 \end{figure}
-
-\emph{图3·6}
-
 \begin{enumerate}
 \item
   圆锥的轴 \(VO \perp\) 底圆 \(O\)， 并过底圆的中心。
