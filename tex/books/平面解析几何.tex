@@ -29693,7 +29693,50 @@ OP = \rho, \angle x OP = \theta.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·16}]{assets/analytic-geometry/fig-p0392-01.png}}
+\fitfig{%
+% fig-alt: 图7·16 直线极坐标方程：极点 O 到直线 l 垂足 D，OD=p，∠xOD=ω；直线上点 P(ρ,θ)，OA=a
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\pp{2.05}
+  \def\ww{52}
+  \def\th{22}
+  \pgfmathsetmacro{\rhop}{\pp/cos(\ww-\th)}
+  \coordinate (O) at (0,0);
+  \coordinate (D) at ({\ww}:{\pp});
+  \coordinate (P) at ({\th}:{\rhop});
+  \pgfmathsetmacro{\aa}{\pp/cos(\ww)}
+  \coordinate (A) at ({\aa},0);
+  \pgfmathsetmacro{\tx}{cos(\ww-90)}
+  \pgfmathsetmacro{\ty}{sin(\ww-90)}
+  \coordinate (L1) at ({(\pp)*cos(\ww)-1.55*\tx},{(\pp)*sin(\ww)-1.55*\ty});
+  \coordinate (L2) at ({(\pp)*cos(\ww)+2.45*\tx},{(\pp)*sin(\ww)+2.45*\ty});
+  \draw[line width=0.65pt,-latex] (-0.35,0) -- ({\aa+1.15},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.85pt] (L1) -- (L2);
+  \draw[line width=0.75pt] (O) -- (D);
+  \draw[line width=0.75pt] (O) -- (P);
+  \pgfmathsetmacro{\s}{0.18}
+  % right angle inside triangle ODP: back along OD and toward A (ω-90)
+  \draw[line width=0.4pt]
+    ({(\pp)*cos(\ww)+\s*cos(\ww+180)},{(\pp)*sin(\ww)+\s*sin(\ww+180)})
+    -- ({(\pp)*cos(\ww)+\s*cos(\ww+180)+\s*cos(\ww-90)},{(\pp)*sin(\ww)+\s*sin(\ww+180)+\s*sin(\ww-90)})
+    -- ({(\pp)*cos(\ww)+\s*cos(\ww-90)},{(\pp)*sin(\ww)+\s*sin(\ww-90)});
+  \draw[line width=0.4pt] (0.55,0) arc (0:\th:0.55);
+  \draw[line width=0.4pt] (0.85,0) arc (0:\ww:0.85);
+  \fill (O) circle (1.15pt);
+  \fill (D) circle (1.1pt);
+  \fill (P) circle (1.15pt);
+  \fill (A) circle (1.05pt);
+  \node[anchor=east,inner sep=2pt,font=\small] at (O) {$O$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at (D) {$D$};
+  \node[anchor=west,inner sep=1.5pt,font=\small] at (P) {$P(\rho,\theta)$};
+  \node[anchor=north,inner sep=1.5pt,font=\small] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt,font=\small] at (L2) {$l$};
+  \node[anchor=south east,inner sep=1pt,font=\small] at ({0.52*\pp*cos(\ww)},{0.52*\pp*sin(\ww)}) {$p$};
+  \node[anchor=north west,inner sep=0.8pt,font=\small] at ({0.55*\rhop*cos(\th)},{0.55*\rhop*sin(\th)}) {$\rho$};
+  \node[anchor=west,inner sep=0.6pt,font=\scriptsize] at ({0.58*cos(\th/2)},{0.58*sin(\th/2)}) {$\theta$};
+  \node[anchor=west,inner sep=0.6pt,font=\scriptsize] at ({0.92*cos((\th+\ww)/2)},{0.92*sin((\th+\ww)/2)}) {$\omega$};
+  \node[anchor=north,inner sep=2pt,font=\small] at ({\aa*0.48},0) {$a$};
+\end{tikzpicture}%
+}
 \caption{图7·16}
 \end{figure}
 
@@ -29777,7 +29820,34 @@ r^{2} = \rho^{2} + \rho_{1} ^ {2} - 2 \rho_{1} \rho \cos (\theta - \theta_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/analytic-geometry/fig-p0394-01.png}}
+\fitfig{%
+% fig-alt: 图7·17（a）一般圆：圆心 C(ρ₁,θ₁)，圆上点 P(ρ,θ)，半径 r；虚线 OC、CP，实线 OP
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\rone{1.85}
+  \def\tone{38}
+  \def\rr{1.05}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at ({\tone}:{\rone});
+  \coordinate (P) at ({(\rone)*cos(\tone)+\rr*cos(105)},{(\rone)*sin(\tone)+\rr*sin(105)});
+  \pgfmathsetmacro{\thP}{atan2({(\rone)*sin(\tone)+\rr*sin(105)},{(\rone)*cos(\tone)+\rr*cos(105)})}
+  \draw[line width=0.65pt,-latex] (-0.35,0) -- ({\rone+\rr+0.85},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.85pt] (C) circle ({\rr});
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.55pt] (O) -- (C);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.55pt] (C) -- (P);
+  \draw[line width=0.75pt] (O) -- (P);
+  \draw[line width=0.4pt] (0.48,0) arc (0:\tone:0.48);
+  \draw[line width=0.4pt] (0.78,0) arc (0:\thP:0.78);
+  \fill (O) circle (1.1pt);
+  \fill (C) circle (1.15pt);
+  \fill (P) circle (1.15pt);
+  \node[anchor=north east,inner sep=1.4pt,font=\small] at (O) {$O$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at (C) {$C(\rho_1,\theta_1)$};
+  \node[anchor=south,inner sep=1.5pt,font=\small] at (P) {$P(\rho,\theta)$};
+  \node[anchor=west,inner sep=1pt,font=\small] at ({(\rone)*cos(\tone)+0.5*\rr*cos(105)},{(\rone)*sin(\tone)+0.5*\rr*sin(105)}) {$r$};
+  \node[anchor=west,inner sep=0.5pt,font=\scriptsize] at ({0.52*cos(\tone/2)},{0.52*sin(\tone/2)}) {$\theta_1$};
+  \node[anchor=west,inner sep=0.5pt,font=\scriptsize] at ({0.85*cos((\tone+\thP)/2)},{0.85*sin((\tone+\thP)/2)}) {$\theta$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -29785,7 +29855,23 @@ r^{2} = \rho^{2} + \rho_{1} ^ {2} - 2 \rho_{1} \rho \cos (\theta - \theta_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/analytic-geometry/fig-p0394-02.png}}
+\fitfig{%
+% fig-alt: 图7·17（b）圆心在极点 O 的圆，半径 r；虚线 OP，圆上一点 P
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\rr{1.55}
+  \def\th{48}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at ({\th}:{\rr});
+  \draw[line width=0.65pt,-latex] (-{\rr*0.35},0) -- ({\rr+0.85},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.85pt] (O) circle ({\rr});
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.55pt] (O) -- (P);
+  \fill (O) circle (1.1pt);
+  \fill (P) circle (1.15pt);
+  \node[anchor=north east,inner sep=1.5pt,font=\small] at (O) {$O$};
+  \node[anchor=south west,inner sep=1.5pt,font=\small] at (P) {$P$};
+  \node[anchor=south east,inner sep=1pt,font=\small] at ({0.52*\rr*cos(\th)},{0.52*\rr*sin(\th)}) {$r$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -29793,7 +29879,27 @@ r^{2} = \rho^{2} + \rho_{1} ^ {2} - 2 \rho_{1} \rho \cos (\theta - \theta_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/analytic-geometry/fig-p0394-03.png}}
+\fitfig{%
+% fig-alt: 图7·17（c）过极点且圆心 C 在极轴上的圆；直径沿极轴，圆上点 P，连 OP 与直径远端
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\rr{1.25}
+  \def\th{42}
+  \coordinate (O) at (0,0);
+  \coordinate (C) at ({\rr},0);
+  \coordinate (A) at ({2*\rr},0);
+  \coordinate (P) at ({2*\rr*cos(\th)},{2*\rr*sin(\th)});
+  \draw[line width=0.65pt,-latex] (-0.35,0) -- ({2*\rr+0.95},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.85pt] (C) circle ({\rr});
+  \draw[line width=0.75pt] (O) -- (P);
+  \draw[line width=0.7pt] (P) -- (A);
+  \fill (O) circle (1.1pt);
+  \fill (C) circle (1.1pt);
+  \fill (P) circle (1.15pt);
+  \node[anchor=north east,inner sep=1.5pt,font=\small] at (O) {$O$};
+  \node[anchor=north,inner sep=1.6pt,font=\small] at (C) {$C$};
+  \node[anchor=south,inner sep=1.5pt,font=\small] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(c)}
 \end{figure}
 
@@ -29801,7 +29907,27 @@ r^{2} = \rho^{2} + \rho_{1} ^ {2} - 2 \rho_{1} \rho \cos (\theta - \theta_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(d)}]{assets/analytic-geometry/fig-p0394-04.png}}
+\fitfig{%
+% fig-alt: 图7·17（d）过极点且圆心在极垂线上的圆；竖直直径标 a，圆上点 P，虚线 OP 与至直径顶端
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\aa{2.2}
+  \def\th{128}
+  \coordinate (O) at (0,0);
+  \coordinate (Top) at (0,{\aa});
+  \coordinate (C) at (0,{\aa/2});
+  \coordinate (P) at ({\th}:{\aa*sin(\th)});
+  \draw[line width=0.65pt,-latex] (-0.15,0) -- ({\aa*0.85},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.85pt] (C) circle ({\aa/2});
+  \draw[line width=0.75pt] (O) -- (Top);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.55pt] (O) -- (P);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.55pt] (P) -- (Top);
+  \fill (O) circle (1.1pt);
+  \fill (P) circle (1.15pt);
+  \node[anchor=north,inner sep=1.8pt,font=\small] at (O) {$O$};
+  \node[anchor=east,inner sep=1.5pt,font=\small] at (P) {$P$};
+  \node[anchor=west,inner sep=1.5pt,font=\small] at (0,{\aa*0.5}) {$a$};
+\end{tikzpicture}%
+}
 \caption{(d)}
 \end{figure}
 
@@ -29865,8 +29991,39 @@ r^{2} = \rho^{2} + \rho_{1} ^ {2} - 2 \rho_{1} \rho \cos (\theta - \theta_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-18}]{assets/analytic-geometry/fig-p0395-01.png}}
-\caption{图7-18}
+\fitfig{%
+% fig-alt: 图7·18 圆锥曲线极坐标：焦点 O(F)，准线 l，OH=p；点 P，OP=ρ，PD⊥l，PQ⊥Ox，∠xOP=θ
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\pp{1.55}
+  \def\rhop{2.85}
+  \def\th{48}
+  \coordinate (O) at (0,0);
+  \coordinate (H) at ({-\pp},0);
+  \coordinate (P) at ({\th}:{\rhop});
+  \coordinate (Q) at ({\rhop*cos(\th)},0);
+  \coordinate (D) at ({-\pp},{\rhop*sin(\th)});
+  \draw[line width=0.65pt,-latex] ({-\pp-0.55},0) -- ({\rhop*cos(\th)+1.35},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.85pt] ({-\pp},{-0.55}) -- ({-\pp},{\rhop*sin(\th)+0.85}) node[anchor=south,inner sep=1.5pt] {$l$};
+  \draw[line width=0.75pt] (O) -- (P);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.5pt] (P) -- (Q);
+  \draw[dash pattern=on 1.8pt off 1.2pt,line width=0.5pt] (P) -- (D);
+  \draw[line width=0.4pt] (0.55,0) arc (0:\th:0.55);
+  \fill (O) circle (1.15pt);
+  \fill (H) circle (1.05pt);
+  \fill (P) circle (1.15pt);
+  \fill (Q) circle (1.05pt);
+  \fill (D) circle (1.05pt);
+  \node[anchor=north west,inner sep=1.2pt,font=\small] at (0.02,-0.02) {$O(F)$};
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (H) {$H$};
+  \node[anchor=south west,inner sep=1.5pt,font=\small] at (P) {$P$};
+  \node[anchor=north,inner sep=1.5pt,font=\small] at (Q) {$Q$};
+  \node[anchor=east,inner sep=1.5pt,font=\small] at (D) {$D$};
+  \node[anchor=north,inner sep=3pt,font=\small] at ({-\pp*0.5},0) {$p$};
+  \node[anchor=south east,inner sep=1pt,font=\small] at ({0.55*\rhop*cos(\th)},{0.55*\rhop*sin(\th)}) {$\rho$};
+  \node[anchor=west,inner sep=0.8pt,font=\scriptsize] at ({0.62*cos(\th/2)},{0.62*sin(\th/2)}) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{图7·18}
 \end{figure}
 
 \emph{图7·18}
@@ -29962,8 +30119,31 @@ r^{2} = \rho^{2} + \rho_{1} ^ {2} - 2 \rho_{1} \rho \cos (\theta - \theta_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-19}]{assets/analytic-geometry/fig-p0397-01.png}}
-\caption{图7-19}
+\fitfig{%
+% fig-alt: 图7·19 抛物线 ρ=p/(1-cosθ)，焦点为极点 O；焦弦 PQ，P(ρ,θ)、Q(ρ₁,θ+π)，夹角 θ
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\pp{1.35}
+  \def\th{42}
+  \pgfmathsetmacro{\rhoP}{\pp/(1-cos(\th))}
+  \pgfmathsetmacro{\rhoQ}{\pp/(1-cos(\th+180))}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at ({\th}:{\rhoP});
+  \coordinate (Q) at ({\th+180}:{\rhoQ});
+  \draw[line width=0.65pt,-latex] ({-\pp*0.85},0) -- ({\rhoP*cos(\th)+0.9},0) node[anchor=west,inner sep=1.6pt] {$x$};
+  \draw[line width=0.9pt,domain=-2.35:2.35,samples=80,smooth]
+    plot ({(\x*\x)/(2*\pp) - \pp/2}, {\x});
+  \draw[line width=0.75pt] (Q) -- (P);
+  \draw[line width=0.4pt] (0.48,0) arc (0:\th:0.48);
+  \fill (O) circle (1.15pt);
+  \fill (P) circle (1.15pt);
+  \fill (Q) circle (1.15pt);
+  \node[anchor=south east,inner sep=1.4pt,font=\small] at (O) {$O$};
+  \node[anchor=west,inner sep=1.5pt,font=\small] at (P) {$P(\rho,\theta)$};
+  \node[anchor=west,inner sep=1.5pt,font=\small] at (Q) {$Q(\rho_1,\theta+\pi)$};
+  \node[anchor=west,inner sep=0.6pt,font=\scriptsize] at ({0.55*cos(\th/2)},{0.55*sin(\th/2)}) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{图7·19}
 \end{figure}
 
 \emph{图7·19}
@@ -30044,8 +30224,36 @@ r^{2} = \rho^{2} + \rho_{1} ^ {2} - 2 \rho_{1} \rho \cos (\theta - \theta_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7-20}]{assets/analytic-geometry/fig-p0398-01.png}}
-\caption{图 7-20}
+\fitfig{%
+% fig-alt: 图7·20 凸轮与从动杆：凸轮顺时针转动，推动竖直从动杆在导槽中作往复直线运动
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  % pear cam: wide bottom, pointed top
+  \draw[line width=0.85pt,fill=white]
+    plot[domain=0:360,samples=160,smooth cycle]
+    ({0.78*(1.20-0.38*cos(\x))*sin(\x)},
+     {0.92*(1.15-0.28*cos(\x))*cos(\x) - 0.12});
+  % shaft + keyway at bottom
+  \fill[white] (0,-0.42) circle (0.24);
+  \draw[line width=0.65pt] (0,-0.42) circle (0.24);
+  \fill[white] (-0.055,-0.42-0.24) rectangle (0.055,-0.42-0.38);
+  \draw[line width=0.55pt] (-0.055,-0.42-0.16) -- (-0.055,-0.42-0.38) -- (0.055,-0.42-0.38) -- (0.055,-0.42-0.16);
+  % clockwise arrow
+  \draw[line width=0.55pt,-latex] (1.15,-0.05) arc (0:-80:1.22);
+  % guide bar
+  \fill[pattern=north east lines,pattern color=black!55] (-1.0,1.42) rectangle (1.0,1.82);
+  \draw[line width=0.7pt] (-1.0,1.42) rectangle (1.0,1.82);
+  \fill[white] (-0.11,1.39) rectangle (0.11,1.85);
+  \draw[line width=0.55pt] (-0.11,1.42) -- (-0.11,1.82);
+  \draw[line width=0.55pt] (0.11,1.42) -- (0.11,1.82);
+  % follower rod
+  \draw[line width=0.85pt] (0,1.05) -- (0,2.42);
+  \fill[white] (-0.09,1.05) -- (0,0.90) -- (0.09,1.05) -- cycle;
+  \draw[line width=0.7pt] (-0.09,1.05) -- (0,0.90) -- (0.09,1.05) -- cycle;
+  \node[anchor=south,inner sep=2pt,font=\small] at (0,2.42) {从动杆};
+  \node[anchor=center,font=\small] at (0,-0.95) {凸轮};
+\end{tikzpicture}%
+}
+\caption{图7·20}
 \end{figure}
 
 \emph{图7·20}
