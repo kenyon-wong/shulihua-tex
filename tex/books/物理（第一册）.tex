@@ -32883,8 +32883,74 @@ A 的前方）的压强，圆柱体前后方的压强差就构成了压差阻力
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图15-18}]{assets/physics-1/fig-p0513-01.png}}
-\caption{图15-18}
+% fig-alt: 图15·18：冲角为零时机翼剖面；流线自左向右，上方较密；标$a$、$b$、$v_1$、$v_2$、$v_3$、$S_1$、$S_2$；翼上举力$Q$、阻力$f$与合力$R$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % airfoil α=0: cambered top, flat bottom, dots
+  \coordinate (LE) at (-0.15,0.05);
+  \coordinate (TE) at (3.55,0.02);
+  \fill[pattern=dots,pattern color=black!55]
+    (LE)
+    .. controls (0.25,0.55) and (1.35,0.95) .. (2.35,0.55)
+    .. controls (2.95,0.28) and (3.35,0.10) .. (TE)
+    .. controls (2.60,-0.08) and (1.20,-0.10) .. (0.35,-0.05)
+    .. controls (0.05,-0.02) and (-0.05,0.02) .. (LE);
+  \draw[line width=0.55pt]
+    (LE)
+    .. controls (0.25,0.55) and (1.35,0.95) .. (2.35,0.55)
+    .. controls (2.95,0.28) and (3.35,0.10) .. (TE)
+    .. controls (2.60,-0.08) and (1.20,-0.10) .. (0.35,-0.05)
+    .. controls (0.05,-0.02) and (-0.05,0.02) .. (LE);
+  % streamlines (upper denser over wing)
+  \foreach \y/\ya/\yb in {
+    1.55/1.55/1.55,
+    1.25/1.42/1.28,
+    0.95/1.28/1.05,
+    0.70/1.05/0.82,
+    0.45/0.78/0.55,
+    -0.35/-0.38/-0.35,
+    -0.65/-0.68/-0.65,
+    -0.95/-0.98/-0.95,
+    -1.25/-1.28/-1.25
+  } {
+    \draw[line width=0.32pt]
+      (-3.15,\y) -- (-1.55,\y)
+      .. controls (-0.55,\ya) and (1.55,\ya) .. (2.85,\yb)
+      -- (4.55,\yb);
+  }
+  \foreach \x/\y in {-2.35/1.25,-2.35/0.70,-2.35/-0.65,1.0/1.20,1.0/0.75,1.0/-0.65,3.55/1.20,3.55/-0.65} {
+    \draw[line width=0.35pt,->] (\x,\y) -- ++(0.45,0);
+  }
+  % S1 left upper, S2 left lower
+  \draw[line width=0.35pt,<->] (-3.35,0.45) -- (-3.35,1.55);
+  \node[anchor=east] at (-3.40,1.00) {$S_{1}$};
+  \draw[line width=0.35pt,<->] (-3.35,-1.25) -- (-3.35,-0.35);
+  \node[anchor=east] at (-3.40,-0.80) {$S_{2}$};
+  % small S1 above wing (compressed)
+  \draw[line width=0.35pt,<->] (1.55,0.58) -- (1.55,1.05);
+  \node[anchor=west] at (1.62,0.82) {$S_{1}$};
+  \node[anchor=south east] at (-3.05,1.55) {$a$};
+  \node[anchor=north east] at (-3.05,-1.25) {$b$};
+  % velocities
+  \draw[line width=0.5pt,->] (-2.55,0.10) -- (-1.75,0.10);
+  \node[anchor=south] at (-2.15,0.14) {$v_{1}$};
+  \draw[line width=0.5pt,->] (1.15,1.15) -- (1.85,1.15);
+  \node[anchor=south] at (1.50,1.18) {$v_{2}$};
+  \draw[line width=0.5pt,->] (1.15,-0.55) -- (1.85,-0.55);
+  \node[anchor=north] at (1.50,-0.58) {$v_{3}$};
+  % forces Q, f, R from wing center
+  \coordinate (C) at (1.35,0.22);
+  \draw[line width=0.55pt,->] (C) -- ++(0,1.35);
+  \node[anchor=south] at (1.35,1.62) {$Q$};
+  \draw[line width=0.55pt,->] (C) -- ++(0.95,0);
+  \node[anchor=west] at (2.38,0.22) {$f$};
+  \draw[line width=0.55pt,->] (C) -- ++(0.95,1.35);
+  \node[anchor=south west] at (2.25,1.50) {$R$};
+  \draw[line width=0.28pt,dash pattern=on 0.7pt off 0.55pt]
+    (C) ++(0,1.35) -- ++(0.95,0) -- ++(0,-1.35);
+\end{tikzpicture}%
+}
+\caption{图15·18}
 \end{figure}
 
 \emph{图15·18}
@@ -32913,11 +32979,83 @@ A 的前方）的压强，圆柱体前后方的压强差就构成了压差阻力
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 15·19}]{assets/physics-1/fig-p0514-01.png}}
-\caption{图 15·19}
+% fig-alt: 图15·19：机翼抬头冲角$\alpha$；流线上密下疏；标$S_1$、$S_1'$、$S_2$、$S_3$、$v_1$、$v_2$、$v_3$；举力$Q$、阻力$f$与合力$R$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % channel bounds
+  \draw[line width=0.45pt] (-3.3,2.15) -- (4.7,2.15);
+  \draw[line width=0.45pt] (-3.3,-1.65) -- (4.7,-1.65);
+  % tilted airfoil (nose up) — dots fill
+  \begin{scope}[rotate around={12:(1.7,0.15)}]
+    \fill[pattern=dots,pattern color=black!55]
+      (0.0,0.12)
+      .. controls (0.40,0.68) and (1.45,1.00) .. (2.35,0.52)
+      .. controls (2.90,0.26) and (3.25,0.08) .. (3.45,0.0)
+      .. controls (2.55,-0.12) and (1.15,-0.08) .. (0.45,0.0)
+      .. controls (0.20,0.04) and (0.05,0.08) .. (0.0,0.12);
+    \draw[line width=0.55pt]
+      (0.0,0.12)
+      .. controls (0.40,0.68) and (1.45,1.00) .. (2.35,0.52)
+      .. controls (2.90,0.26) and (3.25,0.08) .. (3.45,0.0)
+      .. controls (2.55,-0.12) and (1.15,-0.08) .. (0.45,0.0)
+      .. controls (0.20,0.04) and (0.05,0.08) .. (0.0,0.12);
+  \end{scope}
+  % forces in lab frame (not rotated with wing)
+  \coordinate (C) at (1.85,0.55);
+  \draw[line width=0.55pt,->] (C) -- ++(0,1.30);
+  \node[anchor=south] at ($(C)+(0,1.38)$) {$Q$};
+  \draw[line width=0.55pt,->] (C) -- ++(0.90,0);
+  \node[anchor=west] at ($(C)+(0.98,0)$) {$f$};
+  \draw[line width=0.55pt,->] (C) -- ++(0.90,1.30);
+  \node[anchor=south west] at ($(C)+(0.82,1.32)$) {$R$};
+  \draw[line width=0.28pt,dash pattern=on 0.7pt off 0.55pt]
+    ($(C)+(0,1.30)$) -- ++(0.90,0) -- ++(0,-1.30);
+  % streamlines
+  \draw[line width=0.32pt] (-3.2,1.85) -- (4.6,1.85);
+  \draw[line width=0.32pt] (-3.2,1.50)
+    .. controls (-0.2,1.65) and (1.7,1.95) .. (2.9,1.60) -- (4.6,1.55);
+  \draw[line width=0.32pt] (-3.2,1.15)
+    .. controls (-0.1,1.35) and (1.6,1.65) .. (2.8,1.30) -- (4.6,1.25);
+  \draw[line width=0.32pt] (-3.2,0.80)
+    .. controls (0.0,1.05) and (1.5,1.35) .. (2.7,1.00) -- (4.6,0.95);
+  \draw[line width=0.32pt] (-3.2,0.40)
+    .. controls (0.25,0.20) and (1.9,-0.25) .. (3.1,-0.05) -- (4.6,0.15);
+  \draw[line width=0.32pt] (-3.2,0.05)
+    .. controls (0.35,-0.20) and (2.0,-0.65) .. (3.2,-0.40) -- (4.6,-0.20);
+  \draw[line width=0.32pt] (-3.2,-0.40)
+    .. controls (0.4,-0.55) and (2.1,-0.95) .. (3.3,-0.70) -- (4.6,-0.55);
+  \draw[line width=0.32pt] (-3.2,-0.85) -- (4.6,-0.85);
+  \draw[line width=0.32pt] (-3.2,-1.30) -- (4.6,-1.30);
+  \foreach \x/\y in {-2.3/1.50,-2.3/0.80,-2.3/-0.40,1.15/1.55,1.15/-0.55,3.7/1.45,3.7/-0.55} {
+    \draw[line width=0.35pt,->] (\x,\y) -- ++(0.40,0);
+  }
+  % S labels
+  \draw[line width=0.35pt,<->] (-2.95,0.80) -- (-2.95,1.85);
+  \node[anchor=east] at (-3.00,1.32) {$S_{1}$};
+  \draw[line width=0.35pt,<->] (-2.95,-1.30) -- (-2.95,0.05);
+  \node[anchor=east] at (-3.00,-0.62) {$S_{1}'$};
+  \draw[line width=0.35pt,<->] (2.00,0.95) -- (2.00,1.60);
+  \node[anchor=west] at (2.08,1.28) {$S_{2}$};
+  \draw[line width=0.35pt,<->] (2.00,-0.90) -- (2.00,-0.20);
+  \node[anchor=west] at (2.08,-0.55) {$S_{3}$};
+  % velocities
+  \draw[line width=0.5pt,->] (-2.45,0.40) -- (-1.65,0.40);
+  \node[anchor=south] at (-2.05,0.45) {$v_{1}$};
+  \draw[line width=0.5pt,->] (1.15,1.65) -- (1.80,1.65);
+  \node[anchor=south] at (1.48,1.68) {$v_{2}$};
+  \draw[line width=0.5pt,->] (1.15,-0.70) -- (1.80,-0.70);
+  \node[anchor=north] at (1.48,-0.74) {$v_{3}$};
+  % alpha near TE
+  \draw[line width=0.35pt] (3.70,-0.10) -- (4.50,-0.10);
+  \draw[line width=0.35pt] (3.70,-0.10) -- ++(12:0.90);
+  \draw[line width=0.35pt] (3.70,-0.10) ++(0.55,0) arc[start angle=0,end angle=12,radius=0.55];
+  \node[anchor=west] at (4.35,0.15) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{图15·19}
 \end{figure}
 
-\emph{图 15·19}
+\emph{图15·19}
 
 上面我们分析了举力形成的原因。从上面的分析可以知道即使是理想流体，也可以有举力，而我们在上节讲到阻力时，流体本身的内摩擦力是引起阻力的基本原因，在理想流体情况，不会有阻力的。其次，我们再看一下，举力的大小与哪些因素有关。
 
@@ -32938,11 +33076,54 @@ A 的前方）的压强，圆柱体前后方的压强差就构成了压差阻力
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 15·20}]{assets/physics-1/fig-p0514-02.png}}
-\caption{图 15·20}
+% fig-alt: 图15·20：机翼剖面斜置倾角$\theta$；相对风速$v_1$斜向机翼；举力$Q$、其竖直分力$Q'$与重力$G$；两处标$\theta$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % baseline
+  \draw[line width=0.5pt] (-0.2,-1.55) -- (4.4,-1.55);
+  % airfoil: TE on baseline, chord at θ=20°
+  \begin{scope}[shift={(0.55,-1.55)}, rotate=20]
+    \fill[pattern=north east lines,pattern color=black!55]
+      (0.05,0.28)
+      .. controls (0.50,0.78) and (1.60,0.95) .. (2.60,0.48)
+      .. controls (3.10,0.22) and (3.40,0.08) .. (3.60,0.0)
+      .. controls (2.75,-0.02) and (1.25,0.08) .. (0.45,0.16)
+      .. controls (0.20,0.20) and (0.08,0.24) .. (0.05,0.28);
+    \draw[line width=0.55pt]
+      (0.05,0.28)
+      .. controls (0.50,0.78) and (1.60,0.95) .. (2.60,0.48)
+      .. controls (3.10,0.22) and (3.40,0.08) .. (3.60,0.0)
+      .. controls (2.75,-0.02) and (1.25,0.08) .. (0.45,0.16)
+      .. controls (0.20,0.20) and (0.08,0.24) .. (0.05,0.28);
+  \end{scope}
+  % center of pressure approx
+  \coordinate (C) at (1.85,-0.70);
+  % vertical reference
+  \draw[line width=0.4pt] (C) -- ++(0,1.55);
+  \draw[line width=0.4pt] (C) -- (1.85,-1.55);
+  % Q' up, G down, Q at θ from vertical (to the right = toward trailing relative)
+  \draw[line width=0.55pt,->] (C) -- ++(0,1.35);
+  \node[anchor=south] at (1.85,0.75) {$Q'$};
+  \draw[line width=0.55pt,->] (C) -- (1.85,-1.45);
+  \node[anchor=north] at (1.85,-1.52) {$G$};
+  \draw[line width=0.55pt,->] (C) -- ++({90-20:1.45});
+  \node[anchor=south west] at ($(C)+({90-20:1.52})$) {$Q$};
+  % theta between vertical and Q
+  \draw[line width=0.35pt] (C) ++(90:0.55) arc[start angle=90,end angle=70,radius=0.55];
+  \node[anchor=south west] at ($(C)+(0.08,0.62)$) {$\theta$};
+  % theta at TE (chord vs horizontal)
+  \draw[line width=0.35pt] (3.95,-1.55) -- ++(20:0.95);
+  \draw[line width=0.35pt] (3.95,-1.55) ++(0.55,0) arc[start angle=0,end angle=20,radius=0.55];
+  \node[anchor=south west] at (4.45,-1.40) {$\theta$};
+  % v1 toward LE (down-right)
+  \draw[line width=0.55pt,->] (0.05,1.00) -- (1.00,0.35);
+  \node[anchor=south east] at (0.15,1.05) {$v_{1}$};
+\end{tikzpicture}%
+}
+\caption{图15·20}
 \end{figure}
 
-\emph{图 15·20}
+\emph{图15·20}
 
 \section{§15·8 麦格努斯效应}
 
@@ -32952,11 +33133,77 @@ A 的前方）的压强，圆柱体前后方的压强差就构成了压差阻力
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 15·21}]{assets/physics-1/fig-p0515-01.png}}
-\caption{图 15·21}
+% fig-alt: 图15·21：麦格努斯效应；(a)球左行并顺时针转；(b)甲环流、乙相对气流；(c)上密下疏合成流场；(d)轨迹上弯。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % (a)
+  \begin{scope}[shift={(0,6.8)}]
+    \draw[line width=0.55pt] (0,0) circle[radius=0.55];
+    \draw[line width=0.5pt,->] (0,0) -- (-1.20,0);
+    \node[anchor=south] at (-0.75,0.06) {$v$};
+    \draw[line width=0.45pt,<-] (0.30,0.05) arc[start angle=10,end angle=-300,radius=0.30];
+    \node[anchor=west] at (2.65,0) {(a)};
+  \end{scope}
+  % (b)
+  \begin{scope}[shift={(0,4.45)}]
+    \begin{scope}[shift={(-1.60,0)}]
+      \fill[black!12] (0,0) circle[radius=0.48];
+      \draw[line width=0.5pt] (0,0) circle[radius=0.48];
+      \foreach \r in {0.70,0.90,1.10} {
+        \draw[line width=0.32pt,dash pattern=on 0.7pt off 0.55pt] (0,0) circle[radius=\r];
+        \draw[line width=0.32pt,->] ({\r*cos(-20)},{\r*sin(-20)}) arc[start angle=-20,end angle=-95,radius=\r];
+      }
+      \node[anchor=north] at (0,-1.25) {（甲）};
+    \end{scope}
+    \begin{scope}[shift={(1.60,0)}]
+      \fill[black!12] (0,0) circle[radius=0.48];
+      \draw[line width=0.5pt] (0,0) circle[radius=0.48];
+      \draw[line width=0.5pt,->] (0,0) -- (-0.95,0);
+      \foreach \y in {1.00,0.70,-0.70,-1.00} {
+        \draw[line width=0.32pt,dash pattern=on 0.7pt off 0.55pt,->] (-1.60,\y) -- (1.60,\y);
+      }
+      \draw[line width=0.32pt,dash pattern=on 0.7pt off 0.55pt,->]
+        (-1.60,0.28) .. controls (-0.75,0.58) and (0.75,0.58) .. (1.60,0.28);
+      \draw[line width=0.32pt,dash pattern=on 0.7pt off 0.55pt,->]
+        (-1.60,-0.28) .. controls (-0.75,-0.58) and (0.75,-0.58) .. (1.60,-0.28);
+      \node[anchor=north] at (0,-1.25) {（乙）};
+    \end{scope}
+    \node[anchor=west] at (2.65,0) {(b)};
+    \draw[line width=0.75pt,->] (-1.60,-1.60) -- (-0.30,-2.45);
+    \draw[line width=0.75pt,->] (1.60,-1.60) -- (0.30,-2.45);
+  \end{scope}
+  % (c) upper dense, lower sparse; relative flow to the right
+  \begin{scope}[shift={(0,1.25)}]
+    \fill[black!12] (0,0) circle[radius=0.55];
+    \draw[line width=0.55pt] (0,0) circle[radius=0.55];
+    \draw[line width=0.5pt,->] (0,0) -- (-1.05,0);
+    \draw[line width=0.4pt,<-] (0.28,0.05) arc[start angle=10,end angle=-300,radius=0.28];
+    \foreach \y in {0.70,0.88,1.06,1.24,1.42} {
+      \draw[line width=0.32pt,dash pattern=on 0.7pt off 0.55pt,->]
+        (-1.90,\y) .. controls (-0.75,{\y+0.12}) and (0.75,{\y+0.12}) .. (1.90,\y);
+    }
+    \draw[line width=0.32pt,dash pattern=on 0.7pt off 0.55pt,->]
+      (-1.90,-1.05) .. controls (-0.75,-1.35) and (0.75,-1.35) .. (1.90,-1.05);
+    \draw[line width=0.32pt,dash pattern=on 0.7pt off 0.55pt,->]
+      (-1.90,-1.45) -- (1.90,-1.45);
+    \node[anchor=west] at (2.65,0) {(c)};
+    \draw[line width=0.75pt,->] (0,-1.80) -- (0,-2.50);
+  \end{scope}
+  % (d)
+  \begin{scope}[shift={(0,-1.70)}]
+    \fill[black!12] (0,0) circle[radius=0.50];
+    \draw[line width=0.55pt] (0,0) circle[radius=0.50];
+    \draw[line width=0.4pt,dash pattern=on 1.0pt off 0.7pt] (0,0) -- (1.70,0);
+    \draw[line width=0.6pt,->]
+      (0.15,0.10) .. controls (-0.40,0.45) and (-1.10,0.85) .. (-1.95,1.05);
+    \node[anchor=west] at (2.65,0) {(d)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图15·21}
 \end{figure}
 
-\emph{图 15·21}
+\emph{图15·21}
 
 \section{本章提要}
 
@@ -33052,8 +33299,47 @@ S _ {1} v _ {1} = S _ {2} v _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-1/fig-p0518-01.png}}
-\caption{(第5题)}
+% fig-alt: （第5题）：桌上纸筒两端圆纸板，轴上绕纸带自下方拉出；左手持棒水平拉带，桌面箭头向左。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % table
+  \draw[line width=0.55pt] (-3.5,-1.20) -- (3.2,-1.20) -- (3.65,-0.55) -- (-3.05,-0.55) -- cycle;
+  \draw[line width=0.4pt] (3.2,-1.20) -- (3.2,-1.50);
+  \draw[line width=0.4pt] (3.65,-0.55) -- (3.65,-0.85);
+  \draw[line width=0.4pt] (3.2,-1.50) -- (3.65,-0.85);
+  % spool
+  \begin{scope}[shift={(1.45,-0.10)}]
+    \draw[line width=0.5pt] (0.60,0.12) ellipse[x radius=0.52,y radius=0.92];
+    \fill[white] (-0.10,-0.32) -- (0.60,-0.18) -- (0.60,0.48) -- (-0.10,0.34) -- cycle;
+    \draw[line width=0.5pt] (-0.10,-0.32) -- (0.60,-0.18);
+    \draw[line width=0.5pt] (-0.10,0.34) -- (0.60,0.48);
+    \foreach \x in {0.00,0.15,0.30,0.45} {
+      \draw[line width=0.28pt] (\x,-0.28) -- (\x,0.36);
+    }
+    \draw[line width=0.55pt] (0,0) ellipse[x radius=0.58,y radius=0.98];
+    \draw[line width=0.4pt,pattern=north east lines,pattern color=black!45]
+      (0,0) ellipse[x radius=0.20,y radius=0.36];
+    \draw[line width=0.4pt] (0,0) ellipse[x radius=0.20,y radius=0.36];
+  \end{scope}
+  % paper tape exits UNDER axle, goes left to stick
+  \draw[line width=0.85pt] (1.20,-0.48) -- (-1.70,-0.55);
+  \draw[line width=0.35pt] (1.20,-0.36) -- (-1.70,-0.42);
+  % small stick
+  \draw[line width=0.75pt] (-2.25,-0.70) -- (-1.55,-0.25);
+  % hand (simplified)
+  \draw[line width=0.5pt]
+    (-2.65,-0.20) .. controls (-2.80,0.20) and (-2.60,0.55) .. (-2.30,0.42)
+    .. controls (-2.10,0.35) and (-2.00,0.10) .. (-2.05,-0.10)
+    -- (-1.85,-0.28);
+  \draw[line width=0.4pt] (-2.40,0.30) -- (-2.20,0.68);
+  \draw[line width=0.4pt] (-2.50,0.20) -- (-2.48,0.62);
+  \draw[line width=0.4pt] (-2.60,0.10) -- (-2.72,0.48);
+  \draw[line width=0.4pt] (-2.65,-0.10) .. controls (-2.90,-0.40) and (-2.75,-0.75) .. (-2.40,-0.60);
+  % arrow left on table
+  \draw[line width=0.55pt,->] (0.40,-0.98) -- (-1.35,-0.98);
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \emph{（第5题）}
@@ -33069,8 +33355,40 @@ S _ {1} v _ {1} = S _ {2} v _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-1/fig-p0519-01.png}}
-\caption{(第1题)}
+% fig-alt: （第1题）：连通器两边液面等高；右侧管内斜线矩形木块半浸浮于液面。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % U-vessel outer/inner
+  \draw[line width=0.55pt]
+    (-2.2,1.55) -- (-2.2,-1.05)
+    .. controls (-2.2,-1.45) and (-1.85,-1.55) .. (-1.55,-1.55)
+    -- (1.55,-1.55)
+    .. controls (1.85,-1.55) and (2.2,-1.45) .. (2.2,-1.05)
+    -- (2.2,1.55);
+  \draw[line width=0.55pt]
+    (-1.45,1.55) -- (-1.45,-0.85)
+    .. controls (-1.45,-1.05) and (-1.25,-1.15) .. (-1.05,-1.15)
+    -- (1.05,-1.15)
+    .. controls (1.25,-1.15) and (1.45,-1.05) .. (1.45,-0.85)
+    -- (1.45,1.55);
+  % liquid surface
+  \draw[line width=0.45pt] (-2.15,0.35) -- (-1.50,0.35);
+  \draw[line width=0.45pt] (1.50,0.35) -- (2.15,0.35);
+  % liquid dashes
+  \foreach \x/\y in {
+    -1.95/0.10,-1.70/-0.20,-1.90/-0.55,-1.65/-0.85,
+    -0.80/-1.00,-0.20/-1.25,0.40/-1.00,0.90/-1.30,
+    1.70/0.10,1.95/-0.25,1.65/-0.55,1.90/-0.85
+  } {
+    \draw[line width=0.28pt,dash pattern=on 0.7pt off 0.9pt] (\x,\y) -- ++(0.28,0);
+  }
+  % floating block in right arm
+  \fill[pattern=north east lines,pattern color=black!60]
+    (1.58,-0.05) rectangle (2.07,0.75);
+  \draw[line width=0.5pt] (1.58,-0.05) rectangle (2.07,0.75);
+\end{tikzpicture}%
+}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
@@ -33089,16 +33407,85 @@ S _ {1} v _ {1} = S _ {2} v _ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-1/fig-p0519-02.png}}
-\caption{(第5题)}
+% fig-alt: （第5题）：水面下斜置细棒，约三分之一在水面以上；上端竖直向上拉力$F$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % water surface
+  \draw[line width=0.5pt] (-2.5,0.85) -- (2.5,0.85);
+  \foreach \x/\y in {-1.9/0.55,-1.2/0.35,-0.4/0.60,0.4/0.30,1.1/0.55,1.8/0.35,-1.6/0.10,-0.2/0.05,1.0/0.15,-1.0/-0.15,0.5/-0.20} {
+    \draw[line width=0.28pt,dash pattern=on 0.7pt off 0.9pt] (\x,\y) -- ++(0.30,0);
+  }
+  % rod: ~1/3 above water (tip at y~1.55, surface 0.85, bottom ~-0.55)
+  \draw[line width=0.55pt,fill=white]
+    (-1.55,1.55) -- (-1.35,1.60) -- (1.45,-0.50) -- (1.25,-0.58) -- cycle;
+  % force F at upper end
+  \draw[line width=0.55pt,->] (-1.45,1.58) -- (-1.45,2.35);
+  \node[anchor=west] at (-1.38,2.28) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \emph{（第5题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-1/fig-p0519-03.png}}
-\caption{(第6题)}
+% fig-alt: （第6题）：液压制动示意；管$A$接油缸$B$，活塞推杠杆$CDE$；支点$D$，弹簧，制动块$G$压轮$O$（半径$R$）；入口压力$P$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % pipe A
+  \draw[line width=0.5pt] (-3.5,1.10) -- (-1.20,1.10);
+  \draw[line width=0.5pt] (-3.5,0.80) -- (-1.20,0.80);
+  \draw[line width=0.45pt] (-3.5,1.10) -- (-3.5,0.80);
+  \node[anchor=north] at (-2.5,0.75) {$A$};
+  \draw[line width=0.55pt,->] (-4.05,0.95) -- (-3.60,0.95);
+  \node[anchor=east] at (-4.10,0.95) {$P$};
+  % cylinder B
+  \draw[line width=0.5pt] (-1.20,0.80) -- (-1.20,0.55) -- (0.90,0.55);
+  \draw[line width=0.5pt] (-1.20,1.10) -- (-1.20,1.40) -- (0.90,1.40);
+  \draw[line width=0.5pt] (0.90,1.40) -- (0.90,0.55);
+  \node[anchor=south] at (-0.15,1.43) {$B$};
+  \foreach \y in {0.72,0.92,1.12,1.28} {
+    \draw[line width=0.28pt,dash pattern=on 0.6pt off 0.5pt] (-1.10,\y) -- (0.55,\y);
+  }
+  % piston + rod
+  \draw[line width=0.65pt] (0.60,1.35) -- (0.60,0.60);
+  \draw[line width=0.5pt] (0.60,0.97) -- (1.55,0.97);
+  % lever: C at top, E at bottom, D with CD=CE/6
+  \coordinate (C) at (1.55,0.97);
+  \coordinate (E) at (1.55,-1.40);
+  % CE length 2.37; CD=0.395; D y = 0.97-0.395=0.575
+  \coordinate (D) at (1.55,0.57);
+  \draw[line width=0.55pt] (C) -- (E);
+  \fill (C) circle[radius=0.04];
+  \node[anchor=west] at (1.68,0.97) {$C$};
+  \fill (D) circle[radius=0.055];
+  \node[anchor=west] at (1.72,0.57) {$D$};
+  \draw[line width=0.4pt] (1.35,0.57) -- (1.75,0.57);
+  \fill (E) circle[radius=0.04];
+  \node[anchor=west] at (1.68,-1.40) {$E$};
+  % spring between D and E
+  \draw[line width=0.45pt,decoration={zigzag,segment length=3.2pt,amplitude=1.6pt},decorate]
+    (1.55,-0.45) -- (2.90,-0.45);
+  \draw[line width=0.5pt] (2.90,-0.75) -- (2.90,-0.15);
+  \foreach \y in {-0.70,-0.55,-0.40,-0.25} {
+    \draw[line width=0.28pt] (2.90,\y) -- ++(0.18,0.12);
+  }
+  % wheel
+  \draw[line width=0.55pt] (-0.20,-1.40) circle[radius=1.08];
+  \fill (-0.20,-1.40) circle[radius=0.04];
+  \node[anchor=north east] at (-0.28,-1.45) {$O$};
+  \draw[line width=0.5pt,->] (-0.20,-1.40) -- ++(130:1.08);
+  \node[anchor=south east] at (-0.65,-0.55) {$R$};
+  % brake shoe G at E level pressing wheel
+  \draw[line width=0.5pt,fill=white]
+    (0.72,-1.65) .. controls (0.92,-1.35) and (0.92,-1.05) .. (0.72,-0.80)
+    -- (1.18,-0.80) -- (1.18,-1.65) -- cycle;
+  \node[anchor=south west] at (0.85,-0.78) {$G$};
+  \draw[line width=0.45pt] (1.18,-1.40) -- (1.55,-1.40);
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \emph{（第6题）}
