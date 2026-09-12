@@ -19144,8 +19144,33 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={转向：}]{assets/physics-3/fig-p0258-16.png}}
-\caption{转向：}
+\fitfig{%
+% fig-alt: （5）匀强磁场B水平向右；矩形线圈绕斜轴OO'（下左O、上右O'），线圈平面倾斜
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % B field
+  \foreach \y in {1.35,0.75,0.15,-0.45} {
+    \draw[line width=0.55pt,->] (-2.15,\y) -- (2.15,\y);
+  }
+  \node[anchor=west,inner sep=2pt] at (2.15,0.75) {$B$};
+  % parallelogram coil with OO' clearly slanted (BL -> TR)
+  \coordinate (P1) at (-1.05,0.95);   % top-left short side end
+  \coordinate (P2) at (-0.15,1.55);   % top-right short side end
+  \coordinate (P3) at (1.05,-0.55);   % bottom-right
+  \coordinate (P4) at (0.15,-1.15);   % bottom-left
+  \draw[line width=0.85pt] (P1) -- (P2) -- (P3) -- (P4) -- cycle;
+  % current along long sides
+  \draw[line width=0.6pt,->] ($(P4)!0.25!(P1)$) -- ($(P4)!0.72!(P1)$);
+  \draw[line width=0.6pt,->] ($(P2)!0.25!(P3)$) -- ($(P2)!0.72!(P3)$);
+  % OO' through midpoints of short sides
+  \coordinate (Mt) at ($0.5*(P1)+0.5*(P2)$);
+  \coordinate (Mb) at ($0.5*(P4)+0.5*(P3)$);
+  \draw[line width=0.55pt,dash pattern=on 2.5pt off 1.2pt on 0.6pt off 1.2pt]
+    ($(Mb)!-0.55!(Mt)$) -- ($(Mt)!-0.55!(Mb)$);
+  \node[anchor=north east,inner sep=1pt] at ($(Mb)!-0.55!(Mt)$) {$O$};
+  \node[anchor=south west,inner sep=1pt] at ($(Mt)!-0.55!(Mb)$) {$O'$};
+\end{tikzpicture}%
+}
+\caption{（5）磁场 B 向右，矩形线圈绕斜轴 \(OO'\)}
 \end{figure}
 
 \emph{转向：}
@@ -19196,8 +19221,39 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={软导线悬挂的导线 AB 绕轴转动示意图}]{assets/physics-3/fig-p0259-02.png}}
-\caption{软导线悬挂的导线 AB 绕轴转动示意图}
+\fitfig{%
+% fig-alt: 选择题（2）。顶轴AB两支点a、d；虚线为竖直原位，实线为偏转角a后的U形框abcd；底边bc长L、电流I向右
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % top axis A—B
+  \draw[line width=0.85pt] (-2.45,1.65) -- (2.45,1.65);
+  \node[anchor=east,inner sep=2pt] at (-2.45,1.65) {$A$};
+  \node[anchor=west,inner sep=2pt] at (2.45,1.65) {$B$};
+  % pivots
+  \draw[line width=0.65pt] (-1.30,1.65) -- (-1.45,1.92) -- (-1.15,1.92) -- cycle;
+  \draw[line width=0.65pt] (1.30,1.65) -- (1.15,1.92) -- (1.45,1.92) -- cycle;
+  \coordinate (a) at (-1.30,1.65);
+  \coordinate (d) at (1.30,1.65);
+  \node[anchor=south east,inner sep=1pt] at (a) {$a$};
+  \node[anchor=south west,inner sep=1pt] at (d) {$d$};
+  % dashed vertical rest
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.3pt]
+    (a) -- (-1.30,-0.95) -- (1.30,-0.95) -- (d);
+  % deflected frame (parallel arms swing left)
+  \coordinate (b) at (-2.00,-0.55);
+  \coordinate (c) at (0.60,-0.55);
+  \draw[line width=0.85pt] (a) -- (b) -- (c) -- (d);
+  \node[anchor=north east,inner sep=1pt] at (b) {$b$};
+  \node[anchor=north west,inner sep=1pt] at (c) {$c$};
+  % angle a
+  \draw[line width=0.5pt] (a) ++(0,-0.50) arc[start angle=-90,end angle=-118,radius=0.50];
+  \node[anchor=north,inner sep=0.5pt,font=\small] at (-1.62,1.00) {$a$};
+  % I and L
+  \draw[line width=0.7pt,->] (-1.40,-0.25) -- (0.10,-0.25);
+  \node[anchor=south,inner sep=1pt] at (-0.65,-0.25) {$I$};
+  \node[anchor=north,inner sep=1pt] at (-0.70,-0.55) {$L$};
+\end{tikzpicture}%
+}
+\caption{软导线悬挂导线 \(L\) 绕轴 \(AB\) 偏转角 \(a\)}
 \end{figure}
 
 （3） 上题中如果导线改用比重为原来的一半的材料做成，
@@ -19221,8 +19277,28 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={带电微粒以初速 v₀ 进入带电平行板间}]{assets/physics-3/fig-p0260-01.png}}
-\caption{带电微粒以初速 v₀ 进入带电平行板间}
+\fitfig{%
+% fig-alt: 选择题（5）。上下带电平行板（上+下−），板间匀强磁场B为×向里；左带电微粒q以初速v₀水平向右射入
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % plates
+  \draw[line width=1.2pt] (-0.15,1.35) rectangle (3.55,1.55);
+  \draw[line width=1.2pt] (-0.15,-0.15) rectangle (3.55,0.05);
+  \node[anchor=south,inner sep=1pt] at (1.70,1.55) {$+$};
+  \node[anchor=north,inner sep=1pt] at (1.70,-0.15) {$-$};
+  % B into page
+  \foreach \y in {0.30,0.70,1.10} {
+    \foreach \x in {0.25,0.85,1.45,2.05,2.65,3.25} {
+      \node[inner sep=0pt,font=\small] at (\x,\y) {$\times$};
+    }
+  }
+  % particle
+  \draw[line width=0.6pt,fill=white] (-0.85,0.70) circle[radius=0.14];
+  \node[anchor=east,inner sep=2pt] at (-1.05,0.70) {$q$};
+  \draw[line width=0.7pt,dashed,->] (-0.68,0.70) -- (0.95,0.70);
+  \node[anchor=south,inner sep=1pt] at (0.55,0.72) {$v_0$};
+\end{tikzpicture}%
+}
+\caption{带电微粒 \(q\) 以 \(v_0\) 进入平行板间（兼有 \(\times\) 向磁场）}
 \end{figure}
 
 ① 微粒的带电量。
@@ -19250,8 +19326,31 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={两根弹簧悬挂水平金属棒 AB 的装置}]{assets/physics-3/fig-p0260-03.png}}
-\caption{两根弹簧悬挂水平金属棒 AB 的装置}
+\fitfig{%
+% fig-alt: 计算题（2）。顶板下两弹簧吊水平金属棒AB；匀强磁场B为×向里
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % ceiling
+  \draw[line width=0.75pt,pattern=north east lines,pattern color=black!60]
+    (-2.10,2.35) rectangle (2.10,2.55);
+  \draw[line width=0.75pt] (-2.10,2.35) -- (2.10,2.35);
+  % springs
+  \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.38,segment length=2.5pt,amplitude=1.8pt}]
+    (-1.20,2.35) -- (-1.20,0.55);
+  \draw[line width=0.55pt,decorate,decoration={coil,aspect=0.38,segment length=2.5pt,amplitude=1.8pt}]
+    (1.20,2.35) -- (1.20,0.55);
+  % rod
+  \draw[line width=1.25pt] (-1.85,0.40) -- (1.85,0.40);
+  \node[anchor=east,inner sep=2pt] at (-1.85,0.40) {$A$};
+  \node[anchor=west,inner sep=2pt] at (1.85,0.40) {$B$};
+  % B into page
+  \foreach \y in {1.95,1.35,0.75,-0.05} {
+    \foreach \x in {-1.70,-0.85,0.00,0.85,1.70} {
+      \node[inner sep=0pt,font=\scriptsize] at (\x,\y) {$\times$};
+    }
+  }
+\end{tikzpicture}%
+}
+\caption{两弹簧悬挂金属棒 \(AB\)（磁场 \(\times\) 向里）}
 \end{figure}
 
 棒中，通入0.2安培的电流，方向自A向B，金属棒下降1厘米。若电流仍为0.2安培，但方向自B向A，这时金属棒下降多少？（设金属棒始终处于水平状态，弹簧伸长在弹性限度内）。
@@ -19265,8 +19364,16 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第261页题图}]{assets/physics-3/fig-p0261-01.png}}
-\caption{原PDF第261页题图}
+\fitfig{%
+% fig-alt: 计算题（3）。上下两平行水平导体，上标a、下标b
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=1.35pt] (-2.40,0.95) rectangle (2.40,1.20);
+  \node[anchor=south,inner sep=2pt] at (0,1.20) {$a$};
+  \draw[line width=1.35pt] (-2.40,-0.15) rectangle (2.40,0.10);
+  \node[anchor=south,inner sep=2pt] at (0,0.10) {$b$};
+\end{tikzpicture}%
+}
+\caption{平行导体 \(a\)、\(b\)（判断电源在左端或右端）}
 \end{figure}
 
 \begin{enumerate}
@@ -19280,8 +19387,21 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第261页题图}]{assets/physics-3/fig-p0261-02.png}}
-\caption{原PDF第261页题图}
+\fitfig{%
+% fig-alt: 计算题（4）。电子e自A以v₀竖直向上射入，沿上半圆周至B；AB为直径
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-2.20,0) -- (2.20,0);
+  \draw[line width=0.85pt] (-2.20,0) arc[start angle=180,end angle=0,radius=2.20];
+  \fill (-2.20,0) circle[radius=0.045];
+  \fill (2.20,0) circle[radius=0.045];
+  \node[anchor=north,inner sep=3pt] at (-2.20,0) {$A$};
+  \node[anchor=north,inner sep=3pt] at (2.20,0) {$B$};
+  \draw[line width=0.7pt,->] (-2.20,0.08) -- (-2.20,1.20);
+  \node[anchor=east,inner sep=2pt] at (-2.20,1.05) {$v_0$};
+  \node[anchor=east,inner sep=2pt] at (-2.55,0.35) {$e$};
+\end{tikzpicture}%
+}
+\caption{电子自 \(A\) 沿半圆周至 \(B\)}
 \end{figure}
 
 \chapter{第4章 电磁感应}
@@ -19308,8 +19428,45 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.1 获得感生电流的实验(一)}]{assets/physics-3/fig-p0263-02.png}}
-\caption{图 4.1 获得感生电流的实验(一)}
+\fitfig{%
+% fig-alt: 图4.1(b) 获得感生电流的实验(一)。条形磁铁停在螺线管内；螺线管经导线接灵敏电流表，指针在零点
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % galvanometer (left)
+  \draw[line width=0.75pt] (-3.55,-0.15) rectangle (-1.55,2.55);
+  \draw[line width=0.55pt] (-3.35,0.95) -- (-1.75,0.95);
+  % dial arc
+  \draw[line width=0.55pt] (-3.15,2.15) arc[start angle=150,end angle=30,radius=1.05];
+  \foreach \ang in {150,120,90,60,30} {
+    \draw[line width=0.4pt] ({-2.55+1.05*cos(\ang)},{1.35+1.05*sin(\ang)})
+      -- ({-2.55+0.88*cos(\ang)},{1.35+0.88*sin(\ang)});
+  }
+  % needle at zero (up)
+  \draw[line width=0.65pt] (-2.55,1.35) -- (-2.55,2.25);
+  \fill (-2.55,1.35) circle[radius=0.05];
+  % terminals
+  \draw[line width=0.55pt] (-3.05,0.35) circle[radius=0.12];
+  \draw[line width=0.55pt] (-2.05,0.35) circle[radius=0.12];
+  \node[anchor=north,inner sep=1pt,font=\scriptsize] at (-3.05,0.20) {$-$};
+  \node[anchor=north,inner sep=1pt,font=\scriptsize] at (-2.05,0.20) {$+$};
+  \node[anchor=north,inner sep=2pt] at (-2.55,-0.15) {(b)};
+  % leads to solenoid
+  \draw[line width=0.65pt] (-3.05,0.35) -- (-3.05,-0.55) -- (0.55,-0.55) -- (0.55,0.15);
+  \draw[line width=0.65pt] (-2.05,0.35) -- (-2.05,-0.85) -- (1.45,-0.85) -- (1.45,0.15);
+  % solenoid (vertical cylinder)
+  \draw[line width=0.75pt] (0.35,0.15) -- (0.35,2.05) -- (1.65,2.05) -- (1.65,0.15) -- cycle;
+  \foreach \y in {0.35,0.55,0.75,0.95,1.15,1.35,1.55,1.75,1.95} {
+    \draw[line width=0.4pt] (0.35,\y) -- (1.65,\y);
+  }
+  % ellipse top opening
+  \draw[line width=0.65pt] (0.35,2.05) .. controls (0.70,2.28) and (1.30,2.28) .. (1.65,2.05);
+  \draw[line width=0.45pt,dashed] (0.35,2.05) .. controls (0.70,1.85) and (1.30,1.85) .. (1.65,2.05);
+  % bar magnet at rest inside (no motion arrow)
+  \draw[line width=0.7pt,fill=black!12] (0.70,1.55) rectangle (1.30,2.85);
+  \node[font=\small] at (1.00,2.55) {$N$};
+  \node[font=\small] at (1.00,1.85) {$S$};
+\end{tikzpicture}%
+}
+\caption{图 4.1(b) 磁铁停止，电流表指针回零}
 \end{figure}
 
 \emph{图 4.1 获得感生电流的实验（一）}
@@ -19346,7 +19503,42 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.3 导体作切割磁力线运动的实验}]{assets/physics-3/fig-p0264-01.png}}
+\fitfig{%
+% fig-alt: 图4.3 导体作切割磁力线运动的实验。蹄形磁铁开口向上左N右S；可动直导体AB跨于两极上方，经导线接电流表G
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % horseshoe magnet
+  \draw[line width=1.05pt]
+    (-1.35,1.45) -- (-1.35,-0.45)
+    arc[start angle=180,end angle=360,radius=1.35]
+    -- (1.35,1.45);
+  \draw[line width=1.05pt]
+    (-0.55,1.45) -- (-0.55,-0.45)
+    arc[start angle=180,end angle=360,radius=0.55]
+    -- (0.55,1.45);
+  \draw[line width=1.05pt] (-1.35,1.45) -- (-0.55,1.45);
+  \draw[line width=1.05pt] (0.55,1.45) -- (1.35,1.45);
+  \node at (-0.95,0.75) {$N$};
+  \node at (0.95,0.75) {$S$};
+  % AB
+  \draw[line width=1.2pt] (-1.75,1.85) -- (1.75,1.85);
+  \node[anchor=east,inner sep=2pt] at (-1.75,1.85) {$A$};
+  \node[anchor=west,inner sep=2pt] at (1.75,1.85) {$B$};
+  % flexible leads
+  \draw[line width=0.6pt] (-1.75,1.85)
+    .. controls (-2.15,2.35) and (-2.45,2.55) .. (-2.55,2.15);
+  \draw[line width=0.6pt] (1.75,1.85)
+    .. controls (2.15,2.35) and (2.65,2.45) .. (2.75,1.85);
+  % G
+  \draw[line width=0.75pt] (2.75,0.55) circle[radius=0.85];
+  \draw[line width=0.5pt] (2.75,0.55) ++(125:0.62) arc[start angle=125,end angle=55,radius=0.62];
+  \draw[line width=0.6pt] (2.75,0.55) -- ++(90:0.68);
+  \fill (2.75,0.55) circle[radius=0.04];
+  \node[anchor=north,inner sep=2pt] at (2.75,-0.25) {$G$};
+  % close circuit
+  \draw[line width=0.6pt] (2.75,1.40) -- (2.75,1.85);
+  \draw[line width=0.6pt] (2.75,-0.30) -- (2.75,-0.95) -- (-2.55,-0.95) -- (-2.55,2.15);
+\end{tikzpicture}%
+}
 \caption{图 4.3 导体作切割磁力线运动的实验}
 \end{figure}
 
