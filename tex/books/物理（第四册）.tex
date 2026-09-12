@@ -2750,7 +2750,48 @@ BD，这一束光射入眼里，看上去就好象它们是从镜里 \(S'\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.3}]{assets/physics-4/fig-p0052-01.png}}
+% fig-alt: 电学仪表镜面读数：弧形刻度板两端圆头，左右内缘斜线为镜条，中视线垂直重合为正确，左右斜视为错误
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 底弧（圆心在上，两端抬起）
+  \draw[line width=0.7pt] (3.50,8.20) ++(-120:7.55) arc (-120:-60:7.55);
+  % 左圆头
+  \draw[line width=0.7pt] (0.22,1.38)
+    .. controls (-0.02,1.52) and (0.05,1.85) .. (0.52,1.90)
+    .. controls (0.95,1.92) and (1.22,1.68) .. (1.42,1.50);
+  % 右圆头
+  \draw[line width=0.7pt] (6.78,1.38)
+    .. controls (7.02,1.52) and (6.95,1.85) .. (6.48,1.90)
+    .. controls (6.05,1.92) and (5.78,1.68) .. (5.58,1.50);
+  % 中段上沿
+  \draw[line width=0.6pt] (1.42,1.50) -- (5.58,1.50);
+  % 左肩镜条
+  \begin{scope}
+    \clip (0.70,1.58) -- (2.10,1.50) -- (1.90,1.08)
+      .. controls (1.35,0.95) and (0.80,1.12) .. (0.62,1.30) -- cycle;
+    \foreach \s in {0,0.07,...,1.8}
+      \draw[line width=0.4pt] ({0.50+\s},1.65) -- ({0.20+\s},0.90);
+  \end{scope}
+  \draw[line width=0.5pt] (0.68,1.52) -- (2.00,1.12);
+  % 右肩镜条
+  \begin{scope}
+    \clip (4.90,1.50) -- (6.30,1.58) -- (6.38,1.30)
+      .. controls (6.20,1.12) and (5.65,0.95) .. (5.10,1.08) -- cycle;
+    \foreach \s in {0,0.07,...,1.8}
+      \draw[line width=0.4pt] ({4.80+\s},1.65) -- ({4.50+\s},0.90);
+  \end{scope}
+  \draw[line width=0.5pt] (5.00,1.12) -- (6.32,1.52);
+  % 三视线
+  \draw[line width=0.6pt] (2.00,2.65) -- (1.00,0.20);
+  \draw[line width=0.7pt] (3.50,2.80) -- (3.50,0.72);
+  \draw[line width=0.55pt] (3.50,0.52) -- (3.50,0.14);
+  \draw[line width=0.6pt] (5.00,2.65) -- (6.00,0.20);
+  \node[font=\small] at (0.20,-0.12) {错误};
+  \node[font=\small] at (3.50,-0.20) {正确};
+  \node[font=\small] at (6.80,-0.12) {错误};
+\end{tikzpicture}%
+}
+
 \caption{图3.3}
 \end{figure}
 
@@ -3157,7 +3198,57 @@ f = \frac {R}{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.12}]{assets/physics-4/fig-p0058-02.png}}
+% fig-alt: 汽车左侧凸面观后镜：圆镜中见人影，楔形支架连车门小镜，驾驶室有方向盘与三只仪表
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 凸镜
+  \fill[black] (2.85,4.55) -- (4.05,4.12) -- (2.88,3.68) -- cycle;
+  \fill[white] (1.40,4.15) circle (1.48);
+  \draw[line width=1.25pt] (1.40,4.15) circle (1.48);
+  \draw[line width=0.55pt, rounded corners=3.0pt] (0.52,3.15) rectangle (2.28,5.15);
+  \draw[line width=0.5pt] (1.10,4.48) .. controls (0.98,4.68) and (1.18,4.92) .. (1.38,4.72)
+    .. controls (1.45,4.55) and (1.25,4.38) .. (1.10,4.48);
+  \draw[line width=0.5pt] (1.20,4.40) -- (1.88,4.88) -- (1.95,4.48);
+  \fill (1.15,3.52) .. controls (0.98,3.90) and (1.08,4.28) .. (1.25,4.40)
+    .. controls (1.45,4.30) and (1.58,3.88) .. (1.48,3.48)
+    .. controls (1.38,3.38) and (1.22,3.38) .. (1.15,3.52);
+  \fill (4.12,4.12) circle (0.10);
+  \draw[line width=0.6pt, rounded corners=2.0pt] (4.32,3.68) rectangle (5.05,4.52);
+  \draw[line width=0.4pt] (4.68,4.18) .. controls (4.56,4.04) and (4.62,3.85) .. (4.78,3.82);
+  % A柱
+  \draw[line width=1.05pt] (5.42,0.25) .. controls (5.35,1.60) and (5.32,3.10) .. (5.42,5.55)
+    .. controls (5.50,6.20) and (5.72,6.65) .. (6.10,6.82);
+  \draw[line width=0.7pt] (6.10,6.82) -- (6.10,4.85);
+  % 车顶
+  \draw[line width=0.7pt] (6.10,6.82) -- (6.22,7.05) -- (9.55,6.92) -- (9.75,6.92) -- (9.75,6.72);
+  % 引擎盖
+  \draw[line width=0.65pt] (5.70,4.85) .. controls (6.20,5.35) and (6.95,5.52) .. (7.85,5.38)
+    -- (9.45,5.32);
+  % 仪表台
+  \fill[white] (5.70,2.55) -- (5.70,3.92) -- (9.65,3.92) -- (9.65,2.68)
+    .. controls (9.00,2.42) and (7.10,2.35) .. (5.90,2.52) -- cycle;
+  \draw[line width=0.65pt] (5.70,2.55) -- (5.70,3.92) -- (9.65,3.92) -- (9.65,2.68)
+    .. controls (9.00,2.42) and (7.10,2.35) .. (5.90,2.52) -- cycle;
+  \draw[line width=0.55pt] (6.72,3.35) circle (0.30);
+  \draw[line width=0.5pt] (7.58,3.38) circle (0.24);
+  \draw[line width=0.5pt] (8.38,3.38) circle (0.24);
+  \draw[line width=0.4pt] (6.72,3.35) -- ++(0.16,0.10);
+  \draw[line width=0.32pt] (7.58,3.38) -- ++(0.12,0.07);
+  \draw[line width=0.32pt] (8.38,3.38) -- ++(0.12,0.04);
+  \draw[line width=0.55pt] (6.12,2.52) -- (6.12,1.85);
+  \fill (6.12,1.72) circle (0.09);
+  \draw[line width=0.55pt] (6.55,2.52) -- (6.55,1.48);
+  \draw[line width=0.5pt] (6.35,1.48) -- (6.75,1.48);
+  \draw[line width=0.55pt] (8.55,2.48) -- (8.55,1.95) .. controls (8.85,1.82) and (9.15,1.78) .. (9.35,1.88);
+  % 方向盘：大、偏低、下开口
+  \draw[line width=1.2pt] (7.55,2.15) ++(-62:1.72) arc (-62:242:1.72);
+  \draw[line width=0.7pt] (7.55,2.15) ++(-62:1.72) .. controls (9.15,0.48) and (9.35,0.28) .. (8.75,0.18);
+  % 门把手
+  \draw[line width=0.55pt] (5.08,2.45) -- (5.08,2.05);
+  \draw[line width=0.55pt] (4.88,1.48) -- (5.08,1.48);
+\end{tikzpicture}%
+}
+
 \caption{图3.12}
 \end{figure}
 
@@ -3708,7 +3799,18 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0066-01.png}}
+% fig-alt: 习题附图(a)：竖立平面镜（双线）与水平线，发光点A在镜右上方，两条入射光线分别射向镜面中部与下部
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.55pt] (-2.25,0) -- (5.55,0);
+  \draw[line width=0.7pt] (0.00,-1.12) -- (0.00,1.12);
+  \draw[line width=0.7pt] (0.09,-1.12) -- (0.09,1.12);
+  \draw[line width=0.55pt] (2.55,0.22) -- (0.09,0.00);
+  \draw[line width=0.55pt] (2.55,0.22) -- (0.09,-0.95);
+  \node[above right=-1pt] at (2.58,0.22) {$A$};
+\end{tikzpicture}%
+}
+
 \caption{（a）}
 \end{figure}
 
@@ -3716,7 +3818,26 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（b）}]{assets/physics-4/fig-p0066-02.png}}
+% fig-alt: 习题附图(b)：凹镜，主轴标O、F、C，轴上发光点A在C外，一条入射光线射向镜面上部
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (3.20,0);
+  \coordinate (O) at (0.00,0);
+  \coordinate (F) at (1.60,0);
+  \coordinate (A) at (5.05,0);
+  \draw[line width=0.55pt] (-1.85,0) -- (6.35,0);
+  \draw[line width=2.35pt] (C) ++(148:3.20) arc (148:212:3.20);
+  \draw[line width=0.55pt] (A) -- (0.22,0.92);
+  \fill (F) circle (0.045);
+  \fill (C) circle (0.045);
+  \fill (A) circle (0.028);
+  \node[below=2pt] at (0.12,-0.02) {$O$};
+  \node[below=2pt] at (1.60,-0.02) {$F$};
+  \node[below=2pt] at (3.20,-0.02) {$C$};
+  \node[below=2pt] at (5.05,-0.02) {$A$};
+\end{tikzpicture}%
+}
+
 \caption{（b）}
 \end{figure}
 
@@ -3724,7 +3845,26 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（c）}]{assets/physics-4/fig-p0066-03.png}}
+% fig-alt: 习题附图(c)：凹镜，物体立于F与C之间，已画平行主轴及射向顶点O的两条入射光线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (3.25,0);
+  \coordinate (O) at (0.00,0);
+  \coordinate (F) at (1.62,0);
+  \coordinate (Obj) at (2.48,0);
+  \draw[line width=0.55pt] (-1.85,0) -- (6.25,0);
+  \draw[line width=2.35pt] (C) ++(148:3.25) arc (148:212:3.25);
+  \draw[line width=0.6pt] (2.48,0) -- (2.48,0.88);
+  \draw[line width=0.55pt] (2.48,0.88) -- (0.18,0.88);
+  \draw[line width=0.55pt] (2.48,0.88) -- (0.00,0);
+  \fill (F) circle (0.045);
+  \fill (C) circle (0.045);
+  \node[below=2pt] at (0.12,-0.02) {$O$};
+  \node[below=2pt] at (1.62,-0.02) {$F$};
+  \node[below=2pt] at (3.25,-0.02) {$C$};
+\end{tikzpicture}%
+}
+
 \caption{（c）}
 \end{figure}
 
@@ -3732,7 +3872,25 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（d）}]{assets/physics-4/fig-p0066-04.png}}
+% fig-alt: 习题附图(d)：凹镜，轴上发光点A在O与F之间，一条入射光线射向镜面上部
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (3.20,0);
+  \coordinate (O) at (0.00,0);
+  \coordinate (F) at (1.60,0);
+  \coordinate (A) at (0.78,0);
+  \draw[line width=0.55pt] (-1.85,0) -- (6.25,0);
+  \draw[line width=2.35pt] (C) ++(148:3.20) arc (148:212:3.20);
+  \draw[line width=0.55pt] (A) -- (0.12,0.62);
+  \fill (F) circle (0.045);
+  \fill (C) circle (0.045);
+  \node[below=2pt] at (0.12,-0.02) {$O$};
+  \node[below=2pt] at (0.78,-0.02) {$A$};
+  \node[below=2pt] at (1.60,-0.02) {$F$};
+  \node[below=2pt] at (3.20,-0.02) {$C$};
+\end{tikzpicture}%
+}
+
 \caption{（d）}
 \end{figure}
 
@@ -3740,7 +3898,25 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（e）}]{assets/physics-4/fig-p0067-01.png}}
+% fig-alt: 习题附图(e)：凸镜，镜后标C、F，顶点O，轴上发光点A在镜前，一条入射光线射向镜面上部
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (0.00,0);
+  \coordinate (F) at (1.45,0);
+  \coordinate (O) at (2.90,0);
+  \coordinate (A) at (6.15,0);
+  \draw[line width=0.55pt] (-0.55,0) -- (7.15,0);
+  \draw[line width=2.35pt] (C) ++(32:2.90) arc (32:-32:2.90);
+  \draw[line width=0.55pt] (A) -- (2.78,0.78);
+  \fill (C) circle (0.045);
+  \fill (F) circle (0.045);
+  \node[below=2pt] at (0.00,-0.02) {$C$};
+  \node[below=2pt] at (1.45,-0.02) {$F$};
+  \node[below=2pt] at (3.02,-0.02) {$O$};
+  \node[below=2pt] at (6.15,-0.02) {$A$};
+\end{tikzpicture}%
+}
+
 \caption{（e）}
 \end{figure}
 
@@ -3754,7 +3930,26 @@ f = - \frac {R}{2} = \frac {- 60}{2} = - 30 \text{厘米}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（a）}]{assets/physics-4/fig-p0067-02.png}}
+% fig-alt: 习题附图(a)：凹镜，物体在C外，已画射向镜面上部及过球心C的两条入射光线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (3.35,0);
+  \coordinate (O) at (0.00,0);
+  \coordinate (F) at (1.68,0);
+  \draw[line width=0.55pt] (-1.65,0) -- (6.95,0);
+  \draw[line width=2.35pt] (C) ++(148:3.35) arc (148:212:3.35);
+  \draw[line width=0.6pt] (6.45,0) -- (6.45,0.82);
+  \draw[line width=0.55pt] (6.45,0.82) -- (0.15,0.72);
+  \draw[line width=0.55pt] (6.45,0.82) -- (C);
+  \draw[line width=0.55pt] (C) -- (0.22,-0.82);
+  \fill (F) circle (0.045);
+  \fill (C) circle (0.045);
+  \node[above right=0pt] at (0.22,0.06) {$O$};
+  \node[above=2pt] at (1.68,0.04) {$F$};
+  \node[below=2pt] at (3.35,-0.02) {$C$};
+\end{tikzpicture}%
+}
+
 \caption{（a）}
 \end{figure}
 
