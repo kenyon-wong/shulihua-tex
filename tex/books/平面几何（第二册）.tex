@@ -16735,7 +16735,28 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-2/fig-p0186-06.png}}
+\fitfig{%
+% fig-alt: （2）△ABC高AD⊥BC于D（直角方）；虚线矩形以BC为底、高为AD之半，示同底半高等积
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (3.60,0);
+  \coordinate (D) at (1.10,0);
+  \coordinate (A) at (1.10,2.20);
+  \coordinate (Bh) at (0,1.10);
+  \coordinate (Ch) at (3.60,1.10);
+  % dashed half-height rectangle
+  \draw[dashed,line width=0.6pt] (B) -- (Bh) -- (Ch) -- (C);
+  % triangle + altitude
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (D);
+  % right angle at D
+  \draw[line width=0.55pt] (D) -- ++(0.18,0) -- ++(0,0.18) -- ++(-0.18,0);
+  \node[anchor=south,inner sep=2pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=2pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -16745,13 +16766,54 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第186页）}]{assets/plane-geometry-2/fig-p0186-07.png}}
-\caption{图示（原PDF第186页）}
+\fitfig{%
+% fig-alt: △ABC高AD⊥BC于D；虚线矩形以BC之半为底、高与AD相同，示同高半底等积
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (3.60,0);
+  \coordinate (D) at (1.10,0);
+  \coordinate (A) at (1.10,2.20);
+  \coordinate (M) at (1.80,0);
+  \coordinate (Mh) at (1.80,2.20);
+  \coordinate (Bh) at (0,2.20);
+  % dashed half-base full-height rectangle
+  \draw[dashed,line width=0.6pt] (B) -- (Bh) -- (Mh) -- (M);
+  % triangle + altitude
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (D);
+  % right angle at D
+  \draw[line width=0.55pt] (D) -- ++(0.18,0) -- ++(0,0.18) -- ++(-0.18,0);
+  \node[anchor=south,inner sep=2pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=2pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{同高半底}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/plane-geometry-2/fig-p0186-08.png}}
+\fitfig{%
+% fig-alt: （3）△ABC高AD⊥BC于D；虚线平行四边形以BC为底、过A为顶（A向右虚线、C向右上虚线∥AB），示同底同高平行四边形一半等积
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (3.20,0);
+  \coordinate (D) at (1.00,0);
+  \coordinate (A) at (1.00,2.10);
+  % fourth vertex E = A + (C-B) = (3.20+1.00, 2.10) wait A+(C-B)=(1+3.2,2.1)=(4.2,2.1)
+  \coordinate (E) at (4.20,2.10);
+  % dashed parallelogram free sides
+  \draw[dashed,line width=0.6pt] (A) -- (E) -- (C);
+  % triangle + altitude
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (D);
+  \node[anchor=south,inner sep=2pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=2pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -16761,7 +16823,28 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/plane-geometry-2/fig-p0186-09.png}}
+\fitfig{%
+% fig-alt: （4）△ABC高AD⊥BC于D；虚线平行四边形以BC为底、高为AD之半（中线虚线并向右延，C向右上虚线），示同底半高等积
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (3.20,0);
+  \coordinate (D) at (0.85,0);
+  \coordinate (A) at (0.85,2.20);
+  \coordinate (P) at (0.425,1.10); % mid AB
+  \coordinate (Q) at (2.025,1.10); % mid AC
+  % fourth at half height: C + 0.5*(A-B) = (3.2,0)+(0.425,1.1)=(3.625,1.1)
+  \coordinate (E) at (3.625,1.10);
+  % dashed half-height parallelogram: midline through triangle extended + CE
+  \draw[dashed,line width=0.6pt] (P) -- (E) -- (C);
+  % triangle + altitude
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (D);
+  \node[anchor=south,inner sep=2pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=2pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(4)}
 \end{figure}
 
@@ -16771,7 +16854,24 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/plane-geometry-2/fig-p0186-10.png}}
+\fitfig{%
+% fig-alt: （第9题）△ABC高AD⊥BC于D；虚线平行四边形以BC之半BM为底、高与AD相同（A向右虚线至E、E至M虚线），示同高半底等积
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (3.20,0);
+  \coordinate (D) at (1.00,0);
+  \coordinate (A) at (1.00,2.10);
+  \coordinate (M) at (1.60,0);
+  \coordinate (E) at (2.60,2.10);
+  \draw[dashed,line width=0.6pt] (A) -- (E) -- (M);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (D);
+  \node[anchor=south,inner sep=2pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=2pt] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -16786,8 +16886,45 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-6}]{assets/plane-geometry-2/fig-p0187-01.png}}
-\caption{图3-6}
+\fitfig{%
+% fig-alt: 图3·6：左□ABCD底AB、高DD'落在AB上；右更斜□ABCD底AB虚延，高DD'虚线落在AB延长线上于D'
+\begin{tikzpicture}[line cap=round,line join=round]
+  % left parallelogram: D' on AB
+  \begin{scope}
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (2.80,0);
+    \coordinate (Dp) at (0.85,0);
+    \coordinate (D) at (0.85,1.70);
+    \coordinate (C) at (3.65,1.70);
+    \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+    \draw[line width=0.75pt] (D) -- (Dp);
+    \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+    \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+    \node[anchor=south,inner sep=1pt] at (D) {$D$};
+    \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+    \node[anchor=north,inner sep=1pt] at (Dp) {$D'$};
+  \end{scope}
+  % right parallelogram: D' on extension beyond B (more slanted)
+  \begin{scope}[shift={(4.30,0)}]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (1.60,0);
+    \coordinate (D) at (2.40,1.70);
+    \coordinate (C) at (4.00,1.70);
+    \coordinate (Dp) at (2.40,0);
+    % solid parallelogram
+    \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+    % dashed base extension B--D' and height DD'
+    \draw[dashed,line width=0.6pt] (B) -- (Dp);
+    \draw[dashed,line width=0.6pt] (D) -- (Dp);
+    \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+    \node[anchor=north,inner sep=1pt] at (B) {$B$};
+    \node[anchor=south,inner sep=1pt] at (D) {$D$};
+    \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+    \node[anchor=north west,inner sep=1pt] at (Dp) {$D'$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图3·6}
 \end{figure}
 
 \begin{quote}
@@ -16808,8 +16945,31 @@ cm²。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-7}]{assets/plane-geometry-2/fig-p0187-02.png}}
-\caption{图3-7}
+\fitfig{%
+% fig-alt: 图3·7：□ABCD底AB、高DD'（虚）落在AB上；过C作CE'⊥AB（虚）于E'（AB延长线上）；BE'虚延；矩形D'E'CD
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\b{2.80}
+  \def\s{0.95}
+  \def\h{1.85}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (\b,0);
+  \coordinate (D) at (\s,\h);
+  \coordinate (C) at (\b+\s,\h);
+  \coordinate (Dp) at (\s,0);
+  \coordinate (Ep) at (\b+\s,0);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed,line width=0.6pt] (D) -- (Dp);
+  \draw[dashed,line width=0.6pt] (C) -- (Ep);
+  \draw[dashed,line width=0.6pt] (B) -- (Ep);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (Dp) {$D'$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (Ep) {$E'$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+\caption{图3·7}
 \end{figure}
 
 \begin{quote}
@@ -16873,7 +17033,36 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·8}]{assets/plane-geometry-2/fig-p0188-01.png}}
+\fitfig{%
+% fig-alt: 图3·8：□ABCD底AB，高DD'垂足D'在AB延长线上（B之外）；CC'⊥AB于C'；E为BC与DD'交点；矩形D'C'CD
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\b{2.20}
+  \def\s{1.50}
+  \def\h{2.50}
+  % heavily slanted right: D to the right of B
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (\b,0);
+  \coordinate (D) at (\b+\s,\h);
+  \coordinate (C) at (2*\b+\s,\h);
+  \coordinate (Dp) at (\b+\s,0);
+  \coordinate (Cp) at (2*\b+\s,0);
+  % E = BC ∩ DD'; BC: B(\b,0)--C(2b+s,h); DD': x=b+s
+  % param (b,0)+t*(b+s,h); x=b+t(b+s)=b+s => t(b+s)=s => t=s/(b+s)
+  % y=t*h = h*s/(b+s)
+  \coordinate (E) at (\b+\s, {\h*\s/(\b+\s)});
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (D) -- (Dp);
+  \draw[line width=0.75pt] (C) -- (Cp);
+  \draw[line width=0.75pt] (B) -- (Dp);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north,inner sep=1pt] at (Dp) {$D'$};
+  \node[anchor=north west,inner sep=1pt] at (Cp) {$C'$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=west,inner sep=2pt] at (E) {$E$};
+\end{tikzpicture}%
+}
 \caption{图3·8}
 \end{figure}
 
