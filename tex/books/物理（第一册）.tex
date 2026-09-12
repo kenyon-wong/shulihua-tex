@@ -17579,7 +17579,65 @@ x = \frac {l}{8}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-47}]{assets/physics-1/fig-p0293-03.png}}
+% fig-alt: 图9-47：三只高长方体立于板台上。(a)直立，C下小圈，粗线向下标G，线落在支面内。(b)略向右倾，支点O，重力线仍靠近O，板下标l1。(c)再倾，C在正面，重力线在O右侧穿板，板下标l2。右侧涂黑，顶面点影。图内写(a)(b)(c)。板台右端立体，下有两脚。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.7pt] (0.08,1.62) -- (7.15,1.62);
+  \draw[line width=0.7pt] (0.08,1.26) -- (7.15,1.26);
+  \draw[line width=0.7pt] (7.15,1.62) -- (7.48,1.84) -- (7.48,1.48) -- (7.15,1.26);
+  \draw[line width=0.6pt] (6.32,1.26) -- (6.32,0.68);
+  \draw[line width=0.6pt] (6.82,1.26) -- (6.82,0.68);
+  \draw[fill=white,line width=0.72pt] (0.40,1.62) -- (0.96,1.62) -- (0.96,3.50) -- (0.40,3.50) -- cycle;
+  \draw[line width=0.6pt] (0.40,3.50) -- (0.58,3.66) -- (1.14,3.66) -- (0.96,3.50);
+  \draw[fill=black!82,line width=0.4pt] (0.96,1.62) -- (1.14,1.78) -- (1.14,3.66) -- (0.96,3.50) -- cycle;
+  \begin{scope}
+    \clip (0.40,3.50) -- (0.58,3.66) -- (1.14,3.66) -- (0.96,3.50) -- cycle;
+    \foreach \i in {0,1,...,7}
+      \foreach \j in {0,1,2}
+        \fill (0.44+0.09*\i,3.52+0.055*\j) circle[radius=0.011];
+  \end{scope}
+  \draw (0.68,2.70) circle[radius=0.045];
+  \draw[line width=0.85pt] (0.68,2.65) -- (0.68,1.64);
+  \node[anchor=south] at (0.68,2.76) {$C$};
+  \node[anchor=east] at (0.60,1.88) {$G$};
+  \node at (0.68,3.88) {$(a)$};
+  \draw[fill=white,line width=0.72pt] (2.46,1.62) -- (3.00,1.70) -- (3.28,3.50) -- (2.74,3.42) -- cycle;
+  \draw[line width=0.6pt] (2.74,3.42) -- (2.92,3.58) -- (3.46,3.66) -- (3.28,3.50);
+  \draw[fill=black!82,line width=0.4pt] (3.00,1.70) -- (3.18,1.86) -- (3.46,3.66) -- (3.28,3.50) -- cycle;
+  \begin{scope}
+    \clip (2.74,3.42) -- (2.92,3.58) -- (3.46,3.66) -- (3.28,3.50) -- cycle;
+    \foreach \i in {0,1,...,7}
+      \foreach \j in {0,1,2}
+        \fill (2.76+0.09*\i,3.44+0.07*\j) circle[radius=0.011];
+  \end{scope}
+  \draw (2.68,2.68) circle[radius=0.045];
+  \draw[line width=0.85pt] (2.68,2.63) -- (2.68,0.58);
+  \node[anchor=south] at (2.68,2.74) {$C$};
+  \node[anchor=east] at (2.56,2.15) {$G$};
+  \node[anchor=north west] at (2.50,1.60) {$O$};
+  \draw[line width=0.4pt,<->] (2.46,0.46) -- (2.90,0.46);
+  \node[anchor=north] at (2.68,0.42) {$l_{1}$};
+  \node at (2.92,3.84) {$(b)$};
+  \draw[fill=white,line width=0.72pt] (4.58,1.70) -- (5.22,1.62) -- (5.92,3.38) -- (5.28,3.46) -- cycle;
+  \draw[line width=0.6pt] (5.28,3.46) -- (5.46,3.62) -- (6.10,3.54) -- (5.92,3.38);
+  \draw[fill=black!82,line width=0.4pt] (5.22,1.62) -- (5.40,1.78) -- (6.10,3.54) -- (5.92,3.38) -- cycle;
+  \begin{scope}
+    \clip (5.28,3.46) -- (5.46,3.62) -- (6.10,3.54) -- (5.92,3.38) -- cycle;
+    \foreach \i in {0,1,...,7}
+      \foreach \j in {0,1,2}
+        \fill (5.30+0.09*\i,3.40+0.07*\j) circle[radius=0.011];
+  \end{scope}
+  \draw (5.18,2.62) circle[radius=0.042];
+  \draw[line width=0.85pt] (5.18,2.57) -- (5.18,0.58);
+  \node[anchor=south] at (5.12,2.68) {$C$};
+  \node[anchor=east] at (5.08,2.12) {$G$};
+  \node[anchor=east] at (4.68,1.58) {$O$};
+  \draw[line width=0.4pt] (4.72,1.62) -- (4.72,0.58);
+  \draw[line width=0.4pt,<->] (4.58,0.46) -- (5.32,0.46);
+  \node[anchor=north] at (4.95,0.42) {$l_{2}$};
+  \node at (5.55,3.80) {$(c)$};
+\end{tikzpicture}%
+}
 \caption{图9-47}
 \end{figure}
 
@@ -17593,7 +17651,65 @@ x = \frac {l}{8}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-48}]{assets/physics-1/fig-p0294-01.png}}
+% fig-alt: 图9-48：长方体原平放。(a)横放，C下小圈，短线向下标G。(b)绕右下支点O抬起约40°，C与G在体内，重力线在O左侧，板下标l1。(c)近乎直立，重力线靠近O，板下标l2。右侧涂黑，顶面点影。图内写(a)(b)(c)。板台右端立体，下有两脚。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.7pt] (0.06,1.62) -- (7.40,1.62);
+  \draw[line width=0.7pt] (0.06,1.26) -- (7.40,1.26);
+  \draw[line width=0.7pt] (7.40,1.62) -- (7.72,1.84) -- (7.72,1.48) -- (7.40,1.26);
+  \draw[line width=0.6pt] (6.58,1.26) -- (6.58,0.68);
+  \draw[line width=0.6pt] (7.05,1.26) -- (7.05,0.68);
+  \draw[fill=white,line width=0.72pt] (0.26,1.62) -- (1.90,1.62) -- (1.90,2.12) -- (0.26,2.12) -- cycle;
+  \draw[line width=0.6pt] (0.26,2.12) -- (0.42,2.26) -- (2.06,2.26) -- (1.90,2.12);
+  \draw[fill=black!82,line width=0.4pt] (1.90,1.62) -- (2.06,1.76) -- (2.06,2.26) -- (1.90,2.12) -- cycle;
+  \begin{scope}
+    \clip (0.26,2.12) -- (0.42,2.26) -- (2.06,2.26) -- (1.90,2.12) -- cycle;
+    \foreach \i in {0,1,...,16}
+      \foreach \j in {0,1}
+        \fill (0.30+0.105*\i,2.14+0.06*\j) circle[radius=0.010];
+  \end{scope}
+  \draw (1.08,1.90) circle[radius=0.040];
+  \draw[line width=0.8pt] (1.08,1.86) -- (1.08,1.64);
+  \node[anchor=east] at (1.00,1.92) {$C$};
+  \node[anchor=east] at (1.00,1.70) {$G$};
+  \node at (1.08,2.48) {$(a)$};
+  \draw[fill=white,line width=0.72pt] (3.05,2.58) -- (4.48,1.62) -- (4.78,1.94) -- (3.35,2.90) -- cycle;
+  \draw[line width=0.6pt] (3.35,2.90) -- (3.50,3.04) -- (4.93,2.08) -- (4.78,1.94);
+  \draw[fill=black!78,line width=0.4pt] (4.48,1.62) -- (4.63,1.76) -- (4.93,2.08) -- (4.78,1.94) -- cycle;
+  \begin{scope}
+    \clip (3.35,2.90) -- (3.50,3.04) -- (4.93,2.08) -- (4.78,1.94) -- cycle;
+    \foreach \i in {0,1,...,12}
+      \foreach \j in {0,1}
+        \fill (3.32+0.12*\i,2.02+0.08*\j) circle[radius=0.010];
+  \end{scope}
+  \draw (3.70,2.30) circle[radius=0.040];
+  \draw[line width=0.85pt] (3.70,2.26) -- (3.70,0.58);
+  \node[anchor=south] at (3.64,2.36) {$C$};
+  \node[anchor=west] at (3.78,2.12) {$G$};
+  \node[anchor=north west] at (4.42,1.58) {$O$};
+  \draw[line width=0.4pt] (4.48,1.26) -- (4.48,0.58);
+  \draw[line width=0.4pt,<->] (3.56,0.46) -- (4.54,0.46);
+  \node[anchor=north] at (4.05,0.42) {$l_{1}$};
+  \node at (3.65,3.22) {$(b)$};
+  \draw[fill=white,line width=0.72pt] (5.58,1.62) -- (6.10,1.62) -- (6.10,3.48) -- (5.58,3.48) -- cycle;
+  \draw[line width=0.6pt] (5.58,3.48) -- (5.74,3.62) -- (6.26,3.62) -- (6.10,3.48);
+  \draw[fill=black!82,line width=0.4pt] (6.10,1.62) -- (6.26,1.76) -- (6.26,3.62) -- (6.10,3.48) -- cycle;
+  \begin{scope}
+    \clip (5.58,3.48) -- (5.74,3.62) -- (6.26,3.62) -- (6.10,3.48) -- cycle;
+    \foreach \i in {0,1,...,6}
+      \foreach \j in {0,1}
+        \fill (5.60+0.09*\i,3.50+0.06*\j) circle[radius=0.010];
+  \end{scope}
+  \draw (5.84,2.65) circle[radius=0.040];
+  \draw[line width=0.85pt] (5.84,2.61) -- (5.84,0.58);
+  \node[anchor=south] at (5.84,2.71) {$C$};
+  \node[anchor=west] at (5.92,2.15) {$G$};
+  \node[anchor=north east] at (5.70,1.58) {$O$};
+  \draw[line width=0.4pt,<->] (5.66,0.46) -- (6.04,0.46);
+  \node[anchor=north] at (5.85,0.42) {$l_{2}$};
+  \node at (5.88,3.82) {$(c)$};
+\end{tikzpicture}%
+}
 \caption{图9-48}
 \end{figure}
 
@@ -17601,7 +17717,47 @@ x = \frac {l}{8}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-49}]{assets/physics-1/fig-p0294-02.png}}
+% fig-alt: 图9-49：比较翻倒时重心升高。(a)实线直立，虚线略倾；O'在实线中左旁小圈，C在其右略高，下部标G。(b)实线平放，右端涂黑为转轴标G；O'旁小圈，细线引向抬起位置上的C，抬起轮廓近直立。图内写(a)(b)。不另写O。板台右端立体，下有两脚。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.7pt] (0.08,1.48) -- (7.30,1.48);
+  \draw[line width=0.7pt] (0.08,1.12) -- (7.30,1.12);
+  \draw[line width=0.7pt] (7.30,1.48) -- (7.62,1.70) -- (7.62,1.34) -- (7.30,1.12);
+  \draw[line width=0.6pt] (6.42,1.12) -- (6.42,0.58);
+  \draw[line width=0.6pt] (6.90,1.12) -- (6.90,0.58);
+  \draw[fill=white,line width=0.72pt] (0.50,1.48) -- (1.06,1.48) -- (1.06,3.24) -- (0.50,3.24) -- cycle;
+  \draw[line width=0.58pt] (0.50,3.24) -- (0.68,3.40) -- (1.24,3.40) -- (1.06,3.24);
+  \draw[fill=black!80,line width=0.4pt] (1.06,1.48) -- (1.24,1.64) -- (1.24,3.40) -- (1.06,3.24) -- cycle;
+  \begin{scope}
+    \clip (0.50,3.24) -- (0.68,3.40) -- (1.24,3.40) -- (1.06,3.24) -- cycle;
+    \foreach \i in {0,1,...,7}
+      \foreach \j in {0,1}
+        \fill (0.52+0.09*\i,3.26+0.06*\j) circle[radius=0.010];
+  \end{scope}
+  \draw[line width=0.5pt,dash pattern=on 1.3pt off 0.9pt] (0.66,1.48) -- (1.26,1.58) -- (1.50,3.24) -- (0.90,3.14) -- cycle;
+  \draw[line width=0.45pt,dash pattern=on 1.3pt off 0.9pt] (0.90,3.14) -- (1.08,3.30) -- (1.68,3.40) -- (1.50,3.24);
+  \draw[line width=0.45pt,dash pattern=on 1.3pt off 0.9pt] (1.26,1.58) -- (1.44,1.74) -- (1.68,3.40);
+  \node[anchor=east] at (0.70,2.38) {$O'$};
+  \draw (0.80,2.42) circle[radius=0.038];
+  \draw (1.16,2.52) circle[radius=0.038];
+  \node[anchor=west] at (1.24,2.55) {$C$};
+  \node[anchor=north] at (0.76,1.55) {$G$};
+  \node at (0.86,3.60) {$(a)$};
+  \draw[fill=white,line width=0.7pt] (2.52,1.48) -- (4.52,1.48) -- (4.52,1.96) -- (2.52,1.96) -- cycle;
+  \draw[line width=0.55pt] (2.52,1.96) -- (2.68,2.10) -- (4.68,2.10) -- (4.52,1.96);
+  \draw[fill=black] (4.40,1.48) rectangle (4.60,2.02);
+  \node[anchor=east] at (3.42,1.64) {$O'$};
+  \draw (3.56,1.70) circle[radius=0.036];
+  \node[anchor=east] at (4.32,1.62) {$G$};
+  \draw[fill=white,line width=0.62pt] (4.50,1.48) -- (5.18,3.52) -- (5.72,3.38) -- (5.04,1.34) -- cycle;
+  \draw[line width=0.5pt] (5.18,3.52) -- (5.34,3.66) -- (5.88,3.52) -- (5.72,3.38);
+  \draw[line width=0.5pt] (5.04,1.34) -- (5.20,1.48) -- (5.88,3.52);
+  \draw[line width=0.55pt] (3.60,1.74) -- (4.95,2.85);
+  \draw[line width=0.55pt] (4.88,2.78) -- (4.88,1.52);
+  \node[anchor=south west] at (4.92,2.82) {$C$};
+  \node at (5.35,3.86) {$(b)$};
+\end{tikzpicture}%
+}
 \caption{图9-49}
 \end{figure}
 
@@ -17611,7 +17767,39 @@ x = \frac {l}{8}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9-50}]{assets/physics-1/fig-p0295-01.png}}
+% fig-alt: 图9-50：两只同样倾斜的长方体。左重心C较高，重力线落在左下支棱上，箭穿地面标G。右下部水平影线（底部加重），C较低，重力线落在支面内，箭穿地面标G。地面下短斜线。图内不写左右编号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.7pt] (0.08,0.70) -- (7.15,0.70);
+  \foreach \k in {0,1,...,30}
+    \draw[line width=0.28pt] (0.14+0.23*\k,0.70) -- (0.30+0.23*\k,0.52);
+  \draw[fill=white,line width=0.7pt] (0.42,1.58) -- (1.18,0.70) -- (2.72,1.62) -- (1.96,2.50) -- cycle;
+  \draw[line width=0.6pt] (1.96,2.50) -- (2.18,2.72) -- (2.94,1.84) -- (2.72,1.62);
+  \draw[line width=0.55pt] (0.42,1.58) -- (0.64,1.80) -- (2.18,2.72);
+  \node[anchor=south] at (1.42,1.62) {$C$};
+  \draw[line width=0.85pt] (1.32,1.55) -- (1.32,0.70);
+  \draw[line width=0.9pt,->] (1.32,0.70) -- (1.32,0.38);
+  \node[anchor=west] at (1.40,0.42) {$G$};
+  \draw[fill=white,line width=0.7pt] (3.72,1.58) -- (4.48,0.70) -- (6.02,1.62) -- (5.26,2.50) -- cycle;
+  \draw[line width=0.6pt] (5.26,2.50) -- (5.48,2.72) -- (6.24,1.84) -- (6.02,1.62);
+  \draw[line width=0.55pt] (3.72,1.58) -- (3.94,1.80) -- (5.48,2.72);
+  \begin{scope}
+    \clip (3.72,1.58) -- (4.48,0.70) -- (5.26,1.18) -- (4.50,2.06) -- cycle;
+    \foreach \j in {0,1,...,14}
+      \draw[line width=0.28pt] (3.55,0.72+0.10*\j) -- (5.45,0.72+0.10*\j);
+  \end{scope}
+  \begin{scope}
+    \clip (3.72,1.58) -- (3.94,1.80) -- (4.70,0.92) -- (4.48,0.70) -- cycle;
+    \foreach \j in {0,1,...,8}
+      \draw[line width=0.28pt] (3.68,0.68+0.12*\j) -- (4.75,0.68+0.12*\j);
+  \end{scope}
+  \draw[line width=0.7pt] (4.42,0.70) -- (4.58,0.70);
+  \node[anchor=south west] at (4.72,1.12) {$C$};
+  \draw[line width=0.85pt] (4.92,1.10) -- (4.92,0.70);
+  \draw[line width=0.9pt,->] (4.92,0.70) -- (4.92,0.36);
+  \node[anchor=west] at (5.00,0.40) {$G$};
+\end{tikzpicture}%
+}
 \caption{图9-50}
 \end{figure}
 
@@ -17638,7 +17826,32 @@ x = \frac {l}{8}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-1/fig-p0295-02.png}}
+% fig-alt: 第5题：斜面倾角α。直立长方体底边沿斜面为a、高为b，再倾后将倒。顶上尺寸a，右侧尺寸b，左有逆时针弯箭。重心小圈，竖线穿底边粗刻至斜面下标G。图内不写第5题，不写β。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.7pt] (0.15,0.40) -- (5.35,0.40);
+  \draw[line width=0.7pt] (0.15,0.40) -- (5.20,1.78);
+  \draw[line width=0.45pt] (1.42,0.40) -- (1.42,0.78);
+  \node[anchor=west] at (1.50,0.52) {$\alpha$};
+  \draw[line width=1.0pt] (2.08,0.94) -- (3.32,1.28);
+  \draw[line width=0.75pt] (2.08,0.94) -- (1.72,3.28);
+  \draw[line width=0.75pt] (3.32,1.28) -- (2.96,3.62);
+  \draw[line width=0.75pt] (1.72,3.28) -- (2.96,3.62);
+  \draw[line width=0.4pt] (1.62,3.42) -- (1.52,3.68);
+  \draw[line width=0.4pt] (2.86,3.76) -- (2.76,4.02);
+  \draw[line width=0.45pt,<->] (1.58,3.72) -- (2.82,4.06);
+  \node[rotate=16] at (2.22,4.08) {$a$};
+  \draw[line width=0.4pt] (3.42,1.38) -- (3.62,1.32);
+  \draw[line width=0.4pt] (3.06,3.72) -- (3.26,3.66);
+  \draw[line width=0.45pt,<->] (3.52,1.48) -- (3.16,3.58);
+  \node[rotate=80] at (3.58,2.55) {$b$};
+  \draw[line width=0.55pt,->] (1.48,2.62) .. controls (1.18,2.28) and (1.12,2.02) .. (1.28,1.72);
+  \draw (2.42,2.18) circle[radius=0.048];
+  \draw[line width=0.85pt] (2.42,2.13) -- (2.42,0.72);
+  \draw[line width=1.2pt] (2.28,1.05) -- (2.56,1.05);
+  \node[anchor=west] at (2.52,0.78) {$G$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -17752,7 +17965,27 @@ i。力矢量的多边形是封闭的或 ii。\(\sum F_{x} = 0\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-1/fig-p0298-01.png}}
+% fig-alt: 第3题：左墙短斜影。A在墙上端，O在墙下端。悬线AD与斜杆OD均与墙成30°，交于实心点D。D下垂线挂方块，内标G。斜杆稍粗。图内不写第3题。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.7pt] (0.55,0.18) -- (0.55,4.92);
+  \foreach \k in {0,1,...,18}
+    \draw[line width=0.28pt] (0.22,0.28+0.24*\k) -- (0.55,0.50+0.24*\k);
+  \node[anchor=east] at (0.46,4.78) {$A$};
+  \node[anchor=east] at (0.46,0.28) {$O$};
+  \draw[line width=0.6pt] (0.55,4.78) -- (1.92,2.52);
+  \draw[line width=0.85pt] (0.55,0.32) -- (1.92,2.52);
+  \fill (1.92,2.52) circle[radius=0.055];
+  \node[anchor=west] at (2.02,2.58) {$D$};
+  \draw[line width=0.45pt] (0.55,4.22) arc[start angle=270,end angle=302,radius=0.56];
+  \node[anchor=west] at (0.82,4.08) {$30^{\circ}$};
+  \draw[line width=0.45pt] (0.55,0.88) arc[start angle=90,end angle=58,radius=0.56];
+  \node[anchor=west] at (0.82,0.78) {$30^{\circ}$};
+  \draw[line width=0.55pt] (1.92,2.47) -- (1.92,1.32);
+  \draw[line width=0.7pt] (1.52,0.52) rectangle (2.32,1.32);
+  \node at (1.92,0.92) {$G$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -17760,7 +17993,27 @@ i。力矢量的多边形是封闭的或 ii。\(\sum F_{x} = 0\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-1/fig-p0298-02.png}}
+% fig-alt: 第5题：左墙短斜影。C处水平细线至B，木板AB铰于A，与墙夹角θ。墙与板间圆柱，水平半径标R，圆心右标G。A处短铰。图内不写第5题，不写30°。扫描墙上端标C，正文未写C，按扫描。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.7pt] (0.58,0.12) -- (0.58,4.28);
+  \foreach \k in {0,1,...,17}
+    \draw[line width=0.28pt] (0.26,0.22+0.22*\k) -- (0.58,0.42+0.22*\k);
+  \node[anchor=east] at (0.50,3.62) {$C$};
+  \draw[line width=0.6pt] (0.58,3.58) -- (2.55,3.58);
+  \node[anchor=west] at (2.60,3.58) {$B$};
+  \draw[line width=0.85pt] (0.58,0.52) -- (2.50,3.52);
+  \draw[line width=0.55pt] (0.74,0.48) -- (2.64,3.44);
+  \node[anchor=east] at (0.50,0.46) {$A$};
+  \draw[line width=0.65pt] (0.58,0.46) -- (0.86,0.46);
+  \draw[line width=0.55pt] (1.12,2.28) circle[radius=0.54];
+  \draw[line width=0.4pt] (0.58,2.28) -- (1.12,2.28);
+  \node[anchor=south] at (0.78,2.30) {$R$};
+  \node[anchor=west] at (1.18,2.28) {$G$};
+  \draw[line width=0.45pt] (0.58,1.02) arc[start angle=90,end angle=60,radius=0.50];
+  \node[anchor=west] at (0.84,0.92) {$\theta$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -17796,7 +18049,38 @@ i。力矢量的多边形是封闭的或 ii。\(\sum F_{x} = 0\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-1/fig-p0299-01.png}}
+% fig-alt: 第8题：天花板短影，绳自A斜下至C。水平绳向右至墙支座B。绳CE斜下，与水平均成60°，C左上下各标60°。E左水平绳至墙支座D，E下垂挂方块G。图内不写第8题。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.65pt] (1.15,4.78) -- (2.15,4.78);
+  \foreach \k in {0,1,...,7}
+    \draw[line width=0.3pt] (1.22+0.12*\k,4.78) -- (1.10+0.12*\k,4.96);
+  \node[anchor=east] at (1.28,4.58) {$A$};
+  \draw[line width=0.6pt] (1.72,4.78) -- (2.95,2.62);
+  \draw[line width=0.55pt] (1.55,2.62) -- (4.22,2.62);
+  \fill (2.95,2.62) circle[radius=0.038];
+  \node[anchor=west] at (3.02,2.48) {$C$};
+  \draw[line width=0.45pt] (2.62,2.62) arc[start angle=180,end angle=118,radius=0.33];
+  \draw[line width=0.45pt] (2.62,2.62) arc[start angle=180,end angle=242,radius=0.33];
+  \node[anchor=east] at (2.28,2.84) {$60^{\circ}$};
+  \node[anchor=east] at (2.28,2.42) {$60^{\circ}$};
+  \draw[line width=0.65pt] (4.22,2.28) -- (4.22,2.96);
+  \foreach \k in {0,1,...,4}
+    \draw[line width=0.28pt] (4.22,2.32+0.13*\k) -- (4.40,2.44+0.13*\k);
+  \node[anchor=south west] at (4.08,2.70) {$B$};
+  \draw[line width=0.6pt] (2.95,2.62) -- (1.68,0.92);
+  \fill (1.68,0.92) circle[radius=0.032];
+  \node[anchor=west] at (1.76,0.88) {$E$};
+  \draw[line width=0.55pt] (0.48,0.92) -- (1.68,0.92);
+  \draw[line width=0.65pt] (0.48,0.58) -- (0.48,1.26);
+  \foreach \k in {0,1,...,4}
+    \draw[line width=0.28pt] (0.48,0.62+0.13*\k) -- (0.30,0.74+0.13*\k);
+  \node[anchor=east] at (0.40,1.08) {$D$};
+  \draw[line width=0.55pt] (1.68,0.88) -- (1.68,0.22);
+  \draw[line width=0.7pt] (1.26,0.22) rectangle (2.10,-0.58);
+  \node at (1.68,-0.18) {$G$};
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
