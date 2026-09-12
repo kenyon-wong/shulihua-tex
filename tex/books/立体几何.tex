@@ -19082,7 +19082,7 @@ a，求这棱柱的体积。
 \(ACC_{1}A_{1} = S\)
 
 与它相对的侧棱 \(BB_{1}\) 到这个侧面的距离 \(PQ = a\)。过侧棱 \(BB_{1}\)
-及 \(OC_{1}\) 分别作侧面 \(AC_{1}\) 及 \(AB_{1}\) 的平行平面，\(DD_{1}\)
+及 \(CC_{1}\) 分别作侧面 \(ACC_{1}A_{1}\) 及 \(ABB_{1}A_{1}\) 的平行平面，\(DD_{1}\)
 是这两平面的交线。再伸展两个底面，那么 \(ABDC - A_{1}B_{1}D_{1}C_{1}\)
 是一个平行六面体（图2·66）。
 
@@ -19092,12 +19092,44 @@ a，求这棱柱的体积。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·68}]{assets/solid-geometry/fig-p0178-02.png}}
-\caption{图2·68}
+\fitfig{%
+% fig-alt: 图2·66：平行六面体ABDC-A1B1D1C1。A前左、B前右、D后右、C后左。隐棱AC、CD、CC1虚线；其余棱实线；底对角CB虚线、顶对角C1B1实线。P在BB1、Q在侧面ACC1A1上，PQ虚线（面到对棱距离）。扫描有A–D、A1–D1、P、Q
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.15,0.35);
+  \coordinate (B) at (2.55,0.20);
+  \coordinate (D) at (3.35,1.05);
+  \coordinate (C) at (0.95,1.20);
+  \coordinate (A1) at (0.55,2.35);
+  \coordinate (B1) at (2.95,2.20);
+  \coordinate (D1) at (3.75,3.05);
+  \coordinate (C1) at (1.35,3.20);
+  \coordinate (P) at ($(B)!0.52!(B1)$);
+  \coordinate (Q) at ($(A)!0.45!(C1)$);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (C1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Q) -- (P);
+  \draw[line width=0.85pt] (A) -- (B) -- (D);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (A1) -- (C1) -- (D1) -- (B1);
+  \draw[line width=0.85pt] (D) -- (D1);
+  \draw[line width=0.85pt] (C1) -- (B1);
+  \fill (P) circle (1.1pt);
+  \fill (Q) circle (1.1pt);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=south east,inner sep=0.04pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=south west,inner sep=0.04pt] at (D1) {$D_{1}$};
+  \node[anchor=west,inner sep=0.06pt] at (P) {$P$};
+  \node[anchor=east,inner sep=0.06pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+\caption{图2·66}
 \end{figure}
-
-\emph{图2·68}
-
 \[
 V _ {\text {\text{三棱柱}}} = \frac {a S}{2}.
 \]
@@ -19120,27 +19152,79 @@ V _ {\text {\text{三棱柱}}} = \frac {a S}{2}.
 \(CF\) 和 \(C_{1}F_{1}\) 则 \(ADFC - A_{1}D_{1}F_{1}C_{1}\)
 为平行六面体。
 
-平行四边形 \(ADFO\) 和 \(\triangle ABC\) 具有同一底 \(AC\)。同时，因点
-\(D\) 是 \(AB\) 的中点，因而平行四边形 \(ADFO\) 的底 \(AO\) 上的高是
-\(\triangle ABC\) 的底 \(AO\) 上的高的一半。
+平行四边形 \(ADFC\) 和 \(\triangle ABC\) 具有同一底 \(AC\)。同时，因点
+\(D\) 是 \(AB\) 的中点，因而平行四边形 \(ADFC\) 的底 \(AC\) 上的高是
+\(\triangle ABC\) 的底 \(AC\) 上的高的一半。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·67}]{assets/solid-geometry/fig-p0179-01.png}}
+\fitfig{%
+% fig-alt: 图2·67：斜三棱柱ABC-A1B1C1，补成平行六面体ADFC-A1D1F1C1。D、E为AB、BC中点；F在过C且平行于AB的线上。AA1、BB1、DD1、EE1与底AB、BC及上底实线；AC、CF、CC1、FF1虚线；高h虚线；PQ过K（在DD1上）虚线。扫描有A–F、A1–F1、P、Q、K、h
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.20,0.45);
+  \coordinate (B) at (3.40,0.25);
+  \coordinate (C) at (1.55,1.35);
+  \coordinate (D) at ($(A)!0.5!(B)$);
+  \coordinate (E) at ($(B)!0.5!(C)$);
+  \coordinate (F) at ($(C)+(D)-(A)$);
+  \coordinate (A1) at (0.70,2.55);
+  \coordinate (B1) at (3.90,2.35);
+  \coordinate (C1) at (2.05,3.45);
+  \coordinate (D1) at ($(A1)!0.5!(B1)$);
+  \coordinate (E1) at ($(B1)!0.5!(C1)$);
+  \coordinate (F1) at ($(C1)+(D1)-(A1)$);
+  \coordinate (P) at ($(B)!0.55!(B1)$);
+  \coordinate (Q) at ($(A)!0.55!(A1)$);
+  \coordinate (K) at ($(D)!0.55!(D1)$);
+  \coordinate (Hh) at (2.55,3.45);
+  \coordinate (Hl) at (2.55,1.35);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C) -- (F);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (C1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (F) -- (F1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (E) -- (F);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Q) -- (K) -- (P);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Hh) -- (Hl);
+  \draw[line width=0.55pt] (Hl) ++(0.00,0.10) -- ++(0.10,0.00) -- ++(0.00,-0.10);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (D) -- (E);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (D) -- (D1);
+  \draw[line width=0.85pt] (E) -- (E1);
+  \draw[line width=0.85pt] (A1) -- (C1) -- (F1) -- (D1);
+  \draw[line width=0.85pt] (B1) -- (C1);
+  \draw[line width=0.85pt] (D1) -- (E1) -- (F1);
+  \fill (Q) circle (1.0pt);
+  \fill (K) circle (1.0pt);
+  \fill (P) circle (1.0pt);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=south east,inner sep=0.04pt] at (C) {$C$};
+  \node[anchor=north,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=0.04pt] at (E) {$E$};
+  \node[anchor=west,inner sep=0.05pt] at (F) {$F$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.04pt] at (D1) {$D_{1}$};
+  \node[anchor=south west,inner sep=0.03pt] at (E1) {$E_{1}$};
+  \node[anchor=south west,inner sep=0.04pt] at (F1) {$F_{1}$};
+  \node[anchor=east,inner sep=0.05pt] at (Q) {$Q$};
+  \node[anchor=south,inner sep=0.04pt] at (K) {$K$};
+  \node[anchor=west,inner sep=0.05pt] at (P) {$P$};
+  \node[anchor=west,inner sep=0.06pt] at ($(Hh)!0.5!(Hl)$) {$h$};
+\end{tikzpicture}%
+}
 \caption{图2·67}
 \end{figure}
-
-\emph{图2·67}
-
 \[
-\therefore S _ {\triangle A D F G} = S _ {\triangle A B C}.
+\therefore S _ {A D F C} = S _ {\triangle A B C}.
 \]
 
-平行六面体 \(ADFO - A_{1}D_{1}F_{1}C_{1}\) 和三棱柱
+平行六面体 \(ADFC - A_{1}D_{1}F_{1}C_{1}\) 和三棱柱
 \(ABC - A_{1}B_{1}C_{1}\) 的高相等，设它们的高为 \(h\)，则：
 
 \[
-V _ {\text { \text{平行六面体} }} = S _ {C A D F C} \cdot h\text{，}
+V _ {\text { \text{平行六面体} }} = S _ {A D F C} \cdot h\text{，}
 \]
 
 \[
@@ -19148,7 +19232,7 @@ V _ {\text {\text{三棱柱}}} = S _ {\triangle A B C} \cdot h\text{，}
 \]
 
 \[
-\therefore V _ {\text {\text{三棱柱}}} - V _ {\text {\text{平行六面体}}}.
+\therefore V _ {\text {\text{三棱柱}}} = V _ {\text {\text{平行六面体}}}.
 \]
 
 在三棱柱中， 已知四边形 \(ACC_{1}A_{1}\) 面积 \(= S\)， \(BB_{1}\)
@@ -19200,12 +19284,42 @@ V _ {\text {\text{平行六面体}}} = S \cdot \frac {1}{2} a = \frac {1}{2} a S
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/solid-geometry/fig-p0180-01.png}}
-\caption{(第5题)}
+\fitfig{%
+% fig-alt: （第5题）：底为梯形的斜四棱柱ABCD-A1B1C1D1。E在AB、E1在A1B1；平面EE1C1C∥ADD1A1。隐棱AD、DC、DD1及EC虚线；其余棱与EE1、E1C1实线；三棱柱EBC-E1B1C1斜线填充。扫描有A–D、A1–D1、E、E1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.15,0.40);
+  \coordinate (B) at (3.20,0.25);
+  \coordinate (C) at (2.85,1.25);
+  \coordinate (D) at (0.55,1.40);
+  \coordinate (A1) at (0.55,2.45);
+  \coordinate (B1) at (3.60,2.30);
+  \coordinate (C1) at (3.25,3.30);
+  \coordinate (D1) at (0.95,3.45);
+  \coordinate (E) at ($(A)!0.55!(B)$);
+  \coordinate (E1) at ($(A1)!0.55!(B1)$);
+  \fill[pattern=north east lines,pattern color=black!65] (E) -- (B) -- (C) -- (C1) -- (B1) -- (E1) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (E) -- (C);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (A1) -- (D1) -- (C1) -- (B1);
+  \draw[line width=0.85pt] (C) -- (C1);
+  \draw[line width=0.85pt] (E) -- (E1) -- (C1);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=south west,inner sep=0.04pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (D1) {$D_{1}$};
+  \node[anchor=north,inner sep=0.05pt] at (E) {$E$};
+  \node[anchor=south,inner sep=0.05pt] at (E1) {$E_{1}$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
-
-\emph{（第5题）}
-
 \begin{enumerate}
 \setcounter{enumi}{5}
 \item
@@ -19222,12 +19336,42 @@ V _ {\text {\text{平行六面体}}} = S \cdot \frac {1}{2} a = \frac {1}{2} a S
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/solid-geometry/fig-p0181-01.png}}
-\caption{(第7题)}
+\fitfig{%
+% fig-alt: （第7题）：等腰梯形横断面。上底8、下底14、高3.2（单位：米）。上、下底与高旁标注尺寸线。扫描有8、14、3.2
+\begin{tikzpicture}[line cap=round,line join=round,x=0.22cm,y=0.22cm]
+  \coordinate (BL) at (0,0);
+  \coordinate (BR) at (14,0);
+  \coordinate (TR) at (11,3.2);
+  \coordinate (TL) at (3,3.2);
+  \draw[line width=0.90pt] (BL) -- (BR) -- (TR) -- (TL) -- cycle;
+  \draw[line width=0.50pt] (3,4.0) -- (11,4.0);
+  \draw[line width=0.50pt] (3,3.2) -- (3,4.15);
+  \draw[line width=0.50pt] (11,3.2) -- (11,4.15);
+  \draw[line width=0.45pt] (3,4.0) -- ++(0.35,0.18);
+  \draw[line width=0.45pt] (3,4.0) -- ++(0.35,-0.18);
+  \draw[line width=0.45pt] (11,4.0) -- ++(-0.35,0.18);
+  \draw[line width=0.45pt] (11,4.0) -- ++(-0.35,-0.18);
+  \node[anchor=south,inner sep=0.08pt] at (7,4.0) {$8$};
+  \draw[line width=0.50pt] (0,-0.85) -- (14,-0.85);
+  \draw[line width=0.50pt] (0,0) -- (0,-1.00);
+  \draw[line width=0.50pt] (14,0) -- (14,-1.00);
+  \draw[line width=0.45pt] (0,-0.85) -- ++(0.35,0.18);
+  \draw[line width=0.45pt] (0,-0.85) -- ++(0.35,-0.18);
+  \draw[line width=0.45pt] (14,-0.85) -- ++(-0.35,0.18);
+  \draw[line width=0.45pt] (14,-0.85) -- ++(-0.35,-0.18);
+  \node[anchor=north,inner sep=0.08pt] at (7,-0.85) {$14$};
+  \draw[line width=0.50pt] (15.1,0) -- (15.1,3.2);
+  \draw[line width=0.50pt] (14,0) -- (15.25,0);
+  \draw[line width=0.50pt] (11,3.2) -- (15.25,3.2);
+  \draw[line width=0.45pt] (15.1,0) -- ++(0.18,0.30);
+  \draw[line width=0.45pt] (15.1,0) -- ++(-0.18,0.30);
+  \draw[line width=0.45pt] (15.1,3.2) -- ++(0.18,-0.30);
+  \draw[line width=0.45pt] (15.1,3.2) -- ++(-0.18,-0.30);
+  \node[anchor=west,inner sep=0.08pt] at (15.1,1.6) {$3.2$};
+\end{tikzpicture}%
+}
+\caption{（第7题）}
 \end{figure}
-
-\emph{（第7题）}
-
 ［提示：内接的棱柱也是正六棱柱，底面边长为 \(\frac{\sqrt{3}}{2} a.\)］
 
 \begin{enumerate}
@@ -19248,12 +19392,48 @@ V _ {\text {\text{平行六面体}}} = S \cdot \frac {1}{2} a = \frac {1}{2} a S
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/solid-geometry/fig-p0181-02.png}}
-\caption{(第9题)}
+\fitfig{%
+% fig-alt: （第9题）：各面全等菱形的平行六面体ABCD-A1B1C1D1。A1O⊥底面，O在对角AC上；过O作OE⊥AB；连A1E。隐棱AD、DC、DD1及AC、AO、OE虚线；A1O、A1E与可见棱实线；直角于O、E。扫描有A–D、A1–D1、O、E
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.40,0.35);
+  \coordinate (B) at (2.70,0.20);
+  \coordinate (C) at (3.45,1.25);
+  \coordinate (D) at (1.15,1.40);
+  \coordinate (A1) at (1.10,2.55);
+  \coordinate (B1) at (3.40,2.40);
+  \coordinate (C1) at (4.15,3.45);
+  \coordinate (D1) at (1.85,3.60);
+  \coordinate (O) at ($(A)!0.38!(C)$);
+  \coordinate (E) at ($(A)!0.42!(B)$);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (O) -- (E);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (A1) -- (D1) -- (C1) -- (B1);
+  \draw[line width=0.85pt] (C) -- (C1);
+  \draw[line width=0.85pt] (A1) -- (O);
+  \draw[line width=0.85pt] (A1) -- (E);
+  % right angle at O (A1O vertical-ish vs AO)
+  \draw[line width=0.50pt] ($(O)!0.12!(A1)$) -- ++(0.12,0.00) -- ++(0.00,-0.12);
+  % right angle at E (OE vs AB approx)
+  \draw[line width=0.50pt] ($(E)!0.14!(O)$) -- ++(0.12,0.00) -- ++(0.00,-0.10);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (D1) {$D_{1}$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+  \node[anchor=north,inner sep=0.05pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{（第9题）}
 \end{figure}
-
-\emph{（第9题）}
-
 在底面 \(ABCD\) 内，过 \(O\) 作 \(OE \perp AB\)，连接 \(A_{1}E\)，则
 \(A_{1}E \perp AB\).
 
@@ -19280,7 +19460,7 @@ A _ {1} O = \sqrt {A A _ {1} ^ {2} - A O ^ {2}} = \sqrt {a ^ {2} - \left(\frac {
 \(S_{\text{底}} = AB \cdot AD \sin 60^{\circ} = \frac{\sqrt{3}}{2} a^{2}\).
 
 \[
-\therefore V _ {\text {\text{平行四边形}}} = \frac {\sqrt {3}}{2} a ^ {2} \cdot \frac {\sqrt {6}}{3} a = \frac {\sqrt {2}}{2} a ^ {3}.
+\therefore V _ {\text {\text{平行六面体}}} = \frac {\sqrt {3}}{2} a ^ {2} \cdot \frac {\sqrt {6}}{3} a = \frac {\sqrt {2}}{2} a ^ {3}.
 \]
 
 答：这个平行六面体的体积等于 \(\frac{\sqrt{2}}{2} a^3\).
@@ -19314,12 +19494,85 @@ V\text{，} V _ {1}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-68}]{assets/solid-geometry/fig-p0182-01.png}}
-\caption{图2-68}
+\fitfig{%
+% fig-alt: 图2·68：平面M上两棱锥P-ABC与P1-A1B1C1D1，等高h；平行平面N截得截面S、S1。底与截面可见边实线、隐边虚线；平面M、N轮廓细实线；高h箭头。扫描有P、P1、A–C、A1–D1、S、S1、M、N、h
+\begin{tikzpicture}[line cap=round,line join=round]
+  % plane M
+  \coordinate (Mbl) at (0.05,0.15);
+  \coordinate (Mbr) at (5.60,0.15);
+  \coordinate (Mtr) at (6.35,1.05);
+  \coordinate (Mtl) at (0.80,1.05);
+  \draw[line width=0.55pt] (Mbl) -- (Mbr) -- (Mtr) -- (Mtl) -- cycle;
+  \node[anchor=north west,inner sep=0.06pt] at (Mbl) {$M$};
+  % plane N
+  \coordinate (Nbl) at (0.35,1.55);
+  \coordinate (Nbr) at (5.30,1.55);
+  \coordinate (Ntr) at (5.90,2.25);
+  \coordinate (Ntl) at (0.95,2.25);
+  \draw[line width=0.55pt] (Nbl) -- (Nbr) -- (Ntr) -- (Ntl) -- cycle;
+  \node[anchor=south west,inner sep=0.05pt] at (Ntr) {$N$};
+  % left pyramid P-ABC
+  \coordinate (P) at (1.70,3.15);
+  \coordinate (A) at (0.70,0.45);
+  \coordinate (B) at (2.55,0.35);
+  \coordinate (C) at (1.55,0.95);
+  \coordinate (Sa) at ($(P)!0.45!(A)$);
+  \coordinate (Sb) at ($(P)!0.45!(B)$);
+  \coordinate (Sc) at ($(P)!0.45!(C)$);
+  \fill[pattern=north east lines,pattern color=black!55] (Sa) -- (Sb) -- (Sc) -- cycle;
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (A) -- (C);
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (Sa) -- (Sc);
+  \draw[line width=0.80pt] (A) -- (B) -- (C);
+  \draw[line width=0.80pt] (P) -- (A);
+  \draw[line width=0.80pt] (P) -- (B);
+  \draw[line width=0.80pt] (P) -- (C);
+  \draw[line width=0.75pt] (Sa) -- (Sb) -- (Sc) -- cycle;
+  \node[anchor=south,inner sep=0.05pt] at (P) {$P$};
+  \node[anchor=north east,inner sep=0.04pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.04pt] at (B) {$B$};
+  \node[anchor=south,inner sep=0.03pt] at (C) {$C$};
+  \node[anchor=center,inner sep=0.02pt] at ($(Sa)!0.5!(Sb)$) {$S$};
+  % right pyramid P1-A1B1C1D1
+  \coordinate (P1) at (4.55,3.15);
+  \coordinate (A1) at (3.55,0.90);
+  \coordinate (B1) at (3.70,0.40);
+  \coordinate (C1) at (5.15,0.35);
+  \coordinate (D1) at (5.35,0.85);
+  \coordinate (S1a) at ($(P1)!0.45!(A1)$);
+  \coordinate (S1b) at ($(P1)!0.45!(B1)$);
+  \coordinate (S1c) at ($(P1)!0.45!(C1)$);
+  \coordinate (S1d) at ($(P1)!0.45!(D1)$);
+  \fill[pattern=north east lines,pattern color=black!55] (S1a) -- (S1b) -- (S1c) -- (S1d) -- cycle;
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (A1) -- (B1);
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (A1) -- (D1);
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (S1a) -- (S1b);
+  \draw[line width=0.60pt,dash pattern=on 2.0pt off 1.4pt] (S1a) -- (S1d);
+  \draw[line width=0.80pt] (B1) -- (C1) -- (D1);
+  \draw[line width=0.80pt] (P1) -- (A1);
+  \draw[line width=0.80pt] (P1) -- (B1);
+  \draw[line width=0.80pt] (P1) -- (C1);
+  \draw[line width=0.80pt] (P1) -- (D1);
+  \draw[line width=0.75pt] (S1b) -- (S1c) -- (S1d);
+  \draw[line width=0.75pt] (S1a) -- (S1d);
+  \draw[line width=0.75pt] (S1a) -- (S1b);
+  \node[anchor=south,inner sep=0.05pt] at (P1) {$P_{1}$};
+  \node[anchor=east,inner sep=0.03pt] at (A1) {$A_{1}$};
+  \node[anchor=north east,inner sep=0.03pt] at (B1) {$B_{1}$};
+  \node[anchor=north west,inner sep=0.03pt] at (C1) {$C_{1}$};
+  \node[anchor=west,inner sep=0.03pt] at (D1) {$D_{1}$};
+  \node[anchor=center,inner sep=0.02pt] at ($(S1b)!0.5!(S1c)$) {$S_{1}$};
+  % height h
+  \draw[line width=0.55pt] (P) -- (P1);
+  \draw[line width=0.55pt,dash pattern=on 1.8pt off 1.2pt] (6.05,3.15) -- (6.05,0.15);
+  \draw[line width=0.45pt] (6.05,3.15) -- ++(-0.12,-0.22);
+  \draw[line width=0.45pt] (6.05,3.15) -- ++(0.12,-0.22);
+  \draw[line width=0.45pt] (6.05,0.15) -- ++(-0.12,0.22);
+  \draw[line width=0.45pt] (6.05,0.15) -- ++(0.12,0.22);
+  \node[anchor=west,inner sep=0.06pt] at (6.05,1.65) {$h$};
+\end{tikzpicture}%
+}
+\caption{图2·68}
 \end{figure}
-
-\emph{图2·68}
-
 已知这两个棱锥的高相等，由祖暅定理可知它们的体积是相等的，即
 \(V = V_{1}\)
 
@@ -19350,12 +19603,34 @@ PAC、PAD等。那么，这些对角面将棱锥分成若干个与它等高的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-69}]{assets/solid-geometry/fig-p0183-01.png}}
-\caption{图2-69}
+\fitfig{%
+% fig-alt: 图2·69：五棱锥P-ABCDE。A前左、B前右、C右、D后、E左。PA、PB、PC、PE与底AB、BC、EA实线；PD与底CD、DE虚线；底对角AC、AD虚线。扫描有P、A–E
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (P) at (1.70,3.15);
+  \coordinate (A) at (0.55,0.55);
+  \coordinate (B) at (2.55,0.40);
+  \coordinate (C) at (3.15,1.25);
+  \coordinate (D) at (1.70,1.85);
+  \coordinate (E) at (0.25,1.35);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (P) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D);
+  \draw[line width=0.85pt] (E) -- (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (P) -- (A);
+  \draw[line width=0.85pt] (P) -- (B);
+  \draw[line width=0.85pt] (P) -- (C);
+  \draw[line width=0.85pt] (P) -- (E);
+  \node[anchor=south,inner sep=0.05pt] at (P) {$P$};
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=south,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.05pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{图2·69}
 \end{figure}
-
-\emph{图2·69}
-
 再取这两个三棱锥中的一个，例如 \(P - CC_{1}A_{1}\)， 将其和三棱锥
 \(P - ABC\) 比较。 三棱锥 \(P - CC_{1}A_{1}\) 又可看作是三棱锥
 \(C - PC_{1}A_{1}\) （即把点 \(C\) 看作为顶点、\(\triangle PC_{1}A\)
@@ -19371,12 +19646,27 @@ PAC、PAD等。那么，这些对角面将棱锥分成若干个与它等高的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0183-02.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图2·70（1）：三棱锥P-ABC。底△ABC斜线填充；PA、PB、PC与底AB、BC实线；底AC虚线。扫描有P、A、B、C
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (P) at (1.35,2.85);
+  \coordinate (A) at (0.25,0.85);
+  \coordinate (B) at (1.55,0.25);
+  \coordinate (C) at (2.55,1.05);
+  \fill[pattern=north east lines,pattern color=black!65] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (P) -- (A);
+  \draw[line width=0.85pt] (P) -- (B);
+  \draw[line width=0.85pt] (P) -- (C);
+  \node[anchor=south,inner sep=0.05pt] at (P) {$P$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+\caption{图2·70（1）}
 \end{figure}
-
-\emph{（1）}
-
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0183-03.png}}
@@ -19416,7 +19706,7 @@ V = \frac {1}{3} S h.
 \]
 
 （2） 在图2·69 中， 我们用 \(S_{1}, S_{2}, \cdots\) 等分别表示 \(n\)
-棱锥 \(P - ABCDE\) 的底面被对角而所分成 \(n - 2\) 个三角形的面积
+棱锥 \(P - ABCDE\) 的底面被对角面所分成 \(n - 2\) 个三角形的面积
 \((S = S_{1} + S_{2} + \cdots + S_{n-2})\)， 那末
 
 \[
@@ -19451,13 +19741,13 @@ C O = \frac {2}{3} C D = \frac {2}{3} \times \frac {a \sqrt {3}}{2} = \frac {a \
 在直角三角形 PCO 中，
 
 \[
-P O = \sqrt {P O ^ {2} - C O ^ {2}} = \sqrt {b ^ {2} - \frac {a ^ {2}}{3}} = \sqrt {\frac {3 b ^ {2} - a ^ {2}}{3}}.
+P O = \sqrt {b ^ {2} - C O ^ {2}} = \sqrt {b ^ {2} - \frac {a ^ {2}}{3}} = \sqrt {\frac {3 b ^ {2} - a ^ {2}}{3}}.
 \]
 
 那么， 此正三棱锥 P-ABC 的体积为
 
 \[
-V = \frac {1}{3} \times \frac {a ^ {2} \sqrt {3}}{4} \times \frac {\sqrt {3 b ^ {2} - a ^ {3}}}{\sqrt {3}} = \frac {a ^ {2} \sqrt {3 b ^ {2} - a ^ {3}}}{12}.
+V = \frac {1}{3} \times \frac {a ^ {2} \sqrt {3}}{4} \times \frac {\sqrt {3 b ^ {2} - a ^ {2}}}{\sqrt {3}} = \frac {a ^ {2} \sqrt {3 b ^ {2} - a ^ {2}}}{12}.
 \]
 
 答：此正三棱锥的体积等于 \(\frac{a^2\sqrt{3b^2 - a^2}}{12}\)
