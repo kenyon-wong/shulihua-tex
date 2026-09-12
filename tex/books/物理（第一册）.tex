@@ -18088,7 +18088,19 @@ i。力矢量的多边形是封闭的或 ii。\(\sum F_{x} = 0\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/physics-1/fig-p0299-02.png}}
+% fig-alt: 第10题：水槽无盖，底角圆。水位横虚线。均匀木条斜置，下端圆头浸水中，上端小圈在槽右沿标O。图内不写第10题。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.8pt] (0.10,2.62) -- (0.10,0.40)
+    arc[start angle=180,end angle=270,radius=0.24] -- (3.86,0.16)
+    arc[start angle=270,end angle=360,radius=0.24] -- (4.10,2.62);
+  \foreach \y in {0.72,0.96,1.20,1.44,1.68,1.92}
+    \draw[line width=0.32pt,dash pattern=on 2.6pt off 1.6pt] (0.20,\y) -- (4.00,\y);
+  \draw[line width=2.4pt] (0.58,0.88) -- (3.88,2.58);
+  \draw[line width=0.7pt,fill=white] (3.88,2.58) circle[radius=0.07];
+  \node[anchor=west] at (4.00,2.68) {$O$};
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -18119,7 +18131,87 @@ i。力矢量的多边形是封闭的或 ii。\(\sum F_{x} = 0\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10-1}]{assets/physics-1/fig-p0301-01.png}}
+% fig-alt: 图10-1：左定滑轮挂于横梁，绳左吊立方包裹，下箭G；人侧立举双臂拉斜绳，绳旁标F。右人立于梁上俯身拉绳，旁标F；梁下动滑轮吊网格圆包，下箭G。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % left beam
+  \draw[line width=0.75pt] (0.08,8.05) rectangle (3.55,7.68);
+  \foreach \x in {0.20,0.55,0.90,1.25,1.60,1.95,2.30,2.65,3.00,3.35}
+    \draw[line width=0.22pt] (\x,7.74) .. controls (\x+0.14,7.86) .. (\x+0.26,7.98);
+  % left pulley
+  \draw[line width=0.55pt] (1.22,7.68) -- (1.22,7.48);
+  \draw[line width=0.7pt] (1.22,7.15) circle[radius=0.32];
+  \draw[line width=0.4pt] (1.22,7.15) circle[radius=0.11];
+  \fill (1.22,7.15) circle[radius=0.035];
+  % rope to package
+  \draw[line width=0.55pt] (0.90,7.15) -- (0.90,5.72);
+  \draw[line width=0.4pt] (0.82,5.78) -- (0.98,5.66) -- (0.90,5.58) -- cycle;
+  % isometric cube
+  \coordinate (C1) at (0.38,4.72);
+  \coordinate (C2) at (1.12,4.72);
+  \coordinate (C3) at (1.42,5.00);
+  \coordinate (C4) at (0.68,5.00);
+  \coordinate (C5) at (0.38,5.22);
+  \coordinate (C6) at (1.12,5.22);
+  \coordinate (C7) at (1.42,5.50);
+  \coordinate (C8) at (0.68,5.50);
+  \draw[line width=0.55pt] (C1) -- (C2) -- (C6) -- (C5) -- cycle;
+  \draw[line width=0.55pt] (C5) -- (C8) -- (C7) -- (C6);
+  \draw[line width=0.55pt] (C2) -- (C3) -- (C7);
+  \draw[line width=0.4pt] (0.75,4.72) -- (0.75,5.22) -- (1.05,5.50);
+  \draw[line width=0.4pt] (0.38,4.97) -- (1.12,4.97) -- (1.42,5.25);
+  \draw[line width=0.4pt] (0.53,5.36) -- (1.27,5.36);
+  \draw[line width=0.55pt] (0.90,5.50) -- (0.90,5.72);
+  \draw[line width=0.75pt,->] (0.90,4.68) -- (0.90,4.05);
+  \node[anchor=north] at (0.90,4.00) {$G$};
+  % rope to person — hands above head
+  \draw[line width=0.55pt] (1.54,7.15) -- (2.22,6.62);
+  \node[anchor=west] at (1.70,6.62) {$F$};
+  \fill (2.22,6.62) circle[radius=0.055];
+  \draw[line width=0.55pt] (2.40,5.85) -- (2.22,6.62);
+  \draw[line width=0.5pt] (2.62,5.88) -- (2.28,6.55);
+  \draw[line width=0.55pt] (2.58,6.12) circle[radius=0.20];
+  \draw[line width=0.45pt] (2.38,6.26) -- (2.78,6.26);
+  \draw[line width=0.6pt,fill=black] (2.32,4.98) -- (2.74,4.98) -- (2.80,5.82) -- (2.28,5.88) -- cycle;
+  \draw[line width=0.55pt] (2.38,4.98) -- (2.32,3.72);
+  \draw[line width=0.55pt] (2.70,4.98) -- (2.80,3.72);
+  \draw[line width=0.8pt] (2.16,3.72) -- (2.46,3.72);
+  \draw[line width=0.8pt] (2.68,3.72) -- (3.00,3.72);
+  % right person bending forward
+  \draw[line width=0.55pt] (5.55,7.95) circle[radius=0.22];
+  \draw[line width=0.4pt] (5.32,8.10) -- (5.78,8.10);
+  \draw[line width=0.55pt] (5.42,7.70) -- (5.72,6.55);
+  \draw[line width=0.55pt] (5.68,7.70) -- (5.88,6.55);
+  \draw[line width=0.5pt] (5.38,7.35) -- (5.62,6.62);
+  \draw[line width=0.5pt] (5.72,7.35) -- (5.72,6.62);
+  \fill (5.58,6.55) -- (6.02,6.55) -- (6.08,5.58) -- (5.55,5.58) -- cycle;
+  \draw[line width=0.55pt] (5.58,5.58) -- (5.50,5.48);
+  \draw[line width=0.7pt] (5.32,5.48) -- (5.62,5.48);
+  \draw[line width=0.7pt] (5.62,5.48) -- (5.95,5.48);
+  \node[anchor=west] at (6.18,6.40) {$F$};
+  % right beam
+  \draw[line width=0.75pt] (4.55,5.48) rectangle (7.85,5.12);
+  \foreach \x in {4.70,5.05,5.40,5.75,6.10,6.45,6.80,7.15,7.50}
+    \draw[line width=0.22pt] (\x,5.18) .. controls (\x+0.12,5.30) .. (\x+0.22,5.42);
+  % movable pulley
+  \draw[line width=0.55pt] (5.68,6.42) -- (5.68,4.72);
+  \draw[line width=0.55pt] (6.22,5.12) -- (6.22,4.72);
+  \draw[line width=0.7pt] (5.95,4.42) circle[radius=0.34];
+  \draw[line width=0.4pt] (5.95,4.42) circle[radius=0.11];
+  \fill (5.95,4.42) circle[radius=0.035];
+  \draw[line width=0.5pt] (5.95,4.08) -- (5.95,3.82);
+  % quilted bundle
+  \draw[line width=0.7pt] (5.95,3.18) ellipse[x radius=1.05,y radius=0.68];
+  \draw[line width=0.32pt] (5.22,3.18) -- (6.68,3.18);
+  \draw[line width=0.32pt] (4.98,3.48) -- (6.92,3.48);
+  \draw[line width=0.32pt] (4.98,2.88) -- (6.92,2.88);
+  \draw[line width=0.32pt] (5.95,3.86) -- (5.95,2.50);
+  \draw[line width=0.32pt] (5.48,3.80) -- (5.48,2.56);
+  \draw[line width=0.32pt] (6.42,3.80) -- (6.42,2.56);
+  \draw[line width=0.75pt,->] (5.95,2.46) -- (5.95,1.88);
+  \node[anchor=north] at (5.95,1.82) {$G$};
+\end{tikzpicture}%
+}
 \caption{图 10-1}
 \end{figure}
 
@@ -18135,7 +18227,48 @@ i。力矢量的多边形是封闭的或 ii。\(\sum F_{x} = 0\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10-2}]{assets/physics-1/fig-p0302-01.png}}
+% fig-alt: 图10-2：动滑轮两位置。左I：顶斜影，绳沿轮左缘，轮右短箭向上标F，轴下矩形重物，下箭G。右II：顶斜影，轮升高，右长箭向上标F，重物升高。L1为重物升高，L2为F升高。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.55pt] (0.35,7.05) -- (1.15,7.05);
+  \foreach \k in {0,1,2,3}
+    \draw[line width=0.28pt] (0.42+0.16*\k,7.05) -- (0.32+0.16*\k,7.22);
+  \node[anchor=west] at (1.20,7.12) {$I$};
+  \draw[line width=0.55pt] (0.62,7.05) -- (0.62,3.72);
+  \draw[line width=0.7pt] (1.20,3.72) circle[radius=0.58];
+  \draw[line width=0.55pt] (1.20,3.14) -- (1.20,2.52);
+  \draw[line width=0.6pt] (0.82,2.05) rectangle (1.58,2.52);
+  \draw[line width=0.7pt,->] (1.20,2.05) -- (1.20,1.12);
+  \node[anchor=west] at (1.28,1.20) {$G$};
+  \fill (1.78,3.72) circle[radius=0.035];
+  \draw[line width=0.65pt,->] (1.78,3.72) -- (1.78,4.28);
+  \node[anchor=south] at (1.78,4.32) {$F$};
+  \draw[line width=0.55pt] (2.55,7.05) -- (3.35,7.05);
+  \foreach \k in {0,1,2,3}
+    \draw[line width=0.28pt] (2.62+0.16*\k,7.05) -- (2.52+0.16*\k,7.22);
+  \node[anchor=west] at (3.40,7.12) {$II$};
+  \draw[line width=0.55pt] (2.82,7.05) -- (2.82,4.88);
+  \draw[line width=0.7pt] (3.40,4.88) circle[radius=0.58];
+  \draw[line width=0.55pt] (3.40,4.30) -- (3.40,3.68);
+  \draw[line width=0.6pt] (3.02,3.22) rectangle (3.78,3.68);
+  \draw[line width=0.7pt,->] (3.40,3.22) -- (3.40,2.15);
+  \node[anchor=west] at (3.48,2.22) {$G$};
+  \draw[line width=0.55pt] (3.98,4.88) -- (3.98,5.72);
+  \fill (3.98,5.72) circle[radius=0.035];
+  \draw[line width=0.65pt,->] (3.98,5.72) -- (3.98,6.52);
+  \node[anchor=west] at (4.08,6.42) {$F$};
+  \draw[line width=0.4pt] (1.78,3.72) -- (4.55,3.72);
+  \draw[line width=0.4pt] (1.58,2.52) -- (2.48,2.52);
+  \draw[line width=0.4pt] (2.32,2.52) -- (2.32,3.22);
+  \draw[line width=0.4pt] (2.24,2.52) -- (2.40,2.52);
+  \draw[line width=0.4pt] (2.24,3.22) -- (2.40,3.22);
+  \node[anchor=west] at (2.44,2.87) {$L_{1}$};
+  \draw[line width=0.4pt] (4.22,3.72) -- (4.22,5.72);
+  \draw[line width=0.4pt] (4.14,3.72) -- (4.30,3.72);
+  \draw[line width=0.4pt] (4.14,5.72) -- (4.30,5.72);
+  \node[anchor=west] at (4.34,4.72) {$L_{2}$};
+\end{tikzpicture}%
+}
 \caption{图 10-2}
 \end{figure}
 
@@ -18209,7 +18342,36 @@ F，使杠杆匀速地转过一个角度，物体也被向上举起，如图 10�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10·3}]{assets/physics-1/fig-p0303-01.png}}
+% fig-alt: 图10-3：粗杠杆水平。左绳吊圆头砝码，右标G。支点三角下斜影，标O。尺上L1为左端至O，L2为O至右施力点。右施力点下箭标G（扫描如此，正文为F）。右端一只手。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.8pt] (0.12,2.18) rectangle (7.05,2.48);
+  \draw[line width=0.4pt] (0.25,2.82) -- (0.25,2.98);
+  \draw[line width=0.4pt] (1.92,2.82) -- (1.92,2.98);
+  \draw[line width=0.4pt] (6.22,2.82) -- (6.22,2.98);
+  \draw[line width=0.4pt] (0.25,2.90) -- (1.92,2.90);
+  \draw[line width=0.4pt] (1.92,2.90) -- (6.22,2.90);
+  \node at (1.08,3.12) {$L_{1}$};
+  \node at (4.07,3.12) {$L_{2}$};
+  \fill (1.92,2.18) -- (1.68,1.82) -- (2.16,1.82) -- cycle;
+  \draw[line width=0.4pt] (1.38,1.82) -- (2.48,1.82);
+  \foreach \k in {0,1,...,7}
+    \draw[line width=0.25pt] (1.44+0.13*\k,1.82) -- (1.34+0.13*\k,1.68);
+  \node[anchor=north] at (1.92,1.66) {$O$};
+  \draw[line width=0.55pt] (0.25,2.18) -- (0.25,1.08);
+  \draw[line width=0.65pt,fill=black!90] (0.08,0.28) -- (0.42,0.28) -- (0.42,0.72) -- (0.25,0.92) -- (0.08,0.72) -- cycle;
+  \node[anchor=west] at (0.50,0.48) {$G$};
+  \draw[line width=0.7pt,->] (6.22,2.18) -- (6.22,1.08);
+  \node[anchor=west] at (6.32,1.15) {$G$};
+  % hand
+  \draw[line width=0.6pt] (7.05,2.33) -- (7.28,2.33);
+  \draw[line width=0.55pt] (7.28,2.42) .. controls (7.55,2.72) and (7.95,2.68) .. (8.12,2.28);
+  \draw[line width=0.55pt] (7.28,2.24) .. controls (7.58,1.98) and (7.92,1.95) .. (8.15,2.18);
+  \draw[line width=0.45pt] (7.42,2.38) .. controls (7.58,2.55) and (7.72,2.52) .. (7.78,2.32);
+  \draw[line width=0.45pt] (7.50,2.30) .. controls (7.65,2.48) and (7.80,2.45) .. (7.86,2.28);
+  \draw[line width=0.5pt] (8.12,2.24) .. controls (8.38,2.08) and (8.48,1.88) .. (8.32,1.70);
+\end{tikzpicture}%
+}
 \caption{图 10·3}
 \end{figure}
 
@@ -18247,7 +18409,32 @@ F h _ {2} = G h _ {1} \quad (10 \cdot 2)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图10-4}]{assets/physics-1/fig-p0304-01.png}}
+% fig-alt: 图10-4：细线为原水平位置。粗杆绕支点三角转过α，左臂上抬标L1，右臂下斜标L2。α在水平线与右臂之间。左h1为左端升高，右h2为右端下降。原位与新位左各下箭G，右各下箭F。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.7pt] (0.12,3.62) -- (6.72,3.62);
+  \fill (2.18,3.62) -- (1.94,3.28) -- (2.42,3.28) -- cycle;
+  \draw[line width=2.3pt,line cap=round] (0.28,4.58) -- (2.18,3.62) -- (5.42,1.98);
+  \node[anchor=south] at (1.10,4.28) {$L_{1}$};
+  \node[anchor=north west] at (3.55,2.58) {$L_{2}$};
+  \draw[line width=0.4pt] (2.62,3.62) arc[start angle=0,end angle=-27,radius=0.62];
+  \node[anchor=west] at (3.22,3.42) {$\alpha$};
+  \draw[decorate,decoration={brace,amplitude=3.4pt,raise=1.4pt},line width=0.4pt]
+    (0.12,3.62) -- (0.12,4.58);
+  \node[anchor=east] at (-0.08,4.10) {$h_{1}$};
+  \draw[decorate,decoration={brace,amplitude=3.4pt,raise=1.4pt},line width=0.4pt]
+    (5.42,1.98) -- (5.42,3.62);
+  \node[anchor=east] at (5.18,2.80) {$h_{2}$};
+  \draw[line width=0.65pt,->] (0.32,3.62) -- (0.32,2.18);
+  \node[anchor=west] at (0.40,2.28) {$G$};
+  \draw[line width=0.65pt,->] (0.12,3.62) -- (0.12,1.42);
+  \node[anchor=east] at (0.04,1.52) {$G$};
+  \draw[line width=0.65pt,->] (6.72,3.62) -- (6.72,2.18);
+  \node[anchor=west] at (6.80,2.25) {$F$};
+  \draw[line width=0.65pt,->] (5.42,1.98) -- (5.42,0.78);
+  \node[anchor=west] at (5.50,0.88) {$F$};
+\end{tikzpicture}%
+}
 \caption{图10-4}
 \end{figure}
 
@@ -18362,7 +18549,107 @@ B。不论是动滑轮、定滑轮、轮轴，就其工作原理来看都可以�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图10·5}]{assets/physics-1/fig-p0308-01.png}}
+% fig-alt: 图10-5：七图。(a)第一类杠杆 B—O—A，G下、F下。(b)第二类 O左、B中G下、A右F上。(c)第三类 O左、A中F上、B右G下。(d)定滑轮同(a)。(e)动滑轮同(b)。(f)轮轴，内r1外r2，B左G、A右F。(g)动滑轮类第三类，F上、左绳接地、O A B、右G。图内写(a)至(g)，不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % (a)
+  \draw[line width=0.7pt] (0.10,10.15) -- (2.55,10.15);
+  \fill (1.12,10.15) -- (0.98,9.98) -- (1.26,9.98) -- cycle;
+  \node[anchor=south east] at (0.18,10.18) {$B$};
+  \node[anchor=south] at (1.12,10.20) {$O$};
+  \node[anchor=south west] at (2.48,10.18) {$A$};
+  \draw[line width=0.65pt,->] (0.10,10.15) -- (0.10,8.72);
+  \node[anchor=east] at (0.02,8.85) {$G$};
+  \draw[line width=0.65pt,->] (2.55,10.15) -- (2.55,9.15);
+  \node[anchor=west] at (2.62,9.25) {$F$};
+  \node at (1.32,8.35) {$(a)$};
+  % (b)
+  \draw[line width=0.7pt] (0.10,7.15) -- (2.55,7.15);
+  \fill (0.10,7.15) -- (-0.04,6.98) -- (0.24,6.98) -- cycle;
+  \node[anchor=east] at (0.00,7.32) {$O$};
+  \node[anchor=south] at (1.05,7.20) {$B$};
+  \node[anchor=north] at (2.42,7.08) {$A$};
+  \draw[line width=0.65pt,->] (1.05,7.15) -- (1.05,5.72);
+  \node[anchor=west] at (1.12,5.85) {$G$};
+  \draw[line width=0.65pt,->] (2.55,7.15) -- (2.55,7.78);
+  \node[anchor=west] at (2.62,7.70) {$F$};
+  \node at (1.32,5.35) {$(b)$};
+  % (c)
+  \draw[line width=0.7pt] (0.10,3.85) -- (2.55,3.85);
+  \node[anchor=east] at (0.02,3.98) {$O$};
+  \node[anchor=north] at (1.22,3.78) {$A$};
+  \node[anchor=south west] at (2.48,3.88) {$B$};
+  \draw[line width=0.65pt,->] (1.22,3.85) -- (1.22,4.58);
+  \node[anchor=south] at (1.22,4.62) {$F$};
+  \draw[line width=0.65pt,->] (2.55,3.85) -- (2.55,2.85);
+  \node[anchor=west] at (2.62,2.95) {$G$};
+  \node at (1.32,2.45) {$(c)$};
+  % (d)
+  \draw[line width=0.5pt] (3.55,10.72) -- (4.25,10.72);
+  \foreach \k in {0,1,2,3}
+    \draw[line width=0.25pt] (3.62+0.15*\k,10.72) -- (3.52+0.15*\k,10.86);
+  \draw[line width=0.5pt] (3.90,10.72) -- (3.90,10.38);
+  \draw[line width=0.65pt] (3.90,9.85) circle[radius=0.52];
+  \draw[line width=0.4pt] (3.38,9.85) -- (4.42,9.85);
+  \node[anchor=east] at (3.32,9.85) {$B$};
+  \node[anchor=west] at (4.48,9.85) {$A$};
+  \node at (3.90,9.85) {$O$};
+  \draw[line width=0.6pt,->] (3.38,9.85) -- (3.38,8.85);
+  \node[anchor=east] at (3.30,8.95) {$G$};
+  \draw[line width=0.6pt,->] (4.42,9.85) -- (4.42,8.85);
+  \node[anchor=west] at (4.50,8.95) {$F$};
+  \node at (3.90,8.35) {$(d)$};
+  % (e)
+  \draw[line width=0.5pt] (3.38,7.85) -- (3.85,7.85);
+  \foreach \k in {0,1,2}
+    \draw[line width=0.25pt] (3.42+0.12*\k,7.85) -- (3.34+0.12*\k,7.98);
+  \draw[line width=0.5pt] (3.48,7.85) -- (3.48,7.22);
+  \draw[line width=0.65pt] (4.00,6.68) circle[radius=0.52];
+  \draw[line width=0.4pt] (3.48,6.68) -- (4.52,6.68);
+  \node[anchor=east] at (3.42,6.68) {$O$};
+  \node at (4.00,6.82) {$B$};
+  \node[anchor=west] at (4.56,6.68) {$A$};
+  \draw[line width=0.6pt,->] (4.52,6.68) -- (4.52,7.48);
+  \node[anchor=south] at (4.52,7.52) {$F$};
+  \draw[line width=0.6pt,->] (4.00,6.16) -- (4.00,5.22);
+  \node[anchor=west] at (4.08,5.35) {$G$};
+  \node at (4.00,4.85) {$(e)$};
+  % (f)
+  \draw[line width=0.5pt] (6.22,11.05) -- (6.92,11.05);
+  \foreach \k in {0,1,2,3}
+    \draw[line width=0.25pt] (6.28+0.15*\k,11.05) -- (6.18+0.15*\k,11.19);
+  \draw[line width=0.55pt] (6.57,11.05) -- (6.57,8.55);
+  \draw[line width=0.65pt] (6.57,9.20) circle[radius=0.95];
+  \draw[line width=0.6pt] (6.57,9.20) circle[radius=0.40];
+  \draw[line width=0.4pt] (5.62,9.20) -- (7.52,9.20);
+  \node[anchor=east] at (6.12,9.20) {$B$};
+  \node[anchor=west] at (7.58,9.20) {$A$};
+  \node[anchor=north] at (6.57,9.12) {$O$};
+  \draw[line width=0.4pt,->] (6.57,9.20) -- (6.90,9.48);
+  \node[anchor=south west] at (6.88,9.50) {$r_{1}$};
+  \draw[line width=0.4pt,->] (6.57,9.20) -- (7.38,8.55);
+  \node[anchor=north west] at (7.12,8.62) {$r_{2}$};
+  \draw[line width=0.6pt,->] (6.17,9.20) -- (6.17,8.05);
+  \node[anchor=east] at (6.08,8.18) {$G$};
+  \draw[line width=0.6pt,->] (7.52,9.20) -- (7.52,8.35);
+  \node[anchor=west] at (7.60,8.45) {$F$};
+  \node at (6.57,7.55) {$(f)$};
+  % (g)
+  \draw[line width=0.65pt] (6.55,3.55) circle[radius=0.55];
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 0.9pt] (6.00,3.55) -- (7.10,3.55);
+  \node[anchor=east] at (5.95,3.55) {$O$};
+  \node[anchor=north] at (6.55,3.48) {$A$};
+  \node[anchor=west] at (7.15,3.55) {$B$};
+  \draw[line width=0.6pt,->] (6.55,4.10) -- (6.55,4.92);
+  \node[anchor=south] at (6.55,4.96) {$F$};
+  \draw[line width=0.55pt] (6.00,3.55) -- (6.00,2.65);
+  \draw[line width=0.5pt] (5.78,2.65) -- (6.22,2.65);
+  \foreach \k in {0,1,2,3}
+    \draw[line width=0.25pt] (5.82+0.10*\k,2.65) -- (5.74+0.10*\k,2.52);
+  \node[anchor=west] at (7.15,3.05) {$G$};
+  \node at (6.55,2.15) {$(g)$};
+\end{tikzpicture}%
+}
 \caption{图10·5}
 \end{figure}
 
@@ -18386,7 +18673,52 @@ F L _ {2} = G L _ {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10·6}]{assets/physics-1/fig-p0309-01.png}}
+% fig-alt: 图10-6：左理发剪，刃张开，双椭圆环。中铁皮剪，刃合拢尖顶有竖纹，大椭圆环，枢轴小圈。右手握羊角锤柄，锤爪抠木板中的钉。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % scissors — two blades + rings
+  \begin{scope}[shift={(1.25,3.05)},rotate=20]
+    \draw[line width=0.7pt,fill=white] (-0.10,0.05) -- (-0.16,2.65) -- (0.10,2.68) -- (0.08,0.05) -- cycle;
+  \end{scope}
+  \begin{scope}[shift={(1.25,3.05)},rotate=-20]
+    \draw[line width=0.7pt,fill=white] (-0.08,0.05) -- (-0.10,2.68) -- (0.16,2.65) -- (0.10,0.05) -- cycle;
+  \end{scope}
+  \fill (1.25,3.05) circle[radius=0.05];
+  \draw[line width=0.6pt] (1.12,2.95) -- (0.78,2.35);
+  \draw[line width=0.6pt] (1.38,2.95) -- (1.72,2.35);
+  \draw[line width=0.7pt] (0.58,1.78) ellipse[x radius=0.32,y radius=0.46];
+  \draw[line width=0.7pt] (1.92,1.78) ellipse[x radius=0.32,y radius=0.46];
+  \draw[line width=0.55pt] (0.78,2.35) -- (0.62,2.10);
+  \draw[line width=0.55pt] (1.72,2.35) -- (1.88,2.10);
+  % shears
+  \draw[line width=1.15pt] (4.15,2.35) ellipse[x radius=0.78,y radius=1.32];
+  \draw[line width=0.4pt,fill=white] (4.15,2.35) ellipse[x radius=0.55,y radius=1.10];
+  \draw[line width=0.65pt] (3.62,3.62) .. controls (3.48,4.35) and (3.55,5.15) .. (4.15,5.72)
+    .. controls (4.75,5.15) and (4.82,4.35) .. (4.68,3.62);
+  \foreach \s in {0.12,0.28,0.44,0.60,0.76}
+    \draw[line width=0.22pt] (3.70+0.10*\s,3.70+1.85*\s) -- (4.60-0.10*\s,3.70+1.85*\s);
+  \fill (4.15,5.72) circle[radius=0.055];
+  \draw[line width=0.5pt,fill=white] (4.15,3.70) circle[radius=0.075];
+  % hammer
+  \draw[line width=0.75pt] (6.48,3.05) -- (6.48,1.48);
+  \draw[line width=0.75pt] (6.72,3.05) -- (6.72,1.48);
+  \draw[line width=0.7pt,fill=white]
+    (5.92,1.55) -- (6.22,1.18) -- (6.95,1.22) -- (7.18,1.58)
+    -- (6.72,1.72) -- (6.48,1.72) -- (6.05,1.68) -- cycle;
+  \draw[line width=0.55pt] (6.18,1.18) -- (6.18,1.02);
+  \draw[line width=0.7pt] (5.55,1.02) -- (7.35,1.02) -- (7.48,0.72) -- (5.42,0.72) -- cycle;
+  \foreach \x in {5.65,5.92,6.18,6.45,6.72,6.98,7.22}
+    \draw[line width=0.22pt] (\x,0.78) .. controls (\x+0.08,0.90) .. (\x+0.14,0.98);
+  % fist
+  \draw[line width=0.6pt,fill=white]
+    (6.22,3.08) .. controls (5.88,3.28) and (5.72,3.72) .. (5.92,4.12)
+    .. controls (6.18,4.48) and (6.85,4.52) .. (7.18,4.12)
+    .. controls (7.48,3.72) and (7.28,3.22) .. (6.92,3.08) -- cycle;
+  \draw[line width=0.45pt] (6.05,3.55) .. controls (6.18,3.78) and (6.40,3.80) .. (6.52,3.52);
+  \draw[line width=0.45pt] (6.12,3.32) .. controls (6.22,3.52) and (6.42,3.52) .. (6.52,3.28);
+  \draw[line width=0.55pt] (7.18,3.95) -- (7.72,4.08) -- (7.82,3.62) -- (7.28,3.35);
+\end{tikzpicture}%
+}
 \caption{图 10·6}
 \end{figure}
 
@@ -18412,7 +18744,44 @@ F \times 2 \pi r _ {y} = G \times 2 \pi r _ {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 10.7}]{assets/physics-1/fig-p0310-01.png}}
+% fig-alt: 图10-7：轮轴。顶斜影，竖轴穿内外圆。外圆左半径标r2，内圆右半径标r1。右缘A下箭F，虚线至A'；右标h2。左轴下虚线框B'，实线框B，左标h1，B下箭G。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.35pt}]
+  \draw[line width=0.55pt] (1.52,8.72) -- (2.42,8.72);
+  \foreach \k in {0,1,2,3,4}
+    \draw[line width=0.28pt] (1.60+0.16*\k,8.72) -- (1.50+0.16*\k,8.90);
+  \draw[line width=0.7pt] (1.97,8.72) -- (1.97,6.55);
+  \draw[line width=0.7pt] (1.97,6.92) circle[radius=1.18];
+  \draw[line width=0.65pt] (1.97,6.92) circle[radius=0.50];
+  \fill (1.97,6.92) circle[radius=0.05];
+  \draw[line width=0.4pt,->] (1.97,6.92) -- (1.02,7.68);
+  \node[anchor=north east] at (1.28,7.28) {$r_{2}$};
+  \draw[line width=0.4pt,->] (1.97,6.92) -- (2.46,7.02);
+  \node[anchor=north west] at (2.28,6.78) {$r_{1}$};
+  \node[anchor=south west] at (3.10,7.02) {$A$};
+  \draw[line width=0.6pt] (3.15,6.92) -- (3.15,6.15);
+  \draw[line width=0.65pt,->] (3.15,6.15) -- (3.15,5.48);
+  \node[anchor=west] at (3.24,5.82) {$F$};
+  \draw[line width=0.45pt,dash pattern=on 1.6pt off 1.0pt] (3.15,5.48) -- (3.15,3.72);
+  \fill (3.15,3.72) circle[radius=0.03];
+  \node[anchor=west] at (3.24,3.72) {$A'$};
+  \draw[line width=0.4pt] (3.62,6.92) -- (3.92,6.92);
+  \draw[line width=0.4pt] (3.77,6.92) -- (3.77,3.72);
+  \draw[line width=0.4pt] (3.62,3.72) -- (3.92,3.72);
+  \node[anchor=west] at (3.96,5.32) {$h_{2}$};
+  \draw[line width=0.55pt] (1.47,6.92) -- (1.47,1.72);
+  \draw[line width=0.45pt,dash pattern=on 1.4pt off 0.9pt] (1.16,4.48) rectangle (1.78,4.92);
+  \node[anchor=west] at (1.82,4.70) {$B'$};
+  \draw[line width=0.6pt] (1.16,2.42) rectangle (1.78,2.86);
+  \node[anchor=west] at (1.82,2.64) {$B$};
+  \draw[line width=0.4pt] (0.78,4.92) -- (1.00,4.92);
+  \draw[line width=0.4pt] (0.89,4.92) -- (0.89,2.42);
+  \draw[line width=0.4pt] (0.78,2.42) -- (1.00,2.42);
+  \node[anchor=east] at (0.74,3.67) {$h_{1}$};
+  \draw[line width=0.7pt,->] (1.47,2.42) -- (1.47,1.42);
+  \node[anchor=west] at (1.55,1.50) {$G$};
+\end{tikzpicture}%
+}
 \caption{图 10.7}
 \end{figure}
 
