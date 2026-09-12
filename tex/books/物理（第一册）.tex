@@ -28715,8 +28715,28 @@ v = 2 \pi R f \tag {13.16}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-1/fig-p0446-04.png}}
-\caption{(3)}
+% fig-alt: 图13·23（b）右：圆心$O'$，点$A'$、$B'$；$A'$处$v_1'$向上，$B'$处$v_2'$切向；圆心角大于半周偏大。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.40}
+  \def\thb{125}
+  \draw[line width=0.6pt] (0,0) circle[radius=\R];
+  \fill (0,0) circle[radius=0.03];
+  \node[anchor=north west] at (0.06,-0.06) {$O'$};
+  \draw[line width=0.5pt] (0,0) -- (\R,0);
+  \draw[line width=0.5pt] (0,0) -- (\thb:\R);
+  \fill (\R,0) circle[radius=0.03];
+  \node[anchor=west] at ({\R+0.08},0) {$A'$};
+  \fill (\thb:\R) circle[radius=0.03];
+  \node[anchor=south east] at (\thb:{\R+0.12}) {$B'$};
+  \draw[line width=0.4pt,->] (0.38,0) arc[start angle=0,end angle=\thb,radius=0.38];
+  \draw[line width=0.55pt,->] (\R,0) -- ++(0,0.80);
+  \node[anchor=west] at ({\R+0.05},0.65) {$v_{1}'$};
+  \draw[line width=0.55pt,->] (\thb:\R) -- ++({\thb+90}:0.80);
+  \node[anchor=north east] at ($(\thb:\R)+({\thb+90}:0.55)$) {$v_{2}'$};
+\end{tikzpicture}%
+}
+\caption{同半径较大转角}
 \end{figure}
 
 \emph{（b）}
@@ -28738,8 +28758,52 @@ v _ {n} = \frac {v ^ {2}}{R} \tag {13.21}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-24}]{assets/physics-1/fig-p0447-01.png}}
-\caption{图13-24}
+% fig-alt: 图13·24：圆心$O$，半径$R$至$B$；$A$、$B$圆心角$\Delta\theta$；$A$处$v_1$与平移$v_2$夹$\Delta\theta$，矢端连$\Delta v$；自$A$作等长$\Delta v$至$C$，并连$BC$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{2.20}
+  \def\dth{32}
+  \def\V{1.10}
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (90:\R);
+  \coordinate (A) at ({90+\dth}:\R);
+  \draw[line width=0.6pt] (O) circle[radius=\R];
+  \fill (O) circle[radius=0.035];
+  \node[anchor=north west] at (0.10,-0.08) {$O$};
+  \draw[line width=0.5pt] (O) -- (B);
+  \draw[line width=0.5pt] (O) -- (A);
+  \fill (B) circle[radius=0.035];
+  \node[anchor=south] at (90:{\R+0.16}) {$B$};
+  \fill (A) circle[radius=0.035];
+  \node[anchor=south east] at ({90+\dth}:{\R+0.16}) {$A$};
+  \node[anchor=east] at (78:{\R*0.52}) {$R$};
+  \draw[line width=0.35pt] (0,0.58) arc[start angle=90,end angle={90+\dth},radius=0.58];
+  \node[anchor=south] at ({90+\dth/2}:0.78) {$\Delta\theta$};
+  % v2 at B
+  \draw[line width=0.55pt,->] (B) -- ++(\V,0);
+  \node[anchor=south west] at ($(B)+(0.35,0.06)$) {$v_{2}$};
+  % velocity triangle at A (clockwise: tangent dir = dth)
+  \coordinate (V1tip) at ($(A)+({\dth}:\V)$);
+  \coordinate (V2tip) at ($(A)+(\V,0)$);
+  \draw[line width=0.55pt,->] (A) -- (V1tip);
+  \node[anchor=south east] at ($(V1tip)+(-0.02,0.04)$) {$v_{1}$};
+  \draw[line width=0.55pt,->] (A) -- (V2tip);
+  \node[anchor=south] at ($(V2tip)+(0,0.06)$) {$v_{2}$};
+  \draw[line width=0.5pt,->] (V1tip) -- (V2tip);
+  \node[anchor=south west] at ($(V1tip)!0.6!(V2tip)+(0.02,0.05)$) {$\Delta v$};
+  \draw[line width=0.35pt] ($(A)+(0.40,0)$) arc[start angle=0,end angle=\dth,radius=0.40];
+  \node[anchor=west] at ($(A)+({\dth/2}:0.52)$) {$\Delta\theta$};
+  % AC parallel & equal to tip Delta v (scaled 1.0)
+  \coordinate (C) at ($(A)+(V2tip)-(V1tip)$);
+  \draw[line width=0.55pt,->] (A) -- (C);
+  \fill (C) circle[radius=0.03];
+  \node[anchor=west] at ($(C)+(0.06,0)$) {$C$};
+  \node[anchor=north east] at ($(A)!0.55!(C)+(-0.02,-0.04)$) {$\Delta v$};
+  \draw[line width=0.45pt] (B) -- (C);
+  \draw[line width=0.4pt] (A) -- (B);
+\end{tikzpicture}%
+}
+\caption{图13·24}
 \end{figure}
 
 \emph{图13·24}
@@ -28932,8 +28996,55 @@ F _ {n} = m g \operatorname{tg} \theta
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13-25}]{assets/physics-1/fig-p0452-01.png}}
-\caption{图13-25}
+% fig-alt: 图13·25：锥摆；悬点$O'$，水平圆周圆心$O$半径$R$；小球受$T$、$mg$，合力$F_n$指向$O$；锥角$\theta$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{1.55}
+  \def\H{2.35}
+  \def\ry{0.42}
+  \coordinate (Op) at (0,\H);
+  \coordinate (O) at (0,0);
+  \coordinate (Bob) at (-\R,0);
+  % vertical axis
+  \draw[line width=0.4pt,dash pattern=on 1.5pt off 1.1pt] (Op) -- (0,-0.55);
+  \fill (Op) circle[radius=0.035];
+  \node[anchor=south east] at (-0.06,\H) {$O'$};
+  \fill (O) circle[radius=0.03];
+  \node[anchor=north west] at (0.06,-0.06) {$O$};
+  % horizontal circle (ellipse)
+  \draw[line width=0.5pt,dash pattern=on 1.5pt off 1.1pt] (0,0) ellipse[x radius=\R,y radius=\ry];
+  \draw[line width=0.45pt,->] ({-\R*0.15},{\ry*0.98}) arc[start angle=100,end angle=160,x radius=\R,y radius=\ry];
+  \draw[line width=0.5pt,->] (O) -- ({\R+0.05},0);
+  \node[anchor=south] at ({\R*0.55},0.08) {$R$};
+  % string
+  \draw[line width=0.55pt] (Op) -- (Bob);
+  \fill (Bob) circle[radius=0.07];
+  % angle at O'
+  \draw[line width=0.35pt] (0,{\H-0.55}) arc[start angle=-90,end angle={-90-atan2(\R,\H)},radius=0.55];
+  \node[anchor=north] at (-0.28,{\H-0.55}) {$\theta$};
+  % forces at bob
+  \def\Tlen{1.35}
+  \coordinate (Ttip) at ($(Bob)!{\Tlen/veclen(\R,\H)}!(Op)$);
+  \draw[line width=0.55pt,->] (Bob) -- (Ttip);
+  \node[anchor=south east] at ($(Ttip)+(-0.02,0.02)$) {$T$};
+  \def\Mg{1.05}
+  \coordinate (Gtip) at ($(Bob)+(0,-\Mg)$);
+  \draw[line width=0.55pt,->] (Bob) -- (Gtip);
+  \node[anchor=north] at ($(Gtip)+(0,-0.02)$) {$mg$};
+  % Fn horizontal to right (toward O)
+  \def\Fn{1.05}
+  \coordinate (Ftip) at ($(Bob)+(\Fn,0)$);
+  \draw[line width=0.55pt,->] (Bob) -- (Ftip);
+  \node[anchor=south] at ($(Ftip)+(0,0.08)$) {$F_{n}$};
+  % parallelogram dashed: Ttip vertical down to Ftip; Gtip slanted parallel to string to Ftip
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (Ttip) -- (Ftip);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (Gtip) -- (Ftip);
+  % theta at bob between mg and string-parallel
+  \draw[line width=0.35pt] ($(Bob)+(0,-0.45)$) arc[start angle=-90,end angle={-90+atan2(\R,\H)},radius=0.45];
+  \node[anchor=north west] at ($(Bob)+(0.08,-0.42)$) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{图13·25}
 \end{figure}
 
 \emph{图13·25}
@@ -28953,8 +29064,42 @@ F _ {n} = m g \operatorname{tg} \theta
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0452-03.png}}
-\caption{(b)}
+% fig-alt: 图13·26（b）：外轨垫高断面；点$A$、$B$、$C$；$O$处重力$G$、支持力$Q$与水平合力$F$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % forces at O
+  \coordinate (O) at (0,0);
+  \fill (O) circle[radius=0.03];
+  \node[anchor=south east] at (-0.06,0.04) {$O$};
+  \draw[line width=0.55pt,->] (O) -- (0,-1.15);
+  \node[anchor=west] at (0.10,-1.15) {$G$};
+  % th=18: Q=(1.15*tan18, 1.15)=(0.374,1.15), F=(0.374,0)
+  \draw[line width=0.55pt,->] (O) -- (0.374,1.15);
+  \node[anchor=south west] at (0.40,1.18) {$Q$};
+  \draw[line width=0.55pt,->] (O) -- (0.374,0);
+  \node[anchor=south] at (0.374,0.10) {$F$};
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (0.374,1.15) -- (0.374,0);
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (0,-1.15) -- (0.374,-1.15+1.15);
+  % track: left high, right low, angle ~18°
+  \fill[pattern=north east lines,pattern color=black!55]
+    (-1.55,-2.15) -- (1.55,-3.15) -- (1.55,-3.55) -- (-1.55,-2.55) -- cycle;
+  \draw[line width=0.55pt]
+    (-1.55,-2.15) -- (1.55,-3.15) -- (1.55,-3.55) -- (-1.55,-2.55) -- cycle;
+  % rail marks on top face
+  \draw[line width=0.7pt] (-0.85,-2.38) -- (-0.85,-2.18) -- (-0.62,-2.25) -- (-0.62,-2.45);
+  \draw[line width=0.7pt] (0.62,-2.85) -- (0.62,-2.65) -- (0.85,-2.72) -- (0.85,-2.92);
+  % ABC: C outer top, B inner top, A under C at B height
+  \coordinate (C) at (-0.73,-2.22);
+  \coordinate (B) at (0.73,-2.88);
+  \coordinate (A) at (-0.73,-2.88);
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (C) -- (B);
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (C) -- (A) -- (B);
+  \node[anchor=south east] at ($(C)+(-0.04,0.04)$) {$C$};
+  \node[anchor=south west] at ($(B)+(0.04,0.02)$) {$B$};
+  \node[anchor=east] at ($(A)+(-0.06,0)$) {$A$};
+\end{tikzpicture}%
+}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
@@ -28975,11 +29120,55 @@ F = G \operatorname{tg} \theta = m g \operatorname{tg} \theta
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·27}]{assets/physics-1/fig-p0453-01.png}}
-\caption{图 13·27}
+% fig-alt: 图13·27：拱桥圆弧圆心$O$；坡上车标$N_1$、$f$、$G$、$G_1$、$G_2$；桥顶车标$N_2$、$G$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{2.70}
+  \coordinate (O) at (0,0);
+  \draw[line width=0.65pt] (130:\R) arc[start angle=130,end angle=50,radius=\R];
+  \fill (O) circle[radius=0.03];
+  \node[anchor=north] at (0,-0.12) {$O$};
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (O) -- (90:\R);
+  % top car
+  \begin{scope}[shift={(90:\R)}]
+    \draw[line width=0.45pt,fill=white] (-0.32,0.02) rectangle (0.32,0.30);
+    \draw[line width=0.4pt] (-0.18,0.02) circle[radius=0.055];
+    \draw[line width=0.4pt] (0.18,0.02) circle[radius=0.055];
+  \end{scope}
+  \coordinate (TopCM) at ($(90:\R)+(0,0.16)$);
+  \draw[line width=0.5pt,->] (TopCM) -- ++(0,0.58);
+  \node[anchor=west] at ($(TopCM)+(0.06,0.48)$) {$N_{2}$};
+  \draw[line width=0.5pt,->] (TopCM) -- ++(0,-0.72);
+  \node[anchor=west] at ($(TopCM)+(0.06,-0.55)$) {$G$};
+  % slope car
+  \def\phia{122}
+  \begin{scope}[shift={(\phia:\R)},rotate={\phia-90}]
+    \draw[line width=0.45pt,fill=white] (-0.32,0.02) rectangle (0.32,0.30);
+    \draw[line width=0.4pt] (-0.18,0.02) circle[radius=0.055];
+    \draw[line width=0.4pt] (0.18,0.02) circle[radius=0.055];
+  \end{scope}
+  \coordinate (CM) at ($(\phia:\R)+({\phia}:0.16)$);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (O) -- (CM);
+  \draw[line width=0.5pt,->] (CM) -- ++(0,-1.00);
+  \node[anchor=west] at ($(CM)+(0.08,-0.78)$) {$G$};
+  \draw[line width=0.5pt,->] (CM) -- ++({\phia}:0.72);
+  \node[anchor=south east] at ($(CM)+({\phia}:0.58)$) {$N_{1}$};
+  \draw[line width=0.5pt,->] (CM) -- ++({\phia-90}:0.68);
+  \node[anchor=south] at ($(CM)+({\phia-90}:0.58)$) {$f$};
+  % G2 radial toward O; G1 tangential downhill
+  \coordinate (G2tip) at ($(CM)+({\phia+180}:0.58)$);
+  \coordinate (G1tip) at ($(CM)+({\phia+90}:0.58)$);
+  \draw[line width=0.45pt,->] (CM) -- (G2tip);
+  \node[anchor=north east] at ($(G2tip)+(-0.04,-0.02)$) {$G_{2}$};
+  \draw[line width=0.45pt,->] (CM) -- (G1tip);
+  \node[anchor=north] at ($(G1tip)+(0,-0.04)$) {$G_{1}$};
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (G1tip) -- ($(G1tip)+(G2tip)-(CM)$) -- (G2tip);
+\end{tikzpicture}%
+}
+\caption{图13·27}
 \end{figure}
 
-\emph{图 13·27}
+\emph{图13·27}
 
 \[
 F _ {n} = G _ {2} - N _ {1}
@@ -29019,11 +29208,55 @@ T，如图 13·29 所示，当摆球从高处摆下来通过原来的平衡位�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 13·29}]{assets/physics-1/fig-p0454-02.png}}
-\caption{图 13·29}
+% fig-alt: 图13·29：左静止摆球$C$，拉力$T$与重力$G$等长；右摆过最低点$C$，张力$T'$大于$G$，速度$v$水平。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\L{2.2}
+  % left panel
+  \begin{scope}[shift={(0,0)}]
+    \coordinate (O) at (0,0);
+    \coordinate (C) at (0,-\L);
+    \fill (O) circle[radius=0.03];
+    \node[anchor=south] at (0,0.08) {$O$};
+    \draw[line width=0.55pt] (O) -- (C);
+    \draw[line width=0.45pt] (-0.55,-\L+0.08) arc[start angle=195,end angle=345,radius=0.72];
+    \fill[white] (C) circle[radius=0.09];
+    \draw[line width=0.5pt] (C) circle[radius=0.09];
+    \node[anchor=north east] at (-0.12,{-\L-0.12}) {$C$};
+    \draw[line width=0.55pt,->] (C) -- ++(0,0.85);
+    \node[anchor=west] at (0.12,-1.45) {$T$};
+    \draw[line width=0.55pt,->] (C) -- ++(0,-0.85);
+    \node[anchor=west] at (0.12,{-\L-0.55}) {$G$};
+  \end{scope}
+  % right panel
+  \begin{scope}[shift={(3.6,0)}]
+    \coordinate (O) at (0,0);
+    \coordinate (C) at (0,-\L);
+    \fill (O) circle[radius=0.03];
+    \node[anchor=south] at (0,0.08) {$O$};
+    \draw[line width=0.55pt] (O) -- (C);
+    \def\ang{32}
+    \coordinate (P) at ({-90+\ang}:\L);
+    \draw[line width=0.45pt,dash pattern=on 1.4pt off 1.0pt] (O) -- (P);
+    \fill[white] (P) circle[radius=0.08];
+    \draw[line width=0.45pt] (P) circle[radius=0.08];
+    \draw[line width=0.45pt,->] ({-90+\ang}:\L) arc[start angle={-90+\ang},end angle=-90,radius=\L];
+    \fill[white] (C) circle[radius=0.09];
+    \draw[line width=0.5pt] (C) circle[radius=0.09];
+    \node[anchor=north east] at (-0.12,{-\L-0.12}) {$C$};
+    \draw[line width=0.55pt,->] (C) -- ++(0,1.25);
+    \node[anchor=west] at (0.12,-1.15) {$T'$};
+    \draw[line width=0.55pt,->] (C) -- ++(0,-0.85);
+    \node[anchor=west] at (0.12,{-\L-0.55}) {$G$};
+    \draw[line width=0.55pt,->] (C) -- ++(-0.85,0);
+    \node[anchor=north] at (-0.55,{-\L-0.08}) {$v$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图13·29}
 \end{figure}
 
-\emph{图 13·29}
+\emph{图13·29}
 
 最后还要请读者注意一点，公式（13·23） \(F_{n}=m\frac{v^{2}}{R}\)
 不仅仅是对匀速的圆周运动适用。它对速度大小在变化的圆周运动也适用。例如圆周平面在竖直平面的光滑圆槽内，把一个小球用力猛推一下，小球就在圆槽内做圆周运动，但它的运动速度大小却在变化着。当小球沿圆槽向上运动时，速度在变小，沿圆槽向下运动时，速度在变大。不过无论小球通过圆槽的哪一点，小球的速度方向总是在改变，因此总是需要向心力。然而向心力的大小将随v的大小变化而变化着。在这种情形下，公式（13.23）仍成立，不过
@@ -29032,11 +29265,57 @@ T，如图 13·29 所示，当摆球从高处摆下来通过原来的平衡位�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图：13·30}]{assets/physics-1/fig-p0455-01.png}}
-\caption{图：13·30}
+% fig-alt: 图13·30：竖直圆周圆心$O$；上$A$处$v_1$、$G$、$G_1$、$G_2$、$N$；下$B$处$v_2$、$G$、$G_1'$、$G_2'$、$N'$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{2.10}
+  \def\tha{40}
+  \coordinate (O) at (0,0);
+  \draw[line width=0.6pt] (O) circle[radius=\R];
+  \fill (O) circle[radius=0.03];
+  \node[anchor=south] at (0,0.10) {$O$};
+  \coordinate (A) at (\tha:\R);
+  \coordinate (B) at ({\tha+180}:\R);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (A) -- (B);
+  \fill (A) circle[radius=0.08];
+  \fill (B) circle[radius=0.08];
+  \node[anchor=south west] at ($(A)+(0.10,0.08)$) {$A$};
+  \node[anchor=north east] at ($(B)+(-0.10,-0.08)$) {$B$};
+  % A: clockwise tangent tha-90
+  \draw[line width=0.5pt,->] (A) -- ++({\tha-90}:0.80);
+  \node[anchor=north west] at ($(A)+({\tha-90}:0.82)$) {$v_{1}$};
+  \draw[line width=0.5pt,->] (A) -- ++(0,-1.00);
+  \node[anchor=west] at ($(A)+(0.08,-0.80)$) {$G$};
+  \coordinate (G2A) at ($(A)+({\tha+180}:0.52)$);
+  \coordinate (G1A) at ($(A)+({\tha-90}:0.52)$);
+  \draw[line width=0.45pt,->] (A) -- (G2A);
+  \node[anchor=north] at ($(G2A)+(-0.15,-0.02)$) {$G_{2}$};
+  \draw[line width=0.45pt,->] (A) -- (G1A);
+  \node[anchor=south west] at ($(G1A)+(0.02,0.02)$) {$G_{1}$};
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (G1A) -- ($(G1A)+(G2A)-(A)$) -- (G2A);
+  % N toward O, longer than G2, slightly offset label
+  \draw[line width=0.5pt,->] (A) -- ++({\tha+180}:0.95);
+  \node[anchor=east] at ($(A)+({\tha+180}:0.78)$) {$N$};
+  % B
+  \draw[line width=0.5pt,->] (B) -- ++({\tha+90}:0.80);
+  \node[anchor=south east] at ($(B)+({\tha+90}:0.82)$) {$v_{2}$};
+  \draw[line width=0.5pt,->] (B) -- ++(0,-0.90);
+  \node[anchor=west] at ($(B)+(0.08,-0.70)$) {$G$};
+  \coordinate (G2B) at ($(B)+({\tha}:0.48)$); % outward
+  \coordinate (G1B) at ($(B)+({\tha-90}:0.48)$);
+  \draw[line width=0.45pt,->] (B) -- (G2B);
+  \node[anchor=south] at ($(G2B)+(0.05,0.04)$) {$G_{2}'$};
+  \draw[line width=0.45pt,->] (B) -- (G1B);
+  \node[anchor=north west] at ($(G1B)+(0.02,-0.02)$) {$G_{1}'$};
+  \draw[line width=0.35pt,dash pattern=on 1.2pt off 0.9pt] (G1B) -- ($(G1B)+(G2B)-(B)$) -- (G2B);
+  \draw[line width=0.5pt,->] (B) -- ++({\tha}:0.92);
+  \node[anchor=west] at ($(B)+({\tha}:0.75)$) {$N'$};
+\end{tikzpicture}%
+}
+\caption{图13·30}
 \end{figure}
 
-\emph{图：13·30}
+\emph{图13·30}
 
 图 13·30 是小球的受力图，\(G_{1}\)、\(G_{2}\) 是重力 G 的两个分力，N
 是圆槽对小球的正压力，其反作用力是圆槽受到的正压力。从图中可以看出，小球在
@@ -29106,8 +29385,55 @@ N _ {2} = m g - m \frac {v ^ {2}}{R} = 10 ^ {3} \times 10 - 10 ^ {3} \times \fra
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图13.31}]{assets/physics-1/fig-p0457-01.png}}
-\caption{图13.31}
+% fig-alt: 图13·31：竖直圆槽圆心$O$，最低$E$有$v_0$，最高$C$，水平$B$；$A$处$OA$与水平成$\alpha$，标$v$、$N$、$G=mg$、$G_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{2.20}
+  \def\alp{36}
+  \coordinate (O) at (0,0);
+  \draw[line width=0.6pt] (O) circle[radius=\R];
+  \fill (O) circle[radius=0.03];
+  \node[anchor=south east] at (-0.10,0.08) {$O$};
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (0,-\R) -- (0,\R);
+  \draw[line width=0.4pt,dash pattern=on 1.4pt off 1.0pt] (0,0) -- (\R,0);
+  \coordinate (Cpt) at (90:\R);
+  \coordinate (E) at (270:\R);
+  \coordinate (B) at (0:\R);
+  \coordinate (A) at (\alp:\R);
+  \fill[white] (Cpt) circle[radius=0.06]; \draw[line width=0.4pt] (Cpt) circle[radius=0.06];
+  \fill[white] (E) circle[radius=0.06]; \draw[line width=0.4pt] (E) circle[radius=0.06];
+  \fill[white] (B) circle[radius=0.06]; \draw[line width=0.4pt] (B) circle[radius=0.06];
+  \node[anchor=south] at (90:{\R+0.18}) {$C$};
+  \node[anchor=north] at (270:{\R+0.18}) {$E$};
+  \node[anchor=west] at ({\R+0.14},0) {$B$};
+  \node[anchor=east] at (-0.14,{\R*0.48}) {$R$};
+  \node[anchor=east] at (-0.14,{-\R*0.48}) {$R$};
+  \draw[line width=0.5pt] (O) -- (A);
+  \fill (A) circle[radius=0.08];
+  \node[anchor=south west] at ($(A)+(0.10,0.06)$) {$A$};
+  \draw[line width=0.35pt] (0.58,0) arc[start angle=0,end angle=\alp,radius=0.58];
+  \node[anchor=west] at ({\alp/2}:0.74) {$\alpha$};
+  \draw[line width=0.55pt,->] (E) -- ++(0.90,0);
+  \node[anchor=north] at ($(E)+(0.55,-0.08)$) {$v_{0}$};
+  \draw[line width=0.55pt,->] (A) -- ++({\alp+90}:0.85);
+  \node[anchor=south east] at ($(A)+({\alp+90}:0.60)$) {$v$};
+  % N toward O (longer)
+  \draw[line width=0.55pt,->] (A) -- ++({\alp+180}:1.05);
+  \node[anchor=north] at ($(A)+({\alp+180}:0.55)+(-0.25,0.05)$) {$N$};
+  % G down
+  \coordinate (Gtip) at ($(A)+(0,-1.10)$);
+  \draw[line width=0.55pt,->] (A) -- (Gtip);
+  \node[anchor=west] at ($(Gtip)+(0.08,0.25)$) {$G=mg$};
+  % G2 toward O (shorter, same ray)
+  \coordinate (G2tip) at ($(A)+({\alp+180}:0.62)$);
+  \draw[line width=0.5pt,->] (A) -- (G2tip);
+  \node[anchor=south east] at ($(G2tip)+(-0.05,0.02)$) {$G_{2}$};
+  \draw[line width=0.4pt,dash pattern=on 1.3pt off 1.0pt] (Gtip) -- (G2tip);
+  \draw[line width=0.35pt] ($(A)+(-90:0.38)$) arc[start angle=-90,end angle={-90-\alp},radius=0.38];
+  \node[anchor=north east] at ($(A)+({-90-\alp/2}:0.52)$) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{图13·31}
 \end{figure}
 
 \emph{图13·31}
