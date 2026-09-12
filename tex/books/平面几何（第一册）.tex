@@ -17657,7 +17657,33 @@ BCSM 是一个平行四边形，那末 MN 就平行于 BC 了。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-36}]{assets/plane-geometry-1/fig-p0188-02.png}}
+\fitfig{%
+% fig-alt: 图3-36 扫描：△ABC（A上B左下C右下）；M/N为AB/AC中点（单杠）；实线MN∥BC，虚延长NS；实线CS；△AMN与△CNS北西向阴影；MN=NS单杠
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (2.10,3.20);
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (4.20,0.00);
+  \coordinate (M) at ($(A)!0.5!(B)$);
+  \coordinate (N) at ($(A)!0.5!(C)$);
+  \coordinate (S) at ($(M)!2.0!(N)$);
+  \fill[pattern=north west lines, pattern color=black!70] (A) -- (M) -- (N) -- cycle;
+  \fill[pattern=north west lines, pattern color=black!70] (C) -- (N) -- (S) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.70pt] (M) -- (N);
+  \draw[dashed, line width=0.65pt] (N) -- (S);
+  \draw[line width=0.70pt] (C) -- (S);
+  \foreach \Pa/\Qa in {A/M, M/B, A/N, N/C, M/N, N/S} {
+    \draw[line width=0.50pt] let \p1=($(\Qa)-(\Pa)$), \n1={atan2(\y1,\x1)} in
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1+90:0.10) -- ++ (\n1-90:0.20);
+  }
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south west, inner sep=1pt] at (N) {$N$};
+  \node[anchor=west, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+}
 \caption{图3-36}
 \end{figure}
 
@@ -17703,7 +17729,29 @@ S。在\(\triangle ANM\)和\(\triangle CNS\)中：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-37}]{assets/plane-geometry-1/fig-p0189-01.png}}
+\fitfig{%
+% fig-alt: 图3-37 扫描：直角△ABC（C左下直角、A上、B右）；M为斜边AB中点（AM/MB单杠）；实线CM；虚垂线MN⊥CB于N（直角方）；CN/NB单杠
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (C) at (0.00,0.00);
+  \coordinate (A) at (0.00,3.00);
+  \coordinate (B) at (4.20,0.00);
+  \coordinate (M) at ($(A)!0.5!(B)$);
+  \coordinate (N) at (M |- C);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.70pt] (C) -- (M);
+  \draw[dashed, line width=0.65pt] (M) -- (N);
+  \draw[line width=0.50pt] (N) -- ++ (0.18,0) -- ++ (0,0.18) -- ++ (-0.18,0);
+  \foreach \Pa/\Qa in {A/M, M/B, C/N, N/B} {
+    \draw[line width=0.50pt] let \p1=($(\Qa)-(\Pa)$), \n1={atan2(\y1,\x1)} in
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1+90:0.10) -- ++ (\n1-90:0.20);
+  }
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north east, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1pt] at (M) {$M$};
+  \node[anchor=north, inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+}
 \caption{图3-37}
 \end{figure}
 
@@ -17775,7 +17823,42 @@ EF \parallel AC\text{，} \quad EF = \frac{1}{2} AC.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-39}]{assets/plane-geometry-1/fig-p0190-01.png}}
+\fitfig{%
+% fig-alt: 图3-39 扫描：凸四边形ABCD；对角线AC/BD实线；边中点E/F/G/H，对角中点M(BD)/N(AC)；实线EG/HF/MN共点O；虚线EFGH与EMGN、HMFN
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.20,3.50);
+  \coordinate (B) at (0.00,0.10);
+  \coordinate (C) at (4.40,0.00);
+  \coordinate (D) at (3.40,3.20);
+  \coordinate (E) at ($(A)!0.5!(B)$);
+  \coordinate (F) at ($(B)!0.5!(C)$);
+  \coordinate (G) at ($(C)!0.5!(D)$);
+  \coordinate (H) at ($(D)!0.5!(A)$);
+  \coordinate (M) at ($(B)!0.5!(D)$);
+  \coordinate (N) at ($(A)!0.5!(C)$);
+  \coordinate (O) at ($(E)!0.5!(G)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[line width=0.70pt] (B) -- (D);
+  \draw[line width=0.70pt] (E) -- (G);
+  \draw[line width=0.70pt] (H) -- (F);
+  \draw[line width=0.70pt] (M) -- (N);
+  \draw[dashed, line width=0.60pt] (E) -- (H) -- (G) -- (F) -- cycle;
+  \draw[dashed, line width=0.60pt] (E) -- (M) -- (G) -- (N) -- cycle;
+  \draw[dashed, line width=0.60pt] (H) -- (M) -- (F) -- (N) -- cycle;
+  \node[anchor=south east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=west, inner sep=1.5pt] at (G) {$G$};
+  \node[anchor=south, inner sep=1.5pt] at (H) {$H$};
+  \node[anchor=south east, inner sep=0.8pt] at (M) {$M$};
+  \node[anchor=south west, inner sep=0.8pt] at (N) {$N$};
+  \node[anchor=north, inner sep=0.8pt] at (O) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-39}
 \end{figure}
 
@@ -17826,7 +17909,34 @@ BC 边上的中线就可以了。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-40}]{assets/plane-geometry-1/fig-p0191-01.png}}
+\fitfig{%
+% fig-alt: 图3-40 扫描：△ABC（A上B左下C右下）；中线AD/BE/CF交于重心G；延长AD至K使D为GK中点；虚线BK/CK/DK
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (2.40,3.60);
+  \coordinate (B) at (0.00,0.80);
+  \coordinate (C) at (4.40,0.80);
+  \coordinate (D) at ($(B)!0.5!(C)$);
+  \coordinate (E) at ($(A)!0.5!(C)$);
+  \coordinate (F) at ($(A)!0.5!(B)$);
+  \coordinate (G) at ($(A)!{2/3}!(D)$);
+  \coordinate (K) at ($(G)!2.0!(D)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.70pt] (A) -- (D);
+  \draw[line width=0.70pt] (B) -- (E);
+  \draw[line width=0.70pt] (C) -- (F);
+  \draw[dashed, line width=0.65pt] (D) -- (K);
+  \draw[dashed, line width=0.65pt] (B) -- (K);
+  \draw[dashed, line width=0.65pt] (C) -- (K);
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=east, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south, inner sep=1pt] at (G) {$G$};
+  \node[anchor=north, inner sep=1.5pt] at (K) {$K$};
+\end{tikzpicture}%
+}
 \caption{图3-40}
 \end{figure}
 
@@ -17866,7 +17976,29 @@ BD = DC\text{，} GD = DK.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-41}]{assets/plane-geometry-1/fig-p0192-01.png}}
+\fitfig{%
+% fig-alt: 图3-41 扫描：△ABC（A上偏右、B左下、C右下，AB>AC）；中线BE/CF实线、AD虚线，交于重心G；D/E/F为对边中点
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (2.80,3.20);
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (4.00,0.00);
+  \coordinate (D) at ($(B)!0.5!(C)$);
+  \coordinate (E) at ($(A)!0.5!(C)$);
+  \coordinate (F) at ($(A)!0.5!(B)$);
+  \coordinate (G) at ($(A)!{2/3}!(D)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.70pt] (B) -- (E);
+  \draw[line width=0.70pt] (C) -- (F);
+  \draw[dashed, line width=0.65pt] (A) -- (D);
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=east, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south east, inner sep=1pt] at (G) {$G$};
+\end{tikzpicture}%
+}
 \caption{图3-41}
 \end{figure}
 
@@ -17909,7 +18041,33 @@ GB > GC\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-1/fig-p0193-01.png}}
+\fitfig{%
+% fig-alt: （第3题）扫描：四边形ABCD（D/C上、A/B下，AD=BC单杠）；对角BD；M/N为DC/AB中点，P为BD中点；连MN与MP、PN成△PMN
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.70,0.00);
+  \coordinate (B) at (3.50,0.00);
+  \coordinate (C) at (4.40,2.40);
+  \coordinate (D) at (0.00,2.40);
+  \coordinate (M) at ($(D)!0.5!(C)$);
+  \coordinate (N) at ($(A)!0.5!(B)$);
+  \coordinate (P) at ($(B)!0.5!(D)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (D) -- (B);
+  \draw[line width=0.70pt] (M) -- (N);
+  \draw[line width=0.70pt] (M) -- (P) -- (N);
+  \foreach \Pa/\Qa in {A/D, B/C} {
+    \draw[line width=0.50pt] let \p1=($(\Qa)-(\Pa)$), \n1={atan2(\y1,\x1)} in
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1+90:0.10) -- ++ (\n1-90:0.20);
+  }
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=east, inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -17927,7 +18085,31 @@ GB > GC\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-1/fig-p0193-02.png}}
+\fitfig{%
+% fig-alt: （第5题）扫描：□ABCD（A左下B右下C右上D左上）；M/N为AB/CD中点；对角AC；DM交AC于E，BN交AC于F
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (4.20,0.00);
+  \coordinate (D) at (1.10,2.40);
+  \coordinate (C) at ($(B)+(D)-(A)$);
+  \coordinate (M) at ($(A)!0.5!(B)$);
+  \coordinate (N) at ($(D)!0.5!(C)$);
+  \coordinate (E) at (intersection of A--C and D--M);
+  \coordinate (F) at (intersection of A--C and B--N);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[line width=0.70pt] (D) -- (M);
+  \draw[line width=0.70pt] (B) -- (N);
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south west, inner sep=1pt] at (E) {$E$};
+  \node[anchor=south west, inner sep=1pt] at (F) {$F$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -17947,7 +18129,34 @@ GB > GC\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-1/fig-p0194-01.png}}
+\fitfig{%
+% fig-alt: （第6题）扫描：△ABC（A上B左下C右下）；中线AD，G在AD上GD=AD/3；E/F为AC/AB中点；实线BE/CF；延长AD至S使DS=GD；虚线BS/CS/DS
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (2.20,3.60);
+  \coordinate (B) at (0.00,0.80);
+  \coordinate (C) at (4.40,0.80);
+  \coordinate (D) at ($(B)!0.5!(C)$);
+  \coordinate (E) at ($(A)!0.5!(C)$);
+  \coordinate (F) at ($(A)!0.5!(B)$);
+  \coordinate (G) at ($(A)!{2/3}!(D)$);
+  \coordinate (S) at ($(G)!2.0!(D)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.70pt] (A) -- (D);
+  \draw[line width=0.70pt] (B) -- (E);
+  \draw[line width=0.70pt] (C) -- (F);
+  \draw[dashed, line width=0.65pt] (D) -- (S);
+  \draw[dashed, line width=0.65pt] (B) -- (S);
+  \draw[dashed, line width=0.65pt] (C) -- (S);
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=east, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=north west, inner sep=1pt] at (G) {$G$};
+  \node[anchor=north, inner sep=1.5pt] at (S) {$S$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
