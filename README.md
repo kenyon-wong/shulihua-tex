@@ -22,8 +22,10 @@ Markdown 正文最初来自 [tradecatlabs/shulihuazixuecongshu](https://github.c
 
 ```text
 .
-├── tex/style/           # 版式：preamble 与 driver
+├── tex/style/           # 版式：preamble 与分册 driver
 ├── tex/books/           # 17 册规范 TeX 正文（不含 documentclass）
+├── tex/collections/     # 数学/物理学/化学合订本
+├── tex/vendor/          # 构建检索路径上的宏包（如 multirow）
 ├── books/               # Markdown 对照稿（追踪上游）与插图
 │   ├── *.md
 │   └── assets/          # 4,875 个正文图片资源
@@ -43,7 +45,6 @@ Markdown 正文最初来自 [tradecatlabs/shulihuazixuecongshu](https://github.c
 
 - GNU Make
 - XeLaTeX / CTeX（TeX Live 或 TinyTeX，含 fandol）
-- Ghostscript（`gs`，用于合订本）
 
 源文件与隐私审计仍用 Python 3.10+。原始 PDF 深度审计额外需要 PyPDF2 3.x。首次可运行 `make tex-deps` 补齐宏包。
 
@@ -83,7 +84,7 @@ make pdf-verify
 make dist/代数（第一册）.pdf
 ```
 
-输出位于 `dist/`。PDF 使用 `ctexbook` + Fandol。合订本由 Ghostscript 按分册装订。
+输出位于 `dist/`。PDF 使用 `ctexbook` + Fandol。合订本由 `tex/collections/` 经 XeLaTeX 编译，页码连续。
 
 ## Release 发布策略
 

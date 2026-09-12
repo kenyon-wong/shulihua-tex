@@ -40,7 +40,7 @@
 规范正文是 `tex/books/`，版式是 `tex/style/`。
 
 1. 分册：`make dist/代数（第一册）.pdf` 或 `make volumes`；
-2. 合订本：`make collections`，用 Ghostscript 按 Makefile 中的书目顺序装订，页码按册重起；
+2. 合订本：`make collections`，XeLaTeX 编译 `tex/collections/` 下对应合订本，页码连续，一份总目录；
 3. 中文字体固定为 TeX Live / TinyTeX 自带的 Fandol，不要改用本机系统字体；
 4. 缺少宏包时运行 `make tex-deps`。
 

@@ -1,5 +1,12 @@
 # 更新记录
 
+## 2026-09-12
+
+- XeLaTeX 失败时 Makefile 不再忽略错误；`multirow` 改为硬依赖（`tex/vendor` 供本机缺包时检索）。
+- 分册去掉 OCR「目录」章，改由 driver 自动生成目录（`tocdepth=1`）；内容提要/版本信息改为不进目录的 chapter*，并去掉册首重复元数据。
+- 去掉 Pandoc 残留的 `tightlist`、`labelenumi` 和无引用的 `ux…` label。
+- 合订本改为 `tex/collections/` 下三份 TeX，XeLaTeX 直接编译，页码连续；不再用 Ghostscript 钉分册 PDF。
+
 ## 2026-09-08
 
 - 独立仓库改为 `kenyon-wong/shulihua-tex`；不再本地跟踪 `main`，对照上游 Markdown 改用 `upstream/main`。
