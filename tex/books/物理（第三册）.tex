@@ -20075,61 +20075,192 @@ ABG 的磁通量在增加；当导线 AB 向右运动切割磁力线时，穿过
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.8 感生电流的磁场阻碍着穿过导线圈的磁通量变化}]{assets/physics-3/fig-p0270-01.png}}
-\caption{图 4.8 感生电流的磁场阻碍着穿过导线圈的磁通量变化}
+\fitfig{%
+% fig-alt: 图4.8 感生电流的磁场阻碍磁通量变化。左：N极下插，感生磁场向上；右：N极上提，感生磁场向下；线圈接检流计
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % ---- left: magnet down, induced B up ----
+  \begin{scope}[shift={(-3.55,0)}]
+    % magnet
+    \draw[line width=0.7pt] (-0.32,2.35) rectangle (0.32,3.55);
+    \node[font=\small] at (0,3.20) {$S$};
+    \draw[line width=0.7pt,pattern=north east lines,pattern color=black!55] (-0.32,2.35) rectangle (0.32,2.95);
+    \node[font=\small] at (0,2.65) {$N$};
+    \draw[line width=0.7pt,->] (0.55,3.35) -- (0.55,2.55);
+    % primary B down (from N through coil)
+    \foreach \x in {-0.22,-0.07,0.07,0.22} {
+      \draw[line width=0.4pt,->] (\x,2.30) -- (\x,0.05);
+    }
+    \draw[line width=0.4pt,->] (-0.38,2.30) .. controls (-0.55,1.2) and (-0.70,0.55) .. (-0.85,-0.05);
+    \draw[line width=0.4pt,->] (0.38,2.30) .. controls (0.55,1.2) and (0.70,0.55) .. (0.85,-0.05);
+    % coil ~3 turns; front arrows left (CCW from above → B up)
+    \foreach \y/\t in {1.05/1,0.70/1,0.35/1} {
+      \draw[line width=0.55pt,dashed] (-0.55,\y) .. controls (-0.20,\y+0.16) and (0.20,\y+0.16) .. (0.55,\y);
+      \draw[line width=0.6pt] (0.55,\y) .. controls (0.20,\y-0.16) and (-0.20,\y-0.16) .. (-0.55,\y);
+      \draw[line width=0.45pt,->] (0.22,\y-0.08) -- (-0.22,\y-0.08);
+    }
+    % induced B up (thick)
+    \foreach \x in {-0.18,0,0.18} {
+      \draw[line width=0.85pt,->] (\x,0.40) -- (\x,1.05);
+    }
+    % galvanometer circuit
+    \draw[line width=0.55pt] (-0.55,1.05) -- (-2.15,1.05);
+    \draw[line width=0.55pt] (-0.55,0.35) -- (-2.15,0.35);
+    \draw[line width=0.55pt] (-2.15,1.05) -- (-2.15,0.35);
+    \draw[line width=0.7pt] (-2.15,0.70) circle[radius=0.38];
+    \draw[line width=0.5pt,->] (-2.15,0.70) -- (-2.40,0.92);
+    \draw[line width=0.45pt,->] (-1.55,1.05) -- (-1.95,1.05);
+  \end{scope}
+  % ---- right: magnet up, induced B down ----
+  \begin{scope}[shift={(3.55,0)}]
+    \draw[line width=0.7pt] (-0.32,2.35) rectangle (0.32,3.55);
+    \node[font=\small] at (0,3.20) {$S$};
+    \draw[line width=0.7pt,pattern=north east lines,pattern color=black!55] (-0.32,2.35) rectangle (0.32,2.95);
+    \node[font=\small] at (0,2.65) {$N$};
+    \draw[line width=0.7pt,->] (0.55,2.55) -- (0.55,3.35);
+    \foreach \x in {-0.22,-0.07,0.07,0.22} {
+      \draw[line width=0.4pt,->] (\x,2.30) -- (\x,0.05);
+    }
+    \draw[line width=0.4pt,->] (-0.38,2.30) .. controls (-0.55,1.2) and (-0.70,0.55) .. (-0.85,-0.05);
+    \draw[line width=0.4pt,->] (0.38,2.30) .. controls (0.55,1.2) and (0.70,0.55) .. (0.85,-0.05);
+    % coil; front arrows right (CW from above → B down)
+    \foreach \y in {1.05,0.70,0.35} {
+      \draw[line width=0.55pt,dashed] (-0.55,\y) .. controls (-0.20,\y+0.16) and (0.20,\y+0.16) .. (0.55,\y);
+      \draw[line width=0.6pt] (-0.55,\y) .. controls (-0.20,\y-0.16) and (0.20,\y-0.16) .. (0.55,\y);
+      \draw[line width=0.45pt,->] (-0.22,\y-0.08) -- (0.22,\y-0.08);
+    }
+    \foreach \x in {-0.18,0,0.18} {
+      \draw[line width=0.85pt,->] (\x,1.05) -- (\x,0.40);
+    }
+    \draw[line width=0.55pt] (-0.55,1.05) -- (-2.15,1.05);
+    \draw[line width=0.55pt] (-0.55,0.35) -- (-2.15,0.35);
+    \draw[line width=0.55pt] (-2.15,1.05) -- (-2.15,0.35);
+    \draw[line width=0.7pt] (-2.15,0.70) circle[radius=0.38];
+    \draw[line width=0.5pt,->] (-2.15,0.70) -- (-1.90,0.92);
+    \draw[line width=0.45pt,->] (-1.95,1.05) -- (-1.55,1.05);
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图4.8 感生电流的磁场阻碍着穿过导线圈的磁通量变化}
 \end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.8 感生电流的磁场阻碍着穿过导线圈的磁通量变化}]{assets/physics-3/fig-p0270-02.png}}
-\caption{图 4.8 感生电流的磁场阻碍着穿过导线圈的磁通量变化}
-\end{figure}
-
-\emph{图 4.8 感生电流的磁场阻碍着穿过导线圈的磁通量变化}
+\emph{图4.8 感生电流的磁场阻碍着穿过导线圈的磁通量变化}
 
 如果我们重新系统地进行图4.4所示的实验，则可得到如图4.9所记录的结果（因为这里只作定性的讨论，而不作定量的分析，所以图中没有画出软铁心来；在实际应用中，为了加强电流的磁场，需要采用如图4.4所示的环形铁心）：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(接通)}]{assets/physics-3/fig-p0271-01.png}}
-\caption{(接通)}
+\fitfig{%
+% fig-alt: 图4.9(a)–(d) 原线圈P与副线圈S。(a)(c)接通瞬间感生电流与施感电流反向；(b)(d)断开瞬间同向
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % helper scopes: each coil at local origin
+  % ---- panel (a) ----
+  \begin{scope}[shift={(-7.15,0)}]
+    % P: top→ front←
+    \begin{scope}[shift={(0,0)}]
+      \foreach \y in {0.20,0.48,0.76,1.04,1.32} {
+        \draw[line width=0.45pt,dashed] (-0.48,\y) .. controls (-0.18,\y+0.14) and (0.18,\y+0.14) .. (0.48,\y);
+        \draw[line width=0.55pt] (0.48,\y) .. controls (0.18,\y-0.14) and (-0.18,\y-0.14) .. (-0.48,\y);
+        \draw[line width=0.4pt,->] (0.20,\y-0.07) -- (-0.20,\y-0.07);
+      }
+      \draw[line width=0.5pt,->] (-1.05,1.40) -- (-0.48,1.40);
+      \draw[line width=0.5pt,->] (-0.48,0.12) -- (-1.05,0.12);
+      \node[anchor=north,inner sep=1pt] at (0,-0.08) {$P$};
+    \end{scope}
+    % S: top← front→
+    \begin{scope}[shift={(1.85,0)}]
+      \foreach \y in {0.20,0.48,0.76,1.04,1.32} {
+        \draw[line width=0.45pt,dashed] (-0.48,\y) .. controls (-0.18,\y+0.14) and (0.18,\y+0.14) .. (0.48,\y);
+        \draw[line width=0.55pt] (-0.48,\y) .. controls (-0.18,\y-0.14) and (0.18,\y-0.14) .. (0.48,\y);
+        \draw[line width=0.4pt,->] (-0.20,\y-0.07) -- (0.20,\y-0.07);
+      }
+      \draw[line width=0.5pt,->] (-0.48,1.40) -- (-1.05,1.40);
+      \draw[line width=0.5pt,->] (-1.05,0.12) -- (-0.48,0.12);
+      \node[anchor=north,inner sep=1pt] at (0,-0.08) {$S$};
+    \end{scope}
+    \node[anchor=north,inner sep=1pt] at (0.92,-0.55) {（接通）};
+    \node[anchor=north,inner sep=1pt] at (0.92,-0.95) {(a)};
+  \end{scope}
+  % ---- panel (b) ----
+  \begin{scope}[shift={(-2.45,0)}]
+    \begin{scope}[shift={(0,0)}]
+      \foreach \y in {0.20,0.48,0.76,1.04,1.32} {
+        \draw[line width=0.45pt,dashed] (-0.48,\y) .. controls (-0.18,\y+0.14) and (0.18,\y+0.14) .. (0.48,\y);
+        \draw[line width=0.55pt] (0.48,\y) .. controls (0.18,\y-0.14) and (-0.18,\y-0.14) .. (-0.48,\y);
+        \draw[line width=0.4pt,->] (0.20,\y-0.07) -- (-0.20,\y-0.07);
+      }
+      \draw[line width=0.5pt,->] (-1.05,1.40) -- (-0.48,1.40);
+      \draw[line width=0.5pt,->] (-0.48,0.12) -- (-1.05,0.12);
+      \node[anchor=north,inner sep=1pt] at (0,-0.08) {$P$};
+    \end{scope}
+    \begin{scope}[shift={(1.85,0)}]
+      \foreach \y in {0.20,0.48,0.76,1.04,1.32} {
+        \draw[line width=0.45pt,dashed] (-0.48,\y) .. controls (-0.18,\y+0.14) and (0.18,\y+0.14) .. (0.48,\y);
+        \draw[line width=0.55pt] (0.48,\y) .. controls (0.18,\y-0.14) and (-0.18,\y-0.14) .. (-0.48,\y);
+        \draw[line width=0.4pt,->] (0.20,\y-0.07) -- (-0.20,\y-0.07);
+      }
+      \draw[line width=0.5pt,->] (-1.05,1.40) -- (-0.48,1.40);
+      \draw[line width=0.5pt,->] (-0.48,0.12) -- (-1.05,0.12);
+      \node[anchor=north,inner sep=1pt] at (0,-0.08) {$S$};
+    \end{scope}
+    \node[anchor=north,inner sep=1pt] at (0.92,-0.55) {（断开）};
+    \node[anchor=north,inner sep=1pt] at (0.92,-0.95) {(b)};
+  \end{scope}
+  % ---- panel (c) ----
+  \begin{scope}[shift={(2.25,0)}]
+    \begin{scope}[shift={(0,0)}]
+      \foreach \y in {0.20,0.48,0.76,1.04,1.32} {
+        \draw[line width=0.45pt,dashed] (-0.48,\y) .. controls (-0.18,\y+0.14) and (0.18,\y+0.14) .. (0.48,\y);
+        \draw[line width=0.55pt] (-0.48,\y) .. controls (-0.18,\y-0.14) and (0.18,\y-0.14) .. (0.48,\y);
+        \draw[line width=0.4pt,->] (-0.20,\y-0.07) -- (0.20,\y-0.07);
+      }
+      \draw[line width=0.5pt,->] (-0.48,1.40) -- (-1.05,1.40);
+      \draw[line width=0.5pt,->] (-1.05,0.12) -- (-0.48,0.12);
+      \node[anchor=north,inner sep=1pt] at (0,-0.08) {$P$};
+    \end{scope}
+    \begin{scope}[shift={(1.85,0)}]
+      \foreach \y in {0.20,0.48,0.76,1.04,1.32} {
+        \draw[line width=0.45pt,dashed] (-0.48,\y) .. controls (-0.18,\y+0.14) and (0.18,\y+0.14) .. (0.48,\y);
+        \draw[line width=0.55pt] (0.48,\y) .. controls (0.18,\y-0.14) and (-0.18,\y-0.14) .. (-0.48,\y);
+        \draw[line width=0.4pt,->] (0.20,\y-0.07) -- (-0.20,\y-0.07);
+      }
+      \draw[line width=0.5pt,->] (-1.05,1.40) -- (-0.48,1.40);
+      \draw[line width=0.5pt,->] (-0.48,0.12) -- (-1.05,0.12);
+      \node[anchor=north,inner sep=1pt] at (0,-0.08) {$S$};
+    \end{scope}
+    \node[anchor=north,inner sep=1pt] at (0.92,-0.55) {（接通）};
+    \node[anchor=north,inner sep=1pt] at (0.92,-0.95) {(c)};
+  \end{scope}
+  % ---- panel (d) ----
+  \begin{scope}[shift={(6.95,0)}]
+    \begin{scope}[shift={(0,0)}]
+      \foreach \y in {0.20,0.48,0.76,1.04,1.32} {
+        \draw[line width=0.45pt,dashed] (-0.48,\y) .. controls (-0.18,\y+0.14) and (0.18,\y+0.14) .. (0.48,\y);
+        \draw[line width=0.55pt] (-0.48,\y) .. controls (-0.18,\y-0.14) and (0.18,\y-0.14) .. (0.48,\y);
+        \draw[line width=0.4pt,->] (-0.20,\y-0.07) -- (0.20,\y-0.07);
+      }
+      \draw[line width=0.5pt,->] (-0.48,1.40) -- (-1.05,1.40);
+      \draw[line width=0.5pt,->] (-1.05,0.12) -- (-0.48,0.12);
+      \node[anchor=north,inner sep=1pt] at (0,-0.08) {$P$};
+    \end{scope}
+    \begin{scope}[shift={(1.85,0)}]
+      \foreach \y in {0.20,0.48,0.76,1.04,1.32} {
+        \draw[line width=0.45pt,dashed] (-0.48,\y) .. controls (-0.18,\y+0.14) and (0.18,\y+0.14) .. (0.48,\y);
+        \draw[line width=0.55pt] (-0.48,\y) .. controls (-0.18,\y-0.14) and (0.18,\y-0.14) .. (0.48,\y);
+        \draw[line width=0.4pt,->] (-0.20,\y-0.07) -- (0.20,\y-0.07);
+      }
+      \draw[line width=0.5pt,->] (-0.48,1.40) -- (-1.05,1.40);
+      \draw[line width=0.5pt,->] (-1.05,0.12) -- (-0.48,0.12);
+      \node[anchor=north,inner sep=1pt] at (0,-0.08) {$S$};
+    \end{scope}
+    \node[anchor=north,inner sep=1pt] at (0.92,-0.55) {（断开）};
+    \node[anchor=north,inner sep=1pt] at (0.92,-0.95) {(d)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图4.9 原线圈接通或断开瞬间副线圈中的感生电流方向}
 \end{figure}
 
-\emph{（接通）}
-
-\emph{（a）}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(断开)}]{assets/physics-3/fig-p0271-02.png}}
-\caption{(断开)}
-\end{figure}
-
-\emph{（断开）}
-
-\emph{（b）}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(接通)}]{assets/physics-3/fig-p0271-03.png}}
-\caption{(接通)}
-\end{figure}
-
-\emph{（接通）}
-
-\emph{（c）}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(断开)}]{assets/physics-3/fig-p0271-04.png}}
-\caption{(断开)}
-\end{figure}
-
-\emph{（断开）}
-
-\emph{（d）}
-
-\emph{图4.9}
+\emph{图4.9 原线圈接通或断开瞬间副线圈中的感生电流方向}
 
 图中 P 表示原线圈，S
 表示副线圈；原线圈上的箭头表示原线圈中电流（叫做施感电流）的方向，副线圈上的箭头表示副线圈中感生电流的方向。图
@@ -20158,19 +20289,78 @@ ABG 的磁通量在增加；当导线 AB 向右运动切割磁力线时，穿过
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.10}]{assets/physics-3/fig-p0272-01.png}}
-\caption{图4.10}
+\fitfig{%
+% fig-alt: 图4.10 上回路CD接电流表G；下回路AB经电源与电键K串联；AB上箭头I向右；K断开
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % upper loop CDG
+  \draw[line width=0.65pt] (-2.20,1.55) -- (-2.20,2.55) -- (-0.45,2.55);
+  \draw[line width=0.75pt] (0,2.55) circle[radius=0.42];
+  \node at (0,2.55) {$G$};
+  \draw[line width=0.65pt] (0.45,2.55) -- (2.20,2.55) -- (2.20,1.55) -- (-2.20,1.55);
+  \node[anchor=south east,inner sep=2pt] at (-2.20,1.55) {$C$};
+  \node[anchor=south west,inner sep=2pt] at (2.20,1.55) {$D$};
+  % lower loop AB + battery + K
+  \draw[line width=0.65pt] (-2.20,0.95) -- (2.20,0.95) -- (2.20,-0.35);
+  \node[anchor=north east,inner sep=2pt] at (-2.20,0.95) {$A$};
+  \node[anchor=north west,inner sep=2pt] at (2.20,0.95) {$B$};
+  \draw[line width=0.55pt,->] (-0.55,1.12) -- (0.55,1.12);
+  \node[anchor=south,inner sep=1pt] at (0,1.14) {$I$};
+  % battery: long(+) left, short(-) right  → current A→B
+  \draw[line width=0.65pt] (-2.20,0.95) -- (-2.20,-0.45) -- (-1.35,-0.45);
+  \draw[line width=0.9pt] (-1.20,-0.70) -- (-1.20,-0.20);
+  \draw[line width=1.35pt] (-0.95,-0.60) -- (-0.95,-0.30);
+  \draw[line width=0.65pt] (-0.95,-0.45) -- (0.55,-0.45);
+  % open switch K
+  \fill (0.55,-0.45) circle[radius=0.045];
+  \fill (1.35,-0.45) circle[radius=0.045];
+  \draw[line width=0.6pt] (0.55,-0.45) -- (1.20,-0.10);
+  \node[anchor=north,inner sep=2pt] at (0.95,-0.58) {$K$};
+  \draw[line width=0.65pt] (1.35,-0.45) -- (2.20,-0.45);
+\end{tikzpicture}%
+}
+\caption{图4.10 导线AB与CD平行，接通K时求CD感生电流方向}
 \end{figure}
 
-\emph{图4.10}
+\emph{图4.10 导线AB与CD平行，接通K时求CD感生电流方向}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.11}]{assets/physics-3/fig-p0272-02.png}}
-\caption{图4.11}
+\fitfig{%
+% fig-alt: 图4.11 接通后AB电流I_AB向右；回路CDG内上行·示原磁场出纸，下行×示感生磁场入纸；K闭合
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % upper loop
+  \draw[line width=0.65pt] (-2.20,1.55) -- (-2.20,2.65) -- (-0.45,2.65);
+  \draw[line width=0.75pt] (0,2.65) circle[radius=0.42];
+  \node at (0,2.65) {$G$};
+  \draw[line width=0.65pt] (0.45,2.65) -- (2.20,2.65) -- (2.20,1.55) -- (-2.20,1.55);
+  \node[anchor=south east,inner sep=2pt] at (-2.20,1.55) {$C$};
+  \node[anchor=south west,inner sep=2pt] at (2.20,1.55) {$D$};
+  % field dots (out) and crosses (in)
+  \foreach \x in {-1.50,-0.90,-0.30,0.30,0.90,1.50} {
+    \fill (\x,2.20) circle[radius=0.055];
+    \node[inner sep=0pt] at (\x,1.85) {$\times$};
+  }
+  % lower loop
+  \draw[line width=0.65pt] (-2.20,0.95) -- (2.20,0.95) -- (2.20,-0.35) -- (-2.20,-0.35) -- cycle;
+  \node[anchor=north east,inner sep=2pt] at (-2.20,0.95) {$A$};
+  \node[anchor=north west,inner sep=2pt] at (2.20,0.95) {$B$};
+  \draw[line width=0.55pt,->] (-0.70,1.18) -- (0.70,1.18);
+  \node[anchor=south,inner sep=1pt] at (0,1.22) {$I_{AB}$};
+  % battery + closed K
+  \draw[line width=0.65pt] (-2.20,0.95) -- (-2.20,-0.45) -- (-1.35,-0.45);
+  \draw[line width=0.9pt] (-1.20,-0.70) -- (-1.20,-0.20);
+  \draw[line width=1.35pt] (-0.95,-0.60) -- (-0.95,-0.30);
+  \draw[line width=0.65pt] (-0.95,-0.45) -- (2.20,-0.45);
+  \fill (0.70,-0.45) circle[radius=0.04];
+  \fill (1.30,-0.45) circle[radius=0.04];
+  \draw[line width=0.6pt] (0.70,-0.45) -- (1.30,-0.45);
+  \node[anchor=north,inner sep=2pt] at (1.00,-0.58) {$K$};
+\end{tikzpicture}%
+}
+\caption{图4.11 原磁场·与感生磁场×示意}
 \end{figure}
 
-\emph{图4.11}
+\emph{图4.11 原磁场·与感生磁场×示意}
 
 \textbf{［解］} 应用楞次定律来解答：
 
