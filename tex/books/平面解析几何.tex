@@ -30260,8 +30260,31 @@ r^{2} = \rho^{2} + \rho_{1} ^ {2} - 2 \rho_{1} \rho \cos (\theta - \theta_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7-21}]{assets/analytic-geometry/fig-p0398-02.png}}
-\caption{图 7-21}
+\fitfig{%
+% fig-alt: 图7·21 等速螺线 ρ=ρ₀+aθ（a＞0）：极点 O，极轴 Ox，起点 P₀(ρ₀,0)，射线 OM 与螺线交于 P(ρ,θ)，标 θ
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\rzero{1.15}
+  \def\aa{0.28}
+  \def\tmax{300}
+  \def\th{38}
+  \pgfmathsetmacro{\rp}{\rzero+\aa*(\th*pi/180)}
+  \pgfmathsetmacro{\rmax}{\rzero+\aa*(\tmax*pi/180)}
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.55pt] ({-0.85},0) -- (0,0);
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\rmax+0.95},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \draw[line width=0.85pt,domain=0:\tmax,samples=120,smooth]
+    plot ({(\rzero+\aa*(\x*pi/180))*cos(\x)},{(\rzero+\aa*(\x*pi/180))*sin(\x)});
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\th}:{\rp+0.85}) node[anchor=south west,inner sep=1.2pt] {$M$};
+  \draw[line width=0.4pt] (0.42,0) arc (0:\th:0.42);
+  \fill (0,0) circle (1.15pt);
+  \fill ({\rzero},0) circle (1.1pt);
+  \fill ({\th}:{\rp}) circle (1.15pt);
+  \node[anchor=north east,inner sep=1.4pt,font=\small] at (0,0) {$O$};
+  \node[anchor=north,inner sep=1.6pt,font=\small] at ({\rzero},0) {$P_0(\rho_0,0)$};
+  \node[anchor=south east,inner sep=1.2pt,font=\small] at ({\th}:{\rp}) {$P(\rho,\theta)$};
+  \node[anchor=west,inner sep=0.6pt,font=\scriptsize] at ({0.48*cos(\th/2)},{0.48*sin(\th/2)}) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{图7·21}
 \end{figure}
 
 \emph{图7·21}
@@ -30315,8 +30338,31 @@ t，射线 OM 转过角度 \(\theta\)，动点到达点 P 的位置，设点 \(P
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-22}]{assets/analytic-geometry/fig-p0399-01.png}}
-\caption{图7-22}
+\fitfig{%
+% fig-alt: 图7·22 等速螺线 ρ=ρ₀+aθ（a＜0）：自 P₀ 起极径随极角增大而均匀减小，射线 OM 交螺线于 P，标 θ
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\rzero{2.70}
+  \def\aa{0.28}
+  \def\tmax{480}
+  \def\th{42}
+  \pgfmathsetmacro{\rp}{\rzero-\aa*(\th*pi/180)}
+  \pgfmathsetmacro{\rend}{\rzero-\aa*(\tmax*pi/180)}
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.55pt] (0,0) -- ({\rzero+0.35},0);
+  \draw[line width=0.7pt,-latex] ({\rzero+0.35},0) -- ({\rzero+0.95},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \draw[line width=0.85pt,domain=0:\tmax,samples=180,smooth]
+    plot ({(\rzero-\aa*(\x*pi/180))*cos(\x)},{(\rzero-\aa*(\x*pi/180))*sin(\x)});
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\th}:{\rp+0.45}) node[anchor=south west,inner sep=1.2pt] {$M$};
+  \draw[line width=0.4pt] (0.40,0) arc (0:\th:0.40);
+  \fill (0,0) circle (1.15pt);
+  \fill ({\rzero},0) circle (1.1pt);
+  \fill ({\th}:{\rp}) circle (1.15pt);
+  \node[anchor=north east,inner sep=1.4pt,font=\small] at (0,0) {$O$};
+  \node[anchor=north,inner sep=1.5pt,font=\small] at ({\rzero},0) {$P_0$};
+  \node[anchor=south,inner sep=1.4pt,font=\small] at ({\th}:{\rp}) {$P$};
+  \node[anchor=west,inner sep=0.5pt,font=\scriptsize] at ({0.46*cos(\th/2)},{0.46*sin(\th/2)}) {$\theta$};
+\end{tikzpicture}%
+}
+\caption{图7·22}
 \end{figure}
 
 \emph{图7·22}
@@ -30394,7 +30440,37 @@ t，射线 OM 转过角度 \(\theta\)，动点到达点 P 的位置，设点 \(P
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·23}]{assets/analytic-geometry/fig-p0400-01.png}}
+\fitfig{%
+% fig-alt: 图7·23 ρ=3θ：极坐标网格，实线为 ρ、θ 均正的螺线，虚线为均负且关于极垂线对称的部分
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\sc{0.105}
+  \def\Rmax{19}
+  \pgfmathsetmacro{\Rg}{\sc*\Rmax}
+  \foreach \rr in {1,2,...,19} {
+    \draw[line width=0.22pt] (0,0) circle ({\sc*\rr});
+  }
+  \foreach \ang in {30,60,90,120,150,180,210,240,270,300,330} {
+    \draw[line width=0.22pt] (0,0) -- ({\ang}:{\Rg});
+  }
+  \draw[line width=0.55pt] ({-\Rg},0) -- (0,0);
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\Rg+0.42},0) node[anchor=west,inner sep=1.3pt] {$x$};
+  \fill (0,0) circle (1.05pt);
+  \node[anchor=north east,inner sep=1.1pt,font=\small] at (-0.02,-0.02) {$O$};
+  \foreach \ang/\lab in {
+    30/\frac{\pi}{6},60/\frac{\pi}{3},90/\frac{\pi}{2},120/\frac{2\pi}{3},150/\frac{5\pi}{6},
+    180/\pi,210/\frac{7\pi}{6},240/\frac{4\pi}{3},270/\frac{3\pi}{2},300/\frac{5\pi}{3},330/\frac{11\pi}{6}} {
+    \node[font=\scriptsize,inner sep=0.4pt] at ({\ang}:{\Rg+0.28}) {$\lab$};
+  }
+  \draw[line width=0.95pt,domain=0:360,samples=180,smooth]
+    plot ({(\sc*3*(\x*pi/180))*cos(\x)},{(\sc*3*(\x*pi/180))*sin(\x)});
+  \draw[line width=0.95pt,domain=360:400,samples=30,smooth]
+    plot ({(\sc*3*(\x*pi/180))*cos(\x)},{(\sc*3*(\x*pi/180))*sin(\x)});
+  \draw[dash pattern=on 1.7pt off 1.15pt,line width=0.85pt,domain=0:360,samples=180,smooth]
+    plot ({-(\sc*3*(\x*pi/180))*cos(\x)},{(\sc*3*(\x*pi/180))*sin(\x)});
+  \draw[dash pattern=on 1.7pt off 1.15pt,line width=0.85pt,domain=360:400,samples=30,smooth]
+    plot ({-(\sc*3*(\x*pi/180))*cos(\x)},{(\sc*3*(\x*pi/180))*sin(\x)});
+\end{tikzpicture}%
+}
 \caption{图7·23}
 \end{figure}
 
@@ -30414,8 +30490,25 @@ t，射线 OM 转过角度 \(\theta\)，动点到达点 P 的位置，设点 \(P
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-24}]{assets/analytic-geometry/fig-p0401-01.png}}
-\caption{图7-24}
+\fitfig{%
+% fig-alt: 图7·24 三圈等速螺线：起点 A(20,0)、终点 B(35,6π) 均在极轴上，极点 O，极轴 Ox
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\sc{0.058}
+  \def\rA{20}
+  \def\rB{35}
+  \pgfmathsetmacro{\aa}{5/(2*pi)}
+  \draw[line width=0.65pt,-latex] ({-\sc*3},0) -- ({\sc*\rB+0.90},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \draw[line width=0.9pt,domain=0:1080,samples=280,smooth]
+    plot ({(\sc*(\rA+\aa*(\x*pi/180)))*cos(\x)},{(\sc*(\rA+\aa*(\x*pi/180)))*sin(\x)});
+  \fill (0,0) circle (1.15pt);
+  \fill ({\sc*\rA},0) circle (1.1pt);
+  \fill ({\sc*\rB},0) circle (1.1pt);
+  \node[anchor=north east,inner sep=1.3pt,font=\small] at (0,0) {$O$};
+  \node[anchor=north,inner sep=1.5pt,font=\small] at ({\sc*\rA},0) {$A$};
+  \node[anchor=south,inner sep=1.5pt,font=\small] at ({\sc*\rB},0) {$B$};
+\end{tikzpicture}%
+}
+\caption{图7·24}
 \end{figure}
 
 \emph{图7·24}
@@ -30448,7 +30541,38 @@ cm。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·25}]{assets/analytic-geometry/fig-p0401-02.png}}
+\fitfig{%
+% fig-alt: 图7·25 凸轮轮廓：AB 等速螺线 A(25,0)→B(35,π/2)，BC 圆弧 ρ=35，CA 等速螺线 C(35,4π/3)→A(25,2π)；虚线 OB、OC，标 π/2、5π/6
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\sc{0.050}
+  \pgfmathsetmacro{\rA}{25*\sc}
+  \pgfmathsetmacro{\rB}{35*\sc}
+  \draw[line width=0.65pt,-latex] ({-0.30},0) -- ({\rB+1.00},0) node[anchor=west,inner sep=1.4pt] {$x$};
+  % AB
+  \draw[line width=0.9pt,domain=0:90,samples=70,smooth]
+    plot ({(\sc*(25+(20/pi)*(\x*pi/180)))*cos(\x)},{(\sc*(25+(20/pi)*(\x*pi/180)))*sin(\x)});
+  % BC
+  \draw[line width=0.9pt] (90:\rB) arc (90:240:\rB);
+  % CA
+  \draw[line width=0.9pt,domain=240:360,samples=80,smooth]
+    plot ({(\sc*(55-(15/pi)*(\x*pi/180)))*cos(\x)},{(\sc*(55-(15/pi)*(\x*pi/180)))*sin(\x)});
+  \draw[dash pattern=on 1.7pt off 1.15pt,line width=0.55pt] (0,0) -- (90:{\rB+0.12});
+  \draw[dash pattern=on 1.7pt off 1.15pt,line width=0.55pt] (0,0) -- (240:{\rB+0.12});
+  \draw[line width=0.4pt] (0.52,0) arc (0:90:0.52);
+  \draw[line width=0.4pt] (90:0.70) arc (90:240:0.70);
+  \fill (0,0) circle (1.15pt);
+  \fill ({\rA},0) circle (1.1pt);
+  \fill (90:\rB) circle (1.1pt);
+  \fill (240:\rB) circle (1.1pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+  \node[anchor=south,inner sep=1.1pt,font=\small] at ({\rA*0.48},0.06) {$(25,0)$};
+  \node[anchor=north,inner sep=1.4pt,font=\small] at ({\rA},-0.02) {$A(25,2\pi)$};
+  \node[anchor=south west,inner sep=1.3pt,font=\small] at (90:\rB) {$B\!\left(35,\frac{\pi}{2}\right)$};
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (240:\rB) {$C\!\left(35,\frac{4\pi}{3}\right)$};
+  \node[anchor=south west,inner sep=0.5pt,font=\scriptsize] at ({0.60*cos(45)},{0.60*sin(45)}) {$\frac{\pi}{2}$};
+  \node[anchor=east,inner sep=0.5pt,font=\scriptsize] at ({0.80*cos(165)},{0.80*sin(165)}) {$\frac{5\pi}{6}$};
+\end{tikzpicture}%
+}
 \caption{图7·25}
 \end{figure}
 
@@ -30532,16 +30656,66 @@ a = \frac {20}{\pi}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/analytic-geometry/fig-p0403-01.png}}
-\caption{(第1题)}
+\fitfig{%
+% fig-alt: （第1题）内外圆 φ43、φ102，等速螺线自 A（内圆与极轴交点）转 5π/8 至外圆上 B；虚线 OB，标 5π/8
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\sc{0.028}
+  \pgfmathsetmacro{\ri}{21.5*\sc}
+  \pgfmathsetmacro{\ro}{51*\sc}
+  \pgfmathsetmacro{\thB}{112.5}
+  \pgfmathsetmacro{\aa}{(51-21.5)/(5*pi/8)}
+  \draw[line width=0.65pt,-latex] ({-0.25},0) -- ({\ro+0.75},0) node[anchor=west,inner sep=1.4pt] {$x$};
+  \draw[line width=0.7pt] (0,0) circle ({\ri});
+  \draw[line width=0.7pt] (0,0) circle ({\ro});
+  \draw[line width=0.9pt,domain=0:\thB,samples=80,smooth]
+    plot ({(\sc*(21.5+\aa*(\x*pi/180)))*cos(\x)},{(\sc*(21.5+\aa*(\x*pi/180)))*sin(\x)});
+  \draw[dash pattern=on 1.7pt off 1.15pt,line width=0.55pt] (0,0) -- ({\thB}:{\ro+0.12});
+  \draw[line width=0.4pt,<->] (0.55,0) arc (0:\thB:0.55);
+  \fill (0,0) circle (1.1pt);
+  \fill ({\ri},0) circle (1.05pt);
+  \fill ({\thB}:{\ro}) circle (1.05pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+  \node[anchor=north,inner sep=1.4pt,font=\small] at ({\ri},0) {$A$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at ({\thB}:{\ro}) {$B$};
+  \node[anchor=south,inner sep=0.8pt,font=\small] at ({0}:{\ri*0.55}) {$\phi 43$};
+  \node[anchor=west,inner sep=1pt,font=\small] at ({-10}:{\ro*0.72}) {$\phi 102$};
+  \node[anchor=west,inner sep=0.5pt,font=\scriptsize] at ({0.62*cos(\thB/2)},{0.62*sin(\thB/2)}) {$\dfrac{5\pi}{8}$};
+\end{tikzpicture}%
+}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/analytic-geometry/fig-p0403-02.png}}
-\caption{(第2题)}
+\fitfig{%
+% fig-alt: （第2题）等速螺线弧 ACB：OA=60，OB=65，∠AOB=30°；虚线 OB，曲线上标 ACB
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\sc{0.028}
+  \pgfmathsetmacro{\rA}{60*\sc}
+  \pgfmathsetmacro{\rB}{65*\sc}
+  \def\thB{30}
+  \pgfmathsetmacro{\aa}{5/(\thB*pi/180)}
+  \draw[line width=0.65pt] ({-0.2},0) -- ({\rB+0.35},0);
+  \draw[line width=0.55pt] (0,0) -- ({\rA},0);
+  \draw[dash pattern=on 1.7pt off 1.15pt,line width=0.55pt] (0,0) -- ({\thB}:{\rB+0.12});
+  \draw[line width=0.9pt,domain=0:\thB,samples=40,smooth]
+    plot ({(\sc*(60+\aa*(\x*pi/180)))*cos(\x)},{(\sc*(60+\aa*(\x*pi/180)))*sin(\x)});
+  \draw[line width=0.4pt] (0.48,0) arc (0:\thB:0.48);
+  \fill (0,0) circle (1.1pt);
+  \node[anchor=north east,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+  \fill ({\rA},0) circle (1.05pt);
+  \fill ({\thB}:{\rB}) circle (1.05pt);
+  \node[anchor=north,inner sep=1.5pt,font=\small] at ({\rA},0) {$A$};
+  \node[anchor=south west,inner sep=1.2pt,font=\small] at ({\thB}:{\rB}) {$B$};
+  \node[anchor=south,inner sep=1.2pt,font=\small] at ({15}:{(\sc*(60+\aa*(15*pi/180)))+0.12}) {$ACB$};
+  \node[anchor=north,inner sep=1.5pt,font=\small] at ({\rA*0.5},0) {$60$};
+  \node[anchor=east,inner sep=1pt,font=\small] at ({(\thB+8)}:{\rB*0.55}) {$65$};
+  \node[anchor=west,inner sep=0.5pt,font=\scriptsize] at ({0.55*cos(\thB/2)},{0.55*sin(\thB/2)}) {$30^\circ$};
+\end{tikzpicture}%
+}
+\caption{（第2题）}
 \end{figure}
 
 \emph{（第2题）}
@@ -30587,8 +30761,47 @@ a = \frac {20}{\pi}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/analytic-geometry/fig-p0404-01.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第3题）凸轮：圆弧 ABC 半径 100，螺线 CDE 至 E 多出 10；顺时针转；右侧从动杆穿剖面导槽；尺寸 100、10
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\R{1.55}
+  \def\dE{0.22}
+  \pgfmathsetmacro{\RE}{\R+\dE}
+  \draw[dash pattern=on 1.5pt off 1.0pt,line width=0.45pt] ({-\RE-0.35},0) -- ({\R+2.65},0);
+  \draw[dash pattern=on 1.5pt off 1.0pt,line width=0.45pt] (0,{-\R-0.2}) -- (0,{\R+0.5});
+  \draw[line width=0.9pt] (180:\R) arc (180:360:\R);
+  \draw[line width=0.9pt,domain=0:180,samples=90,smooth]
+    plot ({(\R+\dE*\x/180)*cos(\x)},{(\R+\dE*\x/180)*sin(\x)});
+  \draw[line width=0.55pt] (180:\R) -- (180:\RE);
+  \draw[line width=0.5pt,-latex] (70:{\R+0.28}) arc (70:20:{\R+0.28});
+  \draw[line width=0.7pt] ({\R},-0.08) -- ({\R+0.35},-0.08) -- ({\R+0.35},0.08) -- ({\R},0.08);
+  \fill[pattern=north east lines,pattern color=black!55] ({\R+1.15},0.22) rectangle ({\R+1.85},0.95);
+  \draw[line width=0.65pt] ({\R+1.15},0.22) rectangle ({\R+1.85},0.95);
+  \fill[pattern=north east lines,pattern color=black!55] ({\R+1.15},-0.95) rectangle ({\R+1.85},-0.22);
+  \draw[line width=0.65pt] ({\R+1.15},-0.95) rectangle ({\R+1.85},-0.22);
+  \fill[white] ({\R+1.12},-0.09) rectangle ({\R+1.88},0.09);
+  \draw[line width=0.55pt] ({\R+1.15},0.09) -- ({\R+1.85},0.09);
+  \draw[line width=0.55pt] ({\R+1.15},-0.09) -- ({\R+1.85},-0.09);
+  \draw[line width=0.85pt] ({\R},0) -- ({\R+2.35},0);
+  \draw[line width=0.45pt,latex-latex] (0,0.35) -- ({\R},0.35);
+  \node[anchor=south,inner sep=1pt,font=\small] at ({\R/2},0.35) {$100$};
+  \draw[line width=0.45pt,latex-latex] (180:\R) -- (180:\RE);
+  \node[anchor=east,inner sep=1.2pt,font=\small] at (180:{(\R+\RE)/2}) {$10$};
+  \fill (0,0) circle (1.15pt);
+  \fill (180:\R) circle (1.05pt);
+  \fill (270:\R) circle (1.05pt);
+  \fill (0:\R) circle (1.05pt);
+  \fill (90:\R) circle (1.05pt);
+  \fill (180:\RE) circle (1.05pt);
+  \node[anchor=north west,inner sep=1.2pt,font=\small] at (0,0) {$O$};
+  \node[anchor=north,inner sep=1.5pt,font=\small] at (180:\R) {$A$};
+  \node[anchor=north,inner sep=1.5pt,font=\small] at (270:\R) {$B$};
+  \node[anchor=south west,inner sep=1.3pt,font=\small] at (0:\R) {$C$};
+  \node[anchor=south,inner sep=1.4pt,font=\small] at (90:\R) {$D$};
+  \node[anchor=south east,inner sep=1.2pt,font=\small] at (180:\RE) {$E$};
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \emph{（第3题）}
