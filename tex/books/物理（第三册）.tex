@@ -19565,8 +19565,68 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.4 获得感生电流实验(二)}]{assets/physics-3/fig-p0265-01.png}}
-\caption{图4.4 获得感生电流实验(二)}
+\fitfig{%
+% fig-alt: 图4.4 获得感生电流实验（二）。软铁环B上左绕原线圈P、右绕副线圈S；P经电键K、变阻器R接电源；S接电流表G
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % iron ring B (annulus)
+  \draw[line width=1.35pt] (0,0) circle[radius=1.55];
+  \draw[line width=1.05pt] (0,0) circle[radius=0.95];
+  \node at (0,0.15) {$B$};
+  % primary coil P (left arc windings)
+  \foreach \a in {155,165,175,185,195,205,215} {
+    \draw[line width=0.55pt]
+      ({1.55*cos(\a)},{1.55*sin(\a)}) -- ({0.95*cos(\a)},{0.95*sin(\a)});
+  }
+  % front-ish helix suggestion on left
+  \foreach \a in {160,170,180,190,200,210} {
+    \draw[line width=0.45pt]
+      ({1.55*cos(\a)+0.08},{1.55*sin(\a)+0.05})
+      -- ({0.95*cos(\a)-0.05},{0.95*sin(\a)-0.02});
+  }
+  \node[anchor=east,inner sep=2pt] at (-1.70,0.15) {$P$};
+  % secondary coil S (right)
+  \foreach \a in {-25,-15,-5,5,15,25,35,45} {
+    \draw[line width=0.55pt]
+      ({1.55*cos(\a)},{1.55*sin(\a)}) -- ({0.95*cos(\a)},{0.95*sin(\a)});
+  }
+  \foreach \a in {-20,-10,0,10,20,30,40} {
+    \draw[line width=0.45pt]
+      ({1.55*cos(\a)-0.08},{1.55*sin(\a)+0.05})
+      -- ({0.95*cos(\a)+0.05},{0.95*sin(\a)-0.02});
+  }
+  \node[anchor=west,inner sep=2pt] at (1.70,0.15) {$S$};
+  % primary leads: top of P to K, bottom of P to battery return
+  \coordinate (Ptop) at ({1.55*cos(150)},{1.55*sin(150)});
+  \coordinate (Pbot) at ({1.55*cos(210)},{1.55*sin(210)});
+  \draw[line width=0.55pt] (Ptop) -- (-2.85,1.35);
+  % switch K (open)
+  \draw[line width=0.55pt] (-2.85,1.35) -- (-2.85,0.95);
+  \fill (-2.85,0.95) circle[radius=0.045];
+  \draw[line width=0.55pt] (-2.85,0.95) -- (-2.45,1.25);
+  \fill (-2.85,0.55) circle[radius=0.045];
+  \node[anchor=south,inner sep=1pt] at (-2.55,1.30) {$K$};
+  \draw[line width=0.55pt] (-2.85,0.55) -- (-2.85,-0.15);
+  % rheostat R (vertical rectangle + slider)
+  \draw[line width=0.55pt] (-3.15,-0.15) rectangle (-2.55,-1.35);
+  \node[anchor=east,inner sep=2pt] at (-3.15,-0.75) {$R$};
+  \draw[line width=0.55pt,->] (-2.15,-0.55) -- (-2.55,-0.55);
+  \draw[line width=0.55pt] (-2.15,-0.55) -- (-2.15,-1.55);
+  % battery (long/short)
+  \draw[line width=0.7pt] (-2.45,-1.55) -- (-1.85,-1.55);
+  \draw[line width=0.7pt] (-2.35,-1.75) -- (-1.95,-1.75);
+  \draw[line width=0.7pt] (-2.45,-1.95) -- (-1.85,-1.95);
+  \draw[line width=0.7pt] (-2.35,-2.15) -- (-1.95,-2.15);
+  \draw[line width=0.55pt] (-2.15,-2.15) -- (-2.15,-2.35) -- (Pbot);
+  % secondary to G
+  \coordinate (Stop) at ({1.55*cos(30)},{1.55*sin(30)});
+  \coordinate (Sbot) at ({1.55*cos(-30)},{1.55*sin(-30)});
+  \draw[line width=0.55pt] (Stop) -- (2.85,1.05);
+  \draw[line width=0.55pt] (Sbot) -- (2.85,-0.95);
+  \draw[line width=0.75pt] (2.85,0.05) circle[radius=0.72];
+  \node at (2.85,0.05) {$G$};
+\end{tikzpicture}%
+}
+\caption{图4.4 获得感生电流实验（二）}
 \end{figure}
 
 \emph{图4.4 获得感生电流实验（二）}
@@ -19614,8 +19674,47 @@ ABG 的磁通量在增加；当导线 AB 向右运动切割磁力线时，穿过
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/physics-3/fig-p0266-01.png}}
-\caption{(第2题)}
+\fitfig{%
+% fig-alt: （第2题）上N下S磁极间虚线圆轨迹；导体截面在a、b、c、d四位置，箭头示顺时针运动方向
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % N pole (top, wavy break on outer edge)
+  \draw[line width=0.85pt]
+    (-1.55,2.05) -- (-1.55,2.85)
+    .. controls (-1.15,2.72) and (-0.75,2.98) .. (-0.35,2.85)
+    .. controls (0.05,2.72) and (0.45,2.98) .. (0.85,2.85)
+    .. controls (1.15,2.72) and (1.35,2.90) .. (1.55,2.85)
+    -- (1.55,2.05) -- cycle;
+  \node at (0,2.40) {$N$};
+  % S pole (bottom)
+  \draw[line width=0.85pt]
+    (-1.55,-2.05) -- (-1.55,-2.85)
+    .. controls (-1.15,-2.72) and (-0.75,-2.98) .. (-0.35,-2.85)
+    .. controls (0.05,-2.72) and (0.45,-2.98) .. (0.85,-2.85)
+    .. controls (1.15,-2.72) and (1.35,-2.90) .. (1.55,-2.85)
+    -- (1.55,-2.05) -- cycle;
+  \node at (0,-2.40) {$S$};
+  % dashed circular path
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt] (0,0) circle[radius=1.35];
+  % positions a,b,c,d with velocity arrows (clockwise)
+  % a top, arrow right
+  \draw[line width=0.7pt] (0,1.35) circle[radius=0.16];
+  \draw[line width=0.7pt,->] (0.22,1.35) -- (0.95,1.35);
+  \node[anchor=south,inner sep=2pt] at (0,1.55) {$a$};
+  % b right, arrow down
+  \draw[line width=0.7pt] (1.35,0) circle[radius=0.16];
+  \draw[line width=0.7pt,->] (1.35,-0.22) -- (1.35,-0.95);
+  \node[anchor=west,inner sep=2pt] at (1.55,0) {$b$};
+  % c bottom, arrow left
+  \draw[line width=0.7pt] (0,-1.35) circle[radius=0.16];
+  \draw[line width=0.7pt,->] (-0.22,-1.35) -- (-0.95,-1.35);
+  \node[anchor=north,inner sep=2pt] at (0,-1.55) {$c$};
+  % d left, arrow up
+  \draw[line width=0.7pt] (-1.35,0) circle[radius=0.16];
+  \draw[line width=0.7pt,->] (-1.35,0.22) -- (-1.35,0.95);
+  \node[anchor=east,inner sep=2pt] at (-1.55,0) {$d$};
+\end{tikzpicture}%
+}
+\caption{（第2题）}
 \end{figure}
 
 \emph{（第2题）}
@@ -19625,8 +19724,69 @@ ABG 的磁通量在增加；当导线 AB 向右运动切割磁力线时，穿过
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-3/fig-p0267-01.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第3题）大线圈II接电流表；小线圈I插入II内，经电键K接电源（标+−）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % galvanometer (boxy)
+  \draw[line width=0.75pt] (-4.35,0.55) rectangle (-2.15,3.15);
+  \draw[line width=0.5pt] (-4.15,1.55) -- (-2.35,1.55);
+  \draw[line width=0.55pt] (-3.95,2.75) arc[start angle=145,end angle=35,radius=0.95];
+  \foreach \ang in {145,120,90,60,35} {
+    \draw[line width=0.4pt]
+      ({-3.25+0.95*cos(\ang)},{2.05+0.95*sin(\ang)})
+      -- ({-3.25+0.80*cos(\ang)},{2.05+0.80*sin(\ang)});
+  }
+  \draw[line width=0.65pt] (-3.25,2.05) -- (-3.25,2.90);
+  \fill (-3.25,2.05) circle[radius=0.04];
+  \draw[line width=0.5pt] (-3.75,1.05) circle[radius=0.11];
+  \draw[line width=0.5pt] (-2.75,1.05) circle[radius=0.11];
+  % nested coils: outer II (wider, shorter), inner I (taller)
+  % base
+  \draw[line width=0.65pt] (0.15,-0.05) ellipse[x radius=1.05,y radius=0.22];
+  % outer coil II
+  \draw[line width=0.7pt,fill=black!6] (0.15,0.05) ellipse[x radius=0.95,y radius=0.28];
+  \foreach \y in {0.25,0.50,0.75,1.00,1.25,1.50} {
+    \draw[line width=0.55pt]
+      (-0.80,\y) .. controls (-0.55,\y+0.22) and (0.85,\y+0.22) .. (1.10,\y)
+      .. controls (0.85,\y-0.10) and (-0.55,\y-0.10) .. (-0.80,\y);
+  }
+  \draw[line width=0.65pt] (-0.80,0.15) -- (-0.80,1.55);
+  \draw[line width=0.65pt] (1.10,0.15) -- (1.10,1.55);
+  \draw[line width=0.65pt] (-0.80,1.55) .. controls (-0.40,1.78) and (0.70,1.78) .. (1.10,1.55);
+  \node[anchor=west,inner sep=2pt] at (1.20,0.85) {II};
+  % inner coil I
+  \draw[line width=0.65pt,fill=white] (0.15,0.45) ellipse[x radius=0.48,y radius=0.16];
+  \foreach \y in {0.65,0.90,1.15,1.40,1.65,1.90,2.15} {
+    \draw[line width=0.5pt]
+      (-0.33,\y) .. controls (-0.10,\y+0.14) and (0.40,\y+0.14) .. (0.63,\y)
+      .. controls (0.40,\y-0.08) and (-0.10,\y-0.08) .. (-0.33,\y);
+  }
+  \draw[line width=0.6pt] (-0.33,0.55) -- (-0.33,2.20);
+  \draw[line width=0.6pt] (0.63,0.55) -- (0.63,2.20);
+  \draw[line width=0.6pt] (-0.33,2.20) .. controls (-0.05,2.36) and (0.35,2.36) .. (0.63,2.20);
+  \node[anchor=south,inner sep=1pt] at (0.15,2.40) {I};
+  % leads from II to galvanometer
+  \draw[line width=0.55pt] (-0.55,0.10) -- (-0.55,-0.45) -- (-3.75,-0.45) -- (-3.75,1.05);
+  \draw[line width=0.55pt] (0.85,0.10) -- (0.85,-0.70) -- (-2.75,-0.70) -- (-2.75,1.05);
+  % knife switch K (open)
+  \draw[line width=0.65pt] (-3.55,-1.85) rectangle (-1.85,-1.35);
+  \fill (-3.15,-1.50) circle[radius=0.05];
+  \fill (-2.25,-1.50) circle[radius=0.05];
+  \draw[line width=0.65pt] (-3.15,-1.50) -- (-2.55,-1.15);
+  \node[anchor=south,inner sep=1pt] at (-2.70,-1.05) {$K$};
+  % power supply
+  \draw[line width=0.7pt] (1.55,-2.15) rectangle (3.35,-1.25);
+  \fill (1.95,-1.40) circle[radius=0.08];
+  \fill (2.95,-1.40) circle[radius=0.08];
+  \node[anchor=south,inner sep=1pt,font=\small] at (1.95,-1.25) {$+$};
+  \node[anchor=south,inner sep=1pt,font=\small] at (2.95,-1.25) {$-$};
+  % primary wiring: + -- K -- top I ; other top I -- -
+  \draw[line width=0.55pt] (1.95,-1.40) -- (1.95,-1.60) -- (-3.15,-1.60) -- (-3.15,-1.50);
+  \draw[line width=0.55pt] (-2.25,-1.50) -- (-2.25,-0.95) -- (-0.10,2.35) -- (0.05,2.25);
+  \draw[line width=0.55pt] (0.25,2.25) -- (0.40,2.35) -- (2.95,2.35) -- (2.95,-1.40);
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \emph{（第3题）}
@@ -19651,7 +19811,62 @@ ABG 的磁通量在增加；当导线 AB 向右运动切割磁力线时，穿过
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.5 切割磁力线获得感生电流的方向}]{assets/physics-3/fig-p0268-01.png}}
+\fitfig{%
+% fig-alt: 图4.5 四组：B向下/向上，导线a截面内⊕或⊙，水平箭头M示切割方向
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % helper: one panel at origin; params via scopes
+  % panel 1: B↓ M→ ⊕
+  \begin{scope}[shift={(-4.65,0)}]
+    \foreach \x in {-0.90,-0.54,-0.18,0.18,0.54,0.90} {
+      \draw[line width=0.5pt,->] (\x,1.05) -- (\x,-1.05);
+    }
+    \node[anchor=north,inner sep=2pt] at (0,-1.10) {$B$};
+    \draw[line width=0.75pt] (0,0) circle[radius=0.28];
+    \draw[line width=0.65pt] (-0.14,-0.14) -- (0.14,0.14);
+    \draw[line width=0.65pt] (-0.14,0.14) -- (0.14,-0.14);
+    \node[anchor=south east,inner sep=1pt] at (-0.05,0.30) {$a$};
+    \draw[line width=0.7pt,->] (0.32,0) -- (1.25,0);
+    \node[anchor=west,inner sep=1pt] at (1.28,0) {$M$};
+  \end{scope}
+  % panel 2: B↓ M← ⊙
+  \begin{scope}[shift={(-1.55,0)}]
+    \foreach \x in {-0.90,-0.54,-0.18,0.18,0.54,0.90} {
+      \draw[line width=0.5pt,->] (\x,1.05) -- (\x,-1.05);
+    }
+    \node[anchor=north,inner sep=2pt] at (0,-1.10) {$B$};
+    \draw[line width=0.75pt] (0,0) circle[radius=0.28];
+    \fill (0,0) circle[radius=0.07];
+    \node[anchor=south east,inner sep=1pt] at (-0.05,0.30) {$a$};
+    \draw[line width=0.7pt,->] (-0.32,0) -- (-1.25,0);
+    \node[anchor=east,inner sep=1pt] at (-1.28,0) {$M$};
+  \end{scope}
+  % panel 3: B↑ M→ ⊙
+  \begin{scope}[shift={(1.55,0)}]
+    \foreach \x in {-0.90,-0.54,-0.18,0.18,0.54,0.90} {
+      \draw[line width=0.5pt,->] (\x,-1.05) -- (\x,1.05);
+    }
+    \node[anchor=south,inner sep=2pt] at (0,1.10) {$B$};
+    \draw[line width=0.75pt] (0,0) circle[radius=0.28];
+    \fill (0,0) circle[radius=0.07];
+    \node[anchor=south east,inner sep=1pt] at (-0.05,0.30) {$a$};
+    \draw[line width=0.7pt,->] (0.32,0) -- (1.25,0);
+    \node[anchor=west,inner sep=1pt] at (1.28,0) {$M$};
+  \end{scope}
+  % panel 4: B↑ M← ⊕
+  \begin{scope}[shift={(4.65,0)}]
+    \foreach \x in {-0.90,-0.54,-0.18,0.18,0.54,0.90} {
+      \draw[line width=0.5pt,->] (\x,-1.05) -- (\x,1.05);
+    }
+    \node[anchor=south,inner sep=2pt] at (0,1.10) {$B$};
+    \draw[line width=0.75pt] (0,0) circle[radius=0.28];
+    \draw[line width=0.65pt] (-0.14,-0.14) -- (0.14,0.14);
+    \draw[line width=0.65pt] (-0.14,0.14) -- (0.14,-0.14);
+    \node[anchor=south east,inner sep=1pt] at (-0.05,0.30) {$a$};
+    \draw[line width=0.7pt,->] (-0.32,0) -- (-1.25,0);
+    \node[anchor=east,inner sep=1pt] at (-1.28,0) {$M$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 4.5 切割磁力线获得感生电流的方向}
 \end{figure}
 
@@ -19663,7 +19878,69 @@ ABG 的磁通量在增加；当导线 AB 向右运动切割磁力线时，穿过
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.6 右手定则}]{assets/physics-3/fig-p0268-02.png}}
+\fitfig{%
+% fig-alt: 图4.6 右手定则。上N下S，磁力线向下；导线ab水平，I向右；拇指M出纸，虚线F入纸；掌心对N，四指顺I；接电流表G
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % N pole
+  \fill[pattern=dots,pattern color=black!45] (-2.05,1.65) rectangle (2.05,2.65);
+  \draw[line width=0.7pt] (-2.05,1.65) rectangle (2.05,2.65);
+  \node at (0,2.15) {$N$};
+  % S pole
+  \fill[pattern=dots,pattern color=black!45] (-2.05,-2.65) rectangle (2.05,-1.65);
+  \draw[line width=0.7pt] (-2.05,-2.65) rectangle (2.05,-1.65);
+  \node at (0,-2.15) {$S$};
+  % B downward
+  \foreach \x in {-1.45,-0.85,-0.25,0.35,0.95,1.55} {
+    \draw[line width=0.45pt,->] (\x,1.58) -- (\x,-1.58);
+  }
+  % conductor ab
+  \draw[line width=1.45pt] (-2.55,0) -- (2.55,0);
+  \node[anchor=east,inner sep=3pt] at (-2.55,0) {$a$};
+  \node[anchor=west,inner sep=3pt] at (2.55,0) {$b$};
+  % I to the right along ab
+  \draw[line width=0.8pt,->] (-0.55,0.42) -- (1.15,0.42);
+  \node[anchor=south,inner sep=1pt] at (0.30,0.45) {$I$};
+  % right hand: palm up (facing N), fingers right (I), thumb toward viewer (M)
+  % wrist/palm facing up — draw as open hand silhouette
+  \draw[line width=0.6pt,fill=white,fill opacity=0.7]
+    (0.05,-0.85)
+    .. controls (0.55,-1.05) and (1.15,-0.75) .. (1.35,-0.15)
+    .. controls (1.40,0.25) and (1.05,0.55) .. (0.55,0.55)
+    .. controls (0.15,0.55) and (-0.25,0.35) .. (-0.35,0.05)
+    .. controls (-0.45,-0.25) and (-0.25,-0.65) .. cycle;
+  % four fingers stretched to the right (I)
+  \foreach \yy/\dx in {0.38/1.15, 0.18/1.25, -0.02/1.20, -0.22/1.10} {
+    \draw[line width=0.55pt,fill=white,fill opacity=0.7]
+      (1.20,\yy) -- ({1.20+\dx},{\yy+0.06}) -- ({1.20+\dx+0.05},{\yy-0.08})
+      -- (1.20,{\yy-0.14}) -- cycle;
+  }
+  % thumb toward viewer (out of page) — stub pointing out of page / slightly forward
+  \draw[line width=0.6pt,fill=white,fill opacity=0.7]
+    (-0.05,0.15)
+    .. controls (-0.55,0.55) and (-0.95,0.35) .. (-1.05,-0.15)
+    .. controls (-0.85,-0.45) and (-0.35,-0.25) .. cycle;
+  % M: out of page (near thumb)
+  \draw[line width=0.7pt] (-1.55,0.55) circle[radius=0.22];
+  \fill (-1.55,0.55) circle[radius=0.06];
+  \node[anchor=south,inner sep=2pt] at (-1.55,0.80) {$M$};
+  % F: into page, dashed, opposite M
+  \draw[line width=0.65pt,dash pattern=on 2.0pt off 1.2pt] (-1.55,-0.55) circle[radius=0.22];
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.2pt] (-1.66,-0.66) -- (-1.44,-0.44);
+  \draw[line width=0.55pt,dash pattern=on 2.0pt off 1.2pt] (-1.66,-0.44) -- (-1.44,-0.66);
+  \node[anchor=north,inner sep=2pt] at (-1.55,-0.80) {$F$};
+  % flexible leads + G
+  \draw[line width=0.55pt]
+    (2.55,0) .. controls (3.05,0.65) and (3.25,0.35) .. (3.45,0.05);
+  \draw[line width=0.75pt] (3.95,-0.55) circle[radius=0.58];
+  \node at (3.95,-0.55) {$G$};
+  \draw[line width=0.55pt] (3.45,0.05) -- (3.95,0.03);
+  \draw[line width=0.55pt]
+    (-2.55,0) .. controls (-3.05,-0.85) and (-2.85,-2.05) .. (-1.55,-2.95)
+    .. controls (0.55,-3.15) and (2.85,-2.55) .. (3.55,-1.15)
+    -- (3.95,-1.13);
+\end{tikzpicture}%
+}
+
 \caption{图4.6 右手定则}
 \end{figure}
 
@@ -19683,59 +19960,100 @@ ABG 的磁通量在增加；当导线 AB 向右运动切割磁力线时，穿过
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-3/fig-p0269-01.png}}
-\caption{图4.7}
+\fitfig{%
+% fig-alt: 图4.7(a)–(d) 条形磁铁相对竖直螺线管上下运动；M示磁体运动，I示感生电流；(a)(d)与(b)(c)电流反向
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % reusable coil+magnet macro via scopes
+  % --- (a) N down, M down, I out right, front arrows left ---
+  \begin{scope}[shift={(-5.40,0)}]
+    % magnet
+    \draw[line width=0.65pt,fill=black!8] (-0.28,1.55) rectangle (0.28,3.05);
+    \node[font=\small] at (0,2.70) {$S$};
+    \node[font=\small] at (0,1.90) {$N$};
+    \draw[line width=0.65pt,->] (-0.75,2.85) -- (-0.75,1.95);
+    \node[anchor=east,inner sep=1pt] at (-0.78,2.90) {$M$};
+    % solenoid cylinder
+    \draw[line width=0.65pt,fill=black!5] (-0.55,-0.05) -- (-0.55,1.35) -- (0.55,1.35) -- (0.55,-0.05) -- cycle;
+    \draw[line width=0.55pt] (-0.55,1.35) .. controls (-0.20,1.52) and (0.20,1.52) .. (0.55,1.35);
+    \draw[line width=0.4pt,dashed] (-0.55,1.35) .. controls (-0.20,1.18) and (0.20,1.18) .. (0.55,1.35);
+    % windings + front arrows left
+    \foreach \y in {0.15,0.35,0.55,0.75,0.95,1.15} {
+      \draw[line width=0.5pt]
+        (0.55,\y) .. controls (0.25,\y-0.12) and (-0.25,\y-0.12) .. (-0.55,\y);
+      \draw[line width=0.45pt,->] (0.25,\y-0.06) -- (-0.25,\y-0.06);
+    }
+    % terminals: top right out with I→, bottom left
+    \draw[line width=0.55pt,->] (0.55,1.25) -- (1.15,1.25);
+    \node[anchor=south,inner sep=1pt] at (0.90,1.28) {$I$};
+    \draw[line width=0.55pt] (-0.55,0.10) -- (-1.05,0.10);
+    \node[anchor=north,inner sep=2pt] at (0,-0.45) {(a)};
+  \end{scope}
+  % --- (b) N down, M up, I in from right, front arrows right ---
+  \begin{scope}[shift={(-1.80,0)}]
+    \draw[line width=0.65pt,fill=black!8] (-0.28,1.55) rectangle (0.28,3.05);
+    \node[font=\small] at (0,2.70) {$S$};
+    \node[font=\small] at (0,1.90) {$N$};
+    \draw[line width=0.65pt,->] (-0.75,1.95) -- (-0.75,2.85);
+    \node[anchor=east,inner sep=1pt] at (-0.78,2.90) {$M$};
+    \draw[line width=0.65pt,fill=black!5] (-0.55,-0.05) -- (-0.55,1.35) -- (0.55,1.35) -- (0.55,-0.05) -- cycle;
+    \draw[line width=0.55pt] (-0.55,1.35) .. controls (-0.20,1.52) and (0.20,1.52) .. (0.55,1.35);
+    \draw[line width=0.4pt,dashed] (-0.55,1.35) .. controls (-0.20,1.18) and (0.20,1.18) .. (0.55,1.35);
+    \foreach \y in {0.15,0.35,0.55,0.75,0.95,1.15} {
+      \draw[line width=0.5pt]
+        (-0.55,\y) .. controls (-0.25,\y-0.12) and (0.25,\y-0.12) .. (0.55,\y);
+      \draw[line width=0.45pt,->] (-0.25,\y-0.06) -- (0.25,\y-0.06);
+    }
+    \draw[line width=0.55pt,->] (1.15,1.25) -- (0.55,1.25);
+    \node[anchor=south,inner sep=1pt] at (0.90,1.28) {$I$};
+    \draw[line width=0.55pt] (-0.55,0.10) -- (-1.05,0.10);
+    \node[anchor=north,inner sep=2pt] at (0,-0.45) {(b)};
+  \end{scope}
+  % --- (c) S down, M down, same I as (b) ---
+  \begin{scope}[shift={(1.80,0)}]
+    \draw[line width=0.65pt,fill=black!8] (-0.28,1.55) rectangle (0.28,3.05);
+    \node[font=\small] at (0,2.70) {$N$};
+    \node[font=\small] at (0,1.90) {$S$};
+    \draw[line width=0.65pt,->] (-0.75,2.85) -- (-0.75,1.95);
+    \node[anchor=east,inner sep=1pt] at (-0.78,2.90) {$M$};
+    \draw[line width=0.65pt,fill=black!5] (-0.55,-0.05) -- (-0.55,1.35) -- (0.55,1.35) -- (0.55,-0.05) -- cycle;
+    \draw[line width=0.55pt] (-0.55,1.35) .. controls (-0.20,1.52) and (0.20,1.52) .. (0.55,1.35);
+    \draw[line width=0.4pt,dashed] (-0.55,1.35) .. controls (-0.20,1.18) and (0.20,1.18) .. (0.55,1.35);
+    \foreach \y in {0.15,0.35,0.55,0.75,0.95,1.15} {
+      \draw[line width=0.5pt]
+        (-0.55,\y) .. controls (-0.25,\y-0.12) and (0.25,\y-0.12) .. (0.55,\y);
+      \draw[line width=0.45pt,->] (-0.25,\y-0.06) -- (0.25,\y-0.06);
+    }
+    \draw[line width=0.55pt,->] (1.15,1.25) -- (0.55,1.25);
+    \node[anchor=south,inner sep=1pt] at (0.90,1.28) {$I$};
+    \draw[line width=0.55pt] (-0.55,0.10) -- (-1.05,0.10);
+    \node[anchor=north,inner sep=2pt] at (0,-0.45) {(c)};
+  \end{scope}
+  % --- (d) S down, M up, same I as (a) ---
+  \begin{scope}[shift={(5.40,0)}]
+    \draw[line width=0.65pt,fill=black!8] (-0.28,1.55) rectangle (0.28,3.05);
+    \node[font=\small] at (0,2.70) {$N$};
+    \node[font=\small] at (0,1.90) {$S$};
+    \draw[line width=0.65pt,->] (-0.75,1.95) -- (-0.75,2.85);
+    \node[anchor=east,inner sep=1pt] at (-0.78,2.90) {$M$};
+    \draw[line width=0.65pt,fill=black!5] (-0.55,-0.05) -- (-0.55,1.35) -- (0.55,1.35) -- (0.55,-0.05) -- cycle;
+    \draw[line width=0.55pt] (-0.55,1.35) .. controls (-0.20,1.52) and (0.20,1.52) .. (0.55,1.35);
+    \draw[line width=0.4pt,dashed] (-0.55,1.35) .. controls (-0.20,1.18) and (0.20,1.18) .. (0.55,1.35);
+    \foreach \y in {0.15,0.35,0.55,0.75,0.95,1.15} {
+      \draw[line width=0.5pt]
+        (0.55,\y) .. controls (0.25,\y-0.12) and (-0.25,\y-0.12) .. (-0.55,\y);
+      \draw[line width=0.45pt,->] (0.25,\y-0.06) -- (-0.25,\y-0.06);
+    }
+    \draw[line width=0.55pt,->] (0.55,1.25) -- (1.15,1.25);
+    \node[anchor=south,inner sep=1pt] at (0.90,1.28) {$I$};
+    \draw[line width=0.55pt] (-0.55,0.10) -- (-1.05,0.10);
+    \node[anchor=north,inner sep=2pt] at (0,-0.45) {(d)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图4.7 磁体相对线圈运动时感生电流的方向}
 \end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-3/fig-p0269-02.png}}
-\caption{图4.7}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-3/fig-p0269-03.png}}
-\caption{图4.7}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-3/fig-p0269-04.png}}
-\caption{图4.7}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-3/fig-p0269-05.png}}
-\caption{图4.7}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-3/fig-p0269-06.png}}
-\caption{图4.7}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-3/fig-p0269-07.png}}
-\caption{图4.7}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-3/fig-p0269-08.png}}
-\caption{图4.7}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.7}]{assets/physics-3/fig-p0269-09.png}}
-\caption{图4.7}
-\end{figure}
-
-\emph{图4.7}
+\emph{图4.7 磁体相对线圈运动时感生电流的方向}
 
 图中 M 表示磁体（永磁棒、电磁铁或通电螺线管）的运动方向， I
 表示感生电流的方向。
