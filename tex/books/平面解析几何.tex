@@ -8250,15 +8250,37 @@ x \cos \theta_{1} + y \sin \theta_{1} - p_{1} = \pm (x \cos \theta_{2} + y \sin 
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第9题 顶点在原点的正方形，底边倾角α，邻边标a；正方形跨过y轴
-\begin{tikzpicture}[line cap=round,line join=round,>=latex]
-  \draw[line width=0.75pt,latex-latex] (-1.85,0) -- (2.55,0) node[right=1pt] {$x$};
-  \draw[line width=0.75pt,-latex] (0,-1.15) -- (0,2.85) node[above=1pt] {$y$};
-  \draw[line width=0.75pt] (0,0) -- (1.48,0.72) -- (0.76,2.21) -- (-0.72,1.48) -- cycle;
-  \draw[line width=0.4pt] (0.42,0) arc (0:26:0.42);
-  \node[anchor=south west] at (0.46,0.10) {$\alpha$};
-  \node[anchor=east] at (-0.48,0.78) {$a$};
-  \node[anchor=north] at (0.02,-0.08) {$O$};
+% fig-alt: 第9题 长方形 ABCD，E 在 AB 上、F 在 AD 上且 BE:BA=AF:AD，CE 与 BF 交于 P
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \def\W{4.2}
+  \def\H{2.55}
+  \def\t{0.38}
+  \coordinate (B) at (0,0);
+  \coordinate (C) at ({\W},0);
+  \coordinate (D) at ({\W},{\H});
+  \coordinate (A) at (0,{\H});
+  \coordinate (E) at (0,{\t*\H});
+  \coordinate (F) at ({\t*\W},{\H});
+  \pgfmathsetmacro{\px}{\t*\t*\W/(1+\t*\t)}
+  \pgfmathsetmacro{\py}{\t*\H/(1+\t*\t)}
+  \coordinate (P) at ({\px},{\py});
+  \draw[line width=0.8pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (B) -- (F);
+  \draw[line width=0.7pt] (E) -- (C);
+  \fill (A) circle (1.1pt);
+  \fill (B) circle (1.1pt);
+  \fill (C) circle (1.1pt);
+  \fill (D) circle (1.1pt);
+  \fill (E) circle (1.1pt);
+  \fill (F) circle (1.1pt);
+  \fill (P) circle (1.2pt);
+  \node[anchor=south east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=east,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south west,inner sep=1.5pt] at (P) {$P$};
 \end{tikzpicture}%
 }
 \caption{(第9题)}
@@ -26996,7 +27018,49 @@ y = f_{2} (t) \quad (\text {\text{或}} x = g_{2} (t)),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/analytic-geometry/fig-p0360-01.png}}
+\fitfig{%
+% fig-alt: 第5题 炮兵阵地 O 向倾角 15° 山坡上目标 P 发炮；发射角 θ，山脚 A，弹道抛物线交山坡于 P
+\begin{tikzpicture}[x=0.78cm,y=0.78cm,line cap=round,line join=round,>=latex]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (3.15,0);
+  % incline 15°, P on incline
+  \pgfmathsetmacro{\Px}{4.55}
+  \pgfmathsetmacro{\Py}{(\Px-3.15)*tan(15)}
+  \coordinate (P) at ({\Px},{\Py});
+  \coordinate (Aend) at ({5.55},{(5.55-3.15)*tan(15)});
+  % axes
+  \draw[line width=0.7pt,-latex] (-0.35,0) -- (6.15,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-0.25) -- (0,3.55) node[anchor=south,inner sep=2pt] {$y$};
+  % launch ray at θ=45°
+  \draw[line width=0.55pt] (0,0) -- (1.55,1.55);
+  \draw[line width=0.45pt] (0.72,0) arc (0:45:0.72);
+  \node[anchor=west,inner sep=1pt,font=\small] at (0.82,0.28) {$\theta$};
+  % parabola: y = x - x^2/(2*rangeish); peak then down to P
+  % fit through O with initial slope 1 (45°) and through P
+  % y = x + c x^2, y'(0)=1; at P: Py = Px + c Px^2 => c=(Py-Px)/Px^2
+  \pgfmathsetmacro{\cc}{(\Py-\Px)/(\Px*\Px)}
+  \draw[line width=0.85pt,domain=0:{\Px},samples=60,smooth]
+    plot (\x,{\x+\cc*\x*\x});
+  % incline with hatch
+  \draw[line width=0.75pt] (A) -- (Aend);
+  \draw[dash pattern=on 1.5pt off 1.1pt,line width=0.4pt] (A) -- (Aend |- A);
+  \draw[line width=0.4pt] (3.7,0) arc (0:15:0.55);
+  \node[anchor=north west,inner sep=0.8pt,font=\scriptsize] at (3.72,0.02) {$15^\circ$};
+  \foreach \tt in {0.12,0.28,0.44,0.60,0.76,0.92} {
+    \pgfmathsetmacro{\hx}{3.15+\tt*2.2}
+    \pgfmathsetmacro{\hy}{\tt*2.2*tan(15)}
+    \pgfmathsetmacro{\hxx}{\hx-0.18}
+    \pgfmathsetmacro{\hyy}{\hy-0.22}
+    \draw[line width=0.35pt] ({\hx},{\hy}) -- ({\hxx},{\hyy});
+  }
+  \fill (O) circle (1.15pt);
+  \fill (A) circle (1.1pt);
+  \fill (P) circle (1.2pt);
+  \node[anchor=north east,inner sep=1.5pt] at (-0.05,-0.05) {$O$};
+  \node[anchor=north,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -27038,7 +27102,57 @@ y = f_{2} (t) \quad (\text {\text{或}} x = g_{2} (t)),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/analytic-geometry/fig-p0360-02.png}}
+\fitfig{%
+% fig-alt: 第10题 双曲线及其渐近线被一直线所截，交点依次为 P、R、S、Q，示 PR=SQ
+\begin{tikzpicture}[x=0.55cm,y=0.55cm,line cap=round,line join=round,>=latex]
+  \def\a{1.55}
+  \def\b{1.25}
+  \def\k{0.25}
+  \def\rr{1.0}
+  \draw[line width=0.7pt,-latex] (-4.6,0) -- (4.8,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.7pt,-latex] (0,-3.4) -- (0,3.6) node[anchor=south,inner sep=2pt] {$y$};
+  % asymptotes
+  \draw[line width=0.5pt] ({-3.8},{-3.8*\b/\a}) -- ({3.8},{3.8*\b/\a});
+  \draw[line width=0.5pt] ({-3.8},{3.8*\b/\a}) -- ({3.8},{-3.8*\b/\a});
+  % hyperbola branches
+  \draw[line width=0.85pt,domain=-1.55:1.55,samples=60,smooth]
+    plot ({\a*cosh(\x)},{\b*sinh(\x)});
+  \draw[line width=0.85pt,domain=-1.55:1.55,samples=60,smooth]
+    plot ({-\a*cosh(\x)},{\b*sinh(\x)});
+  % transversal y=kx+r
+  \draw[line width=0.7pt] (-4.2,{\k*(-4.2)+\rr}) -- (4.2,{\k*4.2+\rr});
+  % intersections with asymptotes y=±(b/a)x
+  % kx+r = (b/a)x  => x = r / (b/a - k)
+  \pgfmathsetmacro{\xs}{\rr / (\b/\a - \k)}
+  \pgfmathsetmacro{\ys}{\k*\xs+\rr}
+  % kx+r = -(b/a)x => x = r / (-b/a - k) wait: kx+r=-(b/a)x => x(k+b/a)=-r => x=-r/(k+b/a)
+  \pgfmathsetmacro{\xr}{-\rr / (\k + \b/\a)}
+  \pgfmathsetmacro{\yr}{\k*\xr+\rr}
+  % intersections with hyperbola: substitute y=kx+r into b^2 x^2 - a^2 y^2 = a^2 b^2
+  \pgfmathsetmacro{\Acoef}{\b*\b - \a*\a*\k*\k}
+  \pgfmathsetmacro{\Bcoef}{-2*\a*\a*\k*\rr}
+  \pgfmathsetmacro{\Ccoef}{-\a*\a*\rr*\rr - \a*\a*\b*\b}
+  \pgfmathsetmacro{\disc}{sqrt(\Bcoef*\Bcoef-4*\Acoef*\Ccoef)}
+  \pgfmathsetmacro{\xp}{(-\Bcoef-\disc)/(2*\Acoef)}
+  \pgfmathsetmacro{\xq}{(-\Bcoef+\disc)/(2*\Acoef)}
+  \pgfmathsetmacro{\yp}{\k*\xp+\rr}
+  \pgfmathsetmacro{\yq}{\k*\xq+\rr}
+  \coordinate (P) at ({\xp},{\yp});
+  \coordinate (R) at ({\xr},{\yr});
+  \coordinate (S) at ({\xs},{\ys});
+  \coordinate (Q) at ({\xq},{\yq});
+  \fill (P) circle (1.15pt);
+  \fill (R) circle (1.15pt);
+  \fill (S) circle (1.15pt);
+  \fill (Q) circle (1.15pt);
+  \fill (0,0) circle (1.05pt);
+  \node[anchor=north east,inner sep=1.2pt] at (-0.08,-0.08) {$O$};
+  \node[anchor=south,inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=south,inner sep=1.5pt] at (R) {$R$};
+  \node[anchor=south,inner sep=1.5pt] at (S) {$S$};
+  \node[anchor=north,inner sep=1.5pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -27306,7 +27420,40 @@ PR = SQ. ]
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/analytic-geometry/fig-p0365-01.png}}
+\fitfig{%
+% fig-alt: 第9题 长方形 ABCD，E 在 AB 上、F 在 AD 上且 BE:BA=AF:AD，CE 与 BF 交于 P
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round,>=latex]
+  \def\W{4.2}
+  \def\H{2.55}
+  \def\t{0.38} % BE/BA = AF/AD = t
+  \coordinate (B) at (0,0);
+  \coordinate (C) at ({\W},0);
+  \coordinate (D) at ({\W},{\H});
+  \coordinate (A) at (0,{\H});
+  \coordinate (E) at (0,{\t*\H});
+  \coordinate (F) at ({\t*\W},{\H});
+  \draw[line width=0.8pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.7pt] (B) -- (F);
+  \draw[line width=0.7pt] (E) -- (C);
+  \path[name path=bf] (B) -- (F);
+  \path[name path=ec] (E) -- (C);
+  \path[name intersections={of=bf and ec,by=P}];
+  \fill (A) circle (1.1pt);
+  \fill (B) circle (1.1pt);
+  \fill (C) circle (1.1pt);
+  \fill (D) circle (1.1pt);
+  \fill (E) circle (1.1pt);
+  \fill (F) circle (1.1pt);
+  \fill (P) circle (1.2pt);
+  \node[anchor=south east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=east,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south west,inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -27343,7 +27490,22 @@ PR = SQ. ]
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·1}]{assets/analytic-geometry/fig-p0366-01.png}}
+\fitfig{%
+% fig-alt: 图7·1 极坐标系：极点 O、极轴 Ox、点 P(ρ,θ)，极径 ρ 与极角 θ
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (38:3.35);
+  \draw[line width=0.75pt,-latex] (0,0) -- (4.15,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.8pt] (O) -- (P);
+  \draw[line width=0.5pt,-latex] (0.85,0) arc (0:38:0.85);
+  \fill (O) circle (1.2pt);
+  \fill (P) circle (1.35pt);
+  \node[anchor=north east,inner sep=1.5pt] at (-0.05,-0.05) {$O$};
+  \node[anchor=south,inner sep=1.5pt] at (19:1.85) {$\rho$};
+  \node[anchor=west,inner sep=1pt,font=\small] at (0.95,0.32) {$\theta$};
+  \node[anchor=west,inner sep=2pt] at (P) {$P(\rho,\theta)$};
+\end{tikzpicture}%
+}
 \caption{图7·1}
 \end{figure}
 
@@ -27369,7 +27531,50 @@ A \left(3, \frac {\pi}{6}\right), B (4, 225^{\circ}), C \left(8, - \frac {\pi}{3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·2}]{assets/analytic-geometry/fig-p0367-01.png}}
+\fitfig{%
+% fig-alt: 图7·2 极坐标网格上描点 A(3,π/6)、B(4,225°)、C(8,-π/3)、D(5,π)
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\u{0.26}
+  \pgfmathsetmacro{\xmax}{\u*10+0.42}
+  \pgfmathsetmacro{\rout}{\u*10+0.26}
+  \foreach \r in {1,...,10} {
+    \draw[line width=0.28pt] (0,0) circle ({\r*\u});
+  }
+  \foreach \ang in {0,30,...,330} {
+    \draw[line width=0.28pt] (0,0) -- ({\ang}:{\u*10});
+  }
+  \foreach \ang in {15,45,...,345} {
+    \draw[dash pattern=on 1.0pt off 0.85pt,line width=0.2pt] (0,0) -- ({\ang}:{\u*10});
+  }
+  % extra ray for 225°
+  \draw[dash pattern=on 1.0pt off 0.85pt,line width=0.28pt] (0,0) -- ({225}:{\u*10});
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\xmax},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \fill (0,0) circle (1.05pt);
+  \node[anchor=north east,inner sep=1pt,font=\small] at (-0.05,-0.05) {$O$};
+  \node[anchor=north,inner sep=0.6pt,font=\footnotesize] at ({5*\u},-0.02) {$5$};
+  \node[anchor=north,inner sep=0.6pt,font=\footnotesize] at ({10*\u},-0.02) {$10$};
+  \foreach \ang/\lab in {30/30^\circ,60/60^\circ,90/90^\circ,120/120^\circ,150/150^\circ,180/-180^\circ,210/210^\circ,240/240^\circ,270/270^\circ,300/300^\circ,330/330^\circ} {
+    \node[font=\scriptsize,inner sep=0.5pt] at ({\ang}:{\rout}) {$\lab$};
+  }
+  % points
+  \coordinate (A) at ({30}:{\u*3});
+  \coordinate (B) at ({225}:{\u*4});
+  \coordinate (C) at ({300}:{\u*8});
+  \coordinate (D) at ({180}:{\u*5});
+  \draw[line width=0.75pt,-latex] (0,0) -- (A);
+  \draw[line width=0.75pt,-latex] (0,0) -- (B);
+  \draw[line width=0.75pt,-latex] (0,0) -- (C);
+  \draw[line width=0.75pt,-latex] (0,0) -- (D);
+  \fill (A) circle (1.2pt);
+  \fill (B) circle (1.2pt);
+  \fill (C) circle (1.2pt);
+  \fill (D) circle (1.2pt);
+  \node[anchor=south west,inner sep=1pt,font=\small] at (A) {$A\!\left(3,\dfrac{\pi}{6}\right)$};
+  \node[anchor=north east,inner sep=1pt,font=\small] at (B) {$B(4,225^\circ)$};
+  \node[anchor=north west,inner sep=1pt,font=\small] at (C) {$C\!\left(8,-\dfrac{\pi}{3}\right)$};
+  \node[anchor=south east,inner sep=1pt,font=\small] at (D) {$D(5,\pi)$};
+\end{tikzpicture}%
+}
 \caption{图7·2}
 \end{figure}
 
@@ -27387,8 +27592,28 @@ A \left(3, \frac {\pi}{6}\right), B (4, 225^{\circ}), C \left(8, - \frac {\pi}{3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-3}]{assets/analytic-geometry/fig-p0367-02.png}}
-\caption{图7-3}
+\fitfig{%
+% fig-alt: 图7·3 ρ<0 时点 P(ρ,θ) 在射线 OM 的反向延长线上，|OP|=|ρ|
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\pang{52}
+  \pgfmathsetmacro{\popp}{\pang+180}
+  \coordinate (O) at (0,0);
+  \coordinate (M) at ({\pang}:2.85);
+  \coordinate (P) at ({\popp}:2.35);
+  \draw[line width=0.75pt,-latex] (0,0) -- (3.55,0) node[anchor=west,inner sep=2pt] {$x$};
+  \draw[line width=0.75pt] (P) -- (M);
+  \draw[line width=0.5pt,-latex] (0.78,0) arc (0:\pang:0.78);
+  \fill (O) circle (1.2pt);
+  \fill (P) circle (1.35pt);
+  \node[anchor=north east,inner sep=1.5pt] at (-0.05,-0.05) {$O$};
+  \node[anchor=south west,inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west,inner sep=1pt,font=\small] at (0.88,0.38) {$\theta$};
+  \node[anchor=north,inner sep=1.2pt,font=\small] at ({\popp}:1.15) {$|\rho|$};
+  \node[anchor=east,inner sep=2pt] at (P) {$P(\rho,\theta)$};
+  \node[anchor=east,inner sep=2pt,yshift=-11pt,font=\small] at (P) {$\rho<0$};
+\end{tikzpicture}%
+}
+\caption{图7·3}
 \end{figure}
 
 \emph{图7·3}
@@ -27409,8 +27634,57 @@ C \left(- 9, - \frac {5 \pi}{4}\right), D (- 5, 210^{\circ})\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-4}]{assets/analytic-geometry/fig-p0368-01.png}}
-\caption{图7-4}
+\fitfig{%
+% fig-alt: 图7·4 极坐标网格上描负极径点 A(-4,π/3)、B(-6,3π/2)、C(-9,-5π/4)、D(-5,210°)，并标出 A₁
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\u{0.26}
+  \pgfmathsetmacro{\xmax}{\u*10+0.42}
+  \pgfmathsetmacro{\rout}{\u*10+0.26}
+  \foreach \r in {1,...,10} {
+    \draw[line width=0.28pt] (0,0) circle ({\r*\u});
+  }
+  \foreach \ang in {0,30,...,330} {
+    \draw[line width=0.28pt] (0,0) -- ({\ang}:{\u*10});
+  }
+  \foreach \ang in {15,45,...,345} {
+    \draw[dash pattern=on 1.0pt off 0.85pt,line width=0.2pt] (0,0) -- ({\ang}:{\u*10});
+  }
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\xmax},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \fill (0,0) circle (1.05pt);
+  \node[anchor=north east,inner sep=1pt,font=\small] at (-0.05,-0.05) {$O$};
+  \node[anchor=north,inner sep=0.6pt,font=\footnotesize] at ({5*\u},-0.02) {$5$};
+  \node[anchor=north,inner sep=0.6pt,font=\footnotesize] at ({10*\u},-0.02) {$10$};
+  \foreach \ang/\lab in {30/30^\circ,60/60^\circ,90/90^\circ,120/120^\circ,150/150^\circ,180/180^\circ,210/210^\circ,240/240^\circ,270/270^\circ,300/300^\circ,330/330^\circ} {
+    \node[font=\scriptsize,inner sep=0.5pt] at ({\ang}:{\rout}) {$\lab$};
+  }
+  % A(-4, π/3) -> plot at 240°, A1 at 60° r=4
+  \coordinate (A) at ({240}:{\u*4});
+  \coordinate (Aone) at ({60}:{\u*4});
+  % B(-6, 3π/2) -> 90°
+  \coordinate (B) at ({90}:{\u*6});
+  % C(-9, -5π/4) -> 315°
+  \coordinate (C) at ({315}:{\u*9});
+  % D(-5, 210°) -> 30°
+  \coordinate (D) at ({30}:{\u*5});
+  \draw[line width=0.7pt,-latex] (0,0) -- (Aone);
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.55pt] (Aone) -- (A);
+  \draw[line width=0.75pt,-latex] (0,0) -- (B);
+  \draw[line width=0.75pt,-latex] (0,0) -- (C);
+  \draw[line width=0.75pt,-latex] (0,0) -- (D);
+  \draw[dash pattern=on 1.6pt off 1.1pt,line width=0.45pt] (0,0) -- ({210}:{\u*5.5});
+  \fill (A) circle (1.2pt);
+  \fill (Aone) circle (1.1pt);
+  \fill (B) circle (1.2pt);
+  \fill (C) circle (1.2pt);
+  \fill (D) circle (1.2pt);
+  \node[anchor=north east,inner sep=1pt,font=\small] at (A) {$A\!\left(-4,\dfrac{\pi}{3}\right)$};
+  \node[anchor=south west,inner sep=1pt,font=\small] at (Aone) {$A_1$};
+  \node[anchor=south east,inner sep=1pt,font=\small] at (B) {$B\!\left(-6,\dfrac{3\pi}{2}\right)$};
+  \node[anchor=west,inner sep=1pt,font=\small] at (C) {$C\!\left(-9,-\dfrac{5\pi}{4}\right)$};
+  \node[anchor=south west,inner sep=1pt,font=\small] at (D) {$D(-5,210^\circ)$};
+\end{tikzpicture}%
+}
+\caption{图7·4}
 \end{figure}
 
 \emph{图7·4}
@@ -27474,8 +27748,38 @@ C \left(- 9, - \frac {5 \pi}{4}\right), D (- 5, 210^{\circ})\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7-6}]{assets/analytic-geometry/fig-p0370-01.png}}
-\caption{图7-6}
+\fitfig{%
+% fig-alt: 图7·6 极坐标网格上点 A 位于 (6,5π/3) 即 (6,300°)，过原点的直径示正负极径同一点
+\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,>=latex]
+  \def\u{0.26}
+  \pgfmathsetmacro{\xmax}{\u*10+0.42}
+  \pgfmathsetmacro{\rout}{\u*10+0.26}
+  \foreach \r in {1,...,10} {
+    \draw[line width=0.28pt] (0,0) circle ({\r*\u});
+  }
+  \foreach \ang in {0,30,...,330} {
+    \draw[line width=0.28pt] (0,0) -- ({\ang}:{\u*10});
+  }
+  \foreach \ang in {15,45,...,345} {
+    \draw[dash pattern=on 1.0pt off 0.85pt,line width=0.2pt] (0,0) -- ({\ang}:{\u*10});
+  }
+  \draw[line width=0.7pt,-latex] (0,0) -- ({\xmax},0) node[anchor=west,inner sep=1.5pt] {$x$};
+  \fill (0,0) circle (1.05pt);
+  \node[anchor=north east,inner sep=1pt,font=\small] at (-0.05,-0.05) {$O$};
+  \node[anchor=north,inner sep=0.6pt,font=\footnotesize] at ({5*\u},-0.02) {$5$};
+  \node[anchor=north,inner sep=0.6pt,font=\footnotesize] at ({10*\u},-0.02) {$10$};
+  \foreach \ang/\lab in {30/30^\circ,60/60^\circ,90/90^\circ,120/120^\circ,150/150^\circ,180/180^\circ,210/210^\circ,240/240^\circ,270/270^\circ,300/300^\circ,330/330^\circ} {
+    \node[font=\scriptsize,inner sep=0.5pt] at ({\ang}:{\rout}) {$\lab$};
+  }
+  \coordinate (A) at ({300}:{\u*6});
+  \coordinate (Aopp) at ({120}:{\u*6});
+  \draw[line width=0.85pt] (Aopp) -- (A);
+  \draw[line width=0.75pt,-latex] (0,0) -- (A);
+  \fill (A) circle (1.35pt);
+  \node[anchor=north west,inner sep=1.5pt] at (A) {$A$};
+\end{tikzpicture}%
+}
+\caption{图7·6}
 \end{figure}
 
 \emph{图7·6}
