@@ -25880,11 +25880,22 @@ AT，再设法证明\(AT \parallel EF\)，因为\(OA \perp AT\)，从而证得\(
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(6) 同心}]{assets/plane-geometry-1/fig-p0260-06.png}}
-\caption{(6) 同心}
+\fitfig{%
+% fig-alt: 图4·59（6）同心：两圆同心，圆心标 A(B)
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\ra{0.700}
+  \def\rb{1.150}
+  \coordinate (O) at (0,0);
+  \draw[line width=0.75pt] (O) circle [radius=\rb];
+  \draw[line width=0.75pt] (O) circle [radius=\ra];
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=south, inner sep=1.8pt] at (O) {$A(B)$};
+\end{tikzpicture}%
+}
+\caption{（6）同心}
 \end{figure}
 
-\emph{（6） 同心}
+\emph{（6）同心}
 
 \emph{图4·59}
 
@@ -25945,11 +25956,35 @@ R + r > AB > R - r \quad (R > r)\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-80}]{assets/plane-geometry-1/fig-p0261-01.png}}
-\caption{图4-80}
+\fitfig{%
+% fig-alt: 图4·60 两圆外离，连心线 MN 交圆于 A、B；圆上任取 P、Q，连 MP、PQ、QN
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rm{1.250}
+  \def\rn{0.780}
+  \coordinate (M) at (0,0);
+  \coordinate (N) at (3.700,0);
+  \coordinate (A) at (1.250,0);
+  \coordinate (B) at (2.920,0);
+  \coordinate (P) at (0.985,-0.770);
+  \coordinate (Q) at (3.025,-0.390);
+  \draw[line width=0.75pt] (M) circle [radius=\rm];
+  \draw[line width=0.75pt] (N) circle [radius=\rn];
+  \draw[line width=0.65pt] (M) -- (N);
+  \draw[line width=0.65pt] (M) -- (P) -- (Q) -- (N);
+  \fill (M) circle [radius=1.1pt];
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south west, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=south east, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.2pt] at (P) {$P$};
+  \node[anchor=north east, inner sep=1.2pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+\caption{图4·60}
 \end{figure}
 
-\emph{图 4·60}
+\emph{图4·60}
 
 \textbf{［求证］} AB 是两圆间的最短距离。
 
@@ -26018,8 +26053,37 @@ AB = PQ.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-1/fig-p0262-01.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第3题）两同心圆 M；直线交外圆于 A、D，交内圆于 B、C；MK⊥该直线，虚线向上延长
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\Ro{1.350}
+  \def\Ri{0.850}
+  \coordinate (M) at (0,0);
+  \coordinate (K) at (0,0.520);
+  \coordinate (A) at (-1.246,0.520);
+  \coordinate (D) at (1.246,0.520);
+  \coordinate (B) at (-0.672,0.520);
+  \coordinate (C) at (0.672,0.520);
+  \coordinate (Top) at (0,1.500);
+  \coordinate (L) at (-1.500,0.520);
+  \coordinate (Rr) at (1.500,0.520);
+  \draw[line width=0.75pt] (M) circle [radius=\Ro];
+  \draw[line width=0.75pt] (M) circle [radius=\Ri];
+  \draw[line width=0.65pt] (L) -- (Rr);
+  \draw[line width=0.65pt] (M) -- (K);
+  \draw[line width=0.55pt, dashed] (K) -- (Top);
+  % right angle at K
+  \draw[line width=0.40pt] (0,0.400) -- (0.120,0.400) -- (0.120,0.520);
+  \fill (M) circle [radius=1.1pt];
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north west, inner sep=1.0pt] at (K) {$K$};
+  \node[anchor=south, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.2pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \emph{（第3题）}
@@ -26063,11 +26127,37 @@ AB = PQ.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-61}]{assets/plane-geometry-1/fig-p0263-01.png}}
-\caption{图4-61}
+\fitfig{%
+% fig-alt: 图4·61 圆 A、B 相交于 P、Q；连心线 AB 与公弦 PQ 交于 M；虚线 AP、AQ、BP、BQ
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\ra{1.050}
+  \def\rb{1.350}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (1.700,0);
+  \coordinate (M) at (0.638,0);
+  \coordinate (P) at (0.638,0.834);
+  \coordinate (Q) at (0.638,-0.834);
+  \draw[line width=0.75pt] (A) circle [radius=\ra];
+  \draw[line width=0.75pt] (B) circle [radius=\rb];
+  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.65pt] (P) -- (Q);
+  \draw[line width=0.55pt, dashed] (A) -- (P);
+  \draw[line width=0.55pt, dashed] (A) -- (Q);
+  \draw[line width=0.55pt, dashed] (B) -- (P);
+  \draw[line width=0.55pt, dashed] (B) -- (Q);
+  \fill (A) circle [radius=1.1pt];
+  \fill (B) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=south west, inner sep=1.2pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{图4·61}
 \end{figure}
 
-\emph{图 4·61}
+\emph{图4·61}
 
 \textbf{［证］}
 过\(P\)作\(PM \perp AB\)，延长\(PM\)至\(Q\)，使\(MQ = PM\)。
@@ -26104,21 +26194,55 @@ C，也就证明了相切两圆的连心线必过它们的切点。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/plane-geometry-1/fig-p0264-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图4·62（1）两圆外切于 C；连心线经 M、C、N
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rm{1.250}
+  \def\rn{0.780}
+  \coordinate (M) at (0,0);
+  \coordinate (C) at (\rm,0);
+  \coordinate (N) at (2.030,0);
+  \draw[line width=0.75pt] (M) circle [radius=\rm];
+  \draw[line width=0.75pt] (N) circle [radius=\rn];
+  \draw[line width=0.65pt] (M) -- (N);
+  \fill (M) circle [radius=1.1pt];
+  \fill (N) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+\end{tikzpicture}%
+}
+\caption{（1）}
 \end{figure}
 
 \emph{（1）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/plane-geometry-1/fig-p0264-02.png}}
-\caption{(2)}
+\fitfig{%
+% fig-alt: 图4·62（2）两圆内切于 C；连心线经 C、N、M
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rm{1.450}
+  \def\rn{0.780}
+  \coordinate (C) at (0,0);
+  \coordinate (N) at (\rn,0);
+  \coordinate (M) at (\rm,0);
+  \draw[line width=0.75pt] (M) circle [radius=\rm];
+  \draw[line width=0.75pt] (N) circle [radius=\rn];
+  \draw[line width=0.65pt] (C) -- (M);
+  \fill (N) circle [radius=1.1pt];
+  \fill (M) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south, inner sep=1.5pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{（2）}
 \end{figure}
 
 \emph{（2）}
 
-\emph{图 4·62}
+\emph{图4·62}
 
 \textbf{［注意］}
 相切两圆的连心线必过切点这一性质很重要，在有关切圆问题中，无论是计算、证明或作图，这一性质是经常要用到的，希望读者特别注意。
@@ -26135,11 +26259,42 @@ C，也就证明了相切两圆的连心线必过它们的切点。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-63}]{assets/plane-geometry-1/fig-p0264-03.png}}
-\caption{图4-63}
+\fitfig{%
+% fig-alt: 图4·63 圆 M 上定点 R；相切圆圆心 P（内含大）、P'（外）在直线 MR 上；虚线示意更多相切圆
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rm{1.000}
+  \def\rp{1.900}
+  \def\rpp{0.850}
+  \def\rdl{2.800}
+  \def\rdr{1.700}
+  \coordinate (R) at (0,0);
+  \coordinate (M) at (-\rm,0);
+  \coordinate (P) at (-\rp,0);
+  \coordinate (Pp) at (\rpp,0);
+  \coordinate (Dl) at (-\rdl,0);
+  \coordinate (Dr) at (\rdr,0);
+  \coordinate (Lend) at (-3.200,0);
+  \coordinate (Rend) at (2.100,0);
+  \draw[line width=0.65pt] (Lend) -- (Rend);
+  \draw[line width=0.75pt] (M) circle [radius=\rm];
+  \draw[line width=0.75pt] (P) circle [radius=\rp];
+  \draw[line width=0.75pt] (Pp) circle [radius=\rpp];
+  \draw[line width=0.55pt, dashed] (Dl) circle [radius=\rdl];
+  \draw[line width=0.55pt, dashed] (Dr) circle [radius=\rdr];
+  \fill (M) circle [radius=1.1pt];
+  \fill (P) circle [radius=1.1pt];
+  \fill (Pp) circle [radius=1.1pt];
+  \fill (R) circle [radius=1.1pt];
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=south west, inner sep=1.2pt] at (R) {$R$};
+  \node[anchor=north, inner sep=1.5pt] at (Pp) {$P'$};
+\end{tikzpicture}%
+}
+\caption{图4·63}
 \end{figure}
 
-\emph{图 4·63}
+\emph{图4·63}
 
 \textbf{［证］} 因为任何大小的圆要与圆 M 相切于 R，则点 R
 总是所画各圆与已知圆的切点。而这些相切圆的圆心和点 M 的连线必过切点
@@ -26168,11 +26323,44 @@ R，所以切圆的圆心一定在直线 MR 上。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-84}]{assets/plane-geometry-1/fig-p0265-01.png}}
-\caption{图4-84}
+\fitfig{%
+% fig-alt: 图4·64 定圆 M（半径 R）；虚线同心圆半径 R+r、R−r 为圆心轨迹；圆 P 外切、圆 P' 内切（半径皆 r）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.600}
+  \def\rr{0.480}
+  \coordinate (M) at (0,0);
+  \coordinate (Pp) at (1.120,0);
+  \coordinate (P) at (2.080,0);
+  \coordinate (Rend) at (2.230,0);
+  \coordinate (Rendpt) at (-0.918,1.311);
+  % reference segment r (top-left)
+  \draw[line width=0.65pt] (-1.900,2.350) -- (-1.420,2.350);
+  \draw[line width=0.50pt] (-1.900,2.280) -- (-1.900,2.420);
+  \draw[line width=0.50pt] (-1.420,2.280) -- (-1.420,2.420);
+  \node[anchor=south, inner sep=1.2pt] at (-1.660,2.350) {$r$};
+  % known circle + loci
+  \draw[line width=0.75pt] (M) circle [radius=\R];
+  \draw[line width=0.55pt, dashed] (M) circle [radius=2.080];
+  \draw[line width=0.55pt, dashed] (M) circle [radius=1.120];
+  % sample tangent circles
+  \draw[line width=0.70pt] (P) circle [radius=\rr];
+  \draw[line width=0.70pt] (Pp) circle [radius=\rr];
+  \draw[line width=0.65pt] (M) -- (Rend);
+  % radius arrow R (upper-left)
+  \draw[line width=0.65pt, -latex] (M) -- (Rendpt);
+  \node[anchor=south east, inner sep=1.5pt] at (-0.505,0.721) {$R$};
+  \fill (M) circle [radius=1.1pt];
+  \fill (Pp) circle [radius=1.1pt];
+  \fill (P) circle [radius=1.1pt];
+  \node[anchor=north east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north, inner sep=1.5pt] at (Pp) {$P'$};
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+\caption{图4·64}
 \end{figure}
 
-\emph{图 4·64}
+\emph{图4·64}
 
 \textbf{［作法］}
 以点\(M\)为圆心，分别以\((R + r)\)和\((R - r)\)为半径画两个圆。这两圆就是以\(r\)为半径并与圆\(M\)，相切的圆的圆心的轨迹。
