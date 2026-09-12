@@ -16241,12 +16241,6 @@ F = B I l
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.37 场为通电线圈（甲、乙）}]{assets/physics-3/fig-p0230-01.png}}
-\caption{图3.37 场为通电线圈（甲、乙）}
-\end{figure}
-
-\begin{figure}
-\centering
 \fitfig{%
 % fig-alt: 图3.37(a) 俯视。AB∥B，A×（里）F↓、B·（外）F↑，力偶顺时针
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
@@ -16435,7 +16429,39 @@ M=NBIS\cos\theta
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.38 均匀辐向磁场}]{assets/physics-3/fig-p0232-01.png}}
+\fitfig{%
+% fig-alt: 图3.38 均匀辐向磁场。左N右S凹极面，中心软铁柱K，斜置线圈框C；气隙中磁力线沿半径：N侧内指、S侧外指
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left N pole (closed path with concave arc)
+  \draw[line width=0.75pt]
+    (-2.40,-1.55) -- (-2.40,1.55) -- (-1.00,1.55)
+    arc[start angle=70,end angle=-70,radius=1.70]
+    -- (-2.40,-1.55) -- cycle;
+  \node at (-1.90,0.10) {$N$};
+  % right S pole
+  \draw[line width=0.75pt]
+    (2.40,-1.55) -- (2.40,1.55) -- (1.00,1.55)
+    arc[start angle=110,end angle=250,radius=1.70]
+    -- (2.40,-1.55) -- cycle;
+  \node at (1.90,0.10) {$S$};
+  % soft iron core K
+  \draw[line width=0.75pt,fill=white] (0,0) circle[radius=0.95];
+  \fill (0,0) circle[radius=0.035];
+  \node[anchor=north,inner sep=1pt] at (0,-0.12) {$K$};
+  % radial field arrows
+  \foreach \ang in {115,130,145,160,175,185,200,215,230,245} {
+    \draw[line width=0.45pt,->] ({1.52*cos(\ang)},{1.52*sin(\ang)}) -- ({1.05*cos(\ang)},{1.05*sin(\ang)});
+  }
+  \foreach \ang in {-65,-50,-35,-20,-5,5,20,35,50,65} {
+    \draw[line width=0.45pt,->] ({1.05*cos(\ang)},{1.05*sin(\ang)}) -- ({1.52*cos(\ang)},{1.52*sin(\ang)});
+  }
+  % coil frame C
+  \begin{scope}[rotate=18]
+    \draw[line width=0.7pt,fill=white] (-1.38,-0.11) rectangle (1.38,0.11);
+  \end{scope}
+  \node[anchor=south west,inner sep=1pt] at (0.50,0.48) {$C$};
+\end{tikzpicture}%
+}
 \caption{图3.38 均匀辐向磁场}
 \end{figure}
 
@@ -16448,11 +16474,65 @@ M=NBIS\cos\theta
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.39 反敏电流表构造示意图}]{assets/physics-3/fig-p0232-02.png}}
-\caption{图3.39 反敏电流表构造示意图}
+\fitfig{%
+% fig-alt: 图3.39 灵敏电流表构造。蹄形磁极N（右半截去），软铁柱E，矩形线圈C绕a–a轴；上下游丝Q，指针n指刻度盘B中央0
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.92]
+  % horseshoe magnet body (simplified cutaway perspective)
+  \draw[line width=0.75pt] (-1.85,2.55) -- (-2.05,0.35) -- (-1.55,-0.15) -- (-0.95,0.55)
+    -- (-0.95,1.85) arc[start angle=180,end angle=0,radius=0.95] -- (0.95,0.55)
+    -- (1.35,-0.05) -- (1.85,0.45) -- (1.65,2.55) -- (1.15,2.75) -- (-1.35,2.75) -- cycle;
+  % left pole face (concave)
+  \draw[line width=0.7pt] (-0.95,1.85) arc[start angle=160,end angle=200,radius=1.05];
+  \node[anchor=east,inner sep=2pt] at (-1.55,1.15) {$N$};
+  % soft iron cylinder E (ellipse perspective)
+  \draw[line width=0.7pt,fill=white] (0,1.20) ellipse[x radius=0.72,y radius=0.38];
+  \draw[line width=0.55pt] (-0.72,1.20) -- (-0.72,0.55);
+  \draw[line width=0.55pt] (0.72,1.20) -- (0.72,0.55);
+  \draw[line width=0.7pt,fill=white] (0,0.55) ellipse[x radius=0.72,y radius=0.38];
+  \node[anchor=west,inner sep=2pt] at (0.78,0.95) {$E$};
+  % coil C (rectangular frame around cylinder)
+  \draw[line width=0.65pt] (-0.95,1.45) -- (0.95,1.45) -- (0.95,0.30) -- (-0.95,0.30) -- cycle;
+  \draw[line width=0.45pt] (-0.85,1.35) -- (0.85,1.35);
+  \draw[line width=0.45pt] (-0.85,0.40) -- (0.85,0.40);
+  \node[anchor=east,inner sep=2pt] at (-1.00,0.85) {$C$};
+  % axis a-a
+  \draw[line width=0.55pt] (0,2.35) -- (0,-0.35);
+  \node[anchor=west,inner sep=1pt] at (0.08,2.25) {$a$};
+  \node[anchor=west,inner sep=1pt] at (0.08,-0.25) {$a$};
+  % upper hairspring Q
+  \draw[line width=0.45pt] (0,1.95) arc[start angle=0,end angle=320,radius=0.22];
+  \draw[line width=0.45pt] (0.08,1.95) arc[start angle=20,end angle=340,radius=0.14];
+  \node[anchor=west,inner sep=2pt] at (0.28,2.05) {$Q$};
+  % lower hairspring Q
+  \draw[line width=0.45pt] (0,0.05) arc[start angle=0,end angle=320,radius=0.20];
+  \draw[line width=0.45pt] (0.06,0.05) arc[start angle=30,end angle=350,radius=0.12];
+  \node[anchor=west,inner sep=2pt] at (0.28,0.00) {$Q$};
+  % pointer n
+  \draw[line width=0.7pt] (0,1.55) -- (0,2.85);
+  \draw[line width=0.55pt,fill=black] (-0.06,2.85) -- (0,3.05) -- (0.06,2.85) -- cycle;
+  \node[anchor=east,inner sep=2pt] at (-0.12,2.70) {$n$};
+  % scale B
+  \draw[line width=0.6pt] (-1.15,3.15) arc[start angle=155,end angle=25,radius=1.35];
+  \foreach \a in {140,120,100,80,60,40} {
+    \draw[line width=0.4pt] ({1.28*cos(\a)},{3.15-1.35+1.28*sin(\a)+0.55}) -- ({1.38*cos(\a)},{3.15-1.35+1.38*sin(\a)+0.55});
+  }
+  \node[anchor=south,inner sep=1pt] at (0,3.22) {$0$};
+  \node[anchor=west,inner sep=2pt] at (1.20,3.05) {$B$};
+  % terminals and leads
+  \draw[line width=0.55pt] (-0.55,-0.05) -- (-0.85,-0.85);
+  \draw[line width=0.55pt] (0.55,-0.05) -- (0.85,-0.85);
+  \draw[line width=0.7pt] (-0.85,-0.85) circle[radius=0.12];
+  \draw[line width=0.7pt] (0.85,-0.85) circle[radius=0.12];
+  \fill (-0.85,-0.85) circle[radius=0.04];
+  \fill (0.85,-0.85) circle[radius=0.04];
+  \draw[line width=0.45pt,->] (-1.35,-0.85) -- (-1.02,-0.85);
+  \node[anchor=east,inner sep=2pt] at (-1.38,-0.85) {$a$};
+\end{tikzpicture}%
+}
+\caption{图3.39 灵敏电流表构造示意图}
 \end{figure}
 
-\emph{图3.39 反敏电流表构造示意图}
+\emph{图3.39 灵敏电流表构造示意图}
 
 场的方向是平行的。
 
@@ -16514,19 +16594,73 @@ I=K\theta
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.40 安培表构造的示意图}]{assets/physics-3/fig-p0234-01.png}}
-\caption{图 3.40 安培表构造的示意图}
+\fitfig{%
+% fig-alt: 图3.40 安培表构造。虚线框内G与分流电阻r并联；左+右−；上支Ig、下支Is
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt on 0.6pt off 1.4pt]
+    (0.35,-0.85) rectangle (5.05,1.55);
+  % left terminal +
+  \draw[line width=0.7pt] (-0.15,0.35) -- (1.10,0.35);
+  \draw[line width=0.7pt] (-0.15,0.35) circle[radius=0.08];
+  \node[anchor=south,inner sep=2pt] at (-0.15,0.45) {$+$};
+  % right terminal -
+  \draw[line width=0.7pt] (4.30,0.35) -- (5.55,0.35);
+  \draw[line width=0.7pt] (5.55,0.35) circle[radius=0.08];
+  \node[anchor=south,inner sep=2pt] at (5.55,0.45) {$-$};
+  % junctions
+  \fill (1.10,0.35) circle[radius=0.045];
+  \fill (4.30,0.35) circle[radius=0.045];
+  % upper branch with G
+  \draw[line width=0.7pt] (1.10,0.35) -- (1.10,1.05) -- (2.35,1.05);
+  \draw[line width=0.7pt] (2.70,1.05) circle[radius=0.28];
+  \node at (2.70,1.05) {$G$};
+  \draw[line width=0.7pt] (3.05,1.05) -- (4.30,1.05) -- (4.30,0.35);
+  \node[anchor=east,inner sep=2pt] at (1.00,0.75) {$I_g$};
+  % lower branch with r
+  \draw[line width=0.7pt] (1.10,0.35) -- (2.15,0.35);
+  \draw[line width=0.7pt] (2.15,0.18) rectangle (3.25,0.52);
+  \node[anchor=south,inner sep=2pt] at (2.70,0.55) {$r$};
+  \draw[line width=0.7pt] (3.25,0.35) -- (4.30,0.35);
+  \node[anchor=north,inner sep=2pt] at (1.70,0.28) {$I_s$};
+\end{tikzpicture}%
+}
+\caption{图3.40 安培表构造的示意图}
 \end{figure}
 
-\emph{图 3.40 安培表构造的示意图}
+\emph{图3.40 安培表构造的示意图}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.41 安培表中的分路}]{assets/physics-3/fig-p0234-02.png}}
-\caption{图 3.41 安培表中的分路}
+\fitfig{%
+% fig-alt: 图3.41 安培表中的分路。表壳底部两接线柱间粗分流电阻，两侧壁剖面斜线，细线接表头
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % casing
+  \draw[line width=0.75pt,rounded corners=3pt] (0,0) rectangle (4.2,2.0);
+  % side hatching
+  \foreach \x in {0.12,0.28,0.44} {
+    \draw[line width=0.35pt] (\x,0.15) -- ({\x+0.35},1.85);
+  }
+  \foreach \x in {3.76,3.92,4.08} {
+    \draw[line width=0.35pt] ({\x-0.35},0.15) -- (\x,1.85);
+  }
+  % terminals
+  \draw[line width=0.7pt] (0.85,0.55) circle[radius=0.22];
+  \draw[line width=0.55pt] (0.85,0.55) circle[radius=0.10];
+  \draw[line width=0.7pt] (3.35,0.55) circle[radius=0.22];
+  \draw[line width=0.55pt] (3.35,0.55) circle[radius=0.10];
+  % thick shunt bar (zigzag-ish thick path)
+  \draw[line width=1.35pt] (1.10,0.78) -- (1.45,0.95) -- (1.85,0.78) -- (2.25,0.95)
+    -- (2.65,0.78) -- (3.05,0.95) -- (3.10,0.78);
+  % thin leads upward to movement
+  \draw[line width=0.55pt] (0.85,0.77) -- (0.85,1.35) -- (1.35,1.35) -- (1.35,1.70);
+  \draw[line width=0.55pt] (3.35,0.77) -- (3.35,1.35) -- (2.85,1.35) -- (2.85,1.70);
+  \draw[line width=0.5pt] (1.35,1.70) -- (2.85,1.70);
+\end{tikzpicture}%
+}
+\caption{图3.41 安培表中的分路}
 \end{figure}
 
-\emph{图 3.41 安培表中的分路}
+\emph{图3.41 安培表中的分路}
 
 流电阻？
 
@@ -16562,19 +16696,73 @@ U=IR， 可以知道指针
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.42 为长表中测量值的电流值的电压，是图}]{assets/physics-3/fig-p0236-01.png}}
-\caption{图3.42 为长表中测量值的电流值的电压，是图}
+\fitfig{%
+% fig-alt: 图3.42 万用表中测量直流电流部分。表头G在顶边，左竖接分流r1、r2、r3触点，右刀开关K选一；底左−底右+
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % outer rectangle frame
+  \draw[line width=0.7pt] (0,0) -- (0,3.2) -- (3.4,3.2) -- (3.4,0);
+  % bottom terminals
+  \draw[line width=0.7pt] (0,0) circle[radius=0.08];
+  \draw[line width=0.7pt] (3.4,0) circle[radius=0.08];
+  \node[anchor=east,inner sep=3pt] at (-0.05,0) {$-$};
+  \node[anchor=west,inner sep=3pt] at (3.45,0) {$+$};
+  % G on top
+  \draw[line width=0.7pt] (0,3.2) -- (1.35,3.2);
+  \draw[line width=0.7pt] (1.70,3.2) circle[radius=0.28];
+  \node at (1.70,3.2) {$G$};
+  \node[anchor=south,inner sep=2pt] at (1.70,3.50) {$R$};
+  \draw[line width=0.7pt] (2.05,3.2) -- (3.4,3.2);
+  % three shunt resistors from left rail
+  \foreach \y/\lab in {2.35/$r_1$,1.55/$r_2$,0.75/$r_3$} {
+    \draw[line width=0.7pt] (0,\y) -- (0.55,\y);
+    \draw[line width=0.7pt] (0.55,{\y-0.14}) rectangle (1.55,{\y+0.14});
+    \node[anchor=south,inner sep=1pt] at (1.05,{\y+0.16}) {\lab};
+    \draw[line width=0.7pt] (1.55,\y) -- (2.15,\y);
+    \draw[line width=0.7pt] (2.15,\y) circle[radius=0.07];
+  }
+  % switch K pivot on right rail
+  \fill (3.4,1.55) circle[radius=0.05];
+  \draw[line width=0.7pt,->] (3.4,1.55) -- (2.28,2.35);
+  \node[anchor=west,inner sep=3pt] at (3.50,1.70) {$K$};
+\end{tikzpicture}%
+}
+\caption{图3.42 万用表中测量直流电流部分的电路示意图}
 \end{figure}
 
-\emph{图3.42 为长表中测量值的电流值的电压，是图}
+\emph{图3.42 万用表中测量直流电流部分的电路示意图}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.43 伏特表两毫的示意图}]{assets/physics-3/fig-p0236-02.png}}
-\caption{图3.43 伏特表两毫的示意图}
+\fitfig{%
+% fig-alt: 图3.43 伏特表构造。虚线框内分压电阻R与表头G串联；左+右−，电流I向右
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt on 0.6pt off 1.4pt]
+    (0.40,-0.70) rectangle (5.20,0.95);
+  % left +
+  \draw[line width=0.7pt] (-0.10,0.15) -- (1.00,0.15);
+  \draw[line width=0.7pt] (-0.10,0.15) circle[radius=0.08];
+  \node[anchor=south,inner sep=2pt] at (-0.10,0.25) {$+$};
+  \fill (1.00,0.15) circle[radius=0.04];
+  \node[anchor=south,inner sep=2pt] at (1.35,0.28) {$I$};
+  % resistor R
+  \draw[line width=0.7pt] (1.00,0.15) -- (1.55,0.15);
+  \draw[line width=0.7pt] (1.55,-0.05) rectangle (2.85,0.35);
+  \node[anchor=south,inner sep=2pt] at (2.20,0.38) {$R$};
+  \draw[line width=0.7pt] (2.85,0.15) -- (3.35,0.15);
+  % G
+  \draw[line width=0.7pt] (3.70,0.15) circle[radius=0.28];
+  \node at (3.70,0.15) {$G$};
+  \draw[line width=0.7pt] (4.05,0.15) -- (5.70,0.15);
+  \fill (5.05,0.15) circle[radius=0.04];
+  % right -
+  \draw[line width=0.7pt] (5.70,0.15) circle[radius=0.08];
+  \node[anchor=south,inner sep=2pt] at (5.70,0.25) {$-$};
+\end{tikzpicture}%
+}
+\caption{图3.43 伏特表构造的示意图}
 \end{figure}
 
-\emph{图3.43 伏特表两毫的示意图}
+\emph{图3.43 伏特表构造的示意图}
 
 偏转的角度必然要随着仪表两端电压的变化而改变，因此，只要在仪表的刻度盘上标出电压的数值，就可以用它来测量电压了。可是实际上不能直接用电流表来测量电压，这是因为电流表的电阻很小，如果把它并联到某段电路上，就会有较大的电流通过它，因而容易使它的线圈烧坏，同时还会改变这段电路中的电流，因而也改变这段电路上的电压。因此，通常在电流表上串联一个阻值很大的附加电阻
 \(R\)，这样就成了一个伏特表，如图3.43所示下面我们可用一个实例来说明，有一个与上面实例中相同的电流表，要把它改装成量程为0\textasciitilde25伏特的伏特表，需要串联阻值多大的分压电阻？
@@ -16612,7 +16800,35 @@ R = 99 \text{欧姆}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.44 万用表中测量直流电压部分的电路示意图}]{assets/physics-3/fig-p0237-01.png}}
+\fitfig{%
+% fig-alt: 图3.44 万用表中测量直流电压部分。−经表头G（Rg）至母线，分压r1、r2、r3下垂触点，刀开关K接+
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % left - terminal
+  \draw[line width=0.7pt] (0,0) circle[radius=0.08];
+  \node[anchor=east,inner sep=3pt] at (-0.05,0) {$-$};
+  \draw[line width=0.7pt] (0,0) -- (0,2.6) -- (0.85,2.6);
+  % G
+  \draw[line width=0.7pt] (1.20,2.6) circle[radius=0.28];
+  \node at (1.20,2.6) {$G$};
+  \node[anchor=south,inner sep=2pt] at (1.20,2.92) {$R_g$};
+  \draw[line width=0.7pt] (1.55,2.6) -- (4.40,2.6);
+  % three series multipliers hanging down
+  \foreach \x/\lab in {2.20/$r_1$,3.10/$r_2$,4.00/$r_3$} {
+    \draw[line width=0.7pt] (\x,2.6) -- (\x,2.15);
+    \draw[line width=0.7pt] ({\x-0.16},1.35) rectangle ({\x+0.16},2.15);
+    \node[anchor=east,inner sep=2pt] at ({\x-0.18},1.75) {\lab};
+    \draw[line width=0.7pt] (\x,1.35) -- (\x,0.85);
+    \draw[line width=0.7pt] (\x,0.85) circle[radius=0.07];
+  }
+  % + terminal and switch K
+  \draw[line width=0.7pt] (2.60,0) circle[radius=0.08];
+  \node[anchor=north,inner sep=3pt] at (2.60,-0.05) {$+$};
+  \draw[line width=0.7pt] (2.60,0) -- (2.60,0.55);
+  \fill (2.60,0.55) circle[radius=0.05];
+  \draw[line width=0.7pt,->] (2.60,0.55) -- (3.05,0.82);
+  \node[anchor=west,inner sep=2pt] at (2.75,0.45) {$K$};
+\end{tikzpicture}%
+}
 \caption{图3.44 万用表中测量直流电压部分的电路示意图}
 \end{figure}
 
