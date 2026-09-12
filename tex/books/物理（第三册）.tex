@@ -8496,7 +8496,7 @@ P_{B^{\prime}} = U_{B^{\prime}} I = 10 S \times 2 \text{瓦} = 216 \text{瓦}
   \draw[line width=0.5pt] (5.20,0.73) -- (5.48,0.37);
   \node[anchor=north,inner sep=1pt] at (5.34,0.28) {$R_3$};
   \draw[line width=0.7pt] (5.56,0.55) -- (5.55,0.55);
-\end{tikzpicture}%\end{tikzpicture}%
+\end{tikzpicture}%
 }
 \caption{图2.24}
 \end{figure}
@@ -8612,7 +8612,7 @@ P_{3} = I_{3} U = 0.6 \times 36 \text{瓦} = 21.6 \text{瓦}
   \draw[line width=0.7pt] (4.70,2.22) -- (4.70,0.65);
   \draw[line width=0.7pt] (4.70,2.22) -- (4.32,2.78);
   \node[anchor=west,inner sep=1pt] at (4.84,2.48) {$K$};
-\end{tikzpicture}%\end{tikzpicture}%
+\end{tikzpicture}%
 }
 \caption{图2.25}
 \end{figure}
@@ -29199,13 +29199,38 @@ PN 结加正向电压时是导通的，加反向电压时是截止的。PN
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0385-02.png}}
-\caption{(b)}
+\fitfig{%
+% fig-alt: 图6.15（b）·二极管加反向电压不导通：3V电源、反向二极管与不发光小电珠串联
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1cm,y=1cm]
+  \def\W{3.2}\def\H{3.0}
+  \draw[line width=0.75pt] (0,0) -- (0,\H) -- (\W,\H) -- (\W,0) -- cycle;
+  % battery on bottom: two cells, + left (long), - right (short)
+  \fill[white] ({\W/2-0.55},-0.02) rectangle ({\W/2+0.55},0.02);
+  \draw[line width=0.75pt] ({\W/2-0.42},-0.22) -- ({\W/2-0.42},0.22);
+  \draw[line width=1.05pt] ({\W/2-0.22},-0.12) -- ({\W/2-0.22},0.12);
+  \draw[line width=0.75pt] ({\W/2+0.02},-0.22) -- ({\W/2+0.02},0.22);
+  \draw[line width=1.05pt] ({\W/2+0.22},-0.12) -- ({\W/2+0.22},0.12);
+  \node[font=\small,anchor=south] at ({\W/2},0.28) {3 V};
+  % diode on left (capsule, triangle down = cathode bottom = reverse)
+  \fill[white] (-0.02,{\H/2-0.55}) rectangle (0.02,{\H/2+0.55});
+  \draw[line width=0.7pt,rounded corners=3pt] (-0.28,{\H/2-0.50}) rectangle (0.28,{\H/2+0.50});
+  \fill (-0.18,{\H/2+0.28}) -- (0,{\H/2-0.12}) -- (0.18,{\H/2+0.28}) -- cycle;
+  \draw[line width=0.8pt] (-0.20,{\H/2-0.12}) -- (0.20,{\H/2-0.12});
+  \draw[line width=0.55pt] (0,{\H/2+0.50}) -- (0,{\H/2+0.28});
+  \draw[line width=0.55pt] (0,{\H/2-0.12}) -- (0,{\H/2-0.50});
+  % unlit bulb on top
+  \fill[white] ({\W/2-0.45},\H) rectangle ({\W/2+0.45},\H);
+  \draw[line width=0.65pt] ({\W/2-0.28},{\H-0.12}) rectangle ({\W/2+0.28},{\H+0.08});
+  \draw[line width=0.7pt] ({\W/2},{\H+0.38}) circle[radius=0.30];
+  \draw[line width=0.45pt] ({\W/2-0.12},{\H+0.22}) .. controls ({\W/2},{\H+0.48}) .. ({\W/2+0.12},{\H+0.22});
+\end{tikzpicture}%
+}
+\caption{图6.15（b）·二极管加反向电压不导通}
 \end{figure}
 
-\emph{（b）}
+\emph{图6.15（b）·二极管加反向电压不导通}
 
-\emph{（a） 二极管加正向电压导通；（b） 二极管加反向电压不导通}
+\emph{（a）二极管加正向电压导通；（b）二极管加反向电压不导通}
 
 \emph{图6.15}
 
@@ -29232,11 +29257,38 @@ PN 结加正向电压时是导通的，加反向电压时是截止的。PN
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.16 结电容的影响和当于二极管并联了一只小电容}]{assets/physics-3/fig-p0386-01.png}}
-\caption{图6.16 结电容的影响和当于二极管并联了一只小电容}
+\fitfig{%
+% fig-alt: 图6.16·结电容的影响相当于二极管并联了一只小电容：虚线框内二极管与结电容并联
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1cm,y=1cm]
+  % outer terminals
+  \draw[line width=0.7pt,fill=white] (-2.55,0) circle[radius=0.08];
+  \draw[line width=0.7pt,fill=white] (2.55,0) circle[radius=0.08];
+  \draw[line width=0.7pt] (-2.47,0) -- (-1.85,0);
+  \draw[line width=0.7pt] (1.85,0) -- (2.47,0);
+  % dashed enclosure
+  \draw[line width=0.55pt,dashed] (-1.85,-0.95) rectangle (1.85,0.95);
+  % left/right junctions inside
+  \fill (-1.35,0) circle[radius=0.045];
+  \fill (1.35,0) circle[radius=0.045];
+  \draw[line width=0.7pt] (-1.85,0) -- (-1.35,0);
+  \draw[line width=0.7pt] (1.35,0) -- (1.85,0);
+  % top diode branch
+  \draw[line width=0.7pt] (-1.35,0) -- (-1.35,0.48) -- (-0.55,0.48);
+  \fill (-0.55,0.68) -- (0.35,0.48) -- (-0.55,0.28) -- cycle;
+  \draw[line width=0.85pt] (0.35,0.72) -- (0.35,0.24);
+  \draw[line width=0.7pt] (0.35,0.48) -- (1.35,0.48) -- (1.35,0);
+  % bottom capacitor branch
+  \draw[line width=0.7pt] (-1.35,0) -- (-1.35,-0.48) -- (-0.25,-0.48);
+  \draw[line width=0.85pt] (-0.12,-0.72) -- (-0.12,-0.24);
+  \draw[line width=0.85pt] (0.12,-0.72) -- (0.12,-0.24);
+  \draw[line width=0.7pt] (0.25,-0.48) -- (1.35,-0.48) -- (1.35,0);
+  \node[font=\small,anchor=north] at (0,-0.78) {$C_{\text{结}}$};
+\end{tikzpicture}%
+}
+\caption{图6.16·结电容的影响相当于二极管并联了一只小电容}
 \end{figure}
 
-\emph{图6.16 结电容的影响和当于二极管并联了一只小电容}
+\emph{图6.16·结电容的影响相当于二极管并联了一只小电容}
 
 电容来代替它，如图6.16所示。我们已经学习过电容器有通交流，隔直流，通高频，阻低频的作用，频率越高的交流电，越容易通过电容器。因此，二极管并联小电容以后，对于高频率交流电来说，小电容起了旁路作用，使二极管对反向电流的阻碍作用减小，影响了二极管的性能。
 
@@ -29267,29 +29319,114 @@ N 区引线，红表棒接 P 区引线，如图 6.17（b）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 测正向电阻}]{assets/physics-3/fig-p0387-01.png}}
-\caption{(a) 测正向电阻}
+\fitfig{%
+% fig-alt: 图6.17（a）·测正向电阻：黑表棒接二极管正极、红表棒接负极，指针偏右示阻值较小
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1cm,y=1cm]
+  % diode on top
+  \draw[line width=0.7pt] (-1.70,2.70) -- (-0.75,2.70);
+  \draw[line width=0.7pt] (0.75,2.70) -- (1.70,2.70);
+  \draw[line width=0.65pt,rounded corners=4pt] (-0.75,2.42) rectangle (0.75,2.98);
+  \fill (-0.38,2.88) -- (0.32,2.70) -- (-0.38,2.52) -- cycle;
+  \draw[line width=0.8pt] (0.32,2.94) -- (0.32,2.46);
+  \node[font=\small] at (-1.15,3.05) {$+$};
+  \node[font=\small] at (1.15,3.05) {$-$};
+  % probe tips touch wires; handles below
+  \draw[line width=0.55pt] (-1.50,2.70) -- (-1.50,2.35);
+  \fill[rounded corners=1.5pt] (-1.68,1.45) rectangle (-1.32,2.35);
+  \draw[line width=0.55pt] (1.50,2.70) -- (1.50,2.35);
+  \draw[line width=0.65pt,rounded corners=1.5pt] (1.32,1.45) rectangle (1.68,2.35);
+  % meter body
+  \draw[line width=0.75pt] (-1.15,-0.15) rectangle (1.15,1.40);
+  \draw[line width=0.55pt] (-0.85,0.58) rectangle (0.85,1.28);
+  \draw[line width=0.45pt] (-0.55,0.72) arc[start angle=155,end angle=25,radius=0.72];
+  \node[font=\small] at (0,0.82) {$\Omega$};
+  \draw[line width=0.7pt] (0,0.66) -- (0.62,1.16);
+  \draw[line width=0.55pt] (0,0.22) circle[radius=0.16];
+  \draw[line width=0.45pt] (-0.10,0.14) -- (0.10,0.30);
+  \draw[line width=0.5pt,fill=white] (-0.75,-0.15) circle[radius=0.07];
+  \draw[line width=0.5pt,fill=white] (0.75,-0.15) circle[radius=0.07];
+  \draw[line width=0.6pt] (-0.75,-0.15)
+    .. controls (-1.30,-0.50) and (-1.55,0.40) .. (-1.50,1.45);
+  \draw[line width=0.6pt] (0.75,-0.15)
+    .. controls (1.30,-0.50) and (1.55,0.40) .. (1.50,1.45);
+\end{tikzpicture}%
+}
+\caption{图6.17（a）·测正向电阻}
 \end{figure}
 
-\emph{（a） 测正向电阻}
+\emph{图6.17（a）·测正向电阻}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c) 万用表欧姆档的内部电路}]{assets/physics-3/fig-p0387-02.png}}
-\caption{(c) 万用表欧姆档的内部电路}
+\fitfig{%
+% fig-alt: 图6.17（c）·万用表欧姆档内部电路：表头、调零可变电阻与电池串联，左黑右白表棒
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1cm,y=1cm]
+  \draw[line width=0.75pt] (-1.05,0.35) rectangle (1.05,3.55);
+  % meter head
+  \draw[line width=0.7pt] (0,2.85) circle[radius=0.48];
+  \draw[line width=0.65pt,->] (0,2.85) -- (-0.22,3.22);
+  % left branch to black probe
+  \draw[line width=0.7pt] (-0.48,2.85) -- (-0.70,2.85) -- (-0.70,0.35);
+  \fill (-0.70,0.35) circle[radius=0.05];
+  % right branch: variable R then battery
+  \draw[line width=0.7pt] (0.48,2.85) -- (0.70,2.85) -- (0.70,2.35);
+  \draw[line width=0.65pt] (0.52,1.75) rectangle (0.88,2.35);
+  \draw[line width=0.65pt,->] (0.48,1.85) -- (0.92,2.25);
+  \draw[line width=0.7pt] (0.70,1.75) -- (0.70,1.45);
+  % battery: long + on top
+  \draw[line width=0.75pt] (0.42,1.35) -- (0.98,1.35);
+  \draw[line width=1.15pt] (0.52,1.12) -- (0.88,1.12);
+  \draw[line width=0.7pt] (0.70,1.12) -- (0.70,0.35);
+  \fill (0.70,0.35) circle[radius=0.05];
+  % probes
+  \draw[line width=0.65pt] (-0.70,0.35) -- (-0.70,0.05);
+  \fill[rounded corners=1pt] (-0.88,-0.85) rectangle (-0.52,0.05);
+  \draw[line width=0.55pt] (-0.70,-0.85) -- (-0.70,-1.10);
+  \draw[line width=0.65pt] (0.70,0.35) -- (0.70,0.05);
+  \draw[line width=0.65pt,rounded corners=1pt] (0.52,-0.85) rectangle (0.88,0.05);
+  \draw[line width=0.55pt] (0.70,-0.85) -- (0.70,-1.10);
+\end{tikzpicture}%
+}
+\caption{图6.17（c）·万用表欧姆档的内部电路}
 \end{figure}
 
-\emph{（c） 万用表欧姆档的内部电路}
+\emph{图6.17（c）·万用表欧姆档的内部电路}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 测反向电阻}]{assets/physics-3/fig-p0387-03.png}}
-\caption{(b) 测反向电阻}
+\fitfig{%
+% fig-alt: 图6.17（b）·测反向电阻：黑表棒接二极管负极、红表棒接正极，指针偏左示阻值很大
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1cm,y=1cm]
+  \draw[line width=0.7pt] (-1.70,2.70) -- (-0.75,2.70);
+  \draw[line width=0.7pt] (0.75,2.70) -- (1.70,2.70);
+  \draw[line width=0.65pt,rounded corners=4pt] (-0.75,2.42) rectangle (0.75,2.98);
+  \fill (0.38,2.88) -- (-0.32,2.70) -- (0.38,2.52) -- cycle;
+  \draw[line width=0.8pt] (-0.32,2.94) -- (-0.32,2.46);
+  \draw[line width=0.55pt] (-1.50,2.70) -- (-1.50,2.35);
+  \fill[rounded corners=1.5pt] (-1.68,1.45) rectangle (-1.32,2.35);
+  \draw[line width=0.55pt] (1.50,2.70) -- (1.50,2.35);
+  \draw[line width=0.65pt,rounded corners=1.5pt] (1.32,1.45) rectangle (1.68,2.35);
+  \draw[line width=0.75pt] (-1.15,-0.15) rectangle (1.15,1.40);
+  \draw[line width=0.55pt] (-0.85,0.58) rectangle (0.85,1.28);
+  \draw[line width=0.45pt] (-0.55,0.72) arc[start angle=155,end angle=25,radius=0.72];
+  \node[font=\small] at (0,0.82) {$\Omega$};
+  \draw[line width=0.7pt] (0,0.66) -- (-0.62,1.16);
+  \draw[line width=0.55pt] (0,0.22) circle[radius=0.16];
+  \draw[line width=0.45pt] (-0.10,0.14) -- (0.10,0.30);
+  \draw[line width=0.5pt,fill=white] (-0.75,-0.15) circle[radius=0.07];
+  \draw[line width=0.5pt,fill=white] (0.75,-0.15) circle[radius=0.07];
+  \draw[line width=0.6pt] (-0.75,-0.15)
+    .. controls (-1.30,-0.50) and (-1.55,0.40) .. (-1.50,1.45);
+  \draw[line width=0.6pt] (0.75,-0.15)
+    .. controls (1.30,-0.50) and (1.55,0.40) .. (1.50,1.45);
+\end{tikzpicture}%
+}
+\caption{图6.17（b）·测反向电阻}
 \end{figure}
 
-\emph{（b） 测反向电阻}
+\emph{图6.17（b）·测反向电阻}
 
-\emph{图 6.17 二极管测试方法}
+\emph{图6.17·二极管测试方法}
 
 的电阻值应该很大，一般应在几百千欧以上。如果加反向电压时，测得的电阻值较小，则表示二极管的单向导电性不好。如果二极管在加正向电压和加反向电压时，测得的电阻值都是零，则表示管子已经击穿，已失去二极管的作用成为导体。如果加正向电压和反向电压时，测得的电阻值都是无限大，则表示管子已经断路。
 
@@ -29306,29 +29443,127 @@ N 区引线，红表棒接 P 区引线，如图 6.17（b）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.18}]{assets/physics-3/fig-p0388-01.png}}
-\caption{图6.18}
+\fitfig{%
+% fig-alt: 图6.18·半波整流电路：变压器B次级a、b接二极管D与负载R，标次级电压u2与负载电压uR
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=0.95cm,y=0.95cm]
+  % AC source
+  \draw[line width=0.7pt,fill=white] (-3.55,0.55) circle[radius=0.09];
+  \draw[line width=0.7pt,fill=white] (-3.55,-0.55) circle[radius=0.09];
+  \draw[line width=0.55pt] (-3.55,0.20) -- (-3.55,-0.20);
+  \node[font=\small] at (-3.55,0) {$\sim$};
+  \draw[line width=0.7pt] (-3.46,0.55) -- (-2.55,0.55);
+  \draw[line width=0.7pt] (-3.46,-0.55) -- (-2.55,-0.55);
+  % primary coil
+  \foreach \y in {0.55,0.30,0.05,-0.20,-0.45} {
+    \draw[line width=0.65pt] (-2.55,\y) arc[start angle=90,end angle=270,x radius=0.22,y radius=0.13];
+  }
+  \draw[line width=0.7pt] (-2.55,0.55) -- (-2.55,0.68);
+  \draw[line width=0.7pt] (-2.55,-0.58) -- (-2.55,-0.68);
+  % core
+  \draw[line width=0.7pt] (-2.15,-0.85) -- (-2.15,0.85);
+  \draw[line width=0.7pt] (-1.95,-0.85) -- (-1.95,0.85);
+  \node[font=\small,anchor=south] at (-2.05,0.90) {$B$};
+  % secondary coil
+  \foreach \y in {0.55,0.30,0.05,-0.20,-0.45} {
+    \draw[line width=0.65pt] (-1.55,\y) arc[start angle=90,end angle=-90,x radius=0.22,y radius=0.13];
+  }
+  \draw[line width=0.7pt] (-1.55,0.55) -- (-1.55,0.85) -- (-0.85,0.85);
+  \draw[line width=0.7pt] (-1.55,-0.58) -- (-1.55,-0.85) -- (2.55,-0.85);
+  \node[font=\small,anchor=south east] at (-0.90,0.88) {$a$};
+  \node[font=\small,anchor=north east] at (-0.90,-0.88) {$b$};
+  % u2 marker
+  \draw[line width=0.5pt,dashed,<->] (-0.55,0.75) -- (-0.55,-0.75);
+  \node[font=\small,anchor=west] at (-0.45,0) {$u_2$};
+  % diode D
+  \draw[line width=0.7pt] (-0.85,0.85) -- (0.15,0.85);
+  \fill (0.15,1.05) -- (0.95,0.85) -- (0.15,0.65) -- cycle;
+  \draw[line width=0.85pt] (0.95,1.08) -- (0.95,0.62);
+  \node[font=\small,anchor=south] at (0.55,1.10) {$D$};
+  \draw[line width=0.7pt] (0.95,0.85) -- (2.55,0.85);
+  % uR and R
+  \draw[line width=0.5pt,dashed,<->] (1.55,0.75) -- (1.55,-0.75);
+  \node[font=\small,anchor=east] at (1.45,0) {$u_R$};
+  \draw[line width=0.7pt] (2.40,-0.85) rectangle (2.70,0.85);
+  \node[font=\small,anchor=west] at (2.80,0) {$R$};
+  \node[font=\small,anchor=west] at (2.80,0.70) {$+$};
+  \node[font=\small,anchor=west] at (2.80,-0.70) {$-$};
+\end{tikzpicture}%
+}
+\caption{图6.18·半波整流电路}
 \end{figure}
 
-\emph{图6.18}
+\emph{图6.18·半波整流电路}
 
-压。设变压器次级交变电压 \(u_{3}\) 的波形如图6.19（a）所示。
+压。设变压器次级交变电压 \(u_{2}\) 的波形如图6.19（a）所示。
 
-在次级电压 \(u_{3}\) 的正学周期间，a 点电势高于 b 点，二极管 D
+在次级电压 \(u_{2}\) 的正半周期间，a 点电势高于 b 点，二极管 D
 被加上正向电压而导通，电流的方向是从变压器次级绕组端点 a 通过二极管
 D、负载电阻 R 到次级绕组端点 b
 完成闭合回路。由于二极管导通时，正向电阻都很小，正向
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6.19 半波整流波形图}]{assets/physics-3/fig-p0389-01.png}}
-\caption{图 6.19 半波整流波形图}
+\fitfig{%
+% fig-alt: 图6.19·半波整流波形图：（a）次级电压u2正弦波；（b）负载电压uR仅正半周；（c）电流i同样仅正半周
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=0.85cm,y=0.72cm]
+  % period T corresponds to Δx=3.2; two periods to x=6.4
+  % vertical guides at T/2, T, 3T/2, 2T
+  \foreach \x in {1.6,3.2,4.8,6.4} {
+    \draw[line width=0.4pt,dashed] (\x,4.55) -- (\x,-3.55);
+  }
+  % (a) u2 full sine — sin(2π x / T) with T=3.2
+  \draw[line width=0.7pt,->] (0,-0.05) -- (0,4.55);
+  \draw[line width=0.55pt,densely dotted,->] (-0.05,2.25) -- (7.0,2.25);
+  \node[font=\small,anchor=east] at (-0.15,4.40) {$u_2$};
+  \node[font=\small,anchor=north east] at (-0.08,2.20) {$O$};
+  \node[font=\small,anchor=west] at (7.05,2.25) {$t$};
+  \node[font=\small,anchor=east] at (-0.45,3.40) {a};
+  \draw[line width=0.75pt,domain=0:6.4,samples=160,smooth]
+    plot (\x,{2.25+1.55*sin(deg(\x*pi/1.6))});
+  \node[font=\footnotesize,anchor=north] at (1.6,2.12) {$\frac{T}{2}$};
+  \node[font=\footnotesize,anchor=north] at (3.2,2.12) {$T$};
+  \node[font=\footnotesize,anchor=north] at (4.8,2.12) {$\frac{3T}{2}$};
+  \node[font=\footnotesize,anchor=north] at (6.4,2.12) {$2T$};
+  % (b) uR half-wave (positive only)
+  \begin{scope}[yshift=-3.9cm]
+    \draw[line width=0.7pt,->] (0,-0.05) -- (0,3.35);
+    \draw[line width=0.55pt,densely dotted,->] (-0.05,0.85) -- (7.0,0.85);
+    \node[font=\small,anchor=east] at (-0.15,3.20) {$u_R$};
+    \node[font=\small,anchor=north east] at (-0.08,0.80) {$O$};
+    \node[font=\small,anchor=west] at (7.05,0.85) {$t$};
+    \node[font=\small,anchor=east] at (-0.45,2.10) {b};
+    \draw[line width=0.75pt,domain=0:1.6,samples=50,smooth]
+      plot (\x,{0.85+1.40*sin(deg(\x*pi/1.6))});
+    \draw[line width=0.75pt] (1.6,0.85) -- (3.2,0.85);
+    \draw[line width=0.75pt,domain=3.2:4.8,samples=50,smooth]
+      plot (\x,{0.85+1.40*sin(deg(\x*pi/1.6))});
+    \draw[line width=0.75pt] (4.8,0.85) -- (6.4,0.85);
+  \end{scope}
+  % (c) i half-wave
+  \begin{scope}[yshift=-7.2cm]
+    \draw[line width=0.7pt,->] (0,-0.05) -- (0,3.05);
+    \draw[line width=0.55pt,densely dotted,->] (-0.05,0.85) -- (7.0,0.85);
+    \node[font=\small,anchor=east] at (-0.15,2.90) {$i$};
+    \node[font=\small,anchor=north east] at (-0.08,0.80) {$O$};
+    \node[font=\small,anchor=west] at (7.05,0.85) {$t$};
+    \node[font=\small,anchor=east] at (-0.45,1.95) {c};
+    \draw[line width=0.75pt,domain=0:1.6,samples=50,smooth]
+      plot (\x,{0.85+1.15*sin(deg(\x*pi/1.6))});
+    \draw[line width=0.75pt] (1.6,0.85) -- (3.2,0.85);
+    \draw[line width=0.75pt,domain=3.2:4.8,samples=50,smooth]
+      plot (\x,{0.85+1.15*sin(deg(\x*pi/1.6))});
+    \draw[line width=0.75pt] (4.8,0.85) -- (6.4,0.85);
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图6.19·半波整流波形图}
 \end{figure}
 
-\emph{图 6.19 半波整流波形图}
+\emph{图6.19·半波整流波形图}
 
-（a） 次级电压波形；（b） R ［电压波形；（c） 通过 D 和 R
-的电流波形电压降也很小， 所以可以近似地认为交变电压 \(u_{2}\)
+（a）次级电压波形；（b）\(R\) 上电压波形；（c）通过 \(D\) 和 \(R\) 的电流波形。
+
+电压降也很小， 所以可以近似地认为交变电压 \(u_{2}\)
 全部加在负载 \(R\) 上。 \(R\) 上的电压波形在此期间与次级电压 \(u_{2}\)
 的波形相同， 如图 6.19（b） 中 \(\left(0 \sim \frac{T}{2}\right)\)
 一段波形。 相应的电流波形如图 6.19（c） 中
@@ -29352,16 +29587,79 @@ D、负载电阻 R 到次级绕组端点 b
 \subsection{2. 全波整流}
 
 如果在原有的半波整流电路中，再加上一个二极管和同样的次级绕组如图6.20所示，则可以做到在交流电的一个周期中都有电流输出。这种电路叫做全波整流电路。变压器的次级绕组有中心抽头，次级输出两个大小相等的交变电压
-\(u_{20}\) 和
-\(v_{20}\)。相对中心抽头O点来说，这两个电压位相相反，即当a端的电势为正的时候，b端电势为负，它们的波形分别如图6.21（a）和（b）所示。
+\(u_{2a}\) 和
+\(u_{2b}\)。相对中心抽头 \(O\) 点来说，这两个电压位相相反，即当a端的电势为正的时候，b端电势为负，它们的波形分别如图6.21（a）和（b）所示。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.20 全波整流电路}]{assets/physics-3/fig-p0390-01.png}}
-\caption{图6.20 全波整流电路}
+\fitfig{%
+% fig-alt: 图6.20·全波整流电路：中心抽头变压器B，二极管D1、D2与负载R；实线i1、虚线i2示两半周电流
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=0.88cm,y=0.88cm]
+  % AC
+  \draw[line width=0.7pt,fill=white] (-3.70,0.70) circle[radius=0.08];
+  \draw[line width=0.7pt,fill=white] (-3.70,-0.70) circle[radius=0.08];
+  \node[font=\small] at (-3.70,0) {$\sim$};
+  \draw[line width=0.7pt] (-3.62,0.70) -- (-2.70,0.70);
+  \draw[line width=0.7pt] (-3.62,-0.70) -- (-2.70,-0.70);
+  % primary
+  \foreach \y in {0.70,0.40,0.10,-0.20,-0.50} {
+    \draw[line width=0.6pt] (-2.70,\y) arc[start angle=90,end angle=270,x radius=0.20,y radius=0.14];
+  }
+  % core
+  \draw[line width=0.7pt] (-2.30,-1.25) -- (-2.30,1.25);
+  \draw[line width=0.7pt] (-2.10,-1.25) -- (-2.10,1.25);
+  \node[font=\small,anchor=south] at (-2.20,1.30) {$B$};
+  % secondary with center tap
+  \foreach \y in {1.05,0.75,0.45,0.15,-0.15,-0.45,-0.75,-1.05} {
+    \draw[line width=0.6pt] (-1.70,\y) arc[start angle=90,end angle=-90,x radius=0.20,y radius=0.14];
+  }
+  \draw[line width=0.7pt] (-1.70,1.05) -- (-1.70,1.35) -- (0.10,1.35);
+  \draw[line width=0.7pt] (-1.70,-1.05) -- (-1.70,-1.35) -- (0.10,-1.35);
+  \draw[line width=0.7pt] (-1.70,0) -- (-0.55,0);
+  \fill (-0.55,0) circle[radius=0.045];
+  \node[font=\small,anchor=south east] at (0.05,1.38) {$a$};
+  \node[font=\small,anchor=east] at (-0.65,0) {$O$};
+  \node[font=\small,anchor=north east] at (0.05,-1.38) {$b$};
+  % u2a u2b
+  \draw[line width=0.45pt,dashed,<->] (-0.95,1.25) -- (-0.95,0.10);
+  \node[font=\footnotesize,anchor=east] at (-1.05,0.70) {$u_{2a}$};
+  \draw[line width=0.45pt,dashed,<->] (-0.95,-0.10) -- (-0.95,-1.25);
+  \node[font=\footnotesize,anchor=east] at (-1.05,-0.70) {$u_{2b}$};
+  % D1
+  \draw[line width=0.7pt] (0.10,1.35) -- (0.55,1.35);
+  \fill (0.55,1.52) -- (1.25,1.35) -- (0.55,1.18) -- cycle;
+  \draw[line width=0.8pt] (1.25,1.55) -- (1.25,1.15);
+  \node[font=\small,anchor=south] at (0.90,1.55) {$D_1$};
+  \draw[line width=0.7pt] (1.25,1.35) -- (2.85,1.35);
+  % D2
+  \draw[line width=0.7pt] (0.10,-1.35) -- (0.55,-1.35);
+  \fill (0.55,-1.18) -- (1.25,-1.35) -- (0.55,-1.52) -- cycle;
+  \draw[line width=0.8pt] (1.25,-1.15) -- (1.25,-1.55);
+  \node[font=\small,anchor=north] at (0.90,-1.55) {$D_2$};
+  \draw[line width=0.7pt] (1.25,-1.35) -- (2.05,-1.35) -- (2.05,1.35);
+  % load R
+  \draw[line width=0.7pt] (2.85,1.35) -- (3.35,1.35);
+  \draw[line width=0.7pt] (3.20,-0.55) rectangle (3.50,1.35);
+  \node[font=\small,anchor=west] at (3.60,0.40) {$R$};
+  \node[font=\small,anchor=west] at (3.60,1.20) {$+$};
+  \node[font=\small,anchor=west] at (3.60,-0.40) {$-$};
+  \node[font=\small,anchor=west] at (3.60,0) {$u_R$};
+  \draw[line width=0.7pt] (3.35,-0.55) -- (3.35,-1.85) -- (-0.55,-1.85) -- (-0.55,0);
+  % i1 solid path arrows
+  \draw[line width=0.55pt,->] (1.45,1.20) -- (2.70,1.20);
+  \node[font=\footnotesize,anchor=south] at (2.0,1.22) {$i_1$};
+  \draw[line width=0.55pt,->] (3.10,1.10) -- (3.10,-0.35);
+  \draw[line width=0.55pt,->] (2.90,-0.70) -- (0.0,-0.70);
+  % i2 dashed path
+  \draw[line width=0.55pt,dashed,->] (1.45,-1.20) -- (1.90,-1.20) -- (1.90,0.95);
+  \node[font=\footnotesize,anchor=west] at (1.95,0.10) {$i_2$};
+  \draw[line width=0.55pt,dashed,->] (1.90,0.95) -- (2.70,0.95);
+\end{tikzpicture}%
+}
+\caption{图6.20·全波整流电路}
 \end{figure}
 
-\emph{图6.20 全波整流电路}
+\emph{图6.20·全波整流电路}
 
 全波整流电路的工作过程如下：
 
@@ -29399,7 +29697,7 @@ D、负载电阻 R 到次级绕组端点 b
 所产生电压的合成如图6.21（f）所示。
 
 下面我们再讨论一下全波整流电路中二极管承受的反向电压问题。
-当两个二极管一个导通， 另一个截止， 例如， 当 \(u_{2b}\) 处于正半周，
+当两个二极管一个导通， 另一个截止， 例如， 当 \(u_{2a}\) 处于正半周，
 \(u_{2b}\) 处于负半周， \(D_1\) 导通， \(D_2\) 截止时，
 因导通二极管正向电压降很小， \(D_1\) 可以看作短路，
 这时整流电路可以简化画成图6.22的样子。 \(D_2\)
@@ -29408,8 +29706,8 @@ D、负载电阻 R 到次级绕组端点 b
 它等于次级半个绕组上电压的2倍。 例如， 设 \(a\) 端电势比 \(O\)
 点高10伏时， 因 \(O\) 为次级绕组中点， \(O\) 点电势比 \(b\)
 端电势也高10伏， 所以 \(a\) 端电势比 \(b\) 端高20伏， 即 \(ab\) 间电压是
-\(aO\) 间的2倍。 在 \(v_{2a}\) 达到正半周峰值时， \(v_{nb}\)
-也达到峰值， 等于 \(v_{2a}\) 峰值的2倍， 这时二极管 \(D_2\)
+\(aO\) 间的2倍。 在 \(u_{2a}\) 达到正半周峰值时， \(u_{ab}\)
+也达到峰值， 等于 \(u_{2a}\) 峰值的2倍， 这时二极管 \(D_2\)
 受到的反向电压达到最大值， 等于整个次级绕组的峰值电压，
 即半个绕组峰值电压的2倍。 在选用整流二极
 
@@ -29432,7 +29730,7 @@ D、负载电阻 R 到次级绕组端点 b
 
 桥式整流电路的工作过程如下：
 
-在次级电压的正半周。 \(\alpha\) 端电势高于 \(b\) 端，二极管
+在次级电压的正半周， \(a\) 端电势高于 \(b\) 端，二极管
 
 \begin{figure}
 \centering
