@@ -7,9 +7,9 @@ SOURCE_DATE_EPOCH ?= 1787875200
 export SOURCE_DATE_EPOCH
 export FORCE_SOURCE_DATE = 1
 export TZ = UTC
+export TEXINPUTS := $(CURDIR)/tex/vendor/:
 
 XELATEX := xelatex -interaction=nonstopmode -file-line-error
-GS := gs -dBATCH -dNOPAUSE -dSAFER -q -sDEVICE=pdfwrite
 
 BOOKS := \
 	代数（第一册） \
@@ -54,9 +54,9 @@ CHEMISTRY_BOOKS := \
 	化学（第四册）
 
 VOLUME_PDFS := $(addprefix dist/,$(addsuffix .pdf,$(BOOKS)))
-MATH_PDFS := $(addprefix dist/,$(addsuffix .pdf,$(MATH_BOOKS)))
-PHYSICS_PDFS := $(addprefix dist/,$(addsuffix .pdf,$(PHYSICS_BOOKS)))
-CHEMISTRY_PDFS := $(addprefix dist/,$(addsuffix .pdf,$(CHEMISTRY_BOOKS)))
+MATH_TEX := $(addprefix tex/books/,$(addsuffix .tex,$(MATH_BOOKS)))
+PHYSICS_TEX := $(addprefix tex/books/,$(addsuffix .tex,$(PHYSICS_BOOKS)))
+CHEMISTRY_TEX := $(addprefix tex/books/,$(addsuffix .tex,$(CHEMISTRY_BOOKS)))
 
 .PHONY: all audit pdf-audit repository privacy pdf volumes collections \
 	pdf-verify tex-deps tex-audit verify pre-push clean
@@ -90,39 +90,43 @@ collections: \
 
 dist/%.pdf: tex/books/%.tex tex/style/preamble.tex tex/style/driver.tex
 	@mkdir -p dist .build/pdf/$*
-	sed \
-		-e 's/BOOKTITLE/$*/g' \
-		-e 's/BOOKAUTHOR/$(AUTHOR)/g' \
-		-e 's|BOOKCONTENT|tex/books/$*.tex|g' \
-		tex/style/driver.tex > .build/pdf/$*/book.tex
-	-$(XELATEX) -output-directory=.build/pdf/$* .build/pdf/$*/book.tex
-	-$(XELATEX) -output-directory=.build/pdf/$* .build/pdf/$*/book.tex
-	-$(XELATEX) -output-directory=.build/pdf/$* .build/pdf/$*/book.tex
+	printf '%s\n' \
+		'\newcommand{\shulihuatitle}{$*}' \
+		'\newcommand{\shulihuaauthor}{$(AUTHOR)}' \
+		'\newcommand{\shulihuacontent}{tex/books/$*.tex}' \
+		'\input{tex/style/driver.tex}' \
+		> .build/pdf/$*/book.tex
+	$(XELATEX) -output-directory=.build/pdf/$* .build/pdf/$*/book.tex
+	$(XELATEX) -output-directory=.build/pdf/$* .build/pdf/$*/book.tex
+	$(XELATEX) -output-directory=.build/pdf/$* .build/pdf/$*/book.tex
 	@test -s .build/pdf/$*/book.pdf
 	cp -f .build/pdf/$*/book.pdf $@
 
-.build/pdf/covers/%.pdf: tex/cover.tex
-	@mkdir -p .build/pdf/covers
-	sed \
-		-e 's/COVER_TITLE/$*/g' \
-		-e 's/COVER_AUTHOR/$(AUTHOR)/g' \
-		tex/cover.tex > .build/pdf/covers/$*.tex
-	-$(XELATEX) -output-directory=.build/pdf/covers .build/pdf/covers/$*.tex
-	@test -s $@
-
-dist/数学（合订本）.pdf: .build/pdf/covers/数学（合订本）.pdf $(MATH_PDFS)
-	@mkdir -p dist
-	$(GS) -sOutputFile=$@ .build/pdf/covers/数学（合订本）.pdf $(MATH_PDFS)
+dist/数学（合订本）.pdf: tex/collections/数学（合订本）.tex tex/style/preamble.tex $(MATH_TEX)
+	@mkdir -p dist .build/pdf/数学（合订本）
+	$(XELATEX) -output-directory=.build/pdf/数学（合订本） tex/collections/数学（合订本）.tex
+	$(XELATEX) -output-directory=.build/pdf/数学（合订本） tex/collections/数学（合订本）.tex
+	$(XELATEX) -output-directory=.build/pdf/数学（合订本） tex/collections/数学（合订本）.tex
+	@test -s .build/pdf/数学（合订本）/数学（合订本）.pdf
+	cp -f .build/pdf/数学（合订本）/数学（合订本）.pdf $@
 	ln -sf '数学（合订本）.pdf' dist/mathematics-collected.pdf
 
-dist/物理学（合订本）.pdf: .build/pdf/covers/物理学（合订本）.pdf $(PHYSICS_PDFS)
-	@mkdir -p dist
-	$(GS) -sOutputFile=$@ .build/pdf/covers/物理学（合订本）.pdf $(PHYSICS_PDFS)
+dist/物理学（合订本）.pdf: tex/collections/物理学（合订本）.tex tex/style/preamble.tex $(PHYSICS_TEX)
+	@mkdir -p dist .build/pdf/物理学（合订本）
+	$(XELATEX) -output-directory=.build/pdf/物理学（合订本） tex/collections/物理学（合订本）.tex
+	$(XELATEX) -output-directory=.build/pdf/物理学（合订本） tex/collections/物理学（合订本）.tex
+	$(XELATEX) -output-directory=.build/pdf/物理学（合订本） tex/collections/物理学（合订本）.tex
+	@test -s .build/pdf/物理学（合订本）/物理学（合订本）.pdf
+	cp -f .build/pdf/物理学（合订本）/物理学（合订本）.pdf $@
 	ln -sf '物理学（合订本）.pdf' dist/physics-collected.pdf
 
-dist/化学（合订本）.pdf: .build/pdf/covers/化学（合订本）.pdf $(CHEMISTRY_PDFS)
-	@mkdir -p dist
-	$(GS) -sOutputFile=$@ .build/pdf/covers/化学（合订本）.pdf $(CHEMISTRY_PDFS)
+dist/化学（合订本）.pdf: tex/collections/化学（合订本）.tex tex/style/preamble.tex $(CHEMISTRY_TEX)
+	@mkdir -p dist .build/pdf/化学（合订本）
+	$(XELATEX) -output-directory=.build/pdf/化学（合订本） tex/collections/化学（合订本）.tex
+	$(XELATEX) -output-directory=.build/pdf/化学（合订本） tex/collections/化学（合订本）.tex
+	$(XELATEX) -output-directory=.build/pdf/化学（合订本） tex/collections/化学（合订本）.tex
+	@test -s .build/pdf/化学（合订本）/化学（合订本）.pdf
+	cp -f .build/pdf/化学（合订本）/化学（合订本）.pdf $@
 	ln -sf '化学（合订本）.pdf' dist/chemistry-collected.pdf
 
 pdf-verify: $(VOLUME_PDFS) dist/数学（合订本）.pdf dist/物理学（合订本）.pdf dist/化学（合订本）.pdf

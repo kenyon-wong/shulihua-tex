@@ -13,29 +13,27 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{longtable,booktabs,array,calc}
-\IfFileExists{multirow.sty}{\usepackage{multirow}}{}
-\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.4}}{\linespread{1.4}\selectfont}
-\IfFileExists{fancyhdr.sty}{%
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-  \fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
-  \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[C]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-  }
-}{\pagestyle{headings}}
-\IfFileExists{caption.sty}{\usepackage{caption}}{}
-\IfFileExists{ulem.sty}{\usepackage[normalem]{ulem}}{}
+\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing,patterns,calc,arrows.meta}
+\usepackage{longtable,booktabs,array,calc,multirow}
+\linespread{1.4}\selectfont
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
+\fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+\usepackage[normalem]{ulem}
 \usepackage{float}
+\usepackage{enumitem}
+\setlist{nosep}
 \xeCJKsetup{CJKmath=true}
 \usepackage{hyperref}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{}
 
 \setcounter{secnumdepth}{-\maxdimen}
 \setlength{\emergencystretch}{3em}
@@ -56,11 +54,32 @@
   \else\usebox{\shulihua@box}%
   \fi
 }
-\let\pandocbounded\fitfig
 \def\fps@figure{htbp}
+
+\newcommand{\shulihuaprefix}{}
+\AtBeginDocument{%
+  \let\shulihua@label\label
+  \renewcommand{\label}[1]{\shulihua@label{\shulihuaprefix#1}}%
+}
 \makeatother
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\newcommand{\shulihuacover}[1]{%
+  \thispagestyle{empty}%
+  \vspace*{0.18\textheight}%
+  \begin{center}
+  {\zihao{3} 数理化自学丛书}\\[2.2cm]
+  {\zihao{-0} #1}\\[2.2cm]
+  {\zihao{4} 数理化自学丛书编委会}
+  \end{center}%
+  \clearpage
+}
+
+\newcommand{\shulihuainputbook}[2]{%
+  \renewcommand{\shulihuaprefix}{#2:}%
+  \clearpage
+  \part{#1}%
+  \input{tex/books/#1.tex}%
+}
 
 \hypersetup{
   hidelinks,
