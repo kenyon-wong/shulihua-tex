@@ -9714,9 +9714,76 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.7 横波的偏振}]{assets/physics-4/fig-p0155-01.png}}
+% fig-alt: 图6.7横波偏振：(a)手振绳经两竖缝椅背传到右柱，波通过；(b)第二椅侧卧木块上成横缝，竖波被挡，椅后绳平直
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.92cm,y=0.92cm]
+  % ---- helpers ----
+  \newcommand{\hand}[2]{%
+    \begin{scope}[shift={(#1,#2)}]
+      % palm
+      \draw[line width=0.5pt] (0.05,0.00) .. controls (-0.05,0.28) and (-0.35,0.32) .. (-0.55,0.12)
+        .. controls (-0.62,-0.05) and (-0.35,-0.22) .. (-0.05,-0.12) -- cycle;
+      % thumb
+      \draw[line width=0.45pt] (-0.08,-0.08) .. controls (0.12,-0.28) and (0.28,-0.18) .. (0.18,0.02);
+      % fingers gripping rope
+      \draw[line width=0.45pt] (-0.12,0.22) -- (0.08,0.42);
+      \draw[line width=0.45pt] (-0.28,0.24) -- (-0.08,0.48);
+      \draw[line width=0.45pt] (-0.42,0.18) -- (-0.28,0.42);
+      \draw[line width=0.45pt] (-0.52,0.08) -- (-0.45,0.30);
+      % wrist
+      \draw[line width=0.45pt] (-0.55,0.05) -- (-0.85,-0.05) -- (-0.78,-0.22) -- (-0.48,-0.10);
+    \end{scope}}
+  \newcommand{\chairV}[2]{% upright chair, back at (#1,#2) seat height ~0
+    \begin{scope}[shift={(#1,#2)}]
+      \draw[line width=0.5pt] (0,0) -- (0,1.55) -- (0.72,1.48) -- (0.72,-0.02);
+      \foreach \x in {0.18,0.36,0.54} {\draw[line width=0.4pt] (\x,0.35) -- (\x,1.42);}
+      \draw[line width=0.5pt] (-0.05,0.28) -- (1.05,0.22) -- (0.98,0.08) -- (-0.08,0.14) -- cycle;
+      \draw[line width=0.45pt] (0.95,0.08) -- (1.00,-0.55);
+      \draw[line width=0.45pt] (0.02,0.14) -- (-0.02,-0.55);
+      \draw[line width=0.4pt] (0.55,0.10) -- (0.58,-0.55);
+    \end{scope}}
+  \newcommand{\chairH}[2]{% chair on side: horizontal slats; (#1,#2)=block bottom-left
+    \begin{scope}[shift={(#1,#2)}]
+      \draw[line width=0.5pt] (0,0) -- (1.35,0) -- (1.35,0.42) -- (0,0.42) -- cycle; % block
+      \draw[line width=0.45pt] (1.35,0) -- (1.48,0.12) -- (1.48,0.54) -- (1.35,0.42);
+      \draw[line width=0.45pt] (0,0.42) -- (0.12,0.54) -- (1.48,0.54);
+      % chair frame on side: back vertical plane with horizontal bars
+      \draw[line width=0.5pt] (0.15,0.42) -- (0.15,1.35) -- (1.20,1.28) -- (1.20,0.42);
+      \foreach \y in {0.62,0.82,1.02,1.18} {\draw[line width=0.4pt] (0.22,\y) -- (1.13,\y-0.04);}
+      % seat extending right/front
+      \draw[line width=0.45pt] (1.20,0.55) -- (1.85,0.48) -- (1.78,0.38) -- (1.15,0.45);
+      \draw[line width=0.4pt] (1.70,0.40) -- (1.72,0.05);
+    \end{scope}}
+  \newcommand{\post}[2]{%
+    \draw[line width=0.55pt] (#1,#2) -- (#1,{#2+1.55}) -- ({#1+0.28},{#2+1.55}) -- ({#1+0.28},#2) -- cycle;
+    \draw[line width=0.35pt] ({#1+0.28},#2) -- ({#1+0.38},{#2+0.12}) -- ({#1+0.38},{#2+1.67}) -- ({#1+0.28},{#2+1.55});}
+  % ---- (a) ----
+  \begin{scope}[shift={(0,3.55)}]
+    \hand{0.15}{0.95}
+    \chairV{2.05}{0.05}
+    \chairV{5.05}{0.05}
+    \post{8.35}{0.05}
+    \draw[line width=0.55pt] plot[domain=0:720,samples=72] ({0.55+1.55*\x/720},{0.95+0.32*sin(\x)});
+    \draw[line width=0.55pt] plot[domain=0:720,samples=72] ({2.85+2.15*\x/720},{0.95+0.32*sin(\x)});
+    \draw[line width=0.55pt] plot[domain=0:540,samples=56] ({5.85+2.45*\x/540},{0.95+0.30*sin(\x)});
+    \node at (4.4,-0.85) {（a）};
+  \end{scope}
+  % ---- (b) ----
+  \begin{scope}[shift={(0,0)}]
+    \hand{0.15}{0.95}
+    \chairV{2.05}{0.05}
+    \chairH{4.85}{-0.05}
+    \post{8.35}{0.05}
+    \draw[line width=0.55pt] plot[domain=0:720,samples=72] ({0.55+1.55*\x/720},{0.95+0.32*sin(\x)});
+    \draw[line width=0.55pt] plot[domain=0:680,samples=68] ({2.85+2.05*\x/680},{0.95+0.32*sin(\x)});
+    \draw[line width=0.55pt] (6.15,0.95) -- (8.35,0.95);
+    \node at (4.4,-0.95) {（b）};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图6.7 横波的偏振}
 \end{figure}
+
 
 如果我们用一根长的螺旋弹簧来代替图67中的绳子，并沿着弹簧的方向产生一列纵波，则不管两个木栅的狭缝取相同的方向还是取其它任意方向，都不会妨碍纵波穿过这两个木栅的。这表明纵波不会产生偏振现象。
 
@@ -9859,9 +9926,45 @@ x _ {2} = \pm \frac {5}{2} \frac {l}{d} \lambda
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={（d）}]{assets/physics-4/fig-p0157-04.png}}
+% fig-alt: 图6.8（d）：星形光源与交叠圆示自然光；第一椅竖缝后成竖波；第二椅侧卧横缝，上方弯双箭头示可转，椅后直线到眼
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % source
+  \foreach \a in {0,45,90,135,180,225,270,315} {
+    \draw[line width=0.35pt] ({0.22+0.10*cos(\a)},{1.15+0.10*sin(\a)}) -- ({0.22+0.26*cos(\a)},{1.15+0.26*sin(\a)});
+  }
+  \foreach \k in {0,1,2,3,4} {\draw[line width=0.4pt] ({0.62+0.26*\k},1.15) circle (0.16);}
+  % chair 1 upright
+  \draw[line width=0.5pt] (2.05,0.05) -- (2.05,1.72);
+  \draw[line width=0.5pt] (2.78,0.05) -- (2.78,1.66);
+  \draw[line width=0.5pt] (2.05,1.72) -- (2.78,1.66);
+  \draw[line width=0.4pt] (2.24,0.42) -- (2.24,1.58);
+  \draw[line width=0.4pt] (2.42,0.42) -- (2.42,1.56);
+  \draw[line width=0.4pt] (2.60,0.42) -- (2.60,1.54);
+  \draw[line width=0.5pt] (2.12,0.52) -- (3.15,0.46) -- (3.05,0.32) -- (2.08,0.38) -- cycle;
+  \draw[line width=0.45pt] (2.95,0.32) -- (3.02,0.02);
+  \draw[line width=0.45pt] (2.18,0.38) -- (2.12,0.02);
+  % vertical wave between chairs
+  \draw[line width=0.45pt] plot[domain=0:720,samples=56] ({2.82+2.05*\x/720},{1.15+0.28*sin(\x)});
+  \draw[line width=0.45pt,<->] (4.00,0.72) -- (4.00,1.58);
+  % chair 2 on side (horizontal slats) on block
+  \draw[line width=0.5pt] (5.05,0.02) -- (6.35,0.02) -- (6.35,0.38) -- (5.05,0.38) -- cycle;
+  \draw[line width=0.4pt] (6.35,0.02) -- (6.48,0.12) -- (6.48,0.48) -- (6.35,0.38);
+  \draw[line width=0.5pt] (5.18,0.38) -- (5.18,1.55) -- (6.22,1.48) -- (6.22,0.38);
+  \foreach \y in {0.58,0.78,0.98,1.18,1.35} {\draw[line width=0.4pt] (5.25,\y) -- (6.15,\y-0.04);}
+  \draw[line width=0.45pt] (6.22,0.55) -- (6.95,0.48) -- (6.88,0.38) -- (6.18,0.45);
+  % rotation arrow above chair 2
+  \draw[line width=0.45pt,<->] (5.35,1.72) .. controls (5.70,2.05) and (6.05,2.05) .. (6.40,1.68);
+  % blocked: straight to eye
+  \draw[line width=0.45pt,->] (6.30,1.15) -- (8.05,1.15);
+  \draw[line width=0.5pt] (8.55,1.22) .. controls (8.38,1.36) and (8.12,1.30) .. (8.02,1.18)
+    .. controls (8.14,1.06) and (8.40,1.12) .. (8.55,1.22);
+  \fill (8.20,1.20) circle (0.032);
+\end{tikzpicture}%
+}
 \caption{（d）}
 \end{figure}
+
 
 \emph{图6.8}
 
@@ -10250,9 +10353,60 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6.16 用分光镜观察气体放电管产生的明线光谱}]{assets/physics-4/fig-p0167-01.png}}
+% fig-alt: 图6.16：左气体放电管夹于支架，中凸透镜聚光，右分光镜平行光管、棱镜台、斜置望远镜与标度管，光线经棱镜折入目镜
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.85cm,y=0.85cm]
+  % discharge tube + stand
+  \draw[line width=0.5pt] (0.15,0) -- (1.05,0) -- (1.05,0.18) -- (0.15,0.18) -- cycle;
+  \draw[line width=0.45pt] (0.55,0.18) -- (0.55,1.05);
+  \draw[line width=0.4pt] (0.35,1.05) -- (0.75,1.05);
+  \draw[line width=0.55pt] (0.48,0.95) -- (0.48,2.55);
+  \draw[line width=0.55pt] (0.62,0.95) -- (0.62,2.55);
+  \draw[line width=0.4pt] (0.48,2.55) -- (0.62,2.55);
+  \draw[line width=0.4pt] (0.48,0.95) -- (0.62,0.95);
+  \fill (0.55,1.75) circle (0.04);
+  \draw[line width=0.35pt] (0.48,2.45) -- (0.20,2.70);
+  \draw[line width=0.35pt] (0.62,1.05) -- (0.95,0.55);
+  \draw[line width=0.35pt] (0.20,2.70) -- (0.20,0.55) -- (0.95,0.55);
+  % rays from gap
+  \draw[line width=0.35pt] (0.70,1.75) -- (2.35,2.15);
+  \draw[line width=0.35pt] (0.70,1.75) -- (2.35,1.35);
+  % lens on stand
+  \draw[line width=0.5pt] (2.55,0) circle (0.28);
+  \draw[line width=0.45pt] (2.55,0.28) -- (2.55,1.35);
+  \draw[line width=0.55pt] (2.42,1.20) .. controls (2.28,1.75) and (2.28,2.15) .. (2.42,2.55)
+    -- (2.68,2.55) .. controls (2.82,2.15) and (2.82,1.75) .. (2.68,1.20) -- cycle;
+  \draw[line width=0.35pt] (2.68,2.15) -- (4.35,2.05);
+  \draw[line width=0.35pt] (2.68,1.55) -- (4.35,1.65);
+  % spectroscope: collimator
+  \draw[line width=0.5pt] (4.35,1.45) -- (4.35,2.25) -- (6.55,2.25) -- (6.55,1.45) -- cycle;
+  \draw[line width=0.4pt] (4.35,1.85) -- (4.15,1.85);
+  \draw[line width=0.45pt] (5.40,1.45) -- (5.40,0.55);
+  \draw[line width=0.45pt] (5.20,0.55) -- (5.60,0.55);
+  \draw[line width=0.5pt] (5.15,0.15) -- (5.65,0.15) -- (5.70,0.35) -- (5.10,0.35) -- cycle;
+  % prism table
+  \draw[line width=0.5pt] (6.55,1.55) -- (7.55,1.55) -- (7.55,2.15) -- (6.55,2.15);
+  \draw[line width=0.45pt] (7.05,1.85) -- (7.05,0.70);
+  \draw[line width=0.5pt] (6.55,0.35) -- (7.55,0.35) -- (7.70,0.55) -- (7.85,0.35) -- (7.55,0.15) -- (6.55,0.15) -- cycle;
+  % prism
+  \draw[line width=0.55pt] (6.85,1.95) -- (7.35,1.95) -- (7.10,2.45) -- cycle;
+  % telescope angled
+  \begin{scope}[shift={(7.45,1.85)},rotate=-28]
+    \draw[line width=0.5pt] (0,-0.28) -- (0,0.28) -- (2.35,0.28) -- (2.35,-0.28) -- cycle;
+    \draw[line width=0.4pt] (2.35,0) -- (2.55,0);
+  \end{scope}
+  % scale tube upward
+  \begin{scope}[shift={(7.25,2.15)},rotate=38]
+    \draw[line width=0.45pt] (0,-0.16) -- (0,0.16) -- (1.35,0.16) -- (1.35,-0.16) -- cycle;
+  \end{scope}
+  % rays through prism into telescope
+  \draw[line width=0.35pt] (6.55,1.85) -- (7.05,2.05);
+  \draw[line width=0.35pt] (7.15,2.10) -- (8.55,1.35);
+\end{tikzpicture}%
+}
 \caption{图 6.16 用分光镜观察气体放电管产生的明线光谱}
 \end{figure}
+
 
 \subsection{2. 吸收光谱}
 
@@ -10334,9 +10488,60 @@ S，它的位置正好处在凸透镜 \(L_{1}\) 的焦平面上，光线从狭�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6.17 伦琴射线管}]{assets/physics-4/fig-p0171-01.png}}
+% fig-alt: 图6.17伦琴射线管：球泡左右两臂；左斜靶阳极A接高压+，右杯形阴极K接高压−与灯丝电池；电子打靶后向下扇形射线穿过手落在底片上
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % tube outline: left arm - bulb - right arm
+  \draw[line width=0.55pt] (-3.55,0.35) -- (-3.55,-0.35) -- (-1.55,-0.35);
+  \draw[line width=0.55pt] (-3.55,0.35) -- (-1.55,0.35);
+  \draw[line width=0.55pt] (1.55,0.35) -- (3.55,0.35) -- (3.55,-0.35) -- (1.55,-0.35);
+  \draw[line width=0.55pt] (0,0) circle (1.55);
+  % clip arms into bulb visually by overdraw nothing; electrodes
+  % anode rod + slanted target
+  \draw[line width=0.7pt] (-3.45,0) -- (-0.35,0);
+  \draw[line width=0.7pt] (-0.55,0.28) -- (0.15,-0.35) -- (0.28,-0.22) -- (-0.42,0.40) -- cycle;
+  \node[anchor=south] at (-0.15,0.42) {$A$};
+  % cathode cup + filament leads
+  \draw[line width=0.65pt] (0.95,0.32) .. controls (0.55,0.05) and (0.55,-0.05) .. (0.95,-0.32);
+  \draw[line width=0.55pt] (0.95,0.32) -- (3.45,0.22);
+  \draw[line width=0.55pt] (0.95,-0.32) -- (3.45,-0.22);
+  \node[anchor=south] at (1.15,0.38) {$K$};
+  % electron dashes K -> A
+  \foreach \x in {0.85,0.55,0.25} {\draw[line width=0.4pt,->] (\x,0) -- ({\x-0.22},0);}
+  % HV leads top
+  \draw[line width=0.45pt] (-3.45,0.35) -- (-3.45,1.55) -- (-0.55,1.55);
+  \draw[line width=0.45pt] (3.45,0.22) -- (3.45,1.55) -- (0.55,1.55);
+  \draw[line width=0.4pt] (-0.35,1.55) circle (0.12);
+  \draw[line width=0.4pt] (0.35,1.55) circle (0.12);
+  \node[anchor=south] at (-0.35,1.70) {$+$};
+  \node[anchor=south] at (0.35,1.70) {$-$};
+  % filament battery on right
+  \draw[line width=0.45pt] (3.45,0.22) -- (4.35,0.22) -- (4.35,-0.85);
+  \draw[line width=0.45pt] (3.45,-0.22) -- (4.05,-0.22) -- (4.05,-0.85);
+  \draw[line width=0.45pt] (3.85,-0.85) -- (4.55,-0.85);
+  \draw[line width=0.9pt] (4.00,-1.05) -- (4.00,-0.75);
+  \draw[line width=0.4pt] (4.15,-1.10) -- (4.15,-0.70);
+  \draw[line width=0.9pt] (4.30,-1.05) -- (4.30,-0.75);
+  \draw[line width=0.4pt] (4.45,-1.10) -- (4.45,-0.70);
+  \node[anchor=east] at (3.90,-0.70) {$+$};
+  \node[anchor=west] at (4.55,-1.05) {$-$};
+  % X-ray fan downward
+  \foreach \a in {-70,-55,-40,-25,-10,5,20} {
+    \draw[line width=0.4pt,->] (0.05,-0.15) -- ({0.05+1.85*cos(\a)},{-0.15+1.85*sin(\a)});
+  }
+  % hand + plate
+  \draw[line width=0.45pt] (-1.15,-2.55) -- (1.55,-2.55) -- (1.70,-2.35) -- (-1.00,-2.35) -- cycle;
+  \draw[line width=0.45pt] (-0.85,-2.35) .. controls (-0.95,-1.95) and (-0.55,-1.70) .. (-0.15,-1.75)
+    .. controls (0.35,-1.55) and (0.85,-1.65) .. (1.15,-1.95)
+    .. controls (1.25,-2.10) and (1.20,-2.30) .. (1.10,-2.35);
+  \draw[line width=0.35pt] (-0.35,-1.78) -- (-0.25,-2.20);
+  \draw[line width=0.35pt] (0.05,-1.72) -- (0.15,-2.18);
+  \draw[line width=0.35pt] (0.45,-1.72) -- (0.50,-2.15);
+\end{tikzpicture}%
+}
 \caption{图 6.17 伦琴射线管}
 \end{figure}
+
 
 伦琴射线管（图 6.17）是抽成高真空的（气压约 \(10^{-6}\)
 毫米水银柱高）电子管，里面封闭有两个电极：K 是阴极，由钨制的灯丝组成；A
@@ -10881,15 +11086,109 @@ E _ {1} = h \nu_ {1} = 6.62 \times 10 ^ {- 27} \times 3 \times 10 ^ {18} \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.7 影片录音原理示意图}]{assets/physics-4/fig-p0186-01.png}}
+% fig-alt: 图7.7影片录音：左上话筒（蹄形磁铁间竖丝）、中上放大器三旋钮、中下光阀蹄形磁铁双丝；底灯泡虚线光束经光阀打到右胶片声迹，胶片下行
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.95cm,y=0.95cm]
+  % mic inset
+  \draw[line width=0.5pt] (0.05,3.55) -- (2.15,3.55) -- (2.15,5.15) -- (0.05,5.15) -- cycle;
+  % U-magnet
+  \draw[line width=0.6pt] (0.40,3.80) -- (0.40,4.95) -- (0.85,4.95) -- (0.85,4.45) -- (1.45,4.45) -- (1.45,4.95) -- (1.90,4.95) -- (1.90,3.80) -- (1.55,3.80) -- (1.55,4.55) -- (0.75,4.55) -- (0.75,3.80) -- cycle;
+  \draw[line width=0.55pt] (1.15,3.85) -- (1.15,4.90);
+  \draw[line width=0.4pt,<->] (0.95,5.02) -- (1.35,5.02);
+  \draw[line width=0.4pt] (0.85,4.20) -- (0.55,3.25);
+  \draw[line width=0.4pt] (1.55,4.20) -- (1.85,3.25);
+  % amplifier
+  \draw[line width=0.5pt] (2.85,3.85) -- (5.35,3.85) -- (5.35,5.05) -- (2.85,5.05) -- cycle;
+  \foreach \x in {3.35,4.10,4.85} {\draw[line width=0.4pt] (\x,4.45) circle (0.18);}
+  \draw[line width=0.4pt] (1.85,3.25) -- (2.85,4.45);
+  \draw[line width=0.4pt] (0.55,3.25) -- (2.85,4.15);
+  \draw[line width=0.4pt] (5.35,4.45) -- (6.05,4.45) -- (6.05,2.55);
+  % light valve magnet
+  \draw[line width=0.55pt] (2.35,1.15) -- (2.35,2.85) -- (2.85,2.85) -- (2.85,2.15) -- (5.55,2.15) -- (5.55,2.85) -- (6.05,2.85) -- (6.05,1.15) -- (5.55,1.15) -- (5.55,1.85) -- (2.85,1.85) -- (2.85,1.15) -- cycle;
+  \draw[line width=0.55pt] (3.85,1.25) -- (3.85,2.75);
+  \draw[line width=0.55pt] (4.25,1.25) -- (4.25,2.75);
+  \draw[line width=0.4pt] (6.05,2.55) -- (4.25,2.55);
+  \draw[line width=0.4pt] (6.05,2.15) -- (3.85,2.15);
+  \draw[line width=0.4pt,<->] (3.55,2.45) -- (4.55,2.45);
+  % hole / light path
+  \draw[line width=0.35pt] (2.55,2.00) circle (0.08);
+  % bulb
+  \draw[line width=0.5pt] (0.55,1.55) circle (0.38);
+  \draw[line width=0.4pt] (0.35,1.15) -- (0.75,1.15) -- (0.70,0.95) -- (0.40,0.95) -- cycle;
+  \draw[line width=0.35pt,dashed] (0.95,1.55) -- (2.55,2.00) -- (4.05,2.00) -- (6.55,2.55);
+  % film strip
+  \draw[line width=0.5pt] (6.55,0.15) -- (8.35,0.15) -- (8.35,5.25) -- (6.55,5.25) -- cycle;
+  \foreach \y in {0.55,1.25,1.95,2.65,3.35,4.05,4.75} {
+    \draw[line width=0.35pt] (6.70,\y) -- (6.95,\y+0.35) -- (6.70,\y+0.35) -- cycle;
+    \draw[line width=0.35pt] (8.20,\y) -- (7.95,\y+0.35) -- (8.20,\y+0.35) -- cycle;
+  }
+  \foreach \y in {0.45,1.35,2.25,3.15,4.05} {
+    \draw[line width=0.4pt] (7.15,\y) -- (7.95,\y) -- (7.95,\y+0.70) -- (7.15,\y+0.70) -- cycle;
+  }
+  \draw[line width=0.45pt,fill=gray!25] (6.98,0.25) -- (7.12,0.25) -- (7.12,5.15) -- (6.98,5.15) -- cycle;
+  \draw[line width=0.5pt,->] (8.65,4.55) -- (8.65,1.15);
+\end{tikzpicture}%
+}
 \caption{图 7.7 影片录音原理示意图}
 \end{figure}
 
+
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.8 影片声音的重放过程示意图}]{assets/physics-4/fig-p0186-02.png}}
+% fig-alt: 图7.8影片重放：左光源经凸透镜聚焦到下行胶片声迹，再经凸透镜入右光电管；光电管下接放大器与扬声器
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % lamp
+  \draw[line width=0.55pt] (0.55,2.85) .. controls (0.15,3.15) and (0.15,3.85) .. (0.55,4.15)
+    -- (1.25,4.15) .. controls (1.65,3.85) and (1.65,3.15) .. (1.25,2.85) -- cycle;
+  \draw[line width=0.45pt] (0.70,2.85) -- (0.70,2.55) -- (1.10,2.55) -- (1.10,2.85);
+  \draw[line width=0.4pt] (0.75,3.45) -- (1.05,3.45);
+  % rays to lens1
+  \draw[line width=0.35pt] (1.25,3.70) -- (2.35,3.95);
+  \draw[line width=0.35pt] (1.25,3.20) -- (2.35,2.95);
+  % lens1
+  \draw[line width=0.55pt] (2.45,2.55) .. controls (2.15,3.05) and (2.15,3.85) .. (2.45,4.35)
+    -- (2.75,4.35) .. controls (3.05,3.85) and (3.05,3.05) .. (2.75,2.55) -- cycle;
+  % converge to film
+  \draw[line width=0.35pt] (2.75,3.95) -- (3.85,3.55);
+  \draw[line width=0.35pt] (2.75,2.95) -- (3.85,3.35);
+  % film
+  \draw[line width=0.5pt] (3.75,1.55) -- (4.85,1.55) -- (4.85,5.15) -- (3.75,5.15) -- cycle;
+  \foreach \y in {1.85,2.55,3.25,3.95,4.65} {
+    \draw[line width=0.35pt] (3.88,\y) rectangle (4.08,\y+0.35);
+  }
+  \draw[line width=0.4pt,fill=gray!25] (4.15,1.65) rectangle (4.28,5.05);
+  \foreach \y in {1.75,2.55,3.35,4.15} {
+    \draw[line width=0.4pt] (4.40,\y) rectangle (4.72,\y+0.55);
+  }
+  \draw[line width=0.5pt,->] (3.45,4.55) -- (3.45,2.15);
+  % lens2
+  \draw[line width=0.35pt] (4.85,3.55) -- (5.55,3.85);
+  \draw[line width=0.35pt] (4.85,3.35) -- (5.55,3.05);
+  \draw[line width=0.55pt] (5.65,2.55) .. controls (5.35,3.05) and (5.35,3.85) .. (5.65,4.35)
+    -- (5.95,4.35) .. controls (6.25,3.85) and (6.25,3.05) .. (5.95,2.55) -- cycle;
+  \draw[line width=0.35pt] (5.95,3.95) -- (6.95,3.65);
+  \draw[line width=0.35pt] (5.95,2.95) -- (6.95,3.25);
+  % photocell
+  \draw[line width=0.55pt] (7.05,2.75) .. controls (6.65,3.05) and (6.65,3.95) .. (7.05,4.25)
+    -- (7.95,4.25) .. controls (8.35,3.95) and (8.35,3.05) .. (7.95,2.75) -- cycle;
+  \draw[line width=0.55pt] (7.85,3.15) .. controls (7.35,3.25) and (7.35,3.85) .. (7.85,3.95);
+  \draw[line width=0.45pt] (7.35,2.75) -- (7.35,2.45) -- (7.75,2.45) -- (7.75,2.75);
+  % amp
+  \draw[line width=0.5pt] (1.55,0.35) -- (3.85,0.35) -- (3.85,1.35) -- (1.55,1.35) -- cycle;
+  \foreach \x in {2.05,2.70,3.35} {\draw[line width=0.4pt] (\x,0.85) circle (0.15);}
+  \draw[line width=0.4pt] (7.35,2.45) -- (7.35,0.85) -- (3.85,0.85);
+  \draw[line width=0.4pt] (7.75,2.45) -- (7.75,0.55) -- (3.85,0.55);
+  % speaker
+  \draw[line width=0.5pt] (5.15,0.45) -- (5.55,0.45) -- (5.55,1.25) -- (5.15,1.25) -- cycle;
+  \draw[line width=0.5pt] (5.55,0.35) -- (6.55,0.05) -- (6.55,1.65) -- (5.55,1.35) -- cycle;
+  \draw[line width=0.4pt] (3.85,1.05) -- (5.15,1.05);
+  \draw[line width=0.4pt] (3.85,0.65) -- (5.15,0.65);
+\end{tikzpicture}%
+}
 \caption{图 7.8 影片声音的重放过程示意图}
 \end{figure}
+
 
 影片放音时（如图7.8装置所示），光源、胶片的声迹和光电管的位置被安放在同一条直线上，光源发出的光，透过影片边缘上的声迹，射入光电管中，由于声迹宽度的起伏变化，进入光电管的光线强弱也发生相应的变化，光电流就跟着发生强弱的变化，经过扩音器放大以后，送入扬声器，就能把变化着的电流又还原成为跟原来相同的声音，在银幕后面重放出来。
 
@@ -11041,9 +11340,60 @@ A 发出的是光量子，而不是连续的对称的波。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.12 观察电子衍射装置}]{assets/physics-4/fig-p0192-01.png}}
+% fig-alt: 图7.12观察电子衍射：左电源接灯丝K与阳极A1、A2小孔准直；虚线电子束穿铝箔后扇形衍射至右屏P；圆圈标电子
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % battery stack left
+  \foreach \i/\s in {0/1,1/0,2/1,3/0,4/1,5/0} {
+    \ifnum\s=1
+      \draw[line width=0.9pt] (0.15,{2.55-0.18*\i}) -- (0.55,{2.55-0.18*\i});
+    \else
+      \draw[line width=0.4pt] (0.22,{2.55-0.18*\i}) -- (0.48,{2.55-0.18*\i});
+    \fi
+  }
+  \draw[line width=0.45pt] (0.35,2.70) -- (0.35,3.05) -- (1.15,3.05);
+  \draw[line width=0.45pt] (0.35,1.55) -- (0.35,1.15) -- (1.55,1.15) -- (1.55,1.85);
+  % filament K
+  \draw[line width=0.55pt] (1.15,2.55) .. controls (1.05,2.85) and (1.05,3.15) .. (1.25,3.25)
+    .. controls (1.45,3.15) and (1.45,2.85) .. (1.35,2.55);
+  \draw[line width=0.45pt] (1.15,2.55) -- (1.15,1.85) -- (1.55,1.85);
+  \draw[line width=0.45pt] (1.35,2.55) -- (1.35,3.05);
+  \node[anchor=south] at (1.25,3.30) {$K$};
+  % HV to A1
+  \draw[line width=0.45pt] (0.35,2.70) -- (2.55,2.70) -- (2.55,3.05);
+  % A1 A2 plates with holes
+  \draw[line width=0.7pt] (2.55,1.55) -- (2.55,2.35);
+  \draw[line width=0.7pt] (2.55,2.75) -- (2.55,3.55);
+  \node[anchor=south] at (2.55,3.60) {$A_{1}$};
+  \draw[line width=0.7pt] (3.55,1.55) -- (3.55,2.35);
+  \draw[line width=0.7pt] (3.55,2.75) -- (3.55,3.55);
+  \node[anchor=south] at (3.55,3.60) {$A_{2}$};
+  % beam dashed
+  \draw[line width=0.45pt,dashed] (1.45,2.55) -- (5.05,2.55);
+  % electrons
+  \draw[line width=0.4pt] (1.95,2.55) circle (0.14);
+  \node[anchor=center,font=\footnotesize] at (1.95,2.55) {$-$};
+  \draw[line width=0.4pt] (3.05,2.55) circle (0.14);
+  \node[anchor=center,font=\footnotesize] at (3.05,2.55) {$-$};
+  % aluminum foil
+  \draw[line width=0.55pt] (5.00,1.65) -- (5.20,1.65) -- (5.20,3.45) -- (5.00,3.45) -- cycle;
+  \node[anchor=south] at (5.10,3.55) {铝箔};
+  % diffracted rays
+  \draw[line width=0.4pt,dashed] (5.20,2.55) -- (7.85,4.15);
+  \draw[line width=0.4pt,dashed] (5.20,2.55) -- (7.85,3.35);
+  \draw[line width=0.4pt,dashed] (5.20,2.55) -- (7.85,2.55);
+  \draw[line width=0.4pt,dashed] (5.20,2.55) -- (7.85,1.75);
+  \draw[line width=0.4pt,dashed] (5.20,2.55) -- (7.85,0.95);
+  \draw[line width=0.4pt] (6.35,3.05) circle (0.14);
+  \node[anchor=center,font=\footnotesize] at (6.35,3.05) {$-$};
+  % screen P
+  \draw[line width=0.7pt] (7.85,0.55) -- (7.85,4.45);
+  \node[anchor=south] at (7.85,4.55) {$P$};
+\end{tikzpicture}%
+}
 \caption{图 7.12 观察电子衍射装置}
 \end{figure}
+
 
 \begin{figure}
 \centering
@@ -11561,9 +11911,69 @@ S = \frac {1}{2} a t ^ {2} = \frac {1}{2} \left(\frac {F}{m}\right) \left(\frac 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8.7 密立根油滴实验}]{assets/physics-4/fig-p0207-01.png}}
+% fig-alt: 图8.7密立根油滴：中圆柱室上下极板（上板小孔），左光源照亮，上喷雾器，右望远镜；左电路为电池、滑动变阻器与换向开关接两极
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,x=0.9cm,y=0.9cm]
+  % chamber cylinder (side view cut)
+  \draw[line width=0.55pt] (4.15,0.85) ellipse (1.55 and 0.35);
+  \draw[line width=0.55pt] (2.60,0.85) -- (2.60,3.55);
+  \draw[line width=0.55pt] (5.70,0.85) -- (5.70,3.55);
+  \draw[line width=0.55pt] (4.15,3.55) ellipse (1.55 and 0.35);
+  % plates
+  \draw[line width=0.7pt] (2.95,2.85) ellipse (1.15 and 0.22);
+  \draw[line width=0.7pt] (2.95,1.55) ellipse (1.15 and 0.22);
+  \draw[line width=0.55pt] (4.15,2.85) -- (5.35,2.85); % top plate right half visual
+  \fill (4.15,2.85) circle (0.06); % hole
+  % oil drops
+  \foreach \p in {(4.15,2.45),(4.00,2.15),(4.30,1.95)} {\fill \p circle (0.04);}
+  % light window + rays
+  \draw[line width=0.45pt] (2.60,2.05) circle (0.22);
+  \draw[line width=0.35pt] (1.55,2.25) -- (2.40,2.15);
+  \draw[line width=0.35pt] (1.55,1.85) -- (2.40,1.95);
+  \node[anchor=east] at (1.50,2.05) {光源};
+  % atomizer
+  \draw[line width=0.5pt] (3.85,3.85) -- (3.85,4.35) -- (4.45,4.35) -- (4.45,3.85);
+  \draw[line width=0.5pt] (4.45,4.15) .. controls (5.05,4.35) and (5.35,4.05) .. (5.15,3.75)
+    .. controls (4.95,3.95) and (4.65,3.95) .. (4.45,4.00);
+  \node[anchor=west] at (5.25,4.25) {喷雾器};
+  % telescope
+  \draw[line width=0.5pt] (6.15,1.55) -- (7.55,1.15) -- (7.70,1.35) -- (6.30,1.75) -- cycle;
+  \draw[line width=0.45pt] (7.55,1.15) -- (7.85,0.55);
+  \draw[line width=0.45pt] (7.40,1.20) -- (7.15,0.55);
+  \draw[line width=0.45pt] (7.65,1.28) -- (8.05,0.70);
+  \draw[line width=0.4pt] (7.10,0.45) -- (8.10,0.45);
+  \node[anchor=west] at (7.90,1.55) {望远镜};
+  % circuit left
+  % battery
+  \draw[line width=0.45pt] (0.15,3.55) -- (0.15,1.15);
+  \foreach \i/\s in {0/1,1/0,2/1,3/0,4/1} {
+    \ifnum\s=1
+      \draw[line width=0.85pt] (0.00,{3.25-0.35*\i}) -- (0.30,{3.25-0.35*\i});
+    \else
+      \draw[line width=0.4pt] (0.08,{3.25-0.35*\i}) -- (0.22,{3.25-0.35*\i});
+    \fi
+  }
+  % potentiometer parallelogram
+  \draw[line width=0.5pt] (0.55,3.35) -- (1.55,3.35) -- (1.55,1.35) -- (0.55,1.35) -- cycle;
+  \draw[line width=0.45pt,->] (0.85,2.85) -- (1.25,2.35);
+  \draw[line width=0.4pt] (0.15,3.55) -- (0.55,3.35);
+  \draw[line width=0.4pt] (0.15,1.15) -- (0.55,1.35);
+  % reversing switch (X)
+  \draw[line width=0.4pt] (1.55,2.95) -- (2.05,2.95);
+  \draw[line width=0.4pt] (1.55,1.75) -- (2.05,1.75);
+  \draw[line width=0.4pt] (2.05,3.15) circle (0.08);
+  \draw[line width=0.4pt] (2.05,2.75) circle (0.08);
+  \draw[line width=0.4pt] (2.05,1.95) circle (0.08);
+  \draw[line width=0.4pt] (2.05,1.55) circle (0.08);
+  \draw[line width=0.45pt] (2.05,3.15) -- (2.55,2.75) -- (2.05,1.95);
+  \draw[line width=0.45pt] (2.05,2.75) -- (2.55,1.95) -- (2.05,1.55);
+  \draw[line width=0.4pt] (2.55,2.85) -- (3.15,2.85);
+  \draw[line width=0.4pt] (2.55,1.55) -- (3.15,1.55);
+\end{tikzpicture}%
+}
 \caption{图8.7 密立根油滴实验}
 \end{figure}
+
 
 \[
 q ^ {\prime} E - m g = K v ^ {\prime}
