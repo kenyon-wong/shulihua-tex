@@ -19683,7 +19683,46 @@ DC，那末 DC 就是造桥的位置。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-1/fig-p0208-04.png}}
+\fitfig{%
+% fig-alt: （第22题）河岸PQ∥MN，其间水波纹；A在PQ上方，垂线AFG交PQ于F、MN于G；AE=FG；EB交MN于D，DC⊥河岸；实线AC、CD、DB，虚线EG、ED
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (F) at (0.00,2.00);
+  \coordinate (G) at (0.00,0.90);
+  \coordinate (A) at (0.00,3.50);
+  \coordinate (E) at (0.00,2.40);
+  \coordinate (P) at (-1.10,2.00);
+  \coordinate (Q) at (5.00,2.00);
+  \coordinate (M) at (-1.10,0.90);
+  \coordinate (N) at (5.00,0.90);
+  \coordinate (B) at (4.20,0.00);
+  \coordinate (D) at (intersection of E--B and M--N);
+  \coordinate (C) at ($(D)+(0,1.10)$);
+  \foreach \y in {1.05,1.20,1.35,1.50,1.65,1.80,1.92} {
+    \draw[line width=0.35pt, dashed, dash pattern=on 1.2pt off 1.6pt]
+      (-0.80,\y) -- (4.70,\y);
+  }
+  \draw[line width=0.75pt] (P) -- (Q);
+  \draw[line width=0.75pt] (M) -- (N);
+  \draw[line width=0.70pt] (A) -- (E);
+  \draw[line width=0.65pt, dashed] (E) -- (G);
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[line width=0.70pt] (C) -- (D);
+  \draw[line width=0.70pt] (D) -- (B);
+  \draw[line width=0.65pt, dashed] (E) -- (D);
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=east, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=north east, inner sep=1pt] at (G) {$G$};
+  \node[anchor=south east, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=south west, inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=north east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+\end{tikzpicture}%
+}
+
 \caption{(第22题)}
 \end{figure}
 
@@ -19707,7 +19746,53 @@ DC，那末 DC 就是造桥的位置。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-1/fig-p0209-01.png}}
+\fitfig{%
+% fig-alt: （第3题）平行四边形ABCD；对角AC、BD交于O；直线xy过形内交AB、BC；自A、B、C、D、O向xy作垂线，垂足A'、B'、C'、D'、H，直角方标
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (4.20,0.00);
+  \coordinate (D) at (5.00,2.20);
+  \coordinate (A) at (0.80,2.20);
+  \coordinate (O) at ($(A)!0.5!(C)$);
+  % line xy: through a point near O with slope ~-0.55, intersecting AB and BC
+  \coordinate (Xpt) at (-0.60,2.55);
+  \coordinate (Ypt) at (5.60,-0.85);
+  \coordinate (Ap) at ($(Xpt)!(A)!(Ypt)$);
+  \coordinate (Bp) at ($(Xpt)!(B)!(Ypt)$);
+  \coordinate (Cp) at ($(Xpt)!(C)!(Ypt)$);
+  \coordinate (Dp) at ($(Xpt)!(D)!(Ypt)$);
+  \coordinate (H) at ($(Xpt)!(O)!(Ypt)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.60pt, dashed] (A) -- (C);
+  \draw[line width=0.60pt, dashed] (B) -- (D);
+  \draw[line width=0.70pt] (Xpt) -- (Ypt);
+  \draw[line width=0.60pt] (A) -- (Ap);
+  \draw[line width=0.60pt] (B) -- (Bp);
+  \draw[line width=0.60pt] (C) -- (Cp);
+  \draw[line width=0.60pt] (D) -- (Dp);
+  \draw[line width=0.55pt, dashed] (O) -- (H);
+  % right-angle marks
+  \foreach \V/\F in {A/Ap, B/Bp, C/Cp, D/Dp, O/H} {
+    \coordinate (RA1) at ($(\F)!0.15!(\V)$);
+    \coordinate (RA2) at ($(\F)!0.15!(Xpt)$);
+    \coordinate (RA3) at ($(RA1)+(RA2)-(\F)$);
+    \draw[line width=0.40pt] (RA1) -- (RA3) -- (RA2);
+  }
+  \node[anchor=south east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1pt] at (O) {$O$};
+  \node[anchor=north east, inner sep=0.5pt] at (Ap) {$A'$};
+  \node[anchor=north east, inner sep=0.5pt] at (Bp) {$B'$};
+  \node[anchor=north west, inner sep=0.5pt] at (Cp) {$C'$};
+  \node[anchor=south west, inner sep=0.5pt] at (Dp) {$D'$};
+  \node[anchor=north, inner sep=0.8pt] at (H) {$H$};
+  \node[anchor=south east, inner sep=1pt] at (Xpt) {$x$};
+  \node[anchor=north west, inner sep=1pt] at (Ypt) {$y$};
+\end{tikzpicture}%
+}
+
 \caption{(第3题)}
 \end{figure}
 
@@ -19715,7 +19800,45 @@ DC，那末 DC 就是造桥的位置。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-1/fig-p0209-02.png}}
+\fitfig{%
+% fig-alt: （第4题）凸四边形ABCD（AB<CD）；M、N分别为AD、BC中点；MN延长交BA延长于P、交CD延长于Q；虚线BD及中点O，虚线OM、ON；∠BPN与∠NQC单弧
+\begin{tikzpicture}[line cap=round, line join=round, scale=0.85]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (5.00,0.00);
+  \coordinate (A) at (1.00,2.20);
+  \coordinate (D) at (3.50,2.50);
+  \coordinate (M) at ($(A)!0.5!(D)$);
+  \coordinate (N) at ($(B)!0.5!(C)$);
+  \coordinate (O) at ($(B)!0.5!(D)$);
+  \coordinate (P) at (intersection of B--A and N--M);
+  \coordinate (Q) at (intersection of C--D and N--M);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.65pt] (P) -- (B);
+  \draw[line width=0.65pt] (Q) -- (C);
+  \draw[line width=0.65pt] (P) -- (Q);
+  \draw[line width=0.55pt, dashed] (B) -- (D);
+  \draw[line width=0.55pt, dashed] (O) -- (M);
+  \draw[line width=0.55pt, dashed] (O) -- (N);
+  \draw[line width=0.45pt] let \p1=($(B)-(P)$), \p2=($(N)-(P)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (P) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \draw[line width=0.45pt] let \p1=($(N)-(Q)$), \p2=($(C)-(Q)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (Q) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28];
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=west, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=east, inner sep=1pt] at (O) {$O$};
+  \node[anchor=east, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=west, inner sep=1.5pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+
 \caption{(第4题)}
 \end{figure}
 
@@ -19740,7 +19863,69 @@ DC，那末 DC 就是造桥的位置。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-1/fig-p0209-03.png}}
+\fitfig{%
+% fig-alt: （第6题）△ABC（BC水平并左延）；B之内角平分线与外角平分线（单弧成对）；自A向两平分线作垂线，垂足E、F有直角方；直线FE交AB于M、交AC于N
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (4.60,0.00);
+  \coordinate (A) at (2.80,3.20);
+  % interior bisector direction of angle ABC
+  \pgfmathsetmacro{\angBA}{atan2(3.20,2.80)} % angle of BA from positive x
+  \pgfmathsetmacro{\angBis}{\angBA/2}
+  \pgfmathsetmacro{\angExt}{90+\angBA/2} % exterior bisector of angle between BA and negative x-axis
+  % Actually: exterior angle at B is between AB and the extension of CB beyond B (negative x).
+  % Interior rays: BC at 0°, BA at angBA. Interior bisector at angBA/2.
+  % Exterior angle between BA and 180° (negative x): bisector at (angBA+180)/2 = angBA/2+90.
+  \coordinate (BisDir) at ({\angBis}:1);
+  \coordinate (ExtDir) at ({\angExt}:1);
+  % feet of perpendiculars from A onto the two bisector lines through B
+  \coordinate (E) at ($(B)!(A)!($ (B)+(\angBis:5) $)$);
+  \coordinate (F) at ($(B)!(A)!($ (B)+(\angExt:5) $)$);
+  % line FE; M = FE ∩ AB, N = FE ∩ AC
+  \coordinate (M) at (intersection of F--E and A--B);
+  \coordinate (N) at (intersection of F--E and A--C);
+  % extend base left of B
+  \coordinate (Bext) at (-1.80,0.00);
+  \coordinate (Cext) at (5.20,0.00);
+  % extend bisector rays beyond E,F a bit
+  \coordinate (Eray) at ($(B)!1.35!(E)$);
+  \coordinate (Fray) at ($(B)!1.25!(F)$);
+  \coordinate (FlineL) at ($(F)!-0.35!(E)$);
+  \coordinate (ElineR) at ($(E)!-0.25!(F)$);
+  \draw[line width=0.75pt] (Bext) -- (Cext);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (B) -- (Eray);
+  \draw[line width=0.65pt] (B) -- (Fray);
+  \draw[line width=0.65pt] (A) -- (E);
+  \draw[line width=0.65pt] (A) -- (F);
+  \draw[line width=0.65pt] (FlineL) -- (ElineR);
+  % right angles at E and F
+  \coordinate (E1) at ($(E)!0.15!(A)$);
+  \coordinate (E2) at ($(E)!0.15!(B)$);
+  \coordinate (E3) at ($(E1)+(E2)-(E)$);
+  \draw[line width=0.40pt] (E1) -- (E3) -- (E2);
+  \coordinate (F1) at ($(F)!0.15!(A)$);
+  \coordinate (F2) at ($(F)!0.15!(B)$);
+  \coordinate (F3) at ($(F1)+(F2)-(F)$);
+  \draw[line width=0.40pt] (F1) -- (F3) -- (F2);
+  % single arcs for interior bisector (two halves)
+  \draw[line width=0.45pt] (B) ++ (0:0.38) arc[start angle=0, end angle=\angBis, radius=0.38];
+  \draw[line width=0.45pt] (B) ++ (\angBis:0.38) arc[start angle=\angBis, end angle=\angBA, radius=0.38];
+  % double arcs for exterior bisector
+  \draw[line width=0.45pt] (B) ++ (\angBA:0.30) arc[start angle=\angBA, end angle=\angExt, radius=0.30];
+  \draw[line width=0.45pt] (B) ++ (\angBA:0.40) arc[start angle=\angBA, end angle=\angExt, radius=0.40];
+  \draw[line width=0.45pt] (B) ++ (\angExt:0.30) arc[start angle=\angExt, end angle=180, radius=0.30];
+  \draw[line width=0.45pt] (B) ++ (\angExt:0.40) arc[start angle=\angExt, end angle=180, radius=0.40];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.2pt] at (F) {$F$};
+  \node[anchor=south, inner sep=1.2pt] at (M) {$M$};
+  \node[anchor=south, inner sep=1.2pt] at (N) {$N$};
+  \node[anchor=south, inner sep=1.2pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+
 \caption{(第6题)}
 \end{figure}
 
@@ -19764,7 +19949,67 @@ DC，那末 DC 就是造桥的位置。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/plane-geometry-1/fig-p0210-01.png}}
+\fitfig{%
+% fig-alt: （第7题）对顶△ADC与△BDE：AC、EB近竖直；对角AE、CB交于D；∠C、∠E的平分线交于P（C处单弧成对，E处双弧成对）
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (C) at (0.25,3.40);
+  \coordinate (E) at (3.40,2.90);
+  \coordinate (B) at (2.90,0.55);
+  \coordinate (D) at (intersection of A--E and C--B);
+  % angle bisectors of ∠ACB and ∠AEB meeting at P
+  % Use incenter-style: direction unit sum
+  \coordinate (P) at (1.55,0.35);
+  % Better: compute bisector directions
+  % For angle at C between CA and CB:
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (E) -- (B);
+  \draw[line width=0.70pt] (A) -- (E);
+  \draw[line width=0.70pt] (C) -- (B);
+  % Place P on both bisectors via explicit construction:
+  % unit vector method with calc
+  \path let
+    \p1=($(A)-(C)$), \n1={veclen(\x1,\y1)},
+    \p2=($(B)-(C)$), \n2={veclen(\x2,\y2)},
+    \p3=($(\x1/\n1,\y1/\n1)+(\x2/\n2,\y2/\n2)$)
+    in coordinate (Cbis) at ($(C)+(\p3)$);
+  \path let
+    \p1=($(A)-(E)$), \n1={veclen(\x1,\y1)},
+    \p2=($(B)-(E)$), \n2={veclen(\x2,\y2)},
+    \p3=($(\x1/\n1,\y1/\n1)+(\x2/\n2,\y2/\n2)$)
+    in coordinate (Ebis) at ($(E)+(\p3)$);
+  \coordinate (P) at (intersection of C--Cbis and E--Ebis);
+  \draw[line width=0.65pt] (C) -- (P);
+  \draw[line width=0.65pt] (E) -- (P);
+  % single arcs at C
+  \draw[line width=0.45pt] let \p1=($(A)-(C)$), \p2=($(P)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.34) arc[start angle=\n1, delta angle=\n3, radius=0.34];
+  \draw[line width=0.45pt] let \p1=($(P)-(C)$), \p2=($(B)-(C)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (C) ++ (\n1:0.34) arc[start angle=\n1, delta angle=\n3, radius=0.34];
+  % double arcs at E
+  \draw[line width=0.45pt] let \p1=($(A)-(E)$), \p2=($(P)-(E)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (E) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28]
+    (E) ++ (\n1:0.38) arc[start angle=\n1, delta angle=\n3, radius=0.38];
+  \draw[line width=0.45pt] let \p1=($(P)-(E)$), \p2=($(B)-(E)$),
+      \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)},
+      \n3={mod(\n2-\n1+540,360)-180} in
+    (E) ++ (\n1:0.28) arc[start angle=\n1, delta angle=\n3, radius=0.28]
+    (E) ++ (\n1:0.38) arc[start angle=\n1, delta angle=\n3, radius=0.38];
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1pt] at (D) {$D$};
+  \node[anchor=south, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+
 \caption{(第7题)}
 \end{figure}
 
@@ -19772,7 +20017,33 @@ DC，那末 DC 就是造桥的位置。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-1/fig-p0210-02.png}}
+\fitfig{%
+% fig-alt: （第8题）等底等高：△ABC（AB=AC）与△BCE共底BC；AE∥BC；延长BA至C'使AC'=AC；实线AC、BE、CE、BC'，虚线C'E
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (3.60,0.00);
+  \coordinate (A) at (1.80,2.40);
+  \coordinate (E) at (3.20,2.40);
+  % C' = A + (A-B)/|A-B| * |A-C|
+  \path let
+    \p1=($(A)-(B)$), \n1={veclen(\x1,\y1)},
+    \p2=($(C)-(A)$), \n2={veclen(\x2,\y2)}
+    in coordinate (Cprime) at ($(A)+(\x1/\n1*\n2,\y1/\n1*\n2)$);
+  \draw[line width=0.75pt] (B) -- (C) -- (E) -- cycle;
+  \draw[line width=0.75pt] (B) -- (A) -- (C);
+  \draw[line width=0.70pt] (B) -- (Cprime);
+  \draw[line width=0.65pt] (A) -- (E);
+  \draw[line width=0.65pt] (B) -- (E);
+  \draw[line width=0.65pt] (A) -- (C);
+  \draw[line width=0.60pt, dashed] (Cprime) -- (E);
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south, inner sep=1.5pt] at (Cprime) {$C'$};
+\end{tikzpicture}%
+}
+
 \caption{(第8题)}
 \end{figure}
 
@@ -19787,15 +20058,115 @@ DC，那末 DC 就是造桥的位置。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-1/fig-p0210-03.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第9题）△ABC；AD⊥BC；AE平分∠A；BM⊥AE于M并延长交AC于F；基上点序B、D、E、C
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (5.20,0.00);
+  \coordinate (A) at (1.60,3.20);
+  \coordinate (D) at (1.60,0.00);
+  % angle bisector of angle A: unit-sum direction
+  \path let
+    \p1=($(B)-(A)$), \n1={veclen(\x1,\y1)},
+    \p2=($(C)-(A)$), \n2={veclen(\x2,\y2)},
+    \p3=($(\x1/\n1,\y1/\n1)+(\x2/\n2,\y2/\n2)$)
+    in coordinate (Abis) at ($(A)+(\p3)$);
+  \coordinate (E) at (intersection of A--Abis and B--C);
+  % foot M of perpendicular from B to AE
+  \coordinate (M) at ($(A)!(B)!(E)$);
+  % line BM extended to AC at F
+  \coordinate (F) at (intersection of B--M and A--C);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (A) -- (D);
+  \draw[line width=0.65pt] (A) -- (E);
+  \draw[line width=0.65pt] (B) -- (F);
+  % right angle at D
+  \draw[line width=0.40pt] (D) -- ++(0,0.18) -- ++(0.18,0);
+  % right angle at M (BM ⊥ AE)
+  \coordinate (M1) at ($(M)!0.15!(B)$);
+  \coordinate (M2) at ($(M)!0.15!(E)$);
+  \coordinate (M3) at ($(M1)+(M2)-(M)$);
+  \draw[line width=0.40pt] (M1) -- (M3) -- (M2);
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=west, inner sep=1pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+
+\caption{(第9题)}
 \end{figure}
 
-\emph{（第3题）}
+\emph{（第9题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/plane-geometry-1/fig-p0210-04.png}}
+\fitfig{%
+% fig-alt: （第10题）△ABC，底线F–B–C–E；BK、CG分别为外角∠ABF、∠ACE的平分线；AR⊥BK、AS⊥CG（直角方）；连RS∥BC
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (3.80,0.00);
+  \coordinate (A) at (1.60,2.70);
+  \coordinate (Fpt) at (-2.20,0.00);
+  \coordinate (Ept) at (5.60,0.00);
+  % exterior bisector at B: angle between BA and negative x (180°)
+  \pgfmathsetmacro{\angBA}{atan2(2.70,1.60)}
+  \pgfmathsetmacro{\extB}{(\angBA+180)/2}
+  % exterior bisector at C: angle between CA and positive x extension (0° from C along CE)
+  \pgfmathsetmacro{\angCA}{atan2(2.70,1.60-3.80)} % from C to A
+  % angle of CA from positive x: atan2(2.70, -2.20)
+  % exterior angle between CA and CE (0°); bisector at angCA/2 (since angCA is in (90,180), /2 in (45,90))
+  % Actually CE is at 0°, CA at atan2(2.70,-2.20)≈129°. Exterior bisector going up-right:
+  % The exterior angle is between CB-extension (positive x) and CA? Wait exterior at C for angle ACB
+  % is between AC and the extension of BC beyond C (positive x).
+  % Rays from C: CA at ~129°, CE at 0°. The exterior region going upward is from 0° down... 
+  % From CE at 0° clockwise to CA? Better use unit vector method.
+  % Exterior bisector at B: directions along BF (180°) and BA
+  \path let
+    \p1=($(Fpt)-(B)$), \n1={veclen(\x1,\y1)},
+    \p2=($(A)-(B)$), \n2={veclen(\x2,\y2)},
+    \p3=($(\x1/\n1,\y1/\n1)+(\x2/\n2,\y2/\n2)$)
+    in coordinate (Bbis) at ($(B)+(\p3)$);
+  \path let
+    \p1=($(Ept)-(C)$), \n1={veclen(\x1,\y1)},
+    \p2=($(A)-(C)$), \n2={veclen(\x2,\y2)},
+    \p3=($(\x1/\n1,\y1/\n1)+(\x2/\n2,\y2/\n2)$)
+    in coordinate (Cbis) at ($(C)+(\p3)$);
+  \coordinate (R) at ($(B)!(A)!(Bbis)$);
+  \coordinate (S) at ($(C)!(A)!(Cbis)$);
+  \coordinate (K) at ($(B)!1.55!(Bbis)$);
+  \coordinate (G) at ($(C)!1.55!(Cbis)$);
+  \draw[line width=0.75pt] (Fpt) -- (Ept);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (B) -- (K);
+  \draw[line width=0.65pt] (C) -- (G);
+  \draw[line width=0.65pt] (A) -- (R);
+  \draw[line width=0.65pt] (A) -- (S);
+  \draw[line width=0.65pt] (R) -- (S);
+  % right angles at R, S
+  \coordinate (R1) at ($(R)!0.15!(A)$);
+  \coordinate (R2) at ($(R)!0.15!(B)$);
+  \coordinate (R3) at ($(R1)+(R2)-(R)$);
+  \draw[line width=0.40pt] (R1) -- (R3) -- (R2);
+  \coordinate (S1) at ($(S)!0.15!(A)$);
+  \coordinate (S2) at ($(S)!0.15!(C)$);
+  \coordinate (S3) at ($(S1)+(S2)-(S)$);
+  \draw[line width=0.40pt] (S1) -- (S3) -- (S2);
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (Fpt) {$F$};
+  \node[anchor=north, inner sep=1.5pt] at (Ept) {$E$};
+  \node[anchor=east, inner sep=1.5pt] at (R) {$R$};
+  \node[anchor=west, inner sep=1.5pt] at (S) {$S$};
+  \node[anchor=south east, inner sep=1pt] at (K) {$K$};
+  \node[anchor=south west, inner sep=1pt] at (G) {$G$};
+\end{tikzpicture}%
+}
+
 \caption{(第10题)}
 \end{figure}
 
