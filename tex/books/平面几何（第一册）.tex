@@ -14158,7 +14158,7 @@ PQ。
 \caption{(第 15 题)}
 \end{figure}
 
-\emph{（第 15 题）}
+\emph{（第15题）}
 
 \begin{figure}
 \centering
@@ -19095,8 +19095,41 @@ MN = \frac{AB + DC}{2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-50}]{assets/plane-geometry-1/fig-p0203-01.png}}
-\caption{图3-50}
+\fitfig{%
+% fig-alt: 图3·50 扫描：梯形ABCD（AB下∥DC上）；M、N为两腰中点（AD双杠、BC单杠）；MN中位线；DN延长交AB延长于S；△DCN与△NBS斜阴线
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (4.20,0.00);
+  \coordinate (D) at (1.00,2.40);
+  \coordinate (C) at (3.20,2.40);
+  \coordinate (M) at ($(A)!0.5!(D)$);
+  \coordinate (N) at ($(B)!0.5!(C)$);
+  \coordinate (S) at (6.40,0.00);
+  \fill[pattern=north east lines, pattern color=black!70] (D) -- (C) -- (N) -- cycle;
+  \fill[pattern=north east lines, pattern color=black!70] (N) -- (B) -- (S) -- cycle;
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (M) -- (N);
+  \draw[line width=0.70pt] (D) -- (S);
+  \foreach \Pa/\Qa in {A/M, M/D} {
+    \draw[line width=0.50pt] let \p1=($(\Qa)-(\Pa)$), \n1={atan2(\y1,\x1)} in
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1+90:0.08) -- ++ (\n1-90:0.16)
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1:0.06) ++ (\n1+90:0.08) -- ++ (\n1-90:0.16);
+  }
+  \foreach \Pa/\Qa in {B/N, N/C} {
+    \draw[line width=0.50pt] let \p1=($(\Qa)-(\Pa)$), \n1={atan2(\y1,\x1)} in
+      ($(\Pa)!0.5!(\Qa)$) ++ (\n1+90:0.08) -- ++ (\n1-90:0.16);
+  }
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1pt] at (N) {$N$};
+  \node[anchor=north west, inner sep=1pt] at (S) {$S$};
+\end{tikzpicture}%
+}
+
+\caption{图 3·50}
 \end{figure}
 
 \emph{图 3·50}
@@ -19154,8 +19187,35 @@ x + (x + 4) = 16\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·51}]{assets/plane-geometry-1/fig-p0204-01.png}}
-\caption{图3·51}
+\fitfig{%
+% fig-alt: 图3·51 扫描：梯形ABCD（AB下∥DC上）；中位线MN=16cm（双向箭头）；对角AC交MN于P；MP标x，PN标(x+4)
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (5.60,0.00);
+  \coordinate (D) at (1.20,2.60);
+  \coordinate (C) at (4.00,2.60);
+  \coordinate (M) at ($(A)!0.5!(D)$);
+  \coordinate (N) at ($(B)!0.5!(C)$);
+  \coordinate (P) at (intersection of A--C and M--N);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (M) -- (N);
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[{Latex[length=2.2pt]}-{Latex[length=2.2pt]}, line width=0.55pt]
+    ($(M)+(0,-0.42)$) -- ($(N)+(0,-0.42)$);
+  \node[anchor=north, inner sep=1pt] at ($(M)!0.5!(N)+(0,-0.42)$) {$16\,\mathrm{cm}$};
+  \node[anchor=south, inner sep=1.5pt] at ($(M)!0.5!(P)$) {$x$};
+  \node[anchor=south, inner sep=1pt] at ($(P)!0.5!(N)$) {$(x+4)$};
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=north west, inner sep=1pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+
+\caption{图 3·51}
 \end{figure}
 
 \emph{图 3·51}
@@ -19210,8 +19270,52 @@ x + (x + 4) = 16\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第205页）}]{assets/plane-geometry-1/fig-p0205-01.png}}
-\caption{图示（原PDF第205页）}
+\fitfig{%
+% fig-alt: 四边形分类：左起四边形分两支——两组对边平行→平行四边形（有一角直角→矩形，邻边相等→菱形，二者交汇→正方形）；一组对边平行另一组不平行→梯形（两腰相等→等腰梯形，一腰垂直底→直角梯形）
+\begin{tikzpicture}[line cap=round, line join=round, x=1cm, y=1cm]
+  \draw[line width=0.65pt] (0.00,0.55) -- (0.95,0.95) -- (1.15,-0.15) -- (0.10,-0.55) -- cycle;
+  \node[anchor=north, inner sep=2pt] at (0.55,-0.55) {四边形};
+  \draw[line width=0.65pt] (3.10,1.85) -- (4.35,2.15) -- (4.05,1.15) -- (2.80,0.85) -- cycle;
+  \node[anchor=north, inner sep=2pt] at (3.55,0.85) {平行四边形};
+  \draw[line width=0.65pt] (3.05,-0.55) -- (4.15,-0.35) -- (4.45,-1.45) -- (2.70,-1.65) -- cycle;
+  \node[anchor=north, inner sep=2pt] at (3.55,-1.65) {梯形};
+  \draw[line width=0.65pt] (6.55,2.55) rectangle (7.75,1.75);
+  \node[anchor=north, inner sep=2pt] at (7.15,1.75) {矩形};
+  \draw[line width=0.65pt] (7.15,0.55) -- (7.75,1.05) -- (7.15,1.55) -- (6.55,1.05) -- cycle;
+  \node[anchor=north, inner sep=2pt] at (7.15,0.55) {菱形};
+  \draw[line width=0.65pt] (6.70,-0.35) -- (7.60,-0.35) -- (8.00,-1.25) -- (6.30,-1.25) -- cycle;
+  \node[anchor=north, inner sep=2pt] at (7.15,-1.25) {等腰梯形};
+  \draw[line width=0.65pt] (6.45,-1.95) -- (7.45,-1.95) -- (7.85,-2.85) -- (6.45,-2.85) -- cycle;
+  \node[anchor=north, inner sep=2pt] at (7.15,-2.85) {直角梯形};
+  \draw[line width=0.65pt] (10.10,1.55) rectangle (11.00,0.65);
+  \node[anchor=north, inner sep=2pt] at (10.55,0.65) {正方形};
+  \coordinate (fork1) at (1.70,0.20);
+  \draw[line width=0.55pt, -{Latex[length=2.4pt]}] (1.20,0.20) -- (fork1);
+  \draw[line width=0.55pt, -{Latex[length=2.4pt]}] (fork1) -- (2.70,1.50);
+  \draw[line width=0.55pt, -{Latex[length=2.4pt]}] (fork1) -- (2.70,-1.00);
+  \node[align=center, font=\scriptsize, anchor=south, inner sep=1pt] at (2.15,1.55) {两组对边平行};
+  \node[align=center, font=\scriptsize, anchor=north, inner sep=1pt] at (2.15,-0.35) {一组对边平行\\另一组对边不平行};
+  \coordinate (fork2) at (4.85,1.50);
+  \draw[line width=0.55pt] (4.40,1.50) -- (fork2);
+  \draw[line width=0.55pt, -{Latex[length=2.4pt]}] (fork2) -- (6.50,2.15);
+  \draw[line width=0.55pt, -{Latex[length=2.4pt]}] (fork2) -- (6.50,1.05);
+  \node[font=\scriptsize, anchor=south, inner sep=0.5pt] at (5.65,2.20) {有一个角是直角};
+  \node[font=\scriptsize, anchor=north, inner sep=0.5pt] at (5.65,1.00) {邻边相等};
+  \coordinate (fork3) at (4.85,-1.10);
+  \draw[line width=0.55pt] (4.50,-1.10) -- (fork3);
+  \draw[line width=0.55pt, -{Latex[length=2.4pt]}] (fork3) -- (6.25,-0.80);
+  \draw[line width=0.55pt, -{Latex[length=2.4pt]}] (fork3) -- (6.25,-2.40);
+  \node[font=\scriptsize, anchor=south, inner sep=0.5pt] at (5.55,-0.70) {两腰相等};
+  \node[font=\scriptsize, anchor=north, inner sep=0.5pt] at (5.55,-2.20) {一腰垂直其底};
+  \coordinate (join) at (9.40,1.10);
+  \draw[line width=0.55pt, -{Latex[length=2.4pt]}] (7.80,2.15) -- (join) -- (10.05,1.10);
+  \draw[line width=0.55pt] (7.80,1.05) -- (join);
+  \node[font=\scriptsize, anchor=south, inner sep=0.5pt] at (8.70,1.85) {邻边相等};
+  \node[font=\scriptsize, anchor=north, inner sep=0.5pt] at (8.70,0.85) {有一个角是直角};
+\end{tikzpicture}%
+}
+
+\caption{四边形的分类}
 \end{figure}
 
 \subsubsection{3. 性质}
@@ -19305,7 +19409,30 @@ x + (x + 4) = 16\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-1/fig-p0207-01.png}}
+\fitfig{%
+% fig-alt: （第6题）正方形ABCD；内点K，以AK为边作正方形AKLM（M在AD外下方）；连BK、DM
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\s{3.60}
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (0.00,\s);
+  \coordinate (C) at (\s,\s);
+  \coordinate (D) at (\s,0.00);
+  \coordinate (K) at (1.05,1.45);
+  \coordinate (M) at (1.45,-1.05);
+  \coordinate (L) at (2.50,0.40);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (B) -- (K) -- (A) -- (M) -- (D);
+  \draw[line width=0.70pt] (K) -- (L) -- (M);
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=south east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north west, inner sep=1pt] at (D) {$D$};
+  \node[anchor=south west, inner sep=1.5pt] at (K) {$K$};
+  \node[anchor=west, inner sep=1.5pt] at (L) {$L$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+
 \caption{(第6题)}
 \end{figure}
 
@@ -19341,7 +19468,40 @@ x + (x + 4) = 16\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/plane-geometry-1/fig-p0207-02.png}}
+\fitfig{%
+% fig-alt: （第12题）等腰梯形ABCD（AB下∥CD上，底角60°）；对角AC平分∠A为两个30°；中位线MN；虚线高DH、CK
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (H) at (1.20,0.00);
+  \coordinate (K) at (3.60,0.00);
+  \coordinate (B) at (4.80,0.00);
+  \coordinate (D) at (1.20,2.08);
+  \coordinate (C) at (3.60,2.08);
+  \coordinate (M) at ($(A)!0.5!(D)$);
+  \coordinate (N) at ($(B)!0.5!(C)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[line width=0.70pt] (M) -- (N);
+  \draw[dashed, line width=0.60pt] (D) -- (H);
+  \draw[dashed, line width=0.60pt] (C) -- (K);
+  \draw[line width=0.45pt] ($(A)+(0.55,0)$) arc[start angle=0, end angle=30, radius=0.55];
+  \node at ($(A)+(15:0.78)$) {\scriptsize $30^{\circ}$};
+  \draw[line width=0.45pt] ($(A)+(30:0.70)$) arc[start angle=30, end angle=60, radius=0.70];
+  \node at ($(A)+(45:0.95)$) {\scriptsize $30^{\circ}$};
+  \draw[line width=0.45pt] ($(B)+(180:0.55)$) arc[start angle=180, end angle=120, radius=0.55];
+  \node at ($(B)+(150:0.78)$) {\scriptsize $60^{\circ}$};
+  \draw[line width=0.45pt] ($(C)+(180:0.42)$) arc[start angle=180, end angle=210, radius=0.42];
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (H) {$H$};
+  \node[anchor=north, inner sep=1.5pt] at (K) {$K$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=west, inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+}
+
 \caption{(第12题)}
 \end{figure}
 
@@ -19374,8 +19534,33 @@ x + (x + 4) = 16\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第 15 题)}]{assets/plane-geometry-1/fig-p0208-01.png}}
-\caption{(第 15 题)}
+\fitfig{%
+% fig-alt: （第15题）梯形ABCD（AD上∥BC下）及对角AC、BD；M、N为对角线中点；MN延长交AB于E、交CD于F
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (5.40,0.00);
+  \coordinate (A) at (1.10,2.80);
+  \coordinate (D) at (3.90,2.80);
+  \coordinate (N) at ($(B)!0.5!(D)$);
+  \coordinate (M) at ($(A)!0.5!(C)$);
+  \coordinate (E) at (intersection of A--B and M--N);
+  \coordinate (F) at (intersection of D--C and M--N);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.70pt] (A) -- (C);
+  \draw[line width=0.70pt] (B) -- (D);
+  \draw[line width=0.70pt] (E) -- (F);
+  \node[anchor=south east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=west, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south, inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=south, inner sep=1.5pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+
+\caption{(第15题)}
 \end{figure}
 
 \emph{（第 15 题）}
@@ -19400,7 +19585,42 @@ x + (x + 4) = 16\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/plane-geometry-1/fig-p0208-02.png}}
+\fitfig{%
+% fig-alt: （第17题）Rt△ABC（∠A=90°）；向外正方形ABDE、ACFG；DM、FN⊥BC延长线；虚线AH⊥BC
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\bb{1.50}
+  \def\cc{2.00}
+  \pgfmathsetmacro{\hh}{sqrt(\bb*\cc)}
+  \coordinate (H) at (0.00,0.00);
+  \coordinate (A) at (0.00,\hh);
+  \coordinate (B) at (-\bb,0.00);
+  \coordinate (C) at (\cc,0.00);
+  \coordinate (D) at ({-\bb-\hh},\bb);
+  \coordinate (E) at ({-\hh},{\bb+\hh});
+  \coordinate (F) at ({\cc+\hh},\cc);
+  \coordinate (G) at ({\hh},{\cc+\hh});
+  \coordinate (M) at ({-\bb-\hh},0.00);
+  \coordinate (N) at ({\cc+\hh},0.00);
+  \draw[line width=0.70pt] (M) -- (N);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.70pt] (A) -- (B) -- (D) -- (E) -- cycle;
+  \draw[line width=0.70pt] (A) -- (C) -- (F) -- (G) -- cycle;
+  \draw[line width=0.65pt] (D) -- (M);
+  \draw[line width=0.65pt] (F) -- (N);
+  \draw[dashed, line width=0.60pt] (A) -- (H);
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=east, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=west, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south west, inner sep=1.5pt] at (G) {$G$};
+  \node[anchor=north, inner sep=1.5pt] at (H) {$H$};
+  \node[anchor=north, inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north, inner sep=1.5pt] at (N) {$N$};
+\end{tikzpicture}%
+}
+
 \caption{(第17题)}
 \end{figure}
 
@@ -19420,7 +19640,29 @@ PA + PB + PC + PD > AC + BD.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/plane-geometry-1/fig-p0208-03.png}}
+\fitfig{%
+% fig-alt: （第20题）凸四边形ABCD及对角AC、BD；形内点P连PA、PB、PC、PD
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.20);
+  \coordinate (B) at (4.20,-0.30);
+  \coordinate (C) at (2.70,2.60);
+  \coordinate (D) at (0.10,2.50);
+  \coordinate (P) at (1.35,0.70);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.65pt] (A) -- (C);
+  \draw[line width=0.65pt] (B) -- (D);
+  \draw[line width=0.65pt] (P) -- (A);
+  \draw[line width=0.65pt] (P) -- (B);
+  \draw[line width=0.65pt] (P) -- (C);
+  \draw[line width=0.65pt] (P) -- (D);
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+
 \caption{(第20题)}
 \end{figure}
 
