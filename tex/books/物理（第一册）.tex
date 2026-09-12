@@ -25355,14 +25355,50 @@ I = P _ {2} + P _ {2},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第401页）}]{assets/physics-1/fig-p0401-03.png}}
-\caption{图示（原PDF第401页）}
+% fig-alt: 碰撞后：斜影水平桌面；左球$m_2$右向$v_2$，右球$m_1$右向$v_1$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{0.38}
+  \draw[line width=0.65pt] (-0.55,0) -- (5.55,0);
+  \foreach \x in {-0.35,0.05,0.45,0.85,1.25,1.65,2.05,2.45,2.85,3.25,3.65,4.05,4.45,4.85,5.25}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  \draw[line width=0.55pt,fill=white] (0.85,\R) circle[radius=\R];
+  \node[anchor=south] at (0.85,{2*\R+0.06}) {$m_{2}$};
+  \draw[line width=0.6pt,->] (0.85,\R) -- (2.05,\R);
+  \node[anchor=south] at (1.50,{\R+0.08}) {$v_{2}$};
+  \draw[line width=0.55pt,fill=white] (3.85,\R) circle[radius=\R];
+  \node[anchor=south] at (3.85,{2*\R+0.06}) {$m_{1}$};
+  \draw[line width=0.6pt,->] (3.85,\R) -- (5.25,\R);
+  \node[anchor=south] at (4.55,{\R+0.08}) {$v_{1}$};
+\end{tikzpicture}%
+}
+\caption{碰撞后两球同向，$m_2$以$v_2$、$m_1$以$v_1$运动}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 12·10}]{assets/physics-1/fig-p0401-04.png}}
-\caption{图 12·10}
+% fig-alt: 图12·11：斜影桌面；左$m_2$、右$m_1$相切；上标$m_2v_2$、$m_1v_1$右向；接触点$F'_2$向左、$F_1$向右。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\R{0.55}
+  \draw[line width=0.65pt] (-0.35,0) -- (3.55,0);
+  \foreach \x in {-0.15,0.25,0.65,1.05,1.45,1.85,2.25,2.65,3.05,3.35}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  \draw[line width=0.55pt,fill=white] (\R,\R) circle[radius=\R];
+  \node at ({\R-0.10},{\R+0.10}) {$m_{2}$};
+  \draw[line width=0.55pt,fill=white] ({3*\R},\R) circle[radius=\R];
+  \node at ({3*\R+0.10},{\R+0.10}) {$m_{1}$};
+  \draw[line width=0.55pt,->] ({\R-0.10},{2*\R+0.40}) -- ({\R+0.75},{2*\R+0.40});
+  \node[anchor=south] at ({\R+0.30},{2*\R+0.44}) {$m_{2}v_{2}$};
+  \draw[line width=0.55pt,->] ({3*\R-0.15},{2*\R+0.40}) -- ({3*\R+0.60},{2*\R+0.40});
+  \node[anchor=south] at ({3*\R+0.20},{2*\R+0.44}) {$m_{1}v_{1}$};
+  \draw[line width=0.65pt,->] ({2*\R},{\R-0.14}) -- ({2*\R-0.50},{\R-0.14});
+  \node[anchor=north] at ({2*\R-0.28},{\R-0.18}) {$F'_{2}$};
+  \draw[line width=0.65pt,->] ({2*\R},{\R-0.14}) -- ({2*\R+0.50},{\R-0.14});
+  \node[anchor=north] at ({2*\R+0.28},{\R-0.18}) {$F_{1}$};
+\end{tikzpicture}%
+}
+\caption{图12·11}
 \end{figure}
 
 \emph{图 12·10}
@@ -25429,8 +25465,43 @@ m_{1}\boldsymbol{v}_{01}+m_{2}\boldsymbol{v}_{02}=m_{1}\boldsymbol{v}_{1}+m_{2}\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图12.12}]{assets/physics-1/fig-p0403-01.png}}
-\caption{图12.12}
+% fig-alt: 图12·12：上为$m_2$右向$v_2$、$m_1$左向$v_1$相向；下左粘合后共同$v$右向；下右冲量$F_2\Delta t$向左作用于$m_2$、$F_1\Delta t$向右作用于$m_1$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % top: before
+  \draw[line width=0.65pt] (0,3.55) -- (6.2,3.55);
+  \foreach \x in {0.2,0.6,1.0,1.4,1.8,2.2,2.6,3.0,3.4,3.8,4.2,4.6,5.0,5.4,5.8}
+    \draw[line width=0.28pt] (\x,3.55) -- (\x-0.14,3.37);
+  \draw[line width=0.55pt,fill=white] (1.15,3.55) rectangle (2.05,4.35);
+  \node at (1.60,3.95) {$m_{2}$};
+  \draw[line width=0.6pt,->] (1.20,4.55) -- (2.15,4.55);
+  \node[anchor=south] at (1.68,4.58) {$v_{2}$};
+  \draw[line width=0.55pt,fill=white] (4.15,3.55) rectangle (5.05,4.35);
+  \node at (4.60,3.95) {$m_{1}$};
+  \draw[line width=0.6pt,->] (5.00,4.55) -- (4.05,4.55);
+  \node[anchor=south] at (4.52,4.58) {$v_{1}$};
+  % bottom left: after stick
+  \draw[line width=0.65pt] (0,0.95) -- (3.55,0.95);
+  \foreach \x in {0.2,0.6,1.0,1.4,1.8,2.2,2.6,3.0,3.3}
+    \draw[line width=0.28pt] (\x,0.95) -- (\x-0.14,0.77);
+  \draw[line width=0.55pt,fill=white] (0.85,0.95) rectangle (1.75,1.75);
+  \node at (1.30,1.35) {$m_{2}$};
+  \draw[line width=0.55pt,fill=white] (1.75,0.95) rectangle (2.65,1.75);
+  \node at (2.20,1.35) {$m_{1}$};
+  \draw[line width=0.6pt,->] (1.35,1.95) -- (2.35,1.95);
+  \node[anchor=south] at (1.85,1.98) {$v$};
+  % bottom right: impulses
+  \draw[line width=0.55pt,fill=white] (4.55,2.15) rectangle (5.35,2.85);
+  \node at (4.95,2.50) {$m_{2}$};
+  \draw[line width=0.6pt,->] (5.35,2.50) -- (4.45,2.50);
+  \node[anchor=south] at (4.95,2.92) {$F_{2}\Delta t$};
+  \draw[line width=0.55pt,fill=white] (4.55,0.55) rectangle (5.35,1.25);
+  \node at (4.95,0.90) {$m_{1}$};
+  \draw[line width=0.6pt,->] (4.55,0.90) -- (5.45,0.90);
+  \node[anchor=south] at (5.00,1.32) {$F_{1}\Delta t$};
+\end{tikzpicture}%
+}
+\caption{图12·12}
 \end{figure}
 
 \emph{图12·12}
@@ -25509,8 +25580,63 @@ F_{2}\Delta t = m_{2}v-m_{2}v_{2}=-6\text{牛顿}\mathbin{\cdot}\text{秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图12-13}]{assets/physics-1/fig-p0405-01.png}}
-\caption{图12-13}
+% fig-alt: 图12·13：上为左车$m_1$以$v_1$、人$m$腾空以$v_3$、右车$m_2$以$v_2$同向；下为人已落在$m_2$上，左车$v'_1$、右车与人以$v'_2$。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % helpers via inline draws
+  % ===== top =====
+  \draw[line width=0.65pt] (0,4.15) -- (8.6,4.15);
+  \foreach \x in {0.2,0.6,1.0,1.4,1.8,2.2,2.6,3.0,3.4,3.8,4.2,4.6,5.0,5.4,5.8,6.2,6.6,7.0,7.4,7.8,8.2}
+    \draw[line width=0.28pt] (\x,4.15) -- (\x-0.14,3.97);
+  % cart m1
+  \draw[line width=0.55pt,fill=white] (0.55,4.35) rectangle (2.35,4.75);
+  \draw[line width=0.45pt,fill=white] (0.85,4.15) circle[radius=0.18];
+  \draw[line width=0.45pt,fill=white] (2.05,4.15) circle[radius=0.18];
+  \node[anchor=east] at (0.50,4.55) {$m_{1}$};
+  \draw[line width=0.55pt,->] (0.85,5.15) -- (1.95,5.15);
+  \node[anchor=south] at (1.40,5.18) {$v_{1}$};
+  % person mid-air
+  \draw[line width=0.5pt] (3.35,5.35) circle[radius=0.16];
+  \draw[line width=0.5pt] (3.35,5.19) -- (3.35,4.55);
+  \draw[line width=0.45pt] (3.35,4.95) -- (3.05,4.70);
+  \draw[line width=0.45pt] (3.35,4.95) -- (3.70,4.78);
+  \draw[line width=0.45pt] (3.35,4.55) -- (3.10,4.22);
+  \draw[line width=0.45pt] (3.35,4.55) -- (3.65,4.22);
+  \node[anchor=south] at (3.35,5.55) {$m$};
+  \draw[line width=0.55pt,->] (3.55,4.40) -- (4.45,4.40);
+  \node[anchor=south] at (4.00,4.43) {$v_{3}$};
+  % cart m2
+  \draw[line width=0.55pt,fill=white] (5.55,4.35) rectangle (7.35,4.75);
+  \draw[line width=0.45pt,fill=white] (5.85,4.15) circle[radius=0.18];
+  \draw[line width=0.45pt,fill=white] (7.05,4.15) circle[radius=0.18];
+  \node[anchor=west] at (7.40,4.55) {$m_{2}$};
+  \draw[line width=0.55pt,->] (5.85,5.15) -- (6.85,5.15);
+  \node[anchor=south] at (6.35,5.18) {$v_{2}$};
+  % ===== bottom =====
+  \draw[line width=0.65pt] (0,1.15) -- (8.6,1.15);
+  \foreach \x in {0.2,0.6,1.0,1.4,1.8,2.2,2.6,3.0,3.4,3.8,4.2,4.6,5.0,5.4,5.8,6.2,6.6,7.0,7.4,7.8,8.2}
+    \draw[line width=0.28pt] (\x,1.15) -- (\x-0.14,0.97);
+  \draw[line width=0.55pt,fill=white] (0.55,1.35) rectangle (2.35,1.75);
+  \draw[line width=0.45pt,fill=white] (0.85,1.15) circle[radius=0.18];
+  \draw[line width=0.45pt,fill=white] (2.05,1.15) circle[radius=0.18];
+  \node[anchor=east] at (0.50,1.55) {$m_{1}$};
+  \draw[line width=0.55pt,->] (0.85,2.15) -- (1.85,2.15);
+  \node[anchor=south] at (1.35,2.18) {$v'_{1}$};
+  % cart m2 with person
+  \draw[line width=0.55pt,fill=white] (4.85,1.35) rectangle (6.65,1.75);
+  \draw[line width=0.45pt,fill=white] (5.15,1.15) circle[radius=0.18];
+  \draw[line width=0.45pt,fill=white] (6.35,1.15) circle[radius=0.18];
+  \draw[line width=0.5pt] (5.35,2.45) circle[radius=0.16];
+  \draw[line width=0.5pt] (5.35,2.29) -- (5.35,1.75);
+  \draw[line width=0.45pt] (5.35,2.05) -- (5.10,1.88);
+  \draw[line width=0.45pt] (5.35,2.05) -- (5.60,1.88);
+  \node[anchor=south] at (5.35,2.65) {$m$};
+  \node[anchor=west] at (6.70,1.55) {$m_{2}$};
+  \draw[line width=0.55pt,->] (5.15,2.95) -- (6.25,2.95);
+  \node[anchor=south] at (5.70,2.98) {$v'_{2}$};
+\end{tikzpicture}%
+}
+\caption{图12·13}
 \end{figure}
 
 \emph{图12·13}
@@ -25587,8 +25713,47 @@ v_{2}^{\prime} =\frac{mv_{3}+m_{2}v_{2}}{m+m_{2}} =\frac{50\times4.56+400\times1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 12-14}]{assets/physics-1/fig-p0406-01.png}}
-\caption{图 12-14}
+% fig-alt: 图12·14：上为炮身$M$在斜影地面，炮筒仰角$\alpha$，弹$m$沿筒口斜上右以$v$飞出；下左$Mv'$向左，下右$mv$分解为$mv\cos\alpha$水平、$mv\sin\alpha$竖直。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \def\aa{30}
+  % ground
+  \draw[line width=0.65pt] (-2.4,0) -- (3.6,0);
+  \foreach \x in {-2.2,-1.8,-1.4,-1.0,-0.6,-0.2,0.2,0.6,1.0,1.4,1.8,2.2,2.6,3.0,3.4}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  % cannon body
+  \draw[line width=0.6pt,fill=white] (0,0.72) circle[radius=0.72];
+  \node at (0,0.72) {$M$};
+  % barrel
+  \begin{scope}[rotate around={\aa:(0,0.72)}]
+    \draw[line width=0.55pt,fill=white] (0.55,0.52) rectangle (2.55,0.92);
+  \end{scope}
+  % horizontal dashed
+  \draw[line width=0.4pt,dash pattern=on 1.6pt off 1.2pt] (0,0.72) -- (2.6,0.72);
+  \draw[line width=0.4pt] (0.95,0.72) arc[start angle=0,end angle=\aa,radius=0.95];
+  \node at ({1.25*cos(\aa/2)},{0.72+1.25*sin(\aa/2)}) {$\alpha$};
+  % projectile
+  \coordinate (P) at ({{2.70*cos(\aa)},{0.72+2.70*sin(\aa)}});
+  \draw[line width=0.5pt,fill=black!25] (P) circle[radius=0.11];
+  \node[anchor=south] at ($(P)+(0.02,0.18)$) {$m$};
+  \draw[line width=0.6pt,->] (P) -- ++({\aa}:{1.20});
+  \node[anchor=south west] at ($(P)+({\aa}:{0.70})$) {$v$};
+  % bottom vectors
+  \draw[line width=0.65pt,->] (-0.2,-1.15) -- (-2.0,-1.15);
+  \node[anchor=north] at (-1.1,-1.22) {$Mv'$};
+  % mv decomposition
+  \coordinate (O2) at (1.2,-2.55);
+  \draw[line width=0.55pt,->] (O2) -- ++(2.0,0);
+  \node[anchor=north] at ($(O2)+(1.55,0)$) {$mv\cos\alpha$};
+  \draw[line width=0.55pt,->] (O2) -- ++(0,1.35);
+  \node[anchor=west] at ($(O2)+(0.08,1.05)$) {$mv\sin\alpha$};
+  \draw[line width=0.65pt,->] (O2) -- ++({\aa}:{2.25});
+  \node[anchor=south west] at ($(O2)+({\aa}:{1.35})$) {$mv$};
+  \draw[line width=0.4pt] ($(O2)+(0.70,0)$) arc[start angle=0,end angle=\aa,radius=0.70];
+  \node at ($(O2)+({0.95*cos(\aa/2)},{0.95*sin(\aa/2)})$) {$\alpha$};
+\end{tikzpicture}%
+}
+\caption{图12·14}
 \end{figure}
 
 \emph{图12·14}
@@ -25659,8 +25824,56 @@ E ^ {\prime} = (m + M) g
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 12·15}]{assets/physics-1/fig-p0408-01.png}}
-\caption{图 12·15}
+% fig-alt: 图12·15：左为静置爆竹柱；次为喷气$m\boldsymbol{v}$向下、本体$M\boldsymbol{v}'$向上；再次竖火箭同向标注；右为水平火箭$M\boldsymbol{v}'$向右、$m\boldsymbol{v}$向左。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 1 static firecracker
+  \draw[line width=0.5pt,fill=white] (-0.35,0.15) rectangle (0.35,0.85);
+  \draw[line width=0.4pt,pattern=north east lines] (-0.35,0.85) rectangle (0.35,1.55);
+  \draw[line width=0.5pt,fill=white] (-0.35,1.55) rectangle (0.35,2.25);
+  \draw[line width=0.4pt] (-0.35,0.45) .. controls (-0.70,0.35) and (-0.75,0.15) .. (-0.55,0.05);
+  % 2 exploding
+  \begin{scope}[shift={(2.35,0)}]
+    \draw[line width=0.5pt,fill=white] (-0.35,0.55) rectangle (0.35,1.25);
+    \draw[line width=0.4pt,pattern=north east lines] (-0.35,1.25) rectangle (0.35,1.95);
+    \draw[line width=0.5pt,fill=white] (-0.35,1.95) rectangle (0.35,2.65);
+    \node[anchor=west] at (0.42,1.60) {$M$};
+    \draw[line width=0.6pt,->] (0,2.70) -- (0,3.55);
+    \node[anchor=west] at (0.10,3.35) {$M\boldsymbol{v}'$};
+    \draw[line width=0.5pt,->] (-0.18,0.50) -- (-0.35,-0.35);
+    \draw[line width=0.5pt,->] (0,0.50) -- (0,-0.45);
+    \draw[line width=0.5pt,->] (0.18,0.50) -- (0.35,-0.35);
+    \node[anchor=north] at (0,-0.55) {$m\boldsymbol{v}$};
+  \end{scope}
+  % 3 vertical rocket
+  \begin{scope}[shift={(5.0,0)}]
+    \draw[line width=0.55pt,fill=white] (-0.32,0.55) -- (-0.32,2.35) -- (0,2.85) -- (0.32,2.35) -- (0.32,0.55) -- cycle;
+    \draw[line width=0.45pt] (-0.32,0.55) -- (-0.55,0.15);
+    \draw[line width=0.45pt] (0.32,0.55) -- (0.55,0.15);
+    \node at (0,1.55) {$M$};
+    \draw[line width=0.6pt,->] (0,2.90) -- (0,3.70);
+    \node[anchor=west] at (0.10,3.45) {$M\boldsymbol{v}'$};
+    \draw[line width=0.4pt] (-0.12,0.50) .. controls (-0.25,0.05) and (-0.20,-0.25) .. (-0.15,-0.55);
+    \draw[line width=0.4pt] (0,0.50) .. controls (0.05,0.05) and (-0.05,-0.25) .. (0,-0.60);
+    \draw[line width=0.4pt] (0.12,0.50) .. controls (0.25,0.05) and (0.20,-0.25) .. (0.15,-0.55);
+    \node[anchor=north] at (0,-0.70) {$m\boldsymbol{v}$};
+  \end{scope}
+  % 4 horizontal rocket
+  \begin{scope}[shift={(7.85,1.6)}]
+    \draw[line width=0.55pt,fill=white] (-1.05,-0.28) -- (0.55,-0.28) -- (1.05,0) -- (0.55,0.28) -- (-1.05,0.28) -- cycle;
+    \draw[line width=0.45pt] (-1.05,-0.28) -- (-1.40,-0.48);
+    \draw[line width=0.45pt] (-1.05,0.28) -- (-1.40,0.48);
+    \node at (-0.15,0) {$M$};
+    \draw[line width=0.6pt,->] (1.10,0) -- (2.05,0);
+    \node[anchor=south] at (1.55,0.08) {$M\boldsymbol{v}'$};
+    \draw[line width=0.4pt] (-1.10,0.12) .. controls (-1.55,0.20) and (-1.85,0.10) .. (-2.20,0.15);
+    \draw[line width=0.4pt] (-1.10,0) .. controls (-1.55,-0.05) and (-1.85,0.05) .. (-2.25,0);
+    \draw[line width=0.4pt] (-1.10,-0.12) .. controls (-1.55,-0.20) and (-1.85,-0.10) .. (-2.20,-0.15);
+    \node[anchor=east] at (-2.30,0) {$m\boldsymbol{v}$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图12·15}
 \end{figure}
 
 \emph{图 12·15}
@@ -25689,16 +25902,70 @@ E ^ {\prime} = (m + M) g
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-1/fig-p0410-01.png}}
-\caption{(2)}
+% fig-alt: （a）反冲式洒水器：台面盆内 L 形支架悬中轴，倒置锥形容器腰有环，底端两侧弯管喷水。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.55pt,fill=white]
+    (-2.05,-0.20) -- (2.15,-0.20) -- (2.55,-0.65) -- (-1.65,-0.65) -- cycle;
+  \draw[line width=0.5pt,fill=white] (-1.10,0.00) ellipse[x radius=1.20,y radius=0.34];
+  \draw[line width=0.5pt] (-2.30,0.00) -- (-2.30,-0.48);
+  \draw[line width=0.5pt] (0.10,0.00) -- (0.10,-0.48);
+  \draw[line width=0.5pt] (-2.30,-0.48) arc[start angle=180,end angle=360,x radius=1.20,y radius=0.34];
+  \begin{scope}
+    \clip (-2.35,-0.50) rectangle (-1.60,0.05);
+    \foreach \y in {-0.45,-0.35,...,0.0}
+      \draw[line width=0.25pt] (-2.30,\y) -- (-1.60,\y+0.06);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.95,-0.05) -- (-1.95,3.70) -- (0.08,3.70);
+  \draw[line width=0.45pt,fill=white] (-0.10,3.58) rectangle (0.10,3.78);
+  \draw[line width=0.45pt] (0,3.70) -- (0,0.05);
+  \draw[line width=0.55pt] (0,2.95) ellipse[x radius=1.00,y radius=0.30];
+  \draw[line width=0.55pt] (-1.00,2.95) -- (0,0.70);
+  \draw[line width=0.55pt] (1.00,2.95) -- (0,0.70);
+  \foreach \t in {-0.75,-0.50,-0.25,0.25,0.50,0.75}
+    \draw[line width=0.28pt] (\t,{2.95-0.02*abs(\t)}) -- (0,0.70);
+  \draw[line width=0.45pt] (0,1.85) ellipse[x radius=0.58,y radius=0.18];
+  \draw[line width=0.55pt] (0,0.70) .. controls (-0.40,0.68) and (-0.65,0.50) .. (-0.85,0.28);
+  \draw[line width=0.55pt] (0,0.70) .. controls (0.40,0.68) and (0.65,0.50) .. (0.85,0.28);
+  \draw[line width=0.4pt,->] (-0.85,0.28) -- (-1.15,0.05);
+  \draw[line width=0.4pt,->] (0.85,0.28) -- (1.15,0.05);
+\end{tikzpicture}%
+}
+\caption{（a）}
 \end{figure}
 
 \emph{（2）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-1/fig-p0410-02.png}}
-\caption{(b)}
+% fig-alt: （b）斜影地面上带轮小车载水箱；右下孔喷水抛物线；车身左向反冲箭头。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  \draw[line width=0.65pt] (-2.4,0) -- (3.2,0);
+  \foreach \x in {-2.2,-1.8,-1.4,-1.0,-0.6,-0.2,0.2,0.6,1.0,1.4,1.8,2.2,2.6,3.0}
+    \draw[line width=0.28pt] (\x,0) -- (\x-0.14,-0.18);
+  % cart deck
+  \draw[line width=0.55pt,fill=white] (-1.35,0.32) rectangle (1.55,0.55);
+  \draw[line width=0.45pt,fill=white] (-0.95,0.16) circle[radius=0.16];
+  \draw[line width=0.45pt,fill=white] (1.15,0.16) circle[radius=0.16];
+  % tank
+  \draw[line width=0.55pt,fill=white] (-0.85,0.55) rectangle (1.05,2.35);
+  \draw[line width=0.4pt] (-0.95,2.35) -- (-0.85,2.35);
+  \draw[line width=0.4pt] (1.05,2.35) -- (1.15,2.35);
+  % water level + dashes
+  \draw[line width=0.4pt] (-0.75,2.05) -- (0.95,2.05);
+  \foreach \y in {0.75,0.95,1.15,1.35,1.55,1.75,1.95}
+    \foreach \x in {-0.55,-0.15,0.25,0.65}
+      \draw[line width=0.25pt] (\x,\y) -- (\x+0.22,\y);
+  % jet from lower right
+  \draw[line width=0.45pt] (1.05,0.85) .. controls (1.55,0.80) and (2.05,0.55) .. (2.55,0.15);
+  \draw[line width=0.4pt] (1.05,0.78) .. controls (1.50,0.70) and (2.00,0.40) .. (2.40,0.05);
+  \draw[line width=0.35pt] (1.05,0.72) .. controls (1.45,0.62) and (1.90,0.30) .. (2.25,0.00);
+  % recoil arrow left
+  \draw[line width=0.7pt,->] (-1.40,0.95) -- (-2.25,0.95);
+\end{tikzpicture}%
+}
+\caption{（b）}
 \end{figure}
 
 \emph{（b）}
