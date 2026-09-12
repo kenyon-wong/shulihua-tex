@@ -20386,11 +20386,64 @@ C 环是闭合的， D 环是不闭合的， 它们的平面都和螺线管 AB �
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.12}]{assets/physics-3/fig-p0273-01.png}}
-\caption{图4.12}
+\fitfig{%
+% fig-alt: 图4.12 水平螺线管AB串接电池与电键K；左侧闭合金属环C、右侧开口金属环D用绝缘线悬挂，环面与轴线垂直
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % ceiling supports
+  \draw[line width=0.55pt,pattern=north east lines,pattern color=black!50] (-4.35,2.55) rectangle (-3.55,2.85);
+  \draw[line width=0.55pt] (-4.35,2.55) -- (-3.55,2.55);
+  \draw[line width=0.55pt,pattern=north east lines,pattern color=black!50] (3.55,2.55) rectangle (4.35,2.85);
+  \draw[line width=0.55pt] (3.55,2.55) -- (4.35,2.55);
+  % strings
+  \draw[line width=0.45pt] (-3.95,2.55) -- (-3.95,1.55);
+  \draw[line width=0.45pt] (3.95,2.55) -- (3.95,1.55);
+  % ring C (closed, thin ellipse)
+  \draw[line width=0.7pt] (-3.95,0.95) ellipse[x radius=0.18,y radius=0.60];
+  \draw[line width=0.45pt] (-3.95,0.95) ellipse[x radius=0.10,y radius=0.48];
+  \node[anchor=east,inner sep=2pt] at (-4.20,1.35) {$C$};
+  % ring D (open gap near top)
+  \draw[line width=0.7pt] (3.95,0.40) arc[start angle=-70,end angle=250,x radius=0.18,y radius=0.60];
+  \draw[line width=0.45pt] (3.95,0.48) arc[start angle=-55,end angle=235,x radius=0.10,y radius=0.48];
+  \node[anchor=west,inner sep=2pt] at (4.20,1.35) {$D$};
+  % solenoid core cylinder
+  \fill[black!6] (-2.35,0.55) -- (2.35,0.55) -- (2.55,0.85) -- (2.55,1.35) -- (2.35,1.55) -- (-2.35,1.55) -- (-2.55,1.35) -- (-2.55,0.85) -- cycle;
+  \draw[line width=0.65pt] (-2.35,0.55) -- (2.35,0.55) -- (2.55,0.85) -- (2.55,1.35) -- (2.35,1.55) -- (-2.35,1.55);
+  \draw[line width=0.65pt] (-2.35,0.55) -- (-2.55,0.85) -- (-2.55,1.35) -- (-2.35,1.55);
+  % right end face hatch
+  \draw[line width=0.5pt,pattern=north east lines,pattern color=black!45] (2.35,0.55) -- (2.55,0.85) -- (2.55,1.35) -- (2.35,1.55) -- cycle;
+  % windings
+  \foreach \x in {-2.05,-1.55,-1.05,-0.55,-0.05,0.45,0.95,1.45,1.95} {
+    \draw[line width=0.55pt] (\x,0.55) .. controls (\x+0.12,0.95) and (\x+0.12,1.15) .. (\x,1.55);
+  }
+  % lead wires from coil down
+  \draw[line width=0.6pt] (-2.20,0.55) -- (-2.20,-0.85) -- (-0.85,-0.85);
+  \draw[line width=0.6pt] (2.20,0.55) -- (2.20,-0.85) -- (1.35,-0.85);
+  % battery (multi-cell), - left + right
+  \draw[line width=0.7pt] (-0.70,-1.15) -- (-0.70,-0.55);
+  \draw[line width=0.55pt] (-0.55,-1.05) -- (-0.55,-0.65);
+  \draw[line width=0.7pt] (-0.40,-1.15) -- (-0.40,-0.55);
+  \draw[line width=0.55pt] (-0.25,-1.05) -- (-0.25,-0.65);
+  \draw[line width=0.7pt] (-0.10,-1.15) -- (-0.10,-0.55);
+  \draw[line width=0.55pt] (0.05,-1.05) -- (0.05,-0.65);
+  \node[anchor=south,inner sep=1pt] at (-0.70,-0.50) {$-$};
+  \node[anchor=south,inner sep=1pt] at (0.05,-0.50) {$+$};
+  \draw[line width=0.6pt] (-0.85,-0.85) -- (-0.70,-0.85);
+  \draw[line width=0.6pt] (0.05,-0.85) -- (0.55,-0.85);
+  % open switch K
+  \draw[line width=0.7pt] (0.55,-0.85) -- (0.75,-0.85);
+  \fill (0.75,-0.85) circle[radius=0.05];
+  \fill (1.35,-0.85) circle[radius=0.05];
+  \draw[line width=0.7pt] (0.75,-0.85) -- (1.20,-0.45);
+  \node[anchor=north,inner sep=2pt] at (1.05,-0.95) {$K$};
+  % labels A B
+  \node[anchor=south,inner sep=2pt] at (-2.45,1.60) {$A$};
+  \node[anchor=south,inner sep=2pt] at (2.45,1.60) {$B$};
+\end{tikzpicture}%
+}
+\caption{图4.12 螺线管AB与金属环C（闭合）、D（开口）及电键K}
 \end{figure}
 
-\emph{图4.12}
+\emph{图4.12 螺线管AB与金属环C（闭合）、D（开口）及电键K}
 
 \textbf{［解］} 我们可以把螺线管 \(AB\) 看做是原线圈， 把 \(C\) 和 \(D\)
 看做是一个闭合的和另一个不闭合的副线圈。当原线圈里的电流强度发生变化时，
@@ -20420,11 +20473,40 @@ D 环仍保持原来的静止状态。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(续1题)}]{assets/physics-3/fig-p0274-01.png}}
-\caption{(续1题)}
+\fitfig{%
+% fig-alt: 习题4.2第1题 水平线圈接成闭合回路，右侧条形磁铁N极朝向线圈；下方导线旁有磁针（左N右S）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % solenoid ~4 turns
+  \foreach \x/\xf in {-1.55/-1.20,-1.05/-0.70,-0.55/-0.20,-0.05/0.30} {
+    \draw[line width=0.55pt,dashed] (\x,0.95) .. controls (\x+0.12,1.22) and (\xf-0.12,1.22) .. (\xf,0.95);
+    \draw[line width=0.65pt] (\x,0.95) .. controls (\x+0.12,0.68) and (\xf-0.12,0.68) .. (\xf,0.95);
+  }
+  % left lead down
+  \draw[line width=0.6pt] (-1.55,0.95) -- (-1.55,-0.85);
+  % right lead: from last turn down then right then down
+  \draw[line width=0.6pt] (0.30,0.95) -- (0.30,0.35) -- (1.55,0.35) -- (1.55,-0.85);
+  % bottom horizontal
+  \draw[line width=0.6pt] (-1.55,-0.85) -- (1.55,-0.85);
+  % bar magnet to the right
+  \draw[line width=0.7pt] (1.85,0.70) rectangle (3.55,1.20);
+  \draw[line width=0.5pt] (2.70,0.70) -- (2.70,1.20);
+  \node[font=\small] at (2.25,0.95) {$N$};
+  \node[font=\small] at (3.15,0.95) {$S$};
+  % compass needle under bottom wire
+  \draw[line width=0.5pt] (0.00,-1.35) -- (0.00,-0.95);
+  \draw[line width=0.45pt] (-0.25,-1.35) -- (0.25,-1.35);
+  % diamond needle: left N filled, right S open
+  \fill[black] (0.00,-1.10) -- (-0.55,-1.10) -- (0.00,-1.02) -- cycle;
+  \fill[black] (0.00,-1.10) -- (-0.55,-1.10) -- (0.00,-1.18) -- cycle;
+  \draw[line width=0.55pt] (0.00,-1.02) -- (0.55,-1.10) -- (0.00,-1.18) -- cycle;
+  \node[anchor=east,inner sep=2pt] at (-0.60,-1.10) {$N$};
+  \node[anchor=west,inner sep=2pt] at (0.60,-1.10) {$S$};
+\end{tikzpicture}%
+}
+\caption{习题4.2第1题 磁棒N极移近线圈时下方导线旁磁针偏转}
 \end{figure}
 
-\emph{（续1题）}
+\emph{习题4.2第1题 磁棒N极移近线圈时下方导线旁磁针偏转}
 
 断开，那么这种阻力就不存在了。试说明这种现象。
 
@@ -20449,38 +20531,145 @@ D 环仍保持原来的静止状态。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-3/fig-p0275-01.png}}
-\caption{(第6题)}
+\fitfig{%
+% fig-alt: 习题4.2第6题 矩形金属框abcd平面与匀强磁场B平行；B水平向右
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \foreach \y in {-1.40,-0.95,-0.50,-0.05,0.40,0.85,1.30} {
+    \draw[line width=0.5pt,->] (-2.10,\y) -- (2.10,\y);
+  }
+  \node[anchor=west,inner sep=2pt] at (2.15,0.00) {$\vec{B}$};
+  \draw[line width=0.75pt] (-0.85,-1.05) rectangle (0.85,1.05);
+  \node[anchor=south east,inner sep=2pt] at (-0.85,1.05) {$a$};
+  \node[anchor=south west,inner sep=2pt] at (0.85,1.05) {$b$};
+  \node[anchor=north west,inner sep=2pt] at (0.85,-1.05) {$c$};
+  \node[anchor=north east,inner sep=2pt] at (-0.85,-1.05) {$d$};
+\end{tikzpicture}%
+}
+\caption{习题4.2第6题 矩形框abcd平面与匀强磁场$\vec{B}$平行}
 \end{figure}
 
-\emph{（第6题）}
+\emph{习题4.2第6题 矩形框abcd平面与匀强磁场$\vec{B}$平行}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-3/fig-p0275-02.png}}
-\caption{(第7题)}
+\fitfig{%
+% fig-alt: 习题4.2第7题 丝线悬挂闭合铜环；条形磁铁N极自右向左靠近环心，环向左偏摆
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % support
+  \draw[line width=0.6pt,pattern=north east lines,pattern color=black!50] (-0.55,2.55) rectangle (0.55,2.80);
+  \draw[line width=0.55pt] (-0.55,2.55) -- (0.55,2.55);
+  \draw[line width=0.45pt] (0,2.55) -- (0,1.15);
+  % ring (ellipse perspective)
+  \draw[line width=0.7pt] (0,0.35) ellipse[x radius=0.22,y radius=0.80];
+  \draw[line width=0.4pt] (0,0.35) ellipse[x radius=0.12,y radius=0.68];
+  % bar magnet in 3D-ish, N facing left through ring
+  \draw[line width=0.65pt,fill=black!8] (0.05,0.10) -- (1.85,0.10) -- (2.05,0.35) -- (2.05,0.70) -- (1.85,0.90) -- (0.05,0.90) -- cycle;
+  \draw[line width=0.65pt] (0.05,0.10) -- (0.25,0.35) -- (0.25,0.70) -- (0.05,0.90);
+  \draw[line width=0.5pt] (0.25,0.35) -- (2.05,0.35);
+  \draw[line width=0.5pt] (0.25,0.70) -- (2.05,0.70);
+  \node[font=\small] at (0.55,0.50) {$N$};
+  % swing arrow under ring to the left
+  \draw[line width=0.6pt,->] (0.55,-0.85) .. controls (0.10,-1.05) and (-0.40,-1.05) .. (-0.85,-0.85);
+  \draw[line width=0.35pt] (0.50,-0.72) .. controls (0.10,-0.92) and (-0.40,-0.92) .. (-0.75,-0.75);
+\end{tikzpicture}%
+}
+\caption{习题4.2第7题 悬挂铜环旁条形磁铁N极靠近时环偏摆}
 \end{figure}
 
-\emph{（第7题）}
+\emph{习题4.2第7题 悬挂铜环旁条形磁铁N极靠近时环偏摆}
 
 面的副线圈，\(E\)
 是一根塞在原线圈里面的软铁棒。（1）当原线圈里有稳恒电流通过时，副线圈里有没有感生电流？为什么？（2）当把软铁棒拔出或插进的那一瞬时，副线圈里有没有感生电流？为什么？（3）拔出或插入软铁棒时，感生电流的方向是怎样的？（与原线圈里的电流方向相比较）（4）拔出或插入软铁棒时，要不要做功？是抵抗什么力做功？
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-3/fig-p0275-03.png}}
-\caption{(第8题)}
+\fitfig{%
+% fig-alt: 习题4.2第8题 软铁棒R上绕原线圈P（接电源）与外套副线圈S（接检流计G）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % iron core R (extends beyond coils)
+  \fill[black!8] (-2.55,0.60) rectangle (2.55,1.30);
+  \draw[line width=0.65pt] (-2.55,0.60) rectangle (2.55,1.30);
+  \foreach \x in {-2.55,-2.40} {\draw[line width=0.35pt] (\x,0.60) -- (\x,1.30);}
+  \foreach \x in {2.40,2.55} {\draw[line width=0.35pt] (\x,0.60) -- (\x,1.30);}
+  \node[anchor=west,inner sep=2pt] at (2.65,0.95) {$R$};
+  % primary P: dense windings along core, visible outside S
+  \foreach \x in {-2.20,-2.00,-1.80,-1.60,1.45,1.65,1.85,2.05} {
+    \draw[line width=0.5pt] (\x,0.52) -- (\x+0.10,1.38);
+  }
+  \node[anchor=south,inner sep=1pt] at (-1.90,1.42) {$P$};
+  % secondary S: wider outer coil in center
+  \fill[white] (-1.25,0.38) rectangle (1.20,1.52);
+  \draw[line width=0.6pt] (-1.25,0.38) rectangle (1.20,1.52);
+  \foreach \x in {-1.15,-0.95,-0.75,-0.55,-0.35,-0.15,0.05,0.25,0.45,0.65,0.85,1.05} {
+    \draw[line width=0.65pt] (\x,0.38) -- (\x+0.12,1.52);
+  }
+  \node[anchor=south,inner sep=1pt] at (-0.05,1.58) {$S$};
+  % redraw core visible through? keep S opaque for clarity
+  % S leads → G
+  \draw[line width=0.55pt] (-1.15,0.38) -- (-1.15,-0.50) -- (-0.38,-0.50);
+  \draw[line width=0.55pt] (1.10,0.38) -- (1.10,-0.50) -- (0.38,-0.50);
+  \draw[line width=0.7pt] (0,-0.50) circle[radius=0.36];
+  \node at (0,-0.50) {$G$};
+  % P leads → battery (outer)
+  \draw[line width=0.55pt] (-2.15,0.52) -- (-2.15,-1.20) -- (-0.55,-1.20);
+  \draw[line width=0.55pt] (2.00,0.52) -- (2.00,-1.20) -- (0.55,-1.20);
+  \draw[line width=0.7pt] (-0.35,-1.50) -- (-0.35,-0.90);
+  \draw[line width=0.5pt] (-0.20,-1.40) -- (-0.20,-1.00);
+  \draw[line width=0.7pt] (-0.05,-1.50) -- (-0.05,-0.90);
+  \draw[line width=0.5pt] (0.10,-1.40) -- (0.10,-1.00);
+  \draw[line width=0.7pt] (0.25,-1.50) -- (0.25,-0.90);
+  \draw[line width=0.5pt] (0.40,-1.40) -- (0.40,-1.00);
+  \draw[line width=0.55pt] (-0.55,-1.20) -- (-0.35,-1.20);
+  \draw[line width=0.55pt] (0.40,-1.20) -- (0.55,-1.20);
+\end{tikzpicture}%
+}
+
+\caption{习题4.2第8题 软铁棒R上原线圈P与副线圈S接检流计G}
 \end{figure}
 
-\emph{（第8题）}
+\emph{习题4.2第8题 软铁棒R上原线圈P与副线圈S接检流计G}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/physics-3/fig-p0275-04.png}}
-\caption{(第9题)}
+\fitfig{%
+% fig-alt: 习题4.2第9题 金属框cdef内有可动导线ab；左右边接检流计G；框内匀强磁场×垂直纸面向里
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % outer frame
+  \draw[line width=0.7pt] (-2.20,1.40) -- (2.20,1.40);
+  \draw[line width=0.7pt] (-2.20,-1.40) -- (2.20,-1.40);
+  % left vertical with G gap
+  \draw[line width=0.7pt] (-2.20,1.40) -- (-2.20,0.40);
+  \draw[line width=0.7pt] (-2.20,-0.40) -- (-2.20,-1.40);
+  \draw[line width=0.7pt] (-2.20,0) circle[radius=0.40];
+  \node at (-2.20,0) {$G$};
+  % right vertical with G gap
+  \draw[line width=0.7pt] (2.20,1.40) -- (2.20,0.40);
+  \draw[line width=0.7pt] (2.20,-0.40) -- (2.20,-1.40);
+  \draw[line width=0.7pt] (2.20,0) circle[radius=0.40];
+  \node at (2.20,0) {$G$};
+  % sliding bar ab (double line thickness)
+  \draw[line width=1.1pt] (0,1.55) -- (0,-1.55);
+  \draw[line width=0.45pt] (0.08,1.50) -- (0.08,-1.50);
+  % B field crosses
+  \foreach \x in {-1.70,-1.15,-0.60,0.55,1.10,1.65} {
+    \foreach \y in {-1.05,-0.55,0.55,1.05} {
+      \draw[line width=0.4pt] (\x-0.10,\y-0.10) -- (\x+0.10,\y+0.10);
+      \draw[line width=0.4pt] (\x-0.10,\y+0.10) -- (\x+0.10,\y-0.10);
+    }
+  }
+  % labels
+  \node[anchor=south east,inner sep=2pt] at (-2.20,1.40) {$f$};
+  \node[anchor=south,inner sep=2pt] at (0,1.55) {$b$};
+  \node[anchor=south west,inner sep=2pt] at (2.20,1.40) {$c$};
+  \node[anchor=north west,inner sep=2pt] at (2.20,-1.40) {$d$};
+  \node[anchor=north,inner sep=2pt] at (0,-1.55) {$a$};
+  \node[anchor=north east,inner sep=2pt] at (-2.20,-1.40) {$e$};
+\end{tikzpicture}%
+}
+\caption{习题4.2第9题 金属框cdef内导线ab可动，左右接G，磁场×向里}
 \end{figure}
 
-\emph{（第9题）}
+\emph{习题4.2第9题 金属框cdef内导线ab可动，左右接G，磁场×向里}
 
 \begin{enumerate}
 \setcounter{enumi}{8}
@@ -20516,23 +20705,77 @@ AB 在磁场中沿 M 方向作定向运动时，它所带的正负电荷也就�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.13 惠宝电动势的形成}]{assets/physics-3/fig-p0276-01.png}}
-\caption{图 4.13 惠宝电动势的形成}
+\fitfig{%
+% fig-alt: 图4.13 感生电动势的形成。(a)导线AB在N–S磁场中沿M方向切割磁力线；(b)截面示自由电子受磁场力f向下，B端积正、A端积负
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % ========== (a) ==========
+  \begin{scope}[shift={(-3.35,0)}]
+    % N pole block (top)
+    \fill[black!7] (-1.35,1.55) -- (1.35,1.55) -- (1.55,1.80) -- (1.55,2.35) -- (-1.15,2.35) -- (-1.35,2.10) -- cycle;
+    \draw[line width=0.65pt] (-1.35,1.55) -- (1.35,1.55) -- (1.55,1.80) -- (1.55,2.35) -- (-1.15,2.35) -- (-1.35,2.10) -- cycle;
+    \draw[line width=0.5pt] (-1.35,2.10) -- (1.35,2.10) -- (1.55,2.35);
+    \draw[line width=0.5pt] (1.35,1.55) -- (1.35,2.10);
+    \node[font=\small] at (0.10,1.82) {$N$};
+    % S pole block (bottom)
+    \fill[black!7] (-1.35,-2.10) -- (1.35,-2.10) -- (1.55,-1.85) -- (1.55,-1.30) -- (-1.15,-1.30) -- (-1.35,-1.55) -- cycle;
+    \draw[line width=0.65pt] (-1.35,-2.10) -- (1.35,-2.10) -- (1.55,-1.85) -- (1.55,-1.30) -- (-1.15,-1.30) -- (-1.35,-1.55) -- cycle;
+    \draw[line width=0.5pt] (-1.35,-1.55) -- (1.35,-1.55) -- (1.55,-1.30);
+    \draw[line width=0.5pt] (1.35,-2.10) -- (1.35,-1.55);
+    \node[font=\small] at (0.10,-1.70) {$S$};
+    % B field lines down
+    \foreach \x in {-0.95,-0.55,-0.15,0.25,0.65,1.05} {
+      \draw[line width=0.45pt,->] (\x,1.50) -- (\x,-1.25);
+    }
+    % rod AB (cylinder-ish)
+    \fill[white] (-1.85,-0.12) rectangle (1.85,0.12);
+    \draw[line width=0.7pt] (-1.85,-0.12) -- (1.85,-0.12) -- (1.95,0.00) -- (1.85,0.12) -- (-1.85,0.12) -- (-1.95,0.00) -- cycle;
+    \node[anchor=east,inner sep=2pt] at (-1.95,0.05) {$A$};
+    \node[anchor=west,inner sep=2pt] at (1.95,0.05) {$B$};
+    % M arrow toward viewer (perspective)
+    \draw[line width=0.75pt,->] (0.15,0.20) -- (0.85,0.85);
+    \node[anchor=south west,inner sep=1pt] at (0.70,0.85) {$M$};
+    \node[anchor=north,inner sep=3pt] at (0,-2.55) {(a)};
+  \end{scope}
+  % ========== (b) ==========
+  \begin{scope}[shift={(3.55,0)}]
+    % B field x grid
+    \foreach \x in {-1.35,-0.90,-0.45,0.45,0.90,1.35} {
+      \foreach \y in {-1.70,-1.20,-0.70,-0.20,0.30,0.80,1.30,1.70} {
+        \draw[line width=0.35pt] (\x-0.10,\y-0.10) -- (\x+0.10,\y+0.10);
+        \draw[line width=0.35pt] (\x-0.10,\y+0.10) -- (\x+0.10,\y-0.10);
+      }
+    }
+    \node[anchor=south,inner sep=2pt] at (0,1.95) {$B$};
+    % conductor rod (vertical rectangle with end caps)
+    \fill[white] (-0.32,-1.55) rectangle (0.32,1.55);
+    \draw[line width=0.7pt] (-0.32,-1.55) rectangle (0.32,1.55);
+    \draw[line width=0.55pt,fill=black!15] (0,1.55) ellipse[x radius=0.32,y radius=0.10];
+    \draw[line width=0.55pt,fill=black!10] (0,-1.55) ellipse[x radius=0.32,y radius=0.10];
+    % + at top B, - at bottom A
+    \foreach \x/\y in {-0.12/1.25,0.12/1.25,-0.12/1.00,0.12/1.00} {
+      \node[font=\scriptsize,inner sep=0pt] at (\x,\y) {$+$};
+    }
+    \foreach \x/\y in {-0.12/-1.25,0.12/-1.25,-0.12/-1.00,0.12/-1.00} {
+      \node[font=\scriptsize,inner sep=0pt] at (\x,\y) {$-$};
+    }
+    \node[anchor=west,inner sep=3pt] at (0.35,1.45) {$B$};
+    \node[anchor=west,inner sep=3pt] at (0.35,-1.45) {$A$};
+    % electron and f down
+    \draw[line width=0.6pt] (0,0.15) circle[radius=0.18];
+    \node[font=\small,inner sep=0pt] at (0,0.15) {$-$};
+    \draw[line width=0.7pt,->] (0,-0.08) -- (0,-0.85);
+    \node[anchor=west,inner sep=2pt] at (0.05,-0.55) {$f$};
+    % M to the right
+    \draw[line width=0.7pt,->] (0.40,0.15) -- (1.25,0.15);
+    \node[anchor=west,inner sep=2pt] at (1.28,0.15) {$M$};
+    \node[anchor=north,inner sep=3pt] at (0,-2.55) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图4.13 感生电动势的形成}
 \end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.13 惠宝电动势的形成}]{assets/physics-3/fig-p0276-02.png}}
-\caption{图 4.13 惠宝电动势的形成}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.13 惠宝电动势的形成}]{assets/physics-3/fig-p0276-03.png}}
-\caption{图 4.13 惠宝电动势的形成}
-\end{figure}
-
-\emph{图 4.13 惠宝电动势的形成}
+\emph{图4.13 感生电动势的形成}
 
 向 B 端的磁场力作用。沿 M 方向运动的负电荷，形成与 M
 方向相反的电流；它们所受到的磁场力方向与正电荷所受到的相反，指向导线的 A
