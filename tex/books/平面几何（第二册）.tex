@@ -18622,8 +18622,43 @@ s = \frac {1}{2} (13 + 14 + 15) = 21.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第22题)}]{assets/plane-geometry-2/fig-p0201-01.png}}
-\caption{(第22题)}
+\fitfig{%
+% fig-alt: （第22题）直角△ABC（∠C直角）；斜边AB下正方形ABED；AC外正方形ACGF；BC外正方形BCKJ；CH⊥AB于H并延至DE于I；连FB、CD
+\begin{tikzpicture}[line cap=round,line join=round,scale=0.88]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5.00,0);
+  \coordinate (C) at (1.80,2.40);
+  % AC=(1.8,2.4); rotate90CCW=(-2.4,1.8)
+  \coordinate (F) at (-2.40,1.80);
+  \coordinate (G) at (-0.60,4.20);
+  % BC=C-B=(-3.2,2.4); rotate90CW=(2.4,3.2) outward
+  \coordinate (K) at (7.40,3.20);
+  \coordinate (J) at (4.20,5.60);
+  \coordinate (D) at (0,-5.00);
+  \coordinate (E) at (5.00,-5.00);
+  \coordinate (H) at (1.80,0);
+  \coordinate (I) at (1.80,-5.00);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (F) -- (G) -- (C);
+  \draw[line width=0.75pt] (B) -- (K) -- (J) -- (C);
+  \draw[line width=0.75pt] (A) -- (D) -- (E) -- (B);
+  \draw[line width=0.75pt] (C) -- (I);
+  \draw[line width=0.75pt] (F) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \node[anchor=north east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south,inner sep=2pt] at (C) {$C$};
+  \node[anchor=east,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=west,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=east,inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south east,inner sep=1pt] at (G) {$G$};
+  \node[anchor=north east,inner sep=1.5pt] at (H) {$H$};
+  \node[anchor=north,inner sep=1.5pt] at (I) {$I$};
+  \node[anchor=south,inner sep=1.5pt] at (J) {$J$};
+  \node[anchor=west,inner sep=1.5pt] at (K) {$K$};
+\end{tikzpicture}%
+}
+\caption{（第22题）}
 \end{figure}
 
 \begin{quote}
@@ -18666,8 +18701,33 @@ s = \frac {1}{2} (13 + 14 + 15) = 21.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-19}]{assets/plane-geometry-2/fig-p0202-01.png}}
-\caption{图3-19}
+\fitfig{%
+% fig-alt: 图3·19 梯形ABCD（AB下∥CD上）；对角虚线AC；高DD'实线；AA'、CC'虚线（A'在CD延长线上）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5.20,0);
+  \coordinate (Dp) at (1.35,0);
+  \coordinate (Cp) at (3.85,0);
+  \coordinate (D) at (1.35,2.15);
+  \coordinate (C) at (3.85,2.15);
+  \coordinate (Ap) at (0,2.15);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (A) -- (D) -- (C) -- (B);
+  \draw[line width=0.75pt] (D) -- (Dp);
+  \draw[dashed,line width=0.6pt] (A) -- (Ap);
+  \draw[dashed,line width=0.6pt] (Ap) -- (D);
+  \draw[dashed,line width=0.6pt] (C) -- (Cp);
+  \draw[dashed,line width=0.6pt] (A) -- (C);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (Ap) {$A'$};
+  \node[anchor=north,inner sep=1.5pt] at (Dp) {$D'$};
+  \node[anchor=north,inner sep=1.5pt] at (Cp) {$C'$};
+\end{tikzpicture}%
+}
+\caption{图3·19}
 \end{figure}
 
 \begin{quote}
@@ -18676,8 +18736,29 @@ s = \frac {1}{2} (13 + 14 + 15) = 21.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3-20}]{assets/plane-geometry-2/fig-p0202-02.png}}
-\caption{图 3-20}
+\fitfig{%
+% fig-alt: 图3·20 梯形ABCD（AB下∥DC上）；中位线NM（N在AD、M在BC）；高CC'⊥AB于C'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5.40,0);
+  \coordinate (D) at (1.35,2.40);
+  \coordinate (C) at (4.05,2.40);
+  \coordinate (Cp) at (4.05,0);
+  \coordinate (N) at ($(A)!0.5!(D)$);
+  \coordinate (M) at ($(B)!0.5!(C)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (N) -- (M);
+  \draw[line width=0.75pt] (C) -- (Cp);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=east,inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=west,inner sep=1.5pt] at (M) {$M$};
+  \node[anchor=north,inner sep=1.5pt] at (Cp) {$C'$};
+\end{tikzpicture}%
+}
+\caption{图3·20}
 \end{figure}
 
 \begin{quote}
@@ -18713,12 +18794,31 @@ M N = \frac {1}{2} (A B + C D)\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图.3-21}]{assets/plane-geometry-2/fig-p0203-01.png}}
-\caption{图.3-21}
+\fitfig{%
+% fig-alt: 图3·21 等腰梯形ABCD（AB下∥CD上）；虚线高DD'、CC'⊥AB
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.60,0);
+  \coordinate (D) at (0.72,2.00);
+  \coordinate (C) at (3.88,2.00);
+  \coordinate (Dp) at (0.72,0);
+  \coordinate (Cp) at (3.88,0);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed,line width=0.6pt] (D) -- (Dp);
+  \draw[dashed,line width=0.6pt] (C) -- (Cp);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (Dp) {$D'$};
+  \node[anchor=north,inner sep=1.5pt] at (Cp) {$C'$};
+\end{tikzpicture}%
+}
+\caption{图3·21}
 \end{figure}
 
 \begin{quote}
-图.3-21
+图3·21
 \end{quote}
 
 \textbf{［已知］} 在梯形 \(ABCD\) 中，
@@ -18770,8 +18870,33 @@ D D ^ {\prime} = \sqrt {A D ^ {2} - A D ^ {\prime 2}} = \sqrt {41 ^ {2} - 9 ^ {2
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-22}]{assets/plane-geometry-2/fig-p0204-01.png}}
-\caption{图3-22}
+\fitfig{%
+% fig-alt: 图3·22 直角梯形ABCD（∠B直角，∠A=30°）；虚线高DD'⊥AB于D'（直角方）；∠B直角方
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\h{1.70}
+  \def\ad{3.40} % AD=2h for 30°
+  \pgfmathsetmacro{\adx}{\ad*cos(30)}
+  \coordinate (A) at (0,0);
+  \coordinate (Dp) at ({\adx},0);
+  \coordinate (D) at ({\adx},\h);
+  \coordinate (B) at ({\adx+2.60},0);
+  \coordinate (C) at ({\adx+2.60},\h);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[dashed,line width=0.6pt] (D) -- (Dp);
+  % right angle at D'
+  \draw[line width=0.55pt] (Dp) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
+  % right angle at B
+  \draw[line width=0.55pt] (B) -- ++(-0.16,0) -- ++(0,0.16) -- ++(0.16,0);
+  \draw[line width=0.55pt] (0.55,0) arc[start angle=0, end angle=30, radius=0.55];
+  \node[anchor=south west,inner sep=1pt] at (0.62,0.10) {$30^\circ$};
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (Dp) {$D'$};
+\end{tikzpicture}%
+}
+\caption{图3·22}
 \end{figure}
 
 \begin{quote}
@@ -18819,7 +18944,80 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·23}]{assets/plane-geometry-2/fig-p0205-01.png}}
+\fitfig{%
+% fig-alt: 图3·23（1）多边形ABCDEF自A连AC/AD/AE成△I–IV，虚线高；（2）多边形ABCDEFGH以GC为水平轴、左竖边过G，虚线垂线分I–VIII
+\begin{tikzpicture}[line cap=round,line join=round,scale=0.95]
+  % ---- (1) ----
+  \begin{scope}[shift={(0,0)}]
+    \coordinate (A) at (1.60,0.10);
+    \coordinate (B) at (2.95,0.55);
+    \coordinate (C) at (3.55,1.70);
+    \coordinate (D) at (2.35,2.95);
+    \coordinate (E) at (0.45,2.75);
+    \coordinate (F) at (0.10,1.40);
+    \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+    \draw[line width=0.75pt] (A) -- (C);
+    \draw[line width=0.75pt] (A) -- (D);
+    \draw[line width=0.75pt] (A) -- (E);
+    \coordinate (Bac) at ($(A)!(B)!(C)$);
+    \coordinate (Dac) at ($(A)!(D)!(C)$);
+    \coordinate (Cad) at ($(A)!(C)!(D)$);
+    \coordinate (Ead) at ($(A)!(E)!(D)$);
+    \coordinate (Dae) at ($(A)!(D)!(E)$);
+    \coordinate (Fae) at ($(A)!(F)!(E)$);
+    \draw[dashed,line width=0.55pt] (B) -- (Bac);
+    \draw[dashed,line width=0.55pt] (D) -- (Dac);
+    \draw[dashed,line width=0.55pt] (C) -- (Cad);
+    \draw[dashed,line width=0.55pt] (E) -- (Ead);
+    \draw[dashed,line width=0.55pt] (D) -- (Dae);
+    \draw[dashed,line width=0.55pt] (F) -- (Fae);
+    \node[anchor=north,inner sep=1pt] at (A) {$A$};
+    \node[anchor=west,inner sep=1pt] at (B) {$B$};
+    \node[anchor=west,inner sep=1pt] at (C) {$C$};
+    \node[anchor=south,inner sep=1pt] at (D) {$D$};
+    \node[anchor=south,inner sep=1pt] at (E) {$E$};
+    \node[anchor=east,inner sep=1pt] at (F) {$F$};
+    \node at (2.55,0.70) {$I$};
+    \node at (2.55,1.85) {$II$};
+    \node at (1.35,1.85) {$III$};
+    \node at (0.85,1.15) {$IV$};
+    \node[anchor=north] at (1.80,-0.25) {$(1)$};
+  \end{scope}
+  % ---- (2) ----
+  \begin{scope}[shift={(4.85,0.20)}]
+    \coordinate (G) at (0.00,1.35);
+    \coordinate (H) at (0.00,0.50);
+    \coordinate (A2) at (1.55,0.28);
+    \coordinate (B2) at (2.55,0.02);
+    \coordinate (C2) at (3.60,1.35);
+    \coordinate (D2) at (2.70,2.40);
+    \coordinate (E2) at (1.05,2.20);
+    \coordinate (F2) at (0.00,2.55);
+    \draw[line width=0.75pt] (F2) -- (E2) -- (D2) -- (C2) -- (B2) -- (A2) -- (H) -- cycle;
+    \draw[dashed,line width=0.55pt] (G) -- (C2);
+    \foreach \P in {F2,E2,D2,H,A2,B2} {
+      \draw[dashed,line width=0.55pt] (\P) -- ({\P|-G});
+    }
+    \node[anchor=east,inner sep=1.5pt] at (G) {$G$};
+    \node[anchor=east,inner sep=1pt] at (H) {$H$};
+    \node[anchor=north,inner sep=1pt] at (A2) {$A$};
+    \node[anchor=north,inner sep=1pt] at (B2) {$B$};
+    \node[anchor=west,inner sep=1pt] at (C2) {$C$};
+    \node[anchor=south,inner sep=1pt] at (D2) {$D$};
+    \node[anchor=south,inner sep=1pt] at (E2) {$E$};
+    \node[anchor=south east,inner sep=1pt] at (F2) {$F$};
+    \node at (0.40,0.90) {$I$};
+    \node at (0.80,0.78) {$II$};
+    \node at (2.05,0.68) {$III$};
+    \node at (3.05,0.80) {$IV$};
+    \node at (3.15,1.75) {$V$};
+    \node at (1.90,1.80) {$VI$};
+    \node at (0.55,1.80) {$VII$};
+    \node at (0.22,1.85) {$VIII$};
+    \node[anchor=north] at (1.80,-0.30) {$(2)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3·23}
 \end{figure}
 
@@ -18849,8 +19047,32 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0205-03.png}}
-\caption{(第5题)}
+\fitfig{%
+% fig-alt: （第5题）直角梯形/矩形ABCF（AB⊥BC，FC∥AB）；BE∥CD；BE交FC于G；E、D在AF延长线上
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (2.10,0);
+  \coordinate (A) at (0,2.55);
+  \coordinate (F) at (2.10,2.55);
+  \coordinate (E) at (3.55,2.55);
+  \coordinate (D) at (5.65,2.55);
+  \coordinate (G) at (intersection of B--E and F--C);
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (B) -- (C);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (F) -- (C);
+  \draw[line width=0.75pt] (B) -- (E);
+  \draw[line width=0.75pt] (C) -- (D);
+  \node[anchor=south east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (E) {$E$};
+  \node[anchor=south,inner sep=1pt] at (F) {$F$};
+  \node[anchor=west,inner sep=1.5pt] at (G) {$G$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \begin{quote}
@@ -18859,8 +19081,34 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/plane-geometry-2/fig-p0205-04.png}}
-\caption{(第8题)}
+\fitfig{%
+% fig-alt: （第8题）直角梯形ABCD（AD上∥BC下，DC⊥底，直角方于C、D）；E在AD、F在BC、P在DC；连AP/EP/BP/FP
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (4.40,0);
+  \coordinate (A) at (0.85,2.55);
+  \coordinate (D) at (4.40,2.55);
+  \coordinate (E) at (2.95,2.55);
+  \coordinate (F) at (2.95,0);
+  \coordinate (P) at (4.40,1.55);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (P);
+  \draw[line width=0.75pt] (E) -- (P);
+  \draw[line width=0.75pt] (B) -- (P);
+  \draw[line width=0.75pt] (F) -- (P);
+  % right angles at D and C
+  \draw[line width=0.55pt] (D) -- ++(-0.16,0) -- ++(0,-0.16) -- ++(0.16,0);
+  \draw[line width=0.55pt] (C) -- ++(-0.16,0) -- ++(0,0.16) -- ++(0.16,0);
+  \node[anchor=south east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1pt] at (F) {$F$};
+  \node[anchor=west,inner sep=1.5pt] at (P) {$P$};
+\end{tikzpicture}%
+}
+\caption{（第8题）}
 \end{figure}
 
 \begin{quote}
