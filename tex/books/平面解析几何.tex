@@ -16667,7 +16667,21 @@ x^{2} = - \frac {a^{2}}{h} y \quad \left(p = \frac {a^{2}}{2 h}\right)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·60}]{assets/analytic-geometry/fig-p0229-02.png}}
+\fitfig{%
+% fig-alt: 图4·60 曲线上切点 P1，切线 T 与法线 N 垂直，无坐标轴
+\begin{tikzpicture}[x=0.95cm,y=0.95cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (0.55,-1.55) .. controls (0.72,-0.35) and (0.95,0.35) .. (1.60,0.85)
+    .. controls (2.15,1.25) and (2.85,1.28) .. (3.75,1.08)
+    .. controls (4.30,0.95) and (4.70,0.68) .. (5.10,0.28);
+  \draw[line width=0.65pt] (0.15,-0.60) -- (3.25,2.50);
+  \node[anchor=south west,inner sep=1pt] at (3.10,2.40) {$T$};
+  \draw[line width=0.65pt] (-0.10,2.15) -- (2.90,-0.85);
+  \node[anchor=south east,inner sep=1pt] at (0.00,2.18) {$N$};
+  \draw[line width=0.35pt] (1.727,0.977) -- (1.60,1.105) -- (1.473,0.977);
+  \fill (1.60,0.85) circle (1.15pt);
+  \node[anchor=north east,inner sep=1pt] at (1.48,0.72) {$P_{1}$};
+\end{tikzpicture}%
+}
 \caption{图4·60}
 \end{figure}
 
@@ -16688,7 +16702,32 @@ x^{2} = - \frac {a^{2}}{h} y \quad \left(p = \frac {a^{2}}{2 h}\right)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·61}]{assets/analytic-geometry/fig-p0230-01.png}}
+\fitfig{%
+% fig-alt: 图4·61 曲线上 P1、P2，切线 T、割线与 Δx、Δy，Q 为直角顶点
+\begin{tikzpicture}[x=0.92cm,y=0.88cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (0.45,-0.45) .. controls (0.85,0.45) and (1.25,1.05) .. (2.10,1.62)
+    .. controls (2.70,1.95) and (3.35,2.18) .. (4.05,2.26)
+    .. controls (4.70,2.32) and (5.25,2.22) .. (5.70,1.95);
+  \draw[line width=0.65pt] (1.05,0.22) -- (3.45,3.42);
+  \node[anchor=south west,inner sep=1pt] at (3.30,3.30) {$T$};
+  \draw[line width=0.6pt] (1.40,1.39) -- (4.70,2.47);
+  \draw[dashed,line width=0.45pt] (2.10,1.62) -- (4.05,1.62) -- (4.05,2.26);
+  \draw[line width=0.4pt] (2.48,1.62) arc (0:18:0.55);
+  \fill (2.10,1.62) circle (1.15pt);
+  \fill (4.05,2.26) circle (1.15pt);
+  \draw[line width=0.75pt] (-0.25,0) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (6.05,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-0.55) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (0,3.35) node[above=1pt] {$y$};
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east] at (-0.04,-0.04) {$O$};
+  \node[anchor=north west,inner sep=1pt] at (2.18,1.48) {$P_{1}(x_{1},\,y_{1})$};
+  \node[anchor=west,inner sep=1pt] at (4.18,2.32) {$P_{2}(x_{1}+\Delta x,\,y_{1}+\Delta y)$};
+  \node[anchor=north west,inner sep=1pt] at (4.12,1.55) {$Q$};
+  \node[anchor=south,inner sep=1pt] at (3.05,1.68) {$\Delta x$};
+  \node[anchor=east,inner sep=1pt] at (3.95,1.95) {$\Delta y$};
+\end{tikzpicture}%
+}
 \caption{图4·61}
 \end{figure}
 
@@ -16739,7 +16778,27 @@ k _ {P_{1} P} = \lim_ {\substack {\Delta x \rightarrow 0\\\Delta y \rightarrow 0
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-62}]{assets/analytic-geometry/fig-p0231-01.png}}
+\fitfig{%
+% fig-alt: 图4-62 抛物线开口向右过原点，P1、P2 与切线、割线，虚线标 Δx、Δy
+\begin{tikzpicture}[x=0.85cm,y=0.78cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] plot[domain=-2.55:2.75,samples=60] ({\x*\x/2.2},\x);
+  \draw[line width=0.6pt] (-0.80,-0.13) -- (3.40,3.72);
+  \draw[line width=0.6pt] (-0.20,0.63) -- (3.50,3.10);
+  \draw[dashed,line width=0.45pt] (0.655,1.20) -- (2.005,1.20) -- (2.005,2.10);
+  \fill (0.655,1.20) circle (1.15pt);
+  \fill (2.005,2.10) circle (1.15pt);
+  \draw[line width=0.75pt] (-0.95,0) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (4.35,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-2.75) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (0,3.15) node[above=1pt] {$y$};
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east] at (-0.04,-0.04) {$O$};
+  \node[anchor=north west,inner sep=1pt] at (0.78,1.05) {$P_{1}(x_{1},\,y_{1})$};
+  \node[anchor=west,inner sep=1pt] at (2.18,2.18) {$P_{2}(x_{1}+\Delta x,\,y_{1}+\Delta y)$};
+  \node[anchor=south,inner sep=1pt] at (1.33,1.28) {$\Delta x$};
+  \node[anchor=west,inner sep=1pt] at (2.12,1.65) {$\Delta y$};
+\end{tikzpicture}%
+}
 \caption{图4-62}
 \end{figure}
 
@@ -16922,7 +16981,25 @@ y - y_{1} = - \frac {y_{1}}{p} (x - x_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·63}]{assets/analytic-geometry/fig-p0234-01.png}}
+\fitfig{%
+% fig-alt: 图4·63 抛物线 y^2=8x，P(2,-4) 处切线 T 与法线 N，轴有刻度
+\begin{tikzpicture}[x=0.42cm,y=0.42cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] plot[domain=-5.6:5.6,samples=70] ({\x*\x/8},\x);
+  \draw[line width=0.65pt] (-3.4,1.4) -- (4.2,-6.2);
+  \node[anchor=south east,inner sep=1pt] at (-3.2,1.25) {$T$};
+  \draw[line width=0.65pt] (-0.6,-6.6) -- (7.2,1.2);
+  \node[anchor=south west,inner sep=1pt] at (6.85,0.95) {$N$};
+  \fill (2,-4) circle (1.25pt);
+  \draw[line width=0.75pt,-latex] (-3.8,0) -- (8.0,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-6.8) -- (0,6.2) node[above=1pt] {$y$};
+  \foreach \k in {-3,-2,-1,1,2,3,4,5,6,7}
+    \draw[line width=0.32pt] (\k,-0.18) -- (\k,0.18);
+  \foreach \k in {-6,-5,-4,-3,-2,-1,1,2,3,4,5}
+    \draw[line width=0.32pt] (-0.18,\k) -- (0.18,\k);
+  \node[anchor=north east] at (-0.12,-0.12) {$O$};
+  \node[anchor=west,inner sep=1pt] at (2.25,-4.05) {$P(2,\,-4)$};
+\end{tikzpicture}%
+}
 \caption{图4·63}
 \end{figure}
 
@@ -16984,7 +17061,27 @@ y - y_{1} = - \frac {y_{1}}{p} (x - x_{1}),
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-64}]{assets/analytic-geometry/fig-p0235-01.png}}
+\fitfig{%
+% fig-alt: 图4-64 抛物线 2y^2=9x，过 A(-6,3) 的两切线切于 P(18,9)、P'(2,-3)
+\begin{tikzpicture}[x=0.18cm,y=0.18cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] plot[domain=-10.2:11.5,samples=80] ({\x*\x*2/9},\x);
+  \draw[line width=0.65pt] (-8.5,2.375) -- (20.5,9.625);
+  \draw[line width=0.65pt] (-9.0,5.25) -- (5.0,-5.25);
+  \fill (-6,3) circle (1.35pt);
+  \fill (18,9) circle (1.35pt);
+  \fill (2,-3) circle (1.35pt);
+  \draw[line width=0.75pt,-latex] (-9.5,0) -- (22.5,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-8.5) -- (0,12.2) node[above=1pt] {$y$};
+  \foreach \k in {-8,-6,-4,-2,2,4,6,8,10,12,14,16,18,20}
+    \draw[line width=0.28pt] (\k,-0.35) -- (\k,0.35);
+  \foreach \k in {-8,-6,-4,-2,2,4,6,8,10}
+    \draw[line width=0.28pt] (-0.35,\k) -- (0.35,\k);
+  \node[anchor=north east] at (-0.2,-0.2) {$O$};
+  \node[anchor=south east,inner sep=1pt] at (-6.2,3.3) {$A(-6,\,3)$};
+  \node[anchor=north west,inner sep=1pt] at (18.3,8.7) {$P(18,\,9)$};
+  \node[anchor=west,inner sep=1pt] at (2.4,-3.1) {$P'(2,\,-3)$};
+\end{tikzpicture}%
+}
 \caption{图4-64}
 \end{figure}
 
@@ -17066,7 +17163,26 @@ x - 4 y + 18 = 0 \quad \text {\text{和}} \quad 3 x + 4 y + 6 = 0.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4·65}]{assets/analytic-geometry/fig-p0237-01.png}}
+\fitfig{%
+% fig-alt: 图4·65 椭圆上第二象限 P1、P2，割线与虚线标 Δx、Δy
+\begin{tikzpicture}[x=0.95cm,y=0.95cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (0,0) ellipse (2.55 and 1.55);
+  \draw[line width=0.6pt] (-3.05,0.39) -- (0.25,2.05);
+  \draw[dashed,line width=0.45pt] (-2.55,0.819) -- (-0.955,0.819) -- (-0.955,1.437);
+  \fill (-2.162,0.819) circle (1.15pt);
+  \fill (-0.955,1.437) circle (1.15pt);
+  \draw[line width=0.75pt] (-3.15,0) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (3.25,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt] (0,-1.95) -- (0,0);
+  \draw[line width=0.75pt,-latex] (0,0) -- (0,2.15) node[above=1pt] {$y$};
+  \fill (0,0) circle (1.0pt);
+  \node[anchor=north east] at (-0.06,-0.06) {$O$};
+  \node[anchor=south east,inner sep=1pt] at (-2.25,0.95) {$P_{1}(x_{1},\,y_{1})$};
+  \node[anchor=south,inner sep=1pt] at (-0.55,1.55) {$P_{2}(x_{1}+\Delta x,\,y_{1}+\Delta y)$};
+  \node[anchor=north,inner sep=1pt] at (-1.55,0.72) {$\Delta x$};
+  \node[anchor=west,inner sep=1pt] at (-0.82,1.12) {$\Delta y$};
+\end{tikzpicture}%
+}
 \caption{图4·65}
 \end{figure}
 
@@ -17237,7 +17353,24 @@ y - y_{1} = - \frac {2 A x_{1} + B y_{1} + D}{B x_{1} + 2 C y_{1} + E} (x - x_{1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-66}]{assets/analytic-geometry/fig-p0240-01.png}}
+\fitfig{%
+% fig-alt: 图4-66 双曲线 xy=2 与切线 2x+y-4=0，切点 P(1,2)，轴有刻度
+\begin{tikzpicture}[x=0.55cm,y=0.55cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] plot[domain=0.42:5.2,samples=50] (\x,{2/\x});
+  \draw[line width=0.75pt] plot[domain=-5.2:-0.42,samples=50] (\x,{2/\x});
+  \draw[line width=0.65pt] (-0.35,4.70) -- (2.85,-1.70);
+  \fill (1,2) circle (1.2pt);
+  \draw[line width=0.75pt,-latex] (-4.6,0) -- (5.6,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-4.6) -- (0,5.2) node[above=1pt] {$y$};
+  \foreach \k in {-4,-3,-2,-1,1,2,3,4,5}
+    \draw[line width=0.32pt] (\k,-0.14) -- (\k,0.14);
+  \foreach \k in {-4,-3,-2,-1,1,2,3,4}
+    \draw[line width=0.32pt] (-0.14,\k) -- (0.14,\k);
+  \node[anchor=north east] at (-0.08,-0.08) {$O$};
+  \node[anchor=south west,inner sep=1pt] at (1.12,2.12) {$P(1,\,2)$};
+  \node[rotate=-63.4,anchor=north,inner sep=2pt] at (1.85,0.15) {$2x+y-4=0$};
+\end{tikzpicture}%
+}
 \caption{图4-66}
 \end{figure}
 
@@ -17245,7 +17378,27 @@ y - y_{1} = - \frac {2 A x_{1} + B y_{1} + D}{B x_{1} + 2 C y_{1} + E} (x - x_{1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-67}]{assets/analytic-geometry/fig-p0240-02.png}}
+\fitfig{%
+% fig-alt: 图4-67 椭圆 5x^2+y^2=5，过 A(-2,-1) 两切线切于 P1、P2，轴有刻度
+\begin{tikzpicture}[x=0.78cm,y=0.78cm,line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (0,0) ellipse (1 and 2.236);
+  \draw[line width=0.65pt] (-2.60,-2.20) -- (0.40,3.80);
+  \draw[line width=0.65pt] (-2.60,-0.60) -- (0.70,-2.80);
+  \fill (-2,-1) circle (1.2pt);
+  \fill (-0.6667,1.6667) circle (1.15pt);
+  \fill (-0.2857,-2.1429) circle (1.15pt);
+  \draw[line width=0.75pt,-latex] (-3.15,0) -- (2.55,0) node[right=1pt] {$x$};
+  \draw[line width=0.75pt,-latex] (0,-3.05) -- (0,3.15) node[above=1pt] {$y$};
+  \foreach \k in {-2,-1,1,2}
+    \draw[line width=0.32pt] (\k,-0.12) -- (\k,0.12);
+  \foreach \k in {-2,-1,1,2}
+    \draw[line width=0.32pt] (-0.12,\k) -- (0.12,\k);
+  \node[anchor=north east] at (-0.08,-0.08) {$O$};
+  \node[anchor=north east,inner sep=1pt] at (-2.08,-1.12) {$A(-2,\,-1)$};
+  \node[anchor=east,inner sep=1pt] at (-0.82,1.72) {$P_{1}$};
+  \node[anchor=north,inner sep=1pt] at (-0.28,-2.28) {$P_{2}$};
+\end{tikzpicture}%
+}
 \caption{图4-67}
 \end{figure}
 
