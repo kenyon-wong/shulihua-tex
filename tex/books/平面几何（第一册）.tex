@@ -25582,11 +25582,30 @@ BO，则\(\angle B\)是半圆上的圆周角，所以\(\angle B = d\)。又 AC
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-57}]{assets/plane-geometry-1/fig-p0258-01.png}}
-\caption{图4-57}
+\fitfig{%
+% fig-alt: 图4·57 圆内接△ABC，切线 DE 切于 A（底）；B 右上、C 左
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.350}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (0.000,-1.350);
+  \coordinate (B) at (0.794,1.092);
+  \coordinate (C) at (-1.343,-0.141);
+  \coordinate (D) at (-1.700,-1.350);
+  \coordinate (E) at (1.700,-1.350);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (D) -- (E);
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- cycle;
+  \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=east, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north east, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=north west, inner sep=1.2pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{图4·57}
 \end{figure}
 
-\emph{图 4·57}
+\emph{图4·57}
 
 从此，得\(\angle CAB = 180^{\circ} - \angle BAE - \angle CAD\)
 
@@ -25620,16 +25639,71 @@ AT，再设法证明\(AT \parallel EF\)，因为\(OA \perp AT\)，从而证得\(
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-1/fig-p0258-02.png}}
-\caption{(第5题)}
+\fitfig{%
+% fig-alt: （第5题）圆 O 内接△ABC；高 BE、CF；垂足 E（AC）、F（AB）；连 FE；半径 OA；切线 AT
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\R{1.400}
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (0.362,1.352);
+  \coordinate (B) at (-1.212,-0.700);
+  \coordinate (C) at (1.212,-0.700);
+  \coordinate (E) at (0.857,0.157);
+  \coordinate (F) at (-0.314,0.471);
+  \coordinate (T) at (1.425,1.068);
+  \coordinate (Tl) at (-0.169,1.495);
+  \draw[line width=0.75pt] (O) circle [radius=\R];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (B) -- (E);
+  \draw[line width=0.65pt] (C) -- (F);
+  \draw[line width=0.65pt] (F) -- (E);
+  \draw[line width=0.65pt] (O) -- (A);
+  \draw[line width=0.65pt] (Tl) -- (T);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=east, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=east, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=west, inner sep=1.2pt] at (T) {$T$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \emph{（第5题）}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/plane-geometry-1/fig-p0258-03.png}}
-\caption{(第6题)}
+\fitfig{%
+% fig-alt: （第6题）Rt△ABC（∠C=90°）内切圆 O；切点 D（AB）、E（AC）；AO 交圆于 P、Q；实线 DE；虚线 DP、DQ
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (C) at (0,0);
+  \coordinate (B) at (2.200,0);
+  \coordinate (A) at (0,3.000);
+  \coordinate (O) at (0.740,0.740);
+  \coordinate (D) at (1.337,1.177);
+  \coordinate (E) at (0.000,0.740);
+  \coordinate (P) at (0.510,1.443);
+  \coordinate (Q) at (0.970,0.037);
+  \draw[line width=0.75pt] (O) circle [radius=0.740];
+  \draw[line width=0.65pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (A) -- (Q);
+  \draw[line width=0.65pt] (D) -- (E);
+  \draw[line width=0.55pt, dashed] (D) -- (P);
+  \draw[line width=0.55pt, dashed] (D) -- (Q);
+  \fill (O) circle [radius=1.1pt];
+  \node[anchor=south east, inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north east, inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=north west, inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=south west, inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=east, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=west, inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=south east, inner sep=1.0pt] at (P) {$P$};
+  \node[anchor=west, inner sep=1.2pt] at (Q) {$Q$};
+\end{tikzpicture}%
+}
+\caption{（第6题）}
 \end{figure}
 
 \emph{（第6题）}
@@ -25665,43 +25739,144 @@ AT，再设法证明\(AT \parallel EF\)，因为\(OA \perp AT\)，从而证得\(
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1) 外离}]{assets/plane-geometry-1/fig-p0260-01.png}}
-\caption{(1) 外离}
+\fitfig{%
+% fig-alt: 图4·59（1）外离：左小圆 A（半径 r）、右大圆 B（半径 R）；连心线；圆心距 > R+r
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\ra{0.720}
+  \def\rb{1.050}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.850,0);
+  \coordinate (Ar) at (\ra,0);
+  \coordinate (Bl) at ({2.850-\rb},0);
+  \draw[line width=0.75pt] (A) circle [radius=\ra];
+  \draw[line width=0.75pt] (B) circle [radius=\rb];
+  \draw[line width=0.55pt, dashed] (A) -- (B);
+  \draw[line width=0.65pt, -latex] (A) -- (Ar);
+  \draw[line width=0.65pt, -latex] (Bl) -- (B);
+  \fill (A) circle [radius=1.1pt];
+  \fill (B) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (0.360,0) {$r$};
+  \node[anchor=south, inner sep=1.5pt] at (2.325,0) {$R$};
+\end{tikzpicture}%
+}
+\caption{（1）外离}
 \end{figure}
 
-\emph{（1） 外离}
+\emph{（1）外离}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2) 外切}]{assets/plane-geometry-1/fig-p0260-02.png}}
-\caption{(2) 外切}
+\fitfig{%
+% fig-alt: 图4·59（2）外切：左大圆 B（R）、右小圆 A（r）外切于 C；连心线过 C；AB=R+r
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rb{1.100}
+  \def\ra{0.720}
+  \coordinate (C) at (0,0);
+  \coordinate (B) at (-\rb,0);
+  \coordinate (A) at (\ra,0);
+  \draw[line width=0.75pt] (B) circle [radius=\rb];
+  \draw[line width=0.75pt] (A) circle [radius=\ra];
+  \draw[line width=0.65pt] (B) -- (A);
+  \fill (B) circle [radius=1.1pt];
+  \fill (A) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south, inner sep=1.5pt] at (-0.550,0) {$R$};
+  \node[anchor=south, inner sep=1.5pt] at (0.360,0) {$r$};
+\end{tikzpicture}%
+}
+\caption{（2）外切}
 \end{figure}
 
-\emph{（2） 外切}
+\emph{（2）外切}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3) 相交}]{assets/plane-geometry-1/fig-p0260-03.png}}
-\caption{(3) 相交}
+\fitfig{%
+% fig-alt: 图4·59（3）相交：圆 A（r）与圆 B（R）交于 D；虚线 AD、BD、AB
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\ra{1.000}
+  \def\rb{1.350}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (1.700,0);
+  \coordinate (D) at (0.608,0.794);
+  \draw[line width=0.75pt] (A) circle [radius=\ra];
+  \draw[line width=0.75pt] (B) circle [radius=\rb];
+  \draw[line width=0.55pt, dashed] (A) -- (B);
+  \draw[line width=0.55pt, dashed] (A) -- (D);
+  \draw[line width=0.55pt, dashed] (B) -- (D);
+  \fill (A) circle [radius=1.1pt];
+  \fill (B) circle [radius=1.1pt];
+  \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south east, inner sep=1.0pt] at (0.280,0.450) {$r$};
+  \node[anchor=south west, inner sep=1.0pt] at (1.200,0.500) {$R$};
+\end{tikzpicture}%
+}
+\caption{（3）相交}
 \end{figure}
 
-\emph{（3） 相交}
+\emph{（3）相交}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4) 内切}]{assets/plane-geometry-1/fig-p0260-04.png}}
-\caption{(4) 内切}
+\fitfig{%
+% fig-alt: 图4·59（4）内切：大圆 B（R）内小圆 A（r）内切于 C；B、A、C 共线；AB=R−r
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rb{1.350}
+  \def\ra{0.720}
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (\rb,0);
+  \coordinate (A) at ({\rb-\ra},0);
+  \draw[line width=0.75pt] (B) circle [radius=\rb];
+  \draw[line width=0.75pt] (A) circle [radius=\ra];
+  \draw[line width=0.65pt] (B) -- (C);
+  \fill (B) circle [radius=1.1pt];
+  \fill (A) circle [radius=1.1pt];
+  \node[anchor=south, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=north, inner sep=1.5pt] at (0.675,0) {$R$};
+  \node[anchor=south, inner sep=1.2pt] at (0.990,0) {$r$};
+\end{tikzpicture}%
+}
+\caption{（4）内切}
 \end{figure}
 
-\emph{（4） 内切}
+\emph{（4）内切}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(5) 内含}]{assets/plane-geometry-1/fig-p0260-05.png}}
-\caption{(5) 内含}
+\fitfig{%
+% fig-alt: 图4·59（5）内含：大圆 B（R）内小圆 A（r）不相切；射线经 B、A、Q、P；AB < R−r
+\begin{tikzpicture}[line cap=round, line join=round]
+  \def\rb{1.400}
+  \def\ra{0.650}
+  \coordinate (B) at (0,0);
+  \coordinate (A) at (0.450,0);
+  \coordinate (Q) at ({0.450+\ra},0);
+  \coordinate (P) at (\rb,0);
+  \draw[line width=0.75pt] (B) circle [radius=\rb];
+  \draw[line width=0.75pt] (A) circle [radius=\ra];
+  \draw[line width=0.65pt] (B) -- (P);
+  \fill (B) circle [radius=1.1pt];
+  \fill (A) circle [radius=1.1pt];
+  \node[anchor=south, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1.2pt] at (Q) {$Q$};
+  \node[anchor=west, inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=north, inner sep=1.5pt] at (0.700,0) {$R$};
+  \node[anchor=south, inner sep=1.2pt] at (0.775,0) {$r$};
+\end{tikzpicture}%
+}
+\caption{（5）内含}
 \end{figure}
 
-\emph{（5） 内含}
+\emph{（5）内含}
 
 \begin{figure}
 \centering
@@ -25711,7 +25886,7 @@ AT，再设法证明\(AT \parallel EF\)，因为\(OA \perp AT\)，从而证得\(
 
 \emph{（6） 同心}
 
-\emph{图 4·59}
+\emph{图4·59}
 
 （2） 一个圆在另一个圆内（图
 4·59（5），（6）），这时我们称两圆内含。当两圆内含时，它们的圆心距小于两半径的差，就是
