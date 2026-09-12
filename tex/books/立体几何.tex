@@ -22293,7 +22293,7 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{enumerate}
 \item
-  正方体 \(AC_{1}\) 中，在对角面 \(B_{1}BD\) 内自点 \(B\) 作 \(BE\)
+  正方体 \(AC_{1}\) 中，在对角面 \(B_{1}BD\) 内自点 \(B\) 作 \(BH\)
   垂直对角线\(B_{1}D\)，求证 \(HD = 2HB_{1}\)
 \item
   一个棱锥的侧棱都相等，底面多边形的边长也都相等，这个棱锥是否正棱锥？为什么？
@@ -22301,18 +22301,50 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
   立方体的棱长增加一倍，它的体积是否也增加一倍？
 \item
   求三个面的面积分别为 \(Q_{1}, Q_{2}, Q_{3}\) 的长方体的体积。
+
+［提示：设交于一个顶点的三条棱长为 \(x, y, z\)，那么
+\(xy = Q_1, xz = Q_2, yz = Q_3\)，从中解出 \(x, y, z\)。］
 \end{enumerate}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/solid-geometry/fig-p0209-01.png}}
-\caption{(第1题)}
+\fitfig{%
+% fig-alt: （第1题）：正方体ABCD-A1B1C1D1。对角面B1BD内BH⊥B1D于H（B1H:HD=1:2）。隐棱AB、AD、AA1虚线；BD、B1D虚线；BH及余棱实线。扫描有A–D、A1–D1、H
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0.15,0.20);
+  \coordinate (C) at (2.25,0.20);
+  \coordinate (D) at (3.05,0.90);
+  \coordinate (A) at (0.95,0.90);
+  \coordinate (B1) at (0.15,2.30);
+  \coordinate (C1) at (2.25,2.30);
+  \coordinate (D1) at (3.05,3.00);
+  \coordinate (A1) at (0.95,3.00);
+  % H = B1 + (1/3)(D-B1)
+  \coordinate (H) at (1.117,1.833);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (A1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B1) -- (D);
+  \draw[line width=0.85pt] (B) -- (C) -- (D);
+  \draw[line width=0.85pt] (B) -- (B1) -- (C1) -- (C);
+  \draw[line width=0.85pt] (C1) -- (D1) -- (D);
+  \draw[line width=0.85pt] (A1) -- (B1);
+  \draw[line width=0.85pt] (A1) -- (D1);
+  \draw[line width=0.85pt] (B) -- (H);
+  \node[anchor=south east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.05pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=east,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=south west,inner sep=0.05pt] at (D1) {$D_{1}$};
+  \node[anchor=east,inner sep=0.04pt] at (H) {$H$};
+\end{tikzpicture}
+}
+\caption{（第1题）}
 \end{figure}
-
-\emph{（第1题）}
-
-［提示：设交于一个顶点的三条棱长为 \(x, y, z\)，那么
-\(xy = Q_1, xz = Q_2, yz = Q_3\)，从中解出 \(x, y, z\)。］
 
 \begin{enumerate}
 \setcounter{enumi}{4}
@@ -22381,26 +22413,83 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/solid-geometry/fig-p0210-01.png}}
-\caption{(第18题)}
+\fitfig{%
+% fig-alt: （第18题）：截正四棱柱。底CDHG为正方形；侧棱AD=BC=b较短，EH=FG=c较长；顶ABFE倾斜。隐棱AD、DC、DH虚线；余棱实线。扫描有A–H
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (0.20,0.35);
+  \coordinate (G) at (2.40,0.35);
+  \coordinate (H) at (3.20,1.05);
+  \coordinate (D) at (1.00,1.05);
+  \coordinate (B) at (0.20,1.85);
+  \coordinate (F) at (2.40,2.75);
+  \coordinate (E) at (3.20,3.45);
+  \coordinate (A) at (1.00,2.55);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (H);
+  \draw[line width=0.85pt] (C) -- (G) -- (H);
+  \draw[line width=0.85pt] (C) -- (B);
+  \draw[line width=0.85pt] (G) -- (F);
+  \draw[line width=0.85pt] (H) -- (E);
+  \draw[line width=0.85pt] (A) -- (B) -- (F) -- (E) -- cycle;
+  \node[anchor=south,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=east,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=east,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=west,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=0.05pt] at (E) {$E$};
+  \node[anchor=north west,inner sep=0.04pt] at (F) {$F$};
+  \node[anchor=north west,inner sep=0.05pt] at (G) {$G$};
+  \node[anchor=west,inner sep=0.05pt] at (H) {$H$};
+\end{tikzpicture}
+}
+\caption{（第18题）}
 \end{figure}
-
-\emph{（第18题）}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第19题)}]{assets/solid-geometry/fig-p0210-02.png}}
-\caption{(第19题)}
+\fitfig{%
+% fig-alt: （第19题）：直三棱柱ABC-A1B1C1，∠C=90°。截面CDE∥AB（E在AA1、D在BB1）；G为AB上CG⊥AB之垂足，F在ED上且FG⊥AB、CF⊥ED。隐棱AC、BC、CC1及CE、CD、CG、CF虚线；余棱与ED、FG实线。扫描有A–G、A1–C1、D、E、F
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.15,0.35);
+  \coordinate (B) at (3.05,0.35);
+  \coordinate (C) at (1.60,1.25);
+  \coordinate (A1) at (0.15,3.35);
+  \coordinate (B1) at (3.05,3.35);
+  \coordinate (C1) at (1.60,4.25);
+  \coordinate (E) at (0.15,1.85);
+  \coordinate (D) at (3.05,1.85);
+  \coordinate (G) at (1.60,0.35);
+  \coordinate (F) at (1.60,1.85);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C) -- (B);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (C1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (G);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (F);
+  \draw[line width=0.85pt] (A) -- (B);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (A1) -- (C1) -- (B1);
+  \draw[line width=0.85pt] (E) -- (D);
+  \draw[line width=0.85pt] (F) -- (G);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=south,inner sep=0.04pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=east,inner sep=0.04pt] at (E) {$E$};
+  \node[anchor=west,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=0.03pt] at (F) {$F$};
+  \node[anchor=north,inner sep=0.04pt] at (G) {$G$};
+\end{tikzpicture}
+}
+\caption{（第19题）}
 \end{figure}
-
-\emph{（第19题）}
-
 \begin{enumerate}
 \setcounter{enumi}{18}
 \item
   在直三棱柱 \(ABC - A_{1}B_{1}C_{1}\)
   中，底面是一个直角三角形，\(\angle ACB = 90^{\circ}\)，锐角
-  \(\angle A = \alpha, BC = \alpha\)，自角顶 \(C\) 作截面与斜边 \(AB\)
+  \(\angle A = \alpha, BC = a\)，自角顶 \(C\) 作截面与斜边 \(AB\)
   平行，并与侧面 \(A_{1}ABB_{1}\) 所成的二面角是
   \(90^{\circ} - \alpha\)，求截面与下底面间这一部分的体积。
 \end{enumerate}
@@ -22432,20 +22521,72 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/solid-geometry/fig-p0211-01.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第3题）：正四棱柱ABCD-A1B1C1D1。体对角线BD1实线；底面对角线AC虚线。隐棱AD、DC、DD1虚线；余棱实线。扫描有A–D、A1–D1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.20,0.25);
+  \coordinate (B) at (2.40,0.25);
+  \coordinate (C) at (3.15,0.95);
+  \coordinate (D) at (0.95,0.95);
+  \coordinate (A1) at (0.20,2.25);
+  \coordinate (B1) at (2.40,2.25);
+  \coordinate (C1) at (3.15,2.95);
+  \coordinate (D1) at (0.95,2.95);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (A1) -- (D1) -- (C1) -- (B1);
+  \draw[line width=0.85pt] (C) -- (C1);
+  \draw[line width=0.85pt] (B) -- (D1);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (D1) {$D_{1}$};
+\end{tikzpicture}
+}
+\caption{（第3题）}
 \end{figure}
-
-\emph{（第3题）}
-
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/solid-geometry/fig-p0211-02.png}}
-\caption{(第4题)}
+\fitfig{%
+% fig-alt: （第4题）：三棱柱ABC-A1B1C1。P在上底面A1B1C1内，Q在棱AB上，R在棱BC上。隐棱AC虚线；余棱实线。扫描有A–C、A1–C1、P、Q、R
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.25,0.35);
+  \coordinate (B) at (1.70,0.10);
+  \coordinate (C) at (2.95,0.55);
+  \coordinate (A1) at (0.25,2.55);
+  \coordinate (B1) at (1.70,2.30);
+  \coordinate (C1) at (2.95,2.75);
+  \coordinate (P) at (1.35,2.45);
+  \coordinate (Q) at (1.20,0.20);
+  \coordinate (R) at (2.45,0.37);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (B1) -- (C1) -- (C);
+  \draw[line width=0.85pt] (A1) -- (C1);
+  \fill (P) circle (1.1pt);
+  \fill (Q) circle (1.1pt);
+  \fill (R) circle (1.1pt);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.04pt] at (P) {$P$};
+  \node[anchor=north east,inner sep=0.04pt] at (Q) {$Q$};
+  \node[anchor=north west,inner sep=0.04pt] at (R) {$R$};
+\end{tikzpicture}
+}
+\caption{（第4题）}
 \end{figure}
-
-\emph{（第4题）}
-
 \begin{enumerate}
 \setcounter{enumi}{3}
 \item
@@ -22472,12 +22613,39 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/solid-geometry/fig-p0211-03.png}}
-\caption{(第7题)}
+\fitfig{%
+% fig-alt: （第7题）：长方体ABCD-A1B1C1D1。体对角线AC1与A1C虚线交于O；∠AOC为两对角线夹角。隐棱AD、DC、DD1虚线；余棱实线。扫描有A–D、A1–D1、O
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.20,0.25);
+  \coordinate (B) at (2.60,0.25);
+  \coordinate (C) at (3.25,0.90);
+  \coordinate (D) at (0.85,0.90);
+  \coordinate (A1) at (0.20,2.15);
+  \coordinate (B1) at (2.60,2.15);
+  \coordinate (C1) at (3.25,2.80);
+  \coordinate (D1) at (0.85,2.80);
+  \coordinate (O) at (1.725,1.525);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (D1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C1);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (C);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (A1) -- (B1) -- (B);
+  \draw[line width=0.85pt] (A1) -- (D1) -- (C1) -- (B1);
+  \draw[line width=0.85pt] (C) -- (C1);
+  \node[anchor=north east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=south east,inner sep=0.04pt] at (D) {$D$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (C1) {$C_{1}$};
+  \node[anchor=south,inner sep=0.05pt] at (D1) {$D_{1}$};
+  \node[anchor=south west,inner sep=0.04pt] at (O) {$O$};
+\end{tikzpicture}
+}
+\caption{（第7题）}
 \end{figure}
-
-\emph{（第7题）}
-
 \begin{enumerate}
 \setcounter{enumi}{8}
 \item
@@ -22489,12 +22657,32 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/solid-geometry/fig-p0211-04.png}}
-\caption{(第10题)}
+\fitfig{%
+% fig-alt: （第10题）：截头直三棱柱ABC-A1B1C1，侧棱AA1、BB1、CC1两两平行且与底垂直但不等长；顶A1B1C1斜截。隐棱BC虚线；余棱实线。扫描有A–C、A1–C1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.55,0.20);
+  \coordinate (B) at (3.05,0.85);
+  \coordinate (C) at (0.25,1.05);
+  \coordinate (A1) at (1.55,2.10);
+  \coordinate (B1) at (3.05,3.15);
+  \coordinate (C1) at (0.25,2.75);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (C);
+  \draw[line width=0.85pt] (A) -- (B);
+  \draw[line width=0.85pt] (A) -- (C);
+  \draw[line width=0.85pt] (A) -- (A1);
+  \draw[line width=0.85pt] (B) -- (B1);
+  \draw[line width=0.85pt] (C) -- (C1);
+  \draw[line width=0.85pt] (A1) -- (B1) -- (C1) -- cycle;
+  \node[anchor=north,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=0.05pt] at (C) {$C$};
+  \node[anchor=east,inner sep=0.05pt] at (A1) {$A_{1}$};
+  \node[anchor=west,inner sep=0.05pt] at (B1) {$B_{1}$};
+  \node[anchor=east,inner sep=0.05pt] at (C1) {$C_{1}$};
+\end{tikzpicture}
+}
+\caption{（第10题）}
 \end{figure}
-
-\emph{（第10题）}
-
 ［提示：求证
 \(V = \frac{1}{3} (AA_{1} + BB_{1} + CC_{1})\triangle ABC.\)］
 
@@ -22505,12 +22693,12 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 \end{enumerate}
 
 ［简解：设长方体的三条棱各为 \(x, y, z\)，则其全面积为
-\(2(xy + yz + zx) = 2a^2\)，它的体积 \(V = xy^2\)，因 \(V\) 与 \(V^2\)
-同样有极大值，今欲求 \(V = xy^2\) 的极大值，则可求 \(V^2 = xy^2z^2\)
-的极大值。而 \(x^2y^2z^2 = xy, y^2, z^2\)，但题设 \(xy + yz + zz = a^2\)
+\(2(xy + yz + zx) = 2a^2\)，它的体积 \(V = xyz\)，因 \(V\) 与 \(V^2\)
+同样有极大值，今欲求 \(V = xyz\) 的极大值，则可求 \(V^2 = x^2y^2z^2\)
+的极大值。而 \(x^2y^2z^2 = (xy)(yz)(zx)\)，但题设 \(xy + yz + zx = a^2\)
 是一常数，故知其积
 
-的极大当 \(xy = yg = gx\)，就是 \(x = y = z\) 时，长方体的体积 \(V\)
+的极大当 \(xy = yz = zx\)，就是 \(x = y = z\) 时，长方体的体积 \(V\)
 有极大值，这就是说全面积一定的诸长方体中以正方体的体积为极大.］
 
 \begin{enumerate}
@@ -22529,12 +22717,66 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/solid-geometry/fig-p0212-01.png}}
-\caption{(第12题)}
+\fitfig{%
+% fig-alt: （第12题）：正六棱锥V-ABCDEF内接正六棱柱。上底A'B'…在侧棱上，下底落于锥底面；高VO经O'虚线。前棱与上下底前边实线；后棱与底后边及内接柱后棱虚线。扫描有V、A、B、A'、B'、O、O'
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (2.10,4.55);
+  \coordinate (O) at (2.10,0.85);
+  % base hexagon (oblique)
+  \coordinate (A) at (0.55,0.95);
+  \coordinate (B) at (1.55,0.25);
+  \coordinate (C) at (2.95,0.25);
+  \coordinate (D) at (3.85,0.95);
+  \coordinate (E) at (2.95,1.55);
+  \coordinate (F) at (1.55,1.55);
+  % section scale ~0.55 from V toward base -> height fraction
+  % A' = V + 0.48*(A-V) approx from apex down leaving prism height x
+  \coordinate (Ap) at (1.36,2.82);
+  \coordinate (Bp) at (1.84,2.48);
+  \coordinate (Cp) at (2.51,2.48);
+  \coordinate (Dp) at (2.94,2.82);
+  \coordinate (Ep) at (2.51,3.11);
+  \coordinate (Fp) at (1.84,3.11);
+  \coordinate (Op) at (2.10,2.80);
+  % prism lower base on pyramid base (same size as section, centered)
+  \coordinate (A2) at (1.36,0.90);
+  \coordinate (B2) at (1.84,0.56);
+  \coordinate (C2) at (2.51,0.56);
+  \coordinate (D2) at (2.94,0.90);
+  \coordinate (E2) at (2.51,1.19);
+  \coordinate (F2) at (1.84,1.19);
+  % hidden base / back
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (D) -- (E) -- (F) -- (A);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (F);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Cp) -- (Dp) -- (Ep) -- (Fp) -- (Ap);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (V) -- (Op) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Dp) -- (D2);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Ep) -- (E2);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (Fp) -- (F2);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (C2) -- (D2) -- (E2) -- (F2) -- (A2);
+  % visible
+  \draw[line width=0.85pt] (V) -- (A);
+  \draw[line width=0.85pt] (V) -- (B);
+  \draw[line width=0.85pt] (V) -- (C);
+  \draw[line width=0.85pt] (A) -- (B) -- (C);
+  \draw[line width=0.85pt] (Ap) -- (Bp) -- (Cp);
+  \draw[line width=0.85pt] (Ap) -- (A2);
+  \draw[line width=0.85pt] (Bp) -- (B2);
+  \draw[line width=0.85pt] (Cp) -- (C2);
+  \draw[line width=0.85pt] (A2) -- (B2) -- (C2);
+  \node[anchor=south,inner sep=0.05pt] at (V) {$V$};
+  \node[anchor=east,inner sep=0.05pt] at (A) {$A$};
+  \node[anchor=north,inner sep=0.05pt] at (B) {$B$};
+  \node[anchor=east,inner sep=0.04pt] at (Ap) {$A'$};
+  \node[anchor=north east,inner sep=0.03pt] at (Bp) {$B'$};
+  \node[anchor=north west,inner sep=0.04pt] at (O) {$O$};
+  \node[anchor=west,inner sep=0.04pt] at (Op) {$O'$};
+\end{tikzpicture}
+}
+\caption{（第12题）}
 \end{figure}
-
-\emph{（第12题）}
-
 \section{第二章 测验题}
 
 \subsection{（希望在 120
