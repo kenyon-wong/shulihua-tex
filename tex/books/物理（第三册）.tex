@@ -28742,23 +28742,90 @@ P型半导体和N型半导体}\label{pux578bux534aux5bfcux4f53ux548cnux578bux534
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/physics-3/fig-p0380-01.png}}
-\caption{(1)}
+\fitfig{%
+% fig-alt: 图6.11（a）·载流子的扩散运动：左P区负离子旁空心圆为空穴，右N区正离子旁黑点为电子；交界虚线处空穴向右、电子向左扩散
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=0.72cm,y=0.72cm]
+  \draw[line width=0.7pt] (-0.55,0.55) rectangle (9.55,-2.55);
+  \draw[line width=0.55pt,dashed] (4.5,0.55) -- (4.5,-2.55);
+  \foreach \x in {0,1,2,3,4} {
+    \foreach \y in {0,-1,-2} {
+      \draw[line width=0.55pt] (\x,\y) circle[radius=0.28];
+      \node[inner sep=0pt] at (\x,\y) {$-$};
+      \draw[line width=0.45pt,fill=white] ($(\x,\y)+(0.22,0.20)$) circle[radius=0.075];
+    }
+  }
+  \foreach \x in {5,6,7,8,9} {
+    \foreach \y in {0,-1,-2} {
+      \draw[line width=0.55pt] (\x,\y) circle[radius=0.28];
+      \node[inner sep=0pt] at (\x,\y) {$+$};
+      \fill ($(\x,\y)+(-0.22,0.20)$) circle[radius=0.055];
+    }
+  }
+  \foreach \y in {0,-1,-2} {
+    \draw[line width=0.55pt,->] ($(4.15,\y)+(0,0.22)$) -- ($(4.85,\y)+(0,0.22)$);
+    \draw[line width=0.55pt,->] ($(4.85,\y)+(0,-0.05)$) -- ($(4.15,\y)+(0,-0.05)$);
+  }
+  \node[font=\small] at (2.0,-3.05) {$P$ 区};
+  \node[font=\small] at (7.0,-3.05) {$N$ 区};
+\end{tikzpicture}%
+}
+\caption{图6.11（a）·载流子的扩散运动}
 \end{figure}
 
-\emph{（1）}
+\emph{图6.11（a）·载流子的扩散运动}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-3/fig-p0380-02.png}}
-\caption{(3)}
+\fitfig{%
+% fig-alt: 图6.11（b）·PN结的空间电荷区：交界两侧各一列无载流子的固定离子形成空间电荷区，内电场由N指向P
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=0.72cm,y=0.72cm]
+  \draw[line width=0.7pt] (-0.55,0.55) rectangle (9.55,-2.55);
+  \draw[line width=0.6pt] (4.5,0.55) -- (4.5,-2.55);
+  % depletion boundaries (between col3/4 and col5/6)
+  \draw[line width=0.5pt,dashed] (3.5,0.55) -- (3.5,-2.55);
+  \draw[line width=0.5pt,dashed] (5.5,0.55) -- (5.5,-2.55);
+  % P ions cols 0..4; holes only on cols 0..3
+  \foreach \x in {0,1,2,3,4} {
+    \foreach \y in {0,-1,-2} {
+      \draw[line width=0.55pt] (\x,\y) circle[radius=0.28];
+      \node[inner sep=0pt] at (\x,\y) {$-$};
+    }
+  }
+  \foreach \x in {0,1,2,3} {
+    \foreach \y in {0,-1,-2} {
+      \draw[line width=0.45pt,fill=white] ($(\x,\y)+(0.22,0.20)$) circle[radius=0.075];
+    }
+  }
+  % N ions cols 5..9; electrons only on cols 6..9
+  \foreach \x in {5,6,7,8,9} {
+    \foreach \y in {0,-1,-2} {
+      \draw[line width=0.55pt] (\x,\y) circle[radius=0.28];
+      \node[inner sep=0pt] at (\x,\y) {$+$};
+    }
+  }
+  \foreach \x in {6,7,8,9} {
+    \foreach \y in {0,-1,-2} {
+      \fill ($(\x,\y)+(-0.22,0.20)$) circle[radius=0.055];
+    }
+  }
+  % 空间电荷区 bracket
+  \draw[line width=0.5pt] (3.5,-2.85) -- (3.5,-3.05);
+  \draw[line width=0.5pt] (5.5,-2.85) -- (5.5,-3.05);
+  \draw[line width=0.5pt,<->] (3.5,-2.95) -- (5.5,-2.95);
+  \node[font=\small,fill=white,inner sep=1pt] at (4.5,-2.95) {空间电荷区};
+  % 内电场 ←
+  \draw[line width=0.7pt,->] (6.2,-3.55) -- (2.8,-3.55);
+  \node[font=\small,anchor=west] at (6.35,-3.55) {内电场};
+\end{tikzpicture}%
+}
+\caption{图6.11（b）·$PN$ 结的空间电荷区}
 \end{figure}
 
-\emph{（3）}
+\emph{图6.11（b）·$PN$ 结的空间电荷区}
 
-\emph{图 6.11 PN 结的形成}
+\emph{图6.11·$PN$ 结的形成}
 
-\emph{（2） 铁离子的扩散运动；D. PN结的宏观电荷}
+\emph{（a）载流子的扩散运动；（b）$PN$ 结的空间电荷区}
 
 它们形成了一个空间电荷区（意思就是在交界面两侧附近空间的两个净电荷区）.这个空间电荷区也就是一个PN结。
 
@@ -28766,7 +28833,7 @@ P型半导体和N型半导体}\label{pux578bux534aux5bfcux4f53ux548cnux578bux534
 （负离子）， 所以内部产生一个电场， 电场的方向是由正离子指向负离子，
 或从 \(N\) 区指向 \(P\) 区， 如图6.11b所示。 \(PN\)
 结的这个内电场对于载流子的扩散运动起着阻碍作用，
-使扩散运动减弱另一方面， 这个内电场对于继续进入空间电荷区的空穴，
+使扩散运动减弱。另一方面， 这个内电场对于继续进入空间电荷区的空穴，
 施加一个电场力使它向 \(P\) 区运动； 对于继续进入空间电荷区的自由电子，
 施加一个电场力使它向 \(N\) 区运动。
 我们把载流子在电场作用下的定向移动叫做漂移运动， 显然，
@@ -28795,11 +28862,52 @@ P型半导体和N型半导体}\label{pux578bux534aux5bfcux4f53ux548cnux578bux534
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.12 P N 结加正向电压}]{assets/physics-3/fig-p0382-01.png}}
-\caption{图6.12 \(P N\) 结加正向电压}
+\fitfig{%
+% fig-alt: 图6.12·PN结加正向电压：P接正极、N接负极，外电场与内电场相反，空间电荷区变窄，正向电流I经电阻R
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1cm,y=1cm]
+  % PN block
+  \draw[line width=0.75pt] (-2.6,0.9) rectangle (2.6,-0.9);
+  \draw[line width=0.55pt] (0,0.9) -- (0,-0.9);
+  % narrow depletion (dashed)
+  \draw[line width=0.5pt,dashed] (-0.55,0.9) -- (-0.55,-0.9);
+  \draw[line width=0.5pt,dashed] (0.55,0.9) -- (0.55,-0.9);
+  \node[font=\large] at (-1.55,0) {$P$};
+  \node[font=\large] at (1.55,0) {$N$};
+  % ions in depletion: 1 col x 3
+  \foreach \y in {0.45,0,-0.45} {
+    \draw[line width=0.5pt] (-0.28,\y) circle[radius=0.16];
+    \node[inner sep=0pt,font=\scriptsize] at (-0.28,\y) {$-$};
+    \draw[line width=0.5pt] (0.28,\y) circle[radius=0.16];
+    \node[inner sep=0pt,font=\scriptsize] at (0.28,\y) {$+$};
+  }
+  % top label 空间电荷区变窄
+  \draw[line width=0.5pt,<->] (-0.55,1.25) -- (0.55,1.25);
+  \node[font=\small,fill=white,inner sep=1pt] at (0,1.55) {空间电荷区变窄};
+  % fields
+  \draw[line width=0.65pt,->] (0.9,-1.25) -- (-0.9,-1.25);
+  \node[font=\small,anchor=west] at (1.0,-1.25) {内电场};
+  \draw[line width=0.65pt,->] (-0.9,-1.65) -- (0.9,-1.65);
+  \node[font=\small,anchor=west] at (1.0,-1.65) {外电场};
+  % external circuit
+  \draw[line width=0.7pt] (-2.6,0) -- (-3.3,0) -- (-3.3,-2.55) -- (3.3,-2.55) -- (3.3,0) -- (2.6,0);
+  % current I up on left
+  \draw[line width=0.65pt,->] (-3.3,-1.85) -- (-3.3,-0.55);
+  \node[font=\small,anchor=east] at (-3.45,-1.2) {$I$};
+  % resistor R on right
+  \fill[white] (3.15,-1.55) rectangle (3.45,-0.55);
+  \draw[line width=0.7pt] (3.15,-1.55) rectangle (3.45,-0.55);
+  \node[font=\small,anchor=west] at (3.55,-1.05) {$R$};
+  % battery: + left (long thin), - right (short thick)  → forward
+  \draw[line width=0.75pt] (-0.35,-2.35) -- (-0.35,-2.75);
+  \draw[line width=1.1pt] (-0.12,-2.45) -- (-0.12,-2.65);
+  \draw[line width=0.75pt] (0.12,-2.35) -- (0.12,-2.75);
+  \draw[line width=1.1pt] (0.35,-2.45) -- (0.35,-2.65);
+\end{tikzpicture}%
+}
+\caption{图6.12·$PN$ 结加正向电压}
 \end{figure}
 
-\emph{图6.12 \(P N\) 结加正向电压}
+\emph{图6.12·$PN$ 结加正向电压}
 
 反，它驱使 \(P\)
 区的空穴进入阻挡层，和阻挡层中一部分负离子中和；同时，它也驱使 \(N\)
@@ -28819,16 +28927,58 @@ P型半导体和N型半导体}\label{pux578bux534aux5bfcux4f53ux548cnux578bux534
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6.13 P 结加反向电压}]{assets/physics-3/fig-p0383-01.png}}
-\caption{图 6.13 P 结加反向电压}
+\fitfig{%
+% fig-alt: 图6.13·PN结加反向电压：P接负极、N接正极，内电场与外电场同向，空间电荷区变厚
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1cm,y=1cm]
+  \draw[line width=0.75pt] (-3.2,1.05) rectangle (3.2,-1.05);
+  \draw[line width=0.55pt] (0,1.05) -- (0,-1.05);
+  % thick depletion: left solid, right dashed
+  \draw[line width=0.55pt] (-1.55,1.05) -- (-1.55,-1.05);
+  \draw[line width=0.55pt,dashed] (1.55,1.05) -- (1.55,-1.05);
+  \node[font=\large] at (-2.4,0) {$P$};
+  \node[font=\large] at (2.4,0) {$N$};
+  % 3x3 ions each side
+  \foreach \x in {-1.15,-0.70,-0.25} {
+    \foreach \y in {0.55,0,-0.55} {
+      \draw[line width=0.5pt] (\x,\y) circle[radius=0.155];
+      \node[inner sep=0pt,font=\scriptsize] at (\x,\y) {$-$};
+    }
+  }
+  \foreach \x in {0.25,0.70,1.15} {
+    \foreach \y in {0.55,0,-0.55} {
+      \draw[line width=0.5pt] (\x,\y) circle[radius=0.155];
+      \node[inner sep=0pt,font=\scriptsize] at (\x,\y) {$+$};
+    }
+  }
+  \draw[line width=0.5pt,<->] (-1.55,1.40) -- (1.55,1.40);
+  \node[font=\small,fill=white,inner sep=1pt] at (0,1.70) {空间电荷区变厚};
+  % both fields ←
+  \draw[line width=0.65pt,->] (1.1,-1.40) -- (-1.1,-1.40);
+  \node[font=\small,anchor=west] at (1.2,-1.40) {内电场};
+  \draw[line width=0.65pt,->] (1.1,-1.80) -- (-1.1,-1.80);
+  \node[font=\small,anchor=west] at (1.2,-1.80) {外电场};
+  % circuit
+  \draw[line width=0.7pt] (-3.2,0) -- (-3.9,0) -- (-3.9,-2.70) -- (3.9,-2.70) -- (3.9,0) -- (3.2,0);
+  % R on right
+  \fill[white] (3.75,-1.65) rectangle (4.05,-0.65);
+  \draw[line width=0.7pt] (3.75,-1.65) rectangle (4.05,-0.65);
+  \node[font=\small,anchor=west] at (4.15,-1.15) {$R$};
+  % battery reverse: - left (short thick), + right (long thin)
+  \draw[line width=1.1pt] (-0.35,-2.60) -- (-0.35,-2.80);
+  \draw[line width=0.75pt] (-0.10,-2.50) -- (-0.10,-2.90);
+  \draw[line width=1.1pt] (0.10,-2.60) -- (0.10,-2.80);
+  \draw[line width=0.75pt] (0.35,-2.50) -- (0.35,-2.90);
+\end{tikzpicture}%
+}
+\caption{图6.13·$PN$ 结加反向电压}
 \end{figure}
 
-\emph{图 6.13 P 结加反向电压}
+\emph{图6.13·$PN$ 结加反向电压}
 
 场也增强。于是载流子的扩散运动减弱，漂移运动超过了扩散运动。在这里，漂移运动是由
 \(P\) 区的少数自由电子和 \(N\)
 区的少数空穴（它们是由热运动产生的）的移动所形成的，所以形成的电流很小。又因为是反向电压作用下产生的电流，故叫做反向电流。\(PN\)
-结在反向电压作用下，产生的反向电流很小这一事实，表明它对于反向电压来说是现实的电阻是很大的。
+结在反向电压作用下，产生的反向电流很小这一事实，表明它对于反向电压来说呈现的电阻是很大的。
 
 总结以上的讨论可以得出：PN
 结在加正向电压时，可以容许较大的正向电流通过；而加反向电压时，只有很小的反向电流（粗略地可以认为没有电流）通过。因此可以认为
@@ -28858,40 +29008,194 @@ PN 结加正向电压时是导通的，加反向电压时是截止的。PN
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 点接触型二极管结构}]{assets/physics-3/fig-p0384-01.png}}
-\caption{(a) 点接触型二极管结构}
+\fitfig{%
+% fig-alt: 图6.14（a）·点接触型二极管：上为管心放大（触须压在P型晶片上形成PN结），下为管壳与引线示意
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.95]
+  % magnified circle
+  \draw[line width=0.7pt] (0,2.35) circle[radius=1.55];
+  \node[anchor=south,font=\small] at (0,4.05) {管心放大};
+  \draw[line width=0.45pt] (0,3.90) -- (0,3.55);
+  % P wafer
+  \draw[line width=0.65pt] (-0.95,1.55) rectangle (0.95,2.55);
+  \node at (0,1.95) {$P$};
+  % N cup on top
+  \draw[line width=0.55pt,fill=white] (-0.28,2.55) arc[start angle=180,end angle=360,x radius=0.28,y radius=0.22] -- cycle;
+  \node[font=\scriptsize] at (0,2.48) {$N$};
+  % whisker
+  \draw[line width=0.55pt] (0,2.55) .. controls (0.05,2.85) and (-0.08,3.15) .. (0,3.45);
+  % electrode + support + lead
+  \draw[line width=0.7pt] (-0.85,1.45) -- (0.85,1.45);
+  \draw[line width=0.65pt] (-1.00,1.30) -- (1.00,1.30);
+  \draw[line width=0.55pt] (0,1.30) -- (0,0.95);
+  % labels around circle
+  \node[anchor=east,font=\footnotesize] at (-1.75,2.70) {PN结};
+  \draw[line width=0.4pt] (-1.70,2.70) -- (-0.35,2.55);
+  \node[anchor=west,font=\footnotesize] at (1.70,3.10) {触须};
+  \draw[line width=0.4pt] (1.65,3.10) -- (0.12,3.15);
+  \node[anchor=east,font=\footnotesize] at (-1.75,2.05) {$P$型晶片};
+  \draw[line width=0.4pt] (-1.70,2.05) -- (-0.95,2.05);
+  \node[anchor=east,font=\footnotesize] at (-1.75,1.45) {接触电极};
+  \draw[line width=0.4pt] (-1.70,1.45) -- (-0.85,1.45);
+  \node[anchor=east,font=\footnotesize] at (-1.75,1.15) {支架};
+  \draw[line width=0.4pt] (-1.70,1.15) -- (-1.00,1.30);
+  \node[anchor=east,font=\footnotesize] at (-1.75,0.85) {引线};
+  \draw[line width=0.4pt] (-1.70,0.85) -- (-0.05,0.95);
+  % callout to package
+  \draw[line width=0.5pt] (-0.35,0.85) -- (-0.15,0.15);
+  \draw[line width=0.5pt] (0.35,0.85) -- (0.15,0.15);
+  % package
+  \draw[line width=0.7pt] (-2.4,-0.55) -- (-2.4,0.05) -- (2.4,0.05) -- (2.4,-0.55)
+    -- (2.1,-0.55) -- (2.1,-0.15) -- (-2.1,-0.15) -- (-2.1,-0.55) -- cycle;
+  \draw[line width=0.55pt] (-3.1,-0.25) -- (-2.4,-0.25);
+  \draw[line width=0.55pt] (2.4,-0.25) -- (3.1,-0.25);
+  % whisker inside package
+  \draw[line width=0.5pt] (-2.0,-0.25) .. controls (-1.4,-0.05) and (-0.8,-0.45) .. (-0.2,-0.25);
+  % die block
+  \draw[line width=0.55pt,fill=white] (0.55,-0.45) rectangle (1.35,-0.05);
+  \node[font=\footnotesize,anchor=south] at (-2.75,0.05) {引线};
+  \node[font=\footnotesize,anchor=south] at (0,-0.70) {管壳};
+  \node[font=\footnotesize,anchor=north] at (-1.1,0.10) {触须};
+  \node[font=\footnotesize,anchor=north] at (0.95,0.10) {晶片};
+  \node[font=\footnotesize,anchor=south] at (2.75,0.05) {引线};
+\end{tikzpicture}%
+}
+\caption{图6.14（a）·点接触型二极管结构}
 \end{figure}
 
-\emph{（a） 点接触型二极管结构}
+\emph{图6.14（a）·点接触型二极管结构}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 面接触型二极管结构}]{assets/physics-3/fig-p0384-02.png}}
-\caption{(b) 面接触型二极管结构}
+\fitfig{%
+% fig-alt: 图6.14（b）·面接触型二极管：左为金属管壳剖面，右为管心放大（N型硅片上P型薄层形成PN结，铝丝引出）
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,scale=0.92]
+  % left package
+  \draw[line width=0.7pt] (-2.4,2.6) -- (-2.4,-2.2) -- (-0.6,-2.2) -- (-0.6,2.6) -- cycle;
+  \draw[line width=0.55pt] (-1.5,2.6) -- (-1.5,3.15);
+  \draw[line width=0.55pt] (-1.5,-2.2) -- (-1.5,-2.75);
+  % glass hatch at top
+  \draw[line width=0.5pt] (-2.15,1.85) rectangle (-0.85,2.45);
+  \foreach \y in {1.95,2.10,2.25,2.40} {
+    \draw[line width=0.35pt] (-2.15,\y) -- (-0.85,\y);
+  }
+  % core small
+  \draw[line width=0.55pt,fill=white] (-1.85,-0.15) rectangle (-1.15,0.55);
+  \draw[line width=0.45pt] (-1.5,0.55) -- (-1.5,1.85);
+  \draw[line width=0.45pt] (-1.5,-0.15) -- (-1.5,-2.2);
+  % flanges at bottom
+  \draw[line width=0.55pt] (-2.55,-2.2) -- (-0.45,-2.2);
+  \draw[line width=0.55pt] (-2.55,-2.35) -- (-0.45,-2.35);
+  % left labels
+  \node[anchor=east,font=\footnotesize] at (-2.65,3.0) {引线};
+  \draw[line width=0.4pt] (-2.60,3.0) -- (-1.55,3.0);
+  \node[anchor=east,font=\footnotesize] at (-2.65,2.15) {玻璃};
+  \draw[line width=0.4pt] (-2.60,2.15) -- (-2.15,2.15);
+  \node[anchor=east,font=\footnotesize] at (-2.65,0.8) {金属管壳};
+  \draw[line width=0.4pt] (-2.60,0.8) -- (-2.4,0.8);
+  \node[anchor=east,font=\footnotesize] at (-2.65,0.2) {管心};
+  \draw[line width=0.4pt] (-2.60,0.2) -- (-1.85,0.2);
+  \node[anchor=east,font=\footnotesize] at (-2.65,-2.55) {引线};
+  \draw[line width=0.4pt] (-2.60,-2.55) -- (-1.55,-2.55);
+  % callout to right circle
+  \draw[line width=0.5pt] (-1.15,0.55) -- (0.55,1.85);
+  \draw[line width=0.5pt] (-1.15,-0.15) -- (0.55,-0.55);
+  % right magnified circle
+  \draw[line width=0.7pt] (2.35,0.65) circle[radius=1.85];
+  \node[anchor=west,font=\small] at (4.35,2.35) {管心};
+  % stack inside circle
+  \draw[pattern=north east lines,pattern color=black!70,line width=0.5pt]
+    (1.55,-0.85) rectangle (3.15,-0.35);
+  \node[font=\footnotesize] at (2.35,-0.60) {支架};
+  \draw[line width=0.65pt] (1.65,-0.35) -- (3.05,-0.35);
+  \draw[line width=0.65pt] (1.65,-0.22) -- (3.05,-0.22);
+  \node[anchor=west,font=\footnotesize] at (3.35,-0.28) {接触层};
+  \draw[line width=0.4pt] (3.30,-0.28) -- (3.05,-0.28);
+  % N wafer
+  \draw[line width=0.65pt] (1.70,-0.22) rectangle (3.00,1.15);
+  \node at (2.35,0.35) {$N$};
+  \node[anchor=west,font=\footnotesize] at (3.35,0.45) {$N$型硅片};
+  \draw[line width=0.4pt] (3.30,0.45) -- (3.00,0.45);
+  % P dome
+  \draw[line width=0.55pt,fill=white] (2.05,1.15) arc[start angle=180,end angle=360,x radius=0.30,y radius=0.28] -- cycle;
+  \node[font=\scriptsize] at (2.35,1.22) {$P$};
+  \node[anchor=west,font=\footnotesize] at (3.35,1.35) {$P$型硅薄层};
+  \draw[line width=0.4pt] (3.30,1.35) -- (2.65,1.25);
+  \node[anchor=east,font=\footnotesize] at (1.35,1.05) {PN结};
+  \draw[line width=0.4pt] (1.40,1.05) -- (2.05,1.15);
+  % Al wire
+  \draw[line width=0.55pt] (2.35,1.43) -- (2.35,2.15);
+  \node[anchor=west,font=\footnotesize] at (3.35,1.90) {铝丝};
+  \draw[line width=0.4pt] (3.30,1.90) -- (2.40,2.00);
+\end{tikzpicture}%
+}
+\caption{图6.14（b）·面接触型二极管结构}
 \end{figure}
 
-\emph{（b） 面接触型二极管结构}
+\emph{图6.14（b）·面接触型二极管结构}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c) 二极管全电路中的代表符号}]{assets/physics-3/fig-p0384-03.png}}
-\caption{(c) 二极管全电路中的代表符号}
+\fitfig{%
+% fig-alt: 图6.14（c）·二极管电路代表符号：三角箭头指向阴极竖杠，上方标正负极，下方箭头示通流方向
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1cm,y=1cm]
+  \draw[line width=0.75pt] (-1.6,0.55) -- (-0.35,0.55);
+  \fill[line width=0.6pt] (-0.35,0.90) -- (0.45,0.55) -- (-0.35,0.20) -- cycle;
+  \draw[line width=0.85pt] (0.45,0.95) -- (0.45,0.15);
+  \draw[line width=0.75pt] (0.45,0.55) -- (1.7,0.55);
+  \node[font=\small] at (-0.85,1.05) {$+$};
+  \node[font=\small] at (1.05,1.05) {$-$};
+  \draw[line width=0.7pt,->] (-0.9,-0.25) -- (1.1,-0.25);
+  \node[font=\small] at (0.1,-0.70) {通流方向};
+\end{tikzpicture}%
+}
+\caption{图6.14（c）·二极管在电路中的代表符号}
 \end{figure}
 
-\emph{（c） 二极管全电路中的代表符号}
+\emph{图6.14（c）·二极管在电路中的代表符号}
 
-\emph{图6.14}
+\emph{图6.14·晶体二极管的结构与符号}
 
 晶体二极管既然是由 \(PN\)
-结构成的，所以它的主要特点是具有单向导电性。我们可以自己动手做一个实验来验证晶体二极管的这种特性。实验时，用两节于电池，一只晶体二极管和一个1.5伏小电珠用导线串联连接，如图6.15（a）的接法，可以发现小电珠发光，表示晶体二极管导通。如果把晶体二极管反过来接如图6.15（b）的接法，则发现小电珠不发光，表示晶体二极管不导通。
+结构成的，所以它的主要特点是具有单向导电性。我们可以自己动手做一个实验来验证晶体二极管的这种特性。实验时，用两节干电池，一只晶体二极管和一个1.5伏小电珠用导线串联连接，如图6.15（a）的接法，可以发现小电珠发光，表示晶体二极管导通。如果把晶体二极管反过来接如图6.15（b）的接法，则发现小电珠不发光，表示晶体二极管不导通。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0385-01.png}}
-\caption{(a)}
+\fitfig{%
+% fig-alt: 图6.15（a）·二极管加正向电压导通：3V电源、正向二极管与发光小电珠串联
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,x=1cm,y=1cm]
+  \def\W{3.2}\def\H{3.0}
+  % outer wires with gaps for components
+  \draw[line width=0.75pt] (0,0) -- (0,\H) -- (\W,\H) -- (\W,0) -- cycle;
+  % battery on bottom: two cells, + left (long), - right (short)
+  \fill[white] ({\W/2-0.55},-0.02) rectangle ({\W/2+0.55},0.02);
+  \draw[line width=0.75pt] ({\W/2-0.42},-0.22) -- ({\W/2-0.42},0.22);
+  \draw[line width=1.05pt] ({\W/2-0.22},-0.12) -- ({\W/2-0.22},0.12);
+  \draw[line width=0.75pt] ({\W/2+0.02},-0.22) -- ({\W/2+0.02},0.22);
+  \draw[line width=1.05pt] ({\W/2+0.22},-0.12) -- ({\W/2+0.22},0.12);
+  \node[font=\small,anchor=south] at ({\W/2},0.28) {3 V};
+  % diode on left (capsule, triangle up = anode bottom)
+  \fill[white] (-0.02,{\H/2-0.55}) rectangle (0.02,{\H/2+0.55});
+  \draw[line width=0.7pt,rounded corners=3pt] (-0.28,{\H/2-0.50}) rectangle (0.28,{\H/2+0.50});
+  \fill (-0.18,{\H/2-0.28}) -- (0,{\H/2+0.12}) -- (0.18,{\H/2-0.28}) -- cycle;
+  \draw[line width=0.8pt] (-0.20,{\H/2+0.12}) -- (0.20,{\H/2+0.12});
+  \draw[line width=0.55pt] (0,{\H/2-0.50}) -- (0,{\H/2-0.28});
+  \draw[line width=0.55pt] (0,{\H/2+0.12}) -- (0,{\H/2+0.50});
+  % lit bulb on top
+  \fill[white] ({\W/2-0.45},\H) rectangle ({\W/2+0.45},\H);
+  \draw[line width=0.65pt] ({\W/2-0.28},{\H-0.12}) rectangle ({\W/2+0.28},{\H+0.08});
+  \draw[line width=0.7pt] ({\W/2},{\H+0.38}) circle[radius=0.30];
+  \draw[line width=0.45pt] ({\W/2-0.12},{\H+0.22}) .. controls ({\W/2},{\H+0.48}) .. ({\W/2+0.12},{\H+0.22});
+  \foreach \a in {40,60,80,100,120,140,50,130} {
+    \draw[line width=0.45pt]
+      ({(\W/2)+0.34*cos(\a)},{(\H+0.38)+0.34*sin(\a)})
+      -- ({(\W/2)+0.58*cos(\a)},{(\H+0.38)+0.58*sin(\a)});
+  }
+\end{tikzpicture}%
+}
+\caption{图6.15（a）·二极管加正向电压导通}
 \end{figure}
 
-\emph{（a）}
+\emph{图6.15（a）·二极管加正向电压导通}
 
 \begin{figure}
 \centering
