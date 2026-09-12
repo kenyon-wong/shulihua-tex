@@ -18838,14 +18838,97 @@ A = \frac {G}{F} = \frac {r _ {2}}{r _ {1}} > 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第310页）}]{assets/physics-1/fig-p0310-03.png}}
-\caption{图示（原PDF第310页）}
+% fig-alt: 图10-9之一：井上辘轳。两柱尖顶斜影屋顶；横轴中段绕绳下吊木桶；右大轮辐条外伸把手。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % posts
+  \draw[line width=0.7pt] (0.55,1.55) rectangle (0.95,4.05);
+  \draw[line width=0.7pt] (3.35,1.55) rectangle (3.75,4.05);
+  \foreach \x in {0.68,0.82}
+    \draw[line width=0.22pt] (\x,1.65) -- (\x,3.95);
+  \foreach \x in {3.48,3.62}
+    \draw[line width=0.22pt] (\x,1.65) -- (\x,3.95);
+  % roof
+  \draw[line width=0.7pt] (0.35,4.05) -- (2.15,5.05) -- (3.95,4.05) -- cycle;
+  \foreach \t in {0.15,0.30,0.45,0.60,0.75}
+    \draw[line width=0.28pt] ({0.35+1.80*\t},{4.05+1.00*\t}) -- ({3.95-1.80*\t},{4.05+1.00*\t});
+  % drum (cylinder)
+  \draw[line width=0.65pt] (0.95,3.35) -- (3.35,3.35);
+  \draw[line width=0.65pt] (0.95,2.75) -- (3.35,2.75);
+  \draw[line width=0.65pt] (0.95,3.05) ellipse[x radius=0.12,y radius=0.30];
+  \draw[line width=0.65pt] (3.35,3.05) ellipse[x radius=0.12,y radius=0.30];
+  % rope coils
+  \foreach \x in {1.35,1.55,1.75,1.95,2.15,2.35}
+    \draw[line width=0.45pt] (\x,3.32) arc[start angle=90,end angle=270,x radius=0.10,y radius=0.28];
+  \draw[line width=0.55pt] (1.85,2.75) -- (1.85,1.15);
+  % bucket
+  \draw[line width=0.55pt] (1.55,0.55) -- (1.55,1.15) -- (2.15,1.15) -- (2.15,0.55);
+  \draw[line width=0.55pt] (1.50,0.55) -- (2.20,0.55);
+  \draw[line width=0.35pt] (1.55,0.85) -- (2.15,0.85);
+  \draw[line width=0.35pt] (1.75,0.55) -- (1.75,1.15);
+  \draw[line width=0.35pt] (1.95,0.55) -- (1.95,1.15);
+  % large wheel on right
+  \draw[line width=0.7pt] (4.55,3.05) circle[radius=1.05];
+  \draw[line width=0.4pt] (4.55,3.05) circle[radius=0.22];
+  \fill (4.55,3.05) circle[radius=0.05];
+  \foreach \a in {0,30,60,90,120,150}
+    \draw[line width=0.4pt] (4.55,3.05) --++({\a}:1.05);
+  % handles / pegs
+  \foreach \a in {15,75,135,195,255,315} {
+    \draw[line width=0.65pt] ({4.55+1.05*cos(\a)},{3.05+1.05*sin(\a)}) -- ({4.55+1.35*cos(\a)},{3.05+1.35*sin(\a)});
+    \draw[line width=0.5pt] ({4.55+1.35*cos(\a)},{3.05+1.35*sin(\a)}) circle[radius=0.07];
+  }
+  % axle through right post to wheel
+  \draw[line width=0.7pt] (3.75,3.05) -- (4.55,3.05);
+  % ground
+  \draw[line width=0.55pt] (0.25,1.55) -- (4.05,1.55);
+  \foreach \x in {0.40,0.70,1.00,1.30,2.60,2.90,3.20,3.50,3.80}
+    \draw[line width=0.28pt] (\x,1.55) -- (\x-0.12,1.35);
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第310页）}]{assets/physics-1/fig-p0310-04.png}}
-\caption{图示（原PDF第310页）}
+% fig-alt: 图10-9之一：井上曲柄辘轳。椭圆石井圈；两柱尖顶屋顶；横轴绕绳下垂；右曲柄。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % well base ellipse
+  \draw[line width=0.65pt] (2.05,1.15) ellipse[x radius=1.55,y radius=0.55];
+  \draw[line width=0.55pt] (0.50,1.15) -- (0.55,1.85);
+  \draw[line width=0.55pt] (3.60,1.15) -- (3.55,1.85);
+  \draw[line width=0.55pt] (0.55,1.85) arc[start angle=180,end angle=360,x radius=1.50,y radius=0.42];
+  \foreach \a in {20,50,80,110,140,170}
+    \draw[line width=0.28pt] ({2.05+1.40*cos(\a)},{1.15+0.48*sin(\a)}) -- ({2.05+1.40*cos(\a)},{1.55+0.28*sin(\a)});
+  \foreach \y in {1.35,1.55}
+    \draw[line width=0.28pt] (0.70,\y) arc[start angle=180,end angle=360,x radius=1.35,y radius=0.32];
+  % posts
+  \draw[line width=0.7pt] (0.85,1.70) rectangle (1.20,4.15);
+  \draw[line width=0.7pt] (2.90,1.70) rectangle (3.25,4.15);
+  \foreach \x in {0.97,1.08,3.02,3.13}
+    \draw[line width=0.22pt] (\x,1.80) -- (\x,4.05);
+  % roof
+  \draw[line width=0.7pt] (0.55,4.15) -- (2.05,5.05) -- (3.55,4.15) -- cycle;
+  \foreach \t in {0.2,0.4,0.6,0.8}
+    \draw[line width=0.28pt] ({0.55+1.50*\t},{4.15+0.90*\t}) -- ({3.55-1.50*\t},{4.15+0.90*\t});
+  % drum
+  \draw[line width=0.65pt] (1.20,3.55) -- (2.90,3.55);
+  \draw[line width=0.65pt] (1.20,3.05) -- (2.90,3.05);
+  \draw[line width=0.55pt] (1.20,3.30) ellipse[x radius=0.10,y radius=0.25];
+  \draw[line width=0.55pt] (2.90,3.30) ellipse[x radius=0.10,y radius=0.25];
+  \foreach \x in {1.55,1.75,1.95,2.15,2.35}
+    \draw[line width=0.4pt] (\x,3.52) arc[start angle=90,end angle=270,x radius=0.09,y radius=0.22];
+  \draw[line width=0.55pt] (2.05,3.05) -- (2.05,1.85);
+  % crank on right
+  \draw[line width=0.7pt] (3.25,3.30) -- (3.85,3.30);
+  \draw[line width=0.7pt] (3.85,3.30) -- (3.85,3.95);
+  \draw[line width=0.7pt] (3.85,3.95) -- (4.35,3.95);
+  \draw[line width=0.55pt] (4.35,3.95) circle[radius=0.10];
+  % ground grass
+  \foreach \x in {0.30,0.55,0.80,3.40,3.65,3.90,4.15}
+    \draw[line width=0.28pt] (\x,1.05) -- (\x+0.08,1.25) -- (\x+0.16,1.05);
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{figure}
@@ -18892,7 +18975,46 @@ A = \frac {G}{F} = \frac {r _ {2}}{r _ {1}} > 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图10-9}]{assets/physics-1/fig-p0310-06.png}}
+% fig-alt: 图10-9之一：畜力磨。椭圆底盘；中竖鼓顶料斗；横杠连左驴（眼罩）。人物/动物为示意图。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % base tray
+  \draw[line width=0.7pt] (2.55,1.05) ellipse[x radius=2.05,y radius=0.55];
+  \draw[line width=0.45pt] (0.50,1.05) -- (0.70,1.45);
+  \draw[line width=0.45pt] (4.60,1.05) -- (4.40,1.45);
+  \draw[line width=0.55pt] (0.70,1.45) arc[start angle=180,end angle=360,x radius=1.85,y radius=0.40];
+  \foreach \x in {1.0,1.6,2.2,2.8,3.4,4.0}
+    \draw[line width=0.28pt] (\x,0.85) -- (\x,1.00);
+  % central drum
+  \draw[line width=0.7pt] (1.85,1.45) -- (1.85,2.85);
+  \draw[line width=0.7pt] (3.25,1.45) -- (3.25,2.85);
+  \draw[line width=0.7pt] (2.55,2.85) ellipse[x radius=0.70,y radius=0.22];
+  \draw[line width=0.55pt] (2.55,1.45) ellipse[x radius=0.70,y radius=0.20];
+  \foreach \x in {2.05,2.30,2.55,2.80,3.05}
+    \draw[line width=0.28pt] (\x,1.55) -- (\x,2.75);
+  % hopper
+  \draw[line width=0.55pt] (2.20,2.95) -- (2.05,3.45) -- (3.05,3.45) -- (2.90,2.95);
+  \draw[line width=0.4pt] (2.05,3.45) -- (3.05,3.45);
+  % horizontal beam
+  \draw[line width=1.15pt] (2.55,2.15) -- (0.35,2.35);
+  \draw[line width=0.45pt] (2.55,2.15) -- (3.55,2.05);
+  % donkey (schematic, facing left)
+  \draw[line width=0.55pt] (-0.15,2.85) circle[radius=0.22]; % head
+  \draw[line width=0.45pt] (-0.28,3.05) -- (-0.35,3.35); % ear
+  \draw[line width=0.45pt] (-0.05,3.05) -- (0.00,3.32);
+  \fill (-0.28,2.88) circle[radius=0.08]; % blinder
+  \fill (-0.02,2.88) circle[radius=0.08];
+  \draw[line width=0.55pt] (0.05,2.70) -- (0.85,2.55); % neck/back
+  \draw[line width=0.55pt,fill=black!85] (0.55,1.85) -- (1.15,1.85) -- (1.25,2.45) -- (0.45,2.55) -- cycle; % body
+  \draw[line width=0.5pt] (0.65,1.85) -- (0.45,1.15); % legs
+  \draw[line width=0.5pt] (0.85,1.85) -- (0.75,1.15);
+  \draw[line width=0.5pt] (1.05,1.85) -- (1.25,1.20);
+  \draw[line width=0.45pt] (1.15,2.35) -- (1.45,2.55); % tail
+  % harness to beam
+  \draw[line width=0.45pt] (0.55,2.55) -- (0.35,2.35);
+  \draw[line width=0.45pt] (0.85,2.50) -- (0.55,2.32);
+\end{tikzpicture}%
+}
 \caption{图10-9}
 \end{figure}
 
@@ -18900,8 +19022,78 @@ A = \frac {G}{F} = \frac {r _ {2}}{r _ {1}} > 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第311页）}]{assets/physics-1/fig-p0311-01.png}}
-\caption{图示（原PDF第311页）}
+% fig-alt: 图10-10左二：左人撬石板，板心下箭G，杆端上箭F；右人推独轮车，货心下箭G，柄端上箭F。人物示意图。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % === left: pry stone ===
+  \begin{scope}
+    \draw[line width=0.55pt] (0.10,0.85) -- (4.20,0.85);
+    \foreach \x in {0.25,0.55,0.85,1.15,1.45,3.60,3.90,4.15}
+      \draw[line width=0.25pt] (\x,0.85) -- (\x-0.12,0.65);
+    % stone slab
+    \draw[line width=0.65pt] (0.35,0.85) rectangle (1.95,1.55);
+    \foreach \i in {0,...,4}
+      \draw[line width=0.22pt] (0.45,0.95+0.12*\i) -- (1.85,0.95+0.12*\i);
+    \draw[line width=0.7pt,->] (1.15,1.55) -- (1.15,1.05);
+    \node[anchor=south] at (1.15,1.60) {$G$};
+    % lever
+    \draw[line width=1.15pt] (0.55,0.95) -- (3.55,2.55);
+    % person
+    \draw[line width=0.55pt] (3.55,2.95) circle[radius=0.20];
+    \draw[line width=0.4pt] (3.35,3.08) -- (3.75,3.10); % cap
+    \draw[line width=0.5pt] (3.45,2.75) -- (3.35,2.05);
+    \draw[line width=0.5pt] (3.65,2.75) -- (3.75,2.05);
+    \draw[line width=0.5pt] (3.40,2.55) -- (3.35,2.55);
+    \draw[line width=0.5pt] (3.70,2.55) -- (3.55,2.55);
+    \fill (3.35,2.55) circle[radius=0.05];
+    \fill (3.55,2.55) circle[radius=0.05];
+    \draw[line width=0.55pt,fill=black] (3.30,1.55) -- (3.80,1.55) -- (3.85,2.05) -- (3.25,2.08) -- cycle;
+    \draw[line width=0.5pt] (3.40,1.55) -- (3.25,0.85);
+    \draw[line width=0.5pt] (3.70,1.55) -- (3.90,0.85);
+    \draw[line width=0.65pt] (3.10,0.85) -- (3.40,0.85);
+    \draw[line width=0.65pt] (3.75,0.85) -- (4.05,0.85);
+    \draw[line width=0.7pt,->] (3.55,2.55) -- (3.55,3.25);
+    \node[anchor=south] at (3.55,3.30) {$F$};
+  \end{scope}
+  % === right: wheelbarrow ===
+  \begin{scope}[shift={(5.0,0)}]
+    \draw[line width=0.55pt] (0.10,0.75) -- (4.40,0.75);
+    % person
+    \draw[line width=0.55pt] (0.55,2.55) circle[radius=0.20];
+    \draw[line width=0.5pt] (0.45,2.35) -- (0.55,1.65);
+    \draw[line width=0.5pt] (0.65,2.35) -- (0.85,1.65);
+    \draw[line width=0.5pt] (0.55,2.15) -- (1.15,1.55); % arms to handles
+    \draw[line width=0.5pt] (0.70,2.15) -- (1.25,1.55);
+    \draw[line width=0.55pt,fill=black!80] (0.35,1.15) -- (0.95,1.15) -- (1.00,1.65) -- (0.30,1.70) -- cycle;
+    \draw[line width=0.5pt] (0.45,1.15) -- (0.35,0.75);
+    \draw[line width=0.5pt] (0.80,1.15) -- (0.95,0.75);
+    \draw[line width=0.55pt] (0.25,0.75) -- (0.50,0.75);
+    \draw[line width=0.55pt] (0.85,0.75) -- (1.10,0.75);
+    % apron hint
+    \draw[line width=0.35pt] (0.40,1.55) -- (0.40,1.20);
+    \draw[line width=0.35pt] (0.90,1.55) -- (0.90,1.20);
+    % handles / frame
+    \draw[line width=0.85pt] (1.15,1.55) -- (3.85,1.05);
+    \draw[line width=0.85pt] (1.25,1.45) -- (3.85,0.95);
+    % tub
+    \draw[line width=0.6pt] (1.85,1.35) -- (3.25,1.15) -- (3.35,1.85) -- (1.95,2.05) -- cycle;
+    \foreach \i in {0,1,2}
+      \draw[line width=0.35pt] ({2.10+0.35*\i},{1.55+0.08*\i}) rectangle ({2.35+0.35*\i},{1.85+0.08*\i});
+    % wheel
+    \draw[line width=0.7pt] (3.85,1.15) circle[radius=0.40];
+    \draw[line width=0.35pt] (3.85,1.15) circle[radius=0.12];
+    \fill (3.85,1.15) circle[radius=0.04];
+    \foreach \a in {0,45,90,135}
+      \draw[line width=0.3pt] (3.85,1.15) --++({\a}:0.40);
+    % F up at handles
+    \draw[line width=0.7pt,->] (1.20,1.55) -- (1.20,2.25);
+    \node[anchor=south] at (1.20,2.30) {$F$};
+    % G down from load
+    \draw[line width=0.7pt,->] (2.55,1.55) -- (2.55,0.95);
+    \node[anchor=north] at (2.55,0.90) {$G$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{figure}
@@ -19182,7 +19374,61 @@ G。在本例中，由于石块作用在铁模上的作用力的作用点正好�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图10-15}]{assets/physics-1/fig-p0313-02.png}}
+% fig-alt: 图10-15：水压机。左窄缸小活塞连杠杆，左端下箭F，活塞杆旁下箭F'；底连通管；右宽缸大活塞上斜影重物标G；底斜影座；左下贮液与单向阀。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % base
+  \draw[line width=0.7pt] (0.25,0.35) rectangle (6.35,0.85);
+  \foreach \i in {0,...,12}
+    \draw[line width=0.25pt] (0.35+0.45*\i,0.35) -- (0.20+0.45*\i,0.85);
+  % left narrow cylinder
+  \draw[line width=0.7pt] (1.35,0.85) -- (1.35,3.45);
+  \draw[line width=0.7pt] (1.95,0.85) -- (1.95,3.45);
+  \draw[line width=0.55pt] (1.35,3.45) -- (1.95,3.45);
+  \foreach \y in {1.05,1.25,1.45,1.65,1.85,2.05,2.25,2.55}
+    \draw[line width=0.22pt,dash pattern=on 1.2pt off 1pt] (1.40,\y) -- (1.90,\y);
+  % small piston
+  \draw[line width=0.7pt,fill=white] (1.38,2.75) rectangle (1.92,3.05);
+  \draw[line width=0.65pt] (1.65,3.05) -- (1.65,3.85);
+  % lever
+  \draw[line width=0.85pt] (0.25,4.10) -- (2.55,3.70);
+  \fill (1.65,3.85) circle[radius=0.05];
+  % pivot bracket
+  \draw[line width=0.55pt] (1.95,3.35) -- (2.45,3.35) -- (2.45,3.70);
+  \fill (2.45,3.70) circle[radius=0.05];
+  % F and F'
+  \draw[line width=0.7pt,->] (0.40,4.05) -- (0.40,3.40);
+  \node[anchor=east] at (0.32,3.65) {$F$};
+  \draw[line width=0.7pt,->] (1.05,3.55) -- (1.05,2.90);
+  \node[anchor=east] at (0.98,3.15) {$F'$};
+  \draw[line width=0.4pt] (1.05,3.20) -- (1.65,3.20);
+  % reservoir + valve
+  \draw[line width=0.55pt] (0.40,0.85) rectangle (1.15,1.60);
+  \foreach \y in {1.00,1.15,1.30,1.45}
+    \draw[line width=0.2pt,dash pattern=on 1pt off 0.8pt] (0.45,\y) -- (1.10,\y);
+  \draw[line width=0.45pt] (1.15,1.20) -- (1.35,1.20);
+  \fill (1.20,1.08) rectangle (1.38,1.32);
+  % connecting pipe
+  \draw[line width=0.7pt] (1.95,1.00) -- (3.35,1.00);
+  \draw[line width=0.7pt] (1.95,1.50) -- (3.35,1.50);
+  \foreach \x in {2.10,2.35,2.60,2.85,3.10}
+    \draw[line width=0.2pt,dash pattern=on 1pt off 0.8pt] (\x,1.08) -- (\x,1.42);
+  % right wide cylinder
+  \draw[line width=0.75pt] (3.35,0.85) -- (3.35,3.15);
+  \draw[line width=0.75pt] (5.55,0.85) -- (5.55,3.15);
+  \draw[line width=0.55pt] (3.35,3.15) -- (5.55,3.15);
+  \foreach \y in {1.05,1.25,1.45,1.65,1.85,2.05,2.25}
+    \draw[line width=0.22pt,dash pattern=on 1.2pt off 1pt] (3.40,\y) -- (5.50,\y);
+  % large piston
+  \draw[line width=0.75pt,fill=white] (3.40,2.40) rectangle (5.50,2.85);
+  % load G
+  \draw[line width=0.7pt] (3.70,2.85) rectangle (5.20,4.20);
+  \foreach \i in {0,...,8}
+    \draw[line width=0.25pt] (3.80+0.15*\i,2.85) -- (3.65+0.15*\i,4.20);
+  \node[anchor=south] at (4.45,4.25) {$G$};
+  \draw[line width=0.65pt,->] (4.45,4.10) -- (4.45,3.40);
+\end{tikzpicture}%
+}
 \caption{图10-15}
 \end{figure}
 
@@ -19339,20 +19585,103 @@ G = 720 F = 720 \times 10 \text{公斤}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第316页）}]{assets/physics-1/fig-p0316-02.png}}
-\caption{图示（原PDF第316页）}
+% fig-alt: 图10-16相关：折杆 A—O—B—D。O右固定支座斜影；OA左上，A处垂直于OA的箭F；OB竖下，BD水平向左至D。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % support at O (wall to the right)
+  \draw[line width=0.55pt] (3.05,2.55) -- (3.05,3.35);
+  \foreach \y in {2.60,2.75,2.90,3.05,3.20}
+    \draw[line width=0.28pt] (3.05,\y) -- (3.35,\y+0.15);
+  \draw[line width=0.55pt] (2.85,2.95) -- (3.05,2.95);
+  \fill (2.85,2.95) circle[radius=0.06];
+  \node[anchor=north east] at (2.78,2.88) {$O$};
+  % thick bent bar: A--O--B--D
+  \draw[line width=1.35pt] (1.35,4.25) -- (2.85,2.95) -- (2.85,1.35) -- (0.45,1.35);
+  % small crossbar at A (perpendicular to OA)
+  \draw[line width=0.7pt] (1.20,4.05) -- (1.50,4.45);
+  \node[anchor=south east] at (1.25,4.35) {$A$};
+  % F arrow toward A, perpendicular to OA (OA direction is about 130 deg, perp is about 40 deg toward A from upper-right)
+  \draw[line width=0.75pt,->] (2.15,4.55) -- (1.45,4.20);
+  \node[anchor=south west] at (2.00,4.60) {$F$};
+  \node[anchor=west] at (2.95,1.35) {$B$};
+  \node[anchor=south] at (0.45,1.42) {$D$};
+  % small tick at D
+  \draw[line width=0.55pt] (0.45,1.35) -- (0.45,1.10);
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第316页）}]{assets/physics-1/fig-p0316-03.png}}
-\caption{图示（原PDF第316页）}
+% fig-alt: 图10-16(b)：L形杆 O'竖至D再水平至B（B端短竖柄）；O'三角支座斜影；竖杆贴圆C于E，水平左箭N。图内写(b)。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % L-lever: O' up to D, right to B, short up at B
+  \draw[line width=1.2pt] (1.15,0.85) -- (1.15,3.25) -- (3.55,3.25);
+  \draw[line width=1.0pt] (3.55,3.25) -- (3.55,3.65);
+  \node[anchor=south east] at (1.08,3.32) {$D$};
+  \node[anchor=south] at (3.55,3.72) {$B$};
+  % fulcrum O'
+  \fill (1.15,0.85) -- (0.95,0.55) -- (1.35,0.55) -- cycle;
+  \draw[line width=0.45pt] (0.75,0.55) -- (1.55,0.55);
+  \foreach \k in {0,...,5}
+    \draw[line width=0.25pt] (0.82+0.12*\k,0.55) -- (0.72+0.12*\k,0.38);
+  \node[anchor=north] at (1.15,0.35) {$O'$};
+  % circle C tangent to vertical bar at E
+  \draw[line width=0.7pt] (2.25,1.85) circle[radius=1.10];
+  \fill (2.25,1.85) circle[radius=0.04];
+  \node[anchor=west] at (2.45,1.85) {$C$};
+  % contact E
+  \fill (1.15,1.85) circle[radius=0.055];
+  \node[anchor=east] at (1.00,2.05) {$E$};
+  % curved shoe
+  \draw[line width=0.55pt] (1.15,2.35) .. controls (1.45,2.15) and (1.45,1.55) .. (1.15,1.35);
+  % N leftward
+  \draw[line width=0.75pt,->] (1.15,1.85) -- (0.20,1.85);
+  \node[anchor=south] at (0.55,1.95) {$N$};
+  \node at (2.40,0.20) {(b)};
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第316页）}]{assets/physics-1/fig-p0316-04.png}}
-\caption{图示（原PDF第316页）}
+% fig-alt: 图10-16(c)局部：上杆O—B—A，O三角支座，B处重块下箭G，A倒刀口压在B'；下杆O'—B'—A'，O'三角支座，B'下箭G'，A'竖连杆。图内不写图号。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % top lever OA
+  \draw[line width=1.1pt] (0.40,2.85) -- (4.20,2.85);
+  \node[anchor=south] at (0.40,2.95) {$O$};
+  \node[anchor=south] at (2.00,2.95) {$B$};
+  \node[anchor=south] at (4.20,2.95) {$A$};
+  % fulcrum O
+  \fill (0.40,2.85) -- (0.22,2.55) -- (0.58,2.55) -- cycle;
+  \draw[line width=0.4pt] (0.10,2.55) -- (0.70,2.55);
+  \foreach \k in {0,...,4}
+    \draw[line width=0.22pt] (0.15+0.12*\k,2.55) -- (0.05+0.12*\k,2.40);
+  % weight at B
+  \fill (1.85,2.85) rectangle (2.15,3.15);
+  \draw[line width=0.7pt,->] (2.00,2.85) -- (2.00,2.35);
+  \node[anchor=east] at (1.90,2.50) {$G$};
+  % knife edge at A resting on lower lever
+  \fill (4.20,2.85) -- (4.05,2.15) -- (4.35,2.15) -- cycle;
+  % bottom lever O'A' (just under knife)
+  \draw[line width=1.1pt] (2.40,2.15) -- (6.20,2.15);
+  \node[anchor=north] at (2.40,2.02) {$O'$};
+  \node[anchor=north] at (4.20,2.02) {$B'$};
+  \node[anchor=north] at (6.20,2.02) {$A'$};
+  % fulcrum O'
+  \fill (2.40,2.15) -- (2.22,1.85) -- (2.58,1.85) -- cycle;
+  \draw[line width=0.4pt] (2.10,1.85) -- (2.70,1.85);
+  \foreach \k in {0,...,4}
+    \draw[line width=0.22pt] (2.15+0.12*\k,1.85) -- (2.05+0.12*\k,1.70);
+  % G' at B'
+  \draw[line width=0.7pt,->] (4.20,2.15) -- (4.20,1.45);
+  \node[anchor=north] at (4.20,1.40) {$G'$};
+  % vertical link at A'
+  \draw[line width=0.55pt] (6.20,2.15) -- (6.20,2.95);
+\end{tikzpicture}%
+}
 \end{figure}
 
 \begin{figure}
