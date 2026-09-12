@@ -682,10 +682,10 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 \begin{figure}
 \centering
 \fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-3/fig-p0018-01.png}}
-\caption{(4)}
+\caption{(a)}
 \end{figure}
 
-\emph{（4）}
+\emph{（a）}
 
 \begin{figure}
 \centering
@@ -14709,7 +14709,49 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.23 能自由转动的通电螺线管一端指北，一端指南}]{assets/physics-3/fig-p0214-01.png}}
+\fitfig{%
+% fig-alt: 图3.23 能自由转动的通电螺线管。底座两接线柱上竖杆横臂悬螺线管，下引线标接电池组
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % base (perspective)
+  \draw[line width=0.65pt]
+    (0.00,0.00) -- (3.60,0.00) -- (4.15,0.55) -- (0.55,0.55) -- cycle;
+  \draw[line width=0.65pt]
+    (0.00,0.00) -- (0.00,-0.35) -- (3.60,-0.35) -- (3.60,0.00);
+  \draw[line width=0.55pt] (4.15,0.55) -- (4.15,0.20) -- (3.60,-0.35);
+  % short feet
+  \foreach \x in {0.15,3.40} {
+    \draw[line width=0.5pt] (\x,-0.35) -- (\x,-0.55) -- (\x+0.25,-0.55) -- (\x+0.25,-0.35);
+  }
+  \draw[line width=0.5pt] (3.85,0.10) -- (3.85,-0.10) -- (4.05,-0.10) -- (4.05,0.15);
+  % binding posts
+  \draw[line width=0.55pt] (2.55,0.55) circle[radius=0.10];
+  \draw[line width=0.55pt] (3.15,0.55) circle[radius=0.10];
+  \draw[line width=0.45pt] (2.55,0.65) -- (2.55,0.78);
+  \draw[line width=0.45pt] (3.15,0.65) -- (3.15,0.78);
+  % uprights
+  \draw[line width=0.7pt] (2.55,0.78) -- (2.55,3.35);
+  \draw[line width=0.7pt] (3.15,0.78) -- (3.15,3.10);
+  % horizontal arms to left
+  \draw[line width=0.65pt] (2.55,3.35) -- (0.85,3.35) -- (0.85,3.15);
+  \draw[line width=0.65pt] (3.15,3.10) -- (2.55,3.10);
+  \draw[line width=0.65pt] (2.55,3.10) -- (1.95,3.10) -- (1.95,2.95);
+  % suspension wires to coil ends
+  \draw[line width=0.5pt] (0.85,3.15) -- (0.55,2.55);
+  \draw[line width=0.5pt] (1.95,2.95) -- (2.25,2.55);
+  % solenoid: core frame + turns
+  \draw[line width=0.55pt]
+    (0.35,2.15) -- (2.45,2.15) -- (2.45,2.95) -- (0.35,2.95) -- cycle;
+  \foreach \x in {0.50,0.75,1.00,1.25,1.50,1.75,2.00,2.25} {
+    \draw[line width=0.65pt] (\x,2.55) ellipse[x radius=0.14,y radius=0.38];
+  }
+  % leads from posts to battery
+  \draw[line width=0.55pt] (2.55,0.45) .. controls (3.40,-0.05) and (4.20,-0.15) .. (4.55,-0.05);
+  \draw[line width=0.55pt] (3.15,0.45) .. controls (3.70,0.05) and (4.35,0.25) .. (4.70,0.35);
+  \node[anchor=west,inner sep=1pt,font=\small] at (4.00,-0.55) {接电池组};
+  \draw[line width=0.4pt] (4.05,-0.40) -- (4.50,-0.08);
+  \draw[line width=0.4pt] (4.25,-0.40) -- (4.65,0.28);
+\end{tikzpicture}%
+}
 \caption{图 3.23 能自由转动的通电螺线管一端指北，一端指南}
 \end{figure}
 
@@ -14778,7 +14820,18 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.25 分子环流}]{assets/physics-3/fig-p0215-01.png}}
+\fitfig{%
+% fig-alt: 图3.25 分子环流。竖椭圆环流，水平轴左箭N、右S
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (0,0) ellipse[x radius=0.42,y radius=1.15];
+  % current arrow on front (right) of loop, downward
+  \draw[line width=0.6pt,->] (0.40,0.25) -- (0.40,-0.25);
+  % magnetic axis: arrow to left (N)
+  \draw[line width=0.65pt,->] (1.55,0) -- (-1.55,0);
+  \node[anchor=east,inner sep=2pt] at (-1.60,0) {$N$};
+  \node[anchor=west,inner sep=2pt] at (1.60,0) {$S$};
+\end{tikzpicture}%
+}
 \caption{图3.25 分子环流}
 \end{figure}
 
@@ -14786,7 +14839,73 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.26 磁体中的分子环流}]{assets/physics-3/fig-p0215-02.png}}
+\fitfig{%
+% fig-alt: 图3.26 磁体中的分子环流。(a)杂乱环流；(b)取向一致及横截面；(c)等效表面环流与大圆
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % ---- (a) random ----
+  \begin{scope}[shift={(0,4.55)}]
+    \node[anchor=east,inner sep=3pt] at (-0.15,0.55) {a};
+    \draw[line width=0.6pt] (-0.05,0.00) ellipse[x radius=0.28,y radius=0.55];
+    \draw[line width=0.6pt] (3.35,0.00) ellipse[x radius=0.28,y radius=0.55];
+    \draw[line width=0.6pt] (-0.05,0.55) -- (3.35,0.55);
+    \draw[line width=0.6pt] (-0.05,-0.55) -- (3.35,-0.55);
+    \foreach \x/\y/\ang in {
+      0.35/0.25/20, 0.85/-0.15/-35, 1.30/0.30/55, 1.75/-0.25/10,
+      2.20/0.20/-50, 2.70/-0.10/40, 0.55/-0.30/70, 1.10/0.05/-15,
+      1.55/0.35/-60, 2.00/-0.35/25, 2.45/0.15/5, 2.95/0.30/-40,
+      0.70/0.35/-25, 1.40/-0.05/45, 2.15/0.40/-10, 0.40/-0.05/80,
+      3.00/-0.25/30, 1.00/-0.40/-45} {
+      \begin{scope}[shift={(\x,\y)},rotate=\ang]
+        \draw[line width=0.4pt] (0,0) circle[radius=0.16];
+        \draw[line width=0.35pt,->] (0.12,0.08) arc[start angle=35,end angle=-55,radius=0.16];
+      \end{scope}
+    }
+  \end{scope}
+  % ---- (b) aligned + cross section ----
+  \begin{scope}[shift={(0,2.35)}]
+    \node[anchor=east,inner sep=3pt] at (-0.15,0.55) {b};
+    \draw[line width=0.6pt] (-0.05,0.00) ellipse[x radius=0.28,y radius=0.55];
+    \draw[line width=0.6pt] (3.35,0.00) ellipse[x radius=0.28,y radius=0.55];
+    \draw[line width=0.6pt] (-0.05,0.55) -- (3.35,0.55);
+    \draw[line width=0.6pt] (-0.05,-0.55) -- (3.35,-0.55);
+    \foreach \x in {0.40,0.90,1.40,1.90,2.40,2.90} {
+      \foreach \y in {-0.28,0.00,0.28} {
+        \draw[line width=0.4pt] (\x,\y) ellipse[x radius=0.11,y radius=0.18];
+        \draw[line width=0.35pt,->] (\x+0.10,\y+0.06) -- (\x+0.10,\y-0.06);
+      }
+    }
+    \draw[line width=0.4pt,dashed] (3.65,0.00) -- (4.35,0.00);
+    \begin{scope}[shift={(5.35,0.00)}]
+      \draw[line width=0.65pt] (0,0) circle[radius=0.95];
+      \foreach \x/\y in {
+        0.00/0.00, 0.30/0.00, -0.30/0.00, 0.15/0.26, -0.15/0.26,
+        0.15/-0.26, -0.15/-0.26, 0.45/0.26, -0.45/0.26, 0.45/-0.26, -0.45/-0.26,
+        0.00/0.52, 0.00/-0.52, 0.30/0.52, -0.30/0.52, 0.30/-0.52, -0.30/-0.52,
+        0.60/0.00, -0.60/0.00, 0.52/0.45, -0.52/0.45, 0.52/-0.45, -0.52/-0.45,
+        0.00/0.75, 0.00/-0.75, 0.70/0.30, -0.70/0.30, 0.70/-0.30, -0.70/-0.30,
+        0.40/0.70, -0.40/0.70, 0.40/-0.70, -0.40/-0.70} {
+        \draw[line width=0.35pt] (\x,\y) circle[radius=0.13];
+      }
+    \end{scope}
+  \end{scope}
+  % ---- (c) surface current + empty circle ----
+  \begin{scope}[shift={(0,0.15)}]
+    \node[anchor=east,inner sep=3pt] at (-0.15,0.55) {c};
+    \draw[line width=0.6pt] (-0.05,0.00) ellipse[x radius=0.28,y radius=0.55];
+    \draw[line width=0.6pt] (3.35,0.00) ellipse[x radius=0.28,y radius=0.55];
+    \draw[line width=0.6pt] (-0.05,0.55) -- (3.35,0.55);
+    \draw[line width=0.6pt] (-0.05,-0.55) -- (3.35,-0.55);
+    \foreach \x in {0.35,0.85,1.35,1.85,2.35,2.85} {
+      \draw[line width=0.55pt] (\x,0) ellipse[x radius=0.18,y radius=0.52];
+      \draw[line width=0.45pt,->] (\x+0.16,0.15) -- (\x+0.16,-0.15);
+    }
+    \draw[line width=0.4pt,dashed] (3.65,0.00) -- (4.35,0.00);
+    \draw[line width=0.65pt] (5.35,0.00) circle[radius=0.95];
+  \end{scope}
+  % vertical arrow from b cross-section down to c
+  \draw[line width=0.55pt,->] (5.35,1.38) -- (5.35,1.12);
+\end{tikzpicture}%
+}
 \caption{图 3.26 磁体中的分子环流}
 \end{figure}
 
@@ -14817,11 +14936,34 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(年1题)}]{assets/physics-3/fig-p0216-01.png}}
-\caption{(年1题)}
+\fitfig{%
+% fig-alt: 习题3.2第1题。水平导线AB，上I右指；下方磁针左N黑右S，立于三角座
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % wire as thin cylinder
+  \draw[line width=0.7pt] (-2.40,1.15) -- (2.40,1.15);
+  \draw[line width=0.55pt] (-2.40,1.15) ellipse[x radius=0.08,y radius=0.12];
+  \draw[line width=0.55pt] (2.40,1.15) ellipse[x radius=0.08,y radius=0.12];
+  \draw[line width=0.55pt] (-2.40,1.27) -- (2.40,1.27);
+  \draw[line width=0.55pt] (-2.40,1.03) -- (2.40,1.03);
+  \node[anchor=east,inner sep=2pt] at (-2.55,1.15) {$A$};
+  \node[anchor=west,inner sep=2pt] at (2.55,1.15) {$B$};
+  \draw[line width=0.6pt,->] (-0.55,1.55) -- (0.85,1.55);
+  \node[anchor=south,inner sep=1pt] at (0.15,1.58) {$I$};
+  % stand
+  \draw[line width=0.55pt] (0,-0.55) -- (-0.35,-0.85) -- (0.35,-0.85) -- cycle;
+  \draw[line width=0.55pt] (0,-0.55) -- (0,0.15);
+  % needle: N left black, S right white
+  \fill (0,0.25) -- (-1.15,0.25) -- (0,0.36) -- (0,0.14) -- cycle;
+  \draw[line width=0.55pt,fill=white] (0,0.25) -- (1.15,0.25) -- (0,0.36) -- (0,0.14) -- cycle;
+  \draw[line width=0.55pt] (0,0.36) -- (-1.15,0.25) -- (0,0.14);
+  \node[anchor=east,inner sep=1pt] at (-1.25,0.25) {$N$};
+  \node[anchor=west,inner sep=1pt] at (1.25,0.25) {$S$};
+\end{tikzpicture}%
+}
+\caption{(第1题)}
 \end{figure}
 
-\emph{（年1题）}
+\emph{（第1题）}
 
 \begin{enumerate}
 \setcounter{enumi}{1}
@@ -14831,7 +14973,29 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-3/fig-p0216-02.png}}
+\fitfig{%
+% fig-alt: 习题3.2第2题(a)。导线AB，上方两排×（向里），下方两排·（向外）
+\begin{tikzpicture}[line cap=round,line join=round]
+  % field into page above
+  \foreach \y in {0.85,1.25} {
+    \foreach \x in {-1.40,-0.70,0.00,0.70,1.40} {
+      \node at (\x,\y) {$\times$};
+    }
+  }
+  % wire
+  \draw[line width=0.7pt,rounded corners=1.5pt] (-2.20,-0.12) rectangle (2.20,0.12);
+  \draw[line width=0.5pt] (-2.20,0) circle[radius=0.08];
+  \draw[line width=0.5pt] (2.20,0) circle[radius=0.08];
+  \node[anchor=east,inner sep=2pt] at (-2.40,0) {$A$};
+  \node[anchor=west,inner sep=2pt] at (2.40,0) {$B$};
+  % field out of page below
+  \foreach \y in {-0.85,-1.25} {
+    \foreach \x in {-1.40,-0.70,0.00,0.70,1.40} {
+      \fill (\x,\y) circle[radius=0.055];
+    }
+  }
+\end{tikzpicture}%
+}
 \caption{(4)}
 \end{figure}
 
@@ -14839,7 +15003,23 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0216-03.png}}
+\fitfig{%
+% fig-alt: 习题3.2第2题(b)。导线截面圆心，三同心磁力线，顶弧左指（逆时针）；右标导线、磁力线
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (0,0) circle[radius=0.28];
+  \draw[line width=0.55pt] (0,0) circle[radius=0.70];
+  \draw[line width=0.55pt] (0,0) circle[radius=1.10];
+  \draw[line width=0.55pt] (0,0) circle[radius=1.50];
+  % CCW: arrow on top going left
+  \draw[line width=0.6pt,->] (0.35,1.05) -- (-0.35,1.05);
+  \draw[line width=0.55pt,->] (0.45,1.43) -- (-0.20,1.48);
+  % labels
+  \node[anchor=west,inner sep=1pt,font=\small] at (1.85,1.15) {导线};
+  \draw[line width=0.45pt] (1.80,1.10) -- (0.30,0.15);
+  \node[anchor=west,inner sep=1pt,font=\small] at (1.85,-0.95) {磁力线};
+  \draw[line width=0.45pt,dashed] (1.80,-0.90) -- (1.35,-0.55);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -14860,7 +15040,24 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/physics-3/fig-p0217-01.png}}
+\fitfig{%
+% fig-alt: 习题3.2第3题。圆环导线下开缺口接A、B；中心磁针左S白右N黑
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % loop with bottom gap
+  \draw[line width=0.75pt] (-48:1.55) arc[start angle=-48,end angle=228,radius=1.55];
+  % leads from gap ends
+  \draw[line width=0.7pt] (-48:1.55) -- ++(-0.15,-0.75);
+  \draw[line width=0.7pt] (228:1.55) -- ++(0.15,-0.75);
+  \node[anchor=north,inner sep=2pt] at (-0.75,-2.05) {$A$};
+  \node[anchor=north,inner sep=2pt] at (0.75,-2.05) {$B$};
+  % needle: S left white, N right black
+  \fill (0,0) -- (1.05,0) -- (0,0.11) -- (0,-0.11) -- cycle;
+  \draw[line width=0.55pt,fill=white] (0,0) -- (-1.05,0) -- (0,0.11) -- (0,-0.11) -- cycle;
+  \draw[line width=0.55pt] (0,0.11) -- (1.05,0) -- (0,-0.11);
+  \node[anchor=south,inner sep=1pt] at (-0.85,0.12) {$S$};
+  \node[anchor=south,inner sep=1pt] at (0.85,0.12) {$N$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -14868,7 +15065,54 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/physics-3/fig-p0217-02.png}}
+\fitfig{%
+% fig-alt: 习题3.2第4题。螺线管接电池与断开的电键；管内A、上方B、右外C三竖磁针，C上S下N
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % solenoid core
+  \draw[line width=0.7pt] (-2.40,0.55) rectangle (2.00,1.85);
+  % windings (slanted front segments)
+  \foreach \x in {-1.70,-0.90,-0.10,0.70} {
+    \draw[line width=0.65pt] (\x,0.55) -- (\x+0.45,1.85);
+  }
+  % lead-in from bottom-left of coil, lead-out bottom-right
+  \draw[line width=0.65pt] (-2.40,0.55) -- (-2.40,-0.85);
+  \draw[line width=0.65pt] (2.00,0.55) -- (2.00,-0.85);
+  % bottom circuit
+  \draw[line width=0.65pt] (-2.40,-0.85) -- (-2.40,-1.55) -- (-0.55,-1.55);
+  % battery: long thin | left (+), short thick | right (-)
+  \draw[line width=0.7pt] (-0.40,-1.25) -- (-0.40,-1.85);
+  \draw[line width=1.3pt] (-0.15,-1.35) -- (-0.15,-1.75);
+  \draw[line width=0.65pt] (-0.15,-1.55) -- (0.85,-1.55);
+  % open switch (hinge on right, blade up-left)
+  \draw[line width=0.65pt] (0.85,-1.55) -- (1.20,-1.55);
+  \draw[line width=0.65pt] (1.85,-1.55) -- (1.40,-1.15);
+  \draw[line width=0.65pt] (1.85,-1.55) -- (2.00,-1.55) -- (2.00,-0.85);
+  % needle helper: vertical, bottom black = N down
+  % A inside coil (rightish), bottom black
+  \begin{scope}[shift={(0.55,1.20)}]
+    \fill (0,0) -- (0,-0.55) -- (0.08,0) -- (-0.08,0) -- cycle;
+    \draw[line width=0.5pt,fill=white] (0,0) -- (0,0.55) -- (0.08,0) -- (-0.08,0) -- cycle;
+    \draw[line width=0.5pt] (0.08,0) -- (0,-0.55) -- (-0.08,0);
+  \end{scope}
+  \node[draw,circle,inner sep=1.2pt,font=\small] at (1.15,1.20) {A};
+  % B above left, top black (N up) per scan
+  \begin{scope}[shift={(-1.55,2.35)}]
+    \fill (0,0) -- (0,0.55) -- (0.08,0) -- (-0.08,0) -- cycle;
+    \draw[line width=0.5pt,fill=white] (0,0) -- (0,-0.55) -- (0.08,0) -- (-0.08,0) -- cycle;
+    \draw[line width=0.5pt] (0.08,0) -- (0,0.55) -- (-0.08,0);
+  \end{scope}
+  \node[draw,circle,inner sep=1.2pt,font=\small] at (-2.15,2.35) {B};
+  % C to the right, S above N below (bottom black)
+  \begin{scope}[shift={(2.85,1.20)}]
+    \fill (0,0) -- (0,-0.55) -- (0.08,0) -- (-0.08,0) -- cycle;
+    \draw[line width=0.5pt,fill=white] (0,0) -- (0,0.55) -- (0.08,0) -- (-0.08,0) -- cycle;
+    \draw[line width=0.5pt] (0.08,0) -- (0,-0.55) -- (-0.08,0);
+  \end{scope}
+  \node[anchor=south,inner sep=1pt] at (2.85,1.80) {$S$};
+  \node[anchor=north,inner sep=1pt] at (2.85,0.55) {$N$};
+  \node[draw,circle,inner sep=1.2pt,font=\small] at (3.45,1.20) {C};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
