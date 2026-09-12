@@ -21605,8 +21605,29 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/plane-geometry-2/fig-p0231-01.png}}
-\caption{(第15题)}
+\fitfig{%
+% fig-alt: （第15题）直角△ABC（直角在A）；AD⊥斜边BC；F在AB上、E在AC上；实线BE、CF、FE
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (5.70,0.00);
+  \coordinate (A) at (1.58,2.46);
+  \coordinate (D) at (1.58,0.00);
+  \coordinate (F) at ($(A)!0.40!(B)$);
+  \coordinate (E) at ($(A)!0.36!(C)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (B) -- (E);
+  \draw[line width=0.75pt] (F) -- (C);
+  \draw[line width=0.75pt] (F) -- (E);
+  \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1.2pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (E) {$E$};
+  \node[anchor=east,inner sep=1.5pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第15题）}
 \end{figure}
 
 \begin{quote}
@@ -21625,8 +21646,35 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/plane-geometry-2/fig-p0231-02.png}}
-\caption{(第1题)}
+\fitfig{%
+% fig-alt: （第1题）直角△ABC（直角在C，AC:BC=3:4）；E在斜边AB上；ED⊥AC于D，EF⊥BC于F；EF:ED=2:1
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (B) at (4.50,0.00);
+  \coordinate (C) at (1.62,2.16);
+  \coordinate (E) at (1.227,0.00);
+  \coordinate (D) at (0.442,0.589);
+  \coordinate (F) at (2.406,1.571);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.75pt] (E) -- (D);
+  \draw[line width=0.75pt] (E) -- (F);
+  \coordinate (Ca) at ($(C)!0.20!(A)$);
+  \coordinate (Cb) at ($(C)!0.20!(B)$);
+  \coordinate (Csq) at ($(Ca)+(Cb)-(C)$);
+  \draw[line width=0.55pt] (Ca) -- (Csq) -- (Cb);
+  \coordinate (Da) at ($(D)!0.16!(C)$);
+  \coordinate (De) at ($(D)!0.16!(E)$);
+  \coordinate (Dsq) at ($(Da)+(De)-(D)$);
+  \draw[line width=0.50pt] (Da) -- (Dsq) -- (De);
+  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south,inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=east,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=south west,inner sep=1pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第1题）}
 \end{figure}
 
 \begin{quote}
@@ -21635,8 +21683,29 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第2题)}]{assets/plane-geometry-2/fig-p0231-03.png}}
-\caption{(第2题)}
+\fitfig{%
+% fig-alt: （第2题）直角梯形ABCD（AB⊥BC，AD∥BC，AD:AB:BC=10:8:15）；对角线AC、BD交于E；EF⊥BC于F（BF=6）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (4.20,0.00);
+  \coordinate (A) at (0.00,2.24);
+  \coordinate (D) at (2.80,2.24);
+  \coordinate (E) at (intersection of A--C and B--D);
+  \coordinate (F) at (1.68,0.00);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (E) -- (F);
+  \draw[line width=0.55pt] ($(F)+(0.14,0)$) -- ++(0,0.14) -- ++(-0.14,0);
+  \node[anchor=south east,inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south,inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1.2pt] at (F) {$F$};
+\end{tikzpicture}%
+}
+\caption{（第2题）}
 \end{figure}
 
 \begin{quote}
@@ -21656,8 +21725,25 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/plane-geometry-2/fig-p0232-01.png}}
-\caption{(第3题)}
+\fitfig{%
+% fig-alt: （第3题）圆的内接四边形ABCD；对角线BD；BC近水平
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.05}
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (200:\R);
+  \coordinate (C) at (340:\R);
+  \coordinate (A) at (150:\R);
+  \coordinate (D) at (58:\R);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (B) -- (D);
+  \node[anchor=south east,inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=east,inner sep=2pt] at (B) {$B$};
+  \node[anchor=west,inner sep=2pt] at (C) {$C$};
+  \node[anchor=south,inner sep=1.5pt] at (D) {$D$};
+\end{tikzpicture}%
+}
+\caption{（第3题）}
 \end{figure}
 
 \begin{quote}
@@ -21666,8 +21752,25 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/plane-geometry-2/fig-p0232-02.png}}
-\caption{(第4题)}
+\fitfig{%
+% fig-alt: （第4题）梯形ABCD（CB∥DA，DA较长）；E为腰CD中点；连BE、AE
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (D) at (0.00,0.00);
+  \coordinate (A) at (3.60,0.00);
+  \coordinate (C) at (0.48,2.40);
+  \coordinate (B) at (2.55,2.40);
+  \coordinate (E) at ($(C)!0.5!(D)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (B) -- (E);
+  \draw[line width=0.75pt] (A) -- (E);
+  \node[anchor=north west,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south west,inner sep=1pt] at (B) {$B$};
+  \node[anchor=south east,inner sep=1.2pt] at (C) {$C$};
+  \node[anchor=north east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=east,inner sep=1.8pt] at (E) {$E$};
+\end{tikzpicture}%
+}
+\caption{（第4题）}
 \end{figure}
 
 \begin{quote}
@@ -21687,8 +21790,32 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/plane-geometry-2/fig-p0232-03.png}}
-\caption{(第5题)}
+\fitfig{%
+% fig-alt: （第5题）四边形ABCD；M为BD中点；过M作EF∥AC，E在AB上、F在BC上；连CE
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (B) at (0.00,0.00);
+  \coordinate (C) at (4.15,0.00);
+  \coordinate (A) at (0.85,2.65);
+  \coordinate (D) at (3.45,2.25);
+  \coordinate (M) at ($(B)!0.5!(D)$);
+  \coordinate (Mp) at ($(M)+(C)-(A)$);
+  \coordinate (E) at (intersection of A--B and M--Mp);
+  \coordinate (F) at (intersection of B--C and M--Mp);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (A) -- (C);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (E) -- (F);
+  \draw[line width=0.75pt] (C) -- (E);
+  \node[anchor=south east,inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north east,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
+  \node[anchor=east,inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1.2pt] at (F) {$F$};
+  \node[anchor=north west,inner sep=1.5pt] at (M) {$M$};
+\end{tikzpicture}%
+}
+\caption{（第5题）}
 \end{figure}
 
 \begin{quote}
@@ -21734,8 +21861,45 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-2}]{assets/plane-geometry-2/fig-p0234-01.png}}
-\caption{图4-2}
+\fitfig{%
+% fig-alt: 图4·2 正三角形、正方形、正五边形、正六边形、正八边形横列
+\begin{tikzpicture}[line cap=round,line join=round]
+  % regular n-gons of common height 1.70, sitting on y=0
+  % triangle, vertex up
+  \begin{scope}[shift={(0.00,0)}]
+    \coordinate (T0) at (0.981,1.700);
+    \coordinate (T1) at (0.000,0.000);
+    \coordinate (T2) at (1.962,0.000);
+    \draw[line width=0.75pt] (T0) -- (T1) -- (T2) -- cycle;
+  \end{scope}
+  % square
+  \begin{scope}[shift={(2.55,0)}]
+    \draw[line width=0.75pt] (0,0) -- (1.70,0) -- (1.70,1.70) -- (0,1.70) -- cycle;
+  \end{scope}
+  % pentagon, vertex up
+  \begin{scope}[shift={(5.00,0)}]
+    \foreach \k/\name in {0/P0,1/P1,2/P2,3/P3,4/P4} {
+      \coordinate (\name) at ({0.894+0.894*cos(90+72*\k)}, {0.850+0.894*sin(90+72*\k)});
+    }
+    \draw[line width=0.75pt] (P0) -- (P1) -- (P2) -- (P3) -- (P4) -- cycle;
+  \end{scope}
+  % hexagon, flat top
+  \begin{scope}[shift={(7.55,0)}]
+    \foreach \k/\name in {0/H0,1/H1,2/H2,3/H3,4/H4,5/H5} {
+      \coordinate (\name) at ({0.981+0.981*cos(60*\k)}, {0.850+0.981*sin(60*\k)});
+    }
+    \draw[line width=0.75pt] (H0) -- (H1) -- (H2) -- (H3) -- (H4) -- (H5) -- cycle;
+  \end{scope}
+  % octagon, regular, flat sides
+  \begin{scope}[shift={(10.20,0)}]
+    \foreach \k/\name in {0/O0,1/O1,2/O2,3/O3,4/O4,5/O5,6/O6,7/O7} {
+      \coordinate (\name) at ({0.922+0.922*cos(22.5+45*\k)}, {0.850+0.922*sin(22.5+45*\k)});
+    }
+    \draw[line width=0.75pt] (O0) -- (O1) -- (O2) -- (O3) -- (O4) -- (O5) -- (O6) -- (O7) -- cycle;
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图4·2}
 \end{figure}
 
 \begin{quote}
@@ -21770,8 +21934,39 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-3}]{assets/plane-geometry-2/fig-p0234-02.png}}
-\caption{图4-3}
+\fitfig{%
+% fig-alt: 图4·3 圆O；内接正五边形ABCDE（D在顶、AB在底）；外切正五边形PQRST（切于A,B,C,D,E）
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\R{2.10}
+  \coordinate (O) at (0,0);
+  \coordinate (D) at (90:\R);
+  \coordinate (E) at (162:\R);
+  \coordinate (A) at (234:\R);
+  \coordinate (B) at (306:\R);
+  \coordinate (C) at (18:\R);
+  \pgfmathsetmacro{\Ro}{\R/cos(36)}
+  \coordinate (P) at (270:\Ro);
+  \coordinate (Q) at (342:\Ro);
+  \coordinate (R) at (54:\Ro);
+  \coordinate (S) at (126:\Ro);
+  \coordinate (T) at (198:\Ro);
+  \draw[line width=0.75pt] (O) circle (\R);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+  \draw[line width=0.75pt] (P) -- (Q) -- (R) -- (S) -- (T) -- cycle;
+  \node[anchor=center,inner sep=0pt] at (O) {$O$};
+  \node[anchor=north east,inner sep=1.2pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=1.2pt] at (B) {$B$};
+  \node[anchor=west,inner sep=1.8pt] at (C) {$C$};
+  \node[anchor=south,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=east,inner sep=1.8pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=west,inner sep=1.5pt] at (Q) {$Q$};
+  \node[anchor=south west,inner sep=1pt] at (R) {$R$};
+  \node[anchor=south east,inner sep=1pt] at (S) {$S$};
+  \node[anchor=east,inner sep=1.5pt] at (T) {$T$};
+\end{tikzpicture}%
+}
+\caption{图4·3}
 \end{figure}
 
 \begin{quote}
