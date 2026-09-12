@@ -6625,8 +6625,23 @@ s = v t
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第99页）}]{assets/physics-1/fig-p0099-01.png}}
-\caption{图示（原PDF第99页）}
+% fig-alt: 追及示意图：上方分两段标120公里与战斗舰所走的路程，下方标轻巡洋舰所走的路程（270公里），两端对齐。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 追及：上段120公里+战斗舰路程；下段轻巡洋舰270公里
+  \draw[line width=0.7pt] (0,0.55) -- (9.0,0.55);
+  \draw[line width=0.7pt] (0,0.35) -- (0,0.75);
+  \draw[line width=0.7pt] (4.0,0.35) -- (4.0,0.75);
+  \draw[line width=0.7pt] (9.0,0.35) -- (9.0,0.75);
+  \draw[line width=0.55pt,<->] (0,1.15) -- (4.0,1.15);
+  \node[anchor=south] at (2.0,1.18) {120 公里};
+  \draw[line width=0.55pt,<->] (4.0,1.15) -- (9.0,1.15);
+  \node[anchor=south] at (6.5,1.18) {战斗舰所走的路程};
+  \draw[line width=0.55pt,<->] (0,-0.15) -- (9.0,-0.15);
+  \node[anchor=north] at (4.5,-0.18) {轻巡洋舰所走的路程（270 公里）};
+\end{tikzpicture}%
+}
+\caption{追及问题示意图}
 \end{figure}
 
 设战斗舰的速度 \(= v\)，轻巡洋舰追赶时所用的时间 \(= t\)。
@@ -6654,8 +6669,26 @@ v = \frac {s ^ {\prime}}{t} = \frac {150 \text{公里}}{3 \text{小时}} = 50 \t
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第100页）}]{assets/physics-1/fig-p0100-01.png}}
-\caption{图示（原PDF第100页）}
+% fig-alt: 相向相遇：左甲车出发站、右乙车出发站；中点相遇；上标甲车走的路程（0.9公里）与乙车走的路程，下标1.5公里。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 甲乙相向相遇：0.9+0.6=1.5公里
+  \draw[line width=0.7pt] (0,0.4) -- (9.0,0.4);
+  \draw[line width=0.7pt] (0,0.2) -- (0,0.6);
+  \draw[line width=0.7pt] (5.4,0.2) -- (5.4,0.6);
+  \draw[line width=0.7pt] (9.0,0.2) -- (9.0,0.6);
+  \fill (5.4,0.4) circle[radius=0.06];
+  \node[anchor=south,align=center] at (0,0.75) {甲车\\出发站};
+  \node[anchor=south,align=center] at (9.0,0.75) {乙车\\出发站};
+  \draw[line width=0.6pt,->] (0.15,0.95) -- (5.25,0.95);
+  \node[anchor=south] at (2.7,0.98) {甲车走的路程（0.9 公里）};
+  \draw[line width=0.6pt,->] (8.85,0.95) -- (5.55,0.95);
+  \node[anchor=south] at (7.2,0.98) {乙车走的路程};
+  \draw[line width=0.55pt,<->] (0,-0.25) -- (9.0,-0.25);
+  \node[anchor=north] at (4.5,-0.28) {1.5 公里};
+\end{tikzpicture}%
+}
+\caption{相向相遇示意图}
 \end{figure}
 
 设从两车出发到相遇时所经过的时间为 \(t\)，乙车的速度
@@ -7062,8 +7095,29 @@ s ^ {\prime} = 5 \text{厘米 / 秒} \times 2 \text{秒} + 6 \text{厘米 / 秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第107页）}]{assets/physics-1/fig-p0107-01.png}}
-\caption{图示（原PDF第107页）}
+% fig-alt: 甲地与乙地相距220公里；上标$v_A$、$v_B$；中标$A$车所走路程$s_A$与$B$车所走路程$s_B$。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 甲乙相向：vA、vB 与 sA、sB，总距220公里
+  \draw[line width=0.7pt] (0,0.55) -- (9.2,0.55);
+  \draw[line width=0.7pt] (0,0.35) -- (0,0.75);
+  \draw[line width=0.7pt] (5.6,0.35) -- (5.6,0.75);
+  \draw[line width=0.7pt] (9.2,0.35) -- (9.2,0.75);
+  \node[anchor=south] at (0,0.85) {甲地};
+  \node[anchor=south] at (9.2,0.85) {乙地};
+  \draw[line width=0.6pt,->] (0.8,1.55) -- (2.4,1.55);
+  \node[anchor=south] at (1.6,1.58) {$v_{A}$};
+  \draw[line width=0.6pt,->] (8.4,1.55) -- (6.8,1.55);
+  \node[anchor=south] at (7.6,1.58) {$v_{B}$};
+  \draw[line width=0.6pt,->] (0.15,1.05) -- (5.45,1.05);
+  \node[anchor=south] at (2.8,1.08) {$A$ 车所走路程 $s_{A}$};
+  \draw[line width=0.6pt,->] (9.05,1.05) -- (5.75,1.05);
+  \node[anchor=south] at (7.4,1.08) {$B$ 车所走路程 $s_{B}$};
+  \draw[line width=0.55pt,<->] (0,-0.2) -- (9.2,-0.2);
+  \node[anchor=north] at (4.6,-0.23) {220 公里};
+\end{tikzpicture}%
+}
+\caption{例4 相向行驶示意图}
 \end{figure}
 
 设在 A 车出发后 t 时间两车相遇，相遇处离甲地 \(s_{A}\) 离乙地
@@ -8550,7 +8604,7 @@ s_3=\frac{1}{2}a\times3^2-\frac{1}{2}a\times2^2 =5\times\left(\frac{1}{2}a\right
 匀变速直线运动的两个基本公式是：
 
 \[
-v = 120 \rightarrow a t,
+v = v _ {0} + a t,
 \]
 
 \[
@@ -8559,45 +8613,101 @@ s = v _ {0} t + \frac {1}{2} a t ^ {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第138页）}]{assets/physics-1/fig-p0138-01.png}}
-\caption{图示（原PDF第138页）}
+% fig-alt: 图5·3（a）匀加速：水平运动方向上$A$、$B$、$C$、$D$四点；速度矢$v_0$、$v_1$、$v_2$、$v_3$递增；下方分解$v_0+a$、$v_0+2a$、$v_0+3a$；加速度$a$与运动同向。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图5·3(a) 匀加速：A B C D，速度递增
+  \draw[line width=0.7pt,->] (-0.2,1.35) -- (11.6,1.35);
+  \node[anchor=north] at (11.35,1.25) {运动方向};
+  \fill (0.4,1.35) circle[radius=0.045];
+  \fill (2.6,1.35) circle[radius=0.045];
+  \fill (5.4,1.35) circle[radius=0.045];
+  \fill (8.8,1.35) circle[radius=0.045];
+  \node[anchor=south] at (0.4,1.42) {$A$};
+  \node[anchor=south] at (2.6,1.42) {$B$};
+  \node[anchor=south] at (5.4,1.42) {$C$};
+  \node[anchor=south] at (8.8,1.42) {$D$};
+  \draw[line width=0.65pt,->] (0.55,1.43) -- (1.55,1.43);
+  \node[anchor=south] at (1.05,1.47) {$v_{0}$};
+  \draw[line width=0.65pt,->] (2.75,1.43) -- (4.55,1.43);
+  \node[anchor=south] at (3.65,1.47) {$v_{1}$};
+  \draw[line width=0.65pt,->] (5.55,1.43) -- (8.15,1.43);
+  \node[anchor=south] at (6.85,1.47) {$v_{2}$};
+  \draw[line width=0.65pt,->] (8.95,1.43) -- (12.35,1.43);
+  \node[anchor=south] at (10.65,1.47) {$v_{3}$};
+  \draw[line width=0.4pt] (2.75,0.75) -- (2.75,0.95);
+  \draw[line width=0.4pt] (3.75,0.75) -- (3.75,0.95);
+  \draw[line width=0.4pt] (4.55,0.75) -- (4.55,0.95);
+  \draw[line width=0.45pt] (2.75,0.85) -- (4.55,0.85);
+  \node[anchor=north,font=\scriptsize] at (3.25,0.72) {$v_{0}$};
+  \node[anchor=north,font=\scriptsize] at (4.15,0.72) {$a$};
+  \draw[line width=0.4pt] (5.55,0.75) -- (5.55,0.95);
+  \draw[line width=0.4pt] (6.55,0.75) -- (6.55,0.95);
+  \draw[line width=0.4pt] (8.15,0.75) -- (8.15,0.95);
+  \draw[line width=0.45pt] (5.55,0.85) -- (8.15,0.85);
+  \node[anchor=north,font=\scriptsize] at (6.05,0.72) {$v_{0}$};
+  \node[anchor=north,font=\scriptsize] at (7.35,0.72) {$2a$};
+  \draw[line width=0.4pt] (8.95,0.75) -- (8.95,0.95);
+  \draw[line width=0.4pt] (9.95,0.75) -- (9.95,0.95);
+  \draw[line width=0.4pt] (12.35,0.75) -- (12.35,0.95);
+  \draw[line width=0.45pt] (8.95,0.85) -- (12.35,0.85);
+  \node[anchor=north,font=\scriptsize] at (9.45,0.72) {$v_{0}$};
+  \node[anchor=north,font=\scriptsize] at (11.15,0.72) {$3a$};
+  \draw[line width=0.55pt,->] (7.0,0.15) -- (8.0,0.15);
+  \node[anchor=south] at (7.5,0.18) {$a$};
+\end{tikzpicture}%
+}
+\caption{（a）每1秒速度增加1个“a”}
 \end{figure}
+
+\emph{（a）每1秒速度增加1个“a”}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第138页）}]{assets/physics-1/fig-p0138-02.png}}
-\caption{图示（原PDF第138页）}
+% fig-alt: 图5·3（b）匀减速：水平运动方向上$A$、$B$、$C$、$D$四点；速度矢$v_0$、$v_1$、$v_2$、$v_3$递减；虚线补出所减$a$、$2a$、$3a$；加速度$a$与运动反向。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图5·3(b) 匀减速：速度递减，虚线示所减量；a 向左
+  \draw[line width=0.7pt,->] (-0.2,1.35) -- (11.6,1.35);
+  \node[anchor=north] at (11.35,1.25) {运动方向};
+  \fill (0.4,1.35) circle[radius=0.045];
+  \fill (2.8,1.35) circle[radius=0.045];
+  \fill (5.6,1.35) circle[radius=0.045];
+  \fill (8.8,1.35) circle[radius=0.045];
+  \node[anchor=south] at (0.4,1.42) {$A$};
+  \node[anchor=south] at (2.8,1.42) {$B$};
+  \node[anchor=south] at (5.6,1.42) {$C$};
+  \node[anchor=south] at (8.8,1.42) {$D$};
+  \draw[line width=0.65pt,->] (0.55,1.43) -- (3.95,1.43);
+  \node[anchor=south] at (2.25,1.47) {$v_{0}$};
+  \draw[line width=0.65pt,->] (2.95,1.43) -- (5.35,1.43);
+  \node[anchor=south] at (4.15,1.47) {$v_{1}$};
+  \draw[line width=0.45pt,dashed] (5.35,1.43) -- (6.35,1.43);
+  \draw[line width=0.4pt] (5.35,0.75) -- (5.35,0.95);
+  \draw[line width=0.4pt] (6.35,0.75) -- (6.35,0.95);
+  \node[anchor=north,font=\scriptsize] at (5.85,0.72) {$a$};
+  \draw[line width=0.65pt,->] (5.75,1.43) -- (7.15,1.43);
+  \node[anchor=south] at (6.45,1.47) {$v_{2}$};
+  \draw[line width=0.45pt,dashed] (7.15,1.43) -- (9.15,1.43);
+  \draw[line width=0.4pt] (7.15,0.75) -- (7.15,0.95);
+  \draw[line width=0.4pt] (9.15,0.75) -- (9.15,0.95);
+  \node[anchor=north,font=\scriptsize] at (8.15,0.72) {$2a$};
+  \draw[line width=0.65pt,->] (8.95,1.43) -- (9.55,1.43);
+  \node[anchor=south] at (9.25,1.47) {$v_{3}$};
+  \draw[line width=0.45pt,dashed] (9.55,1.43) -- (12.55,1.43);
+  \draw[line width=0.4pt] (9.55,0.75) -- (9.55,0.95);
+  \draw[line width=0.4pt] (12.55,0.75) -- (12.55,0.95);
+  \node[anchor=north,font=\scriptsize] at (11.05,0.72) {$3a$};
+  \draw[line width=0.55pt,->] (3.2,0.15) -- (2.2,0.15);
+  \node[anchor=south] at (2.7,0.18) {$a$};
+\end{tikzpicture}%
+}
+\caption{（b）每1秒速度减少1个“a”}
 \end{figure}
 
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 每1秒速度增加1个``a''}]{assets/physics-1/fig-p0138-03.png}}
-\caption{(a) 每1秒速度增加1个``a''}
-\end{figure}
+\emph{（b）每1秒速度减少1个“a”}
 
-\emph{（a） 每1秒速度增加1个``a''}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第138页）}]{assets/physics-1/fig-p0138-04.png}}
-\caption{图示（原PDF第138页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第138页）}]{assets/physics-1/fig-p0138-05.png}}
-\caption{图示（原PDF第138页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 每1秒速度减少1个``a''}]{assets/physics-1/fig-p0138-06.png}}
-\caption{(b) 每1秒速度减少1个``a''}
-\end{figure}
-
-\emph{（b） 每1秒速度减少1个``a''}
-
-\emph{图 5·3 （a） 匀加速直线运动 （b） 匀减速直线运动（示意图）}
+\emph{图5·3 （a）匀加速直线运动 （b）匀减速直线运动（示意图）}
 
 如果用 a
 表示加速度的绝对值（大小）时，那么，只要把上面三个匀加速直线运动公式中的
@@ -9287,16 +9397,91 @@ s _ {\text{乙}} = \triangle O B M = \frac {1}{2} \times 3 \times 6 \text{米} =
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5·11 物体在真空中(a)和空气中(b)的下落}]{assets/physics-1/fig-p0150-01.png}}
-\caption{图 5·11 物体在真空中(a)和空气中(b)的下落}
+% fig-alt: 图5·11：左管（a）真空、阀关位置，羽与金属片同高下落；右管（b）空气、阀开位置，金属片近底而羽较高。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图5·11 牛顿管：(a)真空关阀，(b)空气开阀
+  % ---- (a) ----
+  \begin{scope}[shift={(0,0)}]
+    % 管体
+    \draw[line width=0.65pt] (0.55,0.35) -- (0.55,6.2) -- (1.55,6.2) -- (1.55,0.35);
+    \draw[line width=0.65pt] (0.55,6.2) -- (0.75,6.55) -- (1.35,6.55) -- (1.55,6.2);
+    \draw[line width=0.5pt] (0.95,6.55) -- (0.95,6.85) -- (1.15,6.85) -- (1.15,6.55);
+    % 底阀关
+    \draw[line width=0.55pt] (0.35,0.35) rectangle (1.75,0.15);
+    \draw[line width=0.5pt] (0.85,0.15) -- (0.85,-0.05) -- (1.25,-0.05) -- (1.25,0.15);
+    \node[anchor=north,font=\scriptsize] at (1.05,-0.12) {关位置};
+    % 上手
+    \draw[line width=0.45pt] (-0.15,5.55) .. controls (-0.35,5.85) and (0.05,6.15) .. (0.55,5.85);
+    \draw[line width=0.45pt] (-0.05,5.45) -- (0.55,5.65);
+    % 下手
+    \draw[line width=0.45pt] (-0.1,0.85) .. controls (-0.35,0.55) and (0.15,0.25) .. (0.55,0.55);
+    \draw[line width=0.45pt] (0.0,0.95) -- (0.55,0.75);
+    % 竖排「真空」
+    \node[anchor=center,align=center] at (1.05,4.6) {真\\空};
+    % 同高：球与羽
+    \fill (0.85,1.55) circle[radius=0.09];
+    \draw[line width=0.4pt] (1.15,1.45) .. controls (1.35,1.75) and (1.45,1.35) .. (1.25,1.55);
+    \draw[line width=0.35pt] (1.20,1.55) -- (1.40,1.70);
+    \draw[line width=0.35pt] (1.22,1.52) -- (1.42,1.45);
+    \node[anchor=north] at (1.05,-0.55) {(a)};
+  \end{scope}
+  % ---- (b) ----
+  \begin{scope}[shift={(3.4,0)}]
+    \draw[line width=0.65pt] (0.55,0.35) -- (0.55,6.2) -- (1.55,6.2) -- (1.55,0.35);
+    \draw[line width=0.65pt] (0.55,6.2) -- (0.75,6.55) -- (1.35,6.55) -- (1.55,6.2);
+    \draw[line width=0.5pt] (0.95,6.55) -- (0.95,6.85) -- (1.15,6.85) -- (1.15,6.55);
+    \draw[line width=0.55pt] (0.35,0.35) rectangle (1.75,0.15);
+    % 开位置：阀柄偏右
+    \draw[line width=0.5pt] (1.15,0.15) -- (1.15,-0.05) -- (1.65,-0.05) -- (1.65,0.15);
+    \node[anchor=north,font=\scriptsize] at (1.25,-0.12) {开位置};
+    \draw[line width=0.45pt] (-0.15,5.55) .. controls (-0.35,5.85) and (0.05,6.15) .. (0.55,5.85);
+    \draw[line width=0.45pt] (-0.05,5.45) -- (0.55,5.65);
+    \draw[line width=0.45pt] (-0.1,0.85) .. controls (-0.35,0.55) and (0.15,0.25) .. (0.55,0.55);
+    \draw[line width=0.45pt] (0.0,0.95) -- (0.55,0.75);
+    \node[anchor=center,align=center] at (1.05,4.6) {空\\气};
+    % 球近底，羽较高
+    \fill (0.95,1.15) circle[radius=0.09];
+    \draw[line width=0.4pt] (0.95,3.55) .. controls (1.15,3.85) and (1.35,3.45) .. (1.15,3.65);
+    \draw[line width=0.35pt] (1.05,3.65) -- (1.30,3.85);
+    \draw[line width=0.35pt] (1.08,3.60) -- (1.32,3.50);
+    \node[anchor=north] at (1.05,-0.55) {(b)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图5·11 物体在真空中（a）和空气中（b）的下落}
 \end{figure}
 
-\emph{图 5·11 物体在真空中（a）和空气中（b）的下落}
+\emph{图5·11 物体在真空中（a）和空气中（b）的下落}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5·12 自由落体运动(时间间隔1/30秒)}]{assets/physics-1/fig-p0150-02.png}}
-\caption{图5·12 自由落体运动(时间间隔1/30秒)}
+% fig-alt: 图5·12：左侧距离刻度0～20；中线球位约0、1、4、9、16；右侧竖直箭标位置（闪光照示意）。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图5·12 自由落体闪光照：位置比约 0:1:4:9:16
+  \draw[line width=0.6pt] (0,0) -- (0,-8.2);
+  \node[anchor=south] at (0,0.25) {距离};
+  \foreach \y/\lab in {0/0,2/5,4/10,6/15,8/20} {
+    \draw[line width=0.5pt] (-0.18,-\y) -- (0.18,-\y);
+    \node[anchor=east] at (-0.28,-\y) {\lab};
+  }
+  \foreach \y in {0.4,0.8,1.2,1.6,2.4,2.8,3.2,3.6,4.4,4.8,5.2,5.6,6.4,6.8,7.2,7.6} {
+    \draw[line width=0.35pt] (-0.1,-\y) -- (0.1,-\y);
+  }
+  % 球位置：0,1,4,9,16 → y = 0,0.4,1.6,3.6,6.4（单位：每格0.4对应1距离单位）
+  \draw[line width=0.45pt,dashed] (1.2,0) -- (1.2,-8.0);
+  \foreach \d/\yy in {0/0,1/0.4,4/1.6,9/3.6,16/6.4} {
+    \draw[line width=0.35pt,dashed] (0.2,-\yy) -- (1.2,-\yy);
+    \fill[white] (1.2,-\yy) circle[radius=0.16];
+    \draw[line width=0.5pt] (1.2,-\yy) circle[radius=0.16];
+    \fill (1.2,-\yy) circle[radius=0.04];
+  }
+  \draw[line width=0.55pt,->] (2.2,0) -- (2.2,-7.6);
+  \node[anchor=south] at (2.2,0.25) {位置};
+\end{tikzpicture}%
+}
+\caption{图5·12 自由落体运动（时间间隔1/30秒）}
 \end{figure}
 
 \emph{图5·12 自由落体运动（时间间隔1/30秒）}
@@ -9409,7 +9594,47 @@ g，跟初速度方向相反，速度就越来越小。物体到达最大高度�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5·13 竖直上抛运动}]{assets/physics-1/fig-p0153-01.png}}
+% fig-alt: 图5·13：窄U形轨迹，$A$上升至$B$（$v=0$）再落至$C$；左升速$v_0$、$v_1$、$v_n$，右降速$-v_n$、$-v_1$、$-v_0$；两侧$g$向下。
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth,every node/.style={font=\scriptsize,inner sep=0.3pt}]
+  % 图5·13 竖直上抛：窄 U 形，A升B顶C落；速度对称
+  \draw[line width=0.65pt]
+    (0,0) -- (0,5.6)
+    .. controls (0,6.05) and (0.7,6.05) .. (0.7,5.6)
+    -- (0.7,0);
+  % 点
+  \fill (0,0) circle[radius=0.05];
+  \fill (0,2.0) circle[radius=0.05];
+  \fill (0,3.8) circle[radius=0.05];
+  \fill (0.35,6.0) circle[radius=0.05];
+  \fill (0.7,3.8) circle[radius=0.05];
+  \fill (0.7,2.0) circle[radius=0.05];
+  \fill (0.7,0) circle[radius=0.05];
+  \node[anchor=east] at (-0.12,0) {$A$};
+  \node[anchor=south] at (0.35,6.15) {$B$};
+  \node[anchor=west] at (0.85,0) {$C$};
+  \node[anchor=west] at (0.95,6.0) {$v=0$};
+  % 上升速度
+  \draw[line width=0.6pt,->] (0,0.05) -- (0,0.95);
+  \node[anchor=east] at (-0.08,0.55) {$v_{0}$};
+  \draw[line width=0.55pt,->] (0,2.05) -- (0,2.75);
+  \node[anchor=east] at (-0.08,2.4) {$v_{1}$};
+  \draw[line width=0.5pt,->] (0,3.85) -- (0,4.35);
+  \node[anchor=east] at (-0.08,4.1) {$v_{n}$};
+  % 下降速度
+  \draw[line width=0.5pt,->] (0.7,4.35) -- (0.7,3.85);
+  \node[anchor=west] at (0.78,4.1) {$-v_{n}$};
+  \draw[line width=0.55pt,->] (0.7,2.75) -- (0.7,2.05);
+  \node[anchor=west] at (0.78,2.4) {$-v_{1}$};
+  \draw[line width=0.6pt,->] (0.7,0.95) -- (0.7,0.05);
+  \node[anchor=west] at (0.78,0.55) {$-v_{0}$};
+  % g
+  \draw[line width=0.55pt,->] (-1.15,4.2) -- (-1.15,3.2);
+  \node[anchor=east] at (-1.25,3.7) {$g$};
+  \draw[line width=0.55pt,->] (1.85,4.2) -- (1.85,3.2);
+  \node[anchor=west] at (1.95,3.7) {$g$};
+\end{tikzpicture}%
+}
 \caption{图5·13 竖直上抛运动}
 \end{figure}
 
@@ -9433,7 +9658,7 @@ g，跟初速度方向相反，速度就越来越小。物体到达最大高度�
 h _ {m} = v _ {0} \times \frac {v _ {0}}{g} + \frac {1}{2} \times (- g) \times \left(\frac {v _ {0}}{g}\right) ^ {2} = \frac {v _ {0} ^ {2}}{2 g}
 \]
 
-再看 B 到 \(C_{1}\) 设 \(t_{2}\) 为物体下落时间，v
+再看 B 到 \(C\)，设 \(t_{2}\) 为物体下落时间，\(v\)
 为落回手中时的速度，根据自由落体公式 \(h = \frac{1}{2} g t^{2}\)，得
 
 \[
