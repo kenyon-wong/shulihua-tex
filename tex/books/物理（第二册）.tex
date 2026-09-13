@@ -3011,7 +3011,13 @@ x _ {2} = 5 \cos (2 \pi t + \varphi)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.1}]{assets/physics-2/fig-p0053-01.png}}
+% fig-alt: 图2.1 波
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[->,line width=0.4pt] (0,0.5) -- (2.6,0.5);
+  \draw[line width=0.6pt] plot[domain=0:540,samples=40] (\x/200,{0.5+0.3*sin(\x)});
+\end{tikzpicture}%
+}
 \caption{图2.1}
 \end{figure}
 
@@ -5121,7 +5127,12 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 一列圆环形的波纹}]{assets/physics-2/fig-p0074-02.png}}
+% fig-alt: 圆环形波纹
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \r in {0.25,0.45,0.65,0.85} \draw[line width=0.45pt] (0,0) circle (\r);
+\end{tikzpicture}%
+}
 \caption{(b) 一列圆环形的波纹}
 \end{figure}
 
@@ -5138,7 +5149,13 @@ y = 0.60 \cos \left(\frac {\pi}{2} t + \frac {3 \pi}{4}\right)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.17 水面波的干涉现象}]{assets/physics-2/fig-p0075-01.png}}
+% fig-alt: 水面波干涉
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \r in {0.2,0.4,0.6} \draw[line width=0.4pt] (-0.45,0) circle (\r);
+  \foreach \r in {0.2,0.4,0.6} \draw[line width=0.4pt] (0.45,0) circle (\r);
+\end{tikzpicture}%
+}
 \caption{图 2.17 水面波的干涉现象}
 \end{figure}
 
@@ -5529,7 +5546,13 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 障碍物的长度比}]{assets/physics-2/fig-p0082-01.png}}
+% fig-alt: 衍射 障碍物大于波长
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0.8,-0.5) -- (0.8,0.5);
+  \foreach \y in {-0.35,0,0.35} \draw[->,line width=0.4pt] (0,\y) -- (0.75,\y);
+\end{tikzpicture}%
+}
 \caption{(a) 障碍物的长度比}
 \end{figure}
 
@@ -5539,7 +5562,13 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 障碍物的长度与波长差不多}]{assets/physics-2/fig-p0082-02.png}}
+% fig-alt: 衍射 障碍物与波长相当
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0.8,-0.15) -- (0.8,0.15);
+  \foreach \y in {-0.4,0,0.4} \draw[->,line width=0.4pt] (0,\y) -- (0.7,\y);
+\end{tikzpicture}%
+}
 \caption{(b) 障碍物的长度与波长差不多}
 \end{figure}
 
@@ -5553,7 +5582,14 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 狭缝长度(或缺口直径)}]{assets/physics-2/fig-p0082-03.png}}
+% fig-alt: 狭缝衍射 缝宽大于波长
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0.8,0.25) -- (0.8,0.7);
+  \draw[line width=0.65pt] (0.8,-0.25) -- (0.8,-0.7);
+  \draw[->,line width=0.4pt] (0,0) -- (0.75,0);
+\end{tikzpicture}%
+}
 \caption{(a) 狭缝长度(或缺口直径)}
 \end{figure}
 
@@ -5563,7 +5599,14 @@ B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 狭缝长度(或缺口直径)}]{assets/physics-2/fig-p0082-04.png}}
+% fig-alt: 狭缝衍射 缝宽与波长相当
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0.8,0.12) -- (0.8,0.7);
+  \draw[line width=0.65pt] (0.8,-0.12) -- (0.8,-0.7);
+  \draw[->,line width=0.4pt] (0,0) -- (0.75,0);
+\end{tikzpicture}%
+}
 \caption{(b) 狭缝长度(或缺口直径)}
 \end{figure}
 
@@ -6334,7 +6377,14 @@ I _ {1}\text{：} I _ {2} = r _ {2} ^ {2}\text{：} r _ {1} ^ {2} \tag {3.1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.7 人耳的听觉范围}]{assets/physics-2/fig-p0095-01.png}}
+% fig-alt: 人耳听觉范围
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[->,line width=0.4pt] (0,0) -- (2.5,0);
+  \draw[->,line width=0.4pt] (0,0) -- (0,1.3);
+  \draw[line width=0.55pt] (0.3,0.2) -- (2.1,1.1);
+\end{tikzpicture}%
+}
 \caption{图3.7 人耳的听觉范围}
 \end{figure}
 
@@ -7322,7 +7372,14 @@ f、g 的间隔推算出存在缺陷的确切位置。如果进一步研究小�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.1 水银温度计}]{assets/physics-2/fig-p0114-01.png}}
+% fig-alt: 水银温度计
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) circle (0.18);
+  \draw[line width=0.55pt] (-0.07,0.15) -- (-0.07,1.5);
+  \draw[line width=0.55pt] (0.07,0.15) -- (0.07,1.5);
+\end{tikzpicture}%
+}
 \caption{图4.1 水银温度计}
 \end{figure}
 
@@ -7691,7 +7748,12 @@ P
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0117-02.png}}
+% fig-alt: 温度计 (c)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (0.25,1.4);
+\end{tikzpicture}%
+}
 \caption{(c)}
 \end{figure}
 
@@ -7701,7 +7763,12 @@ P
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0117-03.png}}
+% fig-alt: 温度计 (c)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (0.25,1.2);
+\end{tikzpicture}%
+}
 \caption{(c)}
 \end{figure}
 
@@ -7711,7 +7778,12 @@ P
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(d)}]{assets/physics-2/fig-p0117-04.png}}
+% fig-alt: 温度计 (d)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (0.25,1.0);
+\end{tikzpicture}%
+}
 \caption{(d)}
 \end{figure}
 
@@ -7952,7 +8024,13 @@ C = \frac {Q}{t - t _ {0}} \tag {4.3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-2/fig-p0121-02.png}}
+% fig-alt: 热膨胀 (b)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0.3) -- (2.0,0.3);
+  \draw[line width=0.65pt] (0,0.55) -- (2.2,0.55);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -8269,7 +8347,13 @@ A 内的液体，使它各处温度均匀。温度计用来观察杯 A
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.7 量热器的结构简图}]{assets/physics-2/fig-p0128-01.png}}
+% fig-alt: 量热器
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-0.6,0) -- (-0.6,1.1) -- (0.6,1.1) -- (0.6,0);
+  \draw[line width=0.55pt] (-0.4,0.15) -- (-0.4,0.9) -- (0.4,0.9) -- (0.4,0.15);
+\end{tikzpicture}%
+}
 \caption{图 4.7 量热器的结构简图}
 \end{figure}
 
@@ -8814,7 +8898,13 @@ l _ {t} - l _ {0} = \alpha t l _ {0} \tag {4.7}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.11 金属温度计的内部结构简图}]{assets/physics-2/fig-p0136-03.png}}
+% fig-alt: 金属温度计结构
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (1.3,0.85);
+  \draw[line width=0.5pt] (0.2,0.2) -- (1.1,0.65);
+\end{tikzpicture}%
+}
 \caption{图4.11 金属温度计的内部结构简图}
 \end{figure}
 
@@ -9142,7 +9232,13 @@ V_{100}=50[1+80\times0.000072]\ \text{米}^3\approx50.29\ \text{米}^3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.14 把钢筋桥架的一端架在桌子上}]{assets/physics-2/fig-p0142-01.png}}
+% fig-alt: 钢筋热胀
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.4) -- (2.2,0.4);
+  \draw[line width=0.55pt] (1.8,0.15) rectangle (2.3,0.65);
+\end{tikzpicture}%
+}
 \caption{图 4.14 把钢筋桥架的一端架在桌子上}
 \end{figure}
 
@@ -9460,7 +9556,13 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.18 大功率晶体管的散热器}]{assets/physics-2/fig-p0149-01.png}}
+% fig-alt: 晶体管散热器
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \x in {0,0.15,...,1.2} \draw[line width=0.45pt] (\x,0) -- (\x,0.8);
+  \draw[line width=0.65pt] (0.4,0.8) rectangle (0.8,1.1);
+\end{tikzpicture}%
+}
 \caption{图 4.18 大功率晶体管的散热器}
 \end{figure}
 
@@ -9923,7 +10025,13 @@ V _ {270} = V _ {0} (1 + 270 \beta_ {\text{水银}})
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.23 大容量的变压器的散热问题}]{assets/physics-2/fig-p0154-01.png}}
+% fig-alt: 变压器散热
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (1.2,1.0);
+  \foreach \x in {0.15,0.35,...,1.05} \draw[line width=0.4pt] (\x,0.1) -- (\x,0.9);
+\end{tikzpicture}%
+}
 \caption{图 4.23 大容量的变压器的散热问题}
 \end{figure}
 
@@ -10859,7 +10967,13 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第169页）}]{assets/physics-2/fig-p0169-02.png}}
+% fig-alt: 热现象示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[->,line width=0.45pt] (0,0) -- (2.0,0);
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.2);
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第169页）}
 \end{figure}
 
@@ -11155,7 +11269,12 @@ V = 15 \times 0.3 \text{厘米} ^ {3} - 4.5 \text{厘米} ^ {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第170页）}]{assets/physics-2/fig-p0170-09.png}}
+% fig-alt: 热现象示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (1.4,0.9);
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第170页）}
 \end{figure}
 
@@ -12199,7 +12318,12 @@ p _ {i} V _ {0} = p _ {0} V _ {s}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-2/fig-p0183-03.png}}
+% fig-alt: 物态 (c)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \p in {(0,0),(0.4,0.2),(0.2,0.5)} \fill \p circle (1.2pt);
+\end{tikzpicture}%
+}
 \caption{(c)}
 \end{figure}
 
@@ -13086,7 +13210,12 @@ pV（大气压·升）} \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-2/fig-p0195-01.png}}
+% fig-alt: 第6题 热学
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) circle (0.7);
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -13873,7 +14002,13 @@ N = \frac {N _ {A}}{V _ {m}} = \frac {6.02 \times 10 ^ {23}}{22.4 \times 10 ^ {3
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6.2 两块铅圆柱体重新结合在一起}]{assets/physics-2/fig-p0210-01.png}}
+% fig-alt: 两铅柱结合
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.15) ellipse [x radius=0.3,y radius=0.45];
+  \draw[line width=0.7pt] (0.55,0.15) ellipse [x radius=0.3,y radius=0.45];
+\end{tikzpicture}%
+}
 \caption{图 6.2 两块铅圆柱体重新结合在一起}
 \end{figure}
 
@@ -15223,7 +15358,13 @@ A 上的重力 G
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.2 悬浮在水和酒精的混合液中的橄榄油滴呈球状}]{assets/physics-2/fig-p0230-03.png}}
+% fig-alt: 橄榄油滴呈球状
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) circle (0.45);
+  \draw[line width=0.5pt] (-0.9,-0.2) -- (0.9,-0.2);
+\end{tikzpicture}%
+}
 \caption{图 7.2 悬浮在水和酒精的混合液中的橄榄油滴呈球状}
 \end{figure}
 
@@ -16099,7 +16240,12 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.12 美丽的冰晶体}]{assets/physics-2/fig-p0242-01.png}}
+% fig-alt: 冰晶体
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.6pt] (90:0.6) -- (150:0.6) -- (210:0.6) -- (270:0.6) -- (330:0.6) -- (30:0.6) -- cycle;
+\end{tikzpicture}%
+}
 \caption{图 7.12 美丽的冰晶体}
 \end{figure}
 
@@ -16247,7 +16393,12 @@ h = \frac {2 \sigma}{r \rho g} = \frac {2 \times 0.068}{0.0001 \times 1000 \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0244-01.png}}
+% fig-alt: 晶体 (a)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.6pt] (0,0) grid[step=0.25] (1.25,1.0);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -18494,7 +18645,13 @@ t（°C） & p（emHg） & t（°C） & p'；cmHg） & t（°C） & p（cmHg） 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.10 复沸腾现象}]{assets/physics-2/fig-p0280-01.png}}
+% fig-alt: 复沸腾
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-0.5,0) -- (-0.5,1.1) -- (0.5,1.1) -- (0.5,0);
+  \foreach \i in {0,1,2} \draw[line width=0.4pt] (0,0.3+0.2*\i) circle (0.08);
+\end{tikzpicture}%
+}
 \caption{图 8.10 复沸腾现象}
 \end{figure}
 
@@ -18996,7 +19153,14 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 8.13 乙醚的临界状态实验装置}]{assets/physics-2/fig-p0290-01.png}}
+% fig-alt: 乙醚临界状态装置
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (0,1.4);
+  \draw[line width=0.7pt] (0.35,0) -- (0.35,1.4);
+  \draw[line width=0.7pt] (0,0) arc[start angle=180,end angle=360,radius=0.175];
+\end{tikzpicture}%
+}
 \caption{图 8.13 乙醚的临界状态实验装置}
 \end{figure}
 
@@ -19097,13 +19261,25 @@ Q_4=\underbrace{C_{\text{容}}(\theta-t_0)}_{\text{吸热}}=0.1(40-15)\ \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-05.png}}
+% fig-alt: 临界状态
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (0.4,1.1);
+  \fill[black!20] (0,0) rectangle (0.4,0.45);
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第290页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第290页）}]{assets/physics-2/fig-p0290-06.png}}
+% fig-alt: 临界状态
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (0.4,1.1);
+  \fill[black!15] (0,0) rectangle (0.4,0.7);
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第290页）}
 \end{figure}
 
@@ -19982,7 +20158,12 @@ B=\frac{H}{p}\times100\%
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/physics-2/fig-p0308-02.png}}
+% fig-alt: 第11题
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) -- (1.6,0) -- (1.2,0.9) -- (0.4,0.9) -- cycle;
+\end{tikzpicture}%
+}
 \caption{(第11题)}
 \end{figure}
 
@@ -20176,7 +20357,13 @@ s = \frac {0.30}{90 \times 0.735} \times 4.18 \times 11000 \times 25 \times 15 \
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.2}]{assets/physics-2/fig-p0313-01.png}}
+% fig-alt: 图9.2 蒸汽
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (1.1,0.7);
+  \draw[line width=0.5pt] (0.55,0.7) -- (0.55,1.15);
+\end{tikzpicture}%
+}
 \caption{图9.2}
 \end{figure}
 
@@ -20290,7 +20477,13 @@ J = \frac {W}{Q} = \frac {m g \cdot n / 1000}{(c m + c _ {1} m _ {1} + c _ {2} m
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.3}]{assets/physics-2/fig-p0318-01.png}}
+% fig-alt: 图9.3 锅炉
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (1.6,1.0);
+  \draw[line width=0.5pt] (0.3,1.0) -- (0.3,1.35);
+\end{tikzpicture}%
+}
 \caption{图9.3}
 \end{figure}
 
@@ -21508,7 +21701,13 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.17 火管式锅炉示意图}]{assets/physics-2/fig-p0340-01.png}}
+% fig-alt: 火管式锅炉
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (2.0,0.9);
+  \foreach \x in {0.3,0.6,0.9,1.2,1.5} \draw[line width=0.4pt] (\x,0.15) -- (\x,0.75);
+\end{tikzpicture}%
+}
 \caption{图9.17 火管式锅炉示意图}
 \end{figure}
 
@@ -21520,7 +21719,13 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.10 大型水管式锅炉设备示意图}]{assets/physics-2/fig-p0341-01.png}}
+% fig-alt: 水管式锅炉
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.7) rectangle (1.8,1.1);
+  \foreach \x in {0.3,0.7,1.1,1.5} \draw[line width=0.45pt] (\x,0.15) -- (\x,0.7);
+\end{tikzpicture}%
+}
 \caption{图 9.10 大型水管式锅炉设备示意图}
 \end{figure}
 
@@ -21545,7 +21750,14 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.19 单缸卧式蒸汽机的构造示意图}]{assets/physics-2/fig-p0343-01.png}}
+% fig-alt: 单缸卧式蒸汽机
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.2) rectangle (1.4,0.7);
+  \draw[line width=0.55pt] (1.4,0.45) -- (2.1,0.45);
+  \draw[line width=0.55pt] (2.1,0.45) circle (0.22);
+\end{tikzpicture}%
+}
 \caption{图 9.19 单缸卧式蒸汽机的构造示意图}
 \end{figure}
 
@@ -21557,7 +21769,13 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-2/fig-p0344-01.png}}
+% fig-alt: 蒸汽机 (a)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (1.2,0.6);
+  \draw[line width=0.5pt] (1.2,0.3) -- (1.8,0.3);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -21567,7 +21785,13 @@ W_{1\to3}=W_{1\to2}+W_{2\to3}=6000\ \text{焦}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/physics-2/fig-p0344-02.png}}
+% fig-alt: 蒸汽机 (3)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (1.2,0.6);
+  \draw[line width=0.5pt] (1.2,0.3) -- (1.8,0.6);
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -21857,7 +22081,13 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.22 单级蒸汽轮机的转子}]{assets/physics-2/fig-p0349-02.png}}
+% fig-alt: 汽轮机转子
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.5) circle (0.55);
+  \foreach \a in {0,45,...,315} \draw[line width=0.4pt] (0,0.5) -- ++(\a:0.55);
+\end{tikzpicture}%
+}
 \caption{图 9.22 单级蒸汽轮机的转子}
 \end{figure}
 
@@ -21873,7 +22103,12 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.23 三级蒸汽轮机结构示意图}]{assets/physics-2/fig-p0350-01.png}}
+% fig-alt: 三级汽轮机
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \x in {0,0.7,1.4} \draw[line width=0.6pt] (\x,0.2) rectangle (\x+0.5,0.9);
+\end{tikzpicture}%
+}
 \caption{图 9.23 三级蒸汽轮机结构示意图}
 \end{figure}
 
@@ -21885,7 +22120,12 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.24 多级蒸汽轮机示意图}]{assets/physics-2/fig-p0350-02.png}}
+% fig-alt: 多级汽轮机
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \x in {0,0.55,1.1,1.65} \draw[line width=0.55pt] (\x,0.2) rectangle (\x+0.4,0.85);
+\end{tikzpicture}%
+}
 \caption{图 9.24 多级蒸汽轮机示意图}
 \end{figure}
 
@@ -22066,7 +22306,14 @@ p = \frac {F}{A} = \frac {29.4}{0.0314} \text{千帕} = 936 \text{千帕}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.20 单缸四冲程汽托内燃机剖面图}]{assets/physics-2/fig-p0354-01.png}}
+% fig-alt: 四冲程内燃机剖面
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (1.0,1.3);
+  \draw[line width=0.55pt] (0.15,0.3) rectangle (0.85,0.7);
+  \draw[line width=0.5pt] (0.5,0.7) -- (0.5,1.15);
+\end{tikzpicture}%
+}
 \caption{图 9.20 单缸四冲程汽托内燃机剖面图}
 \end{figure}
 
@@ -22140,7 +22387,13 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={压缩比：10比1}]{assets/physics-2/fig-p0356-01.png}}
+% fig-alt: 压缩比 10:1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (0.7,1.4);
+  \draw[line width=0.55pt] (0.1,0.15) rectangle (0.6,0.28);
+\end{tikzpicture}%
+}
 \caption{压缩比：10比1}
 \end{figure}
 
@@ -22150,7 +22403,14 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.28 内燃机的压缩比与输出功率的关系}]{assets/physics-2/fig-p0356-02.png}}
+% fig-alt: 压缩比与功率
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[->,line width=0.4pt] (0,0) -- (2.2,0);
+  \draw[->,line width=0.4pt] (0,0) -- (0,1.2);
+  \draw[line width=0.55pt] (0.2,0.2) -- (1.8,1.0);
+\end{tikzpicture}%
+}
 \caption{图9.28 内燃机的压缩比与输出功率的关系}
 \end{figure}
 
@@ -22170,7 +22430,13 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.29 卧式单缸四冲程狄塞耳内燃机剖面图}]{assets/physics-2/fig-p0357-01.png}}
+% fig-alt: 狄塞耳内燃机
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (1.2,0.7);
+  \draw[line width=0.55pt] (0.2,0.7) rectangle (1.0,1.2);
+\end{tikzpicture}%
+}
 \caption{图 9.29 卧式单缸四冲程狄塞耳内燃机剖面图}
 \end{figure}
 
@@ -22302,7 +22568,12 @@ C→D 表示压缩冲 图9.27 奥托内燃机循环过程的 p-V
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.31 喷油嘴头部构造示意图}]{assets/physics-2/fig-p0358-01.png}}
+% fig-alt: 喷油嘴
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0.8) -- (0.15,0) -- (0.3,0.8) -- cycle;
+\end{tikzpicture}%
+}
 \caption{图 9.31 喷油嘴头部构造示意图}
 \end{figure}
 
@@ -22393,7 +22664,13 @@ C→D 由于将柴油喷入汽缸的过程并不是一瞬间完成的， 一面�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.33 燃气轮机的示意图}]{assets/physics-2/fig-p0361-01.png}}
+% fig-alt: 燃气轮机
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0.3) rectangle (0.8,0.8);
+  \draw[line width=0.65pt] (1.1,0.2) rectangle (1.9,0.9);
+\end{tikzpicture}%
+}
 \caption{图 9.33 燃气轮机的示意图}
 \end{figure}
 
@@ -22483,7 +22760,12 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.34 八汽缸内燃发动机示意图}]{assets/physics-2/fig-p0363-01.png}}
+% fig-alt: 八汽缸发动机
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \x in {0,0.45,...,1.8} \draw[line width=0.5pt] (\x,0) rectangle (\x+0.35,0.7);
+\end{tikzpicture}%
+}
 \caption{图 9.34 八汽缸内燃发动机示意图}
 \end{figure}
 
@@ -22734,7 +23016,13 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 9.38 用固体燃料的火箭结构示意图}]{assets/physics-2/fig-p0367-01.png}}
+% fig-alt: 固体燃料火箭
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.3) -- (2.0,0.3) -- (2.0,0.7) -- (0,0.7) -- cycle;
+  \draw[line width=0.55pt] (2.0,0.3) -- (2.35,0.15) -- (2.35,0.85) -- (2.0,0.7);
+\end{tikzpicture}%
+}
 \caption{图 9.38 用固体燃料的火箭结构示意图}
 \end{figure}
 
@@ -22744,7 +23032,14 @@ F _ {\text{蒸}} = \frac {W}{t} = \frac {6.62 \times 10 ^ {2}}{0.06} \text{瓦} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图9.39 用液体燃料的火箭结构示意图}]{assets/physics-2/fig-p0368-01.png}}
+% fig-alt: 液体燃料火箭
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.25) rectangle (1.8,0.75);
+  \draw[line width=0.5pt] (0.4,0.35) rectangle (0.9,0.65);
+  \draw[line width=0.55pt] (1.8,0.35) -- (2.15,0.2) -- (2.15,0.8) -- (1.8,0.65);
+\end{tikzpicture}%
+}
 \caption{图9.39 用液体燃料的火箭结构示意图}
 \end{figure}
 
