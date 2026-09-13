@@ -385,7 +385,53 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-1}]{assets/algebra-1/fig-p0014-01.png}}
+% fig-alt: 挂式温度计示意，拱顶挂板带挂孔，刻度自50至零下20（每10度一标注，零下依原版不加负号），上下各一卡箍，底部球泡带网纹护罩，水银柱自球泡升至约30
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round]
+  % 挂板与挂孔
+  \draw[line width=0.9pt, fill=white]
+    (-0.58,-2.95) -- (-0.58,5.20) arc[start angle=180, end angle=0, radius=0.58]
+    -- (0.58,-2.95) -- cycle;
+  \draw[line width=0.7pt] (0.16,5.48) circle [radius=0.05];
+  % 球泡护罩与网纹
+  \draw[line width=0.8pt, fill=white] (0,-2.36) circle [radius=0.40];
+  \foreach \i in {-1,0,1}
+    \foreach \j in {-1,0,1}
+      \fill (0.16*\i-0.055, -2.36+0.14*\j-0.02) rectangle +(0.11,0.045);
+  \fill (-0.44,-2.36) circle [radius=0.03];
+  \fill (0.44,-2.36) circle [radius=0.03];
+  % 玻璃管与水银柱
+  \draw[line width=0.7pt, fill=white]
+    (-0.07,5.42) -- (-0.07,-1.80) -- (0.07,-1.80) -- (0.07,5.42) -- cycle;
+  \fill (-0.045,-1.98) rectangle (0.045,3.38);
+  % 刻度：每1度小格、每5度中格、每10度长格并标注
+  \foreach \t in {-20,...,50}{%
+    \pgfmathsetmacro\y{\t*0.1+0.28}%
+    \pgfmathtruncatemacro\m{Mod(\t,10)}%
+    \pgfmathtruncatemacro\h{Mod(\t,5)}%
+    \ifnum\m=0
+      \draw[line width=0.55pt] (-0.24,\y) -- (0.26,\y);
+      \ifnum\t<0 \pgfmathtruncatemacro\lab{-\t}\else \pgfmathtruncatemacro\lab{\t}\fi
+      \node[anchor=east, inner sep=1.2pt] at (-0.28,\y) {$\lab$};
+    \else
+      \ifnum\h=0
+        \draw[line width=0.45pt] (-0.16,\y) -- (0.22,\y);
+      \else
+        \draw[line width=0.40pt] (-0.07,\y) -- (0.17,\y);
+      \fi
+    \fi
+  }
+  % 上、下卡箍
+  \draw[line width=0.65pt, fill=white, rounded corners=1.8pt]
+    (-0.32,5.06) rectangle (0.32,5.22);
+  \fill (-0.35,5.14) circle [radius=0.045];
+  \fill (0.35,5.14) circle [radius=0.045];
+  \draw[line width=0.65pt, fill=white, rounded corners=1.8pt]
+    (-0.32,-1.88) rectangle (0.32,-1.72);
+  \fill (-0.35,-1.80) circle [radius=0.045];
+  \fill (0.35,-1.80) circle [radius=0.045];
+\end{tikzpicture}%
+}
 \caption{图1-1}
 \end{figure}
 
@@ -935,7 +981,53 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.7}]{assets/algebra-1/fig-p0025-01.png}}
+% fig-alt: 挂式温度计示意，拱顶挂板带挂孔，刻度自50至零下20（每10度一标注，零下依原版不加负号），上下各一卡箍，底部球泡带网纹护罩，水银柱自球泡升至约22
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round]
+  % 挂板与挂孔
+  \draw[line width=0.9pt, fill=white]
+    (-0.58,-2.95) -- (-0.58,5.20) arc[start angle=180, end angle=0, radius=0.58]
+    -- (0.58,-2.95) -- cycle;
+  \draw[line width=0.7pt] (0.16,5.48) circle [radius=0.05];
+  % 球泡护罩与网纹
+  \draw[line width=0.8pt, fill=white] (0,-2.36) circle [radius=0.40];
+  \foreach \i in {-1,0,1}
+    \foreach \j in {-1,0,1}
+      \fill (0.16*\i-0.055, -2.36+0.14*\j-0.02) rectangle +(0.11,0.045);
+  \fill (-0.44,-2.36) circle [radius=0.03];
+  \fill (0.44,-2.36) circle [radius=0.03];
+  % 玻璃管与水银柱
+  \draw[line width=0.7pt, fill=white]
+    (-0.07,5.42) -- (-0.07,-1.80) -- (0.07,-1.80) -- (0.07,5.42) -- cycle;
+  \fill (-0.045,-1.98) rectangle (0.045,2.48);
+  % 刻度：每1度小格、每5度中格、每10度长格并标注
+  \foreach \t in {-20,...,50}{%
+    \pgfmathsetmacro\y{\t*0.1+0.28}%
+    \pgfmathtruncatemacro\m{Mod(\t,10)}%
+    \pgfmathtruncatemacro\h{Mod(\t,5)}%
+    \ifnum\m=0
+      \draw[line width=0.55pt] (-0.24,\y) -- (0.26,\y);
+      \ifnum\t<0 \pgfmathtruncatemacro\lab{-\t}\else \pgfmathtruncatemacro\lab{\t}\fi
+      \node[anchor=east, inner sep=1.2pt] at (-0.28,\y) {$\lab$};
+    \else
+      \ifnum\h=0
+        \draw[line width=0.45pt] (-0.16,\y) -- (0.22,\y);
+      \else
+        \draw[line width=0.40pt] (-0.07,\y) -- (0.17,\y);
+      \fi
+    \fi
+  }
+  % 上、下卡箍
+  \draw[line width=0.65pt, fill=white, rounded corners=1.8pt]
+    (-0.32,5.06) rectangle (0.32,5.22);
+  \fill (-0.35,5.14) circle [radius=0.045];
+  \fill (0.35,5.14) circle [radius=0.045];
+  \draw[line width=0.65pt, fill=white, rounded corners=1.8pt]
+    (-0.32,-1.88) rectangle (0.32,-1.72);
+  \fill (-0.35,-1.80) circle [radius=0.045];
+  \fill (0.35,-1.80) circle [radius=0.045];
+\end{tikzpicture}%
+}
 \caption{图1.7}
 \end{figure}
 
