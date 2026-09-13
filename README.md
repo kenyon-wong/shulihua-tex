@@ -28,7 +28,7 @@ Markdown 正文最初来自 [tradecatlabs/shulihuazixuecongshu](https://github.c
 ├── tex/vendor/          # 构建检索路径上的宏包（如 multirow）
 ├── books/               # Markdown 对照稿（追踪上游）与插图
 │   ├── *.md
-│   └── assets/          # 4,875 个正文图片资源
+│   └── assets/          # 4,875 张原扫描 PNG（对照用，正文不再引用）
 ├── raw/                 # 17 册原始扫描 PDF（优先阅读；Git LFS）、导入哈希和资料说明
 ├── catalog.json         # 书目、合订分组、语言和稳定 UUID
 ├── scripts/             # 源文件与隐私审计
@@ -37,7 +37,7 @@ Markdown 正文最初来自 [tradecatlabs/shulihuazixuecongshu](https://github.c
 └── dist/                # 构建出的 PDF（不入库）
 ```
 
-规范正文在 `tex/books/`，版式在 `tex/style/`。`books/*.md` 仅用于对照上游 Markdown，不经 Pandoc 转写。图片由 TeX 通过 `books/assets/` 引用。
+规范正文在 `tex/books/`，版式在 `tex/style/`。`books/*.md` 仅用于对照上游 Markdown，不经 Pandoc 转写。扫描 PNG 留在 `books/assets/` 作对照；分册正文用 TikZ/`tabular` 重绘，不再 `\includegraphics` 这些 PNG。
 
 ## 构建
 
@@ -104,8 +104,9 @@ make pre-push
 - 原始扫描 PDF：17 册、5,927 页
 - 规范 TeX：17 册
 - Markdown 对照稿：17 册
-- 图片资源：4,875 个
-- 图片引用：4,878 次
+- 图片资源：4,875 个扫描 PNG（仅对照）
+- TeX 正文 `\includegraphics`：0
+- Markdown 图片引用：4,878 次
 - 缺失或孤立资源：0
 - 空图片替代文本：0
 

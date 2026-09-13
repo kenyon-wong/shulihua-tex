@@ -1,8 +1,10 @@
 # 插图替换（四轨）
 
-本任务要把 `tex/books` 里仍通过 `\includegraphics` 引用的扫描 PNG 全部换掉，直到这些正文不再包含 `books/assets` 下的 PNG。四条轨并行，T 优先。本文和 `docs/figures-inventory.tsv` 只是开工清单，不是终审；不要把某一轨当成已经对照 `raw/` 验收过。
+`tex/books` 已无 `\includegraphics`，也不再引用 `books/assets` 下的 PNG。inventory `pending=0`。`status=replaced` 只表示正文不再引用该 PNG，不是对照 `raw/` 的终验。示意图不是扫描描摹。
 
 原扫描 PNG 留在 `books/assets/` 作对照，永不删除，也不要把重绘结果写回该目录。
+
+以下四轨是已完成替换时用过的约定。以后若再出现扫描引用，仍按此办：T 优先。
 
 ## 四轨
 

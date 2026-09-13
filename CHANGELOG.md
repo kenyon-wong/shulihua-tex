@@ -1,5 +1,10 @@
 # 更新记录
 
+## 2026-09-14
+
+- 17 册正文扫描插图改为 TikZ/`tabular` 示意图；`books/assets` PNG 保留作对照，正文不再引用。
+- 全量编出 17 册分册 PDF 与三本合订 PDF；修正若干 TikZ 编译错误（多余分组、`fitfig` 空行、`intersections` 库、误入的 `\\n`）。
+
 ## 2026-09-12
 
 - XeLaTeX 失败时 Makefile 不再忽略错误；`multirow` 改为硬依赖（`tex/vendor` 供本机缺包时检索）。
