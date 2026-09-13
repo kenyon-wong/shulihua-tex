@@ -125,7 +125,29 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第7页）}]{assets/solid-geometry/fig-p0007-01.png}}
+% fig-alt: 图1·4左：水平平面M与直立平面N相交，P在直立面上沿；被遮挡棱画虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (Ml) at (0.05,0.55);
+  \coordinate (Mr) at (3.35,0.55);
+  \coordinate (Mb) at (3.95,1.35);
+  \coordinate (Mf) at (0.65,1.35);
+  \draw[line width=0.7pt] (Ml) -- (Mr) -- (Mb);
+  \draw[line width=0.7pt] (Ml) -- (Mf);
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (Mf) -- (Mb);
+  \coordinate (Nl) at (1.15,0.55);
+  \coordinate (Nr) at (2.55,0.85);
+  \coordinate (Nlt) at (1.15,2.25);
+  \coordinate (Nrt) at (2.55,2.55);
+  \draw[line width=0.7pt] (Nlt) -- (Nl) -- (Nr);
+  \draw[line width=0.7pt] (Nlt) -- (Nrt) -- (Nr);
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (1.55,1.35) -- (2.85,1.55);
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (1.85,0.62) -- (1.85,2.40);
+  \node[anchor=south east] at (Mf) {$M$};
+  \node[anchor=west] at (Nrt) {$N$};
+  \node[anchor=south] at (1.85,2.42) {$P$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第7页）}
 \end{figure}
 
@@ -417,13 +439,31 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第9页）}]{assets/solid-geometry/fig-p0009-02.png}}
+% fig-alt: 第3题左：两直立面共折痕，水平直线上两点都在左叶
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0.15,2.35) -- (1.15,1.85) -- (1.15,0.15) -- (0.15,0.65) -- cycle;
+  \draw[line width=0.75pt] (1.15,1.85) -- (2.15,2.35) -- (2.15,0.65) -- (1.15,0.15);
+  \draw[line width=0.7pt] (0.05,1.25) -- (2.25,1.25);
+  \draw[line width=0.55pt,fill=white] (0.55,1.25) circle (0.07);
+  \draw[line width=0.55pt,fill=white] (0.95,1.25) circle (0.07);
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第9页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/solid-geometry/fig-p0009-03.png}}
+% fig-alt: 第3题右：两直立面共折痕，水平直线上两点分居折痕两侧
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0.15,2.35) -- (1.15,1.85) -- (1.15,0.15) -- (0.15,0.65) -- cycle;
+  \draw[line width=0.75pt] (1.15,1.85) -- (2.15,2.35) -- (2.15,0.65) -- (1.15,0.15);
+  \draw[line width=0.7pt] (0.05,1.25) -- (2.25,1.25);
+  \draw[line width=0.55pt,fill=white] (0.85,1.25) circle (0.07);
+  \draw[line width=0.55pt,fill=white] (1.45,1.25) circle (0.07);
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -521,7 +561,22 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0012-02.png}}
+% fig-alt: （2）曲面：左竖边CD，顶底为曲线，右缘过P，底边虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (C) at (0.12,2.55);
+  \coordinate (D) at (0.12,0.35);
+  \coordinate (P) at (1.55,0.42);
+  \coordinate (Tr) at (1.55,2.48);
+  \draw[line width=0.7pt] (C) -- (D);
+  \draw[line width=0.7pt] (C) .. controls (0.55,2.62) and (1.15,2.58) .. (Tr);
+  \draw[line width=0.7pt] (Tr) .. controls (1.72,1.85) and (1.72,1.05) .. (P);
+  \draw[line width=0.65pt,dash pattern=on 3.1pt off 1.7pt] (D) -- (P);
+  \node[anchor=south east] at (C) {$C$};
+  \node[anchor=north east] at (D) {$D$};
+  \node[anchor=west] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -753,7 +808,51 @@ B 可
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-14}]{assets/solid-geometry/fig-p0015-01.png}}
+% fig-alt: 图1·14 三图：平面P上(1)直线ABC与线外点D；(2)平面四边形ABCD；(3)平面ABC外一点D连成三棱锥
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.6pt}]
+  \begin{scope}[xshift=0cm]
+    \draw[line width=0.7pt] (0.10,0.35) -- (2.35,0.35) -- (2.85,1.45) -- (0.60,1.45) -- cycle;
+    \draw[line width=0.7pt] (0.45,0.62) -- (1.85,0.62);
+    \fill (0.45,0.62) circle (0.04);
+    \fill (1.15,0.62) circle (0.04);
+    \fill (1.85,0.62) circle (0.04);
+    \fill (1.55,1.15) circle (0.04);
+    \node[anchor=north] at (0.45,0.58) {$A$};
+    \node[anchor=north] at (1.15,0.58) {$B$};
+    \node[anchor=north] at (1.85,0.58) {$C$};
+    \node[anchor=south] at (1.55,1.18) {$D$};
+    \node[anchor=south west] at (2.55,1.20) {$P$};
+    \node at (1.40,-0.15) {$(1)$};
+  \end{scope}
+  \begin{scope}[xshift=3.55cm]
+    \draw[line width=0.7pt] (0.10,0.35) -- (2.35,0.35) -- (2.85,1.45) -- (0.60,1.45) -- cycle;
+    \draw[line width=0.7pt] (0.95,0.55) -- (1.85,0.55) -- (2.15,1.15) -- (0.65,1.15) -- cycle;
+    \node[anchor=north] at (0.95,0.52) {$A$};
+    \node[anchor=north] at (1.85,0.52) {$B$};
+    \node[anchor=south] at (2.15,1.18) {$C$};
+    \node[anchor=south] at (0.65,1.18) {$D$};
+    \node[anchor=south west] at (2.55,1.20) {$P$};
+    \node at (1.40,-0.15) {$(2)$};
+  \end{scope}
+  \begin{scope}[xshift=7.10cm]
+    \draw[line width=0.7pt] (0.10,0.35) -- (2.35,0.35) -- (2.85,1.45) -- (0.60,1.45) -- cycle;
+    \coordinate (A) at (0.85,0.58);
+    \coordinate (B) at (1.75,0.52);
+    \coordinate (C) at (2.15,1.12);
+    \coordinate (D) at (1.55,2.15);
+    \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+    \draw[line width=0.7pt] (A) -- (D) -- (C);
+    \draw[line width=0.7pt] (B) -- (D);
+    \node[anchor=north] at (A) {$A$};
+    \node[anchor=north] at (B) {$B$};
+    \node[anchor=west] at (C) {$C$};
+    \node[anchor=south] at (D) {$D$};
+    \node[anchor=south west] at (2.55,1.20) {$P$};
+    \node at (1.40,-0.15) {$(3)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图1-14}
 \end{figure}
 
@@ -952,7 +1051,18 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第19页）}]{assets/solid-geometry/fig-p0019-01.png}}
+% fig-alt: 图1·17左：平面内两平行直线a、b，A在a上（小圆点）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.10,0.35) -- (2.85,0.35) -- (3.35,1.25) -- (0.60,1.25) -- cycle;
+  \draw[line width=0.85pt] (0.55,0.95) -- (2.65,0.95);
+  \draw[line width=0.85pt] (0.70,0.58) -- (2.80,0.58);
+  \draw[line width=0.55pt,fill=white] (1.25,0.95) circle (0.07);
+  \node[anchor=south] at (1.25,1.02) {$A$};
+  \node[anchor=east] at (0.52,0.95) {$a$};
+  \node[anchor=east] at (0.68,0.58) {$b$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第19页）}
 \end{figure}
 
@@ -980,13 +1090,48 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第19页）}]{assets/solid-geometry/fig-p0019-03.png}}
+% fig-alt: 图1·18左：平面M、N交于AB，公共点C在交线上
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,0.85) -- (2.55,0.85) -- (3.05,1.65) -- (0.65,1.65) -- cycle;
+  \draw[line width=0.7pt] (0.85,0.35) -- (3.15,0.35) -- (3.55,1.15) -- (1.25,1.15) -- cycle;
+  \draw[line width=0.85pt] (1.05,1.00) -- (2.85,1.00);
+  \fill (1.55,1.00) circle (0.04);
+  \fill (2.35,1.00) circle (0.04);
+  \node[anchor=south] at (1.55,1.04) {$C$};
+  \node[anchor=south] at (2.35,1.04) {$A$};
+  \node[anchor=north] at (2.85,0.96) {$B$};
+  \node[anchor=south east] at (0.55,1.50) {$M$};
+  \node[anchor=south west] at (3.45,1.05) {$N$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第19页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-18}]{assets/solid-geometry/fig-p0019-04.png}}
+% fig-alt: 图1·18右：两平面网纹相交于O，交线未过标出的A、B，为不妥当画法
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.10,0.95) -- (2.55,0.95) -- (3.15,1.75) -- (0.70,1.75) -- cycle;
+  \begin{scope}
+    \clip (0.10,0.95) -- (2.55,0.95) -- (3.15,1.75) -- (0.70,1.75) -- cycle;
+    \foreach \x in {-0.4,-0.05,...,3.4} \draw[line width=0.28pt] (\x,0.7) -- (\x+0.9,2.0);
+  \end{scope}
+  \draw[line width=0.7pt] (0.55,0.35) -- (3.05,0.35) -- (3.55,1.15) -- (1.05,1.15) -- cycle;
+  \begin{scope}
+    \clip (0.55,0.35) -- (3.05,0.35) -- (3.55,1.15) -- (1.05,1.15) -- cycle;
+    \foreach \x in {0.2,0.55,...,3.8} \draw[line width=0.28pt] (\x,0.15) -- (\x+0.9,1.4);
+  \end{scope}
+  \draw[line width=0.85pt] (0.35,1.15) -- (3.45,1.15);
+  \fill (1.85,1.15) circle (0.04);
+  \node[anchor=south] at (1.85,1.20) {$O$};
+  \node[anchor=north] at (1.15,0.92) {$A$};
+  \node[anchor=south] at (2.85,1.55) {$B$};
+  \node[anchor=south east] at (0.55,1.55) {$M$};
+  \node[anchor=south west] at (3.45,1.05) {$N$};
+\end{tikzpicture}%
+}
 \caption{图1-18}
 \end{figure}
 
@@ -1011,7 +1156,28 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-19}]{assets/solid-geometry/fig-p0019-05.png}}
+% fig-alt: 图1·19：平面P内直线BC上S1、S、S2；A1S1、AS，AS∥A1S1且AS⊥BC示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,0.45) -- (3.55,0.45) -- (4.15,1.45) -- (0.75,1.45) -- cycle;
+  \draw[line width=0.85pt] (0.45,0.72) -- (3.35,0.72);
+  \fill (1.15,0.72) circle (0.04);
+  \fill (2.15,0.72) circle (0.04);
+  \fill (2.85,0.72) circle (0.04);
+  \node[anchor=north] at (0.45,0.68) {$B$};
+  \node[anchor=north] at (1.15,0.68) {$S_{1}$};
+  \node[anchor=north] at (2.15,0.68) {$S$};
+  \node[anchor=north] at (2.85,0.68) {$S_{2}$};
+  \node[anchor=north] at (3.35,0.68) {$C$};
+  \draw[line width=0.7pt] (1.15,0.72) -- (1.15,1.55);
+  \draw[line width=0.7pt] (2.15,0.72) -- (2.15,1.85);
+  \fill (1.15,1.55) circle (0.04);
+  \fill (2.15,1.85) circle (0.04);
+  \node[anchor=south] at (1.15,1.58) {$A_{1}$};
+  \node[anchor=south] at (2.15,1.88) {$A$};
+  \node[anchor=south west] at (3.85,1.25) {$P$};
+\end{tikzpicture}%
+}
 \caption{图1-19}
 \end{figure}
 
@@ -21669,6 +21835,9 @@ m=5 时， 得 n=3.
 a，取棱 AB 的中点 M，连结 PM、QM，则 \(PM \perp AB, QM \perp AB\)。所以
 \(\angle PMQ\) 是二面角 AB 的平面角。
 
+\begin{figure}
+\centering
+\fitfig{%
 % fig-alt: 图2·87：五种正多面体展开图（含粘舌）。上排正四面体、正六面体、正八面体；下排正十二面体、正二十面体。外轮廓实线，折痕虚线。扫描无字母
 \begin{tikzpicture}[line cap=round,line join=round]
   % tetrahedron net (top-left)
