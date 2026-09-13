@@ -49,7 +49,16 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.1}]{assets/solid-geometry/fig-p0005-01.png}}
+% fig-alt: 图1.1：木板上的角尺
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \fill[pattern=north east lines,pattern color=black!25] (0,0) -- (2.2,0.15) -- (2.0,1.05) -- (-0.2,0.90) -- cycle;
+  \draw[line width=0.7pt] (0,0) -- (2.2,0.15) -- (2.0,1.05) -- (-0.2,0.90) -- cycle;
+  \draw[line width=0.75pt] (0.95,0.50) -- (0.95,1.55);
+  \node[anchor=west] at (2.05,0.55) {木板};
+  \node[anchor=west] at (1.05,1.55) {角尺};
+\end{tikzpicture}%
+}
 \caption{图1.1}
 \end{figure}
 
@@ -943,7 +952,14 @@ AB、OD、EF 是三条直线， 其中 \(AB \parallel CD\)， EF 与 AB和 \(CD\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0017-01.png}}
+% fig-alt: 平面 $P$ 上两相交直线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.15) -- (2.4,0.35) -- (2.6,1.25) -- (0.2,1.05) -- cycle;
+  \draw[line width=0.65pt] (0.35,0.85) -- (2.25,0.55);
+  \draw[line width=0.65pt] (0.55,0.35) -- (2.05,1.05);
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -1189,12 +1205,6 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 当 \(\alpha = 90^{\circ}\) 时，本题一解；当 \(\alpha = 180^{\circ}\)
 时，本题无解。
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第19页）}]{assets/solid-geometry/fig-p0019-06.png}}
-\caption{图示（原PDF第19页）}
-\end{figure}
 
 \textbf{［注意］}
 
@@ -1720,7 +1730,17 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第25页）}]{assets/solid-geometry/fig-p0025-02.png}}
+% fig-alt: 图1·27（1）：平行四边形平面M，直线a穿过平面并伸出上下，交点为空心圆
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.05,0.55) -- (2.55,0.55) -- (3.35,1.35) -- (0.85,1.35) -- cycle;
+  \draw[line width=0.85pt] (1.85,2.05) -- (2.25,0.15);
+  \draw[line width=0.55pt,fill=white] (2.02,1.18) circle (0.07);
+  \node[anchor=south] at (1.85,2.08) {$a$};
+  \node[anchor=south east] at (0.75,1.20) {$M$};
+  \node at (1.60,0.12) {$(1)$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第25页）}
 \end{figure}
 
@@ -1798,7 +1818,14 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.29}]{assets/solid-geometry/fig-p0026-01.png}}
+% fig-alt: 图1.29：墙角开门
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (0,1.85) -- (1.15,2.15) -- (1.15,0.30) -- cycle;
+  \draw[line width=0.7pt] (1.15,0.30) -- (2.25,0) -- (2.25,1.55) -- (1.15,1.85);
+  \draw[line width=0.55pt] (0.25,0.15) -- (0.25,1.45) -- (0.95,1.60) -- (0.95,0.30) -- cycle;
+\end{tikzpicture}%
+}
 \caption{图1.29}
 \end{figure}
 
@@ -2114,7 +2141,32 @@ E、F、G 的平面 M 和 AC 平行，也和 BD 平行。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第29页）}]{assets/solid-geometry/fig-p0029-01.png}}
+% fig-alt: 图1·34 三图：(1)两平面交线虚线，面上各一条与交线平行的粗线；(2)竖直面穿过水平面；(3)两平面张开，旁有一条异面直线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.5pt}]
+  \begin{scope}
+    \draw[line width=0.7pt] (0.35,1.15) -- (2.55,1.55) -- (2.75,0.55) -- (0.55,0.15) -- cycle;
+    \draw[line width=0.7pt] (0.15,0.85) -- (2.35,0.55) -- (2.95,1.35) -- (0.75,1.65) -- cycle;
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0.55,0.95) -- (2.55,1.15);
+    \draw[line width=1.1pt] (0.85,1.35) -- (2.05,1.48);
+    \draw[line width=1.1pt] (0.75,0.55) -- (1.95,0.42);
+    \node at (1.50,-0.15) {$(1)$};
+  \end{scope}
+  \begin{scope}[xshift=3.35cm]
+    \draw[line width=0.7pt] (0.05,0.35) -- (2.25,0.35) -- (2.75,1.15) -- (0.55,1.15) -- cycle;
+    \draw[line width=0.7pt] (0.85,0.15) -- (0.85,2.05) -- (2.15,2.35) -- (2.15,0.85);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0.85,1.15) -- (2.15,1.25);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (2.15,0.85) -- (2.15,1.25);
+    \node at (1.40,-0.15) {$(2)$};
+  \end{scope}
+  \begin{scope}[xshift=6.70cm]
+    \draw[line width=0.7pt] (0.05,0.35) -- (2.15,0.35) -- (2.55,1.05) -- (0.45,1.05) -- cycle;
+    \draw[line width=0.7pt] (0.45,1.05) -- (0.85,2.15) -- (2.55,2.15) -- (2.15,1.05);
+    \draw[line width=1.1pt] (2.85,1.85) -- (3.35,1.15);
+    \node at (1.60,-0.15) {$(3)$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第29页）}
 \end{figure}
 
@@ -2758,7 +2810,22 @@ E、F、G 的平面 M 和 AC 平行，也和 BD 平行。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第33页）}]{assets/solid-geometry/fig-p0033-05.png}}
+% fig-alt: 两条异面直线，三条横断线与它们相交，交点实心点
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.85pt] (0.15,1.55) -- (3.55,1.85);
+  \draw[line width=0.85pt] (0.35,0.35) -- (3.75,0.55);
+  \draw[line width=0.7pt] (0.85,1.62) -- (1.15,0.40);
+  \draw[line width=0.7pt] (1.75,1.70) -- (2.05,0.45);
+  \draw[line width=0.7pt] (2.65,1.78) -- (2.95,0.50);
+  \fill (0.85,1.62) circle (0.045);
+  \fill (1.75,1.70) circle (0.045);
+  \fill (2.65,1.78) circle (0.045);
+  \fill (1.15,0.40) circle (0.045);
+  \fill (2.05,0.45) circle (0.045);
+  \fill (2.95,0.50) circle (0.045);
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第33页）}
 \end{figure}
 
@@ -5539,12 +5606,6 @@ C D = \sqrt {a ^ {2} + 3 b ^ {2}}. \text{］}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第58页）}]{assets/solid-geometry/fig-p0058-01.png}}
-\caption{图示（原PDF第58页）}
-\end{figure}
-
-\begin{figure}
-\centering
 \fitfig{%
 % fig-alt: 图1-68两幅，全部实线。左（1）上下平行四边形对应边平行（都向左下斜），上标M、下标N；右（2）上面向右下斜、下面向左下斜，对应边不平行。扫描左图是(1)、右图是(2)，从扫描。题文同。fig-p0058-01为(1)裁片，此处按raw全图画(1)(2)
 \begin{tikzpicture}[line cap=round,line join=round]
@@ -7180,7 +7241,17 @@ C F = \sqrt {B C ^ {2} + B F ^ {2}} = \sqrt {13}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0070-01.png}}
+% fig-alt: 矩形竖直平面 $ABCD$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) -- (0,1.55) -- (1.15,1.85) -- (1.15,0.30) -- cycle;
+  \fill[pattern=north east lines,pattern color=black!30] (0,0) -- (0,1.55) -- (1.15,1.85) -- (1.15,0.30) -- cycle;
+  \node[anchor=east] at (0,1.55) {$A$};
+  \node[anchor=east] at (0,0) {$B$};
+  \node[anchor=west] at (1.15,1.85) {$D$};
+  \node[anchor=west] at (1.15,0.30) {$C$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -7945,20 +8016,68 @@ A C = \frac {h}{\sin \alpha}\text{，} B C = \frac {h}{\sin \beta}\text{，} C E
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第77页）}]{assets/solid-geometry/fig-p0077-01.png}}
-\caption{图示（原PDF第77页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第77页）}]{assets/solid-geometry/fig-p0077-02.png}}
-\caption{图示（原PDF第77页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第77页）}]{assets/solid-geometry/fig-p0077-03.png}}
-\caption{图示（原PDF第77页）}
+% fig-alt: 图1·89（1）–（4）：竖边与水平边垂直的三种画法，以及两边成45°的画法
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.4pt}]
+  \begin{scope}
+    \draw[line width=0.7pt] (0.05,0.25) -- (2.15,0.25) -- (2.55,0.85) -- (0.45,0.85) -- cycle;
+    \draw[line width=0.7pt] (0.05,0.85) -- (2.15,0.85) -- (2.55,1.45) -- (0.45,1.45) -- cycle;
+    \draw[line width=0.7pt] (0.05,1.45) -- (2.15,1.45) -- (2.55,2.05) -- (0.45,2.05) -- cycle;
+    \node[anchor=north east] at (0.05,0.25) {$A$};
+    \node[anchor=north west] at (2.15,0.25) {$B$};
+    \node[anchor=east] at (0.05,0.85) {$E$};
+    \node[anchor=west] at (2.15,0.85) {$F$};
+    \node[anchor=east] at (0.05,1.45) {$H$};
+    \node[anchor=south west] at (2.15,1.45) {$G$};
+    \node[anchor=south] at (2.55,2.05) {$C$};
+    \node[anchor=south east] at (0.45,2.05) {$D$};
+    \node at (1.20,-0.15) {$(1)$};
+  \end{scope}
+  \begin{scope}[xshift=3.15cm]
+    \draw[line width=0.7pt] (0.35,0.35) -- (2.05,0.15) -- (2.55,0.75) -- (0.85,0.95) -- cycle;
+    \draw[line width=0.7pt] (0.35,0.95) -- (2.05,0.75) -- (2.55,1.35) -- (0.85,1.55) -- cycle;
+    \draw[line width=0.7pt] (0.35,1.55) -- (2.05,1.35) -- (2.55,1.95) -- (0.85,2.15) -- cycle;
+    \node[anchor=east] at (0.35,0.35) {$A$};
+    \node[anchor=north] at (2.05,0.15) {$B$};
+    \node[anchor=west] at (2.55,0.75) {$C$};
+    \node[anchor=south] at (0.85,2.15) {$H$};
+    \node[anchor=south] at (2.05,1.35) {$G$};
+    \node[anchor=east] at (0.35,0.95) {$E$};
+    \node at (1.40,-0.15) {$(2)$};
+  \end{scope}
+  \begin{scope}[xshift=6.35cm]
+    \draw[line width=0.7pt] (0.05,0.35) -- (2.25,0.35) -- (2.75,1.05) -- (0.55,1.05) -- cycle;
+    \draw[line width=0.75pt] (1.15,0.35) -- (1.15,2.15);
+    \draw[line width=0.75pt] (1.85,0.35) -- (1.85,2.15);
+    \draw[line width=0.7pt] (1.15,2.15) -- (1.85,2.15);
+    \draw[line width=0.7pt] (1.15,1.05) -- (1.85,1.05);
+    \node[anchor=north east] at (0.05,0.35) {$A$};
+    \node[anchor=north west] at (2.25,0.35) {$B$};
+    \node[anchor=east] at (1.15,0.35) {$E$};
+    \node[anchor=west] at (1.85,0.70) {$F$};
+    \node[anchor=east] at (1.15,1.55) {$D$};
+    \node[anchor=south] at (1.15,2.18) {$H$};
+    \node[anchor=south] at (1.85,2.18) {$G$};
+    \node[anchor=south west] at (0.55,1.05) {$C$};
+    \node at (1.40,-0.15) {$(3)$};
+  \end{scope}
+  \begin{scope}[xshift=9.55cm]
+    \draw[line width=0.7pt] (0.15,0.25) -- (1.85,0.25) -- (2.15,0.85) -- (0.45,0.85) -- cycle;
+    \draw[line width=0.75pt] (0.15,0.25) -- (0.15,1.85);
+    \draw[line width=0.75pt] (0.45,0.85) -- (0.45,2.15);
+    \draw[line width=0.7pt] (0.15,1.85) -- (0.45,2.15);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0.45,0.85) -- (1.35,0.55);
+    \node[anchor=north east] at (0.15,0.25) {$A$};
+    \node[anchor=north west] at (1.85,0.25) {$B$};
+    \node[anchor=south west] at (2.15,0.85) {$C$};
+    \node[anchor=east] at (0.15,0.85) {$D$};
+    \node[anchor=south] at (0.15,1.88) {$E$};
+    \node[anchor=west] at (1.35,0.55) {$F$};
+    \node at (1.10,-0.15) {$(4)$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图1·89}
 \end{figure}
 
 \begin{figure}
@@ -8045,7 +8164,27 @@ A C = \frac {h}{\sin \alpha}\text{，} B C = \frac {h}{\sin \beta}\text{，} C E
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-90}]{assets/solid-geometry/fig-p0077-05.png}}
+% fig-alt: 图1·90：水平平面N带网纹，竖直面M过垂线AB，交线CD，BE⊥CD
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,0.45) -- (3.35,0.45) -- (3.95,1.35) -- (0.75,1.35) -- cycle;
+  \begin{scope}
+    \clip (0.15,0.45) -- (3.35,0.45) -- (3.95,1.35) -- (0.75,1.35) -- cycle;
+    \foreach \y in {0.58,0.72,...,1.30} \draw[line width=0.28pt] (0.10,\y) -- (4.00,\y);
+  \end{scope}
+  \draw[line width=0.75pt] (1.15,0.15) -- (1.15,2.25) -- (2.55,2.25) -- (2.55,0.15);
+  \draw[line width=0.85pt] (1.85,0.85) -- (1.85,2.45);
+  \fill (1.85,0.85) circle (0.04);
+  \node[anchor=south] at (1.85,2.48) {$A$};
+  \node[anchor=north] at (1.85,0.80) {$B$};
+  \node[anchor=south east] at (0.70,1.20) {$N$};
+  \node[anchor=east] at (1.15,1.70) {$M$};
+  \node[anchor=north east] at (1.15,0.15) {$C$};
+  \node[anchor=north west] at (2.55,0.15) {$D$};
+  \node[anchor=west] at (2.55,0.85) {$E$};
+  \draw[line width=0.65pt] (1.85,0.85) -- (2.55,0.85);
+\end{tikzpicture}%
+}
 \caption{图1-90}
 \end{figure}
 
@@ -8109,7 +8248,26 @@ A C = \frac {h}{\sin \alpha}\text{，} B C = \frac {h}{\sin \beta}\text{，} C E
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-82}]{assets/solid-geometry/fig-p0078-02.png}}
+% fig-alt: 图1·92：平面内圆O，AB为直径，C在圆周上，PA⊥底面，PC、PB、BC、AC
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[pattern=north east lines,pattern color=black!55] (1.55,0.55) ellipse (1.35 and 0.42);
+  \draw[line width=0.7pt] (1.55,0.55) ellipse (1.35 and 0.42);
+  \fill (1.55,0.55) circle (0.035);
+  \node[anchor=south] at (1.55,0.58) {$O$};
+  \coordinate (A) at (0.20,0.55);
+  \coordinate (B) at (2.90,0.55);
+  \coordinate (C) at (2.05,0.92);
+  \coordinate (P) at (0.20,2.45);
+  \draw[line width=0.75pt] (A) -- (P) -- (B) -- cycle;
+  \draw[line width=0.7pt] (P) -- (C) -- (A);
+  \draw[line width=0.7pt] (C) -- (B);
+  \node[anchor=east] at (A) {$A$};
+  \node[anchor=west] at (B) {$B$};
+  \node[anchor=south] at (C) {$C$};
+  \node[anchor=south] at (P) {$P$};
+\end{tikzpicture}%
+}
 \caption{图1-82}
 \end{figure}
 
@@ -8365,7 +8523,14 @@ N，从上述定理1可得出如下的推论：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1-94}]{assets/solid-geometry/fig-p0080-03.png}}
+% fig-alt: 图1·94：铅垂面与水平面相交
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[pattern=north east lines,pattern color=black!25] (0,0.35) -- (2.4,0.55) -- (2.6,1.25) -- (0.2,1.05) -- cycle;
+  \draw[line width=0.7pt] (0,0.35) -- (2.4,0.55) -- (2.6,1.25) -- (0.2,1.05) -- cycle;
+  \draw[line width=0.75pt] (0.85,0.20) -- (0.85,1.65) -- (1.75,1.85) -- (1.75,0.40) -- cycle;
+\end{tikzpicture}%
+}
 \caption{图1-94}
 \end{figure}
 
@@ -8467,7 +8632,24 @@ N，从上述定理1可得出如下的推论：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/solid-geometry/fig-p0081-03.png}}
+% fig-alt: 图1·95（3）：水平平面P，竖直面M、N相交于AB且都垂直于P，交线处有网纹
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.10,0.85) -- (3.55,0.85) -- (4.15,1.65) -- (0.70,1.65) -- cycle;
+  \draw[line width=0.7pt] (1.05,0.25) -- (1.05,2.55) -- (2.55,2.85) -- (2.55,0.55);
+  \draw[line width=0.7pt] (2.05,0.25) -- (2.05,2.55) -- (3.35,2.25) -- (3.35,0.55);
+  \draw[line width=0.85pt] (1.85,0.85) -- (1.85,2.65);
+  \begin{scope}
+    \clip (1.85,0.85) -- (2.55,1.05) -- (2.55,2.05) -- (1.85,1.85) -- cycle;
+    \foreach \y in {0.95,1.10,...,2.10} \draw[line width=0.28pt] (1.70,\y) -- (2.70,\y);
+  \end{scope}
+  \node[anchor=south] at (1.85,2.68) {$A$};
+  \node[anchor=north] at (1.85,0.80) {$B$};
+  \node[anchor=south east] at (0.70,1.50) {$P$};
+  \node[anchor=south] at (1.05,2.58) {$M$};
+  \node[anchor=south west] at (3.35,2.25) {$N$};
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -11641,7 +11823,31 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第108页）}]{assets/solid-geometry/fig-p0108-01.png}}
+% fig-alt: 图1·125左：三面角V-ABC，AC虚线，D在VA、E在AB、F在AC，DEF为截线三角形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (1.55,2.85);
+  \coordinate (A) at (0.15,1.15);
+  \coordinate (B) at (1.45,0.25);
+  \coordinate (C) at (2.95,1.25);
+  \coordinate (D) at (0.55,1.58);
+  \coordinate (E) at (0.80,0.70);
+  \coordinate (F) at (1.15,1.18);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.8pt] (A) -- (B) -- (C);
+  \draw[line width=0.8pt] (D) -- (E) -- (F) -- cycle;
+  \draw[line width=0.75pt] (-0.10,0.85) -- (A) -- (V);
+  \draw[line width=0.75pt] (V) -- (C) -- (3.20,1.00);
+  \draw[line width=1.05pt] (V) -- (B) -- (1.45,0.00);
+  \node[anchor=south] at (V) {$V$};
+  \node[anchor=east] at (A) {$A$};
+  \node[anchor=north] at (B) {$B$};
+  \node[anchor=west] at (C) {$C$};
+  \node[anchor=south] at (D) {$D$};
+  \node[anchor=north east] at (E) {$E$};
+  \node[anchor=south west] at (F) {$F$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第108页）}
 \end{figure}
 
@@ -11868,7 +12074,29 @@ A-SB-C，由习题1·26第9题可知：
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第110页）}]{assets/solid-geometry/fig-p0110-04.png}}
+% fig-alt: 图1·128左：四面角S-ABCD，S在上，底ABCD，AC与SD虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (S) at (1.65,2.95);
+  \coordinate (A) at (0.15,0.95);
+  \coordinate (B) at (1.25,0.32);
+  \coordinate (C) at (2.95,0.95);
+  \coordinate (D) at (1.85,1.35);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (S) -- (D);
+  \draw[line width=0.8pt] (A) -- (B) -- (C);
+  \draw[line width=0.75pt] (A) -- (D) -- (C);
+  \draw[line width=0.75pt] (B) -- (D);
+  \draw[line width=0.75pt] (-0.05,0.65) -- (A) -- (S);
+  \draw[line width=0.75pt] (S) -- (C) -- (3.25,0.55);
+  \draw[line width=1.05pt] (S) -- (B) -- (1.15,0.00);
+  \node[anchor=south] at (S) {$S$};
+  \node[anchor=east] at (A) {$A$};
+  \node[anchor=north] at (B) {$B$};
+  \node[anchor=west] at (C) {$C$};
+  \node[anchor=west] at (D) {$D$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第110页）}
 \end{figure}
 
@@ -14089,7 +14317,13 @@ A B C D - A _ {1} B _ {1} C _ {1} D _ {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/solid-geometry/fig-p0130-03.png}}
+% fig-alt: 空间四边形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.25) -- (1.55,0.15) -- (1.85,1.15) -- (0.25,1.35) -- cycle;
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (0,0.25) -- (1.85,1.15);
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -14097,7 +14331,15 @@ A B C D - A _ {1} B _ {1} C _ {1} D _ {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/solid-geometry/fig-p0130-04.png}}
+% fig-alt: 三棱锥
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (1.55,0.15) -- (0.95,0.85) -- cycle;
+  \draw[line width=0.7pt] (0,0) -- (0.75,1.65);
+  \draw[line width=0.7pt] (1.55,0.15) -- (0.75,1.65);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (0.95,0.85) -- (0.75,1.65);
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -14371,7 +14613,14 @@ A _ {1} B _ {1} \parallel A B\text{，} B _ {1} C _ {1} \parallel B C\text{，} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2·20}]{assets/solid-geometry/fig-p0134-01.png}}
+% fig-alt: 图2·20：两锥被平面所截
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.55pt] (0,0.55) -- (2.4,0.75) -- (2.6,1.35) -- (0.2,1.15) -- cycle;
+  \draw[line width=0.7pt] (0.35,1.85) -- (0.15,0.35) -- (0.95,0.45) -- cycle;
+  \draw[line width=0.7pt] (1.85,1.85) -- (1.55,0.40) -- (2.35,0.50) -- cycle;
+\end{tikzpicture}%
+}
 \caption{图2·20}
 \end{figure}
 
@@ -15319,7 +15568,17 @@ x = \frac {a h}{a + h}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-30}]{assets/solid-geometry/fig-p0141-04.png}}
+% fig-alt: 图2·30：平行六面体
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (1.35,0) -- (1.75,0.45) -- (0.40,0.45) -- cycle;
+  \draw[line width=0.7pt] (0,1.15) -- (1.35,1.15) -- (1.75,1.60) -- (0.40,1.60) -- cycle;
+  \draw[line width=0.7pt] (0,0) -- (0,1.15);
+  \draw[line width=0.7pt] (1.35,0) -- (1.35,1.15);
+  \draw[line width=0.7pt] (1.75,0.45) -- (1.75,1.60);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (0.40,0.45) -- (0.40,1.60);
+\end{tikzpicture}%
+}
 \caption{图2-30}
 \end{figure}
 
@@ -15660,7 +15919,16 @@ Q，求它的中截面（就是过高的中点而平行于底面的截面）的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/solid-geometry/fig-p0144-02.png}}
+% fig-alt: 正方体
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (1.15,1.15);
+  \draw[line width=0.7pt] (0,1.15) -- (0.35,1.45) -- (1.50,1.45) -- (1.15,1.15);
+  \draw[line width=0.7pt] (1.15,0) -- (1.50,0.30) -- (1.50,1.45);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (0,0) -- (0.35,0.30) -- (1.50,0.30);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (0.35,0.30) -- (0.35,1.45);
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -16861,7 +17129,16 @@ H K + K L + \dots + N H = p\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-41}]{assets/solid-geometry/fig-p0153-01.png}}
+% fig-alt: 图2·41：三棱柱
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (1.35,0.15) -- (0.55,0.65) -- cycle;
+  \draw[line width=0.7pt] (0,1.25) -- (1.35,1.40) -- (0.55,1.90) -- cycle;
+  \draw[line width=0.7pt] (0,0) -- (0,1.25);
+  \draw[line width=0.7pt] (1.35,0.15) -- (1.35,1.40);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (0.55,0.65) -- (0.55,1.90);
+\end{tikzpicture}%
+}
 \caption{图2-41}
 \end{figure}
 
@@ -17200,7 +17477,16 @@ x = 4\text{，} y = 7\text{；} \quad \text {\text{或}} \quad x = 6\text{，} y
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/solid-geometry/fig-p0156-02.png}}
+% fig-alt: 斜棱柱
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (1.15,0) -- (1.45,0.35) -- (0.30,0.35) -- cycle;
+  \draw[line width=0.7pt] (0.35,1.15) -- (1.50,1.15) -- (1.80,1.50) -- (0.65,1.50) -- cycle;
+  \draw[line width=0.7pt] (0,0) -- (0.35,1.15);
+  \draw[line width=0.7pt] (1.15,0) -- (1.50,1.15);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (0.30,0.35) -- (0.65,1.50);
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -18903,7 +19189,15 @@ V = C C _ {1} \cdot C B \cdot C D = \frac {l}{2} \cdot \frac {\sqrt {2 l}}{2} \c
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-60}]{assets/solid-geometry/fig-p0174-01.png}}
+% fig-alt: 图2·60：圆柱
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,1.35) ellipse [x radius=0.70,y radius=0.22];
+  \draw[line width=0.7pt] (-0.70,0.15) -- (-0.70,1.35);
+  \draw[line width=0.7pt] (0.70,0.15) -- (0.70,1.35);
+  \draw[line width=0.7pt] (0,0.15) ellipse [x radius=0.70,y radius=0.22];
+\end{tikzpicture}%
+}
 \caption{图2-60}
 \end{figure}
 
@@ -19124,7 +19418,14 @@ A _ {1} B _ {1} C _ {1} D _ {1} E _ {1} - A B C D E
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2-63}]{assets/solid-geometry/fig-p0176-01.png}}
+% fig-alt: 图2·63：圆锥
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.15) ellipse [x radius=0.85,y radius=0.22];
+  \draw[line width=0.7pt] (-0.85,0.15) -- (0,1.55);
+  \draw[line width=0.7pt] (0.85,0.15) -- (0,1.55);
+\end{tikzpicture}%
+}
 \caption{图2-63}
 \end{figure}
 
@@ -19224,7 +19525,15 @@ m，求这仓库的容积（墙厚略去不计）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.65}]{assets/solid-geometry/fig-p0178-01.png}}
+% fig-alt: 图2·65：圆台
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,1.35) ellipse [x radius=0.45,y radius=0.14];
+  \draw[line width=0.7pt] (0,0.15) ellipse [x radius=0.85,y radius=0.22];
+  \draw[line width=0.7pt] (-0.45,1.35) -- (-0.85,0.15);
+  \draw[line width=0.7pt] (0.45,1.35) -- (0.85,0.15);
+\end{tikzpicture}%
+}
 \caption{图2.65}
 \end{figure}
 
@@ -22246,7 +22555,13 @@ H O = H O\text{，} \angle M H O = \angle M _ {1} H O\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/solid-geometry/fig-p0206-01.png}}
+% fig-alt: 球
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (0.85);
+  \draw[line width=0.5pt] (0,0) ellipse [x radius=0.85,y radius=0.28];
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -23168,7 +23483,12 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 \end{figure}
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-2}]{assets/solid-geometry/fig-p0214-02.png}}
+% fig-alt: 图3·2：多面体
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.35) -- (1.15,0) -- (1.85,0.55) -- (1.55,1.45) -- (0.35,1.65) -- (-0.15,0.85) -- cycle;
+\end{tikzpicture}%
+}
 \caption{图3-2}
 \end{figure}
 
@@ -23239,7 +23559,15 @@ V = \frac {1}{6} h \text{（}Q _ {1} + Q _ {2} + 4 Q _ {0}\text{）。}
 \end{figure}
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-4}]{assets/solid-geometry/fig-p0215-02.png}}
+% fig-alt: 图3·4：正四面体
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (1.55,0.15) -- (0.85,0.75) -- cycle;
+  \draw[line width=0.7pt] (0,0) -- (0.75,1.45);
+  \draw[line width=0.7pt] (1.55,0.15) -- (0.75,1.45);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (0.85,0.75) -- (0.75,1.45);
+\end{tikzpicture}%
+}
 \caption{图3-4}
 \end{figure}
 
@@ -23657,7 +23985,15 @@ O _ {1} C _ {1} = \frac {\sqrt {3} x}{3}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/solid-geometry/fig-p0219-02.png}}
+% fig-alt: 正方体截面
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (1.15,1.15);
+  \draw[line width=0.7pt] (0,1.15) -- (0.35,1.45) -- (1.50,1.45) -- (1.15,1.15);
+  \draw[line width=0.7pt] (1.15,0) -- (1.50,0.30) -- (1.50,1.45);
+  \draw[line width=0.55pt] (0,0.55) -- (1.15,1.15) -- (1.50,0.85);
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -24347,7 +24683,27 @@ x = 9\text{，} y = 16.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/solid-geometry/fig-p0226-01.png}}
+% fig-alt: 第11题：圆台，上下底椭圆，轴OO1，母线，底上点B、F，上底D1等
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.35) ellipse (0.85 and 0.28);
+  \draw[line width=0.7pt] (-0.85,2.35) -- (-1.35,0.45);
+  \draw[line width=0.7pt] (0.85,2.35) -- (1.35,0.45);
+  \draw[line width=0.7pt] (0,0.45) ellipse (1.35 and 0.40);
+  \begin{scope}
+    \clip (-1.40,0.45) rectangle (1.40,-0.05);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.45) ellipse (1.35 and 0.40);
+  \end{scope}
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,0.45) -- (0,2.35);
+  \node[anchor=east] at (0,0.45) {$O$};
+  \node[anchor=east] at (0,2.35) {$O_{1}$};
+  \node[anchor=east] at (-1.35,0.45) {$A$};
+  \node[anchor=north] at (0,-0.05) {$B$};
+  \node[anchor=west] at (1.35,0.45) {$F$};
+  \node[anchor=west] at (0.85,2.35) {$C_{1}$};
+  \node[anchor=south] at (0.35,2.55) {$D_{1}$};
+\end{tikzpicture}%
+}
 \caption{(第11题)}
 \end{figure}
 
@@ -24386,7 +24742,18 @@ x = 9\text{，} y = 16.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0227-01.png}}
+% fig-alt: 图3·22（1）：直角坐标XOY，圆，水平直径AB为虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.65pt,->] (0,0) -- (3.15,0) node[anchor=west] {$X$};
+  \draw[line width=0.65pt,->] (0,0) -- (0,2.85) node[anchor=south] {$Y$};
+  \node[anchor=north east] at (0,0) {$O$};
+  \draw[line width=0.75pt] (1.45,1.45) circle (1.05);
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0.40,1.45) -- (2.50,1.45);
+  \node[anchor=east] at (0.40,1.45) {$A$};
+  \node[anchor=west] at (2.50,1.45) {$B$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -24394,7 +24761,35 @@ x = 9\text{，} y = 16.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0227-02.png}}
+% fig-alt: 图3·22（2）：菱形内切近似椭圆，辅助弧与K、L、M、N、P、Q
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (O1) at (1.70,2.35);
+  \coordinate (C) at (0.25,1.20);
+  \coordinate (B) at (1.70,0.15);
+  \coordinate (D) at (3.15,1.20);
+  \draw[line width=0.7pt] (O1) -- (C) -- (B) -- (D) -- cycle;
+  \draw[line width=0.7pt] (O1) -- (B);
+  \draw[line width=0.7pt] (C) -- (D);
+  \draw[line width=0.75pt] (1.70,1.25) ellipse (1.05 and 0.72);
+  \fill (1.05,1.25) circle (0.03);
+  \fill (2.35,1.25) circle (0.03);
+  \node[anchor=south] at (O1) {$O_{1}$};
+  \node[anchor=east] at (C) {$C$};
+  \node[anchor=north] at (B) {$B$};
+  \node[anchor=west] at (D) {$D$};
+  \node[anchor=south east] at (0.85,1.85) {$M$};
+  \node[anchor=south west] at (2.55,1.85) {$Q$};
+  \node[anchor=north east] at (0.85,0.70) {$N$};
+  \node[anchor=north west] at (2.55,0.70) {$P$};
+  \node[anchor=south] at (1.05,1.28) {$K$};
+  \node[anchor=south] at (2.35,1.28) {$L$};
+  \node[anchor=east] at (-0.05,1.20) {$A_{1}$};
+  \node[anchor=west] at (3.45,1.20) {$B_{1}$};
+  \draw[line width=0.55pt] (C) -- (-0.15,1.20);
+  \draw[line width=0.55pt] (D) -- (3.55,1.20);
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -24423,7 +24818,28 @@ x = 9\text{，} y = 16.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0228-01.png}}
+% fig-alt: 图3·23（1）：轴测OX、OY、OZ，上下底菱形及内切椭圆，母线EE1、FF1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt,->] (0.15,1.05) -- (3.25,1.05) node[anchor=west] {$X$};
+  \draw[line width=0.55pt,->] (1.55,1.05) -- (2.85,0.15) node[anchor=west] {$Y$};
+  \draw[line width=0.55pt,->] (1.55,1.05) -- (1.55,3.55) node[anchor=south] {$Z$};
+  \draw[line width=0.7pt] (0.35,1.05) -- (1.55,0.35) -- (2.75,1.05) -- (1.55,1.75) -- cycle;
+  \draw[line width=0.7pt] (1.55,1.05) ellipse (1.20 and 0.42);
+  \draw[line width=0.7pt] (0.35,2.65) -- (1.55,1.95) -- (2.75,2.65) -- (1.55,3.35) -- cycle;
+  \draw[line width=0.7pt] (1.55,2.65) ellipse (1.20 and 0.42);
+  \draw[line width=0.7pt] (0.35,1.05) -- (0.35,2.65);
+  \draw[line width=0.7pt] (2.75,1.05) -- (2.75,2.65);
+  \node[anchor=east] at (0.35,1.05) {$A$};
+  \node[anchor=north] at (1.55,0.35) {$B$};
+  \node[anchor=west] at (2.75,1.05) {$C$};
+  \node[anchor=south] at (1.55,3.38) {$O_{1}$};
+  \node[anchor=east] at (0.35,2.65) {$A_{1}$};
+  \node[anchor=west] at (2.75,2.65) {$C_{1}$};
+  \node[anchor=west] at (1.55,1.05) {$D$};
+  \node[anchor=west] at (1.55,2.65) {$D_{1}$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -24431,7 +24847,19 @@ x = 9\text{，} y = 16.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0228-02.png}}
+% fig-alt: 图3·23（2）：圆柱直观图，上下椭圆，两侧母线，下底后弧虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.35) ellipse (1.15 and 0.38);
+  \draw[line width=0.7pt] (1.15,2.35) -- (1.15,0.45);
+  \draw[line width=0.7pt] (-1.15,2.35) -- (-1.15,0.45);
+  \draw[line width=0.7pt] (0,0.45) ellipse (1.15 and 0.38);
+  \begin{scope}
+    \clip (-1.20,0.45) rectangle (1.20,-0.05);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0,0.45) ellipse (1.15 and 0.38);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -24455,7 +24883,27 @@ x = 9\text{，} y = 16.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0229-01.png}}
+% fig-alt: 图3·24（1）：轴测OX、OY、OZ，底面菱形及椭圆，顶点S，母线SE、SF
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.55pt,->] (0.20,0.95) -- (3.15,0.95) node[anchor=west] {$X$};
+  \draw[line width=0.55pt,->] (1.55,0.95) -- (2.75,0.15) node[anchor=west] {$Y$};
+  \draw[line width=0.55pt,->] (1.55,0.95) -- (1.55,3.35) node[anchor=south] {$Z$};
+  \draw[line width=0.7pt] (0.35,0.95) -- (1.55,0.25) -- (2.75,0.95) -- (1.55,1.65) -- cycle;
+  \draw[line width=0.7pt] (1.55,0.95) ellipse (1.20 and 0.40);
+  \coordinate (S) at (1.55,3.05);
+  \draw[line width=0.75pt] (S) -- (0.35,0.95);
+  \draw[line width=0.75pt] (S) -- (2.75,0.95);
+  \draw[line width=0.7pt] (S) -- (1.55,0.25);
+  \node[anchor=south] at (S) {$S$};
+  \node[anchor=east] at (0.35,0.95) {$A$};
+  \node[anchor=north] at (1.55,0.25) {$B$};
+  \node[anchor=west] at (2.75,0.95) {$C$};
+  \node[anchor=west] at (1.55,0.95) {$D$};
+  \node[anchor=south] at (1.15,1.15) {$E$};
+  \node[anchor=south] at (1.95,1.15) {$F$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -24463,7 +24911,17 @@ x = 9\text{，} y = 16.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0229-02.png}}
+% fig-alt: 图3·24（2）：圆锥直观图，底椭圆后弧虚线，两侧母线交于顶点
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.45) ellipse (1.25 and 0.40);
+  \begin{scope}
+    \clip (-1.30,0.45) rectangle (1.30,-0.05);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0,0.45) ellipse (1.25 and 0.40);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.25,0.45) -- (0,2.55) -- (1.25,0.45);
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -24496,7 +24954,24 @@ E、F，连结 \(EE_{1}\)、
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0229-03.png}}
+% fig-alt: 图3·25（1）：轴测圆台，上下底菱形及椭圆，母线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.5pt,->] (0.15,0.85) -- (3.05,0.85) node[anchor=west] {$X$};
+  \draw[line width=0.5pt,->] (1.55,0.85) -- (2.65,0.15) node[anchor=west] {$Y$};
+  \draw[line width=0.5pt,->] (1.55,0.85) -- (1.55,3.25) node[anchor=south] {$Z$};
+  \draw[line width=0.7pt] (0.25,0.85) -- (1.55,0.20) -- (2.85,0.85) -- (1.55,1.50) -- cycle;
+  \draw[line width=0.7pt] (1.55,0.85) ellipse (1.30 and 0.40);
+  \draw[line width=0.7pt] (0.70,2.35) -- (1.55,1.95) -- (2.40,2.35) -- (1.55,2.75) -- cycle;
+  \draw[line width=0.7pt] (1.55,2.35) ellipse (0.85 and 0.28);
+  \draw[line width=0.7pt] (0.25,0.85) -- (0.70,2.35);
+  \draw[line width=0.7pt] (2.85,0.85) -- (2.40,2.35);
+  \node[anchor=east] at (0.25,0.85) {$A$};
+  \node[anchor=west] at (2.85,0.85) {$C$};
+  \node[anchor=east] at (0.70,2.35) {$A_{1}$};
+  \node[anchor=west] at (2.40,2.35) {$C_{1}$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -24504,7 +24979,19 @@ E、F，连结 \(EE_{1}\)、
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0229-04.png}}
+% fig-alt: 图3·25（2）：圆台直观图，上下椭圆，两侧母线，下底后弧虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.15) ellipse (0.85 and 0.28);
+  \draw[line width=0.7pt] (-0.85,2.15) -- (-1.25,0.40);
+  \draw[line width=0.7pt] (0.85,2.15) -- (1.25,0.40);
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.25 and 0.38);
+  \begin{scope}
+    \clip (-1.30,0.40) rectangle (1.30,-0.05);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0,0.40) ellipse (1.25 and 0.38);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -24520,7 +25007,20 @@ E、F，连结 \(EE_{1}\)、
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0230-01.png}}
+% fig-alt: 圆锥侧面展开相关：顶点S，底椭圆切点E、F，母线SE、SF
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.20 and 0.38);
+  \begin{scope}
+    \clip (-1.25,0.40) rectangle (1.25,-0.05);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0,0.40) ellipse (1.20 and 0.38);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.20,0.40) -- (0,2.45) -- (1.20,0.40);
+  \node[anchor=south] at (0,2.48) {$S$};
+  \node[anchor=east] at (-1.20,0.40) {$E$};
+  \node[anchor=west] at (1.20,0.40) {$F$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -24528,7 +25028,17 @@ E、F，连结 \(EE_{1}\)、
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0230-02.png}}
+% fig-alt: 圆锥直观图，底椭圆后弧虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.20 and 0.38);
+  \begin{scope}
+    \clip (-1.25,0.40) rectangle (1.25,-0.05);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0,0.40) ellipse (1.20 and 0.38);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.20,0.40) -- (0,2.55) -- (1.20,0.40);
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -24536,7 +25046,23 @@ E、F，连结 \(EE_{1}\)、
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/solid-geometry/fig-p0230-03.png}}
+% fig-alt: 圆台，上下椭圆切点E、F、E1、F1，母线EE1、FF1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.15) ellipse (0.80 and 0.26);
+  \draw[line width=0.7pt] (-0.80,2.15) -- (-1.25,0.40);
+  \draw[line width=0.7pt] (0.80,2.15) -- (1.25,0.40);
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.25 and 0.38);
+  \begin{scope}
+    \clip (-1.30,0.40) rectangle (1.30,-0.05);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0,0.40) ellipse (1.25 and 0.38);
+  \end{scope}
+  \node[anchor=east] at (-1.25,0.40) {$E$};
+  \node[anchor=west] at (1.25,0.40) {$F$};
+  \node[anchor=east] at (-0.80,2.15) {$E_{1}$};
+  \node[anchor=west] at (0.80,2.15) {$F_{1}$};
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -24544,7 +25070,19 @@ E、F，连结 \(EE_{1}\)、
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/solid-geometry/fig-p0230-04.png}}
+% fig-alt: 圆台直观图，上下椭圆，下底后弧虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.15) ellipse (0.80 and 0.26);
+  \draw[line width=0.7pt] (-0.80,2.15) -- (-1.25,0.40);
+  \draw[line width=0.7pt] (0.80,2.15) -- (1.25,0.40);
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.25 and 0.38);
+  \begin{scope}
+    \clip (-1.30,0.40) rectangle (1.30,-0.05);
+    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.5pt] (0,0.40) ellipse (1.25 and 0.38);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(4)}
 \end{figure}
 
@@ -24613,7 +25151,28 @@ E、F，连结 \(EE_{1}\)、
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·27}]{assets/solid-geometry/fig-p0231-01.png}}
+% fig-alt: 图3·27：圆柱侧面展开为矩形，宽2πR，高h，左接圆柱直观图
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.15) ellipse (0.55 and 0.22);
+  \draw[line width=0.7pt] (-0.55,2.15) -- (-0.55,0.35);
+  \draw[line width=0.7pt] (0.55,2.15) -- (0.55,0.35);
+  \draw[line width=0.7pt] (0,0.35) ellipse (0.55 and 0.22);
+  \begin{scope}
+    \clip (-0.60,0.35) rectangle (0.60,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.35) ellipse (0.55 and 0.22);
+  \end{scope}
+  \node[anchor=east] at (-0.70,1.25) {$h$};
+  \node[anchor=north] at (0,0.12) {$A$};
+  \node[anchor=south] at (0,0.55) {$B$};
+  \draw[line width=0.7pt] (0.55,0.35) -- (4.15,0.35) -- (4.15,2.15) -- (0.55,2.15);
+  \node[anchor=north] at (2.35,0.32) {$2\pi R$};
+  \node[anchor=west] at (4.15,1.25) {$h$};
+  \node[anchor=south west] at (4.15,2.15) {$C$};
+  \node[anchor=north west] at (4.15,0.35) {$B$};
+  \node[anchor=south] at (0.55,2.18) {$D$};
+\end{tikzpicture}%
+}
 \caption{图3·27}
 \end{figure}
 
@@ -24665,7 +25224,29 @@ A O = \frac {O D}{\cos 60^{\circ}} = \frac {2}{\frac {1}{2}} = 4.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-28}]{assets/solid-geometry/fig-p0232-01.png}}
+% fig-alt: 图3·28：圆柱，轴OO1，母线AA1，B、B1在上下底圆周
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.35) ellipse (1.10 and 0.36);
+  \draw[line width=0.7pt] (-1.10,2.35) -- (-1.10,0.40);
+  \draw[line width=0.7pt] (1.10,2.35) -- (1.10,0.40);
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.10 and 0.36);
+  \begin{scope}
+    \clip (-1.15,0.40) rectangle (1.15,-0.05);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (1.10 and 0.36);
+  \end{scope}
+  \draw[line width=0.65pt,dash pattern=on 2pt off 1.4pt] (0,0.40) -- (0,2.35);
+  \draw[line width=0.7pt] (0,0.40) -- (0.95,0.22);
+  \draw[line width=0.7pt] (0,2.35) -- (0.95,2.18);
+  \draw[line width=0.7pt] (0.95,0.22) -- (0.95,2.18);
+  \node[anchor=east] at (0,0.40) {$O$};
+  \node[anchor=east] at (0,2.35) {$O_{1}$};
+  \node[anchor=north] at (0.95,0.18) {$A$};
+  \node[anchor=south] at (0.95,2.22) {$A_{1}$};
+  \node[anchor=west] at (0.55,0.70) {$B$};
+  \node[anchor=west] at (0.55,1.90) {$B_{1}$};
+\end{tikzpicture}%
+}
 \caption{图3-28}
 \end{figure}
 
@@ -24703,7 +25284,16 @@ A O = \frac {O D}{\cos 60^{\circ}} = \frac {2}{\frac {1}{2}} = 4.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·29}]{assets/solid-geometry/fig-p0232-02.png}}
+% fig-alt: 图3·29：圆柱侧面展开
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.15) ellipse [x radius=0.45,y radius=0.15];
+  \draw[line width=0.7pt] (-0.45,0.15) -- (-0.45,1.15);
+  \draw[line width=0.7pt] (0.45,0.15) -- (0.45,1.15);
+  \draw[line width=0.7pt] (0,1.15) ellipse [x radius=0.45,y radius=0.15];
+  \draw[line width=0.65pt] (1.15,0.15) rectangle (2.65,1.15);
+\end{tikzpicture}%
+}
 \caption{图3·29}
 \end{figure}
 
@@ -24803,7 +25393,19 @@ R ^ {2} + 5 R - 36 = 0\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/solid-geometry/fig-p0234-01.png}}
+% fig-alt: 第8题：长方体内容圆柱，上下底圆，母线与棱平行
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,0.25) -- (1.85,0.25) -- (2.35,0.85) -- (0.65,0.85) -- cycle;
+  \draw[line width=0.7pt] (0.15,0.25) -- (0.15,2.35) -- (1.85,2.35) -- (1.85,0.25);
+  \draw[line width=0.7pt] (1.85,2.35) -- (2.35,2.95) -- (2.35,0.85);
+  \draw[line width=0.7pt] (0.15,2.35) -- (0.65,2.95) -- (2.35,2.95);
+  \draw[line width=0.65pt] (1.00,2.65) ellipse (0.55 and 0.22);
+  \draw[line width=0.65pt] (1.00,0.55) ellipse (0.55 and 0.22);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0.45,0.55) -- (0.45,2.65);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (1.55,0.55) -- (1.55,2.65);
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -24832,7 +25434,23 @@ l，扇形的弧长等于圆锥底面的周长 \(2\pi R\) .
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·30}]{assets/solid-geometry/fig-p0234-02.png}}
+% fig-alt: 图3·30：圆锥及其侧面展开扇形，母线l，底半径R，弧长2πR，圆心角α
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.35) ellipse (0.85 and 0.28);
+  \begin{scope}
+    \clip (-0.90,0.35) rectangle (0.90,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.35) ellipse (0.85 and 0.28);
+  \end{scope}
+  \draw[line width=0.75pt] (-0.85,0.35) -- (0,2.35) -- (0.85,0.35);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,2.35) -- (0,0.35);
+  \node[anchor=east] at (0,1.30) {$l$};
+  \node[anchor=north] at (0.40,0.32) {$R$};
+  \node[anchor=south west] at (0.12,2.15) {$\alpha$};
+  \draw[line width=0.7pt] (0,2.35) -- (2.85,1.55) arc[start angle=-15,end angle=-70,radius=3.05] -- cycle;
+  \node[anchor=west] at (2.40,1.70) {$2\pi R$};
+\end{tikzpicture}%
+}
 \caption{图3·30}
 \end{figure}
 
@@ -24870,7 +25488,22 @@ l，可以求出它的侧面展开图的圆心角。例如，图3·31是一个�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-31}]{assets/solid-geometry/fig-p0235-01.png}}
+% fig-alt: 图3·31：扇形VA1A2，半径l，圆心角α，弧长2πR
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (1.70,2.55);
+  \draw[line width=0.75pt] (V) -- (0.15,0.35);
+  \draw[line width=0.75pt] (V) -- (3.25,0.35);
+  \draw[line width=0.75pt] (0.15,0.35) arc[start angle=230,end angle=310,radius=2.55];
+  \node[anchor=south] at (V) {$V$};
+  \node[anchor=north east] at (0.15,0.35) {$A_{1}$};
+  \node[anchor=north west] at (3.25,0.35) {$A_{2}$};
+  \node[anchor=east] at (0.85,1.45) {$l$};
+  \node[anchor=south] at (1.70,2.15) {$\alpha$};
+  \node[anchor=north] at (1.70,0.05) {$2\pi R$};
+  \draw[line width=0.4pt] (1.50,2.25) arc[start angle=250,end angle=290,radius=0.42];
+\end{tikzpicture}%
+}
 \caption{图3-31}
 \end{figure}
 
@@ -24899,7 +25532,23 @@ l，可以求出它的侧面展开图的圆心角。例如，图3·31是一个�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-32}]{assets/solid-geometry/fig-p0235-02.png}}
+% fig-alt: 图3·32：圆锥V，底椭圆直径AB过圆心O，VO为高
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.25 and 0.38);
+  \begin{scope}
+    \clip (-1.30,0.40) rectangle (1.30,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (1.25 and 0.38);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.25,0.40) -- (0,2.55) -- (1.25,0.40);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,2.55) -- (0,0.40);
+  \draw[line width=0.55pt] (-1.25,0.40) -- (1.25,0.40);
+  \node[anchor=south] at (0,2.58) {$V$};
+  \node[anchor=east] at (-1.25,0.40) {$A$};
+  \node[anchor=west] at (1.25,0.40) {$B$};
+  \node[anchor=north] at (0,0.36) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-32}
 \end{figure}
 
@@ -24927,7 +25576,26 @@ x ^ {2} + y ^ {2} = a ^ {2}. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-33}]{assets/solid-geometry/fig-p0236-01.png}}
+% fig-alt: 图3·33：圆锥轴截面，高VO，底半径OA，母线VA标l，底角旁标R，顶角旁α
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.20 and 0.36);
+  \begin{scope}
+    \clip (-1.25,0.40) rectangle (1.25,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (1.20 and 0.36);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.20,0.40) -- (0,2.55) -- (1.20,0.40);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,2.55) -- (0,0.40);
+  \draw[line width=0.55pt] (0,0.40) -- (1.20,0.40);
+  \node[anchor=south] at (0,2.58) {$V$};
+  \node[anchor=east] at (-1.20,0.40) {$A$};
+  \node[anchor=west] at (1.20,0.40) {$B$};
+  \node[anchor=north] at (0,0.36) {$O$};
+  \node[anchor=east] at (0,1.40) {$l$};
+  \node[anchor=north] at (0.60,0.38) {$R$};
+  \node[anchor=west] at (0.35,2.05) {$\alpha$};
+\end{tikzpicture}%
+}
 \caption{图3-33}
 \end{figure}
 
@@ -24975,7 +25643,26 @@ x ^ {2} = a ^ {2} - y ^ {2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-34}]{assets/solid-geometry/fig-p0236-02.png}}
+% fig-alt: 图3·34：圆锥旁接展开扇形，弧标2πr，母线l，顶角α，底圆心O
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.40) ellipse (0.70 and 0.22);
+  \begin{scope}
+    \clip (-0.75,0.40) rectangle (0.75,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (0.70 and 0.22);
+  \end{scope}
+  \draw[line width=0.75pt] (-0.70,0.40) -- (0,2.65) -- (0.70,0.40);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,2.65) -- (0,0.40);
+  \node[anchor=south] at (0,2.68) {$V$};
+  \node[anchor=north] at (0,0.36) {$O$};
+  \node[anchor=west] at (0.70,0.40) {$A$};
+  \node[anchor=east] at (0,1.50) {$l$};
+  \node[anchor=west] at (0.20,2.35) {$\alpha$};
+  \draw[line width=0.7pt] (0,2.65) -- (2.55,0.85) arc[start angle=-20,end angle=-75,radius=2.85];
+  \node[anchor=west] at (1.85,0.55) {$2\pi r$};
+  \node[anchor=north west] at (2.55,0.85) {$B$};
+\end{tikzpicture}%
+}
 \caption{图3-34}
 \end{figure}
 
@@ -25006,7 +25693,23 @@ x ^ {2} = a ^ {2} - y ^ {2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/solid-geometry/fig-p0237-01.png}}
+% fig-alt: 第3题：圆锥内一小圆锥相似，底椭圆半径R、r，顶点V，轴VO
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.30 and 0.40);
+  \begin{scope}
+    \clip (-1.35,0.40) rectangle (1.35,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (1.30 and 0.40);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.30,0.40) -- (0,2.55) -- (1.30,0.40);
+  \draw[line width=0.65pt] (0,1.55) ellipse (0.55 and 0.18);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,2.55) -- (0,0.40);
+  \node[anchor=south] at (0,2.58) {$V$};
+  \node[anchor=north] at (0,0.36) {$O$};
+  \node[anchor=east] at (-1.30,0.40) {$R$};
+  \node[anchor=east] at (-0.55,1.55) {$r$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -25014,7 +25717,19 @@ x ^ {2} = a ^ {2} - y ^ {2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/solid-geometry/fig-p0237-02.png}}
+% fig-alt: 第4题：轴截面等腰三角形VOA，高h，点M在母线VA上
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.35,0.20) -- (0,2.55) -- (1.35,0.20) -- cycle;
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,2.55) -- (0,0.20);
+  \fill (0.55,1.50) circle (0.04);
+  \node[anchor=south] at (0,2.58) {$V$};
+  \node[anchor=north] at (0,0.16) {$O$};
+  \node[anchor=north west] at (1.35,0.20) {$A$};
+  \node[anchor=west] at (0.55,1.50) {$M$};
+  \node[anchor=east] at (0,1.30) {$h$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -25073,7 +25788,28 @@ V M = M A = \frac {1}{2}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·35}]{assets/solid-geometry/fig-p0238-01.png}}
+% fig-alt: 图3·35：圆锥旁接大小两段扇形，弧2πr与2πr1，母线l，顶角α
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.40) ellipse (0.75 and 0.24);
+  \begin{scope}
+    \clip (-0.80,0.40) rectangle (0.80,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (0.75 and 0.24);
+  \end{scope}
+  \draw[line width=0.75pt] (-0.75,0.40) -- (0,2.55) -- (0.75,0.40);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,2.55) -- (0,0.40);
+  \draw[line width=0.55pt] (0,1.55) ellipse (0.38 and 0.12);
+  \node[anchor=south] at (0,2.58) {$V$};
+  \node[anchor=east] at (0,1.40) {$l$};
+  \node[anchor=west] at (0.15,2.25) {$\alpha$};
+  \draw[line width=0.7pt] (0,2.55) -- (2.65,1.15);
+  \draw[line width=0.7pt] (0,2.55) -- (2.15,0.15);
+  \draw[line width=0.65pt] (1.15,1.85) arc[start angle=-25,end angle=-70,radius=1.55];
+  \draw[line width=0.65pt] (2.65,1.15) arc[start angle=-20,end angle=-75,radius=2.85];
+  \node[anchor=west] at (1.70,1.85) {$2\pi r_{1}$};
+  \node[anchor=west] at (2.40,0.55) {$2\pi r$};
+\end{tikzpicture}%
+}
 \caption{图3·35}
 \end{figure}
 
@@ -25135,7 +25871,24 @@ S _ {\text {\text{圆}}} = \pi \text{（}r l + r _ {1} l\text{）} = \pi \text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-38}]{assets/solid-geometry/fig-p0239-01.png}}
+% fig-alt: 图3·36轴截面：等腰△VBB1，中位线AA1，高VO，底半径R、中半径r，母线l
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.45,0.15) -- (0,2.65) -- (1.45,0.15) -- cycle;
+  \draw[line width=0.65pt] (-0.85,1.20) -- (0.85,1.20);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,2.65) -- (0,0.15);
+  \node[anchor=south] at (0,2.68) {$V$};
+  \node[anchor=north] at (0,0.12) {$O$};
+  \node[anchor=north east] at (-1.45,0.15) {$B$};
+  \node[anchor=north west] at (1.45,0.15) {$B_{1}$};
+  \node[anchor=east] at (-0.85,1.20) {$A$};
+  \node[anchor=west] at (0.85,1.20) {$A_{1}$};
+  \node[anchor=south] at (0,1.22) {$r$};
+  \node[anchor=north] at (0.70,0.15) {$R$};
+  \node[anchor=east] at (-1.05,1.90) {$l$};
+  \node[anchor=east] at (-1.15,0.70) {$l$};
+\end{tikzpicture}%
+}
 \caption{图3-38}
 \end{figure}
 
@@ -25165,7 +25918,21 @@ S _ {\text { \text{圆} }} = \pi \text{（}r _ {1} + r\text{）} l.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-37}]{assets/solid-geometry/fig-p0239-02.png}}
+% fig-alt: 图3·37：圆台轴截面梯形ABCD，中位线MN，底中点O
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.45,0.15) -- (-0.75,1.85) -- (0.75,1.85) -- (1.45,0.15) -- cycle;
+  \draw[line width=0.65pt] (-1.10,1.00) -- (1.10,1.00);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,1.85) -- (0,0.15);
+  \node[anchor=south east] at (-0.75,1.85) {$A$};
+  \node[anchor=south west] at (0.75,1.85) {$B$};
+  \node[anchor=north east] at (-1.45,0.15) {$C$};
+  \node[anchor=north west] at (1.45,0.15) {$D$};
+  \node[anchor=east] at (-1.10,1.00) {$M$};
+  \node[anchor=west] at (1.10,1.00) {$N$};
+  \node[anchor=north] at (0,0.12) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3-37}
 \end{figure}
 
@@ -25173,7 +25940,20 @@ S _ {\text { \text{圆} }} = \pi \text{（}r _ {1} + r\text{）} l.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-38}]{assets/solid-geometry/fig-p0239-03.png}}
+% fig-alt: 图3·38：圆台轴截面，上底O下底O1，中位NK，母线l
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.85,2.15) -- (0.85,2.15) -- (1.35,0.15) -- (-1.35,0.15) -- cycle;
+  \draw[line width=0.65pt] (-1.10,1.15) -- (1.10,1.15);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,2.15) -- (0,0.15);
+  \node[anchor=south] at (0,2.18) {$O$};
+  \node[anchor=north] at (0,0.12) {$O_{1}$};
+  \node[anchor=south west] at (0.85,2.15) {$A$};
+  \node[anchor=east] at (-1.10,1.15) {$N$};
+  \node[anchor=west] at (1.10,1.15) {$K$};
+  \node[anchor=east] at (-1.10,1.65) {$l$};
+\end{tikzpicture}%
+}
 \caption{图3-38}
 \end{figure}
 
@@ -25239,7 +26019,25 @@ R，求截成这圆台的原来圆锥的侧面积（图3·39）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-39}]{assets/solid-geometry/fig-p0240-01.png}}
+% fig-alt: 图3·39：圆锥，中截面半径r，底半径R，高VO，母线l
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.35) ellipse (1.35 and 0.40);
+  \begin{scope}
+    \clip (-1.40,0.35) rectangle (1.40,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.35) ellipse (1.35 and 0.40);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.35,0.35) -- (0,2.65) -- (1.35,0.35);
+  \draw[line width=0.65pt] (0,1.35) ellipse (0.70 and 0.22);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,2.65) -- (0,0.35);
+  \node[anchor=south] at (0,2.68) {$V$};
+  \node[anchor=north] at (0,0.32) {$O$};
+  \node[anchor=south] at (0,1.38) {$O_{1}$};
+  \node[anchor=east] at (-0.70,1.35) {$r$};
+  \node[anchor=east] at (-1.35,0.35) {$R$};
+  \node[anchor=east] at (-0.85,1.90) {$l$};
+\end{tikzpicture}%
+}
 \caption{图3-39}
 \end{figure}
 
@@ -25299,7 +26097,18 @@ S _ {\text { \text{条} }} = \pi \text{（}6^{3} + 14^{2} + 20 l\text{）} = 572
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-40}]{assets/solid-geometry/fig-p0241-01.png}}
+% fig-alt: 图3·40：圆台轴截面梯形，高h，母线l，底中点O、M
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.85,1.85) -- (0.85,1.85) -- (1.55,0.15) -- (-1.55,0.15) -- cycle;
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,1.85) -- (0,0.15);
+  \node[anchor=south] at (0,1.88) {$O$};
+  \node[anchor=north] at (0,0.12) {$O_{1}$};
+  \node[anchor=north west] at (0.55,0.15) {$M$};
+  \node[anchor=east] at (0,1.00) {$h$};
+  \node[anchor=west] at (1.20,1.00) {$l$};
+\end{tikzpicture}%
+}
 \caption{图3-40}
 \end{figure}
 
@@ -25324,7 +26133,21 @@ S _ {\text { \text{条} }} = \pi \text{（}6^{3} + 14^{2} + 20 l\text{）} = 572
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/solid-geometry/fig-p0242-01.png}}
+% fig-alt: 第3题：漏斗，管径φ0.2，锥口φ0.8，下口φ1.0
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0.35,2.85) -- (0.35,2.15) arc[start angle=90,end angle=0,radius=0.35] -- (0.70,1.55);
+  \draw[line width=0.75pt] (-0.35,2.85) -- (-0.35,2.15);
+  \draw[line width=0.75pt] (0.35,2.85) -- (-0.35,2.85);
+  \draw[line width=0.75pt] (-0.70,1.55) -- (-1.55,0.15) -- (1.55,0.15) -- (0.70,1.55);
+  \draw[line width=0.4pt,<->] (-0.35,2.55) -- (0.35,2.55);
+  \node[anchor=west] at (0.55,2.55) {$\phi 0.2$};
+  \draw[line width=0.4pt,<->] (-0.70,1.55) -- (0.70,1.55);
+  \node[anchor=west] at (0.85,1.55) {$\phi 0.8$};
+  \draw[line width=0.4pt,<->] (-1.55,0.00) -- (1.55,0.00);
+  \node[anchor=north] at (0,-0.02) {$\phi 1.0$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -25332,7 +26155,22 @@ S _ {\text { \text{条} }} = \pi \text{（}6^{3} + 14^{2} + 20 l\text{）} = 572
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/solid-geometry/fig-p0242-02.png}}
+% fig-alt: 第4题：圆台轴截面，上底r、下底R、高h、母线l，中位NP
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.85,2.05) -- (0.85,2.05) -- (1.45,0.15) -- (-1.45,0.15) -- cycle;
+  \draw[line width=0.65pt] (-1.15,1.10) -- (1.15,1.10);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,2.05) -- (0,0.15);
+  \node[anchor=south] at (0,2.08) {$r$};
+  \node[anchor=north] at (0.70,0.12) {$R$};
+  \node[anchor=east] at (0,1.10) {$h$};
+  \node[anchor=west] at (1.15,1.10) {$l$};
+  \node[anchor=east] at (-1.15,1.10) {$N$};
+  \node[anchor=west] at (1.15,1.15) {$P$};
+  \node[anchor=north east] at (-1.45,0.15) {$O$};
+  \node[anchor=north] at (0,0.12) {$O_{1}$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -25410,7 +26248,13 @@ x = \sqrt {\frac {p R ^ {2} + q r ^ {3}}{p + q}}. \text{］}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-41}]{assets/solid-geometry/fig-p0243-01.png}}
+% fig-alt: 图3·41：球的截面圆
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (0.95);
+  \draw[line width=0.55pt] (0,0.25) ellipse [x radius=0.85,y radius=0.22];
+\end{tikzpicture}%
+}
 \caption{图3-41}
 \end{figure}
 
@@ -25450,7 +26294,20 @@ V = \pi r ^ {2} h = \pi \left(\frac {\sqrt {3} H}{2 \pi}\right) ^ {2}\text{，} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-42}]{assets/solid-geometry/fig-p0244-01.png}}
+% fig-alt: 图3·42：圆柱侧面展开为矩形，对角线，高h，底圆周2πr
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.05) ellipse (0.55 and 0.22);
+  \draw[line width=0.7pt] (-0.55,2.05) -- (-0.55,0.35);
+  \draw[line width=0.7pt] (0.55,2.05) -- (0.55,0.35);
+  \draw[line width=0.7pt] (0,0.35) ellipse (0.55 and 0.22);
+  \draw[line width=0.7pt] (0.55,0.35) -- (3.85,0.35) -- (3.85,2.05) -- (0.55,2.05);
+  \draw[line width=0.65pt] (0.55,2.05) -- (3.85,0.35);
+  \node[anchor=south] at (2.20,2.08) {$2\pi r$};
+  \node[anchor=east] at (0.40,1.20) {$h$};
+  \node[anchor=north] at (2.20,0.32) {$2\pi r$};
+\end{tikzpicture}%
+}
 \caption{图3-42}
 \end{figure}
 
@@ -25458,7 +26315,30 @@ V = \pi r ^ {2} h = \pi \left(\frac {\sqrt {3} H}{2 \pi}\right) ^ {2}\text{，} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-43}]{assets/solid-geometry/fig-p0244-02.png}}
+% fig-alt: 图3·43：左圆柱母线AB1；右圆柱上底圆周点B、B1及平行小圆
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}
+    \draw[line width=0.7pt] (0,2.15) ellipse (0.85 and 0.28);
+    \draw[line width=0.7pt] (-0.85,2.15) -- (-0.85,0.40);
+    \draw[line width=0.7pt] (0.85,2.15) -- (0.85,0.40);
+    \draw[line width=0.7pt] (0,0.40) ellipse (0.85 and 0.28);
+    \draw[line width=0.65pt] (-0.85,0.40) -- (-0.85,2.15);
+    \node[anchor=east] at (-0.85,0.40) {$A$};
+    \node[anchor=east] at (-0.85,2.15) {$B_{1}$};
+  \end{scope}
+  \begin{scope}[xshift=2.85cm]
+    \draw[line width=0.7pt] (0,2.15) ellipse (0.85 and 0.28);
+    \draw[line width=0.7pt] (-0.85,2.15) -- (-0.85,0.40);
+    \draw[line width=0.7pt] (0.85,2.15) -- (0.85,0.40);
+    \draw[line width=0.7pt] (0,0.40) ellipse (0.85 and 0.28);
+    \draw[line width=0.65pt] (0,1.30) ellipse (0.85 and 0.28);
+    \draw[line width=0.55pt] (0,2.15) -- (0.75,2.05);
+    \node[anchor=east] at (-0.85,1.30) {$B$};
+    \node[anchor=west] at (0.85,1.30) {$B_{1}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3-43}
 \end{figure}
 
@@ -25510,7 +26390,26 @@ S _ {2} = 2 \pi x y + 2 \pi x ^ {2} = 2 \pi a ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3-44}]{assets/solid-geometry/fig-p0245-01.png}}
+% fig-alt: 图3·44：圆柱，上底圆心O点A，下底O1点A1，底半径r
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.25) ellipse (1.15 and 0.36);
+  \draw[line width=0.7pt] (-1.15,2.25) -- (-1.15,0.40);
+  \draw[line width=0.7pt] (1.15,2.25) -- (1.15,0.40);
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.15 and 0.36);
+  \begin{scope}
+    \clip (-1.20,0.40) rectangle (1.20,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (1.15 and 0.36);
+  \end{scope}
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) -- (0,2.25);
+  \draw[line width=0.55pt] (0,0.40) -- (1.15,0.40);
+  \node[anchor=south] at (0,2.28) {$O$};
+  \node[anchor=north] at (0,0.36) {$O_{1}$};
+  \node[anchor=west] at (1.15,2.25) {$A$};
+  \node[anchor=west] at (1.15,0.40) {$A_{1}$};
+  \node[anchor=north] at (0.55,0.38) {$r$};
+\end{tikzpicture}%
+}
 \caption{图 3-44}
 \end{figure}
 
@@ -25617,7 +26516,25 @@ V = \pi x ^ {2} y = \pi \cdot \frac {a ^ {2}}{3} \cdot \frac {2 a}{\sqrt {3}} = 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-45}]{assets/solid-geometry/fig-p0247-01.png}}
+% fig-alt: 图3·45：圆锥内接正三棱锥，底椭圆上A、B、C，顶点S
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.45 and 0.42);
+  \begin{scope}
+    \clip (-1.50,0.40) rectangle (1.50,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (1.45 and 0.42);
+  \end{scope}
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (-0.90,0.22) -- (0.90,0.22);
+  \draw[line width=0.75pt] (-1.45,0.40) -- (0,2.55);
+  \draw[line width=0.75pt] (1.45,0.40) -- (0,2.55);
+  \draw[line width=0.7pt] (0,0.02) -- (0,2.55);
+  \draw[line width=0.7pt] (-0.90,0.22) -- (0,2.55) -- (0.90,0.22);
+  \node[anchor=south] at (0,2.58) {$S$};
+  \node[anchor=east] at (-1.45,0.40) {$A$};
+  \node[anchor=north] at (0,0.00) {$B$};
+  \node[anchor=west] at (1.45,0.40) {$C$};
+\end{tikzpicture}%
+}
 \caption{图3-45}
 \end{figure}
 
@@ -25643,7 +26560,19 @@ V = \frac {1}{3} \pi r ^ {2} h.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-46}]{assets/solid-geometry/fig-p0247-02.png}}
+% fig-alt: 图3·46：轴截面等腰△SAB，高SO，底半径r，母线l
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.45,0.15) -- (0,2.45) -- (1.45,0.15) -- cycle;
+  \draw[line width=0.65pt] (0,2.45) -- (0,0.15);
+  \node[anchor=south] at (0,2.48) {$S$};
+  \node[anchor=north east] at (-1.45,0.15) {$A$};
+  \node[anchor=north west] at (1.45,0.15) {$B$};
+  \node[anchor=north] at (0,0.12) {$O$};
+  \node[anchor=south] at (0.70,0.18) {$r$};
+  \node[anchor=east] at (-0.70,1.40) {$l$};
+\end{tikzpicture}%
+}
 \caption{图3-46}
 \end{figure}
 
@@ -25730,7 +26659,27 @@ V = \frac {\sqrt {2}}{12} \pi a ^ {3}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-48}]{assets/solid-geometry/fig-p0248-01.png}}
+% fig-alt: 图3·48：圆锥S，底椭圆ABC，高h，底半径r，母线SB
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.40 and 0.42);
+  \begin{scope}
+    \clip (-1.45,0.40) rectangle (1.45,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (1.40 and 0.42);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.40,0.40) -- (0,2.55) -- (1.40,0.40);
+  \draw[line width=0.7pt] (0,2.55) -- (0.95,0.18);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,2.55) -- (0,0.40);
+  \draw[line width=0.55pt] (0,0.40) -- (1.40,0.40);
+  \node[anchor=south] at (0,2.58) {$S$};
+  \node[anchor=east] at (-1.40,0.40) {$A$};
+  \node[anchor=west] at (1.40,0.40) {$C$};
+  \node[anchor=north] at (0.95,0.14) {$B$};
+  \node[anchor=north] at (0,0.36) {$O$};
+  \node[anchor=east] at (0,1.40) {$h$};
+  \node[anchor=north] at (0.70,0.38) {$r$};
+\end{tikzpicture}%
+}
 \caption{图3-48}
 \end{figure}
 
@@ -25774,7 +26723,27 @@ r = \frac {\frac {a}{2}}{\sin \frac {\alpha}{2}} = \frac {a}{2 \sin \frac {\alph
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·49}]{assets/solid-geometry/fig-p0249-01.png}}
+% fig-alt: 图3·49：圆锥S，上底小椭圆O1B1半径r，下底OAB半径R
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.35) ellipse (1.35 and 0.40);
+  \begin{scope}
+    \clip (-1.40,0.35) rectangle (1.40,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.35) ellipse (1.35 and 0.40);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.35,0.35) -- (0,2.65) -- (1.35,0.35);
+  \draw[line width=0.65pt] (0,1.55) ellipse (0.65 and 0.20);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,2.65) -- (0,0.35);
+  \node[anchor=south] at (0,2.68) {$S$};
+  \node[anchor=north] at (0,0.32) {$O$};
+  \node[anchor=south] at (0,1.58) {$O_{1}$};
+  \node[anchor=east] at (-1.35,0.35) {$A$};
+  \node[anchor=west] at (1.35,0.35) {$B$};
+  \node[anchor=west] at (0.65,1.55) {$B_{1}$};
+  \node[anchor=north] at (0.65,0.32) {$R$};
+  \node[anchor=east] at (-0.65,1.55) {$r$};
+\end{tikzpicture}%
+}
 \caption{图3·49}
 \end{figure}
 
@@ -25847,7 +26816,26 @@ x ^ {4} y ^ {2} = x ^ {2} \text{（}a ^ {4} - x ^ {4}\text{），}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·50}]{assets/solid-geometry/fig-p0251-01.png}}
+% fig-alt: 图3·50：圆台，上底半径r、下底R，高h，轴SS1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.15) ellipse (0.75 and 0.24);
+  \draw[line width=0.7pt] (-0.75,2.15) -- (-1.30,0.35);
+  \draw[line width=0.7pt] (0.75,2.15) -- (1.30,0.35);
+  \draw[line width=0.7pt] (0,0.35) ellipse (1.30 and 0.38);
+  \begin{scope}
+    \clip (-1.35,0.35) rectangle (1.35,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.35) ellipse (1.30 and 0.38);
+  \end{scope}
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.35) -- (0,2.15);
+  \draw[line width=0.55pt] (0,0.35) -- (1.30,0.35);
+  \node[anchor=south] at (0,2.18) {$S_{1}$};
+  \node[anchor=north] at (0,0.32) {$S$};
+  \node[anchor=east] at (0,1.25) {$h$};
+  \node[anchor=north] at (0.65,0.32) {$R$};
+  \node[anchor=east] at (-0.75,2.15) {$r$};
+\end{tikzpicture}%
+}
 \caption{图 3·50}
 \end{figure}
 
@@ -25879,7 +26867,24 @@ x ^ {4} y ^ {2} = x ^ {2} \text{（}a ^ {4} - x ^ {4}\text{），}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-51}]{assets/solid-geometry/fig-p0251-02.png}}
+% fig-alt: 图3·51：圆锥P，中截面半径r、下底S半径，高h
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.35) ellipse (1.35 and 0.40);
+  \begin{scope}
+    \clip (-1.40,0.35) rectangle (1.40,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.35) ellipse (1.35 and 0.40);
+  \end{scope}
+  \draw[line width=0.75pt] (-1.35,0.35) -- (0,2.65) -- (1.35,0.35);
+  \draw[line width=0.65pt] (0,1.45) ellipse (0.70 and 0.22);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,2.65) -- (0,0.35);
+  \node[anchor=south] at (0,2.68) {$P$};
+  \node[anchor=south] at (0,1.48) {$S_{1}$};
+  \node[anchor=west] at (1.35,0.35) {$S$};
+  \node[anchor=east] at (-0.70,1.45) {$r$};
+  \node[anchor=east] at (0,0.90) {$h$};
+\end{tikzpicture}%
+}
 \caption{图3-51}
 \end{figure}
 
@@ -25935,7 +26940,18 @@ V = \frac {\alpha h}{3} \text{（}r ^ {2} + r _ {1} ^ {2} + r r _ {1}\text{）�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·52}]{assets/solid-geometry/fig-p0252-01.png}}
+% fig-alt: 图3·52：轴截面等腰三角形，中位线，高h，顶点P、底O、中O1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.45,0.15) -- (0,2.55) -- (1.45,0.15) -- cycle;
+  \draw[line width=0.65pt] (-0.80,1.20) -- (0.80,1.20);
+  \draw[line width=0.55pt] (0,2.55) -- (0,0.15);
+  \node[anchor=south] at (0,2.58) {$P$};
+  \node[anchor=north] at (0,0.12) {$O$};
+  \node[anchor=south] at (0,1.22) {$O_{1}$};
+  \node[anchor=east] at (0,0.65) {$h$};
+\end{tikzpicture}%
+}
 \caption{图3·52}
 \end{figure}
 
@@ -25972,13 +26988,45 @@ V = \frac {1}{2} \cdot 9 a \cdot \frac {156}{13 a} = 54 \text{（}\mathrm{cm} ^ 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第253页）}]{assets/solid-geometry/fig-p0253-01.png}}
+% fig-alt: 圆台，上底圆心O'，下底O，高h
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.15) ellipse (0.80 and 0.26);
+  \draw[line width=0.7pt] (-0.80,2.15) -- (-1.30,0.35);
+  \draw[line width=0.7pt] (0.80,2.15) -- (1.30,0.35);
+  \draw[line width=0.7pt] (0,0.35) ellipse (1.30 and 0.38);
+  \begin{scope}
+    \clip (-1.35,0.35) rectangle (1.35,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.35) ellipse (1.30 and 0.38);
+  \end{scope}
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.35) -- (0,2.15);
+  \node[anchor=south] at (0,2.18) {$O'$};
+  \node[anchor=north] at (0,0.32) {$O$};
+  \node[anchor=east] at (0,1.25) {$h$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第253页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-53}]{assets/solid-geometry/fig-p0253-02.png}}
+% fig-alt: 图3·53：圆柱，上底O'下底O，高h
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.25) ellipse (1.10 and 0.34);
+  \draw[line width=0.7pt] (-1.10,2.25) -- (-1.10,0.40);
+  \draw[line width=0.7pt] (1.10,2.25) -- (1.10,0.40);
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.10 and 0.34);
+  \begin{scope}
+    \clip (-1.15,0.40) rectangle (1.15,-0.02);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) ellipse (1.10 and 0.34);
+  \end{scope}
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) -- (0,2.25);
+  \node[anchor=south] at (0,2.28) {$O'$};
+  \node[anchor=north] at (0,0.36) {$O$};
+  \node[anchor=east] at (0,1.30) {$h$};
+\end{tikzpicture}%
+}
 \caption{图3-53}
 \end{figure}
 
@@ -26038,7 +27086,23 @@ y ^ {2} + y - \frac {1}{2} = 0\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0254-01.png}}
+% fig-alt: （1）正六边形轴测：上下底，部分棱虚线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,1.55) -- (1.15,2.05) -- (2.15,1.55) -- (2.15,0.35) -- (1.15,-0.15) -- (0.15,0.35) -- cycle;
+  \draw[line width=0.7pt] (0.15,1.55) -- (0.15,0.35);
+  \draw[line width=0.7pt] (1.15,2.05) -- (1.15,0.85);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (1.15,0.85) -- (0.15,0.35);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (1.15,0.85) -- (2.15,0.35);
+  \node[anchor=east] at (0.15,1.55) {$B$};
+  \node[anchor=east] at (0.15,0.35) {$A$};
+  \node[anchor=south] at (1.15,2.08) {$F$};
+  \node[anchor=west] at (2.15,1.55) {$D$};
+  \node[anchor=west] at (2.15,0.35) {$C$};
+  \node[anchor=north] at (1.15,-0.18) {$E$};
+  \node[anchor=south] at (0.15,1.70) {$O$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -26046,7 +27110,15 @@ y ^ {2} + y - \frac {1}{2} = 0\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0254-02.png}}
+% fig-alt: 圆锥被平面所截
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.15) ellipse [x radius=0.85,y radius=0.20];
+  \draw[line width=0.7pt] (-0.85,0.15) -- (0,1.55);
+  \draw[line width=0.7pt] (0.85,0.15) -- (0,1.55);
+  \draw[line width=0.55pt] (-0.45,0.85) -- (0.45,0.85);
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -26148,7 +27220,20 @@ S _ {A B C D E F} = S _ {A H B C} - S _ {A B H} + S _ {A C D F} + S _ {F G E D} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/solid-geometry/fig-p0256-01.png}}
+% fig-alt: 第3题：共顶点V的三段圆台/圆锥，底O及两中截面O1、O2
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.30) ellipse (1.35 and 0.38);
+  \draw[line width=0.65pt] (0,1.05) ellipse (0.95 and 0.28);
+  \draw[line width=0.65pt] (0,1.75) ellipse (0.55 and 0.18);
+  \draw[line width=0.75pt] (-1.35,0.30) -- (0,2.85) -- (1.35,0.30);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,2.85) -- (0,0.30);
+  \node[anchor=south] at (0,2.88) {$V$};
+  \node[anchor=north] at (0,0.26) {$O$};
+  \node[anchor=west] at (0.95,1.05) {$A_{2}$};
+  \node[anchor=west] at (0.55,1.75) {$A_{1}$};
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -26156,7 +27241,15 @@ S _ {A B C D E F} = S _ {A H B C} - S _ {A B H} + S _ {A C D F} + S _ {F G E D} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/solid-geometry/fig-p0256-02.png}}
+% fig-alt: 正方体内接球
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) rectangle (1.25,1.25);
+  \draw[line width=0.65pt] (0,1.25) -- (0.35,1.55) -- (1.60,1.55) -- (1.25,1.25);
+  \draw[line width=0.65pt] (1.25,0) -- (1.60,0.30) -- (1.60,1.55);
+  \draw[line width=0.7pt] (0.80,0.75) circle (0.45);
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -26187,7 +27280,21 @@ S _ {A B C D E F} = S _ {A H B C} - S _ {A B H} + S _ {A C D F} + S _ {F G E D} 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1.4题)}]{assets/solid-geometry/fig-p0257-01.png}}
+% fig-alt: 第1.4题：竖直线上A、B、E、F，C在右，D在上，角α在B
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,2.45) -- (0,0.15);
+  \draw[line width=0.7pt] (0,1.85) -- (2.15,1.15) -- (0,0.45);
+  \draw[line width=0.7pt] (0,2.15) -- (0.85,2.35);
+  \node[anchor=east] at (0,2.15) {$E$};
+  \node[anchor=east] at (0,1.85) {$A$};
+  \node[anchor=east] at (0,1.15) {$F$};
+  \node[anchor=east] at (0,0.45) {$B$};
+  \node[anchor=west] at (2.15,1.15) {$C$};
+  \node[anchor=south west] at (0.85,2.35) {$D$};
+  \node[anchor=west] at (0.15,0.55) {$\alpha$};
+\end{tikzpicture}%
+}
 \caption{(第1.4题)}
 \end{figure}
 
@@ -26220,7 +27327,19 @@ V = V _ {C F B} + V _ {F C D B} - V _ {A D E}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·55}]{assets/solid-geometry/fig-p0257-02.png}}
+% fig-alt: 图3·55：球O，直径AB竖，赤道椭圆，点C、D在赤道
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.65pt] (0,0) ellipse (1.45 and 0.48);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,1.45) -- (0,-1.45);
+  \node[anchor=south] at (0,1.48) {$A$};
+  \node[anchor=north] at (0,-1.48) {$B$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=west] at (1.45,0.15) {$C$};
+  \node[anchor=east] at (-1.45,-0.15) {$D$};
+\end{tikzpicture}%
+}
 \caption{图3·55}
 \end{figure}
 
@@ -26248,7 +27367,20 @@ V = V _ {C F B} + V _ {F C D B} - V _ {A D E}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·58}]{assets/solid-geometry/fig-p0258-01.png}}
+% fig-alt: 图3·58：平面M上球O，截面圆ABC过球心
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-1.85,0.15) -- (2.05,0.15) -- (2.55,1.05) -- (-1.35,1.05) -- cycle;
+  \draw[line width=0.75pt] (0.35,1.15) circle (1.15);
+  \draw[line width=0.6pt] (0.35,1.15) ellipse (1.15 and 0.38);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (-0.55,1.15) -- (1.25,1.15);
+  \node[anchor=south] at (0.35,2.32) {$A$};
+  \node[anchor=north] at (0.35,0.72) {$B$};
+  \node[anchor=west] at (1.45,1.05) {$C$};
+  \node[anchor=east] at (0.35,1.15) {$O$};
+  \node[anchor=south west] at (2.35,0.95) {$M$};
+\end{tikzpicture}%
+}
 \caption{图3·58}
 \end{figure}
 
@@ -26256,7 +27388,18 @@ V = V _ {C F B} + V _ {F C D B} - V _ {A D E}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·57}]{assets/solid-geometry/fig-p0258-02.png}}
+% fig-alt: 图3·57：平面M'截球得小圆，心O1，球心O，半径OA、OB、OC
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-1.85,0.05) -- (2.15,0.05) -- (2.65,0.95) -- (-1.35,0.95) -- cycle;
+  \draw[line width=0.75pt] (0.40,1.25) circle (1.20);
+  \draw[line width=0.6pt] (0.40,0.85) ellipse (0.95 and 0.22);
+  \node[anchor=south] at (0.40,2.48) {$A$};
+  \node[anchor=east] at (0.40,1.25) {$O$};
+  \node[anchor=north] at (0.40,0.62) {$O_{1}$};
+  \node[anchor=south west] at (2.45,0.85) {$M'$};
+\end{tikzpicture}%
+}
 \caption{图3·57}
 \end{figure}
 
@@ -26296,7 +27439,21 @@ M 和球 O 只有一个公共点 A （图3·59）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0259-01.png}}
+% fig-alt: （1）地球经线：北极南极，经度20°、40°、60°、80°、100°、120°
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) circle (1.55);
+  \foreach \s in {0.35,0.70,1.05,1.40}
+    \draw[line width=0.45pt] (0,1.55) .. controls (-\s,0.40) and (-\s,-0.40) .. (0,-1.55);
+  \foreach \s in {0.35,0.70,1.05,1.40}
+    \draw[line width=0.45pt] (0,1.55) .. controls (\s,0.40) and (\s,-0.40) .. (0,-1.55);
+  \node[anchor=south] at (0,1.58) {北极};
+  \node[anchor=north] at (0,-1.58) {南极};
+  \node at (-0.55,0.35) {$20^{\circ}$};
+  \node at (0.55,0.35) {$20^{\circ}$};
+  \node at (1.05,0.15) {$40^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -26304,7 +27461,19 @@ M 和球 O 只有一个公共点 A （图3·59）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0259-02.png}}
+% fig-alt: （2）地球纬线：赤道及南北纬20°、40°、60°、80°
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) circle (1.55);
+  \foreach \y/\rx in {0/1.55, 0.50/1.45, 0.95/1.20, 1.30/0.80, -0.50/1.45, -0.95/1.20, -1.30/0.80}
+    \draw[line width=0.45pt] (0,\y) ellipse [x radius=\rx, y radius=0.16];
+  \node[anchor=west] at (1.60,0) {赤道};
+  \node[anchor=south] at (0,1.58) {北极};
+  \node[anchor=north] at (0,-1.58) {南极};
+  \node at (1.35,0.55) {$20^{\circ}$};
+  \node at (1.15,1.00) {$40^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -26317,7 +27486,19 @@ M 和球 O 只有一个公共点 A （图3·59）。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·59}]{assets/solid-geometry/fig-p0259-03.png}}
+% fig-alt: 图3·59：平面M上球，切点A，球心O，OM⊥平面，B在平面上
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-1.95,0.15) -- (2.25,0.15) -- (2.75,1.05) -- (-1.45,1.05) -- cycle;
+  \draw[line width=0.75pt] (0.35,1.55) circle (1.05);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0.35,1.55) -- (0.35,0.50);
+  \draw[line width=0.6pt] (0.35,0.50) -- (-0.55,0.35);
+  \node[anchor=south] at (0.35,2.62) {$O$};
+  \node[anchor=north] at (0.35,0.46) {$A$};
+  \node[anchor=east] at (-0.55,0.35) {$B$};
+  \node[anchor=south west] at (2.55,0.95) {$M$};
+\end{tikzpicture}%
+}
 \caption{图3·59}
 \end{figure}
 
@@ -26356,7 +27537,21 @@ A 到球心的距离。即线段 OA 是球心 O 到平面 M 的最短距离，�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0260-01.png}}
+% fig-alt: （1）球O，赤道椭圆，弦AB在下半球
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.6pt] (0,0.15) ellipse (1.42 and 0.42);
+  \begin{scope}
+    \clip (-1.50,0.15) rectangle (1.50,0.70);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.15) ellipse (1.42 and 0.42);
+  \end{scope}
+  \draw[line width=0.65pt] (-0.85,-0.95) -- (0.85,-0.95);
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=north east] at (-0.85,-0.95) {$A$};
+  \node[anchor=north west] at (0.85,-0.95) {$B$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -26364,7 +27559,20 @@ A 到球心的距离。即线段 OA 是球心 O 到平面 M 的最短距离，�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0260-02.png}}
+% fig-alt: （2）球O，竖直径AB，若干经线椭圆
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.55pt] (0,1.45) -- (0,-1.45);
+  \foreach \s in {0.45,0.90}
+    \draw[line width=0.45pt] (0,1.45) .. controls (\s,0.3) and (\s,-0.3) .. (0,-1.45);
+  \foreach \s in {0.45,0.90}
+    \draw[line width=0.45pt] (0,1.45) .. controls (-\s,0.3) and (-\s,-0.3) .. (0,-1.45);
+  \node[anchor=south] at (0,1.48) {$A$};
+  \node[anchor=north] at (0,-1.48) {$B$};
+  \node[anchor=east] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -26400,7 +27608,22 @@ O M = \sqrt {O A ^ {2} - A M ^ {2}} = \sqrt {25^{2} - 7^{2}} = 24.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-81}]{assets/solid-geometry/fig-p0261-01.png}}
+% fig-alt: 图3·61：球O，小圆M，半径OA，OM⊥截面
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.55);
+  \draw[line width=0.6pt] (0,0.85) ellipse (1.15 and 0.28);
+  \begin{scope}
+    \clip (-1.20,0.85) rectangle (1.20,1.25);
+    \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.85) ellipse (1.15 and 0.28);
+  \end{scope}
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,0.85) -- (1.15,0.85);
+  \draw[line width=0.6pt] (0,0) -- (1.15,0.85);
+  \node[anchor=north] at (0,0) {$O$};
+  \node[anchor=east] at (0,0.85) {$M$};
+  \node[anchor=west] at (1.15,0.85) {$A$};
+\end{tikzpicture}%
+}
 \caption{图3-81}
 \end{figure}
 
@@ -26408,7 +27631,19 @@ O M = \sqrt {O A ^ {2} - A M ^ {2}} = \sqrt {25^{2} - 7^{2}} = 24.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-62}]{assets/solid-geometry/fig-p0261-02.png}}
+% fig-alt: 图3·62：球O，赤道椭圆，弦AB，半径OA、OB
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.6pt] (0,0.10) ellipse (1.42 and 0.40);
+  \draw[line width=0.65pt] (0,0) -- (1.25,0.35);
+  \draw[line width=0.65pt] (0,0) -- (1.35,-0.15);
+  \draw[line width=0.65pt] (1.25,0.35) -- (1.35,-0.15);
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=south west] at (1.25,0.35) {$A$};
+  \node[anchor=north west] at (1.35,-0.15) {$B$};
+\end{tikzpicture}%
+}
 \caption{图3-62}
 \end{figure}
 
@@ -26476,7 +27711,20 @@ A B = O A - O B = 50 - 48 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·63}]{assets/solid-geometry/fig-p0262-01.png}}
+% fig-alt: 图3·63：平面M上球，垂足A，切点T，球心O
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-1.85,0.05) -- (2.15,0.05) -- (2.65,0.95) -- (-1.35,0.95) -- cycle;
+  \draw[line width=0.75pt] (0.35,1.85) circle (1.15);
+  \draw[line width=0.6pt] (0.35,1.55) ellipse (1.10 and 0.32);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0.35,1.85) -- (0.35,0.45);
+  \fill (0.35,0.45) circle (0.035);
+  \node[anchor=south] at (0.35,3.02) {$O$};
+  \node[anchor=north] at (0.35,0.42) {$A$};
+  \node[anchor=west] at (0.50,0.55) {$T$};
+  \node[anchor=south west] at (2.45,0.85) {$M$};
+\end{tikzpicture}%
+}
 \caption{图3·63}
 \end{figure}
 
@@ -26484,7 +27732,18 @@ A B = O A - O B = 50 - 48 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·64}]{assets/solid-geometry/fig-p0262-02.png}}
+% fig-alt: 图3·64：球O，小圆弧AB，圆心角50°
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.6pt] (0,0.35) ellipse (1.20 and 0.32);
+  \draw[line width=0.65pt] (-0.85,0.20) -- (0,0.35) -- (0.85,0.20);
+  \node[anchor=south] at (0,0.40) {$O$};
+  \node[anchor=north east] at (-0.85,0.20) {$A$};
+  \node[anchor=north west] at (0.85,0.20) {$B$};
+  \node[anchor=south] at (0,0.12) {$50^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{图3·64}
 \end{figure}
 
@@ -26541,7 +27800,20 @@ A B = O A - O B = 50 - 48 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/solid-geometry/fig-p0263-01.png}}
+% fig-alt: 第6题：二面角内切球O，切点A、P、B
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-0.15,0.15) -- (2.85,0.15) -- (3.25,1.05) -- (0.25,1.05);
+  \draw[line width=0.7pt] (-0.15,0.15) -- (0.85,2.15) -- (3.55,2.15) -- (2.85,0.15);
+  \draw[line width=0.75pt] (1.55,1.25) circle (0.95);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (1.55,1.25) -- (1.55,0.15);
+  \draw[line width=0.55pt] (1.55,0.15) -- (0.55,0.55);
+  \node[anchor=south] at (1.55,2.22) {$O$};
+  \node[anchor=east] at (0.55,0.55) {$A$};
+  \node[anchor=north] at (1.55,0.12) {$P$};
+  \node[anchor=north west] at (1.85,0.15) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -26549,7 +27821,20 @@ A B = O A - O B = 50 - 48 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/solid-geometry/fig-p0263-02.png}}
+% fig-alt: 第7题：两圆O、O1相交，公共弦过P，△AO1O
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.85,0) circle (1.35);
+  \draw[line width=0.75pt] (0.85,0) circle (1.35);
+  \draw[line width=0.65pt] (-0.85,0) -- (0.85,0);
+  \draw[line width=0.65pt] (0,1.15) -- (-0.85,0) -- (0.85,0) -- cycle;
+  \fill (0,0) circle (0.035);
+  \node[anchor=east] at (-0.85,0) {$O$};
+  \node[anchor=west] at (0.85,0) {$O_{1}$};
+  \node[anchor=south] at (0,1.18) {$A$};
+  \node[anchor=north] at (0,-0.08) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -26587,7 +27872,18 @@ A B = O A - O B = 50 - 48 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/solid-geometry/fig-p0264-01.png}}
+% fig-alt: 第8题：两圆O、O1，公共弦过M，菱形AO1AO
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.80,0) circle (1.30);
+  \draw[line width=0.75pt] (0.80,0) circle (1.30);
+  \draw[line width=0.65pt] (0,1.20) -- (-0.80,0) -- (0,-1.20) -- (0.80,0) -- cycle;
+  \node[anchor=south] at (0,1.22) {$A$};
+  \node[anchor=east] at (-0.80,0) {$O_{1}$};
+  \node[anchor=west] at (0.80,0) {$O$};
+  \node[anchor=west] at (0.10,0) {$M$};
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -26595,7 +27891,19 @@ A B = O A - O B = 50 - 48 = 2.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/solid-geometry/fig-p0264-02.png}}
+% fig-alt: 第9题：△VAB 内切圆O1，底中点O
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.45,0.15) -- (0,2.55) -- (1.45,0.15) -- cycle;
+  \draw[line width=0.7pt] (0,0.85) circle (0.70);
+  \draw[line width=0.5pt] (0,2.55) -- (0,0.15);
+  \node[anchor=south] at (0,2.58) {$V$};
+  \node[anchor=north east] at (-1.45,0.15) {$A$};
+  \node[anchor=north west] at (1.45,0.15) {$B$};
+  \node[anchor=north] at (0,0.12) {$O$};
+  \node[anchor=west] at (0,0.85) {$O_{1}$};
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -26624,7 +27932,20 @@ VAB 中， \(VO \perp AB\)。设点 \(O_{1}\) 是 \(\triangle VAB\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/solid-geometry/fig-p0264-03.png}}
+% fig-alt: 第10题：圆内接△ABC，高CD，圆心O
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.7pt] (-1.25,-0.70) -- (1.25,-0.70) -- (0,1.45) -- cycle;
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,1.45) -- (0,-0.70);
+  \node[anchor=south] at (0,1.48) {$C$};
+  \node[anchor=north east] at (-1.25,-0.70) {$A$};
+  \node[anchor=north west] at (1.25,-0.70) {$B$};
+  \node[anchor=north] at (0,-0.72) {$D$};
+  \node[anchor=west] at (0.08,0.15) {$O$};
+  \node[anchor=east] at (0,0.70) {$h$};
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -26632,7 +27953,22 @@ VAB 中， \(VO \perp AB\)。设点 \(O_{1}\) 是 \(\triangle VAB\)
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/solid-geometry/fig-p0264-04.png}}
+% fig-alt: 第11题：等腰梯形ABCD内切圆O，切点E、F、G
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.85,1.85) -- (0.85,1.85) -- (1.45,0.15) -- (-1.45,0.15) -- cycle;
+  \draw[line width=0.7pt] (0,1.00) circle (0.85);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0.85,1.85) -- (0.85,0.15);
+  \node[anchor=south east] at (-0.85,1.85) {$A$};
+  \node[anchor=south west] at (0.85,1.85) {$D$};
+  \node[anchor=north east] at (-1.45,0.15) {$B$};
+  \node[anchor=north west] at (1.45,0.15) {$C$};
+  \node[anchor=south] at (0,1.88) {$E$};
+  \node[anchor=north] at (0,0.12) {$F$};
+  \node[anchor=west] at (0.85,0.15) {$G$};
+  \node[anchor=east] at (0,1.00) {$O$};
+\end{tikzpicture}%
+}
 \caption{(第11题)}
 \end{figure}
 
@@ -26676,7 +28012,27 @@ A D + B C = A B + D C\text{，} \text {   \text{而}   } B C - A D = 2 G C\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/solid-geometry/fig-p0265-01.png}}
+% fig-alt: 第17题：四面体ABCD，内切球O，切点P、Q、S
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (A) at (1.55,2.65);
+  \coordinate (B) at (0.05,0.25);
+  \coordinate (C) at (1.15,-0.15);
+  \coordinate (D) at (2.95,0.35);
+  \draw[line width=0.7pt] (A) -- (B) -- (D) -- cycle;
+  \draw[line width=0.7pt] (A) -- (C) -- (D);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (B) -- (C);
+  \draw[line width=0.65pt] (1.45,0.85) circle (0.42);
+  \node[anchor=south] at (A) {$A$};
+  \node[anchor=east] at (B) {$B$};
+  \node[anchor=north] at (C) {$C$};
+  \node[anchor=west] at (D) {$D$};
+  \node[anchor=west] at (1.45,0.85) {$O$};
+  \node[anchor=north] at (1.45,0.40) {$P$};
+  \node[anchor=south west] at (1.75,1.05) {$Q$};
+  \node[anchor=south] at (1.20,1.25) {$S$};
+\end{tikzpicture}%
+}
 \caption{(第17题)}
 \end{figure}
 
@@ -26702,7 +28058,21 @@ A---PQS 及 B---PQS 都是球冠。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-65}]{assets/solid-geometry/fig-p0266-01.png}}
+% fig-alt: 图3·65：球O，直径AB，小圆过H，点P、Q、S
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.50);
+  \draw[line width=0.6pt] (0,0.85) ellipse (1.15 and 0.28);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,1.50) -- (0,-1.50);
+  \node[anchor=south] at (0,1.52) {$A$};
+  \node[anchor=north] at (0,-1.52) {$B$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=south] at (0,0.90) {$H$};
+  \node[anchor=east] at (-1.15,0.85) {$Q$};
+  \node[anchor=west] at (1.15,0.85) {$S$};
+  \node[anchor=east] at (-0.70,1.05) {$P$};
+\end{tikzpicture}%
+}
 \caption{图3-65}
 \end{figure}
 
@@ -26714,7 +28084,23 @@ A---PQS 及 B---PQS 都是球冠。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·66}]{assets/solid-geometry/fig-p0266-02.png}}
+% fig-alt: 图3·66：球O，南北两小圆M、N，点P、Q、S与P1、Q1、S1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.50);
+  \draw[line width=0.6pt] (0,0.90) ellipse (1.10 and 0.26);
+  \draw[line width=0.6pt] (0,-0.90) ellipse (1.10 and 0.26);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,1.50) -- (0,-1.50);
+  \node[anchor=south] at (0,1.52) {$A$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=south] at (0,0.95) {$M$};
+  \node[anchor=north] at (0,-0.95) {$N$};
+  \node[anchor=east] at (-1.10,0.90) {$P$};
+  \node[anchor=west] at (1.10,0.90) {$S$};
+  \node[anchor=east] at (-1.10,-0.90) {$P_{1}$};
+  \node[anchor=west] at (1.10,-0.90) {$S_{1}$};
+\end{tikzpicture}%
+}
 \caption{图 3·66}
 \end{figure}
 
@@ -26722,7 +28108,21 @@ A---PQS 及 B---PQS 都是球冠。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·67}]{assets/solid-geometry/fig-p0266-03.png}}
+% fig-alt: 图3·67：地球五带，纬线66.5°、23.5°，北寒带北温带热带南温带南寒带
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) circle (1.55);
+  \foreach \y/\rx in {0/1.55, 0.62/1.40, 1.15/1.05, -0.62/1.40, -1.15/1.05}
+    \draw[line width=0.5pt] (0,\y) ellipse [x radius=\rx, y radius=0.16];
+  \node at (0,0) {热带};
+  \node at (0,0.85) {北温带};
+  \node at (0,-0.85) {南温带};
+  \node at (0,1.40) {北寒带};
+  \node at (0,-1.40) {南寒带};
+  \node[anchor=east] at (-1.55,0.62) {$23\frac{1}{2}^{\circ}$};
+  \node[anchor=east] at (-1.55,1.15) {$66\frac{1}{2}^{\circ}$};
+\end{tikzpicture}%
+}
 \caption{图 3·67}
 \end{figure}
 
@@ -26781,7 +28181,24 @@ S _ {B O} = \pi \text{（}B B _ {1} + C O _ {1}\text{）} \cdot B C = 2 \pi \cdo
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0268-01.png}}
+% fig-alt: （1）半球侧视：直径AF，弧ABCDE，弦与半径
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,1.55) -- (0,-1.55);
+  \draw[line width=0.75pt] (0,1.55) arc[start angle=90,end angle=-90,radius=1.55];
+  \draw[line width=0.6pt] (0,0.95) -- (1.20,0.95);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,0) -- (1.20,0.95);
+  \node[anchor=south] at (0,1.58) {$A$};
+  \node[anchor=north] at (0,-1.58) {$F$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=west] at (1.20,0.95) {$B$};
+  \node[anchor=west] at (1.55,0.40) {$C$};
+  \node[anchor=west] at (1.40,-0.50) {$D$};
+  \node[anchor=west] at (0.85,-1.25) {$E$};
+  \node[anchor=east] at (0,0.95) {$B_{1}$};
+  \node[anchor=south] at (0.55,0.98) {$M$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -26789,7 +28206,24 @@ S _ {B O} = \pi \text{（}B B _ {1} + C O _ {1}\text{）} \cdot B C = 2 \pi \cdo
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0268-02.png}}
+% fig-alt: （2）半球侧视，水平弦与斜半径交于N
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,1.55) -- (0,-1.55);
+  \draw[line width=0.75pt] (0,1.55) arc[start angle=90,end angle=-90,radius=1.55];
+  \draw[line width=0.6pt] (0,0.85) -- (1.30,0.85);
+  \draw[line width=0.6pt] (0,0.15) -- (1.54,0.15);
+  \draw[line width=0.55pt] (0,0) -- (1.30,0.85);
+  \node[anchor=south] at (0,1.58) {$A$};
+  \node[anchor=north] at (0,-1.58) {$F$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=west] at (1.30,0.85) {$B$};
+  \node[anchor=west] at (1.55,0.15) {$C$};
+  \node[anchor=east] at (0,0.85) {$B_{1}$};
+  \node[anchor=east] at (0,0.15) {$C_{1}$};
+  \node[anchor=south] at (0.70,0.50) {$N$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -26797,7 +28231,25 @@ S _ {B O} = \pi \text{（}B B _ {1} + C O _ {1}\text{）} \cdot B C = 2 \pi \cdo
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)}]{assets/solid-geometry/fig-p0268-03.png}}
+% fig-alt: （3）半球侧视，三条水平弦BB1、CC1、DD1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,1.55) -- (0,-1.55);
+  \draw[line width=0.75pt] (0,1.55) arc[start angle=90,end angle=-90,radius=1.55];
+  \draw[line width=0.6pt] (0,0.85) -- (1.30,0.85);
+  \draw[line width=0.6pt] (0,0.15) -- (1.54,0.15);
+  \draw[line width=0.6pt] (0,-0.55) -- (1.45,-0.55);
+  \node[anchor=south] at (0,1.58) {$A$};
+  \node[anchor=north] at (0,-1.58) {$F$};
+  \node[anchor=east] at (0,0.15) {$O$};
+  \node[anchor=west] at (1.30,0.85) {$B$};
+  \node[anchor=west] at (1.55,0.15) {$C$};
+  \node[anchor=west] at (1.45,-0.55) {$D$};
+  \node[anchor=west] at (0.70,-1.30) {$E$};
+  \node[anchor=east] at (0,0.85) {$B_{1}$};
+  \node[anchor=east] at (0,-0.55) {$D_{1}$};
+\end{tikzpicture}%
+}
 \caption{(3)}
 \end{figure}
 
@@ -26876,7 +28328,24 @@ S _ {\text {\text{球带}}} = 2 \pi R \cdot h.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·69}]{assets/solid-geometry/fig-p0269-01.png}}
+% fig-alt: 图3·69：半球侧视，水平弦BB1、CC1、DD1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,1.55) -- (0,-1.55);
+  \draw[line width=0.75pt] (0,1.55) arc[start angle=90,end angle=-90,radius=1.55];
+  \draw[line width=0.6pt] (0,0.95) -- (1.22,0.95);
+  \draw[line width=0.6pt] (0,0.15) -- (1.54,0.15);
+  \draw[line width=0.6pt] (0,-0.65) -- (1.40,-0.65);
+  \node[anchor=south] at (0,1.58) {$A$};
+  \node[anchor=north] at (0,-1.58) {$F$};
+  \node[anchor=east] at (0,0.15) {$O$};
+  \node[anchor=west] at (1.22,0.95) {$B$};
+  \node[anchor=west] at (1.55,0.15) {$C$};
+  \node[anchor=west] at (1.40,-0.65) {$D$};
+  \node[anchor=east] at (0,0.95) {$B_{1}$};
+  \node[anchor=east] at (0,-0.65) {$D_{1}$};
+\end{tikzpicture}%
+}
 \caption{图3·69}
 \end{figure}
 
@@ -26895,13 +28364,35 @@ S _ {\text {\text{球带}}} = 2 \pi R \cdot h.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第269页）}]{assets/solid-geometry/fig-p0269-02.png}}
+% fig-alt: 圆锥V，底椭圆直径AB过O
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.35) ellipse (1.25 and 0.38);
+  \draw[line width=0.75pt] (-1.25,0.35) -- (0,2.55) -- (1.25,0.35);
+  \draw[line width=0.55pt] (0,2.55) -- (0,0.35);
+  \draw[line width=0.55pt] (-1.25,0.35) -- (1.25,0.35);
+  \node[anchor=south] at (0,2.58) {$V$};
+  \node[anchor=east] at (-1.25,0.35) {$A$};
+  \node[anchor=west] at (1.25,0.35) {$B$};
+  \node[anchor=north] at (0,0.32) {$O$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第269页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·70}]{assets/solid-geometry/fig-p0269-03.png}}
+% fig-alt: 图3·70：球，竖直径VO，赤道椭圆，心O1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.6pt] (0,0) ellipse (1.45 and 0.45);
+  \draw[line width=0.55pt] (0,1.45) -- (0,-1.45);
+  \node[anchor=south] at (0,1.48) {$V$};
+  \node[anchor=north] at (0,-1.48) {$O$};
+  \node[anchor=east] at (0,0) {$O_{1}$};
+\end{tikzpicture}%
+}
 \caption{图3·70}
 \end{figure}
 
@@ -26938,13 +28429,36 @@ S = \pi \cdot V O ^ {2} = 3 \pi R ^ {2}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第270页）}]{assets/solid-geometry/fig-p0270-01.png}}
+% fig-alt: 圆柱，高h，底半径r
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.25) ellipse (1.10 and 0.34);
+  \draw[line width=0.7pt] (-1.10,2.25) -- (-1.10,0.40);
+  \draw[line width=0.7pt] (1.10,2.25) -- (1.10,0.40);
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.10 and 0.34);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) -- (0,2.25);
+  \draw[line width=0.55pt] (0,0.40) -- (1.10,0.40);
+  \node[anchor=west] at (1.15,1.30) {$h$};
+  \node[anchor=north] at (0.55,0.38) {$r$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第270页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-71}]{assets/solid-geometry/fig-p0270-02.png}}
+% fig-alt: 图3·71：圆柱，底半径r，母线旁标r'
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,2.25) ellipse (1.10 and 0.34);
+  \draw[line width=0.7pt] (-1.10,2.25) -- (-1.10,0.40);
+  \draw[line width=0.7pt] (1.10,2.25) -- (1.10,0.40);
+  \draw[line width=0.7pt] (0,0.40) ellipse (1.10 and 0.34);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0.40) -- (0,2.25);
+  \node[anchor=west] at (1.15,1.30) {$r'$};
+  \node[anchor=north] at (0.55,0.38) {$r$};
+\end{tikzpicture}%
+}
 \caption{图3-71}
 \end{figure}
 
@@ -27031,7 +28545,23 @@ R，欲求球冠的面积，只须求出这个球冠的高。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-72}]{assets/solid-geometry/fig-p0271-01.png}}
+% fig-alt: 图3·72：圆O，弦DC过B，OA竖，角α、r/2
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.65pt] (-1.35,0.35) -- (1.35,0.35);
+  \draw[line width=0.65pt] (0,0) -- (-1.35,0.35);
+  \draw[line width=0.65pt] (0,0) -- (1.35,0.35);
+  \draw[line width=0.55pt] (0,0) -- (0,1.45);
+  \node[anchor=south] at (0,1.48) {$A$};
+  \node[anchor=north] at (0,-0.08) {$O$};
+  \node[anchor=east] at (-1.35,0.35) {$D$};
+  \node[anchor=west] at (1.35,0.35) {$C$};
+  \node[anchor=south] at (0,0.38) {$B$};
+  \node[anchor=west] at (0.15,0.70) {$\alpha$};
+  \node[anchor=west] at (0.20,-0.35) {$\frac{r}{2}$};
+\end{tikzpicture}%
+}
 \caption{图3-72}
 \end{figure}
 
@@ -27068,7 +28598,23 @@ cm，求球带的面积。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(1)}]{assets/solid-geometry/fig-p0272-01.png}}
+% fig-alt: （1）球O，两平行小圆，点A、B、C、D，心M、N
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.50);
+  \draw[line width=0.6pt] (0,0.85) ellipse (1.15 and 0.28);
+  \draw[line width=0.6pt] (0,0.15) ellipse (1.48 and 0.40);
+  \draw[line width=0.55pt] (0,0) -- (0,0.85);
+  \draw[line width=0.55pt] (0,0) -- (-1.15,0.85);
+  \node[anchor=south east] at (-1.15,0.85) {$A$};
+  \node[anchor=west] at (1.15,0.85) {$C$};
+  \node[anchor=east] at (-1.48,0.15) {$B$};
+  \node[anchor=west] at (1.48,0.15) {$D$};
+  \node[anchor=north] at (0,0) {$O$};
+  \node[anchor=west] at (0,0.15) {$M$};
+  \node[anchor=west] at (0,0.85) {$N$};
+\end{tikzpicture}%
+}
 \caption{(1)}
 \end{figure}
 
@@ -27076,7 +28622,22 @@ cm，求球带的面积。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/solid-geometry/fig-p0272-02.png}}
+% fig-alt: （2）球O，两平行小圆A1C1、B1D1，心N1、M1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.50);
+  \draw[line width=0.6pt] (0,0.75) ellipse (1.20 and 0.30);
+  \draw[line width=0.6pt] (0,-0.15) ellipse (1.48 and 0.40);
+  \draw[line width=0.55pt] (0,0) -- (-1.20,0.75);
+  \node[anchor=south east] at (-1.20,0.75) {$A_{1}$};
+  \node[anchor=west] at (1.20,0.75) {$C_{1}$};
+  \node[anchor=east] at (-1.48,-0.15) {$B_{1}$};
+  \node[anchor=west] at (1.48,-0.15) {$D_{1}$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=west] at (0,0.75) {$N_{1}$};
+  \node[anchor=west] at (0,-0.15) {$M_{1}$};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -27174,7 +28735,23 @@ R = \frac {\text{（}1 + \sqrt {2}\text{）} h}{2}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第9题)}]{assets/solid-geometry/fig-p0274-01.png}}
+% fig-alt: 第9题：球，三平行弦，O2A、OC、O1B
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.50);
+  \draw[line width=0.6pt] (0,0.55) -- (1.40,0.55);
+  \draw[line width=0.6pt] (0,0) -- (1.50,0);
+  \draw[line width=0.6pt] (0,-0.55) -- (1.40,-0.55);
+  \draw[line width=0.6pt] (0,0) -- (1.40,0.55);
+  \draw[line width=0.6pt] (0,0) -- (1.40,-0.55);
+  \node[anchor=east] at (0,0.55) {$O_{2}$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=east] at (0,-0.55) {$O_{1}$};
+  \node[anchor=west] at (1.40,0.55) {$A$};
+  \node[anchor=west] at (1.50,0) {$C$};
+  \node[anchor=west] at (1.40,-0.55) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第9题)}
 \end{figure}
 
@@ -27182,19 +28759,67 @@ R = \frac {\text{（}1 + \sqrt {2}\text{）} h}{2}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第274页）}]{assets/solid-geometry/fig-p0274-02.png}}
+% fig-alt: 球MN直径，小圆AB，点C，旁一小圆C1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.50);
+  \draw[line width=0.55pt] (0,1.50) -- (0,-1.50);
+  \draw[line width=0.6pt] (0,0.85) ellipse (1.15 and 0.28);
+  \node[anchor=south] at (0,1.52) {$M$};
+  \node[anchor=north] at (0,-1.52) {$N$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=east] at (-1.15,0.85) {$C$};
+  \node[anchor=south] at (0,0.90) {$O_{1}$};
+  \node[anchor=west] at (1.15,0.85) {$B$};
+  \node[anchor=south east] at (-0.70,1.05) {$A$};
+  \begin{scope}[xshift=2.85cm,scale=0.55]
+    \draw[line width=0.7pt] (0,0) circle (1.20);
+    \node[anchor=west] at (1.20,0) {$C_{1}$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第274页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第274页）}]{assets/solid-geometry/fig-p0274-03.png}}
+% fig-alt: 圆内△A1O1B1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.40);
+  \draw[line width=0.7pt] (-1.20,-0.70) -- (1.20,-0.70) -- (0.35,1.15) -- cycle;
+  \node[anchor=south] at (0.35,1.18) {$A_{1}$};
+  \node[anchor=north east] at (-1.20,-0.70) {$B_{1}$};
+  \node[anchor=west] at (0.15,-0.10) {$O_{1}$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第274页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/solid-geometry/fig-p0274-04.png}}
+% fig-alt: 第10题：左圆内△A1O1B1；右半球MN，弦O1B、MB
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}
+    \draw[line width=0.75pt] (0,0) circle (1.20);
+    \draw[line width=0.7pt] (-0.95,-0.55) -- (0.95,-0.55) -- (0.20,0.95) -- cycle;
+    \node[anchor=south] at (0.20,0.98) {$A_{1}$};
+    \node[anchor=north] at (-0.95,-0.58) {$B_{1}$};
+  \end{scope}
+  \begin{scope}[xshift=3.15cm]
+    \draw[line width=0.75pt] (0,1.40) -- (0,-1.40);
+    \draw[line width=0.75pt] (0,1.40) arc[start angle=90,end angle=-90,radius=1.40];
+    \draw[line width=0.65pt] (0,0.55) -- (1.28,0.55);
+    \draw[line width=0.65pt] (0,1.40) -- (1.28,0.55);
+    \draw[line width=0.65pt] (0,-1.40) -- (1.28,0.55);
+    \node[anchor=south] at (0,1.42) {$M$};
+    \node[anchor=north] at (0,-1.42) {$N$};
+    \node[anchor=east] at (0,0.55) {$O_{1}$};
+    \node[anchor=west] at (1.28,0.55) {$B$};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -27256,7 +28881,14 @@ kg，用卡尺量得凹痕的直径是 4.2 mm，计算这种钢材的硬度。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/solid-geometry/fig-p0275-01.png}}
+% fig-alt: 长方体
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (1.65,0.95);
+  \draw[line width=0.7pt] (0,0.95) -- (0.40,1.30) -- (2.05,1.30) -- (1.65,0.95);
+  \draw[line width=0.7pt] (1.65,0) -- (2.05,0.35) -- (2.05,1.30);
+\end{tikzpicture}%
+}
 \caption{(第14题)}
 \end{figure}
 
@@ -27264,7 +28896,16 @@ kg，用卡尺量得凹痕的直径是 4.2 mm，计算这种钢材的硬度。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/solid-geometry/fig-p0275-02.png}}
+% fig-alt: 正四棱锥
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.15) -- (1.35,0) -- (1.65,0.45) -- (0.30,0.60) -- cycle;
+  \draw[line width=0.7pt] (0,0.15) -- (0.85,1.55);
+  \draw[line width=0.7pt] (1.35,0) -- (0.85,1.55);
+  \draw[line width=0.7pt] (1.65,0.45) -- (0.85,1.55);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (0.30,0.60) -- (0.85,1.55);
+\end{tikzpicture}%
+}
 \caption{(第15题)}
 \end{figure}
 
@@ -27307,43 +28948,109 @@ r = \sqrt {E ^ {2} - \text{（}R - h\text{）} ^ {2}}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/solid-geometry/fig-p0276-01.png}}
-\caption{图示（原PDF第276页）}
+% fig-alt: 图3·74（1）（2）（3）：左半球截面，右球扇形直观图
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.4pt}]
+  % (1) 2D
+  \begin{scope}[yshift=4.6cm]
+    \draw[line width=0.7pt] (0,1.15) -- (0,-1.15);
+    \draw[line width=0.7pt] (0,1.15) arc[start angle=90,end angle=-90,radius=1.15];
+    \draw[line width=0.55pt] (0,0.45) -- (1.05,0.45);
+    \draw[line width=0.55pt] (0,0) -- (1.05,0.45);
+    \node[anchor=south] at (0,1.18) {$M$};
+    \node[anchor=north] at (0,-1.18) {$N$};
+    \node[anchor=east] at (0,0) {$O$};
+    \node[anchor=west] at (1.05,0.45) {$A$};
+    \node[anchor=east] at (0,0.45) {$A_{1}$};
+    \node at (1.55,0) {$(1)$};
+  \end{scope}
+  % (2) 2D
+  \begin{scope}[yshift=2.3cm]
+    \draw[line width=0.7pt] (0,1.15) -- (0,-1.15);
+    \draw[line width=0.7pt] (0,1.15) arc[start angle=90,end angle=-90,radius=1.15];
+    \draw[line width=0.55pt] (0,0.55) -- (1.00,0.55);
+    \draw[line width=0.55pt] (0,0.25) -- (1.12,0.25);
+    \draw[line width=0.55pt] (0,0) -- (1.00,0.55);
+    \node[anchor=south] at (0,1.18) {$M$};
+    \node[anchor=north] at (0,-1.18) {$N$};
+    \node[anchor=east] at (0,0) {$O$};
+    \node[anchor=west] at (1.12,0.25) {$A$};
+    \node[anchor=west] at (1.00,0.55) {$B$};
+    \node at (1.55,0) {$(2)$};
+  \end{scope}
+  % (3) 2D
+  \begin{scope}
+    \draw[line width=0.7pt] (0,1.15) -- (0,-1.15);
+    \draw[line width=0.7pt] (0,1.15) arc[start angle=90,end angle=-90,radius=1.15];
+    \draw[line width=0.55pt] (0,0.45) -- (1.05,0.45);
+    \draw[line width=0.55pt] (0,-0.55) -- (1.00,-0.55);
+    \draw[line width=0.55pt] (0,0) -- (1.05,0.45);
+    \draw[line width=0.55pt] (0,0) -- (1.00,-0.55);
+    \node[anchor=south] at (0,1.18) {$M$};
+    \node[anchor=north] at (0,-1.18) {$N$};
+    \node[anchor=east] at (0,0) {$O$};
+    \node[anchor=west] at (1.05,0.45) {$A$};
+    \node[anchor=west] at (1.00,-0.55) {$B$};
+    \node at (1.55,0) {$(3)$};
+  \end{scope}
+  % 3D column
+  \begin{scope}[xshift=4.2cm,yshift=4.6cm]
+    \draw[line width=0.7pt] (0,0) circle (1.15);
+    \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.1pt] (0,1.15) -- (0,-1.15);
+    \draw[line width=0.55pt] (0,0.55) ellipse (0.85 and 0.22);
+    \draw[line width=0.55pt] (0,0) -- (0.85,0.55);
+    \draw[line width=0.55pt] (0,0) -- (-0.85,0.55);
+    \node[anchor=south] at (0,1.18) {$M$};
+    \node[anchor=north] at (0,-1.18) {$N$};
+    \node[anchor=east] at (0,0) {$O_{1}$};
+  \end{scope}
+  \begin{scope}[xshift=4.2cm,yshift=2.3cm]
+    \draw[line width=0.7pt] (0,0) circle (1.15);
+    \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.1pt] (0,1.15) -- (0,-1.15);
+    \draw[line width=0.5pt] (0,0.70) ellipse (0.70 and 0.18);
+    \draw[line width=0.5pt] (0,0.35) ellipse (0.95 and 0.22);
+    \node[anchor=south] at (0,1.18) {$M$};
+    \node[anchor=north] at (0,-1.18) {$N$};
+    \node[anchor=east] at (0,0) {$O_{1}$};
+  \end{scope}
+  \begin{scope}[xshift=4.2cm]
+    \draw[line width=0.7pt] (0,0) circle (1.15);
+    \draw[line width=0.5pt,dash pattern=on 1.6pt off 1.1pt] (0,1.15) -- (0,-1.15);
+    \draw[line width=0.5pt] (0,0.55) ellipse (0.85 and 0.20);
+    \draw[line width=0.55pt] (0,0) -- (0.85,0.55);
+    \draw[line width=0.55pt] (0,0) -- (-0.85,0.55);
+    \draw[line width=0.55pt] (0,0) -- (0.70,-0.90);
+    \draw[line width=0.55pt] (0,0) -- (-0.70,-0.90);
+    \node[anchor=south] at (0,1.18) {$M$};
+    \node[anchor=north] at (0,-1.18) {$N$};
+    \node[anchor=east] at (0,0) {$O$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图3·74}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/solid-geometry/fig-p0276-02.png}}
-\caption{图示（原PDF第276页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/solid-geometry/fig-p0276-03.png}}
-\caption{图示（原PDF第276页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/solid-geometry/fig-p0276-04.png}}
-\caption{图示（原PDF第276页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/solid-geometry/fig-p0276-05.png}}
-\caption{图示（原PDF第276页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第276页）}]{assets/solid-geometry/fig-p0276-06.png}}
-\caption{图示（原PDF第276页）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·74}]{assets/solid-geometry/fig-p0276-07.png}}
+% fig-alt: 图3·74（3）立体：球MN，上小圆A A'，下锥面至B B'
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,1.45) -- (0,-1.45);
+  \draw[line width=0.6pt] (0,0.55) ellipse (1.05 and 0.28);
+  \draw[line width=0.65pt] (0,0) -- (1.05,0.55);
+  \draw[line width=0.65pt] (0,0) -- (-1.05,0.55);
+  \draw[line width=0.65pt] (0,0) -- (0.85,-1.15);
+  \draw[line width=0.65pt] (0,0) -- (-0.85,-1.15);
+  \foreach \a in {-20,-10,0,10,20}
+    \draw[line width=0.35pt] (0,0) -- (\a-90:1.20);
+  \node[anchor=south] at (0,1.48) {$M$};
+  \node[anchor=north] at (0,-1.48) {$N$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=west] at (1.05,0.55) {$A$};
+  \node[anchor=west] at (0.85,-1.15) {$B$};
+\end{tikzpicture}%
+}
 \caption{图 3·74}
 \end{figure}
 
@@ -27372,7 +29079,18 @@ r = \sqrt {E ^ {2} - \text{（}R - h\text{）} ^ {2}}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·75}]{assets/solid-geometry/fig-p0277-01.png}}
+% fig-alt: 图3·75：球冠，上底小圆网纹，球心O
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.40);
+  \draw[line width=0.6pt] (0,0.75) ellipse (1.05 and 0.28);
+  \begin{scope}
+    \clip (-1.10,0.75) rectangle (1.10,1.50);
+    \foreach \x in {-1.0,-0.7,...,1.0} \draw[line width=0.28pt] (\x,0.6) -- (\x+0.5,1.5);
+  \end{scope}
+  \node[anchor=north] at (0,0) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3·75}
 \end{figure}
 
@@ -27400,7 +29118,23 @@ S _ {\text {\text{球冠}}} = 2 \pi R h\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·76}]{assets/solid-geometry/fig-p0278-01.png}}
+% fig-alt: 图3·76：球O，直径BC，小圆DEF，高h
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.6pt] (0,0.85) ellipse (1.10 and 0.28);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,1.45) -- (0,-1.45);
+  \draw[line width=0.6pt] (0,0) -- (1.10,0.85);
+  \draw[line width=0.6pt] (0,0) -- (-1.10,0.85);
+  \node[anchor=south] at (0,1.48) {$B$};
+  \node[anchor=north] at (0,-1.48) {$C$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=south] at (0,0.90) {$A$};
+  \node[anchor=east] at (-1.10,0.85) {$E$};
+  \node[anchor=west] at (1.10,0.85) {$D$};
+  \node[anchor=west] at (0.15,0.40) {$h$};
+\end{tikzpicture}%
+}
 \caption{图3·76}
 \end{figure}
 
@@ -27470,7 +29204,25 @@ S _ {2} = \frac {2}{3} \pi R ^ {2} h _ {2} = \frac {2}{3} \pi \times 13^{2} \tim
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/solid-geometry/fig-p0279-01.png}}
+% fig-alt: 第6题：半球，矩形C1OD与对角线，点A、B、E、F
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,1.45) -- (0,-1.45);
+  \draw[line width=0.75pt] (0,1.45) arc[start angle=90,end angle=-90,radius=1.45];
+  \draw[line width=0.65pt] (0,0.85) -- (1.15,0.85) -- (1.15,-0.85) -- (0,-0.85) -- cycle;
+  \draw[line width=0.55pt] (0,0.85) -- (1.15,-0.85);
+  \draw[line width=0.55pt] (0,-0.85) -- (1.15,0.85);
+  \draw[line width=0.55pt] (0,0) -- (1.45,0);
+  \node[anchor=south] at (0,1.48) {$A$};
+  \node[anchor=north] at (0,-1.48) {$B$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=east] at (0,0.85) {$C_{1}$};
+  \node[anchor=west] at (1.15,0.85) {$C$};
+  \node[anchor=west] at (1.15,-0.85) {$D$};
+  \node[anchor=east] at (0,-0.85) {$D_{1}$};
+  \node[anchor=west] at (1.45,0) {$E$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -27526,7 +29278,22 @@ V = \frac {4}{3} \pi R ^ {3}\text{，} V = \frac {1}{6} \pi d ^ {3}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-77}]{assets/solid-geometry/fig-p0280-01.png}}
+% fig-alt: 图3·77：两平行平面P、Q，球与圆柱相切
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (-0.15,0.15) -- (3.85,0.15) -- (4.35,0.95) -- (0.35,0.95) -- cycle;
+  \draw[line width=0.65pt] (-0.15,2.05) -- (3.85,2.05) -- (4.35,2.85) -- (0.35,2.85) -- cycle;
+  \draw[line width=0.7pt] (0.95,1.50) circle (0.85);
+  \draw[line width=0.7pt] (3.05,2.45) ellipse (0.70 and 0.22);
+  \draw[line width=0.7pt] (2.35,2.45) -- (2.35,0.55);
+  \draw[line width=0.7pt] (3.75,2.45) -- (3.75,0.55);
+  \draw[line width=0.7pt] (3.05,0.55) ellipse (0.70 and 0.22);
+  \node[anchor=east] at (-0.05,2.45) {$Q$};
+  \node[anchor=east] at (-0.05,0.55) {$P$};
+  \node[anchor=south] at (3.05,2.70) {$O$};
+  \node[anchor=north] at (3.05,0.32) {$O_{1}$};
+\end{tikzpicture}%
+}
 \caption{图3-77}
 \end{figure}
 
@@ -27605,7 +29372,20 @@ m ^ {2} = x ^ {2} + x \sqrt {x ^ {3} + y ^ {3}}. \tag {1}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·78}]{assets/solid-geometry/fig-p0281-01.png}}
+% fig-alt: 图3·78：△VOB 内切圆O，切点A、D，底OB
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.45,0.15) -- (0,2.55) -- (1.45,0.15) -- cycle;
+  \draw[line width=0.7pt] (0,0.85) circle (0.70);
+  \draw[line width=0.5pt] (0,2.55) -- (0,0.15);
+  \node[anchor=south] at (0,2.58) {$V$};
+  \node[anchor=north east] at (-1.45,0.15) {$O$};
+  \node[anchor=north west] at (1.45,0.15) {$B$};
+  \node[anchor=north] at (0,0.12) {$A$};
+  \node[anchor=east] at (-0.55,1.15) {$D$};
+  \node[anchor=west] at (0,0.85) {$O$};
+\end{tikzpicture}%
+}
 \caption{图3·78}
 \end{figure}
 
@@ -27733,7 +29513,24 @@ S = 4 \pi \cdot \frac {\sqrt {2} r}{2} \cdot \sqrt {2} r = 4 \pi r ^ {2}. \text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-79}]{assets/solid-geometry/fig-p0284-01.png}}
+% fig-alt: 图3·79：球O，上下两平行小圆BE、NF，心A、C
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.50);
+  \draw[line width=0.6pt] (0,0.70) ellipse (1.20 and 0.30);
+  \draw[line width=0.6pt] (0,-0.55) ellipse (1.30 and 0.32);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,1.50) -- (0,-1.50);
+  \node[anchor=south] at (0,1.52) {$M$};
+  \node[anchor=north] at (0,-1.52) {$N$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=east] at (-1.20,0.70) {$B$};
+  \node[anchor=west] at (1.20,0.70) {$E$};
+  \node[anchor=east] at (-1.30,-0.55) {$N$};
+  \node[anchor=west] at (1.30,-0.55) {$F$};
+  \node[anchor=south] at (0,0.75) {$A$};
+  \node[anchor=north] at (0,-0.58) {$C$};
+\end{tikzpicture}%
+}
 \caption{图3-79}
 \end{figure}
 
@@ -27752,7 +29549,22 @@ S = 4 \pi \cdot \frac {\sqrt {2} r}{2} \cdot \sqrt {2} r = 4 \pi r ^ {2}. \text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-80}]{assets/solid-geometry/fig-p0284-02.png}}
+% fig-alt: 图3·80：球，上小圆EF，心A，直径MB，半径R
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.50);
+  \draw[line width=0.6pt] (0,0.85) ellipse (1.15 and 0.28);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,1.50) -- (0,-1.50);
+  \draw[line width=0.55pt] (0,0) -- (1.15,0.85);
+  \node[anchor=south] at (0,1.52) {$M$};
+  \node[anchor=north] at (0,-1.52) {$B$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=east] at (-1.15,0.85) {$E$};
+  \node[anchor=west] at (1.15,0.85) {$F$};
+  \node[anchor=south] at (0,0.90) {$A$};
+  \node[anchor=west] at (0.70,0.30) {$R$};
+\end{tikzpicture}%
+}
 \caption{图3-80}
 \end{figure}
 
@@ -27760,7 +29572,20 @@ S = 4 \pi \cdot \frac {\sqrt {2} r}{2} \cdot \sqrt {2} r = 4 \pi r ^ {2}. \text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3-81}]{assets/solid-geometry/fig-p0284-03.png}}
+% fig-alt: 图3·81：球MN直径，小圆过A，弦MB
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.50);
+  \draw[line width=0.55pt] (0,1.50) -- (0,-1.50);
+  \draw[line width=0.6pt] (-1.45,0.45) -- (1.45,0.45);
+  \draw[line width=0.6pt] (0,-1.50) -- (1.20,0.90);
+  \node[anchor=south] at (0,1.52) {$M$};
+  \node[anchor=north] at (0,-1.52) {$N$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=south] at (0,0.50) {$A$};
+  \node[anchor=west] at (1.20,0.90) {$B$};
+\end{tikzpicture}%
+}
 \caption{图3-81}
 \end{figure}
 
@@ -27828,7 +29653,13 @@ V _ {\text {\text{球缺}}} = \pi h ^ {2} \left(R - \frac {h}{3}\right) = \frac 
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3·82}]{assets/solid-geometry/fig-p0286-01.png}}
+% fig-alt: 图3·82：球内接多面体示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) circle (0.95);
+  \draw[line width=0.55pt] (-0.55,-0.35) -- (0.55,-0.35) -- (0.35,0.55) -- (-0.35,0.55) -- cycle;
+\end{tikzpicture}%
+}
 \caption{图3·82}
 \end{figure}
 
@@ -27883,13 +29714,36 @@ V _ {1} = \pi h ^ {2} \left(R - \frac {h}{3}\right) = \pi \left(\frac {R}{5}\rig
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第287页）}]{assets/solid-geometry/fig-p0287-01.png}}
+% fig-alt: 半球冠加圆柱，尺寸D、h、d
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-1.10,1.85) arc[start angle=180,end angle=0,radius=1.10];
+  \draw[line width=0.75pt] (-1.10,1.85) -- (1.10,1.85);
+  \draw[line width=0.75pt] (-0.55,1.85) -- (-0.55,0.15) -- (0.55,0.15) -- (0.55,1.85);
+  \draw[line width=0.4pt,<->] (-1.10,2.55) -- (1.10,2.55);
+  \node[anchor=south] at (0,2.55) {$D$};
+  \draw[line width=0.4pt,<->] (1.25,2.95) -- (1.25,1.85);
+  \node[anchor=west] at (1.28,2.40) {$h$};
+  \draw[line width=0.4pt,<->] (-0.55,0.00) -- (0.55,0.00);
+  \node[anchor=north] at (0,-0.02) {$d$};
+\end{tikzpicture}%
+}
 \caption{图示（原PDF第287页）}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/solid-geometry/fig-p0287-02.png}}
+% fig-alt: 第1题：两半球夹圆柱（蘑菇形）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,1.55) ellipse (1.15 and 0.35);
+  \draw[line width=0.75pt] (-1.15,1.55) -- (-0.45,0.85) -- (-0.45,0.15);
+  \draw[line width=0.75pt] (1.15,1.55) -- (0.45,0.85) -- (0.45,0.15);
+  \draw[line width=0.75pt] (0,0.15) ellipse (0.45 and 0.16);
+  \draw[line width=0.75pt] (-0.85,-0.15) arc[start angle=180,end angle=360,radius=0.85];
+  \draw[line width=0.55pt] (-0.85,-0.15) -- (0.85,-0.15);
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -27916,7 +29770,23 @@ V _ {1} = \pi h ^ {2} \left(R - \frac {h}{3}\right) = \pi \left(\frac {R}{5}\rig
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/solid-geometry/fig-p0287-03.png}}
+% fig-alt: 第5题：圆内△PAB，底CD，高PK，顶角α
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0.20) circle (1.55);
+  \draw[line width=0.7pt] (-1.15,-0.55) -- (0,1.75) -- (1.15,-0.55) -- cycle;
+  \draw[line width=0.55pt] (-1.45,-0.85) -- (1.45,-0.85);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,1.75) -- (0,-1.35);
+  \node[anchor=south] at (0,1.78) {$P$};
+  \node[anchor=east] at (-1.15,-0.55) {$A$};
+  \node[anchor=west] at (1.15,-0.55) {$B$};
+  \node[anchor=east] at (-1.45,-0.85) {$C$};
+  \node[anchor=west] at (1.45,-0.85) {$D$};
+  \node[anchor=west] at (0,-0.55) {$K$};
+  \node[anchor=north] at (0,-1.38) {$O$};
+  \node[anchor=west] at (0.15,1.45) {$\alpha$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -28068,7 +29938,23 @@ V = \frac {\pi h}{6} \text{（}3 r _ {1} ^ {2} + 3 r _ {2} ^ {2} + h ^ {2}\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第4题)}]{assets/solid-geometry/fig-p0291-01.png}}
+% fig-alt: 第4题：梯形ABB1A1，高OO1，对角线AB1，直角H
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.85,1.85) -- (0.85,1.85) -- (1.55,0.15) -- (-1.55,0.15) -- cycle;
+  \draw[line width=0.55pt] (0,1.85) -- (0,0.15);
+  \draw[line width=0.6pt] (-0.85,1.85) -- (1.55,0.15);
+  \draw[line width=0.5pt] (-0.85,1.85) -- (-0.85,0.15);
+  \node[anchor=south east] at (-0.85,1.85) {$A$};
+  \node[anchor=south west] at (0.85,1.85) {$B$};
+  \node[anchor=north east] at (-1.55,0.15) {$A_{1}$};
+  \node[anchor=north west] at (1.55,0.15) {$B_{1}$};
+  \node[anchor=south] at (0,1.88) {$O$};
+  \node[anchor=north] at (0,0.12) {$O_{1}$};
+  \node[anchor=north] at (-0.85,0.12) {$H$};
+  \node[anchor=east] at (-1.15,1.10) {$l$};
+\end{tikzpicture}%
+}
 \caption{(第4题)}
 \end{figure}
 
@@ -28076,7 +29962,19 @@ V = \frac {\pi h}{6} \text{（}3 r _ {1} ^ {2} + 3 r _ {2} ^ {2} + h ^ {2}\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/solid-geometry/fig-p0291-02.png}}
+% fig-alt: 第5题：圆锥轴截面，中位线A A1，圆心O、O1
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.35,0.15) -- (0,2.55) -- (1.35,0.15) -- cycle;
+  \draw[line width=0.6pt] (-0.75,1.20) -- (0.75,1.20);
+  \draw[line width=0.5pt] (0,2.55) -- (0,0.15);
+  \node[anchor=south] at (0,2.58) {$V$};
+  \node[anchor=north] at (0,0.12) {$O$};
+  \node[anchor=south] at (0,1.22) {$O_{1}$};
+  \node[anchor=west] at (0.75,1.20) {$A_{1}$};
+  \node[anchor=west] at (1.35,0.15) {$A$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -28115,7 +30013,19 @@ V = \frac {\pi h}{6} \text{（}3 r _ {1} ^ {2} + 3 r _ {2} ^ {2} + h ^ {2}\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/solid-geometry/fig-p0291-03.png}}
+% fig-alt: 第8题：圆锥V，内接直角，高h，底半径r
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.35,0.15) -- (0,2.65) -- (1.35,0.15) -- cycle;
+  \draw[line width=0.55pt] (0,2.65) -- (0,0.15);
+  \draw[line width=0.6pt] (0,1.15) -- (1.00,0.55);
+  \node[anchor=south] at (0,2.68) {$V$};
+  \node[anchor=north] at (0,0.12) {$O$};
+  \node[anchor=west] at (1.35,0.15) {$A$};
+  \node[anchor=west] at (0.10,1.80) {$h$};
+  \node[anchor=north] at (0.65,0.15) {$r$};
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -28147,7 +30057,19 @@ V = \frac {\pi h}{6} \text{（}3 r _ {1} ^ {2} + 3 r _ {2} ^ {2} + h ^ {2}\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/solid-geometry/fig-p0292-01.png}}
+% fig-alt: 第12题：半圆半径R，内接矩形，高r
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.7pt] (0,-1.45) -- (0,1.45);
+  \draw[line width=0.65pt] (0,0.55) -- (1.35,0.55) -- (1.35,-0.55) -- (0,-0.55);
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=east] at (0,0.80) {$R$};
+  \node[anchor=west] at (1.35,0) {$r$};
+  \node[anchor=west] at (1.45,-0.90) {$A_{1}$};
+  \node[anchor=west] at (1.45,0.90) {$A$};
+\end{tikzpicture}%
+}
 \caption{(第12题)}
 \end{figure}
 
@@ -28155,7 +30077,21 @@ V = \frac {\pi h}{6} \text{（}3 r _ {1} ^ {2} + 3 r _ {2} ^ {2} + h ^ {2}\text{
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/solid-geometry/fig-p0292-02.png}}
+% fig-alt: 第13题：△ABV 内切圆O，切线CD、EF
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.45,2.15) -- (1.45,2.15) -- (0,0.05) -- cycle;
+  \draw[line width=0.7pt] (0,1.15) circle (0.72);
+  \draw[line width=0.55pt] (-1.15,1.55) -- (1.15,1.55);
+  \node[anchor=south east] at (-1.45,2.15) {$A$};
+  \node[anchor=south west] at (1.45,2.15) {$B$};
+  \node[anchor=north] at (0,0.02) {$V$};
+  \node[anchor=west] at (0,1.15) {$O$};
+  \node[anchor=east] at (-1.15,1.55) {$C$};
+  \node[anchor=west] at (1.15,1.55) {$D$};
+  \node[anchor=south] at (0,1.90) {$H$};
+\end{tikzpicture}%
+}
 \caption{(第13题)}
 \end{figure}
 
@@ -28225,7 +30161,22 @@ V \text{（}A B D C\text{）} = V \text{（}O A C\text{）} + V \text{（}O C D\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/solid-geometry/fig-p0293-01.png}}
+% fig-alt: 第17题：半球MN，弦AB、点C，半径OA
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,1.50) -- (0,-1.50);
+  \draw[line width=0.75pt] (0,1.50) arc[start angle=90,end angle=-90,radius=1.50];
+  \draw[line width=0.6pt] (0,0.15) -- (1.48,0.15);
+  \draw[line width=0.6pt] (0,0) -- (1.20,-0.55);
+  \node[anchor=south] at (0,1.52) {$M$};
+  \node[anchor=north] at (0,-1.52) {$N$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=west] at (1.20,-0.55) {$A$};
+  \node[anchor=west] at (1.50,0.15) {$B$};
+  \node[anchor=west] at (0.95,-0.95) {$C$};
+  \node[anchor=east] at (0,0.15) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第17题)}
 \end{figure}
 
@@ -28233,7 +30184,21 @@ V \text{（}A B D C\text{）} = V \text{（}O A C\text{）} + V \text{（}O C D\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/solid-geometry/fig-p0293-02.png}}
+% fig-alt: 第18题：水平线BF上三角形AM，高AH，点E、F
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.15,0.20) -- (3.35,0.20);
+  \draw[line width=0.7pt] (0.85,0.20) -- (1.55,1.55) -- (2.25,0.20);
+  \draw[line width=0.5pt] (1.55,1.55) -- (1.55,0.20);
+  \draw[line width=0.6pt] (2.25,0.20) -- (2.25,0.85) -- (3.15,0.85);
+  \node[anchor=south] at (1.55,1.58) {$A$};
+  \node[anchor=north] at (0.85,0.16) {$B$};
+  \node[anchor=north] at (1.55,0.16) {$H$};
+  \node[anchor=north] at (2.25,0.16) {$C$};
+  \node[anchor=west] at (3.15,0.85) {$E$};
+  \node[anchor=north] at (3.15,0.16) {$F$};
+\end{tikzpicture}%
+}
 \caption{(第18题)}
 \end{figure}
 
@@ -28335,7 +30300,17 @@ P A ^ {2} + P B ^ {2} + P C ^ {2} = 4 r ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/solid-geometry/fig-p0294-01.png}}
+% fig-alt: 圆柱与圆锥组合
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.85) ellipse [x radius=0.55,y radius=0.16];
+  \draw[line width=0.7pt] (-0.55,0.15) -- (-0.55,0.85);
+  \draw[line width=0.7pt] (0.55,0.15) -- (0.55,0.85);
+  \draw[line width=0.7pt] (0,0.15) ellipse [x radius=0.55,y radius=0.16];
+  \draw[line width=0.7pt] (-0.55,0.85) -- (0,1.65);
+  \draw[line width=0.7pt] (0.55,0.85) -- (0,1.65);
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -28371,7 +30346,21 @@ P A ^ {2} + P B ^ {2} + P C ^ {2} = 4 r ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第11题)}]{assets/solid-geometry/fig-p0295-01.png}}
+% fig-alt: 第11题：球O，直径CD，弦BA，点E
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \draw[line width=0.6pt] (0,0.75) ellipse (1.15 and 0.28);
+  \draw[line width=0.55pt] (0,1.45) -- (0,-1.45);
+  \draw[line width=0.6pt] (0,-1.45) -- (1.15,0.75);
+  \node[anchor=south] at (0,1.48) {$C$};
+  \node[anchor=north] at (0,-1.48) {$D$};
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=west] at (1.15,0.75) {$A$};
+  \node[anchor=east] at (-1.15,0.75) {$B$};
+  \node[anchor=west] at (0.10,0.75) {$E$};
+\end{tikzpicture}%
+}
 \caption{(第11题)}
 \end{figure}
 
@@ -28379,7 +30368,21 @@ P A ^ {2} + P B ^ {2} + P C ^ {2} = 4 r ^ {2}\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/solid-geometry/fig-p0295-02.png}}
+% fig-alt: 第12题：半球O，弦PQ，点A、B、R
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,1.40) -- (0,-1.40);
+  \draw[line width=0.75pt] (0,1.40) arc[start angle=90,end angle=-90,radius=1.40];
+  \draw[line width=0.65pt] (0,0.55) -- (2.15,0);
+  \draw[line width=0.65pt] (0,-0.55) -- (2.15,0);
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=south] at (0,1.42) {$P$};
+  \node[anchor=north] at (0,-1.42) {$Q$};
+  \node[anchor=west] at (2.15,0) {$R$};
+  \node[anchor=south west] at (1.00,0.35) {$A$};
+  \node[anchor=north west] at (1.00,-0.35) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第12题)}
 \end{figure}
 
@@ -28444,7 +30447,17 @@ A Q = \frac {1}{3} A B _ {1}\text{，} B P = \frac {1}{3} B D.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第3题)}]{assets/solid-geometry/fig-p0296-01.png}}
+% fig-alt: 球缺
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) circle (0.85);
+  \draw[line width=0.55pt] (-0.70,0.45) -- (0.70,0.45);
+  \begin{scope}
+    \clip (-0.90,0.45) rectangle (0.90,0.95);
+    \fill[pattern=north east lines,pattern color=black!35] (0,0) circle (0.85);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{(第3题)}
 \end{figure}
 
@@ -28583,7 +30596,23 @@ m ^ {2} - a m + \frac {a ^ {3} - b ^ {3}}{3 a} = 0\text{，}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第16题)}]{assets/solid-geometry/fig-p0297-01.png}}
+% fig-alt: 第16题：△VA底，中位DN，高VM、AB
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.45,0.15) -- (0,2.45) -- (1.45,0.15) -- cycle;
+  \draw[line width=0.6pt] (-0.80,1.20) -- (0.80,1.20);
+  \draw[line width=0.5pt] (0,2.45) -- (0,0.15);
+  \draw[line width=0.6pt] (1.45,0.15) -- (1.45,2.45) -- (0,2.45);
+  \node[anchor=south] at (0,2.48) {$V$};
+  \node[anchor=north east] at (-1.45,0.15) {$A$};
+  \node[anchor=north] at (0,0.12) {$M$};
+  \node[anchor=east] at (-0.80,1.20) {$D$};
+  \node[anchor=west] at (0.80,1.20) {$N$};
+  \node[anchor=west] at (1.45,1.30) {$B$};
+  \node[anchor=east] at (0,0.65) {$r$};
+  \node[anchor=west] at (1.55,2.00) {$R$};
+\end{tikzpicture}%
+}
 \caption{(第16题)}
 \end{figure}
 
@@ -28664,7 +30693,18 @@ V = \frac {1}{3} \pi r ^ {2} \frac {x ^ {3}}{\text{（}x - h\text{）} ^ {3}}\te
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/solid-geometry/fig-p0298-01.png}}
+% fig-alt: 第5题：球O，半径OA延长至P
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (1.45);
+  \foreach \s in {0.55,1.05}
+    \draw[line width=0.4pt] (0,1.45) .. controls (\s,0.3) and (\s,-0.3) .. (0,-1.45);
+  \draw[line width=0.6pt] (0,0) -- (1.85,0);
+  \node[anchor=east] at (0,0) {$O$};
+  \node[anchor=south] at (1.10,0.08) {$A$};
+  \node[anchor=west] at (1.85,0) {$P$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -28689,7 +30729,17 @@ V = \frac {1}{3} \pi r ^ {2} \frac {x ^ {3}}{\text{（}x - h\text{）} ^ {3}}\te
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/solid-geometry/fig-p0299-01.png}}
+% fig-alt: 正方体展开图示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0.55,0) rectangle (1.15,0.60);
+  \draw[line width=0.65pt] (0.55,0.60) rectangle (1.15,1.20);
+  \draw[line width=0.65pt] (0.55,1.20) rectangle (1.15,1.80);
+  \draw[line width=0.65pt] (0,0.60) rectangle (0.55,1.20);
+  \draw[line width=0.65pt] (1.15,0.60) rectangle (1.70,1.20);
+  \draw[line width=0.65pt] (1.70,0.60) rectangle (2.25,1.20);
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -28710,7 +30760,14 @@ V = \frac {1}{3} \pi r ^ {2} \frac {x ^ {3}}{\text{（}x - h\text{）} ^ {3}}\te
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/solid-geometry/fig-p0299-02.png}}
+% fig-alt: 三棱柱展开图示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.65pt] (0,0) -- (0.70,0.45) -- (0,0.90) -- cycle;
+  \draw[line width=0.65pt] (0.70,0.45) rectangle (2.20,1.05);
+  \draw[line width=0.65pt] (2.20,0.45) -- (2.90,0) -- (2.90,0.90) -- (2.20,1.05);
+\end{tikzpicture}%
+}
 \caption{(第12题)}
 \end{figure}
 
@@ -28769,7 +30826,26 @@ V = \frac {1}{3} \pi r ^ {2} \frac {x ^ {3}}{\text{（}x - h\text{）} ^ {3}}\te
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/solid-geometry/fig-p0300-01.png}}
+% fig-alt: 第8题：四面体V-ABC，截面DEG，底上H、M
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \coordinate (V) at (1.55,2.55);
+  \coordinate (A) at (0.05,0.25);
+  \coordinate (B) at (1.85,-0.15);
+  \coordinate (C) at (2.95,0.55);
+  \draw[line width=0.7pt] (V) -- (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.7pt] (A) -- (C);
+  \draw[line width=0.7pt] (V) -- (B);
+  \draw[line width=0.65pt] (0.70,1.35) -- (1.55,0.85) -- (2.15,1.25) -- cycle;
+  \node[anchor=south] at (V) {$V$};
+  \node[anchor=east] at (A) {$A$};
+  \node[anchor=north] at (B) {$B$};
+  \node[anchor=west] at (C) {$C$};
+  \node[anchor=east] at (0.70,1.35) {$D$};
+  \node[anchor=south] at (1.55,0.90) {$E$};
+  \node[anchor=west] at (2.15,1.25) {$G$};
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
