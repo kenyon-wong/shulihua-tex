@@ -3646,7 +3646,69 @@ T。）、医药（如阿司匹灵等）和杀虫药剂（如六六六、滴滴�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 1·14 石油矿区的地层剖面图}]{assets/chemistry-4/fig-p0056-g01.png}}
+% fig-alt: 石油矿区地层剖面示意：起伏地表立4座钻塔，地下多层地层向右下缓倾，中右为穹窿储油构造（自上而下次序为气体、石油、水），左翼多孔岩层标石油层，下部含水层标水（原扫描照片改绘）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 地表
+  \draw[line width=0.8pt] (0,3.0) .. controls (0.5,3.18) and (1.0,3.2) .. (1.5,3.12)
+    .. controls (2.2,3.0) and (3.2,3.02) .. (4.2,3.05)
+    .. controls (5.0,3.08) and (5.6,3.1) .. (6.2,3.08)
+    .. controls (7.0,3.05) and (7.8,3.25) .. (8.5,3.5);
+  % 钻塔
+  \foreach \x/\y in {0.85/3.16, 2.4/3.02, 4.0/3.04, 6.0/3.07}{
+    \draw[line width=0.6pt] (\x-0.10,\y) -- (\x-0.025,\y+0.88) -- (\x+0.025,\y+0.88) -- (\x+0.10,\y) -- cycle;
+    \draw[line width=0.45pt] (\x-0.075,\y+0.29) -- (\x+0.075,\y+0.29);
+    \draw[line width=0.45pt] (\x-0.062,\y+0.58) -- (\x+0.062,\y+0.58);
+    \draw[line width=0.45pt] (\x-0.075,\y+0.29) -- (\x+0.062,\y+0.58);
+    \draw[line width=0.45pt] (\x+0.075,\y+0.29) -- (\x-0.062,\y+0.58);
+  }
+  % 多孔储层（左翼两条）与穹窿核心：加点纹理
+  \fill[pattern=dots] (0,2.15) .. controls (2,1.95) and (4,2.0) .. (5.5,2.08)
+    .. controls (7,2.2) and (8,2.3) .. (8.5,2.35)
+    -- (8.5,1.85) .. controls (8,1.8) and (7,1.72) .. (5.5,1.62)
+    .. controls (4,1.5) and (2,1.45) .. (0,1.6) -- cycle;
+  \fill[pattern=dots] (0,1.05) .. controls (2,0.9) and (4,0.95) .. (5.3,1.0)
+    -- (5.3,0.52) .. controls (4,0.48) and (2,0.5) .. (0,0.55) -- cycle;
+  \fill[pattern=dots] (5.3,1.0) .. controls (6.1,1.33) and (6.6,1.44) .. (7.0,1.45)
+    .. controls (7.5,1.44) and (8.0,1.3) .. (8.5,1.1)
+    -- (8.5,0.05) -- (5.3,0.05) -- cycle;
+  % 左侧含水层（横向短划线）
+  \fill[white] (0,0.55) .. controls (2,0.5) and (4,0.48) .. (5.3,0.5)
+    -- (5.3,0.05) -- (0,0.05) -- cycle;
+  \foreach \y in {0.16, 0.30, 0.44}
+    \draw[dash pattern=on 3.5pt off 3pt, line width=0.45pt] (0.15,\y) -- (5.25,\y);
+  % 穹窿内的流体分带：气体、石油、水
+  \fill[white] (5.6,1.02) .. controls (6.2,1.3) and (6.6,1.42) .. (7.0,1.44)
+    .. controls (7.5,1.43) and (8.0,1.29) .. (8.3,1.08)
+    -- (8.3,0.95) .. controls (7.7,1.12) and (6.3,1.12) .. (5.6,0.98) -- cycle;
+  \fill[white] (5.6,0.98) .. controls (6.3,1.12) and (7.7,1.12) .. (8.3,0.95)
+    -- (8.3,0.70) .. controls (7.7,0.82) and (6.3,0.82) .. (5.6,0.72) -- cycle;
+  \fill[white] (5.6,0.72) .. controls (6.3,0.82) and (7.7,0.82) .. (8.3,0.70)
+    -- (8.3,0.48) .. controls (7.7,0.56) and (6.3,0.56) .. (5.6,0.50) -- cycle;
+  \draw[dash pattern=on 3.5pt off 3pt, line width=0.45pt] (5.9,0.60) -- (8.0,0.60);
+  % 地层界线
+  \draw[line width=0.55pt] (0,2.7) .. controls (2,2.5) and (4,2.55) .. (5.5,2.62)
+    .. controls (7,2.68) and (8,2.72) .. (8.5,2.75);
+  \draw[line width=0.55pt] (0,2.15) .. controls (2,1.95) and (4,2.0) .. (5.5,2.08)
+    .. controls (7,2.2) and (8,2.3) .. (8.5,2.35);
+  \draw[line width=0.55pt] (0,1.6) .. controls (2,1.45) and (4,1.5) .. (5.5,1.62)
+    .. controls (7,1.72) and (8,1.8) .. (8.5,1.85);
+  \draw[line width=0.55pt] (0,1.05) .. controls (2,0.9) and (4,0.95) .. (5.3,1.0)
+    .. controls (6.1,1.33) and (6.6,1.44) .. (7.0,1.45)
+    .. controls (7.5,1.44) and (8.0,1.3) .. (8.5,1.1);
+  \draw[line width=0.55pt] (0,0.55) .. controls (2,0.5) and (4,0.48) .. (5.3,0.5);
+  \draw[line width=0.5pt] (5.6,0.98) .. controls (6.3,1.12) and (7.7,1.12) .. (8.3,0.95);
+  \draw[line width=0.5pt] (5.6,0.72) .. controls (6.3,0.82) and (7.7,0.82) .. (8.3,0.70);
+  \draw[line width=0.5pt] (5.6,0.50) .. controls (6.3,0.56) and (7.7,0.56) .. (8.3,0.48);
+  % 标注
+  \node[inner sep=1pt] at (2.95,2.28) {石油层};
+  \draw[line width=0.45pt] (2.72,2.18) -- (2.35,1.78);
+  \draw[line width=0.45pt] (3.18,2.18) -- (3.6,0.88);
+  \node[inner sep=1pt] at (6.95,1.27) {气体};
+  \node[inner sep=1pt] at (6.95,0.94) {石油};
+  \node[fill=white, inner sep=1pt] at (3.3,0.30) {水};
+\end{tikzpicture}%
+}
 \caption{图 1·14 石油矿区的地层剖面图}
 \end{figure}
 
@@ -9585,7 +9647,46 @@ n\mathrm{C}_{6}\mathrm{H}_{12}\mathrm{O}_{6}\xrightarrow{\text{酶}}(\mathrm{C}_
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3·2 马铃薯、小麦和玉蜀黍的淀粉颗粒}]{assets/chemistry-4/fig-p0141-g01.png}}
+% fig-alt: 显微镜下三个视野的淀粉颗粒示意：左为马铃薯（贝壳状同心分层大颗粒），中为小麦（大小不一的小椭圆颗粒），右为玉蜀黍（带脐点裂纹的圆形颗粒）（原扫描照片改绘）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 三个视野
+  \draw[line width=0.8pt] (0,0) circle[radius=1.15];
+  \draw[line width=0.8pt] (2.55,0) circle[radius=1.15];
+  \draw[line width=0.8pt] (5.1,0) circle[radius=1.15];
+  % 马铃薯：贝壳状同心分层颗粒
+  \begin{scope}[shift={(-0.30,0.30)}, rotate=-35]
+    \draw[line width=0.6pt] (0,0) ellipse[x radius=0.50, y radius=0.32];
+    \draw[line width=0.45pt] (0.06,0.02) ellipse[x radius=0.36, y radius=0.20];
+    \draw[line width=0.45pt] (0.12,0.04) ellipse[x radius=0.22, y radius=0.10];
+    \draw[line width=0.45pt] (0.16,0.05) ellipse[x radius=0.09, y radius=0.04];
+  \end{scope}
+  \begin{scope}[shift={(-0.42,-0.48)}, rotate=20]
+    \draw[line width=0.6pt] (0,0) ellipse[x radius=0.38, y radius=0.26];
+    \draw[line width=0.45pt] (0.05,0.02) ellipse[x radius=0.26, y radius=0.15];
+    \draw[line width=0.45pt] (0.10,0.04) ellipse[x radius=0.14, y radius=0.07];
+  \end{scope}
+  \begin{scope}[shift={(0.55,-0.18)}, rotate=-70]
+    \draw[line width=0.6pt] (0,0) ellipse[x radius=0.34, y radius=0.22];
+    \draw[line width=0.45pt] (0.05,0.02) ellipse[x radius=0.22, y radius=0.12];
+    \draw[line width=0.45pt] (0.10,0.03) ellipse[x radius=0.10, y radius=0.05];
+  \end{scope}
+  \draw[line width=0.5pt] (0.28,0.72) circle[radius=0.09];
+  \draw[line width=0.5pt] (-0.80,0.02) circle[radius=0.07];
+  % 小麦：大小不一的小椭圆颗粒
+  \foreach \x/\y/\r in {2.20/0.55/0.13, 2.75/0.65/0.10, 3.10/0.30/0.16, 2.50/0.15/0.18,
+      2.05/0.05/0.11, 2.85/-0.15/0.13, 2.35/-0.45/0.16, 2.95/-0.50/0.11,
+      3.20/-0.15/0.09, 2.60/-0.75/0.10}
+    \draw[line width=0.5pt] (\x,\y) circle[radius=\r];
+  % 玉蜀黍：带脐点裂纹的圆形颗粒
+  \foreach \x/\y/\r in {4.80/0.60/0.20, 5.45/0.50/0.16, 5.00/0.10/0.22, 5.55/-0.05/0.15,
+      4.65/-0.25/0.18, 5.15/-0.45/0.20, 4.85/-0.70/0.14, 5.50/-0.62/0.12}{
+    \draw[line width=0.5pt] (\x,\y) circle[radius=\r];
+    \draw[line width=0.4pt] (\x,\y) circle[radius=0.55*\r];
+    \fill (\x,\y) circle[radius=0.02];
+  }
+\end{tikzpicture}%
+}
 \caption{图 3·2 马铃薯、小麦和玉蜀黍的淀粉颗粒}
 \end{figure}
 
@@ -12022,7 +12123,25 @@ n\,\mathrm{CH}_{2}=\mathrm{CH}-\mathrm{CCl}=\mathrm{CH}_{2}\xrightarrow{\text{�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={碱式滴定管下端的橡皮管、玻璃珠和尖嘴结构（第10题）}]{assets/chemistry-4/fig-p0190-g01.png}}
+% fig-alt: 碱式滴定管下端结构：上为玻璃管，中段为橡皮管内嵌玻璃珠，下收成尖嘴（第10题附图）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  % 玻璃管
+  \draw[line width=0.7pt] (-0.09,2.60) -- (-0.09,1.70);
+  \draw[line width=0.7pt] (0.09,2.60) -- (0.09,1.70);
+  % 橡皮管
+  \draw[line width=0.7pt] (-0.09,1.70) .. controls (-0.145,1.62) .. (-0.145,1.40)
+    -- (-0.145,0.92) .. controls (-0.145,0.76) and (-0.115,0.68) .. (-0.10,0.64);
+  \draw[line width=0.7pt] (0.09,1.70) .. controls (0.145,1.62) .. (0.145,1.40)
+    -- (0.145,0.92) .. controls (0.145,0.76) and (0.115,0.68) .. (0.10,0.64);
+  % 玻璃珠
+  \draw[line width=0.7pt, fill=white] (0,1.26) circle[radius=0.155];
+  % 尖嘴
+  \draw[line width=0.7pt] (-0.10,0.64) -- (-0.032,0.10);
+  \draw[line width=0.7pt] (0.10,0.64) -- (0.032,0.10);
+  \draw[line width=0.7pt] (-0.032,0.10) -- (0.032,0.10);
+\end{tikzpicture}%
+}
 \caption{碱式滴定管下端的橡皮管、玻璃珠和尖嘴结构（第10题）}
 \end{figure}
 
