@@ -508,7 +508,22 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.6 静电感应}]{assets/physics-3/fig-p0013-01.png}}
+% fig-alt: 图1.6：验电器金箔张开，上方带电棒
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) circle (0.85);
+  \draw[line width=0.55pt] (0,-0.85) -- (0,-1.05);
+  \draw[line width=0.7pt] (-0.35,-1.15) -- (0.35,-1.15);
+  \draw[line width=0.55pt] (0,0.55) -- (0,0.95);
+  \draw[line width=0.7pt] (0,1.05) circle (0.10);
+  \draw[line width=0.55pt] (-0.12,0.35) rectangle (0.12,0.55);
+  \draw[line width=0.6pt] (0,0.25) -- (-0.22,-0.25);
+  \draw[line width=0.6pt] (0,0.25) -- (0.22,-0.25);
+  \node at (-0.35,0.05) {$+$};
+  \node at (0.35,0.05) {$+$};
+  \draw[line width=0.7pt] (-0.15,1.45) rectangle (0.15,2.05);
+\end{tikzpicture}%
+}
 \caption{图1.6 静电感应}
 \end{figure}
 
@@ -524,19 +539,64 @@ B球的右端（图1.7a），然后把A、B两球分开，再移开带电棒。�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0013-02.png}}
+% fig-alt: （a）两球 $A,B$ 接触，旁有带电棒
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.55,0) circle (0.55);
+  \draw[line width=0.75pt] (0.55,0) circle (0.55);
+  \draw[line width=0.5pt] (-0.55,0.55) -- (-0.55,1.35);
+  \draw[line width=0.5pt] (0.55,0.55) -- (0.55,1.35);
+  \node at (-0.55,0) {$A$};
+  \node at (0.55,0) {$B$};
+  \draw[line width=0.7pt] (1.55,-0.55) -- (2.05,0.55);
+  \foreach \i in {0,1,2}
+    \node at (1.70-0.05*\i,-0.15+0.25*\i) {$+$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0013-03.png}}
+% fig-alt: 球 $B$ 带负电接触验电器，金箔张开
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (0.85);
+  \draw[line width=0.55pt] (0,-0.85) -- (0,-1.05);
+  \draw[line width=0.7pt] (-0.35,-1.15) -- (0.35,-1.15);
+  \draw[line width=0.55pt] (-0.12,0.35) rectangle (0.12,0.55);
+  \draw[line width=0.55pt] (0,0.55) -- (0,0.95);
+  \draw[line width=0.7pt] (0,1.35) circle (0.28);
+  \node at (0,1.35) {$B$};
+  \node at (0.20,1.50) {$-$};
+  \draw[line width=0.5pt] (0,1.63) -- (0,2.15);
+  \draw[line width=0.6pt] (0,0.25) -- (-0.18,-0.20);
+  \draw[line width=0.6pt] (0,0.25) -- (0.18,-0.20);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0013-04.png}}
+% fig-alt: 球 $A$ 带正电接触验电器，金箔张开
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (0.85);
+  \draw[line width=0.55pt] (0,-0.85) -- (0,-1.05);
+  \draw[line width=0.7pt] (-0.35,-1.15) -- (0.35,-1.15);
+  \draw[line width=0.55pt] (-0.12,0.35) rectangle (0.12,0.55);
+  \draw[line width=0.55pt] (0,0.55) -- (0,0.95);
+  \draw[line width=0.7pt] (0,1.35) circle (0.28);
+  \node at (0,1.35) {$A$};
+  \node at (0.22,1.50) {$+$};
+  \draw[line width=0.5pt] (0,1.63) -- (0,2.15);
+  \draw[line width=0.6pt] (0,0.25) -- (-0.20,-0.22);
+  \draw[line width=0.6pt] (0,0.25) -- (0.20,-0.22);
+  \node at (-0.35,0.05) {$+$};
+  \node at (0.35,0.05) {$+$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -560,7 +620,26 @@ B球的右端（图1.7a），然后把A、B两球分开，再移开带电棒。�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.8 感应起电}]{assets/physics-3/fig-p0014-01.png}}
+% fig-alt: 图1.8：感应起电三步 $(a)(b)(c)$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \x in {0,3.1,5.9} {
+    \draw[line width=0.75pt] (\x,0.35) ellipse [x radius=0.85,y radius=0.32];
+    \draw[line width=0.55pt] (\x,0.03) -- (\x,-0.55);
+    \draw[line width=0.7pt] (\x-0.25,-0.65) -- (\x+0.25,-0.65);
+  }
+  \draw[line width=0.7pt] (-1.15,0.85) -- (-0.85,1.55);
+  \foreach \i in {0,1,2} \node at (-1.05+0.02*\i,1.05+0.18*\i) {$-$};
+  \node at (-0.45,0.35) {$-$};
+  \node at (0.45,0.35) {$+$};
+  \node[anchor=north] at (0,-0.80) {(a)};
+  \draw[line width=0.7pt] (1.95,0.85) -- (2.25,1.55);
+  \node at (2.65,0.35) {$-$};
+  \draw[line width=0.5pt,rounded corners=2pt] (3.4,0.55) rectangle (4.15,1.15);
+  \node[anchor=north] at (3.1,-0.80) {(b)};
+  \node[anchor=north] at (5.9,-0.80) {(c)};
+\end{tikzpicture}%
+}
 \caption{图1.8 感应起电}
 \end{figure}
 
@@ -588,19 +667,81 @@ C 接触一下，使圆筒 C 获得一定量的电荷。这时 B
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.9 法拉第圆筒实验}]{assets/physics-3/fig-p0016-01.png}}
+% fig-alt: 图1.9(a)：法拉第圆筒，两验电器由导线相连
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.75pt] (0,0) circle (0.70);
+    \draw[line width=0.55pt] (0,-0.70) -- (0,-0.88);
+    \draw[line width=0.65pt] (-0.28,-0.98) -- (0.28,-0.98);
+    \draw[line width=0.55pt] (0,0.45) -- (0,0.85);
+    \draw[line width=0.7pt] (0,0.95) circle (0.08);
+    \draw[line width=0.55pt] (0,0.25) -- (0,-0.25);
+    \node at (-0.45,0) {$A$};
+  \end{scope}
+  \begin{scope}[shift={(2.2,0)}]
+    \draw[line width=0.75pt] (0,0) circle (0.70);
+    \draw[line width=0.55pt] (0,-0.70) -- (0,-0.88);
+    \draw[line width=0.65pt] (-0.28,-0.98) -- (0.28,-0.98);
+    \draw[line width=0.55pt] (-0.12,0.35) rectangle (0.12,0.55);
+    \draw[line width=0.55pt] (0,0.25) -- (-0.15,-0.15);
+    \draw[line width=0.55pt] (0,0.25) -- (0.15,-0.15);
+    \draw[line width=0.55pt] (0,0.55) -- (0,0.85);
+    \draw[line width=0.7pt] (0,1.05) rectangle (0.45,1.40);
+    \node at (0.22,1.22) {$C$};
+    \node at (-0.45,0) {$B$};
+  \end{scope}
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (0,0.95) -- (1.1,1.85) -- (2.2,1.22);
+  \draw[line width=0.7pt] (1.05,1.85) -- (1.15,2.35);
+  \node[anchor=north] at (1.1,-1.20) {(a)};
+\end{tikzpicture}%
+}
 \caption{图1.9 法拉第圆筒实验}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.9 法拉第圆筒实验}]{assets/physics-3/fig-p0016-02.png}}
+% fig-alt: 图1.9：法拉第圆筒，验电器 $A$ 箔闭合、$B$ 张开
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) circle (0.70);
+  \draw[line width=0.55pt] (0,0.45) -- (0,0.85);
+  \draw[line width=0.7pt] (0,0.95) circle (0.08);
+  \draw[line width=0.55pt] (0,0.25) -- (0,-0.25);
+  \node at (-0.45,0) {$A$};
+  \draw[line width=0.75pt] (2.2,0) circle (0.70);
+  \draw[line width=0.55pt] (2.2,0.25) -- (2.05,-0.15);
+  \draw[line width=0.55pt] (2.2,0.25) -- (2.35,-0.15);
+  \draw[line width=0.7pt] (2.2,1.05) rectangle (2.65,1.40);
+  \node at (2.42,1.22) {$C$};
+  \node at (1.75,0) {$B$};
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (0,0.95) -- (1.1,1.75) -- (2.2,1.22);
+  \draw[line width=0.7pt] (1.05,1.75) -- (1.15,2.25);
+\end{tikzpicture}%
+}
 \caption{图1.9 法拉第圆筒实验}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.9 法拉第圆筒实验}]{assets/physics-3/fig-p0016-03.png}}
+% fig-alt: 图1.9：法拉第圆筒，$A$ 箔闭合、$B$ 张开，导线接 $C$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) circle (0.70);
+  \draw[line width=0.55pt] (0,0.45) -- (0,0.85);
+  \draw[line width=0.7pt] (0,0.95) circle (0.08);
+  \draw[line width=0.55pt] (0,0.25) -- (0,-0.25);
+  \node at (-0.45,0) {$A$};
+  \draw[line width=0.75pt] (2.2,0) circle (0.70);
+  \draw[line width=0.55pt] (2.2,0.25) -- (2.05,-0.15);
+  \draw[line width=0.55pt] (2.2,0.25) -- (2.35,-0.15);
+  \draw[line width=0.7pt] (2.2,1.05) rectangle (2.65,1.40);
+  \node at (2.42,1.22) {$C$};
+  \node at (1.75,0) {$B$};
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (0,0.95) -- (1.1,1.75) -- (2.42,1.40);
+  \draw[line width=0.7pt] (1.05,1.75) -- (1.15,2.25);
+\end{tikzpicture}%
+}
 \caption{图1.9 法拉第圆筒实验}
 \end{figure}
 
@@ -640,7 +781,22 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0017-01.png}}
+% fig-alt: （a）验电器金箔张开，旁有带电棒
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (0.85);
+  \draw[line width=0.55pt] (0,-0.85) -- (0,-1.05);
+  \draw[line width=0.7pt] (-0.35,-1.15) -- (0.35,-1.15);
+  \draw[line width=0.55pt] (-0.12,0.35) rectangle (0.12,0.55);
+  \draw[line width=0.55pt] (0,0.55) -- (0,0.95);
+  \draw[line width=0.7pt] (0,1.05) circle (0.10);
+  \draw[line width=0.6pt] (0,0.25) -- (-0.22,-0.25);
+  \draw[line width=0.6pt] (0,0.25) -- (0.22,-0.25);
+  \node at (-0.32,0.05) {$+$};
+  \node at (0.32,0.05) {$+$};
+  \draw[line width=0.7pt] (0.85,0.85) -- (1.15,1.65);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -648,7 +804,20 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0017-02.png}}
+% fig-alt: （b）金属网罩内验电器，外有带电棒
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (-1.15,-1.15) -- (1.15,-1.15);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (-1.15,-1.15) -- (-1.15,1.55) -- (0.55,1.55) -- (0.55,-1.15);
+  \draw[line width=0.75pt] (0,0) circle (0.70);
+  \draw[line width=0.55pt] (0,0.45) -- (0,0.85);
+  \draw[line width=0.7pt] (0,0.95) circle (0.08);
+  \draw[line width=0.55pt] (0,0.20) -- (0,-0.35);
+  \foreach \y in {-0.8,-0.4,0,0.4,0.8,1.2}
+    \node[font=\tiny] at (0.85,\y) {$+$};
+  \draw[line width=0.7pt] (1.45,0.55) -- (1.75,1.35);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -681,7 +850,21 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-3/fig-p0018-01.png}}
+% fig-alt: 空腔 $A$ 内导体 $B$ 带正电，外有试探球 $C$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0.85,0) -- (0,0) -- (0,1.35) -- (1.55,1.35) -- (1.55,0) -- (0.85,0);
+  \draw[line width=0.7pt] (0.85,0.15) -- (0.85,2.15);
+  \draw[line width=0.7pt] (1.15,0.15) -- (1.15,2.15);
+  \draw[line width=0.7pt] (0.85,0.15) arc[start angle=180,end angle=360,radius=0.15];
+  \node at (1.00,0.85) {$+$};
+  \node[anchor=west] at (1.20,1.85) {$B$};
+  \node[anchor=east] at (0,0.85) {$A$};
+  \draw[line width=0.55pt] (-0.85,0.15) -- (-0.85,1.85);
+  \draw[line width=0.7pt] (-0.85,0.15) circle (0.10);
+  \node[anchor=east] at (-0.95,0.15) {$C$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -689,7 +872,25 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0018-02.png}}
+% fig-alt: （b）空腔 $A$ 接地，内导体 $B$ 带电
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0.85,0) -- (0,0) -- (0,1.35) -- (1.55,1.35) -- (1.55,0) -- (0.85,0);
+  \draw[line width=0.7pt] (0.85,0.15) -- (0.85,2.15);
+  \draw[line width=0.7pt] (1.15,0.15) -- (1.15,2.15);
+  \draw[line width=0.7pt] (0.85,0.15) arc[start angle=180,end angle=360,radius=0.15];
+  \node[anchor=west] at (1.20,1.85) {$B$};
+  \node[anchor=east] at (0,0.85) {$A$};
+  \draw[line width=0.55pt] (1.55,0.25) -- (2.05,0.25) -- (2.05,-0.35);
+  \draw[line width=0.55pt] (1.90,-0.35) -- (2.20,-0.35);
+  \draw[line width=0.55pt] (1.95,-0.45) -- (2.15,-0.45);
+  \draw[line width=0.55pt] (2.00,-0.55) -- (2.10,-0.55);
+  \draw[line width=0.55pt] (-0.85,0.15) -- (-0.85,1.85);
+  \draw[line width=0.7pt] (-0.85,0.15) circle (0.10);
+  \node[anchor=east] at (-0.95,0.15) {$C$};
+  \node[anchor=north] at (0.75,-0.25) {(b)};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -697,7 +898,21 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-3/fig-p0018-03.png}}
+% fig-alt: （c）试探球 $C$ 在空腔 $A$ 内，导体 $B$ 在外
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0.55,0) -- (0,0) -- (0,1.25) -- (1.25,1.25) -- (1.25,0) -- (0.55,0);
+  \draw[line width=0.55pt] (0.55,0.15) -- (0.55,2.05);
+  \draw[line width=0.7pt] (0.55,0.15) circle (0.10);
+  \node[anchor=west] at (0.70,0.15) {$C$};
+  \node[anchor=east] at (0,0.70) {$A$};
+  \draw[line width=0.7pt] (1.85,0.15) -- (1.85,2.05);
+  \draw[line width=0.7pt] (2.15,0.15) -- (2.15,2.05);
+  \draw[line width=0.7pt] (1.85,0.15) arc[start angle=180,end angle=360,radius=0.15];
+  \node[anchor=west] at (2.20,1.55) {$B$};
+  \node at (2.00,0.70) {$+$};
+\end{tikzpicture}%
+}
 \caption{(c)}
 \end{figure}
 
@@ -705,7 +920,20 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(d)}]{assets/physics-3/fig-p0018-04.png}}
+% fig-alt: （d）试探球 $C$ 在空腔 $A$ 内，导体 $B$ 在腔内
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0.85,0) -- (0,0) -- (0,1.25) -- (1.55,1.25) -- (1.55,0) -- (0.85,0);
+  \draw[line width=0.55pt] (0.45,0.15) -- (0.45,2.05);
+  \draw[line width=0.7pt] (0.45,0.15) circle (0.10);
+  \node[anchor=west] at (0.58,0.15) {$C$};
+  \node[anchor=east] at (0,0.70) {$A$};
+  \draw[line width=0.7pt] (1.05,0.15) -- (1.05,2.05);
+  \draw[line width=0.7pt] (1.35,0.15) -- (1.35,2.05);
+  \draw[line width=0.7pt] (1.05,0.15) arc[start angle=180,end angle=360,radius=0.15];
+  \node at (1.20,0.70) {$+$};
+\end{tikzpicture}%
+}
 \caption{(d)}
 \end{figure}
 
@@ -723,7 +951,27 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.11 库仑扭秤}]{assets/physics-3/fig-p0019-01.png}}
+% fig-alt: 图1.11：库仑扭秤
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) ellipse [x radius=1.15,y radius=0.35];
+  \draw[line width=0.75pt] (-1.15,0) -- (-1.15,1.15);
+  \draw[line width=0.75pt] (1.15,0) -- (1.15,1.15);
+  \draw[line width=0.75pt] (0,1.15) ellipse [x radius=1.15,y radius=0.28];
+  \draw[line width=0.7pt] (0,1.15) -- (0,3.15);
+  \draw[line width=0.7pt] (0,3.15) ellipse [x radius=0.22,y radius=0.08];
+  \draw[line width=0.7pt] (0,3.35) circle (0.08);
+  \draw[line width=0.55pt] (0,1.55) -- (0,0.55);
+  \draw[line width=0.55pt] (-0.85,0.55) -- (0.85,0.55);
+  \fill (-0.85,0.55) circle (1.5pt);
+  \fill (0.85,0.55) circle (1.5pt);
+  \node[anchor=north] at (-0.85,0.45) {$A$};
+  \node[anchor=north] at (0.85,0.45) {$B$};
+  \node[anchor=east] at (-0.95,0.55) {$C$};
+  \node[anchor=west] at (0.15,2.35) {悬丝};
+  \node[anchor=west] at (0.28,3.35) {旋钮};
+\end{tikzpicture}%
+}
 \caption{图1.11 库仑扭秤}
 \end{figure}
 
@@ -1760,7 +2008,14 @@ k \frac{1.0 \times 10^{- 9}}{x^{2}} = k \frac{4.0 \times 10^{- 9}}{(x + 0.4)^{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.23 匀强电场}]{assets/physics-3/fig-p0039-01.png}}
+% fig-alt: 图1.23：匀强电场（平行板）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.15,0.85) -- (1.15,0.85);
+  \draw[line width=0.75pt] (-1.15,0) -- (1.15,0);
+  \foreach \x in {-0.85,-0.45,0,0.45,0.85} \draw[->,line width=0.45pt] (\x,0.80) -- (\x,0.05);
+\end{tikzpicture}%
+}
 \caption{图1.23 匀强电场}
 \end{figure}
 
@@ -3373,7 +3628,17 @@ v_{y} = a t = 3.5 \times 10^{15} \times 1.0 \times 10^{- 9} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.41 示波管上显示的交流电波形}]{assets/physics-3/fig-p0063-01.png}}
+% fig-alt: 图1.41：示波器交流波形，周期 20ms
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) rectangle (4.4,2.6);
+  \draw[line width=0.5pt] (2.2,0) -- (2.2,2.6);
+  \draw[line width=0.5pt] (0,1.3) -- (4.4,1.3);
+  \draw[line width=0.7pt,smooth] plot coordinates {(0,1.3) (0.35,1.85) (0.70,2.15) (1.10,1.85) (1.45,1.3) (1.80,0.75) (2.20,0.45) (2.55,0.75) (2.90,1.3) (3.25,1.85) (3.65,2.15) (4.00,1.85) (4.40,1.3)};
+  \node[anchor=north west] at (0,1.3) {0};
+  \node[anchor=north] at (2.2,1.25) {20ms};
+\end{tikzpicture}%
+}
 \caption{图1.41 示波管上显示的交流电波形}
 \end{figure}
 
@@ -3398,7 +3663,30 @@ v_{y} = a t = 3.5 \times 10^{15} \times 1.0 \times 10^{- 9} \text{米/秒}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.42 密立根实验装置原理图}]{assets/physics-3/fig-p0064-01.png}}
+% fig-alt: 图1.42：密立根油滴实验（平行板 $A,B$）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,1.55) ellipse [x radius=1.15,y radius=0.22];
+  \draw[line width=0.75pt] (0,0.15) ellipse [x radius=1.15,y radius=0.22];
+  \node[anchor=east] at (-1.20,1.55) {$A$};
+  \node[anchor=east] at (-1.20,0.15) {$B$};
+  \draw[->,line width=0.5pt] (0,1.15) -- (0,0.55);
+  \node[anchor=west] at (0.08,0.95) {$qE$};
+  \draw[->,line width=0.5pt] (0,0.85) -- (0,0.45);
+  \node[anchor=east] at (-0.08,0.55) {$mg$};
+  \draw[line width=0.5pt] (1.15,1.55) -- (1.85,1.55) -- (1.85,0.85);
+  \draw[line width=0.5pt] (1.15,0.15) -- (1.85,0.15) -- (1.85,0.55);
+  \draw[line width=0.5pt] (1.70,0.85) -- (1.70,0.55);
+  \foreach \y in {0.55,0.70,0.85}
+    \draw[line width=0.4pt] (1.62,\y) -- (1.78,\y);
+  \draw[line width=0.5pt] (1.85,0.35) -- (1.85,0.05);
+  \draw[line width=0.4pt] (1.75,0.05) -- (1.95,0.05);
+  \draw[line width=0.4pt] (1.78,-0.05) -- (1.92,-0.05);
+  \node[anchor=west] at (0.35,1.55) {油滴};
+  \node[anchor=west] at (1.15,-0.45) {显微镜};
+  \draw[line width=0.55pt] (0.85,-0.55) -- (1.15,-0.25);
+\end{tikzpicture}%
+}
 \caption{图1.42 密立根实验装置原理图}
 \end{figure}
 
@@ -3754,7 +4042,19 @@ x = y / \mathrm{tg} \varphi . \text{］}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.44 内部电荷互相推斥移向表面}]{assets/physics-3/fig-p0070-01.png}}
+% fig-alt: 图1.44：导体内电荷互相推斥移向表面
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0.55) circle (1.05);
+  \fill[pattern=north east lines,pattern color=black!40] (-0.28,-0.55) rectangle (0.28,-1.35);
+  \draw[line width=0.7pt] (-0.45,-1.45) rectangle (0.45,-1.55);
+  \foreach \a in {40,140,220,320} {
+    \draw[line width=0.55pt] (\a:0.45) circle (0.12);
+    \node at (\a:0.45) {$-$};
+    \draw[->,line width=0.5pt] (\a:0.60) -- (\a:0.95);
+  }
+\end{tikzpicture}%
+}
 \caption{图1.44 内部电荷互相推斥移向表面}
 \end{figure}
 
@@ -4277,7 +4577,19 @@ U = k \frac{Q}{\varepsilon_{r} r}. \tag{1.26}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.51}]{assets/physics-3/fig-p0077-01.png}}
+% fig-alt: 图1.51：两圆柱导体（细、粗）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) ellipse [x radius=0.22,y radius=0.08];
+  \draw[line width=0.75pt] (-0.22,0) -- (-0.22,2.35);
+  \draw[line width=0.75pt] (0.22,0) -- (0.22,2.35);
+  \draw[line width=0.75pt] (0,2.35) ellipse [x radius=0.22,y radius=0.08];
+  \draw[line width=0.75pt] (1.35,0) ellipse [x radius=0.38,y radius=0.10];
+  \draw[line width=0.75pt] (0.97,0) -- (0.97,2.35);
+  \draw[line width=0.75pt] (1.73,0) -- (1.73,2.35);
+  \draw[line width=0.75pt] (1.35,2.35) ellipse [x radius=0.38,y radius=0.10];
+\end{tikzpicture}%
+}
 \caption{图1.51}
 \end{figure}
 
@@ -4434,7 +4746,26 @@ C = \frac{Q}{U_{A B}} \tag{1.28}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.53}]{assets/physics-3/fig-p0081-01.png}}
+% fig-alt: 图1.53：平行板电容器 $A,B$ 接静电计 $C$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0.15) ellipse [x radius=0.55,y radius=0.12];
+  \draw[line width=0.55pt] (0,0.15) -- (0,0.85);
+  \draw[line width=0.75pt] (0.55,0.15) ellipse [x radius=0.55,y radius=0.12];
+  \draw[line width=0.55pt] (0.55,0.15) -- (0.55,0.85);
+  \draw[line width=0.7pt] (-0.35,-0.25) rectangle (0.90,0);
+  \node[anchor=south] at (0,0.95) {$A$};
+  \node[anchor=south] at (0.55,0.95) {$B$};
+  \node[anchor=east] at (-0.15,0.55) {$-$};
+  \node[anchor=west] at (0.70,0.55) {$+$};
+  \draw[line width=0.5pt] (0,0.85) .. controls (-0.85,1.55) and (1.15,1.85) .. (2.15,1.15);
+  \draw[line width=0.5pt] (0.55,0) .. controls (1.15,-0.35) and (2.35,-0.15) .. (2.35,0.35);
+  \draw[line width=0.7pt] (2.35,0.55) circle (0.45);
+  \draw[line width=0.5pt] (2.35,0.55) -- (2.20,0.85);
+  \draw[line width=0.5pt] (2.35,0.55) -- (2.50,0.85);
+  \node[anchor=south] at (2.35,1.05) {$C$};
+\end{tikzpicture}%
+}
 \caption{图1.53}
 \end{figure}
 
@@ -5228,61 +5559,43 @@ U_{2} = U_{3} = (400 - 300) \text{伏} = 100 \text{伏}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-01.png}}
-\caption{图1.61 各种电容器}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-02.png}}
-\caption{图1.61 各种电容器}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-03.png}}
-\caption{图1.61 各种电容器}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-04.png}}
-\caption{图1.61 各种电容器}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-05.png}}
-\caption{图1.61 各种电容器}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-06.png}}
-\caption{图1.61 各种电容器}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-07.png}}
-\caption{图1.61 各种电容器}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-08.png}}
-\caption{图1.61 各种电容器}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-09.png}}
-\caption{图1.61 各种电容器}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图1.61 各种电容器}]{assets/physics-3/fig-p0093-10.png}}
+% fig-alt: 图1.61 各种电容器外形与符号 $(a)\sim(h)$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,2.4) rectangle (0.85,2.7);
+  \draw[line width=0.55pt] (-0.45,2.55) -- (0,2.55);
+  \draw[line width=0.55pt] (0.85,2.55) -- (1.30,2.55);
+  \node[anchor=north] at (0.42,2.35) {(a) 云母电容};
+  \draw[line width=0.7pt] (2.35,2.55) circle (0.22);
+  \draw[line width=0.55pt] (2.35,2.33) -- (2.35,1.85);
+  \node[anchor=north] at (2.35,1.80) {(b) 瓷介电容};
+  \draw[line width=0.7pt] (0,1.35) ellipse [x radius=0.55,y radius=0.18];
+  \draw[line width=0.55pt] (-0.85,1.35) -- (-0.55,1.35);
+  \draw[line width=0.55pt] (0.55,1.35) -- (0.85,1.35);
+  \node[anchor=north] at (0,1.10) {(c) 纸质电容};
+  \draw[line width=0.7pt] (1.85,1.15) rectangle (2.65,1.85);
+  \node[anchor=north] at (2.25,1.10) {(d) 油浸纸介};
+  \draw[line width=0.7pt] (3.55,1.55) ellipse [x radius=0.22,y radius=0.38];
+  \draw[line width=0.55pt] (3.55,1.17) -- (3.55,0.95);
+  \node[anchor=north] at (3.55,0.90) {(e) 电解电容};
+  \draw[line width=0.5pt] (0.15,0.55) -- (0.35,0.55);
+  \draw[line width=0.5pt] (0.55,0.55) -- (0.75,0.55);
+  \node[anchor=west] at (0.85,0.55) {符号};
+  \draw[line width=0.7pt] (0,0) rectangle (1.15,0.55);
+  \draw[line width=0.45pt] (0.15,0.08) -- (0.15,0.48);
+  \draw[line width=0.45pt] (0.35,0.08) -- (0.35,0.48);
+  \draw[line width=0.45pt] (0.55,0.08) -- (0.55,0.48);
+  \draw[line width=0.55pt] (0.85,-0.15) -- (0.85,0.25);
+  \node[anchor=north] at (0.55,-0.20) {(f) 空气可变};
+  \draw[line width=0.7pt] (2.0,0) rectangle (2.85,0.45);
+  \draw[line width=0.55pt] (2.42,-0.15) -- (2.42,0.15);
+  \node[anchor=north] at (2.42,-0.20) {(g) 有机可变};
+  \draw[line width=0.7pt] (3.85,0.25) circle (0.22);
+  \draw[line width=0.55pt] (3.63,0.25) -- (3.30,0.25);
+  \draw[line width=0.55pt] (4.07,0.25) -- (4.40,0.25);
+  \node[anchor=north] at (3.85,-0.10) {(h) 瓷介微调};
+\end{tikzpicture}%
+}
 \caption{图1.61 各种电容器}
 \end{figure}
 
@@ -6068,7 +6381,21 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.1}]{assets/physics-3/fig-p0105-01.png}}
+% fig-alt: 图2.1：导体 $C$ 连接极板 $A(+)$、$B(-)$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-0.85,0) rectangle (-0.55,1.15);
+  \draw[line width=0.75pt] (0.55,0) rectangle (0.85,1.15);
+  \node at (-0.70,0.55) {$+$};
+  \node at (0.70,0.55) {$-$};
+  \node[anchor=north] at (-0.70,-0.05) {$A$};
+  \node[anchor=north] at (0.70,-0.05) {$B$};
+  \draw[line width=0.7pt] (-0.70,1.15) -- (-0.70,1.85) -- (0.70,1.85) -- (0.70,1.15);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (-0.55,1.15) -- (-0.55,1.70) -- (0.55,1.70) -- (0.55,1.15);
+  \draw[->,line width=0.5pt] (-0.25,1.85) -- (0.25,1.85);
+  \node[anchor=south] at (0,1.90) {$C$};
+\end{tikzpicture}%
+}
 \caption{图2.1}
 \end{figure}
 
@@ -6100,7 +6427,28 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.2 瞬时电发}]{assets/physics-3/fig-p0106-01.png}}
+% fig-alt: 图2.2：瞬时电流——球体接地与两球电势差
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,1.55) circle (0.40);
+  \node at (0,1.55) {$+$};
+  \draw[line width=0.5pt] (0.40,1.55) -- (0.85,1.55) -- (0.85,1.15);
+  \draw[line width=0.45pt] (0.75,1.15) -- (0.95,1.15);
+  \draw[line width=0.45pt] (0.78,1.05) -- (0.92,1.05);
+  \draw[->,line width=0.5pt] (0.40,1.35) -- (0.40,1.05);
+  \node at (0.55,1.20) {$-$};
+  \draw[line width=0.75pt] (2.15,1.55) circle (0.40);
+  \node at (2.15,1.55) {$-$};
+  \draw[line width=0.5pt] (2.55,1.55) -- (2.95,1.55) -- (2.95,1.15);
+  \draw[line width=0.45pt] (2.85,1.15) -- (3.05,1.15);
+  \draw[line width=0.75pt] (0,0) circle (0.40);
+  \draw[line width=0.75pt] (2.15,0) circle (0.40);
+  \draw[line width=0.55pt] (0.40,0) -- (1.75,0);
+  \draw[->,line width=0.5pt] (0.90,0.15) -- (1.25,0.15);
+  \node at (1.08,0.32) {$-$};
+  \node[anchor=north] at (1.08,-0.45) {$U_1>U_2$};
+\end{tikzpicture}%
+}
 \caption{图2.2 瞬时电发}
 \end{figure}
 
@@ -6108,7 +6456,25 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.3 持续电流}]{assets/physics-3/fig-p0106-02.png}}
+% fig-alt: 图2.3：持续电流，$U_1>U_2$，电源 $E$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0.85) circle (0.45);
+  \draw[line width=0.75pt] (2.4,0.85) circle (0.45);
+  \draw[line width=0.7pt] (0.45,0.85) -- (1.95,0.85);
+  \draw[line width=0.55pt] (0,-0.15) -- (0,0.40);
+  \draw[line width=0.55pt] (2.4,-0.15) -- (2.4,0.40);
+  \draw[line width=0.7pt] (0.85,-0.15) rectangle (1.55,0.25);
+  \node at (1.20,0.05) {$E$};
+  \draw[line width=0.55pt] (0,-0.15) -- (0.85,-0.15);
+  \draw[line width=0.55pt] (1.55,-0.15) -- (2.4,-0.15);
+  \draw[->,line width=0.5pt] (0.85,1.15) -- (1.55,1.15);
+  \node at (1.20,1.32) {$-$};
+  \node at (0,1.15) {$U_1$};
+  \node at (2.4,1.15) {$U_2$};
+  \node[anchor=north] at (1.20,-0.35) {$U_1>U_2$};
+\end{tikzpicture}%
+}
 \caption{图2.3 持续电流}
 \end{figure}
 
@@ -6306,7 +6672,26 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.5 两块串}]{assets/physics-3/fig-p0110-01.png}}
+% fig-alt: 图2.5：两灯串联，电源与开关 $K$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) circle (0.22);
+  \draw[line width=0.45pt] (135:0.16) -- (315:0.16);
+  \draw[line width=0.45pt] (45:0.16) -- (225:0.16);
+  \node[anchor=south] at (0,0.28) {$L_2$};
+  \draw[line width=0.7pt] (1.55,0) circle (0.22);
+  \draw[line width=0.45pt] (1.55,0) ++(135:0.16) -- ++(315:0.32);
+  \draw[line width=0.45pt] (1.55,0) ++(45:0.16) -- ++(225:0.32);
+  \node[anchor=south] at (1.55,0.28) {$L_1$};
+  \draw[line width=0.7pt] (0.85,-1.05) rectangle (1.35,-0.55);
+  \node at (1.10,-0.80) {$K$};
+  \draw[line width=0.55pt] (0.22,0) -- (1.33,0);
+  \draw[line width=0.55pt] (1.77,0) -- (2.15,0) -- (2.15,-0.80) -- (1.35,-0.80);
+  \draw[line width=0.55pt] (-0.22,0) -- (-0.55,0) -- (-0.55,-0.80) -- (0.85,-0.80);
+  \draw[line width=0.55pt] (-0.55,-0.40) -- (0.20,-0.40);
+  \node at (-0.15,-0.25) {$+$};
+\end{tikzpicture}%
+}
 \caption{图2.5 两块串}
 \end{figure}
 
@@ -6359,7 +6744,29 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.7 两灯并联}]{assets/physics-3/fig-p0110-03.png}}
+% fig-alt: 图2.7：两灯并联，开关 $K,K_1,K_2$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,1.15) circle (0.20);
+  \draw[line width=0.4pt] (0,1.15) ++(45:0.14) -- ++(225:0.28);
+  \draw[line width=0.4pt] (0,1.15) ++(135:0.14) -- ++(315:0.28);
+  \node[anchor=south] at (0,1.40) {$L_2$};
+  \draw[line width=0.7pt] (1.55,0.15) circle (0.20);
+  \draw[line width=0.4pt] (1.55,0.15) ++(45:0.14) -- ++(225:0.28);
+  \draw[line width=0.4pt] (1.55,0.15) ++(135:0.14) -- ++(315:0.28);
+  \node[anchor=west] at (1.80,0.15) {$L_1$};
+  \draw[line width=0.55pt] (0.85,1.15) rectangle (1.25,1.45);
+  \node at (1.05,1.30) {$K_2$};
+  \draw[line width=0.55pt] (0.55,0.55) rectangle (0.95,0.85);
+  \node at (0.75,0.70) {$K_1$};
+  \draw[line width=0.55pt] (0.55,-0.55) rectangle (0.95,-0.25);
+  \node at (0.75,-0.40) {$K$};
+  \draw[line width=0.5pt] (0.20,1.15) -- (0.85,1.15);
+  \draw[line width=0.5pt] (1.25,1.30) -- (1.55,1.30) -- (1.55,0.35);
+  \draw[line width=0.5pt] (-0.20,1.15) -- (-0.55,1.15) -- (-0.55,-0.40) -- (0.55,-0.40);
+  \draw[line width=0.5pt] (1.35,0.15) -- (0.95,0.15) -- (0.95,0.55);
+\end{tikzpicture}%
+}
 \caption{图2.7 两灯并联}
 \end{figure}
 
@@ -6439,7 +6846,15 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.8 有两个量程的安培表}]{assets/physics-3/fig-p0111-01.png}}
+% fig-alt: 图2.8：双量程安培表外形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) rectangle (1.85,1.35);
+  \draw[line width=0.55pt] (0.25,0.55) arc[start angle=200,end angle=-20,radius=0.70];
+  \draw[line width=0.5pt] (0.92,0.35) -- (1.25,1.05);
+  \node at (0.92,0.20) {A};
+\end{tikzpicture}%
+}
 \caption{图2.8 有两个量程的安培表}
 \end{figure}
 
@@ -6709,7 +7124,15 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.10 有两个量程的伏特表}]{assets/physics-3/fig-p0112-05.png}}
+% fig-alt: 图2.10：双量程伏特表外形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) rectangle (1.85,1.35);
+  \draw[line width=0.55pt] (0.25,0.55) arc[start angle=200,end angle=-20,radius=0.70];
+  \draw[line width=0.5pt] (0.92,0.35) -- (0.55,1.05);
+  \node at (0.92,0.20) {V};
+\end{tikzpicture}%
+}
 \caption{图2.10 有两个量程的伏特表}
 \end{figure}
 
@@ -6928,12 +7351,6 @@ V，叫做伏特表。标着字母 mV 的，叫毫伏表（千分之一伏特）
 （2） \(L_{1}, L_{2}\) 并联，\(K\) 作总开关；
 
 （3） \(L_{1}, L_{2}\) 并联，\(K\) 作 \(L_{1}\) 的开关；
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第113页题图}]{assets/physics-3/fig-p0113-03.png}}
-\caption{原PDF第113页题图}
-\end{figure}
 
 \begin{figure}
 \centering
@@ -7332,7 +7749,31 @@ V，叫做伏特表。标着字母 mV 的，叫毫伏表（千分之一伏特）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.13 研究电流和电压的关系}]{assets/physics-3/fig-p0116-02.png}}
+% fig-alt: 图2.13：安培表、伏特表与导线圈测 $I$--$U$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,1.55) rectangle (1.15,2.45);
+  \draw[line width=0.55pt] (0.58,2.00) circle (0.28);
+  \draw[line width=0.4pt] (0.58,2.00) -- (0.78,2.18);
+  \node[anchor=south] at (0.58,2.50) {安培表};
+  \draw[line width=0.7pt] (2.15,1.55) rectangle (3.30,2.45);
+  \draw[line width=0.55pt] (2.72,2.00) circle (0.28);
+  \draw[line width=0.4pt] (2.72,2.00) -- (2.92,2.18);
+  \node[anchor=south] at (2.72,2.50) {伏特表};
+  \draw[line width=0.55pt] (0.20,1.55) -- (0.20,0.85) -- (1.55,0.85);
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=3pt},line width=0.6pt] (1.55,0.85) -- (2.85,0.85);
+  \node[anchor=north] at (2.20,0.80) {导线圈};
+  \node[anchor=east] at (1.55,0.85) {$P$};
+  \node[anchor=west] at (2.85,0.85) {$Q$};
+  \draw[line width=0.55pt] (2.85,0.85) -- (3.10,0.85) -- (3.10,1.55);
+  \draw[line width=0.55pt] (2.35,1.55) -- (2.35,1.15) -- (1.55,1.15) -- (1.55,0.85);
+  \draw[line width=0.55pt] (0.20,0.85) -- (0.20,0.25) -- (1.55,0.25);
+  \foreach \x in {1.45,1.58,1.71,1.84} \draw[line width=0.55pt] (\x,0.10) -- (\x,0.40);
+  \node[anchor=north] at (1.65,0.08) {电池组};
+  \draw[->,line width=0.45pt] (0.45,0.55) -- (0.85,0.55);
+  \node[anchor=south] at (0.65,0.55) {$I$};
+\end{tikzpicture}%
+}
 \caption{图 2.13 研究电流和电压的关系}
 \end{figure}
 
@@ -7544,7 +7985,15 @@ R=\frac{U}{I} = \frac{2.5}{1.4} \text{欧} = 1.78 \text{欧}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.14 沪岛变阻器}]{assets/physics-3/fig-p0122-01.png}}
+% fig-alt: 图2.14：滑线变阻器
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0.15) rectangle (2.4,0.55);
+  \foreach \x in {0.15,0.30,...,2.25} \draw[line width=0.35pt] (\x,0.15) -- (\x,0.55);
+  \draw[line width=0.55pt] (0,0.85) -- (2.4,0.85);
+  \draw[line width=0.7pt] (1.15,0.55) -- (1.15,0.85);
+\end{tikzpicture}%
+}
 \caption{图 2.14 沪岛变阻器}
 \end{figure}
 
@@ -7565,7 +8014,14 @@ T 向右旋转时，A、B 之间的电阻就变大；当 T 向左旋转时，A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.15 转柄变阻器}]{assets/physics-3/fig-p0122-02.png}}
+% fig-alt: 图2.15：转柄变阻器
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) circle (0.85);
+  \draw[line width=0.55pt] (0,0) -- (0.55,0.45);
+  \foreach \a in {0,30,...,330} \fill (\a:0.70) circle (0.8pt);
+\end{tikzpicture}%
+}
 \caption{图 2.15 转柄变阻器}
 \end{figure}
 
@@ -7575,7 +8031,22 @@ T 向右旋转时，A、B 之间的电阻就变大；当 T 向左旋转时，A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.16 电灯变阻器}]{assets/physics-3/fig-p0123-01.png}}
+% fig-alt: 图2.16：五点五灯并联于 $A,B$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0,1.15) -- (3.4,1.15);
+  \draw[line width=0.55pt] (0,0) -- (3.4,0);
+  \foreach \x in {0.4,1.1,1.8,2.5,3.2} {
+    \draw[line width=0.7pt] (\x,0.58) circle (0.22);
+    \draw[line width=0.4pt] (\x,0.58) ++(45:0.16) -- ++(225:0.32);
+    \draw[line width=0.4pt] (\x,0.58) ++(135:0.16) -- ++(315:0.32);
+    \draw[line width=0.5pt] (\x,0.80) -- (\x,1.15);
+    \draw[line width=0.5pt] (\x,0.36) -- (\x,0);
+  }
+  \node[anchor=east] at (0,1.15) {$A$};
+  \node[anchor=east] at (0,0) {$B$};
+\end{tikzpicture}%
+}
 \caption{图2.16 电灯变阻器}
 \end{figure}
 
@@ -7592,7 +8063,23 @@ T 向右旋转时，A、B 之间的电阻就变大；当 T 向左旋转时，A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.17 电阻箱和它的结构示意图}]{assets/physics-3/fig-p0123-02.png}}
+% fig-alt: 图2.17：电阻箱外形与插塞结构（1、2、2、5 欧）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) rectangle (1.55,0.95);
+  \foreach \x in {0.25,0.55,0.85,1.15}
+    \draw[line width=0.55pt] (\x,0.95) -- (\x,1.25);
+  \draw[line width=0.5pt] (0.55,0.55) -- (1.85,1.15);
+  \begin{scope}[xshift=2.4cm]
+    \foreach \x/\lab in {0/1,0.9/2,1.8/2,2.7/5} {
+      \draw[decorate,decoration={zigzag,segment length=4pt,amplitude=2pt},line width=0.55pt] (\x,0) -- (\x+0.7,0);
+      \draw[line width=0.55pt] (\x+0.35,0) -- (\x+0.35,0.45);
+      \draw[line width=0.55pt] (\x+0.20,0.45) rectangle (\x+0.50,0.70);
+      \node[anchor=north] at (\x+0.35,-0.08) {\lab 欧姆};
+    }
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 2.17 电阻箱和它的结构示意图}
 \end{figure}
 
@@ -7603,7 +8090,13 @@ T 向右旋转时，A、B 之间的电阻就变大；当 T 向左旋转时，A�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.18 旋键式电阻箱}]{assets/physics-3/fig-p0124-01.png}}
+% fig-alt: 图2.18：旋键式电阻箱
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) rectangle (2.15,1.05);
+  \foreach \x in {0.35,0.85,1.35,1.85} \draw[line width=0.55pt] (\x,1.05) circle (0.12);
+\end{tikzpicture}%
+}
 \caption{图 2.18 旋键式电阻箱}
 \end{figure}
 
@@ -7954,26 +8447,40 @@ P^{\prime \prime}\text{：} P \cdot U_{2}^{\prime \prime}\text{：} U^{2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.20 (a) 所示，把电阻丝 R\_\{1\} 、 R\_\{2\} 串联起来}]{assets/physics-3/fig-p0130-01.png}}
-\caption{图 2.20 (a) 所示，把电阻丝 \(R_{1}\) 、 \(R_{2}\) 串联起来}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.20 (a) 所示，把电阻丝 R\_\{1\} 、 R\_\{2\} 串联起来}]{assets/physics-3/fig-p0130-02.png}}
-\caption{图 2.20 (a) 所示，把电阻丝 \(R_{1}\) 、 \(R_{2}\) 串联起来}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.20 (a) 所示，把电阻丝 R\_\{1\} 、 R\_\{2\} 串联起来}]{assets/physics-3/fig-p0130-03.png}}
-\caption{图 2.20 (a) 所示，把电阻丝 \(R_{1}\) 、 \(R_{2}\) 串联起来}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.20 (a) 所示，把电阻丝 R\_\{1\} 、 R\_\{2\} 串联起来}]{assets/physics-3/fig-p0130-04.png}}
-\caption{图 2.20 (a) 所示，把电阻丝 \(R_{1}\) 、 \(R_{2}\) 串联起来}
+% fig-alt: 图2.20：煤油瓶热效应实验与电路 $(a)(b)(c)$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) -- (0.35,0.85) -- (0.70,0);
+  \draw[line width=0.7pt] (0.35,0.85) -- (0.35,1.55);
+  \draw[line width=0.55pt] (-0.15,-0.35) rectangle (0.55,0.15);
+  \node[anchor=north] at (0.20,-0.40) {(a)};
+  \begin{scope}[xshift=2.2cm,yshift=0.4cm]
+    \draw[line width=0.55pt] (0,0.55) -- (0.55,0.55);
+    \draw[line width=0.55pt] (0.70,0.55) -- (1.15,0.55);
+    \draw[line width=0.55pt] (1.35,0.55) circle (0.18);
+    \node at (1.35,0.55) {A};
+    \draw[line width=0.55pt] (1.53,0.55) -- (1.85,0.55) -- (1.85,0) -- (0.85,0);
+    \draw[line width=0.45pt] (0.70,0) -- (1.00,0);
+    \foreach \x in {0.15,0.28} \draw[line width=0.55pt] (\x,-0.15) -- (\x,0.15);
+    \draw[line width=0.55pt] (0.15,-0.15) -- (0.15,0.55);
+    \node[anchor=south] at (0.25,0.60) {$R_2$};
+    \node[anchor=south] at (0.90,0.60) {$R_1$};
+    \node[anchor=north] at (0.90,-0.25) {(b)};
+  \end{scope}
+  \begin{scope}[xshift=2.2cm,yshift=-0.85cm]
+    \draw[line width=0.55pt] (0,0.55) -- (0.55,0.55);
+    \draw[line width=0.55pt] (0.70,0.55) -- (1.15,0.55);
+    \draw[line width=0.55pt] (1.35,0.55) circle (0.18);
+    \node at (1.35,0.55) {A};
+    \draw[line width=0.55pt] (1.53,0.55) -- (1.85,0.55) -- (1.85,0) -- (0.15,0) -- (0.15,0.55);
+    \foreach \x in {0.15,0.28} \draw[line width=0.55pt] (\x,-0.15) -- (\x,0.15);
+    \node[anchor=south] at (0.25,0.60) {$R_2$};
+    \node[anchor=south] at (0.90,0.60) {$R_1$};
+    \node[anchor=north] at (0.90,-0.25) {(c)};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图 2.20 电阻丝热效应实验}
 \end{figure}
 
 \emph{图 2.20 （a） 所示，把电阻丝 \(R_{1}\) 、 \(R_{2}\) 串联起来}
@@ -11767,7 +12274,26 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.54 液体导电实验}]{assets/physics-3/fig-p0179-01.png}}
+% fig-alt: 图2.54：液体导电，电极 $K,A$，灯 $L$，电源 $B$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-1.05,0) -- (-1.05,1.15) -- (1.05,1.15) -- (1.05,0);
+  \draw[line width=0.75pt] (-1.05,0) arc[start angle=180,end angle=360,x radius=1.05,y radius=0.18];
+  \fill[black!10] (-1.05,0.55) -- (1.05,0.55) -- (1.05,0) arc[start angle=0,end angle=-180,x radius=1.05,y radius=0.18];
+  \draw[line width=0.7pt] (-0.55,0.15) rectangle (-0.35,1.45);
+  \draw[line width=0.7pt] (0.35,0.15) rectangle (0.55,1.45);
+  \node[anchor=south] at (-0.45,1.48) {$K$};
+  \node[anchor=south] at (0.45,1.48) {$A$};
+  \draw[line width=0.5pt] (-0.45,1.45) -- (-0.45,1.85) -- (0.15,1.85);
+  \foreach \x in {0.05,0.18} \draw[line width=0.55pt] (\x,1.70) -- (\x,2.00);
+  \node[anchor=south] at (0.12,2.02) {$B$};
+  \draw[line width=0.5pt] (0.18,1.85) -- (0.45,1.85);
+  \draw[line width=0.7pt] (0.65,1.85) circle (0.18);
+  \draw[line width=0.4pt] (0.65,1.85) ++(45:0.12) -- ++(225:0.24);
+  \node[anchor=south] at (0.65,2.08) {$L$};
+  \draw[line width=0.5pt] (0.83,1.85) -- (0.45,1.85) -- (0.45,1.45);
+\end{tikzpicture}%
+}
 \caption{图2.54 液体导电实验}
 \end{figure}
 
@@ -11784,7 +12310,25 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.55 离子导电}]{assets/physics-3/fig-p0179-02.png}}
+% fig-alt: 图2.55：NaCl 溶液离子导电
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-1.25,0) -- (-1.25,1.05) -- (1.25,1.05) -- (1.25,0);
+  \draw[line width=0.75pt] (-1.25,0) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.18];
+  \fill[black!8] (-1.25,0.55) -- (1.25,0.55) -- (1.25,0) arc[start angle=0,end angle=-180,x radius=1.25,y radius=0.18];
+  \draw[line width=0.7pt] (-0.75,0.15) rectangle (-0.50,1.35);
+  \draw[line width=0.7pt] (0.50,0.15) rectangle (0.75,1.35);
+  \node[anchor=south] at (-0.62,1.38) {$K$};
+  \node[anchor=south] at (0.62,1.38) {$A$};
+  \draw[line width=0.5pt] (-0.62,1.35) -- (-0.62,1.75) -- (-0.15,1.75);
+  \foreach \x in {-0.25,-0.12} \draw[line width=0.55pt] (\x,1.60) -- (\x,1.90);
+  \node at (0.15,1.75) {$G$};
+  \draw[line width=0.5pt] (0.35,1.75) -- (0.62,1.75) -- (0.62,1.35);
+  \node at (0,0.35) {$\mathrm{NaCl}$};
+  \node at (-0.15,0.70) {$\mathrm{Na}^+$};
+  \node at (0.35,0.55) {$\mathrm{Cl}^-$};
+\end{tikzpicture}%
+}
 \caption{图2.55 离子导电}
 \end{figure}
 
@@ -11803,7 +12347,26 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.56 电解盐酸}]{assets/physics-3/fig-p0180-01.png}}
+% fig-alt: 图2.56：电解盐酸，离子 $\mathrm{H}^+$、$\mathrm{Cl}^-$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-1.15,0) -- (-1.15,1.05) -- (1.15,1.05) -- (1.15,0);
+  \draw[line width=0.75pt] (-1.15,0) arc[start angle=180,end angle=360,x radius=1.15,y radius=0.18];
+  \fill[black!8] (-1.15,0.50) -- (1.15,0.50) -- (1.15,0) arc[start angle=0,end angle=-180,x radius=1.15,y radius=0.18];
+  \draw[line width=0.7pt] (-0.65,0.15) rectangle (-0.40,1.35);
+  \draw[line width=0.7pt] (0.40,0.15) rectangle (0.65,1.35);
+  \node[anchor=south] at (-0.52,1.38) {$K$};
+  \node[anchor=south] at (0.52,1.38) {$A$};
+  \node at (0.52,0.75) {$+$};
+  \node at (0,0.25) {HCl};
+  \node at (-0.10,0.70) {$\mathrm{H}^+$};
+  \node at (0.20,0.55) {$\mathrm{Cl}^-$};
+  \draw[->,line width=0.45pt] (-0.52,1.55) -- (-0.52,1.85);
+  \node[anchor=south] at (-0.52,1.88) {$i$};
+  \draw[->,line width=0.45pt] (0.52,1.85) -- (0.52,1.55);
+  \node[anchor=south] at (0.52,1.88) {$i$};
+\end{tikzpicture}%
+}
 \caption{图2.56 电解盐酸}
 \end{figure}
 
@@ -12011,7 +12574,28 @@ e = \frac{F}{N} = \frac{96485}{6.022 \times 10^{23}} \text{库} = 1.602 \times 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图2.57}]{assets/physics-3/fig-p0185-01.png}}
+% fig-alt: 图2.57：光照气体导电，电极 $A,K$，检流计 $G$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-0.95,0.85) -- (0.95,0.85);
+  \draw[line width=0.75pt] (-0.95,0.85) arc[start angle=180,end angle=360,x radius=0.95,y radius=0.35];
+  \draw[line width=0.75pt] (-0.95,0.85) arc[start angle=180,end angle=0,x radius=0.95,y radius=0.22];
+  \draw[line width=0.55pt] (-0.55,0.85) -- (-0.55,0.55);
+  \draw[line width=0.55pt] (0.55,0.85) -- (0.55,0.55);
+  \node[anchor=east] at (-0.95,0.55) {$A$};
+  \node[anchor=west] at (0.95,0.55) {$K$};
+  \draw[line width=0.55pt] (0,1.85) -- (-0.25,1.45) -- (0.25,1.45) -- cycle;
+  \foreach \x in {-0.35,-0.15,0.05,0.25}
+    \draw[line width=0.35pt] (0,1.45) -- (\x,0.95);
+  \draw[line width=0.5pt] (-0.55,0.55) -- (-0.55,0) -- (-0.85,0);
+  \draw[line width=0.7pt] (-1.05,0) circle (0.18);
+  \node at (-1.05,0) {$G$};
+  \draw[line width=0.5pt] (-1.23,0) -- (-1.23,-0.55) -- (0.15,-0.55);
+  \foreach \x in {0.05,0.18,0.31} \draw[line width=0.55pt] (\x,-0.70) -- (\x,-0.40);
+  \node[anchor=north] at (0.18,-0.75) {$E$};
+  \draw[line width=0.5pt] (0.31,-0.55) -- (0.55,-0.55) -- (0.55,0.55);
+\end{tikzpicture}%
+}
 \caption{图2.57}
 \end{figure}
 
@@ -12043,7 +12627,15 @@ X
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.58 有手动调节器的弧光灯}]{assets/physics-3/fig-p0187-01.png}}
+% fig-alt: 图2.58：弧光灯（两碳棒）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-0.85,0.15) -- (-0.15,0.15);
+  \draw[line width=0.7pt] (0.15,0.15) -- (0.85,0.15);
+  \draw[line width=0.55pt] (-0.15,0.15) .. controls (0,0.55) and (0,0.55) .. (0.15,0.15);
+  \draw[line width=0.5pt] (0,0.55) -- (0,0.95);
+\end{tikzpicture}%
+}
 \caption{图 2.58 有手动调节器的弧光灯}
 \end{figure}
 
@@ -12051,7 +12643,20 @@ X
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 2.59 钢薄气体里的放电}]{assets/physics-3/fig-p0187-02.png}}
+% fig-alt: 图2.59：稀薄气体放电管接高压直流电源
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-1.15,0.55) -- (1.15,0.55);
+  \draw[line width=0.75pt] (-1.15,0.55) arc[start angle=180,end angle=360,x radius=1.15,y radius=0.28];
+  \draw[line width=0.75pt] (-1.15,0.55) arc[start angle=180,end angle=0,x radius=1.15,y radius=0.18];
+  \draw[line width=0.5pt] (0,0.27) -- (0,-0.55);
+  \node[anchor=north] at (0,-0.58) {接抽气机};
+  \draw[line width=0.5pt] (-1.15,0.55) -- (-1.15,1.15) -- (1.15,1.15) -- (1.15,0.55);
+  \node[anchor=south] at (0,1.18) {高压直流电源};
+  \node at (-0.55,1.15) {$+$};
+  \node at (0.55,1.15) {$-$};
+\end{tikzpicture}%
+}
 \caption{图 2.59 钢薄气体里的放电}
 \end{figure}
 
@@ -13563,7 +14168,14 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.1 天然磁体}]{assets/physics-3/fig-p0203-01.png}}
+% fig-alt: 图3.1：天然磁体（条形）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) rectangle (2.15,0.45);
+  \node at (0.35,0.22) {N};
+  \node at (1.80,0.22) {S};
+\end{tikzpicture}%
+}
 \caption{图3.1 天然磁体}
 \end{figure}
 
@@ -13571,7 +14183,17 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.2 常用的几种形状的永磁体}]{assets/physics-3/fig-p0203-02.png}}
+% fig-alt: 图3.2：条形、蹄形、针形永磁体
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0.85) rectangle (1.35,1.15);
+  \node at (0.20,1.00) {N};
+  \node at (1.15,1.00) {S};
+  \draw[line width=0.7pt] (2.0,0.55) -- (2.0,1.15) -- (2.55,1.15) -- (2.55,0.55);
+  \draw[line width=0.7pt] (3.5,0.85) -- (4.15,1.15);
+  \draw[line width=0.7pt] (3.5,0.85) -- (4.15,0.55);
+\end{tikzpicture}%
+}
 \caption{图3.2 常用的几种形状的永磁体}
 \end{figure}
 
@@ -13980,7 +14602,26 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.9 磁电材料的一些应用}]{assets/physics-3/fig-p0206-01.png}}
+% fig-alt: 图3.9：磁电应用——电表、扬声器、喇叭
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (-0.85,1.15) -- (0.85,1.15) -- (1.05,1.55) -- (-1.05,1.55) -- cycle;
+  \draw[line width=0.45pt] (-0.75,1.25) -- (0.75,1.25);
+  \foreach \x in {-0.6,-0.3,0,0.3,0.6}
+    \draw[line width=0.35pt] (\x,1.25) -- (\x,1.45);
+  \draw[line width=0.7pt] (0,0.55) circle (0.45);
+  \draw[line width=0.5pt] (0,0.55) -- (0.35,1.15);
+  \draw[->,line width=0.45pt] (-0.55,0.15) arc[start angle=200,end angle=340,radius=0.55];
+  \begin{scope}[xshift=2.4cm]
+    \draw[line width=0.7pt] (0,0.55) -- (0.85,1.55) -- (0.85,-0.45) -- cycle;
+    \draw[line width=0.55pt] (0,0.35) rectangle (0.35,0.75);
+  \end{scope}
+  \begin{scope}[xshift=4.3cm]
+    \draw[line width=0.7pt] (0,0.55) -- (0.95,1.25) -- (0.95,-0.15) -- cycle;
+    \draw[line width=0.55pt] (-0.25,0.55) -- (0,0.55);
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图3.9 磁电材料的一些应用}
 \end{figure}
 
@@ -14080,7 +14721,14 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.12 李其磁体周围向磁力线}]{assets/physics-3/fig-p0208-02.png}}
+% fig-alt: 图3.12：条形磁体磁力线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-0.55,-0.15) rectangle (0.55,0.15);
+  \foreach \a in {20,40,60,120,140,160,200,220,240,300,320,340}
+    \draw[line width=0.4pt] (\a:0.25) -- (\a:0.95);
+\end{tikzpicture}%
+}
 \caption{图3.12 李其磁体周围向磁力线}
 \end{figure}
 
@@ -14088,7 +14736,17 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.13 两个同号磁极的磁力线}]{assets/physics-3/fig-p0209-01.png}}
+% fig-alt: 图3.13：两同号磁极间的磁力线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (-1.55,-0.45) rectangle (-0.35,0.45);
+  \draw[line width=0.75pt] (0.35,-0.45) rectangle (1.55,0.45);
+  \foreach \y in {-0.30,-0.10,0.10,0.30}
+    \draw[line width=0.4pt] (-0.35,\y) .. controls (0,\y*2.2) .. (0.35,\y);
+  \draw[line width=0.4pt] (-0.35,0.45) .. controls (0,1.15) .. (0.35,0.45);
+  \draw[line width=0.4pt] (-0.35,-0.45) .. controls (0,-1.15) .. (0.35,-0.45);
+\end{tikzpicture}%
+}
 \caption{图 3.13 两个同号磁极的磁力线}
 \end{figure}
 
@@ -14440,7 +15098,17 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 3.16 直线电流的磁场}]{assets/physics-3/fig-p0211-02.png}}
+% fig-alt: 图3.16：直线电流穿过纸板，同心磁力线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (-1.55,0) -- (1.55,0.45) -- (1.55,-0.15) -- (-1.55,-0.60) -- cycle;
+  \draw[line width=0.75pt] (0,-0.85) -- (0,1.15);
+  \draw[->,line width=0.5pt] (0,-1.15) -- (0,-0.90);
+  \node[anchor=west] at (0.10,-1.15) {电流方向};
+  \foreach \r in {0.25,0.45,0.65}
+    \draw[line width=0.4pt] (0,0.12) circle (\r);
+\end{tikzpicture}%
+}
 \caption{图 3.16 直线电流的磁场}
 \end{figure}
 
@@ -14540,7 +15208,17 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图3.19 对形电流的线中的磁力线}]{assets/physics-3/fig-p0212-02.png}}
+% fig-alt: 图3.19：环形电流穿过纸板
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-1.55,0.15) -- (1.55,0.55) -- (1.55,-0.05) -- (-1.55,-0.45) -- cycle;
+  \draw[line width=0.75pt] (-0.55,0.15) arc[start angle=180,end angle=0,x radius=0.55,y radius=0.45];
+  \draw[line width=0.75pt] (-0.55,0.15) -- (-0.55,-0.85);
+  \draw[line width=0.75pt] (0.55,0.15) -- (0.55,-0.85);
+  \draw[->,line width=0.5pt] (-0.55,-1.15) -- (-0.55,-0.90);
+  \draw[->,line width=0.5pt] (0.55,-0.90) -- (0.55,-1.15);
+\end{tikzpicture}%
+}
 \caption{图3.19 对形电流的线中的磁力线}
 \end{figure}
 
@@ -14655,7 +15333,16 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0213-02.png}}
+% fig-alt: 通电螺线管放在纸板上
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (-1.65,0) -- (1.65,0.35) -- (1.65,-0.25) -- (-1.65,-0.60) -- cycle;
+  \foreach \x in {-0.55,-0.35,-0.15,0.05,0.25,0.45}
+    \draw[line width=0.55pt] (\x,0.05) ellipse [x radius=0.22,y radius=0.35];
+  \draw[line width=0.45pt] (-0.75,0.05) -- (-0.75,0.55);
+  \draw[line width=0.45pt] (0.65,0.05) -- (0.65,0.55);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -15837,7 +16524,14 @@ B 跟通过管内的电流强度 I 以及线圈的匝数 n 成正比，跟螺线
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0227-01.png}}
+% fig-alt: 通电导线在磁场中受力
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \y in {0,0.25,...,1.25} \draw[->,line width=0.35pt] (-0.85,\y) -- (0.85,\y);
+  \draw[line width=0.75pt] (0,-0.15) -- (0,1.45);
+  \draw[->,line width=0.5pt] (0.15,0.65) -- (0.65,0.65);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -18129,7 +18823,13 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(d)}]{assets/physics-3/fig-p0254-04.png}}
+% fig-alt: 线圈与磁铁相对位置
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \y in {0.15,0.35,0.55,0.75} \draw[line width=0.55pt] (0,\y) ellipse [x radius=0.35,y radius=0.10];
+  \draw[line width=0.7pt] (1.15,0.15) rectangle (1.85,0.85);
+\end{tikzpicture}%
+}
 \caption{(d)}
 \end{figure}
 
@@ -19422,7 +20122,17 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.1 获得感生电流的实验(一)}]{assets/physics-3/fig-p0263-01.png}}
+% fig-alt: 图4.1：磁铁插入线圈接检流计
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \y in {0.15,0.35,0.55,0.75,0.95} \draw[line width=0.55pt] (0,\y) ellipse [x radius=0.40,y radius=0.10];
+  \draw[line width=0.7pt] (0,1.15) rectangle (0.35,1.85);
+  \node at (0.18,1.50) {N};
+  \draw[line width=0.5pt] (0.40,0.55) -- (1.15,0.55);
+  \draw[line width=0.7pt] (1.35,0.55) circle (0.18);
+  \node at (1.35,0.55) {$G$};
+\end{tikzpicture}%
+}
 \caption{图 4.1 获得感生电流的实验(一)}
 \end{figure}
 
@@ -19486,7 +20196,14 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.2 磁场和导线圈的相对运动}]{assets/physics-3/fig-p0263-03.png}}
+% fig-alt: 图4.2：线圈与磁场相对运动
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \y in {0.2,0.4,0.6} \draw[line width=0.55pt] (0,\y) ellipse [x radius=0.45,y radius=0.10];
+  \draw[line width=0.7pt] (1.15,0.15) rectangle (1.85,0.75);
+  \draw[->,line width=0.5pt] (0.55,0.40) -- (0.95,0.40);
+\end{tikzpicture}%
+}
 \caption{图4.2 磁场和导线圈的相对运动}
 \end{figure}
 
@@ -21648,7 +22365,13 @@ L 是个定值；对不同的线圈来说，自感系数一般是不同的。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.21 双线绕法}]{assets/physics-3/fig-p0289-03.png}}
+% fig-alt: 图4.21：双线绕法线圈
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[decorate,decoration={coil,aspect=0.5,segment length=4pt,amplitude=3pt},line width=0.6pt] (0,0.55) -- (1.85,0.55);
+  \draw[decorate,decoration={coil,aspect=0.5,segment length=4pt,amplitude=3pt},line width=0.45pt] (0,0.35) -- (1.85,0.35);
+\end{tikzpicture}%
+}
 \caption{图4.21 双线绕法}
 \end{figure}
 
@@ -22491,7 +23214,16 @@ P_{\mathrm{线}} \neq \frac{P_{\mathrm{总}}^{\mathrm{a}}}{U_{\mathrm{线}}^{2}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.26 涡电流的实验}]{assets/physics-3/fig-p0302-01.png}}
+% fig-alt: 图4.26：铝盘在磁极间转动（涡电流）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0.55) circle (0.70);
+  \draw[line width=0.65pt] (-0.35,1.05) rectangle (0.35,1.35);
+  \node at (0,1.20) {N};
+  \draw[line width=0.65pt] (-0.35,-0.25) rectangle (0.35,0.05);
+  \node at (0,-0.10) {S};
+\end{tikzpicture}%
+}
 \caption{图4.26 涡电流的实验}
 \end{figure}
 
@@ -22501,7 +23233,12 @@ P_{\mathrm{线}} \neq \frac{P_{\mathrm{总}}^{\mathrm{a}}}{U_{\mathrm{线}}^{2}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4.27 绝缘的薄硅钢片达制的铁心}]{assets/physics-3/fig-p0302-02.png}}
+% fig-alt: 图4.27：叠片铁心
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \x in {0,0.08,...,0.64} \draw[line width=0.45pt] (\x,0) rectangle (\x+0.06,1.15);
+\end{tikzpicture}%
+}
 \caption{图 4.27 绝缘的薄硅钢片达制的铁心}
 \end{figure}
 
@@ -25330,7 +26067,14 @@ U_{R} = \sqrt{3} U_{R 0} \tag{5.11}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5.13 直流发电机转子}]{assets/physics-3/fig-p0332-05.png}}
+% fig-alt: 图5.13：直流发电机转子示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0.55) circle (0.70);
+  \foreach \a in {0,45,...,315} \draw[line width=0.4pt] (0,0.55) -- ++(\a:0.70);
+  \draw[line width=0.55pt] (0.70,0.55) -- (1.35,0.55);
+\end{tikzpicture}%
+}
 \caption{图 5.13 直流发电机转子}
 \end{figure}
 
@@ -29672,7 +30416,26 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6.21 全波整流的波形图}]{assets/physics-3/fig-p0391-01.png}}
+% fig-alt: 图6.21：全波整流波形 $(a)\sim(f)$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\tiny,x=0.55cm,y=0.45cm]
+  \foreach \k/\lab in {5/a,3.6/b,2.2/c,0.8/d,-0.6/e,-2.0/f} {
+    \draw[->,line width=0.4pt] (0,\k) -- (8.2,\k);
+    \draw[->,line width=0.4pt] (0,\k-0.7) -- (0,\k+0.85);
+    \node[anchor=west] at (8.2,\k) {(\lab)};
+  }
+  \draw[line width=0.6pt] plot[domain=0:720,samples=73] (\x/90,{5+0.7*sin(\x)});
+  \draw[line width=0.6pt] plot[domain=0:720,samples=73] (\x/90,{3.6-0.7*sin(\x)});
+  \draw[line width=0.6pt] plot[domain=0:180,samples=20] (\x/90,{2.2+0.7*sin(\x)});
+  \draw[line width=0.6pt] plot[domain=360:540,samples=20] (\x/90,{2.2+0.7*sin(\x)});
+  \draw[line width=0.6pt] plot[domain=180:360,samples=20] (\x/90,{0.8+0.7*sin(\x-180)});
+  \draw[line width=0.6pt] plot[domain=540:720,samples=20] (\x/90,{0.8+0.7*sin(\x-180)});
+  \foreach \s in {0,2,4,6,8}
+    \draw[line width=0.6pt] plot[domain=0:180,samples=16] (\s+\x/90,{-0.6+0.55*sin(\x)});
+  \foreach \s in {0,2,4,6,8}
+    \draw[line width=0.6pt] plot[domain=0:180,samples=16] (\s+\x/90,{-2.0+0.55*sin(\x)});
+\end{tikzpicture}%
+}
 \caption{图 6.21 全波整流的波形图}
 \end{figure}
 
@@ -29713,7 +30476,24 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.22 D\_\{1\} 导通时的简化电路}]{assets/physics-3/fig-p0393-01.png}}
+% fig-alt: 图6.22：变压器全波整流，$D$ 导通简化电路
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.2) -- (0,1.6);
+  \foreach \y in {0.4,0.7,1.0,1.3} \draw[line width=0.5pt] (-0.18,\y) -- (0.18,\y);
+  \draw[line width=0.65pt] (0.45,0.2) -- (0.45,1.6);
+  \node[anchor=south] at (0.22,1.65) {$B$};
+  \draw[line width=0.5pt] (0.45,1.6) -- (0.45,2.05) -- (2.15,2.05) -- (2.15,1.15);
+  \draw[line width=0.55pt] (2.05,0.55) rectangle (2.35,1.15);
+  \node[anchor=west] at (2.40,0.85) {$R$};
+  \draw[line width=0.5pt] (2.15,0.55) -- (2.15,0) -- (0.45,0) -- (0.45,0.2);
+  \draw[line width=0.55pt] (0.45,0.85) -- (0.85,0.85);
+  \fill (0.95,0.85) -- (1.25,1.05) -- (1.25,0.65) -- cycle;
+  \draw[line width=0.55pt] (1.35,0.65) -- (1.35,1.05);
+  \node at (0.45,2.05) {$a$};
+  \node at (0.45,0) {$b$};
+\end{tikzpicture}%
+}
 \caption{图6.22 \(D_{1}\) 导通时的简化电路}
 \end{figure}
 
@@ -29734,7 +30514,28 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.23}]{assets/physics-3/fig-p0393-02.png}}
+% fig-alt: 图6.23：桥式整流电路
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.5);
+  \foreach \y in {0.5,0.8,1.1} \draw[line width=0.5pt] (-0.18,\y) -- (0.18,\y);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.5);
+  \node at (0.2,1.65) {$B$};
+  \draw[line width=0.5pt] (0.4,1.5) -- (0.4,2.0) -- (1.6,2.0);
+  \draw[line width=0.5pt] (0.4,0.3) -- (0.4,-0.15) -- (1.6,-0.15);
+  \draw[line width=0.55pt] (1.6,2.0) -- (2.3,1.0) -- (1.6,-0.15) -- (0.9,1.0) -- cycle;
+  \node at (2.05,1.55) {$D_1$};
+  \node at (2.05,0.45) {$D_2$};
+  \node at (1.15,0.45) {$D_3$};
+  \node at (1.15,1.55) {$D_4$};
+  \draw[line width=0.5pt] (2.3,1.0) -- (2.85,1.0);
+  \draw[line width=0.55pt] (2.75,0.55) rectangle (3.05,1.45);
+  \node[anchor=west] at (3.10,1.0) {$R$};
+  \draw[line width=0.5pt] (2.90,0.55) -- (2.90,-0.15) -- (1.6,-0.15);
+  \node at (0.4,2.0) {$a$};
+  \node at (0.4,-0.15) {$b$};
+\end{tikzpicture}%
+}
 \caption{图6.23}
 \end{figure}
 
@@ -29752,13 +30553,38 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.24 桥式整流工作时的简化电路}]{assets/physics-3/fig-p0394-01.png}}
+% fig-alt: 图6.24(a)：桥式整流导通路径
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.4);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.4);
+  \node at (0.2,1.55) {$B$};
+  \draw[line width=0.55pt] (1.5,1.85) -- (2.2,0.9) -- (1.5,-0.05) -- (0.8,0.9) -- cycle;
+  \draw[line width=0.5pt] (0.4,1.4) -- (0.4,1.85) -- (1.5,1.85);
+  \draw[line width=0.5pt] (2.2,0.9) -- (2.7,0.9);
+  \draw[line width=0.55pt] (2.6,0.45) rectangle (2.9,1.35);
+  \node[anchor=west] at (2.95,0.9) {$R$};
+  \node[anchor=north] at (1.5,-0.25) {(a)};
+\end{tikzpicture}%
+}
 \caption{图6.24 桥式整流工作时的简化电路}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.24 桥式整流工作时的简化电路}]{assets/physics-3/fig-p0394-02.png}}
+% fig-alt: 图6.24(b)：桥式整流另一导通路径
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.4);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.4);
+  \node at (0.2,1.55) {$B$};
+  \draw[line width=0.55pt] (1.5,1.85) -- (2.2,0.9) -- (1.5,-0.05) -- (0.8,0.9) -- cycle;
+  \draw[line width=0.5pt] (2.2,0.9) -- (2.7,0.9);
+  \draw[line width=0.55pt] (2.6,0.45) rectangle (2.9,1.35);
+  \node[anchor=west] at (2.95,0.9) {$R$};
+  \node[anchor=north] at (1.5,-0.25) {(b)};
+\end{tikzpicture}%
+}
 \caption{图6.24 桥式整流工作时的简化电路}
 \end{figure}
 
@@ -29770,7 +30596,20 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.25 桥式整流波形}]{assets/physics-3/fig-p0395-01.png}}
+% fig-alt: 图6.25：桥式整流波形 $(a)\sim(d)$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\tiny,x=0.5cm,y=0.4cm]
+  \foreach \k/\lab in {4.5/a,2.8/b,1.1/c,-0.6/d} {
+    \draw[->,line width=0.4pt] (0,\k) -- (8.2,\k);
+    \draw[->,line width=0.4pt] (0,\k-0.6) -- (0,\k+0.8);
+    \node[anchor=west] at (8.2,\k-0.15) {(\lab)};
+  }
+  \draw[line width=0.6pt] plot[domain=0:720,samples=73] (\x/90,{4.5+0.65*sin(\x)});
+  \foreach \s in {0,4} \draw[line width=0.6pt] plot[domain=0:180,samples=16] (\s+\x/90,{2.8+0.55*sin(\x)});
+  \foreach \s in {2,6} \draw[line width=0.6pt] plot[domain=0:180,samples=16] (\s+\x/90,{1.1+0.55*sin(\x)});
+  \foreach \s in {0,2,4,6} \draw[line width=0.6pt] plot[domain=0:180,samples=16] (\s+\x/90,{-0.6+0.5*sin(\x)});
+\end{tikzpicture}%
+}
 \caption{图6.25 桥式整流波形}
 \end{figure}
 
@@ -29785,7 +30624,22 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 6.26 桥式整流电路简便画法}]{assets/physics-3/fig-p0396-01.png}}
+% fig-alt: 图6.26：桥式整流简便画法（菱形中二极管）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.4);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.4);
+  \node at (0.2,1.55) {$B$};
+  \draw[line width=0.55pt] (1.5,1.7) -- (2.2,0.9) -- (1.5,0.1) -- (0.8,0.9) -- cycle;
+  \fill (1.35,0.9) -- (1.65,1.05) -- (1.65,0.75) -- cycle;
+  \draw[line width=0.5pt] (1.75,0.75) -- (1.75,1.05);
+  \draw[line width=0.5pt] (0.4,1.4) -- (0.4,1.7) -- (1.5,1.7);
+  \draw[line width=0.5pt] (2.2,0.9) -- (2.7,0.9);
+  \draw[line width=0.55pt] (2.6,0.45) rectangle (2.9,1.35);
+  \node[anchor=west] at (2.95,0.9) {$R$};
+  \node at (1.9,1.45) {$D_1\sim D_4$};
+\end{tikzpicture}%
+}
 \caption{图 6.26 桥式整流电路简便画法}
 \end{figure}
 
@@ -29812,7 +30666,20 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.27 图 a 的脉动直流可看作由 b, c, d 的分量迭加而成}]{assets/physics-3/fig-p0397-01.png}}
+% fig-alt: 图6.27：脉动直流分解为直流与交流分量 $(a)\sim(d)$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\tiny,x=0.5cm,y=0.4cm]
+  \foreach \k/\lab in {4.2/a,2.6/b,1.0/c,-0.6/d} {
+    \draw[->,line width=0.4pt] (0,\k) -- (7.6,\k);
+    \draw[->,line width=0.4pt] (0,\k-0.55) -- (0,\k+0.75);
+    \node[anchor=east] at (0,\k+0.55) {\lab};
+  }
+  \foreach \s in {0,2,4,6} \draw[line width=0.6pt] plot[domain=0:180,samples=16] (\s+\x/90,{4.2+0.55*sin(\x)});
+  \draw[line width=0.6pt] (0,2.95) -- (7.2,2.95);
+  \draw[line width=0.6pt] plot[domain=0:720,samples=73] (\x/90,{1.0+0.5*sin(\x)});
+  \draw[line width=0.6pt] plot[domain=0:720,samples=73] (\x/90,{-0.6+0.22*sin(2*\x)});
+\end{tikzpicture}%
+}
 \caption{图6.27 图 \(a\) 的脉动直流可看作由 \(b, c, d\) 的分量迭加而成}
 \end{figure}
 
@@ -29834,13 +30701,36 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0398-01.png}}
+% fig-alt: 桥式整流加电容滤波 $(a)$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.4);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.4);
+  \draw[line width=0.55pt] (1.5,1.7) -- (2.2,0.9) -- (1.5,0.1) -- (0.8,0.9) -- cycle;
+  \fill (1.35,0.9) -- (1.65,1.05) -- (1.65,0.75) -- cycle;
+  \draw[line width=0.5pt] (2.2,0.9) -- (2.55,0.9) -- (2.55,1.35);
+  \draw[line width=0.55pt] (2.40,1.35) -- (2.70,1.35);
+  \draw[line width=0.55pt] (2.40,1.50) -- (2.70,1.50);
+  \node[anchor=west] at (2.75,1.42) {$C$};
+  \draw[line width=0.55pt] (2.9,0.45) rectangle (3.2,1.35);
+  \node[anchor=west] at (3.25,0.9) {$R$};
+  \node[anchor=north] at (1.5,-0.15) {(a)};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0398-02.png}}
+% fig-alt: 电容滤波后电压波形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0) -- (4.4,0) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.55) node[above] {$u$};
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] plot[domain=0:720,samples=40] (\x/180,{0.15+0.9*abs(sin(\x))});
+  \draw[line width=0.7pt] (0,1.05) -- (0.5,1.15) -- (1.1,0.85) -- (1.6,1.15) -- (2.2,0.85) -- (2.7,1.15) -- (3.3,0.85) -- (3.8,1.10);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -29859,19 +30749,51 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0399-01.png}}
+% fig-alt: 桥式整流加电感 $L$ 与电阻 $R$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.4);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.4);
+  \draw[line width=0.55pt] (1.5,1.7) -- (2.2,0.9) -- (1.5,0.1) -- (0.8,0.9) -- cycle;
+  \draw[line width=0.5pt] (2.2,0.9) -- (2.55,0.9) -- (2.55,1.45);
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3.5pt,amplitude=2.5pt},line width=0.55pt] (2.55,1.45) -- (2.55,0.85);
+  \node[anchor=west] at (2.70,1.15) {$L$};
+  \draw[line width=0.55pt] (2.45,0.35) rectangle (2.75,0.85);
+  \node[anchor=west] at (2.80,0.60) {$R$};
+  \node[anchor=north] at (1.5,-0.15) {(a)};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0399-02.png}}
+% fig-alt: 电感滤波电路（同 6.28a）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.4);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.4);
+  \draw[line width=0.55pt] (1.4,1.65) -- (2.1,0.85) -- (1.4,0.05) -- (0.7,0.85) -- cycle;
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3.5pt,amplitude=2.5pt},line width=0.55pt] (2.3,1.35) -- (2.3,0.75);
+  \node[anchor=west] at (2.45,1.05) {$L$};
+  \draw[line width=0.55pt] (2.2,0.25) rectangle (2.5,0.75);
+  \node[anchor=west] at (2.55,0.50) {$R$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0399-03.png}}
+% fig-alt: 电感滤波电压波形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0) -- (4.2,0) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.45) node[above] {$u$};
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] plot[domain=0:720,samples=40] (\x/180,{0.9*abs(sin(\x))});
+  \draw[line width=0.7pt] plot[domain=0:720,samples=40] (\x/180,{0.55+0.22*sin(2*\x)});
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -29892,7 +30814,27 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0400-01.png}}
+% fig-alt: $\pi$ 型 LC 滤波：输入、$C_1,L,C_2$、输出
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0,0.85) -- (1.15,0.85);
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=2.5pt},line width=0.55pt] (1.15,0.85) -- (1.85,0.85);
+  \node[anchor=south] at (1.50,0.95) {$L$};
+  \draw[line width=0.55pt] (1.85,0.85) -- (2.55,0.85);
+  \draw[line width=0.55pt] (0.70,0.85) -- (0.70,0.15);
+  \draw[line width=0.55pt] (0.55,0.15) -- (0.85,0.15);
+  \draw[line width=0.55pt] (0.55,0.00) -- (0.85,0.00);
+  \node[anchor=north] at (0.70,-0.05) {$C_1$};
+  \draw[line width=0.55pt] (2.20,0.85) -- (2.20,0.15);
+  \draw[line width=0.55pt] (2.05,0.15) -- (2.35,0.15);
+  \draw[line width=0.55pt] (2.05,0.00) -- (2.35,0.00);
+  \node[anchor=north] at (2.20,-0.05) {$C_2$};
+  \draw[line width=0.55pt] (0,0.85) -- (0,0) -- (2.55,0) -- (2.55,0.85);
+  \node[anchor=east] at (0,0.40) {输入};
+  \node[anchor=west] at (2.55,0.40) {输出};
+  \node[anchor=north] at (1.25,-0.45) {(a)};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -29900,7 +30842,23 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0400-02.png}}
+% fig-alt: 桥式整流加 $\pi$ 型滤波 $R_1,C_1,C_2,R_2$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.3);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.3);
+  \draw[line width=0.55pt] (1.3,1.55) -- (1.9,0.85) -- (1.3,0.15) -- (0.7,0.85) -- cycle;
+  \draw[line width=0.5pt] (1.9,0.85) -- (2.3,0.85);
+  \draw[line width=0.55pt] (2.15,0.85) -- (2.15,0.25);
+  \node at (2.35,0.55) {$C_1$};
+  \draw[line width=0.55pt] (2.45,0.70) rectangle (2.85,1.00);
+  \node[anchor=south] at (2.65,1.02) {$R_1$};
+  \draw[line width=0.55pt] (3.05,0.85) -- (3.05,0.25);
+  \node at (3.25,0.55) {$C_2$};
+  \draw[line width=0.55pt] (3.20,0.45) rectangle (3.50,1.25);
+  \node[anchor=west] at (3.55,0.85) {$R_2$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -29935,7 +30893,23 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-3/fig-p0401-01.png}}
+% fig-alt: 半波整流：变压器、二极管 $D$、电容 $C$、负载 $R$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.25) -- (0,1.25);
+  \draw[line width=0.65pt] (0.4,0.25) -- (0.4,1.25);
+  \draw[line width=0.5pt] (0.4,1.25) -- (1.35,1.25);
+  \fill (1.35,1.25) -- (1.65,1.40) -- (1.65,1.10) -- cycle;
+  \draw[line width=0.5pt] (1.15,1.10) -- (1.15,1.40);
+  \node[anchor=south] at (1.40,1.45) {$D$};
+  \draw[line width=0.5pt] (1.65,1.25) -- (2.15,1.25);
+  \draw[line width=0.55pt] (2.00,1.25) -- (2.00,0.55);
+  \node at (2.20,0.90) {$C$};
+  \draw[line width=0.55pt] (2.15,0.55) rectangle (2.45,1.25);
+  \node[anchor=west] at (2.50,0.90) {$R$};
+  \draw[line width=0.5pt] (2.30,0.55) -- (2.30,0.25) -- (0.4,0.25);
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -29950,7 +30924,25 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第6题)}]{assets/physics-3/fig-p0401-02.png}}
+% fig-alt: 桥式整流另一画法（四二极管）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.4);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.4);
+  \draw[line width=0.5pt] (0.4,1.4) -- (0.4,1.85) -- (1.15,1.85);
+  \draw[line width=0.5pt] (0.4,0.3) -- (0.4,-0.15) -- (1.15,-0.15);
+  \draw[line width=0.5pt] (1.15,1.85) -- (1.15,-0.15);
+  \draw[line width=0.5pt] (1.85,1.85) -- (1.85,-0.15);
+  \node at (1.15,1.05) {$D_1$};
+  \node at (1.85,1.05) {$D_2$};
+  \node at (1.15,0.35) {$D_3$};
+  \node at (1.85,0.35) {$D_4$};
+  \draw[line width=0.55pt] (2.15,0.25) rectangle (2.45,1.45);
+  \node[anchor=west] at (2.50,0.85) {$R$};
+  \node at (0.4,1.85) {$a$};
+  \node at (0.4,-0.15) {$b$};
+\end{tikzpicture}%
+}
 \caption{(第6题)}
 \end{figure}
 
@@ -29967,7 +30959,21 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第8题)}]{assets/physics-3/fig-p0401-03.png}}
+% fig-alt: 二极管 $D_1,D_2$、检流计 $G$ 与负载 $R$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.5pt] (0,1.15) -- (1.15,1.15);
+  \draw[line width=0.7pt] (1.35,1.15) circle (0.20);
+  \node at (1.35,1.15) {$G$};
+  \draw[line width=0.5pt] (1.55,1.15) -- (2.55,1.15) -- (2.55,0);
+  \draw[line width=0.55pt] (2.40,0) rectangle (2.70,0.70);
+  \node[anchor=west] at (2.75,0.35) {$R$};
+  \draw[line width=0.5pt] (2.55,0) -- (0,0) -- (0,1.15);
+  \node[anchor=east] at (0,0.70) {$D_1$};
+  \draw[line width=0.5pt] (0,0.55) -- (2.55,0.55);
+  \node at (1.25,0.70) {$D_2$};
+\end{tikzpicture}%
+}
 \caption{(第8题)}
 \end{figure}
 
@@ -29987,25 +30993,52 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.31 PNP型晶体三极管结构示意图和符号}]{assets/physics-3/fig-p0402-01.png}}
-\caption{图6.31 PNP型晶体三极管结构示意图和符号}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.31 PNP型晶体三极管结构示意图和符号}]{assets/physics-3/fig-p0402-02.png}}
-\caption{图6.31 PNP型晶体三极管结构示意图和符号}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.31 PNP型晶体三极管结构示意图和符号}]{assets/physics-3/fig-p0402-03.png}}
-\caption{图6.31 PNP型晶体三极管结构示意图和符号}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.31 PNP型晶体三极管结构示意图和符号}]{assets/physics-3/fig-p0402-04.png}}
+% fig-alt: 图6.31 PNP 三极管结构 $(a)(b)$ 与符号 $(c)$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0.55) rectangle (1.55,1.25);
+  \node at (0.78,0.90) {$N$};
+  \draw[line width=0.7pt] (0.55,1.25) ellipse [x radius=0.35,y radius=0.22];
+  \fill[pattern=north east lines,pattern color=black!45] (0.55,1.25) ellipse [x radius=0.35,y radius=0.22];
+  \draw[line width=0.7pt] (0.55,0.55) ellipse [x radius=0.35,y radius=0.22];
+  \fill[pattern=north east lines,pattern color=black!45] (0.55,0.55) ellipse [x radius=0.35,y radius=0.22];
+  \draw[line width=0.5pt] (0.55,1.47) -- (0.55,1.85);
+  \node[anchor=south] at (0.55,1.88) {$c$};
+  \draw[line width=0.5pt] (0.55,0.33) -- (0.55,-0.05);
+  \node[anchor=north] at (0.55,-0.08) {$e$};
+  \draw[line width=0.5pt] (0,0.90) -- (-0.35,0.90);
+  \node[anchor=east] at (-0.38,0.90) {$b$};
+  \node[anchor=north] at (0.78,0.20) {(a)};
+  \begin{scope}[xshift=2.5cm]
+    \draw[line width=0.7pt] (0,0) rectangle (0.85,1.85);
+    \draw[line width=0.45pt] (0,0.62) -- (0.85,0.62);
+    \draw[line width=0.45pt] (0,1.23) -- (0.85,1.23);
+    \node at (0.42,1.54) {$P$};
+    \node at (0.42,0.92) {$N$};
+    \node at (0.42,0.31) {$P$};
+    \draw[line width=0.5pt] (0.42,1.85) -- (0.42,2.15);
+    \node[anchor=south] at (0.42,2.18) {$c$};
+    \draw[line width=0.5pt] (0.42,0) -- (0.42,-0.30);
+    \node[anchor=north] at (0.42,-0.33) {$e$};
+    \draw[line width=0.5pt] (0,0.92) -- (-0.35,0.92);
+    \node[anchor=east] at (-0.38,0.92) {$b$};
+    \node[anchor=north] at (0.42,-0.55) {(b)};
+  \end{scope}
+  \begin{scope}[xshift=4.6cm,yshift=0.7cm]
+    \draw[line width=0.7pt] (0,0) circle (0.42);
+    \draw[line width=0.55pt] (-0.22,-0.22) -- (-0.22,0.22);
+    \draw[->,line width=0.5pt] (-0.22,0.08) -- (0.22,0.28);
+    \draw[->,line width=0.5pt] (-0.22,-0.08) -- (0.22,-0.28);
+    \draw[line width=0.5pt] (-0.22,0) -- (-0.65,0);
+    \node[anchor=east] at (-0.68,0) {$b$};
+    \draw[line width=0.5pt] (0.22,0.28) -- (0.22,0.65);
+    \node[anchor=south] at (0.22,0.68) {$c$};
+    \draw[line width=0.5pt] (0.22,-0.28) -- (0.22,-0.65);
+    \node[anchor=north] at (0.22,-0.68) {$e$};
+    \node[anchor=north] at (0,-0.95) {(c)};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图6.31 PNP型晶体三极管结构示意图和符号}
 \end{figure}
 
@@ -30013,7 +31046,22 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0403-01.png}}
+% fig-alt: NPN 平面结构示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) rectangle (2.2,1.15);
+  \node at (1.1,0.35) {$N$};
+  \draw[line width=0.65pt] (0.55,0.55) rectangle (1.65,1.15);
+  \node at (0.85,0.85) {$P$};
+  \node at (1.35,0.85) {$N$};
+  \draw[line width=0.5pt] (0.85,1.15) -- (0.85,1.55);
+  \node[anchor=south] at (0.85,1.58) {$b$};
+  \draw[line width=0.5pt] (1.35,1.15) -- (1.35,1.55);
+  \node[anchor=south] at (1.35,1.58) {$e$};
+  \draw[line width=0.5pt] (1.1,0) -- (1.1,-0.35);
+  \node[anchor=north] at (1.1,-0.38) {$c$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -30021,7 +31069,26 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0403-02.png}}
+% fig-alt: NPN 分层：集电区、基区、发射区
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) rectangle (0.95,2.15);
+  \draw[line width=0.45pt] (0,0.72) -- (0.95,0.72);
+  \draw[line width=0.45pt] (0,1.43) -- (0.95,1.43);
+  \node at (0.48,1.78) {$N$};
+  \node at (0.48,1.08) {$P$};
+  \node at (0.48,0.36) {$N$};
+  \draw[line width=0.5pt] (0.48,2.15) -- (0.48,2.45);
+  \node[anchor=south] at (0.48,2.48) {$c$};
+  \draw[line width=0.5pt] (0.48,0) -- (0.48,-0.30);
+  \node[anchor=north] at (0.48,-0.33) {$e$};
+  \draw[line width=0.5pt] (0,1.08) -- (-0.40,1.08);
+  \node[anchor=east] at (-0.43,1.08) {$b$};
+  \node[anchor=east] at (-0.05,1.78) {集电区};
+  \node[anchor=west] at (1.00,1.08) {基区};
+  \node[anchor=east] at (-0.05,0.36) {发射区};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -30029,7 +31096,21 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-3/fig-p0403-03.png}}
+% fig-alt: NPN 三极管符号
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) circle (0.45);
+  \draw[line width=0.55pt] (-0.22,-0.22) -- (-0.22,0.22);
+  \draw[line width=0.5pt] (-0.22,0.10) -- (0.22,0.32);
+  \draw[->,line width=0.5pt] (-0.22,-0.10) -- (0.22,-0.32);
+  \draw[line width=0.5pt] (-0.22,0) -- (-0.70,0);
+  \node[anchor=east] at (-0.73,0) {$b$};
+  \draw[line width=0.5pt] (0.22,0.32) -- (0.22,0.70);
+  \node[anchor=south] at (0.22,0.73) {$c$};
+  \draw[line width=0.5pt] (0.22,-0.32) -- (0.22,-0.70);
+  \node[anchor=north] at (0.22,-0.73) {$e$};
+\end{tikzpicture}%
+}
 \caption{(c)}
 \end{figure}
 
@@ -30061,7 +31142,28 @@ c.~发射区与基区之间的 PN 结叫做发射结， 集电区与基区之间
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0405-01.png}}
+% fig-alt: 晶体管放大电路：基极偏置与集电极电源
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (1.55,0.85) circle (0.38);
+  \draw[line width=0.5pt] (1.38,0.70) -- (1.38,1.00);
+  \draw[->,line width=0.45pt] (1.38,0.78) -- (1.75,0.58);
+  \draw[line width=0.45pt] (1.38,0.92) -- (1.75,1.12);
+  \node[anchor=west] at (1.78,1.12) {$c$};
+  \node[anchor=west] at (1.78,0.58) {$e$};
+  \node[anchor=east] at (1.20,0.85) {$b$};
+  \draw[line width=0.5pt] (1.20,0.85) -- (0.55,0.85);
+  \draw[line width=0.7pt] (0.35,0.85) circle (0.18);
+  \node at (0.35,0.85) {$\mu$A};
+  \draw[line width=0.55pt] (-0.15,0.55) rectangle (0.15,1.15);
+  \node[anchor=east] at (-0.18,0.85) {$W$};
+  \draw[line width=0.5pt] (1.75,1.12) -- (1.75,1.55) -- (2.35,1.55);
+  \draw[line width=0.7pt] (2.55,1.55) circle (0.18);
+  \node at (2.55,1.55) {mA};
+  \foreach \y in {1.15,1.28,1.41} \draw[line width=0.5pt] (2.95,\y) -- (2.95,\y+0.08);
+  \node[anchor=west] at (3.05,1.28) {$E_c$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -30069,7 +31171,24 @@ c.~发射区与基区之间的 PN 结叫做发射结， 集电区与基区之间
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0405-02.png}}
+% fig-alt: 晶体管内部载流子与外电路
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0.7,0) rectangle (1.55,1.85);
+  \draw[line width=0.4pt] (0.7,0.62) -- (1.55,0.62);
+  \draw[line width=0.4pt] (0.7,1.23) -- (1.55,1.23);
+  \node at (1.12,1.54) {$P$};
+  \node at (1.12,0.92) {$N$};
+  \node at (1.12,0.31) {$P$};
+  \draw[->,line width=0.55pt] (1.12,0.45) -- (1.12,1.70);
+  \draw[line width=0.5pt] (0.7,0.92) -- (0.15,0.92);
+  \node[anchor=east] at (0.12,0.92) {$b$};
+  \draw[line width=0.55pt] (-0.35,0.55) rectangle (-0.05,1.15);
+  \node[anchor=east] at (-0.38,0.85) {$W$};
+  \foreach \y in {0.85,0.98,1.11} \draw[line width=0.5pt] (2.05,\y) -- (2.05,\y+0.08);
+  \node[anchor=west] at (2.15,1.00) {$E_c$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -30223,7 +31342,27 @@ W，使基极电流 \(I_{b}\) 从小逐渐增大，每调节一次 W，记下相
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.34 晶体管中载流子的运动}]{assets/physics-3/fig-p0408-01.png}}
+% fig-alt: 图6.34：PNP 管内载流子与 $I_b,I_c,I_e$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) rectangle (1.35,2.25);
+  \draw[line width=0.45pt] (0,0.75) -- (1.35,0.75);
+  \draw[line width=0.45pt] (0,1.50) -- (1.35,1.50);
+  \node at (0.68,1.88) {$P$};
+  \node at (0.68,1.12) {$N$};
+  \node at (0.68,0.38) {$P$};
+  \draw[->,line width=0.5pt] (0.68,0.20) -- (0.68,2.10);
+  \draw[line width=0.5pt] (0,1.12) -- (-0.55,1.12);
+  \node[anchor=east] at (-0.58,1.12) {$b$};
+  \draw[line width=0.55pt] (-0.95,0.75) rectangle (-0.65,1.15);
+  \node[anchor=east] at (-0.98,0.95) {$R_b$};
+  \foreach \y in {1.55,1.68,1.81} \draw[line width=0.5pt] (1.85,\y) -- (1.85,\y+0.08);
+  \node[anchor=west] at (1.95,1.70) {$E_c$};
+  \draw[line width=0.5pt] (0.68,2.25) -- (0.68,2.55) -- (1.85,2.55) -- (1.85,1.90);
+  \node[anchor=south] at (0.68,2.58) {$c$};
+  \node[anchor=north] at (0.68,-0.05) {$e$};
+\end{tikzpicture}%
+}
 \caption{图6.34 晶体管中载流子的运动}
 \end{figure}
 
@@ -30312,7 +31451,32 @@ W，使基极电流 \(I_{b}\) 从小逐渐增大，每调节一次 W，记下相
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.35}]{assets/physics-3/fig-p0411-01.png}}
+% fig-alt: 图6.35：阻容耦合放大电路
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (1.55,0.85) circle (0.32);
+  \draw[line width=0.5pt] (1.40,0.70) -- (1.40,1.00);
+  \draw[->,line width=0.45pt] (1.40,0.78) -- (1.72,0.58);
+  \draw[line width=0.45pt] (1.40,0.92) -- (1.72,1.12);
+  \draw[line width=0.5pt] (1.40,0.85) -- (0.85,0.85);
+  \draw[line width=0.55pt] (0.70,0.85) -- (0.70,0.85);
+  \draw[line width=0.55pt] (0.55,0.78) -- (0.85,0.78);
+  \draw[line width=0.55pt] (0.55,0.92) -- (0.85,0.92);
+  \node[anchor=south] at (0.70,0.95) {$C_1$};
+  \draw[line width=0.55pt] (0.85,0.85) -- (0.85,0.25);
+  \draw[line width=0.55pt] (0.70,0.05) rectangle (1.00,0.55);
+  \node[anchor=west] at (1.05,0.30) {$R_b$};
+  \draw[line width=0.55pt] (1.72,1.12) -- (1.72,1.55);
+  \draw[line width=0.55pt] (1.55,1.55) rectangle (1.90,1.95);
+  \node[anchor=east] at (1.52,1.75) {$R_c$};
+  \foreach \y in {0.55,0.68,0.81} \draw[line width=0.5pt] (2.45,\y) -- (2.45,\y+0.08);
+  \node[anchor=west] at (2.55,0.70) {$E_c$};
+  \draw[line width=0.5pt] (0,0.85) -- (0.55,0.85);
+  \node[anchor=east] at (0,0.85) {1};
+  \draw[line width=0.5pt] (0,0) -- (1.72,0);
+  \node[anchor=east] at (0,0) {2};
+\end{tikzpicture}%
+}
 \caption{图6.35}
 \end{figure}
 
@@ -30393,7 +31557,22 @@ U_{\mathrm{ce}} = E_{0} - I_{0} R_{0} = (6 - 1 \times 10^{- 3} \times 3 \times 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(4)}]{assets/physics-3/fig-p0413-01.png}}
+% fig-alt: 放大电路接毫伏表，$\beta=50$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (1.45,0.85) circle (0.28);
+  \draw[line width=0.45pt] (1.32,0.72) -- (1.32,0.98);
+  \draw[->,line width=0.4pt] (1.32,0.78) -- (1.60,0.58);
+  \draw[line width=0.4pt] (1.32,0.92) -- (1.60,1.12);
+  \draw[line width=0.55pt] (1.45,1.35) rectangle (1.80,1.75);
+  \node[anchor=east] at (1.42,1.55) {$R_c$};
+  \draw[line width=0.55pt] (0.85,0.25) rectangle (1.15,0.70);
+  \node at (1.00,0.48) {$R_b$};
+  \foreach \y in {0.55,0.68,0.81} \draw[line width=0.5pt] (2.25,\y) -- (2.25,\y+0.08);
+  \node[anchor=west] at (2.35,0.70) {$E_c$};
+  \node at (1.00,1.15) {$\beta=50$};
+\end{tikzpicture}%
+}
 \caption{(4)}
 \end{figure}
 
@@ -30401,7 +31580,15 @@ U_{\mathrm{ce}} = E_{0} - I_{0} R_{0} = (6 - 1 \times 10^{- 3} \times 3 \times 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0413-02.png}}
+% fig-alt: 基极电流阶跃 $20\,\mu$A
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0) -- (2.6,0) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.35) node[above] {$I_b$};
+  \draw[line width=0.7pt] (0,0.85) -- (1.85,0.85) -- (1.85,0);
+  \node[anchor=south] at (0.90,0.88) {$20\,\mu$A};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -30409,7 +31596,15 @@ U_{\mathrm{ce}} = E_{0} - I_{0} R_{0} = (6 - 1 \times 10^{- 3} \times 3 \times 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(2)}]{assets/physics-3/fig-p0413-03.png}}
+% fig-alt: 集电极电流阶跃 $1$ mA
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0) -- (2.6,0) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.35) node[above] {$I_c$};
+  \draw[line width=0.7pt] (0,0.95) -- (1.85,0.95) -- (1.85,0);
+  \node[anchor=south] at (0.90,0.98) {$1$ mA};
+\end{tikzpicture}%
+}
 \caption{(2)}
 \end{figure}
 
@@ -30417,7 +31612,17 @@ U_{\mathrm{ce}} = E_{0} - I_{0} R_{0} = (6 - 1 \times 10^{- 3} \times 3 \times 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(d)}]{assets/physics-3/fig-p0413-04.png}}
+% fig-alt: 集电极电压：$U_{ce}=3$ V，$E_c=6$ V
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0) -- (2.8,0) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.65) node[above] {$U_{ce}$};
+  \draw[line width=0.7pt] (0,0.70) -- (2.15,0.70);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (0,1.40) -- (2.15,1.40);
+  \node[anchor=west] at (2.20,0.70) {$3$ V};
+  \node[anchor=west] at (2.20,1.40) {$6$ V};
+\end{tikzpicture}%
+}
 \caption{(d)}
 \end{figure}
 
@@ -30443,7 +31648,23 @@ U_{\mathrm{ce}} = E_{0} - I_{0} R_{0} = (6 - 1 \times 10^{- 3} \times 3 \times 1
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.37}]{assets/physics-3/fig-p0414-01.png}}
+% fig-alt: 图6.37：基极电流分解为直流 $20\,\mu$A 与交流
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\tiny]
+  \draw[->,line width=0.4pt] (0,0.4) -- (2.2,0.4);
+  \draw[->,line width=0.4pt] (0,0.4) -- (0,1.55);
+  \draw[line width=0.45pt] (0,0.85) -- (2.0,0.85);
+  \draw[line width=0.6pt] plot[domain=0:360,samples=36] (\x/180,{0.85+0.35*sin(\x)});
+  \node at (2.45,0.95) {$=$};
+  \draw[->,line width=0.4pt] (2.85,0.4) -- (4.7,0.4);
+  \draw[->,line width=0.4pt] (2.85,0.4) -- (2.85,1.55);
+  \draw[line width=0.6pt] (2.85,0.85) -- (4.5,0.85);
+  \node at (5.0,0.95) {$+$};
+  \draw[->,line width=0.4pt] (5.4,0.7) -- (7.2,0.7);
+  \draw[->,line width=0.4pt] (5.4,0.2) -- (5.4,1.35);
+  \draw[line width=0.6pt] plot[domain=0:360,samples=36] (5.4+\x/180,{0.7+0.35*sin(\x)});
+\end{tikzpicture}%
+}
 \caption{图6.37}
 \end{figure}
 
@@ -30469,7 +31690,23 @@ I_{c} + i_{c} = (1 + 0.5 \sin 6280 t) \text{毫安}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.38}]{assets/physics-3/fig-p0415-01.png}}
+% fig-alt: 图6.38：集电极电流分解为直流 $1$ mA 与交流
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\tiny]
+  \draw[->,line width=0.4pt] (0,0.4) -- (2.2,0.4);
+  \draw[->,line width=0.4pt] (0,0.4) -- (0,1.55);
+  \draw[line width=0.45pt] (0,0.85) -- (2.0,0.85);
+  \draw[line width=0.6pt] plot[domain=0:360,samples=36] (\x/180,{0.85+0.40*sin(\x)});
+  \node at (2.45,0.95) {$=$};
+  \draw[->,line width=0.4pt] (2.85,0.4) -- (4.7,0.4);
+  \draw[->,line width=0.4pt] (2.85,0.4) -- (2.85,1.55);
+  \draw[line width=0.6pt] (2.85,0.85) -- (4.5,0.85);
+  \node at (5.0,0.95) {$+$};
+  \draw[->,line width=0.4pt] (5.4,0.7) -- (7.2,0.7);
+  \draw[->,line width=0.4pt] (5.4,0.2) -- (5.4,1.35);
+  \draw[line width=0.6pt] plot[domain=0:360,samples=36] (5.4+\x/180,{0.7+0.40*sin(\x)});
+\end{tikzpicture}%
+}
 \caption{图6.38}
 \end{figure}
 
@@ -30499,7 +31736,23 @@ u_{c c} = - i_{c} R_{c} = - 1.5 \sin 6280 t \text{伏}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.39}]{assets/physics-3/fig-p0416-01.png}}
+% fig-alt: 图6.39：集电极电压分解为直流 $3$ V 与交流
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\tiny]
+  \draw[->,line width=0.4pt] (0,0.4) -- (2.2,0.4);
+  \draw[->,line width=0.4pt] (0,0.4) -- (0,1.65);
+  \draw[line width=0.45pt] (0,0.95) -- (2.0,0.95);
+  \draw[line width=0.6pt] plot[domain=0:360,samples=36] (\x/180,{0.95-0.40*sin(\x)});
+  \node at (2.45,0.95) {$=$};
+  \draw[->,line width=0.4pt] (2.85,0.4) -- (4.7,0.4);
+  \draw[->,line width=0.4pt] (2.85,0.4) -- (2.85,1.65);
+  \draw[line width=0.6pt] (2.85,0.95) -- (4.5,0.95);
+  \node at (5.0,0.95) {$+$};
+  \draw[->,line width=0.4pt] (5.4,0.7) -- (7.2,0.7);
+  \draw[->,line width=0.4pt] (5.4,0.2) -- (5.4,1.35);
+  \draw[line width=0.6pt] plot[domain=0:360,samples=36] (5.4+\x/180,{0.7-0.40*sin(\x)});
+\end{tikzpicture}%
+}
 \caption{图6.39}
 \end{figure}
 
@@ -30558,7 +31811,15 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0417-01.png}}
+% fig-alt: 基极电流过大导致饱和失真
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0) -- (2.8,0) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.55);
+  \draw[line width=0.45pt] (0,0.55) -- (2.5,0.55);
+  \draw[line width=0.65pt] plot[domain=0:360,samples=36] (\x/150,{0.55+0.55*sin(\x)});
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -30566,7 +31827,15 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0417-02.png}}
+% fig-alt: 集电极电压底部被削平（饱和）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0) -- (2.8,0) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.65);
+  \draw[line width=0.45pt] (0,0.85) -- (2.5,0.85);
+  \draw[line width=0.65pt] (0,0.85) -- (0.7,0.85) -- (1.0,1.35) -- (1.4,1.35) -- (1.7,0.35) -- (2.1,0.35) -- (2.4,0.85);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -30589,7 +31858,15 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0418-01.png}}
+% fig-alt: 基极电流过小导致截止失真
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0) -- (2.8,0) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.55);
+  \draw[line width=0.45pt] (0,0.35) -- (2.5,0.35);
+  \draw[line width=0.65pt] (0,0.35) -- (0.8,0.35) -- (1.15,1.25) -- (1.55,0.35) -- (2.5,0.35);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -30597,7 +31874,15 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0418-02.png}}
+% fig-alt: 集电极电压顶部被削平（截止）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0) -- (2.8,0) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.65);
+  \draw[line width=0.45pt] (0,0.70) -- (2.5,0.70);
+  \draw[line width=0.65pt] (0,0.70) -- (0.8,0.70) -- (1.1,0.25) -- (1.5,1.35) -- (1.9,1.35) -- (2.2,0.70);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -30625,7 +31910,25 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.42}]{assets/physics-3/fig-p0419-01.png}}
+% fig-alt: 图6.42：分压式偏置放大电路
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (1.35,0.70) circle (0.28);
+  \draw[line width=0.45pt] (1.22,0.58) -- (1.22,0.82);
+  \draw[->,line width=0.4pt] (1.22,0.64) -- (1.50,0.48);
+  \draw[line width=0.4pt] (1.22,0.76) -- (1.50,0.92);
+  \draw[line width=0.55pt] (1.15,1.25) rectangle (1.45,1.70);
+  \node[anchor=east] at (1.12,1.48) {$R_c$};
+  \draw[line width=0.55pt] (0.55,0.85) rectangle (0.85,1.35);
+  \node[anchor=east] at (0.52,1.10) {$R_b$};
+  \foreach \y in {0.40,0.53,0.66} \draw[line width=0.5pt] (2.15,\y) -- (2.15,\y+0.08);
+  \node[anchor=west] at (2.25,0.55) {$E_c$};
+  \draw[line width=0.5pt] (0,0.70) -- (0.40,0.70);
+  \node[anchor=east] at (0,0.70) {1};
+  \draw[line width=0.5pt] (0,0) -- (1.50,0);
+  \node[anchor=east] at (0,0) {2};
+\end{tikzpicture}%
+}
 \caption{图6.42}
 \end{figure}
 
@@ -30670,7 +31973,14 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 外形}]{assets/physics-3/fig-p0421-01.png}}
+% fig-alt: 电子管外形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0.35) ellipse [x radius=0.35,y radius=0.70];
+  \draw[line width=0.55pt] (-0.15,-0.35) -- (-0.15,-0.65);
+  \draw[line width=0.55pt] (0.15,-0.35) -- (0.15,-0.65);
+\end{tikzpicture}%
+}
 \caption{(a) 外形}
 \end{figure}
 
@@ -30678,7 +31988,15 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 结构}]{assets/physics-3/fig-p0421-02.png}}
+% fig-alt: 电子管内部结构示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) ellipse [x radius=0.40,y radius=0.75];
+  \draw[line width=0.5pt] (-0.18,0.25) -- (0.18,0.25);
+  \draw[line width=0.4pt,dash pattern=on 1.5pt off 1pt] (-0.18,0) -- (0.18,0);
+  \draw[line width=0.45pt] (-0.12,-0.35) arc[start angle=200,end angle=-20,radius=0.16];
+\end{tikzpicture}%
+}
 \caption{(b) 结构}
 \end{figure}
 
@@ -30686,7 +32004,19 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c) 符号}]{assets/physics-3/fig-p0421-03.png}}
+% fig-alt: 二极管真空管符号（阳极 $a$，灯丝 $f$）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) circle (0.55);
+  \draw[line width=0.55pt] (-0.22,0.15) -- (0.22,0.15);
+  \draw[line width=0.5pt] (0,0.15) -- (0,0.85);
+  \node[anchor=south] at (0,0.88) {$a$};
+  \draw[line width=0.5pt] (-0.18,-0.35) arc[start angle=200,end angle=-20,radius=0.22];
+  \draw[line width=0.5pt] (-0.15,-0.35) -- (-0.15,-0.70);
+  \draw[line width=0.5pt] (0.15,-0.35) -- (0.15,-0.70);
+  \node[anchor=north] at (0,-0.73) {$f(K)$};
+\end{tikzpicture}%
+}
 \caption{(c) 符号}
 \end{figure}
 
@@ -30696,7 +32026,14 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 旁热式阴极}]{assets/physics-3/fig-p0421-04.png}}
+% fig-alt: 旁热式阴极
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (0.35,1.15);
+  \draw[line width=0.5pt] (0.08,-0.25) -- (0.08,0.85);
+  \draw[line width=0.5pt] (0.27,-0.25) -- (0.27,0.85);
+\end{tikzpicture}%
+}
 \caption{(a) 旁热式阴极}
 \end{figure}
 
@@ -30704,7 +32041,21 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 符号}]{assets/physics-3/fig-p0421-05.png}}
+% fig-alt: 二极管真空管符号（阳极 $a$，阴极 $K$，灯丝 $f$）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) circle (0.55);
+  \draw[line width=0.55pt] (-0.22,0.18) -- (0.22,0.18);
+  \draw[line width=0.5pt] (0,0.18) -- (0,0.85);
+  \node[anchor=south] at (0,0.88) {$a$};
+  \draw[line width=0.5pt] (-0.20,-0.12) arc[start angle=200,end angle=-20,radius=0.22];
+  \draw[line width=0.5pt] (-0.18,-0.35) arc[start angle=200,end angle=-20,radius=0.20];
+  \draw[line width=0.5pt] (-0.15,-0.35) -- (-0.25,-0.70);
+  \draw[line width=0.5pt] (0.15,-0.35) -- (0.25,-0.70);
+  \node[anchor=east] at (-0.28,-0.70) {$f$};
+  \node[anchor=west] at (0.28,-0.70) {$K$};
+\end{tikzpicture}%
+}
 \caption{(b) 符号}
 \end{figure}
 
@@ -30724,7 +32075,19 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 阳极加正电压}]{assets/physics-3/fig-p0422-01.png}}
+% fig-alt: 二极管阳极加正电压，电子飞向阳极
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0.55) circle (0.70);
+  \draw[line width=0.55pt] (-0.28,0.85) -- (0.28,0.85);
+  \draw[line width=0.5pt] (-0.22,0.15) arc[start angle=200,end angle=-20,radius=0.25];
+  \foreach \x in {-0.20,0,0.20} \draw[->,line width=0.4pt] (\x,0.28) -- (\x,0.75);
+  \draw[line width=0.5pt] (0.28,0.85) -- (1.15,0.85) -- (1.15,1.35);
+  \draw[line width=0.7pt] (1.35,1.35) circle (0.18);
+  \node at (1.35,1.35) {mA};
+  \foreach \y in {0.55,0.68,0.81} \draw[line width=0.5pt] (1.85,\y) -- (1.85,\y+0.08);
+\end{tikzpicture}%
+}
 \caption{(a) 阳极加正电压}
 \end{figure}
 
@@ -30732,7 +32095,19 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 由波加负电压}]{assets/physics-3/fig-p0422-02.png}}
+% fig-alt: 二极管阳极加负电压，无阳极电流
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0.55) circle (0.70);
+  \draw[line width=0.55pt] (-0.28,0.85) -- (0.28,0.85);
+  \draw[line width=0.5pt] (-0.22,0.15) arc[start angle=200,end angle=-20,radius=0.25];
+  \foreach \x in {-0.20,0,0.20} \fill (\x,0.35) circle (0.8pt);
+  \draw[line width=0.5pt] (0.28,0.85) -- (1.15,0.85) -- (1.15,1.35);
+  \draw[line width=0.7pt] (1.35,1.35) circle (0.18);
+  \node at (1.35,1.35) {mA};
+  \foreach \y in {0.55,0.68,0.81} \draw[line width=0.5pt] (1.85,\y) -- (1.85,\y+0.08);
+\end{tikzpicture}%
+}
 \caption{(b) 由波加负电压}
 \end{figure}
 
@@ -30749,7 +32124,15 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0422-03.png}}
+% fig-alt: 三极管电路实验示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0.55) circle (0.55);
+  \draw[line width=0.5pt] (-0.22,0.75) -- (0.22,0.75);
+  \draw[line width=0.4pt,dash pattern=on 1.5pt off 1pt] (-0.22,0.55) -- (0.22,0.55);
+  \foreach \y in {0.25,0.38} \draw[line width=0.5pt] (1.15,\y) -- (1.15,\y+0.08);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -30757,7 +32140,18 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0422-04.png}}
+% fig-alt: 三极管符号：阳极 $A$、栅极 $G$、阴极 $K$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) ellipse [x radius=0.42,y radius=0.70];
+  \draw[line width=0.55pt] (-0.18,0.35) -- (0.18,0.35);
+  \node[anchor=west] at (0.45,0.35) {$A$};
+  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1pt] (-0.22,0.05) -- (0.22,0.05);
+  \node[anchor=west] at (0.45,0.05) {$G$};
+  \draw[line width=0.5pt] (-0.16,-0.35) arc[start angle=200,end angle=-20,radius=0.18];
+  \node[anchor=west] at (0.45,-0.45) {$K$};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -30767,7 +32161,21 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图6.47}]{assets/physics-3/fig-p0423-01.png}}
+% fig-alt: 图6.47：三极管放大实验电路
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (1.15,0.55) circle (0.55);
+  \draw[line width=0.5pt] (0.95,0.80) -- (1.35,0.80);
+  \draw[line width=0.4pt,dash pattern=on 1.5pt off 1pt] (0.90,0.55) -- (1.40,0.55);
+  \draw[line width=0.45pt] (0.95,0.25) arc[start angle=200,end angle=-20,radius=0.22];
+  \draw[line width=0.5pt] (1.35,0.80) -- (1.35,1.35);
+  \draw[line width=0.7pt] (1.55,1.35) circle (0.16);
+  \node at (1.55,1.35) {mA};
+  \foreach \y in {0.45,0.58,0.71} \draw[line width=0.5pt] (2.15,\y) -- (2.15,\y+0.08);
+  \draw[line width=0.55pt] (0.15,0.35) rectangle (0.40,0.85);
+  \foreach \y in {0.15,0.28} \draw[line width=0.5pt] (-0.15,\y) -- (-0.15,\y+0.08);
+\end{tikzpicture}%
+}
 \caption{图6.47}
 \end{figure}
 
@@ -30787,19 +32195,54 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0424-01.png}}
+% fig-alt: 多级放大电路示意（电阻分压网络）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\tiny]
+  \draw[line width=0.55pt] (0,1.55) rectangle (0.35,2.05);
+  \node at (0.18,1.80) {$R_1$};
+  \draw[line width=0.55pt] (0,0.85) rectangle (0.35,1.35);
+  \node at (0.18,1.10) {$R_3$};
+  \draw[line width=0.55pt] (0.85,1.55) rectangle (1.20,2.05);
+  \node at (1.02,1.80) {$R_2$};
+  \draw[line width=0.7pt] (1.85,1.15) circle (0.22);
+  \draw[line width=0.7pt] (2.85,1.15) circle (0.22);
+  \draw[line width=0.5pt] (0,2.35) -- (3.4,2.35);
+  \draw[line width=0.5pt] (0,0.35) -- (3.4,0.35);
+  \node[anchor=east] at (0,1.45) {1};
+  \node[anchor=east] at (0,0.85) {2};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0424-02.png}}
+% fig-alt: 电子管管脚顶视编号
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) circle (0.70);
+  \foreach \a/\n in {90/1,50/2,10/3,330/4,270/5,210/6,150/7}
+    {\fill (\a:0.40) circle (1.2pt); \node at (\a:0.58) {\n};}
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0424-03.png}}
+% fig-alt: 晶体管外形尺寸（单位 mm）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0) rectangle (0.55,1.15);
+  \draw[line width=0.55pt] (0.55,0.25) -- (1.35,0.25);
+  \draw[line width=0.55pt] (0.55,0.55) -- (1.35,0.55);
+  \draw[line width=0.55pt] (0.55,0.85) -- (1.35,0.85);
+  \draw[line width=0.4pt] (0,-0.15) -- (0.55,-0.15);
+  \node[anchor=north] at (0.28,-0.18) {6.5};
+  \draw[line width=0.4pt] (0.70,0) -- (0.70,1.15);
+  \node[anchor=west] at (0.75,0.58) {5.8};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -30913,7 +32356,22 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第5题)}]{assets/physics-3/fig-p0427-01.png}}
+% fig-alt: 输入 $u_i$、电阻与二极管并联输出 $u_o$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.5pt] (0,0.85) -- (0.85,0.85);
+  \draw[line width=0.55pt] (0.85,0.70) rectangle (1.25,1.00);
+  \node[anchor=south] at (1.05,1.02) {$R$};
+  \draw[line width=0.5pt] (1.25,0.85) -- (1.85,0.85);
+  \draw[line width=0.55pt] (1.70,0.15) rectangle (2.00,0.85);
+  \node[anchor=west] at (1.55,0.50) {$R$};
+  \fill (2.15,0.70) -- (2.45,0.85) -- (2.45,0.55) -- cycle;
+  \draw[line width=0.5pt] (2.05,0.55) -- (2.05,0.85);
+  \draw[line width=0.5pt] (1.85,0.85) -- (1.85,0.15) -- (0,0.15) -- (0,0.85);
+  \node[anchor=east] at (0,0.50) {$u_i$};
+  \node[anchor=west] at (2.55,0.50) {$u_o$};
+\end{tikzpicture}%
+}
 \caption{(第5题)}
 \end{figure}
 
@@ -30930,7 +32388,21 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第7题)}]{assets/physics-3/fig-p0428-01.png}}
+% fig-alt: 晶体管、$100\,\mathrm{k}\Omega$、毫安表、$1.5$ V
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0,0.70) rectangle (0.45,1.15);
+  \node at (0.22,0.92) {$100\,\mathrm{k}\Omega$};
+  \draw[line width=0.7pt] (1.15,0.35) circle (0.28);
+  \draw[line width=0.45pt] (1.02,0.22) -- (1.02,0.48);
+  \draw[->,line width=0.4pt] (1.02,0.28) -- (1.28,0.12);
+  \draw[line width=0.4pt] (1.02,0.42) -- (1.28,0.58);
+  \draw[line width=0.7pt] (1.15,1.15) circle (0.18);
+  \node at (1.15,1.15) {$\mu$A};
+  \foreach \y in {0.55,0.68} \draw[line width=0.5pt] (1.85,\y) -- (1.85,\y+0.08);
+  \node[anchor=west] at (1.95,0.70) {$1.5$ V};
+\end{tikzpicture}%
+}
 \caption{(第7题)}
 \end{figure}
 
@@ -30972,7 +32444,24 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.1 振荡电路}]{assets/physics-3/fig-p0429-01.png}}
+% fig-alt: 图7.1：振荡电路，$L$、$C$、开关 $K$、电池 $B$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=2.8pt},line width=0.6pt] (0,0.85) -- (0,0.15);
+  \node[anchor=east] at (-0.15,0.50) {$L$};
+  \draw[line width=0.7pt] (0.35,0.15) circle (0.16);
+  \node at (0.35,0.15) {$G$};
+  \draw[line width=0.55pt] (0.85,0.55) -- (1.05,0.55);
+  \draw[line width=0.55pt] (0.85,0.70) -- (1.05,0.70);
+  \node[anchor=south] at (0.95,0.75) {$C$};
+  \draw[line width=0.55pt] (1.55,0.25) rectangle (1.85,0.95);
+  \node[anchor=west] at (1.90,0.60) {$B$};
+  \draw[line width=0.5pt] (0,0.85) -- (0.70,1.15);
+  \node at (0.85,1.25) {$K$};
+  \node at (0.55,1.30) {2};
+  \node at (1.15,1.30) {1};
+\end{tikzpicture}%
+}
 \caption{图7.1 振荡电路}
 \end{figure}
 
@@ -30994,7 +32483,19 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0430-01.png}}
+% fig-alt: LC 回路：电容充电（上正下负）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \y in {0.15,0.35,0.55,0.75,0.95,1.15} \draw[line width=0.55pt] (0,\y) ellipse [x radius=0.18,y radius=0.08];
+  \draw[line width=0.5pt] (0,1.25) -- (1.15,1.25);
+  \draw[line width=0.5pt] (0,0.05) -- (1.15,0.05);
+  \draw[line width=0.7pt] (1.15,1.05) -- (1.55,1.05);
+  \draw[line width=0.7pt] (1.15,0.25) -- (1.55,0.25);
+  \foreach \x in {1.20,1.28,...,1.50} \draw[->,line width=0.35pt] (\x,1.00) -- (\x,0.30);
+  \node[anchor=west] at (1.60,1.05) {$+$};
+  \node[anchor=west] at (1.60,0.25) {$-$};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -31002,7 +32503,17 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0430-02.png}}
+% fig-alt: LC 放电，线圈磁场建立
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \y in {0.15,0.35,0.55,0.75,0.95,1.15} \draw[line width=0.55pt] (0,\y) ellipse [x radius=0.18,y radius=0.08];
+  \draw[line width=0.4pt] (0,0.65) ellipse [x radius=0.45,y radius=0.70];
+  \draw[->,line width=0.45pt] (0.55,1.25) -- (1.25,1.25);
+  \draw[->,line width=0.45pt] (1.25,0.05) -- (0.55,0.05);
+  \draw[line width=0.7pt] (1.25,1.05) -- (1.65,1.05);
+  \draw[line width=0.7pt] (1.25,0.25) -- (1.65,0.25);
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -31010,7 +32521,19 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(c)}]{assets/physics-3/fig-p0430-03.png}}
+% fig-alt: LC 反向充电（上负下正）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \y in {0.15,0.35,0.55,0.75,0.95,1.15} \draw[line width=0.55pt] (0,\y) ellipse [x radius=0.18,y radius=0.08];
+  \draw[line width=0.5pt] (0,1.25) -- (1.15,1.25);
+  \draw[line width=0.5pt] (0,0.05) -- (1.15,0.05);
+  \draw[line width=0.7pt] (1.15,1.05) -- (1.55,1.05);
+  \draw[line width=0.7pt] (1.15,0.25) -- (1.55,0.25);
+  \foreach \x in {1.20,1.28,...,1.50} \draw[->,line width=0.35pt] (\x,0.30) -- (\x,1.00);
+  \node[anchor=west] at (1.60,1.05) {$-$};
+  \node[anchor=west] at (1.60,0.25) {$+$};
+\end{tikzpicture}%
+}
 \caption{(c)}
 \end{figure}
 
@@ -31018,7 +32541,17 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(d)}]{assets/physics-3/fig-p0430-04.png}}
+% fig-alt: LC 反向放电
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \y in {0.15,0.35,0.55,0.75,0.95,1.15} \draw[line width=0.55pt] (0,\y) ellipse [x radius=0.18,y radius=0.08];
+  \draw[line width=0.4pt] (0,0.65) ellipse [x radius=0.45,y radius=0.70];
+  \draw[->,line width=0.45pt] (1.25,1.25) -- (0.55,1.25);
+  \draw[->,line width=0.45pt] (0.55,0.05) -- (1.25,0.05);
+  \draw[line width=0.7pt] (1.25,1.05) -- (1.65,1.05);
+  \draw[line width=0.7pt] (1.25,0.25) -- (1.65,0.25);
+\end{tikzpicture}%
+}
 \caption{(d)}
 \end{figure}
 
@@ -31026,7 +32559,18 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(e)}]{assets/physics-3/fig-p0430-05.png}}
+% fig-alt: LC 再次正向充电
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \y in {0.15,0.35,0.55,0.75,0.95,1.15} \draw[line width=0.55pt] (0,\y) ellipse [x radius=0.18,y radius=0.08];
+  \draw[line width=0.5pt] (0,1.25) -- (1.15,1.25);
+  \draw[line width=0.5pt] (0,0.05) -- (1.15,0.05);
+  \draw[line width=0.7pt] (1.15,1.05) -- (1.55,1.05);
+  \draw[line width=0.7pt] (1.15,0.25) -- (1.55,0.25);
+  \foreach \x in {1.20,1.28,...,1.50} \draw[->,line width=0.35pt] (\x,1.00) -- (\x,0.30);
+  \node[anchor=west] at (1.60,1.05) {$+$};
+\end{tikzpicture}%
+}
 \caption{(e)}
 \end{figure}
 
@@ -31079,7 +32623,19 @@ a、b、c、d、e 各个不同时刻的电流。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.3}]{assets/physics-3/fig-p0432-01.png}}
+% fig-alt: 图7.3：振荡电流正弦波形，标 $A,B,C,D,E$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0.70) -- (4.2,0.70) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.55) node[above] {$i$};
+  \draw[line width=0.65pt] plot[domain=0:540,samples=55] (\x/140,{0.70+0.55*sin(\x)});
+  \node at (0,0.70) {$A$};
+  \node at (0.65,1.30) {$B$};
+  \node at (1.15,0.70) {$C$};
+  \node at (1.80,0.15) {$D$};
+  \node at (2.45,0.70) {$E$};
+\end{tikzpicture}%
+}
 \caption{图7.3}
 \end{figure}
 
@@ -31100,13 +32656,26 @@ a、b、c、d、e 各个不同时刻的电流。
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0433-01.png}}
+% fig-alt: 阻尼振荡波形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0.55) -- (4.0,0.55);
+  \draw[line width=0.65pt] plot[domain=0:1080,samples=80] (\x/280,{0.55+0.50*exp(-\x/500)*sin(\x)});
+  \node[anchor=north] at (2.0,0.15) {(a)};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0433-02.png}}
+% fig-alt: 等幅振荡波形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0.55) -- (4.0,0.55);
+  \draw[line width=0.65pt] plot[domain=0:1080,samples=80] (\x/280,{0.55+0.45*sin(\x)});
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -31224,7 +32793,16 @@ f = \frac{1}{T^{\prime}} = \frac{1}{1.19 \times 10^{- 6}} \text{赫} = 810 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0436-01.png}}
+% fig-alt: 变化磁场穿过闭合回路产生感应电场
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) ellipse [x radius=1.05,y radius=0.42];
+  \foreach \x in {-0.7,-0.35,0,0.35,0.7} \draw[->,line width=0.4pt] (\x,-0.55) -- (\x,0.55);
+  \draw[line width=0.7pt] (0.85,0) circle (0.18);
+  \node at (0.85,0) {$G$};
+  \node[anchor=south] at (0,0.70) {$\Phi$ 增加};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -31232,7 +32810,15 @@ f = \frac{1}{T^{\prime}} = \frac{1}{1.19 \times 10^{- 6}} \text{赫} = 810 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0436-02.png}}
+% fig-alt: 变化磁场在空间激发涡旋电场
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) ellipse [x radius=1.05,y radius=0.42];
+  \foreach \x in {-0.7,-0.35,0,0.35,0.7} \draw[->,line width=0.4pt] (\x,-0.55) -- (\x,0.55);
+  \node[anchor=west] at (1.10,0) {$E$};
+  \node[anchor=south] at (0,0.70) {$\Phi$ 增加};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -31249,7 +32835,15 @@ f = \frac{1}{T^{\prime}} = \frac{1}{1.19 \times 10^{- 6}} \text{赫} = 810 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.6 变化的电场产生磁场}]{assets/physics-3/fig-p0437-01.png}}
+% fig-alt: 图7.6：变化电场产生磁场 $B$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) ellipse [x radius=1.05,y radius=0.42];
+  \foreach \x in {-0.7,-0.35,0,0.35,0.7} \draw[->,line width=0.4pt] (\x,-0.55) -- (\x,0.55);
+  \node[anchor=west] at (1.10,0) {$B$};
+  \node[anchor=south] at (0,0.70) {$E$ 增加};
+\end{tikzpicture}%
+}
 \caption{图7.6 变化的电场产生磁场}
 \end{figure}
 
@@ -31282,7 +32876,20 @@ f = \frac{1}{T^{\prime}} = \frac{1}{1.19 \times 10^{- 6}} \text{赫} = 810 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.7}]{assets/physics-3/fig-p0439-01.png}}
+% fig-alt: 图7.7：天线辐射的交变 $E$、$B$ 场
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (2.4,-0.85) -- (2.4,1.15);
+  \draw[line width=0.55pt] (2.15,1.15) -- (2.4,1.45) -- (2.65,1.15);
+  \node[anchor=south] at (2.4,1.48) {$A$};
+  \foreach \x in {0.4,1.2,2.0,2.8,3.6,4.4}
+    \draw[line width=0.55pt] (\x,0) ellipse [x radius=0.38,y radius=0.18];
+  \foreach \x in {0.8,1.6,3.2,4.0}
+    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (\x,0) circle (0.42);
+  \node at (0.4,0.35) {$B$};
+  \node at (0.8,0.55) {$E$};
+\end{tikzpicture}%
+}
 \caption{图7.7}
 \end{figure}
 
@@ -31302,7 +32909,17 @@ f = \frac{1}{T^{\prime}} = \frac{1}{1.19 \times 10^{- 6}} \text{赫} = 810 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.8 电磁波传播示意图}]{assets/physics-3/fig-p0439-02.png}}
+% fig-alt: 图7.8：电磁波 $E$、$B$ 互相垂直沿 $x$ 传播
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.5pt] (0,0) -- (3.6,0.55) node[right] {$x$};
+  \draw[->,line width=0.5pt] (0,0) -- (0,1.55) node[above] {$E$};
+  \draw[->,line width=0.5pt] (0,0) -- (1.15,-0.55) node[below] {$B$};
+  \draw[line width=0.6pt] plot[domain=0:360,samples=36] (\x/120,{0.55*sin(\x)});
+  \foreach \x/\s in {0.4/0.35,1.6/0.45,2.8/0.35}
+    \fill[pattern=north east lines,pattern color=black!40] (\x,-0.08) ellipse [x radius=\s,y radius=0.12];
+\end{tikzpicture}%
+}
 \caption{图 7.8 电磁波传播示意图}
 \end{figure}
 
@@ -31414,25 +33031,27 @@ c，可见，频率不同的电磁波波长不同，频率越高，电磁波的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.9 由闭合电路到开放电路}]{assets/physics-3/fig-p0442-01.png}}
-\caption{图 7.9 由闭合电路到开放电路}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.9 由闭合电路到开放电路}]{assets/physics-3/fig-p0442-02.png}}
-\caption{图 7.9 由闭合电路到开放电路}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.9 由闭合电路到开放电路}]{assets/physics-3/fig-p0442-03.png}}
-\caption{图 7.9 由闭合电路到开放电路}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.9 由闭合电路到开放电路}]{assets/physics-3/fig-p0442-04.png}}
+% fig-alt: 图7.9：由闭合振荡电路逐步开放为天线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.35) -- (0.55,0.35) -- (0.55,0.85) -- (0,0.85);
+  \foreach \y in {0.45,0.60,0.75} \draw[line width=0.45pt] (0.55,\y) ellipse [x radius=0.12,y radius=0.06];
+  \node[anchor=north] at (0.28,-0.05) {(a)};
+  \begin{scope}[xshift=2.0cm]
+    \draw[line width=0.55pt] (0.35,0.15) ellipse [x radius=0.45,y radius=0.55];
+    \draw[line width=0.55pt] (0.35,0.15) ellipse [x radius=0.65,y radius=0.75];
+    \foreach \y in {0.0,0.15,0.30} \draw[line width=0.45pt] (0.55,\y) ellipse [x radius=0.10,y radius=0.05];
+    \node[anchor=north] at (0.35,-0.55) {(b)};
+  \end{scope}
+  \begin{scope}[xshift=4.3cm]
+    \draw[line width=0.5pt] (0.4,-0.55) -- (0.4,1.15);
+    \foreach \y in {0.15,0.30,0.45} \draw[line width=0.45pt] (0.4,\y) ellipse [x radius=0.10,y radius=0.05];
+    \draw[line width=0.45pt] (0.4,0.30) ellipse [x radius=0.55,y radius=0.85];
+    \draw[line width=0.45pt] (0.4,0.30) ellipse [x radius=0.85,y radius=1.05];
+    \node[anchor=north] at (0.4,-0.75) {(c)};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 7.9 由闭合电路到开放电路}
 \end{figure}
 
@@ -31446,7 +33065,25 @@ c，可见，频率不同的电磁波波长不同，频率越高，电磁波的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.10}]{assets/physics-3/fig-p0442-05.png}}
+% fig-alt: 图7.10：振荡回路耦合天线 $L_1,L_2,C$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0,0.85) -- (0.85,0.85);
+  \draw[line width=0.55pt] (0.70,0.85) -- (0.70,0.25);
+  \draw[line width=0.55pt] (0.55,0.25) -- (0.85,0.25);
+  \draw[line width=0.55pt] (0.55,0.12) -- (0.85,0.12);
+  \node[anchor=east] at (0.50,0.18) {$C$};
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3.5pt,amplitude=2.2pt},line width=0.55pt] (1.15,0.25) -- (1.15,0.85);
+  \node[anchor=west] at (1.30,0.55) {$L_1$};
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3.5pt,amplitude=2.2pt},line width=0.55pt] (1.55,0.25) -- (1.55,0.85);
+  \node[anchor=west] at (1.70,0.55) {$L_2$};
+  \draw[line width=0.5pt] (1.55,0.85) -- (1.55,1.45);
+  \draw[line width=0.5pt] (1.40,1.45) -- (1.55,1.70) -- (1.70,1.45);
+  \draw[line width=0.5pt] (1.55,0.25) -- (1.55,-0.15);
+  \draw[line width=0.4pt] (1.40,-0.15) -- (1.70,-0.15);
+  \draw[line width=0.4pt] (1.45,-0.25) -- (1.65,-0.25);
+\end{tikzpicture}%
+}
 \caption{图7.10}
 \end{figure}
 
@@ -31478,7 +33115,14 @@ c，可见，频率不同的电磁波波长不同，频率越高，电磁波的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.11}]{assets/physics-3/fig-p0444-01.png}}
+% fig-alt: 图7.11：无线电发射天线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (0,1.55);
+  \draw[line width=0.55pt] (-0.25,1.55) -- (0,1.85) -- (0.25,1.55);
+  \draw[line width=0.45pt] (-0.45,0) -- (0.45,0);
+\end{tikzpicture}%
+}
 \caption{图 7.11}
 \end{figure}
 
@@ -31494,7 +33138,27 @@ c，可见，频率不同的电磁波波长不同，频率越高，电磁波的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.12}]{assets/physics-3/fig-p0445-01.png}}
+% fig-alt: 图7.12：无线电发射机方框图
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (0,0) rectangle (4.4,1.55);
+  \draw[line width=0.6pt] (0.15,0.85) rectangle (1.25,1.35);
+  \node at (0.70,1.10) {高频振荡器};
+  \draw[->,line width=0.45pt] (1.25,1.10) -- (1.55,1.10);
+  \draw[line width=0.6pt] (1.55,0.85) rectangle (2.35,1.35);
+  \node at (1.95,1.10) {调制器};
+  \draw[->,line width=0.45pt] (2.35,1.10) -- (2.65,1.10);
+  \draw[line width=0.6pt] (2.65,0.85) rectangle (3.85,1.35);
+  \node at (3.25,1.10) {高频放大器};
+  \draw[line width=0.5pt] (3.85,1.10) -- (4.15,1.10) -- (4.15,1.70);
+  \draw[line width=0.5pt] (4.00,1.70) -- (4.15,1.95) -- (4.30,1.70);
+  \draw[line width=0.6pt] (0.35,0.15) rectangle (1.45,0.55);
+  \node at (0.90,0.35) {音频放大器};
+  \draw[->,line width=0.45pt] (1.45,0.35) -- (1.95,0.35) -- (1.95,0.85);
+  \node[anchor=east] at (0.15,0.35) {话筒};
+  \node[anchor=north] at (2.2,-0.05) {发射机};
+\end{tikzpicture}%
+}
 \caption{图7.12}
 \end{figure}
 
@@ -31502,13 +33166,31 @@ c，可见，频率不同的电磁波波长不同，频率越高，电磁波的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.13}]{assets/physics-3/fig-p0445-02.png}}
+% fig-alt: 图7.13(a)：音频信号波形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0.55) -- (3.6,0.55) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.15);
+  \draw[line width=0.65pt] plot[domain=0:540,samples=50] (\x/160,{0.55+0.40*sin(\x)});
+  \node[anchor=north] at (1.8,0.15) {(a)};
+\end{tikzpicture}%
+}
 \caption{图7.13}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.13}]{assets/physics-3/fig-p0445-03.png}}
+% fig-alt: 图7.13(b)(c)：高频载波与调幅波
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,1.55) -- (3.8,1.55);
+  \draw[line width=0.55pt] plot[domain=0:1080,samples=70] (\x/300,{1.55+0.28*sin(\x)});
+  \node[anchor=north] at (1.9,1.15) {(b)};
+  \draw[->,line width=0.45pt] (0,0.45) -- (3.8,0.45);
+  \draw[line width=0.55pt] plot[domain=0:1080,samples=70] (\x/300,{0.45+(0.18+0.12*sin(\x/8))*sin(\x)});
+  \node[anchor=north] at (1.9,0.05) {(c)};
+\end{tikzpicture}%
+}
 \caption{图7.13}
 \end{figure}
 
@@ -31542,7 +33224,29 @@ c，可见，频率不同的电磁波波长不同，频率越高，电磁波的�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 7.14 不同波长的无线电波的传播}]{assets/physics-3/fig-p0447-01.png}}
+% fig-alt: 图7.14：地波、天波、超短波直线传播
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,1.55) arc[start angle=160,end angle=20,radius=3.2];
+  \draw[line width=0.5pt] (0.35,1.55) -- (0.35,1.95);
+  \draw[line width=0.5pt] (3.85,1.85) -- (3.85,2.25);
+  \draw[line width=0.4pt,dash pattern=on 2pt off 1.3pt] (0.35,1.95) arc[start angle=160,end angle=20,radius=3.0];
+  \node at (2.1,2.45) {长波和中波};
+  \begin{scope}[yshift=-1.35cm]
+    \draw[line width=0.65pt] (0,1.55) arc[start angle=160,end angle=20,radius=3.2];
+    \fill[black!12] (0.5,2.15) rectangle (3.7,2.55);
+    \node at (2.1,2.70) {电离层};
+    \draw[->,line width=0.45pt] (0.4,1.70) -- (1.3,2.35);
+    \draw[->,line width=0.45pt] (1.3,2.35) -- (2.4,1.80);
+    \node at (1.6,1.55) {短波};
+  \end{scope}
+  \begin{scope}[yshift=-2.7cm]
+    \draw[line width=0.65pt] (0,1.55) arc[start angle=160,end angle=20,radius=3.2];
+    \draw[line width=0.5pt] (0.4,1.70) -- (3.6,2.15);
+    \node at (2.1,2.35) {超短波};
+  \end{scope}
+\end{tikzpicture}%
+}
 \caption{图 7.14 不同波长的无线电波的传播}
 \end{figure}
 
@@ -31650,7 +33354,22 @@ I = \frac{E}{\sqrt{R^{2} + \left(\omega L - \frac{1}{\omega C}\right)^{2}}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0451-01.png}}
+% fig-alt: RLC 串联电路与谐振曲线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.15,1.55) rectangle (0.55,1.85);
+  \node[anchor=south] at (0.35,1.88) {$R$};
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3.5pt,amplitude=2pt},line width=0.55pt] (0.70,1.70) -- (1.25,1.70);
+  \node[anchor=south] at (0.98,1.80) {$L$};
+  \draw[line width=0.55pt] (1.45,1.55) -- (1.65,1.55);
+  \draw[line width=0.55pt] (1.45,1.85) -- (1.65,1.85);
+  \node[anchor=west] at (1.70,1.70) {$C$};
+  \draw[line width=0.5pt] (0,1.70) -- (0.15,1.70);
+  \draw[->,line width=0.45pt] (0,0) -- (2.6,0) node[right] {$f$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.15) node[above] {$i$};
+  \draw[line width=0.6pt] plot[smooth,tension=0.7] coordinates {(0.2,0.15) (0.7,0.25) (1.15,0.95) (1.35,0.95) (1.8,0.30) (2.3,0.18)};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -31707,7 +33426,19 @@ I（毫安）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.16}]{assets/physics-3/fig-p0452-01.png}}
+% fig-alt: 图7.16：天线耦合调谐回路
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.5pt] (0,1.55) -- (0,0.55);
+  \draw[line width=0.5pt] (-0.15,1.55) -- (0,1.80) -- (0.15,1.55);
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3.5pt,amplitude=2.2pt},line width=0.55pt] (0,0.55) -- (0,0.05);
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3.5pt,amplitude=2.2pt},line width=0.55pt] (0.45,0.05) -- (0.45,0.55);
+  \draw[line width=0.5pt] (0.45,0.55) -- (1.15,0.55);
+  \draw[line width=0.5pt] (0.45,0.05) -- (1.15,0.05);
+  \draw[line width=0.55pt] (0.85,0.20) -- (1.05,0.20);
+  \draw[line width=0.55pt] (0.85,0.40) -- (1.05,0.40);
+\end{tikzpicture}%
+}
 \caption{图7.16}
 \end{figure}
 
@@ -31723,7 +33454,18 @@ I（毫安）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.17}]{assets/physics-3/fig-p0452-02.png}}
+% fig-alt: 图7.17：铁心线圈接电源，两端漏磁
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0.35) rectangle (2.55,0.75);
+  \foreach \x in {0.15,0.35,0.55,0.75,0.95}
+    \draw[line width=0.55pt] (\x,0.20) -- (\x,0.90);
+  \draw[line width=0.5pt] (0.55,0.20) -- (0.55,-0.25) -- (1.55,-0.25) -- (1.55,0.20);
+  \foreach \x in {1.40,1.52} \draw[line width=0.5pt] (\x,-0.40) -- (\x,-0.10);
+  \foreach \a in {160,180,200} \draw[->,line width=0.35pt] (0,0.55) -- ++(\a:0.45);
+  \foreach \a in {-20,0,20} \draw[->,line width=0.35pt] (2.55,0.55) -- ++(\a:0.45);
+\end{tikzpicture}%
+}
 \caption{图7.17}
 \end{figure}
 
@@ -31737,7 +33479,15 @@ I（毫安）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/physics-3/fig-p0453-01.png}}
+% fig-alt: 耳机外形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0.35) ellipse [x radius=0.35,y radius=0.22];
+  \draw[line width=0.75pt] (0,0.55) ellipse [x radius=0.22,y radius=0.18];
+  \draw[line width=0.55pt] (0.20,0.45) .. controls (0.85,0.95) and (1.15,0.15) .. (1.25,-0.35);
+  \draw[line width=0.7pt] (1.25,-0.55) rectangle (1.45,0.15);
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -31745,7 +33495,16 @@ I（毫安）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/physics-3/fig-p0453-02.png}}
+% fig-alt: 耳机剖面：振动膜片与磁铁线圈
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) rectangle (1.55,1.05);
+  \draw[line width=0.5pt] (0.15,0.85) -- (1.40,0.85);
+  \foreach \y in {0.25,0.40,0.55,0.70} \draw[line width=0.5pt] (0.55,\y) -- (1.00,\y);
+  \node[anchor=south] at (0.78,1.10) {振动膜片};
+  \node[anchor=west] at (1.60,0.45) {磁铁};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -31782,7 +33541,19 @@ I（毫安）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.19}]{assets/physics-3/fig-p0454-01.png}}
+% fig-alt: 图7.19：矿石收音机电路
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.5pt] (0,1.55) -- (0,0.55);
+  \draw[line width=0.5pt] (-0.15,1.55) -- (0,1.80) -- (0.15,1.55);
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3pt,amplitude=2pt},line width=0.5pt] (0,0.55) -- (0,0.05);
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3pt,amplitude=2pt},line width=0.5pt] (0.40,0.05) -- (0.40,0.55);
+  \fill (0.70,0.85) -- (0.95,0.97) -- (0.95,0.73) -- cycle;
+  \node[anchor=south] at (0.85,1.00) {$D$};
+  \draw[line width=0.55pt] (1.35,0.25) rectangle (1.65,0.85);
+  \node[anchor=west] at (1.70,0.55) {耳机};
+\end{tikzpicture}%
+}
 \caption{图7.19}
 \end{figure}
 
@@ -31790,7 +33561,20 @@ I（毫安）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.20}]{assets/physics-3/fig-p0454-02.png}}
+% fig-alt: 图7.20：调幅、检波、音频波形
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\tiny]
+  \draw[->,line width=0.4pt] (0,2.0) -- (3.6,2.0);
+  \draw[line width=0.5pt] plot[domain=0:1080,samples=60] (\x/320,{2.0+(0.15+0.12*sin(\x/8))*sin(\x)});
+  \node[anchor=east] at (0,2.0) {(a)};
+  \draw[->,line width=0.4pt] (0,1.05) -- (3.6,1.05);
+  \draw[line width=0.5pt] plot[domain=0:1080,samples=60] (\x/320,{1.05+(0.15+0.12*sin(\x/8))*abs(sin(\x))});}
+  \node[anchor=east] at (0,1.05) {(b)};
+  \draw[->,line width=0.4pt] (0,0.25) -- (3.6,0.25);
+  \draw[line width=0.55pt] plot[domain=0:540,samples=40] (\x/160,{0.25+0.18*sin(\x)});
+  \node[anchor=east] at (0,0.25) {(c)};
+\end{tikzpicture}%
+}
 \caption{图7.20}
 \end{figure}
 
@@ -31807,7 +33591,21 @@ I（毫安）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.21}]{assets/physics-3/fig-p0455-01.png}}
+% fig-alt: 图7.21：来复式收音机电路
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.5pt] (0,1.35) -- (0,0.45);
+  \draw[line width=0.5pt] (-0.12,1.35) -- (0,1.55) -- (0.12,1.35);
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3pt,amplitude=2pt},line width=0.5pt] (0,0.45) -- (0,0);
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3pt,amplitude=2pt},line width=0.5pt] (0.40,0) -- (0.40,0.45);
+  \fill (0.70,0.70) -- (0.95,0.82) -- (0.95,0.58) -- cycle;
+  \node at (0.85,0.95) {$D$};
+  \draw[line width=0.7pt] (2.15,0.55) circle (0.22);
+  \node[anchor=west] at (2.40,0.55) {BG};
+  \draw[line width=0.55pt] (1.55,0.85) rectangle (1.85,1.25);
+  \node at (1.70,1.05) {$R_2$};
+\end{tikzpicture}%
+}
 \caption{图7.21}
 \end{figure}
 
@@ -31858,13 +33656,33 @@ I（毫安）
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.22}]{assets/physics-3/fig-p0457-01.png}}
+% fig-alt: 图7.22(a)：雷达主波脉冲
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0.55) -- (3.8,0.55) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.25);
+  \foreach \s in {0.4,1.7,3.0}
+    \draw[line width=0.55pt] plot[domain=0:360,samples=20] (\s+\x/900,{0.55+0.35*sin(\x)*exp(-\x/200)});
+  \node[anchor=south] at (1.9,1.05) {主波};
+  \node[anchor=north] at (1.9,0.15) {(a)};
+\end{tikzpicture}%
+}
 \caption{图7.22}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.22}]{assets/physics-3/fig-p0457-02.png}}
+% fig-alt: 图7.22(b)：雷达回波
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0.55) -- (3.8,0.55) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.25);
+  \foreach \s in {1.2,2.5}
+    \draw[line width=0.55pt] plot[domain=0:360,samples=20] (\s+\x/900,{0.55+0.28*sin(\x)*exp(-\x/200)});
+  \node[anchor=south] at (1.9,1.00) {回波};
+  \node[anchor=north] at (1.9,0.15) {(b)};
+\end{tikzpicture}%
+}
 \caption{图7.22}
 \end{figure}
 
@@ -31886,7 +33704,20 @@ S = \frac{1}{2} 3 \times 10^{8} \times 500 \times 10^{- 6} \text{米} = 75 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.23}]{assets/physics-3/fig-p0458-01.png}}
+% fig-alt: 图7.23：示波屏上主脉冲 $A$ 与回波 $A'$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0.55) circle (1.15);
+  \draw[->,line width=0.4pt] (-0.85,0.15) -- (0.95,0.15);
+  \draw[line width=0.55pt] (-0.55,0.15) -- (-0.55,0.85) -- (-0.35,0.15);
+  \draw[line width=0.55pt] (0.15,0.15) -- (0.15,0.45) -- (0.28,0.15);
+  \node at (-0.55,1.00) {$A$};
+  \node at (0.15,0.60) {$A'$};
+  \node at (-0.55,-0.05) {0};
+  \node at (0.15,-0.05) {50};
+  \node at (0.70,-0.05) {100};
+\end{tikzpicture}%
+}
 \caption{图7.23}
 \end{figure}
 
@@ -31894,7 +33725,19 @@ S = \frac{1}{2} 3 \times 10^{8} \times 500 \times 10^{- 6} \text{米} = 75 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.24}]{assets/physics-3/fig-p0458-02.png}}
+% fig-alt: 图7.24：雷达测飞机的斜距、高度、方位
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0,0) -- (3.2,0.35);
+  \fill (0.15,0.05) circle (1.2pt);
+  \draw[line width=0.5pt] (0.15,0.05) -- (2.15,1.55);
+  \draw[line width=0.5pt] (2.15,1.55) -- (2.15,0.25);
+  \draw[line width=0.45pt] (0.15,0.05) -- (1.15,0.15);
+  \node at (1.15,0.95) {斜距};
+  \node[anchor=west] at (2.20,0.90) {高度};
+  \node at (1.6,1.70) {飞机};
+\end{tikzpicture}%
+}
 \caption{图7.24}
 \end{figure}
 
@@ -31916,7 +33759,14 @@ S = \frac{1}{2} 3 \times 10^{8} \times 500 \times 10^{- 6} \text{米} = 75 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.25}]{assets/physics-3/fig-p0459-01.png}}
+% fig-alt: 图7.25：雷达天线示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) -- (0.85,0.85);
+  \draw[line width=0.65pt] (0.55,0.55) parabola (1.55,1.35);
+  \draw[line width=0.65pt] (0.55,0.55) parabola (1.35,0.15);
+\end{tikzpicture}%
+}
 \caption{图7.25}
 \end{figure}
 
@@ -31926,7 +33776,16 @@ S = \frac{1}{2} 3 \times 10^{8} \times 500 \times 10^{- 6} \text{米} = 75 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.26}]{assets/physics-3/fig-p0459-02.png}}
+% fig-alt: 图7.26：电视扫描行与图像
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0,0) rectangle (2.6,1.55);
+  \foreach \y in {0.15,0.30,...,1.40}
+    \draw[line width=0.25pt] (0.05,\y) -- (2.55,\y+0.08);
+  \draw[line width=0.45pt] (0.15,1.40) -- (2.45,0.10);
+  \draw[line width=0.5pt] (1.15,0.25) -- (1.15,1.05) -- (1.45,0.55) -- (1.75,1.05) -- (1.75,0.25);
+\end{tikzpicture}%
+}
 \caption{图7.26}
 \end{figure}
 
@@ -31938,7 +33797,18 @@ S = \frac{1}{2} 3 \times 10^{8} \times 500 \times 10^{- 6} \text{米} = 75 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7.27}]{assets/physics-3/fig-p0460-01.png}}
+% fig-alt: 图7.27：示波管——电子枪、偏转线圈、荧光屏
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0.35) rectangle (0.55,0.85);
+  \draw[line width=0.7pt] (0.55,0.45) -- (1.15,0.55) -- (2.55,1.35) -- (2.55,-0.15) -- (1.15,0.65) -- (0.55,0.75);
+  \fill[pattern=north east lines,pattern color=black!40] (0.70,0.15) rectangle (1.15,1.05);
+  \node[anchor=east] at (0,0.60) {电子枪};
+  \node[anchor=north] at (0.92,0.12) {偏转线圈};
+  \node[anchor=west] at (2.60,0.60) {荧光屏};
+  \draw[->,line width=0.45pt] (1.15,0.60) -- (2.15,0.85);
+\end{tikzpicture}%
+}
 \caption{图7.27}
 \end{figure}
 
@@ -32075,7 +33945,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/physics-3/fig-p0464-01.png}}
+% fig-alt: 桥式整流四二极管接负载 $R$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.3);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.3);
+  \draw[line width=0.5pt] (0.9,1.55) -- (0.9,0.05);
+  \draw[line width=0.5pt] (1.4,1.55) -- (1.4,0.05);
+  \node at (0.7,1.20) {$D_1$};
+  \node at (1.60,1.20) {$D_2$};
+  \node at (0.7,0.40) {$D_3$};
+  \node at (1.60,0.40) {$D_4$};
+  \draw[line width=0.55pt] (2.15,0.25) rectangle (2.45,1.35);
+  \node[anchor=west] at (2.50,0.80) {$R$};
+\end{tikzpicture}%
+}
 \caption{(第1题)}
 \end{figure}
 
@@ -32090,7 +33974,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第三题)}]{assets/physics-3/fig-p0464-02.png}}
+% fig-alt: 元件：$R_b,R_c,C_1,C_2$、电池、两只三极管
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0,1.35) rectangle (0.55,1.60);
+  \node[anchor=south] at (0.28,1.62) {$R_b$};
+  \draw[line width=0.55pt] (0,0.95) rectangle (0.55,1.15);
+  \node[anchor=south] at (0.28,1.17) {$R_c$};
+  \draw[line width=0.55pt] (0.15,0.55) -- (0.45,0.55);
+  \draw[line width=0.55pt] (0.15,0.68) -- (0.45,0.68);
+  \node[anchor=west] at (0.50,0.62) {$C_1$};
+  \foreach \y in {0.15,0.28,0.41} \draw[line width=0.5pt] (1.35,\y) -- (1.35,\y+0.08);
+  \draw[line width=0.7pt] (2.25,1.15) circle (0.22);
+  \draw[line width=0.7pt] (2.25,0.45) circle (0.22);
+\end{tikzpicture}%
+}
 \caption{(第三题)}
 \end{figure}
 
@@ -32165,7 +34063,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第10题)}]{assets/physics-3/fig-p0467-01.png}}
+% fig-alt: 平行板间电子偏转，板长 5 cm，间距 1 cm
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,1.15) -- (2.5,1.15);
+  \draw[line width=0.75pt] (0,0) -- (2.5,0);
+  \node at (0.15,0.08) {$+$};
+  \node at (1.2,0.08) {$+$};
+  \draw[->,line width=0.5pt] (0,1.00) -- (2.5,0.05);
+  \node[anchor=east] at (0,1.00) {$-e$};
+  \draw[line width=0.4pt] (2.55,0) -- (2.55,1.15);
+  \node[anchor=west] at (2.60,0.58) {1 厘米};
+  \draw[line width=0.4pt] (0,-0.20) -- (2.5,-0.20);
+  \node[anchor=north] at (1.25,-0.22) {5 厘米};
+\end{tikzpicture}%
+}
 \caption{(第10题)}
 \end{figure}
 
@@ -32184,7 +34096,20 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第12题)}]{assets/physics-3/fig-p0467-02.png}}
+% fig-alt: 两极板 $A(+Q)$、$B(-Q)$ 间插入导体
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.8pt] (0,0) -- (0,1.55);
+  \draw[line width=0.8pt] (1.55,0) -- (1.55,1.55);
+  \draw[line width=0.7pt] (0.65,0.15) rectangle (0.90,1.40);
+  \node[anchor=south] at (0,1.58) {$A$};
+  \node[anchor=south] at (1.55,1.58) {$B$};
+  \node[anchor=east] at (0,0.78) {$+Q$};
+  \node[anchor=west] at (1.55,0.78) {$-Q$};
+  \draw[line width=0.4pt] (0,-0.15) -- (1.55,-0.15);
+  \node at (0.78,-0.35) {$d$};
+\end{tikzpicture}%
+}
 \caption{(第12题)}
 \end{figure}
 
@@ -32192,7 +34117,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第13题)}]{assets/physics-3/fig-p0467-03.png}}
+% fig-alt: $12$ V、$100\,\Omega$、$10\,\mu$F、$200\,\Omega$ 与开关 $K$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.35,1.15) rectangle (0.95,1.40);
+  \node[anchor=south] at (0.65,1.42) {$100\,\Omega$};
+  \foreach \x in {0.05,0.18} \draw[line width=0.55pt] (\x,0.55) -- (\x,0.85);
+  \node[anchor=east] at (0,0.70) {$12$ V};
+  \draw[line width=0.55pt] (1.45,0.85) -- (1.65,0.85);
+  \draw[line width=0.55pt] (1.45,1.05) -- (1.65,1.05);
+  \node[anchor=south] at (1.55,1.10) {$10\,\mu$F};
+  \draw[line width=0.55pt] (1.85,0.25) rectangle (2.15,0.85);
+  \node[anchor=west] at (2.20,0.55) {$200\,\Omega$};
+  \node at (1.85,1.15) {$K$};
+\end{tikzpicture}%
+}
 \caption{(第13题)}
 \end{figure}
 
@@ -32215,7 +34154,23 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第14题)}]{assets/physics-3/fig-p0468-01.png}}
+% fig-alt: 电源 $E$、开关 $K$、$C_1,D_1,D_2,C_2$ 倍压
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \x in {0,0.15} \draw[line width=0.55pt] (\x,0.35) -- (\x,0.70);
+  \node[anchor=east] at (-0.05,0.52) {$E$};
+  \node at (0.55,1.05) {$K$};
+  \draw[line width=0.55pt] (1.15,0.95) -- (1.35,0.95);
+  \draw[line width=0.55pt] (1.15,1.10) -- (1.35,1.10);
+  \node[anchor=south] at (1.25,1.15) {$C_1$};
+  \fill (1.65,1.05) -- (1.90,1.18) -- (1.90,0.92) -- cycle;
+  \node[anchor=south] at (1.80,1.22) {$D_1$};
+  \node at (1.55,0.45) {$D_2$};
+  \node at (2.15,0.55) {$C_2$};
+  \node[anchor=west] at (2.45,1.05) {$X$};
+  \node[anchor=west] at (2.45,0.15) {$Y$};
+\end{tikzpicture}%
+}
 \caption{(第14题)}
 \end{figure}
 
@@ -32223,7 +34178,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第15题)}]{assets/physics-3/fig-p0468-02.png}}
+% fig-alt: $A,B$ 间 $R_1,R_2,R_3$，虚线 $R_4$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.35,1.15) rectangle (0.85,1.40);
+  \node[anchor=south] at (0.60,1.42) {$R_1$};
+  \draw[line width=0.55pt] (0.35,0.15) rectangle (0.85,0.40);
+  \node[anchor=north] at (0.60,0.12) {$R_2$};
+  \draw[line width=0.55pt] (1.25,0.55) rectangle (1.55,1.05);
+  \node[anchor=west] at (1.15,0.80) {$R_3$};
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (1.85,0.55) rectangle (2.15,1.05);
+  \node[anchor=west] at (2.20,0.80) {$R_4$};
+  \node[anchor=east] at (0,1.28) {$A$};
+  \node[anchor=east] at (0,0.28) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第15题)}
 \end{figure}
 
@@ -32243,7 +34212,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第17题)}]{assets/physics-3/fig-p0468-03.png}}
+% fig-alt: $2\,\Omega$ 与并联 $3\,\Omega$、$6\,\Omega$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.25,0.85) rectangle (0.75,1.10);
+  \node[anchor=south] at (0.50,1.12) {$2\,\Omega$};
+  \draw[line width=0.55pt] (1.15,1.15) rectangle (1.65,1.40);
+  \node[anchor=south] at (1.40,1.42) {$3\,\Omega$};
+  \draw[line width=0.55pt] (1.15,0.55) rectangle (1.65,0.80);
+  \node[anchor=north] at (1.40,0.52) {$6\,\Omega$};
+  \foreach \x in {1.85,1.98} \draw[line width=0.5pt] (\x,0.15) -- (\x,0.40);
+  \node[anchor=east] at (0,0.98) {$A$};
+  \node at (0.95,0.98) {$B$};
+  \node[anchor=west] at (1.75,0.98) {$C$};
+\end{tikzpicture}%
+}
 \caption{(第17题)}
 \end{figure}
 
@@ -32251,7 +34234,20 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第18题)}]{assets/physics-3/fig-p0468-04.png}}
+% fig-alt: 两安培表，$R_1=5\,\Omega$，$R_2=7\,\Omega$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \x in {1.15,1.28} \draw[line width=0.5pt] (\x,1.35) -- (\x,1.55);
+  \draw[line width=0.7pt] (0.35,0.85) circle (0.20);
+  \node at (0.35,0.85) {$A_1$};
+  \draw[line width=0.7pt] (2.15,0.85) circle (0.20);
+  \node at (2.15,0.85) {$A_2$};
+  \draw[line width=0.55pt] (0.55,0.15) rectangle (1.15,0.40);
+  \node[anchor=north] at (0.85,0.12) {$R_1=5\,\Omega$};
+  \draw[line width=0.55pt] (1.35,0.15) rectangle (1.95,0.40);
+  \node[anchor=north] at (1.65,0.12) {$R_2=7\,\Omega$};
+\end{tikzpicture}%
+}
 \caption{(第18题)}
 \end{figure}
 
@@ -32280,7 +34276,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第20题)}]{assets/physics-3/fig-p0469-01.png}}
+% fig-alt: 电桥 $R_1\sim R_4$ 接安培表与两组电池
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.55,1.25) -- (1.15,1.55) -- (1.75,1.25) -- (1.15,0.95) -- cycle;
+  \node at (0.85,1.48) {$R_1$};
+  \node at (1.45,1.48) {$R_3$};
+  \node at (0.85,1.02) {$R_2$};
+  \node at (1.45,1.02) {$R_4$};
+  \draw[line width=0.7pt] (0,1.25) circle (0.18);
+  \node at (0,1.25) {A};
+  \foreach \x in {0.85,0.98} \draw[line width=0.5pt] (\x,0.25) -- (\x,0.45);
+  \node at (1.15,1.55) {$B$};
+  \node at (1.15,0.95) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第20题)}
 \end{figure}
 
@@ -32288,7 +34298,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第21题)}]{assets/physics-3/fig-p0469-02.png}}
+% fig-alt: $R_1,R_2,R_3,C$ 与开关 $K$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.25,1.15) rectangle (0.75,1.40);
+  \node[anchor=south] at (0.50,1.42) {$R_1$};
+  \draw[line width=0.55pt] (1.15,1.15) -- (1.35,1.15);
+  \draw[line width=0.55pt] (1.15,1.30) -- (1.35,1.30);
+  \node[anchor=south] at (1.25,1.35) {$C$};
+  \draw[line width=0.55pt] (0.25,0.45) rectangle (0.75,0.70);
+  \node[anchor=north] at (0.50,0.42) {$R_2$};
+  \draw[line width=0.55pt] (1.05,0.45) rectangle (1.55,0.70);
+  \node[anchor=north] at (1.30,0.42) {$R_3$};
+  \node at (0.95,0.90) {$K$};
+\end{tikzpicture}%
+}
 \caption{(第21题)}
 \end{figure}
 
@@ -32316,7 +34340,23 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第23题)}]{assets/physics-3/fig-p0469-03.png}}
+% fig-alt: $18$ V，$R_1=6\,\Omega$，$C_1=6\,\mu$F，$C_2=3\,\mu$F，$R_2=3\,\Omega$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.15,1.15) rectangle (0.55,1.55);
+  \node at (0.35,1.35) {$6\,\Omega$};
+  \draw[line width=0.55pt] (1.15,1.35) -- (1.35,1.35);
+  \draw[line width=0.55pt] (1.15,1.50) -- (1.35,1.50);
+  \node at (1.55,1.42) {$6\,\mu$F};
+  \draw[line width=0.55pt] (0.15,0.25) -- (0.35,0.25);
+  \draw[line width=0.55pt] (0.15,0.40) -- (0.35,0.40);
+  \node at (0.55,0.32) {$3\,\mu$F};
+  \draw[line width=0.55pt] (1.15,0.15) rectangle (1.55,0.55);
+  \node at (1.35,0.35) {$3\,\Omega$};
+  \node at (0.85,0.85) {$K$};
+  \node[anchor=south] at (0.85,1.75) {$U=18$ V};
+\end{tikzpicture}%
+}
 \caption{(第23题)}
 \end{figure}
 
@@ -32335,7 +34375,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第24题)}]{assets/physics-3/fig-p0470-01.png}}
+% fig-alt: $R_1$ 跨接，$R_2,R_3$ 串联，$R_4$ 接地
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.35,1.25) rectangle (1.55,1.50);
+  \node at (0.95,1.38) {$R_1$};
+  \draw[line width=0.55pt] (0.35,0.85) rectangle (0.85,1.10);
+  \node at (0.60,0.98) {$R_2$};
+  \draw[line width=0.55pt] (1.05,0.85) rectangle (1.55,1.10);
+  \node at (1.30,0.98) {$R_3$};
+  \draw[line width=0.55pt] (0.85,0.25) rectangle (1.15,0.70);
+  \node at (1.00,0.48) {$R_4$};
+  \node[anchor=east] at (0.15,0.98) {$A$};
+  \node[anchor=west] at (1.75,0.98) {$C$};
+\end{tikzpicture}%
+}
 \caption{(第24题)}
 \end{figure}
 
@@ -32343,7 +34397,18 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第26题)}]{assets/physics-3/fig-p0470-02.png}}
+% fig-alt: 四电阻串联，伏特表 $U_1,U_2$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \x/\n in {0.2/R_1,0.9/R_2,1.6/R_3,2.3/R_4}
+    {\draw[line width=0.55pt] (\x,0.70) rectangle (\x+0.50,0.95);
+     \node at (\x+0.25,0.82) {$\n$};}
+  \draw[line width=0.7pt] (0.70,1.25) circle (0.18);
+  \node at (0.70,1.25) {$U_1$};
+  \draw[line width=0.7pt] (1.45,0.25) circle (0.18);
+  \node at (1.45,0.25) {$U_2$};
+\end{tikzpicture}%
+}
 \caption{(第26题)}
 \end{figure}
 
@@ -32361,7 +34426,20 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第27题)}]{assets/physics-3/fig-p0470-03.png}}
+% fig-alt: 多电阻并联网络接安培表与伏特表
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \y/\n in {1.35/R_1,1.05/R_2,0.75/R_3,0.45/R_4}
+    {\draw[line width=0.55pt] (0.35,\y) rectangle (0.95,\y+0.22);
+     \node at (0.65,\y+0.11) {$\n$};}
+  \draw[line width=0.7pt] (1.45,1.25) circle (0.16);
+  \node at (1.45,1.25) {$A_1$};
+  \draw[line width=0.7pt] (0.15,0.85) circle (0.16);
+  \node at (0.15,0.85) {$A_2$};
+  \draw[line width=0.55pt] (1.85,0.35) rectangle (2.15,1.05);
+  \node at (2.00,0.70) {$R_5$};
+\end{tikzpicture}%
+}
 \caption{(第27题)}
 \end{figure}
 
@@ -32369,7 +34447,18 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第28题)}]{assets/physics-3/fig-p0470-04.png}}
+% fig-alt: 滑线变阻器 $M$ 与电阻 $R$、开关 $K$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (1.15,0.85) rectangle (1.45,1.45);
+  \node[anchor=west] at (1.50,1.15) {$M$};
+  \draw[line width=0.55pt] (0.85,0.25) rectangle (1.15,0.75);
+  \node at (1.00,0.50) {$R$};
+  \node at (1.45,0.55) {$K$};
+  \node[anchor=east] at (0,1.15) {$C$};
+  \node[anchor=east] at (0,0.25) {$D$};
+\end{tikzpicture}%
+}
 \caption{(第28题)}
 \end{figure}
 
@@ -32393,7 +34482,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第29题)}]{assets/physics-3/fig-p0471-01.png}}
+% fig-alt: 电池、$R_1,R_2$、开关 $K_1,K_2$、两伏特表
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.25,1.15) rectangle (0.75,1.40);
+  \node at (0.50,1.28) {$R_2$};
+  \draw[line width=0.55pt] (0.85,0.55) rectangle (1.15,1.05);
+  \node at (1.00,0.80) {$R_1$};
+  \draw[line width=0.7pt] (1.45,0.55) circle (0.18);
+  \node at (1.45,0.55) {$U_1$};
+  \draw[line width=0.7pt] (1.95,0.55) circle (0.18);
+  \node at (1.95,0.55) {$U_2$};
+  \node at (0.50,1.55) {$K_1$};
+  \node at (1.70,1.15) {$K_2$};
+\end{tikzpicture}%
+}
 \caption{(第29题)}
 \end{figure}
 
@@ -32401,7 +34504,22 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第30题)}]{assets/physics-3/fig-p0471-02.png}}
+% fig-alt: 四灯 $A,B,C,D$ 接 $220$ V
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \x/\n in {0.4/A,1.3/B,0.4/C,1.3/D} {};
+  \draw[line width=0.7pt] (0.4,1.05) circle (0.20);
+  \draw[line width=0.35pt] (0.4,1.05) ++(45:0.14) -- ++(225:0.28);
+  \node[anchor=south] at (0.4,1.28) {$A$};
+  \draw[line width=0.7pt] (1.3,1.05) circle (0.20);
+  \node[anchor=south] at (1.3,1.28) {$B$};
+  \draw[line width=0.7pt] (0.4,0.35) circle (0.20);
+  \node[anchor=north] at (0.4,0.12) {$C$};
+  \draw[line width=0.7pt] (1.3,0.35) circle (0.20);
+  \node[anchor=north] at (1.3,0.12) {$D$};
+  \node[anchor=north] at (0.85,-0.25) {$220$ V};
+\end{tikzpicture}%
+}
 \caption{(第30题)}
 \end{figure}
 
@@ -32420,7 +34538,15 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第31题)}]{assets/physics-3/fig-p0471-03.png}}
+% fig-alt: 磁场 $B$ 中导体棒与圆环
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \y in {0,0.2,...,2.0} \draw[->,line width=0.3pt] (-0.85,\y) -- (0.85,\y);
+  \draw[line width=0.75pt] (0,-0.15) -- (0,2.15);
+  \draw[line width=0.7pt] (0,1.15) circle (0.35);
+  \node[anchor=west] at (0.90,1.55) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第31题)}
 \end{figure}
 
@@ -32433,7 +34559,16 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第32题)}]{assets/physics-3/fig-p0471-04.png}}
+% fig-alt: 斜面上的通电导体棒，磁场竖直向上
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) -- (2.4,0) -- (2.4,1.15) -- cycle;
+  \draw[line width=0.75pt] (0.85,0.35) -- (2.05,0.85);
+  \foreach \x in {1.15,1.55,1.95} \draw[->,line width=0.4pt] (\x,0.55) -- (\x,1.35);
+  \node at (1.75,1.45) {$B$};
+  \node at (0.55,0.15) {$\theta$};
+\end{tikzpicture}%
+}
 \caption{(第32题)}
 \end{figure}
 
@@ -32455,7 +34590,17 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第33题)}]{assets/physics-3/fig-p0472-01.png}}
+% fig-alt: 两圆弧电流 $i_1,i_2$ 交于 $a,b$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) ellipse [x radius=1.05,y radius=0.45];
+  \draw[line width=0.7pt] (0,0) ellipse [x radius=1.05,y radius=0.70];
+  \node[anchor=east] at (-1.05,0) {$a$};
+  \node[anchor=west] at (1.05,0) {$b$};
+  \node at (0,0.85) {$i_1$};
+  \node at (0,-0.55) {$i_2$};
+\end{tikzpicture}%
+}
 \caption{(第33题)}
 \end{figure}
 
@@ -32463,7 +34608,20 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第34题)}]{assets/physics-3/fig-p0472-02.png}}
+% fig-alt: 圆锥摆电荷 $q$ 在竖直磁场 $B$ 中
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (-0.45,1.85) -- (0.45,1.85);
+  \draw[line width=0.55pt] (0,1.85) -- (0,0.55);
+  \draw[line width=0.55pt] (0,1.85) -- (-0.85,0.15);
+  \draw[line width=0.5pt] (0,0.15) ellipse [x radius=0.85,y radius=0.28];
+  \fill (-0.85,0.15) circle (1.3pt);
+  \node[anchor=east] at (-0.95,0.15) {$q$};
+  \foreach \x in {-0.3,0,0.3} \draw[->,line width=0.4pt] (\x,0.35) -- (\x,1.05);
+  \node at (0.55,1.20) {$B$};
+  \node at (0.15,1.45) {$\theta$};
+\end{tikzpicture}%
+}
 \caption{(第34题)}
 \end{figure}
 
@@ -32489,7 +34647,17 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第36题)}]{assets/physics-3/fig-p0472-03.png}}
+% fig-alt: 矩形线框绕竖直轴在磁场 $B$ 中转动
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0.25) -- (0,1.15) -- (0.85,1.55) -- (0.85,0.65) -- cycle;
+  \draw[line width=0.5pt] (0.85,-0.15) -- (0.85,1.85);
+  \foreach \y in {0.55,0.85,1.15} \draw[->,line width=0.4pt] (-0.55,\y) -- (0.45,\y);
+  \node[anchor=west] at (0.50,1.15) {$B$};
+  \node at (0,0.70) {$a$};
+  \node at (0,0.15) {$b$};
+\end{tikzpicture}%
+}
 \caption{(第36题)}
 \end{figure}
 
@@ -32497,7 +34665,22 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(3)37题)}]{assets/physics-3/fig-p0472-04.png}}
+% fig-alt: 电阻网络接导轨，磁场 $B$ 垂直纸面向里
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.15,1.15) rectangle (0.55,1.40);
+  \node at (0.35,1.28) {$R_1$};
+  \draw[line width=0.55pt] (0.75,1.15) rectangle (1.15,1.40);
+  \node at (0.95,1.28) {$R_2$};
+  \draw[line width=0.7pt] (1.45,1.28) circle (0.16);
+  \node at (1.45,1.28) {A};
+  \draw[line width=0.7pt] (1.95,0.15) -- (1.95,1.55);
+  \foreach \x in {1.70,1.90,2.10,2.30}
+    \foreach \y in {0.35,0.65,0.95,1.25}
+      \node at (\x,\y) {$\times$};
+  \node at (2.45,0.90) {$B$};
+\end{tikzpicture}%
+}
 \caption{(3)37题)}
 \end{figure}
 
@@ -32526,7 +34709,18 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第38题)}]{assets/physics-3/fig-p0473-01.png}}
+% fig-alt: 磁场 $B$ 中的回路接电容 $C$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) ellipse [x radius=1.05,y radius=0.70];
+  \foreach \p in {(-0.4,0.25),(0.2,0.35),(0.5,-0.15),(-0.3,-0.35),(0.1,0)}
+    \node at \p {$\times$};
+  \draw[line width=0.55pt] (-1.35,0.15) -- (-1.05,0.15);
+  \draw[line width=0.55pt] (-1.35,-0.05) -- (-1.05,-0.05);
+  \node[anchor=east] at (-1.40,0.05) {$C$};
+  \node at (0.55,0.15) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第38题)}
 \end{figure}
 
@@ -32534,7 +34728,22 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第39题)}]{assets/physics-3/fig-p0473-02.png}}
+% fig-alt: 导轨上两导体棒 $AB,CD$，中间电容 $C$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0.15) -- (2.6,0.15);
+  \draw[line width=0.7pt] (0,1.15) -- (2.6,1.15);
+  \draw[line width=0.75pt] (0.45,0.15) -- (0.45,1.15);
+  \draw[line width=0.75pt] (2.15,0.15) -- (2.15,1.15);
+  \draw[line width=0.55pt] (1.15,1.25) -- (1.35,1.25);
+  \draw[line width=0.55pt] (1.15,1.40) -- (1.35,1.40);
+  \node[anchor=south] at (1.25,1.45) {$C$};
+  \foreach \x in {0.3,0.9,1.5,2.1}
+    \foreach \y in {0.40,0.70,1.00}
+      \node at (\x,\y) {$\times$};
+  \node at (1.3,0.55) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第39题)}
 \end{figure}
 
@@ -32561,7 +34770,23 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第40题)}]{assets/physics-3/fig-p0473-03.png}}
+% fig-alt: 平行导轨 $MN,PQ$ 上两导体棒
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,1.15) -- (2.8,1.15);
+  \draw[line width=0.7pt] (0,0.15) -- (2.8,0.15);
+  \node[anchor=east] at (0,1.15) {$M$};
+  \node[anchor=west] at (2.8,1.15) {$N$};
+  \node[anchor=east] at (0,0.15) {$P$};
+  \node[anchor=west] at (2.8,0.15) {$Q$};
+  \draw[line width=0.75pt] (0.55,0.15) -- (0.55,1.15);
+  \draw[line width=0.75pt] (2.15,0.15) -- (2.15,1.15);
+  \foreach \x in {0.4,1.0,1.6,2.2}
+    \foreach \y in {0.40,0.70,1.00}
+      \node at (\x,\y) {$\times$};
+  \node at (1.35,0.65) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第40题)}
 \end{figure}
 
@@ -32578,7 +34803,18 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第41题)}]{assets/physics-3/fig-p0474-01.png}}
+% fig-alt: 磁场中交叉导体棒绕 $O$ 转动
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \foreach \x in {-0.9,-0.3,0.3,0.9}
+    \foreach \y in {-0.7,-0.1,0.5,1.1}
+      \node at (\x,\y) {$\times$};
+  \draw[line width=0.75pt] (-0.85,-0.45) -- (0.95,0.95);
+  \draw[line width=0.75pt] (0,-0.85) -- (0,1.25);
+  \node at (0.95,1.05) {$A$};
+  \node at (-0.85,-0.55) {$b$};
+\end{tikzpicture}%
+}
 \caption{(第41题)}
 \end{figure}
 
@@ -32586,7 +34822,20 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第42题)}]{assets/physics-3/fig-p0474-02.png}}
+% fig-alt: 直角导轨 $OQ,OP$ 与竖直棒 $MN$，$45^{\circ}$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) -- (2.15,0);
+  \draw[line width=0.7pt] (0,0) -- (1.55,1.55);
+  \draw[line width=0.75pt] (1.15,0) -- (1.15,1.25);
+  \node[anchor=east] at (0,0) {$O$};
+  \node at (0.45,0.15) {$45^{\circ}$};
+  \foreach \x in {0.3,0.8,1.3,1.8}
+    \foreach \y in {0.25,0.7,1.15}
+      \node at (\x,\y) {$\times$};
+  \node at (1.7,0.9) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第42题)}
 \end{figure}
 
@@ -32615,13 +34864,35 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第43题)}]{assets/physics-3/fig-p0474-03.png}}
+% fig-alt: 线框从 N、S 磁极间拉出
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0.55,1.15) -- (0.55,1.85) -- (1.55,1.85) -- (1.55,1.15);
+  \node at (1.05,1.50) {N};
+  \draw[line width=0.7pt] (1.15,0) -- (1.15,-0.55) -- (2.15,-0.55) -- (2.15,0);
+  \node at (1.65,-0.28) {S};
+  \draw[line width=0.65pt] (0,0.85) -- (2.4,0.85) -- (2.4,0.15) -- (0.85,0.15) -- (0.85,0.85);
+  \draw[->,line width=0.45pt] (-0.35,0.50) -- (0.05,0.50);
+  \node[anchor=east] at (-0.38,0.50) {$v$};
+\end{tikzpicture}%
+}
 \caption{(第43题)}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第43题)}]{assets/physics-3/fig-p0474-04.png}}
+% fig-alt: 矩形线框部分处于匀强磁场 $B$ 中
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0.15) rectangle (2.15,1.15);
+  \foreach \x in {1.15,1.45,1.75,2.05}
+    \foreach \y in {0.35,0.65,0.95}
+      \node at (\x,\y) {$\times$};
+  \draw[->,line width=0.45pt] (-0.15,0.65) -- (0.15,0.65);
+  \node[anchor=east] at (-0.18,0.65) {$v$};
+  \node at (1.60,0.65) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第43题)}
 \end{figure}
 
@@ -32641,7 +34912,25 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第44题)}]{assets/physics-3/fig-p0475-01.png}}
+% fig-alt: 导轨 $ABCD$ 上导体 $mn$，电源与开关 $K$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0,0) -- (0,1.85);
+  \draw[line width=0.7pt] (1.85,0) -- (1.85,1.85);
+  \node[anchor=south] at (0,1.88) {$A$};
+  \node[anchor=north] at (0,-0.05) {$B$};
+  \node[anchor=south] at (1.85,1.88) {$C$};
+  \node[anchor=north] at (1.85,-0.05) {$D$};
+  \draw[line width=0.75pt] (0,0.85) -- (1.85,0.85);
+  \node[anchor=east] at (0,0.85) {$m$};
+  \node[anchor=west] at (1.85,0.85) {$n$};
+  \foreach \x in {0.3,0.7,1.1,1.5}
+    \foreach \y in {0.25,0.55,1.15,1.45}
+      \node at (\x,\y) {$\times$};
+  \foreach \x in {0.85,0.98} \draw[line width=0.5pt] (\x,1.65) -- (\x,1.85);
+  \node at (0.70,1.95) {$K$};
+\end{tikzpicture}%
+}
 \caption{(第44题)}
 \end{figure}
 
@@ -32649,7 +34938,19 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第45题)}]{assets/physics-3/fig-p0475-02.png}}
+% fig-alt: 矩形线圈绕竖直轴在水平磁场中转动
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (0,0.15) rectangle (1.55,1.35);
+  \draw[line width=0.5pt] (0.55,-0.15) -- (0.55,1.65);
+  \foreach \y in {0.35,0.65,0.95,1.25} \draw[->,line width=0.4pt] (-0.45,\y) -- (1.85,\y);
+  \node[anchor=west] at (1.90,0.80) {$B$};
+  \node at (0,1.20) {$a$};
+  \node at (1.55,1.20) {$d$};
+  \node at (0,0.30) {$b$};
+  \node at (1.55,0.30) {$c$};
+\end{tikzpicture}%
+}
 \caption{(第45题)}
 \end{figure}
 
@@ -32686,7 +34987,19 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第46题)}]{assets/physics-3/fig-p0475-03.png}}
+% fig-alt: 导轨上导体棒经滑轮吊重物 $m_1$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (1.15,0.85) -- (2.85,1.15) -- (2.55,0.25) -- (0.85,-0.05) -- cycle;
+  \draw[line width=0.75pt] (1.25,0.15) -- (1.55,0.95);
+  \draw[line width=0.5pt] (0.55,0.85) circle (0.18);
+  \draw[line width=0.45pt] (0.55,0.67) -- (0.55,-0.35);
+  \draw[line width=0.55pt] (0.40,-0.55) rectangle (0.70,-0.25);
+  \node at (0.55,-0.40) {$m_1$};
+  \foreach \y in {0.45,0.75,1.05} \draw[->,line width=0.35pt] (1.85,\y) -- (1.85,\y+0.25);
+  \node at (2.15,0.90) {$B$};
+\end{tikzpicture}%
+}
 \caption{(第46题)}
 \end{figure}
 
@@ -32716,7 +35029,17 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第48题)}]{assets/physics-3/fig-p0476-01.png}}
+% fig-alt: 电压、电流正弦波形（相位差）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[->,line width=0.45pt] (0,0.70) -- (3.8,0.70) node[right] {$t$};
+  \draw[->,line width=0.45pt] (0,0) -- (0,1.55);
+  \draw[line width=0.65pt] plot[domain=0:540,samples=50] (\x/150,{0.70+0.55*sin(\x)});
+  \draw[line width=0.55pt] plot[domain=0:540,samples=50] (\x/150,{0.70+0.40*sin(\x-60)});
+  \node at (0.15,1.40) {$20$ 毫安};
+  \node at (0.15,1.05) {$3$ 伏};
+\end{tikzpicture}%
+}
 \caption{(第48题)}
 \end{figure}
 
@@ -32748,7 +35071,19 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第52题)}]{assets/physics-3/fig-p0477-01.png}}
+% fig-alt: 交流、$R_1$、二极管 $D$、$R_2$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.55pt] (0.35,1.05) rectangle (0.85,1.30);
+  \node[anchor=south] at (0.60,1.32) {$R_1$};
+  \fill (1.15,0.55) -- (1.40,0.70) -- (1.40,0.40) -- cycle;
+  \node[anchor=east] at (1.10,0.55) {$D$};
+  \draw[line width=0.55pt] (1.55,0.25) rectangle (1.85,0.95);
+  \node[anchor=west] at (1.90,0.60) {$R_2$};
+  \node[anchor=east] at (0,1.18) {$a$};
+  \node[anchor=east] at (0,0.25) {$b$};
+\end{tikzpicture}%
+}
 \caption{(第52题)}
 \end{figure}
 
@@ -32756,7 +35091,20 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第53题)}]{assets/physics-3/fig-p0477-02.png}}
+% fig-alt: 变压器全波整流接 $C$、$R$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.65pt] (0,0.3) -- (0,1.3);
+  \draw[line width=0.65pt] (0.4,0.3) -- (0.4,1.3);
+  \node at (0.9,1.15) {$D_1$};
+  \node at (0.9,0.45) {$D_2$};
+  \draw[line width=0.55pt] (1.85,0.70) -- (2.05,0.70);
+  \draw[line width=0.55pt] (1.85,0.85) -- (2.05,0.85);
+  \node at (2.20,0.78) {$C$};
+  \draw[line width=0.55pt] (2.35,0.35) rectangle (2.65,1.15);
+  \node[anchor=west] at (2.70,0.75) {$R$};
+\end{tikzpicture}%
+}
 \caption{(第53题)}
 \end{figure}
 
@@ -32764,7 +35112,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第54题)}]{assets/physics-3/fig-p0477-03.png}}
+% fig-alt: 晶体管、$R_b$、毫安表、$3$ 伏电源
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (0.85,0.45) circle (0.28);
+  \draw[line width=0.45pt] (0.72,0.32) -- (0.72,0.58);
+  \draw[->,line width=0.4pt] (0.72,0.38) -- (1.00,0.22);
+  \draw[line width=0.4pt] (0.72,0.52) -- (1.00,0.68);
+  \draw[line width=0.55pt] (0.15,0.70) rectangle (0.45,1.20);
+  \node at (0.30,0.95) {$R_b$};
+  \draw[line width=0.7pt] (1.15,1.25) circle (0.16);
+  \node at (1.15,1.25) {mA};
+  \foreach \y in {0.55,0.68} \draw[line width=0.5pt] (1.75,\y) -- (1.75,\y+0.08);
+  \node[anchor=west] at (1.85,0.70) {$3$ 伏};
+\end{tikzpicture}%
+}
 \caption{(第54题)}
 \end{figure}
 
@@ -32772,7 +35134,21 @@ f = \frac{1}{2 \pi \sqrt{L O}}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第55题)}]{assets/physics-3/fig-p0477-04.png}}
+% fig-alt: 阻容耦合放大：$R_b,R_c,E_c$
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (1.15,0.55) circle (0.28);
+  \draw[line width=0.45pt] (1.02,0.42) -- (1.02,0.68);
+  \draw[->,line width=0.4pt] (1.02,0.48) -- (1.30,0.32);
+  \draw[line width=0.4pt] (1.02,0.62) -- (1.30,0.78);
+  \draw[line width=0.55pt] (0.25,0.85) rectangle (0.55,1.35);
+  \node at (0.40,1.10) {$R_b$};
+  \draw[line width=0.55pt] (1.00,1.15) rectangle (1.30,1.55);
+  \node at (1.15,1.35) {$R_c$};
+  \foreach \y in {0.25,0.38,0.51} \draw[line width=0.5pt] (1.85,\y) -- (1.85,\y+0.08);
+  \node[anchor=west] at (1.95,0.40) {$E_c$};
+\end{tikzpicture}%
+}
 \caption{(第55题)}
 \end{figure}
 
