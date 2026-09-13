@@ -990,8 +990,27 @@ A = \{1, 3, 5, 7, 9 \}, \quad B = \{3, 6, 9 \}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图示（原PDF第21页）}]{assets/algebra-3/fig-p0021-02.png}}
-\caption{图示（原PDF第21页）}
+% fig-alt: (2)矩形标I，大圆A与小圆B相交，并集以外画斜线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node[anchor=east] at (-0.10,3.28) {$(2)$};
+  \draw[line width=0.7pt] (0,0) rectangle (5.35,3.55);
+  \begin{scope}
+    \clip (0,0) rectangle (5.35,3.55);
+    \foreach \i in {-16,-15,...,16}
+      \draw[line width=0.28pt] (-0.3,\i*0.13+2.3) -- (5.8,\i*0.13+0.05);
+  \end{scope}
+  \fill[white] (1.88,1.72) circle[radius=0.92];
+  \fill[white] (3.34,1.72) circle[radius=0.74];
+  \draw[line width=0.8pt] (0,0) rectangle (5.35,3.55);
+  \draw[line width=0.8pt] (1.88,1.72) circle[radius=0.92];
+  \draw[line width=0.8pt] (3.34,1.72) circle[radius=0.74];
+  \node[anchor=north west,fill=white,inner sep=1.2pt] at (0.12,3.42) {$I$};
+  \node at (1.53,1.72) {$A$};
+  \node at (3.72,1.72) {$B$};
+\end{tikzpicture}%
+}
+\caption{(2)}
 \end{figure}
 
 \begin{figure}
@@ -1021,8 +1040,27 @@ A = \{1, 3, 5, 7, 9 \}, \quad B = \{3, 6, 9 \}.
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(第1题)}]{assets/algebra-3/fig-p0021-04.png}}
-\caption{(第1题)}
+% fig-alt: (4)矩形标I，大圆A与小圆B相交（B嵌入较深），并集以外画斜线
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \node[anchor=east] at (-0.10,3.28) {$(4)$};
+  \draw[line width=0.7pt] (0,0) rectangle (5.35,3.55);
+  \begin{scope}
+    \clip (0,0) rectangle (5.35,3.55);
+    \foreach \i in {-16,-15,...,16}
+      \draw[line width=0.28pt] (-0.3,\i*0.13+2.3) -- (5.8,\i*0.13+0.05);
+  \end{scope}
+  \fill[white] (1.85,1.70) circle[radius=0.95];
+  \fill[white] (3.36,1.70) circle[radius=0.72];
+  \draw[line width=0.8pt] (0,0) rectangle (5.35,3.55);
+  \draw[line width=0.8pt] (1.85,1.70) circle[radius=0.95];
+  \draw[line width=0.8pt] (3.36,1.70) circle[radius=0.72];
+  \node[anchor=north west,fill=white,inner sep=1.2pt] at (0.12,3.42) {$I$};
+  \node at (1.50,1.70) {$A$};
+  \node at (3.72,1.70) {$B$};
+\end{tikzpicture}%
+}
+\caption{（第1题）}
 \end{figure}
 
 \emph{（第1题）}
@@ -10525,7 +10563,23 @@ A = \pi r^{2}. \tag {2}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4-9}]{assets/algebra-3/fig-p0171-01.png}}
+% fig-alt: 圆环，环带画陡斜线，圆心向右箭头标x指内圆，向右下线段标20带箭头指外圆
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \begin{scope}
+    \clip (0,0) circle[radius=2.0];
+    \foreach \i in {-14,-13,...,14}
+      \draw[line width=0.28pt] (\i*0.16+0.35,-2.3) -- (\i*0.16-0.35,2.3);
+  \end{scope}
+  \fill[white] (0,0) circle[radius=0.72];
+  \draw[line width=0.9pt] (0,0) circle[radius=2.0];
+  \draw[line width=0.8pt] (0,0) circle[radius=0.72];
+  \draw[line width=0.6pt,->] (0,0) -- (0.72,0);
+  \node[anchor=south, inner sep=1.5pt] at (0.38,0.04) {$x$};
+  \draw[line width=0.6pt,->] (0,0) -- (1.53,-1.29);
+  \node[fill=white, inner sep=1pt] at (0.82,-0.62) {$20$};
+\end{tikzpicture}%
+}
 \caption{图4-9}
 \end{figure}
 
@@ -22574,7 +22628,25 @@ s = 9 + 8 + 7 + 6 + 5 + 4,
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图8-6}]{assets/algebra-3/fig-p0351-01.png}}
+% fig-alt: 6行13列的平行四边形圆阵（木材堆加倒置副本）：白圆自上而下9至4个，其余为斜线圆
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \foreach \r in {0,...,5}{
+    \pgfmathtruncatemacro\nw{9-\r}
+    \pgfmathtruncatemacro\nl{\nw-1}
+    \pgfmathsetmacro\ys{-0.28*\r}
+    \pgfmathsetmacro\xs{0.165*\r}
+    \foreach \j in {0,...,\nl}{
+      \pgfmathsetmacro\xx{\xs+0.33*\j}
+      \draw[fill=white,line width=0.7pt] (\xx,\ys) circle[radius=0.155];
+    }
+    \foreach \j in {\nw,...,12}{
+      \pgfmathsetmacro\xx{\xs+0.33*\j}
+      \draw[pattern=north east lines,line width=0.7pt] (\xx,\ys) circle[radius=0.155];
+    }
+  }
+\end{tikzpicture}%
+}
 \caption{图8-6}
 \end{figure}
 
