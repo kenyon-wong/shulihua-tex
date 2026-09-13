@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BOOK_ROOT = ROOT / "books"
+TEX_ROOT = ROOT / "tex" / "books"
 REPORT = ROOT / "reports" / "chinese-variant-audit.json"
 BOOK_GLOB = "* - 数理化自学丛书编委会.md"
 # OpenCC 0.1.7 t2s/tw2sp/hk2s unanimous mappings found in the 17-book corpus,
@@ -19,43 +20,52 @@ DISALLOWED_CHARACTERS = frozenset(
 DISALLOWED_PHRASES = ("反覆",)
 
 
+def scan_file(path: Path, findings: list[dict[str, object]]) -> None:
+    relative = path.relative_to(ROOT).as_posix()
+    for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        for column, character in enumerate(line, 1):
+            if character in DISALLOWED_CHARACTERS:
+                findings.append(
+                    {
+                        "book": relative,
+                        "line": line_number,
+                        "column": column,
+                        "value": character,
+                        "kind": "character",
+                        "context": line[max(0, column - 21) : column + 20],
+                    }
+                )
+        for phrase in DISALLOWED_PHRASES:
+            start = 0
+            while (index := line.find(phrase, start)) >= 0:
+                findings.append(
+                    {
+                        "book": relative,
+                        "line": line_number,
+                        "column": index + 1,
+                        "value": phrase,
+                        "kind": "phrase",
+                        "context": line[max(0, index - 20) : index + len(phrase) + 20],
+                    }
+                )
+                start = index + len(phrase)
+
+
 def main() -> int:
     findings: list[dict[str, object]] = []
-    books = sorted(BOOK_ROOT.glob(BOOK_GLOB))
-    for book in books:
-        for line_number, line in enumerate(book.read_text(encoding="utf-8").splitlines(), 1):
-            for column, character in enumerate(line, 1):
-                if character in DISALLOWED_CHARACTERS:
-                    findings.append(
-                        {
-                            "book": book.name,
-                            "line": line_number,
-                            "column": column,
-                            "value": character,
-                            "kind": "character",
-                            "context": line[max(0, column - 21) : column + 20],
-                        }
-                    )
-            for phrase in DISALLOWED_PHRASES:
-                start = 0
-                while (index := line.find(phrase, start)) >= 0:
-                    findings.append(
-                        {
-                            "book": book.name,
-                            "line": line_number,
-                            "column": index + 1,
-                            "value": phrase,
-                            "kind": "phrase",
-                            "context": line[max(0, index - 20) : index + len(phrase) + 20],
-                        }
-                    )
-                    start = index + len(phrase)
+    markdown_books = sorted(BOOK_ROOT.glob(BOOK_GLOB))
+    tex_books = sorted(TEX_ROOT.glob("*.tex"))
+    for book in markdown_books:
+        scan_file(book, findings)
+    for book in tex_books:
+        scan_file(book, findings)
     report = {
         "schema_version": "1.0",
         "operation": "canonical-chinese-variant-audit",
-        "status": "PASS" if len(books) == 17 and not findings else "FAIL",
+        "status": "PASS" if len(markdown_books) == 17 and len(tex_books) == 17 and not findings else "FAIL",
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "books": len(books),
+        "books": len(markdown_books),
+        "tex_books": len(tex_books),
         "disallowed_character_types": len(DISALLOWED_CHARACTERS),
         "disallowed_phrases": list(DISALLOWED_PHRASES),
         "findings": findings,
@@ -65,7 +75,8 @@ def main() -> int:
     print(
         json.dumps(
             {
-                "books": len(books),
+                "books": len(markdown_books),
+                "tex_books": len(tex_books),
                 "disallowed_character_types": len(DISALLOWED_CHARACTERS),
                 "findings": len(findings),
                 "status": report["status"],

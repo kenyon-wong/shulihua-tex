@@ -48,13 +48,15 @@ Markdown 正文最初来自 [tradecatlabs/shulihuazixuecongshu](https://github.c
 
 源文件与隐私审计仍用 Python 3.10+。原始 PDF 深度审计额外需要 PyPDF2 3.x。首次可运行 `make tex-deps` 补齐宏包。
 
-完整审计并构建：
+完整源审计（对照 Markdown、异体字、TeX；不含 PDF 构建）：
 
 ```bash
 make all
 ```
 
-仅审计源文件：
+这等价于 `make audit tex-audit`。构建 PDF 用 `make pdf`。
+
+仅审计对照稿与异体字：
 
 ```bash
 make audit

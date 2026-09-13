@@ -513,7 +513,7 @@ fn ship_prompt(root) {
     s
 }
 
-let root = "/Users/hacker/Desktop/shulihua-tex";
+let root = ".";
 let focus = "T";
 let max_rounds = 0;
 let include_research = false;

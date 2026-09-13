@@ -16,6 +16,7 @@ git lfs pull
 |------|------|------|
 | `raw/*.pdf` | Git LFS | 17 份扫描，单文件最大约 32MB，合计约 129MB，几乎不改 |
 | `books/assets/*.png` | 普通 Git | 约 4875 张，中位约 1KB，LFS 指针开销更大 |
+| `tex/vendor/fonts/*.otf` | 普通 Git binary | 子集字体，禁止按文本做换行转换 |
 | `tex/**/*.tex`、`books/*.md` | 普通 Git 文本 | 规范正文和上游对照稿 |
 
 不要把 `*.png` 或 `tex/` 配进 LFS。不要对已有历史做 `git lfs migrate import`（会改写提交）。
@@ -26,7 +27,7 @@ git lfs pull
 
 - 文本统一 LF（`.gitattributes` 的 `eol=lf`）。
 - 不要给 `.py` 加可执行位，除非它是入口脚本且确有需要。
-- 不要提交 `.DS_Store`、`.build/`、`dist/`、XeLaTeX 的 `.aux/.log/.toc`。
+- 不要提交 `.DS_Store`、`.build/`、`dist/`、`.agents/`、XeLaTeX 的 `.aux/.log/.toc`。
 
 ## 推送
 
@@ -77,4 +78,4 @@ git commit
 git push origin master
 ```
 
-插图有增删时，同步更新 `tex/` 里的 `\includegraphics`。不要 `git merge upstream/main`。不要改 `tradecatlabs/shulihuazixuecongshu` 的默认分支，也不要向它 `git push`。
+插图有增删时，同步更新对应 TeX 示意图（TikZ/`tabular`），不要把扫描 PNG 写回 `tex/books` 正文。不要 `git merge upstream/main`。不要改 `tradecatlabs/shulihuazixuecongshu` 的默认分支，也不要向它 `git push`。

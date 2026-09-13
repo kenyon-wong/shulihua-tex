@@ -1,0 +1,24 @@
+name: audit
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+
+permissions:
+    contents: read
+
+jobs:
+    audit:
+        runs-on: ubuntu-latest
+        env:
+            GIT_LFS_SKIP_SMUDGE: "1"
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  lfs: false
+            - uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+            - name: Source and TeX audits
+              run: make audit tex-audit

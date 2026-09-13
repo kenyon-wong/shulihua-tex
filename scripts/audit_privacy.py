@@ -92,6 +92,10 @@ TEXT_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("possible_cn_id", re.compile(r"(?<!\d)\d{17}[0-9Xx](?!\d)")),
 )
 
+EMAIL_FALSE_POSITIVES = {"git@github.com"}
+VENDOR_EMAIL_PREFIXES = ("tex/vendor/",)
+FONT_SUFFIXES = {".otf", ".ttf", ".woff", ".woff2"}
+
 SENSITIVE_NAMES = {
     ".env",
     ".env.local",
@@ -145,9 +149,20 @@ def record(findings: list[dict[str, object]], kind: str, source: str, line: int 
     findings.append(row)
 
 
+def ignore_text_match(kind: str, match: re.Match[str], source: str) -> bool:
+    if kind != "email_address":
+        return False
+    if match.group(0).lower() in EMAIL_FALSE_POSITIVES:
+        return True
+    relative = source.split(":", 1)[0]
+    return relative.startswith(VENDOR_EMAIL_PREFIXES)
+
+
 def scan_text(text: str, source: str, findings: list[dict[str, object]], identifiers: set[str]) -> None:
     for kind, pattern in TEXT_PATTERNS:
         for match in pattern.finditer(text):
+            if ignore_text_match(kind, match, source):
+                continue
             record(findings, kind, source, line_number(text, match.start()))
     lowered = text.casefold()
     for value in identifiers:
@@ -221,19 +236,59 @@ def scan_epubs(findings: list[dict[str, object]], identifiers: set[str]) -> tupl
     return epub_count, entry_count
 
 
-def scan_commit_identities(findings: list[dict[str, object]]) -> int:
+def unpushed_rev_range() -> str | None:
+    try:
+        git_bytes("rev-parse", "--abbrev-ref", "@{upstream}")
+        return "@{upstream}..HEAD"
+    except subprocess.CalledProcessError:
+        pass
+    try:
+        git_bytes("rev-parse", "--verify", "origin/master")
+        return "origin/master..HEAD"
+    except subprocess.CalledProcessError:
+        return None
+
+
+def added_patch_text(patch: str) -> str:
+    lines = []
+    for line in patch.splitlines():
+        if line.startswith("+") and not line.startswith("+++"):
+            lines.append(line[1:])
+    return "\n".join(lines)
+
+
+def scan_commit_identities(findings: list[dict[str, object]], warnings: list[str]) -> int:
     try:
         commits = git_bytes("rev-list", "--all").decode("ascii").splitlines()
     except subprocess.CalledProcessError:
         return 0
     if not commits:
         return 0
-    emails = git_bytes("log", "--all", "--format=%ae%n%ce").decode("utf-8", errors="replace").splitlines()
-    for email in sorted(set(value.strip() for value in emails if value.strip())):
-        if not email.lower().endswith("@users.noreply.github.com"):
-            record(findings, "non_noreply_email_in_git_history", ".git history")
-    patch = git_bytes("log", "-p", "--all", "--pretty=format:").decode("utf-8", errors="replace")
-    scan_text(patch, ".git history patches", findings, set())
+    rev_range = unpushed_rev_range()
+    if rev_range is None:
+        warnings.append("无上游分支，跳过未推送提交的隐私补丁扫描")
+        return len(commits)
+    try:
+        unpushed = git_bytes("rev-list", rev_range).decode("ascii").splitlines()
+    except subprocess.CalledProcessError:
+        warnings.append(f"无法枚举 {rev_range}，跳过未推送提交扫描")
+        return len(commits)
+    if not unpushed:
+        return len(commits)
+    emails = git_bytes("log", rev_range, "--format=%ae%n%ce").decode("utf-8", errors="replace").splitlines()
+    personal = sorted(
+        {
+            value.strip()
+            for value in emails
+            if value.strip() and not value.strip().lower().endswith("@users.noreply.github.com")
+        }
+    )
+    if personal:
+        warnings.append(
+            f"未推送提交含非 GitHub noreply 作者邮箱 {len(personal)} 个；历史邮箱不改写"
+        )
+    patch = git_bytes("log", "-p", rev_range, "--pretty=format:").decode("utf-8", errors="replace")
+    scan_text(added_patch_text(patch), ".git unpushed patches", findings, set())
     return len(commits)
 
 
@@ -275,6 +330,8 @@ def main() -> int:
                 record(findings, "invalid_pdf_container", relative)
             # PDF objects、XMP、附件与主动内容由 make pdf-audit 的结构化门禁检查。
             continue
+        if path.suffix.casefold() in FONT_SUFFIXES:
+            continue
         data = path.read_bytes()
         if b"\x00" in data:
             warnings.append(f"未解析的二进制候选文件：{relative}")
@@ -292,7 +349,7 @@ def main() -> int:
     if not args.skip_generated:
         epub_count, epub_entries = scan_epubs(findings, identifiers)
 
-    commit_count = scan_commit_identities(findings)
+    commit_count = scan_commit_identities(findings, warnings)
     remote_lines = subprocess.run(
         ["git", "remote", "-v"], cwd=ROOT, text=True, capture_output=True, check=False
     ).stdout.splitlines()

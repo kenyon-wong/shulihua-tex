@@ -43,9 +43,9 @@ REQUIRED = {
     "scripts/audit_pdfs.py",
     "scripts/audit_privacy.py",
     "scripts/audit_repository.py",
+    "scripts/audit_chinese_variants.py",
     "scripts/audit_sources.py",
     "scripts/audit_tex_sources.py",
-    "tex/cover.tex",
     "tex/packages.txt",
     "tex/style/preamble.tex",
     "tex/style/driver.tex",
@@ -163,9 +163,13 @@ def main() -> int:
     actual_books = sorted(path.relative_to(ROOT).as_posix() for path in (ROOT / "books").glob(BOOK_GLOB))
     if len(books) != 17 or set(listed_books) != set(actual_books):
         record(errors, "catalog.json 与 books/ 中的 17 册 Markdown 不一致")
+    catalog_titles = {item.get("title", "") for item in books}
+    tex_titles = {path.stem for path in (ROOT / "tex" / "books").glob("*.tex")}
+    if catalog_titles != tex_titles:
+        record(errors, "catalog.json 与 tex/books 中的 17 册 TeX 不一致")
     identifiers = [item.get("identifier", "") for item in books]
     if len(set(identifiers)) != len(identifiers):
-        record(errors, "catalog.json 存在重复 EPUB identifier")
+        record(errors, "catalog.json 存在重复 identifier")
     raw_pdfs = sorted((ROOT / "raw").glob("*.pdf"))
     expected_raw_names = {
         f"{item.get('title', '')} - 数理化自学丛书编委会.pdf" for item in books
@@ -236,6 +240,8 @@ def main() -> int:
             pdf_files += 1
             check_pdf(path, errors)
             continue
+        if path.suffix.casefold() in {".otf", ".ttf", ".woff", ".woff2"}:
+            continue
         data = path.read_bytes()
         if b"\x00" in data:
             record(errors, f"非 PNG 候选包含 NUL：{relative}")
@@ -264,6 +270,7 @@ def main() -> int:
         "scripts/audit_repository.py",
         "scripts/audit_sources.py",
         "scripts/audit_tex_sources.py",
+        "scripts/classify_figures.py",
     }
     unexpected_executable = sorted(set(executable_files) - allowed_executable)
     if unexpected_executable:

@@ -6,13 +6,12 @@
 2. 只做可由扫描、上下文、量纲或书后答案支持的高置信修正。
 3. 新增或替换图片时提供真实描述性的替代文本。
 4. 不移动 `books/assets/`，除非同步更新所有 Markdown 引用。
-5. 运行 `make audit`。
-6. 运行 `make audit` 与 `make tex-audit`。
-7. 运行 `make pdf` 与 `make pdf-verify`。
+5. 运行 `make audit` 与 `make tex-audit`。
+6. 运行 `make pdf` 与 `make pdf-verify`。
 
 图片疑似为习题标题、练习标题、页眉或其他纯文字卡片时，不得直接删除；先对照 `raw/` 原扫描相邻页和正文上下文再决定。
 
-中文繁简或异体修订不得整库盲转。必须先生成仓库外候选，保留公式、HTML、链接目标和图片引用；低频或上下文相关字形应对照原PDF。`make audit` 中的 `audit_chinese_variants.py` 用于阻止已确认繁体、日文新字形、旧异体和“反覆”回归。
+中文繁简或异体修订不得整库盲转。必须先生成仓库外候选，保留公式、HTML、链接目标和图片引用；低频或上下文相关字形应对照原PDF。`make audit` 中的 `audit_chinese_variants.py` 会扫对照 Markdown 和 `tex/books`，用于阻止已确认繁体、日文新字形、旧异体和“反覆”回归。
 
 ## 原始 PDF
 

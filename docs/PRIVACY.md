@@ -14,7 +14,8 @@
 - PNG 文本、EXIF、时间及其他隐私元数据块
 - `raw/` 中 PDF 的哈希、XMP/Info 元数据、附件、批注、表单、JavaScript与其他主动内容
 - `dist/` 中如仍有 EPUB，扫描其文本型 ZIP 条目；本分支默认只生成 PDF
-- 已有 Git 提交中的非 GitHub noreply 邮箱和历史补丁
+- 仅扫描尚未推送提交的新增行（`+`）；已在 `origin/master` 上的历史补丁和作者邮箱不作为失败项
+- SSH 形如 `git@github.com:...` 以及 `tex/vendor/` 里许可证/宏包公开邮箱不作为失败项
 
 运行：
 
@@ -31,19 +32,15 @@ make pre-push
 
 机器可读报告写入 `reports/privacy-audit.json`，该报告被 `.gitignore` 排除。
 
-## 本次结果
+## 工作区门禁（当前树）
 
-- 未发现本机绝对路径、用户目录、用户名或主机名
-- 未发现电子邮箱、私人网络地址或凭据 URL
-- 未发现 API Key、访问令牌、密码或私钥
-- 未发现手机号码或身份证号码样式
-- 4,875 个 PNG 仅含 `IHDR`、`IDAT`、`IEND`，无 EXIF、文本、GPS、软件或时间元数据
-- 17份原始 PDF（5,927页）无加密、附件、批注、主动脚本、表单数据或隐私模式命中
-- 17 个生成 EPUB 的文本条目未发现本机或秘密信息
-- 无符号链接；已配置的 Git 远端不含内嵌凭据；初始提交历史审计通过
+以 `make privacy` 为准，不把过期快照当规范：
 
-`catalog.json` 中的 UUID 是电子书公开标识符，不是设备 UUID。EPUB 中的 Pandoc 生成器名称是公开软件信息，不包含设备或账户数据。
+- 扫描 Git 将纳入的已跟踪及未忽略文件（不含 `.agents/`）
+- PNG 只允许 `IHDR`/`IDAT`/`IEND` 一类块
+- `raw/*.pdf` 的结构与主动内容由 `make pdf-audit` 检查
+- `catalog.json` 中的 UUID 是书目公开标识符，不是设备 UUID
 
 ## GitHub 身份建议
 
-本仓库提交邮箱已使用 GitHub noreply 地址。后续维护者提交前仍应确认身份配置，并再次运行 `make pre-push`。本地 `.git/config` 不会被推送，但提交作者邮箱会进入永久 Git 历史。
+既有提交历史使用个人邮箱，不改写。新提交建议改用 GitHub noreply；本地 `.git/config` 不会被推送，但作者邮箱会进入永久 Git 历史。推送前运行 `make pre-push`。

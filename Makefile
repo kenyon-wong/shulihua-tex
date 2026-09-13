@@ -61,6 +61,7 @@ CHEMISTRY_TEX := $(addprefix tex/books/,$(addsuffix .tex,$(CHEMISTRY_BOOKS)))
 .PHONY: all audit pdf-audit repository privacy pdf volumes collections \
 	pdf-verify tex-deps tex-audit verify pre-push clean
 
+# 提交前源审计（不含 PDF）。构建用 make pdf。
 all: audit tex-audit
 
 audit:

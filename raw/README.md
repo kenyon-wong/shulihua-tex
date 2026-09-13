@@ -5,7 +5,7 @@
 - PDF 按导入时的原字节保存，未重新压缩或改写。
 - `SHA256SUMS.txt` 记录17份 PDF 的导入哈希。
 - 发布前检查见 `scripts/audit_pdfs.py`；动态报告写入 `reports/pdf-audit.json`。
-- 这些扫描件不是规范正文源；规范 Markdown 仍位于 `books/`。
+- 这些扫描件不是规范正文源；规范正文位于 `tex/books/`，Markdown 对照稿位于 `books/`。
 
 ## 权利说明
 

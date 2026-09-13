@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit the 17 canonical Markdown sources and their referenced assets."""
+"""Audit the 17 Markdown comparison sources and their referenced assets."""
 from __future__ import annotations
 
 import hashlib
@@ -50,7 +50,7 @@ def main() -> int:
     actual_books = sorted(path.relative_to(ROOT).as_posix() for path in BOOK_ROOT.glob(BOOK_GLOB))
     if set(actual_books) != set(listed_files):
         errors.append(
-            "规范 Markdown 与 catalog.json 不一致："
+            "对照 Markdown 与 catalog.json 不一致："
             f"未登记={sorted(set(actual_books) - set(listed_files))}，"
             f"缺文件={sorted(set(listed_files) - set(actual_books))}"
         )
