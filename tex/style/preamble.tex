@@ -11,6 +11,92 @@
 ]{geometry}
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+% 正文里的 Unicode 符号（∴∠π① 等）Fandol/Latin Modern 无字形。
+% 映到 amssymb；不引入 extra 宏包。暅/夬 与 IPA 仍缺，见 docs/KNOWN_ISSUES.md。
+\newcommand{\ShulihuaUC}[2]{%
+  \catcode`#1=\active
+  \begingroup\lccode`\~=`#1\relax
+  \lowercase{\endgroup\protected\def~}{#2}%
+}
+\ShulihuaUC{∴}{\ensuremath{\therefore}}
+\ShulihuaUC{∵}{\ensuremath{\because}}
+\ShulihuaUC{∠}{\ensuremath{\angle}}
+\ShulihuaUC{∡}{\ensuremath{\measuredangle}}
+\ShulihuaUC{∟}{\ensuremath{\lrcorner}}
+\ShulihuaUC{⊥}{\ensuremath{\perp}}
+\ShulihuaUC{∥}{\ensuremath{\parallel}}
+\ShulihuaUC{≈}{\ensuremath{\approx}}
+\ShulihuaUC{≤}{\ensuremath{\leq}}
+\ShulihuaUC{≥}{\ensuremath{\geq}}
+\ShulihuaUC{≠}{\ensuremath{\neq}}
+\ShulihuaUC{∈}{\ensuremath{\in}}
+\ShulihuaUC{∉}{\ensuremath{\notin}}
+\ShulihuaUC{∪}{\ensuremath{\cup}}
+\ShulihuaUC{∩}{\ensuremath{\cap}}
+\ShulihuaUC{⊂}{\ensuremath{\subset}}
+\ShulihuaUC{⊃}{\ensuremath{\supset}}
+\ShulihuaUC{≡}{\ensuremath{\equiv}}
+\ShulihuaUC{∽}{\ensuremath{\sim}}
+\ShulihuaUC{∶}{:}
+\ShulihuaUC{⇒}{\ensuremath{\Rightarrow}}
+\ShulihuaUC{⇌}{\ensuremath{\rightleftharpoons}}
+\ShulihuaUC{⊙}{\ensuremath{\odot}}
+\ShulihuaUC{⋯}{\ensuremath{\cdots}}
+\ShulihuaUC{↗}{\ensuremath{\nearrow}}
+\ShulihuaUC{↘}{\ensuremath{\searrow}}
+\ShulihuaUC{α}{\ensuremath{\alpha}}
+\ShulihuaUC{β}{\ensuremath{\beta}}
+\ShulihuaUC{γ}{\ensuremath{\gamma}}
+\ShulihuaUC{δ}{\ensuremath{\delta}}
+\ShulihuaUC{ε}{\ensuremath{\varepsilon}}
+\ShulihuaUC{θ}{\ensuremath{\theta}}
+\ShulihuaUC{λ}{\ensuremath{\lambda}}
+\ShulihuaUC{μ}{\ensuremath{\mu}}
+\ShulihuaUC{ν}{\ensuremath{\nu}}
+\ShulihuaUC{π}{\ensuremath{\pi}}
+\ShulihuaUC{ρ}{\ensuremath{\rho}}
+\ShulihuaUC{σ}{\ensuremath{\sigma}}
+\ShulihuaUC{τ}{\ensuremath{\tau}}
+\ShulihuaUC{φ}{\ensuremath{\varphi}}
+\ShulihuaUC{ω}{\ensuremath{\omega}}
+\ShulihuaUC{△}{\ensuremath{\triangle}}
+\ShulihuaUC{□}{\ensuremath{\square}}
+\ShulihuaUC{■}{\ensuremath{\blacksquare}}
+\ShulihuaUC{○}{\ensuremath{\circ}}
+\ShulihuaUC{●}{\ensuremath{\bullet}}
+\ShulihuaUC{☆}{\ensuremath{\star}}
+\ShulihuaUC{★}{\ensuremath{\bigstar}}
+\ShulihuaUC{′}{\ensuremath{^{\prime}}}
+\ShulihuaUC{″}{\ensuremath{^{\prime\prime}}}
+\ShulihuaUC{①}{\textcircled{\scriptsize 1}}
+\ShulihuaUC{②}{\textcircled{\scriptsize 2}}
+\ShulihuaUC{③}{\textcircled{\scriptsize 3}}
+\ShulihuaUC{④}{\textcircled{\scriptsize 4}}
+\ShulihuaUC{⑤}{\textcircled{\scriptsize 5}}
+\ShulihuaUC{⑥}{\textcircled{\scriptsize 6}}
+\ShulihuaUC{⑦}{\textcircled{\scriptsize 7}}
+\ShulihuaUC{⑧}{\textcircled{\scriptsize 8}}
+\ShulihuaUC{⑨}{\textcircled{\scriptsize 9}}
+\ShulihuaUC{₀}{\ensuremath{_{0}}}
+\ShulihuaUC{₁}{\ensuremath{_{1}}}
+\ShulihuaUC{₂}{\ensuremath{_{2}}}
+\ShulihuaUC{₃}{\ensuremath{_{3}}}
+\ShulihuaUC{₄}{\ensuremath{_{4}}}
+\ShulihuaUC{₅}{\ensuremath{_{5}}}
+\ShulihuaUC{₆}{\ensuremath{_{6}}}
+\ShulihuaUC{ₘ}{\ensuremath{_{m}}}
+\ShulihuaUC{ₙ}{\ensuremath{_{n}}}
+\ShulihuaUC{⁺}{\ensuremath{^{+}}}
+\ShulihuaUC{⁻}{\ensuremath{^{-}}}
+\ShulihuaUC{⁴}{\ensuremath{^{4}}}
+\xeCJKDeclareCharClass{Default}{"2160 -> "216B, "2170 -> "217B}
+\ShulihuaUC{Ⅰ}{I}
+\ShulihuaUC{Ⅱ}{II}
+\ShulihuaUC{Ⅲ}{III}
+\ShulihuaUC{Ⅳ}{IV}
+\ShulihuaUC{Ⅶ}{VII}
+\ShulihuaUC{Ⅷ}{VIII}
+\ShulihuaUC{ⅰ}{i}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing,patterns,calc,arrows.meta,intersections}

@@ -15,9 +15,9 @@ Markdown 和 EPUB 中对应内容已依据另一份扫描恢复。恢复时没�
 
 分册正文已不再引用扫描 PNG，但 TikZ 示意图只保证标注、拓扑与比例可读，不是逐页对照 `raw/` 的终验，也不是像素级描摹。
 
-## PDF 文本模式缺字
+## Fandol 缺字
 
-部分 Unicode 符号（如 `∴`、`∠`、`π`、①、下标数字）写在正文而非数学模式，Latin Modern / Fandol 不含该字形，编译日志会报 Missing character。不影响 PDF 成书，但印刷页上这些符号会缺失。
+`tex/style/preamble.tex` 已把常见正文 Unicode（`∴∠π①`、希腊字母、下标等）映到 `amssymb`。Fandol 仍无「暅」（祖暅定理）和「夬」（炔的字源说明）；TinyTeX 无第二套可嵌入的完整宋体，这两字会缺。IPA 音标未映射。
 
 ## 权利状态
 
