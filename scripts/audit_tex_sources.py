@@ -72,6 +72,8 @@ def main() -> int:
             errors.append(f"{path.name}: 正文不得含 \\tableofcontents，目录由 driver/合订本生成")
         if r"\chapter{目录}" in text:
             errors.append(f"{path.name}: 不得保留 OCR \\chapter{{目录}}")
+        if r"\caption{图示（原PDF" in text:
+            errors.append(f"{path.name}: 不得保留 OCR 占位 caption \\caption{{图示（原PDF…）}}")
         if not text.strip():
             errors.append(f"{path.name}: 正文为空")
         for i, line in enumerate(text.splitlines(), 1):
