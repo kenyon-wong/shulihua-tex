@@ -18348,7 +18348,34 @@ k_{PF} = \operatorname{tg} \theta = \frac {y_{1}}{x_{1} - \frac {p}{2}},
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图4.74}]{assets/analytic-geometry/fig-p0250-02.png}}
+% fig-alt: 左：抛物线开口向右、轴标x，焦点F发出的光线经抛物线反射成平行于轴的水平光束，沿轴光线亦右行；右：探照灯示意（原照片改绘），碟形反射面、焦点光源与平行光束，下有支座
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % 抛物线与轴
+  \draw[line width=0.9pt, domain=-1.9:1.9, smooth, samples=31] plot ({0.5*\x*\x}, {\x});
+  \draw[line width=0.6pt] (-0.55,0) -- (3.3,0) node[anchor=west, inner sep=1pt] {$x$};
+  \draw[line width=0.55pt,->] (0.5,0) -- (2.15,0);
+  \fill (0.5,0) circle[radius=0.045];
+  \node[anchor=north east, inner sep=1pt] at (0.5,0) {$F$};
+  % 焦点光线经镜面反射为平行光束
+  \foreach \y in {0.45, 0.85, 1.25, 1.65}{
+    \pgfmathsetmacro\xf{0.5*\y*\y}
+    \draw[line width=0.5pt,->,shorten >=1.2pt] (0.5,0) -- (\xf,\y);
+    \draw[line width=0.55pt,->] (\xf,\y) -- (2.75,\y);
+  }
+  % 探照灯示意（原照片改绘）
+  \begin{scope}[shift={(4.35,0.55)}, rotate=30]
+    \draw[line width=0.9pt, domain=-0.95:0.95, smooth, samples=25] plot ({0.62*\x*\x}, {\x});
+    \fill (0.31,0) circle[radius=0.055];
+    \foreach \y in {-0.45, 0, 0.45}
+      \draw[line width=0.55pt,->] (0.33,\y) -- (1.85,\y);
+  \end{scope}
+  \draw[line width=0.7pt] (4.83,-0.22) -- (4.83,-0.62);
+  \draw[line width=0.7pt] (4.83,-0.38) -- (4.5,-0.92);
+  \draw[line width=0.7pt] (4.83,-0.38) -- (5.16,-0.92);
+  \draw[line width=0.9pt] (4.32,-0.96) -- (5.34,-0.96);
+\end{tikzpicture}%
+}
 \caption{图4.74}
 \end{figure}
 
@@ -27912,7 +27939,34 @@ C \left(- 9, - \frac {5 \pi}{4}\right), D (- 5, 210^{\circ})\text{。}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图7·5}]{assets/analytic-geometry/fig-p0369-01.png}}
+% fig-alt: 极坐标系，极点O、极轴x带箭头，同心圆每1单位一圈至10（轴上标6、10），射线每30°一条并标角度，点A(6,135°)、E(4,90°)、C(3,60°)、D(7,0°)、B(2,330°)、F(5,210°)
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \def\u{0.42}
+  \foreach \k in {1,...,10}
+    \draw[line width=0.45pt] (0,0) circle[radius=\k*\u];
+  \foreach \a in {30,60,...,330}
+    \draw[line width=0.5pt] (0,0) -- (\a:10*\u);
+  \draw[line width=0.7pt,->] (0,0) -- (11.7*\u,0) node[anchor=west, inner sep=1.5pt] {$x$};
+  \foreach \a/\lab in {30/{$30^{\circ}$}, 60/{$60^{\circ}$}, 90/{$90^{\circ}$}, 120/{$120^{\circ}$}, 150/{$150^{\circ}$}, 180/{$180^{\circ}$}, 210/{$210^{\circ}$}, 240/{$240^{\circ}$}, 270/{$270^{\circ}$}, 300/{$300^{\circ}$}, 330/{$330^{\circ}$}}
+    \node[fill=white, inner sep=0.8pt] at (\a:11.15*\u) {\lab};
+  \node[anchor=north east, inner sep=1pt] at (-0.12*\u,-0.18*\u) {$O$};
+  \node[anchor=south west, inner sep=0.5pt] at (6*\u,0) {$6$};
+  \node[anchor=south west, inner sep=0.5pt] at (10.05*\u,0.1*\u) {$10$};
+  \fill (135:6*\u) circle[radius=0.05];
+  \node[anchor=east, inner sep=1.5pt] at (135:6*\u) {$A$};
+  \fill (90:4*\u) circle[radius=0.05];
+  \node[anchor=east, inner sep=1.5pt] at (90:4*\u) {$E$};
+  \fill (60:3*\u) circle[radius=0.05];
+  \node[anchor=east, inner sep=1.5pt] at (60:3*\u) {$C$};
+  \fill (7*\u,0) circle[radius=0.05];
+  \node[anchor=north, inner sep=1.5pt] at (7*\u,-0.08*\u) {$D$};
+  \fill (330:2*\u) circle[radius=0.05];
+  \node[anchor=north west, inner sep=1pt] at (330:2*\u) {$B$};
+  \fill (210:5*\u) circle[radius=0.05];
+  \node[anchor=east, inner sep=1.5pt] at (210:5*\u) {$F$};
+\end{tikzpicture}%
+}
 \caption{图7·5}
 \end{figure}
 
