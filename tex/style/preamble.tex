@@ -11,8 +11,7 @@
 ]{geometry}
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
-% 正文里的 Unicode 符号（∴∠π① 等）Fandol/Latin Modern 无字形。
-% 映到 amssymb；不引入 extra 宏包。暅/夬 与 IPA 仍缺，见 docs/KNOWN_ISSUES.md。
+% 正文 Unicode：常见符号映到 amssymb；暅/夬 与 IPA 用 tex/vendor/fonts/ShulihuaFallback.otf。
 \newcommand{\ShulihuaUC}[2]{%
   \catcode`#1=\active
   \begingroup\lccode`\~=`#1\relax
@@ -97,6 +96,22 @@
 \ShulihuaUC{Ⅶ}{VII}
 \ShulihuaUC{Ⅷ}{VIII}
 \ShulihuaUC{ⅰ}{i}
+\newfontfamily\shulihuafallbackfont{ShulihuaFallback}[
+  Path={tex/vendor/fonts/},
+  Extension=.otf
+]
+\newcommand{\ShulihuaFB}[1]{{\shulihuafallbackfont\char#1}}
+\xeCJKDeclareCharClass{Default}{"6685, "592C}
+\ShulihuaUC{暅}{\ShulihuaFB{"6685}}
+\ShulihuaUC{夬}{\ShulihuaFB{"592C}}
+\ShulihuaUC{ː}{\ShulihuaFB{"02D0}}
+\ShulihuaUC{ɪ}{\ShulihuaFB{"026A}}
+\ShulihuaUC{ʒ}{\ShulihuaFB{"0292}}
+\ShulihuaUC{ʃ}{\ShulihuaFB{"0283}}
+\ShulihuaUC{ʊ}{\ShulihuaFB{"028A}}
+\ShulihuaUC{ɑ}{\ShulihuaFB{"0251}}
+\ShulihuaUC{ˈ}{\ShulihuaFB{"02C8}}
+\ShulihuaUC{ʌ}{\ShulihuaFB{"028C}}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing,patterns,calc,arrows.meta,intersections}
