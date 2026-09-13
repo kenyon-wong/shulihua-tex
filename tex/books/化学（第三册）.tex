@@ -113,7 +113,16 @@
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第8页图示}]{assets/chemistry-3/fig-p0008-01.png}}
+% fig-alt: 金属导电性比较柱状图（Ag 至 Hg）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize,y=0.012cm]
+  \foreach \x/\h/\lab in {0/100/Ag,0.7/78/Cu,1.4/62/Au,2.1/48/Al,2.8/28/Zn,3.5/18/Fe,4.2/12/Pb,4.9/6/Hg} {
+    \fill[black!25] (\x,0) rectangle (\x+0.45,\h);
+    \draw[line width=0.5pt] (\x,0) rectangle (\x+0.45,\h+18);
+    \node[anchor=north] at (\x+0.22,-4) {\lab};
+  }
+\end{tikzpicture}%
+}
 \caption{原PDF第8页图示}
 \end{figure}
 
@@ -4106,7 +4115,20 @@ x=1 或 3）、冰晶石
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 4·3 氧化铝的电解槽示意图}]{assets/chemistry-3/fig-p0099-01.png}}
+% fig-alt: 图4·3：氧化铝电解槽（阳极、熔融电解质、阴极）
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \fill[black!15] (-1.6,0) rectangle (1.6,0.35);
+  \draw[line width=0.7pt] (-1.45,0.35) -- (-1.45,1.15) -- (1.45,1.15) -- (1.45,0.35);
+  \fill[pattern=north east lines,pattern color=black!40] (-1.25,0.45) rectangle (1.25,0.85);
+  \draw[line width=0.65pt] (-0.85,1.35) rectangle (-0.45,1.85);
+  \draw[line width=0.65pt] (0.45,1.35) rectangle (0.85,1.85);
+  \node[anchor=south] at (-0.65,1.88) {$+$};
+  \node[anchor=south] at (0.65,1.88) {$+$};
+  \node at (0,0.65) {熔融电解质};
+  \node[anchor=north] at (0,0.10) {阴极};
+\end{tikzpicture}%
+}
 \caption{图 4·3 氧化铝的电解槽示意图}
 \end{figure}
 
@@ -4783,7 +4805,17 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5·2 炼铁车间图}]{assets/chemistry-3/fig-p0115-01.png}}
+% fig-alt: 图5·2：炼铁高炉示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-0.55,0) -- (-0.85,1.15) -- (-0.55,2.55) -- (0.55,2.55) -- (0.85,1.15) -- (0.55,0) -- cycle;
+  \draw[line width=0.5pt] (0,2.55) -- (0,2.95);
+  \node[anchor=south] at (0,2.98) {装料};
+  \node at (0,1.35) {高炉};
+  \draw[->,line width=0.45pt] (-1.15,0.35) -- (-0.55,0.35);
+  \node[anchor=east] at (-1.18,0.35) {热风};
+\end{tikzpicture}%
+}
 \caption{图 5·2 炼铁车间图}
 \end{figure}
 
@@ -4850,7 +4882,15 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b) 炉料进入大料斗}]{assets/chemistry-3/fig-p0115-03.png}}
+% fig-alt: 高炉大料斗装料示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (-0.85,1.15) -- (0.85,1.15) -- (0.55,0.35) -- (-0.55,0.35) -- cycle;
+  \draw[line width=0.55pt] (0,1.15) -- (0,1.55);
+  \fill[pattern=dots,pattern color=black!40] (-0.45,0.45) -- (0.45,0.45) -- (0.35,0.95) -- (-0.35,0.95) -- cycle;
+  \node[anchor=south] at (0,1.58) {炉料};
+\end{tikzpicture}%
+}
 \caption{(b) 炉料进入大料斗}
 \end{figure}
 
@@ -4935,7 +4975,15 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第117页图示}]{assets/chemistry-3/fig-p0117-01.png}}
+% fig-alt: 高炉炉体剖面示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-0.70,0) -- (-0.95,1.35) -- (-0.55,2.85) -- (0.55,2.85) -- (0.95,1.35) -- (0.70,0) -- cycle;
+  \draw[line width=0.45pt] (-0.80,0.85) -- (0.80,0.85);
+  \node at (0,1.55) {炉身};
+  \node at (0,0.40) {炉缸};
+\end{tikzpicture}%
+}
 \caption{原PDF第117页图示}
 \end{figure}
 
@@ -5060,19 +5108,43 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第121页图示}]{assets/chemistry-3/fig-p0121-01.png}}
+% fig-alt: 转炉纵剖面示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0.35) ellipse [x radius=0.85,y radius=0.22];
+  \draw[line width=0.75pt] (-0.85,0.35) -- (-0.55,1.55) -- (0.55,1.55) -- (0.85,0.35);
+  \draw[line width=0.55pt] (0,1.55) -- (0,1.95);
+\end{tikzpicture}%
+}
 \caption{原PDF第121页图示}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={原PDF第121页图示}]{assets/chemistry-3/fig-p0121-02.png}}
+% fig-alt: 转炉截面示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) circle (0.85);
+  \draw[line width=0.55pt] (0,0) circle (0.55);
+  \fill[pattern=north east lines,pattern color=black!35] (0,0) circle (0.55);
+\end{tikzpicture}%
+}
 \caption{原PDF第121页图示}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a) 纵剖面；(b) 截面}]{assets/chemistry-3/fig-p0121-03.png}}
+% fig-alt: 转炉（a）纵剖面（b）截面
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (-1.55,0.2) ellipse [x radius=0.55,y radius=0.15];
+  \draw[line width=0.7pt] (-2.10,0.2) -- (-1.85,1.15) -- (-1.25,1.15) -- (-1.00,0.2);
+  \node[anchor=north] at (-1.55,-0.15) {(a)};
+  \draw[line width=0.7pt] (0.85,0.55) circle (0.55);
+  \draw[line width=0.5pt] (0.85,0.55) circle (0.32);
+  \node[anchor=north] at (0.85,-0.15) {(b)};
+\end{tikzpicture}%
+}
 \caption{(a) 纵剖面；(b) 截面}
 \end{figure}
 
@@ -5094,7 +5166,19 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图5·6 平炉示意图}]{assets/chemistry-3/fig-p0122-01.png}}
+% fig-alt: 图5·6：平炉与蓄热室 I--IV
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (-1.8,1.15) rectangle (1.8,1.65);
+  \node at (0,1.40) {熔池};
+  \foreach \x/\n in {-1.35/I,-0.45/II,0.45/III,1.35/IV} {
+    \draw[line width=0.6pt] (\x-0.35,0) rectangle (\x+0.35,0.85);
+    \node at (\x,0.42) {\n};
+  }
+  \draw[line width=0.45pt] (-1.35,0.85) -- (-1.35,1.15);
+  \draw[line width=0.45pt] (1.35,0.85) -- (1.35,1.15);
+\end{tikzpicture}%
+}
 \caption{图5·6 平炉示意图}
 \end{figure}
 
@@ -5121,7 +5205,16 @@ SiO₂、Al₂O₃、CaO、MgO 等氧化物组成的化合物，它们主要是�
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图 5·7 电弧炉剖面图}]{assets/chemistry-3/fig-p0124-01.png}}
+% fig-alt: 图5·7：电弧炉，三电极
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.75pt] (-1.15,0) -- (-1.15,1.15) -- (1.15,1.15) -- (1.15,0);
+  \draw[line width=0.75pt] (-1.15,0) arc[start angle=180,end angle=360,x radius=1.15,y radius=0.22];
+  \foreach \x in {-0.55,0,0.55} \draw[line width=0.65pt] (\x,1.15) -- (\x,1.85);
+  \node at (0,0.45) {熔池};
+  \node[anchor=south] at (0,1.88) {电极};
+\end{tikzpicture}%
+}
 \caption{图 5·7 电弧炉剖面图}
 \end{figure}
 
@@ -5461,7 +5554,18 @@ V _ {1} = \frac {273 \times 750 \times 1}{293 \times 760} = 0.9196 (\text {\text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(a)}]{assets/chemistry-3/fig-p0132-01.png}}
+% fig-alt: 量气管叠置：上 HCl、下 $\mathrm{NH_3}$，汞槽
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \fill[black!12] (-1.05,-0.15) rectangle (1.05,0.15);
+  \draw[line width=0.75pt] (0,0.15) -- (0,2.55);
+  \draw[line width=0.7pt] (-0.28,1.35) -- (-0.28,2.15) -- (0.28,2.15) -- (0.28,1.35);
+  \node at (0.95,1.75) {HCl};
+  \draw[line width=0.7pt] (-0.28,0.35) -- (-0.28,1.15) -- (0.28,1.15) -- (0.28,0.35);
+  \node at (0.95,0.75) {$\mathrm{NH_3}$};
+  \node[anchor=north] at (0,-0.18) {汞};
+\end{tikzpicture}%
+}
 \caption{(a)}
 \end{figure}
 
@@ -5469,7 +5573,14 @@ V _ {1} = \frac {273 \times 750 \times 1}{293 \times 760} = 0.9196 (\text {\text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={(b)}]{assets/chemistry-3/fig-p0132-02.png}}
+% fig-alt: 反应后气体体积变化示意
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.7pt] (-0.28,0.15) -- (-0.28,1.85) -- (0.28,1.85) -- (0.28,0.15);
+  \fill[black!15] (-0.28,0.15) rectangle (0.28,0.55);
+  \node at (0.70,1.00) {剩余气体};
+\end{tikzpicture}%
+}
 \caption{(b)}
 \end{figure}
 
@@ -7126,13 +7237,29 @@ V _ {2} = \frac {167 \times (273 + 15) \times 760}{273 \times 750} = 178.5 \text
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图附3（左）：带橡皮塞的试管内横放螺旋状铁丝}]{assets/chemistry-3/fig-p0159-01.png}}
+% fig-alt: 横放试管，内有螺旋铁丝
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) -- (2.15,0);
+  \draw[line width=0.75pt] (0,0.42) -- (2.15,0.42);
+  \draw[line width=0.75pt] (2.15,0) arc[start angle=-90,end angle=90,radius=0.21];
+  \foreach \x in {1.35,1.50,1.65,1.80} \draw[line width=0.55pt] (\x,0.08) -- (\x,0.34);
+\end{tikzpicture}%
+}
 \caption{图附3（左）：带橡皮塞的试管内横放螺旋状铁丝}
 \end{figure}
 
 \begin{figure}
 \centering
-\fitfig{\includegraphics[keepaspectratio,alt={图附3（右）：试管内竖直放置螺旋状铁丝}]{assets/chemistry-3/fig-p0159-02.png}}
+% fig-alt: 竖放试管，内有螺旋铁丝
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.75pt] (0,0) -- (0,1.85);
+  \draw[line width=0.75pt] (0.45,0) -- (0.45,1.85);
+  \draw[line width=0.75pt] (0,0) arc[start angle=180,end angle=360,radius=0.225];
+  \foreach \y in {0.35,0.55,0.75,0.95,1.15} \draw[line width=0.55pt] (0.08,\y) ellipse [x radius=0.14,y radius=0.06];
+\end{tikzpicture}%
+}
 \caption{图附3（右）：试管内竖直放置螺旋状铁丝}
 \end{figure}
 
