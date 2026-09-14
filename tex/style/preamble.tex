@@ -156,6 +156,15 @@
   \else\usebox{\shulihua@box}%
   \fi
 }
+% 宽公式/宽盒：只按栏宽缩小，不改内容。longtable 不能放进盒子，勿用于跨页表。
+\newcommand*\fitblock[1]{%
+  \sbox\shulihua@box{#1}%
+  \ifdim\wd\shulihua@box>\linewidth
+    \resizebox{\linewidth}{!}{\usebox\shulihua@box}%
+  \else
+    \usebox{\shulihua@box}%
+  \fi
+}
 % 插图跟引用走：不漂到页底/下页。H 由 float 宏包提供；不用 wrapfig。
 \floatplacement{figure}{H}
 % 原书图号写在 \caption 正文（图1·1），不用 LaTeX 自动「图 N:」。
@@ -180,6 +189,9 @@
 \AtBeginDocument{%
   \let\shulihua@label\label
   \renewcommand{\label}[1]{\shulihua@label{\shulihuaprefix#1}}%
+  % 合订本 TOC 页码到四位；默认 1.55em 会溢出约 4.94pt。
+  \renewcommand{\@pnumwidth}{2.55em}%
+  \renewcommand{\@tocrmarg}{3.55em}%
 }
 \makeatother
 
