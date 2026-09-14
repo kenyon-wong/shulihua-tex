@@ -49,6 +49,10 @@ def env_balance_errors(path: Path, text: str) -> list[str]:
     return errors
 
 
+POST_FIG_EMPH = re.compile(r"\\end\{figure\}\s*\\emph\{图")
+POST_FIG_QUOTE = re.compile(r"\\end\{figure\}\s*\\begin\{quote\}\s*图\s*[\d一二三四五六七八九十]")
+
+
 def scan_png_includes(path: Path, text: str) -> list[str]:
     errors: list[str] = []
     body = strip_comments(text)
@@ -57,6 +61,16 @@ def scan_png_includes(path: Path, text: str) -> list[str]:
             continue
         if re.search(r"assets/|\.png\b", line, re.I):
             errors.append(f"{path.name}:{i}: 正文不得 \\includegraphics 扫描 PNG")
+    return errors
+
+
+def scan_figure_dup_labels(path: Path, text: str) -> list[str]:
+    errors: list[str] = []
+    body = strip_comments(text)
+    if POST_FIG_EMPH.search(body):
+        errors.append(f"{path.name}: \\end{{figure}} 后不得重复 \\emph{{图…}}")
+    if POST_FIG_QUOTE.search(body):
+        errors.append(f"{path.name}: \\end{{figure}} 后不得再用 quote 重复图号")
     return errors
 
 
@@ -139,6 +153,7 @@ def main() -> int:
                 break
         errors.extend(env_balance_errors(path, text))
         errors.extend(scan_png_includes(path, text))
+        errors.extend(scan_figure_dup_labels(path, text))
         rows.append({"title": item["title"], "bytes": path.stat().st_size})
     catalog_titles = [item["title"] for item in books]
     makefile_titles = makefile_book_titles()
