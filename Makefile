@@ -59,7 +59,7 @@ PHYSICS_TEX := $(addprefix tex/books/,$(addsuffix .tex,$(PHYSICS_BOOKS)))
 CHEMISTRY_TEX := $(addprefix tex/books/,$(addsuffix .tex,$(CHEMISTRY_BOOKS)))
 
 .PHONY: all audit pdf-audit repository privacy pdf volumes collections \
-	pdf-verify tex-deps tex-audit verify pre-push clean
+	pdf-verify tex-deps tex-audit log-audit crosscheck verify pre-push clean
 
 # 提交前源审计（不含 PDF）。构建用 make pdf。
 all: audit tex-audit
@@ -70,6 +70,12 @@ audit:
 
 tex-audit:
 	$(PYTHON) scripts/audit_tex_sources.py
+
+log-audit:
+	$(PYTHON) scripts/audit_build_logs.py
+
+crosscheck:
+	$(PYTHON) scripts/audit_crosscheck.py
 
 pdf-audit:
 	$(PYTHON) scripts/audit_pdfs.py
