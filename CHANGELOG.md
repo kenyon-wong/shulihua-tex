@@ -2,6 +2,10 @@
 
 ## 2026-09-14
 
+- 插图默认随文 `H`；去掉残留 `\emph{图…}` 与 quote 重复题注；`①`–`⑨` 在数学模式改为 `\text{\textcircled{…}}`。
+- 宽 Pandoc `longtable`（平方表、三角函数表等）改为紧凑 `tabular`/`longtable`。代数一 Overfull `\hbox` 从约 498 降到 1。
+- 习题正文 `8.` 收成 `enumerate[start=…]`；`\textasciitilde` 在题号范围改回 `～`。
+- 图号连接符按 `raw/` 分册统一：数学、化学、物理一、几何用 `·`，物理二/三/四用 `.`。
 - 17 册正文扫描插图改为 TikZ/`tabular` 示意图；`books/assets` PNG 保留作对照，正文不再引用。
 - 全量编出 17 册分册 PDF 与三本合订 PDF；修正若干 TikZ 编译错误（多余分组、`fitfig` 空行、`intersections` 库、误入的 `\\n`）。
 - 正文常见 Unicode 符号（`∴∠π①` 等）在 preamble 映到数学字形；暅、夬与 IPA 用 `tex/vendor/fonts/ShulihuaFallback.otf`（Sarasa Gothic SC 子集，SIL OFL）。

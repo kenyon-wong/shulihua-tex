@@ -67,15 +67,15 @@
 \ShulihuaUC{★}{\ensuremath{\bigstar}}
 \ShulihuaUC{′}{\ensuremath{^{\prime}}}
 \ShulihuaUC{″}{\ensuremath{^{\prime\prime}}}
-\ShulihuaUC{①}{\textcircled{\scriptsize 1}}
-\ShulihuaUC{②}{\textcircled{\scriptsize 2}}
-\ShulihuaUC{③}{\textcircled{\scriptsize 3}}
-\ShulihuaUC{④}{\textcircled{\scriptsize 4}}
-\ShulihuaUC{⑤}{\textcircled{\scriptsize 5}}
-\ShulihuaUC{⑥}{\textcircled{\scriptsize 6}}
-\ShulihuaUC{⑦}{\textcircled{\scriptsize 7}}
-\ShulihuaUC{⑧}{\textcircled{\scriptsize 8}}
-\ShulihuaUC{⑨}{\textcircled{\scriptsize 9}}
+\ShulihuaUC{①}{\text{\textcircled{\scriptsize 1}}}
+\ShulihuaUC{②}{\text{\textcircled{\scriptsize 2}}}
+\ShulihuaUC{③}{\text{\textcircled{\scriptsize 3}}}
+\ShulihuaUC{④}{\text{\textcircled{\scriptsize 4}}}
+\ShulihuaUC{⑤}{\text{\textcircled{\scriptsize 5}}}
+\ShulihuaUC{⑥}{\text{\textcircled{\scriptsize 6}}}
+\ShulihuaUC{⑦}{\text{\textcircled{\scriptsize 7}}}
+\ShulihuaUC{⑧}{\text{\textcircled{\scriptsize 8}}}
+\ShulihuaUC{⑨}{\text{\textcircled{\scriptsize 9}}}
 \ShulihuaUC{₀}{\ensuremath{_{0}}}
 \ShulihuaUC{₁}{\ensuremath{_{1}}}
 \ShulihuaUC{₂}{\ensuremath{_{2}}}
@@ -156,7 +156,8 @@
   \else\usebox{\shulihua@box}%
   \fi
 }
-\def\fps@figure{htbp}
+% 插图跟引用走：不漂到页底/下页。H 由 float 宏包提供；不用 wrapfig。
+\floatplacement{figure}{H}
 % 原书图号写在 \caption 正文（图1·1），不用 LaTeX 自动「图 N:」。
 \long\def\@makecaption#1#2{%
   \vskip\abovecaptionskip

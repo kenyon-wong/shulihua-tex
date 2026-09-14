@@ -1,5 +1,24 @@
 # 维护流程
 
+## 翻排 TeX 实践
+
+本仓库是《数理化自学丛书》的 XeLaTeX 翻排，不是新编教材。验收按下面两层，不要用 amsthm 自动编号、siunitx、mhchem 去改写原书层次和记号。
+
+工程层（`make tex-audit` 已门禁）：
+
+- 正文只在 `tex/books/`，版式只在 `tex/style/`；正文不得含 `\documentclass` / `\begin{document}` / `\tableofcontents`。
+- 用 XeLaTeX + `ctexbook` + Fandol，不用系统字体。
+- 不用 `$$`、`eqnarray`、`\over`；TikZ 内不得 `\def\rm` / `\def\tt` / `\def\sc`。
+- 标题 `\chapter` / `\section` 等参数必须单行，原书编号写在标题里，不要靠 LaTeX 计数器重编。
+- 题注只用原书图号，禁止 OCR 占位 `\caption{原PDF…}`；插图默认 `H`，不用 wrapfig。
+- 不凭空补写扫描缺失；证据不足时用 quote 校注，不编造图号、公式号。
+
+翻排体例（人工，不对 17 册一刀切）：
+
+- 图号连接符 `·` / `-` / `.` 以该册 `raw/` 为准，一册一种。
+- 习题分段（如「计算 8～20」）用 `enumerate` 的 `start`，不要把 `8.` 写成正文。
+- 例 / 解 / 证 / 注意保持原书用词（`\textbf{［解］}` 等），不要改成 theorem 环境。
+
 ## 修改正文或资源
 
 1. 在仓库外建立带时间戳的备份。

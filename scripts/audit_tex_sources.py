@@ -51,6 +51,80 @@ def env_balance_errors(path: Path, text: str) -> list[str]:
 
 POST_FIG_EMPH = re.compile(r"\\end\{figure\}\s*\\emph\{图")
 POST_FIG_QUOTE = re.compile(r"\\end\{figure\}\s*\\begin\{quote\}\s*图\s*[\d一二三四五六七八九十]")
+HEAD_CMD = re.compile(r"\\(subsubsection|subsection|section|chapter|paragraph)\*?\{")
+FONT_MACRO = re.compile(
+    r"\\def\\(rm|tt|sc)\b|\\pgfmathsetmacro\{\\(rm|tt|sc)\}|\\foreach \\(rm|tt|sc)\b"
+)
+
+
+def closing_brace(text: str, start: int) -> int:
+    depth = 1
+    j = start
+    n = len(text)
+    while j < n and depth:
+        ch = text[j]
+        if ch == "\\" and j + 1 < n:
+            j += 2
+            continue
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+        j += 1
+    return j - 1
+
+
+CARET_ESC = re.compile(r"\\\^\{\}\\\{")
+
+
+def texorpdfstring_pdf_arg_ranges(text: str) -> list[tuple[int, int]]:
+    ranges: list[tuple[int, int]] = []
+    needle = r"\texorpdfstring{"
+    i = 0
+    while True:
+        j = text.find(needle, i)
+        if j < 0:
+            break
+        first_open = j + len(r"\texorpdfstring")
+        first_close = closing_brace(text, first_open + 1)
+        k = first_close + 1
+        while k < len(text) and text[k] in " \t\n":
+            k += 1
+        if k < len(text) and text[k] == "{":
+            second_close = closing_brace(text, k + 1)
+            ranges.append((k + 1, second_close))
+            i = second_close + 1
+        else:
+            i = first_close + 1
+    return ranges
+
+
+def caret_escape_errors(path: Path, text: str) -> list[str]:
+    skip = texorpdfstring_pdf_arg_ranges(text)
+    errors: list[str] = []
+    for match in CARET_ESC.finditer(text):
+        pos = match.start()
+        if any(start <= pos < end for start, end in skip):
+            continue
+        line = text.count("\n", 0, pos) + 1
+        errors.append(
+            f"{path.name}:{line}: 正文不得使用 \\^{{}}{{…}} 转义，应使用 ^{{…}}"
+        )
+        break
+    return errors
+
+
+def heading_newline_errors(path: Path, text: str) -> list[str]:
+    errors: list[str] = []
+    for match in HEAD_CMD.finditer(text):
+        close = closing_brace(text, match.end())
+        if close < match.end():
+            continue
+        if "\n" in text[match.end() : close]:
+            line = text.count("\n", 0, match.start()) + 1
+            errors.append(f"{path.name}:{line}: 标题命令参数不得含换行")
+            break
+    return errors
 
 
 def scan_png_includes(path: Path, text: str) -> list[str]:
@@ -143,8 +217,16 @@ def main() -> int:
             errors.append(f"{path.name}: 正文不得含 \\tableofcontents，目录由 driver/合订本生成")
         if r"\chapter{目录}" in text:
             errors.append(f"{path.name}: 不得保留 OCR \\chapter{{目录}}")
-        if r"\caption{图示（原PDF" in text:
-            errors.append(f"{path.name}: 不得保留 OCR 占位 caption \\caption{{图示（原PDF…）}}")
+        if r"\caption{图示（原PDF" in text or r"\caption{原PDF" in text:
+            errors.append(f"{path.name}: 不得保留 OCR 占位 caption \\caption{{原PDF…}}")
+        if "$$" in strip_comments(text):
+            errors.append(f"{path.name}: 不得使用 $$（相邻行内数学会进入 display math）")
+        if r"\textbackslash(" in text:
+            errors.append(f"{path.name}: 表内数学不得写成 \\textbackslash(，应使用 \\(")
+        errors.extend(caret_escape_errors(path, text))
+        if FONT_MACRO.search(text):
+            errors.append(f"{path.name}: 不得 \\def\\rm/\\tt/\\sc（与 LaTeX 字体命令冲突）")
+        errors.extend(heading_newline_errors(path, text))
         if not text.strip():
             errors.append(f"{path.name}: 正文为空")
         for i, line in enumerate(text.splitlines(), 1):
