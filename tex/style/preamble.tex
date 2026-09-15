@@ -122,8 +122,23 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
+\newsavebox{\shulihuahdbox}
+\newcommand{\shulihuaheadright}{%
+  \small\linespread{1}\selectfont
+  \shulihuaheadingfont
+  \nouppercase{%
+    \sbox{\shulihuahdbox}{\leftmark}%
+    \settowidth{\dimen0}{\small\linespread{1}\selectfont 数理化自学丛书}%
+    \dimen1=\dimexpr\textwidth-\dimen0-1em\relax
+    \ifdim\wd\shulihuahdbox>\dimen1
+      \resizebox{\dimen1}{\height}{\usebox{\shulihuahdbox}}%
+    \else
+      \usebox{\shulihuahdbox}%
+    \fi
+  }%
+}
 \fancyhead[L]{\small\linespread{1}\selectfont 数理化自学丛书}
-\fancyhead[R]{\small\linespread{1}\selectfont\nouppercase{\leftmark}}
+\fancyhead[R]{\shulihuaheadright}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
@@ -139,6 +154,28 @@
 \usepackage{hyperref}
 
 \setcounter{secnumdepth}{-\maxdimen}
+% 标题组内保留 CJK 空格、数字两侧不加空。不改全局 CJKecglue。
+\newcommand{\shulihuaheadingfont}{%
+  \CJKspace
+  \xeCJKsetup{CJKecglue={\hspace{0pt}}}%
+}
+\ctexset{
+  chapter/format = \huge\bfseries\centering\shulihuaheadingfont,
+  chapter/beforeskip = 24pt,
+  chapter/afterskip = 18pt,
+  section/format = \Large\bfseries\raggedright\shulihuaheadingfont,
+  subsection/format = \large\bfseries\shulihuaheadingfont,
+  subsubsection/format = \normalsize\bfseries\shulihuaheadingfont,
+  paragraph/format = \normalsize\bfseries\shulihuaheadingfont,
+  part/format = \huge\bfseries\centering\shulihuaheadingfont,
+}
+\let\shulihuatableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{%
+  \begingroup
+  \shulihuaheadingfont
+  \shulihuatableofcontents
+  \endgroup
+}
 \setlength{\emergencystretch}{3em}
 % 插图检索：XeLaTeX 由 Makefile 在仓库根目录运行。扫描 PNG 仍用 {assets/...}，
 % 经 {books/} 解析到 books/assets/。R/V 成品在 tex/figures/<asset_dir>/<stem>.pdf，
