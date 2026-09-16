@@ -156,6 +156,33 @@
 \usepackage{float}
 \usepackage{enumitem}
 \setlist{nosep}
+% 原书［解］/例1 左挂。只用于行首标签。hangindent 段后必须清零，否则会缩显示公式。
+\newcommand{\shulihuahang}[1]{%
+  \par
+  \hangindent=0pt
+  \hangafter=1
+  \addvspace{2pt plus 1pt minus 1pt}%
+  \settowidth{\dimen0}{\textbf{#1}\enspace}%
+  \ifdim\dimen0<2.2em \dimen0=2.2em\fi
+  \noindent
+  \hangindent=\dimen0
+  \hangafter=1
+  \makebox[\dimen0][l]{\textbf{#1}}%
+  \everypar{\hangindent=0pt \hangafter=1 \everypar{}}%
+  \ignorespaces
+}
+\let\shulihuaopenbracket\[
+\renewcommand{\[}{\par\hangindent=0pt\hangafter=1\shulihuaopenbracket}
+% 黑体定义句：顶格，不用 quote 缩进。正文仍自带 \textbf。
+\newenvironment{shulihuadef}{%
+  \par
+  \addvspace{6pt plus 2pt minus 2pt}%
+  \noindent
+  \ignorespaces
+}{%
+  \par
+  \addvspace{6pt plus 2pt minus 2pt}%
+}
 \xeCJKsetup{CJKmath=true}
 \usepackage{hyperref}
 
