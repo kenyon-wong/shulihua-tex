@@ -573,11 +573,66 @@
 
 \section{§1·4 数轴}
 
-我们在量身高的时候，通常可用一根直立的木尺，划上许多横格，并注明一些表示长度的数字（一般用厘米作为单
-
-位长度）。 当一个人站到下面的垫板上时， 他的足底刚刚对准这根尺的起点，
+我们在量身高的时候，通常可用一根直立的木尺，划上许多横格，并注明一些表示长度的数字（一般用厘米作为单位长度）。 当一个人站到下面的垫板上时， 他的足底刚刚对准这根尺的起点，
 从他的头顶所对的尺上的位置， 可以读出他的身高的厘米数。 这就是说，
 对于每一个身体高度的厘米数， 这根木尺上有一个和它对应的位置。
+
+\begin{figure}
+\centering
+% fig-alt: 测身高的直立木尺立于木质底座垫板上，尺面标有刻度及50、100、150、200厘米数值
+\fitfig{%
+\begin{tikzpicture}[line cap=round, line join=round, font=\tiny]
+  % 垫板厚度与底面透视
+  \fill[gray!10] (-1.40,-0.20) -- (-0.15,-0.78) -- (-0.15,-1.02) -- (-1.40,-0.44) -- cycle;
+  \fill[gray!25] (-0.15,-0.78) -- (1.50,-0.15) -- (1.50,-0.39) -- (-0.15,-1.02) -- cycle;
+  \fill[white] (-1.40,-0.20) -- (-0.15,-0.78) -- (1.50,-0.15) -- (0.25,0.43) -- cycle;
+  % 底板边线
+  \draw[line width=0.6pt] (-1.40,-0.44) -- (-0.15,-1.02) -- (1.50,-0.39);
+  \draw[line width=0.6pt] (-1.40,-0.44) -- (-1.40,-0.20);
+  \draw[line width=0.6pt] (-0.15,-1.02) -- (-0.15,-0.78);
+  \draw[line width=0.6pt] (1.50,-0.39) -- (1.50,-0.15);
+  \draw[line width=0.7pt] (-1.40,-0.20) -- (-0.15,-0.78) -- (1.50,-0.15) -- (0.25,0.43) -- cycle;
+  % 垫板正面与侧面木纹
+  \begin{scope}
+    \clip (-1.40,-0.20) -- (-0.15,-0.78) -- (-0.15,-1.02) -- (-1.40,-0.44) -- cycle;
+    \foreach \y in {-0.30,-0.42,-0.55,-0.68,-0.82} {
+      \draw[line width=0.25pt, gray!50] (-1.40,\y) .. controls (-0.8,\y-0.2) .. (-0.15,\y-0.25);
+    }
+  \end{scope}
+  % 垫板顶面木纹（年轮弧线）
+  \begin{scope}
+    \clip (-1.40,-0.20) -- (-0.15,-0.78) -- (1.50,-0.15) -- (0.25,0.43) -- cycle;
+    \foreach \r in {0.20,0.38,0.56,0.74,0.92,1.12,1.34,1.58,1.85,2.15} {
+      \draw[line width=0.30pt, gray!60] (-0.85,-0.30) ellipse [x radius=\r*1.15, y radius=\r*0.46, rotate=20];
+    }
+  \end{scope}
+  % 直立木尺
+  % 木尺厚度（左侧面）
+  \fill[gray!22] (-0.56,0.18) -- (-0.44,0.23) -- (-0.44,5.23) -- (-0.56,5.18) -- cycle;
+  \draw[line width=0.6pt] (-0.56,0.18) -- (-0.56,5.18) -- (-0.44,5.23);
+  % 木尺顶面
+  \fill[gray!15] (-0.56,5.18) -- (-0.44,5.23) -- (-0.08,5.08) -- (-0.20,5.03) -- cycle;
+  \draw[line width=0.55pt] (-0.56,5.18) -- (-0.20,5.03) -- (-0.08,5.08) -- (-0.44,5.23);
+  % 木尺正面
+  \fill[white] (-0.44,0.23) -- (-0.08,0.08) -- (-0.08,5.08) -- (-0.44,5.23) -- cycle;
+  \draw[line width=0.75pt] (-0.44,0.23) -- (-0.08,0.08) -- (-0.08,5.08) -- (-0.44,5.23) -- cycle;
+  % 刻度线与尺面数值（0至200厘米）
+  \foreach \h in {10,20,...,200} {
+    \pgfmathsetmacro\y{0.24 + \h * 0.0242}
+    \pgfmathtruncatemacro\m{Mod(\h,50)}
+    \ifnum\m=0
+      % 50、100、150、200 大刻度及数字
+      \draw[line width=0.5pt] (-0.26,\y-0.075) -- (-0.08,\y-0.15);
+      \node[inner sep=0.5pt, anchor=center] at (-0.33,\y-0.05) {\scalebox{0.75}{\h}};
+    \else
+      % 小刻度
+      \draw[line width=0.35pt] (-0.17,\y-0.112) -- (-0.08,\y-0.15);
+    \fi
+  }
+\end{tikzpicture}%
+}
+\caption{图1·2}
+\end{figure}
 
 我们容易想到，是不是对于所有的有理数，正的、负的和零，也可以有类似这样的尺，使每一个有理数都能在尺上找到它对应的位置呢？
 
@@ -592,7 +647,7 @@
 
 \begin{figure}
 \centering
-% fig-alt: 数轴，向右箭头为正方向，刻度从$-6$到$+6$，原点上方偏左有一单位长括号，在$+4$与$+5$之间标出$4\frac{1}{2}$
+% fig-alt: 数轴，向右箭头为正方向，刻度从$-6$到$+6$，原点上方偏右有一单位长括号，在$+4$与$+5$之间由箭头向上指引标出$4\frac{1}{2}$
 \fitfig{%
 \begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
   \draw[line width=0.95pt, ->] (-6.65,0) -- (6.85,0);
@@ -600,9 +655,9 @@
     \draw[line width=0.55pt] (\n,0) -- (\n,0.16);
     \node[below=1.5pt] at (\n,0) {\lab};
   }
-  \draw[line width=0.55pt] (4.5,0) -- (4.5,-0.62);
-  \node[anchor=north, inner sep=0.5pt] at (4.5,-0.64) {$4\frac{1}{2}$};
-  \draw[line width=0.7pt] (-1,0.30) -- (-1,0.44) -- (0,0.44) -- (0,0.30);
+  \draw[line width=0.55pt, ->] (4.5,-0.55) -- (4.5,0);
+  \node[anchor=north, inner sep=0.5pt] at (4.5,-0.58) {$4\frac{1}{2}$};
+  \draw[line width=0.7pt] (0,0.30) -- (0,0.44) -- (1,0.44) -- (1,0.30);
 \end{tikzpicture}%
 }
 \caption{图1·3}
@@ -663,7 +718,7 @@
 
 \begin{figure}
 \centering
-% fig-alt: 数轴，向右箭头为正方向，标出$-5$、$-2\frac{1}{2}$、$-1$、$0$、$+1$、$+2\frac{1}{2}$、$+5$，原点左旁有一单位长括号
+% fig-alt: 数轴，向右箭头为正方向，标出$-5$、$-2\frac{1}{2}$、$-1$、$0$、$+1$、$+2\frac{1}{2}$、$+5$，原点右旁有一单位长括号
 \fitfig{%
 \begin{tikzpicture}[line cap=round, line join=round, >=latex, x=0.92cm, every node/.style={inner sep=1pt}]
   \draw[line width=0.95pt, ->] (-5.7,0) -- (5.85,0);
@@ -671,7 +726,7 @@
     \draw[line width=0.55pt] (\n,0) -- (\n,0.16);
     \node[below=2pt] at (\n,0) {\lab};
   }
-  \draw[line width=0.7pt] (-1,0.30) -- (-1,0.44) -- (0,0.44) -- (0,0.30);
+  \draw[line width=0.7pt] (0,0.30) -- (0,0.44) -- (1,0.44) -- (1,0.30);
 \end{tikzpicture}%
 }
 \caption{图1·4}
@@ -790,7 +845,7 @@
 
 \begin{figure}
 \centering
-% fig-alt: 公路示意，自左向右为丙、甲、乙三点，上方两段向右箭头各标30公里
+% fig-alt: 公路示意，自左向右为丙、甲、乙三点，上方两段尺寸线各标30公里
 \fitfig{%
 \begin{tikzpicture}[line cap=round, >=latex, every node/.style={inner sep=1pt}]
   \draw[line width=0.95pt] (0,0) -- (9.4,0);
@@ -803,9 +858,9 @@
   \draw[line width=0.6pt] (1.35,0.42) -- (1.35,0.78);
   \draw[line width=0.6pt] (4.7,0.42) -- (4.7,0.78);
   \draw[line width=0.6pt] (8.05,0.42) -- (8.05,0.78);
-  \draw[line width=0.6pt, -latex] (1.35,0.60) -- (4.62,0.60);
+  \draw[line width=0.6pt, latex-latex] (1.43,0.60) -- (4.62,0.60);
   \node[above=1pt] at (3.02,0.60) {$30$公里};
-  \draw[line width=0.6pt, -latex] (4.7,0.60) -- (7.97,0.60);
+  \draw[line width=0.6pt, latex-latex] (4.78,0.60) -- (7.97,0.60);
   \node[above=1pt] at (6.38,0.60) {$30$公里};
 \end{tikzpicture}%
 }
@@ -1177,7 +1232,7 @@
 
 \begin{figure}
 \centering
-% fig-alt: 向东走的加法示意：西在左、东在右，甲与起为起点，上方两段向右箭头依次为4公里与3公里，下方向左箭头标明7公里
+% fig-alt: 向东走的加法示意：西在左、东在右，甲地为起点，上方两段向右箭头依次为4公里与3公里，下方向右箭头标明7公里
 \fitfig{%
 \begin{tikzpicture}[line cap=round, >=latex, every node/.style={inner sep=1pt}]
   \node[anchor=east] at (-0.08,0) {西};
@@ -1186,8 +1241,7 @@
   \fill (1.35,0) circle (1.3pt);
   \fill (4.15,0) circle (1.15pt);
   \fill (6.25,0) circle (1.3pt);
-  \node[anchor=south east] at (1.28,0.10) {甲};
-  \node[anchor=north] at (1.35,-0.10) {起};
+  \node[anchor=north, align=center, inner sep=0.6pt] at (1.35,-0.10) {甲\\地};
   \draw[line width=0.55pt] (1.35,0.10) -- (1.35,0.78);
   \draw[line width=0.55pt] (4.15,0.10) -- (4.15,0.78);
   \draw[line width=0.55pt] (6.25,0.10) -- (6.25,0.78);
@@ -1197,8 +1251,8 @@
   \node[above=0.5pt] at (5.16,0.62) {$3$公里};
   \draw[line width=0.55pt] (1.35,-0.95) -- (1.35,-0.72);
   \draw[line width=0.55pt] (6.25,-0.95) -- (6.25,-0.72);
-  \draw[line width=0.6pt, latex-] (1.42,-0.84) -- (6.25,-0.84);
-  \node[below=1pt] at (3.8,-0.84) {$7$公里};
+  \draw[line width=0.6pt, -latex] (1.35,-0.84) -- (6.18,-0.84);
+  \node[above=0.5pt] at (3.8,-0.84) {$7$公里};
 \end{tikzpicture}%
 }
 \caption{图1·9}
@@ -1221,7 +1275,7 @@
 
 \begin{figure}
 \centering
-% fig-alt: 向西走的加法示意：西在左、东在右，甲地在右端点；上方3公里与4公里两段双箭头，下为7公里双箭头
+% fig-alt: 向西走的加法示意：西在左、东在右，甲地在右端点；上方4公里与3公里向左两段箭头，下为7公里向左箭头
 \fitfig{%
 \begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
   \node[anchor=east] at (-0.06,0) {西};
@@ -1239,19 +1293,18 @@
   \draw[line width=0.5pt] (M) -- (3.55,0.78);
   \draw[line width=0.5pt] (R) -- (6.65,0.78);
   \draw[line width=0.55pt] (1.25,0.52) -- (1.25,0.78);
-  \draw[line width=0.6pt, latex-latex] (1.34,0.65) -- (3.46,0.65);
-  \draw[line width=0.55pt] (3.55,0.52) -- (3.55,0.78);
+  \draw[line width=0.6pt, latex-] (1.34,0.65) -- (3.55,0.65);
   \node[above=0.5pt] at (2.40,0.65) {$3$公里};
   \draw[line width=0.55pt] (3.55,0.52) -- (3.55,0.78);
-  \draw[line width=0.6pt, latex-latex] (3.64,0.65) -- (6.56,0.65);
+  \draw[line width=0.6pt, latex-] (3.64,0.65) -- (6.65,0.65);
   \draw[line width=0.55pt] (6.65,0.52) -- (6.65,0.78);
   \node[above=0.5pt] at (5.10,0.65) {$4$公里};
   \draw[line width=0.5pt] (L) -- (1.25,-0.78);
   \draw[line width=0.5pt] (R) -- (6.65,-0.78);
   \draw[line width=0.55pt] (1.25,-0.92) -- (1.25,-0.66);
-  \draw[line width=0.6pt, latex-latex] (1.34,-0.79) -- (6.56,-0.79);
+  \draw[line width=0.6pt, latex-] (1.34,-0.79) -- (6.65,-0.79);
   \draw[line width=0.55pt] (6.65,-0.92) -- (6.65,-0.66);
-  \node[below=1pt] at (3.90,-0.79) {$7$公里};
+  \node[above=0.5pt] at (3.90,-0.79) {$7$公里};
 \end{tikzpicture}%
 }
 \caption{图1·10}
@@ -1284,7 +1337,7 @@
 
 \begin{figure}
 \centering
-% fig-alt: 先东后西的加法示意：甲地在左，上方4公里双箭头、其下3公里双箭头，轴下1公里双箭头
+% fig-alt: 先东后西的加法示意：甲地在左，上方向右4公里箭头、其下向左3公里箭头，轴下向右1公里箭头
 \fitfig{%
 \begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
   \node[anchor=east] at (-0.06,0) {西};
@@ -1297,28 +1350,27 @@
   \fill (B) circle (1.15pt);
   \fill (C) circle (1.25pt);
   \node[anchor=north east, align=center, inner sep=0.6pt] at (0.88,-0.12) {甲\\地};
-  \draw[line width=0.5pt] (A) -- (1.35,0.92);
-  \draw[line width=0.5pt] (C) -- (6.15,0.92);
-  \draw[line width=0.55pt] (1.35,0.78) -- (1.35,1.04);
-  \draw[line width=0.6pt, latex-latex] (1.44,0.91) -- (6.06,0.91);
-  \draw[line width=0.55pt] (6.15,0.78) -- (6.15,1.04);
-  \node[above=0.5pt] at (3.75,0.91) {$4$公里};
+  \draw[line width=0.5pt] (A) -- (1.35,1.16);
+  \draw[line width=0.5pt] (C) -- (6.15,1.16);
+  \draw[line width=0.55pt] (1.35,1.02) -- (1.35,1.26);
+  \draw[line width=0.6pt, -latex] (1.35,1.14) -- (6.06,1.14);
+  \draw[line width=0.55pt] (6.15,1.02) -- (6.15,1.26);
+  \node[above=0.5pt] at (3.75,1.14) {$4$公里};
   \draw[line width=0.5pt] (B) -- (2.55,0.58);
   \draw[line width=0.55pt] (2.55,0.44) -- (2.55,0.70);
-  \draw[line width=0.6pt, latex-latex] (2.64,0.57) -- (6.06,0.57);
+  \draw[line width=0.6pt, latex-] (2.64,0.57) -- (6.15,0.57);
   \draw[line width=0.55pt] (6.15,0.44) -- (6.15,0.70);
   \node[above=0.5pt] at (4.35,0.57) {$3$公里};
   \draw[line width=0.5pt] (A) -- (1.35,-0.52);
   \draw[line width=0.5pt] (B) -- (2.55,-0.52);
   \draw[line width=0.55pt] (1.35,-0.66) -- (1.35,-0.40);
-  \draw[line width=0.6pt, latex-latex] (1.44,-0.53) -- (2.46,-0.53);
+  \draw[line width=0.6pt, -latex] (1.35,-0.53) -- (2.46,-0.53);
   \draw[line width=0.55pt] (2.55,-0.66) -- (2.55,-0.40);
-  \node[below=2pt] at (2.10,-0.53) {$1$公里};
+  \node[below=1.5pt] at (1.95,-0.53) {$1$公里};
 \end{tikzpicture}%
 }
 \caption{图1·11}
 \end{figure}
-
 
 我们仍旧把向东的方向作为正方向，那末向东4公里记做+4公里，向西3公里记做-3公里，东边1公里记做+1公里。
 
@@ -1345,7 +1397,7 @@
 
 \begin{figure}
 \centering
-% fig-alt: 先西后东的加法示意：甲地在右，上方4公里双箭头、其下较短3公里双箭头，轴下甲地左侧1公里双箭头
+% fig-alt: 先西后东的加法示意：甲地在右，上方向左4公里箭头、其下向右3公里箭头，轴下甲地左侧向左1公里箭头
 \fitfig{%
 \begin{tikzpicture}[line cap=round, line join=round, >=latex, every node/.style={inner sep=1pt}]
   \node[anchor=east] at (-0.06,0) {西};
@@ -1358,23 +1410,23 @@
   \fill (B) circle (1.15pt);
   \fill (C) circle (1.25pt);
   \node[anchor=north west, align=center, inner sep=0.6pt] at (6.38,-0.08) {甲\\地};
-  \draw[line width=0.5pt] (A) -- (1.45,0.92);
-  \draw[line width=0.5pt] (C) -- (6.25,0.92);
-  \draw[line width=0.55pt] (1.45,0.78) -- (1.45,1.04);
-  \draw[line width=0.6pt, latex-latex] (1.54,0.91) -- (6.16,0.91);
-  \draw[line width=0.55pt] (6.25,0.78) -- (6.25,1.04);
-  \node[above=0.5pt] at (3.85,0.91) {$4$公里};
+  \draw[line width=0.5pt] (A) -- (1.45,1.16);
+  \draw[line width=0.5pt] (C) -- (6.25,1.16);
+  \draw[line width=0.55pt] (1.45,1.02) -- (1.45,1.26);
+  \draw[line width=0.6pt, latex-] (1.54,1.14) -- (6.25,1.14);
+  \draw[line width=0.55pt] (6.25,1.02) -- (6.25,1.26);
+  \node[above=0.5pt] at (3.85,1.14) {$4$公里};
   \draw[line width=0.5pt] (B) -- (5.05,0.58);
   \draw[line width=0.55pt] (1.45,0.44) -- (1.45,0.70);
-  \draw[line width=0.6pt, latex-latex] (1.54,0.57) -- (4.96,0.57);
+  \draw[line width=0.6pt, -latex] (1.45,0.57) -- (4.96,0.57);
   \draw[line width=0.55pt] (5.05,0.44) -- (5.05,0.70);
   \node[above=0.5pt] at (3.25,0.57) {$3$公里};
   \draw[line width=0.5pt] (B) -- (5.05,-0.52);
   \draw[line width=0.5pt] (C) -- (6.25,-0.52);
   \draw[line width=0.55pt] (5.05,-0.66) -- (5.05,-0.40);
-  \draw[line width=0.6pt, latex-latex] (5.14,-0.53) -- (6.16,-0.53);
+  \draw[line width=0.6pt, latex-] (5.14,-0.53) -- (6.25,-0.53);
   \draw[line width=0.55pt] (6.25,-0.66) -- (6.25,-0.40);
-  \node[below=1pt] at (5.65,-0.53) {$1$公里};
+  \node[below=1.5pt] at (5.65,-0.53) {$1$公里};
 \end{tikzpicture}%
 }
 \caption{图1·12}
@@ -2384,9 +2436,7 @@ a - (b + c) = a - b - c. \tag {2}
   \draw[line width=0.55pt] (1.25,0.48) -- (1.25,0.76);
   \draw[line width=0.6pt, -latex] (1.25,0.62) -- (3.76,0.62);
   \draw[line width=0.55pt] (3.85,0.48) -- (3.85,0.76);
-  \draw[line width=0.55pt] (3.85,0.48) -- (3.85,0.76);
   \draw[line width=0.6pt, -latex] (3.85,0.62) -- (6.36,0.62);
-  \draw[line width=0.55pt] (6.45,0.48) -- (6.45,0.76);
   \draw[line width=0.55pt] (6.45,0.48) -- (6.45,0.76);
   \draw[line width=0.6pt, -latex] (6.45,0.62) -- (8.96,0.62);
   \draw[line width=0.55pt] (9.05,0.48) -- (9.05,0.76);
@@ -2448,9 +2498,7 @@ a - (b + c) = a - b - c. \tag {2}
   \draw[line width=0.55pt] (1.35,0.48) -- (1.35,0.76);
   \draw[line width=0.6pt, latex-] (1.44,0.62) -- (3.95,0.62);
   \draw[line width=0.55pt] (3.95,0.48) -- (3.95,0.76);
-  \draw[line width=0.55pt] (3.95,0.48) -- (3.95,0.76);
   \draw[line width=0.6pt, latex-] (4.04,0.62) -- (6.55,0.62);
-  \draw[line width=0.55pt] (6.55,0.48) -- (6.55,0.76);
   \draw[line width=0.55pt] (6.55,0.48) -- (6.55,0.76);
   \draw[line width=0.6pt, latex-] (6.64,0.62) -- (9.15,0.62);
   \draw[line width=0.55pt] (9.15,0.48) -- (9.15,0.76);
@@ -2512,9 +2560,7 @@ a - (b + c) = a - b - c. \tag {2}
   \draw[line width=0.55pt] (1.35,0.48) -- (1.35,0.76);
   \draw[line width=0.6pt, -latex] (1.35,0.62) -- (3.86,0.62);
   \draw[line width=0.55pt] (3.95,0.48) -- (3.95,0.76);
-  \draw[line width=0.55pt] (3.95,0.48) -- (3.95,0.76);
   \draw[line width=0.6pt, -latex] (3.95,0.62) -- (6.46,0.62);
-  \draw[line width=0.55pt] (6.55,0.48) -- (6.55,0.76);
   \draw[line width=0.55pt] (6.55,0.48) -- (6.55,0.76);
   \draw[line width=0.6pt, -latex] (6.55,0.62) -- (9.06,0.62);
   \draw[line width=0.55pt] (9.15,0.48) -- (9.15,0.76);
