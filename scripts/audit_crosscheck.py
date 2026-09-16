@@ -2,13 +2,17 @@
 """对照 TeX 正文与上游 Markdown：章节目次、图号连续性与图号连接符体例。
 
 本脚本只产生 WARN 信号（advisory，默认不改变退出码）：Markdown 是上游 OCR
-产物，本身有错漏，内容裁判以 raw/ 扫描为准。跳号、重号、标题不一致都需
-对照 raw/ 印刷页后再决定是否修改。
+产物，本身有错漏，内容裁判以 raw/ 扫描为准。
 
 检查项：
   1. 章节目次：tex \\chapter/\\section/\\subsection 标题序列 vs books/*.md
      的 ##/###/#### 序列（忽略 md 独有的前置节）。
-  2. 图号重号/跳号：按册提取 \\caption{图X·Y}，按章检查编号重复与跳号。
+  2. 图号重号/跳号：按册提取 \\caption{图X·Y（Z）}，按章检查编号重复与跳号。
+     每条结论用 md 的三类证据定性（图注行、图 alt、正文引用）：
+       - 原书跳号 / 原书重号：md 同样缺失或同样重号，属原书面貌，不计入 findings；
+       - tex 缺图注 / tex 多出图注 / tex 丢子号：md 证据与 tex 相悖，待修复；
+       - 待对 raw：md 证据不足，需对照 raw/ 印刷页裁决。
+     md 图注行的体例随册而异（*图N·M* / > 图N·M / ![图N·M](…)），三类都采集。
   3. 图号连接符：每册 caption 连接符应统一（一册一种）；正文引用的连接符
      与该册体例不一致时给出行号。
 
@@ -33,8 +37,15 @@ REPORT = ROOT / "reports" / "crosscheck-audit.json"
 
 MD_HEADING_RE = re.compile(r"^(#{2,4})\s+(.+?)\s*$")
 TEX_HEAD_RE = re.compile(r"\\(chapter|section|subsection)\*?\{")
-CAPTION_FIG_RE = re.compile(r"\\caption\{图\s*(\d+)\s*([·.\-])\s*(\d+)")
+CAPTION_FIG_RE = re.compile(
+    r"\\caption\{图\s*(\d+)\s*([·.\-])\s*(\d+)\s*(?:[（(]([^）)]{1,12})[）)])?"
+)
 REF_FIG_RE = re.compile(r"图\s*(\d+)\s*([·.\-])\s*(\d+)")
+MD_FIG_RE = re.compile(r"图\s*(\d+)\s*([·.\-])\s*(\d+)")
+# md 图注行：*图N·M…* / **图N·M…** / > 图N·M…；图 alt 单独识别。
+MD_CAP_LINE_RE = re.compile(r"^(?:\*{1,2}|> ?)图")
+MD_IMG_RE = re.compile(r"^!\[([^\]]*)\]")
+MD_SUB_RE = re.compile(r"[（(]([^）)]{1,12})[）)]")
 MD_ONLY_FRONT_MATTER = {"目录"}
 LEVELS = (
     ("chapter", "##", "chapter"),
@@ -44,12 +55,7 @@ LEVELS = (
 
 FULLWIDTH_DIGITS = str.maketrans("０１２３４５６７８９．", "0123456789.")
 
-# 已知例外：恢复区/原书即如此的编号缺口，避免每次都报。
-# 书名 -> {(章号, 起始图号, 结束图号)}，闭区间。
-KNOWN_FIG_GAPS: dict[str, set[tuple[int, int, int]]] = {
-    # 《立体几何》原扫描缺页恢复区（见 docs/KNOWN_ISSUES.md），图号沿用原扫描上下文。
-    "立体几何": set(),
-}
+VERDICT_ORIGINAL = ("原书重号", "原书跳号")
 
 
 def strip_comments(text: str) -> str:
@@ -137,32 +143,94 @@ def align_level(md: list[str], tex: list[str]) -> list[dict]:
     return ops
 
 
-def figure_audit(path: Path, title: str) -> dict:
+def md_fig_signals(path: Path):
+    """按行采集 md 图证据：图注行、图 alt、正文引用，连接符归一为 (章,号)。"""
+    caps: Counter = Counter()
+    imgs: Counter = Counter()
+    refs: Counter = Counter()
+    subs: dict[tuple[int, int], set[str]] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.translate(FULLWIDTH_DIGITS).strip()
+        if not line:
+            continue
+        img = MD_IMG_RE.match(line)
+        if img:
+            for m in MD_FIG_RE.finditer(img.group(1)):
+                imgs[(int(m.group(1)), int(m.group(3)))] += 1
+            continue
+        if MD_CAP_LINE_RE.match(line):
+            for m in MD_FIG_RE.finditer(line):
+                key = (int(m.group(1)), int(m.group(3)))
+                caps[key] += 1
+                sm = MD_SUB_RE.search(line[m.end() : m.end() + 14])
+                if sm:
+                    subs.setdefault(key, set()).add(sm.group(1))
+            continue
+        for m in MD_FIG_RE.finditer(line):
+            refs[(int(m.group(1)), int(m.group(3)))] += 1
+    return caps, imgs, refs, subs
+
+
+def figure_audit(path: Path, title: str, md_path: Path) -> dict:
     text = strip_comments(path.read_text(encoding="utf-8"))
     captions = list(CAPTION_FIG_RE.finditer(text))
 
     caption_connectors = Counter(m.group(2) for m in captions)
-    duplicates: list[str] = []
-    gaps: list[str] = []
-    per_chapter: dict[int, list[int]] = {}
-    order: list[tuple[int, int]] = []
-    for m in captions:
-        chap, fig = int(m.group(1)), int(m.group(3))
-        order.append((chap, fig))
-        per_chapter.setdefault(chap, []).append(fig)
     dominant, _count = (
         caption_connectors.most_common(1)[0] if caption_connectors else ("·", 0)
     )
-    counts = Counter(order)
-    duplicates = sorted(f"图{c}{dominant}{f}" for (c, f), n in counts.items() if n > 1)
 
-    known = KNOWN_FIG_GAPS.get(title, set())
+    md_caps, md_imgs, md_refs, md_subs = md_fig_signals(md_path)
+
+    per_chapter: dict[int, set[int]] = {}
+    dup_counts: Counter = Counter()
+    for m in captions:
+        chap, fig = int(m.group(1)), int(m.group(3))
+        sub = (m.group(4) or "").strip()
+        per_chapter.setdefault(chap, set()).add(fig)
+        dup_counts[(chap, fig, sub)] += 1
+
+    duplicates: list[dict] = []
+    for (chap, fig, sub), n in sorted(dup_counts.items()):
+        if n < 2:
+            continue
+        mc, mi = md_caps[(chap, fig)], md_imgs[(chap, fig)]
+        label = f"图{chap}{dominant}{fig}" + (f"（{sub}）" if sub else "")
+        if sub:
+            verdict = "原书重号" if mc >= n else "待对 raw"
+        elif len(md_subs.get((chap, fig), ())) >= n:
+            # md 图注带子号而 tex 是重号裸图注：转换丢了（1）（2）。
+            verdict = "tex 丢子号"
+        elif mc >= n:
+            verdict = "原书重号"
+        elif mc >= 1 or 0 < mi < n:
+            verdict = "tex 多出图注"
+        else:
+            verdict = "待对 raw"
+        duplicates.append({
+            "fig": label,
+            "tex_count": n,
+            "md_captions": mc,
+            "md_images": mi,
+            "md_refs": md_refs[(chap, fig)],
+            "verdict": verdict,
+        })
+
+    gaps: list[dict] = []
     for chap, figs in per_chapter.items():
         lo, hi = min(figs), max(figs)
-        for g in sorted(set(range(lo, hi + 1)) - set(figs)):
-            if any(chap == c and lo_g <= g <= hi_g for c, lo_g, hi_g in known):
-                continue
-            gaps.append(f"图{chap}{dominant}{g}（{lo}–{hi} 区间缺口）")
+        for g in sorted(set(range(lo, hi + 1)) - figs):
+            mc, mi = md_caps[(chap, g)], md_imgs[(chap, g)]
+            gaps.append({
+                "fig": f"图{chap}{dominant}{g}",
+                "range": f"{lo}–{hi}",
+                "md_captions": mc,
+                "md_images": mi,
+                "md_refs": md_refs[(chap, g)],
+                "verdict": "tex 缺图注" if (mc or mi) else "原书跳号",
+            })
+    gaps.sort(key=lambda r: (int(REF_NUM_RE.match(r["fig"]).group(1)),
+                             int(REF_NUM_RE.match(r["fig"]).group(2))))
 
     ref_connectors = Counter(m.group(2) for m in REF_FIG_RE.finditer(text))
     ref_anomalies: list[str] = []
@@ -174,11 +242,14 @@ def figure_audit(path: Path, title: str) -> dict:
     return {
         "captions": len(captions),
         "caption_connectors": dict(caption_connectors),
-        "duplicates": sorted(set(duplicates)),
+        "duplicates": duplicates,
         "gaps": gaps,
         "ref_connector_anomalies": ref_anomalies,
         "ref_connectors": dict(ref_connectors),
     }
+
+
+REF_NUM_RE = re.compile(r"图(\d+).(\d+)")
 
 
 def main() -> int:
@@ -190,6 +261,7 @@ def main() -> int:
     books = catalog.get("books", [])
     rows = []
     total_findings = 0
+    verdict_tallies: Counter = Counter()
     for item in books:
         title = item["title"]
         tex_path = TEX_ROOT / f"{title}.tex"
@@ -203,12 +275,17 @@ def main() -> int:
         level_ops = {
             name: align_level(md[name], tex[name]) for name, _h, _t in LEVELS
         }
-        figs = figure_audit(tex_path, title)
+        figs = figure_audit(tex_path, title, md_path)
         heading_count = sum(len(ops) for ops in level_ops.values())
+        fig_defects = sum(
+            1 for r in figs["duplicates"] + figs["gaps"]
+            if r["verdict"] not in VERDICT_ORIGINAL
+        )
+        for r in figs["duplicates"] + figs["gaps"]:
+            verdict_tallies[r["verdict"]] += 1
         findings = (
             heading_count
-            + len(figs["duplicates"])
-            + len(figs["gaps"])
+            + fig_defects
             + len(figs["ref_connector_anomalies"])
         )
         total_findings += findings
@@ -225,10 +302,14 @@ def main() -> int:
         })
 
     payload = {
-        "schema_version": 1,
+        "schema_version": 2,
         "status": "OK" if not total_findings else "WARN",
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "summary": {"books": len(rows), "findings": total_findings},
+        "summary": {
+            "books": len(rows),
+            "findings": total_findings,
+            "verdict_tallies": dict(verdict_tallies),
+        },
         "books": rows,
     }
     REPORT.parent.mkdir(parents=True, exist_ok=True)
@@ -251,14 +332,21 @@ def main() -> int:
                         f"  [{name}/{op['tag']}] md({op['md_n']})={md_part} | tex({op['tex_n']})={tex_part}",
                         file=sys.stderr,
                     )
-            for d in row["figures"]["duplicates"]:
-                print(f"  图号重复：{d}", file=sys.stderr)
-            for g in row["figures"]["gaps"]:
-                print(f"  图号跳号：{g}", file=sys.stderr)
-            for a in row["figures"]["ref_connector_anomalies"][:10]:
+            figs = row["figures"]
+            for label, items in (("图号重复", figs["duplicates"]), ("图号跳号", figs["gaps"])):
+                defects = [r for r in items if r["verdict"] not in VERDICT_ORIGINAL]
+                originals = len(items) - len(defects)
+                if originals:
+                    print(f"  {label}：{originals} 处原书面貌（md 一致，已不计入 findings）", file=sys.stderr)
+                for r in defects[:8]:
+                    ev = f"md图注={r['md_captions']} 图={r['md_images']} 引用={r['md_refs']}"
+                    print(f"  {label}[{r['verdict']}]：{r['fig']}（{ev}）", file=sys.stderr)
+                if len(defects) > 8:
+                    print(f"  … 其余 {len(defects) - 8} 条见报告", file=sys.stderr)
+            for a in figs["ref_connector_anomalies"][:10]:
                 print(f"  {a}", file=sys.stderr)
-            if len(row["figures"]["ref_connector_anomalies"]) > 10:
-                print(f"  … 其余 {len(row['figures']['ref_connector_anomalies']) - 10} 处连接符异常见报告", file=sys.stderr)
+            if len(figs["ref_connector_anomalies"]) > 10:
+                print(f"  … 其余 {len(figs['ref_connector_anomalies']) - 10} 处连接符异常见报告", file=sys.stderr)
         else:
             print(f"OK    {row['title']}")
     print(json.dumps(payload["summary"], ensure_ascii=False))
