@@ -91,6 +91,8 @@
 \xeCJKDeclareCharClass{Default}{"2160 -> "216B, "2170 -> "217B}
 % 间隔号 ·：Fandol/xeCJK 把 U+00B7 当全角 CL，§1·1 会排成 §1 · 1。
 \ShulihuaUC{·}{\ensuremath{\mathord{\cdot}}}
+% 范围号 ～：xeCJK 侧空会把「第6～8章」排成「第6 ˜ 8章」。不改全局 CJKecglue。
+\ShulihuaUC{～}{\mbox{\textendash}}
 \ShulihuaUC{Ⅰ}{I}
 \ShulihuaUC{Ⅱ}{II}
 \ShulihuaUC{Ⅲ}{III}
@@ -118,7 +120,11 @@
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing,patterns,calc,arrows.meta,intersections}
 \usepackage{longtable,booktabs,array,calc,multirow}
-\linespread{1.4}\selectfont
+\linespread{1.3}\selectfont
+\setlength{\abovedisplayskip}{6pt plus 3pt minus 2pt}
+\setlength{\belowdisplayskip}{6pt plus 3pt minus 2pt}
+\setlength{\abovedisplayshortskip}{0pt plus 2pt}
+\setlength{\belowdisplayshortskip}{3pt plus 2pt minus 1pt}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -160,9 +166,9 @@
   \xeCJKsetup{CJKecglue={\hspace{0pt}}}%
 }
 \ctexset{
-  chapter/format = \huge\bfseries\centering\shulihuaheadingfont,
-  chapter/beforeskip = 24pt,
-  chapter/afterskip = 18pt,
+  chapter/format = \zihao{3}\bfseries\centering\shulihuaheadingfont,
+  chapter/beforeskip = 12pt,
+  chapter/afterskip = 12pt,
   section/format = \Large\bfseries\raggedright\shulihuaheadingfont,
   subsection/format = \large\bfseries\shulihuaheadingfont,
   subsubsection/format = \normalsize\bfseries\shulihuaheadingfont,
@@ -230,6 +236,10 @@
   % 合订本 TOC 页码到四位；默认 1.55em 会溢出约 4.94pt。
   \renewcommand{\@pnumwidth}{2.55em}%
   \renewcommand{\@tocrmarg}{3.55em}%
+  \setlength{\abovedisplayskip}{6pt plus 3pt minus 2pt}%
+  \setlength{\belowdisplayskip}{6pt plus 3pt minus 2pt}%
+  \setlength{\abovedisplayshortskip}{0pt plus 2pt}%
+  \setlength{\belowdisplayshortskip}{3pt plus 2pt minus 1pt}%
 }
 \makeatother
 
