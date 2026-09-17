@@ -450,7 +450,7 @@ N \subset J \subset Q \subset R.
       \draw[line width=0.28pt] (-1.1,\i*0.11-0.5) -- (1.1,\i*0.11+0.5);
   \end{scope}
   \draw[line width=0.8pt] (0,0.18) circle[radius=0.62];
-  \node at (0,-0.22) {$A$};
+  \node[fill=white,inner sep=1.2pt] at (0,-0.44) {$A$};
   \node at (0.05,-1.58) {$B$};
 \end{tikzpicture}%
 }
@@ -615,7 +615,9 @@ Q 点）来表示。\(A \cap B\)是由一切比 -2 大同时又比 3
 % fig-alt: 数轴标-4至5，-2与3处为空心点并标P、Q；上方一条向左的射线止于Q，一条向右的射线起于P，两线夹出不含端点的区间PQ
 \fitfig{%
 \begin{tikzpicture}[x=0.48cm,line cap=round,line join=round]
-  \draw[<->] (-5.2,0) -- (6.2,0);
+  \draw[line width=0.7pt] (-5.2,0) -- (5.6,0);
+  \draw[line width=0.7pt,->] (5.4,0) -- (6.2,0);
+  \draw[line width=1.4pt] (-2,0) -- (3,0);
   \foreach \n in {-4,-3,-2,-1,0,1,2,3,4,5}
     \draw (\n,0.08) -- (\n,-0.08) node[below=2pt] {$\n$};
   % 射线 B：自 Q 向左，不含 Q
@@ -623,12 +625,11 @@ Q 点）来表示。\(A \cap B\)是由一切比 -2 大同时又比 3
   \draw (3,1.05) -- (3,0);
   % 射线 A：自 P 向右，不含 P；与左射线夹出区间 PQ
   \draw (-2,0) -- (-2,0.52);
-  \draw (-2,0.52) -- (6.05,0.52);
-  \draw[->] (5.2,0.52) -- (6.25,0.52);
+  \draw[->] (-2,0.52) -- (6.1,0.52);
   \draw[fill=white,line width=0.65pt] (-2,0) circle[radius=1.8pt];
   \draw[fill=white,line width=0.65pt] (3,0) circle[radius=1.8pt];
-  \node[anchor=south east] at (-2.08,0.54) {$P$};
-  \node[anchor=south west] at (3.08,0.54) {$Q$};
+  \node[left=1pt] at (-2,0.3) {$P$};
+  \node[right=1pt] at (3,0.55) {$Q$};
 \end{tikzpicture}%
 }
 \caption{图1·3}
@@ -725,18 +726,21 @@ A \cup A = A, A \cup \emptyset = A.
 % fig-alt: 数轴标-2、0、2；-2与2处为实心三角，左射线上方标x≤-2，右射线上方标x≥2，右端有箭头
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw (-1.65,0) -- (5.55,0);
-  \draw[->] (4.95,0) -- (5.85,0);
+  \draw[line width=1.4pt] (-1.65,0) -- (0,0);
+  \draw[line width=0.7pt] (0,0) -- (4.4,0);
+  \draw[line width=1.4pt] (4.4,0) -- (5.45,0);
+  \draw[line width=0.7pt,->] (5.35,0) -- (5.85,0);
   \draw (0,0.08) -- (0,-0.08) node[below=2pt] {$-2$};
   \draw (2.2,0.08) -- (2.2,-0.08) node[below=2pt] {$0$};
   \draw (4.4,0.08) -- (4.4,-0.08) node[below=2pt] {$2$};
-  \fill (-0.09,0.02) -- (0.09,0.02) -- (0,0.16) -- cycle;
-  \fill (4.31,0.02) -- (4.49,0.02) -- (4.4,0.16) -- cycle;
-  \draw (-1.5,0.98) -- (0,0.98) -- (0,0.18);
+  \draw[<-] (-1.55,0.98) -- (0,0.98);
+  \draw (0,0.98) -- (0,0);
   \node at (-0.78,0.50) {$x\leqslant -2$};
-  \draw (4.4,0.18) -- (4.4,0.98) -- (5.5,0.98);
+  \draw (4.4,0) -- (4.4,0.98) -- (5.5,0.98);
   \draw[->] (5.05,0.98) -- (5.9,0.98);
   \node at (4.95,0.50) {$x\geqslant 2$};
+  \fill (0,0) circle[radius=1.8pt];
+  \fill (4.4,0) circle[radius=1.8pt];
 \end{tikzpicture}%
 }
 \caption{图1·5}
@@ -935,99 +939,64 @@ A = \{1, 3, 5, 7, 9 \}, \quad B = \{3, 6, 9 \}.
 
 \begin{figure}
 \centering
-% fig-alt: (1)矩形标I，两圆A、B相离，圆外画斜线
+% fig-alt: (1)-(4)四幅全集文氏图：(1)A、B外画斜线；(2)A全画斜线、B外画斜线、B独占部分留白；(3)A与B相交处及两圆外画斜线；(4)B全画斜线、A外画斜线、A独占部分留白
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \node[anchor=east] at (-0.10,3.28) {$(1)$};
-  \draw[line width=0.7pt] (0,0) rectangle (5.35,3.55);
-  \begin{scope}
-    \clip (0,0) rectangle (5.35,3.55);
-    \foreach \i in {-16,-15,...,16}
-      \draw[line width=0.28pt] (-0.3,\i*0.13+2.3) -- (5.8,\i*0.13+0.05);
+\begin{tikzpicture}[x=0.52cm,y=0.52cm,line cap=round,line join=round]
+  % (1)
+  \begin{scope}[shift={(0,3.8)}]
+    \node[anchor=east] at (-0.1,2.8) {$(1)$};
+    \fill[pattern=north east lines,pattern color=black] (0,0) rectangle (4.6,3.1);
+    \fill[white] (1.5,1.55) circle[radius=0.75];
+    \fill[white] (3.0,1.55) circle[radius=0.70];
+    \draw[line width=0.8pt] (0,0) rectangle (4.6,3.1);
+    \draw[line width=0.8pt] (1.5,1.55) circle[radius=0.75];
+    \draw[line width=0.8pt] (3.0,1.55) circle[radius=0.70];
+    \node[anchor=north west,fill=white,inner sep=0.8pt] at (0.1,3.0) {$I$};
+    \node at (1.5,1.55) {$A$};
+    \node at (3.0,1.55) {$B$};
   \end{scope}
-  \fill[white] (1.78,1.70) circle[radius=0.78];
-  \fill[white] (3.40,1.70) circle[radius=0.78];
-  \draw[line width=0.8pt] (0,0) rectangle (5.35,3.55);
-  \draw[line width=0.8pt] (1.78,1.70) circle[radius=0.78];
-  \draw[line width=0.8pt] (3.40,1.70) circle[radius=0.78];
-  \node[anchor=north west,fill=white,inner sep=1.2pt] at (0.12,3.42) {$I$};
-  \node at (1.78,1.70) {$A$};
-  \node at (3.40,1.70) {$B$};
-\end{tikzpicture}%
-}
-
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: (2)矩形标I，大圆A与小圆B相交，并集以外画斜线
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \node[anchor=east] at (-0.10,3.28) {$(2)$};
-  \draw[line width=0.7pt] (0,0) rectangle (5.35,3.55);
-  \begin{scope}
-    \clip (0,0) rectangle (5.35,3.55);
-    \foreach \i in {-16,-15,...,16}
-      \draw[line width=0.28pt] (-0.3,\i*0.13+2.3) -- (5.8,\i*0.13+0.05);
+  % (2)
+  \begin{scope}[shift={(5.8,3.8)}]
+    \node[anchor=east] at (-0.1,2.8) {$(2)$};
+    \fill[pattern=north east lines,pattern color=black] (0,0) rectangle (4.6,3.1);
+    \fill[white] (2.9,1.55) circle[radius=0.70];
+    \fill[pattern=north east lines,pattern color=black] (1.6,1.55) circle[radius=0.85];
+    \draw[line width=0.8pt] (0,0) rectangle (4.6,3.1);
+    \draw[line width=0.8pt] (1.6,1.55) circle[radius=0.85];
+    \draw[line width=0.8pt] (2.9,1.55) circle[radius=0.70];
+    \node[anchor=north west,fill=white,inner sep=0.8pt] at (0.1,3.0) {$I$};
+    \node[fill=white,inner sep=1pt] at (1.35,1.55) {$A$};
+    \node at (3.15,1.55) {$B$};
   \end{scope}
-  \fill[white] (1.88,1.72) circle[radius=0.92];
-  \fill[white] (3.34,1.72) circle[radius=0.74];
-  \draw[line width=0.8pt] (0,0) rectangle (5.35,3.55);
-  \draw[line width=0.8pt] (1.88,1.72) circle[radius=0.92];
-  \draw[line width=0.8pt] (3.34,1.72) circle[radius=0.74];
-  \node[anchor=north west,fill=white,inner sep=1.2pt] at (0.12,3.42) {$I$};
-  \node at (1.53,1.72) {$A$};
-  \node at (3.72,1.72) {$B$};
-\end{tikzpicture}%
-}
-\caption{(2)}
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: (3)矩形标I，两圆A、B相交，并集以外画斜线
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \node[anchor=east] at (-0.10,3.28) {$(3)$};
-  \draw[line width=0.7pt] (0,0) rectangle (5.35,3.55);
-  \begin{scope}
-    \clip (0,0) rectangle (5.35,3.55);
-    \foreach \i in {-16,-15,...,16}
-      \draw[line width=0.28pt] (-0.3,\i*0.13+2.3) -- (5.8,\i*0.13+0.05);
+  % (3)
+  \begin{scope}[shift={(0,0)}]
+    \node[anchor=east] at (-0.1,2.8) {$(3)$};
+    \fill[pattern=north east lines,pattern color=black] (0,0) rectangle (4.6,3.1);
+    \fill[white] (1.6,1.55) circle[radius=0.85];
+    \fill[white] (2.9,1.55) circle[radius=0.70];
+    \begin{scope}
+      \clip (1.6,1.55) circle[radius=0.85];
+      \fill[pattern=north east lines,pattern color=black] (2.9,1.55) circle[radius=0.70];
+    \end{scope}
+    \draw[line width=0.8pt] (0,0) rectangle (4.6,3.1);
+    \draw[line width=0.8pt] (1.6,1.55) circle[radius=0.85];
+    \draw[line width=0.8pt] (2.9,1.55) circle[radius=0.70];
+    \node[anchor=north west,fill=white,inner sep=0.8pt] at (0.1,3.0) {$I$};
+    \node at (1.35,1.55) {$A$};
+    \node at (3.15,1.55) {$B$};
   \end{scope}
-  \fill[white] (1.95,1.72) circle[radius=0.88];
-  \fill[white] (3.32,1.72) circle[radius=0.88];
-  \draw[line width=0.8pt] (0,0) rectangle (5.35,3.55);
-  \draw[line width=0.8pt] (1.95,1.72) circle[radius=0.88];
-  \draw[line width=0.8pt] (3.32,1.72) circle[radius=0.88];
-  \node[anchor=north west,fill=white,inner sep=1.2pt] at (0.12,3.42) {$I$};
-  \node at (1.58,1.72) {$A$};
-  \node at (3.72,1.72) {$B$};
-\end{tikzpicture}%
-}
-
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: (4)矩形标I，大圆A与小圆B相交（B嵌入较深），并集以外画斜线
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \node[anchor=east] at (-0.10,3.28) {$(4)$};
-  \draw[line width=0.7pt] (0,0) rectangle (5.35,3.55);
-  \begin{scope}
-    \clip (0,0) rectangle (5.35,3.55);
-    \foreach \i in {-16,-15,...,16}
-      \draw[line width=0.28pt] (-0.3,\i*0.13+2.3) -- (5.8,\i*0.13+0.05);
+  % (4)
+  \begin{scope}[shift={(5.8,0)}]
+    \node[anchor=east] at (-0.1,2.8) {$(4)$};
+    \fill[pattern=north east lines,pattern color=black] (0,0) rectangle (4.6,3.1);
+    \fill[white] (1.6,1.55) circle[radius=0.85];
+    \draw[line width=0.8pt] (0,0) rectangle (4.6,3.1);
+    \draw[line width=0.8pt] (1.6,1.55) circle[radius=0.85];
+    \draw[line width=0.8pt] (2.9,1.55) circle[radius=0.70];
+    \node[anchor=north west,fill=white,inner sep=0.8pt] at (0.1,3.0) {$I$};
+    \node at (1.35,1.55) {$A$};
+    \node[fill=white,inner sep=1pt] at (3.15,1.55) {$B$};
   \end{scope}
-  \fill[white] (1.85,1.70) circle[radius=0.95];
-  \fill[white] (3.36,1.70) circle[radius=0.72];
-  \draw[line width=0.8pt] (0,0) rectangle (5.35,3.55);
-  \draw[line width=0.8pt] (1.85,1.70) circle[radius=0.95];
-  \draw[line width=0.8pt] (3.36,1.70) circle[radius=0.72];
-  \node[anchor=north west,fill=white,inner sep=1.2pt] at (0.12,3.42) {$I$};
-  \node at (1.50,1.70) {$A$};
-  \node at (3.72,1.70) {$B$};
 \end{tikzpicture}%
 }
 \caption{（第1题）}
@@ -1821,38 +1790,36 @@ x \leqslant - 1 \quad \text{或} \quad x \geqslant 1
 
 \begin{figure}
 \centering
-% fig-alt: 数轴标0、2；2处空心点，自2向上再向右的黑线带箭头，左端亦有箭头，右端标x
+% fig-alt: (1)数轴标0、2，2处空心点，自2向上再向右的黑线带箭头；(2)数轴标-1、0、1，-1与1处实心圆点，两点间上方黑线相连
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[<->,line width=0.7pt] (0,0) -- (5.85,0);
-  \node[right=1pt] at (5.85,0) {$x$};
-  \draw (1.45,0.08) -- (1.45,-0.08) node[below=2pt] {$0$};
-  \node[below=2pt] at (2.95,0) {$2$};
-  \draw[line width=1.05pt] (2.95,0.15) -- (2.95,0.62) -- (5.15,0.62);
-  \draw[line width=1.05pt,->] (4.55,0.62) -- (5.45,0.62);
-  \draw[fill=white,line width=0.7pt] (2.95,0) circle[radius=1.7pt];
+  % (1)
+  \draw[line width=0.7pt] (0,0) -- (4.2,0);
+  \draw[line width=0.7pt,->] (4.0,0) -- (4.6,0);
+  \node[right=1pt] at (4.6,0) {$x$};
+  \draw (1.1,0.08) -- (1.1,-0.08) node[below=2pt] {$0$};
+  \node[below=2pt] at (2.2,0) {$2$};
+  \draw[line width=1.05pt] (2.2,0.12) -- (2.2,0.55) -- (3.9,0.55);
+  \draw[line width=1.05pt,->] (3.6,0.55) -- (4.3,0.55);
+  \draw[fill=white,line width=0.7pt] (2.2,0) circle[radius=1.7pt];
+  \node[below=14pt] at (2.3,0) {$(1)$};
+  % (2)
+  \begin{scope}[xshift=5.8cm]
+    \draw[line width=0.7pt] (0,0) -- (4.2,0);
+    \draw[line width=0.7pt,->] (4.0,0) -- (4.6,0);
+    \node[right=1pt] at (4.6,0) {$x$};
+    \draw (1.1,0.08) -- (1.1,-0.08) node[below=2pt] {$-1$};
+    \draw (2.1,0.08) -- (2.1,-0.08) node[below=2pt] {$0$};
+    \draw (3.1,0.08) -- (3.1,-0.08) node[below=2pt] {$1$};
+    \draw[line width=1.05pt] (1.1,0) -- (1.1,0.55) -- (3.1,0.55) -- (3.1,0);
+    \fill (1.1,0) circle[radius=1.7pt];
+    \fill (3.1,0) circle[radius=1.7pt];
+    \node[below=14pt] at (2.1,0) {$(2)$};
+  \end{scope}
 \end{tikzpicture}%
 }
-\caption{(1)}
+\caption{图2·1}
 \end{figure}
-
-
-\begin{figure}
-\centering
-% fig-alt: 数轴标-1、0、1；-1与1处实心三角，两点间上方黑线相连，两端有箭头，右端标x
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[<->,line width=0.7pt] (0,0) -- (6.15,0);
-  \node[right=1pt] at (6.15,0) {$x$};
-  \draw (1.55,0.08) -- (1.55,-0.08) node[below=2pt] {$-1$};
-  \draw (3.05,0.08) -- (3.05,-0.08) node[below=2pt] {$0$};
-  \draw (4.55,0.08) -- (4.55,-0.08) node[below=2pt] {$1$};
-  \draw[line width=1.05pt] (1.55,0.14) -- (1.55,0.62) -- (4.55,0.62) -- (4.55,0.14);
-  \fill (1.46,0.02) -- (1.64,0.02) -- (1.55,0.16) -- cycle;
-  \fill (4.46,0.02) -- (4.64,0.02) -- (4.55,0.16) -- cycle;
-\end{tikzpicture}%
-}
-\caption{图2·1(2)}\end{figure}
 
 \subsection{2. 不等式的同解变形}
 
@@ -2481,44 +2448,59 @@ a < x < b
 
 表示的全体实数，叫做从\(a\)到\(b\)的开区间，并且用记号\((a, b)\)来表示；在数轴上，就是由\(a\)到\(b\)但不包括端点在内的那一部分（图2·10）。
 
-（2） 用不等式
-
 \begin{figure}
 \centering
-% fig-alt: 左为开区间数轴，a、b处空心点，右端标x；右为闭区间数轴，a、b处实心点，其间加粗，右端标x
+% fig-alt: 数轴标a、b，a、b处空心点，其间数轴加粗，右端标x
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0.15,0) -- (4.55,0);
-  \draw[line width=0.7pt,->] (4.05,0) -- (5.15,0);
-  \node[right=1pt] at (5.15,0) {$x$};
-  \draw[fill=white,line width=0.7pt] (1.45,0) circle[radius=1.9pt];
-  \draw[fill=white,line width=0.7pt] (3.45,0) circle[radius=1.9pt];
-  \node[below=2pt] at (1.45,0) {$a$};
-  \node[below=2pt] at (3.45,0) {$b$};
-  \begin{scope}[xshift=6.35cm]
-    \draw[line width=0.7pt] (0.15,0) -- (1.45,0);
-    \draw[line width=1.7pt] (1.45,0) -- (3.45,0);
-    \draw[line width=0.7pt] (3.45,0) -- (4.55,0);
-    \draw[line width=0.7pt,->] (4.05,0) -- (5.15,0);
-    \node[right=1pt] at (5.15,0) {$x$};
-    \fill (1.45,0) circle[radius=2.05pt];
-    \fill (3.45,0) circle[radius=2.05pt];
-    \node[below=2pt] at (1.45,0) {$a$};
-    \node[below=2pt] at (3.45,0) {$b$};
-  \end{scope}
+  \draw[line width=0.7pt] (0.15,0) -- (1.55,0);
+  \draw[line width=1.7pt] (1.55,0) -- (3.75,0);
+  \draw[line width=0.7pt] (3.75,0) -- (4.85,0);
+  \draw[line width=0.7pt,->] (4.25,0) -- (5.45,0);
+  \node[right=1pt] at (5.45,0) {$x$};
+  \draw[fill=white,line width=0.7pt] (1.55,0) circle[radius=1.9pt];
+  \draw[fill=white,line width=0.7pt] (3.75,0) circle[radius=1.9pt];
+  \node[below=2pt] at (1.55,0) {$a$};
+  \node[below=2pt] at (3.75,0) {$b$};
 \end{tikzpicture}%
 }
 \caption{图2·10}
-\caption{图2·11}
 \end{figure}
 
+\[
+(a, b) = \{x \mid a < x < b\}
+\]
+
+（2） 用不等式
 
 \[
 a \leqslant x \leqslant b
 \]
 
-表示的全体实数，叫做从\(a\)到\(b\)的闭区间，并用记号\([a, b]\)来表示；在数轴上，就是由\(a\)到\(b\)包括端点在内的那一部分
-（图2·11）。
+表示的全体实数，叫做从\(a\)到\(b\)的闭区间，并用记号\([a, b]\)来表示；在数轴上，就是由\(a\)到\(b\)包括端点在内的那一部分（图2·11）。
+
+\begin{figure}
+\centering
+% fig-alt: 数轴标a、b，a、b处实心点，其间数轴加粗，右端标x
+\fitfig{%
+\begin{tikzpicture}[line cap=round,line join=round]
+  \draw[line width=0.7pt] (0.15,0) -- (1.55,0);
+  \draw[line width=1.7pt] (1.55,0) -- (3.75,0);
+  \draw[line width=0.7pt] (3.75,0) -- (4.85,0);
+  \draw[line width=0.7pt,->] (4.25,0) -- (5.45,0);
+  \node[right=1pt] at (5.45,0) {$x$};
+  \fill (1.55,0) circle[radius=2.05pt];
+  \fill (3.75,0) circle[radius=2.05pt];
+  \node[below=2pt] at (1.55,0) {$a$};
+  \node[below=2pt] at (3.75,0) {$b$};
+\end{tikzpicture}%
+}
+\caption{图2·11}
+\end{figure}
+
+\[
+[a, b] = \{x \mid a \leqslant x \leqslant b\}
+\]
 
 （3） 用不等式
 
@@ -2628,54 +2610,52 @@ a \leqslant x < + \infty
 
 \begin{figure}
 \centering
-% fig-alt: 上为开区间$(a,+\infty)$，$a$处空心点，右侧数轴加粗、下有向上箭头、右端标$x$；下为开区间$(-\infty,b)$，$b$处空心点，左侧加粗并有左箭头，下有向上箭头、右端标$x$
+% fig-alt: 2×2无穷区间数轴。左上：(a,+∞)，a处空心点，右侧加粗；右上：[a,+∞)，a处实心点，右侧加粗；左下：(-∞,b)，b处空心点，左侧加粗；右下：(-∞,b]，b处实心点，左侧加粗；各轴均有指示箭头与集合表达式
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt,<-] (0.15,0) -- (1.65,0);
-  \draw[line width=1.6pt] (1.65,0) -- (5.35,0);
-  \draw[line width=1.3pt,->] (4.85,0) -- (6.05,0);
-  \node[right=1pt] at (6.05,0) {$x$};
-  \draw[fill=white,line width=0.7pt] (1.65,0) circle[radius=1.9pt];
-  \node[below=2pt] at (1.65,0) {$a$};
-  \draw[line width=0.7pt,->] (3.55,-0.56) -- (3.55,-0.12);
-  \node[anchor=north] at (3.2,-0.78) {$(a,+\infty)=\{x\mid x>a\}$};
-  \begin{scope}[yshift=-2.55cm]
-    \draw[line width=1.6pt,<-] (0.15,0) -- (3.85,0);
-    \draw[line width=0.7pt] (3.85,0) -- (5.15,0);
-    \draw[line width=0.7pt,->] (4.65,0) -- (5.85,0);
-    \node[right=1pt] at (5.85,0) {$x$};
-    \draw[fill=white,line width=0.7pt] (3.85,0) circle[radius=1.9pt];
-    \node[below=2pt] at (3.85,0) {$b$};
-    \draw[line width=0.7pt,->] (1.95,-0.56) -- (1.95,-0.12);
-    \node[anchor=north] at (3.0,-0.78) {$(-\infty,b)=\{x\mid x<b\}$};
+\begin{tikzpicture}[x=0.85cm,y=0.85cm,line cap=round,line join=round]
+  % (a, +inf) - top-left
+  \begin{scope}[shift={(0,3.2)}]
+    \draw[line width=0.7pt] (0.15,0) -- (1.55,0);
+    \draw[line width=1.6pt] (1.55,0) -- (4.25,0);
+    \draw[line width=0.7pt,->] (4.05,0) -- (4.85,0);
+    \node[right=1pt] at (4.85,0) {$x$};
+    \draw[fill=white,line width=0.7pt] (1.55,0) circle[radius=1.9pt];
+    \node[below=2pt] at (1.55,0) {$a$};
+    \draw[line width=0.7pt,->] (2.85,-0.56) -- (2.85,-0.12);
+    \node[anchor=north] at (2.85,-0.68) {$(a,+\infty)=\{x\mid x>a\}$};
   \end{scope}
-\end{tikzpicture}%
-}
-
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: 上为右开区间$[a,+\infty)$，$a$处实心点，右侧数轴加粗、下有向上箭头、右端标$x$；下为左开区间$(-\infty,b]$，$b$处实心点，左侧加粗并有左箭头，下有向上箭头、右端标$x$
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0.15,0) -- (1.65,0);
-  \draw[line width=1.6pt] (1.65,0) -- (5.35,0);
-  \draw[line width=1.3pt,->] (4.85,0) -- (6.05,0);
-  \node[right=1pt] at (6.05,0) {$x$};
-  \fill (1.65,0) circle[radius=2.05pt];
-  \node[below=2pt] at (1.65,0) {$a$};
-  \draw[line width=0.7pt,->] (3.55,-0.56) -- (3.55,-0.12);
-  \node[anchor=north] at (3.2,-0.78) {$[a,+\infty)=\{x\mid x\geqslant a\}$};
-  \begin{scope}[yshift=-2.55cm]
-    \draw[line width=1.6pt,<-] (0.15,0) -- (3.85,0);
-    \draw[line width=0.7pt] (3.85,0) -- (5.15,0);
-    \draw[line width=0.7pt,->] (4.65,0) -- (5.85,0);
-    \node[right=1pt] at (5.85,0) {$x$};
-    \fill (3.85,0) circle[radius=2.05pt];
-    \node[below=2pt] at (3.85,0) {$b$};
-    \draw[line width=0.7pt,->] (1.95,-0.56) -- (1.95,-0.12);
-    \node[anchor=north] at (3.0,-0.78) {$(-\infty,b]=\{x\mid x\leqslant b\}$};
+  % [a, +inf) - top-right
+  \begin{scope}[shift={(6.2,3.2)}]
+    \draw[line width=0.7pt] (0.15,0) -- (1.55,0);
+    \draw[line width=1.6pt] (1.55,0) -- (4.25,0);
+    \draw[line width=0.7pt,->] (4.05,0) -- (4.85,0);
+    \node[right=1pt] at (4.85,0) {$x$};
+    \fill (1.55,0) circle[radius=2.05pt];
+    \node[below=2pt] at (1.55,0) {$a$};
+    \draw[line width=0.7pt,->] (2.85,-0.56) -- (2.85,-0.12);
+    \node[anchor=north] at (2.85,-0.68) {$[a,+\infty)=\{x\mid x\geqslant a\}$};
+  \end{scope}
+  % (-inf, b) - bottom-left
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=1.6pt] (0.15,0) -- (3.25,0);
+    \draw[line width=0.7pt] (3.25,0) -- (4.25,0);
+    \draw[line width=0.7pt,->] (4.05,0) -- (4.85,0);
+    \node[right=1pt] at (4.85,0) {$x$};
+    \draw[fill=white,line width=0.7pt] (3.25,0) circle[radius=1.9pt];
+    \node[below=2pt] at (3.25,0) {$b$};
+    \draw[line width=0.7pt,->] (1.75,-0.56) -- (1.75,-0.12);
+    \node[anchor=north] at (2.5,-0.68) {$(-\infty,b)=\{x\mid x<b\}$};
+  \end{scope}
+  % (-inf, b] - bottom-right
+  \begin{scope}[shift={(6.2,0)}]
+    \draw[line width=1.6pt] (0.15,0) -- (3.25,0);
+    \draw[line width=0.7pt] (3.25,0) -- (4.25,0);
+    \draw[line width=0.7pt,->] (4.05,0) -- (4.85,0);
+    \node[right=1pt] at (4.85,0) {$x$};
+    \fill (3.25,0) circle[radius=2.05pt];
+    \node[below=2pt] at (3.25,0) {$b$};
+    \draw[line width=0.7pt,->] (1.75,-0.56) -- (1.75,-0.12);
+    \node[anchor=north] at (2.5,-0.68) {$(-\infty,b]=\{x\mid x\leqslant b\}$};
   \end{scope}
 \end{tikzpicture}%
 }
@@ -7208,7 +7188,7 @@ G (0, 1.5), H \left(0, - \frac{4}{3}\right).
   }
 \end{tikzpicture}%
 }
-\caption{图3·8}
+\caption{图3·6}
 \end{figure}
 
 
@@ -7592,7 +7572,7 @@ y = x^{2} \quad (1.000 \leqslant x \leqslant 9.999)
   \draw[line width=1.05pt] plot[smooth,tension=0.62] coordinates {(0,8) (0.4,6.2) (0.8,4.5) (1.1,3.0) (1.4,1.4) (1.65,-0.2) (2.0,-1.8) (2.5,-3.1) (3.0,-4.6) (3.5,-6.4) (4.0,-8.8) (4.5,-11.8) (5.0,-16.2) (5.5,-18.6) (6.0,-22.2) (6.5,-26.3) (7.0,-30.3) (7.5,-34.4) (8.0,-38.6) (8.5,-44.2) (9,-50)};
 \end{tikzpicture}%
 }
-\caption{§3·5 正比例函数}
+\caption{（第4题）}
 \end{figure}
 
 \section{§3·5 正比例函数}
@@ -10190,10 +10170,7 @@ x & y \\
 1.图象过顶点，且在x轴的上方向上取最大值。 &
 1.函数的值\(y\geqslant0\).当\(x=0\)时，\(y=0\).函数的范围是\(\{y\|y\geqslant0\}\)。 \\
 2.图象对于y轴\(\square\)。 &
-\begin{enumerate}[start=2]
-\item
-  \(x\)取互为相反的两个值时，对应的函数值相等。\(f(-x)=f(x)\)。 \\
-\end{enumerate}
+2.\(x\)取互为相反的两个值时，对应的函数值相等。\(f(-x)=f(x)\)。 \\
 3.在x轴的左侧，图象向上而下逐渐下降.在y轴的右侧，图象自下而上逐渐上升。
 &
 3.当\(x<0\)时，函数值\(y\)随自变量\(x\)的增大逐渐减小。\(x_1 \leqslant x_2 < 0 \Rightarrow f(x_2) < f(x_1)\).当\(x>0\)时，函数值\(y\)随自变量\(x\)的增大逐渐增大。\(0 \leqslant x_1 < x_2 \Rightarrow f(x_2) > f(x_1)\)。 \\
@@ -10278,7 +10255,7 @@ y=\(\frac{1}{2}\)x2 & ..。 & 2 & \(\frac{9}{8}\) & \(\frac{1}{2}\) & 0 &
 （2） 设 a 是负数，例如，我们要画函数
 
 \[
-y = - x^{3}
+y = - x^{2}
 \]
 
 的图象，也可以在函数\(y=x^{2}\)的图象的基础上来研究。
@@ -10299,12 +10276,17 @@ y=-x2 & ..。 & -4 & \(-\frac{9}{4}\) & -1 & 0 & -1 & \(-\frac{9}{4}\) &
 \par
 }
 
-从这个表可以看到，对于同一个\(x\)的值，函数\(y = -x^2\)所对应的值，恰巧是函数\(y = x^2\)所对应的值的相反的数。所
+从这个表可以看到，对于同一个\(x\)的值，函数\(y = -x^2\)所对应的值，恰巧是函数\(y = x^2\)所对应的值的相反的数。所以只要把函数\(y = x^2\)的图象上的每一个点的纵坐标改为它的相反的数（就是取这个点关于\(x\)轴的对称点，或把图象沿\(x\)轴折转过来），把新得到的这些点用平滑的线连接起来，就得到函数\(y = -x^2\)的图象（图4·12）。
 
-\begin{figure}
+这个图象仍旧是抛物线，它的对称轴还是\(y\)轴，顶点还是原点，不过图象是在\(x\)轴的下方。
+
+同样，从函数\(y = 2x^2\)和\(y = \frac{1}{2} x^2\)的图象可得出函数\(y = -2x^2\)和\(y = -\frac{1}{2} x^2\)的图象，它们也是以\(y\)轴为对称轴，原点为顶点的抛物线，但是图象在\(x\)轴的下方（图4·13）。
+
+\begin{figure}[htbp]
 \centering
-% fig-alt: 左为图4·12：y=x^2与y=-x^2关于x轴对称，左右各一条竖虚线；右为图4·13：y=2x^2、y=1/2 x^2在上方，y=-2x^2、y=-1/2 x^2在下方，两侧多条竖虚线；各图y上箭头、x右箭头，原点O，刻度无数字
-\fitfig{%
+% fig-alt: 左为图4·12：y=x^2（虚线）与y=-x^2（实线）关于x轴对称，左右各一条竖虚线；右为图4·13：y=2x^2、y=1/2 x^2在上方（虚线），y=-2x^2（实线）、y=-1/2 x^2在下方（虚线），两侧多条竖虚线；各图y上箭头、x右箭头，原点O，刻度无数字
+\begin{minipage}[t]{0.45\textwidth}
+\centering
 \begin{tikzpicture}[x=0.58cm,y=0.32cm,line cap=round,line join=round]
   \draw[line width=0.85pt] (-2.55,0) -- (2.55,0);
   \draw[line width=0.95pt,->] (2.4,0) -- (3.15,0);
@@ -10315,46 +10297,41 @@ y=-x2 & ..。 & -4 & \(-\frac{9}{4}\) & -1 & 0 & -1 & \(-\frac{9}{4}\) &
   \node[anchor=north west] at (0.1,-0.12) {$O$};
   \draw[dashed,line width=0.6pt] (-1,-1) -- (-1,1);
   \draw[dashed,line width=0.6pt] (1,-1) -- (1,1);
-  \draw[line width=1.05pt] plot[domain=-2.15:2.15,samples=36] (\x,{\x*\x});
+  \draw[dashed,line width=1.05pt] plot[domain=-2.15:2.15,samples=36] (\x,{\x*\x});
   \draw[line width=1.05pt] plot[domain=-2.15:2.15,samples=36] (\x,{-\x*\x});
   \node[anchor=south west] at (0.85,3.55) {$y=x^{2}$};
   \node[anchor=north west] at (0.55,-4.15) {$y=-x^{2}$};
-  \begin{scope}[xshift=7.4cm]
-    \draw[line width=0.85pt] (-2.55,0) -- (2.65,0);
-    \draw[line width=0.95pt,->] (2.5,0) -- (3.25,0);
-    \node[right=1pt] at (3.25,0) {$x$};
-    \draw[line width=0.85pt] (0,-6.55) -- (0,6.55);
-    \draw[line width=0.95pt,->] (0,6.4) -- (0,7.25);
-    \node[above=1pt] at (0,7.25) {$y$};
-    \node[anchor=north west] at (0.1,-0.12) {$O$};
-    \draw[dashed,line width=0.55pt] (-1.6,-5.12) -- (-1.6,5.12);
-    \draw[dashed,line width=0.55pt] (-1,-2) -- (-1,2);
-    \draw[dashed,line width=0.55pt] (-0.7,-0.98) -- (-0.7,0.98);
-    \draw[dashed,line width=0.55pt] (0.7,-0.98) -- (0.7,0.98);
-    \draw[dashed,line width=0.55pt] (1,-2) -- (1,2);
-    \draw[dashed,line width=0.55pt] (1.6,-5.12) -- (1.6,5.12);
-    \draw[line width=1.05pt] plot[domain=-1.7:1.7,samples=36] (\x,{2*\x*\x});
-    \draw[line width=1.05pt] plot[domain=-2.35:2.35,samples=36] (\x,{0.5*\x*\x});
-    \draw[line width=1.05pt] plot[domain=-1.7:1.7,samples=36] (\x,{-2*\x*\x});
-    \draw[line width=1.05pt] plot[domain=-2.35:2.35,samples=36] (\x,{-0.5*\x*\x});
-    \node[anchor=east] at (-1.82,5.15) {$y=2x^{2}$};
-    \node[anchor=west] at (2.05,3.55) {$y=\frac{1}{2}x^{2}$};
-    \node[anchor=north east] at (-1.55,-5.85) {$y=-2x^{2}$};
-    \node[anchor=north west] at (1.85,-5.15) {$y=-\frac{1}{2}x^{2}$};
-  \end{scope}
-\end{tikzpicture}%
-}
+\end{tikzpicture}
 \caption{图4·12}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[x=0.58cm,y=0.32cm,line cap=round,line join=round]
+  \draw[line width=0.85pt] (-2.55,0) -- (2.65,0);
+  \draw[line width=0.95pt,->] (2.5,0) -- (3.25,0);
+  \node[right=1pt] at (3.25,0) {$x$};
+  \draw[line width=0.85pt] (0,-6.55) -- (0,6.55);
+  \draw[line width=0.95pt,->] (0,6.4) -- (0,7.25);
+  \node[above=1pt] at (0,7.25) {$y$};
+  \node[anchor=north west] at (0.1,-0.12) {$O$};
+  \draw[dashed,line width=0.55pt] (-1.6,-5.12) -- (-1.6,5.12);
+  \draw[dashed,line width=0.55pt] (-1,-2) -- (-1,2);
+  \draw[dashed,line width=0.55pt] (-0.7,-0.98) -- (-0.7,0.98);
+  \draw[dashed,line width=0.55pt] (0.7,-0.98) -- (0.7,0.98);
+  \draw[dashed,line width=0.55pt] (1,-2) -- (1,2);
+  \draw[dashed,line width=0.55pt] (1.6,-5.12) -- (1.6,5.12);
+  \draw[dashed,line width=1.05pt] plot[domain=-1.7:1.7,samples=36] (\x,{2*\x*\x});
+  \draw[dashed,line width=1.05pt] plot[domain=-2.35:2.35,samples=36] (\x,{0.5*\x*\x});
+  \draw[line width=1.05pt] plot[domain=-1.7:1.7,samples=36] (\x,{-2*\x*\x});
+  \draw[dashed,line width=1.05pt] plot[domain=-2.35:2.35,samples=36] (\x,{-0.5*\x*\x});
+  \node[anchor=east] at (-1.82,5.15) {$y=2x^{2}$};
+  \node[anchor=west] at (2.05,3.55) {$y=\frac{1}{2}x^{2}$};
+  \node[anchor=north east] at (-1.55,-5.85) {$y=-2x^{2}$};
+  \node[anchor=north west] at (1.85,-5.15) {$y=-\frac{1}{2}x^{2}$};
+\end{tikzpicture}
 \caption{图4·13}
+\end{minipage}
 \end{figure}
-
-
-以只要把函数\(y = x^3\)的图象上的每一个点的纵坐标成为它的相反的数（就是取这个点关于\(x\)轴的对称点，或把图象沿\(x\)轴折转过来），把新得到的这些点用平滑的线连接起来，就得到函数\(y = -x^2\)的图象（图4·12）。
-
-这个图象仍旧是抛物线，它的对称轴还是 y 轴，顶点还是原点，不过图象是在 x
-轴的下方。
-
-同样，从函数\(y = 2x^2\)和\(y = \frac{1}{2} x^2\)的图象可得出函数\(y = -2x^2\)和\(y = -\frac{1}{2} x^2\)的图象，它们也是以\(y\)轴为对称轴，原点为顶点的抛物线，但是图象在\(x\)轴的下方（图4·13）。
 
 总结上面这两种情况，我们知道：
 
@@ -10731,7 +10708,7 @@ y = x^{2} - x + 2
   \node[anchor=east] at (-0.22,2.55) {$y=\frac{7}{4}$};
 \end{tikzpicture}%
 }
-\caption{图4·18}
+\caption{图4·16}
 \end{figure}
 
 
@@ -11536,10 +11513,11 @@ y = a x^{2} + b x + c \quad (a \neq 0)
 
 现在我们在\(a > 0\)的条件下，根据顶点的纵坐标\(\frac{4ac - b^2}{4a}\)是正数，是零，或者是负数分别画出他们的图象（图4·24）。
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-% fig-alt: 开口向上抛物线全在x轴上方，顶点略在y轴右侧；对称轴为竖虚线并略伸出x轴下方；y上箭头、x右箭头，原点O，刻度无数字
-\fitfig{%
+% fig-alt: 图4·24 开口向上抛物线三图：(1)Δ<0全在x轴上方；(2)Δ=0切于x轴；(3)Δ>0交x轴于A、B两点
+\begin{minipage}[t]{0.48\textwidth}
+\centering
 \begin{tikzpicture}[x=0.78cm,y=0.52cm,line cap=round,line join=round]
   \draw[line width=0.85pt] (-1.85,0) -- (2.15,0);
   \draw[line width=0.95pt,->] (2.0,0) -- (2.75,0);
@@ -11552,15 +11530,13 @@ y = a x^{2} + b x + c \quad (a \neq 0)
   \foreach \k in {1,2}{\draw[line width=0.5pt] (-0.07,\k) -- (0.07,\k);}
   \draw[dashed,line width=0.65pt] (0.42,-0.48) -- (0.42,2.55);
   \draw[line width=1.05pt] plot[domain=-1.15:2.02,samples=40] (\x,{0.72*(\x-0.42)*(\x-0.42)+0.78});
-\end{tikzpicture}%
-}
-\caption{(1) \(\frac{4ac - b^2}{4a} > 0\)}
-\end{figure}
+\end{tikzpicture}
 
-\begin{figure}
+\smallskip
+(1) \(\dfrac{4ac - b^2}{4a} > 0\)
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
 \centering
-% fig-alt: 开口向上抛物线在顶点与x轴相切，顶点略在原点右侧；对称轴为竖虚线并伸出x轴下方；y上箭头、x右箭头，原点O，刻度无数字
-\fitfig{%
 \begin{tikzpicture}[x=0.78cm,y=0.48cm,line cap=round,line join=round]
   \draw[line width=0.85pt] (-1.75,0) -- (2.05,0);
   \draw[line width=0.95pt,->] (1.9,0) -- (2.65,0);
@@ -11573,15 +11549,16 @@ y = a x^{2} + b x + c \quad (a \neq 0)
   \foreach \k in {1,2,3}{\draw[line width=0.5pt] (-0.07,\k) -- (0.07,\k);}
   \draw[dashed,line width=0.65pt] (0.36,-0.58) -- (0.36,2.75);
   \draw[line width=1.05pt] plot[domain=-1.12:1.92,samples=40] (\x,{0.95*(\x-0.36)*(\x-0.36)});
-\end{tikzpicture}%
-}
-\caption{(2) \(\frac{4ac - b^2}{4a} = 0\)}
-\end{figure}
+\end{tikzpicture}
 
-\begin{figure}
+\smallskip
+(2) \(\dfrac{4ac - b^2}{4a} = 0\)
+\end{minipage}
+
+\vspace{0.8em}
+
+\begin{minipage}[t]{\textwidth}
 \centering
-% fig-alt: 开口向上抛物线交x轴于A、B，A在y轴右侧近原点，顶点G在x轴下且略在y轴右侧，对称轴竖虚线，过G有横虚线；左支标D、右支标E；y上箭头、x右箭头，原点O
-\fitfig{%
 \begin{tikzpicture}[x=0.88cm,y=0.46cm,line cap=round,line join=round]
   \draw[line width=0.85pt] (-1.25,0) -- (2.25,0);
   \draw[line width=0.95pt,->] (2.1,0) -- (2.9,0);
@@ -11600,9 +11577,12 @@ y = a x^{2} + b x + c \quad (a \neq 0)
   \node[anchor=north] at (0.36,-0.06) {$A$};
   \node[anchor=south west] at (1.42,0.05) {$B$};
   \node[anchor=north west] at (0.96,-1.18) {$G$};
-\end{tikzpicture}%
-}
-\caption{图4·24（3） \(\frac{4ac - b^2}{4a} < 0\)}
+\end{tikzpicture}
+
+\smallskip
+(3) \(\dfrac{4ac - b^2}{4a} < 0\)
+\end{minipage}
+\caption{图4·24}
 \end{figure}
 
 从图象中，我们可以清楚地看出：
@@ -12695,113 +12675,93 @@ h^{- 1}: y \rightarrow \sqrt{y} = x (y \in \{y | y \geqslant 0 \}, x \in \{x | x
   下面各图所示的对应，是不是从集合\(A\)到集合\(B\)的单值对应？为什么？
 \end{enumerate}
 
-\emph{（1）}
-
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-% fig-alt: 两椭圆对应图，左A含a、b、c、d，右B含e、f、g、h；箭号a→e、b→e、c→g、c→h、d→f；无坐标轴
+% fig-alt: 习题5·1第1题：四种集合A到B的映射示意图 (1)(2)(3)(4)
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
-  \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
-  \node at (-0.32,1.28) {$a$};
-  \node at (-0.32,0.42) {$b$};
-  \node at (-0.32,-0.38) {$c$};
-  \node at (-0.32,-1.18) {$d$};
-  \node at (-0.62,-1.68) {$A$};
-  \node at (4.28,1.28) {$e$};
-  \node at (4.28,0.42) {$f$};
-  \node at (4.28,-0.38) {$g$};
-  \node at (4.28,-1.18) {$h$};
-  \node at (4.00,-1.68) {$B$};
-  \draw[line width=0.7pt,->] (0.00,1.28) -- (3.95,1.28);
-  \draw[line width=0.7pt] (0.00,0.42) -- (3.15,1.10);
-  \draw[line width=0.7pt,->] (3.15,1.10) -- (3.95,1.10);
-  \draw[line width=0.7pt] (-0.02,-1.12) -- (3.15,0.28);
-  \draw[line width=0.7pt,->] (3.15,0.28) -- (3.95,0.42);
-  \draw[line width=0.7pt,->] (0.00,-0.32) -- (3.95,-0.38);
-  \draw[line width=0.7pt] (0.05,-0.48) -- (3.20,-1.08);
-  \draw[line width=0.7pt,->] (3.20,-1.08) -- (3.95,-1.18);
+\begin{tikzpicture}[scale=0.8,line cap=round,line join=round]
+  % (1)
+  \begin{scope}[shift={(0,0)}]
+    \node[anchor=south] at (2.28,2.1) {(1)};
+    \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+    \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+    \node at (-0.32,1.28) {$a$};
+    \node at (-0.32,0.42) {$b$};
+    \node at (-0.32,-0.38) {$c$};
+    \node at (-0.32,-1.18) {$d$};
+    \node at (-0.62,-1.68) {$A$};
+    \node at (4.28,1.28) {$e$};
+    \node at (4.28,0.42) {$f$};
+    \node at (4.28,-0.38) {$g$};
+    \node at (4.28,-1.18) {$h$};
+    \node at (4.00,-1.68) {$B$};
+    \draw[line width=0.7pt,->] (0.00,1.28) -- (3.95,1.28);
+    \draw[line width=0.7pt] (0.00,0.42) -- (3.15,1.10);
+    \draw[line width=0.7pt,->] (3.15,1.10) -- (3.95,1.10);
+    \draw[line width=0.7pt] (-0.02,-1.12) -- (3.15,0.28);
+    \draw[line width=0.7pt,->] (3.15,0.28) -- (3.95,0.42);
+    \draw[line width=0.7pt,->] (0.00,-0.32) -- (3.95,-0.38);
+    \draw[line width=0.7pt] (0.05,-0.48) -- (3.20,-1.08);
+    \draw[line width=0.7pt,->] (3.20,-1.08) -- (3.95,-1.18);
+  \end{scope}
+  % (2)
+  \begin{scope}[shift={(7.6,0)}]
+    \node[anchor=south] at (2.28,2.1) {(2)};
+    \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+    \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+    \node at (-0.32,1.15) {$a$};
+    \node at (-0.32,0.22) {$b$};
+    \node at (-0.32,-0.52) {$c$};
+    \node at (-0.32,-1.22) {$d$};
+    \node at (-0.62,-1.68) {$A$};
+    \node at (4.28,1.15) {$e$};
+    \node at (4.28,0.22) {$f$};
+    \node at (4.28,-0.52) {$g$};
+    \node at (4.28,-1.22) {$h$};
+    \node at (4.00,-1.68) {$B$};
+    \draw[line width=0.7pt,->] (0.00,1.15) -- (3.95,1.15);
+    \draw[line width=0.7pt,->] (0.00,0.22) -- (3.95,0.22);
+    \draw[line width=0.7pt,->] (0.00,-0.52) -- (3.95,-0.52);
+  \end{scope}
+  % (3)
+  \begin{scope}[shift={(0,-5.0)}]
+    \node[anchor=south] at (2.28,2.1) {(3)};
+    \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+    \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+    \node at (-0.32,1.05) {$a$};
+    \node at (-0.32,0.15) {$b$};
+    \node at (-0.32,-0.75) {$c$};
+    \node at (-0.62,-1.68) {$A$};
+    \node at (4.28,1.05) {$d$};
+    \node at (4.28,0.15) {$f$};
+    \node at (4.28,-0.75) {$g$};
+    \node at (4.28,-1.35) {$h$};
+    \node at (4.00,-1.68) {$B$};
+    \draw[line width=0.7pt,->] (0.00,1.05) -- (3.95,1.05);
+    \draw[line width=0.7pt,->] (0.00,0.15) -- (3.95,0.15);
+    \draw[line width=0.7pt,->] (0.00,-0.75) -- (3.95,-0.75);
+  \end{scope}
+  % (4)
+  \begin{scope}[shift={(7.6,-5.0)}]
+    \node[anchor=south] at (2.28,2.1) {(4)};
+    \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+    \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
+    \node at (-0.32,1.18) {$a$};
+    \node at (-0.32,0.38) {$b$};
+    \node at (-0.32,-0.38) {$c$};
+    \node at (-0.32,-1.18) {$d$};
+    \node at (-0.62,-1.68) {$A$};
+    \node at (4.28,0.55) {$e$};
+    \node at (4.28,-0.55) {$f$};
+    \node at (4.00,-1.68) {$B$};
+    \draw[line width=0.7pt,->] (0.05,1.18) -- (3.95,0.62);
+    \draw[line width=0.7pt,->] (0.05,0.38) -- (3.95,0.48);
+    \draw[line width=0.7pt,->] (0.05,-0.38) -- (3.95,-0.48);
+    \draw[line width=0.7pt,->] (0.05,-1.18) -- (3.95,-0.62);
+  \end{scope}
 \end{tikzpicture}%
 }
-\caption{(3)}
-\end{figure}
-
-
-\emph{（2）}
-
-\begin{figure}
-\centering
-% fig-alt: 两椭圆对应图，左A含a、b、c、d，右B含e、f、g、h；三条平行箭号a→e、b→f、c→g；d与h无箭号
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
-  \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
-  \node at (-0.32,1.15) {$a$};
-  \node at (-0.32,0.22) {$b$};
-  \node at (-0.32,-0.52) {$c$};
-  \node at (-0.32,-1.22) {$d$};
-  \node at (-0.62,-1.68) {$A$};
-  \node at (4.28,1.15) {$e$};
-  \node at (4.28,0.22) {$f$};
-  \node at (4.28,-0.52) {$g$};
-  \node at (4.28,-1.22) {$h$};
-  \node at (4.00,-1.68) {$B$};
-  \draw[line width=0.7pt,->] (0.00,1.15) -- (3.95,1.15);
-  \draw[line width=0.7pt,->] (0.00,0.22) -- (3.95,0.22);
-  \draw[line width=0.7pt,->] (0.00,-0.52) -- (3.95,-0.52);
-\end{tikzpicture}%
-}
-\caption{(4)}
-\end{figure}
-
-
-\begin{figure}
-\centering
-% fig-alt: 两椭圆对应图(3)，左A含a、b、c，右B含d、f、g、h；平行箭号a→d、b→f、c→g，h无箭号
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
-  \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
-  \node at (-0.32,1.05) {$a$};
-  \node at (-0.32,0.15) {$b$};
-  \node at (-0.32,-0.75) {$c$};
-  \node at (-0.62,-1.68) {$A$};
-  \node at (4.28,1.05) {$d$};
-  \node at (4.28,0.15) {$f$};
-  \node at (4.28,-0.75) {$g$};
-  \node at (4.28,-1.35) {$h$};
-  \node at (4.00,-1.68) {$B$};
-  \draw[line width=0.7pt,->] (0.00,1.05) -- (3.95,1.05);
-  \draw[line width=0.7pt,->] (0.00,0.15) -- (3.95,0.15);
-  \draw[line width=0.7pt,->] (0.00,-0.75) -- (3.95,-0.75);
-\end{tikzpicture}%
-}
-\caption{(3)}
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: 两椭圆对应图(4)，左A含a、b、c、d，右B含c、f；箭号a→c、b→c、c→f、d→f
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.95pt] (0,0) ellipse[x radius=1.12cm,y radius=1.92cm];
-  \draw[line width=0.95pt] (4.55,0) ellipse[x radius=1.12cm,y radius=1.92cm];
-  \node at (-0.32,1.18) {$a$};
-  \node at (-0.32,0.38) {$b$};
-  \node at (-0.32,-0.38) {$c$};
-  \node at (-0.32,-1.18) {$d$};
-  \node at (-0.62,-1.68) {$A$};
-  \node at (4.28,0.55) {$c$};
-  \node at (4.28,-0.55) {$f$};
-  \node at (4.00,-1.68) {$B$};
-  \draw[line width=0.7pt,->] (0.05,1.18) -- (3.95,0.62);
-  \draw[line width=0.7pt,->] (0.05,0.38) -- (3.95,0.48);
-  \draw[line width=0.7pt,->] (0.05,-0.38) -- (3.95,-0.48);
-  \draw[line width=0.7pt,->] (0.05,-1.18) -- (3.95,-0.62);
-\end{tikzpicture}%
-}
-\caption{(4)}
+\caption{（第1题）}
 \end{figure}
 
 \begin{enumerate}[start=2]
@@ -13042,19 +13002,11 @@ y = 0.6 x,
 \endlastfoot
 1. 图象通过原点，并且从这点起向左下方和右上方无限伸展。 & 1.
 当\(x=0\)时，\(y=0\)。函数的值域是实数集\(\mathbb{R}\)。 \\
-2. 图象对称于原点1. &
-\begin{enumerate}[start=2]
-\item
-  \(x\)取互为相反数的值时，对应的函数值也互为相反数。\(f(-x)=-f(x)\)。 \\
-\end{enumerate}
-3. 图象自左至右始终上升。 & 3. 函数值\(y\)随自变量\(x\)值的增大而增大。（\(x_1 < x_2 \rightarrow f(x_1)\)） \\
-
+2. 图象对称于原点①。 &
+2. \(x\)取互为相反数的值时，对应的函数值也互为相反数。\(f(-x)=-f(x)\)。 \\
+3. 图象自左至右始终上升。 & 3. 函数值\(y\)随自变量\(x\)值的增大而增大。\(x_1 < x_2 \Rightarrow f(x_1) < f(x_2)\)。 \\
 \end{longtable}
 }
-
-\begin{center}
-\small 图5·9
-\end{center}
 
 ①
 点\(P\)和点\(P'\)关于原点对称，是指\(POP'\)在一条直线上，并且\(PO\)的长度等于\(OP'\)的长度，很明显，\(P(x, y)\)关于原点的对称点是\(P'(-x, -y)\)。
@@ -14606,7 +14558,6 @@ y = - \sqrt{25 - x^{2}}
 \fitfig{%
 \begin{tikzpicture}[x=0.42cm,y=0.42cm,line cap=round,line join=round]
   \draw[line width=0.8pt] (-6.35,0) -- (6.15,0);
-  \draw[line width=0.9pt,->] (-6.15,0) -- (-7.15,0);
   \draw[line width=0.9pt,->] (5.95,0) -- (7.05,0);
   \node[anchor=west] at (7.15,0) {$x$};
   \draw[line width=0.8pt] (0,-6.35) -- (0,6.05);
@@ -14615,7 +14566,8 @@ y = - \sqrt{25 - x^{2}}
   \node[anchor=north] at (0.32,-0.16) {$O$};
   \foreach \k in {-4,-3,-2,-1,1,2,3,4}{\draw[line width=0.45pt] (\k,-0.12) -- (\k,0.12);}
   \foreach \k in {-4,-3,-2,-1,1,2,3,4}{\draw[line width=0.45pt] (-0.12,\k) -- (0.12,\k);}
-  \draw[line width=1.05pt] (0,0) circle[radius=5];
+  \draw[line width=1.05pt] (5,0) arc[start angle=0,end angle=180,radius=5];
+  \draw[dashed,line width=1.05pt] (5,0) arc[start angle=0,end angle=-180,radius=5];
   \node[anchor=south west] at (3.55,3.55) {$y=\sqrt{25-x^{2}}$};
   \node[anchor=north west] at (3.45,-3.35) {$y=-\sqrt{25-x^{2}}$};
 \end{tikzpicture}%
@@ -15408,8 +15360,7 @@ a^{b} = N \tag {1}
 
 这两个式子所表示的\(a, b\)和\(N\)三个数之间的关系是一样的，只是表达的形式，有所不同。所以我们可以根据需要，把写成指数形式的等式（1）和写成对数形式的等式（2）互相变换。
 
-\begin{figure}
-\centering
+{\centering
 % fig-alt: a^b=N与log_a N=b双箭号互化；实线连接指数与对数，虚线连接幂与真数、底数；下方条件(a>0,a≠1;N>0)
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
@@ -15432,8 +15383,8 @@ a^{b} = N \tag {1}
   \node[anchor=north] at (4.20,-1.05) {$(a>0,\ a\neq 1;\ N>0)$};
 \end{tikzpicture}%
 }
-\caption{\((a > 0, a \neq 1; N > 0)\)}
-\end{figure}
+\par
+}
 
 
 把（2）的\(b\)代入（1），就得到
