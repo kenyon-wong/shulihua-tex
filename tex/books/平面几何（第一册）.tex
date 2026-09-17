@@ -425,35 +425,32 @@
 线段通常用表示它们两个端点的大写字母来表示。例如，``线段 DE''或者``线段
 ED''（图1·4（1））；或者用一个小写字母来表示，例如``线段 b''（图1·4（2））。
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \fitfig{%
-% fig-alt: 水平线段DE，两端各有短竖线表示端点，下方标（1）
+% fig-alt: 图1·4：线段DE与线段b表示法示意图
 \begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,0) -- (2.8,0);
-  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
-  \draw[line width=0.6pt] (2.8,-0.09) -- (2.8,0.09);
-  \node[above=1pt] at (0,0) {$D$};
-  \node[above=1pt] at (2.8,0) {$E$};
-  \node[below=7pt] at (1.4,0) {（1）};
+  % (1)
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt] (0,0) -- (2.8,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \draw[line width=0.6pt] (2.8,-0.09) -- (2.8,0.09);
+    \node[above=1pt] at (0,0) {$D$};
+    \node[above=1pt] at (2.8,0) {$E$};
+    \node[below=7pt] at (1.4,0) {（1）};
+  \end{scope}
+  %
+  % (2)
+  \begin{scope}[shift={(4.2,0)}]
+    \draw[line width=0.7pt] (0,0) -- (2.6,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \draw[line width=0.6pt] (2.6,-0.09) -- (2.6,0.09);
+    \node[above=1pt] at (1.3,0) {$b$};
+    \node[below=7pt] at (1.3,0) {（2）};
+  \end{scope}
 \end{tikzpicture}%
 }
-\caption{图1·4（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 水平线段，中段上方标b，两端各有短竖线，下方标（2）
-\begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,0) -- (2.6,0);
-  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
-  \draw[line width=0.6pt] (2.6,-0.09) -- (2.6,0.09);
-  \node[above=1pt] at (1.3,0) {$b$};
-  \node[below=7pt] at (1.3,0) {（2）};
-\end{tikzpicture}%
-}
-\caption{图1·4（2）}
+\caption{图1·4}
 \end{figure}
 
 \shulihuahang{［注意］}
@@ -1147,51 +1144,48 @@ CD = 2.5 \mathrm{mm} \times 10 = 25 \mathrm{mm} = 2.5 \mathrm{cm}\text{，}
 
 下面是按 10：1 放大的示意图（图1·22）：
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \fitfig{%
-% fig-alt: 上为线段AB，两端有短竖线，上方标5.4cm；下为左端对齐的较短线段CD，两端有短竖线，上方标2.5cm
+% fig-alt: 图1·22：线段放大与线段差作图示意图
 \begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,1.25) -- (3.78,1.25);
-  \draw[line width=0.6pt] (0,1.16) -- (0,1.34);
-  \draw[line width=0.6pt] (3.78,1.16) -- (3.78,1.34);
-  \node[above=2pt] at (1.89,1.25) {$5.4\,\mathrm{cm}$};
-  \node[below=1pt] at (0,1.25) {$A$};
-  \node[below=1pt] at (3.78,1.25) {$B$};
-  \draw[line width=0.7pt] (0,0) -- (1.75,0);
-  \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
-  \draw[line width=0.6pt] (1.75,-0.09) -- (1.75,0.09);
-  \node[above=2pt] at (0.88,0) {$2.5\,\mathrm{cm}$};
-  \node[below=2pt] at (0,0) {$C$};
-  \node[below=2pt] at (1.75,0) {$D$};
+  % 左图
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt] (0,1.25) -- (3.78,1.25);
+    \draw[line width=0.6pt] (0,1.16) -- (0,1.34);
+    \draw[line width=0.6pt] (3.78,1.16) -- (3.78,1.34);
+    \node[above=2pt] at (1.89,1.25) {$5.4\,\mathrm{cm}$};
+    \node[below=1pt] at (0,1.25) {$A$};
+    \node[below=1pt] at (3.78,1.25) {$B$};
+    \draw[line width=0.7pt] (0,0) -- (1.75,0);
+    \draw[line width=0.6pt] (0,-0.09) -- (0,0.09);
+    \draw[line width=0.6pt] (1.75,-0.09) -- (1.75,0.09);
+    \node[above=2pt] at (0.88,0) {$2.5\,\mathrm{cm}$};
+    \node[below=2pt] at (0,0) {$C$};
+    \node[below=2pt] at (1.75,0) {$D$};
+  \end{scope}
+  %
+  % 右图
+  \begin{scope}[shift={(4.8,0)}]
+    \draw[line width=0.45pt] (0,1.28) -- (0,1.02);
+    \draw[line width=0.45pt] (3.78,1.28) -- (3.78,1.02);
+    \draw[<->, line width=0.5pt] (0,1.15) -- (3.78,1.15);
+    \node[above=1pt] at (1.89,1.15) {$5.4\,\mathrm{cm}$};
+    \draw[line width=0.7pt] (0,0.55) -- (3.78,0.55);
+    \draw[line width=0.6pt] (0,0.46) -- (0,0.64);
+    \draw[line width=0.6pt] (2.34,0.46) -- (2.34,0.64);
+    \draw[line width=0.6pt] (3.78,0.46) -- (3.78,0.64);
+    \draw[line width=0.45pt] (0,0.28) -- (0,0.02);
+    \draw[line width=0.45pt] (2.34,0.28) -- (2.34,0.02);
+    \draw[line width=0.45pt] (3.78,0.28) -- (3.78,0.02);
+    \draw[<->, line width=0.5pt] (0,0.12) -- (2.34,0.12);
+    \draw[<->, line width=0.5pt] (2.34,0.12) -- (3.78,0.12);
+    \node[below=1pt] at (1.17,0.12) {$2.5\,\mathrm{cm}$};
+    \node[below=1pt] at (3.06,0.12) {$2.9\,\mathrm{cm}$};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·22}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 上为尺寸线标5.4cm；中为两端有短竖线的线段，分点在中点右侧；下为尺寸线，左段标2.5cm、右段标2.9cm，分点与中线对齐
-\begin{tikzpicture}[line cap=round]
-  \draw[line width=0.45pt] (0,1.28) -- (0,1.02);
-  \draw[line width=0.45pt] (3.78,1.28) -- (3.78,1.02);
-  \draw[<->, line width=0.5pt] (0,1.15) -- (3.78,1.15);
-  \node[above=1pt] at (1.89,1.15) {$5.4\,\mathrm{cm}$};
-  \draw[line width=0.7pt] (0,0.55) -- (3.78,0.55);
-  \draw[line width=0.6pt] (0,0.46) -- (0,0.64);
-  \draw[line width=0.6pt] (2.34,0.46) -- (2.34,0.64);
-  \draw[line width=0.6pt] (3.78,0.46) -- (3.78,0.64);
-  \draw[line width=0.45pt] (0,0.28) -- (0,0.02);
-  \draw[line width=0.45pt] (2.34,0.28) -- (2.34,0.02);
-  \draw[line width=0.45pt] (3.78,0.28) -- (3.78,0.02);
-  \draw[<->, line width=0.5pt] (0,0.12) -- (2.34,0.12);
-  \draw[<->, line width=0.5pt] (2.34,0.12) -- (3.78,0.12);
-  \node[below=1pt] at (1.17,0.12) {$2.5\,\mathrm{cm}$};
-  \node[below=1pt] at (3.06,0.12) {$2.9\,\mathrm{cm}$};
-\end{tikzpicture}%
-}
-\caption{图1·22（a）}
 \end{figure}
 
 \subsubsection{习题 1.3}
@@ -1521,40 +1515,39 @@ OA = OB = OC.
 
 象上面所说的角的形象，在日常生活和生产中经常会看到。例如两脚分开的分割规和卡钳，钟表上的分针和时针构成的形状等，它们都成一个角（图1·28）。
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-% fig-alt: 图1·28：时钟9点与圆规张开示直角
 \fitfig{%
+% fig-alt: 图1·28：钟表指针、分割规和卡钳构成的角示意图
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) circle (1.35);
-  \foreach \a/\t in {90/12,60/1,30/2,0/3,-30/4,-60/5,-90/6,-120/7,-150/8,180/9,150/10,120/11}
-    \node at (\a:1.10) {$\t$};
-  \draw[line width=1.1pt,->] (0,0) -- (180:0.75);
-  \draw[line width=1.1pt,->] (0,0) -- (90:0.85);
-  \begin{scope}[xshift=2.85cm]
+  % 钟表
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.75pt] (0,0) circle (1.35);
+    \foreach \a/\t in {90/12,60/1,30/2,0/3,-30/4,-60/5,-90/6,-120/7,-150/8,180/9,150/10,120/11}
+      \node at (\a:1.10) {$\t$};
+    \draw[line width=1.1pt,->] (0,0) -- (180:0.75);
+    \draw[line width=1.1pt,->] (0,0) -- (90:0.85);
+  \end{scope}
+  %
+  % 分割规
+  \begin{scope}[shift={(2.85,0)}]
     \draw[line width=0.7pt] (0,1.55) -- (-0.55,0.15);
     \draw[line width=0.7pt] (0,1.55) -- (0.55,0.15);
     \fill (0,1.55) circle (0.06);
   \end{scope}
+  %
+  % 卡钳
+  \begin{scope}[shift={(4.8,0.9)}]
+    \draw[line width=0.7pt] (0,0) circle (0.11);
+    \fill (0,0) circle (0.03);
+    \draw[line width=0.7pt] (-0.07,-0.09) -- (-0.38,-1.20)
+      .. controls (-0.44,-1.48) and (-0.16,-1.58) .. (-0.02,-1.55);
+    \draw[line width=0.7pt] (0.07,-0.09) -- (0.30,-0.85)
+      .. controls (0.46,-1.28) and (0.14,-1.50) .. (0.04,-1.52);
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·28}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 卡钳，顶部为圆铰，两腿下伸后尖端向内弯合
-\begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,0) circle (0.11);
-  \fill (0,0) circle (0.03);
-  \draw[line width=0.7pt] (-0.07,-0.09) -- (-0.38,-1.20)
-    .. controls (-0.44,-1.48) and (-0.16,-1.58) .. (-0.02,-1.55);
-  \draw[line width=0.7pt] (0.07,-0.09) -- (0.30,-0.85)
-    .. controls (0.46,-1.28) and (0.14,-1.50) .. (0.04,-1.52);
-\end{tikzpicture}%
-}
-\caption{图1·28（a）}
 \end{figure}
 
 \begin{figure}
@@ -1912,55 +1905,52 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 \angle ABC = \angle 1 + \angle 2 + \angle 3.
 \]
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \fitfig{%
-% fig-alt: 左为角1，顶点在左、下边水平向右、上边斜向右上；右上为较平的角2，右下为角3
+% fig-alt: 图1·40：角的相加示意图（∠ABC=∠1+∠2+∠3）
 \begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,0) -- (1.55,0);
-  \draw[line width=0.7pt] (0,0) -- (28:1.40);
-  \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=28, radius=0.40];
-  \node[above=1pt] at (14:0.56) {$1$};
-  \begin{scope}[shift={(2.05,0.78)}]
-    \draw[line width=0.7pt] (0,0) -- (1.40,0);
-    \draw[line width=0.7pt] (0,0) -- (12:1.28);
-    \draw[line width=0.6pt] (0.38,0) arc[start angle=0, end angle=12, radius=0.38];
-    \node[above=1pt] at (8:0.58) {$2$};
+  % 左图：三个已知角
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt] (0,0) -- (1.55,0);
+    \draw[line width=0.7pt] (0,0) -- (28:1.40);
+    \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=28, radius=0.40];
+    \node[above=1pt] at (14:0.56) {$1$};
+    \begin{scope}[shift={(2.05,0.78)}]
+      \draw[line width=0.7pt] (0,0) -- (1.40,0);
+      \draw[line width=0.7pt] (0,0) -- (12:1.28);
+      \draw[line width=0.6pt] (0.38,0) arc[start angle=0, end angle=12, radius=0.38];
+      \node[above=1pt] at (8:0.58) {$2$};
+    \end{scope}
+    \begin{scope}[shift={(2.05,-0.08)}]
+      \draw[line width=0.7pt] (0,0) -- (1.48,0);
+      \draw[line width=0.7pt] (0,0) -- (32:1.32);
+      \draw[line width=0.6pt] (0.38,0) arc[start angle=0, end angle=32, radius=0.38];
+      \node[above=1pt] at (16:0.54) {$3$};
+    \end{scope}
   \end{scope}
-  \begin{scope}[shift={(2.05,-0.08)}]
-    \draw[line width=0.7pt] (0,0) -- (1.48,0);
-    \draw[line width=0.7pt] (0,0) -- (32:1.32);
-    \draw[line width=0.6pt] (0.38,0) arc[start angle=0, end angle=32, radius=0.38];
-    \node[above=1pt] at (16:0.54) {$3$};
+  %
+  % 右图：拼接角ABC
+  \begin{scope}[shift={(4.5,0)}]
+    \draw[line width=0.7pt] (0,0) -- (2.50,0);
+    \draw[line width=0.7pt] (0,0) -- (22:2.20);
+    \draw[line width=0.7pt] (0,0) -- (42:2.10);
+    \draw[line width=0.7pt] (0,0) -- (68:1.95);
+    \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=22, radius=0.42];
+    \draw[line width=0.6pt] (22:0.58) arc[start angle=22, end angle=42, radius=0.58];
+    \draw[line width=0.6pt] (42:0.74) arc[start angle=42, end angle=68, radius=0.74];
+    \node[above=1pt] at (11:0.58) {$1$};
+    \node[above=1pt] at (32:0.74) {$2$};
+    \node[above left=1pt] at (55:0.90) {$3$};
+    \node[below left=0pt] at (0,0) {$B$};
+    \node[above=1pt] at (2.50,0) {$A$};
+    \node[above=1pt] at (22:2.20) {$D$};
+    \node[above=1pt] at (42:2.10) {$E$};
+    \node[above=1pt] at (68:1.95) {$C$};
   \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·40}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 顶点B引出四条实线射线，BA水平向右，BD、BE依次升高，BC最陡；BA与BD间标1，BD与BE间标2，BE与BC间标3
-\begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,0) -- (2.50,0);
-  \draw[line width=0.7pt] (0,0) -- (22:2.20);
-  \draw[line width=0.7pt] (0,0) -- (42:2.10);
-  \draw[line width=0.7pt] (0,0) -- (68:1.95);
-  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=22, radius=0.42];
-  \draw[line width=0.6pt] (22:0.58) arc[start angle=22, end angle=42, radius=0.58];
-  \draw[line width=0.6pt] (42:0.74) arc[start angle=42, end angle=68, radius=0.74];
-  \node[above=1pt] at (11:0.58) {$1$};
-  \node[above=1pt] at (32:0.74) {$2$};
-  \node[above left=1pt] at (55:0.90) {$3$};
-  \node[below left=0pt] at (0,0) {$B$};
-  \node[above=1pt] at (2.50,0) {$A$};
-  \node[above=1pt] at (22:2.20) {$D$};
-  \node[above=1pt] at (42:2.10) {$E$};
-  \node[above=1pt] at (68:1.95) {$C$};
-\end{tikzpicture}%
-}
-\caption{图1·40（a）}
 \end{figure}
 
 如图1·41中的
@@ -1969,64 +1959,55 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 \angle EOF = \angle 4 - \angle 5.
 \]
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \fitfig{%
-% fig-alt: 上为较大的角，顶点在左、下边水平向右、上边斜向右上，角内标4；下为较小的角，同样画法，角内标5
+% fig-alt: 图1·41：角的相减示意图（∠EOF=∠4-∠5）
 \begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,1.25) -- (1.85,1.25);
-  \draw[line width=0.7pt] (0,1.25) -- ++(34:1.65);
-  \draw[line width=0.6pt] (0.42,1.25) arc[start angle=0, end angle=34, radius=0.42];
-  \node[above=1pt] at (0.46,1.42) {$4$};
-  \draw[line width=0.7pt] (0,0) -- (1.70,0);
-  \draw[line width=0.7pt] (0,0) -- (20:1.50);
-  \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=20, radius=0.40];
-  \node[above=1pt] at (10:0.56) {$5$};
+  % 左部：角4与角5
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt] (0,1.25) -- (1.85,1.25);
+    \draw[line width=0.7pt] (0,1.25) -- ++(34:1.65);
+    \draw[line width=0.6pt] (0.42,1.25) arc[start angle=0, end angle=34, radius=0.42];
+    \node[above=1pt] at (0.46,1.42) {$4$};
+    \draw[line width=0.7pt] (0,0) -- (1.70,0);
+    \draw[line width=0.7pt] (0,0) -- (20:1.50);
+    \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=20, radius=0.40];
+    \node[above=1pt] at (10:0.56) {$5$};
+  \end{scope}
+  %
+  % 中部：叠加比较
+  \begin{scope}[shift={(2.8,0)}]
+    \draw[line width=0.7pt] (0,0) -- (2.35,0);
+    \draw[line width=0.7pt] (0,0) -- (22:2.15);
+    \draw[line width=0.7pt] (0,0) -- (52:1.95);
+    \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=22, radius=0.42];
+    \draw[line width=0.6pt] (22:0.58) arc[start angle=22, end angle=52, radius=0.58];
+    \node[above=1pt] at (11:0.58) {$5$};
+    \node[above=1pt] at (36:0.74) {$4$};
+    \node[below left=0pt] at (0,0) {$O$};
+    \node[above=1pt] at (2.35,0) {$E$};
+    \node[above=1pt] at (22:2.15) {$F$};
+    \node[above=1pt] at (52:1.95) {$G$};
+  \end{scope}
+  %
+  % 右部：相减结果
+  \begin{scope}[shift={(6.0,0)}]
+    \draw[line width=0.7pt] (0,0) -- (2.40,0);
+    \draw[line width=0.7pt] (0,0) -- (24:2.15);
+    \draw[line width=0.7pt] (0,0) -- (50:2.05);
+    \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=24, radius=0.42];
+    \draw[line width=0.6pt] (24:0.58) arc[start angle=24, end angle=50, radius=0.58];
+    \node[above=1pt] at (12:0.58) {$5$};
+    \node[above=1pt] at (37:0.74) {$4$};
+    \node[below left=0pt] at (0,0) {$O$};
+    \node[above=1pt] at (2.40,0) {$G$};
+    \node[above=1pt] at (24:2.15) {$E$};
+    \node[above=1pt] at (50:2.05) {$F$};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·41}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 顶点O引出三条实线射线，OE水平向右，OF斜向右上，OG更陡；OE与OF间标5，OF与OG间标4
-\begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,0) -- (2.35,0);
-  \draw[line width=0.7pt] (0,0) -- (22:2.15);
-  \draw[line width=0.7pt] (0,0) -- (52:1.95);
-  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=22, radius=0.42];
-  \draw[line width=0.6pt] (22:0.58) arc[start angle=22, end angle=52, radius=0.58];
-  \node[above=1pt] at (11:0.58) {$5$};
-  \node[above=1pt] at (36:0.74) {$4$};
-  \node[below left=0pt] at (0,0) {$O$};
-  \node[above=1pt] at (2.35,0) {$E$};
-  \node[above=1pt] at (22:2.15) {$F$};
-  \node[above=1pt] at (52:1.95) {$G$};
-\end{tikzpicture}%
-}
-
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 顶点O引出三条实线射线，OG水平向右，OE斜向右上，OF更陡；OG与OE间标5，OE与OF间标4
-\begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,0) -- (2.40,0);
-  \draw[line width=0.7pt] (0,0) -- (24:2.15);
-  \draw[line width=0.7pt] (0,0) -- (50:2.05);
-  \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=24, radius=0.42];
-  \draw[line width=0.6pt] (24:0.58) arc[start angle=24, end angle=50, radius=0.58];
-  \node[above=1pt] at (12:0.58) {$5$};
-  \node[above=1pt] at (37:0.74) {$4$};
-  \node[below left=0pt] at (0,0) {$O$};
-  \node[above=1pt] at (2.40,0) {$G$};
-  \node[above=1pt] at (24:2.15) {$E$};
-  \node[above=1pt] at (50:2.05) {$F$};
-\end{tikzpicture}%
-}
-\caption{图1·41（a）}
 \end{figure}
 
 从角的相加可以看到，如果两个角共有一个顶点和一条公共的边，而且其他两边落在公共边的两旁，这样的两个角叫做互为邻角。例如图1·40中∠1与∠2；∠2与∠3都是邻角。
@@ -2692,43 +2673,38 @@ P。沿着直线 AB
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 曲尺，左为带两椭圆孔的尺座，右为刻度1至5的水平尺身，下方标曲尺，无箭头无虚线
+% fig-alt: 曲尺以及用曲尺画工件垂线
 \begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,-1.48) rectangle (0.78,0.42);
-  \draw[line width=0.6pt] (0.22,-0.18) ellipse (0.15 and 0.24);
-  \draw[line width=0.55pt] (0.22,-0.18) circle (0.045);
-  \draw[line width=0.6pt] (0.22,-0.92) ellipse (0.15 and 0.24);
-  \draw[line width=0.55pt] (0.22,-0.92) circle (0.045);
-  \draw[line width=0.7pt] (0.62,-1.48) -- (0.78,-1.62) -- (0.16,-1.62) -- (0,-1.48);
-  \draw[line width=0.7pt] (0.78,0.42) -- (3.72,0.42) -- (3.72,0.02) -- (0.78,0.02) -- cycle;
-  \foreach \x/\n in {1.05/1, 1.58/2, 2.11/3, 2.64/4, 3.17/5} {
-    \draw[line width=0.55pt] (\x,0.42) -- (\x,0.22);
-    \node[font=\scriptsize] at (\x,0.12) {\n};
-  }
-  \foreach \x in {1.22, 1.38, 1.75, 1.91, 2.28, 2.44, 2.81, 2.97, 3.34, 3.50} {
-    \draw[line width=0.45pt] (\x,0.42) -- (\x,0.32);
-  }
-  \node[below=1pt] at (1.28,-0.02) {曲尺};
-\end{tikzpicture}%
-}
-\caption{图1·57}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 长方形工件，左上沿顶边一把曲尺刻度向下，右下底边一把曲尺竖尺向上并有尺头伸出底边
-\begin{tikzpicture}[line cap=round]
-  \draw[line width=0.7pt] (0,0) rectangle (3.70,1.62);
-  \draw[line width=0.6pt] (0.06,1.62) -- (0.06,1.28) -- (0.26,1.28) -- (0.26,1.46) -- (1.28,1.46) -- (1.28,1.62);
-  \foreach \x in {0.42, 0.54, 0.66, 0.78, 0.90, 1.02, 1.14} {
-    \draw[line width=0.45pt] (\x,1.46) -- (\x,1.34);
-  }
-  \draw[line width=0.6pt] (2.42,-0.12) rectangle (2.68,0.10);
-  \draw[line width=0.6pt] (2.48,0) -- (2.48,1.05) -- (2.66,1.05) -- (2.66,0);
-  \foreach \y in {0.16, 0.28, 0.40, 0.52, 0.64, 0.76, 0.88} {
-    \draw[line width=0.45pt] (2.48,\y) -- (2.58,\y);
-  }
+  \begin{scope}[yshift=2.4cm]
+    \draw[line width=0.7pt] (0,-1.48) rectangle (0.78,0.42);
+    \draw[line width=0.6pt] (0.22,-0.18) ellipse (0.15 and 0.24);
+    \draw[line width=0.55pt] (0.22,-0.18) circle (0.045);
+    \draw[line width=0.6pt] (0.22,-0.92) ellipse (0.15 and 0.24);
+    \draw[line width=0.55pt] (0.22,-0.92) circle (0.045);
+    \draw[line width=0.7pt] (0.62,-1.48) -- (0.78,-1.62) -- (0.16,-1.62) -- (0,-1.48);
+    \draw[line width=0.7pt] (0.78,0.42) -- (3.72,0.42) -- (3.72,0.02) -- (0.78,0.02) -- cycle;
+    \foreach \x/\n in {1.05/1, 1.58/2, 2.11/3, 2.64/4, 3.17/5} {
+      \draw[line width=0.55pt] (\x,0.42) -- (\x,0.22);
+      \node[font=\scriptsize] at (\x,0.12) {\n};
+    }
+    \foreach \x in {1.22, 1.38, 1.75, 1.91, 2.28, 2.44, 2.81, 2.97, 3.34, 3.50} {
+      \draw[line width=0.45pt] (\x,0.42) -- (\x,0.32);
+    }
+    \node[below=1pt] at (1.28,-0.02) {曲尺};
+  \end{scope}
+%
+  \begin{scope}[yshift=0cm]
+    \draw[line width=0.7pt] (0,0) rectangle (3.70,1.62);
+    \draw[line width=0.6pt] (0.06,1.62) -- (0.06,1.28) -- (0.26,1.28) -- (0.26,1.46) -- (1.28,1.46) -- (1.28,1.62);
+    \foreach \x in {0.42, 0.54, 0.66, 0.78, 0.90, 1.02, 1.14} {
+      \draw[line width=0.45pt] (\x,1.46) -- (\x,1.34);
+    }
+    \draw[line width=0.6pt] (2.42,-0.12) rectangle (2.68,0.10);
+    \draw[line width=0.6pt] (2.48,0) -- (2.48,1.05) -- (2.66,1.05) -- (2.66,0);
+    \foreach \y in {0.16, 0.28, 0.40, 0.52, 0.64, 0.76, 0.88} {
+      \draw[line width=0.45pt] (2.48,\y) -- (2.58,\y);
+    }
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·55}
@@ -2770,7 +2746,7 @@ P。沿着直线 AB
   \node at (0.48,0.48) {纸};
 \end{tikzpicture}%
 }
-\caption{图1·57（a）}
+\caption{图1·57}
 \end{figure}
 
 如果从点 P 引其他任何直线，例如 PE，都不能垂直
@@ -3751,9 +3727,9 @@ AB 平行于 CD，写成\(AB \parallel CD\)。
 
 \begin{figure}
 \centering
-% fig-alt: 图1·72（1）（2）（3）：平行线被截线所截，阴影示旋转前后，以及中心对称
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+% fig-alt: 图1·72（1）（2）（3）：平行线被截线所截，阴影示旋转前后，以及中心对称
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize,>=latex]
   \begin{scope}
     \draw[line width=0.7pt] (0.15,1.35) -- (2.55,1.35);
     \draw[line width=0.7pt] (0.15,0.35) -- (2.55,0.35);
@@ -3778,63 +3754,40 @@ AB 平行于 CD，写成\(AB \parallel CD\)。
     \node[anchor=west] at (2.55,0.35) {$A$};
     \node at (1.35,-0.15) {$(2)$};
   \end{scope}
-  \begin{scope}[yshift=-2.35cm,xshift=1.4cm]
-    \draw[line width=0.7pt] (0.35,1.15) -- (2.85,1.15);
-    \draw[line width=0.7pt] (0.35,0.25) -- (2.85,0.25);
-    \draw[line width=0.7pt] (1.35,-0.15) -- (1.85,1.55);
-    \draw[line width=0.55pt] (-0.35,0.70) -- (0.35,1.15);
-    \draw[line width=0.55pt] (-0.35,0.70) -- (0.35,0.25);
-    \draw[line width=0.55pt] (3.55,0.70) -- (2.85,1.15);
-    \draw[line width=0.55pt] (3.55,0.70) -- (2.85,0.25);
-    \node[anchor=south] at (0.55,1.18) {$A$};
-    \node[anchor=south] at (2.55,1.18) {$B$};
-    \node[anchor=north] at (0.55,0.22) {$C$};
-    \node[anchor=north] at (2.55,0.22) {$D$};
-    \node[anchor=east] at (-0.35,0.70) {$P$};
-    \node at (1.60,-0.45) {$(3)$};
+  \begin{scope}[xshift=3.0cm, yshift=-2.6cm]
+    \coordinate (Pp) at (-2.85,0.00);
+    \coordinate (P) at (2.78,0.08);
+    \coordinate (A) at (-1.52,0.72);
+    \coordinate (B) at (1.48,0.72);
+    \coordinate (C) at (-1.52,-0.82);
+    \coordinate (D) at (1.48,-0.82);
+    \draw[line width=0.55pt] (Pp) -- (A);
+    \draw[line width=1.05pt] (A) -- (B);
+    \draw[line width=0.55pt] (B) -- (P);
+    \draw[line width=0.55pt] (Pp) -- (C);
+    \draw[line width=1.05pt] (C) -- (D);
+    \draw[line width=0.55pt] (D) -- (P);
+    \draw[line width=0.7pt] (0.55,1.22) -- (-0.32,-1.55);
+    \node[left=1pt] at (Pp) {$P'$};
+    \node[right=1pt] at (P) {$P$};
+    \node[above=2pt] at (A) {$A$};
+    \node[below=4pt] at (A) {$(D)$};
+    \node[above=2pt] at (B) {$B$};
+    \node[below=4pt] at (B) {$(C)$};
+    \node[above=2pt] at (-1.15,-0.82) {$C$};
+    \node[below=8pt] at (-1.28,-0.82) {$(B)$};
+    \node[above=2pt] at (D) {$D$};
+    \node[below=4pt] at (D) {$(A)$};
+    \node[above=2pt] at (-0.05,0.72) {$(N)$};
+    \node[below=4pt] at (-0.12,0.72) {$N$};
+    \node[below=6pt] at (-0.58,-0.82) {$M$};
+    \node[below=20pt] at (-0.58,-0.82) {$(M)$};
+    \node[left=3pt] at (-0.22,-0.02) {$O$};
+    \node at (0.95,-1.72) {$(3)$};
   \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·72}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图1·72
-\begin{tikzpicture}[line cap=round, >=latex]
-  \coordinate (Pp) at (-2.85,0.00);
-  \coordinate (P) at (2.78,0.08);
-  \coordinate (A) at (-1.52,0.72);
-  \coordinate (B) at (1.48,0.72);
-  \coordinate (C) at (-1.52,-0.82);
-  \coordinate (D) at (1.48,-0.82);
-  \draw[line width=0.55pt] (Pp) -- (A);
-  \draw[line width=1.05pt] (A) -- (B);
-  \draw[line width=0.55pt] (B) -- (P);
-  \draw[line width=0.55pt] (Pp) -- (C);
-  \draw[line width=1.05pt] (C) -- (D);
-  \draw[line width=0.55pt] (D) -- (P);
-  \draw[line width=0.7pt] (0.55,1.22) -- (-0.32,-1.55);
-  \node[left=1pt] at (Pp) {$P'$};
-  \node[right=1pt] at (P) {$P$};
-  \node[above=2pt] at (A) {$A$};
-  \node[below=4pt] at (A) {$(D)$};
-  \node[above=2pt] at (B) {$B$};
-  \node[below=4pt] at (B) {$(C)$};
-  \node[above=2pt] at (-1.15,-0.82) {$C$};
-  \node[below=8pt] at (-1.28,-0.82) {$(B)$};
-  \node[above=2pt] at (D) {$D$};
-  \node[below=4pt] at (D) {$(A)$};
-  \node[above=2pt] at (-0.05,0.72) {$(N)$};
-  \node[below=4pt] at (-0.12,0.72) {$N$};
-  \node[below=6pt] at (-0.58,-0.82) {$M$};
-  \node[below=20pt] at (-0.58,-0.82) {$(M)$};
-  \node[left=3pt] at (-0.22,-0.02) {$O$};
-  \node at (0.95,-1.72) {$(3)$};
-\end{tikzpicture}%
-}
-\caption{图1·72（a）}
 \end{figure}
 
 因为\(\angle 1 = \angle 2, ND\)就与\(MA\)重合，也就是直线\(DC\)与\(AB\)原位置重合；又因为\(\angle 3 = \angle 4, MB\)就与\(NC\)重合，也就是直线\(BA\)与\(CD\)原位置重合，如图（3）所示，其中括号内的字母表示旋转后的位置。
@@ -4077,32 +4030,52 @@ AB \parallel CD.
 
 \begin{figure}
 \centering
-% fig-alt: (1) 三角形
+% fig-alt: 图1·76（1）8x8正方形拆分；（2）梯形与三角形拼接；（3）拼成长方形
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) -- (1.5,0) -- (0.75,1.2) -- cycle;
-\end{tikzpicture}%
-}
-\caption{(1)}
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: (2) 直角三角形
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) -- (1.6,0) -- (0,1.1) -- cycle;
-\end{tikzpicture}%
-}
-\caption{(2)}
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: (3) 钝角三角形
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) -- (1.8,0) -- (0.25,1.05) -- cycle;
+\begin{tikzpicture}[line cap=round, x=0.28cm, y=0.28cm]
+  % (1) 8x8 正方形
+  \begin{scope}
+    \draw[line width=0.35pt, step=1, gray!60] (0,0) grid (8,8);
+    \draw[line width=0.8pt] (0,0) rectangle (8,8);
+    \draw[line width=0.9pt] (0,5) -- (5,3);
+    \draw[line width=0.9pt] (5,0) -- (7,8);
+    \node[font=\footnotesize] at (2.5,1.5) {I};
+    \node[font=\footnotesize] at (2.5,6.5) {II};
+    \node[font=\footnotesize] at (6.5,1.5) {III};
+    \node[font=\footnotesize] at (5.5,6.5) {IV};
+    \node at (4,-1.5) {（1）};
+  \end{scope}
+%
+  % (2) 两个拼合三角形分离 (宽13，高5)
+  \begin{scope}[xshift=10.5cm, yshift=0cm]
+    \draw[line width=0.35pt, step=1, gray!60] (0,0) grid (13,5);
+    \draw[line width=0.8pt] (0,5) -- (13,0) -- (0,0) -- cycle;
+    \draw[line width=0.9pt] (5,0) -- (5,3.08);
+    \node[font=\footnotesize] at (2.5,1.5) {I};
+    \node[font=\footnotesize] at (7.0,1.2) {III};
+  \end{scope}
+  \begin{scope}[xshift=10.5cm, yshift=6.5cm]
+    \draw[line width=0.35pt, step=1, gray!60] (0,0) grid (13,5);
+    \draw[line width=0.8pt] (0,5) -- (13,0) -- (13,5) -- cycle;
+    \draw[line width=0.9pt] (8,5) -- (8,1.92);
+    \node[font=\footnotesize] at (10.5,3.5) {II};
+    \node[font=\footnotesize] at (6.0,3.8) {IV};
+    \node at (6.5,-7.5) {（2）};
+  \end{scope}
+%
+  % (3) 13x5 长方形
+  \begin{scope}[yshift=-8.5cm, xshift=3.5cm]
+    \draw[line width=0.35pt, step=1, gray!60] (0,0) grid (13,5);
+    \draw[line width=0.8pt] (0,0) rectangle (13,5);
+    \draw[line width=0.9pt] (0,5) -- (13,0);
+    \draw[line width=0.9pt] (5,0) -- (5,3.08);
+    \draw[line width=0.9pt] (8,5) -- (8,1.92);
+    \node[font=\footnotesize] at (2.5,1.5) {I};
+    \node[font=\footnotesize] at (7.0,1.5) {III};
+    \node[font=\footnotesize] at (10.5,3.5) {II};
+    \node[font=\footnotesize] at (6.0,3.5) {IV};
+    \node at (6.5,-1.5) {（3）};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·76}
@@ -4141,7 +4114,7 @@ AB \parallel CD.
   \node at (7.4,-2.25) {（4）};
 \end{tikzpicture}%
 }
-\caption{图1·76}
+\caption{（4）}
 \end{figure}
 
 \shulihuahang{［证］} \(FD \parallel AC\)，如果 E，D，C
@@ -4156,13 +4129,23 @@ AB \parallel CD.
 
 \begin{figure}
 \centering
-% fig-alt: 图1·76：多边形
+% fig-alt: 图1·76（5）网格长方形中带空隙拼合
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0.4) -- (0.7,0) -- (1.5,0.2) -- (1.4,1.1) -- (0.3,1.2) -- cycle;
+\begin{tikzpicture}[line cap=round, x=0.32cm, y=0.32cm]
+  \draw[line width=0.4pt, step=1, gray!60] (0,0) grid (13,5);
+  \draw[line width=0.85pt] (0,0) rectangle (13,5);
+  \draw[line width=1.05pt] (0,5) -- (5,3) -- (13,0);
+  \draw[line width=1.05pt] (0,5) -- (8,2) -- (13,0);
+  \draw[line width=0.85pt] (5,0) -- (5,3);
+  \draw[line width=0.85pt] (8,2) -- (8,5);
+  \node[font=\footnotesize] at (2.5,1.5) {I};
+  \node[font=\footnotesize] at (7.0,1.2) {III};
+  \node[font=\footnotesize] at (10.5,3.5) {II};
+  \node[font=\footnotesize] at (6.0,3.8) {IV};
+  \node at (6.5,-1.2) {（5）};
 \end{tikzpicture}%
 }
-\caption{图1·76}
+\caption{（5）}
 \end{figure}
 
 象这样的例子是很多的，这里不多举了。
@@ -4930,6 +4913,31 @@ AB \parallel CD.
 \subsubsection{例 1}
 
 已知\(\angle1=\angle7\)（图1·87）。
+
+\begin{figure}
+\centering
+\fitfig{%
+% fig-alt: 图1·87 平行线l1和l2被截线所截，上交点处有角1，下交点处有角7和角5
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.8pt] (-1.4,0.65) -- (1.6,0.65);
+  \draw[line width=0.8pt] (-1.4,-0.65) -- (1.6,-0.65);
+  \draw[line width=0.8pt] (-0.65,-1.25) -- (0.85,1.25);
+  \node[left=1pt] at (-1.4,0.65) {$l_{1}$};
+  \node[left=1pt] at (-1.4,-0.65) {$l_{2}$};
+  \begin{scope}[shift={(0.48,0.65)}]
+    \draw[line width=0.5pt] (0:0.28) arc[start angle=0, end angle=60, radius=0.28];
+    \node[inner sep=1pt] at (30:0.46) {$1$};
+  \end{scope}
+  \begin{scope}[shift={(-0.28,-0.65)}]
+    \draw[line width=0.5pt] (180:0.28) arc[start angle=180, end angle=240, radius=0.28];
+    \node[inner sep=1pt] at (210:0.46) {$7$};
+    \draw[line width=0.5pt] (0:0.28) arc[start angle=0, end angle=60, radius=0.28];
+    \node[inner sep=1pt] at (30:0.46) {$5$};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{图1·87}
+\end{figure}
 
 \shulihuahang{［求证］} \(l_{1} \parallel l_{2}\)
 
@@ -10062,48 +10070,57 @@ AD-AF=AD-CD（等量减等量）， 就是\(AC = FD\)
 
 \begin{figure}
 \centering
-% fig-alt: △ABC 中 BE、CF 交于，底等长标记；左下△BCE
+% fig-alt: 图2·48 等腰三角形ABC及其两腰上的中线BE、CF，下方分别绘出分解后的三角形BCE与三角形BCF
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \begin{scope}[xshift=2.4cm]
-    \draw[line width=0.75pt] (0,0) -- (3.15,0) -- (1.55,2.05) -- cycle;
-    \draw[line width=0.65pt] (0,0) -- (2.25,1.15);
-    \draw[line width=0.65pt] (3.15,0) -- (0.95,1.15);
-    \node[anchor=south] at (1.55,2.08) {$A$};
-    \node[anchor=north east] at (0,0) {$B$};
-    \node[anchor=north west] at (3.15,0) {$C$};
-    \node[anchor=south east] at (0.95,1.15) {$F$};
-    \node[anchor=south west] at (2.25,1.15) {$E$};
-  \end{scope}
-  \begin{scope}[yshift=-1.85cm]
-    \draw[line width=0.75pt] (0,0) -- (2.85,0) -- (2.15,1.15) -- cycle;
-    \node[anchor=north east] at (0,0) {$B$};
-    \node[anchor=north west] at (2.85,0) {$C$};
-    \node[anchor=south] at (2.15,1.18) {$E$};
-  \end{scope}
-\end{tikzpicture}%
-}
-\caption{图2·46（a）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图2·48 扫描（本裁切只有拆开的一只）：B左、F上、C右；B处一小角弧；BF、BC各一短等号杠，FC无杠；无直角记号、无虚线
 \begin{tikzpicture}[line cap=round, line join=round]
-  \coordinate (B) at (0.22,0.30);
-  \coordinate (C) at (3.42,0.30);
-  \coordinate (F) at (0.78,1.58);
-  \draw[line width=0.75pt] (B) -- (C);
-  \draw[line width=0.75pt] (B) -- (F) -- (C);
-  \draw[line width=0.55pt] (0.573,0.908) -- (0.427,0.972);
-  \draw[line width=0.55pt] (1.820,0.220) -- (1.820,0.380);
-  \begin{scope}[shift={(B)}]
-    \draw[line width=0.5pt] (0:0.26) arc[start angle=0, end angle=66.4, radius=0.26];
+  % 主图 等腰三角形ABC带中线BE, CF
+  \begin{scope}[xshift=2.2cm, yshift=2.5cm]
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (3.15,0);
+    \coordinate (A) at (1.575,2.15);
+    \coordinate (E) at (2.36,1.075);
+    \coordinate (F) at (0.79,1.075);
+    \draw[line width=0.75pt] (B) -- (C) -- (A) -- cycle;
+    \draw[line width=0.65pt] (B) -- (E);
+    \draw[line width=0.65pt] (C) -- (F);
+    \node[anchor=south] at (A) {$A$};
+    \node[anchor=north east] at (B) {$B$};
+    \node[anchor=north west] at (C) {$C$};
+    \node[anchor=south east] at (F) {$F$};
+    \node[anchor=south west] at (E) {$E$};
   \end{scope}
-  \node[anchor=east, inner sep=1pt] at (B) {$B$};
-  \node[anchor=south, inner sep=1pt] at (F) {$F$};
-  \node[anchor=west, inner sep=1pt] at (3.48,0.22) {$C$};
+%
+  % 分解图1：△BCE
+  \begin{scope}[xshift=0cm, yshift=0cm]
+    \coordinate (B1) at (0,0);
+    \coordinate (C1) at (3.15,0);
+    \coordinate (E1) at (2.36,1.075);
+    \draw[line width=0.75pt] (B1) -- (C1) -- (E1) -- cycle;
+    \node[anchor=north east] at (B1) {$B$};
+    \node[anchor=north west] at (C1) {$C$};
+    \node[anchor=south] at (E1) {$E$};
+    \draw[line width=0.55pt] (2.75,0.48) -- (2.61,0.61);
+    \draw[line width=0.55pt] (1.575,-0.08) -- (1.575,0.08);
+    \begin{scope}[shift={(C1)}]
+      \draw[line width=0.5pt] (180:0.26) arc[start angle=180, end angle=126.4, radius=0.26];
+    \end{scope}
+  \end{scope}
+%
+  % 分解图2：△CFB
+  \begin{scope}[xshift=4.2cm, yshift=0cm]
+    \coordinate (B2) at (0,0);
+    \coordinate (C2) at (3.15,0);
+    \coordinate (F2) at (0.79,1.075);
+    \draw[line width=0.75pt] (B2) -- (C2) -- (F2) -- cycle;
+    \node[anchor=north east] at (B2) {$B$};
+    \node[anchor=north west] at (C2) {$C$};
+    \node[anchor=south] at (F2) {$F$};
+    \draw[line width=0.55pt] (0.45,0.61) -- (0.31,0.48);
+    \draw[line width=0.55pt] (1.575,-0.08) -- (1.575,0.08);
+    \begin{scope}[shift={(B2)}]
+      \draw[line width=0.5pt] (0:0.26) arc[start angle=0, end angle=53.6, radius=0.26];
+    \end{scope}
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图2·48}
@@ -14885,7 +14902,7 @@ n - 2 = 2\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·6（左）扫描：两对平行线相交成□ABCD；AD∥BC略上扬，AB∥DC陡上扬；四线均伸出顶点；A左上B左下C右下D右上
+% fig-alt: 图3·6 两对平行线相交成□ABCD和□EFGH
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (A) at (1.15,2.15);
   \coordinate (B) at (0.55,0.55);
@@ -14908,14 +14925,7 @@ n - 2 = 2\text{，}
   \node[anchor=north west, inner sep=1pt] at (C) {$C$};
   \node[anchor=south west, inner sep=1pt] at (D) {$D$};
 \end{tikzpicture}%
-}
-\caption{图3·6}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图3·6（右）扫描：两对平行线相交成□EFGH；HG∥EF略下倾，HE∥GF近竖直略右倾；四线均伸出顶点；E左下F右下G右上H左上
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (E) at (0.55,0.45);
   \coordinate (F) at (3.05,0.15);
@@ -14939,7 +14949,7 @@ n - 2 = 2\text{，}
   \node[anchor=south east, inner sep=1pt] at (H) {$H$};
 \end{tikzpicture}%
 }
-\caption{图3·6（a）}
+\caption{图3·6}
 \end{figure}
 
 我们在日常生活中常见的方桌面的边缘、黑板的边缘、书和练习簿的边缘、竹篱的格子和建筑上用的某些花边等（图3·7），它们的两组对边各是平行的。
@@ -17586,6 +17596,35 @@ MC = MB.
 
 \shulihuahang{［已知］} 在四边形\(ABCD\)中，\(E, F, G, H\)分别是各边的中点（图3·38）。
 
+\begin{figure}
+\centering
+\fitfig{%
+% fig-alt: 图3·38 凸四边形ABCD各边中点E、F、G、H顺次连成平行四边形，虚线连接对角线AC
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.8,0);
+  \coordinate (C) at (2.9,2.6);
+  \coordinate (D) at (0.4,1.8);
+  \coordinate (E) at ($(A)!0.5!(B)$);
+  \coordinate (F) at ($(B)!0.5!(C)$);
+  \coordinate (G) at ($(C)!0.5!(D)$);
+  \coordinate (H) at ($(D)!0.5!(A)$);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[line width=0.75pt] (E) -- (F) -- (G) -- (H) -- cycle;
+  \draw[dashed, line width=0.60pt] (A) -- (C);
+  \node[anchor=north east, inner sep=1.5pt] at (A) {$A$};
+  \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
+  \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
+  \node[anchor=south east, inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=north, inner sep=1.5pt] at (E) {$E$};
+  \node[anchor=south west, inner sep=1.5pt] at (F) {$F$};
+  \node[anchor=south, inner sep=1.5pt] at (G) {$G$};
+  \node[anchor=east, inner sep=1.5pt] at (H) {$H$};
+\end{tikzpicture}%
+}
+\caption{图3·38}
+\end{figure}
+
 \shulihuahang{［求证］} EFGH 是一个平行四边形。
 
 \textbf{分析}
@@ -20188,7 +20227,7 @@ DC，那末 DC 就是造桥的位置。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·3（1）共线三点 A、B、C；AB、BC 的垂直平分线 PQ、RS（虚线）互相平行
+% fig-alt: 图4·3（1）共线三点 A、B、C；AB、BC 的垂直平分线 PQ、RS（虚线）互相平行；图4·3（2）不共线三点 A、B、C 的外接圆 O；虚线为三边垂直平分线及半径 OA、OB、OC
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (A) at (0.00,0.00);
   \coordinate (B) at (2.40,0.00);
@@ -20210,16 +20249,9 @@ DC，那末 DC 就是造桥的位置。
   \node[anchor=north, inner sep=1.5pt] at (Q) {$Q$};
   \node[anchor=south, inner sep=1.5pt] at (R) {$R$};
   \node[anchor=north, inner sep=1.5pt] at (S) {$S$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-
-\caption{图4·3（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·3（2）不共线三点 A、B、C 的外接圆 O；虚线为三边垂直平分线及半径 OA、OB、OC
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.20}
   \coordinate (O) at (0.00,0.00);
@@ -20242,10 +20274,10 @@ DC，那末 DC 就是造桥的位置。
   \node[anchor=north west, inner sep=1.5pt] at (B) {$B$};
   \node[anchor=south west, inner sep=1.5pt] at (C) {$C$};
   \node[anchor=north east, inner sep=2pt] at (O) {$O$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-
-\caption{图4·3（2）}
+\caption{图4·3}
 \end{figure}
 
 
@@ -20285,7 +20317,7 @@ OA = OC.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·4（1）直角△外接圆 O，斜边为直径过圆心；虚线为三边垂直平分线；直角方在直角顶点
+% fig-alt: 图4·4（1）直角△外接圆 O，斜边为直径过圆心；虚线为三边垂直平分线；直角方在直角顶点；图4·4（2）钝角△外接圆 O，外心在形外；虚线为三边垂直平分线交于 O
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.15}
   \coordinate (O) at (0,0);
@@ -20304,16 +20336,9 @@ OA = OC.
   \draw[line width=0.40pt] (RA1) -- (RA3) -- (RA2);
   \fill (O) circle [radius=1.2pt];
   \node[anchor=north west, inner sep=2pt] at (O) {$O$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-
-\caption{图4·4（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·4（2）钝角△外接圆 O，外心在形外；虚线为三边垂直平分线交于 O
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.15}
   \coordinate (O) at (0,0);
@@ -20331,10 +20356,10 @@ OA = OC.
   \draw[line width=0.55pt, dashed] ($(Mac)!-1.10!(O)$) -- ($(Mac)!2.35!(O)$);
   \fill (O) circle [radius=1.2pt];
   \node[anchor=west, inner sep=2.5pt] at (O) {$O$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-
-\caption{图4·4（2）}
+\caption{图4·4}
 \end{figure}
 
 下面利用三角形的外心来证明三角形的三条高交于一点。
@@ -20426,7 +20451,7 @@ CF 是 QS 的垂直平分线。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·6（1）直角△ABC（直角在 B），高 BD 垂于斜边 AC；直角方并标 d 在 B 与 D；垂心即直角顶点 B
+% fig-alt: 图4·6（1）直角△ABC（直角在 B），高 BD 垂于斜边 AC；直角方并标 d 在 B 与 D；垂心即直角顶点 B；图4·6（2）钝角△ABC（钝角在 A，BC 在上），垂心 H 在形外；三高交于 H（虚线外延）；形内竖线阴线；直角方并标 d
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (B) at (0.00,0.00);
   \coordinate (A) at (3.40,0.00);
@@ -20447,16 +20472,9 @@ CF 是 QS 的垂直平分线。
   \node[anchor=north, inner sep=1.5pt] at (A) {$A$};
   \node[anchor=east, inner sep=2pt] at (B) {$B$};
   \node[anchor=east, inner sep=2pt] at (C) {$C$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-
-\caption{图4·6（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·6（2）钝角△ABC（钝角在 A，BC 在上），垂心 H 在形外；三高交于 H（虚线外延）；形内竖线阴线；直角方并标 d
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (C) at (-2.20,2.60);
   \coordinate (B) at (2.40,2.60);
@@ -20496,10 +20514,10 @@ CF 是 QS 的垂直平分线。
   \node[anchor=south west, inner sep=1pt] at (B) {$B$};
   \node[anchor=south east, inner sep=1pt] at (C) {$C$};
   \node[anchor=north, inner sep=1.5pt] at (H) {$H$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-
-\caption{图4·6（2）}
+\caption{图4·6}
 \end{figure}
 
 圆的任何一条直径所在的直线都是被这条直径所分成两部分的对称轴，所以圆是关于它的直径为轴对称的图形。圆也是关于圆心为对称中心的中心对称图形。
@@ -20622,7 +20640,7 @@ CE = ED.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·8（1）弧 PS（实线），弦 PS 虚线；AB 为弦的垂直平分线（虚线），交弧于中点 M；A、B 处构造叉号
+% fig-alt: 图4·8（1）弧 PS（实线），弦 PS 虚线；AB 为弦的垂直平分线（虚线），交弧于中点 M；A、B 处构造叉号；图4·8（2）圆 O，直径 EF 竖直；平行弦 CD（上）与 AB（下）分别交 EF 于 M、N
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (P) at (-2.15,0.20);
   \coordinate (S) at (2.15,0.20);
@@ -20648,16 +20666,9 @@ CE = ED.
   \node[anchor=south west, inner sep=1.5pt] at (M) {$M$};
   \node[anchor=south, inner sep=1.5pt] at (Ax) {$A$};
   \node[anchor=north, inner sep=1.5pt] at (Bx) {$B$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-
-\caption{图4·8（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·8（2）圆 O，直径 EF 竖直；平行弦 CD（上）与 AB（下）分别交 EF 于 M、N
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.20}
   \coordinate (O) at (0,0);
@@ -20685,10 +20696,10 @@ CE = ED.
   \node[anchor=west, inner sep=2pt] at (M) {$M$};
   \node[anchor=west, inner sep=2pt] at (N) {$N$};
   \node[anchor=west, inner sep=2.5pt] at (O) {$O$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-
-\caption{图4·8（2）}
+\caption{图4·8}
 \end{figure}
 
 定理 8 平行弦之间所夹的弧相等。
@@ -20803,7 +20814,7 @@ OM = ON.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·10（1）圆 O，弦 AB（下）与 CD（左上）；实线弦心距 OM⊥AB、ON⊥CD（直角方）；虚线半径 OA、OB、OC、OD
+% fig-alt: 图4·10（1）圆 O，弦 AB（下）与 CD（左上）；实线弦心距 OM⊥AB、ON⊥CD（直角方）；虚线半径 OA、OB、OC、OD；图4·10（2）等圆 O'，弦 CD（下）；实线弦心距 O'N⊥CD（直角方）；实线半径 O'C、O'D
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.20}
   \coordinate (O) at (0,0);
@@ -20845,15 +20856,9 @@ OM = ON.
   \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
   \node[anchor=east, inner sep=2pt] at (D) {$D$};
   \node[anchor=south east, inner sep=1.5pt] at (N) {$N$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-
-\caption{图4·10（1）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·10（2）等圆 O'，弦 CD（下）；实线弦心距 O'N⊥CD（直角方）；实线半径 O'C、O'D
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.20}
   \coordinate (Op) at (0,0);
@@ -20876,10 +20881,10 @@ OM = ON.
   \node[anchor=north east, inner sep=1.5pt] at (C) {$C$};
   \node[anchor=north west, inner sep=1.5pt] at (D) {$D$};
   \node[anchor=north, inner sep=1.5pt] at (N) {$N$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-
-\caption{图4·10（2）}
+\caption{图4·10}
 \end{figure}
 
 下面来讨论弦和弦心距之间的不等量关系：
@@ -22481,7 +22486,7 @@ S，则圆内角\(\angle MSP\)等于\((\widehat{MP} + \widehat{QN})\)的度数�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·32（1）圆 O 过 A、B、C、S；D 在圆外，A、S、D 共线；实线 AB、BC、CD、AD；虚线 SC
+% fig-alt: 图4·32（1）圆 O 过 A、B、C、S；D 在圆外，A、S、D 共线；实线 AB、BC、CD、AD；虚线 SC；图4·32（2）圆 O 过 A、B、C、S；D 在圆内，A、D、S 共线；实线 AB、BC、CD、DA；虚线 DS、SC
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.10}
   \coordinate (O) at (0,0);
@@ -22500,15 +22505,9 @@ S，则圆内角\(\angle MSP\)等于\((\widehat{MP} + \widehat{QN})\)的度数�
   \node[anchor=west, inner sep=2pt] at (D) {$D$};
   \node[anchor=south, inner sep=1.5pt] at (S) {$S$};
   \node[anchor=west, inner sep=2pt] at (O) {$O$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-\caption{图4·32（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·32（2）圆 O 过 A、B、C、S；D 在圆内，A、D、S 共线；实线 AB、BC、CD、DA；虚线 DS、SC
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.10}
   \coordinate (O) at (0,0);
@@ -22528,9 +22527,10 @@ S，则圆内角\(\angle MSP\)等于\((\widehat{MP} + \widehat{QN})\)的度数�
   \node[anchor=south, inner sep=1.5pt] at (D) {$D$};
   \node[anchor=west, inner sep=2pt] at (S) {$S$};
   \node[anchor=west, inner sep=2pt] at (O) {$O$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-\caption{图4·32（2）}
+\caption{图4·32}
 \end{figure}
 
 
@@ -22864,7 +22864,7 @@ CS，则有
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·37（1）圆内接 △ABC，P 在弧 BC；PD⊥BC、PF⊥AB、PE⊥AC 延线；虚线 PB、PC；F、D、E 共线；直角方
+% fig-alt: 图4·37（1）圆内接 △ABC，P 在弧 BC；PD⊥BC、PF⊥AB、PE⊥AC 延线；虚线 PB、PC；F、D、E 共线；直角方；图4·37（2）弧过 B、A、C、P；P 在 C 外侧；PF⊥AB 延、PD⊥BC 延、PE⊥AC 延；虚线 PB、PC；F、D、E 共线；直角方
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.15}
   \coordinate (O) at (0,0);
@@ -22903,15 +22903,9 @@ CS，则有
   \node[anchor=south, inner sep=1.2pt] at (D) {$D$};
   \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
   \node[anchor=south east, inner sep=1.2pt] at (F) {$F$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-\caption{图4·37（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·37（2）弧过 B、A、C、P；P 在 C 外侧；PF⊥AB 延、PD⊥BC 延、PE⊥AC 延；虚线 PB、PC；F、D、E 共线；直角方
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{2.35}
   \coordinate (O) at (0,0);
@@ -22954,9 +22948,10 @@ CS，则有
   \node[anchor=south, inner sep=1.2pt] at (D) {$D$};
   \node[anchor=west, inner sep=1.5pt] at (E) {$E$};
   \node[anchor=south, inner sep=1.2pt] at (F) {$F$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-\caption{图4·37（2）}
+\caption{图4·37}
 \end{figure}
 
 \textbf{证} 明\(\angle PDF + \angle PDE = 180^{\circ}\)就可以了。
@@ -23322,7 +23317,7 @@ PDE 是 P 的西摩松线，可知 P、E、C、D
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·38（1）圆 O，直线 l 在圆上方相离；垂足 P，半径端 C，OP=d＞OC
+% fig-alt: 图4·38（1）圆 O，直线 l 在圆上方相离；垂足 P，半径端 C，OP=d＞OC；图4·38（2）圆 O，直线 l 交圆于 R、S；垂足 M，半径端 C，OM=d＜OC；图4·38（3）圆 O，直线 l 切于 C；半径 OC=d；线上点 Q，虚线 OQ
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{1.55}
   \def\d{2.15}
@@ -23338,15 +23333,9 @@ PDE 是 P 的西摩松线，可知 P、E、C、D
   \node[anchor=west, inner sep=2pt] at (C) {$C$};
   \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
   \node[anchor=west, inner sep=2pt] at (0,{(\R+\d)/2}) {$d$};
+  \node[below=4pt] at (current bounding box.south) {（1）相离};
 \end{tikzpicture}%
-}
-\caption{图4·38（1）相离}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·38（2）圆 O，直线 l 交圆于 R、S；垂足 M，半径端 C，OM=d＜OC
+\quad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{1.55}
   \def\d{0.85}
@@ -23367,15 +23356,9 @@ PDE 是 P 的西摩松线，可知 P、E、C、D
   \node[anchor=south, inner sep=1.5pt] at (C) {$C$};
   \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
   \node[anchor=west, inner sep=2pt] at (0,{\d/2}) {$d$};
+  \node[below=4pt] at (current bounding box.south) {（2）相交};
 \end{tikzpicture}%
-}
-\caption{图4·38（2）相交}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·38（3）圆 O，直线 l 切于 C；半径 OC=d；线上点 Q，虚线 OQ
+\quad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{1.55}
   \coordinate (O) at (0,0);
@@ -23391,9 +23374,10 @@ PDE 是 P 的西摩松线，可知 P、E、C、D
   \node[anchor=south, inner sep=1.5pt] at (Q) {$Q$};
   \node[anchor=north, inner sep=1.5pt] at (O) {$O$};
   \node[anchor=west, inner sep=1.5pt] at (0,{\R*0.78}) {$d$};
+  \node[below=4pt] at (current bounding box.south) {（3）相切};
 \end{tikzpicture}%
 }
-\caption{图4·38（3）相切}
+\caption{图4·38}
 \end{figure}
 
 从圆心到直线的距离可能大于圆的半径。在这种情况下，直线和圆没有任何公共点。例如图4·38（1），自圆心O至直线l的距离OP大于圆的半径OC。因为OP是圆心O至直线l上任何一点的最短距离，所以可以断定直线l和圆O没有任何公共点，也就是直线和圆相离。
@@ -24165,7 +24149,7 @@ E、P、Q、F 四点就共圆了。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·47（1）△ABC 内切圆 M，切点 F（AB）、E（AC）、D（BC）
+% fig-alt: 图4·47（1）△ABC 内切圆 M，切点 F（AB）、E（AC）、D（BC）；图4·47（2）四边形 ABCD 内切圆 M，切点 K（AD）、Q（CD）、F（BC）、E（AB）
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (A) at (0,2.55);
   \coordinate (B) at (-2.20,0);
@@ -24184,15 +24168,9 @@ E、P、Q、F 四点就共圆了。
   \node[anchor=south east, inner sep=1.2pt] at (F) {$F$};
   \node[anchor=south west, inner sep=1.2pt] at (E) {$E$};
   \node[anchor=west, inner sep=2pt] at (M) {$M$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-\caption{图4·47（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·47（2）四边形 ABCD 内切圆 M，切点 K（AD）、Q（CD）、F（BC）、E（AB）
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{1.15}
   \coordinate (M) at (0,0);
@@ -24216,9 +24194,10 @@ E、P、Q、F 四点就共圆了。
   \node[anchor=south, inner sep=1.2pt] at (Q) {$Q$};
   \node[anchor=east, inner sep=1.5pt] at (K) {$K$};
   \node[anchor=west, inner sep=2pt] at (M) {$M$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-\caption{图4·47（2）}
+\caption{图4·47}
 \end{figure}
 
 \shulihuahang{［已知］} 任意三角形\(ABC\)（图4·48）。
@@ -24430,7 +24409,7 @@ CD = CE = \frac{1}{2} (CA + CB - AB)\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·51（1）射线 OB、OD 交于 O；E、H 在 OB，F、G 在 OD；连 EF、HG；角平分线得 P、Q、R、S 共线
+% fig-alt: 图4·51（1）射线 OB、OD 交于 O；E、H 在 OB，F、G 在 OD；连 EF、HG；角平分线得 P、Q、R、S 共线；图4·51（2）AB∥CD；E、H 在 AB，F、G 在 CD；中位线 P、M、Q、R、N、S；EPFQ、HRGS 为矩形
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (O) at (0,0);
   \coordinate (A) at (1.284,0.417);
@@ -24466,15 +24445,9 @@ CD = CE = \frac{1}{2} (CA + CB - AB)\text{。}
   \node[anchor=south, inner sep=0.8pt] at (R) {$R$};
   \node[anchor=south, inner sep=0.8pt] at (Q) {$Q$};
   \node[anchor=south, inner sep=1.0pt] at (S) {$S$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-\caption{图4·51（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·51（2）AB∥CD；E、H 在 AB，F、G 在 CD；中位线 P、M、Q、R、N、S；EPFQ、HRGS 为矩形
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\h{1.05}
   \def\d{2.25}
@@ -24511,9 +24484,10 @@ CD = CE = \frac{1}{2} (CA + CB - AB)\text{。}
   \node[anchor=south, inner sep=0.8pt] at (R) {$R$};
   \node[anchor=south, inner sep=0.8pt] at (N) {$N$};
   \node[anchor=south, inner sep=0.8pt] at (S) {$S$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-\caption{图4·51（2）}
+\caption{图4·51}
 \end{figure}
 
 \shulihuahang{［求证］} \(P,Q,R,S\) 在一直线上。
@@ -24666,7 +24640,7 @@ AP + PB + CR + DR = AS + BQ + QC + DS\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·53（1）圆 N 切 AB、BC、CD；AD 与圆不相交；虚线切线 AD' 交 CD 于 D'；实线 BN、CN
+% fig-alt: 图4·53（1）圆 N 切 AB、BC、CD；AD 与圆不相交；虚线切线 AD' 交 CD 于 D'；实线 BN、CN；图4·53（2）圆 N 切 AB、BC、CD；AD 与圆交于两点；虚线切线 AD' 交 CD 延长线于 D'；实线 BN、CN
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{1.050}
   \coordinate (N) at (0.000,1.050);
@@ -24686,15 +24660,9 @@ AP + PB + CR + DR = AS + BQ + QC + DS\text{，}
   \node[anchor=south west, inner sep=1.2pt] at (D) {$D$};
   \node[anchor=west, inner sep=1.2pt] at (Dp) {$D'$};
   \node[anchor=south, inner sep=1.5pt] at (N) {$N$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-\caption{图4·53（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·53（2）圆 N 切 AB、BC、CD；AD 与圆交于两点；虚线切线 AD' 交 CD 延长线于 D'；实线 BN、CN
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{1.050}
   \coordinate (N) at (0.000,1.050);
@@ -24715,9 +24683,10 @@ AP + PB + CR + DR = AS + BQ + QC + DS\text{，}
   \node[anchor=east, inner sep=1.2pt] at (D) {$D$};
   \node[anchor=south west, inner sep=1.2pt] at (Dp) {$D'$};
   \node[anchor=south, inner sep=1.5pt] at (N) {$N$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-\caption{图4·53（2）}
+\caption{图4·53}
 \end{figure}
 
 \shulihuahang{［已知］} 如图4·53. 四边形 ABCD 中，
@@ -24909,7 +24878,7 @@ BO，则\(\angle B\)是半圆上的圆周角，所以\(\angle B = d\)。又 AC
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·56（1）圆 M，切线 AT 切于 A；虚线直径 AC；实线弦 AB；虚线 BC；∠TAB 与 ∠ACB 标弧；B 处直角
+% fig-alt: 图4·56（1）圆 M，切线 AT 切于 A；虚线直径 AC；实线弦 AB；虚线 BC；∠TAB 与 ∠ACB 标弧；B 处直角；图4·56（2）圆 M，切线 AT 切于 A；直径 AB；A 处直角标 d；S 在右弧；图4·56（3）圆 M，切线 AT 切于 A；虚线直径 AC；实线弦 AB（B 在左下）；标钝角 ∠TAB；S 在右弧
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{1.350}
   \coordinate (M) at (0,0);
@@ -24934,15 +24903,9 @@ BO，则\(\angle B\)是半圆上的圆周角，所以\(\angle B = d\)。又 AC
   \node[anchor=north, inner sep=1.5pt] at (C) {$C$};
   \node[anchor=west, inner sep=2pt] at (M) {$M$};
   \node[anchor=west, inner sep=1.2pt] at (T) {$T$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-\caption{图4·56（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·56（2）圆 M，切线 AT 切于 A；直径 AB；A 处直角标 d；S 在右弧
+\quad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{1.350}
   \coordinate (M) at (0,0);
@@ -24961,15 +24924,9 @@ BO，则\(\angle B\)是半圆上的圆周角，所以\(\angle B = d\)。又 AC
   \node[anchor=west, inner sep=2pt] at (M) {$M$};
   \node[anchor=west, inner sep=1.2pt] at (T) {$T$};
   \node[anchor=west, inner sep=1.5pt] at (S) {$S$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
-}
-\caption{图4·56（2）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·56（3）圆 M，切线 AT 切于 A；虚线直径 AC；实线弦 AB（B 在左下）；标钝角 ∠TAB；S 在右弧
+\quad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\R{1.350}
   \coordinate (M) at (0,0);
@@ -24990,9 +24947,10 @@ BO，则\(\angle B\)是半圆上的圆周角，所以\(\angle B = d\)。又 AC
   \node[anchor=west, inner sep=2pt] at (M) {$M$};
   \node[anchor=west, inner sep=1.2pt] at (T) {$T$};
   \node[anchor=west, inner sep=1.5pt] at (S) {$S$};
+  \node[below=4pt] at (current bounding box.south) {（3）};
 \end{tikzpicture}%
 }
-\caption{图4·56（3）}
+\caption{图4·56}
 \end{figure}
 
 下面我们再看当\(\angle TAB\)是直角和钝角的情形：
@@ -26108,7 +26066,7 @@ V。以它们的交点\((O_{1}\)和\(O_{2})\)为圆心，R
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·66（1）两轮盘（左大右小，各有轮毂）与履带：履带沿两轮外弧及上、下外公切线成闭环；上切线箭头向右、下切线箭头向左
+% fig-alt: 图4·66（1）两轮盘（左大右小，各有轮毂）与履带：履带沿两轮外弧及上、下外公切线成闭环；上切线箭头向右、下切线箭头向左；图4·66（2）两轮盘（左大右小，各有轮毂）与交叉传动带：带沿两轮外弧及交叉内公切线成 8 字形；两切线中段各有沿带方向箭头
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\RL{1.150}
   \def\rL{0.380}
@@ -26137,15 +26095,9 @@ V。以它们的交点\((O_{1}\)和\(O_{2})\)为圆心，R
   % arrows: top → right, bottom → left
   \draw[line width=0.70pt, -{Latex[length=3.2pt]}] ($(At)!0.35!(Bt)$) -- ($(At)!0.62!(Bt)$);
   \draw[line width=0.70pt, -{Latex[length=3.2pt]}] ($(Bb)!0.35!(Ab)$) -- ($(Bb)!0.62!(Ab)$);
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-\caption{图4·66（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·66（2）两轮盘（左大右小，各有轮毂）与交叉传动带：带沿两轮外弧及交叉内公切线成 8 字形；两切线中段各有沿带方向箭头
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\RL{1.150}
   \def\rL{0.380}
@@ -26173,9 +26125,10 @@ V。以它们的交点\((O_{1}\)和\(O_{2})\)为圆心，R
   % so on A1-B1 arrow toward B1; on B2-A2 arrow toward A2 (or A2 toward B2 for same circulation)
   \draw[line width=0.70pt, -{Latex[length=3.2pt]}] ($(A1)!0.32!(B1)$) -- ($(A1)!0.58!(B1)$);
   \draw[line width=0.70pt, -{Latex[length=3.2pt]}] ($(A2)!0.32!(B2)$) -- ($(A2)!0.58!(B2)$);
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-\caption{图4·66（2）}
+\caption{图4·66}
 \end{figure}
 
 一条直线和两个圆都相切，这条直线叫做这两个圆的公切线。
@@ -26422,7 +26375,7 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·71（1）两弧 M、N（均下凹）与外公切线 AB；A、B 为吻接点
+% fig-alt: 图4·71（1）两弧 M、N（均下凹）与外公切线 AB；A、B 为吻接点；图4·71（2）弧 M（上凹下）与弧 N（下凹上）以内公切线 AB 吻接；A、B 为吻接点
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\RM{1.050}
   \def\RN{0.680}
@@ -26437,15 +26390,9 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
   \node[anchor=south, inner sep=1.5pt] at (B) {$B$};
   \node[anchor=east, inner sep=1.5pt] at ($(CM)+(-0.95*\RM,0.05)$) {$M$};
   \node[anchor=west, inner sep=1.5pt] at ($(CN)+(0.95*\RN,0.05)$) {$N$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-\caption{图4·71（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·71（2）弧 M（上凹下）与弧 N（下凹上）以内公切线 AB 吻接；A、B 为吻接点
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\RM{0.950}
   \def\RN{0.800}
@@ -26466,9 +26413,10 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
   \node[anchor=south, inner sep=1.2pt] at ($(A)+(0.00,0.02)$) {$A$};
   \node[anchor=north, inner sep=1.2pt] at ($(B)+(0.00,-0.02)$) {$B$};
   \node[anchor=north, inner sep=1.5pt] at ($(CN)+(0,-\RN)$) {$N$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-\caption{图4·71（2）}
+\caption{图4·71}
 \end{figure}
 
 \shulihuahang{［注意］}
@@ -26627,7 +26575,7 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·75（1）弧 AB 圆心 M；在 MB 上取 N 使 NB=R；弧 BC 圆心 N；虚线 MNB；旁注半径 R
+% fig-alt: 图4·75（1）弧 AB 圆心 M；在 MB 上取 N 使 NB=R；弧 BC 圆心 N；虚线 MNB；旁注半径 R；图4·75（2）弧 AB 圆心 M；N 在 MB 延长线上 NB=R；弧 BC 圆心 N；虚线 MBN；曲线 ABC 呈 S 形
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\RAB{2.200}
   \def\R{0.850}
@@ -26652,15 +26600,9 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
   \draw[line width=0.60pt] (2.550,1.850) ++(0,-0.08) -- ++(0,0.16);
   \draw[line width=0.60pt] (2.550,1.850) ++(\R,-0.08) -- ++(0,0.16);
   \node[anchor=south, inner sep=1.0pt] at ($(2.550,1.850)+(0.5*\R,0)$) {$R$};
+  \node[below=4pt] at (current bounding box.south) {（1）};
 \end{tikzpicture}%
-}
-\caption{图4·75（1）}
-\end{figure}
-
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 图4·75（2）弧 AB 圆心 M；N 在 MB 延长线上 NB=R；弧 BC 圆心 N；虚线 MBN；曲线 ABC 呈 S 形
+\qquad
 \begin{tikzpicture}[line cap=round, line join=round]
   \def\RAB{1.700}
   \def\R{0.920}
@@ -26681,9 +26623,10 @@ AB 平行于 PN，则 AB 就是所要画的公切线。
   \node[anchor=east, inner sep=1.5pt] at (A) {$A$};
   \node[anchor=west, inner sep=1.5pt] at (C) {$C$};
   \node[anchor=south east, inner sep=1.0pt] at ($(B)!0.55!(N)$) {$R$};
+  \node[below=4pt] at (current bounding box.south) {（2）};
 \end{tikzpicture}%
 }
-\caption{图4·75（2）}
+\caption{图4·75}
 \end{figure}
 
 \shulihuahang{［作法］}
