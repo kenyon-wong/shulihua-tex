@@ -4313,115 +4313,84 @@ B： ``掷一颗骰子至少出现四点''。
 
 为了便于直观地理解事件及其关系，可借用集合的概念把事件之间的关系用图示法表示出来。
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \fitfig{%
-% fig-alt: 必然事件：全阴影方框，中标U
+% fig-alt: 图3·2 事件的图示法：(1)必然事件U；(2)不可能事件V；(3)事件A；(4)对立事件A拔；(5)和事件A+B；(6)积事件AB；(7)包含B包含于A；(8)互斥
 \begin{tikzpicture}[line cap=round,line join=round]
-  \fill[black!38] (0,0) rectangle (2.05,2.05);
-  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
-  \node[fill=white,inner sep=1.6pt] at (1.025,1.025) {$U$};
-\end{tikzpicture}%
-}
-\caption{图3·2（1）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 不可能事件：空方框，中标V
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
-  \node at (1.025,1.025) {$V$};
-\end{tikzpicture}%
-}
-\caption{图3·2（2）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 事件A：方框内阴影圆，中标A
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
-  \fill[black!38] (1.025,1.08) circle (0.62);
-  \draw[line width=0.8pt] (1.025,1.08) circle (0.62);
-  \node[fill=white,inner sep=1.4pt] at (1.025,1.08) {$A$};
-\end{tikzpicture}%
-}
-\caption{图3·2（3）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 对立事件：方框内圆外阴影，右下标A上横线
-\begin{tikzpicture}[line cap=round,line join=round]
-  \fill[black!38] (0,0) rectangle (2.05,2.05);
-  \fill[white] (1.00,1.12) circle (0.62);
-  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
-  \draw[line width=0.8pt] (1.00,1.12) circle (0.62);
-  \node[fill=white,inner sep=1.1pt] at (1.62,0.38) {$\overline{A}$};
-\end{tikzpicture}%
-}
-\caption{图3·2（4）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 和事件：两相交圆全阴影，交处标A+B
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.85pt] (0,0) rectangle (2.15,2.05);
-  \fill[black!38] (0.78,1.05) circle (0.52);
-  \fill[black!38] (1.38,1.05) circle (0.52);
-  \draw[line width=0.8pt] (0.78,1.05) circle (0.52);
-  \draw[line width=0.8pt] (1.38,1.05) circle (0.52);
-  \node[fill=white,inner sep=1.1pt] at (1.08,1.05) {$A+B$};
-\end{tikzpicture}%
-}
-\caption{图3·2（5）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 积事件：两相交圆仅交区阴影，中标AB
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.85pt] (0,0) rectangle (2.15,2.05);
-  \begin{scope}
-    \clip (0.78,1.05) circle (0.52);
-    \fill[black!38] (1.38,1.05) circle (0.52);
+  % (1)
+  \begin{scope}[shift={(0,0)}]
+    \fill[black!38] (0,0) rectangle (2.05,2.05);
+    \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+    \node[fill=white,inner sep=1.6pt] at (1.025,1.025) {$U$};
+    \node[anchor=north] at (1.025,-0.12) {(1)};
   \end{scope}
-  \draw[line width=0.8pt] (0.78,1.05) circle (0.52);
-  \draw[line width=0.8pt] (1.38,1.05) circle (0.52);
-  \node[fill=white,inner sep=1.1pt] at (1.08,1.05) {$AB$};
+  % (2)
+  \begin{scope}[shift={(2.8,0)}]
+    \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+    \node at (1.025,1.025) {$V$};
+    \node[anchor=north] at (1.025,-0.12) {(2)};
+  \end{scope}
+  % (3)
+  \begin{scope}[shift={(5.6,0)}]
+    \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+    \fill[black!38] (1.025,1.08) circle (0.62);
+    \draw[line width=0.8pt] (1.025,1.08) circle (0.62);
+    \node[fill=white,inner sep=1.4pt] at (1.025,1.08) {$A$};
+    \node[anchor=north] at (1.025,-0.12) {(3)};
+  \end{scope}
+  % (4)
+  \begin{scope}[shift={(8.4,0)}]
+    \fill[black!38] (0,0) rectangle (2.05,2.05);
+    \fill[white] (1.00,1.12) circle (0.62);
+    \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+    \draw[line width=0.8pt] (1.00,1.12) circle (0.62);
+    \node[fill=white,inner sep=1.1pt] at (1.62,0.38) {$\overline{A}$};
+    \node[anchor=north] at (1.025,-0.12) {(4)};
+  \end{scope}
+  % (5)
+  \begin{scope}[shift={(0,-3.2)}]
+    \draw[line width=0.85pt] (0,0) rectangle (2.15,2.05);
+    \fill[black!38] (0.75,1.05) circle (0.50);
+    \fill[black!38] (1.30,1.05) circle (0.50);
+    \draw[line width=0.8pt] (0.75,1.05) circle (0.50);
+    \draw[line width=0.8pt] (1.30,1.05) circle (0.50);
+    \node[fill=white,inner sep=1.1pt] at (1.025,1.05) {$A+B$};
+    \node[anchor=north] at (1.025,-0.12) {(5)};
+  \end{scope}
+  % (6)
+  \begin{scope}[shift={(2.8,-3.2)}]
+    \draw[line width=0.85pt] (0,0) rectangle (2.15,2.05);
+    \begin{scope}
+      \clip (0.75,1.05) circle (0.50);
+      \fill[black!38] (1.30,1.05) circle (0.50);
+    \end{scope}
+    \draw[line width=0.8pt] (0.75,1.05) circle (0.50);
+    \draw[line width=0.8pt] (1.30,1.05) circle (0.50);
+    \node[fill=white,inner sep=1.1pt] at (1.025,1.05) {$AB$};
+    \node[anchor=north] at (1.025,-0.12) {(6)};
+  \end{scope}
+  % (7)
+  \begin{scope}[shift={(5.6,-3.2)}]
+    \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+    \draw[line width=0.8pt] (1.02,1.08) circle (0.70);
+    \draw[line width=0.8pt] (1.02,0.90) circle (0.28);
+    \node[inner sep=0pt] at (1.02,1.50) {$A$};
+    \node[inner sep=0pt] at (1.02,0.90) {$B$};
+    \node[anchor=north] at (1.025,-0.12) {(7)};
+  \end{scope}
+  % (8)
+  \begin{scope}[shift={(8.4,-3.2)}]
+    \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
+    \draw[line width=0.8pt] (0.50,1.52) circle (0.30);
+    \node at (0.50,1.52) {$A$};
+    \draw[line width=0.8pt] (1.30,0.74) circle (0.56);
+    \node at (1.30,0.74) {$B$};
+    \node[anchor=north] at (1.025,-0.12) {(8)};
+  \end{scope}
 \end{tikzpicture}%
 }
-\caption{图3·2（6）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 包含：方框内大圆A套小圆B，B在A内
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
-  \draw[line width=0.8pt] (1.02,1.08) circle (0.70);
-  \draw[line width=0.8pt] (1.02,0.90) circle (0.28);
-  \node[inner sep=0pt] at (1.02,1.50) {$A$};
-  \node[inner sep=0pt] at (1.02,0.90) {$B$};
-\end{tikzpicture}%
-}
-\caption{图3·2（7）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 互斥：方框内左上小圆A与右下大圆B不相交
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.85pt] (0,0) rectangle (2.05,2.05);
-  \draw[line width=0.8pt] (0.50,1.52) circle (0.30);
-  \node at (0.50,1.52) {$A$};
-  \draw[line width=0.8pt] (1.30,0.74) circle (0.56);
-  \node at (1.30,0.74) {$B$};
-\end{tikzpicture}%
-}
-\caption{图3·2（8）}
+\caption{图3·2}
 \end{figure}
 
 当我们考察一个随机现象时，它的全部基本事件构成一个集合，由于每次试验出现的结果必然是基本事件中的某一个事件，所以这个集合的全体构成一个必然事件，记为
@@ -4509,52 +4478,51 @@ B： ``掷一颗骰子至少出现四点''。
 
 这个等式可用直观图形进行验证，等式左端即图3·3（1）的阴影部分，等式右端即图3·3（2）的阴影部分。
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \fitfig{%
-% fig-alt: 三圆相交，A与B上方交处标加号，两者与C交叠处阴影，左标(A+B)C
+% fig-alt: 图3·3：左为(A+B)C示意图，右为AC+BC示意图
 \begin{tikzpicture}[line cap=round,line join=round]
-  \begin{scope}
-    \clip (1.58,0.58) circle (0.88);
-    \fill[black!36] (0.98,1.52) circle (0.78);
-    \fill[black!36] (1.92,1.66) circle (0.60);
+  % (1)
+  \begin{scope}[shift={(0,0)}]
+    \begin{scope}
+      \clip (1.58,0.58) circle (0.88);
+      \fill[black!36] (0.98,1.52) circle (0.78);
+      \fill[black!36] (1.92,1.66) circle (0.60);
+    \end{scope}
+    \draw[line width=0.8pt] (0.98,1.52) circle (0.78);
+    \draw[line width=0.8pt] (1.92,1.66) circle (0.60);
+    \draw[line width=0.8pt] (1.58,0.58) circle (0.88);
+    \node at (0.70,1.74) {$A$};
+    \node at (2.10,1.80) {$B$};
+    \node at (1.58,0.26) {$C$};
+    \node at (1.36,1.74) {$+$};
+    \node[anchor=east] at (0.12,1.00) {$(A+B)C$};
+    \node at (1.58,-0.60) {（1）};
   \end{scope}
-  \draw[line width=0.8pt] (0.98,1.52) circle (0.78);
-  \draw[line width=0.8pt] (1.92,1.66) circle (0.60);
-  \draw[line width=0.8pt] (1.58,0.58) circle (0.88);
-  \node at (0.70,1.74) {$A$};
-  \node at (2.10,1.80) {$B$};
-  \node at (1.58,0.26) {$C$};
-  \node at (1.36,1.74) {$+$};
-  \node[anchor=east] at (0.12,1.00) {$(A+B)C$};
+  % (2)
+  \begin{scope}[shift={(4.2,0)}]
+    \begin{scope}
+      \clip (1.22,0.58) circle (0.88);
+      \fill[black!36] (0.62,1.52) circle (0.78);
+      \fill[black!36] (1.56,1.66) circle (0.60);
+    \end{scope}
+    \draw[line width=0.8pt] (0.62,1.52) circle (0.78);
+    \draw[line width=0.8pt] (1.56,1.66) circle (0.60);
+    \draw[line width=0.8pt] (1.22,0.58) circle (0.88);
+    \node at (0.34,1.74) {$A$};
+    \node at (1.74,1.80) {$B$};
+    \node at (1.22,0.26) {$C$};
+    \node at (1.00,1.74) {$+$};
+    \node[anchor=west] at (2.22,1.00) {$AC+BC$};
+    \node at (1.22,-0.60) {（2）};
+  \end{scope}
 \end{tikzpicture}%
 }
-\caption{图3·3（1）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 三圆相交，A、B与C交叠处阴影，右标AC+BC
-\begin{tikzpicture}[line cap=round,line join=round]
-  \begin{scope}
-    \clip (1.22,0.58) circle (0.88);
-    \fill[black!36] (0.62,1.52) circle (0.78);
-    \fill[black!36] (1.56,1.66) circle (0.60);
-  \end{scope}
-  \draw[line width=0.8pt] (0.62,1.52) circle (0.78);
-  \draw[line width=0.8pt] (1.56,1.66) circle (0.60);
-  \draw[line width=0.8pt] (1.22,0.58) circle (0.88);
-  \node at (0.34,1.74) {$A$};
-  \node at (1.74,1.80) {$B$};
-  \node at (1.22,0.26) {$C$};
-  \node at (1.00,1.74) {$+$};
-  \node[anchor=west] at (2.22,1.00) {$AC+BC$};
-\end{tikzpicture}%
-}
-\caption{图3·3（2）}
+\caption{图3·3}
 \end{figure}
 
-（1）式至（3）式中的其它运算律可用类似的方法进行证明。利用上述运算律可对事件进行抽象的运算。
+（1）式至（8）式中的其它运算律可用类似的方法进行证明。利用上述运算律可对事件进行抽象的运算。
 
 \subsubsection{例 6}
 
@@ -5816,91 +5784,70 @@ P \left(A _ {1} \cdot A _ {2} \cdots A _ {n}\right) = P \left(A _ {1}\right) P \
 \end{enumerate}
 
 \usetikzlibrary{patterns}
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \fitfig{%
-% fig-alt: 网点仅在圆内，矩形空白；圆叠于矩形顶边之上
+% fig-alt: 复习题三A第1题：六幅不同网点分布的射击靶示意图
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.8pt] (0,0) rectangle (1.78,0.72);
-  \fill[pattern=dots] (0.89,1.06) circle (0.40);
-  \draw[line width=0.85pt] (0.89,1.06) circle (0.40);
-\end{tikzpicture}%
-}
-\caption{（1）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 网点仅在矩形内，圆空白；圆叠于矩形顶边之上
-\begin{tikzpicture}[line cap=round,line join=round]
-  \fill[pattern=dots] (0,0) rectangle (1.78,0.72);
-  \draw[line width=0.8pt] (0,0) rectangle (1.78,0.72);
-  \begin{scope}
-    \clip (-0.1,0.72) rectangle (2.0,1.60);
-    \fill[white] (0.89,1.06) circle (0.40);
+  % (1)
+  \begin{scope}[shift={(0,3.0)}]
+    \draw[line width=0.8pt] (0,0) rectangle (1.78,0.72);
+    \fill[pattern=dots] (0.89,1.06) circle (0.40);
+    \draw[line width=0.85pt] (0.89,1.06) circle (0.40);
+    \node at (0.89,-0.45) {（1）};
   \end{scope}
-  \draw[line width=0.85pt] (0.89,1.06) circle (0.40);
+  % (2)
+  \begin{scope}[shift={(3.6,3.0)}]
+    \fill[pattern=dots] (0,0) rectangle (1.78,0.72);
+    \draw[line width=0.8pt] (0,0) rectangle (1.78,0.72);
+    \begin{scope}
+      \clip (-0.1,0.72) rectangle (2.0,1.60);
+      \fill[white] (0.89,1.06) circle (0.40);
+    \end{scope}
+    \draw[line width=0.85pt] (0.89,1.06) circle (0.40);
+    \node at (0.89,-0.45) {（2）};
+  \end{scope}
+  % (3)
+  \begin{scope}[shift={(7.2,3.0)}]
+    \fill[pattern=dots] (-0.18,-0.14) rectangle (1.94,1.78);
+    \fill[white] (0.18,0.08) rectangle (1.58,0.86);
+    \fill[white] (0.88,1.02) circle (0.42);
+    \draw[line width=0.75pt] (-0.18,-0.14) rectangle (1.94,1.78);
+    \draw[line width=0.8pt] (0.18,0.08) rectangle (1.58,0.86);
+    \draw[line width=0.85pt] (0.88,1.02) circle (0.42);
+    \node at (0.88,-0.45) {（3）};
+  \end{scope}
+  % (4)
+  \begin{scope}[shift={(0,0)}]
+    \fill[pattern=dots] (-0.18,-0.16) rectangle (1.96,1.74);
+    \fill[white] (0.10,0.06) rectangle (1.68,0.74);
+    \fill[pattern=dots] (0.89,1.06) circle (0.38);
+    \draw[line width=0.75pt] (-0.18,-0.16) rectangle (1.96,1.74);
+    \draw[line width=0.8pt] (0.12,0.06) rectangle (1.66,0.72);
+    \draw[line width=0.9pt] (0.89,1.06) circle (0.38);
+    \node at (0.89,-0.45) {（4）};
+  \end{scope}
+  % (5)
+  \begin{scope}[shift={(3.6,0)}]
+    \fill[pattern=dots] (0,0) rectangle (1.78,0.72);
+    \fill[pattern=dots] (0.89,1.06) circle (0.40);
+    \draw[line width=0.8pt] (0,0) rectangle (1.78,0.72);
+    \draw[line width=0.85pt] (0.89,1.06) circle (0.40);
+    \node at (0.89,-0.45) {（5）};
+  \end{scope}
+  % (6)
+  \begin{scope}[shift={(7.2,0)}]
+    \fill[pattern=dots] (0,0) rectangle (2.08,2.02);
+    \fill[white] (0.20,0.18) rectangle (1.94,1.02);
+    \fill[white] (1.06,1.48) circle (0.38);
+    \draw[line width=0.75pt] (0,0) rectangle (2.08,2.02);
+    \draw[line width=0.8pt] (0.20,0.18) rectangle (1.94,1.02);
+    \draw[line width=0.85pt] (1.06,1.48) circle (0.38);
+    \node at (1.04,-0.45) {（6）};
+  \end{scope}
 \end{tikzpicture}%
 }
-\caption{（2）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 外方为网点，圆与内矩形空白并在顶边相叠
-\begin{tikzpicture}[line cap=round,line join=round]
-  \fill[pattern=dots] (-0.18,-0.14) rectangle (1.94,1.78);
-  \fill[white] (0.18,0.08) rectangle (1.58,0.86);
-  \fill[white] (0.88,1.02) circle (0.42);
-  \draw[line width=0.75pt] (-0.18,-0.14) rectangle (1.94,1.78);
-  \draw[line width=0.8pt] (0.18,0.08) rectangle (1.58,0.86);
-  \draw[line width=0.85pt] (0.88,1.02) circle (0.42);
-\end{tikzpicture}%
-}
-\caption{（3）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 外方与圆为网点，矩形空白；圆叠于矩形顶边之上
-\begin{tikzpicture}[line cap=round,line join=round]
-  \fill[pattern=dots] (-0.18,-0.16) rectangle (1.96,1.74);
-  \fill[white] (0.10,0.06) rectangle (1.68,0.74);
-  \fill[pattern=dots] (0.89,1.06) circle (0.38);
-  \draw[line width=0.75pt] (-0.18,-0.16) rectangle (1.96,1.74);
-  \draw[line width=0.8pt] (0.12,0.06) rectangle (1.66,0.72);
-  \draw[line width=0.9pt] (0.89,1.06) circle (0.38);
-\end{tikzpicture}%
-}
-\caption{（4）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 圆与矩形皆为网点，圆叠于矩形顶边之上
-\begin{tikzpicture}[line cap=round,line join=round]
-  \fill[pattern=dots] (0,0) rectangle (1.78,0.72);
-  \fill[pattern=dots] (0.89,1.06) circle (0.40);
-  \draw[line width=0.8pt] (0,0) rectangle (1.78,0.72);
-  \draw[line width=0.85pt] (0.89,1.06) circle (0.40);
-\end{tikzpicture}%
-}
-\caption{（5）}
-\end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 外方为网点，圆与内矩形皆空白；圆在矩形上方，中间隔有网点
-\begin{tikzpicture}[line cap=round,line join=round]
-  \fill[pattern=dots] (0,0) rectangle (2.08,2.02);
-  \fill[white] (0.20,0.18) rectangle (1.94,1.02);
-  \fill[white] (1.06,1.48) circle (0.38);
-  \draw[line width=0.75pt] (0,0) rectangle (2.08,2.02);
-  \draw[line width=0.8pt] (0.20,0.18) rectangle (1.94,1.02);
-  \draw[line width=0.85pt] (1.06,1.48) circle (0.38);
-\end{tikzpicture}%
-}
-\caption{（6）}
+\caption{（第1题）}
 \end{figure}
 
 \begin{enumerate}[start=2]
@@ -6088,58 +6035,55 @@ C = A _ {1} \cdot A _ {2} \dots \cdot A _ {10}.
   \(P_{k}(k = 1,2,\dots ,n)\)，如果所有部件的工作是相互独立的，求在所指定的间隔时间内，这架计算机的
   \(n\) 个部件至少有一个部件发生故障的概率？
 \item
-  某元件的可靠性 \(r = 0.9\)，有一电路需用 10 只元件串联，设每只
+  某元件的可靠性 \(r = 0.9\)，有一电路需用 10 只元件串联，设每只元件在电路中是独立起作用的，求电路的可靠性。为了提高电路的可靠性常再取 10 只元件组成并联电路，有如图所示的两种并联方式，问哪一种更有助于提高电路的可靠性。
 \end{enumerate}
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \fitfig{%
-% fig-alt: 电路I：三组上下并联的元件方框串联，组间以虚线表示省略
+% fig-alt: 复习题三A第9题：电路I为串联各组内并联，电路II为两路串联后再并联
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0) -- (0.40,0);
-  \foreach \x in {0.40,1.52,3.28} {
-    \draw[line width=0.7pt] (\x,0.30) -- (\x,-0.30);
-    \draw[line width=0.7pt] (\x,0.30) -- (\x+0.10,0.30);
-    \draw[line width=0.7pt] (\x,-0.30) -- (\x+0.10,-0.30);
-    \draw[line width=0.7pt] (\x+0.10,0.14) rectangle (\x+0.44,0.46);
-    \draw[line width=0.7pt] (\x+0.10,-0.46) rectangle (\x+0.44,-0.14);
-    \draw[line width=0.7pt] (\x+0.44,0.30) -- (\x+0.62,0.30);
-    \draw[line width=0.7pt] (\x+0.44,-0.30) -- (\x+0.62,-0.30);
-    \draw[line width=0.7pt] (\x+0.62,0.30) -- (\x+0.62,-0.30);
-  }
-  \draw[line width=0.7pt] (1.02,0) -- (1.52,0);
-  \draw[dashed,line width=0.45pt] (2.14,0) -- (3.28,0);
-  \draw[line width=0.7pt] (3.90,0) -- (4.38,0);
+  % I
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.7pt] (0,0) -- (0.40,0);
+    \foreach \x in {0.40,1.52,3.28} {
+      \draw[line width=0.7pt] (\x,0.30) -- (\x,-0.30);
+      \draw[line width=0.7pt] (\x,0.30) -- (\x+0.10,0.30);
+      \draw[line width=0.7pt] (\x,-0.30) -- (\x+0.10,-0.30);
+      \draw[line width=0.7pt] (\x+0.10,0.14) rectangle (\x+0.44,0.46);
+      \draw[line width=0.7pt] (\x+0.10,-0.46) rectangle (\x+0.44,-0.14);
+      \draw[line width=0.7pt] (\x+0.44,0.30) -- (\x+0.62,0.30);
+      \draw[line width=0.7pt] (\x+0.44,-0.30) -- (\x+0.62,-0.30);
+      \draw[line width=0.7pt] (\x+0.62,0.30) -- (\x+0.62,-0.30);
+    }
+    \draw[line width=0.7pt] (1.02,0) -- (1.52,0);
+    \draw[dashed,line width=0.45pt] (2.14,0) -- (3.28,0);
+    \draw[line width=0.7pt] (3.90,0) -- (4.38,0);
+    \node at (2.19,-0.80) {I};
+  \end{scope}
+  % II
+  \begin{scope}[shift={(5.6,0)}]
+    \draw[line width=0.7pt] (0,0) -- (0.36,0);
+    \draw[line width=0.7pt] (0.36,0.32) -- (0.36,-0.32);
+    \draw[line width=0.7pt] (3.48,0.32) -- (3.48,-0.32);
+    \draw[line width=0.7pt] (3.48,0) -- (3.96,0);
+    \foreach \y in {0.32,-0.32} {
+      \draw[line width=0.7pt] (0.36,\y) -- (0.48,\y);
+      \draw[line width=0.7pt] (0.48,\y-0.16) rectangle (0.82,\y+0.16);
+      \draw[line width=0.7pt] (0.82,\y) -- (0.96,\y);
+      \draw[line width=0.7pt] (0.96,\y-0.16) rectangle (1.30,\y+0.16);
+      \draw[line width=0.7pt] (1.30,\y) -- (1.46,\y);
+      \draw[dashed,line width=0.45pt] (1.46,\y) -- (2.42,\y);
+      \draw[line width=0.7pt] (2.42,\y) -- (2.56,\y);
+      \draw[line width=0.7pt] (2.56,\y-0.16) rectangle (2.90,\y+0.16);
+      \draw[line width=0.7pt] (2.90,\y) -- (3.48,\y);
+    }
+    \node at (1.98,-0.80) {II};
+  \end{scope}
 \end{tikzpicture}%
 }
-\caption{I}
+\caption{（第9题）}
 \end{figure}
-\begin{figure}
-\centering
-\fitfig{%
-% fig-alt: 电路II：上下两路串联元件方框并联，每路中间以虚线表示省略
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0) -- (0.36,0);
-  \draw[line width=0.7pt] (0.36,0.32) -- (0.36,-0.32);
-  \draw[line width=0.7pt] (3.48,0.32) -- (3.48,-0.32);
-  \draw[line width=0.7pt] (3.48,0) -- (3.96,0);
-  \foreach \y in {0.32,-0.32} {
-    \draw[line width=0.7pt] (0.36,\y) -- (0.48,\y);
-    \draw[line width=0.7pt] (0.48,\y-0.16) rectangle (0.82,\y+0.16);
-    \draw[line width=0.7pt] (0.82,\y) -- (0.96,\y);
-    \draw[line width=0.7pt] (0.96,\y-0.16) rectangle (1.30,\y+0.16);
-    \draw[line width=0.7pt] (1.30,\y) -- (1.46,\y);
-    \draw[dashed,line width=0.45pt] (1.46,\y) -- (2.42,\y);
-    \draw[line width=0.7pt] (2.42,\y) -- (2.56,\y);
-    \draw[line width=0.7pt] (2.56,\y-0.16) rectangle (2.90,\y+0.16);
-    \draw[line width=0.7pt] (2.90,\y) -- (3.48,\y);
-  }
-\end{tikzpicture}%
-}
-\caption{II}
-\end{figure}
-
-元件在电路中是独立起作用的，求电路的可靠性。为了提高电路的可靠性常再取10只元件组成并联电路，有如图所示的两种并联方式，问哪一种更有助于提高电路的可靠性。
 
 \begin{enumerate}[start=10]
 \item
@@ -7039,7 +6983,7 @@ M， 和向量 \(\overrightarrow{OM}\) 之间建立起一一对应的关系。
   \node[anchor=west,inner sep=0.5pt] at (2.55,0.08) {$x$};
 \end{tikzpicture}%
 }
-\caption{图4·6}
+\caption{图4·5}
 \end{figure}
 \begin{quote}
 ①
@@ -15071,10 +15015,9 @@ D = \left| \begin{array}{ccc} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{array} \r
 正好是三阶行列式里把这个元素所在的行和列的元素全部划去以后所留下来的四个元素
 （不改变它们的相互位置） 所组成的， 如下图所示：
 
-\begin{figure}
-\centering
+{\centering
 \fitfig{%
-% fig-alt: 三阶行列式依次划去a1、a2、a3所在行及第一列
+% fig-alt: 三阶行列式依次划去a1、a2、a3所在行及第一列示意
 \begin{tikzpicture}[line cap=round,line join=round,x=1cm,y=0.78cm]
   \draw[line width=0.6pt] (0.10,1.05) -- (0.10,-1.05);
   \draw[line width=0.6pt] (2.55,1.05) -- (2.55,-1.05);
@@ -15120,9 +15063,7 @@ D = \left| \begin{array}{ccc} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{array} \r
     \draw[dashed,line width=0.5pt] (0.55,1.32) -- (0.55,-1.32);
   \end{scope}
 \end{tikzpicture}%
-}
-\caption{三阶行列式中划去元素所在行、列后的子行列式示意图}
-\end{figure}
+}\par}
 
 把行列式里某一元素所在的行和列划去后留下来的行列式，称为这个行列式对应于这个元素的子行列式（简称子式）。
 
