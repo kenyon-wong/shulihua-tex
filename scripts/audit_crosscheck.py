@@ -36,7 +36,7 @@ MD_ROOT = ROOT / "books"
 REPORT = ROOT / "reports" / "crosscheck-audit.json"
 
 MD_HEADING_RE = re.compile(r"^(#{2,4})\s+(.+?)\s*$")
-TEX_HEAD_RE = re.compile(r"\\(chapter|section|subsection)\*?\{")
+TEX_HEAD_RE = re.compile(r"\\(chapter|section|subsection)\*?(?:\[([^\]]*)\])?\s*\{")
 CAPTION_FIG_RE = re.compile(
     r"\\caption\{图\s*(\d+)\s*([·.\-])\s*(\d+)\s*(?:[（(]([^）)]{1,12})[）)])?"
 )
@@ -95,6 +95,7 @@ def normalize_title(raw: str) -> str:
     title = re.sub(r"-{2,}", "——", title)
     title = title.translate(FULLWIDTH_DIGITS)
     title = title.replace("*", "")
+    title = title.replace("~", "～")
     title = re.sub(r"\s+", "", title)
     return title
 
@@ -103,10 +104,14 @@ def tex_headings(path: Path) -> dict[str, list[str]]:
     text = strip_comments(path.read_text(encoding="utf-8"))
     levels: dict[str, list[str]] = {name: [] for name, _h, _t in LEVELS}
     for match in TEX_HEAD_RE.finditer(text):
-        close = closing_brace(text, match.end())
-        if close < match.end():
-            continue
-        levels[match.group(1)].append(normalize_title(text[match.end() : close]))
+        if match.group(2) is not None:
+            title = match.group(2)
+        else:
+            close = closing_brace(text, match.end())
+            if close < match.end():
+                continue
+            title = text[match.end() : close]
+        levels[match.group(1)].append(normalize_title(title))
     return levels
 
 
