@@ -1896,12 +1896,32 @@ k \frac{1.0 \times 10^{- 9}}{x^{2}} = k \frac{4.0 \times 10^{- 9}}{(x + 0.4)^{2}
 
 \begin{figure}
 \centering
-% fig-alt: 图1.23：匀强电场（平行板）
+% fig-alt: 图1.23：匀强电场。平行板体斜线剖面，上板+下板−；中部五条竖直向下电力线；左右两侧各两条向外弯曲边缘电力线
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (-1.15,0.85) -- (1.15,0.85);
-  \draw[line width=0.75pt] (-1.15,0) -- (1.15,0);
-  \foreach \x in {-0.85,-0.45,0,0.45,0.85} \draw[->,line width=0.45pt] (\x,0.80) -- (\x,0.05);
+\begin{tikzpicture}[line cap=round,line join=round,>=Stealth]
+  % parallel plates (hatched) with +/-
+  \fill[pattern=north east lines,pattern color=black!65] (-1.60,1.08) rectangle (1.60,1.32);
+  \draw[line width=0.8pt] (-1.60,1.08) rectangle (1.60,1.32);
+  \fill[white] (-0.18,1.10) rectangle (0.18,1.30);
+  \node[font=\small\bfseries] at (0,1.20) {$+$};
+  \fill[pattern=north east lines,pattern color=black!65] (-1.60,-0.08) rectangle (1.60,0.16);
+  \draw[line width=0.8pt] (-1.60,-0.08) rectangle (1.60,0.16);
+  \fill[white] (-0.18,-0.06) rectangle (0.18,0.14);
+  \node[font=\small\bfseries] at (0,0.04) {$-$};
+  % central uniform field: 5 vertical lines
+  \foreach \x in {-0.80,-0.40,0,0.40,0.80} {
+    \draw[->,line width=0.5pt] (\x,1.05) -- (\x,0.20);
+  }
+  % left fringing (2 outward curves)
+  \draw[->,line width=0.5pt]
+    (-1.15,1.05) .. controls (-1.42,0.75) and (-1.42,0.50) .. (-1.15,0.20);
+  \draw[->,line width=0.5pt]
+    (-1.48,1.05) .. controls (-2.05,0.78) and (-2.05,0.46) .. (-1.48,0.20);
+  % right fringing
+  \draw[->,line width=0.5pt]
+    (1.15,1.05) .. controls (1.42,0.75) and (1.42,0.50) .. (1.15,0.20);
+  \draw[->,line width=0.5pt]
+    (1.48,1.05) .. controls (2.05,0.78) and (2.05,0.46) .. (1.48,0.20);
 \end{tikzpicture}%
 }
 \caption{图1.23 匀强电场}
@@ -6484,13 +6504,49 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-% fig-alt: 图2.8：双量程安培表外形
+% fig-alt: 图2.8：双量程安培表。立体表壳、双弧刻度（0–3与0–0.6）、指针与调零螺钉、标A；底部三接线柱标3、0.6、+
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) rectangle (1.85,1.35);
-  \draw[line width=0.55pt] (0.25,0.55) arc[start angle=200,end angle=-20,radius=0.70];
-  \draw[line width=0.5pt] (0.92,0.35) -- (1.25,1.05);
-  \node at (0.92,0.20) {A};
+  % 3D-ish ammeter body (front + slight right face)
+  \draw[line width=0.75pt,rounded corners=2pt]
+    (0.05,0.35) -- (0.15,2.35) -- (1.95,2.35) -- (2.05,0.35) -- cycle;
+  % right depth face
+  \draw[line width=0.55pt] (2.05,0.35) -- (2.35,0.55) -- (2.25,2.50) -- (1.95,2.35);
+  \draw[line width=0.55pt] (0.15,2.35) -- (0.45,2.50) -- (2.25,2.50);
+  % base ledge
+  \draw[line width=0.7pt] (-0.05,0) rectangle (2.15,0.35);
+  \draw[line width=0.45pt] (2.15,0) -- (2.40,0.20) -- (2.40,0.55) -- (2.15,0.35);
+  % side hatching on base
+  \foreach \x in {0.05,0.18,0.31} \draw[line width=0.3pt] (\x,0.04) -- (\x,0.32);
+  \foreach \x in {1.85,1.98,2.10} \draw[line width=0.3pt] (\x,0.04) -- (\x,0.32);
+  % dial window (double arc)
+  \draw[line width=0.55pt] (0.35,1.15) arc[start angle=200,end angle=-20,radius=0.95];
+  \draw[line width=0.4pt] (0.48,1.20) arc[start angle=200,end angle=-20,radius=0.82];
+  % scale ticks (outer ~0-3)
+  \foreach \a/\lab in {200/0,160/1,110/2, -20/3} {
+    \draw[line width=0.35pt] ({1.05+0.95*cos(\a)},{1.15+0.95*sin(\a)}) -- ++({\a-180}:0.10);
+  }
+  \node[font=\tiny] at (0.28,1.35) {0};
+  \node[font=\tiny] at (0.55,1.95) {1};
+  \node[font=\tiny] at (1.35,2.08) {2};
+  \node[font=\tiny] at (1.85,1.45) {3};
+  \node[font=\tiny] at (0.50,1.28) {0};
+  \node[font=\tiny] at (0.72,1.72) {0.2};
+  \node[font=\tiny] at (1.20,1.82) {0.4};
+  \node[font=\tiny] at (1.65,1.35) {0.6};
+  % pointer near left
+  \draw[line width=0.5pt] (1.05,1.05) -- (0.55,1.85);
+  % zero-adjust screw
+  \filldraw[line width=0.4pt] (1.05,0.85) circle (0.07);
+  \node[font=\footnotesize] at (1.05,0.58) {A};
+  % three binding posts: 3, 0.6, +
+  \foreach \x/\lab in {0.45/3, 1.05/0.6, 1.65/+} {
+    \draw[line width=0.55pt] (\x,0.35) -- (\x,0.55);
+    \draw[line width=0.55pt] (\x-0.10,0.55) rectangle (\x+0.10,0.72);
+    \fill[black!25] (\x-0.10,0.55) rectangle (\x+0.10,0.72);
+    \draw[line width=0.45pt] (\x-0.10,0.55) rectangle (\x+0.10,0.72);
+    \node[font=\tiny,anchor=north] at (\x,0.32) {\lab};
+  }
 \end{tikzpicture}%
 }
 \caption{图2.8 有两个量程的安培表}
@@ -6626,13 +6682,39 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-% fig-alt: 图2.10：双量程伏特表外形
+% fig-alt: 图2.10：双量程伏特表。立体表壳、双弧刻度（0–15与0–3）、指针与调零螺钉、标V；底部三接线柱标15、3、+
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) rectangle (1.85,1.35);
-  \draw[line width=0.55pt] (0.25,0.55) arc[start angle=200,end angle=-20,radius=0.70];
-  \draw[line width=0.5pt] (0.92,0.35) -- (0.55,1.05);
-  \node at (0.92,0.20) {V};
+  % voltmeter body (similar topology to ammeter)
+  \draw[line width=0.75pt,rounded corners=2pt]
+    (0.05,0.35) -- (0.15,2.35) -- (1.95,2.35) -- (2.05,0.35) -- cycle;
+  \draw[line width=0.55pt] (2.05,0.35) -- (2.35,0.55) -- (2.25,2.50) -- (1.95,2.35);
+  \draw[line width=0.55pt] (0.15,2.35) -- (0.45,2.50) -- (2.25,2.50);
+  \draw[line width=0.7pt] (-0.05,0) rectangle (2.15,0.35);
+  \draw[line width=0.45pt] (2.15,0) -- (2.40,0.20) -- (2.40,0.55) -- (2.15,0.35);
+  \foreach \x in {0.05,0.18,0.31} \draw[line width=0.3pt] (\x,0.04) -- (\x,0.32);
+  \foreach \x in {1.85,1.98,2.10} \draw[line width=0.3pt] (\x,0.04) -- (\x,0.32);
+  % dial
+  \draw[line width=0.55pt] (0.35,1.15) arc[start angle=200,end angle=-20,radius=0.95];
+  \draw[line width=0.4pt] (0.48,1.20) arc[start angle=200,end angle=-20,radius=0.82];
+  \node[font=\tiny] at (0.28,1.35) {0};
+  \node[font=\tiny] at (0.55,1.95) {5};
+  \node[font=\tiny] at (1.35,2.08) {10};
+  \node[font=\tiny] at (1.85,1.45) {15};
+  \node[font=\tiny] at (0.50,1.28) {0};
+  \node[font=\tiny] at (0.75,1.70) {1};
+  \node[font=\tiny] at (1.20,1.82) {2};
+  \node[font=\tiny] at (1.65,1.35) {3};
+  \node[font=\footnotesize] at (1.05,1.55) {V};
+  \draw[line width=0.5pt] (1.05,1.05) -- (0.48,1.80);
+  \filldraw[line width=0.4pt] (1.05,0.85) circle (0.07);
+  % terminals: 15, 3, +
+  \foreach \x/\lab in {0.45/15, 1.05/3, 1.65/+} {
+    \draw[line width=0.55pt] (\x,0.35) -- (\x,0.55);
+    \fill[black!25] (\x-0.10,0.55) rectangle (\x+0.10,0.72);
+    \draw[line width=0.45pt] (\x-0.10,0.55) rectangle (\x+0.10,0.72);
+    \node[font=\tiny,anchor=north] at (\x,0.32) {\lab};
+  }
 \end{tikzpicture}%
 }
 \caption{图2.10 有两个量程的伏特表}
@@ -7463,12 +7545,70 @@ T 向右旋转时，A、B 之间的电阻就变大；当 T 向左旋转时，A�
 
 \begin{figure}
 \centering
-% fig-alt: 图2.15：转柄变阻器
+% fig-alt: 图2.15：转柄变阻器。矩形木纹框架；上排螺旋电阻线及金属片；下排弧形触钉；转柄T；底角接线柱A、B
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0) circle (0.85);
-  \draw[line width=0.55pt] (0,0) -- (0.55,0.45);
-  \foreach \a in {0,30,...,330} \fill (\a:0.70) circle (0.8pt);
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  % outer wooden frame
+  \draw[line width=0.85pt] (0,0) rectangle (3.30,4.70);
+  % wood grain on left/right rails only
+  \foreach \y in {0.20,0.50,...,4.50} {
+    \draw[line width=0.25pt,black!60]
+      (0.10,\y) .. controls (0.22,\y+0.08) and (0.30,\y-0.05) .. (0.42,\y);
+    \draw[line width=0.25pt,black!60]
+      (2.88,\y) .. controls (3.00,\y+0.08) and (3.08,\y-0.05) .. (3.20,\y);
+  }
+  % upper coil bay (white)
+  \fill[white] (0.48,2.60) rectangle (2.82,4.45);
+  \draw[line width=0.55pt] (0.48,2.60) rectangle (2.82,4.45);
+  % top metal plates (6)
+  \foreach \i in {0,...,5} {
+    \pgfmathsetmacro{\x}{0.72+\i*0.36}
+    \draw[line width=0.45pt] (\x-0.11,4.18) rectangle (\x+0.11,4.36);
+    \draw[line width=0.35pt] (\x-0.06,4.27) -- (\x+0.06,4.27);
+    \filldraw[line width=0.3pt] (\x,4.27) circle (0.9pt);
+  }
+  % bottom metal plates (6)
+  \foreach \i in {0,...,5} {
+    \pgfmathsetmacro{\x}{0.72+\i*0.36}
+    \draw[line width=0.45pt] (\x-0.11,2.72) rectangle (\x+0.11,2.90);
+    \draw[line width=0.35pt] (\x-0.06,2.81) -- (\x+0.06,2.81);
+    \filldraw[line width=0.3pt] (\x,2.81) circle (0.9pt);
+  }
+  % six spiral resistance coils
+  \foreach \i in {0,...,5} {
+    \pgfmathsetmacro{\x}{0.72+\i*0.36}
+    \draw[line width=0.5pt,decorate,decoration={coil,aspect=0.42,segment length=2.0pt,amplitude=1.7pt}]
+      (\x,4.18) -- (\x,2.90);
+  }
+  % lower panel wood grain
+  \foreach \y in {0.45,0.70,...,2.45} {
+    \draw[line width=0.22pt,black!45]
+      (0.55,\y) .. controls (1.30,\y+0.06) and (2.00,\y-0.05) .. (2.75,\y);
+  }
+  % six contact studs on a clear downward-opening arc
+  \foreach \i/\ang in {0/150,1/125,2/100,3/80,4/55,5/30} {
+    \pgfmathsetmacro{\sx}{1.65+1.05*cos(\ang)}
+    \pgfmathsetmacro{\sy}{1.45+0.85*sin(\ang)}
+    \filldraw[line width=0.45pt,fill=white] (\sx,\sy) circle (2.0pt);
+    \pgfmathsetmacro{\cx}{0.72+\i*0.36}
+    \draw[line width=0.35pt] (\cx,2.72) -- (\sx,\sy);
+  }
+  % rotary handle T — thick bar from pivot to a mid stud
+  \fill[black!80] (1.65,1.45) -- (0.95,0.85) -- (0.82,0.98) -- (1.52,1.58) -- cycle;
+  \draw[line width=0.45pt] (1.65,1.45) -- (0.95,0.85) -- (0.82,0.98) -- (1.52,1.58) -- cycle;
+  \filldraw[line width=0.55pt,fill=black!90] (1.65,1.45) circle (3.5pt);
+  \filldraw[line width=0.4pt,fill=white] (1.65,1.45) circle (1.4pt);
+  \node[font=\footnotesize] at (1.95,1.15) {$T$};
+  % terminals A / B
+  \filldraw[line width=0.6pt,fill=white] (0.40,0.50) circle (4.0pt);
+  \node[font=\footnotesize,anchor=east] at (0.12,0.50) {$A$};
+  \filldraw[line width=0.6pt,fill=white] (2.90,0.50) circle (4.0pt);
+  \node[font=\footnotesize,anchor=west] at (3.18,0.50) {$B$};
+  % wiring: A→leftmost stud; B→pivot
+  \draw[line width=0.4pt] (0.40,0.50) -- ({1.65+1.05*cos(150)},{1.45+0.85*sin(150)});
+  \draw[line width=0.4pt] (2.90,0.50) -- (1.65,1.45);
+  \draw[<-,line width=0.45pt] (0.40,0.12) -- (0.40,0.32);
+  \draw[->,line width=0.45pt] (2.90,0.32) -- (2.90,0.12);
 \end{tikzpicture}%
 }
 \caption{图2.15 转柄变阻器}
@@ -7533,11 +7673,48 @@ T 向右旋转时，A、B 之间的电阻就变大；当 T 向左旋转时，A�
 
 \begin{figure}
 \centering
-% fig-alt: 图2.18：旋键式电阻箱
+% fig-alt: 图2.18：旋键式电阻箱。立体箱体；顶面五旋钮梯形排布（后2前3）及倍率标；右侧两接线柱；前面名牌
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) rectangle (2.15,1.05);
-  \foreach \x in {0.35,0.85,1.35,1.85} \draw[line width=0.55pt] (\x,1.05) circle (0.12);
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  % box body (front / top / right)
+  \draw[line width=0.8pt] (0,0) -- (3.80,0) -- (3.80,1.60) -- (0,1.60) -- cycle;
+  \draw[line width=0.8pt] (0,1.60) -- (0.60,2.35) -- (4.40,2.35) -- (3.80,1.60);
+  \draw[line width=0.8pt] (3.80,0) -- (4.40,0.75) -- (4.40,2.35) -- (3.80,1.60);
+  % right face vertical hatch
+  \foreach \t in {0.12,0.24,0.36,0.48} {
+    \draw[line width=0.28pt] ({3.80+\t}, {0.08+\t*1.25}) -- ({3.80+\t}, {1.55+\t*1.25});
+  }
+  % front nameplate
+  \draw[line width=0.5pt] (1.20,0.40) rectangle (2.60,1.20);
+  \foreach \yy in {0.55,0.72,0.89,1.06}
+    \draw[line width=0.28pt] (1.35,\yy) -- (2.45,\yy);
+  % feet
+  \filldraw[line width=0.4pt] (0.30,-0.10) circle (2.2pt);
+  \filldraw[line width=0.4pt] (3.50,-0.10) circle (2.2pt);
+  % back row: 2 knobs
+  \foreach \x/\lab in {1.15/\times1000, 2.25/\times100} {
+    \draw[line width=0.5pt] (\x,2.12) circle (0.30);
+    \foreach \a in {10,50,...,330}
+      \fill (\x,2.12) ++(\a:0.24) circle (0.4pt);
+    \filldraw[line width=0.4pt,fill=black!75] (\x,2.12) circle (0.11);
+    \draw[line width=0.5pt] (\x-0.14,2.12) -- (\x+0.14,2.12);
+    \node[font=\tiny,anchor=north] at (\x,1.78) {$\lab$};
+  }
+  % front row: 3 knobs (trapezoid)
+  \foreach \x/\lab in {0.85/\times10, 1.85/\times1, 2.85/\times0.1} {
+    \draw[line width=0.5pt] (\x,1.78) circle (0.30);
+    \foreach \a in {10,50,...,330}
+      \fill (\x,1.78) ++(\a:0.24) circle (0.4pt);
+    \filldraw[line width=0.4pt,fill=black!75] (\x,1.78) circle (0.11);
+    \draw[line width=0.5pt] (\x-0.14,1.78) -- (\x+0.14,1.78);
+    \node[font=\tiny,anchor=north] at (\x,1.44) {$\lab$};
+  }
+  % two binding posts along right edge of top (depth direction)
+  \foreach \x/\y in {3.70/1.90, 3.95/2.15} {
+    \draw[line width=0.55pt] (\x,\y) -- (\x,\y+0.16);
+    \fill[black!35] (\x-0.10,\y+0.16) rectangle (\x+0.10,\y+0.30);
+    \draw[line width=0.45pt] (\x-0.10,\y+0.16) rectangle (\x+0.10,\y+0.30);
+  }
 \end{tikzpicture}%
 }
 \caption{图2.18 旋键式电阻箱}
