@@ -17191,38 +17191,56 @@ T = \frac{2 \times 3.14 \times 6.7 \times 10^{-27}}{3.2 \times 10^{-19} \times 2
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3.51 质谱仪原理示意图。左离子源盒与加速极板接加速电压U；中实心圆柱磁场；无磁场时粒子水平打在右照相底板上方，有磁场时斜下打在下方
+% fig-alt: 图3.51 质谱仪原理示意图。左离子源盒与两加速极板接电压差U（左+右−）；中磁极顶面标B、正面标S；虚线为无磁场时水平粒子束，实线经磁场后斜下打在右照相底片
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
-  % ion source box 3/4
-  \draw[line width=0.7pt] (0.00,1.50) -- (0.80,1.50) -- (0.80,2.20) -- (0.00,2.20) -- cycle;
-  \draw[line width=0.7pt] (0.80,1.50) -- (1.08,1.72) -- (1.08,2.42) -- (0.80,2.20);
-  \draw[line width=0.7pt] (0.00,2.20) -- (0.28,2.42) -- (1.08,2.42);
-  \fill (0.80,1.85) circle[radius=0.03];
-  % accelerating plate
-  \draw[line width=1.0pt] (1.32,1.28) -- (1.32,2.50);
-  \fill (1.32,1.85) circle[radius=0.03];
-  % leads
-  \draw[line width=0.55pt] (0.40,1.50) .. controls (0.28,1.05) and (0.10,0.78) .. (0.08,0.55);
-  \draw[line width=0.55pt] (1.32,1.28) -- (1.32,0.55);
-  \node[anchor=east,inner sep=1pt] at (0.02,0.55) {$+$};
-  \node[anchor=west,inner sep=1pt] at (1.38,0.55) {$-$};
-  \node[anchor=north,inner sep=2pt,font=\small] at (0.70,0.42) {加速电压 $U$};
-  % solid cylinder magnet, axis +x
-  \draw[line width=0.75pt] (2.55,1.15) ellipse[x radius=0.40,y radius=0.98];
-  \draw[line width=0.75pt] (2.55,2.13) -- (4.05,2.13);
-  \draw[line width=0.75pt] (2.55,0.17) -- (4.05,0.17);
-  \draw[line width=0.75pt] (4.05,2.13) arc[start angle=90,end angle=-90,x radius=0.40,y radius=0.98];
-  % paths
-  \draw[line width=0.55pt] (0.80,1.85) -- (1.32,1.85) -- (2.20,1.85);
-  \draw[line width=0.55pt] (2.20,1.85) -- (6.20,1.85);
-  \fill (6.20,1.85) circle[radius=0.04];
-  \node[anchor=south,inner sep=1pt,font=\small] at (4.70,1.88) {无磁场时的带电粒子};
-  \draw[line width=0.55pt] (3.30,1.15) -- (6.20,0.52);
-  \fill (6.20,0.52) circle[radius=0.04];
-  % plate
-  \draw[line width=0.7pt] (6.20,-0.20) -- (6.20,2.55) -- (7.45,2.98) -- (7.45,0.22) -- cycle;
-  \draw[line width=0.45pt] (6.80,-0.08) -- (6.20,0.52);
-  \node[anchor=north,inner sep=2pt,font=\small] at (6.70,-0.22) {照相底板};
+  % ion source box (3/4)
+  \draw[line width=0.7pt]
+    (0.00,1.55) -- (0.85,1.55) -- (0.85,2.35) -- (0.00,2.35) -- cycle;
+  \draw[line width=0.7pt] (0.85,1.55) -- (1.12,1.78) -- (1.12,2.58) -- (0.85,2.35);
+  \draw[line width=0.7pt] (0.00,2.35) -- (0.27,2.58) -- (1.12,2.58);
+  \fill (0.85,1.95) circle[radius=0.035];
+  % two accelerating plates with apertures
+  \draw[line width=0.95pt] (1.40,1.35) -- (1.40,2.55);
+  \draw[line width=0.95pt] (1.78,1.35) -- (1.78,2.55);
+  \fill[white] (1.36,1.88) rectangle (1.44,2.02);
+  \fill[white] (1.74,1.88) rectangle (1.82,2.02);
+  \fill (1.40,1.95) circle[radius=0.03];
+  \fill (1.78,1.95) circle[radius=0.03];
+  % leads + / -
+  \draw[line width=0.55pt] (1.40,1.35) -- (1.40,0.55);
+  \draw[line width=0.55pt] (1.78,1.35) -- (1.78,0.55);
+  \node[anchor=east,inner sep=1pt] at (1.35,0.55) {$+$};
+  \node[anchor=west,inner sep=1pt] at (1.83,0.55) {$-$};
+  \node[anchor=north,inner sep=1pt,font=\small] at (1.59,0.38) {电压差 $U$};
+  % magnet pole: hatched top, S on front, B above, beam channel
+  \fill[pattern=north east lines,pattern color=black!55]
+    (2.45,2.05) -- (4.15,2.05) -- (4.55,2.35) -- (2.85,2.35) -- cycle;
+  \draw[line width=0.75pt]
+    (2.45,0.25) -- (2.45,2.05) -- (4.15,2.05) -- (4.15,0.25)
+    arc[start angle=0,end angle=-180,x radius=0.85,y radius=0.22] -- cycle;
+  \draw[line width=0.75pt] (4.15,2.05) -- (4.55,2.35) -- (4.55,0.55)
+    -- (4.15,0.25);
+  \draw[line width=0.75pt] (2.45,2.05) -- (2.85,2.35) -- (4.55,2.35);
+  \fill[white] (2.55,1.55) rectangle (4.05,2.05);
+  \draw[line width=0.55pt] (2.55,1.55) -- (4.05,1.55) -- (4.05,2.05) -- (2.55,2.05);
+  \node[font=\large] at (3.30,0.95) {$S$};
+  \node[anchor=south,inner sep=1pt,font=\small] at (3.30,2.38) {$B$};
+  % undeflected path (dashed)
+  \draw[line width=0.55pt,dashed]
+    (0.85,1.95) -- (1.40,1.95) -- (1.78,1.95) -- (6.35,1.95);
+  \fill (6.35,1.95) circle[radius=0.045];
+  \node[anchor=south,inner sep=1pt,font=\small] at (5.05,2.00) {无磁场时的带电粒子束};
+  % deflected path (downward)
+  \draw[line width=0.65pt]
+    (2.55,1.95) .. controls (3.15,1.95) and (3.55,1.55) .. (4.05,1.15)
+    -- (6.35,0.55);
+  \fill (6.35,0.55) circle[radius=0.045];
+  % photographic plate
+  \draw[line width=0.7pt]
+    (6.35,-0.15) -- (6.35,2.60) -- (7.55,3.00) -- (7.55,0.25) -- cycle;
+  \draw[line width=0.4pt] (6.35,1.95) -- (6.95,2.15);
+  \draw[line width=0.4pt] (6.35,0.55) -- (6.95,0.75);
+  \node[anchor=north,inner sep=2pt,font=\small] at (6.95,-0.18) {照相底片};
 \end{tikzpicture}%
 }
 \caption{图3.51 质谱仪原理示意图}
@@ -19200,12 +19218,72 @@ m = \frac{B^{2} q r^{2}}{2 U}
 
 \begin{figure}
 \centering
-% fig-alt: 图4.2：线圈与磁场相对运动
+% fig-alt: 图4.2 磁场和导线圈的相对运动。铁架台夹持固定条形磁铁；手持螺线管沿立轴向下套向磁铁（↓）；两引出线接电流表−/+接线柱，指针左偏
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \foreach \y in {0.2,0.4,0.6} \draw[line width=0.55pt] (0,\y) ellipse [x radius=0.45,y radius=0.10];
-  \draw[line width=0.7pt] (1.15,0.15) rectangle (1.85,0.75);
-  \draw[->,line width=0.5pt] (0.55,0.40) -- (0.95,0.40);
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  % iron stand base
+  \draw[line width=0.7pt]
+    (0.00,0.00) -- (2.20,0.00) -- (2.55,0.35) -- (0.35,0.35) -- cycle;
+  \draw[line width=0.55pt]
+    (0.00,0.00) -- (0.00,-0.10) -- (2.20,-0.10) -- (2.20,0.00);
+  \draw[line width=0.45pt]
+    (2.20,-0.10) -- (2.55,0.25) -- (2.55,0.35);
+  % upright
+  \draw[line width=1.15pt] (0.55,0.35) -- (0.55,4.55);
+  % clamp
+  \draw[line width=0.65pt] (0.35,2.55) rectangle (0.75,2.85);
+  \draw[line width=0.55pt] (0.75,2.60) -- (1.05,2.60) -- (1.05,2.80) -- (0.75,2.80);
+  \draw[line width=0.6pt] (1.05,2.55) -- (1.55,2.55) -- (1.55,2.90) -- (1.05,2.90);
+  % fixed bar magnet
+  \draw[line width=0.7pt,fill=black!8] (1.15,1.35) rectangle (1.55,3.35);
+  \fill[black!45] (1.15,1.35) rectangle (1.55,2.35);
+  \draw[line width=0.7pt] (1.15,1.35) rectangle (1.55,3.35);
+  \draw[line width=0.45pt] (1.15,2.35) -- (1.55,2.35);
+  % solenoid above magnet
+  \begin{scope}[shift={(0.55,3.55)}]
+    \draw[line width=0.75pt] (0.35,0.00) -- (0.35,1.55) -- (1.55,1.55) -- (1.55,0.00);
+    \foreach \y in {0.12,0.28,0.44,0.60,0.76,0.92,1.08,1.24,1.40} {
+      \draw[line width=0.4pt] (0.35,\y) -- (1.55,\y);
+    }
+    \draw[line width=0.7pt] (0.35,1.55) .. controls (0.70,1.78) and (1.20,1.78) .. (1.55,1.55);
+    \draw[line width=0.4pt,dashed] (0.35,1.55) .. controls (0.70,1.35) and (1.20,1.35) .. (1.55,1.55);
+    \draw[line width=0.55pt] (0.35,0.00) .. controls (0.70,-0.18) and (1.20,-0.18) .. (1.55,0.00);
+  \end{scope}
+  % downward motion arrow (solenoid toward magnet)
+  \draw[line width=0.8pt,->] (0.25,4.55) -- (0.25,3.85);
+  % hand gripping top
+  \draw[line width=0.6pt,fill=white]
+    (1.00,5.25) .. controls (0.70,5.45) and (0.55,5.70) .. (0.75,5.95)
+    .. controls (1.05,6.15) and (1.45,6.05) .. (1.55,5.75)
+    .. controls (1.65,5.50) and (1.50,5.25) .. (1.25,5.15) -- cycle;
+  \draw[line width=0.55pt] (0.85,5.20) -- (0.70,4.95) -- (0.95,4.85);
+  \draw[line width=0.55pt] (1.15,5.15) -- (1.10,4.90);
+  \draw[line width=0.55pt] (1.40,5.25) -- (1.45,4.95);
+  % galvanometer
+  \begin{scope}[shift={(3.40,0.15)}]
+    \draw[line width=0.8pt] (0.00,0.00) rectangle (2.30,3.35);
+    \draw[line width=0.55pt] (0.15,1.55) rectangle (2.15,3.20);
+    \draw[line width=0.55pt] (0.35,2.85) arc[start angle=155,end angle=25,radius=1.15];
+    \foreach \ang in {155,130,105,90,75,50,25} {
+      \draw[line width=0.35pt]
+        ({1.15+1.15*cos(\ang)},{1.95+1.15*sin(\ang)})
+        -- ({1.15+0.95*cos(\ang)},{1.95+0.95*sin(\ang)});
+    }
+    % needle left-deflected
+    \draw[line width=0.7pt] (1.15,1.95) -- ({1.15+0.95*cos(140)},{1.95+0.95*sin(140)});
+    \fill (1.15,1.95) circle[radius=0.05];
+    \draw[line width=0.45pt] (1.15,1.15) circle[radius=0.38];
+    \draw[line width=0.35pt,fill=black!20] (0.95,0.95) rectangle (1.35,1.25);
+    \draw[line width=0.55pt] (0.55,0.45) circle[radius=0.14];
+    \draw[line width=0.55pt] (1.75,0.45) circle[radius=0.14];
+    \node[anchor=north,inner sep=1pt,font=\scriptsize] at (0.55,0.28) {$-$};
+    \node[anchor=north,inner sep=1pt,font=\scriptsize] at (1.75,0.28) {$+$};
+  \end{scope}
+  % leads
+  \draw[line width=0.65pt]
+    (0.90,3.55) -- (0.90,0.55) -- (3.95,0.55) -- (3.95,0.60);
+  \draw[line width=0.65pt]
+    (2.10,5.05) .. controls (2.80,5.20) and (4.60,4.40) .. (5.15,0.60);
 \end{tikzpicture}%
 }
 \caption{图4.2 磁场和导线圈的相对运动}
@@ -21293,11 +21371,41 @@ L 是个定值；对不同的线圈来说，自感系数一般是不同的。
 
 \begin{figure}
 \centering
-% fig-alt: 图4.21：双线绕法线圈
+% fig-alt: 图4.21 双线绕法。线轴上下凸缘、芯柱竖线纹；双线并绕螺旋匝；上右两根引出线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[decorate,decoration={coil,aspect=0.5,segment length=4pt,amplitude=3pt},line width=0.6pt] (0,0.55) -- (1.85,0.55);
-  \draw[decorate,decoration={coil,aspect=0.5,segment length=4pt,amplitude=3pt},line width=0.45pt] (0,0.35) -- (1.85,0.35);
+  % top flange
+  \draw[line width=0.7pt] (0.00,3.55) ellipse[x radius=1.15,y radius=0.28];
+  \draw[line width=0.55pt]
+    (-1.15,3.55) -- (-1.15,3.35)
+    arc[start angle=180,end angle=360,x radius=1.15,y radius=0.28]
+    -- (1.15,3.55);
+  % core
+  \draw[line width=0.65pt] (-0.72,0.55) -- (-0.72,3.35);
+  \draw[line width=0.65pt] (0.72,0.55) -- (0.72,3.35);
+  \foreach \x in {-0.55,-0.35,-0.15,0.05,0.25,0.45} {
+    \draw[line width=0.25pt,black!50] (\x,0.70) -- (\x,3.20);
+  }
+  % bottom flange
+  \draw[line width=0.7pt]
+    (-1.15,0.55) -- (-1.15,0.35)
+    arc[start angle=180,end angle=360,x radius=1.15,y radius=0.28]
+    -- (1.15,0.55) -- (1.15,0.35);
+  \draw[line width=0.7pt] (0.00,0.55) ellipse[x radius=1.15,y radius=0.28];
+  \draw[line width=0.45pt] (0.00,0.35) ellipse[x radius=1.15,y radius=0.28];
+  % bifilar front turns (paired parallel wires)
+  \foreach \i in {0,...,6} {
+    \pgfmathsetmacro{\y}{3.15 - \i*0.38}
+    \draw[line width=0.7pt]
+      (-0.72,\y) .. controls (-0.25,\y-0.12) and (0.25,\y-0.12) .. (0.72,\y-0.22);
+    \draw[line width=0.7pt]
+      (-0.72,\y-0.10) .. controls (-0.25,\y-0.22) and (0.25,\y-0.22) .. (0.72,\y-0.32);
+  }
+  % two lead-outs upper right
+  \draw[line width=0.7pt]
+    (0.72,2.93) -- (1.85,3.05) -- (2.35,3.05);
+  \draw[line width=0.7pt]
+    (0.72,2.83) -- (1.85,2.72) -- (2.35,2.72);
 \end{tikzpicture}%
 }
 \caption{图4.21 双线绕法}
