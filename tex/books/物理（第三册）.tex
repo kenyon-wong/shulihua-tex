@@ -1968,7 +1968,7 @@ k \frac{1.0 \times 10^{- 9}}{x^{2}} = k \frac{4.0 \times 10^{- 9}}{(x + 0.4)^{2}
   \node[below right=1pt] at (B) {$B$};
 \end{tikzpicture}%
 }
-\caption{(4)}
+\caption{(a)}
 \end{figure}
 
 \begin{figure}
@@ -2026,7 +2026,7 @@ F = q E
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1.24 上板正、下板负，电力线向下；P到M、L、N路径，PN斜线标θ，B在负板表面
+% fig-alt: 图1.24 上板+下板−，电力线向下E；虚线矩形PMNL；实线斜径PN标θ（PL与PN夹角）
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
   \begin{scope}
     \clip (0.26,3.18) -- (5.48,3.18) arc[start angle=-90,end angle=90,radius=0.23] -- (0.26,3.64) arc[start angle=90,end angle=270,radius=0.23] -- cycle;
@@ -2048,28 +2048,19 @@ F = q E
   \coordinate (M) at (3.72,2.48);
   \coordinate (L) at (1.52,1.08);
   \coordinate (N) at (3.72,1.08);
-  \draw[line width=0.6pt,->] (0.62,3.12) -- (0.62,0.62);
-  \draw[line width=0.6pt] (1.52,3.12) -- (1.52,0.62);
-  \draw[line width=0.6pt] (2.62,3.12) -- (2.62,0.62);
-  \draw[line width=0.6pt,->] (2.62,1.00) -- (2.62,0.70);
-  \draw[line width=0.6pt] (3.72,3.12) -- (3.72,0.62);
-  \draw[line width=0.6pt,->] (3.72,0.98) -- (3.72,0.68);
-  \draw[line width=0.6pt,->] (4.82,3.12) -- (4.82,0.62);
+  \foreach \x in {0.62,1.52,2.62,3.72,4.82} {
+    \draw[line width=0.55pt,->] (\x,3.12) -- (\x,0.62);
+  }
   \node[right=2pt] at (4.82,1.85) {$E$};
-  \draw[line width=0.75pt] (P) -- (L);
-  \draw[line width=0.75pt,->] (1.52,1.95) -- (1.52,1.58);
-  \draw[line width=0.75pt,->] (P) -- (M);
-  \draw[line width=0.75pt] (M) -- (N);
-  \draw[line width=0.75pt,->] (3.72,1.92) -- (3.72,1.42);
-  \draw[line width=0.55pt,dashed] (L) -- (N);
+  \draw[line width=0.65pt,dashed] (P) -- (M) -- (N) -- (L) -- cycle;
   \draw[line width=0.75pt,->] (P) -- (N);
-  \draw[line width=0.5pt] (1.92,2.48) arc[start angle=0,end angle=-42,radius=0.40];
-  \node at (2.08,2.34) {$\theta$};
+  % theta between downward PL and PN
+  \draw[line width=0.5pt] (1.52,2.18) arc[start angle=-90,end angle=-42,radius=0.42];
+  \node at (1.78,2.12) {$\theta$};
   \node[above left=1pt] at (P) {$P$};
   \node[above right=1pt] at (M) {$M$};
-  \node[left=3pt] at (1.52,1.78) {$L$};
-  \node[right=3pt] at (3.90,0.92) {$N$};
-  \node[left=3pt] at (1.22,0.76) {$B$};
+  \node[below left=1pt] at (L) {$L$};
+  \node[below right=1pt] at (N) {$N$};
 \end{tikzpicture}%
 }
 \caption{图1.24}
@@ -7687,20 +7678,74 @@ T 向右旋转时，A、B 之间的电阻就变大；当 T 向左旋转时，A�
 
 \begin{figure}
 \centering
-% fig-alt: 图2.17：电阻箱外形与插塞结构（1、2、2、5 欧）
+% fig-alt: 图2.17 左：电阻箱外形（顶面插塞、左侧接线柱）；右：铜块排+1/2/2/5欧线圈，部分插塞拔起带↑箭，电流自左入右出
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) rectangle (1.55,0.95);
-  \foreach \x in {0.25,0.55,0.85,1.15}
-    \draw[line width=0.55pt] (\x,0.95) -- (\x,1.25);
-  \draw[line width=0.5pt] (0.55,0.55) -- (1.85,1.15);
-  \begin{scope}[xshift=2.4cm]
-    \foreach \x/\lab in {0/1,0.9/2,1.8/2,2.7/5} {
-      \draw[decorate,decoration={zigzag,segment length=4pt,amplitude=2pt},line width=0.55pt] (\x,0) -- (\x+0.7,0);
-      \draw[line width=0.55pt] (\x+0.35,0) -- (\x+0.35,0.45);
-      \draw[line width=0.55pt] (\x+0.20,0.45) rectangle (\x+0.50,0.70);
-      \node[anchor=north] at (\x+0.35,-0.08) {\lab 欧姆};
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  % === left: box ===
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.75pt] (0.00,0.00) -- (2.40,0.00) -- (2.40,1.20) -- (0.00,1.20) -- cycle;
+    \draw[line width=0.75pt] (0.00,1.20) -- (0.35,1.55) -- (2.75,1.55) -- (2.40,1.20);
+    \draw[line width=0.75pt] (2.40,0.00) -- (2.75,0.35) -- (2.75,1.55);
+    % top plugs (T handles)
+    \foreach \x in {0.45,0.85,1.25,1.65,2.05} {
+      \draw[line width=0.5pt] (\x,1.55) -- (\x,1.85);
+      \draw[line width=0.55pt] ({\x-0.12},1.85) rectangle ({\x+0.12},2.05);
     }
+    \foreach \x in {0.65,1.05,1.45,1.85} {
+      \draw[line width=0.5pt] (\x,1.55) -- (\x,1.78);
+      \draw[line width=0.5pt] ({\x-0.10},1.78) rectangle ({\x+0.10},1.95);
+    }
+    % left terminals
+    \draw[line width=0.6pt] (-0.05,0.85) circle[radius=0.10];
+    \draw[line width=0.6pt] (-0.05,0.45) circle[radius=0.10];
+    \draw[line width=0.45pt,->] (-0.55,0.85) -- (-0.18,0.85);
+    \draw[line width=0.45pt,->] (-0.55,0.45) -- (-0.18,0.45);
+  \end{scope}
+  % === right: schematic ===
+  \begin{scope}[shift={(3.6,0.55)}]
+    % copper blocks
+    \foreach \i/\x in {0/0.00,1/1.10,2/2.20,3/3.30,4/4.40} {
+      \draw[line width=0.65pt,fill=black!8] (\x,0.55) rectangle ({\x+0.85},0.95);
+    }
+    % resistors under gaps + plugs
+    % gap0: 1Ω plug OUT
+    \draw[decorate,decoration={zigzag,segment length=3.5pt,amplitude=1.8pt},line width=0.55pt]
+      (0.85,0.35) -- (1.10,0.35);
+    \draw[line width=0.5pt] (0.85,0.55) -- (0.85,0.35);
+    \draw[line width=0.5pt] (1.10,0.55) -- (1.10,0.35);
+    \draw[line width=0.55pt] (0.88,1.35) rectangle (1.08,1.55);
+    \draw[line width=0.5pt] (0.98,1.15) -- (0.98,1.35);
+    \draw[line width=0.45pt,->] (0.98,1.70) -- (0.98,1.58);
+    \node[anchor=north] at (0.98,0.22) {1欧姆};
+    % gap1: 2Ω plug IN
+    \draw[decorate,decoration={zigzag,segment length=3.5pt,amplitude=1.8pt},line width=0.55pt]
+      (1.95,0.35) -- (2.20,0.35);
+    \draw[line width=0.5pt] (1.95,0.55) -- (1.95,0.35);
+    \draw[line width=0.5pt] (2.20,0.55) -- (2.20,0.35);
+    \draw[line width=0.55pt,fill=white] (1.95,0.55) rectangle (2.20,0.95);
+    \draw[line width=0.55pt] (1.98,0.95) rectangle (2.18,1.18);
+    \node[anchor=north] at (2.08,0.22) {2欧姆};
+    % gap2: 2Ω plug OUT
+    \draw[decorate,decoration={zigzag,segment length=3.5pt,amplitude=1.8pt},line width=0.55pt]
+      (3.05,0.35) -- (3.30,0.35);
+    \draw[line width=0.5pt] (3.05,0.55) -- (3.05,0.35);
+    \draw[line width=0.5pt] (3.30,0.55) -- (3.30,0.35);
+    \draw[line width=0.55pt] (3.08,1.35) rectangle (3.28,1.55);
+    \draw[line width=0.5pt] (3.18,1.15) -- (3.18,1.35);
+    \draw[line width=0.45pt,->] (3.18,1.70) -- (3.18,1.58);
+    \node[anchor=north] at (3.18,0.22) {2欧姆};
+    % gap3: 5Ω plug OUT (page said 3 out 1 in variously; use 1 in + 3 out matching page text "next three pulled")
+    \draw[decorate,decoration={zigzag,segment length=3.5pt,amplitude=1.8pt},line width=0.55pt]
+      (4.15,0.35) -- (4.40,0.35);
+    \draw[line width=0.5pt] (4.15,0.55) -- (4.15,0.35);
+    \draw[line width=0.5pt] (4.40,0.55) -- (4.40,0.35);
+    \draw[line width=0.55pt] (4.18,1.35) rectangle (4.38,1.55);
+    \draw[line width=0.5pt] (4.28,1.15) -- (4.28,1.35);
+    \draw[line width=0.45pt,->] (4.28,1.70) -- (4.28,1.58);
+    \node[anchor=north] at (4.28,0.22) {5欧姆};
+    % current arrows
+    \draw[line width=0.55pt,->] (-0.35,0.75) -- (0.00,0.75);
+    \draw[line width=0.55pt,->] (5.25,0.75) -- (5.70,0.75);
   \end{scope}
 \end{tikzpicture}%
 }
@@ -7903,7 +7948,7 @@ T 向右旋转时，A、B 之间的电阻就变大；当 T 向左旋转时，A�
   \node[anchor=north,inner sep=2pt] at (2.30,0.62) {$U=U_A-U_B$};
 \end{tikzpicture}%
 }
-\caption{图2.19 源分电路}
+\caption{图2.19 部分电路}
 \end{figure}
 
 电流通过导体可以看做是正电荷从电势较高的一端移
@@ -28161,7 +28206,7 @@ e = 15.7 \sqrt{2} \sin 6280 t \text{毫伏}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图6.8·N型半导体简化示意图：矩形框内3×4正离子（圆内+）与间隙中自由电子黑点
+% fig-alt: 图6.8·N型半导体简化：3×4正离子（其一为⊕五价杂质），间隙自由电子黑点；下图例
 \begin{tikzpicture}[line cap=round,line join=round,x=0.95cm,y=0.95cm]
   \draw[line width=0.7pt] (-0.55,0.45) rectangle (3.55,-2.55);
   \foreach \x in {0,1,2,3} {
@@ -28170,13 +28215,22 @@ e = 15.7 \sqrt{2} \sin 6280 t \text{毫伏}
       \node[inner sep=0pt] at (\x,\y) {$+$};
     }
   }
-  % free electrons in gaps (irregular)
+  % impurity ion at (0,-1)
+  \draw[line width=0.55pt,fill=white] (0,-1) circle[radius=0.28];
+  \node[inner sep=0pt] at (0,-1) {$\oplus$};
   \foreach \x/\y in {
     0.50/0.28, 1.48/0.05, 2.55/-0.18, 3.28/0.15,
     -0.28/-0.55, 0.52/-0.62, 1.45/-0.40, 2.42/-0.70, 3.22/-0.95,
     -0.22/-1.55, 0.48/-1.35, 1.55/-1.70, 2.50/-1.55, 3.25/-1.80} {
     \fill (\x,\y) circle[radius=0.055];
   }
+  \begin{scope}[shift={(0.15,-3.20)}]
+    \draw[line width=0.5pt] (0,0.35) circle[radius=0.20];
+    \node[inner sep=0pt] at (0,0.35) {$\oplus$};
+    \node[anchor=west,inner sep=4pt,font=\small] at (0.30,0.35) {五价杂质离子};
+    \fill (0,-0.20) circle[radius=0.055];
+    \node[anchor=west,inner sep=4pt,font=\small] at (0.30,-0.20) {自由电子};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图6.8·$N$ 型半导体简化示意图}
@@ -29670,49 +29724,58 @@ D、负载电阻 R 到次级绕组端点 b
 
 \begin{figure}
 \centering
-% fig-alt: 图6.31 PNP 三极管结构 $(a)(b)$ 与符号 $(c)$
+% fig-alt: 图6.31 PNP：(a)截面 N区夹两P斜线区，引出 c/e/b；(b)分层集电/基/发射区与结；(c)符号发射极箭指向基极
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.7pt] (0,0.55) rectangle (1.55,1.25);
-  \node at (0.78,0.90) {$N$};
-  \draw[line width=0.7pt] (0.55,1.25) ellipse [x radius=0.35,y radius=0.22];
-  \fill[pattern=north east lines,pattern color=black!45] (0.55,1.25) ellipse [x radius=0.35,y radius=0.22];
-  \draw[line width=0.7pt] (0.55,0.55) ellipse [x radius=0.35,y radius=0.22];
-  \fill[pattern=north east lines,pattern color=black!45] (0.55,0.55) ellipse [x radius=0.35,y radius=0.22];
-  \draw[line width=0.5pt] (0.55,1.47) -- (0.55,1.85);
-  \node[anchor=south] at (0.55,1.88) {$c$};
-  \draw[line width=0.5pt] (0.55,0.33) -- (0.55,-0.05);
-  \node[anchor=north] at (0.55,-0.08) {$e$};
-  \draw[line width=0.5pt] (0,0.90) -- (-0.35,0.90);
-  \node[anchor=east] at (-0.38,0.90) {$b$};
-  \node[anchor=north] at (0.78,0.20) {(a)};
-  \begin{scope}[xshift=2.5cm]
-    \draw[line width=0.7pt] (0,0) rectangle (0.85,1.85);
-    \draw[line width=0.45pt] (0,0.62) -- (0.85,0.62);
-    \draw[line width=0.45pt] (0,1.23) -- (0.85,1.23);
-    \node at (0.42,1.54) {$P$};
-    \node at (0.42,0.92) {$N$};
-    \node at (0.42,0.31) {$P$};
-    \draw[line width=0.5pt] (0.42,1.85) -- (0.42,2.15);
-    \node[anchor=south] at (0.42,2.18) {$c$};
-    \draw[line width=0.5pt] (0.42,0) -- (0.42,-0.30);
-    \node[anchor=north] at (0.42,-0.33) {$e$};
-    \draw[line width=0.5pt] (0,0.92) -- (-0.35,0.92);
-    \node[anchor=east] at (-0.38,0.92) {$b$};
-    \node[anchor=north] at (0.42,-0.55) {(b)};
+  % (a)
+  \draw[line width=0.7pt] (0.00,0.55) rectangle (1.60,1.30);
+  \node at (1.05,0.92) {$N$};
+  \fill[pattern=north east lines,pattern color=black!50] (0.55,1.30) ellipse[x radius=0.38,y radius=0.24];
+  \draw[line width=0.7pt] (0.55,1.30) ellipse[x radius=0.38,y radius=0.24];
+  \fill[pattern=north east lines,pattern color=black!50] (0.55,0.55) ellipse[x radius=0.38,y radius=0.24];
+  \draw[line width=0.7pt] (0.55,0.55) ellipse[x radius=0.38,y radius=0.24];
+  \draw[line width=0.55pt] (0.55,1.54) -- (0.55,1.95);
+  \node[anchor=south] at (0.55,1.98) {$c$};
+  \draw[line width=0.55pt] (0.55,0.31) -- (0.55,-0.10);
+  \node[anchor=north] at (0.55,-0.12) {$e$};
+  \draw[line width=0.55pt] (0.00,0.92) -- (-0.40,0.92);
+  \node[anchor=east] at (-0.42,0.92) {$b$};
+  \draw[line width=0.45pt] (0.80,0.92) circle[radius=0.55];
+  \node[anchor=north] at (0.80,0.15) {(a)};
+  % (b)
+  \begin{scope}[xshift=2.70cm]
+    \draw[line width=0.7pt] (0,0) rectangle (0.95,2.00);
+    \draw[line width=0.45pt,dashed] (0,0.65) -- (0.95,0.65);
+    \draw[line width=0.45pt,dashed] (0,1.30) -- (0.95,1.30);
+    \node at (0.48,1.65) {$P$};
+    \node at (0.48,0.98) {$N$};
+    \node at (0.48,0.32) {$P$};
+    \node[anchor=east,inner sep=2pt] at (-0.05,1.65) {集电区};
+    \node[anchor=west,inner sep=2pt] at (1.00,0.98) {基区};
+    \node[anchor=east,inner sep=2pt] at (-0.05,0.32) {发射区};
+    \node[anchor=west,inner sep=2pt] at (1.00,1.30) {集电结};
+    \node[anchor=west,inner sep=2pt] at (1.00,0.65) {发射结};
+    \draw[line width=0.5pt] (0.48,2.00) -- (0.48,2.30);
+    \node[anchor=south] at (0.48,2.32) {$c$};
+    \draw[line width=0.5pt] (0.48,0) -- (0.48,-0.30);
+    \node[anchor=north] at (0.48,-0.32) {$e$};
+    \draw[line width=0.5pt] (0,0.98) -- (-0.35,0.98);
+    \node[anchor=east] at (-0.38,0.98) {$b$};
+    \node[anchor=north] at (0.48,-0.55) {(b)};
   \end{scope}
-  \begin{scope}[xshift=4.6cm,yshift=0.7cm]
-    \draw[line width=0.7pt] (0,0) circle (0.42);
-    \draw[line width=0.55pt] (-0.22,-0.22) -- (-0.22,0.22);
-    \draw[->,line width=0.5pt] (-0.22,0.08) -- (0.22,0.28);
-    \draw[->,line width=0.5pt] (-0.22,-0.08) -- (0.22,-0.28);
-    \draw[line width=0.5pt] (-0.22,0) -- (-0.65,0);
-    \node[anchor=east] at (-0.68,0) {$b$};
-    \draw[line width=0.5pt] (0.22,0.28) -- (0.22,0.65);
-    \node[anchor=south] at (0.22,0.68) {$c$};
-    \draw[line width=0.5pt] (0.22,-0.28) -- (0.22,-0.65);
-    \node[anchor=north] at (0.22,-0.68) {$e$};
-    \node[anchor=north] at (0,-0.95) {(c)};
+  % (c) PNP: arrow on emitter INTO base
+  \begin{scope}[xshift=5.35cm,yshift=0.85cm]
+    \draw[line width=0.7pt] (0,0) circle[radius=0.48];
+    \draw[line width=0.7pt] (-0.18,-0.28) -- (-0.18,0.28);
+    \draw[line width=0.55pt] (-0.18,0) -- (-0.70,0);
+    \node[anchor=east] at (-0.72,0) {$b$};
+    \draw[line width=0.55pt] (-0.18,0.12) -- (0.28,0.32);
+    \draw[line width=0.55pt] (0.28,0.32) -- (0.28,0.70);
+    \node[anchor=south] at (0.28,0.72) {$c$};
+    \draw[line width=0.55pt,<-] (-0.18,-0.12) -- (0.28,-0.32);
+    \draw[line width=0.55pt] (0.28,-0.32) -- (0.28,-0.70);
+    \node[anchor=north] at (0.28,-0.72) {$e$};
+    \node[anchor=north] at (0,-1.00) {(c)};
   \end{scope}
 \end{tikzpicture}%
 }
@@ -31341,15 +31404,34 @@ f = \frac{1}{T^{\prime}} = \frac{1}{1.19 \times 10^{- 6}} \text{赫} = 810 \text
 
 \begin{figure}
 \centering
-% fig-alt: 图7.8：电磁波 $E$、$B$ 互相垂直沿 $x$ 传播
+% fig-alt: 图7.8 电磁波沿x传播：竖直平面E正弦波（竖线填充），水平平面B正弦波（斜线填充），二者正交同相
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[->,line width=0.5pt] (0,0) -- (3.6,0.55) node[right] {$x$};
-  \draw[->,line width=0.5pt] (0,0) -- (0,1.55) node[above] {$E$};
-  \draw[->,line width=0.5pt] (0,0) -- (1.15,-0.55) node[below] {$B$};
-  \draw[line width=0.6pt] plot[domain=0:360,samples=36] (\x/120,{0.55*sin(\x)});
-  \foreach \x/\s in {0.4/0.35,1.6/0.45,2.8/0.35}
-    \fill[pattern=north east lines,pattern color=black!40] (\x,-0.08) ellipse [x radius=\s,y radius=0.12];
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  \draw[->,line width=0.6pt] (0,0) -- (5.20,0) node[right] {$x$};
+  \draw[->,line width=0.6pt] (0,0) -- (0,1.85) node[above] {$E$};
+  \draw[->,line width=0.6pt] (0,0) -- (1.35,-1.05) node[below left] {$B$};
+  % E wave in vertical plane (sampled sine with vertical hatch lobes)
+  \draw[line width=0.7pt] plot[smooth,tension=0.55,domain=0:4.6,samples=60] (\x,{1.05*sin(deg(\x*1.35))});
+  \foreach \x in {0.15,0.30,...,4.50} {
+    \pgfmathsetmacro{\yy}{1.05*sin(deg(\x*1.35))}
+    \ifdim \yy pt > 0.08pt
+      \draw[line width=0.25pt] (\x,0) -- (\x,\yy);
+    \fi
+    \ifdim \yy pt < -0.08pt
+      \draw[line width=0.25pt] (\x,0) -- (\x,\yy);
+    \fi
+  }
+  \node[anchor=south] at (1.15,1.15) {$E$};
+  % B wave projected (perspective): ellipse lobes along B axis direction
+  \foreach \cx/\ph in {1.15/90,2.45/270,3.75/90} {
+    \begin{scope}[shift={(\cx,0)},xslant=-0.35]
+      \fill[pattern=north east lines,pattern color=black!45]
+        (0,0) -- (0.55,{0.55*sin(\ph)}) -- (-0.55,{0.55*sin(\ph)}) -- cycle;
+      \draw[line width=0.55pt] (-0.55,0) .. controls (-0.55,{0.55*sin(\ph)}) and (0.55,{0.55*sin(\ph)}) .. (0.55,0)
+        .. controls (0.55,{-0.55*sin(\ph)}) and (-0.55,{-0.55*sin(\ph)}) .. cycle;
+    \end{scope}
+  }
+  \node[anchor=north west] at (2.55,-0.55) {$B$};
 \end{tikzpicture}%
 }
 \caption{图7.8 电磁波传播示意图}
@@ -31363,7 +31445,7 @@ f = \frac{1}{T^{\prime}} = \frac{1}{1.19 \times 10^{- 6}} \text{赫} = 810 \text
 \(c\) 来表示，即
 
 \[
-c = 3.00 \times 10^{6} \text{米/秒}
+c = 3.00 \times 10^{8} \text{米/秒}
 \]
 
 电磁波在空气中传播的速度略小于 c，但一般仍可以用 c 来计算。
