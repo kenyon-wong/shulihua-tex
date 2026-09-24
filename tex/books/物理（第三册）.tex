@@ -15512,7 +15512,7 @@ K & V读数 & A读数 \\
 
 \section{§3.3 磁感应强度}
 
-我们已经知道磁场对小磁针有力的作用，那么，磁场对远电导体有没有力的作用呢？安培通过实验，发现磁场对电流确有力的作用，通电导体在磁场中要受到磁场力的作用。我们通过以下的实验来研究这个问题。
+我们已经知道磁场对小磁针有力的作用，那么，磁场对通电导体有没有力的作用呢？安培通过实验，发现磁场对电流确有力的作用，通电导体在磁场中要受到磁场力的作用。我们通过以下的实验来研究这个问题。
 
 \subsection{1. 确定磁场对通电导体的作用}
 
@@ -17277,7 +17277,7 @@ R = 99 \text{欧姆}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3.46 磁场使阴极射线偏转的实验。(a) 阴极射线管无磁场，电子束沿中轴直线；(b) 蹄形磁铁前N后S，电子束下弯，下附左手定则；(c) 磁极对调前S后N，电子束上弯，下附左手定则
+% fig-alt: 图3.46 磁场使阴极射线偏转。(a)无磁场直进；(b)上S下N束上弯，左手四指←拇指↑；(c)上N下S束下弯，左手四指←拇指↓
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
   % Subfigure (a) at top center
   \begin{scope}[shift={(3.1,2.8)}]
@@ -17299,7 +17299,7 @@ R = 99 \text{欧姆}
     \draw[line width=0.7pt] (0.55,0.55) -- (4.45,0.55);
     \node at (2.5,-0.35) {（a）};
   \end{scope}
-  % Subfigure (b) at bottom left
+  % Subfigure (b) at bottom left: top S, bottom N, beam up
   \begin{scope}[shift={(0,0)}]
     % tube
     \draw[line width=0.75pt] (0.55,0.55) arc[start angle=90,end angle=270,radius=0.55];
@@ -17312,46 +17312,35 @@ R = 99 \text{欧姆}
     \draw[line width=0.55pt] (4.65,0.55) -- (4.95,0.55);
     \node[anchor=east,inner sep=2pt] at (0.00,0.55) {$-$};
     \node[anchor=west,inner sep=2pt] at (5.00,0.55) {$+$};
-    % screen (slight perspective parallelogram)
     \draw[line width=0.5pt] (1.05,0.30) -- (3.85,0.30) -- (3.95,0.82) -- (1.15,0.82) -- cycle;
-    % horseshoe magnet straddling
-    \draw[line width=0.85pt]
-      (2.05,0.15) -- (2.05,1.55) -- (2.95,1.55) -- (2.95,0.15)
-      (2.20,0.15) -- (2.20,1.40) -- (2.80,1.40) -- (2.80,0.15);
-    \draw[line width=0.7pt] (2.05,0.15) -- (2.20,0.15);
-    \draw[line width=0.7pt] (2.80,0.15) -- (2.95,0.15);
-    \node[anchor=north,inner sep=1pt,font=\small] at (2.12,-0.02) {$N$};
-    \node[anchor=north,inner sep=1pt,font=\small] at (2.88,-0.02) {$S$};
-    % beam: straight then down
+    % poles above/below tube (S top, N bottom)
+    \draw[line width=0.8pt,fill=white] (1.85,1.15) rectangle (3.15,1.55);
+    \node[font=\small] at (2.50,1.35) {$S$};
+    \draw[line width=0.8pt,fill=white] (1.85,-0.45) rectangle (3.15,-0.05);
+    \node[font=\small] at (2.50,-0.25) {$N$};
+    % yoke on right
+    \draw[line width=0.85pt] (3.15,1.55) -- (3.55,1.55) -- (3.55,-0.45) -- (3.15,-0.45);
+    % beam: straight then up
     \draw[line width=0.7pt] (0.55,0.55) -- (2.00,0.55);
-    \draw[line width=0.7pt] (2.00,0.55) .. controls (2.55,0.55) and (3.10,0.35) .. (3.90,0.12);
-    \begin{scope}[shift={(1.2,-2.35)}, scale=0.85]
-      % palm
+    \draw[line width=0.7pt] (2.00,0.55) .. controls (2.55,0.55) and (3.10,0.75) .. (3.90,0.98);
+    % left hand: fingers left (←), thumb up
+    \begin{scope}[shift={(1.35,-2.55)},scale=0.85]
       \draw[line width=0.65pt,fill=white]
-        (0.10,1.10) .. controls (0.00,1.55) and (0.35,1.85) .. (0.85,1.90)
-        .. controls (1.35,1.92) and (1.70,1.70) .. (1.75,1.25)
-        .. controls (1.78,0.90) and (1.55,0.65) .. (1.15,0.55)
-        .. controls (0.70,0.48) and (0.25,0.65) .. (0.10,1.10);
-      % four fingers pointing right
-      \foreach \y/\dy in {1.78/0.00,1.58/0.02,1.38/0.04,1.20/0.06} {
-        \draw[line width=0.55pt]
-          (1.55,\y) .. controls (1.95,\y+0.05) and (2.35,\y+\dy) .. (2.70,\y+\dy-0.02)
-          .. controls (2.85,\y+\dy-0.08) and (2.80,\y+\dy-0.18) .. (2.60,\y+\dy-0.20)
-          .. controls (2.20,\y+\dy-0.18) and (1.80,\y-0.12) .. (1.55,\y-0.18);
+        (0.95,0.85) .. controls (1.35,1.15) and (1.55,1.55) .. (1.35,1.95)
+        .. controls (1.10,2.25) and (0.55,2.20) .. (0.25,1.85)
+        .. controls (0.05,1.55) and (0.15,1.15) .. (0.45,0.95)
+        .. controls (0.65,0.82) and (0.85,0.80) .. (0.95,0.85);
+      % fingers pointing left
+      \foreach \yy in {1.95,1.70,1.45,1.20} {
+        \draw[line width=0.5pt,->] (0.35,\yy) -- (-0.55,\yy);
       }
-      % thumb down
-      \draw[line width=0.6pt,fill=white]
-        (0.55,0.70) .. controls (0.35,0.35) and (0.40,-0.05) .. (0.65,-0.35)
-        .. controls (0.85,-0.50) and (1.05,-0.35) .. (1.00,-0.05)
-        .. controls (0.95,0.25) and (0.90,0.50) .. (0.85,0.65) -- cycle;
-      % wrist
-      \draw[line width=0.55pt]
-        (0.15,1.05) .. controls (-0.25,0.95) and (-0.35,0.55) .. (-0.10,0.35)
-        .. controls (0.15,0.20) and (0.55,0.30) .. (0.70,0.55);
+      % thumb up
+      \draw[line width=0.55pt,->] (1.25,1.95) -- (1.25,2.65);
+      \node[font=\scriptsize,anchor=west] at (1.35,2.55) {$F$};
     \end{scope}
-    \node at (2.5,-3.1) {（b）};
+    \node at (2.5,-3.15) {（b）};
   \end{scope}
-  % Subfigure (c) at bottom right
+  % Subfigure (c) at bottom right: top N, bottom S, beam down
   \begin{scope}[shift={(6.2,0)}]
     \draw[line width=0.75pt] (0.55,0.55) arc[start angle=90,end angle=270,radius=0.55];
     \draw[line width=0.75pt] (0.55,1.10) -- (4.45,1.10);
@@ -17364,40 +17353,26 @@ R = 99 \text{欧姆}
     \node[anchor=east,inner sep=2pt] at (0.00,0.55) {$-$};
     \node[anchor=west,inner sep=2pt] at (5.00,0.55) {$+$};
     \draw[line width=0.5pt] (1.05,0.30) -- (3.85,0.30) -- (3.95,0.82) -- (1.15,0.82) -- cycle;
-    \draw[line width=0.85pt]
-      (2.05,0.15) -- (2.05,1.55) -- (2.95,1.55) -- (2.95,0.15)
-      (2.20,0.15) -- (2.20,1.40) -- (2.80,1.40) -- (2.80,0.15);
-    \draw[line width=0.7pt] (2.05,0.15) -- (2.20,0.15);
-    \draw[line width=0.7pt] (2.80,0.15) -- (2.95,0.15);
-    \node[anchor=north,inner sep=1pt,font=\small] at (2.12,-0.02) {$S$};
-    \node[anchor=north,inner sep=1pt,font=\small] at (2.88,-0.02) {$N$};
+    \draw[line width=0.8pt,fill=white] (1.85,1.15) rectangle (3.15,1.55);
+    \node[font=\small] at (2.50,1.35) {$N$};
+    \draw[line width=0.8pt,fill=white] (1.85,-0.45) rectangle (3.15,-0.05);
+    \node[font=\small] at (2.50,-0.25) {$S$};
+    \draw[line width=0.85pt] (3.15,1.55) -- (3.55,1.55) -- (3.55,-0.45) -- (3.15,-0.45);
     \draw[line width=0.7pt] (0.55,0.55) -- (2.00,0.55);
-    \draw[line width=0.7pt] (2.00,0.55) .. controls (2.55,0.55) and (3.10,0.75) .. (3.90,0.98);
-    \begin{scope}[shift={(1.2,-2.35)}, scale=0.85]
-      % palm
+    \draw[line width=0.7pt] (2.00,0.55) .. controls (2.55,0.55) and (3.10,0.35) .. (3.90,0.12);
+    \begin{scope}[shift={(1.35,-2.55)},scale=0.85]
       \draw[line width=0.65pt,fill=white]
-        (0.10,0.90) .. controls (0.00,0.45) and (0.35,0.15) .. (0.85,0.10)
-        .. controls (1.35,0.08) and (1.70,0.30) .. (1.75,0.75)
-        .. controls (1.78,1.10) and (1.55,1.35) .. (1.15,1.45)
-        .. controls (0.70,1.52) and (0.25,1.35) .. (0.10,0.90);
-      % four fingers pointing right
-      \foreach \y/\dy in {0.22/0.00,0.42/-0.02,0.62/-0.04,0.80/-0.06} {
-        \draw[line width=0.55pt]
-          (1.55,\y) .. controls (1.95,\y-0.05) and (2.35,\y+\dy) .. (2.70,\y+\dy+0.02)
-          .. controls (2.85,\y+\dy+0.08) and (2.80,\y+\dy+0.18) .. (2.60,\y+\dy+0.20)
-          .. controls (2.20,\y+\dy+0.18) and (1.80,\y+0.12) .. (1.55,\y+0.18);
+        (0.95,1.45) .. controls (1.35,1.15) and (1.55,0.75) .. (1.35,0.35)
+        .. controls (1.10,0.05) and (0.55,0.10) .. (0.25,0.45)
+        .. controls (0.05,0.75) and (0.15,1.15) .. (0.45,1.35)
+        .. controls (0.65,1.48) and (0.85,1.50) .. (0.95,1.45);
+      \foreach \yy in {0.35,0.60,0.85,1.10} {
+        \draw[line width=0.5pt,->] (0.35,\yy) -- (-0.55,\yy);
       }
-      % thumb up
-      \draw[line width=0.6pt,fill=white]
-        (0.55,1.30) .. controls (0.35,1.65) and (0.40,2.05) .. (0.65,2.35)
-        .. controls (0.85,2.50) and (1.05,2.35) .. (1.00,2.05)
-        .. controls (0.95,1.75) and (0.90,1.50) .. (0.85,1.35) -- cycle;
-      % wrist
-      \draw[line width=0.55pt]
-        (0.15,0.95) .. controls (-0.25,1.05) and (-0.35,1.45) .. (-0.10,1.65)
-        .. controls (0.15,1.80) and (0.55,1.70) .. (0.70,1.45);
+      \draw[line width=0.55pt,->] (1.25,0.35) -- (1.25,-0.35);
+      \node[font=\scriptsize,anchor=west] at (1.35,-0.25) {$F$};
     \end{scope}
-    \node at (2.5,-3.1) {（c）};
+    \node at (2.5,-3.15) {（c）};
   \end{scope}
 \end{tikzpicture}%
 }
@@ -17445,24 +17420,29 @@ R = 99 \text{欧姆}
     \node[inner sep=0pt,font=\small] at (\x,\y) {$-$};
     \draw[line width=0.55pt,->] ({\x+0.20},\y) -- ({\x+0.55},\y);
   }
+  % length l between M and N
+  \draw[line width=0.45pt] (0.55,-0.15) -- (0.55,-0.35);
+  \draw[line width=0.45pt] (5.45,-0.15) -- (5.45,-0.35);
+  \draw[line width=0.45pt,<->] (0.55,-0.28) -- (5.45,-0.28);
+  \node[anchor=north,inner sep=1pt] at (3.00,-0.30) {$l$};
 \end{tikzpicture}%
 }
 \caption{图3.47 金属导体中定向运动的电子}
 \end{figure}
 
 \[
-f = B I l
+F = B I l
 \]
 
-代去 \(I\) 可得 \(F = \frac{Nq}{t} l\)
+代入 \(I\) 可得 \(F = B \cdot \frac{Nq}{t} \cdot l\)
 
 因为 \(\frac{l}{t}\) 就是导体中自由电子移动的速度，即
 
 \[
-r = \frac{l}{t}
+v = \frac{l}{t}
 \]
 
-所以 \(F \cdot N q \cdot B\)
+所以 \(F = N q v B\)
 
 这个力是作用在 \(N\) 个电子上的，因此，作用在每个运动电子上的力为
 
@@ -17471,7 +17451,7 @@ f=qvB
 \]
 
 如果电子运动速度的方向和磁力线方向并不垂直，而有夹角
-\(\alpha\)，如图3.18所示，这时，因为磁感应强度 \(B\)
+\(\alpha\)，如图3.48所示，这时，因为磁感应强度 \(B\)
 在电荷运动方向上的分量 \(B\cos \alpha\)
 对运动电荷并无力的作用，只有垂直于运动方向的分量 \(B\sin \alpha\)
 才对运动电荷有作用力。 作用力为
@@ -17617,9 +17597,9 @@ T = \frac{2 \pi m}{q B}
 
 \subsubsection{例 2}
 
-如图3.50 所示，有一带电粒子的电量为 \(q = +3.2 \times 10^{-11}\)
-库仑，质量为 \(m = 6.7 \times 10^{27}\)
-千克。在磁感应强度为B-2.6×10\(^{-2}\)特斯拉的匀强磁场中运动，速率为v=5×10\(^{4}\)米/秒，方向与磁场垂直，试求（I）带电粒子在磁场中受到的作用力的大小和方向；（2）带电粒子在磁场中所作匀速圆周运动的半径；（3）带电粒子运动的周期为多大？如果速率为2v，它的运动周期又为多大？
+如图3.50 所示，有一带电粒子的电量为 \(q = +3.2 \times 10^{-19}\)
+库仑，质量为 \(m = 6.7 \times 10^{-27}\)
+千克。在磁感应强度为 \(B = 2.6 \times 10^{-2}\) 特斯拉的匀强磁场中运动，速率为 \(v = 5 \times 10^{4}\) 米/秒，方向与磁场垂直，试求（1）带电粒子在磁场中受到的作用力的大小和方向；（2）带电粒子在磁场中所作匀速圆周运动的半径；（3）带电粒子运动的周期为多大？如果速率为2v，它的运动周期又为多大？
 
 \begin{figure}
 \centering
@@ -17641,7 +17621,7 @@ T = \frac{2 \pi m}{q B}
   \node[anchor=south,inner sep=1pt] at (-0.90,\R) {$v$};
   \draw[line width=0.7pt,->] (0,{\R-0.08}) -- (0,0.38);
   \node[anchor=west,inner sep=2pt] at (0.04,0.95) {$f$};
-  \draw[line width=0.6pt] (0,0) -- ({145}:\R);
+  \draw[line width=0.6pt,dashed] (0,0) -- ({145}:\R);
   \node[anchor=north,inner sep=1pt] at ({145}:0.80) {$r$};
   \fill (0,0) circle[radius=0.04];
   \node[anchor=north,inner sep=2pt] at (0,-0.06) {$O$};
@@ -17654,7 +17634,7 @@ T = \frac{2 \pi m}{q B}
 带正电荷的粒子在磁场中受到的作用力（即洛仑磁力）的大小
 
 \[
-\begin{array}{l} f = q v B - 3.2 \times 10^{- 19} \times 5 \times 10^{4} \times 2.6 \times 10^{- 2} \\ = 4.2 \times 10^{- 19} \text{牛} \\ \end{array}
+\begin{array}{l} f = q v B = 3.2 \times 10^{-19} \times 5 \times 10^{4} \times 2.6 \times 10^{-2} \\ = 4.2 \times 10^{-19} \text{牛} \\ \end{array}
 \]
 
 正电荷在磁场中运动所受洛伦兹力的方向，可根据速度方向由左手定则确定。洛伦兹力始终垂直于速度
