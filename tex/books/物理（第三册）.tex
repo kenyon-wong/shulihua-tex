@@ -12020,23 +12020,44 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-% fig-alt: 图2.55：NaCl 溶液离子导电
+% fig-alt: 图2.55 离子导电。K(−)/A(+)；Na+←、Cl−→；场 E←；外电路电池 B 与检流计 G
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (-1.25,0) -- (-1.25,1.05) -- (1.25,1.05) -- (1.25,0);
-  \draw[line width=0.75pt] (-1.25,0) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.18];
-  \fill[black!8] (-1.25,0.55) -- (1.25,0.55) -- (1.25,0) arc[start angle=0,end angle=-180,x radius=1.25,y radius=0.18];
-  \draw[line width=0.7pt] (-0.75,0.15) rectangle (-0.50,1.35);
-  \draw[line width=0.7pt] (0.50,0.15) rectangle (0.75,1.35);
-  \node[anchor=south] at (-0.62,1.38) {$K$};
-  \node[anchor=south] at (0.62,1.38) {$A$};
-  \draw[line width=0.5pt] (-0.62,1.35) -- (-0.62,1.75) -- (-0.15,1.75);
-  \foreach \x in {-0.25,-0.12} \draw[line width=0.55pt] (\x,1.60) -- (\x,1.90);
-  \node at (0.15,1.75) {$G$};
-  \draw[line width=0.5pt] (0.35,1.75) -- (0.62,1.75) -- (0.62,1.35);
-  \node at (0,0.35) {$\mathrm{NaCl}$};
-  \node at (-0.15,0.70) {$\mathrm{Na}^+$};
-  \node at (0.35,0.55) {$\mathrm{Cl}^-$};
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  \draw[line width=0.75pt] (-1.35,0.10) -- (-1.35,1.20) -- (1.35,1.20) -- (1.35,0.10);
+  \draw[line width=0.75pt] (-1.35,0.10) arc[start angle=180,end angle=360,x radius=1.35,y radius=0.20];
+  \foreach \y in {0.30,0.45,0.60,0.75,0.90} {
+    \draw[line width=0.28pt,dashed] (-1.25,\y) -- (1.25,\y);
+  }
+  % electrodes
+  \draw[line width=0.7pt,fill=white] (-0.85,0.20) rectangle (-0.55,1.45);
+  \draw[line width=0.7pt,fill=white] (0.55,0.20) rectangle (0.85,1.45);
+  \foreach \y in {0.55,0.85,1.15} {\node at (-0.70,\y) {$-$};}
+  \foreach \y in {0.55,0.85,1.15} {\node at (0.70,\y) {$+$};}
+  \node[above=1pt] at (-0.70,1.45) {$K$};
+  \node[above=1pt] at (0.70,1.45) {$A$};
+  % ions
+  \draw[line width=0.45pt] (-0.15,0.85) circle[radius=0.12];
+  \node at (-0.15,0.85) {$+$};
+  \draw[line width=0.45pt,dashed,->] (-0.30,0.85) -- (-0.55,0.85);
+  \node[above=1pt] at (-0.20,0.95) {$\mathrm{Na}^+$};
+  \draw[line width=0.45pt] (0.20,0.55) circle[radius=0.12];
+  \node at (0.20,0.55) {$-$};
+  \draw[line width=0.45pt,dashed,->] (0.35,0.55) -- (0.55,0.55);
+  \node[below=1pt] at (0.25,0.45) {$\mathrm{Cl}^-$};
+  % E field
+  \draw[line width=0.5pt,dashed,->] (0.45,0.28) -- (-0.45,0.28);
+  \node[right=1pt] at (0.45,0.28) {$E$};
+  \node[below=1pt] at (0,0.12) {$\mathrm{NaCl}$};
+  % external: K to − battery, G, to A
+  \draw[line width=0.5pt] (-0.70,1.45) -- (-0.70,1.95) -- (-0.15,1.95);
+  \draw[line width=0.85pt] (-0.05,1.82) -- (-0.05,2.08);
+  \draw[line width=0.7pt] (0.12,1.90) -- (0.12,2.00);
+  \node[above=1pt] at (0.05,2.12) {$B$};
+  \draw[line width=0.5pt] (0.12,1.95) -- (0.55,1.95);
+  \draw[line width=0.7pt] (0.75,1.95) circle[radius=0.16];
+  \draw[line width=0.4pt,->] (0.65,1.85) -- (0.88,2.05);
+  \node[above=1pt] at (0.95,2.08) {$G$};
+  \draw[line width=0.5pt] (0.91,1.95) -- (1.15,1.95) -- (1.15,1.45) -- (0.70,1.45);
 \end{tikzpicture}%
 }
 \caption{图2.55 离子导电}
@@ -12054,30 +12075,39 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-% fig-alt: 图2.56：电解盐酸，离子 $\mathrm{H}^+$、$\mathrm{Cl}^-$
+% fig-alt: 图2.56 电解盐酸。K(−)/A(+)；H+←、Cl−→；气泡；外电路电流 I
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (-1.15,0) -- (-1.15,1.05) -- (1.15,1.05) -- (1.15,0);
-  \draw[line width=0.75pt] (-1.15,0) arc[start angle=180,end angle=360,x radius=1.15,y radius=0.18];
-  \fill[black!8] (-1.15,0.50) -- (1.15,0.50) -- (1.15,0) arc[start angle=0,end angle=-180,x radius=1.15,y radius=0.18];
-  \draw[line width=0.7pt] (-0.65,0.15) rectangle (-0.40,1.35);
-  \draw[line width=0.7pt] (0.40,0.15) rectangle (0.65,1.35);
-  \node[anchor=south] at (-0.52,1.38) {$K$};
-  \node[anchor=south] at (0.52,1.38) {$A$};
-  \node at (0.52,0.75) {$+$};
-  \node at (0,0.25) {HCl};
-  \node at (-0.10,0.70) {$\mathrm{H}^+$};
-  \node at (0.20,0.55) {$\mathrm{Cl}^-$};
-  \draw[->,line width=0.45pt] (-0.52,1.55) -- (-0.52,1.85);
-  \node[anchor=south] at (-0.52,1.88) {$i$};
-  \draw[->,line width=0.45pt] (0.52,1.85) -- (0.52,1.55);
-  \node[anchor=south] at (0.52,1.88) {$i$};
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  \draw[line width=0.75pt] (-1.20,0.10) -- (-1.20,1.15) -- (1.20,1.15) -- (1.20,0.10);
+  \draw[line width=0.75pt] (-1.20,0.10) arc[start angle=180,end angle=360,x radius=1.20,y radius=0.18];
+  \foreach \y in {0.30,0.48,0.66,0.84} {
+    \draw[line width=0.28pt,dashed] (-1.10,\y) -- (1.10,\y);
+  }
+  \draw[line width=0.7pt,fill=white] (-0.70,0.20) rectangle (-0.42,1.40);
+  \draw[line width=0.7pt,fill=white] (0.42,0.20) rectangle (0.70,1.40);
+  \foreach \y in {0.55,0.85,1.15} {\node at (-0.56,\y) {$-$};}
+  \foreach \y in {0.55,0.85,1.15} {\node at (0.56,\y) {$+$};}
+  \node[above=1pt] at (-0.56,1.40) {$K$};
+  \node[above=1pt] at (0.56,1.40) {$A$};
+  % bubbles
+  \foreach \p in {(-0.38,0.70),(-0.32,0.95),(-0.36,1.15),(0.38,0.70),(0.32,0.95),(0.36,1.15)} {
+    \fill \p circle[radius=0.035];
+  }
+  \draw[line width=0.45pt,->] (-0.05,0.75) -- (-0.40,0.75);
+  \node[above=1pt] at (-0.15,0.78) {$\mathrm{H}^+$};
+  \draw[line width=0.45pt,->] (0.05,0.50) -- (0.40,0.50);
+  \node[below=1pt] at (0.15,0.48) {$\mathrm{Cl}^-$};
+  \node at (0,0.22) {HCl};
+  \draw[line width=0.5pt,->] (-0.56,1.50) -- (-0.56,1.90);
+  \node[left=1pt] at (-0.56,1.75) {$i$};
+  \draw[line width=0.5pt,->] (0.56,1.90) -- (0.56,1.50);
+  \node[right=1pt] at (0.56,1.75) {$i$};
 \end{tikzpicture}%
 }
 \caption{图2.56 电解盐酸}
 \end{figure}
 
-例如图2.56所示的是电解盐酸（HCl）用的电解池。阳极板（1）和阴极板（K）一般是用铂板，或用碳板组成的；电解液为稀盐酸溶液、通电后，氢离子（H⁺）移向阴极板（K），在获得电子后变成氧原子，并生成氢气泡上升到液面；氯离子（Cl⁻）移向阴极板（A）在放出电子后变成氯原子，也生成氯气泡上升到液面，这一系列的化学反应可以用下面的方程来表示：
+例如图2.56所示的是电解盐酸（HCl）用的电解池。阳极板（A）和阴极板（K）一般是用铂板，或用碳板组成的；电解液为稀盐酸溶液、通电后，氢离子（H⁺）移向阴极板（K），在获得电子后变成氢原子，并生成氢气泡上升到液面；氯离子（Cl⁻）移向阳极板（A）在放出电子后变成氯原子，也生成氯气泡上升到液面，这一系列的化学反应可以用下面的方程来表示：
 
 在溶液中
 \(\mathrm{HCl}\longrightarrow \mathrm{H}^{+} + \mathrm{Cl}^{-}\)
@@ -12305,7 +12335,7 @@ e = \frac{F}{N} = \frac{96485}{6.022 \times 10^{23}} \text{库} = 1.602 \times 1
 
 体激光器都是气体导电的实例。
 
-气体的被激励电气体在某种外界因素作用下可以发生电离而转变成导体。图2.57为一种研究气体导电性能的实验装置，在充有某种常压气体的玻璃管内装有一对电极A和K，两电极分别接到电池组B的正极和负极上，电路中串接灵敏电流表
+气体的被激导电。气体在某种外界因素作用下可以发生电离而转变成导体。图2.57为一种研究气体导电性能的实验装置，在充有某种常压气体的玻璃管内装有一对电极A和K，两电极分别接到电池组B的正极和负极上，电路中串接灵敏电流表
 G
 以指示有无电流，可以发现，接通电路后，电路并无电流通过，说明气体是不导电的。
 
@@ -12375,21 +12405,34 @@ X
 
 \begin{figure}
 \centering
-% fig-alt: 图2.59：稀薄气体放电管接高压直流电源
+% fig-alt: 图2.59 稀薄气体放电管：两端电极，中支管接抽气机，顶接高压直流电源 +/−，管内辉光
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (-1.15,0.55) -- (1.15,0.55);
-  \draw[line width=0.75pt] (-1.15,0.55) arc[start angle=180,end angle=360,x radius=1.15,y radius=0.28];
-  \draw[line width=0.75pt] (-1.15,0.55) arc[start angle=180,end angle=0,x radius=1.15,y radius=0.18];
-  \draw[line width=0.5pt] (0,0.27) -- (0,-0.55);
+  % tube
+  \draw[line width=0.75pt] (-1.35,0.55) -- (1.35,0.55);
+  \draw[line width=0.75pt] (-1.35,0.55) arc[start angle=180,end angle=360,x radius=1.35,y radius=0.32];
+  \draw[line width=0.75pt] (-1.35,0.55) arc[start angle=180,end angle=0,x radius=1.35,y radius=0.18];
+  % glow hatching between electrodes
+  \foreach \y in {0.28,0.38,0.48} {
+    \draw[line width=0.25pt] (-0.85,\y) -- (0.85,\y);
+  }
+  % electrodes
+  \draw[line width=0.7pt,fill=white] (-1.05,0.22) rectangle (-0.88,0.72);
+  \draw[line width=0.7pt,fill=white] (0.88,0.22) rectangle (1.05,0.72);
+  % pump branch
+  \draw[line width=0.55pt] (0,0.23) -- (0,-0.55);
+  \draw[line width=0.45pt,->] (0.15,-0.25) -- (0.15,-0.55);
   \node[anchor=north] at (0,-0.58) {接抽气机};
-  \draw[line width=0.5pt] (-1.15,0.55) -- (-1.15,1.15) -- (1.15,1.15) -- (1.15,0.55);
-  \node[anchor=south] at (0,1.18) {高压直流电源};
-  \node at (-0.55,1.15) {$+$};
-  \node at (0.55,1.15) {$-$};
+  % HV supply
+  \draw[line width=0.55pt] (-0.96,0.72) -- (-0.96,1.25) -- (0.96,1.25) -- (0.96,0.72);
+  \draw[line width=0.85pt] (-0.25,1.12) -- (-0.25,1.38);
+  \draw[line width=0.7pt] (-0.05,1.18) -- (-0.05,1.32);
+  \node[anchor=south] at (0,1.42) {高压直流电源};
+  \node at (-0.70,1.25) {$+$};
+  \node at (0.70,1.25) {$-$};
 \end{tikzpicture}%
 }
-\caption{图2.59 钢薄气体里的放电}
+\caption{图2.59 稀薄气体里的放电}
 \end{figure}
 
 辉光放电取一根玻璃管， 它的两端各焊着一个电极，
@@ -12618,7 +12661,7 @@ I_{\text{总}} = \frac{\varepsilon}{R + \frac{r}{n}}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2.60。矩形回路。左节长线左、短线右，上ε_1下r_1。右节短线左、长线右，上ε_2下r_2。反接。底矩形R，下标R。扫描无I箭、无+、−
+% fig-alt: 图2.60 反接：ε1 长左短右，ε2 短左长右；底 R；左竖 I↑、右竖 I↓（顺时针）
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
   \draw[line width=0.7pt] (0.35,2.55) -- (1.55,2.55);
   \draw[line width=0.9pt] (1.68,2.28) -- (1.68,2.82);
@@ -12635,6 +12678,10 @@ I_{\text{总}} = \frac{\varepsilon}{R + \frac{r}{n}}
   \draw[line width=0.7pt] (2.05,0.28) rectangle (3.05,0.62);
   \node[anchor=north,inner sep=1pt] at (2.55,0.24) {$R$};
   \draw[line width=0.7pt] (3.05,0.45) -- (3.55,0.45);
+  % I clockwise: left up, right down
+  \draw[line width=0.55pt,->] (0.35,1.15) -- (0.35,1.85);
+  \draw[line width=0.55pt,->] (5.85,1.85) -- (5.85,1.15);
+  \node[anchor=west,inner sep=2pt] at (5.85,1.50) {$I$};
 \end{tikzpicture}%
 }
 \caption{图2.60 含有反电动势的电路}
@@ -13943,7 +13990,7 @@ K & V读数 & A读数 \\
 \end{tikzpicture}%
 }
 
-\caption{图3.3 磁极}
+\caption{图3.3 磁性}
 \end{figure}
 
 \begin{figure}
@@ -14071,7 +14118,7 @@ K & V读数 & A读数 \\
 \end{tikzpicture}%
 }
 
-\caption{图3.6 没有独立的磁极}
+\caption{图3.6 没有孤立的磁极}
 \end{figure}
 
 示， 那么在折断处就会出现了两个异号磁极，
@@ -14186,27 +14233,51 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-% fig-alt: 图3.9：磁电应用——电表、扬声器、喇叭
+% fig-alt: 图3.9 磁性材料应用：(左)磁电式电表磁体+刻度；(中)扬声器磁体与纸盆；(右)显像管磁体
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.7pt] (-0.85,1.15) -- (0.85,1.15) -- (1.05,1.55) -- (-1.05,1.55) -- cycle;
-  \draw[line width=0.45pt] (-0.75,1.25) -- (0.75,1.25);
-  \foreach \x in {-0.6,-0.3,0,0.3,0.6}
-    \draw[line width=0.35pt] (\x,1.25) -- (\x,1.45);
-  \draw[line width=0.7pt] (0,0.55) circle (0.45);
-  \draw[line width=0.5pt] (0,0.55) -- (0.35,1.15);
-  \draw[->,line width=0.45pt] (-0.55,0.15) arc[start angle=200,end angle=340,radius=0.55];
-  \begin{scope}[xshift=2.4cm]
-    \draw[line width=0.7pt] (0,0.55) -- (0.85,1.55) -- (0.85,-0.45) -- cycle;
-    \draw[line width=0.55pt] (0,0.35) rectangle (0.35,0.75);
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  % --- meter ---
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.75pt]
+      (-1.05,0.15) -- (-1.05,1.55) -- (-0.35,1.55) -- (-0.35,1.05)
+      -- (0.35,1.05) -- (0.35,1.55) -- (1.05,1.55) -- (1.05,0.15)
+      -- (0.55,0.15) -- (0.55,0.55) -- (-0.55,0.55) -- (-0.55,0.15) -- cycle;
+    \draw[line width=0.55pt] (0,0.85) circle[radius=0.28];
+    \draw[line width=0.45pt] (-0.22,0.70) rectangle (0.22,1.00);
+    \draw[line width=0.5pt] (0,0.85) -- (0.15,1.55);
+    \draw[line width=0.45pt] (-0.55,1.55) arc[start angle=180,end angle=0,radius=0.55];
+    \foreach \a in {170,150,130,110,90,70,50} {
+      \draw[line width=0.3pt] (\a:0.48) -- (\a:0.58);
+    }
+    \node[above=1pt] at (-0.75,1.62) {0};
+    \node[above=1pt] at (0,1.68) {10};
+    \node[above=1pt] at (0.75,1.62) {20};
+    \node[left=1pt] at (-1.05,0.90) {磁体};
+    \node[below=1pt] at (-0.25,-0.05) {$-$};
+    \node[below=1pt] at (0.25,-0.05) {$+$};
+    \draw[line width=0.4pt] (-0.25,0.15) -- (-0.25,-0.05);
+    \draw[line width=0.4pt] (0.25,0.15) -- (0.25,-0.05);
   \end{scope}
-  \begin{scope}[xshift=4.3cm]
-    \draw[line width=0.7pt] (0,0.55) -- (0.95,1.25) -- (0.95,-0.15) -- cycle;
-    \draw[line width=0.55pt] (-0.25,0.55) -- (0,0.55);
+  % --- speaker ---
+  \begin{scope}[shift={(3.2,0.4)}]
+    \draw[line width=0.7pt,fill=white] (-0.55,0.15) rectangle (-0.15,0.85);
+    \node[left=1pt] at (-0.55,0.50) {磁体};
+    \draw[line width=0.55pt] (-0.15,0.35) rectangle (0.15,0.65);
+    \draw[line width=0.65pt] (0.15,0.50) -- (1.35,1.25) -- (1.35,-0.25) -- cycle;
+    \draw[line width=0.4pt] (0.55,0.85) -- (1.15,1.10);
+    \draw[line width=0.4pt] (0.55,0.15) -- (1.15,-0.10);
+  \end{scope}
+  % --- CRT yoke ---
+  \begin{scope}[shift={(6.0,0.35)}]
+    \draw[line width=0.7pt] (-0.85,0.15) -- (0.05,0.45) -- (0.05,-0.15) -- cycle;
+    \draw[line width=0.85pt,fill=black!25] (0.05,-0.05) rectangle (0.35,0.35);
+    \node[above=1pt] at (0.20,0.40) {磁体};
+    \draw[line width=0.65pt] (0.35,0.50) -- (1.45,1.05) -- (1.45,-0.55) -- (0.35,-0.20);
+    \fill[pattern=dots,pattern color=black!40] (0.55,-0.35) rectangle (1.35,0.85);
   \end{scope}
 \end{tikzpicture}%
 }
-\caption{图3.9 磁电材料的一些应用}
+\caption{图3.9 磁性材料的一些应用}
 \end{figure}
 
 近年来兴起的一种用途很广的非金属磁性材料叫铁氧体（又名铁淦氧）。由于它的制造过程类似陶瓷，所以又将其产品叫磁性瓷。
@@ -14817,18 +14888,31 @@ K & V读数 & A读数 \\
 
 \begin{figure}
 \centering
-% fig-alt: 图3.19：环形电流穿过纸板
+% fig-alt: 图3.19 环形电流穿纸板：左电流↑右↓；板上铁屑同心/椭圆磁力线
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (-1.55,0.15) -- (1.55,0.55) -- (1.55,-0.05) -- (-1.55,-0.45) -- cycle;
-  \draw[line width=0.75pt] (-0.55,0.15) arc[start angle=180,end angle=0,x radius=0.55,y radius=0.45];
-  \draw[line width=0.75pt] (-0.55,0.15) -- (-0.55,-0.85);
-  \draw[line width=0.75pt] (0.55,0.15) -- (0.55,-0.85);
-  \draw[->,line width=0.5pt] (-0.55,-1.15) -- (-0.55,-0.90);
-  \draw[->,line width=0.5pt] (0.55,-0.90) -- (0.55,-1.15);
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.7pt] (-1.85,0.22) -- (1.85,0.58) -- (1.85,-0.18) -- (-1.85,-0.54) -- cycle;
+  % stipple board
+  \foreach \x in {-1.6,-1.2,...,1.6} {
+    \foreach \y in {-0.35,-0.15,...,0.45} {
+      \fill[black!55] (\x+0.03*\y,\y+0.02*\x) circle[radius=0.012];
+    }
+  }
+  % field: small rings at pierce points + shared ellipses
+  \draw[line width=0.4pt] (-0.55,0.08) ellipse[x radius=0.18,y radius=0.10];
+  \draw[line width=0.4pt] (0.55,0.08) ellipse[x radius=0.18,y radius=0.10];
+  \draw[line width=0.4pt] (0,0.08) ellipse[x radius=0.42,y radius=0.22];
+  \draw[line width=0.4pt] (0,0.08) ellipse[x radius=0.62,y radius=0.32];
+  \draw[line width=0.4pt] (0,0.08) ellipse[x radius=0.82,y radius=0.40];
+  % loop
+  \draw[line width=0.85pt] (-0.55,0.18) arc[start angle=180,end angle=0,x radius=0.55,y radius=0.52];
+  \draw[line width=0.85pt] (-0.55,0.18) -- (-0.55,-1.00);
+  \draw[line width=0.85pt] (0.55,0.18) -- (0.55,-1.00);
+  \draw[line width=0.55pt,->] (-0.55,-1.28) -- (-0.55,-1.05);
+  \draw[line width=0.55pt,->] (0.55,-1.05) -- (0.55,-1.28);
 \end{tikzpicture}%
 }
-\caption{图3.19 对形电流的线中的磁力线}
+\caption{图3.19 环形电流的磁场中的磁力线}
 \end{figure}
 
 \begin{figure}
