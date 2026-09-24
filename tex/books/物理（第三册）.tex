@@ -2761,13 +2761,13 @@ r = \sqrt{2^{2}+2^{2}} \text{厘米} = 2.8 \times 10^{- 2} \text{米}
     \draw[line width=0.6pt] (0.12,\y) -- (4.95,\y);
     \draw[line width=0.6pt,->] (4.22,\y) -- (4.95,\y);
   }
-  \draw[line width=1.15pt] (1.32,1.12) -- (2.82,1.12);
   \draw[line width=0.7pt,fill=white] (1.26,1.12) circle[radius=0.075];
   \draw[line width=0.7pt,fill=white] (2.82,1.12) circle[radius=0.075];
   \node[above=2pt] at (1.26,1.18) {$A$};
   \node[above=2pt] at (2.82,1.18) {$B$};
-  \node[above=4pt] at (3.68,1.12) {$E$};
-  \node at (2.04,1.00) {$d$};
+  \node[above=4pt] at (3.68,1.12) {$\vec{E}$};
+  \draw[line width=0.5pt,<->] (1.26,0.78) -- (2.82,0.78);
+  \node[below=1pt] at (2.04,0.78) {$d$};
 \end{tikzpicture}%
 }
 \caption{图1.32 场强和电势差的关系}
@@ -2962,7 +2962,7 @@ U_{AC}=U_{AB}+U_{BC}=(200+174)\text{伏}=374\text{伏}.
   \foreach \x in {0.85,1.70,2.55,3.40,4.25,5.10,5.95} {
     \draw[line width=0.48pt,dashed] (\x,2.52) -- (\x,0.00);
   }
-  \node[above=5pt] at (0.85,2.52) {$U_1$};
+  \node[above=5pt] at (0.85,2.52) {$U_7$};
   \node[above=5pt] at (1.70,2.52) {$U_6$};
   \node[above=5pt] at (2.55,2.52) {$U_5$};
   \node[above=5pt] at (3.40,2.52) {$U_4$};
@@ -3181,16 +3181,18 @@ eV），要使氢原子中电子和质子分开所需的能量15.6eV等。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1.37 平行板A中部小孔，质子自左以v穿入，B板标+5000 V，A板下标0
+% fig-alt: 图1.37 平行板A中部小孔，质子+q自左以v穿入，B板+5000 V，A板0
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
-  \draw[line width=0.9pt] (0.00,1.15) -- (0.00,2.25);
-  \draw[line width=0.9pt] (0.00,-1.15) -- (0.00,-2.25);
+  \draw[line width=0.9pt] (0.00,0.28) -- (0.00,2.25);
+  \draw[line width=0.9pt] (0.00,-0.28) -- (0.00,-2.25);
   \draw[line width=0.9pt] (2.45,2.25) -- (2.45,-2.25);
   \node[above=2pt] at (0.00,2.25) {$A$};
   \node[above=2pt] at (2.45,2.25) {$B$};
-  \draw[line width=0.7pt,fill=white] (-1.55,0) circle[radius=0.13];
-  \draw[line width=0.65pt,->] (-1.38,0) -- (0.28,0);
-  \node[above=1pt] at (-0.72,0.02) {$v$};
+  \draw[line width=0.7pt,fill=white] (-1.55,0) circle[radius=0.16];
+  \node at (-1.55,0) {$+$};
+  \node[above=2pt] at (-1.55,0.16) {$+q$};
+  \draw[line width=0.65pt,->] (-1.35,0) -- (0.55,0);
+  \node[above=1pt] at (-0.40,0.02) {$v$};
   \node[below=2pt] at (0.00,-2.25) {$0$};
   \node[below=2pt] at (2.55,-2.25) {$+5000\,\mathrm{V}$};
 \end{tikzpicture}%
@@ -3241,15 +3243,16 @@ W=eU=1.6\times10^{-19}\times5000\text{焦耳}=8.0\times10^{-16}\text{焦耳}
     \node at (\x,1.40) {$+$};
   }
   \draw[line width=0.7pt] (0.35,-1.72) rectangle (3.15,-1.48);
-  \foreach \x in {0.70,1.16,1.62,2.08,2.54,3.00} {
-    \draw[line width=0.55pt] (\x-0.09,-1.60) -- (\x+0.09,-1.60);
+  \foreach \x in {0.62,1.08,1.54,2.00,2.46,2.92} {
+    \node at (\x,-1.60) {$-$};
   }
   \draw[line width=0.55pt,<->] (0.35,-1.98) -- (3.15,-1.98);
   \node[below=1pt] at (1.75,-1.98) {$l$};
   \draw[line width=0.6pt,->] (0.35,0) -- (0.35,1.08);
-  \node[left=1pt] at (0.35,0.70) {$Y$};
+  \node[left=1pt] at (0.35,0.70) {$y$};
+  \node[below left=1pt] at (0.35,0) {$O$};
   \draw[line width=0.6pt,->] (0.35,0) -- (6.55,0);
-  \node[below=1pt] at (6.35,0) {$X$};
+  \node[below=1pt] at (6.35,0) {$x$};
   \draw[line width=0.7pt,fill=white] (-0.95,0) circle[radius=0.13];
   \node at (-0.95,0) {$-$};
   \draw[line width=0.6pt,->] (-0.78,0) -- (-0.05,0);
@@ -3265,7 +3268,7 @@ W=eU=1.6\times10^{-19}\times5000\text{焦耳}=8.0\times10^{-16}\text{焦耳}
   \draw[line width=0.55pt,->] (3.15,0.58) -- (3.15,1.08);
   \node[left=1pt] at (3.15,1.00) {$v_y$};
   \draw[line width=0.55pt,->] (3.15,0.58) -- (4.15,0.58);
-  \node[above=1pt] at (4.02,0.62) {$v_0$};
+  \node[above=1pt] at (4.02,0.62) {$v_x$};
   \draw[line width=0.55pt,->] (3.15,0.58) -- (4.25,1.22);
   \node[above=1pt] at (3.95,1.12) {$v$};
   \draw[line width=0.45pt] (3.52,0.58) arc[start angle=0,end angle=28,radius=0.37];
@@ -3506,28 +3509,50 @@ v_{y} = a t = 3.5 \times 10^{15} \times 1.0 \times 10^{- 9} \text{米/秒}
 
 \begin{figure}
 \centering
-% fig-alt: 图1.42：密立根油滴实验（平行板 $A,B$）
+% fig-alt: 图1.42 密立根：喷雾器喷油滴入A板小孔；平行板A(+)/B(−)；滴上qE↑、mg↓；右接电池与接地；右下显微镜
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,1.55) ellipse [x radius=1.15,y radius=0.22];
-  \draw[line width=0.75pt] (0,0.15) ellipse [x radius=1.15,y radius=0.22];
-  \node[anchor=east] at (-1.20,1.55) {$A$};
-  \node[anchor=east] at (-1.20,0.15) {$B$};
-  \draw[->,line width=0.5pt] (0,1.15) -- (0,0.55);
-  \node[anchor=west] at (0.08,0.95) {$qE$};
-  \draw[->,line width=0.5pt] (0,0.85) -- (0,0.45);
-  \node[anchor=east] at (-0.08,0.55) {$mg$};
-  \draw[line width=0.5pt] (1.15,1.55) -- (1.85,1.55) -- (1.85,0.85);
-  \draw[line width=0.5pt] (1.15,0.15) -- (1.85,0.15) -- (1.85,0.55);
-  \draw[line width=0.5pt] (1.70,0.85) -- (1.70,0.55);
-  \foreach \y in {0.55,0.70,0.85}
-    \draw[line width=0.4pt] (1.62,\y) -- (1.78,\y);
-  \draw[line width=0.5pt] (1.85,0.35) -- (1.85,0.05);
-  \draw[line width=0.4pt] (1.75,0.05) -- (1.95,0.05);
-  \draw[line width=0.4pt] (1.78,-0.05) -- (1.92,-0.05);
-  \node[anchor=west] at (0.35,1.55) {油滴};
-  \node[anchor=west] at (1.15,-0.45) {显微镜};
-  \draw[line width=0.55pt] (0.85,-0.55) -- (1.15,-0.25);
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  % plates
+  \draw[line width=0.85pt,fill=white] (0,1.70) ellipse[x radius=1.35,y radius=0.22];
+  \draw[line width=0.85pt,fill=white] (0,0.05) ellipse[x radius=1.35,y radius=0.22];
+  \node[left=2pt] at (-1.35,1.70) {$A$};
+  \node[left=2pt] at (-1.35,0.05) {$B$};
+  % hole on A (small ellipse)
+  \draw[line width=0.45pt,fill=white] (0,1.70) ellipse[x radius=0.14,y radius=0.06];
+  % atomizer above A
+  \draw[line width=0.55pt] (-0.55,2.55) .. controls (-0.35,2.35) and (-0.15,2.15) .. (0.05,1.95);
+  \draw[line width=0.55pt] (-0.45,2.60) .. controls (-0.25,2.40) and (-0.05,2.20) .. (0.12,2.00);
+  \foreach \p in {(-0.15,2.15),(0.05,2.05),(0.20,2.20),(-0.05,2.30),(0.12,2.35),(0.00,2.45)} {
+    \fill \p circle[radius=0.025];
+  }
+  \node[right=1pt] at (0.35,2.15) {油滴};
+  \draw[line width=0.35pt] (0.35,2.10) -- (0.12,1.95);
+  % suspended drop + forces
+  \fill (0,0.90) circle[radius=0.045];
+  \draw[line width=0.55pt,->] (0,0.90) -- (0,1.45);
+  \node[right=1pt] at (0.05,1.25) {$qE$};
+  \draw[line width=0.55pt,->] (0,0.90) -- (0,0.35);
+  \node[left=1pt] at (-0.05,0.55) {$mg$};
+  % circuit to the right: A to +, B to − and ground
+  \draw[line width=0.55pt] (1.35,1.70) -- (2.15,1.70) -- (2.15,1.15);
+  \draw[line width=0.55pt] (1.35,0.05) -- (2.15,0.05) -- (2.15,0.55);
+  % battery (long=+ short=−), A on +
+  \foreach \i/\len in {0/0.28,1/0.16,2/0.28,3/0.16} {
+    \draw[line width=0.7pt] ({2.00},{1.10-0.14*\i}) -- ({2.00+\len},{1.10-0.14*\i});
+  }
+  \draw[line width=0.55pt] (2.15,0.55) -- (2.15,0.25);
+  % ground on B side
+  \draw[line width=0.5pt] (2.15,0.25) -- (2.15,-0.05);
+  \draw[line width=0.5pt] (1.95,-0.05) -- (2.35,-0.05);
+  \draw[line width=0.5pt] (2.00,-0.14) -- (2.30,-0.14);
+  \draw[line width=0.5pt] (2.05,-0.23) -- (2.25,-0.23);
+  % microscope angled up toward gap
+  \begin{scope}[shift={(1.55,-0.85)},rotate=50]
+    \draw[line width=0.6pt] (0,0) -- (0.95,0);
+    \draw[line width=0.6pt] (0.95,-0.12) rectangle (1.35,0.12);
+    \draw[line width=0.55pt] (0,-0.10) -- (0,0.10);
+  \end{scope}
+  \node[right=1pt] at (2.35,-1.05) {显微镜};
 \end{tikzpicture}%
 }
 \caption{图1.42 密立根实验装置原理图}
@@ -3621,7 +3646,7 @@ m = \frac{4}{3} \pi r^{3} \rho
 \end{enumerate}
 
 4
-在附图中，左边是发射电子的阴极，阴极发射的电子流被加速飞向三根。（1）求电子通过A板中间小孔时的动能，（2）电子在从A板飞向B板时，动能有无变化？（3）电子穿过B板中间小孔内后能打到C板上吗？（4）若
+在附图中，左边是发射电子的阴极，阴极发射的电子流被加速飞向阳极。（1）求电子通过A板中间小孔时的动能，（2）电子在从A板飞向B板时，动能有无变化？（3）电子穿过B板中间小孔后再能打到C板上吗？（4）若
 \(U_{2}\) 改为大于100伏，情况又怎样？
 
 \begin{figure}
@@ -3681,17 +3706,15 @@ m = \frac{4}{3} \pi r^{3} \rho
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第5题 电压U随时间t由-U沿直线升到+U，过t轴处有黑点，+U处水平虚线、终点处竖直虚线
+% fig-alt: 第5题 电压u随时间t由−U直线升到+U，过t轴黑点；至+U后竖直回落到t轴再沿t轴延伸
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
   \draw[line width=0.7pt,->] (0,-2.05) -- (0,2.25);
-  \draw[line width=0.7pt,->] (0,0) -- (4.85,0);
-  \node[above left=1pt] at (0,2.25) {$U$};
-  \node[right=1pt] at (4.85,0) {$t$};
+  \draw[line width=0.55pt,dashed,->] (0,0) -- (5.20,0);
+  \node[above left=1pt] at (0,2.25) {$u$};
+  \node[right=1pt] at (5.20,0) {$t$};
   \node[left=2pt] at (0,1.55) {$+U$};
   \node[left=2pt] at (0,-1.55) {$-U$};
-  \draw[line width=0.55pt,dashed] (0,1.55) -- (3.35,1.55);
-  \draw[line width=0.55pt,dashed] (3.35,1.55) -- (3.35,0);
-  \draw[line width=0.75pt] (0,-1.55) -- (3.35,1.55);
+  \draw[line width=0.75pt] (0,-1.55) -- (3.35,1.55) -- (3.35,0) -- (4.85,0);
   \fill (1.675,0) circle[radius=0.06];
 \end{tikzpicture}%
 }
@@ -3846,16 +3869,20 @@ x = y / \mathrm{tg} \varphi . \text{］}
 
 \begin{figure}
 \centering
-% fig-alt: 图1.44：导体内电荷互相推斥移向表面
+% fig-alt: 图1.44 导体截面内四负电荷互相推斥外移；绝缘支座全剖面线
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0.55) circle (1.05);
-  \fill[pattern=north east lines,pattern color=black!40] (-0.28,-0.55) rectangle (0.28,-1.35);
-  \draw[line width=0.7pt] (-0.45,-1.45) rectangle (0.45,-1.55);
+\begin{tikzpicture}[line cap=round,line join=round,>=latex]
+  \draw[line width=0.75pt] (0,0.55) circle[radius=1.05];
+  \fill[pattern=north east lines,pattern color=black!55]
+    (-0.28,-0.55) -- (-0.28,-1.40) -- (-0.50,-1.40) -- (-0.50,-1.58)
+    -- (0.50,-1.58) -- (0.50,-1.40) -- (0.28,-1.40) -- (0.28,-0.55) -- cycle;
+  \draw[line width=0.65pt]
+    (-0.28,-0.55) -- (-0.28,-1.40) -- (-0.50,-1.40) -- (-0.50,-1.58)
+    -- (0.50,-1.58) -- (0.50,-1.40) -- (0.28,-1.40) -- (0.28,-0.55);
   \foreach \a in {40,140,220,320} {
-    \draw[line width=0.55pt] (\a:0.45) circle (0.12);
+    \draw[line width=0.55pt,fill=white] (\a:0.45) circle[radius=0.13];
     \node at (\a:0.45) {$-$};
-    \draw[->,line width=0.5pt] (\a:0.60) -- (\a:0.95);
+    \draw[->,line width=0.5pt] (\a:0.62) -- (\a:0.95);
   }
 \end{tikzpicture}%
 }
