@@ -4359,17 +4359,34 @@ U = k \frac{Q}{\varepsilon_{r} r}. \tag{1.26}
 
 \begin{figure}
 \centering
-% fig-alt: 图1.51：两圆柱导体（细、粗）
+% fig-alt: 图1.51 细、粗量筒同高液面，示电容类比
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) ellipse [x radius=0.22,y radius=0.08];
-  \draw[line width=0.75pt] (-0.22,0) -- (-0.22,2.35);
-  \draw[line width=0.75pt] (0.22,0) -- (0.22,2.35);
-  \draw[line width=0.75pt] (0,2.35) ellipse [x radius=0.22,y radius=0.08];
-  \draw[line width=0.75pt] (1.35,0) ellipse [x radius=0.38,y radius=0.10];
-  \draw[line width=0.75pt] (0.97,0) -- (0.97,2.35);
-  \draw[line width=0.75pt] (1.73,0) -- (1.73,2.35);
-  \draw[line width=0.75pt] (1.35,2.35) ellipse [x radius=0.38,y radius=0.10];
+  % base
+  \draw[line width=0.7pt] (-0.55,-0.18) -- (2.25,-0.18);
+  % narrow cylinder
+  \draw[line width=0.7pt] (0,0) ellipse[x radius=0.28,y radius=0.09];
+  \draw[line width=0.7pt] (-0.28,0) -- (-0.28,2.40);
+  \draw[line width=0.7pt] (0.28,0) -- (0.28,2.40);
+  \draw[line width=0.7pt] (0,2.40) ellipse[x radius=0.28,y radius=0.09];
+  \foreach \y in {0.25,0.50,...,2.25} {
+    \draw[line width=0.25pt] (-0.28,\y) -- (-0.18,\y);
+    \draw[line width=0.25pt] (0.18,\y) -- (0.28,\y);
+  }
+  % liquid same height h≈1.15
+  \fill[black!18] (-0.28,0) -- (-0.28,1.15) -- (0.28,1.15) -- (0.28,0) -- cycle;
+  \draw[line width=0.45pt,dashed] (-0.28,1.15) -- (0.28,1.15);
+  % wide cylinder
+  \draw[line width=0.7pt] (1.45,0) ellipse[x radius=0.52,y radius=0.11];
+  \draw[line width=0.7pt] (0.93,0) -- (0.93,2.40);
+  \draw[line width=0.7pt] (1.97,0) -- (1.97,2.40);
+  \draw[line width=0.7pt] (1.45,2.40) ellipse[x radius=0.52,y radius=0.11];
+  \foreach \y in {0.25,0.50,...,2.25} {
+    \draw[line width=0.25pt] (0.93,\y) -- (1.05,\y);
+    \draw[line width=0.25pt] (1.85,\y) -- (1.97,\y);
+  }
+  \fill[black!18] (0.93,0) -- (0.93,1.15) -- (1.97,1.15) -- (1.97,0) -- cycle;
+  \draw[line width=0.45pt,dashed] (0.93,1.15) -- (1.97,1.15);
 \end{tikzpicture}%
 }
 \caption{图1.51}
@@ -4485,7 +4502,8 @@ Q 跟两板之
   \node[above=1pt] at (2.49,2.69) {$B$};
   \foreach \y in {0.58,0.98,1.38,1.78,2.18} {
     \node[inner sep=0pt] at (0.30,\y) {\scriptsize $+$};
-    \draw[line width=0.55pt,->] (0.42,\y) -- (2.22,\y);
+    \node[inner sep=0pt] at (2.40,\y) {\scriptsize $-$};
+    \draw[line width=0.55pt,->] (0.48,\y) -- (2.18,\y);
   }
   \draw[line width=0.7pt] (2.70,0.32) -- (3.38,0.32) -- (3.38,-0.08);
   \draw[line width=0.7pt] (3.08,-0.08) -- (3.72,-0.08);
@@ -4523,24 +4541,47 @@ C = \frac{Q}{U_{A B}} \tag{1.28}
 
 \begin{figure}
 \centering
-% fig-alt: 图1.53：平行板电容器 $A,B$ 接静电计 $C$
+% fig-alt: 图1.53 平行板 A(−)/B(+) 可变间距底座；B 接静电计顶球 C，A 与外壳 Z 接地；杆 D、指针 M
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0.15) ellipse [x radius=0.55,y radius=0.12];
-  \draw[line width=0.55pt] (0,0.15) -- (0,0.85);
-  \draw[line width=0.75pt] (0.55,0.15) ellipse [x radius=0.55,y radius=0.12];
-  \draw[line width=0.55pt] (0.55,0.15) -- (0.55,0.85);
-  \draw[line width=0.7pt] (-0.35,-0.25) rectangle (0.90,0);
-  \node[anchor=south] at (0,0.95) {$A$};
-  \node[anchor=south] at (0.55,0.95) {$B$};
-  \node[anchor=east] at (-0.15,0.55) {$-$};
-  \node[anchor=west] at (0.70,0.55) {$+$};
-  \draw[line width=0.5pt] (0,0.85) .. controls (-0.85,1.55) and (1.15,1.85) .. (2.15,1.15);
-  \draw[line width=0.5pt] (0.55,0) .. controls (1.15,-0.35) and (2.35,-0.15) .. (2.35,0.35);
-  \draw[line width=0.7pt] (2.35,0.55) circle (0.45);
-  \draw[line width=0.5pt] (2.35,0.55) -- (2.20,0.85);
-  \draw[line width=0.5pt] (2.35,0.55) -- (2.50,0.85);
-  \node[anchor=south] at (2.35,1.05) {$C$};
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  % base with track
+  \draw[line width=0.7pt] (-0.85,-0.15) rectangle (1.55,0.12);
+  \foreach \x in {-0.55,-0.25,0.05,0.35,0.65,0.95,1.25} {
+    \draw[line width=0.25pt] (\x,-0.15) -- (\x,0.12);
+  }
+  % plate A (left, −)
+  \draw[line width=0.75pt,fill=white] (-0.35,0.12) ellipse[x radius=0.42,y radius=0.10];
+  \draw[line width=0.55pt] (-0.35,0.12) -- (-0.35,1.05);
+  \draw[line width=0.75pt,fill=white] (-0.35,1.05) ellipse[x radius=0.42,y radius=0.10];
+  \node[above=1pt] at (-0.35,1.18) {$A$};
+  \node[left=1pt] at (-0.55,0.60) {$-$};
+  % plate B (right, +)
+  \draw[line width=0.75pt,fill=white] (0.95,0.12) ellipse[x radius=0.42,y radius=0.10];
+  \draw[line width=0.55pt] (0.95,0.12) -- (0.95,1.05);
+  \draw[line width=0.75pt,fill=white] (0.95,1.05) ellipse[x radius=0.42,y radius=0.10];
+  \node[above=1pt] at (0.95,1.18) {$B$};
+  \node[right=1pt] at (1.15,0.60) {$+$};
+  % electrometer
+  \draw[line width=0.75pt] (3.35,0.55) circle[radius=0.72];
+  \node[right=2pt] at (4.05,0.55) {$Z$};
+  % scale ticks inside
+  \foreach \a in {100,110,120,130,140} {
+    \draw[line width=0.3pt] (3.35,0.55) ++(\a:0.48) -- ++(\a:0.18);
+  }
+  \draw[line width=0.55pt] (3.35,0.55) -- (3.35,1.55);
+  \draw[line width=0.7pt,fill=white] (3.35,1.55) circle[radius=0.12];
+  \node[above=1pt] at (3.35,1.70) {$C$};
+  \node[left=1pt] at (3.28,1.05) {$D$};
+  \draw[line width=0.55pt] (3.35,0.55) -- (3.85,1.05);
+  \node[right=1pt] at (3.85,1.10) {$M$};
+  % wires: B to C; A to Z + ground
+  \draw[line width=0.5pt] (0.95,1.05) .. controls (1.85,1.85) and (2.75,1.85) .. (3.35,1.55);
+  \draw[line width=0.5pt] (-0.35,0.55) .. controls (-0.85,0.15) and (2.20,-0.35) .. (3.35,-0.05);
+  \draw[line width=0.5pt] (3.35,-0.05) -- (3.35,0.55);
+  \draw[line width=0.5pt] (-0.85,0.15) -- (-1.15,0.15) -- (-1.15,-0.15);
+  \draw[line width=0.5pt] (-1.35,-0.15) -- (-0.95,-0.15);
+  \draw[line width=0.5pt] (-1.28,-0.28) -- (-1.02,-0.28);
+  \draw[line width=0.5pt] (-1.22,-0.40) -- (-1.08,-0.40);
 \end{tikzpicture}%
 }
 \caption{图1.53}
@@ -5143,25 +5184,30 @@ Q_{2} = 2.2 \text{微库}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1.59 印刷页87。矩形叠片，板间斜线电介质；左引线较高标+，右引线低一板标-。OCR题注「荷守」与印刷「多片电容器并联」不符，题注未改
+% fig-alt: 图1.59 多片电容器并联。七金属片隔电介质；奇数片左连+，偶数片右连−
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
-  \begin{scope}
-    \clip (0.05,0.05) rectangle (3.15,2.35);
-    \foreach \k in {0,1,...,22} {
-      \draw[line width=0.28pt] (-0.45+0.18*\k,2.58) -- (0.30+0.18*\k,-0.18);
-    }
-  \end{scope}
-  \draw[line width=0.75pt] (0,0) rectangle (3.20,2.40);
-  \foreach \y in {0.32,0.64,0.96,1.28,1.60,1.92,2.16} {
-    \draw[line width=0.8pt] (0,\y) -- (3.20,\y);
+  % dielectric bands between plates
+  \foreach \ya/\yb in {0.04/0.34,0.42/0.72,0.80/1.10,1.18/1.48,1.56/1.86,1.94/2.24} {
+    \fill[pattern=dots,pattern color=black!45] (0.08,\ya) rectangle (3.12,\yb);
   }
-  \draw[line width=0.7pt] (-0.78,1.60) -- (0,1.60);
-  \node[anchor=south,inner sep=0.6pt] at (-0.22,1.64) {$+$};
-  \draw[line width=0.7pt] (3.20,0.96) -- (4.02,0.96);
-  \node[anchor=south,inner sep=0.6pt] at (3.36,1.00) {$-$};
+  % seven plates
+  \foreach \y in {0.00,0.38,0.76,1.14,1.52,1.90,2.28} {
+    \draw[line width=0.85pt] (0,\y) -- (3.20,\y);
+  }
+  % left bus: odd plates from top: 2.28,1.52,0.76,0.00 → +
+  \draw[line width=0.7pt] (0,2.28) -- (-0.35,2.28) -- (-0.35,0.00) -- (0,0.00);
+  \draw[line width=0.7pt] (-0.35,1.52) -- (0,1.52);
+  \draw[line width=0.7pt] (-0.35,0.76) -- (0,0.76);
+  \draw[line width=0.7pt] (-0.95,1.14) -- (-0.35,1.14);
+  \node[left=1pt] at (-0.95,1.14) {$+$};
+  % right bus: even plates 1.90,1.14,0.38 → −
+  \draw[line width=0.7pt] (3.20,1.90) -- (3.55,1.90) -- (3.55,0.38) -- (3.20,0.38);
+  \draw[line width=0.7pt] (3.55,1.14) -- (3.20,1.14);
+  \draw[line width=0.7pt] (3.55,1.14) -- (4.15,1.14);
+  \node[right=1pt] at (4.15,1.14) {$-$};
 \end{tikzpicture}%
 }
-\caption{图1.59 荷守电容器并联}
+\caption{图1.59 多片电容器并联}
 \end{figure}
 
 \shulihuahang{［解］}
@@ -6144,8 +6190,8 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
   \draw[line width=0.75pt] (0.55,0) rectangle (0.85,1.15);
   \node at (-0.70,0.55) {$+$};
   \node at (0.70,0.55) {$-$};
-  \node[anchor=north] at (-0.70,-0.05) {$A$};
-  \node[anchor=north] at (0.70,-0.05) {$B$};
+  \node[above=2pt] at (-0.70,1.15) {$A$};
+  \node[above=2pt] at (0.70,1.15) {$B$};
   \draw[line width=0.7pt] (-0.70,1.15) -- (-0.70,1.85) -- (0.70,1.85) -- (0.70,1.15);
   \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (-0.55,1.15) -- (-0.55,1.70) -- (0.55,1.70) -- (0.55,1.15);
   \draw[->,line width=0.5pt] (-0.25,1.85) -- (0.25,1.85);
@@ -6202,7 +6248,7 @@ A 板时电势能}}\_（填``增加''或``减少''）了\_\_\_\_焦耳。
   \node[anchor=north] at (1.08,-0.45) {$U_1>U_2$};
 \end{tikzpicture}%
 }
-\caption{图2.2 瞬时电发}
+\caption{图2.2 瞬时电流}
 \end{figure}
 
 \begin{figure}
@@ -6347,7 +6393,7 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2.5元件符号印刷页106。左上十字无结点，右为竖线穿两条横线且两交点有黑点。左列电铃、电池（长线、短线）及细长线表示正极；右列电动机圆内M、电池组及短电线表示负极。底行电灯（圆内叉）、电键一刀抬起留缺口、一刀较平。题注未改
+% fig-alt: 图2.5元件符号印刷页106。左上十字无结点，右为竖线穿两条横线且两交点有黑点。左列电铃、电池（长线、短线）及细长线表示正极；右列电动机圆内M、电池组及短粗线表示负极。底行电灯（圆内叉）、电键一刀抬起留缺口、一刀较平。题注未改
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
   \draw[line width=0.7pt] (0.15,7.55) -- (1.85,7.55);
   \draw[line width=0.7pt] (1.00,8.25) -- (1.00,6.85);
