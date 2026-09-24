@@ -7395,29 +7395,48 @@ B；在包含电源的导线上，电流从低电势体 B 流向高电势体 A�
 
 \begin{figure}
 \centering
-% fig-alt: 图2.13：安培表、伏特表与导线圈测 $I$--$U$
+% fig-alt: 图2.13 安培表串入干路，伏特表并接导线圈 PQ，底电池组；标 I
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.7pt] (0,1.55) rectangle (1.15,2.45);
-  \draw[line width=0.55pt] (0.58,2.00) circle (0.28);
-  \draw[line width=0.4pt] (0.58,2.00) -- (0.78,2.18);
-  \node[anchor=south] at (0.58,2.50) {安培表};
-  \draw[line width=0.7pt] (2.15,1.55) rectangle (3.30,2.45);
-  \draw[line width=0.55pt] (2.72,2.00) circle (0.28);
-  \draw[line width=0.4pt] (2.72,2.00) -- (2.92,2.18);
-  \node[anchor=south] at (2.72,2.50) {伏特表};
-  \draw[line width=0.55pt] (0.20,1.55) -- (0.20,0.85) -- (1.55,0.85);
-  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=3pt},line width=0.6pt] (1.55,0.85) -- (2.85,0.85);
-  \node[anchor=north] at (2.20,0.80) {导线圈};
-  \node[anchor=east] at (1.55,0.85) {$P$};
-  \node[anchor=west] at (2.85,0.85) {$Q$};
-  \draw[line width=0.55pt] (2.85,0.85) -- (3.10,0.85) -- (3.10,1.55);
-  \draw[line width=0.55pt] (2.35,1.55) -- (2.35,1.15) -- (1.55,1.15) -- (1.55,0.85);
-  \draw[line width=0.55pt] (0.20,0.85) -- (0.20,0.25) -- (1.55,0.25);
-  \foreach \x in {1.45,1.58,1.71,1.84} \draw[line width=0.55pt] (\x,0.10) -- (\x,0.40);
-  \node[anchor=north] at (1.65,0.08) {电池组};
-  \draw[->,line width=0.45pt] (0.45,0.55) -- (0.85,0.55);
-  \node[anchor=south] at (0.65,0.55) {$I$};
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  % ammeter box
+  \draw[line width=0.7pt] (0.15,1.85) rectangle (1.35,2.85);
+  \draw[line width=0.45pt] (0.35,2.55) arc[start angle=160,end angle=20,radius=0.55];
+  \draw[line width=0.45pt,->] (0.75,2.15) -- (1.05,2.55);
+  \node at (0.75,2.25) {$A$};
+  \node[above=1pt] at (0.75,2.85) {安培表};
+  \fill (0.45,1.85) circle (1.2pt);
+  \fill (1.05,1.85) circle (1.2pt);
+  % voltmeter box
+  \draw[line width=0.7pt] (2.35,1.85) rectangle (3.55,2.85);
+  \draw[line width=0.45pt] (2.55,2.55) arc[start angle=160,end angle=20,radius=0.55];
+  \draw[line width=0.45pt,->] (2.95,2.15) -- (3.25,2.55);
+  \node at (2.95,2.25) {$V$};
+  \node[above=1pt] at (2.95,2.85) {伏特表};
+  \fill (2.65,1.85) circle (1.2pt);
+  \fill (3.25,1.85) circle (1.2pt);
+  % main loop
+  \draw[line width=0.55pt,->] (-0.35,1.35) -- (0.15,1.35);
+  \node[above=1pt] at (-0.10,1.35) {$I$};
+  \draw[line width=0.55pt] (0.15,1.35) -- (0.45,1.35) -- (0.45,1.85);
+  \draw[line width=0.55pt] (1.05,1.85) -- (1.05,1.35) -- (1.55,1.35);
+  \fill (1.55,1.35) circle (1.35pt);
+  \node[below left=1pt] at (1.55,1.35) {$P$};
+  \draw[decorate,decoration={coil,aspect=0.42,segment length=3.8pt,amplitude=2.8pt},line width=0.6pt]
+    (1.55,1.35) -- (3.15,1.35);
+  \fill (3.15,1.35) circle (1.35pt);
+  \node[below right=1pt] at (3.15,1.35) {$Q$};
+  \node[below=2pt] at (2.35,1.20) {导线圈};
+  % V across PQ
+  \draw[line width=0.55pt] (2.65,1.85) -- (2.65,1.55) -- (1.55,1.55) -- (1.55,1.35);
+  \draw[line width=0.55pt] (3.25,1.85) -- (3.25,1.55) -- (3.15,1.55) -- (3.15,1.35);
+  \draw[line width=0.55pt] (3.15,1.35) -- (3.85,1.35) -- (3.85,0.35) -- (2.35,0.35);
+  \draw[line width=0.55pt] (1.55,1.35) -- (1.55,0.85) -- (0.15,0.85) -- (0.15,0.35) -- (1.15,0.35);
+  % battery
+  \foreach \i/\lo/\sh in {0/0.22/0.12,1/0.22/0.12,2/0.22/0.12} {
+    \draw[line width=0.7pt] ({1.25+0.35*\i},0.18) -- ({1.25+0.35*\i},0.18+\lo);
+    \draw[line width=0.7pt] ({1.40+0.35*\i},0.28) -- ({1.40+0.35*\i},0.28+\sh);
+  }
+  \node[below=2pt] at (1.75,0.10) {电池组};
 \end{tikzpicture}%
 }
 \caption{图2.13 研究电流和电压的关系}
@@ -8492,18 +8511,15 @@ BO，它们的电阻分别为 \(R_{1}\) 和 \(R_{2}\) .
   \draw[line width=0.7pt] (4.15,2.40) -- (4.45,2.40);
   \draw[line width=0.55pt,->] (4.45,2.40) -- (4.92,2.40);
   \node[anchor=south,inner sep=1pt] at (4.78,2.48) {$I$};
-  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (0.82,2.40) -- (0.82,0.72);
-  \draw[line width=0.55pt,->] (0.82,0.72) -- (0.82,0.42);
-  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (2.52,2.40) -- (2.52,1.28);
-  \draw[line width=0.55pt,->] (2.52,1.28) -- (2.52,1.02);
-  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (4.15,2.40) -- (4.15,0.72);
-  \draw[line width=0.55pt,->] (4.15,0.72) -- (4.15,0.42);
-  \draw[line width=0.55pt,->] (0.96,1.58) -- (2.40,1.58);
-  \node[anchor=south,inner sep=1pt] at (1.68,1.62) {$U_1$};
-  \draw[line width=0.55pt,->] (2.64,1.58) -- (4.02,1.58);
-  \node[anchor=south,inner sep=1pt] at (3.34,1.62) {$U_2$};
-  \draw[line width=0.55pt,->] (0.96,0.88) -- (4.02,0.88);
-  \node[anchor=south,inner sep=1pt] at (2.50,0.92) {$U$};
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (0.82,2.40) -- (0.82,0.55);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (2.52,2.40) -- (2.52,0.55);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (4.15,2.40) -- (4.15,0.55);
+  \draw[line width=0.55pt,<->] (0.82,1.55) -- (2.52,1.55);
+  \node[anchor=south,inner sep=1pt] at (1.67,1.58) {$U_1$};
+  \draw[line width=0.55pt,<->] (2.52,1.55) -- (4.15,1.55);
+  \node[anchor=south,inner sep=1pt] at (3.34,1.58) {$U_2$};
+  \draw[line width=0.55pt,<->] (0.82,0.72) -- (4.15,0.72);
+  \node[anchor=south,inner sep=1pt] at (2.48,0.76) {$U$};
 \end{tikzpicture}%
 }
 \caption{图2.21 串联导体组}
@@ -8627,11 +8643,9 @@ U。这就是说：在并联电路里，各个分路两端的电压都相同。
   \draw[line width=0.7pt] (2.05,1.44) rectangle (2.88,1.80);
   \node[anchor=south,inner sep=1pt] at (2.46,1.82) {$R_2$};
   \draw[line width=0.7pt] (2.88,1.62) -- (3.55,1.62) -- (4.42,2.20);
-  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (0.82,2.20) -- (0.82,0.62);
-  \draw[line width=0.55pt,->] (0.82,0.62) -- (0.82,0.32);
-  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (4.42,2.20) -- (4.42,0.62);
-  \draw[line width=0.55pt,->] (4.42,0.62) -- (4.42,0.32);
-  \draw[line width=0.55pt,->] (1.02,0.72) -- (4.22,0.72);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (0.82,2.20) -- (0.82,0.55);
+  \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.4pt] (4.42,2.20) -- (4.42,0.55);
+  \draw[line width=0.55pt,<->] (0.82,0.72) -- (4.42,0.72);
   \node[anchor=south,inner sep=1pt] at (2.62,0.76) {$U$};
 \end{tikzpicture}%
 }
@@ -9795,102 +9809,85 @@ J_{2} = \frac{U_{A C}^{\prime}}{R_{x}} = 0.12 \text{安}
 \begin{figure}[htbp]
 \centering
 \fitfig{%
-% fig-alt: 图2.35 化学电源的工作过程：(a) 初始状态；(b) 极板电荷积累；(c) 达到动态平衡；(d) 接通外电路形成恒定电流
-\begin{tikzpicture}[line cap=round,line join=round,>=latex]
-  % (a)
+% fig-alt: 图2.35 化学电源。(a) F化向左；(b) F化>F电；(c) F化=F电；(d) 外接 R，F化>F电
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  % helper: one cell
+  % (a) sparse charges, only F化 left
   \begin{scope}[shift={(0,0)}]
-    \draw[line width=0.7pt] (0.15,0.35) rectangle (0.58,2.85);
-    \draw[line width=0.7pt] (2.42,0.35) rectangle (2.85,2.85);
-    \node[anchor=north,inner sep=1pt] at (0.36,0.28) {$A$};
-    \node[anchor=north,inner sep=1pt] at (2.64,0.28) {$B$};
-    \node[inner sep=0.4pt] at (2.64,2.35) {$-$};
-    \node[inner sep=0.4pt] at (2.64,1.55) {$-$};
-    \node[inner sep=0.4pt] at (2.64,0.75) {$-$};
-    \node[inner sep=0.4pt] at (1.85,2.05) {$+$};
-    \node[inner sep=0.4pt] at (1.85,1.15) {$+$};
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.55,2.45) -- (0.78,2.45);
-    \draw[line width=0.55pt,->] (1.62,1.55) -- (0.78,1.55);
-    \draw[line width=0.55pt,->] (1.62,0.75) -- (0.78,0.75);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.55,-0.28) -- (0.95,-0.28);
-    \node[anchor=south,inner sep=0.6pt] at (1.28,-0.22) {$F_d$};
-    \node[anchor=north] at (1.5,-0.55) {$(a)$};
+    \draw[line width=0.7pt] (0.20,0.40) rectangle (0.55,2.70);
+    \draw[line width=0.7pt] (2.25,0.40) rectangle (2.60,2.70);
+    \node[below=1pt] at (0.38,0.40) {$A$};
+    \node[below=1pt] at (2.42,0.40) {$B$};
+    \node at (0.38,2.20) {$+$};
+    \node at (0.38,1.55) {$+$};
+    \node at (2.42,2.20) {$-$};
+    \node at (2.42,1.55) {$-$};
+    \node at (2.42,0.90) {$-$};
+    \foreach \y in {2.20,1.55,0.90} {
+      \draw[line width=0.55pt,->] (1.95,\y) -- (0.75,\y);
+    }
+    \node[below=2pt] at (1.40,0.55) {$F_{\text{化}}$};
+    \node[below=3pt] at (1.40,0.05) {$(a)$};
   \end{scope}
-  % (b)
-  \begin{scope}[shift={(3.4,0)}]
-    \draw[line width=0.7pt] (0.15,0.55) rectangle (0.58,3.05);
-    \draw[line width=0.7pt] (2.55,0.55) rectangle (2.98,3.05);
-    \node[anchor=north,inner sep=1pt] at (0.36,0.48) {$A$};
-    \node[anchor=north,inner sep=1pt] at (2.76,0.48) {$B$};
-    \node[inner sep=0.4pt] at (0.36,2.55) {$+$};
-    \node[inner sep=0.4pt] at (0.36,1.75) {$+$};
-    \node[inner sep=0.4pt] at (0.36,0.95) {$+$};
-    \node[inner sep=0.4pt] at (2.76,2.55) {$-$};
-    \node[inner sep=0.4pt] at (2.76,1.75) {$-$};
-    \node[inner sep=0.4pt] at (2.76,0.95) {$-$};
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.55,2.75) -- (0.78,2.75);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.18,2.35) -- (2.35,2.35);
-    \draw[line width=0.55pt,->] (1.62,1.95) -- (0.78,1.95);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.18,1.55) -- (2.35,1.55);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.55,1.15) -- (0.78,1.15);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.18,0.75) -- (2.35,0.75);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.48,0.12) -- (0.88,0.12);
-    \node[anchor=south,inner sep=0.6pt] at (1.22,0.16) {$F_m$};
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.05,-0.32) -- (1.85,-0.32);
-    \node[anchor=north,inner sep=0.6pt] at (1.42,-0.36) {$F_d$};
-    \node[anchor=north] at (1.5,-0.55) {$(b)$};
+  % (b) more charges, F化 left long, F电 right short dashed
+  \begin{scope}[shift={(3.55,0)}]
+    \draw[line width=0.7pt] (0.20,0.40) rectangle (0.55,2.70);
+    \draw[line width=0.7pt] (2.25,0.40) rectangle (2.60,2.70);
+    \node[below=1pt] at (0.38,0.40) {$A$};
+    \node[below=1pt] at (2.42,0.40) {$B$};
+    \foreach \y in {2.35,1.85,1.35,0.85} {
+      \node at (0.38,\y) {$+$};
+      \node at (2.42,\y) {$-$};
+    }
+    \foreach \y in {2.35,1.85,1.35,0.85} {
+      \draw[line width=0.55pt,->] (1.95,\y) -- (0.75,\y);
+      \draw[line width=0.45pt,dashed,->] (0.85,\y-0.22) -- (1.70,\y-0.22);
+    }
+    \node[below=1pt] at (1.20,0.48) {$F_{\text{化}}$};
+    \node[below=1pt] at (1.70,0.28) {$F_{\text{电}}$};
+    \node[below=3pt] at (1.40,0.05) {$(b)$};
   \end{scope}
-  % (c)
-  \begin{scope}[shift={(6.8,0)}]
-    \draw[line width=0.7pt] (0.15,0.55) rectangle (0.58,3.15);
-    \draw[line width=0.7pt] (2.55,0.55) rectangle (2.98,3.15);
-    \node[anchor=north,inner sep=1pt] at (0.36,0.48) {$A$};
-    \node[anchor=north,inner sep=1pt] at (2.76,0.48) {$B$};
-    \node[inner sep=0.4pt] at (0.36,2.65) {$+$};
-    \node[inner sep=0.4pt] at (0.36,1.85) {$+$};
-    \node[inner sep=0.4pt] at (0.36,1.05) {$+$};
-    \node[inner sep=0.4pt] at (2.76,2.65) {$-$};
-    \node[inner sep=0.4pt] at (2.76,1.85) {$-$};
-    \node[inner sep=0.4pt] at (2.76,1.05) {$-$};
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.18,2.85) -- (2.35,2.85);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.18,2.45) -- (2.35,2.45);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.55,2.05) -- (0.78,2.05);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.18,1.65) -- (2.35,1.65);
-    \draw[line width=0.55pt,->] (1.62,1.25) -- (0.78,1.25);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.18,0.85) -- (2.35,0.85);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.48,0.12) -- (0.88,0.12);
-    \node[anchor=south,inner sep=0.6pt] at (1.22,0.16) {$F_m$};
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.05,-0.32) -- (1.85,-0.32);
-    \node[anchor=north,inner sep=0.6pt] at (1.42,-0.36) {$F_d$};
-    \node[anchor=north] at (1.5,-0.55) {$(c)$};
+  % (c) equal arrows
+  \begin{scope}[shift={(7.10,0)}]
+    \draw[line width=0.7pt] (0.20,0.40) rectangle (0.55,2.70);
+    \draw[line width=0.7pt] (2.25,0.40) rectangle (2.60,2.70);
+    \node[below=1pt] at (0.38,0.40) {$A$};
+    \node[below=1pt] at (2.42,0.40) {$B$};
+    \foreach \y in {2.40,2.00,1.60,1.20,0.80} {
+      \node at (0.38,\y) {$+$};
+      \node at (2.42,\y) {$-$};
+    }
+    \foreach \y in {2.20,1.60,1.00} {
+      \draw[line width=0.55pt,->] (1.90,\y) -- (0.80,\y);
+      \draw[line width=0.45pt,dashed,->] (0.80,\y-0.28) -- (1.90,\y-0.28);
+    }
+    \node[below=1pt] at (1.20,0.48) {$F_{\text{化}}$};
+    \node[below=1pt] at (1.70,0.28) {$F_{\text{电}}$};
+    \node[below=3pt] at (1.40,0.05) {$(c)$};
   \end{scope}
-  % (d)
-  \begin{scope}[shift={(10.4,0)}]
-    \draw[line width=0.7pt] (0.15,0.55) rectangle (0.58,2.55);
-    \draw[line width=0.7pt] (2.72,0.55) rectangle (3.15,2.55);
-    \node[anchor=north,inner sep=1pt] at (0.36,0.48) {$A$};
-    \node[anchor=north,inner sep=1pt] at (2.94,0.48) {$B$};
-    \node[inner sep=0.4pt] at (0.36,2.05) {$+$};
-    \node[inner sep=0.4pt] at (0.36,1.35) {$+$};
-    \node[inner sep=0.4pt] at (0.36,0.75) {$+$};
-    \node[inner sep=0.4pt] at (2.94,2.05) {$-$};
-    \node[inner sep=0.4pt] at (2.94,1.35) {$-$};
-    \node[inner sep=0.4pt] at (2.94,0.75) {$-$};
-    \draw[line width=0.7pt] (0.36,2.55) -- (0.36,3.05) -- (1.05,3.05);
-    \node[anchor=east,inner sep=0.6pt] at (0.22,3.18) {$+$};
-    \draw[line width=0.55pt,->] (0.36,2.88) -- (0.36,2.62);
-    \draw[line width=0.7pt] (1.05,2.87) rectangle (1.95,3.23);
-    \node[anchor=south,inner sep=1pt] at (1.50,3.26) {$R$};
-    \draw[line width=0.7pt] (1.95,3.05) -- (2.94,3.05) -- (2.94,2.55);
-    \draw[line width=0.55pt,->] (2.94,2.88) -- (2.94,2.62);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.45,2.15) -- (0.78,2.15);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.28,1.65) -- (2.52,1.65);
-    \draw[line width=0.55pt,->] (1.55,1.15) -- (0.78,1.15);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.28,0.75) -- (2.52,0.75);
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.48,0.12) -- (0.92,0.12);
-    \node[anchor=south,inner sep=0.6pt] at (1.24,0.16) {$F_m$};
-    \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt,->] (1.12,-0.28) -- (1.92,-0.28);
-    \node[anchor=north,inner sep=0.6pt] at (1.48,-0.32) {$F_d$};
-    \node[anchor=north] at (1.65,-0.55) {$(d)$};
+  % (d) with external R
+  \begin{scope}[shift={(1.70,-3.55)}]
+    \draw[line width=0.7pt] (0.20,0.40) rectangle (0.55,2.50);
+    \draw[line width=0.7pt] (2.25,0.40) rectangle (2.60,2.50);
+    \node[below=1pt] at (0.38,0.40) {$A$};
+    \node[below=1pt] at (2.42,0.40) {$B$};
+    \foreach \y in {2.15,1.55,0.95} {
+      \node at (0.38,\y) {$+$};
+      \node at (2.42,\y) {$-$};
+    }
+    \foreach \y in {2.15,1.55,0.95} {
+      \draw[line width=0.55pt,->] (1.95,\y) -- (0.75,\y);
+      \draw[line width=0.45pt,dashed,->] (0.85,\y-0.22) -- (1.65,\y-0.22);
+    }
+    \node[below=1pt] at (1.15,0.48) {$F_{\text{化}}$};
+    \node[below=1pt] at (1.65,0.28) {$F_{\text{电}}$};
+    % external circuit
+    \draw[line width=0.55pt] (0.38,2.50) -- (0.38,3.05) -- (1.05,3.05);
+    \draw[line width=0.7pt] (1.05,2.90) rectangle (1.75,3.20);
+    \node at (1.40,3.05) {$R$};
+    \draw[line width=0.55pt,->] (1.15,3.35) -- (1.65,3.35);
+    \draw[line width=0.55pt] (1.75,3.05) -- (2.42,3.05) -- (2.42,2.50);
+    \node[below=3pt] at (1.40,0.05) {$(d)$};
   \end{scope}
 \end{tikzpicture}%
 }
@@ -11097,11 +11094,8 @@ R = \frac{U}{I}
     \draw[line width=0.7pt] (1.42,1.72) circle (0.22);
     \node[inner sep=0pt] at (1.42,1.72) {$V$};
     \draw[line width=0.7pt] (1.64,1.72) -- (1.98,1.72) -- (1.98,2.48);
-    \draw[line width=0.55pt,->] (0.78,0.88) -- (0.42,0.88);
-    \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.5pt] (0.78,0.88) -- (1.85,0.88);
-    \draw[line width=0.7pt] (1.85,0.88) -- (3.05,0.88);
-    \draw[line width=0.55pt,->] (3.05,0.88) -- (3.58,0.88);
-    \node[anchor=south,inner sep=1pt] at (2.05,0.94) {$U$};
+    \draw[line width=0.55pt,<->] (0.72,0.88) -- (1.98,0.88);
+    \node[anchor=south,inner sep=1pt] at (1.35,0.92) {$U$};
     \node[anchor=north] at (2.02,0.0) {$(a)$};
   \end{scope}
   % (b)
@@ -11122,11 +11116,8 @@ R = \frac{U}{I}
     \node[inner sep=0pt] at (1.88,1.62) {$V$};
     \draw[line width=0.7pt] (2.08,1.62) -- (3.72,1.62);
     \fill (3.72,1.62) circle (1.35pt);
-    \draw[line width=0.55pt,->] (0.78,0.78) -- (0.42,0.78);
-    \draw[line width=0.6pt,dash pattern=on 2.2pt off 1.5pt] (0.78,0.78) -- (1.85,0.78);
-    \draw[line width=0.7pt] (1.85,0.78) -- (3.05,0.78);
-    \draw[line width=0.55pt,->] (3.05,0.78) -- (3.58,0.78);
-    \node[anchor=south,inner sep=1pt] at (2.00,0.84) {$U$};
+    \draw[line width=0.55pt,<->] (0.32,0.78) -- (3.72,0.78);
+    \node[anchor=south,inner sep=1pt] at (2.02,0.82) {$U$};
     \node[anchor=north] at (2.02,0.0) {$(b)$};
   \end{scope}
 \end{tikzpicture}%
@@ -11979,24 +11970,40 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \begin{figure}
 \centering
-% fig-alt: 图2.54：液体导电，电极 $K,A$，灯 $L$，电源 $B$
+% fig-alt: 图2.54 烧杯电极 K/A，外电路电池 B、电键 K（断开）、灯 L
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (-1.05,0) -- (-1.05,1.15) -- (1.05,1.15) -- (1.05,0);
-  \draw[line width=0.75pt] (-1.05,0) arc[start angle=180,end angle=360,x radius=1.05,y radius=0.18];
-  \fill[black!10] (-1.05,0.55) -- (1.05,0.55) -- (1.05,0) arc[start angle=0,end angle=-180,x radius=1.05,y radius=0.18];
-  \draw[line width=0.7pt] (-0.55,0.15) rectangle (-0.35,1.45);
-  \draw[line width=0.7pt] (0.35,0.15) rectangle (0.55,1.45);
-  \node[anchor=south] at (-0.45,1.48) {$K$};
-  \node[anchor=south] at (0.45,1.48) {$A$};
-  \draw[line width=0.5pt] (-0.45,1.45) -- (-0.45,1.85) -- (0.15,1.85);
-  \foreach \x in {0.05,0.18} \draw[line width=0.55pt] (\x,1.70) -- (\x,2.00);
-  \node[anchor=south] at (0.12,2.02) {$B$};
-  \draw[line width=0.5pt] (0.18,1.85) -- (0.45,1.85);
-  \draw[line width=0.7pt] (0.65,1.85) circle (0.18);
-  \draw[line width=0.4pt] (0.65,1.85) ++(45:0.12) -- ++(225:0.24);
-  \node[anchor=south] at (0.65,2.08) {$L$};
-  \draw[line width=0.5pt] (0.83,1.85) -- (0.45,1.85) -- (0.45,1.45);
+\begin{tikzpicture}[line cap=round,line join=round,>=latex,font=\scriptsize]
+  % beaker + liquid
+  \draw[line width=0.75pt] (-1.15,0.15) -- (-1.15,1.25) -- (1.15,1.25) -- (1.15,0.15);
+  \draw[line width=0.75pt] (-1.15,0.15) arc[start angle=180,end angle=360,x radius=1.15,y radius=0.20];
+  \foreach \y in {0.35,0.50,0.65,0.80,0.95} {
+    \draw[line width=0.3pt,dashed] (-1.05,\y) -- (1.05,\y);
+  }
+  \draw[line width=0.7pt,fill=white] (-0.55,0.25) rectangle (-0.32,1.55);
+  \draw[line width=0.7pt,fill=white] (0.32,0.25) rectangle (0.55,1.55);
+  \node[above=1pt] at (-0.43,1.55) {$K$};
+  \node[above=1pt] at (0.43,1.55) {$A$};
+  % left up to switch and battery
+  \draw[line width=0.5pt] (-0.43,1.55) -- (-0.43,2.05) -- (-0.05,2.05);
+  \fill (-0.05,2.05) circle (1.1pt);
+  \fill (0.55,2.05) circle (1.1pt);
+  \draw[line width=0.55pt] (-0.05,2.05) -- (0.35,2.35);
+  \node[above=1pt] at (0.15,2.35) {$K$};
+  \draw[line width=0.5pt] (0.55,2.05) -- (0.55,2.55) -- (0.05,2.55);
+  % battery B
+  \draw[line width=0.85pt] (-0.05,2.40) -- (-0.05,2.70);
+  \draw[line width=0.7pt] (0.15,2.48) -- (0.15,2.62);
+  \node[left=1pt] at (-0.08,2.55) {$+$};
+  \node[right=1pt] at (0.18,2.55) {$-$};
+  \node[above=1pt] at (0.05,2.72) {$B$};
+  \draw[line width=0.5pt] (-0.43,2.55) -- (-0.05,2.55);
+  % lamp L and to anode
+  \draw[line width=0.5pt] (0.55,2.05) -- (1.05,2.05);
+  \draw[line width=0.7pt] (1.25,2.05) circle[radius=0.18];
+  \draw[line width=0.4pt] (1.25,2.05) ++(45:0.12) -- ++(225:0.24);
+  \draw[line width=0.4pt] (1.25,2.05) ++(135:0.12) -- ++(315:0.24);
+  \node[above=1pt] at (1.25,2.28) {$L$};
+  \draw[line width=0.5pt] (1.43,2.05) -- (1.65,2.05) -- (1.65,1.55) -- (0.43,1.55);
 \end{tikzpicture}%
 }
 \caption{图2.54 液体导电实验}
