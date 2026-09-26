@@ -30944,30 +30944,32 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-% fig-alt: 图6.45：真空二极管单向导电性，(a)阳极加正电压，(b)阳极加负电压
+% fig-alt: B16 按 raw 对照重绘：图6.45 （a）阳极加正电压；（b）阳极加负电压
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0.55) circle (0.70);
-  \draw[line width=0.55pt] (-0.28,0.85) -- (0.28,0.85);
-  \draw[line width=0.5pt] (-0.22,0.15) arc[start angle=200,end angle=-20,radius=0.25];
-  \foreach \x in {-0.20,0,0.20} \draw[->,line width=0.4pt] (\x,0.28) -- (\x,0.75);
-  \draw[line width=0.5pt] (0.28,0.85) -- (1.15,0.85) -- (1.15,1.35);
-  \draw[line width=0.7pt] (1.35,1.35) circle (0.18);
-  \node at (1.35,1.35) {mA};
-  \foreach \y in {0.55,0.68,0.81} \draw[line width=0.5pt] (1.85,\y) -- (1.85,\y+0.08);
-  \node[anchor=north] at (0,-0.25) {(a)};
-\end{tikzpicture}%
-\qquad
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0.55) circle (0.70);
-  \draw[line width=0.55pt] (-0.28,0.85) -- (0.28,0.85);
-  \draw[line width=0.5pt] (-0.22,0.15) arc[start angle=200,end angle=-20,radius=0.25];
-  \foreach \x in {-0.20,0,0.20} \fill (\x,0.35) circle (0.8pt);
-  \draw[line width=0.5pt] (0.28,0.85) -- (1.15,0.85) -- (1.15,1.35);
-  \draw[line width=0.7pt] (1.35,1.35) circle (0.18);
-  \node at (1.35,1.35) {mA};
-  \foreach \y in {0.55,0.68,0.81} \draw[line width=0.5pt] (1.85,\y) -- (1.85,\y+0.08);
-  \node[anchor=north] at (0,-0.25) {(b)};
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize,>=latex]
+  % (a) anode positive: complete heater/anode loop and meter
+  \draw (0,0.45) circle (0.55);
+  \draw (-0.23,0.68)--(0.23,0.68); \draw (-0.20,0.22) arc[start angle=200,end angle=-20,radius=0.22];
+  \draw (-0.45,0.22)--(-0.45,-0.15)--(0.80,-0.15)--(0.80,0.68);
+  \draw (0.23,0.68)--(0.80,0.68)--(0.80,1.05)--(1.05,1.05);
+  \draw (1.23,1.05) circle (0.18); \node at (1.23,1.05) {mA};
+  \draw (1.41,1.05)--(1.85,1.05)--(1.85,-0.15)--(0.80,-0.15);
+  \draw (0.80,-0.15)--(2.15,-0.15); \draw (2.15,-0.15)--(2.15,1.05);
+  \foreach \y in {0.85,0.98,1.11} \draw (2.15,\y)--(2.15,\y+0.09);
+  \node[anchor=west] at (2.22,0.98) {$B$}; \node at (2.30,1.28) {$+$}; \node at (2.30,0.02) {$-$}; \node[anchor=north] at (0.65,-0.35) {(a) 阳极正电压};
+  % (b) anode negative: reversed battery and no anode current
+  \begin{scope}[xshift=4.25cm]
+    \draw (0,0.45) circle (0.55);
+    \draw (-0.23,0.68)--(0.23,0.68); \draw (-0.20,0.22) arc[start angle=200,end angle=-20,radius=0.22];
+    \draw (0.23,0.68)--(0.80,0.68)--(0.80,1.05)--(1.05,1.05);
+    \draw (1.23,1.05) circle (0.18); \node at (1.23,1.05) {mA};
+    \draw (1.41,1.05)--(1.85,1.05)--(1.85,-0.15)--(0.80,-0.15);
+    \draw (-0.45,0.22)--(-0.45,-0.15)--(2.15,-0.15)--(2.15,1.05);
+    \foreach \y in {0.85,0.98,1.11} \draw (2.15,\y)--(2.15,\y+0.09);
+    \node[anchor=west] at (2.22,0.98) {$B$}; \node at (2.30,1.28) {$-$}; \node at (2.30,0.02) {$+$};
+    \foreach \x in {-0.16,0,0.16} \fill (\x,0.37) circle (0.8pt);
+    \node[anchor=north] at (0.65,-0.35) {(b) 阳极负电压};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图6.45 （a）阳极加正电压；（b）阳极加负电压}
@@ -30977,25 +30979,30 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-% fig-alt: 图6.46：真空三极管，(a)结构示意，(b)符号
+% fig-alt: B16 按 raw 对照重绘：图6.46 真空三极管（a）结构；（b）符号
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0.55) circle (0.55);
-  \draw[line width=0.5pt] (-0.22,0.75) -- (0.22,0.75);
-  \draw[line width=0.4pt,dash pattern=on 1.5pt off 1pt] (-0.22,0.55) -- (0.22,0.55);
-  \foreach \y in {0.25,0.38} \draw[line width=0.5pt] (1.15,\y) -- (1.15,\y+0.08);
-  \node[anchor=north] at (0,-0.1) {(a)};
-\end{tikzpicture}%
-\qquad
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) ellipse [x radius=0.42,y radius=0.70];
-  \draw[line width=0.55pt] (-0.18,0.35) -- (0.18,0.35);
-  \node[anchor=west] at (0.45,0.35) {$A$};
-  \draw[line width=0.45pt,dash pattern=on 1.5pt off 1pt] (-0.22,0.05) -- (0.22,0.05);
-  \node[anchor=west] at (0.45,0.05) {$G$};
-  \draw[line width=0.5pt] (-0.16,-0.35) arc[start angle=200,end angle=-20,radius=0.18];
-  \node[anchor=west] at (0.45,-0.45) {$K$};
-  \node[anchor=north] at (0,-0.8) {(b)};
+  % (a) anode, grid, cathode and heater in the tube
+  \begin{scope}
+    \draw (0,0.55) ellipse[x radius=0.72,y radius=0.95];
+    \draw (-0.38,0.98)--(0.38,0.98); \node[anchor=west] at (0.42,0.98) {阳极};
+    \draw (-0.30,0.78)--(0.30,0.78); \draw (-0.28,0.63)--(0.28,0.63);
+    \node[anchor=west] at (0.35,0.70) {栅极};
+    \draw (-0.22,0.25) arc[start angle=200,end angle=-20,radius=0.25];
+    \node[anchor=west] at (0.34,0.18) {阴极};
+    \draw (-0.12,0.20)--(0.00,0.05)--(0.12,0.20); \node[anchor=west] at (0.18,0.02) {灯丝};
+    \draw (-0.72,-0.20)--(-0.72,-0.55); \draw (0.72,-0.20)--(0.72,-0.55);
+    \node[anchor=north] at (0,-0.72) {(a) 构造};
+  \end{scope}
+  % (b) symbol
+  \begin{scope}[xshift=2.9cm]
+    \draw (0,0.4) circle (0.62);
+    \draw (-0.25,0.72)--(0.25,0.72); \node[anchor=south] at (0,0.75) {$A$};
+    \draw (-0.28,0.43)--(0.28,0.43); \node[anchor=west] at (0.33,0.43) {$G$};
+    \draw (-0.22,0.15) arc[start angle=200,end angle=-20,radius=0.22]; \node[anchor=west] at (0.30,0.08) {$K$};
+    \draw (-0.12,0.15)--(0,0.00)--(0.12,0.15); \draw (-0.12,0.00)--(-0.12,-0.35); \draw (0.12,0.00)--(0.12,-0.35);
+    \node[anchor=north] at (0,-0.48) {(b) 符号};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图6.46 真空三极管（a）结构；（b）符号}
@@ -31040,41 +31047,27 @@ K_{u}=\frac{U_{o}}{U_{i}}= \frac{\frac{1.5}{\sqrt{2}}}{\frac{10}{\sqrt{2}} \time
 
 \begin{figure}
 \centering
-% fig-alt: 图6.48：(a)半导体集成电路原理图，(b)外形图与引脚
+% fig-alt: B16 按 raw 对照重绘：图6.48 （a）半导体集成电路原理图；（b）外形图
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\tiny]
-  \draw[line width=0.55pt] (0,1.55) rectangle (0.35,2.05);
-  \node at (0.18,1.80) {$R_1$};
-  \draw[line width=0.55pt] (0,0.85) rectangle (0.35,1.35);
-  \node at (0.18,1.10) {$R_3$};
-  \draw[line width=0.55pt] (0.85,1.55) rectangle (1.20,2.05);
-  \node at (1.02,1.80) {$R_2$};
-  \draw[line width=0.7pt] (1.85,1.15) circle (0.22);
-  \draw[line width=0.7pt] (2.85,1.15) circle (0.22);
-  \draw[line width=0.5pt] (0,2.35) -- (3.4,2.35);
-  \draw[line width=0.5pt] (0,0.35) -- (3.4,0.35);
-  \node[anchor=east] at (0,1.45) {1};
-  \node[anchor=east] at (0,0.85) {2};
-  \node[anchor=north] at (1.7,-0.1) {(a)};
+\begin{tikzpicture}[line cap=round,line join=round,font=\tiny,>=latex]
+  % simplified but count-faithful integrated-circuit network: 10 resistors, 11 transistors, 8 pins
+  \draw (0,2.75)--(5.8,2.75); \draw (0,0.15)--(5.8,0.15);
+  \foreach \x/\y/\n in {0.35/2.25/1,1.25/2.25/2,2.15/2.25/3,3.05/2.25/4,3.95/2.25/5,4.85/2.25/6}
+    {\draw (\x,\y) rectangle +(0.22,0.42); \node at (\x+0.11,\y+0.21) {$R_{\n}$};}
+  \foreach \x/\y/\n in {0.65/1.60/1,1.55/1.15/2,2.45/1.60/3,3.35/1.15/4,4.25/1.60/5,5.05/1.15/6,1.10/0.45/7,2.00/0.45/8,3.00/0.45/9,4.00/0.45/10,4.90/0.45/11}
+    {\draw (\x,\y) circle (0.13); \draw (\x-0.20,\y)--(\x-0.08,\y); \draw (\x+0.08,\y)--(\x+0.20,\y); \draw (\x,\y-0.20)--(\x,\y-0.08); \node at (\x+0.20,\y+0.16) {$Q_{\n}$};}
+  \draw (0.35,2.25)--(0.65,1.60)--(1.35,2.25)--(1.55,1.15)--(2.35,2.25)--(2.45,1.60)--(3.15,2.25)--(3.35,1.15)--(4.15,2.25)--(4.25,1.60)--(5.05,2.25);
+  \draw (0.65,1.60)--(1.10,0.45)--(2.00,0.45)--(2.45,1.60)--(3.00,0.45)--(3.35,1.15)--(4.00,0.45)--(4.25,1.60)--(4.90,0.45)--(5.05,1.15);
+  \foreach \y/\n in {2.55/1,2.20/2,1.85/3,1.50/4,1.15/5,0.80/6,0.45/7,0.10/8}
+    {\draw (-0.35,\y)--(0,\y); \node[anchor=east] at (-0.40,\y) {\n}; \draw (5.8,\y)--(6.15,\y); \node[anchor=west] at (6.2,\y) {\n};}
+  \node[anchor=north] at (2.9,-0.18) {(a) 原理图（11个晶体管、10个电阻、8根引出线）};
 \end{tikzpicture}%
 \qquad
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) circle (0.70);
-  \foreach \a/\n in {90/1,50/2,10/3,330/4,270/5,210/6,150/7}
-    {\fill (\a:0.40) circle (1.2pt); \node at (\a:0.58) {\n};}
-  \node[anchor=north] at (0,-0.8) {管底引脚};
-\end{tikzpicture}%
-\quad
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) rectangle (0.55,1.15);
-  \draw[line width=0.55pt] (0.55,0.25) -- (1.35,0.25);
-  \draw[line width=0.55pt] (0.55,0.55) -- (1.35,0.55);
-  \draw[line width=0.55pt] (0.55,0.85) -- (1.35,0.85);
-  \draw[line width=0.4pt] (0,-0.15) -- (0.55,-0.15);
-  \node[anchor=north] at (0.28,-0.18) {6.5};
-  \draw[line width=0.4pt] (0.70,0) -- (0.70,1.15);
-  \node[anchor=west] at (0.75,0.58) {8.4};
-  \node[anchor=north] at (0.6,-0.8) {(b)};
+  \draw (0,0) circle (0.72);
+  \foreach \a/\n in {90/1,45/2,0/3,315/4,270/5,225/6,180/7,135/8}
+    {\fill (\a:0.43) circle (1.2pt); \node at (\a:0.60) {\n};}
+  \node[anchor=north] at (0,-0.82) {(b) 管底8脚};
 \end{tikzpicture}%
 }
 \caption{图6.48 （a）半导体集成电路原理图；（b）外形图}
@@ -31253,22 +31246,24 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 
 \begin{figure}
 \centering
-% fig-alt: 图7.1：振荡电路，$L$、$C$、开关 $K$、电池 $B$
+% fig-alt: B16 按 raw 对照重绘：图7.1 振荡电路
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=2.8pt},line width=0.6pt] (0,0.85) -- (0,0.15);
-  \node[anchor=east] at (-0.15,0.50) {$L$};
-  \draw[line width=0.7pt] (0.35,0.15) circle (0.16);
-  \node at (0.35,0.15) {$G$};
-  \draw[line width=0.55pt] (0.85,0.55) -- (1.05,0.55);
-  \draw[line width=0.55pt] (0.85,0.70) -- (1.05,0.70);
-  \node[anchor=south] at (0.95,0.75) {$C$};
-  \draw[line width=0.55pt] (1.55,0.25) rectangle (1.85,0.95);
-  \node[anchor=west] at (1.90,0.60) {$B$};
-  \draw[line width=0.5pt] (0,0.85) -- (0.70,1.15);
-  \node at (0.85,1.25) {$K$};
-  \node at (0.55,1.30) {2};
-  \node at (1.15,1.30) {1};
+  % raw topology: L--G--C loop and B charging branch selected by SPDT K
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=3pt},line width=0.65pt] (0.35,0.75)--(0.35,1.85);
+  \node[anchor=east] at (0.15,1.30) {$L$};
+  \draw (0.35,0.75)--(1.25,0.75); \draw (1.25,0.75) circle (0.16); \node at (1.25,0.75) {$G$};
+  \draw (1.41,0.75)--(2.15,0.75); \draw (2.15,0.75)--(2.15,1.15);
+  \draw[line width=0.55pt] (2.00,1.15)--(2.30,1.15); \draw[line width=0.55pt] (2.00,1.30)--(2.30,1.30); \node[anchor=west] at (2.36,1.22) {$C$};
+  \draw (2.15,1.30)--(2.15,2.00);
+  \draw (0.35,1.85)--(0.35,2.00); \draw (0.35,2.00)--(2.15,2.00);
+  \draw (2.15,2.00)--(2.95,2.00); \draw (2.95,2.00)--(2.95,1.45);
+  \draw (2.95,1.25)--(2.95,0.75); \draw (2.95,0.75)--(2.15,0.75); \draw (2.95,1.45)--(3.25,1.45); \draw (3.25,1.25)--(3.25,0.95); \draw (3.25,0.95)--(2.95,0.95);
+  \draw (3.25,0.95)--(3.25,0.65); \draw (3.25,0.45)--(3.25,0.15); \draw (3.25,0.15)--(2.15,0.15)--(2.15,0.75);
+  \draw (3.25,0.15)--(0.35,0.15)--(0.35,0.75);
+  \draw (2.15,2.00)--(2.15,2.28); \draw (2.15,2.28)--(1.15,2.28); \draw (2.15,2.28)--(3.25,2.28);
+  \draw (1.15,2.28)--(1.15,2.08); \draw (1.15,1.95)--(1.15,1.80); \draw (1.15,1.80)--(2.15,2.00);
+  \node at (1.03,2.45) {2}; \node at (2.45,2.45) {1}; \node[anchor=west] at (3.35,1.55) {$B$}; \node at (1.60,2.55) {$K$};
 \end{tikzpicture}%
 }
 \caption{图7.1 振荡电路}
@@ -31357,7 +31352,7 @@ PN 结的主要特性是单向导电性，即只有外施电压产生的电场�
 同时， 通过线圈的放电电流逐渐增强， 线圈中磁场也随着逐渐增强，
 电容器里的电场能逐渐转换成线圈中的磁场能。 到放电完毕的瞬间，
 电容器极板上电荷全部消失， 通过线圈的电流达到最大值，
-电场能全部转换为磁场能（图7.2b）。
+电场能全部转换为磁场能（图7.2（b））。
 
 在电容器已经放完了电， 两板都已不带电荷后，
 电路中电流是不是立即减小到零呢？ 由自感现象， 我们知道线圈中磁场的消失，
@@ -31409,7 +31404,7 @@ a、b、c、d、e 各个不同时刻的电流。
 \caption{图7.3}
 \end{figure}
 
-在上面的实验中，LC回路在电容器最初充电时所获得的能量作用下产生振荡电流，此后，在振荡过程中LC回路不再从外界补充能量，这种振荡称为自由振荡。在振荡过程中，由于电路中不可避免地总有一些电阻，有一部分能量要在电阻上损耗掉；同时还有一部分能量辐射到周围空间里去（后面要讲到），因此振荡电路的能量逐渐损耗，振荡电流的振幅（即峰值）逐渐减小，直到最后振荡停止。这种振荡电流振幅逐渐减小，直到最后消失的振荡叫做阻尼振荡或减幅振荡（图7.4a）。
+在上面的实验中，LC回路在电容器最初充电时所获得的能量作用下产生振荡电流，此后，在振荡过程中LC回路不再从外界补充能量，这种振荡称为自由振荡。在振荡过程中，由于电路中不可避免地总有一些电阻，有一部分能量要在电阻上损耗掉；同时还有一部分能量辐射到周围空间里去（后面要讲到），因此振荡电路的能量逐渐损耗，振荡电流的振幅（即峰值）逐渐减小，直到最后振荡停止。这种振荡电流振幅逐渐减小，直到最后消失的振荡叫做阻尼振荡或减幅振荡（图7.4（a））。
 
 \begin{shulihuadef}
 \textbf{提示：} LC回路中的自由振荡是阻尼振荡
@@ -31417,7 +31412,7 @@ a、b、c、d、e 各个不同时刻的电流。
 
 上面讲到， 如果 LC 回路中没有能量损耗， 则振荡将一直进行下去，
 这是一种理想情况。这时电路中振荡电流振幅始终保持不变，
-这种振荡叫做无阻尼振荡或等幅振荡（图7.4b）， 对于单独的 LC 回路来说，
+这种振荡叫做无阻尼振荡或等幅振荡（图7.4（b））， 对于单独的 LC 回路来说，
 这实际上是不存在的。
 
 \begin{figure}
@@ -31498,7 +31493,7 @@ L 的办法来改变振荡频率。
 把题中数据代入（7.1）式和（7.2）式就可求得解答，代入时要注意把单位换算成亨和法。
 
 \[
-\begin{array}{l} T^{\prime} = 2 \pi \sqrt{I C} = 2 \pi \sqrt{180 \times 10^{- 12} \times 200 \times 10^{- 12}} \text{秒} \\ = 1.19 \text{微秒} \\ \end{array}
+\begin{array}{l} T^{\prime} = 2 \pi \sqrt{L C} = 2 \pi \sqrt{180 \times 10^{- 6} \times 200 \times 10^{- 12}} \text{秒} \\ = 1.19 \text{微秒} \\ \end{array}
 \]
 
 \[
@@ -31590,7 +31585,7 @@ f = \frac{1}{T^{\prime}} = \frac{1}{1.19 \times 10^{- 6}} \text{赫} = 810 \text
 
 我们知道，传导电流会在周围空间里产生磁场。麦克斯韦认为，位移电流作为一种电流也会在周围空间产生磁场。这样，按照麦克斯韦的观点，变化的电场等效于一个电流------位移电流，并且认为位移电流也能够产生磁场，那么结论就是说：变化的电场会在周围空间产生磁场（图7.6）。
 
-麦克斯韦的电磁场理论还指出：变化的磁场所产生的电场是稳定的？还是变化的？这与磁场的变化情况有关。如果磁场的变化是均匀的，也就是说，磁感应强度增强或减弱的速率是恒定的（或者说，在相等的时间内，磁感应强度的变化是相等的），那么所产生的电场是稳定的，即所产生的电场是不随时间变化的；如果磁场的变化是不均匀的，则所产生的电场就是变化的。对于变化的电场产生的磁场，情况也一样，如果电场的变化是均匀的，则所产生的磁场是稳定的；如果电场的变化是不均匀的，则所产生的磁场是变化的。
+麦克斯韦的电磁场理论还指出：变化的磁场所产生的电场是稳定的还是变化的？这与磁场的变化情况有关。如果磁场的变化是均匀的，也就是说，磁感应强度增强或减弱的速率是恒定的（或者说，在相等的时间内，磁感应强度的变化是相等的），那么所产生的电场是稳定的，即所产生的电场是不随时间变化的；如果磁场的变化是不均匀的，则所产生的电场就是变化的。对于变化的电场产生的磁场，情况也一样，如果电场的变化是均匀的，则所产生的磁场是稳定的；如果电场的变化是不均匀的，则所产生的磁场是变化的。
 
 \begin{shulihuadef}
 \textbf{提示：} 变化的电场和变化的磁场组成一个统一体，叫电磁场
@@ -31608,25 +31603,24 @@ f = \frac{1}{T^{\prime}} = \frac{1}{1.19 \times 10^{- 6}} \text{赫} = 810 \text
 
 \begin{figure}
 \centering
-% fig-alt: 图7.7：天线辐射的交变 $E$、$B$ 场
+% fig-alt: B16 按 raw 对照重绘：图7.7
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.7pt] (2.4,-0.85) -- (2.4,1.15);
-  \draw[line width=0.55pt] (2.15,1.15) -- (2.4,1.45) -- (2.65,1.15);
-  \node[anchor=south] at (2.4,1.48) {$A$};
-  \foreach \x in {0.4,1.2,2.0,2.8,3.6,4.4}
-    \draw[line width=0.55pt] (\x,0) ellipse [x radius=0.38,y radius=0.18];
-  \foreach \x in {0.8,1.6,3.2,4.0}
-    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (\x,0) circle (0.42);
-  \node at (0.4,0.35) {$B$};
-  \node at (0.8,0.55) {$E$};
+  % raw: vertical antenna at centre, solid B loops and dashed E loops radiating away
+  \draw[line width=0.7pt] (2.55,-1.05)--(2.55,1.10);
+  \draw (2.38,1.10)--(2.55,1.38)--(2.72,1.10); \node[anchor=south] at (2.55,1.42) {$A$};
+  \foreach \x in {0.35,1.15,1.95,2.75,3.55,4.35,5.15}
+    {\draw[line width=0.5pt] (\x,0) ellipse[x radius=0.36,y radius=0.16];}
+  \foreach \x in {0.75,1.55,2.35,3.15,3.95,4.75}
+    {\draw[line width=0.45pt,dashed] (\x,0) ellipse[x radius=0.20,y radius=0.52];}
+  \node at (0.35,0.34) {$B$}; \node at (0.75,0.62) {$E$};
 \end{tikzpicture}%
 }
 \caption{图7.7}
 \end{figure}
 
-电磁波由什么来产生呢？我们知道 \(LO\)
-回路中的电磁振荡是按正弦规律变化的。按正弦规律变化的物理量，它的变化是不均匀的，例如按正弦规律变化的电流，在峰值附近它的变化很小，而在零值附近它的变化很大。因此，\(LO\)
+电磁波由什么来产生呢？我们知道 \(LC\)
+回路中的电磁振荡是按正弦规律变化的。按正弦规律变化的物理量，它的变化是不均匀的，例如按正弦规律变化的电流，在峰值附近它的变化很小，而在零值附近它的变化很大。因此，\(LC\)
 回路中电磁振荡可以产生不均匀变化的电场或磁场，从而可以用来作为产生电磁波的一种电磁振荡源。
 
 \begin{shulihuadef}
@@ -31723,7 +31717,7 @@ c，可见，频率不同的电磁波波长不同，频率越高，电磁波的�
 \bottomrule\noalign{}
 \endlastfoot
 长波 & 3000米以上 & 100千赫以下 & 越洋远距离通讯 \\
-中波 & 3400～600米 100～200米 &
+中波 & 3000～600米 600～200米 &
 100～500千赫 500～1500千赫 &
 海洋通讯无线电广播 \\
 中短波 & 200～50米 & 1.5～6兆赫 & 电报通讯 \\
@@ -31745,7 +31739,7 @@ c，可见，频率不同的电磁波波长不同，频率越高，电磁波的�
 \item
   何谓电磁波？电磁波的传播速度与光速有何关系？
 \item
-  设广播电台发出频率为 500 千针的电磁波， 它的波长是多少？
+  设广播电台发出频率为 500 千赫的电磁波， 它的波长是多少？
 \item
   对应于波长为 25 米的电磁波， 它的频率是多少？
 \end{enumerate}
@@ -31762,7 +31756,7 @@ c，可见，频率不同的电磁波波长不同，频率越高，电磁波的�
 
 \subsection{1. 电磁波的发送}
 
-前面已经提到 LO
+前面已经提到 LC
 回路中能够产生电磁振荡，它可以用做产生电磁波的电磁振荡源，但进一步的考察表明，一个由普通的电容器和电感线圈组成的振荡电路是不能用来直接辐射电磁能量的。因为在这种振荡电路中，电容器两极距离很近，电场能几乎完全集中在两板之间，而线圈是螺线管，磁场能几乎完全集中在螺线管内部。在振荡过程中，电场能和磁场能主要是在电路内互相转换，辐射出去的能量很少。因此这种电路不能用来直接发送电磁波，常叫做闭合电路。
 
 那么怎样的电路才能有效地发送电磁波呢？我们设想
