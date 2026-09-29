@@ -595,24 +595,41 @@ B球的右端（图1.7a），然后把A、B两球分开，再移开带电棒。�
 
 \begin{figure}
 \centering
-% fig-alt: 图1.8：感应起电三步 $(a)(b)(c)$
+% fig-alt: 图1.8 感应起电：(a) 负棒近左，左+右−；(b) 手指触右端接地；(c) 移开后整体带+
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \foreach \x in {0,3.1,5.9} {
-    \draw[line width=0.75pt] (\x,0.35) ellipse [x radius=0.85,y radius=0.32];
-    \draw[line width=0.55pt] (\x,0.03) -- (\x,-0.55);
-    \draw[line width=0.7pt] (\x-0.25,-0.65) -- (\x+0.25,-0.65);
-  }
-  \draw[line width=0.7pt] (-1.15,0.85) -- (-0.85,1.55);
-  \foreach \i in {0,1,2} \node at (-1.05+0.02*\i,1.05+0.18*\i) {$-$};
-  \node at (-0.45,0.35) {$-$};
-  \node at (0.45,0.35) {$+$};
-  \node[anchor=north] at (0,-0.80) {(a)};
-  \draw[line width=0.7pt] (1.95,0.85) -- (2.25,1.55);
-  \node at (2.65,0.35) {$-$};
-  \draw[line width=0.5pt,rounded corners=2pt] (3.4,0.55) rectangle (4.15,1.15);
-  \node[anchor=north] at (3.1,-0.80) {(b)};
-  \node[anchor=north] at (5.9,-0.80) {(c)};
+  % --- (a) ---
+  \begin{scope}[shift={(0,0)}]
+    \draw[line width=0.75pt] (0,0.35) ellipse [x radius=0.90,y radius=0.32];
+    \draw[line width=0.55pt] (0,0.03) -- (0,-0.55);
+    \draw[line width=0.7pt] (-0.28,-0.65) -- (0.28,-0.65);
+    \draw[line width=0.7pt] (-1.20,0.85) -- (-0.88,1.55);
+    \foreach \i in {0,1,2,3} \node at (-1.12+0.02*\i,0.95+0.16*\i) {$-$};
+    \foreach \i in {0,1,2,3} \node at (-0.55+0.12*\i,0.35) {$+$};
+    \foreach \i in {0,1,2,3} \node at (0.20+0.12*\i,0.35) {$-$};
+    \node[anchor=north] at (0,-0.85) {$(a)$};
+  \end{scope}
+  % --- (b) ---
+  \begin{scope}[shift={(3.35,0)}]
+    \draw[line width=0.75pt] (0,0.35) ellipse [x radius=0.90,y radius=0.32];
+    \draw[line width=0.55pt] (0,0.03) -- (0,-0.55);
+    \draw[line width=0.7pt] (-0.28,-0.65) -- (0.28,-0.65);
+    \draw[line width=0.7pt] (-1.20,0.85) -- (-0.88,1.55);
+    \foreach \i in {0,1,2,3} \node at (-1.12+0.02*\i,0.95+0.16*\i) {$-$};
+    \foreach \i in {0,1,2,3} \node at (-0.55+0.12*\i,0.35) {$+$};
+    % finger touching right end
+    \draw[line width=0.55pt,rounded corners=1.5pt] (0.55,0.55) rectangle (1.35,1.25);
+    \draw[line width=0.5pt] (0.95,0.55) -- (0.95,0.38);
+    \node[anchor=north] at (0,-0.85) {$(b)$};
+  \end{scope}
+  % --- (c) ---
+  \begin{scope}[shift={(6.55,0)}]
+    \draw[line width=0.75pt] (0,0.35) ellipse [x radius=0.90,y radius=0.32];
+    \draw[line width=0.55pt] (0,0.03) -- (0,-0.55);
+    \draw[line width=0.7pt] (-0.28,-0.65) -- (0.28,-0.65);
+    \foreach \i in {0,1,2,3,4} \node at (-0.50+0.22*\i,0.35) {$+$};
+    \node[anchor=north] at (0,-0.85) {$(c)$};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1.8 感应起电}
@@ -624,7 +641,7 @@ B球的右端（图1.7a），然后把A、B两球分开，再移开带电棒。�
 
 为什么这样做能使导体带电呢？这是因为人手和大地都是导体，当人手和导体右端接触时，导体就不再和大地绝缘，而是和人、大地组成一个大导体。这时在带电棒的作用下，与带电体同种的电荷被推斥到远离带电棒的大地里，在导体上就留下了与带电棒异种的电荷。所谓同种电荷被推斥到大地里是一种简化的讲法，实际上的过程是：若带电棒带正电，则大地中的自由电子被吸引移向导体，使导体有了多余电子而带负电；若带电棒带负电，则导体上的自由电子被推斥到大地中去，使导体上缺少电子而带正电。总之，大地获得的电荷是与带电棒上的电荷同种的。这种利用静电感应而使导体带电的方法叫做感应起电。
 
-使导体与大地连接叫做接地，接地在实用上都用导体来连接，这里用手指只是方便罢了。在作图时，接地用符号寄来表示。
+使导体与大地连接叫做接地，接地在实用上都用导体来连接，这里用手指只是方便罢了。在作图时，接地用符号 \tikz[baseline=-0.12ex,scale=0.42]{\draw[line width=0.55pt] (0,0.48)--(0,0); \draw[line width=0.55pt] (-0.26,0)--(0.26,0); \draw[line width=0.5pt] (-0.18,-0.11)--(0.18,-0.11); \draw[line width=0.45pt] (-0.10,-0.22)--(0.10,-0.22);} 来表示。
 
 \subsection{2. 带电导体上电荷的分布}
 
@@ -715,7 +732,7 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 既然电荷只分布在导体的外表面上，那么我们就能够把物体用金属网或金属壳罩起来，以隔离外部带电体对它的影响。下面的实验可以说明这种屏蔽作用。
 
 用一带电体移近金箔验电器顶球， 由于静电感应，
-顶球上呈现与带电棒异种的电荷， 金箔上呈现与带电体同种的电荷，
+顶球上呈现与带电体异种的电荷， 金箔上呈现与带电体同种的电荷，
 金箔张开一定角度， 如图1.10（a）
 所示。这时如果用一金属网把验电器罩起来， 则验电器金箔又闭合， 如图1.10（b） 所示，
 这表明金箔上已无电荷。如果事先把罩内验电器顶球与金属网用导线连接好，
@@ -727,7 +744,7 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1.10 静电屏蔽实验：(a) 带电棒靠近验电器，金箔张开；(b) 金属网罩住验电器，金箔闭合
+% fig-alt: 图1.10 金属网实验：(a) 带电棒靠近验电器，金箔张开；(b) 金属网罩住，外侧左+右−，金箔闭合，底接地斜线
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   % (a) 验电器金箔张开
   \begin{scope}[shift={(0,0)}]
@@ -742,24 +759,35 @@ C 的外表面是带有电荷的，绝缘金属小球和它接触就可以取得
     \node at (-0.32,0.05) {$+$};
     \node at (0.32,0.05) {$+$};
     \draw[line width=0.7pt] (0.85,0.85) -- (1.15,1.65);
-    \node[anchor=north] at (0,-1.25) {$(a)$};
+    \node[anchor=north] at (0,-1.35) {$(a)$};
   \end{scope}
-  % (b) 金属网罩内验电器
-  \begin{scope}[shift={(3.6,0)}]
-    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (-1.15,-1.15) -- (1.15,-1.15);
-    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (-1.15,-1.15) -- (-1.15,1.55) -- (0.55,1.55) -- (0.55,-1.15);
+  % (b) 金属网罩内验电器；近棒侧−、远侧+；金箔闭合；底接地
+  \begin{scope}[shift={(3.7,0)}]
+    % ground hatching
+    \draw[line width=0.55pt] (-1.25,-1.15) -- (1.25,-1.15);
+    \foreach \x in {-1.05,-0.75,-0.45,-0.15,0.15,0.45,0.75,1.05}
+      \draw[line width=0.4pt] (\x,-1.15) -- ({\x-0.18},-1.35);
+    % dashed mesh cage
+    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt]
+      (-1.15,-1.15) -- (-1.15,1.55) -- (0.55,1.55) -- (0.55,0.95);
+    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt]
+      (0.55,0.55) -- (0.55,-1.15);
+    % electroscope inside, leaves closed
     \draw[line width=0.75pt] (0,0) circle (0.70);
     \draw[line width=0.55pt] (0,0.45) -- (0,0.85);
     \draw[line width=0.7pt] (0,0.95) circle (0.08);
-    \draw[line width=0.55pt] (0,0.20) -- (0,-0.35);
-    \foreach \y in {-0.8,-0.4,0,0.4,0.8,1.2}
-      \node[font=\tiny] at (0.85,\y) {$+$};
-    \draw[line width=0.7pt] (1.45,0.55) -- (1.75,1.35);
-    \node[anchor=north] at (0,-1.25) {$(b)$};
+    \draw[line width=0.6pt] (0,0.20) -- (0,-0.40);
+    % + on left (far from rod), − on right (near rod)
+    \foreach \y in {-0.75,-0.35,0.05,0.45,0.85,1.25}
+      \node[font=\tiny] at (-0.95,\y) {$+$};
+    \foreach \y in {-0.75,-0.35,0.05,0.45,0.85,1.25}
+      \node[font=\tiny] at (0.85,\y) {$-$};
+    \draw[line width=0.7pt] (1.35,0.55) -- (1.65,1.35);
+    \node[anchor=north] at (0,-1.45) {$(b)$};
   \end{scope}
 \end{tikzpicture}%
 }
-\caption{图1.10 静电屏蔽实验}
+\caption{图1.10 金属网实验}
 \end{figure}
 
 静电屏蔽现象的原因可以解释如下：金属网把验电器罩起来以后，外部带电体只能在金属网外表面两侧感应出等量异种电荷，金属网内表面没有电荷，所以验电器就不受影响了。即使带电体与金属网接触，传导给金属网一些电荷，这些电荷亦只是分布在金属网的外表面上，对验电器仍然没有影响。
@@ -7769,7 +7797,7 @@ T 向右旋转时，A、B 之间的电阻就变大；当 T 向左旋转时，A�
 
 \begin{figure}
 \centering
-% fig-alt: 图2.16：五点五灯并联于 $A,B$
+% fig-alt: 图2.16：五个电灯并联于 $A,B$
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.55pt] (0,1.15) -- (3.4,1.15);
@@ -11983,12 +12011,12 @@ R_{AX}=\rho\frac{L_{AX}}{S};\quad R_{AO}=\rho\frac{L_{AO}}{S}
 
 \subsection{1. 液体离子导电}
 
-液体是不是导电？这个问题我们可从下面简单实验来观察。图2.51是液体导电的实验装置：A和K是放在一个玻璃容器里的两块碳板，B是一组电源，L是一个小灯泡（或改用一个电流表），把它们串联在一起。实验时，先向容器内注入蒸馏水，这时我们看不到电路上有电流通过的迹象，
+液体是不是导电？这个问题我们可从下面简单实验来观察。图2.54是液体导电的实验装置：A和K是放在一个玻璃容器里的两块碳板，B是一组电源，L是一个小灯泡（或改用一个电流表），把它们串联在一起。实验时，先向容器内注入蒸馏水，这时我们看不到电路上有电流通过的迹象，
 这说明纯水是不导电的。 再用糖溶液代替蒸馏水，
 我们还是看不到电路上有电流通过的表示。
 这说明糖溶液也是不导电的。如果用盐溶液来进行这个实验，那么就能发现电路上有电流通过（小灯泡发出了亮光或电流表指针有了偏移），这说明盐溶液是导电的。
 
-用各种不同的液体进行实验，结果发现：所有单纯的溶剂都不导电，所有酸、碱、盐的稀溶液都能很好地导电，导电的。从化学研究知道：凡是能够导电的液离子的液体，因此我们可以得出这样子的液体才能导电。
+用各种不同的液体进行实验，结果发现：所有单纯的溶剂都不导电，所有酸、碱、盐的稀溶液都能很好地导电。从化学研究知道：凡是能够导电的液体都是具有离子的液体，因此我们可以得出这样一个结论：只有具有离子的液体才能导电。
 
 \begin{figure}
 \centering
