@@ -8545,16 +8545,16 @@ U_{1} = U_{A} - U_{B}
 BC 这段导体上的电压为
 
 \[
-U_{2} = U_{R} - U_{e},
+U_{2} = U_{B} - U_{C}
 \]
 
 AC 这段导体上的电压为
 
 \[
-U = U_{A} - U_{0}
+U = U_{A} - U_{C}
 \]
 
-显然， \(U = U_{1}:U_{2}\)
+显然， \(U = U_{1} + U_{2}\)
 
 如果在电路中有 n 段导体串联在一起，则全段电路的总电压为
 
@@ -9462,7 +9462,7 @@ R^{\prime} < R_{1} + R_{2} = R
 所以这时电路总电流
 
 \[
-I^{\prime} - \frac{U}{R^{\prime}} > I
+I^{\prime} = \frac{U}{R^{\prime}} > I
 \]
 
 而 \(R_{2}\) 两端电压
@@ -9472,7 +9472,7 @@ U_{C B}^{\prime} = I^{\prime} R_{2} > I R_{2}
 \]
 
 \[
-\therefore U_{A C}^{\prime} - U - I^{\prime} R_{2} < U_{A O}
+\therefore U_{A C}^{\prime} = U - I^{\prime} R_{2} < U_{A C}
 \]
 
 即此时 \(AC\) 间的电压小于9伏，若计算时仍按9伏代入求 \(R_{x}\)
@@ -9481,7 +9481,7 @@ U_{C B}^{\prime} = I^{\prime} R_{2} > I R_{2}
 正确的解法应该是：
 
 \[
-R_{A C}^{\prime} = \frac{R_{1} \cdot R_{c}}{R_{1} + R_{c}} = 20 \text{欧}
+R_{A C}^{\prime} = \frac{R_{1} \cdot R_{x}}{R_{1} + R_{x}} = 20 \text{欧}
 \]
 
 \[
@@ -9489,13 +9489,13 @@ R^{\prime} = R_{A C}^{\prime} + R_{2} = 50 \text{欧}
 \]
 
 \[
-I^{\prime} = \frac{U}{R^{\prime}} = - 0.36 \text{安}
+I^{\prime} = \frac{U}{R^{\prime}} = 0.36 \text{安}
 \]
 
-∴ \(U'_{AC} = I'R'_{AC} = 7.2\) 伏（要注意 \(U'_{A'} \neq 9\) 伏）
+∴ \(U'_{AC} = I'R'_{AC} = 7.2\) 伏（要注意 \(U'_{AC} \neq 9\) 伏）
 
 \[
-J_{2} = \frac{U_{A C}^{\prime}}{R_{x}} = 0.12 \text{安}
+I_{x} = \frac{U_{A C}^{\prime}}{R_{x}} = 0.12 \text{安}
 \]
 
 \subsection{习题 2.4}
@@ -10914,13 +10914,13 @@ P_{2} = I^{2} R + I^{2} r_{1} + I^{2} r_{2} = 0.5^{2} (10 + 1 + 1) \text{瓦} = 
 这一段电路来说，根据所假设的电流方向，
 
 \[
-i_{A} - I R_{3} = U_{B}
+U_{A} - I R_{3} = U_{B}
 \]
 
 即
 
 \[
-U_{A} - U_{B} \cdot I R_{3} \tag{1}
+U_{A} - U_{B} = I R_{3} \tag{1}
 \]
 
 \begin{figure}
@@ -10967,13 +10967,13 @@ U_{A} - U_{B} \cdot I R_{3} \tag{1}
 对 \(A\varepsilon_{1}R_{1}B\) 这一段电路来说
 
 \[
-U_{A} - \varepsilon_{1} + I_{1} r_{1} + I_{1} R_{1} = U_{n}
+U_{A} - \varepsilon_{1} + I_{1} r_{1} + I_{1} R_{1} = U_{B}
 \]
 
 即
 
 \[
-U_{A} - U_{B} = \varepsilon_{1} - I_{1} \dot {v}_{1} - I_{1} R_{1} \tag{2}
+U_{A} - U_{B} = \varepsilon_{1} - I_{1} r_{1} - I_{1} R_{1} \tag{2}
 \]
 
 对 \(A\varepsilon_{2}R_{2}B\) 这一段电路来说
@@ -11000,7 +11000,7 @@ I = I_{1} + I_{2} \tag{4}
 U_{A} - U_{B} = 12 I\text{；} U_{A} - U_{B} = 20 - 4 I_{1} - 5 I_{1} = 20 - 9 I_{1}
 \]
 
-及 \(U_{A} - U_{B} = 30 - 2I_{2} - 10I_{3} = 30 - 12I_{2}\)
+及 \(U_{A} - U_{B} = 30 - 2I_{2} - 10I_{2} = 30 - 12I_{2}\)
 
 解方程求得
 
@@ -11017,16 +11017,16 @@ UI，利用闭合电路的欧姆定律来分析一下就可以知道，如果外
 
 可见， 只用欧姆定律作定性分析是不够的，
 下面我们用欧姆定律来进行定量讨论。
-根据全电路欧姆定律，\(J = \frac{\varepsilon}{R + r}\)，而
-\(U = \varepsilon - I\gamma = \varepsilon - \frac{\varepsilon r}{R + r}\)
+根据全电路欧姆定律，\(I = \frac{\varepsilon}{R + r}\)，而
+\(U = \varepsilon - I r = \varepsilon - \frac{\varepsilon r}{R + r}\)
 
 因此，
-\(P = U I = \left(\varepsilon -\frac{\varepsilon r}{R + r}\right)\frac{\varepsilon}{R + r} -\frac{R\varepsilon^2}{(R + r)^2}\)
+\(P = U I = \left(\varepsilon -\frac{\varepsilon r}{R + r}\right)\frac{\varepsilon}{R + r} = \frac{R\varepsilon^2}{(R + r)^2}\)
 
 由于 \((R + r)^2 = (R - r)^2 + 4Rr\)，上式可改写为
 
 \[
-P^{2} - \frac{R e^{2}}{(R - r)^{2} + 4 R r} = \frac{\varepsilon^{2}}{\frac{(R - r)^{2}}{R} + 4 r}
+P = \frac{R \varepsilon^{2}}{(R - r)^{2} + 4 R r} = \frac{\varepsilon^{2}}{\frac{(R - r)^{2}}{R} + 4 r}
 \]
 
 我们知道电源的电动势 \(\varepsilon\) 和内电阻 \(r\)
@@ -11048,7 +11048,7 @@ P_{\text{最大}} = \frac{\varepsilon^{2}}{4 r}
 这时电源的效率并不高， 电源的效率
 
 \[
-\eta = \frac{I U}{I \varepsilon} = \frac{U}{\varepsilon} = \frac{I \cdot R}{I (R \cdot r)}
+\eta = \frac{I U}{I \varepsilon} = \frac{U}{\varepsilon} = \frac{I R}{I (R + r)}
 \]
 
 因为 \(R = r\)，所以
@@ -11064,7 +11064,7 @@ P_{\text{最大}} = \frac{\varepsilon^{2}}{4 r}
 
 \subsection{3. 伏安法测电阻}
 
-利用电压表和电流表分别测出电阻两端电压的数值和通过电阻的电流数值，然后根据欧姆定律，可以计算出电阻伏安法测电阻时，当被测电阻阻值较大，可先串联电流表（内接法）；当被测电阻阻值较小，可先并联电压表（外接法）以减小误差的数值，这种测量电阻的方法叫做伏安法。
+利用电压表和电流表分别测出电阻两端电压的数值和通过电阻的电流数值，然后根据欧姆定律，可以计算出电阻的数值。伏安法测电阻时，当被测电阻阻值较大，可先串联电流表（内接法）；当被测电阻阻值较小，可先并联电压表（外接法）以减小误差。这种测量电阻的方法叫做伏安法。
 
 图2.47（a） 所示是一种测定电阻阻值的电路，图中电压表的读数表示 R
 两端的电压 U，电流表读数表示通过 R 的电流 I，则可测得电阻 R 的值为
@@ -16926,7 +16926,7 @@ I=K\theta
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3.40 安培表构造。虚线框内G与分流电阻r并联；左+右−；上支Ig、下支Is
+% fig-alt: 图3.40 安培表构造。虚线框内G与分流电阻r并联；左+右−；上支Ig、下支Ir
 \begin{tikzpicture}[line cap=round,line join=round,>=latex]
   \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt on 0.6pt off 1.4pt]
     (0.35,-0.85) rectangle (5.05,1.55);
@@ -16952,7 +16952,7 @@ I=K\theta
   \draw[line width=0.7pt] (2.15,0.18) rectangle (3.25,0.52);
   \node[anchor=south,inner sep=2pt] at (2.70,0.55) {$r$};
   \draw[line width=0.7pt] (3.25,0.35) -- (4.30,0.35);
-  \node[anchor=north,inner sep=2pt] at (1.70,0.28) {$I_s$};
+  \node[anchor=north,inner sep=2pt] at (1.70,0.28) {$I_r$};
 \end{tikzpicture}%
 }
 \caption{图3.40 安培表构造的示意图}
@@ -26785,7 +26785,7 @@ v_{L} = \sqrt{2} I X_{L} \sin (\omega t + 90^{\circ}) = \sqrt{2} U_{L} \cos \ome
 串联电路的总电压，在任何瞬时，都等于各个分电压的瞬时值之和
 
 \[
-u = u_{B} + u_{L} = \sqrt{2} U_{R} \sin \omega t + \sqrt{2} U_{L} \cos \omega t \tag{5.17}
+u = u_{R} + u_{L} = \sqrt{2} U_{R} \sin \omega t + \sqrt{2} U_{L} \cos \omega t \tag{5.17}
 \]
 
 上式还不能显示出总电压的特点，为了使上式能清楚地表明总电压的性质，需要化简上式。设把
@@ -26816,7 +26816,7 @@ U = \sqrt{U_{R}^{2} + U_{L}^{2}}
   \node[anchor=west,inner sep=1pt] at (0.62,0.22) {$\varphi$};
 \end{tikzpicture}%
 }
-\caption{图5.29·$U_R$与$U_L$合成总电压$U$的矢量图}
+\caption{图5.29 $U_R$与$U_L$合成总电压$U$的矢量图}
 \end{figure}
 
 利用这个矩形， \(U_{L}\) 和 \(U_{r}\) 可分别写成
@@ -34261,7 +34261,7 @@ f = \frac{1}{2 \pi \sqrt{LC}}
   （1） \(\frac{1}{2} B l v\)； （2） 0； （3） \(B l v\)； 2.
   \(a \to d\)， \(b \to c\)， \(M\) 点电势高， 0.12 安， 0.08 安， 0.04
   安； 3. \(v_{\text{最大}} = \frac{m g r}{B^{2} l^{2}}\)； 自左→右，
-  从增强至消失， 4： 0.1 牛顿； 5. 110 伏， 5 安。
+  从增强至消失；4. 0.1 牛顿；5. 110 伏，5 安。
 \end{enumerate}
 
 \section{第五章}
@@ -34278,7 +34278,7 @@ f = \frac{1}{2 \pi \sqrt{LC}}
 
 \subsection{习题 5.2}
 
-1.314弧度/秒，20毫秒.2.0.005秒，30°.3.10伏 \(\frac{\pi}{2}\) 或90° ·480·
+1. 314弧度/秒，20毫秒。2. 0.005秒，30°。3. 10伏，\(\frac{\pi}{2}\) 或90°。
 
 \begin{enumerate}[start=4]
 \item
