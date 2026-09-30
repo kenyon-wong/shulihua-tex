@@ -4664,7 +4664,7 @@ D E \perp A B\text{，}
 \end{figure}
 
 \[
-A B = \sqrt {O A ^ {2} + C B ^ {2}} = \sqrt {30^{2} + 40^{2}} = 50\text{，}
+A B = \sqrt {C A ^ {2} + C B ^ {2}} = \sqrt {30^{2} + 40^{2}} = 50\text{，}
 \]
 
 \[
@@ -4707,7 +4707,7 @@ D E = \sqrt {D C ^ {2} + C E ^ {2}} = \sqrt {35^{2} + 24^{2}} \approx 42.4 \text
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·65线稿（本图caption仍作图1·55，与fig-p0045-01不是同一幅）：平面M平行四边形，左端标M；角BAC，A在左前，B在右，C在后；P在上，PA斜线实线，AD为射影，O在AD上，PO竖直实线；OE⊥AB、OF⊥AC，连PE、PF。右上扫描旁的勾划不画。全部实线
+% fig-alt: 图1·65线稿（印刷caption作图1·55，TeX 顺号作图1·65，与fig-p0045-01不是同一幅）：平面M平行四边形，左端标M；角BAC，A在左前，B在右，C在后；P在上，PA/PE/PF实线；PO竖直虚线；AD射影上A—O虚线、O—D实线；OE⊥AB、OF⊥AC为虚线。右上扫描旁勾划不画。B03 按 raw 改遮挡虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Pfl) at (0.10,0.55);
   \coordinate (Pfr) at (2.92,0.36);
@@ -4724,15 +4724,17 @@ D E = \sqrt {D C ^ {2} + C E ^ {2}} = \sqrt {35^{2} + 24^{2}} \approx 42.4 \text
   \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
   \draw[line width=0.75pt] (A) -- (B);
   \draw[line width=0.75pt] (A) -- (C);
-  \draw[line width=0.75pt] (A) -- (D);
-  \draw[line width=0.8pt] (P) -- (O);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.5pt] (A) -- (O);
+  \draw[line width=0.75pt] (O) -- (D);
+  \draw[line width=0.75pt,dash pattern=on 2.5pt off 1.5pt] (P) -- (O);
   \draw[line width=0.75pt] (P) -- (A);
   \draw[line width=0.7pt] (P) -- (E);
   \draw[line width=0.7pt] (P) -- (F);
-  \draw[line width=0.7pt] (O) -- (E);
-  \draw[line width=0.7pt] (O) -- (F);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.5pt] (O) -- (E);
+  \draw[line width=0.65pt,dash pattern=on 2.5pt off 1.5pt] (O) -- (F);
   \draw[line width=0.5pt] (1.38,0.72) -- (1.26,0.66) -- (1.34,0.56);
   \draw[line width=0.5pt] (1.18,0.70) -- (1.28,0.78) -- (1.16,0.86);
+  \draw[line width=0.45pt] (1.48,0.86) -- (1.60,0.86) -- (1.60,0.74);
   \node[anchor=south,inner sep=1pt] at (P) {$P$};
   \node[anchor=east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north,inner sep=1pt] at (B) {$B$};
@@ -4894,7 +4896,7 @@ P E \perp A B\text{，} P F \perp A C.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 平面M内以O为心的椭圆（圆的斜投影）；P在上，PO竖直；圆上切点T、T1、B、B1；A在切线上；PT、PA
+% fig-alt: 图1·67（raw p55缺页；对照 KNOWN 替代扫描／assets fig-p0055-01）：平面M内以O为心的椭圆（前半实、后半虚）；P在上，PO竖直实线；OT实、OT1虚；切线ATB实、T1B1虚；PT、PT1实线。B03 补 OT/OT1/PT1 与圆后半虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Pfl) at (0.05,0.55);
   \coordinate (Pfr) at (4.15,0.32);
@@ -4908,9 +4910,14 @@ P E \perp A B\text{，} P F \perp A C.
   \coordinate (B1) at (2.95,1.05);
   \coordinate (A) at (0.72,0.70);
   \draw[line width=0.7pt] (Pfl) -- (Pfr) -- (Pbr) -- (Pbl) -- cycle;
-  \draw[line width=0.7pt] (O) ellipse[x radius=1.22, y radius=0.38];
+  % 圆：前半（近侧）实线，后半虚线
+  \draw[line width=0.7pt] (O) ++(1.22,0) arc[start angle=0, end angle=-180, x radius=1.22, y radius=0.38];
+  \draw[line width=0.65pt,dash pattern=on 2.4pt off 1.5pt] (O) ++(1.22,0) arc[start angle=0, end angle=180, x radius=1.22, y radius=0.38];
   \draw[line width=0.75pt] (P) -- (O);
+  \draw[line width=0.7pt] (O) -- (T);
+  \draw[line width=0.65pt,dash pattern=on 2.4pt off 1.5pt] (O) -- (T1);
   \draw[line width=0.7pt] (P) -- (T);
+  \draw[line width=0.7pt] (P) -- (T1);
   \draw[line width=0.7pt] (A) -- (T) -- (B);
   \draw[line width=0.65pt,dash pattern=on 2.4pt off 1.5pt] (T1) -- (B1);
   \node[anchor=south,inner sep=1pt] at (P) {$P$};
@@ -5345,7 +5352,7 @@ C D = \sqrt {a ^ {2} + 3 b ^ {2}}. \text{］}
 
 \shulihuahang{［求证］}
 
-平面 \(M\) 平行于平面 \(N_{\text{平}}\)
+平面 \(M\) 平行于平面 \(N\)。
 
 \shulihuahang{［证］}
 
@@ -5585,10 +5592,8 @@ a 和 b 是两条异面直线， 求证： 经过 a 而平行于 b 的平面 M�
 
 \shulihuahang{［求证］} 平面 \(M \parallel\) 平面 \(N\).
 
-\shulihuahang{［证］} 过直线 \(\alpha\) 作平面 \(P\) 和 \(Q\) 分别和平面 \(M\)
-和 \(N\) 交于 \(b\).
-
-c、d、e. 因为直线 \(a \perp\) 平面 M，
+\shulihuahang{［证］} 过直线 \(a\) 作平面 \(P\) 和 \(Q\) 分别和平面 \(M\)
+和 \(N\) 交于 \(b\)、\(c\)、\(d\)、\(e\). 因为直线 \(a \perp\) 平面 M，
 
 \[
 \therefore a \perp b\text{，} a \perp c.
@@ -5602,7 +5607,7 @@ c、d、e. 因为直线 \(a \perp\) 平面 M，
 
 同理 \(c \parallel e\).
 
-且因 \(b, c\) 相交，\(d, e\) 相交，∴ 平面 M \textbar\textbar{} 平面 N.
+且因 \(b, c\) 相交，\(d, e\) 相交，∴ 平面 \(M \parallel\) 平面 \(N\).
 
 \begin{figure}
 \centering
@@ -5872,15 +5877,15 @@ c、d、e. 因为直线 \(a \perp\) 平面 M，
 
 必须注意， 已知两个平面平行，
 虽然一个平面内的任何直线都平行于另一个平面，但是这两个平面之间的所有直线并不一定相互平行，它们的位置关系可能是平行，也可能是异面直线，只是不可能是相交直线（否则将导致这两个平面有一个公共点，它们就要相交于过这点的一直线）。
-如图1·76中， 平面 \(M\) 平行于平面 \(N\)， 直线 \(\alpha\) 与直线 \(b\)
-分别在 \(M, N\) 两个平面内， 它们是异面直线。 只有当直线 \(\alpha\)
+如图1·76中， 平面 \(M\) 平行于平面 \(N\)， 直线 \(a\) 与直线 \(b\)
+分别在 \(M, N\) 两个平面内， 它们是异面直线。 只有当直线 \(a\)
 和直线 \(b\) 在同一个平面内时， 根据平面和平面平行的性质定理，
 它们才可能平行。
 
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·76：上下两平行四边形，右端标M、N，全部实线。上平面内短线向右下斜，右旁标a；下平面内较粗近水平短线，上方标b。题文上线作α，扫描标a，从扫描
+% fig-alt: 图1·76：上下两平行四边形，右端标M、N，全部实线。上平面内短线向右下斜，右旁标a；下平面内较粗近水平短线，上方标b。邻接直线从扫描标a（原OCR α已改）
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.7pt] (0.00,1.72) -- (0.46,2.22) -- (2.62,2.06) -- (2.16,1.50) -- cycle;
   \draw[line width=0.7pt] (0.00,0.28) -- (0.46,0.78) -- (2.62,0.62) -- (2.16,0.06) -- cycle;
@@ -6018,13 +6023,13 @@ A B \parallel C D.
 
 一条直线如果与两个平行平面中的一个相交，必定和另一个也相交。
 
-\shulihuahang{［已知］} 平面 \(M \parallel\) 平面 \(N\)， 直线 \(\alpha\)
+\shulihuahang{［已知］} 平面 \(M \parallel\) 平面 \(N\)， 直线 \(a\)
 和平面 \(M\) 相交于点 \(A\).
 
-\shulihuahang{［求证］} 直线 \(\alpha\) 和平面 \(N\) 相交。
+\shulihuahang{［求证］} 直线 \(a\) 和平面 \(N\) 相交。
 
-\shulihuahang{［证］} 用反证法来证明：假设直线 \(\alpha\) 和平面 \(N\)
-不相交，则直线 \(\alpha\) 平行于平面 \(N\)，因直线 \(\alpha\) 经过点
+\shulihuahang{［证］} 用反证法来证明：假设直线 \(a\) 和平面 \(N\)
+不相交，则直线 \(a\) 平行于平面 \(N\)，因直线 \(a\) 经过点
 \(A\)，且点 \(A\) 在平面
 
 M 上， 又题知平面 M 平行于平面 N， 由例 1 可知直线 a 在平面 M 内，
@@ -6034,7 +6039,7 @@ M 上， 又题知平面 M 平行于平面 N， 由例 1 可知直线 a 在平�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·79：上平面右端标M，下平面右端标N，全部实线。直线自上左穿入上平面，交点旁标A，线标a在上方；直线继续穿过下平面并伸出其下，下平面无交点字母。题文直线作α，扫描标a，从扫描
+% fig-alt: 图1·79：上平面右端标M，下平面右端标N，全部实线。直线自上左穿入上平面，交点旁标A，线标a在上方；直线继续穿过下平面并伸出其下，下平面无交点字母。邻接直线从扫描标a（原OCR α已改）
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.7pt] (0.15,2.55) -- (0.62,3.02) -- (2.85,2.86) -- (2.38,2.32) -- cycle;
   \draw[line width=0.7pt] (0.15,0.72) -- (0.62,1.18) -- (2.85,0.72) -- (2.38,0.26) -- cycle;
@@ -6050,7 +6055,7 @@ M 上， 又题知平面 M 平行于平面 N， 由例 1 可知直线 a 在平�
 
 \shulihuahang{［注意］} 本例的证明应用的反证法是归缪法。因为过已知平面 \(N\)
 外的一点 \(A\) 的直线
-\(\alpha\)，只有两种情况（1）平行；（2）相交。所以结论的反面只有一个。
+\(a\)，只有两种情况（1）平行；（2）相交。所以结论的反面只有一个。
 
 \subsubsection{例 3}
 
