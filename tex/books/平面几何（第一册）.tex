@@ -350,10 +350,12 @@
 
 \begin{figure}
 \centering
-% fig-alt: 两条水平直线，左标A与B，右标a，下方分别标（1）和（2）
+% fig-alt: 两条水平直线，左标A与B（各有短竖线），右标a，下方分别标（1）和（2）
 \fitfig{%
 \begin{tikzpicture}[line cap=round]
   \draw[line width=0.7pt] (0,0) -- (3.5,0);
+  \draw[line width=0.6pt] (0.28,-0.09) -- (0.28,0.09);
+  \draw[line width=0.6pt] (3.22,-0.09) -- (3.22,0.09);
   \node[above=1pt] at (0.28,0) {$A$};
   \node[above=1pt] at (3.22,0) {$B$};
   \node[below=7pt] at (1.75,0) {（1）};
@@ -403,7 +405,7 @@
 
 事实上，用直尺只能画出直线的一部分，移动直尺后可以把这一部分向两方无限地画出来。
 
-探照灯、手电筒的光线，是由一点出发向一定方向射出的，这些都给我们射线的形象。在直线上某一点一旁的部分叫做射线，这一点叫做射线的端点，这个端点也叫做原点。射线用表示它的端点和射线上任意一点所注的两个大写字母来表示，并把表示端点的字母写在前面，例如``射线QC''（图1·3）。
+探照灯、手电筒的光线，是由一点出发向一定方向射出的，这些都给我们射线的形象。在直线上某一点一旁的部分叫做射线，这一点叫做射线的端点，这个端点也叫做原点。射线用表示它的端点和射线上任意一点所注的两个大写字母来表示，并把表示端点的字母写在前面，例如``射线OC''（图1·3）。
 
 \begin{figure}
 \centering
@@ -791,11 +793,26 @@ PQ > RS \text{或者} RS < PQ.
 
 \begin{figure}
 \centering
-% fig-alt: 图1·15：相交直线
+% fig-alt: 左为两针尖竖直落在基线上（正确）；右为两针尖斜向落在基线上（不正确）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0) -- (2.0,1.2);
-  \draw[line width=0.7pt] (0,1.0) -- (2.0,0.1);
+  % 正确：两竖直针脚
+  \draw[line width=0.7pt] (0,0) -- (2.55,0);
+  \draw[line width=0.85pt] (0.55,0) -- (0.55,1.15);
+  \draw[line width=0.55pt] (0.42,0.95) circle (0.14);
+  \fill (0.55,0) circle (0.035);
+  \draw[line width=0.85pt] (1.35,0) -- (1.35,1.15);
+  \fill (1.35,0) circle (0.035);
+  \node[below=3pt] at (0.95,0) {正确};
+  % 不正确：两斜针脚
+  \begin{scope}[xshift=3.35cm]
+    \draw[line width=0.7pt] (0,0) -- (2.55,0);
+    \draw[line width=0.85pt] (0.95,0) -- (0.45,1.15);
+    \fill (0.95,0) circle (0.035);
+    \draw[line width=0.85pt] (1.55,0) -- (2.05,1.15);
+    \fill (1.55,0) circle (0.035);
+    \node[below=3pt] at (1.25,0) {不正确};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·15}
@@ -1468,16 +1485,18 @@ OA = OB = OC.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 顶点引出两条虚线射线，下边水平向右、上边斜向右上，两端有箭头，角内有小弧，顶点旁标顶点，两边各标边
+% fig-alt: 顶点引出两条实线射线，远端虚线延长并带箭头；下边水平向右、上边斜向右上，角内有小弧；顶点旁标顶点，两边各标边
 \begin{tikzpicture}[line cap=round]
-  \draw[dashed, line width=0.7pt] (0,0) -- (2.05,0);
+  \draw[line width=0.7pt] (0,0) -- (1.55,0);
+  \draw[dashed, line width=0.7pt] (1.55,0) -- (2.05,0);
   \draw[->, line width=0.7pt] (2.05,0) -- (2.38,0);
-  \draw[dashed, line width=0.75pt] (0,0) -- (32:1.95);
+  \draw[line width=0.75pt] (0,0) -- (32:1.45);
+  \draw[dashed, line width=0.75pt] (32:1.45) -- (32:1.95);
   \draw[->, line width=0.75pt] (32:1.95) -- (32:2.28);
   \draw[line width=0.6pt] (0.46,0) arc[start angle=0, end angle=32, radius=0.46];
   \node[left=2pt] at (0,0) {顶点};
-  \node[below=2pt] at (1.20,0) {边};
-  \node at (0.62,0.92) {边};
+  \node[below=2pt] at (1.05,0) {边};
+  \node at (0.58,0.78) {边};
 \end{tikzpicture}%
 }
 \caption{图1·26}
@@ -1486,10 +1505,10 @@ OA = OB = OC.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 左为顶点O在上的虚线角，下端标F与E，角内有小弧；右为顶点B的角，斜边虚线箭头指向A，水平边实线至C外再虚线箭头，角内标1
+% fig-alt: 左为顶点O在上的实线角，下端标F与E，角内有小弧；右为顶点B的角，斜边实线后虚线箭头指向A，水平边实线至C外再虚线箭头，角内标1
 \begin{tikzpicture}[line cap=round]
-  \draw[dashed, line width=0.7pt] (0,1.85) -- (-0.52,0);
-  \draw[dashed, line width=0.7pt] (0,1.85) -- (0.52,0);
+  \draw[line width=0.7pt] (0,1.85) -- (-0.52,0);
+  \draw[line width=0.7pt] (0,1.85) -- (0.52,0);
   \draw[line width=0.6pt] (-0.11,1.50) arc[start angle=-106, end angle=-74, radius=0.36];
   \node[above=1pt] at (0,1.85) {$O$};
   \node[below left=0pt] at (-0.52,0) {$F$};
@@ -1498,7 +1517,8 @@ OA = OB = OC.
     \draw[line width=0.7pt] (0,0) -- (1.55,0);
     \draw[dashed, line width=0.7pt] (1.55,0) -- (2.05,0);
     \draw[->, line width=0.7pt] (2.05,0) -- (2.42,0);
-    \draw[dashed, line width=0.7pt] (0,0) -- (34:1.72);
+    \draw[line width=0.7pt] (0,0) -- (34:1.45);
+    \draw[dashed, line width=0.7pt] (34:1.45) -- (34:1.72);
     \draw[->, line width=0.7pt] (34:1.72) -- (34:2.08);
     \draw[line width=0.6pt] (0.42,0) arc[start angle=0, end angle=34, radius=0.42];
     \node[above=1pt] at (17:0.64) {$1$};
@@ -1814,11 +1834,49 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-% fig-alt: 图1·38：平行线
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0.85) -- (2.2,0.85);
-  \draw[line width=0.7pt] (0,0.25) -- (2.2,0.25);
+% fig-alt: 左为较小角ABC；中为较大角DEF且角内斜线阴影；右为迭合，顶点B下标(E)，水平端A下标(D)，内射线至C，外阴影射线至F（∠ABC<∠DEF）
+\begin{tikzpicture}[line cap=round]
+  % 左：较小 ∠ABC
+  \draw[line width=0.7pt] (0,0) -- (2.15,0);
+  \draw[line width=0.7pt] (0,0) -- (28:1.85);
+  \draw[line width=0.6pt] (0.40,0) arc[start angle=0, end angle=28, radius=0.40];
+  \node[below left=0pt] at (0,0) {$B$};
+  \node[above=1pt] at (2.15,0) {$A$};
+  \node[above=1pt] at (28:1.85) {$C$};
+  % 中：较大 ∠DEF 阴影
+  \begin{scope}[shift={(2.85,0)}]
+    \begin{scope}
+      \clip (0,0) -- (48:1.85) -- (1.95,0) -- cycle;
+      \foreach \s in {0.08,0.24,...,2.40}
+        \draw[line width=0.35pt] (\s,1.55) -- ++(0.72,-1.55);
+    \end{scope}
+    \draw[line width=0.7pt] (0,0) -- (1.95,0);
+    \draw[line width=0.7pt] (0,0) -- (48:1.85);
+    \draw[line width=0.7pt] (48:1.85) -- (1.95,0);
+    \node[below=1pt] at (0,0) {$E$};
+    \node[above=1pt] at (1.95,0) {$D$};
+    \node[above=1pt] at (48:1.85) {$F$};
+  \end{scope}
+  % 右：迭合，EF 在 ABC 外
+  \begin{scope}[shift={(5.55,0)}]
+    \begin{scope}
+      \clip (0,0) -- (48:2.05) -- (2.20,0) -- cycle;
+      \foreach \s in {0.08,0.24,...,2.55}
+        \draw[line width=0.35pt] (\s,1.65) -- ++(0.72,-1.65);
+    \end{scope}
+    \draw[line width=0.7pt] (0,0) -- (2.20,0);
+    \draw[line width=0.7pt] (0,0) -- (28:1.75);
+    \draw[line width=0.7pt] (0,0) -- (48:2.05);
+    \draw[line width=0.6pt] (0.38,0) arc[start angle=0, end angle=28, radius=0.38];
+    \draw[line width=0.6pt] (0.50,0) arc[start angle=0, end angle=48, radius=0.50];
+    \node[above=1pt] at (0.02,0.02) {$B$};
+    \node[below=1pt] at (0.02,-0.02) {$(E)$};
+    \node[above=1pt] at (2.20,0) {$A$};
+    \node[below=1pt] at (2.20,0) {$(D)$};
+    \node[above=1pt] at (28:1.75) {$C$};
+    \node[above=1pt] at (48:2.05) {$F$};
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·36}
@@ -1837,11 +1895,26 @@ OA = OB = OC.
 
 \begin{figure}
 \centering
-% fig-alt: 图1·37：垂线
+% fig-alt: 半圆量角器，圆心O，内外两排刻度0–180，径向分划线
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0.15) -- (2.0,0.15);
-  \draw[line width=0.7pt] (1.0,0.15) -- (1.0,1.35);
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.8pt] (-2.40,0) -- (2.40,0);
+  \draw[line width=0.8pt] (2.40,0) -- (2.40,-0.28) -- (-2.40,-0.28) -- (-2.40,0);
+  \draw[line width=0.75pt] (2.20,0) arc[start angle=0,end angle=180,radius=2.20];
+  \draw[line width=0.55pt] (1.85,0) arc[start angle=0,end angle=180,radius=1.85];
+  \foreach \a in {0,10,...,180} {
+    \draw[line width=0.35pt] (\a:1.85) -- (\a:2.05);
+  }
+  \foreach \a in {0,30,...,180} {
+    \draw[line width=0.45pt] (\a:1.85) -- (\a:2.20);
+  }
+  \foreach \a in {0,30,...,180} \draw[line width=0.4pt] (0,0) -- (\a:1.70);
+  \node[anchor=north] at (0,-0.02) {$O$};
+  \node at (0,2.05) {$90$};
+  \node at (2.05,0.12) {$0$};
+  \node at (-2.05,0.12) {$180$};
+  \node at (1.55,1.45) {$30$};
+  \node at (-1.55,1.45) {$150$};
 \end{tikzpicture}%
 }
 \caption{图1·37}
@@ -1889,11 +1962,28 @@ OE，OF，得出\(\angle EOF\)就是所要画的\(35^{\circ}\)角。
 
 \begin{figure}
 \centering
-% fig-alt: 图1·39：斜线
+% fig-alt: 量角器画∠EOF=35°：圆心O，边OE沿0°水平向右，边OF过35°刻度
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0.15) -- (2.0,0.15);
-  \draw[line width=0.7pt] (0.4,0.15) -- (1.6,1.25);
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  \draw[line width=0.8pt] (-2.40,0) -- (2.40,0);
+  \draw[line width=0.8pt] (2.40,0) -- (2.40,-0.28) -- (-2.40,-0.28) -- (-2.40,0);
+  \draw[line width=0.75pt] (2.20,0) arc[start angle=0,end angle=180,radius=2.20];
+  \draw[line width=0.55pt] (1.85,0) arc[start angle=0,end angle=180,radius=1.85];
+  \foreach \a in {0,10,...,180} {
+    \draw[line width=0.35pt] (\a:1.85) -- (\a:2.05);
+  }
+  \foreach \a in {0,30,...,180} {
+    \draw[line width=0.45pt] (\a:1.85) -- (\a:2.20);
+  }
+  \foreach \a in {0,30,...,180} \draw[line width=0.4pt] (0,0) -- (\a:1.70);
+  \node[anchor=north] at (0,-0.02) {$O$};
+  \draw[line width=0.7pt] (0,0) -- (3.15,0);
+  \node[anchor=west] at (3.15,0) {$E$};
+  \draw[line width=0.7pt] (0,0) -- (35:2.55);
+  \node[anchor=south west] at (35:2.55) {$F$};
+  \node at (0,2.05) {$90$};
+  \node at (2.05,0.12) {$0$};
+  \node at (-2.05,0.12) {$180$};
 \end{tikzpicture}%
 }
 \caption{图1·39}
