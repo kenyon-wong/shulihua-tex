@@ -8949,7 +8949,7 @@ AB， 于是 \(PE = 4\sqrt{2} \, cm\) . 在直角三角形 PDE 中，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·104：二面角M-AB-N。左斜面M，右水平面N。P在角内，PC、PD、PE、CD、CE、DE、CA实线。扫描有M、C、A、E、B、P、D、N
+% fig-alt: 图1·104：二面角M-AB-N。左斜面M，右水平面N。P在角内，PC、PD、PE、CD、DE实线，CE虚线。扫描有M、C、A、E、B、P、D、N
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0.12,0.10);
   \coordinate (E) at (0.78,0.62);
@@ -8969,7 +8969,7 @@ AB， 于是 \(PE = 4\sqrt{2} \, cm\) . 在直角三角形 PDE 中，
   \draw[line width=0.75pt] (Nfl) -- (Nfr) -- (Nbr) -- (Nbl);
   \draw[line width=0.95pt] (Nfl) -- (Nfr);
   \draw[line width=0.8pt] (C) -- (A);
-  \draw[line width=0.8pt] (C) -- (E);
+  \draw[line width=0.8pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (E);
   \draw[line width=0.8pt] (C) -- (P);
   \draw[line width=0.8pt] (C) -- (D);
   \draw[line width=0.8pt] (P) -- (E);
@@ -9032,7 +9032,7 @@ C D ^ {2} = C P ^ {2} + D P ^ {2} - 2 C P \cdot P D \cdot \cos 105 ^ {\circ}
 的面积 \(\cdot \cos \alpha\)
 
 \shulihuahang{［证］} 在平面 \(M\) 内自点 \(A_{1}\) 作 \(A_{1}D \perp BC\)，
-连结 \(AD\). 根据三垂线定理知 \(AD \perp BD\)， 所以
+连结 \(AD\). 根据三垂线定理知 \(AD \perp BC\)， 所以
 \(\angle ADA_{1} = \alpha\). 则
 
 \(\triangle A_{1}BC\) 面积 \(= \frac{1}{2} BC\cdot A_{1}D\)，但
@@ -9041,7 +9041,7 @@ C D ^ {2} = C P ^ {2} + D P ^ {2} - 2 C P \cdot P D \cdot \cos 105 ^ {\circ}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·105：平面M过BC。A在上方，A1为射影，AA1竖直。△ABC与射影△A1BC，D在BC上，AD、A1D。α在D旁。远边在三角形后虚线。扫描有A、A1、B、C、D、M、α
+% fig-alt: 图1·105：平面M过BC。A在上方，A1为射影，AA1竖直虚线。△ABC与射影△A1BC，D在BC上，AD、A1D。A1与D处直角标，α在∠ADA1。远边在三角形后虚线。扫描有A、A1、B、C、D、M、α
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Mfl) at (0.12,0.22);
   \coordinate (Mfr) at (2.35,0.26);
@@ -9059,11 +9059,15 @@ C D ^ {2} = C P ^ {2} + D P ^ {2} - 2 C P \cdot P D \cdot \cos 105 ^ {\circ}
   \draw[line width=0.8pt] (B) -- (C);
   \draw[line width=0.85pt] (A) -- (B);
   \draw[line width=0.85pt] (A) -- (C);
-  \draw[line width=0.85pt] (A) -- (A1);
+  \draw[line width=0.85pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (A1);
   \draw[line width=0.8pt] (A1) -- (B);
   \draw[line width=0.8pt] (A1) -- (C);
   \draw[line width=0.8pt] (A) -- (D);
   \draw[line width=0.8pt] (A1) -- (D);
+  % right angle at A1: AA1 vs A1D
+  \draw[line width=0.55pt] (A1) ++(-0.08,0.10) -- ++(-0.06,-0.05) -- ++(0.08,-0.10);
+  % right angle at D: A1D vs BC
+  \draw[line width=0.55pt] (D) ++(0.10,0.02) -- ++(0.03,-0.08) -- ++(-0.10,-0.03);
   \node[anchor=south,inner sep=0.06pt] at (A) {$A$};
   \node[anchor=west,inner sep=0.05pt] at (A1) {$A_{1}$};
   \node[anchor=south east,inner sep=0.06pt] at (B) {$B$};
@@ -9077,11 +9081,11 @@ C D ^ {2} = C P ^ {2} + D P ^ {2} - 2 C P \cdot P D \cdot \cos 105 ^ {\circ}
 \end{figure}
 
 \[
-\therefore \triangle A _ {1} B C \text {   \text{面积}   } = \frac {1}{2} B C \cdot A D \cdot \cos \alpha
+\therefore \triangle A_{1}BC\text{的面积} = \frac{1}{2} BC \cdot AD \cdot \cos \alpha
 \]
 
 \[
-= \triangle A B C \text {   \text{的面积}   } \cdot \cos \alpha .
+= \triangle ABC\text{的面积} \cdot \cos \alpha.
 \]
 
 \shulihuahang{［注意］}
@@ -9094,7 +9098,7 @@ C D ^ {2} = C P ^ {2} + D P ^ {2} - 2 C P \cdot P D \cdot \cos 105 ^ {\circ}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·106：平面M，只有B在平面上。A在右上，AA1竖直落到A1。C在中右，CC1落到C1。交线过B，穿过三角形后虚线。射影三角形A1BC1，D在前边。扫描有A、B、C、A1、C1、D、M，未标α
+% fig-alt: 图1·106：平面M，只有B在平面上。A在右上，AA1竖直虚线落到A1。C在中右，CC1虚线落到C1。交线过B，穿过三角形后虚线。射影△A1BC1虚线，D在前边，A1处直角。扫描有A、B、C、A1、C1、D、M，未标α
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Mfl) at (0.10,0.18);
   \coordinate (Mfr) at (2.62,0.22);
@@ -9114,12 +9118,12 @@ C D ^ {2} = C P ^ {2} + D P ^ {2} - 2 C P \cdot P D \cdot \cos 105 ^ {\circ}
   \draw[line width=0.85pt] (A) -- (B);
   \draw[line width=0.85pt] (A) -- (C);
   \draw[line width=0.85pt] (B) -- (C);
-  \draw[line width=0.8pt] (A) -- (A1);
-  \draw[line width=0.8pt] (C) -- (C1);
-  \draw[line width=0.75pt] (B) -- (C1);
+  \draw[line width=0.8pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (A1);
+  \draw[line width=0.8pt,dash pattern=on 2.2pt off 1.5pt] (C) -- (C1);
+  \draw[line width=0.75pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (C1);
   \draw[line width=0.75pt] (B) -- (D);
-  \draw[line width=0.75pt] (C1) -- (D);
-  \draw[line width=0.75pt] (C1) -- (A1);
+  \draw[line width=0.75pt,dash pattern=on 2.2pt off 1.5pt] (C1) -- (D);
+  \draw[line width=0.75pt,dash pattern=on 2.2pt off 1.5pt] (C1) -- (A1);
   \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (1.22,0.90) -- (2.05,0.62);
   \draw[line width=0.45pt] (2.20,0.68) -- (2.20,0.78) -- (2.32,0.70);
   \node[anchor=south,inner sep=0.08pt] at (A) {$A$};
@@ -9173,7 +9177,7 @@ C D ^ {2} = C P ^ {2} + D P ^ {2} - 2 C P \cdot P D \cdot \cos 105 ^ {\circ}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·108：多边形ABCDE，C、D在平面M上。A、B、E的垂足A1、B1、E1。对角线AC、AD。M远边在图形后虚线，右侧露出为实线。扫描有A、B、C、D、E、A1、B1、E1、M
+% fig-alt: 图1·108：多边形ABCDE，C、D在平面M上。A、B、E的垂线AA1/BB1/EE1虚线，垂足直角标。对角线AC、AD实，射影边虚线。M远边在图形后虚线。扫描有A、B、C、D、E、A1、B1、E1、M
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Mfl) at (0.10,0.20);
   \coordinate (Mfr) at (2.72,0.24);
@@ -9194,13 +9198,17 @@ C D ^ {2} = C P ^ {2} + D P ^ {2} - 2 C P \cdot P D \cdot \cos 105 ^ {\circ}
   \draw[line width=0.8pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
   \draw[line width=0.75pt] (A) -- (C);
   \draw[line width=0.8pt] (A) -- (D);
-  \draw[line width=0.8pt] (A) -- (A1);
-  \draw[line width=0.75pt] (B) -- (B1);
-  \draw[line width=0.75pt] (E) -- (E1);
-  \draw[line width=0.7pt] (A1) -- (B1) -- (C);
-  \draw[line width=0.7pt] (A1) -- (E1);
-  \draw[line width=0.7pt] (D) -- (E1);
+  \draw[line width=0.8pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (A1);
+  \draw[line width=0.75pt,dash pattern=on 2.2pt off 1.5pt] (B) -- (B1);
+  \draw[line width=0.75pt,dash pattern=on 2.2pt off 1.5pt] (E) -- (E1);
+  \draw[line width=0.7pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (B1) -- (C);
+  \draw[line width=0.7pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (E1);
+  \draw[line width=0.7pt,dash pattern=on 2.2pt off 1.5pt] (D) -- (E1);
   \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.5pt] (A1) -- (D);
+  % right angles at A1, B1, E1 (垂线足)
+  \draw[line width=0.5pt] (A1) ++(-0.08,0.00) -- ++(0.00,0.08) -- ++(0.08,0.00);
+  \draw[line width=0.5pt] (B1) ++(-0.08,0.00) -- ++(0.00,0.08) -- ++(0.08,0.00);
+  \draw[line width=0.5pt] (E1) ++(-0.08,0.00) -- ++(0.00,0.08) -- ++(0.08,0.00);
   \node[anchor=south,inner sep=0.08pt] at (A) {$A$};
   \node[anchor=east,inner sep=0.08pt] at (B) {$B$};
   \node[anchor=east,inner sep=0.06pt] at (C) {$C$};
@@ -9232,7 +9240,7 @@ S _ {\triangle A _ {1} B _ {1} C} = S _ {\triangle A B C} \cdot \cos \alpha \tex
 所以
 
 \[
-S _ {\triangle A _ {1} D E _ {1}} + S _ {\triangle A _ {1} C D} + S _ {\triangle A _ {1} B _ {1} C} = \text{（}S _ {\triangle A D E} + S _ {\triangle A C D} + S _ {A B C}\text{）} \cdot \cos \alpha .
+S _ {\triangle A _ {1} D E _ {1}} + S _ {\triangle A _ {1} C D} + S _ {\triangle A _ {1} B _ {1} C} = \text{（}S _ {\triangle A D E} + S _ {\triangle A C D} + S _ {\triangle A B C}\text{）} \cdot \cos \alpha .
 \]
 
 则
@@ -9242,7 +9250,7 @@ S _ {\triangle A _ {1} D E _ {1}} + S _ {\triangle A _ {1} C D} + S _ {\triangle
 
 铺有铁皮的两个屋顶， 一个向一面倾斜（图1·109（1）），
 一个向四面倾斜（图1·109（2））。 它们所盖住的平面范围都是边长为 \(a\) 和
-\(b\) 的矩形； 并且坡度都是 \(a\). 今要对这两屋顶涂上油漆，
+\(b\) 的矩形； 并且坡度都是 \(\alpha\). 今要对这两屋顶涂上油漆，
 试问哪个屋顶需用较多的油漆材料？
 
 \begin{figure}
@@ -9606,7 +9614,7 @@ l ^ {2} = B C ^ {2} - \text{（}b - c\text{）} ^ {2}.
 \]
 
 \[
-\therefore 2 \text{［} A B ^ {2} - \text{（}b \cdot a\text{）} ^ {2} \text{］} = 2 l ^ {2} = l ^ {2} + l ^ {2}
+\therefore 2 \text{［} A B ^ {2} - \text{（}b - a\text{）} ^ {2} \text{］} = 2 l ^ {2} = l ^ {2} + l ^ {2}
 \]
 
 \[
@@ -9651,7 +9659,7 @@ a（线面平行，线线平行），所以直线 c 也一定与直线 b 相交�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·110：平面M，直立矩形为平面N。顶边a上有A'、E，A'下竖线d到A，E下竖线到G。底边c。斜线自E至b上。b过A伸向前。扫描有A'、a、E、b、d、c、A、G、M、N
+% fig-alt: 图1·110：平面M，直立矩形为平面N。顶边a上有A'、E，A'下竖线d虚线到A，E下竖线到G。底边c。斜线自E至b上。b前段实、过A后段虚。扫描有A'、a、E、b、d、c、A、G、M、N
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Mfl) at (0.08,0.12);
   \coordinate (Mfr) at (2.85,0.16);
@@ -9669,10 +9677,11 @@ a（线面平行，线线平行），所以直线 c 也一定与直线 b 相交�
   \draw[line width=0.75pt] (Mfl) -- (Mbl) -- (Mbr);
   \draw[line width=0.95pt] (Mfl) -- (Mfr) -- (Mbr);
   \draw[line width=0.75pt] (Nl) -- (Ntl) -- (Ntr) -- (Nr) -- cycle;
-  \draw[line width=0.8pt] (Ap) -- (A);
+  \draw[line width=0.8pt,dash pattern=on 2.2pt off 1.5pt] (Ap) -- (A);
   \draw[line width=0.75pt] (E) -- (G);
   \draw[line width=0.85pt] (E) -- (Fb);
-  \draw[line width=1.05pt] (0.42,0.22) -- (A) -- (1.28,0.40);
+  \draw[line width=1.05pt] (0.42,0.22) -- (A);
+  \draw[line width=1.05pt,dash pattern=on 2.2pt off 1.5pt] (A) -- (1.28,0.40);
   \node[anchor=south,inner sep=0.05pt] at (0.78,1.68) {$A'$};
   \node[anchor=south,inner sep=0.05pt] at (1.18,1.74) {$a$};
   \node[anchor=south west,inner sep=0.04pt] at (1.70,1.66) {$E$};
@@ -9689,7 +9698,7 @@ a（线面平行，线线平行），所以直线 c 也一定与直线 b 相交�
 \end{figure}
 
 \shulihuahang{［证］} 直线 \(a\) 平行于平面 \(M\)， 所以 \(a \parallel c\).
-又因 \(d \perp e\)， 所以 \(d \perp a\)， 在平面 \(N\) 内， \(d\) 既然与
+又因 \(d \perp c\)， 所以 \(d \perp a\)， 在平面 \(N\) 内， \(d\) 既然与
 \(c\) 相交， 所以 \(d\) 也与 \(a\) 相交。 又因平面 \(N\) 垂直于平面
 \(M\)， 直线 \(d\) 在平面 \(N\) 内而垂直于平面 \(M\) 和平面 \(N\) 的交线
 \(c\)， 所以直线 \(d\) 垂直于平面 \(M\)， 于是 \(d \perp b\)，
@@ -10560,7 +10569,7 @@ A D = \sqrt {A C ^ {2} - C D ^ {2}} = \sqrt {a ^ {2} - \left(\frac {\sqrt {2}}{2
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·11B：补三面角。S在下，竖线过B向上伸出。A左、C右，棱略过A、C。B1在竖线右上，S1在其下，C1左、A1右。扫描有S、A、B、C、A1、B1、C1、S1。不改题注
+% fig-alt: 图1·118：补三面角。S在下，竖线过B向上伸出。A左、C右，棱略过A、C。B1在竖线右上，S1在其下，C1左、A1右。扫描有S、A、B、C、A1、B1、C1、S1。不改题注
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (S) at (1.62,0.18);
   \coordinate (B) at (1.62,1.58);
@@ -10725,7 +10734,7 @@ EVB， B--AVC 等等）； 在这些三面角中， 根据三面角的性质定�
 \end{figure}
 
 \[
-\begin{array}{rl} & {\text {   /   } \angle E A B <   \angle V A E + \angle V A B\text{，}} \\ & {\angle A B C <   \angle V B A + \angle V B C\text{，}} \end{array}
+\begin{array}{rl} & {\angle EAB < \angle VAE + \angle VAB\text{，}} \\ & {\angle ABC < \angle VBA + \angle VBC\text{，}} \end{array}
 \]
 
 \[
