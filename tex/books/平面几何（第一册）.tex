@@ -3028,11 +3028,11 @@ AB。因为\(\angle PEP'\)小于一平角，它的一半\(\angle PEA\)就小于�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 顶点O引出三条带箭头射线，OA水平向右，OP竖直向上，OB向左上；OP与OA间有直角记号并标90°，OP与OB间标x
-\begin{tikzpicture}[line cap=round, >=latex]
-  \draw[->, line width=0.7pt] (0,0) -- (1.72,0);
-  \draw[->, line width=0.7pt] (0,0) -- (0,1.58);
-  \draw[->, line width=0.7pt] (0,0) -- (150:1.58);
+% fig-alt: 顶点O引出三条实线射线（无箭头），OA水平向右，OP竖直向上，OB向左上；OP与OA间有直角记号并标90°，OP与OB间标x
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (1.72,0);
+  \draw[line width=0.7pt] (0,0) -- (0,1.58);
+  \draw[line width=0.7pt] (0,0) -- (150:1.58);
   \draw[line width=0.6pt] (0.16,0) -- (0.16,0.16) -- (0,0.16);
   \node[below=1pt] at (0,0) {$O$};
   \node[right=1pt] at (1.72,0) {$A$};
@@ -3048,11 +3048,12 @@ AB。因为\(\angle PEP'\)小于一平角，它的一半\(\angle PEA\)就小于�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 顶点O引出三条带箭头射线，OA水平向右，OC竖直向上，OB向左下；OC与OB间、OB与OA间各有一条角弧，无直角记号
-\begin{tikzpicture}[line cap=round, >=latex]
-  \draw[->, line width=0.7pt] (0,0) -- (1.58,0);
-  \draw[->, line width=0.7pt] (0,0) -- (90:1.62);
-  \draw[->, line width=0.7pt] (0,0) -- (225:1.48);
+% fig-alt: 顶点O引出三条实线射线（无箭头），OA水平向右，OC竖直向上，OB向左下；OC与OA间有直角记号；∠COB与∠BOA各有角弧（跟扫描）
+\begin{tikzpicture}[line cap=round]
+  \draw[line width=0.7pt] (0,0) -- (1.58,0);
+  \draw[line width=0.7pt] (0,0) -- (90:1.62);
+  \draw[line width=0.7pt] (0,0) -- (225:1.48);
+  \draw[line width=0.6pt] (0.16,0) -- (0.16,0.16) -- (0,0.16);
   \draw[line width=0.6pt] (90:0.40) arc[start angle=90, end angle=225, radius=0.40];
   \draw[line width=0.6pt] (225:0.54) arc[start angle=225, end angle=360, radius=0.54];
   \node[above right=0pt] at (0.04,0.02) {$O$};
@@ -3600,7 +3601,7 @@ x = 60\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·66
+% fig-alt: 图1·66 左：直线AB与CD交于E；右：直线PQ与RS向左虚线延长交于O
 \begin{tikzpicture}[line cap=round, >=latex]
   \draw[line width=0.7pt] (-1.58,0.58) -- (1.32,-0.36);
   \draw[line width=0.7pt] (-1.55,-0.46) -- (1.12,0.36);
@@ -3628,11 +3629,53 @@ x = 60\text{，}
 
 \begin{figure}
 \centering
-% fig-alt: 图1·67：对顶角
 \fitfig{%
+% fig-alt: 图1·67：左上打开书本（页边平行），左下铁轨枕木示意，右为卡尺两腿夹圆物
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0.2) -- (1.8,1.2);
-  \draw[line width=0.7pt] (0,1.1) -- (1.8,0.3);
+  % 打开的书本（上下边平行）
+  \begin{scope}[shift={(0,1.55)}]
+    \draw[line width=0.7pt] (0,0) -- (0,1.15) -- (1.05,1.22) -- (1.05,0.08) -- cycle;
+    \draw[line width=0.7pt] (1.05,0.08) -- (1.05,1.22) -- (2.10,1.15) -- (2.10,0) -- cycle;
+    \draw[line width=0.55pt] (1.05,0.08) -- (1.05,-0.08) -- (0.08,-0.12) -- (0,0);
+    \draw[line width=0.55pt] (1.05,0.08) -- (1.05,-0.08) -- (2.02,-0.12) -- (2.10,0);
+    \foreach \y in {0.25,0.42,0.59,0.76,0.93}
+      \draw[line width=0.35pt] (0.12,\y) -- (0.95,\y);
+    \foreach \y in {0.25,0.42,0.59,0.76,0.93}
+      \draw[line width=0.35pt] (1.15,\y) -- (1.98,\y);
+  \end{scope}
+  % 铁轨下枕木（平行条带）
+  \begin{scope}[shift={(0.05,0.05)}]
+    \draw[line width=0.7pt] (0.05,0.95) -- (2.15,0.72);
+    \draw[line width=0.7pt] (0.18,0.15) -- (2.28,-0.08);
+    \foreach \t in {0.08,0.22,0.36,0.50,0.64,0.78,0.92} {
+      \pgfmathsetmacro{\x}{0.05+2.10*\t}
+      \pgfmathsetmacro{\y}{0.95-0.23*\t}
+      \draw[line width=0.85pt] (\x,\y) -- ++(0.12,-0.72);
+    }
+    \draw[line width=0.45pt] (-0.05,1.05) -- (0.15,0.05);
+    \draw[line width=0.45pt] (2.05,0.82) -- (2.35,-0.15);
+  \end{scope}
+  % 卡尺两腿夹圆（两腿平行）
+  \begin{scope}[shift={(3.85,0.35)}]
+    % 被测圆（斜线填充）
+    \begin{scope}[shift={(0,0.55)}]
+      \draw[line width=0.7pt] (0,0) circle (0.42);
+      \foreach \a in {20,40,...,160}
+        \draw[line width=0.28pt] (\a:0.42) -- (\a+180:0.42);
+    \end{scope}
+    % 主尺横梁在圆上方
+    \draw[line width=0.75pt] (-1.15,1.22) -- (1.35,1.22) -- (1.35,1.05) -- (-1.15,1.05) -- cycle;
+    \foreach \x in {-0.95,-0.75,...,1.15}
+      \draw[line width=0.35pt] (\x,1.22) -- (\x,1.14);
+    % 左固定外量爪（竖直，左切圆）
+    \draw[line width=0.75pt] (-0.42,1.05) -- (-0.42,0.08) -- (-0.28,0.08) -- (-0.28,1.05);
+    % 右滑动外量爪（竖直，右切圆）
+    \draw[line width=0.75pt] (0.42,1.05) -- (0.42,0.08) -- (0.56,0.08) -- (0.56,1.05);
+    % 游标示意
+    \draw[line width=0.55pt] (0.42,1.05) -- (0.95,1.05) -- (0.95,1.22);
+    \foreach \x in {0.55,0.68,0.81}
+      \draw[line width=0.3pt] (\x,1.22) -- (\x,1.14);
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图1·67}
@@ -3649,7 +3692,7 @@ AB 平行于 CD，写成\(AB \parallel CD\)。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·68
+% fig-alt: 图1·68 两平行线AB∥CD，两端外侧虚线延长
 \begin{tikzpicture}[line cap=round, >=latex]
   \draw[dashed, line width=0.6pt] (-2.62,0.62) -- (-1.92,0.62);
   \draw[line width=0.7pt] (-1.92,0.62) -- (2.05,0.62);
@@ -3675,7 +3718,7 @@ AB 平行于 CD，写成\(AB \parallel CD\)。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·69
+% fig-alt: 图1·69 截线EF截AB、CD成八角，角1–8按印刷编号
 \begin{tikzpicture}[line cap=round, >=latex]
   \draw[line width=0.7pt] (-1.72,0.78) -- (1.78,0.78);
   \draw[line width=0.7pt] (-1.68,-0.72) -- (1.82,-0.96);
@@ -3776,7 +3819,7 @@ AB 平行于 CD，写成\(AB \parallel CD\)。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·71
+% fig-alt: 图1·71 两平行线被截线所截的示意
 \begin{tikzpicture}[line cap=round, >=latex]
   \draw[line width=0.7pt] (0,0) -- (3.25,0);
   \draw[line width=0.7pt] (3.25,0) -- (3.18,1.62);
@@ -5918,7 +5961,7 @@ l _{1} \parallel l _{2}.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 印刷为图1·94（文件题注仍作图1·34，未改）：∠ABC内点P，PE∥AB、PF∥CB、PH⊥BA；直角记号在P处、位于PE之上
+% fig-alt: 图1·94：∠ABC内点P，PE∥AB、PF∥CB、PH⊥BA；直角记号在H；∠EPF内标1
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (B) at (0.18,0.18);
   \coordinate (A) at (3.62,0.18);
@@ -5932,8 +5975,14 @@ l _{1} \parallel l _{2}.
   \draw[line width=0.7pt] (E) -- (P);
   \draw[line width=0.7pt] (P) -- (F);
   \draw[line width=0.7pt] (P) -- (H);
+  % 直角记号在垂足 H（PH⊥BA）
+  \begin{scope}[shift={(H)}]
+    \draw[line width=0.55pt] (0,0.16) -- (0.16,0.16) -- (0.16,0);
+  \end{scope}
+  % ∠EPF 单弧标 1
   \begin{scope}[shift={(P)}]
-    \draw[line width=0.55pt] (-0.16,0) -- (-0.16,0.16) -- (0,0.16);
+    \draw[line width=0.5pt] (180:0.28) arc[start angle=180, end angle=220, radius=0.28];
+    \node[inner sep=1pt] at (200:0.46) {$1$};
   \end{scope}
   \node[above left=1pt] at (C) {$C$};
   \node[above left=1pt] at (E) {$E$};
