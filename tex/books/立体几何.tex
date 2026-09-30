@@ -514,7 +514,7 @@
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 平面M与平面N相交于竖直线AB，均为实线：M向右后倾斜，N为右侧直立矩形，无虚线
+% fig-alt: 平面M与平面N相交于竖直线AB；M在前（左斜），N在后右；N顶边在M后方为虚线，其余实线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,3.15);
   \coordinate (B) at (0,0);
@@ -522,7 +522,8 @@
   \coordinate (Q) at (1.28,0.48);
   \coordinate (R) at (2.08,3.15);
   \coordinate (S) at (2.08,0);
-  \draw[line width=0.7pt] (A) -- (B) -- (S) -- (R) -- cycle;
+  \draw[line width=0.7pt] (A) -- (B) -- (S) -- (R);
+  \draw[line width=0.65pt,dash pattern=on 2.8pt off 1.6pt] (R) -- (A);
   \draw[line width=0.7pt] (A) -- (P) -- (Q) -- (B);
   \node[left=1pt] at (A) {$A$};
   \node[left=1pt] at (B) {$B$};
@@ -535,20 +536,25 @@
 
 \begin{figure}
 \centering
-% fig-alt: （2）曲面：左竖边CD，顶底为曲线，右缘过P，底边虚线
+% fig-alt: （2）曲面P与直立平面Q交于曲线CD；Q顶边在P后为虚线；底边虚线；右缘与CD实线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (C) at (0.12,2.55);
   \coordinate (D) at (0.12,0.35);
-  \coordinate (P) at (1.55,0.42);
-  \coordinate (Tr) at (1.55,2.48);
+  \coordinate (Qt) at (1.55,2.48);
+  \coordinate (Qb) at (1.55,0.42);
+  \coordinate (Qr) at (2.05,2.48);
+  \coordinate (Qbr) at (2.05,0.42);
   \draw[line width=0.7pt] (C) -- (D);
-  \draw[line width=0.7pt] (C) .. controls (0.55,2.62) and (1.15,2.58) .. (Tr);
-  \draw[line width=0.7pt] (Tr) .. controls (1.72,1.85) and (1.72,1.05) .. (P);
-  \draw[line width=0.65pt,dash pattern=on 3.1pt off 1.7pt] (D) -- (P);
+  \draw[line width=0.7pt] (C) .. controls (0.55,2.62) and (1.15,2.58) .. (Qt);
+  \draw[line width=0.7pt] (Qt) -- (Qb);
+  \draw[line width=0.7pt] (Qr) -- (Qbr) -- (Qb);
+  \draw[line width=0.65pt,dash pattern=on 3.1pt off 1.7pt] (Qt) -- (Qr);
+  \draw[line width=0.65pt,dash pattern=on 3.1pt off 1.7pt] (D) -- (Qb);
   \node[anchor=south east] at (C) {$C$};
   \node[anchor=north east] at (D) {$D$};
-  \node[anchor=west] at (P) {$P$};
+  \node at (0.85,1.45) {$P$};
+  \node[anchor=west] at (Qbr) {$Q$};
 \end{tikzpicture}%
 }
 \caption{(2)}
@@ -766,7 +772,7 @@ B 可
 
 \begin{figure}
 \centering
-% fig-alt: 图1·14 三图：平面P上(1)直线ABC与线外点D；(2)平面四边形ABCD；(3)平面ABC外一点D连成三棱锥
+% fig-alt: 图1·14 三图：平面P上(1)直线ABC与线外点D；(2)平面四边形ABCD；(3)平面ABC外一点D连成三棱锥，底边AC为虚线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,every node/.style={font=\scriptsize,inner sep=0.6pt}]
   \begin{scope}[xshift=0cm]
@@ -799,7 +805,8 @@ B 可
     \coordinate (B) at (1.75,0.52);
     \coordinate (C) at (2.15,1.12);
     \coordinate (D) at (1.55,2.15);
-    \draw[line width=0.7pt] (A) -- (B) -- (C) -- cycle;
+    \draw[line width=0.7pt] (A) -- (B) -- (C);
+    \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (C) -- (A);
     \draw[line width=0.7pt] (A) -- (D) -- (C);
     \draw[line width=0.7pt] (B) -- (D);
     \node[anchor=north] at (A) {$A$};
@@ -819,10 +826,10 @@ B 可
 也就是说， 同在一直线上的四点不确定任何一个平面。 所以说，
 这四点同在一平面内， 但不确定一个平面。
 
-（2） 设 \(A, B, O\) 三点在一直线上， 而点 \(D\) 不在这直线上
+（2） 设 \(A, B, C\) 三点在一直线上， 而点 \(D\) 不在这直线上
 （图1·14（1））， 那末由一直线和这直线外一点确定一个
 
-平面 \(P_{\bullet}\)
+平面 \(P\).
 
 （3） 设 \(A, B, C, D\) 中没有任何三点在一直线上，
 因此其中的任何三点可以确定一个平面。 假如取 \(A, B, C\) 三点确定一个平面
@@ -838,7 +845,7 @@ B 可
 
 \subsubsection{例 1}
 
-AB、OD、EF 是三条直线， 其中 \(AB \parallel CD\)， EF 与 AB和 \(CD\)
+AB、CD、EF 是三条直线， 其中 \(AB \parallel CD\)， EF 与 AB和 \(CD\)
 都相交， 求证 \(AB, CD, EF\) 三直线在同一平面内 （图1·15）。
 
 分析要证明三条直线在同一平面内，可以先由其中两条直线确定一个平面，
@@ -1194,9 +1201,9 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \shulihuahang{［解］}
 
-在平面 \(P\) 内任取一点 \(A\)， 过点 \(A\) 和直线 \(\alpha\) 作平面
+在平面 \(P\) 内任取一点 \(A\)， 过点 \(A\) 和直线 \(a\) 作平面
 \(Q\). 平面 \(Q\) 和平面 \(P\) 有公共点 \(A\)， 所以相交于过点 \(A\)
-的直线 \(AB\). 在平面 \(Q\) 内的直线 \(\alpha\) 和 \(AB\) 相交于点
+的直线 \(AB\). 在平面 \(Q\) 内的直线 \(a\) 和 \(AB\) 相交于点
 \(C\)， 那么点 \(C\) 即为所求的公共点。
 
 若 \(a \parallel AB\)，本题无解。
@@ -1205,11 +1212,11 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 
 \begin{enumerate}
 \item
-  已知一直线 \(\alpha\) 和直线 \(\alpha\) 外的一点 \(P\)， 求过点 \(P\)
-  作直线 \(\alpha\) 的垂线。
+  已知一直线 \(a\) 和直线 \(a\) 外的一点 \(P\)， 求过点 \(P\)
+  作直线 \(a\) 的垂线。
 \item
-  已知空间两直线 \(\alpha\) 和 \(b\) （不在同一个平面内）
-  和它们外面的一点C， 求过点 O 作一直线使它和直线 a、b 都相交。
+  已知空间两直线 \(a\) 和 \(b\) （不在同一个平面内）
+  和它们外面的一点C， 求过点 C 作一直线使它和直线 a、b 都相交。
 \item
   在已知平面 \(M\) 内求作一条直线， 使它过平面 \(M\) 内的一个已知点
   \(P\)， 并且与不在这平面内的一条已知直线 \(AB\) 相交。
@@ -1218,7 +1225,7 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第3题：水平平行四边形为平面M，直立平行四边形为平面N；粗线PQ为两平面交线，P在左、Q在右；线a由A斜下至B，均为实线、无箭头；M后边被N挡住的一段为虚线
+% fig-alt: 第3题：水平平行四边形为平面M，直立平行四边形为平面N；粗线PQ为两平面交线，P在左、Q在右；线AB由A斜下至B；N伸到M下方的侧棱为虚线；M后边被N挡住的一段为虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Ml) at (0.10,1.15);
   \coordinate (Mfr) at (3.28,0.82);
@@ -1232,7 +1239,12 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
   \coordinate (Q) at (2.18,1.32);
   \coordinate (A) at (1.40,2.26);
   \coordinate (Bpt) at (2.22,0.46);
-  \draw[line width=0.7pt] (Nt) -- (Ntr) -- (Nbr) -- (Nbl) -- cycle;
+  \draw[line width=0.7pt] (Nt) -- (Ntr);
+  \draw[line width=0.7pt] (Nt) -- (P);
+  \draw[line width=0.7pt] (Ntr) -- (Q);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (P) -- (Nbl);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (Q) -- (Nbr);
+  \draw[line width=0.65pt,dash pattern=on 2.6pt off 1.6pt] (Nbl) -- (Nbr);
   \draw[line width=0.7pt] (Ml) -- (Mfr) -- (Mbr);
   \draw[line width=0.7pt] (Ml) -- (Mbl);
   \draw[line width=0.7pt] (Mbl) -- (1.28,1.745);
@@ -1271,7 +1283,7 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 （3） 如果同一平面内两条直线没有公共点，那么这两条直线平行。
 
 所以，在同一平面内的两直线只有重合、相交、平行这三种位置关系。但是，在空间图形中，两直线的位置关系是否也是这样呢？由于空间图形是不完全在一个平面内的点所组成的图形，因此有不在同一平面内的直线存在.例如，在我们常见的长方体中（图1·21），上底面的长
-\(A_{1}B_{1}\) 与下底面的宽\(AD_{1}\) 或者上底面内一条矩形的对角线
+\(A_{1}B_{1}\) 与下底面的宽\(AD\)；或者上底面内一条矩形的对角线
 \(B_{1}D_{1}\) 与这长方体的高 \(AA_{1}\)
 等，它们都是不在同一平面内的直线.例如，操场跳高架上的横竿与直立于操场上的旗竿，
 如果将它们看作直线， 它们也是不在同一个平面内的。
@@ -1279,7 +1291,7 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·21：长方体，A前左下、B前右下、C后右下、D后左下；顶面A1B1C1D1及对角线D1B1为实线；竖边AA1、BB1、CC1、DD1为实线；隐藏边AD、DC为虚线
+% fig-alt: 图1·21：长方体，A前左下、B前右下、C后右下、D后左下；顶面A1B1C1D1及对角线D1B1为实线；竖边AA1、BB1、CC1为实线；隐藏边AD、DC、DD1为虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0.00,0.18);
   \coordinate (B) at (1.92,0.18);
@@ -1293,10 +1305,10 @@ a，那是不妥当的，因为只有在一个平面里才可以应用作图工�
   \draw[line width=0.7pt] (A) -- (A1) -- (B1) -- (B);
   \draw[line width=0.7pt] (A1) -- (D1) -- (C1) -- (B1);
   \draw[line width=0.7pt] (D1) -- (B1);
-  \draw[line width=0.7pt] (D) -- (D1);
   \draw[line width=0.7pt] (C) -- (C1);
   \draw[line width=0.65pt,dash pattern=on 2.7pt off 1.7pt] (A) -- (D);
   \draw[line width=0.65pt,dash pattern=on 2.7pt off 1.7pt] (D) -- (C);
+  \draw[line width=0.65pt,dash pattern=on 2.7pt off 1.7pt] (D) -- (D1);
   \node[below left=0pt] at (A) {$A$};
   \node[below=1pt] at (B) {$B$};
   \node[right=1pt] at (C) {$C$};
