@@ -6249,12 +6249,19 @@ a \parallel c\text{，} b \parallel d.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·81(3)：三张平行平行四边形，左下角标M、N、P。贯穿竖线上下伸出，上端标a，与三平面交点右侧标A、B、C。全部实线。不是图1·81(1)或(2)
+% fig-alt: 图1·81(3)：三张平行平行四边形，左下角标M、N、P。贯穿竖线a，交点右标A、B、C；穿平面段虚线，段间与伸出实线。B04 按 assets 改穿面虚线。不是图1·81(1)或(2)
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.7pt] (0.10,2.62) -- (0.62,3.18) -- (2.92,3.02) -- (2.40,2.48) -- cycle;
   \draw[line width=0.7pt] (0.10,1.28) -- (0.62,1.84) -- (2.92,1.68) -- (2.40,1.14) -- cycle;
   \draw[line width=0.7pt] (0.10,-0.06) -- (0.62,0.50) -- (2.92,0.34) -- (2.40,-0.20) -- cycle;
-  \draw[line width=0.85pt] (1.52,3.52) -- (1.52,-0.58);
+  % a：伸出与段间实线，穿各平面短段虚线
+  \draw[line width=0.85pt] (1.52,3.52) -- (1.52,2.78);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.4pt] (1.52,2.78) -- (1.52,2.48);
+  \draw[line width=0.85pt] (1.52,2.48) -- (1.52,1.44);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.4pt] (1.52,1.44) -- (1.52,1.14);
+  \draw[line width=0.85pt] (1.52,1.14) -- (1.52,0.10);
+  \draw[line width=0.65pt,dash pattern=on 2.2pt off 1.4pt] (1.52,0.10) -- (1.52,-0.20);
+  \draw[line width=0.85pt] (1.52,-0.20) -- (1.52,-0.58);
   \node[anchor=south west,inner sep=0.3pt] at (1.56,3.42) {$a$};
   \node[anchor=west,inner sep=0.25pt] at (1.58,2.62) {$A$};
   \node[anchor=west,inner sep=0.25pt] at (1.58,1.28) {$B$};
@@ -6269,13 +6276,13 @@ a \parallel c\text{，} b \parallel d.
 
 \subsubsection{例 5}
 
-\(AO\) 和 \(BD\) 分别是夹在两个平行平面 \(P\) 和 \(Q\) 间的两条线段， 若
-\(AO = 13\mathrm{cm}, BD = 15\mathrm{cm}, AC, BD\)
+\(AC\) 和 \(BD\) 分别是夹在两个平行平面 \(P\) 和 \(Q\) 间的两条线段， 若
+\(AC = 13\mathrm{cm}, BD = 15\mathrm{cm}, AC, BD\)
 在同一个平面内的射影的和为 \(14\mathrm{cm}\). 求这两条射影的长，
 并求这两个平面间的距离。
 
-\shulihuahang{［解］} 设 \(AO\) 和 \(BD\) 在平面 \(Q\) 内射影的长为
-\(A_{1}O = x\) 和 \(B_{1}D = 14 - x\).
+\shulihuahang{［解］} 设 \(AC\) 和 \(BD\) 在平面 \(Q\) 内射影的长为
+\(A_{1}C = x\) 和 \(B_{1}D = 14 - x\).
 
 ∵ 平面 P ∥ 平面 Q，
 
@@ -6288,7 +6295,7 @@ a \parallel c\text{，} b \parallel d.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·82：上平面左标P，下平面左标Q。A、B在上平面，A、B向下到前棱为虚线，其下AA1、BB1实垂线，A1B1实线相连。左斜线到C标13，C到A1标5；右斜线到D标15，B1到D标9。题文AO、A1O，扫描标C、A1，从扫描
+% fig-alt: 图1·82：上平面左标P，下平面左标Q。A、B在上平面，A、B向下到前棱为虚线，其下AA1、BB1实垂线，A1B1实线相连。左斜线到C标13，C到A1标5；右斜线到D标15，B1到D标9。邻接题文AC、A1C（B04 按 raw/答改；原OCR作AO、A1O）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Pfl) at (0.05,2.22);
   \coordinate (Pfr) at (2.85,2.12);
@@ -6889,15 +6896,28 @@ C F = \sqrt {B C ^ {2} + B F ^ {2}} = \sqrt {13}.
 
 \begin{figure}
 \centering
-% fig-alt: 矩形竖直平面 $ABCD$
 \fitfig{%
+% fig-alt: 图1·83(1)：左半平面Q（网纹）与右半平面P交于竖棱AB；棱旁标a；A上B下。B04 按 raw/assets 补半平面P与a（原仅画单面ABCD）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) -- (0,1.55) -- (1.15,1.85) -- (1.15,0.30) -- cycle;
-  \fill[pattern=north east lines,pattern color=black!30] (0,0) -- (0,1.55) -- (1.15,1.85) -- (1.15,0.30) -- cycle;
-  \node[anchor=east] at (0,1.55) {$A$};
-  \node[anchor=east] at (0,0) {$B$};
-  \node[anchor=west] at (1.15,1.85) {$D$};
-  \node[anchor=west] at (1.15,0.30) {$C$};
+  \coordinate (A) at (0.35,2.35);
+  \coordinate (B) at (0.35,0.15);
+  \coordinate (Qtr) at (1.55,2.05);
+  \coordinate (Qbr) at (1.55,0.35);
+  \coordinate (Ptr) at (2.55,2.55);
+  \coordinate (Pbr) at (2.55,0.55);
+  % 半平面 Q（前左，网纹）
+  \fill[pattern=north east lines,pattern color=black!35]
+    (A) -- (Qtr) -- (Qbr) -- (B) -- cycle;
+  \draw[line width=0.75pt] (A) -- (Qtr) -- (Qbr) -- (B);
+  % 半平面 P（后右）
+  \draw[line width=0.75pt] (A) -- (Ptr) -- (Pbr) -- (B);
+  % 棱 AB
+  \draw[line width=0.9pt] (A) -- (B);
+  \node[anchor=east,inner sep=0.2pt] at (A) {$A$};
+  \node[anchor=east,inner sep=0.2pt] at (B) {$B$};
+  \node[anchor=east,inner sep=0.15pt] at (0.28,1.25) {$a$};
+  \node[anchor=south west,inner sep=0.15pt] at (1.95,2.35) {$P$};
+  \node[anchor=south,inner sep=0.12pt] at (1.15,1.85) {$Q$};
 \end{tikzpicture}%
 }
 \caption{(1)}
@@ -6928,25 +6948,26 @@ C F = \sqrt {B C ^ {2} + B F ^ {2}} = \sqrt {13}.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: (3)：水平平行四边形右尖标Q，竖直面上下伸出。上面标l，水平面上粗线标d，d指向交线。全部轮廓实线。不是(1)(2)(4)(5)
+% fig-alt: 图1·83(3)：水平平面Q与竖立平面P交于粗线AB；P在上右，Q在右尖。全部轮廓实线。B04 按 raw/assets 改标（原误标l、d）。不是(1)(2)(4)(5)
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Hfl) at (0.15,0.95);
   \coordinate (Hfr) at (1.85,0.78);
   \coordinate (Hbr) at (2.55,1.42);
   \coordinate (Hbl) at (0.85,1.58);
-  \coordinate (Q) at (2.85,1.52);
+  \coordinate (Qtip) at (2.85,1.52);
   \coordinate (Vlt) at (0.95,2.15);
   \coordinate (Vrt) at (1.72,2.48);
   \coordinate (Vlb) at (0.95,0.22);
   \coordinate (Vrb) at (1.72,0.08);
-  \coordinate (d0) at (0.55,1.18);
-  \coordinate (d1) at (1.78,1.38);
+  \coordinate (A) at (0.55,1.18);
+  \coordinate (B) at (1.78,1.38);
   \draw[line width=0.7pt] (Vlt) -- (Vrt) -- (Vrb) -- (Vlb) -- cycle;
-  \draw[line width=0.7pt] (Hfl) -- (Hfr) -- (Q) -- (Hbr) -- (Hbl) -- cycle;
-  \draw[line width=1.05pt] (d0) -- (d1);
-  \node[anchor=south,inner sep=0.15pt] at (Vrt) {$l$};
-  \node[anchor=south east,inner sep=0.12pt] at (d0) {$d$};
-  \node[anchor=west,inner sep=0.15pt] at (Q) {$Q$};
+  \draw[line width=0.7pt] (Hfl) -- (Hfr) -- (Qtip) -- (Hbr) -- (Hbl) -- cycle;
+  \draw[line width=1.05pt] (A) -- (B);
+  \node[anchor=south,inner sep=0.15pt] at (Vrt) {$P$};
+  \node[anchor=north east,inner sep=0.12pt] at (A) {$A$};
+  \node[anchor=south west,inner sep=0.12pt] at (B) {$B$};
+  \node[anchor=west,inner sep=0.15pt] at (Qtip) {$Q$};
 \end{tikzpicture}%
 }
 \caption{(3)}
@@ -7028,7 +7049,7 @@ C F = \sqrt {B C ^ {2} + B F ^ {2}} = \sqrt {13}.
 \subsection{§1·21 二面角的平面角}
 
 研究二面角的大小不能完全从图形直观得出，应该从它们度量的大小来决定。在二面角棱上任取一点，过这点作平面垂直于这条棱（图1·84）：
-垂直于棱的平面和二面角的两个面的交线就形成了一些角（\(\angle OPD\)、
+垂直于棱的平面和二面角的两个面的交线就形成了一些角（\(\angle CPD\)、
 \(\angle C_{1}P_{1}D_{1}\)），而这些角的两边都垂直于棱（AB），这样的角都称为这个二面角的平面角。由于二面角M-AB-N的两个平面角
 \(\angle CPD\)、\(\angle C_{1}P_{1}D_{1}\)
 的两组对应边分别在两平面内都垂直于棱 \(AB\)
@@ -7042,7 +7063,7 @@ C F = \sqrt {B C ^ {2} + B F ^ {2}} = \sqrt {13}.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·84：二面角，棱上标A、P、P1、下端E，不是B。左下N，右下M。平面角CPD、C1P1D1。棱虚线，其余实线。正文写AB与∠OPD，扫描标E、∠CPD，从扫描
+% fig-alt: 图1·84：二面角，棱上标A、P、P1、下端E，不是B。左下N，右下M。平面角CPD、C1P1D1。棱虚线，其余实线。正文棱写AB、扫描下端E从扫描；邻接∠OPD→∠CPD（B04，跟扫描）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (1.55,2.85);
   \coordinate (P) at (1.55,2.15);
@@ -7079,8 +7100,8 @@ C F = \sqrt {B C ^ {2} + B F ^ {2}} = \sqrt {13}.
 \end{figure}
 
 为什么度量二面角的大小一定要利用它的平面角呢？这主要是二面角的大小与它的平面角的大小有着一一对应的关系。因为对于顶点在二面角的棱上而角的两边在二面角的两个半平面内的其他一些角，它们与二面角就没有这种一一对应的关系，例如在图1·85中，在二面角
-\(M - AB\)---N 的棱上任取一点 P，自点 P
-在这个二面角的两个半平面内任意作直线 PO、PD，那么 \(\angle CPD\)
+\(M - AB - N\) 的棱上任取一点 P，自点 P
+在这个二面角的两个半平面内任意作直线 PC、PD，那么 \(\angle CPD\)
 的大小是不一定的，可以等于 \(0^{\circ}\)，也可以等于
 \(180^{\circ}\)，在一切这样的角中只有二面角的平面角的大小是唯一确定的。
 
@@ -7089,7 +7110,7 @@ C F = \sqrt {B C ^ {2} + B F ^ {2}} = \sqrt {13}.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·85：二面角，棱AB实线。上A下B，左下N，右下M。P在棱上。C在右半平面，D在左半平面，∠CPD有小弧。正文写PO、PD，扫描为C、D，无O
+% fig-alt: 图1·85：二面角，棱AB实线。上A下B，左下N，右下M。P在棱上。C在右半平面，D在左半平面，∠CPD有小弧。邻接PO→PC（B04，跟扫描C与∠CPD）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (1.52,2.68);
   \coordinate (P) at (1.55,1.52);
