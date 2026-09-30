@@ -3264,7 +3264,7 @@ a 和 b
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·49：下平行四边形平面M，后边虚线，前边实线标c，左下标M；上平行四边形平面N，顶边标a、右端标N；左竖线b止于A，不伸出平面下方。扫描斜线标a，题文夹杂\alpha，从扫描；全部可见边实线，只此一条虚线
+% fig-alt: 图1·49：下平行四边形平面M，后边虚线，前边实线标c，左下标M；上平行四边形平面N，顶边标a、右端标N；左竖线b止于A，不伸出平面下方。扫描斜线标a；邻接证文原夹杂α/σ/δ，B02已按扫描改正为a/c/b；全部可见边实线，只此一条虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Mfl) at (0.28,0.18);
   \coordinate (Mfr) at (3.05,0.04);
@@ -3296,23 +3296,23 @@ a 和 b
 
 过直线 a 和点 A 作平面 N，和平面 M 交于直线 c.
 
-因为 \(\alpha \parallel\) 平面 \(M\)，故由线面平行判定定理可知：
+因为 \(a \parallel\) 平面 \(M\)，故由线面平行判定定理可知：
 
 \[
 a \parallel c.
 \]
 
-所以直线 \(\sigma\) 和直线 \(b\) 所成的角就是直线 \(\alpha\) 和直线
+所以直线 \(c\) 和直线 \(b\) 所成的角就是直线 \(a\) 和直线
 \(b\) 所成的角。
 
-而 \(\delta \perp\) 平面 \(M\)，由垂直的定义可知：
+而 \(b \perp\) 平面 \(M\)，由垂直的定义可知：
 
 \[
-\delta \perp c.
+b \perp c.
 \]
 
-即直线 \(\sigma\) 和直线 \(b\) 成 \(90^{\circ}\) 的角，所以直线
-\(\alpha\) 和直线 \(b\) 也成 \(90^{\circ}\) 的角，即
+即直线 \(c\) 和直线 \(b\) 成 \(90^{\circ}\) 的角，所以直线
+\(a\) 和直线 \(b\) 也成 \(90^{\circ}\) 的角，即
 
 \[
 a \perp b.
@@ -3732,7 +3732,7 @@ a \perp b.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·54（1）：平面M水平平行四边形，左下标M；B、D在平面上，BD实线；AB、CD竖直实线，CD较长；E在CD上与A同高，AE、AC实线。同侧，全部实线，不画虚线
+% fig-alt: 图1·54（1）：平面M水平平行四边形，左下标M，后边虚线、其余边实线；B、D在平面上，BD实线；AB、CD竖直实线，CD较长；E在CD上与A同高，AE、AC实线。同侧
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Mfl) at (0.12,0.18);
   \coordinate (Mfr) at (2.55,0.06);
@@ -3743,7 +3743,9 @@ a \perp b.
   \coordinate (A) at (0.85,1.42);
   \coordinate (E) at (1.95,1.42);
   \coordinate (C) at (1.95,2.28);
-  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
+  \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr);
+  \draw[line width=0.7pt] (Mfl) -- (Mbl);
+  \draw[line width=0.65pt, dash pattern=on 2.5pt off 1.6pt] (Mbl) -- (Mbr);
   \draw[line width=0.75pt] (A) -- (B);
   \draw[line width=0.75pt] (C) -- (D);
   \draw[line width=0.75pt] (A) -- (E);
@@ -3763,7 +3765,7 @@ a \perp b.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·54（2）：平面M平行四边形，左端标M；B、D在平面上，BD实线；C在D上方，E在D下方，CDE共线竖直；A在平面下方，AB竖直，其中穿出平面近边到B的一段为虚线，其余实线；AE、AC实线。异侧
+% fig-alt: 图1·54（2）：平面M平行四边形，左端标M；B、D在平面上，BD实线；C在D上方，E在D下方，CDE共线竖直；A在平面下方；AB与DE自平面近边至脚B/D的一段为虚线，其余实线；AE、AC实线。异侧
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Mfl) at (0.08,1.05);
   \coordinate (Mfr) at (2.72,0.88);
@@ -3775,9 +3777,12 @@ a \perp b.
   \coordinate (E) at (1.95,0.12);
   \coordinate (C) at (1.95,2.15);
   \coordinate (frontHit) at (0.95,1.08);
+  \coordinate (frontHitR) at (1.95,0.98);
   \draw[line width=0.7pt] (Mfl) -- (Mfr) -- (Mbr) -- (Mbl) -- cycle;
   \draw[line width=0.75pt] (B) -- (D);
-  \draw[line width=0.75pt] (C) -- (E);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.65pt,dash pattern=on 2.4pt off 1.5pt] (D) -- (frontHitR);
+  \draw[line width=0.75pt] (frontHitR) -- (E);
   \draw[line width=0.75pt] (A) -- (E);
   \draw[line width=0.8pt] (A) -- (C);
   \draw[line width=0.75pt] (A) -- (frontHit);
@@ -4026,18 +4031,18 @@ O A = O B = O C.
 
 一条直线和一个平面平行，试证明直线上各点到平面的距离相等。
 
-\shulihuahang{［已知］} 直线 \(\alpha \parallel\) 平面 \(P\) （图1·57）。
+\shulihuahang{［已知］} 直线 \(a \parallel\) 平面 \(P\) （图1·57）。
 
-\shulihuahang{［求证］} 直线 \(\alpha\) 上各点到平面 \(P\) 的距离相等。
+\shulihuahang{［求证］} 直线 \(a\) 上各点到平面 \(P\) 的距离相等。
 
-分析 要证明直线 \(\alpha\) 上各点到平面 \(P\) 的距离相等， 只要在直线
-\(\alpha\) 上任意取两点 \(A, B\)， 证明 \(A, B\) 两点到平面 \(P\)
+分析 要证明直线 \(a\) 上各点到平面 \(P\) 的距离相等， 只要在直线
+\(a\) 上任意取两点 \(A, B\)， 证明 \(A, B\) 两点到平面 \(P\)
 的距离相等就可以了。
 
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·57：平面P为水平平行四边形，左下标P；直立矩形左上标Q；粗线a上A在左、B在右，标a；AA1、BB1实线，A1B1虚线。扫描线标a、平面标Q，题文作直线α，从扫描
+% fig-alt: 图1·57：平面P为水平平行四边形，左下标P；直立矩形左上标Q；粗线a上A在左、B在右，标a；AA1、BB1实线，A1B1虚线。扫描线标a、平面标Q；邻接题文原作α，B02已按扫描改正为a
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Pfl) at (0.10,0.16);
   \coordinate (Pfr) at (2.85,0.04);
@@ -4067,7 +4072,7 @@ O A = O B = O C.
 \caption{图1·57}
 \end{figure}
 
-\shulihuahang{［证］} 在直线 \(\alpha\) 上任意取两点 \(A, B\)， 过 \(A, B\)
+\shulihuahang{［证］} 在直线 \(a\) 上任意取两点 \(A, B\)， 过 \(A, B\)
 分别作平面 \(P\) 的垂线 \(AA_{1}, BB_{1}\)， 垂线足分别为
 \(A_{1}, B_{1}\).
 
@@ -4077,7 +4082,7 @@ O A = O B = O C.
 过两平行直线 \(AA_{1}\) 和 \(BB_{1}\) 作平面 \(Q\)， 和平面 \(P\) 交于过
 \(A_{1}\) 和 \(B_{1}\) 的直线 \(A_{1}B_{1}\).
 
-∵ \(\alpha \parallel\) 平面 P，∴ \(a \parallel A_{1}B_{1}\)
+∵ \(a \parallel\) 平面 P，∴ \(a \parallel A_{1}B_{1}\)
 （线面平行的性质定理）。
 
 ∵ \(AA_{1} \perp\) 平面 P， \(BB_{1} \perp\) 平面 P，
@@ -4086,14 +4091,14 @@ O A = O B = O C.
 \therefore A A _ {1} \perp A _ {1} B _ {1}\text{，} B B _ {1} \perp A _ {1} B _ {1}\text{，}
 \]
 
-即 \(AA_{1}\)、 \(BB_{1}\) 是平行线 \(\alpha\) 和 \(A_{1}B_{1}\)
+即 \(AA_{1}\)、 \(BB_{1}\) 是平行线 \(a\) 和 \(A_{1}B_{1}\)
 间的距离，
 
 \[
 \therefore A A _ {1} = B B _ {1}\text{，}
 \]
 
-即直线 \(\alpha\) 上各点和平面 P 的距离相等。
+即直线 \(a\) 上各点和平面 P 的距离相等。
 
 \shulihuahang{［注意］}
 
@@ -4111,7 +4116,7 @@ O A = O B = O C.
 平面的斜线和它在平面内的射影所成的锐角，是这斜线和平面内过斜线足的直线所成的一切角中最小的角。
 
 \shulihuahang{［已知］} \(\angle ABC\) 是斜线 \(AB\) 和它在平面 \(M\) 内的射影
-\(BO\) 所成的锐角，\(BD\) 是平面 \(M\) 内过 \(B\) 而异于 \(BC\)
+\(BC\) 所成的锐角，\(BD\) 是平面 \(M\) 内过 \(B\) 而异于 \(BC\)
 的任意一条直线（图1·58）。
 
 \shulihuahang{［求证］} \(\angle ABC < \angle ABD.\)
@@ -4119,7 +4124,7 @@ O A = O B = O C.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·58：平面M平行四边形，右端标M；A在上，AB斜线实线、AC竖直实线，B在左、C在垂足；BD另向偏后，E在BD上，AE实线。扫描射影为BC、无O，题文作射影BO，从扫描
+% fig-alt: 图1·58：平面M平行四边形，右端标M；A在上，AB斜线实线、AC竖直实线，B在左、C在垂足；BD另向偏后，E在BD上、AE实线；射影BC（邻接原误作BO，B02已按扫描改正）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (Mfl) at (0.08,0.22);
   \coordinate (Mfr) at (2.72,0.08);
