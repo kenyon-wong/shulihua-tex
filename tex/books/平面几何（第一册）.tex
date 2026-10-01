@@ -10858,7 +10858,7 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-% fig-alt: 第13题：直角尺，射线OA、OB、OC 交尺于P、M、Q
+% fig-alt: 第13题 扫描：∠AOB，O在右上；曲尺L形，竖臂交OA于P、横臂交OB于Q，内直角顶点M；射线OC过M；无角弧、无等号杠、无虚线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=1.8pt] (0.85,0.15) -- (2.85,0.15);
@@ -10880,7 +10880,7 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-% fig-alt: 第14题：湖岸AB，交叉线交于O，底ED
+% fig-alt: 第14题 扫描：上为池塘阴影，岸上A左B右，AB水平；交叉线A–D与B–E交于O，底边ED；无角弧、无等号杠、无直角记号、无虚线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.55pt] plot[smooth cycle] coordinates {(0.35,1.85) (1.15,2.25) (2.25,2.15) (2.85,1.65) (2.45,1.25) (0.55,1.35)};
@@ -10979,11 +10979,51 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-% fig-alt: 第16题：圆与弦
+% fig-alt: 第16题 扫描：左竖河带「河流」与树标A（左岸）B（右岸）；AB虚线跨河；B–D–G竖直实线，BD/DG各一短等号杠；底线F–G–H水平，G处直角记号；虚线AD、实线DH共线；实线E–D–F，ED/DF各两短等号杠；E在右上；无角弧
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) circle (0.85);
-  \draw[line width=0.65pt] (-0.6,0.4) -- (0.6,0.4);
+\begin{tikzpicture}[line cap=round, line join=round]
+  % 河流
+  \fill[pattern=vertical lines, pattern color=black!50]
+    (-0.35,-2.85) rectangle (1.35,0.85);
+  \node[rotate=90, font=\small] at (0.50,-1.00) {河流};
+  % 点
+  \coordinate (A) at (0.25,0.35);
+  \coordinate (B) at (1.35,0.35);
+  \coordinate (D) at (1.35,-1.15);
+  \coordinate (G) at (1.35,-2.65);
+  \coordinate (F) at (0.15,-2.65);
+  \coordinate (H) at (3.05,-2.65);
+  \coordinate (E) at (3.25,0.55);
+  % 实线 BG、FH、EDF、DH
+  \draw[line width=0.75pt] (B) -- (G);
+  \draw[line width=0.75pt] (F) -- (H);
+  \draw[line width=0.75pt] (E) -- (D) -- (F);
+  \draw[line width=0.75pt] (D) -- (H);
+  % 虚线 AB、AD
+  \draw[line width=0.6pt, dash pattern=on 2.2pt off 1.5pt] (A) -- (B);
+  \draw[line width=0.6pt, dash pattern=on 2.2pt off 1.5pt] (A) -- (D);
+  % BD/DG：单杠
+  \draw[line width=0.55pt] (1.22,-0.35) -- (1.48,-0.35);
+  \draw[line width=0.55pt] (1.22,-1.90) -- (1.48,-1.90);
+  % ED/DF：双杠
+  \draw[line width=0.55pt] (2.10,-0.20) -- (2.28,-0.38);
+  \draw[line width=0.55pt] (2.20,-0.12) -- (2.38,-0.30);
+  \draw[line width=0.55pt] (0.65,-1.75) -- (0.83,-1.93);
+  \draw[line width=0.55pt] (0.75,-1.67) -- (0.93,-1.85);
+  % G 直角记号
+  \draw[line width=0.5pt] (1.35,-2.65) -- (1.51,-2.65) -- (1.51,-2.49) -- (1.35,-2.49);
+  % 简易树标
+  \draw[line width=0.45pt] (A) ++(0,0.08) -- ++(0,0.28);
+  \draw[line width=0.45pt] (A) ++(-0.12,0.22) -- ++(0.12,0.18) -- ++(0.12,-0.18) -- cycle;
+  \draw[line width=0.45pt] (B) ++(0,0.08) -- ++(0,0.28);
+  \draw[line width=0.45pt] (B) ++(-0.12,0.22) -- ++(0.12,0.18) -- ++(0.12,-0.18) -- cycle;
+  \node[anchor=south east, inner sep=1pt] at (0.15,0.40) {$A$};
+  \node[anchor=south west, inner sep=1pt] at (1.42,0.40) {$B$};
+  \node[anchor=west, inner sep=1pt] at (1.42,-1.15) {$D$};
+  \node[anchor=north west, inner sep=1pt] at (1.42,-2.70) {$G$};
+  \node[anchor=north east, inner sep=1pt] at (0.10,-2.70) {$F$};
+  \node[anchor=north west, inner sep=1pt] at (H) {$H$};
+  \node[anchor=south west, inner sep=1pt] at (E) {$E$};
 \end{tikzpicture}%
 }
 \caption{(第16题)}
@@ -11236,18 +11276,29 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-% fig-alt: 等腰△ABD，高BC，直角C，AD虚线
+% fig-alt: 图2·50左 扫描：等腰△ABD，C在AD上，BC竖直；△ABC实线，BD与CD虚线；AB/BD各一短等号杠，BC两短等号杠；C左右各有直角记号；无角弧
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) -- (1.55,0);
-  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (1.55,0) -- (2.85,0);
-  \draw[line width=0.75pt] (0,0) -- (1.55,2.25) -- (2.85,0);
-  \draw[line width=0.7pt] (1.55,2.25) -- (1.55,0);
-  \draw[line width=0.45pt] (1.55,0) -- (1.70,0) -- (1.70,0.15) -- (1.55,0.15);
-  \node[anchor=north east] at (0,0) {$A$};
-  \node[anchor=south] at (1.55,2.28) {$B$};
-  \node[anchor=north] at (1.55,0) {$C$};
-  \node[anchor=north west] at (2.85,0) {$D$};
+\begin{tikzpicture}[line cap=round, line join=round]
+  \coordinate (A) at (0.00,0.00);
+  \coordinate (C) at (1.55,0.00);
+  \coordinate (D) at (3.10,0.00);
+  \coordinate (B) at (1.55,2.35);
+  \draw[line width=0.75pt] (A) -- (C) -- (B) -- cycle;
+  \draw[line width=0.55pt, dash pattern=on 2pt off 1.4pt] (B) -- (D);
+  \draw[line width=0.55pt, dash pattern=on 2pt off 1.4pt] (C) -- (D);
+  % 直角记号：C 左（形内）、C 右（虚线侧）
+  \draw[line width=0.45pt] (1.39,0.00) -- (1.39,0.16) -- (1.55,0.16);
+  \draw[line width=0.45pt] (1.71,0.00) -- (1.71,0.16) -- (1.55,0.16);
+  % AB / BD：单杠
+  \draw[line width=0.55pt] (0.68,1.28) -- (0.82,1.18);
+  \draw[line width=0.55pt] (2.28,1.28) -- (2.42,1.18);
+  % BC：双杠
+  \draw[line width=0.55pt] (1.43,1.12) -- (1.67,1.12);
+  \draw[line width=0.55pt] (1.43,1.26) -- (1.67,1.26);
+  \node[anchor=north east, inner sep=1pt] at (A) {$A$};
+  \node[anchor=south, inner sep=1pt] at (B) {$B$};
+  \node[anchor=north, inner sep=1pt] at (C) {$C$};
+  \node[anchor=north west, inner sep=1pt] at (D) {$D$};
 \end{tikzpicture}%
 }
 \end{figure}
@@ -11255,15 +11306,19 @@ AB = CD\text{，} AD = CB.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2·50 扫描：直角△B'C'A'，B'在上、C'左下直角、A'右下；B'C'中段一短杠，C'A'近C'处一短杠，直角记号在C'朝形内；斜边无杠；无虚线、无点D
+% fig-alt: 图2·50右 扫描：直角△B'C'A'，B'在上、C'左下直角、A'右下；B'C'中段两短等号杠，斜边B'A'一短等号杠；直角记号在C'朝形内；C'A'无杠；无虚线、无点D
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (Bp) at (0.420,3.280);
   \coordinate (Cp) at (0.420,0.280);
   \coordinate (Ap) at (2.620,0.280);
   \draw[line width=0.75pt] (Bp) -- (Cp) -- (Ap) -- cycle;
+  % 直角记号
   \draw[line width=0.55pt] (0.580,0.280) -- (0.580,0.440) -- (0.420,0.440);
-  \draw[line width=0.55pt] (0.340,1.620) -- (0.500,1.620);
-  \draw[line width=0.55pt] (0.980,0.200) -- (0.980,0.360);
+  % B'C'：双杠（跟扫描/与左幅 BC 对应）
+  \draw[line width=0.55pt] (0.300,1.720) -- (0.540,1.720);
+  \draw[line width=0.55pt] (0.300,1.860) -- (0.540,1.860);
+  % 斜边 B'A'：单杠
+  \draw[line width=0.55pt] (1.380,1.900) -- (1.560,1.780);
   \node[anchor=south east, inner sep=1pt] at (0.400,3.300) {$B'$};
   \node[anchor=north east, inner sep=1pt] at (0.380,0.220) {$C'$};
   \node[anchor=north west, inner sep=1pt] at (2.640,0.240) {$A'$};
@@ -11332,11 +11387,40 @@ AB = CD\text{，} AD = CB.
 
 \begin{figure}
 \centering
-% fig-alt: 图2·52：两圆相交
+% fig-alt: 图2·52 扫描：左竖河带「河流」竖排与竖线阴影；A在左岸、B在右岸，AB水平；BB'沿右岸竖直向下，M为中点，B'A'水平向右；AA'过M为虚线；B、B'处各有直角记号；M处对顶角标1（上）与2（下）；无等号杠
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (-0.45,0) circle (0.70);
-  \draw[line width=0.7pt] (0.45,0) circle (0.70);
+\begin{tikzpicture}[line cap=round, line join=round]
+  % 河流阴影带（左）
+  \fill[pattern=vertical lines, pattern color=black!55]
+    (-0.15,-2.55) rectangle (1.55,0.55);
+  \node[rotate=90, font=\small] at (0.70,-1.00) {河流};
+  % 几何点
+  \coordinate (A) at (0.35,0.20);
+  \coordinate (B) at (1.55,0.20);
+  \coordinate (M) at (1.55,-1.15);
+  \coordinate (Bp) at (1.55,-2.50);
+  \coordinate (Ap) at (3.55,-2.50);
+  % 实线：AB、BB'、B'A'
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (B) -- (Bp);
+  \draw[line width=0.75pt] (Bp) -- (Ap);
+  % 虚线：A–M–A'
+  \draw[line width=0.6pt, dash pattern=on 2.2pt off 1.5pt] (A) -- (M) -- (Ap);
+  % 直角记号：B（右下）、B'（右上）
+  \draw[line width=0.5pt] (1.55,0.20) -- (1.71,0.20) -- (1.71,0.04) -- (1.55,0.04);
+  \draw[line width=0.5pt] (1.55,-2.50) -- (1.71,-2.50) -- (1.71,-2.34) -- (1.55,-2.34);
+  % 对顶角弧与编号
+  \begin{scope}[shift={(M)}]
+    \draw[line width=0.45pt] (100:0.28) arc[start angle=100, end angle=155, radius=0.28];
+    \draw[line width=0.45pt] (-80:0.28) arc[start angle=-80, end angle=-25, radius=0.28];
+  \end{scope}
+  \node[anchor=south west, inner sep=0.5pt] at (1.62,-0.95) {$1$};
+  \node[anchor=north east, inner sep=0.5pt] at (1.48,-1.35) {$2$};
+  \node[anchor=south, inner sep=1pt] at (A) {$A$};
+  \node[anchor=south west, inner sep=1pt] at (B) {$B$};
+  \node[anchor=west, inner sep=1pt] at (1.62,-1.15) {$M$};
+  \node[anchor=north east, inner sep=1pt] at (1.48,-2.55) {$B'$};
+  \node[anchor=north west, inner sep=1pt] at (Ap) {$A'$};
 \end{tikzpicture}%
 }
 \caption{图2·52}
@@ -11351,7 +11435,7 @@ AB = CD\text{，} AD = CB.
 因为在两个直角三角形\(MBA\)和\(MB'A'\)中，有锐角\(\angle 1 = \angle 2\)（对顶角），\(MB = MB'\)，所以它们是全等的。因此对应边
 
 \[
-A ^{\prime} B ^{\prime} = AB.
+A'B' = AB.
 \]
 
 \subsubsection{例 3}
@@ -11374,7 +11458,7 @@ A ^{\prime} B ^{\prime} = AB.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2·53（1）扫描：直角△ABC，A在上、C左下、B右下，C处无直角记号；E在AC，BE实线，EM虚线垂直AB于M，M处有直角记号；A处一小角弧，B处BE两侧各一小角弧；AM一短杠、CB一短杠，MB无清楚短杠；无数字
+% fig-alt: 图2·53（1）扫描：直角△ABC，A在上、C左下、B右下，C处无直角记号；E在AC，BE与EM均为虚线，EM垂直AB于M，M处有直角记号；A处一小角弧，B处BE两侧各一小角弧；AM、MB、CB各一短等号杠；无数字
 \begin{tikzpicture}[line cap=round, line join=round]
   \coordinate (A) at (0.420,3.520);
   \coordinate (C) at (0.420,0.220);
@@ -11382,10 +11466,13 @@ A ^{\prime} B ^{\prime} = AB.
   \coordinate (E) at (0.420,1.276);
   \coordinate (M) at (1.436,1.923);
   \draw[line width=0.75pt] (A) -- (C) -- (B) -- cycle;
-  \draw[line width=0.75pt] (E) -- (B);
+  \draw[dashed, line width=0.6pt] (E) -- (B);
   \draw[dashed, line width=0.6pt] (E) -- (M);
+  % M处直角记号
   \draw[line width=0.55pt] (1.361,2.041) -- (1.243,1.966) -- (1.318,1.848);
+  % AM / MB / CB：单杠
   \draw[line width=0.55pt] (0.907,2.596) -- (1.051,2.687);
+  \draw[line width=0.55pt] (1.820,1.420) -- (1.960,1.520);
   \draw[line width=0.55pt] (1.428,0.135) -- (1.428,0.305);
   \begin{scope}[shift={(A)}]
     \draw[line width=0.5pt] (-57.5:0.28) arc[start angle=-57.5, end angle=-90.0, radius=0.28];
@@ -11434,7 +11521,7 @@ A ^{\prime} B ^{\prime} = AB.
 \end{figure}
 
 \shulihuahang{［注意］} 证明\(\angle A + \angle B = 90^{\circ}\)。
-过点\(C\)作\(CP\)使\(\angle ACP = \angle A\)，则\(PC = PA\)，又\(\angle CPB = \angle A + \angle AOP = 2\angle A = \angle B\)，可知\(PC = CB\)，但题设\(AB = 2CB\)，今\(CB = AP\)，\(\therefore CB = CP = PB\)，即\(\triangle PCB\)是等边三角形。因此\(\angle B = 60^\circ\)，\(\therefore \angle A = 30^\circ\)，\(\therefore \angle A + \angle B = 90^\circ\)。
+过点\(C\)作\(CP\)使\(\angle ACP = \angle A\)，则\(PC = PA\)，又\(\angle CPB = \angle A + \angle ACP = 2\angle A = \angle B\)，可知\(PC = CB\)，但题设\(AB = 2CB\)，今\(CB = AP\)，\(\therefore CB = CP = PB\)，即\(\triangle PCB\)是等边三角形。因此\(\angle B = 60^\circ\)，\(\therefore \angle A = 30^\circ\)，\(\therefore \angle A + \angle B = 90^\circ\)。
 
 \subsubsection{习题 2.10}
 
