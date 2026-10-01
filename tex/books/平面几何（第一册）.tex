@@ -6864,11 +6864,67 @@ EP，并使\(EP \parallel BA\)，然后再设法证得\(EP \parallel DC\)。
 
 \begin{figure}
 \centering
-% fig-alt: 图2·1：圆规作图示意
+% fig-alt: 图2·1 扫描：左塔式起重机（塔身/臂桁架三角形），右上桁架桥，右中电杆斜撑，右下屋架三角桁架
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0) circle (0.85);
-  \draw[line width=0.5pt] (0,0) -- (0.85,0);
+\begin{tikzpicture}[line cap=round,line join=round,scale=0.92]
+  % 塔式起重机（左）
+  \begin{scope}[shift={(0,0)}]
+    % 塔身格子
+    \draw[line width=0.65pt] (0.55,0) -- (0.55,3.35) -- (0.95,3.35) -- (0.95,0);
+    \foreach \y in {0.35,0.7,...,3.15} {
+      \draw[line width=0.35pt] (0.55,\y) -- (0.95,\y);
+      \draw[line width=0.3pt] (0.55,\y) -- (0.95,\y+0.35);
+    }
+    % 起重臂（向右上）
+    \draw[line width=0.65pt] (0.95,3.05) -- (2.85,2.55) -- (2.85,2.35) -- (0.95,2.85);
+    \foreach \t in {0.15,0.35,0.55,0.75} {
+      \draw[line width=0.3pt] ({0.95+1.9*\t},{3.05-0.5*\t}) -- ({0.95+1.9*\t},{2.85-0.5*\t});
+      \draw[line width=0.28pt] ({0.95+1.9*\t},{3.05-0.5*\t}) -- ({0.95+1.9*(\t+0.2)},{2.85-0.5*(\t+0.2)});
+    }
+    % 拉索成大三角形
+    \draw[line width=0.55pt] (0.75,3.35) -- (2.85,2.45);
+    % 吊钩竖线
+    \draw[line width=0.45pt] (2.85,2.35) -- (2.85,1.35);
+    \draw[line width=0.4pt] (2.75,1.35) -- (2.95,1.35);
+    % 底座与烟囱示意
+    \draw[line width=0.55pt] (0.35,0) -- (1.15,0) -- (1.15,0.25) -- (0.35,0.25) -- cycle;
+    \draw[line width=0.45pt] (1.35,0) -- (1.55,0) -- (1.55,1.15) -- (1.35,1.15) -- cycle;
+    \draw[line width=0.35pt] (1.38,1.15) .. controls (1.25,1.45) and (1.65,1.55) .. (1.55,1.25);
+  \end{scope}
+  % 桁架桥（右上）
+  \begin{scope}[shift={(3.35,2.45)}]
+    \draw[line width=0.55pt] (0,0.55) -- (2.35,0.55);
+    \draw[line width=0.55pt] (0,0.15) -- (2.35,0.15);
+    \foreach \x in {0,0.39,...,2.0} {
+      \draw[line width=0.4pt] (\x,0.15) -- (\x,0.55);
+      \draw[line width=0.35pt] (\x,0.15) -- (\x+0.39,0.55);
+      \draw[line width=0.35pt] (\x,0.55) -- (\x+0.39,0.15);
+    }
+    \draw[line width=0.35pt] (0,-0.05) .. controls (0.4,-0.18) and (0.8,-0.05) .. (1.2,-0.18)
+      .. controls (1.6,-0.05) and (2.0,-0.18) .. (2.35,-0.05);
+  \end{scope}
+  % 电杆（右中）
+  \begin{scope}[shift={(4.15,1.05)}]
+    \draw[line width=0.7pt] (0.55,0) -- (0.55,1.25);
+    \draw[line width=0.55pt] (0.15,1.05) -- (0.95,1.05);
+    \draw[line width=0.55pt] (0.15,0.85) -- (0.95,0.85);
+    \draw[line width=0.45pt] (0.55,1.05) -- (0.15,0.85);
+    \draw[line width=0.45pt] (0.55,1.05) -- (0.95,0.85);
+    \foreach \x in {0.25,0.45,0.65,0.85}
+      \draw[line width=0.3pt] (\x,1.05) -- ++(0.35,0.12);
+    \foreach \x in {0.2,0.4,...,0.9}
+      \draw[line width=0.28pt] (\x,0) -- ++(0.08,0.12);
+  \end{scope}
+  % 屋架（右下）
+  \begin{scope}[shift={(3.45,0.05)}]
+    \draw[line width=0.6pt] (0,0) -- (2.1,0) -- (2.1,0.85) -- (0,0.85) -- cycle;
+    \foreach \x in {0.35,0.7,1.05,1.4,1.75}
+      \draw[line width=0.45pt] (\x,0) -- (\x,0.85);
+    % 三角屋架顶
+    \draw[line width=0.6pt] (0,0.85) -- (1.05,1.55) -- (2.1,0.85);
+    \draw[line width=0.45pt] (0.35,0.85) -- (1.05,1.55) -- (1.75,0.85);
+    \draw[line width=0.4pt] (0.7,0.85) -- (1.05,1.25) -- (1.4,0.85);
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图2·1}
@@ -6970,7 +7026,7 @@ AC > AB - BC.
 
 \begin{figure}
 \centering
-% fig-alt: 图2·4：锐角三角形与钝角三角形
+% fig-alt: 图2·4 扫描：左锐角不等边△、右钝角不等边△，无字母无等号杠
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) -- (2.55,0) -- (1.85,1.35) -- cycle;
@@ -6984,10 +7040,13 @@ AC > AB - BC.
 
 \begin{figure}
 \centering
-% fig-alt: （1）等腰△，顶角、腰、底
+% fig-alt: （1）等腰△，顶角、腰、底；两腰各一短等号杠（从扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (-1.35,0) -- (1.35,0) -- (0,2.05) -- cycle;
+  % 两腰等长标记
+  \draw[line width=0.5pt] (-0.72,0.95) -- (-0.58,0.82);
+  \draw[line width=0.5pt] (0.72,0.95) -- (0.58,0.82);
   \node[anchor=south] at (0,2.08) {顶角};
   \node[anchor=east] at (-0.75,1.05) {腰};
   \node[anchor=west] at (0.75,1.05) {腰};
@@ -6999,29 +7058,25 @@ AC > AB - BC.
 
 \begin{figure}
 \centering
-% fig-alt: 等腰△，两腰及底有等长标记
+% fig-alt: （1）旁：等腰△，仅两腰各一短等号杠（从扫描；底边无杠）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (-1.55,0) -- (1.55,0) -- (0,1.35) -- cycle;
   \draw[line width=0.5pt] (-0.85,0.76) -- (-0.70,0.60);
   \draw[line width=0.5pt] (0.85,0.76) -- (0.70,0.60);
-  \draw[line width=0.5pt] (-0.08,0.12) -- (0.08,-0.04);
 \end{tikzpicture}%
 }
 \end{figure}
 
 \begin{figure}
 \centering
-% fig-alt: （2）等边△，三边等长标记
+% fig-alt: （2）等边△，三边各一短等号杠（从扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) -- (2.10,0) -- (1.05,1.82) -- cycle;
-  \draw[line width=0.5pt] (0.88,0.12) -- (1.00,-0.04);
-  \draw[line width=0.5pt] (1.10,0.12) -- (1.22,-0.04);
-  \draw[line width=0.5pt] (1.48,0.98) -- (1.62,0.86);
-  \draw[line width=0.5pt] (1.58,1.08) -- (1.72,0.96);
-  \draw[line width=0.5pt] (0.48,0.98) -- (0.34,0.86);
-  \draw[line width=0.5pt] (0.38,1.08) -- (0.24,0.96);
+  \draw[line width=0.5pt] (0.98,0.12) -- (1.10,-0.04);
+  \draw[line width=0.5pt] (1.52,1.02) -- (1.66,0.90);
+  \draw[line width=0.5pt] (0.44,1.02) -- (0.30,0.90);
 \end{tikzpicture}%
 }
 \caption{图2·5}
@@ -7066,18 +7121,23 @@ AB + AE > BP + PE \tag {1}
 
 \begin{figure}
 \centering
-% fig-alt: 图2·6：△ABC，P在形内，E在AC上，BP、CP
+% fig-alt: 图2·6 扫描：A在上、B左下、C右下，P在形内，BP、CP实线，延长BP虚线交AC于E
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) -- (3.15,0) -- (1.85,2.15) -- cycle;
-  \coordinate (P) at (1.85,0.65);
-  \draw[line width=0.65pt] (0,0) -- (P) -- (3.15,0);
-  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (P) -- (2.35,1.35);
-  \node[anchor=south] at (1.85,2.18) {$A$};
-  \node[anchor=north east] at (0,0) {$B$};
-  \node[anchor=north west] at (3.15,0) {$C$};
-  \node[anchor=south] at (P) {$P$};
-  \node[anchor=west] at (2.35,1.35) {$E$};
+  \coordinate (B) at (0,0);
+  \coordinate (C) at (3.15,0);
+  \coordinate (A) at (1.55,2.15);
+  \coordinate (P) at (1.35,0.72);
+  % E = BP 延长与 AC 交点（跟扫描虚线）
+  \coordinate (E) at (intersection of B--P and A--C);
+  \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
+  \draw[line width=0.65pt] (B) -- (P) -- (C);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (P) -- (E);
+  \node[anchor=south] at (A) {$A$};
+  \node[anchor=north east] at (B) {$B$};
+  \node[anchor=north west] at (C) {$C$};
+  \node[anchor=south east] at (P) {$P$};
+  \node[anchor=west] at (E) {$E$};
 \end{tikzpicture}%
 }
 \caption{图2·6}
@@ -7261,21 +7321,50 @@ AB + AC > BE + EF + FC.
 
 \begin{figure}
 \centering
-% fig-alt: 线段中点
+% fig-alt: 图2·7 扫描：左为剪下∠1、∠2阴影的三角形（∠3留白带弧）；右为∠1、∠2拼到∠3上，底边成一直线
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0.4) -- (2.0,0.4);
-  \fill (1.0,0.4) circle (1.2pt);
-\end{tikzpicture}%
-}
-\end{figure}
-
-\begin{figure}
-\centering
-% fig-alt: 图2·7：等腰三角形
-\fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) -- (1.6,0) -- (0.8,1.25) -- cycle;
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
+  % 左：原三角形，角1/2阴影剪下示意
+  \begin{scope}[shift={(0,0)}]
+    \coordinate (L1) at (0,0);
+    \coordinate (L3) at (2.35,0);
+    \coordinate (L2) at (0.95,1.55);
+    \draw[line width=0.7pt] (L1) -- (L3) -- (L2) -- cycle;
+    % 角1阴影（底左）
+    \fill[pattern=north east lines, pattern color=black!70]
+      (L1) -- (0.55,0) -- (0.42,0.38) -- cycle;
+    \draw[line width=0.45pt] (0.55,0) -- (0.42,0.38);
+    \node at (0.28,0.22) {$1$};
+    % 角2阴影（顶）
+    \fill[pattern=vertical lines, pattern color=black!70]
+      (L2) -- (0.72,1.15) -- (1.18,1.15) -- cycle;
+    \draw[line width=0.45pt] (0.72,1.15) -- (1.18,1.15);
+    \node at (0.95,1.32) {$2$};
+    % 角3弧
+    \draw[line width=0.45pt] (L3) ++(180:0.32) arc[start angle=180,end angle=146,radius=0.32];
+    \node at (1.95,0.22) {$3$};
+  \end{scope}
+  % 右：拼角——1、2拼到3，底成水平直线
+  \begin{scope}[shift={(3.15,0)}]
+    \draw[line width=0.7pt] (0,0) -- (2.55,0);
+    % ∠3 在左（约 50°）
+    \fill[pattern=vertical lines, pattern color=black!70]
+      (0.95,0) -- (1.55,0) -- (1.55,0.72) -- cycle;
+    \draw[line width=0.55pt] (1.55,0) -- (1.55,0.72);
+    \node at (1.28,0.22) {$3$};
+    % ∠2 在中上
+    \fill[pattern=vertical lines, pattern color=black!70]
+      (1.55,0) -- (1.55,0.72) -- (2.05,0.55) -- cycle;
+    \draw[line width=0.55pt] (1.55,0) -- (2.05,0.55);
+    \node at (1.72,0.42) {$2$};
+    % ∠1 在右
+    \fill[pattern=north east lines, pattern color=black!70]
+      (1.55,0) -- (2.05,0.55) -- (2.55,0) -- cycle;
+    \draw[line width=0.55pt] (1.55,0) -- (2.55,0);
+    \node at (2.15,0.18) {$1$};
+    % 锯齿上沿示意剪纸
+    \draw[line width=0.4pt] (1.55,0.72) -- (1.62,0.82) -- (1.78,0.70) -- (1.95,0.80) -- (2.05,0.55);
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图2·7}
@@ -7347,7 +7436,7 @@ AB + AC > BE + EF + FC.
 
 \begin{figure}
 \centering
-% fig-alt: 图2·8：△ABC，A、B 外角标1、2，顶角3
+% fig-alt: 图2·9 扫描：△ABC（顶可作C），三外角标1、2、3
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (-0.45,0) -- (3.35,0);
@@ -7475,20 +7564,38 @@ AB + AC > BE + EF + FC.
 
 \begin{figure}
 \centering
-% fig-alt: 图2·11：对顶△AED，底AB、CD延长至F，角标记
+% fig-alt: 图2·11 扫描：AB∥CF，AD与BC交于E，CDF共线；B处单弧、C处双弧、D外角单弧
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,1.65) -- (2.55,1.65);
-  \draw[line width=0.75pt] (0.15,0) -- (3.35,0);
-  \draw[line width=0.75pt] (0.35,1.65) -- (2.15,0);
-  \draw[line width=0.75pt] (2.25,1.65) -- (0.55,0);
-  \fill (1.30,0.85) circle (0.04);
-  \node[anchor=south east] at (0,1.65) {$A$};
-  \node[anchor=south west] at (2.55,1.65) {$B$};
-  \node[anchor=north east] at (0.15,0) {$C$};
-  \node[anchor=north] at (2.15,0) {$D$};
-  \node[anchor=north west] at (3.35,0) {$F$};
-  \node[anchor=west] at (1.30,0.85) {$E$};
+  \coordinate (A) at (0,1.65);
+  \coordinate (B) at (2.55,1.65);
+  \coordinate (C) at (0.15,0);
+  \coordinate (D) at (2.15,0);
+  \coordinate (F) at (3.35,0);
+  \coordinate (E) at (intersection of A--D and B--C);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (F);
+  \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.75pt] (B) -- (C);
+  \node[anchor=south east] at (A) {$A$};
+  \node[anchor=south west] at (B) {$B$};
+  \node[anchor=north east] at (C) {$C$};
+  \node[anchor=north] at (D) {$D$};
+  \node[anchor=north west] at (F) {$F$};
+  \node[anchor=west] at (E) {$E$};
+  % ∠ABE 单弧
+  \begin{scope}[shift={(B)}]
+    \draw[line width=0.45pt] (180:0.28) arc[start angle=180,end angle=220,radius=0.28];
+  \end{scope}
+  % ∠DCE / ∠BCE 双弧
+  \begin{scope}[shift={(C)}]
+    \draw[line width=0.45pt] (0:0.26) arc[start angle=0,end angle=52,radius=0.26];
+    \draw[line width=0.45pt] (0:0.36) arc[start angle=0,end angle=52,radius=0.36];
+  \end{scope}
+  % ∠ADF 外角单弧
+  \begin{scope}[shift={(D)}]
+    \draw[line width=0.45pt] (0:0.28) arc[start angle=0,end angle=55,radius=0.28];
+  \end{scope}
 \end{tikzpicture}%
 }
 \caption{图2·11}
@@ -7552,20 +7659,31 @@ F，则\(\angle BED\)是\(\triangle EFD\)的外角，因此
 
 \begin{figure}
 \centering
-% fig-alt: 图2·12：AB∥CD，折线 BED，F在CD上，∠1与E处双弧
+% fig-alt: 图2·12 扫描：AB∥CD，折线 BED（E偏左），虚线 EF 交 CD 于 F；E处双弧（∠BEF），∠EFD 标1
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,1.55) -- (2.85,1.55);
-  \draw[line width=0.75pt] (0,0) -- (3.15,0);
-  \draw[line width=0.7pt] (2.15,1.55) -- (2.85,0);
-  \draw[line width=0.7pt] (2.15,1.55) -- (1.55,0.55) -- (1.15,0);
-  \node[anchor=south east] at (0,1.55) {$A$};
-  \node[anchor=south west] at (2.85,1.55) {$B$};
-  \node[anchor=north east] at (0,0) {$C$};
-  \node[anchor=north west] at (3.15,0) {$D$};
-  \node[anchor=west] at (1.55,0.55) {$E$};
-  \node[anchor=north] at (1.15,0) {$F$};
-  \node at (1.35,0.18) {$1$};
+  \coordinate (A) at (0,1.55);
+  \coordinate (B) at (2.85,1.55);
+  \coordinate (C) at (0,0);
+  \coordinate (D) at (3.15,0);
+  \coordinate (E) at (1.55,0.72);
+  \coordinate (F) at (1.55,0);
+  \draw[line width=0.75pt] (A) -- (B);
+  \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.7pt] (B) -- (E) -- (D);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (E) -- (F);
+  \node[anchor=south east] at (A) {$A$};
+  \node[anchor=south west] at (B) {$B$};
+  \node[anchor=north east] at (C) {$C$};
+  \node[anchor=north west] at (D) {$D$};
+  \node[anchor=east] at (E) {$E$};
+  \node[anchor=north] at (F) {$F$};
+  % ∠BEF 双弧
+  \begin{scope}[shift={(E)}]
+    \draw[line width=0.45pt] (55:0.28) arc[start angle=55,end angle=125,radius=0.28];
+    \draw[line width=0.45pt] (55:0.38) arc[start angle=55,end angle=125,radius=0.38];
+  \end{scope}
+  \node at (1.85,0.18) {$1$};
 \end{tikzpicture}%
 }
 \caption{图2·12}
@@ -7573,24 +7691,36 @@ F，则\(\angle BED\)是\(\triangle EFD\)的外角，因此
 
 \begin{figure}
 \centering
-% fig-alt: 图2·13：OA水平，OB斜，竖线ED交OB于P、F，直角在D、F
+% fig-alt: 图2·13 扫描：OA水平、OB斜，竖线ED⊥OA于D并交OB于P；EF⊥OB于F；直角记号在D、F；∠EPF=1、∠OPD=2
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) -- (3.15,0);
-  \draw[line width=0.75pt] (0,0) -- (2.85,1.55);
-  \draw[line width=0.7pt] (1.55,0) -- (1.55,2.15);
-  \draw[line width=0.55pt] (1.55,1.15) -- (2.05,1.15);
-  \draw[line width=0.45pt] (1.55,0) -- (1.70,0) -- (1.70,0.15) -- (1.55,0.15);
-  \draw[line width=0.45pt] (1.55,1.15) -- (1.70,1.15) -- (1.70,1.30);
-  \node[anchor=north east] at (0,0) {$O$};
-  \node[anchor=north west] at (3.15,0) {$A$};
-  \node[anchor=south west] at (2.85,1.55) {$B$};
-  \node[anchor=south] at (1.55,2.18) {$E$};
-  \node[anchor=north] at (1.55,0) {$D$};
-  \node[anchor=west] at (2.05,1.15) {$F$};
-  \node at (1.70,0.85) {$P$};
-  \node at (1.70,1.35) {$1$};
-  \node at (1.70,0.55) {$2$};
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (3.25,0);
+  \coordinate (B) at (2.95,1.65);
+  \coordinate (D) at (1.55,0);
+  \coordinate (E) at (1.55,2.15);
+  \coordinate (P) at (intersection of E--D and O--B);
+  \coordinate (F) at ($ (O)!(E)!(B) $);
+  \draw[line width=0.75pt] (O) -- (A);
+  \draw[line width=0.75pt] (O) -- (B);
+  \draw[line width=0.7pt] (E) -- (D);
+  \draw[line width=0.65pt] (E) -- (F);
+  % 直角于 D
+  \draw[line width=0.45pt] (1.55,0) -- (1.71,0) -- (1.71,0.16) -- (1.55,0.16);
+  % 直角于 F：沿 OB 方向与 EF 方向
+  \draw[line width=0.45pt]
+    ($ (F)!0.18cm!(B) $) --
+    ($ (F)!0.18cm!(B)!0.18cm!(E) $) --
+    ($ (F)!0.18cm!(E) $);
+  \node[anchor=north east] at (O) {$O$};
+  \node[anchor=north west] at (A) {$A$};
+  \node[anchor=south west] at (B) {$B$};
+  \node[anchor=south] at (E) {$E$};
+  \node[anchor=north] at (D) {$D$};
+  \node[anchor=south west] at (F) {$F$};
+  \node[anchor=east] at (P) {$P$};
+  \node at ($(P)+(0.32,0.28)$) {$1$};
+  \node at ($(P)+(0.32,-0.28)$) {$2$};
 \end{tikzpicture}%
 }
 \caption{图2·13}
