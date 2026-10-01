@@ -36,14 +36,19 @@
 
 \begin{figure}
 \centering
-% fig-alt: 图1·1：直尺与下方圆弧刻度
+% fig-alt: 图1·1：上方短尺标u（有刻度），下方长尺标l（有刻度），下方四段圆弧示等分度量
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
+  % 上：单位尺 u
+  \draw[line width=0.55pt] (0.15,1.05) rectangle (1.55,1.25);
+  \foreach \x in {0.29,0.43,...,1.41} \draw[line width=0.30pt] (\x,1.05) -- (\x,1.18);
+  \node[above=1pt] at (0.85,1.25) {$u$};
+  % 下：被度量线段（竹竿示意）
   \draw[line width=0.7pt] (0,0.35) rectangle (5.2,0.65);
   \foreach \x in {0.2,0.6,...,5.0} \draw[line width=0.35pt] (\x,0.35) -- (\x,0.50);
+  \node[above=1pt] at (2.60,0.65) {$l$};
   \foreach \c in {0.7,1.7,2.7,3.7}
     \draw[line width=0.55pt] (\c,0.35) arc[start angle=180,end angle=360,radius=0.50];
-  \draw[line width=0.55pt] (0.15,1.05) rectangle (1.55,1.25);
 \end{tikzpicture}%
 }
 \caption{图1·1}
@@ -54,7 +59,7 @@
 \(l\) 含有线段 \(u\) 多少倍的过程。这里线段 \(u\) 叫做长度单位，线段
 \(l\) 是被度量的线段，最后所得的数叫做量数。说得更确切一些，它是以线段
 \(u\) 作长度单位去量线段 \(l\)
-所得的量数。线段的量数和线段的长度是有区别的：量数只是一个正数，量数后面注明了长度单位才是长度。在前面的实例中，``5''是以尺作长度单位去量竹竿所得的量数，``5尺''才是竹竿的长度。度量线段的目的就是要得到一个量数。要得到线段的量数首先要选定作为长度单位的线段。用两种不同的长度单位先后去度量同一条线段，所得的两个量数显然是不等的。例如用市尺作单位去量线段l，如果所得的量数是6，用m（米）作单位去量同一线段，所得的量数就是2了。
+所得的量数。线段的量数和线段的长度是有区别的：量数只是一个正数，量数后面注明了长度单位才是长度。在前面的实例中，``5''是以尺作长度单位去量竹竿所得的量数，``5尺''才是竹竿的长度。度量线段的目的就是要得到一个量数。要得到线段的量数首先要选定作为长度单位的线段。用两种不同的长度单位先后去度量同一条线段，所得的两个量数显然是不等的。例如用市尺作单位去量线段 \(l\)，如果所得的量数是6，用 \(m\)（米）作单位去量同一线段，所得的量数就是2了。
 
 但是， 用线段 \(u\) 量线段 \(l\) 和用尺量竹竿毕竟有些不同。
 给定了两条线段 \(u\) 和 \(l\) 的图形之后， 我们很难想象，
@@ -348,8 +353,8 @@ CD 作长度单位去度量 AB 时， 第一回就得用 \(\frac{1}{10}\) CD 去
 
 用同一长度单位去量两条线段，所得的两个量数的比叫做这两条线段的比。
 
-在图1·7里，线段 \(EBF\) 是长度单位，用 \(EBF\) 分别去量线段 \(AA'\) 和
-\(BB'\)，必然得到两个量数 \(a\) 和 \(b\)、量数 \(a\) 和 \(b\)
+在图1·6里，线段 \(BF\) 是长度单位，用 \(BF\) 分别去量线段 \(AA'\) 和
+\(BB'\)，必然得到两个量数 \(a\) 和 \(b\)。量数 \(a\) 和 \(b\)
 
 \begin{figure}
 \centering
@@ -412,7 +417,7 @@ CD 作长度单位去度量 AB 时， 第一回就得用 \(\frac{1}{10}\) CD 去
 \item
   ``线段的量数''和``线段的长度''是一样的吗？为什么？
 \item
-  线段 a 和长度单位 l 分别含有第三线段 c 的 54 倍和 15 倍，求出线段 a
+  线段 \(a\) 和长度单位 \(l\) 分别含有第三线段 \(c\) 的 54 倍和 15 倍，求出线段 \(a\)
   的量数。
 \item
   用圆规和直尺任意作一个正方形和正三角形；再利用分割规截取相等线段的方法，验证：
@@ -436,7 +441,7 @@ CD 作长度单位去度量 AB 时， 第一回就得用 \(\frac{1}{10}\) CD 去
   把一条长 56 厘米的线段分成 1：2：3
   的三段，然后求出每一个分点把全线段分成两部分的比。
 \item
-  点 C 把线段 AB 分成 \(AC:CB=2:3\)，已知 AB 为 48 厘米，求 AC 和 CB
+  点 \(C\) 把线段 \(AB\) 分成 \(AC:CB=2:3\)，已知 \(AB\) 为 48 厘米，求 \(AC\) 和 \(CB\)
   的长。
 \item
   如果 \(AB = 12\mathrm{cm}\)，那末延长几厘米后可以使得
@@ -549,8 +554,8 @@ CD 作长度单位去度量 AB 时， 第一回就得用 \(\frac{1}{10}\) CD 去
 
 \paragraph{定理 2}
 
-如果 \(ad = bc\)，那末可以以a和d为比例外项（或者比例内项），以 \(b\) 和
-\(c\) 为比例内项（或者比例外项）组成比例（以db除等式 \(ad=bc\)
+如果 \(ad = bc\)，那末可以以 \(a\) 和 \(d\) 为比例外项（或者比例内项），以 \(b\) 和
+\(c\) 为比例内项（或者比例外项）组成比例（以 \(db\) 除等式 \(ad=bc\)
 的两端）。
 
 \paragraph{定理 3}
@@ -932,7 +937,7 @@ B D = B C - D C = 5.6 - 3.5 = 2.1 (\mathrm{cm})\text{。}
 
 \shulihuahang{［已知］} 在 \(\triangle ABC\) 中， \(DE \parallel BC\)， \(DE\)
 分别在 \(AB\) 和 \(AC\) 上截得线段 AD， DB 和 AE，
-\(EC(\text{图 }1-10)\)。
+\(EC\)（图1·10）。
 
 \shulihuahang{［求证］} \(\frac{AD}{DB} = \frac{AE}{EC}\)。
 
@@ -1631,7 +1636,7 @@ A F \parallel C D.
   \(AB\) 成比例。
 \end{enumerate}
 
-［提示：过点 \(E\) 作 \(EF \parallel AB, EF'\) 交 \(BC\) 于 \(F\)
+［提示：过点 \(E\) 作 \(EF \parallel AB\)， \(EF\) 交 \(BC\) 于 \(F\)
 （如图），再利用平行线截得比例线段定理以及图中平行四边形的关系即可证明。如果
 \(DE\) 和 \(\angle A\) 两边的延长线相交，本题的结论也是正确的。］
 
@@ -1684,7 +1689,7 @@ A F \parallel C D.
   \(AB\)，\(AC\) 于点 \(D\) 和 \(E\)。那末 \(DE\) 必被 \(\triangle ABC\)
   的 \(BC\) 边上的中线 \(AF\) 所平分。
 \item
-  在四边形 \(AB'D\) 的对角线 \(BD\) 上取一点 \(G\)， 作
+  在四边形 \(ABCD\) 的对角线 \(BD\) 上取一点 \(G\)， 作
   \(GE \parallel DA\)， \(GE\) 交 \(AB\) 于 \(E\)， 作
   \(GF \parallel DC\)， \(GF\) 交 \(BC\) 于 \(F\)， 并且连接 \(EF\)。
   求证 \(EF \parallel AC\)。
@@ -1952,15 +1957,15 @@ A F \parallel C D.
 
 \subsubsection{作图题 1}
 
-。 求作线段 \(a, b, c\) 的第四比例项。
+求作线段 \(a, b, c\) 的第四比例项。
 
 \shulihuahang{［已知］} 线段 \(a, b, c\) （图1·20）。
 
 \shulihuahang{［求作］} 线段 \(x\)，使 \(a:b = c:x\)。
 
-\shulihuahang{［作法］} 从任意点 O，引射线 OA 和 OB。在 OA 上截取线段 OC = a，
-CE = b。在 OB 上截取线段 OD = c。连结 CD。过 E 引 EF // CD，EF 截 OB 于
-F。线段 DF 就是求作的线段 x。
+\shulihuahang{［作法］} 从任意点 \(O\)，引射线 \(OA\) 和 \(OB\)。在 \(OA\) 上截取线段 \(OC = a\)，
+\(CE = b\)。在 \(OB\) 上截取线段 \(OD = c\)。连结 \(CD\)。过 \(E\) 引 \(EF \parallel CD\)，\(EF\) 截 \(OB\) 于
+\(F\)。线段 \(DF\) 就是求作的线段 \(x\)。
 
 \begin{figure}
 \centering
@@ -1988,7 +1993,7 @@ F。线段 DF 就是求作的线段 x。
   \node[above=1pt] at (0.79,2.50) {$c$};
   \draw[line width=0.75pt] (O) -- (E);
   \draw[dashed,->,line width=0.7pt] (E) -- (A);
-  \draw[dashed,line width=0.7pt] (O) -- (D);
+  \draw[line width=0.75pt] (O) -- (D);
   \draw[line width=1.15pt] (D) -- (F);
   \draw[dashed,->,line width=0.7pt] (F) -- (B);
   \draw[dashed,line width=0.7pt] (C) -- (D);
@@ -2018,9 +2023,9 @@ F。线段 DF 就是求作的线段 x。
 
 \paragraph{例 1}
 
-已知线段 a， b， c，求作线段 x，使 \(a = \frac{5ab}{2c}\)。
+已知线段 \(a\)， \(b\)， \(c\)，求作线段 \(x\)，使 \(x = \frac{3ab}{2c}\)。
 
-\shulihuahang{［已知］} 线段 a， b， c（图1·21）。
+\shulihuahang{［已知］} 线段 \(a\)， \(b\)， \(c\)（图1·21）。
 
 \shulihuahang{［求作］} 线段 \(x\)，使 \(x = \frac{3ab}{2c}\)。
 
@@ -2087,17 +2092,17 @@ F。线段 DF 就是求作的线段 x。
 
 \paragraph{作图题 2}
 
-。 在已知线段 \(AB\) 上求作一点 \(P\)， 使线段 \(AP\) 和 \(PB\)
+在已知线段 \(AB\) 上求作一点 \(P\)， 使线段 \(AP\) 和 \(PB\)
 的比等于已知线段的比 \(m:n\)。
 
 \shulihuahang{［已知］} 线段 \(AB, m, n\) （图1·22）。
 
-\shulihuahang{［求作］} 线段 AB 上的点 P， 使
+\shulihuahang{［求作］} 线段 \(AB\) 上的点 \(P\)， 使
 \(\frac{AP}{PB} = \frac{m}{n}\)。
 
-\shulihuahang{［作法］} 过 \(A\) 引任意射线 \(AO\)。 在 \(AC\) 上截取线段
+\shulihuahang{［作法］} 过 \(A\) 引任意射线 \(AC\)。 在 \(AC\) 上截取线段
 \(AD = m\)， 线段 \(DE = n\)。 连结 \(EB\)。 过 \(D\) 引
-\(DP \parallel EB\)， DP 截 AB 于 P，则 P 就是求作的点。
+\(DP \parallel EB\)， \(DP\) 截 \(AB\) 于 \(P\)，则 \(P\) 就是求作的点。
 
 证明由读者自己来完成。
 
@@ -2143,8 +2148,8 @@ F。线段 DF 就是求作的线段 x。
 
 \paragraph{作图题 3}
 
-。 在已知线段 \(AB\) 的延长线上求作一点 \(P\)， 使线段 AP 和 BP
-的比等于已知线段的比 m：n。
+在已知线段 \(AB\) 的延长线上求作一点 \(P\)， 使线段 \(AP\) 和 \(BP\)
+的比等于已知线段的比 \(m:n\)。
 
 \shulihuahang{［已知］} 线段 \(AB, m, n\) （图1·23）。
 
@@ -2569,7 +2574,7 @@ C P\text{：} P D = m\text{：} n.
 \therefore \angle 1 = \angle 1 ^ {\prime}\text{，} \angle 2 = \angle 2 ^ {\prime}.
 \]
 
-∵ AD 是 ∠BAC 的平分线，
+\(\because AD\) 是 \(\angle BAC\) 的平分线，
 
 \[
 \therefore \angle 1 = \angle 2.
