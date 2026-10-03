@@ -17674,7 +17674,7 @@ D D ^ {\prime} = \sqrt {A D ^ {2} - A D ^ {\prime 2}} = \sqrt {41 ^ {2} - 9 ^ {2
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·22 直角梯形ABCD（∠B直角，∠A=30°）；高DD'为实线⊥AB于D'（直角方）；∠B直角方；右侧近正方形
+% fig-alt: 图3·22 直角梯形ABCD（∠B直角，∠A=30°）；高DD'为实线⊥AB于D'，直角方在高左侧（△ADD'内）；∠B直角方在矩形内；右侧近正方形
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\h{1.70}
   \def\ad{3.40} % AD=2h for 30°
@@ -17686,8 +17686,8 @@ D D ^ {\prime} = \sqrt {A D ^ {2} - A D ^ {\prime 2}} = \sqrt {41 ^ {2} - 9 ^ {2
   \coordinate (C) at ({\adx+1.53},\h);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[line width=0.75pt] (D) -- (Dp);
-  % right angle at D'
-  \draw[line width=0.55pt] (Dp) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
+  % right angle at D' on the left, inside triangle ADD'
+  \draw[line width=0.55pt] (Dp) -- ++(-0.16,0) -- ++(0,0.16) -- ++(0.16,0);
   % right angle at B
   \draw[line width=0.55pt] (B) -- ++(-0.16,0) -- ++(0,0.16) -- ++(0.16,0);
   \draw[line width=0.55pt] (0.55,0) arc[start angle=0, end angle=30, radius=0.55];
@@ -17744,7 +17744,7 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·23（1）多边形ABCDEF自A连AC/AD/AE成△I–IV，虚线高；（2）多边形ABCDEFGH以GC为水平轴、左竖边过G，虚线垂线分I–VIII
+% fig-alt: 图3·23（1）多边形ABCDEF自A连AC/AD/AE成△I–IV，虚线高；（2）G为左尖、F左上、H左下，GC水平虚线；轴上垂线出自F/E/D（VIII–V），轴下垂线出自H/A/B（I–IV）
 \begin{tikzpicture}[line cap=round,line join=round,scale=0.95]
   % ---- (1) ----
   \begin{scope}[shift={(0,0)}]
@@ -17783,37 +17783,38 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
     \node[anchor=north] at (1.80,-0.25) {$(1)$};
   \end{scope}
   % ---- (2) ----
-  \begin{scope}[shift={(4.85,0.20)}]
-    \coordinate (G) at (0.00,1.35);
-    \coordinate (H) at (0.00,0.50);
-    \coordinate (A2) at (1.55,0.28);
-    \coordinate (B2) at (2.55,0.02);
-    \coordinate (C2) at (3.60,1.35);
-    \coordinate (D2) at (2.70,2.40);
-    \coordinate (E2) at (1.05,2.20);
-    \coordinate (F2) at (0.00,2.55);
-    \draw[line width=0.75pt] (F2) -- (E2) -- (D2) -- (C2) -- (B2) -- (A2) -- (H) -- cycle;
+  % 扫描：G 为左尖，不在竖直边上
+  \begin{scope}[shift={(4.55,0.55)}, scale=1.15]
+    \coordinate (G) at (0.00,0.00);
+    \coordinate (F2) at (1.15,1.35);
+    \coordinate (E2) at (1.64,1.01);
+    \coordinate (D2) at (3.09,0.99);
+    \coordinate (C2) at (4.54,0.00);
+    \coordinate (B2) at (2.68,-1.83);
+    \coordinate (A2) at (2.03,-1.11);
+    \coordinate (H) at (0.64,-0.99);
+    \draw[line width=0.75pt] (F2) -- (E2) -- (D2) -- (C2) -- (B2) -- (A2) -- (H) -- (G) -- cycle;
     \draw[dashed,line width=0.55pt] (G) -- (C2);
     \foreach \P in {F2,E2,D2,H,A2,B2} {
       \draw[dashed,line width=0.55pt] (\P) -- ({\P|-G});
     }
     \node[anchor=east,inner sep=1.5pt] at (G) {$G$};
-    \node[anchor=east,inner sep=1pt] at (H) {$H$};
-    \node[anchor=north,inner sep=1pt] at (A2) {$A$};
+    \node[anchor=north east,inner sep=1pt] at (H) {$H$};
+    \node[anchor=north west,inner sep=1pt] at (A2) {$A$};
     \node[anchor=north,inner sep=1pt] at (B2) {$B$};
     \node[anchor=west,inner sep=1pt] at (C2) {$C$};
     \node[anchor=south,inner sep=1pt] at (D2) {$D$};
     \node[anchor=south,inner sep=1pt] at (E2) {$E$};
-    \node[anchor=south east,inner sep=1pt] at (F2) {$F$};
-    \node at (0.40,0.90) {$I$};
-    \node at (0.80,0.78) {$II$};
-    \node at (2.05,0.68) {$III$};
-    \node at (3.05,0.80) {$IV$};
-    \node at (3.15,1.75) {$V$};
-    \node at (1.90,1.80) {$VI$};
-    \node at (0.55,1.80) {$VII$};
-    \node at (0.22,1.85) {$VIII$};
-    \node[anchor=north] at (1.80,-0.30) {$(2)$};
+    \node[anchor=south,inner sep=1pt] at (F2) {$F$};
+    \node[font=\scriptsize] at (0.40,-0.36) {$I$};
+    \node[font=\scriptsize] at (1.30,-0.48) {$II$};
+    \node[font=\scriptsize] at (2.32,-0.62) {$III$};
+    \node[font=\scriptsize] at (3.30,-0.55) {$IV$};
+    \node[font=\scriptsize] at (3.70,0.28) {$V$};
+    \node[font=\scriptsize] at (2.35,0.48) {$VI$};
+    \node[font=\scriptsize] at (1.38,0.48) {$VII$};
+    \node[font=\scriptsize] at (0.72,0.42) {$VIII$};
+    \node[anchor=north] at (2.20,-2.15) {$(2)$};
   \end{scope}
 \end{tikzpicture}%
 }
@@ -17929,7 +17930,7 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第9题）梯形ABCD（AB下∥CD上）；M、K为腰AD、BC中点，中位线MK；高DE⊥AB于E（直角方在高右侧），DE⊥MK于F（直角方在F右上）；连AK、DK
+% fig-alt: （第9题）梯形ABCD（AB下∥CD上）；M、K为腰AD、BC中点，中位线MK；高DE⊥AB于E（直角方在高右侧），DE⊥MK于F（F在高左侧，直角方在高右侧、中位线上方）；连AK、DK
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5.60,0);
@@ -17953,7 +17954,7 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
   \node[anchor=east,inner sep=1.5pt] at (M) {$M$};
   \node[anchor=west,inner sep=1.5pt] at (K) {$K$};
   \node[anchor=north,inner sep=1.5pt] at (E) {$E$};
-  \node[anchor=west,inner sep=1pt] at ($(F)+(0.20,0.02)$) {$F$};
+  \node[anchor=east,inner sep=1pt] at ($(F)+(-0.08,0.01)$) {$F$};
 \end{tikzpicture}%
 }
 \caption{（第9题）}
