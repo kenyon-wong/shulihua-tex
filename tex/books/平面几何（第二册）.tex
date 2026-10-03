@@ -25817,18 +25817,19 @@ C B ^ {2} = (C D + D B) ^ {2} = C D ^ {2} + 2 C D \cdot D B + D B ^ {2}\text{，
 
 \begin{figure}
 \centering
-% fig-alt: 直角 $\triangle ABC$（直角在 $C$）斜边半圆过 $C$，两直角边外半圆为镶刀形阴影
+% fig-alt: 直角在 $C$（偏 $B$），斜边半圆过 $C$；三角形与两镶刀形为斜线，弦与半圆之间两块留白
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \fill[pattern=north east lines,pattern color=black!55] (0,0) arc[start angle=225,delta angle=-180,radius=0.849] -- cycle;
-  \fill[pattern=north east lines,pattern color=black!55] (2.4,0) arc[start angle=-45,delta angle=180,radius=0.849] -- cycle;
-  \draw[line width=0.75pt] (0,0) -- (2.4,0) -- (1.2,1.2) -- cycle;
-  \draw[line width=0.7pt] (0,0) arc[start angle=180,end angle=0,radius=1.2];
-  \draw[line width=0.65pt] (0,0) arc[start angle=225,delta angle=-180,radius=0.849];
-  \draw[line width=0.65pt] (2.4,0) arc[start angle=-45,delta angle=180,radius=0.849];
-  \node[anchor=north] at (0,0) {$A$}; \node[anchor=north] at (2.4,0) {$B$};
-  \node[anchor=south] at (1.2,1.2) {$C$};
-  %
+  \fill[pattern=north east lines,pattern color=black!55] (0,0) arc[start angle=-146,delta angle=-180,radius=1.907] -- cycle;
+  \fill[pattern=north east lines,pattern color=black!55] (4.6,0) arc[start angle=-56,delta angle=180,radius=1.286] -- cycle;
+  \fill[white] (0,0) arc[start angle=180,delta angle=-112,radius=2.3] -- cycle;
+  \fill[white] (3.162,2.133) arc[start angle=68,delta angle=-68,radius=2.3] -- cycle;
+  \fill[pattern=north east lines,pattern color=black!55] (0,0) -- (4.6,0) -- (3.162,2.133) -- cycle;
+  \draw[line width=0.75pt] (0,0) -- (4.6,0) -- (3.162,2.133) -- cycle;
+  \draw[line width=0.7pt] (0,0) arc[start angle=180,end angle=0,radius=2.3];
+  \draw[line width=0.65pt] (0,0) arc[start angle=-146,delta angle=-180,radius=1.907];
+  \draw[line width=0.65pt] (4.6,0) arc[start angle=-56,delta angle=180,radius=1.286];
+  \node[anchor=north east] at (0,0) {$A$}; \node[anchor=north west] at (4.6,0) {$B$}; \node[anchor=south] at (3.162,2.133) {$C$};
 \end{tikzpicture}%
 }
 \caption{(第17题)}
@@ -26239,21 +26240,22 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (-1.1,0) -- (1.1,0) -- (0,1.905) -- cycle;
-  \fill[pattern=horizontal lines,pattern color=black!60]
-    (0,1.905) arc[start angle=30,delta angle=-60,radius=1.270] arc[start angle=-150,delta angle=-60,radius=1.270];
-  \fill[pattern=horizontal lines,pattern color=black!60]
-    (-1.1,0) arc[start angle=-90,delta angle=60,radius=1.270] arc[start angle=90,delta angle=60,radius=1.270];
-  \fill[pattern=horizontal lines,pattern color=black!60]
-    (1.1,0) arc[start angle=-90,delta angle=-60,radius=1.270] arc[start angle=90,delta angle=-60,radius=1.270];
-  \draw[line width=0.6pt] (0,1.905) arc[start angle=30,delta angle=-60,radius=1.270];
-  \draw[line width=0.6pt] (0,1.905) arc[start angle=150,delta angle=60,radius=1.270];
-  \draw[line width=0.6pt] (-1.1,0) arc[start angle=150,delta angle=-60,radius=1.270];
-  \draw[line width=0.6pt] (1.1,0) arc[start angle=30,delta angle=60,radius=1.270];
-  \node[anchor=east] at (-0.62,0.95) {$a$};
-  \node[anchor=west] at (0.62,0.95) {$a$};
-  \node[anchor=north] at (0,-0.02) {$a$};
-  %
-  %
+  \begin{scope}
+    \clip (0,1.905) arc[start angle=30,delta angle=-60,radius=1.270] arc[start angle=-150,delta angle=-60,radius=1.270] -- cycle;
+    \fill[pattern=horizontal lines,pattern color=black!60] (-2,-0.4) rectangle (2,2.2);
+  \end{scope}
+  \begin{scope}
+    \clip (-1.1,0) arc[start angle=-90,delta angle=60,radius=1.270] arc[start angle=90,delta angle=60,radius=1.270] -- cycle;
+    \fill[pattern=horizontal lines,pattern color=black!60] (-2,-0.4) rectangle (2,2.2);
+  \end{scope}
+  \begin{scope}
+    \clip (1.1,0) arc[start angle=-90,delta angle=-60,radius=1.270] arc[start angle=90,delta angle=-60,radius=1.270] -- cycle;
+    \fill[pattern=horizontal lines,pattern color=black!60] (-2,-0.4) rectangle (2,2.2);
+  \end{scope}
+  \draw[line width=0.6pt] (0,1.905) arc[start angle=30,delta angle=-60,radius=1.270] (0,1.905) arc[start angle=150,delta angle=60,radius=1.270];
+  \draw[line width=0.6pt] (-1.1,0) arc[start angle=-90,delta angle=60,radius=1.270] (-1.1,0) arc[start angle=150,delta angle=-60,radius=1.270];
+  \draw[line width=0.6pt] (1.1,0) arc[start angle=-90,delta angle=-60,radius=1.270] (1.1,0) arc[start angle=30,delta angle=60,radius=1.270];
+  \node[anchor=east] at (-0.62,0.95) {$a$}; \node[anchor=west] at (0.62,0.95) {$a$}; \node[anchor=north] at (0,-0.02) {$a$};
 \end{tikzpicture}%
 }
 \caption{(第8题)}
