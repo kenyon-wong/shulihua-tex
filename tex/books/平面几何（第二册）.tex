@@ -14984,11 +14984,12 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 
 \begin{figure}
 \centering
-% fig-alt: 方格网
+% fig-alt: 方格网：10×10 正方形网格
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.55pt] (0,0) grid[step=0.28] (2.24,2.24);
-  \draw[line width=0.7pt] (0,0) rectangle (2.24,2.24);
+  \def\s{0.26}
+  \draw[line width=0.55pt] (0,0) grid[step=\s] (10*\s,10*\s);
+  \draw[line width=0.7pt] (0,0) rectangle (10*\s,10*\s);
 \end{tikzpicture}%
 }
 \end{figure}
@@ -15139,7 +15140,7 @@ cm²。
 设矩形土地的宽为 \(a\mathrm{km}\)，根据矩形面积公式，有
 
 \[
-8 x = 4\text{，} \quad x = \frac {1}{2} (\mathrm{km})\text{。}
+8a = 4\text{，} \quad a = \frac {1}{2} (\mathrm{km})\text{。}
 \]
 
 矩形的周长 \(= 2\left(8 + \frac{1}{2}\right) = 17(\mathrm{km})\)
@@ -15240,16 +15241,33 @@ cm²。
 
 \begin{figure}
 \centering
-% fig-alt: 门形截面，壁厚 $t$，宽 $a$，高 $b$
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \fill[pattern=north east lines,pattern color=black!45] (0,0) rectangle (1.85,1.55);
-  \fill[white] (0.35,0) rectangle (1.50,1.20);
-  \draw[line width=0.7pt] (0,0) rectangle (1.85,1.55);
-  \draw[line width=0.7pt] (0.35,0) -- (0.35,1.20) -- (1.50,1.20) -- (1.50,0);
-  \node[anchor=east] at (0,0.78) {$b$};
-  \node[anchor=south] at (0.92,1.58) {$a$};
-  \node at (0.18,0.20) {$t$};
+% fig-alt: （3）门形截面：外廓宽d、高b，壁厚均为a（顶与两腿），内部斜线阴影
+\begin{tikzpicture}[line cap=round,line join=round]
+  \def\dd{2.80}
+  \def\bb{2.40}
+  \def\aa{0.55}
+  \fill[even odd rule,pattern=north east lines,pattern color=black!70]
+    (0,0) rectangle (\dd,\bb)
+    (\aa,0) rectangle ({\dd-\aa},{\bb-\aa});
+  \draw[line width=0.75pt]
+    (0,0) -- (0,\bb) -- (\dd,\bb) -- (\dd,0)
+    (\aa,0) -- (\aa,{\bb-\aa}) -- ({\dd-\aa},{\bb-\aa}) -- ({\dd-\aa},0);
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (0,\bb+0.32) -- (\dd,\bb+0.32);
+  \node[anchor=south,inner sep=1pt] at (0.5*\dd,\bb+0.32) {$d$};
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (-0.32,0) -- (-0.32,\bb);
+  \node[anchor=east,inner sep=1pt] at (-0.32,0.5*\bb) {$b$};
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (\dd+0.28,{\bb-\aa}) -- (\dd+0.28,\bb);
+  \node[anchor=west,inner sep=1pt] at (\dd+0.28,{\bb-0.5*\aa}) {$a$};
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    (0,-0.28) -- (\aa,-0.28);
+  \node[anchor=north,inner sep=1pt] at (0.5*\aa,-0.28) {$a$};
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
+    ({\dd-\aa},-0.28) -- (\dd,-0.28);
+  \node[anchor=north,inner sep=1pt] at ({\dd-0.5*\aa},-0.28) {$a$};
 \end{tikzpicture}%
 }
 \caption{(3)}
@@ -15347,13 +15365,39 @@ cm²。
 
 \begin{figure}
 \centering
-% fig-alt: 矩形框，一角阴影与交叉阴影
 \fitfig{%
+% fig-alt: （2）边长a的正方形：顶条与右边条宽b斜线阴影，右上角b×b交叉阴影；底标a−b与b，左边标b与a−b，顶与右边标a，示(a−b)²
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (0,0) rectangle (1.85,1.55);
-  \fill[pattern=north east lines,pattern color=black!45] (0.15,1.15) rectangle (1.35,1.45);
-  \fill[pattern=crosshatch,pattern color=black!50] (1.35,1.15) rectangle (1.70,1.45);
-  \draw[line width=0.5pt] (0.15,1.15) rectangle (1.70,1.45);
+  \def\aa{2.60}
+  \def\bb{0.70}
+  \pgfmathsetmacro{\cc}{\aa-\bb}
+  \fill[pattern=north east lines,pattern color=black!70]
+    (0,\cc) rectangle (\cc,\aa);
+  \fill[pattern=north east lines,pattern color=black!70]
+    (\cc,0) rectangle (\aa,\cc);
+  \fill[pattern=crosshatch,pattern color=black!55]
+    (\cc,\cc) rectangle (\aa,\aa);
+  \draw[line width=0.75pt] (0,0) rectangle (\aa,\aa);
+  \draw[line width=0.75pt] (\cc,0) -- (\cc,\aa);
+  \draw[line width=0.75pt] (0,\cc) -- (\aa,\cc);
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (0,\aa+0.30) -- (\aa,\aa+0.30);
+  \node[anchor=south,inner sep=1pt] at (0.5*\aa,\aa+0.30) {$a$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (\aa+0.30,0) -- (\aa+0.30,\aa);
+  \node[anchor=west,inner sep=1pt] at (\aa+0.30,0.5*\aa) {$a$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (0,-0.30) -- (\cc,-0.30);
+  \node[anchor=north,inner sep=1pt] at (0.5*\cc,-0.30) {$a-b$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (\cc,-0.30) -- (\aa,-0.30);
+  \node[anchor=north,inner sep=1pt] at ({\cc+0.5*\bb},-0.30) {$b$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (-0.30,\cc) -- (-0.30,\aa);
+  \node[anchor=east,inner sep=1pt] at (-0.30,{\cc+0.5*\bb}) {$b$};
+  \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
+    (-0.30,0) -- (-0.30,\cc);
+  \node[anchor=east,inner sep=1pt] at (-0.30,0.5*\cc) {$a-b$};
 \end{tikzpicture}%
 }
 \caption{(2)}
@@ -15362,41 +15406,31 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （3）边长a的正方形右上角有边长b的阴影小正方形；左边标a与b，上边标b，示a²−b²=(a+b)(a−b)
+% fig-alt: （3）边长a的实线正方形，右上角边长b的斜线阴影小正方形；下方虚线接高b、宽a的矩形，示a²−b²=(a+b)(a−b)
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\aa{2.80}
-  \def\bb{0.85}
-  % large square
+  \def\aa{2.60}
+  \def\bb{0.75}
   \draw[line width=0.75pt] (0,0) rectangle (\aa,\aa);
-  % inner divisions: vertical at a-b, horizontal at a-b from bottom = b from top
-  \draw[line width=0.75pt] ({\aa-\bb},{\aa-\bb}) -- ({\aa-\bb},\aa);
-  \draw[line width=0.75pt] ({\aa-\bb},{\aa-\bb}) -- (\aa,{\aa-\bb});
-  % dashed extensions into lower/left (for rearrangement cue)
-  \draw[dashed,line width=0.55pt] ({\aa-\bb},0) -- ({\aa-\bb},{\aa-\bb});
-  \draw[dashed,line width=0.55pt] (0,{\aa-\bb}) -- ({\aa-\bb},{\aa-\bb});
-  % hatched b×b top-right
+  \draw[dashed,line width=0.6pt] (0,0) -- (0,-\bb) -- (\aa,-\bb) -- (\aa,0);
   \fill[pattern=north east lines,pattern color=black!70]
     ({\aa-\bb},{\aa-\bb}) rectangle (\aa,\aa);
   \draw[line width=0.75pt] ({\aa-\bb},{\aa-\bb}) rectangle (\aa,\aa);
-  % top b
+  \draw[dashed,line width=0.55pt] ({\aa-\bb},0) -- ({\aa-\bb},{\aa-\bb});
   \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
     ({\aa-\bb},\aa+0.28) -- (\aa,\aa+0.28);
   \node[anchor=south,inner sep=1pt] at ({\aa-0.5*\bb},\aa+0.28) {$b$};
-  % left: full a, and top b
   \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
-    (-0.45,0) -- (-0.45,\aa);
-  \node[anchor=east,inner sep=1pt] at (-0.45,0.5*\aa) {$a$};
+    (-0.40,0) -- (-0.40,\aa);
+  \node[anchor=east,inner sep=1pt] at (-0.40,0.5*\aa) {$a$};
   \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
-    (-0.22,{\aa-\bb}) -- (-0.22,\aa);
-  \node[anchor=east,inner sep=0.5pt,font=\small] at (-0.22,{\aa-0.5*\bb}) {$b$};
-  % bottom a
+    (-0.40,-\bb) -- (-0.40,0);
+  \node[anchor=east,inner sep=1pt] at (-0.40,-0.5*\bb) {$b$};
   \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
-    (0,-0.28) -- (\aa,-0.28);
-  \node[anchor=north,inner sep=1pt] at (0.5*\aa,-0.28) {$a$};
-  % right b on hatched
+    (0,-\bb-0.28) -- (\aa,-\bb-0.28);
+  \node[anchor=north,inner sep=1pt] at (0.5*\aa,-\bb-0.28) {$a$};
   \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
-    (\aa+0.22,{\aa-\bb}) -- (\aa+0.22,\aa);
-  \node[anchor=west,inner sep=1pt] at (\aa+0.22,{\aa-0.5*\bb}) {$b$};
+    (\aa+0.28,{\aa-\bb}) -- (\aa+0.28,\aa);
+  \node[anchor=west,inner sep=1pt] at (\aa+0.28,{\aa-0.5*\bb}) {$b$};
 \end{tikzpicture}%
 }
 \caption{(3)}
@@ -15575,7 +15609,7 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第9题）△ABC高AD⊥BC于D；虚线平行四边形以BC之半BM为底、高与AD相同（A向右虚线至E、E至M虚线），示同高半底等积
+% fig-alt: （第9题）△ABC高AD⊥BC于D（直角方）；虚线平行四边形以BC之半BM为底、高与AD相同（A向右虚线至E、E至M虚线），示同高半底等积
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0,0);
   \coordinate (C) at (3.20,0);
@@ -15586,6 +15620,7 @@ cm²。
   \draw[dashed,line width=0.6pt] (A) -- (E) -- (M);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.75pt] (A) -- (D);
+  \draw[line width=0.55pt] (D) -- ++(0.18,0) -- ++(0,0.18) -- ++(-0.18,0);
   \node[anchor=south,inner sep=2pt] at (A) {$A$};
   \node[anchor=north east,inner sep=1pt] at (B) {$B$};
   \node[anchor=north west,inner sep=1pt] at (C) {$C$};
@@ -15658,7 +15693,7 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·7：□ABCD底AB、高DD'（虚）落在AB上；过C作CE'⊥AB（虚）于E'（AB延长线上）；BE'虚延；矩形D'E'CD
+% fig-alt: 图3·7：□ABCD底AB、高DD'（虚）落在AB上；过C作CE'⊥AB（虚）于E'（AB延长线上）；BE'虚延；∠A与∠CBE'单弧；矩形D'E'CD
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\b{2.80}
   \def\s{0.95}
@@ -15673,6 +15708,9 @@ cm²。
   \draw[dashed,line width=0.6pt] (D) -- (Dp);
   \draw[dashed,line width=0.6pt] (C) -- (Ep);
   \draw[dashed,line width=0.6pt] (B) -- (Ep);
+  \pgfmathsetmacro{\ang}{atan2(\h,\s)}
+  \draw[line width=0.5pt] (0.42,0) arc[start angle=0, end angle=\ang, radius=0.42];
+  \draw[line width=0.5pt] ([shift={(0.42,0)}]B) arc[start angle=0, end angle=\ang, radius=0.42];
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north,inner sep=1pt] at (Dp) {$D'$};
   \node[anchor=north,inner sep=1pt] at (B) {$B$};
@@ -15991,7 +16029,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·12：左正方形ABCD各边标a；右菱形A'B'C'D'各边标a，虚高D'E'⊥A'B'于E'并标h
+% fig-alt: 图3·12：左正方形ABCD各边标a；右菱形A'B'C'D'各边标a，虚高D'E'⊥A'B'于E'（直角方）并标h
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\a{1.70}
   \begin{scope}
@@ -16019,6 +16057,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
     \coordinate (Ep) at (\off,0);
     \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
     \draw[dashed,line width=0.6pt] (Dp) -- (Ep);
+    \draw[line width=0.55pt] (Ep) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
     \node[anchor=north east,inner sep=1pt] at (Ap) {$A'$};
     \node[anchor=north west,inner sep=1pt] at (Bp) {$B'$};
     \node[anchor=south west,inner sep=1pt] at (Cp) {$C'$};
@@ -16094,7 +16133,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 \begin{enumerate}[start=4]
 \item
   假定梯形 \(ABCD\) 的腰 \(BC\) 上的中点为 \(M\)， 且过 \(M\) 的直线
-  \(EF' \parallel AD\) （如图）。 证明 \(\square AEFD\) 的面积 = 梯形
+  \(EF \parallel AD\) （如图）。 证明 \(\square AEFD\) 的面积 = 梯形
   \(ABCD\) 的面积。
 \end{enumerate}
 
@@ -16176,9 +16215,14 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
   \(\square ABCD\) 的面积。
 \end{enumerate}
 
-［提示：延长 EO 交 AD 于 \(F_{4}\) 作 \(AH \perp BC\)，可求出高 AH
-的长。］ *6。 平行四边形两对对边间的距离分别为 \(h_{1}\) 和
-\(h_{2}\)，周长为 2s，求它的面积。
+［提示：延长 EO 交 AD 于 \(F\)，作 \(AH \perp BC\)，可求出高 AH
+的长。］
+
+\begin{enumerate}[start=6]
+\item
+  平行四边形两对对边间的距离分别为 \(h_{1}\) 和
+  \(h_{2}\)，周长为 2s，求它的面积。
+\end{enumerate}
 
 ［解：已知 \(\square ABCD\) 中，\(AB\) 上的高为 \(h_1, BC\) 上的高为
 \(h_2\)，那末， □ABCD的面积=AB·h₁=BC·h₂。
@@ -16197,7 +16241,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 \]
 
 \[
-\triangle B C = \frac {(A B + B C) h _ {1}}{h _ {1} + h _ {2}} = \frac {s h _ {1}}{h _ {1} + h _ {2}}.
+BC = \frac {(A B + B C) h _ {1}}{h _ {1} + h _ {2}} = \frac {s h _ {1}}{h _ {1} + h _ {2}}.
 \]
 
 于是 \(\square ABCD\) 面积
@@ -17751,7 +17795,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \item
   从三角形 \(ABC\) 的各顶点作三条平行线
 \(AD \parallel BE \parallel CF, AD\) 交 \(BC\) 于 \(D, BE\) 和 \(CF\)
-各与对边的延长线交于 \(E\) 和 \(E\)。 求证 \(\triangle DEF\) 的面积是
+各与对边的延长线交于 \(E\) 和 \(F\)。 求证 \(\triangle DEF\) 的面积是
 \(\triangle ABC\) 的面积的 2 倍。
 
 ［提示： 设 D 为 BC 边上的点， E 和 F 分别在其他二边的延长线上。 先看
@@ -17771,7 +17815,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \shulihuahang{［已知］} \(\triangle ABC \sim \triangle A'B'C'\) （图3·24）。
 
 \shulihuahang{［求证］}
-\(\frac{\triangle ABC\text{的面积}}{\triangle A'B'C'}\text{的面积} = \left(\frac{AB}{A'B'}\right)^2.\)
+\(\frac{\triangle ABC\text{的面积}}{\triangle A'B'C'\text{的面积}} = \left(\frac{AB}{A'B'}\right)^2.\)
 
 \begin{figure}
 \centering
@@ -17819,7 +17863,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \]
 
 \[
-\therefore \quad \frac {\triangle A B C \text {\text{的面积}}}{\triangle A ^ {\prime} B ^ {\prime} C ^ {\prime} \text {\text{的面积}}} = \frac {A B \cdot A B}{A ^ {\prime} B ^ {\prime} \cdot A ^ {\prime} B ^ {\prime}} = \frac {A B ^ {3}}{A ^ {\prime} B ^ {\prime 2}}.
+\therefore \quad \frac {\triangle A B C \text {\text{的面积}}}{\triangle A ^ {\prime} B ^ {\prime} C ^ {\prime} \text {\text{的面积}}} = \frac {A B \cdot A B}{A ^ {\prime} B ^ {\prime} \cdot A ^ {\prime} B ^ {\prime}} = \frac {A B ^ {2}}{A ^ {\prime} B ^ {\prime 2}}.
 \]
 
 \paragraph{例 1}
@@ -17843,12 +17887,12 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \therefore \triangle A C D \sim \triangle A ^ {\prime} C ^ {\prime} D ^ {\prime}.
 \]
 
-从而 \(\frac{CD}{C'D'} = \frac{AO}{A'O'}\)。
+从而 \(\frac{CD}{C'D'} = \frac{AC}{A'C'}\)。
 
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·25：两三角形，左为△ABC及高CD，右为△A'B'C'及高C'D'
+% fig-alt: 图3·25（1）△ABC，高CD⊥AB于D（D在AB上），∠A单弧；（2）△A'B'C'，∠B'钝，底A'B'虚延至D'，高C'D'虚线，∠A'单弧
 \begin{tikzpicture}[line cap=round,line join=round,baseline={(0,0)}]
   \coordinate (A) at (0,0);
   \coordinate (B) at (4.20,0);
@@ -17895,7 +17939,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·26：两三角形，左为△ABC及高BD，右为钝角△A'B'C'及高B'D'
+% fig-alt: 图3·26（1）△ABC（C左、A右、B上），虚高BD⊥CA于D，∠A单弧；（2）钝角△A'B'C'（∠A'钝），CA'虚延至D'，虚高B'D'，∠A'内角双弧、外角∠B'A'D'单弧
 \begin{tikzpicture}[line cap=round,line join=round,baseline={(0,0)}]
   \coordinate (C) at (0,0);
   \coordinate (A) at (4.40,0);
@@ -18184,7 +18228,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \]
 
 两式相加， 多边形 \(P\) 的面积 \(+\) 多边形 \(Q\) 的面积
-\(= \frac{BC^2 + CA^2}{AB^2}\) 多边形 \(R\) 的面积根据勾股定理，
+\(= \frac{BC^2 + CA^2}{AB^2}\) 多边形 \(R\) 的面积。根据勾股定理，
 
 \[
 \frac {B C ^ {2} + C A ^ {2}}{A B ^ {2}} = \frac {A B ^ {2}}{A B ^ {2}} = 1\text{，}
@@ -18241,7 +18285,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \frac {A D}{D B} = \frac {2}{3}\text{，} \quad \frac {A E}{E C} = \frac {3}{4}.
 \]
 
-求证 \(\triangle ADB\) 面积的35倍是 \(\triangle ABC\) 面积的6倍。
+求证 \(\triangle ADE\) 面积的35倍是 \(\triangle ABC\) 面积的6倍。
 
 \begin{enumerate}[start=8]
 \item
@@ -18339,7 +18383,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 这些等式， 可以改写为：
 
 \[
-\frac {\sqrt {S _ {1}}}{\sqrt {S}} = \frac {P M}{B C}\text{，} \quad \frac {\sqrt {S _ {2}}}{\sqrt {S}} = \frac {F G}{B C}\text{，} \quad \frac {\sqrt {S _ {3}}}{\sqrt {N}} = \frac {N P}{B C}.
+\frac {\sqrt {S _ {1}}}{\sqrt {S}} = \frac {P M}{B C}\text{，} \quad \frac {\sqrt {S _ {2}}}{\sqrt {S}} = \frac {F G}{B C}\text{，} \quad \frac {\sqrt {S _ {3}}}{\sqrt {S}} = \frac {N P}{B C}.
 \]
 
 因此，
@@ -18347,7 +18391,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 但是 \(NP = BF, PM = GC,\)
 
 \[
-\therefore \frac {\sqrt {S _ {1}} + \sqrt {S _ {2}} + \sqrt {S _ {3}}}{\sqrt {S}} = \frac {B P + F G + G C}{B C} = \frac {B C}{B G} = 1.
+\therefore \frac {\sqrt {S _ {1}} + \sqrt {S _ {2}} + \sqrt {S _ {3}}}{\sqrt {S}} = \frac {B F + F G + G C}{B C} = \frac {B C}{B C} = 1.
 \]
 
 \[
@@ -18360,13 +18404,13 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \end{enumerate}
 \subsection{§3·7 关于多边形面积的作图题}
 
-在 §3-1
+在 §3·1
 里我们提到过多边形面积的割补法。通过割补法，我们可以作出一个和已知多边形面积相等但是形状不同的多边形，从几何作图的观点来看，这是叫做等积变形的作图法。在关于多边形面积的作图题里，有不少作图题都是利用等积变形来完成的。
 
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·30 底虚线含实段AB；上实线XY含C1、C2；△ABC1与△ABC2同底AB等高h（右侧双箭头）
+% fig-alt: 图3·30 底虚线含实段AB；上实线XY含C1、C2；△ABC1与△ABC2同底AB等高h（右侧实线双箭头）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0.80,0);
   \coordinate (B) at (3.60,0);
@@ -18378,7 +18422,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \draw[line width=0.75pt] (-0.30,2.55) -- (5.30,2.55);
   \draw[line width=0.75pt] (A) -- (C1) -- (B) -- cycle;
   \draw[line width=0.75pt] (A) -- (C2) -- (B);
-  \draw[<->,dashed,line width=0.55pt] (5.55,0) -- (5.55,2.55);
+  \draw[<->,line width=0.55pt] (5.55,0) -- (5.55,2.55);
   \node[anchor=north,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
   \node[anchor=south,inner sep=1.5pt] at (C1) {$C_1$};
@@ -18419,7 +18463,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·31：四种同底等积变换示意图：(1)等腰；(2)底角为α；(3)顶角为β；(4)中线为l
+% fig-alt: 图3·31：四种同底等积变换：(1)等腰，XY与垂直平分线MN；(2)底角α，上直线右端标v（无X）；(3)顶角β，虚圆弧；(4)中线l，虚弧
 \begin{tikzpicture}[line cap=round,line join=round]
   % (1)
   \begin{scope}[shift={(0,5.6)}]
@@ -18462,7 +18506,6 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \draw[line width=0.65pt] (2.20,3.55) -- ({2.20-0.70*cos(40)},{3.55+0.70*sin(40)});
     \draw[line width=0.5pt] (2.20,3.55) ++(180:0.30) arc (180:{180-40}:0.30);
     \node[anchor=south,inner sep=1.5pt] at (2.05,3.78) {$\alpha$};
-    \node[anchor=east,inner sep=2pt] at (-0.25,2.55) {$X$};
     \node[anchor=west,inner sep=1.5pt] at (5.10,2.55) {$v$};
     \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
     \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
@@ -18600,7 +18643,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 \paragraph{作图题 1}
 
-。 已知五边形 \(ABCDE\)，求作一个和它等积的四边形（图3·32）。
+已知五边形 \(ABCDE\)，求作一个和它等积的四边形（图3·32）。
 
 \shulihuahang{［作法］} 作任意一条对角线 \(BD\)，过顶点 \(C\) 引
 \(CF \parallel BD, CF\) 交 \(AB\) 的延长线于 \(F\)。连结 \(DF\)，四边形
@@ -18610,7 +18653,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 的 \(\triangle BDC\) 和 \(\triangle BDF\) 有等高，从而 \(\triangle BDC\)
 和 \(\triangle BDF\) 等积。
 
-四边形 AFDE 的面积 = 四边形 ABDE 的面积 +△BDE'的面积 = 四边形 ABDE
+四边形 AFDE 的面积 = 四边形 ABDE 的面积 +△BDF的面积 = 四边形 ABDE
 的面积 +△BDC的面积 =五边形 ABCDE 的面积。
 
 利用这个作图题，我们可以把一个 \(n\) 边形化为一个和它等积的 \((n - 1)\)
@@ -18679,7 +18722,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 
 按题意有 \(x^{2} = \frac{1}{2} AB\cdot CD.\) 这就是
 \(\frac{1}{2} AB: x = x: CD.\) 求作的正方形的一边为线段
-\(\frac{1}{2} AB\) 和 \(OD\) 的比例中项。
+\(\frac{1}{2} AB\) 和 \(CD\) 的比例中项。
 
 \shulihuahang{［作法］} 作三角形 \(ABC\) 的高 \(CD\)。作线段
 \(\frac{1}{2} AB\) 和 \(CD\) 的比例中项 \(FJ\)，以 \(FJ\) 为一边作正方形
@@ -18809,10 +18852,10 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \(\frac{2}{3} AB: x = x: \sqrt{3} CD,\) 因此求作等边三角形的一边为线段
 \(\frac{2}{3} AB\) 和 \(\sqrt{3} CD\) 的比例中项。
 
-\shulihuahang{［作法］} 作 \(\triangle ABC\) 的高 \(CD\) （图3·33（1））。
+\shulihuahang{［作法］} 作 \(\triangle ABC\) 的高 \(CD\) （图3·34（1））。
 
 根据代数作图法基本作图题（3）和（4），作线段 \(EF = \frac{2}{3} AB\)
-（图3·33（2））。
+（图3·34（2））。
 
 根据代数作图法基本作图题（8），作线段
 
@@ -18820,11 +18863,11 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 GH=\sqrt{(2CD)^2-CD^2}=\sqrt{3}\,CD\text{。}
 \]
 
-（图3·33（3））。
+（图3·34（3））。
 
 作线段 \(\frac{2}{3} AB\) 和 \(\sqrt{3} CD\) 的比例中项 \(A'C'\)，以
 \(A'C'\) 为一边，作等边三角形
-\(A'B'C'\)（图3·33（4））。这就是求作的三角形。
+\(A'B'C'\)（图3·34（4））。这就是求作的三角形。
 
 \shulihuahang{［证］} 三角形 \(A'B'C'\) 的面积 \(= \frac{\sqrt{3}}{4} A'C'^2\)
 
@@ -18887,7 +18930,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \caption{图3·35}
 \end{figure}
 
-分析 设已知正方形 \(ABCD\) 的一边为 \(\alpha\)，它的面积和周长分别为
+分析 设已知正方形 \(ABCD\) 的一边为 \(a\)，它的面积和周长分别为
 \(a^2\) 和 \(4a\)。设求作矩形的底和高分别为 \(x\) 和
 \(y\)，那末它的面积和周长分别为 \(xy\) 和 \(2(x + y)\)。按照题意，有
 
@@ -18901,7 +18944,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \left\{ \begin{array}{ll} x = \frac {a}{2}\text{，} \\ y = 2 a. \end{array} \right. \quad \text {\text{或}} \quad \left\{ \begin{array}{ll} x = 2 a\text{，} \\ y = \frac {a}{2}. \end{array} \right.
 \]
 
-【作法】作矩形 \(A'B'C'D'\)，使
+\shulihuahang{［作法］} 作矩形 \(A'B'C'D'\)，使
 \(A'B' = 2a, A'D' = \frac{a}{2}\)。这就是求作的矩形。
 
 \shulihuahang{［证］} 矩形 \(A'B'C'D'\) 的面积 \(= A'B' \cdot A'D'\)
@@ -18924,7 +18967,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \paragraph{作图题 4}
 
-。 已知三角形 \(ABC\)，求作过顶点 \(A\) 的线段，使它们三等分三角形
+已知三角形 \(ABC\)，求作过顶点 \(A\) 的线段，使它们三等分三角形
 \(ABC\) 的面积（图3·36）。
 
 \shulihuahang{［作法］} 三等分 \(\triangle ABC\) 的底边 \(BC, D\) 和 \(E\)
@@ -19043,7 +19086,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \shulihuahang{［证］} 根据作图题4的理由，\(\triangle ABM\) 的面积为
 \(\triangle ABC\) 的面积的二分之一。
 
-∵ AP // MQ， ∴ △APQ 和 △APM 等积。
+\(\because AP \parallel MQ\)，\(\therefore \triangle APQ\) 和 \(\triangle APM\) 等积。
 
 四边形 \(BPQA\) 的面积 \(= \triangle ABP\) 的面积 \(+\triangle APQ\)
 的面积
@@ -19065,7 +19108,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 
 \paragraph{作图题 5}
 
-。 已知 \(\triangle ABC\)，求作平行于 \(BC\) 的线段 \(B'C'\)，使
+已知 \(\triangle ABC\)，求作平行于 \(BC\) 的线段 \(B'C'\)，使
 \(B'C'\) 截得的三角形 \(AB'C'\) 的面积为 \(\triangle ABC\)
 的面积的三分之一（图3·38）。
 
@@ -19083,7 +19126,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \therefore \frac {\triangle A B ^ {\prime} C ^ {\prime} \text {\text{的面积}}}{\triangle A B C \text {\text{的面积}}} = \frac {A B ^ {\prime 2}}{A B ^ {2}} = \frac {1}{3}.
 \]
 
-从而 \(AB' = \sqrt{\frac{1}{3}} AB \cdot AB,\) 或
+从而 \(AB' = \sqrt{\frac{1}{3} AB \cdot AB}\)，或
 \(\frac{1}{3} AB:AB' = AB':AB.\) 线段 \(AB'\) 为线段 \(\frac{1}{3} AB\)
 和 \(AB\) 的比例中项， 所以它是可作的。 线段 \(AB'\) 可作， 那末
 \(B'C'\) 也可作了。
