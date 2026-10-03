@@ -18168,7 +18168,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·27 △ABC；D在AC；左射线五等分AC得P（AP=AC/5）；连DB；过P作PE∥DB交AB于E；连DE
+% fig-alt: 图3·27 △ABC；D在AC；左射线五等分AC得P（AP=AC/5）；DB、PE、DE均实线；五等分射线与四条平行线虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5.80,0);
@@ -18196,8 +18196,8 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
   \coordinate (E) at ({\Px + \tE*(5.80-\Dx)}, 0);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.75pt] (D) -- (E);
-  \draw[dashed,line width=0.6pt] (D) -- (B);
-  \draw[dashed,line width=0.6pt] (P) -- (E);
+  \draw[line width=0.75pt] (D) -- (B);
+  \draw[line width=0.75pt] (P) -- (E);
   \draw[dashed,line width=0.55pt] (A) -- (R5);
   \draw[dashed,line width=0.55pt] (R5) -- (C);
   \draw[dashed,line width=0.55pt] (R1) -- (P);
@@ -18938,19 +18938,19 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·34（2）水平射线OF实线（E在OF上）；下斜射线自O虚线；三条虚平行线截得EF=⅔AB
+% fig-alt: 图3·34（2）水平OF实线（E在OF上）；下斜射线自O虚线向右下；三条虚平行线向左下斜，截得EF=⅔AB
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (O) at (0.00,0.00);
-  % lower ray direction (unit-ish)
-  \coordinate (Q1) at (1.55,-0.95);
-  \coordinate (Q2) at (3.10,-1.90);
-  \coordinate (Q3) at (4.65,-2.85);
+  % 下斜虚射线向右下，三条虚平行线向左下，与扫描一致
+  \coordinate (Q1) at (0.895,-0.805);
+  \coordinate (Q2) at (1.789,-1.611);
+  \coordinate (Q3) at (2.684,-2.416);
   % horizontal: OE : EF = 1:2 so E at 1/3 of OF, F at OF
   \coordinate (E) at (1.70,0.00);
   \coordinate (M) at (3.40,0.00);
   \coordinate (F) at (5.10,0.00);
   \draw[line width=0.75pt] (O) -- (5.40,0.00);
-  \draw[dashed,line width=0.6pt] (O) -- (4.90,-3.00);
+  \draw[dashed,line width=0.6pt] (O) -- (3.72,-3.35);
   \draw[dashed,line width=0.55pt] (Q1) -- (E);
   \draw[dashed,line width=0.55pt] (Q2) -- (M);
   \draw[dashed,line width=0.55pt] (Q3) -- (F);
@@ -18967,12 +18967,13 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·34（3）虚线直角△GHI（直角在G）；GI=CD，GH=√3 CD，HI=2CD
+% fig-alt: 图3·34（3）直角△GHI（直角在G）；GI实线=CD，GH虚线=√3 CD，HI虚线=2CD
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (G) at (0.00,0.00);
   \coordinate (I) at (0.00,1.70);
   \coordinate (H) at ({1.70*sqrt(3)},0.00);
-  \draw[dashed,line width=0.7pt] (G) -- (I) -- (H) -- cycle;
+  \draw[line width=0.75pt] (G) -- (I);
+  \draw[dashed,line width=0.7pt] (I) -- (H) -- (G);
   \draw[line width=0.5pt] (0.18,0) -- (0.18,0.18) -- (0,0.18);
   % vertical dim CD
   \draw[<->,line width=0.45pt] (-0.55,0.00) -- (-0.55,1.70);
@@ -19087,7 +19088,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
   \node[anchor=north west,inner sep=1pt] at (B) {$B$};
   \node[anchor=south west,inner sep=1pt] at (C) {$C$};
   \node[anchor=south east,inner sep=1pt] at (D) {$D$};
-  \node[anchor=north,inner sep=2pt] at ({\aa/2},0.15) {$a$};
+  \node[anchor=south,inner sep=1.5pt] at ({\aa/2},0.08) {$a$};
   % rectangle
   \begin{scope}[shift={(3.10,0)}]
     \def\xx{1.00}
@@ -19159,7 +19160,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·36 △ABC；底BC三等分点D、E；实线AD、AE；下斜射线与虚平行线示三等分
+% fig-alt: 图3·36 △ABC；底BC三等分点D、E；实线AD、AE；下斜虚射线自B向右下，三条虚平行线向左下斜
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0.00,0.00);
   \coordinate (C) at (4.50,0.00);
@@ -19170,10 +19171,10 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
   \draw[line width=0.75pt] (A) -- (D);
   \draw[line width=0.75pt] (A) -- (E);
   % trisection construction below: ray from B, equal segments, parallels to C
-  \coordinate (R1) at (1.20,-0.85);
-  \coordinate (R2) at (2.40,-1.70);
-  \coordinate (R3) at (3.60,-2.55);
-  \draw[dashed,line width=0.55pt] (B) -- (3.90,-2.75);
+  \coordinate (R1) at (0.816,-0.684);
+  \coordinate (R2) at (1.631,-1.369);
+  \coordinate (R3) at (2.447,-2.053);
+  \draw[dashed,line width=0.55pt] (B) -- (3.13,-2.63);
   \draw[dashed,line width=0.55pt] (R1) -- (D);
   \draw[dashed,line width=0.55pt] (R2) -- (E);
   \draw[dashed,line width=0.55pt] (R3) -- (C);
