@@ -18355,34 +18355,35 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·29 直角△ABC（直角在C，直角方）；边a=BC、b=CA、c=AB；外侧相似五边形P（BC上）、Q（CA上）、R（AB上）
+% fig-alt: 图3·29 直角△ABC（直角在C，直角方在形内）；a在BC右侧、b在CA上方、c在斜边左侧；外侧不规则相似五边形：P在BC左侧（上边较平、左下角突出），Q在CA下方（向右下斜），R在斜边上（右竖边、顶有尖）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \coordinate (A) at (2.900,0.000);
-  \coordinate (B) at (0.000,2.400);
+  % traced from fig-p0211-01, y flipped; C at origin, BC vertical
   \coordinate (C) at (0.000,0.000);
-  \coordinate (Pp1) at (-0.960,2.784);
-  \coordinate (Pp2) at (-2.064,1.680);
-  \coordinate (Pp3) at (-1.320,0.120);
-  \coordinate (Qp1) at (-0.464,-1.160);
-  \coordinate (Qp2) at (0.870,-2.494);
-  \coordinate (Qp3) at (2.755,-1.595);
-  \coordinate (Rp1) at (0.496,3.944);
-  \coordinate (Rp2) at (2.934,4.174);
-  \coordinate (Rp3) at (4.075,1.715);
+  \coordinate (B) at (0.030,2.520);
+  \coordinate (A) at (1.170,0.000);
+  \coordinate (Pp1) at (-1.270,2.940);
+  \coordinate (Pp2) at (-2.240,1.870);
+  \coordinate (Pp3) at (-1.350,-0.290);
+  \coordinate (Qp1) at (-0.470,-0.730);
+  \coordinate (Qp2) at (0.050,-1.430);
+  \coordinate (Qp3) at (1.720,-0.810);
+  \coordinate (Rp1) at (1.380,3.590);
+  \coordinate (Rp2) at (2.810,2.700);
+  \coordinate (Rp3) at (2.730,0.130);
   \draw[line width=0.75pt] (B) -- (Pp1) -- (Pp2) -- (Pp3) -- (C) -- cycle;
   \draw[line width=0.75pt] (C) -- (Qp1) -- (Qp2) -- (Qp3) -- (A) -- cycle;
   \draw[line width=0.75pt] (B) -- (Rp1) -- (Rp2) -- (Rp3) -- (A) -- cycle;
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
-  \draw[line width=0.55pt] (C) -- ++(0.18,0) -- ++(0,0.18) -- ++(-0.18,0);
-  \node[anchor=north west,inner sep=1pt] at (A) {$A$};
-  \node[anchor=south east,inner sep=1pt] at (B) {$B$};
-  \node[anchor=north east,inner sep=1.5pt] at (C) {$C$};
-  \node[anchor=west,inner sep=2pt] at ($(B)!0.45!(C)+(-0.15,0)$) {$a$};
-  \node[anchor=north,inner sep=2pt] at ($(C)!0.50!(A)+(0,-0.12)$) {$b$};
-  \node[anchor=south west,inner sep=1.5pt] at ($(A)!0.42!(B)$) {$c$};
-  \node at (-0.869,1.397) {$P$};
-  \node at (1.212,-1.050) {$Q$};
-  \node at (2.081,2.447) {$R$};
+  \draw[line width=0.55pt] (C) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
+  \node[anchor=north,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=west,inner sep=1.5pt] at (0.14,1.25) {$a$};
+  \node[anchor=south,inner sep=1.5pt] at (0.52,0.05) {$b$};
+  \node[anchor=east,inner sep=1pt] at (0.48,0.90) {$c$};
+  \node at (-1.05,1.15) {$P$};
+  \node at (0.45,-0.72) {$Q$};
+  \node at (1.85,1.70) {$R$};
 \end{tikzpicture}%
 }
 \caption{图3·29}
@@ -19067,7 +19068,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·35 左正方形ABCD边长a；右矩形A'B'C'D'，高x=a/2、底y=2a
+% fig-alt: 图3·35 左正方形ABCD，边长a在形内贴近底边；右矩形A'B'C'D'，高的尺寸x=a/2沿左侧箭头向上写，底y=2a
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\aa{2.00}
   % square
@@ -19090,8 +19091,8 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
     \coordinate (Cp) at (\yy,\xx);
     \coordinate (Dp) at (0,\xx);
     \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
-    \draw[<->,line width=0.45pt] (-0.45,0) -- (-0.45,\xx);
-    \node[anchor=east,inner sep=1pt,font=\small] at (-0.48,{\xx/2}) {$x=\dfrac{a}{2}$};
+    \draw[<->,line width=0.45pt] (-0.38,0) -- (-0.38,\xx);
+    \node[rotate=90,anchor=center,inner sep=1pt,font=\small] at (-0.78,{\xx/2}) {$x=\dfrac{a}{2}$};
     \draw[<->,line width=0.45pt] (0,-0.45) -- (\yy,-0.45);
     \node[anchor=north,inner sep=1pt,font=\small] at ({\yy/2},-0.45) {$y=2a$};
     \node[anchor=north east,inner sep=1pt] at (Ap) {$A'$};
@@ -19152,7 +19153,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·36 △ABC；底BC三等分点D、E；实线AD、AE；下斜虚射线自B向右下，三条虚平行线向左下斜
+% fig-alt: 图3·36 △ABC，A靠近E上方；底BC三等分点D、E；实线AD、AE；自B向右下的浅斜虚射线，三条较陡的虚平行线向右下斜、落到射线上
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0.00,0.00);
   \coordinate (C) at (4.50,0.00);
@@ -19162,14 +19163,17 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.75pt] (A) -- (D);
   \draw[line width=0.75pt] (A) -- (E);
-  % trisection construction below: ray from B, equal segments, parallels to C
-  \coordinate (R1) at (0.816,-0.684);
-  \coordinate (R2) at (1.631,-1.369);
-  \coordinate (R3) at (2.447,-2.053);
-  \draw[dashed,line width=0.55pt] (B) -- (3.13,-2.63);
-  \draw[dashed,line width=0.55pt] (R1) -- (D);
-  \draw[dashed,line width=0.55pt] (R2) -- (E);
-  \draw[dashed,line width=0.55pt] (R3) -- (C);
+  % ray from B shallow down-right; three steeper parallels down-right onto the ray
+  \coordinate (P1) at (1.62,0.00);
+  \coordinate (P2) at (3.02,0.00);
+  \coordinate (P3) at (4.15,0.00);
+  \coordinate (Q1) at (2.05,-0.74);
+  \coordinate (Q2) at (3.82,-1.38);
+  \coordinate (Q3) at (5.25,-1.90);
+  \draw[dashed,line width=0.55pt] (B) -- (7.15,-2.58);
+  \draw[dashed,line width=0.55pt] (P1) -- (Q1);
+  \draw[dashed,line width=0.55pt] (P2) -- (Q2);
+  \draw[dashed,line width=0.55pt] (P3) -- (Q3);
   \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=north east,inner sep=1pt] at (B) {$B$};
   \node[anchor=north west,inner sep=1pt] at (C) {$C$};
