@@ -22519,11 +22519,14 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
   \pgfmathsetmacro{\top}{\W/2}
   \pgfmathsetmacro{\xh}{\s/2}
   \pgfmathsetmacro{\hw}{\W/2}
-  \draw[line width=0.7pt] (-\hw,0) -- (\hw,0);
-  \draw[line width=0.55pt] (-\xh,\top) -- (-\xh,0);
-  \draw[line width=0.55pt] (\xh,\top) -- (\xh,0);
-  \node[anchor=north east] at (-\hw,-0.02) {$A$};
-  \node[anchor=north west] at (\hw,-0.02) {$B$};
+  \pgfmathsetmacro{\aby}{\s/2}
+  \draw[line width=0.55pt] (-\xh,\top) -- (\xh,\top);
+  \draw[line width=0.55pt] (-\xh,\top) -- (-\xh,\aby);
+  \draw[line width=0.55pt] (\xh,\top) -- (\xh,\aby);
+  \draw[line width=0.7pt] (-\hw,\aby) -- (-\xh,\aby);
+  \draw[line width=0.7pt] (\xh,\aby) -- (\hw,\aby);
+  \node[anchor=north east] at (-\hw,\aby) {$A$};
+  \node[anchor=north west] at (\hw,\aby) {$B$};
   \node[anchor=south east] at (-\xh,\top) {$D$};
   \node[anchor=south west] at (\xh,\top) {$C$};
 \end{tikzpicture}%
@@ -23671,7 +23674,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 正八边形ABCDEFGH，A在右顺时针至H；直径EA、GC；AC与OB交于右下，标x、y
+% fig-alt: 正八边形ABCDEFGH，A在右顺时针至H；直径EA、GC；AC与OB交于M，有直角，标M
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \foreach \i/\lab in {0/A,1/B,2/C,3/D,4/E,5/F,6/G,7/H}
@@ -23696,8 +23699,7 @@ O M = O M.
   \node[anchor=south] at (G) {$G$};
   \node[anchor=south west] at (H) {$H$};
   \node[anchor=south west] at (0,0) {$O$};
-  \node[anchor=north east] at ($(O)!0.55!(B)$) {$x$};
-  \node[anchor=south west] at ($(A)!0.45!(C)$) {$y$};
+  \node[anchor=north west,inner sep=1pt] at (M) {$M$};
 \end{tikzpicture}%
 }
 \caption{(第8题)}
@@ -23736,7 +23738,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-% fig-alt: （第7题）正八边形上半ABCDE；底AE、虚线BD；AB、BC、CD、DE外侧虚弧
+% fig-alt: （第7题）正八边形上半ABCDE；底AE、实线BD；AB、BC、CD、DE外侧虚弧
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{1.85}
@@ -23746,7 +23748,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
   \coordinate (D) at (45:\R);
   \coordinate (E) at (0:\R);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
-  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (B) -- (D);
+  \draw[line width=0.6pt] (B) -- (D);
   \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (A) arc (180:135:\R);
   \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (B) arc (135:90:\R);
   \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (C) arc (90:45:\R);
