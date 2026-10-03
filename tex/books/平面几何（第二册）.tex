@@ -12486,7 +12486,7 @@ B， C， D 四点共圆。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第6题）两圆交于M、N，公共弦MN；C在MN上；直线交两圆顺次于A、B、D、E（序A–B–C–D–E）
+% fig-alt: （第6题）两圆交于M、N，公共弦MN；C在MN上、标在线下；直线交两圆顺次于A、B、D、E（序A–B–C–D–E），D标在线上
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (-0.850,0.000) circle (1.350);
   \draw[line width=0.75pt] (1.050,0.050) circle (1.700);
@@ -12496,8 +12496,8 @@ B， C， D 四点共圆。
   \node[anchor=north,inner sep=1pt] at (-0.150,-1.154) {$N$};
   \node[anchor=north east,inner sep=0.8pt] at (-1.988,-0.727) {$A$};
   \node[anchor=north,inner sep=0.8pt] at (-0.616,-0.288) {$B$};
-  \node[anchor=south,inner sep=0.8pt] at (-0.131,-0.132) {$C$};
-  \node[anchor=north,inner sep=0.8pt] at (0.498,0.069) {$D$};
+  \node[anchor=north,inner sep=0.8pt] at (-0.131,-0.132) {$C$};
+  \node[anchor=south,inner sep=0.8pt] at (0.498,0.069) {$D$};
   \node[anchor=south west,inner sep=0.8pt] at (2.603,0.742) {$E$};
 \end{tikzpicture}%
 }
@@ -12986,7 +12986,7 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2·38（3）：角顶点左；上射线d虚、b实；下射线3a虚、x及延长实；两平行截线虚。左侧（3）
+% fig-alt: 图2·38（3）：角顶点左；上射线d虚、b实（b后延长亦实）；下射线3a虚、x实、x后延长虚；两平行截线虚。左侧（3）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (V) at (0,0);
   \def\dlen{1.600}
@@ -13004,7 +13004,8 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
   \draw[dashed,line width=0.75pt] (V) -- (D);
   \draw[line width=0.75pt] (D) -- (Aend);
   \draw[dashed,line width=0.75pt] (V) -- (Cpt);
-  \draw[line width=0.75pt] (Cpt) -- (Bend);
+  \draw[line width=0.75pt] (Cpt) -- (Xpt);
+  \draw[dashed,line width=0.75pt] (Xpt) -- (Bend);
   \draw[dashed,line width=0.75pt] (D) -- (Cpt);
   \draw[dashed,line width=0.75pt] (E) -- (Xpt);
   \path (V) -- (D) node[midway,above,inner sep=1pt] {$d$};
@@ -13326,7 +13327,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   \coordinate (A) at ({\xoff+\bb},\yoff);
   \coordinate (O) at ({\xoff+\mo},\yoff);
   \coordinate (B) at ({\xoff+\bb+\ab},\yoff);
-  \coordinate (C) at ({\xoff+\mo+\rr*cos(180-\ang)},{\yoff+\rr*sin(180-\ang)});
+  \coordinate (C) at ({\xoff+\mo-\rr*sin(\ang)},{\yoff+\rr*cos(\ang)});
   % given segments upper left
   \draw[line width=0.75pt] (0,2.350) -- (\bb,2.350);
   \draw[line width=0.55pt] (0,2.350-0.08) -- (0,2.350+0.08);
@@ -13604,7 +13605,6 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   \draw[line width=0.75pt] (M) -- (N);
   \draw[line width=0.75pt] (Oc) circle (\RR);
   \draw[line width=0.75pt] (P) -- (Apt);
-  \filldraw[fill=white,line width=0.55pt] (Bpt) circle (0.040);
   \node[anchor=north east,inner sep=2pt] at (M) {$M$};
   \node[anchor=north west,inner sep=2pt] at (N) {$N$};
   \node[anchor=north,inner sep=2pt] at (P) {$P$};
