@@ -11046,14 +11046,14 @@ A C ^ {2} + B D ^ {2} = A B ^ {2} + B C ^ {2} + C D ^ {2} + D A ^ {2}.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第1题）右：钝角三角形，底边c实、向右虚延；左边b、右边a；高h实线落在延长线上；下方尺寸线标p（左端至垂足）。扫描无直角方标，不补
+% fig-alt: （第1题）右：钝角三角形，底边c实，垂足右侧延长也是实线（不是虚线）；左边b、右边a；高h实线落在延长线上；下方尺寸线标p（左端至垂足）。扫描无直角方标，不补
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (L) at (0,0);
   \coordinate (R) at (2.55,0);
   \coordinate (Ft) at (3.85,0);
   \coordinate (T) at (3.85,2.20);
   \draw[line width=0.75pt] (L) -- (R) -- (T) -- cycle;
-  \draw[dashed,line width=0.6pt] (R) -- (Ft);
+  \draw[line width=0.75pt] (R) -- (Ft);
   \draw[line width=0.75pt] (T) -- (Ft);
   \node[anchor=south,inner sep=1pt] at (1.85,1.20) {$b$};
   \node[anchor=west,inner sep=1pt] at (3.35,1.15) {$a$};
@@ -11337,7 +11337,7 @@ m _ {b} = \frac {1}{2} \sqrt {2 a ^ {2} + 2 c ^ {2} - b ^ {2}}\text{，} \quad m
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2·22：左锐角△ABC，高AH实线落在BC上，标h_a；右钝角△ABC，∠C钝，CH虚延，高AH实线落在延长线上，标h_a。扫描无直角方标，不补
+% fig-alt: 图2·22：左锐角△ABC，高AH实线落在BC上，标h_a；右钝角△ABC，∠C钝，CH延长为实线（扫描不是虚线），高AH实线落在延长线上，标h_a。扫描无直角方标，不补
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) -- (3.55,0) -- (2.55,2.35) -- cycle;
   \draw[line width=0.75pt] (2.55,2.35) -- (2.55,0);
@@ -11348,7 +11348,7 @@ m _ {b} = \frac {1}{2} \sqrt {2 a ^ {2} + 2 c ^ {2} - b ^ {2}}\text{，} \quad m
   \node[anchor=east,inner sep=1pt] at (2.42,1.15) {$h_{a}$};
   \begin{scope}[shift={(5.10,0)}]
     \draw[line width=0.75pt] (0,0) -- (1.85,0) -- (3.35,2.35) -- cycle;
-    \draw[dashed,line width=0.6pt] (1.85,0) -- (3.35,0);
+    \draw[line width=0.75pt] (1.85,0) -- (3.35,0);
     \draw[line width=0.75pt] (3.35,2.35) -- (3.35,0);
     \node[anchor=south,inner sep=1pt] at (3.35,2.40) {$A$};
     \node[anchor=north east,inner sep=1pt] at (-0.04,-0.02) {$B$};
@@ -11444,7 +11444,7 @@ h _ {c} = \frac {2}{c} \sqrt {s (s - a) (s - b) (s - c)}.
   \draw[line width=0.75pt] (0.980,1.569) -- (-0.980,-1.569);
   \draw[dashed,line width=0.6pt] (0.980,1.569) -- (0.355,-0.018);
   \draw[dashed,line width=0.6pt] (1.759,-0.572) -- (-0.980,-1.569);
-  \draw[line width=0.5pt] (0.541,-0.091) -- (0.614,0.095) -- (0.428,0.168);
+  \draw[line width=0.5pt] (0.206,0.041) -- (0.265,0.190) -- (0.414,0.131);
   \draw[line width=0.5pt] (1.705,-0.421) -- (1.554,-0.476) -- (1.609,-0.626);
   \draw[line width=0.5pt] (-1.677,0.782) ++({16.50}:0.26) arc ({16.50}:{-21.50}:0.26);
   \draw[line width=0.5pt] (-0.980,-1.569) ++({58.00}:0.26) arc ({58.00}:{20.00}:0.26);
@@ -11663,7 +11663,7 @@ A ^ {\prime} B ^ {\prime 2} = B ^ {\prime} C ^ {\prime 2} + C ^ {\prime} A ^ {\p
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第7题）四边形ABCD：A左上、B左下（AB近竖直）、D右上（AD水平）、C右下。对角线AC、BD实线。BE实线⊥AC，E处直角方标；DF实线⊥AC，F处直角方标；DF延长为虚线至G，BG虚线且BG⊥DG，G处直角方标。扫描有方标
+% fig-alt: （第7题）四边形ABCD：A左上、B左下（AB近竖直）、D右上（AD水平）、C右下。对角线AC、BD实线。BE实线⊥AC，E处直角方标；DF实线⊥AC，F处直角方标；DF延长至G为实线，BG实线且BG⊥DG，G处直角方标。扫描有方标
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0.00,3.30);
   \coordinate (D) at (4.35,3.30);
@@ -11677,8 +11677,8 @@ A ^ {\prime} B ^ {\prime 2} = B ^ {\prime} C ^ {\prime 2} + C ^ {\prime} A ^ {\p
   \draw[line width=0.75pt] (B) -- (D);
   \draw[line width=0.75pt] (B) -- (E);
   \draw[line width=0.75pt] (D) -- (F);
-  \draw[dashed,line width=0.6pt] (F) -- (G);
-  \draw[dashed,line width=0.6pt] (B) -- (G);
+  \draw[line width=0.75pt] (F) -- (G);
+  \draw[line width=0.75pt] (B) -- (G);
   \draw[line width=0.5pt] (1.222,2.391) -- (1.133,2.271) -- (1.013,2.361);
   \draw[line width=0.5pt] (2.682,1.307) -- (2.771,1.427) -- (2.892,1.338);
   \draw[line width=0.5pt] (1.940,0.057) -- (1.819,0.146) -- (1.730,0.026);
@@ -11782,13 +11782,13 @@ t_a^2 = bc\left[1-\frac{a^2}{(b+c)^2}\right]\quad\text{和}\quad 4bc<(b+c)^2
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2·26：圆外点P，切线PT，割线PAB；虚线TA、TB；T处∠PTA与B处∠TBP等角弧。扫描有角弧
+% fig-alt: 图2·26：圆外点P，切线PT，割线PAB；TA虚线，TB实线；T处∠PTA与B处∠TBP等角弧。扫描有角弧
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.55);
   \draw[line width=0.75pt] (-3.4,0.05) -- (-0.614,1.425);
   \draw[line width=0.75pt] (-3.4,0.05) -- (1.353,-0.96);
   \draw[dashed,line width=0.6pt] (-0.686,1.39) -- (-1.51,-0.352);
-  \draw[dashed,line width=0.6pt] (-0.686,1.39) -- (1.236,-0.935);
+  \draw[line width=0.75pt] (-0.686,1.39) -- (1.236,-0.935);
   \draw[line width=0.5pt] (-0.686,1.39) ++({-153.724}:0.28) arc ({-153.724}:{-115.302}:0.28);
   \draw[line width=0.5pt] (1.236,-0.935) ++({129.578}:0.28) arc ({129.578}:{168}:0.28);
   \node[anchor=east,inner sep=1pt] at (-3.4,0.05) {$P$};
@@ -11931,12 +11931,12 @@ r ^ {2} = 64\text{，} r = 8.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2·29：圆上B、C、D；直线AC上有A、A'、B、C；AD实线；BD、CD实线；A'D虚线；A、D、C处角弧（∠ADB=∠ACD）。扫描有角弧
+% fig-alt: 图2·29：圆上B、C、D；直线AC上有A、A'、B、C；AD实线；BD虚线，CD实线；A'D虚线；A、D、C处角弧（∠ADB=∠ACD）。扫描有角弧
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.55);
   \draw[line width=0.75pt] (-3.538,-0.55) -- (1.599,-0.55);
   \draw[line width=0.75pt] (-3.488,-0.55) -- (-0.889,1.27);
-  \draw[line width=0.75pt] (-1.449,-0.55) -- (-0.889,1.27);
+  \draw[dashed,line width=0.6pt] (-1.449,-0.55) -- (-0.889,1.27);
   \draw[line width=0.75pt] (1.449,-0.55) -- (-0.889,1.27);
   \draw[dashed,line width=0.6pt] (-2.57,-0.55) -- (-0.889,1.27);
   \draw[line width=0.5pt] (-3.488,-0.55) ++({35}:0.3) arc ({35}:{0}:0.3);
@@ -12037,21 +12037,24 @@ r ^ {2} = 64\text{，} r = 8.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第5题）圆O（地球），直径水平、竖直径过N、O延至彗星M；MT切圆于T；左标1880公里（M至地面）、6370公里（半径）。O小空心圆
+% fig-alt: （第5题）圆O（地球），直径水平、竖直径过N、O延至彗星M；MT切圆于T。1880为M高处横线到球面横线，左上箭头朝上、左下箭头朝下；6370在半径旁、箭头朝下指向直径。O小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.65);
   \draw[line width=0.75pt] (-1.77,0) -- (1.77,0);
   \draw[line width=0.75pt] (0,-1.65) -- (0,2.17);
   \draw[line width=0.75pt] (0,2.17) -- (1.072,1.255);
   \filldraw[fill=white,line width=0.6pt] (0,0) circle (0.045);
-  \draw[<->,line width=0.45pt] (-1.42,2.17) -- (-1.42,1.65);
-  \draw[<->,line width=0.45pt] (-1.42,1.65) -- (-1.42,0);
+  \draw[line width=0.5pt] (-1.28,2.17) -- (0,2.17);
+  \draw[->,line width=0.5pt] (-0.95,2.17) -- (-0.95,2.46);
+  \draw[line width=0.5pt] (-1.42,1.65) -- (0,1.65);
+  \draw[->,line width=0.5pt] (-1.28,2.02) -- (-1.28,1.68);
+  \node[anchor=north west,inner sep=1pt,align=center,font=\scriptsize] at (-1.18,2.12) {1880\\公里};
+  \node[anchor=south,inner sep=0pt,align=center,font=\scriptsize] at (-1.22,0.62) {6370\\公里};
+  \draw[->,line width=0.5pt] (-1.22,0.52) -- (-1.22,0.05);
   \node[anchor=south,inner sep=1pt] at (0,2.17) {$M$};
   \node[anchor=north,inner sep=1pt] at (0,-1.65) {$N$};
   \node[anchor=north,inner sep=1pt] at (0.02,-0.08) {$O$};
   \node[anchor=south west,inner sep=1pt] at (1.10,1.27) {$T$};
-  \node[anchor=east,inner sep=2pt,align=center,font=\scriptsize] at (-1.48,1.91) {1880\\公里};
-  \node[anchor=east,inner sep=2pt,align=center,font=\scriptsize] at (-1.48,0.82) {6370\\公里};
 \end{tikzpicture}%
 }
 \caption{(第5题)}
@@ -12121,12 +12124,13 @@ r ^ {2} = 64\text{，} r = 8.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第12题）圆内接四边形ABCD，对边AD、BC延长交于E；EC虚线、CB实线；对角线AC、BD实线；EM、MT实线，MT切圆于T
+% fig-alt: （第12题）圆内接四边形ABCD，对边AD、BC延长交于E；ED虚线、DA实线，EC虚线、CB实线；对角线AC、BD实线；EM、MT实线，MT切圆于T
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.55);
   \draw[dashed,line width=0.6pt] (-3.898,-0.388) -- (-1.501,-0.388);
   \draw[line width=0.75pt] (-1.501,-0.388) -- (1.501,-0.388);
-  \draw[line width=0.75pt] (-3.898,-0.388) -- (0.655,1.405);
+  \draw[dashed,line width=0.6pt] (-3.898,-0.388) -- (-1.437,0.581);
+  \draw[line width=0.75pt] (-1.437,0.581) -- (0.655,1.405);
   \draw[line width=0.75pt] (-1.501,-0.388) -- (-1.437,0.581);
   \draw[line width=0.75pt] (0.655,1.405) -- (1.501,-0.388);
   \draw[line width=0.75pt] (0.655,1.405) -- (-1.501,-0.388);
