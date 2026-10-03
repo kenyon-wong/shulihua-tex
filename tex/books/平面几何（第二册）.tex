@@ -21517,7 +21517,7 @@ r 表示一个正多边形的边心距的长度。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·13 圆O；弦AB；半径OA、OB；边心距OL⊥AB于L（直角记号）；OL标r
+% fig-alt: 图4·13 圆O；弦AB；半径OA、OB；边心距OL；直角标在顶点O（不在L）；OL右侧标r
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.15}
   \pgfmathsetmacro{\Rr}{\R*cos(30)}
@@ -21530,10 +21530,10 @@ r 表示一个正多边形的边心距的长度。
   \draw[line width=0.75pt] (O) -- (B);
   \draw[line width=0.75pt] (A) -- (B);
   \draw[line width=0.75pt] (O) -- (L);
-  % right angle at L (inside toward O, between LA leftish and LO up)
-  \draw[line width=0.5pt] ($(L)+(-0.14,0)$) -- ($(L)+(-0.14,0.14)$) -- ($(L)+(0,0.14)$);
+  % 扫描直角方标在顶点 O（OL 上端），不在垂足 L
+  \draw[line width=0.5pt] ($(O)+(-0.10,0)$) rectangle ($(O)+(0.10,0.18)$);
   \fill (O) circle (1.0pt);
-  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=south,inner sep=1pt] at ($(O)+(0,0.20)$) {$O$};
   \node[anchor=north east,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1.5pt] at (B) {$B$};
   \node[anchor=east,inner sep=1.5pt] at ($(L)+(-0.18,0.08)$) {$L$};
@@ -21919,7 +21919,7 @@ r=OL=\sqrt{OB^2-LB^2}=\sqrt{R^2-\left(\frac{R}{2}\right)^2}=\frac{\sqrt{3}}{2}R.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·18 圆O；内接边AB与外切边A'B'；边心距OM、OM'；射线OA'过A、OB'过B；M'为切点
+% fig-alt: 图4·18 圆O；内接边AB与外切边A'B'；边心距OM、OM'；射线OA'过A、OB'过B；M'为切点；直角方标在顶点O
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.10}
   \pgfmathsetmacro{\ang}{42}
@@ -21937,8 +21937,10 @@ r=OL=\sqrt{OB^2-LB^2}=\sqrt{R^2-\left(\frac{R}{2}\right)^2}=\frac{\sqrt{3}}{2}R.
   \draw[line width=0.75pt] (O) -- (Ap);
   \draw[line width=0.75pt] (O) -- (Bp);
   \draw[line width=0.75pt] (O) -- (Mp);
+  % 扫描直角方标在顶点 O
+  \draw[line width=0.5pt] ($(O)+(-0.10,0)$) rectangle ($(O)+(0.10,0.18)$);
   \fill (O) circle (1.0pt);
-  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
+  \node[anchor=south,inner sep=1pt] at ($(O)+(0,0.20)$) {$O$};
   \node[anchor=east,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=west,inner sep=1.5pt] at (B) {$B$};
   \node[anchor=south west,inner sep=1pt] at (M) {$M$};
@@ -22213,7 +22215,7 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第5题）正方形ABCD；虚线对角线交于O；以各顶点为心、对角线一半为半径作虚弧交边于E,F,G,H,K,L,M,N；粗线连NE,FG,HK,LM成正八边形
+% fig-alt: （第5题）正方形ABCD；虚线对角线交于O；以各顶点为心、对角线一半为半径作虚弧过O；近角交点E(底左)F(底右)G(右下)H(右上)K(顶右)L(顶左)M(左上)N(左下)；粗线切角NE,FG,HK,LM
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\s{2.30}
   \coordinate (A) at (-\s,-\s);
@@ -22222,24 +22224,25 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
   \coordinate (D) at (-\s,\s);
   \coordinate (O) at (0,0);
   \pgfmathsetmacro{\rr}{\s*sqrt(2)}
-  % intersection of arc(center A,r=AO) with AB and AD
-  \coordinate (E) at ({-\s+\rr},-\s);
-  \coordinate (N) at (-\s,{-\s+\rr});
-  \coordinate (F) at ({\s-\rr},-\s);
-  \coordinate (G) at (\s,{-\s+\rr});
-  \coordinate (H) at (\s,{\s-\rr});
-  \coordinate (K) at ({\s-\rr},\s);
-  \coordinate (L) at ({-\s+\rr},\s);
-  \coordinate (M) at (-\s,{\s-\rr});
+  \pgfmathsetmacro{\leg}{2*\s-\rr}
+  % 近角点：距顶点 (2-√2)s，即邻顶点弧与边的交点
+  \coordinate (E) at ({-\s+\leg},-\s);
+  \coordinate (F) at ({\s-\leg},-\s);
+  \coordinate (G) at (\s,{-\s+\leg});
+  \coordinate (H) at (\s,{\s-\leg});
+  \coordinate (K) at ({\s-\leg},\s);
+  \coordinate (L) at ({-\s+\leg},\s);
+  \coordinate (M) at (-\s,{\s-\leg});
+  \coordinate (N) at (-\s,{-\s+\leg});
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[dashed,line width=0.55pt] (A) -- (C);
   \draw[dashed,line width=0.55pt] (B) -- (D);
-  % arcs centered at vertices through O
-  \draw[dashed,line width=0.55pt] (E) arc[start angle=0, end angle=90, radius=\rr];
-  \draw[dashed,line width=0.55pt] (G) arc[start angle=90, end angle=180, radius=\rr];
-  \draw[dashed,line width=0.55pt] (K) arc[start angle=180, end angle=270, radius=\rr];
-  \draw[dashed,line width=0.55pt] (M) arc[start angle=270, end angle=360, radius=\rr];
-  % thick corner cuts of octagon
+  % 虚弧：以顶点为心、半对角线为半径，过 O，端点为该顶点的远交点
+  \draw[dashed,line width=0.55pt] (F) arc[start angle=0, end angle=90, radius=\rr];
+  \draw[dashed,line width=0.55pt] (H) arc[start angle=90, end angle=180, radius=\rr];
+  \draw[dashed,line width=0.55pt] (L) arc[start angle=180, end angle=270, radius=\rr];
+  \draw[dashed,line width=0.55pt] (N) arc[start angle=270, end angle=360, radius=\rr];
+  % 粗线切去四角
   \draw[line width=1.05pt] (N) -- (E);
   \draw[line width=1.05pt] (F) -- (G);
   \draw[line width=1.05pt] (H) -- (K);
