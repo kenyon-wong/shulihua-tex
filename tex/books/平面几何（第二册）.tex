@@ -22277,7 +22277,7 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第6题）正方形削去四角成正八边形；切角直角边标x，斜边与余边标$\sqrt{2}x$
+% fig-alt: （第6题）正方形削去四角成正八边形；切角直角边与斜边的尺寸为外向箭头，标x与$\sqrt{2}x$
 \begin{tikzpicture}[line cap=round,line join=round]
   \pgfmathsetmacro{\x}{0.85}
   \pgfmathsetmacro{\m}{\x*sqrt(2)}
@@ -22297,27 +22297,31 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
   \coordinate (P8) at (0,\x);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[line width=0.75pt] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- (P6) -- (P7) -- (P8) -- cycle;
-  % dimension: top-left cut horizontal x
-  \draw[line width=0.45pt] (0,{\S+0.28}) -- (\x,{\S+0.28});
-  \draw[line width=0.45pt] (0,{\S+0.18}) -- (0,{\S+0.38});
-  \draw[line width=0.45pt] (\x,{\S+0.18}) -- (\x,{\S+0.38});
-  \node[anchor=south,inner sep=1pt,font=\small] at ({0.5*\x},{\S+0.28}) {$x$};
-  % dimension: left-top cut vertical x
-  \draw[line width=0.45pt] (-0.28,{\S}) -- (-0.28,{\S-\x});
-  \draw[line width=0.45pt] (-0.18,\S) -- (-0.38,\S);
-  \draw[line width=0.45pt] (-0.18,{\S-\x}) -- (-0.38,{\S-\x});
-  \node[anchor=east,inner sep=1pt,font=\small] at (-0.28,{\S-0.5*\x}) {$x$};
-  % dimension: left middle side sqrt(2)x
-  \draw[line width=0.45pt] (-0.28,{\S-\x}) -- (-0.28,\x);
-  \draw[line width=0.45pt] (-0.18,\x) -- (-0.38,\x);
-  \node[anchor=east,inner sep=1pt,font=\small] at (-0.28,{0.5*\S}) {$\sqrt{2}x$};
-  % dimension: bottom-left cut vertical x
-  \draw[line width=0.45pt] (-0.28,\x) -- (-0.28,0);
-  \draw[line width=0.45pt] (-0.18,0) -- (-0.38,0);
-  \node[anchor=east,inner sep=1pt,font=\small] at (-0.28,{0.5*\x}) {$x$};
-  % dimension along top-left diagonal cut
+  % 扫描：尺寸线为外向箭头，延长线接到正方形的边
+  \draw[line width=0.45pt] (0,\S) -- (0,{\S+0.42});
+  \draw[line width=0.45pt] (\x,\S) -- (\x,{\S+0.42});
+  \draw[->,line width=0.45pt] ({0.5*\x-0.16},{\S+0.28}) -- (0,{\S+0.28});
+  \draw[->,line width=0.45pt] ({0.5*\x+0.16},{\S+0.28}) -- (\x,{\S+0.28});
+  \node[inner sep=1pt,font=\small] at ({0.5*\x},{\S+0.28}) {$x$};
+  \draw[line width=0.45pt] (0,\S) -- (-0.44,\S);
+  \draw[line width=0.45pt] (0,{\S-\x}) -- (-0.44,{\S-\x});
+  \draw[line width=0.45pt] (0,\x) -- (-0.44,\x);
+  \draw[line width=0.45pt] (0,0) -- (-0.44,0);
+  \draw[->,line width=0.45pt] (-0.28,{\S-0.5*\x+0.16}) -- (-0.28,\S);
+  \draw[->,line width=0.45pt] (-0.28,{\S-0.5*\x-0.16}) -- (-0.28,{\S-\x});
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.34,{\S-0.5*\x}) {$x$};
+  \draw[->,line width=0.45pt] (-0.28,{0.5*\S+0.22}) -- (-0.28,{\S-\x});
+  \draw[->,line width=0.45pt] (-0.28,{0.5*\S-0.22}) -- (-0.28,\x);
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.34,{0.5*\S}) {$\sqrt{2}x$};
+  \draw[->,line width=0.45pt] (-0.28,{0.5*\x+0.16}) -- (-0.28,\x);
+  \draw[->,line width=0.45pt] (-0.28,{0.5*\x-0.16}) -- (-0.28,0);
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.34,{0.5*\x}) {$x$};
+  % 斜切边上的尺寸，箭头沿切边朝外，字在中断处
   \coordinate (Q1) at ($(P1)!0.5!(P2)$);
-  \node[anchor=south east,inner sep=2pt,font=\small,rotate=45] at (Q1) {$\sqrt{2}x$};
+  \coordinate (Qd) at ($(Q1)+(-0.20,0.20)$);
+  \draw[->,line width=0.45pt] ($(Qd)+(-0.28,-0.28)$) -- ($(Qd)+(-0.50,-0.50)$);
+  \draw[->,line width=0.45pt] ($(Qd)+(0.28,0.28)$) -- ($(Qd)+(0.50,0.50)$);
+  \node[inner sep=0.5pt,font=\small,rotate=45] at (Qd) {$\sqrt{2}x$};
 \end{tikzpicture}%
 }
 \caption{（第6题）}
@@ -22484,19 +22488,19 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
   \draw[line width=0.75pt] (0:\s) -- (60:\s) -- (120:\s) -- (180:\s) -- (240:\s) -- (300:\s) -- cycle;
   \draw[line width=0.75pt] (0,0) circle (0.34*\s);
   \draw[line width=0.85pt] ({180-\aopen}:\Ro) arc[start angle={180-\aopen}, end angle={-180+\aopen}, radius=\Ro];
-  \draw[line width=0.85pt] ({-\cx},{0.5*\hexh}) -- (\jleft,{0.5*\hexh});
-  \draw[line width=0.85pt] ({-\cx},{-0.5*\hexh}) -- (\jleft,{-0.5*\hexh});
+  \draw[line width=0.85pt] ({-\cx},{0.5*\hexh}) -- ({\jleft-0.52},{0.5*\hexh});
+  \draw[line width=0.85pt] ({-\cx},{-0.5*\hexh}) -- ({\jleft-0.52},{-0.5*\hexh});
   \draw[line width=0.85pt] ({\Ro-0.02},\hh) -- (\hxend,\hh) -- (\hxend,-\hh) -- ({\Ro-0.02},-\hh);
-  % dim b (opening)
-  \draw[line width=0.45pt] (\jleft-0.32,{0.5*\hexh}) -- (\jleft-0.32,{-0.5*\hexh});
-  \draw[line width=0.45pt] (\jleft-0.22,{0.5*\hexh}) -- (\jleft-0.42,{0.5*\hexh});
-  \draw[line width=0.45pt] (\jleft-0.22,{-0.5*\hexh}) -- (\jleft-0.42,{-0.5*\hexh});
-  \node[anchor=east,inner sep=1.2pt,font=\small] at (\jleft-0.32,0) {$b$};
-  % dim a (hex side, bottom)
-  \draw[line width=0.45pt] ({-0.5*\s},{-0.5*\hexh-0.28}) -- ({0.5*\s},{-0.5*\hexh-0.28});
-  \draw[line width=0.45pt] ({-0.5*\s},{-0.5*\hexh-0.20}) -- ({-0.5*\s},{-0.5*\hexh-0.36});
-  \draw[line width=0.45pt] ({0.5*\s},{-0.5*\hexh-0.20}) -- ({0.5*\s},{-0.5*\hexh-0.36});
-  \node[anchor=north,inner sep=1pt,font=\small] at (0,{-0.5*\hexh-0.28}) {$a$};
+  % 扫描：开口 b 为上下外向箭头，字在尺寸线中断处
+  \draw[->,line width=0.45pt] (\jleft-0.32,0.15) -- (\jleft-0.32,{0.5*\hexh});
+  \draw[->,line width=0.45pt] (\jleft-0.32,-0.15) -- (\jleft-0.32,{-0.5*\hexh});
+  \node[inner sep=1pt,font=\small] at (\jleft-0.32,0) {$b$};
+  % 扫描：底边 a 为左右外向箭头，延长线接到六边形底边，字在中断处
+  \draw[line width=0.45pt] ({-0.5*\s},{-0.5*\hexh}) -- ({-0.5*\s},{-0.5*\hexh-0.42});
+  \draw[line width=0.45pt] ({0.5*\s},{-0.5*\hexh}) -- ({0.5*\s},{-0.5*\hexh-0.42});
+  \draw[->,line width=0.45pt] (-0.14,{-0.5*\hexh-0.28}) -- ({-0.5*\s},{-0.5*\hexh-0.28});
+  \draw[->,line width=0.45pt] (0.14,{-0.5*\hexh-0.28}) -- ({0.5*\s},{-0.5*\hexh-0.28});
+  \node[inner sep=1pt,font=\small] at (0,{-0.5*\hexh-0.28}) {$a$};
 \end{tikzpicture}%
 }
 \caption{（第18题）}
@@ -22525,6 +22529,10 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
         -- ({\i*\W+\W/2},{\j*\W+\W/2+\dR})
         -- ({\i*\W+\W/2-\dR},{\j*\W+\W/2})
         -- ({\i*\W+\W/2},{\j*\W+\W/2-\dR}) -- cycle;
+      \ifnum\i=0 \ifnum\j=0
+        % 扫描 AB 是贯穿左右平行边的整段，不只有两竖线外侧的短头
+        \draw[line width=0.55pt] ({-\W/2},{\s/2}) -- ({\W/2},{\s/2});
+      \fi\fi
     }
   \pgfmathsetmacro{\top}{\W/2}
   \pgfmathsetmacro{\xh}{\s/2}
