@@ -20440,10 +20440,10 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 
 \begin{figure}
 \centering
-% fig-alt: 正六边形密铺，部分阴影
+% fig-alt: 正六边形密铺，部分阴影；单斜线左上到右下，中行两格交叉线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  % 尖顶正六边形密铺。斜线右上到左下，涂格相位按扫描；中行两格为交叉线。
+  % 尖顶正六边形密铺。斜线左上到右下，涂格相位按扫描；中行两格为交叉线。
   \def\R{0.48}
   \pgfmathsetmacro{\dx}{1.7320508*\R}
   \pgfmathsetmacro{\dy}{1.5*\R}
@@ -20453,7 +20453,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
       \foreach \col in \cols {
         \pgfmathsetmacro{\ox}{\col*\dx+mod(\row,2)*\dx/2-0.15}
         \pgfmathsetmacro{\oy}{2.48-\row*\dy}
-        \fill[pattern=north east lines,pattern color=black!70] (\ox,\oy)
+        \fill[pattern=north west lines,pattern color=black!70] (\ox,\oy)
           +(90:\R) -- +(30:\R) -- +(-30:\R) -- +(-90:\R) -- +(210:\R) -- +(150:\R) -- cycle;
       }
     }
@@ -20600,7 +20600,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·3 圆O；内接正五边形ABCDE（D在顶、AB在底）；外切正五边形PQRST（切于A,B,C,D,E）
+% fig-alt: 图4·3 圆O；内接正五边形ABCDE（D在顶、AB在底）；外切正五边形PQRST（切于A,B,C,D,E）；心处小圆圈，字母O在其下
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.10}
   \coordinate (O) at (0,0);
@@ -20618,7 +20618,8 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
   \draw[line width=0.75pt] (O) circle (\R);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
   \draw[line width=0.75pt] (P) -- (Q) -- (R) -- (S) -- (T) -- cycle;
-  \node[anchor=center,inner sep=0pt] at (O) {$O$};
+  \draw[line width=0.55pt] (O) circle (3.0pt);
+  \node[anchor=north,inner sep=0pt] at ($(O)+(0,-4.2pt)$) {$O$};
   \node[anchor=north east,inner sep=1.2pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1.2pt] at (B) {$B$};
   \node[anchor=west,inner sep=1.8pt] at (C) {$C$};
