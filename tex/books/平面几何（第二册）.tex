@@ -15894,7 +15894,7 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·6：左□ABCD底AB、高DD'落在AB上；右更斜□ABCD底AB虚延，高DD'虚线落在AB延长线上于D'
+% fig-alt: 图3·6：左□ABCD底AB、高DD'落在AB上；右更斜□ABCD底AB虚延并越过D'，高DD'虚线落在AB延长线上于D'
 \begin{tikzpicture}[line cap=round,line join=round]
   % left parallelogram: D' on AB
   \begin{scope}
@@ -15920,8 +15920,8 @@ cm²。
     \coordinate (Dp) at (2.40,0);
     % solid parallelogram
     \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
-    % dashed base extension B--D' and height DD'
-    \draw[dashed,line width=0.6pt] (B) -- (Dp);
+    % dashed base extension B--D' continues past D', and height DD'
+    \draw[dashed,line width=0.6pt] (B) -- (3.20,0);
     \draw[dashed,line width=0.6pt] (D) -- (Dp);
     \node[anchor=north east,inner sep=1pt] at (A) {$A$};
     \node[anchor=north,inner sep=1pt] at (B) {$B$};
@@ -15949,7 +15949,7 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·7：□ABCD底AB、高DD'（虚）落在AB上；过C作CE'⊥AB（虚）于E'（AB延长线上）；BE'虚延；∠A与∠CBE'单弧；矩形D'E'CD
+% fig-alt: 图3·7：□ABCD底AB、高DD'（虚）落在AB上；过C作CE'⊥AB（虚）于E'（AB延长线上）；BE'虚延并越过E'；∠A与∠CBE'单弧；矩形D'E'CD
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\b{2.80}
   \def\s{0.95}
@@ -15963,7 +15963,7 @@ cm²。
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[dashed,line width=0.6pt] (D) -- (Dp);
   \draw[dashed,line width=0.6pt] (C) -- (Ep);
-  \draw[dashed,line width=0.6pt] (B) -- (Ep);
+  \draw[dashed,line width=0.6pt] (B) -- ({\b+\s+0.75},0);
   \pgfmathsetmacro{\ang}{atan2(\h,\s)}
   \draw[line width=0.5pt] (0.42,0) arc[start angle=0, end angle=\ang, radius=0.42];
   \draw[line width=0.5pt] ([shift={(0.42,0)}]B) arc[start angle=0, end angle=\ang, radius=0.42];
@@ -16083,12 +16083,12 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·9（a）：□ABCD右斜；虚线自D竖下至高约半处H，水平交AD于Q并延伸交BC于F，再自Q竖下交AB于R；分I（△DQH）、II（梯形HFCD）、III（△AQR）、IV（四边形QRBF）
+% fig-alt: 图3·9（a）：□ABCD陡右斜；虚线自D竖下至约三成高处H，水平交AD于Q并延伸交BC于F，再自Q竖下交AB于R；分I（△DQH）、II（梯形HFCD）、III（△AQR）、IV（四边形QRBF）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\b{3.20}
-  \def\s{1.35}
-  \def\h{2.40}
-  \def\ym{1.05}
+  \def\b{2.55}
+  \def\s{3.05}
+  \def\h{3.70}
+  \def\ym{1.15}
   \coordinate (A) at (0,0);
   \coordinate (B) at (\b,0);
   \coordinate (D) at (\s,\h);
@@ -16110,8 +16110,8 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
   \node[anchor=south east,inner sep=1pt] at (D) {$D$};
   \node at ({(\s+\tq*\s)/2},{(\h+\ym)/2}) {$I$};
   \node at ({\b*0.55+\s},{\ym+0.55*(\h-\ym)}) {$II$};
-  \node at ({0.45*\tq*\s},{0.40*\ym}) {$III$};
-  \node at ({\b*0.45},{\ym*0.45}) {$IV$};
+  \node[font=\small] at ({0.48*\tq*\s},{0.34*\ym}) {$III$};
+  \node at ({\b*0.55},{\ym*0.42}) {$IV$};
 \end{tikzpicture}%
 }
 \caption{（a）}
@@ -16120,18 +16120,18 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·9（b）：矩形A'B'C'D'等底同高；虚线斜线C'E（E在A'D'）、F'G（F'在B'C'、G在A'B'）与水平EF'；分II'（左上△）、I'（右上△）、IV'（左下）、III'（右下△）
+% fig-alt: 图3·9（b）：瘦高矩形A'B'C'D'等底同高；虚线斜线C'E（E在A'D'）、F'G（F'在B'C'约中右、G在A'B'）与水平EF'；分II'（左上△）、I'（右上△）、IV'（左下）、III'（右下△）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\w{2.40}
-  \def\h{2.80}
+  \def\w{2.15}
+  \def\h{3.05}
   \coordinate (Ap) at (0,0);
   \coordinate (Bp) at (\w,0);
   \coordinate (Cp) at (\w,\h);
   \coordinate (Dp) at (0,\h);
-  \def\ye{0.95}
+  \def\ye{0.98}
   \coordinate (E) at (0,\ye);
   \coordinate (Fp) at (\w,\ye);
-  \coordinate (G) at ({0.68*\w},0);
+  \coordinate (G) at ({0.54*\w},0);
   \draw[line width=0.75pt] (Ap) -- (Bp) -- (Cp) -- (Dp) -- cycle;
   \draw[dashed,line width=0.6pt] (Cp) -- (E);
   \draw[dashed,line width=0.6pt] (Fp) -- (G);
@@ -16143,7 +16143,7 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
   \node at ({0.38},{\ye + (\h-\ye)*0.55}) {$II'$};
   \node at ({\w - 0.48},{\ye + (\h-\ye)*0.32}) {$I'$};
   \node at ({0.48},{\ye*0.45}) {$IV'$};
-  \node at ({\w - 0.42},{\ye*0.38}) {$III'$};
+  \node[font=\small] at ({\w - 0.36},{\ye*0.32}) {$III'$};
 \end{tikzpicture}%
 }
 \caption{图3·9}
