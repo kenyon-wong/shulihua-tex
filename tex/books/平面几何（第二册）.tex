@@ -15474,11 +15474,9 @@ cm²。
   \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
     (0,-0.32) -- (\b,-0.32);
   \node[anchor=north,inner sep=1pt] at (0.5*\b,-0.32) {$b$};
-  % top a
-  \draw[line width=0.5pt] (\xl,\h+0.22) -- (\xr,\h+0.22);
-  \draw[line width=0.5pt] (\xl,\h+0.12) -- (\xl,\h+0.32);
-  \draw[line width=0.5pt] (\xr,\h+0.12) -- (\xr,\h+0.32);
-  \node[anchor=south,inner sep=1pt] at (0.5*\b,\h+0.22) {$a$};
+  % top a：扫描为双向箭头
+  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt] (\xl,\h+0.28) -- (\xr,\h+0.28);
+  \node[anchor=south,inner sep=1pt] at (0.5*\b,\h+0.28) {$a$};
   % right h (total) and t (flange)
   \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
     (\b+0.55,0) -- (\b+0.55,\h);
@@ -15658,16 +15656,18 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （3）边长a的实线正方形，右上角边长b的斜线阴影小正方形；下方虚线接高b、宽a的矩形，示a²−b²=(a+b)(a−b)
+% fig-alt: （3）边长a的实线正方形，右上角边长b斜线阴影；左下角实线垂到正方形底，再虚线穿下方矩形（左、下虚，右边实）直到底
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\aa{2.60}
   \def\bb{0.75}
   \draw[line width=0.75pt] (0,0) rectangle (\aa,\aa);
-  \draw[dashed,line width=0.6pt] (0,0) -- (0,-\bb) -- (\aa,-\bb) -- (\aa,0);
+  \draw[dashed,line width=0.6pt] (0,0) -- (0,-\bb) -- (\aa,-\bb);
+  \draw[line width=0.75pt] (\aa,-\bb) -- (\aa,0);
   \fill[pattern=north east lines,pattern color=black!70]
     ({\aa-\bb},{\aa-\bb}) rectangle (\aa,\aa);
   \draw[line width=0.75pt] ({\aa-\bb},{\aa-\bb}) rectangle (\aa,\aa);
-  \draw[dashed,line width=0.55pt] ({\aa-\bb},0) -- ({\aa-\bb},{\aa-\bb});
+  \draw[line width=0.75pt] ({\aa-\bb},0) -- ({\aa-\bb},{\aa-\bb});
+  \draw[dashed,line width=0.55pt] ({\aa-\bb},0) -- ({\aa-\bb},-\bb);
   \draw[{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]},line width=0.5pt]
     ({\aa-\bb},\aa+0.28) -- (\aa,\aa+0.28);
   \node[anchor=south,inner sep=1pt] at ({\aa-0.5*\bb},\aa+0.28) {$b$};
@@ -15890,7 +15890,7 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·6：左□ABCD底AB、高DD'落在AB上；右更斜□ABCD底AB虚延并越过D'，高DD'虚线落在AB延长线上于D'
+% fig-alt: 图3·6：左□ABCD底AB、高实线落在AB上，垂足无字母；右更斜□ABCD底AB虚延并越过D'，高DD'虚线落在AB延长线上于D'
 \begin{tikzpicture}[line cap=round,line join=round]
   % left parallelogram: D' on AB
   \begin{scope}
@@ -15905,7 +15905,6 @@ cm²。
     \node[anchor=north west,inner sep=1pt] at (B) {$B$};
     \node[anchor=south,inner sep=1pt] at (D) {$D$};
     \node[anchor=south west,inner sep=1pt] at (C) {$C$};
-    \node[anchor=north,inner sep=1pt] at (Dp) {$D'$};
   \end{scope}
   % right parallelogram: D' on extension beyond B (more slanted)
   \begin{scope}[shift={(4.30,0)}]
@@ -16178,8 +16177,8 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
   \draw[<->,line width=0.5pt] (0,-0.38) -- ({5*\shSc},-0.38);
   \node[anchor=north,inner sep=1pt] at ({2.5*\shSc},-0.38) {$5\,\mathrm{cm}$};
   % 4cm along a line parallel to AD, offset left-up normal
-  \coordinate (Aoff) at ($(A)+({-0.32*0.866},{-0.32*0.5})$);
-  \coordinate (Doff) at ($(D)+({-0.32*0.866},{-0.32*0.5})$);
+  \coordinate (Aoff) at ($(A)+({-0.32*0.866},{0.32*0.5})$);
+  \coordinate (Doff) at ($(D)+({-0.32*0.866},{0.32*0.5})$);
   \draw[<->,line width=0.5pt] (Aoff) -- (Doff);
   \node[fill=white,inner sep=1.2pt,rotate=60] at ($(Aoff)!0.5!(Doff)$) {$4\,\mathrm{cm}$};
 \end{tikzpicture}%
