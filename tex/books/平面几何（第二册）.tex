@@ -15555,10 +15555,12 @@ cm²。
   \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
     (\b+0.28,0) -- (\b+0.28,\t);
   \node[anchor=west,inner sep=1pt] at (\b+0.28,0.5*\t) {$t$};
-  % web a (inward)
-  \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
-    (0,0.55*\h) -- (\a,0.55*\h);
-  \node[anchor=south,inner sep=1pt] at (0.5*\a,0.55*\h) {$a$};
+  % web a：扫描箭头在腹板两侧、箭头朝外，a 在腹板中
+  \draw[{Stealth[length=1.6mm]}-,line width=0.5pt]
+    ({-0.50},0.55*\h) -- (0,0.55*\h);
+  \draw[-{Stealth[length=1.6mm]},line width=0.5pt]
+    (\a,0.55*\h) -- ({\a+0.50},0.55*\h);
+  \node[fill=white,inner sep=1.2pt] at (0.5*\a,0.55*\h) {$a$};
   % total h
   \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
     (\b+0.55,0) -- (\b+0.55,\h);
@@ -16251,7 +16253,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
   \node[anchor=south,inner sep=1pt] at (F) {$F$};
   \node[anchor=east,inner sep=2pt] at (G) {$G$};
   \node[anchor=west,inner sep=2pt] at (H) {$H$};
-  \node[anchor=south west,inner sep=1pt] at (P) {$P$};
+  \node[anchor=north west,inner sep=1pt] at (P) {$P$};
 \end{tikzpicture}%
 }
 \caption{图3·11}
