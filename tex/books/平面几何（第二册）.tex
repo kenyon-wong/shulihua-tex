@@ -22619,7 +22619,7 @@ A_1A_2=\text{半径 }OA_1.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·23 圆O；直径A1A4（虚线）与竖虚线；以A1、A4为心、半径R作弧交圆于A2,A6与A3,A5；内接正六边形
+% fig-alt: 图4·23 圆O；水平虚直径A1A4；以A1、A4为心的两条虚弧交圆于A2,A6与A3,A5；无竖虚直径
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.15}
   \coordinate (O) at (0,0);
@@ -22629,9 +22629,8 @@ A_1A_2=\text{半径 }OA_1.
   \draw[line width=0.75pt] (O) circle (\R);
   \draw[line width=0.75pt] (A1) -- (A2) -- (A3) -- (A4) -- (A5) -- (A6) -- cycle;
   \draw[dashed,line width=0.65pt] (A1) -- (A4);
-  \draw[dashed,line width=0.65pt] (0,-\R) -- (0,\R);
-  \draw[line width=0.60pt] (A6) arc[start angle=60, end angle=-60, radius=\R];
-  \draw[line width=0.60pt] (A5) arc[start angle=120, end angle=240, radius=\R];
+  \draw[dashed,line width=0.60pt] (A6) arc[start angle=60, end angle=-60, radius=\R];
+  \draw[dashed,line width=0.60pt] (A5) arc[start angle=120, end angle=240, radius=\R];
   \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
   \node[anchor=south,inner sep=1.2pt] at (0,0.08) {$O$};
   \node[anchor=east,inner sep=2pt] at (A1) {$A_1$};
@@ -22762,7 +22761,7 @@ A_1A_2=\text{半径 }OA_1.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·27 圆O；弦A1A2对36°圆心角；△OA1A2底角72°；A2M平分∠OA2A1，M在OA1上
+% fig-alt: 图4·27 圆O；圆心角36°；A1处72°；A2M平分后A2处标36°；M在OA1上
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.20}
   \pgfmathsetmacro{\phi}{0.5*(sqrt(5)-1)}
@@ -22780,8 +22779,10 @@ A_1A_2=\text{半径 }OA_1.
   \node[anchor=north west,inner sep=1.5pt] at (A2) {$A_2$};
   \node[anchor=east,inner sep=2pt] at (M) {$M$};
   \node[font=\small,inner sep=0.5pt] at (270:0.58) {$36^{\circ}$};
+  \draw[line width=0.35pt] ($(A1)+(8:0.30)$) arc[start angle=8, end angle=64, radius=0.30];
+  \draw[line width=0.35pt] ($(A2)+(150:0.30)$) arc[start angle=150, end angle=176, radius=0.30];
   \node[font=\small,inner sep=0.5pt] at ($(A1)+(0.42,0.28)$) {$72^{\circ}$};
-  \node[font=\small,inner sep=0.5pt] at ($(A2)+(0.42,0.22)$) {$72^{\circ}$};
+  \node[font=\small,inner sep=0.5pt] at ($(A2)+(0.36,0.22)$) {$36^{\circ}$};
 \end{tikzpicture}%
 }
 \caption{图4·27}
@@ -22876,6 +22877,7 @@ OM 的弦 \(A_{1}A_{2}\)， \(A_{2}A_{3}\)，
   \draw[line width=0.65pt] (A2) -- (M);
   \draw[line width=0.65pt] (B) -- (O);
   \draw[dashed,line width=0.55pt] ({-0.72*\R},-\R) -- ({0.18*\R},-\R);
+  \draw[line width=0.60pt] (A1) arc[start angle=0, end angle={atan2(1,0.5)}, radius={0.5*\R}];
   \draw[line width=0.70pt] let \p1=(C) in (C) arc[start angle={atan2(\y1,\x1)}, end angle=-90, radius={\phi*\R}];
   \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
   \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
@@ -23009,12 +23011,12 @@ a _ {10} = \frac {\sqrt {5} - 1}{2} R.
 
 \begin{figure}
 \centering
-% fig-alt: 图4·29 圆O，A1在顶，逆时针A1…A10；隔点连A1A3A5A7A9
+% fig-alt: 图4·29 圆O，A1在顶顺时针A2…A10；顶点A1A3A5A7A9（A3在右）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.55);
-  \draw[line width=0.7pt] (90:1.55) -- (162:1.55) -- (234:1.55) -- (306:1.55) -- (18:1.55) -- cycle;
-  \foreach \a/\t in {90/A_1,126/A_2,162/A_3,198/A_4,234/A_5,270/A_6,306/A_7,342/A_8,18/A_9,54/A_{10}}
+  \draw[line width=0.7pt] (90:1.55) -- (18:1.55) -- (306:1.55) -- (234:1.55) -- (162:1.55) -- cycle;
+  \foreach \a/\t in {90/A_1,54/A_2,18/A_3,342/A_4,306/A_5,270/A_6,234/A_7,198/A_8,162/A_9,126/A_{10}}
     \node at (\a:1.82) {$\t$};
   \node at (0,0) {$O$};
 \end{tikzpicture}%
@@ -23061,13 +23063,13 @@ a _ {2 n} = a _ {10} = \frac {\sqrt {5} - 1}{2} R\text{，}
 
 \begin{figure}
 \centering
-% fig-alt: 图4·30：圆O内接正方形与正八边形
+% fig-alt: 图4·30 同圆：正方形顶点在上、右、下、左；正八边形与之共顶点
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.45);
-  \draw[line width=0.7pt] (45:1.45) -- (135:1.45) -- (225:1.45) -- (315:1.45) -- cycle;
+  \draw[line width=0.7pt] (90:1.45) -- (0:1.45) -- (270:1.45) -- (180:1.45) -- cycle;
   \foreach \i in {0,1,...,7}
-    \draw[line width=0.65pt] ({22.5+\i*45}:1.45) -- ({22.5+(\i+1)*45}:1.45);
+    \draw[line width=0.65pt] ({45*\i}:1.45) -- ({45*(\i+1)}:1.45);
   \node at (0,0) {$O$};
 \end{tikzpicture}%
 }
@@ -23114,10 +23116,13 @@ a _ {2 n} = a _ {10} = \frac {\sqrt {5} - 1}{2} R\text{，}
   \node at (0,0.14) {$O$};
   \node[anchor=north west,inner sep=1pt] at (M) {$M$};
   \node at (-80:0.72) {$22.5^{\circ}$};
-  \draw[line width=0.7pt] (-2.35,1.85) -- (-1.15,1.85);
-  \draw[line width=0.45pt] (-2.35,1.72) -- (-2.35,1.98);
-  \draw[line width=0.45pt] (-1.15,1.72) -- (-1.15,1.98);
-  \node[anchor=south] at (-1.75,1.88) {$s$};
+  \begin{scope}[shift={(M)}, rotate=-67.5]
+    \draw[line width=0.35pt] (-0.13,0) -- (-0.13,0.13) -- (0,0.13);
+  \end{scope}
+  \draw[line width=0.7pt] (-0.95,1.95) -- (0.55,1.95);
+  \draw[line width=0.45pt] (-0.95,1.82) -- (-0.95,2.08);
+  \draw[line width=0.45pt] (0.55,1.82) -- (0.55,2.08);
+  \node[anchor=south] at (-0.20,1.98) {$s$};
 \end{tikzpicture}%
 }
 \caption{图4·31}
@@ -23187,9 +23192,9 @@ O M = O M.
   \draw[line width=0.75pt] (0,0) circle (\R);
   \draw[line width=0.65pt] (A1) -- (A2p) -- (A3p) -- (A4p) -- (A5p) -- cycle;
   \draw[line width=0.7pt] (A1) -- (A2) -- (A3) -- (A4) -- (A5) -- cycle;
-  \draw[line width=0.45pt] (A1) -- (A3);
-  \draw[line width=0.45pt] (A1) -- (A4);
-  \draw[line width=0.45pt] (A1) -- (A5);
+  \draw[dashed,line width=0.45pt] (A1) -- (A3);
+  \draw[dashed,line width=0.45pt] (A1) -- (A4);
+  \draw[dashed,line width=0.45pt] (A1) -- (A5);
   \fill (0,0) circle (0.8pt);
   \node[anchor=north west,inner sep=1pt] at (0,0) {$O$};
   \node[anchor=north east] at (A1) {$A_1$};
@@ -23240,8 +23245,9 @@ O M = O M.
   \node[anchor=north] at (-90:1.38) {$2$};
   \node[anchor=east] at (210:1.38) {$3$};
   \node[anchor=west] at (330:1.38) {$4$};
-  \node at (0.16,0.12) {$O$};
-  \node[anchor=west] at (0.15,-0.55) {$R$};
+  \draw[->,line width=0.45pt] (0,0) -- (330:1.02);
+  \node at (0.16,0.14) {$O$};
+  \node[anchor=south] at (318:0.62) {$R$};
 \end{tikzpicture}%
 }
 \end{figure}
@@ -23291,7 +23297,7 @@ O M = O M.
   \draw[line width=0.55pt] (-1.35,0) -- (1.35,0);
   \draw[line width=0.55pt] (0,1.35) -- (0,-1.35);
   \node at (0.18,0.18) {$O$};
-  \node at (25:0.55) {$90^{\circ}$};
+  \node at (155:0.50) {$90^{\circ}$};
   \node[anchor=east] at (-1.38,0) {$1$};
   \node[anchor=west] at (1.38,0) {$2$};
   \node[anchor=south] at (0,1.38) {$3$};
@@ -23307,8 +23313,10 @@ O M = O M.
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.35);
   \draw[line width=0.7pt] (45:1.35) -- (135:1.35) -- (225:1.35) -- (315:1.35) -- cycle;
-  \node at (0,0) {$O$};
-  \node at (225:0.70) {$45^{\circ}$};
+  \draw[line width=0.55pt] (45:1.35) -- (225:1.35);
+  \draw[line width=0.55pt] (135:1.35) -- (315:1.35);
+  \node at (0.12,0.12) {$O$};
+  \node at (225:0.62) {$45^{\circ}$};
   \node[anchor=east] at (225:1.38) {$1$};
   \node[anchor=west] at (315:1.38) {$4$};
   \node[anchor=south] at (135:1.38) {$3$};
@@ -23328,6 +23336,8 @@ O M = O M.
   \draw[line width=0.55pt] (180:1.35) -- (0:1.35);
   \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (120:1.35) arc[start angle=60,end angle=-60,radius=1.35];
   \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (60:1.35) arc[start angle=120,end angle=240,radius=1.35];
+  \draw[->,line width=0.45pt] (0,0) -- (120:1.05);
+  \draw[->,line width=0.45pt] (0,0) -- (60:1.05);
   \node at (0,0.14) {$O$};
   \node[anchor=east] at (180:1.42) {$1$};
   \node[anchor=west] at (0:1.42) {$2$};
@@ -23335,8 +23345,8 @@ O M = O M.
   \node[anchor=north] at (240:1.42) {$4$};
   \node[anchor=south] at (60:1.42) {$5$};
   \node[anchor=north] at (300:1.42) {$6$};
-  \node at (150:0.72) {$R$};
-  \node at (30:0.72) {$R$};
+  \node[anchor=south east] at (128:0.62) {$R$};
+  \node[anchor=south west] at (52:0.62) {$R$};
 \end{tikzpicture}%
 }
 \end{figure}
@@ -23357,8 +23367,9 @@ O M = O M.
   \draw[line width=0.45pt] (0,0) -- (30:\R);
   \draw[line width=0.45pt] (0,0) -- (-30:\R);
   \draw[line width=0.45pt] (0,0) -- (-90:\R);
-  \draw[line width=0.7pt] (1.62,0.15) -- (1.62,-1.72) -- (-1.85,-1.72);
-  \node at (-20:0.48) {$60^{\circ}$};
+  \draw[line width=0.7pt] (-1.85,-1.62) -- (1.58,-1.62) -- (1.58,0.72) -- cycle;
+  \draw[line width=0.35pt] (1.58,-1.46) -- (1.42,-1.46) -- (1.42,-1.62);
+  \node at (242:0.46) {$60^{\circ}$};
   \node at (0.16,0.14) {$O$};
 \end{tikzpicture}%
 }
@@ -23366,15 +23377,27 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 圆内接正六边形，30°，左侧直角尺
+% fig-alt: 边水平正六边形，1左2右3左上6右上5左下4右下；三条直径；30°；左侧直角尺与R
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) circle (1.25);
+  \def\R{1.15}
+  \draw[line width=0.75pt] (0,0) circle (\R);
   \foreach \i in {0,1,...,5}
-    \draw[line width=0.7pt] ({30+60*\i}:1.25) -- ({30+60*(\i+1)}:1.25);
-  \draw[line width=0.55pt] (-1.55,1.55) -- (-1.55,-1.55) -- (0.35,-1.55);
-  \node at (0,0) {$O$};
-  \node at (150:0.55) {$30^{\circ}$};
+    \draw[line width=0.7pt] ({60*\i}:\R) -- ({60*(\i+1)}:\R);
+  \draw[line width=0.45pt] (180:\R) -- (0:\R);
+  \draw[line width=0.45pt] (120:\R) -- (300:\R);
+  \draw[line width=0.45pt] (60:\R) -- (240:\R);
+  \node[anchor=east] at (180:1.32) {$1$};
+  \node[anchor=west] at (0:1.32) {$2$};
+  \node[anchor=south east] at (120:1.32) {$3$};
+  \node[anchor=south west] at (60:1.32) {$6$};
+  \node[anchor=north east] at (240:1.32) {$5$};
+  \node[anchor=north west] at (300:1.32) {$4$};
+  \node at (0.02,0.14) {$O$};
+  \node at (145:0.46) {$30^{\circ}$};
+  \node[anchor=east] at (168:0.62) {$R$};
+  \draw[line width=0.7pt] (-1.78,1.62) -- (-1.78,-1.58) -- (1.15,-1.58);
+  \draw[line width=0.7pt] (-1.78,1.62) -- (0.55,-1.58);
 \end{tikzpicture}%
 }
 \end{figure}
@@ -23658,6 +23681,10 @@ O M = O M.
   \draw[line width=0.6pt] (G) -- (C);
   \draw[line width=0.6pt] (O) -- (B);
   \draw[line width=0.6pt] (A) -- (C);
+  \coordinate (M) at (intersection of O--B and A--C);
+  \begin{scope}[shift={(M)}, rotate=-22.5]
+    \draw[line width=0.32pt] (0.11,0) -- (0.11,0.11) -- (0,0.11);
+  \end{scope}
   \fill (O) circle (0.9pt);
   \node[anchor=west] at (A) {$A$};
   \node[anchor=north west] at (B) {$B$};
@@ -23708,7 +23735,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-% fig-alt: （第7题）正八边形的一半ABCDE；底AE、虚线BD；AB与DE外侧虚弧
+% fig-alt: （第7题）正八边形上半ABCDE；底AE、虚线BD；AB、BC、CD、DE外侧虚弧
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{1.85}
@@ -23720,6 +23747,8 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
   \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (B) -- (D);
   \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (A) arc (180:135:\R);
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (B) arc (135:90:\R);
+  \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (C) arc (90:45:\R);
   \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (D) arc (45:0:\R);
   \node[anchor=east] at (A) {$A$};
   \node[anchor=south east] at (B) {$B$};
@@ -23827,13 +23856,15 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-% fig-alt: （第3题）等腰△ABC，D在AC上，BD为∠B的平分线
+% fig-alt: （第3题）等腰△ABC，顶角36°；D在AC上，BD平分∠B
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \coordinate (A) at (0,3.05);
-  \coordinate (B) at (-1.15,0);
-  \coordinate (C) at (1.15,0);
-  \coordinate (D) at ($(A)!0.62!(C)$);
+  \pgfmathsetmacro{\hh}{3.05}
+  \pgfmathsetmacro{\bb}{\hh*tan(18)}
+  \coordinate (A) at (0,\hh);
+  \coordinate (B) at (-\bb,0);
+  \coordinate (C) at (\bb,0);
+  \coordinate (D) at ($(A)!{0.5*(sqrt(5)-1)}!(C)$);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.7pt] (B) -- (D);
   \node[anchor=south] at (A) {$A$};
@@ -23875,23 +23906,22 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-% fig-alt: （第5题）正方形内五个全等正八边形：四角各一（外直角边贴着正方形的边），中央一个，其间留出方形空隙
+% fig-alt: （第5题）正方形内五个全等正八边形，四角与中央，其间四个边长等于八边形边长的方孔，四角留出等腰直角空隙
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\S{4.05}
-  \def\gap{0.11}
-  \pgfmathsetmacro{\w}{(\S-2*\gap)/3}
-  \pgfmathsetmacro{\hw}{\w/2}
-  \pgfmathsetmacro{\Roct}{\hw/cos(22.5)}
+  \def\s{0.78}
+  \pgfmathsetmacro{\W}{\s*(1+sqrt(2))}
+  \pgfmathsetmacro{\S}{\s*(3+2*sqrt(2))}
+  \pgfmathsetmacro{\Roct}{\W/(2*cos(22.5))}
   \newcommand{\oct}[2]{%
     \draw[line width=0.7pt] ({#1+\Roct*cos(22.5)},{#2+\Roct*sin(22.5)})
       \foreach \k in {1,...,7} { -- ({#1+\Roct*cos(22.5+45*\k)},{#2+\Roct*sin(22.5+45*\k)}) } -- cycle;
   }
-  \draw[line width=0.75pt] (0,0) rectangle (\S,\S);
-  \oct{\hw}{\hw}
-  \oct{\S-\hw}{\hw}
-  \oct{\hw}{\S-\hw}
-  \oct{\S-\hw}{\S-\hw}
+  \draw[line width=0.85pt] (0,0) rectangle (\S,\S);
+  \oct{\W/2}{\W/2}
+  \oct{\S-\W/2}{\W/2}
+  \oct{\W/2}{\S-\W/2}
+  \oct{\S-\W/2}{\S-\W/2}
   \oct{\S/2}{\S/2}
 \end{tikzpicture}%
 }
