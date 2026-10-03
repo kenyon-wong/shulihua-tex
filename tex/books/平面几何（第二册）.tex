@@ -4920,9 +4920,11 @@ P D ^ {2} = P E \cdot P F\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第11题：圆外A，切线AB、AC，B上、C下为切点；BC为圆左侧竖弦，圆心在弦右侧；P在左弧；PD横、PE⊥AB、PF⊥AC；D、E、F处直角；PB、PC虚线
+% fig-alt: 第11题：圆外A，切线AB、AC，B上、C下为切点；BC为竖弦，圆心在弦右侧；右弧实线，过P的左弧虚线；PD横、PE⊥AB、PF⊥AC；D、E、F处直角；PB、PC为虚线直线（对照fig-p0066-01）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.7pt] (4.43,1.60) circle[radius=1.55];
+  % B、C 相对圆心 (4.43,1.60) 的极角约 ±111.12°；左弧（过P）为劣弧，扫描是虚线
+  \draw[line width=0.7pt] (4.43,1.60) ++(111.12:1.55) arc[start angle=111.12, delta angle=-222.23, radius=1.55];
+  \draw[dashed,line width=0.65pt] (4.43,1.60) ++(111.12:1.55) arc[start angle=111.12, delta angle=137.77, radius=1.55];
   \draw[line width=0.75pt] (0.12,1.60) -- (3.87,3.05);
   \draw[line width=0.75pt] (0.12,1.60) -- (3.87,0.15);
   \draw[line width=0.75pt] (3.87,3.05) -- (3.87,0.15);
@@ -5456,9 +5458,9 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第6题：A左上、B左下、C右上、D右下，AB⊥BD、CD⊥BD，AD与BC交于E，EF⊥BD至F，并连CF；B、D处直角标记
+% fig-alt: 第6题：A左上、B左下、C右上、D右下，AB⊥BD、CD⊥BD，无顶边AC；AD与BC交于E，EF⊥BD至F，并连CF；B、D处直角标记（对照fig-p0072-02）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0.15,2.55) -- (0.15,0.25) -- (3.55,0.25) -- (3.55,1.55) -- cycle;
+  \draw[line width=0.75pt] (0.15,2.55) -- (0.15,0.25) -- (3.55,0.25) -- (3.55,1.55);
   \draw[line width=0.75pt] (0.15,2.55) -- (3.55,0.25);
   \draw[line width=0.75pt] (0.15,0.25) -- (3.55,1.55);
   \draw[line width=0.75pt] (2.32,1.08) -- (2.32,0.25);
@@ -6074,21 +6076,21 @@ M D + D E + E M = M D + D F + F N = M N = m\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第9题：等腰△ABC，DOE∥BC 为直径，半圆在直径下与 BC 相切；O 为 DE 中点并在实线 AH 上；O 左旁虚线垂至底于 F，H 在其右紧邻；无直角标记（对照fig-p0080-03）
+% fig-alt: 第9题：△ABC，A约在底边五分之三偏右，右腰更陡；DOE∥BC 为直径，半圆在下切 BC 于 F；O 为 DE 中点，虚线 OF 垂至底；实线 AH 在 O 右侧，H 紧邻 F 之右；无直角标记（对照fig-p0080-03）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0.00,0.22) -- (2.70,2.40) -- (5.40,0.22) -- cycle;
-  \draw[line width=0.75pt] (1.49,1.43) -- (3.91,1.43);
-  \draw[line width=0.7pt] (1.49,1.43) arc (180:360:1.21);
-  \draw[line width=0.75pt] (2.70,2.40) -- (2.70,0.22);
-  \draw[dashed,line width=0.55pt] (2.52,1.43) -- (2.52,0.22);
-  \node[anchor=south,inner sep=1pt] at (2.70,2.44) {$A$};
+  \draw[line width=0.75pt] (0.00,0.22) -- (3.10,2.40) -- (5.40,0.22) -- cycle;
+  \draw[line width=0.75pt] (1.715,1.426) -- (4.127,1.426);
+  \draw[line width=0.7pt] (1.715,1.426) arc (180:360:1.206);
+  \draw[line width=0.75pt] (3.10,2.40) -- (3.10,0.22);
+  \draw[dashed,line width=0.55pt] (2.921,1.426) -- (2.921,0.22);
+  \node[anchor=south,inner sep=1pt] at (3.10,2.44) {$A$};
   \node[anchor=north east,inner sep=1pt] at (-0.04,0.16) {$B$};
   \node[anchor=north west,inner sep=1pt] at (5.44,0.16) {$C$};
-  \node[anchor=south east,inner sep=1pt] at (1.44,1.47) {$D$};
-  \node[anchor=south,inner sep=1pt] at (2.70,1.47) {$O$};
-  \node[anchor=south west,inner sep=1pt] at (3.96,1.47) {$E$};
-  \node[anchor=north,inner sep=1pt] at (2.52,0.14) {$F$};
-  \node[anchor=north,inner sep=1pt] at (2.90,0.14) {$H$};
+  \node[anchor=south east,inner sep=1pt] at (1.68,1.46) {$D$};
+  \node[anchor=south,inner sep=1pt] at (2.78,1.46) {$O$};
+  \node[anchor=south west,inner sep=1pt] at (4.16,1.46) {$E$};
+  \node[anchor=north east,inner sep=1pt] at (2.88,0.16) {$F$};
+  \node[anchor=north west,inner sep=1pt] at (3.14,0.16) {$H$};
 \end{tikzpicture}%
 }
 \caption{(第9题)}
