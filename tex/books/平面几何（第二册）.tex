@@ -13764,7 +13764,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   \draw[line width=0.75pt] (M) -- (B);
   \draw[line width=0.75pt] (M) -- (C);
   \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
-  \node[anchor=north,inner sep=2pt] at (0,-0.02) {$O$};
+  \node[anchor=south,inner sep=1pt] at (0,0.07) {$O$};
   \node[anchor=east,inner sep=2pt] at (M) {$M$};
   \node[anchor=north,inner sep=2pt] at (A) {$A$};
   \node[anchor=west,inner sep=2pt] at (B) {$B$};
@@ -13805,7 +13805,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   \node[anchor=south west,inner sep=1pt] at (B) {$B$};
   \node[anchor=south east,inner sep=1pt] at (C) {$C$};
   \node[anchor=west,inner sep=2pt] at (D) {$D$};
-  \node[anchor=north,inner sep=2pt] at (M) {$M$};
+  \node[anchor=south,inner sep=1pt] at (M) {$M$};
 \end{tikzpicture}%
 }
 \caption{(5)}
@@ -13831,7 +13831,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   % right angle at M, upper-left (between MA left and MC up)
   \draw[line width=0.5pt] (\mx-0.16,0) -- (\mx-0.16,0.16) -- (\mx,0.16);
   \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
-  \node[anchor=north west,inner sep=1pt] at (0.06,-0.02) {$O$};
+  \node[anchor=south west,inner sep=1pt] at (0.06,0.05) {$O$};
   \node[anchor=east,inner sep=2pt] at (A) {$A$};
   \node[anchor=west,inner sep=2pt] at (B) {$B$};
   \node[anchor=south,inner sep=1pt] at (C) {$C$};
@@ -13898,7 +13898,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第10题：△ABC（A左、B右、C上）；CE⊥AB于E，直角方在E右上；D在EB之间（不在延长线上）；CD实线；42在AC左侧，39在CD左侧（CE与CD之间），AB下尺寸45。无C处直角方
+% fig-alt: 第10题：△ABC（A左、B右、C上）；CE⊥AB于E，直角方在E右上；D在EB之间（不在延长线上）；CD实线；42在AC左侧，39在CD左侧（CE与CD之间），45为A到D的双向箭头（不到B）。无C处直角方
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (E) at (1.76,0);
@@ -13912,12 +13912,9 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   \draw[line width=0.75pt] (C) -- (E);
   % right angle at E, upper-right (between EC and EB)
   \draw[line width=0.5pt] (1.76,0.16) -- (1.92,0.16) -- (1.92,0);
-  % dimension under whole AB
-  \def\yd{-0.42}
-  \draw[line width=0.45pt] (0,\yd) -- (0,{\yd-0.12});
-  \draw[line width=0.45pt] (4.50,\yd) -- (4.50,{\yd-0.12});
-  \draw[line width=0.45pt] (0,{\yd-0.06}) -- (4.50,{\yd-0.06});
-  \node[anchor=north,inner sep=1pt] at (2.25,{\yd-0.06}) {$45$};
+  % 45 with arrows from A to D (scan), not across AB to B
+  \draw[<->,line width=0.5pt] (0,-0.40) -- (3.02,-0.40);
+  \node[fill=white,inner sep=1.5pt] at (1.51,-0.40) {$45$};
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north east,inner sep=1pt] at (E) {$E$};
   \node[anchor=north east,inner sep=1pt] at (B) {$B$};
@@ -14198,21 +14195,18 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第6题：两圆O1>O2外切于C；外公切线AB；半径O1A标r1、O2B标r2；虚线BD∥O1O2交O1A于D；心小空心圆
+% fig-alt: 第6题：两圆O1>O2外切于C；扫描上半径O1A、O2B竖直，切线AB略下斜并略伸过A、B；虚线BD水平∥O1O2交O1A于D；r1在左半径左侧，r2在右半径左侧；心小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rone{1.450}
   \def\rtwo{0.850}
   \coordinate (Oone) at (0,0);
   \coordinate (Otwo) at ({\rone+\rtwo},0);
   \coordinate (C) at (\rone,0);
-  \pgfmathsetmacro{\oo}{\rone+\rtwo}
-  \pgfmathsetmacro{\theta}{asin((\rone-\rtwo)/\oo)}
-  \pgfmathsetmacro{\ph}{90-\theta}
-  \coordinate (A) at ({\rone*cos(\ph)},{\rone*sin(\ph)});
-  \coordinate (B) at ({\rone+\rtwo+\rtwo*cos(\ph)},{\rtwo*sin(\ph)});
-  \coordinate (D) at ({\rtwo*cos(\ph)},{\rtwo*sin(\ph)});
-  \coordinate (Aext) at ($(A)!-0.35!(B)$);
-  \coordinate (Bext) at ($(B)!-0.35!(A)$);
+  \coordinate (A) at (0,\rone);
+  \coordinate (B) at ({\rone+\rtwo},\rtwo);
+  \coordinate (D) at (0,\rtwo);
+  \coordinate (Aext) at ($(A)!-0.28!(B)$);
+  \coordinate (Bext) at ($(B)!-0.22!(A)$);
   \draw[line width=0.75pt] (Oone) circle (\rone);
   \draw[line width=0.75pt] (Otwo) circle (\rtwo);
   \draw[line width=0.75pt] (Oone) -- (Otwo);
@@ -14228,8 +14222,8 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
   \node[anchor=south,inner sep=1pt] at (B) {$B$};
   \node[anchor=north,inner sep=2pt] at (C) {$C$};
   \node[anchor=east,inner sep=2pt] at (D) {$D$};
-  \node[anchor=east,inner sep=2pt] at ({0.55*cos(\ph)},{0.55*sin(\ph)}) {$r_{1}$};
-  \node[anchor=west,inner sep=2pt] at ({(\rone+\rtwo)+0.45*cos(\ph)},{0.45*sin(\ph)}) {$r_{2}$};
+  \node[anchor=east,inner sep=2pt] at (0,{0.52*\rone}) {$r_{1}$};
+  \node[anchor=east,inner sep=2pt] at ({\rone+\rtwo},{0.55*\rtwo}) {$r_{2}$};
 \end{tikzpicture}%
 }
 \caption{(第6题)}
@@ -14238,20 +14232,22 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第7题：两圆O1>O2外切于C；外公切线AB；竖切线CE；弦AC、BC；虚线BD∥O1O2、虚线O1E交AC于F；心小空心圆
+% fig-alt: 第7题：两圆O1>O2外切于C；扫描上半径O1A、O2B竖直，切线AB略下斜；竖线CE交AB于E；弦AC、BC；虚线BD水平、虚线O1E交AC于F；心小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rone{1.350}
   \def\rtwo{0.800}
   \coordinate (Oone) at (0,0);
-  \coordinate (Otwo) at (2.1500,0);
-  \coordinate (C) at (1.350,0);
-  \coordinate (A) at (0.3453,1.3051);
-  \coordinate (B) at (2.3547,0.7734);
-  \coordinate (D) at (0.2047,0.7734);
-  \coordinate (E) at (1.3500,1.0392);
-  \coordinate (F) at (0.8477,0.6525);
-  \coordinate (Aext) at ($(A)!-0.25!(B)$);
-  \coordinate (Bext) at ($(B)!-0.25!(A)$);
+  \coordinate (Otwo) at ({\rone+\rtwo},0);
+  \coordinate (C) at (\rone,0);
+  \coordinate (A) at (0,\rone);
+  \coordinate (B) at ({\rone+\rtwo},\rtwo);
+  \coordinate (D) at (0,\rtwo);
+  \pgfmathsetmacro{\ey}{\rone+(\rtwo-\rone)*\rone/(\rone+\rtwo)}
+  \coordinate (E) at (\rone,\ey);
+  \pgfmathsetmacro{\fs}{\rone/(\rone+\ey)}
+  \coordinate (F) at ({\fs*\rone},{\rone-\fs*\rone});
+  \coordinate (Aext) at ($(A)!-0.16!(B)$);
+  \coordinate (Bext) at ($(B)!-0.16!(A)$);
   \draw[line width=0.75pt] (Oone) circle (\rone);
   \draw[line width=0.75pt] (Otwo) circle (\rtwo);
   \draw[line width=0.75pt] (Oone) -- (Otwo);
@@ -14267,12 +14263,12 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
   \filldraw[fill=white,line width=0.55pt] (Otwo) circle (0.040);
   \node[anchor=north,inner sep=2pt] at (Oone) {$O_{1}$};
   \node[anchor=north,inner sep=2pt] at (Otwo) {$O_{2}$};
-  \node[anchor=south,inner sep=1pt] at (A) {$A$};
+  \node[anchor=south,inner sep=1pt] at ($(A)+(-0.02,0.02)$) {$A$};
   \node[anchor=south,inner sep=1pt] at (B) {$B$};
   \node[anchor=north east,inner sep=1pt] at (C) {$C$};
   \node[anchor=east,inner sep=1pt] at (D) {$D$};
   \node[anchor=south,inner sep=1pt] at (E) {$E$};
-  \node[anchor=south east,inner sep=0.5pt] at (F) {$F$};
+  \node[anchor=north west,inner sep=1pt] at ($(F)+(0.02,-0.02)$) {$F$};
 \end{tikzpicture}%
 }
 \caption{(第7题)}
@@ -14922,7 +14918,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
   \node at (\s+\g+1.20,0.85) {$II$};
   % curved arrow
   \draw[-{Stealth[length=2.2mm]},line width=0.7pt]
-    (0.30,-0.35) .. controls (1.80,-1.05) and (3.60,-0.95) .. (4.55,-0.15);
+    (0.25,-0.32) .. controls (1.70,-1.05) and (3.15,-0.70) .. (3.92,0.48);
 \end{tikzpicture}%
 }
 \caption{(2)}
