@@ -19523,7 +19523,7 @@ AD 的延长线交于 F， 以 AF 为边作正方形， 这个正方形就是所
 \because A E = A D\text{，}
 \]
 
-∴ \(AF^{2}=AB\cdot AD=\) 矩形 ABCD 的面积。
+\(\therefore AF^{2}=AB\cdot AD=\) 矩形 \(ABCD\) 的面积。
 
 这就是说，以 \(AF\) 为边所作的正方形符合条件。］
 
@@ -19581,7 +19581,7 @@ AD 的延长线交于 F， 以 AF 为边作正方形， 这个正方形就是所
 \(FE \parallel AC\)，交 \(DA\) 于 \(E\)。以 \(DE\) 为边作一正方形
 \(DEKH\)，这就是所要求作的正方形。
 
-证：∵ \(EF \parallel AC\)，∴ DE：DF = DA：DC，于是
+证：\(\because EF \parallel AC\)，\(\therefore DE:DF = DA:DC\)，于是
 
 \[
 DE^2:DF^2 = DA^2:DC^2\text{。}
@@ -19675,7 +19675,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
   \draw[line width=0.75pt] (A) -- (B) -- (E) -- (D) -- cycle;
   \draw[line width=0.75pt] (E) -- (C);
   \draw[line width=0.75pt] (D) -- (C);
-  \draw[line width=0.5pt] ($(E)+(0,0.16)$) -- ++(-0.16,0) -- ++(0,-0.16);
+  \draw[line width=0.5pt] ($(E)+(0,0.16)$) -- ++(0.16,0) -- ++(0,-0.16);
   \node[anchor=south east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north east,inner sep=1pt] at (B) {$B$};
   \node[anchor=north,inner sep=1.2pt] at (E) {$E$};
@@ -19767,7 +19767,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 \begin{enumerate}[start=15]
 \item
   \(\triangle ABC\) 三边的中点分别为 \(F, E, D; M\) 与 \(N\) 分别是
-  \(DF\) 与 \(FE\) 的中点。求 \(\triangle AMN\) 与 \(\triangle ABC\)
+  \(DE\) 与 \(EF\) 的中点。求 \(\triangle AMN\) 与 \(\triangle ABC\)
   面积的比。
 \end{enumerate}
 
@@ -19802,27 +19802,28 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第15题）△ABC；D、E、F分别为AB、AC、BC中点；M、N分别为DF、FE中点；实线中点三角形DEF与△AMN
+% fig-alt: （第15题）△ABC（C左、A右、B顶）；F、E、D分别为CA、CB、AB中点；实线ED、EF；M、N分别为DE、EF中点；实线△AMN
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (C) at (0.00,0.00);
-  \coordinate (A) at (3.60,0.00);
-  \coordinate (B) at (3.20,3.20);
+  \coordinate (A) at (4.40,0.05);
+  \coordinate (B) at (4.15,3.70);
+  \coordinate (F) at ($(C)!0.5!(A)$);
+  \coordinate (E) at ($(C)!0.5!(B)$);
   \coordinate (D) at ($(A)!0.5!(B)$);
-  \coordinate (E) at ($(A)!0.5!(C)$);
-  \coordinate (F) at ($(B)!0.5!(C)$);
-  \coordinate (M) at ($(D)!0.5!(F)$);
-  \coordinate (N) at ($(F)!0.5!(E)$);
+  \coordinate (M) at ($(E)!0.5!(D)$);
+  \coordinate (N) at ($(E)!0.5!(F)$);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
-  \draw[line width=0.75pt] (D) -- (E) -- (F) -- cycle;
+  \draw[line width=0.75pt] (E) -- (D);
+  \draw[line width=0.75pt] (E) -- (F);
   \draw[line width=0.75pt] (A) -- (M) -- (N) -- cycle;
   \node[anchor=north west,inner sep=1pt] at (A) {$A$};
   \node[anchor=south,inner sep=1.5pt] at (B) {$B$};
   \node[anchor=north east,inner sep=1pt] at (C) {$C$};
   \node[anchor=west,inner sep=1.5pt] at (D) {$D$};
-  \node[anchor=north,inner sep=1.2pt] at (E) {$E$};
-  \node[anchor=south east,inner sep=1.2pt] at (F) {$F$};
+  \node[anchor=east,inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=north,inner sep=1.2pt] at (F) {$F$};
   \node[anchor=south,inner sep=1.2pt] at (M) {$M$};
-  \node[anchor=east,inner sep=1.5pt] at (N) {$N$};
+  \node[anchor=east,inner sep=1.2pt] at (N) {$N$};
 \end{tikzpicture}%
 }
 \caption{（第15题）}
@@ -19872,7 +19873,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第2题）实线△ABC；虚线△A'B'C'；C、A、A'共线且CA'=4CA；A、B、B'共线且AB'=2AB；B、C、C'共线且BC'=3BC；虚线A'B、A'C
+% fig-alt: （第2题）实线△ABC；CA'=4CA、AB'=2AB、BC'=3BC；A'C'实线，A'B'与B'C'虚线；虚线A'B以及B与AA'两个三等分点的连线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (1.50,2.00);
   \coordinate (B) at (0.30,1.20);
@@ -19880,9 +19881,13 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
   \coordinate (Ap) at ($4*(A)-3*(C)$);
   \coordinate (Bp) at ($2*(B)-(A)$);
   \coordinate (Cp) at ($3*(C)-2*(B)$);
-  \draw[dashed,line width=0.6pt] (Ap) -- (Bp) -- (Cp) -- cycle;
+  \draw[dashed,line width=0.6pt] (Ap) -- (Bp);
+  \draw[dashed,line width=0.6pt] (Bp) -- (Cp);
   \draw[dashed,line width=0.6pt] (Ap) -- (B);
-  \draw[dashed,line width=0.6pt] (Ap) -- (C);
+  \coordinate (T1) at ($(Ap)!{1/3}!(A)$);
+  \coordinate (T2) at ($(Ap)!{2/3}!(A)$);
+  \draw[dashed,line width=0.6pt] (B) -- (T1);
+  \draw[dashed,line width=0.6pt] (B) -- (T2);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.75pt] (C) -- (Ap);
   \draw[line width=0.75pt] (A) -- (Bp);
@@ -20685,7 +20690,7 @@ P Q = Q R = R S = S T = T P\text{，}
 \(AB = BC = CD =\)
 
 \[
-D E = E A (\text { \text{图} } 4 \cdot 4)\text{。}
+DE = EA\text{（图4·4）。}
 \]
 
 \shulihuahang{［求证］} 五边形 \(ABCDE\) 为正多边形。
