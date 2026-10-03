@@ -18674,7 +18674,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·31：四种同底等积变换：(1)等腰，XY与垂直平分线MN；(2)底角α，上直线右端标v（无X）；(3)顶角β，虚圆弧；(4)中线l，虚弧
+% fig-alt: 图3·31：四种同底等积变换：(1)等腰，XY与垂直平分线MN；(2)底角α，上直线右端标v（无X）；(3)顶角β，虚圆弧；(4)中线l与半径等长（两端短竖线），虚弧为底边之上的半圆、两端落在底边所在直线上，OA'、OA''虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   % (1)
   \begin{scope}[shift={(0,5.6)}]
@@ -18777,10 +18777,10 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \draw[line width=0.75pt] (App) -- (C);
     \draw[dashed,line width=0.6pt] (O) -- (Ap);
     \draw[dashed,line width=0.6pt] (O) -- (App);
-    \draw[dashed,line width=0.6pt] ({2.60+\rl*cos(-25)},{\rl*sin(-25)}) arc (-25:205:\rl);
-    \draw[line width=0.7pt] (1.70,3.25) -- (3.50,3.25);
-    \draw[line width=0.7pt] (1.70,3.15) -- (1.70,3.35);
-    \draw[line width=0.7pt] (3.50,3.15) -- (3.50,3.35);
+    \draw[dashed,line width=0.6pt] ({2.60+\rl},0) arc (0:180:\rl);
+    \draw[line width=0.7pt] ({2.60-\rl/2},3.25) -- ({2.60+\rl/2},3.25);
+    \draw[line width=0.7pt] ({2.60-\rl/2},3.15) -- ({2.60-\rl/2},3.35);
+    \draw[line width=0.7pt] ({2.60+\rl/2},3.15) -- ({2.60+\rl/2},3.35);
     \node[anchor=south,inner sep=1.5pt] at (2.60,3.25) {$l$};
     \node[anchor=east,inner sep=2pt] at (-0.25,2.35) {$X$};
     \node[anchor=west,inner sep=2pt] at (5.40,2.35) {$Y$};
@@ -18998,7 +18998,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·34（3）直角△GHI（直角在G）；GI虚线=CD，GH虚线=√3 CD，HI实线=2CD
+% fig-alt: 图3·34（3）直角△GHI（直角在G，直角方）；GI虚线，左侧尺寸CD自下而上；GH虚线，下方√3 CD水平；HI实线，斜边尺寸2CD沿斜边向下
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (G) at (0.00,0.00);
   \coordinate (I) at (0.00,1.70);
@@ -19009,7 +19009,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \draw[line width=0.5pt] (0.18,0) -- (0.18,0.18) -- (0,0.18);
   % vertical dim CD
   \draw[<->,line width=0.45pt] (-0.55,0.00) -- (-0.55,1.70);
-  \node[anchor=east,inner sep=1pt,font=\small] at (-0.58,0.85) {$CD$};
+  \node[rotate=90,anchor=center,inner sep=1pt,font=\small] at (-0.92,0.85) {$CD$};
   % horizontal dim
   \draw[<->,line width=0.45pt] (0.00,-0.48) -- ({1.70*sqrt(3)},-0.48);
   \node[anchor=north,inner sep=1pt,font=\small] at ({0.85*sqrt(3)},-0.48) {$\sqrt{3}\,CD$};
@@ -19017,7 +19017,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \coordinate (Im) at ($(I)!0.12!90:(H)$);
   \coordinate (Hm) at ($(H)!0.12!-90:(I)$);
   \draw[<->,line width=0.45pt] (Im) -- (Hm);
-  \node[font=\small,inner sep=1pt] at ($(Im)!0.5!(Hm)!0.22!90:(Hm)$) {$2CD$};
+  \node[rotate=-30,anchor=center,font=\small,inner sep=1pt] at ($(Im)!0.5!(Hm)!0.22!90:(Hm)$) {$2CD$};
   \node[anchor=north east,inner sep=1pt] at (G) {$G$};
   \node[anchor=north west,inner sep=1pt] at (H) {$H$};
   \node[anchor=south east,inner sep=1pt] at (I) {$I$};
