@@ -27033,20 +27033,23 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \begin{scope}
-    \clip (-1,0.575) circle (1.154);
-    \fill[pattern=north east lines,pattern color=black!50] (-1,-0.575) circle (1.154);
-  \end{scope}
-  \begin{scope}
-    \clip (1,0.575) circle (1.154);
-    \fill[pattern=north east lines,pattern color=black!50] (1,-0.575) circle (1.154);
-  \end{scope}
-  \begin{scope}
-    \clip (-1,0.575) circle (1.154);
-    \fill[pattern=north east lines,pattern color=black!50] (1,0.575) circle (1.154);
-  \end{scope}
-  \begin{scope}
-    \clip (-1,-0.575) circle (1.154);
-    \fill[pattern=north east lines,pattern color=black!50] (1,-0.575) circle (1.154);
+    \clip (-2,0) -- (0,1.15) -- (2,0) -- (0,-1.15) -- cycle;
+    \begin{scope}
+      \clip (-1,0.575) circle (1.154);
+      \fill[pattern=north east lines,pattern color=black!50] (-1,-0.575) circle (1.154);
+    \end{scope}
+    \begin{scope}
+      \clip (1,0.575) circle (1.154);
+      \fill[pattern=north east lines,pattern color=black!50] (1,-0.575) circle (1.154);
+    \end{scope}
+    \begin{scope}
+      \clip (-1,0.575) circle (1.154);
+      \fill[pattern=north east lines,pattern color=black!50] (1,0.575) circle (1.154);
+    \end{scope}
+    \begin{scope}
+      \clip (-1,-0.575) circle (1.154);
+      \fill[pattern=north east lines,pattern color=black!50] (1,-0.575) circle (1.154);
+    \end{scope}
   \end{scope}
   \begin{scope}
     \clip (-2,0) -- (0,1.15) -- (2,0) -- (0,-1.15) -- cycle;
@@ -27134,10 +27137,9 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
   \draw[line width=0.7pt] (0,0) circle (0.45);
   \foreach \a in {0,60,...,300}
     \draw[line width=0.7pt] (\a:0.90) circle (0.45);
-  \draw[line width=0.4pt] (0,0) -- (0.45,0);
-  \draw[line width=0.4pt] (0,0.45) -- (0,1.35);
-  \node[anchor=south] at (0.22,0.06) {$r$};
-  \node[anchor=east] at (0,0.90) {$2r$};
+  \draw[line width=0.4pt] (0,0) -- (0,1.70);
+  \node[anchor=west,inner sep=1.2pt] at (0.03,0.22) {$r$};
+  \node[anchor=east,inner sep=1.2pt] at (-0.03,0.90) {$2r$};
 \end{tikzpicture}
 }
 \caption{(第5题)}
@@ -27386,13 +27388,13 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
   \draw[line width=0.7pt] (-1.20,2.08) arc[start angle=120,end angle=60,radius=2.40];
   \draw[line width=0.55pt] (-1.20,2.08) -- (1.20,2.08);
   \draw[line width=0.7pt] (0,1.55) circle (0.62);
-  \draw[line width=0.4pt] (-1.45,2.28) -- (1.45,2.28);
-  \draw[line width=0.4pt] (-1.20,2.16) -- (-1.20,2.40);
-  \draw[line width=0.4pt] (1.20,2.16) -- (1.20,2.40);
+  \draw[line width=0.4pt] (-1.20,2.08) -- (-1.20,2.58);
+  \draw[line width=0.4pt] (1.20,2.08) -- (1.20,2.58);
+  \draw[line width=0.4pt,<->] (-1.20,2.50) -- (1.20,2.50);
+  \node[fill=white,inner sep=1.2pt] at (0,2.50) {$2a$};
   \node[anchor=north] at (0,0) {$O$};
   \node[anchor=east] at (-1.20,2.08) {$A$};
   \node[anchor=west] at (1.20,2.08) {$B$};
-  \node[anchor=south] at (0,2.32) {$2a$};
 \end{tikzpicture}
 }
 \caption{(第5题)}
@@ -27562,15 +27564,15 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,2.6) -- (-1.5,0) -- (1.7,0) -- cycle;
-  \draw[line width=0.7pt] (-0.85,1.85) -- (0.55,1.85);
-  \draw[line width=0.7pt] (-1.15,0.95) -- (1.15,0.95);
+  \draw[line width=0.7pt] (-0.433,1.85) -- (0.490,1.85);
+  \draw[line width=0.7pt] (-0.952,0.95) -- (1.079,0.95);
   \node[anchor=south] at (0,2.6) {$A$};
   \node[anchor=east] at (-1.5,0) {$B$};
   \node[anchor=west] at (1.7,0) {$C$};
-  \node[anchor=east] at (-0.85,1.85) {$D$};
-  \node[anchor=west] at (0.55,1.85) {$E$};
-  \node[anchor=east] at (-1.15,0.95) {$F$};
-  \node[anchor=west] at (1.15,0.95) {$G$};
+  \node[anchor=east] at (-0.433,1.85) {$D$};
+  \node[anchor=west] at (0.490,1.85) {$E$};
+  \node[anchor=east] at (-0.952,0.95) {$F$};
+  \node[anchor=west] at (1.079,0.95) {$G$};
 \end{tikzpicture}%
 }
 \caption{(第7题)}
@@ -27644,15 +27646,15 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.15);
-  \draw[line width=0.7pt] (-1.4,1.15) -- (1.7,1.15);
+  \draw[line width=0.7pt,->] (-1.4,1.15) -- (1.7,1.15);
   \draw[line width=0.7pt] (-1.4,-1.15) -- (1.7,-1.15);
-  \draw[line width=0.7pt] (1.45,1.55) -- (0.95,-1.15);
+  \draw[line width=0.7pt] (1.376,1.15) -- (0.95,-1.15);
   \node at (0,0) {$O$};
   \node[anchor=north] at (0,-1.15) {$A$};
   \node[anchor=south] at (0,1.15) {$B$};
-  \node[anchor=south] at (1.45,1.55) {$N$};
+  \node[anchor=south] at (1.376,1.18) {$N$};
   \node[anchor=north] at (0.95,-1.15) {$M$};
-  \node[anchor=west] at (1.15,0.15) {$K$};
+  \node[anchor=west] at (1.22,-0.22) {$K$};
 \end{tikzpicture}%
 }
 \caption{(第13题)}
@@ -27820,7 +27822,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (2.40,2.10) -- (0,0) -- (3.00,0) -- cycle;
   \draw[line width=0.55pt] (2.40,2.10) -- (2.40,0);
-  \draw[line width=0.55pt] (2.40,2.10) -- (1.50,0);
+  \draw[line width=0.55pt,dash pattern=on 2pt off 1.4pt] (2.40,2.10) -- (1.50,0);
   \draw[line width=0.7pt] (1.90,0) -- (1.90,1.66);
   \node[anchor=south] at (2.40,2.10) {$A$};
   \node[anchor=north east] at (0,0) {$B$};
@@ -27879,7 +27881,11 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
   \draw[line width=0.75pt] (0,0) -- (3.2,0) -- (1.00,1.48) -- cycle;
   \draw[line width=0.55pt] (1.00,1.48) -- (1.00,0);
   \draw[line width=0.35pt] (1.00,0.16) -- (1.16,0.16) -- (1.16,0);
-  \draw[line width=0.35pt] (0.88,1.32) -- (1.00,1.20) -- (0.88,1.08);
+  \draw[line width=0.35pt] (0.922,1.364) -- (1.038,1.286) -- (1.116,1.402);
+  \draw[line width=0.35pt] (3.2,0) ++(180:0.26) arc[start angle=180,delta angle=-34,radius=0.26];
+  \draw[line width=0.35pt] (0,-0.38) -- (0,-0.55);
+  \draw[line width=0.35pt] (3.2,-0.38) -- (3.2,-0.55);
+  \draw[line width=0.35pt,<->] (0,-0.46) -- (3.2,-0.46);
   \node[anchor=north east] at (0,0) {$A$};
   \node[anchor=north west] at (3.2,0) {$B$};
   \node[anchor=south] at (1.00,1.48) {$C$};
@@ -27898,16 +27904,20 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) -- (3.20,0) -- (2.00,1.55) -- cycle;
   \draw[line width=0.7pt] (2.00,1.55) -- (1.55,0);
-  \draw[line width=0.35pt] (1.84,1.38) -- (2.00,1.22) -- (1.82,1.10);
-  \draw[line width=0.35pt] (1.40,0.16) -- (1.55,0.16) -- (1.55,0.32);
+  \draw[line width=0.35pt] (1.874,1.452) -- (1.972,1.325) -- (2.098,1.423);
+  \draw[line width=0.35pt] (1.55,0) ++(180:0.22) arc[start angle=180,delta angle=-106,radius=0.22];
+  \draw[line width=0.35pt] (0,-0.16) -- (0,-0.40);
+  \draw[line width=0.35pt] (1.55,-0.16) -- (1.55,-0.40);
   \draw[line width=0.35pt] (0,-0.28) -- (1.55,-0.28);
-  \draw[line width=0.35pt] (0,-0.55) -- (3.20,-0.55);
+  \draw[line width=0.35pt] (0,-0.43) -- (0,-0.67);
+  \draw[line width=0.35pt] (3.20,-0.43) -- (3.20,-0.67);
+  \draw[line width=0.35pt,->] (0,-0.55) -- (3.20,-0.55);
   \node[anchor=north east] at (0,0) {$A$};
-  \node[anchor=north] at (1.55,0) {$B$};
+  \node[anchor=north east] at (1.42,-0.02) {$B$};
   \node[anchor=south] at (2.00,1.55) {$C$};
   \node[anchor=north west] at (3.20,0) {$D$};
-  \node[anchor=north] at (0.78,-0.28) {$a$};
-  \node[anchor=north] at (1.60,-0.55) {$x$};
+  \node[fill=white,inner sep=1pt] at (0.78,-0.28) {$a$};
+  \node[fill=white,inner sep=1pt] at (1.60,-0.55) {$x$};
   \node[anchor=east] at (0.95,0.80) {$b$};
 \end{tikzpicture}
 }
@@ -27963,13 +27973,12 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\r{0.55}
   \draw[line width=0.75pt] (0,0) circle (1.328);
-  \draw[line width=0.6pt] (0,0) circle (0.228);
   \draw[line width=0.7pt] (0.55,0.55) circle (0.55);
   \draw[line width=0.7pt] (-0.55,0.55) circle (0.55);
   \draw[line width=0.7pt] (-0.55,-0.55) circle (0.55);
   \draw[line width=0.7pt] (0.55,-0.55) circle (0.55);
-  \draw[line width=0.35pt] (0.55,0.55) -- (1.10,0.55);
-  \node[anchor=south] at (0.82,0.55) {$r$};
+  \draw[line width=0.4pt,dash pattern=on 2pt off 1.4pt,<->] (0,0.55) -- (1.10,0.55);
+  \node[fill=white,inner sep=0.8pt] at (0.55,0.55) {$d$};
 \end{tikzpicture}
 }
 \caption{(第2题)}
@@ -28073,7 +28082,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
   \draw[line width=0.75pt] (0,0) circle (1.40);
   \draw[line width=0.7pt] (90:1.40) -- (18:1.40) -- (306:1.40) -- (234:1.40) -- (162:1.40) -- cycle;
   \draw[line width=0.45pt,dash pattern=on 2pt off 1.4pt] (0,0) -- (234:1.40);
-  \draw[line width=0.55pt] (0,0) -- (0,-1.133);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.4pt] (0,0) -- (0,-1.133);
   \node at (0.12,0.12) {$O$};
   \node[anchor=east] at (234:1.45) {$A$};
   \node[anchor=west] at (306:1.45) {$B$};
@@ -28324,7 +28333,7 @@ x。因为圆心、切点都在一直线上，可知圆环的内圆半径为 3r�
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (1.55,0) circle (1.05);
   \draw[line width=0.55pt] (-0.85,0) -- (2.60,0);
-  \draw[line width=0.7pt] (-0.85,0) -- (1.15,1.00);
+  \draw[line width=0.7pt] (-0.85,0) -- (1.42,1.135);
   \node[anchor=east] at (-0.85,0) {$R$};
   \node[anchor=north] at (0.50,0) {$Q$};
   \node at (1.55,0.12) {$O$};
