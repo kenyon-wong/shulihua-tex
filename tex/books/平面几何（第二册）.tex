@@ -20254,10 +20254,6 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
   \coordinate (Cb) at ($(C)!0.20!(B)$);
   \coordinate (Csq) at ($(Ca)+(Cb)-(C)$);
   \draw[line width=0.55pt] (Ca) -- (Csq) -- (Cb);
-  \coordinate (Da) at ($(D)!0.16!(C)$);
-  \coordinate (De) at ($(D)!0.16!(E)$);
-  \coordinate (Dsq) at ($(Da)+(De)-(D)$);
-  \draw[line width=0.50pt] (Da) -- (Dsq) -- (De);
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1pt] at (B) {$B$};
   \node[anchor=south,inner sep=1.5pt] at (C) {$C$};
@@ -20870,31 +20866,33 @@ AB、BC、CD、DE、EF、FA，它们的垂足各为 M、N、P、Q、R、S。过
   \draw[line width=0.65pt] (Np) -- (Rp);
   \draw[line width=0.65pt] (Pp) -- (Sp);
   \fill (O) circle (1.0pt);
-  \node[anchor=west,inner sep=2pt] at (O) {$O$};
-  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
-  \node[anchor=north west,inner sep=1pt] at (B) {$B$};
-  \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
-  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
-  \node[anchor=south east,inner sep=1pt] at (E) {$E$};
-  \node[anchor=east,inner sep=1.5pt] at (F) {$F$};
-  \node[anchor=north east,inner sep=0.8pt] at (Ap) {$A'$};
-  \node[anchor=north west,inner sep=0.8pt] at (Bp) {$B'$};
-  \node[anchor=west,inner sep=1.2pt] at (Cp) {$C'$};
-  \node[anchor=south west,inner sep=0.8pt] at (Dp) {$D'$};
-  \node[anchor=south east,inner sep=0.8pt] at (Ep) {$E'$};
-  \node[anchor=east,inner sep=1.2pt] at (Fp) {$F'$};
-  \node[anchor=south,inner sep=1pt] at (M) {$M$};
-  \node[anchor=north,inner sep=0.8pt] at ($(Mp)+(270:0.22)$) {$M'$};
-  \node[anchor=north west,inner sep=0.6pt] at (N) {$N$};
-  \node[anchor=north west,inner sep=0.6pt] at ($(Np)+(330:0.18)$) {$N'$};
-  \node[anchor=south west,inner sep=0.6pt] at (P) {$P$};
-  \node[anchor=south west,inner sep=0.6pt] at ($(Pp)+(30:0.18)$) {$P'$};
-  \node[anchor=north,inner sep=1pt] at (Q) {$Q$};
-  \node[anchor=south,inner sep=0.8pt] at ($(Qp)+(90:0.22)$) {$Q'$};
-  \node[anchor=south east,inner sep=0.6pt] at (R) {$R$};
-  \node[anchor=south east,inner sep=0.6pt] at ($(Rp)+(150:0.18)$) {$R'$};
-  \node[anchor=north east,inner sep=0.6pt] at (S) {$S$};
-  \node[anchor=north east,inner sep=0.6pt] at ($(Sp)+(210:0.18)$) {$S'$};
+  \node[anchor=west,inner sep=1.5pt] at ($(O)+(0.08,0.02)$) {$O$};
+  % 内接顶点字母在形内，外切顶点字母在形外（对照 fig-p0238-01）
+  \node at ($(A)+(58:0.40)$) {$A$};
+  \node at ($(B)+(122:0.40)$) {$B$};
+  \node at ($(C)+(180:0.38)$) {$C$};
+  \node at ($(D)+(238:0.40)$) {$D$};
+  \node at ($(E)+(302:0.40)$) {$E$};
+  \node at ($(F)+(2:0.38)$) {$F$};
+  \node at ($(Ap)+(242:0.46)$) {$A'$};
+  \node at ($(Bp)+(298:0.46)$) {$B'$};
+  \node at ($(Cp)+(0:0.50)$) {$C'$};
+  \node at ($(Dp)+(62:0.46)$) {$D'$};
+  \node at ($(Ep)+(118:0.46)$) {$E'$};
+  \node at ($(Fp)+(180:0.52)$) {$F'$};
+  % 垂足在半径内侧、略偏开直线；外端在切点外侧
+  \node[anchor=south] at ($(M)+(-0.18,0.02)$) {$M$};
+  \node at ($(Mp)+(270:0.34)$) {$M'$};
+  \node at ($(N)+(150:0.18)+(60:0.16)$) {$N$};
+  \node at ($(Np)+(330:0.38)$) {$N'$};
+  \node at ($(P)+(210:0.18)+(120:0.16)$) {$P$};
+  \node at ($(Pp)+(30:0.38)$) {$P'$};
+  \node[anchor=north] at ($(Q)+(-0.18,-0.02)$) {$Q$};
+  \node at ($(Qp)+(90:0.34)$) {$Q'$};
+  \node at ($(R)+(330:0.18)+(240:0.16)$) {$R$};
+  \node at ($(Rp)+(150:0.38)$) {$R'$};
+  \node at ($(S)+(30:0.18)+(300:0.16)$) {$S$};
+  \node at ($(Sp)+(210:0.38)$) {$S'$};
 \end{tikzpicture}%
 }
 \caption{图4·6}
