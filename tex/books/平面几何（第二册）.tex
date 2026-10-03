@@ -26078,8 +26078,10 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
   \draw[line width=0.75pt] (0,0) rectangle (1.8,1.8);
   \fill[pattern=vertical lines,pattern color=black!60] (0,1.8) -- (0,0) arc[start angle=180,end angle=90,radius=1.8] -- cycle;
   \draw[line width=0.65pt] (1.8,1.8) arc[start angle=90,end angle=180,radius=1.8];
-  \draw[line width=0.5pt] (0,0) -- (0.55,0.55) (1.25,1.25) -- (1.8,1.8);
-  \node at (0.90,0.90) {$r$};
+  % 半径在右下角圆心到弧，缺口处标 r（不是左下到右上的对角线）
+  \draw[line width=0.5pt] (1.8,0) -- (1.291,0.509);
+  \draw[line width=0.5pt] (0.884,0.916) -- (0.527,1.273);
+  \node[fill=white,inner sep=0.6pt] at (1.10,0.70) {$r$};
 \end{tikzpicture}%
 }
 \caption{(1)}
@@ -26090,14 +26092,20 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 % fig-alt: （2）正方形四角四分之一圆，中心曲边菱形阴影，半径 $r/2$
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \fill[pattern=vertical lines,pattern color=black!60] (0,0) rectangle (2.2,2.2);
-  \begin{scope}\clip (0,0) rectangle (2.2,2.2);
-    \foreach \c in {(0,0),(2.2,0),(2.2,2.2),(0,2.2)} \fill[white] \c circle (1.1);
-  \end{scope}
-  \draw[line width=0.75pt] (0,0) rectangle (2.2,2.2) (1.1,0) -- (1.1,2.2) (0,1.1) -- (2.2,1.1);
-  \draw[line width=0.6pt] (1.1,0) arc[start angle=180,end angle=90,radius=1.1] (0,1.1) arc[start angle=270,end angle=360,radius=1.1];
-  \draw[line width=0.6pt] (1.1,2.2) arc[start angle=0,end angle=-90,radius=1.1] (2.2,1.1) arc[start angle=90,end angle=180,radius=1.1];
-  \draw[line width=0.45pt] (2.2,0) -- (1.1,1.1) node[midway,below right] {$\frac{r}{2}$};
+  \fill[pattern=vertical lines,pattern color=black!65]
+    (1.1,0) arc[start angle=0,end angle=90,radius=1.1]
+    arc[start angle=-90,end angle=0,radius=1.1]
+    arc[start angle=180,end angle=270,radius=1.1]
+    arc[start angle=90,end angle=180,radius=1.1] -- cycle;
+  \draw[line width=0.75pt] (0,0) rectangle (2.2,2.2);
+  \draw[line width=0.6pt]
+    (1.1,0) arc[start angle=0,end angle=90,radius=1.1]
+    arc[start angle=-90,end angle=0,radius=1.1]
+    arc[start angle=180,end angle=270,radius=1.1]
+    arc[start angle=90,end angle=180,radius=1.1];
+  \draw[line width=0.55pt] (1.1,0) -- (1.1,2.2) (0,1.1) -- (2.2,1.1);
+  \draw[line width=0.45pt] (2.2,0) -- (1.1,1.1);
+  \node[anchor=south west,inner sep=1pt] at (1.72,0.55) {$\frac{r}{2}$};
 \end{tikzpicture}%
 }
 \caption{(2)}
@@ -26170,9 +26178,8 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) -- (1.6,0) -- (1.6,2.186) arc[start angle=60,end angle=120,radius=1.6] -- (0,2.186) -- cycle;
   \draw[line width=0.45pt] (0.8,0.8) -- (1.6,2.186) (0.8,0.8) -- (0,2.186);
+  \draw[<->,line width=0.4pt] (0.8,2.32) -- (0.8,0);
   \draw[line width=0.4pt] (0.8,0.8) ++(60:0.32) arc[start angle=60,end angle=120,radius=0.32];
-  \draw[->] (0.8,1.42) -- (0.8,2.40);
-  \draw[->] (0.8,0.48) -- (0.8,0);
   \node at (1.16,1.18) {$60^{\circ}$};
   \node[anchor=west] at (0.88,0.26) {$2.4$\,m};
   \draw[<->] (0,-0.28) -- (1.6,-0.28);
@@ -26454,7 +26461,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
   \draw[line width=0.75pt] (0,0) circle (1.35);
   \draw[line width=0.55pt] (-1.35,0) -- (1.35,0) (0,1.35) -- (0,-1.35);
   \draw[line width=0.65pt] (-1.35,0) arc[start angle=135,end angle=45,radius=1.909];
-  \draw[line width=0.4pt] (0,-1.35) -- (-1.35,0) (0,-1.35) -- (1.35,0);
+  \draw[line width=0.4pt,dash pattern=on 2pt off 1.5pt] (0,-1.35) -- (-1.35,0) (0,-1.35) -- (1.35,0);
   \draw[line width=0.55pt] (-1.35,0) -- (0,1.35) (1.35,0) -- (0,1.35);
   \draw[line width=0.4pt] (0,-1.35) ++(60:0.32) arc[start angle=60,end angle=120,radius=0.32];
   \node[anchor=east] at (-1.35,0) {$A$}; \node[anchor=west] at (1.35,0) {$B$};
@@ -26528,11 +26535,11 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
   \fill[pattern=dots,pattern color=black]
     (230:1.4) arc[start angle=230,end angle=310,radius=1.4] -- cycle;
   \draw[line width=0.7pt] (230:1.4) -- (310:1.4);
-  \draw[line width=0.55pt] (230:1.4) -- (30:1.4);
+  \draw[line width=0.55pt] (230:1.4) -- (50:1.4);
   \draw[line width=0.5pt] (0,0) circle (0.035);
   \node[anchor=south east] at (-0.02,0.04) {$O$};
   \node[anchor=north east] at (230:1.48) {$A$}; \node[anchor=north] at (310:1.48) {$B$};
-  \node[anchor=west] at (30:1.48) {$C$};
+  \node[anchor=south west] at (50:1.48) {$C$};
   %
 \end{tikzpicture}%
 }
@@ -26851,8 +26858,14 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 % fig-alt: 直角 $\triangle ABC$，$AD\perp BC$，平行线与两四分之一圆，斜线部分
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \fill[pattern=north east lines,pattern color=black!50] (0,2) arc[start angle=90,end angle=0,radius=2] -- (0,0) -- cycle;
-  \fill[pattern=north east lines,pattern color=black!50] (4,2) arc[start angle=90,end angle=180,radius=2] -- (4,0) -- cycle;
+  \fill[pattern=north west lines,pattern color=black!55]
+    (0,2) arc[start angle=90,end angle=45,radius=2] -- (0,0) -- cycle;
+  \fill[pattern=north west lines,pattern color=black!55]
+    (1.414,1.414) arc[start angle=45,end angle=0,radius=2] -- (1.414,0) -- cycle;
+  \fill[pattern=north west lines,pattern color=black!55]
+    (4,2) arc[start angle=90,end angle=135,radius=2] -- (4,0) -- cycle;
+  \fill[pattern=north west lines,pattern color=black!55]
+    (2.586,1.414) arc[start angle=135,end angle=180,radius=2] -- (2.586,0) -- cycle;
   \draw[line width=0.7pt] (0,0) -- (4,0) (0,0) -- (0,2) (4,0) -- (4,2) (2,2) -- (2,0);
   \draw[line width=0.7pt] (2,2) -- (0,0) (2,2) -- (4,0);
   \draw[line width=0.55pt] (1.414,1.414) -- (1.414,0) (2.586,1.414) -- (2.586,0);
