@@ -25473,7 +25473,7 @@ A _ {1} M = \frac {A _ {1} A _ {2}}{2} = \frac {\sqrt {5} - 1}{4} R\text{，}
   \draw[line width=0.75pt] (0,0) circle (1.42);
   \foreach \i in {0,...,9} \draw[line width=0.55pt] ({-108+\i*36}:1.42) -- ({-108+(\i+1)*36}:1.42);
   \draw[line width=0.5pt] (0,0) -- (-108:1.42) (0,0) -- (-72:1.42) (0,0) -- (0,-1.35);
-  \node[anchor=south] at (0,0.05) {$O$}; \node at (-100:0.72) {$R$}; \node at (-80:0.72) {$R$};
+  \node[anchor=south] at (0,0.05) {$O$}; \node[anchor=east] at (-118:0.78) {$R$}; \node[anchor=west] at (-62:0.78) {$R$};
   \node[anchor=north] at (0,-1.36) {$M$};
   \node[anchor=north east] at (-108:1.5) {$A_1$}; \node[anchor=north west] at (-72:1.5) {$A_2$};
   \node[anchor=north west] at (-36:1.5) {$A_3$}; \node[anchor=west] at (0:1.5) {$A_4$};
@@ -25636,10 +25636,10 @@ O A _ {1} ^ {2} = A _ {1} M ^ {2} + O M ^ {2}\text{，}
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) rectangle (1.8,1.8);
-  \fill[pattern=north east lines,pattern color=black!50] (0,1.8) arc[start angle=180,delta angle=90,radius=0.9] arc[start angle=0,delta angle=90,radius=0.9];
-  \fill[pattern=north east lines,pattern color=black!50] (1.8,1.8) arc[start angle=0,delta angle=-90,radius=0.9] arc[start angle=180,delta angle=-90,radius=0.9];
-  \fill[pattern=north east lines,pattern color=black!50] (0,0) arc[start angle=-90,delta angle=90,radius=0.9] arc[start angle=90,delta angle=90,radius=0.9];
-  \fill[pattern=north east lines,pattern color=black!50] (1.8,0) arc[start angle=0,delta angle=90,radius=0.9] arc[start angle=180,delta angle=90,radius=0.9];
+  \fill[pattern=horizontal lines,pattern color=black!55] (0,1.8) arc[start angle=180,delta angle=90,radius=0.9] arc[start angle=0,delta angle=90,radius=0.9];
+  \fill[pattern=horizontal lines,pattern color=black!55] (1.8,1.8) arc[start angle=0,delta angle=-90,radius=0.9] arc[start angle=180,delta angle=-90,radius=0.9];
+  \fill[pattern=horizontal lines,pattern color=black!55] (0,0) arc[start angle=-90,delta angle=90,radius=0.9] arc[start angle=90,delta angle=90,radius=0.9];
+  \fill[pattern=horizontal lines,pattern color=black!55] (1.8,0) arc[start angle=0,delta angle=90,radius=0.9] arc[start angle=180,delta angle=90,radius=0.9];
   \draw[line width=0.6pt] (0,0) arc[start angle=-90,end angle=90,radius=0.9];
   \draw[line width=0.6pt] (1.8,1.8) arc[start angle=90,end angle=270,radius=0.9];
   \draw[line width=0.6pt] (0,1.8) arc[start angle=180,end angle=360,radius=0.9];
@@ -25847,7 +25847,7 @@ C B ^ {2} = (C D + D B) ^ {2} = C D ^ {2} + 2 C D \cdot D B + D B ^ {2}\text{，
   \node[anchor=south] at (0,0.05) {$O$};
   \node[anchor=north east] at (-120:1.52) {$A$};
   \node[anchor=north west] at (-60:1.52) {$B$};
-  \node at (-85:0.75) {$R$};
+  \node[anchor=west] at (-60:0.72) {$R$};
   \node at (-90:1.68) {$m$};
   \node at (-90:2.00) {$\alpha^{\circ}$};
 \end{tikzpicture}%
@@ -25944,7 +25944,7 @@ C B ^ {2} = (C D + D B) ^ {2} = C D ^ {2} + 2 C D \cdot D B + D B ^ {2}\text{，
   \draw[line width=0.75pt] (0:1.5) -- (60:1.5) -- (120:1.5) -- (180:1.5) -- (240:1.5) -- (300:1.5) -- cycle;
   \foreach \a in {0,60,...,300}
     \draw[line width=0.65pt] ($({\a}:1.5)+({\a+120}:0.75)$) arc[start angle=\a+120,end angle=\a+240,radius=0.75];
-  \draw[line width=0.4pt] (240:1.5) ++(150:0.38) arc[start angle=150,end angle=30,radius=0.38];
+  \draw[line width=0.4pt] (240:1.5) ++(0:0.36) arc[start angle=0,end angle=120,radius=0.36];
   \node at (0,0) {$S$};
   \node[anchor=north east] at (240:1.58) {$A_1$};
   \node[anchor=north west] at (300:1.58) {$A_2$};
@@ -25954,7 +25954,7 @@ C B ^ {2} = (C D + D B) ^ {2} = C D ^ {2} + 2 C D \cdot D B + D B ^ {2}\text{，
   \node[anchor=east] at (180:1.62) {$A_6$};
   \node[anchor=north] at (270:1.38) {$M$};
   \node[anchor=east] at (210:1.38) {$N$};
-  \node at (250:1.05) {$120^{\circ}$};
+  \node at ($(240:1.5)+(60:0.54)$) {$120^{\circ}$};
   \node[anchor=north] at (255:1.62) {$\dfrac{a}{2}$};
   %
   %
@@ -26006,12 +26006,13 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 % fig-alt: 图5·20：扇形 $OAB$，$75^{\circ}$，半径 $R$，弧 $l$
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.75pt] (0,0) -- (2.2,0) arc[start angle=0,end angle=75,radius=2.2] -- cycle;
+  \draw[line width=0.75pt] (2.2,0) arc[start angle=0,end angle=75,radius=2.2] -- (0,0);
+  \draw[line width=0.75pt,->] (0,0) -- (2.2,0);
   \node[anchor=east] at (0,0) {$O$};
-  \node[anchor=west] at (2.2,0) {$A$};
+  \node[anchor=west] at (2.28,0) {$A$};
   \node[anchor=south] at (75:2.25) {$B$};
   \node at (1.1,-0.22) {$R$};
-  \node at (40:1.15) {$R$};
+  \node[anchor=east] at (0.16,1.18) {$R$};
   \node at (18:0.55) {$75^{\circ}$};
   \node at (35:2.45) {$l$};
 \end{tikzpicture}%
@@ -26061,8 +26062,8 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
   \draw[line width=0.75pt] (0,0) rectangle (1.8,1.8);
   \fill[pattern=vertical lines,pattern color=black!60] (0,1.8) -- (0,0) arc[start angle=180,end angle=90,radius=1.8] -- cycle;
   \draw[line width=0.65pt] (1.8,1.8) arc[start angle=90,end angle=180,radius=1.8];
-  \draw[line width=0.5pt] (0,0) -- (1.8,1.8);
-  \node at (0.7,0.95) {$r$};
+  \draw[line width=0.5pt] (0,0) -- (0.55,0.55) (1.25,1.25) -- (1.8,1.8);
+  \node at (0.90,0.90) {$r$};
 \end{tikzpicture}%
 }
 \caption{(1)}
@@ -26121,6 +26122,10 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
   \coordinate (O1) at (0,1.50);
   \coordinate (O2) at (-0.87,0);
   \coordinate (O3) at (0.87,0);
+  \fill[pattern=horizontal lines,pattern color=black!60]
+    (-0.435,0.75) arc[start angle=-120,delta angle=60,radius=0.87]
+    arc[start angle=120,delta angle=60,radius=0.87]
+    arc[start angle=0,delta angle=60,radius=0.87] -- cycle;
   \draw[line width=0.75pt] (O1) circle (0.87);
   \draw[line width=0.75pt] (O2) circle (0.87);
   \draw[line width=0.75pt] (O3) circle (0.87);
@@ -26150,10 +26155,13 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
   \draw[line width=0.75pt] (0,0) -- (1.6,0) -- (1.6,2.186) arc[start angle=60,end angle=120,radius=1.6] -- (0,2.186) -- cycle;
   \draw[line width=0.45pt] (0.8,0.8) -- (1.6,2.186) (0.8,0.8) -- (0,2.186);
   \draw[line width=0.4pt] (0.8,0.8) ++(60:0.32) arc[start angle=60,end angle=120,radius=0.32];
-  \draw[line width=0.4pt] (0.8,2.40) -- (0.8,0);
-  \node at (1.15,1.05) {$60^{\circ}$}; \node at (1.15,1.55) {$2.4$\,m};
-  \draw[line width=0.4pt] (0,-0.16) -- (1.6,-0.16);
-  \node[anchor=north] at (0.8,-0.18) {$1.6$\,m};
+  \draw[->] (0.8,1.42) -- (0.8,2.40);
+  \draw[->] (0.8,0.48) -- (0.8,0);
+  \node at (1.16,1.18) {$60^{\circ}$};
+  \node[anchor=west] at (0.88,0.26) {$2.4$\,m};
+  \draw[<->] (0,-0.28) -- (1.6,-0.28);
+  \draw (0,0) -- (0,-0.28) (1.6,0) -- (1.6,-0.28);
+  \node[anchor=north] at (0.8,-0.30) {$1.6$\,m};
 \end{tikzpicture}%
 }
 \caption{(第6题)}
@@ -26165,17 +26173,22 @@ l = \widehat {A B} \text { \text{的长} } = \frac {75 \cdot \pi R}{180}.
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize,x=0.012cm,y=0.012cm]
   \fill[pattern=north east lines,pattern color=black!45]
-    (0,320) -- (460,320) -- (460,0) -- (360,0) -- (360,220) -- (0,220) -- cycle;
+    (0,320) -- (460,320) -- (460,0) -- (360,0) -- (360,165)
+    arc[start angle=0,end angle=90,radius=55] -- (0,220) -- cycle;
   \draw[line width=0.7pt]
-    (0,320) -- (460,320) -- (460,0) -- (360,0) -- (360,220) -- (0,220) -- cycle;
-  \draw[line width=0.4pt] (0,335) -- (460,335);
-  \node[anchor=south] at (230,335) {$460$};
-  \draw[line width=0.4pt] (475,320) -- (475,0);
-  \node[anchor=west] at (475,160) {$320$};
-  \node at (50,270) {$100$};
-  \node at (410,50) {$100$};
-  \draw[line width=0.4pt] (360,220) -- (330,220) -- (330,190);
-  \node at (300,190) {$90^{\circ}$};
+    (0,320) -- (460,320) -- (460,0) -- (360,0) -- (360,165)
+    arc[start angle=0,end angle=90,radius=55] -- (0,220) -- cycle;
+  \draw[<->] (0,348) -- (460,348);
+  \node[anchor=south] at (230,348) {$460$};
+  \draw[<->] (488,0) -- (488,320);
+  \node[anchor=west] at (488,160) {$320$};
+  \draw[<->] (-18,220) -- (-18,320);
+  \node[anchor=east] at (-18,270) {$100$};
+  \draw[<->] (360,-18) -- (460,-18);
+  \node[anchor=north] at (410,-18) {$100$};
+  \draw[dash pattern=on 2pt off 1.4pt] (305,165) -- (360,165) (305,165) -- (305,220);
+  \draw[->] (305,165) -- (344,204);
+  \node[anchor=north east] at (300,158) {$90^{\circ}$};
 \end{tikzpicture}%
 }
 \caption{(第7题)}
@@ -26423,10 +26436,11 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
   \draw[line width=0.55pt] (-1.35,0) -- (1.35,0) (0,1.35) -- (0,-1.35);
   \draw[line width=0.65pt] (-1.35,0) arc[start angle=135,end angle=45,radius=1.909];
   \draw[line width=0.4pt] (0,-1.35) -- (-1.35,0) (0,-1.35) -- (1.35,0);
+  \draw[line width=0.55pt] (-1.35,0) -- (0,1.35) (1.35,0) -- (0,1.35);
   \draw[line width=0.4pt] (0,-1.35) ++(60:0.32) arc[start angle=60,end angle=120,radius=0.32];
   \node[anchor=east] at (-1.35,0) {$A$}; \node[anchor=west] at (1.35,0) {$B$};
-  \node[anchor=south] at (0,1.35) {$D$}; \node[anchor=north] at (0,-1.42) {$C$};
-  \node[anchor=south west] at (0.08,0.08) {$O$}; \node[anchor=south] at (0,0.62) {$E$};
+  \node[anchor=south] at (0,1.38) {$D$}; \node[anchor=north] at (0,-1.42) {$C$};
+  \node[anchor=south west] at (0.08,0.08) {$O$}; \node[anchor=west] at (0.07,0.56) {$E$};
   \node at (0,-0.95) {$90^{\circ}$};
   %
 \end{tikzpicture}%
@@ -26469,15 +26483,16 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 % fig-alt: 圆管截面，水深 $6\mathrm{cm}$，半径 $R$，弦 $AB$
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \fill[pattern=north east lines,pattern color=black!40]
+  \fill[pattern=horizontal lines,pattern color=black!55]
     (210:1.5) arc[start angle=210,end angle=330,radius=1.5] -- cycle;
   \draw[line width=0.75pt] (0,0) circle (1.5);
   \draw[line width=0.7pt] (210:1.5) -- (330:1.5);
   \draw[line width=0.45pt,dash pattern=on 2pt off 1.4pt] (0,0) -- (210:1.5) (0,0) -- (330:1.5);
-  \draw[line width=0.45pt] (0,-0.75) -- (0,-1.5);
-  \node[anchor=south] at (0,0.06) {$O$}; \node at (25:0.75) {$R$};
+  \draw[<->] (0,-0.75) -- (0,-1.48);
+  \node[anchor=south] at (0,0.06) {$O$};
+  \node[anchor=south] at (318:0.88) {$R$};
   \node[anchor=east] at (210:1.55) {$A$}; \node[anchor=west] at (330:1.55) {$B$};
-  \node at (-0.28,-1.12) {$6$\,cm};
+  \node[anchor=east] at (-0.06,-1.12) {$6$\,cm};
   %
   %
 \end{tikzpicture}%
@@ -26491,13 +26506,14 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.4);
-  \fill[pattern=north east lines,pattern color=black!50]
-    (250:1.4) arc[start angle=250,end angle=290,radius=1.4] -- cycle;
-  \draw[line width=0.7pt] (250:1.4) -- (290:1.4);
-  \draw[line width=0.55pt] (0,0) -- (330:1.4);
-  \node at (0.12,0.12) {$O$};
-  \node[anchor=north east] at (250:1.45) {$A$}; \node[anchor=north west] at (290:1.45) {$B$};
-  \node[anchor=west] at (330:1.45) {$C$};
+  \fill[pattern=dots,pattern color=black]
+    (230:1.4) arc[start angle=230,end angle=310,radius=1.4] -- cycle;
+  \draw[line width=0.7pt] (230:1.4) -- (310:1.4);
+  \draw[line width=0.55pt] (230:1.4) -- (30:1.4);
+  \draw[line width=0.5pt] (0,0) circle (0.035);
+  \node[anchor=south east] at (-0.02,0.04) {$O$};
+  \node[anchor=north east] at (230:1.48) {$A$}; \node[anchor=north] at (310:1.48) {$B$};
+  \node[anchor=west] at (30:1.48) {$C$};
   %
 \end{tikzpicture}%
 }
@@ -26519,13 +26535,13 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.45);
-  \draw[line width=0.7pt] (0.725,0) circle (0.725);
-  \draw[line width=0.55pt] (200:1.45) -- (0:1.45);
-  \node[anchor=south] at (-0.05,0.06) {$O$};
-  \node[anchor=south] at (0.725,0.06) {$O'$};
-  \node[anchor=west] at (1.45,0) {$A$};
-  \node[anchor=east] at (200:1.5) {$B$};
-  \node at (0.95,0.35) {$\alpha$};
+  \draw[line width=0.7pt] (-20:0.725) circle (0.725);
+  \draw[line width=0.55pt,->] (200:1.45) -- (-20:1.45);
+  \draw[line width=0.5pt] (0,0) -- (-20:1.45);
+  \node[anchor=south] at (-0.02,0.04) {$O$};
+  \node[anchor=south] at (-20:0.78) {$O'$};
+  \node[anchor=west] at (-20:1.52) {$A$};
+  \node[anchor=east] at (200:1.52) {$B$};
   %
   %
 \end{tikzpicture}%
@@ -26569,7 +26585,7 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (180:1.6) -- (0:1.6) arc[start angle=0,end angle=180,radius=1.6];
   \fill[pattern=horizontal lines,pattern color=black!55]
-    (120:1.6) -- (60:1.6) -- (0:1.6) arc[start angle=0,end angle=120,radius=1.6] -- cycle;
+    (0:1.6) -- (120:1.6) -- (60:1.6) arc[start angle=60,delta angle=-60,radius=1.6] -- cycle;
   \draw[line width=0.55pt] (0,0) -- (120:1.6) (0,0) -- (60:1.6);
   \draw[line width=0.6pt] (120:1.6) -- (60:1.6) (120:1.6) -- (0:1.6) (60:1.6) -- (0:1.6);
   \node[anchor=east] at (180:1.6) {$A$}; \node[anchor=west] at (0:1.6) {$B$};
@@ -26590,12 +26606,12 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 \begin{tikzpicture}[line cap=round,line join=round]
   \fill[pattern=north east lines,pattern color=black!50]
     (150:1.5) arc[start angle=150,end angle=30,radius=1.5] -- cycle;
-  \draw[line width=0.75pt] (150:1.5) arc[start angle=150,end angle=30,radius=1.5];
+  \draw[line width=0.75pt] (210:1.5) arc[start angle=210,delta angle=-240,radius=1.5];
   \draw[line width=0.7pt] (150:1.5) -- (30:1.5);
   \draw[line width=0.55pt] (0,0) -- (150:1.5) (0,0) -- (30:1.5) (0,0) -- (90:1.5);
   \node[anchor=east] at (150:1.55) {$A$}; \node[anchor=west] at (30:1.55) {$B$};
   \node[anchor=north] at (0,0) {$O$};
-  \node[anchor=north] at (90:0.75) {$D$};
+  \node[anchor=south west] at (0.08,0.74) {$D$};
   %
   %
   %
@@ -26716,6 +26732,8 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
   \draw[line width=0.75pt] (0.55,0) arc[start angle=-120,delta angle=-120,radius=0.52]
     -- (3.35,0.9) arc[start angle=60,delta angle=-120,radius=0.52] -- cycle;
   \draw[line width=0.6pt] (0.55,0) -- (0.55,0.9) (3.35,0) -- (3.35,0.9);
+  \draw[line width=0.45pt] (0.55,0) -- (0.81,0.45) -- (0.55,0.9);
+  \draw[line width=0.45pt] (3.35,0.9) -- (3.09,0.45) -- (3.35,0);
 \end{tikzpicture}%
 }
 \caption{(第1题)}
@@ -26759,9 +26777,9 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
   \draw[line width=0.8pt] (2.2,0) arc[start angle=0,end angle=60,radius=2.2];
   \draw[line width=0.8pt] (1.1,1.905) arc[start angle=120,end angle=180,radius=2.2];
   \draw[line width=0.8pt] (0,0) arc[start angle=240,end angle=300,radius=2.2];
-  \node at (1.1,-0.28) {$r$};
-  \node at (0.15,0.85) {$r$};
-  \node at (2.05,0.85) {$r$};
+  \node[anchor=south] at (1.1,0.04) {$r$};
+  \node at (0.70,0.72) {$r$};
+  \node at (1.50,0.72) {$r$};
   %
   %
 \end{tikzpicture}%
@@ -26774,27 +26792,29 @@ C A = \sqrt {O A ^ {2} + O C ^ {2}} = \sqrt {2} R.
 % fig-alt: 同心三圆，交错象限阴影
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) circle (0.45);
-  \draw[line width=0.75pt] (0,0) circle (1.05);
-  \draw[line width=0.75pt] (0,0) circle (1.65);
-  \draw[line width=0.55pt] (-1.65,0) -- (1.65,0);
-  \draw[line width=0.55pt] (0,-1.65) -- (0,1.65);
   \fill[pattern=north east lines,pattern color=black!50]
-    (180:0.45) arc[start angle=180,end angle=360,radius=0.45]
-    -- (0:1.05) arc[start angle=0,end angle=180,radius=1.05] -- cycle;
+    (180:0.48) arc[start angle=180,end angle=360,radius=0.48] -- cycle;
   \fill[pattern=north east lines,pattern color=black!50]
-    (90:0.45) arc[start angle=90,end angle=0,radius=0.45]
-    -- (0:1.05) arc[start angle=0,end angle=90,radius=1.05] -- cycle;
+    (0:0.48) arc[start angle=0,delta angle=90,radius=0.48]
+    -- (90:1.44) arc[start angle=90,delta angle=-90,radius=1.44] -- cycle;
   \fill[pattern=north east lines,pattern color=black!50]
-    (0:1.05) arc[start angle=0,end angle=-90,radius=1.05]
-    -- (270:1.65) arc[start angle=-90,end angle=0,radius=1.65] -- cycle;
-  \node[anchor=south west] at (0,0) {$O$};
-  \node[anchor=east] at (-0.45,0) {$A$};
-  \node[anchor=east] at (-1.05,0) {$B$};
-  \node[anchor=east] at (-1.65,0) {$C$};
-  \node[anchor=west] at (1.65,0) {$D$};
-  \node[anchor=south] at (0,1.65) {$E$};
-  \node[anchor=north] at (0,-1.65) {$F$};
+    (180:0.48) arc[start angle=180,delta angle=90,radius=0.48]
+    -- (270:1.44) arc[start angle=270,delta angle=-90,radius=1.44] -- cycle;
+  \fill[pattern=north east lines,pattern color=black!50]
+    (0:1.44) arc[start angle=0,delta angle=-90,radius=1.44]
+    -- (270:2.40) arc[start angle=270,delta angle=90,radius=2.40] -- cycle;
+  \draw[line width=0.75pt] (0,0) circle (0.48);
+  \draw[line width=0.75pt] (0,0) circle (1.44);
+  \draw[line width=0.75pt] (0,0) circle (2.40);
+  \draw[line width=0.55pt] (-2.40,0) -- (2.40,0);
+  \draw[line width=0.55pt] (0,-2.40) -- (0,2.40);
+  \node[anchor=south west] at (0.03,0.03) {$O$};
+  \node[anchor=east] at (180:0.48) {$A$};
+  \node[anchor=east] at (180:1.44) {$B$};
+  \node[anchor=east] at (180:2.48) {$C$};
+  \node[anchor=west] at (0:2.48) {$D$};
+  \node[anchor=south] at (90:2.48) {$E$};
+  \node[anchor=north] at (270:2.48) {$F$};
 \end{tikzpicture}%
 }
 \caption{(第7题)}
@@ -26837,12 +26857,12 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 % fig-alt: 两等圆相交成葫芦形 $A,C$ 为交点
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (-0.70,0) circle (1.15);
-  \draw[line width=0.75pt] (0.70,0) circle (1.15);
-  \node[anchor=south] at (0,0.90) {$A$};
-  \node[anchor=north] at (0,-0.90) {$C$};
-  \node at (-0.70,0) {$B$};
-  \node at (0.70,0) {$D$};
+  \draw[line width=0.75pt] (-0.813,0) ++(45:1.15) arc[start angle=45,delta angle=270,radius=1.15];
+  \draw[line width=0.75pt] (0.813,0) ++(135:1.15) arc[start angle=135,delta angle=-270,radius=1.15];
+  \node[anchor=south] at (0,0.82) {$A$};
+  \node[anchor=north] at (0,-0.82) {$C$};
+  \node at (-0.813,0) {$B$};
+  \node at (0.813,0) {$D$};
 \end{tikzpicture}%
 }
 \caption{(第9题)}
@@ -26895,24 +26915,21 @@ AC， BC = 20 cm， AD ⊥ BC， EB ∥ FM ∥ GN ∥ HC。 求图中画斜线�
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (1.300,2.252) -- (0,0) -- (2.600,0) -- cycle;
+  \fill[pattern=north east lines,pattern color=black!55]
+    (0.433,0) -- (1.300,0)
+    arc[start angle=-90,delta angle=-60,radius=0.751]
+    arc[start angle=30,delta angle=-120,radius=0.250] -- cycle;
   \draw[line width=0.7pt] (1.300,0.751) circle (0.751);
   \draw[line width=0.65pt] (0.433,0.250) circle (0.250);
   \draw[line width=0.45pt] (1.300,0.751) -- (1.300,0);
-  \begin{scope}
-    \clip (0.217,0.375) -- (1.300,0) -- (0.433,0) -- cycle;
-    \fill[pattern=north east lines,pattern color=black!55] (0.217,0.375) -- (1.300,0) -- (0.433,0) -- cycle;
-    \fill[white] (0.433,0.250) circle (0.250);
-    \fill[white] (1.300,0.751) circle (0.751);
-  \end{scope}
-  \draw[line width=0.65pt] (0.433,0.250) circle (0.250);
-  \draw[line width=0.7pt] (1.300,0.751) circle (0.751);
+  \draw[line width=0.45pt] (0.433,0.250) -- (1.300,0.751);
   \node[anchor=south] at (1.300,2.252) {$A$};
   \node[anchor=north east] at (0,0) {$B$};
   \node[anchor=north west] at (2.600,0) {$C$};
   \node[anchor=south] at (1.300,0.751) {$O$};
-  \node[anchor=east] at (0.22,0.48) {$O'$};
-  \node[anchor=south east] at (0.217,0.375) {$T$};
-  \node[anchor=north] at (0.50,0) {$E$};
+  \node at (0.40,0.33) {$O'$};
+  \node[anchor=south] at (0.78,0.50) {$T$};
+  \node[anchor=north west] at (0.433,0) {$E$};
   \node[anchor=north] at (1.300,0) {$D$};
 \end{tikzpicture}
 }
