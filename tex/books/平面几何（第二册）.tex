@@ -19890,7 +19890,7 @@ DE^2:DF^2 = DA^2:DC^2\text{。}
   \draw[dashed,line width=0.6pt] (B) -- (T1);
   \draw[dashed,line width=0.6pt] (B) -- (T2);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
-  \draw[line width=0.75pt] (C) -- (Ap);
+  \draw[line width=0.75pt] (C) -- (Ap) (Ap) -- (Cp);
   \draw[line width=0.75pt] (A) -- (Bp);
   \draw[line width=0.75pt] (B) -- (Cp);
   \node[anchor=west,inner sep=1.5pt] at (A) {$A$};
@@ -20409,7 +20409,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 % fig-alt: 正六边形密铺，部分阴影
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  % 尖顶正六边形密铺。斜线左上到右下，涂格相位按扫描；中行两格为交叉线。
+  % 尖顶正六边形密铺。斜线右上到左下，涂格相位按扫描；中行两格为交叉线。
   \def\R{0.48}
   \pgfmathsetmacro{\dx}{1.7320508*\R}
   \pgfmathsetmacro{\dy}{1.5*\R}
@@ -20419,7 +20419,7 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
       \foreach \col in \cols {
         \pgfmathsetmacro{\ox}{\col*\dx+mod(\row,2)*\dx/2-0.15}
         \pgfmathsetmacro{\oy}{2.48-\row*\dy}
-        \fill[pattern=north west lines,pattern color=black!70] (\ox,\oy)
+        \fill[pattern=north east lines,pattern color=black!70] (\ox,\oy)
           +(90:\R) -- +(30:\R) -- +(-30:\R) -- +(-90:\R) -- +(210:\R) -- +(150:\R) -- cycle;
       }
     }
