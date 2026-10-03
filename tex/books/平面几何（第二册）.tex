@@ -20405,21 +20405,21 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
 % fig-alt: 正六边形密铺，部分阴影
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  % 尖顶正六边形密铺，矩形框；斜线按扫描，中行两格交叉线较密
+  % 尖顶正六边形密铺。斜线左上到右下，涂格相位按扫描；中行两格为交叉线。
   \def\R{0.48}
   \pgfmathsetmacro{\dx}{1.7320508*\R}
   \pgfmathsetmacro{\dy}{1.5*\R}
   \begin{scope}
     \clip (-0.02,-0.02) rectangle (6.72,2.62);
-    \foreach \row/\cols in {0/{0,2,4,6},1/{0,5},2/{1,3,5,7},3/{0,2,4,6}} {
+    \foreach \row/\cols in {0/{1,3,5,7},1/{1,6},2/{0,2,4,6,8},3/{1,3,5,7}} {
       \foreach \col in \cols {
         \pgfmathsetmacro{\ox}{\col*\dx+mod(\row,2)*\dx/2-0.15}
         \pgfmathsetmacro{\oy}{2.48-\row*\dy}
-        \fill[pattern=north east lines,pattern color=black!70] (\ox,\oy)
+        \fill[pattern=north west lines,pattern color=black!70] (\ox,\oy)
           +(90:\R) -- +(30:\R) -- +(-30:\R) -- +(-90:\R) -- +(210:\R) -- +(150:\R) -- cycle;
       }
     }
-    \foreach \col in {2,4} {
+    \foreach \col in {3,5} {
       \pgfmathsetmacro{\ox}{\col*\dx+\dx/2-0.15}
       \pgfmathsetmacro{\oy}{2.48-\dy}
       \fill[pattern=crosshatch,pattern color=black!85] (\ox,\oy)
@@ -20463,6 +20463,8 @@ FH。 连结 I、E、B、D、G、K。 因为 \(IE \parallel BD \parallel GK\)，
         .. controls (1.42,1.62) and (1.52,1.78) .. (R);
   \draw[line width=0.6pt] (L) .. controls (-1.92,2.02) and (-1.98,2.16) .. (-1.78,2.24);
   \draw[line width=0.6pt] (R) .. controls (1.82,2.12) and (1.92,2.26) .. (1.74,2.34);
+  % 中柱，自宝顶贯至台面
+  \draw[line width=0.6pt] (0,3.42) -- (0,0.10);
   % columns and rail
   \draw[line width=0.55pt] (-1.22,1.46) -- (-1.28,0.22);
   \draw[line width=0.55pt] (-0.42,1.28) -- (-0.42,0.02);
