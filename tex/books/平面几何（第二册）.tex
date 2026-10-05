@@ -21141,7 +21141,7 @@ AB、BC、CD、DE、EF、FA，它们的垂足各为 M、N、P、Q、R、S。过
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·9 正五边形ABCDE内接于圆O；虚线OA,OB,OC,OD；∠OBC=∠OCB单弧，∠ABO=∠OCD双弧
+% fig-alt: 图4·9 正五边形ABCDE内接于圆O；虚线OA,OB,OC,OD；∠OBC=∠OCB单弧，∠ABO=∠OCD双弧；AB、DC中点及OB、OC中部各有一短划等长记号
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.05}
   \coordinate (O) at (0,0);
@@ -21166,6 +21166,11 @@ AB、BC、CD、DE、EF、FA，它们的垂足各为 M、N、P、Q、R、S。过
   % ∠OCD double (C: from CO@-162° CW to CD@144°)
   \draw[line width=0.5pt] (C) ++(-162:0.50) arc[start angle=-162, delta angle=-54, radius=0.50];
   \draw[line width=0.5pt] (C) ++(-162:0.58) arc[start angle=-162, delta angle=-54, radius=0.58];
+  % 扫描：AB、DC 中点各一短划，虚线 OB、OC 中部各一短划（等长记号）
+  \draw[line width=0.5pt] ($(A)!0.5!(B)+(90:0.09)$) -- ($(A)!0.5!(B)+(270:0.09)$);
+  \draw[line width=0.5pt] ($(D)!0.5!(C)+(54:0.09)$) -- ($(D)!0.5!(C)+(234:0.09)$);
+  \draw[line width=0.5pt] ($(O)!0.5!(B)+(36:0.09)$) -- ($(O)!0.5!(B)+(216:0.09)$);
+  \draw[line width=0.5pt] ($(O)!0.5!(C)+(108:0.09)$) -- ($(O)!0.5!(C)+(288:0.09)$);
   \fill (O) circle (1.0pt);
   \node[anchor=north east,inner sep=2pt] at (O) {$O$};
   \node[anchor=north east,inner sep=1.2pt] at (A) {$A$};
@@ -21251,7 +21256,7 @@ DE， EA 都相切。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·10 正六边形ABCDEF；外接圆与内切圆同心于O；半径OA等；边心距OL,OM,ON,OP,OQ,OR
+% fig-alt: 图4·10 正六边形ABCDEF；外接圆与内切圆同心于O；半径OA等；边心距OL,OM,ON,OP,OQ,OR；L,M,N,P,Q,R标在内切圆内、垂足旁（沿顺时针一侧）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.05}
   \pgfmathsetmacro{\Rr}{\R*cos(30)}
@@ -21281,12 +21286,13 @@ DE， EA 都相切。
   \node[anchor=south west,inner sep=1pt] at (D) {$D$};
   \node[anchor=south east,inner sep=1pt] at (E) {$E$};
   \node[anchor=east,inner sep=1.5pt] at (F) {$F$};
-  \node[anchor=north,inner sep=1.2pt] at (L) {$L$};
-  \node[anchor=north west,inner sep=0.8pt] at (M) {$M$};
-  \node[anchor=south west,inner sep=0.8pt] at (N) {$N$};
-  \node[anchor=south,inner sep=1.2pt] at (P) {$P$};
-  \node[anchor=south east,inner sep=0.8pt] at (Q) {$Q$};
-  \node[anchor=north east,inner sep=0.8pt] at (R) {$R$};
+  % 扫描：边心距字母都在内切圆内，紧靠垂足、在半径的顺时针一侧
+  \node[inner sep=0pt] at ({263}:{\Rr-0.22}) {$L$};
+  \node[inner sep=0pt] at ({323}:{\Rr-0.22}) {$M$};
+  \node[inner sep=0pt] at ({23}:{\Rr-0.22}) {$N$};
+  \node[inner sep=0pt] at ({83}:{\Rr-0.22}) {$P$};
+  \node[inner sep=0pt] at ({143}:{\Rr-0.22}) {$Q$};
+  \node[inner sep=0pt] at ({203}:{\Rr-0.22}) {$R$};
 \end{tikzpicture}%
 }
 \caption{图4·10}
@@ -21396,7 +21402,7 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第12题）圆O；切线AC切于A；B在圆上且AB=AC=AO；OC交圆于E；BC交圆于F；虚线OB、AB、BC
+% fig-alt: （第12题）圆O；切线AC切于A；B在圆上且AB=AC=AO；OC交圆于E；BC交圆于F；虚线OB、AB、BC、OF；F标在圆内、OF与OE之间；切线向上伸过B
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.05}
   \coordinate (O) at (0,0);
@@ -21404,8 +21410,8 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
   \coordinate (B) at (120:\R);
   \coordinate (C) at (-\R,-\R);
   \coordinate (E) at (225:\R);
-  % tangent through A (extend a bit above A and below C)
-  \draw[line width=0.75pt] (-\R,1.15) -- (-\R,-2.35);
+  % tangent through A（扫描向上伸过 B 的高度，C 下方略伸出）
+  \draw[line width=0.75pt] (-\R,2.50) -- (-\R,-2.85);
   \draw[line width=0.75pt] (O) circle (\R);
   \draw[line width=0.75pt] (O) -- (A);
   \draw[line width=0.75pt] (O) -- (C);
@@ -21413,8 +21419,9 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
   \draw[dashed,line width=0.65pt] (A) -- (B);
   \draw[dashed,line width=0.65pt] (B) -- (C);
   \coordinate (F) at (210:\R);
-  % F 为 BC 与圆的另一交点；扫描无角码，不画 AE、BE
-  \node[anchor=south east,inner sep=1pt] at (210:2.22) {$F$};
+  % F 为 BC 与圆的另一交点；扫描无角码，不画 AE、BE；扫描有虚线 OF，F 字在圆内 OF 与 OE 之间
+  \draw[dashed,line width=0.65pt] (O) -- (F);
+  \node[inner sep=0pt] at (218.5:1.72) {$F$};
   %
   %
   \fill (O) circle (1.0pt);
@@ -21509,7 +21516,7 @@ r 表示一个正多边形的边心距的长度。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·12 正六边形ABCDEF内接于圆O；半径OA等与边心距OL,OM,ON,OP,OQ,OR
+% fig-alt: 图4·12 正六边形ABCDEF内接于圆O；半径OA等与边心距OL,OM,ON,OP,OQ,OR；L,M,N,P,Q,R标在六边形内、垂足旁（沿顺时针一侧）；O在中心右上
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.15}
   \pgfmathsetmacro{\Rr}{\R*cos(30)}
@@ -21531,19 +21538,20 @@ r 表示一个正多边形的边心距的长度。
   \foreach \P in {A,B,C,D,E,F} {\draw[line width=0.65pt] (O) -- (\P);}
   \foreach \P in {L,M,N,P,Q,R} {\draw[line width=0.65pt] (O) -- (\P);}
   \fill (O) circle (1.0pt);
-  \node[anchor=center,inner sep=0pt] at ($(O)+(0.28,-0.18)$) {$O$};
+  \node[fill=white,inner sep=0.5pt] at ($(O)+(0.32,0.19)$) {$O$}; % 扫描 O 在中心右上，压断 ON
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1pt] at (B) {$B$};
   \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
   \node[anchor=south west,inner sep=1pt] at (D) {$D$};
   \node[anchor=south east,inner sep=1pt] at (E) {$E$};
   \node[anchor=east,inner sep=1.5pt] at (F) {$F$};
-  \node[anchor=north,inner sep=1.2pt] at (L) {$L$};
-  \node[anchor=north west,inner sep=0.8pt] at (M) {$M$};
-  \node[anchor=south west,inner sep=0.8pt] at (N) {$N$};
-  \node[anchor=south,inner sep=1.2pt] at (P) {$P$};
-  \node[anchor=south east,inner sep=0.8pt] at (Q) {$Q$};
-  \node[anchor=north east,inner sep=0.8pt] at (R) {$R$};
+  % 扫描：边心距字母都在六边形内，紧靠垂足、在半径的顺时针一侧
+  \node[inner sep=0pt] at ({263}:{\Rr-0.2}) {$L$};
+  \node[inner sep=0pt] at ({323}:{\Rr-0.2}) {$M$};
+  \node[inner sep=0pt] at ({23}:{\Rr-0.2}) {$N$};
+  \node[inner sep=0pt] at ({83}:{\Rr-0.2}) {$P$};
+  \node[inner sep=0pt] at ({143}:{\Rr-0.2}) {$Q$};
+  \node[inner sep=0pt] at ({203}:{\Rr-0.2}) {$R$};
 \end{tikzpicture}%
 }
 \caption{图4·12}
@@ -21552,7 +21560,7 @@ r 表示一个正多边形的边心距的长度。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·13 圆O；弦AB；半径OA、OB；边心距OL；直角标在顶点O（不在L）；OL右侧标r
+% fig-alt: 图4·13 圆O；弦AB；半径OA、OB；边心距OL；直角标在顶点O（不在L）；OL右侧标r；L在OL左侧、弦AB之上
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.15}
   \pgfmathsetmacro{\Rr}{\R*cos(30)}
@@ -21571,7 +21579,7 @@ r 表示一个正多边形的边心距的长度。
   \node[anchor=south,inner sep=1pt] at ($(O)+(0,0.20)$) {$O$};
   \node[anchor=north east,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1.5pt] at (B) {$B$};
-  \node[anchor=east,inner sep=1.5pt] at ($(L)+(-0.18,0.08)$) {$L$};
+  \node[anchor=south east,inner sep=1pt] at ($(L)+(-0.03,0.02)$) {$L$}; % 扫描 L 在 OL 左侧、整字在 AB 之上
   \node[anchor=west,inner sep=1.5pt] at ($(L)!0.55!(O)$) {$r$};
 \end{tikzpicture}%
 }
@@ -21764,7 +21772,7 @@ OL^2+LB^2=OB^2\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·16 正六边形ABCDEF内接于圆O；边心距OL（虚线）⊥AB于L；半径OB标R；∠LOB=30°
+% fig-alt: 图4·16 正六边形ABCDEF内接于圆O；边心距OL（虚线）⊥AB于L；半径OB标R；∠LOB=30°（角弧在下，30°字标在O右侧、OB外）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.15}
   \pgfmathsetmacro{\Rr}{\R*cos(30)}
@@ -21782,7 +21790,7 @@ OL^2+LB^2=OB^2\text{，}
   \draw[line width=0.75pt] (O) -- (B);
   % angle 30° at O between OL (270°) and OB (300°)
   \draw[line width=0.5pt] (270:0.50) arc[start angle=270, end angle=300, radius=0.50];
-  \node[inner sep=0.5pt] at (285:0.82) {$30^{\circ}$};
+  \node[inner sep=0.5pt] at ($(O)+(0.44,-0.04)$) {$30^{\circ}$}; % 扫描字在 O 右侧、OB 之外
   \fill (O) circle (1.0pt);
   \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
@@ -21954,10 +21962,10 @@ r=OL=\sqrt{OB^2-LB^2}=\sqrt{R^2-\left(\frac{R}{2}\right)^2}=\frac{\sqrt{3}}{2}R.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·18 圆O；内接边AB与外切边A'B'；边心距OM、OM'；射线OA'过A、OB'过B；M'为切点；直角方标在顶点O
+% fig-alt: 图4·18 圆O；内接边AB与外切边A'B'；边心距OM、OM'；射线OA'过A、OB'过B；M'为切点；直角方标在顶点O；∠AOB约54°
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.10}
-  \pgfmathsetmacro{\ang}{42}
+  \pgfmathsetmacro{\ang}{27} % 扫描半角约 26°–28°，A'B' 只比 AB 略长
   \coordinate (O) at (0,0);
   \coordinate (A) at ({270-\ang}:\R);
   \coordinate (B) at ({270+\ang}:\R);
@@ -22116,7 +22124,7 @@ a _ {2 n} ^ {2} = 2 R ^ {2} - 2 R \cdot \sqrt {R ^ {2} - \left(\frac {a _ {n}}{2
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·20 圆O内接正方形ABCD（A在底）与正八边形AEBFCGDH；半径OA；边心距OM⊥AE于M
+% fig-alt: 图4·20 圆O内接正方形ABCD（A在底）与正八边形AEBFCGDH；半径OA；边心距OM⊥AE于M；O标在圆心正上方；M在OM右侧
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.15}
   \coordinate (O) at (0,0);
@@ -22130,7 +22138,7 @@ a _ {2 n} ^ {2} = 2 R ^ {2} - 2 R \cdot \sqrt {R ^ {2} - \left(\frac {a _ {n}}{2
   \draw[line width=0.75pt] (O) -- (A);
   \draw[line width=0.75pt] (O) -- (M);
   \fill (O) circle (1.0pt);
-  \node[anchor=north west,inner sep=1pt] at (O) {$O$};
+  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
   \node[anchor=north,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=west,inner sep=1.5pt] at (B) {$B$};
   \node[anchor=south,inner sep=1.5pt] at (C) {$C$};
@@ -22139,7 +22147,7 @@ a _ {2 n} ^ {2} = 2 R ^ {2} - 2 R \cdot \sqrt {R ^ {2} - \left(\frac {a _ {n}}{2
   \node[anchor=south west,inner sep=1pt] at (F) {$F$};
   \node[anchor=south east,inner sep=1pt] at (G) {$G$};
   \node[anchor=north east,inner sep=1pt] at (H) {$H$};
-  \node[anchor=south east,inner sep=1pt] at (M) {$M$};
+  \node[anchor=south west,inner sep=1pt] at ($(M)+(0.03,0.13)$) {$M$}; % 扫描 M 在 OM 右侧、AE 之上
 \end{tikzpicture}%
 }
 \caption{图4·20}
@@ -22174,7 +22182,7 @@ a _ {2 n} ^ {2} = 2 R ^ {2} - 2 R \cdot \sqrt {R ^ {2} - \left(\frac {a _ {n}}{2
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·21 圆O内接正六边形ABCDEF与正十二边形（弧中点G,H,I,J,K,L）；AB=a_6，AG=a_12
+% fig-alt: 图4·21 圆O内接正六边形ABCDEF与正十二边形（弧中点G,H,I,J,K,L）；AB=a_6，AG=a_12；O标在圆心正上方
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.15}
   \coordinate (O) at (0,0);
@@ -22185,7 +22193,7 @@ a _ {2 n} ^ {2} = 2 R ^ {2} - 2 R \cdot \sqrt {R ^ {2} - \left(\frac {a _ {n}}{2
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
   \draw[line width=0.75pt] (A) -- (G) -- (B) -- (H) -- (C) -- (I) -- (D) -- (J) -- (E) -- (K) -- (F) -- (L) -- cycle;
   \fill (O) circle (1.0pt);
-  \node[anchor=south west,inner sep=0.5pt] at (O) {$O$};
+  \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1pt] at (B) {$B$};
   \node[anchor=west,inner sep=1.5pt] at (C) {$C$};
@@ -22250,7 +22258,7 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第5题）正方形ABCD；虚线对角线交于O；以各顶点为心、对角线一半为半径作实弧过O；近角交点E(底左)F(底右)G(右下)H(右上)K(顶右)L(顶左)M(左上)N(左下)；粗线切角NE,FG,HK,LM
+% fig-alt: （第5题）正方形ABCD；虚线对角线交于O；以各顶点为心、对角线一半为半径作虚弧过O；近角交点E(底左)F(底右)G(右下)H(右上)K(顶右)L(顶左)M(左上)N(左下)；粗线切角NE,FG,HK,LM
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\s{2.30}
   \coordinate (A) at (-\s,-\s);
@@ -22272,11 +22280,11 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[dashed,line width=0.55pt] (A) -- (C);
   \draw[dashed,line width=0.55pt] (B) -- (D);
-  % 实弧：以顶点为心、半对角线为半径，过 O，端点为该顶点的远交点
-  \draw[line width=0.55pt] (F) arc[start angle=0, end angle=90, radius=\rr];
-  \draw[line width=0.55pt] (H) arc[start angle=90, end angle=180, radius=\rr];
-  \draw[line width=0.55pt] (L) arc[start angle=180, end angle=270, radius=\rr];
-  \draw[line width=0.55pt] (N) arc[start angle=270, end angle=360, radius=\rr];
+  % 虚弧：以顶点为心、半对角线为半径，过 O，端点为该顶点的远交点（扫描弧上有与对角线同样的 2–4 像素断口）
+  \draw[dashed,line width=0.55pt] (F) arc[start angle=0, end angle=90, radius=\rr];
+  \draw[dashed,line width=0.55pt] (H) arc[start angle=90, end angle=180, radius=\rr];
+  \draw[dashed,line width=0.55pt] (L) arc[start angle=180, end angle=270, radius=\rr];
+  \draw[dashed,line width=0.55pt] (N) arc[start angle=270, end angle=360, radius=\rr];
   % 粗线切去四角
   \draw[line width=1.05pt] (N) -- (E);
   \draw[line width=1.05pt] (F) -- (G);
@@ -22304,7 +22312,7 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第6题）正方形削去四角成正八边形；切角直角边与斜边的尺寸为外向箭头，标x与$\sqrt{2}x$
+% fig-alt: （第6题）正方形削去四角成正八边形；尺寸为外向箭头：顶边与左边上段（切角直角边）标x，左边中段与左上斜切边标$a-2x$（斜边尺寸线在八边形一侧）；左下角无尺寸
 \begin{tikzpicture}[line cap=round,line join=round]
   \pgfmathsetmacro{\x}{0.85}
   \pgfmathsetmacro{\m}{\x*sqrt(2)}
@@ -22333,22 +22341,18 @@ a _ {n} = \frac {1}{R} \sqrt {4 R ^ {2} a _ {2 n} ^ {2} - a _ {2 n} ^ {4}} = \fr
   \draw[line width=0.45pt] (0,\S) -- (-0.44,\S);
   \draw[line width=0.45pt] (0,{\S-\x}) -- (-0.44,{\S-\x});
   \draw[line width=0.45pt] (0,\x) -- (-0.44,\x);
-  \draw[line width=0.45pt] (0,0) -- (-0.44,0);
   \draw[->,line width=0.45pt] (-0.28,{\S-0.5*\x+0.16}) -- (-0.28,\S);
   \draw[->,line width=0.45pt] (-0.28,{\S-0.5*\x-0.16}) -- (-0.28,{\S-\x});
   \node[anchor=east,inner sep=1pt,font=\small] at (-0.34,{\S-0.5*\x}) {$x$};
   \draw[->,line width=0.45pt] (-0.28,{0.5*\S+0.22}) -- (-0.28,{\S-\x});
   \draw[->,line width=0.45pt] (-0.28,{0.5*\S-0.22}) -- (-0.28,\x);
-  \node[anchor=east,inner sep=1pt,font=\small] at (-0.34,{0.5*\S}) {$\sqrt{2}x$};
-  \draw[->,line width=0.45pt] (-0.28,{0.5*\x+0.16}) -- (-0.28,\x);
-  \draw[->,line width=0.45pt] (-0.28,{0.5*\x-0.16}) -- (-0.28,0);
-  \node[anchor=east,inner sep=1pt,font=\small] at (-0.34,{0.5*\x}) {$x$};
-  % 斜切边上的尺寸，箭头沿切边朝外，字在中断处
+  \node[anchor=east,inner sep=1pt,font=\small] at (-0.34,{0.5*\S}) {$a-2x$};
+  % 斜切边上的尺寸在八边形一侧（扫描），箭头沿切边朝外，字在中断处；扫描左边只有 x 与 a-2x 两段
   \coordinate (Q1) at ($(P1)!0.5!(P2)$);
-  \coordinate (Qd) at ($(Q1)+(-0.20,0.20)$);
-  \draw[->,line width=0.45pt] ($(Qd)+(-0.28,-0.28)$) -- ($(Qd)+(-0.50,-0.50)$);
-  \draw[->,line width=0.45pt] ($(Qd)+(0.28,0.28)$) -- ($(Qd)+(0.50,0.50)$);
-  \node[inner sep=0.5pt,font=\small,rotate=45] at (Qd) {$\sqrt{2}x$};
+  \coordinate (Qd) at ($(Q1)+(0.20,-0.20)$);
+  \draw[->,line width=0.45pt] ($(Qd)+(-0.33,-0.33)$) -- ($(Qd)+(-0.46,-0.46)$);
+  \draw[->,line width=0.45pt] ($(Qd)+(0.33,0.33)$) -- ($(Qd)+(0.46,0.46)$);
+  \node[inner sep=0.5pt,font=\footnotesize,rotate=45] at (Qd) {$a-2x$};
 \end{tikzpicture}%
 }
 \caption{（第6题）}
@@ -22444,7 +22448,7 @@ A B = B D = D A = \sqrt {3} R\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第17题）圆O内两正三角形成六角星；交成的正六边形ABCDEF阴影，O在中心
+% fig-alt: （第17题）圆O内两正三角形成六角星；交成的正六边形ABCDEF阴影，O在中心，O字在中心点下方
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.20}
   \coordinate (O) at (0,0);
@@ -22461,7 +22465,7 @@ A B = B D = D A = \sqrt {3} R\text{，}
   \fill[pattern=north east lines,pattern color=black!70] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
   \fill (O) circle (1.0pt);
-  \node[anchor=south,inner sep=1.5pt] at (0,0.12) {$O$};
+  \node[anchor=north,inner sep=2pt] at (O) {$O$};
   \node[anchor=east,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=north east,inner sep=1pt] at (B) {$B$};
   \node[anchor=north west,inner sep=1pt] at (C) {$C$};
