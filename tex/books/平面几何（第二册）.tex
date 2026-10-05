@@ -16765,8 +16765,8 @@ cm （图3·16）。
   \draw[line width=0.75pt] (B) -- (D);
   \draw[line width=0.75pt] (D) -- (Dp);
   \draw[line width=0.55pt] (Dp) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
-  \coordinate (Ob) at ($(O)!0.18!(B)$);
-  \coordinate (Oc) at ($(O)!0.18!(C)$);
+  \coordinate (Ob) at ($(O)!0.16cm!(B)$);
+  \coordinate (Oc) at ($(O)!0.16cm!(C)$);
   \coordinate (Obc) at ($(Ob)+(Oc)-(O)$);
   \draw[line width=0.55pt] (Ob) -- (Obc) -- (Oc);
   \pgfmathsetmacro{\angBD}{atan2(\side*sin(\ang), \side*cos(\ang)-\side)}
@@ -16898,21 +16898,21 @@ h _ {b} = \frac {2}{b} \sqrt {s (s - a) (s - b) (s - c)}.
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (C) at (0,0);
   \coordinate (A) at (4.40,0);
-  \coordinate (B) at (3.20,2.85);
-  \pgfmathsetmacro{\lena}{veclen(3.20-0,2.85-0)}
+  \coordinate (B) at (3.61,3.24);
+  \pgfmathsetmacro{\lena}{veclen(3.61-0,3.24-0)}
   \pgfmathsetmacro{\lenb}{veclen(4.40-0,0-0)}
-  \pgfmathsetmacro{\lenc}{veclen(3.20-4.40,2.85-0)}
-  \pgfmathsetmacro{\ox}{(\lena*4.40 + \lenb*3.20 + \lenc*0)/(\lena+\lenb+\lenc)}
-  \pgfmathsetmacro{\oy}{(\lena*0 + \lenb*2.85 + \lenc*0)/(\lena+\lenb+\lenc)}
+  \pgfmathsetmacro{\lenc}{veclen(3.61-4.40,3.24-0)}
+  \pgfmathsetmacro{\ox}{(\lena*4.40 + \lenb*3.61 + \lenc*0)/(\lena+\lenb+\lenc)}
+  \pgfmathsetmacro{\oy}{(\lena*0 + \lenb*3.24 + \lenc*0)/(\lena+\lenb+\lenc)}
   \coordinate (O) at (\ox,\oy);
   \pgfmathsetmacro{\rr}{\oy}
   \coordinate (E) at (\ox,0);
-  \pgfmathsetmacro{\bcx}{3.20}
-  \pgfmathsetmacro{\bcy}{2.85}
+  \pgfmathsetmacro{\bcx}{3.61}
+  \pgfmathsetmacro{\bcy}{3.24}
   \pgfmathsetmacro{\tb}{((\ox-0)*\bcx + (\oy-0)*\bcy)/(\bcx*\bcx+\bcy*\bcy)}
   \coordinate (D) at ({\tb*\bcx},{\tb*\bcy});
-  \pgfmathsetmacro{\abx}{3.20-4.40}
-  \pgfmathsetmacro{\aby}{2.85-0}
+  \pgfmathsetmacro{\abx}{3.61-4.40}
+  \pgfmathsetmacro{\aby}{3.24-0}
   \pgfmathsetmacro{\ta}{((\ox-4.40)*\abx + (\oy-0)*\aby)/(\abx*\abx+\aby*\aby)}
   \coordinate (F) at ({4.40+\ta*\abx},{\ta*\aby});
   \draw[line width=0.75pt] (C) -- (A) -- (B) -- cycle;
@@ -17048,8 +17048,8 @@ s - c = 22 - 20 = 2.
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0,0);
   \coordinate (C) at (4.20,0);
-  \coordinate (A) at (0.95,2.05);
-  \coordinate (D) at (3.05,2.05);
+  \coordinate (A) at (0.46,3.46);
+  \coordinate (D) at (3.27,3.46);
   \coordinate (O) at (intersection of A--C and B--D);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[line width=0.75pt] (A) -- (C);
@@ -17139,7 +17139,7 @@ s - c = 22 - 20 = 2.
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0,0);
   \coordinate (C) at (4.60,0);
-  \coordinate (A) at (1.85,3.35);
+  \coordinate (A) at (3.20,3.62);
   \coordinate (D) at ($(A)!{1/3}!(B)$);
   \coordinate (E) at ($(B)!{1/3}!(C)$);
   \coordinate (F) at ($(C)!{1/3}!(A)$);
@@ -17319,10 +17319,10 @@ s - c = 22 - 20 = 2.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第16题）扁菱形ABCD（∠A锐）；对角AC、BD；虚高DE⊥AB于E，直角方在DE左侧，E紧邻B
+% fig-alt: （第16题）菱形ABCD（∠A约30°，与扫描及答数一致）；对角AC、BD；虚高DE⊥AB于E，直角方在DE左侧，E紧邻B
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\side{3.80}
-  \def\ang{20}
+  \def\ang{30}
   \coordinate (A) at (0,0);
   \coordinate (B) at (\side,0);
   \coordinate (D) at ({\side*cos(\ang)},{\side*sin(\ang)});
@@ -17536,22 +17536,22 @@ s = \frac {1}{2} (13 + 14 + 15) = 21.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·19 梯形ABCD（A左下B右下、D与C在上底）；A'在顶边向左延长；仅AA'为虚线，AD/DD'/CC'/AC及顶边皆实线
+% fig-alt: 图3·19 梯形ABCD（A左下B右下、D与C在上底）；A'在顶边向左延长；AA'与AC为虚线（扫描约10px画、2px隔），AD/DD'/CC'及顶边实线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5.20,0);
-  \coordinate (Dp) at (1.35,0);
-  \coordinate (Cp) at (3.85,0);
-  \coordinate (D) at (1.35,2.15);
-  \coordinate (C) at (3.85,2.15);
-  \coordinate (Ap) at (0,2.15);
+  \coordinate (Dp) at (0.89,0);
+  \coordinate (Cp) at (3.34,0);
+  \coordinate (D) at (0.89,2.66);
+  \coordinate (C) at (3.34,2.66);
+  \coordinate (Ap) at (0,2.66);
   \draw[line width=0.75pt] (A) -- (B);
   \draw[line width=0.75pt] (A) -- (D) -- (C) -- (B);
   \draw[line width=0.75pt] (D) -- (Dp);
   \draw[dashed,line width=0.6pt] (A) -- (Ap);
   \draw[line width=0.75pt] (Ap) -- (D);
   \draw[line width=0.75pt] (C) -- (Cp);
-  \draw[line width=0.75pt] (A) -- (C);
+  \draw[dashed,line width=0.6pt] (A) -- (C);
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1pt] at (B) {$B$};
   \node[anchor=south west,inner sep=1pt] at (C) {$C$};
@@ -17625,10 +17625,10 @@ M N = \frac {1}{2} (A B + C D)\text{，}
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (4.60,0);
-  \coordinate (D) at (0.72,2.00);
-  \coordinate (C) at (3.88,2.00);
-  \coordinate (Dp) at (0.72,0);
-  \coordinate (Cp) at (3.88,0);
+  \coordinate (D) at (0.60,2.67);
+  \coordinate (C) at (4.00,2.67);
+  \coordinate (Dp) at (0.60,0);
+  \coordinate (Cp) at (4.00,0);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[dashed,line width=0.6pt] (D) -- (Dp);
   \draw[line width=0.75pt] (C) -- (Cp);
@@ -17766,13 +17766,13 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 % fig-alt: 图3·23（1）多边形ABCDEF自A连AC/AD/AE成△I–IV，虚线高仅B、D到AC与D、F到AE四条（扫描无C、E到AD的高）；（2）G为左尖、F左上、H左下，GC水平虚线；轴上垂线出自F/E/D（VIII–V），轴下垂线出自H/A/B（I–IV）
 \begin{tikzpicture}[line cap=round,line join=round,scale=0.95]
   % ---- (1) ----
-  \begin{scope}[shift={(0,0)}]
-    \coordinate (A) at (1.60,0.10);
-    \coordinate (B) at (2.95,0.55);
-    \coordinate (C) at (3.55,1.70);
-    \coordinate (D) at (2.35,2.95);
-    \coordinate (E) at (0.45,2.75);
-    \coordinate (F) at (0.10,1.40);
+  \begin{scope}[shift={(0,-0.85)}]
+    \coordinate (A) at (2.22,0.10);
+    \coordinate (B) at (3.55,0.67);
+    \coordinate (C) at (3.49,1.67);
+    \coordinate (D) at (2.55,2.18);
+    \coordinate (E) at (1.32,2.14);
+    \coordinate (F) at (0.10,0.90);
     \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
     \draw[line width=0.75pt] (A) -- (C);
     \draw[line width=0.75pt] (A) -- (D);
@@ -17791,11 +17791,11 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
     \node[anchor=south,inner sep=1pt] at (D) {$D$};
     \node[anchor=south,inner sep=1pt] at (E) {$E$};
     \node[anchor=east,inner sep=1pt] at (F) {$F$};
-    \node at (2.55,0.70) {$I$};
-    \node at (2.55,1.85) {$II$};
-    \node at (1.35,1.85) {$III$};
-    \node at (0.85,1.15) {$IV$};
-    \node[anchor=north] at (1.80,-0.25) {$(1)$};
+    \node at (3.04,0.76) {$I$};
+    \node at (2.70,1.39) {$II$};
+    \node at (2.07,1.39) {$III$};
+    \node at (1.38,0.67) {$IV$};
+    \node[anchor=north] at (1.83,-1.07) {$(1)$};
   \end{scope}
   % ---- (2) ----
   % 扫描：G 为左尖，不在竖直边上
@@ -17949,12 +17949,12 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5.60,0);
-  \coordinate (C) at (4.55,2.40);
-  \coordinate (D) at (1.25,2.40);
+  \coordinate (C) at (3.71,2.55);
+  \coordinate (D) at (0.94,2.55);
   \coordinate (M) at ($(A)!0.5!(D)$);
   \coordinate (K) at ($(B)!0.5!(C)$);
-  \coordinate (E) at (1.25,0);
-  \coordinate (F) at (1.25,1.20);
+  \coordinate (E) at (0.94,0);
+  \coordinate (F) at (0.94,1.275);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[line width=0.75pt] (M) -- (K);
   \draw[line width=0.75pt] (D) -- (E);
