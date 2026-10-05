@@ -18181,7 +18181,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·27 △ABC；D在AC；左射线五等分AC得P（AP=AC/5）；DE实线；DB、PE与五等分射线、四条平行线均为虚线
+% fig-alt: 图3·27 △ABC；D在AC；自A向右上（约67°、陡于AC）的射线五等分AC得P（AP=AC/5），四条平行线及末端连线R5C均水平；DE实线；DB、PE与五等分射线、四条平行线均为虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5.80,0);
@@ -18192,9 +18192,9 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
   \coordinate (Q3) at ($(A)!0.6!(C)$);
   \coordinate (Q4) at ($(A)!0.8!(C)$);
   \coordinate (D)  at ($(A)!0.62!(C)$);
-  % construction ray at 125°
-  \pgfmathsetmacro{\rayang}{125}
-  \pgfmathsetmacro{\rayu}{0.70}
+  % construction ray at 67° up-right, steeper than AC (fig-p0209-01); R5 level with C so the parallels are horizontal
+  \pgfmathsetmacro{\rayang}{67}
+  \pgfmathsetmacro{\rayu}{0.7387}
   \coordinate (R1) at ({\rayu*cos(\rayang)},{\rayu*sin(\rayang)});
   \coordinate (R2) at ({2*\rayu*cos(\rayang)},{2*\rayu*sin(\rayang)});
   \coordinate (R3) at ({3*\rayu*cos(\rayang)},{3*\rayu*sin(\rayang)});
@@ -18223,9 +18223,9 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1pt] at (B) {$B$};
   \node[anchor=south,inner sep=1.5pt] at (C) {$C$};
-  \node[anchor=east,inner sep=1.5pt] at (D) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (D) {$D$};
   \node[anchor=north,inner sep=1.5pt] at (E) {$E$};
-  \node[anchor=east,inner sep=1.5pt] at (P) {$P$};
+  \node[anchor=south east,inner sep=1pt] at (P) {$P$};
 \end{tikzpicture}%
 }
 \caption{图3·27}
@@ -18376,7 +18376,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·29 直角△ABC（直角在C，直角方在形内）；a在BC左侧紧贴竖边、b在CA上方、c在斜边左侧；外侧不规则相似五边形：P在BC左侧（上边较平、左下角突出），Q在CA下方（向右下斜），R在斜边上（右竖边、顶有尖）
+% fig-alt: 图3·29 直角△ABC（直角在C，直角方在形内，C字在顶点正下方、Q的上边与CA之间）；a在BC左侧紧贴竖边、b在CA上方、c在斜边右侧（R一侧）；外侧不规则相似五边形：P在BC左侧（上边较平、左下角突出），Q在CA下方（向右下斜），R在斜边上（右竖边、顶有尖）
 \begin{tikzpicture}[line cap=round,line join=round]
   % traced from fig-p0211-01, y flipped; C at origin, BC vertical
   \coordinate (C) at (0.000,0.000);
@@ -18398,10 +18398,10 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \draw[line width=0.55pt] (C) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
   \node[anchor=north,inner sep=1pt] at (A) {$A$};
   \node[anchor=south,inner sep=1pt] at (B) {$B$};
-  \node[anchor=north east,inner sep=1pt] at (C) {$C$};
+  \node[anchor=north,inner sep=1.5pt] at ($(C)+(0.06,0)$) {$C$};
   \node[anchor=east,inner sep=1.2pt] at (-0.04,1.26) {$a$};
   \node[anchor=south,inner sep=1.5pt] at (0.52,0.05) {$b$};
-  \node[anchor=east,inner sep=1pt] at (0.48,0.90) {$c$};
+  \node[anchor=west,inner sep=2pt] at ($(A)!0.48!(B)$) {$c$};
   \node at (-1.05,1.15) {$P$};
   \node at (0.45,-0.72) {$Q$};
   \node at (1.85,1.70) {$R$};
@@ -18605,7 +18605,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·30 底虚线含实段AB；上实线XY含C1、C2；△ABC1与△ABC2同底AB等高h（右侧实线双箭头）
+% fig-alt: 图3·30 底虚线含实段AB；上实线XY含C1、C2；△ABC1与△ABC2同底AB等高h（右侧实线双箭头，位于C2与Y之间、在XY与底线的范围内，h写在箭头线中断处）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0.80,0);
   \coordinate (B) at (3.60,0);
@@ -18613,18 +18613,18 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \coordinate (C2) at (4.40,2.55);
   \draw[dashed,line width=0.6pt] (-0.20,0) -- (A);
   \draw[line width=0.75pt] (A) -- (B);
-  \draw[dashed,line width=0.6pt] (B) -- (5.20,0);
-  \draw[line width=0.75pt] (-0.30,2.55) -- (5.30,2.55);
+  \draw[dashed,line width=0.6pt] (B) -- (5.95,0);
+  \draw[line width=0.75pt] (-0.30,2.55) -- (5.85,2.55);
   \draw[line width=0.75pt] (A) -- (C1) -- (B) -- cycle;
   \draw[line width=0.75pt] (A) -- (C2) -- (B);
-  \draw[<->,line width=0.55pt] (5.55,0) -- (5.55,2.55);
+  \draw[<->,line width=0.55pt] (5.25,0) -- (5.25,2.55);
   \node[anchor=north,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
   \node[anchor=south,inner sep=1.5pt] at (C1) {$C_1$};
   \node[anchor=south,inner sep=1.5pt] at (C2) {$C_2$};
   \node[anchor=east,inner sep=2pt] at (-0.30,2.55) {$X$};
-  \node[anchor=west,inner sep=2pt] at (5.30,2.55) {$Y$};
-  \node[anchor=west,inner sep=2pt] at (5.55,1.27) {$h$};
+  \node[anchor=west,inner sep=2pt] at (5.85,2.55) {$Y$};
+  \node[fill=white,inner sep=1pt] at (5.25,1.27) {$h$};
 \end{tikzpicture}%
 }
 \caption{图3·30}
@@ -18658,7 +18658,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·31：四种同底等积变换：(1)等腰，XY与垂直平分线MN；(2)底角α（B处只标α、无弧），左上参照角为水平向右边与向右上斜边、无弧，上直线右端标v（无X）；(3)顶角β，左上参照角为水平向右边与向右上斜边、无弧，虚圆弧；(4)中线l与半径等长（两端短竖线），虚弧为底边之上的半圆、两端落在底边所在直线上，OA'、OA''虚线
+% fig-alt: 图3·31：四种同底等积变换：(1)等腰，XY与垂直平分线MN；(2)底角α（B处只标α、无弧），左上参照角为水平向右边与向右上斜边、无弧，上直线左端标X、右端标v；(3)顶角β，左上参照角为水平向右边与向右上斜边、无弧，虚圆弧；(4)中线l与半径等长（两端短竖线，l线段在XY上方偏左），BC较短、A'在B左外侧、A''在C右外侧，XY右端紧接A''后标Y，虚弧为底边之上的半圆、两端落在底边所在直线上，OA'、OA''虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   % (1)
   \begin{scope}[shift={(0,5.6)}]
@@ -18700,6 +18700,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \draw[line width=0.65pt] (0.75,3.05) -- ({0.75+1.20*cos(\alang)},{3.05+1.20*sin(\alang)});
     \node[anchor=south west,inner sep=1pt] at (1.12,3.08) {$\alpha$};
     \node[anchor=west,inner sep=1.5pt] at (5.10,2.55) {$v$};
+    \node[anchor=east,inner sep=2pt] at (-0.25,2.55) {$X$};
     \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
     \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
     \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
@@ -18743,14 +18744,14 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \end{scope}
   % (4)
   \begin{scope}[shift={(6.8,0)}]
-    \coordinate (B) at (1.00,0);
-    \coordinate (C) at (4.20,0);
+    \coordinate (B) at (1.90,0);
+    \coordinate (C) at (3.30,0);
     \coordinate (O) at (2.60,0);
     \coordinate (A) at (0.45,2.35);
-    \pgfmathsetmacro{\rl}{2.55}
+    \pgfmathsetmacro{\rl}{2.62}
     \coordinate (Ap) at ({2.60-sqrt(\rl*\rl-2.35*2.35)},2.35);
     \coordinate (App) at ({2.60+sqrt(\rl*\rl-2.35*2.35)},2.35);
-    \draw[line width=0.75pt] (-0.25,2.35) -- (5.40,2.35);
+    \draw[line width=0.75pt] (0.10,2.35) -- (4.25,2.35);
     \draw[line width=0.75pt] (B) -- (C);
     \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
     \draw[line width=0.75pt] (Ap) -- (B);
@@ -18760,12 +18761,12 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \draw[dashed,line width=0.6pt] (O) -- (Ap);
     \draw[dashed,line width=0.6pt] (O) -- (App);
     \draw[dashed,line width=0.6pt] ({2.60+\rl},0) arc (0:180:\rl);
-    \draw[line width=0.7pt] ({2.60-\rl/2},3.25) -- ({2.60+\rl/2},3.25);
-    \draw[line width=0.7pt] ({2.60-\rl/2},3.15) -- ({2.60-\rl/2},3.35);
-    \draw[line width=0.7pt] ({2.60+\rl/2},3.15) -- ({2.60+\rl/2},3.35);
-    \node[anchor=south,inner sep=1.5pt] at (2.60,3.25) {$l$};
-    \node[anchor=east,inner sep=2pt] at (-0.25,2.35) {$X$};
-    \node[anchor=west,inner sep=2pt] at (5.40,2.35) {$Y$};
+    \draw[line width=0.7pt] (0.95,2.90) -- ({0.95+\rl},2.90);
+    \draw[line width=0.7pt] (0.95,2.82) -- (0.95,2.98);
+    \draw[line width=0.7pt] ({0.95+\rl},2.82) -- ({0.95+\rl},2.98);
+    \node[anchor=south,inner sep=1.5pt] at ({0.95+\rl/2},2.90) {$l$};
+    \node[anchor=east,inner sep=2pt] at (0.10,2.35) {$X$};
+    \node[anchor=west,inner sep=2pt] at (4.25,2.35) {$Y$};
     \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
     \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
     \node[anchor=south,inner sep=1.5pt] at (App) {$A''$};
@@ -18862,14 +18863,14 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·33 左△ABC，虚高CD⊥AB于D；右以EG为直径虚半圆，EF=½AB、FG=CD，FJ⊥EG交半圆于J（标x），正方形FHIJ；F、H在直径上方、各在竖边右侧
+% fig-alt: 图3·33 左△ABC，虚高CD⊥AB于D；右以EG为直径虚半圆，EF=½AB、FG=CD（与左图同长），FJ⊥EG交半圆于J（标x），正方形FHIJ（只有J在半圆上，I在半圆外、HI穿过半圆）；F、H在直径上方、各在竖边右侧
 \begin{tikzpicture}[line cap=round,line join=round]
   % left triangle
   \begin{scope}[shift={(0,0)}]
     \coordinate (A) at (0.00,0.00);
     \coordinate (B) at (2.70,0.00);
-    \coordinate (D) at (1.85,0.00);
-    \coordinate (C) at (1.85,1.85);
+    \coordinate (D) at (1.80,0.00);
+    \coordinate (C) at (1.80,2.35);
     \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
     \draw[dashed,line width=0.6pt] (C) -- (D);
     \node[anchor=north east,inner sep=1pt] at (A) {$A$};
@@ -18879,8 +18880,8 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \end{scope}
   % right: geometric mean + square
   \begin{scope}[shift={(3.55,0)}]
-    \def\ef{1.25}
-    \def\fg{3.20}
+    \def\ef{1.35}
+    \def\fg{2.35}
     \pgfmathsetmacro{\xx}{sqrt(\ef*\fg)}
     \coordinate (E) at (0,0);
     \coordinate (F) at (\ef,0);
