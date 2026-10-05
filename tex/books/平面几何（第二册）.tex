@@ -12158,12 +12158,13 @@ r ^ {2} = 64\text{，} r = 8.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第13题）⊙O与⊙O'内切于A；P在⊙O上，PT切⊙O'于T，PA交⊙O'于Q；OO'A与OQ虚线。O、O'小空心圆
+% fig-alt: （第13题）⊙O与⊙O'内切于A；P在⊙O上，PT切⊙O'于T，PA交⊙O'于Q；OO'A、OP、O'Q虚线。O、O'小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.70);
   \draw[line width=0.75pt] (0.518,0) circle (1.182);
   \draw[dashed,line width=0.6pt] (0,0) -- (1.70,0);
-  \draw[dashed,line width=0.6pt] (0,0) -- (-0.073,1.024);
+  \draw[dashed,line width=0.6pt] (0,0) -- (-0.850,1.472);
+  \draw[dashed,line width=0.6pt] (0.518,0) -- (-0.073,1.024);
   \draw[line width=0.75pt] (-0.850,1.472) -- (1.70,0);
   \draw[line width=0.75pt] (-0.850,1.472) -- (0.745,1.160);
   \filldraw[fill=white,line width=0.6pt] (0,0) circle (0.045);
@@ -13135,7 +13136,7 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2·40：上（1）线段AB=a，分点P，AP=x、PB=a-x；下（2）直角△ABC（直角在B，BC=a/2虚线，AC虚线），弧以C为心过B交AC于D，DP实线至P。C小空心圆
+% fig-alt: 图2·40：上（1）线段AB=a，分点P，AP=x、PB=a-x；下（2）直角△ABC（直角在B，BC=a/2虚线，AC虚线），虚弧以C为心过B交AC于D；再以A为心虚弧交AB于P。C小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\aa{3.400}
   \pgfmathsetmacro{\hh}{0.5*\aa}
@@ -13175,8 +13176,10 @@ P O _ {2} ^ {2} = P O _ {1} ^ {2} + O _ {1} O _ {2} ^ {2} - 2 O _ {1} O _ {2} \c
   \draw[line width=0.75pt] (A) -- (B);
   \draw[dashed,line width=0.75pt] (A) -- (C);
   \draw[line width=0.5pt] (\aa-0.140,0) -- (\aa-0.140,0.140) -- (\aa,0.140);
-  \draw[line width=0.7pt] (D) -- (P);
-  \draw[line width=0.7pt] (B) arc[start angle=-90,end angle=-153.435,radius=\hh];
+  \pgfmathsetmacro{\ADang}{atan2(\dy,\dx)}
+  \pgfmathsetmacro{\ADr}{sqrt(\dx*\dx+\dy*\dy)}
+  \draw[dashed,line width=0.6pt] (D) arc[start angle=\ADang, delta angle=-\ADang, radius=\ADr];
+  \draw[dashed,line width=0.6pt] (B) arc[start angle=-90,end angle=-153.435,radius=\hh];
   \filldraw[fill=white,line width=0.6pt] (C) circle (0.045);
   \node[anchor=west,inner sep=2pt] at (C) {$C$};
   \node[anchor=south east,inner sep=1pt] at (D) {$D$};
