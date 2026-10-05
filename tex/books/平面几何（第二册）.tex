@@ -15212,7 +15212,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·5：共顶点A的三矩形几乎重合；实线ABCD；内虚AB₁C₁D₁约短4%，外虚AB₂C₂D₂约长8%；B₁、B、B₂挤在右下，D₁、D、D₂挤在左上，C₁在内角里
+% fig-alt: 图3·5：共顶点A的三矩形几乎重合；实线ABCD；内虚AB₁C₁D₁约短4%，外虚AB₂C₂D₂约长8%；B₁、B、B₂挤在右下，D₁、D、D₂挤在左上（D₂在竖线左侧、与外虚顶边齐平）；C₁在内角里（内虚顶边之下、内虚右边之左）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B1) at (3.36,0);
@@ -15236,8 +15236,8 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
   \node[anchor=north west,inner sep=0.4pt,font=\scriptsize] at (3.86,0) {$B_{2}$};
   \node[anchor=east,inner sep=0.5pt,font=\scriptsize] at (-0.02,2.48) {$D_{1}$};
   \node[anchor=east,inner sep=0.5pt,font=\scriptsize] at (-0.02,2.72) {$D$};
-  \node[anchor=south,inner sep=0.5pt,font=\scriptsize] at (-0.02,3.02) {$D_{2}$};
-  \node[anchor=south east,inner sep=0.5pt,font=\scriptsize] at (C1) {$C_{1}$};
+  \node[anchor=east,inner sep=0.5pt,font=\scriptsize] at (-0.02,3.00) {$D_{2}$}; % 扫描 D₂ 在竖线左侧、与外虚顶边齐平
+  \node[anchor=north east,inner sep=0.5pt,font=\scriptsize] at (C1) {$C_{1}$}; % 扫描 C₁ 在内虚顶边之下
   \node[anchor=south west,inner sep=1pt] at (C) {$C$};
   \node[anchor=west,inner sep=0.5pt,font=\scriptsize] at (C2) {$C_{2}$};
 \end{tikzpicture}%
@@ -15556,7 +15556,7 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （4）Z形截面：两翼缘长均为b、厚均为t，腹板厚a、总高h，内部斜线阴影
+% fig-alt: （4）Z形截面：两翼缘长均为b、厚均为t，腹板厚a（两侧箭头朝内）、总高h，内部斜线阴影
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\b{2.40}
   \def\a{0.55}
@@ -15588,11 +15588,11 @@ cm²。
   \draw[-{Stealth[length=1.45mm]},line width=0.5pt] (\b+0.28,-0.36) -- (\b+0.28,0);
   \draw[-{Stealth[length=1.45mm]},line width=0.5pt] (\b+0.28,\t+0.36) -- (\b+0.28,\t);
   \node[anchor=west,inner sep=1pt] at (\b+0.42,0.5*\t) {$t$};
-  % web a：扫描箭头在腹板两侧、箭头朝外，a 在腹板中
-  \draw[{Stealth[length=1.6mm]}-,line width=0.5pt]
+  % web a：扫描箭头在腹板两侧、箭头朝内（尖端抵腹板两边），a 在腹板中
+  \draw[-{Stealth[length=1.6mm]},line width=0.5pt]
     ({-0.50},0.55*\h) -- (0,0.55*\h);
   \draw[-{Stealth[length=1.6mm]},line width=0.5pt]
-    (\a,0.55*\h) -- ({\a+0.50},0.55*\h);
+    ({\a+0.50},0.55*\h) -- (\a,0.55*\h);
   \node[fill=white,inner sep=1.2pt] at (0.5*\a,0.55*\h) {$a$};
   % total h
   \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
@@ -15652,14 +15652,14 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （2）边长a的正方形：顶条与右边条宽b斜线阴影，右上角b×b交叉阴影；底标a−b与b，左边标b与a−b，顶与右边标a，示(a−b)²
+% fig-alt: （2）边长a的正方形：顶条（／）与右边条（＼）宽b斜线阴影，右上角b×b交叉阴影；底标a−b与b，左边标b与a−b，顶与右边标a，示(a−b)²
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\aa{2.60}
   \def\bb{0.70}
   \pgfmathsetmacro{\cc}{\aa-\bb}
   \fill[pattern=north east lines,pattern color=black!70]
     (0,\cc) rectangle (\cc,\aa);
-  \fill[pattern=north east lines,pattern color=black!70]
+  \fill[pattern=north west lines,pattern color=black!70] % 扫描右条斜线向左倾（＼），与顶条（／）相交成角上交叉
     (\cc,0) rectangle (\aa,\cc);
   \fill[pattern=crosshatch,pattern color=black!55]
     (\cc,\cc) rectangle (\aa,\aa);
@@ -15765,7 +15765,7 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （1）△ABC高AD⊥BC于D（直角方）；虚线矩形以BC为底、过A为顶，示三角形与同底同高矩形一半等积
+% fig-alt: （1）△ABC高AD⊥BC于D（直角方在AD左侧）；虚线矩形以BC为底、过A为顶，示三角形与同底同高矩形一半等积
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0,0);
   \coordinate (C) at (3.60,0);
@@ -15776,8 +15776,8 @@ cm²。
   % triangle + altitude
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.75pt] (A) -- (D);
-  % right angle at D
-  \draw[line width=0.55pt] (D) -- ++(0.18,0) -- ++(0,0.18) -- ++(-0.18,0);
+  % right angle at D（扫描 fig-p0186-05 方标在 AD 左侧）
+  \draw[line width=0.55pt] (D) -- ++(-0.18,0) -- ++(0,0.18) -- ++(0.18,0);
   \node[anchor=south,inner sep=2pt] at (A) {$A$};
   \node[anchor=north east,inner sep=1pt] at (B) {$B$};
   \node[anchor=north west,inner sep=1pt] at (C) {$C$};
@@ -15896,7 +15896,7 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第9题）△ABC高AD⊥BC于D（直角方）；虚线平行四边形以BC之半BM为底、高与AD相同（A向右虚线至E、E至M虚线），示同高半底等积
+% fig-alt: （第9题）△ABC高AD⊥BC于D（扫描无直角方）；虚线平行四边形以BC之半BM为底、高与AD相同（A向右虚线至E、E至M虚线），示同高半底等积
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0,0);
   \coordinate (C) at (3.20,0);
@@ -15907,7 +15907,7 @@ cm²。
   \draw[dashed,line width=0.6pt] (A) -- (E) -- (M);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.75pt] (A) -- (D);
-  \draw[line width=0.55pt] (D) -- ++(0.18,0) -- ++(0,0.18) -- ++(-0.18,0);
+  % 扫描无直角方（fig-p0186-10）
   \node[anchor=south,inner sep=2pt] at (A) {$A$};
   \node[anchor=north east,inner sep=1pt] at (B) {$B$};
   \node[anchor=north west,inner sep=1pt] at (C) {$C$};
@@ -16139,7 +16139,7 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
   \node[anchor=south west,inner sep=1pt] at (C) {$C$};
   \node[anchor=south east,inner sep=1pt] at (D) {$D$};
   \node at ({(\s+\tq*\s)/2 + 0.28},{(\h+\ym)/2 - 0.20}) {$I$};
-  \node at ({\b*0.55+\s},{\ym+0.55*(\h-\ym)}) {$II$};
+  \node at ({\s+0.40*(\b-0.255*\s)},{0.745*\h}) {$II$}; % 扫描 II 在梯形 HFCD 内、偏竖虚线一侧，不贴 BC
   \node[font=\small] at ({0.62*\tq*\s},{0.28*\ym}) {$III$};
   \node at ({\b*0.55},{\ym*0.42}) {$IV$};
 \end{tikzpicture}%
@@ -16191,7 +16191,7 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·10：□ABCD底AB=5cm、邻边AD=4cm、∠DAB=60°标在角内靠底边；高DD'⊥AB于D'（直角方）；4cm沿AD斜写在尺寸线上，5cm在底边尺寸线下方
+% fig-alt: 图3·10：□ABCD底AB=5cm、邻边AD=4cm、∠DAB=60°标在角内靠底边；高DD'⊥AB于D'（扫描无直角方，D'紧贴垂足右侧）；∠ADD'双弧；4cm沿AD斜写在尺寸线上，5cm在底边尺寸线下方
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\shSc{0.55}
   \coordinate (A) at (0,0);
@@ -16201,14 +16201,16 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
   \coordinate (C) at ({7*\shSc},{2*1.7320508*\shSc});
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[line width=0.75pt] (D) -- (Dp);
-  \draw[line width=0.55pt] (Dp) -- ++(0.16,0) -- ++(0,0.16) -- ++(-0.16,0);
+  % 扫描 D' 处无直角方；D 处 AD 与 DD' 间有两道角弧（∠ADD'）
+  \draw[line width=0.5pt] ([shift={(270:0.42)}]D) arc[start angle=270, end angle=240, radius=0.42];
+  \draw[line width=0.5pt] ([shift={(270:0.50)}]D) arc[start angle=270, end angle=240, radius=0.50];
   \draw[line width=0.55pt] (0.42,0) arc[start angle=0, end angle=60, radius=0.42];
   \node[anchor=south west,inner sep=1pt] at (0.48,0.12) {$60^\circ$};
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1pt] at (B) {$B$};
   \node[anchor=south west,inner sep=1pt] at (C) {$C$};
   \node[anchor=south east,inner sep=1pt] at (D) {$D$};
-  \node[anchor=south west,inner sep=0.5pt] at ([shift={(0.20,0.03)}]Dp) {$D'$};
+  \node[anchor=south west,inner sep=0.5pt] at ([shift={(0.04,0.03)}]Dp) {$D'$};
   \draw[<->,line width=0.5pt] (0,-0.38) -- ({5*\shSc},-0.38);
   \node[anchor=north,inner sep=1pt] at ({2.5*\shSc},-0.38) {$5\,\mathrm{cm}$};
   % 4cm along a line parallel to AD, offset left-up normal
