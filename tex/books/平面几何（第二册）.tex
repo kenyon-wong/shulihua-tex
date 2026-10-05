@@ -16762,7 +16762,7 @@ cm （图3·16）。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·16：菱形ABCD，∠A约45°（D'靠近B）；对角交O处直角方在BOC侧，O在交点左上；高DD'直角方在高右侧；∠ABD、∠DBC与∠BCO单弧
+% fig-alt: 图3·16：菱形ABCD，∠A约45°（D'靠近B）；对角交O处直角方在BOC侧，O在交点右上（BD右侧、AC上方）；高DD'直角方在高右侧；∠ABD、∠DBC与∠BCO单弧
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\side{3.40}
   \def\ang{45}
@@ -16795,7 +16795,7 @@ cm （图3·16）。
   \node[anchor=south west,inner sep=1pt] at (C) {$C$};
   \node[anchor=south east,inner sep=1pt] at (D) {$D$};
   \node[anchor=north,inner sep=1pt] at (Dp) {$D'$};
-  \node[anchor=south,inner sep=1pt] at ($(O)+(-0.32,0.14)$) {$O$};
+  \node[anchor=south west,inner sep=1pt] at ($(O)+(0.02,0.14)$) {$O$};
 \end{tikzpicture}%
 }
 \caption{图3·16}
@@ -16882,7 +16882,7 @@ h _ {b} = \frac {2}{b} \sqrt {s (s - a) (s - b) (s - c)}.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·17：△ABC（C左、A右、B上），虚高BD⊥CA于D（扫描无直角方）；D在底边下偏左；BC标c、CA标b、AB标a，h_b在虚高右侧
+% fig-alt: 图3·17：△ABC（C左、A右、B上），虚高BD⊥CA于D（扫描无直角方）；D在底边下、跨虚高略偏左；BC标c、CA标b、AB标a，h_b在虚高右侧
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (C) at (0,0);
   \coordinate (A) at (4.60,0);
@@ -16893,7 +16893,7 @@ h _ {b} = \frac {2}{b} \sqrt {s (s - a) (s - b) (s - c)}.
   \node[anchor=north east,inner sep=1pt] at (C) {$C$};
   \node[anchor=north west,inner sep=1pt] at (A) {$A$};
   \node[anchor=south,inner sep=1pt] at (B) {$B$};
-  \node[anchor=north east,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north,inner sep=1pt] at ($(D)+(-0.04,0)$) {$D$};
   \node[anchor=east,inner sep=2pt] at ($(C)!0.55!(B)$) {$c$};
   \node[anchor=north,inner sep=2pt] at (2.30,-0.02) {$b$};
   \node[anchor=west,inner sep=2pt] at ($(A)!0.55!(B)$) {$a$};
@@ -17270,7 +17270,7 @@ s - c = 22 - 20 = 2.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第15题）△ABC旁切圆O_a（下底AC近水平并右延，AB上斜）；⊙O_a在右，切BC及AB、AC延长线；AO_a/BO_a/CO_a实线；三切点半径虚线并带直角方
+% fig-alt: （第15题）△ABC旁切圆O_a（下底AC近水平并右延，AB上斜）；⊙O_a在右，切BC及AB、AC延长线；AO_a/BO_a/CO_a实线；三切点半径虚线（扫描切点无直角方）
 \begin{tikzpicture}[line cap=round,line join=round,scale=0.92]
   \def\full{40}
   \def\dist{5.05}
@@ -17298,11 +17298,6 @@ s - c = 22 - 20 = 2.
   \draw[dashed,line width=0.6pt] (Oa) -- (Tu);
   \draw[dashed,line width=0.6pt] (Oa) -- (Tl);
   \draw[dashed,line width=0.6pt] (Oa) -- (Tb);
-  \draw[line width=0.55pt] (Tl) ++(0,0.16) -- ++(-0.16,0) -- ++(0,-0.16);
-  \pgfmathsetmacro{\rux}{(\dist*cos(\half)-\tu*cos(\full))/\Rr}
-  \pgfmathsetmacro{\ruy}{(\dist*sin(\half)-\tu*sin(\full))/\Rr}
-  \draw[line width=0.55pt] (Tu) -- ++({0.16*\rux},{0.16*\ruy}) -- ++({-0.16*cos(\full)},{-0.16*sin(\full)}) -- ++({-0.16*\rux},{-0.16*\ruy});
-  \draw[line width=0.55pt] (Tb) -- ++({0.16*cos(\half)},{0.16*sin(\half)}) -- ++({-0.16*sin(\half)},{0.16*cos(\half)}) -- ++({-0.16*cos(\half)},{-0.16*sin(\half)});
   \node[anchor=east,inner sep=2pt] at (A) {$A$};
   \node[anchor=south east,inner sep=1pt] at (B) {$B$};
   \node[anchor=north,inner sep=1.5pt] at (C) {$C$};
@@ -17476,7 +17471,7 @@ s = \frac {1}{2} (13 + 14 + 15) = 21.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第22题）直角△ABC（∠C直角）；斜边AB下正方形ABED；AC外正方形ACGF；BC外正方形BCKJ；CH⊥AB于H并延至DE于I；连FB、CD；H在AB下方靠右（正方形内），I在DE下方靠右
+% fig-alt: （第22题）直角△ABC（∠C直角）；斜边AB下正方形ABED；AC外正方形ACGF；BC外正方形BCKJ；CH⊥AB于H并延至DE于I；连FC、FB、CD、DH；H在AB下方靠右（正方形内），I在DE下方靠右
 \begin{tikzpicture}[line cap=round,line join=round,scale=0.88]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5.00,0);
@@ -17498,6 +17493,8 @@ s = \frac {1}{2} (13 + 14 + 15) = 21.
   \draw[line width=0.75pt] (C) -- (I);
   \draw[line width=0.75pt] (F) -- (B);
   \draw[line width=0.75pt] (C) -- (D);
+  \draw[line width=0.75pt] (F) -- (C);
+  \draw[line width=0.75pt] (D) -- (H);
   \node[anchor=north east,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1.5pt] at (B) {$B$};
   \node[anchor=south,inner sep=2pt] at (C) {$C$};
@@ -17778,7 +17775,7 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·23（1）多边形ABCDEF自A连AC/AD/AE成△I–IV，虚线高；（2）G为左尖、F左上、H左下，GC水平虚线；轴上垂线出自F/E/D（VIII–V），轴下垂线出自H/A/B（I–IV）
+% fig-alt: 图3·23（1）多边形ABCDEF自A连AC/AD/AE成△I–IV，虚线高仅B、D到AC与D、F到AE四条（扫描无C、E到AD的高）；（2）G为左尖、F左上、H左下，GC水平虚线；轴上垂线出自F/E/D（VIII–V），轴下垂线出自H/A/B（I–IV）
 \begin{tikzpicture}[line cap=round,line join=round,scale=0.95]
   % ---- (1) ----
   \begin{scope}[shift={(0,0)}]
@@ -17794,14 +17791,10 @@ B C + A D = D D ^ {\prime} + 2 D D ^ {\prime} = 3 D D ^ {\prime} = 3 h = n\text{
     \draw[line width=0.75pt] (A) -- (E);
     \coordinate (Bac) at ($(A)!(B)!(C)$);
     \coordinate (Dac) at ($(A)!(D)!(C)$);
-    \coordinate (Cad) at ($(A)!(C)!(D)$);
-    \coordinate (Ead) at ($(A)!(E)!(D)$);
     \coordinate (Dae) at ($(A)!(D)!(E)$);
     \coordinate (Fae) at ($(A)!(F)!(E)$);
     \draw[dashed,line width=0.55pt] (B) -- (Bac);
     \draw[dashed,line width=0.55pt] (D) -- (Dac);
-    \draw[dashed,line width=0.55pt] (C) -- (Cad);
-    \draw[dashed,line width=0.55pt] (E) -- (Ead);
     \draw[dashed,line width=0.55pt] (D) -- (Dae);
     \draw[dashed,line width=0.55pt] (F) -- (Fae);
     \node[anchor=north,inner sep=1pt] at (A) {$A$};
