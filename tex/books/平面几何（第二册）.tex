@@ -22892,7 +22892,7 @@ OM 的弦 \(A_{1}A_{2}\)， \(A_{2}A_{3}\)，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·28 圆O内接正十边形A1…A10（A1在底）；A1B⊥OA1且A1B=OA1/2；BO交以B、BA1为半径之弧于C；以O、OC为半径之弧截OA1于M；连OA2、A2M
+% fig-alt: 图4·28 圆O内接正十边形A1…A10（A1在底）；A1B⊥OA1且A1B=OA1/2；BO交以B、BA1为半径之弧于C；以O、OC为半径之弧截OA1于M；连OA2、A2M；扫描无OA1半径线；OB、OA2、A2M及两作图弧皆细虚线（扫描）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.20}
   \pgfmathsetmacro{\phi}{0.5*(sqrt(5)-1)}
@@ -22908,13 +22908,12 @@ OM 的弦 \(A_{1}A_{2}\)， \(A_{2}A_{3}\)，
   \coordinate (C) at ($(B)!{(\R/2)/\bo}!(O)$);
   \draw[line width=0.75pt] (O) circle (\R);
   \draw[line width=0.75pt] (A1) -- (A2) -- (A3) -- (A4) -- (A5) -- (A6) -- (A7) -- (A8) -- (A9) -- (A10) -- cycle;
-  \draw[line width=0.65pt] (O) -- (A1);
-  \draw[line width=0.65pt] (O) -- (A2);
-  \draw[line width=0.65pt] (A2) -- (M);
-  \draw[line width=0.65pt] (B) -- (O);
+  \draw[dashed,line width=0.55pt] (O) -- (A2);
+  \draw[dashed,line width=0.55pt] (A2) -- (M);
+  \draw[dashed,line width=0.55pt] (B) -- (O);
   \draw[dashed,line width=0.55pt] ({-0.72*\R},-\R) -- ({0.18*\R},-\R);
-  \draw[line width=0.60pt] (A1) arc[start angle=0, end angle={atan2(1,0.5)}, radius={0.5*\R}];
-  \draw[line width=0.70pt] let \p1=(C) in (C) arc[start angle={atan2(\y1,\x1)}, end angle=-90, radius={\phi*\R}];
+  \draw[dashed,line width=0.55pt] (A1) arc[start angle=0, end angle={atan2(1,0.5)}, radius={0.5*\R}];
+  \draw[dashed,line width=0.55pt] let \p1=(C) in (C) arc[start angle={atan2(\y1,\x1)}, end angle=-90, radius={\phi*\R}];
   \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
   \node[anchor=south,inner sep=1.5pt] at (O) {$O$};
   \node[anchor=north,inner sep=1.5pt] at (A1) {$A_1$};
