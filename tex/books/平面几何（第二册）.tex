@@ -24443,7 +24443,7 @@ A O\text{：} O D = A B\text{：} B D.
 
 \begin{figure}
 \centering
-% fig-alt: 图5·5：圆 $O$ 直径 $AB$ 与切线 $PQ$ 为虚线；弦 $AC$、$OD$ 亦为虚线，$OC$ 与 $BE$ 为实线；$\angle AOD=30^{\circ}$，$DE=3\cdot OA$
+% fig-alt: 图5·5：圆 $O$ 直径 $AB$ 与切线 $PQ$ 为虚线；弦 $AC$ 与 $OD$ 为虚线，不画半径 $OC$；$BE$ 为实线；$30^{\circ}$ 在竖直径右侧
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{1.12}
@@ -24457,7 +24457,6 @@ A O\text{：} O D = A B\text{：} B D.
   \draw[line width=0.75pt] (O) circle (\R);
   \draw[line width=0.7pt] (Bt) -- (E);
   \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (Bt) -- (A);
-  \draw[line width=0.55pt] (O) -- (C);
   \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (C) -- (A);
   \draw[line width=0.5pt,dash pattern=on 2.2pt off 1.4pt] (O) -- (D);
   \draw[line width=0.45pt] (-90:0.34) arc[start angle=-90,end angle=-120,radius=0.34];
@@ -24469,7 +24468,7 @@ A O\text{：} O D = A B\text{：} B D.
   \node[anchor=west,inner sep=1pt] at (O) {$O$};
   \node[anchor=east] at (-2.05,-\R) {$P$};
   \node[anchor=west] at (3.25,-\R) {$Q$};
-  \node[anchor=west,inner sep=1pt] at (-108:0.52) {$30^{\circ}$};
+  \node[anchor=north west,inner sep=0.5pt] at (0.08,-0.36) {$30^{\circ}$};
 \end{tikzpicture}%
 }
 \caption{图5·5}
@@ -24665,7 +24664,7 @@ O D ^ {2} = D A ^ {2} + O A ^ {2}.
 
 \begin{figure}
 \centering
-% fig-alt: （第14题）圆心 $A,B$ 两圆（半径 $2$ 与 $8$）的两条外公切线；连心线 $AB$；半径垂直切线，$B$ 处切点有直角标记
+% fig-alt: （第14题）圆心 $A,B$ 两圆（半径 $2$ 与 $8$）的两条外公切线；连心线 $AB$；$A$ 在圆心左侧，$B$ 在圆心右侧；半径落到下侧切点；$B$ 处连心线与半径之间有小弧，切点无直角方
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\r{0.46}
@@ -24683,9 +24682,9 @@ O D ^ {2} = D A ^ {2} + O A ^ {2}.
   \draw[line width=0.7pt] (Ta) -- (Tb);
   \draw[line width=0.55pt] (A) -- (Ta);
   \draw[line width=0.55pt] (B) -- (Tb);
-  \draw[line width=0.45pt] ($(Tb)+({-\ang+180}:0.20)$) -- ($(Tb)+({-\ang+180}:0.20)+({-\ang+90}:0.20)$) -- ($(Tb)+({-\ang+90}:0.20)$);
-  \node[anchor=south,inner sep=1pt] at (A) {$A$};
-  \node[anchor=south,inner sep=1pt] at (B) {$B$};
+  \draw[line width=0.45pt] ($(B)+(180:0.28)$) arc[start angle=180,end angle={360-\ang},radius=0.28];
+  \node[anchor=east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=west,inner sep=1pt] at (B) {$B$};
 \end{tikzpicture}%
 }
 \caption{(第14题)}
@@ -24795,7 +24794,7 @@ n = \frac {150 \cdot 180}{30 \pi} = 900 \cdot \frac {1}{\pi}
 
 \begin{figure}
 \centering
-% fig-alt: 图5·7：两轮圆心 $O,O'$（半径 $1$ 与 $5$，圆心距 $8$）的外公切线 $AB,A'B'$；虚线对称轴 $CD$；虚线 $OE\parallel AB$ 交 $O'B$ 于 $E$；小圆上下均标 $60^{\circ}$，$O'$ 处 $60^{\circ}$ 与 $120^{\circ}$
+% fig-alt: 图5·7：两轮圆心 $O,O'$（半径 $1$ 与 $5$，圆心距 $8$）的外公切线 $AB,A'B'$；虚线对称轴 $CD$；虚线 $OE\parallel AB$ 交 $O'B$ 于 $E$，$E$ 在半径右侧；$B$ 处直角方；小圆上下均标 $60^{\circ}$；$O'$ 处 $60^{\circ}$ 在轴线左侧上方、$120^{\circ}$ 在轴线右侧上方，角弧贴着轴线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\r{0.50}
@@ -24816,12 +24815,13 @@ n = \frac {150 \cdot 180}{30 \pi} = 900 \cdot \frac {1}{\pi}
   \draw[line width=0.55pt] (O) -- (A);
   \draw[line width=0.55pt] (O) -- (Ap);
   \draw[line width=0.55pt] (Op) -- (Bb);
+  \draw[line width=0.4pt] ($(Bb)+(210:0.15)$) -- ($(Bb)+(210:0.15)+(300:0.15)$) -- ($(Bb)+(300:0.15)$);
   \draw[line width=0.55pt] (E) -- (Bb);
   \draw[line width=0.45pt,dash pattern=on 2pt off 1.4pt] (O) -- (E);
   \draw[line width=0.45pt] (120:0.30) arc[start angle=120,end angle=180,radius=0.30];
   \draw[line width=0.45pt] (-120:0.30) arc[start angle=-120,end angle=-180,radius=0.30];
   \draw[line width=0.45pt] ($(Op)+(120:0.32)$) arc[start angle=120,end angle=180,radius=0.32];
-  \draw[line width=0.45pt] ($(Op)+(0:0.48)$) arc[start angle=0,end angle=120,radius=0.48];
+  \draw[line width=0.45pt] ($(Op)+(0:0.36)$) arc[start angle=0,end angle=32,radius=0.36];
   \node[anchor=north east,inner sep=0.6pt] at (O) {$O$};
   \node[anchor=north,inner sep=1pt] at (Op) {$O'$};
   \node[anchor=south,inner sep=0.6pt] at (A) {$A$};
@@ -24830,11 +24830,11 @@ n = \frac {150 \cdot 180}{30 \pi} = 900 \cdot \frac {1}{\pi}
   \node[anchor=north,inner sep=0.6pt] at (Bp) {$B'$};
   \node[anchor=east] at (-0.95,0) {$C$};
   \node[anchor=west] at ($(Op)+(0.85,0)$) {$D$};
-  \node[anchor=south east,inner sep=0.5pt] at (E) {$E$};
+  \node[anchor=west,inner sep=0.8pt] at ($(E)+(0.04,-0.02)$) {$E$};
   \node[anchor=south,inner sep=0.4pt] at (155:0.48) {$60^{\circ}$};
   \node[anchor=center,inner sep=0.3pt] at (-160:0.15) {$60^{\circ}$};
-  \node[anchor=south,inner sep=0.4pt] at ($(Op)+(150:0.52)$) {$60^{\circ}$};
-  \node[anchor=south,inner sep=0.4pt] at ($(Op)+(55:0.72)$) {$120^{\circ}$};
+  \node[anchor=south,inner sep=0.4pt] at ($(Op)+(168:0.62)$) {$60^{\circ}$};
+  \node[anchor=south,inner sep=0.4pt] at ($(Op)+(16:0.78)$) {$120^{\circ}$};
 \end{tikzpicture}%
 }
 \caption{图5·7}
