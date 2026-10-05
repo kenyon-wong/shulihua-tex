@@ -18146,7 +18146,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·26（1）△ABC（C左、A右、B上），虚高BD⊥CA于D，∠A单弧；（2）钝角△A'B'C'（∠A'钝），CA'虚延至D'，虚高B'D'，∠A'内角双弧、外角∠B'A'D'单弧
+% fig-alt: 图3·26（1）△ABC（C左、A右、B上），虚高BD⊥CA于D，∠A双弧；（2）钝角△A'B'C'（∠A'钝），CA'虚延至D'，虚高B'D'，∠A'内角单弧（大）、外角∠B'A'D'双弧（与（1）∠A同记号）
 \begin{tikzpicture}[line cap=round,line join=round,baseline={(0,0)}]
   \coordinate (C) at (0,0);
   \coordinate (A) at (4.40,0);
@@ -18155,6 +18155,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
   \draw[line width=0.75pt] (C) -- (A) -- (B) -- cycle;
   \draw[dashed,line width=0.6pt] (B) -- (D);
   \draw[line width=0.5pt] (A) ++(140.3:0.36) arc (140.3:180:0.36);
+  \draw[line width=0.5pt] (A) ++(140.3:0.46) arc (140.3:180:0.46);
   \node[anchor=north east,inner sep=1pt] at (C) {$C$};
   \node[anchor=north west,inner sep=1pt] at (A) {$A$};
   \node[anchor=south,inner sep=1.5pt] at (B) {$B$};
@@ -18169,11 +18170,11 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
   \draw[line width=0.75pt] (Ap) -- (Cp) -- (Bp) -- cycle;
   \draw[dashed,line width=0.6pt] (Ap) -- (Dp);
   \draw[dashed,line width=0.6pt] (Bp) -- (Dp);
-  % interior obtuse angle B'A'C' (double arc): AC' at 0° to AB' at 128.3°
-  \draw[line width=0.5pt] (Ap) ++(0:0.42) arc (0:128.3:0.42);
-  \draw[line width=0.5pt] (Ap) ++(0:0.52) arc (0:128.3:0.52);
-  % exterior acute angle B'A'D' (single arc): AB' 128.3° to AD' 180°
-  \draw[line width=0.5pt] (Ap) ++(128.3:0.34) arc (128.3:180:0.34);
+  % interior obtuse angle B'A'C' (single large arc): AC' at 0° to AB' at 128.3°
+  \draw[line width=0.5pt] (Ap) ++(0:0.48) arc (0:128.3:0.48);
+  % exterior acute angle B'A'D' (double arc, same mark as ∠A in (1)): AB' 128.3° to AD' 180°
+  \draw[line width=0.5pt] (Ap) ++(128.3:0.28) arc (128.3:180:0.28);
+  \draw[line width=0.5pt] (Ap) ++(128.3:0.36) arc (128.3:180:0.36);
   \node[anchor=north east,inner sep=1pt] at (Dp) {$D'$};
   \node[anchor=north,inner sep=1.5pt] at (Ap) {$A'$};
   \node[anchor=north west,inner sep=1pt] at (Cp) {$C'$};
@@ -18194,7 +18195,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·27 △ABC；D在AC；左射线五等分AC得P（AP=AC/5）；DB、PE、DE均实线；五等分射线与四条平行线虚线
+% fig-alt: 图3·27 △ABC；D在AC；左射线五等分AC得P（AP=AC/5）；DE实线；DB、PE与五等分射线、四条平行线均为虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5.80,0);
@@ -18222,8 +18223,8 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
   \coordinate (E) at ({\Px + \tE*(5.80-\Dx)}, 0);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.75pt] (D) -- (E);
-  \draw[line width=0.75pt] (D) -- (B);
-  \draw[line width=0.75pt] (P) -- (E);
+  \draw[dashed,line width=0.6pt] (D) -- (B);
+  \draw[dashed,line width=0.6pt] (P) -- (E);
   \draw[dashed,line width=0.55pt] (A) -- (R5);
   \draw[dashed,line width=0.55pt] (R5) -- (C);
   \draw[dashed,line width=0.55pt] (R1) -- (P);
@@ -18288,20 +18289,20 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·28 左五边形ABCDE与右相似五边形A'B'C'D'E'；自A、A'分别虚线对角线AC/AD与A'C'/A'D'
+% fig-alt: 图3·28 左五边形ABCDE与右相似五边形A'B'C'D'E'（D在A上方略偏右、E在A左上、C在B右上）；自A、A'分别虚线对角线AC/AD与A'C'/A'D'
 \begin{tikzpicture}[line cap=round,line join=round]
-  % left larger pentagon
+  % left larger pentagon (vertices traced from fig-p0210-01)
   \coordinate (A) at (0.00,0.00);
   \coordinate (B) at (2.70,0.00);
-  \coordinate (C) at (3.45,1.15);
-  \coordinate (D) at (2.05,2.75);
-  \coordinate (E) at (0.25,1.95);
-  % right smaller ~0.58
+  \coordinate (C) at (3.34,2.18);
+  \coordinate (D) at (0.51,3.21);
+  \coordinate (E) at (-0.64,1.75);
+  % right smaller, ratio 0.62 (A'B' : AB in scan)
   \coordinate (Ap) at (4.70,0.00);
-  \coordinate (Bp) at (6.27,0.00);
-  \coordinate (Cp) at (6.70,0.67);
-  \coordinate (Dp) at (5.89,1.60);
-  \coordinate (Ep) at (4.85,1.13);
+  \coordinate (Bp) at (6.374,0.00);
+  \coordinate (Cp) at (6.771,1.352);
+  \coordinate (Dp) at (5.016,1.990);
+  \coordinate (Ep) at (4.303,1.085);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
   \draw[dashed,line width=0.6pt] (A) -- (C);
   \draw[dashed,line width=0.6pt] (A) -- (D);
@@ -18671,7 +18672,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·31：四种同底等积变换：(1)等腰，XY与垂直平分线MN；(2)底角α，上直线右端标v（无X）；(3)顶角β，虚圆弧；(4)中线l与半径等长（两端短竖线），虚弧为底边之上的半圆、两端落在底边所在直线上，OA'、OA''虚线
+% fig-alt: 图3·31：四种同底等积变换：(1)等腰，XY与垂直平分线MN；(2)底角α（B处只标α、无弧），左上参照角为水平向右边与向右上斜边、无弧，上直线右端标v（无X）；(3)顶角β，左上参照角为水平向右边与向右上斜边、无弧，虚圆弧；(4)中线l与半径等长（两端短竖线），虚弧为底边之上的半圆、两端落在底边所在直线上，OA'、OA''虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   % (1)
   \begin{scope}[shift={(0,5.6)}]
@@ -18707,13 +18708,11 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \draw[line width=0.75pt] (Ap) -- (B);
     \draw[line width=0.75pt] (Ap) -- (C);
     \pgfmathsetmacro{\alang}{atan2(2.55,2.85-1.40)}
-    \draw[line width=0.5pt] (B) ++(0:0.42) arc (0:\alang:0.42);
-    \node[anchor=south west,inner sep=1pt] at ($(B)+(0.50,0.20)$) {$\alpha$};
-    % reference angle: horizontal right + ray up-left (matches raw)
-    \draw[line width=0.65pt] (2.20,3.55) -- (2.95,3.55);
-    \draw[line width=0.65pt] (2.20,3.55) -- ({2.20-0.70*cos(40)},{3.55+0.70*sin(40)});
-    \draw[line width=0.5pt] (2.20,3.55) ++(180:0.30) arc (180:{180-40}:0.30);
-    \node[anchor=south,inner sep=1.5pt] at (2.05,3.78) {$\alpha$};
+    \node[anchor=south west,inner sep=1pt] at ($(B)+(0.50,0.06)$) {$\alpha$};
+    % reference angle α: horizontal ray to the right + ray up-right (fig-p0215-02), no arc
+    \draw[line width=0.65pt] (0.75,3.05) -- (1.95,3.05);
+    \draw[line width=0.65pt] (0.75,3.05) -- ({0.75+1.20*cos(\alang)},{3.05+1.20*sin(\alang)});
+    \node[anchor=south west,inner sep=1pt] at (1.12,3.08) {$\alpha$};
     \node[anchor=west,inner sep=1.5pt] at (5.10,2.55) {$v$};
     \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
     \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
@@ -18743,10 +18742,10 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \draw[line width=0.5pt] (App) ++(-93.736:0.38) arc (-93.736:-140.781:0.38);
     \node[inner sep=1pt] at (1.137,1.950) {$\beta$};
     \node[inner sep=1pt] at (3.963,1.950) {$\beta$};
-    \draw[line width=0.65pt] (0.55,3.45) -- (1.35,3.45);
-    \draw[line width=0.65pt] (0.55,3.45) -- ({0.55-0.65*cos(45)},{3.45+0.65*sin(45)});
-    \draw[line width=0.5pt] (0.55,3.45) ++(180:0.28) arc (180:{180-45}:0.28);
-    \node[anchor=south,inner sep=1.5pt] at (0.35,3.68) {$\beta$};
+    % reference angle β (= 47.0°, the drawn ∠A'): horizontal ray right + ray up-right (fig-p0215-03), no arc
+    \draw[line width=0.65pt] (0.05,3.05) -- (1.45,3.05);
+    \draw[line width=0.65pt] (0.05,3.05) -- ({0.05+1.10*cos(47.045)},{3.05+1.10*sin(47.045)});
+    \node[anchor=south west,inner sep=1pt] at (0.62,3.07) {$\beta$};
     \node[anchor=east,inner sep=2pt] at (-0.45,2.50) {$X$};
     \node[anchor=west,inner sep=2pt] at (5.40,2.50) {$Y$};
     \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
@@ -18877,7 +18876,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·33 左△ABC，虚高CD⊥AB于D；右以EG为直径实半圆，EF=½AB、FG=CD，FJ⊥EG交半圆于J（标x），正方形FHIJ；F、H在直径下方
+% fig-alt: 图3·33 左△ABC，虚高CD⊥AB于D；右以EG为直径虚半圆，EF=½AB、FG=CD，FJ⊥EG交半圆于J（标x），正方形FHIJ；F、H在直径上方、各在竖边右侧
 \begin{tikzpicture}[line cap=round,line join=round]
   % left triangle
   \begin{scope}[shift={(0,0)}]
@@ -18905,7 +18904,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \coordinate (I) at ({\ef+\xx},\xx);
     \draw[line width=0.75pt] (E) -- (G);
     \pgfmathsetmacro{\rrad}{(\ef+\fg)/2}
-    \draw[line width=0.75pt] (E) arc[start angle=180,end angle=0,radius=\rrad];
+    \draw[dashed,line width=0.6pt] (E) arc[start angle=180,end angle=0,radius=\rrad];
     \draw[line width=0.75pt] (F) -- (J) -- (I) -- (H) -- cycle;
     \draw[<->,line width=0.45pt] (0,-0.42) -- (\ef,-0.42);
     \node[anchor=north,inner sep=1pt,font=\small] at ({\ef/2},-0.42) {$\frac{1}{2}AB$};
@@ -18913,8 +18912,8 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \node[anchor=north,inner sep=1pt,font=\small] at ({\ef+\fg/2},-0.42) {$CD$};
     \node[anchor=east,inner sep=1.5pt] at ({\ef},{\xx/2}) {$x$};
     \node[anchor=north,inner sep=1.2pt] at (E) {$E$};
-    \node[anchor=north,inner sep=1.2pt] at (F) {$F$};
-    \node[anchor=north,inner sep=1.2pt] at (H) {$H$};
+    \node[anchor=south west,inner sep=1.2pt] at (F) {$F$};
+    \node[anchor=south west,inner sep=1.2pt] at (H) {$H$};
     \node[anchor=north west,inner sep=1pt] at (G) {$G$};
     \node[anchor=south east,inner sep=1pt] at (J) {$J$};
     \node[anchor=south west,inner sep=1pt] at (I) {$I$};
@@ -19189,27 +19188,25 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·36 △ABC，A靠近E上方；底BC三等分点D、E；实线AD、AE；自B向右下的浅斜虚射线，三条较陡的虚平行线向右下斜、落到射线上
+% fig-alt: 图3·36 △ABC，A在E右上方（E、C之间）；底BC三等分点D、E；实线AD、AE；自B向右下的浅斜虚射线截三等份，自D、E、C各引虚平行线向左下落到射线的三个等分点上
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0.00,0.00);
   \coordinate (C) at (4.50,0.00);
   \coordinate (D) at (1.50,0.00);
   \coordinate (E) at (3.00,0.00);
-  \coordinate (A) at (2.70,3.20);
+  \coordinate (A) at (3.40,3.20);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.75pt] (A) -- (D);
   \draw[line width=0.75pt] (A) -- (E);
-  % ray from B shallow down-right; three steeper parallels down-right onto the ray
-  \coordinate (P1) at (1.62,0.00);
-  \coordinate (P2) at (3.02,0.00);
-  \coordinate (P3) at (4.15,0.00);
-  \coordinate (Q1) at (2.05,-0.74);
-  \coordinate (Q2) at (3.82,-1.38);
-  \coordinate (Q3) at (5.25,-1.90);
-  \draw[dashed,line width=0.55pt] (B) -- (7.15,-2.58);
-  \draw[dashed,line width=0.55pt] (P1) -- (Q1);
-  \draw[dashed,line width=0.55pt] (P2) -- (Q2);
-  \draw[dashed,line width=0.55pt] (P3) -- (Q3);
+  % ray from B shallow down-right (-17°) with three equal marks R1..R3;
+  % parallels R1D, R2E, R3C run from D, E, C down-left onto the ray (fig-p0220-01)
+  \coordinate (R1) at (-17:1.27);
+  \coordinate (R2) at (-17:2.54);
+  \coordinate (R3) at (-17:3.81);
+  \draw[dashed,line width=0.55pt] (B) -- (-17:5.30);
+  \draw[dashed,line width=0.55pt] (D) -- (R1);
+  \draw[dashed,line width=0.55pt] (E) -- (R2);
+  \draw[dashed,line width=0.55pt] (C) -- (R3);
   \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=north east,inner sep=1pt] at (B) {$B$};
   \node[anchor=north west,inner sep=1pt] at (C) {$C$};
@@ -19270,7 +19267,7 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·38 △ABC；AB三等分，M为靠近B的分点（线上小叉），AN=⅓AB；虚半圆以AB为直径，PN⊥AB交圆于P；AB'=AP；B'C'∥BC
+% fig-alt: 图3·38 △ABC；AB三等分，M为靠近B的分点（线上小叉），AN=⅓AB；虚半圆以AB为直径，PN⊥AB交圆于P；以A为心、AP为半径的虚弧自P落到AB上得B'（AB'=AP）；B'C'∥BC
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (3.000,3.500);
   \coordinate (B) at (0.000,0.000);
@@ -19284,6 +19281,8 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
   \draw[dashed,line width=0.55pt] (B) arc[start angle=-130.60,delta angle=-180,radius=2.305];
   \draw[dashed,line width=0.55pt] (P) -- (A);
   \draw[dashed,line width=0.55pt] (P) -- (N);
+  % arc centred at A with radius AP, from P down to B' on AB (fig-p0221-02)
+  \draw[dashed,line width=0.55pt] (P) arc[start angle=174.65,end angle=229.40,radius=2.6616];
   \draw[line width=0.5pt] (1.084,1.095) -- (0.916,1.238);
   \node[anchor=east,inner sep=1pt] at (0.70,1.08) {$M$};
   \node[anchor=south west,inner sep=1.5pt] at (A) {$A$};
