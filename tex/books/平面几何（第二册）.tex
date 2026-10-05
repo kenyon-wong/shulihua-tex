@@ -24061,7 +24061,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-% fig-alt: 图5·2：圆 $O$ 内接正六边形与外接弧上 $B_i$
+% fig-alt: 图5·2：圆 $O$ 内接正六边形 $A_1A_2\cdots A_6$ 与内接正十二边形 $A_1B_1A_2B_2\cdots A_6B_6$ 同时画出（$B_i$ 为各弧中点）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.50);
@@ -24070,6 +24070,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
     \coordinate (B\i) at ({-180+\i*60}:1.50);
   }
   \draw[line width=0.7pt] (A1)--(B1)--(A2)--(B2)--(A3)--(B3)--(A4)--(B4)--(A5)--(B5)--(A6)--(B6)--cycle;
+  \draw[line width=0.7pt] (A1)--(A2)--(A3)--(A4)--(A5)--(A6)--cycle;
   \fill (0,0) circle (0.9pt);
   \node[anchor=west] at (0.08,0) {$O$};
   \node[anchor=north east] at (A1) {$A_1$};
@@ -24332,7 +24333,7 @@ d = r _ {2} - r _ {1}
 
 \begin{figure}
 \centering
-% fig-alt: 图5·3：同心圆 $C_1$（内）、$C_2$（外），圆心 $O$；环带为水平阴影；$r_1$ 斜向止于内圆，$r_2$ 水平箭头亦止于内圆，环宽 $d$ 在底部
+% fig-alt: 图5·3：同心圆 $C_1$（内）、$C_2$（外），圆心 $O$；环带为水平阴影；$r_1$ 向右下（约 $-26^{\circ}$）止于内圆，$r_2$ 水平箭头穿过内圆止于外圆；环宽 $d$ 为右下方（约 $-62^{\circ}$）内外圆之间的径向双箭头，$d$ 压在线上
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \fill[pattern=horizontal lines,pattern color=black!60] (0,0) circle (1.35);
@@ -24341,14 +24342,14 @@ d = r _ {2} - r _ {1}
   \draw[line width=0.75pt] (0,0) circle (0.78);
   \fill (0,0) circle (0.8pt);
   \node[anchor=south east,inner sep=0.8pt] at (0,0) {$O$};
-  \draw[->,line width=0.45pt] (0,0) -- (-42:0.78);
-  \node[anchor=north,inner sep=1pt] at (-24:0.48) {$r_1$};
-  \draw[->,line width=0.45pt] (0,0) -- (0.78,0);
+  \draw[->,line width=0.45pt] (0,0) -- (-26:0.78);
+  \node[anchor=north,inner sep=1pt] at (-31:0.44) {$r_1$};
+  \draw[->,line width=0.45pt] (0,0) -- (1.35,0);
   \node[anchor=south,inner sep=1pt] at (0.40,0.03) {$r_2$};
   \node[anchor=south,inner sep=1pt] at (90:0.90) {$C_1$};
   \node[anchor=south,inner sep=1pt] at (90:1.50) {$C_2$};
-  \draw[line width=0.45pt] (-90:0.78) -- (-90:1.35);
-  \node[anchor=west,inner sep=1pt] at (-90:1.10) {$d$};
+  \draw[<->,line width=0.45pt] (-62:0.78) -- (-62:1.35);
+  \node[fill=white,inner sep=0.6pt] at (-62:1.065) {$d$};
 \end{tikzpicture}%
 }
 \caption{图5·3}
@@ -24363,7 +24364,7 @@ d = r _ {2} - r _ {1}
 
 \begin{figure}
 \centering
-% fig-alt: 图5·4：等腰 $\triangle ABC$，顶角双弧、底角 $30^{\circ}$；高 $AD\perp BC$（$D$ 处直角）；内切圆切三边，圆心 $O$ 在 $AD$ 上；虚线 $BO$ 为 $\angle B$ 的平分线
+% fig-alt: 图5·4：等腰 $\triangle ABC$，顶角双弧、底角 $30^{\circ}$（标在 $B$ 处角弧右侧、压在虚线 $BO$ 上）；高 $AD\perp BC$（$D$ 处直角）；内切圆切三边，圆心 $O$ 在 $AD$ 上；虚线 $BO$ 为 $\angle B$ 的平分线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\h{1.85}
@@ -24387,7 +24388,7 @@ d = r _ {2} - r _ {1}
   \node[anchor=north west] at (C) {$C$};
   \node[anchor=north] at (D) {$D$};
   \node[anchor=west] at (O) {$O$};
-  \node[anchor=south,inner sep=1pt] at (16:0.70) {$30^{\circ}$};
+  \node[anchor=west,fill=white,inner sep=0.5pt] at (15:0.48) {$30^{\circ}$};
 \end{tikzpicture}%
 }
 \caption{图5·4}
@@ -24597,7 +24598,7 @@ O D ^ {2} = D A ^ {2} + O A ^ {2}.
 
 \begin{figure}
 \centering
-% fig-alt: （第12题）水平虚线轴，$O_1O_2=r/2$。轴下以 $O_1$ 为圆心的半圆 $r$、$r+h$、$r+2h$，轴上以 $O_2$ 为圆心的半圆 $r+\frac{h}{2}$、$r+\frac{3h}{2}$、$r+\frac{5h}{2}$（最外弧不封口）；各半径画成射线并旁注
+% fig-alt: （第12题）水平虚线轴，$O_1O_2=r/2$。轴下以 $O_1$ 为圆心的半圆 $r$、$r+h$、$r+2h$，轴上以 $O_2$ 为圆心的半圆 $r+\frac{h}{2}$、$r+\frac{3h}{2}$、$r+\frac{5h}{2}$（最外弧为完整半圆，右端落在轴上）；各半径画成射线并旁注；$O_1$ 标在点的左上、$O_2$ 标在点的右下；$r$ 标在竖半径右侧，$r+h$ 在最内弧下方，$r+2h$ 沿其射线写在环内；$r+\frac{h}{2}$ 的半径近乎竖直，字母在左上圆外，以引线连到该半径
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\r{0.40}
@@ -24609,21 +24610,22 @@ O D ^ {2} = D A ^ {2} + O A ^ {2}.
   \draw[line width=0.65pt] ({2*\r},0) arc[start angle=0,end angle=-180,radius={2*\r}];
   \draw[line width=0.65pt] ({-2*\r},0) arc[start angle=180,end angle=0,radius={2.5*\r}];
   \draw[line width=0.65pt] ({3*\r},0) arc[start angle=0,end angle=-180,radius={3*\r}];
-  \draw[line width=0.65pt] ({-3*\r},0) arc[start angle=180,end angle=55,radius={3.5*\r}];
+  \draw[line width=0.65pt] ({-3*\r},0) arc[start angle=180,end angle=0,radius={3.5*\r}];
   \fill (Oone) circle (0.7pt);
   \fill (Otwo) circle (0.7pt);
   \draw[line width=0.4pt] (Oone) -- (-90:\r);
   \draw[line width=0.4pt] (Oone) -- (-125:{2*\r});
   \draw[line width=0.4pt] (Oone) -- (-155:{3*\r});
-  \draw[line width=0.4pt] (Otwo) -- ($(Otwo)+(128:{1.5*\r})$);
+  \draw[line width=0.4pt] (Otwo) -- ($(Otwo)+(100:{1.5*\r})$);
   \draw[line width=0.4pt] (Otwo) -- ($(Otwo)+(72:{2.5*\r})$);
   \draw[line width=0.4pt] (Otwo) -- ($(Otwo)+(40:{3.5*\r})$);
-  \node[anchor=north,inner sep=0.5pt] at ($(Oone)+(-0.16,-0.12)$) {$O_1$};
-  \node[anchor=south,inner sep=0.5pt] at ($(Otwo)+(0.16,0.10)$) {$O_2$};
-  \node[anchor=east,inner sep=0.5pt] at (-90:{0.55*\r}) {$r$};
-  \node[anchor=east,inner sep=1pt] at (-108:{1.45*\r}) {$r+h$};
-  \node[anchor=north east,inner sep=1pt] at (-148:{3.45*\r}) {$r+2h$};
-  \node[anchor=south east,inner sep=0.4pt] at ($(Otwo)+(142:{1.55*\r})$) {$r+\frac{h}{2}$};
+  \node[anchor=south east,inner sep=0.5pt] at ($(Oone)+(-0.02,0.03)$) {$O_1$};
+  \node[anchor=north west,inner sep=0.3pt] at ($(Otwo)+(-0.02,-0.03)$) {$O_2$};
+  \node[anchor=west,inner sep=0.5pt] at (-90:{0.55*\r}) {$r$};
+  \node[anchor=north west,inner sep=0.5pt] at (-0.10,-0.44) {$r+h$};
+  \node[rotate=25,fill=white,inner sep=0.3pt] at (-155:{2.5*\r}) {$r+2h$};
+  \draw[line width=0.3pt] ($(Otwo)+(100:{0.7*\r})$) -- (-0.88,0.98);
+  \node[anchor=south east,inner sep=0.4pt] at (-0.86,0.96) {$r+\frac{h}{2}$};
   \node[anchor=south,inner sep=0.4pt] at ($(Otwo)+(78:{2.62*\r})$) {$r+\frac{3}{2}h$};
   \node[anchor=south west,inner sep=0.4pt] at ($(Otwo)+(32:{3.62*\r})$) {$r+\frac{5}{2}h$};
 \end{tikzpicture}%
@@ -24734,7 +24736,7 @@ l = \frac {150 \pi R}{180} = \frac {5}{6} \pi R.
 
 \begin{figure}
 \centering
-% fig-alt: 图5·6：圆 $O$，两切线交于 $F$ 成 $30^{\circ}$，切点 $B,D$；弦 $BD$ 上左右标 $R$，$150^{\circ}$ 在弦下；劣弧 $\widehat{BCD}$
+% fig-alt: 图5·6：圆 $O$，两切线交于 $F$ 成 $30^{\circ}$，切点 $B,D$；绳子 $AB$、$DE$ 为实线，切线延长段 $BF$、$DF$ 为虚线；半径 $OB,OD$ 上方各标 $R$，不画弦 $BD$；$150^{\circ}$ 标在 $O$ 正下方，无角弧；劣弧 $\widehat{BCD}$
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{0.95}
@@ -24747,11 +24749,11 @@ l = \frac {150 \pi R}{180} = \frac {5}{6} \pi R.
   \coordinate (A) at ($(F)!1.38!(B)$);
   \coordinate (E) at ($(F)!1.38!(D)$);
   \draw[line width=0.75pt] (O) circle (\R);
-  \draw[line width=0.7pt] (A) -- (F) -- (E);
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.7pt] (D) -- (E);
+  \draw[line width=0.55pt,dash pattern=on 2.2pt off 1.4pt] (B) -- (F) -- (D);
   \draw[line width=0.55pt] (O) -- (B);
   \draw[line width=0.55pt] (O) -- (D);
-  \draw[line width=0.55pt] (B) -- (D);
-  \draw[line width=0.45pt] (195:0.36) arc[start angle=195,end angle=345,radius=0.36];
   \draw[line width=0.45pt] ($(F)+(75:0.42)$) arc[start angle=75,end angle=105,radius=0.42];
   \node[anchor=south east] at (A) {$A$};
   \node[anchor=east,inner sep=2pt] at (B) {$B$};
@@ -24760,9 +24762,9 @@ l = \frac {150 \pi R}{180} = \frac {5}{6} \pi R.
   \node[anchor=south west] at (E) {$E$};
   \node[anchor=north] at (F) {$F$};
   \node[anchor=south,inner sep=1pt] at (O) {$O$};
-  \node[anchor=south,inner sep=0.5pt] at ($(B)!0.30!(D)$) {$R$};
-  \node[anchor=south,inner sep=0.5pt] at ($(D)!0.30!(B)$) {$R$};
-  \node[anchor=north,inner sep=0.6pt] at ($(B)!0.5!(D)+(0,-0.22)$) {$150^{\circ}$};
+  \node[anchor=south,inner sep=0.8pt] at ($(B)!0.45!(O)$) {$R$};
+  \node[anchor=south,inner sep=0.8pt] at ($(D)!0.45!(O)$) {$R$};
+  \node[anchor=north,inner sep=0.6pt] at (0,-0.07) {$150^{\circ}$};
   \node[anchor=south,inner sep=1pt] at ($(F)+(90:0.58)$) {$30^{\circ}$};
 \end{tikzpicture}%
 }
@@ -24796,7 +24798,7 @@ n = \frac {150 \cdot 180}{30 \pi} = 900 \cdot \frac {1}{\pi}
 
 \begin{figure}
 \centering
-% fig-alt: 图5·7：两轮圆心 $O,O'$（半径 $1$ 与 $5$，圆心距 $8$）的外公切线 $AB,A'B'$；虚线对称轴 $CD$；虚线 $OE\parallel AB$ 交 $O'B$ 于 $E$，$E$ 在半径右侧；$B$ 处直角方；小圆上下均标 $60^{\circ}$；$O'$ 处 $60^{\circ}$ 在轴线左侧上方、$120^{\circ}$ 在轴线右侧上方，角弧贴着轴线
+% fig-alt: 图5·7：两轮圆心 $O,O'$（半径 $1$ 与 $5$，圆心距 $8$）的外公切线 $AB,A'B'$；虚线对称轴过 $O,O'$ 并伸出两圆，$C$ 标在小圆左端点左上、$D$ 标在大圆右端点右上；小圆只画半径 $OA$（$A$ 处直角方），只在上方标 $60^{\circ}$；虚线 $OE\parallel AB$ 交 $O'B$ 于 $E$，$E$ 在半径右侧，$E$ 处直角方；$EB$ 实线、$O'E$ 虚线；$B$ 处直角方；$O'$ 处 $60^{\circ}$ 在轴线左侧上方、$120^{\circ}$ 在轴线右侧上方，角弧贴着轴线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\r{0.50}
@@ -24811,17 +24813,17 @@ n = \frac {150 \cdot 180}{30 \pi} = 900 \cdot \frac {1}{\pi}
   \coordinate (E) at ($(Op)+(120:{\R-\r})$);
   \draw[line width=0.75pt] (O) circle (\r);
   \draw[line width=0.75pt] (Op) circle (\R);
-  \draw[line width=0.45pt,dash pattern=on 2pt off 1.4pt] (-0.95,0) -- ($(Op)+(0.85,0)$);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.4pt] (-0.95,0) -- ($(Op)+({\R+0.35},0)$);
   \draw[line width=0.7pt] (A) -- (Bb);
   \draw[line width=0.7pt] (Ap) -- (Bp);
   \draw[line width=0.55pt] (O) -- (A);
-  \draw[line width=0.55pt] (O) -- (Ap);
-  \draw[line width=0.55pt] (Op) -- (Bb);
+  \draw[line width=0.45pt,dash pattern=on 2pt off 1.4pt] (Op) -- (E);
   \draw[line width=0.4pt] ($(Bb)+(210:0.15)$) -- ($(Bb)+(210:0.15)+(300:0.15)$) -- ($(Bb)+(300:0.15)$);
+  \draw[line width=0.4pt] ($(A)+(300:0.12)$) -- ($(A)+(300:0.12)+(30:0.12)$) -- ($(A)+(30:0.12)$);
+  \draw[line width=0.4pt] ($(E)+(210:0.13)$) -- ($(E)+(210:0.13)+(120:0.13)$) -- ($(E)+(120:0.13)$);
   \draw[line width=0.55pt] (E) -- (Bb);
   \draw[line width=0.45pt,dash pattern=on 2pt off 1.4pt] (O) -- (E);
   \draw[line width=0.45pt] (120:0.30) arc[start angle=120,end angle=180,radius=0.30];
-  \draw[line width=0.45pt] (-120:0.30) arc[start angle=-120,end angle=-180,radius=0.30];
   \draw[line width=0.45pt] ($(Op)+(120:0.32)$) arc[start angle=120,end angle=180,radius=0.32];
   \draw[line width=0.45pt] ($(Op)+(0:0.36)$) arc[start angle=0,end angle=32,radius=0.36];
   \node[anchor=north east,inner sep=0.6pt] at (O) {$O$};
@@ -24830,11 +24832,10 @@ n = \frac {150 \cdot 180}{30 \pi} = 900 \cdot \frac {1}{\pi}
   \node[anchor=north,inner sep=0.6pt] at (Ap) {$A'$};
   \node[anchor=south,inner sep=0.6pt] at (Bb) {$B$};
   \node[anchor=north,inner sep=0.6pt] at (Bp) {$B'$};
-  \node[anchor=east] at (-0.95,0) {$C$};
-  \node[anchor=west] at ($(Op)+(0.85,0)$) {$D$};
+  \node[anchor=south east,inner sep=0.8pt] at (-\r,0) {$C$};
+  \node[anchor=south west,inner sep=0.8pt] at ($(Op)+(\R,0)$) {$D$};
   \node[anchor=west,inner sep=0.8pt] at ($(E)+(0.04,-0.02)$) {$E$};
   \node[anchor=south,inner sep=0.4pt] at (155:0.48) {$60^{\circ}$};
-  \node[anchor=center,inner sep=0.3pt] at (-160:0.15) {$60^{\circ}$};
   \node[anchor=south,inner sep=0.4pt] at ($(Op)+(168:0.62)$) {$60^{\circ}$};
   \node[anchor=south,inner sep=0.4pt] at ($(Op)+(16:0.78)$) {$120^{\circ}$};
 \end{tikzpicture}%
@@ -24900,7 +24901,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-% fig-alt: 图5·8：等圆 $O,O'$ 交于 $A,B$，$OO'=\sqrt{3}R$；虚线半径 $OA,OB,O'A,O'B$ 与连心线，实线公弦 $AB$ 交 $OO'$ 于 $C$；$M,N$ 为左右远点；$\widehat{AMB}$ 标 $300^{\circ}$，$\angle BOC=30^{\circ}$，$\angle AOB=60^{\circ}$，$OC=\frac{\sqrt{3}}{2}R$
+% fig-alt: 图5·8：等圆 $O,O'$ 交于 $A,B$，$OO'=\sqrt{3}R$；两圆落在对方圆内的弧（透镜两侧）为虚线，其余为实线；虚线半径 $OA,OB,O'A,O'B$、连心线与公弦 $AB$，$AB$ 交 $OO'$ 于 $C$（$C$ 标在右下）；$M,N$ 为左右远点；$\widehat{AMB}$ 标 $300^{\circ}$；$\angle BOC$ 有角弧并标 $30^{\circ}$，不标 $60^{\circ}$；$\frac{\sqrt{3}}{2}R$ 标在 $O$ 右下方，引线指向 $OC$
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{1.48}
@@ -24910,27 +24911,30 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
   \coordinate (C) at (\dx,0);
   \coordinate (B) at (\dx,{\R/2});
   \coordinate (A) at (\dx,{-\R/2});
-  \draw[line width=0.75pt] (O) circle (\R);
-  \draw[line width=0.75pt] (Op) circle (\R);
+  \draw[line width=0.75pt] (B) arc[start angle=30,end angle=330,radius=\R];
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (A) arc[start angle=-30,end angle=30,radius=\R];
+  \draw[line width=0.75pt] (A) arc[start angle=210,end angle=510,radius=\R];
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (B) arc[start angle=150,end angle=210,radius=\R];
   \draw[line width=0.55pt] (O) circle (0.40);
   \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (O) -- (A);
   \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (O) -- (B);
   \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (Op) -- (A);
   \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (Op) -- (B);
   \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (O) -- (Op);
-  \draw[line width=0.65pt] (A) -- (B);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.3pt] (A) -- (B);
   \node[anchor=east] at (180:\R) {$M$};
   \node[anchor=west] at ($(Op)+(0:\R)$) {$N$};
   \node[anchor=north] at (A) {$A$};
   \node[anchor=south] at (B) {$B$};
   \node[anchor=north east,inner sep=0.6pt] at (O) {$O$};
   \node[anchor=north west,inner sep=0.6pt] at (Op) {$O'$};
-  \node[anchor=south west,inner sep=0.5pt] at (C) {$C$};
+  \node[anchor=north west,inner sep=0.5pt] at (C) {$C$};
+  \draw[line width=0.45pt] (0:0.46) arc[start angle=0,end angle=30,radius=0.46];
   \node[anchor=west,inner sep=0.4pt] at (8:0.58) {$30^{\circ}$};
-  \node[anchor=south,inner sep=0.5pt] at (34:0.52) {$60^{\circ}$};
   \node[anchor=south,inner sep=0.6pt] at (48:0.92) {$R$};
   \node[anchor=east,inner sep=1pt] at (172:0.62) {$300^{\circ}$};
-  \node[anchor=north,inner sep=0.8pt] at (0.42*\dx,-0.04) {$\frac{\sqrt{3}}{2}R$};
+  \draw[line width=0.4pt] (0.40,-0.52) -- (0.56,-0.04);
+  \node[anchor=north east,inner sep=0.6pt] at (0.43,-0.50) {$\frac{\sqrt{3}}{2}R$};
 \end{tikzpicture}%
 }
 \caption{图5·8}
@@ -24970,7 +24974,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-% fig-alt: （第2题）小圆 $O$（在圆心下方）与大圆 $O_1$ 的外公切皮带；$R$ 在上半径右侧；摩擦弧 $135^{\circ}$ 在左上扇形内；大圆画出到切点的两条半径
+% fig-alt: （第2题）小圆 $O$（字母在圆心右下）与大圆 $O_1$（字母紧贴圆心右侧）的外公切皮带；$R$ 在上半径右侧；$135^{\circ}$ 竖排在左侧扇形正中，不画角弧；大圆画出到切点的两条半径
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\r{0.58}
@@ -24988,11 +24992,10 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
   \draw[line width=0.5pt] (O) -- (-\ang:\r);
   \draw[line width=0.5pt] (Oo) -- ($(Oo)+(\ang:\R)$);
   \draw[line width=0.5pt] (Oo) -- ($(Oo)+(-\ang:\R)$);
-  \draw[line width=0.45pt] (\ang:0.34) arc[start angle=\ang,end angle={360-\ang},radius=0.34];
-  \node[anchor=north,inner sep=1.2pt] at (O) {$O$};
-  \node[anchor=north,inner sep=1pt] at (Oo) {$O_1$};
+  \node[anchor=north west,inner sep=1.2pt] at (O) {$O$};
+  \node[anchor=west,inner sep=1pt] at ($(Oo)+(0,-0.05)$) {$O_1$};
   \node[anchor=west,inner sep=0.6pt] at (95:0.34) {$R$};
-  \node[anchor=center,inner sep=0.2pt] at (150:0.24) {$135^{\circ}$};
+  \node[rotate=90,inner sep=0.2pt] at (180:0.29) {$135^{\circ}$};
 \end{tikzpicture}%
 }
 \caption{(第2题)}
@@ -25036,17 +25039,18 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-% fig-alt: （第8题）扇形顶点在左下，$\alpha$ 在顶点；上弧外标 $130$ cm，右下半径外标 $36.0$ cm
+% fig-alt: （第8题）扇形顶点在下方正中，两半径分向左上、右上（圆心角约 $100^{\circ}$），弧在上；$\alpha$ 压在顶点小角弧上；弧外双箭头标 $150$ cm（数字压在线上），右半径外侧平行双箭头标 $86.0$ cm（沿半径书写）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \def\a{-16}
-  \def\b{112}
+  \def\a{44}
+  \def\b{144}
   \draw[line width=0.75pt] (0,0) -- (\a:2.45) arc[start angle=\a,end angle=\b,radius=2.45] -- cycle;
-  \draw[<->,line width=0.4pt] (\a-6:2.68) arc[start angle=\a-6,end angle=\b+8,radius=2.68];
-  \node at (58:3.02) {$130$\,cm};
-  \draw[<->,line width=0.4pt] (\a-11:0.32) -- (\a-11:2.15);
-  \node[anchor=north,inner sep=1pt] at (\a-20:1.25) {$36.0$\,cm};
-  \node at (42:0.48) {$\alpha$};
+  \draw[<->,line width=0.4pt] (\a-2:2.70) arc[start angle=\a-2,end angle=\b+2,radius=2.70];
+  \node[fill=white,inner sep=1pt] at ({(\a+\b)/2}:2.70) {$150$\,cm};
+  \draw[<->,line width=0.4pt] ($(0,0)+(\a-90:0.22)$) -- ($(\a:2.45)+(\a-90:0.22)$);
+  \node[rotate=\a,fill=white,inner sep=1pt] at ($(\a:1.30)+(\a-90:0.22)$) {$86.0$\,cm};
+  \draw[line width=0.4pt] (\a:0.30) arc[start angle=\a,end angle=\b,radius=0.30];
+  \node[fill=white,inner sep=0.5pt] at ({(\a+\b)/2}:0.30) {$\alpha$};
 \end{tikzpicture}%
 }
 \caption{(第8题)}
@@ -25054,12 +25058,12 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-% fig-alt: 圆 $O$ 上弧 $AB$，切线自 $A,B$
+% fig-alt: （第9题）圆 $O$，皮带切圆于 $A,B$ 并沿两侧切线向下伸出；半径 $OA,OB$ 为虚线
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.05);
-  \draw[line width=0.55pt] (0,0) -- (130:1.05);
-  \draw[line width=0.55pt] (0,0) -- (50:1.05);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0) -- (130:1.05);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (0,0) -- (50:1.05);
   \draw[line width=0.7pt] (130:1.05) -- ++(220:1.2);
   \draw[line width=0.7pt] (50:1.05) -- ++(-40:1.2);
   \node[anchor=south east] at (130:1.10) {$A$};
@@ -25082,7 +25086,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
 
 \begin{figure}
 \centering
-% fig-alt: （第10题）圆 $O$ 内接正三角形的一边 $AB$（$OA=OB=AB$）；高 $OD$ 交 $AB$ 于 $D$，延长交圆于 $E$
+% fig-alt: （第10题）圆 $O$ 内接正三角形的一边 $AB$（$OA=OB=AB$）；高 $OD$ 交 $AB$ 于 $D$（$D$ 标在 $OE$ 右侧、弦上方），延长交圆于 $E$
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{1.50}
@@ -25099,7 +25103,7 @@ O E = \sqrt {8 ^ {2} - 4 ^ {2}} = 4 \sqrt {3} (\text { \text{尺} })\text{，}
   \node[anchor=south] at (O) {$O$};
   \node[anchor=north east] at (A) {$A$};
   \node[anchor=north west] at (B) {$B$};
-  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=south west,inner sep=1pt] at (D) {$D$};
   \node[anchor=north] at (E) {$E$};
 \end{tikzpicture}%
 }
@@ -25261,7 +25265,7 @@ l = \alpha R.
 
 \begin{figure}
 \centering
-% fig-alt: 图5·11：圆 $O$，$OB$ 水平向左、$OA$ 偏右下，两边都标 $R$；角弧在 $OB$ 上方向上鼓、右端落在 $O$，$\alpha$ 在角弧上方；优弧外侧 $2R$ 两端有箭头
+% fig-alt: 图5·11：圆 $O$，$OB$ 水平向左、$OA$ 偏右下，两边都标 $R$（$OA$ 上的 $R$ 在线的上方）；以 $O$ 为圆心的小角弧从 $OB$ 经上方转到 $OA$，$\alpha$ 在角弧上方；优弧外侧 $2R$ 两端有箭头
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{1.48}
@@ -25270,14 +25274,14 @@ l = \alpha R.
   \coordinate (A) at (-36:\R);
   \draw[line width=0.75pt] (O) circle (\R);
   \draw[line width=0.7pt] (B) -- (O) -- (A);
-  \draw[line width=0.45pt] (0,0) arc[start angle=0,end angle=180,radius=0.22];
+  \draw[line width=0.45pt] (-36:0.22) arc[start angle=-36,end angle=180,radius=0.22];
   \draw[<->,line width=0.5pt] (-36:{\R+0.14}) arc[start angle=-36,end angle=180,radius={\R+0.14}];
   \node[anchor=west] at (A) {$A$};
   \node[anchor=east] at (B) {$B$};
   \node[anchor=south,inner sep=0.8pt] at (180:{0.55*\R}) {$R$};
   \node[anchor=north,inner sep=1pt] at (O) {$O$};
-  \node[anchor=north,inner sep=0.5pt] at (-18:0.78) {$R$};
-  \node[anchor=south,inner sep=0.4pt] at (-0.22,0.26) {$\alpha$};
+  \node[anchor=south west,inner sep=0.5pt] at (-36:0.80) {$R$};
+  \node[anchor=south,inner sep=0.4pt] at (0,0.23) {$\alpha$};
   \node at (100:{\R+0.32}) {$2R$};
 \end{tikzpicture}%
 }
@@ -25317,7 +25321,7 @@ l = \alpha R.
 
 \begin{figure}
 \centering
-% fig-alt: 图5·12：圆 $O$ 内等边 $\triangle OAB$（$O$ 为圆心，$A,B$ 在圆上，$OA=OB=AB=R$），$O$ 处有角弧；底边 $R$ 在弦上侧，左腰 $R$ 在外侧
+% fig-alt: 图5·12：圆 $O$ 内等边 $\triangle OAB$（$O$ 为圆心，$A,B$ 在圆上，$OA=OB=AB=R$），腰 $OA,OB$ 为虚线、底 $AB$ 为实线，$O$ 处有角弧；底边 $R$ 在弦上侧，左腰 $R$ 在外侧
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{1.50}
@@ -25325,7 +25329,8 @@ l = \alpha R.
   \coordinate (A) at (240:\R);
   \coordinate (B) at (300:\R);
   \draw[line width=0.75pt] (O) circle (\R);
-  \draw[line width=0.7pt] (O) -- (A) -- (B) -- cycle;
+  \draw[line width=0.7pt] (A) -- (B);
+  \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (A) -- (O) -- (B);
   \draw[line width=0.45pt] (240:0.32) arc[start angle=240,end angle=300,radius=0.32];
   \node[anchor=south] at (O) {$O$};
   \node[anchor=north east] at (A) {$A$};
@@ -25397,32 +25402,35 @@ R。
 
 \begin{figure}
 \centering
-% fig-alt: 图5·13：圆 $O$；弦 $AB$，$D$ 在弦下靠近左段；$OC$ 过垂足交圆于下方的 $C$；射线旁注 $r_{24}$（靠 $A$）、$r_{12}$、$r_6$（垂线左侧）；$a_{24}$ 在弦下左段弧侧，$a_{12}$ 在弦下靠近 $C$，$a_6$ 在垂线右侧弦上
+% fig-alt: 图5·13：圆 $O$；$AB$ 为内接正六边形的一边，$C$ 为 $\widehat{AB}$ 中点，$D$ 为 $\widehat{AC}$ 中点；画弦 $AB$、$AC$、$AD$；$O$ 到 $AB$ 的垂线止于弦 $AB$（旁注 $r_6$），$OD$ 过 $AC$ 中点到圆上（旁注 $r_{12}$），$O$ 到 $AD$ 中点的线靠 $A$（旁注 $r_{24}$）；$a_6$ 在垂线右侧弦上，$a_{12}$ 在垂足正下方（$AB$ 与 $AC$ 之间），$a_{24}$ 在弧 $\widehat{AD}$ 外侧下方；$r_6$、$r_{12}$ 在各自线段右侧，$r_{24}$ 在其线段左侧；$C$、$D$ 标在圆外下方
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{1.80}
   \coordinate (O) at (0,0);
-  \coordinate (A) at (232:\R);
-  \coordinate (B) at (308:\R);
+  \coordinate (A) at (240:\R);
+  \coordinate (B) at (300:\R);
   \coordinate (C) at (270:\R);
-  \coordinate (H) at (270:{\R*cos(38)});
-  \coordinate (D) at ($(A)!0.38!(H)$);
+  \coordinate (D) at (255:\R);
+  \coordinate (H) at ($(A)!0.5!(B)$);
+  \coordinate (K) at ($(A)!0.5!(D)$);
   \draw[line width=0.75pt] (O) circle (\R);
   \draw[line width=0.7pt] (A) -- (B);
-  \draw[line width=0.55pt] (O) -- (A);
+  \draw[line width=0.5pt] (A) -- (C);
+  \draw[line width=0.5pt] (A) -- (D);
+  \draw[line width=0.55pt] (O) -- (K);
   \draw[line width=0.55pt] (O) -- (D);
-  \draw[line width=0.55pt] (O) -- (C);
+  \draw[line width=0.55pt] (O) -- (H);
   \node[anchor=south] at (O) {$O$};
   \node[anchor=north east] at (A) {$A$};
   \node[anchor=north west] at (B) {$B$};
   \node[anchor=north] at (C) {$C$};
-  \node[anchor=east,inner sep=0.8pt] at ($(O)!0.52!(H)$) {$r_6$};
-  \node[anchor=east,inner sep=0.6pt] at ($(O)!0.40!(D)$) {$r_{12}$};
-  \node[anchor=east,inner sep=0.5pt] at ($(O)!0.74!(A)$) {$r_{24}$};
-  \node[anchor=north,inner sep=0.3pt] at ($(A)!0.22!(D)+(0,-0.20)$) {$a_{24}$};
-  \node[anchor=north east,inner sep=0.4pt] at ($(H)+(-0.05,-0.08)$) {$a_{12}$};
+  \node[anchor=west,inner sep=0.8pt] at ($(O)!0.52!(H)$) {$r_6$};
+  \node[anchor=west,inner sep=0.6pt] at ($(O)!0.60!(D)$) {$r_{12}$};
+  \node[anchor=east,inner sep=0.5pt] at ($(O)!0.74!(K)$) {$r_{24}$};
+  \node[anchor=north,inner sep=0.3pt] at (247:1.86) {$a_{24}$};
+  \node[anchor=north,inner sep=0.3pt] at ($(H)+(-0.02,0)$) {$a_{12}$};
   \node[anchor=south,inner sep=0.4pt] at ($(H)!0.62!(B)+(0,0.04)$) {$a_6$};
-  \node[anchor=north,inner sep=0.4pt] at ($(D)+(0.10,-0.18)$) {$D$};
+  \node[anchor=north,inner sep=1.5pt] at (D) {$D$};
 \end{tikzpicture}%
 }
 \caption{图5·13}
