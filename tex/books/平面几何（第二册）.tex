@@ -12827,19 +12827,19 @@ O 的距离都等于 \(\sqrt{a+r^{2}}\)，即满足问题条件的点都在以 O
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2·37：左⊙O₁较大、右⊙O₂较小；连心线O₁O₂；等幂轴过H⊥O₁O₂（直角方标），上有点P，连PO₁、PO₂。O₁、O₂小空心圆
+% fig-alt: 图2·37：左⊙O₁较大、右⊙O₂较小（扫描半径约为连心距的0.46与0.31，两圆不交）；连心线O₁O₂；等幂轴过H⊥O₁O₂（直角方标），上有点P，连PO₁、PO₂。O₁、O₂小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (O1) at (0,0);
   \coordinate (O2) at (4.200,0);
-  \def\Rone{1.450}
-  \def\Rtwo{0.950}
+  \def\Rone{1.950}
+  \def\Rtwo{1.330}
   \pgfmathsetmacro{\hpos}{(4.200*4.200 + \Rone*\Rone - \Rtwo*\Rtwo)/(2*4.200)}
   \coordinate (H) at (\hpos,0);
-  \coordinate (P) at (\hpos,2.350);
+  \coordinate (P) at (\hpos,2.300);
   \draw[line width=0.75pt] (O1) circle (\Rone);
   \draw[line width=0.75pt] (O2) circle (\Rtwo);
   \draw[line width=0.75pt] (O1) -- (O2);
-  \draw[line width=0.75pt] (\hpos,-1.550) -- (\hpos,2.700);
+  \draw[line width=0.75pt] (\hpos,-2.350) -- (\hpos,3.200);
   \draw[line width=0.75pt] (P) -- (O1);
   \draw[line width=0.75pt] (P) -- (O2);
   \draw[line width=0.5pt] (\hpos-0.140,0) -- (\hpos-0.140,0.140) -- (\hpos,0.140);
@@ -12848,7 +12848,7 @@ O 的距离都等于 \(\sqrt{a+r^{2}}\)，即满足问题条件的点都在以 O
   \node[anchor=north east,inner sep=1pt] at (-0.05,-0.08) {$O_1$};
   \node[anchor=north west,inner sep=1pt] at (4.25,-0.08) {$O_2$};
   \node[anchor=north east,inner sep=1pt] at (\hpos-0.05,-0.08) {$H$};
-  \node[anchor=west,inner sep=1pt] at (\hpos+0.08,2.350) {$P$};
+  \node[anchor=west,inner sep=1pt] at (\hpos+0.08,2.300) {$P$};
 \end{tikzpicture}%
 }
 \caption{图2·37}
@@ -13341,31 +13341,34 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第4题：左上线段b、其下线段a皆实线；右虚线⊙过A、B，MB（M在BA延长线上）虚线，切线MC实线切圆于C
+% fig-alt: 第4题：左上线段b、其下线段a皆实线；右虚线⊙过A、B（圆心在MB上方，AB非直径；从扫描），MB（M在BA延长线上）虚线，切线MC实线切圆于C
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\aa{3.000}
-  \def\bb{0.850}
-  \pgfmathsetmacro{\ab}{\aa-\bb}
-  \pgfmathsetmacro{\rr}{0.5*\ab}
-  \pgfmathsetmacro{\mo}{\bb+\rr}
-  \pgfmathsetmacro{\ang}{asin(\rr/\mo)}
+  \def\bb{1.300}
+  % circle through A, B (not on AB as diameter): centre 0.60 above MB, as in scan
+  \def\hh{0.600}
+  \pgfmathsetmacro{\ox}{0.5*(\aa+\bb)}
+  \pgfmathsetmacro{\rr}{sqrt((0.5*(\aa-\bb))^2+\hh*\hh)}
+  \pgfmathsetmacro{\mo}{sqrt(\ox*\ox+\hh*\hh)}
+  \pgfmathsetmacro{\ang}{atan2(\hh,\ox)+asin(\rr/\mo)}
+  \pgfmathsetmacro{\tl}{sqrt(\mo*\mo-\rr*\rr)}
   % construction shifted right so given segments sit upper-left
-  \def\xoff{0.000}
+  \def\xoff{2.500}
   \def\yoff{0.000}
   \coordinate (M) at (\xoff,\yoff);
   \coordinate (A) at ({\xoff+\bb},\yoff);
-  \coordinate (O) at ({\xoff+\mo},\yoff);
-  \coordinate (B) at ({\xoff+\bb+\ab},\yoff);
-  \coordinate (C) at ({\xoff+\mo-\rr*sin(\ang)},{\yoff+\rr*cos(\ang)});
+  \coordinate (O) at ({\xoff+\ox},{\yoff+\hh});
+  \coordinate (B) at ({\xoff+\aa},\yoff);
+  \coordinate (C) at ({\xoff+\tl*cos(\ang)},{\yoff+\tl*sin(\ang)});
   % given segments upper left
-  \draw[line width=0.75pt] (0,2.350) -- (\bb,2.350);
-  \draw[line width=0.55pt] (0,2.350-0.08) -- (0,2.350+0.08);
-  \draw[line width=0.55pt] (\bb,2.350-0.08) -- (\bb,2.350+0.08);
-  \node[anchor=south,inner sep=1pt] at (0.5*\bb,2.350) {$b$};
-  \draw[line width=0.75pt] (0,1.750) -- (\aa,1.750);
-  \draw[line width=0.55pt] (0,1.750-0.08) -- (0,1.750+0.08);
-  \draw[line width=0.55pt] (\aa,1.750-0.08) -- (\aa,1.750+0.08);
-  \node[anchor=south,inner sep=1pt] at (0.5*\aa,1.750) {$a$};
+  \draw[line width=0.75pt] (0,2.100) -- (\bb,2.100);
+  \draw[line width=0.55pt] (0,2.100-0.08) -- (0,2.100+0.08);
+  \draw[line width=0.55pt] (\bb,2.100-0.08) -- (\bb,2.100+0.08);
+  \node[anchor=south,inner sep=1pt] at (0.5*\bb,2.100) {$b$};
+  \draw[line width=0.75pt] (0,1.650) -- (\aa,1.650);
+  \draw[line width=0.55pt] (0,1.650-0.08) -- (0,1.650+0.08);
+  \draw[line width=0.55pt] (\aa,1.650-0.08) -- (\aa,1.650+0.08);
+  \node[anchor=south,inner sep=1pt] at (0.5*\aa,1.650) {$a$};
   \draw[dashed,line width=0.7pt] (O) circle (\rr);
   \draw[dashed,line width=0.7pt] (M) -- (B);
   \draw[line width=0.75pt] (M) -- (C);
@@ -13526,7 +13529,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第13题：同心圆O（小空心圆），水平弦交大圆于A、B，交小圆于C、D；OE实线⊥AB、OE=x；OC虚线=r、OA实线=R
+% fig-alt: 第13题：同心圆O（小空心圆），水平弦交大圆于A、B，交小圆于C、D；OE实线⊥AB、OE=x；OC实线=r（r标在OC右上方）、OA实线=R（扫描OC与OA皆连续墨线）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rr{1.250}
   \def\RR{2.000}
@@ -13543,7 +13546,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   \draw[line width=0.75pt] (O) circle (\rr);
   \draw[line width=0.75pt] (A) -- (B);
   \draw[line width=0.75pt] (O) -- (E);
-  \draw[dashed,line width=0.6pt] (O) -- (C);
+  \draw[line width=0.75pt] (O) -- (C);
   \draw[line width=0.75pt] (O) -- (A);
   \filldraw[fill=white,line width=0.6pt] (O) circle (0.045);
   \node[anchor=north,inner sep=2pt] at (0,-0.02) {$O$};
@@ -13552,7 +13555,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   \node[anchor=south,inner sep=1pt] at (D) {$D$};
   \node[anchor=south east,inner sep=2pt] at (A) {$A$};
   \node[anchor=south west,inner sep=2pt] at (B) {$B$};
-  \node[anchor=east,inner sep=2pt] at ({-0.52*\ce},{0.42*\xx}) {$r$};
+  \node[anchor=south west,inner sep=1pt] at ({-0.42*\ce},{0.42*\xx}) {$r$};
   \node[anchor=west,inner sep=2pt] at (0.06,0.52*\xx) {$x$};
   \node[anchor=north,inner sep=2pt] at ({-0.62*\ae},{0.28*\xx}) {$R$};
 \end{tikzpicture}%
