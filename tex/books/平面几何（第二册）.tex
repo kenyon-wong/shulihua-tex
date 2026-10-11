@@ -18193,7 +18193,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·27 △ABC；D在AC；自A向右上（约67°、陡于AC）的射线五等分AC得P（AP=AC/5），四条平行线及末端连线R5C均水平；DE实线；DB、PE与五等分射线、四条平行线均为虚线
+% fig-alt: 图3·27 △ABC；D在AC上（AD约0.7AC，介于第三、四分点之间）；自A向右上（约67°、陡于AC）的射线五等分AC得P（AP=AC/5），四条平行线及末端连线R5C均水平；DE实线；DB、PE与五等分射线、四条平行线均为虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5.80,0);
@@ -18203,7 +18203,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
   \coordinate (Q2) at ($(A)!0.4!(C)$);
   \coordinate (Q3) at ($(A)!0.6!(C)$);
   \coordinate (Q4) at ($(A)!0.8!(C)$);
-  \coordinate (D)  at ($(A)!0.62!(C)$);
+  \coordinate (D)  at ($(A)!0.70!(C)$); % D between the 3rd and 4th division points (fig-p0209-01)
   % construction ray at 67° up-right, steeper than AC (fig-p0209-01); R5 level with C so the parallels are horizontal
   \pgfmathsetmacro{\rayang}{67}
   \pgfmathsetmacro{\rayu}{0.7387}
@@ -18215,8 +18215,8 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
   % E on AB with PE || DB: P + t(B-D), y=0
   \pgfmathsetmacro{\Px}{4.10*0.2}
   \pgfmathsetmacro{\Py}{3.40*0.2}
-  \pgfmathsetmacro{\Dx}{4.10*0.62}
-  \pgfmathsetmacro{\Dy}{3.40*0.62}
+  \pgfmathsetmacro{\Dx}{4.10*0.70}
+  \pgfmathsetmacro{\Dy}{3.40*0.70}
   \pgfmathsetmacro{\tE}{\Py/\Dy}
   \coordinate (E) at ({\Px + \tE*(5.80-\Dx)}, 0);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
@@ -18670,7 +18670,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·31：四种同底等积变换：(1)等腰，XY与垂直平分线MN；(2)底角α（B处只标α、无弧），左上参照角为水平向右边与向右上斜边、无弧，上直线左端标X、右端标Y；(3)顶角β（A′/A″处只标β、无弧），左上参照角为水平向右边与向右上斜边、无弧，虚圆弧；(4)中线l与半径等长（两端短竖线，l线段在XY上方偏左），BC较短、A'在B左外侧、A''在C右外侧，XY右端紧接A''后标Y，虚弧为底边之上的半圆、两端落在底边所在直线上，OA'、OA''虚线
+% fig-alt: 图3·31：四种同底等积变换：(1)等腰，XY与垂直平分线MN；(2)底角α（B处只标α、无弧），左上参照角为水平向右边与向右上斜边、无弧，上直线左端标X、右端标Y；(3)顶角β约26°（BC短、高约1.75倍BC，A′在B左上、A″在C右上；A′/A″处只标β、无弧），左上参照角为水平向右边与向右上斜边、无弧，虚圆弧；(4)中线l与半径等长（两端短竖线，l线段在XY上方偏左），BC较短、A'在B左外侧、A''在C右外侧，XY右端紧接A''后标Y，虚弧为底边之上的半圆、两端落在底边所在直线上，OA'、OA''虚线
 \begin{tikzpicture}[line cap=round,line join=round]
   % (1)
   \begin{scope}[shift={(0,5.6)}]
@@ -18721,14 +18721,15 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \end{scope}
   % (3)
   \begin{scope}[shift={(0,0)}]
-    \coordinate (B) at (1.100,0.000);
-    \coordinate (C) at (4.000,0.000);
+    % proportions traced from fig-p0215-03: BC short, height ≈1.75·BC, β ≈ 26°
+    \coordinate (B) at (1.460,0.000);
+    \coordinate (C) at (2.890,0.000);
     \coordinate (A) at (-0.050,2.500);
     \coordinate (Ap) at (0.937,2.500);
-    \coordinate (App) at (4.163,2.500);
-    \coordinate (Ocirc) at (2.550,1.350);
-    \pgfmathsetmacro{\rrad}{1.9812}
-    \draw[line width=0.75pt] (-0.45,2.50) -- (5.40,2.50);
+    \coordinate (App) at (3.413,2.500);
+    \coordinate (Ocirc) at (2.175,1.455);
+    \pgfmathsetmacro{\rrad}{1.6206}
+    \draw[line width=0.75pt] (-0.45,2.50) -- (3.90,2.50);
     \draw[line width=0.75pt] (B) -- (C);
     \draw[dashed,line width=0.6pt] (Ocirc) circle (\rrad);
     \draw[line width=0.75pt] (A) -- (B);
@@ -18737,20 +18738,20 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \draw[line width=0.75pt] (Ap) -- (C);
     \draw[line width=0.75pt] (App) -- (B);
     \draw[line width=0.75pt] (App) -- (C);
-    \node[inner sep=1pt] at (1.137,1.950) {$\beta$};
-    \node[inner sep=1pt] at (3.963,1.950) {$\beta$};
-    % reference angle β (= 47.0°, the drawn ∠A'): horizontal ray right + ray up-right (fig-p0215-03), no arc
-    \draw[line width=0.65pt] (0.05,3.05) -- (1.45,3.05);
-    \draw[line width=0.65pt] (0.05,3.05) -- ({0.05+1.10*cos(47.045)},{3.05+1.10*sin(47.045)});
-    \node[anchor=south west,inner sep=1pt] at (0.62,3.07) {$\beta$};
+    \node[inner sep=1pt] at (1.164,1.930) {$\beta$};
+    \node[inner sep=1pt] at (3.190,1.930) {$\beta$};
+    % reference angle β (= 26.2°, the drawn ∠A'): horizontal ray right + ray up-right (fig-p0215-03), no arc
+    \draw[line width=0.65pt] (-0.36,2.85) -- (0.73,2.85);
+    \draw[line width=0.65pt] (-0.36,2.85) -- ({-0.36+1.11*cos(26.17)},{2.85+1.11*sin(26.17)});
+    \node[anchor=south,inner sep=1pt] at (0.31,2.85) {$\beta$};
     \node[anchor=east,inner sep=2pt] at (-0.45,2.50) {$X$};
-    \node[anchor=west,inner sep=2pt] at (5.40,2.50) {$Y$};
+    \node[anchor=west,inner sep=2pt] at (3.90,2.50) {$Y$};
     \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
     \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
     \node[anchor=south,inner sep=1.5pt] at (App) {$A''$};
     \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
     \node[anchor=north,inner sep=1.5pt] at (C) {$C$};
-    \node[below=14pt] at (2.55,0) {（3）};
+    \node[below=14pt] at (2.175,0) {（3）};
   \end{scope}
   % (4)
   \begin{scope}[shift={(6.8,0)}]
