@@ -23069,14 +23069,17 @@ a _ {10} = \frac {\sqrt {5} - 1}{2} R.
 
 \begin{figure}
 \centering
-% fig-alt: 图4·29 圆O；A1在左下，逆时针经底上A2至顶上A7；顶点A1A3A5A7A9（A7在顶、A5在右）
+% fig-alt: 图4·29 圆O；A1在左下，逆时针经底上A2至顶上A7；顶点A1A3A5A7A9（A7在顶、A5在右）；偶数分点A2、A4、A6、A8、A10处各有一短刻痕横穿圆周；O为圆心小圈、字在其上（扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.55);
   \draw[line width=0.7pt] (90:1.55) -- (18:1.55) -- (306:1.55) -- (234:1.55) -- (162:1.55) -- cycle;
   \foreach \a/\t in {90/A_7,54/A_6,18/A_5,342/A_4,306/A_3,270/A_2,234/A_1,198/A_{10},162/A_9,126/A_8}
     \node at (\a:1.82) {$\t$};
-  \node at (0,0) {$O$};
+  \foreach \a in {54,342,270,198,126}
+    \draw[line width=0.5pt] (\a:1.47) -- (\a:1.63);
+  \filldraw[fill=white,line width=0.5pt] (0,0) circle (0.045);
+  \node[anchor=south,inner sep=1.5pt] at (0,0.03) {$O$};
 \end{tikzpicture}%
 }
 \caption{图4·29}
@@ -23121,14 +23124,15 @@ a _ {2 n} = a _ {10} = \frac {\sqrt {5} - 1}{2} R\text{，}
 
 \begin{figure}
 \centering
-% fig-alt: 图4·30 同圆：正方形顶点在上、右、下、左；正八边形与之共顶点
+% fig-alt: 图4·30 同圆：正方形顶点在上、右、下、左；正八边形与之共顶点；O为圆心小圈、字在其上（扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.45);
   \draw[line width=0.7pt] (90:1.45) -- (0:1.45) -- (270:1.45) -- (180:1.45) -- cycle;
   \foreach \i in {0,1,...,7}
     \draw[line width=0.65pt] ({45*\i}:1.45) -- ({45*(\i+1)}:1.45);
-  \node at (0,0) {$O$};
+  \filldraw[fill=white,line width=0.5pt] (0,0) circle (0.045);
+  \node[anchor=south,inner sep=1.5pt,font=\scriptsize] at (0,0.03) {$O$};
 \end{tikzpicture}%
 }
 \caption{图4·30}
@@ -23295,7 +23299,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 正三角形内接，序1顶2底3左4右；以2为心的虚弧过O，R为自2指向弧的箭头
+% fig-alt: 正三角形内接，序1顶2底3左4右；以2为心的虚弧过O，R为自2指向弧的箭头；圆心有小圈（扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.35);
@@ -23306,6 +23310,7 @@ O M = O M.
   \node[anchor=north] at (-90:1.38) {$2$};
   \node[anchor=east] at (210:1.38) {$3$};
   \node[anchor=west] at (330:1.38) {$4$};
+  \filldraw[fill=white,line width=0.5pt] (0,0) circle (0.045);
   \node at (0.16,0.14) {$O$};
   \draw[->,line width=0.45pt] (0,-1.35) -- (0.46,-0.12);
   \node[anchor=north west,inner sep=0.5pt] at (0.16,-0.78) {$R$};
@@ -23315,7 +23320,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 正三角形内接，1在顶；30°标在顶角左侧
+% fig-alt: 正三角形内接，1在顶；30°标在顶角左侧，顶点处边1–3与直径1–2之间有小角弧；圆心小圈，O在其右上（扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.35);
@@ -23325,7 +23330,9 @@ O M = O M.
   \node[anchor=north] at (-90:1.38) {$2$};
   \node[anchor=east] at (210:1.38) {$3$};
   \node[anchor=west] at (330:1.38) {$4$};
-  \node at (0,0.12) {$O$};
+  \filldraw[fill=white,line width=0.5pt] (0,0) circle (0.045);
+  \node[anchor=south west,inner sep=1pt] at (0.02,0.02) {$O$};
+  \draw[line width=0.45pt] ($(90:1.35)+(240:0.28)$) arc[start angle=240,end angle=270,radius=0.28];
   \node at (112:1.05) {$30^{\circ}$};
 \end{tikzpicture}%
 }
@@ -23333,7 +23340,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 圆内接正三角形，直径过圆心O，弦上下各有一短横杠
+% fig-alt: 圆内接正三角形，直径过圆心O，弦上下各有一短横杠；圆心小圈（扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.35);
@@ -23345,6 +23352,7 @@ O M = O M.
   \node[anchor=north] at (-90:1.38) {$2$};
   \node[anchor=east] at (210:1.38) {$3$};
   \node[anchor=west] at (330:1.38) {$4$};
+  \filldraw[fill=white,line width=0.5pt] (0,0) circle (0.045);
   \node at (0.12,0.15) {$O$};
 \end{tikzpicture}%
 }
@@ -23352,13 +23360,14 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 圆内接正方形，直径正交90°
+% fig-alt: 圆内接正方形，直径正交90°；圆心小圈，O在其右上（扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.35);
   \draw[line width=0.7pt] (0,1.35) -- (1.35,0) -- (0,-1.35) -- (-1.35,0) -- cycle;
   \draw[line width=0.55pt] (-1.35,0) -- (1.35,0);
   \draw[line width=0.55pt] (0,1.35) -- (0,-1.35);
+  \filldraw[fill=white,line width=0.5pt] (0,0) circle (0.045);
   \node at (0.18,0.18) {$O$};
   \node at (155:0.50) {$90^{\circ}$};
   \node[anchor=east] at (-1.38,0) {$1$};
