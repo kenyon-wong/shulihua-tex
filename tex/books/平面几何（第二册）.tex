@@ -22798,7 +22798,7 @@ A_1A_2=\text{半径 }OA_1.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·27 圆O；圆心角36°；72°标在A1左外侧；A2M平分后A2处标36°；M在OA1上
+% fig-alt: 图4·27 圆O；圆心角36°；72°标在A1左外侧；A2M平分后A2处标36°；M在OA1上；OA1、OA2、A2M虚线，底边A1A2实线（扫描）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.20}
   \pgfmathsetmacro{\phi}{0.5*(sqrt(5)-1)}
@@ -22807,8 +22807,10 @@ A_1A_2=\text{半径 }OA_1.
   \coordinate (A2) at (288:\R);
   \coordinate (M) at (252:{\phi*\R});
   \draw[line width=0.75pt] (O) circle (\R);
-  \draw[line width=0.75pt] (O) -- (A1) -- (A2) -- cycle;
-  \draw[line width=0.75pt] (A2) -- (M);
+  \draw[dashed,line width=0.65pt] (O) -- (A1);
+  \draw[dashed,line width=0.65pt] (O) -- (A2);
+  \draw[line width=0.75pt] (A1) -- (A2);
+  \draw[dashed,line width=0.65pt] (A2) -- (M);
   \draw[line width=0.40pt] (252:0.36) arc (252:288:0.36);
   \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
   \node[anchor=south,inner sep=2pt] at (O) {$O$};
