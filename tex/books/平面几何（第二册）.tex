@@ -12290,15 +12290,17 @@ B， C， D 四点共圆。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图2·32：圆上A、B、C、D，弦AB、CD交于P；AC虚线、BD实线；C处∠ACD与B处∠DBA等角弧。扫描有角弧
+% fig-alt: 图2·32：圆上A、B、C、D，弦AB、CD交于P；AC、BD皆虚线；C处∠ACD与B处∠DBA等角弧；P处对顶角∠APC与∠DPB各一单弧。扫描有角弧
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) circle (1.70);
   \draw[line width=0.75pt] (-1.202,-1.202) -- (0.975,1.393);
   \draw[line width=0.75pt] (-1.70,0) -- (1.70,0);
   \draw[dashed,line width=0.6pt] (-1.70,0) -- (-1.202,-1.202);
-  \draw[line width=0.75pt] (0.975,1.393) -- (1.70,0);
+  \draw[dashed,line width=0.6pt] (0.975,1.393) -- (1.70,0);
   \draw[line width=0.5pt] (-1.70,0) ++({292.5}:0.28) arc ({292.5}:{360}:0.28);
   \draw[line width=0.5pt] (0.975,1.393) ++({230}:0.28) arc ({230}:{297.5}:0.28);
+  \draw[line width=0.5pt] (-0.194,0) ++(0:0.24) arc (0:50:0.24);
+  \draw[line width=0.5pt] (-0.194,0) ++(180:0.24) arc (180:230:0.24);
   \node[anchor=north east,inner sep=1pt] at (-1.202,-1.202) {$A$};
   \node[anchor=south west,inner sep=1pt] at (0.975,1.393) {$B$};
   \node[anchor=east,inner sep=1pt] at (-1.70,0) {$C$};
@@ -12404,10 +12406,9 @@ B， C， D 四点共圆。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （1）轴纵断面：左矩形高40、长160；右圆头弦CD，心O在CD右侧，半径OB标R=36，圆头宽标x。O小空心圆
+% fig-alt: （1）轴纵断面：左矩形高40、长160；右圆头弦CD，心O在CD右侧，半径OB标R=36，圆头宽标x；无中心轴线（扫描矩形内无墨）。O小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,-0.550) -- (4.400,-0.550) -- (4.400,0.550) -- (0,0.550) -- cycle;
-  \draw[dashed,line width=0.5pt] (0,0) -- (6.213,0);
   \draw[line width=0.75pt] (4.400,0.550) arc[start angle=146.25, delta angle=-292.50, radius=0.990];
   \draw[line width=0.75pt] (5.223,0) -- (6.213,0);
   \filldraw[fill=white,line width=0.6pt] (5.223,0) circle (0.045);
@@ -13475,7 +13476,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第12题：半圆直径AB；Q在AB上，PQ⊥AB交半圆于P；AQ标x，PB实线亦标x（黄金分割）
+% fig-alt: 第12题：半圆直径AB；Q在AB上，PQ⊥AB交半圆于P；AQ标x，PB虚线亦标x（标在PB右上）（黄金分割）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\aa{3.400}
   \pgfmathsetmacro{\rr}{0.5*\aa}
@@ -13488,13 +13489,13 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   \draw[line width=0.75pt] (A) -- (B);
   \draw[line width=0.75pt] (A) arc[start angle=180,end angle=0,radius=\rr];
   \draw[line width=0.75pt] (Q) -- (P);
-  \draw[line width=0.75pt] (P) -- (B);
+  \draw[dashed,line width=0.6pt] (P) -- (B);
   \node[anchor=north east,inner sep=2pt] at (A) {$A$};
   \node[anchor=north west,inner sep=2pt] at (B) {$B$};
   \node[anchor=north,inner sep=2pt] at (Q) {$Q$};
   \node[anchor=south,inner sep=2pt] at (P) {$P$};
   \node[anchor=south,inner sep=1pt] at (0.5*\xx,0.02) {$x$};
-  \node[anchor=south east,inner sep=1pt] at ({0.5*(\xx+\aa)},{0.5*\pq}) {$x$};
+  \node[anchor=south west,inner sep=1pt] at ({0.5*(\xx+\aa)},{0.5*\pq}) {$x$};
 \end{tikzpicture}%
 }
 \caption{(第12题)}
