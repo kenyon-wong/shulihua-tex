@@ -22606,7 +22606,7 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·22 圆O内接正六边形；顶与底都标A1，右下A4、右上A3、左上A5、左下A6；虚半径到下A1，实半径到右下
+% fig-alt: 图4·22 圆O内接正六边形；顶与底都标A1，右下A4、右上A3、左上A5、左下A6；虚半径到下A1与右下A4（扫描两条半径均为虚线）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.15}
   \coordinate (O) at (0,0);
@@ -22616,7 +22616,7 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
   \draw[line width=0.75pt] (O) circle (\R);
   \draw[line width=0.75pt] (A1) -- (A2) -- (A3) -- (A4) -- (A5) -- (A6) -- cycle;
   \draw[dashed,line width=0.65pt] (O) -- (A1);
-  \draw[line width=0.75pt] (O) -- (A2);
+  \draw[dashed,line width=0.65pt] (O) -- (A2);
   \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
   \node[anchor=south east,inner sep=1.5pt] at (O) {$O$};
   \node[anchor=north,inner sep=1.5pt] at (A1) {$A_1$};
@@ -22767,7 +22767,7 @@ A_1A_2=\text{半径 }OA_1.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·26 圆O内接正方形A1A2A3A4（边水平）；对角线A1A3、A2A4为互相垂直的直径
+% fig-alt: 图4·26 圆O内接正方形A1A2A3A4（边水平）；对角线A1A3、A2A4为互相垂直的虚线直径（扫描约5px画、2–3px隔）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\R{2.15}
   \coordinate (O) at (0,0);
@@ -22776,10 +22776,10 @@ A_1A_2=\text{半径 }OA_1.
   }
   \draw[line width=0.75pt] (O) circle (\R);
   \draw[line width=0.75pt] (A1) -- (A2) -- (A3) -- (A4) -- cycle;
-  \draw[line width=0.65pt] (A1) -- (A3);
-  \draw[line width=0.65pt] (A2) -- (A4);
+  \draw[dashed,line width=0.65pt] (A1) -- (A3);
+  \draw[dashed,line width=0.65pt] (A2) -- (A4);
   \filldraw[fill=white,line width=0.55pt] (O) circle (0.045);
-  \node[anchor=south west,inner sep=1pt] at (0.06,0.04) {$O$};
+  \node[anchor=west,inner sep=1.5pt] at (0.05,0) {$O$};
   \node[anchor=north east,inner sep=1.5pt] at (A1) {$A_1$};
   \node[anchor=north west,inner sep=1.5pt] at (A2) {$A_2$};
   \node[anchor=south west,inner sep=1.5pt] at (A3) {$A_3$};
@@ -23147,7 +23147,7 @@ a _ {2 n} = a _ {10} = \frac {\sqrt {5} - 1}{2} R\text{，}
 
 \begin{figure}
 \centering
-% fig-alt: 图4·31 圆O内接正八边形，A1在底逆时针A2…A8；OA1与OM为虚线，OA2为实线，OM⊥A1A2，∠A1OM=22.5°，s在顶左
+% fig-alt: 图4·31 圆O内接正八边形，A1在底逆时针A2…A8；OA1、OA2与OM为虚线，另有O到A7A8、A8A1中点的两条虚边心距（扫描），OM⊥A1A2，∠A1OM=22.5°，s在顶左
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{1.48}
@@ -23158,7 +23158,9 @@ a _ {2 n} = a _ {10} = \frac {\sqrt {5} - 1}{2} R\text{，}
     \node at ({-90+\i*45}:1.72) {$\name$};
   \coordinate (M) at (-67.5:{\R*cos(22.5)});
   \draw[dashed,line width=0.55pt] (0,0) -- (-90:\R);
-  \draw[line width=0.55pt] (0,0) -- (-45:\R);
+  \draw[dashed,line width=0.55pt] (0,0) -- (-45:\R);
+  \draw[dashed,line width=0.55pt] (0,0) -- (202.5:{\R*cos(22.5)});
+  \draw[dashed,line width=0.55pt] (0,0) -- (247.5:{\R*cos(22.5)});
   \draw[dashed,line width=0.55pt] (0,0) -- (M);
   \draw[line width=0.4pt] (-90:0.42) arc (-90:-67.5:0.42);
   \node at (0,0.14) {$O$};
@@ -23221,16 +23223,16 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 图4·32 位似中心A1；内接放大为正五边形；A1A3、A1A4、A1A5虚线；底边过A2向右虚延；d在图顶
+% fig-alt: 图4·32 位似中心A1；内接五边形A2′A3′、A3′A4′、A4′A5′为虚边，放大约1.33倍成实边正五边形A1A2A3A4A5；A1A3、A1A4虚线并略出A3、A4，A1A5过A5、A1A2过A2向外虚延；d在图顶左
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \def\R{1.05}
+  \def\R{1.5}
   \coordinate (A1) at (234:\R);
   \coordinate (A2p) at (306:\R);
   \coordinate (A3p) at (18:\R);
   \coordinate (A4p) at (90:\R);
   \coordinate (A5p) at (162:\R);
-  \coordinate (A3) at ($(A1)!2.35!(A3p)$);
+  \coordinate (A3) at ($(A1)!1.33!(A3p)$);
   \coordinate (d32) at ($(A3)+(A2p)-(A3p)$);
   \coordinate (d34) at ($(A3)+(A4p)-(A3p)$);
   \coordinate (A2) at (intersection of A1--A2p and A3--d32);
@@ -23238,12 +23240,12 @@ O M = O M.
   \coordinate (d45) at ($(A4)+(A5p)-(A4p)$);
   \coordinate (A5) at (intersection of A1--A5p and A4--d45);
   \draw[line width=0.75pt] (0,0) circle (\R);
-  \draw[line width=0.65pt] (A1) -- (A2p) -- (A3p) -- (A4p) -- (A5p) -- cycle;
+  \draw[dashed,line width=0.65pt] (A2p) -- (A3p) -- (A4p) -- (A5p);
   \draw[line width=0.7pt] (A1) -- (A2) -- (A3) -- (A4) -- (A5) -- cycle;
-  \draw[dashed,line width=0.5pt] (A2) -- ($(A2)+(1.35,0)$);
-  \draw[dashed,line width=0.45pt] (A1) -- (A3);
-  \draw[dashed,line width=0.45pt] (A1) -- (A4);
-  \draw[dashed,line width=0.45pt] (A1) -- (A5);
+  \draw[dashed,line width=0.5pt] (A2) -- ($(A1)!1.5!(A2)$);
+  \draw[dashed,line width=0.45pt] (A1) -- ($(A1)!1.16!(A3)$);
+  \draw[dashed,line width=0.45pt] (A1) -- ($(A1)!1.07!(A4)$);
+  \draw[dashed,line width=0.45pt] (A5) -- ($(A1)!1.3!(A5)$);
   \fill (0,0) circle (0.8pt);
   \node[anchor=north west,inner sep=1pt] at (0,0) {$O$};
   \node[anchor=north east] at (A1) {$A_1$};
@@ -23255,10 +23257,10 @@ O M = O M.
   \node[anchor=south] at (A4) {$A_4$};
   \node[anchor=south east] at (A5p) {$A_5'$};
   \node[anchor=east] at (A5) {$A_5$};
-  \draw[line width=0.7pt] (-2.55,3.15) -- (-0.55,3.15);
-  \draw[line width=0.45pt] (-2.55,3.02) -- (-2.55,3.28);
-  \draw[line width=0.45pt] (-0.55,3.02) -- (-0.55,3.28);
-  \node[anchor=south] at (-1.55,3.18) {$d$};
+  \draw[line width=0.7pt] (-2.15,3.0) -- (0.05,3.0);
+  \draw[line width=0.45pt] (-2.15,2.87) -- (-2.15,3.13);
+  \draw[line width=0.45pt] (0.05,2.87) -- (0.05,3.13);
+  \node[anchor=south] at (-1.05,3.03) {$d$};
 \end{tikzpicture}%
 }
 \caption{图4·32}
@@ -23359,15 +23361,17 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 圆内接正方形，边水平，45°
+% fig-alt: 圆内接正方形，边水平，两条对角线；O在心点右侧；45°在顶点1处、边1–3与对角线1–2之间（有角弧）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.35);
   \draw[line width=0.7pt] (45:1.35) -- (135:1.35) -- (225:1.35) -- (315:1.35) -- cycle;
   \draw[line width=0.55pt] (45:1.35) -- (225:1.35);
   \draw[line width=0.55pt] (135:1.35) -- (315:1.35);
-  \node at (0.12,0.12) {$O$};
-  \node at (225:0.62) {$45^{\circ}$};
+  \filldraw[fill=white,line width=0.5pt] (0,0) circle (0.045);
+  \node[anchor=west,inner sep=2pt] at (0.04,-0.04) {$O$};
+  \draw[line width=0.4pt] ($(225:1.35)+(45:0.32)$) arc[start angle=45, end angle=90, radius=0.32];
+  \node at ($(225:1.35)+(67.5:0.58)$) {$45^{\circ}$};
   \node[anchor=east] at (225:1.38) {$1$};
   \node[anchor=west] at (315:1.38) {$4$};
   \node[anchor=south] at (135:1.38) {$3$};
@@ -23378,7 +23382,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 正六边形，直径1–2；以1、2为心两条虚弧；半径标R；3、5在上，4、6在下
+% fig-alt: 正六边形，直径1–2；以1、2为心两条虚弧；自1、2各引一支箭头指向所作虚弧，标R（扫描）；3、5在上，4、6在下
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \draw[line width=0.75pt] (0,0) circle (1.35);
@@ -23387,24 +23391,25 @@ O M = O M.
   \draw[line width=0.55pt] (180:1.35) -- (0:1.35);
   \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (120:1.35) arc[start angle=60,end angle=-60,radius=1.35];
   \draw[line width=0.5pt,dash pattern=on 2pt off 1.4pt] (60:1.35) arc[start angle=120,end angle=240,radius=1.35];
-  \draw[->,line width=0.45pt] (0,0) -- (120:1.05);
-  \draw[->,line width=0.45pt] (0,0) -- (60:1.05);
-  \node at (0,0.14) {$O$};
+  \draw[-{Stealth[length=4pt]},line width=0.45pt] (180:1.35) -- ++(32:1.35);
+  \draw[-{Stealth[length=4pt]},line width=0.45pt] (0:1.35) -- ++(148:1.35);
+  \filldraw[fill=white,line width=0.5pt] (0,0) circle (0.045);
+  \node[anchor=south west,inner sep=1.5pt] at (0,0) {$O$};
   \node[anchor=east] at (180:1.42) {$1$};
   \node[anchor=west] at (0:1.42) {$2$};
   \node[anchor=south] at (120:1.42) {$3$};
   \node[anchor=north] at (240:1.42) {$4$};
   \node[anchor=south] at (60:1.42) {$5$};
   \node[anchor=north] at (300:1.42) {$6$};
-  \node[anchor=south east] at (128:0.62) {$R$};
-  \node[anchor=south west] at (52:0.62) {$R$};
+  \node at ($(180:1.35)+(0.78,0.22)$) {$R$};
+  \node at ($(0:1.35)+(-0.76,0.24)$) {$R$};
 \end{tikzpicture}%
 }
 \end{figure}
 
 \begin{figure}
 \centering
-% fig-alt: 正六边形1在顶，顺时针到4、6、5、3、2；各半径；中心60°；右下外侧直角尺
+% fig-alt: 正六边形1在顶，顺时针到4、6、5、3、2；实线直径1–5与2–6；三角板以点划线画出（斜边沿3–O–4，内有三角孔，底边贴顶点5）；中心60°（扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{1.22}
@@ -23414,12 +23419,11 @@ O M = O M.
     \node at (\a:1.42) {$\n$};
   \draw[line width=0.45pt] (0,0) -- (90:\R);
   \draw[line width=0.45pt] (0,0) -- (150:\R);
-  \draw[line width=0.45pt] (0,0) -- (210:\R);
-  \draw[line width=0.45pt] (0,0) -- (30:\R);
   \draw[line width=0.45pt] (0,0) -- (-30:\R);
   \draw[line width=0.45pt] (0,0) -- (-90:\R);
-  \draw[line width=0.7pt] (-1.85,-1.62) -- (1.58,-1.62) -- (1.58,0.72) -- cycle;
-  \draw[line width=0.35pt] (1.58,-1.46) -- (1.42,-1.46) -- (1.42,-1.62);
+  \draw[line width=0.6pt,dash pattern=on 4pt off 1.5pt on 0.6pt off 1.5pt] ({-1.66*\R},{-1.02*\R}) -- ({1.20*\R},{-1.02*\R}) -- ({1.20*\R},{0.77*\R}) -- cycle;
+  \draw[line width=0.55pt,dash pattern=on 4pt off 1.5pt on 0.6pt off 1.5pt] ({-0.41*\R},{-0.67*\R}) -- ({0.89*\R},{-0.67*\R}) -- ({0.89*\R},{0.31*\R}) -- cycle;
+  \draw[line width=0.35pt] (210:0.22) arc[start angle=210, end angle=270, radius=0.22];
   \node at (242:0.46) {$60^{\circ}$};
   \node at (0.16,0.14) {$O$};
 \end{tikzpicture}%
@@ -23428,7 +23432,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 边水平正六边形，1左2右3左上6右上5左下4右下；三条直径；30°；左侧直角尺与R
+% fig-alt: 边水平正六边形，1左2右3左上6右上5左下4右下；实线直径1–2与5–6；左侧三角板以点划线画出（斜边沿3–O–4，内有三角孔）；30°；R（扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{1.15}
@@ -23436,7 +23440,6 @@ O M = O M.
   \foreach \i in {0,1,...,5}
     \draw[line width=0.7pt] ({60*\i}:\R) -- ({60*(\i+1)}:\R);
   \draw[line width=0.45pt] (180:\R) -- (0:\R);
-  \draw[line width=0.45pt] (120:\R) -- (300:\R);
   \draw[line width=0.45pt] (60:\R) -- (240:\R);
   \node[anchor=east] at (180:1.32) {$1$};
   \node[anchor=west] at (0:1.32) {$2$};
@@ -23447,8 +23450,8 @@ O M = O M.
   \node at (0.02,0.14) {$O$};
   \node at (145:0.46) {$30^{\circ}$};
   \node[anchor=east] at (168:0.62) {$R$};
-  \draw[line width=0.7pt] (-1.78,1.62) -- (-1.78,-1.58) -- (1.15,-1.58);
-  \draw[line width=0.7pt] (-1.78,1.62) -- (0.55,-1.58);
+  \draw[line width=0.6pt,dash pattern=on 4pt off 1.5pt on 0.6pt off 1.5pt] ({-1.18*\R},{2.04*\R}) -- ({-1.18*\R},{-1.12*\R}) -- ({0.65*\R},{-1.12*\R}) -- cycle;
+  \draw[line width=0.55pt,dash pattern=on 4pt off 1.5pt on 0.6pt off 1.5pt] ({-0.84*\R},{0.83*\R}) -- ({-0.84*\R},{-0.79*\R}) -- ({0.02*\R},{-0.79*\R}) -- cycle;
 \end{tikzpicture}%
 }
 \end{figure}
@@ -23617,13 +23620,13 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 等边三角形内切三圆，底边尺寸线两端短竖杠，2米写在线中断处
+% fig-alt: 等边三角形内三个等圆两两相切且各切两边，底边尺寸线两端短竖杠，2米写在线中断处
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0,0) -- (3.2,0) -- (1.6,2.77) -- cycle;
   \draw[line width=0.7pt] (1.02,0.62) circle (0.58);
   \draw[line width=0.7pt] (2.18,0.62) circle (0.58);
-  \draw[line width=0.7pt] (1.60,1.58) circle (0.58);
+  \draw[line width=0.7pt] (1.60,1.62) circle (0.58);
   \draw[line width=0.55pt] (0,-0.28) -- (3.2,-0.28);
   \draw[line width=0.55pt] (0,-0.42) -- (0,-0.14);
   \draw[line width=0.55pt] (3.2,-0.42) -- (3.2,-0.14);
@@ -23723,7 +23726,7 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: 正八边形ABCDEFGH，A在右顺时针至H；直径EA、GC；AC与OB交于M，有直角，标M
+% fig-alt: 正八边形ABCDEFGH，A在右顺时针至H；直径EA、GC；AC与OB交于M，有直角（方标在M左侧MO、MC之间），M标在交点上方
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \foreach \i/\lab in {0/A,1/B,2/C,3/D,4/E,5/F,6/G,7/H}
@@ -23735,7 +23738,7 @@ O M = O M.
   \draw[line width=0.6pt] (O) -- (B);
   \draw[line width=0.6pt] (A) -- (C);
   \coordinate (M) at (intersection of O--B and A--C);
-  \begin{scope}[shift={(M)}, rotate=-22.5]
+  \begin{scope}[shift={(M)}, rotate=135]
     \draw[line width=0.32pt] (0.11,0) -- (0.11,0.11) -- (0,0.11);
   \end{scope}
   \fill (O) circle (0.9pt);
@@ -23748,7 +23751,7 @@ O M = O M.
   \node[anchor=south] at (G) {$G$};
   \node[anchor=south west] at (H) {$H$};
   \node[anchor=south west] at (0,0) {$O$};
-  \node[anchor=north west,inner sep=1pt] at (M) {$M$};
+  \node[anchor=south,inner sep=2pt] at (M) {$M$};
 \end{tikzpicture}%
 }
 \caption{(第8题)}
@@ -23814,7 +23817,7 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
 
 \begin{figure}
 \centering
-% fig-alt: （第8题）圆O八等分，隔点连成正方形ACEG与BDFH；AC与BH交于L，AO与BH交于M
+% fig-alt: （第8题）圆O八等分，隔点连成正方形ACEG与BDFH；AC与BH交于L，AO与BH交于M（M处直角方标在AO左、BH下）；另有实线BO（扫描）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
   \def\R{1.55}
@@ -23830,8 +23833,10 @@ A M = \frac {1}{2} A C = \frac {\sqrt {2}}{2} R.
   \draw[line width=0.7pt] (A) -- (C) -- (E) -- (G) -- cycle;
   \draw[line width=0.7pt] (B) -- (D) -- (F) -- (H) -- cycle;
   \draw[line width=0.55pt] (A) -- (0,0);
+  \draw[line width=0.55pt] (B) -- (0,0);
   \coordinate (M) at (0,{\R/sqrt(2)});
   \coordinate (L) at (intersection of A--C and B--H);
+  \draw[line width=0.32pt] ($(M)+(-0.11,0)$) -- ($(M)+(-0.11,-0.11)$) -- ($(M)+(0,-0.11)$);
   \fill (0,0) circle (0.8pt);
   \node[anchor=north east,inner sep=1pt] at (0,0) {$O$};
   \node[anchor=south] at (A) {$A$};
