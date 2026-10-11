@@ -15464,7 +15464,7 @@ cm²。
 % fig-alt: （1）L形截面：外廓宽、高均为b，两臂厚度均为a，内部斜线阴影
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\b{2.60}
-  \def\a{0.85}
+  \def\a{0.45}% 扫描臂厚约为 b 的 0.15–0.19
   \fill[pattern=north east lines,pattern color=black!70]
     (0,0) -- (\b,0) -- (\b,\a) -- (\a,\a) -- (\a,\b) -- (0,\b) -- cycle;
   \draw[line width=0.75pt]
@@ -15951,15 +15951,15 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·6：左□ABCD底AB、高实线落在AB上，垂足无字母；右更斜□ABCD底AB虚延并越过D'，高DD'虚线落在AB延长线上于D'
+% fig-alt: 图3·6：左□ABCD底AB、高实线落在AB上，垂足无字母；右□ABCD更高更斜（高约为左图1.5倍、底边比左图低）底AB虚延并越过D'，高DD'虚线落在AB延长线上于D'
 \begin{tikzpicture}[line cap=round,line join=round]
   % left parallelogram: D' on AB
   \begin{scope}
     \coordinate (A) at (0,0);
-    \coordinate (B) at (2.80,0);
-    \coordinate (Dp) at (0.85,0);
-    \coordinate (D) at (0.85,1.70);
-    \coordinate (C) at (3.65,1.70);
+    \coordinate (B) at (2.01,0);% 扫描左图 AB:h≈110:93，D 只错开约 0.2h
+    \coordinate (Dp) at (0.37,0);
+    \coordinate (D) at (0.37,1.70);
+    \coordinate (C) at (2.38,1.70);
     \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
     \draw[line width=0.75pt] (D) -- (Dp);
     \node[anchor=north east,inner sep=1pt] at (A) {$A$};
@@ -15968,16 +15968,16 @@ cm²。
     \node[anchor=south west,inner sep=1pt] at (C) {$C$};
   \end{scope}
   % right parallelogram: D' on extension beyond B (more slanted)
-  \begin{scope}[shift={(4.30,0)}]
+  \begin{scope}[shift={(2.00,-0.77)}]% 扫描右图高约 140px（左图 93px），底边低于左图
     \coordinate (A) at (0,0);
-    \coordinate (B) at (1.60,0);
-    \coordinate (D) at (2.40,1.70);
-    \coordinate (C) at (4.00,1.70);
-    \coordinate (Dp) at (2.40,0);
+    \coordinate (B) at (1.68,0);
+    \coordinate (D) at (1.90,2.56);
+    \coordinate (C) at (3.58,2.56);
+    \coordinate (Dp) at (1.90,0);
     % solid parallelogram
     \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
     % dashed base extension B--D' continues past D', and height DD'
-    \draw[dashed,line width=0.6pt] (B) -- (3.20,0);
+    \draw[dashed,line width=0.6pt] (B) -- (3.25,0);
     \draw[dashed,line width=0.6pt] (D) -- (Dp);
     \node[anchor=north east,inner sep=1pt] at (A) {$A$};
     \node[anchor=north,inner sep=1pt] at (B) {$B$};
@@ -16094,8 +16094,8 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 \fitfig{%
 % fig-alt: 图3·8：□ABCD底AB，高DD'实线落在AB延长线上于D'（B之外）；CC'虚线⊥AB于C'；BD'与D'C'虚线；E为BC与DD'交点；矩形D'C'CD
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\b{2.20}
-  \def\s{1.50}
+  \def\b{1.75}% 扫描 AB:BD′水平差:h≈98:38:141
+  \def\s{0.65}
   \def\h{2.50}
   % heavily slanted right: D to the right of B
   \coordinate (A) at (0,0);
@@ -16284,12 +16284,12 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·11：□ABCD对角实线AC；过AC上任意点P作EF∥AD（E在AB、F在CD）、GH∥AB（G在AD、H在BC），三分线交于P
+% fig-alt: 图3·11：□ABCD对角实线AC；过AC上任意点P作EF∥AD（E在AB、F在CD）、GH∥AB（G在AD、H在BC），三分线交于P（扫描P约在AC的2/3处）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\b{3.40}
-  \def\s{1.10}
+  \def\b{2.90}% 扫描 b:s:h≈135:45:102，P 约在 AC 的 0.67 处
+  \def\s{0.97}
   \def\h{2.20}
-  \def\t{0.42}
+  \def\t{0.67}
   \coordinate (A) at (0,0);
   \coordinate (B) at (\b,0);
   \coordinate (D) at (\s,\h);
@@ -16362,7 +16362,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
     \node[anchor=east,inner sep=2pt] at (0,{0.5*\a}) {$a$};
   \end{scope}
   \begin{scope}[shift={(3.10,0)}]
-    \def\hh{1.15}
+    \def\hh{1.53}% 扫描菱形高约为边长 0.90（锐角约 65°）
     \pgfmathsetmacro{\off}{sqrt(\a*\a-\hh*\hh)}
     \coordinate (Ap) at (0,0);
     \coordinate (Bp) at (\a,0);
@@ -16457,15 +16457,15 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 % fig-alt: （第4题）梯形ABCD（AB∥DC，AB底较长）；M为腰BC中点；过M虚线EF∥AD，E在AB上、F在DC延长线上（CF虚延）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
-  \coordinate (B) at (4.20,0);
-  \coordinate (D) at (0.70,2.00);
-  \coordinate (C) at (2.60,2.00);
-  \coordinate (M) at ({(4.20+2.60)/2},{(0+2.00)/2});
-  % EF ∥ AD through M. AD direction = D-A = (0.70,2.00)
+  \coordinate (B) at (3.48,0);% 扫描 AB:DC:h≈165:83:95
+  \coordinate (D) at (0.68,2.00);
+  \coordinate (C) at (2.42,2.00);
+  \coordinate (M) at ({(3.48+2.42)/2},{(0+2.00)/2});
+  % EF ∥ AD through M. AD direction = D-A = (0.68,2.00)
   % line: M + t(0.70,2); E on AB (y=0): My + t*2 = 0 => t = -My/2 = -0.5
-  \coordinate (E) at ({(4.20+2.60)/2 + (-0.5)*0.70}, 0);
+  \coordinate (E) at ({(3.48+2.42)/2 + (-0.5)*0.68}, 0);
   % F on DC line y=2: My + t*2 = 2 => t = (2-My)/2 = 0.5
-  \coordinate (F) at ({(4.20+2.60)/2 + 0.5*0.70}, 2.00);
+  \coordinate (F) at ({(3.48+2.42)/2 + 0.5*0.68}, 2.00);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[dashed,line width=0.6pt] (E) -- (F);
   \draw[dashed,line width=0.6pt] (C) -- (F);
