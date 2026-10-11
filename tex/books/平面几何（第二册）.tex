@@ -4806,19 +4806,20 @@ D E = \frac {1}{2} A B.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第3题：平行四边形ABCD斜向，A在B右上方，AD略上倾；对角线AC，直线过D交AC于E、AB于F，并交CB延长线于G，皆实线（对照fig-p0065-01）
+% fig-alt: 第3题：平行四边形ABCD瘦高，AB近竖直略右倾（A在B右上方），AB约为AD的1.3倍，AD近水平略上倾；对角线AC，直线过D交AC于E、AB于F，并交CB延长线于G，GB约为BC的0.9倍，皆实线（对照fig-p0065-01）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (1.75,2.45) -- (0.72,0.42) -- (2.92,0.64) -- (3.95,2.67) -- cycle;
-  \draw[line width=0.75pt] (-0.64,0.28) -- (0.72,0.42);
-  \draw[line width=0.75pt] (1.75,2.45) -- (2.92,0.64);
-  \draw[line width=0.75pt] (3.95,2.67) -- (-0.64,0.28);
-  \node[above left=0pt] at (1.75,2.45) {$A$};
-  \node[below=1pt] at (0.72,0.42) {$B$};
-  \node[right=1pt] at (2.92,0.64) {$C$};
-  \node[above right=0pt] at (3.95,2.67) {$D$};
-  \node[above=1pt] at (2.20,1.76) {$E$};
-  \node[left=2pt] at (1.11,1.20) {$F$};
-  \node[left=1pt] at (-0.64,0.28) {$G$};
+  % 十五扫按扫描像素重定比例：AB 偏离竖直约11°，GB≈0.89·BC
+  \draw[line width=0.75pt] (2.50,2.98) -- (1.95,0.15) -- (4.15,0.17) -- (4.70,3.00) -- cycle;
+  \draw[line width=0.75pt] (0,0.13) -- (1.95,0.15);
+  \draw[line width=0.75pt] (2.50,2.98) -- (4.15,0.17);
+  \draw[line width=0.75pt] (4.70,3.00) -- (0,0.13);
+  \node[above left=0pt] at (2.50,2.98) {$A$};
+  \node[below=1pt] at (1.95,0.15) {$B$};
+  \node[right=1pt] at (4.15,0.17) {$C$};
+  \node[above right=0pt] at (4.70,3.00) {$D$};
+  \node[above=1pt] at (3.07,2.05) {$E$};
+  \node[left=2pt] at (2.21,1.48) {$F$};
+  \node[left=1pt] at (0,0.13) {$G$};
 \end{tikzpicture}%
 }
 \caption{(第3题)}
@@ -4874,20 +4875,22 @@ D E = \frac {1}{2} A B.
 
 \begin{figure}
 \centering
-% fig-alt: 第9题：△ABC，内心O，M在AB、N在AC；AO实线，BN、CM交于O（对照fig-p0065-03）
+% fig-alt: 第9题：△ABC，A在C左上方近C（约在底边0.85处），内心O；过O作AO的垂线交AB于M、AC于N（M、O、N一直线）；连AO、BO、CO，皆实线（对照fig-p0065-03）
 \fitfig{%
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0,0) -- (2.85,0) -- (1.85,2.15) -- cycle;
-  \draw[line width=0.65pt] (0,0) -- (2.35,1.15);
-  \draw[line width=0.65pt] (2.85,0) -- (0.95,1.15);
-  \draw[line width=0.65pt] (1.85,2.15) -- (1.55,0.75);
-  \fill (1.55,0.75) circle (0.04);
-  \node[anchor=south] at (1.85,2.18) {$A$};
+  % 十五扫：扫描是直线MON⊥AO 加线段BO、CO，不是 BN、CM 两条交线
+  \draw[line width=0.75pt] (0,0) -- (2.85,0) -- (2.42,2.40) -- cycle;
+  \draw[line width=0.65pt] (1.06,1.05) -- (2.76,0.52);
+  \draw[line width=0.65pt] (0,0) -- (1.91,0.79);
+  \draw[line width=0.65pt] (2.85,0) -- (1.91,0.79);
+  \draw[line width=0.65pt] (2.42,2.40) -- (1.91,0.79);
+  \fill (1.91,0.79) circle (0.04);
+  \node[anchor=south] at (2.42,2.43) {$A$};
   \node[anchor=north east] at (0,0) {$B$};
   \node[anchor=north west] at (2.85,0) {$C$};
-  \node[anchor=east] at (0.95,1.15) {$M$};
-  \node[anchor=west] at (2.35,1.15) {$N$};
-  \node[anchor=north west,inner sep=1pt] at (1.55,0.72) {$O$};
+  \node[anchor=south east] at (1.04,1.07) {$M$};
+  \node[anchor=west] at (2.80,0.54) {$N$};
+  \node[anchor=north,inner sep=2pt] at (1.89,0.74) {$O$};
 \end{tikzpicture}%
 }
 \end{figure}
@@ -4920,11 +4923,11 @@ P D ^ {2} = P E \cdot P F\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第11题：圆外A，切线AB、AC，B上、C下为切点；BC为竖弦，圆心在弦右侧；右弧实线，过P的左弧虚线；PD横、PE⊥AB、PF⊥AC；D处方标在PD下侧靠C，E、F处直角；PB、PC为虚线直线（对照fig-p0066-01）
+% fig-alt: 第11题：圆外A，切线AB、AC，B上、C下为切点；BC为竖弦，圆心在弦右侧；右弧与过P的左弧皆实线（整圆实线）；PD横、PE⊥AB、PF⊥AC；D处方标在PD下侧靠C，E、F处直角；PB、PC为虚线直线（对照fig-p0066-01）
 \begin{tikzpicture}[line cap=round,line join=round]
-  % B、C 相对圆心 (4.43,1.60) 的极角约 ±111.12°；左弧（过P）为劣弧，扫描是虚线
+  % B、C 相对圆心 (4.43,1.60) 的极角约 ±111.12°；左弧（过P）为劣弧，十五扫按像素确认扫描是连续实线（虚线的是直线PB、PC）
   \draw[line width=0.7pt] (4.43,1.60) ++(111.12:1.55) arc[start angle=111.12, delta angle=-222.23, radius=1.55];
-  \draw[dashed,line width=0.65pt] (4.43,1.60) ++(111.12:1.55) arc[start angle=111.12, delta angle=137.77, radius=1.55];
+  \draw[line width=0.7pt] (4.43,1.60) ++(111.12:1.55) arc[start angle=111.12, delta angle=137.77, radius=1.55];
   \draw[line width=0.75pt] (0.12,1.60) -- (3.87,3.05);
   \draw[line width=0.75pt] (0.12,1.60) -- (3.87,0.15);
   \draw[line width=0.75pt] (3.87,3.05) -- (3.87,0.15);
@@ -5088,18 +5091,18 @@ P D ^ {2} = P E \cdot P F\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第20题：△ABC，A左下、C右下、B右上，∠C为直角但扫描无方标；内接菱形DEBF，D在AC、E在AB、F在BC，DE∥BC、DF∥AB，皆实线（对照fig-p0067-03）
+% fig-alt: 第20题：△ABC，A左下、C右下、B在C右上方（∠C略钝，合AC=BC、AB=1.5AC），扫描无方标；内接菱形DEBF，D在AC、E在AB、F在BC，DE∥BC、DF∥AB，皆实线（对照fig-p0067-03）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0.20,0.20) -- (3.20,0.20) -- (3.20,3.20) -- cycle;
-  \draw[line width=0.75pt] (1.96,0.20) -- (1.96,1.96);
-  \draw[line width=0.75pt] (1.96,0.20) -- (3.20,1.44);
-  % 扫描角C是直角，图上没有直角方标
+  \draw[line width=0.75pt] (0.20,0.20) -- (3.20,0.20) -- (3.43,3.25) -- cycle;
+  \draw[line width=0.75pt] (1.98,0.20) -- (2.11,2.01);
+  \draw[line width=0.75pt] (1.98,0.20) -- (3.29,1.44);
+  % 十五扫：扫描B在C右上方约0.23（∠C约94°，非直角），与题设AC=BC=12、AB=18相合；图上没有直角方标
   \node[anchor=north east,inner sep=1pt] at (0.14,0.14) {$A$};
-  \node[anchor=south west,inner sep=1pt] at (3.24,3.24) {$B$};
+  \node[anchor=south west,inner sep=1pt] at (3.47,3.29) {$B$};
   \node[anchor=north west,inner sep=1pt] at (3.24,0.14) {$C$};
-  \node[anchor=north,inner sep=1pt] at (1.96,0.14) {$D$};
-  \node[anchor=south east,inner sep=1pt] at (1.90,2.00) {$E$};
-  \node[anchor=west,inner sep=1pt] at (3.26,1.44) {$F$};
+  \node[anchor=north,inner sep=1pt] at (1.98,0.14) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (2.05,2.05) {$E$};
+  \node[anchor=west,inner sep=1pt] at (3.36,1.44) {$F$};
 \end{tikzpicture}%
 }
 \caption{(第20题)}
@@ -5108,17 +5111,18 @@ P D ^ {2} = P E \cdot P F\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第21题：△ABC，A左下、B右上、C右下；内接平行四边形DEBF，D在AC、E在AB、F在BC，DE∥BC、DF∥AB，DE:DF=2:1，皆实线（对照fig-p0067-04）
+% fig-alt: 第21题：△ABC，A左下、C右下、B在C右上方（∠C钝），AC略短于BC；内接平行四边形DEBF，D在AC、E在AB、F在BC，DE∥BC、DF∥AB，DE:DF=2:1，皆实线（对照fig-p0067-04）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (0.07,0.25) -- (3.55,3.20) -- (4.30,0.25) -- cycle;
-  \draw[line width=0.75pt] (3.24,0.25) -- (2.68,2.46);
-  \draw[line width=0.75pt] (3.24,0.25) -- (4.11,0.99);
+  % 十五扫按扫描像素重定比例：B在C右上方（∠C钝），AB≈1.5BC，AD=3/4·AC
+  \draw[line width=0.75pt] (0.07,0.25) -- (3.98,3.79) -- (3.47,0.25) -- cycle;
+  \draw[line width=0.75pt] (2.62,0.25) -- (3.00,2.90);
+  \draw[line width=0.75pt] (2.62,0.25) -- (3.60,1.13);
   \node[anchor=north east,inner sep=1pt] at (0.02,0.18) {$A$};
-  \node[anchor=south,inner sep=1pt] at (3.55,3.24) {$B$};
-  \node[anchor=north west,inner sep=1pt] at (4.34,0.18) {$C$};
-  \node[anchor=north,inner sep=1pt] at (3.24,0.18) {$D$};
-  \node[anchor=south east,inner sep=1pt] at (2.60,2.50) {$E$};
-  \node[anchor=west,inner sep=1pt] at (4.16,0.99) {$F$};
+  \node[anchor=south,inner sep=1pt] at (3.98,3.83) {$B$};
+  \node[anchor=north west,inner sep=1pt] at (3.51,0.18) {$C$};
+  \node[anchor=north,inner sep=1pt] at (2.62,0.18) {$D$};
+  \node[anchor=south east,inner sep=1pt] at (2.94,2.95) {$E$};
+  \node[anchor=west,inner sep=1pt] at (3.65,1.13) {$F$};
 \end{tikzpicture}%
 }
 \caption{(第21题)}
@@ -5173,22 +5177,22 @@ P D ^ {2} = P E \cdot P F\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·55：左直角△ABC，直角在C，B''在AB、C''在AC，B''C''虚线∥BC，C、C''处直角标记；右较小直角△A'B'C'，直角在C'，边皆实线。PNG只截右三角形，左半为未改残片fig-p0069-01
+% fig-alt: 图1·55：左直角△ABC，直角在C，B''在AB、C''在AC，B''C''虚线∥BC且AC''=A'C'，仅C处有直角标记（C''处无）；右较小直角△A'B'C'，直角在C'，边皆实线；两三角形皆瘦高（高约为底的1.6倍）。PNG只截右三角形，左半为未改残片fig-p0069-01
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (2.35,2.78) -- (0.18,0.28) -- (2.35,0.28) -- cycle;
-  \draw[dashed,line width=0.6pt] (0.96,1.18) -- (2.35,1.18);
-  \draw[line width=0.5pt] (2.21,0.28) -- (2.21,0.42) -- (2.35,0.42);
-  \draw[line width=0.5pt] (2.21,1.18) -- (2.21,1.32) -- (2.35,1.32);
-  \draw[line width=0.75pt] (5.72,2.05) -- (4.22,0.32) -- (5.72,0.32) -- cycle;
-  \draw[line width=0.5pt] (5.58,0.32) -- (5.58,0.46) -- (5.72,0.46);
-  \node[anchor=south,inner sep=1pt] at (2.35,2.82) {$A$};
-  \node[anchor=south east,inner sep=1pt] at (0.90,1.22) {$B''$};
+  % 十五扫按扫描像素重定比例（高/底≈1.63），B''C''在AC下约四分之一处；扫描C''处无直角方标
+  \draw[line width=0.75pt] (1.80,2.92) -- (0.18,0.28) -- (1.80,0.28) -- cycle;
+  \draw[dashed,line width=0.6pt] (0.60,0.97) -- (1.80,0.97);
+  \draw[line width=0.5pt] (1.66,0.28) -- (1.66,0.42) -- (1.80,0.42);
+  \draw[line width=0.75pt] (4.20,2.23) -- (3.00,0.28) -- (4.20,0.28) -- cycle;
+  \draw[line width=0.5pt] (4.06,0.28) -- (4.06,0.42) -- (4.20,0.42);
+  \node[anchor=south,inner sep=1pt] at (1.80,2.96) {$A$};
+  \node[anchor=south east,inner sep=1pt] at (0.54,1.01) {$B''$};
   \node[anchor=north east,inner sep=1pt] at (0.12,0.22) {$B$};
-  \node[anchor=west,inner sep=1pt] at (2.40,1.18) {$C''$};
-  \node[anchor=north west,inner sep=1pt] at (2.40,0.22) {$C$};
-  \node[anchor=south,inner sep=1pt] at (5.72,2.09) {$A'$};
-  \node[anchor=north east,inner sep=1pt] at (4.16,0.26) {$B'$};
-  \node[anchor=north west,inner sep=1pt] at (5.78,0.26) {$C'$};
+  \node[anchor=west,inner sep=1pt] at (1.85,0.97) {$C''$};
+  \node[anchor=north west,inner sep=1pt] at (1.85,0.22) {$C$};
+  \node[anchor=south,inner sep=1pt] at (4.20,2.27) {$A'$};
+  \node[anchor=north east,inner sep=1pt] at (2.94,0.22) {$B'$};
+  \node[anchor=north west,inner sep=1pt] at (4.26,0.22) {$C'$};
 \end{tikzpicture}%
 }
 \caption{图1·55}
@@ -5458,7 +5462,7 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第6题：A左上、B左下、C右上、D右下，AB⊥BD、CD⊥BD，无顶边AC；AD与BC交于E，EF⊥BD至F，并连AF、CF；B、D处直角标记（对照fig-p0072-02）
+% fig-alt: 第6题：A左上、B左下、C右上、D右下，AB⊥BD、CD⊥BD，无顶边AC；AD与BC交于E，EF⊥BD至F，并连AF、CF；扫描B、D处无直角标记（对照fig-p0072-02）
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0.15,2.55) -- (0.15,0.25) -- (3.55,0.25) -- (3.55,1.55);
   \draw[line width=0.75pt] (0.15,2.55) -- (3.55,0.25);
@@ -5466,8 +5470,6 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
   \draw[line width=0.75pt] (2.32,1.08) -- (2.32,0.25);
   \draw[line width=0.75pt] (0.15,2.55) -- (2.32,0.25);
   \draw[line width=0.75pt] (3.55,1.55) -- (2.32,0.25);
-  \draw[line width=0.5pt] (0.30,0.25) -- (0.30,0.40) -- (0.15,0.40);
-  \draw[line width=0.5pt] (3.40,0.25) -- (3.40,0.40) -- (3.55,0.40);
   \node[anchor=south east,inner sep=1pt] at (0.10,2.58) {$A$};
   \node[anchor=north east,inner sep=1pt] at (0.08,0.18) {$B$};
   \node[anchor=south west,inner sep=1pt] at (3.60,1.52) {$C$};
@@ -5559,7 +5561,7 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第9题海岛：A岛顶、B岛足，表CD、EF齐高，CE虚线标d；视线ACG、AEH；地标y、b、a，杆旁c，岛高x
+% fig-alt: 第9题海岛：A岛顶、B岛足，表CD、EF齐高，CE虚线标d；视线ACG、AEH；地标y、b、a，杆CD左侧c、杆EF右侧c，岛高x
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.75pt] (0.15,3.20) -- (0.15,0.15) -- (5.70,0.15);
   \draw[line width=0.75pt] (1.95,0.15) -- (1.95,1.20);
@@ -5581,7 +5583,7 @@ A D \cdot B C = B E \cdot C A = C F \cdot A B.
   \node[anchor=north,inner sep=1pt] at (4.75,0.08) {$a$};
   \node[anchor=south,inner sep=1pt] at (2.87,1.24) {$d$};
   \node[anchor=east,inner sep=1pt] at (1.86,0.68) {$c$};
-  \node[anchor=east,inner sep=1pt] at (3.70,0.68) {$c$};
+  \node[anchor=west,inner sep=1pt] at (3.88,0.68) {$c$};
 \end{tikzpicture}%
 }
 \caption{(第9题)}
@@ -5796,19 +5798,20 @@ x = \frac {c d}{a - b} + c.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图1·60：左圆直径AD过O，△ABC内接，连BD，C处直角方标一边贴BC、另一边垂直于BC（不顺着斜边AC）；D处角弧；右较小圆同样标A'B'C'D'O'。PNG只截右圆，按扫描画左右全图
+% fig-alt: 图1·60：左圆直径AD过O，△ABC内接，连BD，C处与D处各一道角弧（∠C=∠D，非直角）；右较小圆同样标A'B'C'D'O'。PNG只截右圆，按扫描画左右全图
 \begin{tikzpicture}[line cap=round,line join=round]
   \draw[line width=0.7pt] (1.48,1.42) circle[radius=1.20];
   \draw[line width=0.75pt] (1.65,2.61) -- (0.34,1.05) -- (2.67,1.25) -- cycle;
   \draw[line width=0.75pt] (1.65,2.61) -- (1.31,0.23);
   \draw[line width=0.75pt] (0.34,1.05) -- (1.31,0.23);
-  \draw[line width=0.5pt] (2.51,1.24) -- (2.50,1.40) -- (2.66,1.41);
+  % 十五扫：扫描C处是角弧（大图C'处尤清楚），表∠C=∠C'，不是直角方标
+  \draw[line width=0.5pt] (2.54,1.43) arc[start angle=127,end angle=185,radius=0.22];
   \draw[line width=0.5pt] (1.34,0.45) arc[start angle=82,end angle=140,radius=0.22];
   \draw[line width=0.7pt] (4.62,1.18) circle[radius=0.86];
   \draw[line width=0.75pt] (4.74,2.03) -- (3.80,0.91) -- (5.47,1.06) -- cycle;
   \draw[line width=0.75pt] (4.74,2.03) -- (4.50,0.33);
   \draw[line width=0.75pt] (3.80,0.91) -- (4.50,0.33);
-  \draw[line width=0.5pt] (5.35,1.05) -- (5.34,1.17) -- (5.46,1.18);
+  \draw[line width=0.5pt] (5.37,1.19) arc[start angle=127,end angle=185,radius=0.16];
   \draw[line width=0.5pt] (4.52,0.49) arc[start angle=82,end angle=140,radius=0.16];
   \node[anchor=south,inner sep=1pt] at (1.65,2.64) {$A$};
   \node[anchor=east,inner sep=1pt] at (0.26,1.08) {$B$};
@@ -6012,20 +6015,21 @@ M D + D E + E M = M D + D F + F N = M N = m\text{，}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第7题：△ABC，A上、B左、C右，正方形EFGH内接，E、H在AB、AC，F、G在BC，高AD过正方形至D；皆实线，无直角标记
+% fig-alt: 第7题：△ABC，A上偏右（约在底边0.61处）、B左、C右，右腰较陡，正方形EFGH内接，E、H在AB、AC，F、G在BC，高AD过正方形至D；皆实线，无直角标记
 \begin{tikzpicture}[line cap=round,line join=round]
-  \draw[line width=0.75pt] (2.25,2.35) -- (0.15,0.25) -- (4.35,0.25) -- cycle;
-  \draw[line width=0.75pt] (1.55,1.65) -- (2.95,1.65) -- (2.95,0.25);
-  \draw[line width=0.75pt] (1.55,1.65) -- (1.55,0.25);
-  \draw[line width=0.75pt] (2.25,2.35) -- (2.25,0.25);
-  \node[anchor=south,inner sep=1pt] at (2.25,2.39) {$A$};
+  % 十五扫按扫描像素重定：A在底边约0.61处，高约为底的0.6；正方形边长=hm/(h+m)
+  \draw[line width=0.75pt] (2.73,2.76) -- (0.15,0.25) -- (4.35,0.25) -- cycle;
+  \draw[line width=0.75pt] (1.77,1.82) -- (3.34,1.82) -- (3.34,0.25);
+  \draw[line width=0.75pt] (1.77,1.82) -- (1.77,0.25);
+  \draw[line width=0.75pt] (2.73,2.76) -- (2.73,0.25);
+  \node[anchor=south,inner sep=1pt] at (2.73,2.80) {$A$};
   \node[anchor=north east,inner sep=1pt] at (0.10,0.20) {$B$};
   \node[anchor=north west,inner sep=1pt] at (4.40,0.20) {$C$};
-  \node[anchor=east,inner sep=1pt] at (1.48,1.68) {$E$};
-  \node[anchor=west,inner sep=1pt] at (3.02,1.68) {$H$};
-  \node[anchor=north,inner sep=1pt] at (1.48,0.20) {$F$};
-  \node[anchor=north,inner sep=1pt] at (2.25,0.20) {$D$};
-  \node[anchor=north,inner sep=1pt] at (3.02,0.20) {$G$};
+  \node[anchor=east,inner sep=1pt] at (1.70,1.85) {$E$};
+  \node[anchor=west,inner sep=1pt] at (3.41,1.85) {$H$};
+  \node[anchor=north,inner sep=1pt] at (1.77,0.20) {$F$};
+  \node[anchor=north,inner sep=1pt] at (2.73,0.20) {$D$};
+  \node[anchor=north,inner sep=1pt] at (3.34,0.20) {$G$};
 \end{tikzpicture}%
 }
 \caption{(第7题)}
