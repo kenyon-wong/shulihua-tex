@@ -13660,27 +13660,28 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （1）圆O（小空心圆，O标在心正下方）；点M在圆外，割线MCD近水平交圆于C、D，割线MAB交圆于A（左）、B（右下）
+% fig-alt: （1）圆O（小空心圆，O标在心正下方）；点M在圆外，割线MCD近水平交圆于C、D，割线MAB交圆于A（左）、B（近圆底、略偏右）；扫描M与CD高约0.56半径
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rr{1.350}
   \coordinate (O) at (0,0);
-  \coordinate (M) at (-2.600,0.550);
-  \pgfmathsetmacro{\cy}{0.550}
+  \coordinate (M) at (-2.590,0.756);
+  \pgfmathsetmacro{\cy}{0.756}
   \pgfmathsetmacro{\cx}{sqrt(\rr*\rr-\cy*\cy)}
   \coordinate (C) at (-\cx,\cy);
   \coordinate (D) at (\cx,\cy);
-  \coordinate (B) at ({0.868}, {-1.034});
+  % 十六扫按扫描像素重定：CD高0.56R，B约在-72°
+  \coordinate (B) at ({0.417}, {-1.284});
   % A = other intersection of MB with circle
   % param M + t(B-M)
-  \pgfmathsetmacro{\bdx}{0.868-(-2.600)}
-  \pgfmathsetmacro{\bdy}{-1.034-0.550}
+  \pgfmathsetmacro{\bdx}{0.417-(-2.590)}
+  \pgfmathsetmacro{\bdy}{-1.284-0.756}
   % (Mx+t dx)^2+(My+t dy)^2=R^2; t=1 is B
   \pgfmathsetmacro{\qa}{\bdx*\bdx+\bdy*\bdy}
-  \pgfmathsetmacro{\qb}{2*(-2.600)*\bdx+2*0.550*\bdy}
-  \pgfmathsetmacro{\qc}{(-2.600)*(-2.600)+0.550*0.550-\rr*\rr}
+  \pgfmathsetmacro{\qb}{2*(-2.590)*\bdx+2*0.756*\bdy}
+  \pgfmathsetmacro{\qc}{(-2.590)*(-2.590)+0.756*0.756-\rr*\rr}
   \pgfmathsetmacro{\disc}{\qb*\qb-4*\qa*\qc}
   \pgfmathsetmacro{\ta}{(-\qb-sqrt(\disc))/(2*\qa)}
-  \coordinate (A) at ({-2.600+\ta*\bdx},{0.550+\ta*\bdy});
+  \coordinate (A) at ({-2.590+\ta*\bdx},{0.756+\ta*\bdy});
   \draw[line width=0.75pt] (O) circle (\rr);
   \draw[line width=0.75pt] (M) -- (D);
   \draw[line width=0.75pt] (M) -- (B);
@@ -13699,15 +13700,15 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （2）圆O（小空心圆，O标在心正下方）；点M在左上，水平切线触圆于C(D)；割线MAB交圆于A（左上）、B（右下）
+% fig-alt: （2）圆O（小空心圆，O标在心正下方）；点M在左上，水平切线触圆于C(D)；割线MAB约45°下斜交圆于A（左上）、B（近圆底、略偏右），割线在O左下方约半径一半处经过
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rr{1.350}
   \coordinate (O) at (0,0);
   \coordinate (C) at (0,\rr);
   \coordinate (M) at (-2.450,\rr);
-  \coordinate (B) at ({1.003},{-0.903});
-  \pgfmathsetmacro{\bdx}{1.003-(-2.450)}
-  \pgfmathsetmacro{\bdy}{-0.903-\rr}
+  \coordinate (B) at ({0.367},{-1.299});
+  \pgfmathsetmacro{\bdx}{0.367-(-2.450)}
+  \pgfmathsetmacro{\bdy}{-1.299-\rr}
   \pgfmathsetmacro{\qa}{\bdx*\bdx+\bdy*\bdy}
   \pgfmathsetmacro{\qb}{2*(-2.450)*\bdx+2*\rr*\bdy}
   \pgfmathsetmacro{\qc}{(-2.450)*(-2.450)+\rr*\rr-\rr*\rr}
@@ -13760,17 +13761,17 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （4）圆O（小空心圆）；水平割线经M、A、O至B（直径）；O标在直径下方；切线自M触圆于C(D)
+% fig-alt: （4）圆O（小空心圆）；水平割线经M、A、O至B（直径）；O标在直径下方；切线自M（约38°上斜）触圆于左上C(D)，C(D)标在切点左上
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rr{1.350}
   \coordinate (O) at (0,0);
   \coordinate (A) at (-\rr,0);
   \coordinate (B) at (\rr,0);
   \coordinate (M) at (-2.550,0);
-  % tangent from M: MO=2.55, sin(theta)=R/MO
+  % tangent from M: MO=2.55, sin(theta)=R/MO, theta = angle at M; OC makes 90-theta with OM
   \pgfmathsetmacro{\mo}{2.550}
   \pgfmathsetmacro{\th}{asin(\rr/\mo)}
-  \coordinate (C) at ({-\rr*cos(\th)},{\rr*sin(\th)});
+  \coordinate (C) at ({-\rr*sin(\th)},{\rr*cos(\th)});
   \draw[line width=0.75pt] (O) circle (\rr);
   \draw[line width=0.75pt] (M) -- (B);
   \draw[line width=0.75pt] (M) -- (C);
@@ -13779,7 +13780,7 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
   \node[anchor=east,inner sep=2pt] at (M) {$M$};
   \node[anchor=north,inner sep=2pt] at (A) {$A$};
   \node[anchor=west,inner sep=2pt] at (B) {$B$};
-  \node[anchor=south,inner sep=1pt] at (C) {$C(D)$};
+  \node[anchor=south east,inner sep=1pt] at (C) {$C(D)$};
 \end{tikzpicture}%
 }
 \caption{(4)}
@@ -13788,22 +13789,22 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （5）圆O（小空心圆）；弦AB与弦CD交于圆内M（交点在O左上方）；M标在交点下方，O标在圆心下方
+% fig-alt: （5）圆O（小空心圆）；弦AB与弦CD交于圆内M（交点在O上方偏左约0.6半径处；扫描端点约A161°、B53°、C123°、D−12°）；M标在交点下方，O标在圆心下方
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rr{1.450}
   \coordinate (O) at (0,0);
-  \coordinate (A) at ({168}:\rr);
-  \coordinate (B) at ({25}:\rr);
-  \coordinate (C) at ({135}:\rr);
-  \coordinate (D) at ({-30}:\rr);
-  \pgfmathsetmacro{\ax}{\rr*cos(168)}
-  \pgfmathsetmacro{\ay}{\rr*sin(168)}
-  \pgfmathsetmacro{\bx}{\rr*cos(25)-\ax}
-  \pgfmathsetmacro{\by}{\rr*sin(25)-\ay}
-  \pgfmathsetmacro{\cx}{\rr*cos(135)}
-  \pgfmathsetmacro{\cy}{\rr*sin(135)}
-  \pgfmathsetmacro{\dx}{\rr*cos(-30)-\cx}
-  \pgfmathsetmacro{\dy}{\rr*sin(-30)-\cy}
+  \coordinate (A) at ({161}:\rr);
+  \coordinate (B) at ({53}:\rr);
+  \coordinate (C) at ({123}:\rr);
+  \coordinate (D) at ({-12}:\rr);
+  \pgfmathsetmacro{\ax}{\rr*cos(161)}
+  \pgfmathsetmacro{\ay}{\rr*sin(161)}
+  \pgfmathsetmacro{\bx}{\rr*cos(53)-\ax}
+  \pgfmathsetmacro{\by}{\rr*sin(53)-\ay}
+  \pgfmathsetmacro{\cx}{\rr*cos(123)}
+  \pgfmathsetmacro{\cy}{\rr*sin(123)}
+  \pgfmathsetmacro{\dx}{\rr*cos(-12)-\cx}
+  \pgfmathsetmacro{\dy}{\rr*sin(-12)-\cy}
   \pgfmathsetmacro{\den}{\bx*\dy-\by*\dx}
   \pgfmathsetmacro{\ss}{((\cx-\ax)*\dy-(\cy-\ay)*\dx)/\den}
   \coordinate (M) at ({\ax+\ss*\bx},{\ay+\ss*\by});
@@ -14553,16 +14554,17 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第21题：半圆直径AB心O；C在弧上；切线MN触于C；AM⊥MN、BN⊥MN；CD⊥AB于D；O小空心圆
+% fig-alt: 第21题：半圆直径AB心O；C在弧上（扫描∠COB约74°，D在O右约0.27R）；切线MN触于C；AM⊥MN、BN⊥MN；CD⊥AB于D；O小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\RR{1.5500}
+  % 十六扫按扫描像素重定：∠COB≈74°，M、N为A、B在切线上的垂足
   \coordinate (O) at (0,0);
   \coordinate (A) at (-1.5500,0);
   \coordinate (B) at (1.5500,0);
-  \coordinate (C) at (0.7277,1.3686);
-  \coordinate (D) at (0.7277,0);
-  \coordinate (M) at (-0.4807,2.0111);
-  \coordinate (N) at (1.9361,0.7261);
+  \coordinate (C) at (0.4272,1.4900);
+  \coordinate (D) at (0.4272,0);
+  \coordinate (M) at (-1.0050,1.9006);
+  \coordinate (N) at (1.8595,1.0793);
   \draw[line width=0.75pt] (A) -- (B);
   \draw[line width=0.75pt] (A) arc (180:0:\RR);
   \draw[line width=0.75pt] (M) -- (N);
@@ -14575,7 +14577,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
   \node[anchor=north,inner sep=2pt] at (O) {$O$};
   \node[anchor=north,inner sep=2pt] at (D) {$D$};
   \node[anchor=south,inner sep=1pt] at (M) {$M$};
-  \node[anchor=south,inner sep=1pt] at (C) {$C$};
+  \node[anchor=south west,inner sep=1pt] at (C) {$C$};
   \node[anchor=west,inner sep=2pt] at (N) {$N$};
 \end{tikzpicture}%
 }
@@ -14832,7 +14834,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·2：左侧单位正方形边长1 cm，U标在方下，与方格网中间一行齐高、间隔约一格；右侧L形虚线方格网（底4×2、右上3×1缺左上格）上叠五边形ABCDE。A在底边上、第一条竖虚线之左，B在右下角，C靠近右边且在中行偏上，D在上排内靠近顶边，E靠近左缘且在中行偏上。底边下标P（比A、B低约一字高）
+% fig-alt: 图3·2：左侧单位正方形边长1 cm，U标在方下，与方格网中间一行齐高、间隔约一格；右侧L形虚线方格网（底4×2、右上3×1缺左上格）上叠五边形ABCDE。A在底边上、第一条竖虚线之左，B在右下角，C靠近右边且在中行偏上，D在上排内约顶边下0.36格（DC约过格点(3,2)），E在左列中线附近、中行偏上（约0.52格,1.5格）。底边下标P（比A、B低约一字高）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\u{0.72}
   \coordinate (U0) at (0,\u);
@@ -14851,8 +14853,8 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
     \coordinate (A) at (0.78*\u,0);
     \coordinate (B) at (4*\u,0);
     \coordinate (C) at (3.42*\u,1.72*\u);
-    \coordinate (D) at (2.30*\u,2.78*\u);
-    \coordinate (E) at (0.28*\u,1.45*\u);
+    \coordinate (D) at (2.32*\u,2.64*\u);
+    \coordinate (E) at (0.52*\u,1.50*\u);
     \draw[line width=0.85pt] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
     \node[anchor=north,inner sep=1pt] at (A) {$A$};
     \node[anchor=north west,inner sep=1pt] at (B) {$B$};
