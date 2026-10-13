@@ -22545,26 +22545,33 @@ A B = \sqrt {3} R\text{，} \quad B C = R.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （第18题）扳头开口b夹正六边形螺帽（对边距）；底边标a；中心圆孔
+% fig-alt: （第18题）扳头开口b夹正六边形螺帽（对边距）；底边标a；中心圆孔；扳头圆心在螺帽中心右侧
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\s{0.82}
+  % 扫描实测（以 s 为单位，螺帽中心为原点）：扳头圆心右移 0.42s、半径 1.58s；孔半径 0.46s；
+  % 钳口台阶在 x=-0.65s，柄半高 0.57s，柄端 x=4.1s
   \pgfmathsetmacro{\hexh}{\s*sqrt(3)}
-  \pgfmathsetmacro{\Ro}{1.28*\s}
-  \pgfmathsetmacro{\aopen}{asin((0.5*\hexh)/\Ro)}
-  \pgfmathsetmacro{\cx}{\Ro*cos(\aopen)}
-  \pgfmathsetmacro{\jleft}{-\cx-0.22}
-  \pgfmathsetmacro{\hh}{0.56*\s}
-  \pgfmathsetmacro{\hxend}{\Ro+2.10*\s}
+  \pgfmathsetmacro{\ox}{0.42*\s}
+  \pgfmathsetmacro{\Ro}{1.58*\s}
+  \pgfmathsetmacro{\jx}{-0.65*\s}
+  \pgfmathsetmacro{\jy}{sqrt(\Ro*\Ro-(\jx-\ox)*(\jx-\ox))}
+  \pgfmathsetmacro{\aopen}{atan2(\jy,\jx-\ox)}
+  \pgfmathsetmacro{\hh}{0.57*\s}
+  \pgfmathsetmacro{\hx}{\ox+sqrt(\Ro*\Ro-\hh*\hh)}
+  \pgfmathsetmacro{\ah}{asin(\hh/\Ro)}
+  \pgfmathsetmacro{\hxend}{\ox+\Ro+2.10*\s}
+  \pgfmathsetmacro{\jleft}{-1.4*\s}
   \draw[line width=0.75pt] (0:\s) -- (60:\s) -- (120:\s) -- (180:\s) -- (240:\s) -- (300:\s) -- cycle;
-  \draw[line width=0.75pt] (0,0) circle (0.34*\s);
-  \draw[line width=0.85pt] ({180-\aopen}:\Ro) arc[start angle={180-\aopen}, end angle={-180+\aopen}, radius=\Ro];
-  \draw[line width=0.85pt] ({-\cx},{0.5*\hexh}) -- ({\jleft-0.52},{0.5*\hexh});
-  \draw[line width=0.85pt] ({-\cx},{-0.5*\hexh}) -- ({\jleft-0.52},{-0.5*\hexh});
-  \draw[line width=0.85pt] ({\Ro-0.02},\hh) -- (\hxend,\hh) -- (\hxend,-\hh) -- ({\Ro-0.02},-\hh);
+  \draw[line width=0.75pt] (0,0) circle (0.46*\s);
+  \draw[line width=0.85pt] (\jx,{0.5*\hexh}) -- (\jx,\jy) arc[start angle=\aopen, end angle=\ah, radius=\Ro] -- (\hxend,\hh) -- (\hxend,-\hh) -- (\hx,-\hh) arc[start angle=-\ah, end angle=-\aopen, radius=\Ro] -- (\jx,{-0.5*\hexh});
+  \draw[line width=0.85pt] (\jx,{0.5*\hexh}) -- (60:\s);
+  \draw[line width=0.85pt] (\jx,{-0.5*\hexh}) -- (300:\s);
+  \draw[line width=0.45pt] (\jx,{0.5*\hexh}) -- (\jleft-0.1,{0.5*\hexh});
+  \draw[line width=0.45pt] (\jx,{-0.5*\hexh}) -- (\jleft-0.1,{-0.5*\hexh});
   % 扫描：开口 b 为上下外向箭头，字在尺寸线中断处
-  \draw[->,line width=0.45pt] (\jleft-0.32,0.15) -- (\jleft-0.32,{0.5*\hexh});
-  \draw[->,line width=0.45pt] (\jleft-0.32,-0.15) -- (\jleft-0.32,{-0.5*\hexh});
-  \node[inner sep=1pt,font=\small] at (\jleft-0.32,0) {$b$};
+  \draw[->,line width=0.45pt] (\jleft+0.2,0.15) -- (\jleft+0.2,{0.5*\hexh});
+  \draw[->,line width=0.45pt] (\jleft+0.2,-0.15) -- (\jleft+0.2,{-0.5*\hexh});
+  \node[inner sep=1pt,font=\small] at (\jleft+0.2,0) {$b$};
   % 扫描：底边 a 为左右外向箭头，延长线接到六边形底边，字在中断处
   \draw[line width=0.45pt] ({-0.5*\s},{-0.5*\hexh}) -- ({-0.5*\s},{-0.5*\hexh-0.42});
   \draw[line width=0.45pt] ({0.5*\s},{-0.5*\hexh}) -- ({0.5*\s},{-0.5*\hexh-0.42});
