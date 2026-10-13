@@ -21371,12 +21371,12 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图4·11 正三角形、正方形、正五边形、正六边形及其对称轴（虚线）；标（1）（2）（3）（4）
+% fig-alt: 图4·11 正三角形、正方形、正五边形、正六边形及其对称轴（虚线）；四形大小按扫描：外接半径约三角1.16、正方1.24、五边1.10、六边0.91（相邻间距3.05），三角形按重心略下移；标（1）（2）（3）（4）在同一基线
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\ext{1.18}
   % (1) equilateral triangle, vertex up
-  \begin{scope}[shift={(0,0)}]
-    \def\R{1.05}
+  \begin{scope}[shift={(0,-0.19)}]
+    \def\R{1.16}
     \coordinate (C) at (0,0);
     \foreach \ang/\name in {90/A,210/B,330/D} {
       \coordinate (\name) at (\ang:\R);
@@ -21385,21 +21385,21 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
       \draw[dashed,line width=0.55pt] (\ang:\ext*\R) -- ({180+\ang}:\ext*\R);
     }
     \draw[line width=0.75pt] (A) -- (B) -- (D) -- cycle;
-    \node[anchor=north,inner sep=2pt] at (0,-\R-0.05) {（1）};
+    \node[anchor=north,inner sep=2pt] at (0,-1.66) {（1）};
   \end{scope}
   % (2) square, sides horizontal
   \begin{scope}[shift={(3.05,0)}]
-    \def\R{1.05}
+    \def\R{1.24}
     \coordinate (C) at (0,0);
     \foreach \ang in {0,45,90,135} {
       \draw[dashed,line width=0.55pt] (\ang:\ext*\R) -- ({180+\ang}:\ext*\R);
     }
     \draw[line width=0.75pt] (45:\R) -- (135:\R) -- (225:\R) -- (315:\R) -- cycle;
-    \node[anchor=north,inner sep=2pt] at (0,-\R-0.05) {（2）};
+    \node[anchor=north,inner sep=2pt] at (0,-1.85) {（2）};
   \end{scope}
   % (3) regular pentagon, vertex up
   \begin{scope}[shift={(6.10,0)}]
-    \def\R{1.05}
+    \def\R{1.10}
     \coordinate (C) at (0,0);
     \foreach \k in {0,...,4} {
       \pgfmathsetmacro{\ang}{90+72*\k}
@@ -21407,18 +21407,18 @@ OC， \ldots）是它的半径，OL（或 OM， ON， \ldots）是它的边心�
     }
     \draw[line width=0.75pt]
       (90:\R) -- (162:\R) -- (234:\R) -- (306:\R) -- (18:\R) -- cycle;
-    \node[anchor=north,inner sep=2pt] at (0,-\R-0.05) {（3）};
+    \node[anchor=north,inner sep=2pt] at (0,-1.85) {（3）};
   \end{scope}
   % (4) regular hexagon, flat top
   \begin{scope}[shift={(9.15,0)}]
-    \def\R{1.05}
+    \def\R{0.91}
     \coordinate (C) at (0,0);
     \foreach \ang in {0,30,60,90,120,150} {
       \draw[dashed,line width=0.55pt] (\ang:\ext*\R) -- ({\ang+180}:\ext*\R);
     }
     \draw[line width=0.75pt]
       (0:\R) -- (60:\R) -- (120:\R) -- (180:\R) -- (240:\R) -- (300:\R) -- cycle;
-    \node[anchor=north,inner sep=2pt] at (0,-\R-0.05) {（4）};
+    \node[anchor=north,inner sep=2pt] at (0,-1.85) {（4）};
   \end{scope}
 \end{tikzpicture}%
 }
