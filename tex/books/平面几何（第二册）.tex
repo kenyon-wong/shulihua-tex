@@ -23709,38 +23709,36 @@ O M = O M.
 
 \begin{figure}
 \centering
-% fig-alt: （第10题）左纸条结、两端阴影；右压平为正五边形，两侧斜条阴影标裁去，内虚折线
+% fig-alt: （第10题）左纸条打结，下行斜条与底部一段阴影（背面）；右压平为正五边形，上顶点到右下顶点为实折线，另三条对角线虚线，两侧斜条（外缘沿五边形上边延长）横线阴影标裁去
 \fitfig{%
-\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize]
-  \draw[line width=0.7pt,pattern=north east lines,pattern color=black!55]
-    (0.05,0.15) -- (0.85,-0.15) -- (1.15,0.22) -- (0.35,0.48) -- cycle;
-  \draw[line width=0.65pt] (0.35,0.48) .. controls (0.7,1.15) and (1.55,1.2) .. (1.95,0.55)
-    .. controls (2.15,0.25) and (1.7,0.05) .. (1.35,0.35)
-    .. controls (1.05,0.65) and (0.55,0.7) .. (0.55,0.35);
-  \draw[line width=0.65pt] (0.85,-0.15) .. controls (1.35,-0.45) and (2.05,-0.15) .. (1.85,0.35)
-    .. controls (1.7,0.7) and (1.15,0.85) .. (0.95,0.45);
-  \draw[line width=0.7pt,pattern=north east lines,pattern color=black!55]
-    (1.55,0.05) -- (2.35,0.35) -- (2.15,0.72) -- (1.35,0.42) -- cycle;
-  \begin{scope}[xshift=3.55cm,yshift=0.05cm]
-    \coordinate (P1) at (90:1.15);
-    \coordinate (P2) at (18:1.15);
-    \coordinate (P3) at (306:1.15);
-    \coordinate (P4) at (234:1.15);
-    \coordinate (P5) at (162:1.15);
+\begin{tikzpicture}[line cap=round,line join=round,font=\scriptsize,x=0.0045cm,y=-0.0045cm]
+  % 左：纸条打结（坐标取自扫描放大像素）
+  \draw[line width=0.7pt] (112,325) -- (40,428) -- (88,492) -- (152,408);
+  \draw[line width=0.7pt] (152,408) .. controls (95,330) and (95,170) .. (200,100)
+    .. controls (270,60) and (400,75) .. (470,128);
+  \draw[line width=0.7pt] (190,335) .. controls (165,250) and (190,140) .. (330,108);
+  \draw[line width=0.7pt] (330,108) -- (190,240);
+  \draw[line width=0.7pt] (400,150) -- (200,350);
+  \draw[line width=0.7pt] (152,408) .. controls (230,480) and (360,505) .. (470,465);
+  \draw[line width=0.7pt] (200,350) .. controls (260,430) and (360,470) .. (440,470);
+  \draw[line width=0.7pt,pattern=horizontal lines] (440,470) -- (575,330) -- (612,385) -- (470,465) -- cycle;
+  \draw[line width=0.7pt,pattern=horizontal lines] (400,150) -- (470,128)
+    .. controls (540,125) and (630,170) .. (640,220) -- (775,490) -- (720,565) -- cycle;
+  % 右：压平成正五边形，两侧斜条阴影裁去
+  \begin{scope}[shift={(1290,227)}]
+    \foreach \a/\n in {90/P1,18/P2,-54/P3,-126/P4,162/P5}
+      \coordinate (\n) at ({192*cos(\a)},{-192*sin(\a)});
+    \coordinate (X) at ($(P5)!-1.13!(P1)$);
+    \coordinate (Y) at ($(P4)!-0.55!(P2)$);
+    \coordinate (X2) at ($(P2)!-1.13!(P1)$);
+    \coordinate (Y2) at ($(P3)!-0.55!(P5)$);
+    \draw[line width=0.7pt,pattern=horizontal lines] (P5) -- (X) -- (Y) -- (P4) -- cycle;
+    \draw[line width=0.7pt,pattern=horizontal lines] (P2) -- (X2) -- (Y2) -- (P3) -- cycle;
     \draw[line width=0.7pt] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- cycle;
-    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (P1) -- (P3);
-    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (P1) -- (P4);
-    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (P2) -- (P5);
-    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (P2) -- (P4);
-    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (P5) -- (P3);
-    \fill[pattern=north east lines,pattern color=black!60]
-      (P5) -- (P4) -- ($(P4)+(-0.85,-0.55)$) -- ($(P5)+(-0.85,-0.55)$) -- cycle;
-    \fill[pattern=north east lines,pattern color=black!60]
-      (P2) -- (P3) -- ($(P3)+(0.85,-0.55)$) -- ($(P2)+(0.85,-0.55)$) -- cycle;
-    \draw[line width=0.6pt] (P5) -- ($(P5)+(-0.85,-0.55)$) -- ($(P4)+(-0.85,-0.55)$) -- (P4);
-    \draw[line width=0.6pt] (P2) -- ($(P2)+(0.85,-0.55)$) -- ($(P3)+(0.85,-0.55)$) -- (P3);
-    \node at ($(P5)+(-0.42,-0.42)$) {裁去};
-    \node at ($(P2)+(0.42,-0.42)$) {裁去};
+    \draw[line width=0.7pt] (P1) -- (P3);
+    \draw[line width=0.45pt,dash pattern=on 2pt off 1.3pt] (P1) -- (P4) (P5) -- (P3) (P2) -- (P4);
+    \node[fill=white,inner sep=0.5pt,rotate=40] at ($(P5)!0.5!(Y)$) {裁去};
+    \node[fill=white,inner sep=0.5pt,rotate=-40] at ($(P2)!0.5!(Y2)$) {裁去};
   \end{scope}
 \end{tikzpicture}%
 }
