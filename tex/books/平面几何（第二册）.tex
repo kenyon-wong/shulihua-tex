@@ -15562,7 +15562,7 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （3）门形截面：外廓宽d、高b，壁厚均为a（顶与两腿），内部斜线阴影
+% fig-alt: （3）门形截面：外廓宽d、高b，顶厚a，两腿壁厚标t（二十五扫按扫描字形，与(2)中t同形），内部斜线阴影
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\dd{2.80}
   \def\bb{2.32}% 二十四扫逐点：外廓 x25.5–165.5（d=140px）、y28–144（b=116px），b/d≈0.83
@@ -15592,12 +15592,12 @@ cm²。
   \draw[line width=0.45pt] (\aa,0) -- (\aa,-0.40);
   \draw[-{Stealth[length=1.45mm]},line width=0.5pt] (-0.40,-0.28) -- (0,-0.28);
   \draw[-{Stealth[length=1.45mm]},line width=0.5pt] (\aa+0.38,-0.28) -- (\aa,-0.28);
-  \node[fill=white,inner sep=0.6pt] at (0.5*\aa,-0.28) {$a$};
+  \node[fill=white,inner sep=0.6pt] at (0.5*\aa,-0.28) {$t$};
   \draw[line width=0.45pt] ({\dd-\aa},0) -- ({\dd-\aa},-0.40);
   \draw[line width=0.45pt] (\dd,0) -- (\dd,-0.40);
   \draw[-{Stealth[length=1.45mm]},line width=0.5pt] ({\dd-\aa-0.38},-0.28) -- ({\dd-\aa},-0.28);
   \draw[-{Stealth[length=1.45mm]},line width=0.5pt] (\dd+0.40,-0.28) -- (\dd,-0.28);
-  \node[fill=white,inner sep=0.6pt] at ({\dd-0.5*\aa},-0.28) {$a$};
+  \node[fill=white,inner sep=0.6pt] at ({\dd-0.5*\aa},-0.28) {$t$};
 \end{tikzpicture}%
 }
 \caption{(3)}
@@ -15923,12 +15923,12 @@ cm²。
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (B) at (0,0);
   \coordinate (C) at (3.20,0);
-  \coordinate (D) at (0.85,0);
-  \coordinate (A) at (0.85,2.20);
-  \coordinate (P) at (0.425,1.10); % mid AB
-  \coordinate (Q) at (2.025,1.10); % mid AC
-  % fourth at half height: C + 0.5*(A-B) = (3.2,0)+(0.425,1.1)=(3.625,1.1)
-  \coordinate (E) at (3.625,1.10);
+  \coordinate (D) at (1.06,0);% 二十五扫逐点：A(38.3,23.0) D38.1 C127.8 底 y115.2，B 出裁切边（AB 外推 −6.3），可见像素已证 BD/b≥0.298 → 取 0.33
+  \coordinate (A) at (1.06,2.20);
+  \coordinate (P) at (0.53,1.10); % mid AB
+  \coordinate (Q) at (2.13,1.10); % mid AC
+  % fourth at half height: C + 0.5*(A-B) = (3.2,0)+(0.53,1.1)=(3.73,1.1)
+  \coordinate (E) at (3.73,1.10);
   % dashed half-height parallelogram: midline through triangle extended + CE
   \draw[dashed,line width=0.6pt] (P) -- (E) -- (C);
   % triangle + altitude
@@ -15980,10 +15980,10 @@ cm²。
   % left parallelogram: D' on AB
   \begin{scope}
     \coordinate (A) at (0,0);
-    \coordinate (B) at (2.01,0);% 扫描左图 AB:h≈110:93，D 只错开约 0.2h
-    \coordinate (Dp) at (0.37,0);
-    \coordinate (D) at (0.37,1.70);
-    \coordinate (C) at (2.38,1.70);
+    \coordinate (B) at (2.01,0);% 二十五扫逐点去斜（扫描整体转约 2.5°，高 DD′ 与 AB 垂直可证）：左图 b=110.2、h=91.8、D 错开 24.7px → s/h≈0.27
+    \coordinate (Dp) at (0.46,0);
+    \coordinate (D) at (0.46,1.70);
+    \coordinate (C) at (2.47,1.70);
     \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
     \draw[line width=0.75pt] (D) -- (Dp);
     \node[anchor=north east,inner sep=1pt] at (A) {$A$};
@@ -15995,9 +15995,9 @@ cm²。
   \begin{scope}[shift={(2.00,-0.77)}]% 扫描右图高约 140px（左图 93px），底边低于左图
     \coordinate (A) at (0,0);
     \coordinate (B) at (1.68,0);
-    \coordinate (D) at (1.90,2.56);
-    \coordinate (C) at (3.58,2.56);
-    \coordinate (Dp) at (1.90,0);
+    \coordinate (D) at (2.05,2.56);% 二十五扫逐点去斜：右图 b=88.5、h=138.2、D 错开 110.9px → s/h≈0.80
+    \coordinate (C) at (3.73,2.56);
+    \coordinate (Dp) at (2.05,0);
     % solid parallelogram
     \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
     % dashed base extension B--D' continues past D', and height DD'
@@ -16165,8 +16165,8 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 \fitfig{%
 % fig-alt: 图3·9（a）：□ABCD陡右斜；虚线自D竖下至约三成高处H，水平交AD于Q并延伸交BC于F，再自Q竖下交AB于R；分I（△DQH）、II（梯形HFCD）、III（△AQR）、IV（四边形QRBF）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\b{2.10}% 二十二扫：扫描 b/h≈0.57、s/h≈0.77
-  \def\s{2.85}
+  \def\b{2.00}% 二十五扫逐点（边线交点）：A(19.3,157.2) B(91.4,157.5) D(121.0,20.9) C(195.1,19.3)，AB=72.1、DC=74.1、h=136.7px → b/h≈0.54、s/h≈0.74（与图(b) w/h 0.540 等底同高相合）
+  \def\s{2.74}
   \def\h{3.70}
   \def\ym{1.15}
   \coordinate (A) at (0,0);
@@ -16202,7 +16202,7 @@ E ^ {\prime} C = D ^ {\prime} D = h\text{，}
 \fitfig{%
 % fig-alt: 图3·9（b）：瘦高矩形A'B'C'D'等底同高；虚线斜线C'E（E在A'D'）、F'G（F'在B'C'约中右、G在A'B'）与水平EF'；分II'（左上△）、I'（右上△）、IV'（左下）、III'（右下△）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\w{1.72}% 二十二扫：扫描 w/h≈0.55
+  \def\w{1.65}% 二十五扫逐点：A′D′ x25、B′C′ x99.5、顶 y18、底 y156 → w/h≈0.540
   \def\h{3.05}
   \coordinate (Ap) at (0,0);
   \coordinate (Bp) at (\w,0);
@@ -16592,7 +16592,7 @@ BC = \frac {(A B + B C) h _ {1}}{h _ {1} + h _ {2}} = \frac {s h _ {1}}{h _ {1} 
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\b{2.92}
   \def\s{1.00}
-  \def\h{2.10}
+  \def\h{2.00}% 二十五扫逐点（按 AB 去斜 1.1°）：b=133.1、h=91.0、D 错开 44.2px → h/b≈0.684、s/h≈0.49（二十四扫 0.689）
   \coordinate (A) at (0,0);
   \coordinate (B) at (\b,0);
   \coordinate (D) at (\s,\h);
