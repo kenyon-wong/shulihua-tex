@@ -18236,7 +18236,7 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5.80,0);
-  \coordinate (C) at (4.10,3.40);
+  \coordinate (C) at (4.30,3.71); % r23 w10: C at 0.74AB, height 0.64AB measured on fig-p0209-01 (was 0.71/0.59)
   % equal-division points on AC (result of ray construction)
   \coordinate (P)  at ($(A)!0.2!(C)$);
   \coordinate (Q2) at ($(A)!0.4!(C)$);
@@ -18245,17 +18245,17 @@ KM，以及高 DE，DE 交 KM 于点 F，那末， 梯形 \(ABCD\) 的面积
   \coordinate (D)  at ($(A)!0.70!(C)$); % D between the 3rd and 4th division points (fig-p0209-01)
   % construction ray at 67° up-right, steeper than AC (fig-p0209-01); R5 level with C so the parallels are horizontal
   \pgfmathsetmacro{\rayang}{67}
-  \pgfmathsetmacro{\rayu}{0.7387}
+  \pgfmathsetmacro{\rayu}{0.8061}
   \coordinate (R1) at ({\rayu*cos(\rayang)},{\rayu*sin(\rayang)});
   \coordinate (R2) at ({2*\rayu*cos(\rayang)},{2*\rayu*sin(\rayang)});
   \coordinate (R3) at ({3*\rayu*cos(\rayang)},{3*\rayu*sin(\rayang)});
   \coordinate (R4) at ({4*\rayu*cos(\rayang)},{4*\rayu*sin(\rayang)});
   \coordinate (R5) at ({5*\rayu*cos(\rayang)},{5*\rayu*sin(\rayang)});
   % E on AB with PE || DB: P + t(B-D), y=0
-  \pgfmathsetmacro{\Px}{4.10*0.2}
-  \pgfmathsetmacro{\Py}{3.40*0.2}
-  \pgfmathsetmacro{\Dx}{4.10*0.70}
-  \pgfmathsetmacro{\Dy}{3.40*0.70}
+  \pgfmathsetmacro{\Px}{4.30*0.2}
+  \pgfmathsetmacro{\Py}{3.71*0.2}
+  \pgfmathsetmacro{\Dx}{4.30*0.70}
+  \pgfmathsetmacro{\Dy}{3.71*0.70}
   \pgfmathsetmacro{\tE}{\Py/\Dy}
   \coordinate (E) at ({\Px + \tE*(5.80-\Dx)}, 0);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
