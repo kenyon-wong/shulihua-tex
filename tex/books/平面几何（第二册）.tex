@@ -13736,21 +13736,21 @@ x=-\frac{a}{2}\pm\sqrt{a^2+\left(\frac{a}{2}\right)^2}\text{。}
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （2）圆O（小空心圆，O标在心正下方）；点M在左上，水平切线触圆于C(D)；割线MAB约45°下斜交圆于A（左上）、B（近圆底、略偏右），割线在O左下方约半径一半处经过
+% fig-alt: （2）圆O（小空心圆，O标在心正下方）；点M在左上，水平切线触圆于C(D)，MC约1.64半径；割线MAB约45°下斜交圆于A（左上）、B（近圆底、略偏右），割线在O左下方约半径一半处经过
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rr{1.350}
   \coordinate (O) at (0,0);
   \coordinate (C) at (0,\rr);
-  \coordinate (M) at (-2.450,\rr);
+  \coordinate (M) at (-2.220,\rr); % 二十五扫手读：M=切线y26与割线AB(斜率1.01)交点(22.6,26)，⊙O心(134,94.3)r67.9→MC=1.64r（原稿1.81r）
   \coordinate (B) at ({0.367},{-1.299});
-  \pgfmathsetmacro{\bdx}{0.367-(-2.450)}
+  \pgfmathsetmacro{\bdx}{0.367-(-2.220)}
   \pgfmathsetmacro{\bdy}{-1.299-\rr}
   \pgfmathsetmacro{\qa}{\bdx*\bdx+\bdy*\bdy}
-  \pgfmathsetmacro{\qb}{2*(-2.450)*\bdx+2*\rr*\bdy}
-  \pgfmathsetmacro{\qc}{(-2.450)*(-2.450)+\rr*\rr-\rr*\rr}
+  \pgfmathsetmacro{\qb}{2*(-2.220)*\bdx+2*\rr*\bdy}
+  \pgfmathsetmacro{\qc}{(-2.220)*(-2.220)+\rr*\rr-\rr*\rr}
   \pgfmathsetmacro{\disc}{\qb*\qb-4*\qa*\qc}
   \pgfmathsetmacro{\ta}{(-\qb-sqrt(\disc))/(2*\qa)}
-  \coordinate (A) at ({-2.450+\ta*\bdx},{\rr+\ta*\bdy});
+  \coordinate (A) at ({-2.220+\ta*\bdx},{\rr+\ta*\bdy});
   \draw[line width=0.75pt] (O) circle (\rr);
   \draw[line width=0.75pt] (M) -- (C);
   \draw[line width=0.75pt] (M) -- (B);
@@ -14284,20 +14284,20 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第7题：两圆O1>O2外切于C（扫描r2约为r1的0.85倍）；扫描上半径O1A、O2B竖直，切线AB略下斜；竖线CE交AB于E；弦AC、BC；虚线BD水平、虚线O1E交AC于F，F标在交点左侧（AC与O1E夹的左角内）；心小空心圆
+% fig-alt: 第7题：两圆O1>O2外切于C（扫描r2约为r1的0.85倍）；半径O1A、O2B略向右倾（垂直于略下斜的外公切线AB）；竖线CE交AB于E；弦AC、BC；虚线BD水平、虚线O1E交AC于F，F标在交点左侧（AC与O1E夹的左角内）；心小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rone{1.350}
   \def\rtwo{1.150}
   \coordinate (Oone) at (0,0);
   \coordinate (Otwo) at ({\rone+\rtwo},0);
   \coordinate (C) at (\rone,0);
-  \coordinate (A) at (0,\rone);
-  \coordinate (B) at ({\rone+\rtwo},\rtwo);
-  \coordinate (D) at (0,\rtwo);
-  \pgfmathsetmacro{\ey}{\rone+(\rtwo-\rone)*\rone/(\rone+\rtwo)}
-  \coordinate (E) at (\rone,\ey);
-  \pgfmathsetmacro{\fs}{\rone/(\rone+\ey)}
-  \coordinate (F) at ({\fs*\rone},{\rone-\fs*\rone});
+  % 二十五扫手读：扫描O1(70.7,85.5)→A约(75,25)、O2(177,84)→B约(179,34)，半径右倾约3–4°，与外公切线法向倾角asin(0.08)=4.6°一致（原稿O1A、O2B竖直使AB不切圆）；A、B取真切点，D=BD水平与O1A交点，E为CE竖直交AB，F=AC∩O1E
+  \coordinate (A) at (0.1080,1.3457);
+  \coordinate (B) at (2.5920,1.1463);
+  \coordinate (D) at (0.0920,1.1463);
+  \coordinate (E) at (1.3500,1.2460);
+  \coordinate (F) at (0.7290,0.6728);
+  % A=r1·n、B=O2+r2·n、D=r2·n，n=(0.08,0.9968)
   \coordinate (Aext) at ($(A)!-0.16!(B)$);
   \coordinate (Bext) at ($(B)!-0.16!(A)$);
   \draw[line width=0.75pt] (Oone) circle (\rone);
@@ -14789,15 +14789,15 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第6题：圆O直径AB；F、D在上弧；弦AF、FB、AD、DB；AD与BF交于C；O小空心圆
+% fig-alt: 第6题：圆O直径AB；F（约116°）、D（约31°）在上弧；弦AF、FB、AD、DB；AD与BF交于C；O小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rr{1.5500}
   \coordinate (O) at (0,0);
   \coordinate (A) at (-1.5500,0);
   \coordinate (B) at (1.5500,0);
-  \coordinate (E) at (-0.8890,1.2697);
-  \coordinate (D) at (1.2697,0.8890);
-  \coordinate (C) at (0.3806,0.6087);
+  \coordinate (E) at (-0.6795,1.3931); % 二十五扫逐顶点手读：圆心(92.5,92)r71.5，F方位116°、D方位31.5°（原稿125°/35°），C=AD∩BF重算
+  \coordinate (D) at (1.3216,0.8099);
+  \coordinate (C) at (0.5860,0.6024);
   \draw[line width=0.75pt] (O) circle (\rr);
   \draw[line width=0.75pt] (A) -- (B);
   \draw[line width=0.75pt] (A) -- (E);
@@ -14847,7 +14847,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·1：矩形ABCD（A左下、B右下、C右上、D左上）被虚线分成2列3行共6个单位正方形，下方标P（比A、B低约一字高）；右侧单位正方形边长标1 cm，下方标U
+% fig-alt: 图3·1：矩形ABCD（A左下、B右下、C右上、D左上）被虚线分成2列3行共6个单位正方形，下方标P（比A、B低约一字高）；右侧单位正方形（顶边与DC齐）边长标1 cm（左边的1 cm竖排），下方标U
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\u{0.85}
   \coordinate (A) at (0,0);
@@ -14863,10 +14863,10 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
   \node[anchor=south west,inner sep=1pt] at (C) {$C$};
   \node[anchor=south east,inner sep=1pt] at (D) {$D$};
   \node[anchor=north,inner sep=1pt] at (1*\u,-0.45*\u) {$P$};
-  \coordinate (Ul) at (3.15*\u,1.85*\u);
+  \coordinate (Ul) at (3.00*\u,2.00*\u); % 二十五扫手读：扫描格宽45.6px，单位方x156.5–200、y25.5–71，顶边与DC齐、左缘距AD 3.0格（原稿3.15格、顶低0.15格）；左侧1 cm竖排
   \draw[line width=0.75pt] (Ul) rectangle ++(\u,\u);
   \node[anchor=south,inner sep=2pt] at ([shift={(0.5*\u,\u)}]Ul) {$1\,\mathrm{cm}$};
-  \node[anchor=east,inner sep=2pt] at ([shift={(0,0.5*\u)}]Ul) {$1\,\mathrm{cm}$};
+  \node[anchor=south,rotate=90,inner sep=2pt] at ([shift={(0,0.5*\u)}]Ul) {$1\,\mathrm{cm}$};
   \node[anchor=north,inner sep=2pt] at ([shift={(0.5*\u,0)}]Ul) {$U$};
 \end{tikzpicture}%
 }
@@ -15128,15 +15128,15 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·4：左单位正方形边长a，U标在方下；右矩形ABCD虚线分成5列3行，底标b与各段a，高标h与各段a；b、h写在尺寸箭头线中间（断线处）
+% fig-alt: 图3·4：左单位正方形边长a，U标在方下，方与矩形第二行同高、距矩形一格宽；右矩形ABCD虚线分成5列3行，底标b与各段a，高标h与各段a；b、h写在紧贴矩形的尺寸箭头线中间（断线处）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\u{0.70}
-  \coordinate (U0) at (0,0.90*\u);
+  \coordinate (U0) at (0,1.00*\u); % 二十五扫手读：扫描格宽44.9px，单位方y69.5–115与第1、2横格线齐（原稿0.90u），方右缘到AD 45px=1.00u（原稿1.15u），h线距AD 14px≈0.31u、b线距AB 14.5px≈0.32u（原稿0.85u/0.72u；为让开a字取0.36u/0.38u）
   \draw[line width=0.75pt] (U0) rectangle ++(\u,\u);
   \node[anchor=south,inner sep=1pt] at ([shift={(0.5*\u,\u)}]U0) {$a$};
   \node[anchor=east,inner sep=1pt] at ([shift={(0,0.5*\u)}]U0) {$a$};
   \node[anchor=north,inner sep=1pt] at ([shift={(0.5*\u,0)}]U0) {$U$};
-  \begin{scope}[shift={(2.15*\u,0)}]
+  \begin{scope}[shift={(2.00*\u,0)}]
     \coordinate (A) at (0,0);
     \coordinate (B) at (5*\u,0);
     \coordinate (C) at (5*\u,3*\u);
@@ -15159,10 +15159,10 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
       \node[anchor=east,inner sep=0.5pt,font=\scriptsize] at (-0.08*\u,{\y*\u+0.5*\u}) {$a$};
       \node[anchor=west,inner sep=0.5pt,font=\scriptsize] at (5*\u+0.08*\u,{\y*\u+0.5*\u}) {$a$};
     }
-    \draw[<->,line width=0.55pt] (0,-0.72*\u) -- (5*\u,-0.72*\u);
-    \node[fill=white,inner sep=1pt] at (2.5*\u,-0.72*\u) {$b$};
-    \draw[<->,line width=0.55pt] (-0.85*\u,0) -- (-0.85*\u,3*\u);
-    \node[fill=white,inner sep=1pt] at (-0.85*\u,1.5*\u) {$h$};
+    \draw[<->,line width=0.55pt] (0,-0.38*\u) -- (5*\u,-0.38*\u);
+    \node[fill=white,inner sep=1pt] at (2.5*\u,-0.38*\u) {$b$};
+    \draw[<->,line width=0.55pt] (-0.36*\u,0) -- (-0.36*\u,3*\u);
+    \node[fill=white,inner sep=1pt] at (-0.36*\u,1.5*\u) {$h$};
   \end{scope}
 \end{tikzpicture}%
 }
