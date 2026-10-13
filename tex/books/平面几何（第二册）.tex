@@ -15521,7 +15521,7 @@ cm²。
   \def\b{3.20}
   \def\a{0.56}% 扫描立柱宽约为 b 的 0.18
   \def\t{0.59}% 扫描底厚约为 b 的 0.185
-  \def\h{3.62}% 扫描 h/b≈1.13（十七扫记 1.0，像素重测 122/108）
+  \def\h{3.23}% 二十四扫逐点：底 x8.5–121.5（b=113px），立柱顶 y26.5、底板底 y140.5（h=114px），h/b≈1.01
   \pgfmathsetmacro{\xl}{0.5*(\b-\a)}
   \pgfmathsetmacro{\xr}{0.5*(\b+\a)}
   \fill[pattern=north east lines,pattern color=black!70]
@@ -15559,7 +15559,7 @@ cm²。
 % fig-alt: （3）门形截面：外廓宽d、高b，壁厚均为a（顶与两腿），内部斜线阴影
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\dd{2.80}
-  \def\bb{2.62}% 扫描 b/d≈0.94
+  \def\bb{2.32}% 二十四扫逐点：外廓 x25.5–165.5（d=140px）、y28–144（b=116px），b/d≈0.83
   \def\aa{0.39}% 扫描壁厚约为 d 的 0.14
   \fill[even odd rule,pattern=north east lines,pattern color=black!70]
     (0,0) rectangle (\dd,\bb)
@@ -15602,7 +15602,7 @@ cm²。
 \fitfig{%
 % fig-alt: （4）Z形截面：两翼缘长均为b、厚均为t，腹板厚a（两侧箭头朝内）、总高h，内部斜线阴影
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\b{2.40}
+  \def\b{2.56}% 二十四扫逐点：上翼 x19.5–132、下翼 x109–224（b≈114px），h=y27–138（111px），b/h≈1.02
   \def\a{0.55}
   \def\t{0.45}
   \def\h{2.50}
@@ -15739,7 +15739,7 @@ cm²。
 % fig-alt: （3）边长a的实线正方形，右上角边长b斜线阴影；左下角实线垂到正方形底，再虚线穿下方矩形（左、下虚，右边实）直到底
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\aa{2.60}
-  \def\bb{0.75}
+  \def\bb{0.96}% 二十四扫逐点：a=x26.5–110（83.5px），b 方 x79.5–110、y26–57.5，下矩形 y111–143，b/a≈0.37
   \draw[line width=0.75pt] (0,0) rectangle (\aa,\aa);
   \draw[dashed,line width=0.6pt] (0,0) -- (0,-\bb) -- (\aa,-\bb);
   \draw[line width=0.75pt] (\aa,-\bb) -- (\aa,0);
@@ -15774,8 +15774,8 @@ cm²。
 % fig-alt: （4）矩形边长x+a与x+b：纵分x|a、横分x|b，得x²、xa、xb与ab，示(x+a)(x+b)
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\xx{2.20}
-  \def\aa{0.95}
-  \def\bb{0.80}
+  \def\aa{0.84}% 二十四扫逐点：x=x31.5–103（71.5px），a=103–130.5（27.5px）
+  \def\bb{1.20}% 二十四扫逐点：x=y31–104（73px），b=104–143.5（39.5px）
   \draw[line width=0.75pt] (0,0) rectangle (\xx+\aa,\xx+\bb);
   \draw[line width=0.75pt] (\xx,0) -- (\xx,\xx+\bb);
   \draw[line width=0.75pt] (0,\bb) -- (\xx+\aa,\bb);
@@ -16436,7 +16436,7 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\w{2.76}% 扫描 AD/h≈1.45（BC 宽 133px / 高 92px）
   \def\h{1.90}
-  \def\s{0.72}% 扫描错开 s/h≈0.38（A 相对 F 约 35/92）
+  \def\s{0.86}% 二十四扫逐点：BF x18、A 顶点 x61.4，h=y23–115（92px），s/h≈0.45
   % B(0,0), C(w,0), A(s,h), D(s+w,h); F(0,h), E(w,h)
   \coordinate (B) at (0,0);
   \coordinate (C) at (\w,0);
@@ -16476,14 +16476,14 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (3.48,0);% 扫描 AB:DC:h≈165:83:95
-  \coordinate (D) at (0.68,2.00);
+  \coordinate (D) at (0.51,2.00);% 二十四扫逐点：A(20.9,116.4) D(47.3,24.9) C(135.8,26.5) B(180.4,121)，DC/h≈0.96、D 错开/h≈0.26
   \coordinate (C) at (2.42,2.00);
   \coordinate (M) at ({(3.48+2.42)/2},{(0+2.00)/2});
-  % EF ∥ AD through M. AD direction = D-A = (0.68,2.00)
+  % EF ∥ AD through M. AD direction = D-A = (0.51,2.00)
   % line: M + t(0.70,2); E on AB (y=0): My + t*2 = 0 => t = -My/2 = -0.5
-  \coordinate (E) at ({(3.48+2.42)/2 + (-0.5)*0.68}, 0);
+  \coordinate (E) at ({(3.48+2.42)/2 + (-0.5)*0.51}, 0);
   % F on DC line y=2: My + t*2 = 2 => t = (2-My)/2 = 0.5
-  \coordinate (F) at ({(3.48+2.42)/2 + 0.5*0.68}, 2.00);
+  \coordinate (F) at ({(3.48+2.42)/2 + 0.5*0.51}, 2.00);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[dashed,line width=0.6pt] (E) -- (F);
   \draw[dashed,line width=0.6pt] (C) -- (F);
