@@ -14086,18 +14086,21 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第18题：圆；P在左；切线PA、PC触于上A下C；割线PBD交圆于B（近）、D（远）；弦AB、AD、CB、CD；关于PBD对称
+% fig-alt: 第18题：圆；P在左；切线PA、PC触于上A下C；割线PBD交圆于B（近）、D（远），不过圆心（从扫描：PBD在圆心上方约0.26r）；弦AB、AD、CB、CD
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rr{1.450}
-  \def\pd{3.200}
+  \def\hh{0.26}% 割线 PBD 在圆心上方 0.26r（从扫描）
+  \def\px{2.14}
   \coordinate (O) at (0,0);
-  \coordinate (P) at (-\pd,0);
-  \coordinate (B) at (-\rr,0);
-  \coordinate (D) at (\rr,0);
-  \pgfmathsetmacro{\ax}{-\rr*\rr/\pd}
-  \pgfmathsetmacro{\ay}{(\rr/\pd)*sqrt(\pd*\pd-\rr*\rr)}
-  \coordinate (A) at (\ax,\ay);
-  \coordinate (C) at (\ax,-\ay);
+  \coordinate (P) at (-\px*\rr,\hh*\rr);
+  \pgfmathsetmacro{\bx}{sqrt(1-\hh*\hh)}
+  \coordinate (B) at (-\bx*\rr,\hh*\rr);
+  \coordinate (D) at (\bx*\rr,\hh*\rr);
+  \pgfmathsetmacro{\dd}{sqrt(\px*\px+\hh*\hh)}
+  \pgfmathsetmacro{\ph}{atan2(\hh,-\px)}
+  \pgfmathsetmacro{\al}{acos(1/\dd)}
+  \coordinate (A) at ({\ph-\al}:\rr);
+  \coordinate (C) at ({\ph+\al}:\rr);
   \draw[line width=0.75pt] (O) circle (\rr);
   \draw[line width=0.75pt] (P) -- (A);
   \draw[line width=0.75pt] (P) -- (C);
