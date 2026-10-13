@@ -15502,9 +15502,9 @@ cm²。
 % fig-alt: （2）倒T形截面：底宽b、底厚t，立柱宽a、总高h，内部斜线阴影
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\b{3.20}
-  \def\a{0.70}
-  \def\t{0.55}
-  \def\h{2.70}
+  \def\a{0.56}% 扫描立柱宽约为 b 的 0.18
+  \def\t{0.59}% 扫描底厚约为 b 的 0.185
+  \def\h{3.62}% 扫描 h/b≈1.13（十七扫记 1.0，像素重测 122/108）
   \pgfmathsetmacro{\xl}{0.5*(\b-\a)}
   \pgfmathsetmacro{\xr}{0.5*(\b+\a)}
   \fill[pattern=north east lines,pattern color=black!70]
@@ -15542,8 +15542,8 @@ cm²。
 % fig-alt: （3）门形截面：外廓宽d、高b，壁厚均为a（顶与两腿），内部斜线阴影
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\dd{2.80}
-  \def\bb{2.40}
-  \def\aa{0.55}
+  \def\bb{2.62}% 扫描 b/d≈0.94
+  \def\aa{0.39}% 扫描壁厚约为 d 的 0.14
   \fill[even odd rule,pattern=north east lines,pattern color=black!70]
     (0,0) rectangle (\dd,\bb)
     (\aa,0) rectangle ({\dd-\aa},{\bb-\aa});
@@ -16417,9 +16417,9 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 \fitfig{%
 % fig-alt: （第3题）□ABCD（A左上B左下C右下D右上）；虚高BF、CE⊥AD所在直线于F、E（F在DA延长线上），直角方；矩形EFBC
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\w{3.20}
+  \def\w{2.76}% 扫描 AD/h≈1.45（BC 宽 133px / 高 92px）
   \def\h{1.90}
-  \def\s{0.95}
+  \def\s{0.72}% 扫描错开 s/h≈0.38（A 相对 F 约 35/92）
   % B(0,0), C(w,0), A(s,h), D(s+w,h); F(0,h), E(w,h)
   \coordinate (B) at (0,0);
   \coordinate (C) at (\w,0);
