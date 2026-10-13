@@ -14133,7 +14133,8 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \fitfig{%
 % fig-alt: 第20题：梯形上下底标a、b；中位平行线标x；自x左端向右下虚线∥右腰交下底
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\aa{1.600}
+  % 二十四扫全分辨率实测：上底81px、下底183px、高92.5px → a/b=0.443；扫描x线在半高处长133px≈(a+b)/2，与题设“两相似梯形”x=√(ab)冲突，按题设
+  \def\aa{1.420}
   \def\bb{3.200}
   \def\hh{1.630}
   % x = sqrt(a*b) for similar trapezoids
@@ -14362,16 +14363,17 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第10题：大圆O与圆A（A在⊙O上）交于B、C；弦AD不经过O，交⊙A于F、交BC于E，并延长到圆外G（扫描r_A/r_O≈0.52）
+% fig-alt: 第10题：大圆O与圆A（A在⊙O上）交于B、C；弦AD不经过O，交⊙A于F、交BC于E，并延长到圆外G（扫描r_A/r_O≈0.52；二十四扫实测A在⊙O上约24.6°方位）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (O) at (0,0);
-  \coordinate (A) at (1.6421,0.4400);
-  \coordinate (D) at (-0.8242,-1.4869);
-  \coordinate (F) at (0.9487,-0.1018);
-  \coordinate (E) at (1.4471,0.2876);
-  \coordinate (G) at (2.4695,1.0865);
-  \coordinate (B) at (1.2021,1.2021);
-  \coordinate (C) at (1.6421,-0.4400);
+  % 二十四扫全分辨率拟圆：⊙O心(100.3,103.1)r88.4，⊙A心(179.6,66.8)r46.2，A方位24.6°（原15°）
+  \coordinate (A) at (1.5457,0.7076);
+  \coordinate (D) at (-0.8150,-1.4919);
+  \coordinate (F) at (0.8977,0.1122);
+  \coordinate (E) at (1.3667,0.5515);
+  \coordinate (G) at (2.4000,1.5192);
+  \coordinate (B) at (0.9849,1.3857);
+  \coordinate (C) at (1.6924,-0.1601);
   \draw[line width=0.75pt] (O) circle (1.7000);
   \draw[line width=0.75pt] (A) circle (0.8800);
   \draw[line width=0.75pt] (D) -- (G);
@@ -14379,11 +14381,11 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
   \filldraw[fill=white,line width=0.55pt] (O) circle (0.040);
   \filldraw[fill=white,line width=0.55pt] (A) circle (0.040);
   \node[anchor=east,inner sep=2pt] at (-0.08,0.10) {$O$};
-  \node[anchor=center,inner sep=0pt] at (1.48,0.82) {$A$};
+  \node[anchor=center,inner sep=0pt] at (1.57,0.96) {$A$};
   \node[anchor=south,inner sep=1pt] at (B) {$B$};
   \node[anchor=north,inner sep=1pt] at (C) {$C$};
   \node[anchor=north east,inner sep=1pt] at (D) {$D$};
-  \node[anchor=south,inner sep=1pt] at (1.18,0.48) {$E$};
+  \node[anchor=south,inner sep=1pt] at (1.16,0.40) {$E$};
   \node[anchor=north,inner sep=2pt] at (F) {$F$};
   \node[anchor=west,inner sep=1pt] at (G) {$G$};
 \end{tikzpicture}%
@@ -14762,11 +14764,12 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rr{1.5000}
   \coordinate (O) at (0,0);
-  \coordinate (P) at (3.2000,0);
-  \coordinate (A) at (0.7031,1.3250);
-  \coordinate (C) at (-0.2605,-1.4772);
-  \coordinate (M) at (1.9516,0.6625);
-  \coordinate (B) at (1.4851,0.2112);
+  % 二十四扫全分辨率实测：⊙O心(78.7,85.6)r68.3，P(238,76)→OP=2.23r，PB延长近过O（B方位约1.9°），C约-85°；按题设M为PA中点重算
+  \coordinate (P) at (3.3460,0);
+  \coordinate (A) at (0.6724,1.3408);
+  \coordinate (C) at (0.2463,-1.4796);
+  \coordinate (M) at (2.0092,0.6704);
+  \coordinate (B) at (1.4992,0.0484);
   \draw[line width=0.75pt] (O) circle (\rr);
   \draw[line width=0.75pt] (P) -- (A);
   \draw[line width=0.75pt] (P) -- (C);
@@ -14943,20 +14946,21 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·3(2)：割下的直角△I（竖边D'E'）与梯形II（竖边DE）略分开；弯箭头示意将I移到II右侧，箭头尖在BC右侧、不压BC；B标在B点左上（形内，同扫描）
+% fig-alt: 图3·3(2)：割下的直角△I（竖边D'E'）与梯形II（竖边DE）略分开（扫描间隙约0.05DE）；弯箭头示意将I移到II右侧，箭头尖在BC右侧、不压BC；B标在B点左上（形内，同扫描）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\h{1.7000}
   \def\s{0.8000}
-  \def\g{0.2800}
-  \def\w{1.7000}
+  % 二十四扫全分辨率实测：高92.5px，△I竖边与II竖边间隙5px，EB=86px
+  \def\g{0.0900}
+  \def\w{1.6000}
   % triangle I (left)
   \coordinate (A) at (0,0);
   \coordinate (Ep) at (\s,0);
   \coordinate (Dp) at (\s,\h);
   \draw[line width=0.75pt] (A) -- (Ep) -- (Dp) -- cycle;
   \node[anchor=north east,inner sep=1pt] at (A) {$A$};
-  \node[anchor=north,inner sep=1pt] at (Ep) {$E'$};
-  \node[anchor=south,inner sep=1pt] at (Dp) {$D'$};
+  \node[anchor=north east,inner sep=0.5pt] at (Ep) {$E'$};
+  \node[anchor=south east,inner sep=0.5pt] at (Dp) {$D'$};
   \node at (0.50,0.55) {$I$};
   % trapezoid II (right)
   \coordinate (E) at (\s+\g,0);
@@ -14964,14 +14968,14 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
   \coordinate (B) at (\s+\g+\w,0);
   \coordinate (C) at (\s+\g+\w+\s,\h);
   \draw[line width=0.75pt] (E) -- (B) -- (C) -- (D) -- cycle;
-  \node[anchor=north,inner sep=1pt] at (E) {$E$};
-  \node[anchor=south,inner sep=1pt] at (D) {$D$};
+  \node[anchor=north west,inner sep=0.5pt] at (E) {$E$};
+  \node[anchor=south west,inner sep=0.5pt] at (D) {$D$};
   \node[anchor=south east,inner sep=1pt] at (B) {$B$};
   \node[anchor=south,inner sep=1pt] at (C) {$C$};
   \node at (\s+\g+1.15,0.85) {$II$};
   % curved arrow
   \draw[-{Stealth[length=2.2mm]},line width=0.7pt]
-    (0.20,-0.32) .. controls (1.30,-1.00) and (3.05,-0.75) .. (3.15,0.36);
+    (0.20,-0.32) .. controls (1.30,-1.00) and (2.85,-0.75) .. (2.95,0.36);
 \end{tikzpicture}%
 }
 \caption{(2)}
@@ -14980,12 +14984,13 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·3(3)：梯形II在左（竖边DE、斜边BC）；直角△I在右（竖边D'E'、斜边近BC）；弯箭头示意拼合，箭头尖向上落在△I内、E'D'左侧
+% fig-alt: 图3·3(3)：梯形II在左（竖边DE、斜边BC）；直角△I在右（竖边D'E'、斜边近BC）；弯箭头示意拼合，箭头尖向上落在△I内、E'D'左侧；扫描两斜边几乎相贴（间隙约0.05DE）
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\h{1.7000}
-  \def\s{0.8000}
-  \def\w{1.7000}
-  \def\g{0.3200}
+  % 二十四扫全分辨率实测：DE=92px，EB=87px，两斜边水平间隙4.5px，AE'=45.5px
+  \def\s{0.8300}
+  \def\w{1.6100}
+  \def\g{0.0850}
   % trapezoid II
   \coordinate (E) at (0,0);
   \coordinate (D) at (0,\h);
@@ -14994,7 +14999,7 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
   \draw[line width=0.75pt] (E) -- (B) -- (C) -- (D) -- cycle;
   \node[anchor=north east,inner sep=1pt] at (E) {$E$};
   \node[anchor=south east,inner sep=1pt] at (D) {$D$};
-  \node[anchor=north,inner sep=1pt] at (B) {$B$};
+  \node[anchor=north east,inner sep=0.5pt] at (B) {$B$};
   \node[anchor=south,inner sep=1pt] at (C) {$C$};
   \node at (0.95,0.85) {$II$};
   % triangle I on the right (final orientation)
@@ -15002,13 +15007,13 @@ AB^2-2BF^2=AB\cdot AC-2AF\cdot EF.
   \coordinate (Ep) at (\w+\g+\s,0);
   \coordinate (Dp) at (\w+\g+\s,\h);
   \draw[line width=0.75pt] (A) -- (Ep) -- (Dp) -- cycle;
-  \node[anchor=north east,inner sep=1pt] at (A) {$A$};
+  \node[anchor=north west,inner sep=0.5pt] at (A) {$A$};
   \node[anchor=north west,inner sep=1pt] at (Ep) {$E'$};
   \node[anchor=south west,inner sep=1pt] at (Dp) {$D'$};
-  \node at (\w+\g+0.50,0.55) {$I$};
+  \node at (\w+\g+0.50,0.74) {$I$};
   % curved arrow
   \draw[-{Stealth[length=2.2mm]},line width=0.7pt]
-    (-0.15,-0.35) .. controls (1.20,-1.05) and (2.50,-0.70) .. (2.60,0.37);
+    (-0.15,-0.35) .. controls (1.20,-1.05) and (2.22,-0.70) .. (2.25,0.33);
 \end{tikzpicture}%
 }
 \caption{(3)}
