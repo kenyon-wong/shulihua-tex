@@ -15566,17 +15566,18 @@ cm²。
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: （3）门形截面：外廓宽d、高b，顶厚a，两腿壁厚标t（二十五扫按扫描字形，与(2)中t同形），内部斜线阴影
+% fig-alt: （3）门形截面：外廓宽d、高b，顶厚a（扫描约为腿厚的1.2倍），两腿壁厚标t（二十五扫按扫描字形，与(2)中t同形），内部斜线阴影
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\dd{2.80}
   \def\bb{2.32}% 二十四扫逐点：外廓 x25.5–165.5（d=140px）、y28–144（b=116px），b/d≈0.83
-  \def\aa{0.39}% 扫描壁厚约为 d 的 0.14
+  \def\aa{0.39}% 扫描两腿壁厚约为 d 的 0.14
+  \def\ta{0.46}% 二十九扫 10× 读顶板外边 y28.5、内边 y51.5（23px）≈0.46，厚于两腿
   \fill[even odd rule,pattern=north east lines,pattern color=black!70]
     (0,0) rectangle (\dd,\bb)
-    (\aa,0) rectangle ({\dd-\aa},{\bb-\aa});
+    (\aa,0) rectangle ({\dd-\aa},{\bb-\ta});
   \draw[line width=0.75pt]
     (0,0) -- (0,\bb) -- (\dd,\bb) -- (\dd,0)
-    (\aa,0) -- (\aa,{\bb-\aa}) -- ({\dd-\aa},{\bb-\aa}) -- ({\dd-\aa},0);
+    (\aa,0) -- (\aa,{\bb-\ta}) -- ({\dd-\aa},{\bb-\ta}) -- ({\dd-\aa},0);
   \draw[{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]},line width=0.5pt]
     (0,\bb+0.32) -- (\dd,\bb+0.32);
   \node[anchor=south,inner sep=1pt] at (0.5*\dd,\bb+0.32) {$d$};
@@ -15586,11 +15587,11 @@ cm²。
   \draw[line width=0.5pt] (-0.44,\bb) -- (-0.20,\bb);
   \node[anchor=east,inner sep=1pt] at (-0.32,0.5*\bb) {$b$};
   % right a：扫描箭头朝内
-  \draw[line width=0.45pt] (\dd,{\bb-\aa}) -- (\dd+0.42,{\bb-\aa});
+  \draw[line width=0.45pt] (\dd,{\bb-\ta}) -- (\dd+0.42,{\bb-\ta});
   \draw[line width=0.45pt] (\dd,\bb) -- (\dd+0.42,\bb);
-  \draw[-{Stealth[length=1.45mm]},line width=0.5pt] (\dd+0.28,{\bb-\aa-0.36}) -- (\dd+0.28,{\bb-\aa});
+  \draw[-{Stealth[length=1.45mm]},line width=0.5pt] (\dd+0.28,{\bb-\ta-0.36}) -- (\dd+0.28,{\bb-\ta});
   \draw[-{Stealth[length=1.45mm]},line width=0.5pt] (\dd+0.28,{\bb+0.36}) -- (\dd+0.28,\bb);
-  \node[anchor=west,inner sep=1pt] at (\dd+0.42,{\bb-0.5*\aa}) {$a$};
+  \node[anchor=west,inner sep=1pt] at (\dd+0.42,{\bb-0.5*\ta}) {$a$};
   % bottom a：扫描箭头朝内
   \draw[line width=0.45pt] (0,0) -- (0,-0.40);
   \draw[line width=0.45pt] (\aa,0) -- (\aa,-0.40);
@@ -15613,8 +15614,8 @@ cm²。
 % fig-alt: （4）Z形截面：两翼缘长均为b、厚均为t，腹板厚a（两侧箭头朝内）、总高h，内部斜线阴影
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\b{2.56}% 二十四扫逐点：上翼 x19.5–132、下翼 x109–224（b≈114px），h=y27–138（111px），b/h≈1.02
-  \def\a{0.55}
-  \def\t{0.45}
+  \def\a{0.50}% 二十九扫 10× 读腹板 x109.5–131.5（22px）
+  \def\t{0.41}% 二十九扫 10× 读翼缘厚 上18.5px、下17.5px
   \def\h{2.50}
   % path: top flange left, web, bottom flange right
   % top-left of flange at (a-b, h) ... web from x=0 to x=a
@@ -16047,7 +16048,7 @@ cm²。
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- (D) -- cycle;
   \draw[dashed,line width=0.6pt] (D) -- (Dp);
   \draw[dashed,line width=0.6pt] (C) -- (Ep);
-  \draw[dashed,line width=0.6pt] (B) -- ({\b+\s+0.75},0);
+  \draw[dashed,line width=0.6pt] (B) -- ({\b+\s+0.63},0);% 二十九扫 10× 读虚延止于 x231（A x17、AB 137px）
   \pgfmathsetmacro{\ang}{atan2(\h,\s)}
   \draw[line width=0.5pt] (0.42,0) arc[start angle=0, end angle=\ang, radius=0.42];
   \draw[line width=0.5pt] ([shift={(0.42,0)}]B) arc[start angle=0, end angle=\ang, radius=0.42];
@@ -16312,12 +16313,12 @@ A D ^ {\prime} = \frac {1}{2} A D = \frac {1}{2} \times 4 = 2 (\mathrm{cm})\text
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·11：□ABCD对角实线AC；过AC上任意点P作EF∥AD（E在AB、F在CD）、GH∥AB（G在AD、H在BC），三分线交于P（扫描P约在AC的2/3处）
+% fig-alt: 图3·11：□ABCD对角实线AC；过AC上任意点P作EF∥AD（E在AB、F在CD）、GH∥AB（G在AD、H在BC），三分线交于P（扫描P约在AC的0.69处，略过2/3）
 \begin{tikzpicture}[line cap=round,line join=round]
-  \def\b{2.90}% 扫描 b:s:h≈135:45:102，P 约在 AC 的 0.67 处
+  \def\b{2.90}% 扫描 b:s:h≈135:45:102，P 约在 AC 的 0.69 处
   \def\s{0.97}
   \def\h{2.20}
-  \def\t{0.67}
+  \def\t{0.69}% 二十九扫逐行读：EF 交底 x113、AC 与 EF 交于 (145,54.5)，P 约在 AC 的 0.69 处
   \coordinate (A) at (0,0);
   \coordinate (B) at (\b,0);
   \coordinate (D) at (\s,\h);
