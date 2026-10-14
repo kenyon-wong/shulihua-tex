@@ -14247,7 +14247,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第6题：两圆O1>O2外切于C（扫描r2约为r1的0.8倍）；扫描上半径O1A、O2B竖直，切线AB略下斜并略伸过A、B；虚线BD水平∥O1O2交O1A于D；r1在左半径左侧、D之下，r2在右半径左侧；心小空心圆
+% fig-alt: 第6题：两圆O1>O2外切于C（扫描r2约为r1的0.8倍）；扫描上半径O1A、O2B竖直，切线AB略下斜，左端伸过A约0.43AB、右端伸过B约0.48AB；虚线BD水平∥O1O2交O1A于D；r1在左半径左侧、D之下，r2在右半径左侧；心小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\rone{1.450}
   \def\rtwo{1.180}
@@ -14257,8 +14257,9 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
   \coordinate (A) at (0,\rone);
   \coordinate (B) at ({\rone+\rtwo},\rtwo);
   \coordinate (D) at (0,\rtwo);
-  \coordinate (Aext) at ($(A)!-0.28!(B)$);
-  \coordinate (Bext) at ($(B)!-0.22!(A)$);
+  % 二十七扫手读：切线左端(28.5,17.5)、右端(280.5,46.5)，A(87.5,24.5)、B(216.5,40)→按配准换算伸出0.43AB、0.48AB
+  \coordinate (Aext) at ($(A)!-0.43!(B)$);
+  \coordinate (Bext) at ($(B)!-0.48!(A)$);
   \draw[line width=0.75pt] (Oone) circle (\rone);
   \draw[line width=0.75pt] (Otwo) circle (\rtwo);
   \draw[line width=0.75pt] (Oone) -- (Otwo);
@@ -14364,7 +14365,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第10题：大圆O与圆A（A在⊙O上）交于B、C；弦AD不经过O，交⊙A于F、交BC于E，并延长到圆外G（扫描r_A/r_O≈0.52；二十四扫实测A在⊙O上约24.6°方位）
+% fig-alt: 第10题：大圆O与圆A（A在⊙O上）交于B、C；弦AD不经过O，交⊙A于F、交BC于E，并延长交⊙A于G（扫描DG止于⊙A，G标在端点右上；扫描r_A/r_O≈0.52；二十四扫实测A在⊙O上约24.6°方位）
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (O) at (0,0);
   % 二十四扫全分辨率拟圆：⊙O心(100.3,103.1)r88.4，⊙A心(179.6,66.8)r46.2，A方位24.6°（原15°）
@@ -14372,7 +14373,8 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
   \coordinate (D) at (-0.8150,-1.4919);
   \coordinate (F) at (0.8977,0.1122);
   \coordinate (E) at (1.3667,0.5515);
-  \coordinate (G) at (2.4000,1.5192);
+  % 二十七扫手读：扫描DG线止于⊙A上(214,36.5)，G=2A−F在⊙A上（原(2.4000,1.5192)在圆外）
+  \coordinate (G) at (2.1937,1.3030);
   \coordinate (B) at (0.9849,1.3857);
   \coordinate (C) at (1.6924,-0.1601);
   \draw[line width=0.75pt] (O) circle (1.7000);
@@ -14388,7 +14390,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
   \node[anchor=north east,inner sep=1pt] at (D) {$D$};
   \node[anchor=south,inner sep=1pt] at (1.16,0.40) {$E$};
   \node[anchor=north,inner sep=2pt] at (F) {$F$};
-  \node[anchor=west,inner sep=1pt] at (G) {$G$};
+  \node[anchor=south west,inner sep=1pt] at (G) {$G$};
 \end{tikzpicture}%
 }
 \caption{(第10题)}
