@@ -18677,10 +18677,10 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \coordinate (B) at (3.14,0);
   \coordinate (C1) at (0.62,3.00);
   \coordinate (C2) at (3.66,3.00);
-  \draw[dashed,line width=0.6pt] (-0.20,0) -- (A);
+  \draw[dashed,line width=0.6pt] (0.02,0) -- (A); % r26 w10: base dashes x24…237, XY x19…232 on fig-p0214-01 (A x77.7,B x165.3; was -0.20…4.87 / -0.20…4.78)
   \draw[line width=0.75pt] (A) -- (B);
-  \draw[dashed,line width=0.6pt] (B) -- (4.87,0);
-  \draw[line width=0.75pt] (-0.20,3.00) -- (4.78,3.00);
+  \draw[dashed,line width=0.6pt] (B) -- (4.70,0);
+  \draw[line width=0.75pt] (-0.09,3.00) -- (4.59,3.00);
   \draw[line width=0.75pt] (A) -- (C1) -- (B) -- cycle;
   \draw[line width=0.75pt] (A) -- (C2) -- (B);
   \draw[<->,line width=0.55pt] (4.22,0) -- (4.22,3.00);
@@ -18688,8 +18688,8 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \node[anchor=north,inner sep=1.5pt] at (B) {$B$};
   \node[anchor=south,inner sep=1.5pt] at (C1) {$C_1$};
   \node[anchor=south,inner sep=1.5pt] at (C2) {$C_2$};
-  \node[anchor=east,inner sep=2pt] at (-0.20,3.00) {$X$};
-  \node[anchor=west,inner sep=2pt] at (4.78,3.00) {$Y$};
+  \node[anchor=east,inner sep=2pt] at (-0.09,3.00) {$X$};
+  \node[anchor=west,inner sep=2pt] at (4.59,3.00) {$Y$};
   \node[fill=white,inner sep=1pt] at (4.22,1.50) {$h$};
 \end{tikzpicture}%
 }
@@ -18817,7 +18817,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \pgfmathsetmacro{\rl}{2.66}
     \coordinate (Ap) at ({2.60-sqrt(\rl*\rl-2.39*2.39)},2.39);
     \coordinate (App) at ({2.60+sqrt(\rl*\rl-2.39*2.39)},2.39);
-    \draw[line width=0.75pt] (0.10,2.39) -- (4.25,2.39);
+    \draw[line width=0.75pt] (0.20,2.39) -- (4.25,2.39); % r26 w10: XY x23…213 on fig-p0215-04 (B x102, C x167, base y158.5) → left end at B−1.70 (was 0.10)
     \draw[line width=0.75pt] (B) -- (C);
     \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
     \draw[line width=0.75pt] (Ap) -- (B);
@@ -18831,7 +18831,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \draw[line width=0.7pt] (0.81,2.82) -- (0.81,2.98);
     \draw[line width=0.7pt] ({0.81+\rl},2.82) -- ({0.81+\rl},2.98);
     \node[anchor=south,inner sep=1.5pt] at ({0.81+\rl/2},2.90) {$l$};
-    \node[anchor=east,inner sep=2pt] at (0.10,2.39) {$X$};
+    \node[anchor=east,inner sep=2pt] at (0.20,2.39) {$X$};
     \node[anchor=west,inner sep=2pt] at (4.25,2.39) {$Y$};
     \node[anchor=south,inner sep=1.5pt] at (A) {$A$};
     \node[anchor=south,inner sep=1.5pt] at (Ap) {$A'$};
@@ -18946,7 +18946,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
     \node[anchor=north,inner sep=1.5pt] at (D) {$D$};
   \end{scope}
   % right: geometric mean + square
-  \begin{scope}[shift={(3.55,0)}]
+  \begin{scope}[shift={(3.37,0)}] % r26 w10: on fig-p0217-01 A x21.1, B x155.3, E x188.5, G x371.5 → E at 3.37 (AB 2.70; was 3.55)
     \def\ef{1.35}
     \def\fg{2.35}
     \pgfmathsetmacro{\xx}{sqrt(\ef*\fg)}
@@ -19018,7 +19018,7 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·34（2）水平OF实线（E在OF上）；EF上方尺寸⅔AB两侧箭头朝外，左箭指向E、右箭指向F（扫描箭头楔形尖端在外侧）；下斜射线自O虚线向右下；三条虚平行线向左下斜
+% fig-alt: 图3·34（2）水平OF实线（E在OF上）；EF上方尺寸⅔AB（标注夹在左右两箭之间、与箭同高）两侧箭头朝外，左箭指向E、右箭指向F（扫描箭头楔形尖端在外侧）；下斜射线自O虚线向右下；三条虚平行线向左下斜
 \begin{tikzpicture}[line cap=round,line join=round]
   \coordinate (O) at (0.00,0.00);
   % 下斜虚射线向右下，三条虚平行线向左下，与扫描一致
@@ -19035,11 +19035,11 @@ Q 和 R。 那末多边形 P 和 Q 的面积的和等于多边形 R 的面积（
   \draw[dashed,line width=0.55pt] (Q1) -- (E);
   \draw[dashed,line width=0.55pt] (Q2) -- (M);
   \draw[dashed,line width=0.55pt] (Q3) -- (F);
-  \draw[->,line width=0.75pt] (2.40,0.32) -- (1.98,0.32); % arrows point outward to E and F (fig-p0218-02, r17 w10)
-  \draw[->,line width=0.75pt] (4.40,0.32) -- (4.82,0.32);
-  \node[anchor=south,inner sep=1pt,font=\small] at (3.40,0.48) {$\frac{2}{3}AB$};
+  \draw[->,line width=0.75pt] (2.74,0.32) -- (1.79,0.32); % arrows point outward to E and F (fig-p0218-02, r17 w10); r26 w10: arrows x57…77 and x112…128, label x80…111 between them, O x19, F x127 (was 1.98…2.40 / 4.40…4.82, label above at 3.40)
+  \draw[->,line width=0.75pt] (4.39,0.32) -- (5.15,0.32);
+  \node[inner sep=1pt,font=\small] at (3.57,0.36) {$\frac{2}{3}AB$};
   \node[anchor=east,inner sep=1.5pt] at (O) {$O$};
-  \node[anchor=south,inner sep=1.2pt] at (E) {$E$};
+  \node[anchor=south east,inner sep=1.2pt] at (E) {$E$};
   \node[anchor=south,inner sep=1.2pt] at (F) {$F$};
 \end{tikzpicture}%
 }
@@ -19322,24 +19322,25 @@ ABCD，求作一个矩形，使它和已知正方形等积，并且它的周长�
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 图3·38 △ABC；AB三等分，M为靠近B的分点（线上小叉），AN=⅓AB；虚半圆以AB为直径，PN⊥AB交圆于P；以A为心、AP为半径的虚弧自P落到AB上得B'（AB'=AP）；B'C'∥BC
+% fig-alt: 图3·38 △ABC（按扫描A约在BC的0.73处、高约0.88BC）；AB三等分，M为靠近B的分点（线上小叉），AN=⅓AB；虚半圆以AB为直径，PN⊥AB交圆于P；以A为心、AP为半径的虚弧自P落到AB上得B'（AB'=AP）；B'C'∥BC
 \begin{tikzpicture}[line cap=round,line join=round]
   % proportions traced from fig-p0221-02 (r21 w10): A at 0.705BC, height 0.88BC (was 0.67/0.78)
-  \coordinate (A) at (3.170,3.960);
+  % r26 w10: line-fit on fig-p0221-02 B (41,170), C (198.3,172.5), A (156.5,33.4) → A at 0.733BC (was 0.705); N, B', C', P, arcs, tick recomputed
+  \coordinate (A) at (3.300,3.960);
   \coordinate (B) at (0.000,0.000);
   \coordinate (C) at (4.500,0.000);
-  \coordinate (N) at (2.113,2.640);
-  \coordinate (Bp) at (1.340,1.674);
-  \coordinate (Cp) at (3.938,1.674);
-  \coordinate (P) at (0.247,4.134);
+  \coordinate (N) at (2.200,2.640);
+  \coordinate (Bp) at (1.395,1.674);
+  \coordinate (Cp) at (3.993,1.674);
+  \coordinate (P) at (0.333,4.196);
   \draw[line width=0.75pt] (A) -- (B) -- (C) -- cycle;
   \draw[line width=0.75pt] (Bp) -- (Cp);
-  \draw[dashed,line width=0.55pt] (B) arc[start angle=-128.68,delta angle=-180,radius=2.5363];
+  \draw[dashed,line width=0.55pt] (B) arc[start angle=-129.81,delta angle=-180,radius=2.5774];
   \draw[dashed,line width=0.55pt] (P) -- (A);
   \draw[dashed,line width=0.55pt] (P) -- (N);
   % arc centred at A with radius AP, from P down to B' on AB (fig-p0221-02)
-  \draw[dashed,line width=0.55pt] (P) arc[start angle=176.59,end angle=231.32,radius=2.9286];
-  \draw[line width=0.5pt] (1.143,1.251) -- (0.971,1.389);
+  \draw[dashed,line width=0.55pt] (P) arc[start angle=175.46,end angle=230.19,radius=2.9761];
+  \draw[line width=0.5pt] (1.185,1.250) -- (1.015,1.390);
   \node[anchor=east,inner sep=1pt] at (0.76,1.22) {$M$};
   \node[anchor=south west,inner sep=1.5pt] at (A) {$A$};
   \node[anchor=north east,inner sep=1pt] at (B) {$B$};
