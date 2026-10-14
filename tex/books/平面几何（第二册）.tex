@@ -14009,7 +14009,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第14题：大圆O；等小圆O1内切于B、O2外切于A；连OO1B、OO2经A、O1O2；∠O1OO2画小弧，60°标在OO1左侧（角外）。心皆小空心圆
+% fig-alt: 第14题：大圆O；等小圆O1内切于B、O2外切于A；连OO1（扫描止于O1、不延至B）、OO2经A、O1O2；∠O1OO2画小弧，60°标在OO1左侧（角外）。心皆小空心圆
 \begin{tikzpicture}[line cap=round,line join=round]
   \def\RR{2.000}
   \def\rr{0.780}
@@ -14021,7 +14021,7 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
   \draw[line width=0.75pt] (O) circle (\RR);
   \draw[line width=0.75pt] (Oone) circle (\rr);
   \draw[line width=0.75pt] (Otwo) circle (\rr);
-  \draw[line width=0.75pt] (O) -- (B);
+  \draw[line width=0.75pt] (O) -- (Oone);
   \draw[line width=0.75pt] (O) -- (Otwo);
   \draw[line width=0.75pt] (Oone) -- (Otwo);
   \draw[line width=0.5pt] (0.42,0) arc[start angle=0,end angle=60,radius=0.42];
@@ -14132,32 +14132,34 @@ ADC 中，因为 AE 是 AC 在斜边 AD 上的射影，
 \begin{figure}
 \centering
 \fitfig{%
-% fig-alt: 第20题：梯形上下底标a、b；中位平行线标x；自x左端向右下虚线∥右腰交下底
+% fig-alt: 第20题：梯形（扫描非等腰，上底左偏约0.19）上下底标a、b；中位平行线标x；自x左端向右下虚线∥右腰交下底
 \begin{tikzpicture}[line cap=round,line join=round]
   % 二十四扫全分辨率实测：上底81px、下底183px、高92.5px → a/b=0.443；扫描x线在半高处长133px≈(a+b)/2，与题设“两相似梯形”x=√(ab)冲突，按题设
   \def\aa{1.420}
   \def\bb{3.200}
   \def\hh{1.630}
+  % 二十八扫原生4倍手读：上底中点x=90.5、下底中点x=101.5，上底左偏11px≈0.19，非等腰
+  \def\sh{-0.190}
   % x = sqrt(a*b) for similar trapezoids
   \pgfmathsetmacro{\xx}{sqrt(\aa*\bb)}
   \pgfmathsetmacro{\yy}{\hh*(\bb-\xx)/(\bb-\aa)}
   \coordinate (Bl) at ({-\bb/2},0);
   \coordinate (Br) at ({\bb/2},0);
-  \coordinate (Tl) at ({-\aa/2},\hh);
-  \coordinate (Tr) at ({\aa/2},\hh);
-  \coordinate (Xl) at ({-\xx/2},\yy);
-  \coordinate (Xr) at ({\xx/2},\yy);
+  \coordinate (Tl) at ({-\aa/2+\sh},\hh);
+  \coordinate (Tr) at ({\aa/2+\sh},\hh);
+  \coordinate (Xl) at ({-\xx/2+\sh*\yy/\hh},\yy);
+  \coordinate (Xr) at ({\xx/2+\sh*\yy/\hh},\yy);
   % dashed from Xl parallel to right leg (Tr->Br): dir ((\bb-\aa)/2, -\hh)
-  \pgfmathsetmacro{\rdx}{(\bb-\aa)/2}
+  \pgfmathsetmacro{\rdx}{(\bb-\aa)/2-\sh}
   \pgfmathsetmacro{\rdy}{-\hh}
   % Xl + t*(rdx,rdy) hits y=0: yy + t*rdy = 0 => t = yy/hh
   \pgfmathsetmacro{\shTt}{\yy/\hh}
-  \coordinate (Q) at ({-\xx/2+\shTt*\rdx},0);
+  \coordinate (Q) at ({-\xx/2+\sh*\yy/\hh+\shTt*\rdx},0);
   \draw[line width=0.75pt] (Bl) -- (Br) -- (Tr) -- (Tl) -- cycle;
   \draw[line width=0.75pt] (Xl) -- (Xr);
   \draw[dashed,line width=0.6pt] (Xl) -- (Q);
-  \node[anchor=south,inner sep=1pt] at (0,\hh) {$a$};
-  \node[anchor=south,inner sep=1pt] at (0,\yy) {$x$};
+  \node[anchor=south,inner sep=1pt] at (\sh,\hh) {$a$};
+  \node[anchor=south,inner sep=1pt] at ({\sh*\yy/\hh},\yy) {$x$};
   \node[anchor=north,inner sep=1pt] at (0,0) {$b$};
 \end{tikzpicture}%
 }
